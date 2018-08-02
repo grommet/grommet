@@ -47,7 +47,7 @@ exports[`Menu basic 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -109,7 +109,7 @@ exports[`Menu close by clicking outside 1`] = `
 <div>
   <button
     aria-label="Open Menu"
-    class="StyledButton-qbvYY gdtSRN"
+    class="StyledButton-qbvYY jZaTeL"
     id="test-menu"
     type="button"
   >
@@ -148,7 +148,7 @@ exports[`Menu close by clicking outside 1`] = `
 
 exports[`Menu close by clicking outside 2`] = `
 <div
-  class="StyledDrop-czaYBK lavWGj"
+  class="StyledDrop-czaYBK isvWSD"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -158,7 +158,7 @@ exports[`Menu close by clicking outside 2`] = `
   >
     <button
       aria-label="Close Menu"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       type="button"
     >
       <div
@@ -195,7 +195,7 @@ exports[`Menu close by clicking outside 2`] = `
       class="StyledBox-YaZNy hQeqTY"
     >
       <button
-        class="StyledButton-qbvYY ipHWmi"
+        class="StyledButton-qbvYY fILeAh"
         disabled=""
         type="button"
       >
@@ -206,7 +206,7 @@ exports[`Menu close by clicking outside 2`] = `
         </div>
       </button>
       <button
-        class="StyledButton-qbvYY ipHWmi"
+        class="StyledButton-qbvYY fILeAh"
         disabled=""
         type="button"
       >
@@ -259,42 +259,42 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gdtSRN {
+  .jZaTeL {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jVTxhz {
+  .dpDiwo {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ipHWmi {
+  .fILeAh {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hksRZC {
+  .hOjJXi {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jhnKhC {
+  .iraIky {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kFMYKe {
+  .dwCdyk {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -302,7 +302,7 @@ exports[`Menu close by clicking outside 3`] = `
 
 
 
-.lavWGj {
+.isvWSD {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -317,7 +317,7 @@ exports[`Menu close by clicking outside 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #f8f8f8;
+  background: #f8f8f8;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -330,7 +330,7 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lavWGj {
+  .isvWSD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -347,7 +347,7 @@ exports[`Menu close on esc 1`] = `
 <div>
   <button
     aria-label="Open Menu"
-    class="StyledButton-qbvYY gdtSRN"
+    class="StyledButton-qbvYY jZaTeL"
     id="test-menu"
     type="button"
   >
@@ -388,7 +388,7 @@ exports[`Menu close on tab 1`] = `
 <div>
   <button
     aria-label="Open Menu"
-    class="StyledButton-qbvYY gdtSRN"
+    class="StyledButton-qbvYY jZaTeL"
     id="test-menu"
     type="button"
   >
@@ -504,7 +504,7 @@ exports[`Menu custom message 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -581,7 +581,7 @@ exports[`Menu disabled 1`] = `
 <div>
   <button
     aria-label="Open Menu"
-    class="StyledButton-qbvYY ipHWmi"
+    class="StyledButton-qbvYY fILeAh"
     disabled=""
     id="test-menu"
     type="button"
@@ -623,7 +623,7 @@ exports[`Menu navigate through suggestions and select 1`] = `
 <div>
   <button
     aria-label="Open Menu"
-    class="StyledButton-qbvYY gdtSRN"
+    class="StyledButton-qbvYY jZaTeL"
     id="test-menu"
     type="button"
   >
@@ -664,7 +664,7 @@ exports[`Menu open and close on click 1`] = `
 <div>
   <button
     aria-label="Open Menu"
-    class="StyledButton-qbvYY gdtSRN"
+    class="StyledButton-qbvYY jZaTeL"
     id="test-menu"
     type="button"
   >
@@ -705,7 +705,7 @@ exports[`Menu open and close on click 2`] = `
 <div>
   <button
     aria-label="Open Menu"
-    class="StyledButton-qbvYY gdtSRN"
+    class="StyledButton-qbvYY jZaTeL"
     id="test-menu"
     type="button"
   >
@@ -744,7 +744,7 @@ exports[`Menu open and close on click 2`] = `
 
 exports[`Menu open and close on click 3`] = `
 <div
-  class="StyledDrop-czaYBK lavWGj"
+  class="StyledDrop-czaYBK isvWSD"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -754,7 +754,7 @@ exports[`Menu open and close on click 3`] = `
   >
     <button
       aria-label="Close Menu"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       type="button"
     >
       <div
@@ -791,7 +791,7 @@ exports[`Menu open and close on click 3`] = `
       class="StyledBox-YaZNy hQeqTY"
     >
       <button
-        class="StyledButton-qbvYY ipHWmi"
+        class="StyledButton-qbvYY fILeAh"
         disabled=""
         type="button"
       >
@@ -802,7 +802,7 @@ exports[`Menu open and close on click 3`] = `
         </div>
       </button>
       <button
-        class="StyledButton-qbvYY hksRZC"
+        class="StyledButton-qbvYY hOjJXi"
         type="button"
       >
         <div
@@ -812,7 +812,7 @@ exports[`Menu open and close on click 3`] = `
         </div>
       </button>
       <a
-        class="StyledButton-kDOCUE kFMYKe"
+        class="StyledButton-kDOCUE dwCdyk"
         href="/test"
       >
         <div
@@ -864,35 +864,35 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gdtSRN {
+  .jZaTeL {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jVTxhz {
+  .dpDiwo {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ipHWmi {
+  .fILeAh {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hksRZC {
+  .hOjJXi {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kFMYKe {
+  .dwCdyk {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -900,7 +900,7 @@ exports[`Menu open and close on click 4`] = `
 
 
 
-.lavWGj {
+.isvWSD {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -915,7 +915,7 @@ exports[`Menu open and close on click 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #f8f8f8;
+  background: #f8f8f8;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -928,7 +928,7 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lavWGj {
+  .isvWSD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -945,7 +945,7 @@ exports[`Menu select an item 1`] = `
 <div>
   <button
     aria-label="Open Menu"
-    class="StyledButton-qbvYY gdtSRN"
+    class="StyledButton-qbvYY jZaTeL"
     id="test-menu"
     type="button"
   >
@@ -986,7 +986,7 @@ exports[`Menu with dropAlign renders 1`] = `
 <div>
   <button
     aria-label="Open Menu"
-    class="StyledButton-qbvYY gdtSRN"
+    class="StyledButton-qbvYY jZaTeL"
     id="test-menu"
     type="button"
   >
@@ -1025,7 +1025,7 @@ exports[`Menu with dropAlign renders 1`] = `
 
 exports[`Menu with dropAlign renders 2`] = `
 <div
-  class="StyledDrop-czaYBK ksHyTq"
+  class="StyledDrop-czaYBK ebYotu"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1035,7 +1035,7 @@ exports[`Menu with dropAlign renders 2`] = `
   >
     <button
       aria-label="Close Menu"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       type="button"
     >
       <div
@@ -1072,7 +1072,7 @@ exports[`Menu with dropAlign renders 2`] = `
       class="StyledBox-YaZNy hQeqTY"
     >
       <button
-        class="StyledButton-qbvYY ipHWmi"
+        class="StyledButton-qbvYY fILeAh"
         disabled=""
         type="button"
       >
@@ -1083,7 +1083,7 @@ exports[`Menu with dropAlign renders 2`] = `
         </div>
       </button>
       <button
-        class="StyledButton-qbvYY ipHWmi"
+        class="StyledButton-qbvYY fILeAh"
         disabled=""
         type="button"
       >
@@ -1136,49 +1136,49 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gdtSRN {
+  .jZaTeL {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jVTxhz {
+  .dpDiwo {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ipHWmi {
+  .fILeAh {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hksRZC {
+  .hOjJXi {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jhnKhC {
+  .iraIky {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .edpIJr {
+  .thBoX {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kFMYKe {
+  .dwCdyk {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1187,7 +1187,7 @@ exports[`Menu with dropAlign renders 3`] = `
 
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lavWGj {
+  .isvWSD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1199,7 +1199,7 @@ exports[`Menu with dropAlign renders 3`] = `
   }
 }
 
-.ksHyTq {
+.ebYotu {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1214,7 +1214,7 @@ exports[`Menu with dropAlign renders 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #f8f8f8;
+  background: #f8f8f8;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;
@@ -1227,7 +1227,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .ksHyTq {
+  .ebYotu {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

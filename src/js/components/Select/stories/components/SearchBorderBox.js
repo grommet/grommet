@@ -59,7 +59,7 @@ const defaultStyle = css`
     width: 0;
     height: 2px;
     background: transparent;
-    transition: width .2s ease, background-color .2s ease, left .2s ease;
+    transition: width .2s ease, background .2s ease, left .2s ease;
   }
 
   ${props => props.focus &&

@@ -87,7 +87,7 @@ function getHoverIndicatorStyle(hoverIndicator, theme) {
     }
   }
   return css`
-    background-color: ${backgroundColor};
+    background: ${backgroundColor};
     color: ${theme.global.hover.textColor};
   `;
 }
@@ -138,7 +138,7 @@ const StyledButton = styled.button`
   font: inherit;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
 

@@ -4,7 +4,7 @@ import { palm, parseMetricToNum } from './mixins';
 import { colorForName, colorIsDark, getRGBA } from './colors';
 
 export const activeStyle = css`
-  background-color: ${props => props.theme.global.hover.backgroundColor};
+  background: ${props => props.theme.global.hover.backgroundColor};
   color: ${props => props.theme.global.hover.textColor};
 `;
 
@@ -26,27 +26,24 @@ export const backgroundStyle = (background, theme) => {
         color: ${color};
       `;
     } else if (background.color) {
-      const color = colorForName(background.color, theme);
-      const rgba = getRGBA(
-        color,
+      const backgroundColor = getRGBA(
+        background.color,
         background.opacity === true ? (
           theme.global.opacity.medium
         ) : (
           theme.global.opacity[background.opacity]
         )
-      );
-      if (rgba) {
-        return css`
-          background-color: ${rgba};
-          ${(!background.opacity || background.opacity !== 'weak') &&
-            `color: ${
-              colorIsDark(rgba) ?
-              theme.global.colors.darkBackground.text :
-              theme.global.colors.lightBackground.text
-            };`
-          }
-        `;
-      }
+      ) || colorForName(background.color, theme);
+      return css`
+        background: ${backgroundColor};
+        ${(!background.opacity || background.opacity !== 'weak') &&
+          `color: ${
+            background.dark || colorIsDark(backgroundColor) ?
+            theme.global.colors.darkBackground.text :
+            theme.global.colors.lightBackground.text
+          };`
+        }
+      `;
     } else if (background.dark === false) {
       return css`
         color: ${theme.global.colors.lightBackground.text};
@@ -68,7 +65,7 @@ export const backgroundStyle = (background, theme) => {
     const color = colorForName(background, theme);
     if (color) {
       return css`
-        background-color: ${color};
+        background: ${color};
         color: ${colorIsDark(color) ?
           theme.global.colors.darkBackground.text :
           theme.global.colors.lightBackground.text};
@@ -87,7 +84,7 @@ export const baseStyle = css`
   ${props => props.theme.global.colors.text &&
     `color: ${props.theme.global.colors.text};`}
   ${props => props.theme.global.colors.background &&
-    `background-color: ${props.theme.global.colors.background};`}
+    `background: ${props.theme.global.colors.background};`}
 
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -192,7 +189,7 @@ export const inputStyle = css`
   border: ${props => props.theme.global.input.border.width} solid ${props => props.theme.global.input.border.color};
   border-radius: ${props => props.theme.global.input.border.radius};
   outline: none;
-  background-color: transparent;
+  background: transparent;
   color: inherit;
   ${props => props.theme.global.input.weight && css`
     font-weight: ${props.theme.global.input.weight};

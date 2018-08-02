@@ -21,7 +21,7 @@ const desktopLayerStyle = `
 
 const StyledLayer = styled.div`
   ${baseStyle}
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -50,7 +50,7 @@ export const StyledOverlay = styled.div`
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background-color: ${props =>
+  background: ${props =>
     props.theme.layer.overlayBackgroundColor};
   pointer-events: all;
 `;

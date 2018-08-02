@@ -49,7 +49,7 @@ export const StyledRadioButtonInput = styled.input`
 
   :checked + span > span {
     left: ${props => props.theme.radioButton.size};
-    background-color: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color)};
+    background: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color)};
   }
 `;
 
@@ -61,7 +61,7 @@ export const StyledRadioButtonButton = styled.div`
   width: ${props => props.theme.radioButton.size};
   height: ${props => props.theme.radioButton.size};
   vertical-align: middle;
-  background-color: inherit;
+  background: inherit;
   border: ${props => props.theme.radioButton.border.width} solid;
   border-color: ${props => props.theme.radioButton.border.color[props.theme.dark ? 'dark' : 'light']};
   border-radius: ${props => props.theme.radioButton.border.radius};

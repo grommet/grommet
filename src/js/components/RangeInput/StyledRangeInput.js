@@ -6,7 +6,7 @@ const rangeTrackStyle = css`
   box-sizing: border-box;
   width: 100%;
   height: ${props => props.theme.global.focus.border.width};
-  background-color: ${
+  background: ${
     props => (
       props.theme.dark ? (
         props.theme.global.colors.white
@@ -25,7 +25,7 @@ const rangeThumbStyle = css`
   height: ${props => props.theme.global.spacing};
   width: ${props => props.theme.global.spacing};
   overflow: visible;
-  background-color: ${props => (props.theme.dark ? props.theme.global.colors.black : props.theme.global.colors.white)};
+  background: ${props => (props.theme.dark ? props.theme.global.colors.black : props.theme.global.colors.white)};
   -webkit-appearance: none;
   cursor: pointer;
 `;

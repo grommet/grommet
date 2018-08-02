@@ -2,7 +2,7 @@
 
 exports[`Layer dark context 1`] = `
 <div
-  class="StyledLayer__StyledContainer-iKmEpv uPUfH"
+  class="StyledLayer__StyledContainer-iKmEpv gUzzkA"
   id="non-modal-test"
 >
   This is a non-modal layer
@@ -11,7 +11,7 @@ exports[`Layer dark context 1`] = `
 
 exports[`Layer dark context 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
@@ -19,14 +19,14 @@ exports[`Layer dark context 2`] = `
 
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -42,14 +42,14 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -65,14 +65,14 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -88,14 +88,14 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -110,7 +110,7 @@ exports[`Layer dark context 2`] = `
   }
 }
 
-.uPUfH {
+.gUzzkA {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -128,7 +128,7 @@ exports[`Layer dark context 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -136,14 +136,14 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -160,14 +160,14 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jTQiSa {
+  .jTzOtn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jTQiSa {
+  .jTzOtn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -182,14 +182,14 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .klohpi {
+  .Aqlhr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .klohpi {
+  .Aqlhr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -206,14 +206,14 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUGvEe {
+  .clXSiT {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUGvEe {
+  .clXSiT {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -230,14 +230,14 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kVeDUf {
+  .dTMtOS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kVeDUf {
+  .dTMtOS {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -254,14 +254,14 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hPzoEL {
+  .iieDZB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hPzoEL {
+  .iieDZB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -278,14 +278,14 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUCTZc {
+  .cKqqFB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUCTZc {
+  .cKqqFB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -302,14 +302,14 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .eQYFNv {
+  .fnNlNr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eQYFNv {
+  .fnNlNr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -326,14 +326,14 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ilzMJx {
+  .ksXIIj {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ilzMJx {
+  .ksXIIj {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -342,14 +342,14 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .gLpEMB {
+  .ggsTLO {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .gLpEMB {
+  .ggsTLO {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -366,7 +366,7 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -375,7 +375,7 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -387,7 +387,7 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .gMMmVO {
+  .hglrkS {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -396,13 +396,13 @@ exports[`Layer dark context 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .iXjcAr {
+  .fdLikD {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iXjcAr {
+  .fdLikD {
     padding: 0;
   }
 }"
@@ -410,15 +410,15 @@ exports[`Layer dark context 2`] = `
 
 exports[`Layer full false 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="full-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv uPUfH"
+    class="StyledLayer__StyledContainer-iKmEpv gUzzkA"
     id="full-test"
   >
     This is a layer
@@ -428,20 +428,20 @@ exports[`Layer full false 1`] = `
 
 exports[`Layer full false 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -457,14 +457,14 @@ exports[`Layer full false 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -480,14 +480,14 @@ exports[`Layer full false 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -503,14 +503,14 @@ exports[`Layer full false 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -526,14 +526,14 @@ exports[`Layer full false 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -550,14 +550,14 @@ exports[`Layer full false 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jTQiSa {
+  .jTzOtn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jTQiSa {
+  .jTzOtn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -573,7 +573,7 @@ exports[`Layer full false 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -583,7 +583,7 @@ exports[`Layer full false 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -591,7 +591,7 @@ exports[`Layer full false 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -600,7 +600,7 @@ exports[`Layer full false 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -614,15 +614,15 @@ exports[`Layer full false 2`] = `
 
 exports[`Layer full horizontal 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="full-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv klohpi"
+    class="StyledLayer__StyledContainer-iKmEpv Aqlhr"
     id="full-test"
   >
     This is a layer
@@ -632,20 +632,20 @@ exports[`Layer full horizontal 1`] = `
 
 exports[`Layer full horizontal 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -661,14 +661,14 @@ exports[`Layer full horizontal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -684,14 +684,14 @@ exports[`Layer full horizontal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -707,14 +707,14 @@ exports[`Layer full horizontal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -730,14 +730,14 @@ exports[`Layer full horizontal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -754,14 +754,14 @@ exports[`Layer full horizontal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jTQiSa {
+  .jTzOtn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jTQiSa {
+  .jTzOtn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -776,14 +776,14 @@ exports[`Layer full horizontal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .klohpi {
+  .Aqlhr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .klohpi {
+  .Aqlhr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -801,7 +801,7 @@ exports[`Layer full horizontal 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -811,7 +811,7 @@ exports[`Layer full horizontal 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -819,7 +819,7 @@ exports[`Layer full horizontal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -828,7 +828,7 @@ exports[`Layer full horizontal 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -842,15 +842,15 @@ exports[`Layer full horizontal 2`] = `
 
 exports[`Layer full true 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="full-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv jTQiSa"
+    class="StyledLayer__StyledContainer-iKmEpv jTzOtn"
     id="full-test"
   >
     This is a layer
@@ -860,20 +860,20 @@ exports[`Layer full true 1`] = `
 
 exports[`Layer full true 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -889,14 +889,14 @@ exports[`Layer full true 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -912,14 +912,14 @@ exports[`Layer full true 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -935,14 +935,14 @@ exports[`Layer full true 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -958,14 +958,14 @@ exports[`Layer full true 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -982,14 +982,14 @@ exports[`Layer full true 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jTQiSa {
+  .jTzOtn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jTQiSa {
+  .jTzOtn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1005,7 +1005,7 @@ exports[`Layer full true 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1015,7 +1015,7 @@ exports[`Layer full true 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -1023,7 +1023,7 @@ exports[`Layer full true 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -1032,7 +1032,7 @@ exports[`Layer full true 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -1046,15 +1046,15 @@ exports[`Layer full true 2`] = `
 
 exports[`Layer full vertical 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="full-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv cUGvEe"
+    class="StyledLayer__StyledContainer-iKmEpv clXSiT"
     id="full-test"
   >
     This is a layer
@@ -1064,20 +1064,20 @@ exports[`Layer full vertical 1`] = `
 
 exports[`Layer full vertical 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1093,14 +1093,14 @@ exports[`Layer full vertical 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1116,14 +1116,14 @@ exports[`Layer full vertical 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1139,14 +1139,14 @@ exports[`Layer full vertical 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1162,14 +1162,14 @@ exports[`Layer full vertical 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1186,14 +1186,14 @@ exports[`Layer full vertical 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jTQiSa {
+  .jTzOtn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jTQiSa {
+  .jTzOtn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1208,14 +1208,14 @@ exports[`Layer full vertical 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .klohpi {
+  .Aqlhr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .klohpi {
+  .Aqlhr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1232,14 +1232,14 @@ exports[`Layer full vertical 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUGvEe {
+  .clXSiT {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUGvEe {
+  .clXSiT {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1257,7 +1257,7 @@ exports[`Layer full vertical 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1267,7 +1267,7 @@ exports[`Layer full vertical 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -1275,7 +1275,7 @@ exports[`Layer full vertical 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -1284,7 +1284,7 @@ exports[`Layer full vertical 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -1298,15 +1298,15 @@ exports[`Layer full vertical 2`] = `
 
 exports[`Layer hidden 1`] = `
 <div
-  class="StyledLayer-EylWz gMMmVO"
+  class="StyledLayer-EylWz hglrkS"
   id="hidden-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv ilzMJx"
+    class="StyledLayer__StyledContainer-iKmEpv ksXIIj"
     id="hidden-test"
   >
     This is a layer
@@ -1316,20 +1316,20 @@ exports[`Layer hidden 1`] = `
 
 exports[`Layer hidden 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1345,14 +1345,14 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1368,14 +1368,14 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1391,14 +1391,14 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1414,14 +1414,14 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1438,14 +1438,14 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jTQiSa {
+  .jTzOtn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jTQiSa {
+  .jTzOtn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1460,14 +1460,14 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .klohpi {
+  .Aqlhr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .klohpi {
+  .Aqlhr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1484,14 +1484,14 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUGvEe {
+  .clXSiT {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUGvEe {
+  .clXSiT {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1508,14 +1508,14 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kVeDUf {
+  .dTMtOS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kVeDUf {
+  .dTMtOS {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1532,14 +1532,14 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hPzoEL {
+  .iieDZB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hPzoEL {
+  .iieDZB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1556,14 +1556,14 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUCTZc {
+  .cKqqFB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUCTZc {
+  .cKqqFB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1580,14 +1580,14 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .eQYFNv {
+  .fnNlNr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eQYFNv {
+  .fnNlNr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1604,14 +1604,14 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ilzMJx {
+  .ksXIIj {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ilzMJx {
+  .ksXIIj {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1622,7 +1622,7 @@ exports[`Layer hidden 2`] = `
 
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -1631,7 +1631,7 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -1642,7 +1642,7 @@ exports[`Layer hidden 2`] = `
   }
 }
 
-.gMMmVO {
+.hglrkS {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1652,7 +1652,7 @@ exports[`Layer hidden 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -1664,7 +1664,7 @@ exports[`Layer hidden 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .gMMmVO {
+  .hglrkS {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -1675,15 +1675,15 @@ exports[`Layer hidden 2`] = `
 
 exports[`Layer hidden 3`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="hidden-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv uPUfH"
+    class="StyledLayer__StyledContainer-iKmEpv gUzzkA"
     id="hidden-test"
   >
     This is a layer
@@ -1693,20 +1693,20 @@ exports[`Layer hidden 3`] = `
 
 exports[`Layer hidden 4`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1722,14 +1722,14 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1745,14 +1745,14 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1768,14 +1768,14 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1791,14 +1791,14 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1815,14 +1815,14 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jTQiSa {
+  .jTzOtn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jTQiSa {
+  .jTzOtn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1837,14 +1837,14 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .klohpi {
+  .Aqlhr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .klohpi {
+  .Aqlhr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1861,14 +1861,14 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUGvEe {
+  .clXSiT {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUGvEe {
+  .clXSiT {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1885,14 +1885,14 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kVeDUf {
+  .dTMtOS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kVeDUf {
+  .dTMtOS {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1909,14 +1909,14 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hPzoEL {
+  .iieDZB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hPzoEL {
+  .iieDZB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1933,14 +1933,14 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUCTZc {
+  .cKqqFB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUCTZc {
+  .cKqqFB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1957,14 +1957,14 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .eQYFNv {
+  .fnNlNr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eQYFNv {
+  .fnNlNr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1981,14 +1981,14 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ilzMJx {
+  .ksXIIj {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ilzMJx {
+  .ksXIIj {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -1998,7 +1998,7 @@ exports[`Layer hidden 4`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -2008,7 +2008,7 @@ exports[`Layer hidden 4`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -2016,7 +2016,7 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -2025,7 +2025,7 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -2037,7 +2037,7 @@ exports[`Layer hidden 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .gMMmVO {
+  .hglrkS {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -2079,15 +2079,15 @@ exports[`Layer is accessible 3`] = `
 
 exports[`Layer margin large 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="margin-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv eQYFNv"
+    class="StyledLayer__StyledContainer-iKmEpv fnNlNr"
     id="margin-test"
   >
     This is a layer
@@ -2097,20 +2097,20 @@ exports[`Layer margin large 1`] = `
 
 exports[`Layer margin large 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2126,14 +2126,14 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2149,14 +2149,14 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2172,14 +2172,14 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2195,14 +2195,14 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2219,14 +2219,14 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jTQiSa {
+  .jTzOtn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jTQiSa {
+  .jTzOtn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2241,14 +2241,14 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .klohpi {
+  .Aqlhr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .klohpi {
+  .Aqlhr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2265,14 +2265,14 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUGvEe {
+  .clXSiT {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUGvEe {
+  .clXSiT {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2289,14 +2289,14 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kVeDUf {
+  .dTMtOS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kVeDUf {
+  .dTMtOS {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2313,14 +2313,14 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hPzoEL {
+  .iieDZB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hPzoEL {
+  .iieDZB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2337,14 +2337,14 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUCTZc {
+  .cKqqFB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUCTZc {
+  .cKqqFB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2361,14 +2361,14 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .eQYFNv {
+  .fnNlNr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eQYFNv {
+  .fnNlNr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2386,7 +2386,7 @@ exports[`Layer margin large 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -2396,7 +2396,7 @@ exports[`Layer margin large 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -2404,7 +2404,7 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -2413,7 +2413,7 @@ exports[`Layer margin large 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -2427,15 +2427,15 @@ exports[`Layer margin large 2`] = `
 
 exports[`Layer margin medium 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="margin-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv cUCTZc"
+    class="StyledLayer__StyledContainer-iKmEpv cKqqFB"
     id="margin-test"
   >
     This is a layer
@@ -2445,20 +2445,20 @@ exports[`Layer margin medium 1`] = `
 
 exports[`Layer margin medium 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2474,14 +2474,14 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2497,14 +2497,14 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2520,14 +2520,14 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2543,14 +2543,14 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2567,14 +2567,14 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jTQiSa {
+  .jTzOtn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jTQiSa {
+  .jTzOtn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2589,14 +2589,14 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .klohpi {
+  .Aqlhr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .klohpi {
+  .Aqlhr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2613,14 +2613,14 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUGvEe {
+  .clXSiT {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUGvEe {
+  .clXSiT {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2637,14 +2637,14 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kVeDUf {
+  .dTMtOS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kVeDUf {
+  .dTMtOS {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2661,14 +2661,14 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hPzoEL {
+  .iieDZB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hPzoEL {
+  .iieDZB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2685,14 +2685,14 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUCTZc {
+  .cKqqFB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUCTZc {
+  .cKqqFB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2710,7 +2710,7 @@ exports[`Layer margin medium 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -2720,7 +2720,7 @@ exports[`Layer margin medium 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -2728,7 +2728,7 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -2737,7 +2737,7 @@ exports[`Layer margin medium 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -2751,15 +2751,15 @@ exports[`Layer margin medium 2`] = `
 
 exports[`Layer margin none 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="margin-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv uPUfH"
+    class="StyledLayer__StyledContainer-iKmEpv gUzzkA"
     id="margin-test"
   >
     This is a layer
@@ -2769,20 +2769,20 @@ exports[`Layer margin none 1`] = `
 
 exports[`Layer margin none 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2798,14 +2798,14 @@ exports[`Layer margin none 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2821,14 +2821,14 @@ exports[`Layer margin none 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2844,14 +2844,14 @@ exports[`Layer margin none 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2867,14 +2867,14 @@ exports[`Layer margin none 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2891,14 +2891,14 @@ exports[`Layer margin none 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jTQiSa {
+  .jTzOtn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jTQiSa {
+  .jTzOtn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2913,14 +2913,14 @@ exports[`Layer margin none 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .klohpi {
+  .Aqlhr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .klohpi {
+  .Aqlhr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2937,14 +2937,14 @@ exports[`Layer margin none 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUGvEe {
+  .clXSiT {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUGvEe {
+  .clXSiT {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -2962,7 +2962,7 @@ exports[`Layer margin none 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -2972,7 +2972,7 @@ exports[`Layer margin none 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -2980,7 +2980,7 @@ exports[`Layer margin none 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -2989,7 +2989,7 @@ exports[`Layer margin none 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -3003,15 +3003,15 @@ exports[`Layer margin none 2`] = `
 
 exports[`Layer margin small 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="margin-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv hPzoEL"
+    class="StyledLayer__StyledContainer-iKmEpv iieDZB"
     id="margin-test"
   >
     This is a layer
@@ -3021,20 +3021,20 @@ exports[`Layer margin small 1`] = `
 
 exports[`Layer margin small 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3050,14 +3050,14 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3073,14 +3073,14 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3096,14 +3096,14 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3119,14 +3119,14 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3143,14 +3143,14 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jTQiSa {
+  .jTzOtn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jTQiSa {
+  .jTzOtn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3165,14 +3165,14 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .klohpi {
+  .Aqlhr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .klohpi {
+  .Aqlhr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3189,14 +3189,14 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUGvEe {
+  .clXSiT {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUGvEe {
+  .clXSiT {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3213,14 +3213,14 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kVeDUf {
+  .dTMtOS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kVeDUf {
+  .dTMtOS {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3237,14 +3237,14 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hPzoEL {
+  .iieDZB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hPzoEL {
+  .iieDZB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3262,7 +3262,7 @@ exports[`Layer margin small 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -3272,7 +3272,7 @@ exports[`Layer margin small 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -3280,7 +3280,7 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -3289,7 +3289,7 @@ exports[`Layer margin small 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -3303,15 +3303,15 @@ exports[`Layer margin small 2`] = `
 
 exports[`Layer margin xsmall 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="margin-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv kVeDUf"
+    class="StyledLayer__StyledContainer-iKmEpv dTMtOS"
     id="margin-test"
   >
     This is a layer
@@ -3321,20 +3321,20 @@ exports[`Layer margin xsmall 1`] = `
 
 exports[`Layer margin xsmall 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3350,14 +3350,14 @@ exports[`Layer margin xsmall 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3373,14 +3373,14 @@ exports[`Layer margin xsmall 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3396,14 +3396,14 @@ exports[`Layer margin xsmall 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3419,14 +3419,14 @@ exports[`Layer margin xsmall 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3443,14 +3443,14 @@ exports[`Layer margin xsmall 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jTQiSa {
+  .jTzOtn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jTQiSa {
+  .jTzOtn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3465,14 +3465,14 @@ exports[`Layer margin xsmall 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .klohpi {
+  .Aqlhr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .klohpi {
+  .Aqlhr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3489,14 +3489,14 @@ exports[`Layer margin xsmall 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUGvEe {
+  .clXSiT {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUGvEe {
+  .clXSiT {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3513,14 +3513,14 @@ exports[`Layer margin xsmall 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kVeDUf {
+  .dTMtOS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kVeDUf {
+  .dTMtOS {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3538,7 +3538,7 @@ exports[`Layer margin xsmall 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -3548,7 +3548,7 @@ exports[`Layer margin xsmall 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -3556,7 +3556,7 @@ exports[`Layer margin xsmall 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -3565,7 +3565,7 @@ exports[`Layer margin xsmall 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -3579,7 +3579,7 @@ exports[`Layer margin xsmall 2`] = `
 
 exports[`Layer non-modal 1`] = `
 <div
-  class="StyledLayer__StyledContainer-iKmEpv uPUfH"
+  class="StyledLayer__StyledContainer-iKmEpv gUzzkA"
   id="non-modal-test"
 >
   This is a non-modal layer
@@ -3588,7 +3588,7 @@ exports[`Layer non-modal 1`] = `
 
 exports[`Layer non-modal 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
@@ -3596,14 +3596,14 @@ exports[`Layer non-modal 2`] = `
 
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3619,14 +3619,14 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3642,14 +3642,14 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3665,14 +3665,14 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3687,7 +3687,7 @@ exports[`Layer non-modal 2`] = `
   }
 }
 
-.uPUfH {
+.gUzzkA {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -3705,7 +3705,7 @@ exports[`Layer non-modal 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   color: #444444;
   outline: none;
   pointer-events: all;
@@ -3713,14 +3713,14 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3737,14 +3737,14 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jTQiSa {
+  .jTzOtn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jTQiSa {
+  .jTzOtn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3759,14 +3759,14 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .klohpi {
+  .Aqlhr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .klohpi {
+  .Aqlhr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3783,14 +3783,14 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUGvEe {
+  .clXSiT {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUGvEe {
+  .clXSiT {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3807,14 +3807,14 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kVeDUf {
+  .dTMtOS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kVeDUf {
+  .dTMtOS {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3831,14 +3831,14 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hPzoEL {
+  .iieDZB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hPzoEL {
+  .iieDZB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3855,14 +3855,14 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUCTZc {
+  .cKqqFB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUCTZc {
+  .cKqqFB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3879,14 +3879,14 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .eQYFNv {
+  .fnNlNr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eQYFNv {
+  .fnNlNr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3903,14 +3903,14 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ilzMJx {
+  .ksXIIj {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ilzMJx {
+  .ksXIIj {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3919,14 +3919,14 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .gLpEMB {
+  .ggsTLO {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .gLpEMB {
+  .ggsTLO {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -3943,7 +3943,7 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -3952,7 +3952,7 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -3964,7 +3964,7 @@ exports[`Layer non-modal 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .gMMmVO {
+  .hglrkS {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -3975,15 +3975,15 @@ exports[`Layer non-modal 2`] = `
 
 exports[`Layer plain 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="plain-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv gLpEMB"
+    class="StyledLayer__StyledContainer-iKmEpv ggsTLO"
     id="plain-test"
   >
     This is a plain layer
@@ -3993,20 +3993,20 @@ exports[`Layer plain 1`] = `
 
 exports[`Layer plain 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4022,14 +4022,14 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4045,14 +4045,14 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4068,14 +4068,14 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4091,14 +4091,14 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4115,14 +4115,14 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jTQiSa {
+  .jTzOtn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jTQiSa {
+  .jTzOtn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4137,14 +4137,14 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .klohpi {
+  .Aqlhr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .klohpi {
+  .Aqlhr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4161,14 +4161,14 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUGvEe {
+  .clXSiT {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUGvEe {
+  .clXSiT {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4185,14 +4185,14 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kVeDUf {
+  .dTMtOS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kVeDUf {
+  .dTMtOS {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4209,14 +4209,14 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hPzoEL {
+  .iieDZB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hPzoEL {
+  .iieDZB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4233,14 +4233,14 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cUCTZc {
+  .cKqqFB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cUCTZc {
+  .cKqqFB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4257,14 +4257,14 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .eQYFNv {
+  .fnNlNr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eQYFNv {
+  .fnNlNr {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4281,14 +4281,14 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ilzMJx {
+  .ksXIIj {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ilzMJx {
+  .ksXIIj {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4297,14 +4297,14 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .gLpEMB {
+  .ggsTLO {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .gLpEMB {
+  .ggsTLO {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4322,7 +4322,7 @@ exports[`Layer plain 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -4332,7 +4332,7 @@ exports[`Layer plain 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -4340,7 +4340,7 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -4349,7 +4349,7 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -4361,7 +4361,7 @@ exports[`Layer plain 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .gMMmVO {
+  .hglrkS {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -4372,15 +4372,15 @@ exports[`Layer plain 2`] = `
 
 exports[`Layer position bottom 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="position-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv fHzAaC"
+    class="StyledLayer__StyledContainer-iKmEpv lkZEjc"
     id="position-test"
   >
     This is a layer
@@ -4390,20 +4390,20 @@ exports[`Layer position bottom 1`] = `
 
 exports[`Layer position bottom 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4419,14 +4419,14 @@ exports[`Layer position bottom 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4443,7 +4443,7 @@ exports[`Layer position bottom 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -4453,7 +4453,7 @@ exports[`Layer position bottom 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -4461,7 +4461,7 @@ exports[`Layer position bottom 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -4470,7 +4470,7 @@ exports[`Layer position bottom 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -4484,15 +4484,15 @@ exports[`Layer position bottom 2`] = `
 
 exports[`Layer position center 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="position-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv uPUfH"
+    class="StyledLayer__StyledContainer-iKmEpv gUzzkA"
     id="position-test"
   >
     This is a layer
@@ -4502,20 +4502,20 @@ exports[`Layer position center 1`] = `
 
 exports[`Layer position center 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4531,14 +4531,14 @@ exports[`Layer position center 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4554,14 +4554,14 @@ exports[`Layer position center 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4577,14 +4577,14 @@ exports[`Layer position center 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4600,14 +4600,14 @@ exports[`Layer position center 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .uPUfH {
+  .gUzzkA {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .uPUfH {
+  .gUzzkA {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4625,7 +4625,7 @@ exports[`Layer position center 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -4635,7 +4635,7 @@ exports[`Layer position center 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -4643,7 +4643,7 @@ exports[`Layer position center 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -4652,7 +4652,7 @@ exports[`Layer position center 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -4666,15 +4666,15 @@ exports[`Layer position center 2`] = `
 
 exports[`Layer position left 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="position-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv jAtQAK"
+    class="StyledLayer__StyledContainer-iKmEpv ccndgp"
     id="position-test"
   >
     This is a layer
@@ -4684,20 +4684,20 @@ exports[`Layer position left 1`] = `
 
 exports[`Layer position left 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4713,14 +4713,14 @@ exports[`Layer position left 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4736,14 +4736,14 @@ exports[`Layer position left 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4760,7 +4760,7 @@ exports[`Layer position left 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -4770,7 +4770,7 @@ exports[`Layer position left 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -4778,7 +4778,7 @@ exports[`Layer position left 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -4787,7 +4787,7 @@ exports[`Layer position left 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -4801,15 +4801,15 @@ exports[`Layer position left 2`] = `
 
 exports[`Layer position right 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="position-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv ciuoRf"
+    class="StyledLayer__StyledContainer-iKmEpv hHVYJf"
     id="position-test"
   >
     This is a layer
@@ -4819,20 +4819,20 @@ exports[`Layer position right 1`] = `
 
 exports[`Layer position right 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4848,14 +4848,14 @@ exports[`Layer position right 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fHzAaC {
+  .lkZEjc {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fHzAaC {
+  .lkZEjc {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4871,14 +4871,14 @@ exports[`Layer position right 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jAtQAK {
+  .ccndgp {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAtQAK {
+  .ccndgp {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4894,14 +4894,14 @@ exports[`Layer position right 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ciuoRf {
+  .hHVYJf {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ciuoRf {
+  .hHVYJf {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -4918,7 +4918,7 @@ exports[`Layer position right 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -4928,7 +4928,7 @@ exports[`Layer position right 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -4936,7 +4936,7 @@ exports[`Layer position right 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -4945,7 +4945,7 @@ exports[`Layer position right 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -4959,15 +4959,15 @@ exports[`Layer position right 2`] = `
 
 exports[`Layer position top 1`] = `
 <div
-  class="StyledLayer-EylWz hklOtd"
+  class="StyledLayer-EylWz dMQZDi"
   id="position-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-fQvaYh fBhMMM"
+    class="StyledLayer__StyledOverlay-fQvaYh emqLMJ"
   />
   <div
-    class="StyledLayer__StyledContainer-iKmEpv iYEPRh"
+    class="StyledLayer__StyledContainer-iKmEpv dzStBB"
     id="position-test"
   >
     This is a layer
@@ -4977,20 +4977,20 @@ exports[`Layer position top 1`] = `
 
 exports[`Layer position top 2`] = `
 "@media only screen and (min-width:700px) {
-  .fBhMMM {
+  .emqLMJ {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iYEPRh {
+  .dzStBB {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iYEPRh {
+  .dzStBB {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -5007,7 +5007,7 @@ exports[`Layer position top 2`] = `
 
 
 
-.hklOtd {
+.dMQZDi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -5017,7 +5017,7 @@ exports[`Layer position top 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: unset;
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
@@ -5025,7 +5025,7 @@ exports[`Layer position top 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hklOtd {
+  .dMQZDi {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -5034,7 +5034,7 @@ exports[`Layer position top 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hklOtd {
+  .dMQZDi {
     position: fixed;
     top: 0px;
     left: 0px;

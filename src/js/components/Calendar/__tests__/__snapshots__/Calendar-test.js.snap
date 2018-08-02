@@ -160,7 +160,7 @@ exports[`Calendar date renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -180,7 +180,7 @@ exports[`Calendar date renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -190,7 +190,7 @@ exports[`Calendar date renders 1`] = `
 }
 
 .c14:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -203,19 +203,19 @@ exports[`Calendar date renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
 .c17:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -297,7 +297,7 @@ exports[`Calendar date renders 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #865CD6;
+  background: #865CD6;
   color: #FFFFFF;
   font-weight: bold;
 }
@@ -1576,7 +1576,7 @@ exports[`Calendar dates renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -1596,7 +1596,7 @@ exports[`Calendar dates renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -1606,7 +1606,7 @@ exports[`Calendar dates renders 1`] = `
 }
 
 .c14:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -1619,19 +1619,19 @@ exports[`Calendar dates renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
 .c18:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -1713,7 +1713,7 @@ exports[`Calendar dates renders 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #865CD6;
+  background: #865CD6;
   color: #FFFFFF;
   font-weight: bold;
 }
@@ -2992,7 +2992,7 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -3012,7 +3012,7 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -3022,7 +3022,7 @@ exports[`Calendar disabled renders 1`] = `
 }
 
 .c14:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -3035,19 +3035,19 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
 .c18:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -3129,7 +3129,7 @@ exports[`Calendar disabled renders 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #865CD6;
+  background: #865CD6;
   color: #FFFFFF;
   font-weight: bold;
 }
@@ -4408,7 +4408,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -4428,7 +4428,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -4438,7 +4438,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 }
 
 .c14:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -4451,19 +4451,19 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
 .c17:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -4545,7 +4545,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #865CD6;
+  background: #865CD6;
   color: #FFFFFF;
   font-weight: bold;
 }
@@ -6818,7 +6818,7 @@ exports[`Calendar renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -6838,7 +6838,7 @@ exports[`Calendar renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -6848,7 +6848,7 @@ exports[`Calendar renders 1`] = `
 }
 
 .c14:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -6861,19 +6861,19 @@ exports[`Calendar renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
 .c17:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -6955,7 +6955,7 @@ exports[`Calendar renders 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #865CD6;
+  background: #865CD6;
   color: #FFFFFF;
   font-weight: bold;
 }
@@ -8268,7 +8268,7 @@ exports[`Calendar size renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -8288,7 +8288,7 @@ exports[`Calendar size renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -8298,7 +8298,7 @@ exports[`Calendar size renders 1`] = `
 }
 
 .c14:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -8311,19 +8311,19 @@ exports[`Calendar size renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
 .c17:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -8415,7 +8415,7 @@ exports[`Calendar size renders 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background-color: #865CD6;
+  background: #865CD6;
   color: #FFFFFF;
   font-weight: bold;
 }
@@ -8470,7 +8470,7 @@ exports[`Calendar size renders 1`] = `
   align-items: center;
   width: 27.428571428571427px;
   height: 27.428571428571427px;
-  background-color: #865CD6;
+  background: #865CD6;
   color: #FFFFFF;
   font-weight: bold;
 }
@@ -8525,7 +8525,7 @@ exports[`Calendar size renders 1`] = `
   align-items: center;
   width: 109.71428571428571px;
   height: 109.71428571428571px;
-  background-color: #865CD6;
+  background: #865CD6;
   color: #FFFFFF;
   font-weight: bold;
 }

@@ -270,7 +270,7 @@ exports[`Carousel basic 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -296,7 +296,7 @@ exports[`Carousel basic 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -314,7 +314,7 @@ exports[`Carousel basic 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -330,7 +330,7 @@ exports[`Carousel basic 1`] = `
 }
 
 .c17:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -724,7 +724,7 @@ exports[`Carousel navigate 1`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY jrGxir"
+            class="StyledButton-qbvYY cfRamP"
             disabled=""
             type="button"
           >
@@ -758,7 +758,7 @@ exports[`Carousel navigate 1`] = `
             class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-qbvYY gdtSRN"
+              class="StyledButton-qbvYY jZaTeL"
               icon="[object Object]"
               type="button"
             >
@@ -785,7 +785,7 @@ exports[`Carousel navigate 1`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY gdtSRN"
+              class="StyledButton-qbvYY jZaTeL"
               icon="[object Object]"
               type="button"
             >
@@ -816,7 +816,7 @@ exports[`Carousel navigate 1`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY hLxYwU"
+            class="StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
@@ -898,7 +898,7 @@ exports[`Carousel navigate 2`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY hLxYwU"
+            class="StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
@@ -931,7 +931,7 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-qbvYY gdtSRN"
+              class="StyledButton-qbvYY jZaTeL"
               icon="[object Object]"
               type="button"
             >
@@ -957,7 +957,7 @@ exports[`Carousel navigate 2`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY gdtSRN"
+              class="StyledButton-qbvYY jZaTeL"
               icon="[object Object]"
               type="button"
             >
@@ -989,7 +989,7 @@ exports[`Carousel navigate 2`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY jrGxir"
+            class="StyledButton-qbvYY cfRamP"
             disabled=""
             type="button"
           >
@@ -1072,7 +1072,7 @@ exports[`Carousel navigate 3`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY jrGxir"
+            class="StyledButton-qbvYY cfRamP"
             disabled=""
             type="button"
           >
@@ -1106,7 +1106,7 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-qbvYY gdtSRN"
+              class="StyledButton-qbvYY jZaTeL"
               icon="[object Object]"
               type="button"
             >
@@ -1133,7 +1133,7 @@ exports[`Carousel navigate 3`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY gdtSRN"
+              class="StyledButton-qbvYY jZaTeL"
               icon="[object Object]"
               type="button"
             >
@@ -1164,7 +1164,7 @@ exports[`Carousel navigate 3`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY hLxYwU"
+            class="StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
@@ -1245,7 +1245,7 @@ exports[`Carousel play 1`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY jrGxir"
+            class="StyledButton-qbvYY cfRamP"
             disabled=""
             type="button"
           >
@@ -1279,7 +1279,7 @@ exports[`Carousel play 1`] = `
             class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-qbvYY gdtSRN"
+              class="StyledButton-qbvYY jZaTeL"
               icon="[object Object]"
               type="button"
             >
@@ -1306,7 +1306,7 @@ exports[`Carousel play 1`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY gdtSRN"
+              class="StyledButton-qbvYY jZaTeL"
               icon="[object Object]"
               type="button"
             >
@@ -1337,7 +1337,7 @@ exports[`Carousel play 1`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY hLxYwU"
+            class="StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
@@ -1418,7 +1418,7 @@ exports[`Carousel play 2`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY hLxYwU"
+            class="StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
@@ -1451,7 +1451,7 @@ exports[`Carousel play 2`] = `
             class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-qbvYY gdtSRN"
+              class="StyledButton-qbvYY jZaTeL"
               icon="[object Object]"
               type="button"
             >
@@ -1477,7 +1477,7 @@ exports[`Carousel play 2`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY gdtSRN"
+              class="StyledButton-qbvYY jZaTeL"
               icon="[object Object]"
               type="button"
             >
@@ -1509,7 +1509,7 @@ exports[`Carousel play 2`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY jrGxir"
+            class="StyledButton-qbvYY cfRamP"
             disabled=""
             type="button"
           >

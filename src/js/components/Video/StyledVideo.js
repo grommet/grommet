@@ -49,7 +49,7 @@ const headStyle = css`
     content: '';
     height: 100%;
     width: ${props => props.theme.global.edgeSize.xsmall};
-    background-color: ${props => colorForName('light-5', props.theme)};
+    background: ${props => colorForName('light-5', props.theme)};
     position: absolute;
     left: ${props => `${props.value}%`};
   }

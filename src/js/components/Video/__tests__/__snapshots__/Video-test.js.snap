@@ -57,7 +57,7 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(68,68,68,0.8);
+  background: #444444;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -207,7 +207,7 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -217,7 +217,7 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -230,7 +230,7 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -660,7 +660,7 @@ exports[`Video controls renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(68,68,68,0.8);
+  background: #444444;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -835,7 +835,7 @@ exports[`Video controls renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -845,7 +845,7 @@ exports[`Video controls renders 1`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -858,7 +858,7 @@ exports[`Video controls renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -1442,7 +1442,7 @@ exports[`Video fit renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(68,68,68,0.8);
+  background: #444444;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -1592,7 +1592,7 @@ exports[`Video fit renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -1602,7 +1602,7 @@ exports[`Video fit renders 1`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -1615,7 +1615,7 @@ exports[`Video fit renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -2203,7 +2203,7 @@ exports[`Video loop renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(68,68,68,0.8);
+  background: #444444;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -2353,7 +2353,7 @@ exports[`Video loop renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -2363,7 +2363,7 @@ exports[`Video loop renders 1`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -2376,7 +2376,7 @@ exports[`Video loop renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -2774,7 +2774,7 @@ exports[`Video mute renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(68,68,68,0.8);
+  background: #444444;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -2924,7 +2924,7 @@ exports[`Video mute renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -2934,7 +2934,7 @@ exports[`Video mute renders 1`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -2947,7 +2947,7 @@ exports[`Video mute renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -3345,7 +3345,7 @@ exports[`Video renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(68,68,68,0.8);
+  background: #444444;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -3495,7 +3495,7 @@ exports[`Video renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -3505,7 +3505,7 @@ exports[`Video renders 1`] = `
 }
 
 .c5:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -3518,7 +3518,7 @@ exports[`Video renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;

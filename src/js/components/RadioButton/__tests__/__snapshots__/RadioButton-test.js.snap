@@ -84,7 +84,7 @@ exports[`RadioButton checked renders 1`] = `
 
 .c3:checked + span > span {
   left: 24px;
-  background-color: #865CD6;
+  background: #865CD6;
 }
 
 .c4 {
@@ -95,7 +95,7 @@ exports[`RadioButton checked renders 1`] = `
   width: 24px;
   height: 24px;
   vertical-align: middle;
-  background-color: inherit;
+  background: inherit;
   border: 2px solid;
   border-color: rgba(0,0,0,0.15);
   border-radius: 100%;
@@ -235,7 +235,7 @@ exports[`RadioButton disabled renders 1`] = `
 
 .c3:checked + span > span {
   left: 24px;
-  background-color: #865CD6;
+  background: #865CD6;
 }
 
 .c4 {
@@ -246,7 +246,7 @@ exports[`RadioButton disabled renders 1`] = `
   width: 24px;
   height: 24px;
   vertical-align: middle;
-  background-color: inherit;
+  background: inherit;
   border: 2px solid;
   border-color: rgba(0,0,0,0.15);
   border-radius: 100%;
@@ -414,7 +414,7 @@ exports[`RadioButton label renders 1`] = `
 
 .c3:checked + span > span {
   left: 24px;
-  background-color: #865CD6;
+  background: #865CD6;
 }
 
 .c4 {
@@ -425,7 +425,7 @@ exports[`RadioButton label renders 1`] = `
   width: 24px;
   height: 24px;
   vertical-align: middle;
-  background-color: inherit;
+  background: inherit;
   border: 2px solid;
   border-color: rgba(0,0,0,0.15);
   border-radius: 100%;
@@ -594,7 +594,7 @@ exports[`RadioButton renders 1`] = `
 
 .c3:checked + span > span {
   left: 24px;
-  background-color: #865CD6;
+  background: #865CD6;
 }
 
 .c4 {
@@ -605,7 +605,7 @@ exports[`RadioButton renders 1`] = `
   width: 24px;
   height: 24px;
   vertical-align: middle;
-  background-color: inherit;
+  background: inherit;
   border: 2px solid;
   border-color: rgba(0,0,0,0.15);
   border-radius: 100%;
