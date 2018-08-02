@@ -123,7 +123,7 @@ exports[`RangeSelector basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.4);
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -455,7 +455,7 @@ exports[`RangeSelector color 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(253,111,255,0.4);
+  background: #FD6FFF;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -787,7 +787,7 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.4);
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -891,7 +891,7 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.4);
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -1317,7 +1317,7 @@ exports[`RangeSelector handle keyboard 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy hIUlFR"
+      class="StyledBox-YaZNy esjXMJ"
       style="cursor: ew-resize;"
     />
     <div
@@ -1392,7 +1392,7 @@ exports[`RangeSelector handle mouse 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy hIUlFR"
+      class="StyledBox-YaZNy esjXMJ"
       style="cursor: ew-resize;"
     />
     <div
@@ -1552,7 +1552,7 @@ exports[`RangeSelector invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.4);
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -1572,7 +1572,7 @@ exports[`RangeSelector invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(204,204,204,0.4);
+  background: #CCCCCC;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2029,7 +2029,7 @@ exports[`RangeSelector max 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.4);
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -2361,7 +2361,7 @@ exports[`RangeSelector min 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.4);
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -2693,7 +2693,7 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.4);
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -2713,27 +2713,7 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.1);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background-color: rgba(134,92,214,0.8);
-  color: #FFFFFF;
+  background: #865CD6;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2830,18 +2810,6 @@ exports[`RangeSelector opacity 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c8 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c8 {
     padding: 0;
   }
 }
@@ -3129,7 +3097,7 @@ exports[`RangeSelector opacity 1`] = `
       </div>
     </div>
     <div
-      className="c8"
+      className="c7"
       style={
         Object {
           "cursor": "ew-resize",
@@ -3315,7 +3283,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.4);
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -3355,7 +3323,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.4);
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -3395,7 +3363,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.4);
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -3435,7 +3403,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.4);
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -3475,7 +3443,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.4);
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -4416,7 +4384,7 @@ exports[`RangeSelector size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.4);
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -5426,7 +5394,7 @@ exports[`RangeSelector step 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.4);
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;

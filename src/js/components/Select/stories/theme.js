@@ -48,7 +48,7 @@ export default {
     extend: props => `
       input:checked + div {
         border-color: ${colorForName('brand', props.theme)};
-        background-color: ${colorForName('brand', props.theme)};
+        background: ${colorForName('brand', props.theme)};
 
         > svg {
           stroke: ${colorForName('white', props.theme)};

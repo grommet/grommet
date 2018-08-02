@@ -63,7 +63,7 @@ exports[`CheckBox checked renders 1`] = `
 
 .c3:checked + span > span {
   left: 24px;
-  background-color: #865CD6;
+  background: #865CD6;
 }
 
 .c4 {
@@ -74,7 +74,7 @@ exports[`CheckBox checked renders 1`] = `
   width: 24px;
   height: 24px;
   vertical-align: middle;
-  background-color: inherit;
+  background: inherit;
   border: 2px solid;
   border-color: rgba(0,0,0,0.15);
   border-radius: 4px;
@@ -195,7 +195,7 @@ exports[`CheckBox disabled renders 1`] = `
 
 .c3:checked + span > span {
   left: 24px;
-  background-color: #865CD6;
+  background: #865CD6;
 }
 
 .c4 {
@@ -206,7 +206,7 @@ exports[`CheckBox disabled renders 1`] = `
   width: 24px;
   height: 24px;
   vertical-align: middle;
-  background-color: inherit;
+  background: inherit;
   border: 2px solid;
   border-color: rgba(0,0,0,0.15);
   border-radius: 4px;
@@ -360,7 +360,7 @@ exports[`CheckBox label renders 1`] = `
 
 .c3:checked + span > span {
   left: 24px;
-  background-color: #865CD6;
+  background: #865CD6;
 }
 
 .c4 {
@@ -371,7 +371,7 @@ exports[`CheckBox label renders 1`] = `
   width: 24px;
   height: 24px;
   vertical-align: middle;
-  background-color: inherit;
+  background: inherit;
   border: 2px solid;
   border-color: rgba(0,0,0,0.15);
   border-radius: 4px;
@@ -522,7 +522,7 @@ exports[`CheckBox renders 1`] = `
 
 .c3:checked + span > span {
   left: 24px;
-  background-color: #865CD6;
+  background: #865CD6;
 }
 
 .c4 {
@@ -533,7 +533,7 @@ exports[`CheckBox renders 1`] = `
   width: 24px;
   height: 24px;
   vertical-align: middle;
-  background-color: inherit;
+  background: inherit;
   border: 2px solid;
   border-color: rgba(0,0,0,0.15);
   border-radius: 4px;
@@ -681,7 +681,7 @@ exports[`CheckBox reverse renders 1`] = `
 
 .c3:checked + span > span {
   left: 24px;
-  background-color: #865CD6;
+  background: #865CD6;
 }
 
 .c4 {
@@ -692,7 +692,7 @@ exports[`CheckBox reverse renders 1`] = `
   width: 24px;
   height: 24px;
   vertical-align: middle;
-  background-color: inherit;
+  background: inherit;
   border: 2px solid;
   border-color: rgba(0,0,0,0.15);
   border-radius: 4px;
@@ -813,7 +813,7 @@ exports[`CheckBox toggle renders 1`] = `
 
 .c3:checked + span > span {
   left: 24px;
-  background-color: #865CD6;
+  background: #865CD6;
 }
 
 .c4 {
@@ -837,7 +837,7 @@ exports[`CheckBox toggle renders 1`] = `
   transition: all 0.3s;
   width: 24px;
   height: 24px;
-  background-color: #d9d9d9;
+  background: #d9d9d9;
   border-radius: 24px;
 }
 

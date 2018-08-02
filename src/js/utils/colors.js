@@ -23,6 +23,8 @@ function parseHexToRGB(color) {
   return color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16));
 }
 
+const canExtractRGBArray = color => /^#/.test(color) || /^rgb/.test(color);
+
 function getRGBArray(color) {
   if (/^#/.test(color)) {
     return parseHexToRGB(color);
@@ -43,7 +45,7 @@ export const colorIsDark = (color) => {
 };
 
 export const getRGBA = (color, opacity) => {
-  if (color) {
+  if (color && canExtractRGBArray(color)) {
     const [red, green, blue] = getRGBArray(color);
     return `rgba(${red}, ${green}, ${blue}, ${opacity || 1})`;
   }

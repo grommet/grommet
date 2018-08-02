@@ -53,7 +53,7 @@ export const StyledCheckBoxInput = styled.input`
 
   :checked + span > span {
     left: ${props => props.theme.checkBox.size};
-    background-color: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
+    background: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
   }
 `;
 
@@ -65,7 +65,7 @@ export const StyledCheckBoxBox = styled.div`
   width: ${props => props.theme.checkBox.size};
   height: ${props => props.theme.checkBox.size};
   vertical-align: middle;
-  background-color: inherit;
+  background: inherit;
   border: ${props => props.theme.checkBox.border.width} solid;
   border-color: ${props => props.theme.checkBox.border.color[props.theme.dark ? 'dark' : 'light']};
   border-radius: ${props => props.theme.checkBox.border.radius};
@@ -107,7 +107,7 @@ export const StyledCheckBoxKnob = styled.span`
   transition: all 0.3s;
   width: ${props => props.theme.checkBox.size};
   height: ${props => props.theme.checkBox.size};
-  background-color: ${props => props.theme.checkBox.toggle.color};
+  background: ${props => props.theme.checkBox.toggle.color};
   border-radius: ${props => props.theme.checkBox.toggle.radius};
 `;
 

@@ -165,7 +165,7 @@ exports[`Accordion AccordionPanel 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -441,7 +441,7 @@ exports[`Accordion change active index 1`] = `
   <button
     aria-expanded="false"
     aria-selected="false"
-    class="StyledButton-qbvYY jVTxhz"
+    class="StyledButton-qbvYY dpDiwo"
     role="tab"
     type="button"
   >
@@ -486,7 +486,7 @@ exports[`Accordion change active index 1`] = `
   <button
     aria-expanded="true"
     aria-selected="true"
-    class="StyledButton-qbvYY jVTxhz"
+    class="StyledButton-qbvYY dpDiwo"
     role="tab"
     type="button"
   >
@@ -542,7 +542,7 @@ exports[`Accordion change active index 2`] = `
   <button
     aria-expanded="false"
     aria-selected="false"
-    class="StyledButton-qbvYY jVTxhz"
+    class="StyledButton-qbvYY dpDiwo"
     role="tab"
     type="button"
   >
@@ -587,7 +587,7 @@ exports[`Accordion change active index 2`] = `
   <button
     aria-expanded="true"
     aria-selected="true"
-    class="StyledButton-qbvYY jVTxhz"
+    class="StyledButton-qbvYY dpDiwo"
     role="tab"
     type="button"
   >
@@ -646,7 +646,7 @@ exports[`Accordion change to second Panel 1`] = `
     <button
       aria-expanded="false"
       aria-selected="false"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -697,7 +697,7 @@ exports[`Accordion change to second Panel 1`] = `
     <button
       aria-expanded="false"
       aria-selected="false"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -760,7 +760,7 @@ exports[`Accordion change to second Panel 2`] = `
     <button
       aria-expanded="false"
       aria-selected="false"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -811,7 +811,7 @@ exports[`Accordion change to second Panel 2`] = `
     <button
       aria-expanded="true"
       aria-selected="true"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -877,7 +877,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
     <button
       aria-expanded="false"
       aria-selected="false"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -922,7 +922,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
     <button
       aria-expanded="false"
       aria-selected="false"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -979,7 +979,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
     <button
       aria-expanded="false"
       aria-selected="false"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -1024,7 +1024,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
     <button
       aria-expanded="true"
       aria-selected="true"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -1122,7 +1122,7 @@ exports[`Accordion complex header 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -1364,7 +1364,7 @@ exports[`Accordion complex title 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #333333;
+  background: #333333;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -1405,7 +1405,7 @@ exports[`Accordion complex title 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -1658,7 +1658,7 @@ exports[`Accordion multiple panels 1`] = `
     <button
       aria-expanded="false"
       aria-selected="false"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -1703,7 +1703,7 @@ exports[`Accordion multiple panels 1`] = `
     <button
       aria-expanded="false"
       aria-selected="false"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -1760,7 +1760,7 @@ exports[`Accordion multiple panels 2`] = `
     <button
       aria-expanded="false"
       aria-selected="false"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -1805,7 +1805,7 @@ exports[`Accordion multiple panels 2`] = `
     <button
       aria-expanded="true"
       aria-selected="true"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -1865,7 +1865,7 @@ exports[`Accordion multiple panels 3`] = `
     <button
       aria-expanded="true"
       aria-selected="true"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -1913,7 +1913,7 @@ exports[`Accordion multiple panels 3`] = `
     <button
       aria-expanded="true"
       aria-selected="true"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -1973,7 +1973,7 @@ exports[`Accordion multiple panels 4`] = `
     <button
       aria-expanded="true"
       aria-selected="true"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -2021,7 +2021,7 @@ exports[`Accordion multiple panels 4`] = `
     <button
       aria-expanded="false"
       aria-selected="false"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -2078,7 +2078,7 @@ exports[`Accordion multiple panels 5`] = `
     <button
       aria-expanded="false"
       aria-selected="false"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -2123,7 +2123,7 @@ exports[`Accordion multiple panels 5`] = `
     <button
       aria-expanded="false"
       aria-selected="false"
-      class="StyledButton-qbvYY jVTxhz"
+      class="StyledButton-qbvYY dpDiwo"
       role="tab"
       type="button"
     >
@@ -2230,7 +2230,7 @@ exports[`Accordion set on hover 1`] = `
   <button
     aria-expanded="false"
     aria-selected="false"
-    class="StyledButton-qbvYY jVTxhz"
+    class="StyledButton-qbvYY dpDiwo"
     role="tab"
     type="button"
   >
@@ -2281,7 +2281,7 @@ exports[`Accordion set on hover 1`] = `
   <button
     aria-expanded="false"
     aria-selected="false"
-    class="StyledButton-qbvYY jVTxhz"
+    class="StyledButton-qbvYY dpDiwo"
     role="tab"
     type="button"
   >
@@ -2340,7 +2340,7 @@ exports[`Accordion set on hover 2`] = `
   <button
     aria-expanded="false"
     aria-selected="false"
-    class="StyledButton-qbvYY jVTxhz"
+    class="StyledButton-qbvYY dpDiwo"
     role="tab"
     type="button"
   >
@@ -2392,7 +2392,7 @@ exports[`Accordion set on hover 2`] = `
   <button
     aria-expanded="false"
     aria-selected="false"
-    class="StyledButton-qbvYY jVTxhz"
+    class="StyledButton-qbvYY dpDiwo"
     role="tab"
     type="button"
   >
@@ -2451,7 +2451,7 @@ exports[`Accordion set on hover 3`] = `
   <button
     aria-expanded="false"
     aria-selected="false"
-    class="StyledButton-qbvYY jVTxhz"
+    class="StyledButton-qbvYY dpDiwo"
     role="tab"
     type="button"
   >
@@ -2503,7 +2503,7 @@ exports[`Accordion set on hover 3`] = `
   <button
     aria-expanded="false"
     aria-selected="false"
-    class="StyledButton-qbvYY jVTxhz"
+    class="StyledButton-qbvYY dpDiwo"
     role="tab"
     type="button"
   >
@@ -2563,7 +2563,7 @@ exports[`Accordion set on hover 4`] = `
   <button
     aria-expanded="false"
     aria-selected="false"
-    class="StyledButton-qbvYY jVTxhz"
+    class="StyledButton-qbvYY dpDiwo"
     role="tab"
     type="button"
   >
@@ -2614,7 +2614,7 @@ exports[`Accordion set on hover 4`] = `
   <button
     aria-expanded="false"
     aria-selected="false"
-    class="StyledButton-qbvYY jVTxhz"
+    class="StyledButton-qbvYY dpDiwo"
     role="tab"
     type="button"
   >
@@ -2674,7 +2674,7 @@ exports[`Accordion set on hover 5`] = `
   <button
     aria-expanded="false"
     aria-selected="false"
-    class="StyledButton-qbvYY jVTxhz"
+    class="StyledButton-qbvYY dpDiwo"
     role="tab"
     type="button"
   >
@@ -2725,7 +2725,7 @@ exports[`Accordion set on hover 5`] = `
   <button
     aria-expanded="false"
     aria-selected="false"
-    class="StyledButton-qbvYY jVTxhz"
+    class="StyledButton-qbvYY dpDiwo"
     role="tab"
     type="button"
   >

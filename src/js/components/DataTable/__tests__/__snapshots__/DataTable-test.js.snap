@@ -21,7 +21,7 @@ exports[`DataTable aggregate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #F6F6F6;
+  background: #F6F6F6;
   color: #444444;
   border-bottom: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
@@ -370,7 +370,7 @@ exports[`DataTable basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #F6F6F6;
+  background: #F6F6F6;
   color: #444444;
   border-bottom: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
@@ -690,7 +690,7 @@ exports[`DataTable footer 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #F6F6F6;
+  background: #F6F6F6;
   color: #444444;
   border-bottom: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1036,11 +1036,11 @@ exports[`DataTable groupBy 1`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY hLxYwU"
+            class="StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy bLcfYr"
+              class="StyledBox-YaZNy jbzcdz"
             >
               <svg
                 aria-label="FormDown"
@@ -1067,7 +1067,7 @@ exports[`DataTable groupBy 1`] = `
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy GtbZt"
+            class="StyledBox-YaZNy dZMygZ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -1081,7 +1081,7 @@ exports[`DataTable groupBy 1`] = `
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy GtbZt"
+            class="StyledBox-YaZNy dZMygZ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -1103,7 +1103,7 @@ exports[`DataTable groupBy 1`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY hLxYwU"
+            class="StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
@@ -1159,7 +1159,7 @@ exports[`DataTable groupBy 1`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY hLxYwU"
+            class="StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
@@ -1230,11 +1230,11 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY hLxYwU"
+            class="StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy bLcfYr"
+              class="StyledBox-YaZNy jbzcdz"
             >
               <svg
                 aria-label="FormDown"
@@ -1261,7 +1261,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy GtbZt"
+            class="StyledBox-YaZNy dZMygZ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -1275,7 +1275,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy GtbZt"
+            class="StyledBox-YaZNy dZMygZ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -1297,7 +1297,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY hLxYwU"
+            class="StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
@@ -1353,7 +1353,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY hLxYwU"
+            class="StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
@@ -1427,7 +1427,7 @@ exports[`DataTable resizeable 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #F6F6F6;
+  background: #F6F6F6;
   color: #444444;
   border-bottom: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
@@ -1783,11 +1783,11 @@ exports[`DataTable sort 1`] = `
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY hLxYwU"
+            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy bzXFWB"
+              class="StyledBox-YaZNy iPubuO"
             >
               <span
                 class="StyledText-dmaDlZ iiuQkH"
@@ -1802,11 +1802,11 @@ exports[`DataTable sort 1`] = `
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY hLxYwU"
+            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy bzXFWB"
+              class="StyledBox-YaZNy iPubuO"
             >
               <span
                 class="StyledText-dmaDlZ iiuQkH"
@@ -1928,11 +1928,11 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY hLxYwU"
+            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy bzXFWB"
+              class="StyledBox-YaZNy iPubuO"
             >
               <span
                 class="StyledText-dmaDlZ iiuQkH"
@@ -1966,11 +1966,11 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY hLxYwU"
+            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY hylkZz"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy bzXFWB"
+              class="StyledBox-YaZNy iPubuO"
             >
               <span
                 class="StyledText-dmaDlZ iiuQkH"

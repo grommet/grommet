@@ -52,7 +52,7 @@ exports[`Button color renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   border: 2px solid #FD6FFF;
@@ -81,13 +81,13 @@ exports[`Button color renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   border: 2px solid #FD6FFF;
   border-radius: 24px;
   color: #444444;
-  background-color: #FD6FFF;
+  background: #FD6FFF;
   color: #444444;
   border-radius: 24px;
   padding: 10px 46px;
@@ -202,7 +202,7 @@ exports[`Button disabled renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   border: 2px solid #865CD6;
@@ -285,7 +285,7 @@ exports[`Button focus renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   border: 2px solid #865CD6;
@@ -374,7 +374,7 @@ exports[`Button hoverIndicator as object renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -384,7 +384,7 @@ exports[`Button hoverIndicator as object renders 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -433,7 +433,7 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -443,7 +443,7 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(134,92,214,0.3);
+  background: rgba(134,92,214,0.3);
   color: #000000;
 }
 
@@ -492,7 +492,7 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -502,7 +502,7 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(253,111,255,0.3);
+  background: rgba(253,111,255,0.3);
   color: #000000;
 }
 
@@ -551,7 +551,7 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -561,7 +561,7 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -610,7 +610,7 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -620,7 +620,7 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
 }
 
 .c1:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -669,7 +669,7 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -679,7 +679,7 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -728,7 +728,7 @@ exports[`Button hoverIndicator renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -738,7 +738,7 @@ exports[`Button hoverIndicator renders 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(221,221,221,0.5);
+  background: rgba(221,221,221,0.5);
   color: #000000;
 }
 
@@ -787,7 +787,7 @@ exports[`Button href renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   border: 2px solid #865CD6;
@@ -886,7 +886,7 @@ exports[`Button icon label renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   border: 2px solid #865CD6;
@@ -1009,13 +1009,13 @@ exports[`Button primary renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   border: 2px solid #865CD6;
   border-radius: 24px;
   color: #444444;
-  background-color: #865CD6;
+  background: #865CD6;
   color: #FFFFFF;
   border-radius: 24px;
   padding: 10px 46px;
@@ -1130,7 +1130,7 @@ exports[`Button renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   border: 2px solid #865CD6;
@@ -1255,7 +1255,7 @@ exports[`Button reverse icon label renders 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   border: 2px solid #865CD6;
@@ -1373,7 +1373,7 @@ exports[`Button warns about invalid icon render 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -1474,7 +1474,7 @@ exports[`Button warns about invalid label render 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;

@@ -1104,7 +1104,7 @@ exports[`Box background renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #865CD6;
+  background: #865CD6;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -1123,7 +1123,7 @@ exports[`Box background renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #FD6FFF;
+  background: #FD6FFF;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1142,7 +1142,7 @@ exports[`Box background renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #EB6060;
+  background: #EB6060;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1161,7 +1161,7 @@ exports[`Box background renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #F6F6F6;
+  background: #F6F6F6;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1180,7 +1180,7 @@ exports[`Box background renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #333333;
+  background: #333333;
   color: #FFFFFF;
   min-width: 0;
   min-height: 0;
@@ -1199,7 +1199,7 @@ exports[`Box background renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #E1746A;
+  background: #E1746A;
   color: #444444;
   min-width: 0;
   min-height: 0;

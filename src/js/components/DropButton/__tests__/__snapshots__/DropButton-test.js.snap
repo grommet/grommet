@@ -3,7 +3,7 @@
 exports[`DropButton close by clicking outside 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-qbvYY keaqZn"
+  class="StyledButton-qbvYY dGPgjS"
   label="Dropper"
   type="button"
 >
@@ -43,21 +43,21 @@ exports[`DropButton close by clicking outside 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .keaqZn {
+  .dGPgjS {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAOdjK {
+  .hxtTsC {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lavWGj {
+  .isvWSD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -110,7 +110,7 @@ exports[`DropButton closed 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   border: 2px solid #865CD6;
@@ -176,7 +176,7 @@ exports[`DropButton closed 1`] = `
 exports[`DropButton disabled 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-qbvYY dNApea"
+  class="StyledButton-qbvYY hDgxWa"
   disabled=""
   label="Dropper"
   type="button"
@@ -198,7 +198,7 @@ exports[`DropButton disabled 1`] = `
 exports[`DropButton open and close 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-qbvYY keaqZn"
+  class="StyledButton-qbvYY dGPgjS"
   label="Dropper"
   type="button"
 >
@@ -238,14 +238,14 @@ exports[`DropButton open and close 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .keaqZn {
+  .dGPgjS {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lavWGj {
+  .isvWSD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -298,7 +298,7 @@ exports[`DropButton opened 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   border: 2px solid #865CD6;
@@ -364,7 +364,7 @@ exports[`DropButton opened 1`] = `
 exports[`DropButton opened ref 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-qbvYY keaqZn"
+  class="StyledButton-qbvYY dGPgjS"
   label="Dropper"
   type="button"
 >
@@ -404,28 +404,28 @@ exports[`DropButton opened ref 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .keaqZn {
+  .dGPgjS {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jAOdjK {
+  .hxtTsC {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .dNApea {
+  .hDgxWa {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lavWGj {
+  .isvWSD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

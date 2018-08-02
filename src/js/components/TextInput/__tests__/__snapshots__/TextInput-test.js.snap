@@ -6,7 +6,7 @@ exports[`TextInput basic 1`] = `
 >
   <input
     autocomplete="off"
-    class="StyledTextInput-bqUxsy bXaJkI"
+    class="StyledTextInput-bqUxsy gXSNuK"
     name="item"
     value=""
   />
@@ -22,7 +22,7 @@ exports[`TextInput close suggestion drop 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bqUxsy bXaJkI"
+      class="StyledTextInput-bqUxsy gXSNuK"
       data-testid="test-input"
       id="item"
       name="item"
@@ -34,7 +34,7 @@ exports[`TextInput close suggestion drop 1`] = `
 
 exports[`TextInput close suggestion drop 2`] = `
 <div
-  class="StyledDrop-czaYBK lavWGj"
+  class="StyledDrop-czaYBK isvWSD"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -47,7 +47,7 @@ exports[`TextInput close suggestion drop 2`] = `
     >
       <li>
         <button
-          class="StyledButton-qbvYY hLxYwU"
+          class="StyledButton-qbvYY hylkZz"
           type="button"
         >
           <div
@@ -59,7 +59,7 @@ exports[`TextInput close suggestion drop 2`] = `
       </li>
       <li>
         <button
-          class="StyledButton-qbvYY hLxYwU"
+          class="StyledButton-qbvYY hylkZz"
           type="button"
         >
           <div
@@ -100,7 +100,7 @@ exports[`TextInput close suggestion drop 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hLxYwU {
+  .hylkZz {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -108,7 +108,7 @@ exports[`TextInput close suggestion drop 3`] = `
 
 
 
-.lavWGj {
+.isvWSD {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -123,7 +123,7 @@ exports[`TextInput close suggestion drop 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #f8f8f8;
+  background: #f8f8f8;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -136,7 +136,7 @@ exports[`TextInput close suggestion drop 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lavWGj {
+  .isvWSD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -164,7 +164,7 @@ exports[`TextInput close suggestion drop 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bqUxsy bXaJkI"
+      class="StyledTextInput-bqUxsy gXSNuK"
       data-testid="test-input"
       id="item"
       name="item"
@@ -183,7 +183,7 @@ exports[`TextInput complex suggestions 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bqUxsy bXaJkI"
+      class="StyledTextInput-bqUxsy gXSNuK"
       data-testid="test-input"
       id="item"
       name="item"
@@ -195,7 +195,7 @@ exports[`TextInput complex suggestions 1`] = `
 
 exports[`TextInput complex suggestions 2`] = `
 <div
-  class="StyledDrop-czaYBK lavWGj"
+  class="StyledDrop-czaYBK isvWSD"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -208,7 +208,7 @@ exports[`TextInput complex suggestions 2`] = `
     >
       <li>
         <button
-          class="StyledButton-qbvYY hLxYwU"
+          class="StyledButton-qbvYY hylkZz"
           type="button"
         >
           <div
@@ -220,7 +220,7 @@ exports[`TextInput complex suggestions 2`] = `
       </li>
       <li>
         <button
-          class="StyledButton-qbvYY hLxYwU"
+          class="StyledButton-qbvYY hylkZz"
           type="button"
         >
           <div
@@ -261,7 +261,7 @@ exports[`TextInput complex suggestions 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hLxYwU {
+  .hylkZz {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -269,7 +269,7 @@ exports[`TextInput complex suggestions 3`] = `
 
 
 
-.lavWGj {
+.isvWSD {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -284,7 +284,7 @@ exports[`TextInput complex suggestions 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #f8f8f8;
+  background: #f8f8f8;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -297,7 +297,7 @@ exports[`TextInput complex suggestions 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lavWGj {
+  .isvWSD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -325,7 +325,7 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bqUxsy bXaJkI"
+      class="StyledTextInput-bqUxsy gXSNuK"
       data-testid="test-input"
       id="item"
       name="item"
@@ -344,7 +344,7 @@ exports[`TextInput handles next and previous without suggestion 2`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bqUxsy bXaJkI"
+      class="StyledTextInput-bqUxsy gXSNuK"
       data-testid="test-input"
       id="item"
       name="item"
@@ -363,7 +363,7 @@ exports[`TextInput next and previous suggestions 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bqUxsy bXaJkI"
+      class="StyledTextInput-bqUxsy gXSNuK"
       data-testid="test-input"
       id="item"
       name="item"
@@ -382,7 +382,7 @@ exports[`TextInput select a suggestion 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bqUxsy bXaJkI"
+      class="StyledTextInput-bqUxsy gXSNuK"
       data-testid="test-input"
       id="item"
       name="item"
@@ -401,7 +401,7 @@ exports[`TextInput select suggestion 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bqUxsy kynUdO"
+      class="StyledTextInput-bqUxsy cbDlvJ"
       data-testid="test-input"
       id="item"
       name="item"
@@ -413,7 +413,7 @@ exports[`TextInput select suggestion 1`] = `
 
 exports[`TextInput select suggestion 2`] = `
 <div
-  class="StyledDrop-czaYBK lavWGj"
+  class="StyledDrop-czaYBK isvWSD"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -426,7 +426,7 @@ exports[`TextInput select suggestion 2`] = `
     >
       <li>
         <button
-          class="StyledButton-qbvYY hLxYwU"
+          class="StyledButton-qbvYY hylkZz"
           type="button"
         >
           <div
@@ -438,7 +438,7 @@ exports[`TextInput select suggestion 2`] = `
       </li>
       <li>
         <button
-          class="StyledButton-qbvYY hLxYwU"
+          class="StyledButton-qbvYY hylkZz"
           type="button"
         >
           <div
@@ -479,7 +479,7 @@ exports[`TextInput select suggestion 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hLxYwU {
+  .hylkZz {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -487,7 +487,7 @@ exports[`TextInput select suggestion 3`] = `
 
 
 
-.lavWGj {
+.isvWSD {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -502,7 +502,7 @@ exports[`TextInput select suggestion 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #f8f8f8;
+  background: #f8f8f8;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -515,7 +515,7 @@ exports[`TextInput select suggestion 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lavWGj {
+  .isvWSD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -543,7 +543,7 @@ exports[`TextInput select suggestion 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bqUxsy kynUdO"
+      class="StyledTextInput-bqUxsy cbDlvJ"
       data-testid="test-input"
       id="item"
       name="item"
@@ -559,7 +559,7 @@ exports[`TextInput suggestions 1`] = `
 >
   <input
     autocomplete="off"
-    class="StyledTextInput-bqUxsy bXaJkI"
+    class="StyledTextInput-bqUxsy gXSNuK"
     data-testid="test-input"
     id="item"
     name="item"
@@ -570,7 +570,7 @@ exports[`TextInput suggestions 1`] = `
 
 exports[`TextInput suggestions 2`] = `
 <div
-  class="StyledDrop-czaYBK lavWGj"
+  class="StyledDrop-czaYBK isvWSD"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -583,7 +583,7 @@ exports[`TextInput suggestions 2`] = `
     >
       <li>
         <button
-          class="StyledButton-qbvYY hLxYwU"
+          class="StyledButton-qbvYY hylkZz"
           type="button"
         >
           <div
@@ -595,7 +595,7 @@ exports[`TextInput suggestions 2`] = `
       </li>
       <li>
         <button
-          class="StyledButton-qbvYY hLxYwU"
+          class="StyledButton-qbvYY hylkZz"
           type="button"
         >
           <div
@@ -636,7 +636,7 @@ exports[`TextInput suggestions 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hLxYwU {
+  .hylkZz {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -644,7 +644,7 @@ exports[`TextInput suggestions 3`] = `
 
 
 
-.lavWGj {
+.isvWSD {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -659,7 +659,7 @@ exports[`TextInput suggestions 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #f8f8f8;
+  background: #f8f8f8;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -672,7 +672,7 @@ exports[`TextInput suggestions 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lavWGj {
+  .isvWSD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

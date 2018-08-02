@@ -51,5 +51,32 @@ class SimpleBox extends Component {
   }
 }
 
+const customColorBox = {
+  global: {
+    colors: {
+      'brand-gradient': 'linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)',
+    },
+  },
+};
+
+class CustomColorBox extends Component {
+  render() {
+    return (
+      <Grommet theme={customColorBox}>
+        <Box
+          justify='center'
+          align='center'
+          pad='xlarge'
+          background={{ color: 'brand-gradient', dark: true }}
+          round='large'
+        >
+          <Text>I have a linear gradient background</Text>
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Box', module)
-  .add('Simple Box', () => <SimpleBox />);
+  .add('Simple Box', () => <SimpleBox />)
+  .add('Custom color', () => <CustomColorBox />);

@@ -45,7 +45,7 @@ exports[`Select basic 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #ffffff;
+  background: #ffffff;
   color: #444444;
   border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -113,7 +113,7 @@ exports[`Select basic 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -134,7 +134,7 @@ exports[`Select basic 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
-  background-color: transparent;
+  background: transparent;
   color: inherit;
   font-weight: 600;
   margin: 0;
@@ -282,13 +282,13 @@ exports[`Select basic 1`] = `
 exports[`Select complex options and children 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY gdtSRN"
+  class="StyledButton-qbvYY jZaTeL"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-YaZNy eVmkkr"
+    class="StyledBox-YaZNy kpElOw"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -298,7 +298,7 @@ exports[`Select complex options and children 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -337,13 +337,13 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY gdtSRN"
+  class="StyledButton-qbvYY jZaTeL"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-YaZNy eVmkkr"
+    class="StyledBox-YaZNy kpElOw"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -353,7 +353,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -391,7 +391,7 @@ exports[`Select complex options and children 2`] = `
 
 exports[`Select complex options and children 3`] = `
 <div
-  class="StyledDrop-czaYBK lavWGj"
+  class="StyledDrop-czaYBK isvWSD"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -409,7 +409,7 @@ exports[`Select complex options and children 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY hksRZC"
+          class="StyledButton-qbvYY hOjJXi"
           role="menuitem"
           type="button"
         >
@@ -422,7 +422,7 @@ exports[`Select complex options and children 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY hksRZC"
+          class="StyledButton-qbvYY hOjJXi"
           role="menuitem"
           type="button"
         >
@@ -438,19 +438,19 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width:699px) {
-  .eVmkkr {
+  .kpElOw {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eVmkkr {
+  .kpElOw {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eVmkkr {
+  .kpElOw {
     padding: 0;
   }
 }
@@ -529,14 +529,14 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gdtSRN {
+  .jZaTeL {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hksRZC {
+  .hOjJXi {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -544,7 +544,7 @@ exports[`Select complex options and children 4`] = `
 
 
 
-.lavWGj {
+.isvWSD {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -559,7 +559,7 @@ exports[`Select complex options and children 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #f8f8f8;
+  background: #f8f8f8;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -572,7 +572,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lavWGj {
+  .isvWSD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -594,13 +594,13 @@ exports[`Select complex options and children 4`] = `
 exports[`Select deselect an option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY gdtSRN"
+  class="StyledButton-qbvYY jZaTeL"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-YaZNy eVmkkr"
+    class="StyledBox-YaZNy kpElOw"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -610,7 +610,7 @@ exports[`Select deselect an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -650,14 +650,14 @@ exports[`Select deselect an option 1`] = `
 exports[`Select disabled 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY ipHWmi"
+  class="StyledButton-qbvYY fILeAh"
   data-testid="test-select"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-YaZNy eVmkkr"
+    class="StyledBox-YaZNy kpElOw"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -667,7 +667,7 @@ exports[`Select disabled 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -706,14 +706,14 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY ipHWmi"
+  class="StyledButton-qbvYY fILeAh"
   data-testid="test-select"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-YaZNy eVmkkr"
+    class="StyledBox-YaZNy kpElOw"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -723,7 +723,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -804,7 +804,7 @@ exports[`Select multiple 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #ffffff;
+  background: #ffffff;
   color: #444444;
   border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -872,7 +872,7 @@ exports[`Select multiple 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -893,7 +893,7 @@ exports[`Select multiple 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
-  background-color: transparent;
+  background: transparent;
   color: inherit;
   font-weight: 600;
   margin: 0;
@@ -1046,13 +1046,13 @@ exports[`Select multiple 1`] = `
 exports[`Select multiple values 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY gdtSRN"
+  class="StyledButton-qbvYY jZaTeL"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-YaZNy eVmkkr"
+    class="StyledBox-YaZNy kpElOw"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1062,7 +1062,7 @@ exports[`Select multiple values 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -1102,13 +1102,13 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY gdtSRN"
+  class="StyledButton-qbvYY jZaTeL"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-YaZNy eVmkkr"
+    class="StyledBox-YaZNy kpElOw"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1118,7 +1118,7 @@ exports[`Select multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -1157,7 +1157,7 @@ exports[`Select multiple values 2`] = `
 
 exports[`Select multiple values 3`] = `
 <div
-  class="StyledDrop-czaYBK lavWGj"
+  class="StyledDrop-czaYBK isvWSD"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1175,7 +1175,7 @@ exports[`Select multiple values 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY edpIJr"
+          class="StyledButton-qbvYY thBoX"
           role="menuitem"
           type="button"
         >
@@ -1194,7 +1194,7 @@ exports[`Select multiple values 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY edpIJr"
+          class="StyledButton-qbvYY thBoX"
           role="menuitem"
           type="button"
         >
@@ -1216,19 +1216,19 @@ exports[`Select multiple values 3`] = `
 
 exports[`Select multiple values 4`] = `
 "@media only screen and (max-width:699px) {
-  .eVmkkr {
+  .kpElOw {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eVmkkr {
+  .kpElOw {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eVmkkr {
+  .kpElOw {
     padding: 0;
   }
 }
@@ -1319,40 +1319,40 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .dfWhFv {
+  .gKIdCQ {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dfWhFv {
+  .gKIdCQ {
     padding: 0;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .gdtSRN {
+  .jZaTeL {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hksRZC {
+  .hOjJXi {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jhnKhC {
+  .iraIky {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .edpIJr {
+  .thBoX {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1360,7 +1360,7 @@ exports[`Select multiple values 4`] = `
 
 
 
-.lavWGj {
+.isvWSD {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1375,7 +1375,7 @@ exports[`Select multiple values 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #f8f8f8;
+  background: #f8f8f8;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1388,7 +1388,7 @@ exports[`Select multiple values 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lavWGj {
+  .isvWSD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1410,13 +1410,13 @@ exports[`Select multiple values 4`] = `
 exports[`Select opens 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY gdtSRN"
+  class="StyledButton-qbvYY jZaTeL"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-YaZNy eVmkkr"
+    class="StyledBox-YaZNy kpElOw"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1426,7 +1426,7 @@ exports[`Select opens 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1465,13 +1465,13 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY gdtSRN"
+  class="StyledButton-qbvYY jZaTeL"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-YaZNy eVmkkr"
+    class="StyledBox-YaZNy kpElOw"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1481,7 +1481,7 @@ exports[`Select opens 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1519,7 +1519,7 @@ exports[`Select opens 2`] = `
 
 exports[`Select opens 3`] = `
 <div
-  class="StyledDrop-czaYBK lavWGj"
+  class="StyledDrop-czaYBK isvWSD"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1537,7 +1537,7 @@ exports[`Select opens 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY hksRZC"
+          class="StyledButton-qbvYY hOjJXi"
           role="menuitem"
           type="button"
         >
@@ -1556,7 +1556,7 @@ exports[`Select opens 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY hksRZC"
+          class="StyledButton-qbvYY hOjJXi"
           role="menuitem"
           type="button"
         >
@@ -1578,19 +1578,19 @@ exports[`Select opens 3`] = `
 
 exports[`Select opens 4`] = `
 "@media only screen and (max-width:699px) {
-  .eVmkkr {
+  .kpElOw {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eVmkkr {
+  .kpElOw {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eVmkkr {
+  .kpElOw {
     padding: 0;
   }
 }
@@ -1669,14 +1669,14 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gdtSRN {
+  .jZaTeL {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hksRZC {
+  .hOjJXi {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1684,7 +1684,7 @@ exports[`Select opens 4`] = `
 
 
 
-.lavWGj {
+.isvWSD {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1699,7 +1699,7 @@ exports[`Select opens 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #f8f8f8;
+  background: #f8f8f8;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1712,7 +1712,7 @@ exports[`Select opens 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lavWGj {
+  .isvWSD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1741,7 +1741,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-YaZNy ckMYwJ"
   >
     <button
-      class="StyledButton-qbvYY hksRZC"
+      class="StyledButton-qbvYY hOjJXi"
       role="menuitem"
       type="button"
     >
@@ -1760,7 +1760,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-YaZNy ckMYwJ"
   >
     <button
-      class="StyledButton-qbvYY hksRZC"
+      class="StyledButton-qbvYY hOjJXi"
       role="menuitem"
       type="button"
     >
@@ -1781,13 +1781,13 @@ exports[`Select opens 5`] = `
 exports[`Select search 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY gdtSRN"
+  class="StyledButton-qbvYY jZaTeL"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-YaZNy eVmkkr"
+    class="StyledBox-YaZNy kpElOw"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1797,7 +1797,7 @@ exports[`Select search 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1835,7 +1835,7 @@ exports[`Select search 1`] = `
 
 exports[`Select search 2`] = `
 <div
-  class="StyledDrop-czaYBK lavWGj"
+  class="StyledDrop-czaYBK isvWSD"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1852,7 +1852,7 @@ exports[`Select search 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-bqUxsy gXwsLf"
+          class="StyledTextInput-bqUxsy lmQzlX"
           type="search"
           value=""
         />
@@ -1867,7 +1867,7 @@ exports[`Select search 2`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY hksRZC"
+          class="StyledButton-qbvYY hOjJXi"
           role="menuitem"
           type="button"
         >
@@ -1886,7 +1886,7 @@ exports[`Select search 2`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY hksRZC"
+          class="StyledButton-qbvYY hOjJXi"
           role="menuitem"
           type="button"
         >
@@ -1908,19 +1908,19 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width:699px) {
-  .eVmkkr {
+  .kpElOw {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eVmkkr {
+  .kpElOw {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eVmkkr {
+  .kpElOw {
     padding: 0;
   }
 }
@@ -2011,14 +2011,14 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gdtSRN {
+  .jZaTeL {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hksRZC {
+  .hOjJXi {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -2026,7 +2026,7 @@ exports[`Select search 3`] = `
 
 
 
-.lavWGj {
+.isvWSD {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -2041,7 +2041,7 @@ exports[`Select search 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background-color: #f8f8f8;
+  background: #f8f8f8;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -2054,7 +2054,7 @@ exports[`Select search 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .lavWGj {
+  .isvWSD {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2076,13 +2076,13 @@ exports[`Select search 3`] = `
 exports[`Select select an option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY gdtSRN"
+  class="StyledButton-qbvYY jZaTeL"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-YaZNy eVmkkr"
+    class="StyledBox-YaZNy kpElOw"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2092,7 +2092,7 @@ exports[`Select select an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -2131,13 +2131,13 @@ exports[`Select select an option 1`] = `
 exports[`Select select an option with complex options 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY gdtSRN"
+  class="StyledButton-qbvYY jZaTeL"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-YaZNy dfWhFv"
+    class="StyledBox-YaZNy gKIdCQ"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2175,13 +2175,13 @@ exports[`Select select an option with complex options 1`] = `
 exports[`Select select an option with enter 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY gdtSRN"
+  class="StyledButton-qbvYY jZaTeL"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-YaZNy eVmkkr"
+    class="StyledBox-YaZNy kpElOw"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2191,7 +2191,7 @@ exports[`Select select an option with enter 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -2230,13 +2230,13 @@ exports[`Select select an option with enter 1`] = `
 exports[`Select select another option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY gdtSRN"
+  class="StyledButton-qbvYY jZaTeL"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-YaZNy eVmkkr"
+    class="StyledBox-YaZNy kpElOw"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2246,7 +2246,7 @@ exports[`Select select another option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -2330,7 +2330,7 @@ exports[`Select size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #ffffff;
+  background: #ffffff;
   color: #444444;
   border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
@@ -2398,7 +2398,7 @@ exports[`Select size 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin: 0;
-  background-color: transparent;
+  background: transparent;
   overflow: visible;
   text-transform: none;
   color: inherit;
@@ -2419,7 +2419,7 @@ exports[`Select size 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
-  background-color: transparent;
+  background: transparent;
   color: inherit;
   font-weight: 600;
   margin: 0;

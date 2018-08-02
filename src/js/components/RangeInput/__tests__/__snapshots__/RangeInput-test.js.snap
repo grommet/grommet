@@ -42,7 +42,7 @@ exports[`RangeInput renders 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 2px;
-  background-color: rgba(68,68,68,0.2);
+  background: rgba(68,68,68,0.2);
 }
 
 .c1::-webkit-slider-thumb {
@@ -53,7 +53,7 @@ exports[`RangeInput renders 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   -webkit-appearance: none;
   cursor: pointer;
   margin-top: -11px;
@@ -67,7 +67,7 @@ exports[`RangeInput renders 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 2px;
-  background-color: rgba(68,68,68,0.2);
+  background: rgba(68,68,68,0.2);
 }
 
 .c1::-moz-range-thumb {
@@ -78,7 +78,7 @@ exports[`RangeInput renders 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   -webkit-appearance: none;
   cursor: pointer;
   margin-top: 0px;
@@ -94,7 +94,7 @@ exports[`RangeInput renders 1`] = `
   height: 24px;
   width: 24px;
   overflow: visible;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   -webkit-appearance: none;
   cursor: pointer;
   margin-top: 0px;
@@ -114,7 +114,7 @@ exports[`RangeInput renders 1`] = `
   box-sizing: border-box;
   width: 100%;
   height: 2px;
-  background-color: rgba(68,68,68,0.2);
+  background: rgba(68,68,68,0.2);
   border-color: transparent;
   color: transparent;
 }
