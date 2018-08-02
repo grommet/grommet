@@ -13,7 +13,8 @@ export const addMonths = (date, months) => {
   const result = new Date(date);
   const years = Math.floor((date.getMonth() + months) / 12);
   result.setFullYear(date.getFullYear() + years);
-  result.setMonth((date.getMonth() + months) % 12);
+  const targetMonth = (date.getMonth() + months) % 12;
+  result.setMonth(targetMonth < 0 ? (12 + targetMonth) : targetMonth);
   return result;
 };
 

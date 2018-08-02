@@ -444,7 +444,7 @@ exports[`Calendar date renders 1`] = `
           className="c6"
         >
           <button
-            aria-label="December 2016"
+            aria-label="December 2017"
             className="c7"
             disabled={true}
             icon={
@@ -1860,7 +1860,7 @@ exports[`Calendar dates renders 1`] = `
           className="c6"
         >
           <button
-            aria-label="December 2016"
+            aria-label="December 2017"
             className="c7"
             disabled={true}
             icon={
@@ -3276,7 +3276,7 @@ exports[`Calendar disabled renders 1`] = `
           className="c6"
         >
           <button
-            aria-label="December 2016"
+            aria-label="December 2017"
             className="c7"
             disabled={true}
             icon={
@@ -4692,7 +4692,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
           className="c6"
         >
           <button
-            aria-label="December 2016"
+            aria-label="December 2017"
             className="c7"
             disabled={true}
             icon={
@@ -5686,7 +5686,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
           className="c6"
         >
           <button
-            aria-label="December 2016"
+            aria-label="December 2017"
             className="c7"
             disabled={true}
             icon={
@@ -7102,7 +7102,7 @@ exports[`Calendar renders 1`] = `
           className="c6"
         >
           <button
-            aria-label="December 2016"
+            aria-label="December 2017"
             className="c7"
             disabled={true}
             icon={
@@ -8736,7 +8736,7 @@ exports[`Calendar size renders 1`] = `
           className="c6"
         >
           <button
-            aria-label="December 2016"
+            aria-label="December 2017"
             className="c7"
             disabled={true}
             icon={<FormPrevious />}
@@ -9720,7 +9720,7 @@ exports[`Calendar size renders 1`] = `
           className="c6"
         >
           <button
-            aria-label="December 2016"
+            aria-label="December 2017"
             className="c7"
             disabled={true}
             icon={
@@ -10714,7 +10714,7 @@ exports[`Calendar size renders 1`] = `
           className="c6"
         >
           <button
-            aria-label="December 2016"
+            aria-label="December 2017"
             className="c7"
             disabled={true}
             icon={
