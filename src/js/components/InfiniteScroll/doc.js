@@ -49,7 +49,7 @@ export default (InfiniteScroll) => {
       'Ensure that the item at this index is visible initially.'
     ),
     step: PropTypes.number.description(
-      'How many items to render at a time. Default value is 50.'
+      'How many items to render at a time.'
     ).defaultValue(50),
   };
 
