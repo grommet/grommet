@@ -12,7 +12,12 @@ const StyledAnchor = styled.a`
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: ${props => normalizeColor(props.theme.anchor.color, props.theme)};
+  color: ${props =>
+    (props.theme.dark ? (
+      props.theme.anchor.color.dark || props.theme.global.color.darkBackground.text
+    ) : (
+      props.theme.anchor.color.light || props.theme.global.color.lightBackground.text
+    ))};
   text-decoration: ${props => (props.icon ? 'none' : props.theme.anchor.textDecoration)};
   cursor: pointer;
   outline: none;
@@ -23,9 +28,6 @@ const StyledAnchor = styled.a`
     }
   `}
 
-  ${props => !props.primary && props.icon && props.label && `
-    color: ${props.theme.global.colors.text};
-  `}
   ${props => props.icon && !props.label && `
     padding: ${props.theme.global.edgeSize.small};
   `}
