@@ -7,6 +7,7 @@ import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
 import { Layer, LayerContainer } from '../';
+import { Box } from '../../Box/';
 
 class FakeLayer extends Component {
   state = { showLayer: false }
@@ -94,11 +95,22 @@ describe('Layer', () => {
     expectPortal('plain-test').toMatchSnapshot();
   });
 
-  test('non-modal renders', () => {
+  test('non-modal', () => {
     renderIntoDocument(
       <Layer id='non-modal-test' modal={false}>
         This is a non-modal layer
       </Layer>
+    );
+    expectPortal('non-modal-test').toMatchSnapshot();
+  });
+
+  test('dark context', () => {
+    renderIntoDocument(
+      <Box background='dark-1'>
+        <Layer id='non-modal-test' modal={false}>
+          This is a non-modal layer
+        </Layer>
+      </Box>
     );
     expectPortal('non-modal-test').toMatchSnapshot();
   });

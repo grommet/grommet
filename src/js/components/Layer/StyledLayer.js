@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { baseStyle, edgeStyle, lapAndUp, palm } from '../../utils';
+import { backgroundStyle, baseStyle, edgeStyle, lapAndUp, palm } from '../../utils';
 
 const hiddenPositionStyle = css`
   left: -100%;
@@ -336,7 +336,7 @@ export const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: ${props => props.theme.global.size.xxsmall};
-  background-color: ${props => (props.plain ? 'transparent' : props.theme.layer.backgroundColor)};
+  ${props => props.theme.layer.background && backgroundStyle(props.theme.layer.background, props.theme)}
   outline: none;
   pointer-events: all;
   z-index: 15;
