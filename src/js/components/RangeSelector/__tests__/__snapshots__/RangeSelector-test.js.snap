@@ -261,11 +261,7 @@ exports[`RangeSelector basic 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -316,11 +312,7 @@ exports[`RangeSelector basic 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1101,11 +1093,7 @@ exports[`RangeSelector direction 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1156,11 +1144,7 @@ exports[`RangeSelector direction 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1222,11 +1206,7 @@ exports[`RangeSelector direction 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1277,11 +1257,7 @@ exports[`RangeSelector direction 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1330,11 +1306,7 @@ exports[`RangeSelector handle keyboard 1`] = `
             <circle
               cx="6"
               cy="6"
-              fill="function (props) {
-              /* istanbul ignore next */cov_2ipi8omkx2.f[8]++;
-              cov_2ipi8omkx2.s[31]++;
-              return props.theme.global.colors.brand;
-            }"
+              fill="#7D4CDB"
               r="6"
             />
           </svg>
@@ -1365,11 +1337,7 @@ exports[`RangeSelector handle keyboard 1`] = `
             <circle
               cx="6"
               cy="6"
-              fill="function (props) {
-              /* istanbul ignore next */cov_2ipi8omkx2.f[8]++;
-              cov_2ipi8omkx2.s[31]++;
-              return props.theme.global.colors.brand;
-            }"
+              fill="#7D4CDB"
               r="6"
             />
           </svg>
@@ -1413,11 +1381,7 @@ exports[`RangeSelector handle mouse 1`] = `
             <circle
               cx="6"
               cy="6"
-              fill="function (props) {
-              /* istanbul ignore next */cov_2ipi8omkx2.f[8]++;
-              cov_2ipi8omkx2.s[31]++;
-              return props.theme.global.colors.brand;
-            }"
+              fill="#7D4CDB"
               r="6"
             />
           </svg>
@@ -1448,11 +1412,7 @@ exports[`RangeSelector handle mouse 1`] = `
             <circle
               cx="6"
               cy="6"
-              fill="function (props) {
-              /* istanbul ignore next */cov_2ipi8omkx2.f[8]++;
-              cov_2ipi8omkx2.s[31]++;
-              return props.theme.global.colors.brand;
-            }"
+              fill="#7D4CDB"
               r="6"
             />
           </svg>
@@ -1759,11 +1719,7 @@ exports[`RangeSelector invert 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1814,11 +1770,7 @@ exports[`RangeSelector invert 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1880,11 +1832,7 @@ exports[`RangeSelector invert 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1935,11 +1883,7 @@ exports[`RangeSelector invert 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -2219,11 +2163,7 @@ exports[`RangeSelector max 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -2274,11 +2214,7 @@ exports[`RangeSelector max 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -2558,11 +2494,7 @@ exports[`RangeSelector min 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -2613,11 +2545,7 @@ exports[`RangeSelector min 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -2960,11 +2888,7 @@ exports[`RangeSelector opacity 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -3015,11 +2939,7 @@ exports[`RangeSelector opacity 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -3081,11 +3001,7 @@ exports[`RangeSelector opacity 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -3136,11 +3052,7 @@ exports[`RangeSelector opacity 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -3202,11 +3114,7 @@ exports[`RangeSelector opacity 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -3257,11 +3165,7 @@ exports[`RangeSelector opacity 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -3859,11 +3763,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -3914,11 +3814,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -3980,11 +3876,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4035,11 +3927,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4101,11 +3989,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4156,11 +4040,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4222,11 +4102,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4277,11 +4153,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4343,11 +4215,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4398,11 +4266,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4682,11 +4546,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4737,11 +4597,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4803,11 +4659,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4858,11 +4710,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4924,11 +4772,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4979,11 +4823,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5045,11 +4885,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5100,11 +4936,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5166,11 +4998,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5221,11 +5049,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5287,11 +5111,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5342,11 +5162,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5408,11 +5224,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5463,11 +5275,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5747,11 +5555,7 @@ exports[`RangeSelector step 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5802,11 +5606,7 @@ exports[`RangeSelector step 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill={
-                Array [
-                  [Function],
-                ]
-              }
+              fill="#7D4CDB"
               r={6}
             />
           </svg>

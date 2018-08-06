@@ -17,6 +17,7 @@ class RangeSelector extends Component {
     opacity: 'medium',
     size: 'medium',
     step: 1,
+    values: [],
   };
 
   state = {}

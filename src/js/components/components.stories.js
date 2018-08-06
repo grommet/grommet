@@ -22,6 +22,7 @@ import Meter from './Meter/Meter';
 import Paragraph from './Paragraph/Paragraph';
 import RadioButton from './RadioButton/RadioButton';
 import RangeInput from './RangeInput/RangeInput';
+import RangeSelector from './RangeSelector/RangeSelector';
 import Select from './Select/Select';
 import Stack from './Stack/Stack';
 import Tab from './Tabs/Tab';
@@ -57,10 +58,10 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
 });
 
 class Components extends Component {
-  state = { baseSize: 24, checkBox: true, radioButton: true }
+  state = { baseSize: 24, checkBox: true, radioButton: true, rangeSelector: [1, 2] }
 
   render() {
-    const { baseSize, checkBox, radioButton, tabIndex } = this.state;
+    const { baseSize, checkBox, radioButton, rangeSelector, tabIndex } = this.state;
     const theme = deepMerge(generate(baseSize), hpe);
 
     const content = [
@@ -96,6 +97,25 @@ class Components extends Component {
         <TextInput placeholder='TextInput' />
         <TextArea placeholder='TextArea' />
         <RangeInput value={24} onChange={() => {}} />
+        <Stack>
+          <Box direction='row' justify='between'>
+            {[0, 1, 2, 3].map(value => (
+              <Box key={value} pad='small' border={false}>
+                <Text style={{ fontFamily: 'monospace' }}>{value}</Text>
+              </Box>
+            ))}
+          </Box>
+          <RangeSelector
+            direction='horizontal'
+            invert={false}
+            min={0}
+            max={3}
+            size='full'
+            round='small'
+            values={rangeSelector}
+            onChange={values => this.setState({ rangeSelector: values })}
+          />
+        </Stack>
         <FormField label='FormField'>
           <TextInput placeholder='TextInput' />
         </FormField>
