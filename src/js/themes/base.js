@@ -72,6 +72,8 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
   const fontSizing = factor => ({
     size: `${baseFontSize + (factor * fontScale)}px`,
     height: `${baseSpacing + (factor * fontScale)}px`,
+    // maxWidth chosen to be ~50 characters wide
+    // see: https://ux.stackexchange.com/a/34125
     maxWidth: `${baseSpacing * (baseFontSize + (factor * fontScale))}px`,
   });
 
@@ -465,12 +467,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       font: {
         // family: undefined
       },
-      // maxWidth chosen to be ~50 characters wide
-      // see: https://ux.stackexchange.com/a/34125
       level: {
-        // Heading m 18 24 36 48
-        // Heading s 16 18 24 24
-        // Heading l 20 30 48 96
         1: {
           small: { ...fontSizing(4) },
           medium: { ...fontSizing(8) },
@@ -513,10 +510,6 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       },
     },
     paragraph: {
-      // maxWidth chosen to be ~50 characters wide
-      // see: https://ux.stackexchange.com/a/34125
-      // Target 16 20 24 30
-      // Actual 14 18 22 26
       small: { ...fontSizing(-1) },
       medium: { ...fontSizing(0) },
       large: { ...fontSizing(1) },
@@ -558,8 +551,6 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       step: 20,
     },
     text: {
-      // Target 12 14 16 18 24 30
-      // Actual 12 14 18 22 26 34
       xsmall: { ...fontSizing(-1.5) },
       small: { ...fontSizing(-1) },
       medium: { ...fontSizing(0) },
