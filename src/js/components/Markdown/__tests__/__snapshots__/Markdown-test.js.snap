@@ -2,9 +2,8 @@
 
 exports[`Markdown renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -14,57 +13,53 @@ exports[`Markdown renders 1`] = `
 }
 
 .c2 {
-  font-size: 16px;
-  line-height: 1.375;
-  max-width: 384px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
 }
 
 .c1 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 48px;
-  line-height: 1.125;
-  max-width: 1152px;
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
   font-weight: 600;
 }
 
 .c3 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 36px;
-  line-height: 1.23;
-  max-width: 864px;
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
   font-weight: 600;
 }
 
 .c4 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
   font-weight: 600;
 }
 
 .c5 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 18px;
-  line-height: 1.333;
+  line-height: 24px;
   max-width: 432px;
   font-weight: 600;
 }
 
 @media only screen and (max-width:699px) {
   .c1 {
-    font-size: 36px;
-    line-height: 1.23;
-    max-width: 864px;
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
     font-weight: 600;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    font-size: 24px;
-    line-height: 1.333;
-    max-width: 576px;
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
     font-weight: 600;
   }
 }
@@ -72,7 +67,7 @@ exports[`Markdown renders 1`] = `
 @media only screen and (max-width:699px) {
   .c4 {
     font-size: 18px;
-    line-height: 1.333;
+    line-height: 24px;
     max-width: 432px;
     font-weight: 600;
   }
@@ -81,7 +76,7 @@ exports[`Markdown renders 1`] = `
 @media only screen and (max-width:699px) {
   .c5 {
     font-size: 18px;
-    line-height: 1.333;
+    line-height: 24px;
     max-width: 432px;
     font-weight: 600;
   }

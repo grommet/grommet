@@ -63,7 +63,8 @@ class EdgeControl extends Component {
                   cx={halfSize}
                   cy={halfSize}
                   r={halfSize}
-                  fill={colorForName(color || 'brand', theme)}
+                  fill={colorForName(color ||
+                    theme.global.control.color[theme.dark ? 'dark' : 'light'], theme)}
                 />
               </svg>
             </Box>

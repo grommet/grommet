@@ -2,9 +2,8 @@
 
 exports[`anchor renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -261,9 +260,8 @@ exports[`anchor renders 1`] = `
 
 exports[`fill renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -348,9 +346,8 @@ exports[`fill renders 1`] = `
 
 exports[`guidingChild renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -438,9 +435,8 @@ exports[`guidingChild renders 1`] = `
 
 exports[`renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;

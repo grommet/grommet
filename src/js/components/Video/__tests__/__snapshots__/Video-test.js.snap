@@ -34,9 +34,8 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -57,8 +56,8 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #444444;
-  color: #FFFFFF;
+  background: rgba(68,68,68,0.8);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -185,8 +184,8 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c16 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
@@ -194,8 +193,8 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c19 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -217,8 +216,10 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c5:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c17 {
@@ -637,9 +638,8 @@ exports[`Video controls renders 1`] = `
 }
 
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -660,8 +660,8 @@ exports[`Video controls renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #444444;
-  color: #FFFFFF;
+  background: rgba(68,68,68,0.8);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -813,8 +813,8 @@ exports[`Video controls renders 1`] = `
 }
 
 .c16 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
@@ -822,8 +822,8 @@ exports[`Video controls renders 1`] = `
 }
 
 .c19 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -845,8 +845,10 @@ exports[`Video controls renders 1`] = `
 }
 
 .c5:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c17 {
@@ -1261,7 +1263,11 @@ exports[`Video controls renders 1`] = `
         <button
           className="c5"
           disabled={false}
-          icon={<Play />}
+          icon={
+            <Play
+              color={false}
+            />
+          }
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1273,6 +1279,7 @@ exports[`Video controls renders 1`] = `
             <svg
               aria-label="Play"
               className="c22"
+              color={false}
               height="24px"
               role="img"
               version="1.1"
@@ -1311,9 +1318,7 @@ exports[`Video controls renders 1`] = `
                   <path
                     d="M 0,6 L 288,6"
                     fill="none"
-                    stroke="#F6F6F6"
                     strokeLinecap="square"
-                    strokeOpacity="0.4"
                     strokeWidth={12}
                   />
                 </svg>
@@ -1363,6 +1368,7 @@ exports[`Video controls renders 1`] = `
               <svg
                 aria-label="Actions"
                 className="c22"
+                color={false}
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1419,9 +1425,8 @@ exports[`Video fit renders 1`] = `
 }
 
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1442,8 +1447,8 @@ exports[`Video fit renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #444444;
-  color: #FFFFFF;
+  background: rgba(68,68,68,0.8);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1570,8 +1575,8 @@ exports[`Video fit renders 1`] = `
 }
 
 .c16 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
@@ -1579,8 +1584,8 @@ exports[`Video fit renders 1`] = `
 }
 
 .c19 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -1602,8 +1607,10 @@ exports[`Video fit renders 1`] = `
 }
 
 .c5:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c17 {
@@ -2180,9 +2187,8 @@ exports[`Video loop renders 1`] = `
 }
 
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2203,8 +2209,8 @@ exports[`Video loop renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #444444;
-  color: #FFFFFF;
+  background: rgba(68,68,68,0.8);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -2331,8 +2337,8 @@ exports[`Video loop renders 1`] = `
 }
 
 .c16 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
@@ -2340,8 +2346,8 @@ exports[`Video loop renders 1`] = `
 }
 
 .c19 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -2363,8 +2369,10 @@ exports[`Video loop renders 1`] = `
 }
 
 .c5:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c17 {
@@ -2751,9 +2759,8 @@ exports[`Video mute renders 1`] = `
 }
 
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2774,8 +2781,8 @@ exports[`Video mute renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #444444;
-  color: #FFFFFF;
+  background: rgba(68,68,68,0.8);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -2902,8 +2909,8 @@ exports[`Video mute renders 1`] = `
 }
 
 .c16 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
@@ -2911,8 +2918,8 @@ exports[`Video mute renders 1`] = `
 }
 
 .c19 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -2934,8 +2941,10 @@ exports[`Video mute renders 1`] = `
 }
 
 .c5:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c17 {
@@ -3322,9 +3331,8 @@ exports[`Video renders 1`] = `
 }
 
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -3345,8 +3353,8 @@ exports[`Video renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #444444;
-  color: #FFFFFF;
+  background: rgba(68,68,68,0.8);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -3473,8 +3481,8 @@ exports[`Video renders 1`] = `
 }
 
 .c16 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
@@ -3482,8 +3490,8 @@ exports[`Video renders 1`] = `
 }
 
 .c19 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c5 {
@@ -3505,8 +3513,10 @@ exports[`Video renders 1`] = `
 }
 
 .c5:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c17 {

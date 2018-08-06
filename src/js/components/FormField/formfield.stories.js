@@ -8,6 +8,7 @@ import TextArea from '../TextArea/TextArea';
 import Select from '../Select/Select';
 import CheckBox from '../CheckBox/CheckBox';
 import Box from '../Box/Box';
+import { grommet } from '../../themes';
 
 const allSuggestions = Array(100).fill().map((_, i) => `suggestion ${i + 1}`);
 
@@ -26,7 +27,7 @@ class FormFieldTextInput extends Component {
   render() {
     const { value, suggestions } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <FormField label='Label' htmlFor='text-input' {...this.props}>
           <TextInput
             id='text-input'
@@ -43,7 +44,7 @@ class FormFieldTextInput extends Component {
 }
 
 const FormFieldTextArea = props => (
-  <Grommet>
+  <Grommet theme={grommet}>
     <FormField label='Label' htmlFor='text-area' {...props}>
       <TextArea id='text-area' placeholder='placeholder' />
     </FormField>
@@ -51,7 +52,7 @@ const FormFieldTextArea = props => (
 );
 
 const FormFieldCheckBox = props => (
-  <Grommet>
+  <Grommet theme={grommet}>
     <FormField label='Label' htmlFor='check-box' {...props}>
       <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
         <CheckBox id='check-box' label='CheckBox' />
@@ -61,7 +62,7 @@ const FormFieldCheckBox = props => (
 );
 
 const FormFieldToggle = props => (
-  <Grommet>
+  <Grommet theme={grommet}>
     <FormField label='Label' htmlFor='check-box' {...props}>
       <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
         <CheckBox id='check-box' label='CheckBox' toggle={true} />
@@ -71,7 +72,7 @@ const FormFieldToggle = props => (
 );
 
 const FormFieldSelect = props => (
-  <Grommet>
+  <Grommet theme={grommet}>
     <FormField label='Label' htmlFor='select' {...props}>
       <Select id='select' placeholder='placeholder' options={['one', 'two']} />
     </FormField>
@@ -79,7 +80,7 @@ const FormFieldSelect = props => (
 );
 
 const FormFieldHelpError = props => (
-  <Grommet>
+  <Grommet theme={grommet}>
     <FormField
       label='Label'
       htmlFor='text-input'
@@ -87,7 +88,12 @@ const FormFieldHelpError = props => (
       help='Text to help the user know what is possible'
       error='Text to call attention to an issue with this field'
     >
-      <TextInput id='text-input' placeholder='placeholder' value='Value' />
+      <TextInput
+        id='text-input'
+        placeholder='placeholder'
+        value='Value'
+        onChange={() => {}}
+      />
     </FormField>
   </Grommet>
 );

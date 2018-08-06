@@ -6,8 +6,8 @@ exports[`Select basic 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #865CD6;
-  stroke: #865CD6;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
 }
 
 .c7 g {
@@ -45,8 +45,6 @@ exports[`Select basic 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #ffffff;
-  color: #444444;
   border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -260,7 +258,7 @@ exports[`Select basic 1`] = `
       <svg
         aria-label="FormDown"
         className="c7"
-        color="#865CD6"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -288,7 +286,7 @@ exports[`Select complex options and children 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kpElOw"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -314,8 +312,8 @@ exports[`Select complex options and children 1`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT bAonn"
-        color="#865CD6"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -343,7 +341,7 @@ exports[`Select complex options and children 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kpElOw"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -369,8 +367,8 @@ exports[`Select complex options and children 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT bAonn"
-        color="#865CD6"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -391,7 +389,7 @@ exports[`Select complex options and children 2`] = `
 
 exports[`Select complex options and children 3`] = `
 <div
-  class="StyledDrop-czaYBK isvWSD"
+  class="StyledDrop-czaYBK lgQIaN"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -409,7 +407,7 @@ exports[`Select complex options and children 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY hOjJXi"
+          class="StyledButton-qbvYY koOflf"
           role="menuitem"
           type="button"
         >
@@ -422,7 +420,7 @@ exports[`Select complex options and children 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY hOjJXi"
+          class="StyledButton-qbvYY koOflf"
           role="menuitem"
           type="button"
         >
@@ -438,19 +436,19 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width:699px) {
-  .kpElOw {
+  .filaRb {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kpElOw {
+  .filaRb {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kpElOw {
+  .filaRb {
     padding: 0;
   }
 }
@@ -536,7 +534,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hOjJXi {
+  .koOflf {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -544,10 +542,9 @@ exports[`Select complex options and children 4`] = `
 
 
 
-.isvWSD {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.lgQIaN {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -559,7 +556,7 @@ exports[`Select complex options and children 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -572,7 +569,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -600,7 +597,7 @@ exports[`Select deselect an option 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kpElOw"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -627,8 +624,8 @@ exports[`Select deselect an option 1`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT bAonn"
-        color="#865CD6"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -657,7 +654,7 @@ exports[`Select disabled 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kpElOw"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -683,8 +680,8 @@ exports[`Select disabled 1`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT bAonn"
-        color="#865CD6"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -713,7 +710,7 @@ exports[`Select disabled 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kpElOw"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -739,8 +736,8 @@ exports[`Select disabled 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT bAonn"
-        color="#865CD6"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -765,8 +762,8 @@ exports[`Select multiple 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #865CD6;
-  stroke: #865CD6;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
 }
 
 .c7 g {
@@ -804,8 +801,6 @@ exports[`Select multiple 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #ffffff;
-  color: #444444;
   border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -1024,7 +1019,7 @@ exports[`Select multiple 1`] = `
       <svg
         aria-label="FormDown"
         className="c7"
-        color="#865CD6"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -1052,7 +1047,7 @@ exports[`Select multiple values 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kpElOw"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1079,8 +1074,8 @@ exports[`Select multiple values 1`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT bAonn"
-        color="#865CD6"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -1108,7 +1103,7 @@ exports[`Select multiple values 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kpElOw"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1135,8 +1130,8 @@ exports[`Select multiple values 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT bAonn"
-        color="#865CD6"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -1157,7 +1152,7 @@ exports[`Select multiple values 2`] = `
 
 exports[`Select multiple values 3`] = `
 <div
-  class="StyledDrop-czaYBK isvWSD"
+  class="StyledDrop-czaYBK lgQIaN"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1175,7 +1170,7 @@ exports[`Select multiple values 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY thBoX"
+          class="StyledButton-qbvYY feADXu"
           role="menuitem"
           type="button"
         >
@@ -1183,7 +1178,7 @@ exports[`Select multiple values 3`] = `
             class="StyledBox-YaZNy hZNqBU"
           >
             <span
-              class="StyledText-dmaDlZ iRQiFb"
+              class="StyledText-dmaDlZ kKQAW"
             >
               one
             </span>
@@ -1194,7 +1189,7 @@ exports[`Select multiple values 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY thBoX"
+          class="StyledButton-qbvYY feADXu"
           role="menuitem"
           type="button"
         >
@@ -1202,7 +1197,7 @@ exports[`Select multiple values 3`] = `
             class="StyledBox-YaZNy hZNqBU"
           >
             <span
-              class="StyledText-dmaDlZ iRQiFb"
+              class="StyledText-dmaDlZ kKQAW"
             >
               two
             </span>
@@ -1216,19 +1211,19 @@ exports[`Select multiple values 3`] = `
 
 exports[`Select multiple values 4`] = `
 "@media only screen and (max-width:699px) {
-  .kpElOw {
+  .filaRb {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kpElOw {
+  .filaRb {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kpElOw {
+  .filaRb {
     padding: 0;
   }
 }
@@ -1319,13 +1314,13 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .gKIdCQ {
+  .flHrpn {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .gKIdCQ {
+  .flHrpn {
     padding: 0;
   }
 }
@@ -1338,7 +1333,7 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hOjJXi {
+  .koOflf {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1352,7 +1347,7 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .thBoX {
+  .feADXu {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1360,10 +1355,9 @@ exports[`Select multiple values 4`] = `
 
 
 
-.isvWSD {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.lgQIaN {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1375,7 +1369,7 @@ exports[`Select multiple values 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1388,7 +1382,7 @@ exports[`Select multiple values 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1416,7 +1410,7 @@ exports[`Select opens 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kpElOw"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1442,8 +1436,8 @@ exports[`Select opens 1`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT bAonn"
-        color="#865CD6"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -1471,7 +1465,7 @@ exports[`Select opens 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kpElOw"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1497,8 +1491,8 @@ exports[`Select opens 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT bAonn"
-        color="#865CD6"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -1519,7 +1513,7 @@ exports[`Select opens 2`] = `
 
 exports[`Select opens 3`] = `
 <div
-  class="StyledDrop-czaYBK isvWSD"
+  class="StyledDrop-czaYBK lgQIaN"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1537,7 +1531,7 @@ exports[`Select opens 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY hOjJXi"
+          class="StyledButton-qbvYY koOflf"
           role="menuitem"
           type="button"
         >
@@ -1545,7 +1539,7 @@ exports[`Select opens 3`] = `
             class="StyledBox-YaZNy hZNqBU"
           >
             <span
-              class="StyledText-dmaDlZ iRQiFb"
+              class="StyledText-dmaDlZ kKQAW"
             >
               one
             </span>
@@ -1556,7 +1550,7 @@ exports[`Select opens 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY hOjJXi"
+          class="StyledButton-qbvYY koOflf"
           role="menuitem"
           type="button"
         >
@@ -1564,7 +1558,7 @@ exports[`Select opens 3`] = `
             class="StyledBox-YaZNy hZNqBU"
           >
             <span
-              class="StyledText-dmaDlZ iRQiFb"
+              class="StyledText-dmaDlZ kKQAW"
             >
               two
             </span>
@@ -1578,19 +1572,19 @@ exports[`Select opens 3`] = `
 
 exports[`Select opens 4`] = `
 "@media only screen and (max-width:699px) {
-  .kpElOw {
+  .filaRb {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kpElOw {
+  .filaRb {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kpElOw {
+  .filaRb {
     padding: 0;
   }
 }
@@ -1676,7 +1670,7 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hOjJXi {
+  .koOflf {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1684,10 +1678,9 @@ exports[`Select opens 4`] = `
 
 
 
-.isvWSD {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.lgQIaN {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1699,7 +1692,7 @@ exports[`Select opens 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -1712,7 +1705,7 @@ exports[`Select opens 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1741,7 +1734,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-YaZNy ckMYwJ"
   >
     <button
-      class="StyledButton-qbvYY hOjJXi"
+      class="StyledButton-qbvYY koOflf"
       role="menuitem"
       type="button"
     >
@@ -1749,7 +1742,7 @@ exports[`Select opens 5`] = `
         class="StyledBox-YaZNy hZNqBU"
       >
         <span
-          class="StyledText-dmaDlZ iRQiFb"
+          class="StyledText-dmaDlZ kKQAW"
         >
           one
         </span>
@@ -1760,7 +1753,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-YaZNy ckMYwJ"
   >
     <button
-      class="StyledButton-qbvYY hOjJXi"
+      class="StyledButton-qbvYY koOflf"
       role="menuitem"
       type="button"
     >
@@ -1768,7 +1761,7 @@ exports[`Select opens 5`] = `
         class="StyledBox-YaZNy hZNqBU"
       >
         <span
-          class="StyledText-dmaDlZ iRQiFb"
+          class="StyledText-dmaDlZ kKQAW"
         >
           two
         </span>
@@ -1787,7 +1780,7 @@ exports[`Select search 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kpElOw"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1813,8 +1806,8 @@ exports[`Select search 1`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT bAonn"
-        color="#865CD6"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -1835,7 +1828,7 @@ exports[`Select search 1`] = `
 
 exports[`Select search 2`] = `
 <div
-  class="StyledDrop-czaYBK isvWSD"
+  class="StyledDrop-czaYBK lgQIaN"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1852,7 +1845,7 @@ exports[`Select search 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-bqUxsy lmQzlX"
+          class="StyledTextInput-bqUxsy fJZpBj"
           type="search"
           value=""
         />
@@ -1867,7 +1860,7 @@ exports[`Select search 2`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY hOjJXi"
+          class="StyledButton-qbvYY koOflf"
           role="menuitem"
           type="button"
         >
@@ -1875,7 +1868,7 @@ exports[`Select search 2`] = `
             class="StyledBox-YaZNy hZNqBU"
           >
             <span
-              class="StyledText-dmaDlZ iRQiFb"
+              class="StyledText-dmaDlZ kKQAW"
             >
               one
             </span>
@@ -1886,7 +1879,7 @@ exports[`Select search 2`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY hOjJXi"
+          class="StyledButton-qbvYY koOflf"
           role="menuitem"
           type="button"
         >
@@ -1894,7 +1887,7 @@ exports[`Select search 2`] = `
             class="StyledBox-YaZNy hZNqBU"
           >
             <span
-              class="StyledText-dmaDlZ iRQiFb"
+              class="StyledText-dmaDlZ kKQAW"
             >
               two
             </span>
@@ -1908,19 +1901,19 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width:699px) {
-  .kpElOw {
+  .filaRb {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kpElOw {
+  .filaRb {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kpElOw {
+  .filaRb {
     padding: 0;
   }
 }
@@ -2018,7 +2011,7 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hOjJXi {
+  .koOflf {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -2026,10 +2019,9 @@ exports[`Select search 3`] = `
 
 
 
-.isvWSD {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.lgQIaN {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2041,7 +2033,7 @@ exports[`Select search 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -2054,7 +2046,7 @@ exports[`Select search 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2082,7 +2074,7 @@ exports[`Select select an option 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kpElOw"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2108,8 +2100,8 @@ exports[`Select select an option 1`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT bAonn"
-        color="#865CD6"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -2137,7 +2129,7 @@ exports[`Select select an option with complex options 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy gKIdCQ"
+    class="StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2152,8 +2144,8 @@ exports[`Select select an option with complex options 1`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT bAonn"
-        color="#865CD6"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -2181,7 +2173,7 @@ exports[`Select select an option with enter 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kpElOw"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2207,8 +2199,8 @@ exports[`Select select an option with enter 1`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT bAonn"
-        color="#865CD6"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -2236,7 +2228,7 @@ exports[`Select select another option 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kpElOw"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2263,8 +2255,8 @@ exports[`Select select another option 1`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT bAonn"
-        color="#865CD6"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -2291,8 +2283,8 @@ exports[`Select size 1`] = `
   flex: 0 0 auto;
   width: 48px;
   height: 48px;
-  fill: #865CD6;
-  stroke: #865CD6;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
 }
 
 .c7 g {
@@ -2330,8 +2322,6 @@ exports[`Select size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: #ffffff;
-  color: #444444;
   border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -2425,8 +2415,8 @@ exports[`Select size 1`] = `
   margin: 0;
   width: 100%;
   -webkit-appearance: textfield;
-  font-size: 24px;
-  line-height: 1.167;
+  font-size: 22px;
+  line-height: 28px;
   border: none;
   -webkit-appearance: none;
 }
@@ -2551,7 +2541,7 @@ exports[`Select size 1`] = `
       <svg
         aria-label="FormDown"
         className="c7"
-        color="#865CD6"
+        color="#7D4CDB"
         height="24px"
         role="img"
         size="large"

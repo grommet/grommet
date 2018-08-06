@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import RangeInput from '../RangeInput/RangeInput';
 import Grommet from '../Grommet/Grommet';
+import { grommet } from '../../themes';
 
 class SimpleRangeInput extends Component {
   state = { value: 5 }
@@ -12,7 +13,7 @@ class SimpleRangeInput extends Component {
   render() {
     const { value } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <RangeInput value={value} onChange={this.onChange} />
       </Grommet>
     );

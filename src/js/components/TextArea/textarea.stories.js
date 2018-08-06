@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import TextArea from '../TextArea/TextArea';
 import Grommet from '../Grommet/Grommet';
+import { grommet } from '../../themes';
 
 class SimpleTextArea extends Component {
   state = { value: '' }
@@ -12,7 +13,7 @@ class SimpleTextArea extends Component {
   render() {
     const { value } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <TextArea value={value} onChange={this.onChange} />
       </Grommet>
     );

@@ -2,7 +2,7 @@
 
 exports[`Drop align left random 1`] = `
 <div
-  class="StyledDrop-czaYBK gDkKzt"
+  class="StyledDrop-czaYBK dGivzW"
   id="drop-node"
   style="width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -15,7 +15,7 @@ exports[`Drop align left random 2`] = `
 "
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -28,7 +28,7 @@ exports[`Drop align left random 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kCaZqn {
+  .bZfQRC {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -40,10 +40,9 @@ exports[`Drop align left random 2`] = `
   }
 }
 
-.gDkKzt {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.dGivzW {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -55,7 +54,7 @@ exports[`Drop align left random 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: bottom left;
@@ -68,7 +67,7 @@ exports[`Drop align left random 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .gDkKzt {
+  .dGivzW {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -83,7 +82,7 @@ exports[`Drop align left random 2`] = `
 
 exports[`Drop align left right top bottom 1`] = `
 <div
-  class="StyledDrop-czaYBK isvWSD"
+  class="StyledDrop-czaYBK lgQIaN"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -95,10 +94,9 @@ exports[`Drop align left right top bottom 1`] = `
 exports[`Drop align left right top bottom 2`] = `
 "
 
-.isvWSD {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.lgQIaN {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -110,7 +108,7 @@ exports[`Drop align left right top bottom 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -123,7 +121,7 @@ exports[`Drop align left right top bottom 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -138,7 +136,7 @@ exports[`Drop align left right top bottom 2`] = `
 
 exports[`Drop align right left top top 1`] = `
 <div
-  class="StyledDrop-czaYBK ebYotu"
+  class="StyledDrop-czaYBK hDYRMY"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -151,7 +149,7 @@ exports[`Drop align right left top top 2`] = `
 "
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -164,7 +162,7 @@ exports[`Drop align right left top top 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kCaZqn {
+  .bZfQRC {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -177,7 +175,7 @@ exports[`Drop align right left top top 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .gDkKzt {
+  .dGivzW {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -189,10 +187,9 @@ exports[`Drop align right left top top 2`] = `
   }
 }
 
-.ebYotu {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.hDYRMY {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -204,7 +201,7 @@ exports[`Drop align right left top top 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;
@@ -217,7 +214,7 @@ exports[`Drop align right left top top 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .ebYotu {
+  .hDYRMY {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -232,7 +229,7 @@ exports[`Drop align right left top top 2`] = `
 
 exports[`Drop align right random 1`] = `
 <div
-  class="StyledDrop-czaYBK ebYotu"
+  class="StyledDrop-czaYBK hDYRMY"
   id="drop-node"
   style="width: 0.1px; max-height: 768px;"
   tabindex="-1"
@@ -245,7 +242,7 @@ exports[`Drop align right random 2`] = `
 "
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -258,7 +255,7 @@ exports[`Drop align right random 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kCaZqn {
+  .bZfQRC {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -271,7 +268,7 @@ exports[`Drop align right random 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .gDkKzt {
+  .dGivzW {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -283,10 +280,9 @@ exports[`Drop align right random 2`] = `
   }
 }
 
-.ebYotu {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.hDYRMY {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -298,7 +294,7 @@ exports[`Drop align right random 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;
@@ -311,7 +307,7 @@ exports[`Drop align right random 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .ebYotu {
+  .hDYRMY {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -326,7 +322,7 @@ exports[`Drop align right random 2`] = `
 
 exports[`Drop align right right bottom top 1`] = `
 <div
-  class="StyledDrop-czaYBK kCaZqn"
+  class="StyledDrop-czaYBK bZfQRC"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -339,7 +335,7 @@ exports[`Drop align right right bottom top 2`] = `
 "
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -351,10 +347,9 @@ exports[`Drop align right right bottom top 2`] = `
   }
 }
 
-.kCaZqn {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.bZfQRC {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -366,7 +361,7 @@ exports[`Drop align right right bottom top 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: bottom right;
@@ -379,7 +374,7 @@ exports[`Drop align right right bottom top 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kCaZqn {
+  .bZfQRC {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -394,7 +389,7 @@ exports[`Drop align right right bottom top 2`] = `
 
 exports[`Drop align right right bottom top 3`] = `
 <div
-  class="StyledDrop-czaYBK kCaZqn"
+  class="StyledDrop-czaYBK bZfQRC"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -407,7 +402,7 @@ exports[`Drop align right right bottom top 4`] = `
 "
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -419,10 +414,9 @@ exports[`Drop align right right bottom top 4`] = `
   }
 }
 
-.kCaZqn {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.bZfQRC {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -434,7 +428,7 @@ exports[`Drop align right right bottom top 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: bottom right;
@@ -447,7 +441,7 @@ exports[`Drop align right right bottom top 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kCaZqn {
+  .bZfQRC {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -460,7 +454,7 @@ exports[`Drop align right right bottom top 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .gDkKzt {
+  .dGivzW {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -473,7 +467,7 @@ exports[`Drop align right right bottom top 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .ebYotu {
+  .hDYRMY {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -488,7 +482,7 @@ exports[`Drop align right right bottom top 4`] = `
 
 exports[`Drop basic 1`] = `
 <div
-  class="StyledDrop-czaYBK isvWSD"
+  class="StyledDrop-czaYBK lgQIaN"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -500,10 +494,9 @@ exports[`Drop basic 1`] = `
 exports[`Drop basic 2`] = `
 "
 
-.isvWSD {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.lgQIaN {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -515,7 +508,7 @@ exports[`Drop basic 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -528,7 +521,7 @@ exports[`Drop basic 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -543,7 +536,7 @@ exports[`Drop basic 2`] = `
 
 exports[`Drop close 1`] = `
 <div
-  class="StyledDrop-czaYBK isvWSD"
+  class="StyledDrop-czaYBK lgQIaN"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -555,10 +548,9 @@ exports[`Drop close 1`] = `
 exports[`Drop close 2`] = `
 "
 
-.isvWSD {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.lgQIaN {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -570,7 +562,7 @@ exports[`Drop close 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -583,7 +575,7 @@ exports[`Drop close 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -596,7 +588,7 @@ exports[`Drop close 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kCaZqn {
+  .bZfQRC {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -609,7 +601,7 @@ exports[`Drop close 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .gDkKzt {
+  .dGivzW {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -622,7 +614,7 @@ exports[`Drop close 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .ebYotu {
+  .hDYRMY {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -637,7 +629,7 @@ exports[`Drop close 2`] = `
 
 exports[`Drop invalid align 1`] = `
 <div
-  class="StyledDrop-czaYBK isvWSD"
+  class="StyledDrop-czaYBK lgQIaN"
   id="drop-node"
   style="width: 0.1px; max-height: 768px;"
   tabindex="-1"
@@ -649,10 +641,9 @@ exports[`Drop invalid align 1`] = `
 exports[`Drop invalid align 2`] = `
 "
 
-.isvWSD {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.lgQIaN {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -664,7 +655,7 @@ exports[`Drop invalid align 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -677,7 +668,7 @@ exports[`Drop invalid align 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -690,7 +681,7 @@ exports[`Drop invalid align 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kCaZqn {
+  .bZfQRC {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -703,7 +694,7 @@ exports[`Drop invalid align 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .gDkKzt {
+  .dGivzW {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -716,7 +707,7 @@ exports[`Drop invalid align 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .ebYotu {
+  .hDYRMY {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -731,7 +722,7 @@ exports[`Drop invalid align 2`] = `
 
 exports[`Drop invoke onClickOutside 1`] = `
 <div
-  class="StyledDrop-czaYBK isvWSD"
+  class="StyledDrop-czaYBK lgQIaN"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -743,10 +734,9 @@ exports[`Drop invoke onClickOutside 1`] = `
 exports[`Drop invoke onClickOutside 2`] = `
 "
 
-.isvWSD {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.lgQIaN {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -758,7 +748,7 @@ exports[`Drop invoke onClickOutside 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -771,7 +761,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -784,7 +774,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kCaZqn {
+  .bZfQRC {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -797,7 +787,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .gDkKzt {
+  .dGivzW {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -810,7 +800,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .ebYotu {
+  .hDYRMY {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -825,7 +815,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 
 exports[`Drop resize 1`] = `
 <div
-  class="StyledDrop-czaYBK isvWSD"
+  class="StyledDrop-czaYBK lgQIaN"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -837,10 +827,9 @@ exports[`Drop resize 1`] = `
 exports[`Drop resize 2`] = `
 "
 
-.isvWSD {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.lgQIaN {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -852,7 +841,7 @@ exports[`Drop resize 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -865,7 +854,7 @@ exports[`Drop resize 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -878,7 +867,7 @@ exports[`Drop resize 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kCaZqn {
+  .bZfQRC {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -891,7 +880,7 @@ exports[`Drop resize 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .gDkKzt {
+  .dGivzW {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -904,7 +893,7 @@ exports[`Drop resize 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .ebYotu {
+  .hDYRMY {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -919,7 +908,7 @@ exports[`Drop resize 2`] = `
 
 exports[`Drop restrict focus 1`] = `
 <div
-  class="StyledDrop-czaYBK isvWSD"
+  class="StyledDrop-czaYBK lgQIaN"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -930,7 +919,7 @@ exports[`Drop restrict focus 1`] = `
 
 exports[`Drop restrict focus 2`] = `
 <div
-  class="StyledDrop-czaYBK isvWSD"
+  class="StyledDrop-czaYBK lgQIaN"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -942,10 +931,9 @@ exports[`Drop restrict focus 2`] = `
 exports[`Drop restrict focus 3`] = `
 "
 
-.isvWSD {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.lgQIaN {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -957,7 +945,7 @@ exports[`Drop restrict focus 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -970,7 +958,7 @@ exports[`Drop restrict focus 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -983,7 +971,7 @@ exports[`Drop restrict focus 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kCaZqn {
+  .bZfQRC {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -996,7 +984,7 @@ exports[`Drop restrict focus 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .gDkKzt {
+  .dGivzW {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1009,7 +997,7 @@ exports[`Drop restrict focus 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .ebYotu {
+  .hDYRMY {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

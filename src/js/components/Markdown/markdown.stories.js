@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import Markdown from '../Markdown/Markdown';
 import Grommet from '../Grommet/Grommet';
+import { grommet } from '../../themes';
 
 const CONTENT = `
   # Out of Breath
@@ -16,7 +17,7 @@ const CONTENT = `
 class SimpleMarkdown extends Component {
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Markdown>{CONTENT}</Markdown>
       </Grommet>
     );

@@ -12,6 +12,7 @@ import {
   Select,
   Text,
 } from '../../';
+import { grommet } from '../../../themes';
 
 import customSearchTheme from './theme';
 import SearchInputContext from './components/SearchInputContext';
@@ -25,7 +26,7 @@ class SimpleSelect extends Component {
   render() {
     const { options, value } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Select
           placeholder='Select'
           value={value}
@@ -49,7 +50,7 @@ class SearchSelect extends Component {
   render() {
     const { options, value } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Select
           size='medium'
           placeholder='Select'
@@ -131,7 +132,7 @@ class SeasonsSelect extends Component {
   render() {
     const { selectedSeasons } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Box direction='row'>
           <Box align='start' basis='medium' direction='row'>
             <Select
@@ -374,7 +375,7 @@ class DarkSelect extends Component {
   render() {
     const { options, value } = this.state;
     return (
-      <Grommet full={true} {...this.props}>
+      <Grommet full={true} theme={grommet} {...this.props}>
         <Box fill={true} background='dark-1' align='center' justify='center'>
           <Select
             placeholder='Select'
@@ -395,5 +396,5 @@ storiesOf('Select', module)
   .add('Custom Search', () => <CustomSearchSelect />)
   .add('Dark', () => <DarkSelect />)
   .add('Custom Colors', () => (
-    <DarkSelect theme={{ select: { background: '#000000', iconColor: '#d3d3d3' } }} />
+    <DarkSelect theme={{ global: { font: { family: 'Arial' } }, select: { background: '#000000', iconColor: '#d3d3d3' } }} />
   ));

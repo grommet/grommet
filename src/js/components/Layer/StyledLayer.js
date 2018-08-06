@@ -50,8 +50,8 @@ export const StyledOverlay = styled.div`
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: ${props =>
-    props.theme.layer.overlayBackgroundColor};
+  ${props => props.theme.layer.overlay.background &&
+    backgroundStyle(props.theme.layer.overlay.background, props.theme)}
   pointer-events: all;
 `;
 

@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import TextInput from '../TextInput/TextInput';
 import Grommet from '../Grommet/Grommet';
+import { grommet } from '../../themes';
 
 class SimpleTextInput extends Component {
   state = { value: '' }
@@ -14,7 +15,7 @@ class SimpleTextInput extends Component {
   render() {
     const { value } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <TextInput ref={this.ref} value={value} onChange={this.onChange} />
       </Grommet>
     );
@@ -33,7 +34,7 @@ class SuggestionsTextInput extends Component {
   render() {
     const { value } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <TextInput
           value={value}
           onChange={this.onChange}

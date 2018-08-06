@@ -7,21 +7,22 @@ import RoutedButton from '../Button/RoutedButton';
 import Grommet from '../Grommet/Grommet';
 import Box from '../Box/Box';
 import Text from '../Text/Text';
+import { grommet } from '../../themes';
 
 const SimpleButton = props => (
-  <Grommet>
+  <Grommet theme={grommet}>
     <Button fill={true} label='Submit' onClick={() => {}} {...props} />
   </Grommet>
 );
 
 const IconButton = () => (
-  <Grommet>
+  <Grommet theme={grommet}>
     <Button icon={<Add />} hoverIndicator={true} onClick={() => {}} />
   </Grommet>
 );
 
 const PlainButton = () => (
-  <Grommet>
+  <Grommet theme={grommet}>
     <Button hoverIndicator={true} onClick={() => {}}>
       <Box pad='small' direction='row' align='center' gap='small'>
         <Add />
@@ -32,18 +33,23 @@ const PlainButton = () => (
 );
 
 const AnchorButton = () => (
-  <Grommet>
+  <Grommet theme={grommet}>
     <Button label='Go' href='#' />
   </Grommet>
 );
 
 const RouteButton = () => (
-  <Grommet>
+  <Grommet theme={grommet}>
     <RoutedButton label='Go' path='/' />
   </Grommet>
 );
 
 const customTheme = {
+  global: {
+    font: {
+      family: 'Arial',
+    },
+  },
   button: {
     border: {
       radius: undefined,
@@ -53,8 +59,8 @@ const customTheme = {
       vertical: '12px',
       horizontal: '24px',
     },
-    colors: {
-      primary: '#2196f3',
+    primary: {
+      color: '#2196f3',
     },
     extend: (props) => {
       let extraStyles = '';

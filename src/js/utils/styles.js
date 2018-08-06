@@ -1,86 +1,16 @@
 import { css } from 'styled-components';
 
 import { palm, parseMetricToNum } from './mixins';
-import { colorForName, colorIsDark, getRGBA } from './colors';
 
 export const activeStyle = css`
   background: ${props => props.theme.global.hover.backgroundColor};
   color: ${props => props.theme.global.hover.textColor};
 `;
 
-export const backgroundStyle = (background, theme) => {
-  if (typeof background === 'object') {
-    if (background.image) {
-      let color;
-      if (background.dark === false) {
-        color = theme.global.colors.lightBackground.text;
-      } else if (background.dark) {
-        color = theme.global.colors.darkBackground.text;
-      } else {
-        color = 'inherit';
-      }
-      return css`
-        background: ${background.image} no-repeat;
-        background-position: ${background.position || 'center center'};
-        background-size: cover;
-        color: ${color};
-      `;
-    } else if (background.color) {
-      const backgroundColor = getRGBA(
-        background.color,
-        background.opacity === true ? (
-          theme.global.opacity.medium
-        ) : (
-          theme.global.opacity[background.opacity]
-        )
-      ) || colorForName(background.color, theme);
-      return css`
-        background: ${backgroundColor};
-        ${(!background.opacity || background.opacity !== 'weak') &&
-          `color: ${
-            background.dark || colorIsDark(backgroundColor) ?
-            theme.global.colors.darkBackground.text :
-            theme.global.colors.lightBackground.text
-          };`
-        }
-      `;
-    } else if (background.dark === false) {
-      return css`
-        color: ${theme.global.colors.lightBackground.text};
-      `;
-    } else if (background.dark) {
-      return css`
-        color: ${theme.global.colors.darkBackground.text};
-      `;
-    }
-    return undefined;
-  }
-  if (background) {
-    if (background.lastIndexOf('url', 0) === 0) {
-      return css`
-        background: ${background} no-repeat center center;
-        background-size: cover;
-      `;
-    }
-    const color = colorForName(background, theme);
-    if (color) {
-      return css`
-        background: ${color};
-        color: ${colorIsDark(color) ?
-          theme.global.colors.darkBackground.text :
-          theme.global.colors.lightBackground.text};
-      `;
-    }
-  }
-  return undefined;
-};
-
 export const baseStyle = css`
   font-family: ${props => props.theme.global.font.family};
-  font-size: ${props => `${(parseMetricToNum(props.theme.global.font.size) / 16) * 1}em`};
-  line-height: ${props => (
-    parseMetricToNum(props.theme.global.lineHeight) / parseMetricToNum(props.theme.global.font.size)
-  )};
+  font-size: ${props => props.theme.global.font.size};
+  line-height: ${props => props.theme.global.font.height};
   ${props => props.theme.global.colors.text &&
     `color: ${props.theme.global.colors.text};`}
   ${props => props.theme.global.colors.background &&
@@ -186,7 +116,10 @@ export const inputStyle = css`
     (parseMetricToNum(props.theme.global.spacing) / 2) -
     parseMetricToNum(props.theme.global.input.border.width)
   )}px;
-  border: ${props => props.theme.global.input.border.width} solid ${props => props.theme.global.input.border.color};
+  border: ${props =>
+    props.theme.global.input.border.width} solid ${props =>
+      (props.theme.global.input.border.color ||
+        props.theme.global.control.border.color)[props.theme.dark ? 'dark' : 'light']};
   border-radius: ${props => props.theme.global.input.border.radius};
   outline: none;
   background: transparent;
@@ -199,6 +132,18 @@ export const inputStyle = css`
   ${props => props.focus && (!props.plain || props.focusIndicator) && focusStyle}
 `;
 
+export const evalStyle = (arg, theme) => {
+  if (arg && Array.isArray(arg) && typeof arg[0] === 'function') {
+    return arg[0]({ theme });
+  }
+  return arg;
+};
+
 export default {
-  activeStyle, backgroundStyle, baseStyle, edgeStyle, inputStyle, focusStyle,
+  activeStyle,
+  baseStyle,
+  evalStyle,
+  edgeStyle,
+  focusStyle,
+  inputStyle,
 };

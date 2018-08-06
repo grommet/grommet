@@ -3,7 +3,7 @@ import { ThemeContext as IconThemeContext } from 'grommet-icons';
 
 import ThemeContext from '../../contexts/ThemeContext';
 import ResponsiveContext from '../../contexts/ResponsiveContext';
-import baseTheme from '../../themes/vanilla';
+import baseTheme from '../../themes/base';
 import { colorIsDark, deepMerge } from '../../utils';
 import { withIconTheme } from '../hocs';
 
@@ -28,7 +28,7 @@ class Grommet extends Component {
       const lightIconTheme = deepMerge(iconTheme, nextTheme.icon);
       const iconThemes = {
         dark: deepMerge(lightIconTheme, {
-          color: nextTheme.global.colors.darkBackground.text,
+          color: nextTheme.global.text.color.dark,
         }),
         light: lightIconTheme,
       };

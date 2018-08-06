@@ -2,9 +2,8 @@
 
 exports[`RadioButton checked renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -75,7 +74,7 @@ exports[`RadioButton checked renders 1`] = `
 }
 
 .c3:checked + div {
-  border-color: #865CD6;
+  border-color: #7D4CDB;
 }
 
 .c3:checked + div > svg {
@@ -84,7 +83,7 @@ exports[`RadioButton checked renders 1`] = `
 
 .c3:checked + span > span {
   left: 24px;
-  background: #865CD6;
+  background: #7D4CDB;
 }
 
 .c4 {
@@ -109,7 +108,7 @@ exports[`RadioButton checked renders 1`] = `
   display: none;
   width: 24px;
   height: 24px;
-  fill: #865CD6;
+  fill: #7D4CDB;
 }
 
 .c2 {
@@ -151,9 +150,8 @@ exports[`RadioButton checked renders 1`] = `
 
 exports[`RadioButton disabled renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -226,7 +224,7 @@ exports[`RadioButton disabled renders 1`] = `
 }
 
 .c3:checked + div {
-  border-color: #865CD6;
+  border-color: #7D4CDB;
 }
 
 .c3:checked + div > svg {
@@ -235,7 +233,7 @@ exports[`RadioButton disabled renders 1`] = `
 
 .c3:checked + span > span {
   left: 24px;
-  background: #865CD6;
+  background: #7D4CDB;
 }
 
 .c4 {
@@ -260,7 +258,7 @@ exports[`RadioButton disabled renders 1`] = `
   display: none;
   width: 24px;
   height: 24px;
-  fill: #865CD6;
+  fill: #7D4CDB;
 }
 
 .c2 {
@@ -332,9 +330,8 @@ exports[`RadioButton disabled renders 1`] = `
 
 exports[`RadioButton label renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -405,7 +402,7 @@ exports[`RadioButton label renders 1`] = `
 }
 
 .c3:checked + div {
-  border-color: #865CD6;
+  border-color: #7D4CDB;
 }
 
 .c3:checked + div > svg {
@@ -414,7 +411,7 @@ exports[`RadioButton label renders 1`] = `
 
 .c3:checked + span > span {
   left: 24px;
-  background: #865CD6;
+  background: #7D4CDB;
 }
 
 .c4 {
@@ -439,7 +436,7 @@ exports[`RadioButton label renders 1`] = `
   display: none;
   width: 24px;
   height: 24px;
-  fill: #865CD6;
+  fill: #7D4CDB;
 }
 
 .c2 {
@@ -512,9 +509,8 @@ exports[`RadioButton label renders 1`] = `
 
 exports[`RadioButton renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -585,7 +581,7 @@ exports[`RadioButton renders 1`] = `
 }
 
 .c3:checked + div {
-  border-color: #865CD6;
+  border-color: #7D4CDB;
 }
 
 .c3:checked + div > svg {
@@ -594,7 +590,7 @@ exports[`RadioButton renders 1`] = `
 
 .c3:checked + span > span {
   left: 24px;
-  background: #865CD6;
+  background: #7D4CDB;
 }
 
 .c4 {
@@ -619,7 +615,7 @@ exports[`RadioButton renders 1`] = `
   display: none;
   width: 24px;
   height: 24px;
-  fill: #865CD6;
+  fill: #7D4CDB;
 }
 
 .c2 {

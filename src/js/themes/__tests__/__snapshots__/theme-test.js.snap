@@ -2,9 +2,9 @@
 
 exports[`dark renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-family: Arial;
+  font-size: 18px;
+  line-height: 24px;
   color: #eeeeee;
   background: #111111;
   box-sizing: border-box;
@@ -23,26 +23,7 @@ exports[`dark renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #FD6FFF;
-  color: #000000;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #60EB9F;
-  color: #000000;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -61,26 +42,7 @@ exports[`dark renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #60EBE1;
-  color: #000000;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #FFCA58;
-  color: #000000;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -98,8 +60,8 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #F6F6F6;
-  color: #000000;
+  background: #333333;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -117,8 +79,8 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #EEEEEE;
-  color: #000000;
+  background: #444444;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -136,8 +98,8 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #DDDDDD;
-  color: #000000;
+  background: #555555;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -155,8 +117,8 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #CCCCCC;
-  color: #000000;
+  background: #666666;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -174,8 +136,8 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #BBBBBB;
-  color: #000000;
+  background: #777777;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -193,8 +155,8 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #333333;
-  color: #eeeeee;
+  background: #F6F6F6;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -212,8 +174,8 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #444444;
-  color: #eeeeee;
+  background: #EEEEEE;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -231,8 +193,8 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #555555;
-  color: #eeeeee;
+  background: #DDDDDD;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -250,8 +212,8 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #666666;
-  color: #eeeeee;
+  background: #CCCCCC;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -269,8 +231,8 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #777777;
-  color: #eeeeee;
+  background: #BBBBBB;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -289,64 +251,7 @@ exports[`dark renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #EB6060;
-  color: #000000;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #01C781;
-  color: #000000;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #6095EB;
-  color: #000000;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #FF3333;
-  color: #eeeeee;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -365,7 +270,102 @@ exports[`dark renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #a8a8a8;
-  color: #000000;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: #60EB9F;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: #FFCA58;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: #01C781;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: #6095EB;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: #FF3333;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -384,7 +384,7 @@ exports[`dark renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #7DD892;
-  color: #000000;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -403,7 +403,7 @@ exports[`dark renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #F7E464;
-  color: #000000;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -414,8 +414,8 @@ exports[`dark renders 1`] = `
 }
 
 .c2 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 @media only screen and (max-width:699px) {
@@ -431,18 +431,6 @@ exports[`dark renders 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c3 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c3 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
   .c4 {
     margin: 0;
   }
@@ -450,18 +438,6 @@ exports[`dark renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c5 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c5 {
     padding: 0;
   }
 }
@@ -599,6 +575,42 @@ exports[`dark renders 1`] = `
 }
 
 @media only screen and (max-width:699px) {
+  .c20 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c20 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .c17 {
     margin: 0;
   }
@@ -630,18 +642,6 @@ exports[`dark renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c19 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c20 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c20 {
     padding: 0;
   }
 }
@@ -885,9 +885,8 @@ exports[`dark renders 1`] = `
 
 exports[`default renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -923,7 +922,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #60EB9F;
+  background: #61EC9F;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -961,8 +960,8 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: #7D4CDB;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -981,7 +980,7 @@ exports[`default renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #333333;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1000,7 +999,7 @@ exports[`default renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #444444;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1019,7 +1018,7 @@ exports[`default renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #555555;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1038,7 +1037,7 @@ exports[`default renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #666666;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1057,7 +1056,7 @@ exports[`default renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #777777;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1170,8 +1169,8 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #EB6060;
-  color: #444444;
+  background: #3D138D;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1189,7 +1188,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #01C781;
+  background: #BE60EB;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1208,7 +1207,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #6095EB;
+  background: #00C781;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1227,7 +1226,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #E1746A;
+  background: #EB6060;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1265,7 +1264,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #7DD892;
+  background: #7CD992;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1284,7 +1283,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #F7E464;
+  background: #F7E463;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1296,8 +1295,8 @@ exports[`default renders 1`] = `
 }
 
 .c2 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 @media only screen and (max-width:699px) {
@@ -1768,8 +1767,8 @@ exports[`default renders 1`] = `
 exports[`hpe renders 1`] = `
 .c0 {
   font-family: 'Metric',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1787,7 +1786,7 @@ exports[`hpe renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #333333;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1806,7 +1805,7 @@ exports[`hpe renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #444444;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1825,7 +1824,7 @@ exports[`hpe renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #555555;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1844,7 +1843,7 @@ exports[`hpe renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #666666;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1863,7 +1862,7 @@ exports[`hpe renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #777777;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1996,7 +1995,7 @@ exports[`hpe renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #614767;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2034,7 +2033,7 @@ exports[`hpe renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #01a982;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2053,7 +2052,7 @@ exports[`hpe renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #425563;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2072,7 +2071,7 @@ exports[`hpe renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #5F7A76;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2091,7 +2090,7 @@ exports[`hpe renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #80746E;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2110,7 +2109,7 @@ exports[`hpe renders 1`] = `
   outline: none;
   max-width: 100%;
   background: #F04953;
-  color: #FFFFFF;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2140,8 +2139,8 @@ exports[`hpe renders 1`] = `
 }
 
 .c2 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 @media only screen and (max-width:699px) {

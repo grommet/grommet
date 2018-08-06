@@ -2,9 +2,8 @@
 
 exports[`Paragraph margin renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -14,48 +13,48 @@ exports[`Paragraph margin renders 1`] = `
 }
 
 .c1 {
-  font-size: 16px;
-  line-height: 1.375;
-  max-width: 384px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
   margin-top: 12px;
   margin-bottom: 12px;
 }
 
 .c2 {
-  font-size: 16px;
-  line-height: 1.375;
-  max-width: 384px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
   margin-top: 24px;
   margin-bottom: 24px;
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
-  max-width: 384px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
   margin-top: 48px;
   margin-bottom: 48px;
 }
 
 .c4 {
-  font-size: 16px;
-  line-height: 1.375;
-  max-width: 384px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .c5 {
-  font-size: 16px;
-  line-height: 1.375;
-  max-width: 384px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
   margin-bottom: 12px;
 }
 
 .c6 {
-  font-size: 16px;
-  line-height: 1.375;
-  max-width: 384px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
   margin-top: 12px;
 }
 
@@ -85,9 +84,8 @@ exports[`Paragraph margin renders 1`] = `
 
 exports[`Paragraph renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -97,9 +95,9 @@ exports[`Paragraph renders 1`] = `
 }
 
 .c1 {
-  font-size: 16px;
-  line-height: 1.375;
-  max-width: 384px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
 }
 
 <div
@@ -113,9 +111,8 @@ exports[`Paragraph renders 1`] = `
 
 exports[`Paragraph size renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -125,27 +122,27 @@ exports[`Paragraph size renders 1`] = `
 }
 
 .c2 {
-  font-size: 16px;
-  line-height: 1.375;
-  max-width: 384px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
 }
 
 .c1 {
   font-size: 14px;
-  line-height: 1.43;
+  line-height: 20px;
   max-width: 336px;
 }
 
 .c3 {
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
 }
 
 .c4 {
-  font-size: 32px;
-  line-height: 1.1875;
-  max-width: 768px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
 }
 
 <div
@@ -172,9 +169,8 @@ exports[`Paragraph size renders 1`] = `
 
 exports[`Paragraph textAlign renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -184,23 +180,23 @@ exports[`Paragraph textAlign renders 1`] = `
 }
 
 .c1 {
-  font-size: 16px;
-  line-height: 1.375;
-  max-width: 384px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
   text-align: left;
 }
 
 .c2 {
-  font-size: 16px;
-  line-height: 1.375;
-  max-width: 384px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
   text-align: center;
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
-  max-width: 384px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
   text-align: right;
 }
 

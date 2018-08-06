@@ -6,6 +6,7 @@ import Stack from '../Stack/Stack';
 import Box from '../Box/Box';
 import Text from '../Text/Text';
 import Grommet from '../Grommet/Grommet';
+import { grommet } from '../../themes';
 
 class SimpleRangeSelector extends Component {
   state = { values: [2, 8] }
@@ -15,7 +16,7 @@ class SimpleRangeSelector extends Component {
   render() {
     const { values } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Stack>
           <Box direction='row' justify='between'>
             {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(value => (

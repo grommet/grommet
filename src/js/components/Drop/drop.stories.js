@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Drop, Grommet } from '../';
+import { grommet } from '../../themes';
 
 class SimpleDrop extends Component {
   componentDidMount() {
@@ -9,7 +10,7 @@ class SimpleDrop extends Component {
   }
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Box align='start'>
           <Box
             background='dark-4'

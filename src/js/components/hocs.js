@@ -5,7 +5,6 @@ import { ThemeContext as IconThemeContext } from 'grommet-icons';
 
 import AnnounceContext from '../contexts/AnnounceContext';
 import ThemeContext from '../contexts/ThemeContext';
-import { deepMerge } from '../utils';
 
 export const withFocus = (WrappedComponent) => {
   class FocusableComponent extends Component {
@@ -110,44 +109,22 @@ export const withFocus = (WrappedComponent) => {
 
 export const withTheme = (WrappedComponent) => {
   class ThemedComponent extends Component {
-    static getDerivedStateFromProps(nextProps, prevState) {
-      const { themeContext, theme } = nextProps;
-      const { theme: stateTheme } = prevState;
-      if (theme && !stateTheme) {
-        return { theme: deepMerge(themeContext, theme) };
-      } else if (!theme && stateTheme) {
-        return { theme: undefined };
-      }
-      return null;
-    }
-
-    state = {}
-
     render() {
-      const { withThemeRef, themeContext, ...rest } = this.props;
-      const { theme } = this.state;
-      let content = (
+      const { withThemeRef, theme, ...rest } = this.props;
+      return (
         <WrappedComponent
           ref={withThemeRef}
           {...rest}
-          theme={theme || themeContext}
+          theme={theme}
         />
       );
-      if (theme) {
-        content = (
-          <ThemeContext.Provider value={theme}>
-            {content}
-          </ThemeContext.Provider>
-        );
-      }
-      return content;
     }
   }
 
   const ForwardRef = React.forwardRef((props, ref) => (
     <ThemeContext.Consumer>
       {theme =>
-        <ThemedComponent {...props} themeContext={theme} withThemeRef={ref} />}
+        <ThemedComponent {...props} theme={theme} withThemeRef={ref} />}
     </ThemeContext.Consumer>
   ));
 

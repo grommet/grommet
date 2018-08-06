@@ -39,7 +39,7 @@ class CheckBox extends Component {
 
     const Icon = theme.checkBox.icons.checked;
 
-    const control = (toggle ? (
+    const visual = (toggle ? (
       <StyledCheckBoxToggle focus={focus} theme={theme}>
         <StyledCheckBoxKnob theme={theme} />
       </StyledCheckBoxToggle>
@@ -68,7 +68,7 @@ class CheckBox extends Component {
             {...removeUndefined({ id, name, checked, disabled, onChange })}
             theme={theme}
           />
-          {control}
+          {visual}
         </StyledCheckBox>
         {normalizedLabel}
         {hidden}

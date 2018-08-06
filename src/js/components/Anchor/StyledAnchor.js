@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { focusStyle } from '../../utils';
+import { focusStyle, normalizeColor } from '../../utils';
 
 const disabledStyle = `
   opacity: 0.3;
@@ -12,9 +12,7 @@ const StyledAnchor = styled.a`
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: ${props =>
-    (props.theme.dark ? props.theme.global.colors.darkBackground.text
-      : props.theme.anchor.color)};
+  color: ${props => normalizeColor(props.theme.anchor.color, props.theme)};
   text-decoration: ${props => props.theme.anchor.textDecoration};
   cursor: pointer;
   outline: none;

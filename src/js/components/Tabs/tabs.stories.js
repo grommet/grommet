@@ -6,6 +6,7 @@ import Tabs from '../Tabs/Tabs';
 import Tab from '../Tabs/Tab';
 import Box from '../Box/Box';
 import Grommet from '../Grommet/Grommet';
+import { grommet } from '../../themes';
 
 class SimpleTabs extends Component {
   state = {}
@@ -15,20 +16,20 @@ class SimpleTabs extends Component {
   render() {
     const { index } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Tabs activeIndex={index} onActive={this.onActive}>
           <Tab title='Tab 1'>
-            <Box pad='large' align='center' background='accent-1'>
+            <Box margin='small' pad='large' align='center' background='accent-1'>
               <Attraction size='xlarge' />
             </Box>
           </Tab>
           <Tab title='Tab 2'>
-            <Box pad='large' align='center' background='accent-2'>
+            <Box margin='small' pad='large' align='center' background='accent-2'>
               <TreeOption size='xlarge' />
             </Box>
           </Tab>
           <Tab title='Tab 3'>
-            <Box pad='large' align='center' background='accent-3'>
+            <Box margin='small' pad='large' align='center' background='accent-3'>
               <Car size='xlarge' />
             </Box>
           </Tab>

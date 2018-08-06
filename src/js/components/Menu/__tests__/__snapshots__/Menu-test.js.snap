@@ -34,8 +34,8 @@ exports[`Menu basic 1`] = `
 }
 
 .c2 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -117,7 +117,7 @@ exports[`Menu close by clicking outside 1`] = `
       class="StyledBox-YaZNy jyWPQv"
     >
       <span
-        class="StyledText-dmaDlZ iiuQkH"
+        class="StyledText-dmaDlZ cuXUhH"
       >
         Test
       </span>
@@ -126,8 +126,8 @@ exports[`Menu close by clicking outside 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT iKWCCU"
-        color="brand"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -148,7 +148,7 @@ exports[`Menu close by clicking outside 1`] = `
 
 exports[`Menu close by clicking outside 2`] = `
 <div
-  class="StyledDrop-czaYBK isvWSD"
+  class="StyledDrop-czaYBK lgQIaN"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -165,7 +165,7 @@ exports[`Menu close by clicking outside 2`] = `
         class="StyledBox-YaZNy jyWPQv"
       >
         <span
-          class="StyledText-dmaDlZ iiuQkH"
+          class="StyledText-dmaDlZ cuXUhH"
         >
           Test
         </span>
@@ -174,8 +174,8 @@ exports[`Menu close by clicking outside 2`] = `
         />
         <svg
           aria-label="FormDown"
-          class="StyledIcon-hcpUvT iKWCCU"
-          color="brand"
+          class="StyledIcon-hcpUvT bPezfS"
+          color="#7D4CDB"
           height="24px"
           role="img"
           version="1.1"
@@ -280,7 +280,7 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hOjJXi {
+  .koOflf {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -294,7 +294,7 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .dwCdyk {
+  .fPPCXi {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -302,10 +302,9 @@ exports[`Menu close by clicking outside 3`] = `
 
 
 
-.isvWSD {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.lgQIaN {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -317,7 +316,7 @@ exports[`Menu close by clicking outside 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -330,7 +329,7 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -355,7 +354,7 @@ exports[`Menu close on esc 1`] = `
       class="StyledBox-YaZNy jyWPQv"
     >
       <span
-        class="StyledText-dmaDlZ iiuQkH"
+        class="StyledText-dmaDlZ cuXUhH"
       >
         Test
       </span>
@@ -364,8 +363,8 @@ exports[`Menu close on esc 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT iKWCCU"
-        color="brand"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -396,7 +395,7 @@ exports[`Menu close on tab 1`] = `
       class="StyledBox-YaZNy jyWPQv"
     >
       <span
-        class="StyledText-dmaDlZ iiuQkH"
+        class="StyledText-dmaDlZ cuXUhH"
       >
         Test
       </span>
@@ -405,8 +404,8 @@ exports[`Menu close on tab 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT iKWCCU"
-        color="brand"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -431,8 +430,8 @@ exports[`Menu custom message 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: brand;
-  stroke: brand;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
 }
 
 .c4 g {
@@ -491,8 +490,8 @@ exports[`Menu custom message 1`] = `
 }
 
 .c2 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -558,7 +557,7 @@ exports[`Menu custom message 1`] = `
       <svg
         aria-label="FormDown"
         className="c4"
-        color="brand"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -590,7 +589,7 @@ exports[`Menu disabled 1`] = `
       class="StyledBox-YaZNy jyWPQv"
     >
       <span
-        class="StyledText-dmaDlZ iiuQkH"
+        class="StyledText-dmaDlZ cuXUhH"
       >
         Test
       </span>
@@ -599,8 +598,8 @@ exports[`Menu disabled 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT iKWCCU"
-        color="brand"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -631,7 +630,7 @@ exports[`Menu navigate through suggestions and select 1`] = `
       class="StyledBox-YaZNy jyWPQv"
     >
       <span
-        class="StyledText-dmaDlZ iiuQkH"
+        class="StyledText-dmaDlZ cuXUhH"
       >
         Test
       </span>
@@ -640,8 +639,8 @@ exports[`Menu navigate through suggestions and select 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT iKWCCU"
-        color="brand"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -672,7 +671,7 @@ exports[`Menu open and close on click 1`] = `
       class="StyledBox-YaZNy jyWPQv"
     >
       <span
-        class="StyledText-dmaDlZ iiuQkH"
+        class="StyledText-dmaDlZ cuXUhH"
       >
         Test
       </span>
@@ -681,8 +680,8 @@ exports[`Menu open and close on click 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT iKWCCU"
-        color="brand"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -713,7 +712,7 @@ exports[`Menu open and close on click 2`] = `
       class="StyledBox-YaZNy jyWPQv"
     >
       <span
-        class="StyledText-dmaDlZ iiuQkH"
+        class="StyledText-dmaDlZ cuXUhH"
       >
         Test
       </span>
@@ -722,8 +721,8 @@ exports[`Menu open and close on click 2`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT iKWCCU"
-        color="brand"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -744,7 +743,7 @@ exports[`Menu open and close on click 2`] = `
 
 exports[`Menu open and close on click 3`] = `
 <div
-  class="StyledDrop-czaYBK isvWSD"
+  class="StyledDrop-czaYBK lgQIaN"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -761,7 +760,7 @@ exports[`Menu open and close on click 3`] = `
         class="StyledBox-YaZNy jyWPQv"
       >
         <span
-          class="StyledText-dmaDlZ iiuQkH"
+          class="StyledText-dmaDlZ cuXUhH"
         >
           Test
         </span>
@@ -770,8 +769,8 @@ exports[`Menu open and close on click 3`] = `
         />
         <svg
           aria-label="FormDown"
-          class="StyledIcon-hcpUvT iKWCCU"
-          color="brand"
+          class="StyledIcon-hcpUvT bPezfS"
+          color="#7D4CDB"
           height="24px"
           role="img"
           version="1.1"
@@ -802,7 +801,7 @@ exports[`Menu open and close on click 3`] = `
         </div>
       </button>
       <button
-        class="StyledButton-qbvYY hOjJXi"
+        class="StyledButton-qbvYY koOflf"
         type="button"
       >
         <div
@@ -812,7 +811,7 @@ exports[`Menu open and close on click 3`] = `
         </div>
       </button>
       <a
-        class="StyledButton-kDOCUE dwCdyk"
+        class="StyledButton-kDOCUE fPPCXi"
         href="/test"
       >
         <div
@@ -885,14 +884,14 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hOjJXi {
+  .koOflf {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .dwCdyk {
+  .fPPCXi {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -900,10 +899,9 @@ exports[`Menu open and close on click 4`] = `
 
 
 
-.isvWSD {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.lgQIaN {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -915,7 +913,7 @@ exports[`Menu open and close on click 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
@@ -928,7 +926,7 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -953,7 +951,7 @@ exports[`Menu select an item 1`] = `
       class="StyledBox-YaZNy jyWPQv"
     >
       <span
-        class="StyledText-dmaDlZ iiuQkH"
+        class="StyledText-dmaDlZ cuXUhH"
       >
         Test
       </span>
@@ -962,8 +960,8 @@ exports[`Menu select an item 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT iKWCCU"
-        color="brand"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -994,7 +992,7 @@ exports[`Menu with dropAlign renders 1`] = `
       class="StyledBox-YaZNy jyWPQv"
     >
       <span
-        class="StyledText-dmaDlZ iiuQkH"
+        class="StyledText-dmaDlZ cuXUhH"
       >
         Test
       </span>
@@ -1003,8 +1001,8 @@ exports[`Menu with dropAlign renders 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT iKWCCU"
-        color="brand"
+        class="StyledIcon-hcpUvT bPezfS"
+        color="#7D4CDB"
         height="24px"
         role="img"
         version="1.1"
@@ -1025,7 +1023,7 @@ exports[`Menu with dropAlign renders 1`] = `
 
 exports[`Menu with dropAlign renders 2`] = `
 <div
-  class="StyledDrop-czaYBK ebYotu"
+  class="StyledDrop-czaYBK hDYRMY"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1042,7 +1040,7 @@ exports[`Menu with dropAlign renders 2`] = `
         class="StyledBox-YaZNy jyWPQv"
       >
         <span
-          class="StyledText-dmaDlZ iiuQkH"
+          class="StyledText-dmaDlZ cuXUhH"
         >
           Test
         </span>
@@ -1051,8 +1049,8 @@ exports[`Menu with dropAlign renders 2`] = `
         />
         <svg
           aria-label="FormDown"
-          class="StyledIcon-hcpUvT iKWCCU"
-          color="brand"
+          class="StyledIcon-hcpUvT bPezfS"
+          color="#7D4CDB"
           height="24px"
           role="img"
           version="1.1"
@@ -1157,7 +1155,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hOjJXi {
+  .koOflf {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1171,14 +1169,14 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .thBoX {
+  .feADXu {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .dwCdyk {
+  .fPPCXi {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1187,7 +1185,7 @@ exports[`Menu with dropAlign renders 3`] = `
 
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .isvWSD {
+  .lgQIaN {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1199,10 +1197,9 @@ exports[`Menu with dropAlign renders 3`] = `
   }
 }
 
-.ebYotu {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+.hDYRMY {
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1214,7 +1211,7 @@ exports[`Menu with dropAlign renders 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  background: #f8f8f8;
+  background: #ffffff;
   color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;
@@ -1227,7 +1224,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .ebYotu {
+  .hDYRMY {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

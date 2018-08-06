@@ -5,6 +5,7 @@ import Diagram from '../Diagram/Diagram';
 import Box from '../Box/Box';
 import Stack from '../Stack/Stack';
 import Grommet from '../Grommet/Grommet';
+import { grommet } from '../../themes';
 
 const Node = ({ id, ...rest }) => (
   <Box
@@ -32,7 +33,7 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
 class SimpleDiagram extends Component {
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Stack>
           <Box>
             <Box direction='row'>

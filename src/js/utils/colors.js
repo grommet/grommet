@@ -1,22 +1,6 @@
 
-export const colorForName = (name, theme) => {
-  let color = theme.global.colors[name];
-  if (color) {
-    return color;
-  }
-  const [kind, index] = name.split('-');
-  const colorSet = theme.global.colors[kind];
-  if (Array.isArray(colorSet)) {
-    color = colorSet[index - 1];
-  } else if (typeof colorSet === 'object') {
-    color = colorSet[index];
-  } else if (typeof colorSet === 'string') {
-    color = colorSet;
-  } else {
-    color = name;
-  }
-  return color;
-};
+export const colorForName = (name, theme) =>
+  theme.global.colors[name] || name;
 
 function parseHexToRGB(color) {
   // https://stackoverflow.com/a/42429333
@@ -52,28 +36,17 @@ export const getRGBA = (color, opacity) => {
   return undefined;
 };
 
-export const backgroundIsDark = (background, theme) => {
-  let dark;
-  if (background) {
-    if (typeof background === 'object') {
-      if (background.dark !== undefined) {
-        dark = background.dark;
-      } else if (background.color &&
-        // weak opacity means we keep the existing darkness
-        (!background.opacity || background.opacity !== 'weak')) {
-        const color = colorForName(background.color, theme);
-        if (color) {
-          dark = colorIsDark(color);
-        }
-      }
-    } else {
-      const color = colorForName(background, theme);
-      if (color) {
-        dark = colorIsDark(color);
-      }
+export const normalizeColor = (color, theme) => {
+  // If the color has a light or dark object, use that
+  let result = color;
+  if (color) {
+    if (theme.dark && color.dark) {
+      result = color.dark;
+    } else if (!theme.dark && color.light) {
+      result = color.light;
     }
   }
-  return dark;
+  return result;
 };
 
-export default { backgroundIsDark, colorForName, colorIsDark, getRGBA };
+export default { colorForName, colorIsDark, getRGBA, normalizeColor };

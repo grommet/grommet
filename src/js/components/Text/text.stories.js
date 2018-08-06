@@ -3,16 +3,26 @@ import { storiesOf } from '@storybook/react';
 
 import Text from '../Text/Text';
 import Grommet from '../Grommet/Grommet';
+import Box from '../Box/Box';
+import { grommet } from '../../themes';
 
-class SimpleText extends Component {
+const sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall'];
+
+class All extends Component {
   render() {
     return (
-      <Grommet>
-        <Text>Some text</Text>
+      <Grommet theme={grommet}>
+        {sizes.map(size => (
+          <Box margin='small'>
+            <Text size={size}>
+              {`Text ${size}`}
+            </Text>
+          </Box>
+        ))}
       </Grommet>
     );
   }
 }
 
 storiesOf('Text', module)
-  .add('Simple Text', () => <SimpleText />);
+  .add('All', () => <All />);

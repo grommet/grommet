@@ -2,9 +2,8 @@
 
 exports[`Anchor disabled renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -17,7 +16,7 @@ exports[`Anchor disabled renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #865CD6;
+  color: #6194EB;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -42,9 +41,8 @@ exports[`Anchor disabled renders 1`] = `
 
 exports[`Anchor focus renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -54,15 +52,15 @@ exports[`Anchor focus renders 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #865CD6;
+  color: #6194EB;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -151,9 +149,8 @@ exports[`Anchor focus renders 1`] = `
 
 exports[`Anchor icon label renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -170,15 +167,15 @@ exports[`Anchor icon label renders 1`] = `
 }
 
 .c4 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #865CD6;
+  color: #6194EB;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -261,9 +258,8 @@ exports[`Anchor icon label renders 1`] = `
 
 exports[`Anchor primary renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -273,15 +269,15 @@ exports[`Anchor primary renders 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #865CD6;
+  color: #6194EB;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -358,9 +354,8 @@ exports[`Anchor primary renders 1`] = `
 
 exports[`Anchor renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -373,7 +368,7 @@ exports[`Anchor renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #865CD6;
+  color: #6194EB;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -398,9 +393,8 @@ exports[`Anchor renders 1`] = `
 
 exports[`Anchor renders with children 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -413,7 +407,7 @@ exports[`Anchor renders with children 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #865CD6;
+  color: #6194EB;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -441,9 +435,8 @@ exports[`Anchor renders with children 1`] = `
 
 exports[`Anchor reverse icon label renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -460,15 +453,15 @@ exports[`Anchor reverse icon label renders 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #865CD6;
+  color: #6194EB;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -551,9 +544,8 @@ exports[`Anchor reverse icon label renders 1`] = `
 
 exports[`Anchor warns about invalid icon render 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -566,7 +558,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #865CD6;
+  color: #6194EB;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -638,9 +630,8 @@ exports[`Anchor warns about invalid icon render 1`] = `
 
 exports[`Anchor warns about invalid label render 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -650,15 +641,15 @@ exports[`Anchor warns about invalid label render 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #865CD6;
+  color: #6194EB;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;

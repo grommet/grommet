@@ -5,11 +5,12 @@ import InfiniteScroll from '../InfiniteScroll/InfiniteScroll';
 import Grommet from '../Grommet/Grommet';
 import Box from '../Box/Box';
 import Text from '../Text/Text';
+import { grommet } from '../../themes';
 
 const items = Array(200).fill().map((_, i) => `item ${i + 1}`);
 
 const SimpleInfiniteScroll = props => (
-  <Grommet>
+  <Grommet theme={grommet}>
     <Box>
       <InfiniteScroll items={items} {...props}>
         {item => (

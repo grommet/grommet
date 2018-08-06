@@ -2,9 +2,8 @@
 
 exports[`Tabs Tab 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -21,7 +20,6 @@ exports[`Tabs Tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -43,7 +41,7 @@ exports[`Tabs Tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 4px #000000;
+  border-bottom: solid 2px #000000;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -62,7 +60,7 @@ exports[`Tabs Tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 4px transparent;
+  border-bottom: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -74,14 +72,14 @@ exports[`Tabs Tab 1`] = `
 }
 
 .c4 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   font-weight: bold;
 }
 
 .c6 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
 }
 
@@ -105,12 +103,6 @@ exports[`Tabs Tab 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c1 {
     margin: 0;
   }
 }
@@ -123,7 +115,7 @@ exports[`Tabs Tab 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    border-bottom: solid 4px #000000;
+    border-bottom: solid 2px #000000;
   }
 }
 
@@ -142,7 +134,7 @@ exports[`Tabs Tab 1`] = `
 
 @media only screen and (max-width:699px) {
   .c5 {
-    border-bottom: solid 4px transparent;
+    border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -238,7 +230,7 @@ exports[`Tabs change active index 1`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-YaZNy daywdA"
+    class="StyledBox-YaZNy hPUIyd"
   >
     <button
       aria-expanded="false"
@@ -248,10 +240,10 @@ exports[`Tabs change active index 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy rlJRB"
+        class="StyledBox-YaZNy hqcczV"
       >
         <span
-          class="StyledText-dmaDlZ fNDpmE"
+          class="StyledText-dmaDlZ jedYWT"
           color="#444444"
         >
           Tab 1
@@ -266,10 +258,10 @@ exports[`Tabs change active index 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy qYBNm"
+        class="StyledBox-YaZNy kNfDNC"
       >
         <span
-          class="StyledText-dmaDlZ jDOIeV"
+          class="StyledText-dmaDlZ grxbuN"
         >
           Tab 2
         </span>
@@ -290,7 +282,7 @@ exports[`Tabs change active index 2`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-YaZNy daywdA"
+    class="StyledBox-YaZNy hPUIyd"
   >
     <button
       aria-expanded="false"
@@ -300,10 +292,10 @@ exports[`Tabs change active index 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy rlJRB"
+        class="StyledBox-YaZNy hqcczV"
       >
         <span
-          class="StyledText-dmaDlZ fNDpmE"
+          class="StyledText-dmaDlZ jedYWT"
           color="#444444"
         >
           Tab 1
@@ -318,10 +310,10 @@ exports[`Tabs change active index 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy qYBNm"
+        class="StyledBox-YaZNy kNfDNC"
       >
         <span
-          class="StyledText-dmaDlZ jDOIeV"
+          class="StyledText-dmaDlZ grxbuN"
         >
           Tab 2
         </span>
@@ -339,13 +331,13 @@ exports[`Tabs change active index 2`] = `
 
 exports[`Tabs change to second tab 1`] = `
 <div
-  class="StyledGrommet-gKbdxL iuxDFS"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
     role="tablist"
   >
     <div
-      class="StyledBox-YaZNy daywdA"
+      class="StyledBox-YaZNy hPUIyd"
     >
       <button
         aria-expanded="true"
@@ -355,10 +347,10 @@ exports[`Tabs change to second tab 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy qYBNm"
+          class="StyledBox-YaZNy kNfDNC"
         >
           <span
-            class="StyledText-dmaDlZ jDOIeV"
+            class="StyledText-dmaDlZ grxbuN"
           >
             Tab 1
           </span>
@@ -372,10 +364,10 @@ exports[`Tabs change to second tab 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy rlJRB"
+          class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ fNDpmE"
+            class="StyledText-dmaDlZ jedYWT"
             color="#444444"
           >
             Tab 2
@@ -395,13 +387,13 @@ exports[`Tabs change to second tab 1`] = `
 
 exports[`Tabs change to second tab 2`] = `
 <div
-  class="StyledGrommet-gKbdxL iuxDFS"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
     role="tablist"
   >
     <div
-      class="StyledBox-YaZNy daywdA"
+      class="StyledBox-YaZNy hPUIyd"
     >
       <button
         aria-expanded="true"
@@ -411,10 +403,10 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy qYBNm"
+          class="StyledBox-YaZNy kNfDNC"
         >
           <span
-            class="StyledText-dmaDlZ jDOIeV"
+            class="StyledText-dmaDlZ grxbuN"
           >
             Tab 1
           </span>
@@ -428,10 +420,10 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy rlJRB"
+          class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ fNDpmE"
+            class="StyledText-dmaDlZ jedYWT"
             color="#444444"
           >
             Tab 2
@@ -451,9 +443,8 @@ exports[`Tabs change to second tab 2`] = `
 
 exports[`Tabs complex title 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -470,7 +461,6 @@ exports[`Tabs complex title 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -492,7 +482,7 @@ exports[`Tabs complex title 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 4px #000000;
+  border-bottom: solid 2px #000000;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -511,7 +501,7 @@ exports[`Tabs complex title 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 4px transparent;
+  border-bottom: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -542,12 +532,6 @@ exports[`Tabs complex title 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c1 {
     margin: 0;
   }
 }
@@ -560,7 +544,7 @@ exports[`Tabs complex title 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    border-bottom: solid 4px #000000;
+    border-bottom: solid 2px #000000;
   }
 }
 
@@ -579,7 +563,7 @@ exports[`Tabs complex title 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
-    border-bottom: solid 4px transparent;
+    border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -667,9 +651,8 @@ exports[`Tabs complex title 1`] = `
 
 exports[`Tabs no Tab 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -686,7 +669,6 @@ exports[`Tabs no Tab 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -698,12 +680,6 @@ exports[`Tabs no Tab 1`] = `
   justify-content: center;
   margin: 0;
   padding: 0;
-}
-
-@media only screen and (max-width:699px) {
-  .c1 {
-    border-bottom: solid 1px rgba(0,0,0,0.33);
-  }
 }
 
 @media only screen and (max-width:699px) {
@@ -740,7 +716,7 @@ exports[`Tabs set on hover 1`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-YaZNy daywdA"
+    class="StyledBox-YaZNy hPUIyd"
   >
     <button
       aria-expanded="true"
@@ -750,10 +726,10 @@ exports[`Tabs set on hover 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy qYBNm"
+        class="StyledBox-YaZNy kNfDNC"
       >
         <span
-          class="StyledText-dmaDlZ jDOIeV"
+          class="StyledText-dmaDlZ grxbuN"
         >
           Tab 1
         </span>
@@ -767,10 +743,10 @@ exports[`Tabs set on hover 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy rlJRB"
+        class="StyledBox-YaZNy hqcczV"
       >
         <span
-          class="StyledText-dmaDlZ fNDpmE"
+          class="StyledText-dmaDlZ jedYWT"
           color="#444444"
         >
           Tab 2
@@ -792,7 +768,7 @@ exports[`Tabs set on hover 2`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-YaZNy daywdA"
+    class="StyledBox-YaZNy hPUIyd"
   >
     <button
       aria-expanded="true"
@@ -802,10 +778,10 @@ exports[`Tabs set on hover 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy qYBNm"
+        class="StyledBox-YaZNy kNfDNC"
       >
         <span
-          class="StyledText-dmaDlZ jDOIeV"
+          class="StyledText-dmaDlZ grxbuN"
         >
           Tab 1
         </span>
@@ -819,10 +795,10 @@ exports[`Tabs set on hover 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy rlJRB"
+        class="StyledBox-YaZNy hqcczV"
       >
         <span
-          class="StyledText-dmaDlZ fNDpmE"
+          class="StyledText-dmaDlZ jedYWT"
           color="#444444"
         >
           Tab 2
@@ -844,7 +820,7 @@ exports[`Tabs set on hover 3`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-YaZNy daywdA"
+    class="StyledBox-YaZNy hPUIyd"
   >
     <button
       aria-expanded="true"
@@ -854,10 +830,10 @@ exports[`Tabs set on hover 3`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy qYBNm"
+        class="StyledBox-YaZNy kNfDNC"
       >
         <span
-          class="StyledText-dmaDlZ jDOIeV"
+          class="StyledText-dmaDlZ grxbuN"
         >
           Tab 1
         </span>
@@ -871,10 +847,10 @@ exports[`Tabs set on hover 3`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy bilzhM"
+        class="StyledBox-YaZNy kNfDNC"
       >
         <span
-          class="StyledText-dmaDlZ fNDpmE"
+          class="StyledText-dmaDlZ jedYWT"
           color="#444444"
         >
           Tab 2
@@ -896,7 +872,7 @@ exports[`Tabs set on hover 4`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-YaZNy daywdA"
+    class="StyledBox-YaZNy hPUIyd"
   >
     <button
       aria-expanded="true"
@@ -906,10 +882,10 @@ exports[`Tabs set on hover 4`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy qYBNm"
+        class="StyledBox-YaZNy kNfDNC"
       >
         <span
-          class="StyledText-dmaDlZ jDOIeV"
+          class="StyledText-dmaDlZ grxbuN"
         >
           Tab 1
         </span>
@@ -923,10 +899,10 @@ exports[`Tabs set on hover 4`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy bilzhM"
+        class="StyledBox-YaZNy kNfDNC"
       >
         <span
-          class="StyledText-dmaDlZ fNDpmE"
+          class="StyledText-dmaDlZ jedYWT"
           color="#444444"
         >
           Tab 2
@@ -948,7 +924,7 @@ exports[`Tabs set on hover 5`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-YaZNy daywdA"
+    class="StyledBox-YaZNy hPUIyd"
   >
     <button
       aria-expanded="true"
@@ -958,10 +934,10 @@ exports[`Tabs set on hover 5`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy qYBNm"
+        class="StyledBox-YaZNy kNfDNC"
       >
         <span
-          class="StyledText-dmaDlZ jDOIeV"
+          class="StyledText-dmaDlZ grxbuN"
         >
           Tab 1
         </span>
@@ -975,10 +951,10 @@ exports[`Tabs set on hover 5`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy rlJRB"
+        class="StyledBox-YaZNy hqcczV"
       >
         <span
-          class="StyledText-dmaDlZ fNDpmE"
+          class="StyledText-dmaDlZ jedYWT"
           color="#444444"
         >
           Tab 2

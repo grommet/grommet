@@ -2,9 +2,8 @@
 
 exports[`Button color renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -39,8 +38,8 @@ exports[`Button color renders 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
@@ -56,9 +55,9 @@ exports[`Button color renders 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #FD6FFF;
-  border-radius: 24px;
+  border-radius: 18px;
   color: #444444;
-  padding: 10px 46px;
+  padding: 4px 22px;
 }
 
 .c1:hover {
@@ -66,8 +65,6 @@ exports[`Button color renders 1`] = `
 }
 
 .c1:hover svg {
-  fill: #000000;
-  stroke: #000000;
   -webkit-transition: none;
   transition: none;
 }
@@ -85,17 +82,17 @@ exports[`Button color renders 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid #FD6FFF;
-  border-radius: 24px;
+  border-radius: 18px;
   color: #444444;
   background: #FD6FFF;
   color: #444444;
-  border-radius: 24px;
-  padding: 10px 46px;
+  border-radius: 18px;
+  padding: 4px 22px;
 }
 
 .c4 svg {
-  fill: #FFFFFF;
-  stroke: #FFFFFF;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
   -webkit-transition: none;
   transition: none;
 }
@@ -182,9 +179,8 @@ exports[`Button color renders 1`] = `
 
 exports[`Button disabled renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -205,12 +201,12 @@ exports[`Button disabled renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 24px;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
   color: #444444;
   opacity: 0.3;
   cursor: default;
-  padding: 10px 46px;
+  padding: 4px 22px;
 }
 
 @media only screen and (min-width:700px) {
@@ -235,9 +231,8 @@ exports[`Button disabled renders 1`] = `
 
 exports[`Button focus renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -272,8 +267,8 @@ exports[`Button focus renders 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
@@ -288,10 +283,10 @@ exports[`Button focus renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 24px;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
   color: #444444;
-  padding: 10px 46px;
+  padding: 4px 22px;
   border-color: #FD6FFF;
   box-shadow: 0 0 2px 2px #FD6FFF;
 }
@@ -354,9 +349,8 @@ exports[`Button focus renders 1`] = `
 
 exports[`Button hoverIndicator as object renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -384,8 +378,8 @@ exports[`Button hoverIndicator as object renders 1`] = `
 }
 
 .c1:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  color: dark:white;
+  light: black;
 }
 
 @media only screen and (min-width:700px) {
@@ -413,9 +407,8 @@ exports[`Button hoverIndicator as object renders 1`] = `
 
 exports[`Button hoverIndicator as object with color renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -443,8 +436,8 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
 }
 
 .c1:hover {
-  background: rgba(134,92,214,0.3);
-  color: #000000;
+  color: dark:white;
+  light: black;
 }
 
 @media only screen and (min-width:700px) {
@@ -472,9 +465,8 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
 
 exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -502,8 +494,8 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
 }
 
 .c1:hover {
-  background: rgba(253,111,255,0.3);
-  color: #000000;
+  color: dark:white;
+  light: black;
 }
 
 @media only screen and (min-width:700px) {
@@ -531,9 +523,8 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
 
 exports[`Button hoverIndicator as object with invalid color renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -561,8 +552,8 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
 }
 
 .c1:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  color: dark:white;
+  light: black;
 }
 
 @media only screen and (min-width:700px) {
@@ -590,9 +581,8 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
 
 exports[`Button hoverIndicator as object with invalid color renders 2`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -620,8 +610,8 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
 }
 
 .c1:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  color: dark:white;
+  light: black;
 }
 
 @media only screen and (min-width:700px) {
@@ -649,9 +639,8 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
 
 exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -679,8 +668,8 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
 }
 
 .c1:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  color: dark:white;
+  light: black;
 }
 
 @media only screen and (min-width:700px) {
@@ -708,9 +697,8 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
 
 exports[`Button hoverIndicator renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -738,8 +726,10 @@ exports[`Button hoverIndicator renders 1`] = `
 }
 
 .c1:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 @media only screen and (min-width:700px) {
@@ -767,9 +757,8 @@ exports[`Button hoverIndicator renders 1`] = `
 
 exports[`Button href renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -790,19 +779,17 @@ exports[`Button href renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 24px;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
   color: #444444;
-  padding: 10px 46px;
+  padding: 4px 22px;
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #865CD6;
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c1:hover svg {
-  fill: #000000;
-  stroke: #000000;
   -webkit-transition: none;
   transition: none;
 }
@@ -829,9 +816,8 @@ exports[`Button href renders 1`] = `
 
 exports[`Button icon label renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -873,8 +859,8 @@ exports[`Button icon label renders 1`] = `
 }
 
 .c4 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
@@ -889,19 +875,17 @@ exports[`Button icon label renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 24px;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
   color: #444444;
-  padding: 10px 46px;
+  padding: 4px 22px;
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #865CD6;
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c1:hover svg {
-  fill: #000000;
-  stroke: #000000;
   -webkit-transition: none;
   transition: none;
 }
@@ -959,9 +943,8 @@ exports[`Button icon label renders 1`] = `
 
 exports[`Button primary renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -996,8 +979,8 @@ exports[`Button primary renders 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
@@ -1012,24 +995,24 @@ exports[`Button primary renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 24px;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
   color: #444444;
-  background: #865CD6;
-  color: #FFFFFF;
-  border-radius: 24px;
-  padding: 10px 46px;
+  background: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  padding: 4px 22px;
 }
 
 .c1 svg {
-  fill: #FFFFFF;
-  stroke: #FFFFFF;
+  fill: #f8f8f8;
+  stroke: #f8f8f8;
   -webkit-transition: none;
   transition: none;
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #865CD6;
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 @media only screen and (max-width:699px) {
@@ -1080,9 +1063,8 @@ exports[`Button primary renders 1`] = `
 
 exports[`Button renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1117,8 +1099,8 @@ exports[`Button renders 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
@@ -1133,19 +1115,17 @@ exports[`Button renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 24px;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
   color: #444444;
-  padding: 10px 46px;
+  padding: 4px 22px;
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #865CD6;
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c1:hover svg {
-  fill: #000000;
-  stroke: #000000;
   -webkit-transition: none;
   transition: none;
 }
@@ -1198,9 +1178,8 @@ exports[`Button renders 1`] = `
 
 exports[`Button reverse icon label renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1242,8 +1221,8 @@ exports[`Button reverse icon label renders 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
@@ -1258,19 +1237,17 @@ exports[`Button reverse icon label renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 24px;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
   color: #444444;
-  padding: 10px 46px;
+  padding: 4px 22px;
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #865CD6;
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c1:hover svg {
-  fill: #000000;
-  stroke: #000000;
   -webkit-transition: none;
   transition: none;
 }
@@ -1328,9 +1305,8 @@ exports[`Button reverse icon label renders 1`] = `
 
 exports[`Button warns about invalid icon render 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1424,9 +1400,8 @@ exports[`Button warns about invalid icon render 1`] = `
 
 exports[`Button warns about invalid label render 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1461,8 +1436,8 @@ exports[`Button warns about invalid label render 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {

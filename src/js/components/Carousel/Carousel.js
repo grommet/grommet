@@ -5,8 +5,8 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
-
 import { withFocus, withTheme } from '../hocs';
+import { evalStyle } from '../../utils';
 
 import doc from './doc';
 
@@ -74,13 +74,20 @@ class Carousel extends Component {
     const onRight = (activeIndex < lastIndex ? this.onRight : undefined);
 
     const CurrentIcon = theme.carousel.icons.current;
+    const dark = theme.dark;
+    const iconColor = evalStyle((theme.carousel.icons.color ||
+      theme.global.control.color)[dark ? 'dark' : 'light'], theme);
 
     const selectors = [];
     const wrappedChildren = Children.map(children, (child, index) => {
       selectors.push((
         <Button
           key={index}
-          icon={<CurrentIcon color={activeIndex === index ? 'brand' : undefined} />}
+          icon={(
+            <CurrentIcon
+              color={activeIndex === index ? iconColor : undefined}
+            />
+          )}
           onClick={this.onSelect(index)}
         />
       ));
