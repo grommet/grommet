@@ -5,11 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 exports.default = {
-  getMessage: function getMessage(intl, key, values) {
+  getMessage: function getMessage(intl, key, values, defaultMessage) {
     if (intl) {
       return intl.formatMessage({
         id: key,
-        defaultMessage: key
+        defaultMessage: defaultMessage || key
       }, values);
     } else {
       return key;
