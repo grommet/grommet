@@ -99,7 +99,7 @@ const SIZE_MAP = {
 };
 
 const sizeFor = (size, props) =>
-  SIZE_MAP[size] || props.theme.global.size[size];
+  SIZE_MAP[size] || props.theme.global.size[size] || size;
 
 const columnsStyle = (props) => {
   if (Array.isArray(props.columns)) {
