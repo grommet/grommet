@@ -74,6 +74,10 @@ class TextInput extends Component {
     showDrop: false,
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.resetTimer);
+  }
+
   announce = (message, mode) => {
     const { announce, suggestions } = this.props;
     if (suggestions && suggestions.length > 0) {
@@ -105,15 +109,21 @@ class TextInput extends Component {
   }
 
   resetSuggestions = () => {
-    const { suggestions } = this.props;
-
-    if (suggestions && suggestions.length) {
-      this.setState({
-        activeSuggestionIndex: -1,
-        showDrop: true,
-        selectedSuggestionIndex: -1,
-      }, this.announceSuggestionsCount);
-    }
+    // delay this to avoid re-render interupting event delivery
+    // https://github.com/grommet/grommet/issues/2154
+    // 10ms was chosen empirically based on ie11 using TextInput
+    // with and without a FormField.
+    clearTimeout(this.resetTimer);
+    this.resetTimer = setTimeout(() => {
+      const { suggestions } = this.props;
+      if (suggestions && suggestions.length) {
+        this.setState({
+          activeSuggestionIndex: -1,
+          showDrop: true,
+          selectedSuggestionIndex: -1,
+        }, this.announceSuggestionsCount);
+      }
+    }, 10);
   }
 
   getSelectedSuggestionIndex = () => {
@@ -185,11 +195,21 @@ class TextInput extends Component {
   }
 
   onFocus = (event) => {
-    const { onFocus } = this.props;
-    this.announceSuggestionsExist();
+    const { onFocus, suggestions } = this.props;
+    if (suggestions && suggestions.length > 0) {
+      this.announceSuggestionsExist();
+    }
     this.resetSuggestions();
     if (onFocus) {
       onFocus(event);
+    }
+  }
+
+  onBlur = (event) => {
+    const { onBlur } = this.props;
+    clearTimeout(this.resetTimer);
+    if (onBlur) {
+      onBlur(event);
     }
   }
 
@@ -287,6 +307,7 @@ class TextInput extends Component {
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
             onFocus={this.onFocus}
+            onBlur={this.onBlur}
             onInput={this.onInput}
           />
         </Keyboard>

@@ -24,11 +24,8 @@ export const withFocus = (WrappedComponent) => {
       wrappedRef: React.createRef(),
     }
 
-    mouseActive = false // not in state because it doesn't affect rendering
-
     componentDidMount = () => {
       const { wrappedRef } = this.state;
-      window.addEventListener('mousedown', this.handleActiveMouse);
 
       // we could be using onFocus in the wrapper node itself
       // but react does not invoke it if you programically
@@ -42,36 +39,32 @@ export const withFocus = (WrappedComponent) => {
 
     componentWillUnmount = () => {
       const { wrappedRef } = this.state;
-      window.removeEventListener('mousedown', this.handleActiveMouse);
       const wrapperNode = findDOMNode(wrappedRef.current);
       if (wrapperNode && wrapperNode.addEventListener) {
         wrapperNode.removeEventListener('focus', this.setFocus);
       }
-      clearTimeout(this.mouseTimer);
-    }
-
-    handleActiveMouse = () => {
-      this.mouseActive = true;
-
-      // this avoids showing focus when clicking around
-      clearTimeout(this.mouseTimer);
-      // empirical number to reset mouseActive after
-      // some time has passed without mousedown
-      this.mouseTimer = setTimeout(() => {
-        this.mouseActive = false;
-      }, 300);
+      clearTimeout(this.focusTimer);
     }
 
     setFocus = () => {
-      if (this.mouseActive === false) {
-        this.setState({ focus: true });
-      }
+      // delay setting focus to avoid interupting events,
+      // 10ms was chosen empirically based on ie11 using Select and TextInput
+      // with and without a FormField.
+      clearTimeout(this.focusTimer);
+      this.focusTimer = setTimeout(() => {
+        if (!this.state.focus) {
+          this.setState({ focus: true });
+        }
+      }, 10);
     }
 
     resetFocus = () => {
-      if (this.state.focus) {
-        this.setState({ focus: false });
-      }
+      clearTimeout(this.focusTimer);
+      this.focusTimer = setTimeout(() => {
+        if (this.state.focus) {
+          this.setState({ focus: false });
+        }
+      }, 10);
     }
 
     render() {
