@@ -12,6 +12,8 @@ class DropContainer extends Component {
     centered: true,
   }
 
+  dropRef = React.createRef();
+
   componentDidMount() {
     const { restrictFocus } = this.props;
     this.addScrollListener();
@@ -21,7 +23,7 @@ class DropContainer extends Component {
     this.place();
 
     if (restrictFocus) {
-      findDOMNode(this.dropRef).focus();
+      findDOMNode(this.dropRef.current).focus();
     }
   }
 
@@ -38,7 +40,8 @@ class DropContainer extends Component {
   addScrollListener = () => {
     const { dropTarget } = this.props;
     this.scrollParents = findScrollParents(findDOMNode(dropTarget));
-    this.scrollParents.forEach(scrollParent => scrollParent.addEventListener('scroll', this.place));
+    this.scrollParents.forEach(scrollParent =>
+      scrollParent.addEventListener('scroll', this.place));
   }
 
   removeScrollListener = () => {
@@ -50,9 +53,10 @@ class DropContainer extends Component {
   onClickDocument = (event) => {
     const { dropTarget, onClickOutside } = this.props;
     const dropTargetNode = findDOMNode(dropTarget);
-    const dropNode = findDOMNode(this.dropRef);
+    const dropNode = findDOMNode(this.dropRef.current);
     if (
       onClickOutside &&
+      dropNode && // need this for ie11
       !dropTargetNode.contains(event.target) &&
       !dropNode.contains(event.target)
     ) {
@@ -72,7 +76,7 @@ class DropContainer extends Component {
     const windowHeight = window.innerHeight;
 
     const target = findDOMNode(dropTarget);
-    const container = findDOMNode(this.dropRef);
+    const container = findDOMNode(this.dropRef.current);
     if (container && target) {
       // clear prior styling
       container.style.left = '';
@@ -201,9 +205,7 @@ class DropContainer extends Component {
         <Keyboard onEsc={onEsc} onKeyDown={onKeyDown}>
           <StyledDrop
             tabIndex='-1'
-            ref={(ref) => {
-              this.dropRef = ref;
-            }}
+            ref={this.dropRef}
             theme={theme}
             {...rest}
           >
