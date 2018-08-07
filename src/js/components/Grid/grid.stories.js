@@ -15,7 +15,7 @@ class AppGrid extends Component {
       <Grommet>
         <Grid
           rows={['auto', 'medium']}
-          columns={[sidebar ? 'small' : 0, 'flex']}
+          columns={['auto', 'flex']}
           areas={[
             { name: 'header', start: [0, 0], end: [1, 0] },
             { name: 'sidebar', start: [0, 1], end: [0, 1] },
@@ -35,18 +35,25 @@ class AppGrid extends Component {
             </Button>
             <Text>my@email</Text>
           </Box>
-          <Box
-            gridArea='sidebar'
-            background='dark-5'
-          >
-            {['First', 'Second', 'Third'].map(name => (
-              <Button key={name} href='#' hoverIndicator={true}>
-                <Box pad={{ horizontal: 'medium', vertical: 'small' }}>
-                  <Text>{name}</Text>
-                </Box>
-              </Button>
-            ))}
-          </Box>
+          {sidebar && (
+            <Box
+              gridArea='sidebar'
+              background='dark-5'
+              width='small'
+              animation={[
+                { type: 'fadeIn', duration: 300 },
+                { type: 'slideRight', size: 'xlarge', duration: 150 },
+              ]}
+            >
+              {['First', 'Second', 'Third'].map(name => (
+                <Button key={name} href='#' hoverIndicator={true}>
+                  <Box pad={{ horizontal: 'medium', vertical: 'small' }}>
+                    <Text>{name}</Text>
+                  </Box>
+                </Button>
+              ))}
+            </Box>
+          )}
           <Box gridArea='main' justify='center' align='center'>
             <Text>main</Text>
           </Box>
