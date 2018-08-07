@@ -31,7 +31,7 @@ import Text from './Text/Text';
 import TextArea from './TextArea/TextArea';
 import TextInput from './TextInput/TextInput';
 import Video from './Video/Video';
-import { grommet, hpe } from '../themes';
+import { grommet } from '../themes';
 import { generate } from '../themes/base';
 import { deepMerge } from '../utils';
 
@@ -62,7 +62,7 @@ class Components extends Component {
 
   render() {
     const { baseSize, checkBox, radioButton, rangeSelector, tabIndex } = this.state;
-    const theme = deepMerge(generate(baseSize), hpe);
+    const theme = deepMerge(generate(baseSize), grommet);
 
     const content = [
       <Box key='type' align='start'>
