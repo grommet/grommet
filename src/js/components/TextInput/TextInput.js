@@ -9,7 +9,6 @@ import { Keyboard } from '../Keyboard';
 import { Drop } from '../Drop';
 import {
   withAnnounce,
-  withFocus,
   withForwardRef,
   withTheme,
 } from '../hocs';
@@ -322,7 +321,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 export default compose(
-  withFocus,
   withTheme,
   withAnnounce,
   withForwardRef,

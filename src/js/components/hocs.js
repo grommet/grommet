@@ -19,6 +19,8 @@ export const withFocus = (WrappedComponent) => {
       return null;
     }
 
+    mouseActive = false // not in state because it doesn't affect rendering
+
     state = {
       focus: false,
       wrappedRef: React.createRef(),
@@ -26,6 +28,7 @@ export const withFocus = (WrappedComponent) => {
 
     componentDidMount = () => {
       const { wrappedRef } = this.state;
+      window.addEventListener('mousedown', this.handleActiveMouse);
 
       // we could be using onFocus in the wrapper node itself
       // but react does not invoke it if you programically
@@ -39,23 +42,37 @@ export const withFocus = (WrappedComponent) => {
 
     componentWillUnmount = () => {
       const { wrappedRef } = this.state;
+      window.removeEventListener('mousedown', this.handleActiveMouse);
       const wrapperNode = findDOMNode(wrappedRef.current);
       if (wrapperNode && wrapperNode.addEventListener) {
         wrapperNode.removeEventListener('focus', this.setFocus);
       }
       clearTimeout(this.focusTimer);
+      clearTimeout(this.mouseTimer);
+    }
+
+    handleActiveMouse = () => {
+      // from https://marcysutton.com/button-focus-hell/
+      this.mouseActive = true;
+       // this avoids showing focus when clicking around
+      clearTimeout(this.mouseTimer);
+      // empirical number to reset mouseActive after
+      // some time has passed without mousedown
+      this.mouseTimer = setTimeout(() => {
+        this.mouseActive = false;
+      }, 20);
     }
 
     setFocus = () => {
       // delay setting focus to avoid interupting events,
-      // 10ms was chosen empirically based on ie11 using Select and TextInput
+      // 1ms was chosen empirically based on ie11 using Select and TextInput
       // with and without a FormField.
       clearTimeout(this.focusTimer);
       this.focusTimer = setTimeout(() => {
-        if (!this.state.focus) {
+        if (!this.state.focus && !this.mouseActive) {
           this.setState({ focus: true });
         }
-      }, 10);
+      }, 1);
     }
 
     resetFocus = () => {
@@ -64,7 +81,7 @@ export const withFocus = (WrappedComponent) => {
         if (this.state.focus) {
           this.setState({ focus: false });
         }
-      }, 10);
+      }, 1);
     }
 
     render() {
