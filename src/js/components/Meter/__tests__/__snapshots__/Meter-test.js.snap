@@ -15,6 +15,7 @@ exports[`Meter background renders 1`] = `
 
 .c1 {
   max-width: 100%;
+  overflow: hidden;
 }
 
 .c1 path {
@@ -143,6 +144,7 @@ exports[`Meter renders 1`] = `
 
 .c1 {
   max-width: 100%;
+  overflow: hidden;
 }
 
 .c1 path {
@@ -212,6 +214,7 @@ exports[`Meter round renders 1`] = `
 
 .c2 {
   max-width: 100%;
+  overflow: hidden;
 }
 
 .c2 path {
@@ -222,6 +225,7 @@ exports[`Meter round renders 1`] = `
 .c1 {
   max-width: 100%;
   border-radius: 24px;
+  overflow: hidden;
 }
 
 .c1 path {
@@ -310,6 +314,7 @@ exports[`Meter size renders 1`] = `
 
 .c1 {
   max-width: 100%;
+  overflow: hidden;
 }
 
 .c1 path {
@@ -593,6 +598,7 @@ exports[`Meter thickness renders 1`] = `
 
 .c1 {
   max-width: 100%;
+  overflow: hidden;
 }
 
 .c1 path {
@@ -876,6 +882,7 @@ exports[`Meter type renders 1`] = `
 
 .c1 {
   max-width: 100%;
+  overflow: hidden;
 }
 
 .c1 path {

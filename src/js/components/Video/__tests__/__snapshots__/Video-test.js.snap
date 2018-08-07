@@ -241,6 +241,7 @@ exports[`Video autoPlay renders 1`] = `
 
 .c12 {
   max-width: 100%;
+  overflow: hidden;
 }
 
 .c12 path {
@@ -869,6 +870,7 @@ exports[`Video controls renders 1`] = `
 
 .c12 {
   max-width: 100%;
+  overflow: hidden;
 }
 
 .c12 path {
@@ -1626,6 +1628,7 @@ exports[`Video fit renders 1`] = `
 
 .c12 {
   max-width: 100%;
+  overflow: hidden;
 }
 
 .c12 path {
@@ -2387,6 +2390,7 @@ exports[`Video loop renders 1`] = `
 
 .c12 {
   max-width: 100%;
+  overflow: hidden;
 }
 
 .c12 path {
@@ -2958,6 +2962,7 @@ exports[`Video mute renders 1`] = `
 
 .c12 {
   max-width: 100%;
+  overflow: hidden;
 }
 
 .c12 path {
@@ -3529,6 +3534,7 @@ exports[`Video renders 1`] = `
 
 .c12 {
   max-width: 100%;
+  overflow: hidden;
 }
 
 .c12 path {
