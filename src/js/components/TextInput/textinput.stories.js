@@ -21,7 +21,7 @@ class SimpleTextInput extends Component {
   }
 }
 
-const suggestions = Array(10).fill().map((_, i) => `suggestion ${i + 1}`);
+const suggestions = Array(100).fill().map((_, i) => `suggestion ${i + 1}`);
 
 class SuggestionsTextInput extends Component {
   state = { value: '' }
