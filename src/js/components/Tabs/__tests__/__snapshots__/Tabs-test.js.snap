@@ -404,23 +404,6 @@ exports[`Tabs change to second tab 2`] = `
       class="StyledBox-YaZNy daywdA"
     >
       <button
-        aria-expanded="true"
-        aria-selected="true"
-        class="StyledButton-qbvYY jZaTeL"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="StyledBox-YaZNy qYBNm"
-        >
-          <span
-            class="StyledText-dmaDlZ jDOIeV"
-          >
-            Tab 1
-          </span>
-        </div>
-      </button>
-      <button
         aria-expanded="false"
         aria-selected="false"
         class="StyledButton-qbvYY jZaTeL"
@@ -434,16 +417,33 @@ exports[`Tabs change to second tab 2`] = `
             class="StyledText-dmaDlZ fNDpmE"
             color="#444444"
           >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy qYBNm"
+        >
+          <span
+            class="StyledText-dmaDlZ jDOIeV"
+          >
             Tab 2
           </span>
         </div>
       </button>
     </div>
     <div
-      aria-label="Tab 1 Tab Contents"
+      aria-label="Tab 2 Tab Contents"
       role="tabpanel"
     >
-      Tab body 1
+      Tab body 2
     </div>
   </div>
 </div>
