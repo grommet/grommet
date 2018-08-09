@@ -180,7 +180,6 @@ exports[`Anchor icon label renders 1`] = `
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  color: #444444;
 }
 
 .c1:hover {
@@ -466,7 +465,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  color: #444444;
 }
 
 .c1:hover {

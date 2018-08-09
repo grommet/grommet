@@ -6,9 +6,12 @@ import { Add, Trash } from 'grommet-icons';
 import { Anchor, Grommet } from '../';
 import { grommet } from '../../themes';
 
-const customTheme = {
+const customColorTheme = {
   anchor: {
-    color: 'red',
+    colors: {
+      light: 'red',
+      dark: 'white',
+    },
   },
 };
 
@@ -29,7 +32,15 @@ storiesOf('Anchor', module)
     </Grommet>
   ))
   .add('Custom color', () => (
-    <Grommet theme={customTheme}>
-      <Anchor icon={<Trash />} label='Delete' href='#' />
+    <Grommet theme={customColorTheme}>
+      <Box gap='small'>
+        <Anchor icon={<Trash />} label='Delete' href='#' />
+        <Box background='light-2'>
+          This is a <Anchor label='link' href='#' /> with dark text.
+        </Box>
+        <Box background='dark-2'>
+          This is a <Anchor label='link' href='#' /> with light text.
+        </Box>
+      </Box>
     </Grommet>
   ));
