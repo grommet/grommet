@@ -28,6 +28,7 @@ export default (DataTable) => {
           aggregate: PropTypes.bool,
         }),
       ]),
+      onSearch: PropTypes.func,
       property: PropTypes.string.isRequired,
       render: PropTypes.func,
       search: PropTypes.bool,
@@ -43,7 +44,8 @@ export default (DataTable) => {
       column should be aggregated. This only applies to a footer or groupBy
       context. 'footer' indicates what should be shown in the footer for
       the column. 'search' indicates whether a search filter should be
-      made available for the column.
+      made available for the column. 'onSearch' will be called if the user
+      searches, allowing the data to be filtered externally.
     `),
     data: PropTypes.arrayOf(PropTypes.shape({}))
       .description('Array of data objects.'),
@@ -56,7 +58,7 @@ export default (DataTable) => {
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as searching, sorting, grouping, or aggregating.`
+      browser, such as columns.search, sortable, groupBy, or columns.aggregate.`
     ),
     resizeable: PropTypes.string
       .description('Whether to allow the user to resize column widths.'),

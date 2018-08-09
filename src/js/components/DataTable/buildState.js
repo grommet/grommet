@@ -50,14 +50,14 @@ const filter = (nextProps, prevState, nextState) => {
   let nextFilters;
   let regexps;
   columns.forEach((column) => {
-    if (column.search) {
+    if (column.search || column.onSearch) {
       if (!nextFilters) {
         nextFilters = {};
         regexps = {};
       }
       nextFilters[column.property] =
         filters ? filters[column.property] || '' : '';
-      if (nextFilters[column.property]) {
+      if (nextFilters[column.property] && column.search) {
         regexps[column.property] =
           new RegExp(nextFilters[column.property], 'i');
       }

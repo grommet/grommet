@@ -28,9 +28,21 @@ class DataTable extends Component {
   }
 
   onFilter = (property, value) => {
+    const { columns } = this.props;
     const nextFilters = { ...this.state.filters };
     nextFilters[property] = value;
     this.setState({ filters: nextFilters });
+
+    // Let caller know about search, if interested
+    columns.some((column) => {
+      if (column.property === property) {
+        if (column.onSearch) {
+          column.onSearch(property, value);
+        }
+        return true;
+      }
+      return false;
+    });
   }
 
   onSort = property => () => {
