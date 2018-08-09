@@ -18,12 +18,12 @@ export const withFocus = (WrappedComponent) => {
       return null;
     }
 
+    mouseActive = false // not in state because it doesn't affect rendering
+
     state = {
       focus: false,
       wrappedRef: React.createRef(),
     }
-
-    mouseActive = false // not in state because it doesn't affect rendering
 
     componentDidMount = () => {
       const { wrappedRef } = this.state;
@@ -46,31 +46,41 @@ export const withFocus = (WrappedComponent) => {
       if (wrapperNode && wrapperNode.addEventListener) {
         wrapperNode.removeEventListener('focus', this.setFocus);
       }
+      clearTimeout(this.focusTimer);
       clearTimeout(this.mouseTimer);
     }
 
     handleActiveMouse = () => {
+      // from https://marcysutton.com/button-focus-hell/
       this.mouseActive = true;
-
-      // this avoids showing focus when clicking around
+       // this avoids showing focus when clicking around
       clearTimeout(this.mouseTimer);
       // empirical number to reset mouseActive after
       // some time has passed without mousedown
       this.mouseTimer = setTimeout(() => {
         this.mouseActive = false;
-      }, 300);
+      }, 150);
     }
 
     setFocus = () => {
-      if (this.mouseActive === false) {
-        this.setState({ focus: true });
-      }
+      // delay setting focus to avoid interupting events,
+      // 1ms was chosen empirically based on ie11 using Select and TextInput
+      // with and without a FormField.
+      clearTimeout(this.focusTimer);
+      this.focusTimer = setTimeout(() => {
+        if (!this.state.focus && !this.mouseActive) {
+          this.setState({ focus: true });
+        }
+      }, 1);
     }
 
     resetFocus = () => {
-      if (this.state.focus) {
-        this.setState({ focus: false });
-      }
+      clearTimeout(this.focusTimer);
+      this.focusTimer = setTimeout(() => {
+        if (this.state.focus) {
+          this.setState({ focus: false });
+        }
+      }, 1);
     }
 
     render() {

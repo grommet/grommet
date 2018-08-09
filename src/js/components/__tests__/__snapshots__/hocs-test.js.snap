@@ -17,39 +17,3 @@ exports[`withFocus set focus 2`] = `
   focus
 </div>
 `;
-
-exports[`withFocus skip focus when mouse active 1`] = `
-<div
-  onBlur={[Function]}
-  onFocus={[Function]}
->
-  no focus
-</div>
-`;
-
-exports[`withFocus skip focus when mouse active 2`] = `
-<div
-  onBlur={[Function]}
-  onFocus={[Function]}
->
-  focus
-</div>
-`;
-
-exports[`withFocus skip focus when mouse active 3`] = `
-<div
-  onBlur={[Function]}
-  onFocus={[Function]}
->
-  focus
-</div>
-`;
-
-exports[`withFocus skip focus when mouse active 4`] = `
-<div
-  onBlur={[Function]}
-  onFocus={[Function]}
->
-  no focus
-</div>
-`;

@@ -71,13 +71,28 @@ const FormFieldToggle = props => (
   </Grommet>
 );
 
-const FormFieldSelect = props => (
-  <Grommet theme={grommet}>
-    <FormField label='Label' htmlFor='select' {...props}>
-      <Select id='select' placeholder='placeholder' options={['one', 'two']} />
-    </FormField>
-  </Grommet>
-);
+const allOptions = Array(100).fill().map((_, i) => `option ${i + 1}`);
+
+class FormFieldSelect extends Component {
+  state = { value: '', options: allOptions }
+
+  render() {
+    const { value, options } = this.state;
+    return (
+      <Grommet>
+        <FormField label='Label' htmlFor='select' {...this.props}>
+          <Select
+            id='select'
+            placeholder='placeholder'
+            options={options}
+            value={value}
+            onChange={({ option }) => this.setState({ value: option })}
+          />
+        </FormField>
+      </Grommet>
+    );
+  }
+}
 
 const FormFieldHelpError = props => (
   <Grommet theme={grommet}>

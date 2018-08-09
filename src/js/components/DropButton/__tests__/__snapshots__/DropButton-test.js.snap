@@ -49,13 +49,6 @@ exports[`DropButton close by clicking outside 3`] = `
   }
 }
 
-@media only screen and (min-width:700px) {
-  .cBZBQM {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .lgQIaN {
     display: -webkit-box;

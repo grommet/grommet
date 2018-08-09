@@ -18,7 +18,7 @@ class TestDiv extends Component {
 
 const Test = withFocus(TestDiv);
 
-test('withFocus set focus', () => {
+test('withFocus set focus', (done) => {
   const component = renderer.create(<Test />);
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -26,32 +26,11 @@ test('withFocus set focus', () => {
   const container = findAllByType(tree, 'div');
   container[0].props.onFocus();
 
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('withFocus skip focus when mouse active', () => {
-  const component = renderer.create(<Test />);
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-
-  const container = findAllByType(tree, 'div');
-  global.document.dispatchEvent(new Event('mousedown'));
-  container[0].props.onFocus();
-
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-
-  global.document.dispatchEvent(new Event('mouseup'));
-  container[0].props.onFocus();
-
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-
-  container[0].props.onBlur();
-
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  setTimeout(() => {
+    tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+    done();
+  }, 50);
 });
 
 test('withFocus calls callback', () => {

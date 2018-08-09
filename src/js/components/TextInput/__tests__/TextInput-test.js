@@ -19,7 +19,7 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('suggestions', () => {
+  test('suggestions', (done) => {
     const onInput = jest.fn();
     const onFocus = jest.fn();
     const { getByTestId, container } = renderIntoDocument(
@@ -36,15 +36,19 @@ describe('TextInput', () => {
 
     Simulate.focus(getByTestId('test-input'));
     Simulate.input(getByTestId('test-input'));
-    expectPortal('text-input-drop__item').toMatchSnapshot();
-    expect(onInput).toBeCalled();
-    expect(onFocus).toBeCalled();
 
-    fireEvent(document, new MouseEvent('click', { bubbles: true, cancelable: true }));
-    expect(document.getElementById('text-input-drop__item')).toBeNull();
+    setTimeout(() => {
+      expectPortal('text-input-drop__item').toMatchSnapshot();
+      expect(onInput).toBeCalled();
+      expect(onFocus).toBeCalled();
+
+      fireEvent(document, new MouseEvent('click', { bubbles: true, cancelable: true }));
+      expect(document.getElementById('text-input-drop__item')).toBeNull();
+      done();
+    }, 50);
   });
 
-  test('complex suggestions', () => {
+  test('complex suggestions', (done) => {
     const { getByTestId, container } = renderIntoDocument(
       <Grommet>
         <TextInput
@@ -61,13 +65,17 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     Simulate.input(getByTestId('test-input'));
-    expectPortal('text-input-drop__item').toMatchSnapshot();
 
-    fireEvent(document, new MouseEvent('click', { bubbles: true, cancelable: true }));
-    expect(document.getElementById('text-input-drop__item')).toBeNull();
+    setTimeout(() => {
+      expectPortal('text-input-drop__item').toMatchSnapshot();
+
+      fireEvent(document, new MouseEvent('click', { bubbles: true, cancelable: true }));
+      expect(document.getElementById('text-input-drop__item')).toBeNull();
+      done();
+    }, 50);
   });
 
-  test('close suggestion drop', () => {
+  test('close suggestion drop', (done) => {
     const { getByTestId, container } = renderIntoDocument(
       <Grommet>
         <TextInput
@@ -81,14 +89,17 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     Simulate.input(getByTestId('test-input'));
-    expectPortal('text-input-drop__item').toMatchSnapshot();
+    setTimeout(() => {
+      expectPortal('text-input-drop__item').toMatchSnapshot();
 
-    Simulate.keyDown(getByTestId('test-input'), { key: 'Esc', keyCode: 27, which: 27 });
-    expect(document.getElementById('text-input-drop__item')).toBeNull();
-    expect(container.firstChild).toMatchSnapshot();
+      Simulate.keyDown(getByTestId('test-input'), { key: 'Esc', keyCode: 27, which: 27 });
+      expect(document.getElementById('text-input-drop__item')).toBeNull();
+      expect(container.firstChild).toMatchSnapshot();
+      done();
+    }, 50);
   });
 
-  test('select suggestion', () => {
+  test('select suggestion', (done) => {
     const onSelect = jest.fn();
     const { getByTestId, container } = renderIntoDocument(
       <Grommet>
@@ -106,12 +117,15 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     Simulate.input(getByTestId('test-input'));
-    expectPortal('text-input-drop__item').toMatchSnapshot();
+    setTimeout(() => {
+      expectPortal('text-input-drop__item').toMatchSnapshot();
 
-    Simulate.click(getByText(document, 'test1'));
-    expect(container.firstChild).toMatchSnapshot();
-    expect(document.getElementById('text-input-drop__item')).toBeNull();
-    expect(onSelect).toBeCalled();
+      Simulate.click(getByText(document, 'test1'));
+      expect(container.firstChild).toMatchSnapshot();
+      expect(document.getElementById('text-input-drop__item')).toBeNull();
+      expect(onSelect).toBeCalled();
+      done();
+    }, 50);
   });
 
   test('next and previous suggestions', () => {
