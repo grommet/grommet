@@ -60,7 +60,7 @@ export const withFocus = (WrappedComponent) => {
       // some time has passed without mousedown
       this.mouseTimer = setTimeout(() => {
         this.mouseActive = false;
-      }, 20);
+      }, 150);
     }
 
     setFocus = () => {
