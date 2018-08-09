@@ -181,8 +181,15 @@ export default class Drop {
       [`${BACKGROUND_COLOR_INDEX}-${options.colorIndex}`]: options.colorIndex
     });
 
-    // prepend in body to avoid browser scroll issues
-    document.body.insertBefore(container, document.body.firstChild);
+    if ( opts.dropContainer ) {
+      opts.dropContainer.appendChild(container);
+      this.parentContainer = opts.dropContainer;
+
+    } else {
+      // prepend in body to avoid browser scroll issues
+      document.body.insertBefore(container, document.body.firstChild);
+      this.parentContainer = document.body;
+    }
 
     const scrollParents = findScrollParents(control);
 
@@ -385,7 +392,7 @@ export default class Drop {
     window.removeEventListener('resize', this._onResize);
 
     unmountComponentAtNode(container);
-    document.body.removeChild(container);
+    this.parentContainer.removeChild(container);
     // weird bug in Chrome does not remove child if
     // document.body.insertBefore is called in another new drop.
     // the code below will go over remaining drop that was not removed
