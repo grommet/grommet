@@ -132,11 +132,14 @@ class GroupedDataTable extends Component {
 class ServedDataTable extends Component {
   state = { data: DATA }
 
-  onSearch = (property, search) => {
+  onSearch = (search) => {
     let nextData;
     if (search) {
-      const exp = new RegExp(search, 'i');
-      nextData = DATA.filter(d => exp.test(d[property]));
+      const expressions = Object.keys(search).map(property => ({
+        property,
+        exp: new RegExp(search[property], 'i'),
+      }));
+      nextData = DATA.filter(d => !expressions.some(e => !e.exp.test(d[e.property])));
     } else {
       nextData = DATA;
     }
@@ -150,10 +153,10 @@ class ServedDataTable extends Component {
         <DataTable
           columns={columns.map(column => ({
             ...column,
-            onSearch: (column.property === 'name' || column.property === 'location')
-              && this.onSearch,
+            search: column.property === 'name' || column.property === 'location',
           }))}
           data={servedData}
+          onSearch={this.onSearch}
         />
       </Grommet>
     );
