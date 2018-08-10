@@ -7,7 +7,29 @@ import Tab from '../Tabs/Tab';
 import Box from '../Box/Box';
 import Grommet from '../Grommet/Grommet';
 
-class SimpleTabs extends Component {
+const UncontrolledTabs = () => (
+  <Grommet>
+    <Tabs>
+      <Tab title='Tab 1'>
+        <Box pad='large' align='center' background='accent-1'>
+          <Attraction size='xlarge' />
+        </Box>
+      </Tab>
+      <Tab title='Tab 2'>
+        <Box pad='large' align='center' background='accent-2'>
+          <TreeOption size='xlarge' />
+        </Box>
+      </Tab>
+      <Tab title='Tab 3'>
+        <Box pad='large' align='center' background='accent-3'>
+          <Car size='xlarge' />
+        </Box>
+      </Tab>
+    </Tabs>
+  </Grommet>
+);
+
+class ControlledTabs extends Component {
   state = {}
 
   onActive = index => this.setState({ index })
@@ -40,4 +62,5 @@ class SimpleTabs extends Component {
 
 
 storiesOf('Tabs', module)
-  .add('Simple Tabs', () => <SimpleTabs />);
+  .add('Uncontrolled Tabs', () => <UncontrolledTabs />)
+  .add('Controlled Tabs', () => <ControlledTabs />);
