@@ -31,7 +31,7 @@ import Text from './Text/Text';
 import TextArea from './TextArea/TextArea';
 import TextInput from './TextInput/TextInput';
 import Video from './Video/Video';
-import { grommet } from '../themes';
+import { grommet, dark, hpe } from '../themes';
 import { generate } from '../themes/base';
 import { deepMerge } from '../utils';
 
@@ -57,12 +57,26 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
   ...rest,
 });
 
+const themes = {
+  dark,
+  grommet,
+  hpe,
+};
+
 class Components extends Component {
-  state = { baseSize: 24, checkBox: true, radioButton: true, rangeSelector: [1, 2] }
+  state = {
+    baseSize: 24,
+    checkBox: true,
+    radioButton: true,
+    rangeSelector: [1, 2],
+    themeName: 'grommet',
+  }
 
   render() {
-    const { baseSize, checkBox, radioButton, rangeSelector, tabIndex } = this.state;
-    const theme = deepMerge(generate(baseSize), grommet);
+    const {
+      baseSize, checkBox, radioButton, rangeSelector, tabIndex, themeName,
+    } = this.state;
+    const theme = deepMerge(generate(baseSize), themes[themeName]);
 
     const content = [
       <Box key='type' align='start'>
@@ -241,6 +255,15 @@ class Components extends Component {
             margin='small'
           >
             <Box basis='small'>
+              <Select
+                plain={true}
+                size='small'
+                options={['grommet', 'dark', 'hpe']}
+                value={themeName}
+                onChange={event => this.setState({ themeName: event.option })}
+              />
+            </Box>
+            <Box basis='small'>
               <RangeInput
                 min={16}
                 max={36}
@@ -249,11 +272,14 @@ class Components extends Component {
                 onChange={event => this.setState({ baseSize: parseInt(event.target.value, 10) })}
               />
             </Box>
-            <Text>{baseSize}px base spacing</Text>
+            <Text size='small'>{baseSize}px base spacing</Text>
           </Box>
         </Grommet>
         <Grommet theme={theme}>
-          <Box pad='medium' background='white'>
+          <Box
+            pad='medium'
+            background={theme.global.colors.background || theme.global.colors.white}
+          >
             {Grid.available ? (
               <Grid fill={true} columns='small' gap='medium'>
                 {content}
