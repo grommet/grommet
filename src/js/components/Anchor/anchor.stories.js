@@ -1,10 +1,19 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Add } from 'grommet-icons';
+import { Add, Trash } from 'grommet-icons';
 
 import { Anchor, Grommet } from '../';
 import { grommet } from '../../themes';
+
+const customColorTheme = {
+  anchor: {
+    colors: {
+      light: 'red',
+      dark: 'white',
+    },
+  },
+};
 
 storiesOf('Anchor', module)
   .add('Default', () => (
@@ -20,5 +29,18 @@ storiesOf('Anchor', module)
   .add('With Text', () => (
     <Grommet theme={grommet}>
       This is a <Anchor label='link' href='#' /> with text.
+    </Grommet>
+  ))
+  .add('Custom color', () => (
+    <Grommet theme={customColorTheme}>
+      <Box gap='small'>
+        <Anchor icon={<Trash />} label='Delete' href='#' />
+        <Box background='light-2'>
+          This is a <Anchor label='link' href='#' /> with dark text.
+        </Box>
+        <Box background='dark-2'>
+          This is a <Anchor label='link' href='#' /> with light text.
+        </Box>
+      </Box>
     </Grommet>
   ));
