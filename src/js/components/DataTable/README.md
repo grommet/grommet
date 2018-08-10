@@ -24,7 +24,8 @@ import { DataTable } from 'grommet';
       column should be aggregated. This only applies to a footer or groupBy
       context. 'footer' indicates what should be shown in the footer for
       the column. 'search' indicates whether a search filter should be
-      made available for the column.
+      made available for the column. 'onSearch' will be called if the user
+      searches, allowing the data to be filtered externally.
     
 
 ```
@@ -49,6 +50,7 @@ import { DataTable } from 'grommet';
     {
       aggregate: boolean
     },
+  onSearch: function,
   property: string,
   render: function,
   search: boolean
@@ -81,7 +83,7 @@ Use this to indicate that 'data' doesn't contain all that it could.
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as searching, sorting, grouping, or aggregating.
+      browser, such as columns.search, sortable, groupBy, or columns.aggregate.
 
 ```
 function

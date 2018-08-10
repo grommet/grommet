@@ -129,8 +129,40 @@ class GroupedDataTable extends Component {
   }
 }
 
+class ServedDataTable extends Component {
+  state = { data: DATA }
+
+  onSearch = (property, search) => {
+    let nextData;
+    if (search) {
+      const exp = new RegExp(search, 'i');
+      nextData = DATA.filter(d => exp.test(d[property]));
+    } else {
+      nextData = DATA;
+    }
+    this.setState({ data: nextData });
+  }
+
+  render() {
+    const { data: servedData } = this.state;
+    return (
+      <Grommet>
+        <DataTable
+          columns={columns.map(column => ({
+            ...column,
+            onSearch: (column.property === 'name' || column.property === 'location')
+              && this.onSearch,
+          }))}
+          data={servedData}
+        />
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('DataTable', module)
   .add('Simple DataTable', () => <SimpleDataTable />)
   .add('Sized DataTable', () => <SizedDataTable />)
   .add('Tunable DataTable', () => <TunableDataTable />)
-  .add('Grouped DataTable', () => <GroupedDataTable />);
+  .add('Grouped DataTable', () => <GroupedDataTable />)
+  .add('Served DataTable', () => <ServedDataTable />);
