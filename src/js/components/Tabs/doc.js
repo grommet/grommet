@@ -4,6 +4,22 @@ import { getAvailableAtBadge } from '../../utils';
 
 import Tab from './Tab';
 
+export const docTab = (TabComponent) => { // can't call this Tab due to line 5
+  const DocumentedTab = describe(TabComponent)
+    .description('One tab within Tabs.'
+    ).usage(
+      `import { Tab } from 'grommet';
+<Tab />`
+    );
+
+  DocumentedTab.propTypes = {
+    title: PropTypes.string
+      .description('The title of the tab.'),
+  };
+
+  return DocumentedTab;
+};
+
 export default (Tabs) => {
   const DocumentedTabs = describe(Tabs)
     .availableAt(getAvailableAtBadge('Tabs'))
@@ -21,7 +37,7 @@ export default (Tabs) => {
       `Active tab index. If specified, Tabs will be a controlled component. This means that future
 tab changes will not work unless you subscribe to onActive function and update activeIndex
 accordingly.`
-    ).defaultValue(0),
+    ),
     children: PropTypes.arrayOf(PropTypes.instanceOf(Tab)).description(
       'Array of Tab.'
     ).isRequired,

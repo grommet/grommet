@@ -27,6 +27,7 @@ export default class Searcher extends Component {
               ref={this.inputRef}
               value={filters[property]}
               onChange={event => onFilter(property, event.target.value)}
+              onBlur={() => onFiltering(undefined)}
             />
           </Box>
         </Keyboard>

@@ -6,7 +6,6 @@ import doc from './doc';
 
 class Tabs extends Component {
   static defaultProps = {
-    activeIndex: 0,
     justify: 'center',
     messages: {
       tabContents: 'Tab Contents',
@@ -20,14 +19,14 @@ class Tabs extends Component {
     if (stateActiveIndex !== activeIndex && activeIndex !== undefined) {
       return { activeIndex };
     }
-    return null;
+    return { activeIndex: stateActiveIndex || 0 };
   }
 
   state = {}
 
   activateTab = (index) => {
     const { activeIndex, onActive } = this.props;
-    if (!activeIndex) {
+    if (activeIndex === undefined) {
       this.setState({ activeIndex: index });
     }
     if (onActive) {

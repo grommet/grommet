@@ -56,7 +56,13 @@ export default (DataTable) => {
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as searching, sorting, grouping, or aggregating.`
+      browser, such as columns.search, sortable, groupBy, or columns.aggregate.`
+    ),
+    onSearch: PropTypes.func.description(
+      `When supplied, and when at least one column has 'search' enabled,
+      this function will be called with an object with keys for property
+      names and values which are the search text strings. This is typically
+      employed so a back-end can be used to search through the data.`
     ),
     resizeable: PropTypes.string
       .description('Whether to allow the user to resize column widths.'),
