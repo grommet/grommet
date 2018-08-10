@@ -13,7 +13,7 @@ const StyledAnchor = styled.a`
   font-size: inherit;
   line-height: inherit;
   color: ${props => normalizeColor(props.theme.anchor.color, props.theme)};
-  text-decoration: ${props => props.theme.anchor.textDecoration};
+  text-decoration: ${props => (props.icon ? 'none' : props.theme.anchor.textDecoration)};
   cursor: pointer;
   outline: none;
 
