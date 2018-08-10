@@ -44,20 +44,21 @@ const findPrimary = (nextProps, prevState, nextState) => {
 };
 
 const filter = (nextProps, prevState, nextState) => {
-  const { columns } = nextProps;
+  const { columns, onSearch } = nextProps;
   const { data, filters } = nextState;
 
   let nextFilters;
   let regexps;
   columns.forEach((column) => {
-    if (column.search || column.onSearch) {
+    if (column.search) {
       if (!nextFilters) {
         nextFilters = {};
         regexps = {};
       }
       nextFilters[column.property] =
         filters ? filters[column.property] || '' : '';
-      if (nextFilters[column.property] && column.search) {
+      // don't do filtering if the caller has supplied onSearch
+      if (nextFilters[column.property] && column.search && !onSearch) {
         regexps[column.property] =
           new RegExp(nextFilters[column.property], 'i');
       }

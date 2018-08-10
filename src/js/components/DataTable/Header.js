@@ -35,7 +35,7 @@ const Header = ({
           />
         )}
 
-        {columns.map(({ property, header, align, onSearch, search }) => {
+        {columns.map(({ property, header, align, search }) => {
           let content = (typeof header === 'string' ? (
             <Text>{header}</Text>
           ) : header);
@@ -44,19 +44,19 @@ const Header = ({
             content = (
               <Sorter
                 align={align}
-                fill={!search && !onSearch}
+                fill={!search}
                 property={property}
                 onSort={onSort}
                 sort={sort}
                 theme={theme}
-                themeProps={(search || onSearch) ? innerThemeProps : theme.dataTable.header}
+                themeProps={search ? innerThemeProps : theme.dataTable.header}
               >
                 {content}
               </Sorter>
             );
           }
 
-          if ((search || onSearch) && filters) {
+          if (search && filters) {
             if (!onSort) {
               content = (
                 <Box justify='center' align={align} {...innerThemeProps}>
