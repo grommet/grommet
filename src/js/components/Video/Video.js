@@ -306,8 +306,10 @@ class Video extends Component {
       percentagePlayed, playing, scrubberRef, scrubTime, volume,
     } = this.state;
     const over = controls === 'over';
-    const background = over ? { color: 'dark-2', opacity: 'strong' } : undefined;
-    const iconColor = over ? 'light-1' : undefined;
+    const background = over
+      && ((theme.video.controls && theme.video.controls.background)
+        || { color: 'dark-2', opacity: 'strong' });
+    const iconColor = over && (theme.video.icons.color || 'light-1');
 
     const formattedTime = formatTime(scrubTime || currentTime || duration);
 
@@ -352,7 +354,8 @@ class Video extends Component {
               <Stack>
                 <Meter
                   aria-label='Video progress'
-                  background={over ? 'dark-3' : undefined}
+                  background={over &&
+                    ((theme.video.scrubber && theme.video.scrubber.track.color) || 'dark-3')}
                   size='full'
                   thickness='small'
                   values={[{ value: percentagePlayed || 0 }]}

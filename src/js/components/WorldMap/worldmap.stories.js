@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import WorldMap from '../WorldMap/WorldMap';
 import Grommet from '../Grommet/Grommet';
+import { grommet } from '../../themes';
 
 class SimpleWorldMap extends Component {
   state = {}
@@ -14,7 +15,7 @@ class SimpleWorldMap extends Component {
   render() {
     const { places } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <WorldMap onSelectPlace={this.onSelectPlace} places={places} />
       </Grommet>
     );

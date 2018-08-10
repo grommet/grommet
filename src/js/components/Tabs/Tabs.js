@@ -70,7 +70,6 @@ class Tabs extends Component {
     return (
       <div role='tablist'>
         <Box
-          border='bottom'
           direction='row'
           justify={justify}
           {...rest}

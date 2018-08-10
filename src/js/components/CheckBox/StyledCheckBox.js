@@ -10,7 +10,9 @@ const disabledStyle = `
 const hoverStyle = css`
   :hover input:not([disabled]) + div,
   :hover input:not([disabled]) + span {
-    border-color: ${props => (props.theme.dark ? props.theme.checkBox.hover.border.color.dark : props.theme.checkBox.hover.border.color.light)};
+    border-color: ${props => (props.theme.dark
+      ? props.theme.checkBox.hover.border.color.dark
+      : props.theme.checkBox.hover.border.color.light)};
   }
 `;
 
@@ -44,7 +46,8 @@ export const StyledCheckBoxInput = styled.input`
   cursor: pointer;
 
   :checked + div {
-    border-color: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
+    border-color: ${props => (props.theme.checkBox.check.color ||
+      props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
   }
 
   :checked + div > svg {
@@ -53,7 +56,8 @@ export const StyledCheckBoxInput = styled.input`
 
   :checked + span > span {
     left: ${props => props.theme.checkBox.size};
-    background: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
+    background: ${props => (props.theme.checkBox.check.color ||
+      props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
   }
 `;
 
@@ -79,7 +83,8 @@ export const StyledCheckBoxBox = styled.div`
     width: ${props => props.theme.checkBox.size};
     height: ${props => props.theme.checkBox.size};
     stroke-width: ${props => props.theme.checkBox.check.width};
-    stroke: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
+    stroke: ${props => (props.theme.checkBox.check.color ||
+      props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
   }
 
   ${props => props.focus && focusStyle};
@@ -107,7 +112,7 @@ export const StyledCheckBoxKnob = styled.span`
   transition: all 0.3s;
   width: ${props => props.theme.checkBox.size};
   height: ${props => props.theme.checkBox.size};
-  background: ${props => props.theme.checkBox.toggle.color};
+  background: ${props => props.theme.checkBox.toggle.color[props.theme.dark ? 'dark' : 'light']};
   border-radius: ${props => props.theme.checkBox.toggle.radius};
 `;
 

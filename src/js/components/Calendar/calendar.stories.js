@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import Calendar from '../Calendar/Calendar';
 import Grommet from '../Grommet/Grommet';
+import { grommet } from '../../themes';
 
 class SimpleCalendar extends Component {
   state = {}
@@ -12,7 +13,7 @@ class SimpleCalendar extends Component {
   render() {
     const { date } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Calendar date={date} onSelect={this.onSelect} size='small' />
       </Grommet>
     );
@@ -60,7 +61,7 @@ class RichCalendar extends Component {
   render() {
     const { date, dates } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Calendar date={date} dates={dates} onSelect={this.onSelect} />
       </Grommet>
     );

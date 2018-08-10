@@ -7,11 +7,12 @@ import Text from '../Text/Text';
 import Anchor from '../Anchor/Anchor';
 import Button from '../Button/Button';
 import Grommet from '../Grommet/Grommet';
+import { grommet } from '../../themes';
 
 class SimpleBox extends Component {
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Box
           direction='row-responsive'
           justify='center'
@@ -22,7 +23,7 @@ class SimpleBox extends Component {
           <Box
             pad='xlarge'
             align='center'
-            background={{ color: 'white-2', opacity: 'strong' }}
+            background={{ color: 'light-2', opacity: 'strong' }}
           >
             <Attraction size='xlarge' />
             <Text>Party</Text>
@@ -55,6 +56,9 @@ const customColorBox = {
   global: {
     colors: {
       'brand-gradient': 'linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)',
+    },
+    font: {
+      family: 'Arial',
     },
   },
 };

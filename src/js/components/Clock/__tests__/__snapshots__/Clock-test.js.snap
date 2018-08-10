@@ -2,9 +2,8 @@
 
 exports[`Clock hourLimit 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -18,7 +17,7 @@ exports[`Clock hourLimit 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.375;
 }
 
@@ -163,7 +162,7 @@ exports[`Clock hourLimit 1`] = `
 
 exports[`Clock run 1`] = `
 <div
-  class="StyledGrommet-gKbdxL iuxDFS"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <svg
     class="StyledClock__StyledAnalog-hmoBCf lhRUUF"
@@ -174,7 +173,7 @@ exports[`Clock run 1`] = `
     width="96"
   >
     <line
-      class="StyledClock__StyledSecond-bAhDUL jQkcjm"
+      class="StyledClock__StyledSecond-bAhDUL jNqVsb"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(204deg);"
@@ -213,7 +212,7 @@ exports[`Clock run 1`] = `
     width="96"
   >
     <line
-      class="StyledClock__StyledSecond-bAhDUL jQkcjm"
+      class="StyledClock__StyledSecond-bAhDUL jNqVsb"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(204deg);"
@@ -247,42 +246,42 @@ exports[`Clock run 1`] = `
     class="StyledBox-YaZNy htiNkm"
   >
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       1
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       8
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       2
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       4
     </div>
@@ -291,42 +290,42 @@ exports[`Clock run 1`] = `
     class="StyledBox-YaZNy htiNkm"
   >
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       1
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       8
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       2
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       4
     </div>
@@ -336,7 +335,7 @@ exports[`Clock run 1`] = `
 
 exports[`Clock run 2`] = `
 <div
-  class="StyledGrommet-gKbdxL iuxDFS"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <svg
     class="StyledClock__StyledAnalog-hmoBCf lhRUUF"
@@ -347,7 +346,7 @@ exports[`Clock run 2`] = `
     width="96"
   >
     <line
-      class="StyledClock__StyledSecond-bAhDUL jQkcjm"
+      class="StyledClock__StyledSecond-bAhDUL jNqVsb"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(204deg);"
@@ -386,7 +385,7 @@ exports[`Clock run 2`] = `
     width="96"
   >
     <line
-      class="StyledClock__StyledSecond-bAhDUL jQkcjm"
+      class="StyledClock__StyledSecond-bAhDUL jNqVsb"
       stroke="#000000"
       stroke-linecap="round"
       style="transform: rotate(204deg);"
@@ -420,42 +419,42 @@ exports[`Clock run 2`] = `
     class="StyledBox-YaZNy htiNkm"
   >
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       1
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       8
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       2
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       4
     </div>
@@ -464,42 +463,42 @@ exports[`Clock run 2`] = `
     class="StyledBox-YaZNy htiNkm"
   >
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       1
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       8
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       2
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-bEysmO kQXSaR"
+      class="StyledClock__StyledDigitalDigit-bEysmO nVJrS"
     >
       4
     </div>
@@ -509,9 +508,8 @@ exports[`Clock run 2`] = `
 
 exports[`Clock time 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -525,7 +523,7 @@ exports[`Clock time 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.375;
 }
 
@@ -774,9 +772,8 @@ exports[`Clock time 1`] = `
 
 exports[`Clock type analog precision hours size large 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -830,9 +827,8 @@ exports[`Clock type analog precision hours size large 1`] = `
 
 exports[`Clock type analog precision hours size medium 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -886,9 +882,8 @@ exports[`Clock type analog precision hours size medium 1`] = `
 
 exports[`Clock type analog precision hours size small 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -942,9 +937,8 @@ exports[`Clock type analog precision hours size small 1`] = `
 
 exports[`Clock type analog precision hours size xlarge 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -998,9 +992,8 @@ exports[`Clock type analog precision hours size xlarge 1`] = `
 
 exports[`Clock type analog precision hours size xsmall 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1049,9 +1042,8 @@ exports[`Clock type analog precision hours size xsmall 1`] = `
 
 exports[`Clock type analog precision minutes size large 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1127,9 +1119,8 @@ exports[`Clock type analog precision minutes size large 1`] = `
 
 exports[`Clock type analog precision minutes size medium 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1205,9 +1196,8 @@ exports[`Clock type analog precision minutes size medium 1`] = `
 
 exports[`Clock type analog precision minutes size small 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1283,9 +1273,8 @@ exports[`Clock type analog precision minutes size small 1`] = `
 
 exports[`Clock type analog precision minutes size xlarge 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1361,9 +1350,8 @@ exports[`Clock type analog precision minutes size xlarge 1`] = `
 
 exports[`Clock type analog precision minutes size xsmall 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1434,9 +1422,8 @@ exports[`Clock type analog precision minutes size xsmall 1`] = `
 
 exports[`Clock type analog precision seconds size large 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1461,7 +1448,7 @@ exports[`Clock type analog precision seconds size large 1`] = `
 
 .c2 {
   stroke-width: 3px;
-  stroke: #60EB9F;
+  stroke: #FD6FFF;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1534,9 +1521,8 @@ exports[`Clock type analog precision seconds size large 1`] = `
 
 exports[`Clock type analog precision seconds size medium 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1561,7 +1547,7 @@ exports[`Clock type analog precision seconds size medium 1`] = `
 
 .c2 {
   stroke-width: 3px;
-  stroke: #60EB9F;
+  stroke: #FD6FFF;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1634,9 +1620,8 @@ exports[`Clock type analog precision seconds size medium 1`] = `
 
 exports[`Clock type analog precision seconds size small 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1661,7 +1646,7 @@ exports[`Clock type analog precision seconds size small 1`] = `
 
 .c2 {
   stroke-width: 3px;
-  stroke: #60EB9F;
+  stroke: #FD6FFF;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1734,9 +1719,8 @@ exports[`Clock type analog precision seconds size small 1`] = `
 
 exports[`Clock type analog precision seconds size xlarge 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1761,7 +1745,7 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
 
 .c2 {
   stroke-width: 3px;
-  stroke: #60EB9F;
+  stroke: #FD6FFF;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1834,9 +1818,8 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
 
 exports[`Clock type analog precision seconds size xsmall 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1861,7 +1844,7 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
 
 .c1 {
   stroke-width: 3px;
-  stroke: #60EB9F;
+  stroke: #FD6FFF;
   -webkit-transition: stroke 1s ease-out;
   transition: stroke 1s ease-out;
 }
@@ -1929,9 +1912,8 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
 
 exports[`Clock type digital precision hours size large 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1945,7 +1927,7 @@ exports[`Clock type digital precision hours size large 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.167;
 }
 
@@ -2002,9 +1984,8 @@ exports[`Clock type digital precision hours size large 1`] = `
 
 exports[`Clock type digital precision hours size medium 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2018,7 +1999,7 @@ exports[`Clock type digital precision hours size medium 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.375;
 }
 
@@ -2075,9 +2056,8 @@ exports[`Clock type digital precision hours size medium 1`] = `
 
 exports[`Clock type digital precision hours size small 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2148,9 +2128,8 @@ exports[`Clock type digital precision hours size small 1`] = `
 
 exports[`Clock type digital precision hours size xlarge 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2164,7 +2143,7 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 32px;
+  font-size: 26px;
   line-height: 1.1875;
 }
 
@@ -2221,9 +2200,8 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
 
 exports[`Clock type digital precision hours size xsmall 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2237,7 +2215,7 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.5;
 }
 
@@ -2294,9 +2272,8 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
 
 exports[`Clock type digital precision minutes size large 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2310,7 +2287,7 @@ exports[`Clock type digital precision minutes size large 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.167;
 }
 
@@ -2385,9 +2362,8 @@ exports[`Clock type digital precision minutes size large 1`] = `
 
 exports[`Clock type digital precision minutes size medium 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2401,7 +2377,7 @@ exports[`Clock type digital precision minutes size medium 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.375;
 }
 
@@ -2476,9 +2452,8 @@ exports[`Clock type digital precision minutes size medium 1`] = `
 
 exports[`Clock type digital precision minutes size small 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2567,9 +2542,8 @@ exports[`Clock type digital precision minutes size small 1`] = `
 
 exports[`Clock type digital precision minutes size xlarge 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2583,7 +2557,7 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 32px;
+  font-size: 26px;
   line-height: 1.1875;
 }
 
@@ -2658,9 +2632,8 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
 
 exports[`Clock type digital precision minutes size xsmall 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2674,7 +2647,7 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.5;
 }
 
@@ -2749,9 +2722,8 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
 
 exports[`Clock type digital precision seconds size large 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2765,7 +2737,7 @@ exports[`Clock type digital precision seconds size large 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.167;
 }
 
@@ -2858,9 +2830,8 @@ exports[`Clock type digital precision seconds size large 1`] = `
 
 exports[`Clock type digital precision seconds size medium 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2874,7 +2845,7 @@ exports[`Clock type digital precision seconds size medium 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.375;
 }
 
@@ -2967,9 +2938,8 @@ exports[`Clock type digital precision seconds size medium 1`] = `
 
 exports[`Clock type digital precision seconds size small 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -3076,9 +3046,8 @@ exports[`Clock type digital precision seconds size small 1`] = `
 
 exports[`Clock type digital precision seconds size xlarge 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -3092,7 +3061,7 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 32px;
+  font-size: 26px;
   line-height: 1.1875;
 }
 
@@ -3185,9 +3154,8 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
 
 exports[`Clock type digital precision seconds size xsmall 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -3201,7 +3169,7 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
   width: 0.8em;
   text-align: center;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 1.5;
 }
 

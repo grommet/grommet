@@ -6,6 +6,7 @@ import Grommet from '../Grommet/Grommet';
 import Meter from '../Meter/Meter';
 import Box from '../Box/Box';
 import Text from '../Text/Text';
+import { grommet } from '../../themes';
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -74,7 +75,7 @@ const DATA = [
 class SimpleDataTable extends Component {
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <DataTable columns={columns} data={DATA} />
       </Grommet>
     );
@@ -84,7 +85,7 @@ class SimpleDataTable extends Component {
 class SizedDataTable extends Component {
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <DataTable columns={columns} data={data} size='medium' />
       </Grommet>
     );
@@ -94,7 +95,7 @@ class SizedDataTable extends Component {
 class TunableDataTable extends Component {
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <DataTable
           columns={columns.map(c =>
             ({ ...c, search: c.property === 'name' || c.property === 'location' }))}
@@ -117,7 +118,7 @@ delete groupColumns[1].footer;
 class GroupedDataTable extends Component {
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <DataTable
           columns={groupColumns}
           data={DATA}

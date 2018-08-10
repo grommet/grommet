@@ -2,9 +2,8 @@
 
 exports[`renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -14,8 +13,8 @@ exports[`renders 1`] = `
 }
 
 .c1 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 <div
@@ -31,9 +30,8 @@ exports[`renders 1`] = `
 
 exports[`renders color 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -43,9 +41,9 @@ exports[`renders color 1`] = `
 }
 
 .c1 {
-  font-size: 16px;
-  line-height: 1.375;
-  color: #E1746A;
+  font-size: 18px;
+  line-height: 24px;
+  color: #EB6060;
 }
 
 <div
@@ -60,9 +58,8 @@ exports[`renders color 1`] = `
 
 exports[`renders margin 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -72,8 +69,8 @@ exports[`renders margin 1`] = `
 }
 
 .c1 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-top: 12px;
   margin-bottom: 12px;
   margin-left: 12px;
@@ -81,8 +78,8 @@ exports[`renders margin 1`] = `
 }
 
 .c2 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-top: 24px;
   margin-bottom: 24px;
   margin-left: 24px;
@@ -90,8 +87,8 @@ exports[`renders margin 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-top: 48px;
   margin-bottom: 48px;
   margin-left: 48px;
@@ -99,8 +96,8 @@ exports[`renders margin 1`] = `
 }
 
 .c4 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
@@ -108,40 +105,40 @@ exports[`renders margin 1`] = `
 }
 
 .c5 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-top: 12px;
   margin-bottom: 12px;
 }
 
 .c6 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-left: 12px;
   margin-right: 12px;
 }
 
 .c7 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-bottom: 12px;
 }
 
 .c8 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-top: 12px;
 }
 
 .c9 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-left: 12px;
 }
 
 .c10 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   margin-right: 12px;
 }
 
@@ -183,9 +180,8 @@ exports[`renders margin 1`] = `
 
 exports[`renders size 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -195,33 +191,33 @@ exports[`renders size 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 18px;
 }
 
 .c2 {
   font-size: 14px;
-  line-height: 1.43;
+  line-height: 20px;
 }
 
 .c4 {
-  font-size: 24px;
-  line-height: 1.167;
+  font-size: 22px;
+  line-height: 28px;
 }
 
 .c5 {
-  font-size: 32px;
-  line-height: 1.1875;
+  font-size: 26px;
+  line-height: 32px;
 }
 
 .c6 {
-  font-size: 48px;
-  line-height: 1.125;
+  font-size: 34px;
+  line-height: 40px;
 }
 
 <div
@@ -256,9 +252,8 @@ exports[`renders size 1`] = `
 
 exports[`renders tag 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -268,8 +263,8 @@ exports[`renders tag 1`] = `
 }
 
 .c1 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 <div
@@ -283,9 +278,8 @@ exports[`renders tag 1`] = `
 
 exports[`renders textAlign 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -295,20 +289,20 @@ exports[`renders textAlign 1`] = `
 }
 
 .c1 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   text-align: left;
 }
 
 .c2 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   text-align: center;
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   text-align: right;
 }
 
@@ -329,9 +323,8 @@ exports[`renders textAlign 1`] = `
 
 exports[`renders truncate 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -341,13 +334,13 @@ exports[`renders truncate 1`] = `
 }
 
 .c1 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c2 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -371,9 +364,8 @@ exports[`renders truncate 1`] = `
 
 exports[`renders weight 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -383,14 +375,14 @@ exports[`renders weight 1`] = `
 }
 
 .c1 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   font-weight: normal;
 }
 
 .c2 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   font-weight: bold;
 }
 

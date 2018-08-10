@@ -6,7 +6,7 @@ import { Button } from '../Button';
 import { Text } from '../Text';
 
 import { withForwardRef, withTheme } from '../hocs';
-import { colorForName } from '../../utils';
+import { evalStyle, normalizeColor } from '../../utils';
 
 class Tab extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -58,9 +58,7 @@ class Tab extends Component {
     } else if (active) {
       normalizedTitle = <Text weight='bold'>{title}</Text>;
     } else {
-      const color = theme.dark ?
-        theme.global.colors.darkBackground.text :
-        theme.global.colors.lightBackground.text;
+      const color = normalizeColor(theme.global.text.color, theme);
       normalizedTitle = <Text color={color}>{title}</Text>;
     }
 
@@ -68,9 +66,9 @@ class Tab extends Component {
     if (active) {
       borderColor = theme.dark ? 'white' : 'black';
     } else if (over) {
-      borderColor = colorForName('border', theme);
+      borderColor = theme.dark ? 'white' : 'black';
     } else {
-      borderColor = 'transparent';
+      borderColor = evalStyle(normalizeColor(theme.global.control.border.color, theme), theme);
     }
 
     return (
@@ -88,7 +86,7 @@ class Tab extends Component {
         <Box
           pad={{ bottom: 'xsmall' }}
           margin={{ horizontal: 'small' }}
-          border={{ side: 'bottom', size: 'medium', color: borderColor }}
+          border={{ side: 'bottom', size: 'small', color: borderColor }}
         >
           {normalizedTitle}
         </Box>

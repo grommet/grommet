@@ -9,6 +9,7 @@ import { DropButton } from '../DropButton';
 import { Text } from '../Text';
 
 import { withForwardRef, withTheme } from '../hocs';
+import { evalStyle } from '../../utils';
 
 import doc from './doc';
 
@@ -94,6 +95,7 @@ class Menu extends Component {
     const { activeItemIndex, open } = this.state;
 
     const MenuIcon = theme.menu.icons.down;
+    const iconColor = evalStyle(theme.global.control.color[theme.dark ? 'dark' : 'light'], theme) || 'brand';
 
     const content = children || (
       <Box
@@ -105,7 +107,7 @@ class Menu extends Component {
       >
         <Text size={size}>{label}</Text>
         {(icon !== false) ?
-          ((icon !== true && icon) || <MenuIcon color='brand' size={size} />)
+          ((icon !== true && icon) || <MenuIcon color={iconColor} size={size} />)
           : null}
       </Box>
     );

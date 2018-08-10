@@ -7,7 +7,6 @@ export const StyledDataTable = styled.table`
 `;
 
 export const StyledDataTableRow = styled.tr`
-  height: 100%;
   ${props => props.size && `
     display: table;
     width: 100%;

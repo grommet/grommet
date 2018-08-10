@@ -6,10 +6,9 @@ import { Box } from '../Box';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { TextInput } from '../TextInput';
-
 import { withForwardRef, withTheme } from '../hocs';
+import { colorIsDark, evalStyle } from '../../utils';
 
-import { colorIsDark, colorForName } from '../../utils';
 import SelectContainer from './SelectContainer';
 import doc from './doc';
 
@@ -99,11 +98,9 @@ class Select extends Component {
       selectValue = value;
     }
 
-    const iconColor = colorIsDark(theme.select.background) ? (
-      theme.select.icons.color.dark || colorForName('light-4', theme)
-    ) : (
-      theme.select.icons.color.light || colorForName('brand', theme)
-    );
+    const dark = theme.select.background ? colorIsDark(theme.select.background) : theme.dark;
+    const iconColor = evalStyle((theme.select.icons.color ||
+      theme.global.control.color)[dark ? 'dark' : 'light'], theme);
 
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>

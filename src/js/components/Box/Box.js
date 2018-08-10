@@ -24,24 +24,27 @@ class Box extends Component {
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { background, theme } = nextProps;
-    const { theme: stateTheme } = prevState;
+    const { background, theme: propsTheme } = nextProps;
+    const { theme: stateTheme, priorTheme } = prevState;
 
-    let dark = theme.dark;
+    let dark = propsTheme.dark;
     if (background) {
-      dark = backgroundIsDark(background, theme);
+      dark = backgroundIsDark(background, propsTheme);
     }
 
-    if (dark !== theme.dark && (!stateTheme || dark !== stateTheme.dark)) {
+    if (dark === propsTheme.dark && stateTheme) {
+      return { theme: undefined, priorTheme: undefined };
+    }
+    if (dark !== propsTheme.dark &&
+      (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)) {
       return {
         theme: {
-          ...theme,
+          ...propsTheme,
           dark,
-          icon: dark ? theme.iconThemes.dark : theme.iconThemes.light,
+          icon: dark ? propsTheme.iconThemes.dark : propsTheme.iconThemes.light,
         },
+        priorTheme: propsTheme,
       };
-    } else if (dark === theme.dark && stateTheme) {
-      return { theme: undefined };
     }
     return null;
   }

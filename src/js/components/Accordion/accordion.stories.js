@@ -20,6 +20,7 @@ import {
   TextInput,
   ThemeContext,
 } from '../../';
+import { grommet } from '../../themes';
 
 const richAccordionTheme = {
   accordion: {
@@ -34,7 +35,7 @@ class SimpleAccordion extends Component {
   render() {
     const { animate, multiple, ...rest } = this.props;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Box {...rest}>
           <Accordion animate={animate} multiple={multiple}>
             <AccordionPanel label='Panel 1'>
@@ -120,7 +121,7 @@ class RichAccordion extends Component {
   render() {
     const { highlightLoaded } = this.state;
     return (
-      <Grommet full={true}>
+      <Grommet full={true} theme={grommet}>
         <Box fill={true} direction='row'>
           <Box basis='medium' border='all'>
             <Box
@@ -288,7 +289,7 @@ class CustomHeaderAccordion extends Component {
   render() {
     const { activeIndex } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Accordion
           activeIndex={activeIndex}
           onActive={newActiveIndex => this.setState({ activeIndex: newActiveIndex })}

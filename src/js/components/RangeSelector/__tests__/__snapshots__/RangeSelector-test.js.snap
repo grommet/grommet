@@ -2,9 +2,8 @@
 
 exports[`RangeSelector basic 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -123,8 +122,8 @@ exports[`RangeSelector basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -262,7 +261,7 @@ exports[`RangeSelector basic 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -313,7 +312,7 @@ exports[`RangeSelector basic 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -334,9 +333,8 @@ exports[`RangeSelector basic 1`] = `
 
 exports[`RangeSelector color 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -455,7 +453,7 @@ exports[`RangeSelector color 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #FD6FFF;
+  background: rgba(253,111,255,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -666,9 +664,8 @@ exports[`RangeSelector color 1`] = `
 
 exports[`RangeSelector direction 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -787,8 +784,8 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -891,8 +888,8 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1096,7 +1093,7 @@ exports[`RangeSelector direction 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1147,7 +1144,7 @@ exports[`RangeSelector direction 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1209,7 +1206,7 @@ exports[`RangeSelector direction 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1260,7 +1257,7 @@ exports[`RangeSelector direction 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1281,7 +1278,7 @@ exports[`RangeSelector direction 1`] = `
 
 exports[`RangeSelector handle keyboard 1`] = `
 <div
-  class="StyledGrommet-gKbdxL iuxDFS"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
     class="StyledBox-YaZNy ftRJis"
@@ -1309,7 +1306,7 @@ exports[`RangeSelector handle keyboard 1`] = `
             <circle
               cx="6"
               cy="6"
-              fill="#865CD6"
+              fill="#7D4CDB"
               r="6"
             />
           </svg>
@@ -1317,7 +1314,7 @@ exports[`RangeSelector handle keyboard 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy esjXMJ"
+      class="StyledBox-YaZNy hPswrY"
       style="cursor: ew-resize;"
     />
     <div
@@ -1340,7 +1337,7 @@ exports[`RangeSelector handle keyboard 1`] = `
             <circle
               cx="6"
               cy="6"
-              fill="#865CD6"
+              fill="#7D4CDB"
               r="6"
             />
           </svg>
@@ -1356,7 +1353,7 @@ exports[`RangeSelector handle keyboard 1`] = `
 
 exports[`RangeSelector handle mouse 1`] = `
 <div
-  class="StyledGrommet-gKbdxL iuxDFS"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
     class="StyledBox-YaZNy ftRJis"
@@ -1384,7 +1381,7 @@ exports[`RangeSelector handle mouse 1`] = `
             <circle
               cx="6"
               cy="6"
-              fill="#865CD6"
+              fill="#7D4CDB"
               r="6"
             />
           </svg>
@@ -1392,7 +1389,7 @@ exports[`RangeSelector handle mouse 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy esjXMJ"
+      class="StyledBox-YaZNy hPswrY"
       style="cursor: ew-resize;"
     />
     <div
@@ -1415,7 +1412,7 @@ exports[`RangeSelector handle mouse 1`] = `
             <circle
               cx="6"
               cy="6"
-              fill="#865CD6"
+              fill="#7D4CDB"
               r="6"
             />
           </svg>
@@ -1431,9 +1428,8 @@ exports[`RangeSelector handle mouse 1`] = `
 
 exports[`RangeSelector invert 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1552,8 +1548,8 @@ exports[`RangeSelector invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1572,7 +1568,7 @@ exports[`RangeSelector invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #CCCCCC;
+  background: rgba(204,204,204,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1723,7 +1719,7 @@ exports[`RangeSelector invert 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1774,7 +1770,7 @@ exports[`RangeSelector invert 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1836,7 +1832,7 @@ exports[`RangeSelector invert 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1887,7 +1883,7 @@ exports[`RangeSelector invert 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -1908,9 +1904,8 @@ exports[`RangeSelector invert 1`] = `
 
 exports[`RangeSelector max 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2029,8 +2024,8 @@ exports[`RangeSelector max 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2168,7 +2163,7 @@ exports[`RangeSelector max 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -2219,7 +2214,7 @@ exports[`RangeSelector max 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -2240,9 +2235,8 @@ exports[`RangeSelector max 1`] = `
 
 exports[`RangeSelector min 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2361,8 +2355,8 @@ exports[`RangeSelector min 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2500,7 +2494,7 @@ exports[`RangeSelector min 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -2551,7 +2545,7 @@ exports[`RangeSelector min 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -2572,9 +2566,8 @@ exports[`RangeSelector min 1`] = `
 
 exports[`RangeSelector opacity 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -2693,8 +2686,8 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2713,7 +2706,7 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #865CD6;
+  background: rgba(125,76,219,0.1);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2722,597 +2715,6 @@ exports[`RangeSelector opacity 1`] = `
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
-@media only screen and (max-width:699px) {
-  .c1 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c1 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c2 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c2 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c3 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c3 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c4 {
-    margin: 3px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c4 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c5 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c5 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c5 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c7 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c7 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c6 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c6 {
-    padding: 0;
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-      style={
-        Object {
-          "flex": "19.801980198019802 0 0",
-        }
-      }
-    />
-    <div
-      className="c3"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
-    >
-      <div
-        aria-label="Lower Bounds"
-        className="c4"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
-      >
-        <div
-          className="c5"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#865CD6"
-              r={6}
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c6"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
-        }
-      }
-    />
-    <div
-      className="c3"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
-    >
-      <div
-        aria-label="Upper Bounds"
-        className="c4"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
-      >
-        <div
-          className="c5"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#865CD6"
-              r={6}
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c2"
-      style={
-        Object {
-          "flex": "69.3069306930693 0 0",
-        }
-      }
-    />
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-      style={
-        Object {
-          "flex": "19.801980198019802 0 0",
-        }
-      }
-    />
-    <div
-      className="c3"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
-    >
-      <div
-        aria-label="Lower Bounds"
-        className="c4"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
-      >
-        <div
-          className="c5"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#865CD6"
-              r={6}
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c7"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
-        }
-      }
-    />
-    <div
-      className="c3"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
-    >
-      <div
-        aria-label="Upper Bounds"
-        className="c4"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
-      >
-        <div
-          className="c5"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#865CD6"
-              r={6}
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c2"
-      style={
-        Object {
-          "flex": "69.3069306930693 0 0",
-        }
-      }
-    />
-  </div>
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-      style={
-        Object {
-          "flex": "19.801980198019802 0 0",
-        }
-      }
-    />
-    <div
-      className="c3"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
-    >
-      <div
-        aria-label="Lower Bounds"
-        className="c4"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
-      >
-        <div
-          className="c5"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#865CD6"
-              r={6}
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c7"
-      style={
-        Object {
-          "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
-        }
-      }
-    />
-    <div
-      className="c3"
-      onKeyDown={[Function]}
-      style={
-        Object {
-          "flex": "0 0 1px",
-        }
-      }
-    >
-      <div
-        aria-label="Upper Bounds"
-        className="c4"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        style={
-          Object {
-            "cursor": "col-resize",
-            "minHeight": 12,
-            "minWidth": 12,
-            "zIndex": 10,
-          }
-        }
-        tabIndex={0}
-      >
-        <div
-          className="c5"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#865CD6"
-              r={6}
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      className="c2"
-      style={
-        Object {
-          "flex": "69.3069306930693 0 0",
-        }
-      }
-    />
-  </div>
-</div>
-`;
-
-exports[`RangeSelector round 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  overflow: visible;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 6px;
-  padding: 0;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  border-radius: 12px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  border-radius: 6px;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  border-radius: 6px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  border-radius: 12px;
 }
 
 .c8 {
@@ -3323,8 +2725,8 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: rgba(125,76,219,0.8);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3333,127 +2735,6 @@ exports[`RangeSelector round 1`] = `
   height: 100%;
   margin: 0;
   padding: 0;
-  border-radius: 12px;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  border-radius: 24px;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  border-radius: 24px;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  border-radius: 48px;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  border-radius: 48px;
-}
-
-.c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  border-radius: 100%;
-}
-
-.c14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  border-radius: 100%;
 }
 
 @media only screen and (max-width:699px) {
@@ -3464,6 +2745,18 @@ exports[`RangeSelector round 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
     padding: 0;
   }
 }
@@ -3511,20 +2804,14 @@ exports[`RangeSelector round 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c2 {
+  .c7 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c2 {
+  .c7 {
     padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c2 {
-    border-radius: 3px;
   }
 }
 
@@ -3541,30 +2828,6 @@ exports[`RangeSelector round 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c6 {
-    border-radius: 3px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c7 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c7 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c7 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:699px) {
   .c8 {
     margin: 0;
   }
@@ -3573,120 +2836,6 @@ exports[`RangeSelector round 1`] = `
 @media only screen and (max-width:699px) {
   .c8 {
     padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c8 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c9 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c9 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c9 {
-    border-radius: 12px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c10 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c10 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c10 {
-    border-radius: 12px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c11 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c11 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c11 {
-    border-radius: 24px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c12 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c12 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c12 {
-    border-radius: 24px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c13 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c13 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c13 {
-    border-radius: 100%;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c14 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c14 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c14 {
-    border-radius: 100%;
   }
 }
 
@@ -3739,7 +2888,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -3790,7 +2939,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -3810,7 +2959,7 @@ exports[`RangeSelector round 1`] = `
     className="c1"
   >
     <div
-      className="c7"
+      className="c2"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -3852,7 +3001,120 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c7"
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      className="c3"
+      onKeyDown={[Function]}
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          className="c5"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#7D4CDB"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      className="c3"
+      onKeyDown={[Function]}
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          className="c5"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -3903,7 +3165,769 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`RangeSelector round 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 6px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 24px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 24px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 48px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 48px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 100%;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 100%;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    border-radius: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    border-radius: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    border-radius: 24px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c12 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c12 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c12 {
+    border-radius: 24px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    border-radius: 100%;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c14 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c14 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c14 {
+    border-radius: 100%;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      className="c3"
+      onKeyDown={[Function]}
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          className="c5"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#7D4CDB"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c6"
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      className="c3"
+      onKeyDown={[Function]}
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          className="c5"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#7D4CDB"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c7"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      className="c3"
+      onKeyDown={[Function]}
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          className="c5"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#7D4CDB"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="c8"
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      className="c3"
+      onKeyDown={[Function]}
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          className="c5"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -3965,7 +3989,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4016,7 +4040,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4078,7 +4102,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4129,7 +4153,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4191,7 +4215,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4242,7 +4266,7 @@ exports[`RangeSelector round 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4263,9 +4287,8 @@ exports[`RangeSelector round 1`] = `
 
 exports[`RangeSelector size 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -4384,8 +4407,8 @@ exports[`RangeSelector size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4523,7 +4546,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4574,7 +4597,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4636,7 +4659,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4687,7 +4710,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4749,7 +4772,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4800,7 +4823,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4862,7 +4885,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4913,7 +4936,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -4975,7 +4998,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5026,7 +5049,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5088,7 +5111,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5139,7 +5162,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5201,7 +5224,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5252,7 +5275,7 @@ exports[`RangeSelector size 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5273,9 +5296,8 @@ exports[`RangeSelector size 1`] = `
 
 exports[`RangeSelector step 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -5394,8 +5416,8 @@ exports[`RangeSelector step 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -5533,7 +5555,7 @@ exports[`RangeSelector step 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>
@@ -5584,7 +5606,7 @@ exports[`RangeSelector step 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#865CD6"
+              fill="#7D4CDB"
               r={6}
             />
           </svg>

@@ -25,6 +25,9 @@ export default {
         xlarge: '0 24px 24px 0 rgba(0, 0, 0, 0.12)',
       },
     },
+    font: {
+      family: 'Arial',
+    },
     size: {
       xxsmall: '24px',
     },

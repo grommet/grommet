@@ -3,11 +3,12 @@ import { storiesOf } from '@storybook/react';
 
 import Video from '../Video/Video';
 import Grommet from '../Grommet/Grommet';
+import { grommet } from '../../themes';
 
 class SimpleVideo extends Component {
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Video>
           <source src='http://techslides.com/demos/sample-videos/small.webm' type='video/webm' />
           <source src='http://techslides.com/demos/sample-videos/small.ogv' type='video/ogg' />
@@ -18,7 +19,6 @@ class SimpleVideo extends Component {
     );
   }
 }
-
 
 storiesOf('Video', module)
   .add('Simple Video', () => <SimpleVideo />);

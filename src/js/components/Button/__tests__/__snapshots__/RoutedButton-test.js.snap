@@ -2,9 +2,8 @@
 
 exports[`RoutedButton renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -39,8 +38,8 @@ exports[`RoutedButton renders 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c1 {
@@ -55,19 +54,17 @@ exports[`RoutedButton renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 24px;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
   color: #444444;
-  padding: 10px 46px;
+  padding: 4px 22px;
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #865CD6;
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
 .c1:hover svg {
-  fill: #000000;
-  stroke: #000000;
   -webkit-transition: none;
   transition: none;
 }

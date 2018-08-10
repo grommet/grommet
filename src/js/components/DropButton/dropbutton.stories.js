@@ -9,6 +9,7 @@ import Heading from '../Heading/Heading';
 import Button from '../Button/Button';
 import Text from '../Text/Text';
 import Calendar from '../Calendar/Calendar';
+import { grommet } from '../../themes';
 
 const DropContent = ({ onClose }) => (
   <Box pad='small'>
@@ -31,7 +32,7 @@ class SimpleDropButton extends Component {
   render() {
     const { open } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <DropButton
           label='Open'
           open={open}
@@ -56,7 +57,7 @@ class CalendarDropButton extends Component {
   render() {
     const { date, open } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <DropButton
           open={open}
           onClose={() => this.setState({ open: false })}

@@ -19,6 +19,7 @@ import {
   Text,
   TextInput,
 } from '../';
+import { grommet } from '../../themes';
 
 class CenterLayer extends Component {
   state = {}
@@ -34,7 +35,7 @@ class CenterLayer extends Component {
   render() {
     const { open, open2 } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Button
           icon={<Trash />}
           label={<Text><strong>Remove</strong></Text>}
@@ -119,7 +120,7 @@ class FormLayer extends Component {
   render() {
     const { open } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Box align='start'>
           <Button
             icon={<Add />}
@@ -187,7 +188,7 @@ class NotificationLayer extends Component {
   render() {
     const { open } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Button
           icon={<Add color='brand' />}
           label={<Text><strong>Add</strong></Text>}

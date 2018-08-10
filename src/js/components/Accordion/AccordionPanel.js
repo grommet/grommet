@@ -5,11 +5,10 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Collapsible } from '../Collapsible';
 import { Heading } from '../Heading';
-
 import { withTheme, withForwardRef } from '../hocs';
+import { evalStyle, normalizeColor } from '../../utils';
 
 import { accordionPanel } from './doc';
-
 import { AccordionContext } from './AccordionContext';
 
 class AccordionPanel extends Component {
@@ -30,6 +29,8 @@ class AccordionPanel extends Component {
     const { hover } = this.state;
 
     const dark = theme.dark;
+    const iconColor = evalStyle(normalizeColor(theme.accordion.icons.color ||
+      theme.global.control.color, theme), theme);
 
     return (
       <AccordionContext>
@@ -44,7 +45,6 @@ class AccordionPanel extends Component {
           return (
             <Fragment>
               <Button
-                fill={true}
                 role='tab'
                 aria-selected={active}
                 aria-expanded={active}
@@ -82,7 +82,7 @@ class AccordionPanel extends Component {
                     ) : label}
                   {AccordionIcon && (
                   <Box pad={{ horizontal: 'small' }}>
-                    <AccordionIcon color={dark ? 'light-3' : 'brand'} />
+                    <AccordionIcon color={iconColor} />
                   </Box>
                     )}
                 </Box>
@@ -90,7 +90,7 @@ class AccordionPanel extends Component {
               </Button>
               <Box
                 flex={false}
-                border={{ side: 'bottom', color: dark ? 'light-5' : 'border' }}
+                border={{ side: 'bottom', color: dark ? 'border-dark' : 'border-light' }}
               >
                 {animate ? (
                   <Collapsible

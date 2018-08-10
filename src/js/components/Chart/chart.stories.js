@@ -7,11 +7,12 @@ import Grommet from '../Grommet/Grommet';
 import Box from '../Box/Box';
 import Stack from '../Stack/Stack';
 import Text from '../Text/Text';
+import { grommet } from '../../themes';
 
 class BarChart extends Component {
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Chart
           type='bar'
           values={[[10, 20], [20, 30], [30, 15]]}
@@ -24,7 +25,7 @@ class BarChart extends Component {
 class LineChart extends Component {
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Chart
           type='line'
           values={[20, 30, 15]}
@@ -37,7 +38,7 @@ class LineChart extends Component {
 class AreaChart extends Component {
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Chart
           type='area'
           values={[{ value: [10, 20] }, { value: [20, 30] }, { value: [30, 15] }]}
@@ -84,7 +85,7 @@ class RichChart extends Component {
       overflow: true,
     };
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Box align='center'>
           <Box direction='row' justify='between' width='medium' margin={{ vertical: 'small' }}>
             {xAxis.map(x => <Text key={x}>{x}</Text>)}

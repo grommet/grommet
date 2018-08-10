@@ -21,9 +21,11 @@ class FormField extends Component {
     if (focus) {
       borderColor = 'focus';
     } else if (error) {
-      borderColor = formField.border.error.color || 'status-critical';
+      borderColor = formField.border.error.color[theme.dark ? 'dark' : 'light']
+        || 'status-critical';
     } else {
-      borderColor = (border ? (border.color || 'border') : 'border');
+      borderColor = (border && border.color[theme.dark ? 'dark' : 'light'])
+        || (theme.dark ? 'border-dark' : 'border-light');
     }
     let abut;
     let outerStyle = style;
@@ -86,14 +88,24 @@ class FormField extends Component {
               </Text>
             ) : undefined}
             {help ? (
-              <Text {...formField.help}>{help}</Text>
+              <Text
+                {...formField.help}
+                color={formField.help.color[theme.dark ? 'dark' : 'light']}
+              >
+                {help}
+              </Text>
             ) : undefined}
           </Box>
         ) : undefined}
         {contents}
         {error ? (
           <Box margin={{ vertical: 'xsmall', horizontal: 'small' }} >
-            <Text {...formField.error}>{error}</Text>
+            <Text
+              {...formField.error}
+              color={formField.error.color[theme.dark ? 'dark' : 'light']}
+            >
+              {error}
+            </Text>
           </Box>
         ) : undefined}
       </Box>

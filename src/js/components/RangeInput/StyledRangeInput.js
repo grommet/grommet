@@ -1,31 +1,24 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, parseMetricToNum } from '../../utils';
+import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
 
 const rangeTrackStyle = css`
   box-sizing: border-box;
   width: 100%;
-  height: ${props => props.theme.global.focus.border.width};
-  background: ${
-    props => (
-      props.theme.dark ? (
-        props.theme.global.colors.white
-      ) : (
-        props.theme.rangeInput.track.color
-      )
-    )
-  };
+  height: ${props => props.theme.rangeInput.track.height};
+  background: ${props => normalizeColor(props.theme.rangeInput.track.color, props.theme)};
 `;
 
 const rangeThumbStyle = css`
   box-sizing: border-box;
   position: relative;
-  border: ${props => props.theme.global.control.border.width} solid ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.global.colors.brand)};
   border-radius: ${props => props.theme.global.spacing};
   height: ${props => props.theme.global.spacing};
   width: ${props => props.theme.global.spacing};
   overflow: visible;
-  background: ${props => (props.theme.dark ? props.theme.global.colors.black : props.theme.global.colors.white)};
+  background: ${props =>
+    normalizeColor(props.theme.rangeInput.thumb.color ||
+    props.theme.global.control.color, props.theme)};
   -webkit-appearance: none;
   cursor: pointer;
 `;
@@ -33,8 +26,8 @@ const rangeThumbStyle = css`
 const firefoxMicrosoftThumbStyle = css`
   ${rangeThumbStyle}
   margin-top: 0px;
-  height: ${props => parseMetricToNum(props.theme.global.spacing) - (parseMetricToNum(props.theme.global.control.border.width) * 2)}px;
-  width: ${props => parseMetricToNum(props.theme.global.spacing) - (parseMetricToNum(props.theme.global.control.border.width) * 2)}px;
+  height: ${props => props.theme.global.spacing};
+  width: ${props => props.theme.global.spacing};
 `;
 
 const StyledRangeInput = styled.input`
@@ -46,7 +39,6 @@ const StyledRangeInput = styled.input`
   width: 100%;
   padding: 0px;
   cursor: pointer;
-  overflow-x: hidden;
   background: transparent;
 
   &:focus {
@@ -68,11 +60,13 @@ const StyledRangeInput = styled.input`
   &::-webkit-slider-thumb {
     ${rangeThumbStyle}
 
-    margin-top: -${props => Math.round(parseMetricToNum(props.theme.global.spacing) * 0.45)}px;
+    margin-top: -${props =>
+      (parseMetricToNum(props.theme.global.spacing) * 0.425)}px;
 
     ${props => !props.disabled && css`
       &:hover {
-        border-color: ${props.theme.dark ? props.theme.global.colors.white : props.theme.global.hover.textColor};
+        box-shadow: 0px 0px 0px 2px ${normalizeColor(props.theme.rangeInput.thumb.color ||
+          props.theme.global.control.color, props.theme)};
       }
     `}
   }
@@ -91,11 +85,13 @@ const StyledRangeInput = styled.input`
 
   ${props => !props.disabled && css`
     &:hover::-moz-range-thumb {
-      border-color: ${props.theme.dark ? props.theme.global.colors.white : props.theme.global.hover.textColor};
+      box-shadow: 0px 0px 0px 2px ${normalizeColor(props.theme.rangeInput.thumb.color ||
+        props.theme.global.control.color, props.theme)};
     }
 
     &:hover::-ms-thumb {
-      border-color: ${props.theme.dark ? props.theme.global.colors.white : props.theme.global.hover.textColor};
+      box-shadow: 0px 0px 0px 2px ${normalizeColor(props.theme.rangeInput.thumb.color ||
+        props.theme.global.control.color, props.theme)};
     }
   `}
 
@@ -106,12 +102,12 @@ const StyledRangeInput = styled.input`
   }
 
   &::-ms-fill-lower {
-    background: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.rangeInput.track.color)};
+    background: ${props => normalizeColor(props.theme.rangeInput.track.color, props.theme)};
     border-color: transparent;
   }
 
   &::-ms-fill-upper {
-    background: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.rangeInput.track.color)};
+    background: ${props => normalizeColor(props.theme.rangeInput.track.color, props.theme)};
     border-color: transparent;
   }
 

@@ -3,25 +3,31 @@ import { storiesOf } from '@storybook/react';
 
 import Paragraph from '../Paragraph/Paragraph';
 import Grommet from '../Grommet/Grommet';
+import { grommet } from '../../themes';
 
-class SimpleParagraph extends Component {
+const sizes = ['xlarge', 'large', 'medium', 'small'];
+
+const paragraphFiller = `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+`;
+
+class All extends Component {
   render() {
     return (
-      <Grommet>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-          enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-          in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.
-        </Paragraph>
+      <Grommet theme={grommet}>
+        <div>
+          {sizes.map(size => (
+            <Paragraph size={size}>
+              {`Paragraph ${size}`}
+              {paragraphFiller}
+            </Paragraph>
+          ))}
+        </div>
       </Grommet>
     );
   }
 }
 
 storiesOf('Paragraph', module)
-  .add('Simple Paragraph', () => <SimpleParagraph />);
+  .add('All', () => <All />);

@@ -22,7 +22,7 @@ const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
           onClick={onToggle}
         >
           <Box {...theme.dataTable[context]} {...rest} pad='xsmall'>
-            <ExpandIcon color='border' />
+            <ExpandIcon color={theme.dark ? 'border-dark' : 'border-light'} />
           </Box>
         </Button>
       </TableCell>

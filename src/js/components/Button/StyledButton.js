@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { rgba } from 'polished';
 
 import {
   activeStyle,
@@ -8,23 +7,25 @@ import {
   colorIsDark,
   focusStyle,
   lapAndUp,
+  normalizeColor,
 } from '../../utils';
 
 const basicStyle = props => css`
-  border: ${props.theme.button.border.width} solid ${props.color ? colorForName(props.color, props.theme) : props.theme.button.border.color};
+  border: ${props.theme.button.border.width} solid ${props.color
+    ? colorForName(props.color, props.theme)
+    : normalizeColor((props.theme.button.border.color ||
+      props.theme.global.control.color), props.theme)};
   border-radius: ${props.theme.button.border.radius};
-  color: ${(props.theme.dark ?
-    props.theme.global.colors.darkBackground.text :
-    props.theme.button.colors.text)};
+  color: ${(props.theme.button.color ||
+    props.theme.global.text.color)[props.theme.dark ? 'dark' : 'light']};
 `;
 
 const primaryStyle = props => css`
   ${
     backgroundStyle(
-      (
-        props.color ||
-        props.theme.button.colors.primary ||
-        'brand'
+      normalizeColor(
+        props.color || props.theme.button.primary.color || 'brand',
+        props.theme
       ),
       props.theme
     )
@@ -33,12 +34,10 @@ const primaryStyle = props => css`
 
   // TODO: revisit this
   svg {
-    fill: ${colorIsDark(colorForName('brand', props.theme)) ?
-      props.theme.global.colors.darkBackground.text :
-      props.theme.global.colors.lightBackground.text};
-    stroke: ${colorIsDark(colorForName('brand', props.theme)) ?
-      props.theme.global.colors.darkBackground.text :
-      props.theme.global.colors.lightBackground.text};
+    fill: ${props.theme.global.text.color[
+      colorIsDark(colorForName('brand', props.theme)) ? 'dark' : 'light']};
+    stroke: ${props.theme.global.text.color[
+      colorIsDark(colorForName('brand', props.theme)) ? 'dark' : 'light']};
     transition: none;
   }
 `;
@@ -52,43 +51,20 @@ function getHoverColor(props) {
   if (props.color) {
     return colorForName(props.color, props.theme);
   }
-  return props.theme.button.border.color;
+  return (normalizeColor(props.theme.button.border.color ||
+    props.theme.global.control.color, props.theme));
 }
 
 function getHoverIndicatorStyle(hoverIndicator, theme) {
-  let backgroundColor = theme.global.hover.backgroundColor;
-  if (typeof hoverIndicator === 'object') {
-    if (
-      typeof hoverIndicator.background === 'string'
-    ) {
-      const colorGroup = hoverIndicator.background.split('-');
-      const colorType = colorGroup[0];
-      if (!theme.global.colors[colorType]) {
-        console.warn(
-          `Invalid color ${hoverIndicator.background}, using ${backgroundColor} instead`
-        );
-      } else if (colorGroup.length > 1) {
-        // subtract one to use the array
-        const colorIndex = colorGroup[1] - 1;
-        if (theme.global.colors[colorType].length < colorGroup[1]) {
-          console.warn(
-            `Invalid color ${hoverIndicator.background}, using ${backgroundColor} instead`
-          );
-        } else {
-          backgroundColor = `${rgba(theme.global.colors[colorType][colorIndex], 0.3)};`;
-        }
-      } else if (typeof theme.global.colors[colorType] !== 'string') {
-        console.warn(
-          `Invalid color ${hoverIndicator.background}, using ${backgroundColor} instead`
-        );
-      } else {
-        backgroundColor = `${rgba(theme.global.colors[colorType], 0.3)};`;
-      }
-    }
+  let background;
+  if (hoverIndicator === true || hoverIndicator === 'background') {
+    background = theme.global.hover.background;
+  } else {
+    background = hoverIndicator;
   }
   return css`
-    background: ${backgroundColor};
-    color: ${theme.global.hover.textColor};
+    ${backgroundStyle(background, theme)}
+    color: ${theme.global.hover.color};
   `;
 }
 

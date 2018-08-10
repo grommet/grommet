@@ -2,9 +2,8 @@
 
 exports[`renders 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -156,9 +155,8 @@ exports[`renders 1`] = `
 
 exports[`renders error 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -212,7 +210,7 @@ exports[`renders error 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px #E1746A;
+  border-bottom: solid 1px #EB6060;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -223,9 +221,9 @@ exports[`renders error 1`] = `
 }
 
 .c4 {
-  font-size: 16px;
-  line-height: 1.375;
-  color: #E1746A;
+  font-size: 18px;
+  line-height: 24px;
+  color: #EB6060;
 }
 
 @media only screen and (max-width:699px) {
@@ -262,7 +260,7 @@ exports[`renders error 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    border-bottom: solid 1px #E1746A;
+    border-bottom: solid 1px #EB6060;
   }
 }
 
@@ -305,9 +303,8 @@ exports[`renders error 1`] = `
 
 exports[`renders help 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -372,8 +369,8 @@ exports[`renders help 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
   color: #777777;
 }
 
@@ -454,9 +451,8 @@ exports[`renders help 1`] = `
 
 exports[`renders htmlFor 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -547,9 +543,8 @@ exports[`renders htmlFor 1`] = `
 
 exports[`renders label 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -614,8 +609,8 @@ exports[`renders label 1`] = `
 }
 
 .c3 {
-  font-size: 16px;
-  line-height: 1.375;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 @media only screen and (max-width:699px) {

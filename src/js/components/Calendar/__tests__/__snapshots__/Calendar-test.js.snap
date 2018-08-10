@@ -34,9 +34,8 @@ exports[`Calendar date renders 1`] = `
 }
 
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -190,8 +189,10 @@ exports[`Calendar date renders 1`] = `
 }
 
 .c14:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c17 {
@@ -210,13 +211,13 @@ exports[`Calendar date renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background: rgba(221,221,221,0.5);
-  color: #000000;
 }
 
 .c17:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c10 {
@@ -297,22 +298,21 @@ exports[`Calendar date renders 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: #7D4CDB;
+  color: #f8f8f8;
   font-weight: bold;
 }
 
 .c1 {
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.45;
   width: 384px;
 }
 
 .c5 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
@@ -403,7 +403,7 @@ exports[`Calendar date renders 1`] = `
 @media only screen and (max-width:699px) {
   .c5 {
     font-size: 18px;
-    line-height: 1.333;
+    line-height: 24px;
     max-width: 432px;
     font-weight: 600;
   }
@@ -1450,9 +1450,8 @@ exports[`Calendar dates renders 1`] = `
 }
 
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -1606,8 +1605,10 @@ exports[`Calendar dates renders 1`] = `
 }
 
 .c14:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c18 {
@@ -1626,13 +1627,13 @@ exports[`Calendar dates renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background: rgba(221,221,221,0.5);
-  color: #000000;
 }
 
 .c18:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c10 {
@@ -1713,22 +1714,21 @@ exports[`Calendar dates renders 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: #7D4CDB;
+  color: #f8f8f8;
   font-weight: bold;
 }
 
 .c1 {
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.45;
   width: 384px;
 }
 
 .c5 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
@@ -1819,7 +1819,7 @@ exports[`Calendar dates renders 1`] = `
 @media only screen and (max-width:699px) {
   .c5 {
     font-size: 18px;
-    line-height: 1.333;
+    line-height: 24px;
     max-width: 432px;
     font-weight: 600;
   }
@@ -2866,9 +2866,8 @@ exports[`Calendar disabled renders 1`] = `
 }
 
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -3022,8 +3021,10 @@ exports[`Calendar disabled renders 1`] = `
 }
 
 .c14:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c18 {
@@ -3042,13 +3043,13 @@ exports[`Calendar disabled renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background: rgba(221,221,221,0.5);
-  color: #000000;
 }
 
 .c18:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c10 {
@@ -3129,22 +3130,21 @@ exports[`Calendar disabled renders 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: #7D4CDB;
+  color: #f8f8f8;
   font-weight: bold;
 }
 
 .c1 {
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.45;
   width: 384px;
 }
 
 .c5 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
@@ -3235,7 +3235,7 @@ exports[`Calendar disabled renders 1`] = `
 @media only screen and (max-width:699px) {
   .c5 {
     font-size: 18px;
-    line-height: 1.333;
+    line-height: 24px;
     max-width: 432px;
     font-weight: 600;
   }
@@ -4282,9 +4282,8 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 }
 
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -4438,8 +4437,10 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 }
 
 .c14:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c17 {
@@ -4458,13 +4459,13 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background: rgba(221,221,221,0.5);
-  color: #000000;
 }
 
 .c17:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c10 {
@@ -4545,22 +4546,21 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: #7D4CDB;
+  color: #f8f8f8;
   font-weight: bold;
 }
 
 .c1 {
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.45;
   width: 384px;
 }
 
 .c5 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
@@ -4651,7 +4651,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 @media only screen and (max-width:699px) {
   .c5 {
     font-size: 18px;
-    line-height: 1.333;
+    line-height: 24px;
     max-width: 432px;
     font-weight: 600;
   }
@@ -6692,9 +6692,8 @@ exports[`Calendar renders 1`] = `
 }
 
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -6848,8 +6847,10 @@ exports[`Calendar renders 1`] = `
 }
 
 .c14:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c17 {
@@ -6868,13 +6869,13 @@ exports[`Calendar renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background: rgba(221,221,221,0.5);
-  color: #000000;
 }
 
 .c17:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c10 {
@@ -6955,22 +6956,21 @@ exports[`Calendar renders 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: #7D4CDB;
+  color: #f8f8f8;
   font-weight: bold;
 }
 
 .c1 {
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.45;
   width: 384px;
 }
 
 .c5 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
@@ -7061,7 +7061,7 @@ exports[`Calendar renders 1`] = `
 @media only screen and (max-width:699px) {
   .c5 {
     font-size: 18px;
-    line-height: 1.333;
+    line-height: 24px;
     max-width: 432px;
     font-weight: 600;
   }
@@ -8107,7 +8107,7 @@ exports[`Calendar size renders 1`] = `
   stroke: none;
 }
 
-.c27 {
+.c26 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -8118,33 +8118,32 @@ exports[`Calendar size renders 1`] = `
   stroke: #666666;
 }
 
-.c27 g {
+.c26 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c27 *:not([stroke])[fill="none"] {
+.c26 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c27 *[stroke*="#"],
-.c27 *[STROKE*="#"] {
+.c26 *[stroke*="#"],
+.c26 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c27 *[fill-rule],
-.c27 *[FILL-RULE],
-.c27 *[fill*="#"],
-.c27 *[FILL*="#"] {
+.c26 *[fill-rule],
+.c26 *[FILL-RULE],
+.c26 *[fill*="#"],
+.c26 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -8298,8 +8297,10 @@ exports[`Calendar size renders 1`] = `
 }
 
 .c14:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
 .c17 {
@@ -8318,16 +8319,16 @@ exports[`Calendar size renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background: rgba(221,221,221,0.5);
-  color: #000000;
 }
 
 .c17:hover {
-  background: rgba(221,221,221,0.5);
-  color: #000000;
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: dark:white;
+  light: black;
 }
 
-.c21 {
+.c20 {
   overflow: hidden;
   height: 329.1428571428571px;
 }
@@ -8337,7 +8338,7 @@ exports[`Calendar size renders 1`] = `
   height: 164.57142857142856px;
 }
 
-.c28 {
+.c27 {
   overflow: hidden;
   height: 658.2857142857142px;
 }
@@ -8365,7 +8366,7 @@ exports[`Calendar size renders 1`] = `
   flex: 0 0 auto;
 }
 
-.c22 {
+.c21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8383,7 +8384,7 @@ exports[`Calendar size renders 1`] = `
   opacity: 0.5;
 }
 
-.c23 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8400,7 +8401,7 @@ exports[`Calendar size renders 1`] = `
   height: 54.857142857142854px;
 }
 
-.c24 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8415,8 +8416,8 @@ exports[`Calendar size renders 1`] = `
   align-items: center;
   width: 54.857142857142854px;
   height: 54.857142857142854px;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: #7D4CDB;
+  color: #f8f8f8;
   font-weight: bold;
 }
 
@@ -8470,12 +8471,12 @@ exports[`Calendar size renders 1`] = `
   align-items: center;
   width: 27.428571428571427px;
   height: 27.428571428571427px;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: #7D4CDB;
+  color: #f8f8f8;
   font-weight: bold;
 }
 
-.c29 {
+.c28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8493,6 +8494,23 @@ exports[`Calendar size renders 1`] = `
   opacity: 0.5;
 }
 
+.c29 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 109.71428571428571px;
+  height: 109.71428571428571px;
+}
+
 .c30 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -8508,71 +8526,42 @@ exports[`Calendar size renders 1`] = `
   align-items: center;
   width: 109.71428571428571px;
   height: 109.71428571428571px;
-}
-
-.c31 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 109.71428571428571px;
-  height: 109.71428571428571px;
-  background: #865CD6;
-  color: #FFFFFF;
+  background: #7D4CDB;
+  color: #f8f8f8;
   font-weight: bold;
 }
 
 .c19 {
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.45;
   width: 384px;
 }
 
 .c1 {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.375;
   width: 192px;
 }
 
-.c25 {
-  font-size: 36px;
+.c24 {
+  font-size: 22px;
   line-height: 1.11;
   width: 768px;
 }
 
-.c20 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 .c5 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 18px;
-  line-height: 1.333;
-  max-width: 432px;
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.c26 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 36px;
-  line-height: 1.23;
-  max-width: 864px;
+.c25 {
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
@@ -8661,31 +8650,15 @@ exports[`Calendar size renders 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c20 {
+  .c5 {
     font-size: 18px;
-    line-height: 1.333;
+    line-height: 24px;
     max-width: 432px;
     font-weight: 600;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c20 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c5 {
-    font-size: 16px;
-    line-height: 1.375;
-    max-width: 384px;
-    font-weight: 600;
-  }
-}
-
-@media only screen and (max-width:699px) {
   .c5 {
     margin-top: 0;
     margin-bottom: 0;
@@ -8693,16 +8666,16 @@ exports[`Calendar size renders 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c26 {
-    font-size: 24px;
-    line-height: 1.333;
-    max-width: 576px;
+  .c25 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
     font-weight: 600;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c26 {
+  .c25 {
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -9710,7 +9683,7 @@ exports[`Calendar size renders 1`] = `
           className="c4"
         >
           <h3
-            className="c20"
+            className="c5"
             size="medium"
           >
             January 2018
@@ -9793,7 +9766,7 @@ exports[`Calendar size renders 1`] = `
         </div>
       </div>
       <div
-        className="c21"
+        className="c20"
         size="medium"
       >
         <div
@@ -9817,7 +9790,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c22"
+                  className="c21"
                   size="medium"
                 >
                   31
@@ -9838,7 +9811,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   1
@@ -9859,7 +9832,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   2
@@ -9880,7 +9853,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   3
@@ -9901,7 +9874,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   4
@@ -9922,7 +9895,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   5
@@ -9943,7 +9916,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   6
@@ -9968,7 +9941,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   7
@@ -9989,7 +9962,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   8
@@ -10010,7 +9983,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   9
@@ -10031,7 +10004,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   10
@@ -10052,7 +10025,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   11
@@ -10073,7 +10046,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   12
@@ -10094,7 +10067,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   13
@@ -10119,7 +10092,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   14
@@ -10140,7 +10113,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                   size="medium"
                 >
                   15
@@ -10161,7 +10134,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   16
@@ -10182,7 +10155,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   17
@@ -10203,7 +10176,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   18
@@ -10224,7 +10197,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   19
@@ -10245,7 +10218,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   20
@@ -10270,7 +10243,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   21
@@ -10291,7 +10264,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   22
@@ -10312,7 +10285,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   23
@@ -10333,7 +10306,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   24
@@ -10354,7 +10327,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   25
@@ -10375,7 +10348,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   26
@@ -10396,7 +10369,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   27
@@ -10421,7 +10394,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   28
@@ -10442,7 +10415,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   29
@@ -10463,7 +10436,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   30
@@ -10484,7 +10457,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                   size="medium"
                 >
                   31
@@ -10505,7 +10478,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c22"
+                  className="c21"
                   size="medium"
                 >
                   1
@@ -10526,7 +10499,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c22"
+                  className="c21"
                   size="medium"
                 >
                   2
@@ -10547,7 +10520,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c22"
+                  className="c21"
                   size="medium"
                 >
                   3
@@ -10572,7 +10545,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c22"
+                  className="c21"
                   size="medium"
                 >
                   4
@@ -10593,7 +10566,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c22"
+                  className="c21"
                   size="medium"
                 >
                   5
@@ -10614,7 +10587,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c22"
+                  className="c21"
                   size="medium"
                 >
                   6
@@ -10635,7 +10608,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c22"
+                  className="c21"
                   size="medium"
                 >
                   7
@@ -10656,7 +10629,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c22"
+                  className="c21"
                   size="medium"
                 >
                   8
@@ -10677,7 +10650,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c22"
+                  className="c21"
                   size="medium"
                 >
                   9
@@ -10690,7 +10663,7 @@ exports[`Calendar size renders 1`] = `
     </div>
   </div>
   <div
-    className="c25"
+    className="c24"
     size="large"
   >
     <div
@@ -10704,7 +10677,7 @@ exports[`Calendar size renders 1`] = `
           className="c4"
         >
           <h3
-            className="c26"
+            className="c25"
             size="large"
           >
             January 2018
@@ -10731,7 +10704,7 @@ exports[`Calendar size renders 1`] = `
             >
               <svg
                 aria-label="Previous"
-                className="c27"
+                className="c26"
                 height="24px"
                 role="img"
                 size="large"
@@ -10767,7 +10740,7 @@ exports[`Calendar size renders 1`] = `
             >
               <svg
                 aria-label="Next"
-                className="c27"
+                className="c26"
                 height="24px"
                 role="img"
                 size="large"
@@ -10787,7 +10760,7 @@ exports[`Calendar size renders 1`] = `
         </div>
       </div>
       <div
-        className="c28"
+        className="c27"
         size="large"
       >
         <div
@@ -10811,7 +10784,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c29"
+                  className="c28"
                   size="large"
                 >
                   31
@@ -10832,7 +10805,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   1
@@ -10853,7 +10826,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   2
@@ -10874,7 +10847,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   3
@@ -10895,7 +10868,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   4
@@ -10916,7 +10889,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   5
@@ -10937,7 +10910,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   6
@@ -10962,7 +10935,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   7
@@ -10983,7 +10956,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   8
@@ -11004,7 +10977,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   9
@@ -11025,7 +10998,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   10
@@ -11046,7 +11019,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   11
@@ -11067,7 +11040,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   12
@@ -11088,7 +11061,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   13
@@ -11113,7 +11086,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   14
@@ -11134,7 +11107,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c31"
+                  className="c30"
                   size="large"
                 >
                   15
@@ -11155,7 +11128,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   16
@@ -11176,7 +11149,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   17
@@ -11197,7 +11170,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   18
@@ -11218,7 +11191,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   19
@@ -11239,7 +11212,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   20
@@ -11264,7 +11237,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   21
@@ -11285,7 +11258,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   22
@@ -11306,7 +11279,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   23
@@ -11327,7 +11300,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   24
@@ -11348,7 +11321,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   25
@@ -11369,7 +11342,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   26
@@ -11390,7 +11363,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   27
@@ -11415,7 +11388,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   28
@@ -11436,7 +11409,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   29
@@ -11457,7 +11430,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   30
@@ -11478,7 +11451,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c30"
+                  className="c29"
                   size="large"
                 >
                   31
@@ -11499,7 +11472,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c29"
+                  className="c28"
                   size="large"
                 >
                   1
@@ -11520,7 +11493,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c29"
+                  className="c28"
                   size="large"
                 >
                   2
@@ -11541,7 +11514,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c29"
+                  className="c28"
                   size="large"
                 >
                   3
@@ -11566,7 +11539,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c29"
+                  className="c28"
                   size="large"
                 >
                   4
@@ -11587,7 +11560,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c29"
+                  className="c28"
                   size="large"
                 >
                   5
@@ -11608,7 +11581,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c29"
+                  className="c28"
                   size="large"
                 >
                   6
@@ -11629,7 +11602,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c29"
+                  className="c28"
                   size="large"
                 >
                   7
@@ -11650,7 +11623,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c29"
+                  className="c28"
                   size="large"
                 >
                   8
@@ -11671,7 +11644,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c29"
+                  className="c28"
                   size="large"
                 >
                   9

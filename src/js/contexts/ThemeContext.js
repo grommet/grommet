@@ -1,5 +1,5 @@
 import React from 'react';
-import baseTheme from '../themes/vanilla';
+import baseTheme from '../themes/base';
 import { deepMerge } from '../utils';
 
 const ThemeContext = React.createContext(baseTheme);

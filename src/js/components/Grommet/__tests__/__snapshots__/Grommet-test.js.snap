@@ -2,7 +2,7 @@
 
 exports[`Grommet announce 1`] = `
 <div
-  class="StyledGrommet-gKbdxL iuxDFS"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div>
     hi
@@ -28,9 +28,8 @@ exports[`Grommet announce 3`] = `
 
 exports[`Grommet basic 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -46,9 +45,8 @@ exports[`Grommet basic 1`] = `
 
 exports[`Grommet full 1`] = `
 .c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -69,8 +67,8 @@ exports[`Grommet full 1`] = `
 exports[`Grommet hpe theme 1`] = `
 .c0 {
   font-family: 'Metric',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 24px;
   color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;

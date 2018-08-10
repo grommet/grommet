@@ -40,7 +40,8 @@ export const StyledRadioButtonInput = styled.input`
   }
 
   :checked + div {
-    border-color: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color)};
+    border-color: ${props => (props.theme.radioButton.check.color ||
+      props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
   }
 
   :checked + div > svg {
@@ -49,7 +50,8 @@ export const StyledRadioButtonInput = styled.input`
 
   :checked + span > span {
     left: ${props => props.theme.radioButton.size};
-    background: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color)};
+    background: ${props => (props.theme.radioButton.check.color ||
+      props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
   }
 `;
 
@@ -74,7 +76,8 @@ export const StyledRadioButtonButton = styled.div`
     display: none;
     width: ${props => props.theme.radioButton.size};
     height: ${props => props.theme.radioButton.size};
-    fill: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color)};
+    fill: ${props => (props.theme.radioButton.check.color ||
+      props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
   }
 `;
 

@@ -3,11 +3,12 @@ import { storiesOf } from '@storybook/react';
 
 import Clock from '../Clock/Clock';
 import Grommet from '../Grommet/Grommet';
+import { grommet } from '../../themes';
 
 class DigitalClock extends Component {
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Clock type='digital' />
       </Grommet>
     );
@@ -17,7 +18,7 @@ class DigitalClock extends Component {
 class AnalogClock extends Component {
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Clock type='analog' />
       </Grommet>
     );

@@ -5,11 +5,12 @@ import Distribution from '../Distribution/Distribution';
 import Box from '../Box/Box';
 import Text from '../Text/Text';
 import Grommet from '../Grommet/Grommet';
+import { grommet } from '../../themes';
 
 class SimpleDistribution extends Component {
   render() {
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Distribution
           basis='medium'
           values={[
