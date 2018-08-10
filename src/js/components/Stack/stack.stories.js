@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { grommet } from '../../themes';
+
 import Stack from '../Stack/Stack';
 import Grommet from '../Grommet/Grommet';
 import Box from '../Box/Box';
@@ -18,5 +20,20 @@ class SimpleStack extends Component {
   }
 }
 
+class FillStack extends Component {
+  render() {
+    return (
+      <Grommet theme={grommet} full={true}>
+        <Stack fill={true}>
+          <Box background='brand' fill={true}>
+            Test
+          </Box>
+        </Stack>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Stack', module)
-  .add('Simple Stack', () => <SimpleStack />);
+  .add('Simple Stack', () => <SimpleStack />)
+  .add('Fill Stack', () => <FillStack />);

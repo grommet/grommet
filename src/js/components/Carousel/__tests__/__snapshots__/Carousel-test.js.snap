@@ -683,7 +683,7 @@ exports[`Carousel navigate 1`] = `
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
+      class="StyledStack__StyledStackLayer-cofHih lngCWV"
     >
       <div
         class="StyledBox-YaZNy hJvMaG"
@@ -699,7 +699,7 @@ exports[`Carousel navigate 1`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
+      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
     >
       <div
         class="StyledBox-YaZNy hJvMaG"
@@ -715,7 +715,7 @@ exports[`Carousel navigate 1`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
+      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
     >
       <div
         class="StyledBox-YaZNy eUXrhB"
@@ -857,7 +857,7 @@ exports[`Carousel navigate 2`] = `
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
+      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
     >
       <div
         class="StyledBox-YaZNy hJvMaG"
@@ -873,7 +873,7 @@ exports[`Carousel navigate 2`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
+      class="StyledStack__StyledStackLayer-cofHih lngCWV"
     >
       <div
         class="StyledBox-YaZNy hJvMaG"
@@ -889,7 +889,7 @@ exports[`Carousel navigate 2`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
+      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
     >
       <div
         class="StyledBox-YaZNy eUXrhB"
@@ -1031,7 +1031,7 @@ exports[`Carousel navigate 3`] = `
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
+      class="StyledStack__StyledStackLayer-cofHih lngCWV"
     >
       <div
         class="StyledBox-YaZNy hJvMaG"
@@ -1047,7 +1047,7 @@ exports[`Carousel navigate 3`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
+      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
     >
       <div
         class="StyledBox-YaZNy hJvMaG"
@@ -1063,7 +1063,7 @@ exports[`Carousel navigate 3`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
+      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
     >
       <div
         class="StyledBox-YaZNy eUXrhB"
@@ -1204,7 +1204,7 @@ exports[`Carousel play 1`] = `
     class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
+      class="StyledStack__StyledStackLayer-cofHih lngCWV"
     >
       <div
         class="StyledBox-YaZNy hJvMaG"
@@ -1220,7 +1220,7 @@ exports[`Carousel play 1`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
+      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
     >
       <div
         class="StyledBox-YaZNy hJvMaG"
@@ -1236,7 +1236,7 @@ exports[`Carousel play 1`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
+      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
     >
       <div
         class="StyledBox-YaZNy eUXrhB"
@@ -1377,7 +1377,7 @@ exports[`Carousel play 2`] = `
     class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
+      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
     >
       <div
         class="StyledBox-YaZNy hJvMaG"
@@ -1393,7 +1393,7 @@ exports[`Carousel play 2`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
+      class="StyledStack__StyledStackLayer-cofHih lngCWV"
     >
       <div
         class="StyledBox-YaZNy hJvMaG"
@@ -1409,7 +1409,7 @@ exports[`Carousel play 2`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
+      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
     >
       <div
         class="StyledBox-YaZNy eUXrhB"

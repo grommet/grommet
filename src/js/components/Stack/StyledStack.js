@@ -71,4 +71,8 @@ export const StyledStackLayer = styled.div`
   position: ${props => (props.guiding ? 'relative' : 'absolute')};
   ${props => props.guiding && 'display: block;'}
   ${props => !props.guiding && `${styleMap[props.anchor || 'fill']};`}
+  ${props => props.fill && `
+    width: 100%;
+    height: 100%;
+  `}
 `;
