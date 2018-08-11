@@ -1452,7 +1452,9 @@ import { Drop } from 'grommet';
 
 **align**
 
-How to align the drop with respect to the target element. Defaults to \`{
+How to align the drop with respect to the target element. Not specifying
+      a vertical or horizontal alignment will cause it to be aligned in the
+      center. Defaults to \`{
   \\"top\\": \\"top\\",
   \\"left\\": \\"left\\"
 }\`.
@@ -1506,17 +1508,19 @@ Whether the drop should control focus.
 boolean
 \`\`\`
 
+**stretch**
+
+Whether the drop element should be stretched to at least match the
+      width of the target element. The default is true because
+      that is what most uses of Drop want, like Select and Menu. Defaults to \`true\`.
+
+\`\`\`
+boolean
+\`\`\`
+
 **target**
 
 Required. Target where the drop will be aligned to. This should be a React reference.
-
-\`\`\`
-object
-\`\`\`
-
-**theme**
-
-Custom styles for Drop component.
 
 \`\`\`
 object

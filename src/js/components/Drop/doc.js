@@ -13,10 +13,10 @@ export default (Drop) => {
 
   DocumentedDrop.propTypes = {
     align: PropTypes.shape({
-      top: PropTypes.oneOf(['top', 'bottom', undefined]),
-      bottom: PropTypes.oneOf(['top', 'bottom', undefined]),
-      right: PropTypes.oneOf(['left', 'right', undefined]),
-      left: PropTypes.oneOf(['left', 'right', undefined]),
+      top: PropTypes.oneOf(['top', 'bottom']),
+      bottom: PropTypes.oneOf(['top', 'bottom']),
+      right: PropTypes.oneOf(['left', 'right']),
+      left: PropTypes.oneOf(['left', 'right']),
     }).description(
       `How to align the drop with respect to the target element. Not specifying
       a vertical or horizontal alignment will cause it to be aligned in the
