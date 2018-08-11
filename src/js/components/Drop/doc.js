@@ -13,12 +13,14 @@ export default (Drop) => {
 
   DocumentedDrop.propTypes = {
     align: PropTypes.shape({
-      top: PropTypes.oneOf(['top', 'bottom']),
-      bottom: PropTypes.oneOf(['top', 'bottom']),
-      right: PropTypes.oneOf(['left', 'right']),
-      left: PropTypes.oneOf(['left', 'right']),
+      top: PropTypes.oneOf(['top', 'bottom', undefined]),
+      bottom: PropTypes.oneOf(['top', 'bottom', undefined]),
+      right: PropTypes.oneOf(['left', 'right', undefined]),
+      left: PropTypes.oneOf(['left', 'right', undefined]),
     }).description(
-      'How to align the drop with respect to the target element.'
+      `How to align the drop with respect to the target element. Not specifying
+      a vertical or horizontal alignment will cause it to be aligned in the
+      center.`
     ).defaultValue({
       top: 'top',
       left: 'left',
@@ -35,10 +37,14 @@ export default (Drop) => {
     restrictFocus: PropTypes.bool.description(
       'Whether the drop should control focus.'
     ),
+    stretch: PropTypes.bool.description(
+      `Whether the drop element should be stretched to at least match the
+      width of the target element. The default is true because
+      that is what most uses of Drop want, like Select and Menu.`
+    ).defaultValue(true),
     target: PropTypes.object.description(
       'Target where the drop will be aligned to. This should be a React reference.'
     ).isRequired,
-    theme: PropTypes.object.description('Custom styles for Drop component.'),
   };
 
   return DocumentedDrop;

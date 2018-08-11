@@ -9,7 +9,11 @@ import StyledDrop from './StyledDrop';
 
 class DropContainer extends Component {
   static defaultProps = {
-    centered: true,
+    align: {
+      top: 'top',
+      left: 'left',
+    },
+    stretch: 'width',
   }
 
   dropRef = React.createRef();
@@ -71,7 +75,7 @@ class DropContainer extends Component {
   }
 
   place = () => {
-    const { align, dropTarget, responsive, theme } = this.props;
+    const { align, dropTarget, responsive, stretch, theme } = this.props;
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
@@ -90,7 +94,10 @@ class DropContainer extends Component {
 
       // determine width
       const width = Math.min(
-        Math.max(targetRect.width, containerRect.width),
+        (stretch
+          ? Math.max(targetRect.width, containerRect.width)
+          : containerRect.width
+        ),
         windowWidth
       );
 
@@ -100,7 +107,7 @@ class DropContainer extends Component {
         if (align.left === 'left') {
           left = targetRect.left;
         } else if (align.left === 'right') {
-          left = targetRect.left - width;
+          left = targetRect.left + targetRect.width;
         }
       } else if (align.right) {
         if (align.right === 'left') {
@@ -108,6 +115,8 @@ class DropContainer extends Component {
         } else if (align.right === 'right') {
           left = (targetRect.left + targetRect.width) - width;
         }
+      } else {
+        left = (targetRect.left + (targetRect.width / 2)) - (width / 2);
       }
 
       if ((left + width) > windowWidth) {
@@ -138,6 +147,8 @@ class DropContainer extends Component {
           top = targetRect.top - containerRect.height;
           maxHeight = Math.max(targetRect.top, 0);
         }
+      } else {
+        top = (targetRect.top + (targetRect.height / 2)) - (containerRect.height / 2);
       }
 
       // if we can't fit it all, see if there's more room the other direction
@@ -176,9 +187,11 @@ class DropContainer extends Component {
       }
 
       container.style.left = `${left}px`;
-      // offset width by 0.1 to avoid a bug in ie11 that
-      // unnecessarily wraps the text if width is the same
-      container.style.width = `${width + 0.1}px`;
+      if (stretch) {
+        // offset width by 0.1 to avoid a bug in ie11 that
+        // unnecessarily wraps the text if width is the same
+        container.style.width = `${width + 0.1}px`;
+      }
       // the (position:absolute + scrollTop)
       // is presenting issues with desktop scroll flickering
       container.style.top = `${top}px`;
