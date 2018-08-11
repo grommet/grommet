@@ -98,6 +98,14 @@ describe('Drop', () => {
     expectPortal('drop-node').toMatchSnapshot();
   });
 
+  test('no stretch', () => {
+    renderIntoDocument(
+      <TestInput stretch={false} />
+    );
+
+    expectPortal('drop-node').toMatchSnapshot();
+  });
+
   test('close', () => {
     renderIntoDocument(<TestInput />);
     expectPortal('drop-node').toMatchSnapshot();
