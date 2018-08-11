@@ -17,13 +17,19 @@ class Stack extends Component {
     } else if (guidingIndex === 'last') {
       guidingIndex = React.Children.count(children) - 1;
     }
-    const styledChildren = Children.map(children, (child, index) => {
+    let childIndex = 0;
+    const styledChildren = Children.map(children, (child) => {
       if (child) {
-        if (index === guidingIndex) {
-          return <StyledStackLayer guiding={true}>{child}</StyledStackLayer>;
+        let layer;
+        if (childIndex === guidingIndex) {
+          layer = <StyledStackLayer guiding={true} fill={fill}>{child}</StyledStackLayer>;
+        } else {
+          layer = <StyledStackLayer anchor={anchor}>{child}</StyledStackLayer>;
         }
-        return <StyledStackLayer anchor={anchor}>{child}</StyledStackLayer>;
+        childIndex += 1;
+        return layer;
       }
+
 
       return child;
     });
