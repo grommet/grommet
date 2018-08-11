@@ -20,9 +20,11 @@ class Stack extends Component {
     let childIndex = 0;
     const styledChildren = Children.map(children, (child) => {
       if (child) {
-        let layer = <StyledStackLayer anchor={anchor} fill={fill}>{child}</StyledStackLayer>;
+        let layer;
         if (childIndex === guidingIndex) {
           layer = <StyledStackLayer guiding={true} fill={fill}>{child}</StyledStackLayer>;
+        } else {
+          layer = <StyledStackLayer anchor={anchor}>{child}</StyledStackLayer>;
         }
         childIndex += 1;
         return layer;

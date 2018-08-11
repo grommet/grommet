@@ -294,7 +294,7 @@ exports[`fill renders 1`] = `
   display: block;
 }
 
-.c6 {
+.c3 {
   position: absolute;
   top: 0;
   left: 0;
@@ -305,16 +305,6 @@ exports[`fill renders 1`] = `
 .c2 {
   position: relative;
   display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.c3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   width: 100%;
   height: 100%;
 }
@@ -335,7 +325,6 @@ exports[`fill renders 1`] = `
     </div>
     <div
       className="c3"
-      fill={true}
     >
       <div>
         second
@@ -354,8 +343,7 @@ exports[`fill renders 1`] = `
       </div>
     </div>
     <div
-      className="c6"
-      fill={false}
+      className="c3"
     >
       <div>
         second
