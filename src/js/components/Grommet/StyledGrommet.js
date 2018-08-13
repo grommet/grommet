@@ -5,6 +5,7 @@ import { baseStyle } from '../../utils';
 const fullStyle = css`
   width: 100vw;
   height: 100vh;
+  overflow: auto;
 `;
 
 const StyledGrommet = styled.div`

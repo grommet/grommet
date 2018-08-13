@@ -55,6 +55,7 @@ exports[`Grommet full 1`] = `
   -webkit-font-smoothing: antialiased;
   width: 100vw;
   height: 100vh;
+  overflow: auto;
 }
 
 <div
