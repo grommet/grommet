@@ -1,10 +1,12 @@
 import { css } from 'styled-components';
 
+import { normalizeColor } from './colors';
 import { palm, parseMetricToNum } from './mixins';
+import { backgroundStyle } from './background';
 
 export const activeStyle = css`
-  background: ${props => props.theme.global.hover.backgroundColor};
-  color: ${props => props.theme.global.hover.textColor};
+  ${props => backgroundStyle(normalizeColor(props.theme.global.hover.background, props.theme), props.theme)}
+  color: ${props => normalizeColor(props.theme.global.hover.color, props.theme)};
 `;
 
 export const baseStyle = css`

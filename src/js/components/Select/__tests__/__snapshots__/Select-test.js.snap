@@ -407,7 +407,7 @@ exports[`Select complex options and children 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY koOflf"
+          class="StyledButton-qbvYY eEPhap"
           role="menuitem"
           type="button"
         >
@@ -420,7 +420,7 @@ exports[`Select complex options and children 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY koOflf"
+          class="StyledButton-qbvYY eEPhap"
           role="menuitem"
           type="button"
         >
@@ -534,7 +534,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .koOflf {
+  .eEPhap {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1170,7 +1170,7 @@ exports[`Select multiple values 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY feADXu"
+          class="StyledButton-qbvYY dZSKYq"
           role="menuitem"
           type="button"
         >
@@ -1189,7 +1189,7 @@ exports[`Select multiple values 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY feADXu"
+          class="StyledButton-qbvYY dZSKYq"
           role="menuitem"
           type="button"
         >
@@ -1333,14 +1333,14 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .koOflf {
+  .eEPhap {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .feADXu {
+  .dZSKYq {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1524,7 +1524,7 @@ exports[`Select opens 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY koOflf"
+          class="StyledButton-qbvYY eEPhap"
           role="menuitem"
           type="button"
         >
@@ -1543,7 +1543,7 @@ exports[`Select opens 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY koOflf"
+          class="StyledButton-qbvYY eEPhap"
           role="menuitem"
           type="button"
         >
@@ -1663,7 +1663,7 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .koOflf {
+  .eEPhap {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1727,7 +1727,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-YaZNy ckMYwJ"
   >
     <button
-      class="StyledButton-qbvYY koOflf"
+      class="StyledButton-qbvYY eEPhap"
       role="menuitem"
       type="button"
     >
@@ -1746,7 +1746,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-YaZNy ckMYwJ"
   >
     <button
-      class="StyledButton-qbvYY koOflf"
+      class="StyledButton-qbvYY eEPhap"
       role="menuitem"
       type="button"
     >
@@ -1853,7 +1853,7 @@ exports[`Select search 2`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY koOflf"
+          class="StyledButton-qbvYY eEPhap"
           role="menuitem"
           type="button"
         >
@@ -1872,7 +1872,7 @@ exports[`Select search 2`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY koOflf"
+          class="StyledButton-qbvYY eEPhap"
           role="menuitem"
           type="button"
         >
@@ -2004,7 +2004,7 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .koOflf {
+  .eEPhap {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
