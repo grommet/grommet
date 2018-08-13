@@ -64,7 +64,7 @@ function getHoverIndicatorStyle(hoverIndicator, theme) {
   }
   return css`
     ${backgroundStyle(background, theme)}
-    color: ${theme.global.hover.color};
+    color: ${normalizeColor(theme.global.hover.color, theme)};
   `;
 }
 

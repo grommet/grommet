@@ -21,9 +21,9 @@ const IconButton = () => (
   </Grommet>
 );
 
-const PlainButton = () => (
+const PlainButton = props => (
   <Grommet theme={grommet}>
-    <Button hoverIndicator={true} onClick={() => {}}>
+    <Button hoverIndicator={true} onClick={() => {}} {...props}>
       <Box pad='small' direction='row' align='center' gap='small'>
         <Add />
         <Text>Add</Text>
@@ -95,4 +95,5 @@ storiesOf('Button', module)
   .add('Plain', () => <PlainButton />)
   .add('Anchor', () => <AnchorButton />)
   .add('RoutedButton', () => <RouteButton />)
+  .add('Active', () => <PlainButton active={true} />)
   .add('Custom theme', () => <CustomThemeButton />);

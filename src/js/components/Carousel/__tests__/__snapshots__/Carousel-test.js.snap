@@ -331,8 +331,7 @@ exports[`Carousel basic 1`] = `
 .c17:hover {
   background: rgba(221,221,221,0.4);
   color: #444444;
-  color: dark:white;
-  light: black;
+  color: black;
 }
 
 .c1 {
@@ -817,7 +816,7 @@ exports[`Carousel navigate 1`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY bsDcHb"
+            class="StyledButton-qbvYY vVYVk"
             type="button"
           >
             <div
@@ -899,7 +898,7 @@ exports[`Carousel navigate 2`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY bsDcHb"
+            class="StyledButton-qbvYY vVYVk"
             type="button"
           >
             <div
@@ -1165,7 +1164,7 @@ exports[`Carousel navigate 3`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY bsDcHb"
+            class="StyledButton-qbvYY vVYVk"
             type="button"
           >
             <div
@@ -1338,7 +1337,7 @@ exports[`Carousel play 1`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY bsDcHb"
+            class="StyledButton-qbvYY vVYVk"
             type="button"
           >
             <div
@@ -1419,7 +1418,7 @@ exports[`Carousel play 2`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY bsDcHb"
+            class="StyledButton-qbvYY vVYVk"
             type="button"
           >
             <div

@@ -378,8 +378,7 @@ exports[`Button hoverIndicator as object renders 1`] = `
 }
 
 .c1:hover {
-  color: dark:white;
-  light: black;
+  color: black;
 }
 
 @media only screen and (min-width:700px) {
@@ -436,8 +435,7 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
 }
 
 .c1:hover {
-  color: dark:white;
-  light: black;
+  color: black;
 }
 
 @media only screen and (min-width:700px) {
@@ -494,8 +492,7 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
 }
 
 .c1:hover {
-  color: dark:white;
-  light: black;
+  color: black;
 }
 
 @media only screen and (min-width:700px) {
@@ -552,8 +549,7 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
 }
 
 .c1:hover {
-  color: dark:white;
-  light: black;
+  color: black;
 }
 
 @media only screen and (min-width:700px) {
@@ -610,8 +606,7 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
 }
 
 .c1:hover {
-  color: dark:white;
-  light: black;
+  color: black;
 }
 
 @media only screen and (min-width:700px) {
@@ -668,8 +663,7 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
 }
 
 .c1:hover {
-  color: dark:white;
-  light: black;
+  color: black;
 }
 
 @media only screen and (min-width:700px) {
@@ -728,8 +722,7 @@ exports[`Button hoverIndicator renders 1`] = `
 .c1:hover {
   background: rgba(221,221,221,0.4);
   color: #444444;
-  color: dark:white;
-  light: black;
+  color: black;
 }
 
 @media only screen and (min-width:700px) {

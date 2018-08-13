@@ -218,8 +218,7 @@ exports[`Video autoPlay renders 1`] = `
 .c5:hover {
   background: rgba(221,221,221,0.4);
   color: #444444;
-  color: dark:white;
-  light: black;
+  color: white;
 }
 
 .c17 {
@@ -606,7 +605,7 @@ exports[`Video controls renders 1`] = `
   stroke: none;
 }
 
-.c22 {
+.c23 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -615,25 +614,25 @@ exports[`Video controls renders 1`] = `
   stroke: #666666;
 }
 
-.c22 g {
+.c23 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c22 *:not([stroke])[fill="none"] {
+.c23 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c22 *[stroke*="#"],
-.c22 *[STROKE*="#"] {
+.c23 *[stroke*="#"],
+.c23 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c22 *[fill-rule],
-.c22 *[FILL-RULE],
-.c22 *[fill*="#"],
-.c22 *[FILL*="#"] {
+.c23 *[fill-rule],
+.c23 *[FILL-RULE],
+.c23 *[fill*="#"],
+.c23 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -848,8 +847,7 @@ exports[`Video controls renders 1`] = `
 .c5:hover {
   background: rgba(221,221,221,0.4);
   color: #444444;
-  color: dark:white;
-  light: black;
+  color: white;
 }
 
 .c17 {
@@ -868,6 +866,30 @@ exports[`Video controls renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c22 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c22:hover {
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: black;
 }
 
 .c12 {
@@ -1042,6 +1064,13 @@ exports[`Video controls renders 1`] = `
 
 @media only screen and (min-width:700px) {
   .c17 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c22 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1263,7 +1292,7 @@ exports[`Video controls renders 1`] = `
         className="c21"
       >
         <button
-          className="c5"
+          className="c22"
           disabled={false}
           icon={
             <Play
@@ -1280,7 +1309,7 @@ exports[`Video controls renders 1`] = `
           >
             <svg
               aria-label="Play"
-              className="c22"
+              className="c23"
               color={false}
               height="24px"
               role="img"
@@ -1369,7 +1398,7 @@ exports[`Video controls renders 1`] = `
               />
               <svg
                 aria-label="Actions"
-                className="c22"
+                className="c23"
                 color={false}
                 height="24px"
                 role="img"
@@ -1611,8 +1640,7 @@ exports[`Video fit renders 1`] = `
 .c5:hover {
   background: rgba(221,221,221,0.4);
   color: #444444;
-  color: dark:white;
-  light: black;
+  color: white;
 }
 
 .c17 {
@@ -2374,8 +2402,7 @@ exports[`Video loop renders 1`] = `
 .c5:hover {
   background: rgba(221,221,221,0.4);
   color: #444444;
-  color: dark:white;
-  light: black;
+  color: white;
 }
 
 .c17 {
@@ -2947,8 +2974,7 @@ exports[`Video mute renders 1`] = `
 .c5:hover {
   background: rgba(221,221,221,0.4);
   color: #444444;
-  color: dark:white;
-  light: black;
+  color: white;
 }
 
 .c17 {
@@ -3520,8 +3546,7 @@ exports[`Video renders 1`] = `
 .c5:hover {
   background: rgba(221,221,221,0.4);
   color: #444444;
-  color: dark:white;
-  light: black;
+  color: white;
 }
 
 .c17 {

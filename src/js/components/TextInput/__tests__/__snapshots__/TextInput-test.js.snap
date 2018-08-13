@@ -47,7 +47,7 @@ exports[`TextInput close suggestion drop 2`] = `
     >
       <li>
         <button
-          class="StyledButton-qbvYY bsDcHb"
+          class="StyledButton-qbvYY vVYVk"
           type="button"
         >
           <div
@@ -59,7 +59,7 @@ exports[`TextInput close suggestion drop 2`] = `
       </li>
       <li>
         <button
-          class="StyledButton-qbvYY bsDcHb"
+          class="StyledButton-qbvYY vVYVk"
           type="button"
         >
           <div
@@ -100,7 +100,7 @@ exports[`TextInput close suggestion drop 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .bsDcHb {
+  .vVYVk {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -207,7 +207,7 @@ exports[`TextInput complex suggestions 2`] = `
     >
       <li>
         <button
-          class="StyledButton-qbvYY bsDcHb"
+          class="StyledButton-qbvYY vVYVk"
           type="button"
         >
           <div
@@ -219,7 +219,7 @@ exports[`TextInput complex suggestions 2`] = `
       </li>
       <li>
         <button
-          class="StyledButton-qbvYY bsDcHb"
+          class="StyledButton-qbvYY vVYVk"
           type="button"
         >
           <div
@@ -260,7 +260,7 @@ exports[`TextInput complex suggestions 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .bsDcHb {
+  .vVYVk {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -424,7 +424,7 @@ exports[`TextInput select suggestion 2`] = `
     >
       <li>
         <button
-          class="StyledButton-qbvYY bsDcHb"
+          class="StyledButton-qbvYY vVYVk"
           type="button"
         >
           <div
@@ -436,7 +436,7 @@ exports[`TextInput select suggestion 2`] = `
       </li>
       <li>
         <button
-          class="StyledButton-qbvYY bsDcHb"
+          class="StyledButton-qbvYY vVYVk"
           type="button"
         >
           <div
@@ -477,7 +477,7 @@ exports[`TextInput select suggestion 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .bsDcHb {
+  .vVYVk {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -580,7 +580,7 @@ exports[`TextInput suggestions 2`] = `
     >
       <li>
         <button
-          class="StyledButton-qbvYY bsDcHb"
+          class="StyledButton-qbvYY vVYVk"
           type="button"
         >
           <div
@@ -592,7 +592,7 @@ exports[`TextInput suggestions 2`] = `
       </li>
       <li>
         <button
-          class="StyledButton-qbvYY bsDcHb"
+          class="StyledButton-qbvYY vVYVk"
           type="button"
         >
           <div
@@ -633,7 +633,7 @@ exports[`TextInput suggestions 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .bsDcHb {
+  .vVYVk {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

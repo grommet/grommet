@@ -280,14 +280,14 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .koOflf {
+  .eEPhap {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fPPCXi {
+  .kNamBk {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -794,7 +794,7 @@ exports[`Menu open and close on click 3`] = `
         </div>
       </button>
       <button
-        class="StyledButton-qbvYY koOflf"
+        class="StyledButton-qbvYY eEPhap"
         type="button"
       >
         <div
@@ -804,7 +804,7 @@ exports[`Menu open and close on click 3`] = `
         </div>
       </button>
       <a
-        class="StyledButton-kDOCUE fPPCXi"
+        class="StyledButton-kDOCUE kNamBk"
         href="/test"
       >
         <div
@@ -877,14 +877,14 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .koOflf {
+  .eEPhap {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fPPCXi {
+  .kNamBk {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1148,7 +1148,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .koOflf {
+  .eEPhap {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1162,14 +1162,14 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .feADXu {
+  .dZSKYq {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fPPCXi {
+  .kNamBk {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
