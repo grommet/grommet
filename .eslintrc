@@ -84,5 +84,6 @@ rules:
   react/no-unknown-property: 1
   react/react-in-jsx-scope: 1
   react/self-closing-comp: 1
-  react/sort-comp: 1
+  react/sort-comp: 0
   react/jsx-wrap-multilines: 1
+

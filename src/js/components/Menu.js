@@ -275,6 +275,8 @@ export default class Menu extends Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
+    const { dropContainer } = this.props;
+
     if (this.state.state !== prevState.state) {
       let activeKeyboardHandlers = {
         esc: this._onClose
@@ -332,7 +334,8 @@ export default class Menu extends Component {
                 colorIndex: this.props.dropColorIndex,
                 className: this.props.className &&
                 `${this.props.className}__drop--container`,
-                focusControl: true
+                focusControl: true,
+                dropContainer: dropContainer
               });
           }
           break;
@@ -524,6 +527,7 @@ Menu.propTypes = {
   closeOnClick: PropTypes.bool,
   dropAlign: dropAlignPropType,
   dropColorIndex: PropTypes.string,
+  dropContainer: PropTypes.object,
   icon: PropTypes.node,
   id: PropTypes.string,
   inline: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['expand'])]),
@@ -544,5 +548,6 @@ Menu.defaultProps = {
   closeOnClick: true,
   direction: 'column',
   dropAlign: {top: 'top', left: 'left'},
-  pad: 'none'
+  pad: 'none',
+  dropContainer: undefined
 };
