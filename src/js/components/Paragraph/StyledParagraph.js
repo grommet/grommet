@@ -1,5 +1,11 @@
 import styled, { css } from 'styled-components';
 
+import { colorForName } from '../../utils';
+
+const colorStyle = css`
+  color: ${props => colorForName(props.color, props.theme)};
+`;
+
 const marginStyle = (props) => {
   if (typeof props.margin === 'string') {
     const margin = props.theme.global.edgeSize[props.margin];
@@ -41,6 +47,7 @@ const StyledParagraph = styled.p`
   ${props => sizeStyle(props)}
   ${props => props.margin && marginStyle(props)}
   ${props => props.textAlign && textAlignStyle}
+  ${props => props.color && colorStyle}
 `;
 
 export default StyledParagraph.extend`

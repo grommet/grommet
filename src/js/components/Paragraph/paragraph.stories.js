@@ -16,14 +16,15 @@ class All extends Component {
   render() {
     return (
       <Grommet theme={grommet}>
-        <div>
-          {sizes.map(size => (
-            <Paragraph size={size}>
-              {`Paragraph ${size}`}
-              {paragraphFiller}
-            </Paragraph>
-          ))}
-        </div>
+        {sizes.map(size => (
+          <Paragraph size={size}>
+            {`Paragraph ${size}`}
+            {paragraphFiller}
+          </Paragraph>
+        ))}
+        <Paragraph color='status-critical'>
+          This is an error message.
+        </Paragraph>
       </Grommet>
     );
   }
