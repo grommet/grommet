@@ -11,6 +11,15 @@ import { Paragraph } from 'grommet';
 
 ## Properties
 
+**color**
+
+A color identifier to use for the text color. For example:
+'status-critical'.
+
+```
+string
+```
+
 **margin**
 
 The amount of margin above and/or below the paragraph. An object can be

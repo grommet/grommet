@@ -12,6 +12,10 @@ export default (Paragraph) => {
     );
 
   DocumentedParagraph.propTypes = {
+    color: PropTypes.string.description(
+      `A color identifier to use for the text color. For example:
+'status-critical'.`
+    ),
     margin: PropTypes.oneOfType([
       PropTypes.oneOf(['none', 'small', 'medium', 'large']),
       PropTypes.shape({
