@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
@@ -43,7 +43,7 @@ class AccordionPanel extends Component {
           );
 
           return (
-            <Fragment>
+            <Box flex={false}>
               <Button
                 role='tab'
                 aria-selected={active}
@@ -63,33 +63,31 @@ class AccordionPanel extends Component {
                 }}
               >
                 {header || (
-                <Box
-                  flex={false}
-                  align='center'
-                  direction='row'
-                  justify='between'
-                  {...rest}
-                >
-                  {typeof label === 'string' ? (
-                    <Box pad={{ horizontal: 'xsmall' }}>
-                      <Heading
-                        level={4}
-                        color={hover}
-                      >
-                        {label}
-                      </Heading>
+                  <Box
+                    align='center'
+                    direction='row'
+                    justify='between'
+                    {...rest}
+                  >
+                    {typeof label === 'string' ? (
+                      <Box pad={{ horizontal: 'xsmall' }}>
+                        <Heading
+                          level={4}
+                          color={hover}
+                        >
+                          {label}
+                        </Heading>
+                      </Box>
+                      ) : label}
+                    {AccordionIcon && (
+                    <Box pad={{ horizontal: 'small' }}>
+                      <AccordionIcon color={iconColor} />
                     </Box>
-                    ) : label}
-                  {AccordionIcon && (
-                  <Box pad={{ horizontal: 'small' }}>
-                    <AccordionIcon color={iconColor} />
+                      )}
                   </Box>
-                    )}
-                </Box>
                 )}
               </Button>
               <Box
-                flex={false}
                 border={{ side: 'bottom', color: dark ? 'border-dark' : 'border-light' }}
               >
                 {animate ? (
@@ -100,7 +98,7 @@ class AccordionPanel extends Component {
                   </Collapsible>
                 ) : active && children}
               </Box>
-            </Fragment>
+            </Box>
           );
         }}
       </AccordionContext>
