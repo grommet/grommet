@@ -55,7 +55,7 @@ class Collapsible extends Component {
 
     let shouldAnimate = animate && prevState.open !== open;
 
-    if (snapshot.height && container.getBoundingClientRect().height > snapshot.height) {
+    if (snapshot.height && container.getBoundingClientRect().height !== snapshot.height) {
       shouldAnimate = true;
     }
 
