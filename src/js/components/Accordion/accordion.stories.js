@@ -13,7 +13,6 @@ import {
   Accordion,
   AccordionPanel,
   Box,
-  CollapsibleContext,
   Grommet,
   Heading,
   Text,
@@ -174,84 +173,78 @@ class RichAccordion extends Component {
                   icon={<Bookmark color='accent-1' />}
                   label='Highlights'
                 >
-                  <CollapsibleContext>
-                    {({ reset }) => {
-                      this.reset = reset;
-
-                      return highlightLoaded ? (
-                        <Box
-                          pad={{ bottom: 'medium', horizontal: 'small', top: 'small' }}
-                          gap='medium'
-                          overflow='auto'
-                          style={{ maxHeight: '400px' }}
-                        >
-                          <Text color='dark-5'>
-                            Below is the top message in <strong>#announcements</strong>.
-                          </Text>
-                          <Text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            Excepteur sint occaecat cupidatat
-                            non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.
-                          </Text>
-                          <Text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            Excepteur sint occaecat cupidatat
-                            non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.
-                          </Text>
-                          <Text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            Excepteur sint occaecat cupidatat
-                            non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.
-                          </Text>
-                          <Text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            Excepteur sint occaecat cupidatat
-                            non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.
-                          </Text>
-                          <Text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            Excepteur sint occaecat cupidatat
-                            non proident, sunt in culpa qui officia deserunt
-                            mollit anim id est laborum.
-                          </Text>
-                        </Box>
-                      ) : loading;
-                    }}
-                  </CollapsibleContext>
+                  {highlightLoaded ? (
+                    <Box
+                      pad={{ bottom: 'medium', horizontal: 'small', top: 'small' }}
+                      gap='medium'
+                      overflow='auto'
+                      style={{ maxHeight: '400px' }}
+                    >
+                      <Text color='dark-5'>
+                        Below is the top message in <strong>#announcements</strong>.
+                      </Text>
+                      <Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+                      </Text>
+                      <Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+                      </Text>
+                      <Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+                      </Text>
+                      <Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+                      </Text>
+                      <Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+                      </Text>
+                    </Box>
+                  ) : loading}
                 </RichPanel>
                 <RichPanel icon={<User color='accent-2' />} label='2,000 members'>
                   <Box

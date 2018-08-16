@@ -387,7 +387,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       },
     },
     collapsible: {
-      minSpeed: 150,
+      minSpeed: 200,
       baseHeight: 500,
     },
     dataTable: {

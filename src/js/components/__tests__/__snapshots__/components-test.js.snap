@@ -68,22 +68,6 @@ Object {
     "name": "Collapsible",
     "render": [Function],
   },
-  "CollapsibleContext": Object {
-    "$$typeof": Symbol(react.context),
-    "Consumer": [Circular],
-    "Provider": Object {
-      "$$typeof": Symbol(react.provider),
-      "_context": [Circular],
-    },
-    "_calculateChangedBits": null,
-    "_changedBits": 0,
-    "_changedBits2": 0,
-    "_currentRenderer": null,
-    "_currentRenderer2": null,
-    "_currentValue": Object {},
-    "_currentValue2": Object {},
-    "_defaultValue": Object {},
-  },
   "DataTable": Object {
     "$$typeof": Symbol(react.forward_ref),
     "displayName": "DataTable",
