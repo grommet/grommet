@@ -9,6 +9,7 @@ class Responsive extends Component {
   state = {}
 
   componentDidMount() {
+    console.warn('Responsive is deprecated. You should use ResponsiveContext.Consumer instead.');
     window.addEventListener('resize', this.onResize);
     this.onResize();
   }

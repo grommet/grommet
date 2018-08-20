@@ -2,7 +2,7 @@ import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
 import { ThemeContext as IconThemeContext } from 'grommet-icons';
 
-import ThemeContext from '../../contexts/ThemeContext';
+import { ThemeContext } from '../../contexts';
 import { backgroundIsDark } from '../../utils';
 import { withForwardRef, withTheme } from '../hocs';
 

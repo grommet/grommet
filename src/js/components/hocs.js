@@ -3,8 +3,7 @@ import { findDOMNode } from 'react-dom';
 import getDisplayName from 'recompose/getDisplayName';
 import { ThemeContext as IconThemeContext } from 'grommet-icons';
 
-import AnnounceContext from '../contexts/AnnounceContext';
-import ThemeContext from '../contexts/ThemeContext';
+import { AnnounceContext, ThemeContext } from '../contexts';
 
 export const withFocus = (WrappedComponent) => {
   class FocusableComponent extends Component {
