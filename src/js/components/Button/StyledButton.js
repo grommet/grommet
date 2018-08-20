@@ -139,7 +139,7 @@ const StyledButton = styled.button`
     transition: 0.1s ease-in-out;
   `)}
   ${props => props.fillContainer && fillStyle}
-  ${props => props.icon && !props.label && !props.plain && `
+  ${props => props.hasIcon && !props.label && !props.plain && `
     padding: ${props.theme.global.edgeSize.small};
   `}
 `;
