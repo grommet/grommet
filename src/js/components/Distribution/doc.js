@@ -24,7 +24,8 @@ export default (Distribution) => {
     values: PropTypes.arrayOf(PropTypes.shape({
       value: PropTypes.number.isRequired,
     })).description(
-      `Array of objects containing a value. The caller can put other
+      `Array of objects containing a value. The array should already be
+      sorted from largest to smallest value. The caller can put other
       properties in the object. The children function will be called to
       render the contents of each value.`
     ).isRequired,
