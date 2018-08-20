@@ -11,10 +11,11 @@ import {
 } from '../../utils';
 
 const basicStyle = props => css`
-  border: ${props.theme.button.border.width} solid ${props.color
-    ? colorForName(props.color, props.theme)
-    : normalizeColor((props.theme.button.border.color ||
-      props.theme.global.control.color), props.theme)};
+  border: ${props.theme.button.border.width} solid ${
+    colorForName(
+      normalizeColor((props.color || props.theme.button.border.color ||
+      props.theme.global.control.color || 'brand'), props.theme)
+      , props.theme)};
   border-radius: ${props.theme.button.border.radius};
   color: ${(props.theme.button.color ||
     props.theme.global.text.color)[props.theme.dark ? 'dark' : 'light']};
@@ -24,7 +25,8 @@ const primaryStyle = props => css`
   ${
     backgroundStyle(
       normalizeColor(
-        props.color || props.theme.button.primary.color || 'brand',
+        props.color || props.theme.button.primary.color ||
+        props.theme.global.control.color || 'brand',
         props.theme
       ),
       props.theme
