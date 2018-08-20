@@ -114,7 +114,6 @@ class Menu extends Component {
 
     const controlMirror = (
       <Button
-        fill={true}
         a11yTitle={messages.closeMenu || 'Close Menu'}
         onClick={this.onDropClose}
       >
