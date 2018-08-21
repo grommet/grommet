@@ -154,68 +154,80 @@ exports[`Menu close by clicking outside 2`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-YaZNy hQeqTY"
+    class="Menu__ContainerBox-fLCaaL gfFABp StyledBox-YaZNy hQeqTY"
   >
-    <button
-      aria-label="Close Menu"
-      class="StyledButton-qbvYY jZaTeL"
-      type="button"
+    <div
+      class="StyledBox-YaZNy ckMYwJ"
+    >
+      <button
+        aria-label="Close Menu"
+        class="StyledButton-qbvYY jZaTeL"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy jyWPQv"
+        >
+          <span
+            class="StyledText-dmaDlZ cuXUhH"
+          >
+            Test
+          </span>
+          <div
+            class="StyledBox__StyledBoxGap-eHDBek bKXmJV"
+          />
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-hcpUvT bPezfS"
+            color="#7D4CDB"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="StyledBox-YaZNy jLqfV"
     >
       <div
-        class="StyledBox-YaZNy jyWPQv"
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <span
-          class="StyledText-dmaDlZ cuXUhH"
+        <button
+          class="StyledButton-qbvYY fILeAh"
+          disabled=""
+          type="button"
         >
-          Test
-        </span>
-        <div
-          class="StyledBox__StyledBoxGap-eHDBek bKXmJV"
-        />
-        <svg
-          aria-label="FormDown"
-          class="StyledIcon-hcpUvT bPezfS"
-          color="#7D4CDB"
-          height="24px"
-          role="img"
-          version="1.1"
-          viewBox="0 0 24 24"
-          width="24px"
-        >
-          <polyline
-            fill="none"
-            points="18 9 12 15 6 9"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
+          <div
+            class="StyledBox-YaZNy PasVd"
+          >
+            Item 1
+          </div>
+        </button>
       </div>
-    </button>
-    <div
-      class="StyledBox-YaZNy hQeqTY"
-    >
-      <button
-        class="StyledButton-qbvYY fILeAh"
-        disabled=""
-        type="button"
+      <div
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <div
-          class="StyledBox-YaZNy PasVd"
+        <button
+          class="StyledButton-qbvYY fILeAh"
+          disabled=""
+          type="button"
         >
-          Item 1
-        </div>
-      </button>
-      <button
-        class="StyledButton-qbvYY fILeAh"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="StyledBox-YaZNy PasVd"
-        >
-          Item 2
-        </div>
-      </button>
+          <div
+            class="StyledBox-YaZNy PasVd"
+          >
+            Item 2
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -242,6 +254,30 @@ exports[`Menu close by clicking outside 3`] = `
 
 @media only screen and (max-width:699px) {
   .hQeqTY {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ckMYwJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ckMYwJ {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jLqfV {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jLqfV {
     padding: 0;
   }
 }
@@ -324,6 +360,12 @@ exports[`Menu close by clicking outside 3`] = `
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .gfFABp {
+    width: 100%;
   }
 }"
 `;
@@ -735,77 +777,93 @@ exports[`Menu open and close on click 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-YaZNy hQeqTY"
+    class="Menu__ContainerBox-fLCaaL gfFABp StyledBox-YaZNy hQeqTY"
   >
-    <button
-      aria-label="Close Menu"
-      class="StyledButton-qbvYY jZaTeL"
-      type="button"
+    <div
+      class="StyledBox-YaZNy ckMYwJ"
+    >
+      <button
+        aria-label="Close Menu"
+        class="StyledButton-qbvYY jZaTeL"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy jyWPQv"
+        >
+          <span
+            class="StyledText-dmaDlZ cuXUhH"
+          >
+            Test
+          </span>
+          <div
+            class="StyledBox__StyledBoxGap-eHDBek bKXmJV"
+          />
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-hcpUvT bPezfS"
+            color="#7D4CDB"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="StyledBox-YaZNy jLqfV"
     >
       <div
-        class="StyledBox-YaZNy jyWPQv"
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <span
-          class="StyledText-dmaDlZ cuXUhH"
+        <button
+          class="StyledButton-qbvYY fILeAh"
+          disabled=""
+          type="button"
         >
-          Test
-        </span>
-        <div
-          class="StyledBox__StyledBoxGap-eHDBek bKXmJV"
-        />
-        <svg
-          aria-label="FormDown"
-          class="StyledIcon-hcpUvT bPezfS"
-          color="#7D4CDB"
-          height="24px"
-          role="img"
-          version="1.1"
-          viewBox="0 0 24 24"
-          width="24px"
-        >
-          <polyline
-            fill="none"
-            points="18 9 12 15 6 9"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
+          <div
+            class="StyledBox-YaZNy PasVd"
+          >
+            Item 1
+          </div>
+        </button>
       </div>
-    </button>
-    <div
-      class="StyledBox-YaZNy hQeqTY"
-    >
-      <button
-        class="StyledButton-qbvYY fILeAh"
-        disabled=""
-        type="button"
+      <div
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <div
-          class="StyledBox-YaZNy PasVd"
+        <button
+          class="StyledButton-qbvYY eEPhap"
+          type="button"
         >
-          Item 1
-        </div>
-      </button>
-      <button
-        class="StyledButton-qbvYY eEPhap"
-        type="button"
+          <div
+            class="StyledBox-YaZNy PasVd"
+          >
+            Item 2
+          </div>
+        </button>
+      </div>
+      <div
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <div
-          class="StyledBox-YaZNy PasVd"
+        <a
+          class="StyledButton-kDOCUE kNamBk"
+          href="/test"
         >
-          Item 2
-        </div>
-      </button>
-      <a
-        class="StyledButton-kDOCUE kNamBk"
-        href="/test"
-      >
-        <div
-          class="StyledBox-YaZNy PasVd"
-        >
-          Item 3
-        </div>
-      </a>
+          <div
+            class="StyledBox-YaZNy PasVd"
+          >
+            Item 3
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -832,6 +890,30 @@ exports[`Menu open and close on click 4`] = `
 
 @media only screen and (max-width:699px) {
   .hQeqTY {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ckMYwJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ckMYwJ {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jLqfV {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jLqfV {
     padding: 0;
   }
 }
@@ -914,6 +996,12 @@ exports[`Menu open and close on click 4`] = `
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .gfFABp {
+    width: 100%;
   }
 }"
 `;
@@ -1008,68 +1096,80 @@ exports[`Menu with dropAlign renders 2`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-YaZNy hQeqTY"
+    class="Menu__ContainerBox-fLCaaL gfFABp StyledBox-YaZNy hQeqTY"
   >
-    <button
-      aria-label="Close Menu"
-      class="StyledButton-qbvYY jZaTeL"
-      type="button"
+    <div
+      class="StyledBox-YaZNy ckMYwJ"
+    >
+      <button
+        aria-label="Close Menu"
+        class="StyledButton-qbvYY jZaTeL"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy jyWPQv"
+        >
+          <span
+            class="StyledText-dmaDlZ cuXUhH"
+          >
+            Test
+          </span>
+          <div
+            class="StyledBox__StyledBoxGap-eHDBek bKXmJV"
+          />
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-hcpUvT bPezfS"
+            color="#7D4CDB"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="StyledBox-YaZNy jLqfV"
     >
       <div
-        class="StyledBox-YaZNy jyWPQv"
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <span
-          class="StyledText-dmaDlZ cuXUhH"
+        <button
+          class="StyledButton-qbvYY fILeAh"
+          disabled=""
+          type="button"
         >
-          Test
-        </span>
-        <div
-          class="StyledBox__StyledBoxGap-eHDBek bKXmJV"
-        />
-        <svg
-          aria-label="FormDown"
-          class="StyledIcon-hcpUvT bPezfS"
-          color="#7D4CDB"
-          height="24px"
-          role="img"
-          version="1.1"
-          viewBox="0 0 24 24"
-          width="24px"
-        >
-          <polyline
-            fill="none"
-            points="18 9 12 15 6 9"
-            stroke="#000"
-            stroke-width="2"
-          />
-        </svg>
+          <div
+            class="StyledBox-YaZNy PasVd"
+          >
+            Item 1
+          </div>
+        </button>
       </div>
-    </button>
-    <div
-      class="StyledBox-YaZNy hQeqTY"
-    >
-      <button
-        class="StyledButton-qbvYY fILeAh"
-        disabled=""
-        type="button"
+      <div
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <div
-          class="StyledBox-YaZNy PasVd"
+        <button
+          class="StyledButton-qbvYY fILeAh"
+          disabled=""
+          type="button"
         >
-          Item 1
-        </div>
-      </button>
-      <button
-        class="StyledButton-qbvYY fILeAh"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="StyledBox-YaZNy PasVd"
-        >
-          Item 2
-        </div>
-      </button>
+          <div
+            class="StyledBox-YaZNy PasVd"
+          >
+            Item 2
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -1096,6 +1196,30 @@ exports[`Menu with dropAlign renders 3`] = `
 
 @media only screen and (max-width:699px) {
   .hQeqTY {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ckMYwJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ckMYwJ {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jLqfV {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jLqfV {
     padding: 0;
   }
 }
@@ -1205,6 +1329,12 @@ exports[`Menu with dropAlign renders 3`] = `
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .gfFABp {
+    width: 100%;
   }
 }"
 `;
