@@ -25,7 +25,7 @@ export const baseStyle = css`
   -webkit-font-smoothing: antialiased;
 `;
 
-export const borderStyle = css`
+export const controlBorderStyle = css`
   border: ${props =>
     props.theme.global.control.border.width} solid ${props =>
       (props.theme.global.control.border.color ||
@@ -135,7 +135,7 @@ export const inputStyle = css`
   margin: 0;
 
   ${props => props.focus && (!props.plain || props.focusIndicator) && focusStyle}
-  ${borderStyle}
+  ${controlBorderStyle}
 `;
 
 export const evalStyle = (arg, theme) => {
@@ -148,7 +148,7 @@ export const evalStyle = (arg, theme) => {
 export default {
   activeStyle,
   baseStyle,
-  borderStyle,
+  controlBorderStyle,
   evalStyle,
   edgeStyle,
   focusStyle,

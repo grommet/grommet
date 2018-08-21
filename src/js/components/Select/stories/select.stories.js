@@ -41,7 +41,9 @@ const customRoundedTheme = deepMerge(
       extend: 'padding: 0 12px;',
     },
     select: {
-      extend: 'padding: 3px 6px',
+      control: {
+        extend: 'padding: 3px 6px;',
+      },
     },
   }
 );

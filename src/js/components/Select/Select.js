@@ -7,15 +7,15 @@ import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { TextInput } from '../TextInput';
 import { withForwardRef, withTheme } from '../hocs';
-import { borderStyle, colorIsDark, evalStyle } from '../../utils';
+import { controlBorderStyle, colorIsDark, evalStyle } from '../../utils';
 
 import SelectContainer from './SelectContainer';
 import doc from './doc';
 
 const SelectTextInput = styled(TextInput)`cursor: pointer;`;
 const StyledSelectBox = styled(Box)`
-  ${props => !props.plain && borderStyle};
-  ${props => props.theme.select && props.theme.select.extend}
+  ${props => !props.plain && controlBorderStyle};
+  ${props => props.theme.select && props.theme.select.control && props.theme.select.control.extend}
 `;
 
 class Select extends Component {
