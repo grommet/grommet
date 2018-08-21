@@ -542,7 +542,9 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       },
       // searchInput: undefined,
       step: 20,
-      // extend: undefined,
+      control: {
+        // extend: undefined,
+      },
     },
     text: {
       xsmall: { ...fontSizing(-1.5) },
