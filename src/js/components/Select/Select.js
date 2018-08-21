@@ -7,12 +7,16 @@ import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { TextInput } from '../TextInput';
 import { withForwardRef, withTheme } from '../hocs';
-import { colorIsDark, evalStyle } from '../../utils';
+import { borderStyle, colorIsDark, evalStyle } from '../../utils';
 
 import SelectContainer from './SelectContainer';
 import doc from './doc';
 
 const SelectTextInput = styled(TextInput)`cursor: pointer;`;
+const StyledSelectBox = styled(Box)`
+  ${props => !props.plain && borderStyle};
+  ${props => props.theme.select && props.theme.select.extend}
+`;
 
 class Select extends Component {
   static defaultProps = {
@@ -116,12 +120,13 @@ class Select extends Component {
           a11yTitle={`${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`}
           dropContent={<SelectContainer {...this.props} onChange={onSelectChange} />}
         >
-          <Box
+          <StyledSelectBox
             align='center'
-            border={!plain ? 'all' : undefined}
             direction='row'
             justify='between'
             background={theme.select.background}
+            plain={plain}
+            theme={theme}
           >
             <Box direction='row' flex={true} basis='auto'>
               {selectValue || (
@@ -145,7 +150,7 @@ class Select extends Component {
             >
               <SelectIcon color={iconColor} size={size} />
             </Box>
-          </Box>
+          </StyledSelectBox>
         </DropButton>
       </Keyboard>
     );
