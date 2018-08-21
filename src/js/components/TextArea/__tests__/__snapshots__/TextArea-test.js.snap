@@ -16,13 +16,13 @@ exports[`TextArea focusIndicator renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   padding: 11px;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
   outline: none;
   background: transparent;
   color: inherit;
   font-weight: 600;
   margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -85,13 +85,13 @@ exports[`TextArea placeholder renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   padding: 11px;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
   outline: none;
   background: transparent;
   color: inherit;
   font-weight: 600;
   margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
   width: 100%;
 }
 
@@ -155,13 +155,13 @@ exports[`TextArea plain renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   padding: 11px;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
   outline: none;
   background: transparent;
   color: inherit;
   font-weight: 600;
   margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
   width: 100%;
   border: none;
   width: 100%;
@@ -212,13 +212,13 @@ exports[`TextArea renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   padding: 11px;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
   outline: none;
   background: transparent;
   color: inherit;
   font-weight: 600;
   margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
   width: 100%;
 }
 

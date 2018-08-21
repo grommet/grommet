@@ -107,7 +107,8 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       colors,
       control: {
         border: {
-          width: '2px',
+          width: '1px',
+          radius: '4px',
           color: {
             dark: css`${props => props.theme.global.colors['border-dark']}`,
             light: css`${props => props.theme.global.colors['border-light']}`,
@@ -191,11 +192,6 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         },
       },
       input: {
-        border: {
-          width: '1px',
-          radius: '4px',
-          // color: { dark: undefined, light: undefined },
-        },
         weight: 600,
       },
       opacity: {
@@ -546,6 +542,9 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       },
       // searchInput: undefined,
       step: 20,
+      control: {
+        // extend: undefined,
+      },
     },
     text: {
       xsmall: { ...fontSizing(-1.5) },

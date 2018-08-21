@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select basic 1`] = `
-.c7 {
+.c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -10,30 +10,30 @@ exports[`Select basic 1`] = `
   stroke: #7D4CDB;
 }
 
-.c7 g {
+.c8 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -45,7 +45,6 @@ exports[`Select basic 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -59,7 +58,7 @@ exports[`Select basic 1`] = `
   padding: 0;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -81,7 +80,7 @@ exports[`Select basic 1`] = `
   padding: 0;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -120,65 +119,52 @@ exports[`Select basic 1`] = `
   text-align: inherit;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   padding: 11px;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
   outline: none;
   background: transparent;
   color: inherit;
   font-weight: 600;
   margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
   width: 100%;
   -webkit-appearance: textfield;
   border: none;
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c5 {
   cursor: pointer;
 }
 
-@media only screen and (max-width:699px) {
-  .c1 {
-    border: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c1 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c1 {
-    padding: 0;
-  }
+.c1 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:699px) {
@@ -194,14 +180,26 @@ exports[`Select basic 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c6 {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c6 {
+  .c7 {
     padding: 0;
   }
 }
@@ -225,17 +223,17 @@ exports[`Select basic 1`] = `
   type="button"
 >
   <div
-    className="c1"
+    className="c1 c2"
   >
     <div
-      className="c2"
+      className="c3"
     >
       <div
-        className="c3"
+        className="c4"
       >
         <input
           autoComplete="off"
-          className="c4 c5"
+          className="c5 c6"
           id="test-select"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -248,7 +246,7 @@ exports[`Select basic 1`] = `
       </div>
     </div>
     <div
-      className="c6"
+      className="c7"
       style={
         Object {
           "minWidth": "auto",
@@ -257,7 +255,7 @@ exports[`Select basic 1`] = `
     >
       <svg
         aria-label="FormDown"
-        className="c7"
+        className="c8"
         color="#7D4CDB"
         height="24px"
         role="img"
@@ -286,7 +284,7 @@ exports[`Select complex options and children 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="Select__StyledSelectBox-iWRdOc eXFape StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -296,7 +294,7 @@ exports[`Select complex options and children 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -341,7 +339,7 @@ exports[`Select complex options and children 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="Select__StyledSelectBox-iWRdOc eXFape StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -351,7 +349,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -436,19 +434,13 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width:699px) {
-  .filaRb {
-    border: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .filaRb {
+  .flHrpn {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .flHrpn {
     padding: 0;
   }
 }
@@ -597,7 +589,7 @@ exports[`Select deselect an option 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="Select__StyledSelectBox-iWRdOc eXFape StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -607,7 +599,7 @@ exports[`Select deselect an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -654,7 +646,7 @@ exports[`Select disabled 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="Select__StyledSelectBox-iWRdOc eXFape StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -664,7 +656,7 @@ exports[`Select disabled 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -710,7 +702,7 @@ exports[`Select disabled 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="Select__StyledSelectBox-iWRdOc eXFape StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -720,7 +712,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -757,7 +749,7 @@ exports[`Select disabled 2`] = `
 `;
 
 exports[`Select multiple 1`] = `
-.c7 {
+.c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -766,30 +758,30 @@ exports[`Select multiple 1`] = `
   stroke: #7D4CDB;
 }
 
-.c7 g {
+.c8 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -801,7 +793,6 @@ exports[`Select multiple 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -815,7 +806,7 @@ exports[`Select multiple 1`] = `
   padding: 0;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -837,7 +828,7 @@ exports[`Select multiple 1`] = `
   padding: 0;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -876,65 +867,52 @@ exports[`Select multiple 1`] = `
   text-align: inherit;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   padding: 11px;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
   outline: none;
   background: transparent;
   color: inherit;
   font-weight: 600;
   margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
   width: 100%;
   -webkit-appearance: textfield;
   border: none;
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c5 {
   cursor: pointer;
 }
 
-@media only screen and (max-width:699px) {
-  .c1 {
-    border: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c1 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c1 {
-    padding: 0;
-  }
+.c1 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:699px) {
@@ -950,14 +928,26 @@ exports[`Select multiple 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c6 {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c6 {
+  .c7 {
     padding: 0;
   }
 }
@@ -983,17 +973,17 @@ exports[`Select multiple 1`] = `
   type="button"
 >
   <div
-    className="c1"
+    className="c1 c2"
   >
     <div
-      className="c2"
+      className="c3"
     >
       <div
-        className="c3"
+        className="c4"
       >
         <input
           autoComplete="off"
-          className="c4 c5"
+          className="c5 c6"
           id="test-select"
           multiple={true}
           onBlur={[Function]}
@@ -1009,7 +999,7 @@ exports[`Select multiple 1`] = `
       </div>
     </div>
     <div
-      className="c6"
+      className="c7"
       style={
         Object {
           "minWidth": "auto",
@@ -1018,7 +1008,7 @@ exports[`Select multiple 1`] = `
     >
       <svg
         aria-label="FormDown"
-        className="c7"
+        className="c8"
         color="#7D4CDB"
         height="24px"
         role="img"
@@ -1047,7 +1037,7 @@ exports[`Select multiple values 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="Select__StyledSelectBox-iWRdOc eXFape StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1057,7 +1047,7 @@ exports[`Select multiple values 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -1103,7 +1093,7 @@ exports[`Select multiple values 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="Select__StyledSelectBox-iWRdOc eXFape StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1113,7 +1103,7 @@ exports[`Select multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -1211,19 +1201,13 @@ exports[`Select multiple values 3`] = `
 
 exports[`Select multiple values 4`] = `
 "@media only screen and (max-width:699px) {
-  .filaRb {
-    border: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .filaRb {
+  .flHrpn {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .flHrpn {
     padding: 0;
   }
 }
@@ -1313,18 +1297,6 @@ exports[`Select multiple values 4`] = `
   }
 }
 
-@media only screen and (max-width:699px) {
-  .flHrpn {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .flHrpn {
-    padding: 0;
-  }
-}
-
 @media only screen and (min-width:700px) {
   .jZaTeL {
     -webkit-transition: 0.1s ease-in-out;
@@ -1403,7 +1375,7 @@ exports[`Select opens 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="Select__StyledSelectBox-iWRdOc eXFape StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1413,7 +1385,7 @@ exports[`Select opens 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1458,7 +1430,7 @@ exports[`Select opens 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="Select__StyledSelectBox-iWRdOc eXFape StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1468,7 +1440,7 @@ exports[`Select opens 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1565,19 +1537,13 @@ exports[`Select opens 3`] = `
 
 exports[`Select opens 4`] = `
 "@media only screen and (max-width:699px) {
-  .filaRb {
-    border: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .filaRb {
+  .flHrpn {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .flHrpn {
     padding: 0;
   }
 }
@@ -1773,7 +1739,7 @@ exports[`Select search 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="Select__StyledSelectBox-iWRdOc eXFape StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1783,7 +1749,7 @@ exports[`Select search 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1838,7 +1804,7 @@ exports[`Select search 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-bqUxsy fJZpBj"
+          class="StyledTextInput-bqUxsy eqNqXm"
           type="search"
           value=""
         />
@@ -1894,19 +1860,13 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width:699px) {
-  .filaRb {
-    border: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .filaRb {
+  .flHrpn {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .flHrpn {
     padding: 0;
   }
 }
@@ -2067,7 +2027,7 @@ exports[`Select select an option 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="Select__StyledSelectBox-iWRdOc eXFape StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2077,7 +2037,7 @@ exports[`Select select an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -2122,7 +2082,7 @@ exports[`Select select an option with complex options 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy flHrpn"
+    class="Select__StyledSelectBox-iWRdOc czusRE StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2166,7 +2126,7 @@ exports[`Select select an option with enter 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="Select__StyledSelectBox-iWRdOc eXFape StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2176,7 +2136,7 @@ exports[`Select select an option with enter 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -2221,7 +2181,7 @@ exports[`Select select another option 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="Select__StyledSelectBox-iWRdOc eXFape StyledBox-YaZNy flHrpn"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2231,7 +2191,7 @@ exports[`Select select another option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dKOtVo"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -2269,7 +2229,7 @@ exports[`Select select another option 1`] = `
 `;
 
 exports[`Select size 1`] = `
-.c7 {
+.c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2280,30 +2240,30 @@ exports[`Select size 1`] = `
   stroke: #7D4CDB;
 }
 
-.c7 g {
+.c8 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c8 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2315,7 +2275,6 @@ exports[`Select size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -2329,7 +2288,7 @@ exports[`Select size 1`] = `
   padding: 0;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2351,7 +2310,7 @@ exports[`Select size 1`] = `
   padding: 0;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2390,22 +2349,22 @@ exports[`Select size 1`] = `
   text-align: inherit;
 }
 
-.c3 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   padding: 11px;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
   outline: none;
   background: transparent;
   color: inherit;
   font-weight: 600;
   margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
   width: 100%;
   -webkit-appearance: textfield;
   font-size: 22px;
@@ -2414,43 +2373,30 @@ exports[`Select size 1`] = `
   -webkit-appearance: none;
 }
 
-.c5::-webkit-input-placeholder {
+.c6::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-placeholder {
+.c6::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c5:-ms-input-placeholder {
+.c6:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c5::-moz-focus-inner {
+.c6::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c5 {
   cursor: pointer;
 }
 
-@media only screen and (max-width:699px) {
-  .c1 {
-    border: solid 1px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c1 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c1 {
-    padding: 0;
-  }
+.c1 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:699px) {
@@ -2466,14 +2412,26 @@ exports[`Select size 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c6 {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c6 {
+  .c7 {
     padding: 0;
   }
 }
@@ -2498,17 +2456,17 @@ exports[`Select size 1`] = `
   type="button"
 >
   <div
-    className="c1"
+    className="c1 c2"
   >
     <div
-      className="c2"
+      className="c3"
     >
       <div
-        className="c3"
+        className="c4"
       >
         <input
           autoComplete="off"
-          className="c4 c5"
+          className="c5 c6"
           id="test-select"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -2524,7 +2482,7 @@ exports[`Select size 1`] = `
       </div>
     </div>
     <div
-      className="c6"
+      className="c7"
       style={
         Object {
           "minWidth": "auto",
@@ -2533,7 +2491,7 @@ exports[`Select size 1`] = `
     >
       <svg
         aria-label="FormDown"
-        className="c7"
+        className="c8"
         color="#7D4CDB"
         height="24px"
         role="img"

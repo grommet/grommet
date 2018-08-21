@@ -16,6 +16,37 @@ import { grommet } from '../../../themes';
 
 import customSearchTheme from './theme';
 import SearchInputContext from './components/SearchInputContext';
+import { deepMerge } from '../../../utils';
+
+const customRoundedTheme = deepMerge(
+  grommet,
+  {
+    global: {
+      control: {
+        border: {
+          radius: '24px',
+        },
+      },
+      input: {
+        weight: 400,
+      },
+      font: {
+        size: '12px',
+      },
+    },
+    text: {
+      medium: '13px',
+    },
+    textInput: {
+      extend: 'padding: 0 12px;',
+    },
+    select: {
+      control: {
+        extend: 'padding: 3px 6px;',
+      },
+    },
+  }
+);
 
 class SimpleSelect extends Component {
   state = {
@@ -24,9 +55,10 @@ class SimpleSelect extends Component {
   }
 
   render() {
+    const { theme } = this.props;
     const { options, value } = this.state;
     return (
-      <Grommet theme={grommet}>
+      <Grommet theme={theme || grommet}>
         <Select
           placeholder='Select'
           value={value}
@@ -397,4 +429,7 @@ storiesOf('Select', module)
   .add('Dark', () => <DarkSelect />)
   .add('Custom Colors', () => (
     <DarkSelect theme={{ global: { font: { family: 'Arial' } }, select: { background: '#000000', iconColor: '#d3d3d3' } }} />
+  ))
+  .add('Custom Rounded', () => (
+    <SimpleSelect theme={customRoundedTheme} />
   ));

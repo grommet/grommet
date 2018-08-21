@@ -25,6 +25,14 @@ export const baseStyle = css`
   -webkit-font-smoothing: antialiased;
 `;
 
+export const controlBorderStyle = css`
+  border: ${props =>
+    props.theme.global.control.border.width} solid ${props =>
+      (props.theme.global.control.border.color ||
+        props.theme.global.control.border.color)[props.theme.dark ? 'dark' : 'light']};
+  border-radius: ${props => props.theme.global.control.border.radius};
+`;
+
 export const edgeStyle = (kind, data, responsive, theme) => {
   if (typeof data === 'string') {
     return css`
@@ -116,13 +124,8 @@ export const inputStyle = css`
   font-size: inherit;
   padding: ${props => (
     (parseMetricToNum(props.theme.global.spacing) / 2) -
-    parseMetricToNum(props.theme.global.input.border.width)
+    parseMetricToNum(props.theme.global.control.border.width)
   )}px;
-  border: ${props =>
-    props.theme.global.input.border.width} solid ${props =>
-      (props.theme.global.input.border.color ||
-        props.theme.global.control.border.color)[props.theme.dark ? 'dark' : 'light']};
-  border-radius: ${props => props.theme.global.input.border.radius};
   outline: none;
   background: transparent;
   color: inherit;
@@ -132,6 +135,7 @@ export const inputStyle = css`
   margin: 0;
 
   ${props => props.focus && (!props.plain || props.focusIndicator) && focusStyle}
+  ${controlBorderStyle}
 `;
 
 export const evalStyle = (arg, theme) => {
@@ -144,6 +148,7 @@ export const evalStyle = (arg, theme) => {
 export default {
   activeStyle,
   baseStyle,
+  controlBorderStyle,
   evalStyle,
   edgeStyle,
   focusStyle,
