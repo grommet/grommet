@@ -24,6 +24,9 @@ class Box extends Component {
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
+    // Since Box can change the background color for its contents,
+    // we update the theme to indicate whether the current context is `dark`
+    // and what icon theme to use.
     const { background, theme: propsTheme } = nextProps;
     const { theme: stateTheme, priorTheme } = prevState;
 
