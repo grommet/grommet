@@ -908,7 +908,6 @@ exports[`Button icon label renders 1`] = `
   <button
     className="c1"
     disabled={false}
-    icon={<svg />}
     label="Test"
     onBlur={[Function]}
     onClick={[Function]}
@@ -1270,7 +1269,6 @@ exports[`Button reverse icon label renders 1`] = `
   <button
     className="c1"
     disabled={false}
-    icon={<svg />}
     label="Test"
     onBlur={[Function]}
     onClick={[Function]}
@@ -1376,7 +1374,6 @@ exports[`Button warns about invalid icon render 1`] = `
   <button
     className="c1"
     disabled={false}
-    icon={<svg />}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}

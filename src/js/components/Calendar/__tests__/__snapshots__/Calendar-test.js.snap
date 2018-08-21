@@ -448,11 +448,6 @@ exports[`Calendar date renders 1`] = `
             aria-label="December 2017"
             className="c7"
             disabled={true}
-            icon={
-              <Previous
-                size="medium"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -484,11 +479,6 @@ exports[`Calendar date renders 1`] = `
             aria-label="February 2018"
             className="c7"
             disabled={true}
-            icon={
-              <Next
-                size="medium"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -1865,11 +1855,6 @@ exports[`Calendar dates renders 1`] = `
             aria-label="December 2017"
             className="c7"
             disabled={true}
-            icon={
-              <Previous
-                size="medium"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -1901,11 +1886,6 @@ exports[`Calendar dates renders 1`] = `
             aria-label="February 2018"
             className="c7"
             disabled={true}
-            icon={
-              <Next
-                size="medium"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -3282,11 +3262,6 @@ exports[`Calendar disabled renders 1`] = `
             aria-label="December 2017"
             className="c7"
             disabled={true}
-            icon={
-              <Previous
-                size="medium"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -3318,11 +3293,6 @@ exports[`Calendar disabled renders 1`] = `
             aria-label="February 2018"
             className="c7"
             disabled={true}
-            icon={
-              <Next
-                size="medium"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -4699,11 +4669,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
             aria-label="December 2017"
             className="c7"
             disabled={true}
-            icon={
-              <Previous
-                size="medium"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -4735,11 +4700,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
             aria-label="February 2018"
             className="c7"
             disabled={true}
-            icon={
-              <Next
-                size="medium"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -5693,11 +5653,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
             aria-label="December 2017"
             className="c7"
             disabled={true}
-            icon={
-              <Previous
-                size="medium"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -5729,11 +5684,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
             aria-label="February 2018"
             className="c7"
             disabled={true}
-            icon={
-              <Next
-                size="medium"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -7110,11 +7060,6 @@ exports[`Calendar renders 1`] = `
             aria-label="December 2017"
             className="c7"
             disabled={true}
-            icon={
-              <Previous
-                size="medium"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -7146,11 +7091,6 @@ exports[`Calendar renders 1`] = `
             aria-label="February 2018"
             className="c7"
             disabled={true}
-            icon={
-              <Next
-                size="medium"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -8718,7 +8658,6 @@ exports[`Calendar size renders 1`] = `
             aria-label="December 2017"
             className="c7"
             disabled={true}
-            icon={<FormPrevious />}
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -8749,7 +8688,6 @@ exports[`Calendar size renders 1`] = `
             aria-label="February 2018"
             className="c7"
             disabled={true}
-            icon={<FormNext />}
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -9702,11 +9640,6 @@ exports[`Calendar size renders 1`] = `
             aria-label="December 2017"
             className="c7"
             disabled={true}
-            icon={
-              <Previous
-                size="medium"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -9738,11 +9671,6 @@ exports[`Calendar size renders 1`] = `
             aria-label="February 2018"
             className="c7"
             disabled={true}
-            icon={
-              <Next
-                size="medium"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -10696,11 +10624,6 @@ exports[`Calendar size renders 1`] = `
             aria-label="December 2017"
             className="c7"
             disabled={true}
-            icon={
-              <Previous
-                size="large"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -10732,11 +10655,6 @@ exports[`Calendar size renders 1`] = `
             aria-label="February 2018"
             className="c7"
             disabled={true}
-            icon={
-              <Next
-                size="large"
-              />
-            }
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
