@@ -252,10 +252,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       },
       // color: { dark: undefined, light: undefined }
       primary: {
-        color: {
-          dark: css`${props => props.theme.global.colors['accent-1']}`,
-          light: css`${props => props.theme.global.colors.brand}`,
-        },
+        // color: { dark: undefined, light: undefined }
       },
       disabled: {
         opacity: 0.3,
