@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
+import { ThemeContext as IconThemeContext } from 'grommet-icons';
 
+import { ThemeContext } from '../../contexts';
 import FocusedContainer from '../FocusedContainer';
-import { findScrollParents, findVisibleParent, parseMetricToNum } from '../../utils';
+import {
+  backgroundIsDark, findScrollParents, findVisibleParent, parseMetricToNum,
+} from '../../utils';
 import { Keyboard } from '../Keyboard';
 
 import StyledDrop from './StyledDrop';
@@ -16,7 +20,34 @@ class DropContainer extends Component {
     stretch: 'width',
   }
 
-  dropRef = React.createRef();
+  static getDerivedStateFromProps(nextProps, prevState) {
+    // Since the drop background can be different from the current theme context,
+    // we update the theme to set the dark background context.
+    const { theme: propsTheme } = nextProps;
+    const { theme: stateTheme, priorTheme } = prevState;
+
+    const dark = backgroundIsDark(propsTheme.global.drop.background, propsTheme);
+
+    if (dark === propsTheme.dark && stateTheme) {
+      return { theme: undefined, priorTheme: undefined };
+    }
+    if (dark !== propsTheme.dark &&
+      (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)) {
+      return {
+        theme: {
+          ...propsTheme,
+          dark,
+          icon: dark ? propsTheme.iconThemes.dark : propsTheme.iconThemes.light,
+        },
+        priorTheme: propsTheme,
+      };
+    }
+    return null;
+  }
+
+  state = {}
+
+  dropRef = React.createRef()
 
   componentDidMount() {
     const { restrictFocus } = this.props;
@@ -209,21 +240,42 @@ class DropContainer extends Component {
       onClickOutside,
       onEsc,
       onKeyDown,
-      theme,
+      theme: propsTheme,
       ...rest
     } = this.props;
+    const { theme: stateTheme } = this.state;
+    const theme = stateTheme || propsTheme;
+
+    let content = (
+      <StyledDrop
+        tabIndex='-1'
+        ref={this.dropRef}
+        theme={theme}
+        {...rest}
+      >
+        {children}
+      </StyledDrop>
+    );
+
+    if (stateTheme) {
+      if (stateTheme.dark !== propsTheme.dark && stateTheme.icon) {
+        content = (
+          <IconThemeContext.Provider value={stateTheme.icon}>
+            {content}
+          </IconThemeContext.Provider>
+        );
+      }
+      content = (
+        <ThemeContext.Provider value={stateTheme}>
+          {content}
+        </ThemeContext.Provider>
+      );
+    }
 
     return (
       <FocusedContainer>
         <Keyboard onEsc={onEsc} onKeyDown={onKeyDown}>
-          <StyledDrop
-            tabIndex='-1'
-            ref={this.dropRef}
-            theme={theme}
-            {...rest}
-          >
-            {children}
-          </StyledDrop>
+          {content}
         </Keyboard>
       </FocusedContainer>
     );
