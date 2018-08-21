@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
+import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -12,6 +13,15 @@ import { withForwardRef, withTheme } from '../hocs';
 import { evalStyle } from '../../utils';
 
 import doc from './doc';
+
+const ContainerBox = styled(Box)`
+  max-height: inherit;
+
+  /* IE11 hack to get drop contents to not overflow */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    width: 100%;
+  }
+`;
 
 class Menu extends Component {
   static defaultProps = {
@@ -113,12 +123,14 @@ class Menu extends Component {
     );
 
     const controlMirror = (
-      <Button
-        a11yTitle={messages.closeMenu || 'Close Menu'}
-        onClick={this.onDropClose}
-      >
-        {content}
-      </Button>
+      <Box flex={false}>
+        <Button
+          a11yTitle={messages.closeMenu || 'Close Menu'}
+          onClick={this.onDropClose}
+        >
+          {content}
+        </Button>
+      </Box>
     );
 
     return (
@@ -143,35 +155,37 @@ class Menu extends Component {
             onOpen={() => this.setState({ open: true })}
             onClose={() => this.setState({ open: false })}
             dropContent={
-              <Box background={dropBackground}>
+              <ContainerBox background={dropBackground}>
                 {dropAlign.top === 'top' ? controlMirror : undefined}
-                <Box>
+                <Box overflow='auto'>
                   {items.map(
                     (item, index) => (
-                      <Button
-                        ref={(ref) => {
-                          this.buttonRefs[index] = ref;
-                        }}
-                        active={activeItemIndex === index}
-                        key={`menuItem_${index}`}
-                        hoverIndicator='background'
-                        onClick={item.onClick ? (...args) => {
-                          item.onClick(...args);
-                          if (item.close !== false) {
-                            this.onDropClose();
-                          }
-                        } : undefined}
-                        href={item.href}
-                      >
-                        <Box align='start' pad='small' direction='row'>
-                          {item.icon}{item.label}
-                        </Box>
-                      </Button>
+                      <Box flex={false}>
+                        <Button
+                          ref={(ref) => {
+                            this.buttonRefs[index] = ref;
+                          }}
+                          active={activeItemIndex === index}
+                          key={`menuItem_${index}`}
+                          hoverIndicator='background'
+                          onClick={item.onClick ? (...args) => {
+                            item.onClick(...args);
+                            if (item.close !== false) {
+                              this.onDropClose();
+                            }
+                          } : undefined}
+                          href={item.href}
+                        >
+                          <Box align='start' pad='small' direction='row'>
+                            {item.icon}{item.label}
+                          </Box>
+                        </Button>
+                      </Box>
                     )
                   )}
                 </Box>
                 {dropAlign.bottom === 'bottom' ? controlMirror : undefined }
-              </Box>
+              </ContainerBox>
             }
           >
             {content}
