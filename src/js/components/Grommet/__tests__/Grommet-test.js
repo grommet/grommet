@@ -6,7 +6,7 @@ import { cleanup, renderIntoDocument } from 'react-testing-library';
 import { hpe as hpeTheme } from '../../../themes';
 
 import { Grommet } from '../';
-import AnnounceContext from '../../../contexts/AnnounceContext';
+import { AnnounceContext } from '../../../contexts';
 
 class TestAnnouncer extends Component {
   componentDidMount() {
