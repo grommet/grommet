@@ -59,6 +59,7 @@
     "babel-jest": "^23.0.1",
     "babel-loader": "^7.1.1",
     "babel-plugin-styled-components": "^1.1.7",
+    "babel-plugin-transform-imports": "^1.5.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-1": "^6.24.1",
