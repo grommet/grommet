@@ -1,2 +1,2 @@
 
-export { Paragraph } from './Paragraph';
+export { ParagraphWrapper as Paragraph } from './Paragraph';
