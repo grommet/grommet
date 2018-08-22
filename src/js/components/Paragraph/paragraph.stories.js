@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Paragraph from '../Paragraph/Paragraph';
-import Grommet from '../Grommet/Grommet';
+import { Paragraph } from '../Paragraph';
+import { Grommet } from '../Grommet';
 import { grommet } from '../../themes';
 
 const sizes = ['xlarge', 'large', 'medium', 'small'];
@@ -17,7 +17,7 @@ class All extends Component {
     return (
       <Grommet theme={grommet}>
         {sizes.map(size => (
-          <Paragraph size={size}>
+          <Paragraph key={size} size={size}>
             {`Paragraph ${size}`}
             {paragraphFiller}
           </Paragraph>

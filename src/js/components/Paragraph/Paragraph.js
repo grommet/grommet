@@ -3,8 +3,8 @@ import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
 
-import StyledParagraph from './StyledParagraph';
-import doc from './doc';
+import { StyledParagraph } from './StyledParagraph';
+import { documentParagraph } from './doc';
 
 class Paragraph extends Component {
   render() {
@@ -17,9 +17,9 @@ class Paragraph extends Component {
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  doc(Paragraph);
+  documentParagraph(Paragraph);
 }
 
-export default compose(
+export const ParagraphWrapper = compose(
   withTheme,
 )(Paragraph);
