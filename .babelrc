@@ -12,7 +12,7 @@
       "plugins": [
         ["transform-imports", {
           "grommet-icons": {
-             "transform": "grommet-icons/es6/components/icons/${member}",
+             "transform": "grommet-icons/es6/icons/${member}",
              "preventFullImport": true
           }
         }]
