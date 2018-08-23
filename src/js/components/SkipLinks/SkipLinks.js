@@ -5,9 +5,9 @@ import { Box } from '../Box';
 import { Heading } from '../Heading';
 import { Layer } from '../Layer';
 
-import doc from './doc';
+import { doc } from './doc';
 
-class SkipLinks extends Component {
+export class SkipLinks extends Component {
   static defaultProps = {
     messages: {
       skipTo: 'Skip To',
@@ -63,5 +63,3 @@ class SkipLinks extends Component {
 if (process.env.NODE_ENV !== 'production') {
   doc(SkipLinks);
 }
-
-export default SkipLinks;

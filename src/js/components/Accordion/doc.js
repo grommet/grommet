@@ -4,28 +4,9 @@ import {
   getAvailableAtBadge,
 } from '../../utils';
 
-import AccordionPanel from './AccordionPanel';
+import { AccordionPanel } from '../AccordionPanel';
 
-export function accordionPanel(Panel) {
-  const DocumentedAccordionPanel = describe(Panel)
-    .description(
-      'An Accordion panel.'
-    );
-  DocumentedAccordionPanel.propTypes = {
-    label: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.node,
-    ]).description(
-      'The panel label.'
-    ).isRequired,
-    header: PropTypes.node.description(
-      'If specified, the entire panel header will be managed by the caller.'
-    ),
-  };
-  return DocumentedAccordionPanel;
-}
-
-export default (Accordion) => {
+export const doc = (Accordion) => {
   const DocumentedAccordion = describe(Accordion)
     .availableAt(getAvailableAtBadge('Accordion'))
     .description('An accordion containing collapsible panels.')

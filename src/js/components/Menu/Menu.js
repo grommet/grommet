@@ -5,10 +5,9 @@ import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
-import { Keyboard } from '../Keyboard';
 import { DropButton } from '../DropButton';
+import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-
 import { withForwardRef, withTheme } from '../hocs';
 import { evalStyle } from '../../utils';
 
@@ -160,13 +159,12 @@ class Menu extends Component {
                 <Box overflow='auto'>
                   {items.map(
                     (item, index) => (
-                      <Box flex={false}>
+                      <Box key={`menuItem_${index}`} flex={false}>
                         <Button
                           ref={(ref) => {
                             this.buttonRefs[index] = ref;
                           }}
                           active={activeItemIndex === index}
-                          key={`menuItem_${index}`}
                           hoverIndicator='background'
                           onClick={item.onClick ? (...args) => {
                             item.onClick(...args);

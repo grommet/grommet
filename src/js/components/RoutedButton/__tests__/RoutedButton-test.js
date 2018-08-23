@@ -5,8 +5,7 @@ import 'jest-styled-components';
 
 import { findAllByType } from '../../../utils';
 
-import { Grommet } from '../../Grommet';
-import { RoutedButton } from '../';
+import { Grommet, RoutedButton } from '../../';
 
 class FakeRouter extends Component {
   static childContextTypes = {

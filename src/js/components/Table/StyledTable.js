@@ -43,11 +43,9 @@ export const StyledTableHeader = styled.thead`
 export const StyledTableFooter = styled.tfoot`
 `;
 
-const StyledTable = styled.table`
+export const StyledTable = styled.table`
   border-spacing: 0;
   border-collapse: collapse;
-`;
-
-export default StyledTable.extend`
+`.extend`
   ${props => props.theme.table && props.theme.table.extend}
 `;

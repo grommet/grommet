@@ -73,15 +73,13 @@ const weightStyle = css`
   font-weight: ${props => props.weight};
 `;
 
-const StyledText = styled.span`
+export const StyledText = styled.span`
   ${props => sizeStyle(props)}
   ${props => props.margin && marginStyle(props)}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.truncate && truncateStyle}
   ${props => props.color && colorStyle}
   ${props => props.weight && weightStyle}
-`;
-
-export default StyledText.extend`
+`.extend`
   ${props => props.theme.text && props.theme.text.extend}
 `;

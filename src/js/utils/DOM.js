@@ -147,20 +147,3 @@ export const isNodeBeforeScroll = (node, target = window) => {
   const { top: targetTop } = target.getBoundingClientRect();
   return top <= targetTop;
 };
-
-export default {
-  copyAttribute,
-  filterByFocusable,
-  findScrollParents,
-  findVisibleParent,
-  isNodeAfterScroll,
-  isNodeBeforeScroll,
-  getBodyChildElements,
-  getFirstFocusableDescendant,
-  getNewContainer,
-  makeNodeFocusable,
-  makeNodeUnfocusable,
-  setFocusWithoutScroll,
-  setTabIndex,
-  unsetTabIndex,
-};

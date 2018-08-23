@@ -10,7 +10,6 @@ import {
 } from '../../utils';
 
 import { withTheme } from '../hocs';
-
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
@@ -270,4 +269,6 @@ class SelectContainer extends Component {
   }
 }
 
-export default withTheme(SelectContainer);
+const SelectContainerWrapper = withTheme(SelectContainer);
+
+export { SelectContainerWrapper as SelectContainer };

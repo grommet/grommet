@@ -43,13 +43,11 @@ const textAlignStyle = css`
   text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
 `;
 
-const StyledParagraph = styled.p`
+export const StyledParagraph = styled.p`
   ${props => sizeStyle(props)}
   ${props => props.margin && marginStyle(props)}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.color && colorStyle}
-`;
-
-export default StyledParagraph.extend`
+`.extend`
   ${props => props.theme.paragraph && props.theme.paragraph.extend}
 `;

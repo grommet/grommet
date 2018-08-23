@@ -13,8 +13,12 @@ const FOLDER = path.resolve('src/js/components');
 
 components(FOLDER).forEach((component) => {
   /* eslint-disable */
-  const doc = require(path.join(FOLDER, component, 'doc.js')).default;
-  const Component = require(path.join(FOLDER, component, 'index.js')).default;
+  const docModule = require(path.join(FOLDER, component, 'doc.js'));
+  const doc = docModule.doc || docModule.default;
+  const componentModule = require(path.join(FOLDER, component, 'index.js'));
+  // we use the second array element since the first is '__esModule'.
+  const Component = componentModule.default
+    || componentModule[Object.keys(componentModule)[1]];
   /* eslint-enable */
 
   const destination = path.join(FOLDER, component, 'README.md');

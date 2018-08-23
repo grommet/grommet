@@ -1,20 +1,8 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { ROUTER_PROPS, getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils';
 
-export function routedButton(RoutedButton) {
-  const DocumentedRoutedButton = describe(RoutedButton)
-    .availableAt(getAvailableAtBadge('RoutedButton'))
-    .description('A button with support for React Router.')
-    .usage(
-      `import { RoutedButton } from 'grommet';
-<RoutedButton primary={true} path='/documentation' />`
-    );
-  DocumentedRoutedButton.propTypes = { ...ROUTER_PROPS };
-  return DocumentedRoutedButton;
-}
-
-export default (Button) => {
+export const doc = (Button) => {
   const DocumentedButton = describe(Button)
     .availableAt(getAvailableAtBadge('Button'))
     .description(

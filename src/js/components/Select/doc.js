@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { a11yTitlePropType, getAvailableAtBadge } from '../../utils';
 
-export default (Select) => {
+export const doc = (Select) => {
   const DocumentedSelect = describe(Select)
     .availableAt(getAvailableAtBadge('Select'))
     .description(

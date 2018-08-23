@@ -1,36 +1,38 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Grommet from './Grommet/Grommet';
-import Accordion from './Accordion/Accordion';
-import AccordionPanel from './Accordion/AccordionPanel';
-import Anchor from './Anchor/Anchor';
-import Box from './Box/Box';
-import Button from './Button/Button';
-import Calendar from './Calendar/Calendar';
-import Chart from './Chart/Chart';
-import CheckBox from './CheckBox/CheckBox';
-import Clock from './Clock/Clock';
-import DataTable from './DataTable/DataTable';
-import Diagram from './Diagram/Diagram';
-import Distribution from './Distribution/Distribution';
-import FormField from './FormField/FormField';
-import Grid from './Grid/Grid';
-import Heading from './Heading/Heading';
-import Menu from './Menu/Menu';
-import Meter from './Meter/Meter';
-import Paragraph from './Paragraph/Paragraph';
-import RadioButton from './RadioButton/RadioButton';
-import RangeInput from './RangeInput/RangeInput';
-import RangeSelector from './RangeSelector/RangeSelector';
-import Select from './Select/Select';
-import Stack from './Stack/Stack';
-import Tab from './Tabs/Tab';
-import Tabs from './Tabs/Tabs';
-import Text from './Text/Text';
-import TextArea from './TextArea/TextArea';
-import TextInput from './TextInput/TextInput';
-import Video from './Video/Video';
+import {
+  Grommet,
+  Accordion,
+  AccordionPanel,
+  Anchor,
+  Box,
+  Button,
+  Calendar,
+  Chart,
+  CheckBox,
+  Clock,
+  DataTable,
+  Diagram,
+  Distribution,
+  FormField,
+  Grid,
+  Heading,
+  Menu,
+  Meter,
+  Paragraph,
+  RadioButton,
+  RangeInput,
+  RangeSelector,
+  Select,
+  Stack,
+  Tab,
+  Tabs,
+  Text,
+  TextArea,
+  TextInput,
+  Video,
+} from './';
 import { grommet, dark, hpe } from '../themes';
 import { generate } from '../themes/base';
 import { deepMerge } from '../utils';

@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { TableRow, TableCell } from '../Table';
 import { InfiniteScroll } from '../InfiniteScroll';
+import { TableRow } from '../TableRow';
+import { TableCell } from '../TableCell';
 
-import Cell from './Cell';
+import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 
-const Body = ({ columns, data, onMore, primaryProperty, size, theme, ...rest }) => (
+export const Body = ({ columns, data, onMore, primaryProperty, size, theme, ...rest }) => (
   <StyledDataTableBody size={size} theme={theme} {...rest}>
     <InfiniteScroll
       items={data}
@@ -33,5 +34,3 @@ const Body = ({ columns, data, onMore, primaryProperty, size, theme, ...rest }) 
     </InfiniteScroll>
   </StyledDataTableBody>
 );
-
-export default Body;

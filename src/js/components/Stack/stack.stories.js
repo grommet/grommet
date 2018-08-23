@@ -3,9 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { grommet } from '../../themes';
 
-import Stack from '../Stack/Stack';
-import Grommet from '../Grommet/Grommet';
-import Box from '../Box/Box';
+import { Grommet, Box, Stack } from '../';
 
 class SimpleStack extends Component {
   render() {

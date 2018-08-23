@@ -38,5 +38,3 @@ export const StyledDataTableFooter = styled.tfoot`
     table-layout: fixed;
   `}
 `;
-
-export default {};

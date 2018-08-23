@@ -5,10 +5,9 @@ import React, {
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
-
 import { withTheme } from '../hocs';
 
-import doc from './doc';
+import { doc } from './doc';
 
 import { AccordionContext } from './AccordionContext';
 
@@ -103,6 +102,8 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Accordion);
 }
 
-export default compose(
+const AccordionWrapper = compose(
   withTheme,
 )(Accordion);
+
+export { AccordionWrapper as Accordion };

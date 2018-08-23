@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Table from '../Table/Table';
-import TableBody from '../Table/TableBody';
-import TableCell from '../Table/TableCell';
-import TableFooter from '../Table/TableFooter';
-import TableHeader from '../Table/TableHeader';
-import TableRow from '../Table/TableRow';
-import Text from '../Text/Text';
-import Grommet from '../Grommet/Grommet';
+import { Table, TableBody, TableCell, TableFooter, TableHeader, TableRow } from '../';
+import { Text } from '../Text';
+import { Grommet } from '../Grommet';
 import { grommet } from '../../themes';
 
 // Always should store amount in cents to avoid precision errors

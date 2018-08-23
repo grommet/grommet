@@ -119,11 +119,6 @@ exports[`Select basic 1`] = `
   text-align: inherit;
 }
 
-.c4 {
-  position: relative;
-  width: 100%;
-}
-
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -156,6 +151,11 @@ exports[`Select basic 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
 }
 
 .c5 {
@@ -294,7 +294,7 @@ exports[`Select complex options and children 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -349,7 +349,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -599,7 +599,7 @@ exports[`Select deselect an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -656,7 +656,7 @@ exports[`Select disabled 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -712,7 +712,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -867,11 +867,6 @@ exports[`Select multiple 1`] = `
   text-align: inherit;
 }
 
-.c4 {
-  position: relative;
-  width: 100%;
-}
-
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -904,6 +899,11 @@ exports[`Select multiple 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
 }
 
 .c5 {
@@ -1047,7 +1047,7 @@ exports[`Select multiple values 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -1103,7 +1103,7 @@ exports[`Select multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -1385,7 +1385,7 @@ exports[`Select opens 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1440,7 +1440,7 @@ exports[`Select opens 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1749,7 +1749,7 @@ exports[`Select search 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1804,7 +1804,7 @@ exports[`Select search 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-bqUxsy eqNqXm"
+          class="StyledTextInput-bqUxsy iTWmNe"
           type="search"
           value=""
         />
@@ -2037,7 +2037,7 @@ exports[`Select select an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -2136,7 +2136,7 @@ exports[`Select select an option with enter 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -2191,7 +2191,7 @@ exports[`Select select another option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy qXAoY"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -2349,11 +2349,6 @@ exports[`Select size 1`] = `
   text-align: inherit;
 }
 
-.c4 {
-  position: relative;
-  width: 100%;
-}
-
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
@@ -2388,6 +2383,11 @@ exports[`Select size 1`] = `
 .c6::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
 }
 
 .c5 {

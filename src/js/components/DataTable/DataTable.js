@@ -3,12 +3,12 @@ import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
 
-import Header from './Header';
-import Footer from './Footer';
-import Body from './Body';
-import GroupedBody from './GroupedBody';
-import buildState from './buildState';
-import doc from './doc';
+import { Header } from './Header';
+import { Footer } from './Footer';
+import { Body } from './Body';
+import { GroupedBody } from './GroupedBody';
+import { buildState } from './buildState';
+import { doc } from './doc';
 import { StyledDataTable } from './StyledDataTable';
 
 class DataTable extends Component {
@@ -139,6 +139,8 @@ if (process.env.NODE_ENV !== 'production') {
   doc(DataTable);
 }
 
-export default compose(
+const DataTableWrapper = compose(
   withTheme,
 )(DataTable);
+
+export { DataTableWrapper as DataTable };

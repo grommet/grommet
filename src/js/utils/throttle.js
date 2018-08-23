@@ -18,5 +18,3 @@ export const throttle = (fn, threshhold = 250, scope = this) => {
     }
   };
 };
-
-export default throttle;

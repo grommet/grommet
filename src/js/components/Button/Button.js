@@ -1,13 +1,12 @@
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
 
-import Box from '../Box/Box';
-import Text from '../Text/Text';
-
+import { Box } from '../Box';
+import { Text } from '../Text';
 import { withFocus, withForwardRef, withTheme } from '../hocs';
 
-import StyledButton from './StyledButton';
-import doc from './doc';
+import { StyledButton } from './StyledButton';
+import { doc } from './doc';
 
 const AnchorStyledButton = StyledButton.withComponent('a');
 
@@ -102,8 +101,10 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Button);
 }
 
-export default compose(
+const ButtonWrapper = compose(
   withFocus,
   withTheme,
   withForwardRef,
 )(Button);
+
+export { ButtonWrapper as Button };

@@ -2,25 +2,9 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-import Tab from './Tab';
+import { Tab } from '../Tab';
 
-export const docTab = (TabComponent) => { // can't call this Tab due to line 5
-  const DocumentedTab = describe(TabComponent)
-    .description('One tab within Tabs.'
-    ).usage(
-      `import { Tab } from 'grommet';
-<Tab />`
-    );
-
-  DocumentedTab.propTypes = {
-    title: PropTypes.string
-      .description('The title of the tab.'),
-  };
-
-  return DocumentedTab;
-};
-
-export default (Tabs) => {
+export const doc = (Tabs) => {
   const DocumentedTabs = describe(Tabs)
     .availableAt(getAvailableAtBadge('Tabs'))
     .description('A tabular view component.')

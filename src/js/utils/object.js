@@ -1,15 +1,15 @@
-export function isObject(item) {
-  return (item && typeof item === 'object' && !Array.isArray(item));
-}
 
-export function deepFreeze(obj) {
+export const isObject = item =>
+  (item && typeof item === 'object' && !Array.isArray(item));
+
+export const deepFreeze = (obj) => {
   Object.keys(obj).forEach(
     key => key && isObject(obj[key]) && Object.freeze(obj[key])
   );
   return Object.freeze(obj);
-}
+};
 
-export function deepMerge(target, ...sources) {
+export const deepMerge = (target, ...sources) => {
   if (!sources.length) {
     return target;
   }
@@ -31,9 +31,9 @@ export function deepMerge(target, ...sources) {
     }
   });
   return output;
-}
+};
 
-export function removeUndefined(obj) {
+export const removeUndefined = (obj) => {
   const result = {};
   Object.keys(obj).forEach((key) => {
     if (obj[key] !== undefined) {
@@ -41,6 +41,4 @@ export function removeUndefined(obj) {
     }
   });
   return result;
-}
-
-export default { deepFreeze, deepMerge, isObject, removeUndefined };
+};

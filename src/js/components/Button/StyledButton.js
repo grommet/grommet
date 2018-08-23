@@ -108,7 +108,7 @@ const plainStyle = css`
   text-align: inherit;
 `;
 
-const StyledButton = styled.button`
+export const StyledButton = styled.button`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -144,8 +144,6 @@ const StyledButton = styled.button`
   ${props => props.hasIcon && !props.label && !props.plain && `
     padding: ${props.theme.global.edgeSize.small};
   `}
-`;
-
-export default StyledButton.extend`
+`.extend`
   ${props => props.theme.button.extend}
 `;

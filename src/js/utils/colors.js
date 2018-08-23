@@ -2,21 +2,20 @@
 export const colorForName = (name, theme) =>
   theme.global.colors[name] || name;
 
-function parseHexToRGB(color) {
+const parseHexToRGB = color =>
   // https://stackoverflow.com/a/42429333
-  return color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16));
-}
+  color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16));
 
 const canExtractRGBArray = color => /^#/.test(color) || /^rgb/.test(color);
 
-function getRGBArray(color) {
+const getRGBArray = (color) => {
   if (/^#/.test(color)) {
     return parseHexToRGB(color);
   } else if (/^rgb/.test(color)) {
     return color.match(/rgba?\((\s?[0-9]*\s?),(\s?[0-9]*\s?),(\s?[0-9]*\s?).*?\)/).splice(1);
   }
   return color;
-}
+};
 
 export const colorIsDark = (color) => {
   const [red, green, blue] = getRGBArray(color);
@@ -48,5 +47,3 @@ export const normalizeColor = (color, theme) => {
   }
   return result;
 };
-
-export default { colorForName, colorIsDark, getRGBA, normalizeColor };

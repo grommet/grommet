@@ -12,5 +12,3 @@ export const backgroundPropType = PropTypes.oneOfType([
     ]),
   }),
 ]).description('Background color');
-
-export default { a11yTitlePropType, backgroundPropType };

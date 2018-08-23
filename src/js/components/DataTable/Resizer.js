@@ -8,7 +8,7 @@ const ResizerBox = styled(Box)`
   cursor: col-resize;
 `;
 
-export default class Resizer extends Component {
+export class Resizer extends Component {
   state = {};
 
   ref = React.createRef();

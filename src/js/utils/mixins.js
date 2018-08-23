@@ -1,11 +1,10 @@
 import { css } from 'styled-components';
 
-export function parseMetricToNum(fontAsString) {
-  return parseFloat(fontAsString.replace(/[^0-9/.]/g, ''), 10);
-}
+export const parseMetricToNum = fontAsString =>
+  parseFloat(fontAsString.replace(/[^0-9/.]/g, ''), 10);
 
-export function fontSize(size, lineHeight) {
-  return css`
+export const fontSize = (size, lineHeight) =>
+  css`
     font-size: ${
       props => `${(parseMetricToNum(size) / parseMetricToNum(props.theme.global.font.size)) * 1}rem`
     };
@@ -16,21 +15,18 @@ export function fontSize(size, lineHeight) {
       )
     )};
   `;
-}
 
-export function lapAndUp(content) {
-  return css`
+export const lapAndUp = content =>
+  css`
     @media only screen and (min-width: ${props => `${props.theme.global.breakpoints.narrow + 1}px`}) { ${content} }
   `;
-}
 
-export function palm(content) {
-  return css`
+export const palm = content =>
+  css`
     @media only screen and (max-width: ${props => `${props.theme.global.breakpoints.narrow}px`}) { ${content} }
   `;
-}
 
-export function findAllByType(component, type) {
+export const findAllByType = (component, type) => {
   let matches = [];
 
   if (component.type === type) {
@@ -44,10 +40,10 @@ export function findAllByType(component, type) {
   }
 
   return matches;
-}
+};
 
-export function getAvailableAtBadge(availableAt) {
-  return [
+export const getAvailableAtBadge = availableAt =>
+  [
     {
       url: `https://storybook.grommet.io/?selectedKind=${availableAt}&full=0&addons=0&stories=1&panelRight=0`,
       badge: 'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
@@ -59,8 +55,3 @@ export function getAvailableAtBadge(availableAt) {
       label: 'CodeSandbox',
     },
   ];
-}
-
-export default {
-  fontSize, findAllByType, getAvailableAtBadge, lapAndUp, palm,
-};

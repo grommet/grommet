@@ -8,8 +8,8 @@ import { Heading } from '../Heading';
 import { withTheme, withForwardRef } from '../hocs';
 import { evalStyle, normalizeColor } from '../../utils';
 
-import { accordionPanel } from './doc';
-import { AccordionContext } from './AccordionContext';
+import { doc } from './doc';
+import { AccordionContext } from '../Accordion/AccordionContext';
 
 class AccordionPanel extends Component {
   state = {
@@ -107,10 +107,12 @@ class AccordionPanel extends Component {
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  accordionPanel(AccordionPanel);
+  doc(AccordionPanel);
 }
 
-export default compose(
+const AccordionPanelWrapper = compose(
   withTheme,
   withForwardRef,
 )(AccordionPanel);
+
+export { AccordionPanelWrapper as AccordionPanel };

@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Close, FormDown } from 'grommet-icons';
 
-import DropButton from '../DropButton/DropButton';
-import Grommet from '../Grommet/Grommet';
-import Box from '../Box/Box';
-import Heading from '../Heading/Heading';
-import Button from '../Button/Button';
-import Text from '../Text/Text';
-import Calendar from '../Calendar/Calendar';
+import { Grommet, Box, Button, Calendar, DropButton, Heading, Text } from '../';
 import { grommet } from '../../themes';
 
 const DropContent = ({ onClose }) => (

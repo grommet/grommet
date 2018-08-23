@@ -9,10 +9,8 @@ const hiddenAnchor = {
   position: 'absolute',
 };
 
-const SkipLinkTarget = ({ label, ...rest }) => (
+export const SkipLinkTarget = ({ label, ...rest }) => (
   <Anchor {...rest} tabIndex='-1' aria-hidden='true' style={hiddenAnchor}>
     {label}
   </Anchor>
 );
-
-export default SkipLinkTarget;

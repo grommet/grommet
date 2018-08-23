@@ -2,7 +2,7 @@ import React from 'react';
 import 'jest-styled-components';
 import { cleanup, renderIntoDocument, Simulate } from 'react-testing-library';
 
-import { SkipLinks, SkipLink, SkipLinkTarget } from '../';
+import { SkipLinks, SkipLink, SkipLinkTarget } from '../../';
 
 describe('SkipLink', () => {
   afterEach(cleanup);

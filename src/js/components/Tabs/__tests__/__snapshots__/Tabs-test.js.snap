@@ -1,17 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs Tab 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -99,6 +88,17 @@ exports[`Tabs Tab 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:699px) {
@@ -442,17 +442,6 @@ exports[`Tabs change to second tab 2`] = `
 `;
 
 exports[`Tabs complex title 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -528,6 +517,17 @@ exports[`Tabs complex title 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:699px) {
@@ -650,17 +650,6 @@ exports[`Tabs complex title 1`] = `
 `;
 
 exports[`Tabs no Tab 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -680,6 +669,17 @@ exports[`Tabs no Tab 1`] = `
   justify-content: center;
   margin: 0;
   padding: 0;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:699px) {

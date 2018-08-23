@@ -4,9 +4,9 @@ import { compose } from 'recompose';
 import { Box } from '../Box';
 import { withTheme } from '../hocs';
 
-import TableContext from './TableContext';
-import { StyledTableCell } from './StyledTable';
-import { docTableCell } from './doc';
+import { TableContext } from '../Table/TableContext';
+import { StyledTableCell } from '../Table/StyledTable';
+import { doc } from './doc';
 
 const TableCell = ({
   children, plain, scope, size, theme, verticalAlign, ...rest
@@ -36,9 +36,11 @@ TableCell.defaultProps = {
 };
 
 if (process.env.NODE_ENV !== 'production') {
-  docTableCell(TableCell);
+  doc(TableCell);
 }
 
-export default compose(
+const TableCellWrapper = compose(
   withTheme,
 )(TableCell);
+
+export { TableCellWrapper as TableCell };

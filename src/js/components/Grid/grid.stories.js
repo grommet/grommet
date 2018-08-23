@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Grid from '../Grid/Grid';
-import Box from '../Box/Box';
-import Button from '../Button/Button';
-import Text from '../Text/Text';
-import Grommet from '../Grommet/Grommet';
+import { Grommet, Box, Button, Grid, Text } from '../';
+import { grommet } from '../../themes';
 
 class AppGrid extends Component {
   state = { sidebar: true }
   render() {
     const { sidebar } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <Grid
           rows={['auto', 'medium']}
           columns={['auto', 'flex']}

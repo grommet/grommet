@@ -1,17 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RoutedButton renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -67,6 +56,17 @@ exports[`RoutedButton renders 1`] = `
 .c1:hover svg {
   -webkit-transition: none;
   transition: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:699px) {

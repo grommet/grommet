@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Button from './Button';
-import { routedButton } from './doc';
+import { Button } from '../Button';
+import { doc } from './doc';
 
-class RoutedButton extends Component {
+export class RoutedButton extends Component {
   static contextTypes = {
     router: PropTypes.object.isRequired,
   }
@@ -46,7 +46,5 @@ class RoutedButton extends Component {
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  routedButton(RoutedButton);
+  doc(RoutedButton);
 }
-
-export default RoutedButton;

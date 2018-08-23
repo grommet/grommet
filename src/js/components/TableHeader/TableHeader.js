@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import TableContext from './TableContext';
-import { StyledTableHeader } from './StyledTable';
-import { docTableHeader } from './doc';
+import { TableContext } from '../Table/TableContext';
+import { StyledTableHeader } from '../Table/StyledTable';
+import { doc } from './doc';
 
-class TableHeader extends Component {
+export class TableHeader extends Component {
   render() {
     return (
       <TableContext.Provider value='header'>
@@ -15,7 +15,5 @@ class TableHeader extends Component {
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  docTableHeader(TableHeader);
+  doc(TableHeader);
 }
-
-export default TableHeader;

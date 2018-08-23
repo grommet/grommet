@@ -5,7 +5,7 @@ import { cleanup, fireEvent, render, renderIntoDocument, Simulate } from 'react-
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import DropButton from '../DropButton';
+import { DropButton } from '../';
 
 describe('DropButton', () => {
   beforeEach(createPortal);

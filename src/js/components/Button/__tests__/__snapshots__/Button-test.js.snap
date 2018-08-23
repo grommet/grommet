@@ -1,17 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button color renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -101,6 +90,17 @@ exports[`Button color renders 1`] = `
   box-shadow: 0px 0px 0px 2px #FD6FFF;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width:699px) {
   .c2 {
     margin: 0;
@@ -178,17 +178,6 @@ exports[`Button color renders 1`] = `
 `;
 
 exports[`Button disabled renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -207,6 +196,17 @@ exports[`Button disabled renders 1`] = `
   opacity: 0.3;
   cursor: default;
   padding: 4px 22px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (min-width:700px) {
@@ -230,17 +230,6 @@ exports[`Button disabled renders 1`] = `
 `;
 
 exports[`Button focus renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -301,6 +290,17 @@ exports[`Button focus renders 1`] = `
   outline: #FD6FFF solid 2px;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width:699px) {
   .c2 {
     margin: 0;
@@ -348,17 +348,6 @@ exports[`Button focus renders 1`] = `
 `;
 
 exports[`Button hoverIndicator as object renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -379,6 +368,17 @@ exports[`Button hoverIndicator as object renders 1`] = `
 
 .c1:hover {
   color: black;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (min-width:700px) {
@@ -405,17 +405,6 @@ exports[`Button hoverIndicator as object renders 1`] = `
 `;
 
 exports[`Button hoverIndicator as object with color renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -436,6 +425,17 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
 
 .c1:hover {
   color: black;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (min-width:700px) {
@@ -462,17 +462,6 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
 `;
 
 exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -493,6 +482,17 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
 
 .c1:hover {
   color: black;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (min-width:700px) {
@@ -519,17 +519,6 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
 `;
 
 exports[`Button hoverIndicator as object with invalid color renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -550,6 +539,17 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
 
 .c1:hover {
   color: black;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (min-width:700px) {
@@ -576,17 +576,6 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
 `;
 
 exports[`Button hoverIndicator as object with invalid color renders 2`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -607,6 +596,17 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
 
 .c1:hover {
   color: black;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (min-width:700px) {
@@ -633,17 +633,6 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
 `;
 
 exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -664,6 +653,17 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
 
 .c1:hover {
   color: black;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (min-width:700px) {
@@ -690,17 +690,6 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
 `;
 
 exports[`Button hoverIndicator renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -723,6 +712,17 @@ exports[`Button hoverIndicator renders 1`] = `
   background: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (min-width:700px) {
@@ -749,17 +749,6 @@ exports[`Button hoverIndicator renders 1`] = `
 `;
 
 exports[`Button href renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -787,6 +776,17 @@ exports[`Button href renders 1`] = `
   transition: none;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
@@ -808,17 +808,6 @@ exports[`Button href renders 1`] = `
 `;
 
 exports[`Button icon label renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -883,6 +872,17 @@ exports[`Button icon label renders 1`] = `
   transition: none;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width:699px) {
   .c2 {
     margin: 0;
@@ -934,17 +934,6 @@ exports[`Button icon label renders 1`] = `
 `;
 
 exports[`Button primary renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1007,6 +996,17 @@ exports[`Button primary renders 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width:699px) {
   .c2 {
     margin: 0;
@@ -1054,17 +1054,6 @@ exports[`Button primary renders 1`] = `
 `;
 
 exports[`Button renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1122,6 +1111,17 @@ exports[`Button renders 1`] = `
   transition: none;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width:699px) {
   .c2 {
     margin: 0;
@@ -1169,17 +1169,6 @@ exports[`Button renders 1`] = `
 `;
 
 exports[`Button reverse icon label renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1244,6 +1233,17 @@ exports[`Button reverse icon label renders 1`] = `
   transition: none;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width:699px) {
   .c2 {
     margin: 0;
@@ -1295,17 +1295,6 @@ exports[`Button reverse icon label renders 1`] = `
 `;
 
 exports[`Button warns about invalid icon render 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1349,6 +1338,17 @@ exports[`Button warns about invalid icon render 1`] = `
   text-align: inherit;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media only screen and (max-width:699px) {
   .c2 {
     margin: 0;
@@ -1389,17 +1389,6 @@ exports[`Button warns about invalid icon render 1`] = `
 `;
 
 exports[`Button warns about invalid label render 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1446,6 +1435,17 @@ exports[`Button warns about invalid label render 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:699px) {

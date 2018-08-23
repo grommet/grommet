@@ -19,7 +19,7 @@ const plainStyle = css`
   -webkit-appearance: none;
 `;
 
-const StyledTextInput = styled.input`
+export const StyledTextInput = styled.input`
   ${inputStyle}
   width: 100%;
   -webkit-appearance: textfield;
@@ -43,6 +43,8 @@ const StyledTextInput = styled.input`
     border: none;
     outline: none;
   }
+`.extend`
+${props => props.theme.textInput && props.theme.textInput.extend}
 `;
 
 export const StyledTextInputContainer = styled.div`
@@ -68,8 +70,4 @@ export const StyledSuggestions = styled.ol`
   margin: 0;
   padding: 0;
   list-style-type: none;
-`;
-
-export default StyledTextInput.extend`
-  ${props => props.theme.textInput && props.theme.textInput.extend}
 `;

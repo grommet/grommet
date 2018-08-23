@@ -8,7 +8,7 @@ const disabledStyle = `
   text-decoration: none;
 `;
 
-const StyledAnchor = styled.a`
+export const StyledAnchor = styled.a`
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -32,8 +32,6 @@ const StyledAnchor = styled.a`
 
   ${props => props.disabled && disabledStyle}
   ${props => props.focus && focusStyle}
-`;
-
-export default StyledAnchor.extend`
+`.extend`
   ${props => props.theme.anchor.extend}
 `;

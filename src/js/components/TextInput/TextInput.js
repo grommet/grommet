@@ -4,21 +4,22 @@ import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { Drop } from '../Drop';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
-import { Drop } from '../Drop';
 import {
   withAnnounce,
   withForwardRef,
   withTheme,
 } from '../hocs';
 
-import StyledTextInput, {
+import {
+  StyledTextInput,
   StyledTextInputContainer,
   StyledPlaceholder,
   StyledSuggestions,
 } from './StyledTextInput';
-import doc from './doc';
+import { doc } from './doc';
 
 function renderLabel(suggestion) {
   if (suggestion && typeof suggestion === 'object') {
@@ -320,8 +321,10 @@ if (process.env.NODE_ENV !== 'production') {
   doc(TextInput);
 }
 
-export default compose(
+const TextInputWrapper = compose(
   withTheme,
   withAnnounce,
   withForwardRef,
 )(TextInput);
+
+export { TextInputWrapper as TextInput };
