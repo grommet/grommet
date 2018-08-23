@@ -4,6 +4,7 @@
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
+  "sideEffects": false,
   "description": "focus on the essential experience",
   "authors": [
     "Alan Souza",
