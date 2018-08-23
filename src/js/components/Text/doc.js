@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (Text) => {
+export const doc = (Text) => {
   const DocumentedText = describe(Text)
     .availableAt(getAvailableAtBadge('Text'))
     .description('Arbitrary text.')

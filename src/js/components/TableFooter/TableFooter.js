@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import TableContext from './TableContext';
-import { StyledTableFooter } from './StyledTable';
-import { docTableFooter } from './doc';
+import { TableContext } from '../Table/TableContext';
+import { StyledTableFooter } from '../Table/StyledTable';
+import { doc } from './doc';
 
 class TableFooter extends Component {
   render() {
@@ -15,7 +15,7 @@ class TableFooter extends Component {
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  docTableFooter(TableFooter);
+  doc(TableFooter);
 }
 
-export default TableFooter;
+export { TableFooter };

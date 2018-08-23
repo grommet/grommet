@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 
-import Box from '../Box/Box';
-import Text from '../Text/Text';
-import Anchor from '../Anchor/Anchor';
-import Button from '../Button/Button';
-import Grommet from '../Grommet/Grommet';
+import { Grommet, Anchor, Box, Button, Text } from '../';
 import { grommet } from '../../themes';
 
 class SimpleBox extends Component {

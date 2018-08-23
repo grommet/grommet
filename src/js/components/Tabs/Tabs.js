@@ -1,10 +1,9 @@
 import React, { cloneElement, Children, Component } from 'react';
 
-import { Box } from '../Box';
+import { Box } from '../';
+import { doc } from './doc';
 
-import doc from './doc';
-
-class Tabs extends Component {
+export class Tabs extends Component {
   static defaultProps = {
     justify: 'center',
     messages: {
@@ -87,5 +86,3 @@ class Tabs extends Component {
 if (process.env.NODE_ENV !== 'production') {
   doc(Tabs);
 }
-
-export default Tabs;

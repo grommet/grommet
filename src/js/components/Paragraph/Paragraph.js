@@ -4,7 +4,7 @@ import { compose } from 'recompose';
 import { withTheme } from '../hocs';
 
 import { StyledParagraph } from './StyledParagraph';
-import { documentParagraph } from './doc';
+import { doc } from './doc';
 
 class Paragraph extends Component {
   render() {
@@ -17,9 +17,11 @@ class Paragraph extends Component {
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  documentParagraph(Paragraph);
+  doc(Paragraph);
 }
 
-export const ParagraphWrapper = compose(
+const ParagraphWrapper = compose(
   withTheme,
 )(Paragraph);
+
+export { ParagraphWrapper as Paragraph };

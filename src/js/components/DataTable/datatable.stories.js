@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import DataTable from './DataTable';
-import Grommet from '../Grommet/Grommet';
-import Meter from '../Meter/Meter';
-import Box from '../Box/Box';
-import Text from '../Text/Text';
+import { Grommet, Box, DataTable, Meter, Text } from '../';
 import { grommet } from '../../themes';
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
@@ -150,7 +146,7 @@ class ServedDataTable extends Component {
   render() {
     const { data: servedData } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <DataTable
           columns={columns.map(column => ({
             ...column,

@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import FormField from '../FormField/FormField';
-import Grommet from '../Grommet/Grommet';
-import TextInput from '../TextInput/TextInput';
-import TextArea from '../TextArea/TextArea';
-import Select from '../Select/Select';
-import CheckBox from '../CheckBox/CheckBox';
-import Box from '../Box/Box';
+import { Grommet, Box, CheckBox, FormField, Select, TextArea, TextInput } from '../';
 import { grommet } from '../../themes';
 
 const allSuggestions = Array(100).fill().map((_, i) => `suggestion ${i + 1}`);
@@ -79,7 +73,7 @@ class FormFieldSelect extends Component {
   render() {
     const { value, options } = this.state;
     return (
-      <Grommet>
+      <Grommet theme={grommet}>
         <FormField label='Label' htmlFor='select' {...this.props}>
           <Select
             id='select'

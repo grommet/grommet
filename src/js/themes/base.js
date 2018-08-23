@@ -79,7 +79,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
 
   const borderWidth = 2;
 
-  return deepFreeze({
+  const result = {
     global: {
       animation: {
         duration: '1s',
@@ -559,7 +559,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
     // },
     video: {
       captions: {
-        background: rgba(0, 0, 0, 0.7),
+        background: 'rgba(0, 0, 0, 0.7)',
       },
       // controls: { background: undefined },
       icons: {
@@ -584,7 +584,9 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         base: '8px',
       },
     },
-  });
+  };
+
+  return deepFreeze(result);
 };
 
 export default generate(24);

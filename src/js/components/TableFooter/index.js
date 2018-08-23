@@ -1,0 +1,2 @@
+
+export { TableFooter } from './TableFooter';

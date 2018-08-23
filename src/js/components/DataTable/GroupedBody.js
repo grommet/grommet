@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 
-import { TableCell } from '../Table';
+import { TableCell } from '../TableCell';
 
-import Cell from './Cell';
-import ExpanderCell from './ExpanderCell';
+import { Cell } from './Cell';
+import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 
-const GroupedBody = ({
+export const GroupedBody = ({
   columns, groupBy, groups, groupState, primaryProperty, onToggle, size, theme,
   ...rest
 }) => (
@@ -69,5 +69,3 @@ const GroupedBody = ({
     })}
   </StyledDataTableBody>
 );
-
-export default GroupedBody;

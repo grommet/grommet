@@ -33,17 +33,6 @@ exports[`Calendar date renders 1`] = `
   stroke: none;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -308,6 +297,17 @@ exports[`Calendar date renders 1`] = `
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c5 {
@@ -1440,17 +1440,6 @@ exports[`Calendar dates renders 1`] = `
   stroke: none;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1715,6 +1704,17 @@ exports[`Calendar dates renders 1`] = `
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c5 {
@@ -2847,17 +2847,6 @@ exports[`Calendar disabled renders 1`] = `
   stroke: none;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3122,6 +3111,17 @@ exports[`Calendar disabled renders 1`] = `
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c5 {
@@ -4254,17 +4254,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   stroke: none;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4529,6 +4518,17 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c5 {
@@ -6645,17 +6645,6 @@ exports[`Calendar renders 1`] = `
   stroke: none;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6920,6 +6909,17 @@ exports[`Calendar renders 1`] = `
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c5 {
@@ -8086,17 +8086,6 @@ exports[`Calendar size renders 1`] = `
   stroke: none;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -8493,6 +8482,17 @@ exports[`Calendar size renders 1`] = `
   font-size: 22px;
   line-height: 1.11;
   width: 768px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c5 {

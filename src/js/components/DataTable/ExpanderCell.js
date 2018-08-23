@@ -1,9 +1,9 @@
 import React from 'react';
 import { compose } from 'recompose';
 
-import { TableCell } from '../Table';
-import { Button } from '../Button';
 import { Box } from '../Box';
+import { Button } from '../Button';
+import { TableCell } from '../TableCell';
 import { withTheme } from '../hocs';
 
 const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
@@ -33,6 +33,8 @@ const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
   );
 };
 
-export default compose(
+const ExpanderCellWrapper = compose(
   withTheme,
 )(ExpanderCell);
+
+export { ExpanderCellWrapper as ExpanderCell };

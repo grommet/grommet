@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export const documentParagraph = (Paragraph) => {
+export const doc = (Paragraph) => {
   const DocumentedParagraph = describe(Paragraph)
     .availableAt(getAvailableAtBadge('Paragraph'))
     .description('A paragraph of text.')

@@ -4,9 +4,10 @@ import { compose } from 'recompose';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-
 import { withForwardRef, withTheme } from '../hocs';
 import { evalStyle, normalizeColor } from '../../utils';
+
+import { doc } from './doc';
 
 class Tab extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -95,7 +96,13 @@ class Tab extends Component {
   }
 }
 
-export default compose(
+if (process.env.NODE_ENV !== 'production') {
+  doc(Tab);
+}
+
+const TabWrapper = compose(
   withTheme,
   withForwardRef,
 )(Tab);
+
+export { TabWrapper as Tab };

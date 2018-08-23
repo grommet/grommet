@@ -47,6 +47,7 @@
     "react/sort-comp": 0,
     "react/no-array-index-key": 0,
     "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
     "no-alert": 0,
     "jsx-a11y/href-no-hash": 0,
     // clean up the code for these

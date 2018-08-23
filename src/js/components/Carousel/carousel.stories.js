@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 
-import Carousel from '../Carousel/Carousel';
-import Box from '../Box/Box';
-import Grommet from '../Grommet/Grommet';
+import { Grommet, Box, Carousel } from '../';
 
 class SimpleCarousel extends Component {
   render() {

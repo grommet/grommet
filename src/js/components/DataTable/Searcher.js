@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { FormSearch } from 'grommet-icons';
 
-import { Button } from '../Button';
 import { Box } from '../Box';
+import { Button } from '../Button';
+import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
-import { Keyboard } from '../Keyboard';
 
-export default class Searcher extends Component {
+export class Searcher extends Component {
   inputRef = React.createRef()
 
   componentDidMount() {

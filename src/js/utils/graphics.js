@@ -34,5 +34,3 @@ export const arcCommands = (centerX, centerY, radius, startAngle, endAngle) => {
 export const translateEndAngle = (startAngle, anglePer, value) => (
   Math.min(360, Math.max(0, startAngle + (anglePer * value)))
 );
-
-export default { polarToCartesian, arcCommands, translateEndAngle };

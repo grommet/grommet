@@ -3,9 +3,7 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { render, Simulate } from 'react-testing-library';
 
-import { Box, Grommet } from '../../';
-
-import { Accordion, AccordionPanel } from '../';
+import { Accordion, AccordionPanel, Box, Grommet } from '../../';
 
 describe('Accordion', () => {
   test('no AccordionPanel', () => {

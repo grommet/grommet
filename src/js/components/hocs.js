@@ -179,5 +179,3 @@ export const withIconTheme = (WrappedComponent) => {
 
   return IconThemeComponent;
 };
-
-export default { withAnnounce, withFocus, withForwardRef, withIconTheme, withTheme };

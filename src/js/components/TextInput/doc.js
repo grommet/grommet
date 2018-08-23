@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (TextInput) => {
+export const doc = (TextInput) => {
   const DocumentedTextInput = describe(TextInput)
     .availableAt(getAvailableAtBadge('TextInput'))
     .description(

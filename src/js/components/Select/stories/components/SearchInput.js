@@ -2,7 +2,7 @@ import React, { createRef, Component } from 'react';
 
 import { findDOMNode } from 'react-dom';
 
-import TextInput from '../../../TextInput/TextInput';
+import { TextInput } from '../../../';
 
 import SearchBorderBox from './SearchBorderBox';
 import SearchInputContext from './SearchInputContext';

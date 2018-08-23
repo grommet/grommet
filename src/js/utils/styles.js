@@ -144,13 +144,3 @@ export const evalStyle = (arg, theme) => {
   }
   return arg;
 };
-
-export default {
-  activeStyle,
-  baseStyle,
-  controlBorderStyle,
-  evalStyle,
-  edgeStyle,
-  focusStyle,
-  inputStyle,
-};

@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (DataTable) => {
+export const doc = (DataTable) => {
   const DocumentedDataTable = describe(DataTable)
     .availableAt(getAvailableAtBadge('DataTable'))
     .description('A data driven table.')

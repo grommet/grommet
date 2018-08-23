@@ -1,3 +1,4 @@
+
 export const debounce = (cb, timer) => {
   let timeout;
   return (...args) => {
@@ -6,5 +7,3 @@ export const debounce = (cb, timer) => {
     timeout = setTimeout(() => cb.apply(context, args), timer);
   };
 };
-
-export default debounce;

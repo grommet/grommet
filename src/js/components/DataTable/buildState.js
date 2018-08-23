@@ -169,7 +169,7 @@ const groupData = (nextProps, prevState, nextState) => {
   return { ...nextState, groups, groupState };
 };
 
-const buildState = (nextProps, prevState) => {
+export const buildState = (nextProps, prevState) => {
   const { data } = nextProps;
   const { filters, sort, widths } = prevState;
 
@@ -183,5 +183,3 @@ const buildState = (nextProps, prevState) => {
 
   return nextState;
 };
-
-export default buildState;

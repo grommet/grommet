@@ -35,5 +35,3 @@ export const expectPortal = portalId => (
     },
   }
 );
-
-export default { createPortal, expectPortal };

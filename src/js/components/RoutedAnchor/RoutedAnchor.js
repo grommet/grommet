@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Anchor from './Anchor';
-import { routedAnchor } from './doc';
+import { Anchor } from '../Anchor';
+import { doc } from './doc';
 
-class RoutedAnchor extends Component {
+export class RoutedAnchor extends Component {
   static contextTypes = {
     router: PropTypes.object.isRequired,
   }
@@ -42,7 +42,5 @@ class RoutedAnchor extends Component {
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  routedAnchor(RoutedAnchor);
+  doc(RoutedAnchor);
 }
-
-export default RoutedAnchor;

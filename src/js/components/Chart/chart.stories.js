@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Chart from '../Chart/Chart';
+import { Grommet, Box, Chart, Stack, Text } from '../';
 import calcs from '../Chart/calcs';
-import Grommet from '../Grommet/Grommet';
-import Box from '../Box/Box';
-import Stack from '../Stack/Stack';
-import Text from '../Text/Text';
 import { grommet } from '../../themes';
 
 class BarChart extends Component {

@@ -1,11 +1,12 @@
 import React from 'react';
 import { compose } from 'recompose';
 
-import { TableRow, TableCell } from '../Table';
 import { Box } from '../Box';
+import { TableRow } from '../TableRow';
+import { TableCell } from '../TableCell';
 import { withTheme } from '../hocs';
 
-import Cell from './Cell';
+import { Cell } from './Cell';
 import { StyledDataTableFooter } from './StyledDataTable';
 
 const Footer = ({ columns, footerValues, groups, theme, ...rest }) => (
@@ -29,6 +30,8 @@ const Footer = ({ columns, footerValues, groups, theme, ...rest }) => (
   </StyledDataTableFooter>
 );
 
-export default compose(
+const FooterWrapper = compose(
   withTheme,
 )(Footer);
+
+export { FooterWrapper as Footer };

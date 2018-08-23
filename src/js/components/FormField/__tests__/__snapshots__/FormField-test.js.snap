@@ -47,11 +47,6 @@ exports[`renders 1`] = `
   padding: 0;
 }
 
-.c3 {
-  position: relative;
-  width: 100%;
-}
-
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
@@ -84,6 +79,11 @@ exports[`renders 1`] = `
 .c4::-moz-focus-inner {
   border: none;
   outline: none;
+}
+
+.c3 {
+  position: relative;
+  width: 100%;
 }
 
 @media only screen and (max-width:699px) {

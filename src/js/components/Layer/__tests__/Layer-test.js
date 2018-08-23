@@ -5,9 +5,8 @@ import { getByTestId, queryByTestId } from 'dom-testing-library';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet } from '../../Grommet';
-import { Layer, LayerContainer } from '../';
-import { Box } from '../../Box/';
+import { Grommet, Box, Layer } from '../../';
+import { LayerContainer } from '../';
 
 class FakeLayer extends Component {
   state = { showLayer: false }

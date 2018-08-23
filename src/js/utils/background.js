@@ -110,9 +110,3 @@ export const backgroundStyle = (backgroundArg, theme) => {
 
   return undefined;
 };
-
-export default {
-  backgroundIsDark,
-  backgroundStyle,
-  normalizeBackground,
-};

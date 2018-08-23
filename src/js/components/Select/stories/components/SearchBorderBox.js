@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import React, { Component } from 'react';
 
-import Box from '../../../Box/Box';
+import { Box } from '../../../';
 
 import { ThemeContext } from '../../../../contexts';
 import { colorForName } from '../../../../utils';

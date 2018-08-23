@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import Box from '../Box/Box';
-import Text from '../Text/Text';
-
+import { Box } from '../Box';
+import { Text } from '../Text';
 import { withFocus, withForwardRef, withTheme } from '../hocs';
 
-import StyledAnchor from './StyledAnchor';
-import doc from './doc';
+import { StyledAnchor } from './StyledAnchor';
+import { doc } from './doc';
 
 class Anchor extends Component {
   constructor(props) {
@@ -75,8 +74,10 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Anchor);
 }
 
-export default compose(
+const AnchorWrapper = compose(
   withFocus,
   withTheme,
   withForwardRef,
 )(Anchor);
+
+export { AnchorWrapper as Anchor };

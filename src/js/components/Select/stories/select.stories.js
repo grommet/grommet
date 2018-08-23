@@ -338,7 +338,6 @@ class CustomSearchSelect extends Component {
           <SearchInputContext.Provider value={{ searching }}>
             <Select
               ref={this.selectRef}
-              fill={true}
               closeOnChange={false}
               placeholder='Select Content Partners'
               searchPlaceholder='Search Content Partners'

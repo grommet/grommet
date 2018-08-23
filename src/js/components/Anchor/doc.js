@@ -1,21 +1,8 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { ROUTER_PROPS, getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge } from '../../utils';
 
-export function routedAnchor(RoutedAnchor) {
-  const DocumentedRoutedAnchor = describe(RoutedAnchor)
-    .availableAt(getAvailableAtBadge('RoutedAnchor'))
-    .description(
-      'An Anchor with support for React Router.'
-    )
-    .usage(
-      "import { RoutedAnchor } from 'grommet';\n<RoutedAnchor primary={true} path='/documentation' />"
-    );
-  DocumentedRoutedAnchor.propTypes = { ...ROUTER_PROPS };
-  return DocumentedRoutedAnchor;
-}
-
-export default (Anchor) => {
+export const doc = (Anchor) => {
   const DocumentedAnchor = describe(Anchor)
     .availableAt(getAvailableAtBadge('Anchor'))
     .description(

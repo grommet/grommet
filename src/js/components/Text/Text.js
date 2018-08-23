@@ -3,8 +3,8 @@ import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
 
-import StyledText from './StyledText';
-import doc from './doc';
+import { StyledText } from './StyledText';
+import { doc } from './doc';
 
 const styledComponents = {
   span: StyledText,
@@ -38,6 +38,8 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Text);
 }
 
-export default compose(
+const TextWrapper = compose(
   withTheme,
 )(Text);
+
+export { TextWrapper as Text };

@@ -1,5 +1,3 @@
 import React from 'react';
 
-const TableContext = React.createContext(undefined);
-
-export default TableContext;
+export const TableContext = React.createContext(undefined);

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { TableCell } from '../Table';
 import { Box } from '../Box';
+import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 
-const Cell = ({
+export const Cell = ({
   column: { align, property, primary, render }, context, datum, scope, theme,
   ...rest
 }) => {
@@ -48,5 +48,3 @@ const Cell = ({
     </TableCell>
   );
 };
-
-export default Cell;

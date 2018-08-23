@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Distribution from '../Distribution/Distribution';
-import Box from '../Box/Box';
-import Text from '../Text/Text';
-import Grommet from '../Grommet/Grommet';
+import { Grommet, Box, Distribution, Text } from '../';
 import { grommet } from '../../themes';
 
 class SimpleDistribution extends Component {

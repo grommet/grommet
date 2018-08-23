@@ -2,10 +2,7 @@ import React from 'react';
 import 'jest-styled-components';
 import { cleanup, renderIntoDocument } from 'react-testing-library';
 
-import { Grommet } from '../../Grommet';
-import { Stack } from '../../Stack';
-import { Box } from '../../Box';
-import { Diagram } from '../';
+import { Grommet, Box, Diagram, Stack } from '../../';
 
 const Context = ({ children }) => (
   <Grommet>

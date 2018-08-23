@@ -8,5 +8,3 @@ export const ROUTER_PROPS = {
     'Indicates whether the browser history should be appended to or replaced.'
   ).defaultValue('push'),
 };
-
-export default { ROUTER_PROPS };
