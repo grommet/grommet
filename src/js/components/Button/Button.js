@@ -97,14 +97,15 @@ class Button extends Component {
   }
 }
 
+let ButtonWrapper = Button;
 if (process.env.NODE_ENV !== 'production') {
-  doc(Button);
+  ButtonWrapper = doc(Button);
 }
 
-const ButtonWrapper = compose(
+ButtonWrapper = compose(
   withFocus,
   withTheme,
   withForwardRef,
-)(Button);
+)(ButtonWrapper);
 
 export { ButtonWrapper as Button };

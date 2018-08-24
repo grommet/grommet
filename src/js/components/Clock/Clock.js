@@ -180,10 +180,11 @@ class Clock extends Component {
   }
 }
 
+let ClockWrapper = Clock;
 if (process.env.NODE_ENV !== 'production') {
-  doc(Clock);
+  ClockWrapper = doc(Clock);
 }
 
 export default compose(
   withTheme,
-)(Clock);
+)(ClockWrapper);

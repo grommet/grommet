@@ -44,11 +44,12 @@ class RadioButton extends Component {
   }
 }
 
+let RadioButtonWrapper = RadioButton;
 if (process.env.NODE_ENV !== 'production') {
-  doc(RadioButton);
+  RadioButtonWrapper = doc(RadioButtonWrapper);
 }
 
 export default compose(
   withTheme,
   withForwardRef
-)(RadioButton);
+)(RadioButtonWrapper);

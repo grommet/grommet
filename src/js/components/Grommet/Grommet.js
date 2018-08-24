@@ -86,8 +86,9 @@ class Grommet extends Component {
   }
 }
 
+let GrommetWrapper = Grommet;
 if (process.env.NODE_ENV !== 'production') {
-  doc(Grommet);
+  GrommetWrapper = doc(GrommetWrapper);
 }
 
-export default withIconTheme(Grommet);
+export default withIconTheme(GrommetWrapper);

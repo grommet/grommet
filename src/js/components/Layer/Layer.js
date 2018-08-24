@@ -46,8 +46,9 @@ class Layer extends Component {
   }
 }
 
+let LayerWrapper = Layer;
 if (process.env.NODE_ENV !== 'production') {
-  doc(Layer);
+  LayerWrapper = doc(LayerWrapper);
 }
 
-export default withTheme(Layer);
+export default withTheme(LayerWrapper);

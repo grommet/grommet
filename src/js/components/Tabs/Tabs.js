@@ -3,7 +3,7 @@ import React, { cloneElement, Children, Component } from 'react';
 import { Box } from '../';
 import { doc } from './doc';
 
-export class Tabs extends Component {
+class Tabs extends Component {
   static defaultProps = {
     justify: 'center',
     messages: {
@@ -83,6 +83,9 @@ export class Tabs extends Component {
   }
 }
 
+let TabsWrapper = Tabs;
 if (process.env.NODE_ENV !== 'production') {
-  doc(Tabs);
+  TabsWrapper = doc(TabsWrapper);
 }
+
+export { TabsWrapper as Tabs };

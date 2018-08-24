@@ -15,11 +15,12 @@ class TextArea extends Component {
   }
 }
 
+let TextAreaWrapper = TextArea;
 if (process.env.NODE_ENV !== 'production') {
-  doc(TextArea);
+  TextAreaWrapper = doc(TextAreaWrapper);
 }
 
 export default compose(
   withTheme,
   withForwardRef,
-)(TextArea);
+)(TextAreaWrapper);

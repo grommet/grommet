@@ -18,12 +18,13 @@ class Table extends Component {
   }
 }
 
+let TableWrapper = Table;
 if (process.env.NODE_ENV !== 'production') {
-  doc(Table);
+  TableWrapper = doc(TableWrapper);
 }
 
-const TableWrapper = compose(
+TableWrapper = compose(
   withTheme,
-)(Table);
+)(TableWrapper);
 
 export { TableWrapper as Table };

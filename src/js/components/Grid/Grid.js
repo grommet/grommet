@@ -39,16 +39,17 @@ class Grid extends Component {
   }
 }
 
+let GridWrapper = Grid;
 if (process.env.NODE_ENV !== 'production') {
-  doc(Grid);
+  GridWrapper = doc(GridWrapper);
 }
 
-const WrappedGrid = compose(
+GridWrapper = compose(
   withTheme,
-)(Grid);
+)(GridWrapper);
 
-WrappedGrid.available = (typeof window !== 'undefined') &&
+GridWrapper.available = (typeof window !== 'undefined') &&
   window.CSS && window.CSS.supports &&
   window.CSS.supports('display', 'grid');
 
-export default WrappedGrid;
+export default GridWrapper;

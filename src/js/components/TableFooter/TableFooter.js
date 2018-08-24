@@ -14,8 +14,9 @@ class TableFooter extends Component {
   }
 }
 
+let TableFooterWrapper = TableFooter;
 if (process.env.NODE_ENV !== 'production') {
-  doc(TableFooter);
+  TableFooterWrapper = doc(TableFooterWrapper);
 }
 
-export { TableFooter };
+export { TableFooterWrapper as TableFooter };

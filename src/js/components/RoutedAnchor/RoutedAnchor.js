@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Anchor } from '../Anchor';
 import { doc } from './doc';
 
-export class RoutedAnchor extends Component {
+class RoutedAnchor extends Component {
   static contextTypes = {
     router: PropTypes.object.isRequired,
   }
@@ -41,6 +41,9 @@ export class RoutedAnchor extends Component {
   }
 }
 
+let RoutedAnchorWrapper = RoutedAnchor;
 if (process.env.NODE_ENV !== 'production') {
-  doc(RoutedAnchor);
+  RoutedAnchorWrapper = doc(RoutedAnchorWrapper);
 }
+
+export { RoutedAnchorWrapper as RoutedAnchor };

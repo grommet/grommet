@@ -53,8 +53,9 @@ class Keyboard extends Component {
   }
 }
 
+let KeyboardWrapper = Keyboard;
 if (process.env.NODE_ENV !== 'production') {
-  doc(Keyboard);
+  KeyboardWrapper = doc(KeyboardWrapper);
 }
 
-export default Keyboard;
+export default KeyboardWrapper;

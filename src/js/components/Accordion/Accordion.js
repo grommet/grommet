@@ -98,12 +98,13 @@ class Accordion extends Component {
   }
 }
 
+let AccordionWrapper = Accordion;
 if (process.env.NODE_ENV !== 'production') {
-  doc(Accordion);
+  AccordionWrapper = doc(Accordion);
 }
 
-const AccordionWrapper = compose(
+AccordionWrapper = compose(
   withTheme,
-)(Accordion);
+)(AccordionWrapper);
 
 export { AccordionWrapper as Accordion };

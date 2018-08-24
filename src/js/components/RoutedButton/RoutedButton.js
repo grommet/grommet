@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Button } from '../Button';
 import { doc } from './doc';
 
-export class RoutedButton extends Component {
+class RoutedButton extends Component {
   static contextTypes = {
     router: PropTypes.object.isRequired,
   }
@@ -45,6 +45,9 @@ export class RoutedButton extends Component {
   }
 }
 
+let RoutedButtonWrapper = RoutedButton;
 if (process.env.NODE_ENV !== 'production') {
-  doc(RoutedButton);
+  RoutedButtonWrapper = doc(RoutedButtonWrapper);
 }
+
+export { RoutedButtonWrapper as RoutedButton };

@@ -42,10 +42,11 @@ class Stack extends Component {
   }
 }
 
+let StackWrapper = Stack;
 if (process.env.NODE_ENV !== 'production') {
-  doc(Stack);
+  StackWrapper = doc(StackWrapper);
 }
 
 export default compose(
   withTheme,
-)(Stack);
+)(StackWrapper);

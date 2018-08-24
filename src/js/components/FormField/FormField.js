@@ -113,11 +113,12 @@ class FormField extends Component {
   }
 }
 
+let FormFieldWrapper = FormField;
 if (process.env.NODE_ENV !== 'production') {
-  doc(FormField);
+  FormFieldWrapper = doc(FormFieldWrapper);
 }
 
 export default compose(
   withFocus,
   withTheme,
-)(FormField);
+)(FormFieldWrapper);

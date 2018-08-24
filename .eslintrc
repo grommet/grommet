@@ -55,5 +55,6 @@
     "object-curly-newline": 0,
     "prefer-destructuring": 0,
     "jsx-a11y/mouse-events-have-key-events": 0,
+    "import/no-mutable-exports": 0
   }
 }

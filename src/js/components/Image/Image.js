@@ -14,10 +14,11 @@ class Image extends Component {
   }
 }
 
+let ImageWrapper = Image;
 if (process.env.NODE_ENV !== 'production') {
-  doc(Image);
+  ImageWrapper = doc(ImageWrapper);
 }
 
 export default compose(
   withTheme,
-)(Image);
+)(ImageWrapper);

@@ -4,7 +4,7 @@ import { TableContext } from '../Table/TableContext';
 import { StyledTableHeader } from '../Table/StyledTable';
 import { doc } from './doc';
 
-export class TableHeader extends Component {
+class TableHeader extends Component {
   render() {
     return (
       <TableContext.Provider value='header'>
@@ -14,6 +14,9 @@ export class TableHeader extends Component {
   }
 }
 
+let TableHeaderWrapper = TableHeader;
 if (process.env.NODE_ENV !== 'production') {
-  doc(TableHeader);
+  TableHeaderWrapper = doc(TableHeaderWrapper);
 }
+
+export { TableHeaderWrapper as TableHeader };

@@ -1,5 +1,6 @@
 import React, { createRef, Component } from 'react';
 import { findDOMNode } from 'react-dom';
+import { compose } from 'recompose';
 import styled from 'styled-components';
 
 import { withTheme } from '../hocs';
@@ -116,8 +117,11 @@ class Collapsible extends Component {
   }
 }
 
+let CollapsibleWrapper = Collapsible;
 if (process.env.NODE_ENV !== 'production') {
-  doc(Collapsible);
+  CollapsibleWrapper = doc(Collapsible);
 }
 
-export default withTheme(Collapsible);
+export default compose(
+  withTheme,
+)(CollapsibleWrapper);
