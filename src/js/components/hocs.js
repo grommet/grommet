@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import getDisplayName from 'recompose/getDisplayName';
-import IconThemeContext from 'grommet-icons/ThemeContext';
+import { ThemeContext as IconThemeContext } from 'grommet-icons';
 
 import { AnnounceContext, ThemeContext } from '../contexts';
 

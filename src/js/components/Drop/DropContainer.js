@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
-
-import IconThemeContext from 'grommet-icons/ThemeContext';
+import { ThemeContext as IconThemeContext } from 'grommet-icons';
 
 import { ThemeContext } from '../../contexts';
 import FocusedContainer from '../FocusedContainer';
