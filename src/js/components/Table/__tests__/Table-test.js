@@ -4,8 +4,6 @@ import 'jest-styled-components';
 
 import { Table, TableHeader, TableFooter, TableBody, TableRow, TableCell } from '../../';
 
-console.log('!!! Table-test', TableHeader);
-
 test('Table renders', () => {
   const component = renderer.create(
     <Table />
