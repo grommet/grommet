@@ -5,9 +5,7 @@ import { doc } from './doc';
 
 const TableRow = props => <StyledTableRow {...props} />;
 
-let TableRowWrapper = TableRow;
-if (process.env.NODE_ENV !== 'production') {
-  TableRowWrapper = doc(TableRowWrapper);
-}
+const TableRowWrapper = process.env.NODE_ENV !== 'production' ? doc(TableRow) : TableRow;
 
 export { TableRowWrapper as TableRow };
+

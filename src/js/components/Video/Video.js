@@ -446,12 +446,9 @@ class Video extends Component {
   }
 }
 
-let VideoWrapper = Video;
-if (process.env.NODE_ENV !== 'production') {
-  VideoWrapper = doc(VideoWrapper);
-}
-
 export default compose(
   withTheme,
   withForwardRef,
-)(VideoWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Video) : Video
+);

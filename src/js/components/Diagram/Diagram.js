@@ -217,12 +217,8 @@ class Diagram extends Component {
   }
 }
 
-let DiagramWrapper = Diagram;
-if (process.env.NODE_ENV !== 'production') {
-  DiagramWrapper = doc(Diagram);
-}
-
 export default compose(
   withTheme,
-)(DiagramWrapper);
-
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Diagram) : Diagram
+);

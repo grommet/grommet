@@ -50,11 +50,8 @@ class Meter extends Component {
   }
 }
 
-let MeterWrapper = Meter;
-if (process.env.NODE_ENV !== 'production') {
-  MeterWrapper = doc(MeterWrapper);
-}
-
 export default compose(
   withTheme,
-)(MeterWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Meter) : Meter
+);

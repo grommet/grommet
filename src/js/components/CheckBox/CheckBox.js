@@ -77,13 +77,10 @@ class CheckBox extends Component {
   }
 }
 
-let CheckBoxWrapper = CheckBox;
-if (process.env.NODE_ENV !== 'production') {
-  CheckBoxWrapper = doc(CheckBox);
-}
-
 export default compose(
   withFocus,
   withTheme,
   withForwardRef,
-)(CheckBoxWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(CheckBox) : CheckBox
+);

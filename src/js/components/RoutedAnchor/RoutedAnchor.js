@@ -41,9 +41,6 @@ class RoutedAnchor extends Component {
   }
 }
 
-let RoutedAnchorWrapper = RoutedAnchor;
-if (process.env.NODE_ENV !== 'production') {
-  RoutedAnchorWrapper = doc(RoutedAnchorWrapper);
-}
+const RoutedAnchorWrapper = process.env.NODE_ENV !== 'production' ? doc(RoutedAnchor) : RoutedAnchor;
 
 export { RoutedAnchorWrapper as RoutedAnchor };

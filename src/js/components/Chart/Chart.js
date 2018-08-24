@@ -198,11 +198,8 @@ class Chart extends Component {
   }
 }
 
-let ChartWrapper = Chart;
-if (process.env.NODE_ENV !== 'production') {
-  ChartWrapper = doc(Chart);
-}
-
 export default compose(
   withTheme,
-)(ChartWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Chart) : Chart
+);

@@ -6,7 +6,7 @@ const getTypescriptDefinitionFile = (component, { properties }) => `import * as 
 
 export interface ${component}Props {
   ${(properties || []).map(
-    ({ name, format, required }) => `${name}${required ? '?' : ''}: ${format};`
+    ({ name, format, required }) => `${name}${required ? '' : '?'}: ${format};`
   ).join('\n  ')}
 }
 

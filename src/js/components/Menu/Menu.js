@@ -194,12 +194,9 @@ class Menu extends Component {
   }
 }
 
-let MenuWrapper = Menu;
-if (process.env.NODE_ENV !== 'production') {
-  MenuWrapper = doc(MenuWrapper);
-}
-
 export default compose(
   withTheme,
   withForwardRef,
-)(MenuWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Menu) : Menu
+);

@@ -16,13 +16,10 @@ class Paragraph extends Component {
   }
 }
 
-let ParagraphWrapper = Paragraph;
-if (process.env.NODE_ENV !== 'production') {
-  ParagraphWrapper = doc(ParagraphWrapper);
-}
-
-ParagraphWrapper = compose(
+const ParagraphWrapper = compose(
   withTheme,
-)(ParagraphWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Paragraph) : Paragraph
+);
 
 export { ParagraphWrapper as Paragraph };

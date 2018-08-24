@@ -96,14 +96,11 @@ class Tab extends Component {
   }
 }
 
-let TabWrapper = Tab;
-if (process.env.NODE_ENV !== 'production') {
-  TabWrapper = doc(TabWrapper);
-}
-
-TabWrapper = compose(
+const TabWrapper = compose(
   withTheme,
   withForwardRef,
-)(TabWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Tab) : Tab
+);
 
 export { TabWrapper as Tab };

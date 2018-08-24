@@ -39,14 +39,11 @@ class Grid extends Component {
   }
 }
 
-let GridWrapper = Grid;
-if (process.env.NODE_ENV !== 'production') {
-  GridWrapper = doc(GridWrapper);
-}
-
-GridWrapper = compose(
+const GridWrapper = compose(
   withTheme,
-)(GridWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Grid) : Grid
+);
 
 GridWrapper.available = (typeof window !== 'undefined') &&
   window.CSS && window.CSS.supports &&

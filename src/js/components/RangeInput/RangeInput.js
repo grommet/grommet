@@ -19,13 +19,10 @@ class RangeInput extends Component {
   }
 }
 
-let RangeInputWrapper = RangeInput;
-if (process.env.NODE_ENV !== 'production') {
-  RangeInputWrapper = doc(RangeInputWrapper);
-}
-
 export default compose(
   withFocus,
   withTheme,
   withForwardRef,
-)(RangeInputWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(RangeInput) : RangeInput
+);

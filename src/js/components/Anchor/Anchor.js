@@ -70,15 +70,12 @@ class Anchor extends Component {
   }
 }
 
-let AnchorWrapper = Anchor;
-if (process.env.NODE_ENV !== 'production') {
-  AnchorWrapper = doc(Anchor);
-}
-
-AnchorWrapper = compose(
+const AnchorWrapper = compose(
   withFocus,
   withTheme,
   withForwardRef,
-)(AnchorWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Anchor) : Anchor
+);
 
 export { AnchorWrapper as Anchor };

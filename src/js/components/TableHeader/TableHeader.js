@@ -14,9 +14,7 @@ class TableHeader extends Component {
   }
 }
 
-let TableHeaderWrapper = TableHeader;
-if (process.env.NODE_ENV !== 'production') {
-  TableHeaderWrapper = doc(TableHeaderWrapper);
-}
+const TableHeaderWrapper = process.env.NODE_ENV !== 'production' ? doc(TableHeader) : TableHeader;
 
 export { TableHeaderWrapper as TableHeader };
+

@@ -45,9 +45,6 @@ class RoutedButton extends Component {
   }
 }
 
-let RoutedButtonWrapper = RoutedButton;
-if (process.env.NODE_ENV !== 'production') {
-  RoutedButtonWrapper = doc(RoutedButtonWrapper);
-}
+const RoutedButtonWrapper = process.env.NODE_ENV !== 'production' ? doc(RoutedButton) : RoutedButton;
 
 export { RoutedButtonWrapper as RoutedButton };

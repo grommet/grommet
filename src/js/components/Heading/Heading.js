@@ -36,11 +36,8 @@ class Heading extends Component {
   }
 }
 
-let HeadingWrapper = Heading;
-if (process.env.NODE_ENV !== 'production') {
-  HeadingWrapper = doc(HeadingWrapper);
-}
-
 export default compose(
   withTheme,
-)(HeadingWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Heading) : Heading
+);

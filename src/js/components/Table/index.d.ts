@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export interface TableProps {
-  caption: string;
+  caption?: string;
 }
 
 declare const Table: React.ComponentType<TableProps>;

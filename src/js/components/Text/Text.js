@@ -34,13 +34,10 @@ class Text extends Component {
   }
 }
 
-let TextWrapper = Text;
-if (process.env.NODE_ENV !== 'production') {
-  TextWrapper = doc(TextWrapper);
-}
-
-TextWrapper = compose(
+const TextWrapper = compose(
   withTheme,
-)(TextWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Text) : Text
+);
 
 export { TextWrapper as Text };

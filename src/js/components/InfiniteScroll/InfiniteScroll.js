@@ -89,9 +89,4 @@ class InfiniteScroll extends Component {
   }
 }
 
-let InfiniteScrollWrapper = InfiniteScroll;
-if (process.env.NODE_ENV !== 'production') {
-  InfiniteScrollWrapper = doc(InfiniteScrollWrapper);
-}
-
-export default InfiniteScrollWrapper;
+export default process.env.NODE_ENV !== 'production' ? doc(InfiniteScroll) : InfiniteScroll;

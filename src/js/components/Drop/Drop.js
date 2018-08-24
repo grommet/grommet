@@ -46,11 +46,8 @@ class Drop extends Component {
   }
 }
 
-let DropWrapper = Drop;
-if (process.env.NODE_ENV !== 'production') {
-  DropWrapper = doc(Drop);
-}
-
 export default compose(
   withTheme,
-)(DropWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Drop) : Drop
+);

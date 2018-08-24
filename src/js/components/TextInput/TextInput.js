@@ -317,15 +317,12 @@ class TextInput extends Component {
   }
 }
 
-let TextInputWrapper = TextInput;
-if (process.env.NODE_ENV !== 'production') {
-  TextInputWrapper = doc(TextInputWrapper);
-}
-
-TextInputWrapper = compose(
+const TextInputWrapper = compose(
   withTheme,
   withAnnounce,
   withForwardRef,
-)(TextInputWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(TextInput) : TextInput
+);
 
 export { TextInputWrapper as TextInput };

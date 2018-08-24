@@ -34,11 +34,8 @@ class GrommetMarkdown extends Component {
   }
 }
 
-let GrommetMarkdownWrapper = GrommetMarkdown;
-if (process.env.NODE_ENV !== 'production') {
-  GrommetMarkdownWrapper = doc(GrommetMarkdownWrapper);
-}
-
 export default compose(
   withTheme,
-)(GrommetMarkdownWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(GrommetMarkdown) : GrommetMarkdown
+);

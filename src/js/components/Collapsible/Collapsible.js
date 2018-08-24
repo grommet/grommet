@@ -117,11 +117,8 @@ class Collapsible extends Component {
   }
 }
 
-let CollapsibleWrapper = Collapsible;
-if (process.env.NODE_ENV !== 'production') {
-  CollapsibleWrapper = doc(Collapsible);
-}
-
 export default compose(
   withTheme,
-)(CollapsibleWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Collapsible) : Collapsible
+);

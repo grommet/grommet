@@ -415,11 +415,8 @@ class WorldMap extends Component {
   }
 }
 
-let WorldMapWrapper = WorldMap;
-if (process.env.NODE_ENV !== 'production') {
-  WorldMapWrapper = doc(WorldMapWrapper);
-}
-
 export default compose(
   withTheme,
-)(WorldMapWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(WorldMap) : WorldMap
+);

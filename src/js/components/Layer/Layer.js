@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
+import { compose } from 'recompose';
 
 import { getNewContainer } from '../../utils';
 
@@ -46,9 +47,8 @@ class Layer extends Component {
   }
 }
 
-let LayerWrapper = Layer;
-if (process.env.NODE_ENV !== 'production') {
-  LayerWrapper = doc(LayerWrapper);
-}
-
-export default withTheme(LayerWrapper);
+export default compose(
+  withTheme,
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Layer) : Layer
+);

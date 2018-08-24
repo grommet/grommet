@@ -60,9 +60,6 @@ class SkipLinks extends Component {
   }
 }
 
-let SkipLinksWrapper = SkipLinks;
-if (process.env.NODE_ENV !== 'production') {
-  SkipLinksWrapper = doc(SkipLinksWrapper);
-}
+const SkipLinksWrapper = process.env.NODE_ENV !== 'production' ? doc(SkipLinks) : SkipLinks;
 
 export { SkipLinksWrapper as SkipLinks };

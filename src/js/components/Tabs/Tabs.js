@@ -83,9 +83,6 @@ class Tabs extends Component {
   }
 }
 
-let TabsWrapper = Tabs;
-if (process.env.NODE_ENV !== 'production') {
-  TabsWrapper = doc(TabsWrapper);
-}
+const TabsWrapper = process.env.NODE_ENV !== 'production' ? doc(Tabs) : Tabs;
 
 export { TabsWrapper as Tabs };

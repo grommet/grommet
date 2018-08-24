@@ -10,9 +10,6 @@ const TableBody = props => (
   </TableContext.Provider>
 );
 
-let TableBodyWrapper = TableBody;
-if (process.env.NODE_ENV !== 'production') {
-  TableBodyWrapper = doc(TableBodyWrapper);
-}
+const TableBodyWrapper = process.env.NODE_ENV !== 'production' ? doc(TableBody) : TableBody;
 
 export { TableBodyWrapper as TableBody };

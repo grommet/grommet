@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export interface CollapsibleProps {
-  open: boolean;
+  open?: boolean;
 }
 
 declare const Collapsible: React.ComponentType<CollapsibleProps>;

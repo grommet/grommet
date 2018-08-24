@@ -87,11 +87,8 @@ class Distribution extends Component {
   }
 }
 
-let DistributionWrapper = Distribution;
-if (process.env.NODE_ENV !== 'production') {
-  DistributionWrapper = doc(Distribution);
-}
-
 export default compose(
   withTheme,
-)(DistributionWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Distribution) : Distribution
+);

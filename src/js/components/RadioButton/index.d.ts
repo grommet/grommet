@@ -1,12 +1,12 @@
 import * as React from "react";
 
 export interface RadioButtonProps {
-  checked: boolean;
-  disabled: boolean;
-  id: string;
-  label: React.ReactNode;
-  name?: string;
-  onChange: (...args: any[]) => any;
+  checked?: boolean;
+  disabled?: boolean;
+  id?: string;
+  label?: React.ReactNode;
+  name: string;
+  onChange?: (...args: any[]) => any;
 }
 
 declare const RadioButton: React.ComponentType<RadioButtonProps>;

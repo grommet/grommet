@@ -102,12 +102,9 @@ class DropButton extends Component {
   }
 }
 
-let DropButtonWrapper = DropButton;
-if (process.env.NODE_ENV !== 'production') {
-  DropButtonWrapper = doc(DropButtonWrapper);
-}
-
 export default compose(
   withTheme,
   withForwardRef,
-)(DropButtonWrapper);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(DropButton) : DropButton
+);
