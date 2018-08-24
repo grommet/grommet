@@ -29,7 +29,7 @@
     "build": "webpack --mode production && babel ./src/js/ --ignore '__tests__' --out-dir ./dist && cross-env BABEL_ENV=es6 babel ./src/js/ --ignore '__tests__' --out-dir ./dist/es6",
     "release-stable": "babel-node ./tools/release-stable",
     "lint": "eslint src",
-    "test": "jest",
+    "test": "jest --runInBand",
     "test-update": "jest --updateSnapshot",
     "test-watch": "jest --watchAll",
     "pack": "babel-node ./tools/pack",
