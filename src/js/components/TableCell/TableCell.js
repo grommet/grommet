@@ -35,12 +35,10 @@ TableCell.defaultProps = {
   pad: { horizontal: 'small', vertical: 'xsmall' },
 };
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(TableCell);
-}
-
 const TableCellWrapper = compose(
   withTheme,
-)(TableCell);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(TableCell) : TableCell
+);
 
 export { TableCellWrapper as TableCell };

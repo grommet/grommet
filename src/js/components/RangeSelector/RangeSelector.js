@@ -185,11 +185,9 @@ class RangeSelector extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(RangeSelector);
-}
-
 export default compose(
   withTheme,
   withForwardRef,
-)(RangeSelector);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(RangeSelector) : RangeSelector
+);

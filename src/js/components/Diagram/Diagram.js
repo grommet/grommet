@@ -217,10 +217,8 @@ class Diagram extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Diagram);
-}
-
 export default compose(
   withTheme,
-)(Diagram);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Diagram) : Diagram
+);

@@ -157,13 +157,11 @@ class Select extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Select);
-}
-
 const SelectWrapper = compose(
   withTheme,
-  withForwardRef,
-)(Select);
+  withForwardRef
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Select) : Select
+);
 
 export { SelectWrapper as Select };

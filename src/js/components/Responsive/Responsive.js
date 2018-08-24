@@ -36,10 +36,9 @@ class Responsive extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Responsive);
-}
-
 export default compose(
   withTheme,
-)(Responsive);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Responsive) : Responsive
+);
+

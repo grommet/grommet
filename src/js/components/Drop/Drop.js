@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
+import { compose } from 'recompose';
 
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 
@@ -45,8 +46,8 @@ class Drop extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Drop);
-}
-
-export default withTheme(Drop);
+export default compose(
+  withTheme,
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Drop) : Drop
+);

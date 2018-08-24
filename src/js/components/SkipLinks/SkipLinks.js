@@ -7,7 +7,7 @@ import { Layer } from '../Layer';
 
 import { doc } from './doc';
 
-export class SkipLinks extends Component {
+class SkipLinks extends Component {
   static defaultProps = {
     messages: {
       skipTo: 'Skip To',
@@ -60,6 +60,6 @@ export class SkipLinks extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(SkipLinks);
-}
+const SkipLinksWrapper = process.env.NODE_ENV !== 'production' ? doc(SkipLinks) : SkipLinks;
+
+export { SkipLinksWrapper as SkipLinks };

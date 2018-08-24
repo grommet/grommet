@@ -135,12 +135,10 @@ class DataTable extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(DataTable);
-}
-
 const DataTableWrapper = compose(
   withTheme,
-)(DataTable);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(DataTable) : DataTable
+);
 
 export { DataTableWrapper as DataTable };

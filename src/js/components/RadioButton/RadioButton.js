@@ -44,11 +44,9 @@ class RadioButton extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(RadioButton);
-}
-
 export default compose(
   withTheme,
   withForwardRef
-)(RadioButton);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(RadioButton) : RadioButton
+);

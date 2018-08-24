@@ -139,11 +139,9 @@ class Box extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Box);
-}
-
 export default compose(
   withTheme,
   withForwardRef, // needed for RangeSelector
-)(Box);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Box) : Box
+);

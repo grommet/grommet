@@ -4,7 +4,7 @@ import Waypoint from 'react-waypoint';
 
 import doc from './doc';
 
-export default class InfiniteScroll extends Component {
+class InfiniteScroll extends Component {
   static defaultProps = {
     items: [],
     step: 50,
@@ -89,6 +89,4 @@ export default class InfiniteScroll extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(InfiniteScroll);
-}
+export default process.env.NODE_ENV !== 'production' ? doc(InfiniteScroll) : InfiniteScroll;

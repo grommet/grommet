@@ -14,10 +14,8 @@ class Image extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Image);
-}
-
 export default compose(
   withTheme,
-)(Image);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Image) : Image
+);

@@ -415,10 +415,8 @@ class WorldMap extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(WorldMap);
-}
-
 export default compose(
   withTheme,
-)(WorldMap);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(WorldMap) : WorldMap
+);

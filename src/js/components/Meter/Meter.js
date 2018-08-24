@@ -50,10 +50,8 @@ class Meter extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Meter);
-}
-
 export default compose(
   withTheme,
-)(Meter);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Meter) : Meter
+);

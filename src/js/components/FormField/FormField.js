@@ -113,11 +113,9 @@ class FormField extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(FormField);
-}
-
 export default compose(
   withFocus,
   withTheme,
-)(FormField);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(FormField) : FormField
+);

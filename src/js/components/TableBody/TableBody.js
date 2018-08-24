@@ -4,12 +4,12 @@ import { TableContext } from '../Table/TableContext';
 import { StyledTableBody } from '../Table/StyledTable';
 import { doc } from './doc';
 
-export const TableBody = props => (
+const TableBody = props => (
   <TableContext.Provider value='body'>
     <StyledTableBody {...props} />
   </TableContext.Provider>
 );
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(TableBody);
-}
+const TableBodyWrapper = process.env.NODE_ENV !== 'production' ? doc(TableBody) : TableBody;
+
+export { TableBodyWrapper as TableBody };

@@ -194,11 +194,9 @@ class Menu extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Menu);
-}
-
 export default compose(
   withTheme,
   withForwardRef,
-)(Menu);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Menu) : Menu
+);

@@ -149,11 +149,9 @@ class Carousel extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Carousel);
-}
-
 export default compose(
   withTheme,
   withFocus,
-)(Carousel);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Carousel) : Carousel
+);

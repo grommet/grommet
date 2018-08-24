@@ -265,10 +265,8 @@ class Calendar extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Calendar);
-}
-
 export default compose(
   withTheme,
-)(Calendar);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Calendar) : Calendar
+);

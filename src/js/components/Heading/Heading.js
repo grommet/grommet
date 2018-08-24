@@ -36,10 +36,8 @@ class Heading extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Heading);
-}
-
 export default compose(
   withTheme,
-)(Heading);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Heading) : Heading
+);

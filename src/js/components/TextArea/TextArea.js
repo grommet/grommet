@@ -15,11 +15,9 @@ class TextArea extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(TextArea);
-}
-
 export default compose(
   withTheme,
-  withForwardRef,
-)(TextArea);
+  withForwardRef
+)(
+  process.env.NODE_ENV !== 'production' ? doc(TextArea) : TextArea
+);

@@ -106,13 +106,11 @@ class AccordionPanel extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(AccordionPanel);
-}
-
 const AccordionPanelWrapper = compose(
   withTheme,
   withForwardRef,
-)(AccordionPanel);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(AccordionPanel) : AccordionPanel
+);
 
 export { AccordionPanelWrapper as AccordionPanel };

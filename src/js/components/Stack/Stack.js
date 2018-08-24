@@ -42,10 +42,8 @@ class Stack extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Stack);
-}
-
 export default compose(
   withTheme,
-)(Stack);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Stack) : Stack
+);

@@ -53,8 +53,4 @@ class Keyboard extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Keyboard);
-}
-
-export default Keyboard;
+export default process.env.NODE_ENV !== 'production' ? doc(Keyboard) : Keyboard;

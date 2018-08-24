@@ -198,10 +198,8 @@ class Chart extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Chart);
-}
-
 export default compose(
   withTheme,
-)(Chart);
+)(
+  process.env.NODE_ENV !== 'production' ? doc(Chart) : Chart
+);
