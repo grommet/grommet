@@ -8,7 +8,7 @@ import { Heading } from '../Heading';
 import { Paragraph } from '../Paragraph';
 import { withTheme } from '../hocs';
 
-import doc from './doc';
+import { doc } from './doc';
 
 class GrommetMarkdown extends Component {
   render() {
@@ -34,8 +34,10 @@ class GrommetMarkdown extends Component {
   }
 }
 
-export default compose(
+const GrommetMarkdownWrapper = compose(
   withTheme,
 )(
   process.env.NODE_ENV !== 'production' ? doc(GrommetMarkdown) : GrommetMarkdown
 );
+
+export { GrommetMarkdownWrapper as Markdown };

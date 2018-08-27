@@ -30,7 +30,7 @@ const firefoxMicrosoftThumbStyle = css`
   width: ${props => props.theme.global.spacing};
 `;
 
-const StyledRangeInput = styled.input`
+export const StyledRangeInput = styled.input`
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -112,8 +112,6 @@ const StyledRangeInput = styled.input`
   }
 
   ${props => props.focus && focusStyle}
-`;
-
-export default StyledRangeInput.extend`
+`.extend`
   ${props => props.theme.rangeInput && props.theme.rangeInput.extend}
 `;

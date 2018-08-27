@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (FormField) => {
+export const doc = (FormField) => {
   const DocumentedFormField = describe(FormField)
     .availableAt(getAvailableAtBadge('FormField'))
     .description('A field in a form.')

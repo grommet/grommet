@@ -6,7 +6,7 @@ import { getByText as getByTextDOM } from 'dom-testing-library';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Menu } from '../';
+import { Grommet, Menu } from '../../';
 
 describe('Menu', () => {
   beforeEach(createPortal);
@@ -15,29 +15,33 @@ describe('Menu', () => {
 
   test('basic', () => {
     const component = renderer.create(
-      <Menu
-        icon={<svg />}
-        label='Test Menu'
-        id='test-menu'
-        items={[
-          { label: 'Item 1' },
-          { label: 'Item 2' },
-        ]}
-      />
+      <Grommet>
+        <Menu
+          icon={<svg />}
+          label='Test Menu'
+          id='test-menu'
+          items={[
+            { label: 'Item 1' },
+            { label: 'Item 2' },
+          ]}
+        />
+      </Grommet>
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('custom message', () => {
     const component = renderer.create(
-      <Menu
-        label='Test Menu'
-        messages={{ openMenu: 'Abrir Menu' }}
-        items={[
-          { label: 'Item 1' },
-          { label: 'Item 2' },
-        ]}
-      />
+      <Grommet>
+        <Menu
+          label='Test Menu'
+          messages={{ openMenu: 'Abrir Menu' }}
+          items={[
+            { label: 'Item 1' },
+            { label: 'Item 2' },
+          ]}
+        />
+      </Grommet>
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -45,15 +49,17 @@ describe('Menu', () => {
   test('open and close on click', () => {
     window.scrollTo = jest.fn();
     const { getByText, container } = renderIntoDocument(
-      <Menu
-        id='test-menu'
-        label='Test'
-        items={[
-          { label: 'Item 1' },
-          { label: 'Item 2', onClick: () => {} },
-          { label: 'Item 3', href: '/test' },
-        ]}
-      />
+      <Grommet>
+        <Menu
+          id='test-menu'
+          label='Test'
+          items={[
+            { label: 'Item 1' },
+            { label: 'Item 2', onClick: () => {} },
+            { label: 'Item 3', href: '/test' },
+          ]}
+        />
+      </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
@@ -69,14 +75,16 @@ describe('Menu', () => {
 
   test('close by clicking outside', (done) => {
     const { getByText, container } = renderIntoDocument(
-      <Menu
-        id='test-menu'
-        label='Test'
-        items={[
-          { label: 'Item 1' },
-          { label: 'Item 2' },
-        ]}
-      />
+      <Grommet>
+        <Menu
+          id='test-menu'
+          label='Test'
+          items={[
+            { label: 'Item 1' },
+            { label: 'Item 2' },
+          ]}
+        />
+      </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
@@ -94,14 +102,16 @@ describe('Menu', () => {
   test('select an item', () => {
     const onClick = jest.fn();
     const { getByText, container } = renderIntoDocument(
-      <Menu
-        id='test-menu'
-        label='Test'
-        items={[
-          { label: 'Item 1', onClick },
-          { label: 'Item 2' },
-        ]}
-      />
+      <Grommet>
+        <Menu
+          id='test-menu'
+          label='Test'
+          items={[
+            { label: 'Item 1', onClick },
+            { label: 'Item 2' },
+          ]}
+        />
+      </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -116,14 +126,16 @@ describe('Menu', () => {
   test('navigate through suggestions and select', () => {
     const onClick = jest.fn();
     const { getByText, container } = renderIntoDocument(
-      <Menu
-        id='test-menu'
-        label='Test'
-        items={[
-          { label: 'Item 1', onClick },
-          { label: 'Item 2' },
-        ]}
-      />
+      <Grommet>
+        <Menu
+          id='test-menu'
+          label='Test'
+          items={[
+            { label: 'Item 1', onClick },
+            { label: 'Item 2' },
+          ]}
+        />
+      </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -146,14 +158,16 @@ describe('Menu', () => {
 
   test('close on esc', () => {
     const { getByText, container } = renderIntoDocument(
-      <Menu
-        id='test-menu'
-        label='Test'
-        items={[
-          { label: 'Item 1' },
-          { label: 'Item 2' },
-        ]}
-      />
+      <Grommet>
+        <Menu
+          id='test-menu'
+          label='Test'
+          items={[
+            { label: 'Item 1' },
+            { label: 'Item 2' },
+          ]}
+        />
+      </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -165,14 +179,16 @@ describe('Menu', () => {
 
   test('close on tab', () => {
     const { getByText, container } = renderIntoDocument(
-      <Menu
-        id='test-menu'
-        label='Test'
-        items={[
-          { label: 'Item 1' },
-          { label: 'Item 2' },
-        ]}
-      />
+      <Grommet>
+        <Menu
+          id='test-menu'
+          label='Test'
+          items={[
+            { label: 'Item 1' },
+            { label: 'Item 2' },
+          ]}
+        />
+      </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -184,15 +200,17 @@ describe('Menu', () => {
 
   test('with dropAlign renders', () => {
     const { getByText, container } = renderIntoDocument(
-      <Menu
-        id='test-menu'
-        dropAlign={{ top: 'top', right: 'right' }}
-        label='Test'
-        items={[
-          { label: 'Item 1' },
-          { label: 'Item 2' },
-        ]}
-      />
+      <Grommet>
+        <Menu
+          id='test-menu'
+          dropAlign={{ top: 'top', right: 'right' }}
+          label='Test'
+          items={[
+            { label: 'Item 1' },
+            { label: 'Item 2' },
+          ]}
+        />
+      </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -203,16 +221,18 @@ describe('Menu', () => {
 
   test('disabled', () => {
     const { getByText, container } = renderIntoDocument(
-      <Menu
-        id='test-menu'
-        disabled={true}
-        label='Test'
-        items={[
-          { label: 'Item 1' },
-          { label: 'Item 2', onClick: () => {} },
-          { label: 'Item 3', href: '/test' },
-        ]}
-      />, {
+      <Grommet>
+        <Menu
+          id='test-menu'
+          disabled={true}
+          label='Test'
+          items={[
+            { label: 'Item 1' },
+            { label: 'Item 2', onClick: () => {} },
+            { label: 'Item 3', href: '/test' },
+          ]}
+        />
+      </Grommet>, {
         attachTo: document.body.firstChild,
       }
     );

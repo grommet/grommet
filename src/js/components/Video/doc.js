@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (Video) => {
+export const doc = (Video) => {
   const DocumentedVideo = describe(Video)
     .availableAt(getAvailableAtBadge('Video'))
     .description('A video player.')

@@ -25,7 +25,7 @@ const dropKeyFrames = keyframes`
   }
 `;
 
-const StyledDrop = styled.div`
+export const StyledDrop = styled.div`
   ${baseStyle}
 
   border-radius: ${props => props.theme.global.drop.border.radius};
@@ -50,8 +50,6 @@ const StyledDrop = styled.div`
     display: flex;
     align-items: stretch;
   }
-`;
-
-export default StyledDrop.extend`
+`.extend`
   ${props => props.theme.drop && props.theme.drop.extend}
 `;

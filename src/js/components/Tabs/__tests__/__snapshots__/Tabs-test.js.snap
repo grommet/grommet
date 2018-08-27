@@ -227,104 +227,112 @@ exports[`Tabs Tab 1`] = `
 
 exports[`Tabs change active index 1`] = `
 <div
-  role="tablist"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
-    class="StyledBox-YaZNy hPUIyd"
+    role="tablist"
   >
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+    <div
+      class="StyledBox-YaZNy hPUIyd"
     >
-      <div
-        class="StyledBox-YaZNy hqcczV"
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        <span
-          class="StyledText-dmaDlZ jedYWT"
-          color="#444444"
+        <div
+          class="StyledBox-YaZNy hqcczV"
         >
-          Tab 1
-        </span>
-      </div>
-    </button>
-    <button
-      aria-expanded="true"
-      aria-selected="true"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+          <span
+            class="StyledText-dmaDlZ jedYWT"
+            color="#444444"
+          >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy kNfDNC"
+        >
+          <span
+            class="StyledText-dmaDlZ grxbuN"
+          >
+            Tab 2
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Tab 2 Tab Contents"
+      role="tabpanel"
     >
-      <div
-        class="StyledBox-YaZNy kNfDNC"
-      >
-        <span
-          class="StyledText-dmaDlZ grxbuN"
-        >
-          Tab 2
-        </span>
-      </div>
-    </button>
-  </div>
-  <div
-    aria-label="Tab 2 Tab Contents"
-    role="tabpanel"
-  >
-    Tab body 2
+      Tab body 2
+    </div>
   </div>
 </div>
 `;
 
 exports[`Tabs change active index 2`] = `
 <div
-  role="tablist"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
-    class="StyledBox-YaZNy hPUIyd"
+    role="tablist"
   >
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+    <div
+      class="StyledBox-YaZNy hPUIyd"
     >
-      <div
-        class="StyledBox-YaZNy hqcczV"
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        <span
-          class="StyledText-dmaDlZ jedYWT"
-          color="#444444"
+        <div
+          class="StyledBox-YaZNy hqcczV"
         >
-          Tab 1
-        </span>
-      </div>
-    </button>
-    <button
-      aria-expanded="true"
-      aria-selected="true"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+          <span
+            class="StyledText-dmaDlZ jedYWT"
+            color="#444444"
+          >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy kNfDNC"
+        >
+          <span
+            class="StyledText-dmaDlZ grxbuN"
+          >
+            Tab 2
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Tab 2 Tab Contents"
+      role="tabpanel"
     >
-      <div
-        class="StyledBox-YaZNy kNfDNC"
-      >
-        <span
-          class="StyledText-dmaDlZ grxbuN"
-        >
-          Tab 2
-        </span>
-      </div>
-    </button>
-  </div>
-  <div
-    aria-label="Tab 2 Tab Contents"
-    role="tabpanel"
-  >
-    Tab body 2
+      Tab body 2
+    </div>
   </div>
 </div>
 `;
@@ -713,260 +721,280 @@ exports[`Tabs no Tab 1`] = `
 
 exports[`Tabs set on hover 1`] = `
 <div
-  role="tablist"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
-    class="StyledBox-YaZNy hPUIyd"
+    role="tablist"
   >
-    <button
-      aria-expanded="true"
-      aria-selected="true"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+    <div
+      class="StyledBox-YaZNy hPUIyd"
     >
-      <div
-        class="StyledBox-YaZNy kNfDNC"
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        <span
-          class="StyledText-dmaDlZ grxbuN"
+        <div
+          class="StyledBox-YaZNy kNfDNC"
         >
-          Tab 1
-        </span>
-      </div>
-    </button>
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+          <span
+            class="StyledText-dmaDlZ grxbuN"
+          >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy hqcczV"
+        >
+          <span
+            class="StyledText-dmaDlZ jedYWT"
+            color="#444444"
+          >
+            Tab 2
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Tab 1 Tab Contents"
+      role="tabpanel"
     >
-      <div
-        class="StyledBox-YaZNy hqcczV"
-      >
-        <span
-          class="StyledText-dmaDlZ jedYWT"
-          color="#444444"
-        >
-          Tab 2
-        </span>
-      </div>
-    </button>
-  </div>
-  <div
-    aria-label="Tab 1 Tab Contents"
-    role="tabpanel"
-  >
-    Tab body 1
+      Tab body 1
+    </div>
   </div>
 </div>
 `;
 
 exports[`Tabs set on hover 2`] = `
 <div
-  role="tablist"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
-    class="StyledBox-YaZNy hPUIyd"
+    role="tablist"
   >
-    <button
-      aria-expanded="true"
-      aria-selected="true"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+    <div
+      class="StyledBox-YaZNy hPUIyd"
     >
-      <div
-        class="StyledBox-YaZNy kNfDNC"
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        <span
-          class="StyledText-dmaDlZ grxbuN"
+        <div
+          class="StyledBox-YaZNy kNfDNC"
         >
-          Tab 1
-        </span>
-      </div>
-    </button>
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+          <span
+            class="StyledText-dmaDlZ grxbuN"
+          >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy hqcczV"
+        >
+          <span
+            class="StyledText-dmaDlZ jedYWT"
+            color="#444444"
+          >
+            Tab 2
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Tab 1 Tab Contents"
+      role="tabpanel"
     >
-      <div
-        class="StyledBox-YaZNy hqcczV"
-      >
-        <span
-          class="StyledText-dmaDlZ jedYWT"
-          color="#444444"
-        >
-          Tab 2
-        </span>
-      </div>
-    </button>
-  </div>
-  <div
-    aria-label="Tab 1 Tab Contents"
-    role="tabpanel"
-  >
-    Tab body 1
+      Tab body 1
+    </div>
   </div>
 </div>
 `;
 
 exports[`Tabs set on hover 3`] = `
 <div
-  role="tablist"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
-    class="StyledBox-YaZNy hPUIyd"
+    role="tablist"
   >
-    <button
-      aria-expanded="true"
-      aria-selected="true"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+    <div
+      class="StyledBox-YaZNy hPUIyd"
     >
-      <div
-        class="StyledBox-YaZNy kNfDNC"
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        <span
-          class="StyledText-dmaDlZ grxbuN"
+        <div
+          class="StyledBox-YaZNy kNfDNC"
         >
-          Tab 1
-        </span>
-      </div>
-    </button>
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+          <span
+            class="StyledText-dmaDlZ grxbuN"
+          >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy kNfDNC"
+        >
+          <span
+            class="StyledText-dmaDlZ jedYWT"
+            color="#444444"
+          >
+            Tab 2
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Tab 1 Tab Contents"
+      role="tabpanel"
     >
-      <div
-        class="StyledBox-YaZNy kNfDNC"
-      >
-        <span
-          class="StyledText-dmaDlZ jedYWT"
-          color="#444444"
-        >
-          Tab 2
-        </span>
-      </div>
-    </button>
-  </div>
-  <div
-    aria-label="Tab 1 Tab Contents"
-    role="tabpanel"
-  >
-    Tab body 1
+      Tab body 1
+    </div>
   </div>
 </div>
 `;
 
 exports[`Tabs set on hover 4`] = `
 <div
-  role="tablist"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
-    class="StyledBox-YaZNy hPUIyd"
+    role="tablist"
   >
-    <button
-      aria-expanded="true"
-      aria-selected="true"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+    <div
+      class="StyledBox-YaZNy hPUIyd"
     >
-      <div
-        class="StyledBox-YaZNy kNfDNC"
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        <span
-          class="StyledText-dmaDlZ grxbuN"
+        <div
+          class="StyledBox-YaZNy kNfDNC"
         >
-          Tab 1
-        </span>
-      </div>
-    </button>
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+          <span
+            class="StyledText-dmaDlZ grxbuN"
+          >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy kNfDNC"
+        >
+          <span
+            class="StyledText-dmaDlZ jedYWT"
+            color="#444444"
+          >
+            Tab 2
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Tab 1 Tab Contents"
+      role="tabpanel"
     >
-      <div
-        class="StyledBox-YaZNy kNfDNC"
-      >
-        <span
-          class="StyledText-dmaDlZ jedYWT"
-          color="#444444"
-        >
-          Tab 2
-        </span>
-      </div>
-    </button>
-  </div>
-  <div
-    aria-label="Tab 1 Tab Contents"
-    role="tabpanel"
-  >
-    Tab body 1
+      Tab body 1
+    </div>
   </div>
 </div>
 `;
 
 exports[`Tabs set on hover 5`] = `
 <div
-  role="tablist"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
-    class="StyledBox-YaZNy hPUIyd"
+    role="tablist"
   >
-    <button
-      aria-expanded="true"
-      aria-selected="true"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+    <div
+      class="StyledBox-YaZNy hPUIyd"
     >
-      <div
-        class="StyledBox-YaZNy kNfDNC"
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        <span
-          class="StyledText-dmaDlZ grxbuN"
+        <div
+          class="StyledBox-YaZNy kNfDNC"
         >
-          Tab 1
-        </span>
-      </div>
-    </button>
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+          <span
+            class="StyledText-dmaDlZ grxbuN"
+          >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy hqcczV"
+        >
+          <span
+            class="StyledText-dmaDlZ jedYWT"
+            color="#444444"
+          >
+            Tab 2
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Tab 1 Tab Contents"
+      role="tabpanel"
     >
-      <div
-        class="StyledBox-YaZNy hqcczV"
-      >
-        <span
-          class="StyledText-dmaDlZ jedYWT"
-          color="#444444"
-        >
-          Tab 2
-        </span>
-      </div>
-    </button>
-  </div>
-  <div
-    aria-label="Tab 1 Tab Contents"
-    role="tabpanel"
-  >
-    Tab body 1
+      Tab body 1
+    </div>
   </div>
 </div>
 `;

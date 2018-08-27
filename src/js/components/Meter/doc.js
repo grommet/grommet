@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { backgroundPropType, getAvailableAtBadge } from '../../utils';
 
-export default (Meter) => {
+export const doc = (Meter) => {
   const DocumentedMeter = describe(Meter)
     .availableAt(getAvailableAtBadge('Meter'))
     .description('A graphical meter.')

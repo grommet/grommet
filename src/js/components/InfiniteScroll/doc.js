@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (InfiniteScroll) => {
+export const doc = (InfiniteScroll) => {
   const DocumentedInfiniteScroll = describe(InfiniteScroll)
     .availableAt(getAvailableAtBadge('InfiniteScroll'))
     .description('A container that lazily renders items.')

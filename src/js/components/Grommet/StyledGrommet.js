@@ -8,12 +8,10 @@ const fullStyle = css`
   overflow: auto;
 `;
 
-const StyledGrommet = styled.div`
+export const StyledGrommet = styled.div`
   ${baseStyle}
   ${props => props.full && fullStyle}
   ${props => props.theme.global.font.face}
-`;
-
-export default StyledGrommet.extend`
+`.extend`
   ${props => props.theme.grommet.extend}
 `;

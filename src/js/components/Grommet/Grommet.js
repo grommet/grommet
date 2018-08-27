@@ -3,12 +3,12 @@ import { ThemeContext as IconThemeContext } from 'grommet-icons';
 import { compose } from 'recompose';
 
 import { ResponsiveContext, ThemeContext } from '../../contexts';
-import baseTheme from '../../themes/base';
+import { base as baseTheme } from '../../themes/base';
 import { colorIsDark, deepMerge } from '../../utils';
 import { withIconTheme } from '../hocs';
 
-import StyledGrommet from './StyledGrommet';
-import doc from './doc';
+import { StyledGrommet } from './StyledGrommet';
+import { doc } from './doc';
 
 class Grommet extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -87,8 +87,10 @@ class Grommet extends Component {
   }
 }
 
-export default compose(
+const GrommetWrapper = compose(
   withIconTheme,
 )(
   process.env.NODE_ENV !== 'production' ? doc(Grommet) : Grommet
 );
+
+export { GrommetWrapper as Grommet };

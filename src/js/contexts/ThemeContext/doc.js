@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (ThemeContext) => {
+export const doc = (ThemeContext) => {
   const DocumentedThemeContext = describe(ThemeContext)
     .availableAt(getAvailableAtBadge('ThemeContext'))
     .description('A means of tweaking the theme for contained components.')

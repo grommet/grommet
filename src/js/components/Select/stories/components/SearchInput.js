@@ -4,10 +4,10 @@ import { findDOMNode } from 'react-dom';
 
 import { TextInput } from '../../../';
 
-import SearchBorderBox from './SearchBorderBox';
-import SearchInputContext from './SearchInputContext';
+import { SearchBorderBox } from './SearchBorderBox';
+import { SearchInputContext } from './SearchInputContext';
 
-export default class SearchInput extends Component {
+export class SearchInput extends Component {
   textInputRef = createRef()
 
   componentDidMount() {

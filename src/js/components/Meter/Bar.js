@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 import { parseMetricToNum } from '../../utils';
 
-import StyledMeter from './StyledMeter';
+import { StyledMeter } from './StyledMeter';
 import { strokeProps } from './utils';
 
-export default class Bar extends Component {
+export class Bar extends Component {
   static defaultProps = {
     background: 'light-1',
   };

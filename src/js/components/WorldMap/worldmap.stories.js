@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import WorldMap from '../WorldMap/WorldMap';
-import Grommet from '../Grommet/Grommet';
+import { Grommet, WorldMap } from '../';
 import { grommet } from '../../themes';
 
 class SimpleWorldMap extends Component {

@@ -30,7 +30,7 @@ const getClockState = ({ hours, minutes, seconds }) => {
   };
 };
 
-export default class Analog extends Component {
+export class Analog extends Component {
   static defaultProps = {
     size: 'medium',
   }

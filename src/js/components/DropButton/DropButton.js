@@ -6,7 +6,7 @@ import { Drop } from '../Drop';
 import { withForwardRef, withTheme } from '../hocs';
 import { setFocusWithoutScroll } from '../../utils';
 
-import doc from './doc';
+import { doc } from './doc';
 
 class DropButton extends Component {
   static defaultProps = {
@@ -102,9 +102,11 @@ class DropButton extends Component {
   }
 }
 
-export default compose(
+const DropButtonWrapper = compose(
   withTheme,
-  withForwardRef,
+  withForwardRef
 )(
   process.env.NODE_ENV !== 'production' ? doc(DropButton) : DropButton
 );
+
+export { DropButtonWrapper as DropButton };

@@ -67,7 +67,7 @@ const Element = ({ number, run, sep, size, theme }) => {
   return result;
 };
 
-export default class Digital extends Component {
+export class Digital extends Component {
   render() {
     const { elements, precision, run, size, theme, ...rest } = this.props;
     let seconds;

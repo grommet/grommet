@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import RadioButton from '../RadioButton/RadioButton';
-import Grommet from '../Grommet/Grommet';
+import { Grommet, RadioButton } from '../';
 import { grommet } from '../../themes';
 
 class SimpleRadioButton extends Component {

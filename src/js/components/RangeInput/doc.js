@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (RangeInput) => {
+export const doc = (RangeInput) => {
   const DocumentedRangeInput = describe(RangeInput)
     .availableAt(getAvailableAtBadge('RangeInput'))
     .description('A range input with custom styles.')

@@ -27,7 +27,7 @@ Object.keys(statusColors).forEach((color) => {
   colors[`status-${color}`] = statusColors[color];
 });
 
-export default deepFreeze({
+export const hpe = deepFreeze({
   global: {
     colors,
     font: {

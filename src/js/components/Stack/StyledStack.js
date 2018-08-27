@@ -8,12 +8,10 @@ const fillStyle = `
   display: flex;
 `;
 
-const StyledStack = styled.div`
+export const StyledStack = styled.div`
   position: relative;
   ${props => props.fillContainer && fillStyle}
-`;
-
-export default StyledStack.extend`
+`.extend`
   ${props => props.theme.stack && props.theme.stack.extend}
 `;
 

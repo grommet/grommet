@@ -2,7 +2,7 @@ import React from 'react';
 import 'jest-styled-components';
 import { cleanup, renderIntoDocument, Simulate } from 'react-testing-library';
 
-import FocusedContainer from '../FocusedContainer';
+import { FocusedContainer } from '../FocusedContainer';
 
 describe('FocusedContainer', () => {
   afterEach(cleanup);

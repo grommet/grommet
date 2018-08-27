@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Heading from '../Heading/Heading';
-import Grommet from '../Grommet/Grommet';
-import Grid from '../Grid/Grid';
+import { Grommet, Grid, Heading } from '../';
 import { ThemeContext } from '../../contexts';
 import { grommet } from '../../themes';
 
@@ -15,7 +13,7 @@ const H = ({ level, size }) => (
 
 const Set = ({ size, theme }) => (
   <div>
-    {[1, 2, 3, 4].map(level => <H level={level} size={size} theme={theme} />)}
+    {[1, 2, 3, 4].map(level => <H key={level} level={level} size={size} theme={theme} />)}
   </div>
 );
 

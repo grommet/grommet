@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (TextArea) => {
+export const doc = (TextArea) => {
   const DocumentedTextArea = describe(TextArea)
     .availableAt(getAvailableAtBadge('TextArea'))
     .description(

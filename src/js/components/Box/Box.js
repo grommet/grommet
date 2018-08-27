@@ -6,9 +6,9 @@ import { ThemeContext } from '../../contexts';
 import { backgroundIsDark } from '../../utils';
 import { withForwardRef, withTheme } from '../hocs';
 
-import StyledBox, { StyledBoxGap } from './StyledBox';
+import { StyledBox, StyledBoxGap } from './StyledBox';
 
-import doc from './doc';
+import { doc } from './doc';
 
 const styledComponents = {
   div: StyledBox,
@@ -139,9 +139,11 @@ class Box extends Component {
   }
 }
 
-export default compose(
+const BoxWrapper = compose(
   withTheme,
   withForwardRef, // needed for RangeSelector
 )(
   process.env.NODE_ENV !== 'production' ? doc(Box) : Box
 );
+
+export { BoxWrapper as Box };

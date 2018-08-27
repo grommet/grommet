@@ -4,14 +4,15 @@ import { compose } from 'recompose';
 import { withFocus, withForwardRef, withTheme } from '../hocs';
 import { removeUndefined } from '../../utils/object';
 
-import StyledCheckBox, {
+import {
+  StyledCheckBox,
   StyledCheckBoxContainer,
   StyledCheckBoxInput,
   StyledCheckBoxBox,
   StyledCheckBoxToggle,
   StyledCheckBoxKnob,
 } from './StyledCheckBox';
-import doc from './doc';
+import { doc } from './doc';
 
 class CheckBox extends Component {
   render() {
@@ -77,10 +78,12 @@ class CheckBox extends Component {
   }
 }
 
-export default compose(
+const CheckBoxWrapper = compose(
   withFocus,
   withTheme,
   withForwardRef,
 )(
   process.env.NODE_ENV !== 'production' ? doc(CheckBox) : CheckBox
 );
+
+export { CheckBoxWrapper as CheckBox };

@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-export default (Keyboard) => {
+export const doc = (Keyboard) => {
   const DocumentedKeyboard = describe(Keyboard)
     .description(
       'A react component that handles keyboard key presses.'

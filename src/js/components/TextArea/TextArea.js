@@ -3,8 +3,8 @@ import { compose } from 'recompose';
 
 import { withForwardRef, withTheme } from '../hocs';
 
-import StyledTextArea from './StyledTextArea';
-import doc from './doc';
+import { StyledTextArea } from './StyledTextArea';
+import { doc } from './doc';
 
 class TextArea extends Component {
   render() {
@@ -15,9 +15,11 @@ class TextArea extends Component {
   }
 }
 
-export default compose(
+const TextAreaWrapper = compose(
   withTheme,
   withForwardRef
 )(
   process.env.NODE_ENV !== 'production' ? doc(TextArea) : TextArea
 );
+
+export { TextAreaWrapper as TextArea };

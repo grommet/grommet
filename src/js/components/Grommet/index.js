@@ -1,5 +1,2 @@
-import Grommet from './Grommet';
 
-export { default as Grommet } from './Grommet';
-
-export default Grommet;
+export { Grommet } from './Grommet';

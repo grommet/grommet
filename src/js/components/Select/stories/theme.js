@@ -4,10 +4,10 @@ import { FormCheckmark } from 'grommet-icons';
 
 import { colorForName } from '../../../utils';
 
-import ArrowDown from './components/icons/ArrowDown';
-import SearchInput from './components/SearchInput';
+import { ArrowDown } from './components/icons/ArrowDown';
+import { SearchInput } from './components/SearchInput';
 
-export default {
+export const theme = {
   global: {
     colors: {
       border: '#e0e0e0',

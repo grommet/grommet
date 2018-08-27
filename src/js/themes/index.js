@@ -1,4 +1,4 @@
-export { default as base } from './base';
-export { default as grommet } from './grommet';
-export { default as hpe } from './hpe';
-export { default as dark } from './dark';
+export { base, generate } from './base';
+export { grommet } from './grommet';
+export { hpe } from './hpe';
+export { dark } from './dark';

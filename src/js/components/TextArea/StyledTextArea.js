@@ -12,7 +12,7 @@ const plainStyle = css`
   -webkit-appearance: none;
 `;
 
-const StyledTextArea = styled.textarea`
+export const StyledTextArea = styled.textarea`
   ${inputStyle}
   width: 100%;
 
@@ -38,8 +38,6 @@ const StyledTextArea = styled.textarea`
   &:focus {
     ${props => (!props.plain || props.focusIndicator) && focusStyle}
   }
-`;
-
-export default StyledTextArea.extend`
+`.extend`
   ${props => props.theme.textArea && props.theme.textArea.extend}
 `;

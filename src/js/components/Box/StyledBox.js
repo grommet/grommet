@@ -325,7 +325,7 @@ const animationStyle = css`
 `;
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-const StyledBox = styled.div`
+export const StyledBox = styled.div`
   display: flex;
   box-sizing: border-box;
   outline: none;
@@ -357,9 +357,7 @@ const StyledBox = styled.div`
   ${props => props.elevationProp && elevationStyle}
   ${props => props.animation && animationStyle}
   ${props => props.focus && focusStyle}
-`;
-
-export default StyledBox.extend`
+`.extend`
   ${props => props.theme.box && props.theme.box.extend}
 `;
 

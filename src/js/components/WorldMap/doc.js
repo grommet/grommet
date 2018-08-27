@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (WorldMap) => {
+export const doc = (WorldMap) => {
   const DocumentedWorldMap = describe(WorldMap)
     .availableAt(getAvailableAtBadge('WorldMap'))
     .description('A map of the world, or a continent.')

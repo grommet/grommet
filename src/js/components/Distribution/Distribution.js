@@ -5,7 +5,7 @@ import { Box } from '../Box';
 
 import { withTheme } from '../hocs';
 
-import doc from './doc';
+import { doc } from './doc';
 
 const Value = ({ basis, children }) => (
   <Box basis={basis} flex='shrink' overflow='hidden'>
@@ -87,8 +87,10 @@ class Distribution extends Component {
   }
 }
 
-export default compose(
+const DistributionWrapper = compose(
   withTheme,
 )(
   process.env.NODE_ENV !== 'production' ? doc(Distribution) : Distribution
 );
+
+export { DistributionWrapper as Distribution };

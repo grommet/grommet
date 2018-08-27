@@ -6,7 +6,7 @@ import { getBodyChildElements, makeNodeFocusable, makeNodeUnfocusable } from '..
 
 const isNotAncestorOf = child => parent => !parent.contains(child);
 
-export default class FocusedContainer extends Component {
+export class FocusedContainer extends Component {
   static defaultProps = {
     hidden: false,
     restrictScroll: false,

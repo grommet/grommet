@@ -75,6 +75,8 @@ class EdgeControl extends Component {
   }
 }
 
-export default compose(
+const EdgeControlWrapper = compose(
   withForwardRef,
 )(EdgeControl);
+
+export { EdgeControlWrapper as EdgeControl };

@@ -6,7 +6,7 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 import { withFocus, withTheme } from '../hocs';
 
-import doc from './doc';
+import { doc } from './doc';
 
 class FormField extends Component {
   render() {
@@ -113,9 +113,11 @@ class FormField extends Component {
   }
 }
 
-export default compose(
+const FormFieldWrapper = compose(
   withFocus,
   withTheme,
 )(
   process.env.NODE_ENV !== 'production' ? doc(FormField) : FormField
 );
+
+export { FormFieldWrapper as FormField };

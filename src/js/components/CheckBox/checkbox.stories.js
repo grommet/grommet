@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import CheckBox from '../CheckBox/CheckBox';
-import Grommet from '../Grommet/Grommet';
+import { Grommet, CheckBox } from '../';
 import { grommet } from '../../themes';
 
 class SimpleCheckBox extends Component {

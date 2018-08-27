@@ -13,7 +13,6 @@ const VALUES = [
 test('Chart renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Chart />
       <Chart values={VALUES} />
     </Grommet>
   );

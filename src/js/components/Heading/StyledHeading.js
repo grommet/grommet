@@ -78,7 +78,7 @@ const colorStyle = css`
   color: ${props => colorForName(props.color, props.theme)};
 `;
 
-const StyledHeading = styled.h1`
+export const StyledHeading = styled.h1`
   ${props => props.theme.heading.font && css`
     font-family: ${props.theme.heading.font.family};
   `}
@@ -87,8 +87,6 @@ const StyledHeading = styled.h1`
   ${props => props.textAlign && textAlignStyle}
   ${props => props.truncate && truncateStyle}
   ${props => props.color && colorStyle}
-`;
-
-export default StyledHeading.extend`
+`.extend`
   ${props => props.theme.heading && props.theme.heading.extend}
 `;

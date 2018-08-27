@@ -345,6 +345,7 @@ box overflow.
 auto
 hidden
 scroll
+visible
 ```
 
 **pad**

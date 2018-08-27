@@ -210,6 +210,12 @@ exports[`Calendar date renders 1`] = `
   color: black;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 1.45;
+  width: 384px;
+}
+
 .c10 {
   overflow: hidden;
   height: 329.1428571428571px;
@@ -291,12 +297,6 @@ exports[`Calendar date renders 1`] = `
   background: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 1.45;
-  width: 384px;
 }
 
 .c0 {
@@ -1617,6 +1617,12 @@ exports[`Calendar dates renders 1`] = `
   color: black;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 1.45;
+  width: 384px;
+}
+
 .c10 {
   overflow: hidden;
   height: 329.1428571428571px;
@@ -1698,12 +1704,6 @@ exports[`Calendar dates renders 1`] = `
   background: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 1.45;
-  width: 384px;
 }
 
 .c0 {
@@ -3024,6 +3024,12 @@ exports[`Calendar disabled renders 1`] = `
   color: black;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 1.45;
+  width: 384px;
+}
+
 .c10 {
   overflow: hidden;
   height: 329.1428571428571px;
@@ -3105,12 +3111,6 @@ exports[`Calendar disabled renders 1`] = `
   background: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 1.45;
-  width: 384px;
 }
 
 .c0 {
@@ -4431,6 +4431,12 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   color: black;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 1.45;
+  width: 384px;
+}
+
 .c10 {
   overflow: hidden;
   height: 329.1428571428571px;
@@ -4512,12 +4518,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   background: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 1.45;
-  width: 384px;
 }
 
 .c0 {
@@ -6822,6 +6822,12 @@ exports[`Calendar renders 1`] = `
   color: black;
 }
 
+.c1 {
+  font-size: 18px;
+  line-height: 1.45;
+  width: 384px;
+}
+
 .c10 {
   overflow: hidden;
   height: 329.1428571428571px;
@@ -6903,12 +6909,6 @@ exports[`Calendar renders 1`] = `
   background: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 1.45;
-  width: 384px;
 }
 
 .c0 {
@@ -8263,6 +8263,24 @@ exports[`Calendar size renders 1`] = `
   color: black;
 }
 
+.c19 {
+  font-size: 18px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c1 {
+  font-size: 14px;
+  line-height: 1.375;
+  width: 192px;
+}
+
+.c24 {
+  font-size: 22px;
+  line-height: 1.11;
+  width: 768px;
+}
+
 .c20 {
   overflow: hidden;
   height: 329.1428571428571px;
@@ -8464,24 +8482,6 @@ exports[`Calendar size renders 1`] = `
   background: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
-}
-
-.c19 {
-  font-size: 18px;
-  line-height: 1.45;
-  width: 384px;
-}
-
-.c1 {
-  font-size: 14px;
-  line-height: 1.375;
-  width: 192px;
-}
-
-.c24 {
-  font-size: 22px;
-  line-height: 1.11;
-  width: 768px;
 }
 
 .c0 {

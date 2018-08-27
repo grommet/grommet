@@ -1,19 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`dark renders 1`] = `
-.c0 {
-  font-family: Arial;
-  font-size: 18px;
-  line-height: 24px;
-  color: #eeeeee;
-  background: #111111;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -416,6 +403,19 @@ exports[`dark renders 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c0 {
+  font-family: Arial;
+  font-size: 18px;
+  line-height: 24px;
+  color: #eeeeee;
+  background: #111111;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:699px) {
@@ -884,17 +884,6 @@ exports[`dark renders 1`] = `
 `;
 
 exports[`default renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1297,6 +1286,17 @@ exports[`default renders 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:699px) {
@@ -1765,18 +1765,6 @@ exports[`default renders 1`] = `
 `;
 
 exports[`hpe renders 1`] = `
-.c0 {
-  font-family: 'Metric',Arial,sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2141,6 +2129,18 @@ exports[`hpe renders 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c0 {
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (max-width:699px) {

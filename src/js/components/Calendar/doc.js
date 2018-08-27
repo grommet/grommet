@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (Calendar) => {
+export const doc = (Calendar) => {
   const DocumentedCalendar = describe(Calendar)
     .availableAt(getAvailableAtBadge('Calendar'))
     .description(`Calendar of days in months.

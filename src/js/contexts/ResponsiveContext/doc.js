@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (ResponsiveContext) => {
+export const doc = (ResponsiveContext) => {
   const DocumentedResponsiveContext = describe(ResponsiveContext)
     .availableAt(getAvailableAtBadge('ResponsiveContext'))
     .description(

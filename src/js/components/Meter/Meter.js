@@ -3,9 +3,9 @@ import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
 
-import Bar from './Bar';
-import Circle from './Circle';
-import doc from './doc';
+import { Bar } from './Bar';
+import { Circle } from './Circle';
+import { doc } from './doc';
 
 const deriveMax = (values) => {
   let max = 100;
@@ -50,8 +50,10 @@ class Meter extends Component {
   }
 }
 
-export default compose(
+const MeterWrapper = compose(
   withTheme,
 )(
   process.env.NODE_ENV !== 'production' ? doc(Meter) : Meter
 );
+
+export { MeterWrapper as Meter };

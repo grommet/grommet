@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (Heading) => {
+export const doc = (Heading) => {
   const DocumentedHeading = describe(Heading)
     .availableAt(getAvailableAtBadge('Heading'))
     .description('Heading text structed in levels.')

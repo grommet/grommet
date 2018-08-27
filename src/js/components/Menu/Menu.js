@@ -3,15 +3,11 @@ import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 import styled from 'styled-components';
 
-import { Box } from '../Box';
-import { Button } from '../Button';
-import { DropButton } from '../DropButton';
-import { Keyboard } from '../Keyboard';
-import { Text } from '../Text';
+import { Box, Button, DropButton, Keyboard, Text } from '../';
 import { withForwardRef, withTheme } from '../hocs';
 import { evalStyle } from '../../utils';
 
-import doc from './doc';
+import { doc } from './doc';
 
 const ContainerBox = styled(Box)`
   max-height: inherit;
@@ -194,9 +190,11 @@ class Menu extends Component {
   }
 }
 
-export default compose(
+const MenuWrapper = compose(
   withTheme,
   withForwardRef,
 )(
   process.env.NODE_ENV !== 'production' ? doc(Menu) : Menu
 );
+
+export { MenuWrapper as Menu };

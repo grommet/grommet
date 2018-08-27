@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (RangeSelector) => {
+export const doc = (RangeSelector) => {
   const DocumentedRangeSelector = describe(RangeSelector)
     .availableAt(getAvailableAtBadge('RangeSelector'))
     .description('A control to allow selecting a range of values.')

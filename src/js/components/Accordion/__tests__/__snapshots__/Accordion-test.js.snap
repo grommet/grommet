@@ -456,108 +456,112 @@ exports[`Accordion AccordionPanel 1`] = `
 
 exports[`Accordion change active index 1`] = `
 <div
-  class="StyledBox-YaZNy jLqfV"
-  role="tablist"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
-    class="StyledBox-YaZNy ckMYwJ"
+    class="StyledBox-YaZNy jLqfV"
+    role="tablist"
   >
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+    <div
+      class="StyledBox-YaZNy ckMYwJ"
     >
-      <div
-        class="StyledBox-YaZNy flHrpn"
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
         <div
-          class="StyledBox-YaZNy fTioZP"
+          class="StyledBox-YaZNy flHrpn"
         >
-          <h4
-            class="StyledHeading-klHxZj fpttnD"
+          <div
+            class="StyledBox-YaZNy fTioZP"
           >
-            Panel 1
-          </h4>
-        </div>
-        <div
-          class="StyledBox-YaZNy cpEutI"
-        >
-          <svg
-            aria-label="FormDown"
-            class="StyledIcon-hcpUvT bPezfS"
-            color="#7D4CDB"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
+            <h4
+              class="StyledHeading-klHxZj fpttnD"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-YaZNy cpEutI"
           >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-hcpUvT bPezfS"
+              color="#7D4CDB"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
         </div>
-      </div>
-    </button>
-    <div
-      class="StyledBox-YaZNy gqdRXJ"
-    />
-  </div>
-  <div
-    class="StyledBox-YaZNy ckMYwJ"
-  >
-    <button
-      aria-expanded="true"
-      aria-selected="true"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
-    >
+      </button>
       <div
-        class="StyledBox-YaZNy flHrpn"
+        class="StyledBox-YaZNy gqdRXJ"
+      />
+    </div>
+    <div
+      class="StyledBox-YaZNy ckMYwJ"
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
         <div
-          class="StyledBox-YaZNy fTioZP"
+          class="StyledBox-YaZNy flHrpn"
         >
-          <h4
-            class="StyledHeading-klHxZj fpttnD"
+          <div
+            class="StyledBox-YaZNy fTioZP"
           >
-            Panel 2
-          </h4>
-        </div>
-        <div
-          class="StyledBox-YaZNy cpEutI"
-        >
-          <svg
-            aria-label="FormUp"
-            class="StyledIcon-hcpUvT bPezfS"
-            color="#7D4CDB"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
+            <h4
+              class="StyledHeading-klHxZj fpttnD"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-YaZNy cpEutI"
           >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
-            />
-          </svg>
+            <svg
+              aria-label="FormUp"
+              class="StyledIcon-hcpUvT bPezfS"
+              color="#7D4CDB"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(1 0 0 -1 0 24)"
+              />
+            </svg>
+          </div>
         </div>
+      </button>
+      <div
+        class="StyledBox-YaZNy gqdRXJ"
+      >
+        Panel body 2
       </div>
-    </button>
-    <div
-      class="StyledBox-YaZNy gqdRXJ"
-    >
-      Panel body 2
     </div>
   </div>
 </div>
@@ -565,108 +569,112 @@ exports[`Accordion change active index 1`] = `
 
 exports[`Accordion change active index 2`] = `
 <div
-  class="StyledBox-YaZNy jLqfV"
-  role="tablist"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
-    class="StyledBox-YaZNy ckMYwJ"
+    class="StyledBox-YaZNy jLqfV"
+    role="tablist"
   >
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
+    <div
+      class="StyledBox-YaZNy ckMYwJ"
     >
-      <div
-        class="StyledBox-YaZNy flHrpn"
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
         <div
-          class="StyledBox-YaZNy fTioZP"
+          class="StyledBox-YaZNy flHrpn"
         >
-          <h4
-            class="StyledHeading-klHxZj fpttnD"
+          <div
+            class="StyledBox-YaZNy fTioZP"
           >
-            Panel 1
-          </h4>
-        </div>
-        <div
-          class="StyledBox-YaZNy cpEutI"
-        >
-          <svg
-            aria-label="FormDown"
-            class="StyledIcon-hcpUvT bPezfS"
-            color="#7D4CDB"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
+            <h4
+              class="StyledHeading-klHxZj fpttnD"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-YaZNy cpEutI"
           >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-hcpUvT bPezfS"
+              color="#7D4CDB"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
         </div>
-      </div>
-    </button>
-    <div
-      class="StyledBox-YaZNy gqdRXJ"
-    />
-  </div>
-  <div
-    class="StyledBox-YaZNy ckMYwJ"
-  >
-    <button
-      aria-expanded="true"
-      aria-selected="true"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
-    >
+      </button>
       <div
-        class="StyledBox-YaZNy flHrpn"
+        class="StyledBox-YaZNy gqdRXJ"
+      />
+    </div>
+    <div
+      class="StyledBox-YaZNy ckMYwJ"
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
         <div
-          class="StyledBox-YaZNy fTioZP"
+          class="StyledBox-YaZNy flHrpn"
         >
-          <h4
-            class="StyledHeading-klHxZj fpttnD"
+          <div
+            class="StyledBox-YaZNy fTioZP"
           >
-            Panel 2
-          </h4>
-        </div>
-        <div
-          class="StyledBox-YaZNy cpEutI"
-        >
-          <svg
-            aria-label="FormUp"
-            class="StyledIcon-hcpUvT bPezfS"
-            color="#7D4CDB"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
+            <h4
+              class="StyledHeading-klHxZj fpttnD"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-YaZNy cpEutI"
           >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-              transform="matrix(1 0 0 -1 0 24)"
-            />
-          </svg>
+            <svg
+              aria-label="FormUp"
+              class="StyledIcon-hcpUvT bPezfS"
+              color="#7D4CDB"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(1 0 0 -1 0 24)"
+              />
+            </svg>
+          </div>
         </div>
+      </button>
+      <div
+        class="StyledBox-YaZNy gqdRXJ"
+      >
+        Panel body 2
       </div>
-    </button>
-    <div
-      class="StyledBox-YaZNy gqdRXJ"
-    >
-      Panel body 2
     </div>
   </div>
 </div>
@@ -2388,118 +2396,122 @@ exports[`Accordion no AccordionPanel 1`] = `
 
 exports[`Accordion set on hover 1`] = `
 <div
-  class="StyledBox-YaZNy jLqfV"
-  role="tablist"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
-    class="StyledBox-YaZNy ckMYwJ"
+    class="StyledBox-YaZNy jLqfV"
+    role="tablist"
   >
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
-    >
-      <div
-        class="StyledBox-YaZNy flHrpn"
-      >
-        <div
-          class="StyledBox-YaZNy fTioZP"
-        >
-          <h4
-            class="StyledHeading-klHxZj fpttnD"
-          >
-            Panel 1
-          </h4>
-        </div>
-        <div
-          class="StyledBox-YaZNy cpEutI"
-        >
-          <svg
-            aria-label="FormDown"
-            class="StyledIcon-hcpUvT bPezfS"
-            color="#7D4CDB"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
-          >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </div>
-    </button>
     <div
-      class="StyledBox-YaZNy gqdRXJ"
+      class="StyledBox-YaZNy ckMYwJ"
     >
-      <div
-        aria-hidden="true"
-        class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        Panel body 1
+        <div
+          class="StyledBox-YaZNy flHrpn"
+        >
+          <div
+            class="StyledBox-YaZNy fTioZP"
+          >
+            <h4
+              class="StyledHeading-klHxZj fpttnD"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-YaZNy cpEutI"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-hcpUvT bPezfS"
+              color="#7D4CDB"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-YaZNy gqdRXJ"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+        >
+          Panel body 1
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    class="StyledBox-YaZNy ckMYwJ"
-  >
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
-    >
-      <div
-        class="StyledBox-YaZNy flHrpn"
-      >
-        <div
-          class="StyledBox-YaZNy fTioZP"
-        >
-          <h4
-            class="StyledHeading-klHxZj fpttnD"
-          >
-            Panel 2
-          </h4>
-        </div>
-        <div
-          class="StyledBox-YaZNy cpEutI"
-        >
-          <svg
-            aria-label="FormDown"
-            class="StyledIcon-hcpUvT bPezfS"
-            color="#7D4CDB"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
-          >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </div>
-    </button>
     <div
-      class="StyledBox-YaZNy gqdRXJ"
+      class="StyledBox-YaZNy ckMYwJ"
     >
-      <div
-        aria-hidden="true"
-        class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        Panel body 2
+        <div
+          class="StyledBox-YaZNy flHrpn"
+        >
+          <div
+            class="StyledBox-YaZNy fTioZP"
+          >
+            <h4
+              class="StyledHeading-klHxZj fpttnD"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-YaZNy cpEutI"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-hcpUvT bPezfS"
+              color="#7D4CDB"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-YaZNy gqdRXJ"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+        >
+          Panel body 2
+        </div>
       </div>
     </div>
   </div>
@@ -2508,119 +2520,123 @@ exports[`Accordion set on hover 1`] = `
 
 exports[`Accordion set on hover 2`] = `
 <div
-  class="StyledBox-YaZNy jLqfV"
-  role="tablist"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
-    class="StyledBox-YaZNy ckMYwJ"
+    class="StyledBox-YaZNy jLqfV"
+    role="tablist"
   >
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
-    >
-      <div
-        class="StyledBox-YaZNy flHrpn"
-      >
-        <div
-          class="StyledBox-YaZNy fTioZP"
-        >
-          <h4
-            class="StyledHeading-klHxZj iAZBiv"
-            color="dark-6"
-          >
-            Panel 1
-          </h4>
-        </div>
-        <div
-          class="StyledBox-YaZNy cpEutI"
-        >
-          <svg
-            aria-label="FormDown"
-            class="StyledIcon-hcpUvT bPezfS"
-            color="#7D4CDB"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
-          >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </div>
-    </button>
     <div
-      class="StyledBox-YaZNy gqdRXJ"
+      class="StyledBox-YaZNy ckMYwJ"
     >
-      <div
-        aria-hidden="true"
-        class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        Panel body 1
+        <div
+          class="StyledBox-YaZNy flHrpn"
+        >
+          <div
+            class="StyledBox-YaZNy fTioZP"
+          >
+            <h4
+              class="StyledHeading-klHxZj iAZBiv"
+              color="dark-6"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-YaZNy cpEutI"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-hcpUvT bPezfS"
+              color="#7D4CDB"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-YaZNy gqdRXJ"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+        >
+          Panel body 1
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    class="StyledBox-YaZNy ckMYwJ"
-  >
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
-    >
-      <div
-        class="StyledBox-YaZNy flHrpn"
-      >
-        <div
-          class="StyledBox-YaZNy fTioZP"
-        >
-          <h4
-            class="StyledHeading-klHxZj fpttnD"
-          >
-            Panel 2
-          </h4>
-        </div>
-        <div
-          class="StyledBox-YaZNy cpEutI"
-        >
-          <svg
-            aria-label="FormDown"
-            class="StyledIcon-hcpUvT bPezfS"
-            color="#7D4CDB"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
-          >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </div>
-    </button>
     <div
-      class="StyledBox-YaZNy gqdRXJ"
+      class="StyledBox-YaZNy ckMYwJ"
     >
-      <div
-        aria-hidden="true"
-        class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        Panel body 2
+        <div
+          class="StyledBox-YaZNy flHrpn"
+        >
+          <div
+            class="StyledBox-YaZNy fTioZP"
+          >
+            <h4
+              class="StyledHeading-klHxZj fpttnD"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-YaZNy cpEutI"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-hcpUvT bPezfS"
+              color="#7D4CDB"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-YaZNy gqdRXJ"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+        >
+          Panel body 2
+        </div>
       </div>
     </div>
   </div>
@@ -2629,120 +2645,124 @@ exports[`Accordion set on hover 2`] = `
 
 exports[`Accordion set on hover 3`] = `
 <div
-  class="StyledBox-YaZNy jLqfV"
-  role="tablist"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
-    class="StyledBox-YaZNy ckMYwJ"
+    class="StyledBox-YaZNy jLqfV"
+    role="tablist"
   >
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
-    >
-      <div
-        class="StyledBox-YaZNy flHrpn"
-      >
-        <div
-          class="StyledBox-YaZNy fTioZP"
-        >
-          <h4
-            class="StyledHeading-klHxZj iAZBiv"
-            color="dark-6"
-          >
-            Panel 1
-          </h4>
-        </div>
-        <div
-          class="StyledBox-YaZNy cpEutI"
-        >
-          <svg
-            aria-label="FormDown"
-            class="StyledIcon-hcpUvT bPezfS"
-            color="#7D4CDB"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
-          >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </div>
-    </button>
     <div
-      class="StyledBox-YaZNy gqdRXJ"
+      class="StyledBox-YaZNy ckMYwJ"
     >
-      <div
-        aria-hidden="true"
-        class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        Panel body 1
+        <div
+          class="StyledBox-YaZNy flHrpn"
+        >
+          <div
+            class="StyledBox-YaZNy fTioZP"
+          >
+            <h4
+              class="StyledHeading-klHxZj iAZBiv"
+              color="dark-6"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-YaZNy cpEutI"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-hcpUvT bPezfS"
+              color="#7D4CDB"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-YaZNy gqdRXJ"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+        >
+          Panel body 1
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    class="StyledBox-YaZNy ckMYwJ"
-  >
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
-    >
-      <div
-        class="StyledBox-YaZNy flHrpn"
-      >
-        <div
-          class="StyledBox-YaZNy fTioZP"
-        >
-          <h4
-            class="StyledHeading-klHxZj iAZBiv"
-            color="dark-6"
-          >
-            Panel 2
-          </h4>
-        </div>
-        <div
-          class="StyledBox-YaZNy cpEutI"
-        >
-          <svg
-            aria-label="FormDown"
-            class="StyledIcon-hcpUvT bPezfS"
-            color="#7D4CDB"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
-          >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </div>
-    </button>
     <div
-      class="StyledBox-YaZNy gqdRXJ"
+      class="StyledBox-YaZNy ckMYwJ"
     >
-      <div
-        aria-hidden="true"
-        class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        Panel body 2
+        <div
+          class="StyledBox-YaZNy flHrpn"
+        >
+          <div
+            class="StyledBox-YaZNy fTioZP"
+          >
+            <h4
+              class="StyledHeading-klHxZj iAZBiv"
+              color="dark-6"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-YaZNy cpEutI"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-hcpUvT bPezfS"
+              color="#7D4CDB"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-YaZNy gqdRXJ"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+        >
+          Panel body 2
+        </div>
       </div>
     </div>
   </div>
@@ -2751,119 +2771,123 @@ exports[`Accordion set on hover 3`] = `
 
 exports[`Accordion set on hover 4`] = `
 <div
-  class="StyledBox-YaZNy jLqfV"
-  role="tablist"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
-    class="StyledBox-YaZNy ckMYwJ"
+    class="StyledBox-YaZNy jLqfV"
+    role="tablist"
   >
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
-    >
-      <div
-        class="StyledBox-YaZNy flHrpn"
-      >
-        <div
-          class="StyledBox-YaZNy fTioZP"
-        >
-          <h4
-            class="StyledHeading-klHxZj fpttnD"
-          >
-            Panel 1
-          </h4>
-        </div>
-        <div
-          class="StyledBox-YaZNy cpEutI"
-        >
-          <svg
-            aria-label="FormDown"
-            class="StyledIcon-hcpUvT bPezfS"
-            color="#7D4CDB"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
-          >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </div>
-    </button>
     <div
-      class="StyledBox-YaZNy gqdRXJ"
+      class="StyledBox-YaZNy ckMYwJ"
     >
-      <div
-        aria-hidden="true"
-        class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        Panel body 1
+        <div
+          class="StyledBox-YaZNy flHrpn"
+        >
+          <div
+            class="StyledBox-YaZNy fTioZP"
+          >
+            <h4
+              class="StyledHeading-klHxZj fpttnD"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-YaZNy cpEutI"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-hcpUvT bPezfS"
+              color="#7D4CDB"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-YaZNy gqdRXJ"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+        >
+          Panel body 1
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    class="StyledBox-YaZNy ckMYwJ"
-  >
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
-    >
-      <div
-        class="StyledBox-YaZNy flHrpn"
-      >
-        <div
-          class="StyledBox-YaZNy fTioZP"
-        >
-          <h4
-            class="StyledHeading-klHxZj iAZBiv"
-            color="dark-6"
-          >
-            Panel 2
-          </h4>
-        </div>
-        <div
-          class="StyledBox-YaZNy cpEutI"
-        >
-          <svg
-            aria-label="FormDown"
-            class="StyledIcon-hcpUvT bPezfS"
-            color="#7D4CDB"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
-          >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </div>
-    </button>
     <div
-      class="StyledBox-YaZNy gqdRXJ"
+      class="StyledBox-YaZNy ckMYwJ"
     >
-      <div
-        aria-hidden="true"
-        class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        Panel body 2
+        <div
+          class="StyledBox-YaZNy flHrpn"
+        >
+          <div
+            class="StyledBox-YaZNy fTioZP"
+          >
+            <h4
+              class="StyledHeading-klHxZj iAZBiv"
+              color="dark-6"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-YaZNy cpEutI"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-hcpUvT bPezfS"
+              color="#7D4CDB"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-YaZNy gqdRXJ"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+        >
+          Panel body 2
+        </div>
       </div>
     </div>
   </div>
@@ -2872,118 +2896,122 @@ exports[`Accordion set on hover 4`] = `
 
 exports[`Accordion set on hover 5`] = `
 <div
-  class="StyledBox-YaZNy jLqfV"
-  role="tablist"
+  class="StyledGrommet-gKbdxL gbVYjJ"
 >
   <div
-    class="StyledBox-YaZNy ckMYwJ"
+    class="StyledBox-YaZNy jLqfV"
+    role="tablist"
   >
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
-    >
-      <div
-        class="StyledBox-YaZNy flHrpn"
-      >
-        <div
-          class="StyledBox-YaZNy fTioZP"
-        >
-          <h4
-            class="StyledHeading-klHxZj fpttnD"
-          >
-            Panel 1
-          </h4>
-        </div>
-        <div
-          class="StyledBox-YaZNy cpEutI"
-        >
-          <svg
-            aria-label="FormDown"
-            class="StyledIcon-hcpUvT bPezfS"
-            color="#7D4CDB"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
-          >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </div>
-    </button>
     <div
-      class="StyledBox-YaZNy gqdRXJ"
+      class="StyledBox-YaZNy ckMYwJ"
     >
-      <div
-        aria-hidden="true"
-        class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        Panel body 1
+        <div
+          class="StyledBox-YaZNy flHrpn"
+        >
+          <div
+            class="StyledBox-YaZNy fTioZP"
+          >
+            <h4
+              class="StyledHeading-klHxZj fpttnD"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-YaZNy cpEutI"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-hcpUvT bPezfS"
+              color="#7D4CDB"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-YaZNy gqdRXJ"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+        >
+          Panel body 1
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    class="StyledBox-YaZNy ckMYwJ"
-  >
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-qbvYY jZaTeL"
-      role="tab"
-      type="button"
-    >
-      <div
-        class="StyledBox-YaZNy flHrpn"
-      >
-        <div
-          class="StyledBox-YaZNy fTioZP"
-        >
-          <h4
-            class="StyledHeading-klHxZj fpttnD"
-          >
-            Panel 2
-          </h4>
-        </div>
-        <div
-          class="StyledBox-YaZNy cpEutI"
-        >
-          <svg
-            aria-label="FormDown"
-            class="StyledIcon-hcpUvT bPezfS"
-            color="#7D4CDB"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px"
-          >
-            <polyline
-              fill="none"
-              points="18 9 12 15 6 9"
-              stroke="#000"
-              stroke-width="2"
-            />
-          </svg>
-        </div>
-      </div>
-    </button>
     <div
-      class="StyledBox-YaZNy gqdRXJ"
+      class="StyledBox-YaZNy ckMYwJ"
     >
-      <div
-        aria-hidden="true"
-        class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-qbvYY jZaTeL"
+        role="tab"
+        type="button"
       >
-        Panel body 2
+        <div
+          class="StyledBox-YaZNy flHrpn"
+        >
+          <div
+            class="StyledBox-YaZNy fTioZP"
+          >
+            <h4
+              class="StyledHeading-klHxZj fpttnD"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-YaZNy cpEutI"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-hcpUvT bPezfS"
+              color="#7D4CDB"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-YaZNy gqdRXJ"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-bzQzVC kUhEML StyledBox-YaZNy hJvMaG"
+        >
+          Panel body 2
+        </div>
       </div>
     </div>
   </div>

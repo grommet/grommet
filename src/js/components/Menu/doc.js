@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils';
 const VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
-export default (Menu) => {
+export const doc = (Menu) => {
   const DocumentedMenu = describe(Menu)
     .availableAt(getAvailableAtBadge('Menu'))
     .description(

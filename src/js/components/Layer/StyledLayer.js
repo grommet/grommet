@@ -19,7 +19,7 @@ const desktopLayerStyle = `
   height: 100vh;
 `;
 
-const StyledLayer = styled.div`
+export const StyledLayer = styled.div`
   ${baseStyle}
   background: unset;
   position: relative;
@@ -42,6 +42,8 @@ const StyledLayer = styled.div`
     }
     return desktopLayerStyle;
   }}
+`.extend`
+  ${props => props.theme.layer && props.theme.layer.extend}
 `;
 
 export const StyledOverlay = styled.div`
@@ -351,7 +353,3 @@ export const StyledContainer = styled.div`
 
 // ${props => props.full && fullStyle(props.full, props.margin, props.theme)}
 // ${props => props.margin && edgeStyle('margin', props.margin, props.theme)}
-
-export default StyledLayer.extend`
-  ${props => props.theme.layer && props.theme.layer.extend}
-`;

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import RangeInput from '../RangeInput/RangeInput';
-import Grommet from '../Grommet/Grommet';
+import { Grommet, RangeInput } from '../';
 import { grommet } from '../../themes';
 
 class SimpleRangeInput extends Component {

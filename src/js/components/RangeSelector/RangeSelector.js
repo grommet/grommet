@@ -5,8 +5,8 @@ import { compose } from 'recompose';
 import { Box } from '../Box';
 import { withForwardRef, withTheme } from '../hocs';
 
-import EdgeControl from './EdgeControl';
-import doc from './doc';
+import { EdgeControl } from './EdgeControl';
+import { doc } from './doc';
 
 class RangeSelector extends Component {
   static defaultProps = {
@@ -185,9 +185,11 @@ class RangeSelector extends Component {
   }
 }
 
-export default compose(
+const RangeSelectorWrapper = compose(
   withTheme,
   withForwardRef,
 )(
   process.env.NODE_ENV !== 'production' ? doc(RangeSelector) : RangeSelector
 );
+
+export { RangeSelectorWrapper as RangeSelector };

@@ -154,20 +154,6 @@ exports[`Chart renders 1`] = `
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
-    />
-  </svg>
-  <svg
-    className="c1"
-    height={192}
-    preserveAspectRatio="none"
-    viewBox="-12 -12 408 216"
-    width={384}
-  >
-    <g
-      stroke="#FD6FFF"
-      strokeLinecap="butt"
-      strokeLinejoin="miter"
-      strokeWidth={24}
     >
       <g
         fill="none"

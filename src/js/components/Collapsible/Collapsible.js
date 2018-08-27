@@ -7,7 +7,7 @@ import { withTheme } from '../hocs';
 
 import { Box } from '../Box';
 
-import doc from './doc';
+import { doc } from './doc';
 
 const AnimatedBox = styled(Box)`
   ${props => !props.animate && (props.open ? `
@@ -117,8 +117,10 @@ class Collapsible extends Component {
   }
 }
 
-export default compose(
+const CollapsibleWrapper = compose(
   withTheme,
 )(
   process.env.NODE_ENV !== 'production' ? doc(Collapsible) : Collapsible
 );
+
+export { CollapsibleWrapper as Collapsible };
