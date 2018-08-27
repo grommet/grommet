@@ -154,7 +154,7 @@ const areasStyle = (props) => {
   return `grid-template-areas: ${cells.map(r => `"${r.join(' ')}"`).join(' ')};`;
 };
 
-const StyledGrid = styled.div`
+export const StyledGrid = styled.div`
   display: grid;
   box-sizing: border-box;
 
@@ -167,8 +167,6 @@ const StyledGrid = styled.div`
   ${props => props.justify && justifyStyle}
   ${props => props.justifyContent && justifyContentStyle}
   ${props => props.rowsProp && rowsStyle(props)}
-`;
-
-export default StyledGrid.extend`
+`.extend`
   ${props => props.theme.grid && props.theme.grid.extend}
 `;

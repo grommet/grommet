@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (Carousel) => {
+export const doc = (Carousel) => {
   const DocumentedCarousel = describe(Carousel)
     .availableAt(getAvailableAtBadge('Carousel'))
     .description(`A carousel that cycles through children. Child components

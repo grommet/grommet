@@ -29,7 +29,6 @@ export * from './Paragraph';
 export * from './RadioButton';
 export * from './RangeInput';
 export * from './RangeSelector';
-export * from './Responsive';
 export * from './RoutedAnchor';
 export * from './RoutedButton';
 export * from './Select';

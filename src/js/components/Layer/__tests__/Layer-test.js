@@ -6,7 +6,7 @@ import { getByTestId, queryByTestId } from 'dom-testing-library';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet, Box, Layer } from '../../';
-import { LayerContainer } from '../';
+import { LayerContainer } from '../LayerContainer';
 
 class FakeLayer extends Component {
   state = { showLayer: false }
@@ -45,9 +45,11 @@ describe('Layer', () => {
   ['top', 'bottom', 'left', 'right', 'center'].forEach(position => (
     test(`position ${position}`, () => {
       renderIntoDocument(
-        <Layer id='position-test' position={position}>
-          This is a layer
-        </Layer>
+        <Grommet>
+          <Layer id='position-test' position={position}>
+            This is a layer
+          </Layer>
+        </Grommet>
       );
       expectPortal('position-test').toMatchSnapshot();
     })
@@ -56,9 +58,11 @@ describe('Layer', () => {
   [true, false, 'horizontal', 'vertical'].forEach(full => (
     test(`full ${full}`, () => {
       renderIntoDocument(
-        <Layer id='full-test' full={full}>
-          This is a layer
-        </Layer>
+        <Grommet>
+          <Layer id='full-test' full={full}>
+            This is a layer
+          </Layer>
+        </Grommet>
       );
       expectPortal('full-test').toMatchSnapshot();
     })
@@ -67,9 +71,11 @@ describe('Layer', () => {
   ['none', 'xsmall', 'small', 'medium', 'large'].forEach(margin => (
     test(`margin ${margin}`, () => {
       renderIntoDocument(
-        <Layer id='margin-test' margin={margin}>
-          This is a layer
-        </Layer>
+        <Grommet>
+          <Layer id='margin-test' margin={margin}>
+            This is a layer
+          </Layer>
+        </Grommet>
       );
       expectPortal('margin-test').toMatchSnapshot();
     })
@@ -77,39 +83,51 @@ describe('Layer', () => {
 
   test('hidden', () => {
     const { rerender } = renderIntoDocument(
-      <Layer id='hidden-test' position='hidden'>This is a layer</Layer>
+      <Grommet>
+        <Layer id='hidden-test' position='hidden'>This is a layer</Layer>
+      </Grommet>
     );
     expectPortal('hidden-test').toMatchSnapshot();
 
-    rerender(<Layer id='hidden-test' position='center'>This is a layer</Layer>);
+    rerender(
+      <Grommet>
+        <Layer id='hidden-test' position='center'>This is a layer</Layer>
+      </Grommet>
+    );
     expectPortal('hidden-test').toMatchSnapshot();
   });
 
   test('plain', () => {
     renderIntoDocument(
-      <Layer id='plain-test' plain={true}>
-        This is a plain layer
-      </Layer>
+      <Grommet>
+        <Layer id='plain-test' plain={true}>
+          This is a plain layer
+        </Layer>
+      </Grommet>
     );
     expectPortal('plain-test').toMatchSnapshot();
   });
 
   test('non-modal', () => {
     renderIntoDocument(
-      <Layer id='non-modal-test' modal={false}>
-        This is a non-modal layer
-      </Layer>
+      <Grommet>
+        <Layer id='non-modal-test' modal={false}>
+          This is a non-modal layer
+        </Layer>
+      </Grommet>
     );
     expectPortal('non-modal-test').toMatchSnapshot();
   });
 
   test('dark context', () => {
     renderIntoDocument(
-      <Box background='dark-1'>
-        <Layer id='non-modal-test' modal={false}>
-          This is a non-modal layer
-        </Layer>
-      </Box>
+      <Grommet>
+        <Box background='dark-1'>
+          <Layer id='non-modal-test' modal={false}>
+            This is a non-modal layer
+          </Layer>
+        </Box>
+      </Grommet>
     );
     expectPortal('non-modal-test').toMatchSnapshot();
   });
@@ -141,12 +159,14 @@ describe('Layer', () => {
 
     /* eslint-disable jsx-a11y/tabindex-no-positive */
     renderIntoDocument(
-      <FakeLayer>
-        <div data-testid='test-body-node'>
-          <input />
-          <input tabIndex='10' />
-        </div>
-      </FakeLayer>
+      <Grommet>
+        <FakeLayer>
+          <div data-testid='test-body-node'>
+            <input />
+            <input tabIndex='10' />
+          </div>
+        </FakeLayer>
+      </Grommet>
     );
     /* eslint-enable jsx-a11y/tabindex-no-positive */
 

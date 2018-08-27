@@ -1,6 +1,6 @@
 import { normalizeValues } from './utils';
 
-export default (values, options = {}) => {
+export const calcs = (values, options = {}) => {
   const coarseness = options.coarseness || 5;
   const steps = options.steps || [1, 1];
   const calcValues = normalizeValues(values);

@@ -116,10 +116,8 @@ export const StyledCheckBoxKnob = styled.span`
   border-radius: ${props => props.theme.checkBox.toggle.radius};
 `;
 
-const StyledCheckBox = styled.div`
+export const StyledCheckBox = styled.div`
   position: relative;
-`;
-
-export default StyledCheckBox.extend`
+`.extend`
   ${props => props.theme.checkBox && props.theme.checkBox.extend}
 `;

@@ -10,9 +10,12 @@ const sizeStyle = (props) => {
   `;
 };
 
-const StyledCalendar = styled.div`
+export const StyledCalendar = styled.div`
   ${props => sizeStyle(props)}
+`.extend`
+  ${props => props.theme.calendar && props.theme.calendar.extend}
 `;
+
 
 export const StyledWeeksContainer = styled.div`
   overflow: hidden;
@@ -64,8 +67,4 @@ export const StyledDay = styled.div`
       backgroundStyle({ color: 'brand', opacity: 'weak' }, props.theme))}
   ${props => props.otherMonth && 'opacity: 0.5;'}
   ${props => props.isSelected && 'font-weight: bold;'}
-`;
-
-export default StyledCalendar.extend`
-  ${props => props.theme.calendar && props.theme.calendar.extend}
 `;

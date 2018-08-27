@@ -74,14 +74,16 @@ describe('Tabs', () => {
   test('change active index', () => {
     const onActive = jest.fn();
     const { getByText, container } = render(
-      <Tabs activeIndex={1} onActive={onActive}>
-        <Tab title='Tab 1'>
-          Tab body 1
-        </Tab>
-        <Tab title='Tab 2'>
-          Tab body 2
-        </Tab>
-      </Tabs>
+      <Grommet>
+        <Tabs activeIndex={1} onActive={onActive}>
+          <Tab title='Tab 1'>
+            Tab body 1
+          </Tab>
+          <Tab title='Tab 2'>
+            Tab body 2
+          </Tab>
+        </Tabs>
+      </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -92,14 +94,16 @@ describe('Tabs', () => {
 
   test('set on hover', () => {
     const { getByText, container } = render(
-      <Tabs>
-        <Tab title='Tab 1' onMouseOver={() => {}} onMouseOut={() => {}}>
-          Tab body 1
-        </Tab>
-        <Tab title='Tab 2'>
-          Tab body 2
-        </Tab>
-      </Tabs>
+      <Grommet>
+        <Tabs>
+          <Tab title='Tab 1' onMouseOver={() => {}} onMouseOut={() => {}}>
+            Tab body 1
+          </Tab>
+          <Tab title='Tab 2'>
+            Tab body 2
+          </Tab>
+        </Tabs>
+      </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 

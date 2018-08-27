@@ -589,4 +589,4 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
   return deepFreeze(result);
 };
 
-export default generate(24);
+export const base = generate(24);

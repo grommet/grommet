@@ -6,9 +6,9 @@ import { colorForName, parseMetricToNum } from '../../utils';
 
 import { withTheme } from '../hocs';
 
-import StyledDiagram from './StyledDiagram';
+import { StyledDiagram } from './StyledDiagram';
 
-import doc from './doc';
+import { doc } from './doc';
 
 const computeMidPoint = (fromPoint, toPoint) => ([
   (fromPoint[0] > toPoint[0] ?
@@ -217,8 +217,10 @@ class Diagram extends Component {
   }
 }
 
-export default compose(
+const DiagramWrapper = compose(
   withTheme,
 )(
   process.env.NODE_ENV !== 'production' ? doc(Diagram) : Diagram
 );
+
+export { DiagramWrapper as Diagram };

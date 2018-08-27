@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { ThemeContext as IconThemeContext } from 'grommet-icons';
 
-import FocusedContainer from '../FocusedContainer';
+import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { withTheme } from '../hocs';
 import { backgroundIsDark } from '../../utils';
 
-import StyledLayer, { StyledContainer, StyledOverlay } from './StyledLayer';
+import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 
 class LayerContainer extends Component {
   static defaultProps = {
@@ -136,4 +136,6 @@ class LayerContainer extends Component {
   }
 }
 
-export default withTheme(LayerContainer);
+const LayerContainerWrapper = withTheme(LayerContainer);
+
+export { LayerContainerWrapper as LayerContainer };

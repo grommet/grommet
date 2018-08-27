@@ -15,7 +15,7 @@ const ANIMATION_SHAPE = PropTypes.shape({
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
 });
 
-export default (Box) => {
+export const doc = (Box) => {
   const DocumentedBox = describe(Box)
     .availableAt(getAvailableAtBadge('Box'))
     .description(
@@ -118,7 +118,7 @@ export default (Box) => {
       .description(`The amount of margin around the box. An object can
         be specified to distinguish horizontal margin, vertical margin, and
         margin on a particular side of the box`),
-    overflow: PropTypes.oneOf(['auto', 'hidden', 'scroll'])
+    overflow: PropTypes.oneOf(['auto', 'hidden', 'scroll', 'visible'])
       .description('box overflow.'),
     pad: PropTypes.oneOfType([
       PropTypes.oneOf(['none', ...PAD_SIZES]),

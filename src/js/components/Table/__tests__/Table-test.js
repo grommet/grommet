@@ -2,11 +2,13 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { Table, TableHeader, TableFooter, TableBody, TableRow, TableCell } from '../../';
+import { Grommet, Table, TableHeader, TableFooter, TableBody, TableRow, TableCell } from '../../';
 
 test('Table renders', () => {
   const component = renderer.create(
-    <Table />
+    <Grommet>
+      <Table />
+    </Grommet>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -14,7 +16,9 @@ test('Table renders', () => {
 
 test('Table caption renders', () => {
   const component = renderer.create(
-    <Table caption='Caption' />
+    <Grommet>
+      <Table caption='Caption' />
+    </Grommet>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -22,9 +26,11 @@ test('Table caption renders', () => {
 
 test('TableHeader renders', () => {
   const component = renderer.create(
-    <Table>
-      <TableHeader />
-    </Table>
+    <Grommet>
+      <Table>
+        <TableHeader />
+      </Table>
+    </Grommet>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -32,9 +38,11 @@ test('TableHeader renders', () => {
 
 test('TableFooter renders', () => {
   const component = renderer.create(
-    <Table>
-      <TableFooter />
-    </Table>
+    <Grommet>
+      <Table>
+        <TableFooter />
+      </Table>
+    </Grommet>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -42,9 +50,11 @@ test('TableFooter renders', () => {
 
 test('TableBody renders', () => {
   const component = renderer.create(
-    <Table>
-      <TableBody />
-    </Table>
+    <Grommet>
+      <Table>
+        <TableBody />
+      </Table>
+    </Grommet>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -52,11 +62,13 @@ test('TableBody renders', () => {
 
 test('TableRow renders', () => {
   const component = renderer.create(
-    <Table>
-      <TableBody>
-        <TableRow />
-      </TableBody>
-    </Table>
+    <Grommet>
+      <Table>
+        <TableBody>
+          <TableRow />
+        </TableBody>
+      </Table>
+    </Grommet>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -64,23 +76,25 @@ test('TableRow renders', () => {
 
 test('TableCell renders', () => {
   const component = renderer.create(
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableCell />
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        <TableRow>
-          <TableCell />
-        </TableRow>
-      </TableBody>
-      <TableFooter>
-        <TableRow>
-          <TableCell />
-        </TableRow>
-      </TableFooter>
-    </Table>
+    <Grommet>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableCell />
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell />
+          </TableRow>
+        </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TableCell />
+          </TableRow>
+        </TableFooter>
+      </Table>
+    </Grommet>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -88,18 +102,20 @@ test('TableCell renders', () => {
 
 test('TableCell scope renders', () => {
   const component = renderer.create(
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableCell scope='col' />
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        <TableRow>
-          <TableCell scope='row' />
-        </TableRow>
-      </TableBody>
-    </Table>
+    <Grommet>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableCell scope='col' />
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell scope='row' />
+          </TableRow>
+        </TableBody>
+      </Table>
+    </Grommet>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -107,7 +123,7 @@ test('TableCell scope renders', () => {
 
 test('TableCell size renders', () => {
   const component = renderer.create(
-    <div>
+    <Grommet>
       <Table>
         <TableBody>
           <TableRow>
@@ -137,7 +153,7 @@ test('TableCell size renders', () => {
           </TableRow>
         </TableBody>
       </Table>
-    </div>
+    </Grommet>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -145,15 +161,17 @@ test('TableCell size renders', () => {
 
 test('TableCell verticalAlign renders', () => {
   const component = renderer.create(
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableCell verticalAlign='top' />
-          <TableCell verticalAlign='middle' />
-          <TableCell verticalAlign='bottom' />
-        </TableRow>
-      </TableHeader>
-    </Table>
+    <Grommet>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableCell verticalAlign='top' />
+            <TableCell verticalAlign='middle' />
+            <TableCell verticalAlign='bottom' />
+          </TableRow>
+        </TableHeader>
+      </Table>
+    </Grommet>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -161,13 +179,15 @@ test('TableCell verticalAlign renders', () => {
 
 test('TableCell plain renders', () => {
   const component = renderer.create(
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableCell plain={true} />
-        </TableRow>
-      </TableHeader>
-    </Table>
+    <Grommet>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableCell plain={true} />
+          </TableRow>
+        </TableHeader>
+      </Table>
+    </Grommet>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

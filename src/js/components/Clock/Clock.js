@@ -3,9 +3,9 @@ import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
 
-import Analog from './Analog';
-import Digital from './Digital';
-import doc from './doc';
+import { Analog } from './Analog';
+import { Digital } from './Digital';
+import { doc } from './doc';
 
 const TIME_REGEXP = /T([0-9]{2}):([0-9]{2})(?::([0-9.,]{2,}))?/;
 const DURATION_REGEXP =
@@ -180,8 +180,10 @@ class Clock extends Component {
   }
 }
 
-export default compose(
+const ClockWrapper = compose(
   withTheme,
 )(
   process.env.NODE_ENV !== 'production' ? doc(Clock) : Clock
 );
+
+export { ClockWrapper as Clock };

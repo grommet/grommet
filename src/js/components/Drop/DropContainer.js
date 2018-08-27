@@ -3,15 +3,15 @@ import { findDOMNode } from 'react-dom';
 import { ThemeContext as IconThemeContext } from 'grommet-icons';
 
 import { ThemeContext } from '../../contexts';
-import FocusedContainer from '../FocusedContainer';
+import { FocusedContainer } from '../FocusedContainer';
 import {
   backgroundIsDark, findScrollParents, findVisibleParent, parseMetricToNum,
 } from '../../utils';
 import { Keyboard } from '../Keyboard';
 
-import StyledDrop from './StyledDrop';
+import { StyledDrop } from './StyledDrop';
 
-class DropContainer extends Component {
+export class DropContainer extends Component {
   static defaultProps = {
     align: {
       top: 'top',
@@ -281,5 +281,3 @@ class DropContainer extends Component {
     );
   }
 }
-
-export default DropContainer;

@@ -1,14 +1,11 @@
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
 
-import { Box } from '../Box';
-import { Button } from '../Button';
-import { Keyboard } from '../Keyboard';
-import { Stack } from '../Stack';
+import { Box, Button, Keyboard, Stack } from '../';
 import { withFocus, withTheme } from '../hocs';
 import { evalStyle } from '../../utils';
 
-import doc from './doc';
+import { doc } from './doc';
 
 class Carousel extends Component {
   state = { activeIndex: 0 };
@@ -149,9 +146,11 @@ class Carousel extends Component {
   }
 }
 
-export default compose(
+const CarouselWrapper = compose(
   withTheme,
   withFocus,
 )(
   process.env.NODE_ENV !== 'production' ? doc(Carousel) : Carousel
 );
+
+export { CarouselWrapper as Carousel };

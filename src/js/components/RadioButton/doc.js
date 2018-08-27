@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (RadioButton) => {
+export const doc = (RadioButton) => {
   const DocumentedRadioButton = describe(RadioButton)
     .availableAt(getAvailableAtBadge('RadioButton'))
     .description('A radio button control.')

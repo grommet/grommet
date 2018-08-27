@@ -15,5 +15,3 @@ export const strokeProps = (color, theme) => {
   }
   return result;
 };
-
-export default { strokeProps };

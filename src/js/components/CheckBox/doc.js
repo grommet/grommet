@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (CheckBox) => {
+export const doc = (CheckBox) => {
   const DocumentedCheckBox = describe(CheckBox)
     .availableAt(getAvailableAtBadge('CheckBox'))
     .description('A checkbox toggle control.')

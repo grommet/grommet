@@ -98,7 +98,6 @@ Object {
     "name": "DropButton",
     "render": [Function],
   },
-  "DropContainer": [Function],
   "FormField": Object {
     "$$typeof": Symbol(react.forward_ref),
     "displayName": "FormField",
@@ -131,12 +130,6 @@ Object {
     "$$typeof": Symbol(react.forward_ref),
     "displayName": "Layer",
     "name": "Layer",
-    "render": [Function],
-  },
-  "LayerContainer": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "displayName": "LayerContainer",
-    "name": "LayerContainer",
     "render": [Function],
   },
   "Markdown": Object {
@@ -179,12 +172,6 @@ Object {
     "$$typeof": Symbol(react.forward_ref),
     "displayName": "RangeSelector",
     "name": "RangeSelector",
-    "render": [Function],
-  },
-  "Responsive": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "displayName": "Responsive",
-    "name": "Responsive",
     "render": [Function],
   },
   "RoutedAnchor": [Function],

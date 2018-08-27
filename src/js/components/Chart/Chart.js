@@ -6,10 +6,10 @@ import { colorForName, parseMetricToNum } from '../../utils';
 
 import { withTheme } from '../hocs';
 
-import StyledChart from './StyledChart';
+import { StyledChart } from './StyledChart';
 import { normalizeValues, normalizeBounds } from './utils';
 
-import doc from './doc';
+import { doc } from './doc';
 
 const renderBars = (values, bounds, scale, height) =>
   (values || []).map((valueArg, index) => {
@@ -198,8 +198,10 @@ class Chart extends Component {
   }
 }
 
-export default compose(
+const ChartWrapper = compose(
   withTheme,
 )(
   process.env.NODE_ENV !== 'production' ? doc(Chart) : Chart
 );
+
+export { ChartWrapper as Chart };

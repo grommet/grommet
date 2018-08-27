@@ -33,17 +33,6 @@ exports[`Video autoPlay renders 1`] = `
   stroke: none;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -239,6 +228,17 @@ exports[`Video autoPlay renders 1`] = `
   text-align: inherit;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 .c12 {
   max-width: 100%;
   overflow: hidden;
@@ -264,6 +264,14 @@ exports[`Video autoPlay renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 .c1 {
@@ -297,14 +305,6 @@ exports[`Video autoPlay renders 1`] = `
 
 .c14 {
   cursor: pointer;
-}
-
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (max-width:699px) {
@@ -632,17 +632,6 @@ exports[`Video controls renders 1`] = `
   stroke: none;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -887,6 +876,17 @@ exports[`Video controls renders 1`] = `
   color: black;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 .c12 {
   max-width: 100%;
   overflow: hidden;
@@ -912,6 +912,14 @@ exports[`Video controls renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 .c1 {
@@ -955,14 +963,6 @@ exports[`Video controls renders 1`] = `
 
 .c14 {
   cursor: pointer;
-}
-
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (max-width:699px) {
@@ -1440,17 +1440,6 @@ exports[`Video fit renders 1`] = `
   stroke: none;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1646,6 +1635,17 @@ exports[`Video fit renders 1`] = `
   text-align: inherit;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 .c12 {
   max-width: 100%;
   overflow: hidden;
@@ -1671,6 +1671,32 @@ exports[`Video fit renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c2 {
+  max-width: 100%;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
+}
+
+.c20 {
+  max-width: 100%;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  min-height: 0;
+  object-fit: contain;
+}
+
+.c20::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 .c1 {
@@ -1704,32 +1730,6 @@ exports[`Video fit renders 1`] = `
 
 .c14 {
   cursor: pointer;
-}
-
-.c2 {
-  max-width: 100%;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  min-height: 0;
-  object-fit: cover;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
-}
-
-.c20 {
-  max-width: 100%;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  min-height: 0;
-  object-fit: contain;
-}
-
-.c20::cue {
-  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (max-width:699px) {
@@ -2192,17 +2192,6 @@ exports[`Video loop renders 1`] = `
   stroke: none;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2398,6 +2387,17 @@ exports[`Video loop renders 1`] = `
   text-align: inherit;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 .c12 {
   max-width: 100%;
   overflow: hidden;
@@ -2423,6 +2423,14 @@ exports[`Video loop renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 .c1 {
@@ -2456,14 +2464,6 @@ exports[`Video loop renders 1`] = `
 
 .c14 {
   cursor: pointer;
-}
-
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (max-width:699px) {
@@ -2759,17 +2759,6 @@ exports[`Video mute renders 1`] = `
   stroke: none;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2965,6 +2954,17 @@ exports[`Video mute renders 1`] = `
   text-align: inherit;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 .c12 {
   max-width: 100%;
   overflow: hidden;
@@ -2990,6 +2990,14 @@ exports[`Video mute renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 .c1 {
@@ -3023,14 +3031,6 @@ exports[`Video mute renders 1`] = `
 
 .c14 {
   cursor: pointer;
-}
-
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (max-width:699px) {
@@ -3326,17 +3326,6 @@ exports[`Video renders 1`] = `
   stroke: none;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3532,6 +3521,17 @@ exports[`Video renders 1`] = `
   text-align: inherit;
 }
 
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
 .c12 {
   max-width: 100%;
   overflow: hidden;
@@ -3557,6 +3557,14 @@ exports[`Video renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 .c1 {
@@ -3590,14 +3598,6 @@ exports[`Video renders 1`] = `
 
 .c14 {
   cursor: pointer;
-}
-
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (max-width:699px) {

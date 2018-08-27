@@ -3,8 +3,8 @@ import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
 
-import StyledHeading from './StyledHeading';
-import doc from './doc';
+import { StyledHeading } from './StyledHeading';
+import { doc } from './doc';
 
 const styledComponents = {
   div: StyledHeading,
@@ -36,8 +36,10 @@ class Heading extends Component {
   }
 }
 
-export default compose(
+const HeadingWrapper = compose(
   withTheme,
 )(
   process.env.NODE_ENV !== 'production' ? doc(Heading) : Heading
 );
+
+export { HeadingWrapper as Heading };

@@ -1,6 +1,6 @@
 import { Children, Component, cloneElement } from 'react';
 
-import doc from './doc';
+import { doc } from './doc';
 
 const KEYS = {
   8: 'onBackspace',
@@ -53,4 +53,6 @@ class Keyboard extends Component {
   }
 }
 
-export default process.env.NODE_ENV !== 'production' ? doc(Keyboard) : Keyboard;
+const KeyboardWrapper = process.env.NODE_ENV !== 'production' ? doc(Keyboard) : Keyboard;
+
+export { KeyboardWrapper as Keyboard };

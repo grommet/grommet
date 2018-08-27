@@ -5,7 +5,7 @@ const roundStyle = css`
 `;
 
 // overflow: hidden is needed for ie11
-const StyledMeter = styled.svg`
+export const StyledMeter = styled.svg`
   max-width: 100%;
   ${props => props.round && roundStyle}
   overflow: hidden;
@@ -13,8 +13,6 @@ const StyledMeter = styled.svg`
   path {
     transition: all 0.3s;
   }
-`;
-
-export default StyledMeter.extend`
+`.extend`
   ${props => props.theme.meter && props.theme.meter.extend}
 `;

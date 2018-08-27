@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
 
-import StyledMeter from './StyledMeter';
+import { StyledMeter } from './StyledMeter';
 import { strokeProps } from './utils';
 
-export default class Circle extends Component {
+export class Circle extends Component {
   render() {
     const { background, max, round, size, theme, thickness, values, ...rest } = this.props;
     const width = (size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]));

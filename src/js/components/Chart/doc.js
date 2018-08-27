@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (Chart) => {
+export const doc = (Chart) => {
   const DocumentedChart = describe(Chart)
     .availableAt(getAvailableAtBadge('Chart'))
     .description('A graphical chart.')

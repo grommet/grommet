@@ -3,8 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 // import { mount } from 'enzyme';
 
-import { Grommet } from '../../Grommet';
-import { Video } from '../';
+import { Grommet, Video } from '../../';
 
 jest.mock('react-dom', () => ({
   findDOMNode: () => ({ textTracks: [{ label: 'test' }] }),

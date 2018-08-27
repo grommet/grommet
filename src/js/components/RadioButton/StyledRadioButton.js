@@ -81,10 +81,8 @@ export const StyledRadioButtonButton = styled.div`
   }
 `;
 
-const StyledRadioButton = styled.div`
+export const StyledRadioButton = styled.div`
   position: relative;
-`;
-
-export default StyledRadioButton.extend`
+`.extend`
   ${props => props.theme.radioButton && props.theme.radioButton.extend}
 `;

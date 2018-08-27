@@ -7,7 +7,7 @@ const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge',
   'full', '1/2', '1/3', '2/3', '1/4', '3/4', 'flex'];
 const edgeSizes = ['small', 'medium', 'large', 'none'];
 
-export default (Grid) => {
+export const doc = (Grid) => {
   const DocumentedGrid = describe(Grid)
     .availableAt(getAvailableAtBadge('Grid'))
     .description(

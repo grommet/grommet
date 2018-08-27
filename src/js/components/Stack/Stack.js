@@ -3,8 +3,8 @@ import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
 
-import StyledStack, { StyledStackLayer } from './StyledStack';
-import doc from './doc';
+import { StyledStack, StyledStackLayer } from './StyledStack';
+import { doc } from './doc';
 
 class Stack extends Component {
   render() {
@@ -42,8 +42,10 @@ class Stack extends Component {
   }
 }
 
-export default compose(
+const StackWrapper = compose(
   withTheme,
 )(
   process.env.NODE_ENV !== 'production' ? doc(Stack) : Stack
 );
+
+export { StackWrapper as Stack };

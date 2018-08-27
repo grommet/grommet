@@ -18,7 +18,7 @@ export interface BoxProps {
   height?: "xsmall" | "small" | "medium" | "large" | "xlarge";
   justify?: "start" | "center" | "between" | "end";
   margin?: "none" | "xsmall" | "small" | "medium" | "large" | {bottom: "xsmall" | "small" | "medium" | "large",horizontal: "xsmall" | "small" | "medium" | "large",left: "xsmall" | "small" | "medium" | "large",right: "xsmall" | "small" | "medium" | "large",top: "xsmall" | "small" | "medium" | "large",vertical: "xsmall" | "small" | "medium" | "large"};
-  overflow?: "auto" | "hidden" | "scroll";
+  overflow?: "auto" | "hidden" | "scroll" | "visible";
   pad?: "none" | "xsmall" | "small" | "medium" | "large" | {bottom: "xsmall" | "small" | "medium" | "large",horizontal: "xsmall" | "small" | "medium" | "large",left: "xsmall" | "small" | "medium" | "large",right: "xsmall" | "small" | "medium" | "large",top: "xsmall" | "small" | "medium" | "large",vertical: "xsmall" | "small" | "medium" | "large"};
   responsive?: boolean;
   round?: "xsmall" | "small" | "medium" | "large" | "full";

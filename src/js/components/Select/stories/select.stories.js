@@ -14,8 +14,8 @@ import {
 } from '../../';
 import { grommet } from '../../../themes';
 
-import customSearchTheme from './theme';
-import SearchInputContext from './components/SearchInputContext';
+import { theme as customSearchTheme } from './theme';
+import { SearchInputContext } from './components/SearchInputContext';
 import { deepMerge } from '../../../utils';
 
 const customRoundedTheme = deepMerge(

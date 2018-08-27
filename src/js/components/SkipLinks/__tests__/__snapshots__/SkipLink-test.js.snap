@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SkipLink basic 1`] = `
-<div>
+<div
+  class="StyledGrommet-gKbdxL gbVYjJ"
+>
   <div>
     <a
       aria-hidden="true"
@@ -33,7 +35,9 @@ exports[`SkipLink basic 1`] = `
 `;
 
 exports[`SkipLink basic 2`] = `
-<div>
+<div
+  class="StyledGrommet-gKbdxL gbVYjJ"
+>
   <div>
     <a
       aria-hidden="true"
@@ -65,7 +69,9 @@ exports[`SkipLink basic 2`] = `
 `;
 
 exports[`SkipLink basic 3`] = `
-<div>
+<div
+  class="StyledGrommet-gKbdxL gbVYjJ"
+>
   <div>
     <a
       aria-hidden="true"

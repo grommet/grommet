@@ -6,8 +6,8 @@ import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 
 import { withTheme } from '../hocs';
 
-import DropContainer from './DropContainer';
-import doc from './doc';
+import { DropContainer } from './DropContainer';
+import { doc } from './doc';
 
 class Drop extends Component {
   static defaultProps = {
@@ -46,8 +46,10 @@ class Drop extends Component {
   }
 }
 
-export default compose(
+const DropWrapper = compose(
   withTheme,
 )(
   process.env.NODE_ENV !== 'production' ? doc(Drop) : Drop
 );
+
+export { DropWrapper as Drop };

@@ -79,7 +79,7 @@ const boxBorderTheme = {
   },
 };
 
-export default class SearchBorderBox extends Component {
+export class SearchBorderBox extends Component {
   state = {
     focus: false,
   };

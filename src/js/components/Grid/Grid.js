@@ -3,8 +3,8 @@ import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
 
-import StyledGrid from './StyledGrid';
-import doc from './doc';
+import { StyledGrid } from './StyledGrid';
+import { doc } from './doc';
 
 const styledComponents = {
   div: StyledGrid,
@@ -49,4 +49,4 @@ GridWrapper.available = (typeof window !== 'undefined') &&
   window.CSS && window.CSS.supports &&
   window.CSS.supports('display', 'grid');
 
-export default GridWrapper;
+export { GridWrapper as Grid };

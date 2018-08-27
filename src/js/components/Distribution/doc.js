@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (Distribution) => {
+export const doc = (Distribution) => {
   const DocumentedDistribution = describe(Distribution)
     .availableAt(getAvailableAtBadge('Distribution'))
     .description(`Approximately proportionally sized grid of boxes. The

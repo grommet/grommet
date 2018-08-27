@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Video from '../Video/Video';
-import Grommet from '../Grommet/Grommet';
+import { Grommet, Video } from '../';
 import { grommet } from '../../themes';
 
 class SimpleVideo extends Component {

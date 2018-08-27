@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (DropButton) => {
+export const doc = (DropButton) => {
   const DocumentedDropButton = describe(DropButton)
     .availableAt(getAvailableAtBadge('DropButton'))
     .description(

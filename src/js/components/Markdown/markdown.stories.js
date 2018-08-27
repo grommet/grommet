@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Markdown from '../Markdown/Markdown';
-import Grommet from '../Grommet/Grommet';
+import { Grommet, Markdown } from '../';
 import { grommet } from '../../themes';
 
 const CONTENT = `

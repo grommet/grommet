@@ -6,9 +6,9 @@ import { colorForName, parseMetricToNum } from '../../utils';
 
 import { withTheme } from '../hocs';
 
-import StyledWorldMap from './StyledWorldMap';
+import { StyledWorldMap } from './StyledWorldMap';
 
-import doc from './doc';
+import { doc } from './doc';
 
 // The graphic is drawn as a rectangular grid using coordinates spaced
 // by FACTOR pixels. The contents have both an area boundary for interaction
@@ -415,8 +415,10 @@ class WorldMap extends Component {
   }
 }
 
-export default compose(
+const WorldMapWrapper = compose(
   withTheme,
 )(
   process.env.NODE_ENV !== 'production' ? doc(WorldMap) : WorldMap
 );
+
+export { WorldMapWrapper as WorldMap };

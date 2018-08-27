@@ -164,14 +164,16 @@ describe('Accordion', () => {
   test('change active index', () => {
     const onActive = jest.fn();
     const { getByText, container } = render(
-      <Accordion animate={false} activeIndex={1} onActive={onActive}>
-        <AccordionPanel label='Panel 1'>
-          Panel body 1
-        </AccordionPanel>
-        <AccordionPanel label='Panel 2'>
-          Panel body 2
-        </AccordionPanel>
-      </Accordion>
+      <Grommet>
+        <Accordion animate={false} activeIndex={1} onActive={onActive}>
+          <AccordionPanel label='Panel 1'>
+            Panel body 1
+          </AccordionPanel>
+          <AccordionPanel label='Panel 2'>
+            Panel body 2
+          </AccordionPanel>
+        </Accordion>
+      </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -182,22 +184,24 @@ describe('Accordion', () => {
 
   test('set on hover', () => {
     const { getByText, container } = render(
-      <Accordion>
-        <AccordionPanel
-          label='Panel 1'
-          onMouseOver={() => {}}
-          onMouseOut={() => {}}
-        >
-          Panel body 1
-        </AccordionPanel>
-        <AccordionPanel
-          label='Panel 2'
-          onMouseOver={() => {}}
-          onMouseOut={() => {}}
-        >
-          Panel body 2
-        </AccordionPanel>
-      </Accordion>
+      <Grommet>
+        <Accordion>
+          <AccordionPanel
+            label='Panel 1'
+            onMouseOver={() => {}}
+            onMouseOut={() => {}}
+          >
+            Panel body 1
+          </AccordionPanel>
+          <AccordionPanel
+            label='Panel 2'
+            onMouseOver={() => {}}
+            onMouseOut={() => {}}
+          >
+            Panel body 2
+          </AccordionPanel>
+        </Accordion>
+      </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 

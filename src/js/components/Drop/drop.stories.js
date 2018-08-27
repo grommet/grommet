@@ -100,7 +100,7 @@ class AllDrops extends Component {
     return (
       <Grommet theme={grommet}>
         <ThemeContext.Extend value={{ global: { drop: { background: { color: 'white', opacity: 'medium' } } } }} >
-          <Box direction='row' wrap='true' pad='medium' align='center'>
+          <Box direction='row' wrap={true} pad='medium' align='center'>
             <Set
               label='left: left'
               aligns={[

@@ -4,7 +4,7 @@ import { getAvailableAtBadge } from '../../utils';
 
 const PAD_SIZES = ['xsmall', 'small', 'medium', 'large'];
 
-export default (Layer) => {
+export const doc = (Layer) => {
   const DocumentedLayer = describe(Layer)
     .availableAt(getAvailableAtBadge('Layer'))
     .description(

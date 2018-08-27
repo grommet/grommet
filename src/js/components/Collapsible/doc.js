@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-export default (Collapsible) => {
+export const doc = (Collapsible) => {
   const DocumentedCollapsible = describe(Collapsible)
     .description(
       'A react component that expand/collapse animation.'

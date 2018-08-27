@@ -11,10 +11,8 @@ const fitStyle = css`
   object-fit: ${props => FIT_MAP[props.fit]};
 `;
 
-const StyledImage = styled.img`
+export const StyledImage = styled.img`
   ${props => props.fit && fitStyle}
-`;
-
-export default StyledImage.extend`
+`.extend`
   ${props => props.theme.image && props.theme.image.extend}
 `;

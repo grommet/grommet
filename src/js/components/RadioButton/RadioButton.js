@@ -4,12 +4,13 @@ import { compose } from 'recompose';
 import { withForwardRef, withTheme } from '../hocs';
 import { removeUndefined } from '../../utils/object';
 
-import StyledRadioButton, {
+import {
+  StyledRadioButton,
   StyledRadioButtonContainer,
   StyledRadioButtonInput,
   StyledRadioButtonButton,
 } from './StyledRadioButton';
-import doc from './doc';
+import { doc } from './doc';
 
 class RadioButton extends Component {
   render() {
@@ -44,9 +45,11 @@ class RadioButton extends Component {
   }
 }
 
-export default compose(
+const RadioButtonWrapper = compose(
   withTheme,
   withForwardRef
 )(
   process.env.NODE_ENV !== 'production' ? doc(RadioButton) : RadioButton
 );
+
+export { RadioButtonWrapper as RadioButton };

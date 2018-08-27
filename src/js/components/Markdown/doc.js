@@ -2,7 +2,7 @@ import { describe } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export default (Markdown) => {
+export const doc = (Markdown) => {
   const DocumentedMarkdown = describe(Markdown)
     .availableAt(getAvailableAtBadge('Markdown'))
     .description(

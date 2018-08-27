@@ -6,8 +6,8 @@ import { getNewContainer } from '../../utils';
 
 import { withTheme } from '../hocs';
 
-import LayerContainer from './LayerContainer';
-import doc from './doc';
+import { LayerContainer } from './LayerContainer';
+import { doc } from './doc';
 
 class Layer extends Component {
   static defaultProps = {
@@ -47,8 +47,10 @@ class Layer extends Component {
   }
 }
 
-export default compose(
+const LayerWrapper = compose(
   withTheme,
 )(
   process.env.NODE_ENV !== 'production' ? doc(Layer) : Layer
 );
+
+export { LayerWrapper as Layer };

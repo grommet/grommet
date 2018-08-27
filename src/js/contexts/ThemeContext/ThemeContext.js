@@ -1,5 +1,5 @@
 import React from 'react';
-import baseTheme from '../../themes/base';
+import { base as baseTheme } from '../../themes';
 import { deepMerge } from '../../utils';
 
 const ThemeContext = React.createContext(baseTheme);
@@ -16,4 +16,4 @@ ThemeContext.Extend = ({ children, value }) => (
   </ThemeContext.Consumer>
 );
 
-export default ThemeContext;
+export { ThemeContext };

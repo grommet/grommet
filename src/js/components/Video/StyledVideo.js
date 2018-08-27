@@ -13,12 +13,14 @@ const fitStyle = css`
   object-fit: ${props => FIT_MAP[props.fit]};
 `;
 
-const StyledVideo = styled.video`
+export const StyledVideo = styled.video`
   max-width: 100%;
   ${props => props.fit && fitStyle}
   ::cue {
     background: ${props => props.theme.video.captions.background};
   }
+`.extend`
+  ${props => props.theme.video && props.theme.video.extend}
 `;
 
 export const StyledVideoContainer = styled.div`
@@ -58,8 +60,4 @@ const headStyle = css`
 export const StyledVideoScrubber = styled.div`
   cursor: pointer;
   ${props => props.value && headStyle}
-`;
-
-export default StyledVideo.extend`
-  ${props => props.theme.video && props.theme.video.extend}
 `;
