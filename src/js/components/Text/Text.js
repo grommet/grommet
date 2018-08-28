@@ -18,6 +18,7 @@ class Text extends Component {
 
   render() {
     const {
+      color, // munged to avoid styled-components putting it in the DOM
       tag,
       ...rest
     } = this.props;
@@ -29,7 +30,7 @@ class Text extends Component {
     }
 
     return (
-      <StyledComponent {...rest} />
+      <StyledComponent colorValue={color} {...rest} />
     );
   }
 }

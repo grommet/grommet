@@ -96,7 +96,6 @@ exports[`RoutedButton renders 1`] = `
       className="c1"
       disabled={false}
       href="/"
-      label="Test"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}

@@ -208,7 +208,6 @@ exports[`Tabs Tab 1`] = `
         >
           <span
             className="c6"
-            color="#444444"
           >
             Tab 2
           </span>
@@ -246,8 +245,7 @@ exports[`Tabs change active index 1`] = `
           class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
+            class="StyledText-dmaDlZ hJTmEY"
           >
             Tab 1
           </span>
@@ -302,8 +300,7 @@ exports[`Tabs change active index 2`] = `
           class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
+            class="StyledText-dmaDlZ hJTmEY"
           >
             Tab 1
           </span>
@@ -375,8 +372,7 @@ exports[`Tabs change to second tab 1`] = `
           class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
+            class="StyledText-dmaDlZ hJTmEY"
           >
             Tab 2
           </span>
@@ -414,8 +410,7 @@ exports[`Tabs change to second tab 2`] = `
           class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
+            class="StyledText-dmaDlZ hJTmEY"
           >
             Tab 1
           </span>
@@ -757,8 +752,7 @@ exports[`Tabs set on hover 1`] = `
           class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
+            class="StyledText-dmaDlZ hJTmEY"
           >
             Tab 2
           </span>
@@ -813,8 +807,7 @@ exports[`Tabs set on hover 2`] = `
           class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
+            class="StyledText-dmaDlZ hJTmEY"
           >
             Tab 2
           </span>
@@ -869,8 +862,7 @@ exports[`Tabs set on hover 3`] = `
           class="StyledBox-YaZNy kNfDNC"
         >
           <span
-            class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
+            class="StyledText-dmaDlZ hJTmEY"
           >
             Tab 2
           </span>
@@ -925,8 +917,7 @@ exports[`Tabs set on hover 4`] = `
           class="StyledBox-YaZNy kNfDNC"
         >
           <span
-            class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
+            class="StyledText-dmaDlZ hJTmEY"
           >
             Tab 2
           </span>
@@ -981,8 +972,7 @@ exports[`Tabs set on hover 5`] = `
           class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
+            class="StyledText-dmaDlZ hJTmEY"
           >
             Tab 2
           </span>

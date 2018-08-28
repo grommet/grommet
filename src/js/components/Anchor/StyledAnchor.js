@@ -13,7 +13,7 @@ export const StyledAnchor = styled.a`
   font-size: inherit;
   line-height: inherit;
   color: ${props => normalizeColor(props.theme.anchor.color, props.theme)};
-  text-decoration: ${props => (props.icon ? 'none' : props.theme.anchor.textDecoration)};
+  text-decoration: ${props => (props.hasIcon ? 'none' : props.theme.anchor.textDecoration)};
   cursor: pointer;
   outline: none;
 
@@ -23,10 +23,10 @@ export const StyledAnchor = styled.a`
     }
   `}
 
-  ${props => !props.primary && props.icon && props.label && `
+  ${props => !props.primary && props.hasIcon && props.hasLabel && `
     color: ${props.theme.global.colors.text};
   `}
-  ${props => props.icon && !props.label && `
+  ${props => props.hasIcon && !props.hasLabel && `
     padding: ${props.theme.global.edgeSize.small};
   `}
 

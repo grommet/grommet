@@ -51,7 +51,6 @@ exports[`renders color 1`] = `
 >
   <span
     className="c1"
-    color="status-critical"
   />
 </div>
 `;

@@ -292,7 +292,6 @@ exports[`renders error 1`] = `
     >
       <span
         className="c4"
-        color="status-critical"
       >
         test error
       </span>
@@ -437,7 +436,6 @@ exports[`renders help 1`] = `
     >
       <span
         className="c3"
-        color="dark-5"
       >
         test help
       </span>

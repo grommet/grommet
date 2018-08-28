@@ -123,7 +123,6 @@ exports[`Anchor focus renders 1`] = `
   <a
     className="c1"
     href="#"
-    label="Test"
     onBlur={[Function]}
     onFocus={[Function]}
   >
@@ -226,8 +225,6 @@ exports[`Anchor icon label renders 1`] = `
 >
   <a
     className="c1"
-    icon={<svg />}
-    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -328,7 +325,6 @@ exports[`Anchor primary renders 1`] = `
   <a
     className="c1"
     href="#"
-    label="Test"
     onBlur={[Function]}
     onFocus={[Function]}
   >
@@ -512,8 +508,6 @@ exports[`Anchor reverse icon label renders 1`] = `
 >
   <a
     className="c1"
-    icon={<svg />}
-    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -610,7 +604,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
   <a
     className="c1"
     href="#"
-    icon={<svg />}
     onBlur={[Function]}
     onFocus={[Function]}
   >
@@ -700,7 +693,6 @@ exports[`Anchor warns about invalid label render 1`] = `
   <a
     className="c1"
     href="#"
-    label="Test"
     onBlur={[Function]}
     onFocus={[Function]}
   >
