@@ -22,7 +22,7 @@ class Stack extends Component {
       if (child) {
         let layer;
         if (childIndex === guidingIndex) {
-          layer = <StyledStackLayer guiding={true} fill={fill}>{child}</StyledStackLayer>;
+          layer = <StyledStackLayer guiding={true} fillContainer={fill}>{child}</StyledStackLayer>;
         } else {
           layer = <StyledStackLayer anchor={anchor}>{child}</StyledStackLayer>;
         }

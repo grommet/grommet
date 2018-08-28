@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { a11yTitlePropType, getAvailableAtBadge } from '../../utils';
 
-const PAD_SIZES = ['xsmall', 'small', 'medium', 'large'];
+const PAD_SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 
 const ANIMATION_TYPE = PropTypes.oneOf([
   'fadeIn', 'fadeOut', 'jiggle', 'pulse',
@@ -51,28 +51,36 @@ export const doc = (Box) => {
       PropTypes.string,
       PropTypes.shape({
         color: PropTypes.string,
-        dark: PropTypes.bool,
+        dark: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
         image: PropTypes.string,
         position: PropTypes.string,
         opacity: PropTypes.oneOfType([
           PropTypes.oneOf(['weak', 'medium', 'strong']),
           PropTypes.bool,
         ]),
+        ligh: PropTypes.string,
       }),
     ])
       .description(`Either a color identifier to use for the background
         color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
         is not needed if color is provided.`),
     basis: PropTypes.oneOf([
-      'xsmall', 'small', 'medium', 'large', 'xlarge', 'full',
+      'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full',
       '1/2', '1/3', '2/3', '1/4', '3/4', 'auto',
     ])
       .description('A fixed or relative size along its container\'s main axis.'),
     border: PropTypes.oneOfType([
+      PropTypes.bool,
       PropTypes.oneOf(['top', 'left', 'bottom', 'right',
         'horizontal', 'vertical', 'all']),
       PropTypes.shape({
-        color: PropTypes.string,
+        color: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.shape({
+            dark: PropTypes.string,
+            light: PropTypes.string,
+          }),
+        ]),
         side: PropTypes.oneOf(['top', 'left', 'bottom', 'right',
           'horizontal', 'vertical', 'all']),
         size: PropTypes.oneOf(['small', 'medium', 'large']),

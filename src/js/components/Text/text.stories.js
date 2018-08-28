@@ -11,7 +11,7 @@ class All extends Component {
     return (
       <Grommet theme={grommet}>
         {sizes.map(size => (
-          <Box margin='small'>
+          <Box key={size} margin='small'>
             <Text size={size}>
               {`Text ${size}`}
             </Text>

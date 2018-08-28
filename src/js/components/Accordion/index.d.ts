@@ -3,7 +3,7 @@ import * as React from "react";
 export interface AccordionProps {
   activeIndex?: number | number[];
   animate?: boolean;
-  children: any[];
+  children: React.ReactNode[];
   onActive?: (...args: any[]) => any;
   multiple?: boolean;
   messages?: {tabContents: string};

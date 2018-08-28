@@ -6,7 +6,7 @@ export interface ButtonProps {
   color?: string;
   fill?: boolean;
   focusIndicator?: boolean;
-  hoverIndicator?: "background" | {background: boolean | string};
+  hoverIndicator?: boolean | "background" | {background: boolean | string};
   href?: string;
   icon?: JSX.Element;
   label?: React.ReactNode;

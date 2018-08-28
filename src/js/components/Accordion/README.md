@@ -38,7 +38,7 @@ boolean
 Required. Array of AccordionPanels.
 
 ```
-[new AccordionPanel(...)]
+[node]
 ```
 
 **onActive**

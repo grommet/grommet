@@ -6,9 +6,9 @@ export interface DataTableProps {
   groupBy?: string;
   onMore?: (...args: any[]) => any;
   onSearch?: (...args: any[]) => any;
-  resizeable?: string;
+  resizeable?: boolean;
   size?: "small" | "medium" | "large" | "xlarge";
-  sortable?: string;
+  sortable?: boolean;
 }
 
 declare const DataTable: React.ComponentType<DataTableProps>;

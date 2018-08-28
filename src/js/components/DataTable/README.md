@@ -103,7 +103,7 @@ function
 Whether to allow the user to resize column widths.
 
 ```
-string
+boolean
 ```
 
 **size**
@@ -127,6 +127,6 @@ xlarge
 Whether to allow the user to sort columns.
 
 ```
-string
+boolean
 ```
   

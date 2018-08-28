@@ -121,7 +121,7 @@ class Carousel extends Component {
           {wrappedChildren}
           <Box tabIndex='0' focus={focus} fill={true} direction='row' justify='between'>
             <Box fill='vertical'>
-              <Button fill='true' onClick={onLeft} hoverIndicator={true}>
+              <Button fill={true} onClick={onLeft} hoverIndicator={true}>
                 <Box justify='center'>
                   <PreviousIcon />
                 </Box>
@@ -133,7 +133,7 @@ class Carousel extends Component {
               </Box>
             </Box>
             <Box fill='vertical'>
-              <Button fill='true' onClick={onRight} hoverIndicator={true}>
+              <Button fill={true} onClick={onRight} hoverIndicator={true}>
                 <Box justify='center'>
                   <NextIcon />
                 </Box>

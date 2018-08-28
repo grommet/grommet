@@ -95,17 +95,20 @@ class Components extends Component {
       <Box key='input' gap='small'>
         <Select placeholder='Select' options={['One', 'Two']} onChange={() => {}} />
         <CheckBox
+          name='check'
           checked={checkBox}
           label='CheckBox'
           onChange={event => this.setState({ checkBox: event.target.checked })}
         />
         <CheckBox
+          name='toggle'
           toggle={true}
           checked={checkBox}
           label='CheckBox toggle'
           onChange={event => this.setState({ checkBox: event.target.checked })}
         />
         <RadioButton
+          name='radio'
           checked={radioButton}
           label='RadioButton'
           onChange={event => this.setState({ radioButton: event.target.checked })}
@@ -116,7 +119,7 @@ class Components extends Component {
         <Stack>
           <Box direction='row' justify='between'>
             {[0, 1, 2, 3].map(value => (
-              <Box key={value} pad='small' border={false}>
+              <Box key={value} pad='small'>
                 <Text style={{ fontFamily: 'monospace' }}>{value}</Text>
               </Box>
             ))}

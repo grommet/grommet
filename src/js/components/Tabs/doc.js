@@ -2,8 +2,6 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-import { Tab } from '../Tab';
-
 export const doc = (Tabs) => {
   const DocumentedTabs = describe(Tabs)
     .availableAt(getAvailableAtBadge('Tabs'))
@@ -22,7 +20,7 @@ export const doc = (Tabs) => {
 tab changes will not work unless you subscribe to onActive function and update activeIndex
 accordingly.`
     ),
-    children: PropTypes.arrayOf(PropTypes.instanceOf(Tab)).description(
+    children: PropTypes.arrayOf(PropTypes.node).description(
       'Array of Tab.'
     ).isRequired,
     justify: PropTypes.oneOf(['start', 'center', 'end']).description(
