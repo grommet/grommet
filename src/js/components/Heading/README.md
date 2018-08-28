@@ -44,20 +44,26 @@ specified to distinguish top margin and bottom margin.
 
 ```
 none
+xsmall
 small
 medium
 large
+xlarge
 {
   bottom: 
     none
-    small
-    medium
-    large,
-  top: 
-    none
+    xsmall
     small
     medium
     large
+    xlarge,
+  top: 
+    none
+    xsmall
+    small
+    medium
+    large
+    xlarge
 }
 ```
 

@@ -22,10 +22,10 @@ the DOM tag. Set the level for semantic accuracy and accessibility.
 The sizing can be further adjusted using the size property.`
     ),
     margin: PropTypes.oneOfType([
-      PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+      PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
       PropTypes.shape({
-        bottom: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-        top: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+        bottom: PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
+        top: PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
       }),
     ]).description(
       `The amount of margin above and/or below the heading. An object can be
