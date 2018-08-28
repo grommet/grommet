@@ -66,7 +66,7 @@ const truncateStyle = `
 `;
 
 const colorStyle = css`
-  color: ${props => colorForName(props.color, props.theme)};
+  color: ${props => colorForName(props.colorValue, props.theme)};
 `;
 
 const weightStyle = css`
@@ -78,7 +78,7 @@ export const StyledText = styled.span`
   ${props => props.margin && marginStyle(props)}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.truncate && truncateStyle}
-  ${props => props.color && colorStyle}
+  ${props => props.colorValue && colorStyle}
   ${props => props.weight && weightStyle}
 `.extend`
   ${props => props.theme.text && props.theme.text.extend}

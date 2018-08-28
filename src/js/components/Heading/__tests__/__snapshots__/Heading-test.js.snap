@@ -34,7 +34,6 @@ exports[`Heading color renders 1`] = `
 >
   <h1
     className="c1"
-    color="brand"
   />
 </div>
 `;

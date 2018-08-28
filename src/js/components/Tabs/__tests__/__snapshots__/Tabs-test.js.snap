@@ -208,7 +208,6 @@ exports[`Tabs Tab 1`] = `
         >
           <span
             className="c6"
-            color="#444444"
           >
             Tab 2
           </span>
@@ -247,7 +246,6 @@ exports[`Tabs change active index 1`] = `
         >
           <span
             class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
           >
             Tab 1
           </span>
@@ -303,7 +301,6 @@ exports[`Tabs change active index 2`] = `
         >
           <span
             class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
           >
             Tab 1
           </span>
@@ -376,7 +373,6 @@ exports[`Tabs change to second tab 1`] = `
         >
           <span
             class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
           >
             Tab 2
           </span>
@@ -415,7 +411,6 @@ exports[`Tabs change to second tab 2`] = `
         >
           <span
             class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
           >
             Tab 1
           </span>
@@ -758,7 +753,6 @@ exports[`Tabs set on hover 1`] = `
         >
           <span
             class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
           >
             Tab 2
           </span>
@@ -814,7 +808,6 @@ exports[`Tabs set on hover 2`] = `
         >
           <span
             class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
           >
             Tab 2
           </span>
@@ -870,7 +863,6 @@ exports[`Tabs set on hover 3`] = `
         >
           <span
             class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
           >
             Tab 2
           </span>
@@ -926,7 +918,6 @@ exports[`Tabs set on hover 4`] = `
         >
           <span
             class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
           >
             Tab 2
           </span>
@@ -982,7 +973,6 @@ exports[`Tabs set on hover 5`] = `
         >
           <span
             class="StyledText-dmaDlZ jedYWT"
-            color="#444444"
           >
             Tab 2
           </span>

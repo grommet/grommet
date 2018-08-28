@@ -132,9 +132,7 @@ exports[`Button color renders 1`] = `
 >
   <button
     className="c1"
-    color="accent-1"
     disabled={false}
-    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -154,9 +152,7 @@ exports[`Button color renders 1`] = `
   </button>
   <button
     className="c4"
-    color="accent-1"
     disabled={false}
-    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -326,7 +322,6 @@ exports[`Button focus renders 1`] = `
   <button
     className="c1"
     disabled={false}
-    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -908,7 +903,6 @@ exports[`Button icon label renders 1`] = `
   <button
     className="c1"
     disabled={false}
-    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1032,7 +1026,6 @@ exports[`Button primary renders 1`] = `
   <button
     className="c1"
     disabled={false}
-    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1147,7 +1140,6 @@ exports[`Button renders 1`] = `
   <button
     className="c1"
     disabled={false}
-    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1269,7 +1261,6 @@ exports[`Button reverse icon label renders 1`] = `
   <button
     className="c1"
     disabled={false}
-    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1473,7 +1464,6 @@ exports[`Button warns about invalid label render 1`] = `
   <button
     className="c1"
     disabled={false}
-    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}

@@ -75,7 +75,7 @@ const truncateStyle = `
 `;
 
 const colorStyle = css`
-  color: ${props => colorForName(props.color, props.theme)};
+  color: ${props => colorForName(props.colorValue, props.theme)};
 `;
 
 export const StyledHeading = styled.h1`
@@ -86,7 +86,7 @@ export const StyledHeading = styled.h1`
   ${props => props.margin && marginStyle(props)}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.truncate && truncateStyle}
-  ${props => props.color && colorStyle}
+  ${props => props.colorValue && colorStyle}
 `.extend`
   ${props => props.theme.heading && props.theme.heading.extend}
 `;

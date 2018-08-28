@@ -2544,7 +2544,6 @@ exports[`Accordion set on hover 2`] = `
           >
             <h4
               class="StyledHeading-klHxZj iAZBiv"
-              color="dark-6"
             >
               Panel 1
             </h4>
@@ -2669,7 +2668,6 @@ exports[`Accordion set on hover 3`] = `
           >
             <h4
               class="StyledHeading-klHxZj iAZBiv"
-              color="dark-6"
             >
               Panel 1
             </h4>
@@ -2726,7 +2724,6 @@ exports[`Accordion set on hover 3`] = `
           >
             <h4
               class="StyledHeading-klHxZj iAZBiv"
-              color="dark-6"
             >
               Panel 2
             </h4>
@@ -2851,7 +2848,6 @@ exports[`Accordion set on hover 4`] = `
           >
             <h4
               class="StyledHeading-klHxZj iAZBiv"
-              color="dark-6"
             >
               Panel 2
             </h4>

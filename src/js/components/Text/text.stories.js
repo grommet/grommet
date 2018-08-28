@@ -22,5 +22,18 @@ class All extends Component {
   }
 }
 
+class Color extends Component {
+  render() {
+    return (
+      <Grommet theme={grommet}>
+        <Text color='accent-1'>
+          Colored Text
+        </Text>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Text', module)
-  .add('All', () => <All />);
+  .add('All', () => <All />)
+  .add('Color', () => <Color />);

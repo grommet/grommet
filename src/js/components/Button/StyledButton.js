@@ -13,7 +13,7 @@ import {
 const basicStyle = props => css`
   border: ${props.theme.button.border.width} solid ${
     colorForName(
-      normalizeColor((props.color || props.theme.button.border.color ||
+      normalizeColor((props.colorValue || props.theme.button.border.color ||
       props.theme.global.control.color || 'brand'), props.theme)
       , props.theme)};
   border-radius: ${props.theme.button.border.radius};
@@ -25,7 +25,7 @@ const primaryStyle = props => css`
   ${
     backgroundStyle(
       normalizeColor(
-        props.color || props.theme.button.primary.color ||
+        props.colorValue || props.theme.button.primary.color ||
         props.theme.global.control.color || 'brand',
         props.theme
       ),
@@ -50,8 +50,8 @@ const disabledStyle = css`
 `;
 
 function getHoverColor(props) {
-  if (props.color) {
-    return colorForName(props.color, props.theme);
+  if (props.colorValue) {
+    return colorForName(props.colorValue, props.theme);
   }
   return (normalizeColor(props.theme.button.border.color ||
     props.theme.global.control.color, props.theme));
@@ -141,7 +141,7 @@ export const StyledButton = styled.button`
     transition: 0.1s ease-in-out;
   `)}
   ${props => props.fillContainer && fillStyle}
-  ${props => props.hasIcon && !props.label && !props.plain && `
+  ${props => props.hasIcon && !props.hasLabel && !props.plain && `
     padding: ${props.theme.global.edgeSize.small};
   `}
 `.extend`

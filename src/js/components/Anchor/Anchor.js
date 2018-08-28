@@ -50,9 +50,9 @@ class Anchor extends Component {
         innerRef={forwardRef}
         aria-label={a11yTitle}
         disabled={disabled}
-        icon={icon}
+        hasIcon={!!icon}
         focus={focus}
-        label={label}
+        hasLabel={label}
         primary={primary}
         reverse={reverse}
         theme={theme}

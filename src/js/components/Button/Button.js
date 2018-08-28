@@ -28,6 +28,7 @@ class Button extends Component {
   render() {
     const {
       a11yTitle,
+      color, // munged to avoid styled-components putting it in the DOM
       forwardRef,
       children,
       icon,
@@ -65,12 +66,13 @@ class Button extends Component {
         {...rest}
         innerRef={forwardRef}
         aria-label={a11yTitle}
+        colorValue={color}
         disabled={disabled}
         hasIcon={!!icon}
+        hasLabel={!!label}
         fillContainer={fill}
         focus={focus}
         href={href}
-        label={label}
         onClick={onClick}
         plain={typeof plain !== 'undefined' ? (
           plain

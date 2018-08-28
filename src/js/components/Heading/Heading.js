@@ -18,6 +18,7 @@ class Heading extends Component {
 
   render() {
     const {
+      color, // munged to avoid styled-components putting it in the DOM
       level,
       ...rest
     } = this.props;
@@ -31,7 +32,7 @@ class Heading extends Component {
 
     // enforce level to be a number
     return (
-      <StyledComponent level={+level} {...rest} />
+      <StyledComponent colorValue={color} level={+level} {...rest} />
     );
   }
 }
