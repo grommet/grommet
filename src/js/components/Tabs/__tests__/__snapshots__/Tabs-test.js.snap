@@ -245,7 +245,7 @@ exports[`Tabs change active index 1`] = `
           class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ hJTmEY"
+            class="StyledText-dmaDlZ jedYWT"
           >
             Tab 1
           </span>
@@ -300,7 +300,7 @@ exports[`Tabs change active index 2`] = `
           class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ hJTmEY"
+            class="StyledText-dmaDlZ jedYWT"
           >
             Tab 1
           </span>
@@ -372,7 +372,7 @@ exports[`Tabs change to second tab 1`] = `
           class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ hJTmEY"
+            class="StyledText-dmaDlZ jedYWT"
           >
             Tab 2
           </span>
@@ -410,7 +410,7 @@ exports[`Tabs change to second tab 2`] = `
           class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ hJTmEY"
+            class="StyledText-dmaDlZ jedYWT"
           >
             Tab 1
           </span>
@@ -752,7 +752,7 @@ exports[`Tabs set on hover 1`] = `
           class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ hJTmEY"
+            class="StyledText-dmaDlZ jedYWT"
           >
             Tab 2
           </span>
@@ -807,7 +807,7 @@ exports[`Tabs set on hover 2`] = `
           class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ hJTmEY"
+            class="StyledText-dmaDlZ jedYWT"
           >
             Tab 2
           </span>
@@ -862,7 +862,7 @@ exports[`Tabs set on hover 3`] = `
           class="StyledBox-YaZNy kNfDNC"
         >
           <span
-            class="StyledText-dmaDlZ hJTmEY"
+            class="StyledText-dmaDlZ jedYWT"
           >
             Tab 2
           </span>
@@ -917,7 +917,7 @@ exports[`Tabs set on hover 4`] = `
           class="StyledBox-YaZNy kNfDNC"
         >
           <span
-            class="StyledText-dmaDlZ hJTmEY"
+            class="StyledText-dmaDlZ jedYWT"
           >
             Tab 2
           </span>
@@ -972,7 +972,7 @@ exports[`Tabs set on hover 5`] = `
           class="StyledBox-YaZNy hqcczV"
         >
           <span
-            class="StyledText-dmaDlZ hJTmEY"
+            class="StyledText-dmaDlZ jedYWT"
           >
             Tab 2
           </span>

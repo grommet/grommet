@@ -66,7 +66,6 @@ const truncateStyle = `
 `;
 
 const colorStyle = css`
-  ${props => console.log('!!! colorStyle', props.colorValue)}
   color: ${props => colorForName(props.colorValue, props.theme)};
 `;
 
