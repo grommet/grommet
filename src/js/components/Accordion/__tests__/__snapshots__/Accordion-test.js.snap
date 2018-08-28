@@ -489,7 +489,7 @@ exports[`Accordion change active index 1`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -538,7 +538,7 @@ exports[`Accordion change active index 1`] = `
           >
             <svg
               aria-label="FormUp"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -602,7 +602,7 @@ exports[`Accordion change active index 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -651,7 +651,7 @@ exports[`Accordion change active index 2`] = `
           >
             <svg
               aria-label="FormUp"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -715,7 +715,7 @@ exports[`Accordion change to second Panel 1`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -771,7 +771,7 @@ exports[`Accordion change to second Panel 1`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -839,7 +839,7 @@ exports[`Accordion change to second Panel 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -895,7 +895,7 @@ exports[`Accordion change to second Panel 2`] = `
           >
             <svg
               aria-label="FormUp"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -966,7 +966,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -1015,7 +1015,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -1076,7 +1076,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -1125,7 +1125,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
           >
             <svg
               aria-label="FormUp"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -1815,7 +1815,7 @@ exports[`Accordion multiple panels 1`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -1864,7 +1864,7 @@ exports[`Accordion multiple panels 1`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -1925,7 +1925,7 @@ exports[`Accordion multiple panels 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -1974,7 +1974,7 @@ exports[`Accordion multiple panels 2`] = `
           >
             <svg
               aria-label="FormUp"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2038,7 +2038,7 @@ exports[`Accordion multiple panels 3`] = `
           >
             <svg
               aria-label="FormUp"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2090,7 +2090,7 @@ exports[`Accordion multiple panels 3`] = `
           >
             <svg
               aria-label="FormUp"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2154,7 +2154,7 @@ exports[`Accordion multiple panels 4`] = `
           >
             <svg
               aria-label="FormUp"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2206,7 +2206,7 @@ exports[`Accordion multiple panels 4`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2267,7 +2267,7 @@ exports[`Accordion multiple panels 5`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2316,7 +2316,7 @@ exports[`Accordion multiple panels 5`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2429,7 +2429,7 @@ exports[`Accordion set on hover 1`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2485,7 +2485,7 @@ exports[`Accordion set on hover 1`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2554,7 +2554,7 @@ exports[`Accordion set on hover 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2610,7 +2610,7 @@ exports[`Accordion set on hover 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2679,7 +2679,7 @@ exports[`Accordion set on hover 3`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2736,7 +2736,7 @@ exports[`Accordion set on hover 3`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2804,7 +2804,7 @@ exports[`Accordion set on hover 4`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2861,7 +2861,7 @@ exports[`Accordion set on hover 4`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2929,7 +2929,7 @@ exports[`Accordion set on hover 5`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"
@@ -2985,7 +2985,7 @@ exports[`Accordion set on hover 5`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-hcpUvT bPezfS"
+              class="StyledIcon-kFlXVF eheoxD"
               color="#7D4CDB"
               height="24px"
               role="img"

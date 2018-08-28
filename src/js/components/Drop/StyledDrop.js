@@ -51,5 +51,5 @@ export const StyledDrop = styled.div`
     align-items: stretch;
   }
 `.extend`
-  ${props => props.theme.drop && props.theme.drop.extend}
+  ${props => props.theme.global.drop && props.theme.global.drop.extend}
 `;

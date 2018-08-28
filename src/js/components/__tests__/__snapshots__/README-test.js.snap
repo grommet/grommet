@@ -3825,6 +3825,22 @@ The suggestion contains the object chosen from the supplied suggestions.
 function
 \`\`\`
 
+**onSuggestionsOpen**
+
+Function that will be called when the suggestions drop is opened.
+
+\`\`\`
+function
+\`\`\`
+
+**onSuggestionsClose**
+
+Function that will be called when the suggestions drop is closed.
+
+\`\`\`
+function
+\`\`\`
+
 **placeholder**
 
 Placeholder to use when no value is provided.

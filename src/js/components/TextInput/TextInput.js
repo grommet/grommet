@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, isValidElement } from 'react';
 import { compose } from 'recompose';
 import styled from 'styled-components';
 
@@ -78,6 +78,17 @@ class TextInput extends Component {
     clearTimeout(this.resetTimer);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { onSuggestionsOpen, onSuggestionsClose } = this.props;
+    if (this.state.showDrop !== prevState.showDrop) {
+      if (this.state.showDrop && onSuggestionsOpen) {
+        onSuggestionsOpen();
+      } else if (onSuggestionsClose) {
+        onSuggestionsClose();
+      }
+    }
+  }
+
   announce = (message, mode) => {
     const { announce, suggestions } = this.props;
     if (suggestions && suggestions.length > 0) {
@@ -138,6 +149,7 @@ class TextInput extends Component {
   }
 
   onShowSuggestions = () => {
+    const { onSuggestionsOpen } = this.props;
     // Get values of suggestions, so we can highlight selected suggestion
     const selectedSuggestionIndex = this.getSelectedSuggestionIndex();
 
@@ -145,7 +157,12 @@ class TextInput extends Component {
       showDrop: true,
       activeSuggestionIndex: -1,
       selectedSuggestionIndex,
-    }, this.announceSuggestionsIsOpen);
+    }, () => {
+      this.announceSuggestionsIsOpen();
+      if (onSuggestionsOpen) {
+        onSuggestionsOpen();
+      }
+    });
   }
 
   onNextSuggestion = (event) => {
@@ -232,23 +249,28 @@ class TextInput extends Component {
     return (
       <StyledSuggestions theme={theme}>
         <InfiniteScroll items={suggestions} step={theme.select.step}>
-          {(suggestion, index) => (
-            <li key={`${stringLabel(suggestion)}-${index}`}>
-              <Button
-                active={
-                  activeSuggestionIndex === index ||
-                  selectedSuggestionIndex === index
-                }
-                fill={true}
-                hoverIndicator='background'
-                onClick={() => this.onClickSuggestion(suggestion)}
-              >
-                <Box align='start' pad='small'>
-                  {renderLabel(suggestion)}
-                </Box>
-              </Button>
-            </li>
-          )}
+          {(suggestion, index) => {
+            const plain = typeof suggestion === 'object' && typeof isValidElement(suggestion.label);
+            return (
+              <li key={`${stringLabel(suggestion)}-${index}`}>
+                <Button
+                  active={
+                    activeSuggestionIndex === index ||
+                    selectedSuggestionIndex === index
+                  }
+                  fill={true}
+                  hoverIndicator='background'
+                  onClick={() => this.onClickSuggestion(suggestion)}
+                >
+                  {plain ? renderLabel(suggestion) : (
+                    <Box align='start' pad='small'>
+                      {renderLabel(suggestion)}
+                    </Box>
+                  )}
+                </Button>
+              </li>
+            );
+          }}
         </InfiniteScroll>
       </StyledSuggestions>
     );

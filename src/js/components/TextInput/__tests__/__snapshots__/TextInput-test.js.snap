@@ -210,11 +210,7 @@ exports[`TextInput complex suggestions 2`] = `
           class="StyledButton-qbvYY vVYVk"
           type="button"
         >
-          <div
-            class="StyledBox-YaZNy hZNqBU"
-          >
-            test
-          </div>
+          test
         </button>
       </li>
       <li>
@@ -222,11 +218,7 @@ exports[`TextInput complex suggestions 2`] = `
           class="StyledButton-qbvYY vVYVk"
           type="button"
         >
-          <div
-            class="StyledBox-YaZNy hZNqBU"
-          >
-            test1
-          </div>
+          test1
         </button>
       </li>
     </ol>
