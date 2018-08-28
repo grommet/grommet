@@ -140,14 +140,17 @@ Either a color identifier to use for the background
 string
 {
   color: string,
-  dark: boolean,
+  dark: 
+    boolean
+    string,
   image: string,
   position: string,
   opacity: 
     weak
     medium
     strong
-    boolean
+    boolean,
+  ligh: string
 }
 ```
 
@@ -156,6 +159,7 @@ string
 A fixed or relative size along its container's main axis.
 
 ```
+xxsmall
 xsmall
 small
 medium
@@ -175,6 +179,7 @@ auto
 Include a border.
 
 ```
+boolean
 top
 left
 bottom
@@ -183,7 +188,12 @@ horizontal
 vertical
 all
 {
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   side: 
     top
     left
@@ -303,37 +313,44 @@ xsmall
 small
 medium
 large
+xlarge
 {
   bottom: 
     xsmall
     small
     medium
-    large,
+    large
+    xlarge,
   horizontal: 
     xsmall
     small
     medium
-    large,
+    large
+    xlarge,
   left: 
     xsmall
     small
     medium
-    large,
+    large
+    xlarge,
   right: 
     xsmall
     small
     medium
-    large,
+    large
+    xlarge,
   top: 
     xsmall
     small
     medium
-    large,
+    large
+    xlarge,
   vertical: 
     xsmall
     small
     medium
     large
+    xlarge
 }
 ```
 
@@ -360,37 +377,44 @@ xsmall
 small
 medium
 large
+xlarge
 {
   bottom: 
     xsmall
     small
     medium
-    large,
+    large
+    xlarge,
   horizontal: 
     xsmall
     small
     medium
-    large,
+    large
+    xlarge,
   left: 
     xsmall
     small
     medium
-    large,
+    large
+    xlarge,
   right: 
     xsmall
     small
     medium
-    large,
+    large
+    xlarge,
   top: 
     xsmall
     small
     medium
-    large,
+    large
+    xlarge,
   vertical: 
     xsmall
     small
     medium
     large
+    xlarge
 }
 ```
 

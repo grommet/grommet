@@ -317,7 +317,6 @@ exports[`fill renders 1`] = `
   >
     <div
       className="c2"
-      fill={true}
     >
       <div>
         first
@@ -336,7 +335,6 @@ exports[`fill renders 1`] = `
   >
     <div
       className="c5"
-      fill={false}
     >
       <div>
         first

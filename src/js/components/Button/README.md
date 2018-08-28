@@ -59,6 +59,7 @@ button. An object can be also be specified for color index support:
 with plain Buttons.
 
 ```
+boolean
 background
 {
   background: 

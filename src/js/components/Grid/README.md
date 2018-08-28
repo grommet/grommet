@@ -77,6 +77,7 @@ Column sizes.
   1/4
   3/4
   flex
+  auto
   [xsmall
 small
 medium
@@ -88,7 +89,8 @@ full
 2/3
 1/4
 3/4
-flex]
+flex
+auto]
 ]
 xsmall
 small
@@ -116,7 +118,8 @@ full
 2/3
 1/4
 3/4
-flex]
+flex
+auto]
 }
 ```
 
@@ -201,6 +204,7 @@ Row sizes.
   1/4
   3/4
   flex
+  auto
   [xsmall
 small
 medium
@@ -212,7 +216,8 @@ full
 2/3
 1/4
 3/4
-flex]
+flex
+auto]
 ]
 xsmall
 small

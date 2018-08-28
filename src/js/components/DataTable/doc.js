@@ -64,7 +64,7 @@ export const doc = (DataTable) => {
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.`
     ),
-    resizeable: PropTypes.string
+    resizeable: PropTypes.bool
       .description('Whether to allow the user to resize column widths.'),
     size: PropTypes.oneOf(
       ['small', 'medium', 'large', 'xlarge']
@@ -74,7 +74,7 @@ export const doc = (DataTable) => {
       header and footer cell alignment, all cells will have the same
       width. This cannot be used in combination with 'resizeable'.
     `),
-    sortable: PropTypes.string
+    sortable: PropTypes.bool
       .description('Whether to allow the user to sort columns.'),
   };
 
