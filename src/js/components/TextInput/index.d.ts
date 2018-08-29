@@ -9,6 +9,8 @@ export interface TextInputProps {
   name?: string;
   onInput?: (...args: any[]) => any;
   onSelect?: (...args: any[]) => any;
+  onSuggestionsOpen?: (...args: any[]) => any;
+  onSuggestionsClose?: (...args: any[]) => any;
   placeholder?: string | React.ReactNode;
   plain?: boolean;
   size?: "small" | "medium" | "large" | "xlarge";

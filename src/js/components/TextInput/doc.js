@@ -51,6 +51,12 @@ export const doc = (TextInput) => {
       `Function that will be called when the user selects a suggestion.
 The suggestion contains the object chosen from the supplied suggestions.`
     ),
+    onSuggestionsOpen: PropTypes.func.description(
+      'Function that will be called when the suggestions drop is opened.'
+    ),
+    onSuggestionsClose: PropTypes.func.description(
+      'Function that will be called when the suggestions drop is closed.'
+    ),
     placeholder: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.node,
