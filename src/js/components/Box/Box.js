@@ -1,6 +1,6 @@
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
-import { ThemeContext as IconThemeContext } from 'grommet-icons';
+import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
 import { ThemeContext } from '../../contexts';
 import { backgroundIsDark } from '../../utils';

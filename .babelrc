@@ -6,5 +6,23 @@
   ],
   "plugins": [
     ["styled-components", { "useDisplayName": false }]
-  ]
+  ],
+  "env": {
+    "es6": {
+      "plugins": [
+        ["transform-imports", {
+          "grommet-icons$": {
+             "transform": "grommet-icons/es6/icons/${member}",
+             "preventFullImport": true,
+             "skipDefaultConversion": true
+          },
+          "grommet-icons/contexts": {
+            "transform": "grommet-icons/es6/contexts/${member}",
+            "preventFullImport": true,
+            "skipDefaultConversion": true
+         }
+        }]
+      ]
+    }
+  }
 }

@@ -149,7 +149,6 @@ class TextInput extends Component {
   }
 
   onShowSuggestions = () => {
-    const { onSuggestionsOpen } = this.props;
     // Get values of suggestions, so we can highlight selected suggestion
     const selectedSuggestionIndex = this.getSelectedSuggestionIndex();
 
@@ -157,12 +156,7 @@ class TextInput extends Component {
       showDrop: true,
       activeSuggestionIndex: -1,
       selectedSuggestionIndex,
-    }, () => {
-      this.announceSuggestionsIsOpen();
-      if (onSuggestionsOpen) {
-        onSuggestionsOpen();
-      }
-    });
+    }, this.announceSuggestionsIsOpen);
   }
 
   onNextSuggestion = (event) => {

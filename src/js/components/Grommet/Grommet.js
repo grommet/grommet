@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ThemeContext as IconThemeContext } from 'grommet-icons';
+import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 import { compose } from 'recompose';
 
 import { ResponsiveContext, ThemeContext } from '../../contexts';
