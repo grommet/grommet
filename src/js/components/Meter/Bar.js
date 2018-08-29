@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { parseMetricToNum } from '../../utils';
 
 import { StyledMeter } from './StyledMeter';
-import { strokeProps } from './utils';
+import { strokeProps, defaultColor } from './utils';
 
 export class Bar extends Component {
   static defaultProps = {
@@ -26,8 +26,9 @@ export class Bar extends Component {
       const key = `p-${index}`;
       const delta = (value * (width - (2 * capOffset))) / max;
       const d = `M ${start},${mid} L ${start + delta},${mid}`;
-      const colorName = color ||
-        ((index === values.length - 1) ? 'accent-1' : `neutral-${index + 1}`);
+      const colorName = color
+        || ((index === values.length - 1)
+        ? 'accent-1' : defaultColor(index, theme));
       let hoverProps;
       if (onHover) {
         hoverProps = {

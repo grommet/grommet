@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Meter background renders 1`] = `
+exports[`Meter background 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -128,7 +128,60 @@ exports[`Meter background renders 1`] = `
 </div>
 `;
 
-exports[`Meter renders 1`] = `
+exports[`Meter basic 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c1 path {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={24}
+    preserveAspectRatio="none"
+    viewBox="0 0 384 24"
+    width={384}
+  >
+    <path
+      d="M 0,12 L 384,12"
+      fill="none"
+      stroke="#F6F6F6"
+      strokeLinecap="square"
+      strokeOpacity="0.4"
+      strokeWidth={24}
+    />
+    <path
+      d="M 0,12 L 76.8,12"
+      fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeWidth={24}
+    />
+  </svg>
+</div>
+`;
+
+exports[`Meter default 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -169,6 +222,34 @@ exports[`Meter renders 1`] = `
       strokeWidth={24}
     />
   </svg>
+</div>
+`;
+
+exports[`Meter many values 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.c1 path {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+<div
+  className="c0"
+>
   <svg
     className="c1"
     height={24}
@@ -185,11 +266,58 @@ exports[`Meter renders 1`] = `
       strokeWidth={24}
     />
     <path
-      d="M 0,12 L 76.8,12"
+      d="M 336,12 L 384,12"
       fill="none"
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
       stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeWidth={24}
+    />
+    <path
+      d="M 288,12 L 336,12"
+      fill="none"
+      stroke="#BE60EB"
+      strokeLinecap="butt"
+      strokeWidth={24}
+    />
+    <path
+      d="M 240,12 L 288,12"
+      fill="none"
+      stroke="#3D138D"
+      strokeLinecap="butt"
+      strokeWidth={24}
+    />
+    <path
+      d="M 192,12 L 240,12"
+      fill="none"
+      stroke="#FFB202"
+      strokeLinecap="butt"
+      strokeWidth={24}
+    />
+    <path
+      d="M 144,12 L 192,12"
+      fill="none"
+      stroke="#6194EB"
+      strokeLinecap="butt"
+      strokeWidth={24}
+    />
+    <path
+      d="M 96,12 L 144,12"
+      fill="none"
+      stroke="#00C781"
+      strokeLinecap="butt"
+      strokeWidth={24}
+    />
+    <path
+      d="M 48,12 L 96,12"
+      fill="none"
+      stroke="#BE60EB"
+      strokeLinecap="butt"
+      strokeWidth={24}
+    />
+    <path
+      d="M 0,12 L 48,12"
+      fill="none"
+      stroke="#3D138D"
       strokeLinecap="butt"
       strokeWidth={24}
     />
@@ -197,7 +325,7 @@ exports[`Meter renders 1`] = `
 </div>
 `;
 
-exports[`Meter round renders 1`] = `
+exports[`Meter round 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -296,7 +424,7 @@ exports[`Meter round renders 1`] = `
 </div>
 `;
 
-exports[`Meter size renders 1`] = `
+exports[`Meter size 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -579,7 +707,7 @@ exports[`Meter size renders 1`] = `
 </div>
 `;
 
-exports[`Meter thickness renders 1`] = `
+exports[`Meter thickness 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -862,7 +990,7 @@ exports[`Meter thickness renders 1`] = `
 </div>
 `;
 
-exports[`Meter type renders 1`] = `
+exports[`Meter type 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
 
 import { StyledMeter } from './StyledMeter';
-import { strokeProps } from './utils';
+import { strokeProps, defaultColor } from './utils';
 
 export class Circle extends Component {
   render() {
@@ -22,8 +22,9 @@ export class Circle extends Component {
     (values || []).filter(v => v.value > 0).forEach((valueArg, index) => {
       const { color, highlight, label, onHover, value, ...pathRest } = valueArg;
       const key = `p-${index}`;
-      const colorName = color ||
-        ((index === values.length - 1) ? 'accent-1' : `neutral-${index + 1}`);
+      const colorName = color
+        || ((index === values.length - 1)
+        ? 'accent-1' : defaultColor(index, theme));
 
       let endAngle;
       if (startValue + value >= max) {
@@ -59,8 +60,7 @@ export class Circle extends Component {
         // To handle situations where the last values are small, redraw
         // a dot at the end. Give just a bit of angle to avoid anti-aliasing
         // leakage around the edge.
-        const d2 =
-          arcCommands(width / 2, width / 2, radius, endAngle - 0.5, endAngle);
+        const d2 = arcCommands(width / 2, width / 2, radius, endAngle - 0.5, endAngle);
         const pathCap = (
           <path
             key={`${key}-`}
