@@ -4,7 +4,6 @@ import { compose } from 'recompose';
 import { withTheme } from '../hocs';
 
 import { StyledTable, StyledTableDataCaption } from './StyledTable';
-import { doc } from './doc';
 
 class Table extends Component {
   render() {
@@ -18,10 +17,12 @@ class Table extends Component {
   }
 }
 
+let TableDoc;
+if (process.env.NODE_ENV !== 'production') {
+  TableDoc = require('./doc').doc(Table); // eslint-disable-line global-require
+}
 const TableWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Table) : Table
-);
+)(TableDoc || Table);
 
 export { TableWrapper as Table };

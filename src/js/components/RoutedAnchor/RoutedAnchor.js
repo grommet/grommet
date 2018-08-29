@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { Anchor } from '../Anchor';
-import { doc } from './doc';
 
 class RoutedAnchor extends Component {
   static contextTypes = {
@@ -41,6 +40,10 @@ class RoutedAnchor extends Component {
   }
 }
 
-const RoutedAnchorWrapper = process.env.NODE_ENV !== 'production' ? doc(RoutedAnchor) : RoutedAnchor;
+let RoutedAnchorDoc;
+if (process.env.NODE_ENV !== 'production') {
+  RoutedAnchorDoc = require('./doc').doc(RoutedAnchor); // eslint-disable-line global-require
+}
+const RoutedAnchorWrapper = RoutedAnchorDoc || RoutedAnchor;
 
 export { RoutedAnchorWrapper as RoutedAnchor };

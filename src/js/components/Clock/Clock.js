@@ -5,7 +5,6 @@ import { withTheme } from '../hocs';
 
 import { Analog } from './Analog';
 import { Digital } from './Digital';
-import { doc } from './doc';
 
 const TIME_REGEXP = /T([0-9]{2}):([0-9]{2})(?::([0-9.,]{2,}))?/;
 const DURATION_REGEXP =
@@ -180,10 +179,12 @@ class Clock extends Component {
   }
 }
 
+let ClockDoc;
+if (process.env.NODE_ENV !== 'production') {
+  ClockDoc = require('./doc').doc(Clock); // eslint-disable-line global-require
+}
 const ClockWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Clock) : Clock
-);
+)(ClockDoc || Clock);
 
 export { ClockWrapper as Clock };

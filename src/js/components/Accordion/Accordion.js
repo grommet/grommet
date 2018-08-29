@@ -7,8 +7,6 @@ import { compose } from 'recompose';
 import { Box } from '../Box';
 import { withTheme } from '../hocs';
 
-import { doc } from './doc';
-
 import { AccordionContext } from './AccordionContext';
 
 const activeAsArray = active => ((typeof active === 'number') ? (
@@ -98,10 +96,12 @@ class Accordion extends Component {
   }
 }
 
+let AccordionDoc;
+if (process.env.NODE_ENV !== 'production') {
+  AccordionDoc = require('./doc').doc(Accordion); // eslint-disable-line global-require
+}
 const AccordionWrapper = compose(
-  withTheme
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Accordion) : Accordion
-);
+  withTheme,
+)(AccordionDoc || Accordion);
 
 export { AccordionWrapper as Accordion };

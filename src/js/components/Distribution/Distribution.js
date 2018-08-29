@@ -5,8 +5,6 @@ import { Box } from '../Box';
 
 import { withTheme } from '../hocs';
 
-import { doc } from './doc';
-
 const Value = ({ basis, children }) => (
   <Box basis={basis} flex='shrink' overflow='hidden'>
     {children}
@@ -87,10 +85,12 @@ class Distribution extends Component {
   }
 }
 
+let DistributionDoc;
+if (process.env.NODE_ENV !== 'production') {
+  DistributionDoc = require('./doc').doc(Distribution); // eslint-disable-line global-require
+}
 const DistributionWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Distribution) : Distribution
-);
+)(DistributionDoc || Distribution);
 
 export { DistributionWrapper as Distribution };

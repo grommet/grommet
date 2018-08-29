@@ -4,7 +4,6 @@ import { compose } from 'recompose';
 import { withTheme } from '../hocs';
 
 import { StyledText } from './StyledText';
-import { doc } from './doc';
 
 const styledComponents = {
   span: StyledText,
@@ -35,10 +34,12 @@ class Text extends Component {
   }
 }
 
+let TextDoc;
+if (process.env.NODE_ENV !== 'production') {
+  TextDoc = require('./doc').doc(Text); // eslint-disable-line global-require
+}
 const TextWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Text) : Text
-);
+)(TextDoc || Text);
 
 export { TextWrapper as Text };

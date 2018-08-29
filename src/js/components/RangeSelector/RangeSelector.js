@@ -6,7 +6,6 @@ import { Box } from '../Box';
 import { withForwardRef, withTheme } from '../hocs';
 
 import { EdgeControl } from './EdgeControl';
-import { doc } from './doc';
 
 class RangeSelector extends Component {
   static defaultProps = {
@@ -185,11 +184,13 @@ class RangeSelector extends Component {
   }
 }
 
+let RangeSelectorDoc;
+if (process.env.NODE_ENV !== 'production') {
+  RangeSelectorDoc = require('./doc').doc(RangeSelector); // eslint-disable-line global-require
+}
 const RangeSelectorWrapper = compose(
   withTheme,
   withForwardRef,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(RangeSelector) : RangeSelector
-);
+)(RangeSelectorDoc || RangeSelector);
 
 export { RangeSelectorWrapper as RangeSelector };

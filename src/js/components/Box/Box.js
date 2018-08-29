@@ -1,14 +1,12 @@
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
-import { ThemeContext as IconThemeContext } from 'grommet-icons';
+import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
 import { ThemeContext } from '../../contexts';
 import { backgroundIsDark } from '../../utils';
 import { withForwardRef, withTheme } from '../hocs';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
-
-import { doc } from './doc';
 
 const styledComponents = {
   div: StyledBox,
@@ -139,11 +137,13 @@ class Box extends Component {
   }
 }
 
+let BoxDoc;
+if (process.env.NODE_ENV !== 'production') {
+  BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
+}
 const BoxWrapper = compose(
   withTheme,
-  withForwardRef, // needed for RangeSelector
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Box) : Box
-);
+  withForwardRef,
+)(BoxDoc || Box);
 
 export { BoxWrapper as Box };

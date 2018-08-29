@@ -4,10 +4,7 @@ import { compose } from 'recompose';
 import styled from 'styled-components';
 
 import { withTheme } from '../hocs';
-
 import { Box } from '../Box';
-
-import { doc } from './doc';
 
 const AnimatedBox = styled(Box)`
   ${props => !props.animate && (props.open ? `
@@ -117,10 +114,12 @@ class Collapsible extends Component {
   }
 }
 
+let CollapsibleDoc;
+if (process.env.NODE_ENV !== 'production') {
+  CollapsibleDoc = require('./doc').doc(Collapsible); // eslint-disable-line global-require
+}
 const CollapsibleWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Collapsible) : Collapsible
-);
+)(CollapsibleDoc || Collapsible);
 
 export { CollapsibleWrapper as Collapsible };

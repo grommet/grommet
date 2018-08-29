@@ -1,7 +1,5 @@
 import { Children, Component, cloneElement } from 'react';
 
-import { doc } from './doc';
-
 const KEYS = {
   8: 'onBackspace',
   9: 'onTab',
@@ -53,6 +51,10 @@ class Keyboard extends Component {
   }
 }
 
-const KeyboardWrapper = process.env.NODE_ENV !== 'production' ? doc(Keyboard) : Keyboard;
+let KeyboardDoc;
+if (process.env.NODE_ENV !== 'production') {
+  KeyboardDoc = require('./doc').doc(Keyboard); // eslint-disable-line global-require
+}
+const KeyboardWrapper = KeyboardDoc || Keyboard;
 
 export { KeyboardWrapper as Keyboard };

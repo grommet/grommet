@@ -4,7 +4,6 @@ import { compose } from 'recompose';
 import { withTheme } from '../hocs';
 
 import { StyledHeading } from './StyledHeading';
-import { doc } from './doc';
 
 const styledComponents = {
   div: StyledHeading,
@@ -37,10 +36,12 @@ class Heading extends Component {
   }
 }
 
+let HeadingDoc;
+if (process.env.NODE_ENV !== 'production') {
+  HeadingDoc = require('./doc').doc(Heading); // eslint-disable-line global-require
+}
 const HeadingWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Heading) : Heading
-);
+)(HeadingDoc || Heading);
 
 export { HeadingWrapper as Heading };

@@ -4,7 +4,6 @@ import { compose } from 'recompose';
 import { withTheme } from '../hocs';
 
 import { StyledStack, StyledStackLayer } from './StyledStack';
-import { doc } from './doc';
 
 class Stack extends Component {
   render() {
@@ -42,10 +41,12 @@ class Stack extends Component {
   }
 }
 
+let StackDoc;
+if (process.env.NODE_ENV !== 'production') {
+  StackDoc = require('./doc').doc(Stack); // eslint-disable-line global-require
+}
 const StackWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Stack) : Stack
-);
+)(StackDoc || Stack);
 
 export { StackWrapper as Stack };

@@ -6,8 +6,6 @@ import { Drop } from '../Drop';
 import { withForwardRef, withTheme } from '../hocs';
 import { setFocusWithoutScroll } from '../../utils';
 
-import { doc } from './doc';
-
 class DropButton extends Component {
   static defaultProps = {
     a11yTitle: 'Open Drop',
@@ -102,11 +100,13 @@ class DropButton extends Component {
   }
 }
 
+let DropButtonDoc;
+if (process.env.NODE_ENV !== 'production') {
+  DropButtonDoc = require('./doc').doc(DropButton); // eslint-disable-line global-require
+}
 const DropButtonWrapper = compose(
   withTheme,
-  withForwardRef
-)(
-  process.env.NODE_ENV !== 'production' ? doc(DropButton) : DropButton
-);
+  withForwardRef,
+)(DropButtonDoc || DropButton);
 
 export { DropButtonWrapper as DropButton };

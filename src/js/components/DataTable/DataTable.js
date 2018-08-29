@@ -8,7 +8,6 @@ import { Footer } from './Footer';
 import { Body } from './Body';
 import { GroupedBody } from './GroupedBody';
 import { buildState } from './buildState';
-import { doc } from './doc';
 import { StyledDataTable } from './StyledDataTable';
 
 class DataTable extends Component {
@@ -135,10 +134,12 @@ class DataTable extends Component {
   }
 }
 
+let DataTableDoc;
+if (process.env.NODE_ENV !== 'production') {
+  DataTableDoc = require('./doc').doc(DataTable); // eslint-disable-line global-require
+}
 const DataTableWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(DataTable) : DataTable
-);
+)(DataTableDoc || DataTable);
 
 export { DataTableWrapper as DataTable };

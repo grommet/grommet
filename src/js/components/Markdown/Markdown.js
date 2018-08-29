@@ -8,8 +8,6 @@ import { Heading } from '../Heading';
 import { Paragraph } from '../Paragraph';
 import { withTheme } from '../hocs';
 
-import { doc } from './doc';
-
 class GrommetMarkdown extends Component {
   render() {
     const { components, theme, ...rest } = this.props;
@@ -34,10 +32,12 @@ class GrommetMarkdown extends Component {
   }
 }
 
+let GrommetMarkdownDoc;
+if (process.env.NODE_ENV !== 'production') {
+  GrommetMarkdownDoc = require('./doc').doc(GrommetMarkdown); // eslint-disable-line global-require
+}
 const GrommetMarkdownWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(GrommetMarkdown) : GrommetMarkdown
-);
+)(GrommetMarkdownDoc || GrommetMarkdown);
 
 export { GrommetMarkdownWrapper as Markdown };

@@ -5,6 +5,13 @@
     "react"
   ],
   "plugins": [
-    ["styled-components", { "useDisplayName": false }]
+    ["styled-components", { "useDisplayName": false }],
+    ["transform-imports", {
+      "grommet-icons/contexts": {
+        "transform": "grommet-icons/es6/contexts/${member}",
+        "preventFullImport": true,
+        "skipDefaultConversion": true
+      }
+    }]
   ]
 }

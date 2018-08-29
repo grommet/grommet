@@ -2,7 +2,6 @@ import React from 'react';
 
 import { TableContext } from '../Table/TableContext';
 import { StyledTableBody } from '../Table/StyledTable';
-import { doc } from './doc';
 
 const TableBody = props => (
   <TableContext.Provider value='body'>
@@ -10,6 +9,10 @@ const TableBody = props => (
   </TableContext.Provider>
 );
 
-const TableBodyWrapper = process.env.NODE_ENV !== 'production' ? doc(TableBody) : TableBody;
+let TableBodyDoc;
+if (process.env.NODE_ENV !== 'production') {
+  TableBodyDoc = require('./doc').doc(TableBody); // eslint-disable-line global-require
+}
+const TableBodyWrapper = TableBodyDoc || TableBody;
 
 export { TableBodyWrapper as TableBody };

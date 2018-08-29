@@ -3,11 +3,9 @@ import { createPortal } from 'react-dom';
 import { compose } from 'recompose';
 
 import { getNewContainer } from '../../utils';
-
 import { withTheme } from '../hocs';
 
 import { LayerContainer } from './LayerContainer';
-import { doc } from './doc';
 
 class Layer extends Component {
   static defaultProps = {
@@ -47,10 +45,12 @@ class Layer extends Component {
   }
 }
 
+let LayerDoc;
+if (process.env.NODE_ENV !== 'production') {
+  LayerDoc = require('./doc').doc(Layer); // eslint-disable-line global-require
+}
 const LayerWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Layer) : Layer
-);
+)(LayerDoc || Layer);
 
 export { LayerWrapper as Layer };

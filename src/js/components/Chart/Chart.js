@@ -3,13 +3,10 @@ import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
 import { colorForName, parseMetricToNum } from '../../utils';
-
 import { withTheme } from '../hocs';
 
 import { StyledChart } from './StyledChart';
 import { normalizeValues, normalizeBounds } from './utils';
-
-import { doc } from './doc';
 
 const renderBars = (values, bounds, scale, height) =>
   (values || []).map((valueArg, index) => {
@@ -198,10 +195,12 @@ class Chart extends Component {
   }
 }
 
+let ChartDoc;
+if (process.env.NODE_ENV !== 'production') {
+  ChartDoc = require('./doc').doc(Chart); // eslint-disable-line global-require
+}
 const ChartWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Chart) : Chart
-);
+)(ChartDoc || Chart);
 
 export { ChartWrapper as Chart };

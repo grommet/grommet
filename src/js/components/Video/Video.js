@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
-import { Box, Button, Menu, Meter, Stack, Text } from '../';
+import { Box } from '../Box';
+import { Button } from '../Button';
+import { Menu } from '../Menu';
+import { Meter } from '../Meter';
+import { Stack } from '../Stack';
+import { Text } from '../Text';
 import { withForwardRef, withTheme } from '../hocs';
 import { throttle } from '../../utils';
 
 import {
   StyledVideo, StyledVideoContainer, StyledVideoControls, StyledVideoScrubber,
 } from './StyledVideo';
-
-import { doc } from './doc';
 
 // Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
@@ -442,11 +445,13 @@ class Video extends Component {
   }
 }
 
+let VideoDoc;
+if (process.env.NODE_ENV !== 'production') {
+  VideoDoc = require('./doc').doc(Video); // eslint-disable-line global-require
+}
 const VideoWrapper = compose(
   withTheme,
   withForwardRef,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Video) : Video
-);
+)(VideoDoc || Video);
 
 export { VideoWrapper as Video };

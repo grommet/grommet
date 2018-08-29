@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { Button } from '../Button';
-import { doc } from './doc';
 
 class RoutedButton extends Component {
   static contextTypes = {
@@ -45,6 +44,10 @@ class RoutedButton extends Component {
   }
 }
 
-const RoutedButtonWrapper = process.env.NODE_ENV !== 'production' ? doc(RoutedButton) : RoutedButton;
+let RoutedButtonDoc;
+if (process.env.NODE_ENV !== 'production') {
+  RoutedButtonDoc = require('./doc').doc(RoutedButton); // eslint-disable-line global-require
+}
+const RoutedButtonWrapper = RoutedButtonDoc || RoutedButton;
 
 export { RoutedButtonWrapper as RoutedButton };

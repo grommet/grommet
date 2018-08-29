@@ -10,7 +10,6 @@ import { withForwardRef, withTheme } from '../hocs';
 import { controlBorderStyle, colorIsDark, evalStyle } from '../../utils';
 
 import { SelectContainer } from './SelectContainer';
-import { doc } from './doc';
 
 const SelectTextInput = styled(TextInput)`cursor: pointer;`;
 const StyledSelectBox = styled(Box)`
@@ -157,11 +156,13 @@ class Select extends Component {
   }
 }
 
+let SelectDoc;
+if (process.env.NODE_ENV !== 'production') {
+  SelectDoc = require('./doc').doc(Select); // eslint-disable-line global-require
+}
 const SelectWrapper = compose(
   withTheme,
-  withForwardRef
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Select) : Select
-);
+  withForwardRef,
+)(SelectDoc || Select);
 
 export { SelectWrapper as Select };

@@ -5,8 +5,6 @@ import { Box } from '../Box';
 import { Heading } from '../Heading';
 import { Layer } from '../Layer';
 
-import { doc } from './doc';
-
 class SkipLinks extends Component {
   static defaultProps = {
     messages: {
@@ -60,6 +58,10 @@ class SkipLinks extends Component {
   }
 }
 
-const SkipLinksWrapper = process.env.NODE_ENV !== 'production' ? doc(SkipLinks) : SkipLinks;
+let SkipLinksDoc;
+if (process.env.NODE_ENV !== 'production') {
+  SkipLinksDoc = require('./doc').doc(SkipLinks); // eslint-disable-line global-require
+}
+const SkipLinksWrapper = SkipLinksDoc || SkipLinks;
 
 export { SkipLinksWrapper as SkipLinks };

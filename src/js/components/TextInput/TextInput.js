@@ -19,7 +19,6 @@ import {
   StyledPlaceholder,
   StyledSuggestions,
 } from './StyledTextInput';
-import { doc } from './doc';
 
 function renderLabel(suggestion) {
   if (suggestion && typeof suggestion === 'object') {
@@ -149,7 +148,6 @@ class TextInput extends Component {
   }
 
   onShowSuggestions = () => {
-    const { onSuggestionsOpen } = this.props;
     // Get values of suggestions, so we can highlight selected suggestion
     const selectedSuggestionIndex = this.getSelectedSuggestionIndex();
 
@@ -157,12 +155,7 @@ class TextInput extends Component {
       showDrop: true,
       activeSuggestionIndex: -1,
       selectedSuggestionIndex,
-    }, () => {
-      this.announceSuggestionsIsOpen();
-      if (onSuggestionsOpen) {
-        onSuggestionsOpen();
-      }
-    });
+    }, this.announceSuggestionsIsOpen);
   }
 
   onNextSuggestion = (event) => {
@@ -339,12 +332,14 @@ class TextInput extends Component {
   }
 }
 
+let TextInputDoc;
+if (process.env.NODE_ENV !== 'production') {
+  TextInputDoc = require('./doc').doc(TextInput); // eslint-disable-line global-require
+}
 const TextInputWrapper = compose(
   withTheme,
   withAnnounce,
   withForwardRef,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(TextInput) : TextInput
-);
+)(TextInputDoc || TextInput);
 
 export { TextInputWrapper as TextInput };

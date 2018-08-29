@@ -6,7 +6,6 @@ import { Text } from '../Text';
 import { withFocus, withForwardRef, withTheme } from '../hocs';
 
 import { StyledAnchor } from './StyledAnchor';
-import { doc } from './doc';
 
 class Anchor extends Component {
   constructor(props) {
@@ -70,12 +69,14 @@ class Anchor extends Component {
   }
 }
 
+let AnchorDoc;
+if (process.env.NODE_ENV !== 'production') {
+  AnchorDoc = require('./doc').doc(Anchor); // eslint-disable-line global-require
+}
 const AnchorWrapper = compose(
   withFocus,
   withTheme,
   withForwardRef,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Anchor) : Anchor
-);
+)(AnchorDoc || Anchor);
 
 export { AnchorWrapper as Anchor };

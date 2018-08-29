@@ -6,7 +6,6 @@ import { Text } from '../Text';
 import { withFocus, withForwardRef, withTheme } from '../hocs';
 
 import { StyledButton } from './StyledButton';
-import { doc } from './doc';
 
 const AnchorStyledButton = StyledButton.withComponent('a');
 
@@ -99,12 +98,14 @@ class Button extends Component {
   }
 }
 
+let ButtonDoc;
+if (process.env.NODE_ENV !== 'production') {
+  ButtonDoc = require('./doc').doc(Button); // eslint-disable-line global-require
+}
 const ButtonWrapper = compose(
   withFocus,
   withTheme,
   withForwardRef,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Button) : Button
-);
+)(ButtonDoc || Button);
 
 export { ButtonWrapper as Button };

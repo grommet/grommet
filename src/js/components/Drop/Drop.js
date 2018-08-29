@@ -3,11 +3,9 @@ import { createPortal } from 'react-dom';
 import { compose } from 'recompose';
 
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
-
 import { withTheme } from '../hocs';
 
 import { DropContainer } from './DropContainer';
-import { doc } from './doc';
 
 class Drop extends Component {
   static defaultProps = {
@@ -46,10 +44,12 @@ class Drop extends Component {
   }
 }
 
+let DropDoc;
+if (process.env.NODE_ENV !== 'production') {
+  DropDoc = require('./doc').doc(Drop); // eslint-disable-line global-require
+}
 const DropWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Drop) : Drop
-);
+)(DropDoc || Drop);
 
 export { DropWrapper as Drop };

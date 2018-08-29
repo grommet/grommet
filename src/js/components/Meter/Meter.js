@@ -5,7 +5,6 @@ import { withTheme } from '../hocs';
 
 import { Bar } from './Bar';
 import { Circle } from './Circle';
-import { doc } from './doc';
 
 const deriveMax = (values) => {
   let max = 100;
@@ -50,10 +49,12 @@ class Meter extends Component {
   }
 }
 
+let MeterDoc;
+if (process.env.NODE_ENV !== 'production') {
+  MeterDoc = require('./doc').doc(Meter); // eslint-disable-line global-require
+}
 const MeterWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Meter) : Meter
-);
+)(MeterDoc || Meter);
 
 export { MeterWrapper as Meter };
