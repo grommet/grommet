@@ -8,7 +8,6 @@ import { colorIsDark, deepMerge } from '../../utils';
 import { withIconTheme } from '../hocs';
 
 import { StyledGrommet } from './StyledGrommet';
-import { doc } from './doc';
 
 class Grommet extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -87,10 +86,12 @@ class Grommet extends Component {
   }
 }
 
+let GrommetDoc;
+if (process.env.NODE_ENV !== 'production') {
+  GrommetDoc = require('./doc').doc(Grommet); // eslint-disable-line global-require
+}
 const GrommetWrapper = compose(
   withIconTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Grommet) : Grommet
-);
+)(GrommetDoc || Grommet);
 
 export { GrommetWrapper as Grommet };

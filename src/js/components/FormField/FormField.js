@@ -6,8 +6,6 @@ import { Box } from '../Box';
 import { Text } from '../Text';
 import { withFocus, withTheme } from '../hocs';
 
-import { doc } from './doc';
-
 class FormField extends Component {
   render() {
     const { children, error, focus, help, htmlFor, label, style, theme,
@@ -113,11 +111,13 @@ class FormField extends Component {
   }
 }
 
+let FormFieldDoc;
+if (process.env.NODE_ENV !== 'production') {
+  FormFieldDoc = require('./doc').doc(FormField); // eslint-disable-line global-require
+}
 const FormFieldWrapper = compose(
   withFocus,
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(FormField) : FormField
-);
+)(FormFieldDoc || FormField);
 
 export { FormFieldWrapper as FormField };

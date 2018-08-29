@@ -3,12 +3,9 @@ import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
 import { colorForName, parseMetricToNum } from '../../utils';
-
 import { withTheme } from '../hocs';
 
 import { StyledDiagram } from './StyledDiagram';
-
-import { doc } from './doc';
 
 const computeMidPoint = (fromPoint, toPoint) => ([
   (fromPoint[0] > toPoint[0] ?
@@ -217,10 +214,13 @@ class Diagram extends Component {
   }
 }
 
+
+let DiagramDoc;
+if (process.env.NODE_ENV !== 'production') {
+  DiagramDoc = require('./doc').doc(Diagram); // eslint-disable-line global-require
+}
 const DiagramWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Diagram) : Diagram
-);
+)(DiagramDoc || Diagram);
 
 export { DiagramWrapper as Diagram };

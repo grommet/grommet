@@ -12,7 +12,6 @@ import {
   StyledCheckBoxToggle,
   StyledCheckBoxKnob,
 } from './StyledCheckBox';
-import { doc } from './doc';
 
 class CheckBox extends Component {
   render() {
@@ -78,12 +77,14 @@ class CheckBox extends Component {
   }
 }
 
+let CheckBoxDoc;
+if (process.env.NODE_ENV !== 'production') {
+  CheckBoxDoc = require('./doc').doc(CheckBox); // eslint-disable-line global-require
+}
 const CheckBoxWrapper = compose(
   withFocus,
   withTheme,
   withForwardRef,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(CheckBox) : CheckBox
-);
+)(CheckBoxDoc || CheckBox);
 
 export { CheckBoxWrapper as CheckBox };

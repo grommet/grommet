@@ -6,7 +6,6 @@ import { withTheme } from '../hocs';
 
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
-import { doc } from './doc';
 
 const TableCell = ({
   children, plain, scope, size, theme, verticalAlign, ...rest
@@ -35,10 +34,12 @@ TableCell.defaultProps = {
   pad: { horizontal: 'small', vertical: 'xsmall' },
 };
 
+let TableCellDoc;
+if (process.env.NODE_ENV !== 'production') {
+  TableCellDoc = require('./doc').doc(TableCell); // eslint-disable-line global-require
+}
 const TableCellWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(TableCell) : TableCell
-);
+)(TableCellDoc || TableCell);
 
 export { TableCellWrapper as TableCell };

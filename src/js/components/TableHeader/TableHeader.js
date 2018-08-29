@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import { TableContext } from '../Table/TableContext';
 import { StyledTableHeader } from '../Table/StyledTable';
-import { doc } from './doc';
 
 class TableHeader extends Component {
   render() {
@@ -14,7 +13,11 @@ class TableHeader extends Component {
   }
 }
 
-const TableHeaderWrapper = process.env.NODE_ENV !== 'production' ? doc(TableHeader) : TableHeader;
+let TableHeaderDoc;
+if (process.env.NODE_ENV !== 'production') {
+  TableHeaderDoc = require('./doc').doc(TableHeader); // eslint-disable-line global-require
+}
+const TableHeaderWrapper = TableHeaderDoc || TableHeader;
 
 export { TableHeaderWrapper as TableHeader };
 

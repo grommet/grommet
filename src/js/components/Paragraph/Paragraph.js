@@ -4,7 +4,6 @@ import { compose } from 'recompose';
 import { withTheme } from '../hocs';
 
 import { StyledParagraph } from './StyledParagraph';
-import { doc } from './doc';
 
 class Paragraph extends Component {
   render() {
@@ -16,10 +15,12 @@ class Paragraph extends Component {
   }
 }
 
+let ParagraphDoc;
+if (process.env.NODE_ENV !== 'production') {
+  ParagraphDoc = require('./doc').doc(Paragraph); // eslint-disable-line global-require
+}
 const ParagraphWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Paragraph) : Paragraph
-);
+)(ParagraphDoc || Paragraph);
 
 export { ParagraphWrapper as Paragraph };

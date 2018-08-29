@@ -4,7 +4,6 @@ import { compose } from 'recompose';
 import { withForwardRef, withTheme } from '../hocs';
 
 import { StyledTextArea } from './StyledTextArea';
-import { doc } from './doc';
 
 class TextArea extends Component {
   render() {
@@ -15,11 +14,13 @@ class TextArea extends Component {
   }
 }
 
+let TextAreaDoc;
+if (process.env.NODE_ENV !== 'production') {
+  TextAreaDoc = require('./doc').doc(TextArea); // eslint-disable-line global-require
+}
 const TextAreaWrapper = compose(
   withTheme,
-  withForwardRef
-)(
-  process.env.NODE_ENV !== 'production' ? doc(TextArea) : TextArea
-);
+  withForwardRef,
+)(TextAreaDoc || TextArea);
 
 export { TextAreaWrapper as TextArea };

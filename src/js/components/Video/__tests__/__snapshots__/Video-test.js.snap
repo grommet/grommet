@@ -228,6 +228,23 @@ exports[`Video autoPlay renders 1`] = `
   text-align: inherit;
 }
 
+.c10 {
+  position: relative;
+}
+
+.c11 {
+  position: relative;
+  display: block;
+}
+
+.c13 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -247,23 +264,6 @@ exports[`Video autoPlay renders 1`] = `
 .c12 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-.c10 {
-  position: relative;
-}
-
-.c11 {
-  position: relative;
-  display: block;
-}
-
-.c13 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c2 {
@@ -876,6 +876,23 @@ exports[`Video controls renders 1`] = `
   color: black;
 }
 
+.c10 {
+  position: relative;
+}
+
+.c11 {
+  position: relative;
+  display: block;
+}
+
+.c13 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -895,23 +912,6 @@ exports[`Video controls renders 1`] = `
 .c12 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-.c10 {
-  position: relative;
-}
-
-.c11 {
-  position: relative;
-  display: block;
-}
-
-.c13 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c2 {
@@ -1635,6 +1635,23 @@ exports[`Video fit renders 1`] = `
   text-align: inherit;
 }
 
+.c10 {
+  position: relative;
+}
+
+.c11 {
+  position: relative;
+  display: block;
+}
+
+.c13 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1654,23 +1671,6 @@ exports[`Video fit renders 1`] = `
 .c12 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-.c10 {
-  position: relative;
-}
-
-.c11 {
-  position: relative;
-  display: block;
-}
-
-.c13 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c2 {
@@ -2387,6 +2387,23 @@ exports[`Video loop renders 1`] = `
   text-align: inherit;
 }
 
+.c10 {
+  position: relative;
+}
+
+.c11 {
+  position: relative;
+  display: block;
+}
+
+.c13 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2406,23 +2423,6 @@ exports[`Video loop renders 1`] = `
 .c12 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-.c10 {
-  position: relative;
-}
-
-.c11 {
-  position: relative;
-  display: block;
-}
-
-.c13 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c2 {
@@ -2954,6 +2954,23 @@ exports[`Video mute renders 1`] = `
   text-align: inherit;
 }
 
+.c10 {
+  position: relative;
+}
+
+.c11 {
+  position: relative;
+  display: block;
+}
+
+.c13 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2973,23 +2990,6 @@ exports[`Video mute renders 1`] = `
 .c12 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-.c10 {
-  position: relative;
-}
-
-.c11 {
-  position: relative;
-  display: block;
-}
-
-.c13 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c2 {
@@ -3521,6 +3521,23 @@ exports[`Video renders 1`] = `
   text-align: inherit;
 }
 
+.c10 {
+  position: relative;
+}
+
+.c11 {
+  position: relative;
+  display: block;
+}
+
+.c13 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3540,23 +3557,6 @@ exports[`Video renders 1`] = `
 .c12 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-.c10 {
-  position: relative;
-}
-
-.c11 {
-  position: relative;
-  display: block;
-}
-
-.c13 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 
 .c2 {

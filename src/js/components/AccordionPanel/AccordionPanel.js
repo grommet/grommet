@@ -8,7 +8,6 @@ import { Heading } from '../Heading';
 import { withTheme, withForwardRef } from '../hocs';
 import { evalStyle, normalizeColor } from '../../utils';
 
-import { doc } from './doc';
 import { AccordionContext } from '../Accordion/AccordionContext';
 
 class AccordionPanel extends Component {
@@ -106,11 +105,13 @@ class AccordionPanel extends Component {
   }
 }
 
+let AccordionPanelDoc;
+if (process.env.NODE_ENV !== 'production') {
+  AccordionPanelDoc = require('./doc').doc(AccordionPanel); // eslint-disable-line global-require
+}
 const AccordionPanelWrapper = compose(
   withTheme,
   withForwardRef,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(AccordionPanel) : AccordionPanel
-);
+)(AccordionPanelDoc || AccordionPanel);
 
 export { AccordionPanelWrapper as AccordionPanel };

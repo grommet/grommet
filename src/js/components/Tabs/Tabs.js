@@ -1,7 +1,6 @@
 import React, { cloneElement, Children, Component } from 'react';
 
-import { Box } from '../';
-import { doc } from './doc';
+import { Box } from '../Box';
 
 class Tabs extends Component {
   static defaultProps = {
@@ -83,6 +82,10 @@ class Tabs extends Component {
   }
 }
 
-const TabsWrapper = process.env.NODE_ENV !== 'production' ? doc(Tabs) : Tabs;
+let TabsDoc;
+if (process.env.NODE_ENV !== 'production') {
+  TabsDoc = require('./doc').doc(Tabs); // eslint-disable-line global-require
+}
+const TabsWrapper = (TabsDoc || Tabs);
 
 export { TabsWrapper as Tabs };

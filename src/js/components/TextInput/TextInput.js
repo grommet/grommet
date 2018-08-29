@@ -19,7 +19,6 @@ import {
   StyledPlaceholder,
   StyledSuggestions,
 } from './StyledTextInput';
-import { doc } from './doc';
 
 function renderLabel(suggestion) {
   if (suggestion && typeof suggestion === 'object') {
@@ -333,12 +332,14 @@ class TextInput extends Component {
   }
 }
 
+let TextInputDoc;
+if (process.env.NODE_ENV !== 'production') {
+  TextInputDoc = require('./doc').doc(TextInput); // eslint-disable-line global-require
+}
 const TextInputWrapper = compose(
   withTheme,
   withAnnounce,
   withForwardRef,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(TextInput) : TextInput
-);
+)(TextInputDoc || TextInput);
 
 export { TextInputWrapper as TextInput };

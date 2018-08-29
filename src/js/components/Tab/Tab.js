@@ -7,8 +7,6 @@ import { Text } from '../Text';
 import { withForwardRef, withTheme } from '../hocs';
 import { evalStyle, normalizeColor } from '../../utils';
 
-import { doc } from './doc';
-
 class Tab extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     const { active } = nextProps;
@@ -96,11 +94,13 @@ class Tab extends Component {
   }
 }
 
+let TabDoc;
+if (process.env.NODE_ENV !== 'production') {
+  TabDoc = require('./doc').doc(Tab); // eslint-disable-line global-require
+}
 const TabWrapper = compose(
   withTheme,
   withForwardRef,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Tab) : Tab
-);
+)(TabDoc || Tab);
 
 export { TabWrapper as Tab };

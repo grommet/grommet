@@ -10,7 +10,6 @@ import {
   StyledRadioButtonInput,
   StyledRadioButtonButton,
 } from './StyledRadioButton';
-import { doc } from './doc';
 
 class RadioButton extends Component {
   render() {
@@ -45,11 +44,13 @@ class RadioButton extends Component {
   }
 }
 
+let RadioButtonDoc;
+if (process.env.NODE_ENV !== 'production') {
+  RadioButtonDoc = require('./doc').doc(RadioButton); // eslint-disable-line global-require
+}
 const RadioButtonWrapper = compose(
   withTheme,
-  withForwardRef
-)(
-  process.env.NODE_ENV !== 'production' ? doc(RadioButton) : RadioButton
-);
+  withForwardRef,
+)(RadioButtonDoc || RadioButton);
 
 export { RadioButtonWrapper as RadioButton };

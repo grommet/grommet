@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import Waypoint from 'react-waypoint';
 
-import { doc } from './doc';
-
 class InfiniteScroll extends Component {
   static defaultProps = {
     items: [],
@@ -89,6 +87,10 @@ class InfiniteScroll extends Component {
   }
 }
 
-const InfiniteScrollWrapper = process.env.NODE_ENV !== 'production' ? doc(InfiniteScroll) : InfiniteScroll;
+let InfiniteScrollDoc;
+if (process.env.NODE_ENV !== 'production') {
+  InfiniteScrollDoc = require('./doc').doc(InfiniteScroll); // eslint-disable-line global-require
+}
+const InfiniteScrollWrapper = InfiniteScrollDoc || InfiniteScroll;
 
 export { InfiniteScrollWrapper as InfiniteScroll };

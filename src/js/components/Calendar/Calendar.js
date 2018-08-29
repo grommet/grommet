@@ -12,7 +12,6 @@ import {
   StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks,
   StyledWeeksContainer,
 } from './StyledCalendar';
-import { doc } from './doc';
 import {
   addDays, addMonths, betweenDates, daysApart, sameDay,
   subtractDays, subtractMonths, withinDates,
@@ -266,10 +265,12 @@ class Calendar extends Component {
   }
 }
 
+let CalendarDoc;
+if (process.env.NODE_ENV !== 'production') {
+  CalendarDoc = require('./doc').doc(Calendar); // eslint-disable-line global-require
+}
 const CalendarWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Calendar) : Calendar
-);
+)(CalendarDoc || Calendar);
 
 export { CalendarWrapper as Calendar };

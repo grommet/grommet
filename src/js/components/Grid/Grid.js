@@ -4,7 +4,6 @@ import { compose } from 'recompose';
 import { withTheme } from '../hocs';
 
 import { StyledGrid } from './StyledGrid';
-import { doc } from './doc';
 
 const styledComponents = {
   div: StyledGrid,
@@ -39,11 +38,13 @@ class Grid extends Component {
   }
 }
 
+let GridDoc;
+if (process.env.NODE_ENV !== 'production') {
+  GridDoc = require('./doc').doc(Grid); // eslint-disable-line global-require
+}
 const GridWrapper = compose(
   withTheme,
-)(
-  process.env.NODE_ENV !== 'production' ? doc(Grid) : Grid
-);
+)(GridDoc || Grid);
 
 GridWrapper.available = (typeof window !== 'undefined') &&
   window.CSS && window.CSS.supports &&
