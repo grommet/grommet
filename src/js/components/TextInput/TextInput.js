@@ -71,7 +71,7 @@ class TextInput extends Component {
       newState.showDrop = false;
     }
 
-    return newState !== {} ? newState : null;
+    return Object.keys(newState) ? newState : null;
   }
 
   state = {

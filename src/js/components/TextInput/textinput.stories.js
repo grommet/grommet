@@ -60,7 +60,7 @@ const myCustomTheme = deepMerge(grommet, {
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;
 
-        overflow-x: hidden;
+        overflow: hidden;
       `,
     },
     elevation: {
