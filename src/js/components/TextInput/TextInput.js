@@ -58,13 +58,20 @@ class TextInput extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { forwardRef } = nextProps;
-    const { inputRef } = prevState;
+    const { forwardRef, suggestions } = nextProps;
+    const { inputRef, showDrop } = prevState;
     const nextInputRef = forwardRef || inputRef;
+
+    const newState = {};
     if (nextInputRef !== inputRef) {
-      return { inputRef: nextInputRef };
+      newState.inputRef = nextInputRef;
     }
-    return null;
+
+    if (showDrop && (!suggestions || !suggestions.length)) {
+      newState.showDrop = false;
+    }
+
+    return Object.keys(newState) ? newState : null;
   }
 
   state = {
