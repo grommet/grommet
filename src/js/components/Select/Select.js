@@ -53,6 +53,7 @@ class Select extends Component {
       dropAlign,
       dropTarget,
       forwardRef,
+      id,
       messages,
       onChange,
       onClose,
@@ -109,14 +110,13 @@ class Select extends Component {
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
         <DropButton
           ref={forwardRef}
+          id={id}
           disabled={disabled}
           dropAlign={dropAlign}
           dropTarget={dropTarget}
-          {...rest}
           open={open}
           onOpen={this.onOpen}
           onClose={this.onClose}
-          a11yTitle={`${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`}
           dropContent={<SelectContainer {...this.props} onChange={onSelectChange} />}
         >
           <StyledSelectBox
@@ -130,7 +130,8 @@ class Select extends Component {
             <Box direction='row' flex={true} basis='auto'>
               {selectValue || (
                 <SelectTextInput
-                  ref={(ref) => { this.inputRef = ref; }}
+                  a11yTitle={a11yTitle && `${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`}
+                  id={id ? `${id}__input` : undefined}
                   {...rest}
                   tabIndex='-1'
                   type='text'
@@ -139,6 +140,7 @@ class Select extends Component {
                   readOnly={true}
                   value={textValue}
                   size={size}
+                  onClick={disabled ? undefined : this.onOpen}
                 />
               )}
             </Box>
