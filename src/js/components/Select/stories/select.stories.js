@@ -60,6 +60,8 @@ class SimpleSelect extends Component {
     return (
       <Grommet theme={theme || grommet}>
         <Select
+          id='select'
+          name='select'
           placeholder='Select'
           value={value}
           options={options}

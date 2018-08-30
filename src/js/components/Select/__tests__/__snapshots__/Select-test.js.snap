@@ -212,7 +212,7 @@ exports[`Select basic 1`] = `
 }
 
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   className="c0"
   disabled={false}
   id="test-select"
@@ -234,8 +234,9 @@ exports[`Select basic 1`] = `
         <input
           autoComplete="off"
           className="c5 c6"
-          id="test-select"
+          id="test-select__input"
           onBlur={[Function]}
+          onClick={[Function]}
           onFocus={[Function]}
           onInput={[Function]}
           onKeyDown={[Function]}
@@ -277,9 +278,8 @@ exports[`Select basic 1`] = `
 
 exports[`Select complex options and children 1`] = `
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="StyledButton-qbvYY jZaTeL"
-  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -295,8 +295,8 @@ exports[`Select complex options and children 1`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
-          data-testid="test-select"
-          id="test-select"
+          id="test-select__input"
+          placeholder="test select"
           readonly=""
           tabindex="-1"
           type="text"
@@ -332,9 +332,8 @@ exports[`Select complex options and children 1`] = `
 
 exports[`Select complex options and children 2`] = `
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="StyledButton-qbvYY jZaTeL"
-  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -350,8 +349,8 @@ exports[`Select complex options and children 2`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
-          data-testid="test-select"
-          id="test-select"
+          id="test-select__input"
+          placeholder="test select"
           readonly=""
           tabindex="-1"
           type="text"
@@ -582,9 +581,8 @@ exports[`Select complex options and children 4`] = `
 
 exports[`Select deselect an option 1`] = `
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="StyledButton-qbvYY jZaTeL"
-  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -600,9 +598,9 @@ exports[`Select deselect an option 1`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
-          data-testid="test-select"
-          id="test-select"
+          id="test-select__input"
           multiple=""
+          placeholder="test select"
           readonly=""
           tabindex="-1"
           type="text"
@@ -638,9 +636,8 @@ exports[`Select deselect an option 1`] = `
 
 exports[`Select disabled 1`] = `
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="StyledButton-qbvYY fILeAh"
-  data-testid="test-select"
   disabled=""
   id="test-select"
   type="button"
@@ -657,8 +654,8 @@ exports[`Select disabled 1`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
-          data-testid="test-select"
-          id="test-select"
+          id="test-select__input"
+          placeholder="test select"
           readonly=""
           tabindex="-1"
           type="text"
@@ -694,9 +691,8 @@ exports[`Select disabled 1`] = `
 
 exports[`Select disabled 2`] = `
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="StyledButton-qbvYY fILeAh"
-  data-testid="test-select"
   disabled=""
   id="test-select"
   type="button"
@@ -713,8 +709,8 @@ exports[`Select disabled 2`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
-          data-testid="test-select"
-          id="test-select"
+          id="test-select__input"
+          placeholder="test select"
           readonly=""
           tabindex="-1"
           type="text"
@@ -960,16 +956,14 @@ exports[`Select multiple 1`] = `
 }
 
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   className="c0"
   disabled={false}
   id="test-select"
-  multiple={true}
   onBlur={[Function]}
   onClick={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
-  selected={Array []}
   type="button"
 >
   <div
@@ -984,9 +978,10 @@ exports[`Select multiple 1`] = `
         <input
           autoComplete="off"
           className="c5 c6"
-          id="test-select"
+          id="test-select__input"
           multiple={true}
           onBlur={[Function]}
+          onClick={[Function]}
           onFocus={[Function]}
           onInput={[Function]}
           onKeyDown={[Function]}
@@ -1030,9 +1025,8 @@ exports[`Select multiple 1`] = `
 
 exports[`Select multiple values 1`] = `
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="StyledButton-qbvYY jZaTeL"
-  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -1048,9 +1042,9 @@ exports[`Select multiple values 1`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
-          data-testid="test-select"
-          id="test-select"
+          id="test-select__input"
           multiple=""
+          placeholder="test select"
           readonly=""
           tabindex="-1"
           type="text"
@@ -1086,9 +1080,8 @@ exports[`Select multiple values 1`] = `
 
 exports[`Select multiple values 2`] = `
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="StyledButton-qbvYY jZaTeL"
-  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -1104,9 +1097,9 @@ exports[`Select multiple values 2`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
-          data-testid="test-select"
-          id="test-select"
+          id="test-select__input"
           multiple=""
+          placeholder="test select"
           readonly=""
           tabindex="-1"
           type="text"
@@ -1368,9 +1361,8 @@ exports[`Select multiple values 4`] = `
 
 exports[`Select opens 1`] = `
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="StyledButton-qbvYY jZaTeL"
-  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -1386,8 +1378,8 @@ exports[`Select opens 1`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
-          data-testid="test-select"
-          id="test-select"
+          id="test-select__input"
+          placeholder="test select"
           readonly=""
           tabindex="-1"
           type="text"
@@ -1423,9 +1415,8 @@ exports[`Select opens 1`] = `
 
 exports[`Select opens 2`] = `
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="StyledButton-qbvYY jZaTeL"
-  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -1441,8 +1432,8 @@ exports[`Select opens 2`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
-          data-testid="test-select"
-          id="test-select"
+          id="test-select__input"
+          placeholder="test select"
           readonly=""
           tabindex="-1"
           type="text"
@@ -1732,9 +1723,8 @@ exports[`Select opens 5`] = `
 
 exports[`Select search 1`] = `
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="StyledButton-qbvYY jZaTeL"
-  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -1750,8 +1740,8 @@ exports[`Select search 1`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
-          data-testid="test-select"
-          id="test-select"
+          id="test-select__input"
+          placeholder="test select"
           readonly=""
           tabindex="-1"
           type="text"
@@ -2020,9 +2010,8 @@ exports[`Select search 3`] = `
 
 exports[`Select select an option 1`] = `
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="StyledButton-qbvYY jZaTeL"
-  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -2038,8 +2027,8 @@ exports[`Select select an option 1`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
-          data-testid="test-select"
-          id="test-select"
+          id="test-select__input"
+          placeholder="test select"
           readonly=""
           tabindex="-1"
           type="text"
@@ -2075,9 +2064,8 @@ exports[`Select select an option 1`] = `
 
 exports[`Select select an option with complex options 1`] = `
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="StyledButton-qbvYY jZaTeL"
-  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -2119,9 +2107,8 @@ exports[`Select select an option with complex options 1`] = `
 
 exports[`Select select an option with enter 1`] = `
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="StyledButton-qbvYY jZaTeL"
-  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -2137,8 +2124,8 @@ exports[`Select select an option with enter 1`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
-          data-testid="test-select"
-          id="test-select"
+          id="test-select__input"
+          placeholder="test select"
           readonly=""
           tabindex="-1"
           type="text"
@@ -2174,9 +2161,8 @@ exports[`Select select an option with enter 1`] = `
 
 exports[`Select select another option 1`] = `
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   class="StyledButton-qbvYY jZaTeL"
-  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -2192,9 +2178,9 @@ exports[`Select select another option 1`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
-          data-testid="test-select"
-          id="test-select"
+          id="test-select__input"
           multiple=""
+          placeholder="test select"
           readonly=""
           tabindex="-1"
           type="text"
@@ -2444,7 +2430,7 @@ exports[`Select size 1`] = `
 }
 
 <button
-  aria-label="undefined"
+  aria-label="Open Drop"
   className="c0"
   disabled={false}
   id="test-select"
@@ -2452,7 +2438,6 @@ exports[`Select size 1`] = `
   onClick={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}
-  selected={Array []}
   type="button"
 >
   <div
@@ -2467,8 +2452,9 @@ exports[`Select size 1`] = `
         <input
           autoComplete="off"
           className="c5 c6"
-          id="test-select"
+          id="test-select__input"
           onBlur={[Function]}
+          onClick={[Function]}
           onFocus={[Function]}
           onInput={[Function]}
           onKeyDown={[Function]}

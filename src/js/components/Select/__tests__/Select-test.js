@@ -21,13 +21,13 @@ describe('Select', () => {
 
   test('opens', (done) => {
     window.scrollTo = jest.fn();
-    const { getByTestId, container } = renderIntoDocument(
-      <Select data-testid='test-select' id='test-select' options={['one', 'two']} />
+    const { getByPlaceholderText, container } = renderIntoDocument(
+      <Select placeholder='test select' id='test-select' options={['one', 'two']} />
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
 
-    Simulate.click(getByTestId('test-select'));
+    Simulate.click(getByPlaceholderText('test select'));
 
     expect(container.firstChild).toMatchSnapshot();
     expectPortal('test-select__drop').toMatchSnapshot();
@@ -39,10 +39,10 @@ describe('Select', () => {
   });
 
   test('complex options and children', () => {
-    const { getByTestId, container } = renderIntoDocument(
+    const { getByPlaceholderText, container } = renderIntoDocument(
       <Select
-        data-testid='test-select'
         id='test-select'
+        placeholder='test select'
         options={[{ test: 'one' }, { test: 'two' }]}
       >
         {option => <span>{option.test}</span>}
@@ -51,7 +51,7 @@ describe('Select', () => {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
 
-    Simulate.click(getByTestId('test-select'));
+    Simulate.click(getByPlaceholderText('test select'));
 
     expect(container.firstChild).toMatchSnapshot();
     expectPortal('test-select__drop').toMatchSnapshot();
@@ -60,17 +60,17 @@ describe('Select', () => {
   test('search', () => {
     jest.useFakeTimers();
     const onSearch = jest.fn();
-    const { getByTestId, container } = renderIntoDocument(
+    const { getByPlaceholderText, container } = renderIntoDocument(
       <Select
-        data-testid='test-select'
         id='test-select'
+        placeholder='test select'
         options={['one', 'two']}
         onSearch={onSearch}
       />
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByTestId('test-select'));
+    Simulate.click(getByPlaceholderText('test select'));
 
     expectPortal('test-select__drop').toMatchSnapshot();
 
@@ -114,17 +114,17 @@ describe('Select', () => {
   test('select an option', () => {
     window.scrollTo = jest.fn();
     const onChange = jest.fn();
-    const { getByTestId, container } = renderIntoDocument(
+    const { getByPlaceholderText, container } = renderIntoDocument(
       <Select
-        data-testid='test-select'
         id='test-select'
+        placeholder='test select'
         options={['one', 'two']}
         onChange={onChange}
       />
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByTestId('test-select'));
+    Simulate.click(getByPlaceholderText('test select'));
 
     // pressing enter here nothing will happen
     Simulate.click(
@@ -137,9 +137,8 @@ describe('Select', () => {
   test('select an option with complex options', () => {
     window.scrollTo = jest.fn();
     const onChange = jest.fn();
-    const { getByTestId, container } = renderIntoDocument(
+    const { getByText, container } = renderIntoDocument(
       <Select
-        data-testid='test-select'
         id='test-select'
         plain={true}
         value={<span>one</span>}
@@ -151,7 +150,7 @@ describe('Select', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByTestId('test-select'));
+    Simulate.click(getByText('one'));
 
     // pressing enter here nothing will happen
     Simulate.click(
@@ -164,17 +163,17 @@ describe('Select', () => {
   test('select an option with enter', () => {
     window.scrollTo = jest.fn();
     const onChange = jest.fn();
-    const { getByTestId, container } = renderIntoDocument(
+    const { getByPlaceholderText, container } = renderIntoDocument(
       <Select
-        data-testid='test-select'
         id='test-select'
+        placeholder='test select'
         options={['one', 'two']}
         onChange={onChange}
       />
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByTestId('test-select'));
+    Simulate.click(getByPlaceholderText('test select'));
 
     const preventDefault = jest.fn();
     Simulate.keyDown(
@@ -223,10 +222,10 @@ describe('Select', () => {
   });
 
   test('multiple values', () => {
-    const { getByTestId, container } = render(
+    const { getByPlaceholderText, container } = render(
       <Select
-        data-testid='test-select'
         id='test-select'
+        placeholder='test select'
         multiple={true}
         options={['one', 'two']}
         selected={[0, 1]}
@@ -235,7 +234,7 @@ describe('Select', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByTestId('test-select'));
+    Simulate.click(getByPlaceholderText('test select'));
 
     expect(container.firstChild).toMatchSnapshot();
     expectPortal('test-select__drop').toMatchSnapshot();
@@ -243,10 +242,10 @@ describe('Select', () => {
 
   test('select another option', () => {
     const onChange = jest.fn();
-    const { getByTestId, container } = renderIntoDocument(
+    const { getByPlaceholderText, container } = renderIntoDocument(
       <Select
-        data-testid='test-select'
         id='test-select'
+        placeholder='test select'
         multiple={true}
         options={['one', 'two']}
         onChange={onChange}
@@ -256,7 +255,7 @@ describe('Select', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByTestId('test-select'));
+    Simulate.click(getByPlaceholderText('test select'));
 
     Simulate.click(
       document.getElementById('test-select__drop').querySelector('button')
@@ -266,10 +265,10 @@ describe('Select', () => {
 
   test('deselect an option', () => {
     const onChange = jest.fn();
-    const { getByTestId, container } = renderIntoDocument(
+    const { getByPlaceholderText, container } = renderIntoDocument(
       <Select
-        data-testid='test-select'
         id='test-select'
+        placeholder='test select'
         multiple={true}
         options={['one', 'two']}
         onChange={onChange}
@@ -279,7 +278,7 @@ describe('Select', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByTestId('test-select'));
+    Simulate.click(getByPlaceholderText('test select'));
 
     Simulate.click(
       document.getElementById('test-select__drop').querySelector('button')
@@ -288,10 +287,10 @@ describe('Select', () => {
   });
 
   test('disabled', () => {
-    const { getByTestId, container } = renderIntoDocument(
+    const { getByPlaceholderText, container } = renderIntoDocument(
       <Select
-        data-testid='test-select'
         id='test-select'
+        placeholder='test select'
         disabled={true}
         options={['one', 'two']}
       />
@@ -299,7 +298,7 @@ describe('Select', () => {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
 
-    Simulate.click(getByTestId('test-select'));
+    Simulate.click(getByPlaceholderText('test select'));
 
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
