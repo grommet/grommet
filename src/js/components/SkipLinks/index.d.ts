@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export interface SkipLinksProps {
-  children: any[];
+  children: React.ReactNode;
   messages?: {skipTo: string};
 }
 
