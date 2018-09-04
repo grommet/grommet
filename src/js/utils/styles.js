@@ -122,6 +122,8 @@ export const focusStyle = css`
 export const inputStyle = css`
   box-sizing: border-box;
   font-size: inherit;
+  border: none;
+  -webkit-appearance: none;
   padding: ${props => (
     (parseMetricToNum(props.theme.global.spacing) / 2) -
     parseMetricToNum(props.theme.global.control.border.width)
@@ -136,6 +138,10 @@ export const inputStyle = css`
 
   ${props => props.focus && (!props.plain || props.focusIndicator) && focusStyle}
   ${controlBorderStyle}
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
 `;
 
 export const evalStyle = (arg, theme) => {

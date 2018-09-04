@@ -122,6 +122,8 @@ exports[`Select basic 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  border: none;
+  -webkit-appearance: none;
   padding: 11px;
   outline: none;
   background: transparent;
@@ -131,8 +133,10 @@ exports[`Select basic 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
-  -webkit-appearance: textfield;
   border: none;
+}
+
+.c6::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -294,7 +298,7 @@ exports[`Select complex options and children 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dEiFmx"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -348,7 +352,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dEiFmx"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -597,7 +601,7 @@ exports[`Select deselect an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dEiFmx"
           id="test-select__input"
           multiple=""
           placeholder="test select"
@@ -653,7 +657,7 @@ exports[`Select disabled 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dEiFmx"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -708,7 +712,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dEiFmx"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -866,6 +870,8 @@ exports[`Select multiple 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  border: none;
+  -webkit-appearance: none;
   padding: 11px;
   outline: none;
   background: transparent;
@@ -875,8 +881,10 @@ exports[`Select multiple 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
-  -webkit-appearance: textfield;
   border: none;
+}
+
+.c6::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1041,7 +1049,7 @@ exports[`Select multiple values 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dEiFmx"
           id="test-select__input"
           multiple=""
           placeholder="test select"
@@ -1096,7 +1104,7 @@ exports[`Select multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dEiFmx"
           id="test-select__input"
           multiple=""
           placeholder="test select"
@@ -1377,7 +1385,7 @@ exports[`Select opens 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dEiFmx"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1431,7 +1439,7 @@ exports[`Select opens 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dEiFmx"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1739,7 +1747,7 @@ exports[`Select search 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dEiFmx"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1794,7 +1802,7 @@ exports[`Select search 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-bqUxsy iTWmNe"
+          class="StyledTextInput-bqUxsy kbUIna"
           type="search"
           value=""
         />
@@ -2026,7 +2034,7 @@ exports[`Select select an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dEiFmx"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2123,7 +2131,7 @@ exports[`Select select an option with enter 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dEiFmx"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2177,7 +2185,7 @@ exports[`Select select another option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy hSAYeR"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy dEiFmx"
           id="test-select__input"
           multiple=""
           placeholder="test select"
@@ -2338,6 +2346,8 @@ exports[`Select size 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  border: none;
+  -webkit-appearance: none;
   padding: 11px;
   outline: none;
   background: transparent;
@@ -2347,10 +2357,12 @@ exports[`Select size 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
-  -webkit-appearance: textfield;
   font-size: 22px;
   line-height: 28px;
   border: none;
+}
+
+.c6::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 

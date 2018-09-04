@@ -50,6 +50,8 @@ exports[`renders 1`] = `
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
+  border: none;
+  -webkit-appearance: none;
   padding: 11px;
   outline: none;
   background: transparent;
@@ -59,8 +61,10 @@ exports[`renders 1`] = `
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   width: 100%;
-  -webkit-appearance: textfield;
   border: none;
+}
+
+.c4::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
