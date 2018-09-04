@@ -58,7 +58,7 @@ export const doc = (Box) => {
           PropTypes.oneOf(['weak', 'medium', 'strong']),
           PropTypes.bool,
         ]),
-        ligh: PropTypes.string,
+        light: PropTypes.string,
       }),
     ])
       .description(`Either a color identifier to use for the background
@@ -83,7 +83,7 @@ export const doc = (Box) => {
         ]),
         side: PropTypes.oneOf(['top', 'left', 'bottom', 'right',
           'horizontal', 'vertical', 'all']),
-        size: PropTypes.oneOf(['small', 'medium', 'large']),
+        size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
       }),
     ])
       .description('Include a border.'),

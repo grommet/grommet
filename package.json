@@ -30,7 +30,7 @@
     "release-stable": "babel-node ./tools/release-stable",
     "lint": "eslint src",
     "test": "npm run generate-readme-ts && jest --runInBand",
-    "test-update": "jest --updateSnapshot",
+    "test-update": "npm run generate-readme-ts && jest --updateSnapshot",
     "test-watch": "jest --watchAll",
     "pack": "babel-node ./tools/pack",
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",
