@@ -38,6 +38,7 @@ boolean
 Required. Array of AccordionPanels.
 
 ```
+node
 [node]
 ```
 
