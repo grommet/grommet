@@ -150,7 +150,7 @@ string
     medium
     strong
     boolean,
-  ligh: string
+  light: string
 }
 ```
 
@@ -203,6 +203,7 @@ all
     vertical
     all,
   size: 
+    xsmall
     small
     medium
     large

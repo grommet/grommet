@@ -6,9 +6,9 @@ export interface BoxProps {
   alignContent?: "start" | "center" | "end" | "between" | "around" | "stretch";
   alignSelf?: "start" | "center" | "end" | "stretch";
   animation?: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut" | {type: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut",delay: number,duration: number,size: "xsmall" | "small" | "medium" | "large" | "xlarge"} | "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut" | {type: "fadeIn" | "fadeOut" | "jiggle" | "pulse" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "zoomIn" | "zoomOut",delay: number,duration: number,size: "xsmall" | "small" | "medium" | "large" | "xlarge"}[];
-  background?: string | {color: string,dark: boolean | string,image: string,position: string,opacity: "weak" | "medium" | "strong" | boolean,ligh: string};
+  background?: string | {color: string,dark: boolean | string,image: string,position: string,opacity: "weak" | "medium" | "strong" | boolean,light: string};
   basis?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "3/4" | "auto";
-  border?: boolean | "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all" | {color: string | {dark: string,light: string},side: "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all",size: "small" | "medium" | "large"};
+  border?: boolean | "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all" | {color: string | {dark: string,light: string},side: "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all",size: "xsmall" | "small" | "medium" | "large"};
   direction?: "row" | "column" | "row-responsive";
   elevation?: "none" | "xsmall" | "small" | "medium" | "large" | "xlarge";
   flex?: "grow" | "shrink" | "true" | "false";
