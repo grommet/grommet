@@ -7,5 +7,6 @@ export * from './prop-types';
 export * from './styles';
 export * from './mixins';
 export * from './object';
+export * from './responsive';
 export * from './router';
 export * from './throttle';
