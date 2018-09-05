@@ -13,7 +13,9 @@ export const doc = (ResponsiveContext) => {
   DocumentedResponsiveContext.propTypes = {
     children: PropTypes.func.description(
       `Render function that will be called with the current screen resolution
-      size, either 'wide' or 'narrow'.`),
+      size (e.g 'wide', 'narrow'). The size value will be derived from global.breakpoints entry
+      in the theme object.`
+    ),
   };
 
   return DocumentedResponsiveContext;
