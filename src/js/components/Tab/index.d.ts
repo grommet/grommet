@@ -4,6 +4,6 @@ export interface TabProps {
   title?: string;
 }
 
-declare const Tab: React.ComponentType<TabProps>;
+declare const Tab: React.StatelessComponent<TabProps>;
 
 export { Tab };

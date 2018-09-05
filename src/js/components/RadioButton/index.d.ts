@@ -9,6 +9,6 @@ export interface RadioButtonProps {
   onChange?: (...args: any[]) => any;
 }
 
-declare const RadioButton: React.ComponentType<RadioButtonProps>;
+declare const RadioButton: React.StatelessComponent<RadioButtonProps>;
 
 export { RadioButton };

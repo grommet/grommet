@@ -7,13 +7,13 @@ Object {
 export interface AccordionProps {
   activeIndex?: number | number[];
   animate?: boolean;
-  children: React.ReactNode[];
+  children: React.ReactNode;
   onActive?: (...args: any[]) => any;
   multiple?: boolean;
   messages?: {tabContents: string};
 }
 
-declare const Accordion: React.ComponentType<AccordionProps>;
+declare const Accordion: React.StatelessComponent<AccordionProps>;
 
 export { Accordion };
 ",
@@ -24,7 +24,7 @@ export interface AccordionPanelProps {
   header?: React.ReactNode;
 }
 
-declare const AccordionPanel: React.ComponentType<AccordionPanelProps>;
+declare const AccordionPanel: React.StatelessComponent<AccordionPanelProps>;
 
 export { AccordionPanel };
 ",
@@ -40,7 +40,7 @@ export interface AnchorProps {
   reverse?: boolean;
 }
 
-declare const Anchor: React.ComponentType<AnchorProps>;
+declare const Anchor: React.StatelessComponent<AnchorProps>;
 
 export { Anchor };
 ",
@@ -73,7 +73,7 @@ export interface BoxProps {
   wrap?: boolean;
 }
 
-declare const Box: React.ComponentType<BoxProps>;
+declare const Box: React.StatelessComponent<BoxProps>;
 
 export { Box };
 ",
@@ -96,7 +96,7 @@ export interface ButtonProps {
   type?: \\"button\\" | \\"reset\\" | \\"submit\\";
 }
 
-declare const Button: React.ComponentType<ButtonProps>;
+declare const Button: React.StatelessComponent<ButtonProps>;
 
 export { Button };
 ",
@@ -113,7 +113,7 @@ export interface CalendarProps {
   size?: \\"small\\" | \\"medium\\" | \\"large\\";
 }
 
-declare const Calendar: React.ComponentType<CalendarProps>;
+declare const Calendar: React.StatelessComponent<CalendarProps>;
 
 export { Calendar };
 ",
@@ -124,7 +124,7 @@ export interface CarouselProps {
   play?: number;
 }
 
-declare const Carousel: React.ComponentType<CarouselProps>;
+declare const Carousel: React.StatelessComponent<CarouselProps>;
 
 export { Carousel };
 ",
@@ -143,7 +143,7 @@ export interface ChartProps {
   values: number | number[] | {label: string,onClick: (...args: any[]) => any,onHover: (...args: any[]) => any,value: number | number[]}[];
 }
 
-declare const Chart: React.ComponentType<ChartProps>;
+declare const Chart: React.StatelessComponent<ChartProps>;
 
 export { Chart };
 ",
@@ -160,7 +160,7 @@ export interface CheckBoxProps {
   toggle?: boolean;
 }
 
-declare const CheckBox: React.ComponentType<CheckBoxProps>;
+declare const CheckBox: React.StatelessComponent<CheckBoxProps>;
 
 export { CheckBox };
 ",
@@ -176,7 +176,7 @@ export interface ClockProps {
   type?: \\"analog\\" | \\"digital\\";
 }
 
-declare const Clock: React.ComponentType<ClockProps>;
+declare const Clock: React.StatelessComponent<ClockProps>;
 
 export { Clock };
 ",
@@ -186,7 +186,7 @@ export interface CollapsibleProps {
   open?: boolean;
 }
 
-declare const Collapsible: React.ComponentType<CollapsibleProps>;
+declare const Collapsible: React.StatelessComponent<CollapsibleProps>;
 
 export { Collapsible };
 ",
@@ -203,7 +203,7 @@ export interface DataTableProps {
   sortable?: boolean;
 }
 
-declare const DataTable: React.ComponentType<DataTableProps>;
+declare const DataTable: React.StatelessComponent<DataTableProps>;
 
 export { DataTable };
 ",
@@ -213,7 +213,7 @@ export interface DiagramProps {
   connections: {anchor: \\"center\\" | \\"vertical\\" | \\"horizontal\\",color: string,fromTarget: string | object,label: string,offset: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\",thickness: \\"hair\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\",toTarget: string | object,type: \\"direct\\" | \\"curved\\" | \\"rectilinear\\"}[];
 }
 
-declare const Diagram: React.ComponentType<DiagramProps>;
+declare const Diagram: React.StatelessComponent<DiagramProps>;
 
 export { Diagram };
 ",
@@ -225,7 +225,7 @@ export interface DistributionProps {
   values: {value: number}[];
 }
 
-declare const Distribution: React.ComponentType<DistributionProps>;
+declare const Distribution: React.StatelessComponent<DistributionProps>;
 
 export { Distribution };
 ",
@@ -241,7 +241,7 @@ export interface DropProps {
   target: object;
 }
 
-declare const Drop: React.ComponentType<DropProps>;
+declare const Drop: React.StatelessComponent<DropProps>;
 
 export { Drop };
 ",
@@ -258,7 +258,7 @@ export interface DropButtonProps {
   open?: boolean;
 }
 
-declare const DropButton: React.ComponentType<DropButtonProps>;
+declare const DropButton: React.StatelessComponent<DropButtonProps>;
 
 export { DropButton };
 ",
@@ -271,7 +271,7 @@ export interface FormFieldProps {
   label?: string | React.ReactNode;
 }
 
-declare const FormField: React.ComponentType<FormFieldProps>;
+declare const FormField: React.StatelessComponent<FormFieldProps>;
 
 export { FormField };
 ",
@@ -290,7 +290,7 @@ export interface GridProps {
   tag?: string;
 }
 
-declare const Grid: React.ComponentType<GridProps>;
+declare const Grid: React.StatelessComponent<GridProps>;
 
 export { Grid };
 ",
@@ -301,7 +301,7 @@ export interface GrommetProps {
   theme?: object;
 }
 
-declare const Grommet: React.ComponentType<GrommetProps>;
+declare const Grommet: React.StatelessComponent<GrommetProps>;
 
 export { Grommet };
 ",
@@ -317,7 +317,7 @@ export interface HeadingProps {
   truncate?: boolean;
 }
 
-declare const Heading: React.ComponentType<HeadingProps>;
+declare const Heading: React.StatelessComponent<HeadingProps>;
 
 export { Heading };
 ",
@@ -327,7 +327,7 @@ export interface ImageProps {
   fit?: \\"cover\\" | \\"contain\\";
 }
 
-declare const Image: React.ComponentType<ImageProps>;
+declare const Image: React.StatelessComponent<ImageProps>;
 
 export { Image };
 ",
@@ -343,7 +343,7 @@ export interface InfiniteScrollProps {
   step?: number;
 }
 
-declare const InfiniteScroll: React.ComponentType<InfiniteScrollProps>;
+declare const InfiniteScroll: React.StatelessComponent<InfiniteScrollProps>;
 
 export { InfiniteScroll };
 ",
@@ -364,7 +364,7 @@ export interface KeyboardProps {
   onUp?: (...args: any[]) => any;
 }
 
-declare const Keyboard: React.ComponentType<KeyboardProps>;
+declare const Keyboard: React.StatelessComponent<KeyboardProps>;
 
 export { Keyboard };
 ",
@@ -381,7 +381,7 @@ export interface LayerProps {
   responsive?: boolean;
 }
 
-declare const Layer: React.ComponentType<LayerProps>;
+declare const Layer: React.StatelessComponent<LayerProps>;
 
 export { Layer };
 ",
@@ -391,7 +391,7 @@ export interface MarkdownProps {
   
 }
 
-declare const Markdown: React.ComponentType<MarkdownProps>;
+declare const Markdown: React.StatelessComponent<MarkdownProps>;
 
 export { Markdown };
 ",
@@ -409,7 +409,7 @@ export interface MenuProps {
   size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\";
 }
 
-declare const Menu: React.ComponentType<MenuProps>;
+declare const Menu: React.StatelessComponent<MenuProps>;
 
 export { Menu };
 ",
@@ -424,7 +424,7 @@ export interface MeterProps {
   values?: {color: string,highlight: boolean,label: string,onClick: (...args: any[]) => any,onHover: (...args: any[]) => any,value: number}[];
 }
 
-declare const Meter: React.ComponentType<MeterProps>;
+declare const Meter: React.StatelessComponent<MeterProps>;
 
 export { Meter };
 ",
@@ -437,7 +437,7 @@ export interface ParagraphProps {
   textAlign?: \\"start\\" | \\"center\\" | \\"end\\";
 }
 
-declare const Paragraph: React.ComponentType<ParagraphProps>;
+declare const Paragraph: React.StatelessComponent<ParagraphProps>;
 
 export { Paragraph };
 ",
@@ -452,7 +452,7 @@ export interface RadioButtonProps {
   onChange?: (...args: any[]) => any;
 }
 
-declare const RadioButton: React.ComponentType<RadioButtonProps>;
+declare const RadioButton: React.StatelessComponent<RadioButtonProps>;
 
 export { RadioButton };
 ",
@@ -468,7 +468,7 @@ export interface RangeInputProps {
   value?: number;
 }
 
-declare const RangeInput: React.ComponentType<RangeInputProps>;
+declare const RangeInput: React.StatelessComponent<RangeInputProps>;
 
 export { RangeInput };
 ",
@@ -489,7 +489,7 @@ export interface RangeSelectorProps {
   values: number[];
 }
 
-declare const RangeSelector: React.ComponentType<RangeSelectorProps>;
+declare const RangeSelector: React.StatelessComponent<RangeSelectorProps>;
 
 export { RangeSelector };
 ",
@@ -500,7 +500,7 @@ export interface RoutedAnchorProps {
   method?: \\"push\\" | \\"replace\\";
 }
 
-declare const RoutedAnchor: React.ComponentType<RoutedAnchorProps>;
+declare const RoutedAnchor: React.StatelessComponent<RoutedAnchorProps>;
 
 export { RoutedAnchor };
 ",
@@ -511,7 +511,7 @@ export interface RoutedButtonProps {
   method?: \\"push\\" | \\"replace\\";
 }
 
-declare const RoutedButton: React.ComponentType<RoutedButtonProps>;
+declare const RoutedButton: React.StatelessComponent<RoutedButtonProps>;
 
 export { RoutedButton };
 ",
@@ -539,18 +539,18 @@ export interface SelectProps {
   value?: string | JSX.Element | object | string | object[];
 }
 
-declare const Select: React.ComponentType<SelectProps>;
+declare const Select: React.StatelessComponent<SelectProps>;
 
 export { Select };
 ",
   "SkipLinks": "import * as React from \\"react\\";
 
 export interface SkipLinksProps {
-  children: any[];
+  children: React.ReactNode;
   messages?: {skipTo: string};
 }
 
-declare const SkipLinks: React.ComponentType<SkipLinksProps>;
+declare const SkipLinks: React.StatelessComponent<SkipLinksProps>;
 
 export { SkipLinks };
 ",
@@ -562,7 +562,7 @@ export interface StackProps {
   guidingChild?: number | \\"first\\" | \\"last\\";
 }
 
-declare const Stack: React.ComponentType<StackProps>;
+declare const Stack: React.StatelessComponent<StackProps>;
 
 export { Stack };
 ",
@@ -572,7 +572,7 @@ export interface TabProps {
   title?: string;
 }
 
-declare const Tab: React.ComponentType<TabProps>;
+declare const Tab: React.StatelessComponent<TabProps>;
 
 export { Tab };
 ",
@@ -582,7 +582,7 @@ export interface TableProps {
   caption?: string;
 }
 
-declare const Table: React.ComponentType<TableProps>;
+declare const Table: React.StatelessComponent<TableProps>;
 
 export { Table };
 ",
@@ -592,7 +592,7 @@ export interface TableBodyProps {
   
 }
 
-declare const TableBody: React.ComponentType<TableBodyProps>;
+declare const TableBody: React.StatelessComponent<TableBodyProps>;
 
 export { TableBody };
 ",
@@ -605,7 +605,7 @@ export interface TableCellProps {
   verticalAlign?: \\"top\\" | \\"middle\\" | \\"bottom\\";
 }
 
-declare const TableCell: React.ComponentType<TableCellProps>;
+declare const TableCell: React.StatelessComponent<TableCellProps>;
 
 export { TableCell };
 ",
@@ -615,7 +615,7 @@ export interface TableFooterProps {
   
 }
 
-declare const TableFooter: React.ComponentType<TableFooterProps>;
+declare const TableFooter: React.StatelessComponent<TableFooterProps>;
 
 export { TableFooter };
 ",
@@ -625,7 +625,7 @@ export interface TableHeaderProps {
   
 }
 
-declare const TableHeader: React.ComponentType<TableHeaderProps>;
+declare const TableHeader: React.StatelessComponent<TableHeaderProps>;
 
 export { TableHeader };
 ",
@@ -635,7 +635,7 @@ export interface TableRowProps {
   
 }
 
-declare const TableRow: React.ComponentType<TableRowProps>;
+declare const TableRow: React.StatelessComponent<TableRowProps>;
 
 export { TableRow };
 ",
@@ -643,13 +643,13 @@ export { TableRow };
 
 export interface TabsProps {
   activeIndex?: number;
-  children: React.ReactNode[];
+  children: React.ReactNode;
   justify?: \\"start\\" | \\"center\\" | \\"end\\";
   messages?: {tabContents: string};
   onActive?: (...args: any[]) => any;
 }
 
-declare const Tabs: React.ComponentType<TabsProps>;
+declare const Tabs: React.StatelessComponent<TabsProps>;
 
 export { Tabs };
 ",
@@ -665,7 +665,7 @@ export interface TextProps {
   weight?: \\"normal\\" | \\"bold\\" | number;
 }
 
-declare const Text: React.ComponentType<TextProps>;
+declare const Text: React.StatelessComponent<TextProps>;
 
 export { Text };
 ",
@@ -680,7 +680,7 @@ export interface TextAreaProps {
   value?: string;
 }
 
-declare const TextArea: React.ComponentType<TextAreaProps>;
+declare const TextArea: React.StatelessComponent<TextAreaProps>;
 
 export { TextArea };
 ",
@@ -704,7 +704,7 @@ export interface TextInputProps {
   value?: string;
 }
 
-declare const TextInput: React.ComponentType<TextInputProps>;
+declare const TextInput: React.StatelessComponent<TextInputProps>;
 
 export { TextInput };
 ",
@@ -718,7 +718,7 @@ export interface VideoProps {
   mute?: boolean;
 }
 
-declare const Video: React.ComponentType<VideoProps>;
+declare const Video: React.StatelessComponent<VideoProps>;
 
 export { Video };
 ",
@@ -732,7 +732,7 @@ export interface WorldMapProps {
   hoverColor?: string;
 }
 
-declare const WorldMap: React.ComponentType<WorldMapProps>;
+declare const WorldMap: React.StatelessComponent<WorldMapProps>;
 
 export { WorldMap };
 ",

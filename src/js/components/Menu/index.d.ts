@@ -12,6 +12,6 @@ export interface MenuProps {
   size?: "small" | "medium" | "large" | "xlarge";
 }
 
-declare const Menu: React.ComponentType<MenuProps>;
+declare const Menu: React.StatelessComponent<MenuProps>;
 
 export { Menu };

@@ -6,6 +6,6 @@ export interface DistributionProps {
   values: {value: number}[];
 }
 
-declare const Distribution: React.ComponentType<DistributionProps>;
+declare const Distribution: React.StatelessComponent<DistributionProps>;
 
 export { Distribution };

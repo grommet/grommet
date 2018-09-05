@@ -1,10 +1,10 @@
 import * as React from "react";
 
 export interface SkipLinksProps {
-  children: any[];
+  children: React.ReactNode;
   messages?: {skipTo: string};
 }
 
-declare const SkipLinks: React.ComponentType<SkipLinksProps>;
+declare const SkipLinks: React.StatelessComponent<SkipLinksProps>;
 
 export { SkipLinks };

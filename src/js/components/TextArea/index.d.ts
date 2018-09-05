@@ -9,6 +9,6 @@ export interface TextAreaProps {
   value?: string;
 }
 
-declare const TextArea: React.ComponentType<TextAreaProps>;
+declare const TextArea: React.StatelessComponent<TextAreaProps>;
 
 export { TextArea };

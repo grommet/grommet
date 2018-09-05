@@ -10,6 +10,6 @@ export interface AnchorProps {
   reverse?: boolean;
 }
 
-declare const Anchor: React.ComponentType<AnchorProps>;
+declare const Anchor: React.StatelessComponent<AnchorProps>;
 
 export { Anchor };
