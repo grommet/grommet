@@ -10,6 +10,6 @@ export interface TextProps {
   weight?: "normal" | "bold" | number;
 }
 
-declare const Text: React.StatelessComponent<TextProps>;
+declare const Text: React.ComponentType<TextProps>;
 
 export { Text };

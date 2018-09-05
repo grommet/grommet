@@ -17,6 +17,6 @@ export interface ButtonProps {
   type?: "button" | "reset" | "submit";
 }
 
-declare const Button: React.StatelessComponent<ButtonProps>;
+declare const Button: React.ComponentType<ButtonProps>;
 
 export { Button };

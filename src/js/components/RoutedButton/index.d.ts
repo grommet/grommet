@@ -5,6 +5,6 @@ export interface RoutedButtonProps {
   method?: "push" | "replace";
 }
 
-declare const RoutedButton: React.StatelessComponent<RoutedButtonProps>;
+declare const RoutedButton: React.ComponentType<RoutedButtonProps>;
 
 export { RoutedButton };

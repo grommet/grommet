@@ -4,6 +4,6 @@ export interface MarkdownProps {
   
 }
 
-declare const Markdown: React.StatelessComponent<MarkdownProps>;
+declare const Markdown: React.ComponentType<MarkdownProps>;
 
 export { Markdown };

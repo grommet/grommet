@@ -4,6 +4,6 @@ export interface TableRowProps {
   
 }
 
-declare const TableRow: React.StatelessComponent<TableRowProps>;
+declare const TableRow: React.ComponentType<TableRowProps>;
 
 export { TableRow };

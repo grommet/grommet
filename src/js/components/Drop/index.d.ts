@@ -10,6 +10,6 @@ export interface DropProps {
   target: object;
 }
 
-declare const Drop: React.StatelessComponent<DropProps>;
+declare const Drop: React.ComponentType<DropProps>;
 
 export { Drop };

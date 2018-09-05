@@ -4,6 +4,6 @@ export interface ImageProps {
   fit?: "cover" | "contain";
 }
 
-declare const Image: React.StatelessComponent<ImageProps>;
+declare const Image: React.ComponentType<ImageProps>;
 
 export { Image };

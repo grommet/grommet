@@ -8,6 +8,6 @@ export interface WorldMapProps {
   hoverColor?: string;
 }
 
-declare const WorldMap: React.StatelessComponent<WorldMapProps>;
+declare const WorldMap: React.ComponentType<WorldMapProps>;
 
 export { WorldMap };
