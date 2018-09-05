@@ -11,6 +11,6 @@ export interface DataTableProps {
   sortable?: boolean;
 }
 
-declare const DataTable: React.ComponentType<DataTableProps>;
+declare const DataTable: React.StatelessComponent<DataTableProps>;
 
 export { DataTable };

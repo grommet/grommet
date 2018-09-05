@@ -2,8 +2,6 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-import { SkipLink } from '../SkipLink';
-
 export const doc = (SkipLinks) => {
   const DocumentedSkipLinks = describe(SkipLinks)
     .availableAt(getAvailableAtBadge('SkipLinks'))
@@ -14,8 +12,8 @@ export const doc = (SkipLinks) => {
     );
 
   DocumentedSkipLinks.propTypes = {
-    children: PropTypes.arrayOf(PropTypes.instanceOf(SkipLink)).description(
-      'SkipLink array'
+    children: PropTypes.node.description(
+      'Array of SkipLink'
     ).isRequired,
     messages: PropTypes.shape({
       skipTo: PropTypes.string,

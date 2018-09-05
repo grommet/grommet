@@ -13,6 +13,6 @@ export interface GridProps {
   tag?: string;
 }
 
-declare const Grid: React.ComponentType<GridProps>;
+declare const Grid: React.StatelessComponent<GridProps>;
 
 export { Grid };

@@ -10,6 +10,6 @@ export interface InfiniteScrollProps {
   step?: number;
 }
 
-declare const InfiniteScroll: React.ComponentType<InfiniteScrollProps>;
+declare const InfiniteScroll: React.StatelessComponent<InfiniteScrollProps>;
 
 export { InfiniteScroll };

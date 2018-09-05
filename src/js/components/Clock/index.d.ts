@@ -10,6 +10,6 @@ export interface ClockProps {
   type?: "analog" | "digital";
 }
 
-declare const Clock: React.ComponentType<ClockProps>;
+declare const Clock: React.StatelessComponent<ClockProps>;
 
 export { Clock };

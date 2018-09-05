@@ -11,6 +11,6 @@ export interface CalendarProps {
   size?: "small" | "medium" | "large";
 }
 
-declare const Calendar: React.ComponentType<CalendarProps>;
+declare const Calendar: React.StatelessComponent<CalendarProps>;
 
 export { Calendar };

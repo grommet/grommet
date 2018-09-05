@@ -18,6 +18,6 @@ export interface TextInputProps {
   value?: string;
 }
 
-declare const TextInput: React.ComponentType<TextInputProps>;
+declare const TextInput: React.StatelessComponent<TextInputProps>;
 
 export { TextInput };

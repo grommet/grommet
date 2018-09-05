@@ -5,6 +5,6 @@ export interface CarouselProps {
   play?: number;
 }
 
-declare const Carousel: React.ComponentType<CarouselProps>;
+declare const Carousel: React.StatelessComponent<CarouselProps>;
 
 export { Carousel };

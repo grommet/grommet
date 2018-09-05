@@ -7,6 +7,6 @@ export interface FormFieldProps {
   label?: string | React.ReactNode;
 }
 
-declare const FormField: React.ComponentType<FormFieldProps>;
+declare const FormField: React.StatelessComponent<FormFieldProps>;
 
 export { FormField };

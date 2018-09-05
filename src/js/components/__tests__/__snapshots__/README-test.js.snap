@@ -42,7 +42,7 @@ boolean
 Required. Array of AccordionPanels.
 
 \`\`\`
-[node]
+node
 \`\`\`
 
 **onActive**
@@ -3274,10 +3274,10 @@ import { SkipLinks } from 'grommet';
 
 **children**
 
-Required. SkipLink array
+Required. Array of SkipLink
 
 \`\`\`
-[new SkipLink(...)]
+node
 \`\`\`
 
 **messages**
@@ -3526,7 +3526,7 @@ number
 Required. Array of Tab.
 
 \`\`\`
-[node]
+node
 \`\`\`
 
 **justify**

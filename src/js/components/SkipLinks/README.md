@@ -13,10 +13,10 @@ import { SkipLinks } from 'grommet';
 
 **children**
 
-Required. SkipLink array
+Required. Array of SkipLink
 
 ```
-[new SkipLink(...)]
+node
 ```
 
 **messages**

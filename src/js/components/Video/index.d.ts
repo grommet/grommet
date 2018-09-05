@@ -8,6 +8,6 @@ export interface VideoProps {
   mute?: boolean;
 }
 
-declare const Video: React.ComponentType<VideoProps>;
+declare const Video: React.StatelessComponent<VideoProps>;
 
 export { Video };

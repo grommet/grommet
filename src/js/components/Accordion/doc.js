@@ -28,7 +28,7 @@ accordingly.`
     animate: PropTypes.bool.description(
       'Transition content in & out with a slide down animation.'
     ).defaultValue(true),
-    children: PropTypes.arrayOf(PropTypes.node).description(
+    children: PropTypes.node.description(
       'Array of AccordionPanels.'
     ).isRequired,
     onActive: PropTypes.func.description(

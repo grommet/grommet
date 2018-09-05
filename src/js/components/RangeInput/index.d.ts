@@ -10,6 +10,6 @@ export interface RangeInputProps {
   value?: number;
 }
 
-declare const RangeInput: React.ComponentType<RangeInputProps>;
+declare const RangeInput: React.StatelessComponent<RangeInputProps>;
 
 export { RangeInput };

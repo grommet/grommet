@@ -7,6 +7,6 @@ export interface ParagraphProps {
   textAlign?: "start" | "center" | "end";
 }
 
-declare const Paragraph: React.ComponentType<ParagraphProps>;
+declare const Paragraph: React.StatelessComponent<ParagraphProps>;
 
 export { Paragraph };

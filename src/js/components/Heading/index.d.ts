@@ -10,6 +10,6 @@ export interface HeadingProps {
   truncate?: boolean;
 }
 
-declare const Heading: React.ComponentType<HeadingProps>;
+declare const Heading: React.StatelessComponent<HeadingProps>;
 
 export { Heading };

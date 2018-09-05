@@ -5,6 +5,6 @@ export interface GrommetProps {
   theme?: object;
 }
 
-declare const Grommet: React.ComponentType<GrommetProps>;
+declare const Grommet: React.StatelessComponent<GrommetProps>;
 
 export { Grommet };
