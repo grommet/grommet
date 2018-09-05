@@ -16,13 +16,11 @@ const sizeStyle = (props) => {
 
 const plainStyle = css`
   border: none;
-  -webkit-appearance: none;
 `;
 
 export const StyledTextInput = styled.input`
   ${inputStyle}
   width: 100%;
-  -webkit-appearance: textfield;
 
   ${props => props.size && sizeStyle(props)}
   ${props => props.plain && plainStyle}
