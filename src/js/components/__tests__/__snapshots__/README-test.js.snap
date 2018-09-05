@@ -42,6 +42,7 @@ boolean
 Required. Array of AccordionPanels.
 
 \`\`\`
+node
 [node]
 \`\`\`
 
@@ -3527,6 +3528,7 @@ number
 Required. Array of Tab.
 
 \`\`\`
+node
 [node]
 \`\`\`
 

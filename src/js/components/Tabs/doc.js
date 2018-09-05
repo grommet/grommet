@@ -20,7 +20,10 @@ export const doc = (Tabs) => {
 tab changes will not work unless you subscribe to onActive function and update activeIndex
 accordingly.`
     ),
-    children: PropTypes.arrayOf(PropTypes.node).description(
+    children: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.arrayOf(PropTypes.node),
+    ]).description(
       'Array of Tab.'
     ).isRequired,
     justify: PropTypes.oneOf(['start', 'center', 'end']).description(
