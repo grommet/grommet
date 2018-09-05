@@ -10,7 +10,7 @@ export interface ${component}Props {
   ).join('\n  ')}
 }
 
-declare const ${component}: React.StatelessComponent<${component}Props>;
+declare const ${component}: React.ComponentType<${component}Props>;
 
 export { ${component} };
 `;

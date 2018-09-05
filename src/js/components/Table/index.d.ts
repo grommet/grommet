@@ -4,6 +4,6 @@ export interface TableProps {
   caption?: string;
 }
 
-declare const Table: React.StatelessComponent<TableProps>;
+declare const Table: React.ComponentType<TableProps>;
 
 export { Table };

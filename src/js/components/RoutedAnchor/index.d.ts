@@ -5,6 +5,6 @@ export interface RoutedAnchorProps {
   method?: "push" | "replace";
 }
 
-declare const RoutedAnchor: React.StatelessComponent<RoutedAnchorProps>;
+declare const RoutedAnchor: React.ComponentType<RoutedAnchorProps>;
 
 export { RoutedAnchor };

@@ -9,6 +9,6 @@ export interface AccordionProps {
   messages?: {tabContents: string};
 }
 
-declare const Accordion: React.StatelessComponent<AccordionProps>;
+declare const Accordion: React.ComponentType<AccordionProps>;
 
 export { Accordion };

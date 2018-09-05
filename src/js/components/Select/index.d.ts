@@ -22,6 +22,6 @@ export interface SelectProps {
   value?: string | JSX.Element | object | string | object[];
 }
 
-declare const Select: React.StatelessComponent<SelectProps>;
+declare const Select: React.ComponentType<SelectProps>;
 
 export { Select };

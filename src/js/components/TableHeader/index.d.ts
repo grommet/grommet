@@ -4,6 +4,6 @@ export interface TableHeaderProps {
   
 }
 
-declare const TableHeader: React.StatelessComponent<TableHeaderProps>;
+declare const TableHeader: React.ComponentType<TableHeaderProps>;
 
 export { TableHeader };

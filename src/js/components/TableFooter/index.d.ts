@@ -4,6 +4,6 @@ export interface TableFooterProps {
   
 }
 
-declare const TableFooter: React.StatelessComponent<TableFooterProps>;
+declare const TableFooter: React.ComponentType<TableFooterProps>;
 
 export { TableFooter };

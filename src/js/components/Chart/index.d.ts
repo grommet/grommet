@@ -13,6 +13,6 @@ export interface ChartProps {
   values: number | number[] | {label: string,onClick: (...args: any[]) => any,onHover: (...args: any[]) => any,value: number | number[]}[];
 }
 
-declare const Chart: React.StatelessComponent<ChartProps>;
+declare const Chart: React.ComponentType<ChartProps>;
 
 export { Chart };

@@ -4,6 +4,6 @@ export interface TableBodyProps {
   
 }
 
-declare const TableBody: React.StatelessComponent<TableBodyProps>;
+declare const TableBody: React.ComponentType<TableBodyProps>;
 
 export { TableBody };

@@ -27,6 +27,6 @@ export interface BoxProps {
   wrap?: boolean;
 }
 
-declare const Box: React.StatelessComponent<BoxProps>;
+declare const Box: React.ComponentType<BoxProps>;
 
 export { Box };

@@ -5,6 +5,6 @@ export interface SkipLinkTargetProps {
   label?: React.ReactNode;
 }
 
-declare const SkipLinkTarget: React.StatelessComponent<SkipLinkTargetProps>;
+declare const SkipLinkTarget: React.ComponentType<SkipLinkTargetProps>;
 
 export { SkipLinkTarget };

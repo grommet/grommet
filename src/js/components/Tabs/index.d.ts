@@ -8,6 +8,6 @@ export interface TabsProps {
   onActive?: (...args: any[]) => any;
 }
 
-declare const Tabs: React.StatelessComponent<TabsProps>;
+declare const Tabs: React.ComponentType<TabsProps>;
 
 export { Tabs };

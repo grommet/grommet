@@ -11,6 +11,6 @@ export interface LayerProps {
   responsive?: boolean;
 }
 
-declare const Layer: React.StatelessComponent<LayerProps>;
+declare const Layer: React.ComponentType<LayerProps>;
 
 export { Layer };

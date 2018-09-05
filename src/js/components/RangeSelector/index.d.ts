@@ -15,6 +15,6 @@ export interface RangeSelectorProps {
   values: number[];
 }
 
-declare const RangeSelector: React.StatelessComponent<RangeSelectorProps>;
+declare const RangeSelector: React.ComponentType<RangeSelectorProps>;
 
 export { RangeSelector };

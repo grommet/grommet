@@ -5,6 +5,6 @@ export interface AccordionPanelProps {
   header?: React.ReactNode;
 }
 
-declare const AccordionPanel: React.StatelessComponent<AccordionPanelProps>;
+declare const AccordionPanel: React.ComponentType<AccordionPanelProps>;
 
 export { AccordionPanel };

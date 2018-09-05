@@ -11,6 +11,6 @@ export interface CheckBoxProps {
   toggle?: boolean;
 }
 
-declare const CheckBox: React.StatelessComponent<CheckBoxProps>;
+declare const CheckBox: React.ComponentType<CheckBoxProps>;
 
 export { CheckBox };

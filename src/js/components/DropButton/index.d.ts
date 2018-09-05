@@ -11,6 +11,6 @@ export interface DropButtonProps {
   open?: boolean;
 }
 
-declare const DropButton: React.StatelessComponent<DropButtonProps>;
+declare const DropButton: React.ComponentType<DropButtonProps>;
 
 export { DropButton };
