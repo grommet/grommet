@@ -20,7 +20,7 @@ export { Accordion };
   "AccordionPanel": "import * as React from \\"react\\";
 
 export interface AccordionPanelProps {
-  label: string | React.ReactNode;
+  label?: string | React.ReactNode;
   header?: React.ReactNode;
 }
 
@@ -53,23 +53,23 @@ export interface BoxProps {
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   animation?: \\"fadeIn\\" | \\"fadeOut\\" | \\"jiggle\\" | \\"pulse\\" | \\"slideUp\\" | \\"slideDown\\" | \\"slideLeft\\" | \\"slideRight\\" | \\"zoomIn\\" | \\"zoomOut\\" | {type: \\"fadeIn\\" | \\"fadeOut\\" | \\"jiggle\\" | \\"pulse\\" | \\"slideUp\\" | \\"slideDown\\" | \\"slideLeft\\" | \\"slideRight\\" | \\"zoomIn\\" | \\"zoomOut\\",delay: number,duration: number,size: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\"} | \\"fadeIn\\" | \\"fadeOut\\" | \\"jiggle\\" | \\"pulse\\" | \\"slideUp\\" | \\"slideDown\\" | \\"slideLeft\\" | \\"slideRight\\" | \\"zoomIn\\" | \\"zoomOut\\" | {type: \\"fadeIn\\" | \\"fadeOut\\" | \\"jiggle\\" | \\"pulse\\" | \\"slideUp\\" | \\"slideDown\\" | \\"slideLeft\\" | \\"slideRight\\" | \\"zoomIn\\" | \\"zoomOut\\",delay: number,duration: number,size: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\"}[];
   background?: string | {color: string,dark: boolean | string,image: string,position: string,opacity: \\"weak\\" | \\"medium\\" | \\"strong\\" | boolean,light: string};
-  basis?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"3/4\\" | \\"auto\\";
-  border?: boolean | \\"top\\" | \\"left\\" | \\"bottom\\" | \\"right\\" | \\"horizontal\\" | \\"vertical\\" | \\"all\\" | {color: string | {dark: string,light: string},side: \\"top\\" | \\"left\\" | \\"bottom\\" | \\"right\\" | \\"horizontal\\" | \\"vertical\\" | \\"all\\",size: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\"};
+  basis?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"3/4\\" | \\"auto\\" | string;
+  border?: boolean | \\"top\\" | \\"left\\" | \\"bottom\\" | \\"right\\" | \\"horizontal\\" | \\"vertical\\" | \\"all\\" | {color: string | {dark: string,light: string},side: \\"top\\" | \\"left\\" | \\"bottom\\" | \\"right\\" | \\"horizontal\\" | \\"vertical\\" | \\"all\\",size: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string};
   direction?: \\"row\\" | \\"column\\" | \\"row-responsive\\";
-  elevation?: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\";
+  elevation?: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   flex?: \\"grow\\" | \\"shrink\\" | \\"true\\" | \\"false\\";
   fill?: \\"horizontal\\" | \\"vertical\\" | \\"true\\" | \\"false\\";
-  gap?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\";
+  gap?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   gridArea?: string;
-  height?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\";
+  height?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   justify?: \\"start\\" | \\"center\\" | \\"between\\" | \\"end\\";
-  margin?: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",horizontal: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",left: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",right: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",top: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",vertical: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\"};
+  margin?: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   overflow?: \\"auto\\" | \\"hidden\\" | \\"scroll\\" | \\"visible\\";
-  pad?: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",horizontal: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",left: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",right: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",top: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",vertical: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\"};
+  pad?: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",horizontal: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",left: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",right: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",top: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",vertical: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\"} | string;
   responsive?: boolean;
-  round?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"full\\";
+  round?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"full\\" | string;
   tag?: string;
-  width?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\";
+  width?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   wrap?: boolean;
 }
 
@@ -110,7 +110,7 @@ export interface CalendarProps {
   firstDayOfWeek?: \\"0\\" | \\"1\\";
   locale?: string;
   onSelect?: (...args: any[]) => any;
-  size?: \\"small\\" | \\"medium\\" | \\"large\\";
+  size?: \\"small\\" | \\"medium\\" | \\"large\\" | string;
 }
 
 declare const Calendar: React.ComponentType<CalendarProps>;
@@ -137,8 +137,8 @@ export interface ChartProps {
   onHover?: (...args: any[]) => any;
   overflow?: boolean;
   round?: boolean;
-  size?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | {height: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\",width: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\"};
-  thickness?: \\"hair\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"none\\";
+  size?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | {height: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | string,width: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | string} | string;
+  thickness?: \\"hair\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"none\\" | string;
   type?: \\"bar\\" | \\"line\\" | \\"area\\";
   values: number | number[] | {label: string,onClick: (...args: any[]) => any,onHover: (...args: any[]) => any,value: number | number[]}[];
 }
@@ -171,7 +171,7 @@ export interface ClockProps {
   onChange?: (...args: any[]) => any;
   precision?: \\"hours\\" | \\"minutes\\" | \\"seconds\\";
   run?: boolean | \\"backward\\" | \\"forward\\";
-  size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\";
+  size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   time?: string;
   type?: \\"analog\\" | \\"digital\\";
 }
@@ -199,7 +199,7 @@ export interface DataTableProps {
   onMore?: (...args: any[]) => any;
   onSearch?: (...args: any[]) => any;
   resizeable?: boolean;
-  size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\";
+  size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   sortable?: boolean;
 }
 
@@ -210,7 +210,7 @@ export { DataTable };
   "Diagram": "import * as React from \\"react\\";
 
 export interface DiagramProps {
-  connections: {anchor: \\"center\\" | \\"vertical\\" | \\"horizontal\\",color: string,fromTarget: string | object,label: string,offset: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\",thickness: \\"hair\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\",toTarget: string | object,type: \\"direct\\" | \\"curved\\" | \\"rectilinear\\"}[];
+  connections: {anchor: \\"center\\" | \\"vertical\\" | \\"horizontal\\",color: string,fromTarget: string | object,label: string,offset: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,thickness: \\"hair\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,toTarget: string | object,type: \\"direct\\" | \\"curved\\" | \\"rectilinear\\"}[];
 }
 
 declare const Diagram: React.ComponentType<DiagramProps>;
@@ -221,7 +221,7 @@ export { Diagram };
 
 export interface DistributionProps {
   children?: (...args: any[]) => any;
-  gap?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\";
+  gap?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   values: {value: number}[];
 }
 
@@ -281,12 +281,12 @@ export interface GridProps {
   align?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   alignContent?: \\"start\\" | \\"center\\" | \\"end\\" | \\"between\\" | \\"around\\" | \\"stretch\\";
   areas?: {name: string,start: number[],end: number[]}[];
-  columns?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\"[][] | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {count: \\"fit\\" | \\"fill\\",size: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\"[]};
+  columns?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\"[] | string[] | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {count: \\"fit\\" | \\"fill\\",size: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\"[] | string} | string;
   fill?: \\"horizontal\\" | \\"vertical\\" | \\"true\\" | \\"false\\";
-  gap?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"none\\" | {row: \\"small\\" | \\"medium\\" | \\"large\\" | \\"none\\",column: \\"small\\" | \\"medium\\" | \\"large\\" | \\"none\\"};
+  gap?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"none\\" | {row: \\"small\\" | \\"medium\\" | \\"large\\" | \\"none\\" | string,column: \\"small\\" | \\"medium\\" | \\"large\\" | \\"none\\" | string} | string;
   justify?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   justifyContent?: \\"start\\" | \\"center\\" | \\"end\\" | \\"between\\" | \\"around\\" | \\"stretch\\";
-  rows?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\"[][] | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\";
+  rows?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\"[] | string[] | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   tag?: string;
 }
 
@@ -310,9 +310,9 @@ export { Grommet };
 export interface HeadingProps {
   color?: string;
   level?: \\"1\\" | \\"2\\" | \\"3\\" | \\"4\\" | \\"1\\" | \\"2\\" | \\"3\\" | \\"4\\";
-  margin?: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",top: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\"};
+  margin?: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   responsive?: boolean;
-  size?: \\"small\\" | \\"medium\\" | \\"large\\";
+  size?: \\"small\\" | \\"medium\\" | \\"large\\" | string;
   textAlign?: \\"start\\" | \\"center\\" | \\"end\\";
   truncate?: boolean;
 }
@@ -372,9 +372,9 @@ export { Keyboard };
 
 export interface LayerProps {
   full?: boolean | \\"vertical\\" | \\"horizontal\\";
-  margin?: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | {bottom: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\",horizontal: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\",left: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\",right: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\",top: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\",vertical: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\"};
+  margin?: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | {bottom: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,horizontal: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,left: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,right: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,top: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,vertical: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string} | string;
   modal?: boolean;
-  onClickOutside?: boolean;
+  onClickOutside?: (...args: any[]) => any;
   onEsc?: (...args: any[]) => any;
   plain?: boolean;
   position?: \\"bottom\\" | \\"center\\" | \\"hidden\\" | \\"left\\" | \\"right\\" | \\"top\\";
@@ -406,7 +406,7 @@ export interface MenuProps {
   items: object[];
   label?: string | React.ReactNode;
   messages?: {closeMenu: string,openMenu: string};
-  size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\";
+  size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
 }
 
 declare const Menu: React.ComponentType<MenuProps>;
@@ -418,8 +418,8 @@ export { Menu };
 export interface MeterProps {
   background?: string | {color: string,opacity: \\"weak\\" | \\"medium\\" | \\"strong\\" | boolean};
   round?: boolean;
-  size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\";
-  thickness?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\";
+  size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | string;
+  thickness?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   type?: \\"bar\\" | \\"circle\\";
   values?: {color: string,highlight: boolean,label: string,onClick: (...args: any[]) => any,onHover: (...args: any[]) => any,value: number}[];
 }
@@ -432,8 +432,8 @@ export { Meter };
 
 export interface ParagraphProps {
   color?: string;
-  margin?: \\"none\\" | \\"small\\" | \\"medium\\" | \\"large\\" | {bottom: \\"small\\" | \\"medium\\" | \\"large\\",top: \\"small\\" | \\"medium\\" | \\"large\\"};
-  size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\";
+  margin?: \\"none\\" | \\"small\\" | \\"medium\\" | \\"large\\" | {bottom: \\"small\\" | \\"medium\\" | \\"large\\" | string,top: \\"small\\" | \\"medium\\" | \\"large\\" | string} | string;
+  size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   textAlign?: \\"start\\" | \\"center\\" | \\"end\\";
 }
 
@@ -460,12 +460,12 @@ export { RadioButton };
 
 export interface RangeInputProps {
   id?: string;
-  min?: number;
-  max?: number;
+  min?: number | string;
+  max?: number | string;
   name?: string;
   onChange?: (...args: any[]) => any;
   step?: number;
-  value?: number;
+  value?: number | string;
 }
 
 declare const RangeInput: React.ComponentType<RangeInputProps>;
@@ -483,8 +483,8 @@ export interface RangeSelectorProps {
   min?: number;
   onChange?: (...args: any[]) => any;
   opacity?: \\"weak\\" | \\"medium\\" | \\"strong\\";
-  round?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"full\\";
-  size?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\";
+  round?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"full\\" | string;
+  size?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | string;
   step?: number;
   values: number[];
 }
@@ -535,7 +535,7 @@ export interface SelectProps {
   plain?: boolean;
   searchPlaceholder?: string;
   selected?: number | number[];
-  size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\";
+  size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   value?: string | JSX.Element | object | string | object[];
 }
 
@@ -601,7 +601,7 @@ export { TableBody };
 export interface TableCellProps {
   plain?: boolean;
   scope?: \\"col\\" | \\"row\\";
-  size?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"3/4\\";
+  size?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"3/4\\" | string;
   verticalAlign?: \\"top\\" | \\"middle\\" | \\"bottom\\";
 }
 
@@ -657,8 +657,8 @@ export { Tabs };
 
 export interface TextProps {
   color?: string;
-  margin?: \\"none\\" | \\"small\\" | \\"medium\\" | \\"large\\" | {bottom: \\"small\\" | \\"medium\\" | \\"large\\",top: \\"small\\" | \\"medium\\" | \\"large\\"};
-  size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xxlarge\\";
+  margin?: \\"none\\" | \\"small\\" | \\"medium\\" | \\"large\\" | {bottom: \\"small\\" | \\"medium\\" | \\"large\\" | string,top: \\"small\\" | \\"medium\\" | \\"large\\" | string} | string;
+  size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xxlarge\\" | string;
   tag?: string;
   textAlign?: \\"start\\" | \\"center\\" | \\"end\\";
   truncate?: boolean;
@@ -699,7 +699,7 @@ export interface TextInputProps {
   onSuggestionsClose?: (...args: any[]) => any;
   placeholder?: string | React.ReactNode;
   plain?: boolean;
-  size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\";
+  size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   suggestions?: {label: React.ReactNode,value: any} | string[];
   value?: string;
 }

@@ -11,7 +11,7 @@ export function doc(Panel) {
       PropTypes.node,
     ]).description(
       'The panel label.'
-    ).isRequired,
+    ),
     header: PropTypes.node.description(
       'If specified, the entire panel header will be managed by the caller.'
     ),

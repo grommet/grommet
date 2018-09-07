@@ -98,7 +98,8 @@ full
     medium
     large
     xlarge
-    full,
+    full
+    string,
   width: 
     xxsmall
     xsmall
@@ -107,7 +108,9 @@ full
     large
     xlarge
     full
+    string
 }
+string
 ```
 
 **thickness**
@@ -122,6 +125,7 @@ medium
 large
 xlarge
 none
+string
 ```
 
 **type**

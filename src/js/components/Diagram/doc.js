@@ -18,8 +18,14 @@ export const doc = (Diagram) => {
         PropTypes.object,
       ]).isRequired,
       label: PropTypes.string, // for accessibility
-      offset: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
-      thickness: PropTypes.oneOf(['hair', 'xxsmall', 'xsmall', 'small', 'medium', 'large']),
+      offset: PropTypes.oneOfType([
+        PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
+        PropTypes.string,
+      ]),
+      thickness: PropTypes.oneOfType([
+        PropTypes.oneOf(['hair', 'xxsmall', 'xsmall', 'small', 'medium', 'large']),
+        PropTypes.string,
+      ]),
       toTarget: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.object,

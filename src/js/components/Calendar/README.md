@@ -91,5 +91,6 @@ What size to make it.
 small
 medium
 large
+string
 ```
   

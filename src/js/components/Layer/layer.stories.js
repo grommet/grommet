@@ -147,7 +147,7 @@ class FormLayer extends Component {
                   <Heading level={2} margin='none'>Add</Heading>
                   <Button icon={<Close />} onClick={this.onClose} />
                 </Box>
-                <Box flex='grow' overflow={true} pad={{ vertical: 'medium' }}>
+                <Box flex='grow' overflow='auto' pad={{ vertical: 'medium' }}>
                   <FormField label='First'>
                     <TextInput />
                   </FormField>

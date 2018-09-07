@@ -42,16 +42,22 @@ export const doc = (Chart) => {
       PropTypes.oneOf(
         ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
       PropTypes.shape({
-        height: PropTypes.oneOf(
-          ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
-        width: PropTypes.oneOf(
-          ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
+        height: PropTypes.oneOfType([
+          PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
+          PropTypes.string,
+        ]),
+        width: PropTypes.oneOfType([
+          PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
+          PropTypes.string,
+        ]),
       }),
+      PropTypes.string,
     ]).description(
       'The size of the Chart.'
     ).defaultValue({ width: 'medium', height: 'small' }),
-    thickness: PropTypes.oneOf([
-      'hair', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'none',
+    thickness: PropTypes.oneOfType([
+      PropTypes.oneOf(['hair', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'none']),
+      PropTypes.string,
     ]).description(
       'The width of the stroke.'
     ).defaultValue('medium'),

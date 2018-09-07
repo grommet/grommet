@@ -147,6 +147,7 @@ small
 medium
 large
 xlarge
+string
 ```
 
 **suggestions**

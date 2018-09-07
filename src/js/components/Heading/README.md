@@ -56,7 +56,8 @@ xlarge
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   top: 
     none
     xsmall
@@ -64,7 +65,9 @@ xlarge
     medium
     large
     xlarge
+    string
 }
+string
 ```
 
 **responsive**
@@ -87,6 +90,7 @@ adjustments.
 small
 medium
 large
+string
 ```
 
 **textAlign**

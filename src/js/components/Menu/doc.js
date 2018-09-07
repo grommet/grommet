@@ -62,7 +62,10 @@ The object values can be any Button prop, for example: label and onClick.`
     }).description(
       'Custom messages. Used for accessibility by screen readers.'
     ),
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).description(
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description(
       'The size of the menu.'
     ),
   };

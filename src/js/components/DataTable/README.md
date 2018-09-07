@@ -120,6 +120,7 @@ small
 medium
 large
 xlarge
+string
 ```
 
 **sortable**

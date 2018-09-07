@@ -39,33 +39,40 @@ large
     xsmall
     small
     medium
-    large,
+    large
+    string,
   horizontal: 
     xsmall
     small
     medium
-    large,
+    large
+    string,
   left: 
     xsmall
     small
     medium
-    large,
+    large
+    string,
   right: 
     xsmall
     small
     medium
-    large,
+    large
+    string,
   top: 
     xsmall
     small
     medium
-    large,
+    large
+    string,
   vertical: 
     xsmall
     small
     medium
     large
+    string
 }
+string
 ```
 
 **modal**
@@ -81,7 +88,7 @@ boolean
 Function that will be invoked when the user clicks outside the layer.
 
 ```
-boolean
+function
 ```
 
 **onEsc**

@@ -172,6 +172,7 @@ full
 1/4
 3/4
 auto
+string
 ```
 
 **border**
@@ -207,6 +208,8 @@ all
     small
     medium
     large
+    xlarge
+    string
 }
 ```
 
@@ -232,6 +235,7 @@ small
 medium
 large
 xlarge
+string
 ```
 
 **flex**
@@ -268,6 +272,7 @@ small
 medium
 large
 xlarge
+string
 ```
 
 **gridArea**
@@ -289,6 +294,7 @@ small
 medium
 large
 xlarge
+string
 ```
 
 **justify**
@@ -321,38 +327,45 @@ xlarge
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   horizontal: 
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   left: 
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   right: 
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   top: 
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   vertical: 
     xsmall
     small
     medium
     large
     xlarge
+    string
 }
+string
 ```
 
 **overflow**
@@ -417,6 +430,7 @@ xlarge
     large
     xlarge
 }
+string
 ```
 
 **responsive**
@@ -438,6 +452,7 @@ small
 medium
 large
 full
+string
 ```
 
 **tag**
@@ -458,6 +473,7 @@ small
 medium
 large
 xlarge
+string
 ```
 
 **wrap**

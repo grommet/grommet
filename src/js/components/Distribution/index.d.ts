@@ -2,7 +2,7 @@ import * as React from "react";
 
 export interface DistributionProps {
   children?: (...args: any[]) => any;
-  gap?: "xsmall" | "small" | "medium" | "large" | "xlarge";
+  gap?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   values: {value: number}[];
 }
 

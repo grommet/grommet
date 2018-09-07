@@ -24,9 +24,16 @@ The sizing can be further adjusted using the size property.`
     margin: PropTypes.oneOfType([
       PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
       PropTypes.shape({
-        bottom: PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
-        top: PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
+        bottom: PropTypes.oneOfType([
+          PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
+          PropTypes.string,
+        ]),
+        top: PropTypes.oneOfType([
+          PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
+          PropTypes.string,
+        ]),
       }),
+      PropTypes.string,
     ]).description(
       `The amount of margin above and/or below the heading. An object can be
 specified to distinguish top margin and bottom margin.`
@@ -35,7 +42,10 @@ specified to distinguish top margin and bottom margin.`
       `Whether the font size should be scaled for
       mobile environments.`
     ).defaultValue(true),
-    size: PropTypes.oneOf(['small', 'medium', 'large']).description(
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large']),
+      PropTypes.string,
+    ]).description(
       `The font size is primarily driven by the chosen tag. But, it can
 be adjusted via this size property. The tag should be set for semantic
 correctness and accessibility. This size property allows for stylistic

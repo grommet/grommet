@@ -82,7 +82,7 @@ An Accordion panel.
 
 **label**
 
-Required. The panel label.
+The panel label.
 
 \`\`\`
 string
@@ -343,6 +343,7 @@ full
 1/4
 3/4
 auto
+string
 \`\`\`
 
 **border**
@@ -378,6 +379,8 @@ all
     small
     medium
     large
+    xlarge
+    string
 }
 \`\`\`
 
@@ -403,6 +406,7 @@ small
 medium
 large
 xlarge
+string
 \`\`\`
 
 **flex**
@@ -439,6 +443,7 @@ small
 medium
 large
 xlarge
+string
 \`\`\`
 
 **gridArea**
@@ -460,6 +465,7 @@ small
 medium
 large
 xlarge
+string
 \`\`\`
 
 **justify**
@@ -492,38 +498,45 @@ xlarge
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   horizontal: 
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   left: 
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   right: 
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   top: 
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   vertical: 
     xsmall
     small
     medium
     large
     xlarge
+    string
 }
+string
 \`\`\`
 
 **overflow**
@@ -588,6 +601,7 @@ xlarge
     large
     xlarge
 }
+string
 \`\`\`
 
 **responsive**
@@ -609,6 +623,7 @@ small
 medium
 large
 full
+string
 \`\`\`
 
 **tag**
@@ -629,6 +644,7 @@ small
 medium
 large
 xlarge
+string
 \`\`\`
 
 **wrap**
@@ -871,6 +887,7 @@ What size to make it.
 small
 medium
 large
+string
 \`\`\`
   ",
   "Carousel": "## Carousel
@@ -1007,7 +1024,8 @@ full
     medium
     large
     xlarge
-    full,
+    full
+    string,
   width: 
     xxsmall
     xsmall
@@ -1016,7 +1034,9 @@ full
     large
     xlarge
     full
+    string
 }
+string
 \`\`\`
 
 **thickness**
@@ -1031,6 +1051,7 @@ medium
 large
 xlarge
 none
+string
 \`\`\`
 
 **type**
@@ -1209,6 +1230,7 @@ small
 medium
 large
 xlarge
+string
 \`\`\`
 
 **time**
@@ -1373,6 +1395,7 @@ small
 medium
 large
 xlarge
+string
 \`\`\`
 
 **sortable**
@@ -1420,14 +1443,16 @@ Required. Array of objects describing the connections.
     xsmall
     small
     medium
-    large,
+    large
+    string,
   thickness: 
     hair
     xxsmall
     xsmall
     small
     medium
-    large,
+    large
+    string,
   toTarget: 
     string
     object,
@@ -1473,6 +1498,7 @@ small
 medium
 large
 xlarge
+string
 \`\`\`
 
 **values**
@@ -1817,6 +1843,7 @@ full
 3/4
 flex
 auto]
+  string
 ]
 xsmall
 small
@@ -1846,7 +1873,9 @@ full
 3/4
 flex
 auto]
+    string
 }
+string
 \`\`\`
 
 **fill**
@@ -1874,13 +1903,16 @@ none
     small
     medium
     large
-    none,
+    none
+    string,
   column: 
     small
     medium
     large
     none
+    string
 }
+string
 \`\`\`
 
 **justify**
@@ -1944,12 +1976,14 @@ full
 3/4
 flex
 auto]
+  string
 ]
 xsmall
 small
 medium
 large
 xlarge
+string
 \`\`\`
 
 **tag**
@@ -2047,7 +2081,8 @@ xlarge
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   top: 
     none
     xsmall
@@ -2055,7 +2090,9 @@ xlarge
     medium
     large
     xlarge
+    string
 }
+string
 \`\`\`
 
 **responsive**
@@ -2078,6 +2115,7 @@ adjustments.
 small
 medium
 large
+string
 \`\`\`
 
 **textAlign**
@@ -2356,33 +2394,40 @@ large
     xsmall
     small
     medium
-    large,
+    large
+    string,
   horizontal: 
     xsmall
     small
     medium
-    large,
+    large
+    string,
   left: 
     xsmall
     small
     medium
-    large,
+    large
+    string,
   right: 
     xsmall
     small
     medium
-    large,
+    large
+    string,
   top: 
     xsmall
     small
     medium
-    large,
+    large
+    string,
   vertical: 
     xsmall
     small
     medium
     large
+    string
 }
+string
 \`\`\`
 
 **modal**
@@ -2398,7 +2443,7 @@ boolean
 Function that will be invoked when the user clicks outside the layer.
 
 \`\`\`
-boolean
+function
 \`\`\`
 
 **onEsc**
@@ -2572,6 +2617,7 @@ small
 medium
 large
 xlarge
+string
 \`\`\`
   ",
   "Meter": "## Meter
@@ -2622,6 +2668,7 @@ medium
 large
 xlarge
 full
+string
 \`\`\`
 
 **thickness**
@@ -2634,6 +2681,7 @@ small
 medium
 large
 xlarge
+string
 \`\`\`
 
 **type**
@@ -2704,12 +2752,15 @@ large
   bottom: 
     small
     medium
-    large,
+    large
+    string,
   top: 
     small
     medium
     large
+    string
 }
+string
 \`\`\`
 
 **size**
@@ -2721,6 +2772,7 @@ small
 medium
 large
 xlarge
+string
 \`\`\`
 
 **textAlign**
@@ -2824,6 +2876,7 @@ The minimum value permitted.
 
 \`\`\`
 number
+string
 \`\`\`
 
 **max**
@@ -2832,6 +2885,7 @@ The maximum value permitted.
 
 \`\`\`
 number
+string
 \`\`\`
 
 **name**
@@ -2866,6 +2920,7 @@ The current value.
 
 \`\`\`
 number
+string
 \`\`\`
   ",
   "RangeSelector": "## RangeSelector
@@ -2963,6 +3018,7 @@ small
 medium
 large
 full
+string
 \`\`\`
 
 **size**
@@ -2977,6 +3033,7 @@ medium
 large
 xlarge
 full
+string
 \`\`\`
 
 **step**
@@ -3242,6 +3299,7 @@ small
 medium
 large
 xlarge
+string
 \`\`\`
 
 **value**
@@ -3445,6 +3503,7 @@ xlarge
 2/3
 1/4
 3/4
+string
 \`\`\`
 
 **verticalAlign**
@@ -3597,12 +3656,15 @@ large
   bottom: 
     small
     medium
-    large,
+    large
+    string,
   top: 
     small
     medium
     large
+    string
 }
+string
 \`\`\`
 
 **size**
@@ -3619,6 +3681,7 @@ medium
 large
 xlarge
 xxlarge
+string
 \`\`\`
 
 **tag**
@@ -3869,6 +3932,7 @@ small
 medium
 large
 xlarge
+string
 \`\`\`
 
 **suggestions**

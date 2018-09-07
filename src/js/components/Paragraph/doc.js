@@ -19,14 +19,24 @@ export const doc = (Paragraph) => {
     margin: PropTypes.oneOfType([
       PropTypes.oneOf(['none', 'small', 'medium', 'large']),
       PropTypes.shape({
-        bottom: PropTypes.oneOf(['small', 'medium', 'large']),
-        top: PropTypes.oneOf(['small', 'medium', 'large']),
+        bottom: PropTypes.oneOfType([
+          PropTypes.oneOf(['small', 'medium', 'large']),
+          PropTypes.string,
+        ]),
+        top: PropTypes.oneOfType([
+          PropTypes.oneOf(['small', 'medium', 'large']),
+          PropTypes.string,
+        ]),
       }),
+      PropTypes.string,
     ]).description(
       `The amount of margin above and/or below the paragraph. An object can be
 specified to distinguish top margin and bottom margin.`
     ),
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).description(
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description(
       'The size of the Paragraph text.'
     ).defaultValue('medium'),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']).description(

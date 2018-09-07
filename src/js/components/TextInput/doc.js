@@ -67,7 +67,10 @@ The suggestion contains the object chosen from the supplied suggestions.`
       `Whether this is a plain input with no border or padding.
 Only use this when the containing context provides sufficient affordance`
     ),
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).description(
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description(
       'The size of the TextInput.'
     ),
     suggestions: PropTypes.arrayOf(

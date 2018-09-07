@@ -14,12 +14,18 @@ export const doc = (Meter) => {
   DocumentedMeter.propTypes = {
     background: backgroundPropType,
     round: PropTypes.bool.description('Whether to round the line ends'),
-    size: PropTypes.oneOf(
-      ['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']
-    ).description('The size of the Meter.').defaultValue('medium'),
-    thickness: PropTypes.oneOf(
-      ['xsmall', 'small', 'medium', 'large', 'xlarge']
-    ).description(
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(
+        ['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']
+      ),
+      PropTypes.string,
+    ]).description('The size of the Meter.').defaultValue('medium'),
+    thickness: PropTypes.oneOfType([
+      PropTypes.oneOf(
+        ['xsmall', 'small', 'medium', 'large', 'xlarge']
+      ),
+      PropTypes.string,
+    ]).description(
       'The size of the Meter.'
     ).defaultValue('medium'),
     type: PropTypes.oneOf(['bar', 'circle']).description('The visual type of meter.'),

@@ -46,6 +46,7 @@ medium
 large
 xlarge
 full
+string
 ```
 
 **thickness**
@@ -58,6 +59,7 @@ small
 medium
 large
 xlarge
+string
 ```
 
 **type**

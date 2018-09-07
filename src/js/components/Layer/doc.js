@@ -24,13 +24,32 @@ export const doc = (Layer) => {
     margin: PropTypes.oneOfType([
       PropTypes.oneOf(['none', ...PAD_SIZES]),
       PropTypes.shape({
-        bottom: PropTypes.oneOf(PAD_SIZES),
-        horizontal: PropTypes.oneOf(PAD_SIZES),
-        left: PropTypes.oneOf(PAD_SIZES),
-        right: PropTypes.oneOf(PAD_SIZES),
-        top: PropTypes.oneOf(PAD_SIZES),
-        vertical: PropTypes.oneOf(PAD_SIZES),
+        bottom: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
+        horizontal: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
+        left: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
+        right: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
+        top: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
+        vertical: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
       }),
+      PropTypes.string,
     ]).description(
       `The amount of margin around the Layer. An object can be specified to
 distinguish horizontal margin, vertical margin, and margin on a
@@ -39,7 +58,7 @@ particular side of the layer`
     modal: PropTypes.bool.description(
       'Whether there should be an overlay preventing interaction underneath the layer.'
     ).defaultValue(true),
-    onClickOutside: PropTypes.bool.description(
+    onClickOutside: PropTypes.func.description(
       'Function that will be invoked when the user clicks outside the layer.'
     ),
     onEsc: PropTypes.func.description(

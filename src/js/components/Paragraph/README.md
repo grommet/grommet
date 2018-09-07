@@ -34,12 +34,15 @@ large
   bottom: 
     small
     medium
-    large,
+    large
+    string,
   top: 
     small
     medium
     large
+    string
 }
+string
 ```
 
 **size**
@@ -51,6 +54,7 @@ small
 medium
 large
 xlarge
+string
 ```
 
 **textAlign**

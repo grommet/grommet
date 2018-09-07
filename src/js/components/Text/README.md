@@ -34,12 +34,15 @@ large
   bottom: 
     small
     medium
-    large,
+    large
+    string,
   top: 
     small
     medium
     large
+    string
 }
+string
 ```
 
 **size**
@@ -56,6 +59,7 @@ medium
 large
 xlarge
 xxlarge
+string
 ```
 
 **tag**

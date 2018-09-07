@@ -19,14 +19,24 @@ export const doc = (Text) => {
     margin: PropTypes.oneOfType([
       PropTypes.oneOf(['none', 'small', 'medium', 'large']),
       PropTypes.shape({
-        bottom: PropTypes.oneOf(['small', 'medium', 'large']),
-        top: PropTypes.oneOf(['small', 'medium', 'large']),
+        bottom: PropTypes.oneOfType([
+          PropTypes.oneOf(['small', 'medium', 'large']),
+          PropTypes.string,
+        ]),
+        top: PropTypes.oneOfType([
+          PropTypes.oneOf(['small', 'medium', 'large']),
+          PropTypes.string,
+        ]),
       }),
+      PropTypes.string,
     ]).description(
       `The amount of margin above and/or below the heading. An object can be
 specified to distinguish top margin and bottom margin.`
     ),
-    size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']).description(
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']),
+      PropTypes.string,
+    ]).description(
       `The font size is primarily driven by the chosen tag. But, it can
 be adjusted via this size property. The tag should be set for semantic
 correctness and accessibility. This size property allows for stylistic

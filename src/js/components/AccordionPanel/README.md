@@ -6,7 +6,7 @@ An Accordion panel.
 
 **label**
 
-Required. The panel label.
+The panel label.
 
 ```
 string

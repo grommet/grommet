@@ -33,6 +33,7 @@ small
 medium
 large
 xlarge
+string
 ```
 
 **values**
