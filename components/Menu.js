@@ -357,6 +357,9 @@ var Menu = function (_Component2) {
     value: function componentDidUpdate(prevProps, prevState) {
       var _this4 = this;
 
+      var dropContainer = this.props.dropContainer;
+
+
       if (this.state.state !== prevState.state) {
         var activeKeyboardHandlers = {
           esc: this._onClose
@@ -399,7 +402,8 @@ var Menu = function (_Component2) {
                 align: this.props.dropAlign,
                 colorIndex: this.props.dropColorIndex,
                 className: this.props.className && this.props.className + '__drop--container',
-                focusControl: true
+                focusControl: true,
+                dropContainer: dropContainer
               });
             }
             break;
@@ -608,6 +612,7 @@ Menu.propTypes = _extends({
   closeOnClick: _propTypes2.default.bool,
   dropAlign: _Drop.dropAlignPropType,
   dropColorIndex: _propTypes2.default.string,
+  dropContainer: _propTypes2.default.object,
   icon: _propTypes2.default.node,
   id: _propTypes2.default.string,
   inline: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.oneOf(['expand'])]),
@@ -627,6 +632,7 @@ Menu.defaultProps = {
   closeOnClick: true,
   direction: 'column',
   dropAlign: { top: 'top', left: 'left' },
-  pad: 'none'
+  pad: 'none',
+  dropContainer: undefined
 };
 module.exports = exports['default'];

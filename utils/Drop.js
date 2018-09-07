@@ -226,8 +226,14 @@ var Drop = function () {
     var container = document.createElement('div');
     container.className = (0, _classnames3.default)('grommet', CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, options.className, options.className), _defineProperty(_classnames, BACKGROUND_COLOR_INDEX + '-' + options.colorIndex, options.colorIndex), _classnames));
 
-    // prepend in body to avoid browser scroll issues
-    document.body.insertBefore(container, document.body.firstChild);
+    if (opts.dropContainer) {
+      opts.dropContainer.appendChild(container);
+      this.parentContainer = opts.dropContainer;
+    } else {
+      // prepend in body to avoid browser scroll issues
+      document.body.insertBefore(container, document.body.firstChild);
+      this.parentContainer = document.body;
+    }
 
     var scrollParents = (0, _DOM.findScrollParents)(control);
 
@@ -449,7 +455,7 @@ var Drop = function () {
       window.removeEventListener('resize', this._onResize);
 
       (0, _reactDom.unmountComponentAtNode)(container);
-      document.body.removeChild(container);
+      this.parentContainer.removeChild(container);
       // weird bug in Chrome does not remove child if
       // document.body.insertBefore is called in another new drop.
       // the code below will go over remaining drop that was not removed
