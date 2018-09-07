@@ -9,8 +9,8 @@ export interface RangeSelectorProps {
   min?: number;
   onChange?: (...args: any[]) => any;
   opacity?: "weak" | "medium" | "strong";
-  round?: "xsmall" | "small" | "medium" | "large" | "full";
-  size?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full";
+  round?: "xsmall" | "small" | "medium" | "large" | "full" | string;
+  size?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string;
   step?: number;
   values: number[];
 }

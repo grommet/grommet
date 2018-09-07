@@ -5,7 +5,7 @@ export interface ClockProps {
   onChange?: (...args: any[]) => any;
   precision?: "hours" | "minutes" | "seconds";
   run?: boolean | "backward" | "forward";
-  size?: "small" | "medium" | "large" | "xlarge";
+  size?: "small" | "medium" | "large" | "xlarge" | string;
   time?: string;
   type?: "analog" | "digital";
 }

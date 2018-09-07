@@ -13,7 +13,7 @@ export interface TextInputProps {
   onSuggestionsClose?: (...args: any[]) => any;
   placeholder?: string | React.ReactNode;
   plain?: boolean;
-  size?: "small" | "medium" | "large" | "xlarge";
+  size?: "small" | "medium" | "large" | "xlarge" | string;
   suggestions?: {label: React.ReactNode,value: any} | string[];
   value?: string;
 }

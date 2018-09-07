@@ -9,7 +9,7 @@ export interface MenuProps {
   items: object[];
   label?: string | React.ReactNode;
   messages?: {closeMenu: string,openMenu: string};
-  size?: "small" | "medium" | "large" | "xlarge";
+  size?: "small" | "medium" | "large" | "xlarge" | string;
 }
 
 declare const Menu: React.ComponentType<MenuProps>;

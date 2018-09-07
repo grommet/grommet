@@ -61,6 +61,7 @@ small
 medium
 large
 xlarge
+string
 ```
 
 **time**

@@ -38,12 +38,17 @@ export const doc = (RangeSelector) => {
     opacity: PropTypes.oneOf(['weak', 'medium', 'strong'])
       .description('')
       .defaultValue('medium'),
-    round: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full'])
-      .description('How much to round the corners.'),
-    size: PropTypes.oneOf(
-      ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full'])
-      .description('How thick to make the selection indicator.')
-      .defaultValue('medium'),
+    round: PropTypes.oneOfType([
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full']),
+      PropTypes.string,
+    ]).description('How much to round the corners.'),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(
+        ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']
+      ),
+      PropTypes.string,
+    ]).description('How thick to make the selection indicator.')
+    .defaultValue('medium'),
     step: PropTypes.number
       .description('The step interval between values.')
       .defaultValue(1),

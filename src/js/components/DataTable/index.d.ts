@@ -7,7 +7,7 @@ export interface DataTableProps {
   onMore?: (...args: any[]) => any;
   onSearch?: (...args: any[]) => any;
   resizeable?: boolean;
-  size?: "small" | "medium" | "large" | "xlarge";
+  size?: "small" | "medium" | "large" | "xlarge" | string;
   sortable?: boolean;
 }
 

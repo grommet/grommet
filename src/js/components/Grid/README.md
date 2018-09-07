@@ -91,6 +91,7 @@ full
 3/4
 flex
 auto]
+  string
 ]
 xsmall
 small
@@ -120,7 +121,9 @@ full
 3/4
 flex
 auto]
+    string
 }
+string
 ```
 
 **fill**
@@ -148,13 +151,16 @@ none
     small
     medium
     large
-    none,
+    none
+    string,
   column: 
     small
     medium
     large
     none
+    string
 }
+string
 ```
 
 **justify**
@@ -218,12 +224,14 @@ full
 3/4
 flex
 auto]
+  string
 ]
 xsmall
 small
 medium
 large
 xlarge
+string
 ```
 
 **tag**

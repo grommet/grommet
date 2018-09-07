@@ -76,7 +76,10 @@ export const doc = (Select) => {
       `Index of the currently selected option. When multiple, the set of
       options selected. This property is required when multiple.`
     ),
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).description(
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description(
       'The size of the select.'
     ),
     value: PropTypes.oneOfType([

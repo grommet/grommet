@@ -38,8 +38,10 @@ export const doc = (Calendar) => {
       For single select, make this the subsequent \`date\` property value.
       For multiple select or ranges, toggle values in \`dates\`.
       Not specifying this property makes the component read only.`),
-    size: PropTypes.oneOf(['small', 'medium', 'large'])
-      .description('What size to make it.'),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large']),
+      PropTypes.string,
+    ]).description('What size to make it.'),
   };
 
   return DocumentedCalendar;

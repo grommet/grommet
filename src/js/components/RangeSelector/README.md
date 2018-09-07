@@ -93,6 +93,7 @@ small
 medium
 large
 full
+string
 ```
 
 **size**
@@ -107,6 +108,7 @@ medium
 large
 xlarge
 full
+string
 ```
 
 **step**

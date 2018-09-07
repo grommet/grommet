@@ -8,7 +8,7 @@ export interface CalendarProps {
   firstDayOfWeek?: "0" | "1";
   locale?: string;
   onSelect?: (...args: any[]) => any;
-  size?: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large" | string;
 }
 
 declare const Calendar: React.ComponentType<CalendarProps>;

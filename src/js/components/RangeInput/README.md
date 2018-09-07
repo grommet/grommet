@@ -25,6 +25,7 @@ The minimum value permitted.
 
 ```
 number
+string
 ```
 
 **max**
@@ -33,6 +34,7 @@ The maximum value permitted.
 
 ```
 number
+string
 ```
 
 **name**
@@ -67,5 +69,6 @@ The current value.
 
 ```
 number
+string
 ```
   

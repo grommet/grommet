@@ -18,7 +18,7 @@ export interface SelectProps {
   plain?: boolean;
   searchPlaceholder?: string;
   selected?: number | number[];
-  size?: "small" | "medium" | "large" | "xlarge";
+  size?: "small" | "medium" | "large" | "xlarge" | string;
   value?: string | JSX.Element | object | string | object[];
 }
 

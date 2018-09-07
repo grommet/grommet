@@ -66,9 +66,12 @@ export const doc = (DataTable) => {
     ),
     resizeable: PropTypes.bool
       .description('Whether to allow the user to resize column widths.'),
-    size: PropTypes.oneOf(
-      ['small', 'medium', 'large', 'xlarge']
-    ).description(`
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(
+        ['small', 'medium', 'large', 'xlarge']
+      ),
+      PropTypes.string,
+    ]).description(`
       The height of the table body. If set, the table body will have a fixed
       height and the rows will be scrollable within it. In order to preserve
       header and footer cell alignment, all cells will have the same

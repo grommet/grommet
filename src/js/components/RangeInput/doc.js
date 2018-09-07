@@ -13,8 +13,14 @@ export const doc = (RangeInput) => {
 
   DocumentedRangeInput.propTypes = {
     id: PropTypes.string.description('The id attribute of the range input.'),
-    min: PropTypes.number.description('The minimum value permitted.'),
-    max: PropTypes.number.description('The maximum value permitted.'),
+    min: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ]).description('The minimum value permitted.'),
+    max: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ]).description('The maximum value permitted.'),
     name: PropTypes.string.description('The name attribute of the range input.'),
     onChange: PropTypes.func.description(
       `Function that will be called when the user changes the value. It will
@@ -22,7 +28,10 @@ export const doc = (RangeInput) => {
       via 'event.target.value'.`
     ),
     step: PropTypes.number.description('The step interval between values.'),
-    value: PropTypes.number.description('The current value.'),
+    value: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ]).description('The current value.'),
   };
 
   return DocumentedRangeInput;

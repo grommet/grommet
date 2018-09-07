@@ -29,7 +29,10 @@ export const doc = (Clock) => {
       `Whether the clock should actively adjust time or be fixed to the
       time specified. 'backward' could be used as a countdown timer.`
     ).defaultValue('forward'),
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).description(
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description(
       'Clock size'
     ).defaultValue('medium'),
     time: PropTypes.string.description(

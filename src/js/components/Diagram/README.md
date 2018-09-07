@@ -35,14 +35,16 @@ Required. Array of objects describing the connections.
     xsmall
     small
     medium
-    large,
+    large
+    string,
   thickness: 
     hair
     xxsmall
     xsmall
     small
     medium
-    large,
+    large
+    string,
   toTarget: 
     string
     object,

@@ -41,6 +41,7 @@ space in the column axis.`
       PropTypes.arrayOf(PropTypes.oneOfType([
         PropTypes.oneOf(sizes),
         PropTypes.arrayOf(PropTypes.oneOf(sizes)),
+        PropTypes.string,
       ])),
       PropTypes.oneOf(fixedSizes),
       PropTypes.shape({
@@ -48,8 +49,10 @@ space in the column axis.`
         size: PropTypes.oneOfType([
           PropTypes.oneOf(fixedSizes),
           PropTypes.arrayOf(PropTypes.oneOf(sizes)),
+          PropTypes.string,
         ]),
       }),
+      PropTypes.string,
     ]).description(
       `Column sizes.
       If an array value is an array, the inner array indicates the
@@ -64,9 +67,16 @@ space in the column axis.`
     gap: PropTypes.oneOfType([
       PropTypes.oneOf(edgeSizes),
       PropTypes.shape({
-        row: PropTypes.oneOf(edgeSizes),
-        column: PropTypes.oneOf(edgeSizes),
+        row: PropTypes.oneOfType([
+          PropTypes.oneOf(edgeSizes),
+          PropTypes.string,
+        ]),
+        column: PropTypes.oneOfType([
+          PropTypes.oneOf(edgeSizes),
+          PropTypes.string,
+        ]),
       }),
+      PropTypes.string,
     ]).description(
       'Gap sizes between rows and/or columns.'
     ),
@@ -81,8 +91,10 @@ space in the row axis.`
       PropTypes.arrayOf(PropTypes.oneOfType([
         PropTypes.oneOf(sizes),
         PropTypes.arrayOf(PropTypes.oneOf(sizes)),
+        PropTypes.string,
       ])),
       PropTypes.oneOf(fixedSizes),
+      PropTypes.string,
     ]).description(
       `Row sizes.
       If an array value is an array, the inner array indicates the

@@ -2,12 +2,12 @@ import * as React from "react";
 
 export interface RangeInputProps {
   id?: string;
-  min?: number;
-  max?: number;
+  min?: number | string;
+  max?: number | string;
   name?: string;
   onChange?: (...args: any[]) => any;
   step?: number;
-  value?: number;
+  value?: number | string;
 }
 
 declare const RangeInput: React.ComponentType<RangeInputProps>;
