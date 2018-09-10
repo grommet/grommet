@@ -127,7 +127,7 @@ exports[`Anchor focus renders 1`] = `
     onFocus={[Function]}
   >
     <span
-      className="c2"
+      className="-span c2"
       style={
         Object {
           "display": "inline-flex",
@@ -230,7 +230,7 @@ exports[`Anchor icon label renders 1`] = `
     onFocus={[Function]}
   >
     <span
-      className="c2"
+      className="-span c2"
       style={
         Object {
           "display": "inline-flex",
@@ -329,7 +329,7 @@ exports[`Anchor primary renders 1`] = `
     onFocus={[Function]}
   >
     <span
-      className="c2"
+      className="-span c2"
       style={
         Object {
           "display": "inline-flex",
@@ -513,7 +513,7 @@ exports[`Anchor reverse icon label renders 1`] = `
     onFocus={[Function]}
   >
     <span
-      className="c2"
+      className="-span c2"
       style={
         Object {
           "display": "inline-flex",
@@ -608,7 +608,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
     onFocus={[Function]}
   >
     <span
-      className="c2"
+      className="-span c2"
       style={
         Object {
           "display": "inline-flex",
@@ -697,7 +697,7 @@ exports[`Anchor warns about invalid label render 1`] = `
     onFocus={[Function]}
   >
     <span
-      className="c2"
+      className="-span c2"
       style={
         Object {
           "display": "inline-flex",

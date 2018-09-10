@@ -11,7 +11,6 @@ const fillStyle = `
 export const StyledStack = styled.div`
   position: relative;
   ${props => props.fillContainer && fillStyle}
-`.extend`
   ${props => props.theme.stack && props.theme.stack.extend}
 `;
 

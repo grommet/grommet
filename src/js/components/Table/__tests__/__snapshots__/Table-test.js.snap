@@ -372,7 +372,7 @@ exports[`TableCell scope renders 1`] = `
         className=""
       >
         <th
-          className="c2"
+          className="-th c2"
           scope="col"
         >
           <div
@@ -388,7 +388,7 @@ exports[`TableCell scope renders 1`] = `
         className=""
       >
         <th
-          className="c4"
+          className="-th c4"
           scope="row"
         >
           <div

@@ -13,6 +13,6 @@ export const StyledMeter = styled.svg`
   path {
     transition: all 0.3s;
   }
-`.extend`
+
   ${props => props.theme.meter && props.theme.meter.extend}
 `;

@@ -27,7 +27,7 @@ class RadioButton extends Component {
         <StyledRadioButton theme={theme}>
           <StyledRadioButtonInput
             {...rest}
-            innerRef={forwardRef}
+            ref={forwardRef}
             type='radio'
             {...removeUndefined({ id, name, checked, disabled, onChange })}
             theme={theme}

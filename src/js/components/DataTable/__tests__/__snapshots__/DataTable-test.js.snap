@@ -41,7 +41,7 @@ exports[`DataTable aggregate 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -62,7 +62,7 @@ exports[`DataTable aggregate 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -84,7 +84,7 @@ exports[`DataTable aggregate 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c5 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -105,15 +105,6 @@ exports[`DataTable aggregate 1`] = `
 }
 
 .c2 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: inherit;
-  vertical-align: bottom;
-}
-
-.c5 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -149,46 +140,46 @@ exports[`DataTable aggregate 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c6 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c6 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c7 {
     border-top: solid 2px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c7 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c7 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c7 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -207,7 +198,7 @@ exports[`DataTable aggregate 1`] = `
         className=""
       >
         <th
-          className="c2"
+          className="-th c2"
           scope="col"
         >
           <div
@@ -221,7 +212,7 @@ exports[`DataTable aggregate 1`] = `
           </div>
         </th>
         <th
-          className="c5"
+          className="-th c2"
           scope="col"
         >
           <div
@@ -243,10 +234,10 @@ exports[`DataTable aggregate 1`] = `
         className=""
       >
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c7"
+            className="c6"
           >
             <span
               className="c4"
@@ -256,10 +247,10 @@ exports[`DataTable aggregate 1`] = `
           </div>
         </td>
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c7"
+            className="c6"
           >
             <span
               className="c4"
@@ -273,10 +264,10 @@ exports[`DataTable aggregate 1`] = `
         className=""
       >
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c7"
+            className="c6"
           >
             <span
               className="c4"
@@ -286,10 +277,10 @@ exports[`DataTable aggregate 1`] = `
           </div>
         </td>
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c7"
+            className="c6"
           >
             <span
               className="c4"
@@ -307,17 +298,17 @@ exports[`DataTable aggregate 1`] = `
         className=""
       >
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c8"
+            className="c7"
           />
         </td>
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c8"
+            className="c7"
           >
             <span
               className="c4"
@@ -373,7 +364,7 @@ exports[`DataTable basic 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -394,7 +385,7 @@ exports[`DataTable basic 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c5 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -415,15 +406,6 @@ exports[`DataTable basic 1`] = `
 }
 
 .c2 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: inherit;
-  vertical-align: bottom;
-}
-
-.c5 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -459,20 +441,20 @@ exports[`DataTable basic 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c6 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c6 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -491,7 +473,7 @@ exports[`DataTable basic 1`] = `
         className=""
       >
         <th
-          className="c2"
+          className="-th c2"
           scope="col"
         >
           <div
@@ -505,7 +487,7 @@ exports[`DataTable basic 1`] = `
           </div>
         </th>
         <th
-          className="c5"
+          className="-th c2"
           scope="col"
         >
           <div
@@ -527,10 +509,10 @@ exports[`DataTable basic 1`] = `
         className=""
       >
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c7"
+            className="c6"
           >
             <span
               className="c4"
@@ -540,10 +522,10 @@ exports[`DataTable basic 1`] = `
           </div>
         </td>
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c7"
+            className="c6"
           >
             <span
               className="c4"
@@ -557,10 +539,10 @@ exports[`DataTable basic 1`] = `
         className=""
       >
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c7"
+            className="c6"
           >
             <span
               className="c4"
@@ -570,10 +552,10 @@ exports[`DataTable basic 1`] = `
           </div>
         </td>
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c7"
+            className="c6"
           >
             <span
               className="c4"
@@ -667,7 +649,7 @@ exports[`DataTable footer 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -688,7 +670,7 @@ exports[`DataTable footer 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -710,7 +692,7 @@ exports[`DataTable footer 1`] = `
   padding-bottom: 6px;
 }
 
-.c6 {
+.c5 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -731,15 +713,6 @@ exports[`DataTable footer 1`] = `
 }
 
 .c2 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: inherit;
-  vertical-align: bottom;
-}
-
-.c5 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -775,46 +748,46 @@ exports[`DataTable footer 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c6 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c6 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c7 {
     border-top: solid 2px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c7 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c7 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c7 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -833,7 +806,7 @@ exports[`DataTable footer 1`] = `
         className=""
       >
         <th
-          className="c2"
+          className="-th c2"
           scope="col"
         >
           <div
@@ -847,7 +820,7 @@ exports[`DataTable footer 1`] = `
           </div>
         </th>
         <th
-          className="c5"
+          className="-th c2"
           scope="col"
         >
           <div
@@ -869,10 +842,10 @@ exports[`DataTable footer 1`] = `
         className=""
       >
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c7"
+            className="c6"
           >
             <span
               className="c4"
@@ -882,10 +855,10 @@ exports[`DataTable footer 1`] = `
           </div>
         </td>
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c7"
+            className="c6"
           >
             <span
               className="c4"
@@ -899,10 +872,10 @@ exports[`DataTable footer 1`] = `
         className=""
       >
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c7"
+            className="c6"
           >
             <span
               className="c4"
@@ -912,10 +885,10 @@ exports[`DataTable footer 1`] = `
           </div>
         </td>
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c7"
+            className="c6"
           >
             <span
               className="c4"
@@ -933,10 +906,10 @@ exports[`DataTable footer 1`] = `
         className=""
       >
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c8"
+            className="c7"
           >
             <span
               className="c4"
@@ -946,10 +919,10 @@ exports[`DataTable footer 1`] = `
           </div>
         </td>
         <td
-          className="c6"
+          className="c5"
         >
           <div
-            className="c8"
+            className="c7"
           />
         </td>
       </tr>
@@ -959,32 +932,325 @@ exports[`DataTable footer 1`] = `
 `;
 
 exports[`DataTable groupBy 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: rgba(0,0,0,0.33);
+  stroke: rgba(0,0,0,0.33);
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: #F6F6F6;
+  color: #444444;
+  border-bottom: solid 2px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: #F6F6F6;
+  color: #444444;
+  border-bottom: solid 2px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 6px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 6px;
+}
+
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: inherit;
+  vertical-align: top;
+}
+
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: inherit;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c3:hover {
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: black;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: inherit;
+  vertical-align: bottom;
+}
+
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: inherit;
+  vertical-align: top;
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    border-bottom: solid 2px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    border-bottom: solid 2px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    padding: 3px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c3 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
 <div
-  class="StyledGrommet-gKbdxL gbVYjJ"
+  class="c0"
 >
   <table
-    class="StyledDataTable-IgJCp kyMnvB"
+    class="c1"
   >
     <thead
-      class="StyledDataTable__StyledDataTableHeader-hWAKAt kjOblm"
+      class=""
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-cYyilN jnWAoC"
+        class=""
       >
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cUbIUQ"
+          class="c2"
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY vVYVk"
+            class="c3"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy jbzcdz"
+              class="c4"
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-kFlXVF dQfzRl"
+                class="c5"
                 color="border-light"
                 height="24px"
                 role="img"
@@ -1003,28 +1269,28 @@ exports[`DataTable groupBy 1`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-lbpJOV kOARIO"
+          class="-th c6"
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy dZMygZ"
+            class="c7"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="c8"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-gxerXr fCKcls"
+          class="-th c6"
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy dZMygZ"
+            class="c7"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="c8"
             >
               B
             </span>
@@ -1033,25 +1299,25 @@ exports[`DataTable groupBy 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledDataTable__StyledDataTableBody-bnfSpy gMydNw"
+      class=""
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-cYyilN jnWAoC"
+        class=""
       >
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cUbIUQ"
+          class="c2"
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY vVYVk"
+            class="c3"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy ifVFVU"
+              class="c9"
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-kFlXVF dQfzRl"
+                class="c5"
                 color="border-light"
                 height="24px"
                 role="img"
@@ -1070,44 +1336,44 @@ exports[`DataTable groupBy 1`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-gXoyl cpOwyG"
+          class="-th c10"
           scope="row"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="c11"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="c8"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="c12"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="c11"
           />
         </td>
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-cYyilN jnWAoC"
+        class=""
       >
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cUbIUQ"
+          class="c2"
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY vVYVk"
+            class="c3"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy ifVFVU"
+              class="c9"
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-kFlXVF dQfzRl"
+                class="c5"
                 color="border-light"
                 height="24px"
                 role="img"
@@ -1126,24 +1392,24 @@ exports[`DataTable groupBy 1`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-hwKlLZ fVYtGJ"
+          class="-th c10"
           scope="row"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="c11"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="c8"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="c12"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="c11"
           />
         </td>
       </tr>
@@ -1154,31 +1420,31 @@ exports[`DataTable groupBy 1`] = `
 
 exports[`DataTable groupBy 2`] = `
 <div
-  class="StyledGrommet-gKbdxL gbVYjJ"
+  class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <table
-    class="StyledDataTable-IgJCp kyMnvB"
+    class="StyledDataTable-xrlyjm-0 DHZmE"
   >
     <thead
-      class="StyledDataTable__StyledDataTableHeader-hWAKAt kjOblm"
+      class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-cYyilN jnWAoC"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 fvRLfB"
       >
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cUbIUQ"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 JVAV"
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY vVYVk"
+            class="StyledButton-sc-323bzc-0 hVXlHQ"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy jbzcdz"
+              class="StyledBox-sc-13pk1d4-0 eFZsPc"
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-kFlXVF dQfzRl"
+                class="StyledIcon-ofa7kd-0 ekYRGZ"
                 color="border-light"
                 height="24px"
                 role="img"
@@ -1197,28 +1463,28 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-lbpJOV kOARIO"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0-th gRfRLu"
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy dZMygZ"
+            class="StyledBox-sc-13pk1d4-0 byHuRN"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="StyledText-sc-1sadyjn-0 eWZOWJ"
             >
               A
             </span>
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-gxerXr fCKcls"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0-th gRfRLu"
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy dZMygZ"
+            class="StyledBox-sc-13pk1d4-0 byHuRN"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="StyledText-sc-1sadyjn-0 eWZOWJ"
             >
               B
             </span>
@@ -1227,25 +1493,25 @@ exports[`DataTable groupBy 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledDataTable__StyledDataTableBody-bnfSpy gMydNw"
+      class="StyledDataTable__StyledDataTableBody-xrlyjm-2 bBDZDa"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-cYyilN jnWAoC"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 fvRLfB"
       >
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cUbIUQ"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 JVAV"
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY vVYVk"
+            class="StyledButton-sc-323bzc-0 hVXlHQ"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy ifVFVU"
+              class="StyledBox-sc-13pk1d4-0 dZoFAD"
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-kFlXVF dQfzRl"
+                class="StyledIcon-ofa7kd-0 ekYRGZ"
                 color="border-light"
                 height="24px"
                 role="img"
@@ -1264,44 +1530,44 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-gXoyl cpOwyG"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0-th betYSR"
           scope="row"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="StyledBox-sc-13pk1d4-0 etnGxz"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="StyledText-sc-1sadyjn-0 eWZOWJ"
             >
               one
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="StyledBox-sc-13pk1d4-0 etnGxz"
           />
         </td>
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-cYyilN jnWAoC"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 fvRLfB"
       >
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cUbIUQ"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 JVAV"
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY vVYVk"
+            class="StyledButton-sc-323bzc-0 hVXlHQ"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy ifVFVU"
+              class="StyledBox-sc-13pk1d4-0 dZoFAD"
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-kFlXVF dQfzRl"
+                class="StyledIcon-ofa7kd-0 ekYRGZ"
                 color="border-light"
                 height="24px"
                 role="img"
@@ -1320,24 +1586,24 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-hwKlLZ fVYtGJ"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0-th betYSR"
           scope="row"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="StyledBox-sc-13pk1d4-0 etnGxz"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="StyledText-sc-1sadyjn-0 eWZOWJ"
             >
               two
             </span>
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="StyledBox-sc-13pk1d4-0 etnGxz"
           />
         </td>
       </tr>
@@ -1387,7 +1653,7 @@ exports[`DataTable resizeable 1`] = `
   padding-bottom: 6px;
 }
 
-.c10 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1448,7 +1714,7 @@ exports[`DataTable resizeable 1`] = `
   padding: 0;
 }
 
-.c9 {
+.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1473,15 +1739,6 @@ exports[`DataTable resizeable 1`] = `
 }
 
 .c2 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: inherit;
-  vertical-align: bottom;
-}
-
-.c8 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1517,20 +1774,20 @@ exports[`DataTable resizeable 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c10 {
+  .c9 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c10 {
+  .c9 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c10 {
+  .c9 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -1579,7 +1836,7 @@ exports[`DataTable resizeable 1`] = `
         className=""
       >
         <th
-          className="c2"
+          className="-th c2"
           scope="col"
         >
           <div
@@ -1601,7 +1858,7 @@ exports[`DataTable resizeable 1`] = `
           </div>
         </th>
         <th
-          className="c8"
+          className="-th c2"
           scope="col"
         >
           <div
@@ -1631,10 +1888,10 @@ exports[`DataTable resizeable 1`] = `
         className=""
       >
         <td
-          className="c9"
+          className="c8"
         >
           <div
-            className="c10"
+            className="c9"
           >
             <span
               className="c5"
@@ -1644,10 +1901,10 @@ exports[`DataTable resizeable 1`] = `
           </div>
         </td>
         <td
-          className="c9"
+          className="c8"
         >
           <div
-            className="c10"
+            className="c9"
           >
             <span
               className="c5"
@@ -1661,10 +1918,10 @@ exports[`DataTable resizeable 1`] = `
         className=""
       >
         <td
-          className="c9"
+          className="c8"
         >
           <div
-            className="c10"
+            className="c9"
           >
             <span
               className="c5"
@@ -1674,10 +1931,10 @@ exports[`DataTable resizeable 1`] = `
           </div>
         </td>
         <td
-          className="c9"
+          className="c8"
         >
           <div
-            className="c10"
+            className="c9"
           >
             <span
               className="c5"
@@ -1693,31 +1950,214 @@ exports[`DataTable resizeable 1`] = `
 `;
 
 exports[`DataTable sort 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F6F6F6;
+  color: #444444;
+  border-bottom: solid 2px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c7 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: inherit;
+  vertical-align: top;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c4 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c4:hover {
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: black;
+}
+
+.c3 {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  height: 100%;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: inherit;
+  vertical-align: bottom;
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-bottom: solid 2px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c4 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
 <div
-  class="StyledGrommet-gKbdxL gbVYjJ"
+  class="c0"
 >
   <table
-    class="StyledDataTable-IgJCp kyMnvB"
+    class="c1"
   >
     <thead
-      class="StyledDataTable__StyledDataTableHeader-hWAKAt kjOblm"
+      class=""
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-cYyilN jnWAoC"
+        class=""
       >
         <th
-          class="StyledTable__StyledTableCell-hvERU jtNqmJ"
+          class="-th c2"
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY vVYVk"
+            class="c3 c4"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy iPubuO"
+              class="c5"
             >
               <span
-                class="StyledText-dmaDlZ cuXUhH"
+                class="c6"
               >
                 A
               </span>
@@ -1725,18 +2165,18 @@ exports[`DataTable sort 1`] = `
           </button>
         </th>
         <th
-          class="StyledTable__StyledTableCell-jGOvXo nrWSA"
+          class="-th c2"
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY vVYVk"
+            class="c3 c4"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy iPubuO"
+              class="c5"
             >
               <span
-                class="StyledText-dmaDlZ cuXUhH"
+                class="c6"
               >
                 B
               </span>
@@ -1746,56 +2186,56 @@ exports[`DataTable sort 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledDataTable__StyledDataTableBody-bnfSpy gMydNw"
+      class=""
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-cYyilN jnWAoC"
+        class=""
       >
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="c7"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="c8"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="c6"
             >
               zero
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="c7"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="c8"
           />
         </td>
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-cYyilN jnWAoC"
+        class=""
       >
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="c7"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="c8"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="c6"
             >
               one
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="c7"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="c8"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="c6"
             >
               1
             </span>
@@ -1803,29 +2243,29 @@ exports[`DataTable sort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-cYyilN jnWAoC"
+        class=""
       >
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="c7"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="c8"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="c6"
             >
               two
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="c7"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="c8"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="c6"
             >
               2
             </span>
@@ -1839,39 +2279,194 @@ exports[`DataTable sort 1`] = `
 
 exports[`DataTable sort 2`] = `
 <div
-  class="StyledGrommet-gKbdxL gbVYjJ"
+  class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <table
-    class="StyledDataTable-IgJCp kyMnvB"
+    class="StyledDataTable-xrlyjm-0 DHZmE"
   >
     <thead
-      class="StyledDataTable__StyledDataTableHeader-hWAKAt kjOblm"
+      class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-cYyilN jnWAoC"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 fvRLfB"
       >
-        <th
-          class="StyledTable__StyledTableCell-jCdKZQ kMLoGk"
+        .c6 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F6F6F6;
+  color: #444444;
+  border-bottom: solid 2px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c5 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 6px;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c2 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c2:hover {
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: black;
+}
+
+.c1 {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  height: 100%;
+}
+
+.c0 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: inherit;
+  vertical-align: bottom;
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    border-bottom: solid 2px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c2 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<th
+          class="-th c0"
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY vVYVk"
+            class="c1 c2"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy iPubuO"
+              class="c3"
             >
               <span
-                class="StyledText-dmaDlZ cuXUhH"
+                class="c4"
               >
                 A
               </span>
               <div
-                class="StyledBox__StyledBoxGap-eHDBek cXBKdA"
+                class="c5"
               />
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-kFlXVF Vjeah"
+                class="c6"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1888,19 +2483,135 @@ exports[`DataTable sort 2`] = `
             </div>
           </button>
         </th>
-        <th
-          class="StyledTable__StyledTableCell-jcjgiI iiOWqn"
+        .c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F6F6F6;
+  color: #444444;
+  border-bottom: solid 2px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c2 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c2:hover {
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: black;
+}
+
+.c1 {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  height: 100%;
+}
+
+.c0 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: inherit;
+  vertical-align: bottom;
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    border-bottom: solid 2px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c2 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<th
+          class="-th c0"
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY vVYVk"
+            class="c1 c2"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy iPubuO"
+              class="c3"
             >
               <span
-                class="StyledText-dmaDlZ cuXUhH"
+                class="c4"
               >
                 B
               </span>
@@ -1910,32 +2621,32 @@ exports[`DataTable sort 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledDataTable__StyledDataTableBody-bnfSpy gMydNw"
+      class="StyledDataTable__StyledDataTableBody-xrlyjm-2 bBDZDa"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-cYyilN jnWAoC"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 fvRLfB"
       >
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="StyledBox-sc-13pk1d4-0 etnGxz"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="StyledText-sc-1sadyjn-0 eWZOWJ"
             >
               one
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="StyledBox-sc-13pk1d4-0 etnGxz"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="StyledText-sc-1sadyjn-0 eWZOWJ"
             >
               1
             </span>
@@ -1943,29 +2654,29 @@ exports[`DataTable sort 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-cYyilN jnWAoC"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 fvRLfB"
       >
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="StyledBox-sc-13pk1d4-0 etnGxz"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="StyledText-sc-1sadyjn-0 eWZOWJ"
             >
               two
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="StyledBox-sc-13pk1d4-0 etnGxz"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="StyledText-sc-1sadyjn-0 eWZOWJ"
             >
               2
             </span>
@@ -1973,26 +2684,26 @@ exports[`DataTable sort 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-cYyilN jnWAoC"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 fvRLfB"
       >
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="StyledBox-sc-13pk1d4-0 etnGxz"
           >
             <span
-              class="StyledText-dmaDlZ cuXUhH"
+              class="StyledText-sc-1sadyjn-0 eWZOWJ"
             >
               zero
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-KsYQQ cldKKw"
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-YaZNy ilPJMQ"
+            class="StyledBox-sc-13pk1d4-0 etnGxz"
           />
         </td>
       </tr>

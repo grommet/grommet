@@ -63,7 +63,7 @@ class CheckBox extends Component {
         <StyledCheckBox theme={theme}>
           <StyledCheckBoxInput
             {...rest}
-            innerRef={forwardRef}
+            ref={forwardRef}
             type='checkbox'
             {...removeUndefined({ id, name, checked, disabled, onChange })}
             theme={theme}

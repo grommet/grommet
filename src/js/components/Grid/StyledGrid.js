@@ -167,6 +167,5 @@ export const StyledGrid = styled.div`
   ${props => props.justify && justifyStyle}
   ${props => props.justifyContent && justifyContentStyle}
   ${props => props.rowsProp && rowsStyle(props)}
-`.extend`
   ${props => props.theme.grid && props.theme.grid.extend}
 `;

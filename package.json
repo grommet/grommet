@@ -21,7 +21,7 @@
   },
   "engine-strict": true,
   "engines": {
-    "node": ">= 6.11.5"
+    "node": ">= 8"
   },
   "scripts": {
     "postinstall": "node ./tools/warn-beta",
@@ -37,10 +37,10 @@
     "build-storybook": "build-storybook -c storybook -o storybook-static"
   },
   "peerDependencies": {
-    "grommet-icons": "^3.0.0",
+    "grommet-icons": "^3.1.0-beta.1",
     "react": ">= 16.4.1",
     "react-dom": ">= 16.4.1",
-    "styled-components": ">= 3.2.6"
+    "styled-components": ">= 4.X"
   },
   "dependencies": {
     "markdown-to-jsx": "^6.6.6",
@@ -52,13 +52,13 @@
     "recompose": "^0.27.0"
   },
   "devDependencies": {
-    "@storybook/react": "^4.0.0-alpha.8",
+    "@storybook/react": "4.0.0-alpha.20",
     "babel-cli": "^6.22.2",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^23.0.1",
     "babel-loader": "^7.1.1",
-    "babel-plugin-styled-components": "^1.1.7",
+    "babel-plugin-styled-components": "^1.6.4",
     "babel-plugin-transform-imports": "^1.5.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.16.0",
@@ -76,10 +76,10 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
     "fs-extra": "^6.0.0",
-    "grommet-icons": "^3.0.0",
+    "grommet-icons": "^3.1.0-beta.1",
     "jest": "^23.1.0",
     "jest-cli": "^23.1.0",
-    "jest-styled-components": "^5.0.0",
+    "jest-styled-components": "^6.2.0",
     "pre-commit": "^1.2.2",
     "react": "^16.4.0",
     "react-dev-utils": "^5.0.0",
@@ -89,7 +89,7 @@
     "regenerator-runtime": "^0.11.1",
     "require-reload": "^0.2.2",
     "simple-git": "^1.95.0",
-    "styled-components": "^3.3.2",
+    "styled-components": "4.0.0-beta.1",
     "tarball-extract": "^0.0.6",
     "webpack": "^4.10.2",
     "webpack-cli": "^3.0.7"

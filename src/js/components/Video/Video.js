@@ -360,7 +360,7 @@ class Video extends Component {
                   values={[{ value: percentagePlayed || 0 }]}
                 />
                 <StyledVideoScrubber
-                  innerRef={scrubberRef}
+                  ref={scrubberRef}
                   tabIndex={0}
                   role='button'
                   value={scrubTime ? Math.round((scrubTime / duration) * 100) : undefined}
@@ -431,7 +431,7 @@ class Video extends Component {
       <StyledVideoContainer {...mouseEventListeners} theme={theme} style={style}>
         <StyledVideo
           {...rest}
-          innerRef={videoRef}
+          ref={videoRef}
           theme={theme}
           {...this.mediaEventProps}
           autoPlay={autoPlay || false}

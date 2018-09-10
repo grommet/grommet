@@ -668,66 +668,545 @@ exports[`Carousel basic 1`] = `
 `;
 
 exports[`Carousel navigate 1`] = `
+.c11 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c16 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c16 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c16 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c16 *[stroke*="#"],
+.c16 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c16 *[fill-rule],
+.c16 *[FILL-RULE],
+.c16 *[fill*="#"],
+.c16 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  -webkit-animation: gmgyXe 1s 0s forwards;
+  animation: gmgyXe 1s 0s forwards;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
+  padding: 12px;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c17 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c17:hover {
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: black;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c12 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c12 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c15 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c15 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c9 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c14 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c17 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
 <div
-  class="StyledGrommet-gKbdxL gbVYjJ"
+  class="c0"
 >
   <div
-    class="StyledStack-jtPAMP bgKQVO"
+    class="c1"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-cofHih lngCWV"
+      class="c2"
     >
       <div
-        class="StyledBox-YaZNy hJvMaG"
+        class="c3"
       >
         <div
-          class="StyledBox-YaZNy hQeqTY"
+          class="c4"
         >
           <img
-            class="StyledImage-dKPlqa cdkiLG"
+            class=""
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
+      class="c5"
     >
       <div
-        class="StyledBox-YaZNy hJvMaG"
+        class="c3"
       >
         <div
-          class="StyledBox-YaZNy kYhseN"
+          class="c6"
         >
           <img
-            class="StyledImage-dKPlqa cdkiLG"
+            class=""
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
+      class="c5"
     >
       <div
-        class="StyledBox-YaZNy eUXrhB"
+        class="c7"
         tabindex="0"
       >
         <div
-          class="StyledBox-YaZNy iLfhNe"
+          class="c8"
         >
           <button
-            class="StyledButton-qbvYY cfRamP"
+            class="c9"
             disabled=""
             type="button"
           >
             <div
-              class="StyledBox-YaZNy lckMqu"
+              class="c10"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-kFlXVF Vjeah"
+                class="c11"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -746,21 +1225,21 @@ exports[`Carousel navigate 1`] = `
           </button>
         </div>
         <div
-          class="StyledBox-YaZNy rlMvG"
+          class="c12"
         >
           <div
-            class="StyledBox-YaZNy hPUIyd"
+            class="c13"
           >
             <button
-              class="StyledButton-qbvYY jZaTeL"
+              class="c14"
               type="button"
             >
               <div
-                class="StyledBox-YaZNy cDuVuR"
+                class="c15"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-kFlXVF eheoxD"
+                  class="c16"
                   color="#7D4CDB"
                   height="24px"
                   role="img"
@@ -778,15 +1257,15 @@ exports[`Carousel navigate 1`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY jZaTeL"
+              class="c14"
               type="button"
             >
               <div
-                class="StyledBox-YaZNy cDuVuR"
+                class="c15"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-kFlXVF Vjeah"
+                  class="c11"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -805,18 +1284,18 @@ exports[`Carousel navigate 1`] = `
           </div>
         </div>
         <div
-          class="StyledBox-YaZNy iLfhNe"
+          class="c8"
         >
           <button
-            class="StyledButton-qbvYY vVYVk"
+            class="c17"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy lckMqu"
+              class="c10"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-kFlXVF Vjeah"
+                class="c11"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -841,64 +1320,64 @@ exports[`Carousel navigate 1`] = `
 
 exports[`Carousel navigate 2`] = `
 <div
-  class="StyledGrommet-gKbdxL gbVYjJ"
+  class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledStack-jtPAMP bgKQVO"
+    class="StyledStack-ajspsk-0 hKZWLd"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
+      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-YaZNy hJvMaG"
+        class="StyledBox-sc-13pk1d4-0 dsHWxS"
       >
         <div
-          class="StyledBox-YaZNy kYhseN"
+          class="StyledBox-sc-13pk1d4-0 hEeeYS"
         >
           <img
-            class="StyledImage-dKPlqa cdkiLG"
+            class="StyledImage-ey4zx9-0 inKPek"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih lngCWV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
     >
       <div
-        class="StyledBox-YaZNy hJvMaG"
+        class="StyledBox-sc-13pk1d4-0 dsHWxS"
       >
         <div
-          class="StyledBox-YaZNy iyAZEu"
+          class="StyledBox-sc-13pk1d4-0 lhUaGw"
         >
           <img
-            class="StyledImage-dKPlqa cdkiLG"
+            class="StyledImage-ey4zx9-0 inKPek"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
+      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-YaZNy eUXrhB"
+        class="StyledBox-sc-13pk1d4-0 fSqCwC"
         tabindex="0"
       >
         <div
-          class="StyledBox-YaZNy iLfhNe"
+          class="StyledBox-sc-13pk1d4-0 ghVnrw"
         >
           <button
-            class="StyledButton-qbvYY vVYVk"
+            class="StyledButton-sc-323bzc-0 hVXlHQ"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy lckMqu"
+              class="StyledBox-sc-13pk1d4-0 ktklvw"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-kFlXVF Vjeah"
+                class="StyledIcon-ofa7kd-0 bVfVoD"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -917,21 +1396,21 @@ exports[`Carousel navigate 2`] = `
           </button>
         </div>
         <div
-          class="StyledBox-YaZNy rlMvG"
+          class="StyledBox-sc-13pk1d4-0 dUAHxy"
         >
           <div
-            class="StyledBox-YaZNy hPUIyd"
+            class="StyledBox-sc-13pk1d4-0 bYqzAc"
           >
             <button
-              class="StyledButton-qbvYY jZaTeL"
+              class="StyledButton-sc-323bzc-0 eFkyjH"
               type="button"
             >
               <div
-                class="StyledBox-YaZNy cDuVuR"
+                class="StyledBox-sc-13pk1d4-0 dSfTYd"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-kFlXVF Vjeah"
+                  class="StyledIcon-ofa7kd-0 bVfVoD"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -948,15 +1427,15 @@ exports[`Carousel navigate 2`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY jZaTeL"
+              class="StyledButton-sc-323bzc-0 eFkyjH"
               type="button"
             >
               <div
-                class="StyledBox-YaZNy cDuVuR"
+                class="StyledBox-sc-13pk1d4-0 dSfTYd"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-kFlXVF eheoxD"
+                  class="StyledIcon-ofa7kd-0 dtlWir"
                   color="#7D4CDB"
                   height="24px"
                   role="img"
@@ -976,19 +1455,19 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-YaZNy iLfhNe"
+          class="StyledBox-sc-13pk1d4-0 ghVnrw"
         >
           <button
-            class="StyledButton-qbvYY cfRamP"
+            class="StyledButton-sc-323bzc-0 bpXwFO"
             disabled=""
             type="button"
           >
             <div
-              class="StyledBox-YaZNy lckMqu"
+              class="StyledBox-sc-13pk1d4-0 ktklvw"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-kFlXVF Vjeah"
+                class="StyledIcon-ofa7kd-0 bVfVoD"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1013,65 +1492,65 @@ exports[`Carousel navigate 2`] = `
 
 exports[`Carousel navigate 3`] = `
 <div
-  class="StyledGrommet-gKbdxL gbVYjJ"
+  class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledStack-jtPAMP bgKQVO"
+    class="StyledStack-ajspsk-0 hKZWLd"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-cofHih lngCWV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
     >
       <div
-        class="StyledBox-YaZNy hJvMaG"
+        class="StyledBox-sc-13pk1d4-0 dsHWxS"
       >
         <div
-          class="StyledBox-YaZNy bsrQqJ"
+          class="StyledBox-sc-13pk1d4-0 dexaDT"
         >
           <img
-            class="StyledImage-dKPlqa cdkiLG"
+            class="StyledImage-ey4zx9-0 inKPek"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
+      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-YaZNy hJvMaG"
+        class="StyledBox-sc-13pk1d4-0 dsHWxS"
       >
         <div
-          class="StyledBox-YaZNy kYhseN"
+          class="StyledBox-sc-13pk1d4-0 hEeeYS"
         >
           <img
-            class="StyledImage-dKPlqa cdkiLG"
+            class="StyledImage-ey4zx9-0 inKPek"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
+      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-YaZNy eUXrhB"
+        class="StyledBox-sc-13pk1d4-0 fSqCwC"
         tabindex="0"
       >
         <div
-          class="StyledBox-YaZNy iLfhNe"
+          class="StyledBox-sc-13pk1d4-0 ghVnrw"
         >
           <button
-            class="StyledButton-qbvYY cfRamP"
+            class="StyledButton-sc-323bzc-0 bpXwFO"
             disabled=""
             type="button"
           >
             <div
-              class="StyledBox-YaZNy lckMqu"
+              class="StyledBox-sc-13pk1d4-0 ktklvw"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-kFlXVF Vjeah"
+                class="StyledIcon-ofa7kd-0 bVfVoD"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1090,21 +1569,21 @@ exports[`Carousel navigate 3`] = `
           </button>
         </div>
         <div
-          class="StyledBox-YaZNy rlMvG"
+          class="StyledBox-sc-13pk1d4-0 dUAHxy"
         >
           <div
-            class="StyledBox-YaZNy hPUIyd"
+            class="StyledBox-sc-13pk1d4-0 bYqzAc"
           >
             <button
-              class="StyledButton-qbvYY jZaTeL"
+              class="StyledButton-sc-323bzc-0 eFkyjH"
               type="button"
             >
               <div
-                class="StyledBox-YaZNy cDuVuR"
+                class="StyledBox-sc-13pk1d4-0 dSfTYd"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-kFlXVF eheoxD"
+                  class="StyledIcon-ofa7kd-0 dtlWir"
                   color="#7D4CDB"
                   height="24px"
                   role="img"
@@ -1122,15 +1601,15 @@ exports[`Carousel navigate 3`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY jZaTeL"
+              class="StyledButton-sc-323bzc-0 eFkyjH"
               type="button"
             >
               <div
-                class="StyledBox-YaZNy cDuVuR"
+                class="StyledBox-sc-13pk1d4-0 dSfTYd"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-kFlXVF Vjeah"
+                  class="StyledIcon-ofa7kd-0 bVfVoD"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -1149,18 +1628,18 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <div
-          class="StyledBox-YaZNy iLfhNe"
+          class="StyledBox-sc-13pk1d4-0 ghVnrw"
         >
           <button
-            class="StyledButton-qbvYY vVYVk"
+            class="StyledButton-sc-323bzc-0 hVXlHQ"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy lckMqu"
+              class="StyledBox-sc-13pk1d4-0 ktklvw"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-kFlXVF Vjeah"
+                class="StyledIcon-ofa7kd-0 bVfVoD"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1184,65 +1663,544 @@ exports[`Carousel navigate 3`] = `
 `;
 
 exports[`Carousel play 1`] = `
+.c11 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c16 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c16 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c16 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c16 *[stroke*="#"],
+.c16 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c16 *[fill-rule],
+.c16 *[FILL-RULE],
+.c16 *[fill*="#"],
+.c16 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  -webkit-animation: gmgyXe 1s 0s forwards;
+  animation: gmgyXe 1s 0s forwards;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
+  padding: 12px;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c17 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c17:hover {
+  background: rgba(221,221,221,0.4);
+  color: #444444;
+  color: black;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c12 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c12 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c15 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c15 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c9 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c14 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c17 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
 <div
-  class="StyledGrommet-gKbdxL gbVYjJ"
+  class="c0"
 >
   <div
-    class="StyledStack-jtPAMP bgKQVO"
+    class="c1"
   >
     <div
-      class="StyledStack__StyledStackLayer-cofHih lngCWV"
+      class="c2"
     >
       <div
-        class="StyledBox-YaZNy hJvMaG"
+        class="c3"
       >
         <div
-          class="StyledBox-YaZNy hQeqTY"
+          class="c4"
         >
           <img
-            class="StyledImage-dKPlqa cdkiLG"
+            class=""
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
+      class="c5"
     >
       <div
-        class="StyledBox-YaZNy hJvMaG"
+        class="c3"
       >
         <div
-          class="StyledBox-YaZNy kYhseN"
+          class="c6"
         >
           <img
-            class="StyledImage-dKPlqa cdkiLG"
+            class=""
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
+      class="c5"
     >
       <div
-        class="StyledBox-YaZNy eUXrhB"
+        class="c7"
         tabindex="0"
       >
         <div
-          class="StyledBox-YaZNy iLfhNe"
+          class="c8"
         >
           <button
-            class="StyledButton-qbvYY cfRamP"
+            class="c9"
             disabled=""
             type="button"
           >
             <div
-              class="StyledBox-YaZNy lckMqu"
+              class="c10"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-kFlXVF Vjeah"
+                class="c11"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1261,21 +2219,21 @@ exports[`Carousel play 1`] = `
           </button>
         </div>
         <div
-          class="StyledBox-YaZNy rlMvG"
+          class="c12"
         >
           <div
-            class="StyledBox-YaZNy hPUIyd"
+            class="c13"
           >
             <button
-              class="StyledButton-qbvYY jZaTeL"
+              class="c14"
               type="button"
             >
               <div
-                class="StyledBox-YaZNy cDuVuR"
+                class="c15"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-kFlXVF eheoxD"
+                  class="c16"
                   color="#7D4CDB"
                   height="24px"
                   role="img"
@@ -1293,15 +2251,15 @@ exports[`Carousel play 1`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY jZaTeL"
+              class="c14"
               type="button"
             >
               <div
-                class="StyledBox-YaZNy cDuVuR"
+                class="c15"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-kFlXVF Vjeah"
+                  class="c11"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -1320,18 +2278,18 @@ exports[`Carousel play 1`] = `
           </div>
         </div>
         <div
-          class="StyledBox-YaZNy iLfhNe"
+          class="c8"
         >
           <button
-            class="StyledButton-qbvYY vVYVk"
+            class="c17"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy lckMqu"
+              class="c10"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-kFlXVF Vjeah"
+                class="c11"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1356,63 +2314,63 @@ exports[`Carousel play 1`] = `
 
 exports[`Carousel play 2`] = `
 <div
-  class="StyledGrommet-gKbdxL gbVYjJ"
+  class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledStack-jtPAMP bgKQVO"
+    class="StyledStack-ajspsk-0 hKZWLd"
   >
     <div
-      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
+      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-YaZNy hJvMaG"
+        class="StyledBox-sc-13pk1d4-0 dsHWxS"
       >
         <div
-          class="StyledBox-YaZNy kYhseN"
+          class="StyledBox-sc-13pk1d4-0 hEeeYS"
         >
           <img
-            class="StyledImage-dKPlqa cdkiLG"
+            class="StyledImage-ey4zx9-0 inKPek"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih lngCWV"
+      class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
     >
       <div
-        class="StyledBox-YaZNy hJvMaG"
+        class="StyledBox-sc-13pk1d4-0 dsHWxS"
       >
         <div
-          class="StyledBox-YaZNy iyAZEu"
+          class="StyledBox-sc-13pk1d4-0 lhUaGw"
         >
           <img
-            class="StyledImage-dKPlqa cdkiLG"
+            class="StyledImage-ey4zx9-0 inKPek"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-cofHih bMRXRQ"
+      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-YaZNy eUXrhB"
+        class="StyledBox-sc-13pk1d4-0 fSqCwC"
         tabindex="0"
       >
         <div
-          class="StyledBox-YaZNy iLfhNe"
+          class="StyledBox-sc-13pk1d4-0 ghVnrw"
         >
           <button
-            class="StyledButton-qbvYY vVYVk"
+            class="StyledButton-sc-323bzc-0 hVXlHQ"
             type="button"
           >
             <div
-              class="StyledBox-YaZNy lckMqu"
+              class="StyledBox-sc-13pk1d4-0 ktklvw"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-kFlXVF Vjeah"
+                class="StyledIcon-ofa7kd-0 bVfVoD"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1431,21 +2389,21 @@ exports[`Carousel play 2`] = `
           </button>
         </div>
         <div
-          class="StyledBox-YaZNy rlMvG"
+          class="StyledBox-sc-13pk1d4-0 dUAHxy"
         >
           <div
-            class="StyledBox-YaZNy hPUIyd"
+            class="StyledBox-sc-13pk1d4-0 bYqzAc"
           >
             <button
-              class="StyledButton-qbvYY jZaTeL"
+              class="StyledButton-sc-323bzc-0 eFkyjH"
               type="button"
             >
               <div
-                class="StyledBox-YaZNy cDuVuR"
+                class="StyledBox-sc-13pk1d4-0 dSfTYd"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-kFlXVF Vjeah"
+                  class="StyledIcon-ofa7kd-0 bVfVoD"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -1462,15 +2420,15 @@ exports[`Carousel play 2`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY jZaTeL"
+              class="StyledButton-sc-323bzc-0 eFkyjH"
               type="button"
             >
               <div
-                class="StyledBox-YaZNy cDuVuR"
+                class="StyledBox-sc-13pk1d4-0 dSfTYd"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-kFlXVF eheoxD"
+                  class="StyledIcon-ofa7kd-0 dtlWir"
                   color="#7D4CDB"
                   height="24px"
                   role="img"
@@ -1490,19 +2448,19 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-YaZNy iLfhNe"
+          class="StyledBox-sc-13pk1d4-0 ghVnrw"
         >
           <button
-            class="StyledButton-qbvYY cfRamP"
+            class="StyledButton-sc-323bzc-0 bpXwFO"
             disabled=""
             type="button"
           >
             <div
-              class="StyledBox-YaZNy lckMqu"
+              class="StyledBox-sc-13pk1d4-0 ktklvw"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-kFlXVF Vjeah"
+                class="StyledIcon-ofa7kd-0 bVfVoD"
                 height="24px"
                 role="img"
                 version="1.1"

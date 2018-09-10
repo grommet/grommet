@@ -11,7 +11,7 @@ class RangeInput extends Component {
     return (
       <StyledRangeInput
         {...rest}
-        innerRef={forwardRef}
+        ref={forwardRef}
         type='range'
       />
     );

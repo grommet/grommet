@@ -19,7 +19,7 @@ export const StyledVideo = styled.video`
   ::cue {
     background: ${props => props.theme.video.captions.background};
   }
-`.extend`
+
   ${props => props.theme.video && props.theme.video.extend}
 `;
 

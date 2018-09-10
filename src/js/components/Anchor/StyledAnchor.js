@@ -32,6 +32,5 @@ export const StyledAnchor = styled.a`
 
   ${props => props.disabled && disabledStyle}
   ${props => props.focus && focusStyle}
-`.extend`
   ${props => props.theme.anchor.extend}
 `;

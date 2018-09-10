@@ -78,7 +78,7 @@ exports[`RoutedAnchor renders 1`] = `
       onFocus={[Function]}
     >
       <span
-        className="c2"
+        className="-span c2"
         style={
           Object {
             "display": "inline-flex",

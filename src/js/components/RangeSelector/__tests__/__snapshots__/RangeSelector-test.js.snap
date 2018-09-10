@@ -1277,26 +1277,237 @@ exports[`RangeSelector direction 1`] = `
 `;
 
 exports[`RangeSelector handle keyboard 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
 <div
-  class="StyledGrommet-gKbdxL gbVYjJ"
+  class="c0"
 >
   <div
-    class="StyledBox-YaZNy ftRJis"
+    class="c1"
   >
     <div
-      class="StyledBox-YaZNy iLfhNe"
+      class="c2"
     />
     <div
-      class="StyledBox-YaZNy lfjrUc"
+      class="c3"
     >
       <div
         aria-label="Lower Bounds"
-        class="StyledBox-YaZNy kjTuna"
+        class="c4"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-YaZNy jKtfA"
+          class="c5"
         >
           <svg
             height="12"
@@ -1314,20 +1525,20 @@ exports[`RangeSelector handle keyboard 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy hPswrY"
+      class="c6"
       style="cursor: ew-resize;"
     />
     <div
-      class="StyledBox-YaZNy lfjrUc"
+      class="c3"
     >
       <div
         aria-label="Upper Bounds"
-        class="StyledBox-YaZNy kjTuna"
+        class="c4"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-YaZNy jKtfA"
+          class="c5"
         >
           <svg
             height="12"
@@ -1345,33 +1556,244 @@ exports[`RangeSelector handle keyboard 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy iLfhNe"
+      class="c2"
     />
   </div>
 </div>
 `;
 
 exports[`RangeSelector handle mouse 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background: rgba(125,76,219,0.4);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
 <div
-  class="StyledGrommet-gKbdxL gbVYjJ"
+  class="c0"
 >
   <div
-    class="StyledBox-YaZNy ftRJis"
+    class="c1"
   >
     <div
-      class="StyledBox-YaZNy iLfhNe"
+      class="c2"
     />
     <div
-      class="StyledBox-YaZNy lfjrUc"
+      class="c3"
     >
       <div
         aria-label="Lower Bounds"
-        class="StyledBox-YaZNy kjTuna"
+        class="c4"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-YaZNy jKtfA"
+          class="c5"
         >
           <svg
             height="12"
@@ -1389,20 +1811,20 @@ exports[`RangeSelector handle mouse 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy hPswrY"
+      class="c6"
       style="cursor: ew-resize;"
     />
     <div
-      class="StyledBox-YaZNy lfjrUc"
+      class="c3"
     >
       <div
         aria-label="Upper Bounds"
-        class="StyledBox-YaZNy kjTuna"
+        class="c4"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-YaZNy jKtfA"
+          class="c5"
         >
           <svg
             height="12"
@@ -1420,7 +1842,7 @@ exports[`RangeSelector handle mouse 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy iLfhNe"
+      class="c2"
     />
   </div>
 </div>

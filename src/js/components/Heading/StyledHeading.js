@@ -87,6 +87,5 @@ export const StyledHeading = styled.h1`
   ${props => props.textAlign && textAlignStyle}
   ${props => props.truncate && truncateStyle}
   ${props => props.colorValue && colorStyle}
-`.extend`
   ${props => props.theme.heading && props.theme.heading.extend}
 `;

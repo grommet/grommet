@@ -144,6 +144,5 @@ export const StyledButton = styled.button`
   ${props => props.hasIcon && !props.hasLabel && !props.plain && `
     padding: ${props.theme.global.edgeSize.small};
   `}
-`.extend`
   ${props => props.theme.button.extend}
 `;

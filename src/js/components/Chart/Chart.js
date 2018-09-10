@@ -132,10 +132,13 @@ class Chart extends Component {
   }
 
   onResize = () => {
-    const parent = findDOMNode(this.containerRef).parentNode;
-    if (parent) {
-      const rect = parent.getBoundingClientRect();
-      this.setState({ containerWidth: rect.width, containerHeight: rect.height });
+    const containerNode = findDOMNode(this.containerRef);
+    if (containerNode) {
+      const parentNode = containerNode.parentNode;
+      if (parentNode) {
+        const rect = parentNode.getBoundingClientRect();
+        this.setState({ containerWidth: rect.width, containerHeight: rect.height });
+      }
     }
   }
 

@@ -63,7 +63,7 @@ class Button extends Component {
     return (
       <Tag
         {...rest}
-        innerRef={forwardRef}
+        ref={forwardRef}
         aria-label={a11yTitle}
         colorValue={color}
         disabled={disabled}

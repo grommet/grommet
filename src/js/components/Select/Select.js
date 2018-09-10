@@ -66,6 +66,8 @@ class Select extends Component {
     } = this.props;
     const { open } = this.state;
 
+    delete rest.onSearch;
+
     const onSelectChange = (event, ...args) => {
       if (closeOnChange) {
         this.onClose();

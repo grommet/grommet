@@ -266,7 +266,7 @@ const animationEnding = (type) => {
 const animationObjectStyle = (animation, theme) => {
   const bounds = animationBounds(animation.type, animation.size);
   if (bounds) {
-    return `${keyframes`from { ${bounds[0]} } to { ${bounds[1]} }`}
+    return css`${keyframes`from { ${bounds[0]} } to { ${bounds[1]} }`}
     ${normalizeTiming(animation.duration,
       (theme.global.animation[animation.type] ?
         theme.global.animation[animation.type].duration : undefined) ||
@@ -279,11 +279,13 @@ const animationObjectStyle = (animation, theme) => {
 
 const animationItemStyle = (item, theme) => {
   if (typeof item === 'string') {
-    return animationObjectStyle({ type: item }, theme);
+    return css`${animationObjectStyle({ type: item }, theme)}`;
   } else if (Array.isArray(item)) {
-    return item.map(a => animationItemStyle(a, theme)).join(', ');
+    return item.reduce((style, a, index) => (
+      css`${style}${index > 0 ? ',' : ''} ${animationItemStyle(a, theme)}`
+    ), '');
   } else if (typeof item === 'object') {
-    return animationObjectStyle(item, theme);
+    return css`${animationObjectStyle(item, theme)}`;
   }
   return '';
 };
@@ -318,7 +320,7 @@ const animationInitialStyle = (item) => {
 };
 
 const animationStyle = css`
-  ${props => `
+  ${props => css`
     ${animationInitialStyle(props.animation)}
     animation: ${animationItemStyle(props.animation, props.theme)};
   `}
@@ -357,7 +359,6 @@ export const StyledBox = styled.div`
   ${props => props.elevationProp && elevationStyle}
   ${props => props.animation && animationStyle}
   ${props => props.focus && focusStyle}
-`.extend`
   ${props => props.theme.box && props.theme.box.extend}
 `;
 

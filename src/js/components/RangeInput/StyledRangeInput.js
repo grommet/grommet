@@ -112,6 +112,5 @@ export const StyledRangeInput = styled.input`
   }
 
   ${props => props.focus && focusStyle}
-`.extend`
   ${props => props.theme.rangeInput && props.theme.rangeInput.extend}
 `;

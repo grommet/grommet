@@ -41,8 +41,8 @@ export const StyledTextInput = styled.input`
     border: none;
     outline: none;
   }
-`.extend`
-${props => props.theme.textInput && props.theme.textInput.extend}
+
+  ${props => props.theme.textInput && props.theme.textInput.extend}
 `;
 
 export const StyledTextInputContainer = styled.div`

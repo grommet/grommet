@@ -80,6 +80,6 @@ export const StyledText = styled.span`
   ${props => props.truncate && truncateStyle}
   ${props => props.colorValue && colorStyle}
   ${props => props.weight && weightStyle}
-`.extend`
+
   ${props => props.theme.text && props.theme.text.extend}
 `;

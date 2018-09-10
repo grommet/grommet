@@ -33,7 +33,7 @@ exports[`Heading color renders 1`] = `
   className="c0"
 >
   <h1
-    className="c1"
+    className="-h1 c1"
   />
 </div>
 `;
@@ -118,28 +118,28 @@ exports[`Heading level renders 1`] = `
   className="c0"
 >
   <h1
-    className="c1"
+    className="-h1 c1"
   />
   <h2
-    className="c2"
+    className="-h2 c2"
   />
   <h3
-    className="c3"
+    className="-h3 c3"
   />
   <h4
-    className="c4"
+    className="-h4 c4"
   />
   <h1
-    className="c1"
+    className="-h1 c1"
   />
   <h2
-    className="c2"
+    className="-h2 c2"
   />
   <h3
-    className="c3"
+    className="-h3 c3"
   />
   <h4
-    className="c4"
+    className="-h4 c4"
   />
 </div>
 `;
@@ -340,28 +340,28 @@ exports[`Heading margin renders 1`] = `
   className="c0"
 >
   <h1
-    className="c1"
+    className="-h1 c1"
   />
   <h1
-    className="c2"
+    className="-h1 c2"
   />
   <h1
-    className="c3"
+    className="-h1 c3"
   />
   <h1
-    className="c4"
+    className="-h1 c4"
   />
   <h1
-    className="c5"
+    className="-h1 c5"
   />
   <h1
-    className="c6"
+    className="-h1 c6"
   />
   <h1
-    className="c7"
+    className="-h1 c7"
   />
   <h1
-    className="c8"
+    className="-h1 c8"
   />
 </div>
 `;
@@ -398,7 +398,7 @@ exports[`Heading renders 1`] = `
   className="c0"
 >
   <h1
-    className="c1"
+    className="-h1 c1"
   />
 </div>
 `;
@@ -563,51 +563,51 @@ exports[`Heading size renders 1`] = `
   className="c0"
 >
   <h1
-    className="c1"
+    className="-h1 c1"
     size="small"
   />
   <h1
-    className="c2"
+    className="-h1 c2"
     size="medium"
   />
   <h1
-    className="c3"
+    className="-h1 c3"
     size="large"
   />
   <h2
-    className="c4"
+    className="-h2 c4"
     size="small"
   />
   <h2
-    className="c5"
+    className="-h2 c5"
     size="medium"
   />
   <h2
-    className="c6"
+    className="-h2 c6"
     size="large"
   />
   <h3
-    className="c7"
+    className="-h3 c7"
     size="small"
   />
   <h3
-    className="c7"
+    className="-h3 c7"
     size="medium"
   />
   <h3
-    className="c8"
+    className="-h3 c8"
     size="large"
   />
   <h4
-    className="c9"
+    className="-h4 c9"
     size="small"
   />
   <h4
-    className="c9"
+    className="-h4 c9"
     size="medium"
   />
   <h4
-    className="c9"
+    className="-h4 c9"
     size="large"
   />
 </div>
@@ -680,13 +680,13 @@ exports[`Heading textAlign renders 1`] = `
   className="c0"
 >
   <h1
-    className="c1"
+    className="-h1 c1"
   />
   <h1
-    className="c2"
+    className="-h1 c2"
   />
   <h1
-    className="c3"
+    className="-h1 c3"
   />
 </div>
 `;
@@ -742,12 +742,12 @@ exports[`Heading truncate renders 1`] = `
   className="c0"
 >
   <h1
-    className="c1"
+    className="-h1 c1"
   >
     a b c d e f g h i j k l m n o p q r s t u v w x y z
   </h1>
   <h1
-    className="c2"
+    className="-h1 c2"
   >
     a b c d e f g h i j k l m n o p q r s t u v w x y z
   </h1>
@@ -793,10 +793,10 @@ exports[`responsive renders 1`] = `
   className="c0"
 >
   <h1
-    className="c1"
+    className="-h1 c1"
   />
   <h1
-    className="c2"
+    className="-h1 c2"
   />
 </div>
 `;
