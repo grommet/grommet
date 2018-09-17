@@ -614,7 +614,7 @@ exports[`Grid tag renders 1`] = `
   className="c0"
 >
   <article
-    className="c1"
+    className="-article c1"
   />
 </div>
 `;

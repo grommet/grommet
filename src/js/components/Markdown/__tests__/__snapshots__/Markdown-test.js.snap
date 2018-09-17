@@ -87,7 +87,7 @@ exports[`Markdown renders 1`] = `
 >
   <div>
     <h1
-      className="c1"
+      className="-h1 c1"
       id="h1"
     >
       H1
@@ -98,19 +98,19 @@ exports[`Markdown renders 1`] = `
       Paragraph
     </p>
     <h2
-      className="c3"
+      className="-h2 c3"
       id="h2"
     >
       H2
     </h2>
     <h3
-      className="c4"
+      className="-h3 c4"
       id="h3"
     >
       H3
     </h3>
     <h4
-      className="c5"
+      className="-h4 c5"
       id="h4"
     >
       H4

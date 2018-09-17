@@ -104,7 +104,7 @@ class Box extends Component {
     let content = (
       <StyledComponent
         aria-label={a11yTitle}
-        innerRef={forwardRef}
+        ref={forwardRef}
         directionProp={direction}
         elevationProp={elevation}
         fillProp={fill}

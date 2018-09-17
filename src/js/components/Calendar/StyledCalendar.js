@@ -12,7 +12,6 @@ const sizeStyle = (props) => {
 
 export const StyledCalendar = styled.div`
   ${props => sizeStyle(props)}
-`.extend`
   ${props => props.theme.calendar && props.theme.calendar.extend}
 `;
 
@@ -27,7 +26,7 @@ const slideStyle = (props) => {
   const { daySize, slideDuration } = theme.calendar[size];
   const amount = parseMetricToNum(daySize) * weeks;
   return css`
-    animation ${keyframes`
+    animation: ${keyframes`
       from { transform: translateY(${direction === 'down' ? `-${amount}px` : '0'}) }
       to { transform: translateY(${direction === 'up' ? `-${amount}px` : '0'}) }`}
       ${slideDuration} forwards;

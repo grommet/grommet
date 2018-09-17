@@ -50,6 +50,6 @@ export const StyledDrop = styled.div`
     display: flex;
     align-items: stretch;
   }
-`.extend`
+
   ${props => props.theme.global.drop && props.theme.global.drop.extend}
 `;

@@ -118,6 +118,6 @@ export const StyledCheckBoxKnob = styled.span`
 
 export const StyledCheckBox = styled.div`
   position: relative;
-`.extend`
+
   ${props => props.theme.checkBox && props.theme.checkBox.extend}
 `;

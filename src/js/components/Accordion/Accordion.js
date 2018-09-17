@@ -76,6 +76,8 @@ class Accordion extends Component {
     } = this.props;
     const { activeIndexes } = this.state;
 
+    delete rest.onActive;
+
     return (
       <Box role='tablist' {...rest} overflow='auto'>
         {Children.toArray(children).map((panel, index) => (

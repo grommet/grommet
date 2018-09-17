@@ -13,6 +13,5 @@ const fitStyle = css`
 
 export const StyledImage = styled.img`
   ${props => props.fit && fitStyle}
-`.extend`
   ${props => props.theme.image && props.theme.image.extend}
 `;

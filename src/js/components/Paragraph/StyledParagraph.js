@@ -48,6 +48,6 @@ export const StyledParagraph = styled.p`
   ${props => props.margin && marginStyle(props)}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.color && colorStyle}
-`.extend`
+
   ${props => props.theme.paragraph && props.theme.paragraph.extend}
 `;

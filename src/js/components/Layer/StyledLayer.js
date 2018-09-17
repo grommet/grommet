@@ -42,7 +42,7 @@ export const StyledLayer = styled.div`
     }
     return desktopLayerStyle;
   }}
-`.extend`
+
   ${props => props.theme.layer && props.theme.layer.extend}
 `;
 
@@ -169,21 +169,21 @@ const KEYFRAMES = {
 // as well so they must take into account the non-animated positioning.
 const POSITIONS = {
   center: {
-    vertical: (margin, theme) => `
+    vertical: (margin, theme) => css`
       top: ${MARGINS.top(margin, theme)};
       bottom: ${MARGINS.bottom(margin, theme)};
       left: 50%;
       transform: translateX(-50%);
       animation: ${KEYFRAMES.center.vertical} 0.2s ease-in-out forwards;
     `,
-    horizontal: (margin, theme) => `
+    horizontal: (margin, theme) => css`
       left: ${MARGINS.left(margin, theme)};
       right: ${MARGINS.right(margin, theme)};
       top: 50%;
       transform: translateY(-50%);
       animation: ${KEYFRAMES.center.horizontal} 0.2s ease-in-out forwards;
     `,
-    true: (margin, theme) => `
+    true: (margin, theme) => css`
       top: ${MARGINS.top(margin, theme)};
       bottom: ${MARGINS.bottom(margin, theme)};
       left: ${MARGINS.left(margin, theme)};
@@ -200,21 +200,21 @@ const POSITIONS = {
   },
 
   top: {
-    vertical: (margin, theme) => `
+    vertical: (margin, theme) => css`
       top: ${MARGINS.top(margin, theme)};
       bottom: ${MARGINS.bottom(margin, theme)};
       left: 50%;
       transform: translate(-50%, 0%);
       animation: ${KEYFRAMES.top.vertical} 0.2s ease-in-out forwards;
     `,
-    horizontal: (margin, theme) => `
+    horizontal: (margin, theme) => css`
       left: ${MARGINS.left(margin, theme)};
       right: ${MARGINS.right(margin, theme)};
       top: ${MARGINS.top(margin, theme)};
       transform: translateY(0);
       animation: ${KEYFRAMES.top.horizontal} 0.2s ease-in-out forwards;
     `,
-    true: (margin, theme) => `
+    true: (margin, theme) => css`
       top: ${MARGINS.top(margin, theme)};
       bottom: ${MARGINS.bottom(margin, theme)};
       left: ${MARGINS.left(margin, theme)};
@@ -222,7 +222,7 @@ const POSITIONS = {
       transform: translateY(0);
       animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
     `,
-    false: (margin, theme) => `
+    false: (margin, theme) => css`
       top: ${MARGINS.top(margin, theme)};
       left: 50%;
       transform: translate(-50%, 0);
@@ -231,21 +231,21 @@ const POSITIONS = {
   },
 
   bottom: {
-    vertical: (margin, theme) => `
+    vertical: (margin, theme) => css`
       top: ${MARGINS.top(margin, theme)};
       bottom: ${MARGINS.bottom(margin, theme)};
       left: 50%;
       transform: translate(-50%, 0);
       animation: ${KEYFRAMES.bottom.vertical} 0.2s ease-in-out forwards;
     `,
-    horizontal: (margin, theme) => `
+    horizontal: (margin, theme) => css`
       left: ${MARGINS.left(margin, theme)};
       right: ${MARGINS.right(margin, theme)};
       bottom: ${MARGINS.bottom(margin, theme)};
       transform: translateY(0);
       animation: ${KEYFRAMES.bottom.horizontal} 0.2s ease-in-out forwards;
     `,
-    true: (margin, theme) => `
+    true: (margin, theme) => css`
       top: ${MARGINS.top(margin, theme)};
       bottom: ${MARGINS.bottom(margin, theme)};
       left: ${MARGINS.left(margin, theme)};
@@ -253,7 +253,7 @@ const POSITIONS = {
       transform: translateY(0);
       animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
     `,
-    false: (margin, theme) => `
+    false: (margin, theme) => css`
       bottom: ${MARGINS.bottom(margin, theme)};
       left: 50%;
       transform: translate(-50%, 0);
@@ -262,21 +262,21 @@ const POSITIONS = {
   },
 
   left: {
-    vertical: (margin, theme) => `
+    vertical: (margin, theme) => css`
       top: ${MARGINS.top(margin, theme)};
       bottom: ${MARGINS.bottom(margin, theme)};
       left: ${MARGINS.left(margin, theme)};
       transform: translateX(0);
       animation: ${KEYFRAMES.left.vertical} 0.2s ease-in-out forwards;
     `,
-    horizontal: (margin, theme) => `
+    horizontal: (margin, theme) => css`
       left: ${MARGINS.left(margin, theme)};
       right: ${MARGINS.right(margin, theme)};
       top: 50%;
       transform: translate(0, -50%);
       animation: ${KEYFRAMES.left.horizontal} 0.2s ease-in-out forwards;
     `,
-    true: (margin, theme) => `
+    true: (margin, theme) => css`
       top: ${MARGINS.top(margin, theme)};
       bottom: ${MARGINS.bottom(margin, theme)};
       left: ${MARGINS.left(margin, theme)};
@@ -284,7 +284,7 @@ const POSITIONS = {
       transform: translateX(0);
       animation: ${KEYFRAMES.left.true} 0.2s ease-in-out forwards;
     `,
-    false: (margin, theme) => `
+    false: (margin, theme) => css`
       left: ${MARGINS.left(margin, theme)};
       top: 50%;
       transform: translate(0, -50%);
@@ -293,21 +293,21 @@ const POSITIONS = {
   },
 
   right: {
-    vertical: (margin, theme) => `
+    vertical: (margin, theme) => css`
       top: ${MARGINS.top(margin, theme)};
       bottom: ${MARGINS.bottom(margin, theme)};
       right: ${MARGINS.right(margin, theme)};
       transform: translateX(0);
       animation: ${KEYFRAMES.right.vertical} 0.2s ease-in-out forwards;
     `,
-    horizontal: (margin, theme) => `
+    horizontal: (margin, theme) => css`
       left: ${MARGINS.left(margin, theme)};
       right: ${MARGINS.right(margin, theme)};
       top: 50%;
       transform: translate(0, -50%);
       animation: ${KEYFRAMES.right.horizontal} 0.2s ease-in-out forwards;
     `,
-    true: (margin, theme) => `
+    true: (margin, theme) => css`
       top: ${MARGINS.top(margin, theme)};
       bottom: ${MARGINS.bottom(margin, theme)};
       left: ${MARGINS.left(margin, theme)};
@@ -315,7 +315,7 @@ const POSITIONS = {
       transform: translateX(0);
       animation: ${KEYFRAMES.right.true} 0.2s ease-in-out forwards;
     `,
-    false: (margin, theme) => `
+    false: (margin, theme) => css`
       right: ${MARGINS.right(margin, theme)};
       top: 50%;
       transform: translate(0, -50%);

@@ -435,7 +435,7 @@ exports[`Calendar date renders 1`] = `
           className="c4"
         >
           <h3
-            className="c5"
+            className="-h3 c5"
             size="medium"
           >
             January 2018
@@ -1842,7 +1842,7 @@ exports[`Calendar dates renders 1`] = `
           className="c4"
         >
           <h3
-            className="c5"
+            className="-h3 c5"
             size="medium"
           >
             January 2018
@@ -3249,7 +3249,7 @@ exports[`Calendar disabled renders 1`] = `
           className="c4"
         >
           <h3
-            className="c5"
+            className="-h3 c5"
             size="medium"
           >
             January 2018
@@ -4656,7 +4656,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
           className="c4"
         >
           <h3
-            className="c5"
+            className="-h3 c5"
             size="medium"
           >
             January 2018
@@ -5640,7 +5640,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
           className="c4"
         >
           <h3
-            className="c5"
+            className="-h3 c5"
             size="medium"
           >
             January 2018
@@ -7047,7 +7047,7 @@ exports[`Calendar renders 1`] = `
           className="c4"
         >
           <h3
-            className="c5"
+            className="-h3 c5"
             size="medium"
           >
             January 2018
@@ -8645,7 +8645,7 @@ exports[`Calendar size renders 1`] = `
           className="c4"
         >
           <h3
-            className="c5"
+            className="-h3 c5"
             size="small"
           >
             January 2018
@@ -9627,7 +9627,7 @@ exports[`Calendar size renders 1`] = `
           className="c4"
         >
           <h3
-            className="c5"
+            className="-h3 c5"
             size="medium"
           >
             January 2018
@@ -10611,7 +10611,7 @@ exports[`Calendar size renders 1`] = `
           className="c4"
         >
           <h3
-            className="c25"
+            className="-h3 c25"
             size="large"
           >
             January 2018

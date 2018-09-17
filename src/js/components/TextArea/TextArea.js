@@ -9,7 +9,7 @@ class TextArea extends Component {
   render() {
     const { forwardRef, ...rest } = this.props;
     return (
-      <StyledTextArea innerRef={forwardRef} {...rest} />
+      <StyledTextArea ref={forwardRef} {...rest} />
     );
   }
 }

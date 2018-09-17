@@ -46,7 +46,7 @@ class Anchor extends Component {
     return (
       <StyledAnchor
         {...rest}
-        innerRef={forwardRef}
+        ref={forwardRef}
         aria-label={a11yTitle}
         disabled={disabled}
         hasIcon={!!icon}

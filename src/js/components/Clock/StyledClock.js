@@ -24,7 +24,7 @@ export const StyledSecond = styled.line`
 export const StyledAnalog = styled.svg`
   width: ${props => props.theme.clock.analog.size[props.size]};
   height: ${props => props.theme.clock.analog.size[props.size]};
-`.extend`
+
   ${props => props.theme.clock.analog && props.theme.clock.analog.extend}
 `;
 

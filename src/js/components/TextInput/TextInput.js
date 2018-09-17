@@ -284,6 +284,8 @@ class TextInput extends Component {
     } = this.props;
     delete rest.onInput; // se we can manage in onInputChange()
     delete rest.forwardRef;
+    delete rest.onSuggestionsOpen;
+    delete rest.onSuggestionsClose;
     const { inputRef, showDrop } = this.state;
     // needed so that styled components does not invoke
     // onSelect when text input is clicked
@@ -320,7 +322,7 @@ class TextInput extends Component {
         >
           <StyledTextInput
             id={id}
-            innerRef={inputRef}
+            ref={inputRef}
             autoComplete='off'
             plain={plain}
             placeholder={typeof placeholder === 'string' ? placeholder : undefined}

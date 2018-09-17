@@ -70,6 +70,9 @@ class DropButton extends Component {
     } = this.props;
     const { buttonRef, show } = this.state;
 
+    delete rest.onClose;
+    delete rest.onOpen;
+
     let drop;
     if (show && buttonRef.current) {
       drop = (
