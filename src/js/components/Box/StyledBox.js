@@ -266,7 +266,8 @@ const animationEnding = (type) => {
 const animationObjectStyle = (animation, theme) => {
   const bounds = animationBounds(animation.type, animation.size);
   if (bounds) {
-    return css`${keyframes`from { ${bounds[0]} } to { ${bounds[1]} }`}
+    const animationTransition = css`from { ${bounds[0]} } to { ${bounds[1]} }`;
+    return css`${keyframes`${animationTransition}`}
     ${normalizeTiming(animation.duration,
       (theme.global.animation[animation.type] ?
         theme.global.animation[animation.type].duration : undefined) ||

@@ -89,7 +89,7 @@
     "regenerator-runtime": "^0.11.1",
     "require-reload": "^0.2.2",
     "simple-git": "^1.95.0",
-    "styled-components": "4.0.0-beta.1",
+    "styled-components": "^4.0.0-beta.5",
     "tarball-extract": "^0.0.6",
     "webpack": "^4.10.2",
     "webpack-cli": "^3.0.7"
