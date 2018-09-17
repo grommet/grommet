@@ -25,10 +25,15 @@ const slideStyle = (props) => {
   const { slide: { direction, weeks }, size, theme } = props;
   const { daySize, slideDuration } = theme.calendar[size];
   const amount = parseMetricToNum(daySize) * weeks;
+
+  const translateYFrom = direction === 'down' ? `-${amount}px` : '0';
+  const translateYTo = direction === 'up' ? `-${amount}px` : '0';
+  const slideTransition = css`
+    0% { transform: translateY(${translateYFrom}) }
+    100% { transform: translateY(${translateYTo}) }
+  `;
   return css`
-    animation: ${keyframes`
-      from { transform: translateY(${direction === 'down' ? `-${amount}px` : '0'}) }
-      to { transform: translateY(${direction === 'up' ? `-${amount}px` : '0'}) }`}
+    animation: ${keyframes`${slideTransition}`}
       ${slideDuration} forwards;
   `;
 };

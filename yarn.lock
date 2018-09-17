@@ -8215,9 +8215,9 @@ style-loader@^0.23.0:
     loader-utils "^1.1.0"
     schema-utils "^0.4.5"
 
-styled-components@4.0.0-beta.1:
-  version "4.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-4.0.0-beta.1.tgz#a7f2fa4ef66beae031763465f8cf5c8abb801385"
+styled-components@^4.0.0-beta.5:
+  version "4.0.0-beta.4-hmr"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-4.0.0-beta.4-hmr.tgz#b9580f8a4496112774ed1e0e88dddd66219a4ee0"
   dependencies:
     "@emotion/is-prop-valid" "^0.6.5"
     css-to-react-native "^2.0.3"
