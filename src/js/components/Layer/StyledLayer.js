@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { backgroundStyle, baseStyle, edgeStyle, lapAndUp, palm } from '../../utils';
+import { backgroundStyle, baseStyle, lapAndUp, palm } from '../../utils';
 
 const hiddenPositionStyle = css`
   left: -100%;
@@ -29,10 +29,11 @@ export const StyledLayer = styled.div`
 
   ${props => props.responsive && palm(`
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
-    `)}
+  `)}
 
   ${(props) => {
     if (props.position === 'hidden') {
@@ -190,12 +191,11 @@ const POSITIONS = {
       right: ${MARGINS.right(margin, theme)};
       animation: ${KEYFRAMES.center.true} 0.2s ease-in-out forwards;
     `,
-    false: (margin, theme) => css`
+    false: () => css`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       animation: ${KEYFRAMES.center.false} 0.2s ease-in-out forwards;
-      ${edgeStyle('margin', margin, false, theme)}
     `,
   },
 
@@ -326,8 +326,8 @@ const POSITIONS = {
 
 const desktopContainerStyle = css`
   position: ${props => (props.modal ? 'absolute' : 'fixed')};
-  max-height: 100%;
-  max-width: 100%;
+  max-height: ${props => `calc(100% - ${MARGINS.top(props.margin, props.theme)} - ${MARGINS.bottom(props.margin, props.theme)})`};
+  max-width: ${props => `calc(100% - ${MARGINS.left(props.margin, props.theme)} - ${MARGINS.right(props.margin, props.theme)})`};
   border-radius: ${props => (props.plain ? 'none' : props.theme.layer.border.radius)};
   ${props => (props.position !== 'hidden' &&
     POSITIONS[props.position][props.full](props.margin, props.theme)) || ''}

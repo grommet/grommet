@@ -35,8 +35,8 @@ exports[`Layer dark context 1`] = `
 @media only screen and (min-width:700px) {
   .c0 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 0 - 0);
+    max-width: calc(100% - 0 - 0);
     border-radius: 4px;
     top: 50%;
     left: 50%;
@@ -45,7 +45,6 @@ exports[`Layer dark context 1`] = `
     transform: translate(-50%,-50%);
     -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
     animation: bBMZdm 0.2s ease-in-out forwards;
-    margin: 0;
   }
 }
 
@@ -125,6 +124,7 @@ exports[`Layer full false 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -159,8 +159,8 @@ exports[`Layer full false 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 0 - 0);
+    max-width: calc(100% - 0 - 0);
     border-radius: 4px;
     top: 50%;
     left: 50%;
@@ -169,7 +169,6 @@ exports[`Layer full false 1`] = `
     transform: translate(-50%,-50%);
     -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
     animation: bBMZdm 0.2s ease-in-out forwards;
-    margin: 0;
   }
 }
 
@@ -246,6 +245,7 @@ exports[`Layer full horizontal 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -280,8 +280,8 @@ exports[`Layer full horizontal 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 0 - 0);
+    max-width: calc(100% - 0 - 0);
     border-radius: 4px;
     left: 0;
     right: 0;
@@ -367,6 +367,7 @@ exports[`Layer full true 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -401,8 +402,8 @@ exports[`Layer full true 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 0 - 0);
+    max-width: calc(100% - 0 - 0);
     border-radius: 4px;
     top: 0;
     bottom: 0;
@@ -486,6 +487,7 @@ exports[`Layer full vertical 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -520,8 +522,8 @@ exports[`Layer full vertical 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 0 - 0);
+    max-width: calc(100% - 0 - 0);
     border-radius: 4px;
     top: 0;
     bottom: 0;
@@ -611,6 +613,7 @@ exports[`Layer hidden 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -633,8 +636,8 @@ exports[`Layer hidden 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 0 - 0);
+    max-width: calc(100% - 0 - 0);
     border-radius: 4px;
   }
 }
@@ -660,7 +663,7 @@ exports[`Layer hidden 2`] = `""`;
 
 exports[`Layer hidden 3`] = `
 <div
-  class="StyledLayer-rmtehz-0 hrOtLc"
+  class="StyledLayer-rmtehz-0 kodSwP"
   id="hidden-test"
   tabindex="-1"
 >
@@ -668,7 +671,7 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledOverlay-rmtehz-1 cHusQe"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 bdLSoB"
+    class="StyledLayer__StyledContainer-rmtehz-2 kXvgUX"
     id="hidden-test"
   >
     This is a layer
@@ -763,6 +766,7 @@ exports[`Layer margin large 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -797,8 +801,8 @@ exports[`Layer margin large 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 48px - 48px);
+    max-width: calc(100% - 48px - 48px);
     border-radius: 4px;
     top: 50%;
     left: 50%;
@@ -807,7 +811,6 @@ exports[`Layer margin large 1`] = `
     transform: translate(-50%,-50%);
     -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
     animation: bBMZdm 0.2s ease-in-out forwards;
-    margin: 48px;
   }
 }
 
@@ -884,6 +887,7 @@ exports[`Layer margin medium 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -918,8 +922,8 @@ exports[`Layer margin medium 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 24px - 24px);
+    max-width: calc(100% - 24px - 24px);
     border-radius: 4px;
     top: 50%;
     left: 50%;
@@ -928,7 +932,6 @@ exports[`Layer margin medium 1`] = `
     transform: translate(-50%,-50%);
     -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
     animation: bBMZdm 0.2s ease-in-out forwards;
-    margin: 24px;
   }
 }
 
@@ -1005,6 +1008,7 @@ exports[`Layer margin none 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -1039,8 +1043,8 @@ exports[`Layer margin none 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 0 - 0);
+    max-width: calc(100% - 0 - 0);
     border-radius: 4px;
     top: 50%;
     left: 50%;
@@ -1049,7 +1053,6 @@ exports[`Layer margin none 1`] = `
     transform: translate(-50%,-50%);
     -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
     animation: bBMZdm 0.2s ease-in-out forwards;
-    margin: 0;
   }
 }
 
@@ -1126,6 +1129,7 @@ exports[`Layer margin small 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -1160,8 +1164,8 @@ exports[`Layer margin small 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 12px - 12px);
+    max-width: calc(100% - 12px - 12px);
     border-radius: 4px;
     top: 50%;
     left: 50%;
@@ -1170,7 +1174,6 @@ exports[`Layer margin small 1`] = `
     transform: translate(-50%,-50%);
     -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
     animation: bBMZdm 0.2s ease-in-out forwards;
-    margin: 12px;
   }
 }
 
@@ -1247,6 +1250,7 @@ exports[`Layer margin xsmall 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -1281,8 +1285,8 @@ exports[`Layer margin xsmall 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 6px - 6px);
+    max-width: calc(100% - 6px - 6px);
     border-radius: 4px;
     top: 50%;
     left: 50%;
@@ -1291,7 +1295,6 @@ exports[`Layer margin xsmall 1`] = `
     transform: translate(-50%,-50%);
     -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
     animation: bBMZdm 0.2s ease-in-out forwards;
-    margin: 6px;
   }
 }
 
@@ -1349,8 +1352,8 @@ exports[`Layer non-modal 1`] = `
 @media only screen and (min-width:700px) {
   .c0 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 0 - 0);
+    max-width: calc(100% - 0 - 0);
     border-radius: 4px;
     top: 50%;
     left: 50%;
@@ -1359,7 +1362,6 @@ exports[`Layer non-modal 1`] = `
     transform: translate(-50%,-50%);
     -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
     animation: bBMZdm 0.2s ease-in-out forwards;
-    margin: 0;
   }
 }
 
@@ -1427,6 +1429,7 @@ exports[`Layer plain 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -1461,8 +1464,8 @@ exports[`Layer plain 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 0 - 0);
+    max-width: calc(100% - 0 - 0);
     border-radius: none;
     top: 50%;
     left: 50%;
@@ -1471,7 +1474,6 @@ exports[`Layer plain 1`] = `
     transform: translate(-50%,-50%);
     -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
     animation: bBMZdm 0.2s ease-in-out forwards;
-    margin: 0;
   }
 }
 
@@ -1548,6 +1550,7 @@ exports[`Layer position bottom 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -1582,8 +1585,8 @@ exports[`Layer position bottom 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 0 - 0);
+    max-width: calc(100% - 0 - 0);
     border-radius: 4px;
     bottom: 0;
     left: 50%;
@@ -1668,6 +1671,7 @@ exports[`Layer position center 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -1702,8 +1706,8 @@ exports[`Layer position center 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 0 - 0);
+    max-width: calc(100% - 0 - 0);
     border-radius: 4px;
     top: 50%;
     left: 50%;
@@ -1712,7 +1716,6 @@ exports[`Layer position center 1`] = `
     transform: translate(-50%,-50%);
     -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
     animation: bBMZdm 0.2s ease-in-out forwards;
-    margin: 0;
   }
 }
 
@@ -1789,6 +1792,7 @@ exports[`Layer position left 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -1823,8 +1827,8 @@ exports[`Layer position left 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 0 - 0);
+    max-width: calc(100% - 0 - 0);
     border-radius: 4px;
     left: 0;
     top: 50%;
@@ -1909,6 +1913,7 @@ exports[`Layer position right 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -1943,8 +1948,8 @@ exports[`Layer position right 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 0 - 0);
+    max-width: calc(100% - 0 - 0);
     border-radius: 4px;
     right: 0;
     top: 50%;
@@ -2029,6 +2034,7 @@ exports[`Layer position top 1`] = `
 @media only screen and (max-width:699px) {
   .c0 {
     position: absolute;
+    top: 0;
     height: 100%;
     width: 100%;
     overflow: auto;
@@ -2063,8 +2069,8 @@ exports[`Layer position top 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: 100%;
-    max-width: 100%;
+    max-height: calc(100% - 0 - 0);
+    max-width: calc(100% - 0 - 0);
     border-radius: 4px;
     top: 0;
     left: 50%;
