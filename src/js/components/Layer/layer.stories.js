@@ -228,7 +228,29 @@ class NotificationLayer extends Component {
   }
 }
 
+class MarginLayer extends Component {
+  render() {
+    return (
+      <Grommet theme={grommet}>
+        <Layer
+          margin='large'
+        >
+          <Box overflow='auto'>
+            <Box pad='xlarge'>text</Box>
+            <Box pad='xlarge'>text</Box>
+            <Box pad='xlarge'>text</Box>
+            <Box pad='xlarge'>text</Box>
+            <Box pad='xlarge'>text</Box>
+            <Box pad='xlarge'>text</Box>
+          </Box>
+        </Layer>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Layer', module)
   .add('Center', () => <CenterLayer />)
   .add('Form', () => <FormLayer />)
-  .add('Notification', () => <NotificationLayer />);
+  .add('Notification', () => <NotificationLayer />)
+  .add('Margin', () => <MarginLayer />);
