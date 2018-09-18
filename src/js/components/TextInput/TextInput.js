@@ -85,13 +85,21 @@ class TextInput extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { onSuggestionsOpen, onSuggestionsClose } = this.props;
+    const { onSuggestionsOpen, onSuggestionsClose, suggestions } = this.props;
     if (this.state.showDrop !== prevState.showDrop) {
       if (this.state.showDrop && onSuggestionsOpen) {
         onSuggestionsOpen();
       } else if (onSuggestionsClose) {
         onSuggestionsClose();
       }
+    }
+
+    if (
+      !this.state.showDrop &&
+      suggestions &&
+      (!prevProps.suggestions || !prevProps.suggestions.length)
+    ) {
+      this.resetSuggestions();
     }
   }
 

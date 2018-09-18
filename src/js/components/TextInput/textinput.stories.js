@@ -12,7 +12,7 @@ class SimpleTextInput extends Component {
 
   ref = React.createRef()
 
-  onChange = event => this.setState({ value: event.target.value })
+  onChange = event => setTimeout(() => this.setState({ value: event.target.value }), 500)
 
   render() {
     const { value } = this.state;
@@ -109,11 +109,20 @@ const folks = [
 ];
 
 class CustomSuggestionsTextInput extends Component {
-  state = { value: '', suggestionOpen: false }
+  state = { value: '', suggestionOpen: false, suggestedFolks: [] }
 
   boxRef= createRef()
 
-  onChange = event => this.setState({ value: event.target.value })
+  onChange = event => this.setState({ value: event.target.value },
+    () => {
+      if (!this.state.value.trim()) {
+        this.setState({ suggestedFolks: [] });
+      } else {
+        // simulate an async call to the backend
+        setTimeout(() => this.setState({ suggestedFolks: folks }), 300);
+      }
+    }
+  )
 
   onSelect = event => this.setState({ value: event.suggestion.value })
 
@@ -122,10 +131,10 @@ class CustomSuggestionsTextInput extends Component {
   }
 
   renderSuggestions = () => {
-    const { value } = this.state;
+    const { value, suggestedFolks } = this.state;
 
     return (
-      folks
+      suggestedFolks
         .filter(
           ({ name }) => name.toLowerCase().indexOf(value.toLowerCase()) >= 0
         )
