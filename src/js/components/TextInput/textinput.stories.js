@@ -12,7 +12,7 @@ class SimpleTextInput extends Component {
 
   ref = React.createRef()
 
-  onChange = event => () => this.setState({ value: event.target.value })
+  onChange = event => this.setState({ value: event.target.value })
 
   render() {
     const { value } = this.state;
