@@ -82,7 +82,12 @@ class DropButton extends Component {
           align={dropAlign}
           target={dropTarget || buttonRef.current}
           onClickOutside={this.onDropClose}
-          onEsc={this.onDropClose}
+          onEsc={(event) => {
+            // prevents layer to close on esc
+            event.stopPropagation();
+            event.nativeEvent.stopImmediatePropagation();
+            this.onDropClose();
+          }}
         >
           {dropContent}
         </Drop>

@@ -16,6 +16,7 @@ import {
   Grommet,
   Heading,
   Layer,
+  Select,
   Text,
   TextInput,
 } from '../';
@@ -111,14 +112,17 @@ class CenterLayer extends Component {
 }
 
 class FormLayer extends Component {
-  state = {}
+  state = {
+    fourthOption: 'one',
+    open: false,
+  }
 
   onOpen = () => this.setState({ open: true })
 
   onClose = () => this.setState({ open: undefined })
 
   render() {
-    const { open } = this.state;
+    const { open, fourthOption } = this.state;
     return (
       <Grommet theme={grommet}>
         <Box align='start'>
@@ -158,7 +162,13 @@ class FormLayer extends Component {
                     <TextInput />
                   </FormField>
                   <FormField label='Fourth'>
-                    <TextInput />
+                    <Select
+                      options={['one', 'two', 'three']}
+                      value={fourthOption}
+                      onChange={({ option }) => this.setState(
+                        { fourthOption: option }
+                      )}
+                    />
                   </FormField>
                 </Box>
                 <Box flex={false} tag='footer' align='start'>
