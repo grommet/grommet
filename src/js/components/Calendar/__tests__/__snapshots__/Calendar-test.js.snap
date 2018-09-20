@@ -46,8 +46,8 @@ exports[`Calendar date renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c3 {
@@ -71,8 +71,8 @@ exports[`Calendar date renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c4 {
@@ -88,7 +88,7 @@ exports[`Calendar date renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -110,8 +110,8 @@ exports[`Calendar date renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c8 {
@@ -135,7 +135,7 @@ exports[`Calendar date renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
+  margin: 0px;
   padding: 12px;
 }
 
@@ -315,37 +315,37 @@ exports[`Calendar date renders 1`] = `
   line-height: 28px;
   max-width: 528px;
   font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -358,19 +358,19 @@ exports[`Calendar date renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c6 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c8 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -412,8 +412,8 @@ exports[`Calendar date renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c5 {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 
@@ -1453,8 +1453,8 @@ exports[`Calendar dates renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c3 {
@@ -1478,8 +1478,8 @@ exports[`Calendar dates renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c4 {
@@ -1495,7 +1495,7 @@ exports[`Calendar dates renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -1517,8 +1517,8 @@ exports[`Calendar dates renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c8 {
@@ -1542,7 +1542,7 @@ exports[`Calendar dates renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
+  margin: 0px;
   padding: 12px;
 }
 
@@ -1722,37 +1722,37 @@ exports[`Calendar dates renders 1`] = `
   line-height: 28px;
   max-width: 528px;
   font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -1765,19 +1765,19 @@ exports[`Calendar dates renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c6 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c8 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -1819,8 +1819,8 @@ exports[`Calendar dates renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c5 {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 
@@ -2860,8 +2860,8 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c3 {
@@ -2885,8 +2885,8 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c4 {
@@ -2902,7 +2902,7 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -2924,8 +2924,8 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c8 {
@@ -2949,7 +2949,7 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
+  margin: 0px;
   padding: 12px;
 }
 
@@ -3129,37 +3129,37 @@ exports[`Calendar disabled renders 1`] = `
   line-height: 28px;
   max-width: 528px;
   font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -3172,19 +3172,19 @@ exports[`Calendar disabled renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c6 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c8 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -3226,8 +3226,8 @@ exports[`Calendar disabled renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c5 {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 
@@ -4267,8 +4267,8 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c3 {
@@ -4292,8 +4292,8 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c4 {
@@ -4309,7 +4309,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -4331,8 +4331,8 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c8 {
@@ -4356,7 +4356,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
+  margin: 0px;
   padding: 12px;
 }
 
@@ -4536,37 +4536,37 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   line-height: 28px;
   max-width: 528px;
   font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -4579,19 +4579,19 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c6 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c8 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -4633,8 +4633,8 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c5 {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 
@@ -6658,8 +6658,8 @@ exports[`Calendar renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c3 {
@@ -6683,8 +6683,8 @@ exports[`Calendar renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c4 {
@@ -6700,7 +6700,7 @@ exports[`Calendar renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -6722,8 +6722,8 @@ exports[`Calendar renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c8 {
@@ -6747,7 +6747,7 @@ exports[`Calendar renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
+  margin: 0px;
   padding: 12px;
 }
 
@@ -6927,37 +6927,37 @@ exports[`Calendar renders 1`] = `
   line-height: 28px;
   max-width: 528px;
   font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -6970,19 +6970,19 @@ exports[`Calendar renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c6 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c8 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -7024,8 +7024,8 @@ exports[`Calendar renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c5 {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 
@@ -8099,8 +8099,8 @@ exports[`Calendar size renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c3 {
@@ -8124,8 +8124,8 @@ exports[`Calendar size renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c4 {
@@ -8141,7 +8141,7 @@ exports[`Calendar size renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -8163,8 +8163,8 @@ exports[`Calendar size renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c8 {
@@ -8188,7 +8188,7 @@ exports[`Calendar size renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
+  margin: 0px;
   padding: 12px;
 }
 
@@ -8500,8 +8500,8 @@ exports[`Calendar size renders 1`] = `
   line-height: 28px;
   max-width: 528px;
   font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .c25 {
@@ -8509,37 +8509,37 @@ exports[`Calendar size renders 1`] = `
   line-height: 40px;
   max-width: 816px;
   font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -8552,19 +8552,19 @@ exports[`Calendar size renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c6 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c8 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -8606,8 +8606,8 @@ exports[`Calendar size renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c5 {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 
@@ -8622,8 +8622,8 @@ exports[`Calendar size renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c25 {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 

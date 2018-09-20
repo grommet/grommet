@@ -14,8 +14,8 @@ exports[`Diagram anchor 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c4 {
@@ -31,7 +31,7 @@ exports[`Diagram anchor 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding: 24px;
 }
 
@@ -71,19 +71,19 @@ exports[`Diagram anchor 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -169,8 +169,8 @@ exports[`Diagram basic 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c4 {
@@ -186,7 +186,7 @@ exports[`Diagram basic 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding: 24px;
 }
 
@@ -226,19 +226,19 @@ exports[`Diagram basic 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -308,8 +308,8 @@ exports[`Diagram color 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c4 {
@@ -325,7 +325,7 @@ exports[`Diagram color 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding: 24px;
 }
 
@@ -365,19 +365,19 @@ exports[`Diagram color 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -447,8 +447,8 @@ exports[`Diagram offset 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c4 {
@@ -464,7 +464,7 @@ exports[`Diagram offset 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding: 24px;
 }
 
@@ -504,19 +504,19 @@ exports[`Diagram offset 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -602,8 +602,8 @@ exports[`Diagram thickness 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c4 {
@@ -619,7 +619,7 @@ exports[`Diagram thickness 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding: 24px;
 }
 
@@ -659,19 +659,19 @@ exports[`Diagram thickness 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -781,8 +781,8 @@ exports[`Diagram type 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c4 {
@@ -798,7 +798,7 @@ exports[`Diagram type 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding: 24px;
 }
 
@@ -838,19 +838,19 @@ exports[`Diagram type 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 

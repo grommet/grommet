@@ -18,8 +18,8 @@ exports[`Tabs Tab 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c3 {
@@ -103,13 +103,13 @@ exports[`Tabs Tab 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c1 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -242,8 +242,8 @@ exports[`Tabs change active index 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c5 {
@@ -327,13 +327,13 @@ exports[`Tabs change active index 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c1 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -444,7 +444,7 @@ exports[`Tabs change active index 2`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bYqzAc"
+      class="StyledBox-sc-13pk1d4-0 kijwgq"
     >
       <button
         aria-expanded="false"
@@ -509,8 +509,8 @@ exports[`Tabs change to second tab 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c3 {
@@ -594,13 +594,13 @@ exports[`Tabs change to second tab 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c1 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -711,7 +711,7 @@ exports[`Tabs change to second tab 2`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bYqzAc"
+      class="StyledBox-sc-13pk1d4-0 kijwgq"
     >
       <button
         aria-expanded="false"
@@ -776,8 +776,8 @@ exports[`Tabs complex title 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c3 {
@@ -849,13 +849,13 @@ exports[`Tabs complex title 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c1 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -984,8 +984,8 @@ exports[`Tabs no Tab 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c0 {
@@ -1001,13 +1001,13 @@ exports[`Tabs no Tab 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c1 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -1046,8 +1046,8 @@ exports[`Tabs set on hover 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c3 {
@@ -1131,13 +1131,13 @@ exports[`Tabs set on hover 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c1 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -1248,7 +1248,7 @@ exports[`Tabs set on hover 2`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bYqzAc"
+      class="StyledBox-sc-13pk1d4-0 kijwgq"
     >
       <button
         aria-expanded="true"
@@ -1303,7 +1303,7 @@ exports[`Tabs set on hover 3`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bYqzAc"
+      class="StyledBox-sc-13pk1d4-0 kijwgq"
     >
       <button
         aria-expanded="true"
@@ -1358,7 +1358,7 @@ exports[`Tabs set on hover 4`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bYqzAc"
+      class="StyledBox-sc-13pk1d4-0 kijwgq"
     >
       <button
         aria-expanded="true"
@@ -1413,7 +1413,7 @@ exports[`Tabs set on hover 5`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bYqzAc"
+      class="StyledBox-sc-13pk1d4-0 kijwgq"
     >
       <button
         aria-expanded="true"
