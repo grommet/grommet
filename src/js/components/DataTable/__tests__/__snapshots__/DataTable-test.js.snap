@@ -34,7 +34,7 @@ exports[`DataTable aggregate 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -55,7 +55,7 @@ exports[`DataTable aggregate 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -77,7 +77,7 @@ exports[`DataTable aggregate 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -121,7 +121,7 @@ exports[`DataTable aggregate 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -141,7 +141,7 @@ exports[`DataTable aggregate 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -167,7 +167,7 @@ exports[`DataTable aggregate 1`] = `
 
 @media only screen and (max-width:699px) {
   .c7 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -357,7 +357,7 @@ exports[`DataTable basic 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -378,7 +378,7 @@ exports[`DataTable basic 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -422,7 +422,7 @@ exports[`DataTable basic 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -442,7 +442,7 @@ exports[`DataTable basic 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -642,7 +642,7 @@ exports[`DataTable footer 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -663,7 +663,7 @@ exports[`DataTable footer 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -685,7 +685,7 @@ exports[`DataTable footer 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -729,7 +729,7 @@ exports[`DataTable footer 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -749,7 +749,7 @@ exports[`DataTable footer 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -775,7 +775,7 @@ exports[`DataTable footer 1`] = `
 
 @media only screen and (max-width:699px) {
   .c7 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -997,7 +997,7 @@ exports[`DataTable groupBy 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1018,7 +1018,7 @@ exports[`DataTable groupBy 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1041,7 +1041,7 @@ exports[`DataTable groupBy 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding: 6px;
 }
 
@@ -1058,7 +1058,7 @@ exports[`DataTable groupBy 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding: 6px;
 }
 
@@ -1150,7 +1150,7 @@ exports[`DataTable groupBy 1`] = `
 
 @media only screen and (max-width:699px) {
   .c7 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -1170,7 +1170,7 @@ exports[`DataTable groupBy 1`] = `
 
 @media only screen and (max-width:699px) {
   .c11 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -1196,7 +1196,7 @@ exports[`DataTable groupBy 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -1208,7 +1208,7 @@ exports[`DataTable groupBy 1`] = `
 
 @media only screen and (max-width:699px) {
   .c9 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -1440,7 +1440,7 @@ exports[`DataTable groupBy 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 eFZsPc"
+              class="StyledBox-sc-13pk1d4-0 cdgmmo"
             >
               <svg
                 aria-label="FormDown"
@@ -1467,7 +1467,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 byHuRN"
+            class="StyledBox-sc-13pk1d4-0 kiHbxd"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -1481,7 +1481,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 byHuRN"
+            class="StyledBox-sc-13pk1d4-0 kiHbxd"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -1507,7 +1507,7 @@ exports[`DataTable groupBy 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dZoFAD"
+              class="StyledBox-sc-13pk1d4-0 inniXK"
             >
               <svg
                 aria-label="FormDown"
@@ -1534,7 +1534,7 @@ exports[`DataTable groupBy 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 etnGxz"
+            class="StyledBox-sc-13pk1d4-0 bcNZKx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -1547,7 +1547,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 etnGxz"
+            class="StyledBox-sc-13pk1d4-0 bcNZKx"
           />
         </td>
       </tr>
@@ -1563,7 +1563,7 @@ exports[`DataTable groupBy 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 dZoFAD"
+              class="StyledBox-sc-13pk1d4-0 inniXK"
             >
               <svg
                 aria-label="FormDown"
@@ -1590,7 +1590,7 @@ exports[`DataTable groupBy 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 etnGxz"
+            class="StyledBox-sc-13pk1d4-0 bcNZKx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -1603,7 +1603,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 etnGxz"
+            class="StyledBox-sc-13pk1d4-0 bcNZKx"
           />
         </td>
       </tr>
@@ -1646,7 +1646,7 @@ exports[`DataTable resizeable 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1667,7 +1667,7 @@ exports[`DataTable resizeable 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1689,8 +1689,8 @@ exports[`DataTable resizeable 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c7 {
@@ -1710,8 +1710,8 @@ exports[`DataTable resizeable 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c8 {
@@ -1755,7 +1755,7 @@ exports[`DataTable resizeable 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -1775,7 +1775,7 @@ exports[`DataTable resizeable 1`] = `
 
 @media only screen and (max-width:699px) {
   .c9 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -1795,13 +1795,13 @@ exports[`DataTable resizeable 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -1813,13 +1813,13 @@ exports[`DataTable resizeable 1`] = `
 
 @media only screen and (max-width:699px) {
   .c7 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c7 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -1975,7 +1975,7 @@ exports[`DataTable sort 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -2007,7 +2007,7 @@ exports[`DataTable sort 1`] = `
   flex: 0 1 auto;
   width: 100%;
   height: 100%;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -2082,7 +2082,7 @@ exports[`DataTable sort 1`] = `
 
 @media only screen and (max-width:699px) {
   .c8 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -2108,7 +2108,7 @@ exports[`DataTable sort 1`] = `
 
 @media only screen and (max-width:699px) {
   .c5 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -2347,7 +2347,7 @@ exports[`DataTable sort 2`] = `
   flex: 0 1 auto;
   width: 100%;
   height: 100%;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -2420,7 +2420,7 @@ exports[`DataTable sort 2`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -2508,7 +2508,7 @@ exports[`DataTable sort 2`] = `
   flex: 0 1 auto;
   width: 100%;
   height: 100%;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -2574,7 +2574,7 @@ exports[`DataTable sort 2`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -2630,7 +2630,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 etnGxz"
+            class="StyledBox-sc-13pk1d4-0 bcNZKx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -2643,7 +2643,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 etnGxz"
+            class="StyledBox-sc-13pk1d4-0 bcNZKx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -2660,7 +2660,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 etnGxz"
+            class="StyledBox-sc-13pk1d4-0 bcNZKx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -2673,7 +2673,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 etnGxz"
+            class="StyledBox-sc-13pk1d4-0 bcNZKx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -2690,7 +2690,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 etnGxz"
+            class="StyledBox-sc-13pk1d4-0 bcNZKx"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -2703,7 +2703,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 etnGxz"
+            class="StyledBox-sc-13pk1d4-0 bcNZKx"
           />
         </td>
       </tr>

@@ -59,14 +59,13 @@ export const StyledOverlay = styled.div`
 `;
 
 const MARGINS = {
-  top: (margin, theme) =>
-    theme.global.edgeSize[margin.top || margin.vertical || margin] || 0,
+  top: (margin, theme) => theme.global.edgeSize[margin.top || margin.vertical || margin] || '0px',
   bottom: (margin, theme) =>
-    theme.global.edgeSize[margin.bottom || margin.vertical || margin] || 0,
+    theme.global.edgeSize[margin.bottom || margin.vertical || margin] || '0px',
   left: (margin, theme) =>
-    theme.global.edgeSize[margin.left || margin.horizontal || margin] || 0,
+    theme.global.edgeSize[margin.left || margin.horizontal || margin] || '0px',
   right: (margin, theme) =>
-    theme.global.edgeSize[margin.right || margin.horizontal || margin] || 0,
+    theme.global.edgeSize[margin.right || margin.horizontal || margin] || '0px',
 };
 
 const KEYFRAMES = {

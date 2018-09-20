@@ -157,7 +157,7 @@ exports[`TableCell renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -208,7 +208,7 @@ exports[`TableCell renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -299,7 +299,7 @@ exports[`TableCell scope renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -341,7 +341,7 @@ exports[`TableCell scope renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -419,7 +419,7 @@ exports[`TableCell size renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -532,7 +532,7 @@ exports[`TableCell size renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
@@ -682,7 +682,7 @@ exports[`TableCell verticalAlign renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
+  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -734,7 +734,7 @@ exports[`TableCell verticalAlign renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 0;
+    margin: 0px;
   }
 }
 

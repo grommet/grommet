@@ -35,8 +35,8 @@ exports[`Layer dark context 1`] = `
 @media only screen and (min-width:700px) {
   .c0 {
     position: fixed;
-    max-height: calc(100% - 0 - 0);
-    max-width: calc(100% - 0 - 0);
+    max-height: calc(100% - 0px - 0px);
+    max-width: calc(100% - 0px - 0px);
     border-radius: 4px;
     top: 50%;
     left: 50%;
@@ -58,14 +58,14 @@ exports[`Layer dark context 1`] = `
 
 exports[`Layer dark context 2`] = `
 "@media only screen and (max-width:699px) {
-  .jyrFJA {
-    margin: 0;
+  .iGqzcb {
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jyrFJA {
-    padding: 0;
+  .iGqzcb {
+    padding: 0px;
   }
 }"
 `;
@@ -159,8 +159,8 @@ exports[`Layer full false 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: calc(100% - 0 - 0);
-    max-width: calc(100% - 0 - 0);
+    max-height: calc(100% - 0px - 0px);
+    max-width: calc(100% - 0px - 0px);
     border-radius: 4px;
     top: 50%;
     left: 50%;
@@ -280,11 +280,11 @@ exports[`Layer full horizontal 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: calc(100% - 0 - 0);
-    max-width: calc(100% - 0 - 0);
+    max-height: calc(100% - 0px - 0px);
+    max-width: calc(100% - 0px - 0px);
     border-radius: 4px;
-    left: 0;
-    right: 0;
+    left: 0px;
+    right: 0px;
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -402,13 +402,13 @@ exports[`Layer full true 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: calc(100% - 0 - 0);
-    max-width: calc(100% - 0 - 0);
+    max-height: calc(100% - 0px - 0px);
+    max-width: calc(100% - 0px - 0px);
     border-radius: 4px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
     -webkit-animation: aUlIN 0.2s ease-in-out forwards;
     animation: aUlIN 0.2s ease-in-out forwards;
   }
@@ -522,11 +522,11 @@ exports[`Layer full vertical 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: calc(100% - 0 - 0);
-    max-width: calc(100% - 0 - 0);
+    max-height: calc(100% - 0px - 0px);
+    max-width: calc(100% - 0px - 0px);
     border-radius: 4px;
-    top: 0;
-    bottom: 0;
+    top: 0px;
+    bottom: 0px;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
@@ -636,8 +636,8 @@ exports[`Layer hidden 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: calc(100% - 0 - 0);
-    max-width: calc(100% - 0 - 0);
+    max-height: calc(100% - 0px - 0px);
+    max-width: calc(100% - 0px - 0px);
     border-radius: 4px;
   }
 }
@@ -671,7 +671,7 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledOverlay-rmtehz-1 cHusQe"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 kXvgUX"
+    class="StyledLayer__StyledContainer-rmtehz-2 eUQnuO"
     id="hidden-test"
   >
     This is a layer
@@ -1043,8 +1043,8 @@ exports[`Layer margin none 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: calc(100% - 0 - 0);
-    max-width: calc(100% - 0 - 0);
+    max-height: calc(100% - 0px - 0px);
+    max-width: calc(100% - 0px - 0px);
     border-radius: 4px;
     top: 50%;
     left: 50%;
@@ -1352,8 +1352,8 @@ exports[`Layer non-modal 1`] = `
 @media only screen and (min-width:700px) {
   .c0 {
     position: fixed;
-    max-height: calc(100% - 0 - 0);
-    max-width: calc(100% - 0 - 0);
+    max-height: calc(100% - 0px - 0px);
+    max-width: calc(100% - 0px - 0px);
     border-radius: 4px;
     top: 50%;
     left: 50%;
@@ -1464,8 +1464,8 @@ exports[`Layer plain 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: calc(100% - 0 - 0);
-    max-width: calc(100% - 0 - 0);
+    max-height: calc(100% - 0px - 0px);
+    max-width: calc(100% - 0px - 0px);
     border-radius: none;
     top: 50%;
     left: 50%;
@@ -1585,10 +1585,10 @@ exports[`Layer position bottom 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: calc(100% - 0 - 0);
-    max-width: calc(100% - 0 - 0);
+    max-height: calc(100% - 0px - 0px);
+    max-width: calc(100% - 0px - 0px);
     border-radius: 4px;
-    bottom: 0;
+    bottom: 0px;
     left: 50%;
     -webkit-transform: translate(-50%,0);
     -ms-transform: translate(-50%,0);
@@ -1706,8 +1706,8 @@ exports[`Layer position center 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: calc(100% - 0 - 0);
-    max-width: calc(100% - 0 - 0);
+    max-height: calc(100% - 0px - 0px);
+    max-width: calc(100% - 0px - 0px);
     border-radius: 4px;
     top: 50%;
     left: 50%;
@@ -1827,10 +1827,10 @@ exports[`Layer position left 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: calc(100% - 0 - 0);
-    max-width: calc(100% - 0 - 0);
+    max-height: calc(100% - 0px - 0px);
+    max-width: calc(100% - 0px - 0px);
     border-radius: 4px;
-    left: 0;
+    left: 0px;
     top: 50%;
     -webkit-transform: translate(0,-50%);
     -ms-transform: translate(0,-50%);
@@ -1948,10 +1948,10 @@ exports[`Layer position right 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: calc(100% - 0 - 0);
-    max-width: calc(100% - 0 - 0);
+    max-height: calc(100% - 0px - 0px);
+    max-width: calc(100% - 0px - 0px);
     border-radius: 4px;
-    right: 0;
+    right: 0px;
     top: 50%;
     -webkit-transform: translate(0,-50%);
     -ms-transform: translate(0,-50%);
@@ -2069,10 +2069,10 @@ exports[`Layer position top 1`] = `
 @media only screen and (min-width:700px) {
   .c2 {
     position: fixed;
-    max-height: calc(100% - 0 - 0);
-    max-width: calc(100% - 0 - 0);
+    max-height: calc(100% - 0px - 0px);
+    max-width: calc(100% - 0px - 0px);
     border-radius: 4px;
-    top: 0;
+    top: 0px;
     left: 50%;
     -webkit-transform: translate(-50%,0);
     -ms-transform: translate(-50%,0);

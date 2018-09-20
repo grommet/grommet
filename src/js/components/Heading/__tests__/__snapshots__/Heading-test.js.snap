@@ -188,8 +188,8 @@ exports[`Heading margin renders 1`] = `
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .c5 {
@@ -283,8 +283,8 @@ exports[`Heading margin renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 

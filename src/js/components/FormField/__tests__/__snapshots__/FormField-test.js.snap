@@ -26,7 +26,7 @@ exports[`renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 12px;
-  padding: 0;
+  padding: 0px;
 }
 
 .c2 {
@@ -43,8 +43,8 @@ exports[`renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c4 {
@@ -98,7 +98,7 @@ exports[`renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -110,13 +110,13 @@ exports[`renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -183,7 +183,7 @@ exports[`renders error 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 12px;
-  padding: 0;
+  padding: 0px;
 }
 
 .c3 {
@@ -203,7 +203,7 @@ exports[`renders error 1`] = `
   margin-right: 12px;
   margin-top: 6px;
   margin-bottom: 6px;
-  padding: 0;
+  padding: 0px;
 }
 
 .c2 {
@@ -220,8 +220,8 @@ exports[`renders error 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c4 {
@@ -238,7 +238,7 @@ exports[`renders error 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -258,7 +258,7 @@ exports[`renders error 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -270,13 +270,13 @@ exports[`renders error 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -330,7 +330,7 @@ exports[`renders help 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 12px;
-  padding: 0;
+  padding: 0px;
 }
 
 .c4 {
@@ -347,8 +347,8 @@ exports[`renders help 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c2 {
@@ -368,7 +368,7 @@ exports[`renders help 1`] = `
   margin-right: 12px;
   margin-top: 6px;
   margin-bottom: 6px;
-  padding: 0;
+  padding: 0px;
 }
 
 .c3 {
@@ -385,7 +385,7 @@ exports[`renders help 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -397,13 +397,13 @@ exports[`renders help 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c4 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -423,7 +423,7 @@ exports[`renders help 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -477,7 +477,7 @@ exports[`renders htmlFor 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 12px;
-  padding: 0;
+  padding: 0px;
 }
 
 .c2 {
@@ -494,8 +494,8 @@ exports[`renders htmlFor 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 @media only screen and (max-width:699px) {
@@ -506,7 +506,7 @@ exports[`renders htmlFor 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -518,13 +518,13 @@ exports[`renders htmlFor 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c2 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -569,7 +569,7 @@ exports[`renders label 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 12px;
-  padding: 0;
+  padding: 0px;
 }
 
 .c4 {
@@ -586,8 +586,8 @@ exports[`renders label 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 .c2 {
@@ -607,7 +607,7 @@ exports[`renders label 1`] = `
   margin-right: 12px;
   margin-top: 6px;
   margin-bottom: 6px;
-  padding: 0;
+  padding: 0px;
 }
 
 .c3 {
@@ -623,7 +623,7 @@ exports[`renders label 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -635,13 +635,13 @@ exports[`renders label 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin: 0;
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
   .c4 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
@@ -661,7 +661,7 @@ exports[`renders label 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    padding: 0;
+    padding: 0px;
   }
 }
 
