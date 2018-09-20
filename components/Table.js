@@ -160,6 +160,7 @@ var Table = function (_Component) {
     value: function componentDidMount() {
       var _props = this.props,
           onMore = _props.onMore,
+          onMoreAbove = _props.onMoreAbove,
           selectable = _props.selectable,
           scrollable = _props.scrollable;
       var _state = this.state,
@@ -170,8 +171,8 @@ var Table = function (_Component) {
       if (scrollable && !columnMode && !small) {
         this._alignMirror();
       }
-      if (this.props.onMore) {
-        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, onMore);
+      if (onMore || onMoreAbove) {
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, onMore, this.moreAboveRef, onMoreAbove);
       }
       this._adjustBodyCells();
       setTimeout(this._layout, 50);
@@ -210,6 +211,7 @@ var Table = function (_Component) {
     value: function componentDidUpdate(prevProps, prevState) {
       var _props2 = this.props,
           onMore = _props2.onMore,
+          onMoreAbove = _props2.onMoreAbove,
           selectable = _props2.selectable,
           scrollable = _props2.scrollable;
       var _state2 = this.state,
@@ -223,8 +225,8 @@ var Table = function (_Component) {
       if (scrollable && !columnMode && !small) {
         this._alignMirror();
       }
-      if (onMore && !this._scroll) {
-        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, onMore);
+      if ((onMore || onMoreAbove) && !this._scroll) {
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, onMore, this.moreAboveRef, onMoreAbove);
       }
       this._adjustBodyCells();
       this._layout();
@@ -533,12 +535,13 @@ var Table = function (_Component) {
           _onBlur = _props4.onBlur,
           _onFocus = _props4.onFocus,
           onMore = _props4.onMore,
+          onMoreAbove = _props4.onMoreAbove,
           _onMouseDown = _props4.onMouseDown,
           _onMouseUp = _props4.onMouseUp,
           responsive = _props4.responsive,
           scrollable = _props4.scrollable,
           selectable = _props4.selectable,
-          props = _objectWithoutProperties(_props4, ['a11yTitle', 'children', 'className', 'onBlur', 'onFocus', 'onMore', 'onMouseDown', 'onMouseUp', 'responsive', 'scrollable', 'selectable']);
+          props = _objectWithoutProperties(_props4, ['a11yTitle', 'children', 'className', 'onBlur', 'onFocus', 'onMore', 'onMoreAbove', 'onMouseDown', 'onMouseUp', 'responsive', 'scrollable', 'selectable']);
 
       delete props.onSelect;
       delete props.selected;
@@ -572,6 +575,18 @@ var Table = function (_Component) {
           { ref: function ref(_ref2) {
               return _this4.moreRef = _ref2;
             }, className: CLASS_ROOT + '__more' },
+          _react2.default.createElement(_Spinning2.default, null)
+        );
+      }
+
+      var moreAbove = void 0;
+      if (onMoreAbove) {
+        moreAbove = _react2.default.createElement(
+          'div',
+          { ref: function ref(_ref3) {
+              return _this4.moreAboveRef = _ref3;
+            },
+            className: CLASS_ROOT + '__more' },
           _react2.default.createElement(_Spinning2.default, null)
         );
       }
@@ -622,14 +637,15 @@ var Table = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        _extends({ ref: function ref(_ref4) {
-            return _this4.containerRef = _ref4;
+        _extends({ ref: function ref(_ref5) {
+            return _this4.containerRef = _ref5;
           } }, props, { className: classes }),
         mirror,
+        moreAbove,
         _react2.default.createElement(
           'table',
-          _extends({ ref: function ref(_ref3) {
-              return _this4.tableRef = _ref3;
+          _extends({ ref: function ref(_ref4) {
+              return _this4.tableRef = _ref4;
             } }, selectableProps, {
             className: tableClasses }),
           children
@@ -653,6 +669,7 @@ Table.contextTypes = {
 Table.propTypes = {
   a11yTitle: _propTypes2.default.string,
   onMore: _propTypes2.default.func,
+  onMoreAbove: _propTypes2.default.func,
   onSelect: _propTypes2.default.func,
   responsive: _propTypes2.default.bool,
   scrollable: _propTypes2.default.bool,
