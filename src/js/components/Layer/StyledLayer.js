@@ -48,7 +48,7 @@ export const StyledLayer = styled.div`
 `;
 
 export const StyledOverlay = styled.div`
-  position: fixed;
+  ${props => (props.responsive ? lapAndUp('position: absolute;') : 'position: absolute;')}
   top: 0px;
   left: 0px;
   right: 0px;
