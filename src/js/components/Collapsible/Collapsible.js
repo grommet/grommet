@@ -73,7 +73,7 @@ class Collapsible extends Component {
           container.style['max-height'] = open ? `${height}px` : '0px';
 
           this.animationTimeout = setTimeout(() => {
-            container.style = '';
+            container.removeAttribute('style');
             this.setState(
               {
                 animate: false,
