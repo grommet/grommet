@@ -88,6 +88,7 @@ exports[`Layer full false 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -140,12 +141,6 @@ exports[`Layer full false 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -209,6 +204,7 @@ exports[`Layer full horizontal 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -261,12 +257,6 @@ exports[`Layer full horizontal 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -331,6 +321,7 @@ exports[`Layer full true 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -383,12 +374,6 @@ exports[`Layer full true 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -451,6 +436,7 @@ exports[`Layer full vertical 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -503,12 +489,6 @@ exports[`Layer full vertical 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -577,6 +557,7 @@ exports[`Layer hidden 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -617,12 +598,6 @@ exports[`Layer hidden 1`] = `
     height: 100%;
     width: 100%;
     overflow: auto;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -668,7 +643,7 @@ exports[`Layer hidden 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-rmtehz-1 cHusQe"
+    class="StyledLayer__StyledOverlay-rmtehz-1 elXCgp"
   />
   <div
     class="StyledLayer__StyledContainer-rmtehz-2 eUQnuO"
@@ -730,6 +705,7 @@ exports[`Layer margin large 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -782,12 +758,6 @@ exports[`Layer margin large 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -851,6 +821,7 @@ exports[`Layer margin medium 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -903,12 +874,6 @@ exports[`Layer margin medium 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -972,6 +937,7 @@ exports[`Layer margin none 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1024,12 +990,6 @@ exports[`Layer margin none 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -1093,6 +1053,7 @@ exports[`Layer margin small 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1145,12 +1106,6 @@ exports[`Layer margin small 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -1214,6 +1169,7 @@ exports[`Layer margin xsmall 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1266,12 +1222,6 @@ exports[`Layer margin xsmall 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -1393,6 +1343,7 @@ exports[`Layer plain 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1445,12 +1396,6 @@ exports[`Layer plain 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -1514,6 +1459,7 @@ exports[`Layer position bottom 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1566,12 +1512,6 @@ exports[`Layer position bottom 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -1635,6 +1575,7 @@ exports[`Layer position center 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1687,12 +1628,6 @@ exports[`Layer position center 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -1756,6 +1691,7 @@ exports[`Layer position left 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1808,12 +1744,6 @@ exports[`Layer position left 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -1877,6 +1807,7 @@ exports[`Layer position right 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1929,12 +1860,6 @@ exports[`Layer position right 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 
@@ -1998,6 +1923,7 @@ exports[`Layer position top 1`] = `
 }
 
 .c1 {
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -2050,12 +1976,6 @@ exports[`Layer position top 1`] = `
     bottom: 0px;
     width: 100vw;
     height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    position: absolute;
   }
 }
 

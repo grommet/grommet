@@ -48,7 +48,7 @@ export const StyledLayer = styled.div`
 `;
 
 export const StyledOverlay = styled.div`
-  ${lapAndUp('position: absolute;')}
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
