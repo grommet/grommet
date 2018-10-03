@@ -33,11 +33,6 @@ exports[`Menu basic 1`] = `
   width: 12px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -54,6 +49,11 @@ exports[`Menu basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -185,11 +185,6 @@ exports[`Menu close by clicking outside 1`] = `
   width: 12px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -206,6 +201,11 @@ exports[`Menu close by clicking outside 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -423,11 +423,6 @@ exports[`Menu close by clicking outside 2`] = `
   width: 12px;
 }
 
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c4 {
   display: inline-block;
   box-sizing: border-box;
@@ -464,6 +459,11 @@ exports[`Menu close by clicking outside 2`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -737,28 +737,21 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .eFkyjH {
+  .jeDfzo {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .glXJnP {
+  .GOlmK {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kixBti {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .iqiGzx {
+  .gavjLN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -871,11 +864,6 @@ exports[`Menu close on esc 1`] = `
   width: 12px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -892,6 +880,11 @@ exports[`Menu close on esc 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -1033,11 +1026,6 @@ exports[`Menu close on tab 1`] = `
   width: 12px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1054,6 +1042,11 @@ exports[`Menu close on tab 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -1195,11 +1188,6 @@ exports[`Menu custom message 1`] = `
   width: 12px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1216,6 +1204,11 @@ exports[`Menu custom message 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -1362,11 +1355,6 @@ exports[`Menu disabled 1`] = `
   width: 12px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1385,6 +1373,11 @@ exports[`Menu disabled 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -1527,11 +1520,6 @@ exports[`Menu navigate through suggestions and select 1`] = `
   width: 12px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1548,6 +1536,11 @@ exports[`Menu navigate through suggestions and select 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -1689,11 +1682,6 @@ exports[`Menu open and close on click 1`] = `
   width: 12px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1710,6 +1698,11 @@ exports[`Menu open and close on click 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -1793,7 +1786,7 @@ exports[`Menu open and close on click 2`] = `
   <div>
     <button
       aria-label="Open Menu"
-      class="StyledButton-sc-323bzc-0 eFkyjH"
+      class="StyledButton-sc-323bzc-0 jeDfzo"
       id="test-menu"
       type="button"
     >
@@ -1972,11 +1965,6 @@ exports[`Menu open and close on click 3`] = `
   width: 12px;
 }
 
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c4 {
   display: inline-block;
   box-sizing: border-box;
@@ -2039,28 +2027,9 @@ exports[`Menu open and close on click 3`] = `
   color: black;
 }
 
-.c13 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c13:hover {
-  background: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -2174,13 +2143,6 @@ exports[`Menu open and close on click 3`] = `
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c13 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c0 {
     display: -webkit-box;
@@ -2284,7 +2246,7 @@ exports[`Menu open and close on click 3`] = `
         class="c3"
       >
         <a
-          class="-a c13"
+          class="c12"
           href="/test"
         >
           <div
@@ -2361,28 +2323,21 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .eFkyjH {
+  .jeDfzo {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .glXJnP {
+  .GOlmK {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kixBti {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .iqiGzx {
+  .gavjLN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -2495,11 +2450,6 @@ exports[`Menu select an item 1`] = `
   width: 12px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -2516,6 +2466,11 @@ exports[`Menu select an item 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -2657,11 +2612,6 @@ exports[`Menu with dropAlign renders 1`] = `
   width: 12px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -2678,6 +2628,11 @@ exports[`Menu with dropAlign renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -2895,11 +2850,6 @@ exports[`Menu with dropAlign renders 2`] = `
   width: 12px;
 }
 
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c4 {
   display: inline-block;
   box-sizing: border-box;
@@ -2936,6 +2886,11 @@ exports[`Menu with dropAlign renders 2`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -3209,42 +3164,35 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .eFkyjH {
+  .jeDfzo {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .glXJnP {
+  .GOlmK {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kixBti {
+  .gavjLN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hjlAVQ {
+  .huvvip {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bxwYdc {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .iqiGzx {
+  .fuBvtX {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

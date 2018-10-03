@@ -136,7 +136,7 @@ exports[`Calendar date renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0px;
-  padding: 12px;
+  padding: 0px;
 }
 
 .c7 {
@@ -157,6 +157,7 @@ exports[`Calendar date renders 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
+  padding: 12px;
 }
 
 .c14 {
@@ -376,7 +377,7 @@ exports[`Calendar date renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c8 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -1543,7 +1544,7 @@ exports[`Calendar dates renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0px;
-  padding: 12px;
+  padding: 0px;
 }
 
 .c7 {
@@ -1564,6 +1565,7 @@ exports[`Calendar dates renders 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
+  padding: 12px;
 }
 
 .c14 {
@@ -1783,7 +1785,7 @@ exports[`Calendar dates renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c8 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -2950,7 +2952,7 @@ exports[`Calendar disabled renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0px;
-  padding: 12px;
+  padding: 0px;
 }
 
 .c7 {
@@ -2971,6 +2973,7 @@ exports[`Calendar disabled renders 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
+  padding: 12px;
 }
 
 .c14 {
@@ -3190,7 +3193,7 @@ exports[`Calendar disabled renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c8 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -4357,7 +4360,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0px;
-  padding: 12px;
+  padding: 0px;
 }
 
 .c7 {
@@ -4378,6 +4381,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
+  padding: 12px;
 }
 
 .c14 {
@@ -4597,7 +4601,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c8 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -6748,7 +6752,7 @@ exports[`Calendar renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0px;
-  padding: 12px;
+  padding: 0px;
 }
 
 .c7 {
@@ -6769,6 +6773,7 @@ exports[`Calendar renders 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
+  padding: 12px;
 }
 
 .c14 {
@@ -6988,7 +6993,7 @@ exports[`Calendar renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c8 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -8189,7 +8194,7 @@ exports[`Calendar size renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0px;
-  padding: 12px;
+  padding: 0px;
 }
 
 .c7 {
@@ -8210,6 +8215,7 @@ exports[`Calendar size renders 1`] = `
   text-align: inherit;
   opacity: 0.3;
   cursor: default;
+  padding: 12px;
 }
 
 .c14 {
@@ -8570,7 +8576,7 @@ exports[`Calendar size renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c8 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 

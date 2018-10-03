@@ -1,13 +1,21 @@
-import React, { Children, Component } from 'react';
+import React, { cloneElement, Children, Component } from 'react';
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
-import { Text } from '../Text';
 import { withFocus, withForwardRef, withTheme } from '../hocs';
+import { colorIsDark, colorForName, normalizeBackground, normalizeColor } from '../../utils';
 
 import { StyledButton } from './StyledButton';
 
-const AnchorStyledButton = StyledButton.withComponent('a');
+const isDarkBackground = (props) => {
+  const backgroundColor = normalizeBackground(normalizeColor(
+    props.color || props.theme.button.primary.color ||
+    props.theme.global.control.color || 'brand',
+    props.theme
+  ), props.theme);
+
+  return colorIsDark(colorForName(backgroundColor, props.theme));
+};
 
 class Button extends Component {
   static defaultProps = {
@@ -37,22 +45,24 @@ class Button extends Component {
       label,
       onClick,
       plain,
+      primary,
       reverse,
       theme,
       type,
       ...rest
     } = this.props;
 
-    const Tag = href ? AnchorStyledButton : StyledButton;
-
-    const buttonLabel = typeof label === 'string' ? (
-      <Text>
-        <strong>{label}</strong>
-      </Text>
-    ) : label;
-
-    const first = reverse ? buttonLabel : icon;
-    const second = reverse ? icon : buttonLabel;
+    let buttonIcon = icon;
+    // only change color if user did not specify the color themselves...
+    if (primary && icon && !icon.props.color) {
+      buttonIcon = cloneElement(
+        icon, {
+          color: this.props.theme.global.text.color[isDarkBackground(this.props) ? 'dark' : 'light'],
+        }
+      );
+    }
+    const first = reverse ? label : buttonIcon;
+    const second = reverse ? buttonIcon : label;
 
     const disabled = (
       !href &&
@@ -61,8 +71,9 @@ class Button extends Component {
     );
 
     return (
-      <Tag
+      <StyledButton
         {...rest}
+        as={href ? 'a' : undefined}
         ref={forwardRef}
         aria-label={a11yTitle}
         colorValue={color}
@@ -78,6 +89,7 @@ class Button extends Component {
         ) : (
           (Children.count(children) > 0 || (icon && !label))
         )}
+        primary={primary}
         theme={theme}
         type={!href ? type : undefined}
       >
@@ -87,13 +99,12 @@ class Button extends Component {
             align='center'
             justify='center'
             gap='small'
-            pad={icon && !plain ? 'small' : undefined}
           >
             {first}
             {second}
           </Box>
         ) : children}
-      </Tag>
+      </StyledButton>
     );
   }
 }

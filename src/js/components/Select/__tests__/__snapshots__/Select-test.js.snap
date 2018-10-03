@@ -551,7 +551,7 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 eFkyjH"
+  class="StyledButton-sc-323bzc-0 jeDfzo"
   id="test-select"
   type="button"
 >
@@ -917,14 +917,14 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .eFkyjH {
+  .jeDfzo {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kixBti {
+  .gavjLN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1521,7 +1521,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 glXJnP"
+  class="StyledButton-sc-323bzc-0 GOlmK"
   disabled=""
   id="test-select"
   type="button"
@@ -2128,7 +2128,7 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 eFkyjH"
+  class="StyledButton-sc-323bzc-0 jeDfzo"
   id="test-select"
   type="button"
 >
@@ -2260,15 +2260,6 @@ exports[`Select multiple values 3`] = `
   padding: 12px;
 }
 
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
 .c6 {
   display: inline-block;
   box-sizing: border-box;
@@ -2320,6 +2311,15 @@ exports[`Select multiple values 3`] = `
   animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .c1 {
@@ -2564,21 +2564,21 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .eFkyjH {
+  .jeDfzo {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kixBti {
+  .gavjLN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bxwYdc {
+  .fuBvtX {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -2903,7 +2903,7 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 eFkyjH"
+  class="StyledButton-sc-323bzc-0 jeDfzo"
   id="test-select"
   type="button"
 >
@@ -3034,15 +3034,6 @@ exports[`Select opens 3`] = `
   padding: 12px;
 }
 
-.c8 {
-  font-size: 18px;
-  line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
 .c6 {
   display: inline-block;
   box-sizing: border-box;
@@ -3091,6 +3082,15 @@ exports[`Select opens 3`] = `
   animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .c1 {
@@ -3323,14 +3323,14 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .eFkyjH {
+  .jeDfzo {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kixBti {
+  .gavjLN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -3394,7 +3394,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 hvNmzo"
   >
     <button
-      class="StyledButton-sc-323bzc-0 kixBti"
+      class="StyledButton-sc-323bzc-0 gavjLN"
       role="menuitem"
       type="button"
     >
@@ -3413,7 +3413,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 hvNmzo"
   >
     <button
-      class="StyledButton-sc-323bzc-0 kixBti"
+      class="StyledButton-sc-323bzc-0 gavjLN"
       role="menuitem"
       type="button"
     >
@@ -3799,15 +3799,6 @@ exports[`Select search 2`] = `
   padding: 6px;
 }
 
-.c11 {
-  font-size: 18px;
-  line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -3900,6 +3891,15 @@ exports[`Select search 2`] = `
 .c4 {
   position: relative;
   width: 100%;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .c1 {
@@ -4170,14 +4170,14 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .eFkyjH {
+  .jeDfzo {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kixBti {
+  .gavjLN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

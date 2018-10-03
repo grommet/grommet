@@ -1,3 +1,5 @@
+import { css } from 'styled-components';
+
 import { deepFreeze } from '../utils';
 
 const workSansPath = 'https://fonts.gstatic.com/s/worksans/v2';
@@ -56,6 +58,11 @@ export const grommet = deepFreeze({
       dark: '#9060EB',
       light: '#9060EB',
     },
+  },
+  button: {
+    extend: css`
+      ${props => !props.plain && 'font-weight: bold;'}
+    `,
   },
   checkBox: {
     check: {

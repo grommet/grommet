@@ -7,13 +7,24 @@ import { grommet } from '../../themes';
 
 const SimpleButton = props => (
   <Grommet theme={grommet}>
-    <Button fill={true} label='Submit' onClick={() => {}} {...props} />
+    <Box align='start'>
+      <Button label='Submit' onClick={() => {}} {...props} />
+    </Box>
   </Grommet>
 );
 
 const IconButton = () => (
   <Grommet theme={grommet}>
     <Button icon={<Add />} hoverIndicator={true} onClick={() => {}} />
+  </Grommet>
+);
+
+const IconLabelButton = () => (
+  <Grommet theme={grommet}>
+    <Box align='start' gap='small'>
+      <Button icon={<Add />} label='Add' onClick={() => {}} primary={true} />
+      <Button icon={<Add />} label='Add' onClick={() => {}} />
+    </Box>
   </Grommet>
 );
 
@@ -67,10 +78,8 @@ const customTheme = {
       }
       return `
         color: white;
-
-        span {
-          font-size: 12px;
-        }
+        font-size: 12px;
+        font-weight: bold;
 
         ${extraStyles}
       `;
@@ -84,12 +93,58 @@ const CustomThemeButton = () => (
   </Grommet>
 );
 
+const MultipleButton = () => (
+  <Grommet theme={grommet}>
+    <Box direction='row' align='center' gap='small' pad='xsmall'>
+      <Button label='Cancel' onClick={() => {}} />
+      <Button
+        color='dark-1'
+        primary={true}
+        icon={<Add color='accent-1' />}
+        label='Add'
+        onClick={() => {}}
+      />
+    </Box>
+    <Box direction='row' align='center' gap='small' pad='xsmall'>
+      <Button label='Cancel' onClick={() => {}} />
+      <Button
+        color='dark-1'
+        primary={true}
+        icon={<Add />}
+        label='Add'
+        onClick={() => {}}
+      />
+    </Box>
+    <Box direction='row' align='center' gap='small' pad='xsmall'>
+      <Button label='Cancel' onClick={() => {}} />
+      <Button
+        primary={true}
+        icon={<Add />}
+        label='Add'
+        onClick={() => {}}
+      />
+    </Box>
+    <Box direction='row' align='center' gap='small' pad='xsmall'>
+      <Button label='Cancel' onClick={() => {}} />
+      <Button
+        color='light-2'
+        primary={true}
+        icon={<Add />}
+        label='Add'
+        onClick={() => {}}
+      />
+    </Box>
+  </Grommet>
+);
+
 storiesOf('Button', module)
   .add('Default', () => <SimpleButton />)
   .add('Primary', () => <SimpleButton primary={true} />)
   .add('Icon', () => <IconButton />)
+  .add('Icon Label', () => <IconLabelButton />)
   .add('Plain', () => <PlainButton />)
   .add('Anchor', () => <AnchorButton />)
   .add('RoutedButton', () => <RouteButton />)
   .add('Active', () => <PlainButton active={true} />)
-  .add('Custom theme', () => <CustomThemeButton />);
+  .add('Custom theme', () => <CustomThemeButton />)
+  .add('Multiple Same Line', () => <MultipleButton />);
