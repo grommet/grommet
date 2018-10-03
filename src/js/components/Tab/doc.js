@@ -9,8 +9,10 @@ export const doc = (Tab) => {
     );
 
   DocumentedTab.propTypes = {
-    title: PropTypes.string
-      .description('The title of the tab.'),
+    title: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.node,
+    ]).description('The title of the tab.'),
   };
 
   return DocumentedTab;

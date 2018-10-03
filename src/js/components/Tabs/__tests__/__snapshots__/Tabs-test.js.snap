@@ -1041,7 +1041,7 @@ exports[`Tabs complex title 1`] = `
       </button>
     </div>
     <div
-      aria-label="[object Object] Tab Contents"
+      aria-label="1 Tab Contents"
       role="tabpanel"
     >
       Tab body 1
