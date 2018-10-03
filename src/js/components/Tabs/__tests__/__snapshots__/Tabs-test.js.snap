@@ -20,6 +20,9 @@ exports[`Tabs Tab 1`] = `
   justify-content: center;
   margin: 0px;
   padding: 0px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .c3 {
@@ -38,6 +41,8 @@ exports[`Tabs Tab 1`] = `
   flex-direction: column;
   margin-left: 12px;
   margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   padding-bottom: 6px;
 }
 
@@ -57,6 +62,8 @@ exports[`Tabs Tab 1`] = `
   flex-direction: column;
   margin-left: 12px;
   margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   padding-bottom: 6px;
 }
 
@@ -128,6 +135,13 @@ exports[`Tabs Tab 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
     padding-bottom: 3px;
   }
 }
@@ -142,6 +156,13 @@ exports[`Tabs Tab 1`] = `
   .c5 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 }
 
@@ -244,6 +265,9 @@ exports[`Tabs change active index 1`] = `
   justify-content: center;
   margin: 0px;
   padding: 0px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .c5 {
@@ -262,6 +286,8 @@ exports[`Tabs change active index 1`] = `
   flex-direction: column;
   margin-left: 12px;
   margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   padding-bottom: 6px;
 }
 
@@ -281,6 +307,8 @@ exports[`Tabs change active index 1`] = `
   flex-direction: column;
   margin-left: 12px;
   margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   padding-bottom: 6px;
 }
 
@@ -352,6 +380,13 @@ exports[`Tabs change active index 1`] = `
 
 @media only screen and (max-width:699px) {
   .c5 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
     padding-bottom: 3px;
   }
 }
@@ -366,6 +401,13 @@ exports[`Tabs change active index 1`] = `
   .c3 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 }
 
@@ -444,7 +486,7 @@ exports[`Tabs change active index 2`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kijwgq"
+      class="StyledBox-sc-13pk1d4-0 lotabM"
     >
       <button
         aria-expanded="false"
@@ -454,7 +496,7 @@ exports[`Tabs change active index 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 csllLZ"
+          class="StyledBox-sc-13pk1d4-0 gaswRr"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iCreHd"
@@ -471,7 +513,7 @@ exports[`Tabs change active index 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hQdQj"
+          class="StyledBox-sc-13pk1d4-0 cVkSXv"
         >
           <span
             class="StyledText-sc-1sadyjn-0 hJZqIs"
@@ -511,6 +553,9 @@ exports[`Tabs change to second tab 1`] = `
   justify-content: center;
   margin: 0px;
   padding: 0px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .c3 {
@@ -529,6 +574,8 @@ exports[`Tabs change to second tab 1`] = `
   flex-direction: column;
   margin-left: 12px;
   margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   padding-bottom: 6px;
 }
 
@@ -548,6 +595,8 @@ exports[`Tabs change to second tab 1`] = `
   flex-direction: column;
   margin-left: 12px;
   margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   padding-bottom: 6px;
 }
 
@@ -619,6 +668,13 @@ exports[`Tabs change to second tab 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
     padding-bottom: 3px;
   }
 }
@@ -633,6 +689,13 @@ exports[`Tabs change to second tab 1`] = `
   .c5 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 }
 
@@ -711,7 +774,7 @@ exports[`Tabs change to second tab 2`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kijwgq"
+      class="StyledBox-sc-13pk1d4-0 lotabM"
     >
       <button
         aria-expanded="false"
@@ -721,7 +784,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 csllLZ"
+          class="StyledBox-sc-13pk1d4-0 gaswRr"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iCreHd"
@@ -738,7 +801,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hQdQj"
+          class="StyledBox-sc-13pk1d4-0 cVkSXv"
         >
           <span
             class="StyledText-sc-1sadyjn-0 hJZqIs"
@@ -778,6 +841,9 @@ exports[`Tabs complex title 1`] = `
   justify-content: center;
   margin: 0px;
   padding: 0px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .c3 {
@@ -796,6 +862,8 @@ exports[`Tabs complex title 1`] = `
   flex-direction: column;
   margin-left: 12px;
   margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   padding-bottom: 6px;
 }
 
@@ -815,6 +883,8 @@ exports[`Tabs complex title 1`] = `
   flex-direction: column;
   margin-left: 12px;
   margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   padding-bottom: 6px;
 }
 
@@ -874,6 +944,13 @@ exports[`Tabs complex title 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
     padding-bottom: 3px;
   }
 }
@@ -888,6 +965,13 @@ exports[`Tabs complex title 1`] = `
   .c4 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 }
 
@@ -986,6 +1070,9 @@ exports[`Tabs no Tab 1`] = `
   justify-content: center;
   margin: 0px;
   padding: 0px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .c0 {
@@ -1048,6 +1135,9 @@ exports[`Tabs set on hover 1`] = `
   justify-content: center;
   margin: 0px;
   padding: 0px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .c3 {
@@ -1066,6 +1156,8 @@ exports[`Tabs set on hover 1`] = `
   flex-direction: column;
   margin-left: 12px;
   margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   padding-bottom: 6px;
 }
 
@@ -1085,6 +1177,8 @@ exports[`Tabs set on hover 1`] = `
   flex-direction: column;
   margin-left: 12px;
   margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   padding-bottom: 6px;
 }
 
@@ -1156,6 +1250,13 @@ exports[`Tabs set on hover 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
     padding-bottom: 3px;
   }
 }
@@ -1170,6 +1271,13 @@ exports[`Tabs set on hover 1`] = `
   .c5 {
     margin-left: 6px;
     margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 }
 
@@ -1248,7 +1356,7 @@ exports[`Tabs set on hover 2`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kijwgq"
+      class="StyledBox-sc-13pk1d4-0 lotabM"
     >
       <button
         aria-expanded="true"
@@ -1258,7 +1366,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hQdQj"
+          class="StyledBox-sc-13pk1d4-0 cVkSXv"
         >
           <span
             class="StyledText-sc-1sadyjn-0 hJZqIs"
@@ -1275,7 +1383,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 csllLZ"
+          class="StyledBox-sc-13pk1d4-0 gaswRr"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iCreHd"
@@ -1303,7 +1411,7 @@ exports[`Tabs set on hover 3`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kijwgq"
+      class="StyledBox-sc-13pk1d4-0 lotabM"
     >
       <button
         aria-expanded="true"
@@ -1313,7 +1421,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hQdQj"
+          class="StyledBox-sc-13pk1d4-0 cVkSXv"
         >
           <span
             class="StyledText-sc-1sadyjn-0 hJZqIs"
@@ -1330,7 +1438,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hQdQj"
+          class="StyledBox-sc-13pk1d4-0 cVkSXv"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iCreHd"
@@ -1358,7 +1466,7 @@ exports[`Tabs set on hover 4`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kijwgq"
+      class="StyledBox-sc-13pk1d4-0 lotabM"
     >
       <button
         aria-expanded="true"
@@ -1368,7 +1476,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hQdQj"
+          class="StyledBox-sc-13pk1d4-0 cVkSXv"
         >
           <span
             class="StyledText-sc-1sadyjn-0 hJZqIs"
@@ -1385,7 +1493,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hQdQj"
+          class="StyledBox-sc-13pk1d4-0 cVkSXv"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iCreHd"
@@ -1413,7 +1521,7 @@ exports[`Tabs set on hover 5`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 kijwgq"
+      class="StyledBox-sc-13pk1d4-0 lotabM"
     >
       <button
         aria-expanded="true"
@@ -1423,7 +1531,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hQdQj"
+          class="StyledBox-sc-13pk1d4-0 cVkSXv"
         >
           <span
             class="StyledText-sc-1sadyjn-0 hJZqIs"
@@ -1440,7 +1548,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 csllLZ"
+          class="StyledBox-sc-13pk1d4-0 gaswRr"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iCreHd"

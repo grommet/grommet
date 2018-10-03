@@ -84,7 +84,7 @@ class Tab extends Component {
       >
         <Box
           pad={{ bottom: 'xsmall' }}
-          margin={{ horizontal: 'small' }}
+          margin={{ vertical: 'xxsmall', horizontal: 'small' }}
           border={{ side: 'bottom', size: 'small', color: borderColor }}
         >
           {normalizedTitle}
