@@ -4,7 +4,6 @@ import {
   activeStyle,
   backgroundStyle,
   colorForName,
-  colorIsDark,
   focusStyle,
   lapAndUp,
   normalizeColor,
@@ -19,6 +18,8 @@ const basicStyle = props => css`
   border-radius: ${props.theme.button.border.radius};
   color: ${(props.theme.button.color ||
     props.theme.global.text.color)[props.theme.dark ? 'dark' : 'light']};
+  padding: ${props.theme.button.padding.vertical} ${props.theme.button.padding.horizontal};
+  font-size: ${props.theme.text.medium.size};
 `;
 
 const primaryStyle = props => css`
@@ -33,15 +34,6 @@ const primaryStyle = props => css`
     )
   }
   border-radius: ${props.theme.button.border.radius};
-
-  // TODO: revisit this
-  svg {
-    fill: ${props.theme.global.text.color[
-      colorIsDark(colorForName('brand', props.theme)) ? 'dark' : 'light']};
-    stroke: ${props.theme.global.text.color[
-      colorIsDark(colorForName('brand', props.theme)) ? 'dark' : 'light']};
-    transition: none;
-  }
 `;
 
 const disabledStyle = css`
@@ -79,18 +71,6 @@ const hoverStyle = css`
     ${props => !props.plain && (
       css`box-shadow: 0px 0px 0px 2px ${getHoverColor(props)};`
     )}
-
-    ${props => !props.plain && !props.primary && (
-      css`
-        // TODO: revisit this
-        svg {
-          fill: ${props.theme.global.hover.textColor};
-          stroke: ${props.theme.global.hover.textColor};
-          transition: none;
-        }
-      `
-    )}
-
   }
 `;
 
@@ -130,18 +110,12 @@ export const StyledButton = styled.button`
 
   ${props => !props.disabled && props.active && activeStyle}
   ${props => props.disabled && disabledStyle}
-
-  ${props => (
-    !props.plain && (
-      `padding: ${props.theme.button.padding.vertical} ${props.theme.button.padding.horizontal};`
-    )
-  )}
   ${props => props.focus && (!props.plain || props.focusIndicator) && focusStyle}
   ${lapAndUp(`
     transition: 0.1s ease-in-out;
   `)}
   ${props => props.fillContainer && fillStyle}
-  ${props => props.hasIcon && !props.hasLabel && !props.plain && `
+  ${props => props.hasIcon && !props.hasLabel && `
     padding: ${props.theme.global.edgeSize.small};
   `}
   ${props => props.theme.button.extend}

@@ -257,7 +257,7 @@ exports[`Carousel basic 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0px;
-  padding: 12px;
+  padding: 0px;
 }
 
 .c9 {
@@ -302,6 +302,7 @@ exports[`Carousel basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  padding: 12px;
 }
 
 .c17 {
@@ -455,7 +456,7 @@ exports[`Carousel basic 1`] = `
 
 @media only screen and (max-width:699px) {
   .c15 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -924,7 +925,7 @@ exports[`Carousel navigate 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0px;
-  padding: 12px;
+  padding: 0px;
 }
 
 .c9 {
@@ -969,6 +970,7 @@ exports[`Carousel navigate 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  padding: 12px;
 }
 
 .c17 {
@@ -1122,7 +1124,7 @@ exports[`Carousel navigate 1`] = `
 
 @media only screen and (max-width:699px) {
   .c15 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -1369,7 +1371,7 @@ exports[`Carousel navigate 2`] = `
           class="StyledBox-sc-13pk1d4-0 hoZmmL"
         >
           <button
-            class="StyledButton-sc-323bzc-0 hVXlHQ"
+            class="StyledButton-sc-323bzc-0 eUdNKh"
             type="button"
           >
             <div
@@ -1402,11 +1404,11 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-sc-13pk1d4-0 kijwgq"
           >
             <button
-              class="StyledButton-sc-323bzc-0 eFkyjH"
+              class="StyledButton-sc-323bzc-0 cGpETu"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 eQOfmN"
+                class="StyledBox-sc-13pk1d4-0 ksxcgD"
               >
                 <svg
                   aria-label="Subtract"
@@ -1427,11 +1429,11 @@ exports[`Carousel navigate 2`] = `
               </div>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 eFkyjH"
+              class="StyledButton-sc-323bzc-0 cGpETu"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 eQOfmN"
+                class="StyledBox-sc-13pk1d4-0 ksxcgD"
               >
                 <svg
                   aria-label="Subtract"
@@ -1458,7 +1460,7 @@ exports[`Carousel navigate 2`] = `
           class="StyledBox-sc-13pk1d4-0 hoZmmL"
         >
           <button
-            class="StyledButton-sc-323bzc-0 bpXwFO"
+            class="StyledButton-sc-323bzc-0 hvgqUe"
             disabled=""
             type="button"
           >
@@ -1541,7 +1543,7 @@ exports[`Carousel navigate 3`] = `
           class="StyledBox-sc-13pk1d4-0 hoZmmL"
         >
           <button
-            class="StyledButton-sc-323bzc-0 bpXwFO"
+            class="StyledButton-sc-323bzc-0 hvgqUe"
             disabled=""
             type="button"
           >
@@ -1575,11 +1577,11 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-sc-13pk1d4-0 kijwgq"
           >
             <button
-              class="StyledButton-sc-323bzc-0 eFkyjH"
+              class="StyledButton-sc-323bzc-0 cGpETu"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 eQOfmN"
+                class="StyledBox-sc-13pk1d4-0 ksxcgD"
               >
                 <svg
                   aria-label="Subtract"
@@ -1601,11 +1603,11 @@ exports[`Carousel navigate 3`] = `
               </div>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 eFkyjH"
+              class="StyledButton-sc-323bzc-0 cGpETu"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 eQOfmN"
+                class="StyledBox-sc-13pk1d4-0 ksxcgD"
               >
                 <svg
                   aria-label="Subtract"
@@ -1631,7 +1633,7 @@ exports[`Carousel navigate 3`] = `
           class="StyledBox-sc-13pk1d4-0 hoZmmL"
         >
           <button
-            class="StyledButton-sc-323bzc-0 hVXlHQ"
+            class="StyledButton-sc-323bzc-0 eUdNKh"
             type="button"
           >
             <div
@@ -1919,7 +1921,7 @@ exports[`Carousel play 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0px;
-  padding: 12px;
+  padding: 0px;
 }
 
 .c9 {
@@ -1964,6 +1966,7 @@ exports[`Carousel play 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  padding: 12px;
 }
 
 .c17 {
@@ -2117,7 +2120,7 @@ exports[`Carousel play 1`] = `
 
 @media only screen and (max-width:699px) {
   .c15 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -2362,7 +2365,7 @@ exports[`Carousel play 2`] = `
           class="StyledBox-sc-13pk1d4-0 hoZmmL"
         >
           <button
-            class="StyledButton-sc-323bzc-0 hVXlHQ"
+            class="StyledButton-sc-323bzc-0 eUdNKh"
             type="button"
           >
             <div
@@ -2395,11 +2398,11 @@ exports[`Carousel play 2`] = `
             class="StyledBox-sc-13pk1d4-0 kijwgq"
           >
             <button
-              class="StyledButton-sc-323bzc-0 eFkyjH"
+              class="StyledButton-sc-323bzc-0 cGpETu"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 eQOfmN"
+                class="StyledBox-sc-13pk1d4-0 ksxcgD"
               >
                 <svg
                   aria-label="Subtract"
@@ -2420,11 +2423,11 @@ exports[`Carousel play 2`] = `
               </div>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 eFkyjH"
+              class="StyledButton-sc-323bzc-0 cGpETu"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 eQOfmN"
+                class="StyledBox-sc-13pk1d4-0 ksxcgD"
               >
                 <svg
                   aria-label="Subtract"
@@ -2451,7 +2454,7 @@ exports[`Carousel play 2`] = `
           class="StyledBox-sc-13pk1d4-0 hoZmmL"
         >
           <button
-            class="StyledButton-sc-323bzc-0 bpXwFO"
+            class="StyledButton-sc-323bzc-0 hvgqUe"
             disabled=""
             type="button"
           >

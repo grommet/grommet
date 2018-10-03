@@ -26,11 +26,6 @@ exports[`DropButton close by clicking outside 1`] = `
   padding: 0px;
 }
 
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c0 {
   display: inline-block;
   box-sizing: border-box;
@@ -47,15 +42,11 @@ exports[`DropButton close by clicking outside 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
+  font-size: 18px;
 }
 
 .c0:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c0:hover svg {
-  -webkit-transition: none;
-  transition: none;
 }
 
 @media only screen and (max-width:699px) {
@@ -85,13 +76,7 @@ exports[`DropButton close by clicking outside 1`] = `
   <div
     class="c1"
   >
-    <span
-      class="c2"
-    >
-      <strong>
-        Dropper
-      </strong>
-    </span>
+    Dropper
   </div>
 </button>
 `;
@@ -118,7 +103,7 @@ exports[`DropButton close by clicking outside 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .dtcgqD {
+  .gKHIXA {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -164,11 +149,6 @@ exports[`DropButton closed 1`] = `
   padding: 0px;
 }
 
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c0 {
   display: inline-block;
   box-sizing: border-box;
@@ -185,15 +165,11 @@ exports[`DropButton closed 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
+  font-size: 18px;
 }
 
 .c0:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c0:hover svg {
-  -webkit-transition: none;
-  transition: none;
 }
 
 @media only screen and (max-width:699px) {
@@ -227,13 +203,7 @@ exports[`DropButton closed 1`] = `
   <div
     className="c1"
   >
-    <span
-      className="c2"
-    >
-      <strong>
-        Dropper
-      </strong>
-    </span>
+    Dropper
   </div>
 </button>
 `;
@@ -264,11 +234,6 @@ exports[`DropButton disabled 1`] = `
   padding: 0px;
 }
 
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c0 {
   display: inline-block;
   box-sizing: border-box;
@@ -284,9 +249,10 @@ exports[`DropButton disabled 1`] = `
   border: 2px solid #7D4CDB;
   border-radius: 18px;
   color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
   opacity: 0.3;
   cursor: default;
-  padding: 4px 22px;
 }
 
 @media only screen and (max-width:699px) {
@@ -317,13 +283,7 @@ exports[`DropButton disabled 1`] = `
   <div
     class="c1"
   >
-    <span
-      class="c2"
-    >
-      <strong>
-        Dropper
-      </strong>
-    </span>
+    Dropper
   </div>
 </button>
 `;
@@ -354,11 +314,6 @@ exports[`DropButton open and close 1`] = `
   padding: 0px;
 }
 
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c0 {
   display: inline-block;
   box-sizing: border-box;
@@ -375,15 +330,11 @@ exports[`DropButton open and close 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
+  font-size: 18px;
 }
 
 .c0:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c0:hover svg {
-  -webkit-transition: none;
-  transition: none;
 }
 
 @media only screen and (max-width:699px) {
@@ -413,13 +364,7 @@ exports[`DropButton open and close 1`] = `
   <div
     class="c1"
   >
-    <span
-      class="c2"
-    >
-      <strong>
-        Dropper
-      </strong>
-    </span>
+    Dropper
   </div>
 </button>
 `;
@@ -446,7 +391,7 @@ exports[`DropButton open and close 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .dtcgqD {
+  .gKHIXA {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -492,11 +437,6 @@ exports[`DropButton opened 1`] = `
   padding: 0px;
 }
 
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c0 {
   display: inline-block;
   box-sizing: border-box;
@@ -513,15 +453,11 @@ exports[`DropButton opened 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
+  font-size: 18px;
 }
 
 .c0:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c0:hover svg {
-  -webkit-transition: none;
-  transition: none;
 }
 
 @media only screen and (max-width:699px) {
@@ -555,13 +491,7 @@ exports[`DropButton opened 1`] = `
   <div
     className="c1"
   >
-    <span
-      className="c2"
-    >
-      <strong>
-        Dropper
-      </strong>
-    </span>
+    Dropper
   </div>
 </button>
 `;
@@ -592,11 +522,6 @@ exports[`DropButton opened ref 1`] = `
   padding: 0px;
 }
 
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c0 {
   display: inline-block;
   box-sizing: border-box;
@@ -613,15 +538,11 @@ exports[`DropButton opened ref 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
+  font-size: 18px;
 }
 
 .c0:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c0:hover svg {
-  -webkit-transition: none;
-  transition: none;
 }
 
 @media only screen and (max-width:699px) {
@@ -651,13 +572,7 @@ exports[`DropButton opened ref 1`] = `
   <div
     class="c1"
   >
-    <span
-      class="c2"
-    >
-      <strong>
-        Dropper
-      </strong>
-    </span>
+    Dropper
   </div>
 </button>
 `;
@@ -684,21 +599,21 @@ exports[`DropButton opened ref 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .dtcgqD {
+  .gKHIXA {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fiHkqW {
+  .iKaXUd {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iFLiwK {
+  .gnSkEU {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

@@ -26,11 +26,6 @@ exports[`Button color renders 1`] = `
   padding: 0px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -47,18 +42,14 @@ exports[`Button color renders 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
+  font-size: 18px;
 }
 
 .c1:hover {
   box-shadow: 0px 0px 0px 2px #FD6FFF;
 }
 
-.c1:hover svg {
-  -webkit-transition: none;
-  transition: none;
-}
-
-.c4 {
+.c3 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -73,20 +64,14 @@ exports[`Button color renders 1`] = `
   border: 2px solid #FD6FFF;
   border-radius: 18px;
   color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
   background: #FD6FFF;
   color: #444444;
   border-radius: 18px;
-  padding: 4px 22px;
 }
 
-.c4 svg {
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-  -webkit-transition: none;
-  transition: none;
-}
-
-.c4:hover {
+.c3:hover {
   box-shadow: 0px 0px 0px 2px #FD6FFF;
 }
 
@@ -121,7 +106,7 @@ exports[`Button color renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c4 {
+  .c3 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -141,17 +126,11 @@ exports[`Button color renders 1`] = `
     <div
       className="c2"
     >
-      <span
-        className="c3"
-      >
-        <strong>
-          Test
-        </strong>
-      </span>
+      Test
     </div>
   </button>
   <button
-    className="c4"
+    className="c3"
     disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
@@ -161,13 +140,7 @@ exports[`Button color renders 1`] = `
     <div
       className="c2"
     >
-      <span
-        className="c3"
-      >
-        <strong>
-          Test
-        </strong>
-      </span>
+      Test
     </div>
   </button>
 </div>
@@ -189,9 +162,10 @@ exports[`Button disabled renders 1`] = `
   border: 2px solid #7D4CDB;
   border-radius: 18px;
   color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
   opacity: 0.3;
   cursor: default;
-  padding: 4px 22px;
 }
 
 .c0 {
@@ -251,11 +225,6 @@ exports[`Button focus renders 1`] = `
   padding: 0px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -272,6 +241,7 @@ exports[`Button focus renders 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
+  font-size: 18px;
   border-color: #FD6FFF;
   box-shadow: 0 0 2px 2px #FD6FFF;
 }
@@ -330,13 +300,7 @@ exports[`Button focus renders 1`] = `
     <div
       className="c2"
     >
-      <span
-        className="c3"
-      >
-        <strong>
-          Test
-        </strong>
-      </span>
+      Test
     </div>
   </button>
 </div>
@@ -760,15 +724,11 @@ exports[`Button href renders 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
+  font-size: 18px;
 }
 
 .c1:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c1:hover svg {
-  -webkit-transition: none;
-  transition: none;
 }
 
 .c0 {
@@ -793,7 +753,7 @@ exports[`Button href renders 1`] = `
   className="c0"
 >
   <a
-    className="-a c1"
+    className="c1"
     disabled={false}
     href="test"
     onBlur={[Function]}
@@ -825,7 +785,7 @@ exports[`Button icon label renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0px;
-  padding: 12px;
+  padding: 0px;
 }
 
 .c3 {
@@ -833,11 +793,6 @@ exports[`Button icon label renders 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 12px;
-}
-
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c1 {
@@ -856,15 +811,11 @@ exports[`Button icon label renders 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
+  font-size: 18px;
 }
 
 .c1:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c1:hover svg {
-  -webkit-transition: none;
-  transition: none;
 }
 
 .c0 {
@@ -886,7 +837,7 @@ exports[`Button icon label renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -915,13 +866,7 @@ exports[`Button icon label renders 1`] = `
       <div
         className="c3"
       />
-      <span
-        className="c4"
-      >
-        <strong>
-          Test
-        </strong>
-      </span>
+      Test
     </div>
   </button>
 </div>
@@ -953,11 +898,6 @@ exports[`Button primary renders 1`] = `
   padding: 0px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -973,17 +913,11 @@ exports[`Button primary renders 1`] = `
   border: 2px solid #7D4CDB;
   border-radius: 18px;
   color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
   background: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  padding: 4px 22px;
-}
-
-.c1 svg {
-  fill: #f8f8f8;
-  stroke: #f8f8f8;
-  -webkit-transition: none;
-  transition: none;
 }
 
 .c1:hover {
@@ -1034,13 +968,7 @@ exports[`Button primary renders 1`] = `
     <div
       className="c2"
     >
-      <span
-        className="c3"
-      >
-        <strong>
-          Test
-        </strong>
-      </span>
+      Test
     </div>
   </button>
 </div>
@@ -1072,11 +1000,6 @@ exports[`Button renders 1`] = `
   padding: 0px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1093,15 +1016,11 @@ exports[`Button renders 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
+  font-size: 18px;
 }
 
 .c1:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c1:hover svg {
-  -webkit-transition: none;
-  transition: none;
 }
 
 .c0 {
@@ -1148,13 +1067,7 @@ exports[`Button renders 1`] = `
     <div
       className="c2"
     >
-      <span
-        className="c3"
-      >
-        <strong>
-          Test
-        </strong>
-      </span>
+      Test
     </div>
   </button>
 </div>
@@ -1183,19 +1096,14 @@ exports[`Button reverse icon label renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0px;
-  padding: 12px;
+  padding: 0px;
 }
 
-.c4 {
+.c3 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 12px;
-}
-
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c1 {
@@ -1214,15 +1122,11 @@ exports[`Button reverse icon label renders 1`] = `
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
+  font-size: 18px;
 }
 
 .c1:hover {
   box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c1:hover svg {
-  -webkit-transition: none;
-  transition: none;
 }
 
 .c0 {
@@ -1244,7 +1148,7 @@ exports[`Button reverse icon label renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -1269,15 +1173,9 @@ exports[`Button reverse icon label renders 1`] = `
     <div
       className="c2"
     >
-      <span
-        className="c3"
-      >
-        <strong>
-          Test
-        </strong>
-      </span>
+      Test
       <div
-        className="c4"
+        className="c3"
       />
       <svg />
     </div>
@@ -1308,7 +1206,7 @@ exports[`Button warns about invalid icon render 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0px;
-  padding: 12px;
+  padding: 0px;
 }
 
 .c1 {
@@ -1327,6 +1225,7 @@ exports[`Button warns about invalid icon render 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  padding: 12px;
 }
 
 .c0 {
@@ -1348,7 +1247,7 @@ exports[`Button warns about invalid icon render 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    padding: 6px;
+    padding: 0px;
   }
 }
 
@@ -1405,11 +1304,6 @@ exports[`Button warns about invalid label render 1`] = `
   padding: 0px;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1472,13 +1366,7 @@ exports[`Button warns about invalid label render 1`] = `
     <div
       className="c2"
     >
-      <span
-        className="c3"
-      >
-        <strong>
-          Test
-        </strong>
-      </span>
+      Test
     </div>
   </button>
 </div>
