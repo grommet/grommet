@@ -65,7 +65,9 @@ class Box extends Component {
       responsive,
       tag,
       theme: propsTheme,
-      wrap, // munged to avoid styled-components putting it in the DOM
+      wrap, // munged to avoid styled-components putting it in the DOM,
+      width, // munged to avoid styled-components putting it in the DOM
+      height, // munged to avoid styled-components putting it in the DOM
       ...rest
     } = this.props;
     const { theme: stateTheme } = this.state;
@@ -110,6 +112,8 @@ class Box extends Component {
         fillProp={fill}
         overflowProp={overflow}
         wrapProp={wrap}
+        widthProp={width}
+        heightProp={height}
         responsive={responsive}
         theme={theme}
         {...rest}

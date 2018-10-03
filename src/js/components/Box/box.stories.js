@@ -77,6 +77,48 @@ class CustomColorBox extends Component {
   }
 }
 
+class FixedSizesBox extends Component {
+  render() {
+    return (
+      <Grommet theme={grommet}>
+        <Box pad='small' gap='small'>
+          <Box
+            width='small'
+            height='small'
+            round='small'
+            align='center'
+            justify='center'
+            background='brand'
+          >
+            Small
+          </Box>
+          <Box
+            width='medium'
+            height='medium'
+            round='small'
+            align='center'
+            justify='center'
+            background='brand'
+          >
+            Medium
+          </Box>
+          <Box
+            width='large'
+            height='large'
+            round='small'
+            align='center'
+            justify='center'
+            background='brand'
+          >
+            Large
+          </Box>
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Box', module)
   .add('Simple Box', () => <SimpleBox />)
-  .add('Custom color', () => <CustomColorBox />);
+  .add('Custom color', () => <CustomColorBox />)
+  .add('Fixed sizes', () => <FixedSizesBox />);
