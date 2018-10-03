@@ -334,10 +334,10 @@ export const StyledBox = styled.div`
   outline: none;
   ${props => !props.basis && 'max-width: 100%;'};
 
-  ${props => props.height &&
-    `height: ${props.theme.global.size[props.height]};`}
-  ${props => props.width &&
-    `width: ${props.theme.global.size[props.width]};`}
+  ${props => props.heightProp &&
+    `height: ${props.theme.global.size[props.heightProp]};`}
+  ${props => props.widthProp &&
+    `width: ${props.theme.global.size[props.widthProp]};`}
   ${props => props.align && alignStyle}
   ${props => props.alignContent && alignContentStyle}
   ${props => props.alignSelf && alignSelfStyle}
