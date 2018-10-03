@@ -43,6 +43,7 @@ exports[`RoutedButton renders 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
 }
 
 .c1:hover {

@@ -43,6 +43,7 @@ exports[`DropButton close by clicking outside 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
 }
 
 .c0:hover {
@@ -103,7 +104,7 @@ exports[`DropButton close by clicking outside 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gKHIXA {
+  .kXrZjK {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -166,6 +167,7 @@ exports[`DropButton closed 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
 }
 
 .c0:hover {
@@ -251,6 +253,7 @@ exports[`DropButton disabled 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
   opacity: 0.3;
   cursor: default;
 }
@@ -331,6 +334,7 @@ exports[`DropButton open and close 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
 }
 
 .c0:hover {
@@ -391,7 +395,7 @@ exports[`DropButton open and close 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gKHIXA {
+  .kXrZjK {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -454,6 +458,7 @@ exports[`DropButton opened 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
 }
 
 .c0:hover {
@@ -539,6 +544,7 @@ exports[`DropButton opened ref 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
 }
 
 .c0:hover {
@@ -599,21 +605,21 @@ exports[`DropButton opened ref 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gKHIXA {
+  .kXrZjK {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iKaXUd {
+  .ighkQC {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .gnSkEU {
+  .bYlrVG {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

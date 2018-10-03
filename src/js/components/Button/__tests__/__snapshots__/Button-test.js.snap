@@ -43,6 +43,7 @@ exports[`Button color renders 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
 }
 
 .c1:hover {
@@ -66,6 +67,7 @@ exports[`Button color renders 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
   background: #FD6FFF;
   color: #444444;
   border-radius: 18px;
@@ -164,6 +166,7 @@ exports[`Button disabled renders 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
   opacity: 0.3;
   cursor: default;
 }
@@ -242,6 +245,7 @@ exports[`Button focus renders 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
   border-color: #FD6FFF;
   box-shadow: 0 0 2px 2px #FD6FFF;
 }
@@ -725,6 +729,7 @@ exports[`Button href renders 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
 }
 
 .c1:hover {
@@ -812,6 +817,7 @@ exports[`Button icon label renders 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
 }
 
 .c1:hover {
@@ -915,6 +921,7 @@ exports[`Button primary renders 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
   background: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
@@ -1017,6 +1024,7 @@ exports[`Button renders 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
 }
 
 .c1:hover {
@@ -1123,6 +1131,7 @@ exports[`Button reverse icon label renders 1`] = `
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
+  line-height: 24px;
 }
 
 .c1:hover {

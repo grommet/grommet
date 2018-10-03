@@ -20,6 +20,7 @@ const basicStyle = props => css`
     props.theme.global.text.color)[props.theme.dark ? 'dark' : 'light']};
   padding: ${props.theme.button.padding.vertical} ${props.theme.button.padding.horizontal};
   font-size: ${props.theme.text.medium.size};
+  line-height: ${props.theme.text.medium.height};
 `;
 
 const primaryStyle = props => css`
