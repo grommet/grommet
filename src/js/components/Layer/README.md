@@ -30,42 +30,49 @@ particular side of the layer
 
 ```
 none
+xxsmall
 xsmall
 small
 medium
 large
 {
   bottom: 
+    xxsmall
     xsmall
     small
     medium
     large
     string,
   horizontal: 
+    xxsmall
     xsmall
     small
     medium
     large
     string,
   left: 
+    xxsmall
     xsmall
     small
     medium
     large
     string,
   right: 
+    xxsmall
     xsmall
     small
     medium
     large
     string,
   top: 
+    xxsmall
     xsmall
     small
     medium
     large
     string,
   vertical: 
+    xxsmall
     xsmall
     small
     medium

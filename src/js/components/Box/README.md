@@ -316,6 +316,7 @@ The amount of margin around the box. An object can
 
 ```
 none
+xxsmall
 xsmall
 small
 medium
@@ -323,6 +324,7 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
     xsmall
     small
     medium
@@ -330,6 +332,7 @@ xlarge
     xlarge
     string,
   horizontal: 
+    xxsmall
     xsmall
     small
     medium
@@ -337,6 +340,7 @@ xlarge
     xlarge
     string,
   left: 
+    xxsmall
     xsmall
     small
     medium
@@ -344,6 +348,7 @@ xlarge
     xlarge
     string,
   right: 
+    xxsmall
     xsmall
     small
     medium
@@ -351,6 +356,7 @@ xlarge
     xlarge
     string,
   top: 
+    xxsmall
     xsmall
     small
     medium
@@ -358,6 +364,7 @@ xlarge
     xlarge
     string,
   vertical: 
+    xxsmall
     xsmall
     small
     medium
@@ -387,6 +394,7 @@ The amount of padding around the box contents. An
 
 ```
 none
+xxsmall
 xsmall
 small
 medium
@@ -394,36 +402,42 @@ large
 xlarge
 {
   bottom: 
+    xxsmall
     xsmall
     small
     medium
     large
     xlarge,
   horizontal: 
+    xxsmall
     xsmall
     small
     medium
     large
     xlarge,
   left: 
+    xxsmall
     xsmall
     small
     medium
     large
     xlarge,
   right: 
+    xxsmall
     xsmall
     small
     medium
     large
     xlarge,
   top: 
+    xxsmall
     xsmall
     small
     medium
     large
     xlarge,
   vertical: 
+    xxsmall
     xsmall
     small
     medium

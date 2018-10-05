@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-const PAD_SIZES = ['xsmall', 'small', 'medium', 'large'];
+const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 
 export const doc = (Layer) => {
   const DocumentedLayer = describe(Layer)
