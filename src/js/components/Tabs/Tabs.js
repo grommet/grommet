@@ -54,7 +54,11 @@ class Tabs extends Component {
 
       if (isTabActive) {
         activeContent = tabProps.children;
-        activeTitle = tabProps.title;
+        if (typeof tabProps.title === 'string') {
+          activeTitle = tabProps.title;
+        } else {
+          activeTitle = index + 1;
+        }
       }
 
       return cloneElement(tab, {

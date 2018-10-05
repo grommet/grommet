@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Attraction, Car, TreeOption } from 'grommet-icons';
+import { Attraction, Car, CircleInformation, Currency, TreeOption } from 'grommet-icons';
 
-import { Grommet, Box, Tab, Tabs } from '../';
+import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from '../';
 import { grommet } from '../../themes';
 
 const UncontrolledTabs = () => (
@@ -173,8 +173,34 @@ class ResponsiveTabs extends Component {
     );
   }
 }
+const RichTabTitle = ({ icon, label }) => (
+  <Box direction='row' align='center' gap='xsmall' margin='xsmall'>
+    {icon}
+    <Text size='small'>
+      <strong>{label}</strong>
+    </Text>
+  </Box>
+);
+
+const RichTabs = () => (
+  <Grommet theme={grommet}>
+    <Tabs>
+      <Tab title={<RichTabTitle icon={<CircleInformation color='accent-1' />} label='Personal Data' />}>
+        <FormField label='Name'>
+          <TextInput placeholder='Enter your name...' />
+        </FormField>
+      </Tab>
+      <Tab title={<RichTabTitle icon={<Currency color='neutral-5' />} label='Payment' />}>
+        <FormField label='Card Number'>
+          <TextInput placeholder='Enter your card number...' />
+        </FormField>
+      </Tab>
+    </Tabs>
+  </Grommet>
+);
 
 storiesOf('Tabs', module)
   .add('Uncontrolled Tabs', () => <UncontrolledTabs />)
   .add('Controlled Tabs', () => <ControlledTabs />)
-  .add('Responsive Tabs', () => <ResponsiveTabs />);
+  .add('Responsive Tabs', () => <ResponsiveTabs />)
+  .add('Rich Tabs', () => <RichTabs />);
