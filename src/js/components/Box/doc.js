@@ -181,8 +181,16 @@ export const doc = (Box) => {
       sizes should be scaled for mobile environments.`)
       .defaultValue(true),
     round: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full']),
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
       PropTypes.string,
+      PropTypes.shape({
+        corner: PropTypes.oneOf(['top', 'left', 'bottom', 'right',
+          'top-left', 'top-right', 'bottom-left', 'bottom-right']),
+        size: PropTypes.oneOfType([
+          PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+          PropTypes.string,
+        ]),
+      }),
     ])
     .description('How much to round the corners.'),
     tag: PropTypes.string.description('The DOM tag to use for the element.')

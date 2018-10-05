@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 
-import { Grommet, Anchor, Box, Button, Text } from '../';
+import { Grommet, Anchor, Box, Button, Grid, Text } from '../';
 import { grommet } from '../../themes';
 
 class SimpleBox extends Component {
@@ -118,7 +118,69 @@ class FixedSizesBox extends Component {
   }
 }
 
+class BorderBox extends Component {
+  render() {
+    return (
+      <Grommet theme={grommet}>
+        <Box pad='small' gap='small' align='start'>
+          <Box pad='small' border={true}>
+            true
+          </Box>
+          <Box direction='row-responsive' gap='small'>
+            {['horizontal', 'vertical', 'left', 'top', 'right', 'bottom'].map(border => (
+              <Box pad='small' border={border}>
+                {border}
+              </Box>
+            ))}
+          </Box>
+          <Box pad='small' border={{ color: 'brand' }}>
+            color
+          </Box>
+          <Box direction='row-responsive' gap='small' align='start'>
+            {['small', 'medium', 'large'].map(size => (
+              <Box pad='small' border={{ size }}>
+                {size}
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
+class RoundBox extends Component {
+  render() {
+    return (
+      <Grommet theme={grommet}>
+        <Box pad='small' gap='small'>
+          <Box pad='small' background='brand' round={true} alignSelf='start'>
+            true
+          </Box>
+          <Grid columns='small' gap='small'>
+            {['xsmall', 'small', 'medium', 'large', 'xlarge', 'full'].map(size => (
+              <Box pad='large' background='brand' round={{ size }}>
+                {size}
+              </Box>
+            ))}
+          </Grid>
+          <Grid columns='small' gap='small'>
+            {['left', 'top', 'right', 'bottom',
+              'top-left', 'top-right', 'bottom-left', 'bottom-right'].map(corner => (
+                <Box pad='small' background='brand' round={{ corner }}>
+                  {corner}
+                </Box>
+            ))}
+          </Grid>
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Box', module)
   .add('Simple Box', () => <SimpleBox />)
   .add('Custom color', () => <CustomColorBox />)
-  .add('Fixed sizes', () => <FixedSizesBox />);
+  .add('Fixed sizes', () => <FixedSizesBox />)
+  .add('Border', () => <BorderBox />)
+  .add('Round', () => <RoundBox />);

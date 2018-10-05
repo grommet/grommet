@@ -67,7 +67,7 @@ export interface BoxProps {
   overflow?: \\"auto\\" | \\"hidden\\" | \\"scroll\\" | \\"visible\\";
   pad?: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",horizontal: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",left: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",right: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",top: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\",vertical: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\"} | string;
   responsive?: boolean;
-  round?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"full\\" | string;
+  round?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | string | {corner: \\"top\\" | \\"left\\" | \\"bottom\\" | \\"right\\" | \\"top-left\\" | \\"top-right\\" | \\"bottom-left\\" | \\"bottom-right\\",size: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string};
   tag?: string;
   width?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   wrap?: boolean;

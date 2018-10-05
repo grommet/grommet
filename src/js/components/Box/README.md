@@ -451,8 +451,27 @@ xsmall
 small
 medium
 large
+xlarge
 full
 string
+{
+  corner: 
+    top
+    left
+    bottom
+    right
+    top-left
+    top-right
+    bottom-left
+    bottom-right,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
 ```
 
 **tag**
