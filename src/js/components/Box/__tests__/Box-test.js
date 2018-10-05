@@ -262,6 +262,7 @@ test('Box gridArea renders', () => {
 test('Box round renders', () => {
   const component = renderer.create(
     <Grommet>
+      <Box round={true} />
       <Box round='xsmall' />
       <Box round='small' />
       <Box round='medium' />

@@ -241,12 +241,13 @@ const roundStyle = (data, responsive, theme) => {
       }
     }
   } else {
+    const size = data === true ? 'medium' : data;
     styles.push(css`
-      border-radius: ${ROUND_MAP[data] || theme.global.edgeSize[data]};
+      border-radius: ${ROUND_MAP[size] || theme.global.edgeSize[size] || size};
     `);
     if (responsive) {
       styles.push(palm(`
-        border-radius: ${ROUND_MAP[data] || theme.global.edgeSize.narrow[data]};
+        border-radius: ${ROUND_MAP[size] || theme.global.edgeSize.narrow[size] || size};
       `));
     }
   }

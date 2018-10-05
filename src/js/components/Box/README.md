@@ -447,6 +447,7 @@ boolean
 How much to round the corners.
 
 ```
+boolean
 xsmall
 small
 medium

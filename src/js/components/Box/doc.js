@@ -181,6 +181,7 @@ export const doc = (Box) => {
       sizes should be scaled for mobile environments.`)
       .defaultValue(true),
     round: PropTypes.oneOfType([
+      PropTypes.bool,
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
       PropTypes.string,
       PropTypes.shape({

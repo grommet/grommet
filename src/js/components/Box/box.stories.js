@@ -159,7 +159,7 @@ class RoundBox extends Component {
           </Box>
           <Grid columns='small' gap='small'>
             {['xsmall', 'small', 'medium', 'large', 'xlarge', 'full'].map(size => (
-              <Box pad='large' background='brand' round={{ size }}>
+              <Box key={size} pad='large' background='brand' round={{ size }}>
                 {size}
               </Box>
             ))}
@@ -167,7 +167,7 @@ class RoundBox extends Component {
           <Grid columns='small' gap='small'>
             {['left', 'top', 'right', 'bottom',
               'top-left', 'top-right', 'bottom-left', 'bottom-right'].map(corner => (
-                <Box pad='small' background='brand' round={{ corner }}>
+                <Box key={corner} pad='small' background='brand' round={{ corner }}>
                   {corner}
                 </Box>
             ))}

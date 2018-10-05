@@ -4191,7 +4191,7 @@ exports[`Box round renders 1`] = `
   flex-direction: column;
   margin: 0px;
   padding: 0px;
-  border-radius: 6px;
+  border-radius: 24px;
 }
 
 .c2 {
@@ -4209,7 +4209,7 @@ exports[`Box round renders 1`] = `
   flex-direction: column;
   margin: 0px;
   padding: 0px;
-  border-radius: 12px;
+  border-radius: 6px;
 }
 
 .c3 {
@@ -4227,7 +4227,7 @@ exports[`Box round renders 1`] = `
   flex-direction: column;
   margin: 0px;
   padding: 0px;
-  border-radius: 24px;
+  border-radius: 12px;
 }
 
 .c4 {
@@ -4518,43 +4518,43 @@ exports[`Box round renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
     border-radius: 3px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c2 {
+  .c3 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c2 {
+  .c3 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c2 {
+  .c3 {
     border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c3 {
-    border-radius: 12px;
   }
 }
 
@@ -4843,6 +4843,9 @@ exports[`Box round renders 1`] = `
   />
   <div
     className="c3"
+  />
+  <div
+    className="c1"
   />
   <div
     className="c4"
