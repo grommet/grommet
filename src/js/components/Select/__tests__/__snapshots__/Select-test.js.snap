@@ -680,7 +680,7 @@ exports[`Select complex options and children 3`] = `
 }
 
 .c6:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }
@@ -924,7 +924,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gavjLN {
+  .iLsSdy {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -2276,13 +2276,13 @@ exports[`Select multiple values 3`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }
 
 .c6:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }
@@ -2571,14 +2571,14 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gavjLN {
+  .iLsSdy {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fuBvtX {
+  .jUYLaA {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -3053,7 +3053,7 @@ exports[`Select opens 3`] = `
 }
 
 .c6:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }
@@ -3330,7 +3330,7 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gavjLN {
+  .iLsSdy {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -3394,7 +3394,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 hvNmzo"
   >
     <button
-      class="StyledButton-sc-323bzc-0 gavjLN"
+      class="StyledButton-sc-323bzc-0 iLsSdy"
       role="menuitem"
       type="button"
     >
@@ -3413,7 +3413,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 hvNmzo"
   >
     <button
-      class="StyledButton-sc-323bzc-0 gavjLN"
+      class="StyledButton-sc-323bzc-0 iLsSdy"
       role="menuitem"
       type="button"
     >
@@ -3818,7 +3818,7 @@ exports[`Select search 2`] = `
 }
 
 .c9:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }
@@ -4177,7 +4177,7 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gavjLN {
+  .iLsSdy {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

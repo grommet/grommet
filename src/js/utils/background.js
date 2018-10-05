@@ -47,6 +47,7 @@ export const backgroundStyle = (backgroundArg, theme) => {
   const background = normalizeBackground(backgroundArg, theme);
 
   if (typeof background === 'object') {
+    const styles = [];
     if (background.image) {
       let color;
       if (background.dark === false) {
@@ -56,13 +57,15 @@ export const backgroundStyle = (backgroundArg, theme) => {
       } else {
         color = 'inherit';
       }
-      return css`
-        background: ${background.image} no-repeat;
+      styles.push(css`
+        background-image: ${background.image};
+        background-repeat: no-repeat;
         background-position: ${background.position || 'center center'};
         background-size: cover;
         color: ${color};
-      `;
-    } else if (background.color) {
+      `);
+    }
+    if (background.color) {
       const color = colorForName(background.color, theme);
       const backgroundColor = getRGBA(
         color,
@@ -72,24 +75,26 @@ export const backgroundStyle = (backgroundArg, theme) => {
           theme.global.opacity[background.opacity]
         )
       ) || color;
-      return css`
-        background: ${backgroundColor};
+      styles.push(css`
+        background-color: ${backgroundColor};
         ${(!background.opacity || background.opacity !== 'weak') &&
           `color: ${
             theme.global.text.color[background.dark || colorIsDark(backgroundColor) ?
               'dark' : 'light']};`
         }
-      `;
-    } else if (background.dark === false) {
-      return css`
-        color: ${theme.global.text.color.light};
-      `;
-    } else if (background.dark) {
-      return css`
-        color: ${theme.global.text.color.dark};
-      `;
+      `);
     }
-    return undefined;
+    if (background.dark === false) {
+      styles.push(css`
+        color: ${theme.global.text.color.light};
+      `);
+    }
+    if (background.dark) {
+      styles.push(css`
+        color: ${theme.global.text.color.dark};
+      `);
+    }
+    return styles;
   }
 
   if (background) {

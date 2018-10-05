@@ -132,6 +132,12 @@ test('Box background renders', () => {
           position: 'top center',
         }}
       />
+      <Box
+        background={{
+          image: 'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
+          color: 'accent-1',
+        }}
+      />
     </Grommet>
   );
   const tree = component.toJSON();

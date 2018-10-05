@@ -45,7 +45,7 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: rgba(68,68,68,0.8);
+  background-color: rgba(68,68,68,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -192,7 +192,7 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c5:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: white;
 }
@@ -645,7 +645,7 @@ exports[`Video controls renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: rgba(68,68,68,0.8);
+  background-color: rgba(68,68,68,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -817,7 +817,7 @@ exports[`Video controls renders 1`] = `
 }
 
 .c5:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: white;
 }
@@ -860,7 +860,7 @@ exports[`Video controls renders 1`] = `
 }
 
 .c22:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }
@@ -1455,7 +1455,7 @@ exports[`Video fit renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: rgba(68,68,68,0.8);
+  background-color: rgba(68,68,68,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1602,7 +1602,7 @@ exports[`Video fit renders 1`] = `
 }
 
 .c5:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: white;
 }
@@ -2208,7 +2208,7 @@ exports[`Video loop renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: rgba(68,68,68,0.8);
+  background-color: rgba(68,68,68,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -2355,7 +2355,7 @@ exports[`Video loop renders 1`] = `
 }
 
 .c5:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: white;
 }
@@ -2776,7 +2776,7 @@ exports[`Video mute renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: rgba(68,68,68,0.8);
+  background-color: rgba(68,68,68,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -2923,7 +2923,7 @@ exports[`Video mute renders 1`] = `
 }
 
 .c5:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: white;
 }
@@ -3344,7 +3344,7 @@ exports[`Video renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background: rgba(68,68,68,0.8);
+  background-color: rgba(68,68,68,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -3491,7 +3491,7 @@ exports[`Video renders 1`] = `
 }
 
 .c5:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: white;
 }
