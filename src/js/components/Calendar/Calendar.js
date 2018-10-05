@@ -233,12 +233,12 @@ class Calendar extends Component {
         >
           <Box>
             <Box direction='row' justify='between' align='center'>
-              <Box pad={{ horizontal: 'small' }}>
+              <Box basis='1/2' direction='row' pad={{ horizontal: 'small' }}>
                 <Heading level={3} size={size} margin='none'>
                   {reference.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
                 </Heading>
               </Box>
-              <Box direction='row' align='center'>
+              <Box basis='1/2' direction='row'>
                 <Button
                   a11yTitle={previousMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
                   icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
