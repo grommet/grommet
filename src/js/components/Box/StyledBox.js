@@ -411,9 +411,9 @@ export const StyledBox = styled.div`
   ${props => !props.basis && 'max-width: 100%;'};
 
   ${props => props.heightProp &&
-    `height: ${props.theme.global.size[props.heightProp]};`}
+    `height: ${props.theme.global.size[props.heightProp] || props.heightProp};`}
   ${props => props.widthProp &&
-    `width: ${props.theme.global.size[props.widthProp]};`}
+    `width: ${props.theme.global.size[props.widthProp] || props.widthProp};`}
   ${props => props.align && alignStyle}
   ${props => props.alignContent && alignContentStyle}
   ${props => props.alignSelf && alignSelfStyle}

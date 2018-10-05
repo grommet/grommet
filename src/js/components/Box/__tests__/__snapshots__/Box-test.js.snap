@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Box align renders 1`] = `
+exports[`Box align 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -198,7 +198,7 @@ exports[`Box align renders 1`] = `
 </div>
 `;
 
-exports[`Box alignContent renders 1`] = `
+exports[`Box alignContent 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -426,7 +426,7 @@ exports[`Box alignContent renders 1`] = `
 </div>
 `;
 
-exports[`Box alignSelf renders 1`] = `
+exports[`Box alignSelf 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -584,7 +584,7 @@ exports[`Box alignSelf renders 1`] = `
 </div>
 `;
 
-exports[`Box animation renders 1`] = `
+exports[`Box animation 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1079,7 +1079,7 @@ exports[`Box animation renders 1`] = `
 </div>
 `;
 
-exports[`Box background renders 1`] = `
+exports[`Box background 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1487,7 +1487,7 @@ exports[`Box background renders 1`] = `
 </div>
 `;
 
-exports[`Box basis renders 1`] = `
+exports[`Box basis 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1960,7 +1960,7 @@ exports[`Box basis renders 1`] = `
 </div>
 `;
 
-exports[`Box border renders 1`] = `
+exports[`Box border 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2457,7 +2457,57 @@ exports[`Box border renders 1`] = `
 </div>
 `;
 
-exports[`Box direction renders 1`] = `
+exports[`Box default 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+</div>
+`;
+
+exports[`Box direction 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2590,7 +2640,7 @@ exports[`Box direction renders 1`] = `
 </div>
 `;
 
-exports[`Box elevation renders 1`] = `
+exports[`Box elevation 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2806,7 +2856,7 @@ exports[`Box elevation renders 1`] = `
 </div>
 `;
 
-exports[`Box fill renders 1`] = `
+exports[`Box fill 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2960,7 +3010,7 @@ exports[`Box fill renders 1`] = `
 </div>
 `;
 
-exports[`Box flex renders 1`] = `
+exports[`Box flex 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3151,7 +3201,7 @@ exports[`Box flex renders 1`] = `
 </div>
 `;
 
-exports[`Box gap renders 1`] = `
+exports[`Box gap 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3255,7 +3305,7 @@ exports[`Box gap renders 1`] = `
 </div>
 `;
 
-exports[`Box gridArea renders 1`] = `
+exports[`Box gridArea 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3306,7 +3356,223 @@ exports[`Box gridArea renders 1`] = `
 </div>
 `;
 
-exports[`Box justify renders 1`] = `
+exports[`Box height 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  height: 96px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  height: 192px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  height: 384px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  height: 768px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  height: 1152px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  height: 111px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+  <div
+    className="c3"
+  />
+  <div
+    className="c4"
+  />
+  <div
+    className="c5"
+  />
+  <div
+    className="c6"
+  />
+</div>
+`;
+
+exports[`Box justify 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3468,7 +3734,7 @@ exports[`Box justify renders 1`] = `
 </div>
 `;
 
-exports[`Box margin renders 1`] = `
+exports[`Box margin 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3778,7 +4044,7 @@ exports[`Box margin renders 1`] = `
 </div>
 `;
 
-exports[`Box pad renders 1`] = `
+exports[`Box pad 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4088,57 +4354,7 @@ exports[`Box pad renders 1`] = `
 </div>
 `;
 
-exports[`Box renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0px;
-  padding: 0px;
-}
-
-@media only screen and (max-width:699px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  />
-</div>
-`;
-
-exports[`Box responsive renders 1`] = `
+exports[`Box responsive 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4208,7 +4424,7 @@ exports[`Box responsive renders 1`] = `
 </div>
 `;
 
-exports[`Box round renders 1`] = `
+exports[`Box round 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4939,7 +5155,7 @@ exports[`Box round renders 1`] = `
 </div>
 `;
 
-exports[`Box tag renders 1`] = `
+exports[`Box tag 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4989,7 +5205,223 @@ exports[`Box tag renders 1`] = `
 </div>
 `;
 
-exports[`Box wrap renders 1`] = `
+exports[`Box width 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  width: 96px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  width: 192px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  width: 384px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  width: 768px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  width: 1152px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  width: 111px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+  <div
+    className="c3"
+  />
+  <div
+    className="c4"
+  />
+  <div
+    className="c5"
+  />
+  <div
+    className="c6"
+  />
+</div>
+`;
+
+exports[`Box wrap 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
