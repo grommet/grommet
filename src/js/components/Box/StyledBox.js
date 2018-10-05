@@ -170,13 +170,89 @@ const ROUND_MAP = {
   'full': '100%',
 };
 
-const roundStyle = css`
-  border-radius: ${props =>
-    ROUND_MAP[props.round] || props.theme.global.edgeSize[props.round]};
-  ${props => (props.responsive ? palm(`
-    border-radius: ${ROUND_MAP[props.round] || props.theme.global.edgeSize.narrow[props.round]};
-  `) : '')}
-`;
+const roundStyle = (data, responsive, theme) => {
+  const styles = [];
+  if (typeof data === 'object') {
+    const size = ROUND_MAP[data.size] ||
+      theme.global.edgeSize[data.size || 'medium'];
+    const narrowSize = ROUND_MAP[data] ||
+      theme.global.edgeSize.narrow[data.size || 'medium'];
+    if (data.corner === 'top') {
+      styles.push(css`
+        border-top-left-radius: ${size};
+        border-top-right-radius: ${size};
+      `);
+      if (responsive) {
+        styles.push(palm(`
+          border-top-left-radius: ${narrowSize};
+          border-top-right-radius: ${narrowSize};
+        `));
+      }
+    } else if (data.corner === 'bottom') {
+      styles.push(css`
+        border-bottom-left-radius: ${size};
+        border-bottom-right-radius: ${size};
+      `);
+      if (responsive) {
+        styles.push(palm(`
+          border-bottom-left-radius: ${narrowSize};
+          border-bottom-right-radius: ${narrowSize};
+        `));
+      }
+    } else if (data.corner === 'left') {
+      styles.push(css`
+        border-top-left-radius: ${size};
+        border-bottom-left-radius: ${size};
+      `);
+      if (responsive) {
+        styles.push(palm(`
+          border-top-left-radius: ${narrowSize};
+          border-bottom-left-radius: ${narrowSize};
+        `));
+      }
+    } else if (data.corner === 'right') {
+      styles.push(css`
+        border-top-right-radius: ${size};
+        border-bottom-right-radius: ${size};
+      `);
+      if (responsive) {
+        styles.push(palm(`
+          border-top-right-radius: ${narrowSize};
+          border-bottom-right-radius: ${narrowSize};
+        `));
+      }
+    } else if (data.corner) {
+      styles.push(css`
+        border-${data.corner}-radius: ${size};
+      `);
+      if (responsive) {
+        styles.push(palm(`
+          border-${data.corner}-radius: ${narrowSize};
+        `));
+      }
+    } else {
+      styles.push(css`
+        border-radius: ${size};
+      `);
+      if (responsive) {
+        styles.push(palm(`
+          border-radius: ${narrowSize};
+        `));
+      }
+    }
+  } else {
+    const size = data === true ? 'medium' : data;
+    styles.push(css`
+      border-radius: ${ROUND_MAP[size] || theme.global.edgeSize[size] || size};
+    `);
+    if (responsive) {
+      styles.push(palm(`
+        border-radius: ${ROUND_MAP[size] || theme.global.edgeSize.narrow[size] || size};
+      `));
+    }
+  }
+  return styles;
+};
 
 const SLIDE_SIZES = {
   xsmall: 1,
@@ -354,7 +430,7 @@ export const StyledBox = styled.div`
     edgeStyle('margin', props.margin, props.responsive, props.theme))}
   ${props => (props.pad &&
     edgeStyle('padding', props.pad, props.responsive, props.theme))}
-  ${props => props.round && roundStyle}
+  ${props => props.round && roundStyle(props.round, props.responsive, props.theme)}
   ${props => props.wrapProp && wrapStyle}
   ${props => props.overflowProp && `overflow: ${props.overflowProp};`}
   ${props => props.elevationProp && elevationStyle}

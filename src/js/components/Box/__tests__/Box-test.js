@@ -262,11 +262,25 @@ test('Box gridArea renders', () => {
 test('Box round renders', () => {
   const component = renderer.create(
     <Grommet>
+      <Box round={true} />
       <Box round='xsmall' />
       <Box round='small' />
       <Box round='medium' />
       <Box round='large' />
       <Box round='full' />
+      <Box round={{ corner: 'left' }} />
+      <Box round={{ corner: 'top' }} />
+      <Box round={{ corner: 'right' }} />
+      <Box round={{ corner: 'bottom' }} />
+      <Box round={{ corner: 'top-left' }} />
+      <Box round={{ corner: 'top-right' }} />
+      <Box round={{ corner: 'bottom-left' }} />
+      <Box round={{ corner: 'bottom-right' }} />
+      <Box round={{ size: 'xsmall' }} />
+      <Box round={{ size: 'small' }} />
+      <Box round={{ size: 'medium' }} />
+      <Box round={{ size: 'large' }} />
+      <Box round={{ size: 'xlarge' }} />
     </Grommet>
   );
   const tree = component.toJSON();
