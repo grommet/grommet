@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Attraction, Car, TreeOption } from 'grommet-icons';
+import { Attraction, Car } from 'grommet-icons';
 
 import { Grommet, Anchor, Box, Button, Grid, Text } from '../';
 import { grommet } from '../../themes';
@@ -15,29 +15,28 @@ class SimpleBox extends Component {
           align='center'
           pad='xlarge'
           background='dark-2'
+          gap='medium'
         >
           <Box
-            pad='xlarge'
+            pad='large'
             align='center'
             background={{ color: 'light-2', opacity: 'strong' }}
+            round={true}
+            gap='small'
           >
-            <Attraction size='xlarge' />
+            <Attraction size='large' />
             <Text>Party</Text>
             <Anchor href='' label='Link' />
             <Button label='Button' onClick={() => {}} />
           </Box>
           <Box
-            pad='xlarge'
+            pad='large'
             align='center'
-            background={{ color: 'accent-2', opacity: 'weak' }}
+            background='dark-3'
+            round={true}
+            gap='small'
           >
-            <TreeOption size='xlarge' />
-            <Text>Nature</Text>
-            <Anchor href='' label='Link' />
-            <Button label='Button' onClick={() => {}} />
-          </Box>
-          <Box pad='xlarge' align='center' background='dark-3'>
-            <Car size='xlarge' color='light-2' />
+            <Car size='large' color='light-2' />
             <Text>Travel</Text>
             <Anchor href='' label='Link' />
             <Button label='Button' onClick={() => {}} />
@@ -128,7 +127,7 @@ class BorderBox extends Component {
           </Box>
           <Box direction='row-responsive' gap='small'>
             {['horizontal', 'vertical', 'left', 'top', 'right', 'bottom'].map(border => (
-              <Box pad='small' border={border}>
+              <Box key={border} pad='small' border={border}>
                 {border}
               </Box>
             ))}
@@ -138,7 +137,7 @@ class BorderBox extends Component {
           </Box>
           <Box direction='row-responsive' gap='small' align='start'>
             {['small', 'medium', 'large'].map(size => (
-              <Box pad='small' border={{ size }}>
+              <Box key={size} pad='small' border={{ size }}>
                 {size}
               </Box>
             ))}
@@ -178,9 +177,41 @@ class RoundBox extends Component {
   }
 }
 
+class BackgroundBox extends Component {
+  render() {
+    return (
+      <Grommet theme={grommet}>
+        <Box pad='small' gap='small' align='start'>
+          <Box pad='small' background='brand'>
+            brand
+          </Box>
+          <Box
+            pad='small'
+            background={{
+              image: 'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)',
+            }}
+          >
+            image
+          </Box>
+          <Box
+            pad='small'
+            background={{
+              color: 'accent-2',
+              image: 'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)',
+            }}
+          >
+            image + color
+          </Box>
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Box', module)
   .add('Simple Box', () => <SimpleBox />)
   .add('Custom color', () => <CustomColorBox />)
   .add('Fixed sizes', () => <FixedSizesBox />)
   .add('Border', () => <BorderBox />)
-  .add('Round', () => <RoundBox />);
+  .add('Round', () => <RoundBox />)
+  .add('Background', () => <BackgroundBox />);

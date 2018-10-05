@@ -751,7 +751,7 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gavjLN {
+  .iLsSdy {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -2022,7 +2022,7 @@ exports[`Menu open and close on click 3`] = `
 }
 
 .c12:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }
@@ -2337,7 +2337,7 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gavjLN {
+  .iLsSdy {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -3178,7 +3178,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gavjLN {
+  .iLsSdy {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -3192,7 +3192,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .fuBvtX {
+  .jUYLaA {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
