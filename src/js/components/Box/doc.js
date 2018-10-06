@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { a11yTitlePropType, getAvailableAtBadge } from '../../utils';
 
-const PAD_SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
+const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 
 const ANIMATION_TYPE = PropTypes.oneOf([
   'fadeIn', 'fadeOut', 'jiggle', 'pulse',
