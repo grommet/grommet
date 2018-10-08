@@ -13,8 +13,8 @@ import {
   StyledWeeksContainer,
 } from './StyledCalendar';
 import {
-  addDays, addMonths, betweenDates, daysApart, sameDay,
-  subtractDays, subtractMonths, withinDates,
+  addDays, addMonths, betweenDates, daysApart, endOfMonth, sameDay,
+  startOfMonth, subtractDays, subtractMonths, withinDates,
 } from './utils';
 
 const buildStartEnd = (reference, firstDayOfWeek) => {
@@ -78,33 +78,49 @@ class Calendar extends Component {
     clearTimeout(this.timer);
   }
 
+  clearSlideStateLater = () => {
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      const { targetStartEnd } = this.state;
+      if (targetStartEnd) {
+        this.setState({
+          start: targetStartEnd.start,
+          end: targetStartEnd.end,
+          targetStartEnd: undefined,
+          slide: undefined,
+        });
+      }
+    }, 1000);
+  }
+
   setReference = (reference) => {
     const { bounds, firstDayOfWeek } = this.props;
-    const { start, end } = this.state;
+    const { start, end, targetStartEnd } = this.state;
     if (betweenDates(reference, bounds)) {
       const nextStartEnd = buildStartEnd(reference, firstDayOfWeek);
-      const nextState = {
-        reference,
-        active: undefined,
-      };
-      if (nextStartEnd.start.getTime() < start.getTime()) {
+      const nextState = { reference, active: undefined };
+      // if we're changing too fast, bypass animation
+      if (targetStartEnd) {
         nextState.start = nextStartEnd.start;
-        nextState.slide = {
-          direction: 'down',
-          weeks: daysApart(start, nextStartEnd.start) / 7,
-        };
-        clearTimeout(this.timer);
-        this.timer = setTimeout(() =>
-          this.setState({ end: nextStartEnd.end, slide: undefined }), 1000);
-      } else if (nextStartEnd.end.getTime() > end.getTime()) {
         nextState.end = nextStartEnd.end;
-        nextState.slide = {
-          direction: 'up',
-          weeks: daysApart(nextStartEnd.end, end) / 7,
-        };
-        clearTimeout(this.timer);
-        this.timer = setTimeout(() =>
-          this.setState({ start: nextStartEnd.start, slide: undefined }), 1000);
+        nextState.targetStartEnd = undefined;
+        nextState.slide = undefined;
+      } else {
+        nextState.targetStartEnd = nextStartEnd;
+        if (nextStartEnd.start.getTime() < start.getTime()) {
+          nextState.start = nextStartEnd.start;
+          nextState.slide = {
+            direction: 'down',
+            weeks: daysApart(start, nextStartEnd.start) / 7,
+          };
+        } else if (nextStartEnd.end.getTime() > end.getTime()) {
+          nextState.end = nextStartEnd.end;
+          nextState.slide = {
+            direction: 'up',
+            weeks: daysApart(nextStartEnd.end, end) / 7,
+          };
+        }
+        this.clearSlideStateLater();
       }
       this.setState(nextState);
     }
@@ -145,8 +161,11 @@ class Calendar extends Component {
     } = this.props;
     const { active, start, reference, end, slide } = this.state;
 
-    const previousMonth = subtractMonths(reference, 1);
-    const nextMonth = addMonths(reference, 1);
+    // We have to deal with reference being the end of a month with more
+    // days than the month we are changing to. So, we always set reference
+    // to the first of the month before changing the month.
+    const previousMonth = endOfMonth(subtractMonths(startOfMonth(reference), 1));
+    const nextMonth = startOfMonth(addMonths(startOfMonth(reference), 1));
 
     const weeks = [];
     let day = new Date(start);
@@ -173,7 +192,8 @@ class Calendar extends Component {
       } else if (selectedState === 1) {
         inRange = true;
       }
-      const dayDisabled = withinDates(day, disabled);
+      const dayDisabled = withinDates(day, disabled) ||
+        (bounds && !betweenDates(day, bounds));
 
       days.push(
         <StyledDayContainer key={day.getTime()} size={size} theme={theme}>
@@ -234,11 +254,11 @@ class Calendar extends Component {
           <Box>
             <Box direction='row' justify='between' align='center'>
               <Box pad={{ horizontal: 'small' }}>
-                <Heading level={3} size={size} margin='none'>
+                <Heading level={size === 'small' ? 4 : 3} size={size} margin='none'>
                   {reference.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
                 </Heading>
               </Box>
-              <Box flex='false' direction='row' align='center'>
+              <Box flex={false} direction='row' align='center'>
                 <Button
                   a11yTitle={previousMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
                   icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
