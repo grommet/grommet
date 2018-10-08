@@ -238,7 +238,7 @@ class Calendar extends Component {
                   {reference.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
                 </Heading>
               </Box>
-              <Box direction='row' align='center'>
+              <Box flex='false' direction='row' align='center'>
                 <Button
                   a11yTitle={previousMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
                   icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}

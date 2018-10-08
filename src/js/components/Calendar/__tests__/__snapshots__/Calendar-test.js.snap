@@ -110,6 +110,9 @@ exports[`Calendar date renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   margin: 0px;
   padding: 0px;
 }
@@ -1518,6 +1521,9 @@ exports[`Calendar dates renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   margin: 0px;
   padding: 0px;
 }
@@ -2926,6 +2932,9 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   margin: 0px;
   padding: 0px;
 }
@@ -4334,6 +4343,9 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   margin: 0px;
   padding: 0px;
 }
@@ -6726,6 +6738,9 @@ exports[`Calendar renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   margin: 0px;
   padding: 0px;
 }
@@ -8168,6 +8183,9 @@ exports[`Calendar size renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   margin: 0px;
   padding: 0px;
 }
