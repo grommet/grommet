@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Grommet, Box, Chart, Stack, Text } from 'grommet';
-import { calcs } from '../Chart/calcs';
 import { grommet } from 'grommet/themes';
+
+import { calcs } from '../Chart/calcs';
 
 class BarChart extends Component {
   render() {
