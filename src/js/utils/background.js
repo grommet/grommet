@@ -76,7 +76,7 @@ export const backgroundStyle = (backgroundArg, theme) => {
         )
       ) || color;
       styles.push(css`
-        background: ${backgroundColor};
+        background-color: ${backgroundColor};
         ${(!background.opacity || background.opacity !== 'weak') &&
           `color: ${
             theme.global.text.color[background.dark || colorIsDark(backgroundColor) ?

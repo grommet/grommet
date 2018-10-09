@@ -1113,7 +1113,7 @@ exports[`DataTable groupBy 1`] = `
 }
 
 .c3:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }
@@ -1436,7 +1436,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 eUdNKh"
+            class="StyledButton-sc-323bzc-0 hWIJiJ"
             type="button"
           >
             <div
@@ -1503,7 +1503,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 eUdNKh"
+            class="StyledButton-sc-323bzc-0 hWIJiJ"
             type="button"
           >
             <div
@@ -1559,7 +1559,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 eUdNKh"
+            class="StyledButton-sc-323bzc-0 hWIJiJ"
             type="button"
           >
             <div
@@ -2053,7 +2053,7 @@ exports[`DataTable sort 1`] = `
 }
 
 .c4:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }
@@ -2391,7 +2391,7 @@ exports[`DataTable sort 2`] = `
 }
 
 .c2:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }
@@ -2545,7 +2545,7 @@ exports[`DataTable sort 2`] = `
 }
 
 .c2:hover {
-  background: rgba(221,221,221,0.4);
+  background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }

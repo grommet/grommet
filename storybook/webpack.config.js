@@ -5,7 +5,16 @@ module.exports = {
     rules: [
       {
         test: /\.stories\.jsx?$/,
-        loaders: [require.resolve('@storybook/addon-storysource/loader')],
+        loaders: [
+          {
+            loader: require.resolve("@storybook/addon-storysource/loader"),
+            options: {
+              prettierConfig: {
+                parser: 'babylon',
+              },
+            },
+          },
+        ],
         enforce: 'pre',
       },
     ],
