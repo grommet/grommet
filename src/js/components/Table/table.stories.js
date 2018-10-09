@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Table, TableBody, TableCell, TableFooter, TableHeader, TableRow } from '../';
+import { Table, TableBody, TableCell, TableFooter, TableHeader, TableRow } from 'grommet';
 import { Text } from '../Text';
 import { Grommet } from '../Grommet';
-import { grommet } from '../../themes';
+import { grommet } from 'grommet/themes';
 
 // Always should store amount in cents to avoid precision errors
 const DATA = [

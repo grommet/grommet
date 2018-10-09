@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Clock } from '../';
-import { grommet } from '../../themes';
+import { Grommet, Clock } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 class DigitalClock extends Component {
   render() {

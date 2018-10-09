@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, InfiniteScroll, Text } from '../';
-import { grommet } from '../../themes';
+import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 const items = Array(200).fill().map((_, i) => `item ${i + 1}`);
 

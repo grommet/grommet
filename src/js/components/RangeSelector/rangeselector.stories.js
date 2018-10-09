@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, RangeSelector, Stack, Text } from '../';
-import { grommet } from '../../themes';
+import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 class SimpleRangeSelector extends Component {
   state = { values: [2, 8] }

@@ -192,7 +192,7 @@ exports[`TextInput close suggestion drop 2`] = `
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }
@@ -352,7 +352,7 @@ exports[`TextInput close suggestion drop 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hWIJiJ {
+  .eUdNKh {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -541,7 +541,7 @@ exports[`TextInput complex suggestions 2`] = `
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }
@@ -681,7 +681,7 @@ exports[`TextInput complex suggestions 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hWIJiJ {
+  .eUdNKh {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1110,7 +1110,7 @@ exports[`TextInput select suggestion 2`] = `
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }
@@ -1270,7 +1270,7 @@ exports[`TextInput select suggestion 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hWIJiJ {
+  .eUdNKh {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1465,7 +1465,7 @@ exports[`TextInput suggestions 2`] = `
 }
 
 .c4:hover {
-  background-color: rgba(221,221,221,0.4);
+  background: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }
@@ -1625,7 +1625,7 @@ exports[`TextInput suggestions 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hWIJiJ {
+  .eUdNKh {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

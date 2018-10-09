@@ -18,8 +18,8 @@ import {
   Text,
   TextInput,
   ThemeContext,
-} from '../../';
-import { grommet } from '../../themes';
+} from 'grommet';
+import { grommet } from 'grommet/themes';
 
 const richAccordionTheme = {
   accordion: {

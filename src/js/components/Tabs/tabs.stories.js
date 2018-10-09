@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction, Car, CircleInformation, Currency, TreeOption } from 'grommet-icons';
 
-import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from '../';
-import { grommet } from '../../themes';
+import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 const UncontrolledTabs = () => (
   <Grommet theme={grommet}>

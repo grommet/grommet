@@ -672,7 +672,7 @@ exports[`Button hoverIndicator renders 1`] = `
 }
 
 .c1:hover {
-  background-color: rgba(221,221,221,0.4);
+  background: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
 }

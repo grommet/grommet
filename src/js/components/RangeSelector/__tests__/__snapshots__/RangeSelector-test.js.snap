@@ -122,7 +122,7 @@ exports[`RangeSelector basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -453,7 +453,7 @@ exports[`RangeSelector color 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(253,111,255,0.4);
+  background: rgba(253,111,255,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -784,7 +784,7 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -888,7 +888,7 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1398,7 +1398,7 @@ exports[`RangeSelector handle keyboard 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1684,7 +1684,7 @@ exports[`RangeSelector handle mouse 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1970,7 +1970,7 @@ exports[`RangeSelector invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1990,7 +1990,7 @@ exports[`RangeSelector invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(204,204,204,0.4);
+  background: rgba(204,204,204,0.4);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2446,7 +2446,7 @@ exports[`RangeSelector max 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -2777,7 +2777,7 @@ exports[`RangeSelector min 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -3108,7 +3108,7 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -3128,7 +3128,7 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.1);
+  background: rgba(125,76,219,0.1);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3147,7 +3147,7 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.8);
+  background: rgba(125,76,219,0.8);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -3729,7 +3729,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -3769,7 +3769,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -3809,7 +3809,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -3849,7 +3849,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -3889,7 +3889,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -4829,7 +4829,7 @@ exports[`RangeSelector size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -5838,7 +5838,7 @@ exports[`RangeSelector step 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(125,76,219,0.4);
+  background: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;

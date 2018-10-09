@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Button, Grid, Text } from '../';
-import { grommet } from '../../themes';
+import { Grommet, Box, Button, Grid, Text } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 class AppGrid extends Component {
   state = { sidebar: true }

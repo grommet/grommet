@@ -11,12 +11,12 @@ import {
   Grommet,
   Select,
   Text,
-} from '../../';
-import { grommet } from '../../../themes';
+} from 'grommet';
+import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 
 import { theme as customSearchTheme } from './theme';
 import { SearchInputContext } from './components/SearchInputContext';
-import { deepMerge } from '../../../utils';
 
 const customRoundedTheme = deepMerge(
   grommet,
