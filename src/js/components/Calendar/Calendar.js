@@ -90,6 +90,7 @@ class Calendar extends Component {
           slide: undefined,
         });
       }
+    // Wait for animation to finish before cleaning up. Empirically determined.
     }, 1000);
   }
 
