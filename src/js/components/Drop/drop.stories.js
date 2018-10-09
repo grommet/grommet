@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Drop, Grommet, Text } from '../';
-import { grommet } from '../../themes';
-import { ThemeContext } from '../../contexts';
+import { Box, Drop, Grommet, Text } from 'grommet';
+import { grommet } from 'grommet/themes';
+import { ThemeContext } from 'grommet/contexts';
 
 class SimpleDrop extends Component {
   targetRef = React.createRef()

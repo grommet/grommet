@@ -3,9 +3,9 @@ import { storiesOf } from '@storybook/react';
 
 import { Search } from 'grommet-icons';
 
-import { Box, Image, Grommet, Text, TextInput } from '../';
-import { grommet } from '../../themes';
-import { deepMerge } from '../../utils';
+import { Box, Image, Grommet, Text, TextInput } from 'grommet';
+import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 
 class SimpleTextInput extends Component {
   state = { value: '' }

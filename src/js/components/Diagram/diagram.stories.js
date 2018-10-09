@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Diagram, Stack } from '../';
-import { grommet } from '../../themes';
+import { Grommet, Box, Diagram, Stack } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 const Node = ({ id, ...rest }) => (
   <Box

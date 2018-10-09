@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import { Add } from 'grommet-icons';
 
-import { Anchor, Grommet } from '../';
-import { grommet } from '../../themes';
+import { Anchor, Grommet } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 storiesOf('Anchor', module)
   .add('Default', () => (

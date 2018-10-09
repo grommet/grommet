@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Calendar } from '../';
-import { grommet } from '../../themes';
+import { Grommet, Calendar } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 class SimpleCalendar extends Component {
   state = {}

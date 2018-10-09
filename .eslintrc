@@ -55,5 +55,14 @@
     "object-curly-newline": 0,
     "prefer-destructuring": 0,
     "jsx-a11y/mouse-events-have-key-events": 0
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.stories.js"],
+      "rules": {
+        "import/no-unresolved": 0,
+        "import/extensions": 0
+      }
+    }
+  ]
 }

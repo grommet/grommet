@@ -18,8 +18,8 @@ import {
   Text,
   TextInput,
   ThemeContext,
-} from '../../';
-import { grommet } from '../../themes';
+} from 'grommet';
+import { grommet } from 'grommet/themes';
 
 const richAccordionTheme = {
   accordion: {
@@ -141,7 +141,7 @@ class RichAccordion extends Component {
                   if (activeIndexes.includes(1)) {
                     // give sometime to emulate an async call
                     setTimeout(() => {
-                      this.setState({ highlightLoaded: true }, this.reset);
+                      this.setState({ highlightLoaded: true });
                     }, 1000);
                   }
                 }}

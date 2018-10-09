@@ -19,8 +19,8 @@ import {
   Select,
   Text,
   TextInput,
-} from '../';
-import { grommet } from '../../themes';
+} from 'grommet';
+import { grommet } from 'grommet/themes';
 
 class CenterLayer extends Component {
   state = {}

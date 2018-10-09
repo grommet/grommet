@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, CheckBox, FormField, Select, TextArea, TextInput } from '../';
-import { grommet } from '../../themes';
+import { Grommet, Box, CheckBox, FormField, Select, TextArea, TextInput } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 const allSuggestions = Array(100).fill().map((_, i) => `suggestion ${i + 1}`);
 

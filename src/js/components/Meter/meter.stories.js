@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Meter } from '../';
-import { grommet } from '../../themes';
+import { Grommet, Meter } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 class BarMeter extends Component {
   render() {

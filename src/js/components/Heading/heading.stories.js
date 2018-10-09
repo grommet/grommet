@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Grid, Heading } from '../';
-import { grommet } from '../../themes';
+import { Grommet, Grid, Heading } from 'grommet';
+import { grommet } from 'grommet/themes';
 
 const H = ({ level, size }) => (
   <Heading level={level} size={size}>
