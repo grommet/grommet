@@ -20,6 +20,18 @@ export const addMonths = (date, months) => {
 
 export const subtractMonths = (date, months) => addMonths(date, -months);
 
+export const startOfMonth = (date) => {
+  const result = new Date(date);
+  result.setDate(1);
+  return result;
+};
+
+export const endOfMonth = (date) => {
+  const result = addMonths(date, 1);
+  result.setDate(0);
+  return result;
+};
+
 export const sameDay = (date1, date2) => (
   date1.getFullYear() === date2.getFullYear() &&
   date1.getMonth() === date2.getMonth() &&

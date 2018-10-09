@@ -274,7 +274,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         slideDuration: '0.5s',
       },
       large: {
-        fontSize: `${baseFontSize + fontScale}px`,
+        fontSize: `${baseFontSize + (3 * fontScale)}px`,
         lineHeight: 1.11,
         daySize: `${(baseSpacing * 32) / 7}px`,
         slideDuration: '0.8s',
