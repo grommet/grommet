@@ -60,7 +60,10 @@ export const hpe = deepFreeze({
   },
   anchor: {
     textDecoration: 'underline',
-    color: '#000000',
+    color: {
+      dark: '#FFFFFF',
+      light: '#000000',
+    },
   },
   button: {
     border: {
