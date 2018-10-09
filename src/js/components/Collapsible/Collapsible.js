@@ -6,12 +6,16 @@ import styled from 'styled-components';
 import { withTheme } from '../hocs';
 import { Box } from '../Box';
 
+const animatedBoxProperty = direction => (
+  direction === 'horizontal' ? 'width' : 'height'
+);
+
 const AnimatedBox = styled(Box)`
   ${props => !props.animate && (props.open ? `
-    max-height: unset;
+    max-${animatedBoxProperty(props.collapsibleDirection)}: unset;
     visibility: visible;
   ` : `
-    max-height: 0;
+    max-${animatedBoxProperty(props.collapsibleDirection)}: 0;
     visibility: hidden;
   `)}
 `;
@@ -46,14 +50,20 @@ class Collapsible extends Component {
   )
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    const { theme: { collapsible: { minSpeed, baseHeight } } } = this.props;
+    const {
+      direction,
+      theme: { collapsible: { minSpeed, baseline } },
+    } = this.props;
     const { animate, open } = this.state;
 
     const container = findDOMNode(this.ref.current);
+    const dimension = animatedBoxProperty(direction);
+    const boudingClientRect = container.getBoundingClientRect();
+    const dimensionSize = boudingClientRect[dimension];
 
     let shouldAnimate = animate && prevState.open !== open;
 
-    if (open && snapshot.height && container.getBoundingClientRect().height !== snapshot.height) {
+    if (open && snapshot[dimension] && dimensionSize !== snapshot[dimension]) {
       shouldAnimate = true;
     }
 
@@ -62,15 +72,15 @@ class Collapsible extends Component {
         clearTimeout(this.animationTimeout);
       }
 
-      const height = container.clientHeight;
-      const speed = Math.max((height / baseHeight) * minSpeed, minSpeed);
+      const speed = Math.max((dimensionSize / baseline) * minSpeed, minSpeed);
 
-      container.style['max-height'] = `${snapshot.height}px`;
+      container.style[`max-${dimension}`] = `${snapshot[dimension]}px`;
+      container.style.overflow = 'hidden';
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          container.style.transition = `max-height ${speed}ms, visibility 50ms`;
-          container.style['max-height'] = open ? `${height}px` : '0px';
+          container.style.transition = `max-${dimension} ${speed}ms, visibility 50ms`;
+          container.style[`max-${dimension}`] = open ? `${dimensionSize}px` : '0px';
 
           this.animationTimeout = setTimeout(() => {
             container.removeAttribute('style');
@@ -94,6 +104,7 @@ class Collapsible extends Component {
   render() {
     const {
       children,
+      direction,
     } = this.props;
     const {
       animate,
@@ -102,11 +113,11 @@ class Collapsible extends Component {
 
     return (
       <AnimatedBox
-        overflow='hidden'
         aria-hidden={!open}
         ref={this.ref}
         open={open}
         animate={animate}
+        collapsibleDirection={direction}
       >
         {children}
       </AnimatedBox>

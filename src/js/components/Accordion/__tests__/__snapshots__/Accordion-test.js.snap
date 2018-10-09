@@ -165,7 +165,6 @@ exports[`Accordion AccordionPanel 1`] = `
   flex-direction: column;
   margin: 0px;
   padding: 0px;
-  overflow: hidden;
 }
 
 .c3 {
@@ -1126,7 +1125,6 @@ exports[`Accordion change to second Panel 1`] = `
   flex-direction: column;
   margin: 0px;
   padding: 0px;
-  overflow: hidden;
 }
 
 .c3 {
@@ -1459,7 +1457,7 @@ exports[`Accordion change to second Panel 2`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 bsuXGI"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kXgRqF"
         >
           Panel body 1
         </div>
@@ -1548,7 +1546,7 @@ exports[`Accordion change to second Panel 2`] = `
       >
         <div
           aria-hidden="false"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 cgDUOZ StyledBox-sc-13pk1d4-0 bsuXGI"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cgDUOZ StyledBox-sc-13pk1d4-0 kXgRqF"
           open=""
         >
           Panel body 2
@@ -2420,7 +2418,6 @@ exports[`Accordion complex title 1`] = `
   flex-direction: column;
   margin: 0px;
   padding: 0px;
-  overflow: hidden;
 }
 
 .c1 {
@@ -3909,7 +3906,6 @@ exports[`Accordion set on hover 1`] = `
   flex-direction: column;
   margin: 0px;
   padding: 0px;
-  overflow: hidden;
 }
 
 .c3 {
@@ -4242,7 +4238,7 @@ exports[`Accordion set on hover 2`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 bsuXGI"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kXgRqF"
         >
           Panel body 1
         </div>
@@ -4298,7 +4294,7 @@ exports[`Accordion set on hover 2`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 bsuXGI"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kXgRqF"
         >
           Panel body 2
         </div>
@@ -4366,7 +4362,7 @@ exports[`Accordion set on hover 3`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 bsuXGI"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kXgRqF"
         >
           Panel body 1
         </div>
@@ -4422,7 +4418,7 @@ exports[`Accordion set on hover 3`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 bsuXGI"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kXgRqF"
         >
           Panel body 2
         </div>
@@ -4490,7 +4486,7 @@ exports[`Accordion set on hover 4`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 bsuXGI"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kXgRqF"
         >
           Panel body 1
         </div>
@@ -4546,7 +4542,7 @@ exports[`Accordion set on hover 4`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 bsuXGI"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kXgRqF"
         >
           Panel body 2
         </div>
@@ -4614,7 +4610,7 @@ exports[`Accordion set on hover 5`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 bsuXGI"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kXgRqF"
         >
           Panel body 1
         </div>
@@ -4670,7 +4666,7 @@ exports[`Accordion set on hover 5`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 bsuXGI"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kXgRqF"
         >
           Panel body 2
         </div>

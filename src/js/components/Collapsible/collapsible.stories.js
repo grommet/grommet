@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { FormDown, FormNext } from 'grommet-icons';
+import { FormDown, FormNext, Notification } from 'grommet-icons';
 
-import { Box, Button, Collapsible, Grommet, Text } from '../';
+import { Box, Button, Collapsible, Heading, Grommet, Text } from '../';
 import { grommet } from '../../themes';
 
 class SimpleCollapsible extends Component {
@@ -16,8 +16,14 @@ class SimpleCollapsible extends Component {
       <Grommet theme={grommet}>
         <Box align='start' gap='small'>
           <Button primary={true} onClick={() => this.setState({ open: !this.state.open })} label='Toggle' />
-          <Collapsible open={open}>
-            <Box background='light-2' round='medium' pad='medium' align='center' justify='center'>
+          <Collapsible open={open} {...this.props}>
+            <Box
+              background='light-2'
+              round='medium'
+              pad='medium'
+              align='center'
+              justify='center'
+            >
               <Text>This is a box inside a Collapsible component</Text>
             </Box>
           </Collapsible>
@@ -113,10 +119,62 @@ class NestedCollapsible extends Component {
   }
 }
 
+class HorizontalCollapsible extends Component {
+  state = {
+    openNotification: false,
+  }
+  render() {
+    const { openNotification } = this.state;
+    return (
+      <Grommet full={true} theme={grommet}>
+        <Box fill={true}>
+          <Box
+            tag='header'
+            direction='row'
+            align='center'
+            pad={{ vertical: 'small', horizontal: 'medium' }}
+            justify='between'
+            background='neutral-4'
+            elevation='large'
+            style={{ zIndex: '1000' }}
+          >
+            <Heading level={3} margin='none' color='white'>
+              <strong>My App</strong>
+            </Heading>
+            <Button
+              onClick={() => this.setState({ openNotification: !this.state.openNotification })}
+              icon={<Notification color='white' />}
+            />
+          </Box>
+          <Box flex={true} direction='row'>
+            <Box flex={true} align='center' justify='center'>
+              Dashboard content goes here
+            </Box>
+            <Collapsible direction='horizontal' open={openNotification}>
+              <Box
+                flex={true}
+                width='medium'
+                background='light-2'
+                pad='small'
+                elevation='small'
+              >
+                Sidebar
+              </Box>
+            </Collapsible>
+          </Box>
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Collapsible', module)
   .add('Default', () => (
     <SimpleCollapsible />
   ))
   .add('Nested', () => (
     <NestedCollapsible />
+  ))
+  .add('Horizontal', () => (
+    <HorizontalCollapsible />
   ));

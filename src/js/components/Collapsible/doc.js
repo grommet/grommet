@@ -13,6 +13,12 @@ export const doc = (Collapsible) => {
     open: PropTypes.bool.description(
       'Whether or not the component should be open.'
     ),
+    direction: PropTypes.oneOf([
+      'horizontal',
+      'vertical',
+    ]).description(
+      'Direction to animate the collapsible content.'
+    ).defaultValue('vertical'),
   };
 
   return DocumentedCollapsible;
