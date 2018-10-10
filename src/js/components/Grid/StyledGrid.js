@@ -98,8 +98,14 @@ const SIZE_MAP = {
   '2/3': '66.66%',
 };
 
-const sizeFor = (size, props) =>
-  SIZE_MAP[size] || props.theme.global.size[size] || size;
+const sizeFor = (size, props, isRow) => {
+  const mapped = SIZE_MAP[size];
+  if (isRow && mapped
+    && (!props.fillContainer || props.fillContainer === 'horizontal')) {
+    console.warn('Grid needs `fill` when using fractional row sizes');
+  }
+  return mapped || props.theme.global.size[size] || size;
+};
 
 const columnsStyle = (props) => {
   if (Array.isArray(props.columns)) {
@@ -130,9 +136,9 @@ const rowsStyle = (props) => {
     return css`
       grid-template-rows: ${props.rowsProp.map((s) => {
         if (Array.isArray(s)) {
-          return `minmax(${sizeFor(s[0], props)}, ${sizeFor(s[1], props)})`;
+          return `minmax(${sizeFor(s[0], props, true)}, ${sizeFor(s[1], props, true)})`;
         }
-        return sizeFor(s, props);
+        return sizeFor(s, props, true);
       }).join(' ')};
     `;
   }
@@ -143,6 +149,9 @@ const rowsStyle = (props) => {
 
 const areasStyle = (props) => {
   // translate areas objects into grid-template-areas syntax
+  if (!Array.isArray(props.rowsProp) || !Array.isArray(props.columns)) {
+    console.warn('Grid `areas` requires `rows` and `columns` to be arrays.');
+  }
   const cells = props.rowsProp.map(() => props.columns.map(() => '.'));
   props.areas.forEach((area) => {
     for (let row = area.start[1]; row <= area.end[1]; row += 1) {
