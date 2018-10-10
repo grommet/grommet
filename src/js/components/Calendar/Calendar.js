@@ -17,6 +17,12 @@ import {
   startOfMonth, subtractDays, subtractMonths, withinDates,
 } from './utils';
 
+const headingPadMap = {
+  'small': 'xsmall',
+  'medium': 'small',
+  'large': 'medium',
+};
+
 const buildStartEnd = (reference, firstDayOfWeek) => {
   let start = new Date(reference);
   start.setDate(1); // first of month
@@ -254,7 +260,7 @@ class Calendar extends Component {
         >
           <Box>
             <Box direction='row' justify='between' align='center'>
-              <Box pad={{ horizontal: 'small' }}>
+              <Box flex={true} pad={{ horizontal: (headingPadMap[size] || 'small') }}>
                 <Heading level={size === 'small' ? 4 : 3} size={size} margin='none'>
                   {reference.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
                 </Heading>
