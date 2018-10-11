@@ -65,7 +65,7 @@ describe('DropButton', () => {
     Simulate.click(getByText('Dropper'));
     expectPortal('drop-contents').toMatchSnapshot();
 
-    fireEvent(document, new MouseEvent('click', { bubbles: true, cancelable: true }));
+    fireEvent(document, new MouseEvent('mousedown', { bubbles: true, cancelable: true }));
 
     setTimeout(() => {
       expect(document.getElementById('drop-contents')).toBeNull();
