@@ -108,7 +108,7 @@ class LayerContainer extends Component {
           tabIndex='-1'
           ref={this.layerRef}
         >
-          <StyledOverlay onClick={onClickOutside} responsive={responsive} theme={theme} />
+          <StyledOverlay onMouseDown={onClickOutside} responsive={responsive} theme={theme} />
           {content}
         </StyledLayer>
       );

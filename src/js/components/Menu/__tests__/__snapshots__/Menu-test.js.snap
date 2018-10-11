@@ -3185,13 +3185,6 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .huvvip {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .jUYLaA {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;

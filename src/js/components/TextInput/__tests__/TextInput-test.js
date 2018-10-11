@@ -42,7 +42,7 @@ describe('TextInput', () => {
       expect(onInput).toBeCalled();
       expect(onFocus).toBeCalled();
 
-      fireEvent(document, new MouseEvent('click', { bubbles: true, cancelable: true }));
+      fireEvent(document, new MouseEvent('mousedown', { bubbles: true, cancelable: true }));
       expect(document.getElementById('text-input-drop__item')).toBeNull();
       done();
     }, 50);
@@ -69,7 +69,7 @@ describe('TextInput', () => {
     setTimeout(() => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
 
-      fireEvent(document, new MouseEvent('click', { bubbles: true, cancelable: true }));
+      fireEvent(document, new MouseEvent('mousedown', { bubbles: true, cancelable: true }));
       expect(document.getElementById('text-input-drop__item')).toBeNull();
       done();
     }, 50);
