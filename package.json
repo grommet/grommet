@@ -65,7 +65,7 @@
     "del": "^3.0.0",
     "eslint": "^4.7.2",
     "grommet-toolbox": "^2.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^3.9.0",
     "gulp-bump": "^3.0.0",
     "gulp-coveralls": "^0.1.4",
     "gulp-cssnano": "^2.1.1",
