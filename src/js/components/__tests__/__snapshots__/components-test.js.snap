@@ -244,6 +244,7 @@ Object {
     "name": "WorldMap",
     "render": [Function],
   },
+  "__esModule": true,
   "calcs": [Function],
 }
 `;
