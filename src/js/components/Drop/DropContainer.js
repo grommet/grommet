@@ -274,7 +274,7 @@ export class DropContainer extends Component {
 
     return (
       <FocusedContainer>
-        <Keyboard onEsc={onEsc} onKeyDown={onKeyDown}>
+        <Keyboard onEsc={onEsc} onKeyDown={onKeyDown} target='document'>
           {content}
         </Keyboard>
       </FocusedContainer>
