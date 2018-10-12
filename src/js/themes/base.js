@@ -314,12 +314,27 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         radius: '4px',
         width: '2px',
       },
+      box: {
+        // extend: undefined,
+      },
       check: {
         // color: { dark: undefined, light: undefined },
         width: '4px',
       },
+      container: {
+        // extend: undefined,
+      },
+      icon: {
+        // extend: undefined,
+      },
       icons: {
         // checked: undefined,
+      },
+      input: {
+        // extend: undefined,
+      },
+      knob: {
+        // extend: undefined,
       },
       hover: {
         border: {

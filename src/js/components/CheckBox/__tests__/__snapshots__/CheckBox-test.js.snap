@@ -12,18 +12,69 @@ exports[`CheckBox checked renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  height: 24px;
+  width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 4px;
+}
+
+.c7 {
+  display: block;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c1 {
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -31,16 +82,12 @@ exports[`CheckBox checked renders 1`] = `
   user-select: none;
 }
 
-.c1 > div:first-child {
-  margin-right: 12px;
-}
-
 .c1:hover input:not([disabled]) + div,
 .c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c3 {
+.c5 {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -52,69 +99,109 @@ exports[`CheckBox checked renders 1`] = `
   cursor: pointer;
 }
 
-.c3:checked + div {
-  border-color: #7D4CDB;
-}
-
-.c3:checked + div > svg {
-  display: block;
-}
-
-.c3:checked + span > span {
+.c5:checked + span > span {
   left: 24px;
   background: #7D4CDB;
 }
 
-.c4 {
-  box-sizing: border-box;
+.c3 {
   position: relative;
-  top: -1px;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-  background: inherit;
-  border: 2px solid;
-  border-color: rgba(0,0,0,0.15);
-  border-radius: 4px;
-}
-
-.c4 > svg {
-  box-sizing: border-box;
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  display: none;
-  width: 24px;
-  height: 24px;
-  stroke-width: 4px;
-  stroke: #7D4CDB;
 }
 
 .c2 {
-  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    border-radius: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0px;
+  }
 }
 
 <div
   className="c0"
 >
   <label
-    className="c1"
+    checked={true}
+    className="c1 -label c2"
   >
     <div
-      className="c2"
+      checked={true}
+      className="c3 c4"
     >
       <input
         checked={true}
-        className="c3"
+        className="c5"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
       <div
-        className="c4"
+        checked={true}
+        className="c6"
       >
         <svg
+          checked={true}
+          className="c7"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -141,18 +228,106 @@ exports[`CheckBox disabled renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  height: 24px;
+  width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 4px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  height: 24px;
+  width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 4px;
+}
+
+.c7 {
+  display: none;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c9 {
+  display: block;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c1 {
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -162,16 +337,12 @@ exports[`CheckBox disabled renders 1`] = `
   cursor: default;
 }
 
-.c1 > div:first-child {
-  margin-right: 12px;
-}
-
 .c1:hover input:not([disabled]) + div,
 .c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c3 {
+.c5 {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -183,70 +354,130 @@ exports[`CheckBox disabled renders 1`] = `
   cursor: pointer;
 }
 
-.c3:checked + div {
-  border-color: #7D4CDB;
-}
-
-.c3:checked + div > svg {
-  display: block;
-}
-
-.c3:checked + span > span {
+.c5:checked + span > span {
   left: 24px;
   background: #7D4CDB;
 }
 
-.c4 {
-  box-sizing: border-box;
+.c3 {
   position: relative;
-  top: -1px;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-  background: inherit;
-  border: 2px solid;
-  border-color: rgba(0,0,0,0.15);
-  border-radius: 4px;
-}
-
-.c4 > svg {
-  box-sizing: border-box;
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  display: none;
-  width: 24px;
-  height: 24px;
-  stroke-width: 4px;
-  stroke: #7D4CDB;
 }
 
 .c2 {
-  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    border-radius: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    border: solid 2px #7D4CDB;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    border-radius: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0px;
+  }
 }
 
 <div
   className="c0"
 >
   <label
-    className="c1"
+    className="c1 -label c2"
     disabled={true}
   >
     <div
-      className="c2"
+      className="c3 c4"
     >
       <input
-        className="c3"
+        className="c5"
         disabled={true}
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
       <div
-        className="c4"
+        className="c6"
       >
         <svg
+          className="c7"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -259,24 +490,29 @@ exports[`CheckBox disabled renders 1`] = `
     </div>
   </label>
   <label
-    className="c1"
+    checked={true}
+    className="c1 -label c2"
     disabled={true}
   >
     <div
-      className="c2"
+      checked={true}
+      className="c3 c4"
     >
       <input
         checked={true}
-        className="c3"
+        className="c5"
         disabled={true}
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
       <div
-        className="c4"
+        checked={true}
+        className="c8"
       >
         <svg
+          checked={true}
+          className="c9"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -286,11 +522,11 @@ exports[`CheckBox disabled renders 1`] = `
           />
         </svg>
       </div>
+      <input
+        type="hidden"
+        value="true"
+      />
     </div>
-    <input
-      type="hidden"
-      value="true"
-    />
   </label>
 </div>
 `;
@@ -307,18 +543,76 @@ exports[`CheckBox label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  height: 24px;
+  width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 4px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c7 {
+  display: none;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c1 {
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -326,16 +620,12 @@ exports[`CheckBox label renders 1`] = `
   user-select: none;
 }
 
-.c1 > div:first-child {
-  margin-right: 12px;
-}
-
 .c1:hover input:not([disabled]) + div,
 .c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c3 {
+.c5 {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -347,68 +637,104 @@ exports[`CheckBox label renders 1`] = `
   cursor: pointer;
 }
 
-.c3:checked + div {
-  border-color: #7D4CDB;
-}
-
-.c3:checked + div > svg {
-  display: block;
-}
-
-.c3:checked + span > span {
+.c5:checked + span > span {
   left: 24px;
   background: #7D4CDB;
 }
 
-.c4 {
-  box-sizing: border-box;
+.c3 {
   position: relative;
-  top: -1px;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-  background: inherit;
-  border: 2px solid;
-  border-color: rgba(0,0,0,0.15);
-  border-radius: 4px;
-}
-
-.c4 > svg {
-  box-sizing: border-box;
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  display: none;
-  width: 24px;
-  height: 24px;
-  stroke-width: 4px;
-  stroke: #7D4CDB;
 }
 
 .c2 {
-  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    border-radius: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0px;
+  }
 }
 
 <div
   className="c0"
 >
   <label
-    className="c1"
+    className="c1 -label c2"
   >
     <div
-      className="c2"
+      className="c3 c4"
     >
       <input
-        className="c3"
+        className="c5"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
       <div
-        className="c4"
+        className="c6"
       >
         <svg
+          className="c7"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -419,26 +745,30 @@ exports[`CheckBox label renders 1`] = `
         </svg>
       </div>
     </div>
-    <div>
+    <div
+      className="c8"
+    />
+    <span>
       test label
-    </div>
+    </span>
   </label>
   <label
-    className="c1"
+    className="c1 -label c2"
   >
     <div
-      className="c2"
+      className="c3 c4"
     >
       <input
-        className="c3"
+        className="c5"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
       <div
-        className="c4"
+        className="c6"
       >
         <svg
+          className="c7"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -449,6 +779,9 @@ exports[`CheckBox label renders 1`] = `
         </svg>
       </div>
     </div>
+    <div
+      className="c8"
+    />
     <div>
       test label
     </div>
@@ -468,18 +801,69 @@ exports[`CheckBox renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  height: 24px;
+  width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 4px;
+}
+
+.c7 {
+  display: none;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c1 {
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -487,16 +871,12 @@ exports[`CheckBox renders 1`] = `
   user-select: none;
 }
 
-.c1 > div:first-child {
-  margin-right: 12px;
-}
-
 .c1:hover input:not([disabled]) + div,
 .c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c3 {
+.c5 {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -508,68 +888,104 @@ exports[`CheckBox renders 1`] = `
   cursor: pointer;
 }
 
-.c3:checked + div {
-  border-color: #7D4CDB;
-}
-
-.c3:checked + div > svg {
-  display: block;
-}
-
-.c3:checked + span > span {
+.c5:checked + span > span {
   left: 24px;
   background: #7D4CDB;
 }
 
-.c4 {
-  box-sizing: border-box;
+.c3 {
   position: relative;
-  top: -1px;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-  background: inherit;
-  border: 2px solid;
-  border-color: rgba(0,0,0,0.15);
-  border-radius: 4px;
-}
-
-.c4 > svg {
-  box-sizing: border-box;
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  display: none;
-  width: 24px;
-  height: 24px;
-  stroke-width: 4px;
-  stroke: #7D4CDB;
 }
 
 .c2 {
-  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    border-radius: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0px;
+  }
 }
 
 <div
   className="c0"
 >
   <label
-    className="c1"
+    className="c1 -label c2"
   >
     <div
-      className="c2"
+      className="c3 c4"
     >
       <input
-        className="c3"
+        className="c5"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
       <div
-        className="c4"
+        className="c6"
       >
         <svg
+          className="c7"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -582,14 +998,14 @@ exports[`CheckBox renders 1`] = `
     </div>
   </label>
   <label
-    className="c1"
+    className="c1 -label c2"
     htmlFor="test id"
   >
     <div
-      className="c2"
+      className="c3 c4"
     >
       <input
-        className="c3"
+        className="c5"
         id="test id"
         name="test name"
         onBlur={[Function]}
@@ -597,9 +1013,10 @@ exports[`CheckBox renders 1`] = `
         type="checkbox"
       />
       <div
-        className="c4"
+        className="c6"
       >
         <svg
+          className="c7"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -626,18 +1043,76 @@ exports[`CheckBox reverse renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  height: 24px;
+  width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 4px;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c8 {
+  display: none;
+  stroke-width: 4px;
+  stroke: #7D4CDB;
+  width: 24px;
+  height: 24px;
+}
+
+.c1 {
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -645,16 +1120,12 @@ exports[`CheckBox reverse renders 1`] = `
   user-select: none;
 }
 
-.c1 > div:first-child {
-  margin-left: 12px;
-}
-
 .c1:hover input:not([disabled]) + div,
 .c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c3 {
+.c6 {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -666,68 +1137,110 @@ exports[`CheckBox reverse renders 1`] = `
   cursor: pointer;
 }
 
-.c3:checked + div {
-  border-color: #7D4CDB;
-}
-
-.c3:checked + div > svg {
-  display: block;
-}
-
-.c3:checked + span > span {
+.c6:checked + span > span {
   left: 24px;
   background: #7D4CDB;
 }
 
 .c4 {
-  box-sizing: border-box;
   position: relative;
-  top: -1px;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-  background: inherit;
-  border: 2px solid;
-  border-color: rgba(0,0,0,0.15);
-  border-radius: 4px;
-}
-
-.c4 > svg {
-  box-sizing: border-box;
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  display: none;
-  width: 24px;
-  height: 24px;
-  stroke-width: 4px;
-  stroke: #7D4CDB;
 }
 
 .c2 {
-  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    border-radius: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0px;
+  }
 }
 
 <div
   className="c0"
 >
   <label
-    className="c1"
+    className="c1 -label c2"
   >
+    <span>
+      test label
+    </span>
     <div
-      className="c2"
+      className="c3"
+    />
+    <div
+      className="c4 c5"
     >
       <input
-        className="c3"
+        className="c6"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
       <div
-        className="c4"
+        className="c7"
       >
         <svg
+          className="c8"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -737,9 +1250,6 @@ exports[`CheckBox reverse renders 1`] = `
           />
         </svg>
       </div>
-    </div>
-    <div>
-      test label
     </div>
   </label>
 </div>
@@ -757,18 +1267,39 @@ exports[`CheckBox toggle renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c1 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c8 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c1 {
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -776,16 +1307,12 @@ exports[`CheckBox toggle renders 1`] = `
   user-select: none;
 }
 
-.c1 > div:first-child {
-  margin-right: 12px;
-}
-
 .c1:hover input:not([disabled]) + div,
 .c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
-.c3 {
+.c5 {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -797,20 +1324,12 @@ exports[`CheckBox toggle renders 1`] = `
   cursor: pointer;
 }
 
-.c3:checked + div {
-  border-color: #7D4CDB;
-}
-
-.c3:checked + div > svg {
-  display: block;
-}
-
-.c3:checked + span > span {
+.c5:checked + span > span {
   left: 24px;
   background: #7D4CDB;
 }
 
-.c4 {
+.c6 {
   box-sizing: border-box;
   position: relative;
   vertical-align: middle;
@@ -822,7 +1341,7 @@ exports[`CheckBox toggle renders 1`] = `
   border-radius: 24px;
 }
 
-.c5 {
+.c7 {
   box-sizing: border-box;
   position: absolute;
   top: -2px;
@@ -835,79 +1354,130 @@ exports[`CheckBox toggle renders 1`] = `
   border-radius: 24px;
 }
 
-.c2 {
+.c3 {
   position: relative;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0px;
+  }
 }
 
 <div
   className="c0"
 >
   <label
-    className="c1"
+    className="c1 -label c2"
   >
     <div
-      className="c2"
+      className="c3 c4"
     >
       <input
-        className="c3"
+        className="c5"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
       <span
-        className="c4"
+        className="c6"
       >
         <span
-          className="c5"
+          className="c7"
         />
       </span>
     </div>
   </label>
   <label
-    className="c1"
+    checked={true}
+    className="c1 -label c2"
   >
     <div
-      className="c2"
+      checked={true}
+      className="c3 c4"
     >
       <input
         checked={true}
-        className="c3"
+        className="c5"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
       <span
-        className="c4"
+        checked={true}
+        className="c6"
       >
         <span
-          className="c5"
+          className="c7"
         />
       </span>
     </div>
   </label>
   <label
-    className="c1"
+    className="c1 -label c2"
   >
     <div
-      className="c2"
+      className="c3 c4"
     >
       <input
-        className="c3"
+        className="c5"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
       <span
-        className="c4"
+        className="c6"
       >
         <span
-          className="c5"
+          className="c7"
         />
       </span>
     </div>
-    <div>
+    <div
+      className="c8"
+    />
+    <span>
       test label
-    </div>
+    </span>
   </label>
 </div>
 `;
