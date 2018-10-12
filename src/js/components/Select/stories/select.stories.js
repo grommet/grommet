@@ -50,8 +50,12 @@ const customRoundedTheme = deepMerge(
 );
 
 class SimpleSelect extends Component {
-  propTypes = {
-    theme: PropTypes.shape({}).isRequired,
+  static propTypes = {
+    theme: PropTypes.shape({}),
+  }
+
+  static defaultProps = {
+    theme: undefined,
   }
 
   state = {
