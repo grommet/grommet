@@ -19,7 +19,6 @@ storiesOf('Anchor', module)
   ))
   .add('With Text', () => (
     <Grommet theme={grommet}>
-      {/* eslint-disable react/jsx-one-expression-per-line */}
       This is a <Anchor label='link' href='#' /> with text.
     </Grommet>
   ));
