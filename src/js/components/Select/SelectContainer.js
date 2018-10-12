@@ -57,14 +57,10 @@ class SelectContainer extends Component {
     if (prevState.activeIndex === -1 && prevState.search === '' && options && value) {
       const optionValue = Array.isArray(value) && value.length ? value[0] : value;
       const activeIndex = options.indexOf(optionValue);
-      return {
-        activeIndex,
-      };
+      return { activeIndex };
     }
     if (prevState.activeIndex === -1 && prevState.search !== '') {
-      return {
-        activeIndex: 0,
-      };
+      return { activeIndex: 0 };
     }
 
     return null;
@@ -105,7 +101,7 @@ class SelectContainer extends Component {
     }, 0);
   }
 
-  onInput = (event) => {
+  onChange = (event) => {
     this.setState(
       {
         search: event.target.value,
@@ -247,7 +243,7 @@ class SelectContainer extends Component {
                 type='search'
                 value={search}
                 placeholder={searchPlaceholder}
-                onInput={this.onInput}
+                onChange={this.onChange}
               />
             </Box>
           )}

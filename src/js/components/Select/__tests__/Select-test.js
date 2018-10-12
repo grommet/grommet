@@ -175,29 +175,19 @@ describe('Select', () => {
 
     fireEvent.click(getByPlaceholderText('test select'));
 
-    const preventDefault = jest.fn();
     fireEvent.keyDown(
       document.getElementById('test-select__select-drop'),
-      {
-        key: 'Down', keyCode: 40, which: 40, preventDefault,
-      },
+      { key: 'Down', keyCode: 40, which: 40 },
     );
-    expect(preventDefault).toBeCalled();
     fireEvent.keyDown(
       document.getElementById('test-select__select-drop'),
-      {
-        key: 'Up', keyCode: 38, which: 38, preventDefault,
-      },
+      { key: 'Up', keyCode: 38, which: 38 },
     );
-    expect(preventDefault).toBeCalled();
     fireEvent.keyDown(
       document.getElementById('test-select__select-drop'),
-      {
-        key: 'Enter', keyCode: 13, which: 13, preventDefault,
-      },
+      { key: 'Enter', keyCode: 13, which: 13 },
     );
-    expect(preventDefault).toBeCalled();
-    expect(onChange).toBeCalled();
+    expect(onChange).toBeCalledWith(expect.objectContaining({ value: 'one' }));
     expect(window.scrollTo).toBeCalled();
   });
 
@@ -209,6 +199,7 @@ describe('Select', () => {
         options={['one', 'two']}
         selected={[]}
         value={[]}
+        onChange={() => {}}
       />
     );
     expect(component.toJSON()).toMatchSnapshot();

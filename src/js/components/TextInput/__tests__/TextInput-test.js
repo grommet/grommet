@@ -125,31 +125,9 @@ describe('TextInput', () => {
       fireEvent.click(getByText(document, 'test1'));
       expect(container.firstChild).toMatchSnapshot();
       expect(document.getElementById('text-input-drop__item')).toBeNull();
-      expect(onSelect).toBeCalled();
+      expect(onSelect).toBeCalledWith(expect.objectContaining({ suggestion: 'test1' }));
       done();
     }, 50);
-  });
-
-  test('next and previous suggestions', () => {
-    const { getByTestId, container } = render(
-      <Grommet>
-        <TextInput
-          data-testid='test-input'
-          id='item'
-          name='item'
-          suggestions={['test', { value: 'test1' }]}
-        />
-      </Grommet>
-    );
-    expect(container.firstChild).toMatchSnapshot();
-
-    const input = getByTestId('test-input');
-    const preventDefault = jest.fn();
-    fireEvent.keyDown(input, { keyCode: 40, preventDefault });
-    fireEvent.keyDown(input, { keyCode: 40, preventDefault });
-    fireEvent.keyDown(input, { keyCode: 40, preventDefault });
-    fireEvent.keyDown(input, { keyCode: 38, preventDefault });
-    expect(preventDefault).toBeCalled();
   });
 
   test('select a suggestion', () => {
@@ -168,34 +146,37 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     const input = getByTestId('test-input');
-    const preventDefault = jest.fn();
     // pressing enter here nothing will happen
-    fireEvent.keyDown(input, { keyCode: 13, preventDefault });
-    fireEvent.keyDown(input, { keyCode: 40, preventDefault });
-    fireEvent.keyDown(input, { keyCode: 40, preventDefault });
-    fireEvent.keyDown(input, { keyCode: 13, preventDefault });
-    expect(preventDefault).toBeCalled();
-    expect(onSelect).toBeCalled();
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 40 }); // down
+    fireEvent.keyDown(input, { keyCode: 38 }); // up
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    expect(onSelect).toBeCalledWith(expect.objectContaining({
+      suggestion: 'test',
+    }));
   });
 
   test('handles next and previous without suggestion', () => {
+    const onSelect = jest.fn();
     const { getByTestId, container } = render(
       <Grommet>
         <TextInput
           data-testid='test-input'
           id='item'
           name='item'
+          onSelect={onSelect}
         />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 
     const input = getByTestId('test-input');
-    const preventDefault = jest.fn();
-    fireEvent.keyDown(input, { keyCode: 40, preventDefault });
-    fireEvent.keyDown(input, { keyCode: 40, preventDefault });
-    fireEvent.keyDown(input, { keyCode: 38, preventDefault });
-    expect(preventDefault).not.toBeCalled();
+    fireEvent.keyDown(input, { keyCode: 40 });
+    fireEvent.keyDown(input, { keyCode: 40 });
+    fireEvent.keyDown(input, { keyCode: 38 });
+    fireEvent.keyDown(input, { keyCode: 13 }); // enter
+    expect(onSelect).not.toBeCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
 });
