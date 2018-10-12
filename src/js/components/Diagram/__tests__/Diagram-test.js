@@ -1,8 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import 'jest-styled-components';
-import { cleanup, renderIntoDocument } from 'react-testing-library';
+import { cleanup, render } from 'react-testing-library';
 
-import { Grommet, Box, Diagram, Stack } from '../../';
+import {
+  Grommet, Box, Diagram, Stack,
+} from '../..';
 
 const Context = ({ children }) => (
   <Grommet>
@@ -16,11 +19,15 @@ const Context = ({ children }) => (
   </Grommet>
 );
 
+Context.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 describe('Diagram', () => {
   afterEach(cleanup);
 
   test('basic', () => {
-    const { container } = renderIntoDocument(
+    const { container } = render(
       <Context>
         <Diagram
           connections={[{ fromTarget: '1', toTarget: '2' }]}
@@ -31,7 +38,7 @@ describe('Diagram', () => {
   });
 
   test('type', () => {
-    const { container } = renderIntoDocument(
+    const { container } = render(
       <Context>
         <Diagram
           connections={[
@@ -46,7 +53,7 @@ describe('Diagram', () => {
   });
 
   test('color', () => {
-    const { container } = renderIntoDocument(
+    const { container } = render(
       <Context>
         <Diagram
           connections={[
@@ -59,7 +66,7 @@ describe('Diagram', () => {
   });
 
   test('offset', () => {
-    const { container } = renderIntoDocument(
+    const { container } = render(
       <Context>
         <Diagram
           connections={[
@@ -74,7 +81,7 @@ describe('Diagram', () => {
   });
 
   test('thickness', () => {
-    const { container } = renderIntoDocument(
+    const { container } = render(
       <Context>
         <Diagram
           connections={[
@@ -92,7 +99,7 @@ describe('Diagram', () => {
   });
 
   test('anchor', () => {
-    const { container } = renderIntoDocument(
+    const { container } = render(
       <Context>
         <Diagram
           connections={[

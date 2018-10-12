@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 
 import { parseMetricToNum } from '../../utils';
 
-import { StyledAnalog, StyledHour, StyledMinute, StyledSecond } from './StyledClock';
+import {
+  StyledAnalog, StyledHour, StyledMinute, StyledSecond,
+} from './StyledClock';
 
 // this will serve both minutes and hours (360 / 6)
 const ANGLE_UNIT = 6;
@@ -38,8 +40,8 @@ export class Analog extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     const { elements } = nextProps;
     const nextState = getClockState(elements);
-    if (prevState.hourAngle === undefined ||
-      Object.keys(nextState).some(k => prevState[k] !== nextState[k])) {
+    if (prevState.hourAngle === undefined
+      || Object.keys(nextState).some(k => prevState[k] !== nextState[k])) {
       return nextState;
     }
     return null;
@@ -50,7 +52,9 @@ export class Analog extends Component {
   render() {
     const { precision, theme, ...rest } = this.props;
     const { hourAngle, minuteAngle, secondAngle } = this.state;
-    const { size, secondSize, minuteSize, hourSize } = getClockDimensions(theme);
+    const {
+      size, secondSize, minuteSize, hourSize,
+    } = getClockDimensions(theme);
     const halfSize = size / 2;
 
     let secondHand;

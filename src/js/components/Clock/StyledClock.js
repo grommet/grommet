@@ -2,22 +2,22 @@ import styled, { css, keyframes } from 'styled-components';
 
 export const StyledHour = styled.line`
   stroke-width: ${props => props.theme.clock.analog.hour.width};
-  stroke: ${props =>
-    props.theme.clock.analog.hour.color[props.theme.dark ? 'dark' : 'light']};
+  stroke: ${props => (
+    props.theme.clock.analog.hour.color[props.theme.dark ? 'dark' : 'light'])};
   transition: stroke 1s ease-out;
 `;
 
 export const StyledMinute = styled.line`
   stroke-width: ${props => props.theme.clock.analog.minute.width};
-  stroke: ${props =>
-    props.theme.clock.analog.minute.color[props.theme.dark ? 'dark' : 'light']};
+  stroke: ${props => (
+    props.theme.clock.analog.minute.color[props.theme.dark ? 'dark' : 'light'])};
   transition: stroke 1s ease-out;
 `;
 
 export const StyledSecond = styled.line`
   stroke-width: ${props => props.theme.clock.analog.second.width};
-  stroke: ${props =>
-    props.theme.clock.analog.second.color[props.theme.dark ? 'dark' : 'light']};
+  stroke: ${props => (
+    props.theme.clock.analog.second.color[props.theme.dark ? 'dark' : 'light'])};
   transition: stroke 1s ease-out;
 `;
 

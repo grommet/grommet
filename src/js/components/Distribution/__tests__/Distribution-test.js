@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import { render } from 'react-testing-library';
 
 import { Grommet } from '../../Grommet';
-import { Distribution } from '../';
+import { Distribution } from '..';
 
 describe('Distribution', () => {
   test('renders', () => {

@@ -6,12 +6,19 @@ import 'jest-styled-components';
 import { findAllByType } from '../../../utils';
 
 import { Grommet } from '../../Grommet';
-import { RoutedAnchor } from '../';
+import { RoutedAnchor } from '..';
 
 class FakeRouter extends Component {
-  static childContextTypes = {
-    router: PropTypes.object,
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    push: PropTypes.func.isRequired,
+    replace: PropTypes.func.isRequired,
   }
+
+  static childContextTypes = {
+    router: PropTypes.shape({}).isRequired,
+  }
+
   getChildContext() {
     const { push, replace } = this.props;
     return {
@@ -23,8 +30,10 @@ class FakeRouter extends Component {
       },
     };
   }
+
   render() {
-    return <div>{this.props.children}</div>;
+    const { children } = this.props;
+    return <div>{children}</div>;
   }
 }
 

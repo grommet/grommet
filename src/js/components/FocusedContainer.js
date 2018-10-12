@@ -37,6 +37,7 @@ export class FocusedContainer extends Component {
 
   removeTrap = () => {
     const { restrictScroll } = this.props;
+    /* eslint-disable-next-line react/no-find-dom-node */
     const child = findDOMNode(this.ref.current);
     getBodyChildElements()
       .filter(isNotAncestorOf(child))
@@ -48,6 +49,7 @@ export class FocusedContainer extends Component {
 
   trapFocus = () => {
     const { restrictScroll } = this.props;
+    /* eslint-disable-next-line react/no-find-dom-node */
     const child = findDOMNode(this.ref.current);
     getBodyChildElements()
       .filter(isNotAncestorOf(child))

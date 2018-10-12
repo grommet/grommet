@@ -1,10 +1,10 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import { cleanup, renderIntoDocument } from 'react-testing-library';
+import { cleanup, render } from 'react-testing-library';
 
 import { Grommet } from '../../Grommet';
-import { Clock } from '../';
+import { Clock } from '..';
 
 const DURATION = 'PT18H23M34S';
 const TIME = 'T18:23:34';
@@ -37,7 +37,7 @@ describe('Clock', () => {
   });
 
   test('run', (done) => {
-    const { container } = renderIntoDocument(
+    const { container } = render(
       <Grommet>
         <Clock type='analog' run='forward' time={DURATION} />
         <Clock type='analog' run='backward' time={DURATION} />

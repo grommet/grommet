@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 // import { mount } from 'enzyme';
 
-import { Grommet, Video } from '../../';
+import { Grommet, Video } from '../..';
 
 jest.mock('react-dom', () => ({
   findDOMNode: () => ({ textTracks: [{ label: 'test' }] }),
@@ -24,7 +24,7 @@ test('Video renders', () => {
 test('Video autoPlay renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Video autoPlay={true}>{CONTENTS}</Video>
+      <Video autoPlay>{CONTENTS}</Video>
     </Grommet>
   );
   const tree = component.toJSON();
@@ -34,7 +34,7 @@ test('Video autoPlay renders', () => {
 test('Video loop renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Video loop={true}>{CONTENTS}</Video>
+      <Video loop>{CONTENTS}</Video>
     </Grommet>
   );
   const tree = component.toJSON();
@@ -44,7 +44,7 @@ test('Video loop renders', () => {
 test('Video mute renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Video mute={true}>{CONTENTS}</Video>
+      <Video mute>{CONTENTS}</Video>
     </Grommet>
   );
   const tree = component.toJSON();

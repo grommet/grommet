@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { cleanup, renderIntoDocument, Simulate } from 'react-testing-library';
+import { cleanup, render, fireEvent } from 'react-testing-library';
 
 import { Grommet } from '../../Grommet';
-import { Carousel } from '../';
+import { Carousel } from '..';
 import { Image } from '../../Image';
 
 describe('Carousel', () => {
@@ -24,7 +24,7 @@ describe('Carousel', () => {
   });
 
   test('navigate', () => {
-    const { getByTestId, container } = renderIntoDocument(
+    const { getByTestId, container } = render(
       <Grommet>
         <Carousel data-testid='test-carousel'>
           <Image src='//v2.grommet.io/assets/IMG_4245.jpg' />
@@ -34,15 +34,15 @@ describe('Carousel', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.keyDown(getByTestId('test-carousel'), { key: 'Right', keyCode: 39, which: 39 });
+    fireEvent.keyDown(getByTestId('test-carousel'), { key: 'Right', keyCode: 39, which: 39 });
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.keyDown(getByTestId('test-carousel'), { key: 'Left', keyCode: 37, which: 37 });
+    fireEvent.keyDown(getByTestId('test-carousel'), { key: 'Left', keyCode: 37, which: 37 });
     expect(container.firstChild).toMatchSnapshot();
   });
 
   test('play', (done) => {
-    const { container } = renderIntoDocument(
+    const { container } = render(
       <Grommet>
         <Carousel play={1000}>
           <Image src='//v2.grommet.io/assets/IMG_4245.jpg' />

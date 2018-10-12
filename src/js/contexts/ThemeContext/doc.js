@@ -10,7 +10,8 @@ export const doc = (ThemeContext) => {
 
   DocumentedThemeContext.propTypes = {
     value: PropTypes.shape({}).description(
-      'Sparse theme object that will be merged with the current theme.'),
+      'Sparse theme object that will be merged with the current theme.'
+    ),
   };
 
   return DocumentedThemeContext;

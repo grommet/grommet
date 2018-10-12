@@ -1,6 +1,6 @@
 import React from 'react';
 import 'jest-styled-components';
-import { cleanup, renderIntoDocument, Simulate } from 'react-testing-library';
+import { cleanup, render, fireEvent } from 'react-testing-library';
 
 import { FocusedContainer } from '../FocusedContainer';
 
@@ -9,10 +9,10 @@ describe('FocusedContainer', () => {
 
   test('basic', () => {
     jest.useFakeTimers();
-    const { container: trapped } = renderIntoDocument(
+    const { container: trapped } = render(
       <div id='focus-trap-test'><input id='test' /></div>
     );
-    const { container: focuser } = renderIntoDocument(
+    const { container: focuser } = render(
       <FocusedContainer id='container'>test focused container</FocusedContainer>
     );
     jest.runAllTimers();
@@ -26,8 +26,8 @@ describe('FocusedContainer', () => {
 
   test('restrict scroll', () => {
     jest.useFakeTimers();
-    const { container } = renderIntoDocument(
-      <FocusedContainer id='container' restrictScroll={true}>
+    const { container } = render(
+      <FocusedContainer id='container' restrictScroll>
         test focused container
       </FocusedContainer>
     );
@@ -44,10 +44,10 @@ describe('FocusedContainer', () => {
 
   test('blurs', () => {
     jest.useFakeTimers();
-    const { container: trapped } = renderIntoDocument(
+    const { container: trapped } = render(
       <div id='focus-trap-test'><input id='test' /></div>
     );
-    const { container: focuser } = renderIntoDocument(
+    const { container: focuser } = render(
       <FocusedContainer id='container'>test focused container</FocusedContainer>
     );
 
@@ -56,7 +56,7 @@ describe('FocusedContainer', () => {
     expect(focuser.firstChild).toMatchSnapshot();
     expect(trapped.firstChild).toMatchSnapshot(); // should have tabIndex="-1"
 
-    Simulate.blur(focuser);
+    fireEvent.blur(focuser);
 
     expect(trapped.firstChild).toMatchSnapshot();
   });

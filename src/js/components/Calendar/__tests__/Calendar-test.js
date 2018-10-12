@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { Grommet, Calendar } from '../../';
+import { Grommet, Calendar } from '../..';
 
 const DATE = '2018-01-15T00:00:00-08:00';
 const DATES = [

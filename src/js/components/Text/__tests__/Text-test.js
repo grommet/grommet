@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { Text } from '../';
+import { Text } from '..';
 
 test('renders', () => {
   const component = renderer.create(
@@ -67,7 +67,7 @@ test('renders truncate', () => {
   const component = renderer.create(
     <Grommet>
       <Text truncate={false}>{LONG}</Text>
-      <Text truncate={true}>{LONG}</Text>
+      <Text truncate>{LONG}</Text>
     </Grommet>
   );
   const tree = component.toJSON();

@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import 'jest-styled-components';
-import { cleanup, renderIntoDocument } from 'react-testing-library';
+import { cleanup, render } from 'react-testing-library';
 import { getByTestId, queryByTestId } from 'dom-testing-library';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet, Box, Layer } from '../../';
+import { Grommet, Box, Layer } from '../..';
 import { LayerContainer } from '../LayerContainer';
 
 class FakeLayer extends Component {
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+  }
+
   state = { showLayer: false }
 
   componentDidMount() {
@@ -44,7 +49,7 @@ describe('Layer', () => {
 
   ['top', 'bottom', 'left', 'right', 'center'].forEach(position => (
     test(`position ${position}`, () => {
-      renderIntoDocument(
+      render(
         <Grommet>
           <Layer id='position-test' position={position}>
             This is a layer
@@ -57,7 +62,7 @@ describe('Layer', () => {
 
   [true, false, 'horizontal', 'vertical'].forEach(full => (
     test(`full ${full}`, () => {
-      renderIntoDocument(
+      render(
         <Grommet>
           <Layer id='full-test' full={full}>
             This is a layer
@@ -70,7 +75,7 @@ describe('Layer', () => {
 
   ['none', 'xsmall', 'small', 'medium', 'large'].forEach(margin => (
     test(`margin ${margin}`, () => {
-      renderIntoDocument(
+      render(
         <Grommet>
           <Layer id='margin-test' margin={margin}>
             This is a layer
@@ -82,7 +87,7 @@ describe('Layer', () => {
   ));
 
   test('hidden', () => {
-    const { rerender } = renderIntoDocument(
+    const { rerender } = render(
       <Grommet>
         <Layer id='hidden-test' position='hidden'>This is a layer</Layer>
       </Grommet>
@@ -98,9 +103,9 @@ describe('Layer', () => {
   });
 
   test('plain', () => {
-    renderIntoDocument(
+    render(
       <Grommet>
-        <Layer id='plain-test' plain={true}>
+        <Layer id='plain-test' plain>
           This is a plain layer
         </Layer>
       </Grommet>
@@ -109,7 +114,7 @@ describe('Layer', () => {
   });
 
   test('non-modal', () => {
-    renderIntoDocument(
+    render(
       <Grommet>
         <Layer id='non-modal-test' modal={false}>
           This is a non-modal layer
@@ -120,7 +125,7 @@ describe('Layer', () => {
   });
 
   test('dark context', () => {
-    renderIntoDocument(
+    render(
       <Grommet>
         <Box background='dark-1'>
           <Layer id='non-modal-test' modal={false}>
@@ -139,7 +144,7 @@ describe('Layer', () => {
     });
 
     const onEsc = jest.fn();
-    renderIntoDocument(
+    render(
       <Grommet>
         <LayerContainer onEsc={onEsc}>
           <input data-testid='test-input' />
@@ -158,7 +163,7 @@ describe('Layer', () => {
     });
 
     /* eslint-disable jsx-a11y/tabindex-no-positive */
-    renderIntoDocument(
+    render(
       <Grommet>
         <FakeLayer>
           <div data-testid='test-body-node'>

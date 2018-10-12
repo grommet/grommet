@@ -12,12 +12,13 @@ import {
 const basicStyle = props => css`
   border: ${props.theme.button.border.width} solid ${
     colorForName(
-      normalizeColor((props.colorValue || props.theme.button.border.color ||
-      props.theme.global.control.color || 'brand'), props.theme)
-      , props.theme)};
+      normalizeColor((props.colorValue || props.theme.button.border.color
+        || props.theme.global.control.color || 'brand'), props.theme),
+        props.theme,
+      )};
   border-radius: ${props.theme.button.border.radius};
-  color: ${(props.theme.button.color ||
-    props.theme.global.text.color)[props.theme.dark ? 'dark' : 'light']};
+  color: ${(props.theme.button.color
+    || props.theme.global.text.color)[props.theme.dark ? 'dark' : 'light']};
   padding: ${props.theme.button.padding.vertical} ${props.theme.button.padding.horizontal};
   font-size: ${props.theme.text.medium.size};
   line-height: ${props.theme.text.medium.height};
@@ -27,8 +28,8 @@ const primaryStyle = props => css`
   ${
     backgroundStyle(
       normalizeColor(
-        props.colorValue || props.theme.button.primary.color ||
-        props.theme.global.control.color || 'brand',
+        props.colorValue || props.theme.button.primary.color
+        || props.theme.global.control.color || 'brand',
         props.theme
       ),
       props.theme
@@ -46,14 +47,14 @@ function getHoverColor(props) {
   if (props.colorValue) {
     return colorForName(props.colorValue, props.theme);
   }
-  return (normalizeColor(props.theme.button.border.color ||
-    props.theme.global.control.color, props.theme));
+  return (normalizeColor(props.theme.button.border.color
+    || props.theme.global.control.color, props.theme));
 }
 
 function getHoverIndicatorStyle(hoverIndicator, theme) {
   let background;
   if (hoverIndicator === true || hoverIndicator === 'background') {
-    background = theme.global.hover.background;
+    ({ background } = theme.global.hover);
   } else {
     background = hoverIndicator;
   }

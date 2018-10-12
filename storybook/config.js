@@ -1,5 +1,5 @@
-import { configure } from '@storybook/react';
-import { setOptions } from '@storybook/addon-options';
+import { addDecorator, configure } from '@storybook/react';
+import { withOptions } from '@storybook/addon-options';
 
 const req = require.context('../src/js', true, /\.stories\.js$/);
 
@@ -7,9 +7,11 @@ function loadStories() {
   req.keys().forEach(filename => req(filename));
 }
 
-setOptions({
-  name: 'Grommet Storybook',
-  url: 'https://v2.grommet.io',
-});
+addDecorator(
+  withOptions({
+    name: 'Grommet Storybook',
+    url: 'https://v2.grommet.io',
+  })
+);
 
 configure(loadStories, module);

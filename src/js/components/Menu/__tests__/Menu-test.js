@@ -1,12 +1,14 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import { cleanup, fireEvent, renderIntoDocument, Simulate } from 'react-testing-library';
+import {
+  cleanup, fireEvent, render,
+} from 'react-testing-library';
 import { getByText as getByTextDOM } from 'dom-testing-library';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { Grommet, Menu } from '../../';
+import { Grommet, Menu } from '../..';
 
 describe('Menu', () => {
   beforeEach(createPortal);
@@ -48,7 +50,7 @@ describe('Menu', () => {
 
   test('open and close on click', () => {
     window.scrollTo = jest.fn();
-    const { getByText, container } = renderIntoDocument(
+    const { getByText, container } = render(
       <Grommet>
         <Menu
           id='test-menu'
@@ -64,17 +66,17 @@ describe('Menu', () => {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
 
-    Simulate.click(getByText('Test'));
+    fireEvent.click(getByText('Test'));
     expect(container.firstChild).toMatchSnapshot();
     expectPortal('test-menu__drop').toMatchSnapshot();
 
-    Simulate.click(getByText('Test'));
+    fireEvent.click(getByText('Test'));
     expect(document.getElementById('test-menu__drop')).toBeNull();
     expect(window.scrollTo).toBeCalled();
   });
 
   test('close by clicking outside', (done) => {
-    const { getByText, container } = renderIntoDocument(
+    const { getByText, container } = render(
       <Grommet>
         <Menu
           id='test-menu'
@@ -89,7 +91,7 @@ describe('Menu', () => {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
 
-    Simulate.click(getByText('Test'));
+    fireEvent.click(getByText('Test'));
     expectPortal('test-menu__drop').toMatchSnapshot();
 
     fireEvent(document, new MouseEvent('mousedown', { bubbles: true, cancelable: true }));
@@ -101,7 +103,7 @@ describe('Menu', () => {
 
   test('select an item', () => {
     const onClick = jest.fn();
-    const { getByText, container } = renderIntoDocument(
+    const { getByText, container } = render(
       <Grommet>
         <Menu
           id='test-menu'
@@ -115,17 +117,17 @@ describe('Menu', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByText('Test'));
+    fireEvent.click(getByText('Test'));
 
     // click in the first menu item
-    Simulate.click(getByTextDOM(document, 'Item 1'));
+    fireEvent.click(getByTextDOM(document, 'Item 1'));
     expect(onClick).toBeCalled();
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 
   test('navigate through suggestions and select', () => {
     const onClick = jest.fn();
-    const { getByText, container } = renderIntoDocument(
+    const { getByText, container } = render(
       <Grommet>
         <Menu
           id='test-menu'
@@ -142,22 +144,22 @@ describe('Menu', () => {
     // pressing down 3x: first opens the drop,
     // second moves to the first suggestion
     // third moves to the last suggestion
-    Simulate.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
-    Simulate.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
-    Simulate.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
+    fireEvent.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
+    fireEvent.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
+    fireEvent.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
 
     // moves to the first suggestion
-    Simulate.keyDown(getByText('Test'), { key: 'Up', keyCode: 38, which: 38 });
+    fireEvent.keyDown(getByText('Test'), { key: 'Up', keyCode: 38, which: 38 });
 
     // select that by pressing enter
-    Simulate.keyDown(getByText('Test'), { key: 'Enter', keyCode: 13, which: 13 });
+    fireEvent.keyDown(getByText('Test'), { key: 'Enter', keyCode: 13, which: 13 });
 
     expect(onClick).toBeCalled();
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 
   test('close on esc', () => {
-    const { getByText, container } = renderIntoDocument(
+    const { getByText, container } = render(
       <Grommet>
         <Menu
           id='test-menu'
@@ -171,14 +173,14 @@ describe('Menu', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
-    Simulate.keyDown(getByText('Test'), { key: 'Esc', keyCode: 27, which: 27 });
+    fireEvent.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
+    fireEvent.keyDown(getByText('Test'), { key: 'Esc', keyCode: 27, which: 27 });
 
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 
   test('close on tab', () => {
-    const { getByText, container } = renderIntoDocument(
+    const { getByText, container } = render(
       <Grommet>
         <Menu
           id='test-menu'
@@ -192,14 +194,14 @@ describe('Menu', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
-    Simulate.keyDown(getByText('Test'), { key: 'Tab', keyCode: 9, which: 9 });
+    fireEvent.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
+    fireEvent.keyDown(getByText('Test'), { key: 'Tab', keyCode: 9, which: 9 });
 
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 
   test('with dropAlign renders', () => {
-    const { getByText, container } = renderIntoDocument(
+    const { getByText, container } = render(
       <Grommet>
         <Menu
           id='test-menu'
@@ -214,17 +216,17 @@ describe('Menu', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
+    fireEvent.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
 
     expectPortal('test-menu__drop').toMatchSnapshot();
   });
 
   test('disabled', () => {
-    const { getByText, container } = renderIntoDocument(
+    const { getByText, container } = render(
       <Grommet>
         <Menu
           id='test-menu'
-          disabled={true}
+          disabled
           label='Test'
           items={[
             { label: 'Item 1' },
@@ -240,7 +242,7 @@ describe('Menu', () => {
 
     expect(document.getElementById('test-menu__drop')).toBeNull();
 
-    Simulate.click(getByText('Test'));
+    fireEvent.click(getByText('Test'));
 
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });

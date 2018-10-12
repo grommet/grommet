@@ -11,25 +11,32 @@ class SkipLinks extends Component {
       skipTo: 'Skip To',
     },
   }
+
   state = {
     showLayer: false,
   }
+
   onBlur = () => {
     // timeout needed so it gives enough time for activeElement to be updated
     setTimeout(() => {
+      /* eslint-disable-next-line react/no-find-dom-node */
       const layerNode = findDOMNode(this.layerRef);
       if (!layerNode.contains(document.activeElement)) {
         this.removeLayer();
       }
     }, 0);
   }
+
   onFocus = () => {
     this.setState({ showLayer: true });
   }
+
   removeLayer = () => {
     this.setState({ showLayer: false });
   }
+
   render() {
+    /* eslint-disable-next-line react/prop-types */
     const { children, id, messages } = this.props;
     const { showLayer } = this.state;
     return (
@@ -41,7 +48,10 @@ class SkipLinks extends Component {
         onBlur={this.onBlur}
       >
         <Box pad={{ horizontal: 'medium' }}>
-          <Heading level={2}>{messages.skipTo}:</Heading>
+          <Heading level={2}>
+            {messages.skipTo}
+            :
+          </Heading>
           <Box direction='row' align='center' pad={{ bottom: 'medium' }}>
             {children.map((element, index) => (
               cloneElement(

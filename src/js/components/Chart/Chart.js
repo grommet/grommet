@@ -8,18 +8,20 @@ import { withTheme } from '../hocs';
 import { StyledChart } from './StyledChart';
 import { normalizeValues, normalizeBounds } from './utils';
 
-const renderBars = (values, bounds, scale, height) =>
+const renderBars = (values, bounds, scale, height) => (
   (values || []).map((valueArg, index) => {
-    const { label, onHover, value, ...rest } = valueArg;
+    const {
+      label, onHover, value, ...rest
+    } = valueArg;
 
     const key = `p-${index}`;
     const bottom = (value.length === 2 ? bounds[1][0] : value[1]);
     const top = (value.length === 2 ? value[1] : value[2]);
     if (top !== 0) {
-      const d = `M ${(value[0] - bounds[0][0]) * scale[0]},` +
-      `${height - ((bottom - bounds[1][0]) * scale[1])}` +
-      ` L ${(value[0] - bounds[0][0]) * scale[0]},` +
-      `${height - ((top - bounds[1][0]) * scale[1])}`;
+      const d = `M ${(value[0] - bounds[0][0]) * scale[0]},`
+        + `${height - ((bottom - bounds[1][0]) * scale[1])}`
+        + ` L ${(value[0] - bounds[0][0]) * scale[0]},`
+        + `${height - ((top - bounds[1][0]) * scale[1])}`;
 
       let hoverProps;
       if (onHover) {
@@ -37,13 +39,13 @@ const renderBars = (values, bounds, scale, height) =>
       );
     }
     return undefined;
-  });
+  }));
 
 const renderLine = (values, bounds, scale, height, { onClick, onHover }) => {
   let d = '';
   (values || []).forEach(({ value }, index) => {
-    d += `${index ? ' L' : 'M'} ${(value[0] - bounds[0][0]) * scale[0]},` +
-    `${height - ((value[1] - bounds[1][0]) * scale[1])}`;
+    d += `${index ? ' L' : 'M'} ${(value[0] - bounds[0][0]) * scale[0]},`
+      + `${height - ((value[1] - bounds[1][0]) * scale[1])}`;
   });
 
   let hoverProps;
@@ -65,17 +67,19 @@ const renderLine = (values, bounds, scale, height, { onClick, onHover }) => {
   );
 };
 
-const renderArea = (values, bounds, scale, height, { color, onClick, onHover, theme }) => {
+const renderArea = (values, bounds, scale, height, {
+  color, onClick, onHover, theme,
+}) => {
   let d = '';
   (values || []).forEach(({ value }, index) => {
     const top = (value.length === 2 ? value[1] : value[2]);
-    d += `${!index ? 'M' : ' L'} ${(value[0] - bounds[0][0]) * scale[0]},` +
-    `${height - ((top - bounds[1][0]) * scale[1])}`;
+    d += `${!index ? 'M' : ' L'} ${(value[0] - bounds[0][0]) * scale[0]},`
+      + `${height - ((top - bounds[1][0]) * scale[1])}`;
   });
   (values || []).reverse().forEach(({ value }) => {
     const bottom = (value.length === 2 ? bounds[1][0] : value[1]);
-    d += ` L ${(value[0] - bounds[0][0]) * scale[0]},` +
-    `${height - ((bottom - bounds[1][0]) * scale[1])}`;
+    d += ` L ${(value[0] - bounds[0][0]) * scale[0]},`
+      + `${height - ((bottom - bounds[1][0]) * scale[1])}`;
   });
   if (d.length > 0) {
     d += ' Z';
@@ -132,9 +136,10 @@ class Chart extends Component {
   }
 
   onResize = () => {
+    /* eslint-disable-next-line react/no-find-dom-node */
     const containerNode = findDOMNode(this.containerRef);
     if (containerNode) {
-      const parentNode = containerNode.parentNode;
+      const { parentNode } = containerNode;
       if (parentNode) {
         const rect = parentNode.getBoundingClientRect();
         this.setState({ containerWidth: rect.width, containerHeight: rect.height });
@@ -148,21 +153,26 @@ class Chart extends Component {
       ...rest
     } = this.props;
     delete rest.values;
-    const { bounds, containerWidth, containerHeight, values } = this.state;
+    const {
+      bounds, containerWidth, containerHeight, values,
+    } = this.state;
 
     const sizeWidth = (typeof size === 'string') ? size : size.width || 'medium';
     const sizeHeight = (typeof size === 'string') ? size : size.height || 'medium';
-    const width = (sizeWidth === 'full' ? containerWidth :
-      parseMetricToNum(theme.global.size[sizeWidth]));
-    const height = (sizeHeight === 'full' ? containerHeight :
-      parseMetricToNum(theme.global.size[sizeHeight]));
+    const width = (sizeWidth === 'full'
+      ? containerWidth
+      : parseMetricToNum(theme.global.size[sizeWidth]));
+    const height = (sizeHeight === 'full'
+      ? containerHeight
+      : parseMetricToNum(theme.global.size[sizeHeight]));
     const strokeWidth = parseMetricToNum(theme.global.edgeSize[thickness]);
     const scale = [
       (width / (bounds[0][1] - bounds[0][0])),
       (height / (bounds[1][1] - bounds[1][0])),
     ];
-    const viewBox = overflow ? `0 0 ${width} ${height}` :
-      `-${strokeWidth / 2} -${strokeWidth / 2} ${width + strokeWidth} ${height + strokeWidth}`;
+    const viewBox = overflow
+      ? `0 0 ${width} ${height}`
+      : `-${strokeWidth / 2} -${strokeWidth / 2} ${width + strokeWidth} ${height + strokeWidth}`;
     const colorName = (typeof color === 'object' ? color.color : color);
     const opacity = (color.opacity ? theme.global.opacity[color.opacity] : undefined);
 

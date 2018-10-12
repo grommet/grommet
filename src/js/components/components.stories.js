@@ -32,7 +32,7 @@ import {
   TextArea,
   TextInput,
   Video,
-} from './';
+} from '.';
 import { grommet, dark, hpe } from '../themes';
 import { generate } from '../themes/base';
 import { deepMerge } from '../utils';
@@ -102,7 +102,7 @@ class Components extends Component {
         />
         <CheckBox
           name='toggle'
-          toggle={true}
+          toggle
           checked={checkBox}
           label='CheckBox toggle'
           onChange={event => this.setState({ checkBox: event.target.checked })}
@@ -147,13 +147,13 @@ class Components extends Component {
       <Box key='measure' gap='medium'>
         <Chart
           type='bar'
-          round={true}
+          round
           size='small'
           values={[{ value: [10, 20] }, { value: [20, 30] }, { value: [30, 15] }]}
         />
         <Meter
           type='bar'
-          round={true}
+          round
           size='small'
           background='light-3'
           values={[{ value: 30 }]}
@@ -171,7 +171,7 @@ class Components extends Component {
           ]}
         >
           {value => (
-            <Box pad='xsmall' background={value.color} fill={true}>
+            <Box pad='xsmall' background={value.color} fill>
               <Text size='large'>{value.value}</Text>
             </Box>
           )}
@@ -205,7 +205,7 @@ class Components extends Component {
             { name: 'Chris', color: 'purple' },
             { name: 'Eric', color: 'orange' },
           ]}
-          sortable={true}
+          sortable
         />
       </Box>,
       <Box key='accordion'>
@@ -261,7 +261,7 @@ class Components extends Component {
           >
             <Box basis='small'>
               <Select
-                plain={true}
+                plain
                 size='small'
                 options={['grommet', 'dark', 'hpe']}
                 value={themeName}
@@ -277,7 +277,9 @@ class Components extends Component {
                 onChange={event => this.setState({ baseSize: parseInt(event.target.value, 10) })}
               />
             </Box>
-            <Text size='small'>{baseSize}px base spacing</Text>
+            <Text size='small'>
+              {`${baseSize}px base spacing`}
+            </Text>
           </Box>
         </Grommet>
         <Grommet theme={theme}>
@@ -286,11 +288,11 @@ class Components extends Component {
             background={theme.global.colors.background || theme.global.colors.white}
           >
             {Grid.available ? (
-              <Grid fill={true} columns='small' gap='medium'>
+              <Grid fill columns='small' gap='medium'>
                 {content}
               </Grid>
             ) : (
-              <Box direction='row' wrap={true} align='start' gap='large'>
+              <Box direction='row' wrap align='start' gap='large'>
                 {content}
               </Box>
             )}

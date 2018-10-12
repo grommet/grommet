@@ -27,8 +27,10 @@ class DataTable extends Component {
   }
 
   onFilter = (property, value) => {
+    /* eslint-disable-next-line react/prop-types */
     const { onSearch } = this.props;
-    const nextFilters = { ...this.state.filters };
+    const { filters } = this.state;
+    const nextFilters = { ...filters };
     nextFilters[property] = value;
     this.setState({ filters: nextFilters });
 
@@ -45,32 +47,36 @@ class DataTable extends Component {
   }
 
   onToggleGroup = groupValue => () => {
-    const groupState = { ...this.state.groupState };
-    groupState[groupValue] = {
-      ...groupState[groupValue],
-      expanded: !(groupState[groupValue].expanded),
+    const { groupState } = this.state;
+    const nextGroupState = { ...groupState };
+    nextGroupState[groupValue] = {
+      ...nextGroupState[groupValue],
+      expanded: !(nextGroupState[groupValue].expanded),
     };
-    this.setState({ groupState });
+    this.setState({ groupState: nextGroupState });
   }
 
   onToggleGroups = () => {
-    const expanded = Object.keys(this.state.groupState)
-      .filter(k => !this.state.groupState[k].expanded).length === 0;
-    const groupState = {};
-    Object.keys(this.state.groupState).forEach((k) => {
-      groupState[k] = { ...this.state.groupState[k], expanded: !expanded };
+    const { groupState } = this.state;
+    const expanded = Object.keys(groupState)
+      .filter(k => !groupState[k].expanded).length === 0;
+    const nextGroupState = {};
+    Object.keys(groupState).forEach((k) => {
+      nextGroupState[k] = { ...groupState[k], expanded: !expanded };
     });
-    this.setState({ groupState });
+    this.setState({ groupState: nextGroupState });
   }
 
   onResize = property => (width) => {
-    const widths = { ...(this.state.widths || {}) };
-    widths[property] = width;
-    this.setState({ widths });
+    const { widths } = this.state;
+    const nextWidths = { ...(widths || {}) };
+    nextWidths[property] = width;
+    this.setState({ widths: nextWidths });
   }
 
   render() {
     const {
+      /* eslint-disable-next-line react/prop-types */
       columns, groupBy, onMore, resizeable, size, sortable, theme,
      } = this.props;
     const {
@@ -100,25 +106,28 @@ class DataTable extends Component {
           onSort={sortable ? this.onSort : undefined}
           onToggle={this.onToggleGroups}
         />
-        {groups ?
-          <GroupedBody
-            columns={columns}
-            groupBy={groupBy}
-            groups={groups}
-            groupState={groupState}
-            primaryProperty={primaryProperty}
-            theme={theme}
-            onToggle={this.onToggleGroup}
-          />
-          :
-          <Body
-            columns={columns}
-            data={data}
-            onMore={onMore}
-            primaryProperty={primaryProperty}
-            size={size}
-            theme={theme}
-          />
+        {groups
+          ? (
+            <GroupedBody
+              columns={columns}
+              groupBy={groupBy}
+              groups={groups}
+              groupState={groupState}
+              primaryProperty={primaryProperty}
+              theme={theme}
+              onToggle={this.onToggleGroup}
+            />
+          )
+          : (
+            <Body
+              columns={columns}
+              data={data}
+              onMore={onMore}
+              primaryProperty={primaryProperty}
+              size={size}
+              theme={theme}
+            />
+          )
         }
         {showFooter && (
           <Footer

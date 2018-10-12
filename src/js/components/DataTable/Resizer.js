@@ -15,6 +15,7 @@ export class Resizer extends Component {
 
   onMouseDown = (event) => {
     if (this.ref.current) {
+      /* eslint-disable-next-line react/no-find-dom-node */
       const element = findDOMNode(this.ref.current);
       const rect = element.getBoundingClientRect();
       this.setState({ start: event.clientX, width: rect.width }, () => {
@@ -25,12 +26,12 @@ export class Resizer extends Component {
   }
 
   onMouseMove = (event) => {
-    const { property } = this.props;
-    const { width } = this.state;
+    const { onResize, property } = this.props;
+    const { start, width } = this.state;
     // We determined 12 empirically as being wide enough to hit but
     // not too wide to cause false hits.
-    const nextWidth = Math.max(12, width + (event.clientX - this.state.start));
-    this.props.onResize(property)(nextWidth);
+    const nextWidth = Math.max(12, width + (event.clientX - start));
+    onResize(property)(nextWidth);
   }
 
   onMouseUp = () => {
@@ -44,7 +45,7 @@ export class Resizer extends Component {
     const { start } = this.state;
     if (onResize) {
       return (
-        <Box ref={this.ref} direction='row' fill={true}>
+        <Box ref={this.ref} direction='row' fill>
           {children}
           <ResizerBox
             flex={false}

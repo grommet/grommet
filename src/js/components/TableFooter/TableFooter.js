@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { TableContext } from '../Table/TableContext';
 import { StyledTableFooter } from '../Table/StyledTable';
 
-class TableFooter extends Component {
-  render() {
-    return (
-      <TableContext.Provider value='footer'>
-        <StyledTableFooter {...this.props} />
-      </TableContext.Provider>
-    );
-  }
-}
+const TableFooter = props => (
+  <TableContext.Provider value='footer'>
+    <StyledTableFooter {...props} />
+  </TableContext.Provider>
+);
 
 let TableFooterDoc;
 if (process.env.NODE_ENV !== 'production') {
@@ -20,4 +16,3 @@ if (process.env.NODE_ENV !== 'production') {
 const TableFooterWrapper = TableFooterDoc || TableFooter;
 
 export { TableFooterWrapper as TableFooter };
-

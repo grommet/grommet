@@ -101,8 +101,8 @@ describe('Meter', () => {
   test('round', () => {
     const component = renderer.create(
       <Grommet>
-        <Meter round={true} values={VALUES} />
-        <Meter type='circle' round={true} values={VALUES} />
+        <Meter round values={VALUES} />
+        <Meter type='circle' round values={VALUES} />
       </Grommet>
     );
     const tree = component.toJSON();

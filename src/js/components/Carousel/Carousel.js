@@ -12,7 +12,8 @@ class Carousel extends Component {
   state = { activeIndex: 0 };
 
   componentDidMount() {
-    if (this.props.play) {
+    const { play } = this.props;
+    if (play) {
       this.play();
     }
   }
@@ -31,6 +32,7 @@ class Carousel extends Component {
   }
 
   play = () => {
+    const { play } = this.props;
     clearInterval(this.timer);
     this.timer = setInterval(() => {
       const { children } = this.props;
@@ -41,7 +43,7 @@ class Carousel extends Component {
       } else {
         this.setState({ activeIndex: 0, priorActiveIndex: activeIndex });
       }
-    }, this.props.play);
+    }, play);
   }
 
   onRight = () => {
@@ -56,15 +58,16 @@ class Carousel extends Component {
     this.setState({ activeIndex: activeIndex - 1, priorActiveIndex: activeIndex });
   }
 
-  onSelect = index =>
-    () => {
-      const { activeIndex } = this.state;
-      clearInterval(this.timer);
-      this.setState({ activeIndex: index, priorActiveIndex: activeIndex });
-    };
+  onSelect = index => () => {
+    const { activeIndex } = this.state;
+    clearInterval(this.timer);
+    this.setState({ activeIndex: index, priorActiveIndex: activeIndex });
+  };
 
   render() {
-    const { children, fill, focus, theme, ...rest } = this.props;
+    const {
+      children, fill, focus, theme, ...rest
+    } = this.props;
     const { activeIndex, priorActiveIndex } = this.state;
 
     const lastIndex = Children.count(children) - 1;
@@ -72,9 +75,9 @@ class Carousel extends Component {
     const onRight = (activeIndex < lastIndex ? this.onRight : undefined);
 
     const CurrentIcon = theme.carousel.icons.current;
-    const dark = theme.dark;
-    const iconColor = evalStyle((theme.carousel.icons.color ||
-      theme.global.control.color)[dark ? 'dark' : 'light'], theme);
+    const { dark } = theme;
+    const iconColor = evalStyle((theme.carousel.icons.color
+      || theme.global.control.color)[dark ? 'dark' : 'light'], theme);
 
     const selectors = [];
     const wrappedChildren = Children.map(children, (child, index) => {
@@ -120,9 +123,9 @@ class Carousel extends Component {
       <Keyboard onLeft={onLeft} onRight={onRight}>
         <Stack guidingChild={activeIndex} fill={fill} {...rest}>
           {wrappedChildren}
-          <Box tabIndex='0' focus={focus} fill={true} direction='row' justify='between'>
+          <Box tabIndex='0' focus={focus} fill direction='row' justify='between'>
             <Box fill='vertical'>
-              <Button fill={true} onClick={onLeft} hoverIndicator={true}>
+              <Button fill onClick={onLeft} hoverIndicator>
                 <Box justify='center'>
                   <PreviousIcon />
                 </Box>
@@ -134,7 +137,7 @@ class Carousel extends Component {
               </Box>
             </Box>
             <Box fill='vertical'>
-              <Button fill={true} onClick={onRight} hoverIndicator={true}>
+              <Button fill onClick={onRight} hoverIndicator>
                 <Box justify='center'>
                   <NextIcon />
                 </Box>

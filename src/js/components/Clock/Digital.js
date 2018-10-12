@@ -16,7 +16,8 @@ class Digit extends Component {
   state = {}
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.previous === undefined && this.state.previous !== undefined) {
+    const { previous } = this.state;
+    if (prevState.previous === undefined && previous !== undefined) {
       clearTimeout(this.timer);
       this.timer = setTimeout(() => {
         this.setState({ previous: undefined });
@@ -29,6 +30,7 @@ class Digit extends Component {
   }
 
   render() {
+    /* eslint-disable-next-line react/prop-types */
     const { run, size, theme } = this.props;
     const { number, previous } = this.state;
     if (previous !== undefined) {
@@ -52,7 +54,9 @@ class Digit extends Component {
   }
 }
 
-const Element = ({ number, run, sep, size, theme }) => {
+const Element = ({
+  number, run, sep, size, theme,
+}) => {
   const tens = Math.floor(number / 10);
   const ones = number % 10;
   const result = [
@@ -67,27 +71,27 @@ const Element = ({ number, run, sep, size, theme }) => {
   return result;
 };
 
-export class Digital extends Component {
-  render() {
-    const { elements, precision, run, size, theme, ...rest } = this.props;
-    let seconds;
-    if (precision === 'seconds') {
-      seconds = (
-        <Element number={elements.seconds} run={run} size={size} sep={true} theme={theme} />
-      );
-    }
-    let minutes;
-    if (precision === 'minutes' || precision === 'seconds') {
-      minutes = (
-        <Element number={elements.minutes} run={run} size={size} sep={true} theme={theme} />
-      );
-    }
-    return (
-      <Box direction='row' {...rest}>
-        <Element number={elements.hours12 || elements.hours} run={run} size={size} theme={theme} />
-        {minutes}
-        {seconds}
-      </Box>
+export const Digital = (props) => {
+  const {
+    elements, precision, run, size, theme, ...rest
+  } = props;
+  let seconds;
+  if (precision === 'seconds') {
+    seconds = (
+      <Element number={elements.seconds} run={run} size={size} sep theme={theme} />
     );
   }
-}
+  let minutes;
+  if (precision === 'minutes' || precision === 'seconds') {
+    minutes = (
+      <Element number={elements.minutes} run={run} size={size} sep theme={theme} />
+    );
+  }
+  return (
+    <Box direction='row' {...rest}>
+      <Element number={elements.hours12 || elements.hours} run={run} size={size} theme={theme} />
+      {minutes}
+      {seconds}
+    </Box>
+  );
+};

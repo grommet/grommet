@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import renderer from 'react-test-renderer';
 
 import { findAllByType } from '../../utils';
 
 import { withFocus } from '../hocs';
 
-class TestDiv extends Component {
-  render() {
-    const { focus, ...rest } = this.props;
-    return (
-      <div {...rest}>
-        { focus ? 'focus' : 'no focus' }
-      </div>
-    );
-  }
-}
+const TestDiv = (props) => {
+  const { focus, ...rest } = props;
+  return (
+    <div {...rest}>
+      { focus ? 'focus' : 'no focus' }
+    </div>
+  );
+};
 
 const Test = withFocus(TestDiv);
 

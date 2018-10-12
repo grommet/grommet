@@ -4,10 +4,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.stories\.jsx?$/,
+        test: /\.stories\.js?$/,
         loaders: [
           {
-            loader: require.resolve("@storybook/addon-storysource/loader"),
+            loader: require.resolve('@storybook/addon-storysource/loader'),
             options: {
               prettierConfig: {
                 parser: 'babylon',
@@ -22,6 +22,6 @@ module.exports = {
   resolve: {
     alias: {
       'grommet': path.resolve(__dirname, '../src/js'),
-    }
+    },
   },
 };

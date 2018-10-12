@@ -2,7 +2,7 @@ import React, { createRef, Component } from 'react';
 
 import { findDOMNode } from 'react-dom';
 
-import { TextInput } from '../../../';
+import { TextInput } from '../../..';
 
 import { SearchBorderBox } from './SearchBorderBox';
 import { SearchInputContext } from './SearchInputContext';
@@ -12,6 +12,7 @@ export class SearchInput extends Component {
 
   componentDidMount() {
     setTimeout(() => {
+      /* eslint-disable-next-line react/no-find-dom-node */
       findDOMNode(this.textInputRef.current).focus();
     }, 300);
   }
@@ -23,7 +24,7 @@ export class SearchInput extends Component {
           <SearchBorderBox searching={searching}>
             <TextInput
               {...this.props}
-              plain={true}
+              plain
               ref={this.textInputRef}
             />
           </SearchBorderBox>

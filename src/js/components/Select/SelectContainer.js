@@ -1,3 +1,4 @@
+/* eslint-disable react/no-find-dom-node */
 import React, { createRef, Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import styled from 'styled-components';
@@ -32,11 +33,22 @@ const OptionsBox = styled(Box)`
 
 class SelectContainer extends Component {
   static defaultProps = {
+    children: null,
+    id: undefined,
+    multiple: false,
+    name: undefined,
+    onKeyDown: undefined,
+    onSearch: undefined,
+    options: undefined,
+    searchPlaceholder: undefined,
+    selected: false,
     value: '',
   }
 
   optionsRef = {}
+
   searchRef = createRef()
+
   selectRef = createRef()
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -45,13 +57,10 @@ class SelectContainer extends Component {
     if (prevState.activeIndex === -1 && prevState.search === '' && options && value) {
       const optionValue = Array.isArray(value) && value.length ? value[0] : value;
       const activeIndex = options.indexOf(optionValue);
-      return {
-        activeIndex,
-      };
-    } else if (prevState.activeIndex === -1 && prevState.search !== '') {
-      return {
-        activeIndex: 0,
-      };
+      return { activeIndex };
+    }
+    if (prevState.activeIndex === -1 && prevState.search !== '') {
+      return { activeIndex: 0 };
     }
 
     return null;
@@ -63,6 +72,7 @@ class SelectContainer extends Component {
   }
 
   componentDidMount() {
+    /* eslint-disable-next-line react/prop-types */
     const { onSearch } = this.props;
     const { activeIndex } = this.state;
     // timeout need to send the operation through event loop and allow time to the portal
@@ -91,22 +101,31 @@ class SelectContainer extends Component {
     }, 0);
   }
 
-  onInput = (event) => {
+  onChange = (event) => {
     this.setState(
       {
         search: event.target.value,
         activeIndex: -1,
       },
-      () => this.onSearch(this.state.search)
+      () => {
+        const { search } = this.state;
+        this.onSearch(search);
+      }
     );
   }
 
   // wait 300ms of idle time before notifying that the search changed
   // 300ms seems like the right amount to wait for after the used stopped typing
-  onSearch = debounce(search => this.props.onSearch(search), 300)
+  onSearch = debounce((search) => {
+    const { onSearch } = this.props;
+    onSearch(search);
+  }, 300)
 
   selectOption = (option, index) => {
-    const { multiple, onChange, options, selected, value } = this.props;
+    const {
+      /* eslint-disable-next-line react/prop-types */
+      multiple, onChange, options, selected, value,
+    } = this.props;
 
     if (onChange) {
       let nextValue = option;
@@ -185,6 +204,7 @@ class SelectContainer extends Component {
   }
 
   render() {
+    /* eslint-disable react/prop-types */
     const {
       children,
       id,
@@ -197,6 +217,7 @@ class SelectContainer extends Component {
       theme,
       value,
     } = this.props;
+    /* eslint-enable react/prop-types */
     const { activeIndex, search } = this.state;
 
     const customSearchInput = theme.select.searchInput;
@@ -222,7 +243,7 @@ class SelectContainer extends Component {
                 type='search'
                 value={search}
                 placeholder={searchPlaceholder}
-                onInput={this.onInput}
+                onChange={this.onChange}
               />
             </Box>
           )}
@@ -241,11 +262,11 @@ class SelectContainer extends Component {
                     role='menuitem'
                     ref={(ref) => { this.optionsRef[index] = ref; }}
                     active={
-                      selected === index ||
-                      (Array.isArray(selected) && selected.indexOf(index) !== -1) ||
-                      activeIndex === index ||
-                      (option && option === value) ||
-                      (option && Array.isArray(value) && value.indexOf(option) !== -1)
+                      selected === index
+                      || (Array.isArray(selected) && selected.indexOf(index) !== -1)
+                      || activeIndex === index
+                      || (option && option === value)
+                      || (option && Array.isArray(value) && value.indexOf(option) !== -1)
                     }
                     onClick={() => this.selectOption(option, index)}
                     hoverIndicator='background'
@@ -253,8 +274,8 @@ class SelectContainer extends Component {
                     {children ? children(option, index, options) : (
                       <Box align='start' pad='small'>
                         <Text margin='none'>
-                          {(option !== null && option !== undefined) ?
-                            option.toString() : undefined}
+                          {(option !== null && option !== undefined)
+                            ? option.toString() : undefined}
                         </Text>
                       </Box>
                     )}

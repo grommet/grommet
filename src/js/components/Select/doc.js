@@ -34,7 +34,8 @@ export const doc = (Select) => {
     dropTarget: PropTypes.object.description(
       `Target where the options drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be
-      aligned to the Select itself by default.`),
+      aligned to the Select itself by default.`
+    ),
     focusIndicator: PropTypes.bool.description(
       'Whether when \'plain\' it should receive a focus outline.'
     ),

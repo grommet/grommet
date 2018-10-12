@@ -16,6 +16,7 @@ class Drop extends Component {
   }
 
   originalFocusedElement = document.activeElement;
+
   dropContainer = getNewContainer();
 
   componentWillUnmount() {
@@ -23,8 +24,8 @@ class Drop extends Component {
     if (restrictFocus && this.originalFocusedElement) {
       if (this.originalFocusedElement.focus) {
         setFocusWithoutScroll(this.originalFocusedElement);
-      } else if (this.originalFocusedElement.parentNode &&
-        this.originalFocusedElement.parentNode.focus) {
+      } else if (this.originalFocusedElement.parentNode
+        && this.originalFocusedElement.parentNode.focus) {
         // required for IE11 and Edge
         setFocusWithoutScroll(this.originalFocusedElement.parentNode);
       }

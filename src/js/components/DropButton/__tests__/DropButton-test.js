@@ -1,11 +1,11 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import { cleanup, fireEvent, render, renderIntoDocument, Simulate } from 'react-testing-library';
+import { cleanup, fireEvent, render } from 'react-testing-library';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
-import { DropButton } from '../';
+import { DropButton } from '..';
 
 describe('DropButton', () => {
   beforeEach(createPortal);
@@ -26,7 +26,7 @@ describe('DropButton', () => {
     const component = renderer.create(
       <DropButton
         label='Dropper'
-        open={true}
+        open
         dropContent={<div id='drop-contents'>drop contents</div>}
       />
     );
@@ -44,16 +44,16 @@ describe('DropButton', () => {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
 
-    Simulate.click(getByText('Dropper'));
+    fireEvent.click(getByText('Dropper'));
     expectPortal('drop-contents').toMatchSnapshot();
 
-    Simulate.click(getByText('Dropper'));
+    fireEvent.click(getByText('Dropper'));
     expect(document.getElementById('drop-contents')).toBeNull();
     expect(window.scrollTo).toBeCalled();
   });
 
   test('close by clicking outside', (done) => {
-    const { getByText, container } = renderIntoDocument(
+    const { getByText, container } = render(
       <DropButton
         label='Dropper'
         dropContent={<div id='drop-contents'>Drop Contents</div>}
@@ -62,7 +62,7 @@ describe('DropButton', () => {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
 
-    Simulate.click(getByText('Dropper'));
+    fireEvent.click(getByText('Dropper'));
     expectPortal('drop-contents').toMatchSnapshot();
 
     fireEvent(document, new MouseEvent('mousedown', { bubbles: true, cancelable: true }));
@@ -76,7 +76,7 @@ describe('DropButton', () => {
   test('disabled', () => {
     const { getByText, container } = render(
       <DropButton
-        disabled={true}
+        disabled
         label='Dropper'
         dropContent={<div id='drop-contents'>Drop Contents</div>}
       />
@@ -84,7 +84,7 @@ describe('DropButton', () => {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
 
-    Simulate.click(getByText('Dropper'));
+    fireEvent.click(getByText('Dropper'));
     expect(document.getElementById('drop-contents')).toBeNull();
   });
 
@@ -93,7 +93,7 @@ describe('DropButton', () => {
     const { container } = render(
       <DropButton
         ref={ref}
-        open={true}
+        open
         label='Dropper'
         dropContent={<div id='drop-contents'>Drop Contents</div>}
       />

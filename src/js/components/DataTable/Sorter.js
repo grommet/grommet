@@ -9,7 +9,9 @@ const SorterButton = styled(Button)`
   height: 100%;
 `;
 
-export const Sorter = ({ align, children, fill, onSort, property, sort, theme, themeProps }) => {
+export const Sorter = ({
+  align, children, fill, onSort, property, sort, theme, themeProps,
+}) => {
   let icon;
   if (sort && sort.property === property) {
     const Icon = theme.dataTable.icons[sort.ascending ? 'ascending' : 'descending'];
@@ -33,7 +35,7 @@ export const Sorter = ({ align, children, fill, onSort, property, sort, theme, t
     content = (
       <SorterButton
         fill={fill}
-        hoverIndicator={true}
+        hoverIndicator
         onClick={onSort(property)}
       >
         {content}

@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { Heading } from '../';
+import { Heading } from '..';
 
 test('Heading renders', () => {
   const component = renderer.create(
@@ -98,7 +98,7 @@ test('Heading truncate renders', () => {
   const component = renderer.create(
     <Grommet>
       <Heading truncate={false}>{LONG}</Heading>
-      <Heading truncate={true}>{LONG}</Heading>
+      <Heading truncate>{LONG}</Heading>
     </Grommet>
   );
   const tree = component.toJSON();
@@ -108,7 +108,7 @@ test('Heading truncate renders', () => {
 test('responsive renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Heading responsive={true} />
+      <Heading responsive />
       <Heading responsive={false} />
     </Grommet>
   );

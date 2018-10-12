@@ -12,7 +12,7 @@ export const GroupedBody = ({
 }) => (
   <StyledDataTableBody size={size} theme={theme} {...rest}>
     {groups.map((group) => {
-      const expanded = groupState[group.key].expanded;
+      const { expanded } = groupState[group.key];
 
       let content = (
         <StyledDataTableRow key={group.key} size={size}>
@@ -58,7 +58,7 @@ export const GroupedBody = ({
                 ))}
               </StyledDataTableRow>
             ))}
-            <StyledDataTableRow size={size} aria-hidden={true}>
+            <StyledDataTableRow size={size} aria-hidden>
               <TableCell />
             </StyledDataTableRow>
           </Fragment>

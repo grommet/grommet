@@ -40,7 +40,8 @@ export const doc = (Chart) => {
     round: PropTypes.bool.description('Whether to round the line ends.'),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(
-        ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
+        ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']
+      ),
       PropTypes.shape({
         height: PropTypes.oneOfType([
           PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),

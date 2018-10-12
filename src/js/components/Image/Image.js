@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
 
 import { StyledImage } from './StyledImage';
 
-class Image extends Component {
-  render() {
-    return (
-      <StyledImage {...this.props} />
-    );
-  }
-}
+const Image = props => (
+  <StyledImage {...props} />
+);
 
 let ImageDoc;
 if (process.env.NODE_ENV !== 'production') {

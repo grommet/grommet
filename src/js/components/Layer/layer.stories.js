@@ -41,12 +41,12 @@ class CenterLayer extends Component {
           icon={<Trash />}
           label={<Text><strong>Remove</strong></Text>}
           onClick={this.onOpen}
-          plain={true}
+          plain
         />
         {open && (
           <Layer
             position='center'
-            modal={true}
+            modal
             onClickOutside={this.onClose}
             onEsc={this.onClose}
           >
@@ -67,13 +67,13 @@ class CenterLayer extends Component {
                   color='dark-6'
                 />
                 <Button
-                  label={
+                  label={(
                     <Text color='white'>
                       <strong>Delete</strong>
                     </Text>
-                  }
+                  )}
                   onClick={this.onClose}
-                  primary={true}
+                  primary
                   color='status-critical'
                 />
               </Box>
@@ -83,7 +83,7 @@ class CenterLayer extends Component {
         {open2 && (
           <Layer
             position='top'
-            modal={true}
+            modal
             onClickOutside={this.onClose2}
             onEsc={this.onClose2}
           >
@@ -135,7 +135,7 @@ class FormLayer extends Component {
             <Layer
               position='right'
               full='vertical'
-              modal={true}
+              modal
               onClickOutside={this.onClose}
               onEsc={this.onClose}
             >
@@ -176,7 +176,7 @@ class FormLayer extends Component {
                     type='submit'
                     label='Submit'
                     onClick={this.onClose}
-                    primary={true}
+                    primary
                   />
                 </Box>
               </Box>
@@ -203,7 +203,7 @@ class NotificationLayer extends Component {
           icon={<Add color='brand' />}
           label={<Text><strong>Add</strong></Text>}
           onClick={this.onOpen}
-          plain={true}
+          plain
         />
         {open && (
           <Layer
@@ -228,7 +228,7 @@ class NotificationLayer extends Component {
                     A new virtual machine has been successfully added
                   </Text>
                 </Box>
-                <Button icon={<FormClose />} onClick={this.onClose} plain={true} />
+                <Button icon={<FormClose />} onClick={this.onClose} plain />
               </Box>
             </Box>
           </Layer>
@@ -238,26 +238,22 @@ class NotificationLayer extends Component {
   }
 }
 
-class MarginLayer extends Component {
-  render() {
-    return (
-      <Grommet theme={grommet}>
-        <Layer
-          margin='large'
-        >
-          <Box overflow='auto'>
-            <Box pad='xlarge'>text</Box>
-            <Box pad='xlarge'>text</Box>
-            <Box pad='xlarge'>text</Box>
-            <Box pad='xlarge'>text</Box>
-            <Box pad='xlarge'>text</Box>
-            <Box pad='xlarge'>text</Box>
-          </Box>
-        </Layer>
-      </Grommet>
-    );
-  }
-}
+const MarginLayer = () => (
+  <Grommet theme={grommet}>
+    <Layer
+      margin='large'
+    >
+      <Box overflow='auto'>
+        <Box pad='xlarge'>text</Box>
+        <Box pad='xlarge'>text</Box>
+        <Box pad='xlarge'>text</Box>
+        <Box pad='xlarge'>text</Box>
+        <Box pad='xlarge'>text</Box>
+        <Box pad='xlarge'>text</Box>
+      </Box>
+    </Layer>
+  </Grommet>
+);
 
 storiesOf('Layer', module)
   .add('Center', () => <CenterLayer />)

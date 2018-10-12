@@ -11,4 +11,3 @@ if (process.env.NODE_ENV !== 'production') {
 const TableRowWrapper = TableRowDoc || TableRow;
 
 export { TableRowWrapper as TableRow };
-

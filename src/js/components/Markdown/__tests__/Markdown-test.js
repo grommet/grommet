@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { Markdown } from '../';
+import { Markdown } from '..';
 
 const CONTENT = `
 # H1

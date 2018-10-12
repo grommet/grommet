@@ -1,6 +1,6 @@
 
-export const isObject = item =>
-  (item && typeof item === 'object' && !Array.isArray(item));
+export const isObject = item => (
+  item && typeof item === 'object' && !Array.isArray(item));
 
 export const deepFreeze = (obj) => {
   Object.keys(obj).forEach(

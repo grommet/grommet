@@ -2,7 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Add } from 'grommet-icons';
 
-import { Box, Button, Grommet, RoutedButton, Text } from 'grommet';
+import {
+  Box, Button, Grommet, RoutedButton, Text,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const SimpleButton = props => (
@@ -15,14 +17,14 @@ const SimpleButton = props => (
 
 const IconButton = () => (
   <Grommet theme={grommet}>
-    <Button icon={<Add />} hoverIndicator={true} onClick={() => {}} />
+    <Button icon={<Add />} hoverIndicator onClick={() => {}} />
   </Grommet>
 );
 
 const IconLabelButton = () => (
   <Grommet theme={grommet}>
     <Box align='start' gap='small'>
-      <Button icon={<Add />} label='Add' onClick={() => {}} primary={true} />
+      <Button icon={<Add />} label='Add' onClick={() => {}} primary />
       <Button icon={<Add />} label='Add' onClick={() => {}} />
     </Box>
   </Grommet>
@@ -30,7 +32,7 @@ const IconLabelButton = () => (
 
 const PlainButton = props => (
   <Grommet theme={grommet}>
-    <Button hoverIndicator={true} onClick={() => {}} {...props}>
+    <Button hoverIndicator onClick={() => {}} {...props}>
       <Box pad='small' direction='row' align='center' gap='small'>
         <Add />
         <Text>Add</Text>
@@ -89,7 +91,7 @@ const customTheme = {
 
 const CustomThemeButton = () => (
   <Grommet theme={customTheme}>
-    <Button label='Submit' onClick={() => {}} primary={true} />
+    <Button label='Submit' onClick={() => {}} primary />
   </Grommet>
 );
 
@@ -99,7 +101,7 @@ const MultipleButton = () => (
       <Button label='Cancel' onClick={() => {}} />
       <Button
         color='dark-1'
-        primary={true}
+        primary
         icon={<Add color='accent-1' />}
         label='Add'
         onClick={() => {}}
@@ -109,7 +111,7 @@ const MultipleButton = () => (
       <Button label='Cancel' onClick={() => {}} />
       <Button
         color='dark-1'
-        primary={true}
+        primary
         icon={<Add />}
         label='Add'
         onClick={() => {}}
@@ -118,7 +120,7 @@ const MultipleButton = () => (
     <Box direction='row' align='center' gap='small' pad='xsmall'>
       <Button label='Cancel' onClick={() => {}} />
       <Button
-        primary={true}
+        primary
         icon={<Add />}
         label='Add'
         onClick={() => {}}
@@ -128,7 +130,7 @@ const MultipleButton = () => (
       <Button label='Cancel' onClick={() => {}} />
       <Button
         color='light-2'
-        primary={true}
+        primary
         icon={<Add />}
         label='Add'
         onClick={() => {}}
@@ -139,12 +141,12 @@ const MultipleButton = () => (
 
 storiesOf('Button', module)
   .add('Default', () => <SimpleButton />)
-  .add('Primary', () => <SimpleButton primary={true} />)
+  .add('Primary', () => <SimpleButton primary />)
   .add('Icon', () => <IconButton />)
   .add('Icon Label', () => <IconLabelButton />)
   .add('Plain', () => <PlainButton />)
   .add('Anchor', () => <AnchorButton />)
   .add('RoutedButton', () => <RouteButton />)
-  .add('Active', () => <PlainButton active={true} />)
+  .add('Active', () => <PlainButton active />)
   .add('Custom theme', () => <CustomThemeButton />)
   .add('Multiple Same Line', () => <MultipleButton />);

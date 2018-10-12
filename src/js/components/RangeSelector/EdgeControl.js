@@ -3,7 +3,9 @@ import { compose } from 'recompose';
 
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
-import { colorForName, evalStyle, normalizeColor, parseMetricToNum } from '../../utils';
+import {
+  colorForName, evalStyle, normalizeColor, parseMetricToNum,
+} from '../../utils';
 import { withForwardRef } from '../hocs';
 
 const DIRECTION_PROPS = {
@@ -28,9 +30,9 @@ class EdgeControl extends Component {
     const { cursor, fill } = DIRECTION_PROPS[direction];
     const size = parseMetricToNum(theme.global.spacing) / 2;
     const halfSize = size / 2;
-    const keyboardProps = (direction === 'vertical' ?
-      { onUp: onDecrease, onDown: onIncrease } :
-      { onLeft: onDecrease, onRight: onIncrease }
+    const keyboardProps = (direction === 'vertical'
+      ? { onUp: onDecrease, onDown: onIncrease }
+      : { onLeft: onDecrease, onRight: onIncrease }
     );
     const boxDirection = (direction === 'vertical' ? 'row' : 'column');
     return (
@@ -48,7 +50,9 @@ class EdgeControl extends Component {
             align='center'
             fill={fill}
             margin='xsmall'
-            style={{ cursor, minWidth: size, minHeight: size, zIndex: 10 }}
+            style={{
+              cursor, minWidth: size, minHeight: size, zIndex: 10,
+            }}
             onFocus={() => this.setState({ focused: true })}
             onBlur={() => this.setState({ focused: false })}
             {...rest}

@@ -1,7 +1,10 @@
 import React, { createRef, Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Drop, Grommet, Text } from 'grommet';
+import {
+  Box, Button, Drop, Grommet, Text,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 import { ThemeContext } from 'grommet/contexts';
 
@@ -51,6 +54,11 @@ const OneDrop = ({ align, target }) => (
   </Drop>
 );
 
+OneDrop.propTypes = {
+  align: PropTypes.shape({}).isRequired,
+  target: PropTypes.shape({}).isRequired,
+};
+
 class Set extends Component {
   targetRef = createRef()
 
@@ -61,7 +69,7 @@ class Set extends Component {
   render() {
     const { aligns, label } = this.props;
     return (
-      <Box border={true} pad='small'>
+      <Box border pad='small'>
         <Text>{label}</Text>
         <Box
           margin='xlarge'
@@ -77,7 +85,7 @@ class Set extends Component {
           <Fragment>
             {aligns.map((align, index) => (
               <OneDrop
-                key={`${index}`}
+                key={`${index + 0}`}
                 align={align}
                 target={this.targetRef.current}
               />
@@ -89,6 +97,11 @@ class Set extends Component {
   }
 }
 
+Set.propTypes = {
+  aligns: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  label: PropTypes.string.isRequired,
+};
+
 class AllDrops extends Component {
   targetRef = createRef()
 
@@ -99,8 +112,8 @@ class AllDrops extends Component {
   render() {
     return (
       <Grommet theme={grommet}>
-        <ThemeContext.Extend value={{ global: { drop: { background: { color: 'white', opacity: 'medium' } } } }} >
-          <Box direction='row' wrap={true} pad='medium' align='center'>
+        <ThemeContext.Extend value={{ global: { drop: { background: { color: 'white', opacity: 'medium' } } } }}>
+          <Box direction='row' wrap pad='medium' align='center'>
             <Set
               label='left: left'
               aligns={[
@@ -204,12 +217,16 @@ class AllDrops extends Component {
 
 class ProgressiveDrop extends Component {
   boxRef = createRef()
+
   state = {
     openDrop: false,
     openInnerDrop: false,
   }
+
   onCloseDrop = () => this.setState({ openDrop: false, openInnerDrop: false })
+
   onOpenDrop = () => this.setState({ openDrop: true, openInnerDrop: false })
+
   render() {
     const { openDrop, openInnerDrop } = this.state;
     return (
@@ -217,7 +234,7 @@ class ProgressiveDrop extends Component {
         <Box align='start'>
           <Button
             ref={this.boxRef}
-            primary={true}
+            primary
             label='Click me'
             onClick={this.onOpenDrop}
           />
@@ -231,7 +248,7 @@ class ProgressiveDrop extends Component {
               {!openInnerDrop && (
                 <Box pad='large'>
                   <Button
-                    primary={true}
+                    primary
                     label='Click me again'
                     onClick={() => this.setState({ openInnerDrop: true })}
                   />

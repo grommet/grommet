@@ -11,7 +11,8 @@ export const doc = (AnnounceContext) => {
   DocumentedAnnounceContext.propTypes = {
     children: PropTypes.func.description(
       `Render function that will be called with an 'announce' function that
-      can be called when something should be announced.`),
+      can be called when something should be announced.`
+    ),
   };
 
   return DocumentedAnnounceContext;

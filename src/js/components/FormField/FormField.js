@@ -8,8 +8,10 @@ import { withFocus, withTheme } from '../hocs';
 
 class FormField extends Component {
   render() {
-    const { children, error, focus, help, htmlFor, label, style, theme,
-      ...rest } = this.props;
+    const {
+      children, error, focus, help, htmlFor, label, style, theme,
+      ...rest
+    } = this.props;
     const { formField } = theme;
     const { border } = formField;
 
@@ -39,8 +41,8 @@ class FormField extends Component {
       contents = (
         <Box
           ref={(ref) => { this.childContainerRef = ref; }}
-          border={border.position === 'inner' ?
-            { ...border, side: (border.side || 'bottom'), color: borderColor }
+          border={border.position === 'inner'
+            ? { ...border, side: (border.side || 'bottom'), color: borderColor }
             : undefined
           }
         >
@@ -48,14 +50,14 @@ class FormField extends Component {
         </Box>
       );
 
-      abut = (border.position === 'outer' &&
-        (border.side === 'all' || border.side === 'horizontal' || !border.side));
+      abut = (border.position === 'outer'
+        && (border.side === 'all' || border.side === 'horizontal' || !border.side));
       if (abut) {
         // marginBottom is set to overlap adjacent fields
         let marginBottom = '-1px';
         if (border.size) {
-          marginBottom =
-            `-${parseMetricToNum(theme.global.borderSize[border.size])}px`;
+          marginBottom = (
+            `-${parseMetricToNum(theme.global.borderSize[border.size])}px`);
         }
         outerStyle = {
           position: (focus ? 'relative' : undefined),
@@ -68,8 +70,9 @@ class FormField extends Component {
 
     return (
       <Box
-        border={(border && border.position === 'outer') ?
-          { ...border, color: borderColor } : undefined
+        border={(border && border.position === 'outer')
+          ? { ...border, color: borderColor }
+          : undefined
         }
         margin={abut ? undefined : { bottom: 'small' }}
         style={outerStyle}
@@ -97,7 +100,7 @@ class FormField extends Component {
         ) : undefined}
         {contents}
         {error ? (
-          <Box margin={{ vertical: 'xsmall', horizontal: 'small' }} >
+          <Box margin={{ vertical: 'xsmall', horizontal: 'small' }}>
             <Text
               {...formField.error}
               color={formField.error.color[theme.dark ? 'dark' : 'light']}

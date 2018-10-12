@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
@@ -11,6 +12,11 @@ const Value = ({ basis, children }) => (
   </Box>
 );
 
+Value.propTypes = {
+  basis: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
 class Distribution extends Component {
   static defaultProps = {
     direction: 'row',
@@ -18,11 +24,14 @@ class Distribution extends Component {
   }
 
   render() {
-    const { basis, children, direction, gap, theme, values, ...rest } = this.props;
+    const {
+      basis, children, direction, gap, theme, values, ...rest
+    } = this.props;
     if (values.length === 1) {
       const value = values[0];
       return <Value value={value} basis={basis}>{children(value)}</Value>;
-    } else if (values.length > 1) {
+    }
+    if (values.length > 1) {
       // calculate total
       let total = 0;
       values.forEach((v) => { total += v.value; });

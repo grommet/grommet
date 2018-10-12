@@ -7,8 +7,8 @@ import { Analog } from './Analog';
 import { Digital } from './Digital';
 
 const TIME_REGEXP = /T([0-9]{2}):([0-9]{2})(?::([0-9.,]{2,}))?/;
-const DURATION_REGEXP =
-  /^(-|\+)?P.*T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?$/;
+const DURATION_REGEXP = (
+  /^(-|\+)?P.*T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?$/);
 
 const parseTime = (time, hourLimit) => {
   const result = {};
@@ -71,7 +71,8 @@ class Clock extends Component {
   state = {};
 
   componentDidMount() {
-    if (this.props.run) {
+    const { run } = this.props;
+    if (run) {
       this.run();
     }
   }
@@ -90,15 +91,18 @@ class Clock extends Component {
   }
 
   run() {
-    const { hourLimit, onChange, precision, run } = this.props;
+    const {
+      hourLimit, onChange, precision, run,
+    } = this.props;
+    const { elements } = this.state;
 
     // set the interval time based on the precision
     let interval = 1000;
     let increment = 'seconds';
-    if (precision !== 'seconds' && this.state.elements.seconds === 0) {
+    if (precision !== 'seconds' && elements.seconds === 0) {
       interval *= 60;
       increment = 'minutes';
-      if (precision !== 'minutes' && this.state.elements.minutes === 0) {
+      if (precision !== 'minutes' && elements.minutes === 0) {
         interval *= 60;
         increment = 'hours';
       }
@@ -106,8 +110,8 @@ class Clock extends Component {
 
     clearInterval(this.timer);
     this.timer = setInterval(() => {
-      const { elements } = this.state;
-      const nextElements = { ...elements };
+      const { elements: previousElements } = this.state;
+      const nextElements = { ...previousElements };
 
       // adjust time based on precision
       if (increment === 'seconds') {
@@ -149,8 +153,8 @@ class Clock extends Component {
         nextElements.hours = 0;
       }
       if (hourLimit === 12) {
-        nextElements.hours12 =
-          (nextElements.hours > 12 ? (nextElements.hours - 12) : nextElements.hours);
+        nextElements.hours12 = (
+          (nextElements.hours > 12 ? (nextElements.hours - 12) : nextElements.hours));
       }
 
       this.setState({ elements: nextElements }, () => {

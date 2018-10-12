@@ -5,7 +5,7 @@ import { Button } from '../Button';
 
 class RoutedButton extends Component {
   static contextTypes = {
-    router: PropTypes.object.isRequired,
+    router: PropTypes.shape({}).isRequired,
   }
 
   static defaultProps = {
@@ -33,7 +33,9 @@ class RoutedButton extends Component {
   }
 
   render() {
-    const { href, path, method, onClick, ...rest } = this.props;
+    const {
+      href, path, method, onClick, ...rest
+    } = this.props;
     return (
       <Button
         {...rest}

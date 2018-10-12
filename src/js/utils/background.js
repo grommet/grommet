@@ -1,6 +1,8 @@
 import { css } from 'styled-components';
 
-import { colorForName, colorIsDark, getRGBA } from './colors';
+import {
+  colorForName, colorIsDark, getRGBA, normalizeColor,
+} from './colors';
 import { evalStyle } from './styles';
 
 export const normalizeBackground = (background, theme) => {
@@ -19,27 +21,28 @@ export const normalizeBackground = (background, theme) => {
 
 export const backgroundIsDark = (backgroundArg, theme) => {
   const background = normalizeBackground(backgroundArg, theme);
-  let dark;
+  let result;
   if (background) {
     if (typeof background === 'object') {
-      if (typeof background.dark === 'boolean') {
-        dark = background.dark;
-      } else if (background.color &&
+      const { color, dark, opacity } = background;
+      if (typeof dark === 'boolean') {
+        result = dark;
+      } else if (color
         // weak opacity means we keep the existing darkness
-        (!background.opacity || background.opacity !== 'weak')) {
-        const color = colorForName(background.color, theme);
-        if (color) {
-          dark = colorIsDark(color);
+        && (!opacity || opacity !== 'weak')) {
+        const backgroundColor = colorForName(background.color, theme);
+        if (backgroundColor) {
+          result = colorIsDark(backgroundColor);
         }
       }
     } else {
       const color = colorForName(background, theme);
       if (color) {
-        dark = colorIsDark(color);
+        result = colorIsDark(color);
       }
     }
   }
-  return dark;
+  return result;
 };
 
 export const backgroundStyle = (backgroundArg, theme) => {
@@ -77,10 +80,10 @@ export const backgroundStyle = (backgroundArg, theme) => {
       ) || color;
       styles.push(css`
         background-color: ${backgroundColor};
-        ${(!background.opacity || background.opacity !== 'weak') &&
-          `color: ${
-            theme.global.text.color[background.dark || colorIsDark(backgroundColor) ?
-              'dark' : 'light']};`
+        ${(!background.opacity || background.opacity !== 'weak')
+          && `color: ${
+            theme.global.text.color[background.dark || colorIsDark(backgroundColor)
+              ? 'dark' : 'light']};`
         }
       `);
     }
@@ -115,3 +118,8 @@ export const backgroundStyle = (backgroundArg, theme) => {
 
   return undefined;
 };
+
+export const activeStyle = css`
+  ${props => backgroundStyle(normalizeColor(props.theme.global.hover.background, props.theme), props.theme)}
+  color: ${props => normalizeColor(props.theme.global.hover.color, props.theme)};
+`;

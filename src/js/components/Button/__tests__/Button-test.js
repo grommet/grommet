@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { findAllByType } from '../../../utils';
-import { Grommet, Button } from '../../';
+import { Grommet, Button } from '../..';
 
 test('Button renders', () => {
   const component = renderer.create(
@@ -48,7 +48,7 @@ test('Button warns about invalid icon render', () => {
 test('Button primary renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button primary={true} label='Test' onClick={() => {}} />
+      <Button primary label='Test' onClick={() => {}} />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -59,7 +59,7 @@ test('Button color renders', () => {
   const component = renderer.create(
     <Grommet>
       <Button color='accent-1' label='Test' onClick={() => {}} />
-      <Button color='accent-1' primary={true} label='Test' onClick={() => {}} />
+      <Button color='accent-1' primary label='Test' onClick={() => {}} />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -69,7 +69,7 @@ test('Button color renders', () => {
 test('Button focus renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button focus={true} label='Test' onClick={() => {}} />
+      <Button focus label='Test' onClick={() => {}} />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -100,7 +100,7 @@ test('Button reverse icon label renders', () => {
   const component = renderer.create(
     <Grommet>
       <Button
-        reverse={true}
+        reverse
         icon={<svg />}
         label='Test'
         onClick={() => {}}

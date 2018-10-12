@@ -1,3 +1,4 @@
+/* eslint-disable react/no-multi-comp */
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import getDisplayName from 'recompose/getDisplayName';
@@ -32,6 +33,7 @@ export const withFocus = (WrappedComponent) => {
       // but react does not invoke it if you programically
       // call wrapperNode.focus() inside componentWillUnmount
       // see Drop "this.originalFocusedElement.focus();" for reference
+      /* eslint-disable-next-line react/no-find-dom-node */
       const wrapperNode = findDOMNode(wrappedRef.current);
       if (wrapperNode && wrapperNode.addEventListener) {
         wrapperNode.addEventListener('focus', this.setFocus);
@@ -41,6 +43,7 @@ export const withFocus = (WrappedComponent) => {
     componentWillUnmount = () => {
       const { wrappedRef } = this.state;
       window.removeEventListener('mousedown', this.handleActiveMouse);
+      /* eslint-disable-next-line react/no-find-dom-node */
       const wrapperNode = findDOMNode(wrappedRef.current);
       if (wrapperNode && wrapperNode.addEventListener) {
         wrapperNode.removeEventListener('focus', this.setFocus);
@@ -67,7 +70,8 @@ export const withFocus = (WrappedComponent) => {
       // with and without a FormField.
       clearTimeout(this.focusTimer);
       this.focusTimer = setTimeout(() => {
-        if (!this.state.focus && !this.mouseActive) {
+        const { focus } = this.state;
+        if (!focus && !this.mouseActive) {
           this.setState({ focus: true });
         }
       }, 1);
@@ -76,14 +80,17 @@ export const withFocus = (WrappedComponent) => {
     resetFocus = () => {
       clearTimeout(this.focusTimer);
       this.focusTimer = setTimeout(() => {
-        if (this.state.focus) {
+        const { focus } = this.state;
+        if (focus) {
           this.setState({ focus: false });
         }
       }, 1);
     }
 
     render() {
-      const { onFocus, onBlur, withFocusRef, ...rest } = this.props;
+      const {
+        onFocus, onBlur, withFocusRef, ...rest
+      } = this.props;
       const { focus, wrappedRef } = this.state;
       return (
         <WrappedComponent
@@ -107,8 +114,8 @@ export const withFocus = (WrappedComponent) => {
     }
   }
 
-  const ForwardRef = React.forwardRef((props, ref) =>
-    <FocusableComponent {...props} withFocusRef={ref} />);
+  const ForwardRef = React.forwardRef((props, ref) => (
+    <FocusableComponent {...props} withFocusRef={ref} />));
 
   ForwardRef.displayName = getDisplayName(WrappedComponent);
   ForwardRef.name = ForwardRef.displayName;
@@ -132,8 +139,8 @@ export const withTheme = (WrappedComponent) => {
 
   const ForwardRef = React.forwardRef((props, ref) => (
     <ThemeContext.Consumer>
-      {theme =>
-        <ThemedComponent {...props} theme={theme} withThemeRef={ref} />}
+      {theme => (
+        <ThemedComponent {...props} theme={theme} withThemeRef={ref} />)}
     </ThemeContext.Consumer>
   ));
 
@@ -157,8 +164,8 @@ export const withForwardRef = (WrappedComponent) => {
 export const withAnnounce = (WrappedComponent) => {
   const ForwardRef = React.forwardRef((props, ref) => (
     <AnnounceContext.Consumer>
-      {announce =>
-        <WrappedComponent {...props} announce={announce} ref={ref} />}
+      {announce => (
+        <WrappedComponent {...props} announce={announce} ref={ref} />)}
     </AnnounceContext.Consumer>
   ));
 

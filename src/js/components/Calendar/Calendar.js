@@ -166,7 +166,9 @@ class Calendar extends Component {
       bounds, date, dates, disabled, firstDayOfWeek, locale, onSelect, size,
       theme, ...rest
     } = this.props;
-    const { active, start, reference, end, slide } = this.state;
+    const {
+      active, start, reference, end, slide,
+    } = this.state;
 
     // We have to deal with reference being the end of a month with more
     // days than the month we are changing to. So, we always set reference
@@ -199,8 +201,8 @@ class Calendar extends Component {
       } else if (selectedState === 1) {
         inRange = true;
       }
-      const dayDisabled = withinDates(day, disabled) ||
-        (bounds && !betweenDates(day, bounds));
+      const dayDisabled = withinDates(day, disabled)
+        || (bounds && !betweenDates(day, bounds));
 
       days.push(
         <StyledDayContainer key={day.getTime()} size={size} theme={theme}>
@@ -209,7 +211,7 @@ class Calendar extends Component {
               if (isActive) this.activeRef = ref;
             }}
             a11yTitle={day.toDateString()}
-            plain={true}
+            plain
             active={isActive}
             hoverIndicator={!dayDisabled}
             onClick={dayDisabled ? undefined : this.onClickDay(dateString)}
@@ -260,7 +262,7 @@ class Calendar extends Component {
         >
           <Box>
             <Box direction='row' justify='between' align='center'>
-              <Box flex={true} pad={{ horizontal: (headingPadMap[size] || 'small') }}>
+              <Box flex pad={{ horizontal: (headingPadMap[size] || 'small') }}>
                 <Heading level={size === 'small' ? 4 : 3} size={size} margin='none'>
                   {reference.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
                 </Heading>
@@ -269,14 +271,14 @@ class Calendar extends Component {
                 <Button
                   a11yTitle={previousMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
                   icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
-                  onClick={(onSelect && betweenDates(previousMonth, bounds)) ?
-                    () => this.setReference(previousMonth) : undefined}
+                  onClick={(onSelect && betweenDates(previousMonth, bounds))
+                    ? () => this.setReference(previousMonth) : undefined}
                 />
                 <Button
                   a11yTitle={nextMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
                   icon={<NextIcon size={size !== 'small' ? size : undefined} />}
-                  onClick={(onSelect && betweenDates(nextMonth, bounds)) ?
-                    () => this.setReference(nextMonth) : undefined}
+                  onClick={(onSelect && betweenDates(nextMonth, bounds))
+                    ? () => this.setReference(nextMonth) : undefined}
                 />
               </Box>
             </Box>

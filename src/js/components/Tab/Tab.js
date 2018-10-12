@@ -73,7 +73,7 @@ class Tab extends Component {
     return (
       <Button
         ref={forwardRef}
-        plain={true}
+        plain
         role='tab'
         aria-selected={active}
         aria-expanded={active}
@@ -81,6 +81,8 @@ class Tab extends Component {
         onClick={this.onClickTab}
         onMouseOver={this.onMouseOver}
         onMouseOut={this.onMouseOut}
+        onFocus={this.onMouseOver}
+        onBlur={this.onMouseOut}
       >
         <Box
           pad={{ bottom: 'xsmall' }}

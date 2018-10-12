@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { Paragraph } from '../';
+import { Paragraph } from '..';
 
 test('Paragraph renders', () => {
   const component = renderer.create(

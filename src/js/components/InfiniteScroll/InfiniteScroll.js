@@ -10,8 +10,8 @@ class InfiniteScroll extends Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { show, step } = nextProps;
-    if (!prevState.count ||
-      (show && show < (step * prevState.count))) {
+    if (!prevState.count
+      || (show && show < (step * prevState.count))) {
       let count = prevState.count || 1;
       if (show && show > (step * count)) {
         count = (show + step) / step;
@@ -22,7 +22,9 @@ class InfiniteScroll extends Component {
   }
 
   state = {}
+
   showRef = React.createRef()
+
   initialScroll = false
 
   componentDidMount() {
@@ -33,17 +35,20 @@ class InfiniteScroll extends Component {
     this.scrollShow();
   }
 
-  scrollShow() {
+  scrollShow = () => {
+    /* eslint-disable-next-line react/prop-types */
     const { show } = this.props;
     if (show && !this.initialScroll && this.showRef.current) {
       this.initialScroll = true;
       // on initial render, scroll to any 'show'
+      /* eslint-disable react/no-find-dom-node */
       const element = findDOMNode(this.showRef.current);
       element.scrollIntoView();
     }
   }
 
   increaseOffset = () => {
+    /* eslint-disable-next-line react/prop-types */
     const { items, onMore, step } = this.props;
     const { count } = this.state;
     this.setState({ count: count + 1 },
@@ -52,7 +57,10 @@ class InfiniteScroll extends Component {
   }
 
   render() {
-    const { children, items, renderMarker, scrollableAncestor, show, step } = this.props;
+    const {
+      /* eslint-disable-next-line react/prop-types */
+      children, items, renderMarker, scrollableAncestor, show, step,
+    } = this.props;
     const { count } = this.state;
     const displayCount = step * count;
     const waypointAt = displayCount - (step / 2);

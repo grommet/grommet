@@ -1,11 +1,11 @@
 {
   "presets": [
     "./tools/grommet-babel-preset-es2015",
-    "stage-1",
-    "react"
+    "@babel/preset-react"
   ],
   "plugins": [
-    ["styled-components", { "useDisplayName": false }]
+    ["styled-components", { "useDisplayName": false }],
+    "@babel/plugin-proposal-class-properties"
   ],
   "env": {
     "es6": {

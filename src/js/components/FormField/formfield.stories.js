@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, CheckBox, FormField, Select, TextArea, TextInput } from 'grommet';
+import {
+  Grommet, Box, CheckBox, FormField, Select, TextArea, TextInput,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const allSuggestions = Array(100).fill().map((_, i) => `suggestion ${i + 1}`);
@@ -10,7 +12,7 @@ class FormFieldTextInput extends Component {
   state = { value: '', suggestions: allSuggestions }
 
   onChange = (event) => {
-    const value = event.target.value;
+    const { taget: { value } } = event;
     const exp = new RegExp(value, 'i');
     const suggestions = allSuggestions.filter(s => exp.test(s));
     this.setState({ value, suggestions });
@@ -59,7 +61,7 @@ const FormFieldToggle = props => (
   <Grommet theme={grommet}>
     <FormField label='Label' htmlFor='check-box' {...props}>
       <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-        <CheckBox id='check-box' label='CheckBox' toggle={true} />
+        <CheckBox id='check-box' label='CheckBox' toggle />
       </Box>
     </FormField>
   </Grommet>

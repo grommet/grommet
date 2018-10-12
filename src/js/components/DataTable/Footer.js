@@ -9,11 +9,13 @@ import { withTheme } from '../hocs';
 import { Cell } from './Cell';
 import { StyledDataTableFooter } from './StyledDataTable';
 
-const Footer = ({ columns, footerValues, groups, theme, ...rest }) => (
+const Footer = ({
+  columns, footerValues, groups, theme, ...rest
+}) => (
   <StyledDataTableFooter {...rest}>
     <TableRow>
       {groups && (
-        <TableCell size='xxsmall' plain={true} verticalAlign='top'>
+        <TableCell size='xxsmall' plain verticalAlign='top'>
           <Box {...theme.dataTable.footer} />
         </TableCell>
       )}

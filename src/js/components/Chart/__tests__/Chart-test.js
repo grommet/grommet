@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { Chart, calcs } from '../';
+import { Chart, calcs } from '..';
 
 const VALUES = [
   { value: [1, 60], label: 'sixty' },
@@ -63,9 +63,9 @@ test('Chart thickness renders', () => {
 test('Chart cap renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Chart round={true} values={VALUES} />
-      <Chart type='line' round={true} values={VALUES} />
-      <Chart type='area' round={true} values={VALUES} />
+      <Chart round values={VALUES} />
+      <Chart type='line' round values={VALUES} />
+      <Chart type='area' round values={VALUES} />
     </Grommet>
   );
   const tree = component.toJSON();

@@ -2,8 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { Grommet, Box, Text } from '../../components/';
-import { dark, hpe } from '../';
+import { Grommet, Box, Text } from '../../components';
+import { dark, hpe } from '..';
 
 const colors = [
   'accent-1', 'accent-2', 'accent-3',

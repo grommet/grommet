@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import {
@@ -55,47 +55,43 @@ const COLUMNS = [
   },
 ];
 
-class SimpleTable extends Component {
-  render() {
-    return (
-      <Grommet theme={grommet}>
-        <Table caption='Simple Table'>
-          <TableHeader>
-            <TableRow>
-              {COLUMNS.map(c => (
-                <TableCell key={c.property} scope='col' border='bottom' align={c.align}>
-                  <Text>{c.label}</Text>
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {DATA.map(datum => (
-              <TableRow key={datum.id}>
-                {COLUMNS.map(c => (
-                  <TableCell key={c.property} scope={c.dataScope} align={c.align}>
-                    <Text>
-                      {c.format ? c.format(datum) : datum[c.property]}
-                    </Text>
-                  </TableCell>
-                ))}
-              </TableRow>
+const SimpleTable = () => (
+  <Grommet theme={grommet}>
+    <Table caption='Simple Table'>
+      <TableHeader>
+        <TableRow>
+          {COLUMNS.map(c => (
+            <TableCell key={c.property} scope='col' border='bottom' align={c.align}>
+              <Text>{c.label}</Text>
+            </TableCell>
+          ))}
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {DATA.map(datum => (
+          <TableRow key={datum.id}>
+            {COLUMNS.map(c => (
+              <TableCell key={c.property} scope={c.dataScope} align={c.align}>
+                <Text>
+                  {c.format ? c.format(datum) : datum[c.property]}
+                </Text>
+              </TableCell>
             ))}
-          </TableBody>
-          <TableFooter>
-            <TableRow>
-              {COLUMNS.map(c => (
-                <TableCell key={c.property} border='top' align={c.align}>
-                  <Text>{c.footer}</Text>
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableFooter>
-        </Table>
-      </Grommet>
-    );
-  }
-}
+          </TableRow>
+        ))}
+      </TableBody>
+      <TableFooter>
+        <TableRow>
+          {COLUMNS.map(c => (
+            <TableCell key={c.property} border='top' align={c.align}>
+              <Text>{c.footer}</Text>
+            </TableCell>
+          ))}
+        </TableRow>
+      </TableFooter>
+    </Table>
+  </Grommet>
+);
 
 storiesOf('Table', module)
   .add('Simple Table', () => <SimpleTable />);

@@ -3,14 +3,16 @@ import { compose } from 'recompose';
 
 import { Box } from '../Box';
 import { withFocus, withForwardRef, withTheme } from '../hocs';
-import { colorIsDark, colorForName, normalizeBackground, normalizeColor } from '../../utils';
+import {
+  colorIsDark, colorForName, normalizeBackground, normalizeColor,
+} from '../../utils';
 
 import { StyledButton } from './StyledButton';
 
 const isDarkBackground = (props) => {
   const backgroundColor = normalizeBackground(normalizeColor(
-    props.color || props.theme.button.primary.color ||
-    props.theme.global.control.color || 'brand',
+    props.color || props.theme.button.primary.color
+    || props.theme.global.control.color || 'brand',
     props.theme
   ), props.theme);
 
@@ -57,18 +59,15 @@ class Button extends Component {
     if (primary && icon && !icon.props.color) {
       buttonIcon = cloneElement(
         icon, {
-          color: this.props.theme.global.text.color[isDarkBackground(this.props) ? 'dark' : 'light'],
+          color: theme.global.text.color[isDarkBackground(this.props) ? 'dark' : 'light'],
         }
       );
     }
     const first = reverse ? label : buttonIcon;
     const second = reverse ? buttonIcon : label;
 
-    const disabled = (
-      !href &&
-      !onClick &&
-      ['reset', 'submit'].indexOf(type) === -1
-    );
+    const disabled = (!href && !onClick
+      && ['reset', 'submit'].indexOf(type) === -1);
 
     return (
       <StyledButton

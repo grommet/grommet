@@ -108,8 +108,7 @@ const CONTINENTS = [
 // FACTOR is the distance in pixels between coordinates
 const FACTOR = 10;
 
-const maxCoordinate = (a, b) =>
-  [Math.max(a[0], b[0]), Math.max(a[1], b[1])];
+const maxCoordinate = (a, b) => [Math.max(a[0], b[0]), Math.max(a[1], b[1])];
 // const minCoordinate = (a, b) =>
 //   [Math.min(a[0], b[0]), Math.min(a[1], b[1])];
 
@@ -122,21 +121,21 @@ const MAP_LON_DELTA = (MAP_LON_RIGHT - MAP_LON_LEFT);
 
 const mapValues = (extent) => {
   const mapRadius = ((extent[0] / MAP_LON_DELTA) * 360) / (2 * Math.PI);
-  const mapOffsetY = Math.round((mapRadius / 2) *
-    Math.log((1 + Math.sin(MAP_LAT_BOTTOM_RAD)) /
-      (1 - Math.sin(MAP_LAT_BOTTOM_RAD))));
+  const mapOffsetY = Math.round((mapRadius / 2)
+    * Math.log((1 + Math.sin(MAP_LAT_BOTTOM_RAD))
+    / (1 - Math.sin(MAP_LAT_BOTTOM_RAD))));
   return { mapRadius, mapOffsetY };
 };
 
 const latLonToCoord = (latLon, origin, extent) => {
   const { mapRadius, mapOffsetY } = mapValues(extent);
-  const x =
-    Math.round(((latLon[1] - MAP_LON_LEFT) * extent[0]) / MAP_LON_DELTA);
+  const x = (
+    Math.round(((latLon[1] - MAP_LON_LEFT) * extent[0]) / MAP_LON_DELTA));
   const latitudeRad = (latLon[0] * Math.PI) / 180;
-  const y = (extent[1] + mapOffsetY) -
-    Math.round(((mapRadius / 2) *
-      Math.log((1 + Math.sin(latitudeRad)) /
-        (1 - Math.sin(latitudeRad)))));
+  const y = (extent[1] + mapOffsetY)
+    - Math.round(((mapRadius / 2)
+      * Math.log((1 + Math.sin(latitudeRad))
+        / (1 - Math.sin(latitudeRad)))));
   return [x, y]; // the coordinate value of this point on the map image
 };
 
@@ -173,7 +172,9 @@ const buildContinentState = ({ area, dots, origin }) => {
     origin[0] + ((extent[0] - origin[0]) / 2),
     origin[1] + ((extent[1] - origin[1]) / 2),
   ];
-  return { area: stateArea, dots: stateDots, origin, extent, mid };
+  return {
+    area: stateArea, dots: stateDots, origin, extent, mid,
+  };
 };
 
 const buildState = () => {
@@ -203,8 +204,8 @@ const updateState = (state, { continents, places }) => {
 
   if (continents) {
     continents.forEach((continent) => {
-      nextState.continents[continent.name] =
-        { ...state.continents[continent.name], ...continent };
+      nextState.continents[continent.name] = (
+        { ...state.continents[continent.name], ...continent });
     });
   }
 
@@ -216,42 +217,42 @@ const updateState = (state, { continents, places }) => {
   return nextState;
 };
 
-const buildInteractiveProps =
-({ name, onClick, onHover }, activeFunc, active) => ({
-  'role': 'button',
-  'aria-label': name,
-  'tabIndex': '0',
-  'onClick': onClick ? () => onClick(name) : undefined,
-  'onMouseOver': () => {
-    if (!active) {
-      activeFunc(name);
-      if (onHover) {
-        onHover(true);
+const buildInteractiveProps = (
+  ({ name, onClick, onHover }, activeFunc, active) => ({
+    'role': 'button',
+    'aria-label': name,
+    'tabIndex': '0',
+    'onClick': onClick ? () => onClick(name) : undefined,
+    'onMouseOver': () => {
+      if (!active) {
+        activeFunc(name);
+        if (onHover) {
+          onHover(true);
+        }
       }
-    }
-  },
-  'onMouseLeave': () => {
-    if (active) {
-      activeFunc(undefined);
-      if (onHover) {
-        onHover(false);
+    },
+    'onMouseLeave': () => {
+      if (active) {
+        activeFunc(undefined);
+        if (onHover) {
+          onHover(false);
+        }
       }
-    }
-  },
-  'onFocus': () => {
-    // This moves the map unnecessarily. Instead, we should check
-    // the position and scroll if it isn't already visible
-    // this._worldMapRef.scrollIntoView();
-    if (!active) {
-      activeFunc(name);
-    }
-  },
-  'onBlur': () => {
-    if (active) {
-      activeFunc(undefined);
-    }
-  },
-});
+    },
+    'onFocus': () => {
+      // This moves the map unnecessarily. Instead, we should check
+      // the position and scroll if it isn't already visible
+      // this._worldMapRef.scrollIntoView();
+      if (!active) {
+        activeFunc(name);
+      }
+    },
+    'onBlur': () => {
+      if (active) {
+        activeFunc(undefined);
+      }
+    },
+  }));
 
 class WorldMap extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -272,6 +273,7 @@ class WorldMap extends Component {
     const { width } = this.state;
     // determine the map coordinates for where the mouse is
     // containerRef uses the group so we can handle aspect ratio scaling
+    // eslint-disable-next-line react/no-find-dom-node
     const rect = findDOMNode(this.containerRef).getBoundingClientRect();
     const scale = rect.width / width; // since the SVG viewBox might be scaled
     const coords = [
@@ -286,7 +288,9 @@ class WorldMap extends Component {
   }
 
   render() {
-    const { color, onSelectPlace, hoverColor, theme, ...rest } = this.props;
+    const {
+      color, onSelectPlace, hoverColor, theme, ...rest
+    } = this.props;
     delete rest.places;
     delete rest.continents;
     const {
@@ -377,7 +381,8 @@ class WorldMap extends Component {
           fill='none'
           fillRule='evenodd'
           onClick={() => onSelectPlace(
-            coordToLatLon(activeCoords, origin, extent))}
+            coordToLatLon(activeCoords, origin, extent)
+          )}
         >
           <path
             strokeLinecap='round'
