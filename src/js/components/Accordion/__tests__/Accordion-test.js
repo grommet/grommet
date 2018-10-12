@@ -1,13 +1,15 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import { render, fireEvent } from 'react-testing-library';
+import { cleanup, render, fireEvent } from 'react-testing-library';
 
 import {
   Accordion, AccordionPanel, Box, Grommet,
 } from '../..';
 
 describe('Accordion', () => {
+  afterEach(cleanup);
+
   test('no AccordionPanel', () => {
     const component = renderer.create(
       <Grommet>
