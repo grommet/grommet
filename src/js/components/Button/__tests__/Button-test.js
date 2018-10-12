@@ -79,7 +79,7 @@ test('Button focus renders', () => {
 test('Button disabled renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button />
+      <Button disabled />
     </Grommet>
   );
   const tree = component.toJSON();

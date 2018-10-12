@@ -40,7 +40,8 @@ class RoutedButton extends Component {
       <Button
         {...rest}
         href={path || href}
-        onClick={(path || onClick) ? this.onClick : undefined}
+        disabled={!path && !onClick}
+        onClick={this.onClick}
       />
     );
   }
