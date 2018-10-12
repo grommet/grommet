@@ -456,12 +456,8 @@ exports[`Menu close by clicking outside 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c10:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
+  opacity: 0.3;
+  cursor: default;
 }
 
 .c6 {
@@ -648,6 +644,7 @@ exports[`Menu close by clicking outside 2`] = `
       >
         <button
           class="c10"
+          disabled=""
           type="button"
         >
           <div
@@ -662,6 +659,7 @@ exports[`Menu close by clicking outside 2`] = `
       >
         <button
           class="c10"
+          disabled=""
           type="button"
         >
           <div
@@ -739,6 +737,13 @@ exports[`Menu close by clicking outside 3`] = `
 
 @media only screen and (min-width:700px) {
   .jeDfzo {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .GOlmK {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1364,6 +1369,8 @@ exports[`Menu disabled 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
 }
 
 .c3 {
@@ -1408,6 +1415,7 @@ exports[`Menu disabled 1`] = `
     <button
       aria-label="Open Menu"
       class="c1"
+      disabled=""
       id="test-menu"
       type="button"
     >
@@ -1989,9 +1997,29 @@ exports[`Menu open and close on click 3`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
 }
 
-.c10:hover {
+.c12 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c12:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
@@ -2106,6 +2134,13 @@ exports[`Menu open and close on click 3`] = `
   }
 }
 
+@media only screen and (min-width:700px) {
+  .c12 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c0 {
     display: -webkit-box;
@@ -2181,6 +2216,7 @@ exports[`Menu open and close on click 3`] = `
       >
         <button
           class="c10"
+          disabled=""
           type="button"
         >
           <div
@@ -2194,7 +2230,7 @@ exports[`Menu open and close on click 3`] = `
         class="c3"
       >
         <button
-          class="c10"
+          class="c12"
           type="button"
         >
           <div
@@ -2209,6 +2245,7 @@ exports[`Menu open and close on click 3`] = `
       >
         <a
           class="c10"
+          disabled=""
           href="/test"
         >
           <div
@@ -2286,6 +2323,13 @@ exports[`Menu open and close on click 4`] = `
 
 @media only screen and (min-width:700px) {
   .jeDfzo {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .GOlmK {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -2839,12 +2883,8 @@ exports[`Menu with dropAlign renders 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c10:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
+  opacity: 0.3;
+  cursor: default;
 }
 
 .c6 {
@@ -3031,6 +3071,7 @@ exports[`Menu with dropAlign renders 2`] = `
       >
         <button
           class="c10"
+          disabled=""
           type="button"
         >
           <div
@@ -3045,6 +3086,7 @@ exports[`Menu with dropAlign renders 2`] = `
       >
         <button
           class="c10"
+          disabled=""
           type="button"
         >
           <div
@@ -3122,6 +3164,13 @@ exports[`Menu with dropAlign renders 3`] = `
 
 @media only screen and (min-width:700px) {
   .jeDfzo {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .GOlmK {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

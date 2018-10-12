@@ -1363,6 +1363,8 @@ exports[`Select disabled 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
 }
 
 .c6 {
@@ -1464,6 +1466,7 @@ exports[`Select disabled 1`] = `
 <button
   aria-label="Open Drop"
   class="c0"
+  disabled=""
   id="test-select"
   type="button"
 >
@@ -1517,7 +1520,8 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 jeDfzo"
+  class="StyledButton-sc-323bzc-0 GOlmK"
+  disabled=""
   id="test-select"
   type="button"
 >

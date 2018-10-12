@@ -253,10 +253,8 @@ exports[`DropButton disabled 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-}
-
-.c0:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
+  opacity: 0.3;
+  cursor: default;
 }
 
 @media only screen and (max-width:699px) {
@@ -281,6 +279,7 @@ exports[`DropButton disabled 1`] = `
 <button
   aria-label="Open Drop"
   class="c0"
+  disabled=""
   type="button"
 >
   <div
@@ -605,6 +604,13 @@ exports[`DropButton opened ref 3`] = `
 
 @media only screen and (min-width:700px) {
   .kXrZjK {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .bYlrVG {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

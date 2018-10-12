@@ -127,7 +127,7 @@ class Carousel extends Component {
             <Box fill='vertical'>
               <Button
                 fill
-                disabled={activeIndex < 0}
+                disabled={activeIndex <= 0}
                 onClick={onLeft}
                 hoverIndicator
               >

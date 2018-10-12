@@ -161,6 +161,8 @@ exports[`Calendar date renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   padding: 12px;
 }
 
@@ -452,7 +454,9 @@ exports[`Calendar date renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -482,7 +486,9 @@ exports[`Calendar date renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -1530,6 +1536,8 @@ exports[`Calendar dates renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   padding: 12px;
 }
 
@@ -1821,7 +1829,9 @@ exports[`Calendar dates renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -1851,7 +1861,9 @@ exports[`Calendar dates renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -2899,6 +2911,8 @@ exports[`Calendar disabled renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   padding: 12px;
 }
 
@@ -3190,7 +3204,9 @@ exports[`Calendar disabled renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -3220,7 +3236,9 @@ exports[`Calendar disabled renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -4268,6 +4286,8 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   padding: 12px;
 }
 
@@ -4559,7 +4579,9 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -4589,7 +4611,9 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -5500,7 +5524,9 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -5530,7 +5556,9 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -6578,6 +6606,8 @@ exports[`Calendar renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   padding: 12px;
 }
 
@@ -6869,7 +6899,9 @@ exports[`Calendar renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -6899,7 +6931,9 @@ exports[`Calendar renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -8023,6 +8057,8 @@ exports[`Calendar size renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   padding: 12px;
 }
 
@@ -8522,7 +8558,9 @@ exports[`Calendar size renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -8551,7 +8589,9 @@ exports[`Calendar size renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -9461,7 +9501,9 @@ exports[`Calendar size renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -9491,7 +9533,9 @@ exports[`Calendar size renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -10402,7 +10446,9 @@ exports[`Calendar size renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
@@ -10432,7 +10478,9 @@ exports[`Calendar size renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
+            disabled={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
