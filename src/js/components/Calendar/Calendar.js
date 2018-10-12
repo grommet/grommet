@@ -163,8 +163,8 @@ class Calendar extends Component {
 
   renderCalendarHeader = (previousMonth, nextMonth) => {
     const {
- bounds, locale, onSelect, size, theme,
-} = this.props;
+      bounds, locale, onSelect, size, theme,
+    } = this.props;
     const { reference } = this.state;
 
     const PreviousIcon = size === 'small' ? (
@@ -190,14 +190,14 @@ class Calendar extends Component {
           <Button
             a11yTitle={previousMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
             icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
-            onClick={(onSelect && betweenDates(previousMonth, bounds))
-              ? () => this.setReference(previousMonth) : undefined}
+            disabled={!onSelect || !betweenDates(previousMonth, bounds)}
+            onClick={() => this.setReference(previousMonth)}
           />
           <Button
             a11yTitle={nextMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
             icon={<NextIcon size={size !== 'small' ? size : undefined} />}
-            onClick={(onSelect && betweenDates(nextMonth, bounds))
-              ? () => this.setReference(nextMonth) : undefined}
+            disabled={!onSelect || !betweenDates(nextMonth, bounds)}
+            onClick={() => this.setReference(nextMonth)}
           />
         </Box>
       </Box>
@@ -266,7 +266,8 @@ class Calendar extends Component {
             plain
             active={isActive}
             hoverIndicator={!dayDisabled}
-            onClick={dayDisabled ? undefined : this.onClickDay(dateString)}
+            disabled={dayDisabled}
+            onClick={this.onClickDay(dateString)}
           >
             <StyledDay
               inRange={inRange}
