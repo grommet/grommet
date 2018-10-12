@@ -2244,8 +2244,7 @@ exports[`Menu open and close on click 3`] = `
         class="c3"
       >
         <a
-          class="c10"
-          disabled=""
+          class="c12"
           href="/test"
         >
           <div
