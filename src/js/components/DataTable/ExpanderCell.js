@@ -21,6 +21,7 @@ const ExpanderCell = ({
           fill
           a11yTitle={expanded ? 'collapse' : 'expand'}
           hoverIndicator
+          disabled={!onToggle}
           onClick={onToggle}
         >
           <Box {...theme.dataTable[context]} {...rest} pad='xsmall'>

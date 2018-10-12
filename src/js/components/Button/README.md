@@ -35,6 +35,14 @@ Fill color for primary, border color otherwise.
 string
 ```
 
+**disabled**
+
+Whether the button is disabled.
+
+```
+boolean
+```
+
 **fill**
 
 Whether the button expands to fill all of the available width and height.

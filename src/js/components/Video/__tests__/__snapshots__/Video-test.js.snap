@@ -443,7 +443,6 @@ exports[`Video autoPlay renders 1`] = `
       >
         <button
           className="c5"
-          disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -530,7 +529,6 @@ exports[`Video autoPlay renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c17"
-            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1122,7 +1120,6 @@ exports[`Video controls renders 1`] = `
       >
         <button
           className="c5"
-          disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1209,7 +1206,6 @@ exports[`Video controls renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c17"
-            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1286,7 +1282,6 @@ exports[`Video controls renders 1`] = `
       >
         <button
           className="c22"
-          disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1372,7 +1367,6 @@ exports[`Video controls renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c17"
-            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1871,7 +1865,6 @@ exports[`Video fit renders 1`] = `
       >
         <button
           className="c5"
-          disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1958,7 +1951,6 @@ exports[`Video fit renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c17"
-            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -2038,7 +2030,6 @@ exports[`Video fit renders 1`] = `
       >
         <button
           className="c5"
-          disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -2125,7 +2116,6 @@ exports[`Video fit renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c17"
-            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -2606,7 +2596,6 @@ exports[`Video loop renders 1`] = `
       >
         <button
           className="c5"
-          disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -2693,7 +2682,6 @@ exports[`Video loop renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c17"
-            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -3174,7 +3162,6 @@ exports[`Video mute renders 1`] = `
       >
         <button
           className="c5"
-          disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -3261,7 +3248,6 @@ exports[`Video mute renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c17"
-            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -3742,7 +3728,6 @@ exports[`Video renders 1`] = `
       >
         <button
           className="c5"
-          disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -3829,7 +3814,6 @@ exports[`Video renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c17"
-            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}

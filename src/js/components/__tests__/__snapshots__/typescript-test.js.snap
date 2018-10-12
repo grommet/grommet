@@ -83,6 +83,7 @@ export interface ButtonProps {
   a11yTitle?: string;
   active?: boolean;
   color?: string;
+  disabled?: boolean;
   fill?: boolean;
   focusIndicator?: boolean;
   hoverIndicator?: boolean | \\"background\\" | {background: boolean | string};

@@ -17,6 +17,7 @@ export const doc = (Button) => {
     a11yTitle: PropTypes.string.description('Custom title to be used by screen readers.'),
     active: PropTypes.bool.description('Whether the button is active.'),
     color: PropTypes.string.description('Fill color for primary, border color otherwise.'),
+    disabled: PropTypes.bool.description('Whether the button is disabled.'),
     fill: PropTypes.bool.description(
       'Whether the button expands to fill all of the available width and height.'
     ),
