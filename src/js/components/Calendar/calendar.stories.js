@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Calendar } from 'grommet';
+import {
+ Box, Button, Calendar, Grommet, Text,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
+
+import { FormPreviousLink, FormNextLink } from 'grommet-icons';
 
 class SimpleCalendar extends Component {
   state = {}
@@ -67,6 +71,51 @@ class RichCalendar extends Component {
   }
 }
 
+class CustomHeaderCalendar extends Component {
+  state = {}
+
+  onSelect = date => this.setState({ date })
+
+  render() {
+    const { date } = this.state;
+    return (
+      <Grommet theme={grommet}>
+        <Calendar
+          date={date}
+          onSelect={this.onSelect}
+          size='small'
+          bounds={['2018-09-08', '2018-12-13']}
+          header={({
+            date: currentDate, locale, onPreviousMonth, onNextMonth, previousInBound, nextInBound,
+          }) => (
+            <Box direction='row' align='center' justify='between'>
+              <Button
+                onClick={previousInBound && onPreviousMonth}
+              >
+                <Box>
+                  <FormPreviousLink />
+                </Box>
+              </Button>
+              <Text size='small'>
+                <strong>{currentDate.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}</strong>
+              </Text>
+              <Button
+                onClick={nextInBound && onNextMonth}
+              >
+                <Box>
+                  <FormNextLink />
+                </Box>
+              </Button>
+
+            </Box>
+          )}
+        />
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Calendar', module)
   .add('Simple Calendar', () => <SimpleCalendar />)
-  .add('Range Calendar', () => <RichCalendar />);
+  .add('Range Calendar', () => <RichCalendar />)
+  .add('Custom Header', () => <CustomHeaderCalendar />);

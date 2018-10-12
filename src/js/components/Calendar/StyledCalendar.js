@@ -2,11 +2,11 @@ import styled, { css, keyframes } from 'styled-components';
 import { backgroundStyle, parseMetricToNum } from '../../utils';
 
 const sizeStyle = (props) => {
-  const data = props.theme.calendar[props.size];
+  const data = props.theme.calendar[props.sizeProp];
   return css`
     font-size: ${data.fontSize};
     line-height: ${data.lineHeight};
-    width: ${props.theme.global.size[props.size]};
+    width: ${props.theme.global.size[props.sizeProp]};
   `;
 };
 
@@ -18,12 +18,12 @@ export const StyledCalendar = styled.div`
 
 export const StyledWeeksContainer = styled.div`
   overflow: hidden;
-  ${props => `height: ${parseMetricToNum(props.theme.calendar[props.size].daySize) * 6}px;`}
+  ${props => `height: ${parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) * 6}px;`}
 `;
 
 const slideStyle = (props) => {
-  const { slide: { direction, weeks }, size, theme } = props;
-  const { daySize, slideDuration } = theme.calendar[size];
+  const { slide: { direction, weeks }, sizeProp, theme } = props;
+  const { daySize, slideDuration } = theme.calendar[sizeProp];
   const amount = parseMetricToNum(daySize) * weeks;
 
   const translateYFrom = direction === 'down' ? `-${amount}px` : '0';
@@ -54,7 +54,7 @@ export const StyledDayContainer = styled.div`
 `;
 
 const daySizeStyle = (props) => {
-  const data = props.theme.calendar[props.size];
+  const data = props.theme.calendar[props.sizeProp];
   return css`
     width: ${data.daySize};
     height: ${data.daySize};

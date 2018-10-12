@@ -161,10 +161,62 @@ class Calendar extends Component {
     }
   };
 
+  renderCalendarHeader = (previousMonth, nextMonth) => {
+    const {
+ bounds, locale, onSelect, size, theme,
+} = this.props;
+    const { reference } = this.state;
+
+    const PreviousIcon = size === 'small' ? (
+      theme.calendar.icons.small.previous
+    ) : (
+      theme.calendar.icons.previous
+    );
+
+    const NextIcon = size === 'small' ? (
+      theme.calendar.icons.small.next
+    ) : (
+      theme.calendar.icons.next
+    );
+
+    return (
+      <Box direction='row' justify='between' align='center'>
+        <Box flex pad={{ horizontal: (headingPadMap[size] || 'small') }}>
+          <Heading level={size === 'small' ? 4 : 3} size={size} margin='none'>
+            {reference.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
+          </Heading>
+        </Box>
+        <Box flex={false} direction='row' align='center'>
+          <Button
+            a11yTitle={previousMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
+            icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
+            onClick={(onSelect && betweenDates(previousMonth, bounds))
+              ? () => this.setReference(previousMonth) : undefined}
+          />
+          <Button
+            a11yTitle={nextMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
+            icon={<NextIcon size={size !== 'small' ? size : undefined} />}
+            onClick={(onSelect && betweenDates(nextMonth, bounds))
+              ? () => this.setReference(nextMonth) : undefined}
+          />
+        </Box>
+      </Box>
+    );
+  };
+
   render() {
     const {
-      bounds, date, dates, disabled, firstDayOfWeek, locale, onSelect, size,
-      theme, ...rest
+      bounds,
+      date,
+      dates,
+      disabled,
+      firstDayOfWeek,
+      header,
+      locale,
+      onSelect,
+      size,
+      theme,
+      ...rest
     } = this.props;
     const {
       active, start, reference, end, slide,
@@ -205,7 +257,7 @@ class Calendar extends Component {
         || (bounds && !betweenDates(day, bounds));
 
       days.push(
-        <StyledDayContainer key={day.getTime()} size={size} theme={theme}>
+        <StyledDayContainer key={day.getTime()} sizeProp={size} theme={theme}>
           <Button
             ref={(ref) => {
               if (isActive) this.activeRef = ref;
@@ -220,7 +272,7 @@ class Calendar extends Component {
               inRange={inRange}
               otherMonth={day.getMonth() !== reference.getMonth()}
               isSelected={selected}
-              size={size}
+              sizeProp={size}
               theme={theme}
             >
               {day.getDate()}
@@ -234,20 +286,8 @@ class Calendar extends Component {
       <StyledWeek key={day.getTime()} theme={theme}>{days}</StyledWeek>
     ));
 
-    const PreviousIcon = size === 'small' ? (
-      theme.calendar.icons.small.previous
-    ) : (
-      theme.calendar.icons.previous
-    );
-
-    const NextIcon = size === 'small' ? (
-      theme.calendar.icons.small.next
-    ) : (
-      theme.calendar.icons.next
-    );
-
     return (
-      <StyledCalendar size={size} theme={theme} {...rest}>
+      <StyledCalendar sizeProp={size} theme={theme} {...rest}>
         <Keyboard
           onUp={(event) => {
             event.preventDefault();
@@ -261,29 +301,20 @@ class Calendar extends Component {
           onRight={() => this.setActive(addDays(active, 1))}
         >
           <Box>
-            <Box direction='row' justify='between' align='center'>
-              <Box flex pad={{ horizontal: (headingPadMap[size] || 'small') }}>
-                <Heading level={size === 'small' ? 4 : 3} size={size} margin='none'>
-                  {reference.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
-                </Heading>
-              </Box>
-              <Box flex={false} direction='row' align='center'>
-                <Button
-                  a11yTitle={previousMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
-                  icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
-                  onClick={(onSelect && betweenDates(previousMonth, bounds))
-                    ? () => this.setReference(previousMonth) : undefined}
-                />
-                <Button
-                  a11yTitle={nextMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
-                  icon={<NextIcon size={size !== 'small' ? size : undefined} />}
-                  onClick={(onSelect && betweenDates(nextMonth, bounds))
-                    ? () => this.setReference(nextMonth) : undefined}
-                />
-              </Box>
-            </Box>
-            <StyledWeeksContainer size={size} theme={theme}>
-              <StyledWeeks slide={slide} size={size} theme={theme}>
+            {header ? (
+              header({
+                date: reference,
+                locale,
+                onPreviousMonth: () => this.setReference(previousMonth),
+                onNextMonth: () => this.setReference(nextMonth),
+                previousInBound: betweenDates(previousMonth, bounds),
+                nextInBound: betweenDates(nextMonth, bounds),
+              })
+            ) : (
+              this.renderCalendarHeader(previousMonth, nextMonth)
+            )}
+            <StyledWeeksContainer sizeProp={size} theme={theme}>
+              <StyledWeeks slide={slide} sizeProp={size} theme={theme}>
                 {weeks}
               </StyledWeeks>
             </StyledWeeksContainer>
