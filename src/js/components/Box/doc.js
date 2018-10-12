@@ -3,6 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { a11yTitlePropType, getAvailableAtBadge } from '../../utils';
 
 const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
+const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
 
 const ANIMATION_TYPE = PropTypes.oneOf([
   'fadeIn', 'fadeOut', 'jiggle', 'pulse',
@@ -160,7 +161,14 @@ export const doc = (Box) => {
       .description(`The amount of margin around the box. An object can
         be specified to distinguish horizontal margin, vertical margin, and
         margin on a particular side of the box`),
-    overflow: PropTypes.oneOf(['auto', 'hidden', 'scroll', 'visible'])
+    overflow: PropTypes.oneOfType([
+      PropTypes.oneOf(OVERFLOW_VALUES),
+      PropTypes.shape({
+        horizontal: PropTypes.oneOf(OVERFLOW_VALUES),
+        vertical: PropTypes.oneOf(OVERFLOW_VALUES),
+      }),
+      PropTypes.string,
+    ])
       .description('box overflow.'),
     pad: PropTypes.oneOfType([
       PropTypes.oneOf(['none', ...PAD_SIZES]),

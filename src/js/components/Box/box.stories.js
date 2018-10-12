@@ -80,8 +80,13 @@ const FixedSizesBox = () => (
         align='center'
         justify='center'
         background='brand'
+        overflow={{ horizontal: 'hidden', vertical: 'scroll' }}
       >
-        Small
+        { Array(20).fill().map((_, i) => (
+          <Text>
+            {`Small (${i})`}
+          </Text>
+        )) }
       </Box>
       <Box
         width='medium'

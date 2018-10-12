@@ -881,13 +881,13 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fOkjdU {
+  .cvCwnG {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .fOkjdU {
+  .cvCwnG {
     padding: 0px;
   }
 }
@@ -2516,13 +2516,13 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fOkjdU {
+  .cvCwnG {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .fOkjdU {
+  .cvCwnG {
     padding: 0px;
   }
 }
@@ -3287,13 +3287,13 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fOkjdU {
+  .cvCwnG {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .fOkjdU {
+  .cvCwnG {
     padding: 0px;
   }
 }
@@ -3386,7 +3386,7 @@ exports[`Select opens 4`] = `
 
 exports[`Select opens 5`] = `
 <div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-1 jZWhdj StyledBox-sc-13pk1d4-0 fOkjdU"
+  class="SelectContainer__OptionsBox-sc-1wi0ul8-1 jZWhdj StyledBox-sc-13pk1d4-0 cvCwnG"
   role="menubar"
   tabindex="-1"
 >
@@ -4122,13 +4122,13 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fOkjdU {
+  .cvCwnG {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .fOkjdU {
+  .cvCwnG {
     padding: 0px;
   }
 }

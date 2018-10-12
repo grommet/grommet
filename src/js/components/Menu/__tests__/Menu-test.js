@@ -94,7 +94,7 @@ describe('Menu', () => {
     fireEvent.click(getByText('Test'));
     expectPortal('test-menu__drop').toMatchSnapshot();
 
-    fireEvent(document, new MouseEvent('click', { bubbles: true, cancelable: true }));
+    fireEvent(document, new MouseEvent('mousedown', { bubbles: true, cancelable: true }));
     setTimeout(() => {
       expect(document.getElementById('test-menu__drop')).toBeNull();
       done();

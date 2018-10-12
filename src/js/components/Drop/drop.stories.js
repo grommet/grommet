@@ -1,15 +1,15 @@
-import React, { Component, Fragment } from 'react';
+import React, { createRef, Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
 import {
-  Box, Drop, Grommet, Text,
+  Box, Button, Drop, Grommet, Text,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { ThemeContext } from 'grommet/contexts';
 
 class SimpleDrop extends Component {
-  targetRef = React.createRef()
+  targetRef = createRef()
 
   componentDidMount() {
     this.forceUpdate();
@@ -60,7 +60,7 @@ OneDrop.propTypes = {
 };
 
 class Set extends Component {
-  targetRef = React.createRef()
+  targetRef = createRef()
 
   componentDidMount() {
     this.forceUpdate();
@@ -103,7 +103,7 @@ Set.propTypes = {
 };
 
 class AllDrops extends Component {
-  targetRef = React.createRef()
+  targetRef = createRef()
 
   componentDidMount() {
     this.forceUpdate();
@@ -215,6 +215,59 @@ class AllDrops extends Component {
   }
 }
 
+class ProgressiveDrop extends Component {
+  boxRef = createRef()
+
+  state = {
+    openDrop: false,
+    openInnerDrop: false,
+  }
+
+  onCloseDrop = () => this.setState({ openDrop: false, openInnerDrop: false })
+
+  onOpenDrop = () => this.setState({ openDrop: true, openInnerDrop: false })
+
+  render() {
+    const { openDrop, openInnerDrop } = this.state;
+    return (
+      <Grommet theme={grommet}>
+        <Box align='start'>
+          <Button
+            ref={this.boxRef}
+            primary
+            label='Click me'
+            onClick={this.onOpenDrop}
+          />
+          {openDrop && (
+            <Drop
+              target={this.boxRef.current}
+              align={{ top: 'bottom' }}
+              onClickOutside={this.onCloseDrop}
+              onEsc={this.onCloseDrop}
+            >
+              {!openInnerDrop && (
+                <Box pad='large'>
+                  <Button
+                    primary
+                    label='Click me again'
+                    onClick={() => this.setState({ openInnerDrop: true })}
+                  />
+                </Box>
+              )}
+              {openInnerDrop && (
+                <Box pad='large'>
+                  You can click outside now
+                </Box>
+              )}
+            </Drop>
+          )}
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Drop', module)
   .add('Simple', () => <SimpleDrop />)
-  .add('All not stretch', () => <AllDrops />);
+  .add('All not stretch', () => <AllDrops />)
+  .add('Progressive', () => <ProgressiveDrop />);

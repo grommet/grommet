@@ -384,6 +384,19 @@ auto
 hidden
 scroll
 visible
+{
+  horizontal: 
+    auto
+    hidden
+    scroll
+    visible,
+  vertical: 
+    auto
+    hidden
+    scroll
+    visible
+}
+string
 ```
 
 **pad**

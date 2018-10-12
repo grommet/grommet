@@ -119,7 +119,7 @@ describe('Drop', () => {
     render(<TestInput onClickOutside={onClickOutside} />);
     expectPortal('drop-node').toMatchSnapshot();
 
-    fireEvent(document, new MouseEvent('click', { bubbles: true, cancelable: true }));
+    fireEvent(document, new MouseEvent('mousedown', { bubbles: true, cancelable: true }));
     expect(onClickOutside).toBeCalled();
   });
 

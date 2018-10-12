@@ -53,7 +53,7 @@ export class DropContainer extends Component {
     const { restrictFocus } = this.props;
     this.addScrollListener();
     window.addEventListener('resize', this.onResize);
-    document.addEventListener('click', this.onClickDocument);
+    document.addEventListener('mousedown', this.onClickDocument);
 
     this.place();
 
@@ -70,7 +70,7 @@ export class DropContainer extends Component {
   componentWillUnmount() {
     this.removeScrollListener();
     window.removeEventListener('resize', this.onResize);
-    document.removeEventListener('click', this.onClickDocument);
+    document.removeEventListener('mousedown', this.onClickDocument);
   }
 
   addScrollListener = () => {
@@ -281,7 +281,7 @@ export class DropContainer extends Component {
 
     return (
       <FocusedContainer>
-        <Keyboard onEsc={onEsc} onKeyDown={onKeyDown}>
+        <Keyboard onEsc={onEsc} onKeyDown={onKeyDown} target='document'>
           {content}
         </Keyboard>
       </FocusedContainer>

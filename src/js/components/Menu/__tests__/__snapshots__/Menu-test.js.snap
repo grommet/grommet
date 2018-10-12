@@ -713,13 +713,13 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jVpjtq {
+  .eOSniC {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jVpjtq {
+  .eOSniC {
     padding: 0px;
   }
 }
@@ -2299,13 +2299,13 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jVpjtq {
+  .eOSniC {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jVpjtq {
+  .eOSniC {
     padding: 0px;
   }
 }
@@ -3140,13 +3140,13 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jVpjtq {
+  .eOSniC {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jVpjtq {
+  .eOSniC {
     padding: 0px;
   }
 }
@@ -3179,13 +3179,6 @@ exports[`Menu with dropAlign renders 3`] = `
 
 @media only screen and (min-width:700px) {
   .iLsSdy {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .huvvip {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
