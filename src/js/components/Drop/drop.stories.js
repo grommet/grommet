@@ -55,8 +55,8 @@ const OneDrop = ({ align, target }) => (
 );
 
 OneDrop.propTypes = {
-  align: PropTypes.string.isRequired,
-  target: PropTypes.node.isRequired,
+  align: PropTypes.shape({}).isRequired,
+  target: PropTypes.shape({}).isRequired,
 };
 
 class Set extends Component {
@@ -98,7 +98,7 @@ class Set extends Component {
 }
 
 Set.propTypes = {
-  aligns: PropTypes.arrayOf().isRequired,
+  aligns: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   label: PropTypes.string.isRequired,
 };
 
