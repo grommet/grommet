@@ -18,8 +18,9 @@ export const Header = ({
   // The tricky part here is that we need to manage the theme styling
   // to make sure that the background, border, and padding are applied
   // at the right places depending on the mix of controls in each header cell.
-  const outerThemeProps = (({ border, background }) => (
-    ({ border, background }))(theme.dataTable.header));
+  const outerThemeProps = (
+    ({ border, background }) => ({ border, background })
+  )(theme.dataTable.header);
   const { border, background, ...innerThemeProps } = theme.dataTable.header;
   return (
     <StyledDataTableHeader {...rest}>
