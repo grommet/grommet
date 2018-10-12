@@ -90,7 +90,8 @@ class CustomHeaderCalendar extends Component {
           }) => (
             <Box direction='row' align='center' justify='between'>
               <Button
-                onClick={previousInBound && onPreviousMonth}
+                disabled={!previousInBound}
+                onClick={onPreviousMonth}
               >
                 <Box>
                   <FormPreviousLink />
@@ -100,7 +101,8 @@ class CustomHeaderCalendar extends Component {
                 <strong>{currentDate.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}</strong>
               </Text>
               <Button
-                onClick={nextInBound && onNextMonth}
+                disabled={!nextInBound}
+                onClick={onNextMonth}
               >
                 <Box>
                   <FormNextLink />
