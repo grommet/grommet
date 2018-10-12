@@ -144,6 +144,19 @@ export const inputStyle = css`
   }
 `;
 
+export const overflowStyle = (overflowProp) => {
+  if (typeof overflowProp === 'string') {
+    return css`
+      overflow: ${overflowProp};
+    `;
+  }
+
+  return css`
+    ${overflowProp.horizontal && `overflow-x: ${overflowProp.horizontal};`}
+    ${overflowProp.vertical && `overflow-y: ${overflowProp.vertical};`}
+  `;
+};
+
 export const evalStyle = (arg, theme) => {
   if (arg && Array.isArray(arg) && typeof arg[0] === 'function') {
     return arg[0]({ theme });
