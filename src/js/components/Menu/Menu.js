@@ -166,12 +166,13 @@ class Menu extends Component {
                           }}
                           active={activeItemIndex === index}
                           hoverIndicator='background'
-                          onClick={item.onClick ? (...args) => {
+                          disabled={!item.onClick}
+                          onClick={(...args) => {
                             item.onClick(...args);
                             if (item.close !== false) {
                               this.onDropClose();
                             }
-                          } : undefined}
+                          }}
                           href={item.href}
                         >
                           <Box align='start' pad='small' direction='row'>

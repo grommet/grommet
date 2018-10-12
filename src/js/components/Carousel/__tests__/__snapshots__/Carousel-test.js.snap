@@ -276,14 +276,18 @@ exports[`Carousel basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
   width: 100%;
   height: 100%;
   max-width: none;
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+}
+
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: black;
 }
 
 .c14 {
@@ -303,36 +307,6 @@ exports[`Carousel basic 1`] = `
   padding: 0;
   text-align: inherit;
   padding: 12px;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c17:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
 }
 
 .c1 {
@@ -474,13 +448,6 @@ exports[`Carousel basic 1`] = `
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c17 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
 <div
   className="c0"
 >
@@ -534,7 +501,6 @@ exports[`Carousel basic 1`] = `
         >
           <button
             className="c9"
-            disabled={true}
             onBlur={[Function]}
             onFocus={[Function]}
             type="button"
@@ -570,7 +536,6 @@ exports[`Carousel basic 1`] = `
           >
             <button
               className="c14"
-              disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -600,7 +565,6 @@ exports[`Carousel basic 1`] = `
             </button>
             <button
               className="c14"
-              disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -633,8 +597,7 @@ exports[`Carousel basic 1`] = `
           className="c8"
         >
           <button
-            className="c17"
-            disabled={false}
+            className="c9"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -944,14 +907,18 @@ exports[`Carousel navigate 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
   width: 100%;
   height: 100%;
   max-width: none;
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+}
+
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: black;
 }
 
 .c14 {
@@ -971,36 +938,6 @@ exports[`Carousel navigate 1`] = `
   padding: 0;
   text-align: inherit;
   padding: 12px;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c17:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
 }
 
 .c1 {
@@ -1142,13 +1079,6 @@ exports[`Carousel navigate 1`] = `
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c17 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
 <div
   class="c0"
 >
@@ -1200,7 +1130,6 @@ exports[`Carousel navigate 1`] = `
         >
           <button
             class="c9"
-            disabled=""
             type="button"
           >
             <div
@@ -1289,7 +1218,7 @@ exports[`Carousel navigate 1`] = `
           class="c8"
         >
           <button
-            class="c17"
+            class="c9"
             type="button"
           >
             <div
@@ -1460,8 +1389,7 @@ exports[`Carousel navigate 2`] = `
           class="StyledBox-sc-13pk1d4-0 hoZmmL"
         >
           <button
-            class="StyledButton-sc-323bzc-0 hvgqUe"
-            disabled=""
+            class="StyledButton-sc-323bzc-0 hWIJiJ"
             type="button"
           >
             <div
@@ -1543,8 +1471,7 @@ exports[`Carousel navigate 3`] = `
           class="StyledBox-sc-13pk1d4-0 hoZmmL"
         >
           <button
-            class="StyledButton-sc-323bzc-0 hvgqUe"
-            disabled=""
+            class="StyledButton-sc-323bzc-0 hWIJiJ"
             type="button"
           >
             <div
@@ -1940,14 +1867,18 @@ exports[`Carousel play 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
   width: 100%;
   height: 100%;
   max-width: none;
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+}
+
+.c9:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: black;
 }
 
 .c14 {
@@ -1967,36 +1898,6 @@ exports[`Carousel play 1`] = `
   padding: 0;
   text-align: inherit;
   padding: 12px;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
-.c17:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
 }
 
 .c1 {
@@ -2138,13 +2039,6 @@ exports[`Carousel play 1`] = `
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c17 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
 <div
   class="c0"
 >
@@ -2195,7 +2089,6 @@ exports[`Carousel play 1`] = `
         >
           <button
             class="c9"
-            disabled=""
             type="button"
           >
             <div
@@ -2284,7 +2177,7 @@ exports[`Carousel play 1`] = `
           class="c8"
         >
           <button
-            class="c17"
+            class="c9"
             type="button"
           >
             <div
@@ -2454,8 +2347,7 @@ exports[`Carousel play 2`] = `
           class="StyledBox-sc-13pk1d4-0 hoZmmL"
         >
           <button
-            class="StyledButton-sc-323bzc-0 hvgqUe"
-            disabled=""
+            class="StyledButton-sc-323bzc-0 hWIJiJ"
             type="button"
           >
             <div

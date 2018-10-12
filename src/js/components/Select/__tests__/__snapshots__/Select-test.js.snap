@@ -218,7 +218,6 @@ exports[`Select basic 1`] = `
 <button
   aria-label="Open Drop"
   className="c0"
-  disabled={false}
   id="test-select"
   onBlur={[Function]}
   onClick={[Function]}
@@ -1364,8 +1363,6 @@ exports[`Select disabled 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
 }
 
 .c6 {
@@ -1467,7 +1464,6 @@ exports[`Select disabled 1`] = `
 <button
   aria-label="Open Drop"
   class="c0"
-  disabled=""
   id="test-select"
   type="button"
 >
@@ -1521,8 +1517,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 GOlmK"
-  disabled=""
+  class="StyledButton-sc-323bzc-0 jeDfzo"
   id="test-select"
   type="button"
 >
@@ -1791,7 +1786,6 @@ exports[`Select multiple 1`] = `
 <button
   aria-label="Open Drop"
   className="c0"
-  disabled={false}
   id="test-select"
   onBlur={[Function]}
   onClick={[Function]}
@@ -5463,7 +5457,6 @@ exports[`Select size 1`] = `
 <button
   aria-label="Open Drop"
   className="c0"
-  disabled={false}
   id="test-select"
   onBlur={[Function]}
   onClick={[Function]}

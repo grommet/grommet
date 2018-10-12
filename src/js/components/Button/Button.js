@@ -40,6 +40,7 @@ class Button extends Component {
       color, // munged to avoid styled-components putting it in the DOM
       forwardRef,
       children,
+      disabled,
       icon,
       fill, // munged to avoid styled-components putting it in the DOM
       focus,
@@ -65,9 +66,6 @@ class Button extends Component {
     }
     const first = reverse ? label : buttonIcon;
     const second = reverse ? buttonIcon : label;
-
-    const disabled = (!href && !onClick
-      && ['reset', 'submit'].indexOf(type) === -1);
 
     return (
       <StyledButton

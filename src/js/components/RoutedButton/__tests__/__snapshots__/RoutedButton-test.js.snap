@@ -86,7 +86,6 @@ exports[`RoutedButton renders 1`] = `
   <div>
     <a
       className="c1"
-      disabled={false}
       href="/"
       onBlur={[Function]}
       onClick={[Function]}
