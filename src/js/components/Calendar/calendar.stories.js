@@ -13,7 +13,7 @@ class SimpleCalendar extends Component {
     const { date } = this.state;
     return (
       <Grommet theme={grommet}>
-        <Calendar date={date} onSelect={this.onSelect} size='small' />
+        <Calendar date={date} onSelect={this.onSelect} size='small' bounds={['2018-09-08', '2018-12-13']} />
       </Grommet>
     );
   }

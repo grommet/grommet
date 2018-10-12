@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { addDecorator, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
 

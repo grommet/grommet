@@ -1,4 +1,4 @@
-import del from 'del'; // eslint-disable-line import/no-extraneous-dependencies
+import del from 'del';
 import fs from 'fs';
 import path from 'path';
 
