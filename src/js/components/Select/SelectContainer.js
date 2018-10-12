@@ -1,7 +1,6 @@
 /* eslint-disable react/no-find-dom-node */
 import React, { createRef, Component } from 'react';
 import { findDOMNode } from 'react-dom';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import {
@@ -33,21 +32,6 @@ const OptionsBox = styled(Box)`
 `;
 
 class SelectContainer extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-    id: PropTypes.string,
-    multiple: PropTypes.bool,
-    name: PropTypes.string,
-    onChange: PropTypes.func.isRequired,
-    onKeyDown: PropTypes.func,
-    onSearch: PropTypes.func,
-    options: PropTypes.arrayOf(),
-    searchPlaceholder: PropTypes.string,
-    selected: PropTypes.bool,
-    theme: PropTypes.shape({}).isRequired,
-    value: PropTypes.string,
-  }
-
   static defaultProps = {
     children: null,
     id: undefined,
@@ -92,6 +76,7 @@ class SelectContainer extends Component {
   }
 
   componentDidMount() {
+    /* eslint-disable-next-line react/prop-types */
     const { onSearch } = this.props;
     const { activeIndex } = this.state;
     // timeout need to send the operation through event loop and allow time to the portal
@@ -142,6 +127,7 @@ class SelectContainer extends Component {
 
   selectOption = (option, index) => {
     const {
+      /* eslint-disable-next-line react/prop-types */
       multiple, onChange, options, selected, value,
     } = this.props;
 
@@ -222,6 +208,7 @@ class SelectContainer extends Component {
   }
 
   render() {
+    /* eslint-disable react/prop-types */
     const {
       children,
       id,
@@ -234,6 +221,7 @@ class SelectContainer extends Component {
       theme,
       value,
     } = this.props;
+    /* eslint-enable react/prop-types */
     const { activeIndex, search } = this.state;
 
     const customSearchInput = theme.select.searchInput;

@@ -1,6 +1,6 @@
 # Grommet: focus on the essential experience
 
-:warning: If you are installing this you should be aware you are using an Alpha release that may have small API changes.
+:warning: If you are installing this you should be aware you are using a Beta release that may have small API changes.
 
 [![Slack](http://alansouzati.github.io/artic/img/slack-badge.svg)](http://slackin.grommet.io)
 
