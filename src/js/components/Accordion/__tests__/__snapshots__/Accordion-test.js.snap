@@ -852,7 +852,7 @@ exports[`Accordion change active index 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jVpjtq"
+    class="StyledBox-sc-13pk1d4-0 eOSniC"
     role="tablist"
   >
     <div
@@ -1404,7 +1404,7 @@ exports[`Accordion change to second Panel 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jVpjtq"
+    class="StyledBox-sc-13pk1d4-0 eOSniC"
     role="tablist"
   >
     <div
@@ -1953,7 +1953,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jVpjtq"
+    class="StyledBox-sc-13pk1d4-0 eOSniC"
     role="tablist"
   >
     <div
@@ -3114,7 +3114,7 @@ exports[`Accordion multiple panels 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jVpjtq"
+    class="StyledBox-sc-13pk1d4-0 eOSniC"
     role="tablist"
   >
     <div
@@ -3259,7 +3259,7 @@ exports[`Accordion multiple panels 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jVpjtq"
+    class="StyledBox-sc-13pk1d4-0 eOSniC"
     role="tablist"
   >
     <div
@@ -3407,7 +3407,7 @@ exports[`Accordion multiple panels 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jVpjtq"
+    class="StyledBox-sc-13pk1d4-0 eOSniC"
     role="tablist"
   >
     <div
@@ -3552,7 +3552,7 @@ exports[`Accordion multiple panels 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jVpjtq"
+    class="StyledBox-sc-13pk1d4-0 eOSniC"
     role="tablist"
   >
     <div
@@ -4185,7 +4185,7 @@ exports[`Accordion set on hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jVpjtq"
+    class="StyledBox-sc-13pk1d4-0 eOSniC"
     role="tablist"
   >
     <div
@@ -4309,7 +4309,7 @@ exports[`Accordion set on hover 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jVpjtq"
+    class="StyledBox-sc-13pk1d4-0 eOSniC"
     role="tablist"
   >
     <div
@@ -4433,7 +4433,7 @@ exports[`Accordion set on hover 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jVpjtq"
+    class="StyledBox-sc-13pk1d4-0 eOSniC"
     role="tablist"
   >
     <div
@@ -4557,7 +4557,7 @@ exports[`Accordion set on hover 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jVpjtq"
+    class="StyledBox-sc-13pk1d4-0 eOSniC"
     role="tablist"
   >
     <div

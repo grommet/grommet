@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { backgroundStyle, colorForName, edgeStyle, palm,
-  focusStyle } from '../../utils';
+import { backgroundStyle, colorForName, edgeStyle, focusStyle,
+  overflowStyle, palm } from '../../utils';
 
 const ALIGN_MAP = {
   baseline: 'baseline',
@@ -432,7 +432,7 @@ export const StyledBox = styled.div`
     edgeStyle('padding', props.pad, props.responsive, props.theme))}
   ${props => props.round && roundStyle(props.round, props.responsive, props.theme)}
   ${props => props.wrapProp && wrapStyle}
-  ${props => props.overflowProp && `overflow: ${props.overflowProp};`}
+  ${props => props.overflowProp && overflowStyle(props.overflowProp)}
   ${props => props.elevationProp && elevationStyle}
   ${props => props.animation && animationStyle}
   ${props => props.focus && focusStyle}

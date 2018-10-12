@@ -328,13 +328,13 @@ exports[`TextInput close suggestion drop 2`] = `
 
 exports[`TextInput close suggestion drop 3`] = `
 "@media only screen and (max-width:699px) {
-  .jVpjtq {
+  .eOSniC {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jVpjtq {
+  .eOSniC {
     padding: 0px;
   }
 }
@@ -657,13 +657,13 @@ exports[`TextInput complex suggestions 2`] = `
 
 exports[`TextInput complex suggestions 3`] = `
 "@media only screen and (max-width:699px) {
-  .jVpjtq {
+  .eOSniC {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jVpjtq {
+  .eOSniC {
     padding: 0px;
   }
 }
@@ -1246,13 +1246,13 @@ exports[`TextInput select suggestion 2`] = `
 
 exports[`TextInput select suggestion 3`] = `
 "@media only screen and (max-width:699px) {
-  .jVpjtq {
+  .eOSniC {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jVpjtq {
+  .eOSniC {
     padding: 0px;
   }
 }
@@ -1601,13 +1601,13 @@ exports[`TextInput suggestions 2`] = `
 
 exports[`TextInput suggestions 3`] = `
 "@media only screen and (max-width:699px) {
-  .jVpjtq {
+  .eOSniC {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jVpjtq {
+  .eOSniC {
     padding: 0px;
   }
 }
