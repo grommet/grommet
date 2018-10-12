@@ -44,6 +44,8 @@ exports[`RoutedButton renders 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .c1:hover {
@@ -61,22 +63,15 @@ exports[`RoutedButton renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 

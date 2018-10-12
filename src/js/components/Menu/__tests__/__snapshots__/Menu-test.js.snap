@@ -67,22 +67,15 @@ exports[`Menu basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -219,22 +212,15 @@ exports[`Menu close by clicking outside 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -496,77 +482,63 @@ exports[`Menu close by clicking outside 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c9 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c9 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c11 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c11 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c4 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c10 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -676,84 +648,63 @@ exports[`Menu close by clicking outside 2`] = `
 `;
 
 exports[`Menu close by clicking outside 3`] = `
-"@media only screen and (max-width:699px) {
-  .hwHMWY {
+"@media only screen and (max-width:767px) {
+  .bTQFFR {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .hwHMWY {
+@media only screen and (max-width:767px) {
+  .bTQFFR {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .kXgRqF {
+@media only screen and (max-width:767px) {
+  .guimbD {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .kXgRqF {
+@media only screen and (max-width:767px) {
+  .guimbD {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .hvNmzo {
+@media only screen and (max-width:767px) {
+  .hYFIzN {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .hvNmzo {
+@media only screen and (max-width:767px) {
+  .hYFIzN {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .eOSniC {
+@media only screen and (max-width:767px) {
+  .dxgNlc {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .eOSniC {
+@media only screen and (max-width:767px) {
+  .dxgNlc {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .jCuMMF {
+@media only screen and (max-width:767px) {
+  .gtbAEM {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .jCuMMF {
+@media only screen and (max-width:767px) {
+  .gtbAEM {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .jeDfzo {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .GOlmK {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .iLsSdy {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -898,22 +849,15 @@ exports[`Menu close on esc 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1060,22 +1004,15 @@ exports[`Menu close on tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1222,22 +1159,15 @@ exports[`Menu custom message 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1391,22 +1321,15 @@ exports[`Menu disabled 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1554,22 +1477,15 @@ exports[`Menu navigate through suggestions and select 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1716,22 +1632,15 @@ exports[`Menu open and close on click 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1786,12 +1695,12 @@ exports[`Menu open and close on click 2`] = `
   <div>
     <button
       aria-label="Open Menu"
-      class="StyledButton-sc-323bzc-0 jeDfzo"
+      class="StyledButton-sc-323bzc-0 hFTHco"
       id="test-menu"
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 hwHMWY"
+        class="StyledBox-sc-13pk1d4-0 bTQFFR"
       >
         <span
           class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -2062,84 +1971,63 @@ exports[`Menu open and close on click 3`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c9 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c9 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c11 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c11 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c4 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c10 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c12 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -2262,84 +2150,63 @@ exports[`Menu open and close on click 3`] = `
 `;
 
 exports[`Menu open and close on click 4`] = `
-"@media only screen and (max-width:699px) {
-  .hwHMWY {
+"@media only screen and (max-width:767px) {
+  .bTQFFR {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .hwHMWY {
+@media only screen and (max-width:767px) {
+  .bTQFFR {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .kXgRqF {
+@media only screen and (max-width:767px) {
+  .guimbD {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .kXgRqF {
+@media only screen and (max-width:767px) {
+  .guimbD {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .hvNmzo {
+@media only screen and (max-width:767px) {
+  .hYFIzN {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .hvNmzo {
+@media only screen and (max-width:767px) {
+  .hYFIzN {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .eOSniC {
+@media only screen and (max-width:767px) {
+  .dxgNlc {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .eOSniC {
+@media only screen and (max-width:767px) {
+  .dxgNlc {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .jCuMMF {
+@media only screen and (max-width:767px) {
+  .gtbAEM {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .jCuMMF {
+@media only screen and (max-width:767px) {
+  .gtbAEM {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .jeDfzo {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .GOlmK {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .iLsSdy {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -2484,22 +2351,15 @@ exports[`Menu select an item 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -2646,22 +2506,15 @@ exports[`Menu with dropAlign renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -2923,77 +2776,63 @@ exports[`Menu with dropAlign renders 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c9 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c9 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c11 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c11 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c4 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c10 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -3103,91 +2942,63 @@ exports[`Menu with dropAlign renders 2`] = `
 `;
 
 exports[`Menu with dropAlign renders 3`] = `
-"@media only screen and (max-width:699px) {
-  .hwHMWY {
+"@media only screen and (max-width:767px) {
+  .bTQFFR {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .hwHMWY {
+@media only screen and (max-width:767px) {
+  .bTQFFR {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .kXgRqF {
+@media only screen and (max-width:767px) {
+  .guimbD {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .kXgRqF {
+@media only screen and (max-width:767px) {
+  .guimbD {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .hvNmzo {
+@media only screen and (max-width:767px) {
+  .hYFIzN {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .hvNmzo {
+@media only screen and (max-width:767px) {
+  .hYFIzN {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .eOSniC {
+@media only screen and (max-width:767px) {
+  .dxgNlc {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .eOSniC {
+@media only screen and (max-width:767px) {
+  .dxgNlc {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .jCuMMF {
+@media only screen and (max-width:767px) {
+  .gtbAEM {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .jCuMMF {
+@media only screen and (max-width:767px) {
+  .gtbAEM {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .jeDfzo {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .GOlmK {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .iLsSdy {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .jUYLaA {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 

@@ -23,28 +23,34 @@ exports[`Layer dark context 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    max-height: calc(100% - 0px - 0px);
-    max-width: calc(100% - 0px - 0px);
-    border-radius: 4px;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-    animation: bBMZdm 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -57,14 +63,14 @@ exports[`Layer dark context 1`] = `
 `;
 
 exports[`Layer dark context 2`] = `
-"@media only screen and (max-width:699px) {
-  .iGqzcb {
+"@media only screen and (max-width:767px) {
+  .mpRUM {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .iGqzcb {
+@media only screen and (max-width:767px) {
+  .mpRUM {
     padding: 0px;
   }
 }"
@@ -85,9 +91,17 @@ exports[`Layer full false 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -119,56 +133,49 @@ exports[`Layer full false 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 0px - 0px);
-    max-width: calc(100% - 0px - 0px);
-    border-radius: 4px;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-    animation: bBMZdm 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -206,9 +213,17 @@ exports[`Layer full horizontal 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -240,57 +255,50 @@ exports[`Layer full horizontal 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  left: 0px;
+  right: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-animation: dcHpVA 0.2s ease-in-out forwards;
+  animation: dcHpVA 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 0px - 0px);
-    max-width: calc(100% - 0px - 0px);
-    border-radius: 4px;
-    left: 0px;
-    right: 0px;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    -webkit-animation: dcHpVA 0.2s ease-in-out forwards;
-    animation: dcHpVA 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -328,9 +336,17 @@ exports[`Layer full true 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -362,55 +378,48 @@ exports[`Layer full true 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  -webkit-animation: aUlIN 0.2s ease-in-out forwards;
+  animation: aUlIN 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 0px - 0px);
-    max-width: calc(100% - 0px - 0px);
-    border-radius: 4px;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    -webkit-animation: aUlIN 0.2s ease-in-out forwards;
-    animation: aUlIN 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -448,9 +457,17 @@ exports[`Layer full vertical 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -482,57 +499,50 @@ exports[`Layer full vertical 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 0px;
+  bottom: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-animation: XCWMt 0.2s ease-in-out forwards;
+  animation: XCWMt 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 0px - 0px);
-    max-width: calc(100% - 0px - 0px);
-    border-radius: 4px;
-    top: 0px;
-    bottom: 0px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    -webkit-animation: XCWMt 0.2s ease-in-out forwards;
-    animation: XCWMt 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -577,6 +587,7 @@ exports[`Layer hidden 1`] = `
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -608,37 +619,33 @@ exports[`Layer hidden 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
 }
 
-@media only screen and (max-width:699px) {
-  .c0 {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 0px - 0px);
-    max-width: calc(100% - 0px - 0px);
-    border-radius: 4px;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -663,15 +670,15 @@ exports[`Layer hidden 2`] = `""`;
 
 exports[`Layer hidden 3`] = `
 <div
-  class="StyledLayer-rmtehz-0 kodSwP"
+  class="StyledLayer-rmtehz-0 brruzM"
   id="hidden-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-rmtehz-1 cHusQe"
+    class="StyledLayer__StyledOverlay-rmtehz-1 fkcwDv"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 eUQnuO"
+    class="StyledLayer__StyledContainer-rmtehz-2 jJVIsu"
     id="hidden-test"
   >
     This is a layer
@@ -727,9 +734,17 @@ exports[`Layer margin large 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -761,56 +776,49 @@ exports[`Layer margin large 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 48px - 48px);
+  max-width: calc(100% - 48px - 48px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 48px - 48px);
-    max-width: calc(100% - 48px - 48px);
-    border-radius: 4px;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-    animation: bBMZdm 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -848,9 +856,17 @@ exports[`Layer margin medium 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -882,56 +898,49 @@ exports[`Layer margin medium 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 24px - 24px);
+  max-width: calc(100% - 24px - 24px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 24px - 24px);
-    max-width: calc(100% - 24px - 24px);
-    border-radius: 4px;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-    animation: bBMZdm 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -969,9 +978,17 @@ exports[`Layer margin none 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1003,56 +1020,49 @@ exports[`Layer margin none 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 0px - 0px);
-    max-width: calc(100% - 0px - 0px);
-    border-radius: 4px;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-    animation: bBMZdm 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -1090,9 +1100,17 @@ exports[`Layer margin small 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1124,56 +1142,49 @@ exports[`Layer margin small 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 12px - 12px);
+  max-width: calc(100% - 12px - 12px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 12px - 12px);
-    max-width: calc(100% - 12px - 12px);
-    border-radius: 4px;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-    animation: bBMZdm 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -1211,9 +1222,17 @@ exports[`Layer margin xsmall 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1245,56 +1264,49 @@ exports[`Layer margin xsmall 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 6px - 6px);
+  max-width: calc(100% - 6px - 6px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 6px - 6px);
-    max-width: calc(100% - 6px - 6px);
-    border-radius: 4px;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-    animation: bBMZdm 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -1340,28 +1352,34 @@ exports[`Layer non-modal 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    max-height: calc(100% - 0px - 0px);
-    max-width: calc(100% - 0px - 0px);
-    border-radius: 4px;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-    animation: bBMZdm 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -1390,9 +1408,17 @@ exports[`Layer plain 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1424,56 +1450,49 @@ exports[`Layer plain 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: none;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 0px - 0px);
-    max-width: calc(100% - 0px - 0px);
+    position: relative;
+    max-height: 0;
+    max-width: 0;
     border-radius: none;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-    animation: bBMZdm 0.2s ease-in-out forwards;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -1511,9 +1530,17 @@ exports[`Layer position bottom 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1545,56 +1572,49 @@ exports[`Layer position bottom 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  bottom: 0px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  -webkit-animation: jsmUBO 0.2s ease-in-out forwards;
+  animation: jsmUBO 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 0px - 0px);
-    max-width: calc(100% - 0px - 0px);
-    border-radius: 4px;
-    bottom: 0px;
-    left: 50%;
-    -webkit-transform: translate(-50%,0);
-    -ms-transform: translate(-50%,0);
-    transform: translate(-50%,0);
-    -webkit-animation: jsmUBO 0.2s ease-in-out forwards;
-    animation: jsmUBO 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -1632,9 +1652,17 @@ exports[`Layer position center 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1666,56 +1694,49 @@ exports[`Layer position center 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 0px - 0px);
-    max-width: calc(100% - 0px - 0px);
-    border-radius: 4px;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
-    animation: bBMZdm 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -1753,9 +1774,17 @@ exports[`Layer position left 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1787,56 +1816,49 @@ exports[`Layer position left 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  left: 0px;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  -webkit-animation: fNWKbM 0.2s ease-in-out forwards;
+  animation: fNWKbM 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 0px - 0px);
-    max-width: calc(100% - 0px - 0px);
-    border-radius: 4px;
-    left: 0px;
-    top: 50%;
-    -webkit-transform: translate(0,-50%);
-    -ms-transform: translate(0,-50%);
-    transform: translate(0,-50%);
-    -webkit-animation: fNWKbM 0.2s ease-in-out forwards;
-    animation: fNWKbM 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -1874,9 +1896,17 @@ exports[`Layer position right 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -1908,56 +1938,49 @@ exports[`Layer position right 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  right: 0px;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  -webkit-animation: lhngOP 0.2s ease-in-out forwards;
+  animation: lhngOP 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 0px - 0px);
-    max-width: calc(100% - 0px - 0px);
-    border-radius: 4px;
-    right: 0px;
-    top: 50%;
-    -webkit-transform: translate(0,-50%);
-    -ms-transform: translate(0,-50%);
-    transform: translate(0,-50%);
-    -webkit-animation: lhngOP 0.2s ease-in-out forwards;
-    animation: lhngOP 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 
@@ -1995,9 +2018,17 @@ exports[`Layer position top 1`] = `
   z-index: 10;
   pointer-events: none;
   outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .c1 {
+  position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -2029,56 +2060,49 @@ exports[`Layer position top 1`] = `
   outline: none;
   pointer-events: all;
   z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 0px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  -webkit-animation: bAkQbM 0.2s ease-in-out forwards;
+  animation: bAkQbM 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c0 {
     position: absolute;
-    top: 0;
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    min-height: 100vh;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
+@media only screen and (max-width:767px) {
   .c1 {
-    position: absolute;
+    position: relative;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c2 {
-    position: fixed;
-    max-height: calc(100% - 0px - 0px);
-    max-width: calc(100% - 0px - 0px);
-    border-radius: 4px;
-    top: 0px;
-    left: 50%;
-    -webkit-transform: translate(-50%,0);
-    -ms-transform: translate(-50%,0);
-    transform: translate(-50%,0);
-    -webkit-animation: bAkQbM 0.2s ease-in-out forwards;
-    animation: bAkQbM 0.2s ease-in-out forwards;
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 

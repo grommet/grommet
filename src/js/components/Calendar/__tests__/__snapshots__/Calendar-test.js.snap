@@ -326,98 +326,76 @@ exports[`Calendar date renders 1`] = `
   margin-bottom: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c6 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c6 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c8 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c8 {
     padding: 0px;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c7 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c14 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c17 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
-    font-weight: 600;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -1740,98 +1718,76 @@ exports[`Calendar dates renders 1`] = `
   margin-bottom: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c6 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c6 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c8 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c8 {
     padding: 0px;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c7 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c14 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c18 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
-    font-weight: 600;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -3154,98 +3110,76 @@ exports[`Calendar disabled renders 1`] = `
   margin-bottom: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c6 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c6 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c8 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c8 {
     padding: 0px;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c7 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c14 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c18 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
-    font-weight: 600;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -4568,98 +4502,76 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   margin-bottom: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c6 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c6 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c8 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c8 {
     padding: 0px;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c7 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c14 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c17 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
-    font-weight: 600;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -6966,98 +6878,76 @@ exports[`Calendar renders 1`] = `
   margin-bottom: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c6 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c6 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c8 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c8 {
     padding: 0px;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c7 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c14 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c17 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
-    font-weight: 600;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -8606,156 +8496,132 @@ exports[`Calendar size renders 1`] = `
   margin-bottom: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c20 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c20 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c6 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c6 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c8 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c8 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     padding-left: 3px;
     padding-right: 3px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c27 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c27 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .c7 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c14 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c17 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c21 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
-    font-weight: 600;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c21 {
     margin-top: 0px;
     margin-bottom: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c28 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
-    font-weight: 600;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c28 {
     margin-top: 0px;
     margin-bottom: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
-    font-weight: 600;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     margin-top: 0px;
     margin-bottom: 0px;

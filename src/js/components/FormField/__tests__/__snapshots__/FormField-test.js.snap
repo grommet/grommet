@@ -90,31 +90,31 @@ exports[`renders 1`] = `
   width: 100%;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c1 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }
@@ -230,51 +230,51 @@ exports[`renders error 1`] = `
   color: #EB6060;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c1 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     margin-top: 3px;
     margin-bottom: 3px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     border-bottom: solid 1px #EB6060;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }
@@ -377,51 +377,51 @@ exports[`renders help 1`] = `
   color: #777777;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c1 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin-top: 3px;
     margin-bottom: 3px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }
@@ -498,31 +498,31 @@ exports[`renders htmlFor 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c1 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }
@@ -615,51 +615,51 @@ exports[`renders label 1`] = `
   line-height: 24px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c1 {
     margin-bottom: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c1 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin-top: 3px;
     margin-bottom: 3px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }

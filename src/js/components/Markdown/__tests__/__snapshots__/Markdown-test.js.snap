@@ -46,39 +46,35 @@ exports[`Markdown renders 1`] = `
   font-weight: 600;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
     max-width: 816px;
-    font-weight: 600;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c3 {
     font-size: 22px;
     line-height: 28px;
     max-width: 528px;
-    font-weight: 600;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c4 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
-    font-weight: 600;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
-    font-weight: 600;
   }
 }
 

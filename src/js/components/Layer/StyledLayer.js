@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 
 import {
-  backgroundStyle, baseStyle, lapAndUp, palm,
+  backgroundStyle, baseStyle, breakpointStyle,
 } from '../../utils';
 
 const hiddenPositionStyle = css`
@@ -21,6 +21,13 @@ const desktopLayerStyle = `
   height: 100vh;
 `;
 
+const responsiveLayerStyle = `
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+`;
+
 export const StyledLayer = styled.div`
   ${baseStyle}
   background: unset;
@@ -29,29 +36,32 @@ export const StyledLayer = styled.div`
   pointer-events: none;
   outline: none;
 
-  ${props => props.responsive && palm(`
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-  `)}
-
   ${(props) => {
     if (props.position === 'hidden') {
       return hiddenPositionStyle;
     }
-    if (props.responsive) {
-      return lapAndUp(desktopLayerStyle);
+    const styles = [desktopLayerStyle];
+    if (props.responsive && props.theme.layer.responsiveBreakpoint) {
+      const breakpoint = (
+        props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint]);
+      styles.push(breakpointStyle(breakpoint, responsiveLayerStyle));
     }
-    return desktopLayerStyle;
+    return styles;
   }}
 
   ${props => props.theme.layer && props.theme.layer.extend}
 `;
 
 export const StyledOverlay = styled.div`
-  ${props => (props.responsive ? lapAndUp('position: absolute;') : 'position: absolute;')}
+  position: absolute;
+  ${(props) => {
+    if (props.responsive && props.theme.layer.responsiveBreakpoint) {
+      const breakpoint = (
+        props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint]);
+      return breakpointStyle(breakpoint, 'position: relative;');
+    }
+    return '';
+  }}
   top: 0px;
   left: 0px;
   right: 0px;
@@ -328,11 +338,26 @@ const POSITIONS = {
 
 const desktopContainerStyle = css`
   position: ${props => (props.modal ? 'absolute' : 'fixed')};
-  max-height: ${props => `calc(100% - ${MARGINS.top(props.margin, props.theme)} - ${MARGINS.bottom(props.margin, props.theme)})`};
-  max-width: ${props => `calc(100% - ${MARGINS.left(props.margin, props.theme)} - ${MARGINS.right(props.margin, props.theme)})`};
+  max-height: ${props => (
+    `calc(100% - ${MARGINS.top(props.margin, props.theme)} - ${MARGINS.bottom(props.margin, props.theme)})`)};
+  max-width: ${props => (
+    `calc(100% - ${MARGINS.left(props.margin, props.theme)} - ${MARGINS.right(props.margin, props.theme)})`)};
   border-radius: ${props => (props.plain ? 'none' : props.theme.layer.border.radius)};
   ${props => (props.position !== 'hidden'
     && POSITIONS[props.position][props.full](props.margin, props.theme)) || ''}
+`;
+
+const responsiveContainerStyle = css`
+    position: relative;
+    max-height: 0;
+    max-width: 0;
+    border-radius: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    animation: none;
 `;
 
 export const StyledContainer = styled.div`
@@ -345,13 +370,16 @@ export const StyledContainer = styled.div`
   pointer-events: all;
   z-index: 15;
 
-  ${props => props.responsive && palm(`
-    min-height: 100%;
-    min-width: 100%;
-  `)}
+  ${desktopContainerStyle}
 
-  ${props => (props.responsive ? lapAndUp(desktopContainerStyle) : desktopContainerStyle)}
+  ${(props) => {
+    if (props.responsive && props.theme.layer.responsiveBreakpoint) {
+      const breakpoint = (
+        props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint]);
+      if (breakpoint) {
+        return breakpointStyle(breakpoint, responsiveContainerStyle);
+      }
+    }
+    return '';
+  }}
 `;
-
-// ${props => props.full && fullStyle(props.full, props.margin, props.theme)}
-// ${props => props.margin && edgeStyle('margin', props.margin, props.theme)}

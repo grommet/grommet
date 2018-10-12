@@ -1,13 +1,14 @@
-export const getBreakpoint = (windowWidth, theme) => Object.keys(theme.global.breakpoints)
-  .map(
-    size => ({ size, value: theme.global.breakpoints[size] })
-  )
-  .sort(
-    (a, b) => b.value > a.value
-  )
-  .reduce(
-    (size, breakpoint) => (
-      (windowWidth <= breakpoint.value) ? breakpoint.size : size
-    ),
-    'wide'
-  );
+export const getBreakpoint = (windowWidth, theme) => {
+  let result;
+  Object.keys(theme.global.breakpoints)
+  .some((name) => {
+    const breakpoint = theme.global.breakpoints[name];
+    if ((!breakpoint.min || breakpoint.min <= windowWidth)
+      && (!breakpoint.max || breakpoint.max >= windowWidth)) {
+      result = name;
+      return true;
+    }
+    return false;
+  });
+  return result;
+};

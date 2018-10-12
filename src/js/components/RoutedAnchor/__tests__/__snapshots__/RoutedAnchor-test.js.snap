@@ -54,13 +54,13 @@ exports[`RoutedAnchor renders 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:767px) {
   .c2 {
     padding: 0px;
   }
