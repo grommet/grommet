@@ -32,6 +32,26 @@ export const doc = (Calendar) => {
         selectable. Items that are an array indicate a range of dates.`),
     firstDayOfWeek: PropTypes.oneOf([0, 1])
       .description('The first day of the week. 0 for Sunday. 1 for Monday.'),
+    header: PropTypes.func.description(
+      `If specified, the entire calendar header will be managed by the caller.
+The function passes the following options:
+
+\`\`\`
+  {
+    date: Date,
+    locale: string,
+    onPreviousMonth: func,
+    onNextMonth: func,
+    previousInBound: bool,
+    nextInBound: bool,
+  }
+\`\`\`
+
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the calendar to move between months.
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using \`bounds\`, if the current date is within that range.
+You can then use that to disable the previous and next buttons.
+`
+    ),
     locale: PropTypes.string.description('The locale to use.'),
     onSelect: PropTypes.func.description(`Called with an ISO8601 date when
       the user selects a day.

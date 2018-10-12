@@ -109,6 +109,7 @@ export interface CalendarProps {
   dates?: string | string[][];
   disabled?: string | string[][];
   firstDayOfWeek?: \\"0\\" | \\"1\\";
+  header?: (...args: any[]) => any;
   locale?: string;
   onSelect?: (...args: any[]) => any;
   size?: \\"small\\" | \\"medium\\" | \\"large\\" | string;
