@@ -43,6 +43,7 @@ class Menu extends Component {
     if (activeItemIndex >= 0) {
       event.preventDefault();
       event.stopPropagation();
+      /* eslint-disable react/no-find-dom-node */
       findDOMNode(this.buttonRefs[activeItemIndex]).click();
     }
   }
@@ -74,8 +75,9 @@ class Menu extends Component {
       });
     } else {
       const { items } = this.props;
-      const index = (activeItemIndex === -1 ? (items.length - 1) :
-        Math.max(activeItemIndex - 1, 0));
+      const index = (activeItemIndex === -1
+        ? (items.length - 1)
+        : Math.max(activeItemIndex - 1, 0));
       this.setState({ activeItemIndex: index });
       // this.setState({ activeSuggestionIndex: index },
       //   this._announceSuggestion.bind(this, index));
@@ -113,8 +115,8 @@ class Menu extends Component {
         gap={(label && icon !== false) ? 'small' : undefined}
       >
         <Text size={size}>{label}</Text>
-        {(icon !== false) ?
-          ((icon !== true && icon) || <MenuIcon color={iconColor} size={size} />)
+        {(icon !== false)
+          ? ((icon !== true && icon) || <MenuIcon color={iconColor} size={size} />)
           : null}
       </Box>
     );
@@ -151,13 +153,13 @@ class Menu extends Component {
             open={open}
             onOpen={() => this.setState({ open: true })}
             onClose={() => this.setState({ open: false })}
-            dropContent={
+            dropContent={(
               <ContainerBox background={dropBackground}>
                 {dropAlign.top === 'top' ? controlMirror : undefined}
                 <Box overflow='auto'>
                   {items.map(
                     (item, index) => (
-                      <Box key={`menuItem_${index}`} flex={false}>
+                      <Box key={`menuItem_${index + 0}`} flex={false}>
                         <Button
                           ref={(ref) => {
                             this.buttonRefs[index] = ref;
@@ -173,7 +175,8 @@ class Menu extends Component {
                           href={item.href}
                         >
                           <Box align='start' pad='small' direction='row'>
-                            {item.icon}{item.label}
+                            {item.icon}
+                            {item.label}
                           </Box>
                         </Button>
                       </Box>
@@ -182,7 +185,7 @@ class Menu extends Component {
                 </Box>
                 {dropAlign.bottom === 'bottom' ? controlMirror : undefined }
               </ContainerBox>
-            }
+            )}
           >
             {content}
           </DropButton>

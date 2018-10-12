@@ -30,40 +30,40 @@ const richAccordionTheme = {
   },
 };
 
-class SimpleAccordion extends Component {
-  render() {
-    const { animate, multiple, ...rest } = this.props;
-    return (
-      <Grommet theme={grommet}>
-        <Box {...rest}>
-          <Accordion animate={animate} multiple={multiple}>
-            <AccordionPanel label='Panel 1'>
-              <Box background='light-2' style={{ height: '800px' }}>
-                Panel 1 contents
-              </Box>
-            </AccordionPanel>
-            <AccordionPanel label='Panel 2'>
-              <Box background='light-2' style={{ height: '50px' }}>
-                Panel 2 contents
-              </Box>
-            </AccordionPanel>
-            <AccordionPanel label='Panel 3'>
-              <Box background='light-2' style={{ height: '300px' }}>
-                Panel 3 contents
-              </Box>
-            </AccordionPanel>
-          </Accordion>
-        </Box>
-      </Grommet>
-    );
-  }
-}
+const SimpleAccordion = (props) => {
+  const { animate, multiple, ...rest } = props;
+  return (
+    <Grommet theme={grommet}>
+      <Box {...rest}>
+        <Accordion animate={animate} multiple={multiple}>
+          <AccordionPanel label='Panel 1'>
+            <Box background='light-2' style={{ height: '800px' }}>
+              Panel 1 contents
+            </Box>
+          </AccordionPanel>
+          <AccordionPanel label='Panel 2'>
+            <Box background='light-2' style={{ height: '50px' }}>
+              Panel 2 contents
+            </Box>
+          </AccordionPanel>
+          <AccordionPanel label='Panel 3'>
+            <Box background='light-2' style={{ height: '300px' }}>
+              Panel 3 contents
+            </Box>
+          </AccordionPanel>
+        </Accordion>
+      </Box>
+    </Grommet>
+  );
+};
 
 class RichPanel extends Component {
   state = {
     hovering: false,
   }
+
   renderPanelTitle = () => {
+    /* eslint-disable-next-line react/prop-types */
     const { icon, label } = this.props;
     const { hovering } = this.state;
     return (
@@ -80,13 +80,17 @@ class RichPanel extends Component {
       </Box>
     );
   }
+
   render() {
+    /* eslint-disable-next-line react/prop-types */
     const { children } = this.props;
     return (
       <AccordionPanel
         label={this.renderPanelTitle()}
         onMouseOver={() => this.setState({ hovering: true })}
         onMouseOut={() => this.setState({ hovering: false })}
+        onFocus={() => this.setState({ hovering: true })}
+        onBlur={() => this.setState({ hovering: false })}
       >
         {children}
       </AccordionPanel>
@@ -117,11 +121,12 @@ class RichAccordion extends Component {
   state = {
     highlightLoaded: false,
   }
+
   render() {
     const { highlightLoaded } = this.state;
     return (
-      <Grommet full={true} theme={grommet}>
-        <Box fill={true} direction='row'>
+      <Grommet full theme={grommet}>
+        <Box fill direction='row'>
           <Box basis='medium' border='all'>
             <Box
               flex={false}
@@ -136,7 +141,7 @@ class RichAccordion extends Component {
             </Box>
             <ThemeContext.Extend value={richAccordionTheme}>
               <Accordion
-                multiple={true}
+                multiple
                 onActive={(activeIndexes) => {
                   if (activeIndexes.includes(1)) {
                     // give sometime to emulate an async call
@@ -181,7 +186,9 @@ class RichAccordion extends Component {
                       style={{ maxHeight: '400px' }}
                     >
                       <Text color='dark-5'>
-                        Below is the top message in <strong>#announcements</strong>.
+                        Below is the top message in
+                        <strong>#announcements</strong>
+                        .
                       </Text>
                       <Text>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -279,6 +286,7 @@ class CustomHeaderAccordion extends Component {
   state = {
     activeIndex: [0],
   }
+
   render() {
     const { activeIndex } = this.state;
     return (
@@ -318,6 +326,6 @@ class CustomHeaderAccordion extends Component {
 storiesOf('Accordion', module)
   .add('Simple', () => <SimpleAccordion />)
   .add('Dark no animation', () => <SimpleAccordion animate={false} background='dark-2' />)
-  .add('Multiple', () => <SimpleAccordion multiple={true} />)
+  .add('Multiple', () => <SimpleAccordion multiple />)
   .add('Rich', () => <RichAccordion />)
   .add('Custom Header', () => <CustomHeaderAccordion />);

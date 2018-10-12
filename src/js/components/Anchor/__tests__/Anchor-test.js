@@ -5,7 +5,7 @@ import 'jest-styled-components';
 import { findAllByType } from '../../../utils';
 
 import { Grommet } from '../../Grommet';
-import { Anchor } from '../';
+import { Anchor } from '..';
 
 test('Anchor renders', () => {
   const component = renderer.create(
@@ -60,7 +60,7 @@ test('Anchor warns about invalid icon render', () => {
 test('Anchor primary renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor href='#' primary={true} label='Test' />
+      <Anchor href='#' primary label='Test' />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -70,7 +70,7 @@ test('Anchor primary renders', () => {
 test('Anchor focus renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor href='#' focus={true} label='Test' />
+      <Anchor href='#' focus label='Test' />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -80,7 +80,7 @@ test('Anchor focus renders', () => {
 test('Anchor disabled renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor disabled={true} />
+      <Anchor disabled />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -101,7 +101,7 @@ test('Anchor reverse icon label renders', () => {
   const component = renderer.create(
     <Grommet>
       <Anchor
-        reverse={true}
+        reverse
         icon={<svg />}
         label='Test'
         onClick={() => {}}

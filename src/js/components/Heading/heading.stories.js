@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
 import { Grommet, Grid, Heading } from 'grommet';
@@ -10,35 +11,36 @@ const H = ({ level, size }) => (
   </Heading>
 );
 
+H.propTypes = {
+  level: PropTypes.number.isRequired,
+  size: PropTypes.string.isRequired,
+};
+
 const Set = ({ size }) => (
   <div>
     {[1, 2, 3, 4].map(level => <H key={level} level={level} size={size} />)}
   </div>
 );
 
-class All extends Component {
-  render() {
-    return (
-      <Grommet theme={grommet}>
-        <Grid columns='large' gap='medium'>
-          <Set size='medium' />
-          <Set size='small' />
-          <Set size='large' />
-        </Grid>
-      </Grommet>
-    );
-  }
-}
+Set.propTypes = {
+  size: PropTypes.string.isRequired,
+};
 
-class Color extends Component {
-  render() {
-    return (
-      <Grommet theme={grommet}>
-        <Heading color='accent-1'>Colored Heading</Heading>
-      </Grommet>
-    );
-  }
-}
+const All = () => (
+  <Grommet theme={grommet}>
+    <Grid columns='large' gap='medium'>
+      <Set size='medium' />
+      <Set size='small' />
+      <Set size='large' />
+    </Grid>
+  </Grommet>
+);
+
+const Color = () => (
+  <Grommet theme={grommet}>
+    <Heading color='accent-1'>Colored Heading</Heading>
+  </Grommet>
+);
 
 storiesOf('Heading', module)
   .add('All', () => <All />)

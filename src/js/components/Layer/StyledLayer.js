@@ -1,6 +1,8 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { backgroundStyle, baseStyle, lapAndUp, palm } from '../../utils';
+import {
+  backgroundStyle, baseStyle, lapAndUp, palm,
+} from '../../utils';
 
 const hiddenPositionStyle = css`
   left: -100%;
@@ -38,7 +40,8 @@ export const StyledLayer = styled.div`
   ${(props) => {
     if (props.position === 'hidden') {
       return hiddenPositionStyle;
-    } else if (props.responsive) {
+    }
+    if (props.responsive) {
       return lapAndUp(desktopLayerStyle);
     }
     return desktopLayerStyle;
@@ -53,19 +56,19 @@ export const StyledOverlay = styled.div`
   left: 0px;
   right: 0px;
   bottom: 0px;
-  ${props => props.theme.layer.overlay.background &&
-    backgroundStyle(props.theme.layer.overlay.background, props.theme)}
+  ${props => props.theme.layer.overlay.background
+    && backgroundStyle(props.theme.layer.overlay.background, props.theme)}
   pointer-events: all;
 `;
 
 const MARGINS = {
   top: (margin, theme) => theme.global.edgeSize[margin.top || margin.vertical || margin] || '0px',
-  bottom: (margin, theme) =>
-    theme.global.edgeSize[margin.bottom || margin.vertical || margin] || '0px',
-  left: (margin, theme) =>
-    theme.global.edgeSize[margin.left || margin.horizontal || margin] || '0px',
-  right: (margin, theme) =>
-    theme.global.edgeSize[margin.right || margin.horizontal || margin] || '0px',
+  bottom: (margin, theme) => (
+    theme.global.edgeSize[margin.bottom || margin.vertical || margin] || '0px'),
+  left: (margin, theme) => (
+    theme.global.edgeSize[margin.left || margin.horizontal || margin] || '0px'),
+  right: (margin, theme) => (
+    theme.global.edgeSize[margin.right || margin.horizontal || margin] || '0px'),
 };
 
 const KEYFRAMES = {
@@ -328,8 +331,8 @@ const desktopContainerStyle = css`
   max-height: ${props => `calc(100% - ${MARGINS.top(props.margin, props.theme)} - ${MARGINS.bottom(props.margin, props.theme)})`};
   max-width: ${props => `calc(100% - ${MARGINS.left(props.margin, props.theme)} - ${MARGINS.right(props.margin, props.theme)})`};
   border-radius: ${props => (props.plain ? 'none' : props.theme.layer.border.radius)};
-  ${props => (props.position !== 'hidden' &&
-    POSITIONS[props.position][props.full](props.margin, props.theme)) || ''}
+  ${props => (props.position !== 'hidden'
+    && POSITIONS[props.position][props.full](props.margin, props.theme)) || ''}
 `;
 
 export const StyledContainer = styled.div`

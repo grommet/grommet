@@ -74,7 +74,7 @@ class Tabs extends Component {
         <Box
           direction='row'
           justify={justify}
-          wrap={true}
+          wrap
           {...rest}
         >
           {tabs}

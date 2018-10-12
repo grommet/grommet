@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { TextArea } from '../';
+import { TextArea } from '..';
 
 jest.mock('react-dom');
 
@@ -30,7 +30,7 @@ test('TextArea placeholder renders', () => {
 test('TextArea plain renders', () => {
   const component = renderer.create(
     <Grommet>
-      <TextArea id='item' name='item' plain={true} />
+      <TextArea id='item' name='item' plain />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -40,7 +40,7 @@ test('TextArea plain renders', () => {
 test('TextArea focusIndicator renders', () => {
   const component = renderer.create(
     <Grommet>
-      <TextArea id='item' name='item' focusIndicator={true} />
+      <TextArea id='item' name='item' focusIndicator />
     </Grommet>
   );
   const tree = component.toJSON();

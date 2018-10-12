@@ -25,9 +25,9 @@ export const StyledCheckBoxContainer = styled.label`
   ${props => props.disabled && disabledStyle}
 
   > div:first-child {
-    ${props => (props.reverse ?
-      `margin-left: ${props.theme.global.edgeSize.small};` :
-      `margin-right: ${props.theme.global.edgeSize.small};`
+    ${props => (props.reverse
+      ? `margin-left: ${props.theme.global.edgeSize.small};`
+      : `margin-right: ${props.theme.global.edgeSize.small};`
     )}
   }
 
@@ -46,8 +46,8 @@ export const StyledCheckBoxInput = styled.input`
   cursor: pointer;
 
   :checked + div {
-    border-color: ${props => (props.theme.checkBox.check.color ||
-      props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
+    border-color: ${props => (props.theme.checkBox.check.color
+      || props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
   }
 
   :checked + div > svg {
@@ -56,8 +56,8 @@ export const StyledCheckBoxInput = styled.input`
 
   :checked + span > span {
     left: ${props => props.theme.checkBox.size};
-    background: ${props => (props.theme.checkBox.check.color ||
-      props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
+    background: ${props => (props.theme.checkBox.check.color
+      || props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
   }
 `;
 
@@ -83,8 +83,8 @@ export const StyledCheckBoxBox = styled.div`
     width: ${props => props.theme.checkBox.size};
     height: ${props => props.theme.checkBox.size};
     stroke-width: ${props => props.theme.checkBox.check.width};
-    stroke: ${props => (props.theme.checkBox.check.color ||
-      props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
+    stroke: ${props => (props.theme.checkBox.check.color
+      || props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
   }
 
   ${props => props.focus && focusStyle};

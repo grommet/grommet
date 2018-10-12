@@ -1,9 +1,11 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import { render, Simulate } from 'react-testing-library';
+import { render, fireEvent } from 'react-testing-library';
 
-import { Accordion, AccordionPanel, Box, Grommet } from '../../';
+import {
+  Accordion, AccordionPanel, Box, Grommet,
+} from '../..';
 
 describe('Accordion', () => {
   test('no AccordionPanel', () => {
@@ -88,7 +90,7 @@ describe('Accordion', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByText('Panel 2'));
+    fireEvent.click(getByText('Panel 2'));
 
     // wait for panel animation to finish
     setTimeout(() => {
@@ -115,7 +117,7 @@ describe('Accordion', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByText('Panel 2'));
+    fireEvent.click(getByText('Panel 2'));
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -126,7 +128,7 @@ describe('Accordion', () => {
       <Grommet>
         <Accordion
           animate={false}
-          multiple={true}
+          multiple
           onActive={onActive}
         >
           <AccordionPanel label='Panel 1'>
@@ -140,22 +142,22 @@ describe('Accordion', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByText('Panel 2'));
+    fireEvent.click(getByText('Panel 2'));
     expect(onActive).toBeCalledWith([1]);
 
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByText('Panel 1'));
+    fireEvent.click(getByText('Panel 1'));
     expect(onActive).toBeCalledWith([1, 0]);
 
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByText('Panel 2'));
+    fireEvent.click(getByText('Panel 2'));
     expect(onActive).toBeCalledWith([0]);
 
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByText('Panel 1'));
+    fireEvent.click(getByText('Panel 1'));
     expect(onActive).toBeCalledWith([]);
 
     expect(container.firstChild).toMatchSnapshot();
@@ -177,7 +179,7 @@ describe('Accordion', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByText('Panel 1'));
+    fireEvent.click(getByText('Panel 1'));
     expect(onActive).toBeCalledWith([0]);
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -190,6 +192,8 @@ describe('Accordion', () => {
             label='Panel 1'
             onMouseOver={() => {}}
             onMouseOut={() => {}}
+            onFocus={() => {}}
+            onBlur={() => {}}
           >
             Panel body 1
           </AccordionPanel>
@@ -197,6 +201,8 @@ describe('Accordion', () => {
             label='Panel 2'
             onMouseOver={() => {}}
             onMouseOut={() => {}}
+            onFocus={() => {}}
+            onBlur={() => {}}
           >
             Panel body 2
           </AccordionPanel>
@@ -205,16 +211,16 @@ describe('Accordion', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.mouseOver(getByText('Panel 1'));
+    fireEvent.mouseOver(getByText('Panel 1'));
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.mouseOver(getByText('Panel 2'));
+    fireEvent.mouseOver(getByText('Panel 2'));
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.mouseOut(getByText('Panel 1'));
+    fireEvent.mouseOut(getByText('Panel 1'));
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.mouseOut(getByText('Panel 2'));
+    fireEvent.mouseOut(getByText('Panel 2'));
     expect(container.firstChild).toMatchSnapshot();
   });
 });

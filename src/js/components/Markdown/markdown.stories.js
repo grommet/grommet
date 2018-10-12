@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Grommet, Markdown } from 'grommet';
@@ -13,15 +13,11 @@ const CONTENT = `
   [reference](#)
 `;
 
-class SimpleMarkdown extends Component {
-  render() {
-    return (
-      <Grommet theme={grommet}>
-        <Markdown>{CONTENT}</Markdown>
-      </Grommet>
-    );
-  }
-}
+const SimpleMarkdown = () => (
+  <Grommet theme={grommet}>
+    <Markdown>{CONTENT}</Markdown>
+  </Grommet>
+);
 
 storiesOf('Markdown', module)
   .add('Simple Markdown', () => <SimpleMarkdown />);

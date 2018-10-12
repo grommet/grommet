@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { cleanup, render, Simulate } from 'react-testing-library';
+import { cleanup, render, fireEvent } from 'react-testing-library';
 
 import { Grommet } from '../../Grommet';
-import { RangeSelector } from '../';
+import { RangeSelector } from '..';
 
 describe('RangeSelector', () => {
   afterEach(cleanup);
@@ -43,7 +43,7 @@ describe('RangeSelector', () => {
   test('invert', () => {
     const component = renderer.create(
       <Grommet>
-        <RangeSelector invert={true} values={[20, 30]} />
+        <RangeSelector invert values={[20, 30]} />
         <RangeSelector invert={false} values={[20, 30]} />
       </Grommet>
     );
@@ -127,17 +127,17 @@ describe('RangeSelector', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     const lowerControl = getByLabelText('Lower Bounds');
-    Simulate.keyDown(lowerControl, { key: 'Left', keyCode: 37 });
+    fireEvent.keyDown(lowerControl, { key: 'Left', keyCode: 37 });
     expect(onChange).toBeCalled();
 
-    Simulate.keyDown(lowerControl, { key: 'Right', keyCode: 39 });
+    fireEvent.keyDown(lowerControl, { key: 'Right', keyCode: 39 });
     expect(onChange).toBeCalled();
 
     const upperControl = getByLabelText('Upper Bounds');
-    Simulate.keyDown(upperControl, { key: 'Right', keyCode: 39 });
+    fireEvent.keyDown(upperControl, { key: 'Right', keyCode: 39 });
     expect(onChange).toBeCalled();
 
-    Simulate.keyDown(upperControl, { key: 'Left', keyCode: 37 });
+    fireEvent.keyDown(upperControl, { key: 'Left', keyCode: 37 });
     expect(onChange).toBeCalled();
   });
 
@@ -150,7 +150,7 @@ describe('RangeSelector', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(container.firstChild.firstChild, { clientX: 0, clientY: 0 });
+    fireEvent.click(container.firstChild.firstChild, { clientX: 0, clientY: 0 });
     expect(onChange).toBeCalled();
 
     const map = {};
@@ -158,13 +158,13 @@ describe('RangeSelector', () => {
       map[event] = cb;
     });
     const lowerControl = getByLabelText('Lower Bounds');
-    Simulate.mouseDown(lowerControl);
+    fireEvent.mouseDown(lowerControl);
     map.mousemove({ clientX: 0, clientY: 0 });
     expect(onChange).toBeCalled();
 
     map.mouseup();
     const upperControl = getByLabelText('Upper Bounds');
-    Simulate.mouseDown(upperControl);
+    fireEvent.mouseDown(upperControl);
     map.mousemove({ clientX: 0, clientY: 0 });
     expect(onChange).toBeCalled();
     map.mouseup();

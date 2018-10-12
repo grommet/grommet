@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { Stack } from '../';
+import { Stack } from '..';
 
 const CONTENTS = [
   <div key={1}>first</div>,
@@ -53,7 +53,7 @@ test('anchor renders', () => {
 test('fill renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Stack fill={true}>{CONTENTS}</Stack>
+      <Stack fill>{CONTENTS}</Stack>
       <Stack fill={false}>{CONTENTS}</Stack>
     </Grommet>
   );

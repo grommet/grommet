@@ -35,33 +35,35 @@
     "jsx-quotes": ["error", "prefer-single"],
     "no-console": 0,
     "quote-props": ["error", "consistent"],
-    "react/forbid-prop-types": 0,  // Soft requirement now, try hard requ in future
-    "react/jsx-boolean-value": [1, "always"],
+    // "react/forbid-prop-types": 0,  // Soft requirement now, try hard requ in future
+    // "react/jsx-boolean-value": [1, "always"],
     "react/jsx-filename-extension": 0,
-    "react/jsx-first-prop-new-line": [1, "multiline"],
-    "react/jsx-max-props-per-line": [1, { "when": "multiline" }],
-    "react/no-multi-comp": 0,  // Soft requirement now, try hard requ in future
-    "react/prefer-stateless-function": 0,  // Soft requirement now, try hard requ in future
-    "react/no-find-dom-node": 0,
-    "react/prop-types": 0,
-    "react/sort-comp": 0,
-    "react/no-array-index-key": 0,
-    "import/no-extraneous-dependencies": 0,
-    "import/prefer-default-export": 0,
-    "no-alert": 0,
-    "jsx-a11y/href-no-hash": 0,
+    // "react/jsx-first-prop-new-line": [1, "multiline"],
+    // "react/jsx-max-props-per-line": [1, { "when": "multiline" }],
+    // "react/no-multi-comp": 0,  // Soft requirement now, try hard requ in future
+    // "react/prefer-stateless-function": 0,  // Soft requirement now, try hard requ in future
+    // "react/no-find-dom-node": 0,
+    // "react/prop-types": 0,
+    // "react/sort-comp": 0,
+    // "react/no-array-index-key": 0,
+    // "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0
+    // "no-alert": 0,
+    // "jsx-a11y/href-no-hash": 0
     // clean up the code for these
-    "function-paren-newline": 0,
-    "object-curly-newline": 0,
-    "prefer-destructuring": 0,
-    "jsx-a11y/mouse-events-have-key-events": 0
+    // "function-paren-newline": 0,
+    // "object-curly-newline": 0,
+    // "prefer-destructuring": 0,
+    // "jsx-a11y/mouse-events-have-key-events": 0
   },
   "overrides": [
     {
       "files": ["*.stories.js"],
       "rules": {
         "import/no-unresolved": 0,
-        "import/extensions": 0
+        "import/extensions": 0,
+        "import/no-extraneous-dependencies": 0,
+        "react/no-multi-comp": 0
       }
     }
   ]

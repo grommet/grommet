@@ -29,7 +29,10 @@ class RangeSelector extends Component {
   }
 
   valueForMouseCoord = (event) => {
-    const { direction, max, min, step } = this.props;
+    const {
+      direction, max, min, step,
+    } = this.props;
+    /* eslint-disable-next-line react/no-find-dom-node */
     const rect = findDOMNode(this.containerRef.current).getBoundingClientRect();
     if (direction === 'vertical') {
       const y = event.clientY - (rect.y || 0); // unit test resilience
@@ -48,8 +51,8 @@ class RangeSelector extends Component {
     if (value <= values[0] || (value < values[1] && lastChange === 'lower')) {
       this.setState({ lastChange: 'lower' },
         () => onChange([value, values[1]]));
-    } else if (value >= values[1] ||
-      (value > values[0] && lastChange === 'upper')) {
+    } else if (value >= values[1]
+      || (value > values[0] && lastChange === 'upper')) {
       this.setState({ lastChange: 'upper' },
         () => onChange([values[0], value]));
     }
@@ -75,7 +78,9 @@ class RangeSelector extends Component {
   }
 
   mouseMove = (event) => {
-    const { max, min, onChange, values } = this.props;
+    const {
+      max, min, onChange, values,
+    } = this.props;
     const { changing, moveValue } = this.state;
     const value = this.valueForMouseCoord(event);
     let nextValues;
@@ -125,8 +130,9 @@ class RangeSelector extends Component {
       >
         <Box
           style={{ flex: `${(lower - min) * scale} 0 0` }}
-          background={invert ?
-            { color: (color || 'light-4'), opacity } : undefined}
+          background={invert
+            ? { color: (color || 'light-4'), opacity }
+            : undefined}
           fill={fill}
           round={round}
         />
@@ -139,20 +145,20 @@ class RangeSelector extends Component {
           edge='lower'
           theme={theme}
           onMouseDown={onChange ? this.lowerMouseDown : undefined}
-          onDecrease={(onChange && lower > min) ? () =>
-            onChange([lower - step, upper])
-          : undefined}
-          onIncrease={(onChange && lower < upper) ? () =>
-            onChange([lower + step, upper])
-          : undefined}
+          onDecrease={(onChange && lower > min)
+            ? () => onChange([lower - step, upper])
+            : undefined}
+          onIncrease={(onChange && lower < upper)
+            ? () => onChange([lower + step, upper])
+            : undefined}
         />
         <Box
           style={{
             flex: `${((upper - lower) + step) * scale} 0 0`,
             cursor: (direction === 'vertical' ? 'ns-resize' : 'ew-resize'),
           }}
-          background={invert ? undefined :
-            { color: (color || 'brand'), opacity }}
+          background={invert ? undefined
+            : { color: (color || 'brand'), opacity }}
           fill={fill}
           round={round}
           onMouseDown={onChange ? this.selectionMouseDown : undefined}
@@ -165,17 +171,18 @@ class RangeSelector extends Component {
           edge='upper'
           theme={theme}
           onMouseDown={onChange ? this.upperMouseDown : undefined}
-          onDecrease={(onChange && upper > lower) ? () =>
-            onChange([lower, upper - step])
-          : undefined}
-          onIncrease={(onChange && upper < max) ? () =>
-            onChange([lower, upper + step])
-          : undefined}
+          onDecrease={(onChange && upper > lower)
+            ? () => onChange([lower, upper - step])
+            : undefined}
+          onIncrease={(onChange && upper < max)
+            ? () => onChange([lower, upper + step])
+            : undefined}
         />
         <Box
           style={{ flex: `${(max - upper) * scale} 0 0` }}
-          background={invert ?
-            { color: (color || 'light-4'), opacity } : undefined}
+          background={invert
+            ? { color: (color || 'light-4'), opacity }
+            : undefined}
           fill={fill}
           round={round}
         />

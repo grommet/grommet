@@ -6,19 +6,21 @@ import { Button } from '../Button';
 import { TableCell } from '../TableCell';
 import { withTheme } from '../hocs';
 
-const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
+const ExpanderCell = ({
+  context, expanded, onToggle, theme, ...rest
+}) => {
   const ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
   if (onToggle) {
     return (
       <TableCell
         size='xxsmall'
-        plain={true}
+        plain
         verticalAlign='top'
       >
         <Button
-          fill={true}
+          fill
           a11yTitle={expanded ? 'collapse' : 'expand'}
-          hoverIndicator={true}
+          hoverIndicator
           onClick={onToggle}
         >
           <Box {...theme.dataTable[context]} {...rest} pad='xsmall'>

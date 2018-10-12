@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
@@ -9,32 +9,30 @@ const styledComponents = {
   div: StyledHeading,
 }; // tag -> styled component
 
-class Heading extends Component {
-  static defaultProps = {
-    level: 1,
-    responsive: true,
-  };
+const Heading = (props) => {
+  const {
+    color, // munged to avoid styled-components putting it in the DOM
+    level,
+    ...rest
+  } = props;
 
-  render() {
-    const {
-      color, // munged to avoid styled-components putting it in the DOM
-      level,
-      ...rest
-    } = this.props;
-
-    const tag = `h${level}`;
-    let StyledComponent = styledComponents[tag];
-    if (!StyledComponent) {
-      StyledComponent = StyledHeading.withComponent(tag);
-      styledComponents[tag] = StyledComponent;
-    }
-
-    // enforce level to be a number
-    return (
-      <StyledComponent colorValue={color} level={+level} {...rest} />
-    );
+  const tag = `h${level}`;
+  let StyledComponent = styledComponents[tag];
+  if (!StyledComponent) {
+    StyledComponent = StyledHeading.withComponent(tag);
+    styledComponents[tag] = StyledComponent;
   }
-}
+
+  // enforce level to be a number
+  return (
+    <StyledComponent colorValue={color} level={+level} {...rest} />
+  );
+};
+
+Heading.defaultProps = {
+  level: 1,
+  responsive: true,
+};
 
 let HeadingDoc;
 if (process.env.NODE_ENV !== 'production') {

@@ -7,7 +7,9 @@ import { StyledStack, StyledStackLayer } from './StyledStack';
 
 class Stack extends Component {
   render() {
-    const { anchor, children, fill, guidingChild, ...rest } = this.props;
+    const {
+      anchor, children, fill, guidingChild, ...rest
+    } = this.props;
 
     // make all children but the first absolutely positioned
     let guidingIndex = guidingChild;
@@ -21,7 +23,7 @@ class Stack extends Component {
       if (child) {
         let layer;
         if (childIndex === guidingIndex) {
-          layer = <StyledStackLayer guiding={true} fillContainer={fill}>{child}</StyledStackLayer>;
+          layer = <StyledStackLayer guiding fillContainer={fill}>{child}</StyledStackLayer>;
         } else {
           layer = <StyledStackLayer anchor={anchor}>{child}</StyledStackLayer>;
         }

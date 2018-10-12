@@ -1,49 +1,39 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Chart, Stack, Text } from 'grommet';
+import {
+  Grommet, Box, Chart, Stack, Text,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 
-import { calcs } from '../Chart/calcs';
+import { calcs } from './calcs';
 
-class BarChart extends Component {
-  render() {
-    return (
-      <Grommet theme={grommet}>
-        <Chart
-          type='bar'
-          values={[[10, 20], [20, 30], [30, 15]]}
-        />
-      </Grommet>
-    );
-  }
-}
+const BarChart = () => (
+  <Grommet theme={grommet}>
+    <Chart
+      type='bar'
+      values={[[10, 20], [20, 30], [30, 15]]}
+    />
+  </Grommet>
+);
 
-class LineChart extends Component {
-  render() {
-    return (
-      <Grommet theme={grommet}>
-        <Chart
-          type='line'
-          values={[20, 30, 15]}
-        />
-      </Grommet>
-    );
-  }
-}
+const LineChart = () => (
+  <Grommet theme={grommet}>
+    <Chart
+      type='line'
+      values={[20, 30, 15]}
+    />
+  </Grommet>
+);
 
-class AreaChart extends Component {
-  render() {
-    return (
-      <Grommet theme={grommet}>
-        <Chart
-          type='area'
-          values={[{ value: [10, 20] }, { value: [20, 30] }, { value: [30, 15] }]}
-        />
-      </Grommet>
-    );
-  }
-}
+const AreaChart = () => (
+  <Grommet theme={grommet}>
+    <Chart
+      type='area'
+      values={[{ value: [10, 20] }, { value: [20, 30] }, { value: [30, 15] }]}
+    />
+  </Grommet>
+);
 
 class RichChart extends Component {
   state = { values: [], yAxis: [], xAxis: [] }
@@ -67,14 +57,16 @@ class RichChart extends Component {
     });
 
     const { axis, bounds } = calcs(values, { coarseness: 5, steps: [3, 3] });
-    const xAxis = axis[0].map(x =>
-      (new Date(x)).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+    const xAxis = axis[0].map(x => (
+      (new Date(x)).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })));
     const yAxis = axis[1];
     this.setState({ bounds, values, yAxis, xAxis }); // eslint-disable-line
   }
 
   render() {
-    const { bounds, values, yAxis, xAxis } = this.state;
+    const {
+      bounds, values, yAxis, xAxis,
+    } = this.state;
     const chartProps = {
       size: { width: 'medium', height: 'small' },
       bounds,
@@ -88,7 +80,7 @@ class RichChart extends Component {
             {xAxis.map(x => <Text key={x}>{x}</Text>)}
           </Box>
           <Stack guidingChild='last'>
-            <Box fill={true} justify='between'>
+            <Box fill justify='between'>
               {yAxis.map((y, index) => {
                 const first = index === 0;
                 const last = index === yAxis.length - 1 && !first;
@@ -105,7 +97,7 @@ class RichChart extends Component {
                     <Box pad={{ horizontal: 'small' }}>
                       <Text>{y}</Text>
                     </Box>
-                    <Box border='top' flex={true} />
+                    <Box border='top' flex />
                   </Box>
                 );
               })}
@@ -127,7 +119,7 @@ class RichChart extends Component {
             <Chart
               {...chartProps}
               type='line'
-              round={true}
+              round
               color={{ color: 'accent-3', opacity: 'strong' }}
               thickness='small'
             />

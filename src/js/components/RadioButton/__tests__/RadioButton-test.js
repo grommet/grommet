@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { RadioButton } from '../';
+import { RadioButton } from '..';
 
 test('RadioButton renders', () => {
   const component = renderer.create(
@@ -30,7 +30,7 @@ test('RadioButton label renders', () => {
 test('RadioButton checked renders', () => {
   const component = renderer.create(
     <Grommet>
-      <RadioButton checked={true} />
+      <RadioButton checked />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -40,8 +40,8 @@ test('RadioButton checked renders', () => {
 test('RadioButton disabled renders', () => {
   const component = renderer.create(
     <Grommet>
-      <RadioButton disabled={true} />
-      <RadioButton disabled={true} checked={true} />
+      <RadioButton disabled />
+      <RadioButton disabled checked />
     </Grommet>
   );
   const tree = component.toJSON();

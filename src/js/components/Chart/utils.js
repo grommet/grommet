@@ -2,7 +2,8 @@
 export const normalizeValues = values => (values || []).map((value, index) => {
   if (Array.isArray(value)) {
     return { value };
-  } else if (typeof value === 'number') {
+  }
+  if (typeof value === 'number') {
     return { value: [index, value] };
   }
   return value;

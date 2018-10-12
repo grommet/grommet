@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { Keyboard } from '../';
+import { Keyboard } from '..';
 
 test('Keyboard renders', () => {
   const onDown = jest.fn();

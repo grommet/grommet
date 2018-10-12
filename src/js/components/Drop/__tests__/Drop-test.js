@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import 'jest-styled-components';
-import { cleanup, fireEvent, renderIntoDocument } from 'react-testing-library';
+import { cleanup, fireEvent, render } from 'react-testing-library';
 
 import { expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
-import { Drop } from '../';
+import { Drop } from '..';
 
 class TestInput extends Component {
   state = {
@@ -43,12 +43,12 @@ describe('Drop', () => {
 
   test('basic', () => {
     window.scrollTo = jest.fn();
-    renderIntoDocument(<TestInput />);
+    render(<TestInput />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('align left right top bottom', () => {
-    renderIntoDocument(
+    render(
       <TestInput align={{ left: 'right', top: 'bottom' }} />
     );
 
@@ -56,7 +56,7 @@ describe('Drop', () => {
   });
 
   test('align right right bottom top', () => {
-    renderIntoDocument(
+    render(
       <TestInput align={{ right: 'right', bottom: 'top' }} />
     );
 
@@ -64,42 +64,42 @@ describe('Drop', () => {
   });
 
   test('align left random', () => {
-    renderIntoDocument(
+    render(
       <TestInput align={{ left: 'random', bottom: 'bottom' }} />
     );
     expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('align right left top top', () => {
-    renderIntoDocument(
+    render(
       <TestInput align={{ right: 'left', top: 'top' }} />
     );
     expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('align right right bottom top', () => {
-    renderIntoDocument(
+    render(
       <TestInput align={{ right: 'right', bottom: 'top' }} />
     );
     expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('align right random', () => {
-    renderIntoDocument(
+    render(
       <TestInput align={{ right: 'random' }} />
     );
     expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('invalid align', () => {
-    renderIntoDocument(
+    render(
       <TestInput align={{ whatever: 'right' }} />
     );
     expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('no stretch', () => {
-    renderIntoDocument(
+    render(
       <TestInput stretch={false} />
     );
 
@@ -107,7 +107,7 @@ describe('Drop', () => {
   });
 
   test('close', () => {
-    renderIntoDocument(<TestInput />);
+    render(<TestInput />);
     expectPortal('drop-node').toMatchSnapshot();
 
     cleanup();
@@ -116,7 +116,7 @@ describe('Drop', () => {
 
   test('invoke onClickOutside', () => {
     const onClickOutside = jest.fn();
-    renderIntoDocument(<TestInput onClickOutside={onClickOutside} />);
+    render(<TestInput onClickOutside={onClickOutside} />);
     expectPortal('drop-node').toMatchSnapshot();
 
     fireEvent(document, new MouseEvent('click', { bubbles: true, cancelable: true }));
@@ -124,7 +124,7 @@ describe('Drop', () => {
   });
 
   test('resize', () => {
-    renderIntoDocument(<TestInput />);
+    render(<TestInput />);
     global.window.innerWidth = 1000;
     global.window.innerHeight = 1000;
     fireEvent(window, new Event('resize', { bubbles: true, cancelable: true }));
@@ -132,7 +132,7 @@ describe('Drop', () => {
   });
 
   test('restrict focus', () => {
-    renderIntoDocument(<TestInput restrictFocus={true} />);
+    render(<TestInput restrictFocus />);
     expect(document.activeElement).toMatchSnapshot();
     expectPortal('drop-node').toMatchSnapshot();
 

@@ -1,7 +1,10 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Drop, Grommet, Text } from 'grommet';
+import {
+  Box, Drop, Grommet, Text,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 import { ThemeContext } from 'grommet/contexts';
 
@@ -51,6 +54,11 @@ const OneDrop = ({ align, target }) => (
   </Drop>
 );
 
+OneDrop.propTypes = {
+  align: PropTypes.string.isRequired,
+  target: PropTypes.node.isRequired,
+};
+
 class Set extends Component {
   targetRef = React.createRef()
 
@@ -61,7 +69,7 @@ class Set extends Component {
   render() {
     const { aligns, label } = this.props;
     return (
-      <Box border={true} pad='small'>
+      <Box border pad='small'>
         <Text>{label}</Text>
         <Box
           margin='xlarge'
@@ -77,7 +85,7 @@ class Set extends Component {
           <Fragment>
             {aligns.map((align, index) => (
               <OneDrop
-                key={`${index}`}
+                key={`${index + 0}`}
                 align={align}
                 target={this.targetRef.current}
               />
@@ -89,6 +97,11 @@ class Set extends Component {
   }
 }
 
+Set.propTypes = {
+  aligns: PropTypes.arrayOf().isRequired,
+  label: PropTypes.string.isRequired,
+};
+
 class AllDrops extends Component {
   targetRef = React.createRef()
 
@@ -99,8 +112,8 @@ class AllDrops extends Component {
   render() {
     return (
       <Grommet theme={grommet}>
-        <ThemeContext.Extend value={{ global: { drop: { background: { color: 'white', opacity: 'medium' } } } }} >
-          <Box direction='row' wrap={true} pad='medium' align='center'>
+        <ThemeContext.Extend value={{ global: { drop: { background: { color: 'white', opacity: 'medium' } } } }}>
+          <Box direction='row' wrap pad='medium' align='center'>
             <Set
               label='left: left'
               aligns={[

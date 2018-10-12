@@ -65,7 +65,9 @@ class CheckBox extends Component {
             {...rest}
             ref={forwardRef}
             type='checkbox'
-            {...removeUndefined({ id, name, checked, disabled, onChange })}
+            {...removeUndefined({
+              id, name, checked, disabled, onChange,
+            })}
             theme={theme}
           />
           {visual}

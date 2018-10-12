@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import React, { Component } from 'react';
 
-import { Box } from '../../../';
+import { Box } from '../../..';
 
 import { ThemeContext } from '../../../../contexts';
 import { colorForName } from '../../../../utils';
@@ -62,8 +62,8 @@ const defaultStyle = css`
     transition: width .2s ease, background .2s ease, left .2s ease;
   }
 
-  ${props => props.focus &&
-    `
+  ${props => props.focus
+    && `
     box-shadow: none;
     &:after {
       left: 0;
@@ -83,6 +83,7 @@ export class SearchBorderBox extends Component {
   state = {
     focus: false,
   };
+
   render() {
     const { children, searching, ...rest } = this.props;
     const { focus } = this.state;

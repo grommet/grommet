@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Button, Grid, Text } from 'grommet';
+import {
+  Grommet, Box, Button, Grid, Text,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 
 class AppGrid extends Component {
   state = { sidebar: true }
+
   render() {
     const { sidebar } = this.state;
     return (
@@ -43,7 +46,7 @@ class AppGrid extends Component {
               ]}
             >
               {['First', 'Second', 'Third'].map(name => (
-                <Button key={name} href='#' hoverIndicator={true}>
+                <Button key={name} href='#' hoverIndicator>
                   <Box pad={{ horizontal: 'medium', vertical: 'small' }}>
                     <Text>{name}</Text>
                   </Box>
@@ -61,9 +64,9 @@ class AppGrid extends Component {
 }
 
 const Percentages = () => (
-  <Grommet theme={grommet} full={true}>
+  <Grommet theme={grommet} full>
     <Grid
-      fill={true}
+      fill
       areas={[
         { name: 'nav', start: [0, 0], end: [0, 0] },
         { name: 'main', start: [1, 0], end: [1, 0] },

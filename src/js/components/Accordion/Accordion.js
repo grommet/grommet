@@ -30,13 +30,8 @@ class Accordion extends Component {
 
     const activeIndexes = activeAsArray(activeIndex) || [];
 
-    if (
-      (
-        typeof activeIndex !== 'undefined' ||
-        activeIndex !== stateActiveIndex
-      ) &&
-      activeIndexes.join() !== stateActiveIndexes.join()
-    ) {
+    if ((typeof activeIndex !== 'undefined' || activeIndex !== stateActiveIndex)
+      && activeIndexes.join() !== stateActiveIndexes.join()) {
       return { activeIndexes, activeIndex };
     }
 
@@ -48,21 +43,22 @@ class Accordion extends Component {
   }
 
   onPanelChange = (index) => {
-    let activeIndexes = [...this.state.activeIndexes];
+    const { activeIndexes } = this.state;
+    let nextActiveIndexes = [...(activeIndexes || [])];
     const { onActive, multiple } = this.props;
 
-    const activeIndex = activeIndexes.indexOf(index);
+    const activeIndex = nextActiveIndexes.indexOf(index);
     if (activeIndex > -1) {
-      activeIndexes.splice(activeIndex, 1);
+      nextActiveIndexes.splice(activeIndex, 1);
     } else if (multiple) {
-      activeIndexes.push(index);
+      nextActiveIndexes.push(index);
     } else {
-      activeIndexes = [index];
+      nextActiveIndexes = [index];
     }
 
-    this.setState({ activeIndexes }, () => {
+    this.setState({ activeIndexes: nextActiveIndexes }, () => {
       if (onActive) {
-        onActive(activeIndexes);
+        onActive(nextActiveIndexes);
       }
     });
   }
@@ -82,7 +78,7 @@ class Accordion extends Component {
       <Box role='tablist' {...rest} overflow='auto'>
         {Children.toArray(children).map((panel, index) => (
           <AccordionContext.Provider
-            key={`accordion-panel_${index}`}
+            key={`accordion-panel_${index + 0}`}
             value={{
               active: activeIndexes.indexOf(index) > -1,
               animate,

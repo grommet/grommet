@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { Box } from '../';
+import { Box } from '..';
 
 describe('Box', () => {
   test('default', () => {
@@ -31,7 +31,7 @@ describe('Box', () => {
   test('responsive', () => {
     const component = renderer.create(
       <Grommet>
-        <Box responsive={true} />
+        <Box responsive />
         <Box responsive={false} />
       </Grommet>
     );
@@ -42,7 +42,7 @@ describe('Box', () => {
   test('wrap', () => {
     const component = renderer.create(
       <Grommet>
-        <Box wrap={true} />
+        <Box wrap />
         <Box wrap={false} />
       </Grommet>
     );
@@ -180,7 +180,7 @@ describe('Box', () => {
     const component = renderer.create(
       <Grommet>
         <Box>
-          <Box flex={true} />
+          <Box flex />
           <Box flex={false} />
           <Box flex='grow' />
           <Box flex='shrink' />
@@ -195,7 +195,7 @@ describe('Box', () => {
     const component = renderer.create(
       <Grommet>
         <Box>
-          <Box fill={true} />
+          <Box fill />
           <Box fill={false} />
           <Box fill='horizontal' />
           <Box fill='vertical' />
@@ -269,7 +269,7 @@ describe('Box', () => {
   test('round', () => {
     const component = renderer.create(
       <Grommet>
-        <Box round={true} />
+        <Box round />
         <Box round='xsmall' />
         <Box round='small' />
         <Box round='medium' />
@@ -304,7 +304,7 @@ describe('Box', () => {
         <Box border='left' />
         <Box border='bottom' />
         <Box border='right' />
-        <Box border={{ color: 'accent-1' }} />,
+        <Box border={{ color: 'accent-1' }} />
         <Box border={{ side: 'all' }} />
         <Box border={{ size: 'xsmall' }} />
         <Box border={{ size: 'small' }} />

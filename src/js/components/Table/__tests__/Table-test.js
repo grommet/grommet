@@ -2,7 +2,9 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { Grommet, Table, TableHeader, TableFooter, TableBody, TableRow, TableCell } from '../../';
+import {
+  Grommet, Table, TableHeader, TableFooter, TableBody, TableRow, TableCell,
+} from '../..';
 
 test('Table renders', () => {
   const component = renderer.create(
@@ -183,7 +185,7 @@ test('TableCell plain renders', () => {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableCell plain={true} />
+            <TableCell plain />
           </TableRow>
         </TableHeader>
       </Table>

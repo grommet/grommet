@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { WorldMap } from '../';
+import { WorldMap } from '..';
 
 test('WorldMap renders', () => {
   const component = renderer.create(

@@ -80,27 +80,25 @@ class TextInput extends Component {
     showDrop: false,
   }
 
-  componentWillUnmount() {
-    clearTimeout(this.resetTimer);
-  }
-
   componentDidUpdate(prevProps, prevState) {
     const { onSuggestionsOpen, onSuggestionsClose, suggestions } = this.props;
-    if (this.state.showDrop !== prevState.showDrop) {
-      if (this.state.showDrop && onSuggestionsOpen) {
+    const { showDrop } = this.state;
+    if (showDrop !== prevState.showDrop) {
+      if (showDrop && onSuggestionsOpen) {
         onSuggestionsOpen();
       } else if (onSuggestionsClose) {
         onSuggestionsClose();
       }
     }
 
-    if (
-      !this.state.showDrop &&
-      suggestions &&
-      (!prevProps.suggestions || !prevProps.suggestions.length)
-    ) {
+    if (!showDrop && suggestions
+      && (!prevProps.suggestions || !prevProps.suggestions.length)) {
       this.resetSuggestions();
     }
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.resetTimer);
   }
 
   announce = (message, mode) => {
@@ -125,7 +123,7 @@ class TextInput extends Component {
     this.announce(suggestionIsOpen);
   }
 
-  announceSuggestion(index) {
+  announceSuggestion = (index) => {
     const { suggestions, messages: { enterSelect } } = this.props;
     if (suggestions && suggestions.length > 0) {
       const labelMessage = stringLabel(suggestions[index]);
@@ -263,10 +261,10 @@ class TextInput extends Component {
               <li key={`${stringLabel(suggestion)}-${index}`}>
                 <Button
                   active={
-                    activeSuggestionIndex === index ||
-                    selectedSuggestionIndex === index
+                    activeSuggestionIndex === index
+                    || selectedSuggestionIndex === index
                   }
-                  fill={true}
+                  fill
                   hoverIndicator='background'
                   onClick={() => this.onClickSuggestion(suggestion)}
                 >

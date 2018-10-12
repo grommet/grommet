@@ -53,8 +53,8 @@ export const StyledTextInputContainer = styled.div`
 export const StyledPlaceholder = styled.div`
   position: absolute;
   left: ${props => (
-    (parseMetricToNum(props.theme.global.spacing) / 2) -
-    parseMetricToNum(props.theme.global.control.border.width)
+    (parseMetricToNum(props.theme.global.spacing) / 2)
+    - parseMetricToNum(props.theme.global.control.border.width)
   )}px;
   top: 50%;
   transform: translateY(-50%);

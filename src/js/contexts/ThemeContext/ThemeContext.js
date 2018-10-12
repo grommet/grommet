@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { base as baseTheme } from '../../themes';
 import { deepMerge } from '../../utils';
 
@@ -15,5 +16,10 @@ ThemeContext.Extend = ({ children, value }) => (
     )}
   </ThemeContext.Consumer>
 );
+
+ThemeContext.Extend.propTypes = {
+  children: PropTypes.node.isRequired,
+  value: PropTypes.shape({}).isRequired,
+};
 
 export { ThemeContext };

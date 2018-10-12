@@ -7,7 +7,9 @@ import { TableCell } from '../TableCell';
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 
-export const Body = ({ columns, data, onMore, primaryProperty, size, theme, ...rest }) => (
+export const Body = ({
+  columns, data, onMore, primaryProperty, size, theme, ...rest
+}) => (
   <StyledDataTableBody size={size} theme={theme} {...rest}>
     <InfiniteScroll
       items={data}

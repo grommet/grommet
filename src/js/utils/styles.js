@@ -1,22 +1,15 @@
 import { css } from 'styled-components';
 
-import { normalizeColor } from './colors';
 import { palm, parseMetricToNum } from './mixins';
-import { backgroundStyle } from './background';
-
-export const activeStyle = css`
-  ${props => backgroundStyle(normalizeColor(props.theme.global.hover.background, props.theme), props.theme)}
-  color: ${props => normalizeColor(props.theme.global.hover.color, props.theme)};
-`;
 
 export const baseStyle = css`
   font-family: ${props => props.theme.global.font.family};
   font-size: ${props => props.theme.global.font.size};
   line-height: ${props => props.theme.global.font.height};
-  ${props => props.theme.global.colors.text &&
-    `color: ${props.theme.global.colors.text};`}
-  ${props => props.theme.global.colors.background &&
-    `background: ${props.theme.global.colors.background};`}
+  ${props => props.theme.global.colors.text
+    && `color: ${props.theme.global.colors.text};`}
+  ${props => props.theme.global.colors.background
+    && `background: ${props.theme.global.colors.background};`}
 
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -26,10 +19,10 @@ export const baseStyle = css`
 `;
 
 export const controlBorderStyle = css`
-  border: ${props =>
-    props.theme.global.control.border.width} solid ${props =>
-      (props.theme.global.control.border.color ||
-        props.theme.global.control.border.color)[props.theme.dark ? 'dark' : 'light']};
+  border: ${props => (
+    props.theme.global.control.border.width)} solid ${props => (
+      (props.theme.global.control.border.color
+      || props.theme.global.control.border.color)[props.theme.dark ? 'dark' : 'light'])};
   border-radius: ${props => props.theme.global.control.border.radius};
 `;
 
@@ -125,8 +118,8 @@ export const inputStyle = css`
   border: none;
   -webkit-appearance: none;
   padding: ${props => (
-    (parseMetricToNum(props.theme.global.spacing) / 2) -
-    parseMetricToNum(props.theme.global.control.border.width)
+    (parseMetricToNum(props.theme.global.spacing) / 2)
+    - parseMetricToNum(props.theme.global.control.border.width)
   )}px;
   outline: none;
   background: transparent;

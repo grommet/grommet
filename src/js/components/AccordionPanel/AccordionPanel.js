@@ -15,6 +15,38 @@ class AccordionPanel extends Component {
     hover: undefined,
   }
 
+  onMouseOver = (...args) => {
+    const { onMouseOver, theme: { dark } } = this.props;
+    this.setState({ hover: dark ? 'light-4' : 'dark-6' });
+    if (onMouseOver) {
+      onMouseOver(args);
+    }
+  }
+
+  onMouseOut = (...args) => {
+    const { onMouseOut } = this.props;
+    this.setState({ hover: undefined });
+    if (onMouseOut) {
+      onMouseOut(args);
+    }
+  }
+
+  onFocus = (...args) => {
+    const { onFocus, theme: { dark } } = this.props;
+    this.setState({ hover: dark ? 'light-4' : 'dark-6' });
+    if (onFocus) {
+      onFocus(args);
+    }
+  }
+
+  onBlur = (...args) => {
+    const { onBlur } = this.props;
+    this.setState({ hover: undefined });
+    if (onBlur) {
+      onBlur(args);
+    }
+  }
+
   render() {
     const {
       children,
@@ -23,13 +55,15 @@ class AccordionPanel extends Component {
       theme,
       onMouseOut,
       onMouseOver,
+      onFocus,
+      onBlur,
       ...rest
     } = this.props;
     const { hover } = this.state;
 
-    const dark = theme.dark;
-    const iconColor = evalStyle(normalizeColor(theme.accordion.icons.color ||
-      theme.global.control.color, theme), theme);
+    const { dark } = theme;
+    const iconColor = evalStyle(normalizeColor(theme.accordion.icons.color
+      || theme.global.control.color, theme), theme);
 
     return (
       <AccordionContext>
@@ -48,18 +82,10 @@ class AccordionPanel extends Component {
                 aria-selected={active}
                 aria-expanded={active}
                 onClick={onPanelChange}
-                onMouseOver={(...args) => {
-                  this.setState({ hover: dark ? 'light-4' : 'dark-6' });
-                  if (onMouseOver) {
-                    onMouseOver(args);
-                  }
-                }}
-                onMouseOut={(...args) => {
-                  this.setState({ hover: undefined });
-                  if (onMouseOut) {
-                    onMouseOut(args);
-                  }
-                }}
+                onMouseOver={this.onMouseOver}
+                onMouseOut={this.onMouseOut}
+                onFocus={this.onFocus}
+                onBlur={this.onBlur}
               >
                 {header || (
                   <Box

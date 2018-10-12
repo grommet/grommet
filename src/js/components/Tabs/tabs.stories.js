@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
-import { Attraction, Car, CircleInformation, Currency, TreeOption } from 'grommet-icons';
+import {
+  Attraction, Car, CircleInformation, Currency, TreeOption,
+} from 'grommet-icons';
 
-import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
+import {
+  Box, Grommet, FormField, Tab, Tabs, Text, TextInput,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const UncontrolledTabs = () => (
@@ -181,6 +186,11 @@ const RichTabTitle = ({ icon, label }) => (
     </Text>
   </Box>
 );
+
+RichTabTitle.propTypes = {
+  icon: PropTypes.node.isRequired,
+  label: PropTypes.string.isRequired,
+};
 
 const RichTabs = () => (
   <Grommet theme={grommet}>

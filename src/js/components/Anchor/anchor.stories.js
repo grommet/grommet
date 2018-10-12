@@ -19,6 +19,8 @@ storiesOf('Anchor', module)
   ))
   .add('With Text', () => (
     <Grommet theme={grommet}>
-      This is a <Anchor label='link' href='#' /> with text.
+      This is a
+      <Anchor label='link' href='#' />
+      with text.
     </Grommet>
   ));

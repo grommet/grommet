@@ -1,4 +1,4 @@
-import { deepFreeze, deepMerge } from '../';
+import { deepFreeze, deepMerge } from '..';
 
 test('Object freezes', () => {
   const obj = deepFreeze({ a: 'b' });

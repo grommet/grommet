@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { CheckBox } from '../';
+import { CheckBox } from '..';
 
 test('CheckBox renders', () => {
   const component = renderer.create(
@@ -30,7 +30,7 @@ test('CheckBox label renders', () => {
 test('CheckBox checked renders', () => {
   const component = renderer.create(
     <Grommet>
-      <CheckBox checked={true} />
+      <CheckBox checked />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -40,8 +40,8 @@ test('CheckBox checked renders', () => {
 test('CheckBox disabled renders', () => {
   const component = renderer.create(
     <Grommet>
-      <CheckBox disabled={true} />
-      <CheckBox disabled={true} checked={true} />
+      <CheckBox disabled />
+      <CheckBox disabled checked />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -51,7 +51,7 @@ test('CheckBox disabled renders', () => {
 test('CheckBox reverse renders', () => {
   const component = renderer.create(
     <Grommet>
-      <CheckBox reverse={true} label='test label' />
+      <CheckBox reverse label='test label' />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -61,9 +61,9 @@ test('CheckBox reverse renders', () => {
 test('CheckBox toggle renders', () => {
   const component = renderer.create(
     <Grommet>
-      <CheckBox toggle={true} />
-      <CheckBox toggle={true} checked={true} />
-      <CheckBox toggle={true} label='test label' />
+      <CheckBox toggle />
+      <CheckBox toggle checked />
+      <CheckBox toggle label='test label' />
     </Grommet>
   );
   const tree = component.toJSON();

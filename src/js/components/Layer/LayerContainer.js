@@ -23,7 +23,7 @@ class LayerContainer extends Component {
     const { theme } = nextProps;
     const { theme: stateTheme } = prevState;
     // set dark context based on layer background, not Layer's container.
-    let dark = theme.dark;
+    let { dark } = theme;
     if (theme.layer.background) {
       dark = backgroundIsDark(theme.layer.background, theme);
     }
@@ -44,6 +44,7 @@ class LayerContainer extends Component {
   }
 
   containerRef = React.createRef()
+
   layerRef = React.createRef()
 
   componentDidMount() {
@@ -61,6 +62,7 @@ class LayerContainer extends Component {
   }
 
   makeLayerVisible = () => {
+    /* eslint-disable-next-line react/no-find-dom-node */
     const node = findDOMNode(this.layerRef.current || this.containerRef.current);
     if (node && node.scrollIntoView) {
       node.scrollIntoView();
@@ -124,7 +126,7 @@ class LayerContainer extends Component {
 
     if (modal) {
       content = (
-        <FocusedContainer hidden={position === 'hidden'} restrictScroll={true}>
+        <FocusedContainer hidden={position === 'hidden'} restrictScroll>
           <IconThemeContext.Provider value={theme.icon}>
             {content}
           </IconThemeContext.Provider>

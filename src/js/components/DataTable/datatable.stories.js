@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, DataTable, Meter, Text } from 'grommet';
+import {
+  Grommet, Box, DataTable, Meter, Text,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
@@ -58,51 +60,55 @@ for (let i = 0; i < 40; i += 1) {
   });
 }
 const DATA = [
-  { name: 'Alan', location: 'Los Gatos', date: '2018-06-11', percent: 20, paid: 2345 },
-  { name: 'Bryan', location: 'Fort Collins', date: '2018-06-10', percent: 30, paid: 1234 },
-  { name: 'Chris', location: 'Palo Alto', date: '2018-06-09', percent: 40, paid: 2345 },
-  { name: 'Eric', location: 'Palo Alto', date: '2018-06-11', percent: 80, paid: 3456 },
-  { name: 'Doug', location: 'Fort Collins', date: '2018-06-10', percent: 60, paid: 1234 },
-  { name: 'Jet', location: 'Palo Alto', date: '2018-06-09', percent: 40, paid: 3456 },
-  { name: 'Michael', location: 'Boise', date: '2018-06-11', percent: 50, paid: 1234 },
-  { name: 'Tracy', location: 'San Francisco', date: '2018-06-10', percent: 10, paid: 2345 },
+  {
+    name: 'Alan', location: 'Los Gatos', date: '2018-06-11', percent: 20, paid: 2345,
+  },
+  {
+    name: 'Bryan', location: 'Fort Collins', date: '2018-06-10', percent: 30, paid: 1234,
+  },
+  {
+    name: 'Chris', location: 'Palo Alto', date: '2018-06-09', percent: 40, paid: 2345,
+  },
+  {
+    name: 'Eric', location: 'Palo Alto', date: '2018-06-11', percent: 80, paid: 3456,
+  },
+  {
+    name: 'Doug', location: 'Fort Collins', date: '2018-06-10', percent: 60, paid: 1234,
+  },
+  {
+    name: 'Jet', location: 'Palo Alto', date: '2018-06-09', percent: 40, paid: 3456,
+  },
+  {
+    name: 'Michael', location: 'Boise', date: '2018-06-11', percent: 50, paid: 1234,
+  },
+  {
+    name: 'Tracy', location: 'San Francisco', date: '2018-06-10', percent: 10, paid: 2345,
+  },
 ];
 
-class SimpleDataTable extends Component {
-  render() {
-    return (
-      <Grommet theme={grommet}>
-        <DataTable columns={columns} data={DATA} />
-      </Grommet>
-    );
-  }
-}
+const SimpleDataTable = () => (
+  <Grommet theme={grommet}>
+    <DataTable columns={columns} data={DATA} />
+  </Grommet>
+);
 
-class SizedDataTable extends Component {
-  render() {
-    return (
-      <Grommet theme={grommet}>
-        <DataTable columns={columns} data={data} size='medium' />
-      </Grommet>
-    );
-  }
-}
+const SizedDataTable = () => (
+  <Grommet theme={grommet}>
+    <DataTable columns={columns} data={data} size='medium' />
+  </Grommet>
+);
 
-class TunableDataTable extends Component {
-  render() {
-    return (
-      <Grommet theme={grommet}>
-        <DataTable
-          columns={columns.map(c =>
-            ({ ...c, search: c.property === 'name' || c.property === 'location' }))}
-          data={DATA}
-          sortable={true}
-          resizeable={true}
-        />
-      </Grommet>
-    );
-  }
-}
+const TunableDataTable = () => (
+  <Grommet theme={grommet}>
+    <DataTable
+      columns={columns.map(c => (
+        ({ ...c, search: c.property === 'name' || c.property === 'location' })))}
+      data={DATA}
+      sortable
+      resizeable
+    />
+  </Grommet>
+);
 
 const groupColumns = [...columns];
 const first = groupColumns[0];
@@ -111,20 +117,16 @@ groupColumns[1] = { ...first };
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 
-class GroupedDataTable extends Component {
-  render() {
-    return (
-      <Grommet theme={grommet}>
-        <DataTable
-          columns={groupColumns}
-          data={DATA}
-          groupBy='location'
-          sortable={true}
-        />
-      </Grommet>
-    );
-  }
-}
+const GroupedDataTable = () => (
+  <Grommet theme={grommet}>
+    <DataTable
+      columns={groupColumns}
+      data={DATA}
+      groupBy='location'
+      sortable
+    />
+  </Grommet>
+);
 
 class ServedDataTable extends Component {
   state = { data: DATA }

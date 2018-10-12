@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { cleanup, render, Simulate } from 'react-testing-library';
+import { cleanup, render, fireEvent } from 'react-testing-library';
 
 import { Grommet } from '../../Grommet';
-import { DataTable } from '../';
+import { DataTable } from '..';
 
 describe('DataTable', () => {
   afterEach(cleanup);
@@ -70,14 +70,14 @@ describe('DataTable', () => {
             { a: 'one', b: 1 },
             { a: 'two', b: 2 },
           ]}
-          sortable={true}
+          sortable
         />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 
     const headerCell = getByText('A');
-    Simulate.click(headerCell, {});
+    fireEvent.click(headerCell, {});
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -93,7 +93,7 @@ describe('DataTable', () => {
             { a: 'one', b: 1 },
             { a: 'two', b: 2 },
           ]}
-          resizeable={true}
+          resizeable
         />
       </Grommet>
     );
@@ -107,7 +107,9 @@ describe('DataTable', () => {
         <DataTable
           columns={[
             { property: 'a', header: 'A' },
-            { property: 'b', header: 'B', aggregate: 'sum', footer: { aggregate: true } },
+            {
+              property: 'b', header: 'B', aggregate: 'sum', footer: { aggregate: true },
+            },
           ]}
           data={[
             { a: 'one', b: 1 },
@@ -141,7 +143,7 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
 
     const headerCell = getByText('A');
-    Simulate.click(headerCell, {});
+    fireEvent.click(headerCell, {});
     expect(container.firstChild).toMatchSnapshot();
   });
 });

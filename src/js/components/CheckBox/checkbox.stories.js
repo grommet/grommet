@@ -26,4 +26,4 @@ class SimpleCheckBox extends Component {
 
 storiesOf('CheckBox', module)
   .add('Simple', () => <SimpleCheckBox />)
-  .add('Toggle', () => <SimpleCheckBox toggle={true} />);
+  .add('Toggle', () => <SimpleCheckBox toggle />);

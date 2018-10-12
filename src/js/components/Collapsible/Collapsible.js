@@ -39,23 +39,18 @@ class Collapsible extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.state = {
-      open: props.open,
-      animate: false,
-    };
+    /* eslint-disable-next-line react/prop-types */
+    this.state = { open: props.open, animate: false };
   }
-
-  getSnapshotBeforeUpdate = () => (
-    this.ref.current && findDOMNode(this.ref.current).getBoundingClientRect()
-  )
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     const {
-      direction,
-      theme: { collapsible: { minSpeed, baseline } },
+      /* eslint-disable-next-line react/prop-types */
+      direction, theme: { collapsible: { minSpeed, baseline } },
     } = this.props;
     const { animate, open } = this.state;
 
+    /* eslint-disable-next-line react/no-find-dom-node */
     const container = findDOMNode(this.ref.current);
     const dimension = animatedBoxProperty(direction);
     const boudingClientRect = container.getBoundingClientRect();
@@ -101,11 +96,14 @@ class Collapsible extends Component {
     }
   }
 
+  getSnapshotBeforeUpdate = () => (
+    /* eslint-disable-next-line react/no-find-dom-node */
+    this.ref.current && findDOMNode(this.ref.current).getBoundingClientRect()
+  )
+
   render() {
-    const {
-      children,
-      direction,
-    } = this.props;
+    /* eslint-disable-next-line react/prop-types */
+    const { children, direction } = this.props;
     const {
       animate,
       open,

@@ -8,13 +8,13 @@ import { withTheme } from '../hocs';
 import { StyledDiagram } from './StyledDiagram';
 
 const computeMidPoint = (fromPoint, toPoint) => ([
-  (fromPoint[0] > toPoint[0] ?
-    (toPoint[0] + ((fromPoint[0] - toPoint[0]) / 2)) :
-    (fromPoint[0] + ((toPoint[0] - fromPoint[0]) / 2))
+  (fromPoint[0] > toPoint[0]
+    ? (toPoint[0] + ((fromPoint[0] - toPoint[0]) / 2))
+    : (fromPoint[0] + ((toPoint[0] - fromPoint[0]) / 2))
   ),
-  (fromPoint[1] > toPoint[1] ?
-    (toPoint[1] + ((fromPoint[1] - toPoint[1]) / 2)) :
-    (fromPoint[1] + ((toPoint[1] - fromPoint[1]) / 2))
+  (fromPoint[1] > toPoint[1]
+    ? (toPoint[1] + ((fromPoint[1] - toPoint[1]) / 2))
+    : (fromPoint[1] + ((toPoint[1] - fromPoint[1]) / 2))
   ),
 ]);
 
@@ -24,34 +24,34 @@ const COMMANDS = {
     let cmds = `M ${fromPoint[0] + offset},${fromPoint[1] + offset} `;
     if (anchor === 'horizontal') {
       cmds += (
-        `Q ${midPoint[0] + offset},${fromPoint[1] + offset} ` +
-        `${midPoint[0] + offset},${midPoint[1] + offset} `
+        `Q ${midPoint[0] + offset},${fromPoint[1] + offset} `
+        + `${midPoint[0] + offset},${midPoint[1] + offset} `
       );
     } else {
       cmds += (
-        `Q ${fromPoint[0] + offset},${midPoint[1] + offset} ` +
-        `${midPoint[0] + offset},${midPoint[1] + offset} `
+        `Q ${fromPoint[0] + offset},${midPoint[1] + offset} `
+        + `${midPoint[0] + offset},${midPoint[1] + offset} `
       );
     }
     cmds += `T ${toPoint[0] + offset},${toPoint[1] + offset}`;
     return cmds;
   },
   direct: (fromPoint, toPoint, offset) => (
-    `M ${fromPoint[0] + offset},${fromPoint[1] + offset} ` +
-    `L ${toPoint[0] + offset},${toPoint[1] + offset}`
+    `M ${fromPoint[0] + offset},${fromPoint[1] + offset} `
+    + `L ${toPoint[0] + offset},${toPoint[1] + offset}`
   ),
   rectilinear: (fromPoint, toPoint, offset, anchor) => {
     const midPoint = computeMidPoint(fromPoint, toPoint);
     let cmds = `M ${fromPoint[0] + offset},${fromPoint[1] + offset} `;
     if (anchor === 'horizontal') {
       cmds += (
-        `L ${midPoint[0] + offset},${fromPoint[1] + offset} ` +
-        `L ${midPoint[0] + offset},${toPoint[1] + offset} `
+        `L ${midPoint[0] + offset},${fromPoint[1] + offset} `
+        + `L ${midPoint[0] + offset},${toPoint[1] + offset} `
       );
     } else {
       cmds += (
-        `L ${fromPoint[0] + offset},${midPoint[1] + offset} ` +
-        `L ${toPoint[0] + offset},${midPoint[1] + offset} `
+        `L ${fromPoint[0] + offset},${midPoint[1] + offset} `
+        + `L ${toPoint[0] + offset},${midPoint[1] + offset} `
       );
     }
     cmds += `L ${toPoint[0] + offset},${toPoint[1] + offset}`;
@@ -63,6 +63,7 @@ const findTarget = (target) => {
   if (typeof target === 'string') {
     return document.getElementById(target);
   }
+  /* eslint-disable-next-line react/no-find-dom-node */
   return findDOMNode(target);
 };
 
@@ -70,6 +71,7 @@ class Diagram extends Component {
   static defaultProps = { connections: [] };
 
   state = { height: 0, width: 0 }
+
   svgRef = React.createRef();
 
   componentDidMount() {
@@ -87,6 +89,7 @@ class Diagram extends Component {
 
   onResize = () => {
     const { connectionPoints, width, height } = this.state;
+    /* eslint-disable-next-line react/no-find-dom-node */
     const svg = findDOMNode(this.svgRef.current);
     if (svg) {
       const rect = svg.getBoundingClientRect();
@@ -104,8 +107,8 @@ class Diagram extends Component {
 
   placeConnections() {
     const { connections } = this.props;
-    const containerRect =
-      findDOMNode(this.svgRef.current).getBoundingClientRect();
+    /* eslint-disable-next-line react/no-find-dom-node */
+    const containerRect = findDOMNode(this.svgRef.current).getBoundingClientRect();
     const connectionPoints = connections.map(({ anchor, fromTarget, toTarget }) => {
       let points;
       const fromElement = findTarget(fromTarget);
@@ -174,16 +177,16 @@ class Diagram extends Component {
         delete cleanedRest.toTarget;
         const points = connectionPoints[index];
         if (points) {
-          const offsetWidth = offset ?
-            parseMetricToNum(theme.global.edgeSize[offset]) : 0;
-          const d =
-            COMMANDS[type || 'curved'](points[0], points[1], offsetWidth, anchor);
-          const strokeWidth = thickness ?
-            parseMetricToNum(theme.global.edgeSize[thickness] || thickness) : 1;
+          const offsetWidth = offset
+            ? parseMetricToNum(theme.global.edgeSize[offset]) : 0;
+          const d = (
+            COMMANDS[type || 'curved'](points[0], points[1], offsetWidth, anchor));
+          const strokeWidth = thickness
+            ? parseMetricToNum(theme.global.edgeSize[thickness] || thickness) : 1;
 
           path = (
             <path
-              key={index}
+              key={`${index + 0}`}
               {...cleanedRest}
               stroke={colorForName(color || 'accent-1', theme)}
               strokeWidth={strokeWidth}

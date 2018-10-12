@@ -1,5 +1,6 @@
 import React, { createRef, Component } from 'react';
 import { findDOMNode } from 'react-dom';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
 import { FormClose } from 'grommet-icons';
@@ -49,6 +50,10 @@ const customRoundedTheme = deepMerge(
 );
 
 class SimpleSelect extends Component {
+  propTypes = {
+    theme: PropTypes.shape({}).isRequired,
+  }
+
   state = {
     options: ['one', 'two'],
     value: '',
@@ -152,16 +157,19 @@ class SeasonsSelect extends Component {
     </Button>
   );
 
-  renderOption = option => (
-    <Box
-      pad='small'
-      background={
-        this.state.selectedSeasons.indexOf(option) >= 0 ? 'active' : undefined
-      }
-    >
-      {option}
-    </Box>
-  );
+  renderOption = (option) => {
+    const { selectedSeasons } = this.state;
+    return (
+      <Box
+        pad='small'
+        background={
+          selectedSeasons.indexOf(option) >= 0 ? 'active' : undefined
+        }
+      >
+        {option}
+      </Box>
+    );
+  }
 
   render() {
     const { selectedSeasons } = this.state;
@@ -172,11 +180,11 @@ class SeasonsSelect extends Component {
             <Select
               size='medium'
               placeholder='Select Season'
-              multiple={true}
+              multiple
               value={
                 selectedSeasons && selectedSeasons.length
                   ? (
-                    <Box wrap={true} direction='row' style={{ width: '208px' }}>
+                    <Box wrap direction='row' style={{ width: '208px' }}>
                       {selectedSeasons.map(this.renderSeason)}
                     </Box>
                   )
@@ -184,7 +192,7 @@ class SeasonsSelect extends Component {
               }
               options={allSeasons}
               onChange={({ option }) => {
-                const newSelectedSeasons = [...this.state.selectedSeasons];
+                const newSelectedSeasons = [...selectedSeasons];
                 const seasonIndex = newSelectedSeasons.indexOf(option);
                 if (seasonIndex >= 0) {
                   newSelectedSeasons.splice(seasonIndex, 1);
@@ -290,7 +298,7 @@ class CustomSearchSelect extends Component {
         gap='xsmall'
         pad={{ left: 'small', vertical: 'small' }}
         align='center'
-        flex={true}
+        flex
       >
         <Box
           background='brand'
@@ -304,8 +312,8 @@ class CustomSearchSelect extends Component {
             {selectedContentPartners.length}
           </Text>
         </Box>
-        <Box flex={true}>
-          <Text size='small' truncate={true}>
+        <Box flex>
+          <Text size='small' truncate>
             {selectedContentPartners.map(({ name }) => name).join(', ')}
           </Text>
         </Box>
@@ -316,6 +324,7 @@ class CustomSearchSelect extends Component {
             event.preventDefault();
             event.stopPropagation();
             this.clearContentPartners();
+            /* eslint-disable-next-line react/no-find-dom-node */
             findDOMNode(this.selectRef.current).focus();
           }}
         >
@@ -343,11 +352,11 @@ class CustomSearchSelect extends Component {
               closeOnChange={false}
               placeholder='Select Content Partners'
               searchPlaceholder='Search Content Partners'
-              multiple={true}
+              multiple
               value={selectedContentPartners.length ? this.renderContentPartners() : undefined}
               options={contentPartners}
               onChange={({ option }) => {
-                const newSelectedPartners = [...this.state.selectedContentPartners];
+                const newSelectedPartners = [...selectedContentPartners];
                 const seasonIndex = newSelectedPartners.map(
                   ({ name }) => name
                 ).indexOf(option.name);
@@ -365,9 +374,11 @@ class CustomSearchSelect extends Component {
 
                   if (!p1Exists && p2Exists) {
                     return 1;
-                  } else if (p1Exists && !p2Exists) {
+                  }
+                  if (p1Exists && !p2Exists) {
                     return -1;
-                  } else if (p1.name.toLowerCase() < p2.name.toLowerCase()) {
+                  }
+                  if (p1.name.toLowerCase() < p2.name.toLowerCase()) {
                     return -1;
                   }
                   return 1;
@@ -408,8 +419,8 @@ class DarkSelect extends Component {
   render() {
     const { options, value } = this.state;
     return (
-      <Grommet full={true} theme={grommet} {...this.props}>
-        <Box fill={true} background='dark-1' align='center' justify='center'>
+      <Grommet full theme={grommet} {...this.props}>
+        <Box fill background='dark-1' align='center' justify='center'>
           <Select
             placeholder='Select'
             value={value}

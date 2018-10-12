@@ -31,8 +31,8 @@ export class DropContainer extends Component {
     if (dark === propsTheme.dark && stateTheme) {
       return { theme: undefined, priorTheme: undefined };
     }
-    if (dark !== propsTheme.dark &&
-      (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)) {
+    if (dark !== propsTheme.dark
+      && (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)) {
       return {
         theme: {
           ...propsTheme,
@@ -58,6 +58,7 @@ export class DropContainer extends Component {
     this.place();
 
     if (restrictFocus) {
+      /* eslint-disable-next-line react/no-find-dom-node */
       findDOMNode(this.dropRef.current).focus();
     }
   }
@@ -74,9 +75,10 @@ export class DropContainer extends Component {
 
   addScrollListener = () => {
     const { dropTarget } = this.props;
+    /* eslint-disable-next-line react/no-find-dom-node */
     this.scrollParents = findScrollParents(findDOMNode(dropTarget));
-    this.scrollParents.forEach(scrollParent =>
-      scrollParent.addEventListener('scroll', this.place));
+    this.scrollParents.forEach(scrollParent => (
+      scrollParent.addEventListener('scroll', this.place)));
   }
 
   removeScrollListener = () => {
@@ -87,13 +89,14 @@ export class DropContainer extends Component {
 
   onClickDocument = (event) => {
     const { dropTarget, onClickOutside } = this.props;
+    /* eslint-disable-next-line react/no-find-dom-node */
     const dropTargetNode = findDOMNode(dropTarget);
+    /* eslint-disable-next-line react/no-find-dom-node */
     const dropNode = findDOMNode(this.dropRef.current);
-    if (
-      onClickOutside &&
-      dropNode && // need this for ie11
-      !dropTargetNode.contains(event.target) &&
-      !dropNode.contains(event.target)
+    if (onClickOutside
+      && dropNode// need this for ie11
+      && !dropTargetNode.contains(event.target)
+      && !dropNode.contains(event.target)
     ) {
       onClickOutside();
     }
@@ -106,11 +109,15 @@ export class DropContainer extends Component {
   }
 
   place = () => {
-    const { align, dropTarget, responsive, stretch, theme } = this.props;
+    const {
+      align, dropTarget, responsive, stretch, theme,
+    } = this.props;
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
+    /* eslint-disable-next-line react/no-find-dom-node */
     const target = findDOMNode(dropTarget);
+    /* eslint-disable-next-line react/no-find-dom-node */
     const container = findDOMNode(this.dropRef.current);
     if (container && target) {
       // clear prior styling
@@ -136,7 +143,7 @@ export class DropContainer extends Component {
       let left;
       if (align.left) {
         if (align.left === 'left') {
-          left = targetRect.left;
+          ({ left } = targetRect);
         } else if (align.left === 'right') {
           left = targetRect.left + targetRect.width;
         }
@@ -161,7 +168,7 @@ export class DropContainer extends Component {
       let maxHeight;
       if (align.top) {
         if (align.top === 'top') {
-          top = targetRect.top;
+          ({ top } = targetRect);
           maxHeight = Math.min(windowHeight - targetRect.top, windowHeight);
         } else {
           top = targetRect.bottom;
@@ -202,7 +209,7 @@ export class DropContainer extends Component {
           // We put it above but there's more room below, put it below
           if (align.bottom === 'bottom') {
             if (responsive) {
-              top = targetRect.top;
+              ({ top } = targetRect);
             }
             maxHeight = Math.min(windowHeight - top, windowHeight);
           } else {

@@ -44,7 +44,8 @@ one of top or bottom should be specified.`
     dropTarget: PropTypes.object.description(
       `Target where the drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be
-      aligned to the Menu itself by default.`),
+      aligned to the Menu itself by default.`
+    ),
     icon: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.node,

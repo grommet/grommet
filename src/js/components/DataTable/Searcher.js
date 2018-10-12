@@ -11,6 +11,7 @@ export class Searcher extends Component {
   inputRef = React.createRef()
 
   componentDidMount() {
+    /* eslint-disable-next-line react/prop-types */
     const { filtering, property } = this.props;
     if (this.inputRef.current && filtering === property) {
       this.inputRef.current.focus();
@@ -18,11 +19,14 @@ export class Searcher extends Component {
   }
 
   render() {
-    const { filtering, filters, onFilter, onFiltering, property } = this.props;
+    const {
+      /* eslint-disable-next-line react/prop-types */
+      filtering, filters, onFilter, onFiltering, property,
+    } = this.props;
     if (filtering === property) {
       return (
         <Keyboard onEsc={() => onFiltering(undefined)}>
-          <Box flex={true} pad={{ horizontal: 'small' }}>
+          <Box flex pad={{ horizontal: 'small' }}>
             <TextInput
               ref={this.inputRef}
               value={filters[property]}
@@ -43,7 +47,7 @@ export class Searcher extends Component {
         ) : null}
         <Button
           icon={<FormSearch color={filtering === property ? 'brand' : 'border'} />}
-          hoverIndicator={true}
+          hoverIndicator
           onClick={() => onFiltering(filtering === property ? undefined : property)}
         />
       </Fragment>

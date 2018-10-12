@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { cleanup, renderIntoDocument } from 'react-testing-library';
+import { cleanup, render } from 'react-testing-library';
 
 import { hpe as hpeTheme } from '../../../themes';
 
-import { Grommet } from '../';
+import { Grommet } from '..';
 import { AnnounceContext } from '../../../contexts';
 
 class TestAnnouncer extends Component {
+  static propTypes = {
+    announce: PropTypes.func.isRequired,
+  }
+
   componentDidMount() {
-    this.props.announce('hello', 'assertive');
+    const { announce } = this.props;
+    announce('hello', 'assertive');
   }
 
   render() {
@@ -37,13 +43,13 @@ describe('Grommet', () => {
 
   test('full', () => {
     const component = renderer.create(
-      <Grommet full={true}>Grommet App</Grommet>
+      <Grommet full>Grommet App</Grommet>
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('announce', (done) => {
-    const { container } = renderIntoDocument(
+    const { container } = render(
       <Grommet>
         <AnnounceContext.Consumer>
           {announce => <TestAnnouncer announce={announce} />}

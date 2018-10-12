@@ -40,9 +40,10 @@ class DropButton extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (!this.state.show && prevState.show) {
+    const { show, buttonRef } = this.state;
+    if (!show && prevState.show) {
       // focus on the button if the drop is closed
-      setFocusWithoutScroll(this.state.buttonRef.current);
+      setFocusWithoutScroll(buttonRef.current);
     }
   }
 
@@ -59,8 +60,7 @@ class DropButton extends Component {
     const { onClose, onOpen } = this.props;
     const { show } = this.state;
     this.setState({ show: !show },
-      show ? (onClose && onClose()) : (onOpen && onOpen())
-    );
+      show ? (onClose && onClose()) : (onOpen && onOpen()));
   }
 
   render() {
@@ -78,7 +78,7 @@ class DropButton extends Component {
       drop = (
         <Drop
           id={id ? `${id}__drop` : undefined}
-          restrictFocus={true}
+          restrictFocus
           align={dropAlign}
           target={dropTarget || buttonRef.current}
           onClickOutside={this.onDropClose}

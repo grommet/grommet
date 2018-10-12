@@ -1,9 +1,9 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import { render, Simulate } from 'react-testing-library';
+import { render, fireEvent } from 'react-testing-library';
 
-import { Grommet, Tab, Tabs } from '../../';
+import { Grommet, Tab, Tabs } from '../..';
 
 describe('Tabs', () => {
   test('no Tab', () => {
@@ -65,30 +65,9 @@ describe('Tabs', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.click(getByText('Tab 2'));
-    expect(onActive).toBeCalled();
+    fireEvent.click(getByText('Tab 2'));
+    expect(onActive).toBeCalledWith(1);
 
-    expect(container.firstChild).toMatchSnapshot();
-  });
-
-  test('change active index', () => {
-    const onActive = jest.fn();
-    const { getByText, container } = render(
-      <Grommet>
-        <Tabs activeIndex={1} onActive={onActive}>
-          <Tab title='Tab 1'>
-            Tab body 1
-          </Tab>
-          <Tab title='Tab 2'>
-            Tab body 2
-          </Tab>
-        </Tabs>
-      </Grommet>
-    );
-    expect(container.firstChild).toMatchSnapshot();
-
-    Simulate.click(getByText('Tab 1'));
-    expect(onActive).toBeCalledWith(0);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -96,6 +75,7 @@ describe('Tabs', () => {
     const { getByText, container } = render(
       <Grommet>
         <Tabs>
+          {/* eslint-disable-next-line jsx-a11y/mouse-events-have-key-events */}
           <Tab title='Tab 1' onMouseOver={() => {}} onMouseOut={() => {}}>
             Tab body 1
           </Tab>
@@ -107,16 +87,16 @@ describe('Tabs', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.mouseOver(getByText('Tab 1'));
+    fireEvent.mouseOver(getByText('Tab 1'));
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.mouseOver(getByText('Tab 2'));
+    fireEvent.mouseOver(getByText('Tab 2'));
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.mouseOut(getByText('Tab 1'));
+    fireEvent.mouseOut(getByText('Tab 1'));
     expect(container.firstChild).toMatchSnapshot();
 
-    Simulate.mouseOut(getByText('Tab 2'));
+    fireEvent.mouseOut(getByText('Tab 2'));
     expect(container.firstChild).toMatchSnapshot();
   });
 });

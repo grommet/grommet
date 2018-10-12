@@ -16,10 +16,10 @@ const colors = {
   focus: accentColors[0],
 };
 
-const colorArray = (array, prefix) =>
+const colorArray = (array, prefix) => (
   array.forEach((color, index) => {
     colors[`${prefix}-${index + 1}`] = color;
-  });
+  }));
 
 colorArray(accentColors, 'accent');
 colorArray(neutralColors, 'neutral');

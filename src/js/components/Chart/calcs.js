@@ -21,8 +21,8 @@ export const calcs = (values, options = {}) => {
   const interval = Number.parseFloat((delta / coarseness).toPrecision(1));
   max = (max - (max % interval)) + interval;
   min -= (min % interval);
-  const bounds =
-    [[calcValues[0].value[0], calcValues[calcValues.length - 1].value[0]], [min, max]];
+  const bounds = (
+    [[calcValues[0].value[0], calcValues[calcValues.length - 1].value[0]], [min, max]]);
   const dimensions = [bounds[0][1] - bounds[0][0], bounds[1][1] - bounds[1][0]];
 
   // Calculate x and y axis values across the specfied number of steps.

@@ -37,7 +37,8 @@ export const doc = (DropButton) => {
     dropTarget: PropTypes.object.description(
       `Target where the drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be
-      aligned to the DropButton itself by default.`),
+      aligned to the DropButton itself by default.`
+    ),
     onClose: PropTypes.func.description('Callback for when the drop is closed'),
     onOpen: PropTypes.func.description('Callback for when the drop is opened'),
     open: PropTypes.bool.description(

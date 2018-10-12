@@ -1,3 +1,4 @@
+/* eslint-disable react/no-find-dom-node */
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
@@ -95,7 +96,7 @@ class Video extends Component {
     }
 
     // hide all captioning to start with
-    const textTracks = video.textTracks;
+    const { textTracks } = video;
     for (let i = 0; i < textTracks.length; i += 1) {
       textTracks[i].mode = 'hidden';
     }
@@ -104,7 +105,8 @@ class Video extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.autoPlay && !prevProps.autoPlay) {
+    const { autoPlay } = this.props;
+    if (autoPlay && !prevProps.autoPlay) {
       // Caller wants the video to play now.
       this.play();
     }
@@ -115,29 +117,32 @@ class Video extends Component {
     this.unmounted = true;
   }
 
-  injectUpdateVideoEvents = () =>
+  injectUpdateVideoEvents = () => (
     videoEvents.reduce((previousValue, currentValue) => {
       const nextValue = { ...previousValue };
       nextValue[currentValue] = (e) => {
         if (currentValue in this.props
+          /* eslint-disable react/destructuring-assignment */
           && typeof this.props[currentValue] === 'function') {
           this.props[currentValue](e);
+          /* eslint-enable react/destructuring-assignment */
         }
         this.update();
       };
 
       return nextValue;
-    }, {})
+    }, {}))
 
   update = () => {
     const { videoRef } = this.state;
+    // eslint-disable-next-line react/no-find-dom-node
     const video = findDOMNode(videoRef.current);
     // Set flag for Video first play
     if ((!this.hasPlayed && !video.paused && !video.loading) || video.currentTime) {
       this.hasPlayed = true;
     }
 
-    let interacting = this.state.interacting;
+    let { interacting } = this.state;
     if (video.ended) {
       interacting = false;
     }
@@ -211,9 +216,9 @@ class Video extends Component {
     findDOMNode(videoRef.current).volume -= VOLUME_STEP;
   }
 
-  showCaptions(index) {
+  showCaptions = (index) => {
     const { videoRef } = this.state;
-    const textTracks = findDOMNode(videoRef.current).textTracks;
+    const { textTracks } = findDOMNode(videoRef.current);
     for (let i = 0; i < textTracks.length; i += 1) {
       textTracks[i].mode = ((i === index) ? 'showing' : 'hidden');
     }
@@ -251,7 +256,9 @@ class Video extends Component {
   }
 
   restate = () => {
-    const { captions, height, videoRef, width } = this.state;
+    const {
+      captions, height, videoRef, width,
+    } = this.state;
     const video = findDOMNode(videoRef.current);
 
     if (video.videoHeight) {
@@ -273,7 +280,7 @@ class Video extends Component {
     }
 
     // remember the state of the text tracks for subsequent rendering
-    const textTracks = video.textTracks;
+    const { textTracks } = video;
     if (textTracks.length > 0) {
       if (textTracks.length === 1) {
         const active = textTracks[0].mode === 'showing';
@@ -341,20 +348,20 @@ class Video extends Component {
           background={background}
         >
           <Button
-            icon={playing ?
-              <Icons.Pause color={iconColor} /> :
-              <Icons.Play color={iconColor} />
+            icon={playing
+              ? <Icons.Pause color={iconColor} />
+              : <Icons.Play color={iconColor} />
             }
             hoverIndicator='background'
             onClick={playing ? this.pause : this.play}
           />
-          <Box direction='row' align='center' flex={true}>
-            <Box flex={true}>
+          <Box direction='row' align='center' flex>
+            <Box flex>
               <Stack>
                 <Meter
                   aria-label='Video progress'
-                  background={over &&
-                    ((theme.video.scrubber && theme.video.scrubber.track.color) || 'dark-3')}
+                  background={over
+                    && ((theme.video.scrubber && theme.video.scrubber.track.color) || 'dark-3')}
                   size='full'
                   thickness='small'
                   values={[{ value: percentagePlayed || 0 }]}
@@ -403,7 +410,9 @@ class Video extends Component {
   }
 
   render() {
-    const { autoPlay, children, controls, loop, theme, ...rest } = this.props;
+    const {
+      autoPlay, children, controls, loop, theme, ...rest
+    } = this.props;
     const { height, videoRef, width } = this.state;
 
     const controlsElement = (controls ? this.renderControls() : undefined);

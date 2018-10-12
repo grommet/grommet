@@ -3,7 +3,9 @@ import { storiesOf } from '@storybook/react';
 
 import { Search } from 'grommet-icons';
 
-import { Box, Image, Grommet, Text, TextInput } from 'grommet';
+import {
+  Box, Image, Grommet, Text, TextInput,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
@@ -113,22 +115,22 @@ class CustomSuggestionsTextInput extends Component {
 
   boxRef= createRef()
 
+  componentDidMount() {
+    this.forceUpdate();
+  }
+
   onChange = event => this.setState({ value: event.target.value },
     () => {
-      if (!this.state.value.trim()) {
+      const { value } = this.state;
+      if (!value.trim()) {
         this.setState({ suggestedFolks: [] });
       } else {
         // simulate an async call to the backend
         setTimeout(() => this.setState({ suggestedFolks: folks }), 300);
       }
-    }
-  )
+    })
 
   onSelect = event => this.setState({ value: event.suggestion.value })
-
-  componentDidMount() {
-    this.forceUpdate();
-  }
 
   renderSuggestions = () => {
     const { value, suggestedFolks } = this.state;
@@ -168,8 +170,8 @@ class CustomSuggestionsTextInput extends Component {
     const { suggestionOpen, value } = this.state;
 
     return (
-      <Grommet theme={myCustomTheme} full={true}>
-        <Box background='dark-1' fill={true} align='center' pad={{ top: 'large' }}>
+      <Grommet theme={myCustomTheme} full>
+        <Box background='dark-1' fill align='center' pad={{ top: 'large' }}>
           <Box
             ref={this.boxRef}
             width='large'
@@ -187,7 +189,7 @@ class CustomSuggestionsTextInput extends Component {
             <TextInput
               type='search'
               dropTarget={this.boxRef.current}
-              plain={true}
+              plain
               value={value}
               onChange={this.onChange}
               onSelect={this.onSelect}

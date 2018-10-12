@@ -28,7 +28,7 @@ class Box extends Component {
     const { background, theme: propsTheme } = nextProps;
     const { theme: stateTheme, priorTheme } = prevState;
 
-    let dark = propsTheme.dark;
+    let { dark } = propsTheme;
     if (background) {
       dark = backgroundIsDark(background, propsTheme);
     }
@@ -36,8 +36,8 @@ class Box extends Component {
     if (dark === propsTheme.dark && stateTheme) {
       return { theme: undefined, priorTheme: undefined };
     }
-    if (dark !== propsTheme.dark &&
-      (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)) {
+    if (dark !== propsTheme.dark
+      && (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)) {
       return {
         theme: {
           ...propsTheme,

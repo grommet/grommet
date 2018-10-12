@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { Grid } from '../';
+import { Grid } from '..';
 
 test('Grid renders', () => {
   const component = renderer.create(
@@ -135,7 +135,7 @@ test('Grid gap renders', () => {
 test('Grid fill renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid fill={true} />
+      <Grid fill />
       <Grid fill={false} />
       <Grid fill='horizontal' />
       <Grid fill='vertical' />

@@ -20,7 +20,9 @@ export const StyledRadioButtonContainer = styled.label`
   }
 
   :hover input:not([disabled]) + div {
-    border-color: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.global.colors.black)};
+    border-color: ${props => (props.theme.dark
+      ? props.theme.global.colors.white
+      : props.theme.global.colors.black)};
   }
 `;
 
@@ -40,8 +42,8 @@ export const StyledRadioButtonInput = styled.input`
   }
 
   :checked + div {
-    border-color: ${props => (props.theme.radioButton.check.color ||
-      props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
+    border-color: ${props => (props.theme.radioButton.check.color
+      || props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
   }
 
   :checked + div > svg {
@@ -50,8 +52,8 @@ export const StyledRadioButtonInput = styled.input`
 
   :checked + span > span {
     left: ${props => props.theme.radioButton.size};
-    background: ${props => (props.theme.radioButton.check.color ||
-      props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
+    background: ${props => (props.theme.radioButton.check.color
+      || props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
   }
 `;
 
@@ -76,8 +78,8 @@ export const StyledRadioButtonButton = styled.div`
     display: none;
     width: ${props => props.theme.radioButton.size};
     height: ${props => props.theme.radioButton.size};
-    fill: ${props => (props.theme.radioButton.check.color ||
-      props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
+    fill: ${props => (props.theme.radioButton.check.color
+      || props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
   }
 `;
 

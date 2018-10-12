@@ -1,19 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
 
 import { StyledParagraph } from './StyledParagraph';
 
-class Paragraph extends Component {
-  render() {
-    const { ...rest } = this.props;
-
-    return (
-      <StyledParagraph {...rest} />
-    );
-  }
-}
+const Paragraph = ({ ...rest }) => (
+  <StyledParagraph {...rest} />
+);
 
 let ParagraphDoc;
 if (process.env.NODE_ENV !== 'production') {

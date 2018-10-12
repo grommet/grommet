@@ -90,9 +90,9 @@ class Select extends Component {
           }
         } else if (value.length === 1) {
           if (React.isValidElement(value[0])) {
-            selectValue = value[0];
+            [selectValue] = value;
           } else {
-            textValue = value[0];
+            [textValue] = value;
           }
         } else {
           textValue = '';
@@ -105,8 +105,8 @@ class Select extends Component {
     }
 
     const dark = theme.select.background ? colorIsDark(theme.select.background) : theme.dark;
-    const iconColor = evalStyle((theme.select.icons.color ||
-      theme.global.control.color)[dark ? 'dark' : 'light'], theme);
+    const iconColor = evalStyle((theme.select.icons.color
+      || theme.global.control.color)[dark ? 'dark' : 'light'], theme);
 
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
@@ -129,7 +129,7 @@ class Select extends Component {
             plain={plain}
             theme={theme}
           >
-            <Box direction='row' flex={true} basis='auto'>
+            <Box direction='row' flex basis='auto'>
               {selectValue || (
                 <SelectTextInput
                   a11yTitle={a11yTitle && `${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`}
@@ -138,8 +138,8 @@ class Select extends Component {
                   tabIndex='-1'
                   type='text'
                   placeholder={placeholder}
-                  plain={true}
-                  readOnly={true}
+                  plain
+                  readOnly
                   value={textValue}
                   size={size}
                   onClick={disabled ? undefined : this.onOpen}

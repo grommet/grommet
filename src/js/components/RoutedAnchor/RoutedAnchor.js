@@ -5,11 +5,13 @@ import { Anchor } from '../Anchor';
 
 class RoutedAnchor extends Component {
   static contextTypes = {
-    router: PropTypes.object.isRequired,
+    router: PropTypes.shape({}).isRequired,
   }
+
   static defaultProps = {
     method: 'push',
   };
+
   render() {
     const { path, method, ...rest } = this.props;
     return (

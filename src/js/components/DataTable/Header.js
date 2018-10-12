@@ -18,8 +18,8 @@ export const Header = ({
   // The tricky part here is that we need to manage the theme styling
   // to make sure that the background, border, and padding are applied
   // at the right places depending on the mix of controls in each header cell.
-  const outerThemeProps = (({ border, background }) =>
-    ({ border, background }))(theme.dataTable.header);
+  const outerThemeProps = (({ border, background }) => (
+    ({ border, background }))(theme.dataTable.header));
   const { border, background, ...innerThemeProps } = theme.dataTable.header;
   return (
     <StyledDataTableHeader {...rest}>
@@ -35,7 +35,9 @@ export const Header = ({
           />
         )}
 
-        {columns.map(({ property, header, align, search }) => {
+        {columns.map(({
+          property, header, align, search,
+        }) => {
           let content = (typeof header === 'string' ? (
             <Text>{header}</Text>
           ) : header);
@@ -66,7 +68,7 @@ export const Header = ({
             }
             content = (
               <Box
-                fill={true}
+                fill
                 direction='row'
                 justify='between'
                 align='center'
@@ -85,7 +87,7 @@ export const Header = ({
           } else if (!onSort) {
             content = (
               <Box
-                fill={true}
+                fill
                 justify='center'
                 align={align}
                 {...theme.dataTable.header}
@@ -107,10 +109,10 @@ export const Header = ({
             <TableCell
               key={property}
               scope='col'
-              plain={true}
+              plain
               verticalAlign='bottom'
-              style={widths && widths[property] ?
-                { width: widths[property] } : undefined}
+              style={widths && widths[property]
+                ? { width: widths[property] } : undefined}
             >
               {content}
             </TableCell>
