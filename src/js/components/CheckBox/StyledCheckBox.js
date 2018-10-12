@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle } from '../../utils';
+import { focusStyle, normalizeColor } from '../../utils';
 
 const disabledStyle = `
   opacity: 0.5;
@@ -84,7 +84,7 @@ export const StyledCheckBoxKnob = styled.span`
   transition: all 0.3s;
   width: ${props => props.theme.checkBox.size};
   height: ${props => props.theme.checkBox.size};
-  background: ${props => props.theme.checkBox.toggle.color[props.theme.dark ? 'dark' : 'light']};
+  background: ${props => normalizeColor(props.theme.checkBox.toggle.color[props.theme.dark ? 'dark' : 'light'], props.theme)};
   border-radius: ${props => props.theme.checkBox.toggle.radius};
   ${props => props.theme.checkBox.knob.extend}
 `;

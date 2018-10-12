@@ -15,7 +15,7 @@ import {
   StyledCheckBoxKnob,
 } from './StyledCheckBox';
 
-import { evalStyle } from '../../utils';
+import { evalStyle, normalizeColor } from '../../utils';
 
 class CheckBox extends Component {
   render() {
@@ -41,11 +41,17 @@ class CheckBox extends Component {
 
     const Icon = theme.checkBox.icons.checked;
 
-    let borderColor = theme.checkBox.border.color[theme.dark ? 'dark' : 'light'];
+    let borderColor = normalizeColor(
+      theme.checkBox.border.color[theme.dark ? 'dark' : 'light'],
+      theme
+    );
     if (checked) {
-      borderColor = (
-        theme.checkBox.check.color || theme.global.control.color
-      )[theme.dark ? 'dark' : 'light'];
+      borderColor = normalizeColor(
+        (
+          theme.checkBox.check.color || theme.global.control.color
+        )[theme.dark ? 'dark' : 'light'],
+        theme
+      );
     }
 
     const visual = (toggle ? (
