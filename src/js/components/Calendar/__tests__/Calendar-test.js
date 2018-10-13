@@ -2,7 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { Grommet, Calendar } from '../..';
+import { FormNextLink, FormPreviousLink } from 'grommet-icons';
+import {
+ Box, Button, Calendar, Grommet, Text,
+} from '../..';
 
 const DATE = '2018-01-15T00:00:00-08:00';
 const DATES = [
@@ -72,6 +75,51 @@ test('Calendar firstDayOfWeek renders', () => {
     <Grommet>
       <Calendar firstDayOfWeek={0} date={DATE} />
       <Calendar firstDayOfWeek={1} date={DATE} />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Calendar renders custom header', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Calendar
+        onSelect={() => {}}
+        size='small'
+        bounds={['2018-09-08', '2018-12-13']}
+        header={({
+          date, locale, onPreviousMonth, onNextMonth, previousInBound, nextInBound,
+        }) => (
+          <Box direction='row' align='center' justify='between'>
+            <Button
+              onClick={previousInBound && onPreviousMonth}
+            >
+              <Box>
+                <FormPreviousLink />
+              </Box>
+            </Button>
+            <Text size='small'>
+              <strong>
+                {
+                  date.toLocaleDateString(
+                    locale,
+                    { month: 'long', year: 'numeric' }
+                  )
+                }
+              </strong>
+            </Text>
+            <Button
+              onClick={nextInBound && onNextMonth}
+            >
+              <Box>
+                <FormNextLink />
+              </Box>
+            </Button>
+
+          </Box>
+        )}
+      />
     </Grommet>
   );
   const tree = component.toJSON();

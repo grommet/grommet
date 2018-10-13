@@ -88,7 +88,6 @@ exports[`Menu basic 1`] = `
     <button
       aria-label="Open Menu"
       className="c1"
-      disabled={false}
       id="test-menu"
       onBlur={[Function]}
       onClick={[Function]}
@@ -1180,7 +1179,6 @@ exports[`Menu custom message 1`] = `
     <button
       aria-label="Abrir Menu"
       className="c1"
-      disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}

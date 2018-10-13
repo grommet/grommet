@@ -109,7 +109,6 @@ exports[`Button color renders 1`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -123,7 +122,6 @@ exports[`Button color renders 1`] = `
   </button>
   <button
     className="c3"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -275,7 +273,6 @@ exports[`Button focus renders 1`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -329,7 +326,6 @@ exports[`Button hoverIndicator as object renders 1`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -379,7 +375,6 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -429,7 +424,6 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -479,7 +473,6 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -529,7 +522,6 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -579,7 +571,6 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -631,7 +622,6 @@ exports[`Button hoverIndicator renders 1`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -685,7 +675,6 @@ exports[`Button href renders 1`] = `
 >
   <a
     className="c1"
-    disabled={false}
     href="test"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -780,7 +769,6 @@ exports[`Button icon label renders 1`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -882,7 +870,6 @@ exports[`Button primary renders 1`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -977,7 +964,6 @@ exports[`Button renders 1`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1079,7 +1065,6 @@ exports[`Button reverse icon label renders 1`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1171,7 +1156,6 @@ exports[`Button warns about invalid icon render 1`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1258,7 +1242,6 @@ exports[`Button warns about invalid label render 1`] = `
 >
   <button
     className="c1"
-    disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}

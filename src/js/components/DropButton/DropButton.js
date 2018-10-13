@@ -99,7 +99,8 @@ class DropButton extends Component {
         <Button
           id={id}
           ref={buttonRef}
-          onClick={disabled ? undefined : this.onToggle}
+          disabled={disabled}
+          onClick={this.onToggle}
           {...rest}
         />
         {drop}

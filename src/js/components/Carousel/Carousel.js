@@ -125,7 +125,12 @@ class Carousel extends Component {
           {wrappedChildren}
           <Box tabIndex='0' focus={focus} fill direction='row' justify='between'>
             <Box fill='vertical'>
-              <Button fill onClick={onLeft} hoverIndicator>
+              <Button
+                fill
+                disabled={activeIndex <= 0}
+                onClick={onLeft}
+                hoverIndicator
+              >
                 <Box justify='center'>
                   <PreviousIcon />
                 </Box>
@@ -137,7 +142,12 @@ class Carousel extends Component {
               </Box>
             </Box>
             <Box fill='vertical'>
-              <Button fill onClick={onRight} hoverIndicator>
+              <Button
+                fill
+                disabled={activeIndex >= lastIndex}
+                onClick={onRight}
+                hoverIndicator
+              >
                 <Box justify='center'>
                   <NextIcon />
                 </Box>

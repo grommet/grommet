@@ -211,7 +211,6 @@ exports[`Select basic 1`] = `
 <button
   aria-label="Open Drop"
   className="c0"
-  disabled={false}
   id="test-select"
   onBlur={[Function]}
   onClick={[Function]}
@@ -1735,7 +1734,6 @@ exports[`Select multiple 1`] = `
 <button
   aria-label="Open Drop"
   className="c0"
-  disabled={false}
   id="test-select"
   onBlur={[Function]}
   onClick={[Function]}
@@ -5281,7 +5279,6 @@ exports[`Select size 1`] = `
 <button
   aria-label="Open Drop"
   className="c0"
-  disabled={false}
   id="test-select"
   onBlur={[Function]}
   onClick={[Function]}

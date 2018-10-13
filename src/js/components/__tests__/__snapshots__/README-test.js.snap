@@ -740,6 +740,14 @@ Fill color for primary, border color otherwise.
 string
 \`\`\`
 
+**disabled**
+
+Whether the button is disabled.
+
+\`\`\`
+boolean
+\`\`\`
+
 **fill**
 
 Whether the button expands to fill all of the available width and height.
@@ -904,6 +912,31 @@ The first day of the week. 0 for Sunday. 1 for Monday.
 \`\`\`
 0
 1
+\`\`\`
+
+**header**
+
+If specified, the entire calendar header will be managed by the caller.
+The function passes the following options:
+
+\`\`\`
+  {
+    date: Date,
+    locale: string,
+    onPreviousMonth: func,
+    onNextMonth: func,
+    previousInBound: bool,
+    nextInBound: bool,
+  }
+\`\`\`
+
+\`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the calendar to move between months.
+\`previousInBound\` and \`nextInBound\` are booleans that tell, when using \`bounds\`, if the current date is within that range.
+You can then use that to disable the previous and next buttons.
+
+
+\`\`\`
+function
 \`\`\`
 
 **locale**

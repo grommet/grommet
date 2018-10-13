@@ -179,7 +179,6 @@ exports[`DropButton closed 1`] = `
 <button
   aria-label="Open Drop"
   className="c0"
-  disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
   onFocus={[Function]}
@@ -448,7 +447,6 @@ exports[`DropButton opened 1`] = `
 <button
   aria-label="Open Drop"
   className="c0"
-  disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
   onFocus={[Function]}

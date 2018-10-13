@@ -549,7 +549,6 @@ exports[`Carousel basic 1`] = `
           >
             <button
               className="c14"
-              disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
@@ -579,7 +578,6 @@ exports[`Carousel basic 1`] = `
             </button>
             <button
               className="c14"
-              disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
