@@ -14,6 +14,9 @@ export const doc = (Calendar) => {
     );
 
   DocumentedCalendar.propTypes = {
+    animate: PropTypes.bool.description(`
+      Whether to animate the calender as the user interacts with it.
+    `).defaultValue(true),
     bounds: PropTypes.arrayOf(PropTypes.string)
       .description(`An array of two numbers indicating the limits on
         navigation in ISO8601 format`),
@@ -53,11 +56,19 @@ You can then use that to disable the previous and next buttons.
 `
     ),
     locale: PropTypes.string.description('The locale to use.'),
+    onReference: PropTypes.func.description(`
+      Called with an ISO8601 date when the user navigates to a different month.
+    `),
     onSelect: PropTypes.func.description(`Called with an ISO8601 date when
       the user selects a day.
       For single select, make this the subsequent \`date\` property value.
       For multiple select or ranges, toggle values in \`dates\`.
       Not specifying this property makes the component read only.`),
+    reference: PropTypes.string
+      .description('The date to show if `date` isn\'t set, in ISO8601 format'),
+    showAdjacentDays: PropTypes.bool.description(`
+      Whether to show the days from the previous and next months.
+    `).defaultValue(true),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large']),
       PropTypes.string,
@@ -65,4 +76,19 @@ You can then use that to disable the previous and next buttons.
   };
 
   return DocumentedCalendar;
+};
+
+export const docUpdateDateRange = (updateDateRange) => {
+  const DocumentedUpdateDateRange = describe(updateDateRange)
+    .description(`
+      A function to help manage selecting ranges of dates.
+    `).usage(
+      `import { Calendar } from 'grommet';
+const { date, dates, previousSelectedDate } = this.state;
+<Calendar onSelect={d => this.setState(
+  Calendar.updateDateRange(d, { date, dates, previousSelectedDate })
+)} />`
+    );
+
+  return DocumentedUpdateDateRange;
 };
