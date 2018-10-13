@@ -39,9 +39,9 @@ exports[`Layer dark context 1`] = `
 @media only screen and (max-width:767px) {
   .c0 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -164,9 +164,9 @@ exports[`Layer full false 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -287,9 +287,9 @@ exports[`Layer full horizontal 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -408,9 +408,9 @@ exports[`Layer full true 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -531,9 +531,9 @@ exports[`Layer full vertical 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -634,9 +634,9 @@ exports[`Layer hidden 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -678,7 +678,7 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledOverlay-rmtehz-1 fkcwDv"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 jJVIsu"
+    class="StyledLayer__StyledContainer-rmtehz-2 eIqnbi"
     id="hidden-test"
   >
     This is a layer
@@ -807,9 +807,9 @@ exports[`Layer margin large 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -929,9 +929,9 @@ exports[`Layer margin medium 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -1051,9 +1051,9 @@ exports[`Layer margin none 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -1173,9 +1173,9 @@ exports[`Layer margin small 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -1295,9 +1295,9 @@ exports[`Layer margin xsmall 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -1368,9 +1368,9 @@ exports[`Layer non-modal 1`] = `
 @media only screen and (max-width:767px) {
   .c0 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -1481,9 +1481,9 @@ exports[`Layer plain 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -1603,9 +1603,9 @@ exports[`Layer position bottom 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -1725,9 +1725,9 @@ exports[`Layer position center 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -1847,9 +1847,9 @@ exports[`Layer position left 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -1969,9 +1969,9 @@ exports[`Layer position right 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
@@ -2091,9 +2091,9 @@ exports[`Layer position top 1`] = `
 @media only screen and (max-width:767px) {
   .c2 {
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;

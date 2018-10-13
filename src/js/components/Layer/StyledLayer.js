@@ -349,9 +349,9 @@ const desktopContainerStyle = css`
 
 const responsiveContainerStyle = css`
     position: relative;
-    max-height: 0;
-    max-width: 0;
-    border-radius: none;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
     top: 0;
     bottom: 0;
     left: 0;
