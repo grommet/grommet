@@ -37,6 +37,7 @@ Object {
     "displayName": "Calendar",
     "name": "Calendar",
     "render": [Function],
+    "updateDateRange": [Function],
   },
   "Carousel": Object {
     "$$typeof": Symbol(react.forward_ref),
