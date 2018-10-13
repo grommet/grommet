@@ -160,7 +160,7 @@ describe('Box', () => {
         </Box>
         <Box direction='row'>
           <Box basis='1/2' />
-          <Box basis='1/2' />
+          <Box basis='2/4' />
         </Box>
         <Box direction='row'>
           <Box basis='1/3' />

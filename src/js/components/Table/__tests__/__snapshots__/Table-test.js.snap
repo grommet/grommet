@@ -487,8 +487,8 @@ exports[`TableCell size renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: inherit;
-  width: 25%;
-  max-width: 25%;
+  width: 33.33%;
+  max-width: 33.33%;
   overflow: hidden;
 }
 
@@ -498,8 +498,8 @@ exports[`TableCell size renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: inherit;
-  width: 33.33%;
-  max-width: 33.33%;
+  width: 66.66%;
+  max-width: 66.66%;
   overflow: hidden;
 }
 
@@ -509,8 +509,19 @@ exports[`TableCell size renders 1`] = `
   font-weight: inherit;
   text-align: inherit;
   height: inherit;
-  width: 66.66%;
-  max-width: 66.66%;
+  width: 25%;
+  max-width: 25%;
+  overflow: hidden;
+}
+
+.c11 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: inherit;
+  width: 75%;
+  max-width: 75%;
   overflow: hidden;
 }
 
@@ -615,16 +626,8 @@ exports[`TableCell size renders 1`] = `
           />
         </td>
         <td
-          className="c8"
-          size="1/4"
-        >
-          <div
-            className="c3"
-          />
-        </td>
-        <td
-          className="c8"
-          size="1/4"
+          className="c7"
+          size="2/4"
         >
           <div
             className="c3"
@@ -643,7 +646,7 @@ exports[`TableCell size renders 1`] = `
         className=""
       >
         <td
-          className="c9"
+          className="c8"
           size="1/3"
         >
           <div
@@ -651,8 +654,36 @@ exports[`TableCell size renders 1`] = `
           />
         </td>
         <td
-          className="c10"
+          className="c9"
           size="2/3"
+        >
+          <div
+            className="c3"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table
+    className="c1"
+  >
+    <tbody
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <td
+          className="c10"
+          size="1/4"
+        >
+          <div
+            className="c3"
+          />
+        </td>
+        <td
+          className="c11"
+          size="3/4"
         >
           <div
             className="c3"

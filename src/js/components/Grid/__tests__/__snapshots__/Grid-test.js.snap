@@ -194,16 +194,28 @@ exports[`Grid columns renders 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: 50% 25% 25%;
+  grid-template-columns: 50% 50%;
 }
 
 .c2 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat(auto-fill,minmax(192px,1fr));
+  grid-template-columns: 33.33% 66.66%;
 }
 
 .c3 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: 25% 75%;
+}
+
+.c4 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: repeat(auto-fill,minmax(192px,1fr));
+}
+
+.c5 {
   display: grid;
   box-sizing: border-box;
   grid-template-columns: repeat(auto-fit,minmax(192px,1fr));
@@ -220,6 +232,12 @@ exports[`Grid columns renders 1`] = `
   />
   <div
     className="c3"
+  />
+  <div
+    className="c4"
+  />
+  <div
+    className="c5"
   />
 </div>
 `;
