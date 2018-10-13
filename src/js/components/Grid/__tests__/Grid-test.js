@@ -29,7 +29,9 @@ test('Grid rows renders', () => {
 test('Grid columns renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid columns={['1/2', '1/4', '1/4']} />
+      <Grid columns={['1/2', '2/4']} />
+      <Grid columns={['1/3', '2/3']} />
+      <Grid columns={['1/4', '3/4']} />
       <Grid columns='small' />
       <Grid columns={{ count: 'fit', size: 'small' }} />
     </Grommet>
