@@ -32,23 +32,16 @@ const customCheckBoxTheme = {
   checkBox: {
     border: {
       color: {
-        light: css`${props => colorForName('brand', props.theme)}`,
+        light: css`${props => colorForName('neutral-1', props.theme)}`,
       },
       radius: '2px',
     },
-    box: {
-      extend: ({ theme, checked }) => `
-        ${checked && `background-color: ${colorForName('brand', theme)};`}
-      `,
+    color: {
+      light: css`${props => colorForName('neutral-1', props.theme)}`,
     },
     check: {
-      color: {
-        light: css`${props => colorForName('brand', props.theme)}`,
-      },
-    },
-    container: {
-      extend: `
-        color: #9C9C9C;
+      extend: ({ theme, checked }) => `
+        ${checked && `background-color: ${colorForName('neutral-1', theme)};`}
       `,
     },
     hover: {
@@ -64,6 +57,9 @@ const customCheckBoxTheme = {
     },
     gap: 'xsmall',
     size: '18px',
+    extend: `
+      color: #9C9C9C;
+    `,
   },
 };
 
@@ -87,8 +83,59 @@ class ThemedCheckBox extends Component {
   }
 }
 
+const customToggleTheme = {
+  checkBox: {
+    border: {
+      color: {
+        light: css`${props => colorForName('light-1', props.theme)}`,
+      },
+    },
+    color: {
+      light: css`${props => colorForName('neutral-1', props.theme)}`,
+    },
+    check: {
+      radius: '2px',
+    },
+    hover: {
+      border: {
+        color: undefined,
+      },
+    },
+    toggle: {
+      background: css`${props => colorForName('light-1', props.theme)}`,
+      color: {
+        light: css`${props => colorForName('light-4', props.theme)}`,
+      },
+    },
+    gap: 'xsmall',
+    size: '18px',
+  },
+};
+
+class ThemedToggle extends Component {
+  state = { checked: false }
+
+  onChange = event => this.setState({ checked: event.target.checked })
+
+  render() {
+    const { checked } = this.state;
+    return (
+      <Grommet theme={deepMerge(grommet, customToggleTheme)}>
+        <CheckBox
+          {...this.props}
+          label='Choice'
+          checked={checked}
+          onChange={this.onChange}
+          toggle
+        />
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('CheckBox', module)
   .add('Simple', () => <SimpleCheckBox />)
   .add('Toggle', () => <SimpleCheckBox toggle />)
   .add('Reverse', () => <SimpleCheckBox reverse />)
-  .add('Themed', () => <ThemedCheckBox />);
+  .add('Themed CheckBox', () => <ThemedCheckBox />)
+  .add('Themed Toggle', () => <ThemedToggle />);

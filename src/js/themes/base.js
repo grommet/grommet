@@ -311,17 +311,11 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
           dark: 'rgba(255, 255, 255, 0.5)',
           light: 'rgba(0, 0, 0, 0.15)',
         },
-        radius: '4px',
         width: '2px',
       },
-      box: {
-        // extend: undefined,
-      },
       check: {
-        // color: { dark: undefined, light: undefined },
-        width: '4px',
-      },
-      container: {
+        radius: '4px',
+        thickness: '4px',
         // extend: undefined,
       },
       icon: {
@@ -329,12 +323,6 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       },
       icons: {
         // checked: undefined,
-      },
-      input: {
-        // extend: undefined,
-      },
-      knob: {
-        // extend: undefined,
       },
       hover: {
         border: {
@@ -345,6 +333,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         },
       },
       size: `${baseSpacing}px`,
+      // color: { dark: undefined, light: undefined },
       toggle: {
         color: {
           dark: '#d9d9d9',
@@ -352,7 +341,12 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         },
         radius: `${baseSpacing}px`,
         size: `${baseSpacing * 2}px`,
+        // extend: undefined,
+        knob: {
+          // extend: undefined,
+        },
       },
+      // extend: undefined,
     },
     clock: {
       analog: {

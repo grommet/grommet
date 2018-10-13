@@ -48,7 +48,7 @@ class CheckBox extends Component {
     if (checked) {
       borderColor = normalizeColor(
         (
-          theme.checkBox.check.color || theme.global.control.color
+          theme.checkBox.color || theme.global.control.color
         )[theme.dark ? 'dark' : 'light'],
         theme
       );
@@ -69,7 +69,7 @@ class CheckBox extends Component {
           size: theme.checkBox.border.width,
           color: evalStyle(borderColor, theme),
         }}
-        round={theme.checkBox.border.radius}
+        round={theme.checkBox.check.radius}
         focus={focus}
         theme={theme}
         checked={checked}
@@ -103,7 +103,9 @@ class CheckBox extends Component {
           {...rest}
           ref={forwardRef}
           type='checkbox'
-          {...removeUndefined({ id, name, checked, disabled, onChange })}
+          {...removeUndefined({
+            id, name, checked, disabled, onChange,
+          })}
           theme={theme}
           checked={checked}
         />
