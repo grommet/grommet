@@ -125,7 +125,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         },
         medium: {
           min: baseSpacing * 32, // 768
-          max: (baseSpacing * 64) - 1, // 1536
+          max: (baseSpacing * 64) - 1, // 1535
         },
         large: {
           min: baseSpacing * 64, // 1536

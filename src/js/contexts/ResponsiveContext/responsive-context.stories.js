@@ -11,7 +11,17 @@ import {
 const customBreakpoints = deepMerge(grommet, {
   global: {
     breakpoints: {
-      medium: 800,
+      xsmall: {
+        max: 499,
+      },
+      small: {
+        min: 500,
+        max: 899,
+      },
+      middle: {
+        min: 900,
+        max: 1535,
+      },
     },
   },
 });
