@@ -42,14 +42,12 @@ class CheckBox extends Component {
     const Icon = theme.checkBox.icons.checked;
 
     let borderColor = normalizeColor(
-      theme.checkBox.border.color[theme.dark ? 'dark' : 'light'],
+      theme.checkBox.border.color,
       theme
     );
     if (checked) {
       borderColor = normalizeColor(
-        (
-          theme.checkBox.color || theme.global.control.color
-        )[theme.dark ? 'dark' : 'light'],
+        theme.checkBox.color || theme.global.control.color,
         theme
       );
     }
@@ -74,7 +72,7 @@ class CheckBox extends Component {
         theme={theme}
         checked={checked}
       >
-        {
+        {checked && (
           Icon ? (
             <Icon as={StyledCheckBoxIcon} theme={theme} checked={checked} />
           ) : (
@@ -82,12 +80,11 @@ class CheckBox extends Component {
               viewBox='0 0 24 24'
               preserveAspectRatio='xMidYMid meet'
               theme={theme}
-              checked={checked}
             >
               <path fill='none' d='M6,11.3 L10.3,16 L18,6.2' />
             </StyledCheckBoxIcon>
           )
-        }
+        )}
       </StyledCheckBoxBox>
     ));
 

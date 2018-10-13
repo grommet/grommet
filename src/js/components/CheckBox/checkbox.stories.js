@@ -87,7 +87,7 @@ const customToggleTheme = {
   checkBox: {
     border: {
       color: {
-        light: css`${props => colorForName('light-1', props.theme)}`,
+        light: css`${props => colorForName('light-2', props.theme)}`,
       },
     },
     color: {
@@ -102,10 +102,11 @@ const customToggleTheme = {
       },
     },
     toggle: {
-      background: css`${props => colorForName('light-1', props.theme)}`,
+      background: css`${props => colorForName('light-2', props.theme)}`,
       color: {
         light: css`${props => colorForName('light-4', props.theme)}`,
       },
+      size: '36px',
     },
     gap: 'xsmall',
     size: '18px',

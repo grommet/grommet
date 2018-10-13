@@ -17,7 +17,6 @@ const hoverStyle = css`
 `;
 
 export const StyledCheckBoxIcon = styled.svg`
-  ${props => (props.checked ? ' display: block;' : 'display: none;')}
   stroke-width: ${props => props.theme.checkBox.check.thickness};
   stroke: ${props => normalizeColor(
     (

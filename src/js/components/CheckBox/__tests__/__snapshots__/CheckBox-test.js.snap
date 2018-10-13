@@ -67,7 +67,6 @@ exports[`CheckBox checked renders 1`] = `
 }
 
 .c7 {
-  display: block;
   stroke-width: 4px;
   stroke: #7D4CDB;
   width: 24px;
@@ -200,7 +199,6 @@ exports[`CheckBox checked renders 1`] = `
         className="c6"
       >
         <svg
-          checked={true}
           className="c7"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
@@ -282,7 +280,7 @@ exports[`CheckBox disabled renders 1`] = `
   border-radius: 4px;
 }
 
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -311,16 +309,7 @@ exports[`CheckBox disabled renders 1`] = `
   border-radius: 4px;
 }
 
-.c7 {
-  display: none;
-  stroke-width: 4px;
-  stroke: #7D4CDB;
-  width: 24px;
-  height: 24px;
-}
-
-.c9 {
-  display: block;
+.c8 {
   stroke-width: 4px;
   stroke: #7D4CDB;
   width: 24px;
@@ -421,25 +410,25 @@ exports[`CheckBox disabled renders 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c7 {
     border: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c7 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c7 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c7 {
     border-radius: 4px;
   }
 }
@@ -475,18 +464,7 @@ exports[`CheckBox disabled renders 1`] = `
       />
       <div
         className="c6"
-      >
-        <svg
-          className="c7"
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M6,11.3 L10.3,16 L18,6.2"
-            fill="none"
-          />
-        </svg>
-      </div>
+      />
     </div>
   </label>
   <label
@@ -508,11 +486,10 @@ exports[`CheckBox disabled renders 1`] = `
       />
       <div
         checked={true}
-        className="c8"
+        className="c7"
       >
         <svg
-          checked={true}
-          className="c9"
+          className="c8"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -597,19 +574,11 @@ exports[`CheckBox label renders 1`] = `
   border-radius: 4px;
 }
 
-.c8 {
+.c7 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 12px;
-}
-
-.c7 {
-  display: none;
-  stroke-width: 4px;
-  stroke: #7D4CDB;
-  width: 24px;
-  height: 24px;
 }
 
 .c1 {
@@ -732,21 +701,10 @@ exports[`CheckBox label renders 1`] = `
       />
       <div
         className="c6"
-      >
-        <svg
-          className="c7"
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M6,11.3 L10.3,16 L18,6.2"
-            fill="none"
-          />
-        </svg>
-      </div>
+      />
     </div>
     <div
-      className="c8"
+      className="c7"
     />
     <span>
       test label
@@ -766,21 +724,10 @@ exports[`CheckBox label renders 1`] = `
       />
       <div
         className="c6"
-      >
-        <svg
-          className="c7"
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M6,11.3 L10.3,16 L18,6.2"
-            fill="none"
-          />
-        </svg>
-      </div>
+      />
     </div>
     <div
-      className="c8"
+      className="c7"
     />
     <div>
       test label
@@ -855,14 +802,6 @@ exports[`CheckBox renders 1`] = `
   border-radius: 4px;
 }
 
-.c7 {
-  display: none;
-  stroke-width: 4px;
-  stroke: #7D4CDB;
-  width: 24px;
-  height: 24px;
-}
-
 .c1 {
   cursor: pointer;
   -webkit-user-select: none;
@@ -983,18 +922,7 @@ exports[`CheckBox renders 1`] = `
       />
       <div
         className="c6"
-      >
-        <svg
-          className="c7"
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M6,11.3 L10.3,16 L18,6.2"
-            fill="none"
-          />
-        </svg>
-      </div>
+      />
     </div>
   </label>
   <label
@@ -1014,18 +942,7 @@ exports[`CheckBox renders 1`] = `
       />
       <div
         className="c6"
-      >
-        <svg
-          className="c7"
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M6,11.3 L10.3,16 L18,6.2"
-            fill="none"
-          />
-        </svg>
-      </div>
+      />
     </div>
   </label>
 </div>
@@ -1102,14 +1019,6 @@ exports[`CheckBox reverse renders 1`] = `
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 12px;
-}
-
-.c8 {
-  display: none;
-  stroke-width: 4px;
-  stroke: #7D4CDB;
-  width: 24px;
-  height: 24px;
 }
 
 .c1 {
@@ -1238,18 +1147,7 @@ exports[`CheckBox reverse renders 1`] = `
       />
       <div
         className="c7"
-      >
-        <svg
-          className="c8"
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M6,11.3 L10.3,16 L18,6.2"
-            fill="none"
-          />
-        </svg>
-      </div>
+      />
     </div>
   </label>
 </div>
