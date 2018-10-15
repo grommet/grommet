@@ -310,6 +310,7 @@ class Calendar extends Component {
               disabled={dayDisabled}
               onClick={this.onClickDay(dateString)}
               onFocus={this.onFocus(day)}
+              onBlur={() => this.setState({ focused: false })}
             >
               <StyledDay
                 inRange={inRange}
