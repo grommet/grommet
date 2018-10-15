@@ -74,7 +74,7 @@ class CheckBox extends Component {
       >
         {checked && (
           Icon ? (
-            <Icon as={StyledCheckBoxIcon} theme={theme} checked={checked} />
+            <Icon as={StyledCheckBoxIcon} theme={theme} />
           ) : (
             <StyledCheckBoxIcon
               viewBox='0 0 24 24'
