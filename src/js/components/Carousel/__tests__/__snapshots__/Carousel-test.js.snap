@@ -352,132 +352,111 @@ exports[`Carousel basic 1`] = `
   right: 0;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c6 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c8 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c8 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c10 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c10 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c12 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c12 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c13 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c13 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c15 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c15 {
     padding: 0px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c9 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c14 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c17 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1018,132 +997,111 @@ exports[`Carousel navigate 1`] = `
   right: 0;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c6 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c8 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c8 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c10 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c10 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c12 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c12 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c13 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c13 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c15 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c15 {
     padding: 0px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c9 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c14 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c17 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1330,10 +1288,10 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eOonwJ"
+        class="StyledBox-sc-13pk1d4-0 VBjYZ"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gnlZjl"
+          class="StyledBox-sc-13pk1d4-0 fCVIfX"
         >
           <img
             class="StyledImage-ey4zx9-0 inKPek"
@@ -1346,10 +1304,10 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eOonwJ"
+        class="StyledBox-sc-13pk1d4-0 VBjYZ"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gpXUnv"
+          class="StyledBox-sc-13pk1d4-0 jwmvWh"
         >
           <img
             class="StyledImage-ey4zx9-0 inKPek"
@@ -1362,18 +1320,18 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bzRrvX"
+        class="StyledBox-sc-13pk1d4-0 bmKCc"
         tabindex="0"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hoZmmL"
+          class="StyledBox-sc-13pk1d4-0 fgHUSC"
         >
           <button
-            class="StyledButton-sc-323bzc-0 hWIJiJ"
+            class="StyledButton-sc-323bzc-0 kWwmJX"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 bphEib"
+              class="StyledBox-sc-13pk1d4-0 fCLTxM"
             >
               <svg
                 aria-label="Previous"
@@ -1396,17 +1354,17 @@ exports[`Carousel navigate 2`] = `
           </button>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 iqRJNZ"
+          class="StyledBox-sc-13pk1d4-0 hmSALZ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kijwgq"
+            class="StyledBox-sc-13pk1d4-0 eFNGfS"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cGpETu"
+              class="StyledButton-sc-323bzc-0 faxefe"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 ksxcgD"
+                class="StyledBox-sc-13pk1d4-0 gYYddl"
               >
                 <svg
                   aria-label="Subtract"
@@ -1427,11 +1385,11 @@ exports[`Carousel navigate 2`] = `
               </div>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 cGpETu"
+              class="StyledButton-sc-323bzc-0 faxefe"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 ksxcgD"
+                class="StyledBox-sc-13pk1d4-0 gYYddl"
               >
                 <svg
                   aria-label="Subtract"
@@ -1455,15 +1413,15 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 hoZmmL"
+          class="StyledBox-sc-13pk1d4-0 fgHUSC"
         >
           <button
-            class="StyledButton-sc-323bzc-0 hvgqUe"
+            class="StyledButton-sc-323bzc-0 kSKXxu"
             disabled=""
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 bphEib"
+              class="StyledBox-sc-13pk1d4-0 fCLTxM"
             >
               <svg
                 aria-label="Next"
@@ -1502,10 +1460,10 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eOonwJ"
+        class="StyledBox-sc-13pk1d4-0 VBjYZ"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gJluNn"
+          class="StyledBox-sc-13pk1d4-0 iSomxg"
         >
           <img
             class="StyledImage-ey4zx9-0 inKPek"
@@ -1518,10 +1476,10 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eOonwJ"
+        class="StyledBox-sc-13pk1d4-0 VBjYZ"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gnlZjl"
+          class="StyledBox-sc-13pk1d4-0 fCVIfX"
         >
           <img
             class="StyledImage-ey4zx9-0 inKPek"
@@ -1534,19 +1492,19 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bzRrvX"
+        class="StyledBox-sc-13pk1d4-0 bmKCc"
         tabindex="0"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hoZmmL"
+          class="StyledBox-sc-13pk1d4-0 fgHUSC"
         >
           <button
-            class="StyledButton-sc-323bzc-0 hvgqUe"
+            class="StyledButton-sc-323bzc-0 kSKXxu"
             disabled=""
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 bphEib"
+              class="StyledBox-sc-13pk1d4-0 fCLTxM"
             >
               <svg
                 aria-label="Previous"
@@ -1569,17 +1527,17 @@ exports[`Carousel navigate 3`] = `
           </button>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 iqRJNZ"
+          class="StyledBox-sc-13pk1d4-0 hmSALZ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kijwgq"
+            class="StyledBox-sc-13pk1d4-0 eFNGfS"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cGpETu"
+              class="StyledButton-sc-323bzc-0 faxefe"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 ksxcgD"
+                class="StyledBox-sc-13pk1d4-0 gYYddl"
               >
                 <svg
                   aria-label="Subtract"
@@ -1601,11 +1559,11 @@ exports[`Carousel navigate 3`] = `
               </div>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 cGpETu"
+              class="StyledButton-sc-323bzc-0 faxefe"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 ksxcgD"
+                class="StyledBox-sc-13pk1d4-0 gYYddl"
               >
                 <svg
                   aria-label="Subtract"
@@ -1628,14 +1586,14 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 hoZmmL"
+          class="StyledBox-sc-13pk1d4-0 fgHUSC"
         >
           <button
-            class="StyledButton-sc-323bzc-0 hWIJiJ"
+            class="StyledButton-sc-323bzc-0 kWwmJX"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 bphEib"
+              class="StyledBox-sc-13pk1d4-0 fCLTxM"
             >
               <svg
                 aria-label="Next"
@@ -2014,132 +1972,111 @@ exports[`Carousel play 1`] = `
   right: 0;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c6 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c8 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c8 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c10 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c10 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c12 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c12 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c13 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c13 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c15 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c15 {
     padding: 0px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c9 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c14 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c17 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -2324,10 +2261,10 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eOonwJ"
+        class="StyledBox-sc-13pk1d4-0 VBjYZ"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gnlZjl"
+          class="StyledBox-sc-13pk1d4-0 fCVIfX"
         >
           <img
             class="StyledImage-ey4zx9-0 inKPek"
@@ -2340,10 +2277,10 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eOonwJ"
+        class="StyledBox-sc-13pk1d4-0 VBjYZ"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 gpXUnv"
+          class="StyledBox-sc-13pk1d4-0 jwmvWh"
         >
           <img
             class="StyledImage-ey4zx9-0 inKPek"
@@ -2356,18 +2293,18 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bzRrvX"
+        class="StyledBox-sc-13pk1d4-0 bmKCc"
         tabindex="0"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 hoZmmL"
+          class="StyledBox-sc-13pk1d4-0 fgHUSC"
         >
           <button
-            class="StyledButton-sc-323bzc-0 hWIJiJ"
+            class="StyledButton-sc-323bzc-0 kWwmJX"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 bphEib"
+              class="StyledBox-sc-13pk1d4-0 fCLTxM"
             >
               <svg
                 aria-label="Previous"
@@ -2390,17 +2327,17 @@ exports[`Carousel play 2`] = `
           </button>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 iqRJNZ"
+          class="StyledBox-sc-13pk1d4-0 hmSALZ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kijwgq"
+            class="StyledBox-sc-13pk1d4-0 eFNGfS"
           >
             <button
-              class="StyledButton-sc-323bzc-0 cGpETu"
+              class="StyledButton-sc-323bzc-0 faxefe"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 ksxcgD"
+                class="StyledBox-sc-13pk1d4-0 gYYddl"
               >
                 <svg
                   aria-label="Subtract"
@@ -2421,11 +2358,11 @@ exports[`Carousel play 2`] = `
               </div>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 cGpETu"
+              class="StyledButton-sc-323bzc-0 faxefe"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 ksxcgD"
+                class="StyledBox-sc-13pk1d4-0 gYYddl"
               >
                 <svg
                   aria-label="Subtract"
@@ -2449,15 +2386,15 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 hoZmmL"
+          class="StyledBox-sc-13pk1d4-0 fgHUSC"
         >
           <button
-            class="StyledButton-sc-323bzc-0 hvgqUe"
+            class="StyledButton-sc-323bzc-0 kSKXxu"
             disabled=""
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 bphEib"
+              class="StyledBox-sc-13pk1d4-0 fCLTxM"
             >
               <svg
                 aria-label="Next"

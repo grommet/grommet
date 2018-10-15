@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { palm, parseMetricToNum } from './mixins';
+import { breakpointStyle, parseMetricToNum } from './mixins';
 
 export const baseStyle = css`
   font-family: ${props => props.theme.global.font.family};
@@ -26,12 +26,14 @@ export const controlBorderStyle = css`
   border-radius: ${props => props.theme.global.control.border.radius};
 `;
 
-export const edgeStyle = (kind, data, responsive, theme) => {
+export const edgeStyle = (kind, data, responsive, responsiveBreakpoint, theme) => {
+  const breakpoint = responsiveBreakpoint && theme.global.breakpoints[responsiveBreakpoint];
+
   if (typeof data === 'string') {
     return css`
       ${kind}: ${theme.global.edgeSize[data]};
-      ${responsive ? palm(`
-        ${kind}: ${theme.global.edgeSize.narrow[data]};
+      ${responsive && breakpoint ? breakpointStyle(breakpoint, `
+        ${kind}: ${breakpoint.edgeSize[data]};
       `) : ''}
     `;
   }
@@ -40,9 +42,9 @@ export const edgeStyle = (kind, data, responsive, theme) => {
     result.push(css`
       ${kind}-left: ${theme.global.edgeSize[data.horizontal]};
       ${kind}-right: ${theme.global.edgeSize[data.horizontal]};
-      ${responsive ? palm(`
-        ${kind}-left: ${theme.global.edgeSize.narrow[data.horizontal]};
-        ${kind}-right: ${theme.global.edgeSize.narrow[data.horizontal]};
+      ${responsive && breakpoint ? breakpointStyle(breakpoint, `
+        ${kind}-left: ${breakpoint.edgeSize[data.horizontal]};
+        ${kind}-right: ${breakpoint.edgeSize[data.horizontal]};
       `) : ''}
     `);
   }
@@ -50,41 +52,41 @@ export const edgeStyle = (kind, data, responsive, theme) => {
     result.push(css`
       ${kind}-top: ${theme.global.edgeSize[data.vertical]};
       ${kind}-bottom: ${theme.global.edgeSize[data.vertical]};
-      ${responsive ? palm(`
-        ${kind}-top: ${theme.global.edgeSize.narrow[data.vertical]};
-        ${kind}-bottom: ${theme.global.edgeSize.narrow[data.vertical]};
+      ${responsive && breakpoint ? breakpointStyle(breakpoint, `
+        ${kind}-top: ${breakpoint.edgeSize[data.vertical]};
+        ${kind}-bottom: ${breakpoint.edgeSize[data.vertical]};
       `) : ''}
     `);
   }
   if (data.top) {
     result.push(css`
       ${kind}-top: ${theme.global.edgeSize[data.top]};
-      ${responsive ? palm(`
-        ${kind}-top: ${theme.global.edgeSize.narrow[data.top]};
+      ${responsive && breakpoint ? breakpointStyle(breakpoint, `
+        ${kind}-top: ${breakpoint.edgeSize[data.top]};
       `) : ''}
     `);
   }
   if (data.bottom) {
     result.push(css`
       ${kind}-bottom: ${theme.global.edgeSize[data.bottom]};
-      ${responsive ? palm(`
-        ${kind}-bottom: ${theme.global.edgeSize.narrow[data.bottom]};
+      ${responsive && breakpoint ? breakpointStyle(breakpoint, `
+        ${kind}-bottom: ${breakpoint.edgeSize[data.bottom]};
       `) : ''}
     `);
   }
   if (data.left) {
     result.push(css`
       ${kind}-left: ${theme.global.edgeSize[data.left]};
-      ${responsive ? palm(`
-        ${kind}-left: ${theme.global.edgeSize.narrow[data.left]};
+      ${responsive && breakpoint ? breakpointStyle(breakpoint, `
+        ${kind}-left: ${breakpoint.edgeSize[data.left]};
       `) : ''}
     `);
   }
   if (data.right) {
     result.push(css`
       ${kind}-right: ${theme.global.edgeSize[data.right]};
-      ${responsive ? palm(`
-        ${kind}-right: ${theme.global.edgeSize.narrow[data.left]};
+      ${responsive && breakpoint ? breakpointStyle(breakpoint, `
+        ${kind}-right: ${breakpoint.edgeSize[data.left]};
       `) : ''}
     `);
   }
