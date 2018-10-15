@@ -94,6 +94,4 @@ export const StyledCheckBoxKnob = styled.span`
 
 export const StyledCheckBox = styled.div`
   position: relative;
-
-  ${props => props.theme.checkBox.extend}
 `;
