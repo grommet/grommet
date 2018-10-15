@@ -92,13 +92,13 @@ exports[`Button color renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
@@ -256,13 +256,13 @@ exports[`Button focus renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
@@ -752,13 +752,13 @@ exports[`Button icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
@@ -853,13 +853,13 @@ exports[`Button primary renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
@@ -947,13 +947,13 @@ exports[`Button renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
@@ -1048,13 +1048,13 @@ exports[`Button reverse icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
@@ -1139,13 +1139,13 @@ exports[`Button warns about invalid icon render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
@@ -1225,13 +1225,13 @@ exports[`Button warns about invalid label render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }

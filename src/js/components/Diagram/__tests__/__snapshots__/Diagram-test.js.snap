@@ -69,25 +69,25 @@ exports[`Diagram anchor 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 12px;
   }
@@ -224,25 +224,25 @@ exports[`Diagram basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 12px;
   }
@@ -363,25 +363,25 @@ exports[`Diagram color 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 12px;
   }
@@ -502,25 +502,25 @@ exports[`Diagram offset 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 12px;
   }
@@ -657,25 +657,25 @@ exports[`Diagram thickness 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 12px;
   }
@@ -836,25 +836,25 @@ exports[`Diagram type 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 12px;
   }

@@ -208,99 +208,99 @@ exports[`Accordion AccordionPanel 1`] = `
   font-weight: 600;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-left: 3px;
     padding-right: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     font-size: 18px;
     line-height: 24px;
@@ -629,87 +629,87 @@ exports[`Accordion change active index 1`] = `
   font-weight: 600;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-left: 3px;
     padding-right: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     font-size: 18px;
     line-height: 24px;
@@ -834,11 +834,11 @@ exports[`Accordion change active index 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dxgNlc"
+    class="StyledBox-sc-13pk1d4-0 blARAh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -848,19 +848,19 @@ exports[`Accordion change active index 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormDown"
@@ -883,11 +883,11 @@ exports[`Accordion change active index 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       />
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="true"
@@ -897,19 +897,19 @@ exports[`Accordion change active index 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormUp"
@@ -933,7 +933,7 @@ exports[`Accordion change active index 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         Panel body 2
       </div>
@@ -1150,99 +1150,99 @@ exports[`Accordion change to second Panel 1`] = `
   font-weight: 600;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-left: 3px;
     padding-right: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     font-size: 18px;
     line-height: 24px;
@@ -1378,11 +1378,11 @@ exports[`Accordion change to second Panel 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dxgNlc"
+    class="StyledBox-sc-13pk1d4-0 blARAh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -1392,19 +1392,19 @@ exports[`Accordion change to second Panel 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormDown"
@@ -1427,18 +1427,18 @@ exports[`Accordion change to second Panel 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 guimbD"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kWLcGV"
         >
           Panel body 1
         </div>
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="true"
@@ -1448,19 +1448,19 @@ exports[`Accordion change to second Panel 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             .c0 {
   display: inline-block;
@@ -1516,11 +1516,11 @@ exports[`Accordion change to second Panel 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         <div
           aria-hidden="false"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 cgDUOZ StyledBox-sc-13pk1d4-0 guimbD"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cgDUOZ StyledBox-sc-13pk1d4-0 kWLcGV"
           open=""
         >
           Panel body 2
@@ -1717,87 +1717,87 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   font-weight: 600;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-left: 3px;
     padding-right: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     font-size: 18px;
     line-height: 24px;
@@ -1919,11 +1919,11 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dxgNlc"
+    class="StyledBox-sc-13pk1d4-0 blARAh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -1933,19 +1933,19 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormDown"
@@ -1968,11 +1968,11 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       />
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="true"
@@ -1982,19 +1982,19 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             .c0 {
   display: inline-block;
@@ -2050,7 +2050,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         Panel body 2
       </div>
@@ -2145,43 +2145,43 @@ exports[`Accordion complex header 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 0px;
   }
@@ -2448,92 +2448,92 @@ exports[`Accordion complex title 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c10 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c10 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c8 {
     border-bottom: solid 1px rgba(255,255,255,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c8 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c8 {
     padding: 0px;
   }
@@ -2852,87 +2852,87 @@ exports[`Accordion multiple panels 1`] = `
   font-weight: 600;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-left: 3px;
     padding-right: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     font-size: 18px;
     line-height: 24px;
@@ -3054,11 +3054,11 @@ exports[`Accordion multiple panels 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dxgNlc"
+    class="StyledBox-sc-13pk1d4-0 blARAh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -3068,19 +3068,19 @@ exports[`Accordion multiple panels 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormDown"
@@ -3103,11 +3103,11 @@ exports[`Accordion multiple panels 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       />
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="true"
@@ -3117,19 +3117,19 @@ exports[`Accordion multiple panels 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             .c0 {
   display: inline-block;
@@ -3185,7 +3185,7 @@ exports[`Accordion multiple panels 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         Panel body 2
       </div>
@@ -3199,11 +3199,11 @@ exports[`Accordion multiple panels 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dxgNlc"
+    class="StyledBox-sc-13pk1d4-0 blARAh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="true"
@@ -3213,19 +3213,19 @@ exports[`Accordion multiple panels 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             .c0 {
   display: inline-block;
@@ -3281,13 +3281,13 @@ exports[`Accordion multiple panels 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         Panel body 1
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="true"
@@ -3297,19 +3297,19 @@ exports[`Accordion multiple panels 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormUp"
@@ -3333,7 +3333,7 @@ exports[`Accordion multiple panels 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         Panel body 2
       </div>
@@ -3347,11 +3347,11 @@ exports[`Accordion multiple panels 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dxgNlc"
+    class="StyledBox-sc-13pk1d4-0 blARAh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="true"
@@ -3361,19 +3361,19 @@ exports[`Accordion multiple panels 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormUp"
@@ -3397,13 +3397,13 @@ exports[`Accordion multiple panels 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         Panel body 1
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -3413,19 +3413,19 @@ exports[`Accordion multiple panels 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             .c0 {
   display: inline-block;
@@ -3480,7 +3480,7 @@ exports[`Accordion multiple panels 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       />
     </div>
   </div>
@@ -3492,11 +3492,11 @@ exports[`Accordion multiple panels 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dxgNlc"
+    class="StyledBox-sc-13pk1d4-0 blARAh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -3506,19 +3506,19 @@ exports[`Accordion multiple panels 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             .c0 {
   display: inline-block;
@@ -3573,11 +3573,11 @@ exports[`Accordion multiple panels 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       />
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -3587,19 +3587,19 @@ exports[`Accordion multiple panels 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormDown"
@@ -3622,7 +3622,7 @@ exports[`Accordion multiple panels 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       />
     </div>
   </div>
@@ -3659,13 +3659,13 @@ exports[`Accordion no AccordionPanel 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -3889,99 +3889,99 @@ exports[`Accordion set on hover 1`] = `
   font-weight: 600;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-left: 3px;
     padding-right: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     font-size: 18px;
     line-height: 24px;
@@ -4117,11 +4117,11 @@ exports[`Accordion set on hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dxgNlc"
+    class="StyledBox-sc-13pk1d4-0 blARAh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -4131,19 +4131,19 @@ exports[`Accordion set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fLoNkZ"
+              class="StyledHeading-sc-1rdh4aw-0-h4 frFkXz"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormDown"
@@ -4166,18 +4166,18 @@ exports[`Accordion set on hover 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 guimbD"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kWLcGV"
         >
           Panel body 1
         </div>
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -4187,19 +4187,19 @@ exports[`Accordion set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormDown"
@@ -4222,11 +4222,11 @@ exports[`Accordion set on hover 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 guimbD"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kWLcGV"
         >
           Panel body 2
         </div>
@@ -4241,11 +4241,11 @@ exports[`Accordion set on hover 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dxgNlc"
+    class="StyledBox-sc-13pk1d4-0 blARAh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -4255,19 +4255,19 @@ exports[`Accordion set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fLoNkZ"
+              class="StyledHeading-sc-1rdh4aw-0-h4 frFkXz"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormDown"
@@ -4290,18 +4290,18 @@ exports[`Accordion set on hover 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 guimbD"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kWLcGV"
         >
           Panel body 1
         </div>
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -4311,19 +4311,19 @@ exports[`Accordion set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fLoNkZ"
+              class="StyledHeading-sc-1rdh4aw-0-h4 frFkXz"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormDown"
@@ -4346,11 +4346,11 @@ exports[`Accordion set on hover 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 guimbD"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kWLcGV"
         >
           Panel body 2
         </div>
@@ -4365,11 +4365,11 @@ exports[`Accordion set on hover 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dxgNlc"
+    class="StyledBox-sc-13pk1d4-0 blARAh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -4379,19 +4379,19 @@ exports[`Accordion set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormDown"
@@ -4414,18 +4414,18 @@ exports[`Accordion set on hover 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 guimbD"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kWLcGV"
         >
           Panel body 1
         </div>
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -4435,19 +4435,19 @@ exports[`Accordion set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fLoNkZ"
+              class="StyledHeading-sc-1rdh4aw-0-h4 frFkXz"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormDown"
@@ -4470,11 +4470,11 @@ exports[`Accordion set on hover 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 guimbD"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kWLcGV"
         >
           Panel body 2
         </div>
@@ -4489,11 +4489,11 @@ exports[`Accordion set on hover 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 dxgNlc"
+    class="StyledBox-sc-13pk1d4-0 blARAh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -4503,19 +4503,19 @@ exports[`Accordion set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormDown"
@@ -4538,18 +4538,18 @@ exports[`Accordion set on hover 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 guimbD"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kWLcGV"
         >
           Panel body 1
         </div>
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hYFIzN"
+      class="StyledBox-sc-13pk1d4-0 hOiaYa"
     >
       <button
         aria-expanded="false"
@@ -4559,19 +4559,19 @@ exports[`Accordion set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eAZwSj"
+          class="StyledBox-sc-13pk1d4-0 RiBtR"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cCgEQN"
+            class="StyledBox-sc-13pk1d4-0 fdEGrh"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 fookNy"
+              class="StyledHeading-sc-1rdh4aw-0-h4 YTktk"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 hSAzXR"
+            class="StyledBox-sc-13pk1d4-0 ikdhHS"
           >
             <svg
               aria-label="FormDown"
@@ -4594,11 +4594,11 @@ exports[`Accordion set on hover 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 cFFqzS"
+        class="StyledBox-sc-13pk1d4-0 eqKmwE"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 guimbD"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 kWLcGV"
         >
           Panel body 2
         </div>

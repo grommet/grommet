@@ -46,7 +46,7 @@ exports[`Markdown renders 1`] = `
   font-weight: 600;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     font-size: 34px;
     line-height: 40px;
@@ -54,7 +54,7 @@ exports[`Markdown renders 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     font-size: 22px;
     line-height: 28px;
@@ -62,7 +62,7 @@ exports[`Markdown renders 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     font-size: 18px;
     line-height: 24px;
@@ -70,7 +70,7 @@ exports[`Markdown renders 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 18px;
     line-height: 24px;

@@ -171,38 +171,38 @@ exports[`Select basic 1`] = `
   border-radius: 4px;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
@@ -443,38 +443,38 @@ exports[`Select complex options and children 1`] = `
   border-radius: 4px;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
@@ -541,10 +541,10 @@ exports[`Select complex options and children 2`] = `
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hcFNwB StyledBox-sc-13pk1d4-0 eAZwSj"
+    class="Select__StyledSelectBox-sc-17idtfo-1 hcFNwB StyledBox-sc-13pk1d4-0 RiBtR"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 izJIny"
+      class="StyledBox-sc-13pk1d4-0 krpJTk"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -562,7 +562,7 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bBnfkS"
+      class="StyledBox-sc-13pk1d4-0 hnbMHr"
       style="min-width: auto;"
     >
       <svg
@@ -707,37 +707,37 @@ exports[`Select complex options and children 3`] = `
   scroll-behavior: smooth;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding: 0px;
   }
@@ -809,87 +809,87 @@ exports[`Select complex options and children 3`] = `
 `;
 
 exports[`Select complex options and children 4`] = `
-"@media only screen and (max-width:767px) {
-  .eAZwSj {
+"@media only screen and (max-width:768px) {
+  .RiBtR {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .eAZwSj {
+@media only screen and (max-width:768px) {
+  .RiBtR {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .izJIny {
+@media only screen and (max-width:768px) {
+  .krpJTk {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .izJIny {
+@media only screen and (max-width:768px) {
+  .krpJTk {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .bBnfkS {
+@media only screen and (max-width:768px) {
+  .hnbMHr {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .bBnfkS {
+@media only screen and (max-width:768px) {
+  .hnbMHr {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .guimbD {
+@media only screen and (max-width:768px) {
+  .kWLcGV {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .guimbD {
+@media only screen and (max-width:768px) {
+  .kWLcGV {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .gxmkhA {
+@media only screen and (max-width:768px) {
+  .bCYZgZ {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .gxmkhA {
+@media only screen and (max-width:768px) {
+  .bCYZgZ {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .hYFIzN {
+@media only screen and (max-width:768px) {
+  .hOiaYa {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .hYFIzN {
+@media only screen and (max-width:768px) {
+  .hOiaYa {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .frcVbG {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .frcVbG {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     padding: 6px;
   }
 }
@@ -1113,38 +1113,38 @@ exports[`Select deselect an option 1`] = `
   border-radius: 4px;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
@@ -1377,38 +1377,38 @@ exports[`Select disabled 1`] = `
   border-radius: 4px;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
@@ -1477,10 +1477,10 @@ exports[`Select disabled 2`] = `
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hcFNwB StyledBox-sc-13pk1d4-0 eAZwSj"
+    class="Select__StyledSelectBox-sc-17idtfo-1 hcFNwB StyledBox-sc-13pk1d4-0 RiBtR"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 izJIny"
+      class="StyledBox-sc-13pk1d4-0 krpJTk"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -1498,7 +1498,7 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bBnfkS"
+      class="StyledBox-sc-13pk1d4-0 hnbMHr"
       style="min-width: auto;"
     >
       <svg
@@ -1694,38 +1694,38 @@ exports[`Select multiple 1`] = `
   border-radius: 4px;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
@@ -1969,38 +1969,38 @@ exports[`Select multiple values 1`] = `
   border-radius: 4px;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
@@ -2068,10 +2068,10 @@ exports[`Select multiple values 2`] = `
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hcFNwB StyledBox-sc-13pk1d4-0 eAZwSj"
+    class="Select__StyledSelectBox-sc-17idtfo-1 hcFNwB StyledBox-sc-13pk1d4-0 RiBtR"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 izJIny"
+      class="StyledBox-sc-13pk1d4-0 krpJTk"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -2090,7 +2090,7 @@ exports[`Select multiple values 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bBnfkS"
+      class="StyledBox-sc-13pk1d4-0 hnbMHr"
       style="min-width: auto;"
     >
       <svg
@@ -2268,49 +2268,49 @@ exports[`Select multiple values 3`] = `
   scroll-behavior: smooth;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 6px;
   }
@@ -2394,99 +2394,99 @@ exports[`Select multiple values 3`] = `
 `;
 
 exports[`Select multiple values 4`] = `
-"@media only screen and (max-width:767px) {
-  .eAZwSj {
+"@media only screen and (max-width:768px) {
+  .RiBtR {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .eAZwSj {
+@media only screen and (max-width:768px) {
+  .RiBtR {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .izJIny {
+@media only screen and (max-width:768px) {
+  .krpJTk {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .izJIny {
+@media only screen and (max-width:768px) {
+  .krpJTk {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .bBnfkS {
+@media only screen and (max-width:768px) {
+  .hnbMHr {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .bBnfkS {
+@media only screen and (max-width:768px) {
+  .hnbMHr {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .guimbD {
+@media only screen and (max-width:768px) {
+  .kWLcGV {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .guimbD {
+@media only screen and (max-width:768px) {
+  .kWLcGV {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .gxmkhA {
+@media only screen and (max-width:768px) {
+  .bCYZgZ {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .gxmkhA {
+@media only screen and (max-width:768px) {
+  .bCYZgZ {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .hYFIzN {
+@media only screen and (max-width:768px) {
+  .hOiaYa {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .hYFIzN {
+@media only screen and (max-width:768px) {
+  .hOiaYa {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .frcVbG {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .frcVbG {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .eXfoCS {
+@media only screen and (max-width:768px) {
+  .cDsQRL {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .eXfoCS {
+@media only screen and (max-width:768px) {
+  .cDsQRL {
     padding: 3px;
   }
 }
@@ -2710,38 +2710,38 @@ exports[`Select opens 1`] = `
   border-radius: 4px;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
@@ -2808,10 +2808,10 @@ exports[`Select opens 2`] = `
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hcFNwB StyledBox-sc-13pk1d4-0 eAZwSj"
+    class="Select__StyledSelectBox-sc-17idtfo-1 hcFNwB StyledBox-sc-13pk1d4-0 RiBtR"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 izJIny"
+      class="StyledBox-sc-13pk1d4-0 krpJTk"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -2829,7 +2829,7 @@ exports[`Select opens 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 bBnfkS"
+      class="StyledBox-sc-13pk1d4-0 hnbMHr"
       style="min-width: auto;"
     >
       <svg
@@ -3004,49 +3004,49 @@ exports[`Select opens 3`] = `
   scroll-behavior: smooth;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 6px;
   }
@@ -3130,87 +3130,87 @@ exports[`Select opens 3`] = `
 `;
 
 exports[`Select opens 4`] = `
-"@media only screen and (max-width:767px) {
-  .eAZwSj {
+"@media only screen and (max-width:768px) {
+  .RiBtR {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .eAZwSj {
+@media only screen and (max-width:768px) {
+  .RiBtR {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .izJIny {
+@media only screen and (max-width:768px) {
+  .krpJTk {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .izJIny {
+@media only screen and (max-width:768px) {
+  .krpJTk {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .bBnfkS {
+@media only screen and (max-width:768px) {
+  .hnbMHr {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .bBnfkS {
+@media only screen and (max-width:768px) {
+  .hnbMHr {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .guimbD {
+@media only screen and (max-width:768px) {
+  .kWLcGV {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .guimbD {
+@media only screen and (max-width:768px) {
+  .kWLcGV {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .gxmkhA {
+@media only screen and (max-width:768px) {
+  .bCYZgZ {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .gxmkhA {
+@media only screen and (max-width:768px) {
+  .bCYZgZ {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .hYFIzN {
+@media only screen and (max-width:768px) {
+  .hOiaYa {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .hYFIzN {
+@media only screen and (max-width:768px) {
+  .hOiaYa {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .frcVbG {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .frcVbG {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     padding: 6px;
   }
 }
@@ -3265,12 +3265,12 @@ exports[`Select opens 4`] = `
 
 exports[`Select opens 5`] = `
 <div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-1 jZWhdj StyledBox-sc-13pk1d4-0 gxmkhA"
+  class="SelectContainer__OptionsBox-sc-1wi0ul8-1 jZWhdj StyledBox-sc-13pk1d4-0 bCYZgZ"
   role="menubar"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hYFIzN"
+    class="StyledBox-sc-13pk1d4-0 hOiaYa"
   >
     <button
       class="StyledButton-sc-323bzc-0 fwMFPF"
@@ -3278,7 +3278,7 @@ exports[`Select opens 5`] = `
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 frcVbG"
+        class="StyledBox-sc-13pk1d4-0 bgCyUq"
       >
         <span
           class="StyledText-sc-1sadyjn-0 bumlP"
@@ -3289,7 +3289,7 @@ exports[`Select opens 5`] = `
     </button>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 hYFIzN"
+    class="StyledBox-sc-13pk1d4-0 hOiaYa"
   >
     <button
       class="StyledButton-sc-323bzc-0 fwMFPF"
@@ -3297,7 +3297,7 @@ exports[`Select opens 5`] = `
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 frcVbG"
+        class="StyledBox-sc-13pk1d4-0 bgCyUq"
       >
         <span
           class="StyledText-sc-1sadyjn-0 bumlP"
@@ -3481,38 +3481,38 @@ exports[`Select search 1`] = `
   border-radius: 4px;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
@@ -3785,61 +3785,61 @@ exports[`Select search 2`] = `
   scroll-behavior: smooth;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c8 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c8 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c10 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c10 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 3px;
   }
@@ -3937,99 +3937,99 @@ exports[`Select search 2`] = `
 `;
 
 exports[`Select search 3`] = `
-"@media only screen and (max-width:767px) {
-  .eAZwSj {
+"@media only screen and (max-width:768px) {
+  .RiBtR {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .eAZwSj {
+@media only screen and (max-width:768px) {
+  .RiBtR {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .izJIny {
+@media only screen and (max-width:768px) {
+  .krpJTk {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .izJIny {
+@media only screen and (max-width:768px) {
+  .krpJTk {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .bBnfkS {
+@media only screen and (max-width:768px) {
+  .hnbMHr {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .bBnfkS {
+@media only screen and (max-width:768px) {
+  .hnbMHr {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .guimbD {
+@media only screen and (max-width:768px) {
+  .kWLcGV {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .guimbD {
+@media only screen and (max-width:768px) {
+  .kWLcGV {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .gxmkhA {
+@media only screen and (max-width:768px) {
+  .bCYZgZ {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .gxmkhA {
+@media only screen and (max-width:768px) {
+  .bCYZgZ {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .hYFIzN {
+@media only screen and (max-width:768px) {
+  .hOiaYa {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .hYFIzN {
+@media only screen and (max-width:768px) {
+  .hOiaYa {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .frcVbG {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .frcVbG {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .eXfoCS {
+@media only screen and (max-width:768px) {
+  .cDsQRL {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .eXfoCS {
+@media only screen and (max-width:768px) {
+  .cDsQRL {
     padding: 3px;
   }
 }
@@ -4253,38 +4253,38 @@ exports[`Select select an option 1`] = `
   border-radius: 4px;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
@@ -4462,38 +4462,38 @@ exports[`Select select an option with complex options 1`] = `
   text-align: inherit;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
@@ -4712,38 +4712,38 @@ exports[`Select select an option with enter 1`] = `
   border-radius: 4px;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
@@ -4973,38 +4973,38 @@ exports[`Select select another option 1`] = `
   border-radius: 4px;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
@@ -5239,38 +5239,38 @@ exports[`Select size 1`] = `
   border-radius: 4px;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }

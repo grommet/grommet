@@ -67,13 +67,13 @@ exports[`Menu basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
@@ -211,13 +211,13 @@ exports[`Menu close by clicking outside 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
@@ -481,61 +481,61 @@ exports[`Menu close by clicking outside 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     padding: 6px;
   }
@@ -647,62 +647,62 @@ exports[`Menu close by clicking outside 2`] = `
 `;
 
 exports[`Menu close by clicking outside 3`] = `
-"@media only screen and (max-width:767px) {
-  .bTQFFR {
+"@media only screen and (max-width:768px) {
+  .iFQIIs {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .bTQFFR {
+@media only screen and (max-width:768px) {
+  .iFQIIs {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .guimbD {
+@media only screen and (max-width:768px) {
+  .kWLcGV {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .guimbD {
+@media only screen and (max-width:768px) {
+  .kWLcGV {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .hYFIzN {
+@media only screen and (max-width:768px) {
+  .hOiaYa {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .hYFIzN {
+@media only screen and (max-width:768px) {
+  .hOiaYa {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .dxgNlc {
+@media only screen and (max-width:768px) {
+  .blARAh {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .dxgNlc {
+@media only screen and (max-width:768px) {
+  .blARAh {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .gtbAEM {
+@media only screen and (max-width:768px) {
+  .fwWSQs {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .gtbAEM {
+@media only screen and (max-width:768px) {
+  .fwWSQs {
     padding: 6px;
   }
 }
@@ -848,13 +848,13 @@ exports[`Menu close on esc 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
@@ -1003,13 +1003,13 @@ exports[`Menu close on tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
@@ -1158,13 +1158,13 @@ exports[`Menu custom message 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
@@ -1319,13 +1319,13 @@ exports[`Menu disabled 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
@@ -1475,13 +1475,13 @@ exports[`Menu navigate through suggestions and select 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
@@ -1630,13 +1630,13 @@ exports[`Menu open and close on click 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
@@ -1698,7 +1698,7 @@ exports[`Menu open and close on click 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bTQFFR"
+        class="StyledBox-sc-13pk1d4-0 iFQIIs"
       >
         <span
           class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -1969,61 +1969,61 @@ exports[`Menu open and close on click 3`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     padding: 6px;
   }
@@ -2148,62 +2148,62 @@ exports[`Menu open and close on click 3`] = `
 `;
 
 exports[`Menu open and close on click 4`] = `
-"@media only screen and (max-width:767px) {
-  .bTQFFR {
+"@media only screen and (max-width:768px) {
+  .iFQIIs {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .bTQFFR {
+@media only screen and (max-width:768px) {
+  .iFQIIs {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .guimbD {
+@media only screen and (max-width:768px) {
+  .kWLcGV {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .guimbD {
+@media only screen and (max-width:768px) {
+  .kWLcGV {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .hYFIzN {
+@media only screen and (max-width:768px) {
+  .hOiaYa {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .hYFIzN {
+@media only screen and (max-width:768px) {
+  .hOiaYa {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .dxgNlc {
+@media only screen and (max-width:768px) {
+  .blARAh {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .dxgNlc {
+@media only screen and (max-width:768px) {
+  .blARAh {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .gtbAEM {
+@media only screen and (max-width:768px) {
+  .fwWSQs {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .gtbAEM {
+@media only screen and (max-width:768px) {
+  .fwWSQs {
     padding: 6px;
   }
 }
@@ -2349,13 +2349,13 @@ exports[`Menu select an item 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
@@ -2504,13 +2504,13 @@ exports[`Menu with dropAlign renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 6px;
   }
@@ -2774,61 +2774,61 @@ exports[`Menu with dropAlign renders 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     padding: 6px;
   }
@@ -2940,62 +2940,62 @@ exports[`Menu with dropAlign renders 2`] = `
 `;
 
 exports[`Menu with dropAlign renders 3`] = `
-"@media only screen and (max-width:767px) {
-  .bTQFFR {
+"@media only screen and (max-width:768px) {
+  .iFQIIs {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .bTQFFR {
+@media only screen and (max-width:768px) {
+  .iFQIIs {
     padding: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .guimbD {
+@media only screen and (max-width:768px) {
+  .kWLcGV {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .guimbD {
+@media only screen and (max-width:768px) {
+  .kWLcGV {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .hYFIzN {
+@media only screen and (max-width:768px) {
+  .hOiaYa {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .hYFIzN {
+@media only screen and (max-width:768px) {
+  .hOiaYa {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .dxgNlc {
+@media only screen and (max-width:768px) {
+  .blARAh {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .dxgNlc {
+@media only screen and (max-width:768px) {
+  .blARAh {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .gtbAEM {
+@media only screen and (max-width:768px) {
+  .fwWSQs {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .gtbAEM {
+@media only screen and (max-width:768px) {
+  .fwWSQs {
     padding: 6px;
   }
 }

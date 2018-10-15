@@ -95,7 +95,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       },
       breakpoints: {
         small: {
-          max: (baseSpacing * 32) - 1, // 767
+          value: baseSpacing * 32, // 768
           borderSize: {
             xsmall: '1px',
             small: '2px',
@@ -124,12 +124,9 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
           },
         },
         medium: {
-          min: baseSpacing * 32, // 768
-          max: (baseSpacing * 64) - 1, // 1535
+          value: baseSpacing * 64, // 1536
         },
-        large: {
-          min: baseSpacing * 64, // 1536
-        },
+        large: {}, // anything above 'medium'
       },
       colors,
       control: {

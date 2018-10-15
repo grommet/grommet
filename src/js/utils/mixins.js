@@ -16,9 +16,8 @@ export const fontSize = (size, lineHeight) => css`
 `;
 
 export const breakpointStyle = (breakpoint, content) => css`
-  @media only screen and
-  ${breakpoint.min && `(min-width: ${breakpoint.min}px)`}
-  ${breakpoint.max && `(max-width: ${breakpoint.max}px)`}
+  @media only screen
+  ${breakpoint.value && `and (max-width: ${breakpoint.value}px)`}
   { ${content} }
 `;
 

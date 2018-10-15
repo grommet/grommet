@@ -113,72 +113,72 @@ exports[`DataTable aggregate 1`] = `
   vertical-align: bottom;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     border-top: solid 2px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -414,46 +414,46 @@ exports[`DataTable basic 1`] = `
   vertical-align: bottom;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -721,72 +721,72 @@ exports[`DataTable footer 1`] = `
   vertical-align: bottom;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     border-top: solid 2px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -1142,77 +1142,77 @@ exports[`DataTable groupBy 1`] = `
   vertical-align: top;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c11 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     padding: 3px;
   }
@@ -1433,7 +1433,7 @@ exports[`DataTable groupBy 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 jvswlJ"
+              class="StyledBox-sc-13pk1d4-0 evlYlT"
             >
               <svg
                 aria-label="FormDown"
@@ -1460,7 +1460,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cbaWNC"
+            class="StyledBox-sc-13pk1d4-0 gyPMoQ"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -1474,7 +1474,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cbaWNC"
+            class="StyledBox-sc-13pk1d4-0 gyPMoQ"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -1500,7 +1500,7 @@ exports[`DataTable groupBy 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 fQwyyL"
+              class="StyledBox-sc-13pk1d4-0 iflIZZ"
             >
               <svg
                 aria-label="FormDown"
@@ -1527,7 +1527,7 @@ exports[`DataTable groupBy 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kwbvLB"
+            class="StyledBox-sc-13pk1d4-0 iKUajp"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -1540,7 +1540,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kwbvLB"
+            class="StyledBox-sc-13pk1d4-0 iKUajp"
           />
         </td>
       </tr>
@@ -1556,7 +1556,7 @@ exports[`DataTable groupBy 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 fQwyyL"
+              class="StyledBox-sc-13pk1d4-0 iflIZZ"
             >
               <svg
                 aria-label="FormDown"
@@ -1583,7 +1583,7 @@ exports[`DataTable groupBy 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kwbvLB"
+            class="StyledBox-sc-13pk1d4-0 iKUajp"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -1596,7 +1596,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kwbvLB"
+            class="StyledBox-sc-13pk1d4-0 iKUajp"
           />
         </td>
       </tr>
@@ -1740,77 +1740,77 @@ exports[`DataTable resizeable 1`] = `
   vertical-align: bottom;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c9 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     border-right: solid 1px [object Object];
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c7 {
     padding: 0px;
   }
@@ -2073,46 +2073,46 @@ exports[`DataTable sort 1`] = `
   vertical-align: bottom;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c8 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c8 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c8 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -2398,26 +2398,26 @@ exports[`DataTable sort 2`] = `
   vertical-align: bottom;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -2545,26 +2545,26 @@ exports[`DataTable sort 2`] = `
   vertical-align: bottom;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c3 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -2602,7 +2602,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kwbvLB"
+            class="StyledBox-sc-13pk1d4-0 iKUajp"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -2615,7 +2615,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kwbvLB"
+            class="StyledBox-sc-13pk1d4-0 iKUajp"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -2632,7 +2632,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kwbvLB"
+            class="StyledBox-sc-13pk1d4-0 iKUajp"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -2645,7 +2645,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kwbvLB"
+            class="StyledBox-sc-13pk1d4-0 iKUajp"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -2662,7 +2662,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kwbvLB"
+            class="StyledBox-sc-13pk1d4-0 iKUajp"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -2675,7 +2675,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 kwbvLB"
+            class="StyledBox-sc-13pk1d4-0 iKUajp"
           />
         </td>
       </tr>

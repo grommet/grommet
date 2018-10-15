@@ -52,13 +52,13 @@ exports[`DropButton close by clicking outside 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -86,14 +86,14 @@ exports[`DropButton close by clicking outside 2`] = `
 `;
 
 exports[`DropButton close by clicking outside 3`] = `
-"@media only screen and (max-width:767px) {
-  .GHZn {
+"@media only screen and (max-width:768px) {
+  .gYYddl {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .GHZn {
+@media only screen and (max-width:768px) {
+  .gYYddl {
     padding: 0px;
   }
 }
@@ -164,13 +164,13 @@ exports[`DropButton closed 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -242,13 +242,13 @@ exports[`DropButton disabled 1`] = `
   transition: 0.1s ease-in-out;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -320,13 +320,13 @@ exports[`DropButton open and close 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -354,14 +354,14 @@ exports[`DropButton open and close 2`] = `
 `;
 
 exports[`DropButton open and close 3`] = `
-"@media only screen and (max-width:767px) {
-  .GHZn {
+"@media only screen and (max-width:768px) {
+  .gYYddl {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .GHZn {
+@media only screen and (max-width:768px) {
+  .gYYddl {
     padding: 0px;
   }
 }
@@ -432,13 +432,13 @@ exports[`DropButton opened 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -512,13 +512,13 @@ exports[`DropButton opened ref 1`] = `
   box-shadow: 0px 0px 0px 2px #7D4CDB;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -546,14 +546,14 @@ exports[`DropButton opened ref 2`] = `
 `;
 
 exports[`DropButton opened ref 3`] = `
-"@media only screen and (max-width:767px) {
-  .GHZn {
+"@media only screen and (max-width:768px) {
+  .gYYddl {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .GHZn {
+@media only screen and (max-width:768px) {
+  .gYYddl {
     padding: 0px;
   }
 }

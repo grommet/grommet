@@ -36,7 +36,7 @@ exports[`Layer dark context 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: relative;
     max-height: none;
@@ -63,14 +63,14 @@ exports[`Layer dark context 1`] = `
 `;
 
 exports[`Layer dark context 2`] = `
-"@media only screen and (max-width:767px) {
-  .mpRUM {
+"@media only screen and (max-width:768px) {
+  .ifqBeJ {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:767px) {
-  .mpRUM {
+@media only screen and (max-width:768px) {
+  .ifqBeJ {
     padding: 0px;
   }
 }"
@@ -146,7 +146,7 @@ exports[`Layer full false 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -155,13 +155,13 @@ exports[`Layer full false 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -269,7 +269,7 @@ exports[`Layer full horizontal 1`] = `
   animation: dcHpVA 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -278,13 +278,13 @@ exports[`Layer full horizontal 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -390,7 +390,7 @@ exports[`Layer full true 1`] = `
   animation: aUlIN 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -399,13 +399,13 @@ exports[`Layer full true 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -513,7 +513,7 @@ exports[`Layer full vertical 1`] = `
   animation: XCWMt 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -522,13 +522,13 @@ exports[`Layer full vertical 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -625,13 +625,13 @@ exports[`Layer hidden 1`] = `
   border-radius: 4px;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -670,15 +670,15 @@ exports[`Layer hidden 2`] = `""`;
 
 exports[`Layer hidden 3`] = `
 <div
-  class="StyledLayer-rmtehz-0 brruzM"
+  class="StyledLayer-rmtehz-0 dVyrwx"
   id="hidden-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-rmtehz-1 fkcwDv"
+    class="StyledLayer__StyledOverlay-rmtehz-1 bGMqgk"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 eIqnbi"
+    class="StyledLayer__StyledContainer-rmtehz-2 jgtfPR"
     id="hidden-test"
   >
     This is a layer
@@ -789,7 +789,7 @@ exports[`Layer margin large 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -798,13 +798,13 @@ exports[`Layer margin large 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -911,7 +911,7 @@ exports[`Layer margin medium 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -920,13 +920,13 @@ exports[`Layer margin medium 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1033,7 +1033,7 @@ exports[`Layer margin none 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -1042,13 +1042,13 @@ exports[`Layer margin none 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1155,7 +1155,7 @@ exports[`Layer margin small 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -1164,13 +1164,13 @@ exports[`Layer margin small 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1277,7 +1277,7 @@ exports[`Layer margin xsmall 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -1286,13 +1286,13 @@ exports[`Layer margin xsmall 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1365,7 +1365,7 @@ exports[`Layer non-modal 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: relative;
     max-height: none;
@@ -1463,7 +1463,7 @@ exports[`Layer plain 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -1472,13 +1472,13 @@ exports[`Layer plain 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1585,7 +1585,7 @@ exports[`Layer position bottom 1`] = `
   animation: jsmUBO 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -1594,13 +1594,13 @@ exports[`Layer position bottom 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1707,7 +1707,7 @@ exports[`Layer position center 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -1716,13 +1716,13 @@ exports[`Layer position center 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1829,7 +1829,7 @@ exports[`Layer position left 1`] = `
   animation: fNWKbM 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -1838,13 +1838,13 @@ exports[`Layer position left 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -1951,7 +1951,7 @@ exports[`Layer position right 1`] = `
   animation: lhngOP 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -1960,13 +1960,13 @@ exports[`Layer position right 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
@@ -2073,7 +2073,7 @@ exports[`Layer position top 1`] = `
   animation: bAkQbM 0.2s ease-in-out forwards;
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
     width: 100%;
@@ -2082,13 +2082,13 @@ exports[`Layer position top 1`] = `
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c1 {
     position: relative;
   }
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   .c2 {
     position: relative;
     max-height: none;
