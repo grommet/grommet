@@ -68,10 +68,21 @@ class Calendar extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { reference: nextReference } = nextProps;
-    const { reference } = prevState;
-    if (!reference || nextReference) {
-      return buildState(nextProps);
+    const { reference } = nextProps;
+    const { reference: prevReference } = prevState;
+    if (Object.prototype.hasOwnProperty.call(nextProps, 'date')
+      || Object.prototype.hasOwnProperty.call(nextProps, 'dates')
+      || !prevReference || reference) {
+      let state = {};
+      if (Object.prototype.hasOwnProperty.call(nextProps, 'date')
+        || Object.prototype.hasOwnProperty.call(nextProps, 'dates')) {
+        state.date = nextProps.date;
+        state.dates = nextProps.dates;
+      }
+      if (!prevReference || reference) {
+        state = { ...state, ...buildState(nextProps) };
+      }
+      return state;
     }
     return null;
   }
@@ -168,9 +179,15 @@ class Calendar extends Component {
   }
 
   onClickDay = dateString => () => {
-    const { onSelect } = this.props;
+    const { onSelect, range } = this.props;
     this.setState({ active: new Date(dateString) });
-    if (onSelect) {
+    if (range) {
+      const nextState = updateDateRange(dateString, this.state);
+      this.setState(nextState);
+      if (onSelect) {
+        onSelect(nextState.dates || nextState.date || undefined);
+      }
+    } else if (onSelect) {
       onSelect(dateString);
     }
   };
@@ -221,21 +238,22 @@ class Calendar extends Component {
   render() {
     const {
       bounds,
-      date,
-      dates,
+      date: dateProp,
+      dates: datesProp,
       disabled,
       firstDayOfWeek,
       header,
       locale,
       onReference,
       onSelect,
+      range,
       showAdjacentDays,
       size,
       theme,
       ...rest
     } = this.props;
     const {
-      active, start, reference, end, slide,
+      active, date, dates, start, reference, end, slide,
     } = this.state;
 
     // We have to deal with reference being the end of a month with more
@@ -359,7 +377,5 @@ if (process.env.NODE_ENV !== 'production') {
 const CalendarWrapper = compose(
   withTheme,
 )(CalendarDoc || Calendar);
-
-CalendarWrapper.updateDateRange = updateDateRange;
 
 export { CalendarWrapper as Calendar };

@@ -28,24 +28,13 @@ class SimpleCalendar extends Component {
   }
 }
 
-class RangeCalendar extends Component {
-  state = {}
-
-  render() {
-    const { date, dates, previousSelectedDate } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <Calendar
-          date={date}
-          dates={dates}
-          onSelect={d => this.setState(
-            Calendar.updateDateRange(d, { date, dates, previousSelectedDate })
-          )}
-        />
-      </Grommet>
-    );
-  }
-}
+const RangeCalendar = () => (
+  <Grommet theme={grommet}>
+    <Calendar
+      range
+    />
+  </Grommet>
+);
 
 const now = new Date();
 const next = new Date(now);
@@ -57,9 +46,17 @@ class DualCalendar extends Component {
     reference2: next,
   }
 
+  onSelect = (arg) => {
+    if (Array.isArray(arg)) {
+      this.setState({ date: undefined, dates: arg });
+    } else {
+      this.setState({ date: arg, dates: undefined });
+    }
+  }
+
   render() {
     const {
-      date, dates, previousSelectedDate, reference1, reference2,
+      date, dates, reference1, reference2,
     } = this.state;
     return (
       <Grommet theme={grommet}>
@@ -67,11 +64,10 @@ class DualCalendar extends Component {
           <Calendar
             animate={false}
             showAdjacentDays={false}
+            range
             date={date}
             dates={dates}
-            onSelect={d => this.setState(
-              Calendar.updateDateRange(d, { date, dates, previousSelectedDate })
-            )}
+            onSelect={this.onSelect}
             reference={reference1.toISOString()}
             onReference={(reference) => {
               const refDate = new Date(reference);
@@ -103,9 +99,8 @@ class DualCalendar extends Component {
             showAdjacentDays={false}
             date={date}
             dates={dates}
-            onSelect={d => this.setState(
-              Calendar.updateDateRange(d, { date, dates, previousSelectedDate })
-            )}
+            range
+            onSelect={this.onSelect}
             reference={reference2.toISOString()}
             onReference={(reference) => {
               const refDate = new Date(reference);

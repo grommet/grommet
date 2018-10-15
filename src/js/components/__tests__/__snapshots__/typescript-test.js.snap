@@ -114,6 +114,7 @@ export interface CalendarProps {
   locale?: string;
   onReference?: (...args: any[]) => any;
   onSelect?: (...args: any[]) => any;
+  range?: boolean;
   reference?: string;
   showAdjacentDays?: boolean;
   size?: \\"small\\" | \\"medium\\" | \\"large\\" | string;

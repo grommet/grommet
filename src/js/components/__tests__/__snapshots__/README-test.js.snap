@@ -980,6 +980,19 @@ Called with an ISO8601 date when
 function
 \`\`\`
 
+**range**
+
+
+      Whether to automatically manage multiple date selection as a range.
+      When the user clicks the first date, onSelect will be called with that
+      date. When the user selects another date, onSelect will be called with
+      an array of two dates.
+    
+
+\`\`\`
+boolean
+\`\`\`
+
 **reference**
 
 The date to show if \`date\` isn't set, in ISO8601 format

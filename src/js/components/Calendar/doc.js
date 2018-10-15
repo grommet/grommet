@@ -64,6 +64,12 @@ You can then use that to disable the previous and next buttons.
       For single select, make this the subsequent \`date\` property value.
       For multiple select or ranges, toggle values in \`dates\`.
       Not specifying this property makes the component read only.`),
+    range: PropTypes.bool.description(`
+      Whether to automatically manage multiple date selection as a range.
+      When the user clicks the first date, onSelect will be called with that
+      date. When the user selects another date, onSelect will be called with
+      an array of two dates.
+    `),
     reference: PropTypes.string
       .description('The date to show if `date` isn\'t set, in ISO8601 format'),
     showAdjacentDays: PropTypes.bool.description(`
@@ -76,19 +82,4 @@ You can then use that to disable the previous and next buttons.
   };
 
   return DocumentedCalendar;
-};
-
-export const docUpdateDateRange = (updateDateRange) => {
-  const DocumentedUpdateDateRange = describe(updateDateRange)
-    .description(`
-      A function to help manage selecting ranges of dates.
-    `).usage(
-      `import { Calendar } from 'grommet';
-const { date, dates, previousSelectedDate } = this.state;
-<Calendar onSelect={d => this.setState(
-  Calendar.updateDateRange(d, { date, dates, previousSelectedDate })
-)} />`
-    );
-
-  return DocumentedUpdateDateRange;
 };
