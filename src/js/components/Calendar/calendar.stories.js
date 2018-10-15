@@ -30,9 +30,7 @@ class SimpleCalendar extends Component {
 
 const RangeCalendar = () => (
   <Grommet theme={grommet}>
-    <Calendar
-      range
-    />
+    <Calendar range />
   </Grommet>
 );
 
