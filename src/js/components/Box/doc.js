@@ -68,7 +68,7 @@ export const doc = (Box) => {
     basis: PropTypes.oneOfType([
       PropTypes.oneOf([
         'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full',
-        '1/2', '1/3', '2/3', '1/4', '3/4', 'auto',
+        '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'auto',
       ]),
       PropTypes.string,
     ])

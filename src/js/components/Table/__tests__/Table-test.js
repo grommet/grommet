@@ -141,8 +141,7 @@ test('TableCell size renders', () => {
         <TableBody>
           <TableRow>
             <TableCell size='1/2' />
-            <TableCell size='1/4' />
-            <TableCell size='1/4' />
+            <TableCell size='2/4' />
           </TableRow>
         </TableBody>
       </Table>
@@ -152,6 +151,15 @@ test('TableCell size renders', () => {
           <TableRow>
             <TableCell size='1/3' />
             <TableCell size='2/3' />
+          </TableRow>
+        </TableBody>
+      </Table>
+
+      <Table>
+        <TableBody>
+          <TableRow>
+            <TableCell size='1/4' />
+            <TableCell size='3/4' />
           </TableRow>
         </TableBody>
       </Table>

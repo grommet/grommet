@@ -75,6 +75,7 @@ Column sizes.
   1/3
   2/3
   1/4
+  2/4
   3/4
   flex
   auto
@@ -88,6 +89,7 @@ full
 1/3
 2/3
 1/4
+2/4
 3/4
 flex
 auto]
@@ -118,6 +120,7 @@ full
 1/3
 2/3
 1/4
+2/4
 3/4
 flex
 auto]
@@ -208,6 +211,7 @@ Row sizes.
   1/3
   2/3
   1/4
+  2/4
   3/4
   flex
   auto
@@ -221,6 +225,7 @@ full
 1/3
 2/3
 1/4
+2/4
 3/4
 flex
 auto]
