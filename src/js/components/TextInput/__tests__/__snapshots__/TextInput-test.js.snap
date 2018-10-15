@@ -235,34 +235,27 @@ exports[`TextInput close suggestion drop 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c4 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -327,34 +320,27 @@ exports[`TextInput close suggestion drop 2`] = `
 `;
 
 exports[`TextInput close suggestion drop 3`] = `
-"@media only screen and (max-width:699px) {
-  .eOSniC {
+"@media only screen and (max-width:768px) {
+  .blARAh {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .eOSniC {
+@media only screen and (max-width:768px) {
+  .blARAh {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .egRmTe {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .egRmTe {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .hWIJiJ {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -584,22 +570,15 @@ exports[`TextInput complex suggestions 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c4 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -656,34 +635,27 @@ exports[`TextInput complex suggestions 2`] = `
 `;
 
 exports[`TextInput complex suggestions 3`] = `
-"@media only screen and (max-width:699px) {
-  .eOSniC {
+"@media only screen and (max-width:768px) {
+  .blARAh {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .eOSniC {
+@media only screen and (max-width:768px) {
+  .blARAh {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .egRmTe {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .egRmTe {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .hWIJiJ {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1081,34 +1053,27 @@ exports[`TextInput select suggestion 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c4 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1173,34 +1138,27 @@ exports[`TextInput select suggestion 2`] = `
 `;
 
 exports[`TextInput select suggestion 3`] = `
-"@media only screen and (max-width:699px) {
-  .eOSniC {
+"@media only screen and (max-width:768px) {
+  .blARAh {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .eOSniC {
+@media only screen and (max-width:768px) {
+  .blARAh {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .egRmTe {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .egRmTe {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .hWIJiJ {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1436,34 +1394,27 @@ exports[`TextInput suggestions 2`] = `
   max-height: inherit;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c4 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1528,34 +1479,27 @@ exports[`TextInput suggestions 2`] = `
 `;
 
 exports[`TextInput suggestions 3`] = `
-"@media only screen and (max-width:699px) {
-  .eOSniC {
+"@media only screen and (max-width:768px) {
+  .blARAh {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .eOSniC {
+@media only screen and (max-width:768px) {
+  .blARAh {
     padding: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .egRmTe {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
-  .egRmTe {
+@media only screen and (max-width:768px) {
+  .bgCyUq {
     padding: 6px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .hWIJiJ {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 

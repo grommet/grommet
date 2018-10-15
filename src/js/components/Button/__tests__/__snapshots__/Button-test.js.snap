@@ -44,6 +44,8 @@ exports[`Button color renders 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .c1:hover {
@@ -71,6 +73,8 @@ exports[`Button color renders 1`] = `
   background: #FD6FFF;
   color: #444444;
   border-radius: 18px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .c3:hover {
@@ -88,29 +92,15 @@ exports[`Button color renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c3 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -167,6 +157,8 @@ exports[`Button disabled renders 1`] = `
   line-height: 24px;
   opacity: 0.3;
   cursor: default;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .c0 {
@@ -178,13 +170,6 @@ exports[`Button disabled renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
 }
 
 <div
@@ -246,6 +231,8 @@ exports[`Button focus renders 1`] = `
   line-height: 24px;
   border-color: #FD6FFF;
   box-shadow: 0 0 2px 2px #FD6FFF;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .c1 > circle,
@@ -269,22 +256,15 @@ exports[`Button focus renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -341,13 +321,6 @@ exports[`Button hoverIndicator as object renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
 <div
   className="c0"
 >
@@ -395,13 +368,6 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
 }
 
 <div
@@ -453,13 +419,6 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
 <div
   className="c0"
 >
@@ -507,13 +466,6 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
 }
 
 <div
@@ -565,13 +517,6 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
 <div
   className="c0"
 >
@@ -619,13 +564,6 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
 }
 
 <div
@@ -679,13 +617,6 @@ exports[`Button hoverIndicator renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
 <div
   className="c0"
 >
@@ -720,6 +651,8 @@ exports[`Button href renders 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .c1:hover {
@@ -735,13 +668,6 @@ exports[`Button href renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
 }
 
 <div
@@ -807,6 +733,8 @@ exports[`Button icon label renders 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .c1:hover {
@@ -824,22 +752,15 @@ exports[`Button icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -913,6 +834,8 @@ exports[`Button primary renders 1`] = `
   background: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .c1:hover {
@@ -930,22 +853,15 @@ exports[`Button primary renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1012,6 +928,8 @@ exports[`Button renders 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .c1:hover {
@@ -1029,22 +947,15 @@ exports[`Button renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1118,6 +1029,8 @@ exports[`Button reverse icon label renders 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .c1:hover {
@@ -1135,22 +1048,15 @@ exports[`Button reverse icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1233,22 +1139,15 @@ exports[`Button warns about invalid icon render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 
@@ -1326,22 +1225,15 @@ exports[`Button warns about invalid label render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c2 {
     padding: 0px;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
   }
 }
 

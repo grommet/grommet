@@ -15,12 +15,10 @@ export const fontSize = (size, lineHeight) => css`
   )};
 `;
 
-export const lapAndUp = content => css`
-  @media only screen and (min-width: ${props => `${props.theme.global.breakpoints.narrow + 1}px`}) { ${content} }
-`;
-
-export const palm = content => css`
-  @media only screen and (max-width: ${props => `${props.theme.global.breakpoints.narrow}px`}) { ${content} }
+export const breakpointStyle = (breakpoint, content) => css`
+  @media only screen
+  ${breakpoint.value && `and (max-width: ${breakpoint.value}px)`}
+  { ${content} }
 `;
 
 export const findAllByType = (component, type) => {
