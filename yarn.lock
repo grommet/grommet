@@ -3851,6 +3851,10 @@ grommet-icons@^3.1.0-beta.1:
   version "3.1.0-beta.1"
   resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-3.1.0-beta.1.tgz#27cc89e5c2c95b68ec280ecd106b81d45954fac4"
 
+grommet-theme-hpe@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/grommet-theme-hpe/-/grommet-theme-hpe-0.4.0.tgz#55e3c3379e08cf0846883be652ae06dff741644d"
+
 growly@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"

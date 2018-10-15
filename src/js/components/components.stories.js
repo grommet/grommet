@@ -32,10 +32,12 @@ import {
   TextArea,
   TextInput,
   Video,
-} from '.';
-import { grommet, dark, hpe } from '../themes';
-import { generate } from '../themes/base';
-import { deepMerge } from '../utils';
+} from 'grommet';
+import { grommet, dark } from 'grommet/themes';
+import { generate } from 'grommet/themes/base';
+import { deepMerge } from 'grommet/utils';
+import { hpe } from 'grommet-theme-hpe';
+
 
 const Node = ({ id, ...rest }) => (
   <Box
