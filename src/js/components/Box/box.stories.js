@@ -83,7 +83,7 @@ const FixedSizesBox = () => (
         overflow={{ horizontal: 'hidden', vertical: 'scroll' }}
       >
         { Array(20).fill().map((_, i) => (
-          <Text>
+          <Text key={`${i + 0}`}>
             {`Small (${i})`}
           </Text>
         )) }

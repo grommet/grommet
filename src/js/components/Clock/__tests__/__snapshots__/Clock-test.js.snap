@@ -39,13 +39,13 @@ exports[`Clock hourLimit 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -226,13 +226,13 @@ exports[`Clock run 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c5 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c5 {
     padding: 0px;
   }
@@ -493,7 +493,7 @@ exports[`Clock run 2`] = `
     />
   </svg>
   <div
-    class="StyledBox-sc-13pk1d4-0 kjwpgc"
+    class="StyledBox-sc-13pk1d4-0 btbQcB"
   >
     <div
       class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
@@ -537,7 +537,7 @@ exports[`Clock run 2`] = `
     </div>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 kjwpgc"
+    class="StyledBox-sc-13pk1d4-0 btbQcB"
   >
     <div
       class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
@@ -622,13 +622,13 @@ exports[`Clock time 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -2042,13 +2042,13 @@ exports[`Clock type digital precision hours size large 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -2115,13 +2115,13 @@ exports[`Clock type digital precision hours size medium 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -2188,13 +2188,13 @@ exports[`Clock type digital precision hours size small 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -2261,13 +2261,13 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -2334,13 +2334,13 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -2407,13 +2407,13 @@ exports[`Clock type digital precision minutes size large 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -2498,13 +2498,13 @@ exports[`Clock type digital precision minutes size medium 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -2589,13 +2589,13 @@ exports[`Clock type digital precision minutes size small 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -2680,13 +2680,13 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -2771,13 +2771,13 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -2862,13 +2862,13 @@ exports[`Clock type digital precision seconds size large 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -2971,13 +2971,13 @@ exports[`Clock type digital precision seconds size medium 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -3080,13 +3080,13 @@ exports[`Clock type digital precision seconds size small 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -3189,13 +3189,13 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }
@@ -3298,13 +3298,13 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
   padding: 0px;
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
   }
 }
 
-@media only screen and (max-width:699px) {
+@media only screen and (max-width:768px) {
   .c1 {
     padding: 0px;
   }

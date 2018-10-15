@@ -1,8 +1,8 @@
 import styled, { css, keyframes } from 'styled-components';
 
 import {
-  backgroundStyle, colorForName, edgeStyle, focusStyle,
-  normalizeColor, overflowStyle, palm,
+  backgroundStyle, breakpointStyle, colorForName, edgeStyle, focusStyle,
+  normalizeColor, overflowStyle,
 } from '../../utils';
 
 const ALIGN_MAP = {
@@ -61,19 +61,25 @@ const basisStyle = css`
 // https://stackoverflow.com/questions/36247140/why-doesnt-flex-item-shrink-past-content-size
 // we assume we are in the context of a Box going the other direction
 // TODO: revisit this
-const directionStyle = css`
-  min-width: 0;
-  min-height: 0;
-  flex-direction: ${props => (
-    props.directionProp === 'row-responsive' ? 'row' : props.directionProp)};
-  ${props => (props.directionProp === 'row-responsive' ? palm(`
-    flex-direction: column;
-    flex-basis: auto;
-    justify-content: flex-start;
-    align-items: stretch;
-  `) : '')}
+const directionStyle = (direction, theme) => {
+  const styles = [css`
+    min-width: 0;
+    min-height: 0;
+    flex-direction: ${direction === 'row-responsive' ? 'row' : direction};
+  `];
+  if (direction === 'row-responsive' && theme.box.responsiveBreakpoint) {
+    const breakpoint = theme.global.breakpoints[theme.box.responsiveBreakpoint];
+    if (breakpoint) {
+      styles.push(breakpointStyle(breakpoint, `
+        flex-direction: column;
+        flex-basis: auto;
+        justify-content: flex-start;
+        align-items: stretch;
+      `));
+    }
   }
-`;
+  return styles;
+};
 
 const elevationStyle = css`
   box-shadow: ${props => (
@@ -133,21 +139,26 @@ const borderStyle = (data, responsive, theme) => {
   const borderSize = data.size || 'xsmall';
   const side = (typeof data === 'string') ? data : data.side || 'all';
   const value = `solid ${theme.global.borderSize[borderSize]} ${color}`;
-  const narrowValue = `solid ${theme.global.borderSize.narrow[borderSize]} ${color}`;
+  const breakpoint = theme.box.responsiveBreakpoint
+    && theme.global.breakpoints[theme.box.responsiveBreakpoint];
+  const responsiveValue = breakpoint && breakpoint.borderSize[borderSize]
+    && `solid ${breakpoint.borderSize[borderSize]} ${color}`;
   if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
     styles.push(css`border-${side}: ${value};`);
-    if (responsive) {
-      styles.push(palm(`border-${side}: ${narrowValue};`));
+    if (responsiveValue) {
+      styles.push(breakpointStyle(breakpoint, `
+        border-${side}: ${responsiveValue};
+      `));
     }
   } else if (side === 'vertical') {
     styles.push(css`
       border-left: ${value};
       border-right: ${value};
     `);
-    if (responsive) {
-      styles.push(palm(`
-        border-left: ${narrowValue};
-        border-right: ${narrowValue};
+    if (responsiveValue) {
+      styles.push(breakpointStyle(breakpoint, `
+        border-left: ${responsiveValue};
+        border-right: ${responsiveValue};
       `));
     }
   } else if (side === 'horizontal') {
@@ -155,16 +166,16 @@ const borderStyle = (data, responsive, theme) => {
       border-top: ${value};
       border-bottom: ${value};
     `);
-    if (responsive) {
-      styles.push(palm(`
-        border-top: ${narrowValue};
-        border-bottom: ${narrowValue};
+    if (responsiveValue) {
+      styles.push(breakpointStyle(breakpoint, `
+        border-top: ${responsiveValue};
+        border-bottom: ${responsiveValue};
       `));
     }
   } else {
     styles.push(css`border: ${value};`);
-    if (responsive) {
-      styles.push(palm(`border: ${narrowValue};`));
+    if (responsiveValue) {
+      styles.push(breakpointStyle(breakpoint, `border: ${responsiveValue};`));
     }
   }
   return styles;
@@ -175,21 +186,23 @@ const ROUND_MAP = {
 };
 
 const roundStyle = (data, responsive, theme) => {
+  const breakpoint = theme.box.responsiveBreakpoint
+      && theme.global.breakpoints[theme.box.responsiveBreakpoint];
   const styles = [];
   if (typeof data === 'object') {
     const size = ROUND_MAP[data.size]
       || theme.global.edgeSize[data.size || 'medium'];
-    const narrowSize = ROUND_MAP[data]
-      || theme.global.edgeSize.narrow[data.size || 'medium'];
+    const responsiveSize = breakpoint && breakpoint.edgeSize[data.size]
+      && breakpoint.edgeSize[data.size];
     if (data.corner === 'top') {
       styles.push(css`
         border-top-left-radius: ${size};
         border-top-right-radius: ${size};
       `);
-      if (responsive) {
-        styles.push(palm(`
-          border-top-left-radius: ${narrowSize};
-          border-top-right-radius: ${narrowSize};
+      if (responsiveSize) {
+        styles.push(breakpointStyle(breakpoint, `
+          border-top-left-radius: ${responsiveSize};
+          border-top-right-radius: ${responsiveSize};
         `));
       }
     } else if (data.corner === 'bottom') {
@@ -197,10 +210,10 @@ const roundStyle = (data, responsive, theme) => {
         border-bottom-left-radius: ${size};
         border-bottom-right-radius: ${size};
       `);
-      if (responsive) {
-        styles.push(palm(`
-          border-bottom-left-radius: ${narrowSize};
-          border-bottom-right-radius: ${narrowSize};
+      if (responsiveSize) {
+        styles.push(breakpointStyle(breakpoint, `
+          border-bottom-left-radius: ${responsiveSize};
+          border-bottom-right-radius: ${responsiveSize};
         `));
       }
     } else if (data.corner === 'left') {
@@ -208,10 +221,10 @@ const roundStyle = (data, responsive, theme) => {
         border-top-left-radius: ${size};
         border-bottom-left-radius: ${size};
       `);
-      if (responsive) {
-        styles.push(palm(`
-          border-top-left-radius: ${narrowSize};
-          border-bottom-left-radius: ${narrowSize};
+      if (responsiveSize) {
+        styles.push(breakpointStyle(breakpoint, `
+          border-top-left-radius: ${responsiveSize};
+          border-bottom-left-radius: ${responsiveSize};
         `));
       }
     } else if (data.corner === 'right') {
@@ -219,28 +232,28 @@ const roundStyle = (data, responsive, theme) => {
         border-top-right-radius: ${size};
         border-bottom-right-radius: ${size};
       `);
-      if (responsive) {
-        styles.push(palm(`
-          border-top-right-radius: ${narrowSize};
-          border-bottom-right-radius: ${narrowSize};
+      if (responsiveSize) {
+        styles.push(breakpointStyle(breakpoint, `
+          border-top-right-radius: ${responsiveSize};
+          border-bottom-right-radius: ${responsiveSize};
         `));
       }
     } else if (data.corner) {
       styles.push(css`
         border-${data.corner}-radius: ${size};
       `);
-      if (responsive) {
-        styles.push(palm(`
-          border-${data.corner}-radius: ${narrowSize};
+      if (responsiveSize) {
+        styles.push(breakpointStyle(breakpoint, `
+          border-${data.corner}-radius: ${responsiveSize};
         `));
       }
     } else {
       styles.push(css`
         border-radius: ${size};
       `);
-      if (responsive) {
-        styles.push(palm(`
-          border-radius: ${narrowSize};
+      if (responsiveSize) {
+        styles.push(breakpointStyle(breakpoint, `
+          border-radius: ${responsiveSize};
         `));
       }
     }
@@ -249,9 +262,10 @@ const roundStyle = (data, responsive, theme) => {
     styles.push(css`
       border-radius: ${ROUND_MAP[size] || theme.global.edgeSize[size] || size};
     `);
-    if (responsive) {
-      styles.push(palm(`
-        border-radius: ${ROUND_MAP[size] || theme.global.edgeSize.narrow[size] || size};
+    const responsiveSize = breakpoint && breakpoint.edgeSize[size];
+    if (responsiveSize) {
+      styles.push(breakpointStyle(breakpoint, `
+        border-radius: ${responsiveSize};
       `));
     }
   }
@@ -429,16 +443,19 @@ export const StyledBox = styled.div`
   ${props => props.background && backgroundStyle(props.background, props.theme)}
   ${props => props.border
     && borderStyle(props.border, props.responsive, props.theme)}
-  ${props => props.directionProp && directionStyle}
+  ${props => props.directionProp
+    && directionStyle(props.directionProp, props.theme)}
   ${props => props.flex !== undefined && flexStyle}
   ${props => props.basis && basisStyle}
   ${props => props.fillProp && fillStyle(props.fillProp)}
   ${props => props.gridArea && gridAreaStyle}
   ${props => props.justify && justifyStyle}
   ${props => (props.margin
-    && edgeStyle('margin', props.margin, props.responsive, props.theme))}
+    && edgeStyle('margin', props.margin, props.responsive,
+      props.theme.box.responsiveBreakpoint, props.theme))}
   ${props => (props.pad
-    && edgeStyle('padding', props.pad, props.responsive, props.theme))}
+    && edgeStyle('padding', props.pad, props.responsive,
+      props.theme.box.responsiveBreakpoint, props.theme))}
   ${props => props.round && roundStyle(props.round, props.responsive, props.theme)}
   ${props => props.wrapProp && wrapStyle}
   ${props => props.overflowProp && overflowStyle(props.overflowProp)}
@@ -448,19 +465,23 @@ export const StyledBox = styled.div`
   ${props => props.theme.box && props.theme.box.extend}
 `;
 
-const gapStyle = (directionProp, gap, responsive, { global: { edgeSize } }) => {
+const gapStyle = (directionProp, gap, responsive, theme) => {
+  const breakpoint = theme.box.responsiveBreakpoint
+    && theme.global.breakpoints[theme.box.responsiveBreakpoint];
+  const responsiveSize = breakpoint && breakpoint.edgeSize[gap]
+    && breakpoint.edgeSize[gap];
   const styles = [];
   if (directionProp === 'column') {
-    styles.push(css`height: ${edgeSize[gap]};`);
-    if (responsive) {
-      styles.push(palm(`height: ${edgeSize.narrow[gap]};`));
+    styles.push(css`height: ${theme.global.edgeSize[gap]};`);
+    if (responsiveSize) {
+      styles.push(breakpointStyle(breakpoint, `height: ${responsiveSize};`));
     }
   } else {
-    styles.push(`width: ${edgeSize[gap]};`);
+    styles.push(`width: ${theme.global.edgeSize[gap]};`);
     if (responsive && directionProp === 'row-responsive') {
-      styles.push(palm(`
+      styles.push(breakpointStyle(breakpoint, `
         width: auto;
-        height: ${edgeSize.narrow[gap]};
+        height: ${responsiveSize};
       `));
     }
   }

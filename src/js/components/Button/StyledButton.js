@@ -5,7 +5,6 @@ import {
   backgroundStyle,
   colorForName,
   focusStyle,
-  lapAndUp,
   normalizeColor,
 } from '../../utils';
 
@@ -112,9 +111,9 @@ export const StyledButton = styled.button`
   ${props => !props.disabled && props.active && activeStyle}
   ${props => props.disabled && disabledStyle}
   ${props => props.focus && (!props.plain || props.focusIndicator) && focusStyle}
-  ${lapAndUp(`
+  ${props => !props.plain && `
     transition: 0.1s ease-in-out;
-  `)}
+  `}
   ${props => props.fillContainer && fillStyle}
   ${props => props.hasIcon && !props.hasLabel && `
     padding: ${props.theme.global.edgeSize.small};
