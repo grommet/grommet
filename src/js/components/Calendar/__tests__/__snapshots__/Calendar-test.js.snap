@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Calendar date renders 1`] = `
+exports[`Calendar date 1`] = `
 .c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -161,8 +161,6 @@ exports[`Calendar date renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
   padding: 12px;
 }
 
@@ -185,33 +183,6 @@ exports[`Calendar date renders 1`] = `
 }
 
 .c14:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c17:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
@@ -286,7 +257,7 @@ exports[`Calendar date renders 1`] = `
   height: 54.857142857142854px;
 }
 
-.c18 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -431,7 +402,7 @@ exports[`Calendar date renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
-            disabled={true}
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -463,7 +434,7 @@ exports[`Calendar date renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
-            disabled={true}
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -785,14 +756,14 @@ exports[`Calendar date renders 1`] = `
             >
               <button
                 aria-label="Mon Jan 15 2018"
-                className="c17"
+                className="c14"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
                 type="button"
               >
                 <div
-                  className="c18"
+                  className="c17"
                 >
                   15
                 </div>
@@ -1257,6 +1228,24 @@ exports[`Calendar date renders 1`] = `
                   className="c15"
                 >
                   9
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sat Feb 10 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  10
                 </div>
               </button>
             </div>
@@ -1268,7 +1257,7 @@ exports[`Calendar date renders 1`] = `
 </div>
 `;
 
-exports[`Calendar dates renders 1`] = `
+exports[`Calendar dates 1`] = `
 .c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -1429,8 +1418,6 @@ exports[`Calendar dates renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
   padding: 12px;
 }
 
@@ -1453,33 +1440,6 @@ exports[`Calendar dates renders 1`] = `
 }
 
 .c14:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c18:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
@@ -1699,7 +1659,7 @@ exports[`Calendar dates renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
-            disabled={true}
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1731,7 +1691,7 @@ exports[`Calendar dates renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
-            disabled={true}
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1995,7 +1955,7 @@ exports[`Calendar dates renders 1`] = `
             >
               <button
                 aria-label="Fri Jan 12 2018"
-                className="c18"
+                className="c14"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2525,6 +2485,24 @@ exports[`Calendar dates renders 1`] = `
                   className="c15"
                 >
                   9
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sat Feb 10 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  10
                 </div>
               </button>
             </div>
@@ -2536,7 +2514,7 @@ exports[`Calendar dates renders 1`] = `
 </div>
 `;
 
-exports[`Calendar disabled renders 1`] = `
+exports[`Calendar firstDayOfWeek 1`] = `
 .c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -2697,8 +2675,6 @@ exports[`Calendar disabled renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
   padding: 12px;
 }
 
@@ -2721,33 +2697,6 @@ exports[`Calendar disabled renders 1`] = `
 }
 
 .c14:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c18 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c18:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
@@ -2967,7 +2916,7 @@ exports[`Calendar disabled renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
-            disabled={true}
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -2999,7 +2948,7 @@ exports[`Calendar disabled renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
-            disabled={true}
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -3234,7 +3183,7 @@ exports[`Calendar disabled renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c16"
                 >
                   10
                 </div>
@@ -3263,14 +3212,14 @@ exports[`Calendar disabled renders 1`] = `
             >
               <button
                 aria-label="Fri Jan 12 2018"
-                className="c18"
+                className="c14"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
                 type="button"
               >
                 <div
-                  className="c17"
+                  className="c16"
                 >
                   12
                 </div>
@@ -3328,7 +3277,7 @@ exports[`Calendar disabled renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c16"
+                  className="c17"
                 >
                   15
                 </div>
@@ -3796,521 +3745,11 @@ exports[`Calendar disabled renders 1`] = `
                 </div>
               </button>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Calendar firstDayOfWeek renders 1`] = `
-.c9 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0px;
-  padding: 0px;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin: 0px;
-  padding: 0px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  margin: 0px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  margin: 0px;
-  padding: 0px;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 0px;
-  padding: 0px;
-}
-
-.c7 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
-  padding: 12px;
-}
-
-.c14 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c14:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c17:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 1.45;
-  width: 384px;
-}
-
-.c10 {
-  overflow: hidden;
-  height: 329.1428571428571px;
-}
-
-.c11 {
-  position: relative;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-justify: between;
-  -ms-flex-justify: between;
-  flex-justify: between;
-}
-
-.c13 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-  opacity: 0.5;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-  background: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c5 {
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
-  font-weight: 600;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-      onKeyDown={[Function]}
-    >
-      <div
-        className="c3"
-      >
-        <div
-          className="c4"
-        >
-          <h3
-            className="-h3 c5"
-            size="medium"
-          >
-            January 2018
-          </h3>
-        </div>
-        <div
-          className="c6"
-        >
-          <button
-            aria-label="December 2017"
-            className="c7"
-            disabled={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
-          >
-            <div
-              className="c8"
-            >
-              <svg
-                aria-label="Previous"
-                className="c9"
-                height="24px"
-                role="img"
-                size="medium"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  strokeWidth="2"
-                  transform="matrix(-1 0 0 1 24 0)"
-                />
-              </svg>
-            </div>
-          </button>
-          <button
-            aria-label="February 2018"
-            className="c7"
-            disabled={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
-          >
-            <div
-              className="c8"
-            >
-              <svg
-                aria-label="Next"
-                className="c9"
-                height="24px"
-                role="img"
-                size="medium"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
-      </div>
-      <div
-        className="c10"
-      >
-        <div
-          className="c11"
-        >
-          <div
-            className="c12"
-          >
             <div
               className="c13"
             >
               <button
-                aria-label="Sun Dec 31 2017"
+                aria-label="Sat Feb 10 2018"
                 className="c14"
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -4319,751 +3758,11 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
               >
                 <div
                   className="c15"
-                >
-                  31
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Mon Jan 01 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  1
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Tue Jan 02 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  2
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Wed Jan 03 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  3
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Thu Jan 04 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  4
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Fri Jan 05 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  5
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sat Jan 06 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  6
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c12"
-          >
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sun Jan 07 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  7
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Mon Jan 08 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  8
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Tue Jan 09 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  9
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Wed Jan 10 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
                 >
                   10
                 </div>
               </button>
             </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Thu Jan 11 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  11
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Fri Jan 12 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  12
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sat Jan 13 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  13
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c12"
-          >
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sun Jan 14 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  14
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Mon Jan 15 2018"
-                className="c17"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c18"
-                >
-                  15
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Tue Jan 16 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  16
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Wed Jan 17 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  17
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Thu Jan 18 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  18
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Fri Jan 19 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  19
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sat Jan 20 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  20
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c12"
-          >
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sun Jan 21 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  21
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Mon Jan 22 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  22
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Tue Jan 23 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  23
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Wed Jan 24 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  24
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Thu Jan 25 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  25
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Fri Jan 26 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  26
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sat Jan 27 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  27
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c12"
-          >
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sun Jan 28 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  28
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Mon Jan 29 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  29
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Tue Jan 30 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  30
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Wed Jan 31 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  31
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Thu Feb 01 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  1
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Fri Feb 02 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  2
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sat Feb 03 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  3
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c12"
-          >
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sun Feb 04 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  4
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Mon Feb 05 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  5
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Tue Feb 06 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  6
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Wed Feb 07 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  7
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Thu Feb 08 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  8
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Fri Feb 09 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  9
-                </div>
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -5095,7 +3794,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
-            disabled={true}
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -5127,7 +3826,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
-            disabled={true}
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -5431,14 +4130,14 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
             >
               <button
                 aria-label="Mon Jan 15 2018"
-                className="c17"
+                className="c14"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
                 type="button"
               >
                 <div
-                  className="c18"
+                  className="c17"
                 >
                   15
                 </div>
@@ -5924,521 +4623,11 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 </div>
               </button>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Calendar renders 1`] = `
-.c9 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c9 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c9 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c9 *[stroke*="#"],
-.c9 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c9 *[fill-rule],
-.c9 *[FILL-RULE],
-.c9 *[fill*="#"],
-.c9 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0px;
-  padding: 0px;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin: 0px;
-  padding: 0px;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  margin: 0px;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  margin: 0px;
-  padding: 0px;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 0px;
-  padding: 0px;
-}
-
-.c7 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
-  padding: 12px;
-}
-
-.c14 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c14:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c17:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c1 {
-  font-size: 18px;
-  line-height: 1.45;
-  width: 384px;
-}
-
-.c10 {
-  overflow: hidden;
-  height: 329.1428571428571px;
-}
-
-.c11 {
-  position: relative;
-}
-
-.c12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-justify: between;
-  -ms-flex-justify: between;
-  flex-justify: between;
-}
-
-.c13 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-  opacity: 0.5;
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-}
-
-.c18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 54.857142857142854px;
-  height: 54.857142857142854px;
-  background: #7D4CDB;
-  color: #f8f8f8;
-  font-weight: bold;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c5 {
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
-  font-weight: 600;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className="c1"
-  >
-    <div
-      className="c2"
-      onKeyDown={[Function]}
-    >
-      <div
-        className="c3"
-      >
-        <div
-          className="c4"
-        >
-          <h3
-            className="-h3 c5"
-            size="medium"
-          >
-            January 2018
-          </h3>
-        </div>
-        <div
-          className="c6"
-        >
-          <button
-            aria-label="December 2017"
-            className="c7"
-            disabled={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
-          >
-            <div
-              className="c8"
-            >
-              <svg
-                aria-label="Previous"
-                className="c9"
-                height="24px"
-                role="img"
-                size="medium"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  strokeWidth="2"
-                  transform="matrix(-1 0 0 1 24 0)"
-                />
-              </svg>
-            </div>
-          </button>
-          <button
-            aria-label="February 2018"
-            className="c7"
-            disabled={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
-          >
-            <div
-              className="c8"
-            >
-              <svg
-                aria-label="Next"
-                className="c9"
-                height="24px"
-                role="img"
-                size="medium"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <polyline
-                  fill="none"
-                  points="7 2 17 12 7 22"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
-      </div>
-      <div
-        className="c10"
-      >
-        <div
-          className="c11"
-        >
-          <div
-            className="c12"
-          >
             <div
               className="c13"
             >
               <button
-                aria-label="Sun Dec 31 2017"
+                aria-label="Sun Feb 11 2018"
                 className="c14"
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -6447,751 +4636,11 @@ exports[`Calendar renders 1`] = `
               >
                 <div
                   className="c15"
-                >
-                  31
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Mon Jan 01 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  1
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Tue Jan 02 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  2
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Wed Jan 03 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  3
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Thu Jan 04 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  4
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Fri Jan 05 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  5
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sat Jan 06 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  6
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c12"
-          >
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sun Jan 07 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  7
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Mon Jan 08 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  8
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Tue Jan 09 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  9
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Wed Jan 10 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  10
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Thu Jan 11 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
                 >
                   11
                 </div>
               </button>
             </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Fri Jan 12 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  12
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sat Jan 13 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  13
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c12"
-          >
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sun Jan 14 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  14
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Mon Jan 15 2018"
-                className="c17"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c18"
-                >
-                  15
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Tue Jan 16 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  16
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Wed Jan 17 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  17
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Thu Jan 18 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  18
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Fri Jan 19 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  19
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sat Jan 20 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  20
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c12"
-          >
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sun Jan 21 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  21
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Mon Jan 22 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  22
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Tue Jan 23 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  23
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Wed Jan 24 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  24
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Thu Jan 25 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  25
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Fri Jan 26 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  26
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sat Jan 27 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  27
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c12"
-          >
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sun Jan 28 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  28
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Mon Jan 29 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  29
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Tue Jan 30 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  30
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Wed Jan 31 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c16"
-                >
-                  31
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Thu Feb 01 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  1
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Fri Feb 02 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  2
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sat Feb 03 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  3
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c12"
-          >
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Sun Feb 04 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  4
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Mon Feb 05 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  5
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Tue Feb 06 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  6
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Wed Feb 07 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  7
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Thu Feb 08 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  8
-                </div>
-              </button>
-            </div>
-            <div
-              className="c13"
-            >
-              <button
-                aria-label="Fri Feb 09 2018"
-                className="c14"
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                type="button"
-              >
-                <div
-                  className="c15"
-                >
-                  9
-                </div>
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -7200,7 +4649,7 @@ exports[`Calendar renders 1`] = `
 </div>
 `;
 
-exports[`Calendar renders custom header 1`] = `
+exports[`Calendar header 1`] = `
 .c5 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -7294,33 +4743,6 @@ exports[`Calendar renders custom header 1`] = `
 }
 
 .c11:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c14 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: black;
@@ -7839,7 +5261,7 @@ exports[`Calendar renders custom header 1`] = `
             >
               <button
                 aria-label="Mon Oct 15 2018"
-                className="c14"
+                className="c11"
                 disabled={false}
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -8340,6 +5762,25 @@ exports[`Calendar renders custom header 1`] = `
                 </div>
               </button>
             </div>
+            <div
+              className="c10"
+            >
+              <button
+                aria-label="Sat Nov 10 2018"
+                className="c11"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c12"
+                >
+                  10
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -8348,7 +5789,7 @@ exports[`Calendar renders custom header 1`] = `
 </div>
 `;
 
-exports[`Calendar size renders 1`] = `
+exports[`Calendar reference 1`] = `
 .c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -8377,40 +5818,6 @@ exports[`Calendar size renders 1`] = `
 .c9 *[FILL-RULE],
 .c9 *[fill*="#"],
 .c9 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c29 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c29 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c29 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c29 *[stroke*="#"],
-.c29 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c29 *[fill-rule],
-.c29 *[FILL-RULE],
-.c29 *[fill*="#"],
-.c29 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -8457,7 +5864,1278 @@ exports[`Calendar size renders 1`] = `
   padding: 0px;
 }
 
-.c20 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  margin: 0px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  padding: 12px;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c14:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: black;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c10 {
+  overflow: hidden;
+  height: 329.1428571428571px;
+}
+
+.c11 {
+  position: relative;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-justify: between;
+  -ms-flex-justify: between;
+  flex-justify: between;
+}
+
+.c13 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+  opacity: 0.5;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 54.857142857142854px;
+  height: 54.857142857142854px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c5 {
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      onKeyDown={[Function]}
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <h3
+            className="-h3 c5"
+            size="medium"
+          >
+            January 2018
+          </h3>
+        </div>
+        <div
+          className="c6"
+        >
+          <button
+            aria-label="December 2017"
+            className="c7"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <div
+              className="c8"
+            >
+              <svg
+                aria-label="Previous"
+                className="c9"
+                height="24px"
+                role="img"
+                size="medium"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  strokeWidth="2"
+                  transform="matrix(-1 0 0 1 24 0)"
+                />
+              </svg>
+            </div>
+          </button>
+          <button
+            aria-label="February 2018"
+            className="c7"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <div
+              className="c8"
+            >
+              <svg
+                aria-label="Next"
+                className="c9"
+                height="24px"
+                role="img"
+                size="medium"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        className="c10"
+      >
+        <div
+          className="c11"
+        >
+          <div
+            className="c12"
+          >
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sun Dec 31 2017"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  31
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Mon Jan 01 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  1
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Tue Jan 02 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  2
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Wed Jan 03 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  3
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Thu Jan 04 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  4
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Fri Jan 05 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  5
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sat Jan 06 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  6
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            className="c12"
+          >
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sun Jan 07 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  7
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Mon Jan 08 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  8
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Tue Jan 09 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  9
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Wed Jan 10 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  10
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Thu Jan 11 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  11
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Fri Jan 12 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  12
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sat Jan 13 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  13
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            className="c12"
+          >
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sun Jan 14 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  14
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Mon Jan 15 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  15
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Tue Jan 16 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  16
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Wed Jan 17 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  17
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Thu Jan 18 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  18
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Fri Jan 19 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  19
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sat Jan 20 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  20
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            className="c12"
+          >
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sun Jan 21 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  21
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Mon Jan 22 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  22
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Tue Jan 23 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  23
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Wed Jan 24 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  24
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Thu Jan 25 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  25
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Fri Jan 26 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  26
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sat Jan 27 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  27
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            className="c12"
+          >
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sun Jan 28 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  28
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Mon Jan 29 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  29
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Tue Jan 30 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  30
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Wed Jan 31 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c16"
+                >
+                  31
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Thu Feb 01 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  1
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Fri Feb 02 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  2
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sat Feb 03 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  3
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            className="c12"
+          >
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sun Feb 04 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  4
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Mon Feb 05 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  5
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Tue Feb 06 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  6
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Wed Feb 07 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  7
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Thu Feb 08 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  8
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Fri Feb 09 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  9
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sat Feb 10 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  10
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Calendar size 1`] = `
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c28 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c28 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c28 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c28 *[stroke*="#"],
+.c28 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c28 *[fill-rule],
+.c28 *[FILL-RULE],
+.c28 *[fill*="#"],
+.c28 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0px;
+  padding: 0px;
+}
+
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8548,7 +7226,7 @@ exports[`Calendar size renders 1`] = `
   padding-right: 6px;
 }
 
-.c27 {
+.c26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8585,8 +7263,6 @@ exports[`Calendar size renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  opacity: 0.3;
-  cursor: default;
   padding: 12px;
 }
 
@@ -8614,34 +7290,7 @@ exports[`Calendar size renders 1`] = `
   color: black;
 }
 
-.c17 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c17:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: black;
-}
-
-.c19 {
+.c18 {
   font-size: 18px;
   line-height: 1.45;
   width: 384px;
@@ -8653,13 +7302,13 @@ exports[`Calendar size renders 1`] = `
   width: 192px;
 }
 
-.c26 {
+.c25 {
   font-size: 30px;
   line-height: 1.11;
   width: 768px;
 }
 
-.c22 {
+.c21 {
   overflow: hidden;
   height: 329.1428571428571px;
 }
@@ -8669,7 +7318,7 @@ exports[`Calendar size renders 1`] = `
   height: 164.57142857142856px;
 }
 
-.c30 {
+.c29 {
   overflow: hidden;
   height: 658.2857142857142px;
 }
@@ -8697,7 +7346,7 @@ exports[`Calendar size renders 1`] = `
   flex: 0 0 auto;
 }
 
-.c23 {
+.c22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8715,7 +7364,7 @@ exports[`Calendar size renders 1`] = `
   opacity: 0.5;
 }
 
-.c24 {
+.c23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8732,7 +7381,7 @@ exports[`Calendar size renders 1`] = `
   height: 54.857142857142854px;
 }
 
-.c25 {
+.c24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8787,7 +7436,7 @@ exports[`Calendar size renders 1`] = `
   height: 27.428571428571427px;
 }
 
-.c18 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8807,7 +7456,7 @@ exports[`Calendar size renders 1`] = `
   font-weight: bold;
 }
 
-.c31 {
+.c30 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8825,7 +7474,7 @@ exports[`Calendar size renders 1`] = `
   opacity: 0.5;
 }
 
-.c32 {
+.c31 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8842,7 +7491,7 @@ exports[`Calendar size renders 1`] = `
   height: 109.71428571428571px;
 }
 
-.c33 {
+.c32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8873,7 +7522,7 @@ exports[`Calendar size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c21 {
+.c20 {
   font-size: 22px;
   line-height: 28px;
   max-width: 528px;
@@ -8882,7 +7531,7 @@ exports[`Calendar size renders 1`] = `
   margin-bottom: 0px;
 }
 
-.c28 {
+.c27 {
   font-size: 34px;
   line-height: 40px;
   max-width: 816px;
@@ -8925,13 +7574,13 @@ exports[`Calendar size renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c19 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c20 {
+  .c19 {
     padding-left: 6px;
     padding-right: 6px;
   }
@@ -8975,20 +7624,20 @@ exports[`Calendar size renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c27 {
+  .c26 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c27 {
+  .c26 {
     padding-left: 12px;
     padding-right: 12px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c21 {
+  .c20 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
@@ -8996,14 +7645,14 @@ exports[`Calendar size renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c21 {
+  .c20 {
     margin-top: 0px;
     margin-bottom: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c28 {
+  .c27 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
@@ -9011,7 +7660,7 @@ exports[`Calendar size renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c28 {
+  .c27 {
     margin-top: 0px;
     margin-bottom: 0px;
   }
@@ -9061,7 +7710,7 @@ exports[`Calendar size renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
-            disabled={true}
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -9092,7 +7741,7 @@ exports[`Calendar size renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
-            disabled={true}
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -9413,14 +8062,14 @@ exports[`Calendar size renders 1`] = `
             >
               <button
                 aria-label="Mon Jan 15 2018"
-                className="c17"
+                className="c14"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
                 type="button"
               >
                 <div
-                  className="c18"
+                  className="c17"
                 >
                   15
                 </div>
@@ -9888,13 +8537,31 @@ exports[`Calendar size renders 1`] = `
                 </div>
               </button>
             </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sat Feb 10 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c15"
+                >
+                  10
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    className="c19"
+    className="c18"
   >
     <div
       className="c2"
@@ -9904,10 +8571,10 @@ exports[`Calendar size renders 1`] = `
         className="c3"
       >
         <div
-          className="c20"
+          className="c19"
         >
           <h3
-            className="-h3 c21"
+            className="-h3 c20"
             size="medium"
           >
             January 2018
@@ -9919,7 +8586,7 @@ exports[`Calendar size renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
-            disabled={true}
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -9951,7 +8618,7 @@ exports[`Calendar size renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
-            disabled={true}
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -9982,7 +8649,7 @@ exports[`Calendar size renders 1`] = `
         </div>
       </div>
       <div
-        className="c22"
+        className="c21"
       >
         <div
           className="c11"
@@ -10002,7 +8669,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                 >
                   31
                 </div>
@@ -10020,7 +8687,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   1
                 </div>
@@ -10038,7 +8705,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   2
                 </div>
@@ -10056,7 +8723,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   3
                 </div>
@@ -10074,7 +8741,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   4
                 </div>
@@ -10092,7 +8759,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   5
                 </div>
@@ -10110,7 +8777,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   6
                 </div>
@@ -10132,7 +8799,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   7
                 </div>
@@ -10150,7 +8817,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   8
                 </div>
@@ -10168,7 +8835,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   9
                 </div>
@@ -10186,7 +8853,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   10
                 </div>
@@ -10204,7 +8871,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   11
                 </div>
@@ -10222,7 +8889,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   12
                 </div>
@@ -10240,7 +8907,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   13
                 </div>
@@ -10262,7 +8929,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   14
                 </div>
@@ -10273,14 +8940,14 @@ exports[`Calendar size renders 1`] = `
             >
               <button
                 aria-label="Mon Jan 15 2018"
-                className="c17"
+                className="c14"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
                 type="button"
               >
                 <div
-                  className="c25"
+                  className="c24"
                 >
                   15
                 </div>
@@ -10298,7 +8965,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   16
                 </div>
@@ -10316,7 +8983,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   17
                 </div>
@@ -10334,7 +9001,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   18
                 </div>
@@ -10352,7 +9019,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   19
                 </div>
@@ -10370,7 +9037,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   20
                 </div>
@@ -10392,7 +9059,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   21
                 </div>
@@ -10410,7 +9077,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   22
                 </div>
@@ -10428,7 +9095,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   23
                 </div>
@@ -10446,7 +9113,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   24
                 </div>
@@ -10464,7 +9131,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   25
                 </div>
@@ -10482,7 +9149,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   26
                 </div>
@@ -10500,7 +9167,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   27
                 </div>
@@ -10522,7 +9189,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   28
                 </div>
@@ -10540,7 +9207,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   29
                 </div>
@@ -10558,7 +9225,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   30
                 </div>
@@ -10576,7 +9243,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c24"
+                  className="c23"
                 >
                   31
                 </div>
@@ -10594,7 +9261,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                 >
                   1
                 </div>
@@ -10612,7 +9279,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                 >
                   2
                 </div>
@@ -10630,7 +9297,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                 >
                   3
                 </div>
@@ -10652,7 +9319,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                 >
                   4
                 </div>
@@ -10670,7 +9337,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                 >
                   5
                 </div>
@@ -10688,7 +9355,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                 >
                   6
                 </div>
@@ -10706,7 +9373,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                 >
                   7
                 </div>
@@ -10724,7 +9391,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                 >
                   8
                 </div>
@@ -10742,9 +9409,27 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c23"
+                  className="c22"
                 >
                   9
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sat Feb 10 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c22"
+                >
+                  10
                 </div>
               </button>
             </div>
@@ -10754,7 +9439,7 @@ exports[`Calendar size renders 1`] = `
     </div>
   </div>
   <div
-    className="c26"
+    className="c25"
   >
     <div
       className="c2"
@@ -10764,10 +9449,10 @@ exports[`Calendar size renders 1`] = `
         className="c3"
       >
         <div
-          className="c27"
+          className="c26"
         >
           <h3
-            className="-h3 c28"
+            className="-h3 c27"
             size="large"
           >
             January 2018
@@ -10779,7 +9464,7 @@ exports[`Calendar size renders 1`] = `
           <button
             aria-label="December 2017"
             className="c7"
-            disabled={true}
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -10790,7 +9475,7 @@ exports[`Calendar size renders 1`] = `
             >
               <svg
                 aria-label="Previous"
-                className="c29"
+                className="c28"
                 height="24px"
                 role="img"
                 size="large"
@@ -10811,7 +9496,7 @@ exports[`Calendar size renders 1`] = `
           <button
             aria-label="February 2018"
             className="c7"
-            disabled={true}
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -10822,7 +9507,7 @@ exports[`Calendar size renders 1`] = `
             >
               <svg
                 aria-label="Next"
-                className="c29"
+                className="c28"
                 height="24px"
                 role="img"
                 size="large"
@@ -10842,7 +9527,7 @@ exports[`Calendar size renders 1`] = `
         </div>
       </div>
       <div
-        className="c30"
+        className="c29"
       >
         <div
           className="c11"
@@ -10862,7 +9547,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c31"
+                  className="c30"
                 >
                   31
                 </div>
@@ -10880,7 +9565,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   1
                 </div>
@@ -10898,7 +9583,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   2
                 </div>
@@ -10916,7 +9601,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   3
                 </div>
@@ -10934,7 +9619,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   4
                 </div>
@@ -10952,7 +9637,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   5
                 </div>
@@ -10970,7 +9655,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   6
                 </div>
@@ -10992,7 +9677,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   7
                 </div>
@@ -11010,7 +9695,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   8
                 </div>
@@ -11028,7 +9713,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   9
                 </div>
@@ -11046,7 +9731,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   10
                 </div>
@@ -11064,7 +9749,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   11
                 </div>
@@ -11082,7 +9767,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   12
                 </div>
@@ -11100,7 +9785,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   13
                 </div>
@@ -11122,7 +9807,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   14
                 </div>
@@ -11133,14 +9818,14 @@ exports[`Calendar size renders 1`] = `
             >
               <button
                 aria-label="Mon Jan 15 2018"
-                className="c17"
+                className="c14"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
                 type="button"
               >
                 <div
-                  className="c33"
+                  className="c32"
                 >
                   15
                 </div>
@@ -11158,7 +9843,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   16
                 </div>
@@ -11176,7 +9861,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   17
                 </div>
@@ -11194,7 +9879,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   18
                 </div>
@@ -11212,7 +9897,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   19
                 </div>
@@ -11230,7 +9915,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   20
                 </div>
@@ -11252,7 +9937,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   21
                 </div>
@@ -11270,7 +9955,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   22
                 </div>
@@ -11288,7 +9973,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   23
                 </div>
@@ -11306,7 +9991,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   24
                 </div>
@@ -11324,7 +10009,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   25
                 </div>
@@ -11342,7 +10027,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   26
                 </div>
@@ -11360,7 +10045,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   27
                 </div>
@@ -11382,7 +10067,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   28
                 </div>
@@ -11400,7 +10085,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   29
                 </div>
@@ -11418,7 +10103,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   30
                 </div>
@@ -11436,7 +10121,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c32"
+                  className="c31"
                 >
                   31
                 </div>
@@ -11454,7 +10139,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c31"
+                  className="c30"
                 >
                   1
                 </div>
@@ -11472,7 +10157,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c31"
+                  className="c30"
                 >
                   2
                 </div>
@@ -11490,7 +10175,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c31"
+                  className="c30"
                 >
                   3
                 </div>
@@ -11512,7 +10197,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c31"
+                  className="c30"
                 >
                   4
                 </div>
@@ -11530,7 +10215,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c31"
+                  className="c30"
                 >
                   5
                 </div>
@@ -11548,7 +10233,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c31"
+                  className="c30"
                 >
                   6
                 </div>
@@ -11566,7 +10251,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c31"
+                  className="c30"
                 >
                   7
                 </div>
@@ -11584,7 +10269,7 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c31"
+                  className="c30"
                 >
                   8
                 </div>
@@ -11602,9 +10287,27 @@ exports[`Calendar size renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c31"
+                  className="c30"
                 >
                   9
+                </div>
+              </button>
+            </div>
+            <div
+              className="c13"
+            >
+              <button
+                aria-label="Sat Feb 10 2018"
+                className="c14"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <div
+                  className="c30"
+                >
+                  10
                 </div>
               </button>
             </div>

@@ -13,6 +13,16 @@ import { Calendar } from 'grommet';
 
 ## Properties
 
+**animate**
+
+
+      Whether to animate the calender as the user interacts with it.
+     Defaults to `true`.
+
+```
+boolean
+```
+
 **bounds**
 
 An array of two numbers indicating the limits on
@@ -96,6 +106,16 @@ The locale to use.
 string
 ```
 
+**onReference**
+
+
+      Called with an ISO8601 date when the user navigates to a different month.
+    
+
+```
+function
+```
+
 **onSelect**
 
 Called with an ISO8601 date when
@@ -106,6 +126,37 @@ Called with an ISO8601 date when
 
 ```
 function
+```
+
+**range**
+
+
+      Whether to automatically manage multiple date selection as a range.
+      When the user clicks the first date, onSelect will be called with that
+      date. When the user selects another date, onSelect will be called with
+      an array of two dates.
+    
+
+```
+boolean
+```
+
+**reference**
+
+The date to show if `date` isn't set, in ISO8601 format
+
+```
+string
+```
+
+**showAdjacentDays**
+
+
+      Whether to show the days from the previous and next months.
+     Defaults to `true`.
+
+```
+boolean
 ```
 
 **size**

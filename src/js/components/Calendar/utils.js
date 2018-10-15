@@ -101,3 +101,48 @@ export const withinDates = (date, dates) => {
   }
   return result;
 };
+
+export const updateDateRange = (selectedDate, { date, dates, previousSelectedDate }) => {
+  const result = { previousSelectedDate: selectedDate };
+  if (!dates) {
+    if (!date) {
+      result.date = selectedDate;
+    } else {
+      const priorDate = new Date(date);
+      const nextDate = new Date(selectedDate);
+      if (priorDate.getTime() < nextDate.getTime()) {
+        result.date = undefined;
+        result.dates = [[date, selectedDate]];
+      } else if (priorDate.getTime() > nextDate.getTime()) {
+        result.date = undefined;
+        result.dates = [[selectedDate, date]];
+      } else {
+        result.date = undefined;
+      }
+    }
+  } else {
+    const priorDates = dates[0].map(d => new Date(d));
+    const previousDate = new Date(previousSelectedDate);
+    const nextDate = new Date(selectedDate);
+    if (nextDate.getTime() === priorDates[0].getTime()) {
+      result.dates = undefined;
+      [[, result.date]] = dates;
+    } else if (nextDate.getTime() === priorDates[1].getTime()) {
+      result.dates = undefined;
+      [[result.date]] = dates;
+    } else if (nextDate.getTime() < previousDate.getTime()) {
+      if (nextDate.getTime() < priorDates[0].getTime()) {
+        result.dates = [[selectedDate, dates[0][1]]];
+      } else if (nextDate.getTime() > priorDates[0].getTime()) {
+        result.dates = [[dates[0][0], selectedDate]];
+      }
+    } else if (nextDate.getTime() > previousDate.getTime()) {
+      if (nextDate.getTime() > priorDates[1].getTime()) {
+        result.dates = [[dates[0][0], selectedDate]];
+      } else if (nextDate.getTime() < priorDates[1].getTime()) {
+        result.dates = [[selectedDate, dates[0][1]]];
+      }
+    }
+  }
+  return result;
+};
