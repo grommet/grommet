@@ -7797,7 +7797,7 @@ exports[`Calendar renders custom header 1`] = `
             >
               <button
                 aria-label="Sat Oct 13 2018"
-                className="c14"
+                className="c11"
                 disabled={false}
                 onBlur={[Function]}
                 onClick={[Function]}
