@@ -60,6 +60,7 @@ exports[`Menu basic 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -211,6 +212,7 @@ exports[`Menu close by clicking outside 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -469,6 +471,7 @@ exports[`Menu close by clicking outside 2`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -758,10 +761,11 @@ exports[`Menu close by clicking outside 3`] = `
 
 
 
-.Xwzwy {
+.bAIlVh {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -785,7 +789,7 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .Xwzwy {
+  .bAIlVh {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -890,6 +894,7 @@ exports[`Menu close on esc 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1052,6 +1057,7 @@ exports[`Menu close on tab 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1214,6 +1220,7 @@ exports[`Menu custom message 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1382,6 +1389,7 @@ exports[`Menu disabled 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1545,6 +1553,7 @@ exports[`Menu navigate through suggestions and select 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1707,6 +1716,7 @@ exports[`Menu open and close on click 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1779,7 +1789,7 @@ exports[`Menu open and close on click 1`] = `
 
 exports[`Menu open and close on click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
+  class="StyledGrommet-sc-19lkkz7-0 jqVeEk"
 >
   <div>
     <button
@@ -2034,6 +2044,7 @@ exports[`Menu open and close on click 3`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2343,10 +2354,11 @@ exports[`Menu open and close on click 4`] = `
 
 
 
-.Xwzwy {
+.bAIlVh {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2370,7 +2382,7 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .Xwzwy {
+  .bAIlVh {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2475,6 +2487,7 @@ exports[`Menu select an item 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2637,6 +2650,7 @@ exports[`Menu with dropAlign renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2895,6 +2909,7 @@ exports[`Menu with dropAlign renders 2`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3192,7 +3207,7 @@ exports[`Menu with dropAlign renders 3`] = `
 
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .Xwzwy {
+  .bAIlVh {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3204,10 +3219,11 @@ exports[`Menu with dropAlign renders 3`] = `
   }
 }
 
-.eowJqb {
+.eSPpyR {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3231,7 +3247,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eowJqb {
+  .eSPpyR {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

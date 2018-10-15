@@ -180,7 +180,7 @@ class CustomSuggestionsTextInput extends Component {
             pad={{ horizontal: 'small', vertical: 'xsmall' }}
             round='small'
             elevation={suggestionOpen ? 'medium' : undefined}
-            border={{ side: 'all', color: suggestionOpen ? 'transparent' : 'border-dark' }}
+            border={{ side: 'all', color: suggestionOpen ? 'transparent' : 'border' }}
             style={suggestionOpen ? (
               { borderBottomLeftRadius: '0px', borderBottomRightRadius: '0px' }
             ) : undefined}

@@ -61,7 +61,6 @@ class AccordionPanel extends Component {
     } = this.props;
     const { hover } = this.state;
 
-    const { dark } = theme;
     const iconColor = evalStyle(normalizeColor(theme.accordion.icons.color
       || theme.global.control.color, theme), theme);
 
@@ -112,9 +111,7 @@ class AccordionPanel extends Component {
                   </Box>
                 )}
               </Button>
-              <Box
-                border={{ side: 'bottom', color: dark ? 'border-dark' : 'border-light' }}
-              >
+              <Box border={{ side: 'bottom', color: 'border' }}>
                 {animate ? (
                   <Collapsible
                     open={active}

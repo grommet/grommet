@@ -1,7 +1,7 @@
 import React, { Children, cloneElement, Component } from 'react';
 import { compose } from 'recompose';
 
-import { parseMetricToNum } from '../../utils';
+import { normalizeColor, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { Text } from '../Text';
 import { withFocus, withTheme } from '../hocs';
@@ -25,7 +25,7 @@ class FormField extends Component {
         || 'status-critical';
     } else {
       borderColor = (border && border.color[theme.dark ? 'dark' : 'light'])
-        || (theme.dark ? 'border-dark' : 'border-light');
+        || normalizeColor(theme.global.colors.border, theme);
     }
     let abut;
     let outerStyle = style;

@@ -111,7 +111,7 @@ exports[`DropButton close by clicking outside 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .Xwzwy {
+  .bAIlVh {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -401,7 +401,7 @@ exports[`DropButton open and close 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .Xwzwy {
+  .bAIlVh {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -617,7 +617,7 @@ exports[`DropButton opened ref 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .Xwzwy {
+  .bAIlVh {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

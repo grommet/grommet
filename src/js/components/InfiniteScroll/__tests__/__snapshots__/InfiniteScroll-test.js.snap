@@ -5,6 +5,7 @@ exports[`InfiniteScroll basic 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -35,6 +36,7 @@ exports[`InfiniteScroll renderMarker 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -68,6 +70,7 @@ exports[`InfiniteScroll show 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -98,6 +101,7 @@ exports[`InfiniteScroll step 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

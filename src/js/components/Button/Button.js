@@ -60,7 +60,7 @@ class Button extends Component {
     if (primary && icon && !icon.props.color) {
       buttonIcon = cloneElement(
         icon, {
-          color: theme.global.text.color[isDarkBackground(this.props) ? 'dark' : 'light'],
+          color: theme.global.colors.text[isDarkBackground(this.props) ? 'dark' : 'light'],
         }
       );
     }

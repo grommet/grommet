@@ -5,6 +5,7 @@ exports[`Grommet announce 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -42,6 +43,7 @@ exports[`Grommet basic 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -59,6 +61,7 @@ exports[`Grommet full 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -82,6 +85,7 @@ exports[`Grommet hpe theme 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

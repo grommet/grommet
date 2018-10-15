@@ -57,7 +57,7 @@ class Tab extends Component {
     } else if (active) {
       normalizedTitle = <Text weight='bold'>{title}</Text>;
     } else {
-      const color = normalizeColor(theme.global.text.color, theme);
+      const color = normalizeColor('text', theme);
       normalizedTitle = <Text color={color}>{title}</Text>;
     }
 

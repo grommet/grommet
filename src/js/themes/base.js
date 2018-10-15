@@ -33,21 +33,22 @@ const statusColors = {
 };
 const darkColors = ['#333333', '#444444', '#555555', '#666666', '#777777', '#999999'];
 const lightColors = ['#F6F6F6', '#EEEEEE', '#DDDDDD', '#CCCCCC', '#BBBBBB', '#AAAAAA'];
-const textColor = '#444444';
-const borderColor = 'rgba(0, 0, 0, 0.33)';
-const borderColorDark = 'rgba(255, 255, 255, 0.33)';
 const focusColor = accentColors[0];
-const activeColor = rgba('#DDDDDD', 0.5);
 
 const colors = {
-  'active': activeColor,
+  'active': rgba('#DDDDDD', 0.5),
   'black': '#000000',
-  'border-light': borderColor,
-  'border-dark': borderColorDark,
+  'border': {
+    'dark': 'rgba(255, 255, 255, 0.33)',
+    'light': 'rgba(0, 0, 0, 0.33)',
+  },
   'brand': brandColor,
   'focus': focusColor,
   'placeholder': '#AAAAAA',
-  'text': textColor,
+  'text': {
+    'dark': '#f8f8f8',
+    'light': '#444444',
+  },
   'white': '#FFFFFF',
 };
 
@@ -109,8 +110,8 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
           width: '1px',
           radius: '4px',
           color: {
-            dark: css`${props => props.theme.global.colors['border-dark']}`,
-            light: css`${props => props.theme.global.colors['border-light']}`,
+            dark: css`${props => props.theme.global.colors.border.dark}`,
+            light: css`${props => props.theme.global.colors.border.light}`,
           },
         },
         color: {
@@ -215,12 +216,6 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
           large: `${baseSpacing * 16}px`, // 384
           xlarge: `${baseSpacing * 32}px`, // 768
           full: '100%',
-        },
-      },
-      text: {
-        color: {
-          dark: '#f8f8f8',
-          light: textColor,
         },
       },
     },
@@ -415,10 +410,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       resize: {
         border: {
           side: 'right',
-          color: {
-            dark: 'border-dark',
-            light: 'border-light',
-          },
+          color: 'border',
         },
       },
     },
@@ -427,10 +419,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
     // },
     formField: {
       border: {
-        color: {
-          dark: 'border-dark',
-          light: 'border-light',
-        },
+        color: 'border',
         position: 'inner',
         side: 'bottom',
         error: {
@@ -525,8 +514,8 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       track: {
         height: '4px',
         color: {
-          dark: css`${props => rgba(props.theme.global.colors['border-dark'], 0.2)}`,
-          light: css`${props => rgba(props.theme.global.colors['border-light'], 0.2)}`,
+          dark: css`${props => rgba(props.theme.global.colors.border.dark, 0.2)}`,
+          light: css`${props => rgba(props.theme.global.colors.border.light, 0.2)}`,
         },
       },
       thumb: {

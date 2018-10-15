@@ -54,9 +54,9 @@ export const backgroundStyle = (backgroundArg, theme) => {
     if (background.image) {
       let color;
       if (background.dark === false) {
-        color = theme.global.text.color.light;
+        color = theme.global.colors.text.light;
       } else if (background.dark) {
-        color = theme.global.text.color.dark;
+        color = theme.global.colors.text.dark;
       } else {
         color = 'inherit';
       }
@@ -82,19 +82,19 @@ export const backgroundStyle = (backgroundArg, theme) => {
         background-color: ${backgroundColor};
         ${(!background.opacity || background.opacity !== 'weak')
           && `color: ${
-            theme.global.text.color[background.dark || colorIsDark(backgroundColor)
+            theme.global.colors.text[background.dark || colorIsDark(backgroundColor)
               ? 'dark' : 'light']};`
         }
       `);
     }
     if (background.dark === false) {
       styles.push(css`
-        color: ${theme.global.text.color.light};
+        color: ${theme.global.colors.text.light};
       `);
     }
     if (background.dark) {
       styles.push(css`
-        color: ${theme.global.text.color.dark};
+        color: ${theme.global.colors.text.dark};
       `);
     }
     return styles;
@@ -111,7 +111,7 @@ export const backgroundStyle = (backgroundArg, theme) => {
     if (color) {
       return css`
         background: ${color};
-        color: ${theme.global.text.color[colorIsDark(color) ? 'dark' : 'light']};
+        color: ${theme.global.colors.text[colorIsDark(color) ? 'dark' : 'light']};
       `;
     }
   }
@@ -120,6 +120,9 @@ export const backgroundStyle = (backgroundArg, theme) => {
 };
 
 export const activeStyle = css`
-  ${props => backgroundStyle(normalizeColor(props.theme.global.hover.background, props.theme), props.theme)}
+  ${props => backgroundStyle(
+    normalizeColor(props.theme.global.hover.background, props.theme),
+    props.theme,
+  )}
   color: ${props => normalizeColor(props.theme.global.hover.color, props.theme)};
 `;

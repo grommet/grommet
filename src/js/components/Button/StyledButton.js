@@ -17,8 +17,7 @@ const basicStyle = props => css`
         props.theme,
       )};
   border-radius: ${props.theme.button.border.radius};
-  color: ${(props.theme.button.color
-    || props.theme.global.text.color)[props.theme.dark ? 'dark' : 'light']};
+  color: ${props.theme.button.color || colorForName('text', props.theme)};
   padding: ${props.theme.button.padding.vertical} ${props.theme.button.padding.horizontal};
   font-size: ${props.theme.text.medium.size};
   line-height: ${props.theme.text.medium.height};

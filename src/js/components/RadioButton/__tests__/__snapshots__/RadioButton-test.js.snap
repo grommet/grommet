@@ -5,6 +5,7 @@ exports[`RadioButton checked renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -153,6 +154,7 @@ exports[`RadioButton disabled renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -333,6 +335,7 @@ exports[`RadioButton label renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -512,6 +515,7 @@ exports[`RadioButton renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

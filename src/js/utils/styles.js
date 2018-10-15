@@ -1,15 +1,14 @@
 import { css } from 'styled-components';
 
+import { colorForName } from './colors';
 import { palm, parseMetricToNum } from './mixins';
 
 export const baseStyle = css`
   font-family: ${props => props.theme.global.font.family};
   font-size: ${props => props.theme.global.font.size};
   line-height: ${props => props.theme.global.font.height};
-  ${props => props.theme.global.colors.text
-    && `color: ${props.theme.global.colors.text};`}
-  ${props => props.theme.global.colors.background
-    && `background: ${props.theme.global.colors.background};`}
+  color: ${props => colorForName('text', props.theme, true)};
+  background: ${props => colorForName('background', props.theme, true)};
 
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;

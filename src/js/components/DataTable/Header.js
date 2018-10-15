@@ -80,6 +80,7 @@ export const Header = ({
                   filtering={filtering}
                   filters={filters}
                   property={property}
+                  theme={theme}
                   onFilter={onFilter}
                   onFiltering={onFiltering}
                 />

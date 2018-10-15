@@ -1,5 +1,14 @@
 
-export const colorForName = (name, theme) => theme.global.colors[name] || name;
+export const colorForName = (name, theme, required) => {
+  const themeColor = theme.global.colors[name];
+  if (themeColor) {
+    if (typeof themeColor === 'object') {
+      return theme.dark ? themeColor.dark : themeColor.light;
+    }
+    return themeColor;
+  }
+  return required ? 'none' : name;
+};
 
 const parseHexToRGB = color => (
   // https://stackoverflow.com/a/42429333

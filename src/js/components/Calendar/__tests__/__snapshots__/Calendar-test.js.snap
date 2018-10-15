@@ -310,6 +310,7 @@ exports[`Calendar date renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1600,6 +1601,7 @@ exports[`Calendar dates renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2890,6 +2892,7 @@ exports[`Calendar disabled renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4180,6 +4183,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -6330,6 +6334,7 @@ exports[`Calendar renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -7532,6 +7537,7 @@ exports[`Calendar renders custom header 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -7928,7 +7934,7 @@ exports[`Calendar renders custom header 1`] = `
             >
               <button
                 aria-label="Sat Oct 13 2018"
-                className="c14"
+                className="c11"
                 disabled={false}
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -7970,7 +7976,7 @@ exports[`Calendar renders custom header 1`] = `
             >
               <button
                 aria-label="Mon Oct 15 2018"
-                className="c11"
+                className="c14"
                 disabled={false}
                 onBlur={[Function]}
                 onClick={[Function]}
@@ -8997,6 +9003,7 @@ exports[`Calendar size renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
+  background: none;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
