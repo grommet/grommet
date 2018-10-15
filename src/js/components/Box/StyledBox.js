@@ -138,11 +138,11 @@ const borderStyle = (data, responsive, theme) => {
     : normalizeColor(theme.global.colors.border, theme);
   const borderSize = data.size || 'xsmall';
   const side = (typeof data === 'string') ? data : data.side || 'all';
-  const value = `solid ${theme.global.borderSize[borderSize]} ${color}`;
+  const value = `solid ${theme.global.borderSize[borderSize] || borderSize} ${color}`;
   const breakpoint = theme.box.responsiveBreakpoint
     && theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  const responsiveValue = breakpoint && breakpoint.borderSize[borderSize]
-    && `solid ${breakpoint.borderSize[borderSize]} ${color}`;
+  const responsiveValue = breakpoint && (breakpoint.borderSize[borderSize] || borderSize)
+    && `solid ${breakpoint.borderSize[borderSize] || borderSize} ${color}`;
   if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
     styles.push(css`border-${side}: ${value};`);
     if (responsiveValue) {
