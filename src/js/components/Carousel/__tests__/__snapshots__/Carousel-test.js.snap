@@ -559,7 +559,6 @@ exports[`Carousel basic 1`] = `
                 <svg
                   aria-label="Subtract"
                   className="c16"
-                  color="#7D4CDB"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -1196,7 +1195,6 @@ exports[`Carousel navigate 1`] = `
                 <svg
                   aria-label="Subtract"
                   class="c16"
-                  color="#7D4CDB"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -1392,7 +1390,6 @@ exports[`Carousel navigate 2`] = `
                 <svg
                   aria-label="Subtract"
                   class="StyledIcon-ofa7kd-0 dtlWir"
-                  color="#7D4CDB"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -1540,7 +1537,6 @@ exports[`Carousel navigate 3`] = `
                 <svg
                   aria-label="Subtract"
                   class="StyledIcon-ofa7kd-0 dtlWir"
-                  color="#7D4CDB"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -2169,7 +2165,6 @@ exports[`Carousel play 1`] = `
                 <svg
                   aria-label="Subtract"
                   class="c16"
-                  color="#7D4CDB"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -2364,7 +2359,6 @@ exports[`Carousel play 2`] = `
                 <svg
                   aria-label="Subtract"
                   class="StyledIcon-ofa7kd-0 dtlWir"
-                  color="#7D4CDB"
                   height="24px"
                   role="img"
                   version="1.1"

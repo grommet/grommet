@@ -245,7 +245,6 @@ exports[`Menu close by clicking outside 1`] = `
         <svg
           aria-label="FormDown"
           class="c5"
-          color="#7D4CDB"
           height="24px"
           role="img"
           version="1.1"
@@ -588,7 +587,6 @@ exports[`Menu close by clicking outside 2`] = `
           <svg
             aria-label="FormDown"
             class="c8"
-            color="#7D4CDB"
             height="24px"
             role="img"
             version="1.1"
@@ -879,7 +877,6 @@ exports[`Menu close on esc 1`] = `
         <svg
           aria-label="FormDown"
           class="c5"
-          color="#7D4CDB"
           height="24px"
           role="img"
           version="1.1"
@@ -1033,7 +1030,6 @@ exports[`Menu close on tab 1`] = `
         <svg
           aria-label="FormDown"
           class="c5"
-          color="#7D4CDB"
           height="24px"
           role="img"
           version="1.1"
@@ -1191,7 +1187,6 @@ exports[`Menu custom message 1`] = `
         <svg
           aria-label="FormDown"
           className="c5"
-          color="#7D4CDB"
           height="24px"
           role="img"
           version="1.1"
@@ -1348,7 +1343,6 @@ exports[`Menu disabled 1`] = `
         <svg
           aria-label="FormDown"
           class="c5"
-          color="#7D4CDB"
           height="24px"
           role="img"
           version="1.1"
@@ -1502,7 +1496,6 @@ exports[`Menu navigate through suggestions and select 1`] = `
         <svg
           aria-label="FormDown"
           class="c5"
-          color="#7D4CDB"
           height="24px"
           role="img"
           version="1.1"
@@ -1656,7 +1649,6 @@ exports[`Menu open and close on click 1`] = `
         <svg
           aria-label="FormDown"
           class="c5"
-          color="#7D4CDB"
           height="24px"
           role="img"
           version="1.1"
@@ -1701,7 +1693,6 @@ exports[`Menu open and close on click 2`] = `
         <svg
           aria-label="FormDown"
           class="StyledIcon-ofa7kd-0 dtlWir"
-          color="#7D4CDB"
           height="24px"
           role="img"
           version="1.1"
@@ -2068,7 +2059,6 @@ exports[`Menu open and close on click 3`] = `
           <svg
             aria-label="FormDown"
             class="c8"
-            color="#7D4CDB"
             height="24px"
             role="img"
             version="1.1"
@@ -2372,7 +2362,6 @@ exports[`Menu select an item 1`] = `
         <svg
           aria-label="FormDown"
           class="c5"
-          color="#7D4CDB"
           height="24px"
           role="img"
           version="1.1"
@@ -2526,7 +2515,6 @@ exports[`Menu with dropAlign renders 1`] = `
         <svg
           aria-label="FormDown"
           class="c5"
-          color="#7D4CDB"
           height="24px"
           role="img"
           version="1.1"
@@ -2869,7 +2857,6 @@ exports[`Menu with dropAlign renders 2`] = `
           <svg
             aria-label="FormDown"
             class="c8"
-            color="#7D4CDB"
             height="24px"
             role="img"
             version="1.1"
