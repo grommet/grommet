@@ -7,7 +7,7 @@ export const baseStyle = css`
   font-family: ${props => props.theme.global.font.family};
   font-size: ${props => props.theme.global.font.size};
   line-height: ${props => props.theme.global.font.height};
-  ${props => props.theme.global.colors.background
+  ${props => !props.plain && props.theme.global.colors.background
     && css`
       background: ${normalizeColor('background', props.theme, true)};
       color: ${normalizeColor('text', props.theme, true)};

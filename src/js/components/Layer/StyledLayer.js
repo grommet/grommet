@@ -66,7 +66,7 @@ export const StyledOverlay = styled.div`
   left: 0px;
   right: 0px;
   bottom: 0px;
-  ${props => props.theme.layer.overlay.background
+  ${props => !props.plain && props.theme.layer.overlay.background
     && backgroundStyle(props.theme.layer.overlay.background, props.theme)}
   pointer-events: all;
 `;
@@ -342,7 +342,7 @@ const desktopContainerStyle = css`
     `calc(100% - ${MARGINS.top(props.margin, props.theme)} - ${MARGINS.bottom(props.margin, props.theme)})`)};
   max-width: ${props => (
     `calc(100% - ${MARGINS.left(props.margin, props.theme)} - ${MARGINS.right(props.margin, props.theme)})`)};
-  border-radius: ${props => (props.plain ? 'none' : props.theme.layer.border.radius)};
+  border-radius: ${props => (props.plain ? 0 : props.theme.layer.border.radius)};
   ${props => (props.position !== 'hidden'
     && POSITIONS[props.position][props.full](props.margin, props.theme)) || ''}
 `;
@@ -365,7 +365,8 @@ export const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: ${props => props.theme.global.size.xxsmall};
-  ${props => props.theme.layer.background && backgroundStyle(props.theme.layer.background, props.theme)}
+  ${props => !props.plain && props.theme.layer.background
+    && backgroundStyle(props.theme.layer.background, props.theme)}
   outline: none;
   pointer-events: all;
   z-index: 15;

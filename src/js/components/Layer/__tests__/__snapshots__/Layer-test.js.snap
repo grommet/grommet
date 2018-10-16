@@ -1400,8 +1400,6 @@ exports[`Layer plain 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
-  color: #f8f8f8;
   pointer-events: all;
 }
 
@@ -1421,15 +1419,13 @@ exports[`Layer plain 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
-  color: #444444;
   outline: none;
   pointer-events: all;
   z-index: 15;
   position: fixed;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: none;
+  border-radius: 0;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%,-50%);
