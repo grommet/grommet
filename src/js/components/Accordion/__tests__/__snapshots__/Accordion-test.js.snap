@@ -347,7 +347,6 @@ exports[`Accordion AccordionPanel 1`] = `
             <svg
               aria-label="FormDown"
               className="c8"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -409,7 +408,6 @@ exports[`Accordion AccordionPanel 1`] = `
             <svg
               aria-label="FormDown"
               className="c8"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -750,7 +748,6 @@ exports[`Accordion change active index 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -799,7 +796,6 @@ exports[`Accordion change active index 1`] = `
             <svg
               aria-label="FormUp"
               class="c8"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -863,7 +859,6 @@ exports[`Accordion change active index 2`] = `
             <svg
               aria-label="FormDown"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -912,7 +907,6 @@ exports[`Accordion change active index 2`] = `
             <svg
               aria-label="FormUp"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -1282,7 +1276,6 @@ exports[`Accordion change to second Panel 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -1338,7 +1331,6 @@ exports[`Accordion change to second Panel 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -1406,7 +1398,6 @@ exports[`Accordion change to second Panel 2`] = `
             <svg
               aria-label="FormDown"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -1494,7 +1485,6 @@ exports[`Accordion change to second Panel 2`] = `
 <svg
               aria-label="FormUp"
               class="c0"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -1836,7 +1826,6 @@ exports[`Accordion change to second Panel without onActive 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -1885,7 +1874,6 @@ exports[`Accordion change to second Panel without onActive 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -1946,7 +1934,6 @@ exports[`Accordion change to second Panel without onActive 2`] = `
             <svg
               aria-label="FormDown"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -2027,7 +2014,6 @@ exports[`Accordion change to second Panel without onActive 2`] = `
 <svg
               aria-label="FormUp"
               class="c0"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -2570,7 +2556,6 @@ exports[`Accordion complex title 1`] = `
               <svg
                 aria-label="FormDown"
                 className="c7"
-                color="#FD6FFF"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -2626,7 +2611,6 @@ exports[`Accordion complex title 1`] = `
               <svg
                 aria-label="FormDown"
                 className="c7"
-                color="#FD6FFF"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -2968,7 +2952,6 @@ exports[`Accordion multiple panels 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -3017,7 +3000,6 @@ exports[`Accordion multiple panels 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -3078,7 +3060,6 @@ exports[`Accordion multiple panels 2`] = `
             <svg
               aria-label="FormDown"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -3159,7 +3140,6 @@ exports[`Accordion multiple panels 2`] = `
 <svg
               aria-label="FormUp"
               class="c0"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -3255,7 +3235,6 @@ exports[`Accordion multiple panels 3`] = `
 <svg
               aria-label="FormUp"
               class="c0"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -3307,7 +3286,6 @@ exports[`Accordion multiple panels 3`] = `
             <svg
               aria-label="FormUp"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -3371,7 +3349,6 @@ exports[`Accordion multiple panels 4`] = `
             <svg
               aria-label="FormUp"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -3455,7 +3432,6 @@ exports[`Accordion multiple panels 4`] = `
 <svg
               aria-label="FormDown"
               class="c0"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -3548,7 +3524,6 @@ exports[`Accordion multiple panels 5`] = `
 <svg
               aria-label="FormDown"
               class="c0"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -3597,7 +3572,6 @@ exports[`Accordion multiple panels 5`] = `
             <svg
               aria-label="FormDown"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -4015,7 +3989,6 @@ exports[`Accordion set on hover 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -4071,7 +4044,6 @@ exports[`Accordion set on hover 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -4139,7 +4111,6 @@ exports[`Accordion set on hover 2`] = `
             <svg
               aria-label="FormDown"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -4195,7 +4166,6 @@ exports[`Accordion set on hover 2`] = `
             <svg
               aria-label="FormDown"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -4263,7 +4233,6 @@ exports[`Accordion set on hover 3`] = `
             <svg
               aria-label="FormDown"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -4319,7 +4288,6 @@ exports[`Accordion set on hover 3`] = `
             <svg
               aria-label="FormDown"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -4387,7 +4355,6 @@ exports[`Accordion set on hover 4`] = `
             <svg
               aria-label="FormDown"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -4443,7 +4410,6 @@ exports[`Accordion set on hover 4`] = `
             <svg
               aria-label="FormDown"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -4511,7 +4477,6 @@ exports[`Accordion set on hover 5`] = `
             <svg
               aria-label="FormDown"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"
@@ -4567,7 +4532,6 @@ exports[`Accordion set on hover 5`] = `
             <svg
               aria-label="FormDown"
               class="StyledIcon-ofa7kd-0 dtlWir"
-              color="#7D4CDB"
               height="24px"
               role="img"
               version="1.1"

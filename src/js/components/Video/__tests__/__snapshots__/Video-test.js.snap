@@ -439,7 +439,6 @@ exports[`Video autoPlay renders 1`] = `
             <svg
               aria-label="Play"
               className="c7"
-              color="light-1"
               height="24px"
               role="img"
               version="1.1"
@@ -528,7 +527,6 @@ exports[`Video autoPlay renders 1`] = `
               <svg
                 aria-label="Actions"
                 className="c7"
-                color="light-1"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1094,7 +1092,6 @@ exports[`Video controls renders 1`] = `
             <svg
               aria-label="Play"
               className="c7"
-              color="light-1"
               height="24px"
               role="img"
               version="1.1"
@@ -1183,7 +1180,6 @@ exports[`Video controls renders 1`] = `
               <svg
                 aria-label="Actions"
                 className="c7"
-                color="light-1"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1256,7 +1252,6 @@ exports[`Video controls renders 1`] = `
             <svg
               aria-label="Play"
               className="c23"
-              color={false}
               height="24px"
               role="img"
               version="1.1"
@@ -1344,7 +1339,6 @@ exports[`Video controls renders 1`] = `
               <svg
                 aria-label="Actions"
                 className="c23"
-                color={false}
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1824,7 +1818,6 @@ exports[`Video fit renders 1`] = `
             <svg
               aria-label="Play"
               className="c7"
-              color="light-1"
               height="24px"
               role="img"
               version="1.1"
@@ -1913,7 +1906,6 @@ exports[`Video fit renders 1`] = `
               <svg
                 aria-label="Actions"
                 className="c7"
-                color="light-1"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1989,7 +1981,6 @@ exports[`Video fit renders 1`] = `
             <svg
               aria-label="Play"
               className="c7"
-              color="light-1"
               height="24px"
               role="img"
               version="1.1"
@@ -2078,7 +2069,6 @@ exports[`Video fit renders 1`] = `
               <svg
                 aria-label="Actions"
                 className="c7"
-                color="light-1"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -2540,7 +2530,6 @@ exports[`Video loop renders 1`] = `
             <svg
               aria-label="Play"
               className="c7"
-              color="light-1"
               height="24px"
               role="img"
               version="1.1"
@@ -2629,7 +2618,6 @@ exports[`Video loop renders 1`] = `
               <svg
                 aria-label="Actions"
                 className="c7"
-                color="light-1"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -3091,7 +3079,6 @@ exports[`Video mute renders 1`] = `
             <svg
               aria-label="Play"
               className="c7"
-              color="light-1"
               height="24px"
               role="img"
               version="1.1"
@@ -3180,7 +3167,6 @@ exports[`Video mute renders 1`] = `
               <svg
                 aria-label="Actions"
                 className="c7"
-                color="light-1"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -3642,7 +3628,6 @@ exports[`Video renders 1`] = `
             <svg
               aria-label="Play"
               className="c7"
-              color="light-1"
               height="24px"
               role="img"
               version="1.1"
@@ -3731,7 +3716,6 @@ exports[`Video renders 1`] = `
               <svg
                 aria-label="Actions"
                 className="c7"
-                color="light-1"
                 height="24px"
                 role="img"
                 version="1.1"

@@ -1239,7 +1239,6 @@ exports[`DataTable groupBy 1`] = `
               <svg
                 aria-label="FormDown"
                 class="c5"
-                color="rgba(0,0,0,0.33)"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1306,7 +1305,6 @@ exports[`DataTable groupBy 1`] = `
               <svg
                 aria-label="FormDown"
                 class="c5"
-                color="rgba(0,0,0,0.33)"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1362,7 +1360,6 @@ exports[`DataTable groupBy 1`] = `
               <svg
                 aria-label="FormDown"
                 class="c5"
-                color="rgba(0,0,0,0.33)"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1433,7 +1430,6 @@ exports[`DataTable groupBy 2`] = `
               <svg
                 aria-label="FormDown"
                 class="StyledIcon-ofa7kd-0 krKPIi"
-                color="rgba(0,0,0,0.33)"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1500,7 +1496,6 @@ exports[`DataTable groupBy 2`] = `
               <svg
                 aria-label="FormDown"
                 class="StyledIcon-ofa7kd-0 krKPIi"
-                color="rgba(0,0,0,0.33)"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1556,7 +1551,6 @@ exports[`DataTable groupBy 2`] = `
               <svg
                 aria-label="FormDown"
                 class="StyledIcon-ofa7kd-0 krKPIi"
-                color="rgba(0,0,0,0.33)"
                 height="24px"
                 role="img"
                 version="1.1"
