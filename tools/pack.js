@@ -13,10 +13,7 @@ if (json.dependencies) {
 }
 
 try {
-  cp.exec('npm pack', (packErr, stdout, stderr) => {
-    console.log(stdout);
-    console.error(stderr);
-
+  cp.exec('npm pack', (packErr) => {
     if (packErr) {
       throw packErr;
     }
@@ -39,25 +36,27 @@ try {
         path.resolve(__dirname, `../${json.name}-${json.version}-src-with-dependecies.tgz`)
       );
 
-      const dependencies = fs.readdirSync('./tmp/package/node_modules');
+      const dependencies = fs.readdirSync(path.resolve(__dirname, '../tmp/package/node_modules'));
 
       dependencies.forEach((dependency) => {
         const dependencyPackageJSON = path.resolve(
           __dirname, `../node_modules/${dependency}/package.json`
         );
-        const contents = fs.readFileSync(dependencyPackageJSON);
-        const instance = JSON.parse(contents);
-        let license = instance.license;
-        if (!license && instance.licenses) {
-          license = instance.licenses[0];
-        }
+        if (fs.existsSync(dependencyPackageJSON)) {
+          const contents = fs.readFileSync(dependencyPackageJSON);
+          const instance = JSON.parse(contents);
+          let license = instance.license;
+          if (!license && instance.licenses) {
+            license = instance.licenses[0];
+          }
 
-        if (!license) {
-          licenseMap.dependencies.licenseNotFound.push(dependency);
-        } else if (license.type) {
-          licenseMap.dependencies[dependency] = license.type;
-        } else {
-          licenseMap.dependencies[dependency] = license;
+          if (!license) {
+            licenseMap.dependencies.licenseNotFound.push(dependency);
+          } else if (license.type) {
+            licenseMap.dependencies[dependency] = license.type;
+          } else {
+            licenseMap.dependencies[dependency] = license;
+          }
         }
       });
 
@@ -71,9 +70,9 @@ try {
       );
 
       // revert original package.json
-      fs.writeFileSync(packageJSON, JSON.stringify(
+      fs.writeFileSync(packageJSON, `${JSON.stringify(
         JSON.parse(packageJSONAsString), null, 2)
-      );
+      }\n`);
 
       del.sync(['./tmp']);
     });
@@ -82,7 +81,7 @@ try {
   console.log(e);
 
   // revert original package.json
-  fs.writeFileSync(packageJSON, JSON.stringify(
+  fs.writeFileSync(packageJSON, `${JSON.stringify(
     JSON.parse(packageJSONAsString), null, 2)
-  );
+  }\n`);
 }
