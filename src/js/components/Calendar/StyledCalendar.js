@@ -66,9 +66,9 @@ export const StyledDay = styled.div`
   justify-content: center;
   align-items: center;
   ${props => daySizeStyle(props)}
-  ${props => (props.isSelected && backgroundStyle('brand', props.theme))
+  ${props => (props.isSelected && backgroundStyle('control', props.theme))
     || (props.inRange
-      && backgroundStyle({ color: 'brand', opacity: 'weak' }, props.theme))}
+      && backgroundStyle({ color: 'control', opacity: 'weak' }, props.theme))}
   ${props => props.otherMonth && 'opacity: 0.5;'}
   ${props => props.isSelected && 'font-weight: bold;'}
 `;
