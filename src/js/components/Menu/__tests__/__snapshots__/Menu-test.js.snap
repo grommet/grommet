@@ -265,7 +265,7 @@ exports[`Menu close by clicking outside 1`] = `
 `;
 
 exports[`Menu close by clicking outside 2`] = `
-.c8 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -274,30 +274,30 @@ exports[`Menu close by clicking outside 2`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -322,7 +322,25 @@ exports[`Menu close by clicking outside 2`] = `
   padding: 12px;
 }
 
-.c2 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -339,7 +357,7 @@ exports[`Menu close by clicking outside 2`] = `
   padding: 0px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -359,7 +377,7 @@ exports[`Menu close by clicking outside 2`] = `
   padding: 0px;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -377,7 +395,7 @@ exports[`Menu close by clicking outside 2`] = `
   overflow: auto;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -398,14 +416,14 @@ exports[`Menu close by clicking outside 2`] = `
   padding: 12px;
 }
 
-.c7 {
+.c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 12px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -423,7 +441,7 @@ exports[`Menu close by clicking outside 2`] = `
   text-align: inherit;
 }
 
-.c10 {
+.c11 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -443,7 +461,7 @@ exports[`Menu close by clicking outside 2`] = `
   cursor: default;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -457,7 +475,6 @@ exports[`Menu close by clicking outside 2`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
   outline: none;
@@ -473,30 +490,30 @@ exports[`Menu close by clicking outside 2`] = `
   animation-delay: 0.01s;
 }
 
-.c1 {
+.c2 {
   max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -514,25 +531,37 @@ exports[`Menu close by clicking outside 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c4 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
     padding: 6px;
   }
 }
@@ -551,42 +580,42 @@ exports[`Menu close by clicking outside 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c2 {
     width: 100%;
   }
 }
 
 <div
-  class="c0"
+  class="c0 c1"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c1 c2"
+    class="c2 c3"
   >
     <div
-      class="c3"
+      class="c4"
     >
       <button
         aria-label="Close Menu"
-        class="c4"
+        class="c5"
         type="button"
       >
         <div
-          class="c5"
+          class="c6"
         >
           <span
-            class="c6"
+            class="c7"
           >
             Test
           </span>
           <div
-            class="c7"
+            class="c8"
           />
           <svg
             aria-label="FormDown"
-            class="c8"
+            class="c9"
             height="24px"
             role="img"
             version="1.1"
@@ -604,33 +633,33 @@ exports[`Menu close by clicking outside 2`] = `
       </button>
     </div>
     <div
-      class="c9"
+      class="c10"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <button
-          class="c10"
+          class="c11"
           disabled=""
           type="button"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 1
           </div>
         </button>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <button
-          class="c10"
+          class="c11"
           disabled=""
           type="button"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 2
           </div>
@@ -642,7 +671,9 @@ exports[`Menu close by clicking outside 2`] = `
 `;
 
 exports[`Menu close by clicking outside 3`] = `
-"@media only screen and (max-width:768px) {
+"
+
+@media only screen and (max-width:768px) {
   .iFQIIs {
     margin: 0px;
   }
@@ -651,6 +682,36 @@ exports[`Menu close by clicking outside 3`] = `
 @media only screen and (max-width:768px) {
   .iFQIIs {
     padding: 6px;
+  }
+}
+
+.gZcqrw {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+@media only screen and (max-width:768px) {
+  .gZcqrw {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .gZcqrw {
+    padding: 0px;
   }
 }
 
@@ -704,7 +765,7 @@ exports[`Menu close by clicking outside 3`] = `
 
 
 
-.iVjwDB {
+.cShzna {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -713,7 +774,6 @@ exports[`Menu close by clicking outside 3`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
   outline: none;
@@ -730,7 +790,7 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iVjwDB {
+  .cShzna {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1713,7 +1773,7 @@ exports[`Menu open and close on click 2`] = `
 `;
 
 exports[`Menu open and close on click 3`] = `
-.c8 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1722,30 +1782,30 @@ exports[`Menu open and close on click 3`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1770,7 +1830,25 @@ exports[`Menu open and close on click 3`] = `
   padding: 12px;
 }
 
-.c2 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1787,7 +1865,7 @@ exports[`Menu open and close on click 3`] = `
   padding: 0px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1807,7 +1885,7 @@ exports[`Menu open and close on click 3`] = `
   padding: 0px;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1825,7 +1903,7 @@ exports[`Menu open and close on click 3`] = `
   overflow: auto;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1846,14 +1924,14 @@ exports[`Menu open and close on click 3`] = `
   padding: 12px;
 }
 
-.c7 {
+.c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 12px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1871,7 +1949,7 @@ exports[`Menu open and close on click 3`] = `
   text-align: inherit;
 }
 
-.c10 {
+.c11 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1891,7 +1969,7 @@ exports[`Menu open and close on click 3`] = `
   cursor: default;
 }
 
-.c12 {
+.c13 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1909,13 +1987,13 @@ exports[`Menu open and close on click 3`] = `
   text-align: inherit;
 }
 
-.c12:hover {
+.c13:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -1929,7 +2007,6 @@ exports[`Menu open and close on click 3`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
   outline: none;
@@ -1945,30 +2022,30 @@ exports[`Menu open and close on click 3`] = `
   animation-delay: 0.01s;
 }
 
-.c1 {
+.c2 {
   max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -1986,25 +2063,37 @@ exports[`Menu open and close on click 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c4 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
     padding: 6px;
   }
 }
@@ -2023,42 +2112,42 @@ exports[`Menu open and close on click 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c2 {
     width: 100%;
   }
 }
 
 <div
-  class="c0"
+  class="c0 c1"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c1 c2"
+    class="c2 c3"
   >
     <div
-      class="c3"
+      class="c4"
     >
       <button
         aria-label="Close Menu"
-        class="c4"
+        class="c5"
         type="button"
       >
         <div
-          class="c5"
+          class="c6"
         >
           <span
-            class="c6"
+            class="c7"
           >
             Test
           </span>
           <div
-            class="c7"
+            class="c8"
           />
           <svg
             aria-label="FormDown"
-            class="c8"
+            class="c9"
             height="24px"
             role="img"
             version="1.1"
@@ -2076,46 +2165,46 @@ exports[`Menu open and close on click 3`] = `
       </button>
     </div>
     <div
-      class="c9"
+      class="c10"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <button
-          class="c10"
+          class="c11"
           disabled=""
           type="button"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 1
           </div>
         </button>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <button
-          class="c12"
+          class="c13"
           type="button"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 2
           </div>
         </button>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <a
-          class="c12"
+          class="c13"
           href="/test"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 3
           </div>
@@ -2127,7 +2216,9 @@ exports[`Menu open and close on click 3`] = `
 `;
 
 exports[`Menu open and close on click 4`] = `
-"@media only screen and (max-width:768px) {
+"
+
+@media only screen and (max-width:768px) {
   .iFQIIs {
     margin: 0px;
   }
@@ -2136,6 +2227,36 @@ exports[`Menu open and close on click 4`] = `
 @media only screen and (max-width:768px) {
   .iFQIIs {
     padding: 6px;
+  }
+}
+
+.gZcqrw {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+@media only screen and (max-width:768px) {
+  .gZcqrw {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .gZcqrw {
+    padding: 0px;
   }
 }
 
@@ -2189,7 +2310,7 @@ exports[`Menu open and close on click 4`] = `
 
 
 
-.iVjwDB {
+.cShzna {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2198,7 +2319,6 @@ exports[`Menu open and close on click 4`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
   outline: none;
@@ -2215,7 +2335,7 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iVjwDB {
+  .cShzna {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2535,7 +2655,7 @@ exports[`Menu with dropAlign renders 1`] = `
 `;
 
 exports[`Menu with dropAlign renders 2`] = `
-.c8 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2544,30 +2664,30 @@ exports[`Menu with dropAlign renders 2`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2592,7 +2712,25 @@ exports[`Menu with dropAlign renders 2`] = `
   padding: 12px;
 }
 
-.c2 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2609,7 +2747,7 @@ exports[`Menu with dropAlign renders 2`] = `
   padding: 0px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2629,7 +2767,7 @@ exports[`Menu with dropAlign renders 2`] = `
   padding: 0px;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2647,7 +2785,7 @@ exports[`Menu with dropAlign renders 2`] = `
   overflow: auto;
 }
 
-.c11 {
+.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2668,14 +2806,14 @@ exports[`Menu with dropAlign renders 2`] = `
   padding: 12px;
 }
 
-.c7 {
+.c8 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 12px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2693,7 +2831,7 @@ exports[`Menu with dropAlign renders 2`] = `
   text-align: inherit;
 }
 
-.c10 {
+.c11 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2713,7 +2851,7 @@ exports[`Menu with dropAlign renders 2`] = `
   cursor: default;
 }
 
-.c6 {
+.c7 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -2727,7 +2865,6 @@ exports[`Menu with dropAlign renders 2`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
   outline: none;
@@ -2743,30 +2880,30 @@ exports[`Menu with dropAlign renders 2`] = `
   animation-delay: 0.01s;
 }
 
-.c1 {
+.c2 {
   max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c1 {
     padding: 0px;
   }
 }
@@ -2784,25 +2921,37 @@ exports[`Menu with dropAlign renders 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c4 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c11 {
+  .c10 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
     padding: 6px;
   }
 }
@@ -2821,42 +2970,42 @@ exports[`Menu with dropAlign renders 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c2 {
     width: 100%;
   }
 }
 
 <div
-  class="c0"
+  class="c0 c1"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c1 c2"
+    class="c2 c3"
   >
     <div
-      class="c3"
+      class="c4"
     >
       <button
         aria-label="Close Menu"
-        class="c4"
+        class="c5"
         type="button"
       >
         <div
-          class="c5"
+          class="c6"
         >
           <span
-            class="c6"
+            class="c7"
           >
             Test
           </span>
           <div
-            class="c7"
+            class="c8"
           />
           <svg
             aria-label="FormDown"
-            class="c8"
+            class="c9"
             height="24px"
             role="img"
             version="1.1"
@@ -2874,33 +3023,33 @@ exports[`Menu with dropAlign renders 2`] = `
       </button>
     </div>
     <div
-      class="c9"
+      class="c10"
     >
       <div
-        class="c3"
+        class="c4"
       >
         <button
-          class="c10"
+          class="c11"
           disabled=""
           type="button"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 1
           </div>
         </button>
       </div>
       <div
-        class="c3"
+        class="c4"
       >
         <button
-          class="c10"
+          class="c11"
           disabled=""
           type="button"
         >
           <div
-            class="c11"
+            class="c12"
           >
             Item 2
           </div>
@@ -2912,7 +3061,9 @@ exports[`Menu with dropAlign renders 2`] = `
 `;
 
 exports[`Menu with dropAlign renders 3`] = `
-"@media only screen and (max-width:768px) {
+"
+
+@media only screen and (max-width:768px) {
   .iFQIIs {
     margin: 0px;
   }
@@ -2921,6 +3072,36 @@ exports[`Menu with dropAlign renders 3`] = `
 @media only screen and (max-width:768px) {
   .iFQIIs {
     padding: 6px;
+  }
+}
+
+.gZcqrw {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+@media only screen and (max-width:768px) {
+  .gZcqrw {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .gZcqrw {
+    padding: 0px;
   }
 }
 
@@ -2975,7 +3156,7 @@ exports[`Menu with dropAlign renders 3`] = `
 
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iVjwDB {
+  .cShzna {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2987,7 +3168,7 @@ exports[`Menu with dropAlign renders 3`] = `
   }
 }
 
-.iYXeAU {
+.eXtdAo {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2996,7 +3177,6 @@ exports[`Menu with dropAlign renders 3`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
   outline: none;
@@ -3013,7 +3193,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iYXeAU {
+  .eXtdAo {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

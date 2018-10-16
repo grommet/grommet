@@ -7,6 +7,7 @@ import { FocusedContainer } from '../FocusedContainer';
 import {
   backgroundIsDark, findScrollParents, findVisibleParent, parseMetricToNum,
 } from '../../utils';
+import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 
 import { StyledDrop } from './StyledDrop';
@@ -255,6 +256,8 @@ export class DropContainer extends Component {
 
     let content = (
       <StyledDrop
+        as={Box}
+        elevation={theme.global.drop.shadowSize || 'small'}
         tabIndex='-1'
         ref={this.dropRef}
         theme={theme}

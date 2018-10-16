@@ -98,8 +98,20 @@ exports[`DropButton close by clicking outside 3`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .gZcqrw {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .gZcqrw {
+    padding: 0px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iVjwDB {
+  .cShzna {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -366,8 +378,20 @@ exports[`DropButton open and close 3`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .gZcqrw {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .gZcqrw {
+    padding: 0px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iVjwDB {
+  .cShzna {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -558,8 +582,20 @@ exports[`DropButton opened ref 3`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .gZcqrw {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .gZcqrw {
+    padding: 0px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iVjwDB {
+  .cShzna {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
