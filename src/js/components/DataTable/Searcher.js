@@ -6,6 +6,7 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
+import { normalizeColor } from '../../utils';
 
 export class Searcher extends Component {
   inputRef = React.createRef()
@@ -21,7 +22,7 @@ export class Searcher extends Component {
   render() {
     const {
       /* eslint-disable-next-line react/prop-types */
-      filtering, filters, onFilter, onFiltering, property,
+      filtering, filters, onFilter, onFiltering, property, theme,
     } = this.props;
     if (filtering === property) {
       return (
@@ -46,7 +47,7 @@ export class Searcher extends Component {
           </Box>
         ) : null}
         <Button
-          icon={<FormSearch color={filtering === property ? 'brand' : 'border'} />}
+          icon={<FormSearch color={normalizeColor(filtering === property ? 'brand' : 'border', theme)} />}
           hoverIndicator
           onClick={() => onFiltering(filtering === property ? undefined : property)}
         />

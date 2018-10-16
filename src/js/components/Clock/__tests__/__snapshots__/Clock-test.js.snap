@@ -4,7 +4,6 @@ exports[`Clock hourLimit 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -164,7 +163,6 @@ exports[`Clock run 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -410,7 +408,7 @@ exports[`Clock run 1`] = `
 
 exports[`Clock run 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <svg
     class="StyledClock__StyledAnalog-y4xw8s-3 hXAQyQ"
@@ -585,7 +583,6 @@ exports[`Clock time 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -849,7 +846,6 @@ exports[`Clock type analog precision hours size large 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -904,7 +900,6 @@ exports[`Clock type analog precision hours size medium 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -959,7 +954,6 @@ exports[`Clock type analog precision hours size small 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1014,7 +1008,6 @@ exports[`Clock type analog precision hours size xlarge 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1069,7 +1062,6 @@ exports[`Clock type analog precision hours size xsmall 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1119,7 +1111,6 @@ exports[`Clock type analog precision minutes size large 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1196,7 +1187,6 @@ exports[`Clock type analog precision minutes size medium 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1273,7 +1263,6 @@ exports[`Clock type analog precision minutes size small 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1350,7 +1339,6 @@ exports[`Clock type analog precision minutes size xlarge 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1427,7 +1415,6 @@ exports[`Clock type analog precision minutes size xsmall 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1499,7 +1486,6 @@ exports[`Clock type analog precision seconds size large 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1598,7 +1584,6 @@ exports[`Clock type analog precision seconds size medium 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1697,7 +1682,6 @@ exports[`Clock type analog precision seconds size small 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1796,7 +1780,6 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1895,7 +1878,6 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1989,7 +1971,6 @@ exports[`Clock type digital precision hours size large 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2061,7 +2042,6 @@ exports[`Clock type digital precision hours size medium 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2133,7 +2113,6 @@ exports[`Clock type digital precision hours size small 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2205,7 +2184,6 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2277,7 +2255,6 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2349,7 +2326,6 @@ exports[`Clock type digital precision minutes size large 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2439,7 +2415,6 @@ exports[`Clock type digital precision minutes size medium 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2529,7 +2504,6 @@ exports[`Clock type digital precision minutes size small 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2619,7 +2593,6 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2709,7 +2682,6 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2799,7 +2771,6 @@ exports[`Clock type digital precision seconds size large 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2907,7 +2878,6 @@ exports[`Clock type digital precision seconds size medium 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3015,7 +2985,6 @@ exports[`Clock type digital precision seconds size small 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3123,7 +3092,6 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3231,7 +3199,6 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

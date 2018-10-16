@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
-import { colorForName, parseMetricToNum } from '../../utils';
+import { normalizeColor, parseMetricToNum } from '../../utils';
 
 import { withTheme } from '../hocs';
 
@@ -325,7 +325,7 @@ class WorldMap extends Component {
             strokeWidth={
               parseMetricToNum(theme.worldMap.continent[active ? 'active' : 'base'])
             }
-            stroke={colorForName(continentColor || color || 'light-3', theme)}
+            stroke={normalizeColor(continentColor || color || 'light-3', theme)}
           />
         </g>
       );
@@ -354,7 +354,7 @@ class WorldMap extends Component {
           strokeWidth={
             parseMetricToNum(theme.worldMap.place[active ? 'active' : 'base'])
           }
-          stroke={colorForName(placeColor || color || 'light-3', theme)}
+          stroke={normalizeColor(placeColor || color || 'light-3', theme)}
           {...interactiveProps}
           {...restPlace}
           d={d}
@@ -387,7 +387,7 @@ class WorldMap extends Component {
           <path
             strokeLinecap='round'
             strokeWidth={parseMetricToNum(theme.worldMap.place.active)}
-            stroke={colorForName(hoverColor || color || 'light-4', theme)}
+            stroke={normalizeColor(hoverColor || color || 'light-4', theme)}
             d={d}
           />
         </g>

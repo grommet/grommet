@@ -4,7 +4,6 @@ exports[`Meter background 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -132,7 +131,6 @@ exports[`Meter basic 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -185,7 +183,6 @@ exports[`Meter default 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -229,7 +226,6 @@ exports[`Meter many values 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -329,7 +325,6 @@ exports[`Meter round 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -428,7 +423,6 @@ exports[`Meter size 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -711,7 +705,6 @@ exports[`Meter thickness 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -994,7 +987,6 @@ exports[`Meter type 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

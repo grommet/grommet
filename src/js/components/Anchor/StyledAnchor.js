@@ -24,7 +24,7 @@ export const StyledAnchor = styled.a`
   `}
 
   ${props => !props.primary && props.hasIcon && props.hasLabel && `
-    color: ${props.theme.global.colors.text};
+    color: ${normalizeColor('text', props.theme)};
   `}
   ${props => props.hasIcon && !props.hasLabel && `
     padding: ${props.theme.global.edgeSize.small};

@@ -46,10 +46,7 @@ class CheckBox extends Component {
       theme
     );
     if (checked) {
-      borderColor = normalizeColor(
-        theme.checkBox.color || theme.global.control.color,
-        theme
-      );
+      borderColor = normalizeColor(theme.checkBox.color || 'control', theme);
     }
 
     const visual = (toggle ? (

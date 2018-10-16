@@ -9,7 +9,7 @@ import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { withForwardRef, withTheme } from '../hocs';
-import { evalStyle } from '../../utils';
+import { normalizeColor } from '../../utils';
 
 const ContainerBox = styled(Box)`
   max-height: inherit;
@@ -104,7 +104,7 @@ class Menu extends Component {
     const { activeItemIndex, open } = this.state;
 
     const MenuIcon = theme.menu.icons.down;
-    const iconColor = evalStyle(theme.global.control.color[theme.dark ? 'dark' : 'light'], theme) || 'brand';
+    const iconColor = normalizeColor('control', theme);
 
     const content = children || (
       <Box

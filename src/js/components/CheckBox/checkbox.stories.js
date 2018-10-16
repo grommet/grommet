@@ -4,7 +4,7 @@ import { css } from 'styled-components';
 
 import { Grommet, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { colorForName, deepMerge } from 'grommet/utils';
+import { normalizeColor, deepMerge } from 'grommet/utils';
 
 import { FormCheckmark } from 'grommet-icons';
 
@@ -32,16 +32,16 @@ const customCheckBoxTheme = {
   checkBox: {
     border: {
       color: {
-        light: css`${props => colorForName('neutral-1', props.theme)}`,
+        light: css`${props => normalizeColor('neutral-1', props.theme)}`,
       },
       radius: '2px',
     },
     color: {
-      light: css`${props => colorForName('neutral-1', props.theme)}`,
+      light: css`${props => normalizeColor('neutral-1', props.theme)}`,
     },
     check: {
       extend: ({ theme, checked }) => `
-        ${checked && `background-color: ${colorForName('neutral-1', theme)};`}
+        ${checked && `background-color: ${normalizeColor('neutral-1', theme)};`}
       `,
     },
     hover: {
@@ -87,11 +87,11 @@ const customToggleTheme = {
   checkBox: {
     border: {
       color: {
-        light: css`${props => colorForName('light-2', props.theme)}`,
+        light: css`${props => normalizeColor('light-2', props.theme)}`,
       },
     },
     color: {
-      light: css`${props => colorForName('neutral-1', props.theme)}`,
+      light: css`${props => normalizeColor('neutral-1', props.theme)}`,
     },
     check: {
       radius: '2px',
@@ -102,9 +102,9 @@ const customToggleTheme = {
       },
     },
     toggle: {
-      background: css`${props => colorForName('light-2', props.theme)}`,
+      background: css`${props => normalizeColor('light-2', props.theme)}`,
       color: {
-        light: css`${props => colorForName('light-4', props.theme)}`,
+        light: css`${props => normalizeColor('light-4', props.theme)}`,
       },
       size: '36px',
     },

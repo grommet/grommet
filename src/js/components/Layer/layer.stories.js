@@ -255,8 +255,21 @@ const MarginLayer = () => (
   </Grommet>
 );
 
+const PlainLayer = () => (
+  <Grommet theme={grommet} full>
+    <Box fill background='dark-3'>
+      <Layer margin='medium' plain>
+        <Box pad='large' border={{ color: 'accent-1', size: 'large' }}>
+          <Text color='accent-2'>Text</Text>
+        </Box>
+      </Layer>
+    </Box>
+  </Grommet>
+);
+
 storiesOf('Layer', module)
   .add('Center', () => <CenterLayer />)
   .add('Form', () => <FormLayer />)
   .add('Notification', () => <NotificationLayer />)
-  .add('Margin', () => <MarginLayer />);
+  .add('Margin', () => <MarginLayer />)
+  .add('Plain', () => <PlainLayer />);

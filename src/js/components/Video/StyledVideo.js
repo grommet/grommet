@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colorForName } from '../../utils';
+import { normalizeColor } from '../../utils';
 
 const FIT_MAP = {
   cover: 'cover',
@@ -51,7 +51,7 @@ const headStyle = css`
     content: '';
     height: 100%;
     width: ${props => props.theme.global.edgeSize.xsmall};
-    background: ${props => colorForName('light-5', props.theme)};
+    background: ${props => normalizeColor('light-5', props.theme)};
     position: absolute;
     left: ${props => `${props.value}%`};
   }

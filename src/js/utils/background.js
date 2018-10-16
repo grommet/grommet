@@ -1,8 +1,6 @@
 import { css } from 'styled-components';
 
-import {
-  colorForName, colorIsDark, getRGBA, normalizeColor,
-} from './colors';
+import { colorIsDark, getRGBA, normalizeColor } from './colors';
 import { evalStyle } from './styles';
 
 export const normalizeBackground = (background, theme) => {
@@ -30,13 +28,13 @@ export const backgroundIsDark = (backgroundArg, theme) => {
       } else if (color
         // weak opacity means we keep the existing darkness
         && (!opacity || opacity !== 'weak')) {
-        const backgroundColor = colorForName(background.color, theme);
+        const backgroundColor = normalizeColor(background.color, theme);
         if (backgroundColor) {
           result = colorIsDark(backgroundColor);
         }
       }
     } else {
-      const color = colorForName(background, theme);
+      const color = normalizeColor(background, theme);
       if (color) {
         result = colorIsDark(color);
       }
@@ -54,9 +52,9 @@ export const backgroundStyle = (backgroundArg, theme) => {
     if (background.image) {
       let color;
       if (background.dark === false) {
-        color = theme.global.text.color.light;
+        color = theme.global.colors.text.light;
       } else if (background.dark) {
-        color = theme.global.text.color.dark;
+        color = theme.global.colors.text.dark;
       } else {
         color = 'inherit';
       }
@@ -69,7 +67,7 @@ export const backgroundStyle = (backgroundArg, theme) => {
       `);
     }
     if (background.color) {
-      const color = colorForName(background.color, theme);
+      const color = normalizeColor(background.color, theme);
       const backgroundColor = getRGBA(
         color,
         background.opacity === true ? (
@@ -82,19 +80,19 @@ export const backgroundStyle = (backgroundArg, theme) => {
         background-color: ${backgroundColor};
         ${(!background.opacity || background.opacity !== 'weak')
           && `color: ${
-            theme.global.text.color[background.dark || colorIsDark(backgroundColor)
+            theme.global.colors.text[background.dark || colorIsDark(backgroundColor)
               ? 'dark' : 'light']};`
         }
       `);
     }
     if (background.dark === false) {
       styles.push(css`
-        color: ${theme.global.text.color.light};
+        color: ${theme.global.colors.text.light};
       `);
     }
     if (background.dark) {
       styles.push(css`
-        color: ${theme.global.text.color.dark};
+        color: ${theme.global.colors.text.dark};
       `);
     }
     return styles;
@@ -107,11 +105,11 @@ export const backgroundStyle = (backgroundArg, theme) => {
         background-size: cover;
       `;
     }
-    const color = colorForName(background, theme);
+    const color = normalizeColor(background, theme);
     if (color) {
       return css`
         background: ${color};
-        color: ${theme.global.text.color[colorIsDark(color) ? 'dark' : 'light']};
+        color: ${theme.global.colors.text[colorIsDark(color) ? 'dark' : 'light']};
       `;
     }
   }
@@ -120,6 +118,9 @@ export const backgroundStyle = (backgroundArg, theme) => {
 };
 
 export const activeStyle = css`
-  ${props => backgroundStyle(normalizeColor(props.theme.global.hover.background, props.theme), props.theme)}
+  ${props => backgroundStyle(
+    normalizeColor(props.theme.global.hover.background, props.theme),
+    props.theme,
+  )}
   color: ${props => normalizeColor(props.theme.global.hover.color, props.theme)};
 `;

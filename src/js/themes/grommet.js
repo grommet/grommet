@@ -7,6 +7,9 @@ const zillaSlabPath = 'https://fonts.gstatic.com/s/zillaslab/v3';
 
 export const grommet = deepFreeze({
   global: {
+    colors: {
+      background: '#ffffff',
+    },
     font: {
       family: "'Work Sans', Arial, sans-serif",
       face: `
@@ -55,7 +58,7 @@ export const grommet = deepFreeze({
   anchor: {
     textDecoration: 'underline',
     color: {
-      dark: '#9060EB',
+      dark: '#FD6FFF',
       light: '#9060EB',
     },
   },

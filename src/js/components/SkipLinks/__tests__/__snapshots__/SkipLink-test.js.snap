@@ -5,7 +5,7 @@ exports[`SkipLink basic 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #6194EB;
+  color: #1D67E3;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -20,7 +20,6 @@ exports[`SkipLink basic 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -63,12 +62,12 @@ exports[`SkipLink basic 1`] = `
 
 exports[`SkipLink basic 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 iIqVOt"
+      class="StyledAnchor-sc-1rp7lwl-0 kcggOX"
       id="main"
       style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
       tabindex="-1"
@@ -82,7 +81,7 @@ exports[`SkipLink basic 2`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 iIqVOt"
+      class="StyledAnchor-sc-1rp7lwl-0 kcggOX"
       id="footer"
       style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
       tabindex="-1"
@@ -97,12 +96,12 @@ exports[`SkipLink basic 2`] = `
 
 exports[`SkipLink basic 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 iIqVOt"
+      class="StyledAnchor-sc-1rp7lwl-0 kcggOX"
       id="main"
       style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
       tabindex="-1"
@@ -116,7 +115,7 @@ exports[`SkipLink basic 3`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 iIqVOt"
+      class="StyledAnchor-sc-1rp7lwl-0 kcggOX"
       id="footer"
       style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
       tabindex="-1"

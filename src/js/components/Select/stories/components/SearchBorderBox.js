@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Box } from '../../..';
 
 import { ThemeContext } from '../../../../contexts';
-import { colorForName } from '../../../../utils';
+import { normalizeColor } from '../../../../utils';
 
 const searchingStyle = css`
   position: relative;
@@ -18,7 +18,7 @@ const searchingStyle = css`
     left: 0;
     width: 100%;
     height: 2px;
-    background: ${props => colorForName('light-2', props.theme)};
+    background: ${props => normalizeColor('light-2', props.theme)};
   }
 
   &:after {
@@ -29,7 +29,7 @@ const searchingStyle = css`
     width: 100%;
     height: 2px;
     will-change: left, right;
-    background: ${props => colorForName('brand', props.theme)};
+    background: ${props => normalizeColor('brand', props.theme)};
     animation: progress 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     transform: translateX(-50%) scaleX(0);
   }
@@ -68,7 +68,7 @@ const defaultStyle = css`
     &:after {
       left: 0;
       width: 100%;
-      background: ${colorForName('brand', props.theme)};
+      background: ${normalizeColor('brand', props.theme)};
     }
   `}
 `;

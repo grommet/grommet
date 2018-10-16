@@ -68,7 +68,6 @@ exports[`Carousel basic 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -332,7 +331,7 @@ exports[`Carousel basic 1`] = `
 .c17:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c1 {
@@ -713,7 +712,6 @@ exports[`Carousel navigate 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -977,7 +975,7 @@ exports[`Carousel navigate 1`] = `
 .c17:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c1 {
@@ -1278,7 +1276,7 @@ exports[`Carousel navigate 1`] = `
 
 exports[`Carousel navigate 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
     class="StyledStack-ajspsk-0 hKZWLd"
@@ -1327,7 +1325,7 @@ exports[`Carousel navigate 2`] = `
           class="StyledBox-sc-13pk1d4-0 fgHUSC"
         >
           <button
-            class="StyledButton-sc-323bzc-0 kWwmJX"
+            class="StyledButton-sc-323bzc-0 iXKwVW"
             type="button"
           >
             <div
@@ -1450,7 +1448,7 @@ exports[`Carousel navigate 2`] = `
 
 exports[`Carousel navigate 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
     class="StyledStack-ajspsk-0 hKZWLd"
@@ -1589,7 +1587,7 @@ exports[`Carousel navigate 3`] = `
           class="StyledBox-sc-13pk1d4-0 fgHUSC"
         >
           <button
-            class="StyledButton-sc-323bzc-0 kWwmJX"
+            class="StyledButton-sc-323bzc-0 iXKwVW"
             type="button"
           >
             <div
@@ -1688,7 +1686,6 @@ exports[`Carousel play 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1952,7 +1949,7 @@ exports[`Carousel play 1`] = `
 .c17:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c1 {
@@ -2252,7 +2249,7 @@ exports[`Carousel play 1`] = `
 
 exports[`Carousel play 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
     class="StyledStack-ajspsk-0 hKZWLd"
@@ -2300,7 +2297,7 @@ exports[`Carousel play 2`] = `
           class="StyledBox-sc-13pk1d4-0 fgHUSC"
         >
           <button
-            class="StyledButton-sc-323bzc-0 kWwmJX"
+            class="StyledButton-sc-323bzc-0 iXKwVW"
             type="button"
           >
             <div

@@ -1,22 +1,20 @@
 import React, { cloneElement, Children, Component } from 'react';
 import { compose } from 'recompose';
 
+import { colorIsDark, normalizeBackground, normalizeColor } from '../../utils';
 import { Box } from '../Box';
 import { withFocus, withForwardRef, withTheme } from '../hocs';
-import {
-  colorIsDark, colorForName, normalizeBackground, normalizeColor,
-} from '../../utils';
 
 import { StyledButton } from './StyledButton';
 
 const isDarkBackground = (props) => {
   const backgroundColor = normalizeBackground(normalizeColor(
     props.color || props.theme.button.primary.color
-    || props.theme.global.control.color || 'brand',
+    || props.theme.global.colors.control || 'brand',
     props.theme
   ), props.theme);
 
-  return colorIsDark(colorForName(backgroundColor, props.theme));
+  return colorIsDark(backgroundColor, props.theme);
 };
 
 class Button extends Component {
@@ -60,7 +58,7 @@ class Button extends Component {
     if (primary && icon && !icon.props.color) {
       buttonIcon = cloneElement(
         icon, {
-          color: theme.global.text.color[isDarkBackground(this.props) ? 'dark' : 'light'],
+          color: theme.global.colors.text[isDarkBackground(this.props) ? 'dark' : 'light'],
         }
       );
     }

@@ -4,7 +4,6 @@ exports[`Layer dark context 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -80,7 +79,6 @@ exports[`Layer full false 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -114,7 +112,6 @@ exports[`Layer full false 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -202,7 +199,6 @@ exports[`Layer full horizontal 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -236,7 +232,6 @@ exports[`Layer full horizontal 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -325,7 +320,6 @@ exports[`Layer full true 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -359,7 +353,6 @@ exports[`Layer full true 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -446,7 +439,6 @@ exports[`Layer full vertical 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -480,7 +472,6 @@ exports[`Layer full vertical 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -569,7 +560,6 @@ exports[`Layer hidden 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -600,7 +590,6 @@ exports[`Layer hidden 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -670,7 +659,7 @@ exports[`Layer hidden 2`] = `""`;
 
 exports[`Layer hidden 3`] = `
 <div
-  class="StyledLayer-rmtehz-0 dVyrwx"
+  class="StyledLayer-rmtehz-0 kIqTcO"
   id="hidden-test"
   tabindex="-1"
 >
@@ -678,7 +667,7 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledOverlay-rmtehz-1 bGMqgk"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 jgtfPR"
+    class="StyledLayer__StyledContainer-rmtehz-2 ipIbtc"
     id="hidden-test"
   >
     This is a layer
@@ -723,7 +712,6 @@ exports[`Layer margin large 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -757,7 +745,6 @@ exports[`Layer margin large 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -845,7 +832,6 @@ exports[`Layer margin medium 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -879,7 +865,6 @@ exports[`Layer margin medium 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -967,7 +952,6 @@ exports[`Layer margin none 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1001,7 +985,6 @@ exports[`Layer margin none 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1089,7 +1072,6 @@ exports[`Layer margin small 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1123,7 +1105,6 @@ exports[`Layer margin small 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1211,7 +1192,6 @@ exports[`Layer margin xsmall 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1245,7 +1225,6 @@ exports[`Layer margin xsmall 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1333,7 +1312,6 @@ exports[`Layer non-modal 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1397,7 +1375,6 @@ exports[`Layer plain 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1423,15 +1400,12 @@ exports[`Layer plain 1`] = `
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgba(0,0,0,0.5);
-  color: #f8f8f8;
   pointer-events: all;
 }
 
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1445,15 +1419,13 @@ exports[`Layer plain 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 48px;
-  background: #FFFFFF;
-  color: #444444;
   outline: none;
   pointer-events: all;
   z-index: 15;
   position: fixed;
   max-height: calc(100% - 0px - 0px);
   max-width: calc(100% - 0px - 0px);
-  border-radius: none;
+  border-radius: 0;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%,-50%);
@@ -1519,7 +1491,6 @@ exports[`Layer position bottom 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1553,7 +1524,6 @@ exports[`Layer position bottom 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1641,7 +1611,6 @@ exports[`Layer position center 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1675,7 +1644,6 @@ exports[`Layer position center 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1763,7 +1731,6 @@ exports[`Layer position left 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1797,7 +1764,6 @@ exports[`Layer position left 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1885,7 +1851,6 @@ exports[`Layer position right 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1919,7 +1884,6 @@ exports[`Layer position right 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2007,7 +1971,6 @@ exports[`Layer position top 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2041,7 +2004,6 @@ exports[`Layer position top 1`] = `
 .c2 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

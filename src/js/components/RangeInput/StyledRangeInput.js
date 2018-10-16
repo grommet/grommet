@@ -16,9 +16,8 @@ const rangeThumbStyle = css`
   height: ${props => props.theme.global.spacing};
   width: ${props => props.theme.global.spacing};
   overflow: visible;
-  background: ${props => (
-    normalizeColor(props.theme.rangeInput.thumb.color
-      || props.theme.global.control.color, props.theme))};
+  background: ${props => normalizeColor(props.theme.rangeInput.thumb.color
+    || 'control', props.theme)};
   -webkit-appearance: none;
   cursor: pointer;
 `;
@@ -66,7 +65,7 @@ export const StyledRangeInput = styled.input`
     ${props => !props.disabled && css`
       &:hover {
         box-shadow: 0px 0px 0px 2px ${normalizeColor(props.theme.rangeInput.thumb.color
-          || props.theme.global.control.color, props.theme)};
+          || 'control', props.theme)};
       }
     `}
   }
@@ -86,12 +85,12 @@ export const StyledRangeInput = styled.input`
   ${props => !props.disabled && css`
     &:hover::-moz-range-thumb {
       box-shadow: 0px 0px 0px 2px ${normalizeColor(props.theme.rangeInput.thumb.color
-        || props.theme.global.control.color, props.theme)};
+        || 'control', props.theme)};
     }
 
     &:hover::-ms-thumb {
       box-shadow: 0px 0px 0px 2px ${normalizeColor(props.theme.rangeInput.thumb.color
-        || props.theme.global.control.color, props.theme)};
+        || 'control', props.theme)};
     }
   `}
 

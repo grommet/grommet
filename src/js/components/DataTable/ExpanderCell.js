@@ -5,6 +5,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { TableCell } from '../TableCell';
 import { withTheme } from '../hocs';
+import { normalizeColor } from '../../utils';
 
 const ExpanderCell = ({
   context, expanded, onToggle, theme, ...rest
@@ -25,7 +26,7 @@ const ExpanderCell = ({
           onClick={onToggle}
         >
           <Box {...theme.dataTable[context]} {...rest} pad='xsmall'>
-            <ExpandIcon color={theme.dark ? 'border-dark' : 'border-light'} />
+            <ExpandIcon color={normalizeColor('border', theme)} />
           </Box>
         </Button>
       </TableCell>

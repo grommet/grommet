@@ -21,11 +21,9 @@ class FormField extends Component {
     if (focus) {
       borderColor = 'focus';
     } else if (error) {
-      borderColor = formField.border.error.color[theme.dark ? 'dark' : 'light']
-        || 'status-critical';
+      borderColor = (border && border.error.color) || 'status-critical';
     } else {
-      borderColor = (border && border.color[theme.dark ? 'dark' : 'light'])
-        || (theme.dark ? 'border-dark' : 'border-light');
+      borderColor = (border && border.color) || 'border';
     }
     let abut;
     let outerStyle = style;

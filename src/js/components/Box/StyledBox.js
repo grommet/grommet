@@ -1,8 +1,8 @@
 import styled, { css, keyframes } from 'styled-components';
 
 import {
-  backgroundStyle, breakpointStyle, colorForName, edgeStyle, focusStyle,
-  overflowStyle,
+  backgroundStyle, breakpointStyle, edgeStyle, focusStyle,
+  normalizeColor, overflowStyle,
 } from '../../utils';
 
 const ALIGN_MAP = {
@@ -134,7 +134,7 @@ const wrapStyle = 'flex-wrap: wrap;';
 
 const borderStyle = (data, responsive, theme) => {
   const styles = [];
-  const color = colorForName(data.color || (theme.dark ? 'border-dark' : 'border-light'), theme);
+  const color = normalizeColor(data.color || 'border', theme);
   const borderSize = data.size || 'xsmall';
   const side = (typeof data === 'string') ? data : data.side || 'all';
   const value = `solid ${theme.global.borderSize[borderSize] || borderSize} ${color}`;

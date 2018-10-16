@@ -185,7 +185,7 @@ exports[`Calendar date 1`] = `
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c1 {
@@ -280,7 +280,6 @@ exports[`Calendar date 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1442,7 +1441,7 @@ exports[`Calendar dates 1`] = `
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c1 {
@@ -1537,7 +1536,6 @@ exports[`Calendar dates 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2699,7 +2697,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c1 {
@@ -2794,7 +2792,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4745,7 +4742,7 @@ exports[`Calendar header 1`] = `
 .c11:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c4 {
@@ -4843,7 +4840,6 @@ exports[`Calendar header 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -5974,7 +5970,7 @@ exports[`Calendar reference 1`] = `
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c1 {
@@ -6049,7 +6045,6 @@ exports[`Calendar reference 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -7287,7 +7282,7 @@ exports[`Calendar size 1`] = `
 .c14:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c18 {
@@ -7514,7 +7509,6 @@ exports[`Calendar size 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

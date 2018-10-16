@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
-import { colorForName, parseMetricToNum } from '../../utils';
+import { normalizeColor, parseMetricToNum } from '../../utils';
 import { withTheme } from '../hocs';
 
 import { StyledChart } from './StyledChart';
@@ -98,7 +98,7 @@ const renderArea = (values, bounds, scale, height, {
   }
 
   return (
-    <g fill={colorForName(color.color || color, theme)}>
+    <g fill={normalizeColor(color.color || color, theme)}>
       <path d={d} {...hoverProps} {...clickProps} />
     </g>
   );
@@ -195,7 +195,7 @@ class Chart extends Component {
         {...rest}
       >
         <g
-          stroke={colorForName(colorName, theme)}
+          stroke={normalizeColor(colorName, theme)}
           strokeWidth={strokeWidth}
           strokeLinecap={round ? 'round' : 'butt'}
           strokeLinejoin={round ? 'round' : 'miter'}

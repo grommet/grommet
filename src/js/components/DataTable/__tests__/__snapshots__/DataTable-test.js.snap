@@ -4,7 +4,6 @@ exports[`DataTable aggregate 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -327,7 +326,6 @@ exports[`DataTable basic 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -574,7 +572,6 @@ exports[`DataTable empty 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -612,7 +609,6 @@ exports[`DataTable footer 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -967,7 +963,6 @@ exports[`DataTable groupBy 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1115,7 +1110,7 @@ exports[`DataTable groupBy 1`] = `
 .c3:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c1 {
@@ -1244,7 +1239,7 @@ exports[`DataTable groupBy 1`] = `
               <svg
                 aria-label="FormDown"
                 class="c5"
-                color="border-light"
+                color="rgba(0,0,0,0.33)"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1311,7 +1306,7 @@ exports[`DataTable groupBy 1`] = `
               <svg
                 aria-label="FormDown"
                 class="c5"
-                color="border-light"
+                color="rgba(0,0,0,0.33)"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1367,7 +1362,7 @@ exports[`DataTable groupBy 1`] = `
               <svg
                 aria-label="FormDown"
                 class="c5"
-                color="border-light"
+                color="rgba(0,0,0,0.33)"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1413,7 +1408,7 @@ exports[`DataTable groupBy 1`] = `
 
 exports[`DataTable groupBy 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <table
     class="StyledDataTable-xrlyjm-0 DHZmE"
@@ -1429,16 +1424,16 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 kWwmJX"
+            class="StyledButton-sc-323bzc-0 iXKwVW"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 evlYlT"
+              class="StyledBox-sc-13pk1d4-0 FrSQX"
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 ekYRGZ"
-                color="border-light"
+                class="StyledIcon-ofa7kd-0 krKPIi"
+                color="rgba(0,0,0,0.33)"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1460,7 +1455,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 gyPMoQ"
+            class="StyledBox-sc-13pk1d4-0 jHrpsm"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -1474,7 +1469,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 gyPMoQ"
+            class="StyledBox-sc-13pk1d4-0 jHrpsm"
           >
             <span
               class="StyledText-sc-1sadyjn-0 eWZOWJ"
@@ -1496,7 +1491,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 kWwmJX"
+            class="StyledButton-sc-323bzc-0 iXKwVW"
             type="button"
           >
             <div
@@ -1504,8 +1499,8 @@ exports[`DataTable groupBy 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 ekYRGZ"
-                color="border-light"
+                class="StyledIcon-ofa7kd-0 krKPIi"
+                color="rgba(0,0,0,0.33)"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1552,7 +1547,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 kWwmJX"
+            class="StyledButton-sc-323bzc-0 iXKwVW"
             type="button"
           >
             <div
@@ -1560,8 +1555,8 @@ exports[`DataTable groupBy 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 ekYRGZ"
-                color="border-light"
+                class="StyledIcon-ofa7kd-0 krKPIi"
+                color="rgba(0,0,0,0.33)"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1609,7 +1604,6 @@ exports[`DataTable resizeable 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1694,7 +1688,7 @@ exports[`DataTable resizeable 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-right: solid 1px [object Object];
+  border-right: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1800,7 +1794,7 @@ exports[`DataTable resizeable 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    border-right: solid 1px [object Object];
+    border-right: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1946,7 +1940,6 @@ exports[`DataTable sort 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2048,7 +2041,7 @@ exports[`DataTable sort 1`] = `
 .c4:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c3 {
@@ -2265,7 +2258,7 @@ exports[`DataTable sort 1`] = `
 
 exports[`DataTable sort 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 cGdwQo"
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <table
     class="StyledDataTable-xrlyjm-0 DHZmE"
@@ -2379,7 +2372,7 @@ exports[`DataTable sort 2`] = `
 .c2:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c1 {
@@ -2526,7 +2519,7 @@ exports[`DataTable sort 2`] = `
 .c2:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c1 {

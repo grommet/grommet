@@ -27,7 +27,7 @@ class Grommet extends Component {
       const lightIconTheme = deepMerge(iconTheme, nextTheme.icon);
       const iconThemes = {
         dark: deepMerge(lightIconTheme, {
-          color: nextTheme.global.text.color.dark,
+          color: nextTheme.global.colors.text.dark,
         }),
         light: lightIconTheme,
       };
