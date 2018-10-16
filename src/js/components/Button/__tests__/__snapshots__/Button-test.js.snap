@@ -84,8 +84,6 @@ exports[`Button color renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -165,8 +163,6 @@ exports[`Button disabled renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -250,8 +246,6 @@ exports[`Button focus renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -316,8 +310,6 @@ exports[`Button hoverIndicator as object renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -366,8 +358,6 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -416,8 +406,6 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -466,8 +454,6 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -516,8 +502,6 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -566,8 +550,6 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -618,8 +600,6 @@ exports[`Button hoverIndicator renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -672,8 +652,6 @@ exports[`Button href renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -755,8 +733,6 @@ exports[`Button icon label renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -857,8 +833,6 @@ exports[`Button primary renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -952,8 +926,6 @@ exports[`Button renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1054,8 +1026,6 @@ exports[`Button reverse icon label renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1146,8 +1116,6 @@ exports[`Button warns about invalid icon render 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1233,8 +1201,6 @@ exports[`Button warns about invalid label render 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

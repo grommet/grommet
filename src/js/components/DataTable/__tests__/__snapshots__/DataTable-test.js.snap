@@ -4,8 +4,6 @@ exports[`DataTable aggregate 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -328,8 +326,6 @@ exports[`DataTable basic 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -576,8 +572,6 @@ exports[`DataTable empty 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -615,8 +609,6 @@ exports[`DataTable footer 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -971,8 +963,6 @@ exports[`DataTable groupBy 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1418,7 +1408,7 @@ exports[`DataTable groupBy 1`] = `
 
 exports[`DataTable groupBy 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 IELEP"
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <table
     class="StyledDataTable-xrlyjm-0 DHZmE"
@@ -1614,8 +1604,6 @@ exports[`DataTable resizeable 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1952,8 +1940,6 @@ exports[`DataTable sort 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2272,7 +2258,7 @@ exports[`DataTable sort 1`] = `
 
 exports[`DataTable sort 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 IELEP"
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <table
     class="StyledDataTable-xrlyjm-0 DHZmE"

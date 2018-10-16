@@ -4,8 +4,6 @@ exports[`Anchor disabled renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -44,8 +42,6 @@ exports[`Anchor focus renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -152,8 +148,6 @@ exports[`Anchor icon label renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -260,8 +254,6 @@ exports[`Anchor primary renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -356,8 +348,6 @@ exports[`Anchor renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -396,8 +386,6 @@ exports[`Anchor renders with children 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -439,8 +427,6 @@ exports[`Anchor reverse icon label renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -547,8 +533,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -633,8 +617,6 @@ exports[`Anchor warns about invalid label render 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

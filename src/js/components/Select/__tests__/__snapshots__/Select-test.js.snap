@@ -673,8 +673,6 @@ exports[`Select complex options and children 3`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -897,11 +895,9 @@ exports[`Select complex options and children 4`] = `
 
 
 
-.bZmBlY {
+.iVjwDB {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -925,7 +921,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bZmBlY {
+  .iVjwDB {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2227,8 +2223,6 @@ exports[`Select multiple values 3`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2496,11 +2490,9 @@ exports[`Select multiple values 4`] = `
 
 
 
-.bZmBlY {
+.iVjwDB {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2524,7 +2516,7 @@ exports[`Select multiple values 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bZmBlY {
+  .iVjwDB {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2965,8 +2957,6 @@ exports[`Select opens 3`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3222,11 +3212,9 @@ exports[`Select opens 4`] = `
 
 
 
-.bZmBlY {
+.iVjwDB {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3250,7 +3238,7 @@ exports[`Select opens 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bZmBlY {
+  .iVjwDB {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3704,8 +3692,6 @@ exports[`Select search 2`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4043,11 +4029,9 @@ exports[`Select search 3`] = `
 
 
 
-.bZmBlY {
+.iVjwDB {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4071,7 +4055,7 @@ exports[`Select search 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bZmBlY {
+  .iVjwDB {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

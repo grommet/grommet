@@ -249,8 +249,6 @@ exports[`Video autoPlay renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -884,8 +882,6 @@ exports[`Video controls renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1620,8 +1616,6 @@ exports[`Video fit renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2356,8 +2350,6 @@ exports[`Video loop renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2909,8 +2901,6 @@ exports[`Video mute renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3462,8 +3452,6 @@ exports[`Video renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

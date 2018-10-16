@@ -388,8 +388,8 @@ exports[`dark renders 1`] = `
   font-family: Arial;
   font-size: 18px;
   line-height: 24px;
-  color: #eeeeee;
   background: #111111;
+  color: #eeeeee;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1270,8 +1270,6 @@ exports[`default renders 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2115,8 +2113,6 @@ exports[`hpe renders 1`] = `
   font-family: 'Metric',Arial,sans-serif;
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

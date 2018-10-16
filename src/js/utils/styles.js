@@ -7,8 +7,11 @@ export const baseStyle = css`
   font-family: ${props => props.theme.global.font.family};
   font-size: ${props => props.theme.global.font.size};
   line-height: ${props => props.theme.global.font.height};
-  color: ${props => normalizeColor('text', props.theme, true)};
-  background: ${props => normalizeColor('background', props.theme, true)};
+  ${props => props.theme.global.colors.background
+    && css`
+      background: ${normalizeColor('background', props.theme, true)};
+      color: ${normalizeColor('text', props.theme, true)};
+    `}
 
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;

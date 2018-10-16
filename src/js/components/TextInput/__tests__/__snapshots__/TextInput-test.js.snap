@@ -59,8 +59,6 @@ exports[`TextInput close suggestion drop 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -201,8 +199,6 @@ exports[`TextInput close suggestion drop 2`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -348,11 +344,9 @@ exports[`TextInput close suggestion drop 3`] = `
 
 
 
-.bZmBlY {
+.iVjwDB {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -376,7 +370,7 @@ exports[`TextInput close suggestion drop 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bZmBlY {
+  .iVjwDB {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -397,7 +391,7 @@ exports[`TextInput close suggestion drop 3`] = `
 
 exports[`TextInput close suggestion drop 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 IELEP"
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -418,8 +412,6 @@ exports[`TextInput complex suggestions 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -539,8 +531,6 @@ exports[`TextInput complex suggestions 2`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -666,11 +656,9 @@ exports[`TextInput complex suggestions 3`] = `
 
 
 
-.bZmBlY {
+.iVjwDB {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -694,7 +682,7 @@ exports[`TextInput complex suggestions 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bZmBlY {
+  .iVjwDB {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -717,8 +705,6 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -788,7 +774,7 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 exports[`TextInput handles next and previous without suggestion 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 IELEP"
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -809,8 +795,6 @@ exports[`TextInput select a suggestion 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -882,8 +866,6 @@ exports[`TextInput select suggestion 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1027,8 +1009,6 @@ exports[`TextInput select suggestion 2`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1174,11 +1154,9 @@ exports[`TextInput select suggestion 3`] = `
 
 
 
-.bZmBlY {
+.iVjwDB {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1202,7 +1180,7 @@ exports[`TextInput select suggestion 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bZmBlY {
+  .iVjwDB {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1223,7 +1201,7 @@ exports[`TextInput select suggestion 3`] = `
 
 exports[`TextInput select suggestion 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 IELEP"
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -1370,8 +1348,6 @@ exports[`TextInput suggestions 2`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1517,11 +1493,9 @@ exports[`TextInput suggestions 3`] = `
 
 
 
-.bZmBlY {
+.iVjwDB {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
-  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1545,7 +1519,7 @@ exports[`TextInput suggestions 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bZmBlY {
+  .iVjwDB {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
