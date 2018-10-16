@@ -127,7 +127,25 @@ exports[`TextInput close suggestion drop 1`] = `
 `;
 
 exports[`TextInput close suggestion drop 2`] = `
-.c2 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -145,7 +163,7 @@ exports[`TextInput close suggestion drop 2`] = `
   overflow: auto;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -166,7 +184,7 @@ exports[`TextInput close suggestion drop 2`] = `
   padding: 12px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -190,7 +208,7 @@ exports[`TextInput close suggestion drop 2`] = `
   flex: 1 0 auto;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -205,7 +223,6 @@ exports[`TextInput close suggestion drop 2`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
   outline: none;
@@ -221,7 +238,7 @@ exports[`TextInput close suggestion drop 2`] = `
   animation-delay: 0.01s;
 }
 
-.c3 {
+.c4 {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin: 0;
@@ -229,30 +246,30 @@ exports[`TextInput close suggestion drop 2`] = `
   list-style-type: none;
 }
 
-.c1 {
+.c2 {
   max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding: 6px;
   }
 }
@@ -271,30 +288,30 @@ exports[`TextInput close suggestion drop 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c2 {
     width: 100%;
   }
 }
 
 <div
-  class="c0"
+  class="c0 c1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c1 c2"
+    class="c2 c3"
   >
     <ol
-      class="c3"
+      class="c4"
     >
       <li>
         <button
-          class="c4"
+          class="c5"
           type="button"
         >
           <div
-            class="c5"
+            class="c6"
           >
             test
           </div>
@@ -302,11 +319,11 @@ exports[`TextInput close suggestion drop 2`] = `
       </li>
       <li>
         <button
-          class="c4"
+          class="c5"
           type="button"
         >
           <div
-            class="c5"
+            class="c6"
           >
             test1
           </div>
@@ -318,7 +335,27 @@ exports[`TextInput close suggestion drop 2`] = `
 `;
 
 exports[`TextInput close suggestion drop 3`] = `
-"@media only screen and (max-width:768px) {
+"
+
+.fLSTbo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+@media only screen and (max-width:768px) {
   .blARAh {
     margin: 0px;
   }
@@ -344,7 +381,7 @@ exports[`TextInput close suggestion drop 3`] = `
 
 
 
-.iVjwDB {
+.cShzna {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -353,7 +390,6 @@ exports[`TextInput close suggestion drop 3`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
   outline: none;
@@ -370,7 +406,7 @@ exports[`TextInput close suggestion drop 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iVjwDB {
+  .cShzna {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -480,7 +516,25 @@ exports[`TextInput complex suggestions 1`] = `
 `;
 
 exports[`TextInput complex suggestions 2`] = `
-.c2 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -498,7 +552,7 @@ exports[`TextInput complex suggestions 2`] = `
   overflow: auto;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -522,7 +576,7 @@ exports[`TextInput complex suggestions 2`] = `
   flex: 1 0 auto;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -537,7 +591,6 @@ exports[`TextInput complex suggestions 2`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
   outline: none;
@@ -553,7 +606,7 @@ exports[`TextInput complex suggestions 2`] = `
   animation-delay: 0.01s;
 }
 
-.c3 {
+.c4 {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin: 0;
@@ -561,18 +614,18 @@ exports[`TextInput complex suggestions 2`] = `
   list-style-type: none;
 }
 
-.c1 {
+.c2 {
   max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding: 0px;
   }
 }
@@ -591,26 +644,26 @@ exports[`TextInput complex suggestions 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c2 {
     width: 100%;
   }
 }
 
 <div
-  class="c0"
+  class="c0 c1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c1 c2"
+    class="c2 c3"
   >
     <ol
-      class="c3"
+      class="c4"
     >
       <li>
         <button
-          class="c4"
+          class="c5"
           type="button"
         >
           test
@@ -618,7 +671,7 @@ exports[`TextInput complex suggestions 2`] = `
       </li>
       <li>
         <button
-          class="c4"
+          class="c5"
           type="button"
         >
           test1
@@ -630,7 +683,27 @@ exports[`TextInput complex suggestions 2`] = `
 `;
 
 exports[`TextInput complex suggestions 3`] = `
-"@media only screen and (max-width:768px) {
+"
+
+.fLSTbo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+@media only screen and (max-width:768px) {
   .blARAh {
     margin: 0px;
   }
@@ -656,7 +729,7 @@ exports[`TextInput complex suggestions 3`] = `
 
 
 
-.iVjwDB {
+.cShzna {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -665,7 +738,6 @@ exports[`TextInput complex suggestions 3`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
   outline: none;
@@ -682,7 +754,7 @@ exports[`TextInput complex suggestions 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iVjwDB {
+  .cShzna {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -937,7 +1009,25 @@ exports[`TextInput select suggestion 1`] = `
 `;
 
 exports[`TextInput select suggestion 2`] = `
-.c2 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -955,7 +1045,7 @@ exports[`TextInput select suggestion 2`] = `
   overflow: auto;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -976,7 +1066,7 @@ exports[`TextInput select suggestion 2`] = `
   padding: 12px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1000,7 +1090,7 @@ exports[`TextInput select suggestion 2`] = `
   flex: 1 0 auto;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -1015,7 +1105,6 @@ exports[`TextInput select suggestion 2`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
   outline: none;
@@ -1031,7 +1120,7 @@ exports[`TextInput select suggestion 2`] = `
   animation-delay: 0.01s;
 }
 
-.c3 {
+.c4 {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin: 0;
@@ -1039,30 +1128,30 @@ exports[`TextInput select suggestion 2`] = `
   list-style-type: none;
 }
 
-.c1 {
+.c2 {
   max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding: 6px;
   }
 }
@@ -1081,30 +1170,30 @@ exports[`TextInput select suggestion 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c2 {
     width: 100%;
   }
 }
 
 <div
-  class="c0"
+  class="c0 c1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c1 c2"
+    class="c2 c3"
   >
     <ol
-      class="c3"
+      class="c4"
     >
       <li>
         <button
-          class="c4"
+          class="c5"
           type="button"
         >
           <div
-            class="c5"
+            class="c6"
           >
             test
           </div>
@@ -1112,11 +1201,11 @@ exports[`TextInput select suggestion 2`] = `
       </li>
       <li>
         <button
-          class="c4"
+          class="c5"
           type="button"
         >
           <div
-            class="c5"
+            class="c6"
           >
             test1
           </div>
@@ -1128,7 +1217,27 @@ exports[`TextInput select suggestion 2`] = `
 `;
 
 exports[`TextInput select suggestion 3`] = `
-"@media only screen and (max-width:768px) {
+"
+
+.fLSTbo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+@media only screen and (max-width:768px) {
   .blARAh {
     margin: 0px;
   }
@@ -1154,7 +1263,7 @@ exports[`TextInput select suggestion 3`] = `
 
 
 
-.iVjwDB {
+.cShzna {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1163,7 +1272,6 @@ exports[`TextInput select suggestion 3`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
   outline: none;
@@ -1180,7 +1288,7 @@ exports[`TextInput select suggestion 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iVjwDB {
+  .cShzna {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1276,7 +1384,25 @@ exports[`TextInput suggestions 1`] = `
 `;
 
 exports[`TextInput suggestions 2`] = `
-.c2 {
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1294,7 +1420,7 @@ exports[`TextInput suggestions 2`] = `
   overflow: auto;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1315,7 +1441,7 @@ exports[`TextInput suggestions 2`] = `
   padding: 12px;
 }
 
-.c4 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1339,7 +1465,7 @@ exports[`TextInput suggestions 2`] = `
   flex: 1 0 auto;
 }
 
-.c4:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -1354,7 +1480,6 @@ exports[`TextInput suggestions 2`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
   outline: none;
@@ -1370,7 +1495,7 @@ exports[`TextInput suggestions 2`] = `
   animation-delay: 0.01s;
 }
 
-.c3 {
+.c4 {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin: 0;
@@ -1378,30 +1503,30 @@ exports[`TextInput suggestions 2`] = `
   list-style-type: none;
 }
 
-.c1 {
+.c2 {
   max-height: inherit;
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c3 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding: 6px;
   }
 }
@@ -1420,30 +1545,30 @@ exports[`TextInput suggestions 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .c1 {
+  .c2 {
     width: 100%;
   }
 }
 
 <div
-  class="c0"
+  class="c0 c1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="c1 c2"
+    class="c2 c3"
   >
     <ol
-      class="c3"
+      class="c4"
     >
       <li>
         <button
-          class="c4"
+          class="c5"
           type="button"
         >
           <div
-            class="c5"
+            class="c6"
           >
             test
           </div>
@@ -1451,11 +1576,11 @@ exports[`TextInput suggestions 2`] = `
       </li>
       <li>
         <button
-          class="c4"
+          class="c5"
           type="button"
         >
           <div
-            class="c5"
+            class="c6"
           >
             test1
           </div>
@@ -1467,7 +1592,27 @@ exports[`TextInput suggestions 2`] = `
 `;
 
 exports[`TextInput suggestions 3`] = `
-"@media only screen and (max-width:768px) {
+"
+
+.fLSTbo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+@media only screen and (max-width:768px) {
   .blARAh {
     margin: 0px;
   }
@@ -1493,7 +1638,7 @@ exports[`TextInput suggestions 3`] = `
 
 
 
-.iVjwDB {
+.cShzna {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1502,7 +1647,6 @@ exports[`TextInput suggestions 3`] = `
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
   outline: none;
@@ -1519,7 +1663,7 @@ exports[`TextInput suggestions 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .iVjwDB {
+  .cShzna {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

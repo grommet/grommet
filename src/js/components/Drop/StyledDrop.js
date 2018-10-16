@@ -29,8 +29,6 @@ export const StyledDrop = styled.div`
   ${baseStyle}
 
   border-radius: ${props => props.theme.global.drop.border.radius};
-  box-shadow: ${props => (
-    props.theme.global.drop.shadow[props.theme.dark ? 'dark' : 'light'])};
   position: fixed;
   z-index: 20;
   outline: none;
