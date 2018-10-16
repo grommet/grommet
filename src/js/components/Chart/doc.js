@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (Chart) => {
   const DocumentedChart = describe(Chart)
@@ -9,6 +9,7 @@ export const doc = (Chart) => {
     .usage("import { Chart } from 'grommet';\n<Chart />");
 
   DocumentedChart.propTypes = {
+    ...genericProps,
     bounds: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).description(
       `The limits for the values, specified as a two dimensional array.
       If not specified, the bounds will automatically be set to fit

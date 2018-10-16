@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (Distribution) => {
   const DocumentedDistribution = describe(Distribution)
@@ -13,6 +13,7 @@ export const doc = (Distribution) => {
     .usage("import { Distribution } from 'grommet';\n<Distribution />");
 
   DocumentedDistribution.propTypes = {
+    ...genericProps,
     children: PropTypes.func.description(
       'Function that will be called when each value is rendered.'
     ),

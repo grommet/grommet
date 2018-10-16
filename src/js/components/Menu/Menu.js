@@ -142,55 +142,54 @@ class Menu extends Component {
         onTab={this.onDropClose}
         onKeyDown={onKeyDown}
       >
-        <div>
-          <DropButton
-            ref={forwardRef}
-            {...rest}
-            a11yTitle={messages.openMenu || 'Open Menu'}
-            disabled={disabled}
-            dropAlign={dropAlign}
-            dropTarget={dropTarget}
-            open={open}
-            onOpen={() => this.setState({ open: true })}
-            onClose={() => this.setState({ open: false })}
-            dropContent={(
-              <ContainerBox background={dropBackground}>
-                {dropAlign.top === 'top' ? controlMirror : undefined}
-                <Box overflow='auto'>
-                  {items.map(
-                    (item, index) => (
-                      <Box key={`menuItem_${index + 0}`} flex={false}>
-                        <Button
-                          ref={(ref) => {
-                            this.buttonRefs[index] = ref;
-                          }}
-                          active={activeItemIndex === index}
-                          hoverIndicator='background'
-                          disabled={!item.onClick && !item.href}
-                          onClick={(...args) => {
-                            item.onClick(...args);
-                            if (item.close !== false) {
-                              this.onDropClose();
-                            }
-                          }}
-                          href={item.href}
-                        >
-                          <Box align='start' pad='small' direction='row'>
-                            {item.icon}
-                            {item.label}
-                          </Box>
-                        </Button>
-                      </Box>
-                    )
-                  )}
-                </Box>
-                {dropAlign.bottom === 'bottom' ? controlMirror : undefined }
-              </ContainerBox>
-            )}
-          >
-            {content}
-          </DropButton>
-        </div>
+        <DropButton
+          ref={forwardRef}
+          {...rest}
+          a11yTitle={messages.openMenu || 'Open Menu'}
+          disabled={disabled}
+          dropAlign={dropAlign}
+          dropTarget={dropTarget}
+          open={open}
+          theme={theme}
+          onOpen={() => this.setState({ open: true })}
+          onClose={() => this.setState({ open: false })}
+          dropContent={(
+            <ContainerBox background={dropBackground}>
+              {dropAlign.top === 'top' ? controlMirror : undefined}
+              <Box overflow='auto'>
+                {items.map(
+                  (item, index) => (
+                    <Box key={`menuItem_${index + 0}`} flex={false}>
+                      <Button
+                        ref={(ref) => {
+                          this.buttonRefs[index] = ref;
+                        }}
+                        active={activeItemIndex === index}
+                        hoverIndicator='background'
+                        disabled={!item.onClick && !item.href}
+                        onClick={(...args) => {
+                          item.onClick(...args);
+                          if (item.close !== false) {
+                            this.onDropClose();
+                          }
+                        }}
+                        href={item.href}
+                      >
+                        <Box align='start' pad='small' direction='row'>
+                          {item.icon}
+                          {item.label}
+                        </Box>
+                      </Button>
+                    </Box>
+                  )
+                )}
+              </Box>
+              {dropAlign.bottom === 'bottom' ? controlMirror : undefined }
+            </ContainerBox>
+          )}
+        >
+          {content}
+        </DropButton>
       </Keyboard>
     );
   }

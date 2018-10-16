@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 const VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
@@ -17,6 +17,7 @@ export const doc = (Menu) => {
     );
 
   DocumentedMenu.propTypes = {
+    ...genericProps,
     disabled: PropTypes.bool
       .description('Whether the menu should be disabled.'),
     dropAlign: PropTypes.shape({

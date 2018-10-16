@@ -4,6 +4,7 @@ import {
   activeStyle,
   backgroundStyle,
   focusStyle,
+  genericStyles,
   normalizeColor,
 } from '../../utils';
 
@@ -96,6 +97,7 @@ export const StyledButton = styled.button`
   overflow: visible;
   text-transform: none;
 
+  ${genericStyles}
   ${props => props.plain && plainStyle}
   ${props => !props.plain && basicStyle(props)}
   ${props => props.primary && primaryStyle(props)}

@@ -41,6 +41,7 @@ exports[`Video autoPlay renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -56,7 +57,6 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -68,6 +68,7 @@ exports[`Video autoPlay renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -81,7 +82,6 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -93,6 +93,7 @@ exports[`Video autoPlay renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -105,7 +106,6 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -117,6 +117,7 @@ exports[`Video autoPlay renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -125,7 +126,6 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -137,12 +137,12 @@ exports[`Video autoPlay renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -155,6 +155,7 @@ exports[`Video autoPlay renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -168,7 +169,6 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  margin: 0px;
   padding: 12px;
 }
 
@@ -216,6 +216,7 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c16 {
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   margin-top: 0px;
@@ -507,42 +508,39 @@ exports[`Video autoPlay renders 1`] = `
             </span>
           </div>
         </div>
-        <div
+        <button
+          aria-label="Open Menu"
+          className="c17"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          type="button"
         >
-          <button
-            aria-label="Open Menu"
-            className="c17"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <div
+            className="c18"
           >
-            <div
-              className="c18"
+            <span
+              className="c19"
+            />
+            <svg
+              aria-label="Actions"
+              className="c7"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
             >
-              <span
-                className="c19"
+              <path
+                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
               />
-              <svg
-                aria-label="Actions"
-                className="c7"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            </svg>
+          </div>
+        </button>
       </div>
     </div>
   </div>
@@ -622,6 +620,7 @@ exports[`Video controls renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -637,7 +636,6 @@ exports[`Video controls renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -649,6 +647,7 @@ exports[`Video controls renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -662,7 +661,6 @@ exports[`Video controls renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -674,6 +672,7 @@ exports[`Video controls renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -686,7 +685,6 @@ exports[`Video controls renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -698,6 +696,7 @@ exports[`Video controls renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -706,7 +705,6 @@ exports[`Video controls renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -718,12 +716,12 @@ exports[`Video controls renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -736,6 +734,7 @@ exports[`Video controls renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -749,7 +748,6 @@ exports[`Video controls renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  margin: 0px;
   padding: 12px;
 }
 
@@ -761,6 +759,7 @@ exports[`Video controls renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -774,7 +773,6 @@ exports[`Video controls renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -847,6 +845,7 @@ exports[`Video controls renders 1`] = `
 }
 
 .c16 {
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   margin-top: 0px;
@@ -1160,42 +1159,39 @@ exports[`Video controls renders 1`] = `
             </span>
           </div>
         </div>
-        <div
+        <button
+          aria-label="Open Menu"
+          className="c17"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          type="button"
         >
-          <button
-            aria-label="Open Menu"
-            className="c17"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <div
+            className="c18"
           >
-            <div
-              className="c18"
+            <span
+              className="c19"
+            />
+            <svg
+              aria-label="Actions"
+              className="c7"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
             >
-              <span
-                className="c19"
+              <path
+                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
               />
-              <svg
-                aria-label="Actions"
-                className="c7"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            </svg>
+          </div>
+        </button>
       </div>
     </div>
   </div>
@@ -1319,42 +1315,39 @@ exports[`Video controls renders 1`] = `
             </span>
           </div>
         </div>
-        <div
+        <button
+          aria-label="Open Menu"
+          className="c17"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          type="button"
         >
-          <button
-            aria-label="Open Menu"
-            className="c17"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <div
+            className="c18"
           >
-            <div
-              className="c18"
+            <span
+              className="c19"
+            />
+            <svg
+              aria-label="Actions"
+              className="c23"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
             >
-              <span
-                className="c19"
+              <path
+                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
               />
-              <svg
-                aria-label="Actions"
-                className="c23"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            </svg>
+          </div>
+        </button>
       </div>
     </div>
   </div>
@@ -1402,6 +1395,7 @@ exports[`Video fit renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1417,7 +1411,6 @@ exports[`Video fit renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1429,6 +1422,7 @@ exports[`Video fit renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1442,7 +1436,6 @@ exports[`Video fit renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1454,6 +1447,7 @@ exports[`Video fit renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1466,7 +1460,6 @@ exports[`Video fit renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1478,6 +1471,7 @@ exports[`Video fit renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1486,7 +1480,6 @@ exports[`Video fit renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1498,12 +1491,12 @@ exports[`Video fit renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -1516,6 +1509,7 @@ exports[`Video fit renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1529,7 +1523,6 @@ exports[`Video fit renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  margin: 0px;
   padding: 12px;
 }
 
@@ -1577,6 +1570,7 @@ exports[`Video fit renders 1`] = `
 }
 
 .c16 {
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   margin-top: 0px;
@@ -1886,42 +1880,39 @@ exports[`Video fit renders 1`] = `
             </span>
           </div>
         </div>
-        <div
+        <button
+          aria-label="Open Menu"
+          className="c17"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          type="button"
         >
-          <button
-            aria-label="Open Menu"
-            className="c17"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <div
+            className="c18"
           >
-            <div
-              className="c18"
+            <span
+              className="c19"
+            />
+            <svg
+              aria-label="Actions"
+              className="c7"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
             >
-              <span
-                className="c19"
+              <path
+                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
               />
-              <svg
-                aria-label="Actions"
-                className="c7"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            </svg>
+          </div>
+        </button>
       </div>
     </div>
   </div>
@@ -2049,42 +2040,39 @@ exports[`Video fit renders 1`] = `
             </span>
           </div>
         </div>
-        <div
+        <button
+          aria-label="Open Menu"
+          className="c17"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          type="button"
         >
-          <button
-            aria-label="Open Menu"
-            className="c17"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <div
+            className="c18"
           >
-            <div
-              className="c18"
+            <span
+              className="c19"
+            />
+            <svg
+              aria-label="Actions"
+              className="c7"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
             >
-              <span
-                className="c19"
+              <path
+                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
               />
-              <svg
-                aria-label="Actions"
-                className="c7"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            </svg>
+          </div>
+        </button>
       </div>
     </div>
   </div>
@@ -2132,6 +2120,7 @@ exports[`Video loop renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2147,7 +2136,6 @@ exports[`Video loop renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2159,6 +2147,7 @@ exports[`Video loop renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2172,7 +2161,6 @@ exports[`Video loop renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2184,6 +2172,7 @@ exports[`Video loop renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2196,7 +2185,6 @@ exports[`Video loop renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2208,6 +2196,7 @@ exports[`Video loop renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2216,7 +2205,6 @@ exports[`Video loop renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2228,12 +2216,12 @@ exports[`Video loop renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -2246,6 +2234,7 @@ exports[`Video loop renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2259,7 +2248,6 @@ exports[`Video loop renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  margin: 0px;
   padding: 12px;
 }
 
@@ -2307,6 +2295,7 @@ exports[`Video loop renders 1`] = `
 }
 
 .c16 {
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   margin-top: 0px;
@@ -2598,42 +2587,39 @@ exports[`Video loop renders 1`] = `
             </span>
           </div>
         </div>
-        <div
+        <button
+          aria-label="Open Menu"
+          className="c17"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          type="button"
         >
-          <button
-            aria-label="Open Menu"
-            className="c17"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <div
+            className="c18"
           >
-            <div
-              className="c18"
+            <span
+              className="c19"
+            />
+            <svg
+              aria-label="Actions"
+              className="c7"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
             >
-              <span
-                className="c19"
+              <path
+                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
               />
-              <svg
-                aria-label="Actions"
-                className="c7"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            </svg>
+          </div>
+        </button>
       </div>
     </div>
   </div>
@@ -2681,6 +2667,7 @@ exports[`Video mute renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2696,7 +2683,6 @@ exports[`Video mute renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2708,6 +2694,7 @@ exports[`Video mute renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2721,7 +2708,6 @@ exports[`Video mute renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2733,6 +2719,7 @@ exports[`Video mute renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2745,7 +2732,6 @@ exports[`Video mute renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2757,6 +2743,7 @@ exports[`Video mute renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2765,7 +2752,6 @@ exports[`Video mute renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2777,12 +2763,12 @@ exports[`Video mute renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -2795,6 +2781,7 @@ exports[`Video mute renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2808,7 +2795,6 @@ exports[`Video mute renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  margin: 0px;
   padding: 12px;
 }
 
@@ -2856,6 +2842,7 @@ exports[`Video mute renders 1`] = `
 }
 
 .c16 {
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   margin-top: 0px;
@@ -3147,42 +3134,39 @@ exports[`Video mute renders 1`] = `
             </span>
           </div>
         </div>
-        <div
+        <button
+          aria-label="Open Menu"
+          className="c17"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          type="button"
         >
-          <button
-            aria-label="Open Menu"
-            className="c17"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <div
+            className="c18"
           >
-            <div
-              className="c18"
+            <span
+              className="c19"
+            />
+            <svg
+              aria-label="Actions"
+              className="c7"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
             >
-              <span
-                className="c19"
+              <path
+                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
               />
-              <svg
-                aria-label="Actions"
-                className="c7"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            </svg>
+          </div>
+        </button>
       </div>
     </div>
   </div>
@@ -3230,6 +3214,7 @@ exports[`Video renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3245,7 +3230,6 @@ exports[`Video renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3257,6 +3241,7 @@ exports[`Video renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3270,7 +3255,6 @@ exports[`Video renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3282,6 +3266,7 @@ exports[`Video renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3294,7 +3279,6 @@ exports[`Video renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3306,6 +3290,7 @@ exports[`Video renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3314,7 +3299,6 @@ exports[`Video renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3326,12 +3310,12 @@ exports[`Video renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -3344,6 +3328,7 @@ exports[`Video renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3357,7 +3342,6 @@ exports[`Video renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  margin: 0px;
   padding: 12px;
 }
 
@@ -3405,6 +3389,7 @@ exports[`Video renders 1`] = `
 }
 
 .c16 {
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   margin-top: 0px;
@@ -3696,42 +3681,39 @@ exports[`Video renders 1`] = `
             </span>
           </div>
         </div>
-        <div
+        <button
+          aria-label="Open Menu"
+          className="c17"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          type="button"
         >
-          <button
-            aria-label="Open Menu"
-            className="c17"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <div
+            className="c18"
           >
-            <div
-              className="c18"
+            <span
+              className="c19"
+            />
+            <svg
+              aria-label="Actions"
+              className="c7"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
             >
-              <span
-                className="c19"
+              <path
+                d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
               />
-              <svg
-                aria-label="Actions"
-                className="c7"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                />
-              </svg>
-            </div>
-          </button>
-        </div>
+            </svg>
+          </div>
+        </button>
       </div>
     </div>
   </div>

@@ -11,10 +11,30 @@ import { Text } from 'grommet';
 
 ## Properties
 
-**color**
+**a11yTitle**
 
-A color identifier to use for the text color. For example:
-'status-critical'.
+Custom title to be used by screen readers.
+
+```
+string
+```
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+```
+start
+center
+end
+stretch
+```
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
 
 ```
 string
@@ -42,6 +62,15 @@ large
     large
     string
 }
+string
+```
+
+**color**
+
+A color identifier to use for the text color. For example:
+'status-critical'.
+
+```
 string
 ```
 

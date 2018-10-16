@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (Carousel) => {
   const DocumentedCarousel = describe(Carousel)
@@ -14,6 +14,7 @@ export const doc = (Carousel) => {
       );
 
   DocumentedCarousel.propTypes = {
+    ...genericProps,
     fill: PropTypes.bool.description(`Whether to expand to fill
       all of the available width and height in the parent container.`),
     play: PropTypes.number.description(`If specified, the number of

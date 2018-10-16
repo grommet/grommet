@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (Tabs) => {
   const DocumentedTabs = describe(Tabs)
@@ -15,6 +15,7 @@ export const doc = (Tabs) => {
     );
 
   DocumentedTabs.propTypes = {
+    ...genericProps,
     activeIndex: PropTypes.number.description(
       `Active tab index. If specified, Tabs will be a controlled component. This means that future
 tab changes will not work unless you subscribe to onActive function and update activeIndex

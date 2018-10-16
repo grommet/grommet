@@ -67,7 +67,7 @@ exports[`SkipLink basic 2`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 kcggOX"
+      class="StyledAnchor-sc-1rp7lwl-0 kPVGRd"
       id="main"
       style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
       tabindex="-1"
@@ -81,7 +81,7 @@ exports[`SkipLink basic 2`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 kcggOX"
+      class="StyledAnchor-sc-1rp7lwl-0 kPVGRd"
       id="footer"
       style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
       tabindex="-1"
@@ -101,7 +101,7 @@ exports[`SkipLink basic 3`] = `
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 kcggOX"
+      class="StyledAnchor-sc-1rp7lwl-0 kPVGRd"
       id="main"
       style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
       tabindex="-1"
@@ -115,7 +115,7 @@ exports[`SkipLink basic 3`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 kcggOX"
+      class="StyledAnchor-sc-1rp7lwl-0 kPVGRd"
       id="footer"
       style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
       tabindex="-1"

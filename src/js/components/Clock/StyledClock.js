@@ -1,5 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 
+import { genericStyles } from '../../utils';
+
 export const StyledHour = styled.line`
   stroke-width: ${props => props.theme.clock.analog.hour.width};
   stroke: ${props => (
@@ -25,6 +27,7 @@ export const StyledAnalog = styled.svg`
   width: ${props => props.theme.clock.analog.size[props.size]};
   height: ${props => props.theme.clock.analog.size[props.size]};
 
+  ${genericStyles}
   ${props => props.theme.clock.analog && props.theme.clock.analog.extend}
 `;
 

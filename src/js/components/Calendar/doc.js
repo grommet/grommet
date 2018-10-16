@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (Calendar) => {
   const DocumentedCalendar = describe(Calendar)
@@ -14,6 +14,7 @@ export const doc = (Calendar) => {
     );
 
   DocumentedCalendar.propTypes = {
+    ...genericProps,
     animate: PropTypes.bool.description(`
       Whether to animate the calender as the user interacts with it.
     `).defaultValue(true),

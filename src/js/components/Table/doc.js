@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (Table) => {
   const DocumentedTable = describe(Table)
@@ -12,6 +12,7 @@ export const doc = (Table) => {
     );
 
   DocumentedTable.propTypes = {
+    ...genericProps,
     caption: PropTypes.string.description('One line description.'),
   };
 

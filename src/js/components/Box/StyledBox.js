@@ -2,7 +2,7 @@ import styled, { css, keyframes } from 'styled-components';
 
 import {
   backgroundStyle, breakpointStyle, edgeStyle, focusStyle,
-  normalizeColor, overflowStyle,
+  genericStyles, normalizeColor, overflowStyle,
 } from '../../utils';
 
 const ALIGN_MAP = {
@@ -28,17 +28,6 @@ const ALIGN_CONTENT_MAP = {
 
 const alignContentStyle = css`
   align-content: ${props => ALIGN_CONTENT_MAP[props.alignContent]};
-`;
-
-const ALIGN_SELF_MAP = {
-  center: 'center',
-  end: 'flex-end',
-  start: 'flex-start',
-  stretch: 'stretch',
-};
-
-const alignSelfStyle = css`
-  align-self: ${props => ALIGN_SELF_MAP[props.alignSelf]};
 `;
 
 const BASIS_MAP = {
@@ -114,10 +103,6 @@ const fillStyle = (fillProp) => {
   }
   return undefined;
 };
-
-const gridAreaStyle = css`
-  grid-area: ${props => props.gridArea};
-`;
 
 const JUSTIFY_MAP = {
   between: 'space-between',
@@ -432,13 +417,13 @@ export const StyledBox = styled.div`
   outline: none;
   ${props => !props.basis && 'max-width: 100%;'};
 
+  ${genericStyles}
   ${props => props.heightProp
     && `height: ${props.theme.global.size[props.heightProp] || props.heightProp};`}
   ${props => props.widthProp
     && `width: ${props.theme.global.size[props.widthProp] || props.widthProp};`}
   ${props => props.align && alignStyle}
   ${props => props.alignContent && alignContentStyle}
-  ${props => props.alignSelf && alignSelfStyle}
   ${props => props.background && backgroundStyle(props.background, props.theme)}
   ${props => props.border
     && borderStyle(props.border, props.responsive, props.theme)}
@@ -447,11 +432,7 @@ export const StyledBox = styled.div`
   ${props => props.flex !== undefined && flexStyle}
   ${props => props.basis && basisStyle}
   ${props => props.fillProp && fillStyle(props.fillProp)}
-  ${props => props.gridArea && gridAreaStyle}
   ${props => props.justify && justifyStyle}
-  ${props => (props.margin
-    && edgeStyle('margin', props.margin, props.responsive,
-      props.theme.box.responsiveBreakpoint, props.theme))}
   ${props => (props.pad
     && edgeStyle('padding', props.pad, props.responsive,
       props.theme.box.responsiveBreakpoint, props.theme))}

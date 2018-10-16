@@ -9,6 +9,7 @@ exports[`RoutedButton renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -22,7 +23,6 @@ exports[`RoutedButton renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding: 0px;
 }
 

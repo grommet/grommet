@@ -41,6 +41,7 @@ exports[`Select basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -54,7 +55,6 @@ exports[`Select basic 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -65,6 +65,7 @@ exports[`Select basic 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -76,7 +77,6 @@ exports[`Select basic 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -88,6 +88,8 @@ exports[`Select basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -96,8 +98,6 @@ exports[`Select basic 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin-left: 12px;
-  margin-right: 12px;
   padding: 0px;
 }
 
@@ -312,6 +312,7 @@ exports[`Select complex options and children 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -325,7 +326,6 @@ exports[`Select complex options and children 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -336,6 +336,7 @@ exports[`Select complex options and children 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -347,7 +348,6 @@ exports[`Select complex options and children 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -359,6 +359,8 @@ exports[`Select complex options and children 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -367,8 +369,6 @@ exports[`Select complex options and children 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin-left: 12px;
-  margin-right: 12px;
   padding: 0px;
 }
 
@@ -534,15 +534,15 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 hFTHco"
+  class="StyledButton-sc-323bzc-0 ktlKXq"
   id="test-select"
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 fLPrsm StyledBox-sc-13pk1d4-0 RiBtR"
+    class="Select__StyledSelectBox-sc-17idtfo-1 fLPrsm StyledBox-sc-13pk1d4-0 dzfHcI"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 krpJTk"
+      class="StyledBox-sc-13pk1d4-0 jdXamm"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -560,7 +560,7 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hnbMHr"
+      class="StyledBox-sc-13pk1d4-0 eQriQh"
       style="min-width: auto;"
     >
       <svg
@@ -593,12 +593,12 @@ exports[`Select complex options and children 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
 }
@@ -611,12 +611,12 @@ exports[`Select complex options and children 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -628,6 +628,7 @@ exports[`Select complex options and children 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -636,7 +637,6 @@ exports[`Select complex options and children 3`] = `
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  margin: 0px;
   padding: 0px;
   overflow: auto;
 }
@@ -649,6 +649,7 @@ exports[`Select complex options and children 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -657,7 +658,6 @@ exports[`Select complex options and children 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -837,43 +837,43 @@ exports[`Select complex options and children 4`] = `
 "
 
 @media only screen and (max-width:768px) {
-  .RiBtR {
+  .dzfHcI {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .RiBtR {
+  .dzfHcI {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .krpJTk {
+  .jdXamm {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .krpJTk {
+  .jdXamm {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hnbMHr {
+  .eQriQh {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hnbMHr {
+  .eQriQh {
     padding: 0px;
   }
 }
 
-.gZcqrw {
+.dJDrdW {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -881,72 +881,72 @@ exports[`Select complex options and children 4`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
 }
 
 @media only screen and (max-width:768px) {
-  .gZcqrw {
+  .dJDrdW {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gZcqrw {
+  .dJDrdW {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .kWLcGV {
+  .cJEczh {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .kWLcGV {
+  .cJEczh {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bCYZgZ {
+  .cNYfdo {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bCYZgZ {
+  .cNYfdo {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hOiaYa {
+  .dUQcVP {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hOiaYa {
+  .dUQcVP {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bgCyUq {
+  .easKzl {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bgCyUq {
+  .easKzl {
     padding: 6px;
   }
 }
@@ -1038,6 +1038,7 @@ exports[`Select deselect an option 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1051,7 +1052,6 @@ exports[`Select deselect an option 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1062,6 +1062,7 @@ exports[`Select deselect an option 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1073,7 +1074,6 @@ exports[`Select deselect an option 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1085,6 +1085,8 @@ exports[`Select deselect an option 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1093,8 +1095,6 @@ exports[`Select deselect an option 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin-left: 12px;
-  margin-right: 12px;
   padding: 0px;
 }
 
@@ -1299,6 +1299,7 @@ exports[`Select disabled 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1312,7 +1313,6 @@ exports[`Select disabled 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1323,6 +1323,7 @@ exports[`Select disabled 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1334,7 +1335,6 @@ exports[`Select disabled 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1346,6 +1346,8 @@ exports[`Select disabled 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1354,8 +1356,6 @@ exports[`Select disabled 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin-left: 12px;
-  margin-right: 12px;
   padding: 0px;
 }
 
@@ -1524,16 +1524,16 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 eDLckV"
+  class="StyledButton-sc-323bzc-0 giLeBY"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 fLPrsm StyledBox-sc-13pk1d4-0 RiBtR"
+    class="Select__StyledSelectBox-sc-17idtfo-1 fLPrsm StyledBox-sc-13pk1d4-0 dzfHcI"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 krpJTk"
+      class="StyledBox-sc-13pk1d4-0 jdXamm"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -1551,7 +1551,7 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hnbMHr"
+      class="StyledBox-sc-13pk1d4-0 eQriQh"
       style="min-width: auto;"
     >
       <svg
@@ -1616,6 +1616,7 @@ exports[`Select multiple 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1629,7 +1630,6 @@ exports[`Select multiple 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1640,6 +1640,7 @@ exports[`Select multiple 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1651,7 +1652,6 @@ exports[`Select multiple 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1663,6 +1663,8 @@ exports[`Select multiple 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1671,8 +1673,6 @@ exports[`Select multiple 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin-left: 12px;
-  margin-right: 12px;
   padding: 0px;
 }
 
@@ -1890,6 +1890,7 @@ exports[`Select multiple values 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1903,7 +1904,6 @@ exports[`Select multiple values 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1914,6 +1914,7 @@ exports[`Select multiple values 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1925,7 +1926,6 @@ exports[`Select multiple values 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1937,6 +1937,8 @@ exports[`Select multiple values 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1945,8 +1947,6 @@ exports[`Select multiple values 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin-left: 12px;
-  margin-right: 12px;
   padding: 0px;
 }
 
@@ -2113,15 +2113,15 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 hFTHco"
+  class="StyledButton-sc-323bzc-0 ktlKXq"
   id="test-select"
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 fLPrsm StyledBox-sc-13pk1d4-0 RiBtR"
+    class="Select__StyledSelectBox-sc-17idtfo-1 fLPrsm StyledBox-sc-13pk1d4-0 dzfHcI"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 krpJTk"
+      class="StyledBox-sc-13pk1d4-0 jdXamm"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -2140,7 +2140,7 @@ exports[`Select multiple values 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hnbMHr"
+      class="StyledBox-sc-13pk1d4-0 eQriQh"
       style="min-width: auto;"
     >
       <svg
@@ -2173,12 +2173,12 @@ exports[`Select multiple values 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
 }
@@ -2191,12 +2191,12 @@ exports[`Select multiple values 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2208,6 +2208,7 @@ exports[`Select multiple values 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2216,7 +2217,6 @@ exports[`Select multiple values 3`] = `
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  margin: 0px;
   padding: 0px;
   overflow: auto;
 }
@@ -2229,6 +2229,7 @@ exports[`Select multiple values 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2237,7 +2238,6 @@ exports[`Select multiple values 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2249,6 +2249,7 @@ exports[`Select multiple values 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -2258,7 +2259,6 @@ exports[`Select multiple values 3`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 12px;
 }
 
@@ -2314,6 +2314,7 @@ exports[`Select multiple values 3`] = `
 }
 
 .c9 {
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   margin-top: 0px;
@@ -2474,43 +2475,43 @@ exports[`Select multiple values 4`] = `
 "
 
 @media only screen and (max-width:768px) {
-  .RiBtR {
+  .dzfHcI {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .RiBtR {
+  .dzfHcI {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .krpJTk {
+  .jdXamm {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .krpJTk {
+  .jdXamm {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hnbMHr {
+  .eQriQh {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hnbMHr {
+  .eQriQh {
     padding: 0px;
   }
 }
 
-.gZcqrw {
+.dJDrdW {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2518,84 +2519,84 @@ exports[`Select multiple values 4`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
 }
 
 @media only screen and (max-width:768px) {
-  .gZcqrw {
+  .dJDrdW {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gZcqrw {
+  .dJDrdW {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .kWLcGV {
+  .cJEczh {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .kWLcGV {
+  .cJEczh {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bCYZgZ {
+  .cNYfdo {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bCYZgZ {
+  .cNYfdo {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hOiaYa {
+  .dUQcVP {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hOiaYa {
+  .dUQcVP {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bgCyUq {
+  .easKzl {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bgCyUq {
+  .easKzl {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cDsQRL {
+  .jrNnll {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cDsQRL {
+  .jrNnll {
     padding: 3px;
   }
 }
@@ -2687,6 +2688,7 @@ exports[`Select opens 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2700,7 +2702,6 @@ exports[`Select opens 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2711,6 +2712,7 @@ exports[`Select opens 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -2722,7 +2724,6 @@ exports[`Select opens 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2734,6 +2735,8 @@ exports[`Select opens 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2742,8 +2745,6 @@ exports[`Select opens 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin-left: 12px;
-  margin-right: 12px;
   padding: 0px;
 }
 
@@ -2909,15 +2910,15 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 hFTHco"
+  class="StyledButton-sc-323bzc-0 ktlKXq"
   id="test-select"
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 fLPrsm StyledBox-sc-13pk1d4-0 RiBtR"
+    class="Select__StyledSelectBox-sc-17idtfo-1 fLPrsm StyledBox-sc-13pk1d4-0 dzfHcI"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 krpJTk"
+      class="StyledBox-sc-13pk1d4-0 jdXamm"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -2935,7 +2936,7 @@ exports[`Select opens 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 hnbMHr"
+      class="StyledBox-sc-13pk1d4-0 eQriQh"
       style="min-width: auto;"
     >
       <svg
@@ -2968,12 +2969,12 @@ exports[`Select opens 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
 }
@@ -2986,12 +2987,12 @@ exports[`Select opens 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3003,6 +3004,7 @@ exports[`Select opens 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3011,7 +3013,6 @@ exports[`Select opens 3`] = `
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  margin: 0px;
   padding: 0px;
   overflow: auto;
 }
@@ -3024,6 +3025,7 @@ exports[`Select opens 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3032,7 +3034,6 @@ exports[`Select opens 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3044,6 +3045,7 @@ exports[`Select opens 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -3053,7 +3055,6 @@ exports[`Select opens 3`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 12px;
 }
 
@@ -3106,6 +3107,7 @@ exports[`Select opens 3`] = `
 }
 
 .c9 {
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   margin-top: 0px;
@@ -3266,43 +3268,43 @@ exports[`Select opens 4`] = `
 "
 
 @media only screen and (max-width:768px) {
-  .RiBtR {
+  .dzfHcI {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .RiBtR {
+  .dzfHcI {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .krpJTk {
+  .jdXamm {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .krpJTk {
+  .jdXamm {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hnbMHr {
+  .eQriQh {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hnbMHr {
+  .eQriQh {
     padding: 0px;
   }
 }
 
-.gZcqrw {
+.dJDrdW {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3310,72 +3312,72 @@ exports[`Select opens 4`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
 }
 
 @media only screen and (max-width:768px) {
-  .gZcqrw {
+  .dJDrdW {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gZcqrw {
+  .dJDrdW {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .kWLcGV {
+  .cJEczh {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .kWLcGV {
+  .cJEczh {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bCYZgZ {
+  .cNYfdo {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bCYZgZ {
+  .cNYfdo {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hOiaYa {
+  .dUQcVP {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hOiaYa {
+  .dUQcVP {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bgCyUq {
+  .easKzl {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bgCyUq {
+  .easKzl {
     padding: 6px;
   }
 }
@@ -3428,23 +3430,23 @@ exports[`Select opens 4`] = `
 
 exports[`Select opens 5`] = `
 <div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-1 jZWhdj StyledBox-sc-13pk1d4-0 bCYZgZ"
+  class="SelectContainer__OptionsBox-sc-1wi0ul8-1 jZWhdj StyledBox-sc-13pk1d4-0 cNYfdo"
   role="menubar"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 hOiaYa"
+    class="StyledBox-sc-13pk1d4-0 dUQcVP"
   >
     <button
-      class="StyledButton-sc-323bzc-0 kYseQn"
+      class="StyledButton-sc-323bzc-0 qPFWG"
       role="menuitem"
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bgCyUq"
+        class="StyledBox-sc-13pk1d4-0 easKzl"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 bumlP"
+          class="StyledText-sc-1sadyjn-0 ouimt"
         >
           one
         </span>
@@ -3452,18 +3454,18 @@ exports[`Select opens 5`] = `
     </button>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 hOiaYa"
+    class="StyledBox-sc-13pk1d4-0 dUQcVP"
   >
     <button
-      class="StyledButton-sc-323bzc-0 kYseQn"
+      class="StyledButton-sc-323bzc-0 qPFWG"
       role="menuitem"
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 bgCyUq"
+        class="StyledBox-sc-13pk1d4-0 easKzl"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 bumlP"
+          class="StyledText-sc-1sadyjn-0 ouimt"
         >
           two
         </span>
@@ -3514,6 +3516,7 @@ exports[`Select search 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3527,7 +3530,6 @@ exports[`Select search 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3538,6 +3540,7 @@ exports[`Select search 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -3549,7 +3552,6 @@ exports[`Select search 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3561,6 +3563,8 @@ exports[`Select search 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3569,8 +3573,6 @@ exports[`Select search 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin-left: 12px;
-  margin-right: 12px;
   padding: 0px;
 }
 
@@ -3742,12 +3744,12 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
 }
@@ -3760,12 +3762,12 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3777,6 +3779,7 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3785,7 +3788,6 @@ exports[`Select search 2`] = `
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  margin: 0px;
   padding: 0px;
   overflow: auto;
 }
@@ -3798,6 +3800,7 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3806,7 +3809,6 @@ exports[`Select search 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3818,6 +3820,7 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
@@ -3827,7 +3830,6 @@ exports[`Select search 2`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 12px;
 }
 
@@ -3839,6 +3841,7 @@ exports[`Select search 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3847,7 +3850,6 @@ exports[`Select search 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin: 0px;
   padding: 6px;
 }
 
@@ -3944,6 +3946,7 @@ exports[`Select search 2`] = `
 }
 
 .c12 {
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   margin-top: 0px;
@@ -4130,43 +4133,43 @@ exports[`Select search 3`] = `
 "
 
 @media only screen and (max-width:768px) {
-  .RiBtR {
+  .dzfHcI {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .RiBtR {
+  .dzfHcI {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .krpJTk {
+  .jdXamm {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .krpJTk {
+  .jdXamm {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hnbMHr {
+  .eQriQh {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hnbMHr {
+  .eQriQh {
     padding: 0px;
   }
 }
 
-.gZcqrw {
+.dJDrdW {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4174,84 +4177,84 @@ exports[`Select search 3`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
 }
 
 @media only screen and (max-width:768px) {
-  .gZcqrw {
+  .dJDrdW {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gZcqrw {
+  .dJDrdW {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .kWLcGV {
+  .cJEczh {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .kWLcGV {
+  .cJEczh {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bCYZgZ {
+  .cNYfdo {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bCYZgZ {
+  .cNYfdo {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hOiaYa {
+  .dUQcVP {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hOiaYa {
+  .dUQcVP {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bgCyUq {
+  .easKzl {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bgCyUq {
+  .easKzl {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cDsQRL {
+  .jrNnll {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cDsQRL {
+  .jrNnll {
     padding: 3px;
   }
 }
@@ -4343,6 +4346,7 @@ exports[`Select select an option 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4356,7 +4360,6 @@ exports[`Select select an option 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -4367,6 +4370,7 @@ exports[`Select select an option 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -4378,7 +4382,6 @@ exports[`Select select an option 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -4390,6 +4393,8 @@ exports[`Select select an option 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4398,8 +4403,6 @@ exports[`Select select an option 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin-left: 12px;
-  margin-right: 12px;
   padding: 0px;
 }
 
@@ -4603,6 +4606,7 @@ exports[`Select select an option with complex options 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4616,7 +4620,6 @@ exports[`Select select an option with complex options 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -4627,6 +4630,7 @@ exports[`Select select an option with complex options 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -4638,7 +4642,6 @@ exports[`Select select an option with complex options 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -4650,6 +4653,8 @@ exports[`Select select an option with complex options 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4658,8 +4663,6 @@ exports[`Select select an option with complex options 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin-left: 12px;
-  margin-right: 12px;
   padding: 0px;
 }
 
@@ -4800,6 +4803,7 @@ exports[`Select select an option with enter 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4813,7 +4817,6 @@ exports[`Select select an option with enter 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -4824,6 +4827,7 @@ exports[`Select select an option with enter 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -4835,7 +4839,6 @@ exports[`Select select an option with enter 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -4847,6 +4850,8 @@ exports[`Select select an option with enter 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -4855,8 +4860,6 @@ exports[`Select select an option with enter 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin-left: 12px;
-  margin-right: 12px;
   padding: 0px;
 }
 
@@ -5060,6 +5063,7 @@ exports[`Select select another option 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5073,7 +5077,6 @@ exports[`Select select another option 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -5084,6 +5087,7 @@ exports[`Select select another option 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -5095,7 +5099,6 @@ exports[`Select select another option 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -5107,6 +5110,8 @@ exports[`Select select another option 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -5115,8 +5120,6 @@ exports[`Select select another option 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin-left: 12px;
-  margin-right: 12px;
   padding: 0px;
 }
 
@@ -5323,6 +5326,7 @@ exports[`Select size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5336,7 +5340,6 @@ exports[`Select size 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -5347,6 +5350,7 @@ exports[`Select size 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -5358,7 +5362,6 @@ exports[`Select size 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -5370,6 +5373,8 @@ exports[`Select size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -5378,8 +5383,6 @@ exports[`Select size 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin-left: 12px;
-  margin-right: 12px;
   padding: 0px;
 }
 

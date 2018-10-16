@@ -19,6 +19,94 @@ Custom title to be used by screen readers.
 string
 ```
 
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+```
+start
+center
+end
+stretch
+```
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+```
+string
+```
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+```
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+```
+
 **align**
 
 How to align the contents along the cross axis.
@@ -42,18 +130,6 @@ center
 end
 between
 around
-stretch
-```
-
-**alignSelf**
-
-How to align along the cross axis when contained in
-        a Box or along the column axis when contained in a Grid.
-
-```
-start
-center
-end
 stretch
 ```
 
@@ -276,15 +352,6 @@ xlarge
 string
 ```
 
-**gridArea**
-
-The name of the area to place
-      this Box in inside a parent Grid.
-
-```
-string
-```
-
 **height**
 
 A fixed height.
@@ -307,73 +374,6 @@ start
 center
 between
 end
-```
-
-**margin**
-
-The amount of margin around the box. An object can
-        be specified to distinguish horizontal margin, vertical margin, and
-        margin on a particular side of the box
-
-```
-none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string
 ```
 
 **overflow**

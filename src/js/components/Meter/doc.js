@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { backgroundPropType, getAvailableAtBadge } from '../../utils';
+import { backgroundPropType, genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (Meter) => {
   const DocumentedMeter = describe(Meter)
@@ -12,6 +12,7 @@ export const doc = (Meter) => {
     );
 
   DocumentedMeter.propTypes = {
+    ...genericProps,
     background: backgroundPropType,
     round: PropTypes.bool.description('Whether to round the line ends'),
     size: PropTypes.oneOfType([

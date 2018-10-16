@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (DataTable) => {
   const DocumentedDataTable = describe(DataTable)
@@ -12,6 +12,7 @@ export const doc = (DataTable) => {
       );
 
   DocumentedDataTable.propTypes = {
+    ...genericProps,
     columns: PropTypes.arrayOf(PropTypes.shape({
       align: PropTypes.oneOf(['center', 'start', 'end']),
       aggregate: PropTypes.oneOf(['avg', 'max', 'min', 'sum']),

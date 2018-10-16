@@ -77,7 +77,7 @@ class DataTable extends Component {
   render() {
     const {
       /* eslint-disable-next-line react/prop-types */
-      columns, groupBy, onMore, resizeable, size, sortable, theme,
+      columns, groupBy, onMore, resizeable, size, sortable, theme, ...rest
      } = this.props;
     const {
       data, filtering, filters, footerValues, groups, groupState, primaryProperty,
@@ -89,7 +89,7 @@ class DataTable extends Component {
     }
 
     return (
-      <StyledDataTable>
+      <StyledDataTable theme={theme} {...rest}>
         <Header
           columns={columns}
           filtering={filtering}

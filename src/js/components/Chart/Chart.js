@@ -192,6 +192,7 @@ class Chart extends Component {
         preserveAspectRatio='none'
         width={size === 'full' ? '100%' : width}
         height={size === 'full' ? '100%' : height}
+        theme={theme}
         {...rest}
       >
         <g

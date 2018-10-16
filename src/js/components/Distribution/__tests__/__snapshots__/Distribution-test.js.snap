@@ -19,6 +19,7 @@ exports[`Distribution gap renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -27,7 +28,6 @@ exports[`Distribution gap renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  margin: 0px;
   padding: 0px;
   overflow: hidden;
 }
@@ -39,6 +39,7 @@ exports[`Distribution gap renders 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -50,7 +51,6 @@ exports[`Distribution gap renders 1`] = `
   -webkit-flex-basis: 50%;
   -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
-  margin: 0px;
   padding: 0px;
   overflow: hidden;
 }
@@ -62,6 +62,7 @@ exports[`Distribution gap renders 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -73,7 +74,6 @@ exports[`Distribution gap renders 1`] = `
   -webkit-flex-basis: 66.66%;
   -ms-flex-preferred-size: 66.66%;
   flex-basis: 66.66%;
-  margin: 0px;
   padding: 0px;
   overflow: hidden;
 }
@@ -85,6 +85,7 @@ exports[`Distribution gap renders 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -96,7 +97,6 @@ exports[`Distribution gap renders 1`] = `
   -webkit-flex-basis: 33.33%;
   -ms-flex-preferred-size: 33.33%;
   flex-basis: 33.33%;
-  margin: 0px;
   padding: 0px;
   overflow: hidden;
 }
@@ -410,6 +410,7 @@ exports[`Distribution values renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -418,7 +419,6 @@ exports[`Distribution values renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  margin: 0px;
   padding: 0px;
   overflow: hidden;
 }
@@ -430,6 +430,7 @@ exports[`Distribution values renders 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -441,7 +442,6 @@ exports[`Distribution values renders 1`] = `
   -webkit-flex-basis: 75%;
   -ms-flex-preferred-size: 75%;
   flex-basis: 75%;
-  margin: 0px;
   padding: 0px;
   overflow: hidden;
 }
@@ -453,6 +453,7 @@ exports[`Distribution values renders 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -464,7 +465,6 @@ exports[`Distribution values renders 1`] = `
   -webkit-flex-basis: 25%;
   -ms-flex-preferred-size: 25%;
   flex-basis: 25%;
-  margin: 0px;
   padding: 0px;
   overflow: hidden;
 }
@@ -476,6 +476,7 @@ exports[`Distribution values renders 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -487,7 +488,6 @@ exports[`Distribution values renders 1`] = `
   -webkit-flex-basis: 50%;
   -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
-  margin: 0px;
   padding: 0px;
   overflow: hidden;
 }
@@ -499,6 +499,7 @@ exports[`Distribution values renders 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -510,7 +511,6 @@ exports[`Distribution values renders 1`] = `
   -webkit-flex-basis: 50%;
   -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
-  margin: 0px;
   padding: 0px;
   overflow: hidden;
 }
@@ -522,6 +522,7 @@ exports[`Distribution values renders 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -533,7 +534,6 @@ exports[`Distribution values renders 1`] = `
   -webkit-flex-basis: 66.66%;
   -ms-flex-preferred-size: 66.66%;
   flex-basis: 66.66%;
-  margin: 0px;
   padding: 0px;
   overflow: hidden;
 }
@@ -545,6 +545,7 @@ exports[`Distribution values renders 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -556,7 +557,6 @@ exports[`Distribution values renders 1`] = `
   -webkit-flex-basis: 33.33%;
   -ms-flex-preferred-size: 33.33%;
   flex-basis: 33.33%;
-  margin: 0px;
   padding: 0px;
   overflow: hidden;
 }

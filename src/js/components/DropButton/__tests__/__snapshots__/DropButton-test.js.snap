@@ -9,6 +9,7 @@ exports[`DropButton close by clicking outside 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -22,7 +23,6 @@ exports[`DropButton close by clicking outside 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -87,25 +87,25 @@ exports[`DropButton close by clicking outside 2`] = `
 
 exports[`DropButton close by clicking outside 3`] = `
 "@media only screen and (max-width:768px) {
-  .gYYddl {
+  .MJmug {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gYYddl {
+  .MJmug {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gZcqrw {
+  .dJDrdW {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gZcqrw {
+  .dJDrdW {
     padding: 0px;
   }
 }
@@ -133,6 +133,7 @@ exports[`DropButton closed 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -146,7 +147,6 @@ exports[`DropButton closed 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -213,6 +213,7 @@ exports[`DropButton disabled 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -226,7 +227,6 @@ exports[`DropButton disabled 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -289,6 +289,7 @@ exports[`DropButton open and close 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -302,7 +303,6 @@ exports[`DropButton open and close 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -367,25 +367,25 @@ exports[`DropButton open and close 2`] = `
 
 exports[`DropButton open and close 3`] = `
 "@media only screen and (max-width:768px) {
-  .gYYddl {
+  .MJmug {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gYYddl {
+  .MJmug {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gZcqrw {
+  .dJDrdW {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gZcqrw {
+  .dJDrdW {
     padding: 0px;
   }
 }
@@ -413,6 +413,7 @@ exports[`DropButton opened 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -426,7 +427,6 @@ exports[`DropButton opened 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -493,6 +493,7 @@ exports[`DropButton opened ref 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -506,7 +507,6 @@ exports[`DropButton opened ref 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -571,25 +571,25 @@ exports[`DropButton opened ref 2`] = `
 
 exports[`DropButton opened ref 3`] = `
 "@media only screen and (max-width:768px) {
-  .gYYddl {
+  .MJmug {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gYYddl {
+  .MJmug {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gZcqrw {
+  .dJDrdW {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gZcqrw {
+  .dJDrdW {
     padding: 0px;
   }
 }

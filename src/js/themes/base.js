@@ -158,6 +158,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         medium: `${baseSpacing}px`, // 24
         large: `${baseSpacing * 2}px`, // 48
         xlarge: `${baseSpacing * 4}px`, // 96
+        responsiveBreakpoint: 'small',
       },
       elevation: {
         light: {

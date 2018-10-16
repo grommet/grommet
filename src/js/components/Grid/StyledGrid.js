@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { genericStyles } from '../../utils';
+
 const fillStyle = (fill) => {
   if (fill === 'horizontal') {
     return 'width: 100%;';
@@ -168,6 +170,7 @@ export const StyledGrid = styled.div`
   display: grid;
   box-sizing: border-box;
 
+  ${genericStyles}
   ${props => props.fillContainer && fillStyle(props.fillContainer)}
   ${props => props.align && alignStyle}
   ${props => props.alignContent && alignContentStyle}

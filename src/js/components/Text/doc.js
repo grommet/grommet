@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (Text) => {
   const DocumentedText = describe(Text)
@@ -12,6 +12,7 @@ export const doc = (Text) => {
     );
 
   DocumentedText.propTypes = {
+    ...genericProps,
     color: PropTypes.string.description(
       `A color identifier to use for the text color. For example:
 'status-critical'.`

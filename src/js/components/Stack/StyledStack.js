@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { genericStyles } from '../../utils';
+
 const fillStyle = `
   width: 100%;
   height: 100%;
@@ -10,6 +12,7 @@ const fillStyle = `
 
 export const StyledStack = styled.div`
   position: relative;
+  ${genericStyles}
   ${props => props.fillContainer && fillStyle}
   ${props => props.theme.stack && props.theme.stack.extend}
 `;

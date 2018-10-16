@@ -19,13 +19,13 @@ exports[`RangeSelector basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -37,13 +37,13 @@ exports[`RangeSelector basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -55,6 +55,7 @@ exports[`RangeSelector basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -64,7 +65,6 @@ exports[`RangeSelector basic 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   overflow: visible;
 }
@@ -77,6 +77,7 @@ exports[`RangeSelector basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -91,7 +92,6 @@ exports[`RangeSelector basic 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 6px;
   padding: 0px;
 }
 
@@ -103,12 +103,12 @@ exports[`RangeSelector basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -121,6 +121,7 @@ exports[`RangeSelector basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -129,7 +130,6 @@ exports[`RangeSelector basic 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -349,13 +349,13 @@ exports[`RangeSelector color 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -367,13 +367,13 @@ exports[`RangeSelector color 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -385,6 +385,7 @@ exports[`RangeSelector color 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -394,7 +395,6 @@ exports[`RangeSelector color 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   overflow: visible;
 }
@@ -407,6 +407,7 @@ exports[`RangeSelector color 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -421,7 +422,6 @@ exports[`RangeSelector color 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 6px;
   padding: 0px;
 }
 
@@ -433,12 +433,12 @@ exports[`RangeSelector color 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -451,6 +451,7 @@ exports[`RangeSelector color 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(253,111,255,0.4);
   color: #444444;
   min-width: 0;
@@ -459,7 +460,6 @@ exports[`RangeSelector color 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -679,13 +679,13 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -697,13 +697,13 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -715,6 +715,7 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -724,7 +725,6 @@ exports[`RangeSelector direction 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   overflow: visible;
 }
@@ -737,6 +737,7 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -751,7 +752,6 @@ exports[`RangeSelector direction 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 6px;
   padding: 0px;
 }
 
@@ -763,12 +763,12 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -781,6 +781,7 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -789,7 +790,6 @@ exports[`RangeSelector direction 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -801,13 +801,13 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -819,6 +819,7 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -828,7 +829,6 @@ exports[`RangeSelector direction 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0px;
   padding: 0px;
   overflow: visible;
 }
@@ -841,6 +841,7 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -855,7 +856,6 @@ exports[`RangeSelector direction 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 6px;
   padding: 0px;
 }
 
@@ -867,12 +867,12 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -885,6 +885,7 @@ exports[`RangeSelector direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -893,7 +894,6 @@ exports[`RangeSelector direction 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1292,13 +1292,13 @@ exports[`RangeSelector handle keyboard 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1310,13 +1310,13 @@ exports[`RangeSelector handle keyboard 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1328,6 +1328,7 @@ exports[`RangeSelector handle keyboard 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1337,7 +1338,6 @@ exports[`RangeSelector handle keyboard 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   overflow: visible;
 }
@@ -1350,6 +1350,7 @@ exports[`RangeSelector handle keyboard 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1364,7 +1365,6 @@ exports[`RangeSelector handle keyboard 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 6px;
   padding: 0px;
 }
 
@@ -1376,12 +1376,12 @@ exports[`RangeSelector handle keyboard 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -1394,6 +1394,7 @@ exports[`RangeSelector handle keyboard 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -1402,7 +1403,6 @@ exports[`RangeSelector handle keyboard 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1577,13 +1577,13 @@ exports[`RangeSelector handle mouse 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1595,13 +1595,13 @@ exports[`RangeSelector handle mouse 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1613,6 +1613,7 @@ exports[`RangeSelector handle mouse 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1622,7 +1623,6 @@ exports[`RangeSelector handle mouse 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   overflow: visible;
 }
@@ -1635,6 +1635,7 @@ exports[`RangeSelector handle mouse 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1649,7 +1650,6 @@ exports[`RangeSelector handle mouse 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 6px;
   padding: 0px;
 }
 
@@ -1661,12 +1661,12 @@ exports[`RangeSelector handle mouse 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -1679,6 +1679,7 @@ exports[`RangeSelector handle mouse 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -1687,7 +1688,6 @@ exports[`RangeSelector handle mouse 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1862,13 +1862,13 @@ exports[`RangeSelector invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1880,13 +1880,13 @@ exports[`RangeSelector invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1898,6 +1898,7 @@ exports[`RangeSelector invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1907,7 +1908,6 @@ exports[`RangeSelector invert 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   overflow: visible;
 }
@@ -1920,6 +1920,7 @@ exports[`RangeSelector invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1934,7 +1935,6 @@ exports[`RangeSelector invert 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 6px;
   padding: 0px;
 }
 
@@ -1946,12 +1946,12 @@ exports[`RangeSelector invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -1964,6 +1964,7 @@ exports[`RangeSelector invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -1972,7 +1973,6 @@ exports[`RangeSelector invert 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1984,6 +1984,7 @@ exports[`RangeSelector invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(204,204,204,0.4);
   color: #444444;
   min-width: 0;
@@ -1992,7 +1993,6 @@ exports[`RangeSelector invert 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2337,13 +2337,13 @@ exports[`RangeSelector max 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2355,13 +2355,13 @@ exports[`RangeSelector max 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2373,6 +2373,7 @@ exports[`RangeSelector max 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2382,7 +2383,6 @@ exports[`RangeSelector max 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   overflow: visible;
 }
@@ -2395,6 +2395,7 @@ exports[`RangeSelector max 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2409,7 +2410,6 @@ exports[`RangeSelector max 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 6px;
   padding: 0px;
 }
 
@@ -2421,12 +2421,12 @@ exports[`RangeSelector max 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -2439,6 +2439,7 @@ exports[`RangeSelector max 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -2447,7 +2448,6 @@ exports[`RangeSelector max 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2667,13 +2667,13 @@ exports[`RangeSelector min 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2685,13 +2685,13 @@ exports[`RangeSelector min 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2703,6 +2703,7 @@ exports[`RangeSelector min 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2712,7 +2713,6 @@ exports[`RangeSelector min 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   overflow: visible;
 }
@@ -2725,6 +2725,7 @@ exports[`RangeSelector min 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2739,7 +2740,6 @@ exports[`RangeSelector min 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 6px;
   padding: 0px;
 }
 
@@ -2751,12 +2751,12 @@ exports[`RangeSelector min 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -2769,6 +2769,7 @@ exports[`RangeSelector min 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -2777,7 +2778,6 @@ exports[`RangeSelector min 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2997,13 +2997,13 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3015,13 +3015,13 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3033,6 +3033,7 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3042,7 +3043,6 @@ exports[`RangeSelector opacity 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   overflow: visible;
 }
@@ -3055,6 +3055,7 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3069,7 +3070,6 @@ exports[`RangeSelector opacity 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 6px;
   padding: 0px;
 }
 
@@ -3081,12 +3081,12 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -3099,6 +3099,7 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -3107,7 +3108,6 @@ exports[`RangeSelector opacity 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3119,6 +3119,7 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.1);
   min-width: 0;
   min-height: 0;
@@ -3126,7 +3127,6 @@ exports[`RangeSelector opacity 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3138,6 +3138,7 @@ exports[`RangeSelector opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.8);
   color: #f8f8f8;
   min-width: 0;
@@ -3146,7 +3147,6 @@ exports[`RangeSelector opacity 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3616,13 +3616,13 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -3634,6 +3634,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3643,7 +3644,6 @@ exports[`RangeSelector round 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   overflow: visible;
 }
@@ -3656,6 +3656,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -3670,7 +3671,6 @@ exports[`RangeSelector round 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 6px;
   padding: 0px;
 }
 
@@ -3682,12 +3682,12 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -3700,13 +3700,13 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
   border-radius: 6px;
 }
@@ -3719,6 +3719,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -3727,7 +3728,6 @@ exports[`RangeSelector round 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
   border-radius: 6px;
 }
@@ -3740,13 +3740,13 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -3759,6 +3759,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -3767,7 +3768,6 @@ exports[`RangeSelector round 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -3780,13 +3780,13 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
   border-radius: 24px;
 }
@@ -3799,6 +3799,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -3807,7 +3808,6 @@ exports[`RangeSelector round 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
   border-radius: 24px;
 }
@@ -3820,13 +3820,13 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
   border-radius: 48px;
 }
@@ -3839,6 +3839,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -3847,7 +3848,6 @@ exports[`RangeSelector round 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
   border-radius: 48px;
 }
@@ -3860,13 +3860,13 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
   border-radius: 100%;
 }
@@ -3879,6 +3879,7 @@ exports[`RangeSelector round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -3887,7 +3888,6 @@ exports[`RangeSelector round 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
   border-radius: 100%;
 }
@@ -4704,13 +4704,13 @@ exports[`RangeSelector size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -4722,13 +4722,13 @@ exports[`RangeSelector size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -4740,6 +4740,7 @@ exports[`RangeSelector size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4749,7 +4750,6 @@ exports[`RangeSelector size 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   overflow: visible;
 }
@@ -4762,6 +4762,7 @@ exports[`RangeSelector size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -4776,7 +4777,6 @@ exports[`RangeSelector size 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 6px;
   padding: 0px;
 }
 
@@ -4788,12 +4788,12 @@ exports[`RangeSelector size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -4806,6 +4806,7 @@ exports[`RangeSelector size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -4814,7 +4815,6 @@ exports[`RangeSelector size 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -5712,13 +5712,13 @@ exports[`RangeSelector step 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -5730,13 +5730,13 @@ exports[`RangeSelector step 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -5748,6 +5748,7 @@ exports[`RangeSelector step 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5757,7 +5758,6 @@ exports[`RangeSelector step 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   overflow: visible;
 }
@@ -5770,6 +5770,7 @@ exports[`RangeSelector step 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -5784,7 +5785,6 @@ exports[`RangeSelector step 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 6px;
   padding: 0px;
 }
 
@@ -5796,12 +5796,12 @@ exports[`RangeSelector step 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
   border-radius: 12px;
 }
@@ -5814,6 +5814,7 @@ exports[`RangeSelector step 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background-color: rgba(125,76,219,0.4);
   color: #f8f8f8;
   min-width: 0;
@@ -5822,7 +5823,6 @@ exports[`RangeSelector step 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 

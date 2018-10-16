@@ -411,7 +411,7 @@ class Video extends Component {
 
   render() {
     const {
-      autoPlay, children, controls, loop, theme, ...rest
+      alignSelf, autoPlay, children, controls, gridArea, loop, margin, theme, ...rest
     } = this.props;
     const { height, videoRef, width } = this.state;
 
@@ -437,7 +437,14 @@ class Video extends Component {
     }
 
     return (
-      <StyledVideoContainer {...mouseEventListeners} theme={theme} style={style}>
+      <StyledVideoContainer
+        {...mouseEventListeners}
+        alignSelf={alignSelf}
+        gridArea={gridArea}
+        margin={margin}
+        theme={theme}
+        style={style}
+      >
         <StyledVideo
           {...rest}
           ref={videoRef}

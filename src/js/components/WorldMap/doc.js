@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (WorldMap) => {
   const DocumentedWorldMap = describe(WorldMap)
@@ -9,6 +9,7 @@ export const doc = (WorldMap) => {
     .usage("import { WorldMap } from 'grommet';\n<WorldMap />");
 
   DocumentedWorldMap.propTypes = {
+    ...genericProps,
     color: PropTypes.string.description('Default color'),
     continents: PropTypes.arrayOf(PropTypes.shape({
       color: PropTypes.string,
