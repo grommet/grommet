@@ -541,7 +541,7 @@ exports[`Select complex options and children 2`] = `
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hcFNwB StyledBox-sc-13pk1d4-0 RiBtR"
+    class="Select__StyledSelectBox-sc-17idtfo-1 fLPrsm StyledBox-sc-13pk1d4-0 RiBtR"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 krpJTk"
@@ -551,7 +551,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 caHPJp"
+          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 cjVXPX"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -667,14 +667,14 @@ exports[`Select complex options and children 3`] = `
 .c6:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c0 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -897,11 +897,11 @@ exports[`Select complex options and children 4`] = `
 
 
 
-.bAIlVh {
+.bZmBlY {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -925,7 +925,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bAIlVh {
+  .bZmBlY {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1479,7 +1479,7 @@ exports[`Select disabled 2`] = `
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hcFNwB StyledBox-sc-13pk1d4-0 RiBtR"
+    class="Select__StyledSelectBox-sc-17idtfo-1 fLPrsm StyledBox-sc-13pk1d4-0 RiBtR"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 krpJTk"
@@ -1489,7 +1489,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 caHPJp"
+          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 cjVXPX"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2070,7 +2070,7 @@ exports[`Select multiple values 2`] = `
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hcFNwB StyledBox-sc-13pk1d4-0 RiBtR"
+    class="Select__StyledSelectBox-sc-17idtfo-1 fLPrsm StyledBox-sc-13pk1d4-0 RiBtR"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 krpJTk"
@@ -2080,7 +2080,7 @@ exports[`Select multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 caHPJp"
+          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 cjVXPX"
           id="test-select__input"
           multiple=""
           placeholder="test select"
@@ -2215,20 +2215,20 @@ exports[`Select multiple values 3`] = `
   text-align: inherit;
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c6:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c0 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2496,11 +2496,11 @@ exports[`Select multiple values 4`] = `
 
 
 
-.bAIlVh {
+.bZmBlY {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2524,7 +2524,7 @@ exports[`Select multiple values 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bAIlVh {
+  .bZmBlY {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2812,7 +2812,7 @@ exports[`Select opens 2`] = `
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hcFNwB StyledBox-sc-13pk1d4-0 RiBtR"
+    class="Select__StyledSelectBox-sc-17idtfo-1 fLPrsm StyledBox-sc-13pk1d4-0 RiBtR"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 krpJTk"
@@ -2822,7 +2822,7 @@ exports[`Select opens 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 caHPJp"
+          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 cjVXPX"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2959,14 +2959,14 @@ exports[`Select opens 3`] = `
 .c6:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c0 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3222,11 +3222,11 @@ exports[`Select opens 4`] = `
 
 
 
-.bAIlVh {
+.bZmBlY {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3250,7 +3250,7 @@ exports[`Select opens 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bAIlVh {
+  .bZmBlY {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3279,7 +3279,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 hOiaYa"
   >
     <button
-      class="StyledButton-sc-323bzc-0 fwMFPF"
+      class="StyledButton-sc-323bzc-0 kYseQn"
       role="menuitem"
       type="button"
     >
@@ -3298,7 +3298,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 hOiaYa"
   >
     <button
-      class="StyledButton-sc-323bzc-0 fwMFPF"
+      class="StyledButton-sc-323bzc-0 kYseQn"
       role="menuitem"
       type="button"
     >
@@ -3698,14 +3698,14 @@ exports[`Select search 2`] = `
 .c9:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c0 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4043,11 +4043,11 @@ exports[`Select search 3`] = `
 
 
 
-.bAIlVh {
+.bZmBlY {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4071,7 +4071,7 @@ exports[`Select search 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .bAIlVh {
+  .bZmBlY {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

@@ -1,8 +1,9 @@
 import { css } from 'styled-components';
+import { rgba } from 'polished';
 
 import { FormCheckmark } from 'grommet-icons';
 
-import { colorForName } from '../../../utils';
+import { normalizeColor } from '../../../utils';
 
 import { ArrowDown } from './components/icons/ArrowDown';
 import { SearchInput } from './components/SearchInput';
@@ -12,7 +13,7 @@ export const theme = {
     colors: {
       border: '#e0e0e0',
       focus: '#2196F3',
-      gray: 'rgba(0, 0, 0, 0.54)',
+      gray: rgba(0, 0, 0, 0.54),
     },
     drop: {
       background: '#ffffff',
@@ -35,7 +36,7 @@ export const theme = {
   checkBox: {
     border: {
       color: {
-        light: css`${props => colorForName('gray', props.theme)}`,
+        light: css`${props => normalizeColor('gray', props.theme)}`,
       },
       radius: '2px',
     },
@@ -50,11 +51,11 @@ export const theme = {
     size: '18px',
     extend: props => `
       input:checked + div {
-        border-color: ${colorForName('brand', props.theme)};
-        background: ${colorForName('brand', props.theme)};
+        border-color: ${normalizeColor('brand', props.theme)};
+        background: ${normalizeColor('brand', props.theme)};
 
         > svg {
-          stroke: ${colorForName('white', props.theme)};
+          stroke: ${normalizeColor('white', props.theme)};
         }
       }
     `,
@@ -70,7 +71,7 @@ export const theme = {
   },
   textInput: {
     extend: props => `
-      color: ${colorForName('gray', props.theme)};
+      color: ${normalizeColor('gray', props.theme)};
       font-weight: 400;
       font-size: 13px;
       padding: 14px;

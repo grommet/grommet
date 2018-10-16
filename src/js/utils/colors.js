@@ -1,13 +1,20 @@
 
-export const colorForName = (name, theme, required) => {
-  const themeColor = theme.global.colors[name];
-  if (themeColor) {
-    if (typeof themeColor === 'object') {
-      return theme.dark ? themeColor.dark : themeColor.light;
+export const normalizeColor = (color, theme, required) => {
+  const colorSpec = theme.global.colors[color] || color;
+  // If the color has a light or dark object, use that
+  let result = colorSpec;
+  if (colorSpec) {
+    if (theme.dark && colorSpec.dark) {
+      result = colorSpec.dark;
+    } else if (!theme.dark && colorSpec.light) {
+      result = colorSpec.light;
     }
-    return themeColor;
   }
-  return required ? 'none' : name;
+  // allow one level of indirection in color names
+  if (result && theme.global.colors[result]) {
+    result = normalizeColor(result, theme);
+  }
+  return (required && result === color) ? 'inherit' : result;
 };
 
 const parseHexToRGB = color => (
@@ -42,17 +49,4 @@ export const getRGBA = (color, opacity) => {
     return `rgba(${red}, ${green}, ${blue}, ${opacity || 1})`;
   }
   return undefined;
-};
-
-export const normalizeColor = (color, theme) => {
-  // If the color has a light or dark object, use that
-  let result = color;
-  if (color) {
-    if (theme.dark && color.dark) {
-      result = color.dark;
-    } else if (!theme.dark && color.light) {
-      result = color.light;
-    }
-  }
-  return result;
 };

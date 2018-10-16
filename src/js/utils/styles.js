@@ -1,14 +1,14 @@
 import { css } from 'styled-components';
 
-import { colorForName } from './colors';
+import { normalizeColor } from './colors';
 import { breakpointStyle, parseMetricToNum } from './mixins';
 
 export const baseStyle = css`
   font-family: ${props => props.theme.global.font.family};
   font-size: ${props => props.theme.global.font.size};
   line-height: ${props => props.theme.global.font.height};
-  color: ${props => colorForName('text', props.theme, true)};
-  background: ${props => colorForName('background', props.theme, true)};
+  color: ${props => normalizeColor('text', props.theme, true)};
+  background: ${props => normalizeColor('background', props.theme, true)};
 
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -20,8 +20,7 @@ export const baseStyle = css`
 export const controlBorderStyle = css`
   border: ${props => (
     props.theme.global.control.border.width)} solid ${props => (
-      (props.theme.global.control.border.color
-      || props.theme.global.control.border.color)[props.theme.dark ? 'dark' : 'light'])};
+      normalizeColor('border', props.theme))};
   border-radius: ${props => props.theme.global.control.border.radius};
 `;
 
@@ -151,6 +150,7 @@ export const overflowStyle = (overflowProp) => {
   `;
 };
 
+// evalStyle() converts a styled-components item into a string
 export const evalStyle = (arg, theme) => {
   if (arg && Array.isArray(arg) && typeof arg[0] === 'function') {
     return arg[0]({ theme });

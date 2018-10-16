@@ -6,7 +6,7 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
-import { colorForName } from '../../utils';
+import { normalizeColor } from '../../utils';
 
 export class Searcher extends Component {
   inputRef = React.createRef()
@@ -47,7 +47,7 @@ export class Searcher extends Component {
           </Box>
         ) : null}
         <Button
-          icon={<FormSearch color={colorForName(filtering === property ? 'brand' : 'border', theme)} />}
+          icon={<FormSearch color={normalizeColor(filtering === property ? 'brand' : 'border', theme)} />}
           hoverIndicator
           onClick={() => onFiltering(filtering === property ? undefined : property)}
         />

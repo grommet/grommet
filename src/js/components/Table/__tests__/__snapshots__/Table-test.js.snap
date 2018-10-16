@@ -14,7 +14,7 @@ exports[`Table caption renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -47,7 +47,7 @@ exports[`Table renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -74,7 +74,7 @@ exports[`TableBody renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -114,7 +114,7 @@ exports[`TableCell plain renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -203,7 +203,7 @@ exports[`TableCell renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -320,7 +320,7 @@ exports[`TableCell scope renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -540,7 +540,7 @@ exports[`TableCell size renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -763,7 +763,7 @@ exports[`TableCell verticalAlign renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -840,7 +840,7 @@ exports[`TableFooter renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -871,7 +871,7 @@ exports[`TableHeader renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -902,7 +902,7 @@ exports[`TableRow renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

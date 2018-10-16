@@ -18,7 +18,7 @@ import {
   VolumeLow,
 } from 'grommet-icons';
 
-import { colorForName, deepFreeze } from '../utils';
+import { normalizeColor, deepFreeze } from '../utils';
 
 const brandColor = '#7D4CDB';
 const accentColors = ['#FD6FFF', '#61EC9F', '#60EBE1', '#FFCA58'];
@@ -36,13 +36,17 @@ const lightColors = ['#F6F6F6', '#EEEEEE', '#DDDDDD', '#CCCCCC', '#BBBBBB', '#AA
 const focusColor = accentColors[0];
 
 const colors = {
-  'active': rgba('#DDDDDD', 0.5),
+  'active': rgba(221, 221, 221, 0.5),
   'black': '#000000',
   'border': {
-    'dark': 'rgba(255, 255, 255, 0.33)',
-    'light': 'rgba(0, 0, 0, 0.33)',
+    'dark': rgba(255, 255, 255, 0.33),
+    'light': rgba(0, 0, 0, 0.33),
   },
   'brand': brandColor,
+  'control': {
+    'dark': 'accent-1',
+    'light': 'brand',
+  },
   'focus': focusColor,
   'placeholder': '#AAAAAA',
   'text': {
@@ -134,14 +138,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         border: {
           width: '1px',
           radius: '4px',
-          color: {
-            dark: css`${props => props.theme.global.colors.border.dark}`,
-            light: css`${props => props.theme.global.colors.border.light}`,
-          },
-        },
-        color: {
-          dark: css`${props => props.theme.global.colors['accent-1']}`,
-          light: css`${props => props.theme.global.colors.brand}`,
+          color: 'border',
         },
       },
       drop: {
@@ -185,7 +182,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       },
       focus: {
         border: {
-          color: css`${props => colorForName('focus', props.theme)}`,
+          color: css`${props => normalizeColor('focus', props.theme)}`,
           width: '2px',
         },
       },
@@ -237,7 +234,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       fontWeight: 600,
       color: {
         dark: '#6194EB',
-        light: '#6194EB',
+        light: '#1D67E3',
       },
     },
     box: {
@@ -322,8 +319,8 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       hover: {
         border: {
           color: {
-            dark: css`${props => colorForName('white', props.theme)}`,
-            light: css`${props => colorForName('black', props.theme)}`,
+            dark: css`${props => normalizeColor('white', props.theme)}`,
+            light: css`${props => normalizeColor('black', props.theme)}`,
           },
         },
       },
@@ -347,8 +344,8 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       analog: {
         hour: {
           color: {
-            dark: css`${props => colorForName('light-3', props.theme)}`,
-            light: css`${props => colorForName('dark-3', props.theme)}`,
+            dark: css`${props => normalizeColor('light-3', props.theme)}`,
+            light: css`${props => normalizeColor('dark-3', props.theme)}`,
           },
           width: `${baseSpacing / 3}px`,
           size: `${baseSpacing}px`,
@@ -356,8 +353,8 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         },
         minute: {
           color: {
-            dark: css`${props => colorForName('light-5', props.theme)}`,
-            light: css`${props => colorForName('dark-5', props.theme)}`,
+            dark: css`${props => normalizeColor('light-5', props.theme)}`,
+            light: css`${props => normalizeColor('dark-5', props.theme)}`,
           },
           width: `${baseSpacing / 6}px`,
           size: `${Math.round(baseSpacing / 2)}px`,
@@ -365,8 +362,8 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         },
         second: {
           color: {
-            dark: css`${props => colorForName('accent-1', props.theme)}`,
-            light: css`${props => colorForName('accent-1', props.theme)}`,
+            dark: css`${props => normalizeColor('accent-1', props.theme)}`,
+            light: css`${props => normalizeColor('accent-1', props.theme)}`,
           },
           width: `${baseSpacing / 8}px`,
           size: `${Math.round(baseSpacing / 2.666)}px`,
@@ -533,10 +530,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
     rangeInput: {
       track: {
         height: '4px',
-        color: {
-          dark: css`${props => rgba(props.theme.global.colors.border.dark, 0.2)}`,
-          light: css`${props => rgba(props.theme.global.colors.border.light, 0.2)}`,
-        },
+        color: css`${props => rgba(normalizeColor('border', props.theme), 0.2)}`,
       },
       thumb: {
         // color: { dark: undefined, light: undefined },

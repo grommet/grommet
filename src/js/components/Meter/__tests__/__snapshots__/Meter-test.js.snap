@@ -5,7 +5,7 @@ exports[`Meter background 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -134,7 +134,7 @@ exports[`Meter basic 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -188,7 +188,7 @@ exports[`Meter default 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -233,7 +233,7 @@ exports[`Meter many values 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -334,7 +334,7 @@ exports[`Meter round 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -434,7 +434,7 @@ exports[`Meter size 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -718,7 +718,7 @@ exports[`Meter thickness 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1002,7 +1002,7 @@ exports[`Meter type 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

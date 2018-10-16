@@ -5,7 +5,7 @@ exports[`Layer dark context 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -82,7 +82,7 @@ exports[`Layer full false 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -117,7 +117,7 @@ exports[`Layer full false 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -206,7 +206,7 @@ exports[`Layer full horizontal 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -241,7 +241,7 @@ exports[`Layer full horizontal 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -331,7 +331,7 @@ exports[`Layer full true 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -366,7 +366,7 @@ exports[`Layer full true 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -454,7 +454,7 @@ exports[`Layer full vertical 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -489,7 +489,7 @@ exports[`Layer full vertical 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -579,7 +579,7 @@ exports[`Layer hidden 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -611,7 +611,7 @@ exports[`Layer hidden 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -681,7 +681,7 @@ exports[`Layer hidden 2`] = `""`;
 
 exports[`Layer hidden 3`] = `
 <div
-  class="StyledLayer-rmtehz-0 iIHZos"
+  class="StyledLayer-rmtehz-0 cLbZOW"
   id="hidden-test"
   tabindex="-1"
 >
@@ -689,7 +689,7 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledOverlay-rmtehz-1 bGMqgk"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 guMPgq"
+    class="StyledLayer__StyledContainer-rmtehz-2 loulCo"
     id="hidden-test"
   >
     This is a layer
@@ -735,7 +735,7 @@ exports[`Layer margin large 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -770,7 +770,7 @@ exports[`Layer margin large 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -859,7 +859,7 @@ exports[`Layer margin medium 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -894,7 +894,7 @@ exports[`Layer margin medium 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -983,7 +983,7 @@ exports[`Layer margin none 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1018,7 +1018,7 @@ exports[`Layer margin none 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1107,7 +1107,7 @@ exports[`Layer margin small 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1142,7 +1142,7 @@ exports[`Layer margin small 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1231,7 +1231,7 @@ exports[`Layer margin xsmall 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1266,7 +1266,7 @@ exports[`Layer margin xsmall 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1355,7 +1355,7 @@ exports[`Layer non-modal 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1420,7 +1420,7 @@ exports[`Layer plain 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1455,7 +1455,7 @@ exports[`Layer plain 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1544,7 +1544,7 @@ exports[`Layer position bottom 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1579,7 +1579,7 @@ exports[`Layer position bottom 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1668,7 +1668,7 @@ exports[`Layer position center 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1703,7 +1703,7 @@ exports[`Layer position center 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1792,7 +1792,7 @@ exports[`Layer position left 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1827,7 +1827,7 @@ exports[`Layer position left 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1916,7 +1916,7 @@ exports[`Layer position right 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1951,7 +1951,7 @@ exports[`Layer position right 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2040,7 +2040,7 @@ exports[`Layer position top 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2075,7 +2075,7 @@ exports[`Layer position top 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colorForName } from '../../utils';
+import { normalizeColor } from '../../utils';
 
 const marginStyle = (props) => {
   if (typeof props.margin === 'string') {
@@ -66,7 +66,7 @@ const truncateStyle = `
 `;
 
 const colorStyle = css`
-  color: ${props => colorForName(props.colorValue, props.theme)};
+  color: ${props => normalizeColor(props.colorValue, props.theme)};
 `;
 
 const weightStyle = css`

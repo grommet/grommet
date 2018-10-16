@@ -6,7 +6,7 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 import { withFocus, withTheme } from '../hocs';
-import { evalStyle } from '../../utils';
+import { normalizeColor } from '../../utils';
 
 class Carousel extends Component {
   state = { activeIndex: 0 };
@@ -75,9 +75,7 @@ class Carousel extends Component {
     const onRight = (activeIndex < lastIndex ? this.onRight : undefined);
 
     const CurrentIcon = theme.carousel.icons.current;
-    const { dark } = theme;
-    const iconColor = evalStyle((theme.carousel.icons.color
-      || theme.global.control.color)[dark ? 'dark' : 'light'], theme);
+    const iconColor = normalizeColor(theme.carousel.icons.color || 'control', theme);
 
     const selectors = [];
     const wrappedChildren = Children.map(children, (child, index) => {

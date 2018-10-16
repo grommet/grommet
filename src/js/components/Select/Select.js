@@ -7,7 +7,7 @@ import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { TextInput } from '../TextInput';
 import { withForwardRef, withTheme } from '../hocs';
-import { controlBorderStyle, colorIsDark, evalStyle } from '../../utils';
+import { controlBorderStyle, normalizeColor } from '../../utils';
 
 import { SelectContainer } from './SelectContainer';
 
@@ -104,9 +104,8 @@ class Select extends Component {
       selectValue = value;
     }
 
-    const dark = theme.select.background ? colorIsDark(theme.select.background) : theme.dark;
-    const iconColor = evalStyle((theme.select.icons.color
-      || theme.global.control.color)[dark ? 'dark' : 'light'], theme);
+    // const dark = theme.select.background ? colorIsDark(theme.select.background) : theme.dark;
+    const iconColor = normalizeColor(theme.select.icons.color || 'control', theme);
 
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>

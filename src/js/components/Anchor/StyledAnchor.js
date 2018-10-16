@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { colorForName, focusStyle, normalizeColor } from '../../utils';
+import { focusStyle, normalizeColor } from '../../utils';
 
 const disabledStyle = `
   opacity: 0.3;
@@ -24,7 +24,7 @@ export const StyledAnchor = styled.a`
   `}
 
   ${props => !props.primary && props.hasIcon && props.hasLabel && `
-    color: ${colorForName('text', props.theme)};
+    color: ${normalizeColor('text', props.theme)};
   `}
   ${props => props.hasIcon && !props.hasLabel && `
     padding: ${props.theme.global.edgeSize.small};

@@ -18,14 +18,7 @@ const hoverStyle = css`
 
 export const StyledCheckBoxIcon = styled.svg`
   stroke-width: ${props => props.theme.checkBox.check.thickness};
-  stroke: ${props => normalizeColor(
-    (
-      props.theme.checkBox.color
-      || props.theme.global.control.color
-    )[props.theme.dark ? 'dark' : 'light'],
-    props.theme
-  )
-  };
+  stroke: ${props => normalizeColor(props.theme.checkBox.color || 'control', props.theme)};
   width: ${props => props.theme.checkBox.size};
   height: ${props => props.theme.checkBox.size};
   ${props => props.theme.checkBox.icon.extend}
@@ -52,8 +45,7 @@ export const StyledCheckBoxInput = styled.input`
 
   :checked + span > span {
     left: calc(${props => props.theme.checkBox.toggle.size} - ${props => props.theme.checkBox.size});
-    background: ${props => (props.theme.checkBox.color
-      || props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
+    background: ${props => normalizeColor(props.theme.checkBox.color || 'control', props.theme)};
   }
 `;
 

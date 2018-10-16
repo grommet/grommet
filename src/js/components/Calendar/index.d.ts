@@ -1,6 +1,7 @@
 import * as React from "react";
 
 export interface CalendarProps {
+  animate?: boolean;
   bounds?: string[];
   date?: string;
   dates?: string | string[][];
@@ -8,7 +9,11 @@ export interface CalendarProps {
   firstDayOfWeek?: "0" | "1";
   header?: (...args: any[]) => any;
   locale?: string;
+  onReference?: (...args: any[]) => any;
   onSelect?: (...args: any[]) => any;
+  range?: boolean;
+  reference?: string;
+  showAdjacentDays?: boolean;
   size?: "small" | "medium" | "large" | string;
 }
 

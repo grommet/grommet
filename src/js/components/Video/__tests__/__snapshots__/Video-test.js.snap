@@ -194,7 +194,7 @@ exports[`Video autoPlay renders 1`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: white;
+  color: #FFFFFF;
 }
 
 .c17 {
@@ -250,7 +250,7 @@ exports[`Video autoPlay renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -804,7 +804,7 @@ exports[`Video controls renders 1`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: white;
+  color: #FFFFFF;
 }
 
 .c17 {
@@ -847,7 +847,7 @@ exports[`Video controls renders 1`] = `
 .c22:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: black;
+  color: #000000;
 }
 
 .c16 {
@@ -885,7 +885,7 @@ exports[`Video controls renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1565,7 +1565,7 @@ exports[`Video fit renders 1`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: white;
+  color: #FFFFFF;
 }
 
 .c17 {
@@ -1621,7 +1621,7 @@ exports[`Video fit renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2301,7 +2301,7 @@ exports[`Video loop renders 1`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: white;
+  color: #FFFFFF;
 }
 
 .c17 {
@@ -2357,7 +2357,7 @@ exports[`Video loop renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2854,7 +2854,7 @@ exports[`Video mute renders 1`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: white;
+  color: #FFFFFF;
 }
 
 .c17 {
@@ -2910,7 +2910,7 @@ exports[`Video mute renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3407,7 +3407,7 @@ exports[`Video renders 1`] = `
 .c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
-  color: white;
+  color: #FFFFFF;
 }
 
 .c17 {
@@ -3463,7 +3463,7 @@ exports[`Video renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

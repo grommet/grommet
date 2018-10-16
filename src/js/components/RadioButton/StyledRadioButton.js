@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { focusStyle } from '../../utils';
+import { focusStyle, normalizeColor } from '../../utils';
 
 const disabledStyle = `
   opacity: 0.5;
@@ -42,8 +42,7 @@ export const StyledRadioButtonInput = styled.input`
   }
 
   :checked + div {
-    border-color: ${props => (props.theme.radioButton.check.color
-      || props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
+    border-color: ${props => normalizeColor(props.theme.radioButton.check.color || 'control', props.theme)};
   }
 
   :checked + div > svg {
@@ -52,8 +51,7 @@ export const StyledRadioButtonInput = styled.input`
 
   :checked + span > span {
     left: ${props => props.theme.radioButton.size};
-    background: ${props => (props.theme.radioButton.check.color
-      || props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
+    background: ${props => normalizeColor(props.theme.radioButton.check.color || 'control', props.theme)};
   }
 `;
 
@@ -67,7 +65,7 @@ export const StyledRadioButtonButton = styled.div`
   vertical-align: middle;
   background: inherit;
   border: ${props => props.theme.radioButton.border.width} solid;
-  border-color: ${props => props.theme.radioButton.border.color[props.theme.dark ? 'dark' : 'light']};
+  border-color: ${props => normalizeColor(props.theme.radioButton.border.color || 'border', props.theme)};
   border-radius: ${props => props.theme.radioButton.border.radius};
 
   > svg {
@@ -78,8 +76,7 @@ export const StyledRadioButtonButton = styled.div`
     display: none;
     width: ${props => props.theme.radioButton.size};
     height: ${props => props.theme.radioButton.size};
-    fill: ${props => (props.theme.radioButton.check.color
-      || props.theme.global.control.color)[props.theme.dark ? 'dark' : 'light']};
+    fill: ${props => normalizeColor(props.theme.radioButton.check.color || 'control', props.theme)};
   }
 `;
 

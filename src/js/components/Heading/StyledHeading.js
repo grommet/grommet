@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colorForName, breakpointStyle } from '../../utils';
+import { normalizeColor, breakpointStyle } from '../../utils';
 
 const marginStyle = (props) => {
   if (typeof props.margin === 'string') {
@@ -104,7 +104,7 @@ const truncateStyle = `
 `;
 
 const colorStyle = css`
-  color: ${props => colorForName(props.colorValue, props.theme)};
+  color: ${props => normalizeColor(props.colorValue, props.theme)};
 `;
 
 export const StyledHeading = styled.h1`

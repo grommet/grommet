@@ -5,7 +5,7 @@ exports[`Anchor disabled renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -17,7 +17,7 @@ exports[`Anchor disabled renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #6194EB;
+  color: #1D67E3;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -45,7 +45,7 @@ exports[`Anchor focus renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -62,7 +62,7 @@ exports[`Anchor focus renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #6194EB;
+  color: #1D67E3;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -153,7 +153,7 @@ exports[`Anchor icon label renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -177,7 +177,7 @@ exports[`Anchor icon label renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #6194EB;
+  color: #1D67E3;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -261,7 +261,7 @@ exports[`Anchor primary renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -278,7 +278,7 @@ exports[`Anchor primary renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #6194EB;
+  color: #1D67E3;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -357,7 +357,7 @@ exports[`Anchor renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -369,7 +369,7 @@ exports[`Anchor renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #6194EB;
+  color: #1D67E3;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -397,7 +397,7 @@ exports[`Anchor renders with children 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -409,7 +409,7 @@ exports[`Anchor renders with children 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #6194EB;
+  color: #1D67E3;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -440,7 +440,7 @@ exports[`Anchor reverse icon label renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -464,7 +464,7 @@ exports[`Anchor reverse icon label renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #6194EB;
+  color: #1D67E3;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -548,7 +548,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -560,7 +560,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #6194EB;
+  color: #1D67E3;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -634,7 +634,7 @@ exports[`Anchor warns about invalid label render 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -651,7 +651,7 @@ exports[`Anchor warns about invalid label render 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #6194EB;
+  color: #1D67E3;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;

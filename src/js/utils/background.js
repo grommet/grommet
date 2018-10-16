@@ -1,8 +1,6 @@
 import { css } from 'styled-components';
 
-import {
-  colorForName, colorIsDark, getRGBA, normalizeColor,
-} from './colors';
+import { colorIsDark, getRGBA, normalizeColor } from './colors';
 import { evalStyle } from './styles';
 
 export const normalizeBackground = (background, theme) => {
@@ -30,13 +28,13 @@ export const backgroundIsDark = (backgroundArg, theme) => {
       } else if (color
         // weak opacity means we keep the existing darkness
         && (!opacity || opacity !== 'weak')) {
-        const backgroundColor = colorForName(background.color, theme);
+        const backgroundColor = normalizeColor(background.color, theme);
         if (backgroundColor) {
           result = colorIsDark(backgroundColor);
         }
       }
     } else {
-      const color = colorForName(background, theme);
+      const color = normalizeColor(background, theme);
       if (color) {
         result = colorIsDark(color);
       }
@@ -69,7 +67,7 @@ export const backgroundStyle = (backgroundArg, theme) => {
       `);
     }
     if (background.color) {
-      const color = colorForName(background.color, theme);
+      const color = normalizeColor(background.color, theme);
       const backgroundColor = getRGBA(
         color,
         background.opacity === true ? (
@@ -107,7 +105,7 @@ export const backgroundStyle = (backgroundArg, theme) => {
         background-size: cover;
       `;
     }
-    const color = colorForName(background, theme);
+    const color = normalizeColor(background, theme);
     if (color) {
       return css`
         background: ${color};

@@ -734,7 +734,7 @@ exports[`dark renders 1`] = `
     </span>
   </div>
   <div
-    className="c1"
+    className="c5"
   >
     <span
       className="c2"
@@ -1271,7 +1271,7 @@ exports[`default renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2116,7 +2116,7 @@ exports[`hpe renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

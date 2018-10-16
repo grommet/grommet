@@ -101,7 +101,7 @@ exports[`Tabs Tab 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -338,7 +338,7 @@ exports[`Tabs change to second tab 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -466,7 +466,7 @@ exports[`Tabs change to second tab 1`] = `
 
 exports[`Tabs change to second tab 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jqVeEk"
+  class="StyledGrommet-sc-19lkkz7-0 IELEP"
 >
   <div
     role="tablist"
@@ -482,7 +482,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvNYBP"
+          class="StyledBox-sc-13pk1d4-0 gtShfg"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iCreHd"
@@ -608,7 +608,7 @@ exports[`Tabs complex title 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -769,7 +769,7 @@ exports[`Tabs no Tab 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -907,7 +907,7 @@ exports[`Tabs set on hover 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #444444;
-  background: none;
+  background: inherit;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1035,7 +1035,7 @@ exports[`Tabs set on hover 1`] = `
 
 exports[`Tabs set on hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jqVeEk"
+  class="StyledGrommet-sc-19lkkz7-0 IELEP"
 >
   <div
     role="tablist"
@@ -1068,7 +1068,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvNYBP"
+          class="StyledBox-sc-13pk1d4-0 gtShfg"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iCreHd"
@@ -1090,7 +1090,7 @@ exports[`Tabs set on hover 2`] = `
 
 exports[`Tabs set on hover 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jqVeEk"
+  class="StyledGrommet-sc-19lkkz7-0 IELEP"
 >
   <div
     role="tablist"
@@ -1123,7 +1123,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvNYBP"
+          class="StyledBox-sc-13pk1d4-0 gtShfg"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iCreHd"
@@ -1145,7 +1145,7 @@ exports[`Tabs set on hover 3`] = `
 
 exports[`Tabs set on hover 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jqVeEk"
+  class="StyledGrommet-sc-19lkkz7-0 IELEP"
 >
   <div
     role="tablist"
@@ -1178,7 +1178,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvNYBP"
+          class="StyledBox-sc-13pk1d4-0 gtShfg"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iCreHd"
@@ -1200,7 +1200,7 @@ exports[`Tabs set on hover 4`] = `
 
 exports[`Tabs set on hover 5`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 jqVeEk"
+  class="StyledGrommet-sc-19lkkz7-0 IELEP"
 >
   <div
     role="tablist"
@@ -1233,7 +1233,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 bvNYBP"
+          class="StyledBox-sc-13pk1d4-0 gtShfg"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iCreHd"

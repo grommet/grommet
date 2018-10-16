@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 
 import {
-  backgroundStyle, breakpointStyle, colorForName, edgeStyle, focusStyle,
+  backgroundStyle, breakpointStyle, edgeStyle, focusStyle,
   normalizeColor, overflowStyle,
 } from '../../utils';
 
@@ -134,8 +134,7 @@ const wrapStyle = 'flex-wrap: wrap;';
 
 const borderStyle = (data, responsive, theme) => {
   const styles = [];
-  const color = data.color ? colorForName(data.color, theme)
-    : normalizeColor(theme.global.colors.border, theme);
+  const color = normalizeColor(data.color || 'border', theme);
   const borderSize = data.size || 'xsmall';
   const side = (typeof data === 'string') ? data : data.side || 'all';
   const value = `solid ${theme.global.borderSize[borderSize] || borderSize} ${color}`;
