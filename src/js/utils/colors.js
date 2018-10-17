@@ -18,8 +18,11 @@ export const normalizeColor = (color, theme, required) => {
 };
 
 const parseHexToRGB = color => (
+  color.length === 4
+  ? color.match(/[A-Za-z0-9]{1}/g).map(v => parseInt(v, 16))
   // https://stackoverflow.com/a/42429333
-  color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16)));
+  : color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16))
+);
 
 const canExtractRGBArray = color => /^#/.test(color) || /^rgb/.test(color);
 

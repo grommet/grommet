@@ -139,6 +139,16 @@ const MultipleButton = () => (
   </Grommet>
 );
 
+const ColoredButton = props => (
+  <Grommet theme={grommet}>
+    <Box align='start' gap='small'>
+      <Button primary color='dark-1' label='Submit' onClick={() => {}} {...props} />
+      <Button primary color='#111111' label='Submit' onClick={() => {}} {...props} />
+      <Button primary color='#000' label='Submit' onClick={() => {}} {...props} />
+    </Box>
+  </Grommet>
+);
+
 storiesOf('Button', module)
   .add('Default', () => <SimpleButton />)
   .add('Primary', () => <SimpleButton primary />)
@@ -150,4 +160,5 @@ storiesOf('Button', module)
   .add('RoutedButton', () => <RouteButton />)
   .add('Active', () => <PlainButton active />)
   .add('Custom theme', () => <CustomThemeButton />)
-  .add('Multiple Same Line', () => <MultipleButton />);
+  .add('Multiple Same Line', () => <MultipleButton />)
+  .add('Colored', () => <ColoredButton />);
