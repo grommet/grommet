@@ -54,7 +54,7 @@ class Anchor extends Component {
         {...rest}
         ref={forwardRef}
         aria-label={a11yTitle}
-        color={color}
+        colorProp={color}
         disabled={disabled}
         hasIcon={!!icon}
         focus={focus}
