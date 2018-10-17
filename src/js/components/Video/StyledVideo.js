@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { normalizeColor } from '../../utils';
+import { genericStyles, normalizeColor } from '../../utils';
 
 const FIT_MAP = {
   cover: 'cover',
@@ -29,6 +29,7 @@ export const StyledVideoContainer = styled.div`
   flex-direction: column;
   overflow: hidden;
   position: relative;
+  ${genericStyles}
 `;
 
 const positionStyle = css`

@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (DropButton) => {
   const DocumentedDropButton = describe(DropButton)
@@ -16,8 +16,7 @@ export const doc = (DropButton) => {
     );
 
   DocumentedDropButton.propTypes = {
-    a11yTitle: PropTypes.string
-      .description('Custom title to be used by screen readers.'),
+    ...genericProps,
     disabled: PropTypes.bool
       .description('Whether the button should be disabled.'),
     dropAlign: PropTypes.shape({

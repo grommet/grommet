@@ -1,6 +1,10 @@
 import React, { cloneElement, Children, Component } from 'react';
+import { compose } from 'recompose';
 
 import { Box } from '../Box';
+import { withTheme } from '../hocs';
+
+import { StyledTabs } from './StyledTabs';
 
 class Tabs extends Component {
   static defaultProps = {
@@ -70,19 +74,18 @@ class Tabs extends Component {
     const tabContentTitle = `${activeTitle || ''} ${tabContents}`;
 
     return (
-      <div role='tablist'>
+      <StyledTabs role='tablist' {...rest}>
         <Box
           direction='row'
           justify={justify}
           wrap
-          {...rest}
         >
           {tabs}
         </Box>
         <div aria-label={tabContentTitle} role='tabpanel'>
           {activeContent}
         </div>
-      </div>
+      </StyledTabs>
     );
   }
 }
@@ -91,6 +94,8 @@ let TabsDoc;
 if (process.env.NODE_ENV !== 'production') {
   TabsDoc = require('./doc').doc(Tabs); // eslint-disable-line global-require
 }
-const TabsWrapper = (TabsDoc || Tabs);
+const TabsWrapper = compose(
+  withTheme,
+)(TabsDoc || Tabs);
 
 export { TabsWrapper as Tabs };

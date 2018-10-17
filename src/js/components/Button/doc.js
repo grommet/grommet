@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (Button) => {
   const DocumentedButton = describe(Button)
@@ -14,7 +14,7 @@ export const doc = (Button) => {
     );
 
   DocumentedButton.propTypes = {
-    a11yTitle: PropTypes.string.description('Custom title to be used by screen readers.'),
+    ...genericProps,
     active: PropTypes.bool.description('Whether the button is active.'),
     color: PropTypes.string.description('Fill color for primary, border color otherwise.'),
     disabled: PropTypes.bool.description('Whether the button is disabled.'),

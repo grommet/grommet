@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { genericStyles } from '../../utils';
+
 const SIZE_MAP = {
   '1/2': '50%',
   '1/4': '25%',
@@ -48,5 +50,6 @@ export const StyledTable = styled.table`
   border-spacing: 0;
   border-collapse: collapse;
 
+  ${genericStyles}
   ${props => props.theme.table && props.theme.table.extend}
 `;

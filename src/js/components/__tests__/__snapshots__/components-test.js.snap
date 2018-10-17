@@ -213,7 +213,12 @@ Object {
   "TableFooter": [Function],
   "TableHeader": [Function],
   "TableRow": [Function],
-  "Tabs": [Function],
+  "Tabs": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "displayName": "Tabs",
+    "name": "Tabs",
+    "render": [Function],
+  },
   "Text": Object {
     "$$typeof": Symbol(react.forward_ref),
     "displayName": "Text",

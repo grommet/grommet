@@ -18,6 +18,102 @@ import { Accordion, AccordionPanel } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **activeIndex**
 
 Active panel index. If specified, Accordion will be a controlled component. This means that future
@@ -120,6 +216,94 @@ Custom title to be used by screen readers.
 string
 \`\`\`
 
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **href**
 
 Hyperlink reference to place in the anchor.
@@ -190,6 +374,94 @@ Custom title to be used by screen readers.
 string
 \`\`\`
 
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **align**
 
 How to align the contents along the cross axis.
@@ -213,18 +485,6 @@ center
 end
 between
 around
-stretch
-\`\`\`
-
-**alignSelf**
-
-How to align along the cross axis when contained in
-        a Box or along the column axis when contained in a Grid.
-
-\`\`\`
-start
-center
-end
 stretch
 \`\`\`
 
@@ -447,15 +707,6 @@ xlarge
 string
 \`\`\`
 
-**gridArea**
-
-The name of the area to place
-      this Box in inside a parent Grid.
-
-\`\`\`
-string
-\`\`\`
-
 **height**
 
 A fixed height.
@@ -478,73 +729,6 @@ start
 center
 between
 end
-\`\`\`
-
-**margin**
-
-The amount of margin around the box. An object can
-        be specified to distinguish horizontal margin, vertical margin, and
-        margin on a particular side of the box
-
-\`\`\`
-none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string
 \`\`\`
 
 **overflow**
@@ -725,6 +909,94 @@ Custom title to be used by screen readers.
 string
 \`\`\`
 
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **active**
 
 Whether the button is active.
@@ -864,6 +1136,102 @@ import { Calendar } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
 
 **animate**
 
@@ -1037,6 +1405,102 @@ import { Carousel } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **fill**
 
 Whether to expand to fill
@@ -1068,6 +1532,102 @@ import { Chart } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
 
 **bounds**
 
@@ -1312,6 +1872,102 @@ import { Clock } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **hourLimit**
 
 Whether to roll over the hours after 12 or after 24. Defaults to \`24\`.
@@ -1426,6 +2082,102 @@ import { DataTable } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
 
 **columns**
 
@@ -1621,6 +2373,102 @@ import { Distribution } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **children**
 
 Function that will be called when each value is rendered.
@@ -1768,6 +2616,94 @@ Custom title to be used by screen readers.
 string
 \`\`\`
 
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **disabled**
 
 Whether the button should be disabled.
@@ -1908,6 +2844,102 @@ import { Grid } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
 
 **align**
 
@@ -2182,6 +3214,102 @@ import { Heading } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **color**
 
 A color identifier to use for the text color. For example:
@@ -2206,39 +3334,6 @@ The sizing can be further adjusted using the size property.
 2
 3
 4
-\`\`\`
-
-**margin**
-
-The amount of margin above and/or below the heading. An object can be
-specified to distinguish top margin and bottom margin.
-
-\`\`\`
-none
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    none
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    none
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string
 \`\`\`
 
 **responsive**
@@ -2295,6 +3390,102 @@ import { Image } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
 
 **fit**
 
@@ -2664,6 +3855,102 @@ import { Menu } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **disabled**
 
 Whether the menu should be disabled.
@@ -2786,6 +4073,102 @@ import { Meter } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **background**
 
 Background color
@@ -2882,10 +4265,30 @@ import { Paragraph } from 'grommet';
 
 ## Properties
 
-**color**
+**a11yTitle**
 
-A color identifier to use for the text color. For example:
-'status-critical'.
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
 
 \`\`\`
 string
@@ -2893,26 +4296,77 @@ string
 
 **margin**
 
-The amount of margin above and/or below the paragraph. An object can be
-specified to distinguish top margin and bottom margin.
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
 
 \`\`\`
 none
+xxsmall
+xsmall
 small
 medium
 large
+xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string,
   top: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string
 }
+string
+\`\`\`
+
+**color**
+
+A color identifier to use for the text color. For example:
+'status-critical'.
+
+\`\`\`
 string
 \`\`\`
 
@@ -3286,6 +4740,94 @@ Custom title to be used by screen readers.
 string
 \`\`\`
 
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **children**
 
 Function that will be called when each option is rendered.
@@ -3517,6 +5059,102 @@ import { Stack } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **anchor**
 
 Where to anchor children from. If not specified, children
@@ -3587,6 +5225,102 @@ import { Table, TableHeader, TableFooter, TableBody, TableRow } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
 
 **caption**
 
@@ -3726,6 +5460,102 @@ import { Tabs, Tab } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **activeIndex**
 
 Active tab index. If specified, Tabs will be a controlled component. This means that future
@@ -3788,10 +5618,30 @@ import { Text } from 'grommet';
 
 ## Properties
 
-**color**
+**a11yTitle**
 
-A color identifier to use for the text color. For example:
-'status-critical'.
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
 
 \`\`\`
 string
@@ -3819,6 +5669,15 @@ large
     large
     string
 }
+string
+\`\`\`
+
+**color**
+
+A color identifier to use for the text color. For example:
+'status-critical'.
+
+\`\`\`
 string
 \`\`\`
 
@@ -4126,6 +5985,102 @@ import { Video } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
+
 **autoPlay**
 
 Enables automatic playback of the video as soon as it is loaded.
@@ -4181,6 +6136,102 @@ import { WorldMap } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+\`\`\`
+start
+center
+end
+stretch
+\`\`\`
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+\`\`\`
+string
+\`\`\`
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+\`\`\`
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+\`\`\`
 
 **color**
 

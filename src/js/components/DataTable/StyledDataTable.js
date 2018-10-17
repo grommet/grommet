@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
+import { genericStyles } from '../../utils';
+
 export const StyledDataTable = styled.table`
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
+  ${genericStyles}
 `;
 
 export const StyledDataTableRow = styled.tr`

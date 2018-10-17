@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (Video) => {
   const DocumentedVideo = describe(Video)
@@ -12,6 +12,7 @@ export const doc = (Video) => {
     );
 
   DocumentedVideo.propTypes = {
+    ...genericProps,
     autoPlay: PropTypes.bool.description(
       'Enables automatic playback of the video as soon as it is loaded.'
     ),

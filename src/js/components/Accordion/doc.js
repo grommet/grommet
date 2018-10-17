@@ -1,8 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import {
-  getAvailableAtBadge,
-} from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (Accordion) => {
   const DocumentedAccordion = describe(Accordion)
@@ -17,6 +15,7 @@ export const doc = (Accordion) => {
     );
 
   DocumentedAccordion.propTypes = {
+    ...genericProps,
     activeIndex: PropTypes.oneOfType([
       PropTypes.number,
       PropTypes.arrayOf(PropTypes.number),

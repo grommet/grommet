@@ -19,6 +19,7 @@ exports[`DataTable aggregate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #F6F6F6;
   color: #444444;
   border-bottom: solid 2px rgba(0,0,0,0.33);
@@ -33,7 +34,6 @@ exports[`DataTable aggregate 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -48,13 +48,13 @@ exports[`DataTable aggregate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -69,6 +69,7 @@ exports[`DataTable aggregate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   border-top: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -76,7 +77,6 @@ exports[`DataTable aggregate 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -114,18 +114,18 @@ exports[`DataTable aggregate 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
     padding-left: 6px;
     padding-right: 6px;
   }
@@ -155,18 +155,18 @@ exports[`DataTable aggregate 1`] = `
   .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c7 {
     border-top: solid 2px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
   }
 }
 
@@ -189,6 +189,18 @@ exports[`DataTable aggregate 1`] = `
 >
   <table
     className="c1"
+    data={
+      Array [
+        Object {
+          "a": "one",
+          "b": 1,
+        },
+        Object {
+          "a": "two",
+          "b": 2,
+        },
+      ]
+    }
   >
     <thead
       className=""
@@ -341,6 +353,7 @@ exports[`DataTable basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #F6F6F6;
   color: #444444;
   border-bottom: solid 2px rgba(0,0,0,0.33);
@@ -355,7 +368,6 @@ exports[`DataTable basic 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -370,13 +382,13 @@ exports[`DataTable basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -414,13 +426,13 @@ exports[`DataTable basic 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-bottom: solid 2px rgba(0,0,0,0.33);
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    margin: 0px;
+    border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -463,6 +475,18 @@ exports[`DataTable basic 1`] = `
 >
   <table
     className="c1"
+    data={
+      Array [
+        Object {
+          "a": "one",
+          "b": 1,
+        },
+        Object {
+          "a": "two",
+          "b": 2,
+        },
+      ]
+    }
   >
     <thead
       className=""
@@ -590,6 +614,7 @@ exports[`DataTable empty 1`] = `
 >
   <table
     className="c1"
+    data={Array []}
   >
     <thead
       className=""
@@ -624,6 +649,7 @@ exports[`DataTable footer 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #F6F6F6;
   color: #444444;
   border-bottom: solid 2px rgba(0,0,0,0.33);
@@ -638,7 +664,6 @@ exports[`DataTable footer 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -653,13 +678,13 @@ exports[`DataTable footer 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -674,6 +699,7 @@ exports[`DataTable footer 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   border-top: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -681,7 +707,6 @@ exports[`DataTable footer 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -719,18 +744,18 @@ exports[`DataTable footer 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
     padding-left: 6px;
     padding-right: 6px;
   }
@@ -760,18 +785,18 @@ exports[`DataTable footer 1`] = `
   .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c7 {
     border-top: solid 2px rgba(0,0,0,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
   }
 }
 
@@ -794,6 +819,18 @@ exports[`DataTable footer 1`] = `
 >
   <table
     className="c1"
+    data={
+      Array [
+        Object {
+          "a": "one",
+          "b": 1,
+        },
+        Object {
+          "a": "two",
+          "b": 2,
+        },
+      ]
+    }
   >
     <thead
       className=""
@@ -978,6 +1015,7 @@ exports[`DataTable groupBy 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #F6F6F6;
   color: #444444;
   border-bottom: solid 2px rgba(0,0,0,0.33);
@@ -992,7 +1030,6 @@ exports[`DataTable groupBy 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1007,13 +1044,13 @@ exports[`DataTable groupBy 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1028,6 +1065,7 @@ exports[`DataTable groupBy 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #F6F6F6;
   color: #444444;
   border-bottom: solid 2px rgba(0,0,0,0.33);
@@ -1036,7 +1074,6 @@ exports[`DataTable groupBy 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 6px;
 }
 
@@ -1048,12 +1085,12 @@ exports[`DataTable groupBy 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 6px;
 }
 
@@ -1139,13 +1176,13 @@ exports[`DataTable groupBy 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    border-bottom: solid 2px rgba(0,0,0,0.33);
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c7 {
-    margin: 0px;
+    border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -1185,13 +1222,13 @@ exports[`DataTable groupBy 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 2px rgba(0,0,0,0.33);
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
-    margin: 0px;
+    border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -1218,6 +1255,7 @@ exports[`DataTable groupBy 1`] = `
 >
   <table
     class="c1"
+    data="[object Object],[object Object],[object Object],[object Object]"
   >
     <thead
       class=""
@@ -1408,7 +1446,8 @@ exports[`DataTable groupBy 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <table
-    class="StyledDataTable-xrlyjm-0 DHZmE"
+    class="StyledDataTable-xrlyjm-0 eBJFIh"
+    data="[object Object],[object Object],[object Object],[object Object]"
   >
     <thead
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW"
@@ -1421,11 +1460,11 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iXKwVW"
+            class="StyledButton-sc-323bzc-0 bQCefD"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 FrSQX"
+              class="StyledBox-sc-13pk1d4-0 gKSfrT"
             >
               <svg
                 aria-label="FormDown"
@@ -1451,10 +1490,10 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jHrpsm"
+            class="StyledBox-sc-13pk1d4-0 fFqjDo"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 eWZOWJ"
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
             >
               A
             </span>
@@ -1465,10 +1504,10 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 jHrpsm"
+            class="StyledBox-sc-13pk1d4-0 fFqjDo"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 eWZOWJ"
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
             >
               B
             </span>
@@ -1487,11 +1526,11 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iXKwVW"
+            class="StyledButton-sc-323bzc-0 bQCefD"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 iflIZZ"
+              class="StyledBox-sc-13pk1d4-0 dRGBoa"
             >
               <svg
                 aria-label="FormDown"
@@ -1517,10 +1556,10 @@ exports[`DataTable groupBy 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iKUajp"
+            class="StyledBox-sc-13pk1d4-0 lgOdJe"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 eWZOWJ"
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
             >
               one
             </span>
@@ -1530,7 +1569,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iKUajp"
+            class="StyledBox-sc-13pk1d4-0 lgOdJe"
           />
         </td>
       </tr>
@@ -1542,11 +1581,11 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 iXKwVW"
+            class="StyledButton-sc-323bzc-0 bQCefD"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 iflIZZ"
+              class="StyledBox-sc-13pk1d4-0 dRGBoa"
             >
               <svg
                 aria-label="FormDown"
@@ -1572,10 +1611,10 @@ exports[`DataTable groupBy 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iKUajp"
+            class="StyledBox-sc-13pk1d4-0 lgOdJe"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 eWZOWJ"
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
             >
               two
             </span>
@@ -1585,7 +1624,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iKUajp"
+            class="StyledBox-sc-13pk1d4-0 lgOdJe"
           />
         </td>
       </tr>
@@ -1613,6 +1652,7 @@ exports[`DataTable resizeable 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #F6F6F6;
   color: #444444;
   border-bottom: solid 2px rgba(0,0,0,0.33);
@@ -1627,7 +1667,6 @@ exports[`DataTable resizeable 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1642,13 +1681,13 @@ exports[`DataTable resizeable 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1663,6 +1702,7 @@ exports[`DataTable resizeable 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1670,7 +1710,6 @@ exports[`DataTable resizeable 1`] = `
   flex-direction: row;
   width: 100%;
   height: 100%;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1682,6 +1721,7 @@ exports[`DataTable resizeable 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   border-right: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -1691,7 +1731,6 @@ exports[`DataTable resizeable 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1730,13 +1769,13 @@ exports[`DataTable resizeable 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    border-bottom: solid 2px rgba(0,0,0,0.33);
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c4 {
-    margin: 0px;
+    border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -1788,13 +1827,13 @@ exports[`DataTable resizeable 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    border-right: solid 1px rgba(0,0,0,0.33);
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c7 {
-    margin: 0px;
+    border-right: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1809,6 +1848,18 @@ exports[`DataTable resizeable 1`] = `
 >
   <table
     className="c1"
+    data={
+      Array [
+        Object {
+          "a": "one",
+          "b": 1,
+        },
+        Object {
+          "a": "two",
+          "b": 2,
+        },
+      ]
+    }
   >
     <thead
       className=""
@@ -1949,13 +2000,13 @@ exports[`DataTable sort 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   height: 100%;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -1970,6 +2021,7 @@ exports[`DataTable sort 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1987,7 +2039,6 @@ exports[`DataTable sort 1`] = `
   flex: 0 1 auto;
   width: 100%;
   height: 100%;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -2082,13 +2133,13 @@ exports[`DataTable sort 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
-    border-bottom: solid 2px rgba(0,0,0,0.33);
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c5 {
-    margin: 0px;
+    border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -2111,6 +2162,7 @@ exports[`DataTable sort 1`] = `
 >
   <table
     class="c1"
+    data="[object Object],[object Object],[object Object]"
   >
     <thead
       class=""
@@ -2255,7 +2307,8 @@ exports[`DataTable sort 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <table
-    class="StyledDataTable-xrlyjm-0 DHZmE"
+    class="StyledDataTable-xrlyjm-0 eBJFIh"
+    data="[object Object],[object Object],[object Object]"
   >
     <thead
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 gtdqEW"
@@ -2303,6 +2356,7 @@ exports[`DataTable sort 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2320,7 +2374,6 @@ exports[`DataTable sort 2`] = `
   flex: 0 1 auto;
   width: 100%;
   height: 100%;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -2387,13 +2440,13 @@ exports[`DataTable sort 2`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-bottom: solid 2px rgba(0,0,0,0.33);
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    margin: 0px;
+    border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -2457,6 +2510,7 @@ exports[`DataTable sort 2`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2474,7 +2528,6 @@ exports[`DataTable sort 2`] = `
   flex: 0 1 auto;
   width: 100%;
   height: 100%;
-  margin: 0px;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
@@ -2534,13 +2587,13 @@ exports[`DataTable sort 2`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    border-bottom: solid 2px rgba(0,0,0,0.33);
+    margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c3 {
-    margin: 0px;
+    border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -2589,10 +2642,10 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iKUajp"
+            class="StyledBox-sc-13pk1d4-0 lgOdJe"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 eWZOWJ"
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
             >
               one
             </span>
@@ -2602,10 +2655,10 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iKUajp"
+            class="StyledBox-sc-13pk1d4-0 lgOdJe"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 eWZOWJ"
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
             >
               1
             </span>
@@ -2619,10 +2672,10 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iKUajp"
+            class="StyledBox-sc-13pk1d4-0 lgOdJe"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 eWZOWJ"
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
             >
               two
             </span>
@@ -2632,10 +2685,10 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iKUajp"
+            class="StyledBox-sc-13pk1d4-0 lgOdJe"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 eWZOWJ"
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
             >
               2
             </span>
@@ -2649,10 +2702,10 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iKUajp"
+            class="StyledBox-sc-13pk1d4-0 lgOdJe"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 eWZOWJ"
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
             >
               zero
             </span>
@@ -2662,7 +2715,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 kKCqZI"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 iKUajp"
+            class="StyledBox-sc-13pk1d4-0 lgOdJe"
           />
         </td>
       </tr>

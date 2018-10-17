@@ -160,3 +160,18 @@ export const evalStyle = (arg, theme) => {
   }
   return arg;
 };
+
+const ALIGN_SELF_MAP = {
+  center: 'center',
+  end: 'flex-end',
+  start: 'flex-start',
+  stretch: 'stretch',
+};
+
+export const genericStyles = css`
+  ${props => props.alignSelf && `align-self: ${ALIGN_SELF_MAP[props.alignSelf]};`}
+  ${props => props.gridArea && `grid-area: ${props.gridArea};`}
+  ${props => (props.margin
+    && edgeStyle('margin', props.margin, props.responsive,
+      props.theme.global.edgeSize.responsiveBreakpoint, props.theme))}
+`;

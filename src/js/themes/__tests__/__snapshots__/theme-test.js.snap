@@ -9,13 +9,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #FD6FFF;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -27,13 +27,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #60EB9F;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -45,13 +45,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #60EBE1;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -63,13 +63,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #333333;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -81,13 +81,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -99,13 +99,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #555555;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -117,13 +117,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #666666;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -135,13 +135,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #777777;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -153,13 +153,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #FFCA58;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -171,13 +171,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #F6F6F6;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -189,13 +189,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #EEEEEE;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -207,13 +207,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #DDDDDD;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -225,13 +225,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #CCCCCC;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -243,13 +243,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #BBBBBB;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -261,13 +261,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #EB6060;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -279,13 +279,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #01C781;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -297,13 +297,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #6095EB;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -315,13 +315,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #FF3333;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -333,13 +333,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #a8a8a8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -351,13 +351,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #7DD892;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -369,13 +369,13 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #F7E464;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -871,6 +871,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #FD6FFF;
   color: #444444;
   min-width: 0;
@@ -878,7 +879,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -890,6 +890,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #61EC9F;
   color: #444444;
   min-width: 0;
@@ -897,7 +898,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -909,6 +909,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #60EBE1;
   color: #444444;
   min-width: 0;
@@ -916,7 +917,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -928,6 +928,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #7D4CDB;
   color: #f8f8f8;
   min-width: 0;
@@ -935,7 +936,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -947,6 +947,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #333333;
   color: #f8f8f8;
   min-width: 0;
@@ -954,7 +955,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -966,6 +966,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #444444;
   color: #f8f8f8;
   min-width: 0;
@@ -973,7 +974,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -985,6 +985,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #555555;
   color: #f8f8f8;
   min-width: 0;
@@ -992,7 +993,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1004,6 +1004,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #666666;
   color: #f8f8f8;
   min-width: 0;
@@ -1011,7 +1012,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1023,6 +1023,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #777777;
   color: #f8f8f8;
   min-width: 0;
@@ -1030,7 +1031,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1042,6 +1042,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #F6F6F6;
   color: #444444;
   min-width: 0;
@@ -1049,7 +1050,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1061,6 +1061,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #EEEEEE;
   color: #444444;
   min-width: 0;
@@ -1068,7 +1069,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1080,6 +1080,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #DDDDDD;
   color: #444444;
   min-width: 0;
@@ -1087,7 +1088,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1099,6 +1099,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #CCCCCC;
   color: #444444;
   min-width: 0;
@@ -1106,7 +1107,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1118,6 +1118,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #BBBBBB;
   color: #444444;
   min-width: 0;
@@ -1125,7 +1126,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1137,6 +1137,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #3D138D;
   color: #f8f8f8;
   min-width: 0;
@@ -1144,7 +1145,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1156,6 +1156,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #BE60EB;
   color: #444444;
   min-width: 0;
@@ -1163,7 +1164,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1175,6 +1175,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #00C781;
   color: #444444;
   min-width: 0;
@@ -1182,7 +1183,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1194,6 +1194,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #EB6060;
   color: #444444;
   min-width: 0;
@@ -1201,7 +1202,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1213,6 +1213,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #a8a8a8;
   color: #444444;
   min-width: 0;
@@ -1220,7 +1221,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1232,6 +1232,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #7CD992;
   color: #444444;
   min-width: 0;
@@ -1239,7 +1240,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1251,6 +1251,7 @@ exports[`default renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #F7E463;
   color: #444444;
   min-width: 0;
@@ -1258,7 +1259,6 @@ exports[`default renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1751,6 +1751,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #333333;
   color: #f8f8f8;
   min-width: 0;
@@ -1758,7 +1759,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1770,6 +1770,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #444444;
   color: #f8f8f8;
   min-width: 0;
@@ -1777,7 +1778,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1789,6 +1789,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #555555;
   color: #f8f8f8;
   min-width: 0;
@@ -1796,7 +1797,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1808,6 +1808,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #666666;
   color: #f8f8f8;
   min-width: 0;
@@ -1815,7 +1816,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1827,6 +1827,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #777777;
   color: #f8f8f8;
   min-width: 0;
@@ -1834,7 +1835,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1846,6 +1846,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #F6F6F6;
   color: #444444;
   min-width: 0;
@@ -1853,7 +1854,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1865,6 +1865,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #EEEEEE;
   color: #444444;
   min-width: 0;
@@ -1872,7 +1873,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1884,6 +1884,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #DDDDDD;
   color: #444444;
   min-width: 0;
@@ -1891,7 +1892,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1903,6 +1903,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #CCCCCC;
   color: #444444;
   min-width: 0;
@@ -1910,7 +1911,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1922,6 +1922,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #BBBBBB;
   color: #444444;
   min-width: 0;
@@ -1929,7 +1930,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1941,6 +1941,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #2AD2C9;
   color: #444444;
   min-width: 0;
@@ -1948,7 +1949,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1960,6 +1960,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #614767;
   color: #f8f8f8;
   min-width: 0;
@@ -1967,7 +1968,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1979,6 +1979,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #ff8d6d;
   color: #444444;
   min-width: 0;
@@ -1986,7 +1987,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -1998,6 +1998,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #01a982;
   color: #f8f8f8;
   min-width: 0;
@@ -2005,7 +2006,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2017,6 +2017,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #425563;
   color: #f8f8f8;
   min-width: 0;
@@ -2024,7 +2025,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2036,6 +2036,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #5F7A76;
   color: #f8f8f8;
   min-width: 0;
@@ -2043,7 +2044,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2055,6 +2055,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #80746E;
   color: #f8f8f8;
   min-width: 0;
@@ -2062,7 +2063,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2074,6 +2074,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #F04953;
   color: #f8f8f8;
   min-width: 0;
@@ -2081,7 +2082,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 
@@ -2093,6 +2093,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   background: #FFD144;
   color: #444444;
   min-width: 0;
@@ -2100,7 +2101,6 @@ exports[`hpe renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  margin: 0px;
   padding: 0px;
 }
 

@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { a11yTitlePropType, getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (Select) => {
   const DocumentedSelect = describe(Select)
@@ -13,7 +13,7 @@ export const doc = (Select) => {
     );
 
   DocumentedSelect.propTypes = {
-    a11yTitle: a11yTitlePropType,
+    ...genericProps,
     children: PropTypes.func.description(
       'Function that will be called when each option is rendered.'
     ),

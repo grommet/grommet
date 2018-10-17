@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (Clock) => {
   const DocumentedClock = describe(Clock)
@@ -12,6 +12,7 @@ export const doc = (Clock) => {
     );
 
   DocumentedClock.propTypes = {
+    ...genericProps,
     hourLimit: PropTypes.oneOf([12, 24, '12', '24']).description(
       'Whether to roll over the hours after 12 or after 24.'
     ).defaultValue(24),

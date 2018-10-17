@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { focusStyle, normalizeColor } from '../../utils';
+import { focusStyle, genericStyles, normalizeColor } from '../../utils';
 
 const disabledStyle = `
   opacity: 0.3;
@@ -16,6 +16,7 @@ export const StyledAnchor = styled.a`
   text-decoration: ${props => (props.hasIcon ? 'none' : props.theme.anchor.textDecoration)};
   cursor: pointer;
   outline: none;
+  ${genericStyles}
 
   ${props => !props.disabled && `
     &:hover {

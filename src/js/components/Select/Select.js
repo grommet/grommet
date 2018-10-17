@@ -47,13 +47,16 @@ class Select extends Component {
   render() {
     const {
       a11yTitle,
+      alignSelf,
       children,
       closeOnChange,
       disabled,
       dropAlign,
       dropTarget,
       forwardRef,
+      gridArea,
       id,
+      margin,
       messages,
       onChange,
       onClose,
@@ -116,6 +119,9 @@ class Select extends Component {
           dropAlign={dropAlign}
           dropTarget={dropTarget}
           open={open}
+          alignSelf={alignSelf}
+          gridArea={gridArea}
+          margin={margin}
           onOpen={this.onOpen}
           onClose={this.onClose}
           dropContent={<SelectContainer {...this.props} onChange={onSelectChange} />}

@@ -149,71 +149,73 @@ exports[`Heading margin renders 1`] = `
 }
 
 .c1 {
+  margin: 12px;
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
-  margin-top: 12px;
-  margin-bottom: 12px;
 }
 
 .c2 {
+  margin: 24px;
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
-  margin-top: 24px;
-  margin-bottom: 24px;
 }
 
 .c3 {
+  margin: 48px;
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
-  margin-top: 48px;
-  margin-bottom: 48px;
 }
 
 .c4 {
+  margin: 0px;
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 
 .c5 {
+  margin-bottom: 12px;
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
-  margin-bottom: 12px;
 }
 
 .c6 {
+  margin-top: 12px;
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
-  margin-top: 12px;
 }
 
 .c7 {
+  margin-bottom: 0px;
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
-  margin-bottom: 0;
 }
 
 .c8 {
+  margin-top: 0px;
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
-  margin-top: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -225,14 +227,55 @@ exports[`Heading margin renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c1 {
-    margin-top: 6px;
+  .c2 {
+    margin: 12px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 24px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
     margin-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
+  .c5 {
     font-size: 34px;
     line-height: 40px;
     max-width: 816px;
@@ -240,14 +283,13 @@ exports[`Heading margin renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c2 {
-    margin-top: 12px;
-    margin-bottom: 12px;
+  .c6 {
+    margin-top: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c6 {
     font-size: 34px;
     line-height: 40px;
     max-width: 816px;
@@ -255,52 +297,8 @@ exports[`Heading margin renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin-top: 24px;
-    margin-bottom: 24px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
-    margin-top: 0px;
+  .c7 {
     margin-bottom: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    font-size: 34px;
-    line-height: 40px;
-    max-width: 816px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
-    margin-top: 6px;
   }
 }
 
@@ -309,6 +307,12 @@ exports[`Heading margin renders 1`] = `
     font-size: 34px;
     line-height: 40px;
     max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin-top: 0px;
   }
 }
 

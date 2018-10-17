@@ -400,6 +400,7 @@ class WorldMap extends Component {
         preserveAspectRatio='xMinYMin meet'
         width={width}
         height={height}
+        theme={theme}
         {...interactiveProps}
         {...rest}
       >

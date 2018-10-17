@@ -40,6 +40,7 @@ exports[`RoutedAnchor renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -49,7 +50,6 @@ exports[`RoutedAnchor renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin: 0px;
   padding: 0px;
 }
 

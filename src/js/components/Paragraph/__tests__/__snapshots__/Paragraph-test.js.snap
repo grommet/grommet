@@ -12,49 +12,45 @@ exports[`Paragraph margin renders 1`] = `
 }
 
 .c1 {
+  margin: 12px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
-  margin-top: 12px;
-  margin-bottom: 12px;
 }
 
 .c2 {
+  margin: 24px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
-  margin-top: 24px;
-  margin-bottom: 24px;
 }
 
 .c3 {
+  margin: 48px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
-  margin-top: 48px;
-  margin-bottom: 48px;
 }
 
 .c4 {
+  margin: 0px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 
 .c5 {
+  margin-bottom: 12px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
-  margin-bottom: 12px;
 }
 
 .c6 {
+  margin-top: 12px;
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
-  margin-top: 12px;
 }
 
 <div

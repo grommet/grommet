@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { backgroundStyle, parseMetricToNum } from '../../utils';
+import { backgroundStyle, genericStyles, parseMetricToNum } from '../../utils';
 
 const sizeStyle = (props) => {
   const data = props.theme.calendar[props.sizeProp];
@@ -11,6 +11,7 @@ const sizeStyle = (props) => {
 };
 
 export const StyledCalendar = styled.div`
+  ${genericStyles}
   ${props => sizeStyle(props)}
   ${props => props.theme.calendar && props.theme.calendar.extend}
 `;

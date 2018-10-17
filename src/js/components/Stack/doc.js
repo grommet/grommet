@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = (Stack) => {
   const DocumentedStack = describe(Stack)
@@ -13,6 +13,7 @@ export const doc = (Stack) => {
     );
 
   DocumentedStack.propTypes = {
+    ...genericProps,
     anchor: PropTypes.oneOf([
       'center', 'left', 'right', 'top', 'bottom',
       'top-left', 'bottom-left', 'top-right', 'bottom-right',

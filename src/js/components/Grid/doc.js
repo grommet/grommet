@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 const fixedSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge',
@@ -23,6 +23,7 @@ to create fallback rendering for older browsers, like ie11.`
     );
 
   DocumentedGrid.propTypes = {
+    ...genericProps,
     align: PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description(
       `How to align the individual items inside the grid when there is extra
 space in the column axis.`
