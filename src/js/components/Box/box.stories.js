@@ -167,7 +167,7 @@ const RoundBox = () => (
 const BackgroundBox = () => (
   <Grommet theme={grommet}>
     <Box pad='small' gap='small' align='start'>
-      <Box pad='small' background='brand'>
+      <Box pad='small' background='brand' elevation='large'>
         brand
       </Box>
       <Box
@@ -191,10 +191,24 @@ const BackgroundBox = () => (
   </Grommet>
 );
 
+const ElevationBox = () => (
+  <Grommet theme={grommet}>
+    <Box pad='small' gap='small' align='start'>
+      <Box pad='medium' background='dark-1' elevation='medium' gap='medium'>
+        <Text>on white</Text>
+        <Box pad='medium' elevation='medium'>
+          <Text>on dark</Text>
+        </Box>
+      </Box>
+    </Box>
+  </Grommet>
+);
+
 storiesOf('Box', module)
   .add('Simple Box', () => <SimpleBox />)
   .add('Custom color', () => <CustomColorBox />)
   .add('Fixed sizes', () => <FixedSizesBox />)
   .add('Border', () => <BorderBox />)
   .add('Round', () => <RoundBox />)
-  .add('Background', () => <BackgroundBox />);
+  .add('Background', () => <BackgroundBox />)
+  .add('Elevation', () => <ElevationBox />);

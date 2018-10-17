@@ -70,7 +70,7 @@ class Box extends Component {
       height, // munged to avoid styled-components putting it in the DOM
       ...rest
     } = this.props;
-    const { theme: stateTheme } = this.state;
+    const { theme: stateTheme, priorTheme } = this.state;
     const theme = stateTheme || propsTheme;
 
     let StyledComponent = styledComponents[tag];
@@ -116,6 +116,7 @@ class Box extends Component {
         heightProp={height}
         responsive={responsive}
         theme={theme}
+        priorTheme={priorTheme}
         {...rest}
       >
         {contents}
