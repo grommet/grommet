@@ -304,6 +304,16 @@ xlarge
 string
 \`\`\`
 
+**color**
+
+
+      Label color and icon color, if not specified on the icon.
+    
+
+\`\`\`
+string
+\`\`\`
+
 **href**
 
 Hyperlink reference to place in the anchor.

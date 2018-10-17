@@ -4,10 +4,33 @@ import { compose } from 'recompose';
 
 import { ResponsiveContext, ThemeContext } from '../../contexts';
 import { base as baseTheme } from '../../themes/base';
-import { colorIsDark, deepMerge, getBreakpoint } from '../../utils';
+import {
+  colorIsDark, deepMerge, getBreakpoint, normalizeColor,
+} from '../../utils';
 import { withIconTheme } from '../hocs';
 
 import { StyledGrommet } from './StyledGrommet';
+
+// grommet-icons isn't aware of the grommet dark background context.
+// Here, we reduce the grommet theme colors to the correct flat color
+// namespace for grommet-icons.
+const reduceIconTheme = (iconTheme, dark) => {
+  const result = { ...iconTheme, colors: { ...iconTheme.colors } };
+  Object.keys(result.colors).forEach((key) => {
+    if (typeof result.colors[key] === 'object') {
+      result.colors[key] = normalizeColor(
+        result.colors[key][dark ? 'dark' : 'light'],
+        { dark, global: { colors: result.colors } },
+      );
+    } else {
+      result.colors[key] = normalizeColor(
+        result.colors[key],
+        { dark, global: { colors: result.colors } },
+      );
+    }
+  });
+  return result;
+};
 
 class Grommet extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -26,10 +49,10 @@ class Grommet extends Component {
       const dark = color ? colorIsDark(color) : false;
       const lightIconTheme = deepMerge(iconTheme, nextTheme.icon);
       const iconThemes = {
-        dark: deepMerge(lightIconTheme, {
+        dark: reduceIconTheme(deepMerge(lightIconTheme, {
           color: nextTheme.global.colors.text.dark,
-        }),
-        light: lightIconTheme,
+        }), true),
+        light: reduceIconTheme(lightIconTheme, false),
       };
       return {
         theme: {

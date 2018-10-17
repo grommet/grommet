@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Add } from 'grommet-icons';
 
-import { Anchor, Grommet } from 'grommet';
+import { Anchor, Box, Grommet } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 storiesOf('Anchor', module)
@@ -12,13 +12,23 @@ storiesOf('Anchor', module)
       <Anchor href='#'>Link</Anchor>
     </Grommet>
   ))
-  .add('Icon', () => (
+  .add('Colors', () => (
     <Grommet theme={grommet}>
-      <Anchor icon={<Add />} label='Add' href='#' />
+      <Box pad='medium' gap='medium'>
+        <Anchor icon={<Add />} href='#' />
+        <Anchor icon={<Add />} label='Add' href='#' />
+        <Anchor label='Add' href='#' />
+      </Box>
+      <Box background='dark-1' pad='medium' gap='medium'>
+        <Anchor icon={<Add />} href='#' />
+        <Anchor icon={<Add />} label='Add' href='#' />
+        <Anchor icon={<Add />} label='Add' href='#' />
+        <Anchor label='Add' href='#' />
+      </Box>
     </Grommet>
   ))
-  .add('With Text', () => (
+  .add('Inline', () => (
     <Grommet theme={grommet}>
-      This is a <Anchor label='link' href='#' /> with text.
+      This is <Anchor label='an inline link' href='#' /> with surrounding text.
     </Grommet>
   ));

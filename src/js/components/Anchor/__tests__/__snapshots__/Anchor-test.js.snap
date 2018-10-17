@@ -16,6 +16,7 @@ exports[`Anchor disabled renders 1`] = `
   font-size: inherit;
   line-height: inherit;
   color: #1D67E3;
+  font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -59,6 +60,7 @@ exports[`Anchor focus renders 1`] = `
   font-size: inherit;
   line-height: inherit;
   color: #1D67E3;
+  font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -135,9 +137,7 @@ exports[`Anchor focus renders 1`] = `
       <span
         className="c3"
       >
-        <strong>
-          Test
-        </strong>
+        Test
       </span>
     </span>
   </a>
@@ -172,11 +172,11 @@ exports[`Anchor icon label renders 1`] = `
   font-size: inherit;
   line-height: inherit;
   color: #1D67E3;
+  font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  color: #444444;
 }
 
 .c1:hover {
@@ -234,16 +234,16 @@ exports[`Anchor icon label renders 1`] = `
         }
       }
     >
-      <svg />
+      <svg
+        color="#1D67E3"
+      />
       <div
         className="c3"
       />
       <span
         className="c4"
       >
-        <strong>
-          Test
-        </strong>
+        Test
       </span>
     </span>
   </a>
@@ -271,6 +271,7 @@ exports[`Anchor primary renders 1`] = `
   font-size: inherit;
   line-height: inherit;
   color: #1D67E3;
+  font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -335,9 +336,7 @@ exports[`Anchor primary renders 1`] = `
       <span
         className="c3"
       >
-        <strong>
-          Test
-        </strong>
+        Test
       </span>
     </span>
   </a>
@@ -360,6 +359,7 @@ exports[`Anchor renders 1`] = `
   font-size: inherit;
   line-height: inherit;
   color: #1D67E3;
+  font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -398,6 +398,7 @@ exports[`Anchor renders with children 1`] = `
   font-size: inherit;
   line-height: inherit;
   color: #1D67E3;
+  font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -451,11 +452,11 @@ exports[`Anchor reverse icon label renders 1`] = `
   font-size: inherit;
   line-height: inherit;
   color: #1D67E3;
+  font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  color: #444444;
 }
 
 .c1:hover {
@@ -516,14 +517,14 @@ exports[`Anchor reverse icon label renders 1`] = `
       <span
         className="c3"
       >
-        <strong>
-          Test
-        </strong>
+        Test
       </span>
       <div
         className="c4"
       />
-      <svg />
+      <svg
+        color="#1D67E3"
+      />
     </span>
   </a>
 </div>
@@ -545,6 +546,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
   font-size: inherit;
   line-height: inherit;
   color: #1D67E3;
+  font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -607,7 +609,9 @@ exports[`Anchor warns about invalid icon render 1`] = `
         }
       }
     >
-      <svg />
+      <svg
+        color="#1D67E3"
+      />
     </span>
   </a>
 </div>
@@ -634,6 +638,7 @@ exports[`Anchor warns about invalid label render 1`] = `
   font-size: inherit;
   line-height: inherit;
   color: #1D67E3;
+  font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
@@ -698,9 +703,7 @@ exports[`Anchor warns about invalid label render 1`] = `
       <span
         className="c3"
       >
-        <strong>
-          Test
-        </strong>
+        Test
       </span>
     </span>
   </a>
