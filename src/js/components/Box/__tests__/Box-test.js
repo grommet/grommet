@@ -326,6 +326,9 @@ describe('Box', () => {
         <Box elevation='medium' />
         <Box elevation='large' />
         <Box elevation='xlarge' />
+        <Box background='dark-1' elevation='small'>
+          <Box elevation='small' />
+        </Box>
       </Grommet>
     );
     const tree = component.toJSON();
