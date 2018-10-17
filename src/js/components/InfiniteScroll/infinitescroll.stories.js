@@ -24,4 +24,11 @@ const SimpleInfiniteScroll = props => (
 
 storiesOf('InfiniteScroll', module)
   .add('Simple', () => <SimpleInfiniteScroll />)
-  .add('Show 118th item', () => <SimpleInfiniteScroll show={117} />);
+  .add('Show 118th item', () => <SimpleInfiniteScroll show={117} />)
+  .add('Marker', () => (
+    <SimpleInfiniteScroll
+      renderMarker={marker => (
+        <Box pad='medium' background='accent-1'>{marker}</Box>
+      )}
+    />
+  ));
