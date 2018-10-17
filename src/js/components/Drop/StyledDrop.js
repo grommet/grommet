@@ -39,7 +39,7 @@ export const StyledDrop = styled.div`
   )}
 
   opacity: 0;
-  transform-origin: ${props => getTransformOriginStyle(props.align)};
+  transform-origin: ${props => getTransformOriginStyle(props.alignProp)};
   animation:  ${dropKeyFrames} 0.1s forwards;
   animation-delay: 0.01s;
 

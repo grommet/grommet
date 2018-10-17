@@ -337,7 +337,7 @@ exports[`TextInput close suggestion drop 2`] = `
 exports[`TextInput close suggestion drop 3`] = `
 "
 
-.cpQPlH {
+.bPzyli {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -685,7 +685,7 @@ exports[`TextInput complex suggestions 2`] = `
 exports[`TextInput complex suggestions 3`] = `
 "
 
-.cpQPlH {
+.bPzyli {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1219,7 +1219,7 @@ exports[`TextInput select suggestion 2`] = `
 exports[`TextInput select suggestion 3`] = `
 "
 
-.cpQPlH {
+.bPzyli {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1594,7 +1594,7 @@ exports[`TextInput suggestions 2`] = `
 exports[`TextInput suggestions 3`] = `
 "
 
-.cpQPlH {
+.bPzyli {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
