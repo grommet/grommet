@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { cloneElement, Component } from 'react';
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
@@ -6,6 +6,7 @@ import { Text } from '../Text';
 import { withFocus, withForwardRef, withTheme } from '../hocs';
 
 import { StyledAnchor } from './StyledAnchor';
+import { normalizeColor } from '../../utils';
 
 class Anchor extends Component {
   constructor(props) {
@@ -21,38 +22,43 @@ class Anchor extends Component {
     const {
       a11yTitle,
       children,
+      color,
       disabled,
       forwardRef,
       href,
       icon,
       focus,
       label,
-      primary,
       onClick,
       reverse,
       theme,
       ...rest
     } = this.props;
 
-    const anchorLabel = typeof label === 'string' ? (
-      <Text>
-        <strong>{label}</strong>
-      </Text>
-    ) : label;
+    const anchorLabel = typeof label === 'string'
+      ? <Text>{label}</Text>
+      : label;
 
-    const first = reverse ? anchorLabel : icon;
-    const second = reverse ? icon : anchorLabel;
+    let coloredIcon = icon;
+    if (icon && !icon.props.color) {
+      coloredIcon = cloneElement(
+        icon, { color: normalizeColor(color || theme.anchor.color, theme) }
+      );
+    }
+
+    const first = reverse ? anchorLabel : coloredIcon;
+    const second = reverse ? coloredIcon : anchorLabel;
 
     return (
       <StyledAnchor
         {...rest}
         ref={forwardRef}
         aria-label={a11yTitle}
+        color={color}
         disabled={disabled}
         hasIcon={!!icon}
         focus={focus}
         hasLabel={label}
-        primary={primary}
         reverse={reverse}
         theme={theme}
         href={!disabled ? href : undefined}

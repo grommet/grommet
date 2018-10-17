@@ -234,6 +234,11 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         dark: '#6194EB',
         light: '#1D67E3',
       },
+      hover: {
+        textDecoration: 'underline',
+        // fontWeight: undefined,
+        // extend: undefined,
+      },
     },
     box: {
       responsiveBreakpoint: 'small', // when we switch rows to columns

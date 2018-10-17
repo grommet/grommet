@@ -17,6 +17,9 @@ or just use children.`
   DocumentedAnchor.propTypes = {
     ...genericProps,
     a11yTitle: PropTypes.string.description('Custom title to be used by screen readers.'),
+    color: PropTypes.string.description(`
+      Label color and icon color, if not specified on the icon.
+    `),
     href: PropTypes.string.description('Hyperlink reference to place in the anchor.'),
     icon: PropTypes.element.description('Icon element to place in the anchor.'),
     label: PropTypes.node.description('Label text to place in the anchor.'),
