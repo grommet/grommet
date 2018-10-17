@@ -81,6 +81,64 @@ exports[`Button color renders 1`] = `
   box-shadow: 0px 0px 0px 2px #FD6FFF;
 }
 
+.c4 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #111111;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background: #111111;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.c4:hover {
+  box-shadow: 0px 0px 0px 2px #111111;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #123;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background: #123;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.c5:hover {
+  box-shadow: 0px 0px 0px 2px #123;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -121,6 +179,32 @@ exports[`Button color renders 1`] = `
   </button>
   <button
     className="c3"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="button"
+  >
+    <div
+      className="c2"
+    >
+      Test
+    </div>
+  </button>
+  <button
+    className="c4"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="button"
+  >
+    <div
+      className="c2"
+    >
+      Test
+    </div>
+  </button>
+  <button
+    className="c5"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}

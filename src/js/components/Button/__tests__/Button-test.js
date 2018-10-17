@@ -60,6 +60,8 @@ test('Button color renders', () => {
     <Grommet>
       <Button color='accent-1' label='Test' onClick={() => {}} />
       <Button color='accent-1' primary label='Test' onClick={() => {}} />
+      <Button color='#111111' primary label='Test' onClick={() => {}} />
+      <Button color='#123' primary label='Test' onClick={() => {}} />
     </Grommet>
   );
   const tree = component.toJSON();
