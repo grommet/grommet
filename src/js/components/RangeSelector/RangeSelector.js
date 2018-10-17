@@ -158,7 +158,7 @@ class RangeSelector extends Component {
             cursor: (direction === 'vertical' ? 'ns-resize' : 'ew-resize'),
           }}
           background={invert ? undefined
-            : { color: (color || 'brand'), opacity }}
+            : { color: (color || 'control'), opacity }}
           fill={fill}
           round={round}
           onMouseDown={onChange ? this.selectionMouseDown : undefined}

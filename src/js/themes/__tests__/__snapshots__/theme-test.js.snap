@@ -64,7 +64,7 @@ exports[`dark renders 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #FFCA58;
+  background: #333333;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -82,7 +82,7 @@ exports[`dark renders 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #333333;
+  background: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -100,7 +100,7 @@ exports[`dark renders 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #444444;
+  background: #555555;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -118,7 +118,7 @@ exports[`dark renders 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #555555;
+  background: #666666;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -136,7 +136,7 @@ exports[`dark renders 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #666666;
+  background: #777777;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -154,7 +154,7 @@ exports[`dark renders 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #777777;
+  background: #FFCA58;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -680,7 +680,7 @@ exports[`dark renders 1`] = `
     </span>
   </div>
   <div
-    className="c5"
+    className="c1"
   >
     <span
       className="c2"
@@ -689,7 +689,7 @@ exports[`dark renders 1`] = `
     </span>
   </div>
   <div
-    className="c6"
+    className="c5"
   >
     <span
       className="c2"
@@ -698,7 +698,7 @@ exports[`dark renders 1`] = `
     </span>
   </div>
   <div
-    className="c7"
+    className="c6"
   >
     <span
       className="c2"
@@ -707,7 +707,7 @@ exports[`dark renders 1`] = `
     </span>
   </div>
   <div
-    className="c8"
+    className="c7"
   >
     <span
       className="c2"
@@ -716,7 +716,7 @@ exports[`dark renders 1`] = `
     </span>
   </div>
   <div
-    className="c9"
+    className="c8"
   >
     <span
       className="c2"
@@ -725,7 +725,7 @@ exports[`dark renders 1`] = `
     </span>
   </div>
   <div
-    className="c10"
+    className="c9"
   >
     <span
       className="c2"
@@ -734,7 +734,7 @@ exports[`dark renders 1`] = `
     </span>
   </div>
   <div
-    className="c5"
+    className="c10"
   >
     <span
       className="c2"

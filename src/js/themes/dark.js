@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 
 import { normalizeColor, deepFreeze } from '../utils';
 
-const brandColor = '#FFCA58';
+const controlColor = '#FFCA58';
 const accentColors = ['#FD6FFF', '#60EB9F', '#60EBE1', '#FFCA58'];
 const neutralColors = ['#EB6060', '#01C781', '#6095EB', '#FFB200'];
 const statusColors = {
@@ -24,9 +24,9 @@ const colors = {
   background: backgroundColor,
   black: '#000000',
   border: borderColor,
-  brand: brandColor,
-  control: brandColor,
-  focus: brandColor,
+  brand: '#FD6FFF',
+  control: controlColor,
+  focus: controlColor,
   placeholder: '#AAAAAA',
   text: textColor,
   white: '#FFFFFF',
@@ -46,9 +46,6 @@ Object.keys(statusColors).forEach((color) => {
 export const dark = deepFreeze({
   global: {
     colors,
-    control: {
-      color: brandColor,
-    },
     drop: {
       background: '#333333',
     },
@@ -70,7 +67,7 @@ export const dark = deepFreeze({
     },
   },
   anchor: {
-    color: brandColor,
+    color: controlColor,
   },
   icon: {
     color: textColor,
