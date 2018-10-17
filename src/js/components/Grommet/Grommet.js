@@ -39,7 +39,15 @@ class Grommet extends Component {
 
     let nextTheme;
     if (theme && (theme !== themeProp || iconTheme !== iconThemeProp)) {
-      nextTheme = deepMerge(baseTheme, theme);
+      // in case the supplied theme has global.colors but not icon.colors,
+      // pre-merge the current base icon colors with the new theme colors.
+      let iconColoredTheme = theme;
+      if (!theme.icon || !theme.icon.colors) {
+        iconColoredTheme = { ...theme };
+        iconColoredTheme.icon = { ...(theme.icon || {}) };
+        iconColoredTheme.icon.colors = deepMerge(baseTheme.icon.colors, theme.global.colors);
+      }
+      nextTheme = deepMerge(baseTheme, iconColoredTheme);
     } else if (!theme && (themeProp || !stateTheme)) {
       nextTheme = baseTheme;
     }

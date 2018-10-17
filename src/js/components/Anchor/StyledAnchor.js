@@ -12,7 +12,7 @@ export const StyledAnchor = styled.a`
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: ${props => normalizeColor(props.color || props.theme.anchor.color, props.theme)};
+  color: ${props => normalizeColor(props.colorProp || props.theme.anchor.color, props.theme)};
   ${props => props.theme.anchor.fontWeight
     && `font-weight: ${props.theme.anchor.fontWeight};`}
   text-decoration: ${props => (props.hasIcon ? 'none' : props.theme.anchor.textDecoration)};

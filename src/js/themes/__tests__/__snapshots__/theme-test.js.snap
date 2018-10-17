@@ -1,6 +1,439 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`dark renders 1`] = `
+exports[`Grommet custom theme 1`] = `
+.c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #1D67E3;
+  stroke: #1D67E3;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #cc6633;
+  stroke: #cc6633;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c11 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #6194EB;
+  stroke: #6194EB;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  background: #333333;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c5 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c2 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #1D67E3;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c2:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #cc6633;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c7:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c10 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #6194EB;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c10:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <a
+      className="c2"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <span
+        className="-span c3"
+        style={
+          Object {
+            "display": "inline-flex",
+          }
+        }
+      >
+        <svg
+          aria-label="Add"
+          className="c4"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="c5"
+        />
+        <span
+          className="c6"
+        >
+          Add
+        </span>
+      </span>
+    </a>
+    <a
+      className="c7"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <span
+        className="-span c3"
+        style={
+          Object {
+            "display": "inline-flex",
+          }
+        }
+      >
+        <svg
+          aria-label="Add"
+          className="c8"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="c5"
+        />
+        <span
+          className="c6"
+        >
+          Add
+        </span>
+      </span>
+    </a>
+  </div>
+  <div
+    className="c9"
+  >
+    <a
+      className="c10"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <span
+        className="-span c3"
+        style={
+          Object {
+            "display": "inline-flex",
+          }
+        }
+      >
+        <svg
+          aria-label="Add"
+          className="c11"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="c5"
+        />
+        <span
+          className="c6"
+        >
+          Add
+        </span>
+      </span>
+    </a>
+    <a
+      className="c7"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <span
+        className="-span c3"
+        style={
+          Object {
+            "display": "inline-flex",
+          }
+        }
+      >
+        <svg
+          aria-label="Add"
+          className="c8"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="c5"
+        />
+        <span
+          className="c6"
+        >
+          Add
+        </span>
+      </span>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Grommet dark theme 1`] = `
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -862,7 +1295,7 @@ exports[`dark renders 1`] = `
 </div>
 `;
 
-exports[`default renders 1`] = `
+exports[`Grommet default theme 1`] = `
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1742,7 +2175,7 @@ exports[`default renders 1`] = `
 </div>
 `;
 
-exports[`hpe renders 1`] = `
+exports[`Grommet hpe theme 1`] = `
 .c6 {
   display: -webkit-box;
   display: -webkit-flex;
