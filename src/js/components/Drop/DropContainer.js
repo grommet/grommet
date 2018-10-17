@@ -244,6 +244,7 @@ export class DropContainer extends Component {
 
   render() {
     const {
+      align: alignProp,
       children,
       onClickOutside,
       onEsc,
@@ -260,6 +261,7 @@ export class DropContainer extends Component {
         elevation={theme.global.drop.shadowSize || 'small'}
         tabIndex='-1'
         ref={this.dropRef}
+        alignProp={alignProp}
         theme={theme}
         {...rest}
       >

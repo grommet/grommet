@@ -680,7 +680,7 @@ exports[`Menu close by clicking outside 3`] = `
   }
 }
 
-.dJDrdW {
+.cBpjKy {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -699,13 +699,13 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .dJDrdW {
+  .cBpjKy {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dJDrdW {
+  .cBpjKy {
     padding: 0px;
   }
 }
@@ -2210,7 +2210,7 @@ exports[`Menu open and close on click 4`] = `
   }
 }
 
-.dJDrdW {
+.cBpjKy {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2229,13 +2229,13 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .dJDrdW {
+  .cBpjKy {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dJDrdW {
+  .cBpjKy {
     padding: 0px;
   }
 }
@@ -3051,7 +3051,7 @@ exports[`Menu with dropAlign renders 3`] = `
   }
 }
 
-.dJDrdW {
+.cBpjKy {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3070,13 +3070,13 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .dJDrdW {
+  .cBpjKy {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dJDrdW {
+  .cBpjKy {
     padding: 0px;
   }
 }
