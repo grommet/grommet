@@ -17,7 +17,7 @@ export const doc = (Heading) => {
       `A color identifier to use for the text color. For example:
       'brand'.`
     ),
-    level: PropTypes.oneOf([1, 2, 3, 4, '1', '2', '3', '4']).description(
+    level: PropTypes.number.description(
       `The heading level. It corresponds to the number after the 'H' for
 the DOM tag. Set the level for semantic accuracy and accessibility.
 The sizing can be further adjusted using the size property.`

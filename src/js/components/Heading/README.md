@@ -123,14 +123,7 @@ the DOM tag. Set the level for semantic accuracy and accessibility.
 The sizing can be further adjusted using the size property.
 
 ```
-1
-2
-3
-4
-1
-2
-3
-4
+number
 ```
 
 **responsive**
