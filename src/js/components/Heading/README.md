@@ -124,6 +124,7 @@ The sizing can be further adjusted using the size property.
 
 ```
 number
+string
 ```
 
 **responsive**
