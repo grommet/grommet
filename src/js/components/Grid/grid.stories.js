@@ -81,6 +81,26 @@ const Percentages = () => (
   </Grommet>
 );
 
+const NColumnGrid = () => (
+  <Grommet theme={grommet} full>
+    <Grid
+      columns={{
+        count: 6,
+        size: 'auto',
+      }}
+      gap='small'
+    >
+      <Box background='brand'>Item 1</Box>
+      <Box background='brand'>Item 2</Box>
+      <Box background='brand'>Item 3</Box>
+      <Box background='brand'>Item 4</Box>
+      <Box background='brand'>Item 5</Box>
+      <Box background='brand'>Item 6</Box>
+    </Grid>
+  </Grommet>
+);
+
 storiesOf('Grid', module)
   .add('App', () => <AppGrid />)
-  .add('Percentages', () => <Percentages />);
+  .add('Percentages', () => <Percentages />)
+  .add('N-column layout', () => <NColumnGrid />);

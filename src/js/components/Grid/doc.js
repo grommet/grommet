@@ -46,7 +46,10 @@ space in the column axis.`
       ])),
       PropTypes.oneOf(fixedSizes),
       PropTypes.shape({
-        count: PropTypes.oneOf(['fit', 'fill']),
+        count: PropTypes.oneOfType([
+          PropTypes.oneOf(['fit', 'fill']),
+          PropTypes.number,
+        ]),
         size: PropTypes.oneOfType([
           PropTypes.oneOf(fixedSizes),
           PropTypes.arrayOf(PropTypes.oneOf(sizes)),
