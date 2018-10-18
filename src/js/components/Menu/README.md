@@ -122,7 +122,10 @@ Where to place the drop down. The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
 {left: 'left', top: 'bottom'} would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
-one of top or bottom should be specified.
+one of top or bottom should be specified. Defaults to `{
+  "top": "top",
+  "left": "left"
+}`.
 
 ```
 {
@@ -196,7 +199,10 @@ node
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers.
+Custom messages. Used for accessibility by screen readers. Defaults to `{
+  "openMenu": "Open Menu",
+  "closeMenu": "Close Menu"
+}`.
 
 ```
 {
@@ -207,7 +213,7 @@ Custom messages. Used for accessibility by screen readers.
 
 **size**
 
-The size of the menu.
+The size of the menu. Defaults to `medium`.
 
 ```
 small

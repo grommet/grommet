@@ -14,8 +14,7 @@ export const doc = (Paragraph) => {
   DocumentedParagraph.propTypes = {
     ...genericProps,
     color: PropTypes.string.description(
-      `A color identifier to use for the text color. For example:
-'status-critical'.`
+      'A color identifier to use for the text color.'
     ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
@@ -25,7 +24,7 @@ export const doc = (Paragraph) => {
     ).defaultValue('medium'),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']).description(
       'How to align the text inside the paragraph.'
-    ),
+    ).defaultValue('start'),
   };
 
   return DocumentedParagraph;

@@ -109,8 +109,7 @@ string
 
 **color**
 
-A color identifier to use for the text color. For example:
-'status-critical'.
+A color identifier to use for the text color.
 
 ```
 string
@@ -130,7 +129,7 @@ string
 
 **textAlign**
 
-How to align the text inside the paragraph.
+How to align the text inside the paragraph. Defaults to `start`.
 
 ```
 start

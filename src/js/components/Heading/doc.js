@@ -14,8 +14,7 @@ export const doc = (Heading) => {
   DocumentedHeading.propTypes = {
     ...genericProps,
     color: PropTypes.string.description(
-      `A color identifier to use for the text color. For example:
-      'brand'.`
+      'A color identifier to use for the text color.'
     ),
     level: PropTypes.oneOf(
       [1, 2, 3, 4, 5, 6, '1', '2', '3', '4', '5', '6']
@@ -23,7 +22,7 @@ export const doc = (Heading) => {
       `The heading level. It corresponds to the number after the 'H' for
 the DOM tag. Set the level for semantic accuracy and accessibility.
 The sizing can be further adjusted using the size property.`
-    ),
+    ).defaultValue(1),
     responsive: PropTypes.bool.description(
       `Whether the font size should be scaled for
       mobile environments.`
@@ -36,14 +35,14 @@ The sizing can be further adjusted using the size property.`
 be adjusted via this size property. The tag should be set for semantic
 correctness and accessibility. This size property allows for stylistic
 adjustments.`
-    ),
+    ).defaultValue('medium'),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']).description(
       'How to align the text inside the heading.'
-    ),
+    ).defaultValue('start'),
     truncate: PropTypes.bool.description(
       `Restrict the text to a single line and truncate with ellipsis if it
 is too long to all fit.`
-    ),
+    ).defaultValue(false),
   };
 
   return DocumentedHeading;

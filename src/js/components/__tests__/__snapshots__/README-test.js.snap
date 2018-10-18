@@ -3322,8 +3322,7 @@ string
 
 **color**
 
-A color identifier to use for the text color. For example:
-      'brand'.
+A color identifier to use for the text color.
 
 \`\`\`
 string
@@ -3333,7 +3332,7 @@ string
 
 The heading level. It corresponds to the number after the 'H' for
 the DOM tag. Set the level for semantic accuracy and accessibility.
-The sizing can be further adjusted using the size property.
+The sizing can be further adjusted using the size property. Defaults to \`1\`.
 
 \`\`\`
 1
@@ -3364,7 +3363,7 @@ boolean
 The font size is primarily driven by the chosen tag. But, it can
 be adjusted via this size property. The tag should be set for semantic
 correctness and accessibility. This size property allows for stylistic
-adjustments.
+adjustments. Defaults to \`medium\`.
 
 \`\`\`
 small
@@ -3375,7 +3374,7 @@ string
 
 **textAlign**
 
-How to align the text inside the heading.
+How to align the text inside the heading. Defaults to \`start\`.
 
 \`\`\`
 start
@@ -3979,7 +3978,10 @@ Where to place the drop down. The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
 {left: 'left', top: 'bottom'} would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
-one of top or bottom should be specified.
+one of top or bottom should be specified. Defaults to \`{
+  \\"top\\": \\"top\\",
+  \\"left\\": \\"left\\"
+}\`.
 
 \`\`\`
 {
@@ -4053,7 +4055,10 @@ node
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers.
+Custom messages. Used for accessibility by screen readers. Defaults to \`{
+  \\"openMenu\\": \\"Open Menu\\",
+  \\"closeMenu\\": \\"Close Menu\\"
+}\`.
 
 \`\`\`
 {
@@ -4064,7 +4069,7 @@ Custom messages. Used for accessibility by screen readers.
 
 **size**
 
-The size of the menu.
+The size of the menu. Defaults to \`medium\`.
 
 \`\`\`
 small
@@ -4377,8 +4382,7 @@ string
 
 **color**
 
-A color identifier to use for the text color. For example:
-'status-critical'.
+A color identifier to use for the text color.
 
 \`\`\`
 string
@@ -4398,7 +4402,7 @@ string
 
 **textAlign**
 
-How to align the text inside the paragraph.
+How to align the text inside the paragraph. Defaults to \`start\`.
 
 \`\`\`
 start
@@ -5663,24 +5667,66 @@ string
 
 **margin**
 
-The amount of margin above and/or below the heading. An object can be
-specified to distinguish top margin and bottom margin.
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
 
 \`\`\`
 none
+xxsmall
+xsmall
 small
 medium
 large
+xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string,
   top: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string
 }
 string
@@ -5688,8 +5734,7 @@ string
 
 **color**
 
-A color identifier to use for the text color. For example:
-'status-critical'.
+A color identifier to use for the text color.
 
 \`\`\`
 string
@@ -5722,7 +5767,7 @@ string
 
 **textAlign**
 
-How to align the text inside the component.
+How to align the text inside the component. Defaults to \`start\`.
 
 \`\`\`
 start

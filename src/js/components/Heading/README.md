@@ -109,8 +109,7 @@ string
 
 **color**
 
-A color identifier to use for the text color. For example:
-      'brand'.
+A color identifier to use for the text color.
 
 ```
 string
@@ -120,7 +119,7 @@ string
 
 The heading level. It corresponds to the number after the 'H' for
 the DOM tag. Set the level for semantic accuracy and accessibility.
-The sizing can be further adjusted using the size property.
+The sizing can be further adjusted using the size property. Defaults to `1`.
 
 ```
 1
@@ -151,7 +150,7 @@ boolean
 The font size is primarily driven by the chosen tag. But, it can
 be adjusted via this size property. The tag should be set for semantic
 correctness and accessibility. This size property allows for stylistic
-adjustments.
+adjustments. Defaults to `medium`.
 
 ```
 small
@@ -162,7 +161,7 @@ string
 
 **textAlign**
 
-How to align the text inside the heading.
+How to align the text inside the heading. Defaults to `start`.
 
 ```
 start

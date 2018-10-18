@@ -15,12 +15,14 @@ export const doc = (Button) => {
 
   DocumentedButton.propTypes = {
     ...genericProps,
-    active: PropTypes.bool.description('Whether the button is active.'),
+    active: PropTypes.bool.description('Whether the button is active.')
+      .defaultValue(false),
     color: PropTypes.string.description('Fill color for primary, border color otherwise.'),
-    disabled: PropTypes.bool.description('Whether the button is disabled.'),
+    disabled: PropTypes.bool.description('Whether the button is disabled.')
+      .defaultValue(false),
     fill: PropTypes.bool.description(
       'Whether the button expands to fill all of the available width and height.'
-    ),
+    ).defaultValue(false),
     focusIndicator: PropTypes.bool.description(
       'Whether when \'plain\' it should receive a focus outline.'
     ).defaultValue(true),
@@ -38,7 +40,7 @@ export const doc = (Button) => {
 button. An object can be also be specified for color index support:
 {background: 'neutral-2'}. This prop is meant to be used only
 with plain Buttons.`,
-    ),
+    ).defaultValue(false),
     href: PropTypes.string.description(
       'If specified, the button will behave like an anchor tag.'
     ),
@@ -50,14 +52,14 @@ causes the Button to be disabled.`
     ),
     plain: PropTypes.bool.description(
       'Whether this is a plain button with no border or padding.'
-    ),
+    ).defaultValue(false),
     primary: PropTypes.bool.description(
       'Whether this is a primary button. There should be at most one per page or screen.'
-    ),
+    ).defaultValue(false),
     reverse: PropTypes.bool.description(
       `Whether an icon and label should be reversed so that the icon is at the
 end of the anchor.`
-    ),
+    ).defaultValue(false),
     type: PropTypes.oneOf(['button', 'reset', 'submit']).description(
       'The type of button. Set the type to submit for the default button on forms.'
     ).defaultValue('button'),

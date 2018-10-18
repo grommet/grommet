@@ -18,7 +18,8 @@ export const doc = (DropButton) => {
   DocumentedDropButton.propTypes = {
     ...genericProps,
     disabled: PropTypes.bool
-      .description('Whether the button should be disabled.'),
+      .description('Whether the button should be disabled.')
+      .defaultValue(false),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),
       bottom: PropTypes.oneOf(['top', 'bottom']),
@@ -43,7 +44,7 @@ export const doc = (DropButton) => {
     open: PropTypes.bool.description(
       `Whether the drop should be open or not. Setting this property does not
       influence user interaction after it has been rendered.`
-    ),
+    ).defaultValue(false),
   };
 
   return DocumentedDropButton;

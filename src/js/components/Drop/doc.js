@@ -36,7 +36,7 @@ export const doc = (Drop) => {
       .defaultValue(true),
     restrictFocus: PropTypes.bool.description(
       'Whether the drop should control focus.'
-    ),
+    ).defaultValue(false),
     stretch: PropTypes.bool.description(
       `Whether the drop element should be stretched to at least match the
       width of the target element. The default is true because

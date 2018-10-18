@@ -19,7 +19,8 @@ export const doc = (Menu) => {
   DocumentedMenu.propTypes = {
     ...genericProps,
     disabled: PropTypes.bool
-      .description('Whether the menu should be disabled.'),
+      .description('Whether the menu should be disabled.')
+      .defaultValue(false),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
       bottom: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
@@ -31,7 +32,7 @@ The values correspond to a side of the control. For instance,
 {left: 'left', top: 'bottom'} would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
 one of top or bottom should be specified.`
-    ),
+    ).defaultValue({ top: 'top', left: 'left' }),
     dropBackground: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.shape({
@@ -63,13 +64,13 @@ The object values can be any Button prop, for example: label and onClick.`
       openMenu: PropTypes.string,
     }).description(
       'Custom messages. Used for accessibility by screen readers.'
-    ),
+    ).defaultValue({ openMenu: 'Open Menu', closeMenu: 'Close Menu' }),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ]).description(
       'The size of the menu.'
-    ),
+    ).defaultValue('medium'),
   };
 
   return DocumentedMenu;

@@ -14,25 +14,7 @@ export const doc = (Text) => {
   DocumentedText.propTypes = {
     ...genericProps,
     color: PropTypes.string.description(
-      `A color identifier to use for the text color. For example:
-'status-critical'.`
-    ),
-    margin: PropTypes.oneOfType([
-      PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-      PropTypes.shape({
-        bottom: PropTypes.oneOfType([
-          PropTypes.oneOf(['small', 'medium', 'large']),
-          PropTypes.string,
-        ]),
-        top: PropTypes.oneOfType([
-          PropTypes.oneOf(['small', 'medium', 'large']),
-          PropTypes.string,
-        ]),
-      }),
-      PropTypes.string,
-    ]).description(
-      `The amount of margin above and/or below the heading. An object can be
-specified to distinguish top margin and bottom margin.`
+      'A color identifier to use for the text color.'
     ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']),
@@ -48,11 +30,11 @@ adjustments.`
     ).defaultValue('span'),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']).description(
       'How to align the text inside the component.'
-    ),
+    ).defaultValue('start'),
     truncate: PropTypes.bool.description(
       `Restrict the text to a single line and truncate with ellipsis if it
 is too long to all fit.`
-    ),
+    ).defaultValue(false),
     weight: PropTypes.oneOfType([
       PropTypes.oneOf(['normal', 'bold']),
       PropTypes.number,

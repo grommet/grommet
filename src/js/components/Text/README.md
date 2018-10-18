@@ -42,24 +42,66 @@ string
 
 **margin**
 
-The amount of margin above and/or below the heading. An object can be
-specified to distinguish top margin and bottom margin.
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
 
 ```
 none
+xxsmall
+xsmall
 small
 medium
 large
+xlarge
 {
   bottom: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string,
   top: 
+    xxsmall
+    xsmall
     small
     medium
     large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
     string
 }
 string
@@ -67,8 +109,7 @@ string
 
 **color**
 
-A color identifier to use for the text color. For example:
-'status-critical'.
+A color identifier to use for the text color.
 
 ```
 string
@@ -101,7 +142,7 @@ string
 
 **textAlign**
 
-How to align the text inside the component.
+How to align the text inside the component. Defaults to `start`.
 
 ```
 start
