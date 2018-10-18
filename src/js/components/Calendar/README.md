@@ -196,7 +196,7 @@ function
 
 **locale**
 
-The locale to use.
+The locale to use. Defaults to `en-US`.
 
 ```
 string
@@ -257,7 +257,7 @@ boolean
 
 **size**
 
-What size to make it.
+What size to make it. Defaults to `medium`.
 
 ```
 small

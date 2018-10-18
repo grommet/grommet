@@ -20,7 +20,8 @@ export const doc = (Stack) => {
     ]).description(`Where to anchor children from. If not specified, children
       fill the guiding child's area.`),
     fill: PropTypes.bool.description(`Whether to expand to fill
-      all of the available width and height in the parent container.`),
+      all of the available width and height in the parent container.`)
+      .defaultValue(false),
     guidingChild: PropTypes.oneOfType([
       PropTypes.number,
       PropTypes.oneOf(['first', 'last']),

@@ -20,7 +20,7 @@ export const doc = (Layer) => {
       PropTypes.bool, PropTypes.oneOf(['vertical', 'horizontal']),
     ]).description(
       'Whether the width and/or height should fill the current viewport size.'
-    ),
+    ).defaultValue(false),
     margin: PropTypes.oneOfType([
       PropTypes.oneOf(['none', ...PAD_SIZES]),
       PropTypes.shape({
@@ -66,7 +66,7 @@ particular side of the layer`
     ),
     plain: PropTypes.bool.description(
       'Whether this is a plain Layer with no background color or border.'
-    ),
+    ).defaultValue(false),
     position: PropTypes.oneOf(['bottom', 'center', 'hidden', 'left', 'right', 'top']).description(
       'Position of the layer content.'
     ).defaultValue('center'),
