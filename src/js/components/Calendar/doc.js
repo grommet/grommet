@@ -35,7 +35,8 @@ export const doc = (Calendar) => {
       .description(`Multiple dates in ISO8601 format that should not be
         selectable. Items that are an array indicate a range of dates.`),
     firstDayOfWeek: PropTypes.oneOf([0, 1])
-      .description('The first day of the week. 0 for Sunday. 1 for Monday.'),
+      .description('The first day of the week. 0 for Sunday. 1 for Monday.')
+      .defaultValue(0),
     header: PropTypes.func.description(
       `If specified, the entire calendar header will be managed by the caller.
 The function passes the following options:
@@ -56,7 +57,8 @@ The function passes the following options:
 You can then use that to disable the previous and next buttons.
 `
     ),
-    locale: PropTypes.string.description('The locale to use.'),
+    locale: PropTypes.string.description('The locale to use.')
+      .defaultValue('en-US'),
     onReference: PropTypes.func.description(`
       Called with an ISO8601 date when the user navigates to a different month.
     `),
@@ -70,7 +72,7 @@ You can then use that to disable the previous and next buttons.
       When the user clicks the first date, onSelect will be called with that
       date. When the user selects another date, onSelect will be called with
       an array of two dates.
-    `),
+    `).defaultValue(false),
     reference: PropTypes.string
       .description('The date to show if `date` isn\'t set, in ISO8601 format'),
     showAdjacentDays: PropTypes.bool.description(`
@@ -79,7 +81,8 @@ You can then use that to disable the previous and next buttons.
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large']),
       PropTypes.string,
-    ]).description('What size to make it.'),
+    ]).description('What size to make it.')
+      .defaultValue('medium'),
   };
 
   return DocumentedCalendar;

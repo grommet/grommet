@@ -146,7 +146,8 @@ export const doc = (Box) => {
     ])
       .description(`The amount of padding around the box contents. An
         object can be specified to distinguish horizontal padding, vertical
-        padding, and padding on a particular side of the box`),
+        padding, and padding on a particular side of the box`)
+      .defaultValue('none'),
     responsive: PropTypes.bool.description(`Whether margin, pad, and border
       sizes should be scaled for mobile environments.`)
       .defaultValue(true),
@@ -163,7 +164,8 @@ export const doc = (Box) => {
         ]),
       }),
     ])
-    .description('How much to round the corners.'),
+      .description('How much to round the corners.')
+      .defaultValue(false),
     tag: PropTypes.string.description('The DOM tag to use for the element.')
       .defaultValue('div'),
     width: PropTypes.oneOfType([
@@ -174,7 +176,7 @@ export const doc = (Box) => {
     ])
       .description('A fixed width.'),
     wrap: PropTypes.bool.description(`Whether children can wrap if they
-      can't all fit.`),
+      can't all fit.`).defaultValue(false),
   };
   return DocumentedBox;
 };
