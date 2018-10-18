@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Grommet, Grid, Heading } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 
 const H = ({ level, size }) => (
   <Heading level={level} size={size}>
@@ -42,6 +43,35 @@ const Color = () => (
   </Grommet>
 );
 
+const customlevel = deepMerge(
+  grommet, {
+    heading: {
+      level: {
+        5: {
+          small: {
+            size: '12px',
+            height: '16px',
+          },
+          medium: {
+            size: '14px',
+            height: '18px',
+          },
+          large: {
+            size: '16px',
+            height: '20px',
+          },
+        },
+      },
+    },
+  }
+);
+const CustomLevel = () => (
+  <Grommet theme={customlevel}>
+    <Heading level={5}>Heading level 5</Heading>
+  </Grommet>
+);
+
 storiesOf('Heading', module)
   .add('All', () => <All />)
-  .add('Color', () => <Color />);
+  .add('Color', () => <Color />)
+  .add('Custom Level', () => <CustomLevel />);
