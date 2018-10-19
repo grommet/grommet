@@ -65,7 +65,8 @@ exports[`RadioButton checked renders 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -78,9 +79,12 @@ exports[`RadioButton checked renders 1`] = `
   height: 100%;
   margin: 0;
   z-index: 1;
+  cursor: pointer;
 }
 
 .c7 {
+  box-sizing: border-box;
+  position: absolute;
   width: 24px;
   height: 24px;
   fill: #7D4CDB;
@@ -284,7 +288,8 @@ exports[`RadioButton disabled renders 1`] = `
   cursor: default;
 }
 
-.c1:hover input:not([disabled]) + div {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -300,6 +305,8 @@ exports[`RadioButton disabled renders 1`] = `
 }
 
 .c8 {
+  box-sizing: border-box;
+  position: absolute;
   width: 24px;
   height: 24px;
   fill: #7D4CDB;
@@ -512,7 +519,8 @@ exports[`RadioButton label renders 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -525,6 +533,7 @@ exports[`RadioButton label renders 1`] = `
   height: 100%;
   margin: 0;
   z-index: 1;
+  cursor: pointer;
 }
 
 .c3 {
@@ -705,7 +714,8 @@ exports[`RadioButton renders 1`] = `
   cursor: pointer;
 }
 
-.c1:hover input:not([disabled]) + div {
+.c1:hover input:not([disabled]) + div,
+.c1:hover input:not([disabled]) + span {
   border-color: #000000;
 }
 
@@ -718,6 +728,7 @@ exports[`RadioButton renders 1`] = `
   height: 100%;
   margin: 0;
   z-index: 1;
+  cursor: pointer;
 }
 
 .c3 {

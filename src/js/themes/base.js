@@ -314,6 +314,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         // extend: undefined,
       },
       icon: {
+        // size: undefined,
         // extend: undefined,
       },
       icons: {
@@ -540,11 +541,13 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         },
       },
       icon: {
+        // size: undefined,
         // extend: undefined,
       },
       icons: {
         // circle: undefined,
       },
+      gap: 'small',
       size: `${baseSpacing}px`,
     },
     rangeInput: {

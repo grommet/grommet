@@ -101,6 +101,7 @@ class CheckBox extends Component {
           })}
           theme={theme}
           checked={checked}
+          disabled={disabled}
         />
         {visual}
         {hidden}

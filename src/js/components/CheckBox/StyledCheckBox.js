@@ -10,24 +10,24 @@ const disabledStyle = `
 const hoverStyle = css`
   :hover input:not([disabled]) + div,
   :hover input:not([disabled]) + span {
-    border-color: ${props => (props.theme.dark
-      ? props.theme.checkBox.hover.border.color.dark
-      : props.theme.checkBox.hover.border.color.light)};
+    border-color: ${props => normalizeColor(props.theme.checkBox.hover.border.color, props.theme)};
   }
 `;
 
 export const StyledCheckBoxIcon = styled.svg`
+  box-sizing: border-box;
+  position: absolute;
   stroke-width: ${props => props.theme.checkBox.check.thickness};
   stroke: ${props => normalizeColor(props.theme.checkBox.color || 'control', props.theme)};
-  width: ${props => props.theme.checkBox.size};
-  height: ${props => props.theme.checkBox.size};
+  width: ${props => props.theme.checkBox.icon.size || props.theme.checkBox.size};
+  height: ${props => props.theme.checkBox.icon.size || props.theme.checkBox.size};
   ${props => props.theme.checkBox.icon.extend}
 `;
 
 export const StyledCheckBoxContainer = styled.label`
-  cursor: pointer;
   user-select: none;
   ${props => props.disabled && disabledStyle}
+  ${props => !props.disabled && 'cursor: pointer;'}
   ${props => props.theme.checkBox.hover.border.color && hoverStyle}
   ${props => props.theme.checkBox.extend}
 `;
@@ -41,7 +41,7 @@ export const StyledCheckBoxInput = styled.input`
   height: 100%;
   margin: 0;
   z-index: 1;
-  cursor: pointer;
+  ${props => !props.disabled && 'cursor: pointer;'}
 
   :checked + span > span {
     left: calc(${props => props.theme.checkBox.toggle.size} - ${props => props.theme.checkBox.size});

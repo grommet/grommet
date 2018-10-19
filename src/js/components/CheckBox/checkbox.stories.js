@@ -9,7 +9,10 @@ import { normalizeColor, deepMerge } from 'grommet/utils';
 import { FormCheckmark } from 'grommet-icons';
 
 class SimpleCheckBox extends Component {
-  state = { checked: false }
+  constructor(props) {
+    super(props);
+    this.state = { checked: !!props.checked };
+  }
 
   onChange = event => this.setState({ checked: event.target.checked })
 
@@ -50,6 +53,7 @@ const customCheckBoxTheme = {
       },
     },
     icon: {
+      size: '18px',
       extend: 'stroke: white;',
     },
     icons: {
@@ -137,6 +141,7 @@ class ThemedToggle extends Component {
 storiesOf('CheckBox', module)
   .add('Simple', () => <SimpleCheckBox />)
   .add('Toggle', () => <SimpleCheckBox toggle />)
+  .add('Disabled', () => <SimpleCheckBox checked disabled />)
   .add('Reverse', () => <SimpleCheckBox reverse />)
   .add('Themed CheckBox', () => <ThemedCheckBox />)
   .add('Themed Toggle', () => <ThemedToggle />);

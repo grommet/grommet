@@ -52,7 +52,7 @@ class RadioButton extends Component {
       >
         <StyledRadioButton
           as={Box}
-          margin={{ right: 'small' }}
+          margin={{ right: theme.radioButton.gap || 'small' }}
           theme={theme}
         >
           <StyledRadioButtonInput
