@@ -9,9 +9,9 @@ export const doc = (Tab) => {
     );
 
   DocumentedTab.propTypes = {
-    header: PropTypes.node.description(
-      'If specified, the entire panel header will be managed by the caller.'
-    ),
+    plain: PropTypes.bool.description(
+      'Whether this is a plain tab with no style.'
+    ).defaultValue(false),
     title: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.node,

@@ -5222,12 +5222,12 @@ import { Tab } from 'grommet';
 
 ## Properties
 
-**header**
+**plain**
 
-If specified, the entire panel header will be managed by the caller.
+Whether this is a plain tab with no style.
 
 \`\`\`
-node
+boolean
 \`\`\`
 
 **title**

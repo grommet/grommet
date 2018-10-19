@@ -552,11 +552,37 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       },
     },
     tab: {
+      active: {
+        weight: 'bold',
+        // background: undefined,
+      },
       // background: undefined,
+      border: {
+        side: 'bottom',
+        size: 'small',
+        color: {
+          dark: 'white',
+          light: 'black',
+        },
+        hover: {
+          color: {
+            dark: 'white',
+            light: 'black',
+          },
+        },
+      },
+      color: 'text',
       // extend: undefined,
       hover: {
         // background: undefined,
         // extend: undefined,
+      },
+      margin: {
+        vertical: 'xxsmall',
+        horizontal: 'small',
+      },
+      pad: {
+        bottom: 'xsmall',
       },
     },
     tabs: {

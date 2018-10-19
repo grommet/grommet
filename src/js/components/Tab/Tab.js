@@ -5,7 +5,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 import { withForwardRef, withTheme } from '../hocs';
-import { evalStyle, normalizeColor } from '../../utils';
+import { normalizeColor } from '../../utils';
 
 import { StyledTab } from './StyledTab';
 
@@ -49,7 +49,7 @@ class Tab extends Component {
     const {
       active,
       forwardRef,
-      header,
+      plain,
       title,
       onMouseOver,
       onMouseOut,
@@ -60,25 +60,41 @@ class Tab extends Component {
 
     delete rest.onActivate;
 
-    let normalizedTitle;
-    if (!header) {
+    let normalizedTitle = title;
+    const tabStyles = {};
+
+    if (!plain) {
       if (typeof title !== 'string') {
         normalizedTitle = title;
       } else if (active) {
-        normalizedTitle = <Text weight='bold'>{title}</Text>;
+        normalizedTitle = <Text weight={theme.tab.active.weight}>{title}</Text>;
       } else {
-        const color = normalizeColor('text', theme);
+        const color = normalizeColor(theme.tab.color, theme);
         normalizedTitle = <Text color={color}>{title}</Text>;
       }
-    }
 
-    let borderColor;
-    if (active) {
-      borderColor = theme.dark ? 'white' : 'black';
-    } else if (over) {
-      borderColor = theme.dark ? 'white' : 'black';
-    } else {
-      borderColor = evalStyle(normalizeColor(theme.global.control.border.color, theme), theme);
+      if (theme.tab.border) {
+        let borderColor;
+        if (active) {
+          borderColor = normalizeColor(theme.tab.border.color, theme);
+        } else if (over) {
+          borderColor = normalizeColor(theme.tab.border.hover.color, theme);
+        } else {
+          borderColor = normalizeColor(theme.global.control.border.color, theme);
+        }
+
+        tabStyles.border = {
+          side: theme.tab.border.side,
+          size: theme.tab.border.size,
+          color: borderColor,
+        };
+      }
+
+      tabStyles.background = active ? (
+        theme.tab.active.background || theme.tab.background
+      ) : theme.tab.background;
+      tabStyles.pad = theme.tab.pad;
+      tabStyles.margin = theme.tab.margin;
     }
 
     return (
@@ -95,26 +111,14 @@ class Tab extends Component {
         onFocus={this.onMouseOver}
         onBlur={this.onMouseOut}
       >
-        {header ? (
-          <StyledTab
-            as={Box}
-            background={theme.tab.background}
-            theme={theme}
-          >
-            {header}
-          </StyledTab>
-        ) : (
-          <StyledTab
-            as={Box}
-            background={theme.tab.background}
-            theme={theme}
-            pad={{ bottom: 'xsmall' }}
-            margin={{ vertical: 'xxsmall', horizontal: 'small' }}
-            border={{ side: 'bottom', size: 'small', color: borderColor }}
-          >
-            {normalizedTitle}
-          </StyledTab>
-        )}
+        <StyledTab
+          as={Box}
+          theme={theme}
+          plain={plain}
+          {...tabStyles}
+        >
+          {normalizedTitle}
+        </StyledTab>
       </Button>
     );
   }

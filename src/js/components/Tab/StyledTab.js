@@ -13,6 +13,6 @@ const tabHoverStyle = css`
 
 export const StyledTab = styled.div`
   ${genericStyles}
-  ${props => props.theme.tab.hover && tabHoverStyle}
+  ${props => !props.plain && props.theme.tab.hover && tabHoverStyle}
   ${props => props.theme.tab.extend}
 `;
