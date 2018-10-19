@@ -286,10 +286,9 @@ class CustomSearchSelect extends Component {
           checked={selectedContentPartners.some(
             partner => partner.name === name
           )}
-          value={name}
+          label={<Text size='small'>{name}</Text>}
           onChange={() => {}}
         />
-        <Text size='small'>{name}</Text>
       </Box>
     );
   }

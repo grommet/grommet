@@ -49,6 +49,13 @@ class RadioButton extends Component {
         align='center'
         {...removeUndefined({ htmlFor: id, disabled })}
         theme={theme}
+        onClick={(event) => {
+          // prevents clicking on the label trigging the event twice
+          // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
+          if (event.target.type !== 'radio') {
+            event.stopPropagation();
+          }
+        }}
       >
         <StyledRadioButton
           as={Box}

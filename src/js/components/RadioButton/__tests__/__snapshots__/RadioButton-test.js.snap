@@ -162,6 +162,7 @@ exports[`RadioButton checked renders 1`] = `
 >
   <label
     className="c1 -label c2"
+    onClick={[Function]}
   >
     <div
       className="c3 c4"
@@ -403,6 +404,7 @@ exports[`RadioButton disabled renders 1`] = `
   <label
     className="c1 -label c2"
     disabled={true}
+    onClick={[Function]}
   >
     <div
       className="c3 c4"
@@ -422,6 +424,7 @@ exports[`RadioButton disabled renders 1`] = `
   <label
     className="c1 -label c2"
     disabled={true}
+    onClick={[Function]}
   >
     <div
       className="c3 c4"
@@ -608,6 +611,7 @@ exports[`RadioButton label renders 1`] = `
 >
   <label
     className="c1 -label c2"
+    onClick={[Function]}
   >
     <div
       className="c3 c4"
@@ -628,6 +632,7 @@ exports[`RadioButton label renders 1`] = `
   </label>
   <label
     className="c1 -label c2"
+    onClick={[Function]}
   >
     <div
       className="c3 c4"
@@ -803,6 +808,7 @@ exports[`RadioButton renders 1`] = `
 >
   <label
     className="c1 -label c2"
+    onClick={[Function]}
   >
     <div
       className="c3 c4"
@@ -821,6 +827,7 @@ exports[`RadioButton renders 1`] = `
   <label
     className="c1 -label c2"
     htmlFor="test id"
+    onClick={[Function]}
   >
     <div
       className="c3 c4"
