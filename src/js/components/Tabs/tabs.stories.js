@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
+import { css } from 'styled-components';
+
 import {
   Attraction, Car, CircleInformation, Currency, TreeOption,
 } from 'grommet-icons';
@@ -9,21 +11,22 @@ import {
   Box, Grommet, FormField, Tab, Tabs, Text, TextInput,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 
-const UncontrolledTabs = () => (
+const UncontrolledTabs = ({ plain }) => (
   <Grommet theme={grommet}>
     <Tabs>
-      <Tab title='Tab 1'>
+      <Tab plain={plain} title='Tab 1'>
         <Box margin='small' pad='large' align='center' background='accent-1'>
           <Attraction size='xlarge' />
         </Box>
       </Tab>
-      <Tab title='Tab 2'>
+      <Tab plain={plain} title='Tab 2'>
         <Box margin='small' pad='large' align='center' background='accent-2'>
           <TreeOption size='xlarge' />
         </Box>
       </Tab>
-      <Tab title='Tab 3'>
+      <Tab plain={plain} title='Tab 3'>
         <Box margin='small' pad='large' align='center' background='accent-3'>
           <Car size='xlarge' />
         </Box>
@@ -31,6 +34,14 @@ const UncontrolledTabs = () => (
     </Tabs>
   </Grommet>
 );
+
+UncontrolledTabs.defaultProps = {
+  plain: false,
+};
+
+UncontrolledTabs.propTypes = {
+  plain: PropTypes.bool,
+};
 
 class ControlledTabs extends Component {
   state = {}
@@ -209,8 +220,72 @@ const RichTabs = () => (
   </Grommet>
 );
 
+const customTheme = deepMerge(grommet, {
+  global: {
+    elevation: {
+      light: {
+        small: '0px 1px 5px rgba(0, 0, 0, 0.50)',
+        medium: '0px 3px 8px rgba(0, 0, 0, 0.50)',
+      },
+    },
+  },
+  tab: {
+    active: {
+      background: 'dark-1',
+    },
+    background: 'dark-3',
+    hover: {
+      background: 'dark-1',
+    },
+    border: undefined,
+    margin: undefined,
+    pad: {
+      bottom: undefined,
+      horizontal: 'xsmall',
+    },
+    extend: ({ theme }) => css`
+      border-radius: ${theme.global.control.border.radius};
+      box-shadow: ${theme.global.elevation.light.small};
+    `,
+  },
+  tabs: {
+    background: 'dark-4',
+    header: {
+      background: 'dark-2',
+      extend: ({ theme }) => css`
+        padding: ${theme.global.edgeSize.small};
+        box-shadow: ${theme.global.elevation.light.medium};
+      `,
+    },
+    gap: 'medium',
+  },
+});
+
+const CustomTabs = () => (
+  <Grommet theme={customTheme}>
+    <Tabs>
+      <Tab
+        title={<RichTabTitle icon={<CircleInformation color='accent-1' />} label='Personal Data' />}
+      >
+        <FormField label='Name'>
+          <TextInput placeholder='Enter your name...' />
+        </FormField>
+      </Tab>
+      <Tab
+        title={<RichTabTitle icon={<Currency color='neutral-5' />} label='Payment' />}
+      >
+        <FormField label='Card Number'>
+          <TextInput placeholder='Enter your card number...' />
+        </FormField>
+      </Tab>
+    </Tabs>
+  </Grommet>
+);
+
 storiesOf('Tabs', module)
   .add('Uncontrolled Tabs', () => <UncontrolledTabs />)
   .add('Controlled Tabs', () => <ControlledTabs />)
   .add('Responsive Tabs', () => <ResponsiveTabs />)
-  .add('Rich Tabs', () => <RichTabs />);
+  .add('Rich Tabs', () => <RichTabs />)
+  .add('CustomTheme', () => <CustomTabs />)
+  .add('Plain', () => <UncontrolledTabs plain />);

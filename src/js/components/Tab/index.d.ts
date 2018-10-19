@@ -1,6 +1,7 @@
 import * as React from "react";
 
 export interface TabProps {
+  plain?: boolean;
   title?: string | React.ReactNode;
 }
 

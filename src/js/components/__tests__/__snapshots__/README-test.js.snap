@@ -5223,6 +5223,14 @@ import { Tab } from 'grommet';
 
 ## Properties
 
+**plain**
+
+Whether this is a plain tab with no style.
+
+\`\`\`
+boolean
+\`\`\`
+
 **title**
 
 The title of the tab.
