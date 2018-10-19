@@ -24,7 +24,6 @@
     "node": ">= 8"
   },
   "scripts": {
-    "postinstall": "node ./tools/warn-beta",
     "generate-readme-ts": "cross-env NODE_ENV=production babel-node ./tools/generate-readme-ts",
     "build": "webpack --mode production && babel ./src/js/ --ignore '__tests__' --out-dir ./dist --copy-files && cross-env BABEL_ENV=es6 babel ./src/js/ --ignore '__tests__' --out-dir ./dist/es6 --copy-files",
     "release-stable": "babel-node ./tools/release-stable",
@@ -45,7 +44,6 @@
   "dependencies": {
     "css": "^2.2.3",
     "markdown-to-jsx": "^6.6.6",
-    "node-emoji": "^1.8.1",
     "polished": "^2.2.0",
     "prop-types": "^15.5.10",
     "react-desc": "^3.5.0",
