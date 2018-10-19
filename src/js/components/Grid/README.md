@@ -199,7 +199,8 @@ xlarge
 {
   count: 
     fit
-    fill,
+    fill
+    number,
   size: 
     xsmall
     small

@@ -101,6 +101,14 @@ const SIZE_MAP = {
   '2/3': '66.66%',
 };
 
+const getRepeatCount = count => (
+  typeof count === 'number' ? count : `auto-${count}`
+);
+
+const getRepeatSize = (size, theme) => (
+  `minmax(${theme.global.size[size] || size}, 1fr)`
+);
+
 const sizeFor = (size, props, isRow) => {
   const mapped = SIZE_MAP[size];
   if (isRow && mapped
@@ -124,13 +132,12 @@ const columnsStyle = (props) => {
   if (typeof props.columns === 'object') {
     return css`
       grid-template-columns:
-        repeat(auto-${props.columns.count},
-          minmax(${props.theme.global.size[props.columns.size]}, 1fr));
+        repeat(${getRepeatCount(props.columns.count)}, ${getRepeatSize(props.columns.size, props.theme)});
     `;
   }
   return css`
     grid-template-columns:
-      repeat(auto-fill, minmax(${props.theme.global.size[props.columns]}, 1fr));
+      repeat(auto-fill, ${getRepeatSize(props.columns, props.theme)});
   `;
 };
 
