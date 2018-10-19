@@ -9,6 +9,9 @@ export const doc = (Tab) => {
     );
 
   DocumentedTab.propTypes = {
+    plain: PropTypes.bool.description(
+      'Whether this is a plain tab with no style.'
+    ).defaultValue(false),
     title: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.node,

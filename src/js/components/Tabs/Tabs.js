@@ -4,7 +4,7 @@ import { compose } from 'recompose';
 import { Box } from '../Box';
 import { withTheme } from '../hocs';
 
-import { StyledTabs } from './StyledTabs';
+import { StyledTabs, StyledTabsHeader } from './StyledTabs';
 
 class Tabs extends Component {
   static defaultProps = {
@@ -41,6 +41,7 @@ class Tabs extends Component {
       children,
       justify,
       messages: { tabContents },
+      theme,
       ...rest
     } = this.props;
     delete rest.activeIndex;
@@ -74,14 +75,24 @@ class Tabs extends Component {
     const tabContentTitle = `${activeTitle || ''} ${tabContents}`;
 
     return (
-      <StyledTabs role='tablist' {...rest}>
-        <Box
+      <StyledTabs
+        as={Box}
+        role='tablist'
+        {...rest}
+        background={theme.tabs.background}
+        theme={theme}
+      >
+        <StyledTabsHeader
+          theme={theme}
+          as={Box}
           direction='row'
           justify={justify}
           wrap
+          background={theme.tabs.header.background}
+          gap={theme.tabs.gap}
         >
           {tabs}
-        </Box>
+        </StyledTabsHeader>
         <div aria-label={tabContentTitle} role='tabpanel'>
           {activeContent}
         </div>
