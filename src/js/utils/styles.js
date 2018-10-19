@@ -104,14 +104,14 @@ export const focusStyle = css`
   > polyline,
   > rect {
     outline: ${
-      props => props.theme.global.focus.border.color
+      props => normalizeColor(props.theme.global.focus.border.color, props.theme)
     } solid 2px;
   }
   border-color: ${
-    props => props.theme.global.focus.border.color
+    props => normalizeColor(props.theme.global.focus.border.color, props.theme)
   };
   box-shadow: 0 0 2px 2px ${
-    props => props.theme.global.focus.border.color
+    props => normalizeColor(props.theme.global.focus.border.color, props.theme)
   };
 `;
 

@@ -95,9 +95,11 @@ describe('TextInput', () => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
 
       fireEvent.keyDown(getByTestId('test-input'), { key: 'Esc', keyCode: 27, which: 27 });
-      expect(document.getElementById('text-input-drop__item')).toBeNull();
-      expect(container.firstChild).toMatchSnapshot();
-      done();
+      setTimeout(() => {
+        expect(document.getElementById('text-input-drop__item')).toBeNull();
+        expect(container.firstChild).toMatchSnapshot();
+        done();
+      }, 50);
     }, 50);
   });
 

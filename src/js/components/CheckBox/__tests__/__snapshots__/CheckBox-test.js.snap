@@ -66,6 +66,8 @@ exports[`CheckBox checked renders 1`] = `
 }
 
 .c7 {
+  box-sizing: border-box;
+  position: absolute;
   stroke-width: 4px;
   stroke: #7D4CDB;
   width: 24px;
@@ -73,11 +75,11 @@ exports[`CheckBox checked renders 1`] = `
 }
 
 .c1 {
-  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: pointer;
 }
 
 .c1:hover input:not([disabled]) + div,
@@ -177,7 +179,6 @@ exports[`CheckBox checked renders 1`] = `
     className="c1 -label c2"
   >
     <div
-      checked={true}
       className="c3 c4"
     >
       <input
@@ -302,6 +303,8 @@ exports[`CheckBox disabled renders 1`] = `
 }
 
 .c8 {
+  box-sizing: border-box;
+  position: absolute;
   stroke-width: 4px;
   stroke: #7D4CDB;
   width: 24px;
@@ -309,7 +312,6 @@ exports[`CheckBox disabled renders 1`] = `
 }
 
 .c1 {
-  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -332,7 +334,6 @@ exports[`CheckBox disabled renders 1`] = `
   height: 100%;
   margin: 0;
   z-index: 1;
-  cursor: pointer;
 }
 
 .c5:checked + span > span {
@@ -453,7 +454,6 @@ exports[`CheckBox disabled renders 1`] = `
     disabled={true}
   >
     <div
-      checked={true}
       className="c3 c4"
     >
       <input
@@ -561,11 +561,11 @@ exports[`CheckBox label renders 1`] = `
 }
 
 .c1 {
-  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: pointer;
 }
 
 .c1:hover input:not([disabled]) + div,
@@ -775,11 +775,11 @@ exports[`CheckBox renders 1`] = `
 }
 
 .c1 {
-  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: pointer;
 }
 
 .c1:hover input:not([disabled]) + div,
@@ -987,11 +987,11 @@ exports[`CheckBox reverse renders 1`] = `
 }
 
 .c1 {
-  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: pointer;
 }
 
 .c1:hover input:not([disabled]) + div,
@@ -1156,11 +1156,11 @@ exports[`CheckBox toggle renders 1`] = `
 }
 
 .c1 {
-  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: pointer;
 }
 
 .c1:hover input:not([disabled]) + div,
@@ -1289,7 +1289,6 @@ exports[`CheckBox toggle renders 1`] = `
     className="c1 -label c2"
   >
     <div
-      checked={true}
       className="c3 c4"
     >
       <input
