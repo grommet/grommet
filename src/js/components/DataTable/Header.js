@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { Box } from '../Box';
+import { TableHeader } from '../TableHeader';
+import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 
@@ -15,16 +17,17 @@ export const Header = ({
   onFilter, onFiltering, onResize, onSort, onToggle,
   sort, theme, widths, ...rest
 }) => {
+  const dataTableContextTheme = { ...theme.table.header, ...theme.dataTable.header };
   // The tricky part here is that we need to manage the theme styling
   // to make sure that the background, border, and padding are applied
   // at the right places depending on the mix of controls in each header cell.
   const outerThemeProps = (
     ({ border, background }) => ({ border, background })
-  )(theme.dataTable.header);
-  const { border, background, ...innerThemeProps } = theme.dataTable.header;
+  )(dataTableContextTheme);
+  const { border, background, ...innerThemeProps } = dataTableContextTheme;
   return (
-    <StyledDataTableHeader {...rest}>
-      <StyledDataTableRow>
+    <StyledDataTableHeader as={TableHeader} {...rest}>
+      <StyledDataTableRow as={TableRow}>
 
         {groups && (
           <ExpanderCell
@@ -52,7 +55,7 @@ export const Header = ({
                 onSort={onSort}
                 sort={sort}
                 theme={theme}
-                themeProps={search ? innerThemeProps : theme.dataTable.header}
+                themeProps={search ? innerThemeProps : dataTableContextTheme}
               >
                 {content}
               </Sorter>
@@ -89,10 +92,10 @@ export const Header = ({
           } else if (!onSort) {
             content = (
               <Box
+                {...dataTableContextTheme}
                 fill
                 justify='center'
                 align={align}
-                {...theme.dataTable.header}
               >
                 {content}
               </Box>
@@ -112,7 +115,6 @@ export const Header = ({
               key={property}
               scope='col'
               plain
-              verticalAlign='bottom'
               style={widths && widths[property]
                 ? { width: widths[property] } : undefined}
             >

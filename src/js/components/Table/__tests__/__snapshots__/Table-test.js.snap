@@ -90,13 +90,17 @@ exports[`TableBody renders 1`] = `
 `;
 
 exports[`TableCell plain renders 1`] = `
-.c2 {
+.c3 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
+  height: 100%;
   vertical-align: bottom;
+}
+
+.c2 {
+  height: 100%;
 }
 
 .c1 {
@@ -124,10 +128,10 @@ exports[`TableCell plain renders 1`] = `
       className=""
     >
       <tr
-        className=""
+        className="c2"
       >
         <td
-          className="c2"
+          className="c3"
         />
       </tr>
     </thead>
@@ -136,7 +140,33 @@ exports[`TableCell plain renders 1`] = `
 `;
 
 exports[`TableCell renders 1`] = `
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -160,21 +190,39 @@ exports[`TableCell renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c2 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: inherit;
-  vertical-align: bottom;
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.c4 {
+.c3 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
+  height: 100%;
+  vertical-align: bottom;
 }
 
 .c5 {
@@ -182,8 +230,20 @@ exports[`TableCell renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
+  height: 100%;
+}
+
+.c7 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
   vertical-align: top;
+}
+
+.c2 {
+  height: 100%;
 }
 
 .c1 {
@@ -202,20 +262,72 @@ exports[`TableCell renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -231,13 +343,13 @@ exports[`TableCell renders 1`] = `
       className=""
     >
       <tr
-        className=""
+        className="c2"
       >
         <td
-          className="c2"
+          className="c3"
         >
           <div
-            className="c3"
+            className="c4"
           />
         </td>
       </tr>
@@ -246,13 +358,13 @@ exports[`TableCell renders 1`] = `
       className=""
     >
       <tr
-        className=""
+        className="c2"
       >
         <td
-          className="c4"
+          className="c5"
         >
           <div
-            className="c3"
+            className="c6"
           />
         </td>
       </tr>
@@ -261,13 +373,13 @@ exports[`TableCell renders 1`] = `
       className=""
     >
       <tr
-        className=""
+        className="c2"
       >
         <td
-          className="c5"
+          className="c7"
         >
           <div
-            className="c3"
+            className="c8"
           />
         </td>
       </tr>
@@ -277,7 +389,33 @@ exports[`TableCell renders 1`] = `
 `;
 
 exports[`TableCell scope renders 1`] = `
-.c3 {
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -301,6 +439,27 @@ exports[`TableCell scope renders 1`] = `
   padding-bottom: 6px;
 }
 
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+}
+
+.c5 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c2 {
+  height: 100%;
+}
+
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
@@ -316,38 +475,47 @@ exports[`TableCell scope renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: inherit;
-  vertical-align: bottom;
-}
-
-.c4 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: inherit;
-}
-
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -363,14 +531,14 @@ exports[`TableCell scope renders 1`] = `
       className=""
     >
       <tr
-        className=""
+        className="c2"
       >
         <th
-          className="-th c2"
+          className="c3"
           scope="col"
         >
           <div
-            className="c3"
+            className="c4"
           />
         </th>
       </tr>
@@ -379,14 +547,14 @@ exports[`TableCell scope renders 1`] = `
       className=""
     >
       <tr
-        className=""
+        className="c2"
       >
         <th
-          className="-th c4"
+          className="c5"
           scope="row"
         >
           <div
-            className="c3"
+            className="c6"
           />
         </th>
       </tr>
@@ -396,7 +564,7 @@ exports[`TableCell scope renders 1`] = `
 `;
 
 exports[`TableCell size renders 1`] = `
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -420,25 +588,14 @@ exports[`TableCell size renders 1`] = `
   padding-bottom: 6px;
 }
 
-.c2 {
+.c3 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
+  height: 100%;
   width: 96px;
   max-width: 96px;
-  overflow: hidden;
-}
-
-.c4 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  height: inherit;
-  width: 192px;
-  max-width: 192px;
   overflow: hidden;
 }
 
@@ -447,9 +604,9 @@ exports[`TableCell size renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
-  width: 384px;
-  max-width: 384px;
+  height: 100%;
+  width: 192px;
+  max-width: 192px;
   overflow: hidden;
 }
 
@@ -458,9 +615,9 @@ exports[`TableCell size renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
-  width: 768px;
-  max-width: 768px;
+  height: 100%;
+  width: 384px;
+  max-width: 384px;
   overflow: hidden;
 }
 
@@ -469,9 +626,9 @@ exports[`TableCell size renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
-  width: 50%;
-  max-width: 50%;
+  height: 100%;
+  width: 768px;
+  max-width: 768px;
   overflow: hidden;
 }
 
@@ -480,9 +637,9 @@ exports[`TableCell size renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
-  width: 33.33%;
-  max-width: 33.33%;
+  height: 100%;
+  width: 50%;
+  max-width: 50%;
   overflow: hidden;
 }
 
@@ -491,9 +648,9 @@ exports[`TableCell size renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
-  width: 66.66%;
-  max-width: 66.66%;
+  height: 100%;
+  width: 33.33%;
+  max-width: 33.33%;
   overflow: hidden;
 }
 
@@ -502,9 +659,9 @@ exports[`TableCell size renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
-  width: 25%;
-  max-width: 25%;
+  height: 100%;
+  width: 66.66%;
+  max-width: 66.66%;
   overflow: hidden;
 }
 
@@ -513,10 +670,25 @@ exports[`TableCell size renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
+  height: 100%;
+  width: 25%;
+  max-width: 25%;
+  overflow: hidden;
+}
+
+.c12 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
   width: 75%;
   max-width: 75%;
   overflow: hidden;
+}
+
+.c2 {
+  height: 100%;
 }
 
 .c1 {
@@ -535,20 +707,20 @@ exports[`TableCell size renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -564,38 +736,38 @@ exports[`TableCell size renders 1`] = `
       className=""
     >
       <tr
-        className=""
+        className="c2"
       >
         <td
-          className="c2"
+          className="c3"
           size="xsmall"
         >
           <div
-            className="c3"
-          />
-        </td>
-        <td
-          className="c4"
-          size="small"
-        >
-          <div
-            className="c3"
+            className="c4"
           />
         </td>
         <td
           className="c5"
-          size="medium"
+          size="small"
         >
           <div
-            className="c3"
+            className="c4"
           />
         </td>
         <td
           className="c6"
+          size="medium"
+        >
+          <div
+            className="c4"
+          />
+        </td>
+        <td
+          className="c7"
           size="large"
         >
           <div
-            className="c3"
+            className="c4"
           />
         </td>
       </tr>
@@ -608,50 +780,22 @@ exports[`TableCell size renders 1`] = `
       className=""
     >
       <tr
-        className=""
-      >
-        <td
-          className="c7"
-          size="1/2"
-        >
-          <div
-            className="c3"
-          />
-        </td>
-        <td
-          className="c7"
-          size="2/4"
-        >
-          <div
-            className="c3"
-          />
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <table
-    className="c1"
-  >
-    <tbody
-      className=""
-    >
-      <tr
-        className=""
+        className="c2"
       >
         <td
           className="c8"
-          size="1/3"
+          size="1/2"
         >
           <div
-            className="c3"
+            className="c4"
           />
         </td>
         <td
-          className="c9"
-          size="2/3"
+          className="c8"
+          size="2/4"
         >
           <div
-            className="c3"
+            className="c4"
           />
         </td>
       </tr>
@@ -664,22 +808,50 @@ exports[`TableCell size renders 1`] = `
       className=""
     >
       <tr
-        className=""
+        className="c2"
       >
         <td
-          className="c10"
-          size="1/4"
+          className="c9"
+          size="1/3"
         >
           <div
-            className="c3"
+            className="c4"
           />
         </td>
         <td
+          className="c10"
+          size="2/3"
+        >
+          <div
+            className="c4"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table
+    className="c1"
+  >
+    <tbody
+      className=""
+    >
+      <tr
+        className="c2"
+      >
+        <td
           className="c11"
+          size="1/4"
+        >
+          <div
+            className="c4"
+          />
+        </td>
+        <td
+          className="c12"
           size="3/4"
         >
           <div
-            className="c3"
+            className="c4"
           />
         </td>
       </tr>
@@ -689,7 +861,7 @@ exports[`TableCell size renders 1`] = `
 `;
 
 exports[`TableCell verticalAlign renders 1`] = `
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -702,33 +874,35 @@ exports[`TableCell verticalAlign renders 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  height: 100%;
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
-.c2 {
+.c6 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
-  vertical-align: top;
+  height: 100%;
+  vertical-align: bottom;
 }
 
-.c4 {
+.c3 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
-  vertical-align: middle;
+  height: 100%;
+  vertical-align: top;
 }
 
 .c5 {
@@ -736,8 +910,12 @@ exports[`TableCell verticalAlign renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
-  vertical-align: bottom;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.c2 {
+  height: 100%;
 }
 
 .c1 {
@@ -756,20 +934,26 @@ exports[`TableCell verticalAlign renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -785,27 +969,27 @@ exports[`TableCell verticalAlign renders 1`] = `
       className=""
     >
       <tr
-        className=""
+        className="c2"
       >
         <td
-          className="c2"
+          className="c3"
         >
           <div
-            className="c3"
-          />
-        </td>
-        <td
-          className="c4"
-        >
-          <div
-            className="c3"
+            className="c4"
           />
         </td>
         <td
           className="c5"
         >
           <div
-            className="c3"
+            className="c4"
+          />
+        </td>
+        <td
+          className="c6"
+        >
+          <div
+            className="c4"
           />
         </td>
       </tr>
@@ -873,6 +1057,10 @@ exports[`TableHeader renders 1`] = `
 `;
 
 exports[`TableRow renders 1`] = `
+.c2 {
+  height: 100%;
+}
+
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
@@ -898,7 +1086,7 @@ exports[`TableRow renders 1`] = `
       className=""
     >
       <tr
-        className=""
+        className="c2"
       />
     </tbody>
   </table>

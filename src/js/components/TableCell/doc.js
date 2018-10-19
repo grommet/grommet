@@ -10,7 +10,8 @@ export const doc = (TableCell) => {
 
   DocumentedTableCell.propTypes = {
     plain: PropTypes.bool
-      .description('Whether default styling context should be removed.'),
+      .description('Whether default styling context should be removed.')
+      .defaultValue(false),
     scope: PropTypes.oneOf(['col', 'row'])
       .description(`For header cells, what scope the header is for.
         Typically, the cells in a TableHeader have 'col' scope and

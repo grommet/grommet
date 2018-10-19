@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Box } from '../Box';
 import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 
@@ -8,7 +7,6 @@ export const Cell = ({
   column: {
     align, property, primary, render,
   }, context, datum, scope, theme,
-  ...rest
 }) => {
   let content;
   if (render) {
@@ -21,30 +19,16 @@ export const Cell = ({
 
   if (typeof content === 'string' || typeof content === 'number') {
     if (primary) {
-      content = <strong>{content}</strong>;
+      content = <Text><strong>{content}</strong></Text>;
     }
     content = <Text>{content}</Text>;
-  }
-
-  if (theme.dataTable[context]) {
-    content = (
-      <Box
-        direction='row'
-        justify={align}
-        fill='vertical'
-        {...theme.dataTable[context]}
-        {...rest}
-      >
-        {content}
-      </Box>
-    );
   }
 
   return (
     <TableCell
       scope={scope}
-      plain={!!theme.dataTable[context]}
-      verticalAlign={context === 'header' ? 'bottom' : 'top'}
+      {...theme.dataTable[context]}
+      align={align}
     >
       {content}
     </TableCell>
