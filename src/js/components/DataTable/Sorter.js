@@ -19,13 +19,13 @@ export const Sorter = ({
   }
   let content = (
     <Box
+      {...themeProps}
       flex='shrink'
       direction='row'
       justify={align}
       align='center'
       gap='xsmall'
       fill={fill}
-      {...themeProps}
     >
       {children}
       {icon}

@@ -22,12 +22,11 @@ export const StyledTableCell = styled.td`
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-  height: inherit;
+  height: 100%;
 
   ${props => props.size && sizeStyle}
   ${props => props.verticalAlign && `vertical-align: ${props.verticalAlign};`}
-  ${props => !props.verticalAlign && props.tableContext === 'header' && 'vertical-align: bottom;'}
-  ${props => !props.verticalAlign && props.tableContext === 'footer' && 'vertical-align: top;'}
+  ${props => props.tableContextTheme && props.tableContextTheme.extend}
 `;
 
 export const StyledTableDataCaption = styled.caption`
@@ -35,6 +34,7 @@ export const StyledTableDataCaption = styled.caption`
 `;
 
 export const StyledTableRow = styled.tr`
+  height: 100%;
 `;
 
 export const StyledTableBody = styled.tbody`

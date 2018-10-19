@@ -40,7 +40,7 @@ const COLUMNS = [
     property: 'name',
     label: 'Name',
     dataScope: 'row',
-    format: datum => <strong>{datum.name}</strong>,
+    format: datum => <Text weight='bold'>{datum.name}</Text>,
   },
   {
     property: 'email',
@@ -55,13 +55,13 @@ const COLUMNS = [
   },
 ];
 
-const SimpleTable = () => (
+const DefaultTable = () => (
   <Grommet theme={grommet}>
-    <Table caption='Simple Table'>
+    <Table caption='Default Table'>
       <TableHeader>
         <TableRow>
           {COLUMNS.map(c => (
-            <TableCell key={c.property} scope='col' border='bottom' align={c.align}>
+            <TableCell key={c.property} scope='col' align={c.align}>
               <Text>{c.label}</Text>
             </TableCell>
           ))}
@@ -83,7 +83,63 @@ const SimpleTable = () => (
       <TableFooter>
         <TableRow>
           {COLUMNS.map(c => (
-            <TableCell key={c.property} border='top' align={c.align}>
+            <TableCell key={c.property} align={c.align}>
+              <Text>{c.footer}</Text>
+            </TableCell>
+          ))}
+        </TableRow>
+      </TableFooter>
+    </Table>
+  </Grommet>
+);
+
+const customTheme = {
+  global: {},
+  table: {
+    header: {
+      background: {
+        color: 'accent-1',
+        opacity: true,
+      },
+    },
+    body: {
+      border: 'bottom',
+    },
+    footer: {
+      border: undefined,
+    },
+  },
+};
+
+const CustomThemeTable = () => (
+  <Grommet theme={customTheme}>
+    <Table caption='Custom Theme Table'>
+      <TableHeader>
+        <TableRow>
+          {COLUMNS.map(c => (
+            <TableCell key={c.property} scope='col' align={c.align}>
+              <Text>{c.label}</Text>
+            </TableCell>
+          ))}
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {DATA.map(datum => (
+          <TableRow key={datum.id}>
+            {COLUMNS.map(c => (
+              <TableCell key={c.property} scope={c.dataScope} align={c.align}>
+                <Text>
+                  {c.format ? c.format(datum) : datum[c.property]}
+                </Text>
+              </TableCell>
+            ))}
+          </TableRow>
+        ))}
+      </TableBody>
+      <TableFooter>
+        <TableRow>
+          {COLUMNS.map(c => (
+            <TableCell key={c.property} align={c.align}>
               <Text>{c.footer}</Text>
             </TableCell>
           ))}
@@ -94,4 +150,5 @@ const SimpleTable = () => (
 );
 
 storiesOf('Table', module)
-  .add('Simple Table', () => <SimpleTable />);
+  .add('Default', () => <DefaultTable />)
+  .add('Custom Theme', () => <CustomThemeTable />);

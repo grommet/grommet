@@ -3,6 +3,7 @@ import { compose } from 'recompose';
 
 import { Box } from '../Box';
 import { TableRow } from '../TableRow';
+import { TableFooter } from '../TableFooter';
 import { TableCell } from '../TableCell';
 import { withTheme } from '../hocs';
 
@@ -12,11 +13,11 @@ import { StyledDataTableFooter } from './StyledDataTable';
 const Footer = ({
   columns, footerValues, groups, theme, ...rest
 }) => (
-  <StyledDataTableFooter {...rest}>
+  <StyledDataTableFooter as={TableFooter} {...rest}>
     <TableRow>
       {groups && (
         <TableCell size='xxsmall' plain verticalAlign='top'>
-          <Box {...theme.dataTable.footer} />
+          <Box {...({ ...theme.table.footer, ...theme.dataTable.footer })} />
         </TableCell>
       )}
       {columns.map(column => (

@@ -397,27 +397,14 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       baseline: 500,
     },
     dataTable: {
-      body: {
-        pad: { horizontal: 'small', vertical: 'xsmall' },
-      },
-      footer: {
-        border: { side: 'top', size: 'small' },
-        pad: { horizontal: 'small', vertical: 'xsmall' },
-      },
+      header: {},
       groupHeader: {
         border: { side: 'bottom', size: 'xsmall' },
+        fill: 'vertical',
         pad: { horizontal: 'small', vertical: 'xsmall' },
         background: {
           dark: 'dark-2',
           light: 'light-2',
-        },
-      },
-      header: {
-        border: { side: 'bottom', size: 'small' },
-        pad: { horizontal: 'small', vertical: 'xsmall' },
-        background: {
-          dark: 'dark-1',
-          light: 'light-1',
         },
       },
       icons: {
@@ -431,6 +418,9 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
           side: 'right',
           color: 'border',
         },
+      },
+      primary: {
+        weight: 'bold',
       },
     },
     // drop: {
@@ -613,6 +603,31 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         // extend: undefined,
       },
       // gap: undefined,
+    },
+    table: {
+      header: {
+        align: 'start',
+        pad: { horizontal: 'small', vertical: 'xsmall' },
+        border: 'bottom',
+        verticalAlign: 'bottom',
+        fill: 'vertical',
+        // background: undefined,
+        // extend: undefined,
+      },
+      body: {
+        align: 'start',
+        pad: { horizontal: 'small', vertical: 'xsmall' },
+        // border: undefined,
+        // extend: undefined,
+      },
+      footer: {
+        align: 'start',
+        pad: { horizontal: 'small', vertical: 'xsmall' },
+        border: 'top',
+        verticalAlign: 'top',
+        fill: 'vertical',
+        // extend: undefined,
+      },
     },
     text: {
       xsmall: { ...fontSizing(-1.5) },
