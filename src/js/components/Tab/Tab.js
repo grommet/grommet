@@ -7,6 +7,8 @@ import { Text } from '../Text';
 import { withForwardRef, withTheme } from '../hocs';
 import { evalStyle, normalizeColor } from '../../utils';
 
+import { StyledTab } from './StyledTab';
+
 class Tab extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     const { active } = nextProps;
@@ -45,20 +47,29 @@ class Tab extends Component {
 
   render() {
     const {
-      active, forwardRef, title, onMouseOver, onMouseOut, theme, ...rest
+      active,
+      forwardRef,
+      header,
+      title,
+      onMouseOver,
+      onMouseOut,
+      theme,
+      ...rest
     } = this.props;
     const { over } = this.state;
 
     delete rest.onActivate;
 
     let normalizedTitle;
-    if (typeof title !== 'string') {
-      normalizedTitle = title;
-    } else if (active) {
-      normalizedTitle = <Text weight='bold'>{title}</Text>;
-    } else {
-      const color = normalizeColor('text', theme);
-      normalizedTitle = <Text color={color}>{title}</Text>;
+    if (!header) {
+      if (typeof title !== 'string') {
+        normalizedTitle = title;
+      } else if (active) {
+        normalizedTitle = <Text weight='bold'>{title}</Text>;
+      } else {
+        const color = normalizeColor('text', theme);
+        normalizedTitle = <Text color={color}>{title}</Text>;
+      }
     }
 
     let borderColor;
@@ -84,13 +95,26 @@ class Tab extends Component {
         onFocus={this.onMouseOver}
         onBlur={this.onMouseOut}
       >
-        <Box
-          pad={{ bottom: 'xsmall' }}
-          margin={{ vertical: 'xxsmall', horizontal: 'small' }}
-          border={{ side: 'bottom', size: 'small', color: borderColor }}
-        >
-          {normalizedTitle}
-        </Box>
+        {header ? (
+          <StyledTab
+            as={Box}
+            background={theme.tab.background}
+            theme={theme}
+          >
+            {header}
+          </StyledTab>
+        ) : (
+          <StyledTab
+            as={Box}
+            background={theme.tab.background}
+            theme={theme}
+            pad={{ bottom: 'xsmall' }}
+            margin={{ vertical: 'xxsmall', horizontal: 'small' }}
+            border={{ side: 'bottom', size: 'small', color: borderColor }}
+          >
+            {normalizedTitle}
+          </StyledTab>
+        )}
       </Button>
     );
   }

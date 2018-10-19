@@ -551,6 +551,23 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         // extend: undefined,
       },
     },
+    tab: {
+      // background: undefined,
+      // extend: undefined,
+      hover: {
+        // background: undefined,
+        // extend: undefined,
+      },
+    },
+    tabs: {
+      // background: undefined,
+      // extend: undefined,
+      header: {
+        // background: undefined,
+        // extend: undefined,
+      },
+      // gap: undefined,
+    },
     text: {
       xsmall: { ...fontSizing(-1.5) },
       small: { ...fontSizing(-1) },

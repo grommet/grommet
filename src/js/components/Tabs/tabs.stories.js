@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
+import { css } from 'styled-components';
+
 import {
   Attraction, Car, CircleInformation, Currency, TreeOption,
 } from 'grommet-icons';
@@ -9,6 +11,7 @@ import {
   Box, Grommet, FormField, Tab, Tabs, Text, TextInput,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 
 const UncontrolledTabs = () => (
   <Grommet theme={grommet}>
@@ -209,8 +212,59 @@ const RichTabs = () => (
   </Grommet>
 );
 
+const customTheme = deepMerge(grommet, {
+  global: {
+    elevation: {
+      light: {
+        small: '0px 1px 5px rgba(0, 0, 0, 0.50)',
+        medium: '0px 3px 8px rgba(0, 0, 0, 0.50)',
+      },
+    },
+  },
+  tab: {
+    background: 'dark-1',
+    hover: {
+      background: 'dark-2',
+    },
+    extend: ({ theme }) => css`
+      border-radius: ${theme.global.control.border.radius};
+      padding: 0px ${theme.global.edgeSize.small};
+      box-shadow: ${theme.global.elevation.light.small};
+    `,
+  },
+  tabs: {
+    background: 'dark-4',
+    header: {
+      background: 'dark-3',
+      extend: ({ theme }) => css`
+        padding: ${theme.global.edgeSize.small};
+        box-shadow: ${theme.global.elevation.light.medium};
+      `,
+    },
+    gap: 'medium',
+  },
+});
+
+const CustomTabs = () => (
+  <Grommet theme={customTheme}>
+    <Tabs>
+      <Tab header={<RichTabTitle icon={<CircleInformation color='accent-1' />} label='Personal Data' />}>
+        <FormField label='Name'>
+          <TextInput placeholder='Enter your name...' />
+        </FormField>
+      </Tab>
+      <Tab header={<RichTabTitle icon={<Currency color='neutral-5' />} label='Payment' />}>
+        <FormField label='Card Number'>
+          <TextInput placeholder='Enter your card number...' />
+        </FormField>
+      </Tab>
+    </Tabs>
+  </Grommet>
+);
+
 storiesOf('Tabs', module)
   .add('Uncontrolled Tabs', () => <UncontrolledTabs />)
   .add('Controlled Tabs', () => <ControlledTabs />)
   .add('Responsive Tabs', () => <ResponsiveTabs />)
-  .add('Rich Tabs', () => <RichTabs />);
+  .add('Rich Tabs', () => <RichTabs />)
+  .add('CustomTheme', () => <CustomTabs />);

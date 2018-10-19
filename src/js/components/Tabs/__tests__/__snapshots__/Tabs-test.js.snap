@@ -12,6 +12,23 @@ exports[`Tabs Tab 1`] = `
   margin: 0px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -25,7 +42,7 @@ exports[`Tabs Tab 1`] = `
   flex-wrap: wrap;
 }
 
-.c3 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -46,7 +63,7 @@ exports[`Tabs Tab 1`] = `
   padding-bottom: 6px;
 }
 
-.c5 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -67,7 +84,7 @@ exports[`Tabs Tab 1`] = `
   padding-bottom: 6px;
 }
 
-.c2 {
+.c3 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -85,13 +102,13 @@ exports[`Tabs Tab 1`] = `
   text-align: inherit;
 }
 
-.c4 {
+.c6 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c6 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -107,6 +124,13 @@ exports[`Tabs Tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c4 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -120,53 +144,65 @@ exports[`Tabs Tab 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     padding-bottom: 3px;
   }
 }
@@ -175,16 +211,16 @@ exports[`Tabs Tab 1`] = `
   className="c0"
 >
   <div
-    className=""
+    className="c1"
     role="tablist"
   >
     <div
-      className="c1"
+      className="c2"
     >
       <button
         aria-expanded={true}
         aria-selected={true}
-        className="c2"
+        className="c3"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -194,10 +230,10 @@ exports[`Tabs Tab 1`] = `
         type="button"
       >
         <div
-          className="c3"
+          className="c4 c5"
         >
           <span
-            className="c4"
+            className="c6"
           >
             Tab 1
           </span>
@@ -206,7 +242,7 @@ exports[`Tabs Tab 1`] = `
       <button
         aria-expanded={false}
         aria-selected={false}
-        className="c2"
+        className="c3"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -216,10 +252,10 @@ exports[`Tabs Tab 1`] = `
         type="button"
       >
         <div
-          className="c5"
+          className="c4 c7"
         >
           <span
-            className="c6"
+            className="c8"
           >
             Tab 2
           </span>
@@ -248,6 +284,23 @@ exports[`Tabs change to second tab 1`] = `
   margin: 0px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -261,7 +314,7 @@ exports[`Tabs change to second tab 1`] = `
   flex-wrap: wrap;
 }
 
-.c3 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -282,7 +335,7 @@ exports[`Tabs change to second tab 1`] = `
   padding-bottom: 6px;
 }
 
-.c5 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -303,7 +356,7 @@ exports[`Tabs change to second tab 1`] = `
   padding-bottom: 6px;
 }
 
-.c2 {
+.c3 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -321,13 +374,13 @@ exports[`Tabs change to second tab 1`] = `
   text-align: inherit;
 }
 
-.c4 {
+.c6 {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.c6 {
+.c8 {
   font-size: 18px;
   line-height: 24px;
   color: #444444;
@@ -343,6 +396,13 @@ exports[`Tabs change to second tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c4 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -356,53 +416,65 @@ exports[`Tabs change to second tab 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     padding-bottom: 3px;
   }
 }
@@ -411,24 +483,24 @@ exports[`Tabs change to second tab 1`] = `
   class="c0"
 >
   <div
-    class=""
+    class="c1"
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="c2"
+        class="c3"
         role="tab"
         type="button"
       >
         <div
-          class="c3"
+          class="c4 c5"
         >
           <span
-            class="c4"
+            class="c6"
           >
             Tab 1
           </span>
@@ -437,15 +509,15 @@ exports[`Tabs change to second tab 1`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="c2"
+        class="c3"
         role="tab"
         type="button"
       >
         <div
-          class="c5"
+          class="c4 c7"
         >
           <span
-            class="c6"
+            class="c8"
           >
             Tab 2
           </span>
@@ -467,11 +539,11 @@ exports[`Tabs change to second tab 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-0 gPxemO"
+    class="StyledTabs-a4fwxl-1 FeUCW StyledBox-sc-13pk1d4-0 cJEczh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iFPWFz"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 ivzZEC StyledBox-sc-13pk1d4-0 iFPWFz"
     >
       <button
         aria-expanded="false"
@@ -481,7 +553,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 judqYk"
+          class="StyledTab-sc-1nnwnsb-0 fUnoab StyledBox-sc-13pk1d4-0 judqYk"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iEgnbY"
@@ -498,7 +570,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fsvkMZ"
+          class="StyledTab-sc-1nnwnsb-0 fUnoab StyledBox-sc-13pk1d4-0 fsvkMZ"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dndifk"
@@ -530,6 +602,23 @@ exports[`Tabs complex title 1`] = `
   margin: 0px;
   min-width: 0;
   min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -543,7 +632,7 @@ exports[`Tabs complex title 1`] = `
   flex-wrap: wrap;
 }
 
-.c3 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -564,7 +653,7 @@ exports[`Tabs complex title 1`] = `
   padding-bottom: 6px;
 }
 
-.c4 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -585,7 +674,7 @@ exports[`Tabs complex title 1`] = `
   padding-bottom: 6px;
 }
 
-.c2 {
+.c3 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -613,6 +702,13 @@ exports[`Tabs complex title 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c4 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -626,53 +722,65 @@ exports[`Tabs complex title 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c6 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c6 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c6 {
     padding-bottom: 3px;
   }
 }
@@ -681,16 +789,16 @@ exports[`Tabs complex title 1`] = `
   className="c0"
 >
   <div
-    className=""
+    className="c1"
     role="tablist"
   >
     <div
-      className="c1"
+      className="c2"
     >
       <button
         aria-expanded={true}
         aria-selected={true}
-        className="c2"
+        className="c3"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -700,7 +808,7 @@ exports[`Tabs complex title 1`] = `
         type="button"
       >
         <div
-          className="c3"
+          className="c4 c5"
         >
           <div>
             Tab 1
@@ -710,7 +818,7 @@ exports[`Tabs complex title 1`] = `
       <button
         aria-expanded={false}
         aria-selected={false}
-        className="c2"
+        className="c3"
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -720,7 +828,7 @@ exports[`Tabs complex title 1`] = `
         type="button"
       >
         <div
-          className="c4"
+          className="c4 c6"
         >
           <div>
             Tab 2
@@ -750,61 +858,13 @@ exports[`Tabs no Tab 1`] = `
   margin: 0px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding: 0px;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    className=""
-    role="tablist"
-  >
-    <div
-      className="c1"
-    />
-    <div
-      aria-label=" Tab Contents"
-      role="tabpanel"
-    />
-  </div>
-</div>
-`;
-
-exports[`Tabs set on hover 1`] = `
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -828,78 +888,6 @@ exports[`Tabs set on hover 1`] = `
   flex-wrap: wrap;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  border-bottom: solid 2px #000000;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-bottom: 6px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  border-bottom: solid 2px rgba(0,0,0,0.33);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-bottom: 6px;
-}
-
-.c2 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -923,53 +911,238 @@ exports[`Tabs set on hover 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    role="tablist"
+  >
+    <div
+      className="c2"
+    />
+    <div
+      aria-label=" Tab Contents"
+      role="tabpanel"
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs set on hover 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px #000000;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #444444;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c5 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c5 {
     border-bottom: solid 2px #000000;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c5 {
     padding-bottom: 3px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     margin-top: 2px;
     margin-bottom: 2px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c7 {
     padding-bottom: 3px;
   }
 }
@@ -978,24 +1151,24 @@ exports[`Tabs set on hover 1`] = `
   class="c0"
 >
   <div
-    class=""
+    class="c1"
     role="tablist"
   >
     <div
-      class="c1"
+      class="c2"
     >
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="c2"
+        class="c3"
         role="tab"
         type="button"
       >
         <div
-          class="c3"
+          class="c4 c5"
         >
           <span
-            class="c4"
+            class="c6"
           >
             Tab 1
           </span>
@@ -1004,15 +1177,15 @@ exports[`Tabs set on hover 1`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="c2"
+        class="c3"
         role="tab"
         type="button"
       >
         <div
-          class="c5"
+          class="c4 c7"
         >
           <span
-            class="c6"
+            class="c8"
           >
             Tab 2
           </span>
@@ -1034,11 +1207,11 @@ exports[`Tabs set on hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-0 gPxemO"
+    class="StyledTabs-a4fwxl-1 FeUCW StyledBox-sc-13pk1d4-0 cJEczh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iFPWFz"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 ivzZEC StyledBox-sc-13pk1d4-0 iFPWFz"
     >
       <button
         aria-expanded="true"
@@ -1048,7 +1221,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fsvkMZ"
+          class="StyledTab-sc-1nnwnsb-0 fUnoab StyledBox-sc-13pk1d4-0 fsvkMZ"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dndifk"
@@ -1065,7 +1238,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 judqYk"
+          class="StyledTab-sc-1nnwnsb-0 fUnoab StyledBox-sc-13pk1d4-0 judqYk"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iEgnbY"
@@ -1090,11 +1263,11 @@ exports[`Tabs set on hover 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-0 gPxemO"
+    class="StyledTabs-a4fwxl-1 FeUCW StyledBox-sc-13pk1d4-0 cJEczh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iFPWFz"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 ivzZEC StyledBox-sc-13pk1d4-0 iFPWFz"
     >
       <button
         aria-expanded="true"
@@ -1104,7 +1277,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fsvkMZ"
+          class="StyledTab-sc-1nnwnsb-0 fUnoab StyledBox-sc-13pk1d4-0 fsvkMZ"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dndifk"
@@ -1121,7 +1294,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 judqYk"
+          class="StyledTab-sc-1nnwnsb-0 fUnoab StyledBox-sc-13pk1d4-0 judqYk"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iEgnbY"
@@ -1146,11 +1319,11 @@ exports[`Tabs set on hover 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-0 gPxemO"
+    class="StyledTabs-a4fwxl-1 FeUCW StyledBox-sc-13pk1d4-0 cJEczh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iFPWFz"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 ivzZEC StyledBox-sc-13pk1d4-0 iFPWFz"
     >
       <button
         aria-expanded="true"
@@ -1160,7 +1333,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fsvkMZ"
+          class="StyledTab-sc-1nnwnsb-0 fUnoab StyledBox-sc-13pk1d4-0 fsvkMZ"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dndifk"
@@ -1177,7 +1350,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 judqYk"
+          class="StyledTab-sc-1nnwnsb-0 fUnoab StyledBox-sc-13pk1d4-0 judqYk"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iEgnbY"
@@ -1202,11 +1375,11 @@ exports[`Tabs set on hover 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-0 gPxemO"
+    class="StyledTabs-a4fwxl-1 FeUCW StyledBox-sc-13pk1d4-0 cJEczh"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 iFPWFz"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 ivzZEC StyledBox-sc-13pk1d4-0 iFPWFz"
     >
       <button
         aria-expanded="true"
@@ -1216,7 +1389,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 fsvkMZ"
+          class="StyledTab-sc-1nnwnsb-0 fUnoab StyledBox-sc-13pk1d4-0 fsvkMZ"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dndifk"
@@ -1233,7 +1406,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 judqYk"
+          class="StyledTab-sc-1nnwnsb-0 fUnoab StyledBox-sc-13pk1d4-0 judqYk"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iEgnbY"
