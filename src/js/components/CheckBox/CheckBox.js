@@ -124,6 +124,13 @@ class CheckBox extends Component {
         theme={theme}
         gap={theme.checkBox.gap || 'small'}
         checked={checked}
+        onClick={(event) => {
+          // prevents clicking on the label trigging the even twice
+          // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
+          if (event.target.type !== 'checkbox') {
+            event.stopPropagation();
+          }
+        }}
       >
         {first}
         {second}

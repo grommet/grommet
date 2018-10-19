@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, RadioButton } from 'grommet';
+import {
+ Box, Button, Grommet, RadioButton,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
@@ -90,7 +92,37 @@ class CustomRadioButton extends Component {
   }
 }
 
+class CheckBoxInsideButton extends Component {
+  state = { selected: undefined }
+
+  render() {
+    const { selected } = this.state;
+    return (
+      <Grommet theme={grommet}>
+        <Button
+          hoverIndicator='background'
+          onClick={() => {
+            if (selected) {
+              this.setState({ selected: undefined });
+            } else {
+              this.setState({ selected: 'c1' });
+            }
+          }}
+        >
+          <RadioButton
+            label='Choice 1'
+            name='radio'
+            value='c1'
+            checked={selected === 'c1'}
+            {...this.props}
+          />
+        </Button>
+      </Grommet>
+    );
+  }
+}
 storiesOf('RadioButton', module)
   .add('Simple RadioButton', () => <SimpleRadioButton />)
   .add('Disabled RadioButton', () => <SimpleRadioButton disabled selected='c2' />)
-  .add('Custom Theme', () => <CustomRadioButton />);
+  .add('Custom Theme', () => <CustomRadioButton />)
+  .add('Inside a Button Theme', () => <CheckBoxInsideButton />);

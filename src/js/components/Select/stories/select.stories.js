@@ -286,10 +286,9 @@ class CustomSearchSelect extends Component {
           checked={selectedContentPartners.some(
             partner => partner.name === name
           )}
-          value={name}
+          label={<Text size='small'>{name}</Text>}
           onChange={() => {}}
         />
-        <Text size='small'>{name}</Text>
       </Box>
     );
   }
@@ -349,7 +348,7 @@ class CustomSearchSelect extends Component {
 
     return (
       <Grommet theme={customSearchTheme}>
-        <Box align='start' width='medium' direction='row'>
+        <Box align='start' alignContent='stretch' width='medium' direction='row'>
           <SearchInputContext.Provider value={{ searching }}>
             <Select
               ref={this.selectRef}
