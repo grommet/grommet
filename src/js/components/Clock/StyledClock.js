@@ -1,25 +1,25 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { genericStyles } from '../../utils';
+import { normalizeColor, genericStyles } from '../../utils';
 
 export const StyledHour = styled.line`
   stroke-width: ${props => props.theme.clock.analog.hour.width};
   stroke: ${props => (
-    props.theme.clock.analog.hour.color[props.theme.dark ? 'dark' : 'light'])};
+    normalizeColor(props.theme.clock.analog.hour.color, props.theme))};
   transition: stroke 1s ease-out;
 `;
 
 export const StyledMinute = styled.line`
   stroke-width: ${props => props.theme.clock.analog.minute.width};
   stroke: ${props => (
-    props.theme.clock.analog.minute.color[props.theme.dark ? 'dark' : 'light'])};
+    normalizeColor(props.theme.clock.analog.minute.color, props.theme))};
   transition: stroke 1s ease-out;
 `;
 
 export const StyledSecond = styled.line`
   stroke-width: ${props => props.theme.clock.analog.second.width};
   stroke: ${props => (
-    props.theme.clock.analog.second.color[props.theme.dark ? 'dark' : 'light'])};
+    normalizeColor(props.theme.clock.analog.second.color, props.theme))};
   transition: stroke 1s ease-out;
 `;
 

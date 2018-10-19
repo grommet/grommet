@@ -15,7 +15,7 @@ import {
   StyledCheckBoxKnob,
 } from './StyledCheckBox';
 
-import { evalStyle, normalizeColor } from '../../utils';
+import { normalizeColor } from '../../utils';
 
 class CheckBox extends Component {
   render() {
@@ -62,7 +62,7 @@ class CheckBox extends Component {
         height={theme.checkBox.size}
         border={{
           size: theme.checkBox.border.width,
-          color: evalStyle(borderColor, theme),
+          color: borderColor,
         }}
         round={theme.checkBox.check.radius}
         focus={focus}
@@ -91,7 +91,6 @@ class CheckBox extends Component {
         align='center'
         justify='center'
         theme={theme}
-        checked={checked}
       >
         <StyledCheckBoxInput
           {...rest}
@@ -102,6 +101,7 @@ class CheckBox extends Component {
           })}
           theme={theme}
           checked={checked}
+          disabled={disabled}
         />
         {visual}
         {hidden}

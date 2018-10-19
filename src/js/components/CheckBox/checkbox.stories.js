@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { css } from 'styled-components';
 
 import { Grommet, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -9,7 +8,10 @@ import { normalizeColor, deepMerge } from 'grommet/utils';
 import { FormCheckmark } from 'grommet-icons';
 
 class SimpleCheckBox extends Component {
-  state = { checked: false }
+  constructor(props) {
+    super(props);
+    this.state = { checked: !!props.checked };
+  }
 
   onChange = event => this.setState({ checked: event.target.checked })
 
@@ -32,12 +34,12 @@ const customCheckBoxTheme = {
   checkBox: {
     border: {
       color: {
-        light: css`${props => normalizeColor('neutral-1', props.theme)}`,
+        light: 'neutral-1',
       },
       radius: '2px',
     },
     color: {
-      light: css`${props => normalizeColor('neutral-1', props.theme)}`,
+      light: 'neutral-1',
     },
     check: {
       extend: ({ theme, checked }) => `
@@ -50,6 +52,7 @@ const customCheckBoxTheme = {
       },
     },
     icon: {
+      size: '18px',
       extend: 'stroke: white;',
     },
     icons: {
@@ -87,11 +90,11 @@ const customToggleTheme = {
   checkBox: {
     border: {
       color: {
-        light: css`${props => normalizeColor('light-2', props.theme)}`,
+        light: 'light-2',
       },
     },
     color: {
-      light: css`${props => normalizeColor('neutral-1', props.theme)}`,
+      light: 'neutral-1',
     },
     check: {
       radius: '2px',
@@ -102,9 +105,9 @@ const customToggleTheme = {
       },
     },
     toggle: {
-      background: css`${props => normalizeColor('light-2', props.theme)}`,
+      background: 'light-2',
       color: {
-        light: css`${props => normalizeColor('light-4', props.theme)}`,
+        light: 'light-4',
       },
       size: '36px',
     },
@@ -137,6 +140,7 @@ class ThemedToggle extends Component {
 storiesOf('CheckBox', module)
   .add('Simple', () => <SimpleCheckBox />)
   .add('Toggle', () => <SimpleCheckBox toggle />)
+  .add('Disabled', () => <SimpleCheckBox checked disabled />)
   .add('Reverse', () => <SimpleCheckBox reverse />)
   .add('Themed CheckBox', () => <ThemedCheckBox />)
   .add('Themed Toggle', () => <ThemedToggle />);
