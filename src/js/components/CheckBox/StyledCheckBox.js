@@ -61,10 +61,10 @@ export const StyledCheckBoxToggle = styled.span`
   width: ${props => props.theme.checkBox.toggle.size};
   height: ${props => props.theme.checkBox.size};
   border: ${props => props.theme.checkBox.border.width} solid;
-  border-color: ${props => props.theme.checkBox.border.color[props.theme.dark ? 'dark' : 'light']};
+  border-color: ${props => normalizeColor(props.theme.checkBox.border.color, props.theme)};
   border-radius: ${props => props.theme.checkBox.toggle.radius};
   background-color: ${props => (props.theme.checkBox.toggle.background ? (
-    props.theme.checkBox.toggle.background
+    normalizeColor(props.theme.checkBox.toggle.background, props.theme)
   ) : 'transparent')};
 
   ${props => props.focus && focusStyle};

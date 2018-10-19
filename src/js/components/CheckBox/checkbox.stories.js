@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { css } from 'styled-components';
 
 import { Grommet, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -35,12 +34,12 @@ const customCheckBoxTheme = {
   checkBox: {
     border: {
       color: {
-        light: css`${props => normalizeColor('neutral-1', props.theme)}`,
+        light: 'neutral-1',
       },
       radius: '2px',
     },
     color: {
-      light: css`${props => normalizeColor('neutral-1', props.theme)}`,
+      light: 'neutral-1',
     },
     check: {
       extend: ({ theme, checked }) => `
@@ -91,11 +90,11 @@ const customToggleTheme = {
   checkBox: {
     border: {
       color: {
-        light: css`${props => normalizeColor('light-2', props.theme)}`,
+        light: 'light-2',
       },
     },
     color: {
-      light: css`${props => normalizeColor('neutral-1', props.theme)}`,
+      light: 'neutral-1',
     },
     check: {
       radius: '2px',
@@ -106,9 +105,9 @@ const customToggleTheme = {
       },
     },
     toggle: {
-      background: css`${props => normalizeColor('light-2', props.theme)}`,
+      background: 'light-2',
       color: {
-        light: css`${props => normalizeColor('light-4', props.theme)}`,
+        light: 'light-4',
       },
       size: '36px',
     },

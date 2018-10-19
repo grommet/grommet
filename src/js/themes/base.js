@@ -180,7 +180,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       },
       focus: {
         border: {
-          color: css`${props => normalizeColor('focus', props.theme)}`,
+          color: 'focus',
           width: '2px',
         },
       },
@@ -323,8 +323,8 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       hover: {
         border: {
           color: {
-            dark: css`${props => normalizeColor('white', props.theme)}`,
-            light: css`${props => normalizeColor('black', props.theme)}`,
+            dark: 'white',
+            light: 'black',
           },
         },
       },
@@ -348,8 +348,8 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       analog: {
         hour: {
           color: {
-            dark: css`${props => normalizeColor('light-3', props.theme)}`,
-            light: css`${props => normalizeColor('dark-3', props.theme)}`,
+            dark: 'light-2',
+            light: 'dark-3',
           },
           width: `${baseSpacing / 3}px`,
           size: `${baseSpacing}px`,
@@ -357,8 +357,8 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         },
         minute: {
           color: {
-            dark: css`${props => normalizeColor('light-5', props.theme)}`,
-            light: css`${props => normalizeColor('dark-5', props.theme)}`,
+            dark: 'light-5',
+            light: 'dark-5',
           },
           width: `${baseSpacing / 6}px`,
           size: `${Math.round(baseSpacing / 2)}px`,
@@ -366,8 +366,8 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         },
         second: {
           color: {
-            dark: css`${props => normalizeColor('accent-1', props.theme)}`,
-            light: css`${props => normalizeColor('accent-1', props.theme)}`,
+            dark: 'accent-1',
+            light: 'accent-1',
           },
           width: `${baseSpacing / 8}px`,
           size: `${Math.round(baseSpacing / 2.666)}px`,
@@ -535,8 +535,8 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       hover: {
         border: {
           color: {
-            dark: css`${props => normalizeColor('white', props.theme)}`,
-            light: css`${props => normalizeColor('black', props.theme)}`,
+            dark: 'white',
+            light: 'black',
           },
         },
       },

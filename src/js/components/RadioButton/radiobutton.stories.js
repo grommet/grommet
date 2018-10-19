@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { css } from 'styled-components';
 
 import { Box, Grommet, RadioButton } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { deepMerge, normalizeColor } from 'grommet/utils';
+import { deepMerge } from 'grommet/utils';
 
 class SimpleRadioButton extends Component {
   constructor(props) {
@@ -47,12 +46,12 @@ const customTheme = deepMerge(grommet, {
     size: '18px',
     hover: {
       border: {
-        color: css`${props => normalizeColor('dark-4', props.theme)}`,
+        color: 'dark-4',
       },
     },
     check: {
       color: {
-        light: css`${props => normalizeColor('neutral-1', props.theme)}`,
+        light: 'neutral-1',
       },
     },
     icon: {

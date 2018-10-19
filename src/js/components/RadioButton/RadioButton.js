@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import { evalStyle, normalizeColor, removeUndefined } from '../../utils';
+import { normalizeColor, removeUndefined } from '../../utils';
 
 import { Box } from '../Box';
 
@@ -74,7 +74,7 @@ class RadioButton extends Component {
             height={theme.radioButton.size}
             border={{
               size: theme.radioButton.border.width,
-              color: evalStyle(borderColor, theme),
+              color: borderColor,
             }}
             round={theme.radioButton.check.radius}
           >
