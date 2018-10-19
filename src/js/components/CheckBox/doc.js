@@ -12,11 +12,12 @@ export const doc = (CheckBox) => {
       );
 
   DocumentedCheckBox.propTypes = {
-    checked: PropTypes.bool.description('Same as React <input checked={} />'),
+    checked: PropTypes.bool.description('Same as React <input checked={} />')
+      .defaultValue(false),
     disabled: PropTypes.bool.description(
       `Same as React <input disabled={} />. Also adds a hidden input element
       with the same name so form submissions work.`,
-    ),
+    ).defaultValue(false),
     id: PropTypes.string.description(
       'The DOM id attribute value to use for the underlying <input/> element.',
     ),
@@ -33,10 +34,10 @@ export const doc = (CheckBox) => {
     ),
     reverse: PropTypes.bool.description(
       'Whether to show the label in front of the checkbox.'
-    ),
+    ).defaultValue(false),
     toggle: PropTypes.bool.description(
       'Whether to visualize it as a toggle switch.'
-    ),
+    ).defaultValue(false),
   };
 
   return DocumentedCheckBox;
