@@ -177,7 +177,6 @@ exports[`CheckBox checked renders 1`] = `
     className="c1 -label c2"
   >
     <div
-      checked={true}
       className="c3 c4"
     >
       <input
@@ -453,7 +452,6 @@ exports[`CheckBox disabled renders 1`] = `
     disabled={true}
   >
     <div
-      checked={true}
       className="c3 c4"
     >
       <input
@@ -1289,7 +1287,6 @@ exports[`CheckBox toggle renders 1`] = `
     className="c1 -label c2"
   >
     <div
-      checked={true}
       className="c3 c4"
     >
       <input

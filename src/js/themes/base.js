@@ -506,6 +506,8 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
     },
     menu: {
+      // background: undefined,
+      // extend: undefined,
       icons: {
         down: FormDown,
       },
@@ -517,16 +519,31 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       xlarge: { ...fontSizing(2) },
     },
     radioButton: {
-      check: {
-        // color: { dark: undefined, light: undefined },
-      },
       border: {
         color: {
           dark: 'rgba(255, 255, 255, 0.5)',
           light: 'rgba(0, 0, 0, 0.15)',
         },
-        radius: '100%',
         width: '2px',
+      },
+      check: {
+        radius: '100%',
+        // color: { dark: undefined, light: undefined },
+        // extend: undefined,
+      },
+      hover: {
+        border: {
+          color: {
+            dark: css`${props => normalizeColor('white', props.theme)}`,
+            light: css`${props => normalizeColor('black', props.theme)}`,
+          },
+        },
+      },
+      icon: {
+        // extend: undefined,
+      },
+      icons: {
+        // circle: undefined,
       },
       size: `${baseSpacing}px`,
     },

@@ -18,6 +18,8 @@ const ContainerBox = styled(Box)`
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     width: 100%;
   }
+
+  ${props => props.theme.menu.extend}
 `;
 
 class Menu extends Component {
@@ -154,7 +156,10 @@ class Menu extends Component {
           onOpen={() => this.setState({ open: true })}
           onClose={() => this.setState({ open: false })}
           dropContent={(
-            <ContainerBox background={dropBackground}>
+            <ContainerBox
+              theme={theme}
+              background={dropBackground || theme.menu.background}
+            >
               {dropAlign.top === 'top' ? controlMirror : undefined}
               <Box overflow='auto'>
                 {items.map(

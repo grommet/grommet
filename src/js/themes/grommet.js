@@ -83,4 +83,16 @@ export const grommet = deepFreeze({
       family: "'Zilla Slab', 'Work Sans', Arial, sans-serif",
     },
   },
+  radioButton: {
+    icon: {
+      extend: css`
+        box-sizing: border-box;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: ${props => props.theme.radioButton.size};
+        height: ${props => props.theme.radioButton.size};
+      `,
+    },
+  },
 });

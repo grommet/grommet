@@ -91,7 +91,6 @@ class CheckBox extends Component {
         align='center'
         justify='center'
         theme={theme}
-        checked={checked}
       >
         <StyledCheckBoxInput
           {...rest}
