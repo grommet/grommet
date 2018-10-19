@@ -40,7 +40,7 @@ const COLUMNS = [
     property: 'name',
     label: 'Name',
     dataScope: 'row',
-    format: datum => <strong>{datum.name}</strong>,
+    format: datum => <Text weight='bold'>{datum.name}</Text>,
   },
   {
     property: 'email',

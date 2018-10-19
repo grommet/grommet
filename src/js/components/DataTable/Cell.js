@@ -18,10 +18,8 @@ export const Cell = ({
   }
 
   if (typeof content === 'string' || typeof content === 'number') {
-    if (primary) {
-      content = <Text><strong>{content}</strong></Text>;
-    }
-    content = <Text>{content}</Text>;
+    const textProps = primary ? theme.dataTable.primary : {};
+    content = <Text {...textProps}>{content}</Text>;
   }
 
   return (

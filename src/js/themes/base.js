@@ -419,6 +419,9 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
           color: 'border',
         },
       },
+      primary: {
+        weight: 'bold',
+      },
     },
     // drop: {
     //   maxHeight: undefined,
