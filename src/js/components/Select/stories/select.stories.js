@@ -348,7 +348,7 @@ class CustomSearchSelect extends Component {
 
     return (
       <Grommet theme={customSearchTheme}>
-        <Box align='start' alignContent='stretch' width='medium' direction='row'>
+        <Box align='start' width='medium' direction='row'>
           <SearchInputContext.Provider value={{ searching }}>
             <Select
               ref={this.selectRef}
