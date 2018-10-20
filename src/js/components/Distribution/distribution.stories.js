@@ -7,9 +7,9 @@ import {
 import { grommet } from 'grommet/themes';
 
 const SimpleDistribution = () => (
-  <Grommet theme={grommet}>
+  <Grommet theme={grommet} full>
     <Distribution
-      basis='medium'
+      fill
       values={[
         { value: 50, color: 'light-3' },
         { value: 30, color: 'neutral-1' },
@@ -28,4 +28,4 @@ const SimpleDistribution = () => (
 );
 
 storiesOf('Distribution', module)
-  .add('Simple Distribution', () => <SimpleDistribution />);
+  .add('Simple', () => <SimpleDistribution />);
