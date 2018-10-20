@@ -17,6 +17,9 @@ export const doc = (Distribution) => {
     children: PropTypes.func.description(
       'Function that will be called when each value is rendered.'
     ),
+    fill: PropTypes.bool.description(
+      'Whether the distribution expands to fill all of the available width and height.'
+    ).defaultValue(false),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf(
         ['xsmall', 'small', 'medium', 'large', 'xlarge']
@@ -24,7 +27,7 @@ export const doc = (Distribution) => {
       PropTypes.string,
     ]).description(
       'The amount of spacing between child elements.'
-    ),
+    ).defaultValue('xsmall'),
     values: PropTypes.arrayOf(PropTypes.shape({
       value: PropTypes.number.isRequired,
     })).description(

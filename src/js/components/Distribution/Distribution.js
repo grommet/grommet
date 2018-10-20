@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
+import { Text } from '../Text';
 
 import { withTheme } from '../hocs';
 
@@ -19,13 +20,18 @@ Value.propTypes = {
 
 class Distribution extends Component {
   static defaultProps = {
+    basis: undefined,
+    children: value => (
+      <Box fill border><Text>{value.value}</Text></Box>
+    ),
     direction: 'row',
     gap: 'xsmall',
+    values: [],
   }
 
   render() {
     const {
-      basis, children, direction, gap, theme, values, ...rest
+      basis, children, direction, fill, gap, theme, values, ...rest
     } = this.props;
     if (values.length === 1) {
       const value = values[0];
@@ -69,6 +75,7 @@ class Distribution extends Component {
           flex={basis ? 'shrink' : true}
           overflow='hidden'
           gap={gap}
+          fill={fill}
           {...rest}
         >
           <Distribution

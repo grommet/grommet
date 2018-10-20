@@ -119,9 +119,17 @@ Function that will be called when each value is rendered.
 function
 ```
 
+**fill**
+
+Whether the distribution expands to fill all of the available width and height.
+
+```
+boolean
+```
+
 **gap**
 
-The amount of spacing between child elements.
+The amount of spacing between child elements. Defaults to `xsmall`.
 
 ```
 xsmall
