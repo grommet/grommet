@@ -421,35 +421,40 @@ xlarge
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   horizontal: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   left: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   right: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   top: 
     xxsmall
     xsmall
     small
     medium
     large
-    xlarge,
+    xlarge
+    string,
   vertical: 
     xxsmall
     xsmall
@@ -457,6 +462,7 @@ xlarge
     medium
     large
     xlarge
+    string
 }
 string
 ```
