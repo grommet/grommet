@@ -135,12 +135,30 @@ export const doc = (Box) => {
     pad: PropTypes.oneOfType([
       PropTypes.oneOf(['none', ...PAD_SIZES]),
       PropTypes.shape({
-        bottom: PropTypes.oneOf(PAD_SIZES),
-        horizontal: PropTypes.oneOf(PAD_SIZES),
-        left: PropTypes.oneOf(PAD_SIZES),
-        right: PropTypes.oneOf(PAD_SIZES),
-        top: PropTypes.oneOf(PAD_SIZES),
-        vertical: PropTypes.oneOf(PAD_SIZES),
+        bottom: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
+        horizontal: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
+        left: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
+        right: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
+        top: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
+        vertical: PropTypes.oneOfType([
+          PropTypes.oneOf(PAD_SIZES),
+          PropTypes.string,
+        ]),
       }),
       PropTypes.string,
     ])
