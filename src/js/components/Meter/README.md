@@ -109,7 +109,10 @@ string
 
 **background**
 
-Background color
+Background color Defaults to `{
+  "color": "light-2",
+  "opacity": "medium"
+}`.
 
 ```
 string
@@ -160,7 +163,7 @@ string
 
 **type**
 
-The visual type of meter.
+The visual type of meter. Defaults to `bar`.
 
 ```
 bar

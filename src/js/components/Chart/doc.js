@@ -38,7 +38,8 @@ export const doc = (Chart) => {
       precise axes. Set this to false to have the graphical elements
       align with the component boundaries.`
     ).defaultValue(false),
-    round: PropTypes.bool.description('Whether to round the line ends.'),
+    round: PropTypes.bool.description('Whether to round the line ends.')
+    .defaultValue(false),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(
         ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']
