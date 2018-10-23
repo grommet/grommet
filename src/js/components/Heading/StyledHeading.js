@@ -50,7 +50,7 @@ const truncateStyle = `
 `;
 
 const colorStyle = css`
-  color: ${props => normalizeColor(props.colorValue, props.theme)};
+  color: ${props => normalizeColor(props.colorProp, props.theme)};
 `;
 
 export const StyledHeading = styled.h1`
@@ -61,6 +61,6 @@ export const StyledHeading = styled.h1`
   ${props => sizeStyle(props)}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.truncate && truncateStyle}
-  ${props => props.colorValue && colorStyle}
+  ${props => props.colorProp && colorStyle}
   ${props => props.theme.heading && props.theme.heading.extend}
 `;
