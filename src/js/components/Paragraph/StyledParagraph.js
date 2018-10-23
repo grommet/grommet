@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { genericStyles, normalizeColor } from '../../utils';
 
 const colorStyle = css`
-  color: ${props => normalizeColor(props.color, props.theme)};
+  color: ${props => normalizeColor(props.colorProp, props.theme)};
 `;
 
 const sizeStyle = (props) => {
@@ -30,7 +30,7 @@ export const StyledParagraph = styled.p`
   ${genericStyles}
   ${props => sizeStyle(props)}
   ${props => props.textAlign && textAlignStyle}
-  ${props => props.color && colorStyle}
+  ${props => props.colorProp && colorStyle}
 
   ${props => props.theme.paragraph && props.theme.paragraph.extend}
 `;

@@ -17,7 +17,7 @@ const Text = ({ color, tag, ...rest }) => {
   }
 
   return (
-    <StyledComponent colorValue={color} {...rest} />
+    <StyledComponent colorProp={color} {...rest} />
   );
 };
 

@@ -25,7 +25,7 @@ const Heading = (props) => {
 
   // enforce level to be a number
   return (
-    <StyledComponent colorValue={color} level={+level} {...rest} />
+    <StyledComponent colorProp={color} level={+level} {...rest} />
   );
 };
 
