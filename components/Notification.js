@@ -303,7 +303,7 @@ exports.default = Notification;
 Notification.propTypes = _extends({
   closer: _propTypes2.default.oneOfType([_propTypes2.default.node, _propTypes2.default.bool]),
   context: _propTypes2.default.node,
-  message: _propTypes2.default.string.isRequired,
+  message: _propTypes2.default.oneOfType([_propTypes2.default.node, _propTypes2.default.string]).isRequired,
   onClose: _propTypes2.default.func,
   percentComplete: _propTypes2.default.number,
   size: _propTypes2.default.oneOf(['small', 'medium', 'large']),
