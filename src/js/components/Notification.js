@@ -213,7 +213,10 @@ Notification.propTypes = {
     PropTypes.bool
   ]),
   context: PropTypes.node,
-  message: PropTypes.string.isRequired,
+  message: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.string
+  ]).isRequired,
   onClose: PropTypes.func,
   percentComplete: PropTypes.number,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
