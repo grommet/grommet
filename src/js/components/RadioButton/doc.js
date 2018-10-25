@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export const doc = (RadioButton) => {
+export const doc = RadioButton => {
   const DocumentedRadioButton = describe(RadioButton)
     .availableAt(getAvailableAtBadge('RadioButton'))
     .description('A radio button control.')
@@ -17,13 +17,9 @@ export const doc = (RadioButton) => {
       `Same as React <input disabled={} />. Also adds a hidden input element
 with the same name so form submissions work.`
     ),
-    id: PropTypes.string.description(
-      'The DOM id attribute value to use for the underlying <input/> element.'
-    ),
+    id: PropTypes.string.description('The DOM id attribute value to use for the underlying <input/> element.'),
     label: PropTypes.node.description('Label text to place next to the control.'),
-    name: PropTypes.string.description(
-      'The DOM name attribute value to use for the underlying <input/> element.'
-    ).isRequired,
+    name: PropTypes.string.description('The DOM name attribute value to use for the underlying <input/> element.').isRequired,
     onChange: PropTypes.func.description(
       `Function that will be called when the user clicks the radio button. It
       will be passed a React event object. The current state can be accessed

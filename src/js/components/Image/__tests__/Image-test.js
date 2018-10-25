@@ -5,7 +5,8 @@ import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
 import { Image } from '..';
 
-const SRC = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII=';
+const SRC =
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII=';
 
 test('Image renders', () => {
   const component = renderer.create(
@@ -20,8 +21,8 @@ test('Image renders', () => {
 test('Image fit renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Image fit='cover' src={SRC} />
-      <Image fit='contain' src={SRC} />
+      <Image fit="cover" src={SRC} />
+      <Image fit="contain" src={SRC} />
     </Grommet>
   );
   const tree = component.toJSON();

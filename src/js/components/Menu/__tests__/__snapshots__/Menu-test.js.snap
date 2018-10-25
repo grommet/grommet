@@ -669,18 +669,18 @@ exports[`Menu close by clicking outside 3`] = `
 "
 
 @media only screen and (max-width:768px) {
-  .bSNzLY {
+  .hZxMRS {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bSNzLY {
+  .hZxMRS {
     padding: 6px;
   }
 }
 
-.cBpjKy {
+.dhsUIZ {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -699,61 +699,61 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .cBpjKy {
+  .dhsUIZ {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cBpjKy {
+  .dhsUIZ {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cJEczh {
+  .fsIpUF {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cJEczh {
+  .fsIpUF {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dUQcVP {
+  .bQWGDI {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dUQcVP {
+  .bQWGDI {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gFbzfm {
+  .cHrFaK {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gFbzfm {
+  .cHrFaK {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cIGhQH {
+  .kDqOeu {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cIGhQH {
+  .kDqOeu {
     padding: 6px;
   }
 }
@@ -1716,12 +1716,12 @@ exports[`Menu open and close on click 2`] = `
 >
   <button
     aria-label="Open Menu"
-    class="StyledButton-sc-323bzc-0 ktlKXq"
+    class="StyledButton-sc-323bzc-0 fRAxrl"
     id="test-menu"
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 bSNzLY"
+      class="StyledBox-sc-13pk1d4-0 hZxMRS"
     >
       <span
         class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -2199,18 +2199,18 @@ exports[`Menu open and close on click 4`] = `
 "
 
 @media only screen and (max-width:768px) {
-  .bSNzLY {
+  .hZxMRS {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bSNzLY {
+  .hZxMRS {
     padding: 6px;
   }
 }
 
-.cBpjKy {
+.dhsUIZ {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2229,61 +2229,61 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .cBpjKy {
+  .dhsUIZ {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cBpjKy {
+  .dhsUIZ {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cJEczh {
+  .fsIpUF {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cJEczh {
+  .fsIpUF {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dUQcVP {
+  .bQWGDI {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dUQcVP {
+  .bQWGDI {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gFbzfm {
+  .cHrFaK {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gFbzfm {
+  .cHrFaK {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cIGhQH {
+  .kDqOeu {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cIGhQH {
+  .kDqOeu {
     padding: 6px;
   }
 }
@@ -3040,18 +3040,18 @@ exports[`Menu with dropAlign renders 3`] = `
 "
 
 @media only screen and (max-width:768px) {
-  .bSNzLY {
+  .hZxMRS {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bSNzLY {
+  .hZxMRS {
     padding: 6px;
   }
 }
 
-.cBpjKy {
+.dhsUIZ {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3070,61 +3070,61 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .cBpjKy {
+  .dhsUIZ {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cBpjKy {
+  .dhsUIZ {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cJEczh {
+  .fsIpUF {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cJEczh {
+  .fsIpUF {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dUQcVP {
+  .bQWGDI {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dUQcVP {
+  .bQWGDI {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gFbzfm {
+  .cHrFaK {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .gFbzfm {
+  .cHrFaK {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cIGhQH {
+  .kDqOeu {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cIGhQH {
+  .kDqOeu {
     padding: 6px;
   }
 }

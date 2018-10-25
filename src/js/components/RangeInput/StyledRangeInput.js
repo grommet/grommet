@@ -16,15 +16,13 @@ const rangeThumbStyle = css`
   height: ${props => props.theme.global.spacing};
   width: ${props => props.theme.global.spacing};
   overflow: visible;
-  background: ${props => normalizeColor(props.theme.rangeInput.thumb.color
-    || 'control', props.theme)};
+  background: ${props => normalizeColor(props.theme.rangeInput.thumb.color || 'control', props.theme)};
   -webkit-appearance: none;
   cursor: pointer;
 `;
 
 const firefoxMicrosoftThumbStyle = css`
-  ${rangeThumbStyle}
-  margin-top: 0px;
+  ${rangeThumbStyle} margin-top: 0px;
   height: ${props => props.theme.global.spacing};
   width: ${props => props.theme.global.spacing};
 `;
@@ -59,15 +57,15 @@ export const StyledRangeInput = styled.input`
   &::-webkit-slider-thumb {
     ${rangeThumbStyle}
 
-    margin-top: -${props => (
-      (parseMetricToNum(props.theme.global.spacing) * 0.425))}px;
+    margin-top: -${props => parseMetricToNum(props.theme.global.spacing) * 0.425}px;
 
-    ${props => !props.disabled && css`
-      &:hover {
-        box-shadow: 0px 0px 0px 2px ${normalizeColor(props.theme.rangeInput.thumb.color
-          || 'control', props.theme)};
-      }
-    `}
+    ${props =>
+      !props.disabled &&
+      css`
+        &:hover {
+          box-shadow: 0px 0px 0px 2px ${normalizeColor(props.theme.rangeInput.thumb.color || 'control', props.theme)};
+        }
+      `}
   }
 
   &::-moz-range-track {
@@ -82,17 +80,17 @@ export const StyledRangeInput = styled.input`
     ${firefoxMicrosoftThumbStyle}
   }
 
-  ${props => !props.disabled && css`
-    &:hover::-moz-range-thumb {
-      box-shadow: 0px 0px 0px 2px ${normalizeColor(props.theme.rangeInput.thumb.color
-        || 'control', props.theme)};
-    }
+  ${props =>
+    !props.disabled &&
+    css`
+      &:hover::-moz-range-thumb {
+        box-shadow: 0px 0px 0px 2px ${normalizeColor(props.theme.rangeInput.thumb.color || 'control', props.theme)};
+      }
 
-    &:hover::-ms-thumb {
-      box-shadow: 0px 0px 0px 2px ${normalizeColor(props.theme.rangeInput.thumb.color
-        || 'control', props.theme)};
-    }
-  `}
+      &:hover::-ms-thumb {
+        box-shadow: 0px 0px 0px 2px ${normalizeColor(props.theme.rangeInput.thumb.color || 'control', props.theme)};
+      }
+    `}
 
   &::-ms-track {
     ${rangeTrackStyle}

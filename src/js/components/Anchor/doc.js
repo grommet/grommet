@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { genericProps, getAvailableAtBadge } from '../../utils';
 
-export const doc = (Anchor) => {
+export const doc = Anchor => {
   const DocumentedAnchor = describe(Anchor)
     .availableAt(getAvailableAtBadge('Anchor'))
     .description(
@@ -10,9 +10,7 @@ export const doc = (Anchor) => {
 base so we can style it. You can either set the icon and/or label properties
 or just use children.`
     )
-    .usage(
-      "import { Anchor } from 'grommet';\n<Anchor href={location} label='Label' />"
-    );
+    .usage("import { Anchor } from 'grommet';\n<Anchor href={location} label='Label' />");
 
   DocumentedAnchor.propTypes = {
     ...genericProps,
@@ -25,11 +23,10 @@ or just use children.`
     label: PropTypes.node.description('Label text to place in the anchor.'),
     onClick: PropTypes.func.description(`Click handler. It can be used, for example, 
     to add analytics and track who clicked in the anchor.`),
-    primary: PropTypes.bool.description('Whether this is a primary anchor.')
+    primary: PropTypes.bool.description('Whether this is a primary anchor.').defaultValue(false),
+    reverse: PropTypes.bool
+      .description('Whether an icon and label should be reversed so that the icon is at the end of the anchor.')
       .defaultValue(false),
-    reverse: PropTypes.bool.description(
-      'Whether an icon and label should be reversed so that the icon is at the end of the anchor.'
-    ).defaultValue(false),
   };
 
   return DocumentedAnchor;

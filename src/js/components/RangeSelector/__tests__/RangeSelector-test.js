@@ -22,7 +22,7 @@ describe('RangeSelector', () => {
   test('color', () => {
     const component = renderer.create(
       <Grommet>
-        <RangeSelector color='accent-1' values={[20, 30]} />
+        <RangeSelector color="accent-1" values={[20, 30]} />
       </Grommet>
     );
     const tree = component.toJSON();
@@ -32,8 +32,8 @@ describe('RangeSelector', () => {
   test('direction', () => {
     const component = renderer.create(
       <Grommet>
-        <RangeSelector direction='horizontal' values={[20, 30]} />
-        <RangeSelector direction='vertical' values={[20, 30]} />
+        <RangeSelector direction="horizontal" values={[20, 30]} />
+        <RangeSelector direction="vertical" values={[20, 30]} />
       </Grommet>
     );
     const tree = component.toJSON();

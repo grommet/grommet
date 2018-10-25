@@ -12,11 +12,11 @@ class FakeRouter extends Component {
     children: PropTypes.node.isRequired,
     push: PropTypes.func.isRequired,
     replace: PropTypes.func.isRequired,
-  }
+  };
 
   static childContextTypes = {
     router: PropTypes.shape({}),
-  }
+  };
 
   getChildContext() {
     const { push, replace } = this.props;
@@ -41,7 +41,7 @@ describe('RoutedButton', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter>
-          <RoutedButton label='Test' path='/' />
+          <RoutedButton label="Test" path="/" />
         </FakeRouter>
       </Grommet>
     );
@@ -56,7 +56,7 @@ describe('RoutedButton', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter push={push}>
-          <RoutedButton label='Test' onClick={onClick} />
+          <RoutedButton label="Test" onClick={onClick} />
         </FakeRouter>
       </Grommet>
     );
@@ -74,7 +74,7 @@ describe('RoutedButton', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter>
-          <RoutedButton label='Test' onClick={onClick} />
+          <RoutedButton label="Test" onClick={onClick} />
         </FakeRouter>
       </Grommet>
     );
@@ -96,7 +96,7 @@ describe('RoutedButton', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter push={push}>
-          <RoutedButton label='Test' path='/' />
+          <RoutedButton label="Test" path="/" />
         </FakeRouter>
       </Grommet>
     );
@@ -116,7 +116,7 @@ describe('RoutedButton', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter replace={replace}>
-          <RoutedButton label='Test' path='/' method='replace' />
+          <RoutedButton label="Test" path="/" method="replace" />
         </FakeRouter>
       </Grommet>
     );

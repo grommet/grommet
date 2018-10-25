@@ -11,10 +11,12 @@ import { controlBorderStyle, normalizeColor } from '../../utils';
 
 import { SelectContainer } from './SelectContainer';
 
-const SelectTextInput = styled(TextInput)`cursor: pointer;`;
+const SelectTextInput = styled(TextInput)`
+  cursor: pointer;
+`;
 const StyledSelectBox = styled(Box)`
   ${props => !props.plain && controlBorderStyle};
-  ${props => props.theme.select && props.theme.select.control && props.theme.select.control.extend}
+  ${props => props.theme.select && props.theme.select.control && props.theme.select.control.extend};
 `;
 
 class Select extends Component {
@@ -22,9 +24,9 @@ class Select extends Component {
     closeOnChange: true,
     dropAlign: { top: 'bottom', left: 'left' },
     messages: { multiple: 'multiple' },
-  }
+  };
 
-  state = { open: false }
+  state = { open: false };
 
   onOpen = () => {
     const { onOpen } = this.props;
@@ -33,7 +35,7 @@ class Select extends Component {
         onOpen();
       }
     });
-  }
+  };
 
   onClose = () => {
     const { onClose } = this.props;
@@ -42,7 +44,7 @@ class Select extends Component {
         onClose();
       }
     });
-  }
+  };
 
   render() {
     const {
@@ -126,22 +128,15 @@ class Select extends Component {
           onClose={this.onClose}
           dropContent={<SelectContainer {...this.props} onChange={onSelectChange} />}
         >
-          <StyledSelectBox
-            align='center'
-            direction='row'
-            justify='between'
-            background={theme.select.background}
-            plain={plain}
-            theme={theme}
-          >
-            <Box direction='row' flex basis='auto'>
+          <StyledSelectBox align="center" direction="row" justify="between" background={theme.select.background} plain={plain} theme={theme}>
+            <Box direction="row" flex basis="auto">
               {selectValue || (
                 <SelectTextInput
                   a11yTitle={a11yTitle && `${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`}
                   id={id ? `${id}__input` : undefined}
                   {...rest}
-                  tabIndex='-1'
-                  type='text'
+                  tabIndex="-1"
+                  type="text"
                   placeholder={placeholder}
                   plain
                   readOnly
@@ -151,11 +146,7 @@ class Select extends Component {
                 />
               )}
             </Box>
-            <Box
-              margin={{ horizontal: 'small' }}
-              flex={false}
-              style={{ minWidth: 'auto' }}
-            >
+            <Box margin={{ horizontal: 'small' }} flex={false} style={{ minWidth: 'auto' }}>
               <SelectIcon color={iconColor} size={size} />
             </Box>
           </StyledSelectBox>
@@ -171,7 +162,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const SelectWrapper = compose(
   withTheme,
-  withForwardRef,
+  withForwardRef
 )(SelectDoc || Select);
 
 export { SelectWrapper as Select };

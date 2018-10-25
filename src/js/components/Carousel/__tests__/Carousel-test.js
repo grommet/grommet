@@ -14,8 +14,8 @@ describe('Carousel', () => {
     const component = renderer.create(
       <Grommet>
         <Carousel>
-          <Image src='//v2.grommet.io/assets/IMG_4245.jpg' />
-          <Image src='//v2.grommet.io/assets/IMG_4210.jpg' />
+          <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
+          <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
         </Carousel>
       </Grommet>
     );
@@ -26,9 +26,9 @@ describe('Carousel', () => {
   test('navigate', () => {
     const { getByTestId, container } = render(
       <Grommet>
-        <Carousel data-testid='test-carousel'>
-          <Image src='//v2.grommet.io/assets/IMG_4245.jpg' />
-          <Image src='//v2.grommet.io/assets/IMG_4210.jpg' />
+        <Carousel data-testid="test-carousel">
+          <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
+          <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
         </Carousel>
       </Grommet>
     );
@@ -41,12 +41,12 @@ describe('Carousel', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('play', (done) => {
+  test('play', done => {
     const { container } = render(
       <Grommet>
         <Carousel play={1000}>
-          <Image src='//v2.grommet.io/assets/IMG_4245.jpg' />
-          <Image src='//v2.grommet.io/assets/IMG_4210.jpg' />
+          <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
+          <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
         </Carousel>
       </Grommet>
     );

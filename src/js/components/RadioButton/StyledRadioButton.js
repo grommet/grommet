@@ -9,15 +9,15 @@ const disabledStyle = `
 
 export const StyledRadioButtonContainer = styled.label`
   user-select: none;
-  ${props => props.disabled && disabledStyle}
-  ${props => !props.disabled && 'cursor: pointer;'}
+  ${props => props.disabled && disabledStyle} ${props =>
+    !props.disabled && 'cursor: pointer;'}
 
   :hover input:not([disabled]) + div,
   :hover input:not([disabled]) + span {
     border-color: ${props => normalizeColor(props.theme.radioButton.hover.border.color, props.theme)};
   }
 
-  ${props => props.theme.radioButton.extend}
+  ${props => props.theme.radioButton.extend};
 `;
 
 export const StyledRadioButtonInput = styled.input`
@@ -29,7 +29,7 @@ export const StyledRadioButtonInput = styled.input`
   height: 100%;
   margin: 0;
   z-index: 1;
-  ${props => !props.disabled && 'cursor: pointer;'}
+  ${props => !props.disabled && 'cursor: pointer;'};
 `;
 
 export const StyledRadioButtonIcon = styled.svg`
@@ -38,7 +38,7 @@ export const StyledRadioButtonIcon = styled.svg`
   width: ${props => props.theme.radioButton.icon.size || props.theme.radioButton.size};
   height: ${props => props.theme.radioButton.icon.size || props.theme.radioButton.size};
   fill: ${props => normalizeColor(props.theme.radioButton.check.color || 'control', props.theme)};
-  ${props => props.theme.radioButton.icon.extend}
+  ${props => props.theme.radioButton.icon.extend};
 `;
 
 export const StyledRadioButtonBox = styled.div`
@@ -49,5 +49,5 @@ export const StyledRadioButtonBox = styled.div`
 export const StyledRadioButton = styled.div`
   position: relative;
 
-  ${props => props.theme.radioButton && props.theme.radioButton.extend}
+  ${props => props.theme.radioButton && props.theme.radioButton.extend};
 `;

@@ -828,33 +828,33 @@ exports[`Accordion change active index 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 gFbzfm"
+    class="StyledBox-sc-13pk1d4-0 cHrFaK"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormDown"
@@ -876,33 +876,33 @@ exports[`Accordion change active index 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       />
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormUp"
@@ -925,7 +925,7 @@ exports[`Accordion change active index 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         Panel body 2
       </div>
@@ -1367,33 +1367,33 @@ exports[`Accordion change to second Panel 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 gFbzfm"
+    class="StyledBox-sc-13pk1d4-0 cHrFaK"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormDown"
@@ -1415,40 +1415,40 @@ exports[`Accordion change to second Panel 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 cJEczh"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 fsIpUF"
         >
           Panel body 1
         </div>
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             .c0 {
   display: inline-block;
@@ -1503,11 +1503,11 @@ exports[`Accordion change to second Panel 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         <div
           aria-hidden="false"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 cgDUOZ StyledBox-sc-13pk1d4-0 cJEczh"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 dMYckW StyledBox-sc-13pk1d4-0 fsIpUF"
           open=""
         >
           Panel body 2
@@ -1903,33 +1903,33 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 gFbzfm"
+    class="StyledBox-sc-13pk1d4-0 cHrFaK"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormDown"
@@ -1951,33 +1951,33 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       />
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             .c0 {
   display: inline-block;
@@ -2032,7 +2032,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         Panel body 2
       </div>
@@ -3029,33 +3029,33 @@ exports[`Accordion multiple panels 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 gFbzfm"
+    class="StyledBox-sc-13pk1d4-0 cHrFaK"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormDown"
@@ -3077,33 +3077,33 @@ exports[`Accordion multiple panels 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       />
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             .c0 {
   display: inline-block;
@@ -3158,7 +3158,7 @@ exports[`Accordion multiple panels 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         Panel body 2
       </div>
@@ -3172,33 +3172,33 @@ exports[`Accordion multiple panels 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 gFbzfm"
+    class="StyledBox-sc-13pk1d4-0 cHrFaK"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             .c0 {
   display: inline-block;
@@ -3253,35 +3253,35 @@ exports[`Accordion multiple panels 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         Panel body 1
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormUp"
@@ -3304,7 +3304,7 @@ exports[`Accordion multiple panels 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         Panel body 2
       </div>
@@ -3318,33 +3318,33 @@ exports[`Accordion multiple panels 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 gFbzfm"
+    class="StyledBox-sc-13pk1d4-0 cHrFaK"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormUp"
@@ -3367,35 +3367,35 @@ exports[`Accordion multiple panels 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         Panel body 1
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             .c0 {
   display: inline-block;
@@ -3449,7 +3449,7 @@ exports[`Accordion multiple panels 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       />
     </div>
   </div>
@@ -3461,33 +3461,33 @@ exports[`Accordion multiple panels 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 gFbzfm"
+    class="StyledBox-sc-13pk1d4-0 cHrFaK"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             .c0 {
   display: inline-block;
@@ -3541,33 +3541,33 @@ exports[`Accordion multiple panels 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       />
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormDown"
@@ -3589,7 +3589,7 @@ exports[`Accordion multiple panels 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       />
     </div>
   </div>
@@ -4080,33 +4080,33 @@ exports[`Accordion set on hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 gFbzfm"
+    class="StyledBox-sc-13pk1d4-0 cHrFaK"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 ceXTMW"
+              class="StyledHeading-sc-1rdh4aw-0-h4 QduAt"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormDown"
@@ -4128,40 +4128,40 @@ exports[`Accordion set on hover 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 cJEczh"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 fsIpUF"
         >
           Panel body 1
         </div>
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormDown"
@@ -4183,11 +4183,11 @@ exports[`Accordion set on hover 2`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 cJEczh"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 fsIpUF"
         >
           Panel body 2
         </div>
@@ -4202,33 +4202,33 @@ exports[`Accordion set on hover 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 gFbzfm"
+    class="StyledBox-sc-13pk1d4-0 cHrFaK"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 ceXTMW"
+              class="StyledHeading-sc-1rdh4aw-0-h4 QduAt"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormDown"
@@ -4250,40 +4250,40 @@ exports[`Accordion set on hover 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 cJEczh"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 fsIpUF"
         >
           Panel body 1
         </div>
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 ceXTMW"
+              class="StyledHeading-sc-1rdh4aw-0-h4 QduAt"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormDown"
@@ -4305,11 +4305,11 @@ exports[`Accordion set on hover 3`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 cJEczh"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 fsIpUF"
         >
           Panel body 2
         </div>
@@ -4324,33 +4324,33 @@ exports[`Accordion set on hover 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 gFbzfm"
+    class="StyledBox-sc-13pk1d4-0 cHrFaK"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormDown"
@@ -4372,40 +4372,40 @@ exports[`Accordion set on hover 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 cJEczh"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 fsIpUF"
         >
           Panel body 1
         </div>
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 ceXTMW"
+              class="StyledHeading-sc-1rdh4aw-0-h4 QduAt"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormDown"
@@ -4427,11 +4427,11 @@ exports[`Accordion set on hover 4`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 cJEczh"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 fsIpUF"
         >
           Panel body 2
         </div>
@@ -4446,33 +4446,33 @@ exports[`Accordion set on hover 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 gFbzfm"
+    class="StyledBox-sc-13pk1d4-0 cHrFaK"
     role="tablist"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 1
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormDown"
@@ -4494,40 +4494,40 @@ exports[`Accordion set on hover 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 cJEczh"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 fsIpUF"
         >
           Panel body 1
         </div>
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 dUQcVP"
+      class="StyledBox-sc-13pk1d4-0 bQWGDI"
     >
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 ktlKXq"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
         role="tab"
         type="button"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dzfHcI"
+          class="StyledBox-sc-13pk1d4-0 kbpcIQ"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 cntfAr"
+            class="StyledBox-sc-13pk1d4-0 dWtyJH"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 DJYSe"
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
             >
               Panel 2
             </h4>
           </div>
           <div
-            class="StyledBox-sc-13pk1d4-0 eYwGvp"
+            class="StyledBox-sc-13pk1d4-0 ejkTTp"
           >
             <svg
               aria-label="FormDown"
@@ -4549,11 +4549,11 @@ exports[`Accordion set on hover 5`] = `
         </div>
       </button>
       <div
-        class="StyledBox-sc-13pk1d4-0 hZpqjT"
+        class="StyledBox-sc-13pk1d4-0 jiwgKv"
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 gJklyv StyledBox-sc-13pk1d4-0 cJEczh"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 fsIpUF"
         >
           Panel body 2
         </div>

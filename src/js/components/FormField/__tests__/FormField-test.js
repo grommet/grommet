@@ -10,7 +10,9 @@ test('renders', () => {
   const component = renderer.create(
     <Grommet>
       <FormField />
-      <FormField><TextInput /></FormField>
+      <FormField>
+        <TextInput />
+      </FormField>
     </Grommet>
   );
   const tree = component.toJSON();
@@ -20,7 +22,7 @@ test('renders', () => {
 test('renders label', () => {
   const component = renderer.create(
     <Grommet>
-      <FormField label='test label' />
+      <FormField label="test label" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -30,7 +32,7 @@ test('renders label', () => {
 test('renders help', () => {
   const component = renderer.create(
     <Grommet>
-      <FormField help='test help' />
+      <FormField help="test help" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -40,7 +42,7 @@ test('renders help', () => {
 test('renders error', () => {
   const component = renderer.create(
     <Grommet>
-      <FormField error='test error' />
+      <FormField error="test error" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -50,7 +52,7 @@ test('renders error', () => {
 test('renders htmlFor', () => {
   const component = renderer.create(
     <Grommet>
-      <FormField htmlFor='test-id' />
+      <FormField htmlFor="test-id" />
     </Grommet>
   );
   const tree = component.toJSON();

@@ -17,10 +17,10 @@ describe('Clock', () => {
   test('time', () => {
     const component = renderer.create(
       <Grommet>
-        <Clock run={false} type='digital' time={DURATION} />
-        <Clock run={false} type='digital' time={TIME} />
-        <Clock run={false} type='digital' time={TIME2} />
-        <Clock run={false} type='digital' time={DATE} />
+        <Clock run={false} type="digital" time={DURATION} />
+        <Clock run={false} type="digital" time={TIME} />
+        <Clock run={false} type="digital" time={TIME2} />
+        <Clock run={false} type="digital" time={DATE} />
       </Grommet>
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -29,20 +29,20 @@ describe('Clock', () => {
   test('hourLimit', () => {
     const component = renderer.create(
       <Grommet>
-        <Clock run={false} type='digital' time={DURATION} hourLimit={12} />
-        <Clock run={false} type='digital' time={DURATION} hourLimit={24} />
+        <Clock run={false} type="digital" time={DURATION} hourLimit={12} />
+        <Clock run={false} type="digital" time={DURATION} hourLimit={24} />
       </Grommet>
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test('run', (done) => {
+  test('run', done => {
     const { container } = render(
       <Grommet>
-        <Clock type='analog' run='forward' time={DURATION} />
-        <Clock type='analog' run='backward' time={DURATION} />
-        <Clock type='digital' run='forward' time={DURATION} />
-        <Clock type='digital' run='backward' time={DURATION} />
+        <Clock type="analog" run="forward" time={DURATION} />
+        <Clock type="analog" run="backward" time={DURATION} />
+        <Clock type="digital" run="forward" time={DURATION} />
+        <Clock type="digital" run="backward" time={DURATION} />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -54,24 +54,18 @@ describe('Clock', () => {
     }, 1300);
   });
 
-  ['analog', 'digital'].forEach(type => (
-    ['hours', 'minutes', 'seconds'].forEach(precision => (
-      ['xsmall', 'small', 'medium', 'large', 'xlarge'].forEach(size => (
+  ['analog', 'digital'].forEach(type =>
+    ['hours', 'minutes', 'seconds'].forEach(precision =>
+      ['xsmall', 'small', 'medium', 'large', 'xlarge'].forEach(size =>
         test(`type ${type} precision ${precision} size ${size}`, () => {
           const component = renderer.create(
             <Grommet>
-              <Clock
-                run={false}
-                type={type}
-                precision={precision}
-                size={size}
-                time={DURATION}
-              />
+              <Clock run={false} type={type} precision={precision} size={size} time={DURATION} />
             </Grommet>
           );
           expect(component.toJSON()).toMatchSnapshot();
         })
-      ))
-    ))
-  ));
+      )
+    )
+  );
 });

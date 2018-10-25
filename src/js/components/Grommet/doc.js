@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export const doc = (Grommet) => {
+export const doc = Grommet => {
   const DocumentedGrommet = describe(Grommet)
     .availableAt(getAvailableAtBadge('Grommet'))
     .description('This is the top level Grommet container.')

@@ -22,16 +22,7 @@ describe('DataTable', () => {
   test('basic', () => {
     const component = renderer.create(
       <Grommet>
-        <DataTable
-          columns={[
-            { property: 'a', header: 'A' },
-            { property: 'b', header: 'B' },
-          ]}
-          data={[
-            { a: 'one', b: 1 },
-            { a: 'two', b: 2 },
-          ]}
-        />
+        <DataTable columns={[{ property: 'a', header: 'A' }, { property: 'b', header: 'B' }]} data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]} />
       </Grommet>
     );
     const tree = component.toJSON();
@@ -42,14 +33,8 @@ describe('DataTable', () => {
     const component = renderer.create(
       <Grommet>
         <DataTable
-          columns={[
-            { property: 'a', header: 'A', footer: 'Total' },
-            { property: 'b', header: 'B' },
-          ]}
-          data={[
-            { a: 'one', b: 1 },
-            { a: 'two', b: 2 },
-          ]}
+          columns={[{ property: 'a', header: 'A', footer: 'Total' }, { property: 'b', header: 'B' }]}
+          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
         />
       </Grommet>
     );
@@ -61,15 +46,8 @@ describe('DataTable', () => {
     const { container, getByText } = render(
       <Grommet>
         <DataTable
-          columns={[
-            { property: 'a', header: 'A' },
-            { property: 'b', header: 'B' },
-          ]}
-          data={[
-            { a: 'zero', b: 0 },
-            { a: 'one', b: 1 },
-            { a: 'two', b: 2 },
-          ]}
+          columns={[{ property: 'a', header: 'A' }, { property: 'b', header: 'B' }]}
+          data={[{ a: 'zero', b: 0 }, { a: 'one', b: 1 }, { a: 'two', b: 2 }]}
           sortable
         />
       </Grommet>
@@ -85,14 +63,8 @@ describe('DataTable', () => {
     const component = renderer.create(
       <Grommet>
         <DataTable
-          columns={[
-            { property: 'a', header: 'A' },
-            { property: 'b', header: 'B' },
-          ]}
-          data={[
-            { a: 'one', b: 1 },
-            { a: 'two', b: 2 },
-          ]}
+          columns={[{ property: 'a', header: 'A' }, { property: 'b', header: 'B' }]}
+          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
           resizeable
         />
       </Grommet>
@@ -108,13 +80,13 @@ describe('DataTable', () => {
           columns={[
             { property: 'a', header: 'A' },
             {
-              property: 'b', header: 'B', aggregate: 'sum', footer: { aggregate: true },
+              property: 'b',
+              header: 'B',
+              aggregate: 'sum',
+              footer: { aggregate: true },
             },
           ]}
-          data={[
-            { a: 'one', b: 1 },
-            { a: 'two', b: 2 },
-          ]}
+          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
         />
       </Grommet>
     );
@@ -126,17 +98,9 @@ describe('DataTable', () => {
     const { container, getByText } = render(
       <Grommet>
         <DataTable
-          columns={[
-            { property: 'a', header: 'A' },
-            { property: 'b', header: 'B' },
-          ]}
-          data={[
-            { a: 'one', b: 1.1 },
-            { a: 'one', b: 1.2 },
-            { a: 'two', b: 2.1 },
-            { a: 'two', b: 2.2 },
-          ]}
-          groupBy='a'
+          columns={[{ property: 'a', header: 'A' }, { property: 'b', header: 'B' }]}
+          data={[{ a: 'one', b: 1.1 }, { a: 'one', b: 1.2 }, { a: 'two', b: 2.1 }, { a: 'two', b: 2.2 }]}
+          groupBy="a"
         />
       </Grommet>
     );

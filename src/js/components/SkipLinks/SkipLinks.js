@@ -10,11 +10,11 @@ class SkipLinks extends Component {
     messages: {
       skipTo: 'Skip To',
     },
-  }
+  };
 
   state = {
     showLayer: false,
-  }
+  };
 
   onBlur = () => {
     // timeout needed so it gives enough time for activeElement to be updated
@@ -25,15 +25,15 @@ class SkipLinks extends Component {
         this.removeLayer();
       }
     }, 0);
-  }
+  };
 
   onFocus = () => {
     this.setState({ showLayer: true });
-  }
+  };
 
   removeLayer = () => {
     this.setState({ showLayer: false });
-  }
+  };
 
   render() {
     /* eslint-disable-next-line react/prop-types */
@@ -43,24 +43,21 @@ class SkipLinks extends Component {
       <Layer
         id={id}
         position={showLayer ? 'top' : 'hidden'}
-        ref={(ref) => { this.layerRef = ref; }}
+        ref={ref => {
+          this.layerRef = ref;
+        }}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
       >
         <Box pad={{ horizontal: 'medium' }}>
-          <Heading level={2}>
-            {messages.skipTo}
-            :
-          </Heading>
-          <Box direction='row' align='center' pad={{ bottom: 'medium' }}>
-            {children.map((element, index) => (
-              cloneElement(
-                element, {
-                  key: `skip-link-${index}`,
-                  onClick: this.removeLayer,
-                }
-              )
-            ))}
+          <Heading level={2}>{messages.skipTo}:</Heading>
+          <Box direction="row" align="center" pad={{ bottom: 'medium' }}>
+            {children.map((element, index) =>
+              cloneElement(element, {
+                key: `skip-link-${index}`,
+                onClick: this.removeLayer,
+              })
+            )}
           </Box>
         </Box>
       </Layer>

@@ -18,11 +18,18 @@ test('Paragraph renders', () => {
 test('Paragraph size renders', () => {
   const component = renderer.create(
     <Grommet>
+<<<<<<< HEAD
       <Paragraph size='small' />
       <Paragraph size='medium' />
       <Paragraph size='large' />
       <Paragraph size='xlarge' />
       <Paragraph size='xxlarge' />
+=======
+      <Paragraph size="small" />
+      <Paragraph size="medium" />
+      <Paragraph size="large" />
+      <Paragraph size="xlarge" />
+>>>>>>> Added prettier iitegration.
     </Grommet>
   );
   const tree = component.toJSON();
@@ -32,10 +39,10 @@ test('Paragraph size renders', () => {
 test('Paragraph margin renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Paragraph margin='small' />
-      <Paragraph margin='medium' />
-      <Paragraph margin='large' />
-      <Paragraph margin='none' />
+      <Paragraph margin="small" />
+      <Paragraph margin="medium" />
+      <Paragraph margin="large" />
+      <Paragraph margin="none" />
       <Paragraph margin={{ bottom: 'small' }} />
       <Paragraph margin={{ top: 'small' }} />
     </Grommet>
@@ -47,9 +54,9 @@ test('Paragraph margin renders', () => {
 test('Paragraph textAlign renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Paragraph textAlign='start' />
-      <Paragraph textAlign='center' />
-      <Paragraph textAlign='end' />
+      <Paragraph textAlign="start" />
+      <Paragraph textAlign="center" />
+      <Paragraph textAlign="end" />
     </Grommet>
   );
   const tree = component.toJSON();

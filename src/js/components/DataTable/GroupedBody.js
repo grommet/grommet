@@ -6,22 +6,14 @@ import { Cell } from './Cell';
 import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 
-export const GroupedBody = ({
-  columns, groupBy, groups, groupState, primaryProperty, onToggle, size, theme,
-  ...rest
-}) => (
+export const GroupedBody = ({ columns, groupBy, groups, groupState, primaryProperty, onToggle, size, theme, ...rest }) => (
   <StyledDataTableBody size={size} theme={theme} {...rest}>
-    {groups.map((group) => {
+    {groups.map(group => {
       const { expanded } = groupState[group.key];
 
       let content = (
         <StyledDataTableRow key={group.key} size={size}>
-          <ExpanderCell
-            context={expanded ? 'groupHeader' : 'body'}
-            expanded={expanded}
-            theme={theme}
-            onToggle={onToggle(group.key)}
-          />
+          <ExpanderCell context={expanded ? 'groupHeader' : 'body'} expanded={expanded} theme={theme} onToggle={onToggle(group.key)} />
           {columns.map(column => (
             <Cell
               key={column.property}
@@ -41,20 +33,9 @@ export const GroupedBody = ({
             {content}
             {group.data.map(datum => (
               <StyledDataTableRow key={datum[primaryProperty]} size={size}>
-                <TableCell
-                  verticalAlign='bottom'
-                >
-                  {groupState[group.key].expanded}
-                </TableCell>
+                <TableCell verticalAlign="bottom">{groupState[group.key].expanded}</TableCell>
                 {columns.map(column => (
-                  <Cell
-                    key={column.property}
-                    context='body'
-                    column={column}
-                    datum={datum}
-                    scope={column.primary ? 'row' : undefined}
-                    theme={theme}
-                  />
+                  <Cell key={column.property} context="body" column={column} datum={datum} scope={column.primary ? 'row' : undefined} theme={theme} />
                 ))}
               </StyledDataTableRow>
             ))}

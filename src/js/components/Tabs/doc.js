@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { genericProps, getAvailableAtBadge } from '../../utils';
 
-export const doc = (Tabs) => {
+export const doc = Tabs => {
   const DocumentedTabs = describe(Tabs)
     .availableAt(getAvailableAtBadge('Tabs'))
     .description('A tabular view component.')
@@ -21,19 +21,17 @@ export const doc = (Tabs) => {
 tab changes will not work unless you subscribe to onActive function and update activeIndex
 accordingly.`
     ),
-    children: PropTypes.node.description(
-      'Array of Tab.'
-    ).isRequired,
-    justify: PropTypes.oneOf(['start', 'center', 'end']).description(
-      'How to align the tabs along the main axis.'
-    ).defaultValue('center'),
+    children: PropTypes.node.description('Array of Tab.').isRequired,
+    justify: PropTypes.oneOf(['start', 'center', 'end'])
+      .description('How to align the tabs along the main axis.')
+      .defaultValue('center'),
     messages: PropTypes.shape({
       tabContents: PropTypes.string,
-    }).description(
-      'Custom messages for Tabs. Used for accessibility by screen readers.'
-    ).defaultValue({
-      tabContents: 'Tab Contents',
-    }),
+    })
+      .description('Custom messages for Tabs. Used for accessibility by screen readers.')
+      .defaultValue({
+        tabContents: 'Tab Contents',
+      }),
     onActive: PropTypes.func.description(
       `Function that will be called with the active tab index when the currently active
 tab changes.`

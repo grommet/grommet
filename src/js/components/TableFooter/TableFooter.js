@@ -4,7 +4,7 @@ import { TableContext } from '../Table/TableContext';
 import { StyledTableFooter } from '../Table/StyledTable';
 
 const TableFooter = props => (
-  <TableContext.Provider value='footer'>
+  <TableContext.Provider value="footer">
     <StyledTableFooter {...props} />
   </TableContext.Provider>
 );

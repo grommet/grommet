@@ -9,7 +9,7 @@ test('CheckBox renders', () => {
   const component = renderer.create(
     <Grommet>
       <CheckBox />
-      <CheckBox id='test id' name='test name' />
+      <CheckBox id="test id" name="test name" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -19,7 +19,7 @@ test('CheckBox renders', () => {
 test('CheckBox label renders', () => {
   const component = renderer.create(
     <Grommet>
-      <CheckBox label='test label' />
+      <CheckBox label="test label" />
       <CheckBox label={<div>test label</div>} />
     </Grommet>
   );
@@ -51,7 +51,7 @@ test('CheckBox disabled renders', () => {
 test('CheckBox reverse renders', () => {
   const component = renderer.create(
     <Grommet>
-      <CheckBox reverse label='test label' />
+      <CheckBox reverse label="test label" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -63,7 +63,7 @@ test('CheckBox toggle renders', () => {
     <Grommet>
       <CheckBox toggle />
       <CheckBox toggle checked />
-      <CheckBox toggle label='test label' />
+      <CheckBox toggle label="test label" />
     </Grommet>
   );
   const tree = component.toJSON();

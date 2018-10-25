@@ -2,16 +2,18 @@ import { describe, PropTypes } from 'react-desc';
 
 import { genericProps, getAvailableAtBadge } from '../../utils';
 
-export const doc = (Carousel) => {
+export const doc = Carousel => {
   const DocumentedCarousel = describe(Carousel)
     .availableAt(getAvailableAtBadge('Carousel'))
-    .description(`A carousel that cycles through children. Child components
+    .description(
+      `A carousel that cycles through children. Child components
       would typically be Images. It is the caller's responsibility to ensure
-      that all children are the same size.`)
-      .usage(
-        `import { Carousel } from 'grommet';
+      that all children are the same size.`
+    )
+    .usage(
+      `import { Carousel } from 'grommet';
 <Carousel />`
-      );
+    );
 
   DocumentedCarousel.propTypes = {
     ...genericProps,

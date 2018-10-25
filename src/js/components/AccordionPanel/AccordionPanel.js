@@ -13,15 +13,18 @@ import { AccordionContext } from '../Accordion/AccordionContext';
 class AccordionPanel extends Component {
   state = {
     hover: undefined,
-  }
+  };
 
   onMouseOver = (...args) => {
-    const { onMouseOver, theme: { dark } } = this.props;
+    const {
+      onMouseOver,
+      theme: { dark },
+    } = this.props;
     this.setState({ hover: dark ? 'light-4' : 'dark-6' });
     if (onMouseOver) {
       onMouseOver(args);
     }
-  }
+  };
 
   onMouseOut = (...args) => {
     const { onMouseOut } = this.props;
@@ -29,15 +32,18 @@ class AccordionPanel extends Component {
     if (onMouseOut) {
       onMouseOut(args);
     }
-  }
+  };
 
   onFocus = (...args) => {
-    const { onFocus, theme: { dark } } = this.props;
+    const {
+      onFocus,
+      theme: { dark },
+    } = this.props;
     this.setState({ hover: dark ? 'light-4' : 'dark-6' });
     if (onFocus) {
       onFocus(args);
     }
-  }
+  };
 
   onBlur = (...args) => {
     const { onBlur } = this.props;
@@ -45,39 +51,24 @@ class AccordionPanel extends Component {
     if (onBlur) {
       onBlur(args);
     }
-  }
+  };
 
   render() {
-    const {
-      children,
-      header,
-      label,
-      theme,
-      onMouseOut,
-      onMouseOver,
-      onFocus,
-      onBlur,
-      ...rest
-    } = this.props;
+    const { children, header, label, theme, onMouseOut, onMouseOver, onFocus, onBlur, ...rest } = this.props;
     const { hover } = this.state;
 
-    const iconColor = normalizeColor(theme.accordion.icons.color
-      || 'control', theme);
+    const iconColor = normalizeColor(theme.accordion.icons.color || 'control', theme);
 
     return (
       <AccordionContext.Consumer>
         {(panelContext) => {
           const { active, animate, onPanelChange } = panelContext;
-          const AccordionIcon = active ? (
-            theme.accordion.icons.collapse
-          ) : (
-            theme.accordion.icons.expand
-          );
+          const AccordionIcon = active ? theme.accordion.icons.collapse : theme.accordion.icons.expand;
 
           return (
             <Box flex={false}>
               <Button
-                role='tab'
+                role="tab"
                 aria-selected={active}
                 aria-expanded={active}
                 onClick={onPanelChange}
@@ -87,38 +78,26 @@ class AccordionPanel extends Component {
                 onBlur={this.onBlur}
               >
                 {header || (
-                  <Box
-                    align='center'
-                    direction='row'
-                    justify='between'
-                    {...rest}
-                  >
+                  <Box align="center" direction="row" justify="between" {...rest}>
                     {typeof label === 'string' ? (
                       <Box pad={{ horizontal: 'xsmall' }}>
-                        <Heading
-                          level={4}
-                          color={hover}
-                        >
+                        <Heading level={4} color={hover}>
                           {label}
                         </Heading>
                       </Box>
-                      ) : label}
+                    ) : (
+                      label
+                    )}
                     {AccordionIcon && (
-                    <Box pad={{ horizontal: 'small' }}>
-                      <AccordionIcon color={iconColor} />
-                    </Box>
-                      )}
+                      <Box pad={{ horizontal: 'small' }}>
+                        <AccordionIcon color={iconColor} />
+                      </Box>
+                    )}
                   </Box>
                 )}
               </Button>
               <Box border={{ side: 'bottom', color: 'border' }}>
-                {animate ? (
-                  <Collapsible
-                    open={active}
-                  >
-                    {children}
-                  </Collapsible>
-                ) : active && children}
+                {animate ? <Collapsible open={active}>{children}</Collapsible> : active && children}
               </Box>
             </Box>
           );
@@ -134,7 +113,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const AccordionPanelWrapper = compose(
   withTheme,
-  withForwardRef,
+  withForwardRef
 )(AccordionPanelDoc || AccordionPanel);
 
 export { AccordionPanelWrapper as AccordionPanel };

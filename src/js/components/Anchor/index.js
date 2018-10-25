@@ -1,2 +1,1 @@
-
 export { Anchor } from './Anchor';

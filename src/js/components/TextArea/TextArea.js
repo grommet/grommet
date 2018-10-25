@@ -8,9 +8,7 @@ import { StyledTextArea } from './StyledTextArea';
 class TextArea extends Component {
   render() {
     const { forwardRef, ...rest } = this.props;
-    return (
-      <StyledTextArea ref={forwardRef} {...rest} />
-    );
+    return <StyledTextArea ref={forwardRef} {...rest} />;
   }
 }
 
@@ -20,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const TextAreaWrapper = compose(
   withTheme,
-  withForwardRef,
+  withForwardRef
 )(TextAreaDoc || TextArea);
 
 export { TextAreaWrapper as TextArea };

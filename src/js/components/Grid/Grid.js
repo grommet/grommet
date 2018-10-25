@@ -9,7 +9,7 @@ const styledComponents = {
   div: StyledGrid,
 }; // tag -> styled component
 
-const Grid = (props) => {
+const Grid = props => {
   const {
     fill, // munged to avoid styled-components putting it in the DOM
     rows, // munged to avoid styled-components putting it in the DOM
@@ -23,13 +23,7 @@ const Grid = (props) => {
     styledComponents[tag] = StyledComponent;
   }
 
-  return (
-    <StyledComponent
-      fillContainer={fill}
-      rowsProp={rows}
-      {...rest}
-    />
-  );
+  return <StyledComponent fillContainer={fill} rowsProp={rows} {...rest} />;
 };
 
 Grid.defaultProps = {
@@ -40,12 +34,8 @@ let GridDoc;
 if (process.env.NODE_ENV !== 'production') {
   GridDoc = require('./doc').doc(Grid); // eslint-disable-line global-require
 }
-const GridWrapper = compose(
-  withTheme,
-)(GridDoc || Grid);
+const GridWrapper = compose(withTheme)(GridDoc || Grid);
 
-GridWrapper.available = (typeof window !== 'undefined')
-  && window.CSS && window.CSS.supports
-  && window.CSS.supports('display', 'grid');
+GridWrapper.available = typeof window !== 'undefined' && window.CSS && window.CSS.supports && window.CSS.supports('display', 'grid');
 
 export { GridWrapper as Grid };

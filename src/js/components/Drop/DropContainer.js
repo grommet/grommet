@@ -4,9 +4,7 @@ import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
 import { ThemeContext } from '../../contexts';
 import { FocusedContainer } from '../FocusedContainer';
-import {
-  backgroundIsDark, findScrollParents, findVisibleParent, parseMetricToNum,
-} from '../../utils';
+import { backgroundIsDark, findScrollParents, findVisibleParent, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 
@@ -19,7 +17,7 @@ export class DropContainer extends Component {
       left: 'left',
     },
     stretch: 'width',
-  }
+  };
 
   static getDerivedStateFromProps(nextProps, prevState) {
     // Since the drop background can be different from the current theme context,
@@ -32,8 +30,7 @@ export class DropContainer extends Component {
     if (dark === propsTheme.dark && stateTheme) {
       return { theme: undefined, priorTheme: undefined };
     }
-    if (dark !== propsTheme.dark
-      && (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)) {
+    if (dark !== propsTheme.dark && (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)) {
       return {
         theme: {
           ...propsTheme,
@@ -46,9 +43,9 @@ export class DropContainer extends Component {
     return null;
   }
 
-  state = {}
+  state = {};
 
-  dropRef = React.createRef()
+  dropRef = React.createRef();
 
   componentDidMount() {
     const { restrictFocus } = this.props;
@@ -78,41 +75,37 @@ export class DropContainer extends Component {
     const { dropTarget } = this.props;
     /* eslint-disable-next-line react/no-find-dom-node */
     this.scrollParents = findScrollParents(findDOMNode(dropTarget));
-    this.scrollParents.forEach(scrollParent => (
-      scrollParent.addEventListener('scroll', this.place)));
-  }
+    this.scrollParents.forEach(scrollParent => scrollParent.addEventListener('scroll', this.place));
+  };
 
   removeScrollListener = () => {
-    this.scrollParents.forEach(
-      scrollParent => scrollParent.removeEventListener('scroll', this.place)
-    );
-  }
+    this.scrollParents.forEach(scrollParent => scrollParent.removeEventListener('scroll', this.place));
+  };
 
-  onClickDocument = (event) => {
+  onClickDocument = event => {
     const { dropTarget, onClickOutside } = this.props;
     /* eslint-disable-next-line react/no-find-dom-node */
     const dropTargetNode = findDOMNode(dropTarget);
     /* eslint-disable-next-line react/no-find-dom-node */
     const dropNode = findDOMNode(this.dropRef.current);
-    if (onClickOutside
-      && dropNode// need this for ie11
-      && !dropTargetNode.contains(event.target)
-      && !dropNode.contains(event.target)
+    if (
+      onClickOutside &&
+      dropNode && // need this for ie11
+      !dropTargetNode.contains(event.target) &&
+      !dropNode.contains(event.target)
     ) {
       onClickOutside();
     }
-  }
+  };
 
   onResize = () => {
     this.removeScrollListener();
     this.addScrollListener();
     this.place();
-  }
+  };
 
   place = () => {
-    const {
-      align, dropTarget, responsive, stretch, theme,
-    } = this.props;
+    const { align, dropTarget, responsive, stretch, theme } = this.props;
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
@@ -132,13 +125,7 @@ export class DropContainer extends Component {
       const containerRect = container.getBoundingClientRect();
 
       // determine width
-      const width = Math.min(
-        (stretch
-          ? Math.max(targetRect.width, containerRect.width)
-          : containerRect.width
-        ),
-        windowWidth
-      );
+      const width = Math.min(stretch ? Math.max(targetRect.width, containerRect.width) : containerRect.width, windowWidth);
 
       // set left position
       let left;
@@ -152,14 +139,14 @@ export class DropContainer extends Component {
         if (align.right === 'left') {
           left = targetRect.left - width;
         } else if (align.right === 'right') {
-          left = (targetRect.left + targetRect.width) - width;
+          left = targetRect.left + targetRect.width - width;
         }
       } else {
-        left = (targetRect.left + (targetRect.width / 2)) - (width / 2);
+        left = targetRect.left + targetRect.width / 2 - width / 2;
       }
 
-      if ((left + width) > windowWidth) {
-        left -= ((left + width) - windowWidth);
+      if (left + width > windowWidth) {
+        left -= left + width - windowWidth;
       } else if (left < 0) {
         left = 0;
       }
@@ -173,10 +160,7 @@ export class DropContainer extends Component {
           maxHeight = Math.min(windowHeight - targetRect.top, windowHeight);
         } else {
           top = targetRect.bottom;
-          maxHeight = Math.min(
-            windowHeight - targetRect.bottom,
-            windowHeight - targetRect.height
-          );
+          maxHeight = Math.min(windowHeight - targetRect.bottom, windowHeight - targetRect.height);
         }
       } else if (align.bottom) {
         if (align.bottom === 'bottom') {
@@ -187,13 +171,13 @@ export class DropContainer extends Component {
           maxHeight = Math.max(targetRect.top, 0);
         }
       } else {
-        top = (targetRect.top + (targetRect.height / 2)) - (containerRect.height / 2);
+        top = targetRect.top + targetRect.height / 2 - containerRect.height / 2;
       }
 
       // if we can't fit it all, see if there's more room the other direction
       if (containerRect.height > maxHeight) {
         // We need more room than we have.
-        if (align.top && top > (windowHeight / 2)) {
+        if (align.top && top > windowHeight / 2) {
           // We put it below, but there's more room above, put it above
           if (align.top === 'bottom') {
             if (responsive) {
@@ -206,7 +190,7 @@ export class DropContainer extends Component {
             }
             maxHeight = targetRect.bottom;
           }
-        } else if (align.bottom && maxHeight < (windowHeight / 2)) {
+        } else if (align.bottom && maxHeight < windowHeight / 2) {
           // We put it above but there's more room below, put it below
           if (align.bottom === 'bottom') {
             if (responsive) {
@@ -217,10 +201,7 @@ export class DropContainer extends Component {
             if (responsive) {
               top = targetRect.bottom;
             }
-            maxHeight = Math.min(
-              windowHeight - top,
-              windowHeight - targetRect.height
-            );
+            maxHeight = Math.min(windowHeight - top, windowHeight - targetRect.height);
           }
         }
       }
@@ -240,18 +221,10 @@ export class DropContainer extends Component {
       }
       container.style.maxHeight = `${maxHeight}px`;
     }
-  }
+  };
 
   render() {
-    const {
-      align: alignProp,
-      children,
-      onClickOutside,
-      onEsc,
-      onKeyDown,
-      theme: propsTheme,
-      ...rest
-    } = this.props;
+    const { align: alignProp, children, onClickOutside, onEsc, onKeyDown, theme: propsTheme, ...rest } = this.props;
     const { theme: stateTheme } = this.state;
     const theme = stateTheme || propsTheme;
 
@@ -259,7 +232,7 @@ export class DropContainer extends Component {
       <StyledDrop
         as={Box}
         elevation={theme.global.drop.shadowSize || 'small'}
-        tabIndex='-1'
+        tabIndex="-1"
         ref={this.dropRef}
         alignProp={alignProp}
         theme={theme}
@@ -271,22 +244,14 @@ export class DropContainer extends Component {
 
     if (stateTheme) {
       if (stateTheme.dark !== propsTheme.dark && stateTheme.icon) {
-        content = (
-          <IconThemeContext.Provider value={stateTheme.icon}>
-            {content}
-          </IconThemeContext.Provider>
-        );
+        content = <IconThemeContext.Provider value={stateTheme.icon}>{content}</IconThemeContext.Provider>;
       }
-      content = (
-        <ThemeContext.Provider value={stateTheme}>
-          {content}
-        </ThemeContext.Provider>
-      );
+      content = <ThemeContext.Provider value={stateTheme}>{content}</ThemeContext.Provider>;
     }
 
     return (
       <FocusedContainer>
-        <Keyboard onEsc={onEsc} onKeyDown={onKeyDown} target='document'>
+        <Keyboard onEsc={onEsc} onKeyDown={onKeyDown} target="document">
           {content}
         </Keyboard>
       </FocusedContainer>

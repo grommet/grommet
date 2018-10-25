@@ -11,12 +11,11 @@ export const StyledMeter = styled.svg`
   max-width: 100%;
   overflow: hidden;
 
-  ${genericStyles}
-  ${props => props.round && roundStyle}
+  ${genericStyles} ${props => props.round && roundStyle}
 
   path {
     transition: all 0.3s;
   }
 
-  ${props => props.theme.meter && props.theme.meter.extend}
+  ${props => props.theme.meter && props.theme.meter.extend};
 `;

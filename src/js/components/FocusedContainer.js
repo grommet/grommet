@@ -10,12 +10,12 @@ export class FocusedContainer extends Component {
   static defaultProps = {
     hidden: false,
     restrictScroll: false,
-  }
+  };
 
   static propTypes = {
     hidden: PropTypes.bool,
     restrictScroll: PropTypes.bool,
-  }
+  };
 
   ref = React.createRef();
 
@@ -45,7 +45,7 @@ export class FocusedContainer extends Component {
     if (restrictScroll) {
       document.body.style.overflow = this.bodyOverflowStyle;
     }
-  }
+  };
 
   trapFocus = () => {
     const { restrictScroll } = this.props;
@@ -59,7 +59,7 @@ export class FocusedContainer extends Component {
       this.bodyOverflowStyle = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
     }
-  }
+  };
 
   render() {
     const { children, ...rest } = this.props;

@@ -1,33 +1,35 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import {
-  Grommet,
-  Table,
-  TableBody,
-  TableCell,
-  TableFooter,
-  TableHeader,
-  TableRow,
-  Text,
-} from 'grommet';
+import { Grommet, Table, TableBody, TableCell, TableFooter, TableHeader, TableRow, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 // Always should store amount in cents to avoid precision errors
 const DATA = [
   {
-    id: 1, name: 'Eric', email: 'eric@local', amount: 3775,
+    id: 1,
+    name: 'Eric',
+    email: 'eric@local',
+    amount: 3775,
   },
   {
-    id: 2, name: 'Chris', email: 'chris@local', amount: 5825,
+    id: 2,
+    name: 'Chris',
+    email: 'chris@local',
+    amount: 5825,
   },
   {
-    id: 3, name: 'Alan', email: 'alan@local', amount: 4300,
+    id: 3,
+    name: 'Alan',
+    email: 'alan@local',
+    amount: 4300,
   },
 ];
 
 let TOTAL = 0;
-DATA.forEach((datum) => { TOTAL += datum.amount; });
+DATA.forEach(datum => {
+  TOTAL += datum.amount;
+});
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -40,7 +42,7 @@ const COLUMNS = [
     property: 'name',
     label: 'Name',
     dataScope: 'row',
-    format: datum => <Text weight='bold'>{datum.name}</Text>,
+    format: datum => <Text weight="bold">{datum.name}</Text>,
   },
   {
     property: 'email',
@@ -57,11 +59,11 @@ const COLUMNS = [
 
 const DefaultTable = () => (
   <Grommet theme={grommet}>
-    <Table caption='Default Table'>
+    <Table caption="Default Table">
       <TableHeader>
         <TableRow>
           {COLUMNS.map(c => (
-            <TableCell key={c.property} scope='col' align={c.align}>
+            <TableCell key={c.property} scope="col" align={c.align}>
               <Text>{c.label}</Text>
             </TableCell>
           ))}
@@ -72,9 +74,7 @@ const DefaultTable = () => (
           <TableRow key={datum.id}>
             {COLUMNS.map(c => (
               <TableCell key={c.property} scope={c.dataScope} align={c.align}>
-                <Text>
-                  {c.format ? c.format(datum) : datum[c.property]}
-                </Text>
+                <Text>{c.format ? c.format(datum) : datum[c.property]}</Text>
               </TableCell>
             ))}
           </TableRow>
@@ -113,11 +113,11 @@ const customTheme = {
 
 const CustomThemeTable = () => (
   <Grommet theme={customTheme}>
-    <Table caption='Custom Theme Table'>
+    <Table caption="Custom Theme Table">
       <TableHeader>
         <TableRow>
           {COLUMNS.map(c => (
-            <TableCell key={c.property} scope='col' align={c.align}>
+            <TableCell key={c.property} scope="col" align={c.align}>
               <Text>{c.label}</Text>
             </TableCell>
           ))}
@@ -128,9 +128,7 @@ const CustomThemeTable = () => (
           <TableRow key={datum.id}>
             {COLUMNS.map(c => (
               <TableCell key={c.property} scope={c.dataScope} align={c.align}>
-                <Text>
-                  {c.format ? c.format(datum) : datum[c.property]}
-                </Text>
+                <Text>{c.format ? c.format(datum) : datum[c.property]}</Text>
               </TableCell>
             ))}
           </TableRow>

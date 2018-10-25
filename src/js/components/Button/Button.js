@@ -7,12 +7,11 @@ import { withFocus, withForwardRef, withTheme } from '../hocs';
 
 import { StyledButton } from './StyledButton';
 
-const isDarkBackground = (props) => {
-  const backgroundColor = normalizeBackground(normalizeColor(
-    props.color || props.theme.button.primary.color
-    || props.theme.global.colors.control || 'brand',
+const isDarkBackground = props => {
+  const backgroundColor = normalizeBackground(
+    normalizeColor(props.color || props.theme.button.primary.color || props.theme.global.colors.control || 'brand', props.theme),
     props.theme
-  ), props.theme);
+  );
 
   return colorIsDark(backgroundColor, props.theme);
 };
@@ -56,11 +55,9 @@ class Button extends Component {
     let buttonIcon = icon;
     // only change color if user did not specify the color themselves...
     if (primary && icon && !icon.props.color) {
-      buttonIcon = cloneElement(
-        icon, {
-          color: theme.global.colors.text[isDarkBackground(this.props) ? 'dark' : 'light'],
-        }
-      );
+      buttonIcon = cloneElement(icon, {
+        color: theme.global.colors.text[isDarkBackground(this.props) ? 'dark' : 'light'],
+      });
     }
     const first = reverse ? label : buttonIcon;
     const second = reverse ? buttonIcon : label;
@@ -79,26 +76,19 @@ class Button extends Component {
         focus={focus}
         href={href}
         onClick={onClick}
-        plain={typeof plain !== 'undefined' ? (
-          plain
-        ) : (
-          (Children.count(children) > 0 || (icon && !label))
-        )}
+        plain={typeof plain !== 'undefined' ? plain : Children.count(children) > 0 || (icon && !label)}
         primary={primary}
         theme={theme}
         type={!href ? type : undefined}
       >
-        {(first || second) ? (
-          <Box
-            direction='row'
-            align='center'
-            justify='center'
-            gap='small'
-          >
+        {first || second ? (
+          <Box direction="row" align="center" justify="center" gap="small">
             {first}
             {second}
           </Box>
-        ) : children}
+        ) : (
+          children
+        )}
       </StyledButton>
     );
   }
@@ -111,7 +101,7 @@ if (process.env.NODE_ENV !== 'production') {
 const ButtonWrapper = compose(
   withFocus,
   withTheme,
-  withForwardRef,
+  withForwardRef
 )(ButtonDoc || Button);
 
 export { ButtonWrapper as Button };

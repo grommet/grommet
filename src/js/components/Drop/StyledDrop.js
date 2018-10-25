@@ -33,10 +33,7 @@ export const StyledDrop = styled.div`
   z-index: 20;
   outline: none;
 
-  ${props => backgroundStyle(
-    props.theme.global.drop.background,
-    props.theme
-  )}
+  ${props => backgroundStyle(props.theme.global.drop.background, props.theme)}
 
   opacity: 0;
   transform-origin: ${props => getTransformOriginStyle(props.alignProp)};

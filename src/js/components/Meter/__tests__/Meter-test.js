@@ -31,18 +31,7 @@ describe('Meter', () => {
   test('many values', () => {
     const component = renderer.create(
       <Grommet>
-        <Meter
-          values={[
-            { value: 5 },
-            { value: 5 },
-            { value: 5 },
-            { value: 5 },
-            { value: 5 },
-            { value: 5 },
-            { value: 5 },
-            { value: 5 },
-          ]}
-        />
+        <Meter values={[{ value: 5 }, { value: 5 }, { value: 5 }, { value: 5 }, { value: 5 }, { value: 5 }, { value: 5 }, { value: 5 }]} />
       </Grommet>
     );
     const tree = component.toJSON();
@@ -52,8 +41,8 @@ describe('Meter', () => {
   test('type', () => {
     const component = renderer.create(
       <Grommet>
-        <Meter type='bar' values={VALUES} />
-        <Meter type='circle' values={VALUES} />
+        <Meter type="bar" values={VALUES} />
+        <Meter type="circle" values={VALUES} />
       </Grommet>
     );
     const tree = component.toJSON();
@@ -63,16 +52,16 @@ describe('Meter', () => {
   test('size', () => {
     const component = renderer.create(
       <Grommet>
-        <Meter size='xsmall' values={VALUES} />
-        <Meter size='small' values={VALUES} />
-        <Meter size='medium' values={VALUES} />
-        <Meter size='large' values={VALUES} />
-        <Meter size='xlarge' values={VALUES} />
-        <Meter type='circle' size='xsmall' values={VALUES} />
-        <Meter type='circle' size='small' values={VALUES} />
-        <Meter type='circle' size='medium' values={VALUES} />
-        <Meter type='circle' size='large' values={VALUES} />
-        <Meter type='circle' size='xlarge' values={VALUES} />
+        <Meter size="xsmall" values={VALUES} />
+        <Meter size="small" values={VALUES} />
+        <Meter size="medium" values={VALUES} />
+        <Meter size="large" values={VALUES} />
+        <Meter size="xlarge" values={VALUES} />
+        <Meter type="circle" size="xsmall" values={VALUES} />
+        <Meter type="circle" size="small" values={VALUES} />
+        <Meter type="circle" size="medium" values={VALUES} />
+        <Meter type="circle" size="large" values={VALUES} />
+        <Meter type="circle" size="xlarge" values={VALUES} />
       </Grommet>
     );
     const tree = component.toJSON();
@@ -82,16 +71,16 @@ describe('Meter', () => {
   test('thickness', () => {
     const component = renderer.create(
       <Grommet>
-        <Meter thickness='xsmall' values={VALUES} />
-        <Meter thickness='small' values={VALUES} />
-        <Meter thickness='medium' values={VALUES} />
-        <Meter thickness='large' values={VALUES} />
-        <Meter thickness='xlarge' values={VALUES} />
-        <Meter type='circle' thickness='xsmall' values={VALUES} />
-        <Meter type='circle' thickness='small' values={VALUES} />
-        <Meter type='circle' thickness='medium' values={VALUES} />
-        <Meter type='circle' thickness='large' values={VALUES} />
-        <Meter type='circle' thickness='xlarge' values={VALUES} />
+        <Meter thickness="xsmall" values={VALUES} />
+        <Meter thickness="small" values={VALUES} />
+        <Meter thickness="medium" values={VALUES} />
+        <Meter thickness="large" values={VALUES} />
+        <Meter thickness="xlarge" values={VALUES} />
+        <Meter type="circle" thickness="xsmall" values={VALUES} />
+        <Meter type="circle" thickness="small" values={VALUES} />
+        <Meter type="circle" thickness="medium" values={VALUES} />
+        <Meter type="circle" thickness="large" values={VALUES} />
+        <Meter type="circle" thickness="xlarge" values={VALUES} />
       </Grommet>
     );
     const tree = component.toJSON();
@@ -102,7 +91,7 @@ describe('Meter', () => {
     const component = renderer.create(
       <Grommet>
         <Meter round values={VALUES} />
-        <Meter type='circle' round values={VALUES} />
+        <Meter type="circle" round values={VALUES} />
       </Grommet>
     );
     const tree = component.toJSON();
@@ -112,10 +101,10 @@ describe('Meter', () => {
   test('background', () => {
     const component = renderer.create(
       <Grommet>
-        <Meter background='light-3' values={VALUES} />
+        <Meter background="light-3" values={VALUES} />
         <Meter background={{ color: 'light-3', opacity: 'medium' }} values={VALUES} />
-        <Meter type='circle' background='light-3' values={VALUES} />
-        <Meter type='circle' background={{ color: 'light-3', opacity: 'medium' }} values={VALUES} />
+        <Meter type="circle" background="light-3" values={VALUES} />
+        <Meter type="circle" background={{ color: 'light-3', opacity: 'medium' }} values={VALUES} />
       </Grommet>
     );
     const tree = component.toJSON();

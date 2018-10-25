@@ -6,28 +6,28 @@ import styled from 'styled-components';
 import { withTheme } from '../hocs';
 import { Box } from '../Box';
 
-const animatedBoxProperty = direction => (
-  direction === 'horizontal' ? 'width' : 'height'
-);
+const animatedBoxProperty = direction => (direction === 'horizontal' ? 'width' : 'height');
 
 const AnimatedBox = styled(Box)`
-  ${props => !props.animate && (props.open ? `
+  ${props =>
+    !props.animate &&
+    (props.open
+      ? `
     max-${animatedBoxProperty(props.collapsibleDirection)}: unset;
     visibility: visible;
-  ` : `
+  `
+      : `
     max-${animatedBoxProperty(props.collapsibleDirection)}: 0;
     visibility: hidden;
-  `)}
+  `)};
 `;
 
 class Collapsible extends Component {
-  ref = createRef()
+  ref = createRef();
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { open } = nextProps;
-    if (
-      open !== prevState.open
-    ) {
+    if (open !== prevState.open) {
       return {
         animate: true,
         open,
@@ -46,7 +46,10 @@ class Collapsible extends Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     const {
       /* eslint-disable-next-line react/prop-types */
-      direction, theme: { collapsible: { minSpeed, baseline } },
+      direction,
+      theme: {
+        collapsible: { minSpeed, baseline },
+      },
     } = this.props;
     const { animate, open } = this.state;
 
@@ -79,11 +82,9 @@ class Collapsible extends Component {
 
           this.animationTimeout = setTimeout(() => {
             container.removeAttribute('style');
-            this.setState(
-              {
-                animate: false,
-              }
-            );
+            this.setState({
+              animate: false,
+            });
           }, speed);
         });
       });
@@ -96,27 +97,17 @@ class Collapsible extends Component {
     }
   }
 
-  getSnapshotBeforeUpdate = () => (
+  getSnapshotBeforeUpdate = () =>
     /* eslint-disable-next-line react/no-find-dom-node */
-    this.ref.current && findDOMNode(this.ref.current).getBoundingClientRect()
-  )
+    this.ref.current && findDOMNode(this.ref.current).getBoundingClientRect();
 
   render() {
     /* eslint-disable-next-line react/prop-types */
     const { children, direction } = this.props;
-    const {
-      animate,
-      open,
-    } = this.state;
+    const { animate, open } = this.state;
 
     return (
-      <AnimatedBox
-        aria-hidden={!open}
-        ref={this.ref}
-        open={open}
-        animate={animate}
-        collapsibleDirection={direction}
-      >
+      <AnimatedBox aria-hidden={!open} ref={this.ref} open={open} animate={animate} collapsibleDirection={direction}>
         {children}
       </AnimatedBox>
     );
@@ -127,8 +118,6 @@ let CollapsibleDoc;
 if (process.env.NODE_ENV !== 'production') {
   CollapsibleDoc = require('./doc').doc(Collapsible); // eslint-disable-line global-require
 }
-const CollapsibleWrapper = compose(
-  withTheme,
-)(CollapsibleDoc || Collapsible);
+const CollapsibleWrapper = compose(withTheme)(CollapsibleDoc || Collapsible);
 
 export { CollapsibleWrapper as Collapsible };

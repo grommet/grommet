@@ -2,12 +2,11 @@ import { describe } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export const doc = (Markdown) => {
+export const doc = Markdown => {
   const DocumentedMarkdown = describe(Markdown)
     .availableAt(getAvailableAtBadge('Markdown'))
-    .description(
-      'Markdown formatting using Grommet components.'
-    ).usage(
+    .description('Markdown formatting using Grommet components.')
+    .usage(
       `import { Markdown } from 'grommet';
       <Markdown>{content}</Markdown>`
     );

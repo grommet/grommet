@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { backgroundPropType, genericProps, getAvailableAtBadge } from '../../utils';
 
-export const doc = (Meter) => {
+export const doc = Meter => {
   const DocumentedMeter = describe(Meter)
     .availableAt(getAvailableAtBadge('Meter'))
     .description('A graphical meter.')
@@ -13,35 +13,27 @@ export const doc = (Meter) => {
 
   DocumentedMeter.propTypes = {
     ...genericProps,
-    background: backgroundPropType
-    .defaultValue({ color: 'light-2', opacity: 'medium' }),
-    round: PropTypes.bool.description('Whether to round the line ends')
-    .defaultValue(false),
-    size: PropTypes.oneOfType([
-      PropTypes.oneOf(
-        ['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']
-      ),
-      PropTypes.string,
-    ]).description('The size of the Meter.').defaultValue('medium'),
-    thickness: PropTypes.oneOfType([
-      PropTypes.oneOf(
-        ['xsmall', 'small', 'medium', 'large', 'xlarge']
-      ),
-      PropTypes.string,
-    ]).description(
-      'The size of the Meter.'
-    ).defaultValue('medium'),
+    background: backgroundPropType.defaultValue({ color: 'light-2', opacity: 'medium' }),
+    round: PropTypes.bool.description('Whether to round the line ends').defaultValue(false),
+    size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), PropTypes.string])
+      .description('The size of the Meter.')
+      .defaultValue('medium'),
+    thickness: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string])
+      .description('The size of the Meter.')
+      .defaultValue('medium'),
     type: PropTypes.oneOf(['bar', 'circle'])
-    .description('The visual type of meter.')
-    .defaultValue('bar'),
-    values: PropTypes.arrayOf(PropTypes.shape({
-      color: PropTypes.string,
-      highlight: PropTypes.bool,
-      label: PropTypes.string.isRequired, // for accessibility
-      onClick: PropTypes.func,
-      onHover: PropTypes.func,
-      value: PropTypes.number.isRequired,
-    })).description(
+      .description('The visual type of meter.')
+      .defaultValue('bar'),
+    values: PropTypes.arrayOf(
+      PropTypes.shape({
+        color: PropTypes.string,
+        highlight: PropTypes.bool,
+        label: PropTypes.string.isRequired, // for accessibility
+        onClick: PropTypes.func,
+        onHover: PropTypes.func,
+        value: PropTypes.number.isRequired,
+      })
+    ).description(
       `Array of value objects describing the data.
       'value' is the actual numeric value.
       'label' is a text string describing it.

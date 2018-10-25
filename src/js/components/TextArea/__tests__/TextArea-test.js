@@ -10,7 +10,7 @@ jest.mock('react-dom');
 test('TextArea renders', () => {
   const component = renderer.create(
     <Grommet>
-      <TextArea id='item' name='item' />
+      <TextArea id="item" name="item" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -20,7 +20,7 @@ test('TextArea renders', () => {
 test('TextArea placeholder renders', () => {
   const component = renderer.create(
     <Grommet>
-      <TextArea id='item' name='item' placeholder='placeholder' />
+      <TextArea id="item" name="item" placeholder="placeholder" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -30,7 +30,7 @@ test('TextArea placeholder renders', () => {
 test('TextArea plain renders', () => {
   const component = renderer.create(
     <Grommet>
-      <TextArea id='item' name='item' plain />
+      <TextArea id="item" name="item" plain />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -40,7 +40,7 @@ test('TextArea plain renders', () => {
 test('TextArea focusIndicator renders', () => {
   const component = renderer.create(
     <Grommet>
-      <TextArea id='item' name='item' focusIndicator />
+      <TextArea id="item" name="item" focusIndicator />
     </Grommet>
   );
   const tree = component.toJSON();

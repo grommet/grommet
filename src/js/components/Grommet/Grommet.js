@@ -4,9 +4,7 @@ import { compose } from 'recompose';
 
 import { ResponsiveContext, ThemeContext } from '../../contexts';
 import { base as baseTheme } from '../../themes/base';
-import {
-  colorIsDark, deepMerge, getBreakpoint, normalizeColor,
-} from '../../utils';
+import { colorIsDark, deepMerge, getBreakpoint, normalizeColor } from '../../utils';
 import { withIconTheme } from '../hocs';
 
 import { StyledGrommet } from './StyledGrommet';
@@ -16,17 +14,17 @@ import { StyledGrommet } from './StyledGrommet';
 // namespace for grommet-icons.
 const reduceIconTheme = (iconTheme, dark) => {
   const result = { ...iconTheme, colors: { ...iconTheme.colors } };
-  Object.keys(result.colors).forEach((key) => {
+  Object.keys(result.colors).forEach(key => {
     if (typeof result.colors[key] === 'object') {
-      result.colors[key] = normalizeColor(
-        result.colors[key][dark ? 'dark' : 'light'],
-        { dark, global: { colors: result.colors } },
-      );
+      result.colors[key] = normalizeColor(result.colors[key][dark ? 'dark' : 'light'], {
+        dark,
+        global: { colors: result.colors },
+      });
     } else {
-      result.colors[key] = normalizeColor(
-        result.colors[key],
-        { dark, global: { colors: result.colors } },
-      );
+      result.colors[key] = normalizeColor(result.colors[key], {
+        dark,
+        global: { colors: result.colors },
+      });
     }
   });
   return result;
@@ -57,9 +55,12 @@ class Grommet extends Component {
       const dark = color ? colorIsDark(color) : false;
       const lightIconTheme = deepMerge(iconTheme, nextTheme.icon);
       const iconThemes = {
-        dark: reduceIconTheme(deepMerge(lightIconTheme, {
-          color: nextTheme.global.colors.text.dark,
-        }), true),
+        dark: reduceIconTheme(
+          deepMerge(lightIconTheme, {
+            color: nextTheme.global.colors.text.dark,
+          }),
+          true
+        ),
         light: reduceIconTheme(lightIconTheme, false),
       };
       return {
@@ -76,7 +77,7 @@ class Grommet extends Component {
     return null;
   }
 
-  state = {}
+  state = {};
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize);
@@ -95,7 +96,7 @@ class Grommet extends Component {
     if (breakpoint !== responsive) {
       this.setState({ responsive: breakpoint });
     }
-  }
+  };
 
   render() {
     const { children, ...rest } = this.props;
@@ -120,8 +121,6 @@ let GrommetDoc;
 if (process.env.NODE_ENV !== 'production') {
   GrommetDoc = require('./doc').doc(Grommet); // eslint-disable-line global-require
 }
-const GrommetWrapper = compose(
-  withIconTheme,
-)(GrommetDoc || Grommet);
+const GrommetWrapper = compose(withIconTheme)(GrommetDoc || Grommet);
 
 export { GrommetWrapper as Grommet };

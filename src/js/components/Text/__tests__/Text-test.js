@@ -18,12 +18,12 @@ test('renders', () => {
 test('renders size', () => {
   const component = renderer.create(
     <Grommet>
-      <Text size='xsmall' />
-      <Text size='small' />
-      <Text size='medium' />
-      <Text size='large' />
-      <Text size='xlarge' />
-      <Text size='xxlarge' />
+      <Text size="xsmall" />
+      <Text size="small" />
+      <Text size="medium" />
+      <Text size="large" />
+      <Text size="xlarge" />
+      <Text size="xxlarge" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -33,9 +33,9 @@ test('renders size', () => {
 test('renders textAlign', () => {
   const component = renderer.create(
     <Grommet>
-      <Text textAlign='start' />
-      <Text textAlign='center' />
-      <Text textAlign='end' />
+      <Text textAlign="start" />
+      <Text textAlign="center" />
+      <Text textAlign="end" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -45,10 +45,10 @@ test('renders textAlign', () => {
 test('renders margin', () => {
   const component = renderer.create(
     <Grommet>
-      <Text margin='small' />
-      <Text margin='medium' />
-      <Text margin='large' />
-      <Text margin='none' />
+      <Text margin="small" />
+      <Text margin="medium" />
+      <Text margin="large" />
+      <Text margin="none" />
       <Text margin={{ vertical: 'small' }} />
       <Text margin={{ horizontal: 'small' }} />
       <Text margin={{ bottom: 'small' }} />
@@ -77,7 +77,7 @@ test('renders truncate', () => {
 test('renders color', () => {
   const component = renderer.create(
     <Grommet>
-      <Text color='status-critical' />
+      <Text color="status-critical" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -87,7 +87,7 @@ test('renders color', () => {
 test('renders tag', () => {
   const component = renderer.create(
     <Grommet>
-      <Text tag='div' />
+      <Text tag="div" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -97,8 +97,8 @@ test('renders tag', () => {
 test('renders weight', () => {
   const component = renderer.create(
     <Grommet>
-      <Text weight='normal' />
-      <Text weight='bold' />
+      <Text weight="normal" />
+      <Text weight="bold" />
     </Grommet>
   );
   const tree = component.toJSON();

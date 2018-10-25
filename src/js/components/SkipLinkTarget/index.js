@@ -1,2 +1,1 @@
-
 export { SkipLinkTarget } from './SkipLinkTarget';

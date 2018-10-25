@@ -9,7 +9,7 @@ jest.mock('react-dom', () => ({
   findDOMNode: () => ({ textTracks: [{ label: 'test' }] }),
 }));
 
-const CONTENTS = [<source key='source' />, <track key='track' />];
+const CONTENTS = [<source key="source" />, <track key="track" />];
 
 test('Video renders', () => {
   const component = renderer.create(
@@ -54,8 +54,8 @@ test('Video mute renders', () => {
 test('Video controls renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Video controls='over'>{CONTENTS}</Video>
-      <Video controls='below'>{CONTENTS}</Video>
+      <Video controls="over">{CONTENTS}</Video>
+      <Video controls="below">{CONTENTS}</Video>
     </Grommet>
   );
   const tree = component.toJSON();
@@ -65,8 +65,8 @@ test('Video controls renders', () => {
 test('Video fit renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Video fit='cover'>{CONTENTS}</Video>
-      <Video fit='contain'>{CONTENTS}</Video>
+      <Video fit="cover">{CONTENTS}</Video>
+      <Video fit="contain">{CONTENTS}</Video>
     </Grommet>
   );
   const tree = component.toJSON();

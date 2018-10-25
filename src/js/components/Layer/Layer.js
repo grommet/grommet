@@ -14,7 +14,7 @@ class Layer extends Component {
     modal: true,
     position: 'center',
     responsive: true,
-  }
+  };
 
   originalFocusedElement = document.activeElement;
 
@@ -28,8 +28,7 @@ class Layer extends Component {
         setTimeout(() => {
           this.originalFocusedElement.focus();
         }, 0);
-      } else if (this.originalFocusedElement.parentNode
-        && this.originalFocusedElement.parentNode.focus) {
+      } else if (this.originalFocusedElement.parentNode && this.originalFocusedElement.parentNode.focus) {
         // required for IE11 and Edge
         this.originalFocusedElement.parentNode.focus();
       }
@@ -39,10 +38,7 @@ class Layer extends Component {
 
   render() {
     const { theme, ...rest } = this.props;
-    return createPortal(
-      <LayerContainer {...rest} />,
-      this.layerContainer
-    );
+    return createPortal(<LayerContainer {...rest} />, this.layerContainer);
   }
 }
 
@@ -50,8 +46,6 @@ let LayerDoc;
 if (process.env.NODE_ENV !== 'production') {
   LayerDoc = require('./doc').doc(Layer); // eslint-disable-line global-require
 }
-const LayerWrapper = compose(
-  withTheme,
-)(LayerDoc || Layer);
+const LayerWrapper = compose(withTheme)(LayerDoc || Layer);
 
 export { LayerWrapper as Layer };

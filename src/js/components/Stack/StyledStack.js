@@ -18,33 +18,33 @@ export const StyledStack = styled.div`
 `;
 
 const styleMap = {
-  'fill': `
+  fill: `
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
   `,
-  'center': `
+  center: `
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   `,
-  'left': `
+  left: `
     top: 50%;
     left: 0;
     transform: translateY(-50%);
   `,
-  'right': `
+  right: `
     top: 50%;
     right: 0;
     transform: translateY(-50%);
   `,
-  'top': `
+  top: `
     top: 0;
     left: 50%;
     transform: translateX(-50%);
   `,
-  'bottom': `
+  bottom: `
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -71,7 +71,9 @@ export const StyledStackLayer = styled.div`
   position: ${props => (props.guiding ? 'relative' : 'absolute')};
   ${props => props.guiding && 'display: block;'}
   ${props => !props.guiding && `${styleMap[props.anchor || 'fill']};`}
-  ${props => props.fillContainer && `
+  ${props =>
+    props.fillContainer &&
+    `
     width: 100%;
     height: 100%;
   `}

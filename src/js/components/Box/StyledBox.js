@@ -1,9 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import {
-  backgroundStyle, breakpointStyle, edgeStyle, focusStyle,
-  genericStyles, normalizeColor, overflowStyle,
-} from '../../utils';
+import { backgroundStyle, breakpointStyle, edgeStyle, focusStyle, genericStyles, normalizeColor, overflowStyle } from '../../utils';
 
 const ALIGN_MAP = {
   baseline: 'baseline',
@@ -31,8 +28,8 @@ const alignContentStyle = css`
 `;
 
 const BASIS_MAP = {
-  'auto': 'auto',
-  'full': '100%',
+  auto: 'auto',
+  full: '100%',
   '1/2': '50%',
   '1/4': '25%',
   '2/4': '50%',
@@ -42,8 +39,7 @@ const BASIS_MAP = {
 };
 
 const basisStyle = css`
-  flex-basis: ${props => (
-    BASIS_MAP[props.basis] || props.theme.global.size[props.basis] || props.basis)};
+  flex-basis: ${props => BASIS_MAP[props.basis] || props.theme.global.size[props.basis] || props.basis};
 `;
 
 // min-width and min-height needed because of this
@@ -51,28 +47,34 @@ const basisStyle = css`
 // we assume we are in the context of a Box going the other direction
 // TODO: revisit this
 const directionStyle = (direction, theme) => {
-  const styles = [css`
-    min-width: 0;
-    min-height: 0;
-    flex-direction: ${direction === 'row-responsive' ? 'row' : direction};
-  `];
+  const styles = [
+    css`
+      min-width: 0;
+      min-height: 0;
+      flex-direction: ${direction === 'row-responsive' ? 'row' : direction};
+    `,
+  ];
   if (direction === 'row-responsive' && theme.box.responsiveBreakpoint) {
     const breakpoint = theme.global.breakpoints[theme.box.responsiveBreakpoint];
     if (breakpoint) {
-      styles.push(breakpointStyle(breakpoint, `
+      styles.push(
+        breakpointStyle(
+          breakpoint,
+          `
         flex-direction: column;
         flex-basis: auto;
         justify-content: flex-start;
         align-items: stretch;
-      `));
+      `
+        )
+      );
     }
   }
   return styles;
 };
 
 const elevationStyle = css`
-  box-shadow: ${props => (
-    props.theme.global.elevation[(props.priorTheme || props.theme).dark ? 'dark' : 'light'][props.elevationProp])};
+  box-shadow: ${props => props.theme.global.elevation[(props.priorTheme || props.theme).dark ? 'dark' : 'light'][props.elevationProp]};
 `;
 
 const FLEX_MAP = {
@@ -83,12 +85,10 @@ const FLEX_MAP = {
 };
 
 const flexStyle = css`
-  flex: ${props => (
-    `${FLEX_MAP[props.flex]}${(props.flex !== true && !props.basis) ? ' auto' : ''}`
-  )};
+  flex: ${props => `${FLEX_MAP[props.flex]}${props.flex !== true && !props.basis ? ' auto' : ''}`};
 `;
 
-const fillStyle = (fillProp) => {
+const fillStyle = fillProp => {
   if (fillProp === 'horizontal') {
     return 'width: 100%;';
   }
@@ -121,18 +121,22 @@ const borderStyle = (data, responsive, theme) => {
   const styles = [];
   const color = normalizeColor(data.color || 'border', theme);
   const borderSize = data.size || 'xsmall';
-  const side = (typeof data === 'string') ? data : data.side || 'all';
+  const side = typeof data === 'string' ? data : data.side || 'all';
   const value = `solid ${theme.global.borderSize[borderSize] || borderSize} ${color}`;
-  const breakpoint = theme.box.responsiveBreakpoint
-    && theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  const responsiveValue = breakpoint && (breakpoint.borderSize[borderSize] || borderSize)
-    && `solid ${breakpoint.borderSize[borderSize] || borderSize} ${color}`;
+  const breakpoint = theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
+  const responsiveValue =
+    breakpoint && (breakpoint.borderSize[borderSize] || borderSize) && `solid ${breakpoint.borderSize[borderSize] || borderSize} ${color}`;
   if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
     styles.push(css`border-${side}: ${value};`);
     if (responsiveValue) {
-      styles.push(breakpointStyle(breakpoint, `
+      styles.push(
+        breakpointStyle(
+          breakpoint,
+          `
         border-${side}: ${responsiveValue};
-      `));
+      `
+        )
+      );
     }
   } else if (side === 'vertical') {
     styles.push(css`
@@ -140,10 +144,15 @@ const borderStyle = (data, responsive, theme) => {
       border-right: ${value};
     `);
     if (responsiveValue) {
-      styles.push(breakpointStyle(breakpoint, `
+      styles.push(
+        breakpointStyle(
+          breakpoint,
+          `
         border-left: ${responsiveValue};
         border-right: ${responsiveValue};
-      `));
+      `
+        )
+      );
     }
   } else if (side === 'horizontal') {
     styles.push(css`
@@ -151,13 +160,22 @@ const borderStyle = (data, responsive, theme) => {
       border-bottom: ${value};
     `);
     if (responsiveValue) {
-      styles.push(breakpointStyle(breakpoint, `
+      styles.push(
+        breakpointStyle(
+          breakpoint,
+          `
         border-top: ${responsiveValue};
         border-bottom: ${responsiveValue};
-      `));
+      `
+        )
+      );
     }
   } else {
-    styles.push(css`border: ${value};`);
+    styles.push(
+      css`
+        border: ${value};
+      `
+    );
     if (responsiveValue) {
       styles.push(breakpointStyle(breakpoint, `border: ${responsiveValue};`));
     }
@@ -166,28 +184,30 @@ const borderStyle = (data, responsive, theme) => {
 };
 
 const ROUND_MAP = {
-  'full': '100%',
+  full: '100%',
 };
 
 const roundStyle = (data, responsive, theme) => {
-  const breakpoint = theme.box.responsiveBreakpoint
-      && theme.global.breakpoints[theme.box.responsiveBreakpoint];
+  const breakpoint = theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
   const styles = [];
   if (typeof data === 'object') {
-    const size = ROUND_MAP[data.size]
-      || theme.global.edgeSize[data.size || 'medium'];
-    const responsiveSize = breakpoint && breakpoint.edgeSize[data.size]
-      && breakpoint.edgeSize[data.size];
+    const size = ROUND_MAP[data.size] || theme.global.edgeSize[data.size || 'medium'];
+    const responsiveSize = breakpoint && breakpoint.edgeSize[data.size] && breakpoint.edgeSize[data.size];
     if (data.corner === 'top') {
       styles.push(css`
         border-top-left-radius: ${size};
         border-top-right-radius: ${size};
       `);
       if (responsiveSize) {
-        styles.push(breakpointStyle(breakpoint, `
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
           border-top-left-radius: ${responsiveSize};
           border-top-right-radius: ${responsiveSize};
-        `));
+        `
+          )
+        );
       }
     } else if (data.corner === 'bottom') {
       styles.push(css`
@@ -195,10 +215,15 @@ const roundStyle = (data, responsive, theme) => {
         border-bottom-right-radius: ${size};
       `);
       if (responsiveSize) {
-        styles.push(breakpointStyle(breakpoint, `
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
           border-bottom-left-radius: ${responsiveSize};
           border-bottom-right-radius: ${responsiveSize};
-        `));
+        `
+          )
+        );
       }
     } else if (data.corner === 'left') {
       styles.push(css`
@@ -206,10 +231,15 @@ const roundStyle = (data, responsive, theme) => {
         border-bottom-left-radius: ${size};
       `);
       if (responsiveSize) {
-        styles.push(breakpointStyle(breakpoint, `
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
           border-top-left-radius: ${responsiveSize};
           border-bottom-left-radius: ${responsiveSize};
-        `));
+        `
+          )
+        );
       }
     } else if (data.corner === 'right') {
       styles.push(css`
@@ -217,28 +247,43 @@ const roundStyle = (data, responsive, theme) => {
         border-bottom-right-radius: ${size};
       `);
       if (responsiveSize) {
-        styles.push(breakpointStyle(breakpoint, `
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
           border-top-right-radius: ${responsiveSize};
           border-bottom-right-radius: ${responsiveSize};
-        `));
+        `
+          )
+        );
       }
     } else if (data.corner) {
       styles.push(css`
         border-${data.corner}-radius: ${size};
       `);
       if (responsiveSize) {
-        styles.push(breakpointStyle(breakpoint, `
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
           border-${data.corner}-radius: ${responsiveSize};
-        `));
+        `
+          )
+        );
       }
     } else {
       styles.push(css`
         border-radius: ${size};
       `);
       if (responsiveSize) {
-        styles.push(breakpointStyle(breakpoint, `
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
           border-radius: ${responsiveSize};
-        `));
+        `
+          )
+        );
       }
     }
   } else {
@@ -248,9 +293,14 @@ const roundStyle = (data, responsive, theme) => {
     `);
     const responsiveSize = breakpoint && breakpoint.edgeSize[size];
     if (responsiveSize) {
-      styles.push(breakpointStyle(breakpoint, `
+      styles.push(
+        breakpointStyle(
+          breakpoint,
+          `
         border-radius: ${responsiveSize};
-      `));
+      `
+        )
+      );
     }
   }
   return styles;
@@ -331,7 +381,7 @@ const animationBounds = (type, size = 'medium') => {
 
 const normalizeTiming = (time, defaultTiming) => (time ? `${time / 1000.0}s` : defaultTiming);
 
-const animationEnding = (type) => {
+const animationEnding = type => {
   if (type === 'jiggle') {
     return 'alternate infinite';
   }
@@ -344,12 +394,19 @@ const animationEnding = (type) => {
 const animationObjectStyle = (animation, theme) => {
   const bounds = animationBounds(animation.type, animation.size);
   if (bounds) {
-    const animationTransition = css`from { ${bounds[0]} } to { ${bounds[1]} }`;
+    const animationTransition = css`
+      from {
+        ${bounds[0]};
+      }
+      to {
+        ${bounds[1]};
+      }
+    `;
     return css`${keyframes`${animationTransition}`}
-    ${normalizeTiming(animation.duration,
-      (theme.global.animation[animation.type]
-        ? theme.global.animation[animation.type].duration : undefined)
-        || theme.global.animation.duration)}
+    ${normalizeTiming(
+      animation.duration,
+      (theme.global.animation[animation.type] ? theme.global.animation[animation.type].duration : undefined) || theme.global.animation.duration
+    )}
     ${normalizeTiming(animation.delay, '0s')}
     ${animationEnding(animation.type)}`;
   }
@@ -358,27 +415,25 @@ const animationObjectStyle = (animation, theme) => {
 
 const animationItemStyle = (item, theme) => {
   if (typeof item === 'string') {
-    return css`${animationObjectStyle({ type: item }, theme)}`;
+    return animationObjectStyle({ type: item }, theme);
   }
   if (Array.isArray(item)) {
-    return item.reduce((style, a, index) => (
-      css`${style}${index > 0 ? ',' : ''} ${animationItemStyle(a, theme)}`
-    ), '');
+    return item.reduce((style, a, index) => css`${style}${index > 0 ? ',' : ''} ${animationItemStyle(a, theme)}`, '');
   }
   if (typeof item === 'object') {
-    return css`${animationObjectStyle(item, theme)}`;
+    return animationObjectStyle(item, theme);
   }
   return '';
 };
 
-const animationAncilaries = (animation) => {
+const animationAncilaries = animation => {
   if (animation.type === 'flipIn' || animation.type === 'flipOut') {
     return 'perspective: 1000px; transform-style: preserve-3d;';
   }
   return '';
 };
 
-const animationObjectInitialStyle = (animation) => {
+const animationObjectInitialStyle = animation => {
   const bounds = animationBounds(animation.type, animation.size);
   if (bounds) {
     return `${bounds[0]} ${animationAncilaries(animation)}`;
@@ -386,16 +441,12 @@ const animationObjectInitialStyle = (animation) => {
   return '';
 };
 
-const animationInitialStyle = (item) => {
+const animationInitialStyle = item => {
   if (typeof item === 'string') {
     return animationObjectInitialStyle({ type: item });
   }
   if (Array.isArray(item)) {
-    return item.map(a => (
-      typeof a === 'string'
-        ? animationObjectInitialStyle({ type: a })
-        : animationObjectInitialStyle(a)
-    )).join('');
+    return item.map(a => (typeof a === 'string' ? animationObjectInitialStyle({ type: a }) : animationObjectInitialStyle(a))).join('');
   }
   if (typeof item === 'object') {
     return animationObjectInitialStyle(item);
@@ -407,7 +458,7 @@ const animationStyle = css`
   ${props => css`
     ${animationInitialStyle(props.animation)}
     animation: ${animationItemStyle(props.animation, props.theme)};
-  `}
+  `};
 `;
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
@@ -418,24 +469,18 @@ export const StyledBox = styled.div`
   ${props => !props.basis && 'max-width: 100%;'};
 
   ${genericStyles}
-  ${props => props.heightProp
-    && `height: ${props.theme.global.size[props.heightProp] || props.heightProp};`}
-  ${props => props.widthProp
-    && `width: ${props.theme.global.size[props.widthProp] || props.widthProp};`}
+  ${props => props.heightProp && `height: ${props.theme.global.size[props.heightProp] || props.heightProp};`}
+  ${props => props.widthProp && `width: ${props.theme.global.size[props.widthProp] || props.widthProp};`}
   ${props => props.align && alignStyle}
   ${props => props.alignContent && alignContentStyle}
   ${props => props.background && backgroundStyle(props.background, props.theme)}
-  ${props => props.border
-    && borderStyle(props.border, props.responsive, props.theme)}
-  ${props => props.directionProp
-    && directionStyle(props.directionProp, props.theme)}
+  ${props => props.border && borderStyle(props.border, props.responsive, props.theme)}
+  ${props => props.directionProp && directionStyle(props.directionProp, props.theme)}
   ${props => props.flex !== undefined && flexStyle}
   ${props => props.basis && basisStyle}
   ${props => props.fillProp && fillStyle(props.fillProp)}
   ${props => props.justify && justifyStyle}
-  ${props => (props.pad
-    && edgeStyle('padding', props.pad, props.responsive,
-      props.theme.box.responsiveBreakpoint, props.theme))}
+  ${props => props.pad && edgeStyle('padding', props.pad, props.responsive, props.theme.box.responsiveBreakpoint, props.theme)}
   ${props => props.round && roundStyle(props.round, props.responsive, props.theme)}
   ${props => props.wrapProp && wrapStyle}
   ${props => props.overflowProp && overflowStyle(props.overflowProp)}
@@ -446,23 +491,30 @@ export const StyledBox = styled.div`
 `;
 
 const gapStyle = (directionProp, gap, responsive, theme) => {
-  const breakpoint = theme.box.responsiveBreakpoint
-    && theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  const responsiveSize = breakpoint && breakpoint.edgeSize[gap]
-    && breakpoint.edgeSize[gap];
+  const breakpoint = theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
+  const responsiveSize = breakpoint && breakpoint.edgeSize[gap] && breakpoint.edgeSize[gap];
   const styles = [];
   if (directionProp === 'column') {
-    styles.push(css`height: ${theme.global.edgeSize[gap]};`);
+    styles.push(
+      css`
+        height: ${theme.global.edgeSize[gap]};
+      `
+    );
     if (responsiveSize) {
       styles.push(breakpointStyle(breakpoint, `height: ${responsiveSize};`));
     }
   } else {
     styles.push(`width: ${theme.global.edgeSize[gap]};`);
     if (responsive && directionProp === 'row-responsive') {
-      styles.push(breakpointStyle(breakpoint, `
+      styles.push(
+        breakpointStyle(
+          breakpoint,
+          `
         width: auto;
         height: ${responsiveSize};
-      `));
+      `
+        )
+      );
     }
   }
   return styles;
@@ -470,6 +522,5 @@ const gapStyle = (directionProp, gap, responsive, theme) => {
 
 export const StyledBoxGap = styled.div`
   flex: 0 0 auto;
-  ${props => props.gap
-    && gapStyle(props.directionProp, props.gap, props.responsive, props.theme)};
+  ${props => props.gap && gapStyle(props.directionProp, props.gap, props.responsive, props.theme)};
 `;

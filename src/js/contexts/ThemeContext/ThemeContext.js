@@ -6,15 +6,7 @@ import { deepMerge } from '../../utils';
 const ThemeContext = React.createContext(baseTheme);
 
 ThemeContext.Extend = ({ children, value }) => (
-  <ThemeContext.Consumer>
-    {theme => (
-      <ThemeContext.Provider
-        value={deepMerge(theme, value)}
-      >
-        {children}
-      </ThemeContext.Provider>
-    )}
-  </ThemeContext.Consumer>
+  <ThemeContext.Consumer>{theme => <ThemeContext.Provider value={deepMerge(theme, value)}>{children}</ThemeContext.Provider>}</ThemeContext.Consumer>
 );
 
 ThemeContext.Extend.propTypes = {

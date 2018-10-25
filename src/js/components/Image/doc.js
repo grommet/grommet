@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { genericProps, getAvailableAtBadge } from '../../utils';
 
-export const doc = (Image) => {
+export const doc = Image => {
   const DocumentedImage = describe(Image)
     .availableAt(getAvailableAtBadge('Image'))
     .description('An image.')
@@ -13,9 +13,7 @@ export const doc = (Image) => {
 
   DocumentedImage.propTypes = {
     ...genericProps,
-    fit: PropTypes.oneOf(['cover', 'contain']).description(
-      'How the image fills its container.'
-    ),
+    fit: PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
   };
 
   return DocumentedImage;

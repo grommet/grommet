@@ -7,18 +7,9 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
-import {
-  withAnnounce,
-  withForwardRef,
-  withTheme,
-} from '../hocs';
+import { withAnnounce, withForwardRef, withTheme } from '../hocs';
 
-import {
-  StyledTextInput,
-  StyledTextInputContainer,
-  StyledPlaceholder,
-  StyledSuggestions,
-} from './StyledTextInput';
+import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledSuggestions } from './StyledTextInput';
 
 function renderLabel(suggestion) {
   if (suggestion && typeof suggestion === 'object') {
@@ -55,7 +46,7 @@ class TextInput extends Component {
       suggestionsExist: 'This input has suggestions use arrow keys to navigate',
       suggestionIsOpen: 'Suggestions drop is open, continue to use arrow keys to navigate',
     },
-  }
+  };
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { forwardRef, suggestions } = nextProps;
@@ -78,7 +69,7 @@ class TextInput extends Component {
     activeSuggestionIndex: -1,
     inputRef: React.createRef(),
     showDrop: false,
-  }
+  };
 
   componentDidUpdate(prevProps, prevState) {
     const { onSuggestionsOpen, onSuggestionsClose, suggestions } = this.props;
@@ -91,8 +82,7 @@ class TextInput extends Component {
       }
     }
 
-    if (!showDrop && suggestions
-      && (!prevProps.suggestions || !prevProps.suggestions.length)) {
+    if (!showDrop && suggestions && (!prevProps.suggestions || !prevProps.suggestions.length)) {
       this.resetSuggestions();
     }
   }
@@ -106,30 +96,40 @@ class TextInput extends Component {
     if (suggestions && suggestions.length > 0) {
       announce(message, mode);
     }
-  }
+  };
 
   announceSuggestionsCount = () => {
-    const { suggestions, messages: { suggestionsCount } } = this.props;
+    const {
+      suggestions,
+      messages: { suggestionsCount },
+    } = this.props;
     this.announce(`${suggestions.length} ${suggestionsCount}`);
-  }
+  };
 
   announceSuggestionsExist = () => {
-    const { messages: { suggestionsExist } } = this.props;
+    const {
+      messages: { suggestionsExist },
+    } = this.props;
     this.announce(suggestionsExist);
-  }
+  };
 
   announceSuggestionsIsOpen = () => {
-    const { messages: { suggestionIsOpen } } = this.props;
+    const {
+      messages: { suggestionIsOpen },
+    } = this.props;
     this.announce(suggestionIsOpen);
-  }
+  };
 
-  announceSuggestion = (index) => {
-    const { suggestions, messages: { enterSelect } } = this.props;
+  announceSuggestion = index => {
+    const {
+      suggestions,
+      messages: { enterSelect },
+    } = this.props;
     if (suggestions && suggestions.length > 0) {
       const labelMessage = stringLabel(suggestions[index]);
       this.announce(`${labelMessage} ${enterSelect}`);
     }
-  }
+  };
 
   resetSuggestions = () => {
     // delay this to avoid re-render interupting event delivery
@@ -140,38 +140,44 @@ class TextInput extends Component {
     this.resetTimer = setTimeout(() => {
       const { suggestions } = this.props;
       if (suggestions && suggestions.length) {
-        this.setState({
-          activeSuggestionIndex: -1,
-          showDrop: true,
-          selectedSuggestionIndex: -1,
-        }, this.announceSuggestionsCount);
+        this.setState(
+          {
+            activeSuggestionIndex: -1,
+            showDrop: true,
+            selectedSuggestionIndex: -1,
+          },
+          this.announceSuggestionsCount
+        );
       }
     }, 10);
-  }
+  };
 
   getSelectedSuggestionIndex = () => {
     const { suggestions, value } = this.props;
-    const suggestionValues = suggestions.map((suggestion) => {
+    const suggestionValues = suggestions.map(suggestion => {
       if (typeof suggestion === 'object') {
         return suggestion.value;
       }
       return suggestion;
     });
     return suggestionValues.indexOf(value);
-  }
+  };
 
   onShowSuggestions = () => {
     // Get values of suggestions, so we can highlight selected suggestion
     const selectedSuggestionIndex = this.getSelectedSuggestionIndex();
 
-    this.setState({
-      showDrop: true,
-      activeSuggestionIndex: -1,
-      selectedSuggestionIndex,
-    }, this.announceSuggestionsIsOpen);
-  }
+    this.setState(
+      {
+        showDrop: true,
+        activeSuggestionIndex: -1,
+        selectedSuggestionIndex,
+      },
+      this.announceSuggestionsIsOpen
+    );
+  };
 
-  onNextSuggestion = (event) => {
+  onNextSuggestion = event => {
     const { suggestions } = this.props;
     const { activeSuggestionIndex, showDrop } = this.state;
     if (suggestions && suggestions.length > 0) {
@@ -183,9 +189,9 @@ class TextInput extends Component {
         this.setState({ activeSuggestionIndex: index }, () => this.announceSuggestion(index));
       }
     }
-  }
+  };
 
-  onPreviousSuggestion = (event) => {
+  onPreviousSuggestion = event => {
     const { suggestions } = this.props;
     const { activeSuggestionIndex, showDrop } = this.state;
     if (suggestions && suggestions.length > 0 && showDrop) {
@@ -193,18 +199,18 @@ class TextInput extends Component {
       const index = Math.max(activeSuggestionIndex - 1, 0);
       this.setState({ activeSuggestionIndex: index }, () => this.announceSuggestion(index));
     }
-  }
+  };
 
-  onClickSuggestion = (suggestion) => {
+  onClickSuggestion = suggestion => {
     const { onSelect } = this.props;
     const { inputRef } = this.state;
     this.setState({ showDrop: false });
     if (onSelect) {
       onSelect({ target: inputRef.current, suggestion });
     }
-  }
+  };
 
-  onSuggestionSelect = (event) => {
+  onSuggestionSelect = event => {
     const { onSelect, suggestions } = this.props;
     const { activeSuggestionIndex, inputRef } = this.state;
     this.setState({ showDrop: false });
@@ -215,9 +221,9 @@ class TextInput extends Component {
         onSelect({ target: inputRef.current, suggestion });
       }
     }
-  }
+  };
 
-  onFocus = (event) => {
+  onFocus = event => {
     const { onFocus, suggestions } = this.props;
     if (suggestions && suggestions.length > 0) {
       this.announceSuggestionsExist();
@@ -226,27 +232,27 @@ class TextInput extends Component {
     if (onFocus) {
       onFocus(event);
     }
-  }
+  };
 
-  onBlur = (event) => {
+  onBlur = event => {
     const { onBlur } = this.props;
     clearTimeout(this.resetTimer);
     if (onBlur) {
       onBlur(event);
     }
-  }
+  };
 
-  onInput = (event) => {
+  onInput = event => {
     const { onInput } = this.props;
     this.resetSuggestions();
     if (onInput) {
       onInput(event);
     }
-  }
+  };
 
   onDropClose = () => {
     this.setState({ showDrop: false });
-  }
+  };
 
   renderSuggestions = () => {
     const { suggestions, theme } = this.props;
@@ -260,16 +266,15 @@ class TextInput extends Component {
             return (
               <li key={`${stringLabel(suggestion)}-${index}`}>
                 <Button
-                  active={
-                    activeSuggestionIndex === index
-                    || selectedSuggestionIndex === index
-                  }
+                  active={activeSuggestionIndex === index || selectedSuggestionIndex === index}
                   fill
-                  hoverIndicator='background'
+                  hoverIndicator="background"
                   onClick={() => this.onClickSuggestion(suggestion)}
                 >
-                  {plain ? renderLabel(suggestion) : (
-                    <Box align='start' pad='small'>
+                  {plain ? (
+                    renderLabel(suggestion)
+                  ) : (
+                    <Box align="start" pad="small">
                       {renderLabel(suggestion)}
                     </Box>
                   )}
@@ -280,14 +285,10 @@ class TextInput extends Component {
         </InfiniteScroll>
       </StyledSuggestions>
     );
-  }
+  };
 
   render() {
-    const {
-      defaultValue, dropAlign, dropTarget, id, placeholder, plain, theme, value,
-      onKeyDown,
-      ...rest
-    } = this.props;
+    const { defaultValue, dropAlign, dropTarget, id, placeholder, plain, theme, value, onKeyDown, ...rest } = this.props;
     delete rest.onInput; // se we can manage in onInputChange()
     delete rest.forwardRef;
     delete rest.onSuggestionsOpen;
@@ -307,17 +308,13 @@ class TextInput extends Component {
           onClickOutside={() => this.setState({ showDrop: false })}
           onEsc={() => this.setState({ showDrop: false })}
         >
-          <ContainerBox overflow='auto'>
-            {this.renderSuggestions()}
-          </ContainerBox>
+          <ContainerBox overflow="auto">{this.renderSuggestions()}</ContainerBox>
         </Drop>
       );
     }
     return (
       <StyledTextInputContainer plain={plain}>
-        {placeholder && typeof placeholder !== 'string' && !value ? (
-          <StyledPlaceholder theme={theme}>{placeholder}</StyledPlaceholder>
-        ) : null}
+        {placeholder && typeof placeholder !== 'string' && !value ? <StyledPlaceholder theme={theme}>{placeholder}</StyledPlaceholder> : null}
         <Keyboard
           onEnter={this.onSuggestionSelect}
           onEsc={this.onDropClose}
@@ -329,7 +326,7 @@ class TextInput extends Component {
           <StyledTextInput
             id={id}
             ref={inputRef}
-            autoComplete='off'
+            autoComplete="off"
             plain={plain}
             placeholder={typeof placeholder === 'string' ? placeholder : undefined}
             theme={theme}
@@ -354,7 +351,7 @@ if (process.env.NODE_ENV !== 'production') {
 const TextInputWrapper = compose(
   withTheme,
   withAnnounce,
-  withForwardRef,
+  withForwardRef
 )(TextInputDoc || TextInput);
 
 export { TextInputWrapper as TextInput };

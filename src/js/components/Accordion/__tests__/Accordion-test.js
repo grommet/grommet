@@ -3,9 +3,7 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent } from 'react-testing-library';
 
-import {
-  Accordion, AccordionPanel, Box, Grommet,
-} from '../..';
+import { Accordion, AccordionPanel, Box, Grommet } from '../..';
 
 describe('Accordion', () => {
   afterEach(cleanup);
@@ -23,17 +21,9 @@ describe('Accordion', () => {
     const component = renderer.create(
       <Grommet>
         <Accordion>
-          <AccordionPanel label='Panel 1'>
-            Panel body 1
-          </AccordionPanel>
-          <AccordionPanel label='Panel 2'>
-            Panel body 2
-          </AccordionPanel>
-          {false && (
-            <AccordionPanel label='Panel 2'>
-              Panel body 2
-            </AccordionPanel>
-          )}
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+          <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
+          {false && <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>}
         </Accordion>
       </Grommet>
     );
@@ -43,15 +33,11 @@ describe('Accordion', () => {
   test('complex title', () => {
     const component = renderer.create(
       <Grommet>
-        <Box background='dark-1'>
+        <Box background="dark-1">
           <Accordion>
-            <AccordionPanel label={<div>Panel 1 complex</div>}>
-              Panel body 1
-            </AccordionPanel>
+            <AccordionPanel label={<div>Panel 1 complex</div>}>Panel body 1</AccordionPanel>
             {undefined}
-            <AccordionPanel label={<div>Panel 2 complex</div>}>
-              Panel body 2
-            </AccordionPanel>
+            <AccordionPanel label={<div>Panel 2 complex</div>}>Panel body 2</AccordionPanel>
           </Accordion>
         </Box>
       </Grommet>
@@ -63,30 +49,22 @@ describe('Accordion', () => {
     const component = renderer.create(
       <Grommet>
         <Accordion activeIndex={1} animate={false}>
-          <AccordionPanel header={<div>Panel 1 header</div>}>
-            Panel body 1
-          </AccordionPanel>
+          <AccordionPanel header={<div>Panel 1 header</div>}>Panel body 1</AccordionPanel>
           {undefined}
-          <AccordionPanel header={<div>Panel 2 header</div>}>
-            Panel body 2
-          </AccordionPanel>
+          <AccordionPanel header={<div>Panel 2 header</div>}>Panel body 2</AccordionPanel>
         </Accordion>
       </Grommet>
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test('change to second Panel', (done) => {
+  test('change to second Panel', done => {
     const onActive = jest.fn();
     const { getByText, container } = render(
       <Grommet>
         <Accordion onActive={onActive}>
-          <AccordionPanel label='Panel 1'>
-            Panel body 1
-          </AccordionPanel>
-          <AccordionPanel label='Panel 2'>
-            Panel body 2
-          </AccordionPanel>
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+          <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
       </Grommet>
     );
@@ -108,12 +86,8 @@ describe('Accordion', () => {
     const { getByText, container } = render(
       <Grommet>
         <Accordion animate={false}>
-          <AccordionPanel label='Panel 1'>
-            Panel body 1
-          </AccordionPanel>
-          <AccordionPanel label='Panel 2'>
-            Panel body 2
-          </AccordionPanel>
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+          <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
       </Grommet>
     );
@@ -128,17 +102,9 @@ describe('Accordion', () => {
     const onActive = jest.fn();
     const { getByText, container } = render(
       <Grommet>
-        <Accordion
-          animate={false}
-          multiple
-          onActive={onActive}
-        >
-          <AccordionPanel label='Panel 1'>
-            Panel body 1
-          </AccordionPanel>
-          <AccordionPanel label='Panel 2'>
-            Panel body 2
-          </AccordionPanel>
+        <Accordion animate={false} multiple onActive={onActive}>
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+          <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
       </Grommet>
     );
@@ -170,12 +136,8 @@ describe('Accordion', () => {
     const { getByText, container } = render(
       <Grommet>
         <Accordion animate={false} activeIndex={1} onActive={onActive}>
-          <AccordionPanel label='Panel 1'>
-            Panel body 1
-          </AccordionPanel>
-          <AccordionPanel label='Panel 2'>
-            Panel body 2
-          </AccordionPanel>
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+          <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
       </Grommet>
     );
@@ -190,22 +152,10 @@ describe('Accordion', () => {
     const { getByText, container } = render(
       <Grommet>
         <Accordion>
-          <AccordionPanel
-            label='Panel 1'
-            onMouseOver={() => {}}
-            onMouseOut={() => {}}
-            onFocus={() => {}}
-            onBlur={() => {}}
-          >
+          <AccordionPanel label="Panel 1" onMouseOver={() => {}} onMouseOut={() => {}} onFocus={() => {}} onBlur={() => {}}>
             Panel body 1
           </AccordionPanel>
-          <AccordionPanel
-            label='Panel 2'
-            onMouseOver={() => {}}
-            onMouseOut={() => {}}
-            onFocus={() => {}}
-            onBlur={() => {}}
-          >
+          <AccordionPanel label="Panel 2" onMouseOver={() => {}} onMouseOut={() => {}} onFocus={() => {}} onBlur={() => {}}>
             Panel body 2
           </AccordionPanel>
         </Accordion>

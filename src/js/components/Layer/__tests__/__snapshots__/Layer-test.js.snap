@@ -63,13 +63,13 @@ exports[`Layer dark context 1`] = `
 
 exports[`Layer dark context 2`] = `
 "@media only screen and (max-width:768px) {
-  .dwiZmN {
+  .hNJwIq {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dwiZmN {
+  .hNJwIq {
     padding: 0px;
   }
 }"
@@ -659,15 +659,15 @@ exports[`Layer hidden 2`] = `""`;
 
 exports[`Layer hidden 3`] = `
 <div
-  class="StyledLayer-rmtehz-0 kIqTcO"
+  class="StyledLayer-rmtehz-0 eMWFXo"
   id="hidden-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-rmtehz-1 bGMqgk"
+    class="StyledLayer__StyledOverlay-rmtehz-1 gVTfaV"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 ipIbtc"
+    class="StyledLayer__StyledContainer-rmtehz-2 egFHgi"
     id="hidden-test"
   >
     This is a layer

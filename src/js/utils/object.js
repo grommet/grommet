@@ -1,11 +1,7 @@
+export const isObject = item => item && typeof item === 'object' && !Array.isArray(item);
 
-export const isObject = item => (
-  item && typeof item === 'object' && !Array.isArray(item));
-
-export const deepFreeze = (obj) => {
-  Object.keys(obj).forEach(
-    key => key && isObject(obj[key]) && Object.freeze(obj[key])
-  );
+export const deepFreeze = obj => {
+  Object.keys(obj).forEach(key => key && isObject(obj[key]) && Object.freeze(obj[key]));
   return Object.freeze(obj);
 };
 
@@ -15,9 +11,9 @@ export const deepMerge = (target, ...sources) => {
   }
   // making sure to not change target (immutable)
   const output = { ...target };
-  sources.forEach((source) => {
+  sources.forEach(source => {
     if (isObject(source)) {
-      Object.keys(source).forEach((key) => {
+      Object.keys(source).forEach(key => {
         if (isObject(source[key])) {
           if (!output[key]) {
             output[key] = { ...source[key] };
@@ -33,9 +29,9 @@ export const deepMerge = (target, ...sources) => {
   return output;
 };
 
-export const removeUndefined = (obj) => {
+export const removeUndefined = obj => {
   const result = {};
-  Object.keys(obj).forEach((key) => {
+  Object.keys(obj).forEach(key => {
     if (obj[key] !== undefined) {
       result[key] = obj[key];
     }

@@ -12,9 +12,9 @@ import { LayerContainer } from '../LayerContainer';
 class FakeLayer extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
-  }
+  };
 
-  state = { showLayer: false }
+  state = { showLayer: false };
 
   componentDidMount() {
     this.setState({ showLayer: true }); // eslint-disable-line
@@ -27,9 +27,9 @@ class FakeLayer extends Component {
     if (showLayer) {
       layer = (
         <Layer onEsc={() => this.setState({ showLayer: false })}>
-          <div data-testid='test-layer-node'>
+          <div data-testid="test-layer-node">
             This is a layer
-            <input data-testid='test-input' />
+            <input data-testid="test-input" />
           </div>
         </Layer>
       );
@@ -47,56 +47,60 @@ describe('Layer', () => {
   beforeEach(createPortal);
   afterEach(cleanup);
 
-  ['top', 'bottom', 'left', 'right', 'center'].forEach(position => (
+  ['top', 'bottom', 'left', 'right', 'center'].forEach(position =>
     test(`position ${position}`, () => {
       render(
         <Grommet>
-          <Layer id='position-test' position={position}>
+          <Layer id="position-test" position={position}>
             This is a layer
           </Layer>
         </Grommet>
       );
       expectPortal('position-test').toMatchSnapshot();
     })
-  ));
+  );
 
-  [true, false, 'horizontal', 'vertical'].forEach(full => (
+  [true, false, 'horizontal', 'vertical'].forEach(full =>
     test(`full ${full}`, () => {
       render(
         <Grommet>
-          <Layer id='full-test' full={full}>
+          <Layer id="full-test" full={full}>
             This is a layer
           </Layer>
         </Grommet>
       );
       expectPortal('full-test').toMatchSnapshot();
     })
-  ));
+  );
 
-  ['none', 'xsmall', 'small', 'medium', 'large'].forEach(margin => (
+  ['none', 'xsmall', 'small', 'medium', 'large'].forEach(margin =>
     test(`margin ${margin}`, () => {
       render(
         <Grommet>
-          <Layer id='margin-test' margin={margin}>
+          <Layer id="margin-test" margin={margin}>
             This is a layer
           </Layer>
         </Grommet>
       );
       expectPortal('margin-test').toMatchSnapshot();
     })
-  ));
+  );
 
   test('hidden', () => {
     const { rerender } = render(
       <Grommet>
-        <Layer id='hidden-test' position='hidden'>This is a layer</Layer>
+        <Layer id="hidden-test" position="hidden">
+          This is a layer
+        </Layer>
       </Grommet>
     );
     expectPortal('hidden-test').toMatchSnapshot();
 
     rerender(
       <Grommet>
-        <Layer id='hidden-test' position='center'>This is a layer</Layer>
+        <Layer id="hidden-test" position="center">
+          This is a layer
+        </Layer>
       </Grommet>
     );
     expectPortal('hidden-test').toMatchSnapshot();
@@ -105,7 +109,7 @@ describe('Layer', () => {
   test('plain', () => {
     render(
       <Grommet>
-        <Layer id='plain-test' plain>
+        <Layer id="plain-test" plain>
           This is a plain layer
         </Layer>
       </Grommet>
@@ -116,7 +120,7 @@ describe('Layer', () => {
   test('non-modal', () => {
     render(
       <Grommet>
-        <Layer id='non-modal-test' modal={false}>
+        <Layer id="non-modal-test" modal={false}>
           This is a non-modal layer
         </Layer>
       </Grommet>
@@ -127,8 +131,8 @@ describe('Layer', () => {
   test('dark context', () => {
     render(
       <Grommet>
-        <Box background='dark-1'>
-          <Layer id='non-modal-test' modal={false}>
+        <Box background="dark-1">
+          <Layer id="non-modal-test" modal={false}>
             This is a non-modal layer
           </Layer>
         </Box>
@@ -147,7 +151,7 @@ describe('Layer', () => {
     render(
       <Grommet>
         <LayerContainer onEsc={onEsc}>
-          <input data-testid='test-input' />
+          <input data-testid="test-input" />
         </LayerContainer>
       </Grommet>
     );
@@ -166,9 +170,9 @@ describe('Layer', () => {
     render(
       <Grommet>
         <FakeLayer>
-          <div data-testid='test-body-node'>
+          <div data-testid="test-body-node">
             <input />
-            <input tabIndex='10' />
+            <input tabIndex="10" />
           </div>
         </FakeLayer>
       </Grommet>

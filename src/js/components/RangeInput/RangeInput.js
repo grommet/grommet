@@ -8,13 +8,7 @@ import { StyledRangeInput } from './StyledRangeInput';
 class RangeInput extends Component {
   render() {
     const { forwardRef, ...rest } = this.props;
-    return (
-      <StyledRangeInput
-        {...rest}
-        ref={forwardRef}
-        type='range'
-      />
-    );
+    return <StyledRangeInput {...rest} ref={forwardRef} type="range" />;
   }
 }
 let RangeInputDoc;
@@ -24,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
 const RangeInputWrapper = compose(
   withFocus,
   withTheme,
-  withForwardRef,
+  withForwardRef
 )(RangeInputDoc || RangeInput);
 
 export { RangeInputWrapper as RangeInput };

@@ -1,4 +1,3 @@
-
 export const normalizeColor = (color, theme, required) => {
   const colorSpec = theme.global.colors[color] || color;
   // If the color has a light or dark object, use that
@@ -14,19 +13,18 @@ export const normalizeColor = (color, theme, required) => {
   if (result && theme.global.colors[result]) {
     result = normalizeColor(result, theme);
   }
-  return (required && result === color) ? 'inherit' : result;
+  return required && result === color ? 'inherit' : result;
 };
 
-const parseHexToRGB = color => (
+const parseHexToRGB = color =>
   color.length === 4
-  ? color.match(/[A-Za-z0-9]{1}/g).map(v => parseInt(v, 16))
-  // https://stackoverflow.com/a/42429333
-  : color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16))
-);
+    ? color.match(/[A-Za-z0-9]{1}/g).map(v => parseInt(v, 16))
+    : // https://stackoverflow.com/a/42429333
+      color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16));
 
 const canExtractRGBArray = color => /^#/.test(color) || /^rgb/.test(color);
 
-const getRGBArray = (color) => {
+const getRGBArray = color => {
   if (/^#/.test(color)) {
     return parseHexToRGB(color);
   }
@@ -36,14 +34,12 @@ const getRGBArray = (color) => {
   return color;
 };
 
-export const colorIsDark = (color) => {
+export const colorIsDark = color => {
   const [red, green, blue] = getRGBArray(color);
   // http://www.had2know.com/technology/
   //  color-contrast-calculator-web-design.html
-  const brightness = (
-    (299 * red) + (587 * green) + (114 * blue)
-  ) / 1000;
-  return (brightness < 125);
+  const brightness = (299 * red + 587 * green + 114 * blue) / 1000;
+  return brightness < 125;
 };
 
 export const getRGBA = (color, opacity) => {

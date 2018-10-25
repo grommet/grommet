@@ -36,8 +36,7 @@ class Box extends Component {
     if (dark === propsTheme.dark && stateTheme) {
       return { theme: undefined, priorTheme: undefined };
     }
-    if (dark !== propsTheme.dark
-      && (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)) {
+    if (dark !== propsTheme.dark && (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)) {
       return {
         theme: {
           ...propsTheme,
@@ -50,7 +49,7 @@ class Box extends Component {
     return null;
   }
 
-  state = {}
+  state = {};
 
   render() {
     const {
@@ -88,15 +87,7 @@ class Box extends Component {
           if (firstIndex === undefined) {
             firstIndex = index;
           } else {
-            contents.push((
-              <StyledBoxGap
-                key={index}
-                gap={gap}
-                directionProp={direction}
-                responsive={responsive}
-                theme={theme}
-              />
-            ));
+            contents.push(<StyledBoxGap key={index} gap={gap} directionProp={direction} responsive={responsive} theme={theme} />);
           }
         }
         contents.push(child);
@@ -125,17 +116,9 @@ class Box extends Component {
 
     if (stateTheme) {
       if (stateTheme.dark !== propsTheme.dark && stateTheme.icon) {
-        content = (
-          <IconThemeContext.Provider value={stateTheme.icon}>
-            {content}
-          </IconThemeContext.Provider>
-        );
+        content = <IconThemeContext.Provider value={stateTheme.icon}>{content}</IconThemeContext.Provider>;
       }
-      content = (
-        <ThemeContext.Provider value={stateTheme}>
-          {content}
-        </ThemeContext.Provider>
-      );
+      content = <ThemeContext.Provider value={stateTheme}>{content}</ThemeContext.Provider>;
     }
 
     return content;
@@ -148,7 +131,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const BoxWrapper = compose(
   withTheme,
-  withForwardRef,
+  withForwardRef
 )(BoxDoc || Box);
 
 export { BoxWrapper as Box };

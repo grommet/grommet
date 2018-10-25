@@ -13,11 +13,11 @@ class FakeRouter extends Component {
     children: PropTypes.node.isRequired,
     push: PropTypes.func.isRequired,
     replace: PropTypes.func.isRequired,
-  }
+  };
 
   static childContextTypes = {
     router: PropTypes.shape({}).isRequired,
-  }
+  };
 
   getChildContext() {
     const { push, replace } = this.props;
@@ -42,7 +42,7 @@ describe('RoutedAnchor', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter>
-          <RoutedAnchor label='Test' path='/' />
+          <RoutedAnchor label="Test" path="/" />
         </FakeRouter>
       </Grommet>
     );
@@ -57,7 +57,7 @@ describe('RoutedAnchor', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter push={push}>
-          <RoutedAnchor label='Test' onClick={onClick} />
+          <RoutedAnchor label="Test" onClick={onClick} />
         </FakeRouter>
       </Grommet>
     );
@@ -75,7 +75,7 @@ describe('RoutedAnchor', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter>
-          <RoutedAnchor label='Test' onClick={onClick} />
+          <RoutedAnchor label="Test" onClick={onClick} />
         </FakeRouter>
       </Grommet>
     );
@@ -97,7 +97,7 @@ describe('RoutedAnchor', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter push={push}>
-          <RoutedAnchor label='Test' path='/' />
+          <RoutedAnchor label="Test" path="/" />
         </FakeRouter>
       </Grommet>
     );
@@ -117,7 +117,7 @@ describe('RoutedAnchor', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter replace={replace}>
-          <RoutedAnchor label='Test' path='/' method='replace' />
+          <RoutedAnchor label="Test" path="/" method="replace" />
         </FakeRouter>
       </Grommet>
     );

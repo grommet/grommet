@@ -1,9 +1,7 @@
 import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
-import {
-  cleanup, fireEvent, render,
-} from 'react-testing-library';
+import { cleanup, fireEvent, render } from 'react-testing-library';
 import { getByText as getByTextDOM } from 'dom-testing-library';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -18,15 +16,7 @@ describe('Menu', () => {
   test('basic', () => {
     const component = renderer.create(
       <Grommet>
-        <Menu
-          icon={<svg />}
-          label='Test Menu'
-          id='test-menu'
-          items={[
-            { label: 'Item 1' },
-            { label: 'Item 2' },
-          ]}
-        />
+        <Menu icon={<svg />} label="Test Menu" id="test-menu" items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />
       </Grommet>
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -35,14 +25,7 @@ describe('Menu', () => {
   test('custom message', () => {
     const component = renderer.create(
       <Grommet>
-        <Menu
-          label='Test Menu'
-          messages={{ openMenu: 'Abrir Menu' }}
-          items={[
-            { label: 'Item 1' },
-            { label: 'Item 2' },
-          ]}
-        />
+        <Menu label="Test Menu" messages={{ openMenu: 'Abrir Menu' }} items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />
       </Grommet>
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -52,15 +35,7 @@ describe('Menu', () => {
     window.scrollTo = jest.fn();
     const { getByText, container } = render(
       <Grommet>
-        <Menu
-          id='test-menu'
-          label='Test'
-          items={[
-            { label: 'Item 1' },
-            { label: 'Item 2', onClick: () => {} },
-            { label: 'Item 3', href: '/test' },
-          ]}
-        />
+        <Menu id="test-menu" label="Test" items={[{ label: 'Item 1' }, { label: 'Item 2', onClick: () => {} }, { label: 'Item 3', href: '/test' }]} />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -75,17 +50,10 @@ describe('Menu', () => {
     expect(window.scrollTo).toBeCalled();
   });
 
-  test('close by clicking outside', (done) => {
+  test('close by clicking outside', done => {
     const { getByText, container } = render(
       <Grommet>
-        <Menu
-          id='test-menu'
-          label='Test'
-          items={[
-            { label: 'Item 1' },
-            { label: 'Item 2' },
-          ]}
-        />
+        <Menu id="test-menu" label="Test" items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -105,14 +73,7 @@ describe('Menu', () => {
     const onClick = jest.fn();
     const { getByText, container } = render(
       <Grommet>
-        <Menu
-          id='test-menu'
-          label='Test'
-          items={[
-            { label: 'Item 1', onClick },
-            { label: 'Item 2' },
-          ]}
-        />
+        <Menu id="test-menu" label="Test" items={[{ label: 'Item 1', onClick }, { label: 'Item 2' }]} />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -129,14 +90,7 @@ describe('Menu', () => {
     const onClick = jest.fn();
     const { getByText, container } = render(
       <Grommet>
-        <Menu
-          id='test-menu'
-          label='Test'
-          items={[
-            { label: 'Item 1', onClick },
-            { label: 'Item 2' },
-          ]}
-        />
+        <Menu id="test-menu" label="Test" items={[{ label: 'Item 1', onClick }, { label: 'Item 2' }]} />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -161,14 +115,7 @@ describe('Menu', () => {
   test('close on esc', () => {
     const { getByText, container } = render(
       <Grommet>
-        <Menu
-          id='test-menu'
-          label='Test'
-          items={[
-            { label: 'Item 1' },
-            { label: 'Item 2' },
-          ]}
-        />
+        <Menu id="test-menu" label="Test" items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -182,14 +129,7 @@ describe('Menu', () => {
   test('close on tab', () => {
     const { getByText, container } = render(
       <Grommet>
-        <Menu
-          id='test-menu'
-          label='Test'
-          items={[
-            { label: 'Item 1' },
-            { label: 'Item 2' },
-          ]}
-        />
+        <Menu id="test-menu" label="Test" items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -203,15 +143,7 @@ describe('Menu', () => {
   test('with dropAlign renders', () => {
     const { getByText, container } = render(
       <Grommet>
-        <Menu
-          id='test-menu'
-          dropAlign={{ top: 'top', right: 'right' }}
-          label='Test'
-          items={[
-            { label: 'Item 1' },
-            { label: 'Item 2' },
-          ]}
-        />
+        <Menu id="test-menu" dropAlign={{ top: 'top', right: 'right' }} label="Test" items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -225,16 +157,13 @@ describe('Menu', () => {
     const { getByText, container } = render(
       <Grommet>
         <Menu
-          id='test-menu'
+          id="test-menu"
           disabled
-          label='Test'
-          items={[
-            { label: 'Item 1' },
-            { label: 'Item 2', onClick: () => {} },
-            { label: 'Item 3', href: '/test' },
-          ]}
+          label="Test"
+          items={[{ label: 'Item 1' }, { label: 'Item 2', onClick: () => {} }, { label: 'Item 3', href: '/test' }]}
         />
-      </Grommet>, {
+      </Grommet>,
+      {
         attachTo: document.body.firstChild,
       }
     );

@@ -9,7 +9,7 @@ test('RadioButton renders', () => {
   const component = renderer.create(
     <Grommet>
       <RadioButton />
-      <RadioButton id='test id' name='test name' />
+      <RadioButton id="test id" name="test name" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -19,7 +19,7 @@ test('RadioButton renders', () => {
 test('RadioButton label renders', () => {
   const component = renderer.create(
     <Grommet>
-      <RadioButton label='test label' />
+      <RadioButton label="test label" />
       <RadioButton label={<div>test label</div>} />
     </Grommet>
   );

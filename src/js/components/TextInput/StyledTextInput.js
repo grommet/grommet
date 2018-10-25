@@ -6,7 +6,7 @@ const placeholderColor = css`
   color: ${props => props.theme.global.colors.placeholder};
 `;
 
-const sizeStyle = (props) => {
+const sizeStyle = props => {
   const data = props.theme.text[props.size];
   return css`
     font-size: ${data.size};
@@ -19,22 +19,20 @@ const plainStyle = css`
 `;
 
 export const StyledTextInput = styled.input`
-  ${inputStyle}
-  width: 100%;
+  ${inputStyle} width: 100%;
 
-  ${props => props.size && sizeStyle(props)}
-  ${props => props.plain && plainStyle}
+  ${props => props.size && sizeStyle(props)} ${props => props.plain && plainStyle}
 
   &::-webkit-input-placeholder {
-    ${placeholderColor}
+    ${placeholderColor};
   }
 
   &::-moz-placeholder {
-    ${placeholderColor}
+    ${placeholderColor};
   }
 
   &:-ms-input-placeholder {
-    ${placeholderColor}
+    ${placeholderColor};
   }
 
   &::-moz-focus-inner {
@@ -42,7 +40,7 @@ export const StyledTextInput = styled.input`
     outline: none;
   }
 
-  ${props => props.theme.textInput && props.theme.textInput.extend}
+  ${props => props.theme.textInput && props.theme.textInput.extend};
 `;
 
 export const StyledTextInputContainer = styled.div`
@@ -52,10 +50,7 @@ export const StyledTextInputContainer = styled.div`
 
 export const StyledPlaceholder = styled.div`
   position: absolute;
-  left: ${props => (
-    (parseMetricToNum(props.theme.global.spacing) / 2)
-    - parseMetricToNum(props.theme.global.control.border.width)
-  )}px;
+  left: ${props => parseMetricToNum(props.theme.global.spacing) / 2 - parseMetricToNum(props.theme.global.control.border.width)}px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;

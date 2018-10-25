@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export const doc = (InfiniteScroll) => {
+export const doc = InfiniteScroll => {
   const DocumentedInfiniteScroll = describe(InfiniteScroll)
     .availableAt(getAvailableAtBadge('InfiniteScroll'))
     .description('A container that lazily renders items.')
@@ -12,12 +12,8 @@ export const doc = (InfiniteScroll) => {
     );
 
   DocumentedInfiniteScroll.propTypes = {
-    children: PropTypes.func.description(
-      'Function that will be called when each item is rendered.'
-    ),
-    items: PropTypes.arrayOf(PropTypes.any).description(
-      'The children callback will be called to render each item.'
-    ),
+    children: PropTypes.func.description('Function that will be called when each item is rendered.'),
+    items: PropTypes.arrayOf(PropTypes.any).description('The children callback will be called to render each item.'),
     onMore: PropTypes.func.description(
       `Use this to indicate that 'items' doesn't contain all that it could.
       It will be called when the entire list of items has been rendered.
@@ -32,10 +28,7 @@ export const doc = (InfiniteScroll) => {
       be wrapped appropriately. This is needed when the default
       element, a <span>, isn't sufficient, such as a row of a table body.`
     ),
-    scrollableAncestor: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.oneOf(['window']),
-    ]).description(
+    scrollableAncestor: PropTypes.oneOfType([PropTypes.node, PropTypes.oneOf(['window'])]).description(
       `A custom ancestor to determine if the marker is visible in it.
       This is useful in cases where you do not want the immediate
       scrollable ancestor to be the container. For example, when your
@@ -45,12 +38,8 @@ export const doc = (InfiniteScroll) => {
       also work to pass it the string "window" if you are using server
       rendering.`
     ),
-    show: PropTypes.number.description(
-      'Ensure that the item at this index is visible initially.'
-    ),
-    step: PropTypes.number.description(
-      'How many items to render at a time.'
-    ).defaultValue(50),
+    show: PropTypes.number.description('Ensure that the item at this index is visible initially.'),
+    step: PropTypes.number.description('How many items to render at a time.').defaultValue(50),
   };
 
   return DocumentedInfiniteScroll;

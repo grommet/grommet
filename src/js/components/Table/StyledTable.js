@@ -37,19 +37,15 @@ export const StyledTableRow = styled.tr`
   height: 100%;
 `;
 
-export const StyledTableBody = styled.tbody`
-`;
+export const StyledTableBody = styled.tbody``;
 
-export const StyledTableHeader = styled.thead`
-`;
+export const StyledTableHeader = styled.thead``;
 
-export const StyledTableFooter = styled.tfoot`
-`;
+export const StyledTableFooter = styled.tfoot``;
 
 export const StyledTable = styled.table`
   border-spacing: 0;
   border-collapse: collapse;
 
-  ${genericStyles}
-  ${props => props.theme.table && props.theme.table.extend}
+  ${genericStyles} ${props => props.theme.table && props.theme.table.extend};
 `;

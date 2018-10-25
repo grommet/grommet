@@ -19,7 +19,7 @@ test('Grid rows renders', () => {
   const component = renderer.create(
     <Grommet>
       <Grid rows={['small', 'large', 'medium']} />
-      <Grid rows='small' />
+      <Grid rows="small" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -32,7 +32,7 @@ test('Grid columns renders', () => {
       <Grid columns={['1/2', '2/4']} />
       <Grid columns={['1/3', '2/3']} />
       <Grid columns={['1/4', '3/4']} />
-      <Grid columns='small' />
+      <Grid columns="small" />
       <Grid columns={{ count: 'fit', size: 'small' }} />
     </Grommet>
   );
@@ -62,10 +62,10 @@ test('Grid areas renders', () => {
 test('Grid justify renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid justify='start' />
-      <Grid justify='center' />
-      <Grid justify='end' />
-      <Grid justify='stretch' />
+      <Grid justify="start" />
+      <Grid justify="center" />
+      <Grid justify="end" />
+      <Grid justify="stretch" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -75,10 +75,10 @@ test('Grid justify renders', () => {
 test('Grid align renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid align='start' />
-      <Grid align='center' />
-      <Grid align='end' />
-      <Grid align='stretch' />
+      <Grid align="start" />
+      <Grid align="center" />
+      <Grid align="end" />
+      <Grid align="stretch" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -88,12 +88,12 @@ test('Grid align renders', () => {
 test('Grid justifyContent renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid justifyContent='start' />
-      <Grid justifyContent='center' />
-      <Grid justifyContent='between' />
-      <Grid justifyContent='around' />
-      <Grid justifyContent='end' />
-      <Grid justifyContent='stretch' />
+      <Grid justifyContent="start" />
+      <Grid justifyContent="center" />
+      <Grid justifyContent="between" />
+      <Grid justifyContent="around" />
+      <Grid justifyContent="end" />
+      <Grid justifyContent="stretch" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -103,12 +103,12 @@ test('Grid justifyContent renders', () => {
 test('Grid alignContent renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid alignContent='start' />
-      <Grid alignContent='center' />
-      <Grid alignContent='between' />
-      <Grid alignContent='around' />
-      <Grid alignContent='end' />
-      <Grid alignContent='stretch' />
+      <Grid alignContent="start" />
+      <Grid alignContent="center" />
+      <Grid alignContent="between" />
+      <Grid alignContent="around" />
+      <Grid alignContent="end" />
+      <Grid alignContent="stretch" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -118,9 +118,9 @@ test('Grid alignContent renders', () => {
 test('Grid gap renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid gap='small' />
-      <Grid gap='medium' />
-      <Grid gap='large' />
+      <Grid gap="small" />
+      <Grid gap="medium" />
+      <Grid gap="large" />
       <Grid gap={{ row: 'small' }} />
       <Grid gap={{ row: 'medium' }} />
       <Grid gap={{ row: 'large' }} />
@@ -139,8 +139,8 @@ test('Grid fill renders', () => {
     <Grommet>
       <Grid fill />
       <Grid fill={false} />
-      <Grid fill='horizontal' />
-      <Grid fill='vertical' />
+      <Grid fill="horizontal" />
+      <Grid fill="vertical" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -150,7 +150,7 @@ test('Grid fill renders', () => {
 test('Grid tag renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid tag='article' />
+      <Grid tag="article" />
     </Grommet>
   );
   const tree = component.toJSON();

@@ -5,11 +5,11 @@ import { Grommet, WorldMap } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 class SimpleWorldMap extends Component {
-  state = {}
+  state = {};
 
-  onSelectPlace = (place) => {
+  onSelectPlace = place => {
     this.setState({ places: [{ color: 'accent-1', location: place }] });
-  }
+  };
 
   render() {
     const { places } = this.state;
@@ -21,5 +21,4 @@ class SimpleWorldMap extends Component {
   }
 }
 
-storiesOf('WorldMap', module)
-  .add('Simple WorldMap', () => <SimpleWorldMap />);
+storiesOf('WorldMap', module).add('Simple WorldMap', () => <SimpleWorldMap />);

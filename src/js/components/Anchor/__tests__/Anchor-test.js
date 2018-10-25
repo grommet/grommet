@@ -20,7 +20,7 @@ test('Anchor renders', () => {
 test('Anchor renders with children', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor href='#'>children</Anchor>
+      <Anchor href="#">children</Anchor>
     </Grommet>
   );
   const tree = component.toJSON();
@@ -31,7 +31,9 @@ test('Anchor warns about invalid label render', () => {
   const warnSpy = jest.spyOn(console, 'warn');
   const component = renderer.create(
     <Grommet>
-      <Anchor href='#' label='Test'>invalid</Anchor>
+      <Anchor href="#" label="Test">
+        invalid
+      </Anchor>
     </Grommet>
   );
   const tree = component.toJSON();
@@ -46,7 +48,9 @@ test('Anchor warns about invalid icon render', () => {
   const warnSpy = jest.spyOn(console, 'warn');
   const component = renderer.create(
     <Grommet>
-      <Anchor href='#' icon={<svg />}>invalid</Anchor>
+      <Anchor href="#" icon={<svg />}>
+        invalid
+      </Anchor>
     </Grommet>
   );
   const tree = component.toJSON();
@@ -60,7 +64,7 @@ test('Anchor warns about invalid icon render', () => {
 test('Anchor primary renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor href='#' primary label='Test' />
+      <Anchor href="#" primary label="Test" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -70,7 +74,7 @@ test('Anchor primary renders', () => {
 test('Anchor focus renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor href='#' focus label='Test' />
+      <Anchor href="#" focus label="Test" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -90,7 +94,7 @@ test('Anchor disabled renders', () => {
 test('Anchor icon label renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor icon={<svg />} label='Test' onClick={() => {}} />
+      <Anchor icon={<svg />} label="Test" onClick={() => {}} />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -100,12 +104,7 @@ test('Anchor icon label renders', () => {
 test('Anchor reverse icon label renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor
-        reverse
-        icon={<svg />}
-        label='Test'
-        onClick={() => {}}
-      />
+      <Anchor reverse icon={<svg />} label="Test" onClick={() => {}} />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -116,7 +115,7 @@ test('Anchor is clickable', () => {
   const onClick = jest.fn();
   const component = renderer.create(
     <Grommet>
-      <Anchor href='#' label='Test' onClick={onClick} />
+      <Anchor href="#" label="Test" onClick={onClick} />
     </Grommet>
   );
   const tree = component.toJSON();

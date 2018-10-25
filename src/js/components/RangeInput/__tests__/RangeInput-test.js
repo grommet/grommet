@@ -8,7 +8,7 @@ import { RangeInput } from '..';
 test('RangeInput renders', () => {
   const component = renderer.create(
     <Grommet>
-      <RangeInput value='50' />
+      <RangeInput value="50" />
     </Grommet>
   );
   const tree = component.toJSON();

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import {
-  Grommet, Box, DataTable, Meter, Text,
-} from 'grommet';
+import { Grommet, Box, DataTable, Meter, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
@@ -26,7 +24,7 @@ const columns = [
   {
     property: 'date',
     header: 'Date',
-    render: datum => (new Date(datum.date)).toLocaleDateString('en-US'),
+    render: datum => new Date(datum.date).toLocaleDateString('en-US'),
     align: 'end',
   },
   {
@@ -34,7 +32,7 @@ const columns = [
     header: 'Percent Complete',
     render: datum => (
       <Box pad={{ vertical: 'xsmall' }}>
-        <Meter values={[{ value: datum.percent }]} thickness='small' size='small' />
+        <Meter values={[{ value: datum.percent }]} thickness="small" size="small" />
       </Box>
     ),
   },
@@ -61,28 +59,60 @@ for (let i = 0; i < 40; i += 1) {
 }
 const DATA = [
   {
-    name: 'Alan', location: 'Los Gatos', date: '2018-06-11', percent: 20, paid: 2345,
+    name: 'Alan',
+    location: 'Los Gatos',
+    date: '2018-06-11',
+    percent: 20,
+    paid: 2345,
   },
   {
-    name: 'Bryan', location: 'Fort Collins', date: '2018-06-10', percent: 30, paid: 1234,
+    name: 'Bryan',
+    location: 'Fort Collins',
+    date: '2018-06-10',
+    percent: 30,
+    paid: 1234,
   },
   {
-    name: 'Chris', location: 'Palo Alto', date: '2018-06-09', percent: 40, paid: 2345,
+    name: 'Chris',
+    location: 'Palo Alto',
+    date: '2018-06-09',
+    percent: 40,
+    paid: 2345,
   },
   {
-    name: 'Eric', location: 'Palo Alto', date: '2018-06-11', percent: 80, paid: 3456,
+    name: 'Eric',
+    location: 'Palo Alto',
+    date: '2018-06-11',
+    percent: 80,
+    paid: 3456,
   },
   {
-    name: 'Doug', location: 'Fort Collins', date: '2018-06-10', percent: 60, paid: 1234,
+    name: 'Doug',
+    location: 'Fort Collins',
+    date: '2018-06-10',
+    percent: 60,
+    paid: 1234,
   },
   {
-    name: 'Jet', location: 'Palo Alto', date: '2018-06-09', percent: 40, paid: 3456,
+    name: 'Jet',
+    location: 'Palo Alto',
+    date: '2018-06-09',
+    percent: 40,
+    paid: 3456,
   },
   {
-    name: 'Michael', location: 'Boise', date: '2018-06-11', percent: 50, paid: 1234,
+    name: 'Michael',
+    location: 'Boise',
+    date: '2018-06-11',
+    percent: 50,
+    paid: 1234,
   },
   {
-    name: 'Tracy', location: 'San Francisco', date: '2018-06-10', percent: 10, paid: 2345,
+    name: 'Tracy',
+    location: 'San Francisco',
+    date: '2018-06-10',
+    percent: 10,
+    paid: 2345,
   },
 ];
 
@@ -94,15 +124,17 @@ const SimpleDataTable = () => (
 
 const SizedDataTable = () => (
   <Grommet theme={grommet}>
-    <DataTable columns={columns} data={data} size='medium' />
+    <DataTable columns={columns} data={data} size="medium" />
   </Grommet>
 );
 
 const TunableDataTable = () => (
   <Grommet theme={grommet}>
     <DataTable
-      columns={columns.map(c => (
-        ({ ...c, search: c.property === 'name' || c.property === 'location' })))}
+      columns={columns.map(c => ({
+        ...c,
+        search: c.property === 'name' || c.property === 'location',
+      }))}
       data={DATA}
       sortable
       resizeable
@@ -119,19 +151,14 @@ delete groupColumns[1].footer;
 
 const GroupedDataTable = () => (
   <Grommet theme={grommet}>
-    <DataTable
-      columns={groupColumns}
-      data={DATA}
-      groupBy='location'
-      sortable
-    />
+    <DataTable columns={groupColumns} data={DATA} groupBy="location" sortable />
   </Grommet>
 );
 
 class ServedDataTable extends Component {
-  state = { data: DATA }
+  state = { data: DATA };
 
-  onSearch = (search) => {
+  onSearch = search => {
     let nextData;
     if (search) {
       const expressions = Object.keys(search).map(property => ({
@@ -143,7 +170,7 @@ class ServedDataTable extends Component {
       nextData = DATA;
     }
     this.setState({ data: nextData });
-  }
+  };
 
   render() {
     const { data: servedData } = this.state;

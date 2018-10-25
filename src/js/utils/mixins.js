@@ -1,24 +1,19 @@
 import { css } from 'styled-components';
 
-export const parseMetricToNum = fontAsString => (
-  parseFloat(fontAsString.replace(/[^0-9/.]/g, ''), 10));
+export const parseMetricToNum = fontAsString => parseFloat(fontAsString.replace(/[^0-9/.]/g, ''), 10);
 
 export const fontSize = (size, lineHeight) => css`
-  font-size: ${
-    props => `${(parseMetricToNum(size) / parseMetricToNum(props.theme.global.font.size)) * 1}rem`
-  };
-  line-height: ${props => (
-    lineHeight || (
-      `${Math.ceil(parseMetricToNum(size) / parseMetricToNum(props.theme.global.lineHeight))
-        * (parseMetricToNum(props.theme.global.lineHeight) / parseMetricToNum(size))}px`
-    )
-  )};
+  font-size: ${props => `${(parseMetricToNum(size) / parseMetricToNum(props.theme.global.font.size)) * 1}rem`};
+  line-height: ${props =>
+    lineHeight ||
+    `${Math.ceil(parseMetricToNum(size) / parseMetricToNum(props.theme.global.lineHeight)) *
+      (parseMetricToNum(props.theme.global.lineHeight) / parseMetricToNum(size))}px`};
 `;
 
 export const breakpointStyle = (breakpoint, content) => css`
-  @media only screen
-  ${breakpoint.value && `and (max-width: ${breakpoint.value}px)`}
-  { ${content} }
+  @media only screen ${breakpoint.value && `and (max-width: ${breakpoint.value}px)`} {
+    ${content};
+  }
 `;
 
 export const findAllByType = (component, type) => {
@@ -29,7 +24,7 @@ export const findAllByType = (component, type) => {
   }
 
   if (component.children) {
-    component.children.forEach((child) => {
+    component.children.forEach(child => {
       matches = matches.concat(findAllByType(child, type));
     });
   }

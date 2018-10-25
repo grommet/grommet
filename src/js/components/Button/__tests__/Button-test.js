@@ -8,7 +8,7 @@ import { Grommet, Button } from '../..';
 test('Button renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button label='Test' onClick={() => {}} />
+      <Button label="Test" onClick={() => {}} />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -19,7 +19,9 @@ test('Button warns about invalid label render', () => {
   const warnSpy = jest.spyOn(console, 'warn');
   const component = renderer.create(
     <Grommet>
-      <Button label='Test' onClick={() => {}}>invalid</Button>
+      <Button label="Test" onClick={() => {}}>
+        invalid
+      </Button>
     </Grommet>
   );
   const tree = component.toJSON();
@@ -34,7 +36,9 @@ test('Button warns about invalid icon render', () => {
   const warnSpy = jest.spyOn(console, 'warn');
   const component = renderer.create(
     <Grommet>
-      <Button icon={<svg />} onClick={() => {}}>invalid</Button>
+      <Button icon={<svg />} onClick={() => {}}>
+        invalid
+      </Button>
     </Grommet>
   );
   const tree = component.toJSON();
@@ -48,7 +52,7 @@ test('Button warns about invalid icon render', () => {
 test('Button primary renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button primary label='Test' onClick={() => {}} />
+      <Button primary label="Test" onClick={() => {}} />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -58,10 +62,10 @@ test('Button primary renders', () => {
 test('Button color renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button color='accent-1' label='Test' onClick={() => {}} />
-      <Button color='accent-1' primary label='Test' onClick={() => {}} />
-      <Button color='#111111' primary label='Test' onClick={() => {}} />
-      <Button color='#123' primary label='Test' onClick={() => {}} />
+      <Button color="accent-1" label="Test" onClick={() => {}} />
+      <Button color="accent-1" primary label="Test" onClick={() => {}} />
+      <Button color="#111111" primary label="Test" onClick={() => {}} />
+      <Button color="#123" primary label="Test" onClick={() => {}} />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -71,7 +75,7 @@ test('Button color renders', () => {
 test('Button focus renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button focus label='Test' onClick={() => {}} />
+      <Button focus label="Test" onClick={() => {}} />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -91,7 +95,7 @@ test('Button disabled renders', () => {
 test('Button icon label renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button icon={<svg />} label='Test' onClick={() => {}} />
+      <Button icon={<svg />} label="Test" onClick={() => {}} />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -101,12 +105,7 @@ test('Button icon label renders', () => {
 test('Button reverse icon label renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button
-        reverse
-        icon={<svg />}
-        label='Test'
-        onClick={() => {}}
-      />
+      <Button reverse icon={<svg />} label="Test" onClick={() => {}} />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -116,7 +115,7 @@ test('Button reverse icon label renders', () => {
 test('Button href renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button href='test' />
+      <Button href="test" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -126,7 +125,7 @@ test('Button href renders', () => {
 test('Button hoverIndicator renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button onClick={() => {}} hoverIndicator='background'>
+      <Button onClick={() => {}} hoverIndicator="background">
         hoverIndicator
       </Button>
     </Grommet>
@@ -208,7 +207,7 @@ test('Button is clickable', () => {
   const onClick = jest.fn();
   const component = renderer.create(
     <Grommet>
-      <Button label='Test' onClick={onClick} />
+      <Button label="Test" onClick={onClick} />
     </Grommet>
   );
   const tree = component.toJSON();

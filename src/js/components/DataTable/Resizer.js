@@ -13,7 +13,7 @@ export class Resizer extends Component {
 
   ref = React.createRef();
 
-  onMouseDown = (event) => {
+  onMouseDown = event => {
     if (this.ref.current) {
       /* eslint-disable-next-line react/no-find-dom-node */
       const element = findDOMNode(this.ref.current);
@@ -23,29 +23,29 @@ export class Resizer extends Component {
         document.addEventListener('mouseup', this.onMouseUp);
       });
     }
-  }
+  };
 
-  onMouseMove = (event) => {
+  onMouseMove = event => {
     const { onResize, property } = this.props;
     const { start, width } = this.state;
     // We determined 12 empirically as being wide enough to hit but
     // not too wide to cause false hits.
     const nextWidth = Math.max(12, width + (event.clientX - start));
     onResize(property)(nextWidth);
-  }
+  };
 
   onMouseUp = () => {
     document.removeEventListener('mouseup', this.onMouseUp);
     document.removeEventListener('mousemove', this.onMouseMove);
     this.setState({ start: undefined, width: undefined });
-  }
+  };
 
   render() {
     const { children, onResize, theme } = this.props;
     const { start } = this.state;
     if (onResize) {
       return (
-        <Box ref={this.ref} direction='row' fill>
+        <Box ref={this.ref} direction="row" fill>
           {children}
           <ResizerBox
             flex={false}

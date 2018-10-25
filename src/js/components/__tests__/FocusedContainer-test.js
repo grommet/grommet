@@ -10,11 +10,11 @@ describe('FocusedContainer', () => {
   test('basic', () => {
     jest.useFakeTimers();
     const { container: trapped } = render(
-      <div id='focus-trap-test'><input id='test' /></div>
+      <div id="focus-trap-test">
+        <input id="test" />
+      </div>
     );
-    const { container: focuser } = render(
-      <FocusedContainer id='container'>test focused container</FocusedContainer>
-    );
+    const { container: focuser } = render(<FocusedContainer id="container">test focused container</FocusedContainer>);
     jest.runAllTimers();
     expect(focuser.firstChild).toMatchSnapshot();
     expect(trapped.firstChild).toMatchSnapshot(); // should have tabIndex="-1"
@@ -27,7 +27,7 @@ describe('FocusedContainer', () => {
   test('restrict scroll', () => {
     jest.useFakeTimers();
     const { container } = render(
-      <FocusedContainer id='container' restrictScroll>
+      <FocusedContainer id="container" restrictScroll>
         test focused container
       </FocusedContainer>
     );
@@ -45,11 +45,11 @@ describe('FocusedContainer', () => {
   test('blurs', () => {
     jest.useFakeTimers();
     const { container: trapped } = render(
-      <div id='focus-trap-test'><input id='test' /></div>
+      <div id="focus-trap-test">
+        <input id="test" />
+      </div>
     );
-    const { container: focuser } = render(
-      <FocusedContainer id='container'>test focused container</FocusedContainer>
-    );
+    const { container: focuser } = render(<FocusedContainer id="container">test focused container</FocusedContainer>);
 
     jest.runAllTimers();
 

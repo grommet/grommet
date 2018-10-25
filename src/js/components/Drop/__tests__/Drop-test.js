@@ -10,9 +10,9 @@ import { Drop } from '..';
 class TestInput extends Component {
   state = {
     showDrop: false,
-  }
+  };
 
-  inputRef = React.createRef()
+  inputRef = React.createRef();
 
   componentDidMount() {
     this.setState({ showDrop: true }); // eslint-disable-line
@@ -24,7 +24,7 @@ class TestInput extends Component {
     let drop;
     if (showDrop) {
       drop = (
-        <Drop id='drop-node' target={this.inputRef.current} {...rest}>
+        <Drop id="drop-node" target={this.inputRef.current} {...rest}>
           this is a test
         </Drop>
       );
@@ -48,60 +48,44 @@ describe('Drop', () => {
   });
 
   test('align left right top bottom', () => {
-    render(
-      <TestInput align={{ left: 'right', top: 'bottom' }} />
-    );
+    render(<TestInput align={{ left: 'right', top: 'bottom' }} />);
 
     expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('align right right bottom top', () => {
-    render(
-      <TestInput align={{ right: 'right', bottom: 'top' }} />
-    );
+    render(<TestInput align={{ right: 'right', bottom: 'top' }} />);
 
     expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('align left random', () => {
-    render(
-      <TestInput align={{ left: 'random', bottom: 'bottom' }} />
-    );
+    render(<TestInput align={{ left: 'random', bottom: 'bottom' }} />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('align right left top top', () => {
-    render(
-      <TestInput align={{ right: 'left', top: 'top' }} />
-    );
+    render(<TestInput align={{ right: 'left', top: 'top' }} />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('align right right bottom top', () => {
-    render(
-      <TestInput align={{ right: 'right', bottom: 'top' }} />
-    );
+    render(<TestInput align={{ right: 'right', bottom: 'top' }} />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('align right random', () => {
-    render(
-      <TestInput align={{ right: 'random' }} />
-    );
+    render(<TestInput align={{ right: 'random' }} />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('invalid align', () => {
-    render(
-      <TestInput align={{ whatever: 'right' }} />
-    );
+    render(<TestInput align={{ whatever: 'right' }} />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('no stretch', () => {
-    render(
-      <TestInput stretch={false} />
-    );
+    render(<TestInput stretch={false} />);
 
     expectPortal('drop-node').toMatchSnapshot();
   });

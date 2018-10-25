@@ -19,31 +19,15 @@ class Anchor extends Component {
   }
 
   render() {
-    const {
-      a11yTitle,
-      children,
-      color,
-      disabled,
-      forwardRef,
-      href,
-      icon,
-      focus,
-      label,
-      onClick,
-      reverse,
-      theme,
-      ...rest
-    } = this.props;
+    const { a11yTitle, children, color, disabled, forwardRef, href, icon, focus, label, onClick, reverse, theme, ...rest } = this.props;
 
-    const anchorLabel = typeof label === 'string'
-      ? <Text>{label}</Text>
-      : label;
+    const anchorLabel = typeof label === 'string' ? <Text>{label}</Text> : label;
 
     let coloredIcon = icon;
     if (icon && !icon.props.color) {
-      coloredIcon = cloneElement(
-        icon, { color: normalizeColor(color || theme.anchor.color, theme) }
-      );
+      coloredIcon = cloneElement(icon, {
+        color: normalizeColor(color || theme.anchor.color, theme),
+      });
     }
 
     const first = reverse ? anchorLabel : coloredIcon;
@@ -64,12 +48,14 @@ class Anchor extends Component {
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
       >
-        {(first || second) ? (
-          <Box tag='span' direction='row' align='center' gap='small' style={{ display: 'inline-flex' }}>
+        {first || second ? (
+          <Box tag="span" direction="row" align="center" gap="small" style={{ display: 'inline-flex' }}>
             {first}
             {second}
           </Box>
-        ) : children}
+        ) : (
+          children
+        )}
       </StyledAnchor>
     );
   }
@@ -82,7 +68,7 @@ if (process.env.NODE_ENV !== 'production') {
 const AnchorWrapper = compose(
   withFocus,
   withTheme,
-  withForwardRef,
+  withForwardRef
 )(AnchorDoc || Anchor);
 
 export { AnchorWrapper as Anchor };

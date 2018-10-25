@@ -7,13 +7,13 @@ export const baseStyle = css`
   font-family: ${props => props.theme.global.font.family};
   font-size: ${props => props.theme.global.font.size};
   line-height: ${props => props.theme.global.font.height};
-  ${props => !props.plain && props.theme.global.colors.background
-    && css`
+  ${props =>
+    !props.plain &&
+    props.theme.global.colors.background &&
+    css`
       background: ${normalizeColor('background', props.theme, true)};
       color: ${normalizeColor('text', props.theme, true)};
-    `}
-
-  box-sizing: border-box;
+    `} box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -21,9 +21,7 @@ export const baseStyle = css`
 `;
 
 export const controlBorderStyle = css`
-  border: ${props => (
-    props.theme.global.control.border.width)} solid ${props => (
-      normalizeColor('border', props.theme))};
+  border: ${props => props.theme.global.control.border.width} solid ${props => normalizeColor('border', props.theme)};
   border-radius: ${props => props.theme.global.control.border.radius};
 `;
 
@@ -33,9 +31,14 @@ export const edgeStyle = (kind, data, responsive, responsiveBreakpoint, theme) =
   if (typeof data === 'string') {
     return css`
       ${kind}: ${theme.global.edgeSize[data]};
-      ${responsive && breakpoint ? breakpointStyle(breakpoint, `
+      ${responsive && breakpoint
+        ? breakpointStyle(
+            breakpoint,
+            `
         ${kind}: ${breakpoint.edgeSize[data]};
-      `) : ''}
+      `
+          )
+        : ''};
     `;
   }
   const result = [];
@@ -43,52 +46,82 @@ export const edgeStyle = (kind, data, responsive, responsiveBreakpoint, theme) =
     result.push(css`
       ${kind}-left: ${theme.global.edgeSize[data.horizontal]};
       ${kind}-right: ${theme.global.edgeSize[data.horizontal]};
-      ${responsive && breakpoint ? breakpointStyle(breakpoint, `
+      ${responsive && breakpoint
+        ? breakpointStyle(
+            breakpoint,
+            `
         ${kind}-left: ${breakpoint.edgeSize[data.horizontal]};
         ${kind}-right: ${breakpoint.edgeSize[data.horizontal]};
-      `) : ''}
+      `
+          )
+        : ''};
     `);
   }
   if (data.vertical) {
     result.push(css`
       ${kind}-top: ${theme.global.edgeSize[data.vertical]};
       ${kind}-bottom: ${theme.global.edgeSize[data.vertical]};
-      ${responsive && breakpoint ? breakpointStyle(breakpoint, `
+      ${responsive && breakpoint
+        ? breakpointStyle(
+            breakpoint,
+            `
         ${kind}-top: ${breakpoint.edgeSize[data.vertical]};
         ${kind}-bottom: ${breakpoint.edgeSize[data.vertical]};
-      `) : ''}
+      `
+          )
+        : ''};
     `);
   }
   if (data.top) {
     result.push(css`
       ${kind}-top: ${theme.global.edgeSize[data.top]};
-      ${responsive && breakpoint ? breakpointStyle(breakpoint, `
+      ${responsive && breakpoint
+        ? breakpointStyle(
+            breakpoint,
+            `
         ${kind}-top: ${breakpoint.edgeSize[data.top]};
-      `) : ''}
+      `
+          )
+        : ''};
     `);
   }
   if (data.bottom) {
     result.push(css`
       ${kind}-bottom: ${theme.global.edgeSize[data.bottom]};
-      ${responsive && breakpoint ? breakpointStyle(breakpoint, `
+      ${responsive && breakpoint
+        ? breakpointStyle(
+            breakpoint,
+            `
         ${kind}-bottom: ${breakpoint.edgeSize[data.bottom]};
-      `) : ''}
+      `
+          )
+        : ''};
     `);
   }
   if (data.left) {
     result.push(css`
       ${kind}-left: ${theme.global.edgeSize[data.left]};
-      ${responsive && breakpoint ? breakpointStyle(breakpoint, `
+      ${responsive && breakpoint
+        ? breakpointStyle(
+            breakpoint,
+            `
         ${kind}-left: ${breakpoint.edgeSize[data.left]};
-      `) : ''}
+      `
+          )
+        : ''};
     `);
   }
   if (data.right) {
     result.push(css`
       ${kind}-right: ${theme.global.edgeSize[data.right]};
-      ${responsive && breakpoint ? breakpointStyle(breakpoint, `
+      ${responsive && breakpoint
+        ? breakpointStyle(
+            breakpoint,
+            `
         ${kind}-right: ${breakpoint.edgeSize[data.left]};
-      `) : ''}
+      `
+          )
+        : ''};
     `);
   }
   return result;
@@ -103,16 +136,10 @@ export const focusStyle = css`
   > polygon,
   > polyline,
   > rect {
-    outline: ${
-      props => normalizeColor(props.theme.global.focus.border.color, props.theme)
-    } solid 2px;
+    outline: ${props => normalizeColor(props.theme.global.focus.border.color, props.theme)} solid 2px;
   }
-  border-color: ${
-    props => normalizeColor(props.theme.global.focus.border.color, props.theme)
-  };
-  box-shadow: 0 0 2px 2px ${
-    props => normalizeColor(props.theme.global.focus.border.color, props.theme)
-  };
+  border-color: ${props => normalizeColor(props.theme.global.focus.border.color, props.theme)};
+  box-shadow: 0 0 2px 2px ${props => normalizeColor(props.theme.global.focus.border.color, props.theme)};
 `;
 
 export const inputStyle = css`
@@ -120,27 +147,24 @@ export const inputStyle = css`
   font-size: inherit;
   border: none;
   -webkit-appearance: none;
-  padding: ${props => (
-    (parseMetricToNum(props.theme.global.spacing) / 2)
-    - parseMetricToNum(props.theme.global.control.border.width)
-  )}px;
+  padding: ${props => parseMetricToNum(props.theme.global.spacing) / 2 - parseMetricToNum(props.theme.global.control.border.width)}px;
   outline: none;
   background: transparent;
   color: inherit;
-  ${props => props.theme.global.input.weight && css`
-    font-weight: ${props.theme.global.input.weight};
-  `}
-  margin: 0;
+  ${props =>
+    props.theme.global.input.weight &&
+    css`
+      font-weight: ${props.theme.global.input.weight};
+    `} margin: 0;
 
-  ${props => props.focus && (!props.plain || props.focusIndicator) && focusStyle}
-  ${controlBorderStyle}
+  ${props => props.focus && (!props.plain || props.focusIndicator) && focusStyle} ${controlBorderStyle}
 
   ::-webkit-search-decoration {
     -webkit-appearance: none;
   }
 `;
 
-export const overflowStyle = (overflowProp) => {
+export const overflowStyle = overflowProp => {
   if (typeof overflowProp === 'string') {
     return css`
       overflow: ${overflowProp};
@@ -148,8 +172,7 @@ export const overflowStyle = (overflowProp) => {
   }
 
   return css`
-    ${overflowProp.horizontal && `overflow-x: ${overflowProp.horizontal};`}
-    ${overflowProp.vertical && `overflow-y: ${overflowProp.vertical};`}
+    ${overflowProp.horizontal && `overflow-x: ${overflowProp.horizontal};`} ${overflowProp.vertical && `overflow-y: ${overflowProp.vertical};`};
   `;
 };
 
@@ -171,7 +194,5 @@ const ALIGN_SELF_MAP = {
 export const genericStyles = css`
   ${props => props.alignSelf && `align-self: ${ALIGN_SELF_MAP[props.alignSelf]};`}
   ${props => props.gridArea && `grid-area: ${props.gridArea};`}
-  ${props => (props.margin
-    && edgeStyle('margin', props.margin, props.responsive,
-      props.theme.global.edgeSize.responsiveBreakpoint, props.theme))}
+  ${props => props.margin && edgeStyle('margin', props.margin, props.responsive, props.theme.global.edgeSize.responsiveBreakpoint, props.theme)}
 `;

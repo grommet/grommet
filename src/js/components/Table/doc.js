@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 import { genericProps, getAvailableAtBadge } from '../../utils';
 
-export const doc = (Table) => {
+export const doc = Table => {
   const DocumentedTable = describe(Table)
     .availableAt(getAvailableAtBadge('Table'))
     .description('A table of data organized in cells.')

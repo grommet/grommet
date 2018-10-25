@@ -18,7 +18,7 @@ test('WorldMap renders', () => {
 test('WorldMap color renders', () => {
   const component = renderer.create(
     <Grommet>
-      <WorldMap color='brand' />
+      <WorldMap color="brand" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -29,9 +29,13 @@ test('WorldMap continents renders', () => {
   const component = renderer.create(
     <Grommet>
       <WorldMap
-        continents={[{
-          name: 'Africa', color: 'accent-1', onClick: () => {},
-        }]}
+        continents={[
+          {
+            name: 'Africa',
+            color: 'accent-1',
+            onClick: () => {},
+          },
+        ]}
       />
     </Grommet>
   );
@@ -43,12 +47,14 @@ test('WorldMap places renders', () => {
   const component = renderer.create(
     <Grommet>
       <WorldMap
-        places={[{
-          name: 'Sydney',
-          location: [-33.8830555556, 151.216666667],
-          color: 'accent-1',
-          onClick: () => {},
-        }]}
+        places={[
+          {
+            name: 'Sydney',
+            location: [-33.8830555556, 151.216666667],
+            color: 'accent-1',
+            onClick: () => {},
+          },
+        ]}
       />
     </Grommet>
   );

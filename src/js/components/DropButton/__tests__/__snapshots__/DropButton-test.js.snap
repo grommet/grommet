@@ -87,25 +87,25 @@ exports[`DropButton close by clicking outside 2`] = `
 
 exports[`DropButton close by clicking outside 3`] = `
 "@media only screen and (max-width:768px) {
-  .MJmug {
+  .jewLfw {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .MJmug {
+  .jewLfw {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cBpjKy {
+  .dhsUIZ {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cBpjKy {
+  .dhsUIZ {
     padding: 0px;
   }
 }
@@ -367,25 +367,25 @@ exports[`DropButton open and close 2`] = `
 
 exports[`DropButton open and close 3`] = `
 "@media only screen and (max-width:768px) {
-  .MJmug {
+  .jewLfw {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .MJmug {
+  .jewLfw {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cBpjKy {
+  .dhsUIZ {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cBpjKy {
+  .dhsUIZ {
     padding: 0px;
   }
 }
@@ -571,25 +571,25 @@ exports[`DropButton opened ref 2`] = `
 
 exports[`DropButton opened ref 3`] = `
 "@media only screen and (max-width:768px) {
-  .MJmug {
+  .jewLfw {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .MJmug {
+  .jewLfw {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cBpjKy {
+  .dhsUIZ {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cBpjKy {
+  .dhsUIZ {
     padding: 0px;
   }
 }

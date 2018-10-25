@@ -10,13 +10,13 @@ class DropButton extends Component {
   static defaultProps = {
     a11yTitle: 'Open Drop',
     dropAlign: { top: 'top', left: 'left' },
-  }
+  };
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { forwardRef, open } = nextProps;
     const { buttonRef, show } = prevState;
     const nextButtonRef = forwardRef || buttonRef;
-    const reRenderOnMount = (show === undefined && open);
+    const reRenderOnMount = show === undefined && open;
     if (open !== undefined && open !== show) {
       return { show: open, reRenderOnMount, buttonRef: nextButtonRef };
     }
@@ -28,7 +28,7 @@ class DropButton extends Component {
 
   state = {
     buttonRef: React.createRef(),
-  }
+  };
 
   componentDidMount() {
     const { buttonRef, reRenderOnMount } = this.state;
@@ -49,25 +49,21 @@ class DropButton extends Component {
 
   onDropClose = () => {
     const { onClose, open } = this.props;
-    this.setState({ show: (open || false) }, () => {
+    this.setState({ show: open || false }, () => {
       if (onClose) {
         onClose();
       }
     });
-  }
+  };
 
   onToggle = () => {
     const { onClose, onOpen } = this.props;
     const { show } = this.state;
-    this.setState({ show: !show },
-      show ? (onClose && onClose()) : (onOpen && onOpen()));
-  }
+    this.setState({ show: !show }, show ? onClose && onClose() : onOpen && onOpen());
+  };
 
   render() {
-    const {
-      disabled, dropAlign, forwardRef, dropContent, dropTarget, id, open,
-      theme, ...rest
-    } = this.props;
+    const { disabled, dropAlign, forwardRef, dropContent, dropTarget, id, open, theme, ...rest } = this.props;
     const { buttonRef, show } = this.state;
 
     delete rest.onClose;
@@ -82,7 +78,7 @@ class DropButton extends Component {
           align={dropAlign}
           target={dropTarget || buttonRef.current}
           onClickOutside={this.onDropClose}
-          onEsc={(event) => {
+          onEsc={event => {
             // prevents layer to close on esc
             event.stopPropagation();
             event.nativeEvent.stopImmediatePropagation();
@@ -96,13 +92,7 @@ class DropButton extends Component {
 
     return (
       <React.Fragment>
-        <Button
-          id={id}
-          ref={buttonRef}
-          disabled={disabled}
-          onClick={this.onToggle}
-          {...rest}
-        />
+        <Button id={id} ref={buttonRef} disabled={disabled} onClick={this.onToggle} {...rest} />
         {drop}
       </React.Fragment>
     );
@@ -115,7 +105,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const DropButtonWrapper = compose(
   withTheme,
-  withForwardRef,
+  withForwardRef
 )(DropButtonDoc || DropButton);
 
 export { DropButtonWrapper as DropButton };

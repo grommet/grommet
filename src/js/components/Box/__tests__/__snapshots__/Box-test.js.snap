@@ -608,8 +608,8 @@ exports[`Box animation 1`] = `
   flex-direction: column;
   padding: 0px;
   opacity: 0;
-  -webkit-animation: dHUfhi 1s 0s forwards;
-  animation: dHUfhi 1s 0s forwards;
+  -webkit-animation: dYVibJ 1s 0s forwards;
+  animation: dYVibJ 1s 0s forwards;
 }
 
 .c2 {
@@ -628,8 +628,8 @@ exports[`Box animation 1`] = `
   flex-direction: column;
   padding: 0px;
   opacity: 1;
-  -webkit-animation: gmgyXe 1s 0s forwards;
-  animation: gmgyXe 1s 0s forwards;
+  -webkit-animation: iyuEas 1s 0s forwards;
+  animation: iyuEas 1s 0s forwards;
 }
 
 .c3 {
@@ -650,8 +650,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: rotate(-5deg);
   -ms-transform: rotate(-5deg);
   transform: rotate(-5deg);
-  -webkit-animation: cbiWfb 0.1s 0s alternate infinite;
-  animation: cbiWfb 0.1s 0s alternate infinite;
+  -webkit-animation: kQKxbX 0.1s 0s alternate infinite;
+  animation: kQKxbX 0.1s 0s alternate infinite;
 }
 
 .c4 {
@@ -672,8 +672,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  -webkit-animation: ipKHns 1s 0s alternate infinite;
-  animation: ipKHns 1s 0s alternate infinite;
+  -webkit-animation: dVaADA 1s 0s alternate infinite;
+  animation: dVaADA 1s 0s alternate infinite;
 }
 
 .c5 {
@@ -694,8 +694,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: translateY(10%);
   -ms-transform: translateY(10%);
   transform: translateY(10%);
-  -webkit-animation: fBAycS 1s 0s forwards;
-  animation: fBAycS 1s 0s forwards;
+  -webkit-animation: fucJFq 1s 0s forwards;
+  animation: fucJFq 1s 0s forwards;
 }
 
 .c6 {
@@ -716,8 +716,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: translateY(-10%);
   -ms-transform: translateY(-10%);
   transform: translateY(-10%);
-  -webkit-animation: iGTGXr 1s 0s forwards;
-  animation: iGTGXr 1s 0s forwards;
+  -webkit-animation: cQDPnb 1s 0s forwards;
+  animation: cQDPnb 1s 0s forwards;
 }
 
 .c7 {
@@ -738,8 +738,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: translateX(10%);
   -ms-transform: translateX(10%);
   transform: translateX(10%);
-  -webkit-animation: zHfFU 1s 0s forwards;
-  animation: zHfFU 1s 0s forwards;
+  -webkit-animation: djcjCU 1s 0s forwards;
+  animation: djcjCU 1s 0s forwards;
 }
 
 .c8 {
@@ -760,8 +760,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: translateX(-10%);
   -ms-transform: translateX(-10%);
   transform: translateX(-10%);
-  -webkit-animation: jbclMb 1s 0s forwards;
-  animation: jbclMb 1s 0s forwards;
+  -webkit-animation: kDJvsp 1s 0s forwards;
+  animation: kDJvsp 1s 0s forwards;
 }
 
 .c9 {
@@ -782,8 +782,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
-  -webkit-animation: gEDhLs 1s 0s forwards;
-  animation: gEDhLs 1s 0s forwards;
+  -webkit-animation: dOplna 1s 0s forwards;
+  animation: dOplna 1s 0s forwards;
 }
 
 .c10 {
@@ -804,8 +804,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
-  -webkit-animation: cWVKP 1s 0s forwards;
-  animation: cWVKP 1s 0s forwards;
+  -webkit-animation: dkitsZ 1s 0s forwards;
+  animation: dkitsZ 1s 0s forwards;
 }
 
 .c11 {
@@ -827,8 +827,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: translateY(10%);
   -ms-transform: translateY(10%);
   transform: translateY(10%);
-  -webkit-animation: dHUfhi 1s 0s forwards,fBAycS 1s 0s forwards;
-  animation: dHUfhi 1s 0s forwards,fBAycS 1s 0s forwards;
+  -webkit-animation: dYVibJ 1s 0s forwards,fucJFq 1s 0s forwards;
+  animation: dYVibJ 1s 0s forwards,fucJFq 1s 0s forwards;
 }
 
 .c12 {
@@ -847,8 +847,8 @@ exports[`Box animation 1`] = `
   flex-direction: column;
   padding: 0px;
   opacity: 0;
-  -webkit-animation: dHUfhi 1s 0.5s forwards;
-  animation: dHUfhi 1s 0.5s forwards;
+  -webkit-animation: dYVibJ 1s 0.5s forwards;
+  animation: dYVibJ 1s 0.5s forwards;
 }
 
 .c13 {
@@ -870,8 +870,8 @@ exports[`Box animation 1`] = `
   -webkit-transform: translateY(10%);
   -ms-transform: translateY(10%);
   transform: translateY(10%);
-  -webkit-animation: dHUfhi 1s 0.5s forwards,fBAycS 1s 0.5s forwards;
-  animation: dHUfhi 1s 0.5s forwards,fBAycS 1s 0.5s forwards;
+  -webkit-animation: dYVibJ 1s 0.5s forwards,fucJFq 1s 0.5s forwards;
+  animation: dYVibJ 1s 0.5s forwards,fucJFq 1s 0.5s forwards;
 }
 
 @media only screen and (max-width:768px) {

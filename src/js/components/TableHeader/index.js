@@ -1,2 +1,1 @@
-
 export { TableHeader } from './TableHeader';

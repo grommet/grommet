@@ -7,11 +7,9 @@ import { withTheme } from '../hocs';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
 
-const TableCell = ({
-  children, plain, scope, size, theme, verticalAlign, ...rest
-}) => (
+const TableCell = ({ children, plain, scope, size, theme, verticalAlign, ...rest }) => (
   <TableContext.Consumer>
-    {(tableContext) => {
+    {tableContext => {
       let tableContextTheme;
       if (tableContext === 'header') {
         tableContextTheme = theme.table && theme.table.header;
@@ -21,7 +19,7 @@ const TableCell = ({
         tableContextTheme = theme.table && theme.table.body;
       }
       const boxProps = { ...rest };
-      Object.keys(boxProps).forEach((key) => {
+      Object.keys(boxProps).forEach(key => {
         if (tableContextTheme[key] && boxProps[key] === undefined) {
           delete boxProps[key];
         }
@@ -35,13 +33,15 @@ const TableCell = ({
           tableContext={tableContext}
           tableContextTheme={tableContextTheme}
           theme={theme}
-          verticalAlign={verticalAlign
-            || (tableContextTheme ? tableContextTheme.verticalAlign : undefined)
-          }
+          verticalAlign={verticalAlign || (tableContextTheme ? tableContextTheme.verticalAlign : undefined)}
           {...(plain ? rest : {})}
         >
-          {plain ? children : (
-            <Box {...tableContextTheme} {...boxProps}>{children}</Box>
+          {plain ? (
+            children
+          ) : (
+            <Box {...tableContextTheme} {...boxProps}>
+              {children}
+            </Box>
           )}
         </StyledTableCell>
       );
@@ -53,8 +53,6 @@ let TableCellDoc;
 if (process.env.NODE_ENV !== 'production') {
   TableCellDoc = require('./doc').doc(TableCell); // eslint-disable-line global-require
 }
-const TableCellWrapper = compose(
-  withTheme,
-)(TableCellDoc || TableCell);
+const TableCellWrapper = compose(withTheme)(TableCellDoc || TableCell);
 
 export { TableCellWrapper as TableCell };

@@ -21,7 +21,7 @@ export const StyledCheckBoxIcon = styled.svg`
   stroke: ${props => normalizeColor(props.theme.checkBox.color || 'control', props.theme)};
   width: ${props => props.theme.checkBox.icon.size || props.theme.checkBox.size};
   height: ${props => props.theme.checkBox.icon.size || props.theme.checkBox.size};
-  ${props => props.theme.checkBox.icon.extend}
+  ${props => props.theme.checkBox.icon.extend};
 `;
 
 export const StyledCheckBoxContainer = styled.label`
@@ -41,16 +41,14 @@ export const StyledCheckBoxInput = styled.input`
   height: 100%;
   margin: 0;
   z-index: 1;
-  ${props => !props.disabled && 'cursor: pointer;'}
-
-  :checked + span > span {
+  ${props => !props.disabled && 'cursor: pointer;'} :checked + span > span {
     left: calc(${props => props.theme.checkBox.toggle.size} - ${props => props.theme.checkBox.size});
     background: ${props => normalizeColor(props.theme.checkBox.color || 'control', props.theme)};
   }
 `;
 
 export const StyledCheckBoxBox = styled.div`
-  ${props => props.theme.checkBox.check.extend}
+  ${props => props.theme.checkBox.check.extend};
 `;
 
 export const StyledCheckBoxToggle = styled.span`
@@ -63,12 +61,11 @@ export const StyledCheckBoxToggle = styled.span`
   border: ${props => props.theme.checkBox.border.width} solid;
   border-color: ${props => normalizeColor(props.theme.checkBox.border.color, props.theme)};
   border-radius: ${props => props.theme.checkBox.toggle.radius};
-  background-color: ${props => (props.theme.checkBox.toggle.background ? (
-    normalizeColor(props.theme.checkBox.toggle.background, props.theme)
-  ) : 'transparent')};
+  background-color: ${props =>
+    props.theme.checkBox.toggle.background ? normalizeColor(props.theme.checkBox.toggle.background, props.theme) : 'transparent'};
 
   ${props => props.focus && focusStyle};
-  ${props => props.theme.checkBox.toggle.extend}
+  ${props => props.theme.checkBox.toggle.extend};
 `;
 
 export const StyledCheckBoxKnob = styled.span`
@@ -81,7 +78,7 @@ export const StyledCheckBoxKnob = styled.span`
   height: ${props => props.theme.checkBox.size};
   background: ${props => normalizeColor(props.theme.checkBox.toggle.color[props.theme.dark ? 'dark' : 'light'], props.theme)};
   border-radius: ${props => props.theme.checkBox.toggle.radius};
-  ${props => props.theme.checkBox.toggle.knob.extend}
+  ${props => props.theme.checkBox.toggle.knob.extend};
 `;
 
 export const StyledCheckBox = styled.div`

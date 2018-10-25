@@ -1,2 +1,1 @@
-
 export { Collapsible } from './Collapsible';

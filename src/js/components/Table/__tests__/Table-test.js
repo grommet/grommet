@@ -2,9 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import {
-  Grommet, Table, TableHeader, TableFooter, TableBody, TableRow, TableCell,
-} from '../..';
+import { Grommet, Table, TableHeader, TableFooter, TableBody, TableRow, TableCell } from '../..';
 
 test('Table renders', () => {
   const component = renderer.create(
@@ -19,7 +17,7 @@ test('Table renders', () => {
 test('Table caption renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Table caption='Caption' />
+      <Table caption="Caption" />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -108,12 +106,12 @@ test('TableCell scope renders', () => {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableCell scope='col' />
+            <TableCell scope="col" />
           </TableRow>
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableCell scope='row' />
+            <TableCell scope="row" />
           </TableRow>
         </TableBody>
       </Table>
@@ -129,10 +127,10 @@ test('TableCell size renders', () => {
       <Table>
         <TableBody>
           <TableRow>
-            <TableCell size='xsmall' />
-            <TableCell size='small' />
-            <TableCell size='medium' />
-            <TableCell size='large' />
+            <TableCell size="xsmall" />
+            <TableCell size="small" />
+            <TableCell size="medium" />
+            <TableCell size="large" />
           </TableRow>
         </TableBody>
       </Table>
@@ -140,8 +138,8 @@ test('TableCell size renders', () => {
       <Table>
         <TableBody>
           <TableRow>
-            <TableCell size='1/2' />
-            <TableCell size='2/4' />
+            <TableCell size="1/2" />
+            <TableCell size="2/4" />
           </TableRow>
         </TableBody>
       </Table>
@@ -149,8 +147,8 @@ test('TableCell size renders', () => {
       <Table>
         <TableBody>
           <TableRow>
-            <TableCell size='1/3' />
-            <TableCell size='2/3' />
+            <TableCell size="1/3" />
+            <TableCell size="2/3" />
           </TableRow>
         </TableBody>
       </Table>
@@ -158,8 +156,8 @@ test('TableCell size renders', () => {
       <Table>
         <TableBody>
           <TableRow>
-            <TableCell size='1/4' />
-            <TableCell size='3/4' />
+            <TableCell size="1/4" />
+            <TableCell size="3/4" />
           </TableRow>
         </TableBody>
       </Table>
@@ -175,9 +173,9 @@ test('TableCell verticalAlign renders', () => {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableCell verticalAlign='top' />
-            <TableCell verticalAlign='middle' />
-            <TableCell verticalAlign='bottom' />
+            <TableCell verticalAlign="top" />
+            <TableCell verticalAlign="middle" />
+            <TableCell verticalAlign="bottom" />
           </TableRow>
         </TableHeader>
       </Table>

@@ -5,5 +5,5 @@ export const StyledDiagram = styled.svg`
   width: 100%;
   height: 100%;
 
-  ${props => props.theme.diagram && props.theme.diagram.extend}
+  ${props => props.theme.diagram && props.theme.diagram.extend};
 `;

@@ -13,34 +13,18 @@ describe('DropButton', () => {
   afterEach(cleanup);
 
   test('closed', () => {
-    const component = renderer.create(
-      <DropButton
-        label='Dropper'
-        dropContent={<div id='drop-contents'>drop contents</div>}
-      />
-    );
+    const component = renderer.create(<DropButton label="Dropper" dropContent={<div id="drop-contents">drop contents</div>} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('opened', () => {
-    const component = renderer.create(
-      <DropButton
-        label='Dropper'
-        open
-        dropContent={<div id='drop-contents'>drop contents</div>}
-      />
-    );
+    const component = renderer.create(<DropButton label="Dropper" open dropContent={<div id="drop-contents">drop contents</div>} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('open and close', () => {
     window.scrollTo = jest.fn();
-    const { getByText, container } = render(
-      <DropButton
-        label='Dropper'
-        dropContent={<div id='drop-contents'>Drop Contents</div>}
-      />
-    );
+    const { getByText, container } = render(<DropButton label="Dropper" dropContent={<div id="drop-contents">Drop Contents</div>} />);
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
 
@@ -52,13 +36,8 @@ describe('DropButton', () => {
     expect(window.scrollTo).toBeCalled();
   });
 
-  test('close by clicking outside', (done) => {
-    const { getByText, container } = render(
-      <DropButton
-        label='Dropper'
-        dropContent={<div id='drop-contents'>Drop Contents</div>}
-      />
-    );
+  test('close by clicking outside', done => {
+    const { getByText, container } = render(<DropButton label="Dropper" dropContent={<div id="drop-contents">Drop Contents</div>} />);
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
 
@@ -74,13 +53,7 @@ describe('DropButton', () => {
   });
 
   test('disabled', () => {
-    const { getByText, container } = render(
-      <DropButton
-        disabled
-        label='Dropper'
-        dropContent={<div id='drop-contents'>Drop Contents</div>}
-      />
-    );
+    const { getByText, container } = render(<DropButton disabled label="Dropper" dropContent={<div id="drop-contents">Drop Contents</div>} />);
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
 
@@ -90,14 +63,7 @@ describe('DropButton', () => {
 
   test('opened ref', () => {
     const ref = React.createRef();
-    const { container } = render(
-      <DropButton
-        ref={ref}
-        open
-        label='Dropper'
-        dropContent={<div id='drop-contents'>Drop Contents</div>}
-      />
-    );
+    const { container } = render(<DropButton ref={ref} open label="Dropper" dropContent={<div id="drop-contents">Drop Contents</div>} />);
     expect(container.firstChild).toMatchSnapshot();
     expectPortal('drop-contents').toMatchSnapshot();
   });

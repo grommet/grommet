@@ -1,2 +1,1 @@
-
 export { TableCell } from './TableCell';

@@ -1,9 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import {
-  Grommet, Box, Distribution, Text,
-} from 'grommet';
+import { Grommet, Box, Distribution, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const SimpleDistribution = () => (
@@ -19,13 +17,12 @@ const SimpleDistribution = () => (
       ]}
     >
       {value => (
-        <Box pad='xsmall' background={value.color} fill>
-          <Text size='large'>{value.value}</Text>
+        <Box pad="xsmall" background={value.color} fill>
+          <Text size="large">{value.value}</Text>
         </Box>
       )}
     </Distribution>
   </Grommet>
 );
 
-storiesOf('Distribution', module)
-  .add('Simple', () => <SimpleDistribution />);
+storiesOf('Distribution', module).add('Simple', () => <SimpleDistribution />);

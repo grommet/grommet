@@ -15,9 +15,9 @@ class LayerContainer extends Component {
     margin: 'none',
     modal: true,
     position: 'center',
-  }
+  };
 
-  state = {}
+  state = {};
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { theme } = nextProps;
@@ -43,9 +43,9 @@ class LayerContainer extends Component {
     return null;
   }
 
-  containerRef = React.createRef()
+  containerRef = React.createRef();
 
-  layerRef = React.createRef()
+  layerRef = React.createRef();
 
   componentDidMount() {
     const { position } = this.props;
@@ -67,55 +67,23 @@ class LayerContainer extends Component {
     if (node && node.scrollIntoView) {
       node.scrollIntoView();
     }
-  }
+  };
 
   render() {
-    const {
-      children,
-      id,
-      modal,
-      onClickOutside,
-      onEsc,
-      plain,
-      position,
-      responsive,
-      theme: propsTheme,
-      ...rest
-    } = this.props;
+    const { children, id, modal, onClickOutside, onEsc, plain, position, responsive, theme: propsTheme, ...rest } = this.props;
     const { theme: stateTheme } = this.state;
     const theme = stateTheme || propsTheme;
 
     let content = (
-      <StyledContainer
-        id={id}
-        {...rest}
-        theme={theme}
-        position={position}
-        plain={plain}
-        responsive={responsive}
-        ref={this.containerRef}
-      >
+      <StyledContainer id={id} {...rest} theme={theme} position={position} plain={plain} responsive={responsive} ref={this.containerRef}>
         {children}
       </StyledContainer>
     );
 
     if (modal) {
       content = (
-        <StyledLayer
-          id={id}
-          plain={plain}
-          position={position}
-          theme={theme}
-          responsive={responsive}
-          tabIndex='-1'
-          ref={this.layerRef}
-        >
-          <StyledOverlay
-            plain={plain}
-            onMouseDown={onClickOutside}
-            responsive={responsive}
-            theme={theme}
-          />
+        <StyledLayer id={id} plain={plain} position={position} theme={theme} responsive={responsive} tabIndex="-1" ref={this.layerRef}>
+          <StyledOverlay plain={plain} onMouseDown={onClickOutside} responsive={responsive} theme={theme} />
           {content}
         </StyledLayer>
       );
@@ -123,7 +91,7 @@ class LayerContainer extends Component {
 
     if (onEsc) {
       content = (
-        <Keyboard target='document' onEsc={onEsc}>
+        <Keyboard target="document" onEsc={onEsc}>
           {content}
         </Keyboard>
       );
@@ -132,9 +100,7 @@ class LayerContainer extends Component {
     if (modal) {
       content = (
         <FocusedContainer hidden={position === 'hidden'} restrictScroll>
-          <IconThemeContext.Provider value={theme.icon}>
-            {content}
-          </IconThemeContext.Provider>
+          <IconThemeContext.Provider value={theme.icon}>{content}</IconThemeContext.Provider>
         </FocusedContainer>
       );
     }

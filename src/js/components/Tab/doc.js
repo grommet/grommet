@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-export const doc = (Tab) => {
+export const doc = Tab => {
   const DocumentedTab = describe(Tab)
     .description('One tab within Tabs.')
     .usage(
@@ -9,13 +9,8 @@ export const doc = (Tab) => {
     );
 
   DocumentedTab.propTypes = {
-    plain: PropTypes.bool.description(
-      'Whether this is a plain tab with no style.'
-    ).defaultValue(false),
-    title: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.node,
-    ]).description('The title of the tab.'),
+    plain: PropTypes.bool.description('Whether this is a plain tab with no style.').defaultValue(false),
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description('The title of the tab.'),
   };
 
   return DocumentedTab;
