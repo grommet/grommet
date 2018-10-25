@@ -65,7 +65,7 @@ class AccordionPanel extends Component {
       || 'control', theme);
 
     return (
-      <AccordionContext>
+      <AccordionContext.Consumer>
         {(panelContext) => {
           const { active, animate, onPanelChange } = panelContext;
           const AccordionIcon = active ? (
@@ -123,7 +123,7 @@ class AccordionPanel extends Component {
             </Box>
           );
         }}
-      </AccordionContext>
+      </AccordionContext.Consumer>
     );
   }
 }
