@@ -36,6 +36,10 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const GridWrapper = compose(withTheme)(GridDoc || Grid);
 
-GridWrapper.available = typeof window !== 'undefined' && window.CSS && window.CSS.supports && window.CSS.supports('display', 'grid');
+GridWrapper.available =
+  typeof window !== 'undefined' &&
+  window.CSS &&
+  window.CSS.supports &&
+  window.CSS.supports('display', 'grid');
 
 export { GridWrapper as Grid };

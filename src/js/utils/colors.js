@@ -29,7 +29,9 @@ const getRGBArray = color => {
     return parseHexToRGB(color);
   }
   if (/^rgb/.test(color)) {
-    return color.match(/rgba?\((\s?[0-9]*\s?),(\s?[0-9]*\s?),(\s?[0-9]*\s?).*?\)/).splice(1);
+    return color
+      .match(/rgba?\((\s?[0-9]*\s?),(\s?[0-9]*\s?),(\s?[0-9]*\s?).*?\)/)
+      .splice(1);
   }
   return color;
 };

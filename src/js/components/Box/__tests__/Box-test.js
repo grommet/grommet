@@ -352,12 +352,28 @@ describe('Box', () => {
   test('animation', () => {
     const component = renderer.create(
       <Grommet>
-        {['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut'].map(type => (
+        {[
+          'fadeIn',
+          'fadeOut',
+          'jiggle',
+          'pulse',
+          'slideUp',
+          'slideDown',
+          'slideLeft',
+          'slideRight',
+          'zoomIn',
+          'zoomOut',
+        ].map(type => (
           <Box key={type} animation={type} />
         ))}
         <Box animation={['fadeIn', 'slideUp']} />
         <Box animation={{ type: 'fadeIn', duration: 1000, delay: 500 }} />
-        <Box animation={[{ type: 'fadeIn', duration: 1000, delay: 500 }, { type: 'slideUp', duration: 1000, delay: 500 }]} />
+        <Box
+          animation={[
+            { type: 'fadeIn', duration: 1000, delay: 500 },
+            { type: 'slideUp', duration: 1000, delay: 500 },
+          ]}
+        />
       </Grommet>
     );
     const tree = component.toJSON();

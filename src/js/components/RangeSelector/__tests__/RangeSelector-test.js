@@ -98,7 +98,15 @@ describe('RangeSelector', () => {
   test('size', () => {
     const component = renderer.create(
       <Grommet>
-        {['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full'].map(size => (
+        {[
+          'xxsmall',
+          'xsmall',
+          'small',
+          'medium',
+          'large',
+          'xlarge',
+          'full',
+        ].map(size => (
           <RangeSelector key={size} size={size} values={[20, 30]} />
         ))}
       </Grommet>
@@ -150,7 +158,10 @@ describe('RangeSelector', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.click(container.firstChild.firstChild, { clientX: 0, clientY: 0 });
+    fireEvent.click(container.firstChild.firstChild, {
+      clientX: 0,
+      clientY: 0,
+    });
     expect(onChange).toBeCalled();
 
     const map = {};

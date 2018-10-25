@@ -60,7 +60,13 @@ describe('Clock', () => {
         test(`type ${type} precision ${precision} size ${size}`, () => {
           const component = renderer.create(
             <Grommet>
-              <Clock run={false} type={type} precision={precision} size={size} time={DURATION} />
+              <Clock
+                run={false}
+                type={type}
+                precision={precision}
+                size={size}
+                time={DURATION}
+              />
             </Grommet>
           );
           expect(component.toJSON()).toMatchSnapshot();

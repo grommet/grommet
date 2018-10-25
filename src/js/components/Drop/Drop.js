@@ -24,7 +24,10 @@ class Drop extends Component {
     if (restrictFocus && this.originalFocusedElement) {
       if (this.originalFocusedElement.focus) {
         setFocusWithoutScroll(this.originalFocusedElement);
-      } else if (this.originalFocusedElement.parentNode && this.originalFocusedElement.parentNode.focus) {
+      } else if (
+        this.originalFocusedElement.parentNode &&
+        this.originalFocusedElement.parentNode.focus
+      ) {
         // required for IE11 and Edge
         setFocusWithoutScroll(this.originalFocusedElement.parentNode);
       }
@@ -37,7 +40,10 @@ class Drop extends Component {
       target: dropTarget, // avoid DOM leakage
       ...rest
     } = this.props;
-    return createPortal(<DropContainer dropTarget={dropTarget} {...rest} />, this.dropContainer);
+    return createPortal(
+      <DropContainer dropTarget={dropTarget} {...rest} />,
+      this.dropContainer
+    );
   }
 }
 

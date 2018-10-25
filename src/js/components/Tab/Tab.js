@@ -46,7 +46,16 @@ class Tab extends Component {
   };
 
   render() {
-    const { active, forwardRef, plain, title, onMouseOver, onMouseOut, theme, ...rest } = this.props;
+    const {
+      active,
+      forwardRef,
+      plain,
+      title,
+      onMouseOver,
+      onMouseOut,
+      theme,
+      ...rest
+    } = this.props;
     const { over } = this.state;
 
     delete rest.onActivate;
@@ -71,7 +80,10 @@ class Tab extends Component {
         } else if (over) {
           borderColor = normalizeColor(theme.tab.border.hover.color, theme);
         } else {
-          borderColor = normalizeColor(theme.global.control.border.color, theme);
+          borderColor = normalizeColor(
+            theme.global.control.border.color,
+            theme
+          );
         }
 
         tabStyles.border = {
@@ -81,7 +93,9 @@ class Tab extends Component {
         };
       }
 
-      tabStyles.background = active ? theme.tab.active.background || theme.tab.background : theme.tab.background;
+      tabStyles.background = active
+        ? theme.tab.active.background || theme.tab.background
+        : theme.tab.background;
       tabStyles.pad = theme.tab.pad;
       tabStyles.margin = theme.tab.margin;
     }

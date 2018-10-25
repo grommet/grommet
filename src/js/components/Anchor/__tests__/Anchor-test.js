@@ -38,7 +38,9 @@ test('Anchor warns about invalid label render', () => {
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
-  expect(warnSpy).toHaveBeenCalledWith('Anchor should not have children if icon or label is provided');
+  expect(warnSpy).toHaveBeenCalledWith(
+    'Anchor should not have children if icon or label is provided'
+  );
 
   warnSpy.mockReset();
   warnSpy.mockRestore();
@@ -55,7 +57,9 @@ test('Anchor warns about invalid icon render', () => {
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
-  expect(warnSpy).toHaveBeenCalledWith('Anchor should not have children if icon or label is provided');
+  expect(warnSpy).toHaveBeenCalledWith(
+    'Anchor should not have children if icon or label is provided'
+  );
 
   warnSpy.mockReset();
   warnSpy.mockRestore();

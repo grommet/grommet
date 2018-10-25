@@ -13,7 +13,12 @@ const SimpleInfiniteScroll = props => (
     <Box>
       <InfiniteScroll items={items} {...props}>
         {item => (
-          <Box key={item} pad="medium" border={{ side: 'bottom' }} align="center">
+          <Box
+            key={item}
+            pad="medium"
+            border={{ side: 'bottom' }}
+            align="center"
+          >
             <Text>{item}</Text>
           </Box>
         )}

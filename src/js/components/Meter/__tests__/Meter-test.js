@@ -31,7 +31,18 @@ describe('Meter', () => {
   test('many values', () => {
     const component = renderer.create(
       <Grommet>
-        <Meter values={[{ value: 5 }, { value: 5 }, { value: 5 }, { value: 5 }, { value: 5 }, { value: 5 }, { value: 5 }, { value: 5 }]} />
+        <Meter
+          values={[
+            { value: 5 },
+            { value: 5 },
+            { value: 5 },
+            { value: 5 },
+            { value: 5 },
+            { value: 5 },
+            { value: 5 },
+            { value: 5 },
+          ]}
+        />
       </Grommet>
     );
     const tree = component.toJSON();
@@ -102,9 +113,16 @@ describe('Meter', () => {
     const component = renderer.create(
       <Grommet>
         <Meter background="light-3" values={VALUES} />
-        <Meter background={{ color: 'light-3', opacity: 'medium' }} values={VALUES} />
+        <Meter
+          background={{ color: 'light-3', opacity: 'medium' }}
+          values={VALUES}
+        />
         <Meter type="circle" background="light-3" values={VALUES} />
-        <Meter type="circle" background={{ color: 'light-3', opacity: 'medium' }} values={VALUES} />
+        <Meter
+          type="circle"
+          background={{ color: 'light-3', opacity: 'medium' }}
+          values={VALUES}
+        />
       </Grommet>
     );
     const tree = component.toJSON();

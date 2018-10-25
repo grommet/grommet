@@ -14,14 +14,31 @@ class Anchor extends Component {
 
     const { children, icon, label } = props;
     if ((icon || label) && children) {
-      console.warn('Anchor should not have children if icon or label is provided');
+      console.warn(
+        'Anchor should not have children if icon or label is provided'
+      );
     }
   }
 
   render() {
-    const { a11yTitle, children, color, disabled, forwardRef, href, icon, focus, label, onClick, reverse, theme, ...rest } = this.props;
+    const {
+      a11yTitle,
+      children,
+      color,
+      disabled,
+      forwardRef,
+      href,
+      icon,
+      focus,
+      label,
+      onClick,
+      reverse,
+      theme,
+      ...rest
+    } = this.props;
 
-    const anchorLabel = typeof label === 'string' ? <Text>{label}</Text> : label;
+    const anchorLabel =
+      typeof label === 'string' ? <Text>{label}</Text> : label;
 
     let coloredIcon = icon;
     if (icon && !icon.props.color) {
@@ -49,7 +66,13 @@ class Anchor extends Component {
         onClick={!disabled ? onClick : undefined}
       >
         {first || second ? (
-          <Box tag="span" direction="row" align="center" gap="small" style={{ display: 'inline-flex' }}>
+          <Box
+            tag="span"
+            direction="row"
+            align="center"
+            gap="small"
+            style={{ display: 'inline-flex' }}
+          >
             {first}
             {second}
           </Box>

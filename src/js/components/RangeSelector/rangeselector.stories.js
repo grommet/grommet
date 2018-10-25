@@ -21,11 +21,22 @@ class SimpleRangeSelector extends Component {
               </Box>
             ))}
           </Box>
-          <RangeSelector direction="horizontal" invert={false} min={0} max={9} size="full" round="small" values={values} onChange={this.onChange} />
+          <RangeSelector
+            direction="horizontal"
+            invert={false}
+            min={0}
+            max={9}
+            size="full"
+            round="small"
+            values={values}
+            onChange={this.onChange}
+          />
         </Stack>
       </Grommet>
     );
   }
 }
 
-storiesOf('RangeSelector', module).add('Simple RangeSelector', () => <SimpleRangeSelector />);
+storiesOf('RangeSelector', module).add('Simple RangeSelector', () => (
+  <SimpleRangeSelector />
+));

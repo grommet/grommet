@@ -4,7 +4,12 @@ import { compose } from 'recompose';
 
 import { ResponsiveContext, ThemeContext } from '../../contexts';
 import { base as baseTheme } from '../../themes/base';
-import { colorIsDark, deepMerge, getBreakpoint, normalizeColor } from '../../utils';
+import {
+  colorIsDark,
+  deepMerge,
+  getBreakpoint,
+  normalizeColor,
+} from '../../utils';
 import { withIconTheme } from '../hocs';
 
 import { StyledGrommet } from './StyledGrommet';
@@ -16,10 +21,13 @@ const reduceIconTheme = (iconTheme, dark) => {
   const result = { ...iconTheme, colors: { ...iconTheme.colors } };
   Object.keys(result.colors).forEach(key => {
     if (typeof result.colors[key] === 'object') {
-      result.colors[key] = normalizeColor(result.colors[key][dark ? 'dark' : 'light'], {
-        dark,
-        global: { colors: result.colors },
-      });
+      result.colors[key] = normalizeColor(
+        result.colors[key][dark ? 'dark' : 'light'],
+        {
+          dark,
+          global: { colors: result.colors },
+        }
+      );
     } else {
       result.colors[key] = normalizeColor(result.colors[key], {
         dark,
@@ -43,7 +51,10 @@ class Grommet extends Component {
       if (!theme.icon || !theme.icon.colors) {
         iconColoredTheme = { ...theme };
         iconColoredTheme.icon = { ...(theme.icon || {}) };
-        iconColoredTheme.icon.colors = deepMerge(baseTheme.icon.colors, theme.global.colors);
+        iconColoredTheme.icon.colors = deepMerge(
+          baseTheme.icon.colors,
+          theme.global.colors
+        );
       }
       nextTheme = deepMerge(baseTheme, iconColoredTheme);
     } else if (!theme && (themeProp || !stateTheme)) {

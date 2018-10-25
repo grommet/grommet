@@ -3,7 +3,22 @@ import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
 
 const fixedSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
-const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'full', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'flex', 'auto'];
+const sizes = [
+  'xsmall',
+  'small',
+  'medium',
+  'large',
+  'xlarge',
+  'full',
+  '1/2',
+  '1/3',
+  '2/3',
+  '1/4',
+  '2/4',
+  '3/4',
+  'flex',
+  'auto',
+];
 const edgeSizes = ['small', 'medium', 'large', 'none'];
 
 export const doc = Grid => {
@@ -30,9 +45,14 @@ to create fallback rendering for older browsers, like ie11.`
 space in the column axis.`
       )
       .defaultValue('stretch'),
-    alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description(
-      'How to align the contents along the column axis.'
-    ),
+    alignContent: PropTypes.oneOf([
+      'start',
+      'center',
+      'end',
+      'between',
+      'around',
+      'stretch',
+    ]).description('How to align the contents along the column axis.'),
     areas: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string,
@@ -41,11 +61,24 @@ space in the column axis.`
       })
     ).description('Area names and column,row coordinates.'),
     columns: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.arrayOf(PropTypes.oneOf(sizes)), PropTypes.string])),
+      PropTypes.arrayOf(
+        PropTypes.oneOfType([
+          PropTypes.oneOf(sizes),
+          PropTypes.arrayOf(PropTypes.oneOf(sizes)),
+          PropTypes.string,
+        ])
+      ),
       PropTypes.oneOf(fixedSizes),
       PropTypes.shape({
-        count: PropTypes.oneOfType([PropTypes.oneOf(['fit', 'fill']), PropTypes.number]),
-        size: PropTypes.oneOfType([PropTypes.oneOf(fixedSizes), PropTypes.arrayOf(PropTypes.oneOf(sizes)), PropTypes.string]),
+        count: PropTypes.oneOfType([
+          PropTypes.oneOf(['fit', 'fill']),
+          PropTypes.number,
+        ]),
+        size: PropTypes.oneOfType([
+          PropTypes.oneOf(fixedSizes),
+          PropTypes.arrayOf(PropTypes.oneOf(sizes)),
+          PropTypes.string,
+        ]),
       }),
       PropTypes.string,
     ]).description(
@@ -57,12 +90,20 @@ space in the column axis.`
       Specifying an object allows indicating how the columns
       stretch to fit the available space.`
     ),
-    fill: PropTypes.oneOf(['horizontal', 'vertical', true, false]).description('Whether the width and/or height should fill the container.'),
+    fill: PropTypes.oneOf(['horizontal', 'vertical', true, false]).description(
+      'Whether the width and/or height should fill the container.'
+    ),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf(edgeSizes),
       PropTypes.shape({
-        row: PropTypes.oneOfType([PropTypes.oneOf(edgeSizes), PropTypes.string]),
-        column: PropTypes.oneOfType([PropTypes.oneOf(edgeSizes), PropTypes.string]),
+        row: PropTypes.oneOfType([
+          PropTypes.oneOf(edgeSizes),
+          PropTypes.string,
+        ]),
+        column: PropTypes.oneOfType([
+          PropTypes.oneOf(edgeSizes),
+          PropTypes.string,
+        ]),
       }),
       PropTypes.string,
     ]).description('Gap sizes between rows and/or columns.'),
@@ -72,11 +113,22 @@ space in the column axis.`
 space in the row axis.`
       )
       .defaultValue('stretch'),
-    justifyContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description(
-      'How to align the contents along the row axis.'
-    ),
+    justifyContent: PropTypes.oneOf([
+      'start',
+      'center',
+      'end',
+      'between',
+      'around',
+      'stretch',
+    ]).description('How to align the contents along the row axis.'),
     rows: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.arrayOf(PropTypes.oneOf(sizes)), PropTypes.string])),
+      PropTypes.arrayOf(
+        PropTypes.oneOfType([
+          PropTypes.oneOf(sizes),
+          PropTypes.arrayOf(PropTypes.oneOf(sizes)),
+          PropTypes.string,
+        ])
+      ),
       PropTypes.oneOf(fixedSizes),
       PropTypes.string,
     ]).description(
@@ -86,7 +138,9 @@ space in the row axis.`
       Specifying a single string will cause automatically added rows to be
       the specified size.`
     ),
-    tag: PropTypes.string.description('The DOM tag to use for the element.').defaultValue('div'),
+    tag: PropTypes.string
+      .description('The DOM tag to use for the element.')
+      .defaultValue('div'),
   };
 
   return DocumentedGrid;

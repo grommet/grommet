@@ -47,7 +47,9 @@ export const doc = DataTable => {
       the column. 'search' indicates whether a search filter should be
       made available for the column.
     `),
-    data: PropTypes.arrayOf(PropTypes.shape({})).description('Array of data objects.'),
+    data: PropTypes.arrayOf(PropTypes.shape({})).description(
+      'Array of data objects.'
+    ),
     groupBy: PropTypes.string.description('Property to group data by.'),
     onMore: PropTypes.func.description(
       `Use this to indicate that 'data' doesn't contain all that it could.
@@ -64,14 +66,21 @@ export const doc = DataTable => {
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.`
     ),
-    resizeable: PropTypes.bool.description('Whether to allow the user to resize column widths.'),
-    size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description(`
+    resizeable: PropTypes.bool.description(
+      'Whether to allow the user to resize column widths.'
+    ),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description(`
       The height of the table body. If set, the table body will have a fixed
       height and the rows will be scrollable within it. In order to preserve
       header and footer cell alignment, all cells will have the same
       width. This cannot be used in combination with 'resizeable'.
     `),
-    sortable: PropTypes.bool.description('Whether to allow the user to sort columns.'),
+    sortable: PropTypes.bool.description(
+      'Whether to allow the user to sort columns.'
+    ),
   };
 
   return DocumentedDataTable;

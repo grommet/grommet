@@ -4,7 +4,12 @@ import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
 import { ThemeContext } from '../../contexts';
 import { FocusedContainer } from '../FocusedContainer';
-import { backgroundIsDark, findScrollParents, findVisibleParent, parseMetricToNum } from '../../utils';
+import {
+  backgroundIsDark,
+  findScrollParents,
+  findVisibleParent,
+  parseMetricToNum,
+} from '../../utils';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 
@@ -25,12 +30,18 @@ export class DropContainer extends Component {
     const { theme: propsTheme } = nextProps;
     const { theme: stateTheme, priorTheme } = prevState;
 
-    const dark = backgroundIsDark(propsTheme.global.drop.background, propsTheme);
+    const dark = backgroundIsDark(
+      propsTheme.global.drop.background,
+      propsTheme
+    );
 
     if (dark === propsTheme.dark && stateTheme) {
       return { theme: undefined, priorTheme: undefined };
     }
-    if (dark !== propsTheme.dark && (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)) {
+    if (
+      dark !== propsTheme.dark &&
+      (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)
+    ) {
       return {
         theme: {
           ...propsTheme,
@@ -75,11 +86,15 @@ export class DropContainer extends Component {
     const { dropTarget } = this.props;
     /* eslint-disable-next-line react/no-find-dom-node */
     this.scrollParents = findScrollParents(findDOMNode(dropTarget));
-    this.scrollParents.forEach(scrollParent => scrollParent.addEventListener('scroll', this.place));
+    this.scrollParents.forEach(scrollParent =>
+      scrollParent.addEventListener('scroll', this.place)
+    );
   };
 
   removeScrollListener = () => {
-    this.scrollParents.forEach(scrollParent => scrollParent.removeEventListener('scroll', this.place));
+    this.scrollParents.forEach(scrollParent =>
+      scrollParent.removeEventListener('scroll', this.place)
+    );
   };
 
   onClickDocument = event => {
@@ -125,7 +140,12 @@ export class DropContainer extends Component {
       const containerRect = container.getBoundingClientRect();
 
       // determine width
-      const width = Math.min(stretch ? Math.max(targetRect.width, containerRect.width) : containerRect.width, windowWidth);
+      const width = Math.min(
+        stretch
+          ? Math.max(targetRect.width, containerRect.width)
+          : containerRect.width,
+        windowWidth
+      );
 
       // set left position
       let left;
@@ -160,7 +180,10 @@ export class DropContainer extends Component {
           maxHeight = Math.min(windowHeight - targetRect.top, windowHeight);
         } else {
           top = targetRect.bottom;
-          maxHeight = Math.min(windowHeight - targetRect.bottom, windowHeight - targetRect.height);
+          maxHeight = Math.min(
+            windowHeight - targetRect.bottom,
+            windowHeight - targetRect.height
+          );
         }
       } else if (align.bottom) {
         if (align.bottom === 'bottom') {
@@ -201,7 +224,10 @@ export class DropContainer extends Component {
             if (responsive) {
               top = targetRect.bottom;
             }
-            maxHeight = Math.min(windowHeight - top, windowHeight - targetRect.height);
+            maxHeight = Math.min(
+              windowHeight - top,
+              windowHeight - targetRect.height
+            );
           }
         }
       }
@@ -224,7 +250,15 @@ export class DropContainer extends Component {
   };
 
   render() {
-    const { align: alignProp, children, onClickOutside, onEsc, onKeyDown, theme: propsTheme, ...rest } = this.props;
+    const {
+      align: alignProp,
+      children,
+      onClickOutside,
+      onEsc,
+      onKeyDown,
+      theme: propsTheme,
+      ...rest
+    } = this.props;
     const { theme: stateTheme } = this.state;
     const theme = stateTheme || propsTheme;
 
@@ -244,9 +278,17 @@ export class DropContainer extends Component {
 
     if (stateTheme) {
       if (stateTheme.dark !== propsTheme.dark && stateTheme.icon) {
-        content = <IconThemeContext.Provider value={stateTheme.icon}>{content}</IconThemeContext.Provider>;
+        content = (
+          <IconThemeContext.Provider value={stateTheme.icon}>
+            {content}
+          </IconThemeContext.Provider>
+        );
       }
-      content = <ThemeContext.Provider value={stateTheme}>{content}</ThemeContext.Provider>;
+      content = (
+        <ThemeContext.Provider value={stateTheme}>
+          {content}
+        </ThemeContext.Provider>
+      );
     }
 
     return (

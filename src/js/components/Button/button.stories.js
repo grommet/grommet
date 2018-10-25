@@ -97,11 +97,23 @@ const MultipleButton = () => (
   <Grommet theme={grommet}>
     <Box direction="row" align="center" gap="small" pad="xsmall">
       <Button label="Cancel" onClick={() => {}} />
-      <Button color="dark-1" primary icon={<Add color="accent-1" />} label="Add" onClick={() => {}} />
+      <Button
+        color="dark-1"
+        primary
+        icon={<Add color="accent-1" />}
+        label="Add"
+        onClick={() => {}}
+      />
     </Box>
     <Box direction="row" align="center" gap="small" pad="xsmall">
       <Button label="Cancel" onClick={() => {}} />
-      <Button color="dark-1" primary icon={<Add />} label="Add" onClick={() => {}} />
+      <Button
+        color="dark-1"
+        primary
+        icon={<Add />}
+        label="Add"
+        onClick={() => {}}
+      />
     </Box>
     <Box direction="row" align="center" gap="small" pad="xsmall">
       <Button label="Cancel" onClick={() => {}} />
@@ -109,7 +121,13 @@ const MultipleButton = () => (
     </Box>
     <Box direction="row" align="center" gap="small" pad="xsmall">
       <Button label="Cancel" onClick={() => {}} />
-      <Button color="light-2" primary icon={<Add />} label="Add" onClick={() => {}} />
+      <Button
+        color="light-2"
+        primary
+        icon={<Add />}
+        label="Add"
+        onClick={() => {}}
+      />
     </Box>
   </Grommet>
 );
@@ -117,9 +135,27 @@ const MultipleButton = () => (
 const ColoredButton = props => (
   <Grommet theme={grommet}>
     <Box align="start" gap="small">
-      <Button primary color="dark-1" label="Submit" onClick={() => {}} {...props} />
-      <Button primary color="#111111" label="Submit" onClick={() => {}} {...props} />
-      <Button primary color="#000" label="Submit" onClick={() => {}} {...props} />
+      <Button
+        primary
+        color="dark-1"
+        label="Submit"
+        onClick={() => {}}
+        {...props}
+      />
+      <Button
+        primary
+        color="#111111"
+        label="Submit"
+        onClick={() => {}}
+        {...props}
+      />
+      <Button
+        primary
+        color="#000"
+        label="Submit"
+        onClick={() => {}}
+        {...props}
+      />
     </Box>
   </Grommet>
 );

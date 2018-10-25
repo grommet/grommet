@@ -3,7 +3,12 @@ import React, { createRef, Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import styled from 'styled-components';
 
-import { debounce, isNodeAfterScroll, isNodeBeforeScroll, setFocusWithoutScroll } from '../../utils';
+import {
+  debounce,
+  isNodeAfterScroll,
+  isNodeBeforeScroll,
+  setFocusWithoutScroll,
+} from '../../utils';
 
 import { withTheme } from '../hocs';
 import { Box } from '../Box';
@@ -49,8 +54,14 @@ class SelectContainer extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     const { options, value } = nextProps;
 
-    if (prevState.activeIndex === -1 && prevState.search === '' && options && value) {
-      const optionValue = Array.isArray(value) && value.length ? value[0] : value;
+    if (
+      prevState.activeIndex === -1 &&
+      prevState.search === '' &&
+      options &&
+      value
+    ) {
+      const optionValue =
+        Array.isArray(value) && value.length ? value[0] : value;
       const activeIndex = options.indexOf(optionValue);
       return { activeIndex };
     }
@@ -204,7 +215,18 @@ class SelectContainer extends Component {
 
   render() {
     /* eslint-disable react/prop-types */
-    const { children, id, name, onKeyDown, onSearch, options, searchPlaceholder, selected, theme, value } = this.props;
+    const {
+      children,
+      id,
+      name,
+      onKeyDown,
+      onSearch,
+      options,
+      searchPlaceholder,
+      selected,
+      theme,
+      value,
+    } = this.props;
     /* eslint-enable react/prop-types */
     const { activeIndex, search } = this.state;
 
@@ -212,7 +234,12 @@ class SelectContainer extends Component {
     const SelectTextInput = customSearchInput || TextInput;
 
     return (
-      <Keyboard onEnter={this.onSelectOption} onUp={this.onPreviousOption} onDown={this.onNextOption} onKeyDown={onKeyDown}>
+      <Keyboard
+        onEnter={this.onSelectOption}
+        onUp={this.onPreviousOption}
+        onDown={this.onNextOption}
+        onKeyDown={onKeyDown}
+      >
         <ContainerBox id={id ? `${id}__select-drop` : undefined} theme={theme}>
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
@@ -227,7 +254,14 @@ class SelectContainer extends Component {
               />
             </Box>
           )}
-          <OptionsBox flex="shrink" role="menubar" tabIndex="-1" ref={this.selectRef} overflow="auto" theme={theme}>
+          <OptionsBox
+            flex="shrink"
+            role="menubar"
+            tabIndex="-1"
+            ref={this.selectRef}
+            overflow="auto"
+            theme={theme}
+          >
             <InfiniteScroll items={options} step={theme.select.step}>
               {(option, index) => (
                 <Box key={`option_${name || ''}_${index}`} flex={false}>
@@ -238,10 +272,13 @@ class SelectContainer extends Component {
                     }}
                     active={
                       selected === index ||
-                      (Array.isArray(selected) && selected.indexOf(index) !== -1) ||
+                      (Array.isArray(selected) &&
+                        selected.indexOf(index) !== -1) ||
                       activeIndex === index ||
                       (option && option === value) ||
-                      (option && Array.isArray(value) && value.indexOf(option) !== -1)
+                      (option &&
+                        Array.isArray(value) &&
+                        value.indexOf(option) !== -1)
                     }
                     onClick={() => this.selectOption(option, index)}
                     hoverIndicator="background"
@@ -250,7 +287,11 @@ class SelectContainer extends Component {
                       children(option, index, options)
                     ) : (
                       <Box align="start" pad="small">
-                        <Text margin="none">{option !== null && option !== undefined ? option.toString() : undefined}</Text>
+                        <Text margin="none">
+                          {option !== null && option !== undefined
+                            ? option.toString()
+                            : undefined}
+                        </Text>
                       </Box>
                     )}
                   </Button>

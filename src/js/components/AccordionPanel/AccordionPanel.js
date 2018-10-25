@@ -54,16 +54,31 @@ class AccordionPanel extends Component {
   };
 
   render() {
-    const { children, header, label, theme, onMouseOut, onMouseOver, onFocus, onBlur, ...rest } = this.props;
+    const {
+      children,
+      header,
+      label,
+      theme,
+      onMouseOut,
+      onMouseOver,
+      onFocus,
+      onBlur,
+      ...rest
+    } = this.props;
     const { hover } = this.state;
 
-    const iconColor = normalizeColor(theme.accordion.icons.color || 'control', theme);
+    const iconColor = normalizeColor(
+      theme.accordion.icons.color || 'control',
+      theme
+    );
 
     return (
       <AccordionContext.Consumer>
         {(panelContext) => {
           const { active, animate, onPanelChange } = panelContext;
-          const AccordionIcon = active ? theme.accordion.icons.collapse : theme.accordion.icons.expand;
+          const AccordionIcon = active
+            ? theme.accordion.icons.collapse
+            : theme.accordion.icons.expand;
 
           return (
             <Box flex={false}>
@@ -78,7 +93,12 @@ class AccordionPanel extends Component {
                 onBlur={this.onBlur}
               >
                 {header || (
-                  <Box align="center" direction="row" justify="between" {...rest}>
+                  <Box
+                    align="center"
+                    direction="row"
+                    justify="between"
+                    {...rest}
+                  >
                     {typeof label === 'string' ? (
                       <Box pad={{ horizontal: 'xsmall' }}>
                         <Heading level={4} color={hover}>
@@ -97,7 +117,11 @@ class AccordionPanel extends Component {
                 )}
               </Button>
               <Box border={{ side: 'bottom', color: 'border' }}>
-                {animate ? <Collapsible open={active}>{children}</Collapsible> : active && children}
+                {animate ? (
+                  <Collapsible open={active}>{children}</Collapsible>
+                ) : (
+                  active && children
+                )}
               </Box>
             </Box>
           );

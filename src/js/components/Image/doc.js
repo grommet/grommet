@@ -13,7 +13,9 @@ export const doc = Image => {
 
   DocumentedImage.propTypes = {
     ...genericProps,
-    fit: PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
+    fit: PropTypes.oneOf(['cover', 'contain']).description(
+      'How the image fills its container.'
+    ),
   };
 
   return DocumentedImage;

@@ -6,7 +6,8 @@ import styled from 'styled-components';
 import { withTheme } from '../hocs';
 import { Box } from '../Box';
 
-const animatedBoxProperty = direction => (direction === 'horizontal' ? 'width' : 'height');
+const animatedBoxProperty = direction =>
+  direction === 'horizontal' ? 'width' : 'height';
 
 const AnimatedBox = styled(Box)`
   ${props =>
@@ -78,7 +79,9 @@ class Collapsible extends Component {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           container.style.transition = `max-${dimension} ${speed}ms, visibility 50ms`;
-          container.style[`max-${dimension}`] = open ? `${dimensionSize}px` : '0px';
+          container.style[`max-${dimension}`] = open
+            ? `${dimensionSize}px`
+            : '0px';
 
           this.animationTimeout = setTimeout(() => {
             container.removeAttribute('style');
@@ -107,7 +110,13 @@ class Collapsible extends Component {
     const { animate, open } = this.state;
 
     return (
-      <AnimatedBox aria-hidden={!open} ref={this.ref} open={open} animate={animate} collapsibleDirection={direction}>
+      <AnimatedBox
+        aria-hidden={!open}
+        ref={this.ref}
+        open={open}
+        animate={animate}
+        collapsibleDirection={direction}
+      >
         {children}
       </AnimatedBox>
     );

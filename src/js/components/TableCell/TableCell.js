@@ -7,7 +7,15 @@ import { withTheme } from '../hocs';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
 
-const TableCell = ({ children, plain, scope, size, theme, verticalAlign, ...rest }) => (
+const TableCell = ({
+  children,
+  plain,
+  scope,
+  size,
+  theme,
+  verticalAlign,
+  ...rest
+}) => (
   <TableContext.Consumer>
     {tableContext => {
       let tableContextTheme;
@@ -33,7 +41,10 @@ const TableCell = ({ children, plain, scope, size, theme, verticalAlign, ...rest
           tableContext={tableContext}
           tableContextTheme={tableContextTheme}
           theme={theme}
-          verticalAlign={verticalAlign || (tableContextTheme ? tableContextTheme.verticalAlign : undefined)}
+          verticalAlign={
+            verticalAlign ||
+            (tableContextTheme ? tableContextTheme.verticalAlign : undefined)
+          }
           {...(plain ? rest : {})}
         >
           {plain ? (

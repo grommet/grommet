@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, CheckBox, FormField, Select, TextArea, TextInput } from 'grommet';
+import {
+  Grommet,
+  Box,
+  CheckBox,
+  FormField,
+  Select,
+  TextArea,
+  TextInput,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const allSuggestions = Array(100)
@@ -81,7 +89,13 @@ class FormFieldSelect extends Component {
     return (
       <Grommet theme={grommet}>
         <FormField label="Label" htmlFor="select" {...this.props}>
-          <Select id="select" placeholder="placeholder" options={options} value={value} onChange={({ option }) => this.setState({ value: option })} />
+          <Select
+            id="select"
+            placeholder="placeholder"
+            options={options}
+            value={value}
+            onChange={({ option }) => this.setState({ value: option })}
+          />
         </FormField>
       </Grommet>
     );
@@ -97,7 +111,12 @@ const FormFieldHelpError = props => (
       help="Text to help the user know what is possible"
       error="Text to call attention to an issue with this field"
     >
-      <TextInput id="text-input" placeholder="placeholder" value="Value" onChange={() => {}} />
+      <TextInput
+        id="text-input"
+        placeholder="placeholder"
+        value="Value"
+        onChange={() => {}}
+      />
     </FormField>
   </Grommet>
 );

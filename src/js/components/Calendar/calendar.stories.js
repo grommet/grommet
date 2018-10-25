@@ -4,7 +4,13 @@ import { storiesOf } from '@storybook/react';
 import { Box, Button, Calendar, Grommet, Heading, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-import { Blank, FormPreviousLink, FormNextLink, Previous, Next } from 'grommet-icons';
+import {
+  Blank,
+  FormPreviousLink,
+  FormNextLink,
+  Previous,
+  Next,
+} from 'grommet-icons';
 
 class SimpleCalendar extends Component {
   state = {};
@@ -18,7 +24,12 @@ class SimpleCalendar extends Component {
     const { date } = this.state;
     return (
       <Grommet theme={grommet}>
-        <Calendar date={date} onSelect={this.onSelect} size="small" bounds={['2018-09-08', '2018-12-13']} />
+        <Calendar
+          date={date}
+          onSelect={this.onSelect}
+          size="small"
+          bounds={['2018-09-08', '2018-12-13']}
+        />
       </Grommet>
     );
   }
@@ -70,11 +81,23 @@ class DualCalendar extends Component {
                 reference2: nextDate,
               });
             }}
-            header={({ date: currentDate, locale, onPreviousMonth, previousInBound }) => (
+            header={({
+              date: currentDate,
+              locale,
+              onPreviousMonth,
+              previousInBound,
+            }) => (
               <Box direction="row" align="center" justify="between">
-                <Button disabled={!previousInBound} icon={<Previous />} onClick={onPreviousMonth} />
+                <Button
+                  disabled={!previousInBound}
+                  icon={<Previous />}
+                  onClick={onPreviousMonth}
+                />
                 <Heading level={3} margin="none">
-                  {currentDate.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
+                  {currentDate.toLocaleDateString(locale, {
+                    month: 'long',
+                    year: 'numeric',
+                  })}
                 </Heading>
                 <Blank />
               </Box>
@@ -97,13 +120,25 @@ class DualCalendar extends Component {
                 reference2: refDate,
               });
             }}
-            header={({ date: currentDate, locale, onNextMonth, nextInBound }) => (
+            header={({
+              date: currentDate,
+              locale,
+              onNextMonth,
+              nextInBound,
+            }) => (
               <Box direction="row" align="center" justify="between">
                 <Blank />
                 <Heading level={3} margin="none">
-                  {currentDate.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
+                  {currentDate.toLocaleDateString(locale, {
+                    month: 'long',
+                    year: 'numeric',
+                  })}
                 </Heading>
-                <Button disabled={!nextInBound} icon={<Next />} onClick={onNextMonth} />
+                <Button
+                  disabled={!nextInBound}
+                  icon={<Next />}
+                  onClick={onNextMonth}
+                />
               </Box>
             )}
           />
@@ -130,7 +165,14 @@ class CustomHeaderCalendar extends Component {
           onSelect={this.onSelect}
           size="small"
           bounds={['2018-09-08', '2018-12-13']}
-          header={({ date: currentDate, locale, onPreviousMonth, onNextMonth, previousInBound, nextInBound }) => (
+          header={({
+            date: currentDate,
+            locale,
+            onPreviousMonth,
+            onNextMonth,
+            previousInBound,
+            nextInBound,
+          }) => (
             <Box direction="row" align="center" justify="between">
               <Button disabled={!previousInBound} onClick={onPreviousMonth}>
                 <Box>
@@ -138,7 +180,12 @@ class CustomHeaderCalendar extends Component {
                 </Box>
               </Button>
               <Text size="small">
-                <strong>{currentDate.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}</strong>
+                <strong>
+                  {currentDate.toLocaleDateString(locale, {
+                    month: 'long',
+                    year: 'numeric',
+                  })}
+                </strong>
               </Text>
               <Button disabled={!nextInBound} onClick={onNextMonth}>
                 <Box>

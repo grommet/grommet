@@ -60,7 +60,9 @@ class Clock extends Component {
       if (!elements) {
         return { elements: nextElements };
       }
-      if (Object.keys(nextElements).some(k => elements[k] !== nextElements[k])) {
+      if (
+        Object.keys(nextElements).some(k => elements[k] !== nextElements[k])
+      ) {
         return { elements: nextElements };
       }
     }
@@ -150,15 +152,22 @@ class Clock extends Component {
         nextElements.hours = 0;
       }
       if (hourLimit === 12) {
-        nextElements.hours12 = nextElements.hours > 12 ? nextElements.hours - 12 : nextElements.hours;
+        nextElements.hours12 =
+          nextElements.hours > 12
+            ? nextElements.hours - 12
+            : nextElements.hours;
       }
 
       this.setState({ elements: nextElements }, () => {
         if (onChange) {
           if (elements.duration) {
-            onChange(`P${elements.hours}H${elements.minutes}M${elements.seconds}S`);
+            onChange(
+              `P${elements.hours}H${elements.minutes}M${elements.seconds}S`
+            );
           } else {
-            onChange(`T${elements.hours}:${elements.minutes}:${elements.seconds}`);
+            onChange(
+              `T${elements.hours}:${elements.minutes}:${elements.seconds}`
+            );
           }
         }
       });

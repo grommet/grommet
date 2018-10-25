@@ -17,11 +17,20 @@ class SimpleDrop extends Component {
     return (
       <Grommet theme={grommet}>
         <Box align="start">
-          <Box background="dark-4" pad="medium" align="center" justify="start" ref={this.targetRef}>
+          <Box
+            background="dark-4"
+            pad="medium"
+            align="center"
+            justify="start"
+            ref={this.targetRef}
+          >
             Target
           </Box>
           {this.targetRef.current && (
-            <Drop align={{ top: 'bottom', left: 'left' }} target={this.targetRef.current}>
+            <Drop
+              align={{ top: 'bottom', left: 'left' }}
+              target={this.targetRef.current}
+            >
               <Box pad="large">Drop Contents</Box>
             </Drop>
           )}
@@ -67,7 +76,11 @@ class Set extends Component {
         {this.targetRef.current && (
           <Fragment>
             {aligns.map((align, index) => (
-              <OneDrop key={`${index + 0}`} align={align} target={this.targetRef.current} />
+              <OneDrop
+                key={`${index + 0}`}
+                align={align}
+                target={this.targetRef.current}
+              />
             ))}
           </Fragment>
         )}
@@ -91,7 +104,13 @@ class AllDrops extends Component {
   render() {
     return (
       <Grommet theme={grommet}>
-        <ThemeContext.Extend value={{ global: { drop: { background: { color: 'white', opacity: 'medium' } } } }}>
+        <ThemeContext.Extend
+          value={{
+            global: {
+              drop: { background: { color: 'white', opacity: 'medium' } },
+            },
+          }}
+        >
           <Box direction="row" wrap pad="medium" align="center">
             <Set
               label="left: left"
@@ -111,7 +130,15 @@ class AllDrops extends Component {
                 { bottom: 'bottom', left: 'right' },
               ]}
             />
-            <Set label="(center horizontal)" aligns={[{ top: 'top' }, { top: 'bottom' }, { bottom: 'top' }, { bottom: 'bottom' }]} />
+            <Set
+              label="(center horizontal)"
+              aligns={[
+                { top: 'top' },
+                { top: 'bottom' },
+                { bottom: 'top' },
+                { bottom: 'bottom' },
+              ]}
+            />
             <Set
               label="right: left"
               aligns={[
@@ -132,7 +159,12 @@ class AllDrops extends Component {
             />
             <Set
               label="top: top"
-              aligns={[{ left: 'left', top: 'top' }, { left: 'right', top: 'top' }, { right: 'left', top: 'top' }, { right: 'right', top: 'top' }]}
+              aligns={[
+                { left: 'left', top: 'top' },
+                { left: 'right', top: 'top' },
+                { right: 'left', top: 'top' },
+                { right: 'right', top: 'top' },
+              ]}
             />
             <Set
               label="top: bottom"
@@ -143,7 +175,15 @@ class AllDrops extends Component {
                 { right: 'right', top: 'bottom' },
               ]}
             />
-            <Set label="(center vertical)" aligns={[{ left: 'left' }, { left: 'right' }, { right: 'left' }, { right: 'right' }]} />
+            <Set
+              label="(center vertical)"
+              aligns={[
+                { left: 'left' },
+                { left: 'right' },
+                { right: 'left' },
+                { right: 'right' },
+              ]}
+            />
             <Set
               label="bottom: top"
               aligns={[
@@ -187,15 +227,31 @@ class ProgressiveDrop extends Component {
     return (
       <Grommet theme={grommet}>
         <Box align="start">
-          <Button ref={this.boxRef} primary label="Click me" onClick={this.onOpenDrop} />
+          <Button
+            ref={this.boxRef}
+            primary
+            label="Click me"
+            onClick={this.onOpenDrop}
+          />
           {openDrop && (
-            <Drop target={this.boxRef.current} align={{ top: 'bottom' }} onClickOutside={this.onCloseDrop} onEsc={this.onCloseDrop}>
+            <Drop
+              target={this.boxRef.current}
+              align={{ top: 'bottom' }}
+              onClickOutside={this.onCloseDrop}
+              onEsc={this.onCloseDrop}
+            >
               {!openInnerDrop && (
                 <Box pad="large">
-                  <Button primary label="Click me again" onClick={() => this.setState({ openInnerDrop: true })} />
+                  <Button
+                    primary
+                    label="Click me again"
+                    onClick={() => this.setState({ openInnerDrop: true })}
+                  />
                 </Box>
               )}
-              {openInnerDrop && <Box pad="large">You can click outside now</Box>}
+              {openInnerDrop && (
+                <Box pad="large">You can click outside now</Box>
+              )}
             </Drop>
           )}
         </Box>

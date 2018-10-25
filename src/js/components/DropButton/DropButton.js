@@ -59,11 +59,24 @@ class DropButton extends Component {
   onToggle = () => {
     const { onClose, onOpen } = this.props;
     const { show } = this.state;
-    this.setState({ show: !show }, show ? onClose && onClose() : onOpen && onOpen());
+    this.setState(
+      { show: !show },
+      show ? onClose && onClose() : onOpen && onOpen()
+    );
   };
 
   render() {
-    const { disabled, dropAlign, forwardRef, dropContent, dropTarget, id, open, theme, ...rest } = this.props;
+    const {
+      disabled,
+      dropAlign,
+      forwardRef,
+      dropContent,
+      dropTarget,
+      id,
+      open,
+      theme,
+      ...rest
+    } = this.props;
     const { buttonRef, show } = this.state;
 
     delete rest.onClose;
@@ -92,7 +105,13 @@ class DropButton extends Component {
 
     return (
       <React.Fragment>
-        <Button id={id} ref={buttonRef} disabled={disabled} onClick={this.onToggle} {...rest} />
+        <Button
+          id={id}
+          ref={buttonRef}
+          disabled={disabled}
+          onClick={this.onToggle}
+          {...rest}
+        />
         {drop}
       </React.Fragment>
     );

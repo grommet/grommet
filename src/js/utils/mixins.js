@@ -1,17 +1,25 @@
 import { css } from 'styled-components';
 
-export const parseMetricToNum = fontAsString => parseFloat(fontAsString.replace(/[^0-9/.]/g, ''), 10);
+export const parseMetricToNum = fontAsString =>
+  parseFloat(fontAsString.replace(/[^0-9/.]/g, ''), 10);
 
 export const fontSize = (size, lineHeight) => css`
-  font-size: ${props => `${(parseMetricToNum(size) / parseMetricToNum(props.theme.global.font.size)) * 1}rem`};
+  font-size: ${props =>
+    `${(parseMetricToNum(size) /
+      parseMetricToNum(props.theme.global.font.size)) *
+      1}rem`};
   line-height: ${props =>
     lineHeight ||
-    `${Math.ceil(parseMetricToNum(size) / parseMetricToNum(props.theme.global.lineHeight)) *
-      (parseMetricToNum(props.theme.global.lineHeight) / parseMetricToNum(size))}px`};
+    `${Math.ceil(
+      parseMetricToNum(size) / parseMetricToNum(props.theme.global.lineHeight)
+    ) *
+      (parseMetricToNum(props.theme.global.lineHeight) /
+        parseMetricToNum(size))}px`};
 `;
 
 export const breakpointStyle = (breakpoint, content) => css`
-  @media only screen ${breakpoint.value && `and (max-width: ${breakpoint.value}px)`} {
+  @media only screen ${breakpoint.value &&
+      `and (max-width: ${breakpoint.value}px)`} {
     ${content};
   }
 `;
@@ -35,7 +43,8 @@ export const findAllByType = (component, type) => {
 export const getAvailableAtBadge = availableAt => [
   {
     url: `https://storybook.grommet.io/?selectedKind=${availableAt}&full=0&addons=0&stories=1&panelRight=0`,
-    badge: 'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
+    badge:
+      'https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png',
     label: 'Storybook',
   },
   {

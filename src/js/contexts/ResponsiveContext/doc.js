@@ -9,7 +9,9 @@ export const doc = ResponsiveContext => {
       `A means of providing different rendering behavior based on the
       screen resolution.`
     )
-    .usage("import { ResponsiveContext } from 'grommet';\n<ResponsiveContext.Consumer />\n{resolution => ()}");
+    .usage(
+      "import { ResponsiveContext } from 'grommet';\n<ResponsiveContext.Consumer />\n{resolution => ()}"
+    );
 
   DocumentedResponsiveContext.propTypes = {
     children: PropTypes.func.description(

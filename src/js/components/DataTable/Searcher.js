@@ -52,9 +52,18 @@ export class Searcher extends Component {
           </Box>
         ) : null}
         <Button
-          icon={<FormSearch color={normalizeColor(filtering === property ? 'brand' : 'border', theme)} />}
+          icon={
+            <FormSearch
+              color={normalizeColor(
+                filtering === property ? 'brand' : 'border',
+                theme
+              )}
+            />
+          }
           hoverIndicator
-          onClick={() => onFiltering(filtering === property ? undefined : property)}
+          onClick={() =>
+            onFiltering(filtering === property ? undefined : property)
+          }
         />
       </Fragment>
     );

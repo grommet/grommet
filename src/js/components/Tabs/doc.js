@@ -28,7 +28,9 @@ accordingly.`
     messages: PropTypes.shape({
       tabContents: PropTypes.string,
     })
-      .description('Custom messages for Tabs. Used for accessibility by screen readers.')
+      .description(
+        'Custom messages for Tabs. Used for accessibility by screen readers.'
+      )
       .defaultValue({
         tabContents: 'Tab Contents',
       }),

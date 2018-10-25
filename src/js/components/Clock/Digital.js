@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 
 import { Box } from '../Box';
 
-import { StyledDigitalDigit, StyledDigitalNext, StyledDigitalPrevious } from './StyledClock';
+import {
+  StyledDigitalDigit,
+  StyledDigitalNext,
+  StyledDigitalPrevious,
+} from './StyledClock';
 
 class Digit extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -37,8 +41,12 @@ class Digit extends Component {
       const direction = run === 'backward' ? 'down' : 'up';
       return (
         <StyledDigitalDigit size={size} theme={theme}>
-          <StyledDigitalPrevious direction={direction}>{Math.floor(previous)}</StyledDigitalPrevious>
-          <StyledDigitalNext direction={direction}>{Math.floor(number)}</StyledDigitalNext>
+          <StyledDigitalPrevious direction={direction}>
+            {Math.floor(previous)}
+          </StyledDigitalPrevious>
+          <StyledDigitalNext direction={direction}>
+            {Math.floor(number)}
+          </StyledDigitalNext>
         </StyledDigitalDigit>
       );
     }
@@ -71,15 +79,36 @@ export const Digital = props => {
   const { elements, precision, run, size, theme, ...rest } = props;
   let seconds;
   if (precision === 'seconds') {
-    seconds = <Element number={elements.seconds} run={run} size={size} sep theme={theme} />;
+    seconds = (
+      <Element
+        number={elements.seconds}
+        run={run}
+        size={size}
+        sep
+        theme={theme}
+      />
+    );
   }
   let minutes;
   if (precision === 'minutes' || precision === 'seconds') {
-    minutes = <Element number={elements.minutes} run={run} size={size} sep theme={theme} />;
+    minutes = (
+      <Element
+        number={elements.minutes}
+        run={run}
+        size={size}
+        sep
+        theme={theme}
+      />
+    );
   }
   return (
     <Box direction="row" {...rest}>
-      <Element number={elements.hours12 || elements.hours} run={run} size={size} theme={theme} />
+      <Element
+        number={elements.hours12 || elements.hours}
+        run={run}
+        size={size}
+        theme={theme}
+      />
       {minutes}
       {seconds}
     </Box>

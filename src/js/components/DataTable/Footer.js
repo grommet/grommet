@@ -19,7 +19,13 @@ const Footer = ({ columns, footerValues, groups, theme, ...rest }) => (
         </TableCell>
       )}
       {columns.map(column => (
-        <Cell key={column.property} context="footer" column={column} datum={footerValues} theme={theme} />
+        <Cell
+          key={column.property}
+          context="footer"
+          column={column}
+          datum={footerValues}
+          theme={theme}
+        />
       ))}
     </TableRow>
   </StyledDataTableFooter>

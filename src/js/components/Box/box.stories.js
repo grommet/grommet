@@ -7,8 +7,21 @@ import { grommet } from '../../themes';
 
 const SimpleBox = () => (
   <Grommet theme={grommet}>
-    <Box direction="row-responsive" justify="center" align="center" pad="xlarge" background="dark-2" gap="medium">
-      <Box pad="large" align="center" background={{ color: 'light-2', opacity: 'strong' }} round gap="small">
+    <Box
+      direction="row-responsive"
+      justify="center"
+      align="center"
+      pad="xlarge"
+      background="dark-2"
+      gap="medium"
+    >
+      <Box
+        pad="large"
+        align="center"
+        background={{ color: 'light-2', opacity: 'strong' }}
+        round
+        gap="small"
+      >
         <Attraction size="large" />
         <Text>Party</Text>
         <Anchor href="" label="Link" />
@@ -27,7 +40,8 @@ const SimpleBox = () => (
 const customColorBox = {
   global: {
     colors: {
-      'brand-gradient': 'linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)',
+      'brand-gradient':
+        'linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)',
     },
     font: {
       family: 'Arial',
@@ -37,7 +51,13 @@ const customColorBox = {
 
 const CustomColorBox = () => (
   <Grommet theme={customColorBox}>
-    <Box justify="center" align="center" pad="xlarge" background={{ color: 'brand-gradient', dark: true }} round="large">
+    <Box
+      justify="center"
+      align="center"
+      pad="xlarge"
+      background={{ color: 'brand-gradient', dark: true }}
+      round="large"
+    >
       <Text>I have a linear gradient background</Text>
     </Box>
   </Grommet>
@@ -61,10 +81,24 @@ const FixedSizesBox = () => (
             <Text key={`${i + 0}`}>{`Small (${i})`}</Text>
           ))}
       </Box>
-      <Box width="medium" height="medium" round="small" align="center" justify="center" background="brand">
+      <Box
+        width="medium"
+        height="medium"
+        round="small"
+        align="center"
+        justify="center"
+        background="brand"
+      >
         Medium
       </Box>
-      <Box width="large" height="large" round="small" align="center" justify="center" background="brand">
+      <Box
+        width="large"
+        height="large"
+        round="small"
+        align="center"
+        justify="center"
+        background="brand"
+      >
         Large
       </Box>
     </Box>
@@ -78,11 +112,13 @@ const BorderBox = () => (
         true
       </Box>
       <Box direction="row-responsive" gap="small">
-        {['horizontal', 'vertical', 'left', 'top', 'right', 'bottom'].map(border => (
-          <Box key={border} pad="small" border={border}>
-            {border}
-          </Box>
-        ))}
+        {['horizontal', 'vertical', 'left', 'top', 'right', 'bottom'].map(
+          border => (
+            <Box key={border} pad="small" border={border}>
+              {border}
+            </Box>
+          )
+        )}
       </Box>
       <Box pad="small" border={{ color: 'brand' }}>
         color
@@ -112,7 +148,16 @@ const RoundBox = () => (
         ))}
       </Grid>
       <Grid columns="small" gap="small">
-        {['left', 'top', 'right', 'bottom', 'top-left', 'top-right', 'bottom-left', 'bottom-right'].map(corner => (
+        {[
+          'left',
+          'top',
+          'right',
+          'bottom',
+          'top-left',
+          'top-right',
+          'bottom-left',
+          'bottom-right',
+        ].map(corner => (
           <Box key={corner} pad="small" background="brand" round={{ corner }}>
             {corner}
           </Box>
@@ -131,7 +176,8 @@ const BackgroundBox = () => (
       <Box
         pad="small"
         background={{
-          image: 'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)',
+          image:
+            'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)',
         }}
       >
         image
@@ -140,7 +186,8 @@ const BackgroundBox = () => (
         pad="small"
         background={{
           color: 'accent-2',
-          image: 'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)',
+          image:
+            'url(http://librelogo.org/wp-content/uploads/2014/04/gradient2.png)',
         }}
       >
         image + color

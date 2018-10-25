@@ -19,7 +19,12 @@ class SimpleCheckBox extends Component {
     const { checked } = this.state;
     return (
       <Grommet theme={grommet}>
-        <CheckBox {...this.props} label="Choice" checked={checked} onChange={this.onChange} />
+        <CheckBox
+          {...this.props}
+          label="Choice"
+          checked={checked}
+          onChange={this.onChange}
+        />
       </Grommet>
     );
   }
@@ -70,7 +75,12 @@ class ThemedCheckBox extends Component {
     const { checked } = this.state;
     return (
       <Grommet theme={deepMerge(grommet, customCheckBoxTheme)}>
-        <CheckBox {...this.props} label="Choice" checked={checked} onChange={this.onChange} />
+        <CheckBox
+          {...this.props}
+          label="Choice"
+          checked={checked}
+          onChange={this.onChange}
+        />
       </Grommet>
     );
   }
@@ -115,7 +125,13 @@ class ThemedToggle extends Component {
     const { checked } = this.state;
     return (
       <Grommet theme={deepMerge(grommet, customToggleTheme)}>
-        <CheckBox {...this.props} label="Choice" checked={checked} onChange={this.onChange} toggle />
+        <CheckBox
+          {...this.props}
+          label="Choice"
+          checked={checked}
+          onChange={this.onChange}
+          toggle
+        />
       </Grommet>
     );
   }
@@ -137,7 +153,12 @@ class CheckBoxInsideButton extends Component {
               this.setState({ checked: !checked });
             }}
           >
-            <CheckBox tabIndex="-1" checked={checked} label={<Text>Hi</Text>} onChange={() => {}} />
+            <CheckBox
+              tabIndex="-1"
+              checked={checked}
+              label={<Text>Hi</Text>}
+              onChange={() => {}}
+            />
           </Button>
         </Box>
       </Grommet>

@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 
-import { getBodyChildElements, makeNodeFocusable, makeNodeUnfocusable } from '../utils';
+import {
+  getBodyChildElements,
+  makeNodeFocusable,
+  makeNodeUnfocusable,
+} from '../utils';
 
 const isNotAncestorOf = child => parent => !parent.contains(child);
 

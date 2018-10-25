@@ -3,7 +3,17 @@ import { storiesOf } from '@storybook/react';
 
 import { Add, Close, FormClose, StatusGood, Trash } from 'grommet-icons';
 
-import { Box, Button, FormField, Grommet, Heading, Layer, Select, Text, TextInput } from 'grommet';
+import {
+  Box,
+  Button,
+  FormField,
+  Grommet,
+  Heading,
+  Layer,
+  Select,
+  Text,
+  TextInput,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 
 class CenterLayer extends Component {
@@ -32,13 +42,25 @@ class CenterLayer extends Component {
           plain
         />
         {open && (
-          <Layer position="center" modal onClickOutside={this.onClose} onEsc={this.onClose}>
+          <Layer
+            position="center"
+            modal
+            onClickOutside={this.onClose}
+            onEsc={this.onClose}
+          >
             <Box pad="medium" gap="small" width="medium">
               <Heading level={3} margin="none">
                 Confirm
               </Heading>
               <Text>Are you sure you want to delete?</Text>
-              <Box tag="footer" gap="small" direction="row" align="center" justify="end" pad={{ top: 'medium', bottom: 'small' }}>
+              <Box
+                tag="footer"
+                gap="small"
+                direction="row"
+                align="center"
+                justify="end"
+                pad={{ top: 'medium', bottom: 'small' }}
+              >
                 <Button label="Open 2" onClick={this.onOpen2} color="dark-6" />
                 <Button
                   label={
@@ -55,12 +77,24 @@ class CenterLayer extends Component {
           </Layer>
         )}
         {open2 && (
-          <Layer position="top" modal onClickOutside={this.onClose2} onEsc={this.onClose2}>
+          <Layer
+            position="top"
+            modal
+            onClickOutside={this.onClose2}
+            onEsc={this.onClose2}
+          >
             <Box pad="medium" gap="small" width="medium">
               <Heading level={3} margin="none">
                 Confirm 2
               </Heading>
-              <Box tag="footer" gap="small" direction="row" align="center" justify="end" pad={{ top: 'medium', bottom: 'small' }}>
+              <Box
+                tag="footer"
+                gap="small"
+                direction="row"
+                align="center"
+                justify="end"
+                pad={{ top: 'medium', bottom: 'small' }}
+              >
                 <Button label="Close" onClick={this.onClose2} color="dark-6" />
               </Box>
             </Box>
@@ -88,8 +122,21 @@ class FormLayer extends Component {
         <Box align="start">
           <Button icon={<Add />} label="Add" onClick={this.onOpen} />
           {open && (
-            <Layer position="right" full="vertical" modal onClickOutside={this.onClose} onEsc={this.onClose}>
-              <Box tag="form" fill="vertical" overflow="auto" width="medium" pad="medium" onSubmit={this.onClose}>
+            <Layer
+              position="right"
+              full="vertical"
+              modal
+              onClickOutside={this.onClose}
+              onEsc={this.onClose}
+            >
+              <Box
+                tag="form"
+                fill="vertical"
+                overflow="auto"
+                width="medium"
+                pad="medium"
+                onSubmit={this.onClose}
+              >
                 <Box flex={false} direction="row" justify="between">
                   <Heading level={2} margin="none">
                     Add
@@ -110,12 +157,19 @@ class FormLayer extends Component {
                     <Select
                       options={['one', 'two', 'three']}
                       value={fourthOption}
-                      onChange={({ option }) => this.setState({ fourthOption: option })}
+                      onChange={({ option }) =>
+                        this.setState({ fourthOption: option })
+                      }
                     />
                   </FormField>
                 </Box>
                 <Box flex={false} tag="footer" align="start">
-                  <Button type="submit" label="Submit" onClick={this.onClose} primary />
+                  <Button
+                    type="submit"
+                    label="Submit"
+                    onClick={this.onClose}
+                    primary
+                  />
                 </Box>
               </Box>
             </Layer>
@@ -148,8 +202,16 @@ class NotificationLayer extends Component {
           plain
         />
         {open && (
-          <Layer position="bottom" full="horizontal" modal={false} responsive={false}>
-            <Box align="start" pad={{ vertical: 'medium', horizontal: 'small' }}>
+          <Layer
+            position="bottom"
+            full="horizontal"
+            modal={false}
+            responsive={false}
+          >
+            <Box
+              align="start"
+              pad={{ vertical: 'medium', horizontal: 'small' }}
+            >
               <Box
                 align="center"
                 direction="row"

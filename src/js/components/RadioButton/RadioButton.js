@@ -17,9 +17,21 @@ import {
 
 class RadioButton extends Component {
   render() {
-    const { checked, disabled, focus, forwardRef, id, label, name, onChange, theme, ...rest } = this.props;
+    const {
+      checked,
+      disabled,
+      focus,
+      forwardRef,
+      id,
+      label,
+      name,
+      onChange,
+      theme,
+      ...rest
+    } = this.props;
 
-    const normalizedLabel = typeof label === 'string' ? <span>{label}</span> : label;
+    const normalizedLabel =
+      typeof label === 'string' ? <span>{label}</span> : label;
 
     const Icon = theme.radioButton.icons.circle;
     let borderColor = normalizeColor(theme.radioButton.border.color, theme);
@@ -43,7 +55,11 @@ class RadioButton extends Component {
           }
         }}
       >
-        <StyledRadioButton as={Box} margin={{ right: theme.radioButton.gap || 'small' }} theme={theme}>
+        <StyledRadioButton
+          as={Box}
+          margin={{ right: theme.radioButton.gap || 'small' }}
+          theme={theme}
+        >
           <StyledRadioButtonInput
             {...rest}
             ref={forwardRef}
@@ -75,7 +91,11 @@ class RadioButton extends Component {
               (Icon ? (
                 <Icon as={StyledRadioButtonIcon} theme={theme} />
               ) : (
-                <StyledRadioButtonIcon viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" theme={theme}>
+                <StyledRadioButtonIcon
+                  viewBox="0 0 24 24"
+                  preserveAspectRatio="xMidYMid meet"
+                  theme={theme}
+                >
                   <circle cx={12} cy={12} r={6} />
                 </StyledRadioButtonIcon>
               ))}

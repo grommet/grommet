@@ -77,7 +77,10 @@ class Menu extends Component {
       });
     } else {
       const { items } = this.props;
-      const index = activeItemIndex === -1 ? items.length - 1 : Math.max(activeItemIndex - 1, 0);
+      const index =
+        activeItemIndex === -1
+          ? items.length - 1
+          : Math.max(activeItemIndex - 1, 0);
       this.setState({ activeItemIndex: index });
       // this.setState({ activeSuggestionIndex: index },
       //   this._announceSuggestion.bind(this, index));
@@ -107,15 +110,28 @@ class Menu extends Component {
     const iconColor = normalizeColor('control', theme);
 
     const content = children || (
-      <Box direction="row" justify="start" align="center" pad="small" gap={label && icon !== false ? 'small' : undefined}>
+      <Box
+        direction="row"
+        justify="start"
+        align="center"
+        pad="small"
+        gap={label && icon !== false ? 'small' : undefined}
+      >
         <Text size={size}>{label}</Text>
-        {icon !== false ? (icon !== true && icon) || <MenuIcon color={iconColor} size={size} /> : null}
+        {icon !== false
+          ? (icon !== true && icon) || (
+              <MenuIcon color={iconColor} size={size} />
+            )
+          : null}
       </Box>
     );
 
     const controlMirror = (
       <Box flex={false}>
-        <Button a11yTitle={messages.closeMenu || 'Close Menu'} onClick={this.onDropClose}>
+        <Button
+          a11yTitle={messages.closeMenu || 'Close Menu'}
+          onClick={this.onDropClose}
+        >
           {content}
         </Button>
       </Box>
@@ -143,7 +159,10 @@ class Menu extends Component {
           onOpen={() => this.setState({ open: true })}
           onClose={() => this.setState({ open: false })}
           dropContent={
-            <ContainerBox theme={theme} background={dropBackground || theme.menu.background}>
+            <ContainerBox
+              theme={theme}
+              background={dropBackground || theme.menu.background}
+            >
               {dropAlign.top === 'top' ? controlMirror : undefined}
               <Box overflow="auto">
                 {items.map((item, index) => (

@@ -39,7 +39,10 @@ class Carousel extends Component {
       const { activeIndex } = this.state;
       const lastIndex = Children.count(children) - 1;
       if (activeIndex < lastIndex) {
-        this.setState({ activeIndex: activeIndex + 1, priorActiveIndex: activeIndex });
+        this.setState({
+          activeIndex: activeIndex + 1,
+          priorActiveIndex: activeIndex,
+        });
       } else {
         this.setState({ activeIndex: 0, priorActiveIndex: activeIndex });
       }
@@ -49,13 +52,19 @@ class Carousel extends Component {
   onRight = () => {
     const { activeIndex } = this.state;
     clearInterval(this.timer);
-    this.setState({ activeIndex: activeIndex + 1, priorActiveIndex: activeIndex });
+    this.setState({
+      activeIndex: activeIndex + 1,
+      priorActiveIndex: activeIndex,
+    });
   };
 
   onLeft = () => {
     const { activeIndex } = this.state;
     clearInterval(this.timer);
-    this.setState({ activeIndex: activeIndex - 1, priorActiveIndex: activeIndex });
+    this.setState({
+      activeIndex: activeIndex - 1,
+      priorActiveIndex: activeIndex,
+    });
   };
 
   onSelect = index => () => {
@@ -73,12 +82,23 @@ class Carousel extends Component {
     const onRight = activeIndex < lastIndex ? this.onRight : undefined;
 
     const CurrentIcon = theme.carousel.icons.current;
-    const iconColor = normalizeColor(theme.carousel.icons.color || 'control', theme);
+    const iconColor = normalizeColor(
+      theme.carousel.icons.color || 'control',
+      theme
+    );
 
     const selectors = [];
     const wrappedChildren = Children.map(children, (child, index) => {
       selectors.push(
-        <Button key={index} icon={<CurrentIcon color={activeIndex === index ? iconColor : undefined} />} onClick={this.onSelect(index)} />
+        <Button
+          key={index}
+          icon={
+            <CurrentIcon
+              color={activeIndex === index ? iconColor : undefined}
+            />
+          }
+          onClick={this.onSelect(index)}
+        />
       );
 
       let animation;
@@ -109,9 +129,20 @@ class Carousel extends Component {
       <Keyboard onLeft={onLeft} onRight={onRight}>
         <Stack guidingChild={activeIndex} fill={fill} {...rest}>
           {wrappedChildren}
-          <Box tabIndex="0" focus={focus} fill direction="row" justify="between">
+          <Box
+            tabIndex="0"
+            focus={focus}
+            fill
+            direction="row"
+            justify="between"
+          >
             <Box fill="vertical">
-              <Button fill disabled={activeIndex <= 0} onClick={onLeft} hoverIndicator>
+              <Button
+                fill
+                disabled={activeIndex <= 0}
+                onClick={onLeft}
+                hoverIndicator
+              >
                 <Box justify="center">
                   <PreviousIcon />
                 </Box>
@@ -123,7 +154,12 @@ class Carousel extends Component {
               </Box>
             </Box>
             <Box fill="vertical">
-              <Button fill disabled={activeIndex >= lastIndex} onClick={onRight} hoverIndicator>
+              <Button
+                fill
+                disabled={activeIndex >= lastIndex}
+                onClick={onRight}
+                hoverIndicator
+              >
                 <Box justify="center">
                   <NextIcon />
                 </Box>

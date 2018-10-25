@@ -20,7 +20,10 @@ const LineChart = () => (
 
 const AreaChart = () => (
   <Grommet theme={grommet}>
-    <Chart type="area" values={[{ value: [10, 20] }, { value: [20, 30] }, { value: [30, 15] }]} />
+    <Chart
+      type="area"
+      values={[{ value: [10, 20] }, { value: [20, 30] }, { value: [30, 15] }]}
+    />
   </Grommet>
 );
 
@@ -46,7 +49,12 @@ class RichChart extends Component {
     });
 
     const { axis, bounds } = calcs(values, { coarseness: 5, steps: [3, 3] });
-    const xAxis = axis[0].map(x => new Date(x).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+    const xAxis = axis[0].map(x =>
+      new Date(x).toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+      })
+    );
     const yAxis = axis[1];
     this.setState({ bounds, values, yAxis, xAxis }); // eslint-disable-line
   }
@@ -62,7 +70,12 @@ class RichChart extends Component {
     return (
       <Grommet theme={grommet}>
         <Box align="center">
-          <Box direction="row" justify="between" width="medium" margin={{ vertical: 'small' }}>
+          <Box
+            direction="row"
+            justify="between"
+            width="medium"
+            margin={{ vertical: 'small' }}
+          >
             {xAxis.map(x => (
               <Text key={x}>{x}</Text>
             ))}
@@ -90,7 +103,12 @@ class RichChart extends Component {
                 );
               })}
             </Box>
-            <Chart {...chartProps} type="area" color={{ color: 'accent-1', opacity: 'medium' }} thickness="hair" />
+            <Chart
+              {...chartProps}
+              type="area"
+              color={{ color: 'accent-1', opacity: 'medium' }}
+              thickness="hair"
+            />
             {/* }
             <Chart
               {...chartProps}
@@ -99,7 +117,13 @@ class RichChart extends Component {
               thickness='xsmall'
             />
             { */}
-            <Chart {...chartProps} type="line" round color={{ color: 'accent-3', opacity: 'strong' }} thickness="small" />
+            <Chart
+              {...chartProps}
+              type="line"
+              round
+              color={{ color: 'accent-3', opacity: 'strong' }}
+              thickness="small"
+            />
           </Stack>
         </Box>
       </Grommet>

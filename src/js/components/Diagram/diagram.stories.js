@@ -4,7 +4,17 @@ import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Diagram, Stack } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const Node = ({ id, ...rest }) => <Box id={id} basis="xxsmall" margin="small" pad="medium" round="small" background="neutral-1" {...rest} />;
+const Node = ({ id, ...rest }) => (
+  <Box
+    id={id}
+    basis="xxsmall"
+    margin="small"
+    pad="medium"
+    round="small"
+    background="neutral-1"
+    {...rest}
+  />
+);
 
 const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
   fromTarget,
@@ -32,7 +42,12 @@ const SimpleDiagram = () => (
           ))}
         </Box>
       </Box>
-      <Diagram connections={[connection('1', '5', { color: 'accent-2' }), connection('3', '5', { color: 'accent-2', anchor: 'horizontal' })]} />
+      <Diagram
+        connections={[
+          connection('1', '5', { color: 'accent-2' }),
+          connection('3', '5', { color: 'accent-2', anchor: 'horizontal' }),
+        ]}
+      />
     </Stack>
   </Grommet>
 );

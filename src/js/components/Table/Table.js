@@ -7,7 +7,9 @@ import { StyledTable, StyledTableDataCaption } from './StyledTable';
 
 const Table = ({ caption, children, ...rest }) => (
   <StyledTable {...rest}>
-    {caption ? <StyledTableDataCaption>{caption}</StyledTableDataCaption> : null}
+    {caption ? (
+      <StyledTableDataCaption>{caption}</StyledTableDataCaption>
+    ) : null}
     {children}
   </StyledTable>
 );

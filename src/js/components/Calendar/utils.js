@@ -3,7 +3,8 @@
 
 const DAY_MILLISECONDS = 24 * 60 * 60 * 1000;
 
-export const addDays = (date, days) => new Date(date.getTime() + DAY_MILLISECONDS * days);
+export const addDays = (date, days) =>
+  new Date(date.getTime() + DAY_MILLISECONDS * days);
 
 export const subtractDays = (date, days) => addDays(date, -days);
 
@@ -31,19 +32,26 @@ export const endOfMonth = date => {
 };
 
 export const sameDay = (date1, date2) =>
-  date1.getFullYear() === date2.getFullYear() && date1.getMonth() === date2.getMonth() && date1.getDate() === date2.getDate();
+  date1.getFullYear() === date2.getFullYear() &&
+  date1.getMonth() === date2.getMonth() &&
+  date1.getDate() === date2.getDate();
 
 export const sameDayOrAfter = (date1, date2) =>
   date1.getFullYear() > date2.getFullYear() ||
   (date1.getFullYear() === date2.getFullYear() &&
-    (date1.getMonth() > date2.getMonth() || (date1.getMonth() === date2.getMonth() && date1.getDate() >= date2.getDate())));
+    (date1.getMonth() > date2.getMonth() ||
+      (date1.getMonth() === date2.getMonth() &&
+        date1.getDate() >= date2.getDate())));
 
 export const sameDayOrBefore = (date1, date2) =>
   date1.getFullYear() < date2.getFullYear() ||
   (date1.getFullYear() === date2.getFullYear() &&
-    (date1.getMonth() < date2.getMonth() || (date1.getMonth() === date2.getMonth() && date1.getDate() <= date2.getDate())));
+    (date1.getMonth() < date2.getMonth() ||
+      (date1.getMonth() === date2.getMonth() &&
+        date1.getDate() <= date2.getDate())));
 
-export const daysApart = (date1, date2) => Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS);
+export const daysApart = (date1, date2) =>
+  Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS);
 
 // betweenDates takes and array of two elements and checks if the
 // supplied date lies between them, inclusive.
@@ -88,7 +96,10 @@ export const withinDates = (date, dates) => {
   return result;
 };
 
-export const updateDateRange = (selectedDate, { date, dates, previousSelectedDate }) => {
+export const updateDateRange = (
+  selectedDate,
+  { date, dates, previousSelectedDate }
+) => {
   const result = { previousSelectedDate: selectedDate };
   if (!dates) {
     if (!date) {

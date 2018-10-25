@@ -34,7 +34,14 @@ class RoutedButton extends Component {
 
   render() {
     const { href, path, method, onClick, ...rest } = this.props;
-    return <Button {...rest} href={path || href} disabled={!path && !onClick} onClick={this.onClick} />;
+    return (
+      <Button
+        {...rest}
+        href={path || href}
+        disabled={!path && !onClick}
+        onClick={this.onClick}
+      />
+    );
   }
 }
 

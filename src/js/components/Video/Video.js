@@ -12,7 +12,12 @@ import { Text } from '../Text';
 import { withForwardRef, withTheme } from '../hocs';
 import { throttle } from '../../utils';
 
-import { StyledVideo, StyledVideoContainer, StyledVideoControls, StyledVideoScrubber } from './StyledVideo';
+import {
+  StyledVideo,
+  StyledVideoContainer,
+  StyledVideoControls,
+  StyledVideoScrubber,
+} from './StyledVideo';
 
 // Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
@@ -138,7 +143,10 @@ class Video extends Component {
     // eslint-disable-next-line react/no-find-dom-node
     const video = findDOMNode(videoRef.current);
     // Set flag for Video first play
-    if ((!this.hasPlayed && !video.paused && !video.loading) || video.currentTime) {
+    if (
+      (!this.hasPlayed && !video.paused && !video.loading) ||
+      video.currentTime
+    ) {
       this.hasPlayed = true;
     }
 
@@ -181,7 +189,9 @@ class Video extends Component {
   scrub = event => {
     const { duration, scrubberRef } = this.state;
     if (scrubberRef.current) {
-      const scrubberRect = findDOMNode(scrubberRef.current).getBoundingClientRect();
+      const scrubberRect = findDOMNode(
+        scrubberRef.current
+      ).getBoundingClientRect();
       const percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
       this.setState({ scrubTime: duration * percent });
     }
@@ -190,7 +200,9 @@ class Video extends Component {
   seek = event => {
     const { duration, scrubberRef, videoRef } = this.state;
     if (scrubberRef.current) {
-      const scrubberRect = findDOMNode(scrubberRef.current).getBoundingClientRect();
+      const scrubberRect = findDOMNode(
+        scrubberRef.current
+      ).getBoundingClientRect();
       const percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
       findDOMNode(videoRef.current).currentTime = duration * percent;
     }
@@ -305,7 +317,17 @@ class Video extends Component {
 
   renderControls() {
     const { controls, theme } = this.props;
-    const { captions, currentTime, duration, interacting, percentagePlayed, playing, scrubberRef, scrubTime, volume } = this.state;
+    const {
+      captions,
+      currentTime,
+      duration,
+      interacting,
+      percentagePlayed,
+      playing,
+      scrubberRef,
+      scrubTime,
+      volume,
+    } = this.state;
     const over = controls === 'over';
     const background =
       over &&
@@ -328,17 +350,37 @@ class Video extends Component {
     };
 
     const captionControls = captions.map(caption => ({
-      icon: caption.label ? undefined : <Icons.ClosedCaption color={iconColor} />,
+      icon: caption.label ? (
+        undefined
+      ) : (
+        <Icons.ClosedCaption color={iconColor} />
+      ),
       label: caption.label,
       active: caption.active,
       onClick: () => this.showCaptions(caption.active ? -1 : 0),
     }));
 
     return (
-      <StyledVideoControls over={over} active={!this.hasPlayed || controls === 'below' || (over && interacting)}>
-        <Box direction="row" align="center" justify="between" background={background}>
+      <StyledVideoControls
+        over={over}
+        active={
+          !this.hasPlayed || controls === 'below' || (over && interacting)
+        }
+      >
+        <Box
+          direction="row"
+          align="center"
+          justify="between"
+          background={background}
+        >
           <Button
-            icon={playing ? <Icons.Pause color={iconColor} /> : <Icons.Play color={iconColor} />}
+            icon={
+              playing ? (
+                <Icons.Pause color={iconColor} />
+              ) : (
+                <Icons.Play color={iconColor} />
+              )
+            }
             hoverIndicator="background"
             onClick={playing ? this.pause : this.play}
           />
@@ -347,7 +389,12 @@ class Video extends Component {
               <Stack>
                 <Meter
                   aria-label="Video progress"
-                  background={over && ((theme.video.scrubber && theme.video.scrubber.track.color) || 'dark-3')}
+                  background={
+                    over &&
+                    ((theme.video.scrubber &&
+                      theme.video.scrubber.track.color) ||
+                      'dark-3')
+                  }
                   size="full"
                   thickness="small"
                   values={[{ value: percentagePlayed || 0 }]}
@@ -356,7 +403,11 @@ class Video extends Component {
                   ref={scrubberRef}
                   tabIndex={0}
                   role="button"
-                  value={scrubTime ? Math.round((scrubTime / duration) * 100) : undefined}
+                  value={
+                    scrubTime
+                      ? Math.round((scrubTime / duration) * 100)
+                      : undefined
+                  }
                   onMouseMove={this.scrub}
                   onMouseLeave={() => this.setState({ scrubTime: undefined })}
                   onClick={this.seek}
@@ -396,7 +447,17 @@ class Video extends Component {
   }
 
   render() {
-    const { alignSelf, autoPlay, children, controls, gridArea, loop, margin, theme, ...rest } = this.props;
+    const {
+      alignSelf,
+      autoPlay,
+      children,
+      controls,
+      gridArea,
+      loop,
+      margin,
+      theme,
+      ...rest
+    } = this.props;
     const { height, videoRef, width } = this.state;
 
     const controlsElement = controls ? this.renderControls() : undefined;
@@ -421,8 +482,22 @@ class Video extends Component {
     }
 
     return (
-      <StyledVideoContainer {...mouseEventListeners} alignSelf={alignSelf} gridArea={gridArea} margin={margin} theme={theme} style={style}>
-        <StyledVideo {...rest} ref={videoRef} theme={theme} {...this.mediaEventProps} autoPlay={autoPlay || false} loop={loop || false}>
+      <StyledVideoContainer
+        {...mouseEventListeners}
+        alignSelf={alignSelf}
+        gridArea={gridArea}
+        margin={margin}
+        theme={theme}
+        style={style}
+      >
+        <StyledVideo
+          {...rest}
+          ref={videoRef}
+          theme={theme}
+          {...this.mediaEventProps}
+          autoPlay={autoPlay || false}
+          loop={loop || false}
+        >
           {children}
         </StyledVideo>
         {controlsElement}

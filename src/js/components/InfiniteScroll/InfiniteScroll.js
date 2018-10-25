@@ -71,7 +71,14 @@ class InfiniteScroll extends Component {
     const displayCount = step * count;
     const waypointAt = displayCount - step / 2;
 
-    let marker = <Waypoint key="marker" onEnter={this.increaseOffset} bottomOffsetX="-96px" scrollableAncestor={scrollableAncestor} />;
+    let marker = (
+      <Waypoint
+        key="marker"
+        onEnter={this.increaseOffset}
+        bottomOffsetX="-96px"
+        scrollableAncestor={scrollableAncestor}
+      />
+    );
     if (renderMarker) {
       // need to give it a key
       marker = React.cloneElement(renderMarker(marker), { key: 'marker' });

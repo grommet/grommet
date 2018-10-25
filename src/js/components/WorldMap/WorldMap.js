@@ -18,12 +18,38 @@ const CONTINENTS = [
     name: 'Australia',
     origin: [74, 32],
     area: [[4, 0], [7, 1], [15, 7], [13, 9], [0, 6], [0, 2]],
-    dots: [[4, 0, 1], [2, 1, 6], [0, 2, 9], [0, 3, 10], [0, 4, 10], [0, 5, 3], [5, 5, 5], [5, 6, 4], [15, 7, 1], [14, 8, 1], [13, 9, 1]],
+    dots: [
+      [4, 0, 1],
+      [2, 1, 6],
+      [0, 2, 9],
+      [0, 3, 10],
+      [0, 4, 10],
+      [0, 5, 3],
+      [5, 5, 5],
+      [5, 6, 4],
+      [15, 7, 1],
+      [14, 8, 1],
+      [13, 9, 1],
+    ],
   },
   {
     name: 'Asia',
     origin: [52, 1],
-    area: [[16, 0], [38, 5], [40, 7], [28, 17], [24, 25], [29, 29], [19, 29], [11, 24], [3, 23], [0, 20], [0, 19], [6, 13], [7, 6]],
+    area: [
+      [16, 0],
+      [38, 5],
+      [40, 7],
+      [28, 17],
+      [24, 25],
+      [29, 29],
+      [19, 29],
+      [11, 24],
+      [3, 23],
+      [0, 20],
+      [0, 19],
+      [6, 13],
+      [7, 6],
+    ],
     dots: [
       [16, 0, 1],
       [17, 1, 2],
@@ -95,7 +121,17 @@ const CONTINENTS = [
     // 21X, 40Y
     name: 'Africa',
     origin: [40, 19],
-    area: [[3, 0], [6, 0], [11, 2], [16, 7], [16, 15], [11, 18], [9, 18], [0, 6], [0, 3]],
+    area: [
+      [3, 0],
+      [6, 0],
+      [11, 2],
+      [16, 7],
+      [16, 15],
+      [11, 18],
+      [9, 18],
+      [0, 6],
+      [0, 3],
+    ],
     dots: [
       [3, 0, 4],
       [2, 1, 6],
@@ -125,7 +161,16 @@ const CONTINENTS = [
   {
     name: 'Europe',
     origin: [39, 2],
-    area: [[8, 0], [10, 0], [20, 2], [19, 11], [18, 13], [14, 16], [3, 16], [0, 7]],
+    area: [
+      [8, 0],
+      [10, 0],
+      [20, 2],
+      [19, 11],
+      [18, 13],
+      [14, 16],
+      [3, 16],
+      [0, 7],
+    ],
     dots: [
       [8, 0, 3],
       [9, 1, 1],
@@ -284,15 +329,28 @@ const MAP_LON_DELTA = MAP_LON_RIGHT - MAP_LON_LEFT;
 
 const mapValues = extent => {
   const mapRadius = ((extent[0] / MAP_LON_DELTA) * 360) / (2 * Math.PI);
-  const mapOffsetY = Math.round((mapRadius / 2) * Math.log((1 + Math.sin(MAP_LAT_BOTTOM_RAD)) / (1 - Math.sin(MAP_LAT_BOTTOM_RAD))));
+  const mapOffsetY = Math.round(
+    (mapRadius / 2) *
+      Math.log(
+        (1 + Math.sin(MAP_LAT_BOTTOM_RAD)) / (1 - Math.sin(MAP_LAT_BOTTOM_RAD))
+      )
+  );
   return { mapRadius, mapOffsetY };
 };
 
 const latLonToCoord = (latLon, origin, extent) => {
   const { mapRadius, mapOffsetY } = mapValues(extent);
-  const x = Math.round(((latLon[1] - MAP_LON_LEFT) * extent[0]) / MAP_LON_DELTA);
+  const x = Math.round(
+    ((latLon[1] - MAP_LON_LEFT) * extent[0]) / MAP_LON_DELTA
+  );
   const latitudeRad = (latLon[0] * Math.PI) / 180;
-  const y = extent[1] + mapOffsetY - Math.round((mapRadius / 2) * Math.log((1 + Math.sin(latitudeRad)) / (1 - Math.sin(latitudeRad))));
+  const y =
+    extent[1] +
+    mapOffsetY -
+    Math.round(
+      (mapRadius / 2) *
+        Math.log((1 + Math.sin(latitudeRad)) / (1 - Math.sin(latitudeRad)))
+    );
   return [x, y]; // the coordinate value of this point on the map image
 };
 
@@ -314,7 +372,10 @@ const buildContinentState = ({ area, dots, origin }) => {
       const dotCommands = spots.join(' m10,0 ');
       const x = FACTOR * (origin[0] + segment[0] + 1);
       const y = FACTOR * (origin[1] + segment[1] + 1);
-      extent = maxCoordinate(extent, [origin[0] + segment[0] + segment[2], origin[1] + segment[1]]);
+      extent = maxCoordinate(extent, [
+        origin[0] + segment[0] + segment[2],
+        origin[1] + segment[1],
+      ]);
       return `M${x},${y} ${dotCommands}`;
     })
     .join(' ');
@@ -327,7 +388,10 @@ const buildContinentState = ({ area, dots, origin }) => {
     })
     .join(' ')} Z`;
 
-  const mid = [origin[0] + (extent[0] - origin[0]) / 2, origin[1] + (extent[1] - origin[1]) / 2];
+  const mid = [
+    origin[0] + (extent[0] - origin[0]) / 2,
+    origin[1] + (extent[1] - origin[1]) / 2,
+  ];
   return {
     area: stateArea,
     dots: stateDots,
@@ -364,7 +428,10 @@ const updateState = (state, { continents, places }) => {
 
   if (continents) {
     continents.forEach(continent => {
-      nextState.continents[continent.name] = { ...state.continents[continent.name], ...continent };
+      nextState.continents[continent.name] = {
+        ...state.continents[continent.name],
+        ...continent,
+      };
     });
   }
 
@@ -376,7 +443,11 @@ const updateState = (state, { continents, places }) => {
   return nextState;
 };
 
-const buildInteractiveProps = ({ name, onClick, onHover }, activeFunc, active) => ({
+const buildInteractiveProps = (
+  { name, onClick, onHover },
+  activeFunc,
+  active
+) => ({
   role: 'button',
   'aria-label': name,
   tabIndex: '0',
@@ -434,7 +505,10 @@ class WorldMap extends Component {
     // eslint-disable-next-line react/no-find-dom-node
     const rect = findDOMNode(this.containerRef).getBoundingClientRect();
     const scale = rect.width / width; // since the SVG viewBox might be scaled
-    const coords = [Math.round((event.clientX - rect.left) / scale / FACTOR), Math.round((event.clientY - rect.top) / scale / FACTOR)];
+    const coords = [
+      Math.round((event.clientX - rect.left) / scale / FACTOR),
+      Math.round((event.clientY - rect.top) / scale / FACTOR),
+    ];
     this.setState({ activeCoords: coords });
   };
 
@@ -462,12 +536,22 @@ class WorldMap extends Component {
     } = this.state;
 
     const continents = Object.keys(continentStates).map(name => {
-      const { area, color: continentColor, dots, onClick, onHover } = continentStates[name];
+      const {
+        area,
+        color: continentColor,
+        dots,
+        onClick,
+        onHover,
+      } = continentStates[name];
       const active = activeContinent && activeContinent === name;
 
       let interactiveProps = {};
       if (onClick || onHover) {
-        interactiveProps = buildInteractiveProps(continentStates[name], activate => this.setState({ activeContinent: activate }), active);
+        interactiveProps = buildInteractiveProps(
+          continentStates[name],
+          activate => this.setState({ activeContinent: activate }),
+          active
+        );
       }
 
       return (
@@ -476,7 +560,9 @@ class WorldMap extends Component {
           <path
             d={dots}
             strokeLinecap="round"
-            strokeWidth={parseMetricToNum(theme.worldMap.continent[active ? 'active' : 'base'])}
+            strokeWidth={parseMetricToNum(
+              theme.worldMap.continent[active ? 'active' : 'base']
+            )}
             stroke={normalizeColor(continentColor || color || 'light-3', theme)}
           />
         </g>
@@ -484,20 +570,34 @@ class WorldMap extends Component {
     });
 
     const places = placeStates.map(place => {
-      const { color: placeColor, coords, key, name, onClick, onHover, ...restPlace } = place;
+      const {
+        color: placeColor,
+        coords,
+        key,
+        name,
+        onClick,
+        onHover,
+        ...restPlace
+      } = place;
       const d = `M${FACTOR * coords[0]}, ${FACTOR * coords[1]} h0`;
       const active = activePlace && activePlace === name;
 
       let interactiveProps = {};
       if (onClick || onHover) {
-        interactiveProps = buildInteractiveProps(place, activate => this.setState({ activePlace: activate }), active);
+        interactiveProps = buildInteractiveProps(
+          place,
+          activate => this.setState({ activePlace: activate }),
+          active
+        );
       }
 
       return (
         <path
           key={key}
           strokeLinecap="round"
-          strokeWidth={parseMetricToNum(theme.worldMap.place[active ? 'active' : 'base'])}
+          strokeWidth={parseMetricToNum(
+            theme.worldMap.place[active ? 'active' : 'base']
+          )}
           stroke={normalizeColor(placeColor || color || 'light-3', theme)}
           {...interactiveProps}
           {...restPlace}
@@ -520,7 +620,14 @@ class WorldMap extends Component {
     if (activeCoords) {
       const d = `M${FACTOR * activeCoords[0]}, ${FACTOR * activeCoords[1]} h0`;
       active = (
-        <g stroke="none" fill="none" fillRule="evenodd" onClick={() => onSelectPlace(coordToLatLon(activeCoords, origin, extent))}>
+        <g
+          stroke="none"
+          fill="none"
+          fillRule="evenodd"
+          onClick={() =>
+            onSelectPlace(coordToLatLon(activeCoords, origin, extent))
+          }
+        >
           <path
             strokeLinecap="round"
             strokeWidth={parseMetricToNum(theme.worldMap.place.active)}

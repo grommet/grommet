@@ -35,4 +35,5 @@ export const arcCommands = (centerX, centerY, radius, startAngle, endAngle) => {
   return d;
 };
 
-export const translateEndAngle = (startAngle, anglePer, value) => Math.min(360, Math.max(0, startAngle + anglePer * value));
+export const translateEndAngle = (startAngle, anglePer, value) =>
+  Math.min(360, Math.max(0, startAngle + anglePer * value));

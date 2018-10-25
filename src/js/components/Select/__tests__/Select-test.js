@@ -13,13 +13,21 @@ describe('Select', () => {
   afterEach(cleanup);
 
   test('basic', () => {
-    const component = renderer.create(<Select id="test-select" options={['one', 'two']} />);
+    const component = renderer.create(
+      <Select id="test-select" options={['one', 'two']} />
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('opens', done => {
     window.scrollTo = jest.fn();
-    const { getByPlaceholderText, container } = render(<Select placeholder="test select" id="test-select" options={['one', 'two']} />);
+    const { getByPlaceholderText, container } = render(
+      <Select
+        placeholder="test select"
+        id="test-select"
+        options={['one', 'two']}
+      />
+    );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
 
@@ -36,7 +44,11 @@ describe('Select', () => {
 
   test('complex options and children', () => {
     const { getByPlaceholderText, container } = render(
-      <Select id="test-select" placeholder="test select" options={[{ test: 'one' }, { test: 'two' }]}>
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={[{ test: 'one' }, { test: 'two' }]}
+      >
         {option => <span>{option.test}</span>}
       </Select>
     );
@@ -53,7 +65,12 @@ describe('Select', () => {
     jest.useFakeTimers();
     const onSearch = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Select id="test-select" placeholder="test select" options={['one', 'two']} onSearch={onSearch} />
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={['one', 'two']}
+        onSearch={onSearch}
+      />
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -102,14 +119,21 @@ describe('Select', () => {
     window.scrollTo = jest.fn();
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Select id="test-select" placeholder="test select" options={['one', 'two']} onChange={onChange} />
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={['one', 'two']}
+        onChange={onChange}
+      />
     );
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.click(getByPlaceholderText('test select'));
 
     // pressing enter here nothing will happen
-    fireEvent.click(document.getElementById('test-select__drop').querySelector('button'));
+    fireEvent.click(
+      document.getElementById('test-select__drop').querySelector('button')
+    );
     expect(onChange).toBeCalled();
     expect(window.scrollTo).toBeCalled();
   });
@@ -118,7 +142,13 @@ describe('Select', () => {
     window.scrollTo = jest.fn();
     const onChange = jest.fn();
     const { getByText, container } = render(
-      <Select id="test-select" plain value={<span>one</span>} options={[{ test: 'one' }, { test: 'two' }]} onChange={onChange}>
+      <Select
+        id="test-select"
+        plain
+        value={<span>one</span>}
+        options={[{ test: 'one' }, { test: 'two' }]}
+        onChange={onChange}
+      >
         {option => <span>{option.test}</span>}
       </Select>
     );
@@ -127,7 +157,9 @@ describe('Select', () => {
     fireEvent.click(getByText('one'));
 
     // pressing enter here nothing will happen
-    fireEvent.click(document.getElementById('test-select__drop').querySelector('button'));
+    fireEvent.click(
+      document.getElementById('test-select__drop').querySelector('button')
+    );
     expect(onChange).toBeCalled();
     expect(window.scrollTo).toBeCalled();
   });
@@ -136,7 +168,12 @@ describe('Select', () => {
     window.scrollTo = jest.fn();
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Select id="test-select" placeholder="test select" options={['one', 'two']} onChange={onChange} />
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={['one', 'two']}
+        onChange={onChange}
+      />
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -162,18 +199,42 @@ describe('Select', () => {
   });
 
   test('size', () => {
-    const component = renderer.create(<Select id="test-select" size="large" options={['one', 'two']} selected={[]} value={[]} onChange={() => {}} />);
+    const component = renderer.create(
+      <Select
+        id="test-select"
+        size="large"
+        options={['one', 'two']}
+        selected={[]}
+        value={[]}
+        onChange={() => {}}
+      />
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('multiple', () => {
-    const component = renderer.create(<Select id="test-select" multiple options={['one', 'two']} selected={[]} value={[]} />);
+    const component = renderer.create(
+      <Select
+        id="test-select"
+        multiple
+        options={['one', 'two']}
+        selected={[]}
+        value={[]}
+      />
+    );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('multiple values', () => {
     const { getByPlaceholderText, container } = render(
-      <Select id="test-select" placeholder="test select" multiple options={['one', 'two']} selected={[0, 1]} value={['one', 'two']} />
+      <Select
+        id="test-select"
+        placeholder="test select"
+        multiple
+        options={['one', 'two']}
+        selected={[0, 1]}
+        value={['one', 'two']}
+      />
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -186,31 +247,58 @@ describe('Select', () => {
   test('select another option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Select id="test-select" placeholder="test select" multiple options={['one', 'two']} onChange={onChange} value={['two']} selected={[1]} />
+      <Select
+        id="test-select"
+        placeholder="test select"
+        multiple
+        options={['one', 'two']}
+        onChange={onChange}
+        value={['two']}
+        selected={[1]}
+      />
     );
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.click(getByPlaceholderText('test select'));
 
-    fireEvent.click(document.getElementById('test-select__drop').querySelector('button'));
+    fireEvent.click(
+      document.getElementById('test-select__drop').querySelector('button')
+    );
     expect(onChange).toBeCalled();
   });
 
   test('deselect an option', () => {
     const onChange = jest.fn();
     const { getByPlaceholderText, container } = render(
-      <Select id="test-select" placeholder="test select" multiple options={['one', 'two']} onChange={onChange} value={['one']} selected={[0]} />
+      <Select
+        id="test-select"
+        placeholder="test select"
+        multiple
+        options={['one', 'two']}
+        onChange={onChange}
+        value={['one']}
+        selected={[0]}
+      />
     );
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.click(getByPlaceholderText('test select'));
 
-    fireEvent.click(document.getElementById('test-select__drop').querySelector('button'));
+    fireEvent.click(
+      document.getElementById('test-select__drop').querySelector('button')
+    );
     expect(onChange).toBeCalled();
   });
 
   test('disabled', () => {
-    const { getByPlaceholderText, container } = render(<Select id="test-select" placeholder="test select" disabled options={['one', 'two']} />);
+    const { getByPlaceholderText, container } = render(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        disabled
+        options={['one', 'two']}
+      />
+    );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
 

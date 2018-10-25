@@ -79,7 +79,13 @@ class Tabs extends Component {
     const tabContentTitle = `${activeTitle || ''} ${tabContents}`;
 
     return (
-      <StyledTabs as={Box} role="tablist" {...rest} background={theme.tabs.background} theme={theme}>
+      <StyledTabs
+        as={Box}
+        role="tablist"
+        {...rest}
+        background={theme.tabs.background}
+        theme={theme}
+      >
         <StyledTabsHeader
           theme={theme}
           as={Box}

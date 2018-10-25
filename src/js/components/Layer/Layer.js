@@ -28,7 +28,10 @@ class Layer extends Component {
         setTimeout(() => {
           this.originalFocusedElement.focus();
         }, 0);
-      } else if (this.originalFocusedElement.parentNode && this.originalFocusedElement.parentNode.focus) {
+      } else if (
+        this.originalFocusedElement.parentNode &&
+        this.originalFocusedElement.parentNode.focus
+      ) {
         // required for IE11 and Edge
         this.originalFocusedElement.parentNode.focus();
       }

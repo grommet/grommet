@@ -23,7 +23,9 @@ describe('Accordion', () => {
         <Accordion>
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
-          {false && <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>}
+          {false && (
+            <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
+          )}
         </Accordion>
       </Grommet>
     );
@@ -35,9 +37,13 @@ describe('Accordion', () => {
       <Grommet>
         <Box background="dark-1">
           <Accordion>
-            <AccordionPanel label={<div>Panel 1 complex</div>}>Panel body 1</AccordionPanel>
+            <AccordionPanel label={<div>Panel 1 complex</div>}>
+              Panel body 1
+            </AccordionPanel>
             {undefined}
-            <AccordionPanel label={<div>Panel 2 complex</div>}>Panel body 2</AccordionPanel>
+            <AccordionPanel label={<div>Panel 2 complex</div>}>
+              Panel body 2
+            </AccordionPanel>
           </Accordion>
         </Box>
       </Grommet>
@@ -49,9 +55,13 @@ describe('Accordion', () => {
     const component = renderer.create(
       <Grommet>
         <Accordion activeIndex={1} animate={false}>
-          <AccordionPanel header={<div>Panel 1 header</div>}>Panel body 1</AccordionPanel>
+          <AccordionPanel header={<div>Panel 1 header</div>}>
+            Panel body 1
+          </AccordionPanel>
           {undefined}
-          <AccordionPanel header={<div>Panel 2 header</div>}>Panel body 2</AccordionPanel>
+          <AccordionPanel header={<div>Panel 2 header</div>}>
+            Panel body 2
+          </AccordionPanel>
         </Accordion>
       </Grommet>
     );
@@ -152,10 +162,22 @@ describe('Accordion', () => {
     const { getByText, container } = render(
       <Grommet>
         <Accordion>
-          <AccordionPanel label="Panel 1" onMouseOver={() => {}} onMouseOut={() => {}} onFocus={() => {}} onBlur={() => {}}>
+          <AccordionPanel
+            label="Panel 1"
+            onMouseOver={() => {}}
+            onMouseOut={() => {}}
+            onFocus={() => {}}
+            onBlur={() => {}}
+          >
             Panel body 1
           </AccordionPanel>
-          <AccordionPanel label="Panel 2" onMouseOver={() => {}} onMouseOut={() => {}} onFocus={() => {}} onBlur={() => {}}>
+          <AccordionPanel
+            label="Panel 2"
+            onMouseOver={() => {}}
+            onMouseOut={() => {}}
+            onFocus={() => {}}
+            onBlur={() => {}}
+          >
             Panel body 2
           </AccordionPanel>
         </Accordion>

@@ -7,7 +7,13 @@ import { grommet } from 'grommet/themes';
 const SimpleMenu = () => (
   <Grommet theme={grommet}>
     <Box direction="row" gap="large">
-      <Menu label="Actions" items={[{ label: 'Launch', onClick: () => {} }, { label: 'Abort', onClick: () => {} }]} />
+      <Menu
+        label="Actions"
+        items={[
+          { label: 'Launch', onClick: () => {} },
+          { label: 'Abort', onClick: () => {} },
+        ]}
+      />
     </Box>
   </Grommet>
 );

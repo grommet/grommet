@@ -19,4 +19,6 @@ class SimpleRangeInput extends Component {
   }
 }
 
-storiesOf('RangeInput', module).add('Simple RangeInput', () => <SimpleRangeInput />);
+storiesOf('RangeInput', module).add('Simple RangeInput', () => (
+  <SimpleRangeInput />
+));

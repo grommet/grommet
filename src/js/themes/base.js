@@ -31,8 +31,22 @@ const statusColors = {
   unknown: '#a8a8a8',
   disabled: '#a8a8a8',
 };
-const darkColors = ['#333333', '#444444', '#555555', '#666666', '#777777', '#999999'];
-const lightColors = ['#F6F6F6', '#EEEEEE', '#DDDDDD', '#CCCCCC', '#BBBBBB', '#AAAAAA'];
+const darkColors = [
+  '#333333',
+  '#444444',
+  '#555555',
+  '#666666',
+  '#777777',
+  '#999999',
+];
+const lightColors = [
+  '#F6F6F6',
+  '#EEEEEE',
+  '#DDDDDD',
+  '#CCCCCC',
+  '#BBBBBB',
+  '#AAAAAA',
+];
 const focusColor = accentColors[0];
 
 const colors = {

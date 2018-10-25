@@ -32,7 +32,11 @@ const columns = [
     header: 'Percent Complete',
     render: datum => (
       <Box pad={{ vertical: 'xsmall' }}>
-        <Meter values={[{ value: datum.percent }]} thickness="small" size="small" />
+        <Meter
+          values={[{ value: datum.percent }]}
+          thickness="small"
+          size="small"
+        />
       </Box>
     ),
   },
@@ -46,7 +50,13 @@ const columns = [
   },
 ];
 
-const locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
+const locations = [
+  'Boise',
+  'Fort Collins',
+  'Los Gatos',
+  'Palo Alto',
+  'San Francisco',
+];
 const data = [];
 for (let i = 0; i < 40; i += 1) {
   data.push({
@@ -165,7 +175,9 @@ class ServedDataTable extends Component {
         property,
         exp: new RegExp(search[property], 'i'),
       }));
-      nextData = DATA.filter(d => !expressions.some(e => !e.exp.test(d[e.property])));
+      nextData = DATA.filter(
+        d => !expressions.some(e => !e.exp.test(d[e.property]))
+      );
     } else {
       nextData = DATA;
     }
@@ -179,7 +191,8 @@ class ServedDataTable extends Component {
         <DataTable
           columns={columns.map(column => ({
             ...column,
-            search: column.property === 'name' || column.property === 'location',
+            search:
+              column.property === 'name' || column.property === 'location',
           }))}
           data={servedData}
           onSearch={this.onSearch}

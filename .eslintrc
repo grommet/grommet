@@ -38,7 +38,8 @@
     "react/prop-types": 0,
     "react/jsx-one-expression-per-line": 0,
     "react/jsx-wrap-multilines": 0,
-    "no-useless-concat": 0
+    "no-useless-concat": 0,
+    "react/jsx-indent": 0
   },
   "overrides": [
     {

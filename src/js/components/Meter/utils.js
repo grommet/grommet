@@ -6,7 +6,10 @@ export const strokeProps = (color, theme) => {
     if (typeof color === 'object') {
       result.stroke = normalizeColor(color.color, theme);
       if (color.opacity) {
-        result.strokeOpacity = color.opacity === true ? theme.global.opacity.medium : theme.global.opacity[color.opacity];
+        result.strokeOpacity =
+          color.opacity === true
+            ? theme.global.opacity.medium
+            : theme.global.opacity[color.opacity];
       }
     } else {
       result.stroke = normalizeColor(color, theme);
@@ -18,6 +21,8 @@ export const strokeProps = (color, theme) => {
 const neutralExp = /^neutral-\d+/;
 
 export const defaultColor = (index, theme) => {
-  const neutralColors = Object.keys(theme.global.colors).filter(k => neutralExp.test(k));
+  const neutralColors = Object.keys(theme.global.colors).filter(k =>
+    neutralExp.test(k)
+  );
   return neutralColors[index % neutralColors.length];
 };

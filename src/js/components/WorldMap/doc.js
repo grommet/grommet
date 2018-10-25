@@ -14,12 +14,20 @@ export const doc = WorldMap => {
     continents: PropTypes.arrayOf(
       PropTypes.shape({
         color: PropTypes.string,
-        name: PropTypes.oneOf(['Africa', 'Asia', 'Australia', 'Europe', 'North America', 'South America']).isRequired,
+        name: PropTypes.oneOf([
+          'Africa',
+          'Asia',
+          'Australia',
+          'Europe',
+          'North America',
+          'South America',
+        ]).isRequired,
         onClick: PropTypes.func,
         onHover: PropTypes.func,
       })
     ).description('Continent details.'),
-    onSelectPlace: PropTypes.func.description(`Called when the user clicks on a place.
+    onSelectPlace: PropTypes.func
+      .description(`Called when the user clicks on a place.
         It is passed the location.`),
     places: PropTypes.arrayOf(
       PropTypes.shape({
@@ -30,7 +38,9 @@ export const doc = WorldMap => {
         onHover: PropTypes.func,
       })
     ).description('Place details.'),
-    hoverColor: PropTypes.string.description('Color when hovering over places while selecting.'),
+    hoverColor: PropTypes.string.description(
+      'Color when hovering over places while selecting.'
+    ),
   };
 
   return DocumentedWorldMap;

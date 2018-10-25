@@ -6,8 +6,18 @@ import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
 
 export const Bar = props => {
-  const { background, max, round, size, theme, thickness, values, ...rest } = props;
-  const width = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]);
+  const {
+    background,
+    max,
+    round,
+    size,
+    theme,
+    thickness,
+    values,
+    ...rest
+  } = props;
+  const width =
+    size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]);
   const height = parseMetricToNum(theme.global.edgeSize[thickness]);
   // account for the round cap, if any
   const capOffset = round ? height / 2 : 0;
@@ -23,7 +33,9 @@ export const Bar = props => {
       const key = `p-${index}`;
       const delta = (value * (width - 2 * capOffset)) / max;
       const d = `M ${start},${mid} L ${start + delta},${mid}`;
-      const colorName = color || (index === values.length - 1 ? 'accent-1' : defaultColor(index, theme));
+      const colorName =
+        color ||
+        (index === values.length - 1 ? 'accent-1' : defaultColor(index, theme));
       let hoverProps;
       if (onHover) {
         hoverProps = {
@@ -38,7 +50,10 @@ export const Bar = props => {
           key={key}
           d={d}
           fill="none"
-          {...strokeProps(someHighlight && !highlight ? background : colorName, theme)}
+          {...strokeProps(
+            someHighlight && !highlight ? background : colorName,
+            theme
+          )}
           strokeWidth={height}
           strokeLinecap={round ? 'round' : 'butt'}
           {...hoverProps}

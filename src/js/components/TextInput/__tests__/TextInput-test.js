@@ -21,7 +21,14 @@ describe('TextInput', () => {
     const onInput = jest.fn();
     const onFocus = jest.fn();
     const { getByTestId, container } = render(
-      <TextInput data-testid="test-input" id="item" name="item" suggestions={['test', 'test1']} onInput={onInput} onFocus={onFocus} />
+      <TextInput
+        data-testid="test-input"
+        id="item"
+        name="item"
+        suggestions={['test', 'test1']}
+        onInput={onInput}
+        onFocus={onFocus}
+      />
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -33,7 +40,10 @@ describe('TextInput', () => {
       expect(onInput).toBeCalled();
       expect(onFocus).toBeCalled();
 
-      fireEvent(document, new MouseEvent('mousedown', { bubbles: true, cancelable: true }));
+      fireEvent(
+        document,
+        new MouseEvent('mousedown', { bubbles: true, cancelable: true })
+      );
       expect(document.getElementById('text-input-drop__item')).toBeNull();
       done();
     }, 50);
@@ -42,7 +52,12 @@ describe('TextInput', () => {
   test('complex suggestions', done => {
     const { getByTestId, container } = render(
       <Grommet>
-        <TextInput data-testid="test-input" id="item" name="item" suggestions={[{ label: 'test', value: 'test' }, { value: 'test1' }]} />
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          suggestions={[{ label: 'test', value: 'test' }, { value: 'test1' }]}
+        />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -52,7 +67,10 @@ describe('TextInput', () => {
     setTimeout(() => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
 
-      fireEvent(document, new MouseEvent('mousedown', { bubbles: true, cancelable: true }));
+      fireEvent(
+        document,
+        new MouseEvent('mousedown', { bubbles: true, cancelable: true })
+      );
       expect(document.getElementById('text-input-drop__item')).toBeNull();
       done();
     }, 50);
@@ -61,7 +79,12 @@ describe('TextInput', () => {
   test('close suggestion drop', done => {
     const { getByTestId, container } = render(
       <Grommet>
-        <TextInput data-testid="test-input" id="item" name="item" suggestions={['test', 'test1']} />
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          suggestions={['test', 'test1']}
+        />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -70,7 +93,11 @@ describe('TextInput', () => {
     setTimeout(() => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
 
-      fireEvent.keyDown(getByTestId('test-input'), { key: 'Esc', keyCode: 27, which: 27 });
+      fireEvent.keyDown(getByTestId('test-input'), {
+        key: 'Esc',
+        keyCode: 27,
+        which: 27,
+      });
       setTimeout(() => {
         expect(document.getElementById('text-input-drop__item')).toBeNull();
         expect(container.firstChild).toMatchSnapshot();
@@ -83,7 +110,15 @@ describe('TextInput', () => {
     const onSelect = jest.fn();
     const { getByTestId, container } = render(
       <Grommet>
-        <TextInput data-testid="test-input" plain size="large" id="item" name="item" suggestions={['test', 'test1']} onSelect={onSelect} />
+        <TextInput
+          data-testid="test-input"
+          plain
+          size="large"
+          id="item"
+          name="item"
+          suggestions={['test', 'test1']}
+          onSelect={onSelect}
+        />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -95,7 +130,9 @@ describe('TextInput', () => {
       fireEvent.click(getByText(document, 'test1'));
       expect(container.firstChild).toMatchSnapshot();
       expect(document.getElementById('text-input-drop__item')).toBeNull();
-      expect(onSelect).toBeCalledWith(expect.objectContaining({ suggestion: 'test1' }));
+      expect(onSelect).toBeCalledWith(
+        expect.objectContaining({ suggestion: 'test1' })
+      );
       done();
     }, 50);
   });
@@ -104,7 +141,13 @@ describe('TextInput', () => {
     const onSelect = jest.fn();
     const { getByTestId, container } = render(
       <Grommet>
-        <TextInput data-testid="test-input" id="item" name="item" suggestions={['test', { value: 'test1' }]} onSelect={onSelect} />
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          suggestions={['test', { value: 'test1' }]}
+          onSelect={onSelect}
+        />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -127,7 +170,12 @@ describe('TextInput', () => {
     const onSelect = jest.fn();
     const { getByTestId, container } = render(
       <Grommet>
-        <TextInput data-testid="test-input" id="item" name="item" onSelect={onSelect} />
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          onSelect={onSelect}
+        />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();

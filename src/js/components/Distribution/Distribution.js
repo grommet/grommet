@@ -32,7 +32,16 @@ class Distribution extends Component {
   };
 
   render() {
-    const { basis, children, direction, fill, gap, theme, values, ...rest } = this.props;
+    const {
+      basis,
+      children,
+      direction,
+      fill,
+      gap,
+      theme,
+      values,
+      ...rest
+    } = this.props;
     if (values.length === 1) {
       const value = values[0];
       return (
@@ -79,11 +88,29 @@ class Distribution extends Component {
       }
 
       return (
-        <Box direction={direction} basis={basis} flex={basis ? 'shrink' : true} overflow="hidden" gap={gap} fill={fill} {...rest}>
-          <Distribution values={values.slice(0, subIndex)} basis={childBasis[0]} direction={direction === 'row' ? 'column' : 'row'} gap={gap}>
+        <Box
+          direction={direction}
+          basis={basis}
+          flex={basis ? 'shrink' : true}
+          overflow="hidden"
+          gap={gap}
+          fill={fill}
+          {...rest}
+        >
+          <Distribution
+            values={values.slice(0, subIndex)}
+            basis={childBasis[0]}
+            direction={direction === 'row' ? 'column' : 'row'}
+            gap={gap}
+          >
             {children}
           </Distribution>
-          <Distribution values={values.slice(subIndex)} basis={childBasis[1]} direction={direction === 'row' ? 'column' : 'row'} gap={gap}>
+          <Distribution
+            values={values.slice(subIndex)}
+            basis={childBasis[1]}
+            direction={direction === 'row' ? 'column' : 'row'}
+            gap={gap}
+          >
             {children}
           </Distribution>
         </Box>

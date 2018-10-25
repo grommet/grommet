@@ -29,34 +29,52 @@ export const doc = TextInput => {
       aligned to the TextInput itself by default.`
     ),
     id: PropTypes.string.description('The id attribute of the input.'),
-    focusIndicator: PropTypes.bool.description('Whether the plain text input should receive a focus outline.'),
+    focusIndicator: PropTypes.bool.description(
+      'Whether the plain text input should receive a focus outline.'
+    ),
     messages: PropTypes.shape({
       enterSelect: PropTypes.string,
       suggestionsCount: PropTypes.string,
       suggestionsExist: PropTypes.string,
       suggestionIsOpen: PropTypes.string,
     })
-      .description('Custom messages for TextInput. Used for accessibility by screen readers.')
+      .description(
+        'Custom messages for TextInput. Used for accessibility by screen readers.'
+      )
       .defaultValue({
         enterSelect: '(Press Enter to Select)',
         suggestionsCount: 'suggestions available',
-        suggestionsExist: 'This input has suggestions use arrow keys to navigate',
-        suggestionIsOpen: 'Suggestions drop is open, continue to use arrow keys to navigate',
+        suggestionsExist:
+          'This input has suggestions use arrow keys to navigate',
+        suggestionIsOpen:
+          'Suggestions drop is open, continue to use arrow keys to navigate',
       }),
     name: PropTypes.string.description('The name attribute of the input.'),
-    onInput: PropTypes.func.description('Function that will be called when the user types in the input.'),
+    onInput: PropTypes.func.description(
+      'Function that will be called when the user types in the input.'
+    ),
     onSelect: PropTypes.func.description(
       `Function that will be called when the user selects a suggestion.
 The suggestion contains the object chosen from the supplied suggestions.`
     ),
-    onSuggestionsOpen: PropTypes.func.description('Function that will be called when the suggestions drop is opened.'),
-    onSuggestionsClose: PropTypes.func.description('Function that will be called when the suggestions drop is closed.'),
-    placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description('Placeholder to use when no value is provided.'),
+    onSuggestionsOpen: PropTypes.func.description(
+      'Function that will be called when the suggestions drop is opened.'
+    ),
+    onSuggestionsClose: PropTypes.func.description(
+      'Function that will be called when the suggestions drop is closed.'
+    ),
+    placeholder: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.node,
+    ]).description('Placeholder to use when no value is provided.'),
     plain: PropTypes.bool.description(
       `Whether this is a plain input with no border or padding.
 Only use this when the containing context provides sufficient affordance`
     ),
-    size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The size of the TextInput.'),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description('The size of the TextInput.'),
     suggestions: PropTypes.arrayOf(
       PropTypes.oneOfType([
         PropTypes.shape({

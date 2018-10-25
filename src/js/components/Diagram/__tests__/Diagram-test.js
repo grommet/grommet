@@ -51,7 +51,9 @@ describe('Diagram', () => {
   test('color', () => {
     const { container } = render(
       <Context>
-        <Diagram connections={[{ fromTarget: '1', toTarget: '2', color: 'brand' }]} />
+        <Diagram
+          connections={[{ fromTarget: '1', toTarget: '2', color: 'brand' }]}
+        />
       </Context>
     );
     expect(container.firstChild).toMatchSnapshot();

@@ -1,6 +1,8 @@
 const sumReducer = (accumulated, next) => accumulated + next;
-const minReducer = (accumulated, next) => (accumulated === undefined ? next : Math.min(accumulated, next));
-const maxReducer = (accumulated, next) => (accumulated === undefined ? next : Math.max(accumulated, next));
+const minReducer = (accumulated, next) =>
+  accumulated === undefined ? next : Math.min(accumulated, next);
+const maxReducer = (accumulated, next) =>
+  accumulated === undefined ? next : Math.max(accumulated, next);
 
 const reducers = {
   max: maxReducer,
@@ -14,7 +16,9 @@ const aggregateColumn = (column, data) => {
     value = data.map(d => d[column.property]).reduce(sumReducer);
     value /= data.length;
   } else {
-    value = data.map(d => d[column.property]).reduce(reducers[column.aggregate], 0);
+    value = data
+      .map(d => d[column.property])
+      .reduce(reducers[column.aggregate], 0);
   }
   return value;
 };
@@ -48,17 +52,27 @@ const filter = (nextProps, prevState, nextState) => {
         nextFilters = {};
         regexps = {};
       }
-      nextFilters[column.property] = filters ? filters[column.property] || '' : '';
+      nextFilters[column.property] = filters
+        ? filters[column.property] || ''
+        : '';
       // don't do filtering if the caller has supplied onSearch
       if (nextFilters[column.property] && column.search && !onSearch) {
-        regexps[column.property] = new RegExp(nextFilters[column.property], 'i');
+        regexps[column.property] = new RegExp(
+          nextFilters[column.property],
+          'i'
+        );
       }
     }
   });
 
   let nextData = data;
   if (nextFilters) {
-    nextData = data.filter(datum => !Object.keys(regexps).some(property => !regexps[property].test(datum[property])));
+    nextData = data.filter(
+      datum =>
+        !Object.keys(regexps).some(
+          property => !regexps[property].test(datum[property])
+        )
+    );
   }
 
   return { ...nextState, filters: nextFilters, data: nextData };
@@ -135,7 +149,10 @@ const groupData = (nextProps, prevState, nextState) => {
         group.datum[groupBy] = groupValue;
         groups.push(group);
         groupState[groupValue] = {
-          expanded: prevState.groupState && prevState.groupState[groupValue] ? prevState.groupState[groupValue].expanded : false,
+          expanded:
+            prevState.groupState && prevState.groupState[groupValue]
+              ? prevState.groupState[groupValue].expanded
+              : false,
         };
         groupMap[groupValue] = group;
       }

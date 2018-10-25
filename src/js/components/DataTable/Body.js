@@ -7,7 +7,15 @@ import { TableCell } from '../TableCell';
 import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 
-export const Body = ({ columns, data, onMore, primaryProperty, size, theme, ...rest }) => (
+export const Body = ({
+  columns,
+  data,
+  onMore,
+  primaryProperty,
+  size,
+  theme,
+  ...rest
+}) => (
   <StyledDataTableBody size={size} theme={theme} {...rest}>
     <InfiniteScroll
       items={data}
@@ -22,7 +30,14 @@ export const Body = ({ columns, data, onMore, primaryProperty, size, theme, ...r
       {datum => (
         <StyledDataTableRow key={datum[primaryProperty]} size={size}>
           {columns.map(column => (
-            <Cell key={column.property} context="body" column={column} datum={datum} scope={column.primary ? 'row' : undefined} theme={theme} />
+            <Cell
+              key={column.property}
+              context="body"
+              column={column}
+              datum={datum}
+              scope={column.primary ? 'row' : undefined}
+              theme={theme}
+            />
           ))}
         </StyledDataTableRow>
       )}

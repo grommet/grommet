@@ -16,7 +16,12 @@ describe('Menu', () => {
   test('basic', () => {
     const component = renderer.create(
       <Grommet>
-        <Menu icon={<svg />} label="Test Menu" id="test-menu" items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />
+        <Menu
+          icon={<svg />}
+          label="Test Menu"
+          id="test-menu"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
       </Grommet>
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -25,7 +30,11 @@ describe('Menu', () => {
   test('custom message', () => {
     const component = renderer.create(
       <Grommet>
-        <Menu label="Test Menu" messages={{ openMenu: 'Abrir Menu' }} items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />
+        <Menu
+          label="Test Menu"
+          messages={{ openMenu: 'Abrir Menu' }}
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
       </Grommet>
     );
     expect(component.toJSON()).toMatchSnapshot();
@@ -35,7 +44,15 @@ describe('Menu', () => {
     window.scrollTo = jest.fn();
     const { getByText, container } = render(
       <Grommet>
-        <Menu id="test-menu" label="Test" items={[{ label: 'Item 1' }, { label: 'Item 2', onClick: () => {} }, { label: 'Item 3', href: '/test' }]} />
+        <Menu
+          id="test-menu"
+          label="Test"
+          items={[
+            { label: 'Item 1' },
+            { label: 'Item 2', onClick: () => {} },
+            { label: 'Item 3', href: '/test' },
+          ]}
+        />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -53,7 +70,11 @@ describe('Menu', () => {
   test('close by clicking outside', done => {
     const { getByText, container } = render(
       <Grommet>
-        <Menu id="test-menu" label="Test" items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />
+        <Menu
+          id="test-menu"
+          label="Test"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -62,7 +83,10 @@ describe('Menu', () => {
     fireEvent.click(getByText('Test'));
     expectPortal('test-menu__drop').toMatchSnapshot();
 
-    fireEvent(document, new MouseEvent('mousedown', { bubbles: true, cancelable: true }));
+    fireEvent(
+      document,
+      new MouseEvent('mousedown', { bubbles: true, cancelable: true })
+    );
     setTimeout(() => {
       expect(document.getElementById('test-menu__drop')).toBeNull();
       done();
@@ -73,7 +97,11 @@ describe('Menu', () => {
     const onClick = jest.fn();
     const { getByText, container } = render(
       <Grommet>
-        <Menu id="test-menu" label="Test" items={[{ label: 'Item 1', onClick }, { label: 'Item 2' }]} />
+        <Menu
+          id="test-menu"
+          label="Test"
+          items={[{ label: 'Item 1', onClick }, { label: 'Item 2' }]}
+        />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -90,7 +118,11 @@ describe('Menu', () => {
     const onClick = jest.fn();
     const { getByText, container } = render(
       <Grommet>
-        <Menu id="test-menu" label="Test" items={[{ label: 'Item 1', onClick }, { label: 'Item 2' }]} />
+        <Menu
+          id="test-menu"
+          label="Test"
+          items={[{ label: 'Item 1', onClick }, { label: 'Item 2' }]}
+        />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -98,15 +130,31 @@ describe('Menu', () => {
     // pressing down 3x: first opens the drop,
     // second moves to the first suggestion
     // third moves to the last suggestion
-    fireEvent.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
-    fireEvent.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
-    fireEvent.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
+    fireEvent.keyDown(getByText('Test'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+    fireEvent.keyDown(getByText('Test'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+    fireEvent.keyDown(getByText('Test'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
 
     // moves to the first suggestion
     fireEvent.keyDown(getByText('Test'), { key: 'Up', keyCode: 38, which: 38 });
 
     // select that by pressing enter
-    fireEvent.keyDown(getByText('Test'), { key: 'Enter', keyCode: 13, which: 13 });
+    fireEvent.keyDown(getByText('Test'), {
+      key: 'Enter',
+      keyCode: 13,
+      which: 13,
+    });
 
     expect(onClick).toBeCalled();
     expect(document.getElementById('test-menu__drop')).toBeNull();
@@ -115,13 +163,25 @@ describe('Menu', () => {
   test('close on esc', () => {
     const { getByText, container } = render(
       <Grommet>
-        <Menu id="test-menu" label="Test" items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />
+        <Menu
+          id="test-menu"
+          label="Test"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
-    fireEvent.keyDown(getByText('Test'), { key: 'Esc', keyCode: 27, which: 27 });
+    fireEvent.keyDown(getByText('Test'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
+    fireEvent.keyDown(getByText('Test'), {
+      key: 'Esc',
+      keyCode: 27,
+      which: 27,
+    });
 
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
@@ -129,12 +189,20 @@ describe('Menu', () => {
   test('close on tab', () => {
     const { getByText, container } = render(
       <Grommet>
-        <Menu id="test-menu" label="Test" items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />
+        <Menu
+          id="test-menu"
+          label="Test"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
+    fireEvent.keyDown(getByText('Test'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
     fireEvent.keyDown(getByText('Test'), { key: 'Tab', keyCode: 9, which: 9 });
 
     expect(document.getElementById('test-menu__drop')).toBeNull();
@@ -143,12 +211,21 @@ describe('Menu', () => {
   test('with dropAlign renders', () => {
     const { getByText, container } = render(
       <Grommet>
-        <Menu id="test-menu" dropAlign={{ top: 'top', right: 'right' }} label="Test" items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />
+        <Menu
+          id="test-menu"
+          dropAlign={{ top: 'top', right: 'right' }}
+          label="Test"
+          items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+        />
       </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.keyDown(getByText('Test'), { key: 'Down', keyCode: 40, which: 40 });
+    fireEvent.keyDown(getByText('Test'), {
+      key: 'Down',
+      keyCode: 40,
+      which: 40,
+    });
 
     expectPortal('test-menu__drop').toMatchSnapshot();
   });
@@ -160,7 +237,11 @@ describe('Menu', () => {
           id="test-menu"
           disabled
           label="Test"
-          items={[{ label: 'Item 1' }, { label: 'Item 2', onClick: () => {} }, { label: 'Item 3', href: '/test' }]}
+          items={[
+            { label: 'Item 1' },
+            { label: 'Item 2', onClick: () => {} },
+            { label: 'Item 3', href: '/test' },
+          ]}
         />
       </Grommet>,
       {

@@ -14,7 +14,9 @@ describe('FocusedContainer', () => {
         <input id="test" />
       </div>
     );
-    const { container: focuser } = render(<FocusedContainer id="container">test focused container</FocusedContainer>);
+    const { container: focuser } = render(
+      <FocusedContainer id="container">test focused container</FocusedContainer>
+    );
     jest.runAllTimers();
     expect(focuser.firstChild).toMatchSnapshot();
     expect(trapped.firstChild).toMatchSnapshot(); // should have tabIndex="-1"
@@ -49,7 +51,9 @@ describe('FocusedContainer', () => {
         <input id="test" />
       </div>
     );
-    const { container: focuser } = render(<FocusedContainer id="container">test focused container</FocusedContainer>);
+    const { container: focuser } = render(
+      <FocusedContainer id="container">test focused container</FocusedContainer>
+    );
 
     jest.runAllTimers();
 

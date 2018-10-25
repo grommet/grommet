@@ -1,6 +1,10 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { backgroundPropType, genericProps, getAvailableAtBadge } from '../../utils';
+import {
+  backgroundPropType,
+  genericProps,
+  getAvailableAtBadge,
+} from '../../utils';
 
 export const doc = Meter => {
   const DocumentedMeter = describe(Meter)
@@ -13,12 +17,23 @@ export const doc = Meter => {
 
   DocumentedMeter.propTypes = {
     ...genericProps,
-    background: backgroundPropType.defaultValue({ color: 'light-2', opacity: 'medium' }),
-    round: PropTypes.bool.description('Whether to round the line ends').defaultValue(false),
-    size: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), PropTypes.string])
+    background: backgroundPropType.defaultValue({
+      color: 'light-2',
+      opacity: 'medium',
+    }),
+    round: PropTypes.bool
+      .description('Whether to round the line ends')
+      .defaultValue(false),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
+      PropTypes.string,
+    ])
       .description('The size of the Meter.')
       .defaultValue('medium'),
-    thickness: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string])
+    thickness: PropTypes.oneOfType([
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ])
       .description('The size of the Meter.')
       .defaultValue('medium'),
     type: PropTypes.oneOf(['bar', 'circle'])

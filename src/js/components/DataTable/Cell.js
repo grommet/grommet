@@ -3,7 +3,13 @@ import React from 'react';
 import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 
-export const Cell = ({ column: { align, property, primary, render }, context, datum, scope, theme }) => {
+export const Cell = ({
+  column: { align, property, primary, render },
+  context,
+  datum,
+  scope,
+  theme,
+}) => {
   let content;
   if (render) {
     if (datum[property]) {

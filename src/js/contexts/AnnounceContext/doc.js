@@ -6,7 +6,9 @@ export const doc = AnnounceContext => {
   const DocumentedAnnounceContext = describe(AnnounceContext)
     .availableAt(getAvailableAtBadge('AnnounceContext'))
     .description('A means of announcing events for screen readers.')
-    .usage("import { AnnounceContext } from 'grommet';\n<AnnounceContext.Consumer />\n{announce => ()}");
+    .usage(
+      "import { AnnounceContext } from 'grommet';\n<AnnounceContext.Consumer />\n{announce => ()}"
+    );
 
   DocumentedAnnounceContext.propTypes = {
     children: PropTypes.func.description(

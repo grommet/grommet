@@ -9,14 +9,32 @@ const SorterButton = styled(Button)`
   height: 100%;
 `;
 
-export const Sorter = ({ align, children, fill, onSort, property, sort, theme, themeProps }) => {
+export const Sorter = ({
+  align,
+  children,
+  fill,
+  onSort,
+  property,
+  sort,
+  theme,
+  themeProps,
+}) => {
   let icon;
   if (sort && sort.property === property) {
-    const Icon = theme.dataTable.icons[sort.ascending ? 'ascending' : 'descending'];
+    const Icon =
+      theme.dataTable.icons[sort.ascending ? 'ascending' : 'descending'];
     icon = <Icon />;
   }
   let content = (
-    <Box {...themeProps} flex="shrink" direction="row" justify={align} align="center" gap="xsmall" fill={fill}>
+    <Box
+      {...themeProps}
+      flex="shrink"
+      direction="row"
+      justify={align}
+      align="center"
+      gap="xsmall"
+      fill={fill}
+    >
       {children}
       {icon}
     </Box>

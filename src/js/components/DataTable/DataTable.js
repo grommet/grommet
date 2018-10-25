@@ -42,7 +42,8 @@ class DataTable extends Component {
 
   onSort = property => () => {
     const { sort } = this.state;
-    const ascending = sort && property === sort.property ? !sort.ascending : true;
+    const ascending =
+      sort && property === sort.property ? !sort.ascending : true;
     this.setState({ sort: { property, ascending } });
   };
 
@@ -58,7 +59,8 @@ class DataTable extends Component {
 
   onToggleGroups = () => {
     const { groupState } = this.state;
-    const expanded = Object.keys(groupState).filter(k => !groupState[k].expanded).length === 0;
+    const expanded =
+      Object.keys(groupState).filter(k => !groupState[k].expanded).length === 0;
     const nextGroupState = {};
     Object.keys(groupState).forEach(k => {
       nextGroupState[k] = { ...groupState[k], expanded: !expanded };
@@ -86,7 +88,18 @@ class DataTable extends Component {
       theme,
       ...rest
     } = this.props;
-    const { data, filtering, filters, footerValues, groups, groupState, primaryProperty, showFooter, sort, widths } = this.state;
+    const {
+      data,
+      filtering,
+      filters,
+      footerValues,
+      groups,
+      groupState,
+      primaryProperty,
+      showFooter,
+      sort,
+      widths,
+    } = this.state;
 
     if (size && resizeable) {
       console.warn('DataTable cannot combine "size" and "resizeble".');
@@ -121,9 +134,24 @@ class DataTable extends Component {
             onToggle={this.onToggleGroup}
           />
         ) : (
-          <Body columns={columns} data={data} onMore={onMore} primaryProperty={primaryProperty} size={size} theme={theme} />
+          <Body
+            columns={columns}
+            data={data}
+            onMore={onMore}
+            primaryProperty={primaryProperty}
+            size={size}
+            theme={theme}
+          />
         )}
-        {showFooter && <Footer columns={columns} footerValues={footerValues} groups={groups} size={size} theme={theme} />}
+        {showFooter && (
+          <Footer
+            columns={columns}
+            footerValues={footerValues}
+            groups={groups}
+            size={size}
+            theme={theme}
+          />
+        )}
       </StyledDataTable>
     );
   }

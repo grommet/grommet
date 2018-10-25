@@ -18,8 +18,22 @@ class SimpleRadioButton extends Component {
     return (
       <Grommet theme={grommet}>
         <Box gap="small">
-          <RadioButton label="Choice 1" name="radio" value="c1" checked={selected === 'c1'} onChange={this.onChange} {...this.props} />
-          <RadioButton label="Choice 2" name="radio" value="c2" checked={selected === 'c2'} onChange={this.onChange} {...this.props} />
+          <RadioButton
+            label="Choice 1"
+            name="radio"
+            value="c1"
+            checked={selected === 'c1'}
+            onChange={this.onChange}
+            {...this.props}
+          />
+          <RadioButton
+            label="Choice 2"
+            name="radio"
+            value="c2"
+            checked={selected === 'c2'}
+            onChange={this.onChange}
+            {...this.props}
+          />
         </Box>
       </Grommet>
     );
@@ -56,8 +70,20 @@ class CustomRadioButton extends Component {
     return (
       <Grommet theme={customTheme}>
         <Box gap="xsmall">
-          <RadioButton label="Choice 1" name="radio" value="c1" checked={selected === 'c1'} onChange={this.onChange} />
-          <RadioButton label="Choice 2" name="radio" value="c2" checked={selected === 'c2'} onChange={this.onChange} />
+          <RadioButton
+            label="Choice 1"
+            name="radio"
+            value="c1"
+            checked={selected === 'c1'}
+            onChange={this.onChange}
+          />
+          <RadioButton
+            label="Choice 2"
+            name="radio"
+            value="c2"
+            checked={selected === 'c2'}
+            onChange={this.onChange}
+          />
         </Box>
       </Grommet>
     );
@@ -81,7 +107,13 @@ class CheckBoxInsideButton extends Component {
             }
           }}
         >
-          <RadioButton label="Choice 1" name="radio" value="c1" checked={selected === 'c1'} {...this.props} />
+          <RadioButton
+            label="Choice 1"
+            name="radio"
+            value="c1"
+            checked={selected === 'c1'}
+            {...this.props}
+          />
         </Button>
       </Grommet>
     );
@@ -89,6 +121,8 @@ class CheckBoxInsideButton extends Component {
 }
 storiesOf('RadioButton', module)
   .add('Simple RadioButton', () => <SimpleRadioButton />)
-  .add('Disabled RadioButton', () => <SimpleRadioButton disabled selected="c2" />)
+  .add('Disabled RadioButton', () => (
+    <SimpleRadioButton disabled selected="c2" />
+  ))
   .add('Custom Theme', () => <CustomRadioButton />)
   .add('Inside a Button Theme', () => <CheckBoxInsideButton />);

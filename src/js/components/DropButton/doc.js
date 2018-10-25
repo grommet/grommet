@@ -18,7 +18,9 @@ export const doc = DropButton => {
 
   DocumentedDropButton.propTypes = {
     ...genericProps,
-    disabled: PropTypes.bool.description('Whether the button should be disabled.').defaultValue(false),
+    disabled: PropTypes.bool
+      .description('Whether the button should be disabled.')
+      .defaultValue(false),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),
       bottom: PropTypes.oneOf(['top', 'bottom']),
@@ -30,7 +32,9 @@ export const doc = DropButton => {
         top: 'top',
         left: 'left',
       }),
-    dropContent: PropTypes.element.description('Content to put inside the Drop.').isRequired,
+    dropContent: PropTypes.element.description(
+      'Content to put inside the Drop.'
+    ).isRequired,
     dropTarget: PropTypes.object.description(
       `Target where the drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be

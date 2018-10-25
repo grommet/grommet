@@ -19,7 +19,20 @@ import { normalizeColor } from '../../utils';
 
 class CheckBox extends Component {
   render() {
-    const { checked, disabled, focus, forwardRef, id, label, name, onChange, reverse, theme, toggle, ...rest } = this.props;
+    const {
+      checked,
+      disabled,
+      focus,
+      forwardRef,
+      id,
+      label,
+      name,
+      onChange,
+      reverse,
+      theme,
+      toggle,
+      ...rest
+    } = this.props;
 
     let hidden;
     if (disabled && checked) {
@@ -57,7 +70,11 @@ class CheckBox extends Component {
           (Icon ? (
             <Icon as={StyledCheckBoxIcon} theme={theme} />
           ) : (
-            <StyledCheckBoxIcon viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" theme={theme}>
+            <StyledCheckBoxIcon
+              viewBox="0 0 24 24"
+              preserveAspectRatio="xMidYMid meet"
+              theme={theme}
+            >
               <path fill="none" d="M6,11.3 L10.3,16 L18,6.2" />
             </StyledCheckBoxIcon>
           ))}
@@ -86,7 +103,8 @@ class CheckBox extends Component {
       </StyledCheckBox>
     );
 
-    const normalizedLabel = typeof label === 'string' ? <span>{label}</span> : label;
+    const normalizedLabel =
+      typeof label === 'string' ? <span>{label}</span> : label;
 
     const first = reverse ? normalizedLabel : checkBoxNode;
     const second = reverse ? checkBoxNode : normalizedLabel;

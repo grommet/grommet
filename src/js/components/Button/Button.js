@@ -9,7 +9,13 @@ import { StyledButton } from './StyledButton';
 
 const isDarkBackground = props => {
   const backgroundColor = normalizeBackground(
-    normalizeColor(props.color || props.theme.button.primary.color || props.theme.global.colors.control || 'brand', props.theme),
+    normalizeColor(
+      props.color ||
+        props.theme.button.primary.color ||
+        props.theme.global.colors.control ||
+        'brand',
+      props.theme
+    ),
     props.theme
   );
 
@@ -27,7 +33,9 @@ class Button extends Component {
 
     const { children, icon, label } = props;
     if ((icon || label) && children) {
-      console.warn('Button should not have children if icon or label is provided');
+      console.warn(
+        'Button should not have children if icon or label is provided'
+      );
     }
   }
 
@@ -56,7 +64,10 @@ class Button extends Component {
     // only change color if user did not specify the color themselves...
     if (primary && icon && !icon.props.color) {
       buttonIcon = cloneElement(icon, {
-        color: theme.global.colors.text[isDarkBackground(this.props) ? 'dark' : 'light'],
+        color:
+          theme.global.colors.text[
+            isDarkBackground(this.props) ? 'dark' : 'light'
+          ],
       });
     }
     const first = reverse ? label : buttonIcon;
@@ -76,7 +87,11 @@ class Button extends Component {
         focus={focus}
         href={href}
         onClick={onClick}
-        plain={typeof plain !== 'undefined' ? plain : Children.count(children) > 0 || (icon && !label)}
+        plain={
+          typeof plain !== 'undefined'
+            ? plain
+            : Children.count(children) > 0 || (icon && !label)
+        }
         primary={primary}
         theme={theme}
         type={!href ? type : undefined}

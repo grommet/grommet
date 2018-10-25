@@ -8,7 +8,14 @@ import { Heading } from '../Heading';
 import { Keyboard } from '../Keyboard';
 import { withTheme } from '../hocs';
 
-import { StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks, StyledWeeksContainer } from './StyledCalendar';
+import {
+  StyledCalendar,
+  StyledDay,
+  StyledDayContainer,
+  StyledWeek,
+  StyledWeeks,
+  StyledWeeksContainer,
+} from './StyledCalendar';
 import {
   addDays,
   addMonths,
@@ -79,7 +86,10 @@ class Calendar extends Component {
       reference
     ) {
       let state = {};
-      if (Object.prototype.hasOwnProperty.call(nextProps, 'date') || Object.prototype.hasOwnProperty.call(nextProps, 'dates')) {
+      if (
+        Object.prototype.hasOwnProperty.call(nextProps, 'date') ||
+        Object.prototype.hasOwnProperty.call(nextProps, 'dates')
+      ) {
         state.date = nextProps.date;
         state.dates = nextProps.dates;
       }
@@ -199,26 +209,41 @@ class Calendar extends Component {
     const { bounds, locale, size, theme } = this.props;
     const { reference } = this.state;
 
-    const PreviousIcon = size === 'small' ? theme.calendar.icons.small.previous : theme.calendar.icons.previous;
+    const PreviousIcon =
+      size === 'small'
+        ? theme.calendar.icons.small.previous
+        : theme.calendar.icons.previous;
 
-    const NextIcon = size === 'small' ? theme.calendar.icons.small.next : theme.calendar.icons.next;
+    const NextIcon =
+      size === 'small'
+        ? theme.calendar.icons.small.next
+        : theme.calendar.icons.next;
 
     return (
       <Box direction="row" justify="between" align="center">
         <Box flex pad={{ horizontal: headingPadMap[size] || 'small' }}>
           <Heading level={size === 'small' ? 4 : 3} size={size} margin="none">
-            {reference.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
+            {reference.toLocaleDateString(locale, {
+              month: 'long',
+              year: 'numeric',
+            })}
           </Heading>
         </Box>
         <Box flex={false} direction="row" align="center">
           <Button
-            a11yTitle={previousMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
+            a11yTitle={previousMonth.toLocaleDateString(locale, {
+              month: 'long',
+              year: 'numeric',
+            })}
             icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
             disabled={!betweenDates(previousMonth, bounds)}
             onClick={() => this.setReference(previousMonth)}
           />
           <Button
-            a11yTitle={nextMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
+            a11yTitle={nextMonth.toLocaleDateString(locale, {
+              month: 'long',
+              year: 'numeric',
+            })}
             icon={<NextIcon size={size !== 'small' ? size : undefined} />}
             disabled={!betweenDates(nextMonth, bounds)}
             onClick={() => this.setReference(nextMonth)}
@@ -250,7 +275,9 @@ class Calendar extends Component {
     // We have to deal with reference being the end of a month with more
     // days than the month we are changing to. So, we always set reference
     // to the first of the month before changing the month.
-    const previousMonth = endOfMonth(subtractMonths(startOfMonth(reference), 1));
+    const previousMonth = endOfMonth(
+      subtractMonths(startOfMonth(reference), 1)
+    );
     const nextMonth = startOfMonth(addMonths(startOfMonth(reference), 1));
 
     const weeks = [];
@@ -289,7 +316,8 @@ class Calendar extends Component {
         } else if (selectedState === 1) {
           inRange = true;
         }
-        const dayDisabled = withinDates(day, disabled) || (bounds && !betweenDates(day, bounds));
+        const dayDisabled =
+          withinDates(day, disabled) || (bounds && !betweenDates(day, bounds));
 
         days.push(
           <StyledDayContainer key={day.getTime()} sizeProp={size} theme={theme}>
@@ -303,7 +331,13 @@ class Calendar extends Component {
               onFocus={this.onFocus(day)}
               onBlur={() => this.setState({ focused: false })}
             >
-              <StyledDay inRange={inRange} otherMonth={day.getMonth() !== reference.getMonth()} isSelected={selected} sizeProp={size} theme={theme}>
+              <StyledDay
+                inRange={inRange}
+                otherMonth={day.getMonth() !== reference.getMonth()}
+                isSelected={selected}
+                sizeProp={size}
+                theme={theme}
+              >
                 {day.getDate()}
               </StyledDay>
             </Button>

@@ -1,5 +1,13 @@
 {
   "trailingComma": "es5",
   "singleQuote": true,
-  "printWidth": 150
+  "printWidth": 80,
+  "overrides": [
+    {
+      "files": "Styled*.js",
+      "options": {
+        "printWidth": 150
+      }
+    }
+  ]
 }

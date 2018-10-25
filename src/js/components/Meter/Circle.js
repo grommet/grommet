@@ -6,8 +6,18 @@ import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
 
 export const Circle = props => {
-  const { background, max, round, size, theme, thickness, values, ...rest } = props;
-  const width = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]);
+  const {
+    background,
+    max,
+    round,
+    size,
+    theme,
+    thickness,
+    values,
+    ...rest
+  } = props;
+  const width =
+    size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]);
   const height = parseMetricToNum(theme.global.edgeSize[thickness]);
   const mid = width / 2;
   const radius = width / 2 - height / 2;
@@ -21,7 +31,9 @@ export const Circle = props => {
   (values || []).filter(v => v.value > 0).forEach((valueArg, index) => {
     const { color, highlight, label, onHover, value, ...pathRest } = valueArg;
     const key = `p-${index}`;
-    const colorName = color || (index === values.length - 1 ? 'accent-1' : defaultColor(index, theme));
+    const colorName =
+      color ||
+      (index === values.length - 1 ? 'accent-1' : defaultColor(index, theme));
 
     let endAngle;
     if (startValue + value >= max) {
@@ -36,18 +48,53 @@ export const Circle = props => {
         onMouseLeave: () => onHover(false),
       };
     }
-    const stroke = strokeProps(someHighlight && !highlight ? background : colorName, theme);
+    const stroke = strokeProps(
+      someHighlight && !highlight ? background : colorName,
+      theme
+    );
 
     if (round) {
-      const d1 = arcCommands(width / 2, width / 2, radius, startAngle, endAngle);
-      paths.unshift(<path key={key} d={d1} fill="none" {...stroke} strokeWidth={height} strokeLinecap="round" {...hoverProps} {...pathRest} />);
+      const d1 = arcCommands(
+        width / 2,
+        width / 2,
+        radius,
+        startAngle,
+        endAngle
+      );
+      paths.unshift(
+        <path
+          key={key}
+          d={d1}
+          fill="none"
+          {...stroke}
+          strokeWidth={height}
+          strokeLinecap="round"
+          {...hoverProps}
+          {...pathRest}
+        />
+      );
 
       // To handle situations where the last values are small, redraw
       // a dot at the end. Give just a bit of angle to avoid anti-aliasing
       // leakage around the edge.
-      const d2 = arcCommands(width / 2, width / 2, radius, endAngle - 0.5, endAngle);
+      const d2 = arcCommands(
+        width / 2,
+        width / 2,
+        radius,
+        endAngle - 0.5,
+        endAngle
+      );
       const pathCap = (
-        <path key={`${key}-`} d={d2} fill="none" {...stroke} strokeWidth={height} strokeLinecap="round" {...hoverProps} {...pathRest} />
+        <path
+          key={`${key}-`}
+          d={d2}
+          fill="none"
+          {...stroke}
+          strokeWidth={height}
+          strokeLinecap="round"
+          {...hoverProps}
+          {...pathRest}
+        />
       );
       // If we are on a large enough path to not need re-drawing previous ones,
       // clear the pathCaps we've collected already.
@@ -57,7 +104,18 @@ export const Circle = props => {
       pathCaps.unshift(pathCap);
     } else {
       const d = arcCommands(width / 2, width / 2, radius, startAngle, endAngle);
-      paths.push(<path key={key} d={d} fill="none" {...stroke} strokeWidth={height} strokeLinecap="butt" {...hoverProps} {...pathRest} />);
+      paths.push(
+        <path
+          key={key}
+          d={d}
+          fill="none"
+          {...stroke}
+          strokeWidth={height}
+          strokeLinecap="butt"
+          {...hoverProps}
+          {...pathRest}
+        />
+      );
     }
     startValue += value;
     startAngle = endAngle;

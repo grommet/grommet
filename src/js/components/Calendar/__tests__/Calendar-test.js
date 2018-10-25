@@ -6,7 +6,10 @@ import { FormNextLink, FormPreviousLink } from 'grommet-icons';
 import { Box, Button, Calendar, Grommet, Text } from '../..';
 
 const DATE = '2018-01-15T00:00:00-08:00';
-const DATES = ['2018-01-12T00:00:00-08:00', ['2018-01-8T00:00:00-08:00', '2018-01-10T00:00:00-08:00']];
+const DATES = [
+  '2018-01-12T00:00:00-08:00',
+  ['2018-01-8T00:00:00-08:00', '2018-01-10T00:00:00-08:00'],
+];
 
 describe('Calendar', () => {
   test('date', () => {
@@ -70,7 +73,14 @@ describe('Calendar', () => {
           onSelect={() => {}}
           size="small"
           bounds={['2018-09-08', '2018-12-13']}
-          header={({ date, locale, onPreviousMonth, onNextMonth, previousInBound, nextInBound }) => (
+          header={({
+            date,
+            locale,
+            onPreviousMonth,
+            onNextMonth,
+            previousInBound,
+            nextInBound,
+          }) => (
             <Box direction="row" align="center" justify="between">
               <Button onClick={previousInBound && onPreviousMonth}>
                 <Box>
@@ -78,7 +88,12 @@ describe('Calendar', () => {
                 </Box>
               </Button>
               <Text size="small">
-                <strong>{date.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}</strong>
+                <strong>
+                  {date.toLocaleDateString(locale, {
+                    month: 'long',
+                    year: 'numeric',
+                  })}
+                </strong>
               </Text>
               <Button onClick={nextInBound && onNextMonth}>
                 <Box>

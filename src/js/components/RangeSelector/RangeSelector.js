@@ -47,9 +47,16 @@ class RangeSelector extends Component {
     const { lastChange } = this.state;
     const value = this.valueForMouseCoord(event);
     if (value <= values[0] || (value < values[1] && lastChange === 'lower')) {
-      this.setState({ lastChange: 'lower' }, () => onChange([value, values[1]]));
-    } else if (value >= values[1] || (value > values[0] && lastChange === 'upper')) {
-      this.setState({ lastChange: 'upper' }, () => onChange([values[0], value]));
+      this.setState({ lastChange: 'lower' }, () =>
+        onChange([value, values[1]])
+      );
+    } else if (
+      value >= values[1] ||
+      (value > values[0] && lastChange === 'upper')
+    ) {
+      this.setState({ lastChange: 'upper' }, () =>
+        onChange([values[0], value])
+      );
     }
   };
 
@@ -79,7 +86,11 @@ class RangeSelector extends Component {
     let nextValues;
     if (changing === 'lower' && value <= values[1] && value !== moveValue) {
       nextValues = [value, values[1]];
-    } else if (changing === 'upper' && value >= values[0] && value !== moveValue) {
+    } else if (
+      changing === 'upper' &&
+      value >= values[0] &&
+      value !== moveValue
+    ) {
       nextValues = [values[0], value];
     } else if (changing === 'selection' && value !== moveValue) {
       const delta = value - moveValue;
@@ -101,7 +112,23 @@ class RangeSelector extends Component {
   };
 
   render() {
-    const { color, direction, forwardRef, invert, max, messages, min, onChange, opacity, round, size, step, theme, values, ...rest } = this.props;
+    const {
+      color,
+      direction,
+      forwardRef,
+      invert,
+      max,
+      messages,
+      min,
+      onChange,
+      opacity,
+      round,
+      size,
+      step,
+      theme,
+      values,
+      ...rest
+    } = this.props;
     const { nextLower, nextUpper } = this.state;
 
     const scale = (max - min) / (max - min + step);
@@ -119,7 +146,9 @@ class RangeSelector extends Component {
       >
         <Box
           style={{ flex: `${(lower - min) * scale} 0 0` }}
-          background={invert ? { color: color || 'light-4', opacity } : undefined}
+          background={
+            invert ? { color: color || 'light-4', opacity } : undefined
+          }
           fill={fill}
           round={round}
         />
@@ -132,15 +161,25 @@ class RangeSelector extends Component {
           edge="lower"
           theme={theme}
           onMouseDown={onChange ? this.lowerMouseDown : undefined}
-          onDecrease={onChange && lower > min ? () => onChange([lower - step, upper]) : undefined}
-          onIncrease={onChange && lower < upper ? () => onChange([lower + step, upper]) : undefined}
+          onDecrease={
+            onChange && lower > min
+              ? () => onChange([lower - step, upper])
+              : undefined
+          }
+          onIncrease={
+            onChange && lower < upper
+              ? () => onChange([lower + step, upper])
+              : undefined
+          }
         />
         <Box
           style={{
             flex: `${(upper - lower + step) * scale} 0 0`,
             cursor: direction === 'vertical' ? 'ns-resize' : 'ew-resize',
           }}
-          background={invert ? undefined : { color: color || 'control', opacity }}
+          background={
+            invert ? undefined : { color: color || 'control', opacity }
+          }
           fill={fill}
           round={round}
           onMouseDown={onChange ? this.selectionMouseDown : undefined}
@@ -153,12 +192,22 @@ class RangeSelector extends Component {
           edge="upper"
           theme={theme}
           onMouseDown={onChange ? this.upperMouseDown : undefined}
-          onDecrease={onChange && upper > lower ? () => onChange([lower, upper - step]) : undefined}
-          onIncrease={onChange && upper < max ? () => onChange([lower, upper + step]) : undefined}
+          onDecrease={
+            onChange && upper > lower
+              ? () => onChange([lower, upper - step])
+              : undefined
+          }
+          onIncrease={
+            onChange && upper < max
+              ? () => onChange([lower, upper + step])
+              : undefined
+          }
         />
         <Box
           style={{ flex: `${(max - upper) * scale} 0 0` }}
-          background={invert ? { color: color || 'light-4', opacity } : undefined}
+          background={
+            invert ? { color: color || 'light-4', opacity } : undefined
+          }
           fill={fill}
           round={round}
         />

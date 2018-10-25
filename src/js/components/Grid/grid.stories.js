@@ -38,7 +38,10 @@ class AppGrid extends Component {
               gridArea="sidebar"
               background="dark-5"
               width="small"
-              animation={[{ type: 'fadeIn', duration: 300 }, { type: 'slideRight', size: 'xlarge', duration: 150 }]}
+              animation={[
+                { type: 'fadeIn', duration: 300 },
+                { type: 'slideRight', size: 'xlarge', duration: 150 },
+              ]}
             >
               {['First', 'Second', 'Third'].map(name => (
                 <Button key={name} href="#" hoverIndicator>
@@ -62,7 +65,10 @@ const Percentages = () => (
   <Grommet theme={grommet} full>
     <Grid
       fill
-      areas={[{ name: 'nav', start: [0, 0], end: [0, 0] }, { name: 'main', start: [1, 0], end: [1, 0] }]}
+      areas={[
+        { name: 'nav', start: [0, 0], end: [0, 0] },
+        { name: 'main', start: [1, 0], end: [1, 0] },
+      ]}
       columns={['small', 'flex']}
       rows={['flex']}
       gap="small"

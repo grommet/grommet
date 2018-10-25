@@ -5,7 +5,9 @@ import { withTheme } from '../hocs';
 
 import { StyledParagraph } from './StyledParagraph';
 
-const Paragraph = ({ color, ...rest }) => <StyledParagraph colorProp={color} {...rest} />;
+const Paragraph = ({ color, ...rest }) => (
+  <StyledParagraph colorProp={color} {...rest} />
+);
 
 let ParagraphDoc;
 if (process.env.NODE_ENV !== 'production') {

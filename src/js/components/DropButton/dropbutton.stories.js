@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { Close, FormDown } from 'grommet-icons';
 
-import { Grommet, Box, Button, Calendar, DropButton, Heading, Text } from 'grommet';
+import {
+  Grommet,
+  Box,
+  Button,
+  Calendar,
+  DropButton,
+  Heading,
+  Text,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const DropContent = ({ onClose }) => (
@@ -66,7 +74,9 @@ class CalendarDropButton extends Component {
           dropContent={<Calendar date={date} onSelect={this.onSelect} />}
         >
           <Box direction="row" gap="medium" align="center" pad="small">
-            <Text>{date ? new Date(date).toLocaleDateString() : 'Select date'}</Text>
+            <Text>
+              {date ? new Date(date).toLocaleDateString() : 'Select date'}
+            </Text>
             <FormDown color="brand" />
           </Box>
         </DropButton>

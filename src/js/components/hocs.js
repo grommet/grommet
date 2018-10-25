@@ -112,7 +112,9 @@ export const withFocus = WrappedComponent => {
     }
   }
 
-  const ForwardRef = React.forwardRef((props, ref) => <FocusableComponent {...props} withFocusRef={ref} />);
+  const ForwardRef = React.forwardRef((props, ref) => (
+    <FocusableComponent {...props} withFocusRef={ref} />
+  ));
 
   ForwardRef.displayName = getDisplayName(WrappedComponent);
   ForwardRef.name = ForwardRef.displayName;
@@ -129,7 +131,9 @@ export const withTheme = WrappedComponent => {
   }
 
   const ForwardRef = React.forwardRef((props, ref) => (
-    <ThemeContext.Consumer>{theme => <ThemedComponent {...props} theme={theme} withThemeRef={ref} />}</ThemeContext.Consumer>
+    <ThemeContext.Consumer>
+      {theme => <ThemedComponent {...props} theme={theme} withThemeRef={ref} />}
+    </ThemeContext.Consumer>
   ));
 
   ForwardRef.displayName = getDisplayName(WrappedComponent);
@@ -139,7 +143,9 @@ export const withTheme = WrappedComponent => {
 };
 
 export const withForwardRef = WrappedComponent => {
-  const ForwardRefComponent = React.forwardRef((props, ref) => <WrappedComponent forwardRef={ref} {...props} />);
+  const ForwardRefComponent = React.forwardRef((props, ref) => (
+    <WrappedComponent forwardRef={ref} {...props} />
+  ));
 
   ForwardRefComponent.displayName = getDisplayName(WrappedComponent);
   ForwardRefComponent.name = ForwardRefComponent.displayName;
@@ -149,7 +155,11 @@ export const withForwardRef = WrappedComponent => {
 
 export const withAnnounce = WrappedComponent => {
   const ForwardRef = React.forwardRef((props, ref) => (
-    <AnnounceContext.Consumer>{announce => <WrappedComponent {...props} announce={announce} ref={ref} />}</AnnounceContext.Consumer>
+    <AnnounceContext.Consumer>
+      {announce => (
+        <WrappedComponent {...props} announce={announce} ref={ref} />
+      )}
+    </AnnounceContext.Consumer>
   ));
 
   ForwardRef.displayName = getDisplayName(WrappedComponent);
@@ -160,7 +170,9 @@ export const withAnnounce = WrappedComponent => {
 
 export const withIconTheme = WrappedComponent => {
   const IconThemeComponent = props => (
-    <IconThemeContext.Consumer>{iconTheme => <WrappedComponent {...props} iconTheme={iconTheme} />}</IconThemeContext.Consumer>
+    <IconThemeContext.Consumer>
+      {iconTheme => <WrappedComponent {...props} iconTheme={iconTheme} />}
+    </IconThemeContext.Consumer>
   );
 
   IconThemeComponent.displayName = getDisplayName(WrappedComponent);

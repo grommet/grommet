@@ -23,13 +23,19 @@ export const doc = Clock => {
     precision: PropTypes.oneOf(['hours', 'minutes', 'seconds'])
       .description('How precise a time to represent.')
       .defaultValue('seconds'),
-    run: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['backward', 'forward'])])
+    run: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['backward', 'forward']),
+    ])
       .description(
         `Whether the clock should actively adjust time or be fixed to the
       time specified. 'backward' could be used as a countdown timer.`
       )
       .defaultValue('forward'),
-    size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string])
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ])
       .description('Clock size')
       .defaultValue('medium'),
     time: PropTypes.string.description(

@@ -6,7 +6,8 @@ import { withTheme } from '../hocs';
 
 import { AccordionContext } from './AccordionContext';
 
-const activeAsArray = active => (typeof active === 'number' ? [active] : active);
+const activeAsArray = active =>
+  typeof active === 'number' ? [active] : active;
 
 class Accordion extends Component {
   static defaultProps = {
@@ -18,11 +19,18 @@ class Accordion extends Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { activeIndex } = nextProps;
-    const { activeIndexes: stateActiveIndexes, activeIndex: stateActiveIndex } = prevState;
+    const {
+      activeIndexes: stateActiveIndexes,
+      activeIndex: stateActiveIndex,
+    } = prevState;
 
     const activeIndexes = activeAsArray(activeIndex) || [];
 
-    if ((typeof activeIndex !== 'undefined' || activeIndex !== stateActiveIndex) && activeIndexes.join() !== stateActiveIndexes.join()) {
+    if (
+      (typeof activeIndex !== 'undefined' ||
+        activeIndex !== stateActiveIndex) &&
+      activeIndexes.join() !== stateActiveIndexes.join()
+    ) {
       return { activeIndexes, activeIndex };
     }
 

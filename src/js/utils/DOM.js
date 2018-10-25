@@ -4,10 +4,18 @@ export const filterByFocusable = elements =>
     const validTags = /(svg|a|area|input|select|textarea|button|iframe|div)$/;
     const isValidTag = currentTag.match(validTags) && element.focus;
     if (currentTag === 'a') {
-      return isValidTag && element.childNodes.length > 0 && element.getAttribute('href');
+      return (
+        isValidTag &&
+        element.childNodes.length > 0 &&
+        element.getAttribute('href')
+      );
     }
     if (currentTag === 'svg' || currentTag === 'div') {
-      return isValidTag && element.hasAttribute('tabindex') && element.getAttribute('tabindex') !== '-1';
+      return (
+        isValidTag &&
+        element.hasAttribute('tabindex') &&
+        element.getAttribute('tabindex') !== '-1'
+      );
     }
     return isValidTag;
   });
@@ -82,7 +90,8 @@ export const copyAttribute = source => target => element => {
   element.setAttribute(target, element.getAttribute(source));
 };
 
-const deleteAttribute = attribute => element => element.removeAttribute(attribute);
+const deleteAttribute = attribute => element =>
+  element.removeAttribute(attribute);
 
 const unsetTabIndex = setTabIndex(-1);
 const saveTabIndex = copyAttribute('tabindex')('data-g-tabindex');
@@ -122,7 +131,9 @@ export const makeNodeUnfocusable = node => {
 
 export const findVisibleParent = element => {
   if (element) {
-    return element.offsetParent ? element : findVisibleParent(element.parentElement) || element;
+    return element.offsetParent
+      ? element
+      : findVisibleParent(element.parentElement) || element;
   }
   return undefined;
 };

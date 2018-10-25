@@ -34,10 +34,18 @@ describe('Carousel', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.keyDown(getByTestId('test-carousel'), { key: 'Right', keyCode: 39, which: 39 });
+    fireEvent.keyDown(getByTestId('test-carousel'), {
+      key: 'Right',
+      keyCode: 39,
+      which: 39,
+    });
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.keyDown(getByTestId('test-carousel'), { key: 'Left', keyCode: 37, which: 37 });
+    fireEvent.keyDown(getByTestId('test-carousel'), {
+      key: 'Left',
+      keyCode: 37,
+      which: 37,
+    });
     expect(container.firstChild).toMatchSnapshot();
   });
 

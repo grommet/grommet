@@ -16,7 +16,10 @@ const SelectTextInput = styled(TextInput)`
 `;
 const StyledSelectBox = styled(Box)`
   ${props => !props.plain && controlBorderStyle};
-  ${props => props.theme.select && props.theme.select.control && props.theme.select.control.extend};
+  ${props =>
+    props.theme.select &&
+    props.theme.select.control &&
+    props.theme.select.control.extend};
 `;
 
 class Select extends Component {
@@ -110,7 +113,10 @@ class Select extends Component {
     }
 
     // const dark = theme.select.background ? colorIsDark(theme.select.background) : theme.dark;
-    const iconColor = normalizeColor(theme.select.icons.color || 'control', theme);
+    const iconColor = normalizeColor(
+      theme.select.icons.color || 'control',
+      theme
+    );
 
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
@@ -126,13 +132,27 @@ class Select extends Component {
           margin={margin}
           onOpen={this.onOpen}
           onClose={this.onClose}
-          dropContent={<SelectContainer {...this.props} onChange={onSelectChange} />}
+          dropContent={
+            <SelectContainer {...this.props} onChange={onSelectChange} />
+          }
         >
-          <StyledSelectBox align="center" direction="row" justify="between" background={theme.select.background} plain={plain} theme={theme}>
+          <StyledSelectBox
+            align="center"
+            direction="row"
+            justify="between"
+            background={theme.select.background}
+            plain={plain}
+            theme={theme}
+          >
             <Box direction="row" flex basis="auto">
               {selectValue || (
                 <SelectTextInput
-                  a11yTitle={a11yTitle && `${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`}
+                  a11yTitle={
+                    a11yTitle &&
+                    `${a11yTitle}${
+                      typeof value === 'string' ? `, ${value}` : ''
+                    }`
+                  }
                   id={id ? `${id}__input` : undefined}
                   {...rest}
                   tabIndex="-1"
@@ -146,7 +166,11 @@ class Select extends Component {
                 />
               )}
             </Box>
-            <Box margin={{ horizontal: 'small' }} flex={false} style={{ minWidth: 'auto' }}>
+            <Box
+              margin={{ horizontal: 'small' }}
+              flex={false}
+              style={{ minWidth: 'auto' }}
+            >
               <SelectIcon color={iconColor} size={size} />
             </Box>
           </StyledSelectBox>

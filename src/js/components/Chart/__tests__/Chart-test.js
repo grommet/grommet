@@ -5,7 +5,10 @@ import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
 import { Chart, calcs } from '..';
 
-const VALUES = [{ value: [1, 60], label: 'sixty' }, { value: [0, 0], label: 'zero' }];
+const VALUES = [
+  { value: [1, 60], label: 'sixty' },
+  { value: [0, 0], label: 'zero' },
+];
 
 test('Chart renders', () => {
   const component = renderer.create(

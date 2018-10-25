@@ -9,7 +9,12 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { withAnnounce, withForwardRef, withTheme } from '../hocs';
 
-import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledSuggestions } from './StyledTextInput';
+import {
+  StyledTextInput,
+  StyledTextInputContainer,
+  StyledPlaceholder,
+  StyledSuggestions,
+} from './StyledTextInput';
 
 function renderLabel(suggestion) {
   if (suggestion && typeof suggestion === 'object') {
@@ -44,7 +49,8 @@ class TextInput extends Component {
       enterSelect: '(Press Enter to Select)',
       suggestionsCount: 'suggestions available',
       suggestionsExist: 'This input has suggestions use arrow keys to navigate',
-      suggestionIsOpen: 'Suggestions drop is open, continue to use arrow keys to navigate',
+      suggestionIsOpen:
+        'Suggestions drop is open, continue to use arrow keys to navigate',
     },
   };
 
@@ -82,7 +88,11 @@ class TextInput extends Component {
       }
     }
 
-    if (!showDrop && suggestions && (!prevProps.suggestions || !prevProps.suggestions.length)) {
+    if (
+      !showDrop &&
+      suggestions &&
+      (!prevProps.suggestions || !prevProps.suggestions.length)
+    ) {
       this.resetSuggestions();
     }
   }
@@ -185,8 +195,13 @@ class TextInput extends Component {
         this.onShowSuggestions();
       } else {
         event.preventDefault();
-        const index = Math.min(activeSuggestionIndex + 1, suggestions.length - 1);
-        this.setState({ activeSuggestionIndex: index }, () => this.announceSuggestion(index));
+        const index = Math.min(
+          activeSuggestionIndex + 1,
+          suggestions.length - 1
+        );
+        this.setState({ activeSuggestionIndex: index }, () =>
+          this.announceSuggestion(index)
+        );
       }
     }
   };
@@ -197,7 +212,9 @@ class TextInput extends Component {
     if (suggestions && suggestions.length > 0 && showDrop) {
       event.preventDefault();
       const index = Math.max(activeSuggestionIndex - 1, 0);
-      this.setState({ activeSuggestionIndex: index }, () => this.announceSuggestion(index));
+      this.setState({ activeSuggestionIndex: index }, () =>
+        this.announceSuggestion(index)
+      );
     }
   };
 
@@ -262,11 +279,16 @@ class TextInput extends Component {
       <StyledSuggestions theme={theme}>
         <InfiniteScroll items={suggestions} step={theme.select.step}>
           {(suggestion, index) => {
-            const plain = typeof suggestion === 'object' && typeof isValidElement(suggestion.label);
+            const plain =
+              typeof suggestion === 'object' &&
+              typeof isValidElement(suggestion.label);
             return (
               <li key={`${stringLabel(suggestion)}-${index}`}>
                 <Button
-                  active={activeSuggestionIndex === index || selectedSuggestionIndex === index}
+                  active={
+                    activeSuggestionIndex === index ||
+                    selectedSuggestionIndex === index
+                  }
                   fill
                   hoverIndicator="background"
                   onClick={() => this.onClickSuggestion(suggestion)}
@@ -288,7 +310,18 @@ class TextInput extends Component {
   };
 
   render() {
-    const { defaultValue, dropAlign, dropTarget, id, placeholder, plain, theme, value, onKeyDown, ...rest } = this.props;
+    const {
+      defaultValue,
+      dropAlign,
+      dropTarget,
+      id,
+      placeholder,
+      plain,
+      theme,
+      value,
+      onKeyDown,
+      ...rest
+    } = this.props;
     delete rest.onInput; // se we can manage in onInputChange()
     delete rest.forwardRef;
     delete rest.onSuggestionsOpen;
@@ -308,13 +341,17 @@ class TextInput extends Component {
           onClickOutside={() => this.setState({ showDrop: false })}
           onEsc={() => this.setState({ showDrop: false })}
         >
-          <ContainerBox overflow="auto">{this.renderSuggestions()}</ContainerBox>
+          <ContainerBox overflow="auto">
+            {this.renderSuggestions()}
+          </ContainerBox>
         </Drop>
       );
     }
     return (
       <StyledTextInputContainer plain={plain}>
-        {placeholder && typeof placeholder !== 'string' && !value ? <StyledPlaceholder theme={theme}>{placeholder}</StyledPlaceholder> : null}
+        {placeholder && typeof placeholder !== 'string' && !value ? (
+          <StyledPlaceholder theme={theme}>{placeholder}</StyledPlaceholder>
+        ) : null}
         <Keyboard
           onEnter={this.onSuggestionSelect}
           onEsc={this.onDropClose}
@@ -328,7 +365,9 @@ class TextInput extends Component {
             ref={inputRef}
             autoComplete="off"
             plain={plain}
-            placeholder={typeof placeholder === 'string' ? placeholder : undefined}
+            placeholder={
+              typeof placeholder === 'string' ? placeholder : undefined
+            }
             theme={theme}
             {...rest}
             defaultValue={renderLabel(defaultValue)}

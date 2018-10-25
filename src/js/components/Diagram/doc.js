@@ -16,11 +16,26 @@ export const doc = Diagram => {
       PropTypes.shape({
         anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
         color: PropTypes.string,
-        fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+        fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+          .isRequired,
         label: PropTypes.string, // for accessibility
-        offset: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']), PropTypes.string]),
-        thickness: PropTypes.oneOfType([PropTypes.oneOf(['hair', 'xxsmall', 'xsmall', 'small', 'medium', 'large']), PropTypes.string]),
-        toTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+        offset: PropTypes.oneOfType([
+          PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
+          PropTypes.string,
+        ]),
+        thickness: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'hair',
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+          ]),
+          PropTypes.string,
+        ]),
+        toTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+          .isRequired,
         type: PropTypes.oneOf(['direct', 'curved', 'rectilinear']),
       })
     ).description(

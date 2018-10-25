@@ -19,7 +19,10 @@ export const doc = Chart => {
       PropTypes.string,
       PropTypes.shape({
         color: PropTypes.string,
-        opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.bool]),
+        opacity: PropTypes.oneOfType([
+          PropTypes.oneOf(['weak', 'medium', 'strong']),
+          PropTypes.bool,
+        ]),
       }),
     ])
       .description('A color identifier to use for the graphic color.')
@@ -37,18 +40,61 @@ export const doc = Chart => {
       align with the component boundaries.`
       )
       .defaultValue(false),
-    round: PropTypes.bool.description('Whether to round the line ends.').defaultValue(false),
+    round: PropTypes.bool
+      .description('Whether to round the line ends.')
+      .defaultValue(false),
     size: PropTypes.oneOfType([
-      PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
+      PropTypes.oneOf([
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'full',
+      ]),
       PropTypes.shape({
-        height: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), PropTypes.string]),
-        width: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), PropTypes.string]),
+        height: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'full',
+          ]),
+          PropTypes.string,
+        ]),
+        width: PropTypes.oneOfType([
+          PropTypes.oneOf([
+            'xxsmall',
+            'xsmall',
+            'small',
+            'medium',
+            'large',
+            'xlarge',
+            'full',
+          ]),
+          PropTypes.string,
+        ]),
       }),
       PropTypes.string,
     ])
       .description('The size of the Chart.')
       .defaultValue({ width: 'medium', height: 'small' }),
-    thickness: PropTypes.oneOfType([PropTypes.oneOf(['hair', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'none']), PropTypes.string])
+    thickness: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'hair',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'none',
+      ]),
+      PropTypes.string,
+    ])
       .description('The width of the stroke.')
       .defaultValue('medium'),
     type: PropTypes.oneOf(['bar', 'line', 'area'])
@@ -62,7 +108,10 @@ export const doc = Chart => {
           label: PropTypes.string, // for accessibility of bars
           onClick: PropTypes.func,
           onHover: PropTypes.func,
-          value: PropTypes.oneOfType([PropTypes.number.isRequired, PropTypes.arrayOf(PropTypes.number).isRequired]).isRequired,
+          value: PropTypes.oneOfType([
+            PropTypes.number.isRequired,
+            PropTypes.arrayOf(PropTypes.number).isRequired,
+          ]).isRequired,
         }),
       ])
     ).description(
