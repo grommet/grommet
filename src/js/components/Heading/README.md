@@ -156,6 +156,7 @@ adjustments. Defaults to `medium`.
 small
 medium
 large
+xlarge
 string
 ```
 

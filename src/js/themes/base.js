@@ -462,21 +462,25 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
           small: { ...fontSizing(4) },
           medium: { ...fontSizing(8) },
           large: { ...fontSizing(16) },
+          xlarge: { ...fontSizing(24) },
         },
         2: {
           small: { ...fontSizing(2) },
           medium: { ...fontSizing(4) },
           large: { ...fontSizing(8) },
+          xlarge: { ...fontSizing(12) },
         },
         3: {
           small: { ...fontSizing(1) },
           medium: { ...fontSizing(1) },
           large: { ...fontSizing(4) },
+          xlarge: { ...fontSizing(6) },
         },
         4: {
           small: { ...fontSizing(0) },
           medium: { ...fontSizing(0) },
           large: { ...fontSizing(0) },
+          xlarge: { ...fontSizing(0) },
         },
       },
       responsiveBreakpoint: 'small', // when we scale the font size down
@@ -508,6 +512,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       medium: { ...fontSizing(0) },
       large: { ...fontSizing(1) },
       xlarge: { ...fontSizing(2) },
+      xxlarge: { ...fontSizing(4) },
     },
     radioButton: {
       border: {

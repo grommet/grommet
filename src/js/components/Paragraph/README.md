@@ -124,6 +124,7 @@ small
 medium
 large
 xlarge
+xxlarge
 string
 ```
 

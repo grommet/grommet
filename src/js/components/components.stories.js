@@ -40,7 +40,7 @@ import { hpe } from 'grommet-theme-hpe';
 import { aruba } from 'grommet-theme-aruba';
 import { hp } from 'grommet-theme-hp';
 import { dxc } from 'grommet-theme-dxc';
-
+import { v1 } from 'grommet-theme-v1';
 
 const Node = ({ id, ...rest }) => (
   <Box
@@ -71,6 +71,7 @@ const themes = {
   aruba,
   hp,
   dxc,
+  v1,
 };
 
 class Components extends Component {
@@ -271,7 +272,7 @@ class Components extends Component {
               <Select
                 plain
                 size='small'
-                options={['grommet', 'dark', 'hpe', 'aruba', 'hp', 'dxc']}
+                options={['grommet', 'dark', 'hpe', 'aruba', 'hp', 'dxc', 'v1']}
                 value={themeName}
                 onChange={event => this.setState({ themeName: event.option })}
               />
@@ -294,9 +295,10 @@ class Components extends Component {
           <Box
             pad='medium'
             background={theme.global.colors.background || theme.global.colors.white}
+            overflow='auto'
           >
             {Grid.available ? (
-              <Grid fill columns='small' gap='medium'>
+              <Grid columns='small' gap='medium'>
                 {content}
               </Grid>
             ) : (

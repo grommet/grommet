@@ -421,42 +421,63 @@ exports[`Heading size renders 1`] = `
   font-weight: 600;
 }
 
-.c5 {
+.c4 {
+  font-size: 114px;
+  line-height: 120px;
+  max-width: 2736px;
+  font-weight: 600;
+}
+
+.c6 {
   font-size: 34px;
   line-height: 40px;
   max-width: 816px;
   font-weight: 600;
 }
 
-.c4 {
+.c5 {
   font-size: 26px;
   line-height: 32px;
   max-width: 624px;
   font-weight: 600;
 }
 
-.c6 {
+.c7 {
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
   font-weight: 600;
 }
 
-.c7 {
+.c8 {
+  font-size: 66px;
+  line-height: 72px;
+  max-width: 1584px;
+  font-weight: 600;
+}
+
+.c9 {
   font-size: 22px;
   line-height: 28px;
   max-width: 528px;
   font-weight: 600;
 }
 
-.c8 {
+.c10 {
   font-size: 34px;
   line-height: 40px;
   max-width: 816px;
   font-weight: 600;
 }
 
-.c9 {
+.c11 {
+  font-size: 42px;
+  line-height: 48px;
+  max-width: 1008px;
+  font-weight: 600;
+}
+
+.c12 {
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
@@ -488,6 +509,22 @@ exports[`Heading size renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 66px;
+    line-height: 72px;
+    max-width: 1584px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c5 {
     font-size: 22px;
     line-height: 28px;
@@ -496,15 +533,7 @@ exports[`Heading size renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     font-size: 34px;
     line-height: 40px;
     max-width: 816px;
@@ -512,23 +541,39 @@ exports[`Heading size renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c8 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
+    font-size: 42px;
+    line-height: 48px;
+    max-width: 1008px;
   }
 }
 
 @media only screen and (max-width:768px) {
   .c9 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
@@ -550,41 +595,57 @@ exports[`Heading size renders 1`] = `
     className="-h1 c3"
     size="large"
   />
-  <h2
-    className="-h2 c4"
-    size="small"
+  <h1
+    className="-h1 c4"
+    size="xlarge"
   />
   <h2
     className="-h2 c5"
-    size="medium"
+    size="small"
   />
   <h2
     className="-h2 c6"
+    size="medium"
+  />
+  <h2
+    className="-h2 c7"
     size="large"
   />
+  <h2
+    className="-h2 c8"
+    size="xlarge"
+  />
   <h3
-    className="-h3 c7"
+    className="-h3 c9"
     size="small"
   />
   <h3
-    className="-h3 c7"
+    className="-h3 c9"
     size="medium"
   />
   <h3
-    className="-h3 c8"
+    className="-h3 c10"
     size="large"
   />
+  <h3
+    className="-h3 c11"
+    size="xlarge"
+  />
   <h4
-    className="-h4 c9"
+    className="-h4 c12"
     size="small"
   />
   <h4
-    className="-h4 c9"
+    className="-h4 c12"
     size="medium"
   />
   <h4
-    className="-h4 c9"
+    className="-h4 c12"
     size="large"
+  />
+  <h4
+    className="-h4 c12"
+    size="xlarge"
   />
 </div>
 `;
