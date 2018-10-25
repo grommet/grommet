@@ -3384,6 +3384,7 @@ adjustments. Defaults to \`medium\`.
 small
 medium
 large
+xlarge
 string
 \`\`\`
 
@@ -4415,6 +4416,7 @@ small
 medium
 large
 xlarge
+xxlarge
 string
 \`\`\`
 

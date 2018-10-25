@@ -17,7 +17,7 @@ export const doc = (Paragraph) => {
       'A color identifier to use for the text color.'
     ),
     size: PropTypes.oneOfType([
-      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'xxlarge']),
       PropTypes.string,
     ]).description(
       'The size of the Paragraph text.'

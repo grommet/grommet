@@ -28,7 +28,7 @@ The sizing can be further adjusted using the size property.`
       mobile environments.`
     ).defaultValue(true),
     size: PropTypes.oneOfType([
-      PropTypes.oneOf(['small', 'medium', 'large']),
+      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ]).description(
       `The font size is primarily driven by the chosen tag. But, it can
