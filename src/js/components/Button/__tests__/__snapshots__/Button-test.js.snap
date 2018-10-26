@@ -64,15 +64,15 @@ exports[`Button color renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
+  background: #FD6FFF;
+  color: #444444;
+  border-radius: 18px;
   border: 2px solid #FD6FFF;
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #FD6FFF;
-  color: #444444;
-  border-radius: 18px;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
 }
@@ -93,15 +93,15 @@ exports[`Button color renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
+  background: #111111;
+  color: #f8f8f8;
+  border-radius: 18px;
   border: 2px solid #111111;
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #111111;
-  color: #f8f8f8;
-  border-radius: 18px;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
 }
@@ -122,15 +122,15 @@ exports[`Button color renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
+  background: #123;
+  color: #f8f8f8;
+  border-radius: 18px;
   border: 2px solid #123;
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #123;
-  color: #f8f8f8;
-  border-radius: 18px;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
 }
@@ -897,15 +897,15 @@ exports[`Button primary renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
+  background: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
   border: 2px solid #7D4CDB;
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #7D4CDB;
-  color: #f8f8f8;
-  border-radius: 18px;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
 }

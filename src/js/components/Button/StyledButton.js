@@ -101,8 +101,8 @@ export const StyledButton = styled.button`
 
   ${genericStyles}
   ${props => props.plain && plainStyle}
-  ${props => !props.plain && basicStyle(props)}
   ${props => props.primary && primaryStyle(props)}
+  ${props => !props.plain && basicStyle(props)}
 
   ${props => !props.disabled && !props.focus && hoverStyle}
 

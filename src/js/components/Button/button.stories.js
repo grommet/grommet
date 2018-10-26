@@ -4,6 +4,7 @@ import { Add } from 'grommet-icons';
 
 import { Box, Button, Grommet, RoutedButton, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from '../../utils';
 
 const SimpleButton = props => (
   <Grommet theme={grommet}>
@@ -160,6 +161,32 @@ const ColoredButton = props => (
   </Grommet>
 );
 
+const customButtonColor = deepMerge(grommet, {
+  global: {
+    colors: {
+      text: {
+        light: 'grey',
+        dark: 'grey',
+      },
+    },
+  },
+  button: {
+    color: {
+      light: 'white',
+      dark: 'white',
+    },
+  },
+});
+
+const ThemeColored = () => (
+  <Grommet theme={customButtonColor}>
+    <Box align='start' gap='small'>
+      <Button primary label='Submit' onClick={() => {}} />
+      <Button primary color='dark-1' label='Submit' onClick={() => {}} />
+    </Box>
+  </Grommet>
+);
+
 storiesOf('Button', module)
   .add('Default', () => <SimpleButton />)
   .add('Primary', () => <SimpleButton primary />)
@@ -172,4 +199,5 @@ storiesOf('Button', module)
   .add('Active', () => <PlainButton active />)
   .add('Custom theme', () => <CustomThemeButton />)
   .add('Multiple Same Line', () => <MultipleButton />)
-  .add('Colored', () => <ColoredButton />);
+  .add('Colored', () => <ColoredButton />)
+  .add('Theme Colored', () => <ThemeColored />);
