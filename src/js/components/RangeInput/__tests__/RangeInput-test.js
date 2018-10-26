@@ -9,7 +9,7 @@ test('RangeInput renders', () => {
   const component = renderer.create(
     <Grommet>
       <RangeInput value="50" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

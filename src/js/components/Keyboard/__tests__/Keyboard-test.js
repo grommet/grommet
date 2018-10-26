@@ -12,7 +12,7 @@ test('Keyboard renders', () => {
       <Keyboard onDown={onDown}>
         <span>hi</span>
       </Keyboard>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -36,7 +36,7 @@ test('Keyboard calls onKeyDown', () => {
       <Keyboard onDown={onDown} onKeyDown={onKeyDown}>
         <span>hi</span>
       </Keyboard>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

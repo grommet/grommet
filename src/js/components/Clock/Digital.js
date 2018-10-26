@@ -69,7 +69,7 @@ const Element = ({ number, run, sep, size, theme }) => {
     result.unshift(
       <StyledDigitalDigit key="sep" size={size} theme={theme}>
         :
-      </StyledDigitalDigit>
+      </StyledDigitalDigit>,
     );
   }
   return result;

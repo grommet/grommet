@@ -9,7 +9,7 @@ test('renders', () => {
   const component = renderer.create(
     <Grommet>
       <Text>text</Text>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -24,7 +24,7 @@ test('renders size', () => {
       <Text size="large" />
       <Text size="xlarge" />
       <Text size="xxlarge" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -36,7 +36,7 @@ test('renders textAlign', () => {
       <Text textAlign="start" />
       <Text textAlign="center" />
       <Text textAlign="end" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -55,7 +55,7 @@ test('renders margin', () => {
       <Text margin={{ top: 'small' }} />
       <Text margin={{ left: 'small' }} />
       <Text margin={{ right: 'small' }} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -68,7 +68,7 @@ test('renders truncate', () => {
     <Grommet>
       <Text truncate={false}>{LONG}</Text>
       <Text truncate>{LONG}</Text>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -78,7 +78,7 @@ test('renders color', () => {
   const component = renderer.create(
     <Grommet>
       <Text color="status-critical" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -88,7 +88,7 @@ test('renders tag', () => {
   const component = renderer.create(
     <Grommet>
       <Text tag="div" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -99,7 +99,7 @@ test('renders weight', () => {
     <Grommet>
       <Text weight="normal" />
       <Text weight="bold" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

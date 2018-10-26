@@ -5,7 +5,7 @@ export const doc = TableCell => {
     .description('A cell of data in a table.')
     .usage(
       `import { TableCell } from 'grommet';
-<TableCell />`
+<TableCell />`,
     );
 
   DocumentedTableCell.propTypes = {
@@ -35,7 +35,7 @@ export const doc = TableCell => {
     ]).description(`What size the cell should be. Typically, this is not needed
       unless you are trying to align multiple tables.`),
     verticalAlign: PropTypes.oneOf(['top', 'middle', 'bottom']).description(
-      'How to align the contents vertically.'
+      'How to align the contents vertically.',
     ),
   };
 

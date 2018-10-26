@@ -69,12 +69,12 @@ class AccordionPanel extends Component {
 
     const iconColor = normalizeColor(
       theme.accordion.icons.color || 'control',
-      theme
+      theme,
     );
 
     return (
       <AccordionContext.Consumer>
-        {(panelContext) => {
+        {panelContext => {
           const { active, animate, onPanelChange } = panelContext;
           const AccordionIcon = active
             ? theme.accordion.icons.collapse
@@ -137,7 +137,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const AccordionPanelWrapper = compose(
   withTheme,
-  withForwardRef
+  withForwardRef,
 )(AccordionPanelDoc || AccordionPanel);
 
 export { AccordionPanelWrapper as AccordionPanel };

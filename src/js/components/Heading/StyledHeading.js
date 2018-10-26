@@ -18,9 +18,11 @@ const sizeStyle = props => {
       `,
     ];
     if (props.responsive && headingTheme.responsiveBreakpoint) {
-      const breakpoint = props.theme.global.breakpoints[headingTheme.responsiveBreakpoint];
+      const breakpoint =
+        props.theme.global.breakpoints[headingTheme.responsiveBreakpoint];
       if (breakpoint) {
-        const responsiveData = headingTheme.level[Math.min(props.level + 1, 4)][size];
+        const responsiveData =
+          headingTheme.level[Math.min(props.level + 1, 4)][size];
         styles.push(
           breakpointStyle(
             breakpoint,
@@ -28,8 +30,8 @@ const sizeStyle = props => {
           font-size: ${responsiveData.size};
           line-height: ${responsiveData.height};
           max-width: ${responsiveData.maxWidth};
-        `
-          )
+        `,
+          ),
         );
       }
     }

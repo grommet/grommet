@@ -115,7 +115,7 @@ class Select extends Component {
     // const dark = theme.select.background ? colorIsDark(theme.select.background) : theme.dark;
     const iconColor = normalizeColor(
       theme.select.icons.color || 'control',
-      theme
+      theme,
     );
 
     return (
@@ -186,7 +186,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const SelectWrapper = compose(
   withTheme,
-  withForwardRef
+  withForwardRef,
 )(SelectDoc || Select);
 
 export { SelectWrapper as Select };

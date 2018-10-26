@@ -142,7 +142,7 @@ if (process.env.NODE_ENV !== 'production') {
 const CheckBoxWrapper = compose(
   withFocus,
   withTheme,
-  withForwardRef
+  withForwardRef,
 )(CheckBoxDoc || CheckBox);
 
 export { CheckBoxWrapper as CheckBox };

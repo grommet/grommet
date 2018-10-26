@@ -8,18 +8,18 @@ export const doc = RangeSelector => {
     .description('A control to allow selecting a range of values.')
     .usage(
       `import { RangeSelector } from 'grommet';
-<RangeSelector />`
+<RangeSelector />`,
     );
 
   DocumentedRangeSelector.propTypes = {
     color: PropTypes.string.description(
-      'What color to use to indicate the selection.'
+      'What color to use to indicate the selection.',
     ),
     direction: PropTypes.oneOf(['horizontal', 'vertical'])
       .description('')
       .defaultValue('horizontal'),
     invert: PropTypes.bool.description(
-      'Whether to indicate what has not been selected.'
+      'Whether to indicate what has not been selected.',
     ),
     max: PropTypes.number
       .description('The maximum value permitted.')
@@ -28,7 +28,7 @@ export const doc = RangeSelector => {
       lower: PropTypes.string,
       upper: PropTypes.string,
     }).description(
-      'Custom messages. Used for accessibility by screen readers.'
+      'Custom messages. Used for accessibility by screen readers.',
     ),
     min: PropTypes.number
       .description('The minimum value permitted.')
@@ -36,7 +36,7 @@ export const doc = RangeSelector => {
     onChange: PropTypes.func.description(
       `Function that will be called when the user changes one of the
       values. It will be passed an array of two numbers indicating
-      the new values selected.`
+      the new values selected.`,
     ),
     opacity: PropTypes.oneOf(['weak', 'medium', 'strong'])
       .description('')
@@ -63,7 +63,7 @@ export const doc = RangeSelector => {
       .description('The step interval between values.')
       .defaultValue(1),
     values: PropTypes.arrayOf(PropTypes.number).description(
-      'The current values.'
+      'The current values.',
     ).isRequired,
   };
 

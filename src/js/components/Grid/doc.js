@@ -30,11 +30,11 @@ rows and columns, create area names for adjacent cells, and then
 place Box components inside those areas using the Box.gridArea property.
 See https://css-tricks.com/snippets/css/complete-guide-grid/.
 The availability of Grid can be tested via 'Grid.available'. Use this
-to create fallback rendering for older browsers, like ie11.`
+to create fallback rendering for older browsers, like ie11.`,
     )
     .usage(
       `import { Grid } from 'grommet';
-<Grid />`
+<Grid />`,
     );
 
   DocumentedGrid.propTypes = {
@@ -42,7 +42,7 @@ to create fallback rendering for older browsers, like ie11.`
     align: PropTypes.oneOf(['start', 'center', 'end', 'stretch'])
       .description(
         `How to align the individual items inside the grid when there is extra
-space in the column axis.`
+space in the column axis.`,
       )
       .defaultValue('stretch'),
     alignContent: PropTypes.oneOf([
@@ -58,7 +58,7 @@ space in the column axis.`
         name: PropTypes.string,
         start: PropTypes.arrayOf(PropTypes.number),
         end: PropTypes.arrayOf(PropTypes.number),
-      })
+      }),
     ).description('Area names and column,row coordinates.'),
     columns: PropTypes.oneOfType([
       PropTypes.arrayOf(
@@ -66,7 +66,7 @@ space in the column axis.`
           PropTypes.oneOf(sizes),
           PropTypes.arrayOf(PropTypes.oneOf(sizes)),
           PropTypes.string,
-        ])
+        ]),
       ),
       PropTypes.oneOf(fixedSizes),
       PropTypes.shape({
@@ -88,10 +88,10 @@ space in the column axis.`
       Specifying a single string will repeat multiple columns
       of that size, as long as there is room for more.
       Specifying an object allows indicating how the columns
-      stretch to fit the available space.`
+      stretch to fit the available space.`,
     ),
     fill: PropTypes.oneOf(['horizontal', 'vertical', true, false]).description(
-      'Whether the width and/or height should fill the container.'
+      'Whether the width and/or height should fill the container.',
     ),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf(edgeSizes),
@@ -110,7 +110,7 @@ space in the column axis.`
     justify: PropTypes.oneOf(['start', 'center', 'end', 'stretch'])
       .description(
         `How to align the individual items inside the grid when there is extra
-space in the row axis.`
+space in the row axis.`,
       )
       .defaultValue('stretch'),
     justifyContent: PropTypes.oneOf([
@@ -127,7 +127,7 @@ space in the row axis.`
           PropTypes.oneOf(sizes),
           PropTypes.arrayOf(PropTypes.oneOf(sizes)),
           PropTypes.string,
-        ])
+        ]),
       ),
       PropTypes.oneOf(fixedSizes),
       PropTypes.string,
@@ -136,7 +136,7 @@ space in the row axis.`
       If an array value is an array, the inner array indicates the
       minimum and maximum sizes for the row.
       Specifying a single string will cause automatically added rows to be
-      the specified size.`
+      the specified size.`,
     ),
     tag: PropTypes.string
       .description('The DOM tag to use for the element.')

@@ -5,7 +5,7 @@ export const doc = TableRow => {
     .description('A row of cells in a table.')
     .usage(
       `import { TableRow } from 'grommet';
-<TableRow />`
+<TableRow />`,
     );
 
   return DocumentedTableRow;

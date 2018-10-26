@@ -10,11 +10,11 @@ export const doc = Menu => {
     .availableAt(getAvailableAtBadge('Menu'))
     .description(
       `Presents a list of choices within a drop down via a control that
-      opens it.`
+      opens it.`,
     )
     .usage(
       `import { Menu } from 'grommet';
-<Menu />`
+<Menu />`,
     );
 
   DocumentedMenu.propTypes = {
@@ -33,7 +33,7 @@ export const doc = Menu => {
 The values correspond to a side of the control. For instance,
 {left: 'left', top: 'bottom'} would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
-one of top or bottom should be specified.`
+one of top or bottom should be specified.`,
       )
       .defaultValue({ top: 'top', left: 'left' }),
     dropBackground: PropTypes.oneOfType([
@@ -49,17 +49,17 @@ one of top or bottom should be specified.`
     dropTarget: PropTypes.object.description(
       `Target where the drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be
-      aligned to the Menu itself by default.`
+      aligned to the Menu itself by default.`,
     ),
     icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]).description(
-      'Indicates the icon shown as a control to open it.'
+      'Indicates the icon shown as a control to open it.',
     ),
     items: PropTypes.arrayOf(PropTypes.object).description(
       `Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick.`
+The object values can be any Button prop, for example: label and onClick.`,
     ).isRequired,
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
-      'Indicates the label shown as a control to open it.'
+      'Indicates the label shown as a control to open it.',
     ),
     messages: PropTypes.shape({
       closeMenu: PropTypes.string,

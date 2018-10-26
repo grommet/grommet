@@ -24,7 +24,7 @@ describe('SkipLink', () => {
           <SkipLinkTarget id="footer" />
           <input type="text" value="footer" onChange={() => {}} />
         </footer>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

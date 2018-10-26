@@ -276,7 +276,7 @@ class Calendar extends Component {
     // days than the month we are changing to. So, we always set reference
     // to the first of the month before changing the month.
     const previousMonth = endOfMonth(
-      subtractMonths(startOfMonth(reference), 1)
+      subtractMonths(startOfMonth(reference), 1),
     );
     const nextMonth = startOfMonth(addMonths(startOfMonth(reference), 1));
 
@@ -291,7 +291,7 @@ class Calendar extends Component {
           weeks.push(
             <StyledWeek key={day.getTime()} theme={theme}>
               {days}
-            </StyledWeek>
+            </StyledWeek>,
           );
         }
         days = [];
@@ -302,7 +302,7 @@ class Calendar extends Component {
         days.push(
           <StyledDayContainer key={day.getTime()} sizeProp={size} theme={theme}>
             <StyledDay sizeProp={size} theme={theme} />
-          </StyledDayContainer>
+          </StyledDayContainer>,
         );
       } else {
         const dateString = day.toISOString();
@@ -341,7 +341,7 @@ class Calendar extends Component {
                 {day.getDate()}
               </StyledDay>
             </Button>
-          </StyledDayContainer>
+          </StyledDayContainer>,
         );
       }
 
@@ -350,7 +350,7 @@ class Calendar extends Component {
     weeks.push(
       <StyledWeek key={day.getTime()} theme={theme}>
         {days}
-      </StyledWeek>
+      </StyledWeek>,
     );
 
     return (

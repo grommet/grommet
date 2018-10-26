@@ -7,7 +7,10 @@ const tabHoverStyle = css`
     ${props =>
       props.theme.tab.hover.background &&
       css`
-        background: ${normalizeColor(props.theme.tab.hover.background, props.theme)};
+        background: ${normalizeColor(
+          props.theme.tab.hover.background,
+          props.theme,
+        )};
       `};
   }
   ${props => props.theme.tab.hover.extend};

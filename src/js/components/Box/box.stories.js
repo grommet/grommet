@@ -117,7 +117,7 @@ const BorderBox = () => (
             <Box key={border} pad="small" border={border}>
               {border}
             </Box>
-          )
+          ),
         )}
       </Box>
       <Box pad="small" border={{ color: 'brand' }}>

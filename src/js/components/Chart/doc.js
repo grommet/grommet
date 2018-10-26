@@ -13,7 +13,7 @@ export const doc = Chart => {
     bounds: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).description(
       `The limits for the values, specified as a two dimensional array.
       If not specified, the bounds will automatically be set to fit
-      the provided values.`
+      the provided values.`,
     ),
     color: PropTypes.oneOfType([
       PropTypes.string,
@@ -37,7 +37,7 @@ export const doc = Chart => {
         `Whether the chart strokes should overflow the component. Set this
       to true for precise positioning when stacking charts or including
       precise axes. Set this to false to have the graphical elements
-      align with the component boundaries.`
+      align with the component boundaries.`,
       )
       .defaultValue(false),
     round: PropTypes.bool
@@ -113,13 +113,13 @@ export const doc = Chart => {
             PropTypes.arrayOf(PropTypes.number).isRequired,
           ]).isRequired,
         }),
-      ])
+      ]),
     ).description(
       `Array of value objects describing the data.
       'value' is a tuple indicating the coordinate of the value or a triple
       indicating the x coordinate and a range of two y coordinates.
       'label' is a text string describing it.
-      'onHover' and 'onClick' only work when type='bar'.`
+      'onHover' and 'onClick' only work when type='bar'.`,
     ).isRequired,
   };
 
@@ -133,11 +133,11 @@ export const docCalcs = calcs => {
       A function to help calculate values for bounds and axis. Use it via:
       const data = calcs(<myValues>, { coarseness: 5, steps: [1, 1] });
       where 'data' will contain 'bounds' and 'axis' properties.
-    `
+    `,
     )
     .usage(
       `import { calcs } from 'grommet';
-const data = calcs(<values>, { coarseness: 5, steps: [1, 1] });`
+const data = calcs(<values>, { coarseness: 5, steps: [1, 1] });`,
     );
 
   return DocumentedCalcs;

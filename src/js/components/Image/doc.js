@@ -8,13 +8,13 @@ export const doc = Image => {
     .description('An image.')
     .usage(
       `import { Image } from 'grommet';
-<Image/>`
+<Image/>`,
     );
 
   DocumentedImage.propTypes = {
     ...genericProps,
     fit: PropTypes.oneOf(['cover', 'contain']).description(
-      'How the image fills its container.'
+      'How the image fills its container.',
     ),
   };
 

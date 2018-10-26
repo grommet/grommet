@@ -43,7 +43,7 @@ describe('RoutedButton', () => {
         <FakeRouter>
           <RoutedButton label="Test" path="/" />
         </FakeRouter>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -58,7 +58,7 @@ describe('RoutedButton', () => {
         <FakeRouter push={push}>
           <RoutedButton label="Test" onClick={onClick} />
         </FakeRouter>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
 
@@ -76,7 +76,7 @@ describe('RoutedButton', () => {
         <FakeRouter>
           <RoutedButton label="Test" onClick={onClick} />
         </FakeRouter>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
 
@@ -98,7 +98,7 @@ describe('RoutedButton', () => {
         <FakeRouter push={push}>
           <RoutedButton label="Test" path="/" />
         </FakeRouter>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
 
@@ -118,7 +118,7 @@ describe('RoutedButton', () => {
         <FakeRouter replace={replace}>
           <RoutedButton label="Test" path="/" method="replace" />
         </FakeRouter>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
 

@@ -285,7 +285,7 @@ class CustomSearchSelect extends Component {
         <CheckBox
           tabIndex="-1"
           checked={selectedContentPartners.some(
-            partner => partner.name === name
+            partner => partner.name === name,
           )}
           label={<Text size="small">{name}</Text>}
           onChange={() => {}}
@@ -342,7 +342,7 @@ class CustomSearchSelect extends Component {
     const { contentPartners, searching, selectedContentPartners } = this.state;
 
     const selectedPartnerNames = selectedContentPartners.map(
-      ({ name }) => name
+      ({ name }) => name,
     );
 
     return (
@@ -399,7 +399,8 @@ class CustomSearchSelect extends Component {
                       searching: false,
                       contentPartners: allContentPartners.filter(
                         s =>
-                          s.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
+                          s.name.toLowerCase().indexOf(query.toLowerCase()) >=
+                          0,
                       ),
                     });
                   }, 500);

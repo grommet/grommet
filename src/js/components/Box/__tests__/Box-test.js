@@ -10,7 +10,7 @@ describe('Box', () => {
     const component = renderer.create(
       <Grommet>
         <Box />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -22,7 +22,7 @@ describe('Box', () => {
         <Box direction="row" />
         <Box direction="row-responsive" />
         <Box direction="column" />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -33,7 +33,7 @@ describe('Box', () => {
       <Grommet>
         <Box responsive />
         <Box responsive={false} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -44,7 +44,7 @@ describe('Box', () => {
       <Grommet>
         <Box wrap />
         <Box wrap={false} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -57,7 +57,7 @@ describe('Box', () => {
         <Box justify="center" />
         <Box justify="between" />
         <Box justify="end" />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -71,7 +71,7 @@ describe('Box', () => {
         <Box align="baseline" />
         <Box align="stretch" />
         <Box align="end" />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -86,7 +86,7 @@ describe('Box', () => {
         <Box alignContent="around" />
         <Box alignContent="stretch" />
         <Box alignContent="end" />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -99,7 +99,7 @@ describe('Box', () => {
         <Box alignSelf="center" />
         <Box alignSelf="stretch" />
         <Box alignSelf="end" />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -143,7 +143,7 @@ describe('Box', () => {
             color: 'accent-1',
           }}
         />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -174,7 +174,7 @@ describe('Box', () => {
           <Box basis="1/4" />
           <Box basis="3/4" />
         </Box>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -189,7 +189,7 @@ describe('Box', () => {
           <Box flex="grow" />
           <Box flex="shrink" />
         </Box>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -204,7 +204,7 @@ describe('Box', () => {
           <Box fill="horizontal" />
           <Box fill="vertical" />
         </Box>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -218,7 +218,7 @@ describe('Box', () => {
             <Box />
           </Box>
         ))}
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -236,7 +236,7 @@ describe('Box', () => {
         <Box margin={{ left: 'small' }} />
         <Box margin={{ right: 'small' }} />
         <Box margin={{ top: 'small' }} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -254,7 +254,7 @@ describe('Box', () => {
         <Box pad={{ left: 'small' }} />
         <Box pad={{ right: 'small' }} />
         <Box pad={{ top: 'small' }} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -264,7 +264,7 @@ describe('Box', () => {
     const component = renderer.create(
       <Grommet>
         <Box gridArea="header" />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -292,7 +292,7 @@ describe('Box', () => {
         <Box round={{ size: 'medium' }} />
         <Box round={{ size: 'large' }} />
         <Box round={{ size: 'xlarge' }} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -315,7 +315,7 @@ describe('Box', () => {
         <Box border={{ size: 'medium' }} />
         <Box border={{ size: 'large' }} />
         <Box border={{ size: 'xlarge' }} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -333,7 +333,7 @@ describe('Box', () => {
         <Box background="dark-1" elevation="small">
           <Box elevation="small" />
         </Box>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -343,7 +343,7 @@ describe('Box', () => {
     const component = renderer.create(
       <Grommet>
         <Box tag="header" />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -374,7 +374,7 @@ describe('Box', () => {
             { type: 'slideUp', duration: 1000, delay: 500 },
           ]}
         />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -389,7 +389,7 @@ describe('Box', () => {
         <Box width="large" />
         <Box width="xlarge" />
         <Box width="111px" />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -404,7 +404,7 @@ describe('Box', () => {
         <Box height="large" />
         <Box height="xlarge" />
         <Box height="111px" />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

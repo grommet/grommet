@@ -56,7 +56,7 @@ export class Searcher extends Component {
             <FormSearch
               color={normalizeColor(
                 filtering === property ? 'brand' : 'border',
-                theme
+                theme,
               )}
             />
           }

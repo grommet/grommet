@@ -84,7 +84,7 @@ class Carousel extends Component {
     const CurrentIcon = theme.carousel.icons.current;
     const iconColor = normalizeColor(
       theme.carousel.icons.color || 'control',
-      theme
+      theme,
     );
 
     const selectors = [];
@@ -98,7 +98,7 @@ class Carousel extends Component {
             />
           }
           onClick={this.onSelect(index)}
-        />
+        />,
       );
 
       let animation;
@@ -178,7 +178,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const CarouselWrapper = compose(
   withFocus,
-  withTheme
+  withTheme,
 )(CarouselDoc || Carousel);
 
 export { CarouselWrapper as Carousel };

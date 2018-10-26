@@ -18,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const TextAreaWrapper = compose(
   withTheme,
-  withForwardRef
+  withForwardRef,
 )(TextAreaDoc || TextArea);
 
 export { TextAreaWrapper as TextArea };

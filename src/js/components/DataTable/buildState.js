@@ -59,7 +59,7 @@ const filter = (nextProps, prevState, nextState) => {
       if (nextFilters[column.property] && column.search && !onSearch) {
         regexps[column.property] = new RegExp(
           nextFilters[column.property],
-          'i'
+          'i',
         );
       }
     }
@@ -70,8 +70,8 @@ const filter = (nextProps, prevState, nextState) => {
     nextData = data.filter(
       datum =>
         !Object.keys(regexps).some(
-          property => !regexps[property].test(datum[property])
-        )
+          property => !regexps[property].test(datum[property]),
+        ),
     );
   }
 

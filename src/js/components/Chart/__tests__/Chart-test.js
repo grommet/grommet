@@ -14,7 +14,7 @@ test('Chart renders', () => {
   const component = renderer.create(
     <Grommet>
       <Chart values={VALUES} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -26,7 +26,7 @@ test('Chart type renders', () => {
       <Chart type="bar" values={VALUES} />
       <Chart type="line" values={VALUES} />
       <Chart type="area" values={VALUES} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -40,7 +40,7 @@ test('Chart size renders', () => {
       <Chart size="medium" values={VALUES} />
       <Chart size="large" values={VALUES} />
       <Chart size="xlarge" values={VALUES} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -54,7 +54,7 @@ test('Chart thickness renders', () => {
       <Chart thickness="medium" values={VALUES} />
       <Chart thickness="large" values={VALUES} />
       <Chart thickness="xlarge" values={VALUES} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -66,7 +66,7 @@ test('Chart cap renders', () => {
       <Chart round values={VALUES} />
       <Chart type="line" round values={VALUES} />
       <Chart type="area" round values={VALUES} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

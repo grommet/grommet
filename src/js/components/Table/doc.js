@@ -8,7 +8,7 @@ export const doc = Table => {
     .description('A table of data organized in cells.')
     .usage(
       `import { Table, TableHeader, TableFooter, TableBody, TableRow } from 'grommet';
-<Table />`
+<Table />`,
     );
 
   DocumentedTable.propTypes = {

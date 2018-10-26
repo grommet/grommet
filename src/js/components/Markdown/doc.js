@@ -8,7 +8,7 @@ export const doc = Markdown => {
     .description('Markdown formatting using Grommet components.')
     .usage(
       `import { Markdown } from 'grommet';
-      <Markdown>{content}</Markdown>`
+      <Markdown>{content}</Markdown>`,
     );
 
   // DocumentedMarkdown.propTypes = {

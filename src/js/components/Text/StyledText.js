@@ -28,7 +28,9 @@ const marginStyle = props => {
     return `margin-top: ${props.theme.global.edgeSize[props.margin.top]};`;
   }
   if (props.margin.bottom) {
-    return `margin-bottom: ${props.theme.global.edgeSize[props.margin.bottom]};`;
+    return `margin-bottom: ${
+      props.theme.global.edgeSize[props.margin.bottom]
+    };`;
   }
   if (props.margin.left) {
     return `margin-left: ${props.theme.global.edgeSize[props.margin.left]};`;

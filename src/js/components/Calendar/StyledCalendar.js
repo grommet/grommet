@@ -18,7 +18,9 @@ export const StyledCalendar = styled.div`
 
 export const StyledWeeksContainer = styled.div`
   overflow: hidden;
-  ${props => `height: ${parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) * 6}px;`};
+  ${props =>
+    `height: ${parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) *
+      6}px;`};
 `;
 
 const slideStyle = props => {
@@ -75,7 +77,8 @@ export const StyledDay = styled.div`
   ${props => daySizeStyle(props)}
   ${props =>
     (props.isSelected && backgroundStyle('control', props.theme)) ||
-    (props.inRange && backgroundStyle({ color: 'control', opacity: 'weak' }, props.theme))}
+    (props.inRange &&
+      backgroundStyle({ color: 'control', opacity: 'weak' }, props.theme))}
   ${props => props.otherMonth && 'opacity: 0.5;'}
   ${props => props.isSelected && 'font-weight: bold;'}
 `;

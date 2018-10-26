@@ -21,7 +21,7 @@ describe('Clock', () => {
         <Clock run={false} type="digital" time={TIME} />
         <Clock run={false} type="digital" time={TIME2} />
         <Clock run={false} type="digital" time={DATE} />
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -31,7 +31,7 @@ describe('Clock', () => {
       <Grommet>
         <Clock run={false} type="digital" time={DURATION} hourLimit={12} />
         <Clock run={false} type="digital" time={DURATION} hourLimit={24} />
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -43,7 +43,7 @@ describe('Clock', () => {
         <Clock type="analog" run="backward" time={DURATION} />
         <Clock type="digital" run="forward" time={DURATION} />
         <Clock type="digital" run="backward" time={DURATION} />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -67,11 +67,11 @@ describe('Clock', () => {
                 size={size}
                 time={DURATION}
               />
-            </Grommet>
+            </Grommet>,
           );
           expect(component.toJSON()).toMatchSnapshot();
-        })
-      )
-    )
+        }),
+      ),
+    ),
   );
 });

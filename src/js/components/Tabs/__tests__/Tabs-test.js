@@ -10,7 +10,7 @@ describe('Tabs', () => {
     const component = renderer.create(
       <Grommet>
         <Tabs />
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -23,7 +23,7 @@ describe('Tabs', () => {
           {undefined}
           <Tab title="Tab 2">Tab body 2</Tab>
         </Tabs>
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -36,7 +36,7 @@ describe('Tabs', () => {
           {undefined}
           <Tab title={<div>Tab 2</div>}>Tab body 2</Tab>
         </Tabs>
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -49,7 +49,7 @@ describe('Tabs', () => {
           <Tab title="Tab 1">Tab body 1</Tab>
           <Tab title="Tab 2">Tab body 2</Tab>
         </Tabs>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -69,7 +69,7 @@ describe('Tabs', () => {
           </Tab>
           <Tab title="Tab 2">Tab body 2</Tab>
         </Tabs>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

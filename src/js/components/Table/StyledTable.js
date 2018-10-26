@@ -12,8 +12,10 @@ const SIZE_MAP = {
 };
 
 const sizeStyle = css`
-  width: ${props => SIZE_MAP[props.size] || props.theme.global.size[props.size]};
-  max-width: ${props => SIZE_MAP[props.size] || props.theme.global.size[props.size]};
+  width: ${props =>
+    SIZE_MAP[props.size] || props.theme.global.size[props.size]};
+  max-width: ${props =>
+    SIZE_MAP[props.size] || props.theme.global.size[props.size]};
   overflow: hidden;
 `;
 

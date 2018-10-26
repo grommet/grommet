@@ -79,7 +79,7 @@ export const backgroundStyle = (backgroundArg, theme) => {
           color,
           background.opacity === true
             ? theme.global.opacity.medium
-            : theme.global.opacity[background.opacity]
+            : theme.global.opacity[background.opacity],
         ) || color;
       styles.push(css`
         background-color: ${backgroundColor};
@@ -129,7 +129,7 @@ export const activeStyle = css`
   ${props =>
     backgroundStyle(
       normalizeColor(props.theme.global.hover.background, props.theme),
-      props.theme
+      props.theme,
     )}
   color: ${props =>
     normalizeColor(props.theme.global.hover.color, props.theme)};

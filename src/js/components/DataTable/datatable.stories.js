@@ -176,7 +176,7 @@ class ServedDataTable extends Component {
         exp: new RegExp(search[property], 'i'),
       }));
       nextData = DATA.filter(
-        d => !expressions.some(e => !e.exp.test(d[e.property]))
+        d => !expressions.some(e => !e.exp.test(d[e.property])),
       );
     } else {
       nextData = DATA;

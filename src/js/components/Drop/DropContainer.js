@@ -32,7 +32,7 @@ export class DropContainer extends Component {
 
     const dark = backgroundIsDark(
       propsTheme.global.drop.background,
-      propsTheme
+      propsTheme,
     );
 
     if (dark === propsTheme.dark && stateTheme) {
@@ -87,13 +87,13 @@ export class DropContainer extends Component {
     /* eslint-disable-next-line react/no-find-dom-node */
     this.scrollParents = findScrollParents(findDOMNode(dropTarget));
     this.scrollParents.forEach(scrollParent =>
-      scrollParent.addEventListener('scroll', this.place)
+      scrollParent.addEventListener('scroll', this.place),
     );
   };
 
   removeScrollListener = () => {
     this.scrollParents.forEach(scrollParent =>
-      scrollParent.removeEventListener('scroll', this.place)
+      scrollParent.removeEventListener('scroll', this.place),
     );
   };
 
@@ -144,7 +144,7 @@ export class DropContainer extends Component {
         stretch
           ? Math.max(targetRect.width, containerRect.width)
           : containerRect.width,
-        windowWidth
+        windowWidth,
       );
 
       // set left position
@@ -182,7 +182,7 @@ export class DropContainer extends Component {
           top = targetRect.bottom;
           maxHeight = Math.min(
             windowHeight - targetRect.bottom,
-            windowHeight - targetRect.height
+            windowHeight - targetRect.height,
           );
         }
       } else if (align.bottom) {
@@ -226,7 +226,7 @@ export class DropContainer extends Component {
             }
             maxHeight = Math.min(
               windowHeight - top,
-              windowHeight - targetRect.height
+              windowHeight - targetRect.height,
             );
           }
         }

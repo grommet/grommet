@@ -12,7 +12,7 @@ describe('Meter', () => {
     const component = renderer.create(
       <Grommet>
         <Meter />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -22,7 +22,7 @@ describe('Meter', () => {
     const component = renderer.create(
       <Grommet>
         <Meter values={VALUES} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -43,7 +43,7 @@ describe('Meter', () => {
             { value: 5 },
           ]}
         />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -54,7 +54,7 @@ describe('Meter', () => {
       <Grommet>
         <Meter type="bar" values={VALUES} />
         <Meter type="circle" values={VALUES} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -73,7 +73,7 @@ describe('Meter', () => {
         <Meter type="circle" size="medium" values={VALUES} />
         <Meter type="circle" size="large" values={VALUES} />
         <Meter type="circle" size="xlarge" values={VALUES} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -92,7 +92,7 @@ describe('Meter', () => {
         <Meter type="circle" thickness="medium" values={VALUES} />
         <Meter type="circle" thickness="large" values={VALUES} />
         <Meter type="circle" thickness="xlarge" values={VALUES} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -103,7 +103,7 @@ describe('Meter', () => {
       <Grommet>
         <Meter round values={VALUES} />
         <Meter type="circle" round values={VALUES} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -123,7 +123,7 @@ describe('Meter', () => {
           background={{ color: 'light-3', opacity: 'medium' }}
           values={VALUES}
         />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

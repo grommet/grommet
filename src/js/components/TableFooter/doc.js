@@ -5,7 +5,7 @@ export const doc = TableFooter => {
     .description('The footer of a table.')
     .usage(
       `import { TableFooter } from 'grommet';
-<TableFooter />`
+<TableFooter />`,
     );
 
   return DocumentedTableFooter;

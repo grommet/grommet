@@ -22,7 +22,7 @@ describe('Menu', () => {
           id="test-menu"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -35,7 +35,7 @@ describe('Menu', () => {
           messages={{ openMenu: 'Abrir Menu' }}
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -53,7 +53,7 @@ describe('Menu', () => {
             { label: 'Item 3', href: '/test' },
           ]}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
@@ -75,7 +75,7 @@ describe('Menu', () => {
           label="Test"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-menu__drop')).toBeNull();
@@ -85,7 +85,7 @@ describe('Menu', () => {
 
     fireEvent(
       document,
-      new MouseEvent('mousedown', { bubbles: true, cancelable: true })
+      new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
     );
     setTimeout(() => {
       expect(document.getElementById('test-menu__drop')).toBeNull();
@@ -102,7 +102,7 @@ describe('Menu', () => {
           label="Test"
           items={[{ label: 'Item 1', onClick }, { label: 'Item 2' }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -123,7 +123,7 @@ describe('Menu', () => {
           label="Test"
           items={[{ label: 'Item 1', onClick }, { label: 'Item 2' }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -168,7 +168,7 @@ describe('Menu', () => {
           label="Test"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -194,7 +194,7 @@ describe('Menu', () => {
           label="Test"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -217,7 +217,7 @@ describe('Menu', () => {
           label="Test"
           items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -246,7 +246,7 @@ describe('Menu', () => {
       </Grommet>,
       {
         attachTo: document.body.firstChild,
-      }
+      },
     );
     expect(container.firstChild).toMatchSnapshot();
 

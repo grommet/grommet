@@ -28,7 +28,7 @@ describe('Diagram', () => {
     const { container } = render(
       <Context>
         <Diagram connections={[{ fromTarget: '1', toTarget: '2' }]} />
-      </Context>
+      </Context>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -43,7 +43,7 @@ describe('Diagram', () => {
             { fromTarget: '1', toTarget: '2', type: 'rectilinear' },
           ]}
         />
-      </Context>
+      </Context>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -54,7 +54,7 @@ describe('Diagram', () => {
         <Diagram
           connections={[{ fromTarget: '1', toTarget: '2', color: 'brand' }]}
         />
-      </Context>
+      </Context>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -69,7 +69,7 @@ describe('Diagram', () => {
             { fromTarget: '1', toTarget: '2', offset: 'medium' },
           ]}
         />
-      </Context>
+      </Context>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -87,7 +87,7 @@ describe('Diagram', () => {
             { fromTarget: '1', toTarget: '2', thickness: '5px' },
           ]}
         />
-      </Context>
+      </Context>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -102,7 +102,7 @@ describe('Diagram', () => {
             { fromTarget: '1', toTarget: '2', anchor: 'vertical' },
           ]}
         />
-      </Context>
+      </Context>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });

@@ -73,7 +73,7 @@ class Tabs extends Component {
           onActivate: () => this.activateTab(index),
         });
       },
-      this
+      this,
     );
 
     const tabContentTitle = `${activeTitle || ''} ${tabContents}`;

@@ -116,7 +116,7 @@ class SelectContainer extends Component {
       () => {
         const { search } = this.state;
         this.onSearch(search);
-      }
+      },
     );
   };
 

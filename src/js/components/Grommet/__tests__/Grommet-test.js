@@ -34,7 +34,7 @@ describe('Grommet', () => {
 
   test('hpe theme', () => {
     const component = renderer.create(
-      <Grommet theme={hpeTheme}>Grommet App</Grommet>
+      <Grommet theme={hpeTheme}>Grommet App</Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -50,7 +50,7 @@ describe('Grommet', () => {
         <AnnounceContext.Consumer>
           {announce => <TestAnnouncer announce={announce} />}
         </AnnounceContext.Consumer>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

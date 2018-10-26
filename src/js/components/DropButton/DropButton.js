@@ -61,7 +61,7 @@ class DropButton extends Component {
     const { show } = this.state;
     this.setState(
       { show: !show },
-      show ? onClose && onClose() : onOpen && onOpen()
+      show ? onClose && onClose() : onOpen && onOpen(),
     );
   };
 
@@ -124,7 +124,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const DropButtonWrapper = compose(
   withTheme,
-  withForwardRef
+  withForwardRef,
 )(DropButtonDoc || DropButton);
 
 export { DropButtonWrapper as DropButton };

@@ -98,7 +98,7 @@ export const withinDates = (date, dates) => {
 
 export const updateDateRange = (
   selectedDate,
-  { date, dates, previousSelectedDate }
+  { date, dates, previousSelectedDate },
 ) => {
   const result = { previousSelectedDate: selectedDate };
   if (!dates) {

@@ -12,7 +12,7 @@ test('Image renders', () => {
   const component = renderer.create(
     <Grommet>
       <Image src={SRC} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -23,7 +23,7 @@ test('Image fit renders', () => {
     <Grommet>
       <Image fit="cover" src={SRC} />
       <Image fit="contain" src={SRC} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

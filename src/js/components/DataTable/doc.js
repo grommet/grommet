@@ -8,7 +8,7 @@ export const doc = DataTable => {
     .description('A data driven table.')
     .usage(
       `import { DataTable } from 'grommet';
-<DataTable />`
+<DataTable />`,
     );
 
   DocumentedDataTable.propTypes = {
@@ -33,7 +33,7 @@ export const doc = DataTable => {
         property: PropTypes.string.isRequired,
         render: PropTypes.func,
         search: PropTypes.bool,
-      })
+      }),
     ).description(`
       A description of the data. The order controls the column order.
       'property' indicates which property in the data objects to associate
@@ -48,7 +48,7 @@ export const doc = DataTable => {
       made available for the column.
     `),
     data: PropTypes.arrayOf(PropTypes.shape({})).description(
-      'Array of data objects.'
+      'Array of data objects.',
     ),
     groupBy: PropTypes.string.description('Property to group data by.'),
     onMore: PropTypes.func.description(
@@ -58,16 +58,16 @@ export const doc = DataTable => {
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed. This cannot
       be combined with properties that expect all data to be present in the
-      browser, such as columns.search, sortable, groupBy, or columns.aggregate.`
+      browser, such as columns.search, sortable, groupBy, or columns.aggregate.`,
     ),
     onSearch: PropTypes.func.description(
       `When supplied, and when at least one column has 'search' enabled,
       this function will be called with an object with keys for property
       names and values which are the search text strings. This is typically
-      employed so a back-end can be used to search through the data.`
+      employed so a back-end can be used to search through the data.`,
     ),
     resizeable: PropTypes.bool.description(
-      'Whether to allow the user to resize column widths.'
+      'Whether to allow the user to resize column widths.',
     ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
@@ -79,7 +79,7 @@ export const doc = DataTable => {
       width. This cannot be used in combination with 'resizeable'.
     `),
     sortable: PropTypes.bool.description(
-      'Whether to allow the user to sort columns.'
+      'Whether to allow the user to sort columns.',
     ),
   };
 

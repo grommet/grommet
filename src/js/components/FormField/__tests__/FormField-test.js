@@ -13,7 +13,7 @@ test('renders', () => {
       <FormField>
         <TextInput />
       </FormField>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -23,7 +23,7 @@ test('renders label', () => {
   const component = renderer.create(
     <Grommet>
       <FormField label="test label" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -33,7 +33,7 @@ test('renders help', () => {
   const component = renderer.create(
     <Grommet>
       <FormField help="test help" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -43,7 +43,7 @@ test('renders error', () => {
   const component = renderer.create(
     <Grommet>
       <FormField error="test error" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -53,7 +53,7 @@ test('renders htmlFor', () => {
   const component = renderer.create(
     <Grommet>
       <FormField htmlFor="test-id" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

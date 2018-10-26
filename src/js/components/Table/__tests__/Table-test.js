@@ -16,7 +16,7 @@ test('Table renders', () => {
   const component = renderer.create(
     <Grommet>
       <Table />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -26,7 +26,7 @@ test('Table caption renders', () => {
   const component = renderer.create(
     <Grommet>
       <Table caption="Caption" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -38,7 +38,7 @@ test('TableHeader renders', () => {
       <Table>
         <TableHeader />
       </Table>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -50,7 +50,7 @@ test('TableFooter renders', () => {
       <Table>
         <TableFooter />
       </Table>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -62,7 +62,7 @@ test('TableBody renders', () => {
       <Table>
         <TableBody />
       </Table>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -76,7 +76,7 @@ test('TableRow renders', () => {
           <TableRow />
         </TableBody>
       </Table>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -102,7 +102,7 @@ test('TableCell renders', () => {
           </TableRow>
         </TableFooter>
       </Table>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -123,7 +123,7 @@ test('TableCell scope renders', () => {
           </TableRow>
         </TableBody>
       </Table>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -169,7 +169,7 @@ test('TableCell size renders', () => {
           </TableRow>
         </TableBody>
       </Table>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -187,7 +187,7 @@ test('TableCell verticalAlign renders', () => {
           </TableRow>
         </TableHeader>
       </Table>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -203,7 +203,7 @@ test('TableCell plain renders', () => {
           </TableRow>
         </TableHeader>
       </Table>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

@@ -7,7 +7,7 @@ const components = folder =>
     .filter(
       file =>
         fs.statSync(path.join(folder, file)).isDirectory() &&
-        fs.existsSync(path.join(folder, file, 'doc.js'))
+        fs.existsSync(path.join(folder, file, 'doc.js')),
     );
 
 const FOLDER = path.resolve(__dirname, '..');
@@ -18,7 +18,7 @@ test('README is updated', done => {
   componentFolders.sort().forEach(component => {
     readmeContent[component] = fs.readFileSync(
       path.join(FOLDER, component, 'README.md'),
-      'utf8'
+      'utf8',
     );
   });
   expect(readmeContent).toMatchSnapshot();

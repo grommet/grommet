@@ -332,8 +332,8 @@ const mapValues = extent => {
   const mapOffsetY = Math.round(
     (mapRadius / 2) *
       Math.log(
-        (1 + Math.sin(MAP_LAT_BOTTOM_RAD)) / (1 - Math.sin(MAP_LAT_BOTTOM_RAD))
-      )
+        (1 + Math.sin(MAP_LAT_BOTTOM_RAD)) / (1 - Math.sin(MAP_LAT_BOTTOM_RAD)),
+      ),
   );
   return { mapRadius, mapOffsetY };
 };
@@ -341,7 +341,7 @@ const mapValues = extent => {
 const latLonToCoord = (latLon, origin, extent) => {
   const { mapRadius, mapOffsetY } = mapValues(extent);
   const x = Math.round(
-    ((latLon[1] - MAP_LON_LEFT) * extent[0]) / MAP_LON_DELTA
+    ((latLon[1] - MAP_LON_LEFT) * extent[0]) / MAP_LON_DELTA,
   );
   const latitudeRad = (latLon[0] * Math.PI) / 180;
   const y =
@@ -349,7 +349,7 @@ const latLonToCoord = (latLon, origin, extent) => {
     mapOffsetY -
     Math.round(
       (mapRadius / 2) *
-        Math.log((1 + Math.sin(latitudeRad)) / (1 - Math.sin(latitudeRad)))
+        Math.log((1 + Math.sin(latitudeRad)) / (1 - Math.sin(latitudeRad))),
     );
   return [x, y]; // the coordinate value of this point on the map image
 };
@@ -446,7 +446,7 @@ const updateState = (state, { continents, places }) => {
 const buildInteractiveProps = (
   { name, onClick, onHover },
   activeFunc,
-  active
+  active,
 ) => ({
   role: 'button',
   'aria-label': name,
@@ -550,7 +550,7 @@ class WorldMap extends Component {
         interactiveProps = buildInteractiveProps(
           continentStates[name],
           activate => this.setState({ activeContinent: activate }),
-          active
+          active,
         );
       }
 
@@ -561,7 +561,7 @@ class WorldMap extends Component {
             d={dots}
             strokeLinecap="round"
             strokeWidth={parseMetricToNum(
-              theme.worldMap.continent[active ? 'active' : 'base']
+              theme.worldMap.continent[active ? 'active' : 'base'],
             )}
             stroke={normalizeColor(continentColor || color || 'light-3', theme)}
           />
@@ -587,7 +587,7 @@ class WorldMap extends Component {
         interactiveProps = buildInteractiveProps(
           place,
           activate => this.setState({ activePlace: activate }),
-          active
+          active,
         );
       }
 
@@ -596,7 +596,7 @@ class WorldMap extends Component {
           key={key}
           strokeLinecap="round"
           strokeWidth={parseMetricToNum(
-            theme.worldMap.place[active ? 'active' : 'base']
+            theme.worldMap.place[active ? 'active' : 'base'],
           )}
           stroke={normalizeColor(placeColor || color || 'light-3', theme)}
           {...interactiveProps}

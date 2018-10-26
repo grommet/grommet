@@ -5,7 +5,7 @@ export const doc = Tab => {
     .description('One tab within Tabs.')
     .usage(
       `import { Tab } from 'grommet';
-<Tab />`
+<Tab />`,
     );
 
   DocumentedTab.propTypes = {
@@ -13,7 +13,7 @@ export const doc = Tab => {
       .description('Whether this is a plain tab with no style.')
       .defaultValue(false),
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
-      'The title of the tab.'
+      'The title of the tab.',
     ),
   };
 

@@ -53,7 +53,7 @@ class InfiniteScroll extends Component {
     this.setState(
       { count: count + 1 },
       // call onMore if we've reached the end of the items
-      () => onMore && (count + 1) * step >= items.length && onMore()
+      () => onMore && (count + 1) * step >= items.length && onMore(),
     );
   };
 

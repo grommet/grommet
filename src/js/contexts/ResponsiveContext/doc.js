@@ -7,17 +7,17 @@ export const doc = ResponsiveContext => {
     .availableAt(getAvailableAtBadge('ResponsiveContext'))
     .description(
       `A means of providing different rendering behavior based on the
-      screen resolution.`
+      screen resolution.`,
     )
     .usage(
-      "import { ResponsiveContext } from 'grommet';\n<ResponsiveContext.Consumer />\n{resolution => ()}"
+      "import { ResponsiveContext } from 'grommet';\n<ResponsiveContext.Consumer />\n{resolution => ()}",
     );
 
   DocumentedResponsiveContext.propTypes = {
     children: PropTypes.func.description(
       `Render function that will be called with the current screen resolution
       size (e.g 'wide', 'narrow'). The size value will be derived from global.breakpoints entry
-      in the theme object.`
+      in the theme object.`,
     ),
   };
 

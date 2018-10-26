@@ -144,7 +144,7 @@ class CustomSuggestionsTextInput extends Component {
 
     return suggestedFolks
       .filter(
-        ({ name }) => name.toLowerCase().indexOf(value.toLowerCase()) >= 0
+        ({ name }) => name.toLowerCase().indexOf(value.toLowerCase()) >= 0,
       )
       .map(({ name, imageUrl }, index, list) => ({
         label: (

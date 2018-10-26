@@ -11,7 +11,7 @@ export const doc = Accordion => {
 <Accordion>
   <AccordionPanel label='Panel 1'>...</AccordionPanel>
   <AccordionPanel label='Panek 2'>...</AccordionPanel>
-</Accordion>`
+</Accordion>`,
     );
 
   DocumentedAccordion.propTypes = {
@@ -23,7 +23,7 @@ export const doc = Accordion => {
       .description(
         `Active panel index. If specified, Accordion will be a controlled component. This means that future
 panel changes will not work unless you subscribe to onActive function and update activeIndex
-accordingly.`
+accordingly.`,
       )
       .defaultValue(0),
     animate: PropTypes.bool
@@ -33,7 +33,7 @@ accordingly.`
       .isRequired,
     onActive: PropTypes.func.description(
       `Function that will be called when the active index changes.
-It will always send an array with currently active panel indexes.`
+It will always send an array with currently active panel indexes.`,
     ),
     multiple: PropTypes.bool
       .description('Allow multiple panels to be opened at once.')
@@ -42,7 +42,7 @@ It will always send an array with currently active panel indexes.`
       tabContents: PropTypes.string,
     })
       .description(
-        'Custom messages for Tabs. Used for accessibility by screen readers.'
+        'Custom messages for Tabs. Used for accessibility by screen readers.',
       )
       .defaultValue({
         tabContents: 'Tab Contents',

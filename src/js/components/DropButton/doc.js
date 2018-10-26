@@ -9,11 +9,11 @@ export const doc = DropButton => {
       `A Button that when clicked will a Drop with the specified 'dropContent'.
       When opened, the drop will control the focus so that the contents behind
       it are not focusable. All properties of Button can be passed through.
-      `
+      `,
     )
     .usage(
       `import { DropButton } from 'grommet';
-<DropButton dropContent={...} />`
+<DropButton dropContent={...} />`,
     );
 
   DocumentedDropButton.propTypes = {
@@ -33,19 +33,19 @@ export const doc = DropButton => {
         left: 'left',
       }),
     dropContent: PropTypes.element.description(
-      'Content to put inside the Drop.'
+      'Content to put inside the Drop.',
     ).isRequired,
     dropTarget: PropTypes.object.description(
       `Target where the drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be
-      aligned to the DropButton itself by default.`
+      aligned to the DropButton itself by default.`,
     ),
     onClose: PropTypes.func.description('Callback for when the drop is closed'),
     onOpen: PropTypes.func.description('Callback for when the drop is opened'),
     open: PropTypes.bool
       .description(
         `Whether the drop should be open or not. Setting this property does not
-      influence user interaction after it has been rendered.`
+      influence user interaction after it has been rendered.`,
       )
       .defaultValue(false),
   };

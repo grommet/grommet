@@ -8,13 +8,13 @@ export const doc = Text => {
     .description('Arbitrary text.')
     .usage(
       `import { Text } from 'grommet';
-<Text />`
+<Text />`,
     );
 
   DocumentedText.propTypes = {
     ...genericProps,
     color: PropTypes.string.description(
-      'A color identifier to use for the text color.'
+      'A color identifier to use for the text color.',
     ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf([
@@ -30,7 +30,7 @@ export const doc = Text => {
       `The font size is primarily driven by the chosen tag. But, it can
 be adjusted via this size property. The tag should be set for semantic
 correctness and accessibility. This size property allows for stylistic
-adjustments.`
+adjustments.`,
     ),
     tag: PropTypes.string
       .description('The DOM tag to use for the element.')
@@ -41,7 +41,7 @@ adjustments.`
     truncate: PropTypes.bool
       .description(
         `Restrict the text to a single line and truncate with ellipsis if it
-is too long to all fit.`
+is too long to all fit.`,
       )
       .defaultValue(false),
     weight: PropTypes.oneOfType([

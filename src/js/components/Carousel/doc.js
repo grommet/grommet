@@ -8,11 +8,11 @@ export const doc = Carousel => {
     .description(
       `A carousel that cycles through children. Child components
       would typically be Images. It is the caller's responsibility to ensure
-      that all children are the same size.`
+      that all children are the same size.`,
     )
     .usage(
       `import { Carousel } from 'grommet';
-<Carousel />`
+<Carousel />`,
     );
 
   DocumentedCarousel.propTypes = {

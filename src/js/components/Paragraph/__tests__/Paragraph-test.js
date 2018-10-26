@@ -9,7 +9,7 @@ test('Paragraph renders', () => {
   const component = renderer.create(
     <Grommet>
       <Paragraph />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -18,19 +18,12 @@ test('Paragraph renders', () => {
 test('Paragraph size renders', () => {
   const component = renderer.create(
     <Grommet>
-<<<<<<< HEAD
-      <Paragraph size='small' />
-      <Paragraph size='medium' />
-      <Paragraph size='large' />
-      <Paragraph size='xlarge' />
-      <Paragraph size='xxlarge' />
-=======
       <Paragraph size="small" />
       <Paragraph size="medium" />
       <Paragraph size="large" />
       <Paragraph size="xlarge" />
->>>>>>> Added prettier iitegration.
-    </Grommet>
+      <Paragraph size="xxlarge" />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -45,7 +38,7 @@ test('Paragraph margin renders', () => {
       <Paragraph margin="none" />
       <Paragraph margin={{ bottom: 'small' }} />
       <Paragraph margin={{ top: 'small' }} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -57,7 +50,7 @@ test('Paragraph textAlign renders', () => {
       <Paragraph textAlign="start" />
       <Paragraph textAlign="center" />
       <Paragraph textAlign="end" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

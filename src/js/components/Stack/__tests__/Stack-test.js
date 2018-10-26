@@ -11,7 +11,7 @@ test('renders', () => {
   const component = renderer.create(
     <Grommet>
       <Stack>{CONTENTS}</Stack>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -23,7 +23,7 @@ test('guidingChild renders', () => {
       <Stack guidingChild="first">{CONTENTS}</Stack>
       <Stack guidingChild="last">{CONTENTS}</Stack>
       <Stack guidingChild={0}>{CONTENTS}</Stack>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -41,7 +41,7 @@ test('anchor renders', () => {
       <Stack anchor="bottom-left">{CONTENTS}</Stack>
       <Stack anchor="top-right">{CONTENTS}</Stack>
       <Stack anchor="bottom-right">{CONTENTS}</Stack>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -52,7 +52,7 @@ test('fill renders', () => {
     <Grommet>
       <Stack fill>{CONTENTS}</Stack>
       <Stack fill={false}>{CONTENTS}</Stack>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

@@ -28,7 +28,7 @@ export const doc = Box => {
   const DocumentedBox = describe(Box)
     .availableAt(getAvailableAtBadge('Box'))
     .description(
-      'A flexible box that lays out its contents along a single direction.'
+      'A flexible box that lays out its contents along a single direction.',
     )
     .usage("import { Box } from 'grommet';\n<Box />");
   DocumentedBox.propTypes = {
@@ -50,7 +50,7 @@ export const doc = Box => {
     ])
       .description(
         `How to align the contents when there is extra space in
-        the cross axis.`
+        the cross axis.`,
       )
       .defaultValue('stretch'),
     animation: PropTypes.oneOfType([
@@ -138,14 +138,14 @@ export const doc = Box => {
     ])
       .description(
         `Elevated height above the underlying context, indicated
-        via a drop shadow.`
+        via a drop shadow.`,
       )
       .defaultValue('none'),
     flex: PropTypes.oneOf(['grow', 'shrink', true, false]).description(
-      'Whether flex-grow and/or flex-shrink is true.'
+      'Whether flex-grow and/or flex-shrink is true.',
     ),
     fill: PropTypes.oneOf(['horizontal', 'vertical', true, false]).description(
-      'Whether the width and/or height should fill the container.'
+      'Whether the width and/or height should fill the container.',
     ),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
@@ -158,7 +158,7 @@ export const doc = Box => {
       PropTypes.string,
     ]).description('A fixed height.'),
     justify: PropTypes.oneOf(['start', 'center', 'between', 'end']).description(
-      'How to align the contents along the main axis.'
+      'How to align the contents along the main axis.',
     ),
     overflow: PropTypes.oneOfType([
       PropTypes.oneOf(OVERFLOW_VALUES),
@@ -201,13 +201,13 @@ export const doc = Box => {
       .description(
         `The amount of padding around the box contents. An
         object can be specified to distinguish horizontal padding, vertical
-        padding, and padding on a particular side of the box`
+        padding, and padding on a particular side of the box`,
       )
       .defaultValue('none'),
     responsive: PropTypes.bool
       .description(
         `Whether margin, pad, and border
-      sizes should be scaled for mobile environments.`
+      sizes should be scaled for mobile environments.`,
       )
       .defaultValue(true),
     round: PropTypes.oneOfType([
@@ -243,7 +243,7 @@ export const doc = Box => {
     wrap: PropTypes.bool
       .description(
         `Whether children can wrap if they
-      can't all fit.`
+      can't all fit.`,
       )
       .defaultValue(false),
   };

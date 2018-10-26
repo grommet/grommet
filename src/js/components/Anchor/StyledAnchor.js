@@ -12,9 +12,13 @@ export const StyledAnchor = styled.a`
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: ${props => normalizeColor(props.colorProp || props.theme.anchor.color, props.theme)};
-  ${props => props.theme.anchor.fontWeight && `font-weight: ${props.theme.anchor.fontWeight};`}
-  text-decoration: ${props => (props.hasIcon ? 'none' : props.theme.anchor.textDecoration)};
+  color: ${props =>
+    normalizeColor(props.colorProp || props.theme.anchor.color, props.theme)};
+  ${props =>
+    props.theme.anchor.fontWeight &&
+    `font-weight: ${props.theme.anchor.fontWeight};`}
+  text-decoration: ${props =>
+    props.hasIcon ? 'none' : props.theme.anchor.textDecoration};
   cursor: pointer;
   outline: none;
   ${genericStyles}
@@ -24,8 +28,10 @@ export const StyledAnchor = styled.a`
     props.theme.anchor.hover &&
     css`
     &:hover {
-      ${props.theme.anchor.hover.textDecoration && `text-decoration: ${props.theme.anchor.hover.textDecoration};`}
-      ${props.theme.anchor.hover.fontWeight && `font-weight: ${props.theme.anchor.hover.fontWeight};`}
+      ${props.theme.anchor.hover.textDecoration &&
+        `text-decoration: ${props.theme.anchor.hover.textDecoration};`}
+      ${props.theme.anchor.hover.fontWeight &&
+        `font-weight: ${props.theme.anchor.hover.fontWeight};`}
       ${props.theme.anchor.hover.extend}
     }
   `}

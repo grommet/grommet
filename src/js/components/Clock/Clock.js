@@ -162,11 +162,11 @@ class Clock extends Component {
         if (onChange) {
           if (elements.duration) {
             onChange(
-              `P${elements.hours}H${elements.minutes}M${elements.seconds}S`
+              `P${elements.hours}H${elements.minutes}M${elements.seconds}S`,
             );
           } else {
             onChange(
-              `T${elements.hours}:${elements.minutes}:${elements.seconds}`
+              `T${elements.hours}:${elements.minutes}:${elements.seconds}`,
             );
           }
         }

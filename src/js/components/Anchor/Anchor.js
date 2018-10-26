@@ -15,7 +15,7 @@ class Anchor extends Component {
     const { children, icon, label } = props;
     if ((icon || label) && children) {
       console.warn(
-        'Anchor should not have children if icon or label is provided'
+        'Anchor should not have children if icon or label is provided',
       );
     }
   }
@@ -91,7 +91,7 @@ if (process.env.NODE_ENV !== 'production') {
 const AnchorWrapper = compose(
   withFocus,
   withTheme,
-  withForwardRef
+  withForwardRef,
 )(AnchorDoc || Anchor);
 
 export { AnchorWrapper as Anchor };

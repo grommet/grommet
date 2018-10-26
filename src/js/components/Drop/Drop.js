@@ -42,7 +42,7 @@ class Drop extends Component {
     } = this.props;
     return createPortal(
       <DropContainer dropTarget={dropTarget} {...rest} />,
-      this.dropContainer
+      this.dropContainer,
     );
   }
 }

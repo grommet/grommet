@@ -7,7 +7,7 @@ export const doc = RoutedAnchor => {
     .availableAt(getAvailableAtBadge('RoutedAnchor'))
     .description('An Anchor with support for React Router.')
     .usage(
-      "import { RoutedAnchor } from 'grommet';\n<RoutedAnchor primary={true} path='/documentation' />"
+      "import { RoutedAnchor } from 'grommet';\n<RoutedAnchor primary={true} path='/documentation' />",
     );
   DocumentedRoutedAnchor.propTypes = { ...ROUTER_PROPS };
   return DocumentedRoutedAnchor;

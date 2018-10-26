@@ -8,11 +8,11 @@ export const doc = Calendar => {
     .description(
       `Calendar of days in months.
       It can be used to select a single date, a range of dates, or multiple
-      individual dates.`
+      individual dates.`,
     )
     .usage(
       `import { Calendar } from 'grommet';
-<Calendar />`
+<Calendar />`,
     );
 
   DocumentedCalendar.propTypes = {
@@ -21,7 +21,7 @@ export const doc = Calendar => {
       .description(
         `
       Whether to animate the calender as the user interacts with it.
-    `
+    `,
       )
       .defaultValue(true),
     bounds: PropTypes.arrayOf(PropTypes.string)
@@ -32,14 +32,14 @@ export const doc = Calendar => {
       PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.arrayOf(PropTypes.string),
-      ])
+      ]),
     ).description(`Multiple selected dates in ISO8601 format.
       Items that are an array indicate a range of dates.`),
     disabled: PropTypes.arrayOf(
       PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.arrayOf(PropTypes.string),
-      ])
+      ]),
     ).description(`Multiple dates in ISO8601 format that should not be
         selectable. Items that are an array indicate a range of dates.`),
     firstDayOfWeek: PropTypes.oneOf([0, 1])
@@ -63,7 +63,7 @@ The function passes the following options:
 \`onPreviousMonth\` and \`onNextMonth\` are callbacks that will tell the calendar to move between months.
 \`previousInBound\` and \`nextInBound\` are booleans that tell, when using \`bounds\`, if the current date is within that range.
 You can then use that to disable the previous and next buttons.
-`
+`,
     ),
     locale: PropTypes.string
       .description('The locale to use.')
@@ -83,17 +83,17 @@ You can then use that to disable the previous and next buttons.
       When the user clicks the first date, onSelect will be called with that
       date. When the user selects another date, onSelect will be called with
       an array of two dates.
-    `
+    `,
       )
       .defaultValue(false),
     reference: PropTypes.string.description(
-      "The date to show if `date` isn't set, in ISO8601 format"
+      "The date to show if `date` isn't set, in ISO8601 format",
     ),
     showAdjacentDays: PropTypes.bool
       .description(
         `
       Whether to show the days from the previous and next months.
-    `
+    `,
       )
       .defaultValue(true),
     size: PropTypes.oneOfType([

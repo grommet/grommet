@@ -17,7 +17,7 @@ describe('Calendar', () => {
     const component = renderer.create(
       <Grommet>
         <Calendar date={DATE} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -27,7 +27,7 @@ describe('Calendar', () => {
     const component = renderer.create(
       <Grommet>
         <Calendar dates={DATES} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -39,7 +39,7 @@ describe('Calendar', () => {
         <Calendar size="small" date={DATE} />
         <Calendar size="medium" date={DATE} />
         <Calendar size="large" date={DATE} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -50,7 +50,7 @@ describe('Calendar', () => {
       <Grommet>
         <Calendar firstDayOfWeek={0} date={DATE} />
         <Calendar firstDayOfWeek={1} date={DATE} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -60,7 +60,7 @@ describe('Calendar', () => {
     const component = renderer.create(
       <Grommet>
         <Calendar reference={DATE} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -103,7 +103,7 @@ describe('Calendar', () => {
             </Box>
           )}
         />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

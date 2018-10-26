@@ -11,7 +11,7 @@ export const doc = Tabs => {
 <Tabs>
   <Tab title='Tab 1'>...</Tab>
   <Tab title='Tab 2'>...</Tab>
-</Tabs>`
+</Tabs>`,
     );
 
   DocumentedTabs.propTypes = {
@@ -19,7 +19,7 @@ export const doc = Tabs => {
     activeIndex: PropTypes.number.description(
       `Active tab index. If specified, Tabs will be a controlled component. This means that future
 tab changes will not work unless you subscribe to onActive function and update activeIndex
-accordingly.`
+accordingly.`,
     ),
     children: PropTypes.node.description('Array of Tab.').isRequired,
     justify: PropTypes.oneOf(['start', 'center', 'end'])
@@ -29,14 +29,14 @@ accordingly.`
       tabContents: PropTypes.string,
     })
       .description(
-        'Custom messages for Tabs. Used for accessibility by screen readers.'
+        'Custom messages for Tabs. Used for accessibility by screen readers.',
       )
       .defaultValue({
         tabContents: 'Tab Contents',
       }),
     onActive: PropTypes.func.description(
       `Function that will be called with the active tab index when the currently active
-tab changes.`
+tab changes.`,
     ),
   };
   return DocumentedTabs;

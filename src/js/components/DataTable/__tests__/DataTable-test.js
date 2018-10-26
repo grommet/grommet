@@ -13,7 +13,7 @@ describe('DataTable', () => {
     const component = renderer.create(
       <Grommet>
         <DataTable />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -29,7 +29,7 @@ describe('DataTable', () => {
           ]}
           data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -45,7 +45,7 @@ describe('DataTable', () => {
           ]}
           data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -62,7 +62,7 @@ describe('DataTable', () => {
           data={[{ a: 'zero', b: 0 }, { a: 'one', b: 1 }, { a: 'two', b: 2 }]}
           sortable
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -82,7 +82,7 @@ describe('DataTable', () => {
           data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
           resizeable
         />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -103,7 +103,7 @@ describe('DataTable', () => {
           ]}
           data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -125,7 +125,7 @@ describe('DataTable', () => {
           ]}
           groupBy="a"
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

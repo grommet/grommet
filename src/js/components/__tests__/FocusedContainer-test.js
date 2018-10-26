@@ -12,10 +12,12 @@ describe('FocusedContainer', () => {
     const { container: trapped } = render(
       <div id="focus-trap-test">
         <input id="test" />
-      </div>
+      </div>,
     );
     const { container: focuser } = render(
-      <FocusedContainer id="container">test focused container</FocusedContainer>
+      <FocusedContainer id="container">
+        test focused container
+      </FocusedContainer>,
     );
     jest.runAllTimers();
     expect(focuser.firstChild).toMatchSnapshot();
@@ -31,7 +33,7 @@ describe('FocusedContainer', () => {
     const { container } = render(
       <FocusedContainer id="container" restrictScroll>
         test focused container
-      </FocusedContainer>
+      </FocusedContainer>,
     );
 
     jest.runAllTimers();
@@ -49,10 +51,12 @@ describe('FocusedContainer', () => {
     const { container: trapped } = render(
       <div id="focus-trap-test">
         <input id="test" />
-      </div>
+      </div>,
     );
     const { container: focuser } = render(
-      <FocusedContainer id="container">test focused container</FocusedContainer>
+      <FocusedContainer id="container">
+        test focused container
+      </FocusedContainer>,
     );
 
     jest.runAllTimers();

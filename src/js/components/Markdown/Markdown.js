@@ -26,7 +26,7 @@ class GrommetMarkdown extends Component {
         p: { component: Paragraph },
       },
       heading,
-      components
+      components,
     );
 
     return <Markdown options={{ overrides }} {...rest} />;
@@ -38,7 +38,7 @@ if (process.env.NODE_ENV !== 'production') {
   GrommetMarkdownDoc = require('./doc').doc(GrommetMarkdown); // eslint-disable-line global-require
 }
 const GrommetMarkdownWrapper = compose(withTheme)(
-  GrommetMarkdownDoc || GrommetMarkdown
+  GrommetMarkdownDoc || GrommetMarkdown,
 );
 
 export { GrommetMarkdownWrapper as Markdown };

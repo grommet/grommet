@@ -12,7 +12,7 @@ export const doc = Meter => {
     .description('A graphical meter.')
     .usage(
       `import { Meter } from 'grommet';
-<Meter />`
+<Meter />`,
     );
 
   DocumentedMeter.propTypes = {
@@ -47,7 +47,7 @@ export const doc = Meter => {
         onClick: PropTypes.func,
         onHover: PropTypes.func,
         value: PropTypes.number.isRequired,
-      })
+      }),
     ).description(
       `Array of value objects describing the data.
       'value' is the actual numeric value.
@@ -57,7 +57,7 @@ export const doc = Meter => {
       'onClick' will be called when the user clicks on it.
       Set 'highlight' to call attention to it.
       'onHover' will be called with a boolean argument indicating when the
-      user hovers onto or away from it.`
+      user hovers onto or away from it.`,
     ),
   };
 

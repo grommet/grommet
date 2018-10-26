@@ -17,7 +17,7 @@ describe('DropButton', () => {
       <DropButton
         label="Dropper"
         dropContent={<div id="drop-contents">drop contents</div>}
-      />
+      />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -28,7 +28,7 @@ describe('DropButton', () => {
         label="Dropper"
         open
         dropContent={<div id="drop-contents">drop contents</div>}
-      />
+      />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -39,7 +39,7 @@ describe('DropButton', () => {
       <DropButton
         label="Dropper"
         dropContent={<div id="drop-contents">Drop Contents</div>}
-      />
+      />,
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
@@ -57,7 +57,7 @@ describe('DropButton', () => {
       <DropButton
         label="Dropper"
         dropContent={<div id="drop-contents">Drop Contents</div>}
-      />
+      />,
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
@@ -67,7 +67,7 @@ describe('DropButton', () => {
 
     fireEvent(
       document,
-      new MouseEvent('mousedown', { bubbles: true, cancelable: true })
+      new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
     );
 
     setTimeout(() => {
@@ -82,7 +82,7 @@ describe('DropButton', () => {
         disabled
         label="Dropper"
         dropContent={<div id="drop-contents">Drop Contents</div>}
-      />
+      />,
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
@@ -99,7 +99,7 @@ describe('DropButton', () => {
         open
         label="Dropper"
         dropContent={<div id="drop-contents">Drop Contents</div>}
-      />
+      />,
     );
     expect(container.firstChild).toMatchSnapshot();
     expectPortal('drop-contents').toMatchSnapshot();

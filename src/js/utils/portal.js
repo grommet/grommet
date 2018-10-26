@@ -11,7 +11,7 @@ export const expectPortal = portalId => ({
     const node = document.getElementById(portalId);
     if (node) {
       const styles = css.parse(
-        document.getElementsByTagName('style')[0].innerHTML
+        document.getElementsByTagName('style')[0].innerHTML,
       );
       styles.stylesheet.rules = styles.stylesheet.rules.filter(rule => {
         // skip everything that is not media or rule
@@ -23,7 +23,7 @@ export const expectPortal = portalId => ({
         }
         const selector = rule.selectors.join('');
         return Array.from(node.classList).some(
-          className => selector.indexOf(className) >= 0
+          className => selector.indexOf(className) >= 0,
         );
       });
       expect(document.getElementById(portalId)).toMatchSnapshot();

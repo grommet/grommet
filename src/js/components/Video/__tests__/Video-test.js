@@ -15,7 +15,7 @@ test('Video renders', () => {
   const component = renderer.create(
     <Grommet>
       <Video>{CONTENTS}</Video>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -25,7 +25,7 @@ test('Video autoPlay renders', () => {
   const component = renderer.create(
     <Grommet>
       <Video autoPlay>{CONTENTS}</Video>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -35,7 +35,7 @@ test('Video loop renders', () => {
   const component = renderer.create(
     <Grommet>
       <Video loop>{CONTENTS}</Video>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -45,7 +45,7 @@ test('Video mute renders', () => {
   const component = renderer.create(
     <Grommet>
       <Video mute>{CONTENTS}</Video>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -56,7 +56,7 @@ test('Video controls renders', () => {
     <Grommet>
       <Video controls="over">{CONTENTS}</Video>
       <Video controls="below">{CONTENTS}</Video>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -67,7 +67,7 @@ test('Video fit renders', () => {
     <Grommet>
       <Video fit="cover">{CONTENTS}</Video>
       <Video fit="contain">{CONTENTS}</Video>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

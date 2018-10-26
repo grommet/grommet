@@ -14,9 +14,9 @@ const isDarkBackground = props => {
         props.theme.button.primary.color ||
         props.theme.global.colors.control ||
         'brand',
-      props.theme
+      props.theme,
     ),
-    props.theme
+    props.theme,
   );
 
   return colorIsDark(backgroundColor, props.theme);
@@ -34,7 +34,7 @@ class Button extends Component {
     const { children, icon, label } = props;
     if ((icon || label) && children) {
       console.warn(
-        'Button should not have children if icon or label is provided'
+        'Button should not have children if icon or label is provided',
       );
     }
   }
@@ -116,7 +116,7 @@ if (process.env.NODE_ENV !== 'production') {
 const ButtonWrapper = compose(
   withFocus,
   withTheme,
-  withForwardRef
+  withForwardRef,
 )(ButtonDoc || Button);
 
 export { ButtonWrapper as Button };

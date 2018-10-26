@@ -56,7 +56,7 @@ export class Analog extends Component {
     const { precision, theme, ...rest } = this.props;
     const { hourAngle, minuteAngle, secondAngle } = this.state;
     const { size, secondSize, minuteSize, hourSize } = getClockDimensions(
-      theme
+      theme,
     );
     const halfSize = size / 2;
 

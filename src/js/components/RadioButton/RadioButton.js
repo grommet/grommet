@@ -114,7 +114,7 @@ if (process.env.NODE_ENV !== 'production') {
 const RadioButtonWrapper = compose(
   withFocus,
   withTheme,
-  withForwardRef
+  withForwardRef,
 )(RadioButtonDoc || RadioButton);
 
 export { RadioButtonWrapper as RadioButton };

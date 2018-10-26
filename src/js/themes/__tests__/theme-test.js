@@ -51,7 +51,7 @@ describe('Grommet', () => {
             <Text>{color}</Text>
           </Box>
         ))}
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -65,7 +65,7 @@ describe('Grommet', () => {
             <Text>{color}</Text>
           </Box>
         ))}
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -79,7 +79,7 @@ describe('Grommet', () => {
             <Text>{color}</Text>
           </Box>
         ))}
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -96,7 +96,7 @@ describe('Grommet', () => {
           <Anchor icon={<Add />} label="Add" />
           <Anchor icon={<Add />} label="Add" color="custom" />
         </Box>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

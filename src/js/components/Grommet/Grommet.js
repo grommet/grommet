@@ -26,7 +26,7 @@ const reduceIconTheme = (iconTheme, dark) => {
         {
           dark,
           global: { colors: result.colors },
-        }
+        },
       );
     } else {
       result.colors[key] = normalizeColor(result.colors[key], {
@@ -53,7 +53,7 @@ class Grommet extends Component {
         iconColoredTheme.icon = { ...(theme.icon || {}) };
         iconColoredTheme.icon.colors = deepMerge(
           baseTheme.icon.colors,
-          theme.global.colors
+          theme.global.colors,
         );
       }
       nextTheme = deepMerge(baseTheme, iconColoredTheme);
@@ -70,7 +70,7 @@ class Grommet extends Component {
           deepMerge(lightIconTheme, {
             color: nextTheme.global.colors.text.dark,
           }),
-          true
+          true,
         ),
         light: reduceIconTheme(lightIconTheme, false),
       };

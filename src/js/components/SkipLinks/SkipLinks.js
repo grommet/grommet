@@ -56,7 +56,7 @@ class SkipLinks extends Component {
               cloneElement(element, {
                 key: `skip-link-${index}`,
                 onClick: this.removeLayer,
-              })
+              }),
             )}
           </Box>
         </Box>

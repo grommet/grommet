@@ -11,7 +11,7 @@ export const fontSize = (size, lineHeight) => css`
   line-height: ${props =>
     lineHeight ||
     `${Math.ceil(
-      parseMetricToNum(size) / parseMetricToNum(props.theme.global.lineHeight)
+      parseMetricToNum(size) / parseMetricToNum(props.theme.global.lineHeight),
     ) *
       (parseMetricToNum(props.theme.global.lineHeight) /
         parseMetricToNum(size))}px`};

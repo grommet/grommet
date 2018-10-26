@@ -3,7 +3,7 @@ export const isObject = item =>
 
 export const deepFreeze = obj => {
   Object.keys(obj).forEach(
-    key => key && isObject(obj[key]) && Object.freeze(obj[key])
+    key => key && isObject(obj[key]) && Object.freeze(obj[key]),
   );
   return Object.freeze(obj);
 };

@@ -190,7 +190,7 @@ class Video extends Component {
     const { duration, scrubberRef } = this.state;
     if (scrubberRef.current) {
       const scrubberRect = findDOMNode(
-        scrubberRef.current
+        scrubberRef.current,
       ).getBoundingClientRect();
       const percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
       this.setState({ scrubTime: duration * percent });
@@ -201,7 +201,7 @@ class Video extends Component {
     const { duration, scrubberRef, videoRef } = this.state;
     if (scrubberRef.current) {
       const scrubberRect = findDOMNode(
-        scrubberRef.current
+        scrubberRef.current,
       ).getBoundingClientRect();
       const percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
       findDOMNode(videoRef.current).currentTime = duration * percent;
@@ -512,7 +512,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const VideoWrapper = compose(
   withTheme,
-  withForwardRef
+  withForwardRef,
 )(VideoDoc || Video);
 
 export { VideoWrapper as Video };

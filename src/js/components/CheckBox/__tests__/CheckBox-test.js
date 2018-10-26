@@ -10,7 +10,7 @@ test('CheckBox renders', () => {
     <Grommet>
       <CheckBox />
       <CheckBox id="test id" name="test name" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -21,7 +21,7 @@ test('CheckBox label renders', () => {
     <Grommet>
       <CheckBox label="test label" />
       <CheckBox label={<div>test label</div>} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -31,7 +31,7 @@ test('CheckBox checked renders', () => {
   const component = renderer.create(
     <Grommet>
       <CheckBox checked />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -42,7 +42,7 @@ test('CheckBox disabled renders', () => {
     <Grommet>
       <CheckBox disabled />
       <CheckBox disabled checked />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -52,7 +52,7 @@ test('CheckBox reverse renders', () => {
   const component = renderer.create(
     <Grommet>
       <CheckBox reverse label="test label" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -64,7 +64,7 @@ test('CheckBox toggle renders', () => {
       <CheckBox toggle />
       <CheckBox toggle checked />
       <CheckBox toggle label="test label" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

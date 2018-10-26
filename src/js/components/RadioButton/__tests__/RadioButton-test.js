@@ -10,7 +10,7 @@ test('RadioButton renders', () => {
     <Grommet>
       <RadioButton />
       <RadioButton id="test id" name="test name" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -21,7 +21,7 @@ test('RadioButton label renders', () => {
     <Grommet>
       <RadioButton label="test label" />
       <RadioButton label={<div>test label</div>} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -31,7 +31,7 @@ test('RadioButton checked renders', () => {
   const component = renderer.create(
     <Grommet>
       <RadioButton checked />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -42,7 +42,7 @@ test('RadioButton disabled renders', () => {
     <Grommet>
       <RadioButton disabled />
       <RadioButton disabled checked />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

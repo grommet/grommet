@@ -21,7 +21,8 @@ const plainStyle = css`
 export const StyledTextInput = styled.input`
   ${inputStyle} width: 100%;
 
-  ${props => props.size && sizeStyle(props)} ${props => props.plain && plainStyle}
+  ${props => props.size && sizeStyle(props)} ${props =>
+    props.plain && plainStyle}
 
   &::-webkit-input-placeholder {
     ${placeholderColor};
@@ -50,7 +51,9 @@ export const StyledTextInputContainer = styled.div`
 
 export const StyledPlaceholder = styled.div`
   position: absolute;
-  left: ${props => parseMetricToNum(props.theme.global.spacing) / 2 - parseMetricToNum(props.theme.global.control.border.width)}px;
+  left: ${props =>
+    parseMetricToNum(props.theme.global.spacing) / 2 -
+    parseMetricToNum(props.theme.global.control.border.width)}px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;

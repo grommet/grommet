@@ -13,7 +13,7 @@ describe('RangeSelector', () => {
     const component = renderer.create(
       <Grommet>
         <RangeSelector values={[20, 30]} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -23,7 +23,7 @@ describe('RangeSelector', () => {
     const component = renderer.create(
       <Grommet>
         <RangeSelector color="accent-1" values={[20, 30]} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -34,7 +34,7 @@ describe('RangeSelector', () => {
       <Grommet>
         <RangeSelector direction="horizontal" values={[20, 30]} />
         <RangeSelector direction="vertical" values={[20, 30]} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -45,7 +45,7 @@ describe('RangeSelector', () => {
       <Grommet>
         <RangeSelector invert values={[20, 30]} />
         <RangeSelector invert={false} values={[20, 30]} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -55,7 +55,7 @@ describe('RangeSelector', () => {
     const component = renderer.create(
       <Grommet>
         <RangeSelector max={50} values={[20, 30]} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -65,7 +65,7 @@ describe('RangeSelector', () => {
     const component = renderer.create(
       <Grommet>
         <RangeSelector min={10} values={[20, 30]} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -77,7 +77,7 @@ describe('RangeSelector', () => {
         {['weak', 'medium', 'strong'].map(opacity => (
           <RangeSelector key={opacity} opacity={opacity} values={[20, 30]} />
         ))}
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -89,7 +89,7 @@ describe('RangeSelector', () => {
         {['xsmall', 'small', 'medium', 'large', 'full'].map(round => (
           <RangeSelector key={round} round={round} values={[20, 30]} />
         ))}
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -109,7 +109,7 @@ describe('RangeSelector', () => {
         ].map(size => (
           <RangeSelector key={size} size={size} values={[20, 30]} />
         ))}
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -119,7 +119,7 @@ describe('RangeSelector', () => {
     const component = renderer.create(
       <Grommet>
         <RangeSelector step={10} values={[20, 30]} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -130,7 +130,7 @@ describe('RangeSelector', () => {
     const { container, getByLabelText } = render(
       <Grommet>
         <RangeSelector values={[20, 30]} onChange={onChange} />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -154,7 +154,7 @@ describe('RangeSelector', () => {
     const { container, getByLabelText } = render(
       <Grommet>
         <RangeSelector values={[20, 30]} onChange={onChange} />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

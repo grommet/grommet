@@ -10,7 +10,7 @@ describe('Distribution', () => {
     const { container } = render(
       <Grommet>
         <Distribution values={[]} />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -23,7 +23,7 @@ describe('Distribution', () => {
         >
           {value => <span>{value.value}</span>}
         </Distribution>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -40,7 +40,7 @@ describe('Distribution', () => {
             {value => <span>{value.value}</span>}
           </Distribution>
         ))}
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });

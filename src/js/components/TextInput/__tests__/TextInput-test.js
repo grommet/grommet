@@ -28,7 +28,7 @@ describe('TextInput', () => {
         suggestions={['test', 'test1']}
         onInput={onInput}
         onFocus={onFocus}
-      />
+      />,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -42,7 +42,7 @@ describe('TextInput', () => {
 
       fireEvent(
         document,
-        new MouseEvent('mousedown', { bubbles: true, cancelable: true })
+        new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
       );
       expect(document.getElementById('text-input-drop__item')).toBeNull();
       done();
@@ -58,7 +58,7 @@ describe('TextInput', () => {
           name="item"
           suggestions={[{ label: 'test', value: 'test' }, { value: 'test1' }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -69,7 +69,7 @@ describe('TextInput', () => {
 
       fireEvent(
         document,
-        new MouseEvent('mousedown', { bubbles: true, cancelable: true })
+        new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
       );
       expect(document.getElementById('text-input-drop__item')).toBeNull();
       done();
@@ -85,7 +85,7 @@ describe('TextInput', () => {
           name="item"
           suggestions={['test', 'test1']}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -119,7 +119,7 @@ describe('TextInput', () => {
           suggestions={['test', 'test1']}
           onSelect={onSelect}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -131,7 +131,7 @@ describe('TextInput', () => {
       expect(container.firstChild).toMatchSnapshot();
       expect(document.getElementById('text-input-drop__item')).toBeNull();
       expect(onSelect).toBeCalledWith(
-        expect.objectContaining({ suggestion: 'test1' })
+        expect.objectContaining({ suggestion: 'test1' }),
       );
       done();
     }, 50);
@@ -148,7 +148,7 @@ describe('TextInput', () => {
           suggestions={['test', { value: 'test1' }]}
           onSelect={onSelect}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -162,7 +162,7 @@ describe('TextInput', () => {
     expect(onSelect).toBeCalledWith(
       expect.objectContaining({
         suggestion: 'test',
-      })
+      }),
     );
   });
 
@@ -176,7 +176,7 @@ describe('TextInput', () => {
           name="item"
           onSelect={onSelect}
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

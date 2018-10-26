@@ -12,7 +12,7 @@ describe('Accordion', () => {
     const component = renderer.create(
       <Grommet>
         <Accordion />
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -27,7 +27,7 @@ describe('Accordion', () => {
             <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
           )}
         </Accordion>
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -46,7 +46,7 @@ describe('Accordion', () => {
             </AccordionPanel>
           </Accordion>
         </Box>
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -63,7 +63,7 @@ describe('Accordion', () => {
             Panel body 2
           </AccordionPanel>
         </Accordion>
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -76,7 +76,7 @@ describe('Accordion', () => {
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -99,7 +99,7 @@ describe('Accordion', () => {
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -116,7 +116,7 @@ describe('Accordion', () => {
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -149,7 +149,7 @@ describe('Accordion', () => {
           <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
           <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -181,7 +181,7 @@ describe('Accordion', () => {
             Panel body 2
           </AccordionPanel>
         </Accordion>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

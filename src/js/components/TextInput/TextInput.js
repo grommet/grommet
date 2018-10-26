@@ -156,7 +156,7 @@ class TextInput extends Component {
             showDrop: true,
             selectedSuggestionIndex: -1,
           },
-          this.announceSuggestionsCount
+          this.announceSuggestionsCount,
         );
       }
     }, 10);
@@ -183,7 +183,7 @@ class TextInput extends Component {
         activeSuggestionIndex: -1,
         selectedSuggestionIndex,
       },
-      this.announceSuggestionsIsOpen
+      this.announceSuggestionsIsOpen,
     );
   };
 
@@ -197,10 +197,10 @@ class TextInput extends Component {
         event.preventDefault();
         const index = Math.min(
           activeSuggestionIndex + 1,
-          suggestions.length - 1
+          suggestions.length - 1,
         );
         this.setState({ activeSuggestionIndex: index }, () =>
-          this.announceSuggestion(index)
+          this.announceSuggestion(index),
         );
       }
     }
@@ -213,7 +213,7 @@ class TextInput extends Component {
       event.preventDefault();
       const index = Math.max(activeSuggestionIndex - 1, 0);
       this.setState({ activeSuggestionIndex: index }, () =>
-        this.announceSuggestion(index)
+        this.announceSuggestion(index),
       );
     }
   };
@@ -390,7 +390,7 @@ if (process.env.NODE_ENV !== 'production') {
 const TextInputWrapper = compose(
   withTheme,
   withAnnounce,
-  withForwardRef
+  withForwardRef,
 )(TextInputDoc || TextInput);
 
 export { TextInputWrapper as TextInput };

@@ -100,7 +100,7 @@ exports[`CheckBox checked renders 1`] = `
 }
 
 .c5:checked + span > span {
-  left: calc(48px - 24px);
+  left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
@@ -338,7 +338,7 @@ exports[`CheckBox disabled renders 1`] = `
 }
 
 .c5:checked + span > span {
-  left: calc(48px - 24px);
+  left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
@@ -589,7 +589,7 @@ exports[`CheckBox label renders 1`] = `
 }
 
 .c5:checked + span > span {
-  left: calc(48px - 24px);
+  left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
@@ -805,7 +805,7 @@ exports[`CheckBox renders 1`] = `
 }
 
 .c5:checked + span > span {
-  left: calc(48px - 24px);
+  left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
@@ -1019,7 +1019,7 @@ exports[`CheckBox reverse renders 1`] = `
 }
 
 .c6:checked + span > span {
-  left: calc(48px - 24px);
+  left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
@@ -1189,7 +1189,7 @@ exports[`CheckBox toggle renders 1`] = `
 }
 
 .c5:checked + span > span {
-  left: calc(48px - 24px);
+  left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 

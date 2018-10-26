@@ -52,7 +52,7 @@ export const Bar = props => {
           fill="none"
           {...strokeProps(
             someHighlight && !highlight ? background : colorName,
-            theme
+            theme,
           )}
           strokeWidth={height}
           strokeLinecap={round ? 'round' : 'butt'}

@@ -28,7 +28,7 @@ test('Object merges deep', () => {
       profile: {
         username: 'someone',
       },
-    }
+    },
   );
 
   expect(obj).toMatchSnapshot();
@@ -52,7 +52,7 @@ test('Object merges deep with freezed object', () => {
       profile: {
         username: 'someone',
       },
-    })
+    }),
   );
 
   expect(obj).toMatchSnapshot();

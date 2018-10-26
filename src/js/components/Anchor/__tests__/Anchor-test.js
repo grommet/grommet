@@ -11,7 +11,7 @@ test('Anchor renders', () => {
   const component = renderer.create(
     <Grommet>
       <Anchor />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -21,7 +21,7 @@ test('Anchor renders with children', () => {
   const component = renderer.create(
     <Grommet>
       <Anchor href="#">children</Anchor>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -34,12 +34,12 @@ test('Anchor warns about invalid label render', () => {
       <Anchor href="#" label="Test">
         invalid
       </Anchor>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
   expect(warnSpy).toHaveBeenCalledWith(
-    'Anchor should not have children if icon or label is provided'
+    'Anchor should not have children if icon or label is provided',
   );
 
   warnSpy.mockReset();
@@ -53,12 +53,12 @@ test('Anchor warns about invalid icon render', () => {
       <Anchor href="#" icon={<svg />}>
         invalid
       </Anchor>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
   expect(warnSpy).toHaveBeenCalledWith(
-    'Anchor should not have children if icon or label is provided'
+    'Anchor should not have children if icon or label is provided',
   );
 
   warnSpy.mockReset();
@@ -69,7 +69,7 @@ test('Anchor primary renders', () => {
   const component = renderer.create(
     <Grommet>
       <Anchor href="#" primary label="Test" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -79,7 +79,7 @@ test('Anchor focus renders', () => {
   const component = renderer.create(
     <Grommet>
       <Anchor href="#" focus label="Test" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -89,7 +89,7 @@ test('Anchor disabled renders', () => {
   const component = renderer.create(
     <Grommet>
       <Anchor disabled />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -99,7 +99,7 @@ test('Anchor icon label renders', () => {
   const component = renderer.create(
     <Grommet>
       <Anchor icon={<svg />} label="Test" onClick={() => {}} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -109,7 +109,7 @@ test('Anchor reverse icon label renders', () => {
   const component = renderer.create(
     <Grommet>
       <Anchor reverse icon={<svg />} label="Test" onClick={() => {}} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -120,7 +120,7 @@ test('Anchor is clickable', () => {
   const component = renderer.create(
     <Grommet>
       <Anchor href="#" label="Test" onClick={onClick} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
 

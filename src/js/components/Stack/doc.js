@@ -8,7 +8,7 @@ export const doc = Stack => {
     .description('Stacks components on top of the first child component.')
     .usage(
       `import { Stack } from 'grommet';
-<Stack />`
+<Stack />`,
     );
 
   DocumentedStack.propTypes = {
@@ -28,7 +28,7 @@ export const doc = Stack => {
     fill: PropTypes.bool
       .description(
         `Whether to expand to fill
-      all of the available width and height in the parent container.`
+      all of the available width and height in the parent container.`,
       )
       .defaultValue(false),
     guidingChild: PropTypes.oneOfType([
@@ -37,7 +37,7 @@ export const doc = Stack => {
     ])
       .description(
         `Which child to guide layout from. All other children
-      will be positioned within that area. Defaults to 'first'.`
+      will be positioned within that area. Defaults to 'first'.`,
       )
       .defaultValue('first'),
   };

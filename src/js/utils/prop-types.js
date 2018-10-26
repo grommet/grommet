@@ -1,7 +1,7 @@
 import { PropTypes } from 'react-desc';
 
 export const a11yTitlePropType = PropTypes.string.description(
-  'Custom title to be used by screen readers.'
+  'Custom title to be used by screen readers.',
 );
 
 export const backgroundPropType = PropTypes.oneOfType([

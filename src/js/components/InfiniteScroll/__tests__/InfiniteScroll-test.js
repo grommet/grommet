@@ -16,7 +16,7 @@ describe('InfiniteScroll', () => {
         <InfiniteScroll items={items}>
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -28,7 +28,7 @@ describe('InfiniteScroll', () => {
         <InfiniteScroll items={items} step={2}>
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -40,7 +40,7 @@ describe('InfiniteScroll', () => {
         <InfiniteScroll items={items} step={2} show={3}>
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -56,7 +56,7 @@ describe('InfiniteScroll', () => {
         >
           {(item, index) => <div key={index}>{item}</div>}
         </InfiniteScroll>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

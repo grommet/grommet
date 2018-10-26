@@ -9,11 +9,11 @@ export const doc = Layer => {
     .availableAt(getAvailableAtBadge('Layer'))
     .description(
       `A modal overlay. It is the caller's responsibility to provide a control for
-      the user to close the layer.`
+      the user to close the layer.`,
     )
     .usage(
       `import { Layer } from 'grommet';
-<Layer />`
+<Layer />`,
     );
 
   DocumentedLayer.propTypes = {
@@ -22,7 +22,7 @@ export const doc = Layer => {
       PropTypes.oneOf(['vertical', 'horizontal']),
     ])
       .description(
-        'Whether the width and/or height should fill the current viewport size.'
+        'Whether the width and/or height should fill the current viewport size.',
       )
       .defaultValue(false),
     margin: PropTypes.oneOfType([
@@ -57,22 +57,22 @@ export const doc = Layer => {
     ]).description(
       `The amount of margin around the Layer. An object can be specified to
 distinguish horizontal margin, vertical margin, and margin on a
-particular side of the layer`
+particular side of the layer`,
     ),
     modal: PropTypes.bool
       .description(
-        'Whether there should be an overlay preventing interaction underneath the layer.'
+        'Whether there should be an overlay preventing interaction underneath the layer.',
       )
       .defaultValue(true),
     onClickOutside: PropTypes.func.description(
-      'Function that will be invoked when the user clicks outside the layer.'
+      'Function that will be invoked when the user clicks outside the layer.',
     ),
     onEsc: PropTypes.func.description(
-      'Function that will be called when the user presses the escape key inside the layer.'
+      'Function that will be called when the user presses the escape key inside the layer.',
     ),
     plain: PropTypes.bool
       .description(
-        'Whether this is a plain Layer with no background color or border.'
+        'Whether this is a plain Layer with no background color or border.',
       )
       .defaultValue(false),
     position: PropTypes.oneOf([
@@ -87,7 +87,7 @@ particular side of the layer`
       .defaultValue('center'),
     responsive: PropTypes.bool
       .description(
-        'Whether the layer should take full width and height on mobile'
+        'Whether the layer should take full width and height on mobile',
       )
       .defaultValue(true),
   };

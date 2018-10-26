@@ -18,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
 const RangeInputWrapper = compose(
   withFocus,
   withTheme,
-  withForwardRef
+  withForwardRef,
 )(RangeInputDoc || RangeInput);
 
 export { RangeInputWrapper as RangeInput };

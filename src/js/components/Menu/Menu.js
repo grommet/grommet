@@ -207,7 +207,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const MenuWrapper = compose(
   withTheme,
-  withForwardRef
+  withForwardRef,
 )(MenuDoc || Menu);
 
 export { MenuWrapper as Menu };

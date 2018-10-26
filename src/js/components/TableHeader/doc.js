@@ -5,7 +5,7 @@ export const doc = TableHeader => {
     .description('The header of a table.')
     .usage(
       `import { TableHeader } from 'grommet';
-<TableHeader />`
+<TableHeader />`,
     );
 
   return DocumentedTableHeader;

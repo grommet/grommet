@@ -8,7 +8,7 @@ export const doc = SkipLinks => {
     .description('Describe a list of elements to skip to.')
     .usage(
       `import { SkipLinks } from 'grommet';
-<SkipLinks elements={['main', 'footer']} />`
+<SkipLinks elements={['main', 'footer']} />`,
     );
 
   DocumentedSkipLinks.propTypes = {
@@ -16,7 +16,7 @@ export const doc = SkipLinks => {
     messages: PropTypes.shape({
       skipTo: PropTypes.string,
     }).description(
-      'Custom messages for SkipLinks. Used for accessibility by screen readers.'
+      'Custom messages for SkipLinks. Used for accessibility by screen readers.',
     ),
   };
 

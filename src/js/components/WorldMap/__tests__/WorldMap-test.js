@@ -9,7 +9,7 @@ test('WorldMap renders', () => {
   const component = renderer.create(
     <Grommet>
       <WorldMap />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -19,7 +19,7 @@ test('WorldMap color renders', () => {
   const component = renderer.create(
     <Grommet>
       <WorldMap color="brand" />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -37,7 +37,7 @@ test('WorldMap continents renders', () => {
           },
         ]}
       />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -56,7 +56,7 @@ test('WorldMap places renders', () => {
           },
         ]}
       />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -66,7 +66,7 @@ test('WorldMap onSelectPlace renders', () => {
   const component = renderer.create(
     <Grommet>
       <WorldMap onSelectPlace={() => {}} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

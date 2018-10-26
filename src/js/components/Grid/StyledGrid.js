@@ -101,13 +101,19 @@ const SIZE_MAP = {
   '2/3': '66.66%',
 };
 
-const getRepeatCount = count => (typeof count === 'number' ? count : `auto-${count}`);
+const getRepeatCount = count =>
+  typeof count === 'number' ? count : `auto-${count}`;
 
-const getRepeatSize = (size, theme) => `minmax(${theme.global.size[size] || size}, 1fr)`;
+const getRepeatSize = (size, theme) =>
+  `minmax(${theme.global.size[size] || size}, 1fr)`;
 
 const sizeFor = (size, props, isRow) => {
   const mapped = SIZE_MAP[size];
-  if (isRow && mapped && (!props.fillContainer || props.fillContainer === 'horizontal')) {
+  if (
+    isRow &&
+    mapped &&
+    (!props.fillContainer || props.fillContainer === 'horizontal')
+  ) {
     console.warn('Grid needs `fill` when using fractional row sizes');
   }
   return mapped || props.theme.global.size[size] || size;
@@ -128,11 +134,17 @@ const columnsStyle = props => {
   }
   if (typeof props.columns === 'object') {
     return css`
-      grid-template-columns: repeat(${getRepeatCount(props.columns.count)}, ${getRepeatSize(props.columns.size, props.theme)});
+      grid-template-columns: repeat(
+        ${getRepeatCount(props.columns.count)},
+        ${getRepeatSize(props.columns.size, props.theme)}
+      );
     `;
   }
   return css`
-    grid-template-columns: repeat(auto-fill, ${getRepeatSize(props.columns, props.theme)});
+    grid-template-columns: repeat(
+      auto-fill,
+      ${getRepeatSize(props.columns, props.theme)}
+    );
   `;
 };
 
@@ -142,7 +154,11 @@ const rowsStyle = props => {
       grid-template-rows: ${props.rowsProp
         .map(s => {
           if (Array.isArray(s)) {
-            return `minmax(${sizeFor(s[0], props, true)}, ${sizeFor(s[1], props, true)})`;
+            return `minmax(${sizeFor(s[0], props, true)}, ${sizeFor(
+              s[1],
+              props,
+              true,
+            )})`;
           }
           return sizeFor(s, props, true);
         })
@@ -167,7 +183,9 @@ const areasStyle = props => {
       }
     }
   });
-  return `grid-template-areas: ${cells.map(r => `"${r.join(' ')}"`).join(' ')};`;
+  return `grid-template-areas: ${cells
+    .map(r => `"${r.join(' ')}"`)
+    .join(' ')};`;
 };
 
 export const StyledGrid = styled.div`

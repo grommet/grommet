@@ -105,7 +105,7 @@ describe('Drop', () => {
 
     fireEvent(
       document,
-      new MouseEvent('mousedown', { bubbles: true, cancelable: true })
+      new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
     );
     expect(onClickOutside).toBeCalled();
   });

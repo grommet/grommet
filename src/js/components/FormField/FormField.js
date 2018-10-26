@@ -66,7 +66,7 @@ class FormField extends Component {
         let marginBottom = '-1px';
         if (border.size) {
           marginBottom = `-${parseMetricToNum(
-            theme.global.borderSize[border.size]
+            theme.global.borderSize[border.size],
           )}px`;
         }
         outerStyle = {
@@ -139,7 +139,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const FormFieldWrapper = compose(
   withFocus,
-  withTheme
+  withTheme,
 )(FormFieldDoc || FormField);
 
 export { FormFieldWrapper as FormField };

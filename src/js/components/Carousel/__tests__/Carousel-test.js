@@ -17,7 +17,7 @@ describe('Carousel', () => {
           <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
           <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
         </Carousel>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -30,7 +30,7 @@ describe('Carousel', () => {
           <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
           <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
         </Carousel>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -56,7 +56,7 @@ describe('Carousel', () => {
           <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
           <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
         </Carousel>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

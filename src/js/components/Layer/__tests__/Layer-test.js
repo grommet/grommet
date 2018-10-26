@@ -54,10 +54,10 @@ describe('Layer', () => {
           <Layer id="position-test" position={position}>
             This is a layer
           </Layer>
-        </Grommet>
+        </Grommet>,
       );
       expectPortal('position-test').toMatchSnapshot();
-    })
+    }),
   );
 
   [true, false, 'horizontal', 'vertical'].forEach(full =>
@@ -67,10 +67,10 @@ describe('Layer', () => {
           <Layer id="full-test" full={full}>
             This is a layer
           </Layer>
-        </Grommet>
+        </Grommet>,
       );
       expectPortal('full-test').toMatchSnapshot();
-    })
+    }),
   );
 
   ['none', 'xsmall', 'small', 'medium', 'large'].forEach(margin =>
@@ -80,10 +80,10 @@ describe('Layer', () => {
           <Layer id="margin-test" margin={margin}>
             This is a layer
           </Layer>
-        </Grommet>
+        </Grommet>,
       );
       expectPortal('margin-test').toMatchSnapshot();
-    })
+    }),
   );
 
   test('hidden', () => {
@@ -92,7 +92,7 @@ describe('Layer', () => {
         <Layer id="hidden-test" position="hidden">
           This is a layer
         </Layer>
-      </Grommet>
+      </Grommet>,
     );
     expectPortal('hidden-test').toMatchSnapshot();
 
@@ -101,7 +101,7 @@ describe('Layer', () => {
         <Layer id="hidden-test" position="center">
           This is a layer
         </Layer>
-      </Grommet>
+      </Grommet>,
     );
     expectPortal('hidden-test').toMatchSnapshot();
   });
@@ -112,7 +112,7 @@ describe('Layer', () => {
         <Layer id="plain-test" plain>
           This is a plain layer
         </Layer>
-      </Grommet>
+      </Grommet>,
     );
     expectPortal('plain-test').toMatchSnapshot();
   });
@@ -123,7 +123,7 @@ describe('Layer', () => {
         <Layer id="non-modal-test" modal={false}>
           This is a non-modal layer
         </Layer>
-      </Grommet>
+      </Grommet>,
     );
     expectPortal('non-modal-test').toMatchSnapshot();
   });
@@ -136,7 +136,7 @@ describe('Layer', () => {
             This is a non-modal layer
           </Layer>
         </Box>
-      </Grommet>
+      </Grommet>,
     );
     expectPortal('non-modal-test').toMatchSnapshot();
   });
@@ -153,7 +153,7 @@ describe('Layer', () => {
         <LayerContainer onEsc={onEsc}>
           <input data-testid="test-input" />
         </LayerContainer>
-      </Grommet>
+      </Grommet>,
     );
 
     map.keydown({ key: 'Esc', keyCode: 27, which: 27 });
@@ -175,7 +175,7 @@ describe('Layer', () => {
             <input tabIndex="10" />
           </div>
         </FakeLayer>
-      </Grommet>
+      </Grommet>,
     );
     /* eslint-enable jsx-a11y/tabindex-no-positive */
 

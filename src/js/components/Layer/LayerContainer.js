@@ -64,7 +64,7 @@ class LayerContainer extends Component {
   makeLayerVisible = () => {
     /* eslint-disable-next-line react/no-find-dom-node */
     const node = findDOMNode(
-      this.layerRef.current || this.containerRef.current
+      this.layerRef.current || this.containerRef.current,
     );
     if (node && node.scrollIntoView) {
       node.scrollIntoView();

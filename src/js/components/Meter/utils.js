@@ -22,7 +22,7 @@ const neutralExp = /^neutral-\d+/;
 
 export const defaultColor = (index, theme) => {
   const neutralColors = Object.keys(theme.global.colors).filter(k =>
-    neutralExp.test(k)
+    neutralExp.test(k),
   );
   return neutralColors[index % neutralColors.length];
 };

@@ -82,7 +82,7 @@ class Tab extends Component {
         } else {
           borderColor = normalizeColor(
             theme.global.control.border.color,
-            theme
+            theme,
           );
         }
 
@@ -128,7 +128,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const TabWrapper = compose(
   withTheme,
-  withForwardRef
+  withForwardRef,
 )(TabDoc || Tab);
 
 export { TabWrapper as Tab };

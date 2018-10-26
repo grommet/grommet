@@ -31,7 +31,7 @@ export const edgeStyle = (
   data,
   responsive,
   responsiveBreakpoint,
-  theme
+  theme,
 ) => {
   const breakpoint =
     responsiveBreakpoint && theme.global.breakpoints[responsiveBreakpoint];
@@ -44,7 +44,7 @@ export const edgeStyle = (
             breakpoint,
             `
         ${kind}: ${breakpoint.edgeSize[data]};
-      `
+      `,
           )
         : ''};
     `;
@@ -60,7 +60,7 @@ export const edgeStyle = (
             `
         ${kind}-left: ${breakpoint.edgeSize[data.horizontal]};
         ${kind}-right: ${breakpoint.edgeSize[data.horizontal]};
-      `
+      `,
           )
         : ''};
     `);
@@ -75,7 +75,7 @@ export const edgeStyle = (
             `
         ${kind}-top: ${breakpoint.edgeSize[data.vertical]};
         ${kind}-bottom: ${breakpoint.edgeSize[data.vertical]};
-      `
+      `,
           )
         : ''};
     `);
@@ -88,7 +88,7 @@ export const edgeStyle = (
             breakpoint,
             `
         ${kind}-top: ${breakpoint.edgeSize[data.top]};
-      `
+      `,
           )
         : ''};
     `);
@@ -101,7 +101,7 @@ export const edgeStyle = (
             breakpoint,
             `
         ${kind}-bottom: ${breakpoint.edgeSize[data.bottom]};
-      `
+      `,
           )
         : ''};
     `);
@@ -114,7 +114,7 @@ export const edgeStyle = (
             breakpoint,
             `
         ${kind}-left: ${breakpoint.edgeSize[data.left]};
-      `
+      `,
           )
         : ''};
     `);
@@ -127,7 +127,7 @@ export const edgeStyle = (
             breakpoint,
             `
         ${kind}-right: ${breakpoint.edgeSize[data.left]};
-      `
+      `,
           )
         : ''};
     `);
@@ -222,6 +222,6 @@ export const genericStyles = css`
       props.margin,
       props.responsive,
       props.theme.global.edgeSize.responsiveBreakpoint,
-      props.theme
+      props.theme,
     )}
 `;

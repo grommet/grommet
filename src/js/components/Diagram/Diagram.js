@@ -102,7 +102,7 @@ class Diagram extends Component {
     const { connections } = this.props;
     /* eslint-disable-next-line react/no-find-dom-node */
     const containerRect = findDOMNode(
-      this.svgRef.current
+      this.svgRef.current,
     ).getBoundingClientRect();
     const connectionPoints = connections.map(
       ({ anchor, fromTarget, toTarget }) => {
@@ -155,7 +155,7 @@ class Diagram extends Component {
         }
 
         return points;
-      }
+      },
     );
     this.setState({ connectionPoints });
   }
@@ -169,7 +169,7 @@ class Diagram extends Component {
       paths = connections.map(
         (
           { anchor, color, offset, round, thickness, type, ...connectionRest },
-          index
+          index,
         ) => {
           let path;
           const cleanedRest = { ...connectionRest };
@@ -184,7 +184,7 @@ class Diagram extends Component {
               points[0],
               points[1],
               offsetWidth,
-              anchor
+              anchor,
             );
             const strokeWidth = thickness
               ? parseMetricToNum(theme.global.edgeSize[thickness] || thickness)
@@ -205,7 +205,7 @@ class Diagram extends Component {
           }
 
           return path;
-        }
+        },
       );
     }
 

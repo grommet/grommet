@@ -53,7 +53,7 @@ class RichChart extends Component {
       new Date(x).toLocaleDateString('en-US', {
         month: 'short',
         day: 'numeric',
-      })
+      }),
     );
     const yAxis = axis[1];
     this.setState({ bounds, values, yAxis, xAxis }); // eslint-disable-line

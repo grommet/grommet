@@ -10,7 +10,8 @@ const disabledStyle = `
 const hoverStyle = css`
   :hover input:not([disabled]) + div,
   :hover input:not([disabled]) + span {
-    border-color: ${props => normalizeColor(props.theme.checkBox.hover.border.color, props.theme)};
+    border-color: ${props =>
+      normalizeColor(props.theme.checkBox.hover.border.color, props.theme)};
   }
 `;
 
@@ -18,9 +19,12 @@ export const StyledCheckBoxIcon = styled.svg`
   box-sizing: border-box;
   position: absolute;
   stroke-width: ${props => props.theme.checkBox.check.thickness};
-  stroke: ${props => normalizeColor(props.theme.checkBox.color || 'control', props.theme)};
-  width: ${props => props.theme.checkBox.icon.size || props.theme.checkBox.size};
-  height: ${props => props.theme.checkBox.icon.size || props.theme.checkBox.size};
+  stroke: ${props =>
+    normalizeColor(props.theme.checkBox.color || 'control', props.theme)};
+  width: ${props =>
+    props.theme.checkBox.icon.size || props.theme.checkBox.size};
+  height: ${props =>
+    props.theme.checkBox.icon.size || props.theme.checkBox.size};
   ${props => props.theme.checkBox.icon.extend};
 `;
 
@@ -42,8 +46,12 @@ export const StyledCheckBoxInput = styled.input`
   margin: 0;
   z-index: 1;
   ${props => !props.disabled && 'cursor: pointer;'} :checked + span > span {
-    left: calc(${props => props.theme.checkBox.toggle.size} - ${props => props.theme.checkBox.size});
-    background: ${props => normalizeColor(props.theme.checkBox.color || 'control', props.theme)};
+    left: calc(
+      ${props => props.theme.checkBox.toggle.size} -
+        ${props => props.theme.checkBox.size}
+    );
+    background: ${props =>
+      normalizeColor(props.theme.checkBox.color || 'control', props.theme)};
   }
 `;
 
@@ -59,10 +67,13 @@ export const StyledCheckBoxToggle = styled.span`
   width: ${props => props.theme.checkBox.toggle.size};
   height: ${props => props.theme.checkBox.size};
   border: ${props => props.theme.checkBox.border.width} solid;
-  border-color: ${props => normalizeColor(props.theme.checkBox.border.color, props.theme)};
+  border-color: ${props =>
+    normalizeColor(props.theme.checkBox.border.color, props.theme)};
   border-radius: ${props => props.theme.checkBox.toggle.radius};
   background-color: ${props =>
-    props.theme.checkBox.toggle.background ? normalizeColor(props.theme.checkBox.toggle.background, props.theme) : 'transparent'};
+    props.theme.checkBox.toggle.background
+      ? normalizeColor(props.theme.checkBox.toggle.background, props.theme)
+      : 'transparent'};
 
   ${props => props.focus && focusStyle};
   ${props => props.theme.checkBox.toggle.extend};
@@ -76,7 +87,11 @@ export const StyledCheckBoxKnob = styled.span`
   transition: all 0.3s;
   width: ${props => props.theme.checkBox.size};
   height: ${props => props.theme.checkBox.size};
-  background: ${props => normalizeColor(props.theme.checkBox.toggle.color[props.theme.dark ? 'dark' : 'light'], props.theme)};
+  background: ${props =>
+    normalizeColor(
+      props.theme.checkBox.toggle.color[props.theme.dark ? 'dark' : 'light'],
+      props.theme,
+    )};
   border-radius: ${props => props.theme.checkBox.toggle.radius};
   ${props => props.theme.checkBox.toggle.knob.extend};
 `;

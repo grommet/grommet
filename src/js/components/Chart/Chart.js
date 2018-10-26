@@ -72,7 +72,7 @@ const renderArea = (
   bounds,
   scale,
   height,
-  { color, onClick, onHover, theme }
+  { color, onClick, onHover, theme },
 ) => {
   let d = '';
   (values || []).forEach(({ value }, index) => {

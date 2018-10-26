@@ -5,7 +5,7 @@ export const doc = TableBody => {
     .description('The body of a table.')
     .usage(
       `import { TableBody } from 'grommet';
-<TableBody />`
+<TableBody />`,
     );
 
   return DocumentedTableBody;

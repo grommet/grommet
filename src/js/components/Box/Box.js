@@ -97,7 +97,7 @@ class Box extends Component {
                 directionProp={direction}
                 responsive={responsive}
                 theme={theme}
-              />
+              />,
             );
           }
         }
@@ -150,7 +150,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const BoxWrapper = compose(
   withTheme,
-  withForwardRef
+  withForwardRef,
 )(BoxDoc || Box);
 
 export { BoxWrapper as Box };

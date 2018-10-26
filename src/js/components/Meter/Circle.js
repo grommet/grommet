@@ -50,7 +50,7 @@ export const Circle = props => {
     }
     const stroke = strokeProps(
       someHighlight && !highlight ? background : colorName,
-      theme
+      theme,
     );
 
     if (round) {
@@ -59,7 +59,7 @@ export const Circle = props => {
         width / 2,
         radius,
         startAngle,
-        endAngle
+        endAngle,
       );
       paths.unshift(
         <path
@@ -71,7 +71,7 @@ export const Circle = props => {
           strokeLinecap="round"
           {...hoverProps}
           {...pathRest}
-        />
+        />,
       );
 
       // To handle situations where the last values are small, redraw
@@ -82,7 +82,7 @@ export const Circle = props => {
         width / 2,
         radius,
         endAngle - 0.5,
-        endAngle
+        endAngle,
       );
       const pathCap = (
         <path
@@ -114,7 +114,7 @@ export const Circle = props => {
           strokeLinecap="butt"
           {...hoverProps}
           {...pathRest}
-        />
+        />,
       );
     }
     startValue += value;

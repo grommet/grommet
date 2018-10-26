@@ -48,14 +48,14 @@ class RangeSelector extends Component {
     const value = this.valueForMouseCoord(event);
     if (value <= values[0] || (value < values[1] && lastChange === 'lower')) {
       this.setState({ lastChange: 'lower' }, () =>
-        onChange([value, values[1]])
+        onChange([value, values[1]]),
       );
     } else if (
       value >= values[1] ||
       (value > values[0] && lastChange === 'upper')
     ) {
       this.setState({ lastChange: 'upper' }, () =>
-        onChange([values[0], value])
+        onChange([values[0], value]),
       );
     }
   };
@@ -222,7 +222,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const RangeSelectorWrapper = compose(
   withTheme,
-  withForwardRef
+  withForwardRef,
 )(RangeSelectorDoc || RangeSelector);
 
 export { RangeSelectorWrapper as RangeSelector };

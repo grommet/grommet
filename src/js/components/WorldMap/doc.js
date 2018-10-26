@@ -24,7 +24,7 @@ export const doc = WorldMap => {
         ]).isRequired,
         onClick: PropTypes.func,
         onHover: PropTypes.func,
-      })
+      }),
     ).description('Continent details.'),
     onSelectPlace: PropTypes.func
       .description(`Called when the user clicks on a place.
@@ -36,10 +36,10 @@ export const doc = WorldMap => {
         location: PropTypes.arrayOf(PropTypes.number).isRequired,
         onClick: PropTypes.func,
         onHover: PropTypes.func,
-      })
+      }),
     ).description('Place details.'),
     hoverColor: PropTypes.string.description(
-      'Color when hovering over places while selecting.'
+      'Color when hovering over places while selecting.',
     ),
   };
 

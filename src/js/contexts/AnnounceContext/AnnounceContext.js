@@ -25,5 +25,5 @@ export const AnnounceContext = React.createContext(
     setTimeout(() => {
       announcer.innerHTML = '';
     }, 500);
-  }
+  },
 );

@@ -4,19 +4,22 @@ import { normalizeColor, genericStyles } from '../../utils';
 
 export const StyledHour = styled.line`
   stroke-width: ${props => props.theme.clock.analog.hour.width};
-  stroke: ${props => normalizeColor(props.theme.clock.analog.hour.color, props.theme)};
+  stroke: ${props =>
+    normalizeColor(props.theme.clock.analog.hour.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
 export const StyledMinute = styled.line`
   stroke-width: ${props => props.theme.clock.analog.minute.width};
-  stroke: ${props => normalizeColor(props.theme.clock.analog.minute.color, props.theme)};
+  stroke: ${props =>
+    normalizeColor(props.theme.clock.analog.minute.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
 export const StyledSecond = styled.line`
   stroke-width: ${props => props.theme.clock.analog.second.width};
-  stroke: ${props => normalizeColor(props.theme.clock.analog.second.color, props.theme)};
+  stroke: ${props =>
+    normalizeColor(props.theme.clock.analog.second.color, props.theme)};
   transition: stroke 1s ease-out;
 `;
 
@@ -24,7 +27,8 @@ export const StyledAnalog = styled.svg`
   width: ${props => props.theme.clock.analog.size[props.size]};
   height: ${props => props.theme.clock.analog.size[props.size]};
 
-  ${genericStyles} ${props => props.theme.clock.analog && props.theme.clock.analog.extend};
+  ${genericStyles} ${props =>
+    props.theme.clock.analog && props.theme.clock.analog.extend};
 `;
 
 const sizeStyle = props => {
@@ -61,7 +65,9 @@ export const StyledDigitalPrevious = styled.div`
   left: 0;
   width: 0.8em;
   text-align: center;
-  animation: ${props => (props.direction === 'down' ? previousDown : previousUp)} 0.5s forwards;
+  animation: ${props =>
+      props.direction === 'down' ? previousDown : previousUp}
+    0.5s forwards;
 `;
 
 const nextUp = keyframes`
@@ -80,5 +86,6 @@ export const StyledDigitalNext = styled.div`
   left: 0;
   width: 0.8em;
   text-align: center;
-  animation: ${props => (props.direction === 'down' ? nextDown : nextUp)} 0.5s forwards;
+  animation: ${props => (props.direction === 'down' ? nextDown : nextUp)} 0.5s
+    forwards;
 `;
