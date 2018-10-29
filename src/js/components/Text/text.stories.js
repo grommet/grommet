@@ -9,10 +9,8 @@ const sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall'];
 const All = () => (
   <Grommet theme={grommet}>
     {sizes.map(size => (
-      <Box key={size} margin='small'>
-        <Text size={size}>
-          {`Text ${size}`}
-        </Text>
+      <Box key={size} margin="small">
+        <Text size={size}>{`Text ${size}`}</Text>
       </Box>
     ))}
   </Grommet>
@@ -20,9 +18,7 @@ const All = () => (
 
 const Color = () => (
   <Grommet theme={grommet}>
-    <Text color='accent-1'>
-      Colored Text
-    </Text>
+    <Text color="accent-1">Colored Text</Text>
   </Grommet>
 );
 

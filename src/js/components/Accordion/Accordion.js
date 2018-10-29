@@ -1,7 +1,4 @@
-import React, {
-  Component,
-  Children,
-} from 'react';
+import React, { Component, Children } from 'react';
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
@@ -9,9 +6,8 @@ import { withTheme } from '../hocs';
 
 import { AccordionContext } from './AccordionContext';
 
-const activeAsArray = active => ((typeof active === 'number') ? (
-  [active]
-) : active);
+const activeAsArray = active =>
+  typeof active === 'number' ? [active] : active;
 
 class Accordion extends Component {
   static defaultProps = {
@@ -19,7 +15,7 @@ class Accordion extends Component {
     messages: {
       tabContents: 'Tab Contents',
     },
-  }
+  };
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { activeIndex } = nextProps;
@@ -30,8 +26,11 @@ class Accordion extends Component {
 
     const activeIndexes = activeAsArray(activeIndex) || [];
 
-    if ((typeof activeIndex !== 'undefined' || activeIndex !== stateActiveIndex)
-      && activeIndexes.join() !== stateActiveIndexes.join()) {
+    if (
+      (typeof activeIndex !== 'undefined' ||
+        activeIndex !== stateActiveIndex) &&
+      activeIndexes.join() !== stateActiveIndexes.join()
+    ) {
       return { activeIndexes, activeIndex };
     }
 
@@ -40,9 +39,9 @@ class Accordion extends Component {
 
   state = {
     activeIndexes: [],
-  }
+  };
 
-  onPanelChange = (index) => {
+  onPanelChange = index => {
     const { activeIndexes } = this.state;
     let nextActiveIndexes = [...(activeIndexes || [])];
     const { onActive, multiple } = this.props;
@@ -61,21 +60,16 @@ class Accordion extends Component {
         onActive(nextActiveIndexes);
       }
     });
-  }
+  };
 
   render() {
-    const {
-      animate,
-      children,
-      messages,
-      ...rest
-    } = this.props;
+    const { animate, children, messages, ...rest } = this.props;
     const { activeIndexes } = this.state;
 
     delete rest.onActive;
 
     return (
-      <Box role='tablist' {...rest} overflow='auto'>
+      <Box role="tablist" {...rest} overflow="auto">
         {Children.toArray(children).map((panel, index) => (
           <AccordionContext.Provider
             key={`accordion-panel_${index + 0}`}
@@ -98,8 +92,6 @@ let AccordionDoc;
 if (process.env.NODE_ENV !== 'production') {
   AccordionDoc = require('./doc').doc(Accordion); // eslint-disable-line global-require
 }
-const AccordionWrapper = compose(
-  withTheme,
-)(AccordionDoc || Accordion);
+const AccordionWrapper = compose(withTheme)(AccordionDoc || Accordion);
 
 export { AccordionWrapper as Accordion };

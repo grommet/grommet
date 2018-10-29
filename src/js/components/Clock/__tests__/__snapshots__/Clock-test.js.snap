@@ -411,7 +411,7 @@ exports[`Clock run 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <svg
-    class="StyledClock__StyledAnalog-y4xw8s-3 fObQOf"
+    class="StyledClock__StyledAnalog-y4xw8s-3 jDcyXz"
     height="96"
     preserveAspectRatio="xMidYMid meet"
     version="1.1"
@@ -450,7 +450,7 @@ exports[`Clock run 2`] = `
     />
   </svg>
   <svg
-    class="StyledClock__StyledAnalog-y4xw8s-3 fObQOf"
+    class="StyledClock__StyledAnalog-y4xw8s-3 jDcyXz"
     height="96"
     preserveAspectRatio="xMidYMid meet"
     version="1.1"
@@ -489,89 +489,89 @@ exports[`Clock run 2`] = `
     />
   </svg>
   <div
-    class="StyledBox-sc-13pk1d4-0 iAECQg"
+    class="StyledBox-sc-13pk1d4-0 jeVABx"
   >
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       1
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       8
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       2
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       4
     </div>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 iAECQg"
+    class="StyledBox-sc-13pk1d4-0 jeVABx"
   >
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       1
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       8
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       2
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       :
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       3
     </div>
     <div
-      class="StyledClock__StyledDigitalDigit-y4xw8s-4 eZuFeM"
+      class="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
     >
       4
     </div>

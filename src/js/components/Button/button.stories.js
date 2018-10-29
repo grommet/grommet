@@ -2,15 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Add } from 'grommet-icons';
 
-import {
-  Box, Button, Grommet, RoutedButton, Text,
-} from 'grommet';
+import { Box, Button, Grommet, RoutedButton, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const SimpleButton = props => (
   <Grommet theme={grommet}>
-    <Box align='start'>
-      <Button label='Submit' onClick={() => {}} {...props} />
+    <Box align="start">
+      <Button label="Submit" onClick={() => {}} {...props} />
     </Box>
   </Grommet>
 );
@@ -23,9 +21,9 @@ const IconButton = () => (
 
 const IconLabelButton = () => (
   <Grommet theme={grommet}>
-    <Box align='start' gap='small'>
-      <Button icon={<Add />} label='Add' onClick={() => {}} primary />
-      <Button icon={<Add />} label='Add' onClick={() => {}} />
+    <Box align="start" gap="small">
+      <Button icon={<Add />} label="Add" onClick={() => {}} primary />
+      <Button icon={<Add />} label="Add" onClick={() => {}} />
     </Box>
   </Grommet>
 );
@@ -33,7 +31,7 @@ const IconLabelButton = () => (
 const PlainButton = props => (
   <Grommet theme={grommet}>
     <Button hoverIndicator onClick={() => {}} {...props}>
-      <Box pad='small' direction='row' align='center' gap='small'>
+      <Box pad="small" direction="row" align="center" gap="small">
         <Add />
         <Text>Add</Text>
       </Box>
@@ -43,13 +41,13 @@ const PlainButton = props => (
 
 const AnchorButton = () => (
   <Grommet theme={grommet}>
-    <Button label='Go' href='#' />
+    <Button label="Go" href="#" />
   </Grommet>
 );
 
 const RouteButton = () => (
   <Grommet theme={grommet}>
-    <RoutedButton label='Go' path='/' />
+    <RoutedButton label="Go" path="/" />
   </Grommet>
 );
 
@@ -71,7 +69,7 @@ const customTheme = {
     primary: {
       color: '#2196f3',
     },
-    extend: (props) => {
+    extend: props => {
       let extraStyles = '';
       if (props.primary) {
         extraStyles = `
@@ -91,48 +89,43 @@ const customTheme = {
 
 const CustomThemeButton = () => (
   <Grommet theme={customTheme}>
-    <Button label='Submit' onClick={() => {}} primary />
+    <Button label="Submit" onClick={() => {}} primary />
   </Grommet>
 );
 
 const MultipleButton = () => (
   <Grommet theme={grommet}>
-    <Box direction='row' align='center' gap='small' pad='xsmall'>
-      <Button label='Cancel' onClick={() => {}} />
+    <Box direction="row" align="center" gap="small" pad="xsmall">
+      <Button label="Cancel" onClick={() => {}} />
       <Button
-        color='dark-1'
+        color="dark-1"
         primary
-        icon={<Add color='accent-1' />}
-        label='Add'
+        icon={<Add color="accent-1" />}
+        label="Add"
         onClick={() => {}}
       />
     </Box>
-    <Box direction='row' align='center' gap='small' pad='xsmall'>
-      <Button label='Cancel' onClick={() => {}} />
+    <Box direction="row" align="center" gap="small" pad="xsmall">
+      <Button label="Cancel" onClick={() => {}} />
       <Button
-        color='dark-1'
+        color="dark-1"
         primary
         icon={<Add />}
-        label='Add'
+        label="Add"
         onClick={() => {}}
       />
     </Box>
-    <Box direction='row' align='center' gap='small' pad='xsmall'>
-      <Button label='Cancel' onClick={() => {}} />
-      <Button
-        primary
-        icon={<Add />}
-        label='Add'
-        onClick={() => {}}
-      />
+    <Box direction="row" align="center" gap="small" pad="xsmall">
+      <Button label="Cancel" onClick={() => {}} />
+      <Button primary icon={<Add />} label="Add" onClick={() => {}} />
     </Box>
-    <Box direction='row' align='center' gap='small' pad='xsmall'>
-      <Button label='Cancel' onClick={() => {}} />
+    <Box direction="row" align="center" gap="small" pad="xsmall">
+      <Button label="Cancel" onClick={() => {}} />
       <Button
-        color='light-2'
+        color="light-2"
         primary
         icon={<Add />}
-        label='Add'
+        label="Add"
         onClick={() => {}}
       />
     </Box>
@@ -141,10 +134,28 @@ const MultipleButton = () => (
 
 const ColoredButton = props => (
   <Grommet theme={grommet}>
-    <Box align='start' gap='small'>
-      <Button primary color='dark-1' label='Submit' onClick={() => {}} {...props} />
-      <Button primary color='#111111' label='Submit' onClick={() => {}} {...props} />
-      <Button primary color='#000' label='Submit' onClick={() => {}} {...props} />
+    <Box align="start" gap="small">
+      <Button
+        primary
+        color="dark-1"
+        label="Submit"
+        onClick={() => {}}
+        {...props}
+      />
+      <Button
+        primary
+        color="#111111"
+        label="Submit"
+        onClick={() => {}}
+        {...props}
+      />
+      <Button
+        primary
+        color="#000"
+        label="Submit"
+        onClick={() => {}}
+        {...props}
+      />
     </Box>
   </Grommet>
 );

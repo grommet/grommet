@@ -3,16 +3,14 @@ import PropTypes from 'prop-types';
 import 'jest-styled-components';
 import { cleanup, render } from 'react-testing-library';
 
-import {
-  Grommet, Box, Diagram, Stack,
-} from '../..';
+import { Grommet, Box, Diagram, Stack } from '../..';
 
 const Context = ({ children }) => (
   <Grommet>
     <Stack>
-      <Box direction='row'>
-        <Box id='1' pad='medium' />
-        <Box id='2' pad='medium' />
+      <Box direction="row">
+        <Box id="1" pad="medium" />
+        <Box id="2" pad="medium" />
       </Box>
       {children}
     </Stack>
@@ -29,10 +27,8 @@ describe('Diagram', () => {
   test('basic', () => {
     const { container } = render(
       <Context>
-        <Diagram
-          connections={[{ fromTarget: '1', toTarget: '2' }]}
-        />
-      </Context>
+        <Diagram connections={[{ fromTarget: '1', toTarget: '2' }]} />
+      </Context>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -47,7 +43,7 @@ describe('Diagram', () => {
             { fromTarget: '1', toTarget: '2', type: 'rectilinear' },
           ]}
         />
-      </Context>
+      </Context>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -56,11 +52,9 @@ describe('Diagram', () => {
     const { container } = render(
       <Context>
         <Diagram
-          connections={[
-            { fromTarget: '1', toTarget: '2', color: 'brand' },
-          ]}
+          connections={[{ fromTarget: '1', toTarget: '2', color: 'brand' }]}
         />
-      </Context>
+      </Context>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -75,7 +69,7 @@ describe('Diagram', () => {
             { fromTarget: '1', toTarget: '2', offset: 'medium' },
           ]}
         />
-      </Context>
+      </Context>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -93,7 +87,7 @@ describe('Diagram', () => {
             { fromTarget: '1', toTarget: '2', thickness: '5px' },
           ]}
         />
-      </Context>
+      </Context>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -108,7 +102,7 @@ describe('Diagram', () => {
             { fromTarget: '1', toTarget: '2', anchor: 'vertical' },
           ]}
         />
-      </Context>
+      </Context>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });

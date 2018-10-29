@@ -8,9 +8,7 @@ const ThemeContext = React.createContext(baseTheme);
 ThemeContext.Extend = ({ children, value }) => (
   <ThemeContext.Consumer>
     {theme => (
-      <ThemeContext.Provider
-        value={deepMerge(theme, value)}
-      >
+      <ThemeContext.Provider value={deepMerge(theme, value)}>
         {children}
       </ThemeContext.Provider>
     )}

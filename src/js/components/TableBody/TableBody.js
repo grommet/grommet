@@ -4,7 +4,7 @@ import { TableContext } from '../Table/TableContext';
 import { StyledTableBody } from '../Table/StyledTable';
 
 const TableBody = props => (
-  <TableContext.Provider value='body'>
+  <TableContext.Provider value="body">
     <StyledTableBody {...props} />
   </TableContext.Provider>
 );

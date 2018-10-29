@@ -5,9 +5,9 @@ import { Grommet, RangeInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 class SimpleRangeInput extends Component {
-  state = { value: 5 }
+  state = { value: 5 };
 
-  onChange = event => this.setState({ value: event.target.value })
+  onChange = event => this.setState({ value: event.target.value });
 
   render() {
     const { value } = this.state;
@@ -19,5 +19,6 @@ class SimpleRangeInput extends Component {
   }
 }
 
-storiesOf('RangeInput', module)
-  .add('Simple RangeInput', () => <SimpleRangeInput />);
+storiesOf('RangeInput', module).add('Simple RangeInput', () => (
+  <SimpleRangeInput />
+));

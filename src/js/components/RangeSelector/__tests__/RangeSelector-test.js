@@ -13,7 +13,7 @@ describe('RangeSelector', () => {
     const component = renderer.create(
       <Grommet>
         <RangeSelector values={[20, 30]} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -22,8 +22,8 @@ describe('RangeSelector', () => {
   test('color', () => {
     const component = renderer.create(
       <Grommet>
-        <RangeSelector color='accent-1' values={[20, 30]} />
-      </Grommet>
+        <RangeSelector color="accent-1" values={[20, 30]} />
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -32,9 +32,9 @@ describe('RangeSelector', () => {
   test('direction', () => {
     const component = renderer.create(
       <Grommet>
-        <RangeSelector direction='horizontal' values={[20, 30]} />
-        <RangeSelector direction='vertical' values={[20, 30]} />
-      </Grommet>
+        <RangeSelector direction="horizontal" values={[20, 30]} />
+        <RangeSelector direction="vertical" values={[20, 30]} />
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -45,7 +45,7 @@ describe('RangeSelector', () => {
       <Grommet>
         <RangeSelector invert values={[20, 30]} />
         <RangeSelector invert={false} values={[20, 30]} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -55,7 +55,7 @@ describe('RangeSelector', () => {
     const component = renderer.create(
       <Grommet>
         <RangeSelector max={50} values={[20, 30]} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -65,7 +65,7 @@ describe('RangeSelector', () => {
     const component = renderer.create(
       <Grommet>
         <RangeSelector min={10} values={[20, 30]} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -77,7 +77,7 @@ describe('RangeSelector', () => {
         {['weak', 'medium', 'strong'].map(opacity => (
           <RangeSelector key={opacity} opacity={opacity} values={[20, 30]} />
         ))}
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -89,7 +89,7 @@ describe('RangeSelector', () => {
         {['xsmall', 'small', 'medium', 'large', 'full'].map(round => (
           <RangeSelector key={round} round={round} values={[20, 30]} />
         ))}
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -98,10 +98,18 @@ describe('RangeSelector', () => {
   test('size', () => {
     const component = renderer.create(
       <Grommet>
-        {['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full'].map(size => (
+        {[
+          'xxsmall',
+          'xsmall',
+          'small',
+          'medium',
+          'large',
+          'xlarge',
+          'full',
+        ].map(size => (
           <RangeSelector key={size} size={size} values={[20, 30]} />
         ))}
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -111,7 +119,7 @@ describe('RangeSelector', () => {
     const component = renderer.create(
       <Grommet>
         <RangeSelector step={10} values={[20, 30]} />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -122,7 +130,7 @@ describe('RangeSelector', () => {
     const { container, getByLabelText } = render(
       <Grommet>
         <RangeSelector values={[20, 30]} onChange={onChange} />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -146,11 +154,14 @@ describe('RangeSelector', () => {
     const { container, getByLabelText } = render(
       <Grommet>
         <RangeSelector values={[20, 30]} onChange={onChange} />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.click(container.firstChild.firstChild, { clientX: 0, clientY: 0 });
+    fireEvent.click(container.firstChild.firstChild, {
+      clientX: 0,
+      clientY: 0,
+    });
     expect(onChange).toBeCalled();
 
     const map = {};

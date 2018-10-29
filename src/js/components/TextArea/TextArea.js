@@ -8,9 +8,7 @@ import { StyledTextArea } from './StyledTextArea';
 class TextArea extends Component {
   render() {
     const { forwardRef, ...rest } = this.props;
-    return (
-      <StyledTextArea ref={forwardRef} {...rest} />
-    );
+    return <StyledTextArea ref={forwardRef} {...rest} />;
   }
 }
 

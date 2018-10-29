@@ -4,11 +4,16 @@ import { genericStyles, normalizeColor } from '../../utils';
 
 const tabHoverStyle = css`
   &:hover {
-    ${props => props.theme.tab.hover.background && css`
-      background: ${normalizeColor(props.theme.tab.hover.background, props.theme)};
-    `}
+    ${props =>
+      props.theme.tab.hover.background &&
+      css`
+        background: ${normalizeColor(
+          props.theme.tab.hover.background,
+          props.theme,
+        )};
+      `};
   }
-  ${props => props.theme.tab.hover.extend}
+  ${props => props.theme.tab.hover.extend};
 `;
 
 export const StyledTab = styled.div`

@@ -2,9 +2,7 @@ import React from 'react';
 import 'jest-styled-components';
 import { cleanup, render, fireEvent } from 'react-testing-library';
 
-import {
-  Grommet, SkipLinks, SkipLink, SkipLinkTarget,
-} from '../..';
+import { Grommet, SkipLinks, SkipLink, SkipLinkTarget } from '../..';
 
 describe('SkipLink', () => {
   afterEach(cleanup);
@@ -13,28 +11,34 @@ describe('SkipLink', () => {
     jest.useFakeTimers();
     const { container } = render(
       <Grommet>
-        <SkipLinks id='skip-links'>
-          <SkipLink id='main' label='Main Content' />
-          <SkipLink id='footer' label='Footer' />
+        <SkipLinks id="skip-links">
+          <SkipLink id="main" label="Main Content" />
+          <SkipLink id="footer" label="Footer" />
         </SkipLinks>
         <div>
-          <SkipLinkTarget id='main' />
+          <SkipLinkTarget id="main" />
           Main Content
-          <input type='text' value='main content' onChange={() => {}} />
+          <input type="text" value="main content" onChange={() => {}} />
         </div>
         <footer>
-          <SkipLinkTarget id='footer' />
-          <input type='text' value='footer' onChange={() => {}} />
+          <SkipLinkTarget id="footer" />
+          <input type="text" value="footer" onChange={() => {}} />
         </footer>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    document.getElementById('skip-links').querySelector('a').focus();
+    document
+      .getElementById('skip-links')
+      .querySelector('a')
+      .focus();
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.click(document.activeElement);
-    document.getElementById('skip-links').querySelector('a').blur();
+    document
+      .getElementById('skip-links')
+      .querySelector('a')
+      .blur();
 
     jest.runAllTimers();
     expect(container.firstChild).toMatchSnapshot();

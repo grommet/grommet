@@ -10,7 +10,7 @@ describe('Distribution', () => {
     const { container } = render(
       <Grommet>
         <Distribution values={[]} />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -18,10 +18,12 @@ describe('Distribution', () => {
   test('values renders', () => {
     const { container } = render(
       <Grommet>
-        <Distribution values={[{ value: 20 }, { value: 3 }, { value: 2 }, { value: 1 }]}>
+        <Distribution
+          values={[{ value: 20 }, { value: 3 }, { value: 2 }, { value: 1 }]}
+        >
           {value => <span>{value.value}</span>}
         </Distribution>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -30,11 +32,15 @@ describe('Distribution', () => {
     const { container } = render(
       <Grommet>
         {['xsmall', 'small', 'medium', 'large'].map(gap => (
-          <Distribution key={gap} gap={gap} values={[{ value: 3 }, { value: 2 }, { value: 1 }]}>
+          <Distribution
+            key={gap}
+            gap={gap}
+            values={[{ value: 3 }, { value: 2 }, { value: 1 }]}
+          >
             {value => <span>{value.value}</span>}
           </Distribution>
         ))}
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
   });

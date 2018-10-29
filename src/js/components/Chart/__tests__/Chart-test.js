@@ -14,7 +14,7 @@ test('Chart renders', () => {
   const component = renderer.create(
     <Grommet>
       <Chart values={VALUES} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -23,10 +23,10 @@ test('Chart renders', () => {
 test('Chart type renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Chart type='bar' values={VALUES} />
-      <Chart type='line' values={VALUES} />
-      <Chart type='area' values={VALUES} />
-    </Grommet>
+      <Chart type="bar" values={VALUES} />
+      <Chart type="line" values={VALUES} />
+      <Chart type="area" values={VALUES} />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -35,12 +35,12 @@ test('Chart type renders', () => {
 test('Chart size renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Chart size='xsmall' values={VALUES} />
-      <Chart size='small' values={VALUES} />
-      <Chart size='medium' values={VALUES} />
-      <Chart size='large' values={VALUES} />
-      <Chart size='xlarge' values={VALUES} />
-    </Grommet>
+      <Chart size="xsmall" values={VALUES} />
+      <Chart size="small" values={VALUES} />
+      <Chart size="medium" values={VALUES} />
+      <Chart size="large" values={VALUES} />
+      <Chart size="xlarge" values={VALUES} />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -49,12 +49,12 @@ test('Chart size renders', () => {
 test('Chart thickness renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Chart thickness='xsmall' values={VALUES} />
-      <Chart thickness='small' values={VALUES} />
-      <Chart thickness='medium' values={VALUES} />
-      <Chart thickness='large' values={VALUES} />
-      <Chart thickness='xlarge' values={VALUES} />
-    </Grommet>
+      <Chart thickness="xsmall" values={VALUES} />
+      <Chart thickness="small" values={VALUES} />
+      <Chart thickness="medium" values={VALUES} />
+      <Chart thickness="large" values={VALUES} />
+      <Chart thickness="xlarge" values={VALUES} />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -64,9 +64,9 @@ test('Chart cap renders', () => {
   const component = renderer.create(
     <Grommet>
       <Chart round values={VALUES} />
-      <Chart type='line' round values={VALUES} />
-      <Chart type='area' round values={VALUES} />
-    </Grommet>
+      <Chart type="line" round values={VALUES} />
+      <Chart type="area" round values={VALUES} />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

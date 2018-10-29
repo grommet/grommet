@@ -36,8 +36,10 @@ class Box extends Component {
     if (dark === propsTheme.dark && stateTheme) {
       return { theme: undefined, priorTheme: undefined };
     }
-    if (dark !== propsTheme.dark
-      && (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)) {
+    if (
+      dark !== propsTheme.dark &&
+      (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)
+    ) {
       return {
         theme: {
           ...propsTheme,
@@ -50,7 +52,7 @@ class Box extends Component {
     return null;
   }
 
-  state = {}
+  state = {};
 
   render() {
     const {
@@ -88,15 +90,15 @@ class Box extends Component {
           if (firstIndex === undefined) {
             firstIndex = index;
           } else {
-            contents.push((
+            contents.push(
               <StyledBoxGap
                 key={index}
                 gap={gap}
                 directionProp={direction}
                 responsive={responsive}
                 theme={theme}
-              />
-            ));
+              />,
+            );
           }
         }
         contents.push(child);

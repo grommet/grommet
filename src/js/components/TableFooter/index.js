@@ -1,2 +1,1 @@
-
 export { TableFooter } from './TableFooter';

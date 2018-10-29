@@ -19,5 +19,4 @@ const SimpleMarkdown = () => (
   </Grommet>
 );
 
-storiesOf('Markdown', module)
-  .add('Simple Markdown', () => <SimpleMarkdown />);
+storiesOf('Markdown', module).add('Simple Markdown', () => <SimpleMarkdown />);

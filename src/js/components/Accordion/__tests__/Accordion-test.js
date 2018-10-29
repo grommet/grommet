@@ -3,9 +3,7 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent } from 'react-testing-library';
 
-import {
-  Accordion, AccordionPanel, Box, Grommet,
-} from '../..';
+import { Accordion, AccordionPanel, Box, Grommet } from '../..';
 
 describe('Accordion', () => {
   afterEach(cleanup);
@@ -14,7 +12,7 @@ describe('Accordion', () => {
     const component = renderer.create(
       <Grommet>
         <Accordion />
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -23,19 +21,13 @@ describe('Accordion', () => {
     const component = renderer.create(
       <Grommet>
         <Accordion>
-          <AccordionPanel label='Panel 1'>
-            Panel body 1
-          </AccordionPanel>
-          <AccordionPanel label='Panel 2'>
-            Panel body 2
-          </AccordionPanel>
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+          <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
           {false && (
-            <AccordionPanel label='Panel 2'>
-              Panel body 2
-            </AccordionPanel>
+            <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
           )}
         </Accordion>
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -43,7 +35,7 @@ describe('Accordion', () => {
   test('complex title', () => {
     const component = renderer.create(
       <Grommet>
-        <Box background='dark-1'>
+        <Box background="dark-1">
           <Accordion>
             <AccordionPanel label={<div>Panel 1 complex</div>}>
               Panel body 1
@@ -54,7 +46,7 @@ describe('Accordion', () => {
             </AccordionPanel>
           </Accordion>
         </Box>
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -71,24 +63,20 @@ describe('Accordion', () => {
             Panel body 2
           </AccordionPanel>
         </Accordion>
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test('change to second Panel', (done) => {
+  test('change to second Panel', done => {
     const onActive = jest.fn();
     const { getByText, container } = render(
       <Grommet>
         <Accordion onActive={onActive}>
-          <AccordionPanel label='Panel 1'>
-            Panel body 1
-          </AccordionPanel>
-          <AccordionPanel label='Panel 2'>
-            Panel body 2
-          </AccordionPanel>
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+          <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -108,14 +96,10 @@ describe('Accordion', () => {
     const { getByText, container } = render(
       <Grommet>
         <Accordion animate={false}>
-          <AccordionPanel label='Panel 1'>
-            Panel body 1
-          </AccordionPanel>
-          <AccordionPanel label='Panel 2'>
-            Panel body 2
-          </AccordionPanel>
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+          <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -128,19 +112,11 @@ describe('Accordion', () => {
     const onActive = jest.fn();
     const { getByText, container } = render(
       <Grommet>
-        <Accordion
-          animate={false}
-          multiple
-          onActive={onActive}
-        >
-          <AccordionPanel label='Panel 1'>
-            Panel body 1
-          </AccordionPanel>
-          <AccordionPanel label='Panel 2'>
-            Panel body 2
-          </AccordionPanel>
+        <Accordion animate={false} multiple onActive={onActive}>
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+          <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -170,14 +146,10 @@ describe('Accordion', () => {
     const { getByText, container } = render(
       <Grommet>
         <Accordion animate={false} activeIndex={1} onActive={onActive}>
-          <AccordionPanel label='Panel 1'>
-            Panel body 1
-          </AccordionPanel>
-          <AccordionPanel label='Panel 2'>
-            Panel body 2
-          </AccordionPanel>
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+          <AccordionPanel label="Panel 2">Panel body 2</AccordionPanel>
         </Accordion>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -191,7 +163,7 @@ describe('Accordion', () => {
       <Grommet>
         <Accordion>
           <AccordionPanel
-            label='Panel 1'
+            label="Panel 1"
             onMouseOver={() => {}}
             onMouseOut={() => {}}
             onFocus={() => {}}
@@ -200,7 +172,7 @@ describe('Accordion', () => {
             Panel body 1
           </AccordionPanel>
           <AccordionPanel
-            label='Panel 2'
+            label="Panel 2"
             onMouseOver={() => {}}
             onMouseOut={() => {}}
             onFocus={() => {}}
@@ -209,7 +181,7 @@ describe('Accordion', () => {
             Panel body 2
           </AccordionPanel>
         </Accordion>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

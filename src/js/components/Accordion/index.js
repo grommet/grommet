@@ -1,2 +1,1 @@
-
 export { Accordion } from './Accordion';

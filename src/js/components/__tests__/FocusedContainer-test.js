@@ -10,10 +10,14 @@ describe('FocusedContainer', () => {
   test('basic', () => {
     jest.useFakeTimers();
     const { container: trapped } = render(
-      <div id='focus-trap-test'><input id='test' /></div>
+      <div id="focus-trap-test">
+        <input id="test" />
+      </div>,
     );
     const { container: focuser } = render(
-      <FocusedContainer id='container'>test focused container</FocusedContainer>
+      <FocusedContainer id="container">
+        test focused container
+      </FocusedContainer>,
     );
     jest.runAllTimers();
     expect(focuser.firstChild).toMatchSnapshot();
@@ -27,9 +31,9 @@ describe('FocusedContainer', () => {
   test('restrict scroll', () => {
     jest.useFakeTimers();
     const { container } = render(
-      <FocusedContainer id='container' restrictScroll>
+      <FocusedContainer id="container" restrictScroll>
         test focused container
-      </FocusedContainer>
+      </FocusedContainer>,
     );
 
     jest.runAllTimers();
@@ -45,10 +49,14 @@ describe('FocusedContainer', () => {
   test('blurs', () => {
     jest.useFakeTimers();
     const { container: trapped } = render(
-      <div id='focus-trap-test'><input id='test' /></div>
+      <div id="focus-trap-test">
+        <input id="test" />
+      </div>,
     );
     const { container: focuser } = render(
-      <FocusedContainer id='container'>test focused container</FocusedContainer>
+      <FocusedContainer id="container">
+        test focused container
+      </FocusedContainer>,
     );
 
     jest.runAllTimers();

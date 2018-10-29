@@ -1,2 +1,1 @@
-
 export { Table } from './Table';

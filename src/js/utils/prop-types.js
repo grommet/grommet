@@ -1,6 +1,8 @@
 import { PropTypes } from 'react-desc';
 
-export const a11yTitlePropType = PropTypes.string.description('Custom title to be used by screen readers.');
+export const a11yTitlePropType = PropTypes.string.description(
+  'Custom title to be used by screen readers.',
+);
 
 export const backgroundPropType = PropTypes.oneOfType([
   PropTypes.string,
@@ -13,7 +15,14 @@ export const backgroundPropType = PropTypes.oneOfType([
   }),
 ]).description('Background color');
 
-const MARGIN_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
+const MARGIN_SIZES = [
+  'xxsmall',
+  'xsmall',
+  'small',
+  'medium',
+  'large',
+  'xlarge',
+];
 
 export const genericProps = {
   a11yTitle: a11yTitlePropType,
@@ -51,8 +60,7 @@ export const genericProps = {
       ]),
     }),
     PropTypes.string,
-  ])
-    .description(`The amount of margin around the component. An object can
+  ]).description(`The amount of margin around the component. An object can
       be specified to distinguish horizontal margin, vertical margin, and
       margin on a particular side.`),
 };

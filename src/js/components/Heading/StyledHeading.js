@@ -2,28 +2,37 @@ import styled, { css } from 'styled-components';
 
 import { breakpointStyle, genericStyles, normalizeColor } from '../../utils';
 
-const sizeStyle = (props) => {
+const sizeStyle = props => {
   // size is a combination of the level and size properties
   const size = props.size || 'medium';
   const headingTheme = props.theme.heading;
   const levelStyle = headingTheme.level[props.level];
   if (levelStyle) {
     const data = levelStyle[size];
-    const styles = [css`
-      font-size: ${data.size};
-      line-height: ${data.height};
-      max-width: ${data.maxWidth};
-      font-weight: ${headingTheme.weight};
-    `];
+    const styles = [
+      css`
+        font-size: ${data.size};
+        line-height: ${data.height};
+        max-width: ${data.maxWidth};
+        font-weight: ${headingTheme.weight};
+      `,
+    ];
     if (props.responsive && headingTheme.responsiveBreakpoint) {
-      const breakpoint = props.theme.global.breakpoints[headingTheme.responsiveBreakpoint];
+      const breakpoint =
+        props.theme.global.breakpoints[headingTheme.responsiveBreakpoint];
       if (breakpoint) {
-        const responsiveData = headingTheme.level[Math.min(props.level + 1, 4)][size];
-        styles.push(breakpointStyle(breakpoint, `
+        const responsiveData =
+          headingTheme.level[Math.min(props.level + 1, 4)][size];
+        styles.push(
+          breakpointStyle(
+            breakpoint,
+            `
           font-size: ${responsiveData.size};
           line-height: ${responsiveData.height};
           max-width: ${responsiveData.maxWidth};
-        `));
+        `,
+          ),
+        );
       }
     }
     return styles;
@@ -55,9 +64,11 @@ const colorStyle = css`
 
 export const StyledHeading = styled.h1`
   ${genericStyles}
-  ${props => props.theme.heading.font && css`
-    font-family: ${props.theme.heading.font.family};
-  `}
+  ${props =>
+    props.theme.heading.font &&
+    css`
+      font-family: ${props.theme.heading.font.family};
+    `}
   ${props => sizeStyle(props)}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.truncate && truncateStyle}

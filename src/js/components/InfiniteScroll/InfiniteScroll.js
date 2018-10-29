@@ -6,14 +6,13 @@ class InfiniteScroll extends Component {
   static defaultProps = {
     items: [],
     step: 50,
-  }
+  };
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { show, step } = nextProps;
-    if (!prevState.count
-      || (show && show < (step * prevState.count))) {
+    if (!prevState.count || (show && show < step * prevState.count)) {
       let count = prevState.count || 1;
-      if (show && show > (step * count)) {
+      if (show && show > step * count) {
         count = (show + step) / step;
       }
       return { count };
@@ -21,11 +20,11 @@ class InfiniteScroll extends Component {
     return null;
   }
 
-  state = {}
+  state = {};
 
-  showRef = React.createRef()
+  showRef = React.createRef();
 
-  initialScroll = false
+  initialScroll = false;
 
   componentDidMount() {
     this.scrollShow();
@@ -45,31 +44,38 @@ class InfiniteScroll extends Component {
       const element = findDOMNode(this.showRef.current);
       element.scrollIntoView();
     }
-  }
+  };
 
   increaseOffset = () => {
     /* eslint-disable-next-line react/prop-types */
     const { items, onMore, step } = this.props;
     const { count } = this.state;
-    this.setState({ count: count + 1 },
+    this.setState(
+      { count: count + 1 },
       // call onMore if we've reached the end of the items
-      () => (onMore && ((count + 1) * step) >= items.length && onMore()));
-  }
+      () => onMore && (count + 1) * step >= items.length && onMore(),
+    );
+  };
 
   render() {
     const {
       /* eslint-disable-next-line react/prop-types */
-      children, items, renderMarker, scrollableAncestor, show, step,
+      children,
+      items,
+      renderMarker,
+      scrollableAncestor,
+      show,
+      step,
     } = this.props;
     const { count } = this.state;
     const displayCount = step * count;
-    const waypointAt = displayCount - (step / 2);
+    const waypointAt = displayCount - step / 2;
 
     let marker = (
       <Waypoint
-        key='marker'
+        key="marker"
         onEnter={this.increaseOffset}
-        bottomOffsetX='-96px'
+        bottomOffsetX="-96px"
         scrollableAncestor={scrollableAncestor}
       />
     );
@@ -78,20 +84,16 @@ class InfiniteScroll extends Component {
       marker = React.cloneElement(renderMarker(marker), { key: 'marker' });
     }
 
-    return (
-      items
-        .slice(0, displayCount)
-        .map((item, index) => {
-          let child = children(item, index);
-          if (show && show === index) {
-            child = React.cloneElement(child, { key: 'show', ref: this.showRef });
-          }
-          if (index === waypointAt) {
-            return [child, marker];
-          }
-          return child;
-        })
-    );
+    return items.slice(0, displayCount).map((item, index) => {
+      let child = children(item, index);
+      if (show && show === index) {
+        child = React.cloneElement(child, { key: 'show', ref: this.showRef });
+      }
+      if (index === waypointAt) {
+        return [child, marker];
+      }
+      return child;
+    });
   }
 }
 

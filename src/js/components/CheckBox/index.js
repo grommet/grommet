@@ -1,2 +1,1 @@
-
 export { CheckBox } from './CheckBox';

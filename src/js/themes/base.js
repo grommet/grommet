@@ -31,54 +31,69 @@ const statusColors = {
   unknown: '#a8a8a8',
   disabled: '#a8a8a8',
 };
-const darkColors = ['#333333', '#444444', '#555555', '#666666', '#777777', '#999999'];
-const lightColors = ['#F6F6F6', '#EEEEEE', '#DDDDDD', '#CCCCCC', '#BBBBBB', '#AAAAAA'];
+const darkColors = [
+  '#333333',
+  '#444444',
+  '#555555',
+  '#666666',
+  '#777777',
+  '#999999',
+];
+const lightColors = [
+  '#F6F6F6',
+  '#EEEEEE',
+  '#DDDDDD',
+  '#CCCCCC',
+  '#BBBBBB',
+  '#AAAAAA',
+];
 const focusColor = accentColors[0];
 
 const colors = {
-  'active': rgba(221, 221, 221, 0.5),
-  'black': '#000000',
-  'border': {
-    'dark': rgba(255, 255, 255, 0.33),
-    'light': rgba(0, 0, 0, 0.33),
+  active: rgba(221, 221, 221, 0.5),
+  black: '#000000',
+  border: {
+    dark: rgba(255, 255, 255, 0.33),
+    light: rgba(0, 0, 0, 0.33),
   },
-  'brand': brandColor,
-  'control': {
-    'dark': 'accent-1',
-    'light': 'brand',
+  brand: brandColor,
+  control: {
+    dark: 'accent-1',
+    light: 'brand',
   },
-  'focus': focusColor,
-  'placeholder': '#AAAAAA',
-  'text': {
-    'dark': '#f8f8f8',
-    'light': '#444444',
+  focus: focusColor,
+  placeholder: '#AAAAAA',
+  text: {
+    dark: '#f8f8f8',
+    light: '#444444',
   },
-  'white': '#FFFFFF',
+  white: '#FFFFFF',
 };
 
-const colorArray = (array, prefix) => (
+const colorArray = (array, prefix) =>
   array.forEach((color, index) => {
     colors[`${prefix}-${index + 1}`] = color;
-  }));
+  });
 
 colorArray(accentColors, 'accent');
 colorArray(darkColors, 'dark');
 colorArray(lightColors, 'light');
 colorArray(neutralColors, 'neutral');
-Object.keys(statusColors).forEach((color) => {
+Object.keys(statusColors).forEach(color => {
   colors[`status-${color}`] = statusColors[color];
 });
 
-export const generate = (baseSpacing = 24, scale = 6) => { // 24
+export const generate = (baseSpacing = 24, scale = 6) => {
+  // 24
   const baseFontSize = baseSpacing * 0.75; // 18
   const fontScale = baseSpacing / scale; // 4
 
   const fontSizing = factor => ({
-    size: `${baseFontSize + (factor * fontScale)}px`,
-    height: `${baseSpacing + (factor * fontScale)}px`,
+    size: `${baseFontSize + factor * fontScale}px`,
+    height: `${baseSpacing + factor * fontScale}px`,
     // maxWidth chosen to be ~50 characters wide
     // see: https://ux.stackexchange.com/a/34125
-    maxWidth: `${baseSpacing * (baseFontSize + (factor * fontScale))}px`,
+    maxWidth: `${baseSpacing * (baseFontSize + factor * fontScale)}px`,
   });
 
   const borderWidth = 2;
@@ -260,7 +275,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       minWidth: `${baseSpacing * 4}px`,
       maxWidth: `${baseSpacing * 16}px`,
       padding: {
-        vertical: `${(baseSpacing / 4) - borderWidth}px`,
+        vertical: `${baseSpacing / 4 - borderWidth}px`,
         horizontal: `${baseSpacing - borderWidth}px`,
       },
     },
@@ -279,7 +294,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         slideDuration: '0.5s',
       },
       large: {
-        fontSize: `${baseFontSize + (3 * fontScale)}px`,
+        fontSize: `${baseFontSize + 3 * fontScale}px`,
         lineHeight: 1.11,
         daySize: `${(baseSpacing * 32) / 7}px`,
         slideDuration: '0.8s',
@@ -384,12 +399,12 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
       },
       digital: {
         text: {
-          xsmall: { size: `${baseFontSize - (2 * fontScale)}px`, height: 1.5 },
+          xsmall: { size: `${baseFontSize - 2 * fontScale}px`, height: 1.5 },
           small: { size: `${baseFontSize - fontScale}px`, height: 1.43 },
           medium: { size: `${baseFontSize}px`, height: 1.375 },
           large: { size: `${baseFontSize + fontScale}px`, height: 1.167 },
-          xlarge: { size: `${baseFontSize + (2 * fontScale)}px`, height: 1.1875 },
-          xxlarge: { size: `${baseFontSize + (4 * fontScale)}px`, height: 1.125 },
+          xlarge: { size: `${baseFontSize + 2 * fontScale}px`, height: 1.1875 },
+          xxlarge: { size: `${baseFontSize + 4 * fontScale}px`, height: 1.125 },
         },
       },
     },
@@ -549,7 +564,9 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
     rangeInput: {
       track: {
         height: '4px',
-        color: css`${props => rgba(normalizeColor('border', props.theme), 0.2)}`,
+        color: css`
+          ${props => rgba(normalizeColor('border', props.theme), 0.2)};
+        `,
       },
       thumb: {
         // color: { dark: undefined, light: undefined },

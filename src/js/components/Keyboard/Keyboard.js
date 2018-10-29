@@ -33,7 +33,7 @@ class Keyboard extends Component {
   onKeyDown = (event, ...rest) => {
     /* eslint-disable-next-line react/prop-types */
     const { onKeyDown } = this.props;
-    const key = (event.keyCode ? event.keyCode : event.which);
+    const key = event.keyCode ? event.keyCode : event.which;
     const callbackName = KEYS[key];
     /* eslint-disable react/destructuring-assignment */
     if (callbackName && this.props[callbackName]) {
@@ -43,19 +43,17 @@ class Keyboard extends Component {
     if (onKeyDown) {
       onKeyDown(event, ...rest);
     }
-  }
+  };
 
   render() {
     /* eslint-disable-next-line react/prop-types */
     const { children, target } = this.props;
 
-    return target === 'document' ? children : (
-      cloneElement(
-        Children.only(children), {
+    return target === 'document'
+      ? children
+      : cloneElement(Children.only(children), {
           onKeyDown: this.onKeyDown,
-        }
-      )
-    );
+        });
   }
 }
 

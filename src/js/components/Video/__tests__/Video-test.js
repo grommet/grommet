@@ -9,13 +9,13 @@ jest.mock('react-dom', () => ({
   findDOMNode: () => ({ textTracks: [{ label: 'test' }] }),
 }));
 
-const CONTENTS = [<source key='source' />, <track key='track' />];
+const CONTENTS = [<source key="source" />, <track key="track" />];
 
 test('Video renders', () => {
   const component = renderer.create(
     <Grommet>
       <Video>{CONTENTS}</Video>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -25,7 +25,7 @@ test('Video autoPlay renders', () => {
   const component = renderer.create(
     <Grommet>
       <Video autoPlay>{CONTENTS}</Video>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -35,7 +35,7 @@ test('Video loop renders', () => {
   const component = renderer.create(
     <Grommet>
       <Video loop>{CONTENTS}</Video>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -45,7 +45,7 @@ test('Video mute renders', () => {
   const component = renderer.create(
     <Grommet>
       <Video mute>{CONTENTS}</Video>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -54,9 +54,9 @@ test('Video mute renders', () => {
 test('Video controls renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Video controls='over'>{CONTENTS}</Video>
-      <Video controls='below'>{CONTENTS}</Video>
-    </Grommet>
+      <Video controls="over">{CONTENTS}</Video>
+      <Video controls="below">{CONTENTS}</Video>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -65,9 +65,9 @@ test('Video controls renders', () => {
 test('Video fit renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Video fit='cover'>{CONTENTS}</Video>
-      <Video fit='contain'>{CONTENTS}</Video>
-    </Grommet>
+      <Video fit="cover">{CONTENTS}</Video>
+      <Video fit="contain">{CONTENTS}</Video>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

@@ -44,7 +44,8 @@ export const theme = {
     },
     check: {
       extend: ({ theme: extendTheme, checked }) => `
-        ${checked && `background-color: ${normalizeColor('brand', extendTheme)};`}
+        ${checked &&
+          `background-color: ${normalizeColor('brand', extendTheme)};`}
       `,
     },
     hover: {

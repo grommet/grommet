@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 
-import { getBodyChildElements, makeNodeFocusable, makeNodeUnfocusable } from '../utils';
+import {
+  getBodyChildElements,
+  makeNodeFocusable,
+  makeNodeUnfocusable,
+} from '../utils';
 
 const isNotAncestorOf = child => parent => !parent.contains(child);
 
@@ -10,12 +14,12 @@ export class FocusedContainer extends Component {
   static defaultProps = {
     hidden: false,
     restrictScroll: false,
-  }
+  };
 
   static propTypes = {
     hidden: PropTypes.bool,
     restrictScroll: PropTypes.bool,
-  }
+  };
 
   ref = React.createRef();
 
@@ -45,7 +49,7 @@ export class FocusedContainer extends Component {
     if (restrictScroll) {
       document.body.style.overflow = this.bodyOverflowStyle;
     }
-  }
+  };
 
   trapFocus = () => {
     const { restrictScroll } = this.props;
@@ -59,7 +63,7 @@ export class FocusedContainer extends Component {
       this.bodyOverflowStyle = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
     }
-  }
+  };
 
   render() {
     const { children, ...rest } = this.props;

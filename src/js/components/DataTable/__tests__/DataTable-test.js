@@ -13,7 +13,7 @@ describe('DataTable', () => {
     const component = renderer.create(
       <Grommet>
         <DataTable />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -27,12 +27,9 @@ describe('DataTable', () => {
             { property: 'a', header: 'A' },
             { property: 'b', header: 'B' },
           ]}
-          data={[
-            { a: 'one', b: 1 },
-            { a: 'two', b: 2 },
-          ]}
+          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -46,12 +43,9 @@ describe('DataTable', () => {
             { property: 'a', header: 'A', footer: 'Total' },
             { property: 'b', header: 'B' },
           ]}
-          data={[
-            { a: 'one', b: 1 },
-            { a: 'two', b: 2 },
-          ]}
+          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -65,14 +59,10 @@ describe('DataTable', () => {
             { property: 'a', header: 'A' },
             { property: 'b', header: 'B' },
           ]}
-          data={[
-            { a: 'zero', b: 0 },
-            { a: 'one', b: 1 },
-            { a: 'two', b: 2 },
-          ]}
+          data={[{ a: 'zero', b: 0 }, { a: 'one', b: 1 }, { a: 'two', b: 2 }]}
           sortable
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -89,13 +79,10 @@ describe('DataTable', () => {
             { property: 'a', header: 'A' },
             { property: 'b', header: 'B' },
           ]}
-          data={[
-            { a: 'one', b: 1 },
-            { a: 'two', b: 2 },
-          ]}
+          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
           resizeable
         />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -108,15 +95,15 @@ describe('DataTable', () => {
           columns={[
             { property: 'a', header: 'A' },
             {
-              property: 'b', header: 'B', aggregate: 'sum', footer: { aggregate: true },
+              property: 'b',
+              header: 'B',
+              aggregate: 'sum',
+              footer: { aggregate: true },
             },
           ]}
-          data={[
-            { a: 'one', b: 1 },
-            { a: 'two', b: 2 },
-          ]}
+          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
         />
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -136,9 +123,9 @@ describe('DataTable', () => {
             { a: 'two', b: 2.1 },
             { a: 'two', b: 2.2 },
           ]}
-          groupBy='a'
+          groupBy="a"
         />
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

@@ -12,14 +12,12 @@ const customTheme = {
   },
 };
 
-
 const Themed = () => (
   <Grommet theme={customTheme}>
-    <Box pad='medium'>
-      <Anchor icon={<Add />} label='Add' color='custom' />
+    <Box pad="medium">
+      <Anchor icon={<Add />} label="Add" color="custom" />
     </Box>
   </Grommet>
 );
 
-storiesOf('Grommet', module)
-  .add('Theme', () => <Themed />);
+storiesOf('Grommet', module).add('Theme', () => <Themed />);

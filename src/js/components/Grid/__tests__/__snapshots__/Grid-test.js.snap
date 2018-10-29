@@ -208,13 +208,13 @@ exports[`Grid columns renders 1`] = `
 .c4 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat(auto-fill,minmax(192px,1fr));
+  grid-template-columns: repeat( auto-fill,minmax(192px,1fr) );
 }
 
 .c5 {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: repeat(auto-fit,minmax(192px,1fr));
+  grid-template-columns: repeat( auto-fit,minmax(192px,1fr) );
 }
 
 <div

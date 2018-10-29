@@ -1,6 +1,7 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
   "env": {
     "node": true,
     "es6": true
@@ -30,13 +31,15 @@
   },
   "rules": {
     "indent": "off",
-    "indent-legacy": ["error", 2],
     "comma-dangle": ["error", "always-multiline"],
-    "jsx-quotes": ["error", "prefer-single"],
     "no-console": 0,
-    "quote-props": ["error", "consistent"],
     "react/jsx-filename-extension": 0,
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0,
+    "react/prop-types": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-wrap-multilines": 0,
+    "no-useless-concat": 0,
+    "react/jsx-indent": 0
   },
   "overrides": [
     {

@@ -9,7 +9,7 @@ test('Grid renders', () => {
   const component = renderer.create(
     <Grommet>
       <Grid />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -19,8 +19,8 @@ test('Grid rows renders', () => {
   const component = renderer.create(
     <Grommet>
       <Grid rows={['small', 'large', 'medium']} />
-      <Grid rows='small' />
-    </Grommet>
+      <Grid rows="small" />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -32,9 +32,9 @@ test('Grid columns renders', () => {
       <Grid columns={['1/2', '2/4']} />
       <Grid columns={['1/3', '2/3']} />
       <Grid columns={['1/4', '3/4']} />
-      <Grid columns='small' />
+      <Grid columns="small" />
       <Grid columns={{ count: 'fit', size: 'small' }} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -53,7 +53,7 @@ test('Grid areas renders', () => {
           { name: 'footer', start: [2, 0], end: [2, 1] },
         ]}
       />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -62,11 +62,11 @@ test('Grid areas renders', () => {
 test('Grid justify renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid justify='start' />
-      <Grid justify='center' />
-      <Grid justify='end' />
-      <Grid justify='stretch' />
-    </Grommet>
+      <Grid justify="start" />
+      <Grid justify="center" />
+      <Grid justify="end" />
+      <Grid justify="stretch" />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -75,11 +75,11 @@ test('Grid justify renders', () => {
 test('Grid align renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid align='start' />
-      <Grid align='center' />
-      <Grid align='end' />
-      <Grid align='stretch' />
-    </Grommet>
+      <Grid align="start" />
+      <Grid align="center" />
+      <Grid align="end" />
+      <Grid align="stretch" />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -88,13 +88,13 @@ test('Grid align renders', () => {
 test('Grid justifyContent renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid justifyContent='start' />
-      <Grid justifyContent='center' />
-      <Grid justifyContent='between' />
-      <Grid justifyContent='around' />
-      <Grid justifyContent='end' />
-      <Grid justifyContent='stretch' />
-    </Grommet>
+      <Grid justifyContent="start" />
+      <Grid justifyContent="center" />
+      <Grid justifyContent="between" />
+      <Grid justifyContent="around" />
+      <Grid justifyContent="end" />
+      <Grid justifyContent="stretch" />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -103,13 +103,13 @@ test('Grid justifyContent renders', () => {
 test('Grid alignContent renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid alignContent='start' />
-      <Grid alignContent='center' />
-      <Grid alignContent='between' />
-      <Grid alignContent='around' />
-      <Grid alignContent='end' />
-      <Grid alignContent='stretch' />
-    </Grommet>
+      <Grid alignContent="start" />
+      <Grid alignContent="center" />
+      <Grid alignContent="between" />
+      <Grid alignContent="around" />
+      <Grid alignContent="end" />
+      <Grid alignContent="stretch" />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -118,9 +118,9 @@ test('Grid alignContent renders', () => {
 test('Grid gap renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid gap='small' />
-      <Grid gap='medium' />
-      <Grid gap='large' />
+      <Grid gap="small" />
+      <Grid gap="medium" />
+      <Grid gap="large" />
       <Grid gap={{ row: 'small' }} />
       <Grid gap={{ row: 'medium' }} />
       <Grid gap={{ row: 'large' }} />
@@ -128,7 +128,7 @@ test('Grid gap renders', () => {
       <Grid gap={{ column: 'medium' }} />
       <Grid gap={{ column: 'large' }} />
       <Grid gap={{ row: 'small', column: 'medium' }} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -139,9 +139,9 @@ test('Grid fill renders', () => {
     <Grommet>
       <Grid fill />
       <Grid fill={false} />
-      <Grid fill='horizontal' />
-      <Grid fill='vertical' />
-    </Grommet>
+      <Grid fill="horizontal" />
+      <Grid fill="vertical" />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -150,8 +150,8 @@ test('Grid fill renders', () => {
 test('Grid tag renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid tag='article' />
-    </Grommet>
+      <Grid tag="article" />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

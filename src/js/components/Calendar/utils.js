@@ -1,11 +1,10 @@
-
 // Utility functions for the Calendar.
 // Just what's needed to avoid having to include a dependency like momentjs.
 
 const DAY_MILLISECONDS = 24 * 60 * 60 * 1000;
 
-export const addDays = (date, days) => (
-  (new Date(date.getTime() + (DAY_MILLISECONDS * days))));
+export const addDays = (date, days) =>
+  new Date(date.getTime() + DAY_MILLISECONDS * days);
 
 export const subtractDays = (date, days) => addDays(date, -days);
 
@@ -14,50 +13,45 @@ export const addMonths = (date, months) => {
   const years = Math.floor((date.getMonth() + months) / 12);
   result.setFullYear(date.getFullYear() + years);
   const targetMonth = (date.getMonth() + months) % 12;
-  result.setMonth(targetMonth < 0 ? (12 + targetMonth) : targetMonth);
+  result.setMonth(targetMonth < 0 ? 12 + targetMonth : targetMonth);
   return result;
 };
 
 export const subtractMonths = (date, months) => addMonths(date, -months);
 
-export const startOfMonth = (date) => {
+export const startOfMonth = date => {
   const result = new Date(date);
   result.setDate(1);
   return result;
 };
 
-export const endOfMonth = (date) => {
+export const endOfMonth = date => {
   const result = addMonths(date, 1);
   result.setDate(0);
   return result;
 };
 
-export const sameDay = (date1, date2) => (
-  date1.getFullYear() === date2.getFullYear()
-  && date1.getMonth() === date2.getMonth()
-  && date1.getDate() === date2.getDate()
-);
+export const sameDay = (date1, date2) =>
+  date1.getFullYear() === date2.getFullYear() &&
+  date1.getMonth() === date2.getMonth() &&
+  date1.getDate() === date2.getDate();
 
-export const sameDayOrAfter = (date1, date2) => (
-  (date1.getFullYear() > date2.getFullYear()
-    || (date1.getFullYear() === date2.getFullYear() && (
-      date1.getMonth() > date2.getMonth() || (
-        date1.getMonth() === date2.getMonth() && (date1.getDate() >= date2.getDate())
-      )
-    ))
-  ));
+export const sameDayOrAfter = (date1, date2) =>
+  date1.getFullYear() > date2.getFullYear() ||
+  (date1.getFullYear() === date2.getFullYear() &&
+    (date1.getMonth() > date2.getMonth() ||
+      (date1.getMonth() === date2.getMonth() &&
+        date1.getDate() >= date2.getDate())));
 
-export const sameDayOrBefore = (date1, date2) => (
-  (date1.getFullYear() < date2.getFullYear()
-    || (date1.getFullYear() === date2.getFullYear() && (
-      date1.getMonth() < date2.getMonth() || (
-        date1.getMonth() === date2.getMonth() && (date1.getDate() <= date2.getDate())
-      )
-    ))
-  ));
+export const sameDayOrBefore = (date1, date2) =>
+  date1.getFullYear() < date2.getFullYear() ||
+  (date1.getFullYear() === date2.getFullYear() &&
+    (date1.getMonth() < date2.getMonth() ||
+      (date1.getMonth() === date2.getMonth() &&
+        date1.getDate() <= date2.getDate())));
 
-export const daysApart = (date1, date2) => (
-  Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS));
+export const daysApart = (date1, date2) =>
+  Math.floor((date1.getTime() - date2.getTime()) / DAY_MILLISECONDS);
 
 // betweenDates takes and array of two elements and checks if the
 // supplied date lies between them, inclusive.
@@ -85,7 +79,7 @@ export const withinDates = (date, dates) => {
   let result;
   if (dates) {
     if (Array.isArray(dates)) {
-      dates.some((d) => {
+      dates.some(d => {
         if (typeof d === 'string') {
           if (sameDay(date, new Date(d))) {
             result = 2;
@@ -102,7 +96,10 @@ export const withinDates = (date, dates) => {
   return result;
 };
 
-export const updateDateRange = (selectedDate, { date, dates, previousSelectedDate }) => {
+export const updateDateRange = (
+  selectedDate,
+  { date, dates, previousSelectedDate },
+) => {
   const result = { previousSelectedDate: selectedDate };
   if (!dates) {
     if (!date) {

@@ -28,7 +28,7 @@ test('Object merges deep', () => {
       profile: {
         username: 'someone',
       },
-    }
+    },
   );
 
   expect(obj).toMatchSnapshot();

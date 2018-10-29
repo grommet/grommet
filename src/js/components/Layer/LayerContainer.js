@@ -15,9 +15,9 @@ class LayerContainer extends Component {
     margin: 'none',
     modal: true,
     position: 'center',
-  }
+  };
 
-  state = {}
+  state = {};
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { theme } = nextProps;
@@ -43,9 +43,9 @@ class LayerContainer extends Component {
     return null;
   }
 
-  containerRef = React.createRef()
+  containerRef = React.createRef();
 
-  layerRef = React.createRef()
+  layerRef = React.createRef();
 
   componentDidMount() {
     const { position } = this.props;
@@ -63,11 +63,13 @@ class LayerContainer extends Component {
 
   makeLayerVisible = () => {
     /* eslint-disable-next-line react/no-find-dom-node */
-    const node = findDOMNode(this.layerRef.current || this.containerRef.current);
+    const node = findDOMNode(
+      this.layerRef.current || this.containerRef.current,
+    );
     if (node && node.scrollIntoView) {
       node.scrollIntoView();
     }
-  }
+  };
 
   render() {
     const {
@@ -107,7 +109,7 @@ class LayerContainer extends Component {
           position={position}
           theme={theme}
           responsive={responsive}
-          tabIndex='-1'
+          tabIndex="-1"
           ref={this.layerRef}
         >
           <StyledOverlay
@@ -123,7 +125,7 @@ class LayerContainer extends Component {
 
     if (onEsc) {
       content = (
-        <Keyboard target='document' onEsc={onEsc}>
+        <Keyboard target="document" onEsc={onEsc}>
           {content}
         </Keyboard>
       );

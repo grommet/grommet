@@ -6,9 +6,9 @@ import { grommet } from 'grommet/themes';
 
 const SimpleMenu = () => (
   <Grommet theme={grommet}>
-    <Box direction='row' gap='large'>
+    <Box direction="row" gap="large">
       <Menu
-        label='Actions'
+        label="Actions"
         items={[
           { label: 'Launch', onClick: () => {} },
           { label: 'Abort', onClick: () => {} },
@@ -18,5 +18,4 @@ const SimpleMenu = () => (
   </Grommet>
 );
 
-storiesOf('Menu', module)
-  .add('Simple Menu', () => <SimpleMenu />);
+storiesOf('Menu', module).add('Simple Menu', () => <SimpleMenu />);

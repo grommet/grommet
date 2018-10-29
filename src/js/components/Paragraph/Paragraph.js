@@ -13,8 +13,6 @@ let ParagraphDoc;
 if (process.env.NODE_ENV !== 'production') {
   ParagraphDoc = require('./doc').doc(Paragraph); // eslint-disable-line global-require
 }
-const ParagraphWrapper = compose(
-  withTheme,
-)(ParagraphDoc || Paragraph);
+const ParagraphWrapper = compose(withTheme)(ParagraphDoc || Paragraph);
 
 export { ParagraphWrapper as Paragraph };

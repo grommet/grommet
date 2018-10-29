@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import { genericStyles, normalizeColor } from '../../utils';
 
-const marginStyle = (props) => {
+const marginStyle = props => {
   if (typeof props.margin === 'string') {
     const margin = props.theme.global.edgeSize[props.margin];
     return `
@@ -28,7 +28,9 @@ const marginStyle = (props) => {
     return `margin-top: ${props.theme.global.edgeSize[props.margin.top]};`;
   }
   if (props.margin.bottom) {
-    return `margin-bottom: ${props.theme.global.edgeSize[props.margin.bottom]};`;
+    return `margin-bottom: ${
+      props.theme.global.edgeSize[props.margin.bottom]
+    };`;
   }
   if (props.margin.left) {
     return `margin-left: ${props.theme.global.edgeSize[props.margin.left]};`;
@@ -39,7 +41,7 @@ const marginStyle = (props) => {
   return '';
 };
 
-const sizeStyle = (props) => {
+const sizeStyle = props => {
   // size is a combination of the level and size properties
   const size = props.size || 'medium';
   const data = props.theme.text[size];

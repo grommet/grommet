@@ -1,9 +1,8 @@
-
 const sumReducer = (accumulated, next) => accumulated + next;
-const minReducer = (accumulated, next) => (
-  (accumulated === undefined ? next : Math.min(accumulated, next)));
-const maxReducer = (accumulated, next) => (
-  (accumulated === undefined ? next : Math.max(accumulated, next)));
+const minReducer = (accumulated, next) =>
+  accumulated === undefined ? next : Math.min(accumulated, next);
+const maxReducer = (accumulated, next) =>
+  accumulated === undefined ? next : Math.max(accumulated, next);
 
 const reducers = {
   max: maxReducer,
@@ -14,9 +13,7 @@ const reducers = {
 const aggregateColumn = (column, data) => {
   let value;
   if (column.aggregate === 'avg') {
-    value = data
-      .map(d => d[column.property])
-      .reduce(sumReducer);
+    value = data.map(d => d[column.property]).reduce(sumReducer);
     value /= data.length;
   } else {
     value = data
@@ -30,7 +27,7 @@ const findPrimary = (nextProps, prevState, nextState) => {
   const { columns } = nextProps;
 
   let primaryProperty;
-  columns.forEach((column) => {
+  columns.forEach(column => {
     // remember the first key property
     if (column.primary && !primaryProperty) {
       primaryProperty = column.property;
@@ -49,26 +46,33 @@ const filter = (nextProps, prevState, nextState) => {
 
   let nextFilters;
   let regexps;
-  columns.forEach((column) => {
+  columns.forEach(column => {
     if (column.search) {
       if (!nextFilters) {
         nextFilters = {};
         regexps = {};
       }
-      nextFilters[column.property] = filters ? filters[column.property] || '' : '';
+      nextFilters[column.property] = filters
+        ? filters[column.property] || ''
+        : '';
       // don't do filtering if the caller has supplied onSearch
       if (nextFilters[column.property] && column.search && !onSearch) {
-        regexps[column.property] = new RegExp(nextFilters[column.property], 'i');
+        regexps[column.property] = new RegExp(
+          nextFilters[column.property],
+          'i',
+        );
       }
     }
   });
 
   let nextData = data;
   if (nextFilters) {
-    nextData = data.filter(datum => (
-      !Object.keys(regexps).some(property => (
-        !regexps[property].test(datum[property])))
-    ));
+    nextData = data.filter(
+      datum =>
+        !Object.keys(regexps).some(
+          property => !regexps[property].test(datum[property]),
+        ),
+    );
   }
 
   return { ...nextState, filters: nextFilters, data: nextData };
@@ -79,7 +83,7 @@ const aggregate = (nextProps, prevState, nextState) => {
   const { data } = nextState;
 
   const aggregateValues = {};
-  columns.forEach((column) => {
+  columns.forEach(column => {
     if (column.aggregate) {
       aggregateValues[column.property] = aggregateColumn(column, data);
     }
@@ -94,7 +98,7 @@ const buildFooterValues = (nextProps, prevState, nextState) => {
 
   let showFooter;
   const footerValues = {};
-  columns.forEach((column) => {
+  columns.forEach(column => {
     if (column.footer) {
       showFooter = true;
       if (typeof column.footer === 'string') {
@@ -138,15 +142,17 @@ const groupData = (nextProps, prevState, nextState) => {
     groups = [];
     groupState = {};
     const groupMap = {};
-    data.forEach((datum) => {
+    data.forEach(datum => {
       const groupValue = datum[groupBy];
       if (!groupMap[groupValue]) {
         const group = { data: [], datum: {}, key: groupValue };
         group.datum[groupBy] = groupValue;
         groups.push(group);
         groupState[groupValue] = {
-          expanded: (prevState.groupState && prevState.groupState[groupValue])
-            ? prevState.groupState[groupValue].expanded : false,
+          expanded:
+            prevState.groupState && prevState.groupState[groupValue]
+              ? prevState.groupState[groupValue].expanded
+              : false,
         };
         groupMap[groupValue] = group;
       }
@@ -154,9 +160,9 @@ const groupData = (nextProps, prevState, nextState) => {
     });
 
     // calculate any aggregates
-    columns.forEach((column) => {
+    columns.forEach(column => {
       if (column.aggregate) {
-        groups.forEach((group) => {
+        groups.forEach(group => {
           group.datum[column.property] = aggregateColumn(column, group.data); // eslint-disable-line
         });
       }
@@ -171,7 +177,10 @@ export const buildState = (nextProps, prevState) => {
   const { filters, sort, widths } = prevState;
 
   let nextState = {
-    data, filters, sort, widths,
+    data,
+    filters,
+    sort,
+    widths,
   };
   nextState = findPrimary(nextProps, prevState, nextState);
   nextState = filter(nextProps, prevState, nextState);

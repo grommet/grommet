@@ -9,7 +9,7 @@ const styledComponents = {
   div: StyledHeading,
 }; // tag -> styled component
 
-const Heading = (props) => {
+const Heading = props => {
   const {
     color, // munged to avoid styled-components putting it in the DOM
     level,
@@ -24,9 +24,7 @@ const Heading = (props) => {
   }
 
   // enforce level to be a number
-  return (
-    <StyledComponent colorProp={color} level={+level} {...rest} />
-  );
+  return <StyledComponent colorProp={color} level={+level} {...rest} />;
 };
 
 Heading.defaultProps = {
@@ -38,8 +36,6 @@ let HeadingDoc;
 if (process.env.NODE_ENV !== 'production') {
   HeadingDoc = require('./doc').doc(Heading); // eslint-disable-line global-require
 }
-const HeadingWrapper = compose(
-  withTheme,
-)(HeadingDoc || Heading);
+const HeadingWrapper = compose(withTheme)(HeadingDoc || Heading);
 
 export { HeadingWrapper as Heading };

@@ -8,15 +8,23 @@ import { Cell } from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 
 export const Body = ({
-  columns, data, onMore, primaryProperty, size, theme, ...rest
+  columns,
+  data,
+  onMore,
+  primaryProperty,
+  size,
+  theme,
+  ...rest
 }) => (
   <StyledDataTableBody size={size} theme={theme} {...rest}>
     <InfiniteScroll
       items={data}
       onMore={onMore}
-      scrollableAncestor='window'
+      scrollableAncestor="window"
       renderMarker={marker => (
-        <TableRow><TableCell>{marker}</TableCell></TableRow>
+        <TableRow>
+          <TableCell>{marker}</TableCell>
+        </TableRow>
       )}
     >
       {datum => (
@@ -24,7 +32,7 @@ export const Body = ({
           {columns.map(column => (
             <Cell
               key={column.property}
-              context='body'
+              context="body"
               column={column}
               datum={datum}
               scope={column.primary ? 'row' : undefined}

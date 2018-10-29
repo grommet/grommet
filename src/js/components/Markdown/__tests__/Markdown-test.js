@@ -21,7 +21,7 @@ test('Markdown renders', () => {
   const component = renderer.create(
     <Grommet>
       <Markdown>{CONTENT}</Markdown>
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

@@ -14,7 +14,9 @@ class Anchor extends Component {
 
     const { children, icon, label } = props;
     if ((icon || label) && children) {
-      console.warn('Anchor should not have children if icon or label is provided');
+      console.warn(
+        'Anchor should not have children if icon or label is provided',
+      );
     }
   }
 
@@ -35,15 +37,14 @@ class Anchor extends Component {
       ...rest
     } = this.props;
 
-    const anchorLabel = typeof label === 'string'
-      ? <Text>{label}</Text>
-      : label;
+    const anchorLabel =
+      typeof label === 'string' ? <Text>{label}</Text> : label;
 
     let coloredIcon = icon;
     if (icon && !icon.props.color) {
-      coloredIcon = cloneElement(
-        icon, { color: normalizeColor(color || theme.anchor.color, theme) }
-      );
+      coloredIcon = cloneElement(icon, {
+        color: normalizeColor(color || theme.anchor.color, theme),
+      });
     }
 
     const first = reverse ? anchorLabel : coloredIcon;
@@ -64,12 +65,20 @@ class Anchor extends Component {
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
       >
-        {(first || second) ? (
-          <Box tag='span' direction='row' align='center' gap='small' style={{ display: 'inline-flex' }}>
+        {first || second ? (
+          <Box
+            tag="span"
+            direction="row"
+            align="center"
+            gap="small"
+            style={{ display: 'inline-flex' }}
+          >
             {first}
             {second}
           </Box>
-        ) : children}
+        ) : (
+          children
+        )}
       </StyledAnchor>
     );
   }
