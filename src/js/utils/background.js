@@ -49,19 +49,20 @@ export const backgroundIsDark = (backgroundArg, theme) => {
   return result;
 };
 
-export const backgroundStyle = (backgroundArg, theme) => {
+export const backgroundStyle = (backgroundArg, theme, componentTextColor) => {
   // If the background has a light or dark object, use that
   const background = normalizeBackground(backgroundArg, theme);
+  const textColor = componentTextColor || theme.global.colors.text;
 
   if (typeof background === 'object') {
     const styles = [];
     if (background.image) {
       let color;
       if (background.dark === false) {
-        color = theme.global.colors.text.light;
+        color = textColor.light;
       } else if (background.dark) {
-        color = theme.global.colors.text.dark;
-      } else {
+        color = textColor.dark;
+      } else if (!componentTextColor) {
         color = 'inherit';
       }
       styles.push(css`
@@ -83,22 +84,20 @@ export const backgroundStyle = (backgroundArg, theme) => {
         ) || color;
       styles.push(css`
         background-color: ${backgroundColor};
-        ${(!background.opacity || background.opacity !== 'weak') &&
-          `color: ${
-            theme.global.colors.text[
-              background.dark || colorIsDark(backgroundColor) ? 'dark' : 'light'
-            ]
-          };`};
+        ${(!background.opacity || background.opacity !== 'weak')
+          && `color: ${
+            textColor[background.dark || colorIsDark(backgroundColor)
+              ? 'dark' : 'light']};`
+        }
       `);
     }
     if (background.dark === false) {
       styles.push(css`
-        color: ${theme.global.colors.text.light};
+        color: ${textColor.light};
       `);
-    }
-    if (background.dark) {
+    } else if (background.dark) {
       styles.push(css`
-        color: ${theme.global.colors.text.dark};
+        color: ${textColor.dark};
       `);
     }
     return styles;
@@ -115,9 +114,7 @@ export const backgroundStyle = (backgroundArg, theme) => {
     if (color) {
       return css`
         background: ${color};
-        color: ${theme.global.colors.text[
-          colorIsDark(color) ? 'dark' : 'light'
-        ]};
+        color: ${textColor[colorIsDark(color) ? 'dark' : 'light']};
       `;
     }
   }

@@ -23,13 +23,16 @@ const basicStyle = props => css`
 `;
 
 const primaryStyle = props => css`
-  ${backgroundStyle(
-    normalizeColor(
-      props.colorValue || props.theme.button.primary.color || 'control',
+  ${
+    backgroundStyle(
+      normalizeColor(
+        props.colorValue || props.theme.button.primary.color || 'control',
+        props.theme
+      ),
       props.theme,
-    ),
-    props.theme,
-  )}
+      props.theme.button.color,
+    )
+  }
   border-radius: ${props.theme.button.border.radius};
 `;
 
@@ -101,8 +104,8 @@ export const StyledButton = styled.button`
 
   ${genericStyles}
   ${props => props.plain && plainStyle}
-  ${props => props.primary && primaryStyle(props)}
   ${props => !props.plain && basicStyle(props)}
+  ${props => props.primary && primaryStyle(props)}
 
   ${props => !props.disabled && !props.focus && hoverStyle}
 
