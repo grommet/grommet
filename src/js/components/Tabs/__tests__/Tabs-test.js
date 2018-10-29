@@ -10,7 +10,7 @@ describe('Tabs', () => {
     const component = renderer.create(
       <Grommet>
         <Tabs />
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -19,15 +19,11 @@ describe('Tabs', () => {
     const component = renderer.create(
       <Grommet>
         <Tabs>
-          <Tab title='Tab 1'>
-            Tab body 1
-          </Tab>
+          <Tab title="Tab 1">Tab body 1</Tab>
           {undefined}
-          <Tab title='Tab 2'>
-            Tab body 2
-          </Tab>
+          <Tab title="Tab 2">Tab body 2</Tab>
         </Tabs>
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -36,15 +32,11 @@ describe('Tabs', () => {
     const component = renderer.create(
       <Grommet>
         <Tabs>
-          <Tab title={<div>Tab 1</div>}>
-            Tab body 1
-          </Tab>
+          <Tab title={<div>Tab 1</div>}>Tab body 1</Tab>
           {undefined}
-          <Tab title={<div>Tab 2</div>}>
-            Tab body 2
-          </Tab>
+          <Tab title={<div>Tab 2</div>}>Tab body 2</Tab>
         </Tabs>
-      </Grommet>
+      </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -54,14 +46,10 @@ describe('Tabs', () => {
     const { getByText, container } = render(
       <Grommet>
         <Tabs onActive={onActive}>
-          <Tab title='Tab 1'>
-            Tab body 1
-          </Tab>
-          <Tab title='Tab 2'>
-            Tab body 2
-          </Tab>
+          <Tab title="Tab 1">Tab body 1</Tab>
+          <Tab title="Tab 2">Tab body 2</Tab>
         </Tabs>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 
@@ -76,14 +64,12 @@ describe('Tabs', () => {
       <Grommet>
         <Tabs>
           {/* eslint-disable-next-line jsx-a11y/mouse-events-have-key-events */}
-          <Tab title='Tab 1' onMouseOver={() => {}} onMouseOut={() => {}}>
+          <Tab title="Tab 1" onMouseOver={() => {}} onMouseOut={() => {}}>
             Tab body 1
           </Tab>
-          <Tab title='Tab 2'>
-            Tab body 2
-          </Tab>
+          <Tab title="Tab 2">Tab body 2</Tab>
         </Tabs>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

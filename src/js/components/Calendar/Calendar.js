@@ -9,33 +9,42 @@ import { Keyboard } from '../Keyboard';
 import { withTheme } from '../hocs';
 
 import {
-  StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks,
+  StyledCalendar,
+  StyledDay,
+  StyledDayContainer,
+  StyledWeek,
+  StyledWeeks,
   StyledWeeksContainer,
 } from './StyledCalendar';
 import {
-  addDays, addMonths, betweenDates, daysApart, endOfMonth,
-  startOfMonth, subtractDays, subtractMonths, withinDates,
+  addDays,
+  addMonths,
+  betweenDates,
+  daysApart,
+  endOfMonth,
+  startOfMonth,
+  subtractDays,
+  subtractMonths,
+  withinDates,
   updateDateRange,
 } from './utils';
 
 const headingPadMap = {
-  'small': 'xsmall',
-  'medium': 'small',
-  'large': 'medium',
+  small: 'xsmall',
+  medium: 'small',
+  large: 'medium',
 };
 
 const buildStartEnd = (reference, firstDayOfWeek) => {
   let start = new Date(reference);
   start.setDate(1); // first of month
   start = subtractDays(start, start.getDay() - firstDayOfWeek); // beginning of week
-  const end = addDays(start, (7 * 5) + 7); // 5 weeks to end of week
+  const end = addDays(start, 7 * 5 + 7); // 5 weeks to end of week
   return { start, end };
 };
 
-const buildState = (props) => {
-  const {
-    date, dates, firstDayOfWeek, reference,
-  } = props;
+const buildState = props => {
+  const { date, dates, firstDayOfWeek, reference } = props;
   let normalizedReference;
   if (reference) {
     normalizedReference = new Date(reference);
@@ -65,17 +74,22 @@ class Calendar extends Component {
     size: 'medium',
     locale: 'en-US',
     showAdjacentDays: true,
-  }
+  };
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { reference } = nextProps;
     const { reference: prevReference } = prevState;
-    if (Object.prototype.hasOwnProperty.call(nextProps, 'date')
-      || Object.prototype.hasOwnProperty.call(nextProps, 'dates')
-      || !prevReference || reference) {
+    if (
+      Object.prototype.hasOwnProperty.call(nextProps, 'date') ||
+      Object.prototype.hasOwnProperty.call(nextProps, 'dates') ||
+      !prevReference ||
+      reference
+    ) {
       let state = {};
-      if (Object.prototype.hasOwnProperty.call(nextProps, 'date')
-        || Object.prototype.hasOwnProperty.call(nextProps, 'dates')) {
+      if (
+        Object.prototype.hasOwnProperty.call(nextProps, 'date') ||
+        Object.prototype.hasOwnProperty.call(nextProps, 'dates')
+      ) {
         state.date = nextProps.date;
         state.dates = nextProps.dates;
       }
@@ -87,9 +101,9 @@ class Calendar extends Component {
     return null;
   }
 
-  state = {}
+  state = {};
 
-  dayRefs = {}
+  dayRefs = {};
 
   componentDidUpdate() {
     const { focused } = this.state;
@@ -117,14 +131,12 @@ class Calendar extends Component {
           slide: undefined,
         });
       }
-    // Wait for animation to finish before cleaning up. Empirically determined.
+      // Wait for animation to finish before cleaning up. Empirically determined.
     }, 800);
-  }
+  };
 
-  setReference = (reference) => {
-    const {
-      animate, bounds, firstDayOfWeek, onReference,
-    } = this.props;
+  setReference = reference => {
+    const { animate, bounds, firstDayOfWeek, onReference } = this.props;
     const { start, end, targetStartEnd } = this.state;
     if (betweenDates(reference, bounds)) {
       const nextStartEnd = buildStartEnd(reference, firstDayOfWeek);
@@ -159,7 +171,7 @@ class Calendar extends Component {
         }
       });
     }
-  }
+  };
 
   onFocus = day => () => {
     const { bounds } = this.props;
@@ -171,7 +183,7 @@ class Calendar extends Component {
         }
       });
     }
-  }
+  };
 
   onClickDay = dateString => () => {
     const { onSelect, range } = this.props;
@@ -186,47 +198,52 @@ class Calendar extends Component {
     }
   };
 
-  setFocus = (day) => {
+  setFocus = day => {
     const ref = this.dayRefs[day.toISOString()];
     if (ref && ref.current) {
       ref.current.focus();
     }
-  }
+  };
 
   renderCalendarHeader = (previousMonth, nextMonth) => {
-    const {
-      bounds, locale, size, theme,
-    } = this.props;
+    const { bounds, locale, size, theme } = this.props;
     const { reference } = this.state;
 
-    const PreviousIcon = size === 'small' ? (
-      theme.calendar.icons.small.previous
-    ) : (
-      theme.calendar.icons.previous
-    );
+    const PreviousIcon =
+      size === 'small'
+        ? theme.calendar.icons.small.previous
+        : theme.calendar.icons.previous;
 
-    const NextIcon = size === 'small' ? (
-      theme.calendar.icons.small.next
-    ) : (
-      theme.calendar.icons.next
-    );
+    const NextIcon =
+      size === 'small'
+        ? theme.calendar.icons.small.next
+        : theme.calendar.icons.next;
 
     return (
-      <Box direction='row' justify='between' align='center'>
-        <Box flex pad={{ horizontal: (headingPadMap[size] || 'small') }}>
-          <Heading level={size === 'small' ? 4 : 3} size={size} margin='none'>
-            {reference.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
+      <Box direction="row" justify="between" align="center">
+        <Box flex pad={{ horizontal: headingPadMap[size] || 'small' }}>
+          <Heading level={size === 'small' ? 4 : 3} size={size} margin="none">
+            {reference.toLocaleDateString(locale, {
+              month: 'long',
+              year: 'numeric',
+            })}
           </Heading>
         </Box>
-        <Box flex={false} direction='row' align='center'>
+        <Box flex={false} direction="row" align="center">
           <Button
-            a11yTitle={previousMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
+            a11yTitle={previousMonth.toLocaleDateString(locale, {
+              month: 'long',
+              year: 'numeric',
+            })}
             icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
             disabled={!betweenDates(previousMonth, bounds)}
             onClick={() => this.setReference(previousMonth)}
           />
           <Button
-            a11yTitle={nextMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
+            a11yTitle={nextMonth.toLocaleDateString(locale, {
+              month: 'long',
+              year: 'numeric',
+            })}
             icon={<NextIcon size={size !== 'small' ? size : undefined} />}
             disabled={!betweenDates(nextMonth, bounds)}
             onClick={() => this.setReference(nextMonth)}
@@ -253,14 +270,14 @@ class Calendar extends Component {
       theme,
       ...rest
     } = this.props;
-    const {
-      date, dates, focused, start, reference, end, slide,
-    } = this.state;
+    const { date, dates, focused, start, reference, end, slide } = this.state;
 
     // We have to deal with reference being the end of a month with more
     // days than the month we are changing to. So, we always set reference
     // to the first of the month before changing the month.
-    const previousMonth = endOfMonth(subtractMonths(startOfMonth(reference), 1));
+    const previousMonth = endOfMonth(
+      subtractMonths(startOfMonth(reference), 1),
+    );
     const nextMonth = startOfMonth(addMonths(startOfMonth(reference), 1));
 
     const weeks = [];
@@ -271,9 +288,11 @@ class Calendar extends Component {
     while (day.getTime() < end.getTime()) {
       if (day.getDay() === firstDayOfWeek) {
         if (days) {
-          weeks.push((
-            <StyledWeek key={day.getTime()} theme={theme}>{days}</StyledWeek>
-          ));
+          weeks.push(
+            <StyledWeek key={day.getTime()} theme={theme}>
+              {days}
+            </StyledWeek>,
+          );
         }
         days = [];
       }
@@ -283,7 +302,7 @@ class Calendar extends Component {
         days.push(
           <StyledDayContainer key={day.getTime()} sizeProp={size} theme={theme}>
             <StyledDay sizeProp={size} theme={theme} />
-          </StyledDayContainer>
+          </StyledDayContainer>,
         );
       } else {
         const dateString = day.toISOString();
@@ -297,8 +316,8 @@ class Calendar extends Component {
         } else if (selectedState === 1) {
           inRange = true;
         }
-        const dayDisabled = withinDates(day, disabled)
-          || (bounds && !betweenDates(day, bounds));
+        const dayDisabled =
+          withinDates(day, disabled) || (bounds && !betweenDates(day, bounds));
 
         days.push(
           <StyledDayContainer key={day.getTime()} sizeProp={size} theme={theme}>
@@ -322,24 +341,26 @@ class Calendar extends Component {
                 {day.getDate()}
               </StyledDay>
             </Button>
-          </StyledDayContainer>
+          </StyledDayContainer>,
         );
       }
 
       day = addDays(day, 1);
     }
-    weeks.push((
-      <StyledWeek key={day.getTime()} theme={theme}>{days}</StyledWeek>
-    ));
+    weeks.push(
+      <StyledWeek key={day.getTime()} theme={theme}>
+        {days}
+      </StyledWeek>,
+    );
 
     return (
       <StyledCalendar sizeProp={size} theme={theme} {...rest}>
         <Keyboard
-          onUp={(event) => {
+          onUp={event => {
             event.preventDefault();
             this.setFocus(addDays(focused, -7));
           }}
-          onDown={(event) => {
+          onDown={event => {
             event.preventDefault();
             this.setFocus(addDays(focused, 7));
           }}
@@ -347,18 +368,16 @@ class Calendar extends Component {
           onRight={() => this.setFocus(addDays(focused, 1))}
         >
           <Box>
-            {header ? (
-              header({
-                date: reference,
-                locale,
-                onPreviousMonth: () => this.setReference(previousMonth),
-                onNextMonth: () => this.setReference(nextMonth),
-                previousInBound: betweenDates(previousMonth, bounds),
-                nextInBound: betweenDates(nextMonth, bounds),
-              })
-            ) : (
-              this.renderCalendarHeader(previousMonth, nextMonth)
-            )}
+            {header
+              ? header({
+                  date: reference,
+                  locale,
+                  onPreviousMonth: () => this.setReference(previousMonth),
+                  onNextMonth: () => this.setReference(nextMonth),
+                  previousInBound: betweenDates(previousMonth, bounds),
+                  nextInBound: betweenDates(nextMonth, bounds),
+                })
+              : this.renderCalendarHeader(previousMonth, nextMonth)}
             <StyledWeeksContainer sizeProp={size} theme={theme}>
               <StyledWeeks slide={slide} sizeProp={size} theme={theme}>
                 {weeks}
@@ -375,8 +394,6 @@ let CalendarDoc;
 if (process.env.NODE_ENV !== 'production') {
   CalendarDoc = require('./doc').doc(Calendar); // eslint-disable-line global-require
 }
-const CalendarWrapper = compose(
-  withTheme,
-)(CalendarDoc || Calendar);
+const CalendarWrapper = compose(withTheme)(CalendarDoc || Calendar);
 
 export { CalendarWrapper as Calendar };

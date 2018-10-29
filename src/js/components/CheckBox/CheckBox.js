@@ -36,28 +36,25 @@ class CheckBox extends Component {
 
     let hidden;
     if (disabled && checked) {
-      hidden = <input name={name} type='hidden' value='true' />;
+      hidden = <input name={name} type="hidden" value="true" />;
     }
 
     const Icon = theme.checkBox.icons.checked;
 
-    let borderColor = normalizeColor(
-      theme.checkBox.border.color,
-      theme
-    );
+    let borderColor = normalizeColor(theme.checkBox.border.color, theme);
     if (checked) {
       borderColor = normalizeColor(theme.checkBox.color || 'control', theme);
     }
 
-    const visual = (toggle ? (
+    const visual = toggle ? (
       <StyledCheckBoxToggle focus={focus} theme={theme} checked={checked}>
         <StyledCheckBoxKnob theme={theme} />
       </StyledCheckBoxToggle>
     ) : (
       <StyledCheckBoxBox
         as={Box}
-        align='center'
-        justify='center'
+        align="center"
+        justify="center"
         width={theme.checkBox.size}
         height={theme.checkBox.size}
         border={{
@@ -69,35 +66,33 @@ class CheckBox extends Component {
         theme={theme}
         checked={checked}
       >
-        {checked && (
-          Icon ? (
+        {checked &&
+          (Icon ? (
             <Icon as={StyledCheckBoxIcon} theme={theme} />
           ) : (
             <StyledCheckBoxIcon
-              viewBox='0 0 24 24'
-              preserveAspectRatio='xMidYMid meet'
+              viewBox="0 0 24 24"
+              preserveAspectRatio="xMidYMid meet"
               theme={theme}
             >
-              <path fill='none' d='M6,11.3 L10.3,16 L18,6.2' />
+              <path fill="none" d="M6,11.3 L10.3,16 L18,6.2" />
             </StyledCheckBoxIcon>
-          )
-        )}
+          ))}
       </StyledCheckBoxBox>
-    ));
+    );
 
     const checkBoxNode = (
-      <StyledCheckBox
-        as={Box}
-        align='center'
-        justify='center'
-        theme={theme}
-      >
+      <StyledCheckBox as={Box} align="center" justify="center" theme={theme}>
         <StyledCheckBoxInput
           {...rest}
           ref={forwardRef}
-          type='checkbox'
+          type="checkbox"
           {...removeUndefined({
-            id, name, checked, disabled, onChange,
+            id,
+            name,
+            checked,
+            disabled,
+            onChange,
           })}
           theme={theme}
           checked={checked}
@@ -108,23 +103,24 @@ class CheckBox extends Component {
       </StyledCheckBox>
     );
 
-    const normalizedLabel = (typeof label === 'string' ? <span>{label}</span> : label);
+    const normalizedLabel =
+      typeof label === 'string' ? <span>{label}</span> : label;
 
     const first = reverse ? normalizedLabel : checkBoxNode;
     const second = reverse ? checkBoxNode : normalizedLabel;
 
     return (
       <StyledCheckBoxContainer
-        direction='row'
-        align='center'
-        tag='label'
+        direction="row"
+        align="center"
+        tag="label"
         as={Box}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
         theme={theme}
         gap={theme.checkBox.gap || 'small'}
         checked={checked}
-        onClick={(event) => {
+        onClick={event => {
           // prevents clicking on the label trigging the event twice
           // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
           if (event.target.type !== 'checkbox') {

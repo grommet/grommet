@@ -6,18 +6,18 @@ import { grommet } from 'grommet/themes';
 
 const Simple = () => (
   <Grommet theme={grommet}>
-    <Image src='//v2.grommet.io/assets/IMG_4245.jpg' />
+    <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
   </Grommet>
 );
 
 const Fit = () => (
   <Grommet theme={grommet}>
-    <Box align='start' gap='medium'>
-      <Box height='small' width='small' border>
-        <Image src='//v2.grommet.io/assets/IMG_4245.jpg' fit='contain' />
+    <Box align="start" gap="medium">
+      <Box height="small" width="small" border>
+        <Image src="//v2.grommet.io/assets/IMG_4245.jpg" fit="contain" />
       </Box>
-      <Box height='small' width='small' border>
-        <Image src='//v2.grommet.io/assets/IMG_4245.jpg' fit='cover' />
+      <Box height="small" width="small" border>
+        <Image src="//v2.grommet.io/assets/IMG_4245.jpg" fit="cover" />
       </Box>
     </Box>
   </Grommet>

@@ -1,2 +1,1 @@
-
 export { Image } from './Image';

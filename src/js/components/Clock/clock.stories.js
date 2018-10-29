@@ -6,13 +6,13 @@ import { grommet } from 'grommet/themes';
 
 const DigitalClock = () => (
   <Grommet theme={grommet}>
-    <Clock type='digital' />
+    <Clock type="digital" />
   </Grommet>
 );
 
 const AnalogClock = () => (
   <Grommet theme={grommet}>
-    <Clock type='analog' />
+    <Clock type="analog" />
   </Grommet>
 );
 

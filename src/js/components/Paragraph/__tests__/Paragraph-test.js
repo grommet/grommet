@@ -9,7 +9,7 @@ test('Paragraph renders', () => {
   const component = renderer.create(
     <Grommet>
       <Paragraph />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -18,12 +18,12 @@ test('Paragraph renders', () => {
 test('Paragraph size renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Paragraph size='small' />
-      <Paragraph size='medium' />
-      <Paragraph size='large' />
-      <Paragraph size='xlarge' />
-      <Paragraph size='xxlarge' />
-    </Grommet>
+      <Paragraph size="small" />
+      <Paragraph size="medium" />
+      <Paragraph size="large" />
+      <Paragraph size="xlarge" />
+      <Paragraph size="xxlarge" />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -32,13 +32,13 @@ test('Paragraph size renders', () => {
 test('Paragraph margin renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Paragraph margin='small' />
-      <Paragraph margin='medium' />
-      <Paragraph margin='large' />
-      <Paragraph margin='none' />
+      <Paragraph margin="small" />
+      <Paragraph margin="medium" />
+      <Paragraph margin="large" />
+      <Paragraph margin="none" />
       <Paragraph margin={{ bottom: 'small' }} />
       <Paragraph margin={{ top: 'small' }} />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -47,10 +47,10 @@ test('Paragraph margin renders', () => {
 test('Paragraph textAlign renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Paragraph textAlign='start' />
-      <Paragraph textAlign='center' />
-      <Paragraph textAlign='end' />
-    </Grommet>
+      <Paragraph textAlign="start" />
+      <Paragraph textAlign="center" />
+      <Paragraph textAlign="end" />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();

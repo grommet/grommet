@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import { genericStyles } from '../../utils';
 
-const fillStyle = (fill) => {
+const fillStyle = fill => {
   if (fill === 'horizontal') {
     return 'width: 100%;';
   }
@@ -66,7 +66,7 @@ const justifyContentStyle = css`
   justify-content: ${props => JUSTIFY_CONTENT_MAP[props.justifyContent]};
 `;
 
-const gapStyle = (props) => {
+const gapStyle = props => {
   if (typeof props.gap === 'string') {
     const gapSize = props.theme.global.edgeSize[props.gap];
     return `grid-gap: ${gapSize} ${gapSize};`;
@@ -91,8 +91,8 @@ const gapStyle = (props) => {
 };
 
 const SIZE_MAP = {
-  'flex': '1fr',
-  'full': '100%',
+  flex: '1fr',
+  full: '100%',
   '1/2': '50%',
   '1/4': '25%',
   '2/4': '50%',
@@ -101,55 +101,68 @@ const SIZE_MAP = {
   '2/3': '66.66%',
 };
 
-const getRepeatCount = count => (
-  typeof count === 'number' ? count : `auto-${count}`
-);
+const getRepeatCount = count =>
+  typeof count === 'number' ? count : `auto-${count}`;
 
-const getRepeatSize = (size, theme) => (
-  `minmax(${theme.global.size[size] || size}, 1fr)`
-);
+const getRepeatSize = (size, theme) =>
+  `minmax(${theme.global.size[size] || size}, 1fr)`;
 
 const sizeFor = (size, props, isRow) => {
   const mapped = SIZE_MAP[size];
-  if (isRow && mapped
-    && (!props.fillContainer || props.fillContainer === 'horizontal')) {
+  if (
+    isRow &&
+    mapped &&
+    (!props.fillContainer || props.fillContainer === 'horizontal')
+  ) {
     console.warn('Grid needs `fill` when using fractional row sizes');
   }
   return mapped || props.theme.global.size[size] || size;
 };
 
-const columnsStyle = (props) => {
+const columnsStyle = props => {
   if (Array.isArray(props.columns)) {
     return css`
-      grid-template-columns: ${props.columns.map((s) => {
-        if (Array.isArray(s)) {
-          return `minmax(${sizeFor(s[0], props)}, ${sizeFor(s[1], props)})`;
-        }
-        return sizeFor(s, props);
-      }).join(' ')};
+      grid-template-columns: ${props.columns
+        .map(s => {
+          if (Array.isArray(s)) {
+            return `minmax(${sizeFor(s[0], props)}, ${sizeFor(s[1], props)})`;
+          }
+          return sizeFor(s, props);
+        })
+        .join(' ')};
     `;
   }
   if (typeof props.columns === 'object') {
     return css`
-      grid-template-columns:
-        repeat(${getRepeatCount(props.columns.count)}, ${getRepeatSize(props.columns.size, props.theme)});
+      grid-template-columns: repeat(
+        ${getRepeatCount(props.columns.count)},
+        ${getRepeatSize(props.columns.size, props.theme)}
+      );
     `;
   }
   return css`
-    grid-template-columns:
-      repeat(auto-fill, ${getRepeatSize(props.columns, props.theme)});
+    grid-template-columns: repeat(
+      auto-fill,
+      ${getRepeatSize(props.columns, props.theme)}
+    );
   `;
 };
 
-const rowsStyle = (props) => {
+const rowsStyle = props => {
   if (Array.isArray(props.rowsProp)) {
     return css`
-      grid-template-rows: ${props.rowsProp.map((s) => {
-        if (Array.isArray(s)) {
-          return `minmax(${sizeFor(s[0], props, true)}, ${sizeFor(s[1], props, true)})`;
-        }
-        return sizeFor(s, props, true);
-      }).join(' ')};
+      grid-template-rows: ${props.rowsProp
+        .map(s => {
+          if (Array.isArray(s)) {
+            return `minmax(${sizeFor(s[0], props, true)}, ${sizeFor(
+              s[1],
+              props,
+              true,
+            )})`;
+          }
+          return sizeFor(s, props, true);
+        })
+        .join(' ')};
     `;
   }
   return css`
@@ -157,20 +170,22 @@ const rowsStyle = (props) => {
   `;
 };
 
-const areasStyle = (props) => {
+const areasStyle = props => {
   // translate areas objects into grid-template-areas syntax
   if (!Array.isArray(props.rowsProp) || !Array.isArray(props.columns)) {
     console.warn('Grid `areas` requires `rows` and `columns` to be arrays.');
   }
   const cells = props.rowsProp.map(() => props.columns.map(() => '.'));
-  props.areas.forEach((area) => {
+  props.areas.forEach(area => {
     for (let row = area.start[1]; row <= area.end[1]; row += 1) {
       for (let column = area.start[0]; column <= area.end[0]; column += 1) {
         cells[row][column] = area.name;
       }
     }
   });
-  return `grid-template-areas: ${cells.map(r => `"${r.join(' ')}"`).join(' ')};`;
+  return `grid-template-areas: ${cells
+    .map(r => `"${r.join(' ')}"`)
+    .join(' ')};`;
 };
 
 export const StyledGrid = styled.div`

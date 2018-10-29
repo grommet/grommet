@@ -1,2 +1,1 @@
-
 export { Tab } from './Tab';

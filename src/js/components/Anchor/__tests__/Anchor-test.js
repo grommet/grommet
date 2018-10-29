@@ -11,7 +11,7 @@ test('Anchor renders', () => {
   const component = renderer.create(
     <Grommet>
       <Anchor />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -20,8 +20,8 @@ test('Anchor renders', () => {
 test('Anchor renders with children', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor href='#'>children</Anchor>
-    </Grommet>
+      <Anchor href="#">children</Anchor>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -31,12 +31,16 @@ test('Anchor warns about invalid label render', () => {
   const warnSpy = jest.spyOn(console, 'warn');
   const component = renderer.create(
     <Grommet>
-      <Anchor href='#' label='Test'>invalid</Anchor>
-    </Grommet>
+      <Anchor href="#" label="Test">
+        invalid
+      </Anchor>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
-  expect(warnSpy).toHaveBeenCalledWith('Anchor should not have children if icon or label is provided');
+  expect(warnSpy).toHaveBeenCalledWith(
+    'Anchor should not have children if icon or label is provided',
+  );
 
   warnSpy.mockReset();
   warnSpy.mockRestore();
@@ -46,12 +50,16 @@ test('Anchor warns about invalid icon render', () => {
   const warnSpy = jest.spyOn(console, 'warn');
   const component = renderer.create(
     <Grommet>
-      <Anchor href='#' icon={<svg />}>invalid</Anchor>
-    </Grommet>
+      <Anchor href="#" icon={<svg />}>
+        invalid
+      </Anchor>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
-  expect(warnSpy).toHaveBeenCalledWith('Anchor should not have children if icon or label is provided');
+  expect(warnSpy).toHaveBeenCalledWith(
+    'Anchor should not have children if icon or label is provided',
+  );
 
   warnSpy.mockReset();
   warnSpy.mockRestore();
@@ -60,8 +68,8 @@ test('Anchor warns about invalid icon render', () => {
 test('Anchor primary renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor href='#' primary label='Test' />
-    </Grommet>
+      <Anchor href="#" primary label="Test" />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -70,8 +78,8 @@ test('Anchor primary renders', () => {
 test('Anchor focus renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor href='#' focus label='Test' />
-    </Grommet>
+      <Anchor href="#" focus label="Test" />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -81,7 +89,7 @@ test('Anchor disabled renders', () => {
   const component = renderer.create(
     <Grommet>
       <Anchor disabled />
-    </Grommet>
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -90,8 +98,8 @@ test('Anchor disabled renders', () => {
 test('Anchor icon label renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor icon={<svg />} label='Test' onClick={() => {}} />
-    </Grommet>
+      <Anchor icon={<svg />} label="Test" onClick={() => {}} />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -100,13 +108,8 @@ test('Anchor icon label renders', () => {
 test('Anchor reverse icon label renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Anchor
-        reverse
-        icon={<svg />}
-        label='Test'
-        onClick={() => {}}
-      />
-    </Grommet>
+      <Anchor reverse icon={<svg />} label="Test" onClick={() => {}} />
+    </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -116,8 +119,8 @@ test('Anchor is clickable', () => {
   const onClick = jest.fn();
   const component = renderer.create(
     <Grommet>
-      <Anchor href='#' label='Test' onClick={onClick} />
-    </Grommet>
+      <Anchor href="#" label="Test" onClick={onClick} />
+    </Grommet>,
   );
   const tree = component.toJSON();
 

@@ -8,7 +8,7 @@ import { SearchBorderBox } from './SearchBorderBox';
 import { SearchInputContext } from './SearchInputContext';
 
 export class SearchInput extends Component {
-  textInputRef = createRef()
+  textInputRef = createRef();
 
   componentDidMount() {
     setTimeout(() => {
@@ -22,11 +22,7 @@ export class SearchInput extends Component {
       <SearchInputContext.Consumer>
         {({ searching }) => (
           <SearchBorderBox searching={searching}>
-            <TextInput
-              {...this.props}
-              plain
-              ref={this.textInputRef}
-            />
+            <TextInput {...this.props} plain ref={this.textInputRef} />
           </SearchBorderBox>
         )}
       </SearchInputContext.Consumer>

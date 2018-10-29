@@ -10,20 +10,18 @@ import { withTheme } from '../hocs';
 import { Cell } from './Cell';
 import { StyledDataTableFooter } from './StyledDataTable';
 
-const Footer = ({
-  columns, footerValues, groups, theme, ...rest
-}) => (
+const Footer = ({ columns, footerValues, groups, theme, ...rest }) => (
   <StyledDataTableFooter as={TableFooter} {...rest}>
     <TableRow>
       {groups && (
-        <TableCell size='xxsmall' plain verticalAlign='top'>
-          <Box {...({ ...theme.table.footer, ...theme.dataTable.footer })} />
+        <TableCell size="xxsmall" plain verticalAlign="top">
+          <Box {...{ ...theme.table.footer, ...theme.dataTable.footer }} />
         </TableCell>
       )}
       {columns.map(column => (
         <Cell
           key={column.property}
-          context='footer'
+          context="footer"
           column={column}
           datum={footerValues}
           theme={theme}
@@ -33,8 +31,6 @@ const Footer = ({
   </StyledDataTableFooter>
 );
 
-const FooterWrapper = compose(
-  withTheme,
-)(Footer);
+const FooterWrapper = compose(withTheme)(Footer);
 
 export { FooterWrapper as Footer };

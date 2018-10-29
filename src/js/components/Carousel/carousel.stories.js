@@ -6,21 +6,20 @@ import { Grommet, Box, Carousel } from 'grommet';
 
 const SimpleCarousel = () => (
   <Grommet>
-    <Box justify='center' align='center'>
+    <Box justify="center" align="center">
       <Carousel>
-        <Box pad='xlarge' background='accent-1'>
-          <Attraction size='xlarge' />
+        <Box pad="xlarge" background="accent-1">
+          <Attraction size="xlarge" />
         </Box>
-        <Box pad='xlarge' background='accent-2'>
-          <TreeOption size='xlarge' />
+        <Box pad="xlarge" background="accent-2">
+          <TreeOption size="xlarge" />
         </Box>
-        <Box pad='xlarge' background='accent-3'>
-          <Car size='xlarge' />
+        <Box pad="xlarge" background="accent-3">
+          <Car size="xlarge" />
         </Box>
       </Carousel>
     </Box>
   </Grommet>
 );
 
-storiesOf('Carousel', module)
-  .add('Simple Carousel', () => <SimpleCarousel />);
+storiesOf('Carousel', module).add('Simple Carousel', () => <SimpleCarousel />);

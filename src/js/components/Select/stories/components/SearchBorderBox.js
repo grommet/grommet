@@ -39,7 +39,7 @@ const searchingStyle = css`
       transform: translateX(-50%) scaleX(0);
     }
     50% {
-      transform: translateX(12.5%) scaleX(.75);
+      transform: translateX(12.5%) scaleX(0.75);
     }
     100% {
       transform: translateX(50%) scaleX(0);
@@ -59,18 +59,19 @@ const defaultStyle = css`
     width: 0;
     height: 2px;
     background: transparent;
-    transition: width .2s ease, background .2s ease, left .2s ease;
+    transition: width 0.2s ease, background 0.2s ease, left 0.2s ease;
   }
 
-  ${props => props.focus
-    && `
+  ${props =>
+    props.focus &&
+    `
     box-shadow: none;
     &:after {
       left: 0;
       width: 100%;
       background: ${normalizeColor('brand', props.theme)};
     }
-  `}
+  `};
 `;
 
 const boxBorderTheme = {

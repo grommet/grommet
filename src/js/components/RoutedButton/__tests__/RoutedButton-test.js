@@ -12,11 +12,11 @@ class FakeRouter extends Component {
     children: PropTypes.node.isRequired,
     push: PropTypes.func.isRequired,
     replace: PropTypes.func.isRequired,
-  }
+  };
 
   static childContextTypes = {
     router: PropTypes.shape({}),
-  }
+  };
 
   getChildContext() {
     const { push, replace } = this.props;
@@ -41,9 +41,9 @@ describe('RoutedButton', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter>
-          <RoutedButton label='Test' path='/' />
+          <RoutedButton label="Test" path="/" />
         </FakeRouter>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -56,9 +56,9 @@ describe('RoutedButton', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter push={push}>
-          <RoutedButton label='Test' onClick={onClick} />
+          <RoutedButton label="Test" onClick={onClick} />
         </FakeRouter>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
 
@@ -74,9 +74,9 @@ describe('RoutedButton', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter>
-          <RoutedButton label='Test' onClick={onClick} />
+          <RoutedButton label="Test" onClick={onClick} />
         </FakeRouter>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
 
@@ -96,9 +96,9 @@ describe('RoutedButton', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter push={push}>
-          <RoutedButton label='Test' path='/' />
+          <RoutedButton label="Test" path="/" />
         </FakeRouter>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
 
@@ -116,9 +116,9 @@ describe('RoutedButton', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter replace={replace}>
-          <RoutedButton label='Test' path='/' method='replace' />
+          <RoutedButton label="Test" path="/" method="replace" />
         </FakeRouter>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
 

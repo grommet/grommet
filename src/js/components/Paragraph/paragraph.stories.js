@@ -19,11 +19,8 @@ const All = () => (
         {paragraphFiller}
       </Paragraph>
     ))}
-    <Paragraph color='status-critical'>
-      This is an error message.
-    </Paragraph>
+    <Paragraph color="status-critical">This is an error message.</Paragraph>
   </Grommet>
 );
 
-storiesOf('Paragraph', module)
-  .add('All', () => <All />);
+storiesOf('Paragraph', module).add('All', () => <All />);

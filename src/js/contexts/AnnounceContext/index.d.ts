@@ -1,8 +1,11 @@
-import * as React from "react";
+import * as React from 'react';
 
 export type AnnounceMessage = string;
 export type AnnounceMode = 'off' | 'polite' | 'assertive';
-export type AnnounceValue = (message: AnnounceMessage, mode: AnnounceMode) => void;
+export type AnnounceValue = (
+  message: AnnounceMessage,
+  mode: AnnounceMode,
+) => void;
 
 declare const AnnounceContext: React.Context<AnnounceValue>;
 

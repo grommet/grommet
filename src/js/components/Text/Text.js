@@ -16,9 +16,7 @@ const Text = ({ color, tag, ...rest }) => {
     styledComponents[tag] = StyledComponent;
   }
 
-  return (
-    <StyledComponent colorProp={color} {...rest} />
-  );
+  return <StyledComponent colorProp={color} {...rest} />;
 };
 
 Text.defaultProps = {
@@ -30,8 +28,6 @@ let TextDoc;
 if (process.env.NODE_ENV !== 'production') {
   TextDoc = require('./doc').doc(Text); // eslint-disable-line global-require
 }
-const TextWrapper = compose(
-  withTheme,
-)(TextDoc || Text);
+const TextWrapper = compose(withTheme)(TextDoc || Text);
 
 export { TextWrapper as Text };

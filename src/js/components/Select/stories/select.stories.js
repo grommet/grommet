@@ -5,63 +5,53 @@ import { storiesOf } from '@storybook/react';
 
 import { FormClose } from 'grommet-icons';
 
-import {
-  Box,
-  Button,
-  CheckBox,
-  Grommet,
-  Select,
-  Text,
-} from 'grommet';
+import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
 import { theme as customSearchTheme } from './theme';
 import { SearchInputContext } from './components/SearchInputContext';
 
-const customRoundedTheme = deepMerge(
-  grommet,
-  {
-    global: {
-      control: {
-        border: {
-          radius: '24px',
-        },
-      },
-      input: {
-        weight: 400,
-      },
-      font: {
-        size: '12px',
+const customRoundedTheme = deepMerge(grommet, {
+  global: {
+    control: {
+      border: {
+        radius: '24px',
       },
     },
-    text: {
-      medium: '13px',
+    input: {
+      weight: 400,
     },
-    textInput: {
-      extend: 'padding: 0 12px;',
+    font: {
+      size: '12px',
     },
-    select: {
-      control: {
-        extend: 'padding: 3px 6px;',
-      },
+  },
+  text: {
+    medium: '13px',
+  },
+  textInput: {
+    extend: 'padding: 0 12px;',
+  },
+  select: {
+    control: {
+      extend: 'padding: 3px 6px;',
     },
-  }
-);
+  },
+});
 
 class SimpleSelect extends Component {
   static propTypes = {
     theme: PropTypes.shape({}),
-  }
+  };
 
   static defaultProps = {
     theme: undefined,
-  }
+  };
 
   state = {
     options: ['one', 'two'],
     value: '',
-  }
+  };
 
   render() {
     const { theme } = this.props;
@@ -69,9 +59,9 @@ class SimpleSelect extends Component {
     return (
       <Grommet theme={theme || grommet}>
         <Select
-          id='select'
-          name='select'
-          placeholder='Select'
+          id="select"
+          name="select"
+          placeholder="Select"
           value={value}
           options={options}
           onChange={({ option }) => this.setState({ value: option })}
@@ -88,22 +78,24 @@ class SearchSelect extends Component {
   state = {
     options: DEFAULT_OPTIONS,
     value: '',
-  }
+  };
 
   render() {
     const { options, value } = this.state;
     return (
       <Grommet theme={grommet}>
         <Select
-          size='medium'
-          placeholder='Select'
+          size="medium"
+          placeholder="Select"
           value={value}
           options={options}
           onChange={({ option }) => this.setState({ value: option })}
           onClose={() => this.setState({ options: DEFAULT_OPTIONS })}
-          onSearch={(text) => {
+          onSearch={text => {
             const exp = new RegExp(text, 'i');
-            this.setState({ options: DEFAULT_OPTIONS.filter(o => exp.test(o)) });
+            this.setState({
+              options: DEFAULT_OPTIONS.filter(o => exp.test(o)),
+            });
           }}
         />
       </Grommet>
@@ -111,29 +103,38 @@ class SearchSelect extends Component {
   }
 }
 
-const allSeasons = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10'];
+const allSeasons = [
+  'S01',
+  'S02',
+  'S03',
+  'S04',
+  'S05',
+  'S06',
+  'S07',
+  'S08',
+  'S09',
+  'S10',
+];
 
 class SeasonsSelect extends Component {
   state = {
     selectedSeasons: [],
   };
 
-  onRemoveSeason = (season) => {
+  onRemoveSeason = season => {
     const { selectedSeasons } = this.state;
     const newSeasons = [...selectedSeasons];
-    newSeasons.splice(
-      selectedSeasons.indexOf(season), 1
-    );
+    newSeasons.splice(selectedSeasons.indexOf(season), 1);
     this.setState({
       selectedSeasons: newSeasons,
     });
-  }
+  };
 
   renderSeason = season => (
     <Button
       key={`season_tag_${season}`}
-      href='#'
-      onClick={(event) => {
+      href="#"
+      onClick={event => {
         event.preventDefault();
         event.stopPropagation();
         this.onRemoveSeason(season);
@@ -141,19 +142,21 @@ class SeasonsSelect extends Component {
       onFocus={event => event.stopPropagation()}
     >
       <Box
-        align='center'
-        direction='row'
-        gap='xsmall'
+        align="center"
+        direction="row"
+        gap="xsmall"
         pad={{ vertical: 'xsmall', horizontal: 'small' }}
-        margin='xsmall'
-        background='accent-1'
-        round='large'
+        margin="xsmall"
+        background="accent-1"
+        round="large"
       >
-        <Text size='small' color='white'>{season}</Text>
-        <Box background='white' round='full' margin={{ left: 'xsmall' }}>
+        <Text size="small" color="white">
+          {season}
+        </Text>
+        <Box background="white" round="full" margin={{ left: 'xsmall' }}>
           <FormClose
-            color='accent-1'
-            size='small'
+            color="accent-1"
+            size="small"
             style={{ width: '12px', height: '12px' }}
           />
         </Box>
@@ -161,38 +164,36 @@ class SeasonsSelect extends Component {
     </Button>
   );
 
-  renderOption = (option) => {
+  renderOption = option => {
     const { selectedSeasons } = this.state;
     return (
       <Box
-        pad='small'
-        background={
-          selectedSeasons.indexOf(option) >= 0 ? 'active' : undefined
-        }
+        pad="small"
+        background={selectedSeasons.indexOf(option) >= 0 ? 'active' : undefined}
       >
         {option}
       </Box>
     );
-  }
+  };
 
   render() {
     const { selectedSeasons } = this.state;
     return (
       <Grommet theme={grommet}>
-        <Box direction='row'>
-          <Box align='start' basis='medium' direction='row'>
+        <Box direction="row">
+          <Box align="start" basis="medium" direction="row">
             <Select
-              size='medium'
-              placeholder='Select Season'
+              size="medium"
+              placeholder="Select Season"
               multiple
               value={
-                selectedSeasons && selectedSeasons.length
-                  ? (
-                    <Box wrap direction='row' style={{ width: '208px' }}>
-                      {selectedSeasons.map(this.renderSeason)}
-                    </Box>
-                  )
-                  : undefined
+                selectedSeasons && selectedSeasons.length ? (
+                  <Box wrap direction="row" style={{ width: '208px' }}>
+                    {selectedSeasons.map(this.renderSeason)}
+                  </Box>
+                ) : (
+                  undefined
+                )
               }
               options={allSeasons}
               onChange={({ option }) => {
@@ -273,57 +274,55 @@ class CustomSearchSelect extends Component {
     searching: false,
   };
 
-  selectRef = createRef()
+  selectRef = createRef();
 
-  clearContentPartners = () => this.setState({ selectedContentPartners: [] })
+  clearContentPartners = () => this.setState({ selectedContentPartners: [] });
 
   renderOption = ({ name }) => {
     const { selectedContentPartners } = this.state;
     return (
-      <Box direction='row' align='center' pad='small' flex={false}>
+      <Box direction="row" align="center" pad="small" flex={false}>
         <CheckBox
-          tabIndex='-1'
+          tabIndex="-1"
           checked={selectedContentPartners.some(
-            partner => partner.name === name
+            partner => partner.name === name,
           )}
-          label={<Text size='small'>{name}</Text>}
+          label={<Text size="small">{name}</Text>}
           onChange={() => {}}
         />
       </Box>
     );
-  }
+  };
 
   renderContentPartners = () => {
     const { selectedContentPartners } = this.state;
     return (
       <Box
-        direction='row'
-        gap='xsmall'
+        direction="row"
+        gap="xsmall"
         pad={{ left: 'small', vertical: 'small' }}
-        align='center'
+        align="center"
         flex
       >
         <Box
-          background='brand'
-          round='medium'
-          align='center'
-          justify='center'
+          background="brand"
+          round="medium"
+          align="center"
+          justify="center"
           pad={{ horizontal: 'xsmall' }}
           style={{ minWidth: '21px' }}
         >
-          <Text size='small'>
-            {selectedContentPartners.length}
-          </Text>
+          <Text size="small">{selectedContentPartners.length}</Text>
         </Box>
         <Box flex>
-          <Text size='small' truncate>
+          <Text size="small" truncate>
             {selectedContentPartners.map(({ name }) => name).join(', ')}
           </Text>
         </Box>
         <Button
-          href='#'
+          href="#"
           onFocus={event => event.stopPropagation()}
-          onClick={(event) => {
+          onClick={event => {
             event.preventDefault();
             event.stopPropagation();
             this.clearContentPartners();
@@ -331,38 +330,42 @@ class CustomSearchSelect extends Component {
             findDOMNode(this.selectRef.current).focus();
           }}
         >
-          <Box background='gray' round='full'>
+          <Box background="gray" round="full">
             <FormClose style={{ width: '12px', height: '12px' }} />
           </Box>
         </Button>
       </Box>
     );
-  }
+  };
 
   render() {
-    const {
-      contentPartners, searching, selectedContentPartners,
-    } = this.state;
+    const { contentPartners, searching, selectedContentPartners } = this.state;
 
-    const selectedPartnerNames = selectedContentPartners.map(({ name }) => name);
+    const selectedPartnerNames = selectedContentPartners.map(
+      ({ name }) => name,
+    );
 
     return (
       <Grommet theme={customSearchTheme}>
-        <Box align='start' width='medium' direction='row'>
+        <Box align="start" width="medium" direction="row">
           <SearchInputContext.Provider value={{ searching }}>
             <Select
               ref={this.selectRef}
               closeOnChange={false}
-              placeholder='Select Content Partners'
-              searchPlaceholder='Search Content Partners'
+              placeholder="Select Content Partners"
+              searchPlaceholder="Search Content Partners"
               multiple
-              value={selectedContentPartners.length ? this.renderContentPartners() : undefined}
+              value={
+                selectedContentPartners.length
+                  ? this.renderContentPartners()
+                  : undefined
+              }
               options={contentPartners}
               onChange={({ option }) => {
                 const newSelectedPartners = [...selectedContentPartners];
-                const seasonIndex = newSelectedPartners.map(
-                  ({ name }) => name
-                ).indexOf(option.name);
+                const seasonIndex = newSelectedPartners
+                  .map(({ name }) => name)
+                  .indexOf(option.name);
                 if (seasonIndex >= 0) {
                   newSelectedPartners.splice(seasonIndex, 1);
                 } else {
@@ -370,39 +373,39 @@ class CustomSearchSelect extends Component {
                 }
                 this.setState({ selectedContentPartners: newSelectedPartners });
               }}
-              onClose={() => this.setState({
-                contentPartners: allContentPartners.sort((p1, p2) => {
-                  const p1Exists = selectedPartnerNames.includes(p1.name);
-                  const p2Exists = selectedPartnerNames.includes(p2.name);
+              onClose={() =>
+                this.setState({
+                  contentPartners: allContentPartners.sort((p1, p2) => {
+                    const p1Exists = selectedPartnerNames.includes(p1.name);
+                    const p2Exists = selectedPartnerNames.includes(p2.name);
 
-                  if (!p1Exists && p2Exists) {
+                    if (!p1Exists && p2Exists) {
+                      return 1;
+                    }
+                    if (p1Exists && !p2Exists) {
+                      return -1;
+                    }
+                    if (p1.name.toLowerCase() < p2.name.toLowerCase()) {
+                      return -1;
+                    }
                     return 1;
-                  }
-                  if (p1Exists && !p2Exists) {
-                    return -1;
-                  }
-                  if (p1.name.toLowerCase() < p2.name.toLowerCase()) {
-                    return -1;
-                  }
-                  return 1;
-                }),
-              })}
-              onSearch={
-                (query) => {
-                  this.setState({ searching: true }, () => {
-                    setTimeout(() => {
-                      this.setState(
-                        {
-                          searching: false,
-                          contentPartners: allContentPartners.filter(
-                            s => s.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
-                          ),
-                        }
-                      );
-                    }, 500);
-                  });
-                }
+                  }),
+                })
               }
+              onSearch={query => {
+                this.setState({ searching: true }, () => {
+                  setTimeout(() => {
+                    this.setState({
+                      searching: false,
+                      contentPartners: allContentPartners.filter(
+                        s =>
+                          s.name.toLowerCase().indexOf(query.toLowerCase()) >=
+                          0,
+                      ),
+                    });
+                  }, 500);
+                });
+              }}
             >
               {this.renderOption}
             </Select>
@@ -417,15 +420,15 @@ class DarkSelect extends Component {
   state = {
     options: ['one', 'two'],
     value: '',
-  }
+  };
 
   render() {
     const { options, value } = this.state;
     return (
       <Grommet full theme={grommet} {...this.props}>
-        <Box fill background='dark-1' align='center' justify='center'>
+        <Box fill background="dark-1" align="center" justify="center">
           <Select
-            placeholder='Select'
+            placeholder="Select"
             value={value}
             options={options}
             onChange={({ option }) => this.setState({ value: option })}
@@ -443,8 +446,11 @@ storiesOf('Select', module)
   .add('Custom Search', () => <CustomSearchSelect />)
   .add('Dark', () => <DarkSelect />)
   .add('Custom Colors', () => (
-    <DarkSelect theme={{ global: { font: { family: 'Arial' } }, select: { background: '#000000', iconColor: '#d3d3d3' } }} />
+    <DarkSelect
+      theme={{
+        global: { font: { family: 'Arial' } },
+        select: { background: '#000000', iconColor: '#d3d3d3' },
+      }}
+    />
   ))
-  .add('Custom Rounded', () => (
-    <SimpleSelect theme={customRoundedTheme} />
-  ));
+  .add('Custom Rounded', () => <SimpleSelect theme={customRoundedTheme} />);

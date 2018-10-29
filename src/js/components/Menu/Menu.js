@@ -19,7 +19,7 @@ const ContainerBox = styled(Box)`
     width: 100%;
   }
 
-  ${props => props.theme.menu.extend}
+  ${props => props.theme.menu.extend};
 `;
 
 class Menu extends Component {
@@ -29,18 +29,18 @@ class Menu extends Component {
     messages: { openMenu: 'Open Menu', closeMenu: 'Close Menu' },
   };
 
-  state = { activeItemIndex: -1, open: false }
+  state = { activeItemIndex: -1, open: false };
 
-  buttonRefs = {}
+  buttonRefs = {};
 
   onDropClose = () => {
     this.setState({
       activeItemIndex: -1,
       open: false,
     });
-  }
+  };
 
-  onSelectMenuItem = (event) => {
+  onSelectMenuItem = event => {
     const { activeItemIndex } = this.state;
     if (activeItemIndex >= 0) {
       event.preventDefault();
@@ -48,9 +48,9 @@ class Menu extends Component {
       /* eslint-disable react/no-find-dom-node */
       findDOMNode(this.buttonRefs[activeItemIndex]).click();
     }
-  }
+  };
 
-  onNextMenuItem = (event) => {
+  onNextMenuItem = event => {
     event.preventDefault();
     const { activeItemIndex, open } = this.state;
     if (!open) {
@@ -65,9 +65,9 @@ class Menu extends Component {
       // this.setState({ activeSuggestionIndex: index },
       //   this._announceSuggestion.bind(this, index));
     }
-  }
+  };
 
-  onPreviousMenuItem = (event) => {
+  onPreviousMenuItem = event => {
     event.preventDefault();
     const { activeItemIndex, open } = this.state;
     if (!open) {
@@ -77,14 +77,15 @@ class Menu extends Component {
       });
     } else {
       const { items } = this.props;
-      const index = (activeItemIndex === -1
-        ? (items.length - 1)
-        : Math.max(activeItemIndex - 1, 0));
+      const index =
+        activeItemIndex === -1
+          ? items.length - 1
+          : Math.max(activeItemIndex - 1, 0);
       this.setState({ activeItemIndex: index });
       // this.setState({ activeSuggestionIndex: index },
       //   this._announceSuggestion.bind(this, index));
     }
-  }
+  };
 
   render() {
     const {
@@ -110,15 +111,17 @@ class Menu extends Component {
 
     const content = children || (
       <Box
-        direction='row'
-        justify='start'
-        align='center'
-        pad='small'
-        gap={(label && icon !== false) ? 'small' : undefined}
+        direction="row"
+        justify="start"
+        align="center"
+        pad="small"
+        gap={label && icon !== false ? 'small' : undefined}
       >
         <Text size={size}>{label}</Text>
-        {(icon !== false)
-          ? ((icon !== true && icon) || <MenuIcon color={iconColor} size={size} />)
+        {icon !== false
+          ? (icon !== true && icon) || (
+              <MenuIcon color={iconColor} size={size} />
+            )
           : null}
       </Box>
     );
@@ -155,43 +158,41 @@ class Menu extends Component {
           theme={theme}
           onOpen={() => this.setState({ open: true })}
           onClose={() => this.setState({ open: false })}
-          dropContent={(
+          dropContent={
             <ContainerBox
               theme={theme}
               background={dropBackground || theme.menu.background}
             >
               {dropAlign.top === 'top' ? controlMirror : undefined}
-              <Box overflow='auto'>
-                {items.map(
-                  (item, index) => (
-                    <Box key={`menuItem_${index + 0}`} flex={false}>
-                      <Button
-                        ref={(ref) => {
-                          this.buttonRefs[index] = ref;
-                        }}
-                        active={activeItemIndex === index}
-                        hoverIndicator='background'
-                        disabled={!item.onClick && !item.href}
-                        onClick={(...args) => {
-                          item.onClick(...args);
-                          if (item.close !== false) {
-                            this.onDropClose();
-                          }
-                        }}
-                        href={item.href}
-                      >
-                        <Box align='start' pad='small' direction='row'>
-                          {item.icon}
-                          {item.label}
-                        </Box>
-                      </Button>
-                    </Box>
-                  )
-                )}
+              <Box overflow="auto">
+                {items.map((item, index) => (
+                  <Box key={`menuItem_${index + 0}`} flex={false}>
+                    <Button
+                      ref={ref => {
+                        this.buttonRefs[index] = ref;
+                      }}
+                      active={activeItemIndex === index}
+                      hoverIndicator="background"
+                      disabled={!item.onClick && !item.href}
+                      onClick={(...args) => {
+                        item.onClick(...args);
+                        if (item.close !== false) {
+                          this.onDropClose();
+                        }
+                      }}
+                      href={item.href}
+                    >
+                      <Box align="start" pad="small" direction="row">
+                        {item.icon}
+                        {item.label}
+                      </Box>
+                    </Button>
+                  </Box>
+                ))}
               </Box>
-              {dropAlign.bottom === 'bottom' ? controlMirror : undefined }
+              {dropAlign.bottom === 'bottom' ? controlMirror : undefined}
             </ContainerBox>
-          )}
+          }
         >
           {content}
         </DropButton>

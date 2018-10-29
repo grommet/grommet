@@ -1,19 +1,24 @@
-export const filterByFocusable = elements => (
-  Array.prototype.filter.call(elements || [], (element) => {
+export const filterByFocusable = elements =>
+  Array.prototype.filter.call(elements || [], element => {
     const currentTag = element.tagName.toLowerCase();
     const validTags = /(svg|a|area|input|select|textarea|button|iframe|div)$/;
     const isValidTag = currentTag.match(validTags) && element.focus;
     if (currentTag === 'a') {
-      return isValidTag && element.childNodes.length > 0
-        && element.getAttribute('href');
+      return (
+        isValidTag &&
+        element.childNodes.length > 0 &&
+        element.getAttribute('href')
+      );
     }
     if (currentTag === 'svg' || currentTag === 'div') {
       return (
-        isValidTag && element.hasAttribute('tabindex') && element.getAttribute('tabindex') !== '-1'
+        isValidTag &&
+        element.hasAttribute('tabindex') &&
+        element.getAttribute('tabindex') !== '-1'
       );
     }
     return isValidTag;
-  }));
+  });
 
 export const findScrollParents = (element, horizontal) => {
   const result = [];
@@ -23,10 +28,10 @@ export const findScrollParents = (element, horizontal) => {
       const rect = parent.getBoundingClientRect();
       // 10px is to account for borders and scrollbars in a lazy way
       if (horizontal) {
-        if (rect.width && parent.scrollWidth > (rect.width + 10)) {
+        if (rect.width && parent.scrollWidth > rect.width + 10) {
           result.push(parent);
         }
-      } else if (rect.height && parent.scrollHeight > (rect.height + 10)) {
+      } else if (rect.height && parent.scrollHeight > rect.height + 10) {
         result.push(parent);
       }
       parent = parent.parentNode;
@@ -40,7 +45,7 @@ export const findScrollParents = (element, horizontal) => {
   return result;
 };
 
-export const getFirstFocusableDescendant = (element) => {
+export const getFirstFocusableDescendant = element => {
   const children = element.getElementsByTagName('*');
   for (let i = 0; i < children.length; i += 1) {
     const child = children[i];
@@ -55,7 +60,7 @@ export const getFirstFocusableDescendant = (element) => {
 export const getBodyChildElements = () => {
   const excludeMatch = /^(script|link)$/i;
   const children = [];
-  [].forEach.call(document.body.children, (node) => {
+  [].forEach.call(document.body.children, node => {
     if (!excludeMatch.test(node.tagName)) {
       children.push(node);
     }
@@ -70,24 +75,23 @@ export const getNewContainer = () => {
   return container;
 };
 
-export const setFocusWithoutScroll = (element) => {
+export const setFocusWithoutScroll = element => {
   const x = window.scrollX;
   const y = window.scrollY;
   element.focus();
   window.scrollTo(x, y);
 };
 
-export const setTabIndex = tabIndex => (element) => {
+export const setTabIndex = tabIndex => element => {
   element.setAttribute('tabindex', tabIndex);
 };
 
-export const copyAttribute = source => target => (element) => {
+export const copyAttribute = source => target => element => {
   element.setAttribute(target, element.getAttribute(source));
 };
 
-const deleteAttribute = attribute => element => (
-  element.removeAttribute(attribute)
-);
+const deleteAttribute = attribute => element =>
+  element.removeAttribute(attribute);
 
 const unsetTabIndex = setTabIndex(-1);
 const saveTabIndex = copyAttribute('tabindex')('data-g-tabindex');
@@ -95,14 +99,12 @@ const restoreTabIndex = copyAttribute('data-g-tabindex')('tabindex');
 const deleteTabIndex = deleteAttribute('tabindex');
 const deleteTabIndexCopy = deleteAttribute('data-g-tabindex');
 
-export const makeNodeFocusable = (node) => {
+export const makeNodeFocusable = node => {
   // do not touch aria live containers so that announcements work
   if (!node.hasAttribute('aria-live')) {
     node.setAttribute('aria-hidden', false);
     // allow children to receive focus again
-    filterByFocusable(
-      node.getElementsByTagName('*')
-    ).forEach((child) => {
+    filterByFocusable(node.getElementsByTagName('*')).forEach(child => {
       if (child.hasAttribute('data-g-tabindex')) {
         restoreTabIndex(child);
       } else {
@@ -113,14 +115,12 @@ export const makeNodeFocusable = (node) => {
   }
 };
 
-export const makeNodeUnfocusable = (node) => {
+export const makeNodeUnfocusable = node => {
   // do not touch aria live containers so that announcements work
   if (!node.hasAttribute('aria-live')) {
     node.setAttribute('aria-hidden', true);
     // prevent children to receive focus
-    filterByFocusable(
-      node.getElementsByTagName('*')
-    ).forEach((child) => {
+    filterByFocusable(node.getElementsByTagName('*')).forEach(child => {
       if (child.hasAttribute('tabindex')) {
         saveTabIndex(child);
       }
@@ -129,10 +129,11 @@ export const makeNodeUnfocusable = (node) => {
   }
 };
 
-export const findVisibleParent = (element) => {
+export const findVisibleParent = element => {
   if (element) {
     return element.offsetParent
-      ? element : findVisibleParent(element.parentElement) || element;
+      ? element
+      : findVisibleParent(element.parentElement) || element;
   }
   return undefined;
 };

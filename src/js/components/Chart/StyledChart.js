@@ -7,6 +7,5 @@ export const StyledChart = styled.svg`
   max-width: 100%;
   overflow: visible;
 
-  ${genericStyles}
-  ${props => props.theme.chart && props.theme.chart.extend}
+  ${genericStyles} ${props => props.theme.chart && props.theme.chart.extend};
 `;

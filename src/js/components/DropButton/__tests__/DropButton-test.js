@@ -15,9 +15,9 @@ describe('DropButton', () => {
   test('closed', () => {
     const component = renderer.create(
       <DropButton
-        label='Dropper'
-        dropContent={<div id='drop-contents'>drop contents</div>}
-      />
+        label="Dropper"
+        dropContent={<div id="drop-contents">drop contents</div>}
+      />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -25,10 +25,10 @@ describe('DropButton', () => {
   test('opened', () => {
     const component = renderer.create(
       <DropButton
-        label='Dropper'
+        label="Dropper"
         open
-        dropContent={<div id='drop-contents'>drop contents</div>}
-      />
+        dropContent={<div id="drop-contents">drop contents</div>}
+      />,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -37,9 +37,9 @@ describe('DropButton', () => {
     window.scrollTo = jest.fn();
     const { getByText, container } = render(
       <DropButton
-        label='Dropper'
-        dropContent={<div id='drop-contents'>Drop Contents</div>}
-      />
+        label="Dropper"
+        dropContent={<div id="drop-contents">Drop Contents</div>}
+      />,
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
@@ -52,12 +52,12 @@ describe('DropButton', () => {
     expect(window.scrollTo).toBeCalled();
   });
 
-  test('close by clicking outside', (done) => {
+  test('close by clicking outside', done => {
     const { getByText, container } = render(
       <DropButton
-        label='Dropper'
-        dropContent={<div id='drop-contents'>Drop Contents</div>}
-      />
+        label="Dropper"
+        dropContent={<div id="drop-contents">Drop Contents</div>}
+      />,
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
@@ -65,7 +65,10 @@ describe('DropButton', () => {
     fireEvent.click(getByText('Dropper'));
     expectPortal('drop-contents').toMatchSnapshot();
 
-    fireEvent(document, new MouseEvent('mousedown', { bubbles: true, cancelable: true }));
+    fireEvent(
+      document,
+      new MouseEvent('mousedown', { bubbles: true, cancelable: true }),
+    );
 
     setTimeout(() => {
       expect(document.getElementById('drop-contents')).toBeNull();
@@ -77,9 +80,9 @@ describe('DropButton', () => {
     const { getByText, container } = render(
       <DropButton
         disabled
-        label='Dropper'
-        dropContent={<div id='drop-contents'>Drop Contents</div>}
-      />
+        label="Dropper"
+        dropContent={<div id="drop-contents">Drop Contents</div>}
+      />,
     );
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('drop-contents')).toBeNull();
@@ -94,9 +97,9 @@ describe('DropButton', () => {
       <DropButton
         ref={ref}
         open
-        label='Dropper'
-        dropContent={<div id='drop-contents'>Drop Contents</div>}
-      />
+        label="Dropper"
+        dropContent={<div id="drop-contents">Drop Contents</div>}
+      />,
     );
     expect(container.firstChild).toMatchSnapshot();
     expectPortal('drop-contents').toMatchSnapshot();

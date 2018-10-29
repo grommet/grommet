@@ -39,24 +39,33 @@ class Carousel extends Component {
       const { activeIndex } = this.state;
       const lastIndex = Children.count(children) - 1;
       if (activeIndex < lastIndex) {
-        this.setState({ activeIndex: activeIndex + 1, priorActiveIndex: activeIndex });
+        this.setState({
+          activeIndex: activeIndex + 1,
+          priorActiveIndex: activeIndex,
+        });
       } else {
         this.setState({ activeIndex: 0, priorActiveIndex: activeIndex });
       }
     }, play);
-  }
+  };
 
   onRight = () => {
     const { activeIndex } = this.state;
     clearInterval(this.timer);
-    this.setState({ activeIndex: activeIndex + 1, priorActiveIndex: activeIndex });
-  }
+    this.setState({
+      activeIndex: activeIndex + 1,
+      priorActiveIndex: activeIndex,
+    });
+  };
 
   onLeft = () => {
     const { activeIndex } = this.state;
     clearInterval(this.timer);
-    this.setState({ activeIndex: activeIndex - 1, priorActiveIndex: activeIndex });
-  }
+    this.setState({
+      activeIndex: activeIndex - 1,
+      priorActiveIndex: activeIndex,
+    });
+  };
 
   onSelect = index => () => {
     const { activeIndex } = this.state;
@@ -65,37 +74,38 @@ class Carousel extends Component {
   };
 
   render() {
-    const {
-      children, fill, focus, theme, ...rest
-    } = this.props;
+    const { children, fill, focus, theme, ...rest } = this.props;
     const { activeIndex, priorActiveIndex } = this.state;
 
     const lastIndex = Children.count(children) - 1;
-    const onLeft = (activeIndex > 0 ? this.onLeft : undefined);
-    const onRight = (activeIndex < lastIndex ? this.onRight : undefined);
+    const onLeft = activeIndex > 0 ? this.onLeft : undefined;
+    const onRight = activeIndex < lastIndex ? this.onRight : undefined;
 
     const CurrentIcon = theme.carousel.icons.current;
-    const iconColor = normalizeColor(theme.carousel.icons.color || 'control', theme);
+    const iconColor = normalizeColor(
+      theme.carousel.icons.color || 'control',
+      theme,
+    );
 
     const selectors = [];
     const wrappedChildren = Children.map(children, (child, index) => {
-      selectors.push((
+      selectors.push(
         <Button
           key={index}
-          icon={(
+          icon={
             <CurrentIcon
               color={activeIndex === index ? iconColor : undefined}
             />
-          )}
+          }
           onClick={this.onSelect(index)}
-        />
-      ));
+        />,
+      );
 
       let animation;
       if (index === activeIndex) {
         if (priorActiveIndex !== undefined) {
           animation = {
-            type: (priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight'),
+            type: priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
             size: 'xlarge',
           };
         }
@@ -106,10 +116,8 @@ class Carousel extends Component {
       }
 
       return (
-        <Box overflow='hidden'>
-          <Box animation={animation}>
-            {child}
-          </Box>
+        <Box overflow="hidden">
+          <Box animation={animation}>{child}</Box>
         </Box>
       );
     });
@@ -121,32 +129,38 @@ class Carousel extends Component {
       <Keyboard onLeft={onLeft} onRight={onRight}>
         <Stack guidingChild={activeIndex} fill={fill} {...rest}>
           {wrappedChildren}
-          <Box tabIndex='0' focus={focus} fill direction='row' justify='between'>
-            <Box fill='vertical'>
+          <Box
+            tabIndex="0"
+            focus={focus}
+            fill
+            direction="row"
+            justify="between"
+          >
+            <Box fill="vertical">
               <Button
                 fill
                 disabled={activeIndex <= 0}
                 onClick={onLeft}
                 hoverIndicator
               >
-                <Box justify='center'>
+                <Box justify="center">
                   <PreviousIcon />
                 </Box>
               </Button>
             </Box>
-            <Box justify='end'>
-              <Box direction='row' justify='center'>
+            <Box justify="end">
+              <Box direction="row" justify="center">
                 {selectors}
               </Box>
             </Box>
-            <Box fill='vertical'>
+            <Box fill="vertical">
               <Button
                 fill
                 disabled={activeIndex >= lastIndex}
                 onClick={onRight}
                 hoverIndicator
               >
-                <Box justify='center'>
+                <Box justify="center">
                   <NextIcon />
                 </Box>
               </Button>

@@ -6,11 +6,13 @@ import { withTheme } from '../hocs';
 import { Bar } from './Bar';
 import { Circle } from './Circle';
 
-const deriveMax = (values) => {
+const deriveMax = values => {
   let max = 100;
   if (values && values.length > 1) {
     max = 0;
-    values.forEach((v) => { max += v.value; });
+    values.forEach(v => {
+      max += v.value;
+    });
   }
   return max;
 };
@@ -32,7 +34,7 @@ class Meter extends Component {
     return null;
   }
 
-  state = {}
+  state = {};
 
   render() {
     const { type, ...rest } = this.props;
@@ -53,8 +55,6 @@ let MeterDoc;
 if (process.env.NODE_ENV !== 'production') {
   MeterDoc = require('./doc').doc(Meter); // eslint-disable-line global-require
 }
-const MeterWrapper = compose(
-  withTheme,
-)(MeterDoc || Meter);
+const MeterWrapper = compose(withTheme)(MeterDoc || Meter);
 
 export { MeterWrapper as Meter };

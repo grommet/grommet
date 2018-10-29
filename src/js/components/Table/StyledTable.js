@@ -12,8 +12,10 @@ const SIZE_MAP = {
 };
 
 const sizeStyle = css`
-  width: ${props => SIZE_MAP[props.size] || props.theme.global.size[props.size]};
-  max-width: ${props => SIZE_MAP[props.size] || props.theme.global.size[props.size]};
+  width: ${props =>
+    SIZE_MAP[props.size] || props.theme.global.size[props.size]};
+  max-width: ${props =>
+    SIZE_MAP[props.size] || props.theme.global.size[props.size]};
   overflow: hidden;
 `;
 
@@ -37,19 +39,15 @@ export const StyledTableRow = styled.tr`
   height: 100%;
 `;
 
-export const StyledTableBody = styled.tbody`
-`;
+export const StyledTableBody = styled.tbody``;
 
-export const StyledTableHeader = styled.thead`
-`;
+export const StyledTableHeader = styled.thead``;
 
-export const StyledTableFooter = styled.tfoot`
-`;
+export const StyledTableFooter = styled.tfoot``;
 
 export const StyledTable = styled.table`
   border-spacing: 0;
   border-collapse: collapse;
 
-  ${genericStyles}
-  ${props => props.theme.table && props.theme.table.extend}
+  ${genericStyles} ${props => props.theme.table && props.theme.table.extend};
 `;

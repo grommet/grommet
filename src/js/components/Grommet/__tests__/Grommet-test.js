@@ -12,7 +12,7 @@ import { AnnounceContext } from '../../../contexts';
 class TestAnnouncer extends Component {
   static propTypes = {
     announce: PropTypes.func.isRequired,
-  }
+  };
 
   componentDidMount() {
     const { announce } = this.props;
@@ -28,33 +28,29 @@ describe('Grommet', () => {
   afterEach(cleanup);
 
   test('basic', () => {
-    const component = renderer.create(
-      <Grommet />
-    );
+    const component = renderer.create(<Grommet />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('hpe theme', () => {
     const component = renderer.create(
-      <Grommet theme={hpeTheme}>Grommet App</Grommet>
+      <Grommet theme={hpeTheme}>Grommet App</Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('full', () => {
-    const component = renderer.create(
-      <Grommet full>Grommet App</Grommet>
-    );
+    const component = renderer.create(<Grommet full>Grommet App</Grommet>);
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test('announce', (done) => {
+  test('announce', done => {
     const { container } = render(
       <Grommet>
         <AnnounceContext.Consumer>
           {announce => <TestAnnouncer announce={announce} />}
         </AnnounceContext.Consumer>
-      </Grommet>
+      </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
 

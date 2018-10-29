@@ -13,7 +13,7 @@ class Tabs extends Component {
       tabContents: 'Tab Contents',
     },
     responsive: true,
-  }
+  };
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { activeIndex } = nextProps;
@@ -24,9 +24,9 @@ class Tabs extends Component {
     return { activeIndex: stateActiveIndex || 0 };
   }
 
-  state = {}
+  state = {};
 
-  activateTab = (index) => {
+  activateTab = index => {
     const { activeIndex, onActive } = this.props;
     if (activeIndex === undefined) {
       this.setState({ activeIndex: index });
@@ -34,7 +34,7 @@ class Tabs extends Component {
     if (onActive) {
       onActive(index);
     }
-  }
+  };
 
   render() {
     const {
@@ -50,34 +50,38 @@ class Tabs extends Component {
 
     let activeContent;
     let activeTitle;
-    const tabs = Children.map(children, (tab, index) => {
-      if (!tab) return undefined;
+    const tabs = Children.map(
+      children,
+      (tab, index) => {
+        if (!tab) return undefined;
 
-      const tabProps = tab.props || {};
+        const tabProps = tab.props || {};
 
-      const isTabActive = index === activeIndex;
+        const isTabActive = index === activeIndex;
 
-      if (isTabActive) {
-        activeContent = tabProps.children;
-        if (typeof tabProps.title === 'string') {
-          activeTitle = tabProps.title;
-        } else {
-          activeTitle = index + 1;
+        if (isTabActive) {
+          activeContent = tabProps.children;
+          if (typeof tabProps.title === 'string') {
+            activeTitle = tabProps.title;
+          } else {
+            activeTitle = index + 1;
+          }
         }
-      }
 
-      return cloneElement(tab, {
-        active: isTabActive,
-        onActivate: () => this.activateTab(index),
-      });
-    }, this);
+        return cloneElement(tab, {
+          active: isTabActive,
+          onActivate: () => this.activateTab(index),
+        });
+      },
+      this,
+    );
 
     const tabContentTitle = `${activeTitle || ''} ${tabContents}`;
 
     return (
       <StyledTabs
         as={Box}
-        role='tablist'
+        role="tablist"
         {...rest}
         background={theme.tabs.background}
         theme={theme}
@@ -85,7 +89,7 @@ class Tabs extends Component {
         <StyledTabsHeader
           theme={theme}
           as={Box}
-          direction='row'
+          direction="row"
           justify={justify}
           wrap
           background={theme.tabs.header.background}
@@ -93,7 +97,7 @@ class Tabs extends Component {
         >
           {tabs}
         </StyledTabsHeader>
-        <div aria-label={tabContentTitle} role='tabpanel'>
+        <div aria-label={tabContentTitle} role="tabpanel">
           {activeContent}
         </div>
       </StyledTabs>
@@ -105,8 +109,6 @@ let TabsDoc;
 if (process.env.NODE_ENV !== 'production') {
   TabsDoc = require('./doc').doc(Tabs); // eslint-disable-line global-require
 }
-const TabsWrapper = compose(
-  withTheme,
-)(TabsDoc || Tabs);
+const TabsWrapper = compose(withTheme)(TabsDoc || Tabs);
 
 export { TabsWrapper as Tabs };

@@ -5,19 +5,33 @@ import 'jest-styled-components';
 import { hpe } from 'grommet-theme-hpe';
 import { Add } from 'grommet-icons';
 
-import {
-  Grommet, Anchor, Box, Text,
-} from '../../components';
+import { Grommet, Anchor, Box, Text } from '../../components';
 import { dark } from '..';
 
 const colors = [
-  'accent-1', 'accent-2', 'accent-3',
+  'accent-1',
+  'accent-2',
+  'accent-3',
   'brand',
-  'dark-1', 'dark-2', 'dark-3', 'dark-4', 'dark-5',
+  'dark-1',
+  'dark-2',
+  'dark-3',
+  'dark-4',
+  'dark-5',
   'focus',
-  'light-1', 'light-2', 'light-3', 'light-4', 'light-5',
-  'neutral-1', 'neutral-2', 'neutral-3',
-  'status-critical', 'status-disabled', 'status-ok', 'status-unknown', 'status-warning',
+  'light-1',
+  'light-2',
+  'light-3',
+  'light-4',
+  'light-5',
+  'neutral-1',
+  'neutral-2',
+  'neutral-3',
+  'status-critical',
+  'status-disabled',
+  'status-ok',
+  'status-unknown',
+  'status-warning',
 ];
 
 const customTheme = {
@@ -37,7 +51,7 @@ describe('Grommet', () => {
             <Text>{color}</Text>
           </Box>
         ))}
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -51,7 +65,7 @@ describe('Grommet', () => {
             <Text>{color}</Text>
           </Box>
         ))}
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -65,7 +79,7 @@ describe('Grommet', () => {
             <Text>{color}</Text>
           </Box>
         ))}
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -75,14 +89,14 @@ describe('Grommet', () => {
     const component = renderer.create(
       <Grommet theme={customTheme}>
         <Box>
-          <Anchor icon={<Add />} label='Add' />
-          <Anchor icon={<Add />} label='Add' color='custom' />
+          <Anchor icon={<Add />} label="Add" />
+          <Anchor icon={<Add />} label="Add" color="custom" />
         </Box>
-        <Box background='dark-1'>
-          <Anchor icon={<Add />} label='Add' />
-          <Anchor icon={<Add />} label='Add' color='custom' />
+        <Box background="dark-1">
+          <Anchor icon={<Add />} label="Add" />
+          <Anchor icon={<Add />} label="Add" color="custom" />
         </Box>
-      </Grommet>
+      </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

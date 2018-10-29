@@ -4,7 +4,7 @@ import { TableContext } from '../Table/TableContext';
 import { StyledTableHeader } from '../Table/StyledTable';
 
 const TableHeader = props => (
-  <TableContext.Provider value='header'>
+  <TableContext.Provider value="header">
     <StyledTableHeader {...props} />
   </TableContext.Provider>
 );

@@ -1,4 +1,3 @@
-
 export const debounce = (cb, timer) => {
   let timeout;
   return (...args) => {

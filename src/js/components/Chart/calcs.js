@@ -8,7 +8,7 @@ export const calcs = (values, options = {}) => {
   // Calculate the max and min y values.
   let min = calcValues[0].value[1];
   let max = min;
-  calcValues.forEach((value) => {
+  calcValues.forEach(value => {
     const y = value.value[1];
     min = Math.min(min, y);
     max = Math.max(max, y);
@@ -19,10 +19,12 @@ export const calcs = (values, options = {}) => {
   // graph axis edge label.
   const delta = max - min;
   const interval = Number.parseFloat((delta / coarseness).toPrecision(1));
-  max = (max - (max % interval)) + interval;
-  min -= (min % interval);
-  const bounds = (
-    [[calcValues[0].value[0], calcValues[calcValues.length - 1].value[0]], [min, max]]);
+  max = max - (max % interval) + interval;
+  min -= min % interval;
+  const bounds = [
+    [calcValues[0].value[0], calcValues[calcValues.length - 1].value[0]],
+    [min, max],
+  ];
   const dimensions = [bounds[0][1] - bounds[0][0], bounds[1][1] - bounds[1][0]];
 
   // Calculate x and y axis values across the specfied number of steps.
@@ -42,5 +44,5 @@ export const calcs = (values, options = {}) => {
     x += xStepInterval;
   }
 
-  return ({ axis: [xAxis, yAxis], bounds, dimensions });
+  return { axis: [xAxis, yAxis], bounds, dimensions };
 };

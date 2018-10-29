@@ -6,11 +6,11 @@ import { Button } from '../Button';
 class RoutedButton extends Component {
   static contextTypes = {
     router: PropTypes.shape({}).isRequired,
-  }
+  };
 
   static defaultProps = {
     method: 'push',
-  }
+  };
 
   onClick = (event, ...args) => {
     const { method, onClick, path } = this.props;
@@ -30,12 +30,10 @@ class RoutedButton extends Component {
     if (onClick) {
       onClick(event, ...args);
     }
-  }
+  };
 
   render() {
-    const {
-      href, path, method, onClick, ...rest
-    } = this.props;
+    const { href, path, method, onClick, ...rest } = this.props;
     return (
       <Button
         {...rest}

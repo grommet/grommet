@@ -13,21 +13,18 @@ const plainStyle = css`
 `;
 
 export const StyledTextArea = styled.textarea`
-  ${inputStyle}
-  width: 100%;
+  ${inputStyle} width: 100%;
 
-  ${props => props.plain && plainStyle}
-
-  &::-webkit-input-placeholder {
-    ${placeholderColor}
+  ${props => props.plain && plainStyle} &::-webkit-input-placeholder {
+    ${placeholderColor};
   }
 
   &::-moz-placeholder {
-    ${placeholderColor}
+    ${placeholderColor};
   }
 
   &:-ms-input-placeholder {
-    ${placeholderColor}
+    ${placeholderColor};
   }
 
   &::-moz-focus-inner {
@@ -36,8 +33,8 @@ export const StyledTextArea = styled.textarea`
   }
 
   &:focus {
-    ${props => (!props.plain || props.focusIndicator) && focusStyle}
+    ${props => (!props.plain || props.focusIndicator) && focusStyle};
   }
 
-  ${props => props.theme.textArea && props.theme.textArea.extend}
+  ${props => props.theme.textArea && props.theme.textArea.extend};
 `;

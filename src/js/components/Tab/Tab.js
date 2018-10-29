@@ -19,31 +19,31 @@ class Tab extends Component {
     return null;
   }
 
-  state = {}
+  state = {};
 
-  onMouseOver = (event) => {
+  onMouseOver = event => {
     const { onMouseOver } = this.props;
     this.setState({ over: true });
     if (onMouseOver) {
       onMouseOver(event);
     }
-  }
+  };
 
-  onMouseOut = (event) => {
+  onMouseOut = event => {
     const { onMouseOut } = this.props;
     this.setState({ over: undefined });
     if (onMouseOut) {
       onMouseOut(event);
     }
-  }
+  };
 
-  onClickTab = (event) => {
+  onClickTab = event => {
     const { onActivate } = this.props;
     if (event) {
       event.preventDefault();
     }
     onActivate();
-  }
+  };
 
   render() {
     const {
@@ -80,7 +80,10 @@ class Tab extends Component {
         } else if (over) {
           borderColor = normalizeColor(theme.tab.border.hover.color, theme);
         } else {
-          borderColor = normalizeColor(theme.global.control.border.color, theme);
+          borderColor = normalizeColor(
+            theme.global.control.border.color,
+            theme,
+          );
         }
 
         tabStyles.border = {
@@ -90,9 +93,9 @@ class Tab extends Component {
         };
       }
 
-      tabStyles.background = active ? (
-        theme.tab.active.background || theme.tab.background
-      ) : theme.tab.background;
+      tabStyles.background = active
+        ? theme.tab.active.background || theme.tab.background
+        : theme.tab.background;
       tabStyles.pad = theme.tab.pad;
       tabStyles.margin = theme.tab.margin;
     }
@@ -101,7 +104,7 @@ class Tab extends Component {
       <Button
         ref={forwardRef}
         plain
-        role='tab'
+        role="tab"
         aria-selected={active}
         aria-expanded={active}
         {...rest}
@@ -111,12 +114,7 @@ class Tab extends Component {
         onFocus={this.onMouseOver}
         onBlur={this.onMouseOut}
       >
-        <StyledTab
-          as={Box}
-          theme={theme}
-          plain={plain}
-          {...tabStyles}
-        >
+        <StyledTab as={Box} theme={theme} plain={plain} {...tabStyles}>
           {normalizedTitle}
         </StyledTab>
       </Button>

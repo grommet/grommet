@@ -6,7 +6,7 @@ const colorStyle = css`
   color: ${props => normalizeColor(props.colorProp, props.theme)};
 `;
 
-const sizeStyle = (props) => {
+const sizeStyle = props => {
   const size = props.size || 'medium';
   const data = props.theme.paragraph[size];
   return css`

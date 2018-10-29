@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import {
-  Grommet, Box, Button, Grid, Text,
-} from 'grommet';
+import { Grommet, Box, Button, Grid, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 class AppGrid extends Component {
-  state = { sidebar: true }
+  state = { sidebar: true };
 
   render() {
     const { sidebar } = this.state;
@@ -23,30 +21,30 @@ class AppGrid extends Component {
           ]}
         >
           <Box
-            gridArea='header'
-            direction='row'
-            align='center'
-            justify='between'
+            gridArea="header"
+            direction="row"
+            align="center"
+            justify="between"
             pad={{ horizontal: 'medium', vertical: 'small' }}
-            background='dark-2'
+            background="dark-2"
           >
             <Button onClick={() => this.setState({ sidebar: !sidebar })}>
-              <Text size='large'>Title</Text>
+              <Text size="large">Title</Text>
             </Button>
             <Text>my@email</Text>
           </Box>
           {sidebar && (
             <Box
-              gridArea='sidebar'
-              background='dark-5'
-              width='small'
+              gridArea="sidebar"
+              background="dark-5"
+              width="small"
               animation={[
                 { type: 'fadeIn', duration: 300 },
                 { type: 'slideRight', size: 'xlarge', duration: 150 },
               ]}
             >
               {['First', 'Second', 'Third'].map(name => (
-                <Button key={name} href='#' hoverIndicator>
+                <Button key={name} href="#" hoverIndicator>
                   <Box pad={{ horizontal: 'medium', vertical: 'small' }}>
                     <Text>{name}</Text>
                   </Box>
@@ -54,7 +52,7 @@ class AppGrid extends Component {
               ))}
             </Box>
           )}
-          <Box gridArea='main' justify='center' align='center'>
+          <Box gridArea="main" justify="center" align="center">
             <Text>main</Text>
           </Box>
         </Grid>
@@ -73,10 +71,10 @@ const Percentages = () => (
       ]}
       columns={['small', 'flex']}
       rows={['flex']}
-      gap='small'
+      gap="small"
     >
-      <Box gridArea='nav' background='brand' />
-      <Box gridArea='main' background='brand' />
+      <Box gridArea="nav" background="brand" />
+      <Box gridArea="main" background="brand" />
     </Grid>
   </Grommet>
 );
@@ -88,14 +86,14 @@ const NColumnGrid = () => (
         count: 6,
         size: 'auto',
       }}
-      gap='small'
+      gap="small"
     >
-      <Box background='brand'>Item 1</Box>
-      <Box background='brand'>Item 2</Box>
-      <Box background='brand'>Item 3</Box>
-      <Box background='brand'>Item 4</Box>
-      <Box background='brand'>Item 5</Box>
-      <Box background='brand'>Item 6</Box>
+      <Box background="brand">Item 1</Box>
+      <Box background="brand">Item 2</Box>
+      <Box background="brand">Item 3</Box>
+      <Box background="brand">Item 4</Box>
+      <Box background="brand">Item 5</Box>
+      <Box background="brand">Item 6</Box>
     </Grid>
   </Grommet>
 );

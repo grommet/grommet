@@ -15,12 +15,11 @@ const fitStyle = css`
 
 export const StyledVideo = styled.video`
   max-width: 100%;
-  ${props => props.fit && fitStyle}
-  ::cue {
+  ${props => props.fit && fitStyle} ::cue {
     background: ${props => props.theme.video.captions.background};
   }
 
-  ${props => props.theme.video && props.theme.video.extend}
+  ${props => props.theme.video && props.theme.video.extend};
 `;
 
 export const StyledVideoContainer = styled.div`
@@ -29,7 +28,7 @@ export const StyledVideoContainer = styled.div`
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  ${genericStyles}
+  ${genericStyles};
 `;
 
 const positionStyle = css`
@@ -41,10 +40,9 @@ const positionStyle = css`
 
 export const StyledVideoControls = styled.div`
   flex: 0 0;
-  ${props => props.over && positionStyle}
-  opacity: 0;
+  ${props => props.over && positionStyle} opacity: 0;
   transition: opacity 0.3s;
-  ${props => (props.active ? 'opacity: 1;' : 'pointer-events: none')}
+  ${props => (props.active ? 'opacity: 1;' : 'pointer-events: none')};
 `;
 
 const headStyle = css`
@@ -60,5 +58,5 @@ const headStyle = css`
 
 export const StyledVideoScrubber = styled.div`
   cursor: pointer;
-  ${props => props.value && headStyle}
+  ${props => props.value && headStyle};
 `;
