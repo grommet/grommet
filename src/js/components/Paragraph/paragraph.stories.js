@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Grommet, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const sizes = ['xlarge', 'large', 'medium', 'small'];
+const sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small'];
 
 const paragraphFiller = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

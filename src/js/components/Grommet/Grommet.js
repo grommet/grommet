@@ -53,7 +53,7 @@ class Grommet extends Component {
         iconColoredTheme.icon = { ...(theme.icon || {}) };
         iconColoredTheme.icon.colors = deepMerge(
           baseTheme.icon.colors,
-          theme.global.colors,
+          (theme.global || {}).colors,
         );
       }
       nextTheme = deepMerge(baseTheme, iconColoredTheme);
@@ -62,13 +62,14 @@ class Grommet extends Component {
     }
 
     if (nextTheme) {
-      const color = nextTheme.global.colors.background;
+      const { colors } = nextTheme.global || baseTheme.global;
+      const color = colors.background;
       const dark = color ? colorIsDark(color) : false;
       const lightIconTheme = deepMerge(iconTheme, nextTheme.icon);
       const iconThemes = {
         dark: reduceIconTheme(
           deepMerge(lightIconTheme, {
-            color: nextTheme.global.colors.text.dark,
+            color: colors.text.dark,
           }),
           true,
         ),
