@@ -217,6 +217,7 @@ export const generate = (baseSpacing = 24, scale = 6) => { // 24
         medium: `${baseSpacing * 16}px`, // 384
         large: `${baseSpacing * 32}px`, // 768
         xlarge: `${baseSpacing * 48}px`, // 1152
+        xxlarge: `${baseSpacing * 64}px`, // 1536
         full: '100%',
       },
     },

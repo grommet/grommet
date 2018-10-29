@@ -33,6 +33,7 @@ const All = () => (
       <Set size='medium' />
       <Set size='small' />
       <Set size='large' />
+      <Set size='xlarge' />
     </Grid>
   </Grommet>
 );
