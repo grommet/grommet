@@ -49,10 +49,10 @@ export const backgroundIsDark = (backgroundArg, theme) => {
   return result;
 };
 
-export const backgroundStyle = (backgroundArg, theme, componentTextColor) => {
+export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
   // If the background has a light or dark object, use that
   const background = normalizeBackground(backgroundArg, theme);
-  const textColor = componentTextColor || theme.global.colors.text;
+  const textColor = textColorArg || theme.global.colors.text;
 
   if (typeof background === 'object') {
     const styles = [];
@@ -62,7 +62,7 @@ export const backgroundStyle = (backgroundArg, theme, componentTextColor) => {
         color = textColor.light;
       } else if (background.dark) {
         color = textColor.dark;
-      } else if (!componentTextColor) {
+      } else if (!textColorArg) {
         color = 'inherit';
       }
       styles.push(css`
