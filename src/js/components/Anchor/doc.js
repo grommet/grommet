@@ -50,9 +50,10 @@ export const themeDoc = {
 export const doc = Anchor => {
   const DocumentedAnchor = describe(Anchor)
     .availableAt(getAvailableAtBadge('Anchor'))
-    .description(
-      `A text link. We have a separate component from the browser
-base so we can style it. You can either set the icon and/or label properties
+    .description('A text link.')
+    .details(
+      `We have a separate component from the browser \
+base so we can style it. You can either set the icon and/or label properties \
 or just use children.`,
     )
     .usage(
