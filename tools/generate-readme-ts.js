@@ -28,7 +28,7 @@ const toMarkdown = theme => {
     themeEntry => `
 **${themeEntry}**
 
-${theme[themeEntry].description}. Defaults to \`${
+${theme[themeEntry].description} Defaults to \`${
       theme[themeEntry].defaultValue
     }\`.
 

@@ -9,41 +9,40 @@ export const themeDoc = {
     defaultValue: '#FD6FFF',
   },
   'anchor.color': {
-    description: 'Used to apply a default color to the icon and label.',
+    description: 'The color of the label text and icon strokes.',
     type: 'string | { dark: string, light: string }',
     defaultValue: "{ light: '#1D67E3', dark: '#6194EB' }",
   },
   'anchor.fontWeight': {
-    description: 'The font weight to be applied to the anchor text.',
+    description: 'The font weight of the label.',
     type: 'number',
     defaultValue: 600,
   },
   'anchor.textDecoration': {
-    description: 'The text decoration to be applied to the anchor.',
+    description:
+      'The text decoration of the label. Refer to https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration for possible values.',
     type: 'string',
     defaultValue: 'none',
   },
   'anchor.hover.fontWeight': {
-    description:
-      'The font weight to be applied to the anchor text when hovering.',
+    description: 'The font weight of the label when hovering.',
     type: 'number',
     defaultValue: undefined,
   },
   'anchor.hover.textDecoration': {
     description:
-      'The text decoration to be applied to the anchor when hovering.',
+      'The text decoration of the label when hovering. Refer to https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration for possible values.',
     type: 'string',
     defaultValue: 'underline',
   },
   'anchor.hover.extend': {
-    description:
-      'Any additional style to be applied to the Anchor when hovering.',
-    type: 'string | func',
+    description: 'Any additional style for the Anchor when hovering.',
+    type: 'string | (props) => {}',
     defaultValue: undefined,
   },
   'anchor.extend': {
-    description: 'Any additional style to be applied to the Anchor.',
-    type: 'string | func',
+    description: 'Any additional style for the Anchor.',
+    type: 'string | (props) => {}',
     defaultValue: undefined,
   },
 };
