@@ -2,6 +2,51 @@ import { describe, PropTypes } from 'react-desc';
 
 import { genericProps, getAvailableAtBadge } from '../../utils';
 
+export const themeDoc = {
+  'global.focus.border.color': {
+    description: 'The color around the Anchor when in focus.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: '#FD6FFF',
+  },
+  'anchor.color': {
+    description: 'The color of the label text and icon strokes.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ light: '#1D67E3', dark: '#6194EB' }",
+  },
+  'anchor.fontWeight': {
+    description: 'The font weight of the label.',
+    type: 'number',
+    defaultValue: 600,
+  },
+  'anchor.textDecoration': {
+    description:
+      'The text decoration of the label. Refer to https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration for possible values.',
+    type: 'string',
+    defaultValue: 'none',
+  },
+  'anchor.hover.fontWeight': {
+    description: 'The font weight of the label when hovering.',
+    type: 'number',
+    defaultValue: undefined,
+  },
+  'anchor.hover.textDecoration': {
+    description:
+      'The text decoration of the label when hovering. Refer to https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration for possible values.',
+    type: 'string',
+    defaultValue: 'underline',
+  },
+  'anchor.hover.extend': {
+    description: 'Any additional style for the Anchor when hovering.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'anchor.extend': {
+    description: 'Any additional style for the Anchor.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+};
+
 export const doc = Anchor => {
   const DocumentedAnchor = describe(Anchor)
     .availableAt(getAvailableAtBadge('Anchor'))
