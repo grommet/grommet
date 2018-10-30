@@ -2,6 +2,52 @@ import { describe, PropTypes } from 'react-desc';
 
 import { genericProps, getAvailableAtBadge } from '../../utils';
 
+export const themeDoc = {
+  'global.focus.border.color': {
+    description: 'The color around the Anchor when in focus.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: '#FD6FFF',
+  },
+  'anchor.color': {
+    description: 'Used to apply a default color to the icon and label.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ light: '#1D67E3', dark: '#6194EB' }",
+  },
+  'anchor.fontWeight': {
+    description: 'The font weight to be applied to the anchor text.',
+    type: 'number',
+    defaultValue: 600,
+  },
+  'anchor.textDecoration': {
+    description: 'The text decoration to be applied to the anchor.',
+    type: 'string',
+    defaultValue: 'none',
+  },
+  'anchor.hover.fontWeight': {
+    description:
+      'The font weight to be applied to the anchor text when hovering.',
+    type: 'number',
+    defaultValue: undefined,
+  },
+  'anchor.hover.textDecoration': {
+    description:
+      'The text decoration to be applied to the anchor when hovering.',
+    type: 'string',
+    defaultValue: 'underline',
+  },
+  'anchor.hover.extend': {
+    description:
+      'Any additional style to be applied to the Anchor when hovering.',
+    type: 'string | func',
+    defaultValue: undefined,
+  },
+  'anchor.extend': {
+    description: 'Any additional style to be applied to the Anchor.',
+    type: 'string | func',
+    defaultValue: undefined,
+  },
+};
+
 export const doc = Anchor => {
   const DocumentedAnchor = describe(Anchor)
     .availableAt(getAvailableAtBadge('Anchor'))

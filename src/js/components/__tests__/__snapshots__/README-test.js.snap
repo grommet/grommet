@@ -362,7 +362,73 @@ Whether an icon and label should be reversed so that the icon is at the end of t
 \`\`\`
 boolean
 \`\`\`
-  ",
+  
+## Theme
+  
+**global.focus.border.color**
+
+The color around the Anchor when in focus.. Defaults to \`#FD6FFF\`.
+
+\`\`\`
+string | { dark: string, light: string }
+\`\`\`
+
+**anchor.color**
+
+Used to apply a default color to the icon and label.. Defaults to \`{ light: '#1D67E3', dark: '#6194EB' }\`.
+
+\`\`\`
+string | { dark: string, light: string }
+\`\`\`
+
+**anchor.fontWeight**
+
+The font weight to be applied to the anchor text.. Defaults to \`600\`.
+
+\`\`\`
+number
+\`\`\`
+
+**anchor.textDecoration**
+
+The text decoration to be applied to the anchor.. Defaults to \`none\`.
+
+\`\`\`
+string
+\`\`\`
+
+**anchor.hover.fontWeight**
+
+The font weight to be applied to the anchor text when hovering.. Defaults to \`undefined\`.
+
+\`\`\`
+number
+\`\`\`
+
+**anchor.hover.textDecoration**
+
+The text decoration to be applied to the anchor when hovering.. Defaults to \`underline\`.
+
+\`\`\`
+string
+\`\`\`
+
+**anchor.hover.extend**
+
+Any additional style to be applied to the Anchor when hovering.. Defaults to \`undefined\`.
+
+\`\`\`
+string | func
+\`\`\`
+
+**anchor.extend**
+
+Any additional style to be applied to the Anchor.. Defaults to \`undefined\`.
+
+\`\`\`
+string | func
+\`\`\`
+",
   "Box": "## Box
 A flexible box that lays out its contents along a single direction.
 

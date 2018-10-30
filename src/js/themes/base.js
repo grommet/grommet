@@ -196,7 +196,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       focus: {
         border: {
           color: 'focus',
-          width: '2px',
         },
       },
       font: { ...fontSizing(0) },
@@ -255,6 +254,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // fontWeight: undefined,
         // extend: undefined,
       },
+      // extend: undefined,
     },
     box: {
       responsiveBreakpoint: 'small', // when we switch rows to columns
