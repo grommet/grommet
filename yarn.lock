@@ -7418,10 +7418,10 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-desc@^3.6.4:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-3.6.4.tgz#86858b19984a1a37eea69530de7675ba9ef91516"
-  integrity sha512-K+spTLP72Yb70CQv1sSS5MrScvWO65StGjSBRZNZfQ+yQ51KRYQUz0RfNNAMT+sZpgTN6578SGzstA6h4787bA==
+react-desc@^3.6.5:
+  version "3.6.5"
+  resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-3.6.5.tgz#d6cd8a4b4fd726dbc8f94eac326a7e4dcb118777"
+  integrity sha512-fI3JbWRQdRmQ3pBFscULdmJnKceSgK5Ug6BdFS/G/+9/6hle16sOQYEeELIu053uhhSuwK59aBex0UaeTJWnpw==
 
 react-dev-utils@6.0.0-next.2150693d:
   version "6.0.0-next.2150693d"
