@@ -174,64 +174,80 @@ boolean
   
 **global.focus.border.color**
 
-The color around the Anchor when in focus. Defaults to `#FD6FFF`.
+The color around the Anchor when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
 
 ```
-string | { dark: string, light: string }
+#FD6FFF
 ```
 
 **anchor.color**
 
-The color of the label text and icon strokes. Defaults to `{ light: '#1D67E3', dark: '#6194EB' }`.
+The color of the label text and icon strokes. Expects `string | { dark: string, light: string }`.
+
+Defaults to
 
 ```
-string | { dark: string, light: string }
+{ light: '#1D67E3', dark: '#6194EB' }
 ```
 
 **anchor.fontWeight**
 
-The font weight of the label. Defaults to `600`.
+The font weight of the label. Expects `number`.
+
+Defaults to
 
 ```
-number
+600
 ```
 
 **anchor.textDecoration**
 
-The text decoration of the label. Refer to https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration for possible values. Defaults to `none`.
+The text decoration of the label. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) for possible values. Expects `string`.
+
+Defaults to
 
 ```
-string
+none
 ```
 
 **anchor.hover.fontWeight**
 
-The font weight of the label when hovering. Defaults to `undefined`.
+The font weight of the label when hovering. Expects `number`.
+
+Defaults to
 
 ```
-number
+undefined
 ```
 
 **anchor.hover.textDecoration**
 
-The text decoration of the label when hovering. Refer to https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration for possible values. Defaults to `underline`.
+The text decoration of the label when hovering. Refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) for possible values. Expects `string`.
+
+Defaults to
 
 ```
-string
+underline
 ```
 
 **anchor.hover.extend**
 
-Any additional style for the Anchor when hovering. Defaults to `undefined`.
+Any additional style for the Anchor when hovering. Expects `string | (props) => {}`.
+
+Defaults to
 
 ```
-string | (props) => {}
+undefined
 ```
 
 **anchor.extend**
 
-Any additional style for the Anchor. Defaults to `undefined`.
+Any additional style for the Anchor. Expects `string | (props) => {}`.
+
+Defaults to
 
 ```
-string | (props) => {}
+undefined
 ```

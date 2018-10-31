@@ -669,18 +669,18 @@ exports[`Menu close by clicking outside 3`] = `
 "
 
 @media only screen and (max-width:768px) {
-  .hZxMRS {
+  .lgRCHI {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hZxMRS {
+  .lgRCHI {
     padding: 6px;
   }
 }
 
-.dhsUIZ {
+.bXSDsi {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -699,61 +699,61 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .dhsUIZ {
+  .bXSDsi {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dhsUIZ {
+  .bXSDsi {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fsIpUF {
+  .IRSNj {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fsIpUF {
+  .IRSNj {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bQWGDI {
+  .jqGCfM {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bQWGDI {
+  .jqGCfM {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cHrFaK {
+  .cYihDV {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cHrFaK {
+  .cYihDV {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .kDqOeu {
+  .iVyWoM {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .kDqOeu {
+  .iVyWoM {
     padding: 6px;
   }
 }
@@ -1721,7 +1721,7 @@ exports[`Menu open and close on click 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 hZxMRS"
+      class="StyledBox-sc-13pk1d4-0 lgRCHI"
     >
       <span
         class="StyledText-sc-1sadyjn-0 fWSbXS"
@@ -2199,18 +2199,18 @@ exports[`Menu open and close on click 4`] = `
 "
 
 @media only screen and (max-width:768px) {
-  .hZxMRS {
+  .lgRCHI {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hZxMRS {
+  .lgRCHI {
     padding: 6px;
   }
 }
 
-.dhsUIZ {
+.bXSDsi {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2229,61 +2229,61 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .dhsUIZ {
+  .bXSDsi {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dhsUIZ {
+  .bXSDsi {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fsIpUF {
+  .IRSNj {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fsIpUF {
+  .IRSNj {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bQWGDI {
+  .jqGCfM {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bQWGDI {
+  .jqGCfM {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cHrFaK {
+  .cYihDV {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cHrFaK {
+  .cYihDV {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .kDqOeu {
+  .iVyWoM {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .kDqOeu {
+  .iVyWoM {
     padding: 6px;
   }
 }
@@ -3040,18 +3040,18 @@ exports[`Menu with dropAlign renders 3`] = `
 "
 
 @media only screen and (max-width:768px) {
-  .hZxMRS {
+  .lgRCHI {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .hZxMRS {
+  .lgRCHI {
     padding: 6px;
   }
 }
 
-.dhsUIZ {
+.bXSDsi {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3070,61 +3070,61 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .dhsUIZ {
+  .bXSDsi {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .dhsUIZ {
+  .bXSDsi {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fsIpUF {
+  .IRSNj {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .fsIpUF {
+  .IRSNj {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bQWGDI {
+  .jqGCfM {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bQWGDI {
+  .jqGCfM {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cHrFaK {
+  .cYihDV {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .cHrFaK {
+  .cYihDV {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .kDqOeu {
+  .iVyWoM {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .kDqOeu {
+  .iVyWoM {
     padding: 6px;
   }
 }

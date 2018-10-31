@@ -219,9 +219,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         weight: 600,
       },
       opacity: {
-        strong: '0.8',
-        medium: '0.4',
-        weak: '0.1',
+        strong: 0.8,
+        medium: 0.4,
+        weak: 0.1,
       },
       spacing: `${baseSpacing}px`,
       size: {
@@ -258,6 +258,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     box: {
       responsiveBreakpoint: 'small', // when we switch rows to columns
+      // extend: undefined,
     },
     button: {
       border: {
