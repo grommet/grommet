@@ -194,7 +194,9 @@ node
 \`\`\`
   ",
   "Anchor": "## Anchor
-A text link. We have a separate component from the browser
+A text link.
+
+We have a separate component from the browser
 base so we can style it. You can either set the icon and/or label properties
 or just use children.
 

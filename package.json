@@ -48,7 +48,7 @@
     "markdown-to-jsx": "^6.6.6",
     "polished": "^2.2.0",
     "prop-types": "^15.5.10",
-    "react-desc": "^3.5.0",
+    "react-desc": "^3.6.5",
     "react-waypoint": "^8.0.1",
     "recompose": "^0.30.0"
   },
