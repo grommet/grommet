@@ -2,7 +2,6 @@ import React, { cloneElement, Component } from 'react';
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
-import { Text } from '../Text';
 import { withFocus, withForwardRef, withTheme } from '../hocs';
 
 import { StyledAnchor } from './StyledAnchor';
@@ -37,9 +36,6 @@ class Anchor extends Component {
       ...rest
     } = this.props;
 
-    const anchorLabel =
-      typeof label === 'string' ? <Text>{label}</Text> : label;
-
     let coloredIcon = icon;
     if (icon && !icon.props.color) {
       coloredIcon = cloneElement(icon, {
@@ -47,8 +43,8 @@ class Anchor extends Component {
       });
     }
 
-    const first = reverse ? anchorLabel : coloredIcon;
-    const second = reverse ? coloredIcon : anchorLabel;
+    const first = reverse ? label : coloredIcon;
+    const second = reverse ? coloredIcon : label;
 
     return (
       <StyledAnchor
@@ -65,7 +61,7 @@ class Anchor extends Component {
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
       >
-        {first || second ? (
+        {first && second ? (
           <Box
             tag="span"
             direction="row"
@@ -77,7 +73,7 @@ class Anchor extends Component {
             {second}
           </Box>
         ) : (
-          children
+          first || second || children
         )}
       </StyledAnchor>
     );
