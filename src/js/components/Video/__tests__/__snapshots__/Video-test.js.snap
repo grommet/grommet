@@ -215,21 +215,6 @@ exports[`Video autoPlay renders 1`] = `
   text-align: inherit;
 }
 
-.c16 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-.c19 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c10 {
   position: relative;
 }
@@ -245,6 +230,21 @@ exports[`Video autoPlay renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c16 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.c19 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -844,21 +844,6 @@ exports[`Video controls renders 1`] = `
   color: #000000;
 }
 
-.c16 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-.c19 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c10 {
   position: relative;
 }
@@ -874,6 +859,21 @@ exports[`Video controls renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c16 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.c19 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -1569,21 +1569,6 @@ exports[`Video fit renders 1`] = `
   text-align: inherit;
 }
 
-.c16 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-.c19 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c10 {
   position: relative;
 }
@@ -1599,6 +1584,21 @@ exports[`Video fit renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c16 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.c19 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -2294,21 +2294,6 @@ exports[`Video loop renders 1`] = `
   text-align: inherit;
 }
 
-.c16 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-.c19 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c10 {
   position: relative;
 }
@@ -2324,6 +2309,21 @@ exports[`Video loop renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c16 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.c19 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -2841,21 +2841,6 @@ exports[`Video mute renders 1`] = `
   text-align: inherit;
 }
 
-.c16 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-.c19 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c10 {
   position: relative;
 }
@@ -2871,6 +2856,21 @@ exports[`Video mute renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c16 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.c19 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
@@ -3388,21 +3388,6 @@ exports[`Video renders 1`] = `
   text-align: inherit;
 }
 
-.c16 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-.c19 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c10 {
   position: relative;
 }
@@ -3418,6 +3403,21 @@ exports[`Video renders 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.c16 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.c19 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .c0 {
