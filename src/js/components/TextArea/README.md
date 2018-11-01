@@ -19,6 +19,15 @@ The id attribute of the textarea.
 string
 ```
 
+**fill**
+
+Whether the width and height should fill the container.
+
+```
+true
+false
+```
+
 **focusIndicator**
 
 Whether the plain textarea should receive a focus outline.
@@ -33,6 +42,14 @@ The name attribute of the textarea.
 
 ```
 string
+```
+
+**onChange**
+
+Function that will be called when the user types in the textarea.
+
+```
+function
 ```
 
 **placeholder**

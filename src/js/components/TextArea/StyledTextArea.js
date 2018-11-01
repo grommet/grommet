@@ -15,7 +15,8 @@ const plainStyle = css`
 export const StyledTextArea = styled.textarea`
   ${inputStyle} width: 100%;
 
-  ${props => props.plain && plainStyle} &::-webkit-input-placeholder {
+  ${props => props.fillArg && 'height: 100%;'} ${props =>
+    props.plain && plainStyle} &::-webkit-input-placeholder {
     ${placeholderColor};
   }
 

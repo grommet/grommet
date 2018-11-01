@@ -87,7 +87,7 @@ The name attribute of the input.
 string
 ```
 
-**onInput**
+**onChange**
 
 Function that will be called when the user types in the input.
 
