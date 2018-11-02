@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import { withForwardRef, withTheme } from '../hocs';
+import { withFocus, withForwardRef, withTheme } from '../hocs';
 
 import { StyledTextArea } from './StyledTextArea';
 
@@ -17,6 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
   TextAreaDoc = require('./doc').doc(TextArea); // eslint-disable-line global-require
 }
 const TextAreaWrapper = compose(
+  withFocus,
   withTheme,
   withForwardRef,
 )(TextAreaDoc || TextArea);

@@ -48,21 +48,6 @@ exports[`TextArea basic 1`] = `
   outline: none;
 }
 
-.c1:focus {
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #FD6FFF solid 2px;
-}
-
 <div
   className="c0"
 >
@@ -70,6 +55,8 @@ exports[`TextArea basic 1`] = `
     className="c1"
     id="item"
     name="item"
+    onBlur={[Function]}
+    onFocus={[Function]}
   />
 </div>
 `;
@@ -123,21 +110,6 @@ exports[`TextArea fill 1`] = `
   outline: none;
 }
 
-.c1:focus {
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #FD6FFF solid 2px;
-}
-
 <div
   className="c0"
 >
@@ -145,6 +117,8 @@ exports[`TextArea fill 1`] = `
     className="c1"
     id="item"
     name="item"
+    onBlur={[Function]}
+    onFocus={[Function]}
   />
 </div>
 `;
@@ -197,21 +171,6 @@ exports[`TextArea focusIndicator 1`] = `
   outline: none;
 }
 
-.c1:focus {
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #FD6FFF solid 2px;
-}
-
 <div
   className="c0"
 >
@@ -219,6 +178,8 @@ exports[`TextArea focusIndicator 1`] = `
     className="c1"
     id="item"
     name="item"
+    onBlur={[Function]}
+    onFocus={[Function]}
   />
 </div>
 `;
@@ -271,21 +232,6 @@ exports[`TextArea placeholder 1`] = `
   outline: none;
 }
 
-.c1:focus {
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #FD6FFF solid 2px;
-}
-
 <div
   className="c0"
 >
@@ -293,6 +239,8 @@ exports[`TextArea placeholder 1`] = `
     className="c1"
     id="item"
     name="item"
+    onBlur={[Function]}
+    onFocus={[Function]}
     placeholder="placeholder"
   />
 </div>
@@ -356,6 +304,8 @@ exports[`TextArea plain 1`] = `
     className="c1"
     id="item"
     name="item"
+    onBlur={[Function]}
+    onFocus={[Function]}
   />
 </div>
 `;

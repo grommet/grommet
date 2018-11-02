@@ -1,8 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
 
 export interface TextAreaProps {
   id?: string;
-  fill?: 'true' | 'false';
+  fill?: "true" | "false";
   focusIndicator?: boolean;
   name?: string;
   onChange?: (...args: any[]) => any;

@@ -33,9 +33,6 @@ export const StyledTextArea = styled.textarea`
     outline: none;
   }
 
-  &:focus {
-    ${props => (!props.plain || props.focusIndicator) && focusStyle};
-  }
-
+  ${props => props.focus && !props.plain && focusStyle};
   ${props => props.theme.textArea && props.theme.textArea.extend};
 `;

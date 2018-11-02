@@ -7,7 +7,7 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
-import { withAnnounce, withForwardRef, withTheme } from '../hocs';
+import { withAnnounce, withFocus, withForwardRef, withTheme } from '../hocs';
 
 import {
   StyledTextInput,
@@ -388,6 +388,7 @@ if (process.env.NODE_ENV !== 'production') {
   TextInputDoc = require('./doc').doc(TextInput); // eslint-disable-line global-require
 }
 const TextInputWrapper = compose(
+  withFocus,
   withTheme,
   withAnnounce,
   withForwardRef,
