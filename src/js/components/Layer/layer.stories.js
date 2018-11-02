@@ -262,9 +262,43 @@ const PlainLayer = () => (
   </Grommet>
 );
 
+class FullLayer extends Component {
+  state = {
+    showLayer: false,
+  };
+
+  render() {
+    const { showLayer } = this.state;
+    return (
+      <Grommet theme={grommet} full>
+        <Box pad="small" fill background="dark-3" align="start">
+          <Button
+            primary
+            color="accent-3"
+            label="Show"
+            onClick={() => this.setState({ showLayer: true })}
+          />
+          {showLayer && (
+            <Layer full>
+              <Box fill background="light-4" align="center" justify="center">
+                <Button
+                  primary
+                  label="Close"
+                  onClick={() => this.setState({ showLayer: false })}
+                />
+              </Box>
+            </Layer>
+          )}
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Layer', module)
   .add('Center', () => <CenterLayer />)
   .add('Form', () => <FormLayer />)
   .add('Notification', () => <NotificationLayer />)
   .add('Margin', () => <MarginLayer />)
-  .add('Plain', () => <PlainLayer />);
+  .add('Plain', () => <PlainLayer />)
+  .add('Full', () => <FullLayer />);
