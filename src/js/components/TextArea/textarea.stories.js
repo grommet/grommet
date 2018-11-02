@@ -7,13 +7,13 @@ import { grommet } from 'grommet/themes';
 class SimpleTextArea extends Component {
   state = { value: '' };
 
-  onInput = event => this.setState({ value: event.target.value });
+  onChange = event => this.setState({ value: event.target.value });
 
   render() {
     const { value } = this.state;
     return (
       <Grommet theme={grommet}>
-        <TextArea value={value} onInput={this.onInput} {...this.props} />
+        <TextArea value={value} onChange={this.onChange} {...this.props} />
       </Grommet>
     );
   }

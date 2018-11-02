@@ -259,11 +259,11 @@ class TextInput extends Component {
     }
   };
 
-  onInput = event => {
-    const { onInput } = this.props;
+  onChange = event => {
+    const { onChange } = this.props;
     this.resetSuggestions();
-    if (onInput) {
-      onInput(event);
+    if (onChange) {
+      onChange(event);
     }
   };
 
@@ -322,7 +322,7 @@ class TextInput extends Component {
       onKeyDown,
       ...rest
     } = this.props;
-    delete rest.onInput; // se we can manage in onInputChange()
+    delete rest.onChange; // se we can manage in this.onChange()
     delete rest.forwardRef;
     delete rest.onSuggestionsOpen;
     delete rest.onSuggestionsClose;
@@ -374,7 +374,7 @@ class TextInput extends Component {
             value={renderLabel(value)}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
-            onInput={this.onInput}
+            onChange={this.onChange}
           />
         </Keyboard>
         {drop}
