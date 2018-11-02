@@ -50,7 +50,7 @@ export const doc = TextInput => {
           'Suggestions drop is open, continue to use arrow keys to navigate',
       }),
     name: PropTypes.string.description('The name attribute of the input.'),
-    onInput: PropTypes.func.description(
+    onChange: PropTypes.func.description(
       'Function that will be called when the user types in the input.',
     ),
     onSelect: PropTypes.func.description(

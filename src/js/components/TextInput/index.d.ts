@@ -7,7 +7,7 @@ export interface TextInputProps {
   focusIndicator?: boolean;
   messages?: {enterSelect: string,suggestionsCount: string,suggestionsExist: string,suggestionIsOpen: string};
   name?: string;
-  onInput?: (...args: any[]) => any;
+  onChange?: (...args: any[]) => any;
   onSelect?: (...args: any[]) => any;
   onSuggestionsOpen?: (...args: any[]) => any;
   onSuggestionsClose?: (...args: any[]) => any;

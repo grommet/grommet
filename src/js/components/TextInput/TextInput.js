@@ -7,7 +7,7 @@ import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
-import { withAnnounce, withForwardRef, withTheme } from '../hocs';
+import { withAnnounce, withFocus, withForwardRef, withTheme } from '../hocs';
 
 import {
   StyledTextInput,
@@ -259,11 +259,11 @@ class TextInput extends Component {
     }
   };
 
-  onInput = event => {
-    const { onInput } = this.props;
+  onChange = event => {
+    const { onChange } = this.props;
     this.resetSuggestions();
-    if (onInput) {
-      onInput(event);
+    if (onChange) {
+      onChange(event);
     }
   };
 
@@ -322,7 +322,7 @@ class TextInput extends Component {
       onKeyDown,
       ...rest
     } = this.props;
-    delete rest.onInput; // se we can manage in onInputChange()
+    delete rest.onChange; // se we can manage in this.onChange()
     delete rest.forwardRef;
     delete rest.onSuggestionsOpen;
     delete rest.onSuggestionsClose;
@@ -374,7 +374,7 @@ class TextInput extends Component {
             value={renderLabel(value)}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
-            onInput={this.onInput}
+            onChange={this.onChange}
           />
         </Keyboard>
         {drop}
@@ -388,6 +388,7 @@ if (process.env.NODE_ENV !== 'production') {
   TextInputDoc = require('./doc').doc(TextInput); // eslint-disable-line global-require
 }
 const TextInputWrapper = compose(
+  withFocus,
   withTheme,
   withAnnounce,
   withForwardRef,

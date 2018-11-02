@@ -7,42 +7,54 @@ import { TextArea } from '..';
 
 jest.mock('react-dom');
 
-test('TextArea renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <TextArea id="item" name="item" />
-    </Grommet>,
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
+describe('TextArea', () => {
+  test('basic', () => {
+    const component = renderer.create(
+      <Grommet>
+        <TextArea id="item" name="item" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-test('TextArea placeholder renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <TextArea id="item" name="item" placeholder="placeholder" />
-    </Grommet>,
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
+  test('placeholder', () => {
+    const component = renderer.create(
+      <Grommet>
+        <TextArea id="item" name="item" placeholder="placeholder" />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-test('TextArea plain renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <TextArea id="item" name="item" plain />
-    </Grommet>,
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
+  test('plain', () => {
+    const component = renderer.create(
+      <Grommet>
+        <TextArea id="item" name="item" plain />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-test('TextArea focusIndicator renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <TextArea id="item" name="item" focusIndicator />
-    </Grommet>,
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  test('focusIndicator', () => {
+    const component = renderer.create(
+      <Grommet>
+        <TextArea id="item" name="item" focusIndicator />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('fill', () => {
+    const component = renderer.create(
+      <Grommet>
+        <TextArea id="item" name="item" fill />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

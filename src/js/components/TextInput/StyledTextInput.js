@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { inputStyle, parseMetricToNum } from '../../utils';
+import { focusStyle, inputStyle, parseMetricToNum } from '../../utils';
 
 const placeholderColor = css`
   color: ${props => props.theme.global.colors.placeholder};
@@ -41,6 +41,7 @@ export const StyledTextInput = styled.input`
     outline: none;
   }
 
+  ${props => props.focus && !props.plain && focusStyle};
   ${props => props.theme.textInput && props.theme.textInput.extend};
 `;
 

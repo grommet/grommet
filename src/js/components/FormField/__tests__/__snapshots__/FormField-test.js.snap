@@ -146,8 +146,8 @@ exports[`renders 1`] = `
           autoComplete="off"
           className="c4"
           onBlur={[Function]}
+          onChange={[Function]}
           onFocus={[Function]}
-          onInput={[Function]}
           onKeyDown={[Function]}
         />
       </div>

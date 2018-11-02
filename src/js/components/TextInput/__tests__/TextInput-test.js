@@ -18,7 +18,7 @@ describe('TextInput', () => {
   });
 
   test('suggestions', done => {
-    const onInput = jest.fn();
+    const onChange = jest.fn();
     const onFocus = jest.fn();
     const { getByTestId, container } = render(
       <TextInput
@@ -26,18 +26,18 @@ describe('TextInput', () => {
         id="item"
         name="item"
         suggestions={['test', 'test1']}
-        onInput={onInput}
+        onChange={onChange}
         onFocus={onFocus}
       />,
     );
     expect(container.firstChild).toMatchSnapshot();
 
     fireEvent.focus(getByTestId('test-input'));
-    fireEvent.input(getByTestId('test-input'));
+    fireEvent.change(getByTestId('test-input'), { target: { value: ' ' } });
 
     setTimeout(() => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
-      expect(onInput).toBeCalled();
+      expect(onChange).toBeCalled();
       expect(onFocus).toBeCalled();
 
       fireEvent(
@@ -62,7 +62,7 @@ describe('TextInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.input(getByTestId('test-input'));
+    fireEvent.change(getByTestId('test-input'), { target: { value: ' ' } });
 
     setTimeout(() => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
@@ -89,7 +89,7 @@ describe('TextInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.input(getByTestId('test-input'));
+    fireEvent.change(getByTestId('test-input'), { target: { value: ' ' } });
     setTimeout(() => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
 
@@ -123,7 +123,7 @@ describe('TextInput', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
 
-    fireEvent.input(getByTestId('test-input'));
+    fireEvent.change(getByTestId('test-input'), { target: { value: ' ' } });
     setTimeout(() => {
       expectPortal('text-input-drop__item').toMatchSnapshot();
 

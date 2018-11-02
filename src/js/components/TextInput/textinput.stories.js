@@ -33,7 +33,7 @@ class SuggestionsTextInput extends Component {
 
   onChange = event => this.setState({ value: event.target.value });
 
-  onSelect = event => this.setState({ value: event.suggestion.value });
+  onSelect = event => this.setState({ value: event.suggestion });
 
   render() {
     const { value } = this.state;

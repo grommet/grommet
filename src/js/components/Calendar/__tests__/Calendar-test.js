@@ -70,6 +70,7 @@ describe('Calendar', () => {
     const component = renderer.create(
       <Grommet>
         <Calendar
+          date={DATE}
           onSelect={() => {}}
           size="small"
           bounds={['2018-09-08', '2018-12-13']}

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextArea focusIndicator renders 1`] = `
+exports[`TextArea basic 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -48,21 +48,6 @@ exports[`TextArea focusIndicator renders 1`] = `
   outline: none;
 }
 
-.c1:focus {
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #FD6FFF solid 2px;
-}
-
 <div
   className="c0"
 >
@@ -70,11 +55,75 @@ exports[`TextArea focusIndicator renders 1`] = `
     className="c1"
     id="item"
     name="item"
+    onBlur={[Function]}
+    onFocus={[Function]}
   />
 </div>
 `;
 
-exports[`TextArea placeholder renders 1`] = `
+exports[`TextArea fill 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c1:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+<div
+  className="c0"
+>
+  <textarea
+    className="c1"
+    id="item"
+    name="item"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  />
+</div>
+`;
+
+exports[`TextArea focusIndicator 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -122,19 +171,65 @@ exports[`TextArea placeholder renders 1`] = `
   outline: none;
 }
 
-.c1:focus {
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
+<div
+  className="c0"
+>
+  <textarea
+    className="c1"
+    id="item"
+    name="item"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  />
+</div>
+`;
+
+exports[`TextArea placeholder 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #FD6FFF solid 2px;
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c1:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-focus-inner {
+  border: none;
+  outline: none;
 }
 
 <div
@@ -144,12 +239,14 @@ exports[`TextArea placeholder renders 1`] = `
     className="c1"
     id="item"
     name="item"
+    onBlur={[Function]}
+    onFocus={[Function]}
     placeholder="placeholder"
   />
 </div>
 `;
 
-exports[`TextArea plain renders 1`] = `
+exports[`TextArea plain 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -207,80 +304,8 @@ exports[`TextArea plain renders 1`] = `
     className="c1"
     id="item"
     name="item"
-  />
-</div>
-`;
-
-exports[`TextArea renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  box-sizing: border-box;
-  font-size: inherit;
-  border: none;
-  -webkit-appearance: none;
-  padding: 11px;
-  outline: none;
-  background: transparent;
-  color: inherit;
-  font-weight: 600;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
-  width: 100%;
-}
-
-.c1::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-.c1::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c1:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c1:focus {
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #FD6FFF solid 2px;
-}
-
-<div
-  className="c0"
->
-  <textarea
-    className="c1"
-    id="item"
-    name="item"
+    onBlur={[Function]}
+    onFocus={[Function]}
   />
 </div>
 `;

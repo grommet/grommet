@@ -15,7 +15,8 @@ const plainStyle = css`
 export const StyledTextArea = styled.textarea`
   ${inputStyle} width: 100%;
 
-  ${props => props.plain && plainStyle} &::-webkit-input-placeholder {
+  ${props => props.fillArg && 'height: 100%;'} ${props =>
+    props.plain && plainStyle} &::-webkit-input-placeholder {
     ${placeholderColor};
   }
 
@@ -32,9 +33,6 @@ export const StyledTextArea = styled.textarea`
     outline: none;
   }
 
-  &:focus {
-    ${props => (!props.plain || props.focusIndicator) && focusStyle};
-  }
-
+  ${props => props.focus && !props.plain && focusStyle};
   ${props => props.theme.textArea && props.theme.textArea.extend};
 `;
