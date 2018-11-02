@@ -6,10 +6,11 @@ export const strokeProps = (color, theme) => {
     if (typeof color === 'object') {
       result.stroke = normalizeColor(color.color, theme);
       if (color.opacity) {
-        result.strokeOpacity =
+        result.strokeOpacity = `${
           color.opacity === true
             ? theme.global.opacity.medium
-            : theme.global.opacity[color.opacity];
+            : theme.global.opacity[color.opacity]
+        }`;
       }
     } else {
       result.stroke = normalizeColor(color, theme);

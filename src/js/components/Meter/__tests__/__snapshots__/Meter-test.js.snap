@@ -60,7 +60,7 @@ exports[`Meter background 1`] = `
       fill="none"
       stroke="#DDDDDD"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -111,7 +111,7 @@ exports[`Meter background 1`] = `
       r={180}
       stroke="#DDDDDD"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -163,7 +163,7 @@ exports[`Meter basic 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -215,7 +215,7 @@ exports[`Meter default 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
   </svg>
@@ -258,7 +258,7 @@ exports[`Meter many values 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -368,7 +368,7 @@ exports[`Meter round 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="round"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -394,7 +394,7 @@ exports[`Meter round 1`] = `
       r={180}
       stroke="#F6F6F6"
       strokeLinecap="round"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -455,7 +455,7 @@ exports[`Meter size 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -480,7 +480,7 @@ exports[`Meter size 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -505,7 +505,7 @@ exports[`Meter size 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -530,7 +530,7 @@ exports[`Meter size 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -555,7 +555,7 @@ exports[`Meter size 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -581,7 +581,7 @@ exports[`Meter size 1`] = `
       r={36}
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -607,7 +607,7 @@ exports[`Meter size 1`] = `
       r={84}
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -633,7 +633,7 @@ exports[`Meter size 1`] = `
       r={180}
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -659,7 +659,7 @@ exports[`Meter size 1`] = `
       r={372}
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -685,7 +685,7 @@ exports[`Meter size 1`] = `
       r={564}
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -737,7 +737,7 @@ exports[`Meter thickness 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={6}
     />
     <path
@@ -762,7 +762,7 @@ exports[`Meter thickness 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={12}
     />
     <path
@@ -787,7 +787,7 @@ exports[`Meter thickness 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -812,7 +812,7 @@ exports[`Meter thickness 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={48}
     />
     <path
@@ -837,7 +837,7 @@ exports[`Meter thickness 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={96}
     />
     <path
@@ -863,7 +863,7 @@ exports[`Meter thickness 1`] = `
       r={189}
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={6}
     />
     <path
@@ -889,7 +889,7 @@ exports[`Meter thickness 1`] = `
       r={186}
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={12}
     />
     <path
@@ -915,7 +915,7 @@ exports[`Meter thickness 1`] = `
       r={180}
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -941,7 +941,7 @@ exports[`Meter thickness 1`] = `
       r={168}
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={48}
     />
     <path
@@ -967,7 +967,7 @@ exports[`Meter thickness 1`] = `
       r={144}
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={96}
     />
     <path
@@ -1019,7 +1019,7 @@ exports[`Meter type 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -1045,7 +1045,7 @@ exports[`Meter type 1`] = `
       r={180}
       stroke="#F6F6F6"
       strokeLinecap="square"
-      strokeOpacity={0.4}
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
