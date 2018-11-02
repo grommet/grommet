@@ -539,11 +539,11 @@ exports[`Tabs change to second tab 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 fsIpUF"
+    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 IRSNj"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hyUBDc"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hlYSr"
     >
       <button
         aria-expanded="false"
@@ -553,7 +553,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kQoGpx"
+          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 iaGDCb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iEgnbY"
@@ -570,7 +570,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 SnIPS"
+          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dndifk"
@@ -1207,11 +1207,11 @@ exports[`Tabs set on hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 fsIpUF"
+    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 IRSNj"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hyUBDc"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hlYSr"
     >
       <button
         aria-expanded="true"
@@ -1221,7 +1221,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 SnIPS"
+          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dndifk"
@@ -1238,7 +1238,7 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kQoGpx"
+          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 iaGDCb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iEgnbY"
@@ -1263,11 +1263,11 @@ exports[`Tabs set on hover 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 fsIpUF"
+    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 IRSNj"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hyUBDc"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hlYSr"
     >
       <button
         aria-expanded="true"
@@ -1277,7 +1277,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 SnIPS"
+          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dndifk"
@@ -1294,7 +1294,7 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kQoGpx"
+          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 iaGDCb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iEgnbY"
@@ -1319,11 +1319,11 @@ exports[`Tabs set on hover 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 fsIpUF"
+    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 IRSNj"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hyUBDc"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hlYSr"
     >
       <button
         aria-expanded="true"
@@ -1333,7 +1333,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 SnIPS"
+          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dndifk"
@@ -1350,7 +1350,7 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kQoGpx"
+          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 iaGDCb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iEgnbY"
@@ -1375,11 +1375,11 @@ exports[`Tabs set on hover 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 fsIpUF"
+    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 IRSNj"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hyUBDc"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hlYSr"
     >
       <button
         aria-expanded="true"
@@ -1389,7 +1389,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 SnIPS"
+          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
             class="StyledText-sc-1sadyjn-0 dndifk"
@@ -1406,7 +1406,7 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kQoGpx"
+          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 iaGDCb"
         >
           <span
             class="StyledText-sc-1sadyjn-0 iEgnbY"

@@ -4,7 +4,6 @@ import {
   backgroundStyle,
   breakpointStyle,
   edgeStyle,
-  focusStyle,
   genericStyles,
   normalizeColor,
   overflowStyle,
@@ -560,7 +559,6 @@ export const StyledBox = styled.div`
   ${props => props.overflowProp && overflowStyle(props.overflowProp)}
   ${props => props.elevationProp && elevationStyle}
   ${props => props.animation && animationStyle}
-  ${props => props.focus && focusStyle}
   ${props => props.theme.box && props.theme.box.extend}
 `;
 

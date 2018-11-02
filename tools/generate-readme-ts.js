@@ -28,12 +28,12 @@ const toMarkdown = theme => {
     themeEntry => `
 **${themeEntry}**
 
-${theme[themeEntry].description} Defaults to \`${
-      theme[themeEntry].defaultValue
-    }\`.
+${theme[themeEntry].description} Expects \`${theme[themeEntry].type}\`.
+
+Defaults to
 
 ${code}
-${theme[themeEntry].type}
+${theme[themeEntry].defaultValue}
 ${code}
 `,
   );

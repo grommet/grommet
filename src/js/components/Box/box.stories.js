@@ -37,28 +37,16 @@ const SimpleBox = () => (
   </Grommet>
 );
 
-const customColorBox = {
-  global: {
-    colors: {
-      'brand-gradient':
-        'linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)',
-    },
-    font: {
-      family: 'Arial',
-    },
-  },
-};
-
 const CustomColorBox = () => (
-  <Grommet theme={customColorBox}>
+  <Grommet theme={grommet}>
     <Box
       justify="center"
       align="center"
       pad="xlarge"
-      background={{ color: 'brand-gradient', dark: true }}
+      background="linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)"
       round="large"
     >
-      <Text>I have a linear gradient background</Text>
+      <Text color="white">I have a linear gradient background</Text>
     </Box>
   </Grommet>
 );
@@ -170,6 +158,13 @@ const RoundBox = () => (
 const BackgroundBox = () => (
   <Grommet theme={grommet}>
     <Box pad="small" gap="small" align="start">
+      <Box
+        pad="small"
+        background={{ color: 'brand', opacity: true }}
+        elevation="large"
+      >
+        brand opacity
+      </Box>
       <Box pad="small" background="brand" elevation="large">
         brand
       </Box>
