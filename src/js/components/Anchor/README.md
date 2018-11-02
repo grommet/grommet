@@ -154,20 +154,28 @@ Click handler. It can be used, for example,
 function
 ```
 
-**primary**
-
-Whether this is a primary anchor.
-
-```
-boolean
-```
-
 **reverse**
 
 Whether an icon and label should be reversed so that the icon is at the end of the anchor.
 
 ```
 boolean
+```
+
+**size**
+
+The font size is typically driven by the components containing
+this component. But, it can be adjusted directly via this size property, typically
+when it is not contained in a 'Heading', 'Paragraph', or 'Text'.
+
+```
+xsmall
+small
+medium
+large
+xlarge
+xxlarge
+string
 ```
   
 ## Theme

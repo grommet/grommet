@@ -8,10 +8,24 @@ const disabledStyle = `
   text-decoration: none;
 `;
 
+const sizeStyle = props => {
+  if (props.size) {
+    const size = props.size || 'medium';
+    const data = props.theme.text[size];
+    return css`
+      font-size: ${data.size};
+      line-height: ${data.height};
+    `;
+  }
+  return css`
+    font-size: inherit;
+    line-height: inherit;
+  `;
+};
+
 export const StyledAnchor = styled.a`
   box-sizing: border-box;
-  font-size: inherit;
-  line-height: inherit;
+  ${props => sizeStyle(props)}
   color: ${props =>
     normalizeColor(props.colorProp || props.theme.anchor.color, props.theme)};
   ${props =>

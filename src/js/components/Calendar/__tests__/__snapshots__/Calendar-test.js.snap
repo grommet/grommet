@@ -4759,11 +4759,6 @@ exports[`Calendar header 1`] = `
   cursor: default;
 }
 
-.c6 {
-  font-size: 14px;
-  line-height: 20px;
-}
-
 .c1 {
   font-size: 14px;
   line-height: 1.375;
@@ -4851,6 +4846,11 @@ exports[`Calendar header 1`] = `
   background: #7D4CDB;
   color: #f8f8f8;
   font-weight: bold;
+}
+
+.c6 {
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .c0 {

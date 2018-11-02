@@ -27,6 +27,15 @@ storiesOf('Anchor', module)
       </Box>
     </Grommet>
   ))
+  .add('Size', () => (
+    <Grommet theme={grommet}>
+      {['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall'].map(size => (
+        <Box key={size} margin="small">
+          <Anchor size={size} label={size} href="#" />
+        </Box>
+      ))}
+    </Grommet>
+  ))
   .add('Inline', () => (
     <Grommet theme={grommet}>
       This is <Anchor label="an inline link" href="#" /> with surrounding text.

@@ -33,7 +33,7 @@ exports[`Grommet custom theme 1`] = `
   stroke: none;
 }
 
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -42,30 +42,30 @@ exports[`Grommet custom theme 1`] = `
   stroke: #cc6633;
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c11 {
+.c10 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -74,30 +74,30 @@ exports[`Grommet custom theme 1`] = `
   stroke: #6194EB;
 }
 
-.c11 g {
+.c10 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c11 *:not([stroke])[fill="none"] {
+.c10 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c11 *[stroke*="#"],
-.c11 *[STROKE*="#"] {
+.c10 *[stroke*="#"],
+.c10 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c11 *[fill-rule],
-.c11 *[FILL-RULE],
-.c11 *[fill*="#"],
-.c11 *[FILL*="#"] {
+.c10 *[fill-rule],
+.c10 *[FILL-RULE],
+.c10 *[fill*="#"],
+.c10 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -140,11 +140,6 @@ exports[`Grommet custom theme 1`] = `
   width: 12px;
 }
 
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c2 {
   box-sizing: border-box;
   font-size: inherit;
@@ -162,7 +157,7 @@ exports[`Grommet custom theme 1`] = `
   text-decoration: underline;
 }
 
-.c7 {
+.c6 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -174,12 +169,12 @@ exports[`Grommet custom theme 1`] = `
   outline: none;
 }
 
-.c7:hover {
+.c6:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.c10 {
+.c9 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -191,7 +186,7 @@ exports[`Grommet custom theme 1`] = `
   outline: none;
 }
 
-.c10:hover {
+.c9:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -228,13 +223,13 @@ exports[`Grommet custom theme 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c8 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c8 {
     padding: 0px;
   }
 }
@@ -301,15 +296,11 @@ exports[`Grommet custom theme 1`] = `
         <div
           className="c5"
         />
-        <span
-          className="c6"
-        >
-          Add
-        </span>
+        Add
       </span>
     </a>
     <a
-      className="c7"
+      className="c6"
       onBlur={[Function]}
       onFocus={[Function]}
     >
@@ -323,7 +314,7 @@ exports[`Grommet custom theme 1`] = `
       >
         <svg
           aria-label="Add"
-          className="c8"
+          className="c7"
           height="24px"
           role="img"
           version="1.1"
@@ -340,19 +331,15 @@ exports[`Grommet custom theme 1`] = `
         <div
           className="c5"
         />
-        <span
-          className="c6"
-        >
-          Add
-        </span>
+        Add
       </span>
     </a>
   </div>
   <div
-    className="c9"
+    className="c8"
   >
     <a
-      className="c10"
+      className="c9"
       onBlur={[Function]}
       onFocus={[Function]}
     >
@@ -366,7 +353,7 @@ exports[`Grommet custom theme 1`] = `
       >
         <svg
           aria-label="Add"
-          className="c11"
+          className="c10"
           height="24px"
           role="img"
           version="1.1"
@@ -383,15 +370,11 @@ exports[`Grommet custom theme 1`] = `
         <div
           className="c5"
         />
-        <span
-          className="c6"
-        >
-          Add
-        </span>
+        Add
       </span>
     </a>
     <a
-      className="c7"
+      className="c6"
       onBlur={[Function]}
       onFocus={[Function]}
     >
@@ -405,7 +388,7 @@ exports[`Grommet custom theme 1`] = `
       >
         <svg
           aria-label="Add"
-          className="c8"
+          className="c7"
           height="24px"
           role="img"
           version="1.1"
@@ -422,11 +405,7 @@ exports[`Grommet custom theme 1`] = `
         <div
           className="c5"
         />
-        <span
-          className="c6"
-        >
-          Add
-        </span>
+        Add
       </span>
     </a>
   </div>

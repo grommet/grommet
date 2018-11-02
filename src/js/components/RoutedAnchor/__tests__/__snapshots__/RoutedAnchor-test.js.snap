@@ -11,11 +11,6 @@ exports[`RoutedAnchor renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c3 {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
@@ -33,39 +28,6 @@ exports[`RoutedAnchor renders 1`] = `
   text-decoration: underline;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 0px;
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
@@ -77,20 +39,7 @@ exports[`RoutedAnchor renders 1`] = `
       onClick={[Function]}
       onFocus={[Function]}
     >
-      <span
-        className="-span c2"
-        style={
-          Object {
-            "display": "inline-flex",
-          }
-        }
-      >
-        <span
-          className="c3"
-        >
-          Test
-        </span>
-      </span>
+      Test
     </a>
   </div>
 </div>

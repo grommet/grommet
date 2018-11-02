@@ -42,7 +42,6 @@ const marginStyle = props => {
 };
 
 const sizeStyle = props => {
-  // size is a combination of the level and size properties
   const size = props.size || 'medium';
   const data = props.theme.text[size];
   return css`
