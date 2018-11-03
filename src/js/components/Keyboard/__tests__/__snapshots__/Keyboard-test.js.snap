@@ -2,8 +2,8 @@
 
 exports[`Keyboard calls onKeyDown 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -24,8 +24,8 @@ exports[`Keyboard calls onKeyDown 1`] = `
 
 exports[`Keyboard renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

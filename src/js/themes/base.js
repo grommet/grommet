@@ -198,7 +198,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'focus',
         },
       },
-      font: { ...fontSizing(0) },
+      font: {
+        size: 'inherit',
+        height: 'normal',
+      },
       hover: {
         background: {
           dark: {

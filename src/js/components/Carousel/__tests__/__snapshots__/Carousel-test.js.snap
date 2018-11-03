@@ -66,8 +66,8 @@ exports[`Carousel basic 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -709,8 +709,8 @@ exports[`Carousel navigate 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1274,7 +1274,7 @@ exports[`Carousel navigate 1`] = `
 
 exports[`Carousel navigate 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+  class="StyledGrommet-sc-19lkkz7-0 kMWYTh"
 >
   <div
     class="StyledStack-ajspsk-0 cBSAEZ"
@@ -1445,7 +1445,7 @@ exports[`Carousel navigate 2`] = `
 
 exports[`Carousel navigate 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+  class="StyledGrommet-sc-19lkkz7-0 kMWYTh"
 >
   <div
     class="StyledStack-ajspsk-0 cBSAEZ"
@@ -1680,8 +1680,8 @@ exports[`Carousel play 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2244,7 +2244,7 @@ exports[`Carousel play 1`] = `
 
 exports[`Carousel play 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+  class="StyledGrommet-sc-19lkkz7-0 kMWYTh"
 >
   <div
     class="StyledStack-ajspsk-0 cBSAEZ"

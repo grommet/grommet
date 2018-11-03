@@ -192,8 +192,8 @@ exports[`Grommet custom theme 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -798,8 +798,8 @@ exports[`Grommet dark theme 1`] = `
 
 .c0 {
   font-family: Arial;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   background: #111111;
   color: #eeeeee;
   box-sizing: border-box;
@@ -1680,8 +1680,8 @@ exports[`Grommet default theme 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2523,8 +2523,8 @@ exports[`Grommet hpe theme 1`] = `
 
 .c0 {
   font-family: 'Metric',Arial,sans-serif;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

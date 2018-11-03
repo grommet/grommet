@@ -2,8 +2,8 @@
 
 exports[`WorldMap color renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -121,8 +121,8 @@ exports[`WorldMap color renders 1`] = `
 
 exports[`WorldMap continents renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -249,8 +249,8 @@ exports[`WorldMap continents renders 1`] = `
 
 exports[`WorldMap onSelectPlace renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -370,8 +370,8 @@ exports[`WorldMap onSelectPlace renders 1`] = `
 
 exports[`WorldMap places renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -503,8 +503,8 @@ exports[`WorldMap places renders 1`] = `
 
 exports[`WorldMap renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

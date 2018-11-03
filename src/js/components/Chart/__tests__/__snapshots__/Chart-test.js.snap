@@ -30,8 +30,8 @@ Object {
 
 exports[`Chart cap renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -122,8 +122,8 @@ exports[`Chart cap renders 1`] = `
 
 exports[`Chart renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -170,8 +170,8 @@ exports[`Chart renders 1`] = `
 
 exports[`Chart size renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -318,8 +318,8 @@ exports[`Chart size renders 1`] = `
 
 exports[`Chart thickness renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -466,8 +466,8 @@ exports[`Chart thickness renders 1`] = `
 
 exports[`Chart type renders 1`] = `
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

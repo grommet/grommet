@@ -19,8 +19,8 @@ exports[`SkipLink basic 1`] = `
 }
 
 .c0 {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: inherit;
+  line-height: normal;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -63,7 +63,7 @@ exports[`SkipLink basic 1`] = `
 
 exports[`SkipLink basic 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+  class="StyledGrommet-sc-19lkkz7-0 kMWYTh"
 >
   <div>
     <a
@@ -97,7 +97,7 @@ exports[`SkipLink basic 2`] = `
 
 exports[`SkipLink basic 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+  class="StyledGrommet-sc-19lkkz7-0 kMWYTh"
 >
   <div>
     <a
