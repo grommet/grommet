@@ -295,10 +295,105 @@ class FullLayer extends Component {
   }
 }
 
+const ScrollBodyLayer = () => (
+  <Grommet theme={grommet}>
+    <Layer full="vertical" position="right">
+      <Box fill style={{ minWidth: '378px' }}>
+        <Box
+          direction="row"
+          align="center"
+          tag="header"
+          elevation="small"
+          justify="between"
+        >
+          <Text margin={{ left: 'small' }}>Header</Text>
+          <Button icon={<FormClose />} />
+        </Box>
+        <Box flex overflow="auto" pad="xsmall">
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+        </Box>
+        <Box
+          tag="footer"
+          border={{ side: 'top' }}
+          pad="small"
+          justify="end"
+          direction="row"
+          align="center"
+        >
+          <Button primary label="Save" />
+        </Box>
+      </Box>
+    </Layer>
+  </Grommet>
+);
+
 storiesOf('Layer', module)
   .add('Center', () => <CenterLayer />)
   .add('Form', () => <FormLayer />)
   .add('Notification', () => <NotificationLayer />)
   .add('Margin', () => <MarginLayer />)
   .add('Plain', () => <PlainLayer />)
-  .add('Full', () => <FullLayer />);
+  .add('Full', () => <FullLayer />)
+  .add('Fixed Header, Scroll Body', () => <ScrollBodyLayer />);
