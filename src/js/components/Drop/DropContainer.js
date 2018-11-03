@@ -123,22 +123,17 @@ export class DropContainer extends Component {
     const { align, dropTarget, responsive, stretch, theme } = this.props;
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
-
     /* eslint-disable-next-line react/no-find-dom-node */
     const target = findDOMNode(dropTarget);
     /* eslint-disable-next-line react/no-find-dom-node */
     const container = findDOMNode(this.dropRef.current);
     if (container && target) {
       // clear prior styling
-      container.style.left = '';
       container.style.width = '';
-      container.style.top = '';
-      container.style.maxHeight = '';
-
+      container.style.height = '';
       // get bounds
       const targetRect = findVisibleParent(target).getBoundingClientRect();
       const containerRect = container.getBoundingClientRect();
-
       // determine width
       const width = Math.min(
         stretch
@@ -146,7 +141,6 @@ export class DropContainer extends Component {
           : containerRect.width,
         windowWidth,
       );
-
       // set left position
       let left;
       if (align.left) {
@@ -164,13 +158,11 @@ export class DropContainer extends Component {
       } else {
         left = targetRect.left + targetRect.width / 2 - width / 2;
       }
-
       if (left + width > windowWidth) {
         left -= left + width - windowWidth;
       } else if (left < 0) {
         left = 0;
       }
-
       // set top position
       let top;
       let maxHeight;
@@ -196,7 +188,6 @@ export class DropContainer extends Component {
       } else {
         top = targetRect.top + targetRect.height / 2 - containerRect.height / 2;
       }
-
       // if we can't fit it all, see if there's more room the other direction
       if (containerRect.height > maxHeight) {
         // We need more room than we have.
@@ -231,7 +222,6 @@ export class DropContainer extends Component {
           }
         }
       }
-
       container.style.left = `${left}px`;
       if (stretch) {
         // offset width by 0.1 to avoid a bug in ie11 that
