@@ -556,7 +556,7 @@ Defaults to
 }
 ```
 
-**global.border.size**
+**global.borderSize**
 
 The possible border sizes in the Box. Expects `object`.
 

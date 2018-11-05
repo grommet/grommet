@@ -35,7 +35,7 @@ export const themeDoc = {
   },
 }`,
   },
-  'global.border.size': {
+  'global.borderSize': {
     description: 'The possible border sizes in the Box.',
     type: 'object',
     defaultValue: `{

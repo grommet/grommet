@@ -404,7 +404,7 @@ The color around the Anchor when in focus. Expects \`string | { dark: string, li
 Defaults to
 
 \`\`\`
-#FD6FFF
+focus
 \`\`\`
 
 **anchor.color**
@@ -1035,7 +1035,7 @@ Defaults to
 }
 \`\`\`
 
-**global.border.size**
+**global.borderSize**
 
 The possible border sizes in the Box. Expects \`object\`.
 

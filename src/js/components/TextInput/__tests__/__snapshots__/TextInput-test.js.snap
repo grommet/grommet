@@ -142,7 +142,7 @@ exports[`TextInput close suggestion drop 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c3 {
@@ -337,7 +337,7 @@ exports[`TextInput close suggestion drop 2`] = `
 exports[`TextInput close suggestion drop 3`] = `
 "
 
-.fmlvSF {
+.izsmxM {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -352,7 +352,7 @@ exports[`TextInput close suggestion drop 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
@@ -531,7 +531,7 @@ exports[`TextInput complex suggestions 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c3 {
@@ -685,7 +685,7 @@ exports[`TextInput complex suggestions 2`] = `
 exports[`TextInput complex suggestions 3`] = `
 "
 
-.fmlvSF {
+.izsmxM {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -700,7 +700,7 @@ exports[`TextInput complex suggestions 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
@@ -1024,7 +1024,7 @@ exports[`TextInput select suggestion 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c3 {
@@ -1219,7 +1219,7 @@ exports[`TextInput select suggestion 2`] = `
 exports[`TextInput select suggestion 3`] = `
 "
 
-.fmlvSF {
+.izsmxM {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1234,7 +1234,7 @@ exports[`TextInput select suggestion 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
@@ -1399,7 +1399,7 @@ exports[`TextInput suggestions 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c3 {
@@ -1594,7 +1594,7 @@ exports[`TextInput suggestions 2`] = `
 exports[`TextInput suggestions 3`] = `
 "
 
-.fmlvSF {
+.izsmxM {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1609,7 +1609,7 @@ exports[`TextInput suggestions 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
