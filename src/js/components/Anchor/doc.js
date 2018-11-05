@@ -6,7 +6,7 @@ export const themeDoc = {
   'global.focus.border.color': {
     description: 'The color around the Anchor when in focus.',
     type: 'string | { dark: string, light: string }',
-    defaultValue: '#FD6FFF',
+    defaultValue: 'focus',
   },
   'anchor.color': {
     description: 'The color of the label text and icon strokes.',

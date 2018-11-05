@@ -99,13 +99,13 @@ exports[`DropButton close by clicking outside 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bXSDsi {
+  .iVWgBr {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bXSDsi {
+  .iVWgBr {
     padding: 0px;
   }
 }
@@ -379,13 +379,13 @@ exports[`DropButton open and close 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bXSDsi {
+  .iVWgBr {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bXSDsi {
+  .iVWgBr {
     padding: 0px;
   }
 }
@@ -583,13 +583,13 @@ exports[`DropButton opened ref 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .bXSDsi {
+  .iVWgBr {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .bXSDsi {
+  .iVWgBr {
     padding: 0px;
   }
 }

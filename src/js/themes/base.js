@@ -178,11 +178,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       elevation: {
         light: {
           none: 'none',
-          xsmall: '0px 1px 2px rgba(100, 100, 100, 0.50)',
-          small: '0px 2px 4px rgba(100, 100, 100, 0.50)',
-          medium: '0px 3px 8px rgba(100, 100, 100, 0.50)',
-          large: '0px 6px 12px rgba(100, 100, 100, 0.50)',
-          xlarge: '0px 8px 16px rgba(100, 100, 100, 0.50)',
+          xsmall: '0px 1px 2px rgba(0, 0, 0, 0.20)',
+          small: '0px 2px 4px rgba(0, 0, 0, 0.20)',
+          medium: '0px 4px 8px rgba(0, 0, 0, 0.20)',
+          large: '0px 8px 16px rgba(0, 0, 0, 0.20)',
+          xlarge: '0px 12px 24px rgba(0, 0, 0, 0.20)',
         },
         dark: {
           none: 'none',
@@ -190,7 +190,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           small: '0px 4px 4px rgba(255, 255, 255, 0.40)',
           medium: '0px 6px 8px rgba(255, 255, 255, 0.40)',
           large: '0px 8px 16px rgba(255, 255, 255, 0.40)',
-          xlarge: '0px 10px 24px rgba(255, 255, 255, 0.40)',
+          xlarge: '0px 12px 24px rgba(255, 255, 255, 0.40)',
         },
       },
       focus: {

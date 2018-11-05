@@ -187,7 +187,7 @@ The color around the Anchor when in focus. Expects `string | { dark: string, lig
 Defaults to
 
 ```
-#FD6FFF
+focus
 ```
 
 **anchor.color**
