@@ -280,8 +280,8 @@ exports[`Calendar date 1`] = `
 }
 
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1536,8 +1536,8 @@ exports[`Calendar dates 1`] = `
 }
 
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2792,8 +2792,8 @@ exports[`Calendar firstDayOfWeek 1`] = `
 }
 
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4854,8 +4854,8 @@ exports[`Calendar header 1`] = `
 }
 
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -6059,8 +6059,8 @@ exports[`Calendar reference 1`] = `
 }
 
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -7555,8 +7555,8 @@ exports[`Calendar size 1`] = `
 }
 
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

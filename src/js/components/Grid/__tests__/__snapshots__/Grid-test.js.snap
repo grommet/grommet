@@ -2,8 +2,8 @@
 
 exports[`Grid align renders 1`] = `
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -67,8 +67,8 @@ exports[`Grid align renders 1`] = `
 
 exports[`Grid alignContent renders 1`] = `
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -150,8 +150,8 @@ exports[`Grid alignContent renders 1`] = `
 
 exports[`Grid areas renders 1`] = `
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -178,8 +178,8 @@ exports[`Grid areas renders 1`] = `
 
 exports[`Grid columns renders 1`] = `
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -240,8 +240,8 @@ exports[`Grid columns renders 1`] = `
 
 exports[`Grid fill renders 1`] = `
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -293,8 +293,8 @@ exports[`Grid fill renders 1`] = `
 
 exports[`Grid gap renders 1`] = `
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -401,8 +401,8 @@ exports[`Grid gap renders 1`] = `
 
 exports[`Grid justify renders 1`] = `
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -454,8 +454,8 @@ exports[`Grid justify renders 1`] = `
 
 exports[`Grid justifyContent renders 1`] = `
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -543,8 +543,8 @@ exports[`Grid justifyContent renders 1`] = `
 
 exports[`Grid renders 1`] = `
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -568,8 +568,8 @@ exports[`Grid renders 1`] = `
 
 exports[`Grid rows renders 1`] = `
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -603,8 +603,8 @@ exports[`Grid rows renders 1`] = `
 
 exports[`Grid tag renders 1`] = `
 .c0 {
-  font-size: inherit;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Grommet, Anchor, Box } from 'grommet';
@@ -20,4 +20,21 @@ const Themed = () => (
   </Grommet>
 );
 
-storiesOf('Grommet', module).add('Theme', () => <Themed />);
+const Plain = () => (
+  <Fragment>
+    <Grommet plain>
+      <Box pad="medium">
+        <p>Plain Grommet</p>
+      </Box>
+    </Grommet>
+    <Grommet>
+      <Box pad="medium">
+        <p>Not plain Grommet</p>
+      </Box>
+    </Grommet>
+  </Fragment>
+);
+
+storiesOf('Grommet', module)
+  .add('Theme', () => <Themed />)
+  .add('Plain', () => <Plain />);

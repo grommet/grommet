@@ -3517,6 +3517,14 @@ Whether to take the whole viewport.
 boolean
 \`\`\`
 
+**plain**
+
+Whether or not Grommet should apply a global font-family, font-size, and line-height.
+
+\`\`\`
+boolean
+\`\`\`
+
 **theme**
 
 Custom styles for Grommet app component.

@@ -2,6 +2,7 @@ import * as React from "react";
 
 export interface GrommetProps {
   full?: boolean;
+  plain?: boolean;
   theme?: object;
 }
 
