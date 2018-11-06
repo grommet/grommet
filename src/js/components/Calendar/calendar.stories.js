@@ -200,8 +200,20 @@ class CustomHeaderCalendar extends Component {
   }
 }
 
+// DSTCalendar has dates specifically chosen to identify issues with
+// crossing the daylight savings time boundary (from California).
+const DSTCalendar = () => (
+  <Grommet theme={grommet}>
+    <Calendar
+      date="2018-11-04T07:00:00.000Z"
+      bounds={['2013-11-06', '2018-12-06']}
+    />
+  </Grommet>
+);
+
 storiesOf('Calendar', module)
   .add('Simple', () => <SimpleCalendar />)
   .add('Range', () => <RangeCalendar />)
   .add('Dual', () => <DualCalendar />)
-  .add('Custom Header', () => <CustomHeaderCalendar />);
+  .add('Custom Header', () => <CustomHeaderCalendar />)
+  .add('Daylight Savings Time', () => <DSTCalendar />);

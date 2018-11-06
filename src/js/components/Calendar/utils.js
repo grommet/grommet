@@ -3,8 +3,20 @@
 
 const DAY_MILLISECONDS = 24 * 60 * 60 * 1000;
 
-export const addDays = (date, days) =>
-  new Date(date.getTime() + DAY_MILLISECONDS * days);
+export const addDays = (date, days) => {
+  const result = new Date(date.getTime() + DAY_MILLISECONDS * days);
+  // Deal with crossing the daylight savings time boundary,
+  // where adding a day's worth when the time is midnight results in
+  // being a day off.
+  let hourDelta = result.getHours() - date.getHours();
+  // At this point, hourDelta is typically 1 or 23, depending on which
+  // side of the switch we are on. Convert so that hourDelta is either +1 or -1.
+  if (hourDelta > 12) {
+    hourDelta -= 24;
+  }
+  result.setHours(result.getHours() - hourDelta);
+  return result;
+};
 
 export const subtractDays = (date, days) => addDays(date, -days);
 
