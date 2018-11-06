@@ -32,14 +32,18 @@ class RangeSelector extends Component {
     const { direction, max, min, step } = this.props;
     /* eslint-disable-next-line react/no-find-dom-node */
     const rect = findDOMNode(this.containerRef.current).getBoundingClientRect();
+    let value;
     if (direction === 'vertical') {
       const y = event.clientY - (rect.y || 0); // unit test resilience
-      const scaleY = rect.height / (max - min + step) || 1; // unit test resilience
-      return Math.floor(y / scaleY);
+      const scaleY = rect.height / (max - min + 1) || 1; // unit test resilience
+      value = Math.floor(y / scaleY) + min;
+    } else {
+      const x = event.clientX - (rect.x || 0); // unit test resilience
+      const scaleX = rect.width / (max - min + 1) || 1; // unit test resilience
+      value = Math.floor(x / scaleX) + min;
     }
-    const x = event.clientX - (rect.x || 0); // unit test resilience
-    const scaleX = rect.width / (max - min + step) || 1; // unit test resilience
-    return Math.floor(x / scaleX);
+    // align with closest step
+    return value + (value % step);
   };
 
   onClick = event => {
@@ -131,10 +135,10 @@ class RangeSelector extends Component {
     } = this.props;
     const { nextLower, nextUpper } = this.state;
 
-    const scale = (max - min) / (max - min + step);
     const lower = nextLower !== undefined ? nextLower : values[0];
     const upper = nextUpper !== undefined ? nextUpper : values[1];
-    const fill = direction === 'vertical' ? 'horizontal' : 'vertical';
+    // It needs to be true when vertical, due to how browsers manage height
+    const fill = direction === 'vertical' ? true : 'vertical';
 
     return (
       <Box
@@ -145,7 +149,7 @@ class RangeSelector extends Component {
         onClick={onChange ? this.onClick : undefined}
       >
         <Box
-          style={{ flex: `${(lower - min) * scale} 0 0` }}
+          style={{ flex: `${lower - min} 0 0` }}
           background={
             invert ? { color: color || 'light-4', opacity } : undefined
           }
@@ -162,19 +166,19 @@ class RangeSelector extends Component {
           theme={theme}
           onMouseDown={onChange ? this.lowerMouseDown : undefined}
           onDecrease={
-            onChange && lower > min
+            onChange && lower - step >= min
               ? () => onChange([lower - step, upper])
               : undefined
           }
           onIncrease={
-            onChange && lower < upper
+            onChange && lower + step <= upper
               ? () => onChange([lower + step, upper])
               : undefined
           }
         />
         <Box
           style={{
-            flex: `${(upper - lower + step) * scale} 0 0`,
+            flex: `${upper - lower + 1} 0 0`,
             cursor: direction === 'vertical' ? 'ns-resize' : 'ew-resize',
           }}
           background={
@@ -193,18 +197,18 @@ class RangeSelector extends Component {
           theme={theme}
           onMouseDown={onChange ? this.upperMouseDown : undefined}
           onDecrease={
-            onChange && upper > lower
+            onChange && upper - step >= lower
               ? () => onChange([lower, upper - step])
               : undefined
           }
           onIncrease={
-            onChange && upper < max
+            onChange && upper + step <= max
               ? () => onChange([lower, upper + step])
               : undefined
           }
         />
         <Box
-          style={{ flex: `${(max - upper) * scale} 0 0` }}
+          style={{ flex: `${max - upper} 0 0` }}
           background={
             invert ? { color: color || 'light-4', opacity } : undefined
           }

@@ -221,7 +221,7 @@ exports[`RangeSelector basic 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -272,7 +272,7 @@ exports[`RangeSelector basic 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -322,7 +322,7 @@ exports[`RangeSelector basic 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -551,7 +551,7 @@ exports[`RangeSelector color 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -602,7 +602,7 @@ exports[`RangeSelector color 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -652,7 +652,7 @@ exports[`RangeSelector color 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -808,6 +808,7 @@ exports[`RangeSelector direction 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   padding: 0px;
 }
 
@@ -894,6 +895,7 @@ exports[`RangeSelector direction 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   padding: 0px;
 }
 
@@ -1051,7 +1053,7 @@ exports[`RangeSelector direction 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -1102,7 +1104,7 @@ exports[`RangeSelector direction 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -1152,7 +1154,7 @@ exports[`RangeSelector direction 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -1164,7 +1166,7 @@ exports[`RangeSelector direction 1`] = `
       className="c7"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -1215,7 +1217,7 @@ exports[`RangeSelector direction 1`] = `
       style={
         Object {
           "cursor": "ns-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -1265,7 +1267,7 @@ exports[`RangeSelector direction 1`] = `
       className="c7"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -2096,7 +2098,7 @@ exports[`RangeSelector invert 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -2147,7 +2149,7 @@ exports[`RangeSelector invert 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -2197,7 +2199,7 @@ exports[`RangeSelector invert 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -2209,7 +2211,7 @@ exports[`RangeSelector invert 1`] = `
       className="c6"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -2260,7 +2262,7 @@ exports[`RangeSelector invert 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -2310,7 +2312,7 @@ exports[`RangeSelector invert 1`] = `
       className="c6"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -2539,7 +2541,7 @@ exports[`RangeSelector max 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.6078431372549 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -2590,7 +2592,7 @@ exports[`RangeSelector max 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.784313725490195 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -2640,7 +2642,7 @@ exports[`RangeSelector max 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.6078431372549 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -2869,7 +2871,7 @@ exports[`RangeSelector min 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "9.89010989010989 0 0",
+          "flex": "10 0 0",
         }
       }
     />
@@ -2920,7 +2922,7 @@ exports[`RangeSelector min 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.87912087912088 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -2970,7 +2972,7 @@ exports[`RangeSelector min 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.23076923076923 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -3262,7 +3264,7 @@ exports[`RangeSelector opacity 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -3313,7 +3315,7 @@ exports[`RangeSelector opacity 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -3363,7 +3365,7 @@ exports[`RangeSelector opacity 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -3375,7 +3377,7 @@ exports[`RangeSelector opacity 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -3426,7 +3428,7 @@ exports[`RangeSelector opacity 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -3476,7 +3478,7 @@ exports[`RangeSelector opacity 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -3488,7 +3490,7 @@ exports[`RangeSelector opacity 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -3539,7 +3541,7 @@ exports[`RangeSelector opacity 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -3589,7 +3591,7 @@ exports[`RangeSelector opacity 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -4124,7 +4126,7 @@ exports[`RangeSelector round 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -4175,7 +4177,7 @@ exports[`RangeSelector round 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -4225,7 +4227,7 @@ exports[`RangeSelector round 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -4237,7 +4239,7 @@ exports[`RangeSelector round 1`] = `
       className="c7"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -4288,7 +4290,7 @@ exports[`RangeSelector round 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -4338,7 +4340,7 @@ exports[`RangeSelector round 1`] = `
       className="c7"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -4350,7 +4352,7 @@ exports[`RangeSelector round 1`] = `
       className="c9"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -4401,7 +4403,7 @@ exports[`RangeSelector round 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -4451,7 +4453,7 @@ exports[`RangeSelector round 1`] = `
       className="c9"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -4463,7 +4465,7 @@ exports[`RangeSelector round 1`] = `
       className="c11"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -4514,7 +4516,7 @@ exports[`RangeSelector round 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -4564,7 +4566,7 @@ exports[`RangeSelector round 1`] = `
       className="c11"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -4576,7 +4578,7 @@ exports[`RangeSelector round 1`] = `
       className="c13"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -4627,7 +4629,7 @@ exports[`RangeSelector round 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -4677,7 +4679,7 @@ exports[`RangeSelector round 1`] = `
       className="c13"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -4906,7 +4908,7 @@ exports[`RangeSelector size 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -4957,7 +4959,7 @@ exports[`RangeSelector size 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -5007,7 +5009,7 @@ exports[`RangeSelector size 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -5019,7 +5021,7 @@ exports[`RangeSelector size 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -5070,7 +5072,7 @@ exports[`RangeSelector size 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -5120,7 +5122,7 @@ exports[`RangeSelector size 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -5132,7 +5134,7 @@ exports[`RangeSelector size 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -5183,7 +5185,7 @@ exports[`RangeSelector size 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -5233,7 +5235,7 @@ exports[`RangeSelector size 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -5245,7 +5247,7 @@ exports[`RangeSelector size 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -5296,7 +5298,7 @@ exports[`RangeSelector size 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -5346,7 +5348,7 @@ exports[`RangeSelector size 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -5358,7 +5360,7 @@ exports[`RangeSelector size 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -5409,7 +5411,7 @@ exports[`RangeSelector size 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -5459,7 +5461,7 @@ exports[`RangeSelector size 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -5471,7 +5473,7 @@ exports[`RangeSelector size 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -5522,7 +5524,7 @@ exports[`RangeSelector size 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -5572,7 +5574,7 @@ exports[`RangeSelector size 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -5584,7 +5586,7 @@ exports[`RangeSelector size 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "19.801980198019802 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -5635,7 +5637,7 @@ exports[`RangeSelector size 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "10.89108910891089 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -5685,7 +5687,7 @@ exports[`RangeSelector size 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "69.3069306930693 0 0",
+          "flex": "70 0 0",
         }
       }
     />
@@ -5914,7 +5916,7 @@ exports[`RangeSelector step 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "18.18181818181818 0 0",
+          "flex": "20 0 0",
         }
       }
     />
@@ -5965,7 +5967,7 @@ exports[`RangeSelector step 1`] = `
       style={
         Object {
           "cursor": "ew-resize",
-          "flex": "18.18181818181818 0 0",
+          "flex": "11 0 0",
         }
       }
     />
@@ -6015,7 +6017,7 @@ exports[`RangeSelector step 1`] = `
       className="c2"
       style={
         Object {
-          "flex": "63.63636363636363 0 0",
+          "flex": "70 0 0",
         }
       }
     />
