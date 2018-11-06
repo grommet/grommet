@@ -9,7 +9,7 @@ const fullStyle = css`
 `;
 
 export const StyledGrommet = styled.div`
-  ${baseStyle}
+  ${props => !props.plain && baseStyle}
   ${props => props.full && fullStyle}
   ${props => props.theme.global.font.face}
   ${props => props.theme.grommet.extend}

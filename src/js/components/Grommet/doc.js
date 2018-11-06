@@ -12,7 +12,14 @@ export const doc = Grommet => {
     );
 
   DocumentedGrommet.propTypes = {
-    full: PropTypes.bool.description('Whether to take the whole viewport.'),
+    full: PropTypes.bool
+      .description('Whether to take the whole viewport.')
+      .defaultValue(false),
+    plain: PropTypes.bool
+      .description(
+        'Whether or not Grommet should apply a global font-family, font-size, and line-height.',
+      )
+      .defaultValue(false),
     theme: PropTypes.object.description(
       'Custom styles for Grommet app component.',
     ),
