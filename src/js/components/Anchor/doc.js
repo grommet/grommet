@@ -65,20 +65,22 @@ or just use children.`,
     a11yTitle: PropTypes.string.description(
       'Custom title to be used by screen readers.',
     ),
-    color: PropTypes.string.description(`
-      Label color and icon color, if not specified on the icon.
-    `),
+    color: PropTypes.string.description(
+      'Label color and icon color, if not specified on the icon.',
+    ),
     href: PropTypes.string.description(
       'Hyperlink reference to place in the anchor.',
     ),
     icon: PropTypes.element.description('Icon element to place in the anchor.'),
     label: PropTypes.node.description('Label text to place in the anchor.'),
-    onClick: PropTypes.func
-      .description(`Click handler. It can be used, for example, 
-    to add analytics and track who clicked in the anchor.`),
+    onClick: PropTypes.func.description(
+      `Click handler. It can be used, for example, 
+        to add analytics and track who clicked in the anchor.`,
+    ),
     reverse: PropTypes.bool
       .description(
-        'Whether an icon and label should be reversed so that the icon is at the end of the anchor.',
+        `Whether an icon and label should be reversed so that the
+        icon is at the end of the anchor.`,
       )
       .defaultValue(false),
     size: PropTypes.oneOfType([
