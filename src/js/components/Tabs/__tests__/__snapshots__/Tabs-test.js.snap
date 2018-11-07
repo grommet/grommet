@@ -75,7 +75,7 @@ exports[`Tabs Tab 1`] = `
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-bottom: solid 2px rgba(0,0,0,0.33);
+  border-bottom: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -105,13 +105,13 @@ exports[`Tabs Tab 1`] = `
 .c6 {
   font-size: 18px;
   line-height: 24px;
-  font-weight: bold;
+  color: #444444;
 }
 
 .c8 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
+  color: #7D4CDB;
 }
 
 .c0 {
@@ -129,6 +129,10 @@ exports[`Tabs Tab 1`] = `
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
+}
+
+.c4:hover {
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -197,7 +201,7 @@ exports[`Tabs Tab 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    border-bottom: solid 2px rgba(0,0,0,0.33);
+    border-bottom: solid 2px #7D4CDB;
   }
 }
 
@@ -347,7 +351,7 @@ exports[`Tabs change to second tab 1`] = `
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-bottom: solid 2px rgba(0,0,0,0.33);
+  border-bottom: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -377,13 +381,13 @@ exports[`Tabs change to second tab 1`] = `
 .c6 {
   font-size: 18px;
   line-height: 24px;
-  font-weight: bold;
+  color: #444444;
 }
 
 .c8 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
+  color: #7D4CDB;
 }
 
 .c0 {
@@ -401,6 +405,10 @@ exports[`Tabs change to second tab 1`] = `
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
+}
+
+.c4:hover {
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -469,7 +477,7 @@ exports[`Tabs change to second tab 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    border-bottom: solid 2px rgba(0,0,0,0.33);
+    border-bottom: solid 2px #7D4CDB;
   }
 }
 
@@ -553,10 +561,10 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 iaGDCb"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 iEgnbY"
+            class="StyledText-sc-1sadyjn-0 gnzBzL"
           >
             Tab 1
           </span>
@@ -570,10 +578,10 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kvUzDk"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 dndifk"
+            class="StyledText-sc-1sadyjn-0 iEgnbY"
           >
             Tab 2
           </span>
@@ -665,7 +673,7 @@ exports[`Tabs complex title 1`] = `
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-bottom: solid 2px rgba(0,0,0,0.33);
+  border-bottom: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -707,6 +715,10 @@ exports[`Tabs complex title 1`] = `
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
+}
+
+.c4:hover {
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -775,7 +787,7 @@ exports[`Tabs complex title 1`] = `
 
 @media only screen and (max-width:768px) {
   .c6 {
-    border-bottom: solid 2px rgba(0,0,0,0.33);
+    border-bottom: solid 2px #7D4CDB;
   }
 }
 
@@ -1015,7 +1027,7 @@ exports[`Tabs set on hover 1`] = `
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-bottom: solid 2px rgba(0,0,0,0.33);
+  border-bottom: solid 2px #7D4CDB;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1045,13 +1057,13 @@ exports[`Tabs set on hover 1`] = `
 .c6 {
   font-size: 18px;
   line-height: 24px;
-  font-weight: bold;
+  color: #444444;
 }
 
 .c8 {
   font-size: 18px;
   line-height: 24px;
-  color: #444444;
+  color: #7D4CDB;
 }
 
 .c0 {
@@ -1069,6 +1081,10 @@ exports[`Tabs set on hover 1`] = `
   margin-right: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
+}
+
+.c4:hover {
+  color: #000000;
 }
 
 @media only screen and (max-width:768px) {
@@ -1137,7 +1153,7 @@ exports[`Tabs set on hover 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    border-bottom: solid 2px rgba(0,0,0,0.33);
+    border-bottom: solid 2px #7D4CDB;
   }
 }
 
@@ -1221,10 +1237,10 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kvUzDk"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 dndifk"
+            class="StyledText-sc-1sadyjn-0 iEgnbY"
           >
             Tab 1
           </span>
@@ -1238,10 +1254,10 @@ exports[`Tabs set on hover 2`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 iaGDCb"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 iEgnbY"
+            class="StyledText-sc-1sadyjn-0 gnzBzL"
           >
             Tab 2
           </span>
@@ -1277,10 +1293,10 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kvUzDk"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 dndifk"
+            class="StyledText-sc-1sadyjn-0 iEgnbY"
           >
             Tab 1
           </span>
@@ -1294,10 +1310,10 @@ exports[`Tabs set on hover 3`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 iaGDCb"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 iEgnbY"
+            class="StyledText-sc-1sadyjn-0 gnzBzL"
           >
             Tab 2
           </span>
@@ -1333,10 +1349,10 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kvUzDk"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 dndifk"
+            class="StyledText-sc-1sadyjn-0 iEgnbY"
           >
             Tab 1
           </span>
@@ -1350,10 +1366,10 @@ exports[`Tabs set on hover 4`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 iaGDCb"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 iEgnbY"
+            class="StyledText-sc-1sadyjn-0 gnzBzL"
           >
             Tab 2
           </span>
@@ -1389,10 +1405,10 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 kvUzDk"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 dndifk"
+            class="StyledText-sc-1sadyjn-0 iEgnbY"
           >
             Tab 1
           </span>
@@ -1406,10 +1422,10 @@ exports[`Tabs set on hover 5`] = `
         type="button"
       >
         <div
-          class="StyledTab-sc-1nnwnsb-0 coQChF StyledBox-sc-13pk1d4-0 iaGDCb"
+          class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 iEgnbY"
+            class="StyledText-sc-1sadyjn-0 gnzBzL"
           >
             Tab 2
           </span>

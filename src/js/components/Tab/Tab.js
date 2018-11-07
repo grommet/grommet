@@ -67,24 +67,24 @@ class Tab extends Component {
       if (typeof title !== 'string') {
         normalizedTitle = title;
       } else if (active) {
-        normalizedTitle = <Text weight={theme.tab.active.weight}>{title}</Text>;
+        normalizedTitle = <Text {...theme.tab.active}>{title}</Text>;
       } else {
-        const color = normalizeColor(theme.tab.color, theme);
-        normalizedTitle = <Text color={color}>{title}</Text>;
+        normalizedTitle = (
+          <Text color={over ? theme.tab.hover.color : theme.tab.color}>
+            {title}
+          </Text>
+        );
       }
 
       if (theme.tab.border) {
-        let borderColor;
+        let borderColor =
+          theme.tab.border.color || theme.global.control.border.color;
         if (active) {
-          borderColor = normalizeColor(theme.tab.border.color, theme);
+          borderColor = theme.tab.border.active.color || borderColor;
         } else if (over) {
-          borderColor = normalizeColor(theme.tab.border.hover.color, theme);
-        } else {
-          borderColor = normalizeColor(
-            theme.global.control.border.color,
-            theme,
-          );
+          borderColor = theme.tab.border.hover.color || borderColor;
         }
+        borderColor = normalizeColor(borderColor, theme);
 
         tabStyles.border = {
           side: theme.tab.border.side,
