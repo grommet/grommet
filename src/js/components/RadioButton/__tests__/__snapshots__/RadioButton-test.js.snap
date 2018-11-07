@@ -117,7 +117,7 @@ exports[`RadioButton checked renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    margin-right: undefined;
+    margin-right: 6px;
   }
 }
 
@@ -340,7 +340,7 @@ exports[`RadioButton disabled renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    margin-right: undefined;
+    margin-right: 6px;
   }
 }
 
@@ -566,7 +566,7 @@ exports[`RadioButton label renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    margin-right: undefined;
+    margin-right: 6px;
   }
 }
 
@@ -763,7 +763,7 @@ exports[`RadioButton renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
-    margin-right: undefined;
+    margin-right: 6px;
   }
 }
 
