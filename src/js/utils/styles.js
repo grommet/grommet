@@ -38,12 +38,12 @@ export const edgeStyle = (
 
   if (typeof data === 'string') {
     return css`
-      ${kind}: ${theme.global.edgeSize[data]};
+      ${kind}: ${theme.global.edgeSize[data] || data};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}: ${breakpoint.edgeSize[data]};
+        ${kind}: ${breakpoint.edgeSize[data] || data};
       `,
           )
         : ''};
@@ -52,14 +52,18 @@ export const edgeStyle = (
   const result = [];
   if (data.horizontal) {
     result.push(css`
-      ${kind}-left: ${theme.global.edgeSize[data.horizontal]};
-      ${kind}-right: ${theme.global.edgeSize[data.horizontal]};
+      ${kind}-left: ${theme.global.edgeSize[data.horizontal] ||
+        data.horizontal};
+      ${kind}-right: ${theme.global.edgeSize[data.horizontal] ||
+        data.horizontal};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-left: ${breakpoint.edgeSize[data.horizontal]};
-        ${kind}-right: ${breakpoint.edgeSize[data.horizontal]};
+        ${kind}-left: ${breakpoint.edgeSize[data.horizontal] ||
+              data.horizontal};
+        ${kind}-right: ${breakpoint.edgeSize[data.horizontal] ||
+              data.horizontal};
       `,
           )
         : ''};
@@ -67,14 +71,14 @@ export const edgeStyle = (
   }
   if (data.vertical) {
     result.push(css`
-      ${kind}-top: ${theme.global.edgeSize[data.vertical]};
-      ${kind}-bottom: ${theme.global.edgeSize[data.vertical]};
+      ${kind}-top: ${theme.global.edgeSize[data.vertical] || data.vertical};
+      ${kind}-bottom: ${theme.global.edgeSize[data.vertical] || data.vertical};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-top: ${breakpoint.edgeSize[data.vertical]};
-        ${kind}-bottom: ${breakpoint.edgeSize[data.vertical]};
+        ${kind}-top: ${breakpoint.edgeSize[data.vertical] || data.vertical};
+        ${kind}-bottom: ${breakpoint.edgeSize[data.vertical] || data.vertical};
       `,
           )
         : ''};
@@ -82,12 +86,12 @@ export const edgeStyle = (
   }
   if (data.top) {
     result.push(css`
-      ${kind}-top: ${theme.global.edgeSize[data.top]};
+      ${kind}-top: ${theme.global.edgeSize[data.top] || data.top};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-top: ${breakpoint.edgeSize[data.top]};
+        ${kind}-top: ${breakpoint.edgeSize[data.top] || data.top};
       `,
           )
         : ''};
@@ -95,12 +99,12 @@ export const edgeStyle = (
   }
   if (data.bottom) {
     result.push(css`
-      ${kind}-bottom: ${theme.global.edgeSize[data.bottom]};
+      ${kind}-bottom: ${theme.global.edgeSize[data.bottom] || data.bottom};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-bottom: ${breakpoint.edgeSize[data.bottom]};
+        ${kind}-bottom: ${breakpoint.edgeSize[data.bottom] || data.bottom};
       `,
           )
         : ''};
@@ -108,12 +112,12 @@ export const edgeStyle = (
   }
   if (data.left) {
     result.push(css`
-      ${kind}-left: ${theme.global.edgeSize[data.left]};
+      ${kind}-left: ${theme.global.edgeSize[data.left] || data.left};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-left: ${breakpoint.edgeSize[data.left]};
+        ${kind}-left: ${breakpoint.edgeSize[data.left] || data.left};
       `,
           )
         : ''};
@@ -121,12 +125,12 @@ export const edgeStyle = (
   }
   if (data.right) {
     result.push(css`
-      ${kind}-right: ${theme.global.edgeSize[data.right]};
+      ${kind}-right: ${theme.global.edgeSize[data.right] || data.right};
       ${responsive && breakpoint
         ? breakpointStyle(
             breakpoint,
             `
-        ${kind}-right: ${breakpoint.edgeSize[data.left]};
+        ${kind}-right: ${breakpoint.edgeSize[data.right] || data.right};
       `,
           )
         : ''};

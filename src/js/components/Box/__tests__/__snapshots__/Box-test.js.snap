@@ -4040,7 +4040,7 @@ exports[`Box margin 1`] = `
 
 @media only screen and (max-width:768px) {
   .c8 {
-    margin-right: undefined;
+    margin-right: 6px;
   }
 }
 
@@ -4355,7 +4355,7 @@ exports[`Box pad 1`] = `
 
 @media only screen and (max-width:768px) {
   .c8 {
-    padding-right: undefined;
+    padding-right: 6px;
   }
 }
 
