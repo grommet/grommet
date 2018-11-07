@@ -1,1 +1,0 @@
-{"version":3,"file":"static/iframe.34d462b28b2694f259cf.bundle.js","sources":["webpack:///./src/js/components/Table/TableContext.js"],"sourcesContent":["import React from 'react';\n\nexport const TableContext = React.createContext(undefined);\n"],"mappings":"AAAA","sourceRoot":""}
