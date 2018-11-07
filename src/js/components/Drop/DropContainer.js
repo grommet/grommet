@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
 import { ThemeContext } from '../../contexts';
@@ -68,7 +67,7 @@ export class DropContainer extends Component {
 
     if (restrictFocus) {
       /* eslint-disable-next-line react/no-find-dom-node */
-      findDOMNode(this.dropRef.current).focus();
+      this.dropRef.current.focus();
     }
   }
 
@@ -85,7 +84,7 @@ export class DropContainer extends Component {
   addScrollListener = () => {
     const { dropTarget } = this.props;
     /* eslint-disable-next-line react/no-find-dom-node */
-    this.scrollParents = findScrollParents(findDOMNode(dropTarget));
+    this.scrollParents = findScrollParents(dropTarget);
     this.scrollParents.forEach(scrollParent =>
       scrollParent.addEventListener('scroll', this.place),
     );
@@ -100,9 +99,9 @@ export class DropContainer extends Component {
   onClickDocument = event => {
     const { dropTarget, onClickOutside } = this.props;
     /* eslint-disable-next-line react/no-find-dom-node */
-    const dropTargetNode = findDOMNode(dropTarget);
+    const dropTargetNode = dropTarget;
     /* eslint-disable-next-line react/no-find-dom-node */
-    const dropNode = findDOMNode(this.dropRef.current);
+    const dropNode = this.dropRef.current;
     if (
       onClickOutside &&
       dropNode && // need this for ie11
@@ -124,13 +123,14 @@ export class DropContainer extends Component {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
     /* eslint-disable-next-line react/no-find-dom-node */
-    const target = findDOMNode(dropTarget);
+    const target = dropTarget;
     /* eslint-disable-next-line react/no-find-dom-node */
-    const container = findDOMNode(this.dropRef.current);
+    const container = this.dropRef.current;
     if (container && target) {
       // clear prior styling
       container.style.width = '';
-      container.style.height = '';
+      container.style.left = '';
+      container.style.top = '';
       // get bounds
       const targetRect = findVisibleParent(target).getBoundingClientRect();
       const containerRect = container.getBoundingClientRect();

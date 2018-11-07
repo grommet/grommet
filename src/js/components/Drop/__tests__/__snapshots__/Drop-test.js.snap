@@ -2044,7 +2044,7 @@ exports[`Drop resize 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="left: 0px; top: 0px; max-height: 1000px; width: 0.1px;"
+  style="max-height: 1000px; left: 0px; width: 0.1px; top: 0px;"
   tabindex="-1"
 >
   this is a test

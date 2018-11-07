@@ -8,10 +8,6 @@ import { withForwardRef, withTheme } from '../hocs';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
 
-const styledComponents = {
-  div: StyledBox,
-}; // tag -> styled component
-
 class Box extends Component {
   static defaultProps = {
     direction: 'column',
@@ -75,12 +71,6 @@ class Box extends Component {
     const { theme: stateTheme, priorTheme } = this.state;
     const theme = stateTheme || propsTheme;
 
-    let StyledComponent = styledComponents[tag];
-    if (!StyledComponent) {
-      StyledComponent = StyledBox.withComponent(tag);
-      styledComponents[tag] = StyledComponent;
-    }
-
     let contents = children;
     if (gap) {
       contents = [];
@@ -106,7 +96,8 @@ class Box extends Component {
     }
 
     let content = (
-      <StyledComponent
+      <StyledBox
+        as={tag}
         aria-label={a11yTitle}
         ref={forwardRef}
         directionProp={direction}
@@ -122,7 +113,7 @@ class Box extends Component {
         {...rest}
       >
         {contents}
-      </StyledComponent>
+      </StyledBox>
     );
 
     if (stateTheme) {

@@ -5189,7 +5189,7 @@ exports[`Box tag 1`] = `
   className="c0"
 >
   <header
-    className="-header c1"
+    className="c1"
   />
 </div>
 `;

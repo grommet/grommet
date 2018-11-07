@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { findDOMNode } from 'react-dom';
 import Waypoint from 'react-waypoint';
 
-class InfiniteScroll extends Component {
+class InfiniteScroll extends PureComponent {
   static defaultProps = {
     items: [],
     step: 50,

@@ -1,4 +1,4 @@
-import React, { createRef, Component } from 'react';
+import React, { createRef, Component, PureComponent } from 'react';
 import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
@@ -360,6 +360,9 @@ class CustomSearchSelect extends Component {
                   ? this.renderContentPartners()
                   : undefined
               }
+              selected={selectedContentPartners.map(option =>
+                contentPartners.indexOf(option),
+              )}
               options={contentPartners}
               onChange={({ option }) => {
                 const newSelectedPartners = [...selectedContentPartners];
@@ -439,6 +442,83 @@ class DarkSelect extends Component {
   }
 }
 
+class Option extends PureComponent {
+  render() {
+    const { value, selected } = this.props;
+    return (
+      <Box direction="row" gap="small" align="center" pad="xsmall">
+        <CheckBox tabIndex="-1" checked={selected} onChange={() => {}} />
+        {value}
+      </Box>
+    );
+  }
+}
+
+const dummyOptions = Array(2000)
+  .fill()
+  .map((_, i) => `option ${i}`)
+  .sort();
+
+const theme = deepMerge(grommet, {
+  select: {
+    step: 100,
+  },
+});
+
+class ManyOptions extends Component {
+  state = {
+    selected: [],
+    options: dummyOptions,
+  };
+
+  render() {
+    const { options, selected } = this.state;
+    return (
+      <Grommet theme={theme}>
+        <Box pad="xsmall">
+          <Select
+            multiple
+            closeOnChange={false}
+            placeholder="select an option..."
+            value={selected}
+            options={options}
+            onClose={() =>
+              this.setState({
+                options: options.sort((p1, p2) => {
+                  const p1Exists = selected.includes(p1);
+                  const p2Exists = selected.includes(p2);
+
+                  if (!p1Exists && p2Exists) {
+                    return 1;
+                  }
+                  if (p1Exists && !p2Exists) {
+                    return -1;
+                  }
+                  return p1.localeCompare(p2);
+                }),
+              })
+            }
+            onChange={({ option }) => {
+              const newSelected = [...selected];
+              const selectedIndex = newSelected.indexOf(option);
+              if (selectedIndex >= 0) {
+                newSelected.splice(selectedIndex, 1);
+              } else {
+                newSelected.push(option);
+              }
+              this.setState({ selected: newSelected });
+            }}
+          >
+            {option => (
+              <Option value={option} selected={selected.indexOf(option) >= 0} />
+            )}
+          </Select>
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Select', module)
   .add('Simple Select', () => <SimpleSelect />)
   .add('Search Select', () => <SearchSelect />)
@@ -453,4 +533,5 @@ storiesOf('Select', module)
       }}
     />
   ))
-  .add('Custom Rounded', () => <SimpleSelect theme={customRoundedTheme} />);
+  .add('Custom Rounded', () => <SimpleSelect theme={customRoundedTheme} />)
+  .add('Lots of options', () => <ManyOptions />);

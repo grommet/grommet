@@ -1,6 +1,5 @@
 /* eslint-disable react/no-find-dom-node */
 import React, { createRef, Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import styled from 'styled-components';
 
 import {
@@ -12,11 +11,12 @@ import {
 
 import { withTheme } from '../hocs';
 import { Box } from '../Box';
-import { Button } from '../Button';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
+
+import { SelectOption } from './SelectOption';
 
 const ContainerBox = styled(Box)`
   max-height: inherit;
@@ -41,7 +41,7 @@ class SelectContainer extends Component {
     onSearch: undefined,
     options: undefined,
     searchPlaceholder: undefined,
-    selected: false,
+    selected: undefined,
     value: '',
   };
 
@@ -52,23 +52,24 @@ class SelectContainer extends Component {
   selectRef = createRef();
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { options, value } = nextProps;
+    const { options, value, onSearch } = nextProps;
 
-    if (
-      prevState.activeIndex === -1 &&
-      prevState.search === '' &&
-      options &&
-      value
-    ) {
-      const optionValue =
-        Array.isArray(value) && value.length ? value[0] : value;
-      const activeIndex = options.indexOf(optionValue);
-      return { activeIndex };
+    if (onSearch) {
+      if (
+        prevState.activeIndex === -1 &&
+        prevState.search === '' &&
+        options &&
+        value
+      ) {
+        const optionValue =
+          Array.isArray(value) && value.length ? value[0] : value;
+        const activeIndex = options.indexOf(optionValue);
+        return { activeIndex };
+      }
+      if (prevState.activeIndex === -1 && prevState.search !== '') {
+        return { activeIndex: 0 };
+      }
     }
-    if (prevState.activeIndex === -1 && prevState.search !== '') {
-      return { activeIndex: 0 };
-    }
-
     return null;
   }
 
@@ -84,19 +85,19 @@ class SelectContainer extends Component {
     // timeout need to send the operation through event loop and allow time to the portal
     // to be available
     setTimeout(() => {
-      const selectNode = findDOMNode(this.selectRef.current);
+      const selectNode = this.selectRef.current;
       if (onSearch) {
-        const input = findDOMNode(this.searchRef.current);
+        const input = this.searchRef.current;
         if (input && input.focus) {
           setFocusWithoutScroll(input);
         }
-      } else if (this.selectRef) {
-        setFocusWithoutScroll(findDOMNode(this.selectRef.current));
+      } else if (selectNode) {
+        setFocusWithoutScroll(selectNode);
       }
 
       // scroll to active option if it is below the fold
       if (activeIndex >= 0) {
-        const optionNode = findDOMNode(this.optionsRef[activeIndex]);
+        const optionNode = this.optionsRef[activeIndex];
         const { bottom: containerBottom } = selectNode.getBoundingClientRect();
         const { bottom: optionTop } = optionNode.getBoundingClientRect();
 
@@ -167,7 +168,7 @@ class SelectContainer extends Component {
       }
 
       onChange({
-        target: findDOMNode(this.searchRef.current),
+        target: this.searchRef.current,
         option,
         value: nextValue,
         selected: nextSelected,
@@ -181,8 +182,8 @@ class SelectContainer extends Component {
     event.preventDefault();
     const index = Math.min(activeIndex + 1, options.length - 1);
     this.setState({ activeIndex: index }, () => {
-      const buttonNode = findDOMNode(this.optionsRef[index]);
-      const selectNode = findDOMNode(this.selectRef.current);
+      const buttonNode = this.optionsRef[index];
+      const selectNode = this.selectRef.current;
 
       if (isNodeAfterScroll(buttonNode, selectNode) && selectNode.scrollBy) {
         selectNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
@@ -195,8 +196,8 @@ class SelectContainer extends Component {
     event.preventDefault();
     const index = Math.max(activeIndex - 1, 0);
     this.setState({ activeIndex: index }, () => {
-      const buttonNode = findDOMNode(this.optionsRef[index]);
-      const selectNode = findDOMNode(this.selectRef.current);
+      const buttonNode = this.optionsRef[index];
+      const selectNode = this.selectRef.current;
 
       if (isNodeBeforeScroll(buttonNode, selectNode) && selectNode.scrollBy) {
         selectNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
@@ -264,38 +265,38 @@ class SelectContainer extends Component {
           >
             <InfiniteScroll items={options} step={theme.select.step}>
               {(option, index) => (
-                <Box key={`option_${name || ''}_${index}`} flex={false}>
-                  <Button
-                    role="menuitem"
-                    ref={ref => {
-                      this.optionsRef[index] = ref;
-                    }}
-                    active={
-                      selected === index ||
-                      (Array.isArray(selected) &&
-                        selected.indexOf(index) !== -1) ||
-                      activeIndex === index ||
-                      (option && option === value) ||
-                      (option &&
-                        Array.isArray(value) &&
-                        value.indexOf(option) !== -1)
-                    }
-                    onClick={() => this.selectOption(option, index)}
-                    hoverIndicator="background"
-                  >
-                    {children ? (
-                      children(option, index, options)
-                    ) : (
-                      <Box align="start" pad="small">
-                        <Text margin="none">
-                          {option !== null && option !== undefined
-                            ? option.toString()
-                            : undefined}
-                        </Text>
-                      </Box>
-                    )}
-                  </Button>
-                </Box>
+                <SelectOption
+                  active={
+                    selected === index ||
+                    (Array.isArray(selected) &&
+                      selected.indexOf(index) !== -1) ||
+                    activeIndex === index ||
+                    (option && option === value) ||
+                    (option &&
+                      Array.isArray(value) &&
+                      value.indexOf(option) !== -1)
+                  }
+                  ref={ref => {
+                    this.optionsRef[index] = ref;
+                  }}
+                  value={value}
+                  selected={selected}
+                  option={option}
+                  key={`option_${name || ''}_${index}`}
+                  onClick={() => this.selectOption(option, index)}
+                >
+                  {children ? (
+                    children(option, index, options)
+                  ) : (
+                    <Box align="start" pad="small">
+                      <Text margin="none">
+                        {option !== null && option !== undefined
+                          ? option.toString()
+                          : undefined}
+                      </Text>
+                    </Box>
+                  )}
+                </SelectOption>
               )}
             </InfiniteScroll>
           </OptionsBox>
