@@ -113,9 +113,7 @@ string
 
 **color**
 
-
-      Label color and icon color, if not specified on the icon.
-    
+Label color and icon color, if not specified on the icon.
 
 ```
 string
@@ -148,7 +146,7 @@ node
 **onClick**
 
 Click handler. It can be used, for example, 
-    to add analytics and track who clicked in the anchor.
+        to add analytics and track who clicked in the anchor.
 
 ```
 function
@@ -156,7 +154,8 @@ function
 
 **reverse**
 
-Whether an icon and label should be reversed so that the icon is at the end of the anchor.
+Whether an icon and label should be reversed so that the
+        icon is at the end of the anchor.
 
 ```
 boolean
