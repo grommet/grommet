@@ -131,6 +131,7 @@ export class DropContainer extends Component {
       container.style.width = '';
       container.style.left = '';
       container.style.top = '';
+      // container.style.maxHeight = '';
       // get bounds
       const targetRect = findVisibleParent(target).getBoundingClientRect();
       const containerRect = container.getBoundingClientRect();
@@ -169,25 +170,19 @@ export class DropContainer extends Component {
       if (align.top) {
         if (align.top === 'top') {
           ({ top } = targetRect);
-          maxHeight = Math.min(windowHeight - targetRect.top, windowHeight);
         } else {
           top = targetRect.bottom;
-          maxHeight = Math.min(
-            windowHeight - targetRect.bottom,
-            windowHeight - targetRect.height,
-          );
         }
       } else if (align.bottom) {
         if (align.bottom === 'bottom') {
           top = targetRect.bottom - containerRect.height;
-          maxHeight = Math.max(targetRect.bottom, 0);
         } else {
           top = targetRect.top - containerRect.height;
-          maxHeight = Math.max(targetRect.top, 0);
         }
       } else {
         top = targetRect.top + targetRect.height / 2 - containerRect.height / 2;
       }
+      maxHeight = Math.min(windowHeight - top);
       // if we can't fit it all, see if there's more room the other direction
       if (containerRect.height > maxHeight) {
         // We need more room than we have.
@@ -197,12 +192,8 @@ export class DropContainer extends Component {
             if (responsive) {
               top = Math.max(targetRect.top - containerRect.height, 0);
             }
-            maxHeight = targetRect.top;
-          } else {
-            if (responsive) {
-              top = Math.max(targetRect.bottom - containerRect.height, 0);
-            }
-            maxHeight = targetRect.bottom;
+          } else if (responsive) {
+            top = Math.max(targetRect.bottom - containerRect.height, 0);
           }
         } else if (align.bottom && maxHeight < windowHeight / 2) {
           // We put it above but there's more room below, put it below
@@ -210,15 +201,8 @@ export class DropContainer extends Component {
             if (responsive) {
               ({ top } = targetRect);
             }
-            maxHeight = Math.min(windowHeight - top, windowHeight);
-          } else {
-            if (responsive) {
-              top = targetRect.bottom;
-            }
-            maxHeight = Math.min(
-              windowHeight - top,
-              windowHeight - targetRect.height,
-            );
+          } else if (responsive) {
+            top = targetRect.bottom;
           }
         }
       }

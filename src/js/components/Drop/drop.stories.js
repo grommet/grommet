@@ -15,8 +15,8 @@ class SimpleDrop extends Component {
 
   render() {
     return (
-      <Grommet theme={grommet}>
-        <Box align="start">
+      <Grommet theme={grommet} full>
+        <Box fill align="center" justify="center">
           <Box
             background="dark-4"
             pad="medium"
@@ -111,7 +111,7 @@ class AllDrops extends Component {
             },
           }}
         >
-          <Box direction="row" wrap pad="medium" align="center">
+          <Box direction="row" wrap pad="large" align="center" justify="center">
             <Set
               label="left: left"
               aligns={[
@@ -225,8 +225,8 @@ class ProgressiveDrop extends Component {
   render() {
     const { openDrop, openInnerDrop } = this.state;
     return (
-      <Grommet theme={grommet}>
-        <Box align="start">
+      <Grommet theme={grommet} full>
+        <Box fill align="center" justify="center">
           <Button
             ref={this.boxRef}
             primary
@@ -260,7 +260,47 @@ class ProgressiveDrop extends Component {
   }
 }
 
+class LazyDrop extends Component {
+  state = { pad: 'small' };
+
+  targetRef = createRef();
+
+  componentDidMount() {
+    this.forceUpdate();
+    setTimeout(() => this.setState({ pad: 'xlarge' }), 2000);
+  }
+
+  render() {
+    const { pad } = this.state;
+    return (
+      <Grommet theme={grommet} full>
+        <Box fill align="end" justify="end" pad="large">
+          <Box
+            background="dark-4"
+            pad="medium"
+            align="center"
+            justify="start"
+            ref={this.targetRef}
+          >
+            Target
+          </Box>
+          {this.targetRef.current && (
+            <Drop
+              align={{ top: 'bottom', right: 'right' }}
+              target={this.targetRef.current}
+              responsive
+            >
+              <Box pad={pad}>Drop Contents</Box>
+            </Drop>
+          )}
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Drop', module)
   .add('Simple', () => <SimpleDrop />)
   .add('All not stretch', () => <AllDrops />)
-  .add('Progressive', () => <ProgressiveDrop />);
+  .add('Progressive', () => <ProgressiveDrop />)
+  .add('Lazy', () => <LazyDrop />);
