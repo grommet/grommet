@@ -366,6 +366,8 @@ const responsiveContainerStyle = css`
   right: 0;
   transform: none;
   animation: none;
+  height: 100vh;
+  width: 100vw;
 `;
 
 export const StyledContainer = styled.div`

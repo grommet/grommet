@@ -262,9 +262,138 @@ const PlainLayer = () => (
   </Grommet>
 );
 
+class FullLayer extends Component {
+  state = {
+    showLayer: false,
+  };
+
+  render() {
+    const { showLayer } = this.state;
+    return (
+      <Grommet theme={grommet} full>
+        <Box pad="small" fill background="dark-3" align="start">
+          <Button
+            primary
+            color="accent-3"
+            label="Show"
+            onClick={() => this.setState({ showLayer: true })}
+          />
+          {showLayer && (
+            <Layer full>
+              <Box fill background="light-4" align="center" justify="center">
+                <Button
+                  primary
+                  label="Close"
+                  onClick={() => this.setState({ showLayer: false })}
+                />
+              </Box>
+            </Layer>
+          )}
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
+const ScrollBodyLayer = () => (
+  <Grommet theme={grommet}>
+    <Layer full="vertical" position="right">
+      <Box fill style={{ minWidth: '378px' }}>
+        <Box
+          direction="row"
+          align="center"
+          tag="header"
+          elevation="small"
+          justify="between"
+        >
+          <Text margin={{ left: 'small' }}>Header</Text>
+          <Button icon={<FormClose />} />
+        </Box>
+        <Box flex overflow="auto" pad="xsmall">
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+          <span>body</span>
+        </Box>
+        <Box
+          tag="footer"
+          border={{ side: 'top' }}
+          pad="small"
+          justify="end"
+          direction="row"
+          align="center"
+        >
+          <Button primary label="Save" />
+        </Box>
+      </Box>
+    </Layer>
+  </Grommet>
+);
+
 storiesOf('Layer', module)
   .add('Center', () => <CenterLayer />)
   .add('Form', () => <FormLayer />)
   .add('Notification', () => <NotificationLayer />)
   .add('Margin', () => <MarginLayer />)
-  .add('Plain', () => <PlainLayer />);
+  .add('Plain', () => <PlainLayer />)
+  .add('Full', () => <FullLayer />)
+  .add('Fixed Header, Scroll Body', () => <ScrollBodyLayer />);

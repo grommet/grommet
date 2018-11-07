@@ -50,6 +50,8 @@ exports[`Layer dark context 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -173,6 +175,8 @@ exports[`Layer full false 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -294,6 +298,8 @@ exports[`Layer full horizontal 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -413,6 +419,8 @@ exports[`Layer full true 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -534,6 +542,8 @@ exports[`Layer full vertical 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -635,6 +645,8 @@ exports[`Layer hidden 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -667,7 +679,7 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledOverlay-rmtehz-1 gVTfaV"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 egFHgi"
+    class="StyledLayer__StyledContainer-rmtehz-2 gRrEhW"
     id="hidden-test"
   >
     This is a layer
@@ -806,6 +818,8 @@ exports[`Layer margin large 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -926,6 +940,8 @@ exports[`Layer margin medium 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -1046,6 +1062,8 @@ exports[`Layer margin none 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -1166,6 +1184,8 @@ exports[`Layer margin small 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -1286,6 +1306,8 @@ exports[`Layer margin xsmall 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -1358,6 +1380,8 @@ exports[`Layer non-modal 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -1465,6 +1489,8 @@ exports[`Layer plain 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -1585,6 +1611,8 @@ exports[`Layer position bottom 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -1705,6 +1733,8 @@ exports[`Layer position center 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -1825,6 +1855,8 @@ exports[`Layer position left 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -1945,6 +1977,8 @@ exports[`Layer position right 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
@@ -2065,6 +2099,8 @@ exports[`Layer position top 1`] = `
     transform: none;
     -webkit-animation: none;
     animation: none;
+    height: 100vh;
+    width: 100vw;
   }
 }
 
