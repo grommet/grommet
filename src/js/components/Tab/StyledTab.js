@@ -11,9 +11,14 @@ const tabHoverStyle = css`
           props.theme.tab.hover.background,
           props.theme,
         )};
-      `};
+      `}
+    ${props =>
+      props.theme.tab.hover.color &&
+      css`
+        color: ${normalizeColor(props.theme.tab.hover.color, props.theme)};
+      `}
+    ${props => props.theme.tab.hover.extend};
   }
-  ${props => props.theme.tab.hover.extend};
 `;
 
 export const StyledTab = styled.div`

@@ -587,7 +587,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     tab: {
       active: {
-        weight: 'bold',
+        color: 'text',
         // background: undefined,
       },
       // background: undefined,
@@ -595,8 +595,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         side: 'bottom',
         size: 'small',
         color: {
-          dark: 'white',
-          light: 'black',
+          dark: 'accent-1',
+          light: 'brand',
+        },
+        active: {
+          color: {
+            dark: 'white',
+            light: 'black',
+          },
         },
         hover: {
           color: {
@@ -605,11 +611,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
-      color: 'text',
+      color: 'control',
       // extend: undefined,
       hover: {
         // background: undefined,
         // extend: undefined,
+        color: {
+          dark: 'white',
+          light: 'black',
+        },
       },
       margin: {
         vertical: 'xxsmall',
