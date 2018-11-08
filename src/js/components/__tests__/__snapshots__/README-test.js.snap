@@ -5187,6 +5187,11 @@ string
 **children**
 
 Function that will be called when each option is rendered.
+      It will be passed (option, index, options, state) where option
+      is the option to render, index is the index of that option in the
+      options array, and state is an object with
+      { active, disabled, selected } keys indicating the current state
+      of the option.
 
 \`\`\`
 function
@@ -5202,10 +5207,11 @@ boolean
 
 **disabled**
 
-Whether the select should be disabled.
+Whether the entire select or individual options should be disabled.
 
 \`\`\`
 boolean
+[number]
 \`\`\`
 
 **dropAlign**

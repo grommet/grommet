@@ -123,7 +123,7 @@ class Select extends Component {
         <DropButton
           ref={forwardRef}
           id={id}
-          disabled={disabled}
+          disabled={disabled === true || undefined}
           dropAlign={dropAlign}
           dropTarget={dropTarget}
           open={open}
@@ -162,7 +162,7 @@ class Select extends Component {
                   readOnly
                   value={textValue}
                   size={size}
-                  onClick={disabled ? undefined : this.onOpen}
+                  onClick={disabled === true ? undefined : this.onOpen}
                 />
               )}
             </Box>
