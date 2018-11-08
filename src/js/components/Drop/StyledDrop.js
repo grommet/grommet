@@ -32,6 +32,7 @@ export const StyledDrop = styled.div`
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto; //since we set max-height
 
   ${props => backgroundStyle(props.theme.global.drop.background, props.theme)}
 

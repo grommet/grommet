@@ -11,6 +11,27 @@ exports[`RadioButton checked renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -94,25 +115,16 @@ exports[`RadioButton checked renders 1`] = `
   position: relative;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 0px;
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -145,23 +157,11 @@ exports[`RadioButton checked renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
   <label
-    className="c1 -label c2"
+    className="c1 c2"
     onClick={[Function]}
   >
     <div
@@ -203,6 +203,27 @@ exports[`RadioButton disabled renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
 }
 
 .c4 {
@@ -317,25 +338,16 @@ exports[`RadioButton disabled renders 1`] = `
   position: relative;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 0px;
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -386,23 +398,11 @@ exports[`RadioButton disabled renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
   <label
-    className="c1 -label c2"
+    className="c1 c2"
     disabled={true}
     onClick={[Function]}
   >
@@ -422,7 +422,7 @@ exports[`RadioButton disabled renders 1`] = `
     </div>
   </label>
   <label
-    className="c1 -label c2"
+    className="c1 c2"
     disabled={true}
     onClick={[Function]}
   >
@@ -468,6 +468,27 @@ exports[`RadioButton label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -543,25 +564,16 @@ exports[`RadioButton label renders 1`] = `
   position: relative;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 0px;
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -594,23 +606,11 @@ exports[`RadioButton label renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
   <label
-    className="c1 -label c2"
+    className="c1 c2"
     onClick={[Function]}
   >
     <div
@@ -631,7 +631,7 @@ exports[`RadioButton label renders 1`] = `
     </span>
   </label>
   <label
-    className="c1 -label c2"
+    className="c1 c2"
     onClick={[Function]}
   >
     <div
@@ -665,6 +665,27 @@ exports[`RadioButton renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -740,25 +761,16 @@ exports[`RadioButton renders 1`] = `
   position: relative;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 0px;
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -791,23 +803,11 @@ exports[`RadioButton renders 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
   <label
-    className="c1 -label c2"
+    className="c1 c2"
     onClick={[Function]}
   >
     <div
@@ -825,7 +825,7 @@ exports[`RadioButton renders 1`] = `
     </div>
   </label>
   <label
-    className="c1 -label c2"
+    className="c1 c2"
     htmlFor="test id"
     onClick={[Function]}
   >

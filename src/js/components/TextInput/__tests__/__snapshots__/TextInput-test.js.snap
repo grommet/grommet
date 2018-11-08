@@ -226,6 +226,7 @@ exports[`TextInput close suggestion drop 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -381,7 +382,7 @@ exports[`TextInput close suggestion drop 3`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -393,6 +394,7 @@ exports[`TextInput close suggestion drop 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -406,7 +408,7 @@ exports[`TextInput close suggestion drop 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -594,6 +596,7 @@ exports[`TextInput complex suggestions 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -729,7 +732,7 @@ exports[`TextInput complex suggestions 3`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -741,6 +744,7 @@ exports[`TextInput complex suggestions 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -754,7 +758,7 @@ exports[`TextInput complex suggestions 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1108,6 +1112,7 @@ exports[`TextInput select suggestion 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1263,7 +1268,7 @@ exports[`TextInput select suggestion 3`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1275,6 +1280,7 @@ exports[`TextInput select suggestion 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1288,7 +1294,7 @@ exports[`TextInput select suggestion 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1483,6 +1489,7 @@ exports[`TextInput suggestions 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1638,7 +1645,7 @@ exports[`TextInput suggestions 3`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1650,6 +1657,7 @@ exports[`TextInput suggestions 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1663,7 +1671,7 @@ exports[`TextInput suggestions 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

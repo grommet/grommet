@@ -12,3 +12,4 @@ yarn-error.log
 .tmp/
 grommet-*-licenses.json
 grommet-*-src-with-dependecies.tgz
+.cache/

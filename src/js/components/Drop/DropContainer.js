@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
 import { ThemeContext } from '../../contexts';
@@ -64,16 +63,11 @@ export class DropContainer extends Component {
     window.addEventListener('resize', this.onResize);
     document.addEventListener('mousedown', this.onClickDocument);
 
-    this.place();
+    this.place(true);
 
     if (restrictFocus) {
-      /* eslint-disable-next-line react/no-find-dom-node */
-      findDOMNode(this.dropRef.current).focus();
+      this.dropRef.current.focus();
     }
-  }
-
-  componentDidUpdate() {
-    this.place();
   }
 
   componentWillUnmount() {
@@ -84,8 +78,7 @@ export class DropContainer extends Component {
 
   addScrollListener = () => {
     const { dropTarget } = this.props;
-    /* eslint-disable-next-line react/no-find-dom-node */
-    this.scrollParents = findScrollParents(findDOMNode(dropTarget));
+    this.scrollParents = findScrollParents(dropTarget);
     this.scrollParents.forEach(scrollParent =>
       scrollParent.addEventListener('scroll', this.place),
     );
@@ -99,10 +92,8 @@ export class DropContainer extends Component {
 
   onClickDocument = event => {
     const { dropTarget, onClickOutside } = this.props;
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const dropTargetNode = findDOMNode(dropTarget);
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const dropNode = findDOMNode(this.dropRef.current);
+    const dropTargetNode = dropTarget;
+    const dropNode = this.dropRef.current;
     if (
       onClickOutside &&
       dropNode && // need this for ie11
@@ -116,29 +107,26 @@ export class DropContainer extends Component {
   onResize = () => {
     this.removeScrollListener();
     this.addScrollListener();
-    this.place();
+    this.place(true);
   };
 
-  place = () => {
+  place = resize => {
     const { align, dropTarget, responsive, stretch, theme } = this.props;
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
-
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const target = findDOMNode(dropTarget);
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const container = findDOMNode(this.dropRef.current);
+    const target = dropTarget;
+    const container = this.dropRef.current;
     if (container && target) {
       // clear prior styling
       container.style.left = '';
-      container.style.width = '';
       container.style.top = '';
-      container.style.maxHeight = '';
-
+      if (resize) {
+        container.style.width = '';
+        container.style.maxHeight = '';
+      }
       // get bounds
       const targetRect = findVisibleParent(target).getBoundingClientRect();
       const containerRect = container.getBoundingClientRect();
-
       // determine width
       const width = Math.min(
         stretch
@@ -146,7 +134,6 @@ export class DropContainer extends Component {
           : containerRect.width,
         windowWidth,
       );
-
       // set left position
       let left;
       if (align.left) {
@@ -164,88 +151,91 @@ export class DropContainer extends Component {
       } else {
         left = targetRect.left + targetRect.width / 2 - width / 2;
       }
-
       if (left + width > windowWidth) {
         left -= left + width - windowWidth;
       } else if (left < 0) {
         left = 0;
       }
-
       // set top position
       let top;
-      let maxHeight;
+      let maxHeight = resize ? undefined : containerRect.height;
       if (align.top) {
         if (align.top === 'top') {
           ({ top } = targetRect);
-          maxHeight = Math.min(windowHeight - targetRect.top, windowHeight);
         } else {
           top = targetRect.bottom;
-          maxHeight = Math.min(
-            windowHeight - targetRect.bottom,
-            windowHeight - targetRect.height,
-          );
+        }
+        if (resize) {
+          maxHeight = Math.min(windowHeight - top);
         }
       } else if (align.bottom) {
         if (align.bottom === 'bottom') {
           top = targetRect.bottom - containerRect.height;
-          maxHeight = Math.max(targetRect.bottom, 0);
+          if (resize) {
+            maxHeight = Math.min(targetRect.bottom - top, windowHeight - top);
+          }
         } else {
           top = targetRect.top - containerRect.height;
-          maxHeight = Math.max(targetRect.top, 0);
+          if (resize) {
+            maxHeight = Math.min(targetRect.top - top, windowHeight - top);
+          }
         }
       } else {
         top = targetRect.top + targetRect.height / 2 - containerRect.height / 2;
+        if (resize) {
+          maxHeight = Math.min(windowHeight - top);
+        }
       }
-
       // if we can't fit it all, see if there's more room the other direction
-      if (containerRect.height > maxHeight) {
+      if (
+        resize &&
+        (containerRect.height > maxHeight || maxHeight > windowHeight / 10)
+      ) {
         // We need more room than we have.
         if (align.top && top > windowHeight / 2) {
           // We put it below, but there's more room above, put it above
           if (align.top === 'bottom') {
             if (responsive) {
               top = Math.max(targetRect.top - containerRect.height, 0);
+              maxHeight = targetRect.top - top;
             }
-            maxHeight = targetRect.top;
-          } else {
-            if (responsive) {
-              top = Math.max(targetRect.bottom - containerRect.height, 0);
-            }
-            maxHeight = targetRect.bottom;
+          } else if (responsive) {
+            top = Math.max(targetRect.bottom - containerRect.height, 0);
+            maxHeight = targetRect.bottom - top;
           }
         } else if (align.bottom && maxHeight < windowHeight / 2) {
           // We put it above but there's more room below, put it below
           if (align.bottom === 'bottom') {
             if (responsive) {
               ({ top } = targetRect);
+              maxHeight = windowHeight - top;
             }
-            maxHeight = Math.min(windowHeight - top, windowHeight);
-          } else {
-            if (responsive) {
-              top = targetRect.bottom;
-            }
-            maxHeight = Math.min(
-              windowHeight - top,
-              windowHeight - targetRect.height,
-            );
+          } else if (responsive) {
+            top = targetRect.bottom;
+            maxHeight = windowHeight - top;
           }
         }
       }
-
       container.style.left = `${left}px`;
-      if (stretch) {
+      if (resize && stretch) {
         // offset width by 0.1 to avoid a bug in ie11 that
         // unnecessarily wraps the text if width is the same
+        // NOTE: turned off for now
         container.style.width = `${width + 0.1}px`;
       }
       // the (position:absolute + scrollTop)
       // is presenting issues with desktop scroll flickering
       container.style.top = `${top}px`;
-      maxHeight = windowHeight - (top || 0);
-      if (theme.drop && theme.drop.maxHeight) {
-        maxHeight = Math.min(maxHeight, parseMetricToNum(theme.drop.maxHeight));
+      if (resize) {
+        // maxHeight = windowHeight - (top || 0);
+        if (theme.drop && theme.drop.maxHeight) {
+          maxHeight = Math.min(
+            maxHeight,
+            parseMetricToNum(theme.drop.maxHeight),
+          );
+        }
+        container.style.maxHeight = `${maxHeight}px`;
       }
-      container.style.maxHeight = `${maxHeight}px`;
     }
   };
 

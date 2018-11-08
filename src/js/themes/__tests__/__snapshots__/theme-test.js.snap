@@ -133,6 +133,27 @@ exports[`Grommet custom theme 1`] = `
   padding: 0px;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
 .c5 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -201,27 +222,6 @@ exports[`Grommet custom theme 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 0px;
-}
-
 @media only screen and (max-width:768px) {
   .c8 {
     margin: 0px;
@@ -270,7 +270,7 @@ exports[`Grommet custom theme 1`] = `
       onFocus={[Function]}
     >
       <span
-        className="-span c3"
+        className="c3"
         style={
           Object {
             "display": "inline-flex",
@@ -305,7 +305,7 @@ exports[`Grommet custom theme 1`] = `
       onFocus={[Function]}
     >
       <span
-        className="-span c3"
+        className="c3"
         style={
           Object {
             "display": "inline-flex",
@@ -344,7 +344,7 @@ exports[`Grommet custom theme 1`] = `
       onFocus={[Function]}
     >
       <span
-        className="-span c3"
+        className="c3"
         style={
           Object {
             "display": "inline-flex",
@@ -379,7 +379,7 @@ exports[`Grommet custom theme 1`] = `
       onFocus={[Function]}
     >
       <span
-        className="-span c3"
+        className="c3"
         style={
           Object {
             "display": "inline-flex",

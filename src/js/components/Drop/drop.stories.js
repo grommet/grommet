@@ -15,8 +15,8 @@ class SimpleDrop extends Component {
 
   render() {
     return (
-      <Grommet theme={grommet}>
-        <Box align="start">
+      <Grommet theme={grommet} full>
+        <Box fill align="center" justify="center">
           <Box
             background="dark-4"
             pad="medium"
@@ -111,7 +111,7 @@ class AllDrops extends Component {
             },
           }}
         >
-          <Box direction="row" wrap pad="medium" align="center">
+          <Box direction="row" wrap pad="large" align="center" justify="center">
             <Set
               label="left: left"
               aligns={[
@@ -225,8 +225,8 @@ class ProgressiveDrop extends Component {
   render() {
     const { openDrop, openInnerDrop } = this.state;
     return (
-      <Grommet theme={grommet}>
-        <Box align="start">
+      <Grommet theme={grommet} full>
+        <Box fill align="center" justify="center">
           <Button
             ref={this.boxRef}
             primary
@@ -260,7 +260,70 @@ class ProgressiveDrop extends Component {
   }
 }
 
+class LazyDrop extends Component {
+  state = { pad: 'small' };
+
+  topTargetRef = createRef();
+
+  bottomTargetRef = createRef();
+
+  componentDidMount() {
+    this.forceUpdate();
+    setTimeout(() => this.setState({ pad: 'large' }), 2000);
+  }
+
+  render() {
+    const { pad } = this.state;
+    return (
+      <Grommet theme={grommet} full>
+        <Box fill align="start" justify="between" pad="large">
+          <Box
+            background="dark-4"
+            pad="medium"
+            align="center"
+            justify="start"
+            ref={this.topTargetRef}
+          >
+            Target
+          </Box>
+          {this.topTargetRef.current && (
+            <Drop
+              align={{ top: 'bottom', left: 'left' }}
+              target={this.topTargetRef.current}
+              responsive
+            >
+              <Box pad={pad}>Drop Contents</Box>
+            </Drop>
+          )}
+          <Box
+            alignSelf="end"
+            background="dark-4"
+            pad="medium"
+            align="center"
+            justify="start"
+            ref={this.bottomTargetRef}
+          >
+            Target
+          </Box>
+          {this.bottomTargetRef.current && (
+            <Drop
+              align={{ top: 'bottom', right: 'right' }}
+              target={this.bottomTargetRef.current}
+              responsive
+            >
+              <Box height="xsmall" overflow="auto" pad={pad}>
+                Drop Contents
+              </Box>
+            </Drop>
+          )}
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Drop', module)
   .add('Simple', () => <SimpleDrop />)
   .add('All not stretch', () => <AllDrops />)
-  .add('Progressive', () => <ProgressiveDrop />);
+  .add('Progressive', () => <ProgressiveDrop />)
+  .add('Lazy', () => <LazyDrop />);
