@@ -14,14 +14,24 @@ export const doc = Select => {
   DocumentedSelect.propTypes = {
     ...genericProps,
     children: PropTypes.func.description(
-      'Function that will be called when each option is rendered.',
+      `Function that will be called when each option is rendered.
+      It will be passed (option, index, options, state) where option
+      is the option to render, index is the index of that option in the
+      options array, and state is an object with
+      { active, disabled, selected } keys indicating the current state
+      of the option.`,
     ),
     closeOnChange: PropTypes.bool
       .description('Wether to close the drop when a selection is made.')
       .defaultValue(true),
-    disabled: PropTypes.bool.description(
-      'Whether the select should be disabled.',
-    ),
+    disabled: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.arrayOf(PropTypes.number),
+    ])
+      .description(
+        'Whether the entire select or individual options should be disabled.',
+      )
+      .defaultValue(false),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),
       bottom: PropTypes.oneOf(['top', 'bottom']),

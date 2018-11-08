@@ -34,6 +34,7 @@ const OptionsBox = styled(Box)`
 class SelectContainer extends Component {
   static defaultProps = {
     children: null,
+    disabled: undefined,
     id: undefined,
     multiple: false,
     name: undefined,
@@ -218,6 +219,7 @@ class SelectContainer extends Component {
     /* eslint-disable react/prop-types */
     const {
       children,
+      disabled,
       id,
       name,
       onKeyDown,
@@ -264,40 +266,50 @@ class SelectContainer extends Component {
             theme={theme}
           >
             <InfiniteScroll items={options} step={theme.select.step}>
-              {(option, index) => (
-                <SelectOption
-                  active={
-                    selected === index ||
-                    (Array.isArray(selected) &&
-                      selected.indexOf(index) !== -1) ||
-                    activeIndex === index ||
-                    (option && option === value) ||
-                    (option &&
-                      Array.isArray(value) &&
-                      value.indexOf(option) !== -1)
-                  }
-                  ref={ref => {
-                    this.optionsRef[index] = ref;
-                  }}
-                  value={value}
-                  selected={selected}
-                  option={option}
-                  key={`option_${name || ''}_${index}`}
-                  onClick={() => this.selectOption(option, index)}
-                >
-                  {children ? (
-                    children(option, index, options)
-                  ) : (
-                    <Box align="start" pad="small">
-                      <Text margin="none">
-                        {option !== null && option !== undefined
-                          ? option.toString()
-                          : undefined}
-                      </Text>
-                    </Box>
-                  )}
-                </SelectOption>
-              )}
+              {(option, index) => {
+                const isDisabled =
+                  Array.isArray(disabled) && disabled.indexOf(index) !== -1;
+                const isSelected =
+                  selected === index ||
+                  (Array.isArray(selected) && selected.indexOf(index) !== -1);
+                const isActive =
+                  isSelected ||
+                  activeIndex === index ||
+                  (option && option === value) ||
+                  (option &&
+                    Array.isArray(value) &&
+                    value.indexOf(option) !== -1);
+                return (
+                  <SelectOption
+                    ref={ref => {
+                      this.optionsRef[index] = ref;
+                    }}
+                    value={value}
+                    disabled={isDisabled || undefined}
+                    active={isActive}
+                    selected={isSelected}
+                    option={option}
+                    key={`option_${name || ''}_${index}`}
+                    onClick={() => this.selectOption(option, index)}
+                  >
+                    {children ? (
+                      children(option, index, options, {
+                        active: isActive,
+                        disabled: isDisabled,
+                        selected: isSelected,
+                      })
+                    ) : (
+                      <Box align="start" pad="small">
+                        <Text margin="none">
+                          {option !== null && option !== undefined
+                            ? option.toString()
+                            : undefined}
+                        </Text>
+                      </Box>
+                    )}
+                  </SelectOption>
+                );
+              }}
             </InfiniteScroll>
           </OptionsBox>
         </ContainerBox>

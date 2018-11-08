@@ -117,17 +117,13 @@ const allSeasons = [
 ];
 
 class SeasonsSelect extends Component {
-  state = {
-    selectedSeasons: [],
-  };
+  state = { selected: [] };
 
   onRemoveSeason = season => {
-    const { selectedSeasons } = this.state;
-    const newSeasons = [...selectedSeasons];
-    newSeasons.splice(selectedSeasons.indexOf(season), 1);
-    this.setState({
-      selectedSeasons: newSeasons,
-    });
+    const { selected } = this.state;
+    const nextSelected = [...selected];
+    nextSelected.splice(nextSelected.indexOf(allSeasons.indexOf(season)), 1);
+    this.setState({ selected: nextSelected });
   };
 
   renderSeason = season => (
@@ -164,20 +160,14 @@ class SeasonsSelect extends Component {
     </Button>
   );
 
-  renderOption = option => {
-    const { selectedSeasons } = this.state;
-    return (
-      <Box
-        pad="small"
-        background={selectedSeasons.indexOf(option) >= 0 ? 'active' : undefined}
-      >
-        {option}
-      </Box>
-    );
-  };
+  renderOption = (option, index, options, state) => (
+    <Box pad="small" background={state.active ? 'active' : undefined}>
+      {option}
+    </Box>
+  );
 
   render() {
-    const { selectedSeasons } = this.state;
+    const { selected } = this.state;
     return (
       <Grommet theme={grommet}>
         <Box direction="row">
@@ -187,24 +177,21 @@ class SeasonsSelect extends Component {
               placeholder="Select Season"
               multiple
               value={
-                selectedSeasons && selectedSeasons.length ? (
+                selected && selected.length ? (
                   <Box wrap direction="row" style={{ width: '208px' }}>
-                    {selectedSeasons.map(this.renderSeason)}
+                    {selected.map(index =>
+                      this.renderSeason(allSeasons[index]),
+                    )}
                   </Box>
                 ) : (
                   undefined
                 )
               }
               options={allSeasons}
-              onChange={({ option }) => {
-                const newSelectedSeasons = [...selectedSeasons];
-                const seasonIndex = newSelectedSeasons.indexOf(option);
-                if (seasonIndex >= 0) {
-                  newSelectedSeasons.splice(seasonIndex, 1);
-                } else {
-                  newSelectedSeasons.push(option);
-                }
-                this.setState({ selectedSeasons: newSelectedSeasons.sort() });
+              selected={selected}
+              disabled={[2, 6]}
+              onChange={({ selected: nextSelected }) => {
+                this.setState({ selected: nextSelected.sort() });
               }}
             >
               {this.renderOption}
