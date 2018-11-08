@@ -7,34 +7,15 @@ import { withFocus, withForwardRef, withTheme } from '../hocs';
 import { StyledTextArea } from './StyledTextArea';
 
 class TextArea extends Component {
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { forwardRef } = nextProps;
-    const { inputRef } = prevState;
-    const nextInputRef = forwardRef || inputRef;
-    if (nextInputRef !== inputRef) {
-      return { inputRef: nextInputRef };
-    }
-    return null;
-  }
-
-  state = {
-    inputRef: React.createRef(),
-  };
-
   onEsc = event => {
-    const { inputRef } = this.state;
-    if (event.keyCode === 27 && document.activeElement === inputRef.current) {
-      event.nativeEvent.stopImmediatePropagation(); // so Layer doesn't close
-      inputRef.current.blur();
-    }
+    event.nativeEvent.stopImmediatePropagation(); // so Layer doesn't close
   };
 
   render() {
     const { fill, forwardRef, ...rest } = this.props;
-    const { inputRef } = this.state;
     return (
       <Keyboard onEsc={this.onEsc}>
-        <StyledTextArea ref={inputRef} fillArg={fill} {...rest} />
+        <StyledTextArea ref={forwardRef} fillArg={fill} {...rest} />
       </Keyboard>
     );
   }
