@@ -810,7 +810,6 @@ exports[`Select complex options and children 3`] = `
           class="c7"
           role="menuitem"
           type="button"
-          value=""
         >
           <span>
             one
@@ -824,7 +823,6 @@ exports[`Select complex options and children 3`] = `
           class="c7"
           role="menuitem"
           type="button"
-          value=""
         >
           <span>
             two
@@ -2440,7 +2438,6 @@ exports[`Select multiple values 3`] = `
           class="c7"
           role="menuitem"
           type="button"
-          value="one,two"
         >
           <div
             class="c8"
@@ -2460,7 +2457,6 @@ exports[`Select multiple values 3`] = `
           class="c7"
           role="menuitem"
           type="button"
-          value="one,two"
         >
           <div
             class="c8"
@@ -3237,7 +3233,6 @@ exports[`Select opens 3`] = `
           class="c7"
           role="menuitem"
           type="button"
-          value=""
         >
           <div
             class="c8"
@@ -3257,7 +3252,6 @@ exports[`Select opens 3`] = `
           class="c7"
           role="menuitem"
           type="button"
-          value=""
         >
           <div
             class="c8"
@@ -3453,7 +3447,6 @@ exports[`Select opens 5`] = `
       class="StyledButton-sc-323bzc-0 gFnwgj"
       role="menuitem"
       type="button"
-      value=""
     >
       <div
         class="StyledBox-sc-13pk1d4-0 eEPVhE"
@@ -3473,7 +3466,6 @@ exports[`Select opens 5`] = `
       class="StyledButton-sc-323bzc-0 gFnwgj"
       role="menuitem"
       type="button"
-      value=""
     >
       <div
         class="StyledBox-sc-13pk1d4-0 eEPVhE"
@@ -4108,7 +4100,6 @@ exports[`Select search 2`] = `
           class="c10"
           role="menuitem"
           type="button"
-          value=""
         >
           <div
             class="c11"
@@ -4128,7 +4119,6 @@ exports[`Select search 2`] = `
           class="c10"
           role="menuitem"
           type="button"
-          value=""
         >
           <div
             class="c11"

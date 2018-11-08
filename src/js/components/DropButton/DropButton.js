@@ -38,10 +38,11 @@ class DropButton extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    const { forwardRef } = this.props;
     const { show } = this.state;
     if (!show && prevState.show) {
       // focus on the button if the drop is closed
-      setFocusWithoutScroll(this.buttonRef.current);
+      setFocusWithoutScroll((forwardRef || this.buttonRef).current);
     }
   }
 
@@ -81,13 +82,13 @@ class DropButton extends Component {
     delete rest.onOpen;
 
     let drop;
-    if (show && this.buttonRef.current) {
+    if (show && (forwardRef || this.buttonRef).current) {
       drop = (
         <Drop
           id={id ? `${id}__drop` : undefined}
           restrictFocus
           align={dropAlign}
-          target={dropTarget || this.buttonRef.current}
+          target={dropTarget || (forwardRef || this.buttonRef).current}
           onClickOutside={this.onDropClose}
           onEsc={event => {
             // prevents layer to close on esc
@@ -107,7 +108,7 @@ class DropButton extends Component {
       <React.Fragment>
         <Button
           id={id}
-          ref={this.buttonRef}
+          ref={forwardRef || this.buttonRef}
           disabled={disabled}
           onClick={this.onToggle}
           {...rest}
