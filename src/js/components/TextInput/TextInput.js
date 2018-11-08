@@ -55,27 +55,20 @@ class TextInput extends Component {
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { forwardRef, suggestions } = nextProps;
-    const { inputRef, showDrop } = prevState;
-    const nextInputRef = forwardRef || inputRef;
-
-    const newState = {};
-    if (nextInputRef !== inputRef) {
-      newState.inputRef = nextInputRef;
-    }
-
+    const { suggestions } = nextProps;
+    const { showDrop } = prevState;
     if (showDrop && (!suggestions || !suggestions.length)) {
-      newState.showDrop = false;
+      return { showDrop: false };
     }
-
-    return Object.keys(newState) ? newState : null;
+    return null;
   }
 
   state = {
     activeSuggestionIndex: -1,
-    inputRef: React.createRef(),
     showDrop: false,
   };
+
+  inputRef = React.createRef();
 
   componentDidUpdate(prevProps, prevState) {
     const { onSuggestionsOpen, onSuggestionsClose, suggestions } = this.props;
@@ -219,23 +212,22 @@ class TextInput extends Component {
   };
 
   onClickSuggestion = suggestion => {
-    const { onSelect } = this.props;
-    const { inputRef } = this.state;
+    const { forwardRef, onSelect } = this.props;
     this.setState({ showDrop: false });
     if (onSelect) {
-      onSelect({ target: inputRef.current, suggestion });
+      onSelect({ target: (forwardRef || this.inputRef).current, suggestion });
     }
   };
 
   onSuggestionSelect = event => {
-    const { onSelect, suggestions } = this.props;
-    const { activeSuggestionIndex, inputRef } = this.state;
+    const { forwardRef, onSelect, suggestions } = this.props;
+    const { activeSuggestionIndex } = this.state;
     this.setState({ showDrop: false });
     if (activeSuggestionIndex >= 0) {
       event.preventDefault(); // prevent submitting forms
       const suggestion = suggestions[activeSuggestionIndex];
       if (onSelect) {
-        onSelect({ target: inputRef.current, suggestion });
+        onSelect({ target: (forwardRef || this.inputRef).current, suggestion });
       }
     }
   };
@@ -267,7 +259,12 @@ class TextInput extends Component {
     }
   };
 
-  onDropClose = () => {
+  onEsc = event => {
+    event.nativeEvent.stopImmediatePropagation(); // so Layer doesn't close
+    this.setState({ showDrop: false });
+  };
+
+  onTab = () => {
     this.setState({ showDrop: false });
   };
 
@@ -314,6 +311,7 @@ class TextInput extends Component {
       defaultValue,
       dropAlign,
       dropTarget,
+      forwardRef,
       id,
       placeholder,
       plain,
@@ -323,10 +321,9 @@ class TextInput extends Component {
       ...rest
     } = this.props;
     delete rest.onChange; // se we can manage in this.onChange()
-    delete rest.forwardRef;
     delete rest.onSuggestionsOpen;
     delete rest.onSuggestionsClose;
-    const { inputRef, showDrop } = this.state;
+    const { showDrop } = this.state;
     // needed so that styled components does not invoke
     // onSelect when text input is clicked
     delete rest.onSelect;
@@ -337,7 +334,7 @@ class TextInput extends Component {
           id={id ? `text-input-drop__${id}` : undefined}
           align={dropAlign}
           responsive={false}
-          target={dropTarget || inputRef.current}
+          target={dropTarget || (forwardRef || this.inputRef).current}
           onClickOutside={() => this.setState({ showDrop: false })}
           onEsc={() => this.setState({ showDrop: false })}
         >
@@ -354,15 +351,15 @@ class TextInput extends Component {
         ) : null}
         <Keyboard
           onEnter={this.onSuggestionSelect}
-          onEsc={this.onDropClose}
-          onTab={this.onDropClose}
+          onEsc={this.onEsc}
+          onTab={this.onTab}
           onUp={this.onPreviousSuggestion}
           onDown={this.onNextSuggestion}
           onKeyDown={onKeyDown}
         >
           <StyledTextInput
             id={id}
-            ref={inputRef}
+            ref={forwardRef || this.inputRef}
             autoComplete="off"
             plain={plain}
             placeholder={
