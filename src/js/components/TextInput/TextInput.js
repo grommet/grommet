@@ -267,7 +267,12 @@ class TextInput extends Component {
     }
   };
 
-  onDropClose = () => {
+  onDropClose = event => {
+    const { inputRef } = this.state;
+    if (event.keyCode === 27 && document.activeElement === inputRef.current) {
+      event.nativeEvent.stopImmediatePropagation(); // so Layer doesn't close
+      inputRef.current.blur();
+    }
     this.setState({ showDrop: false });
   };
 

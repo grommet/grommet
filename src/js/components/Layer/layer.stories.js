@@ -12,6 +12,7 @@ import {
   Layer,
   Select,
   Text,
+  TextArea,
   TextInput,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -30,17 +31,19 @@ class CenterLayer extends Component {
   render() {
     const { open, open2 } = this.state;
     return (
-      <Grommet theme={grommet}>
-        <Button
-          icon={<Trash />}
-          label={
-            <Text>
-              <strong>Remove</strong>
-            </Text>
-          }
-          onClick={this.onOpen}
-          plain
-        />
+      <Grommet theme={grommet} full>
+        <Box fill align="center" justify="center">
+          <Button
+            icon={<Trash />}
+            label={
+              <Text>
+                <strong>Remove</strong>
+              </Text>
+            }
+            onClick={this.onOpen}
+            plain
+          />
+        </Box>
         {open && (
           <Layer
             position="center"
@@ -113,13 +116,15 @@ class FormLayer extends Component {
 
   onOpen = () => this.setState({ open: true });
 
-  onClose = () => this.setState({ open: undefined });
+  onClose = () => {
+    this.setState({ open: undefined });
+  };
 
   render() {
     const { open, fourthOption } = this.state;
     return (
-      <Grommet theme={grommet}>
-        <Box align="start">
+      <Grommet theme={grommet} full>
+        <Box fill align="center" justify="center">
           <Button icon={<Add />} label="Add" onClick={this.onOpen} />
           {open && (
             <Layer
@@ -151,7 +156,7 @@ class FormLayer extends Component {
                     <TextInput />
                   </FormField>
                   <FormField label="Third">
-                    <TextInput />
+                    <TextArea />
                   </FormField>
                   <FormField label="Fourth">
                     <Select
@@ -190,17 +195,19 @@ class NotificationLayer extends Component {
   render() {
     const { open } = this.state;
     return (
-      <Grommet theme={grommet}>
-        <Button
-          icon={<Add color="brand" />}
-          label={
-            <Text>
-              <strong>Add</strong>
-            </Text>
-          }
-          onClick={this.onOpen}
-          plain
-        />
+      <Grommet theme={grommet} full>
+        <Box fill align="center" justify="center">
+          <Button
+            icon={<Add color="brand" />}
+            label={
+              <Text>
+                <strong>Add</strong>
+              </Text>
+            }
+            onClick={this.onOpen}
+            plain
+          />
+        </Box>
         {open && (
           <Layer
             position="bottom"
@@ -271,7 +278,13 @@ class FullLayer extends Component {
     const { showLayer } = this.state;
     return (
       <Grommet theme={grommet} full>
-        <Box pad="small" fill background="dark-3" align="start">
+        <Box
+          pad="small"
+          fill
+          background="dark-3"
+          align="center"
+          justify="center"
+        >
           <Button
             primary
             color="accent-3"
