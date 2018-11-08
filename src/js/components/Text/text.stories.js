@@ -4,7 +4,15 @@ import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall'];
+const sizes = [
+  'xxlarge',
+  'xlarge',
+  'large',
+  'medium',
+  'small',
+  'xsmall',
+  '77px',
+];
 
 const All = () => (
   <Grommet theme={grommet}>
