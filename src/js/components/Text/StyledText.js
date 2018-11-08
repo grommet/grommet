@@ -44,9 +44,15 @@ const marginStyle = props => {
 const sizeStyle = props => {
   const size = props.size || 'medium';
   const data = props.theme.text[size];
+  if (data) {
+    return css`
+      font-size: ${data.size};
+      line-height: ${data.height};
+    `;
+  }
   return css`
-    font-size: ${data.size};
-    line-height: ${data.height};
+    font-size: ${size};
+    line-height: normal;
   `;
 };
 
