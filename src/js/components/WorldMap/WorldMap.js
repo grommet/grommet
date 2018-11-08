@@ -563,7 +563,10 @@ class WorldMap extends Component {
             strokeWidth={parseMetricToNum(
               theme.worldMap.continent[active ? 'active' : 'base'],
             )}
-            stroke={normalizeColor(continentColor || color || 'light-3', theme)}
+            stroke={normalizeColor(
+              continentColor || color || theme.worldMap.color,
+              theme,
+            )}
           />
         </g>
       );
@@ -598,7 +601,10 @@ class WorldMap extends Component {
           strokeWidth={parseMetricToNum(
             theme.worldMap.place[active ? 'active' : 'base'],
           )}
-          stroke={normalizeColor(placeColor || color || 'light-3', theme)}
+          stroke={normalizeColor(
+            placeColor || color || theme.worldMap.color,
+            theme,
+          )}
           {...interactiveProps}
           {...restPlace}
           d={d}
@@ -631,7 +637,10 @@ class WorldMap extends Component {
           <path
             strokeLinecap="round"
             strokeWidth={parseMetricToNum(theme.worldMap.place.active)}
-            stroke={normalizeColor(hoverColor || color || 'light-4', theme)}
+            stroke={normalizeColor(
+              hoverColor || color || theme.worldMap.hover.color,
+              theme,
+            )}
             d={d}
           />
         </g>

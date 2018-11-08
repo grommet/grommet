@@ -116,3 +116,14 @@ cover
 contain
 ```
   
+## Theme
+  
+**image.extend**
+
+Any additional style for the Image. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
