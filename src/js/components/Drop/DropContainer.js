@@ -221,7 +221,7 @@ export class DropContainer extends Component {
         // offset width by 0.1 to avoid a bug in ie11 that
         // unnecessarily wraps the text if width is the same
         // NOTE: turned off for now
-        // container.style.width = `${width + 0.1}px`;
+        container.style.width = `${width + 0.1}px`;
       }
       // the (position:absolute + scrollTop)
       // is presenting issues with desktop scroll flickering
