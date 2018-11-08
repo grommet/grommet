@@ -78,3 +78,77 @@ end of the anchor.`,
 
   return DocumentedButton;
 };
+
+export const themeDoc = {
+  'global.hover.color': {
+    description: 'The background color when hovering.',
+    type: 'string',
+    defaultValue: "{ dark: 'white', light: 'black' }",
+  },
+  'global.edgeSize.small': {
+    description: 'The padding around an icon-only button.',
+    type: 'string',
+    defaultValue: '12px',
+  },
+  'text.medium.size': {
+    description: 'The font size of the text label.',
+    type: 'string',
+    defaultValue: '18px',
+  },
+  'text.medium.height': {
+    description: 'The line height of the text label.',
+    type: 'string',
+    defaultValue: '24px',
+  },
+  'button.border.color': {
+    description: `The color of the border.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.border.radius': {
+    description: 'The corner radius.',
+    type: 'string',
+    defaultValue: '18px',
+  },
+  'button.border.width': {
+    description: 'The border width.',
+    type: 'string',
+    defaultValue: '2px',
+  },
+  'button.color': {
+    description: `The color of the text label.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.primary.color': {
+    description: `The color of the background for primary buttons.`,
+    type: 'string | { dark: string, light: string }',
+  },
+  'button.disabled.opacity': {
+    description: 'The opacity when the button is disabled.',
+    type: 'number',
+    defaultValue: 0.3,
+  },
+  'button.minWidth': {
+    description: `The minimum width.`,
+    type: 'string',
+    defaultValue: '96px',
+  },
+  'button.maxWidth': {
+    description: `The maximum width.`,
+    type: 'string',
+    defaultValue: '384px',
+  },
+  'button.padding.horizontal': {
+    description: 'The horizontal padding.',
+    type: 'string',
+    defaultValue: '22px',
+  },
+  'button.padding.vertical': {
+    description: 'The vertical padding.',
+    type: 'string',
+    defaultValue: '4px',
+  },
+  'button.extend': {
+    description: 'Any additional style for the Button.',
+    type: 'string | (props) => {}',
+  },
+};
