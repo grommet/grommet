@@ -3830,7 +3830,19 @@ How the image fills its container.
 cover
 contain
 \`\`\`
-  ",
+  
+## Theme
+  
+**image.extend**
+
+Any additional style for the Image. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "InfiniteScroll": "## InfiniteScroll
 A container that lazily renders items.
 
@@ -6700,6 +6712,78 @@ Color when hovering over places while selecting.
 \`\`\`
 string
 \`\`\`
-  ",
+  
+## Theme
+  
+**worldMap.color**
+
+The color for each individual dot when a color is not passed as a prop Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+light-3
+\`\`\`
+
+**worldMap.continent.active**
+
+The size of the visual dots belonging to a continent when the continent is being hovered. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+8px
+\`\`\`
+
+**worldMap.continent.base**
+
+The size of the visual dots belonging to a continent that is not being hovered. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+6px
+\`\`\`
+
+**worldMap.hover.color**
+
+The color for an individual dot when it is being hovered Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+light-4
+\`\`\`
+
+**worldMap.place.active**
+
+The size of a visual dot for an individual place in the map when it is being hovered. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+20px
+\`\`\`
+
+**worldMap.place.base**
+
+The size of the visual dot representing an individual place in the map when it is not being hovered. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+8px
+\`\`\`
+
+**worldMap.extend**
+
+Any additional style for the WorldMap. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
 }
 `;
