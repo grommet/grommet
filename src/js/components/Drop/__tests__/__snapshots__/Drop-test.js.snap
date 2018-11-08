@@ -31,6 +31,7 @@ exports[`Drop align left random 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -71,7 +72,7 @@ exports[`Drop align left random 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="width: 0.1px; top: 0px; max-height: 768px;"
+  style="top: 0px; max-height: 0px;"
   tabindex="-1"
 >
   this is a test
@@ -114,7 +115,7 @@ exports[`Drop align left random 2`] = `
 
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -127,7 +128,7 @@ exports[`Drop align left random 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .duErLH {
+  .dZAQgZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -139,7 +140,7 @@ exports[`Drop align left random 2`] = `
   }
 }
 
-.kzsbOe {
+.lSyaM {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -151,6 +152,7 @@ exports[`Drop align left random 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -164,7 +166,7 @@ exports[`Drop align left random 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kzsbOe {
+  .lSyaM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -208,6 +210,7 @@ exports[`Drop align left right top bottom 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -248,7 +251,7 @@ exports[`Drop align left right top bottom 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   this is a test
@@ -290,7 +293,7 @@ exports[`Drop align left right top bottom 2`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -302,6 +305,7 @@ exports[`Drop align left right top bottom 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -315,7 +319,7 @@ exports[`Drop align left right top bottom 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -359,6 +363,7 @@ exports[`Drop align right left top top 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -399,7 +404,7 @@ exports[`Drop align right left top top 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   this is a test
@@ -442,7 +447,7 @@ exports[`Drop align right left top top 2`] = `
 
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -455,7 +460,7 @@ exports[`Drop align right left top top 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .duErLH {
+  .dZAQgZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -468,7 +473,7 @@ exports[`Drop align right left top top 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kzsbOe {
+  .lSyaM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -480,7 +485,7 @@ exports[`Drop align right left top top 2`] = `
   }
 }
 
-.eXtdAo {
+.NVLxM {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -492,6 +497,7 @@ exports[`Drop align right left top top 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -505,7 +511,7 @@ exports[`Drop align right left top top 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eXtdAo {
+  .NVLxM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -549,6 +555,7 @@ exports[`Drop align right random 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -589,7 +596,7 @@ exports[`Drop align right random 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="width: 0.1px; top: 0px; max-height: 768px;"
+  style="top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   this is a test
@@ -632,7 +639,7 @@ exports[`Drop align right random 2`] = `
 
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -645,7 +652,7 @@ exports[`Drop align right random 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .duErLH {
+  .dZAQgZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -658,7 +665,7 @@ exports[`Drop align right random 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kzsbOe {
+  .lSyaM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -670,7 +677,7 @@ exports[`Drop align right random 2`] = `
   }
 }
 
-.eXtdAo {
+.NVLxM {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -682,6 +689,7 @@ exports[`Drop align right random 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -695,7 +703,7 @@ exports[`Drop align right random 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eXtdAo {
+  .NVLxM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -739,6 +747,7 @@ exports[`Drop align right right bottom top 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -779,7 +788,7 @@ exports[`Drop align right right bottom top 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="left: 0px; top: 0px; max-height: 0px;"
   tabindex="-1"
 >
   this is a test
@@ -822,7 +831,7 @@ exports[`Drop align right right bottom top 2`] = `
 
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -834,7 +843,7 @@ exports[`Drop align right right bottom top 2`] = `
   }
 }
 
-.duErLH {
+.dZAQgZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -846,6 +855,7 @@ exports[`Drop align right right bottom top 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -859,7 +869,7 @@ exports[`Drop align right right bottom top 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .duErLH {
+  .dZAQgZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -903,6 +913,7 @@ exports[`Drop align right right bottom top 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -943,7 +954,7 @@ exports[`Drop align right right bottom top 3`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="left: 0px; top: 0px; max-height: 0px;"
   tabindex="-1"
 >
   this is a test
@@ -986,7 +997,7 @@ exports[`Drop align right right bottom top 4`] = `
 
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -998,7 +1009,7 @@ exports[`Drop align right right bottom top 4`] = `
   }
 }
 
-.duErLH {
+.dZAQgZ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1010,6 +1021,7 @@ exports[`Drop align right right bottom top 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1023,7 +1035,7 @@ exports[`Drop align right right bottom top 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .duErLH {
+  .dZAQgZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1036,7 +1048,7 @@ exports[`Drop align right right bottom top 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kzsbOe {
+  .lSyaM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1049,7 +1061,7 @@ exports[`Drop align right right bottom top 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eXtdAo {
+  .NVLxM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1093,6 +1105,7 @@ exports[`Drop basic 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1133,7 +1146,7 @@ exports[`Drop basic 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   this is a test
@@ -1175,7 +1188,7 @@ exports[`Drop basic 2`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1187,6 +1200,7 @@ exports[`Drop basic 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1200,7 +1214,7 @@ exports[`Drop basic 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1244,6 +1258,7 @@ exports[`Drop close 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1284,7 +1299,7 @@ exports[`Drop close 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   this is a test
@@ -1326,7 +1341,7 @@ exports[`Drop close 2`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1338,6 +1353,7 @@ exports[`Drop close 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1351,7 +1367,7 @@ exports[`Drop close 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1364,7 +1380,7 @@ exports[`Drop close 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .duErLH {
+  .dZAQgZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1377,7 +1393,7 @@ exports[`Drop close 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kzsbOe {
+  .lSyaM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1390,7 +1406,7 @@ exports[`Drop close 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eXtdAo {
+  .NVLxM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1434,6 +1450,7 @@ exports[`Drop invalid align 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1474,7 +1491,7 @@ exports[`Drop invalid align 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   this is a test
@@ -1516,7 +1533,7 @@ exports[`Drop invalid align 2`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1528,6 +1545,7 @@ exports[`Drop invalid align 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1541,7 +1559,7 @@ exports[`Drop invalid align 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1554,7 +1572,7 @@ exports[`Drop invalid align 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .duErLH {
+  .dZAQgZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1567,7 +1585,7 @@ exports[`Drop invalid align 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kzsbOe {
+  .lSyaM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1580,7 +1598,7 @@ exports[`Drop invalid align 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eXtdAo {
+  .NVLxM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1624,6 +1642,7 @@ exports[`Drop invoke onClickOutside 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1664,7 +1683,7 @@ exports[`Drop invoke onClickOutside 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   this is a test
@@ -1706,7 +1725,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1718,6 +1737,7 @@ exports[`Drop invoke onClickOutside 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1731,7 +1751,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1744,7 +1764,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .duErLH {
+  .dZAQgZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1757,7 +1777,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kzsbOe {
+  .lSyaM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1770,7 +1790,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eXtdAo {
+  .NVLxM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1814,6 +1834,7 @@ exports[`Drop no stretch 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1896,7 +1917,7 @@ exports[`Drop no stretch 2`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1908,6 +1929,7 @@ exports[`Drop no stretch 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1921,7 +1943,7 @@ exports[`Drop no stretch 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1934,7 +1956,7 @@ exports[`Drop no stretch 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .duErLH {
+  .dZAQgZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1947,7 +1969,7 @@ exports[`Drop no stretch 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kzsbOe {
+  .lSyaM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1960,7 +1982,7 @@ exports[`Drop no stretch 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eXtdAo {
+  .NVLxM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2004,6 +2026,7 @@ exports[`Drop resize 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2044,7 +2067,7 @@ exports[`Drop resize 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="max-height: 1000px; left: 0px; width: 0.1px; top: 0px;"
+  style="left: 0px; top: 0px; max-height: 1000px;"
   tabindex="-1"
 >
   this is a test
@@ -2086,7 +2109,7 @@ exports[`Drop resize 2`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2098,6 +2121,7 @@ exports[`Drop resize 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2111,7 +2135,7 @@ exports[`Drop resize 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2124,7 +2148,7 @@ exports[`Drop resize 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .duErLH {
+  .dZAQgZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2137,7 +2161,7 @@ exports[`Drop resize 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kzsbOe {
+  .lSyaM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2150,7 +2174,7 @@ exports[`Drop resize 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eXtdAo {
+  .NVLxM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2194,6 +2218,7 @@ exports[`Drop restrict focus 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2234,7 +2259,7 @@ exports[`Drop restrict focus 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
+  style="left: 0px; top: 0px; max-height: 1000px;"
   tabindex="-1"
 >
   this is a test
@@ -2243,9 +2268,9 @@ exports[`Drop restrict focus 1`] = `
 
 exports[`Drop restrict focus 2`] = `
 <div
-  class="StyledDrop-sc-16s5rx8-0 cShzna StyledBox-sc-13pk1d4-0 iVWgBr"
+  class="StyledDrop-sc-16s5rx8-0 fvCzyJ StyledBox-sc-13pk1d4-0 iVWgBr"
   id="drop-node"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
+  style="left: 0px; top: 0px; max-height: 1000px;"
   tabindex="-1"
 >
   this is a test
@@ -2287,7 +2312,7 @@ exports[`Drop restrict focus 3`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2299,6 +2324,7 @@ exports[`Drop restrict focus 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2312,7 +2338,7 @@ exports[`Drop restrict focus 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2325,7 +2351,7 @@ exports[`Drop restrict focus 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .duErLH {
+  .dZAQgZ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2338,7 +2364,7 @@ exports[`Drop restrict focus 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kzsbOe {
+  .lSyaM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2351,7 +2377,7 @@ exports[`Drop restrict focus 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eXtdAo {
+  .NVLxM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

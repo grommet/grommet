@@ -473,6 +473,7 @@ exports[`Menu close by clicking outside 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -583,7 +584,7 @@ exports[`Menu close by clicking outside 2`] = `
 <div
   class="c0 c1"
   id="test-menu__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -760,7 +761,7 @@ exports[`Menu close by clicking outside 3`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -772,6 +773,7 @@ exports[`Menu close by clicking outside 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -785,7 +787,7 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1990,6 +1992,7 @@ exports[`Menu open and close on click 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2100,7 +2103,7 @@ exports[`Menu open and close on click 3`] = `
 <div
   class="c0 c1"
   id="test-menu__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -2290,7 +2293,7 @@ exports[`Menu open and close on click 4`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2302,6 +2305,7 @@ exports[`Menu open and close on click 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2315,7 +2319,7 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2844,6 +2848,7 @@ exports[`Menu with dropAlign renders 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2954,7 +2959,7 @@ exports[`Menu with dropAlign renders 2`] = `
 <div
   class="c0 c1"
   id="test-menu__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -3132,7 +3137,7 @@ exports[`Menu with dropAlign renders 3`] = `
 
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3144,7 +3149,7 @@ exports[`Menu with dropAlign renders 3`] = `
   }
 }
 
-.eXtdAo {
+.NVLxM {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3156,6 +3161,7 @@ exports[`Menu with dropAlign renders 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -3169,7 +3175,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .eXtdAo {
+  .NVLxM {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

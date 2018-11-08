@@ -697,6 +697,7 @@ exports[`Select complex options and children 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -790,7 +791,7 @@ exports[`Select complex options and children 3`] = `
 <div
   class="c0 c1"
   id="test-select__drop"
-  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -955,7 +956,7 @@ exports[`Select complex options and children 4`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -967,6 +968,7 @@ exports[`Select complex options and children 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -980,7 +982,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2303,6 +2305,7 @@ exports[`Select multiple values 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2418,7 +2421,7 @@ exports[`Select multiple values 3`] = `
 <div
   class="c0 c1"
   id="test-select__drop"
-  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -2607,7 +2610,7 @@ exports[`Select multiple values 4`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2619,6 +2622,7 @@ exports[`Select multiple values 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2632,7 +2636,7 @@ exports[`Select multiple values 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3098,6 +3102,7 @@ exports[`Select opens 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -3213,7 +3218,7 @@ exports[`Select opens 3`] = `
 <div
   class="c0 c1"
   id="test-select__drop"
-  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -3390,7 +3395,7 @@ exports[`Select opens 4`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3402,6 +3407,7 @@ exports[`Select opens 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -3415,7 +3421,7 @@ exports[`Select opens 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3897,6 +3903,7 @@ exports[`Select search 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -4068,7 +4075,7 @@ exports[`Select search 2`] = `
 <div
   class="c0 c1"
   id="test-select__drop"
-  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  style="left: 0px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
@@ -4271,7 +4278,7 @@ exports[`Select search 3`] = `
 
 
 
-.cShzna {
+.fvCzyJ {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -4283,6 +4290,7 @@ exports[`Select search 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
+  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -4296,7 +4304,7 @@ exports[`Select search 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .cShzna {
+  .fvCzyJ {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

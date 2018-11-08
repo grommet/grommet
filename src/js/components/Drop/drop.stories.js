@@ -263,34 +263,57 @@ class ProgressiveDrop extends Component {
 class LazyDrop extends Component {
   state = { pad: 'small' };
 
-  targetRef = createRef();
+  topTargetRef = createRef();
+
+  bottomTargetRef = createRef();
 
   componentDidMount() {
     this.forceUpdate();
-    setTimeout(() => this.setState({ pad: 'xlarge' }), 2000);
+    setTimeout(() => this.setState({ pad: 'large' }), 2000);
   }
 
   render() {
     const { pad } = this.state;
     return (
       <Grommet theme={grommet} full>
-        <Box fill align="end" justify="end" pad="large">
+        <Box fill align="start" justify="between" pad="large">
           <Box
             background="dark-4"
             pad="medium"
             align="center"
             justify="start"
-            ref={this.targetRef}
+            ref={this.topTargetRef}
           >
             Target
           </Box>
-          {this.targetRef.current && (
+          {this.topTargetRef.current && (
             <Drop
-              align={{ top: 'bottom', right: 'right' }}
-              target={this.targetRef.current}
+              align={{ top: 'bottom', left: 'left' }}
+              target={this.topTargetRef.current}
               responsive
             >
               <Box pad={pad}>Drop Contents</Box>
+            </Drop>
+          )}
+          <Box
+            alignSelf="end"
+            background="dark-4"
+            pad="medium"
+            align="center"
+            justify="start"
+            ref={this.bottomTargetRef}
+          >
+            Target
+          </Box>
+          {this.bottomTargetRef.current && (
+            <Drop
+              align={{ top: 'bottom', right: 'right' }}
+              target={this.bottomTargetRef.current}
+              responsive
+            >
+              <Box height="xsmall" overflow="auto" pad={pad}>
+                Drop Contents
+              </Box>
             </Drop>
           )}
         </Box>
