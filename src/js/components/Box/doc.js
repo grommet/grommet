@@ -24,144 +24,6 @@ const ANIMATION_SHAPE = PropTypes.shape({
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
 });
 
-export const themeDoc = {
-  'global.animation': {
-    description: 'The animation configuration for the Box.',
-    type: 'object',
-    defaultValue: `{
-  duration: '1s',
-  jiggle: {
-    duration: '0.1s',
-  },
-}`,
-  },
-  'global.borderSize': {
-    description: 'The possible border sizes in the Box.',
-    type: 'object',
-    defaultValue: `{
-  xsmall: '1px',
-  small: '2px',
-  medium: '4px',
-  large: '12px',
-  xlarge: '24px,
-}`,
-  },
-  'global.breakpoints': {
-    description:
-      'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
-    type: 'object',
-    defaultValue: `{
-  small: {
-    value: '768px',
-    borderSize: {
-      xsmall: '1px',
-      small: '2px',
-      medium: '4px',
-      large: '6px',
-      xlarge: '12px',
-    },
-    edgeSize: {
-      none: '0px',
-      hair: '1px',
-      xxsmall: '2px',
-      xsmall: '3px',
-      small: '6px',
-      medium: '12px',
-      large: '24px',
-      xlarge: '48px',
-    },
-    size: {
-      xxsmall: '24px',
-      xsmall: '48px',
-      small: '96px',
-      medium: '192px',
-      large: '384px',
-      xlarge: '768px',
-      full: '100%',
-    },
-  },
-  medium: {
-    value: '1536px',
-  },
-  large: {},
-}`,
-  },
-  'global.edgeSize': {
-    description: 'The possible sizes for gap, margin, and pad.',
-    type: 'object',
-    defaultValue: `{
-  edgeSize: {
-    none: '0px',
-    hair: '1px',
-    xxsmall: '3px',
-    xsmall: '6px',
-    small: '12px',
-    medium: '24px',
-    large: '48px',
-    xlarge: '96px',
-    responsiveBreakpoint: 'small',
-  },
-}`,
-  },
-  'global.elevation': {
-    description: 'The possible shadows in Box elevation.',
-    type: 'object',
-    defaultValue: `{
-  light: {
-    none: 'none',
-    xsmall: '0px 1px 2px rgba(100, 100, 100, 0.50)',
-    small: '0px 2px 4px rgba(100, 100, 100, 0.50)',
-    medium: '0px 3px 8px rgba(100, 100, 100, 0.50)',
-    large: '0px 6px 12px rgba(100, 100, 100, 0.50)',
-    xlarge: '0px 8px 16px rgba(100, 100, 100, 0.50)',
-  },
-  dark: {
-    none: 'none',
-    xsmall: '0px 2px 2px rgba(255, 255, 255, 0.40)',
-    small: '0px 4px 4px rgba(255, 255, 255, 0.40)',
-    medium: '0px 6px 8px rgba(255, 255, 255, 0.40)',
-    large: '0px 8px 16px rgba(255, 255, 255, 0.40)',
-    xlarge: '0px 10px 24px rgba(255, 255, 255, 0.40)',
-  },
-}`,
-  },
-  'global.colors.text': {
-    description: 'The text color used inside the Box.',
-    type: 'string | { dark: string, light: string }',
-    defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
-  },
-  'global.opacity.medium': {
-    description: 'The value used when background opacity is set to true.',
-    type: 'number',
-    defaultValue: '0.4',
-  },
-  'global.size': {
-    description: 'The possible sizes for width, height, and basis.',
-    type: 'object',
-    defaultValue: `{
-  xxsmall: '48px',
-  xsmall: '96px',
-  small: '192px',
-  medium: '384px',
-  large: '768px',
-  xlarge: '1152px',
-  xxlarge: '1536px',
-  full: '100%',
-}`,
-  },
-  'box.extend': {
-    description: 'Any additional style for the Box.',
-    type: 'string | (props) => {}',
-    defaultValue: undefined,
-  },
-  'box.responsiveBreakpoint': {
-    description:
-      'The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round.',
-    type: 'string',
-    defaultValue: 'small',
-  },
-};
-
 export const doc = Box => {
   const DocumentedBox = describe(Box)
     .availableAt(getAvailableAtBadge('Box'))
@@ -386,4 +248,142 @@ export const doc = Box => {
       .defaultValue(false),
   };
   return DocumentedBox;
+};
+
+export const themeDoc = {
+  'global.animation': {
+    description: 'The animation configuration for the Box.',
+    type: 'object',
+    defaultValue: `{
+  duration: '1s',
+  jiggle: {
+    duration: '0.1s',
+  },
+}`,
+  },
+  'global.borderSize': {
+    description: 'The possible border sizes in the Box.',
+    type: 'object',
+    defaultValue: `{
+  xsmall: '1px',
+  small: '2px',
+  medium: '4px',
+  large: '12px',
+  xlarge: '24px,
+}`,
+  },
+  'global.breakpoints': {
+    description:
+      'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
+    type: 'object',
+    defaultValue: `{
+  small: {
+    value: '768px',
+    borderSize: {
+      xsmall: '1px',
+      small: '2px',
+      medium: '4px',
+      large: '6px',
+      xlarge: '12px',
+    },
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '2px',
+      xsmall: '3px',
+      small: '6px',
+      medium: '12px',
+      large: '24px',
+      xlarge: '48px',
+    },
+    size: {
+      xxsmall: '24px',
+      xsmall: '48px',
+      small: '96px',
+      medium: '192px',
+      large: '384px',
+      xlarge: '768px',
+      full: '100%',
+    },
+  },
+  medium: {
+    value: '1536px',
+  },
+  large: {},
+}`,
+  },
+  'global.edgeSize': {
+    description: 'The possible sizes for gap, margin, and pad.',
+    type: 'object',
+    defaultValue: `{
+  edgeSize: {
+    none: '0px',
+    hair: '1px',
+    xxsmall: '3px',
+    xsmall: '6px',
+    small: '12px',
+    medium: '24px',
+    large: '48px',
+    xlarge: '96px',
+    responsiveBreakpoint: 'small',
+  },
+}`,
+  },
+  'global.elevation': {
+    description: 'The possible shadows in Box elevation.',
+    type: 'object',
+    defaultValue: `{
+  light: {
+    none: 'none',
+    xsmall: '0px 1px 2px rgba(100, 100, 100, 0.50)',
+    small: '0px 2px 4px rgba(100, 100, 100, 0.50)',
+    medium: '0px 3px 8px rgba(100, 100, 100, 0.50)',
+    large: '0px 6px 12px rgba(100, 100, 100, 0.50)',
+    xlarge: '0px 8px 16px rgba(100, 100, 100, 0.50)',
+  },
+  dark: {
+    none: 'none',
+    xsmall: '0px 2px 2px rgba(255, 255, 255, 0.40)',
+    small: '0px 4px 4px rgba(255, 255, 255, 0.40)',
+    medium: '0px 6px 8px rgba(255, 255, 255, 0.40)',
+    large: '0px 8px 16px rgba(255, 255, 255, 0.40)',
+    xlarge: '0px 10px 24px rgba(255, 255, 255, 0.40)',
+  },
+}`,
+  },
+  'global.colors.text': {
+    description: 'The text color used inside the Box.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
+  },
+  'global.opacity.medium': {
+    description: 'The value used when background opacity is set to true.',
+    type: 'number',
+    defaultValue: '0.4',
+  },
+  'global.size': {
+    description: 'The possible sizes for width, height, and basis.',
+    type: 'object',
+    defaultValue: `{
+  xxsmall: '48px',
+  xsmall: '96px',
+  small: '192px',
+  medium: '384px',
+  large: '768px',
+  xlarge: '1152px',
+  xxlarge: '1536px',
+  full: '100%',
+}`,
+  },
+  'box.extend': {
+    description: 'Any additional style for the Box.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'box.responsiveBreakpoint': {
+    description:
+      'The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round.',
+    type: 'string',
+    defaultValue: 'small',
+  },
 };
