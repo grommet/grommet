@@ -284,7 +284,6 @@ class SelectContainer extends Component {
                     ref={ref => {
                       this.optionsRef[index] = ref;
                     }}
-                    value={value}
                     disabled={isDisabled || undefined}
                     active={isActive}
                     selected={isSelected}
