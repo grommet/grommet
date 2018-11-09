@@ -30,6 +30,8 @@ Before opening an issue or pull request, please read the [Contributing](https://
   ```
     $ npm run storybook
   ```
+  
+  or you can navigate our [Storybook site](https://storybook.grommet.io)
 
 ### Release History
 
