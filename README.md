@@ -2,7 +2,7 @@
 
 [![Slack](http://alansouzati.github.io/artic/img/slack-badge.svg)](http://slackin.grommet.io)
 
-<img align="right" height="260" src="https://grommet.github.io/img/grommet.svg">
+<img align="right" height="260" src="https://v2.grommet.io/img/stak-hurrah.svg">
 
 ### Documentation
 
