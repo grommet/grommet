@@ -1,0 +1,557 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chart calcs 1`] = `
+Object {
+  "axis": Array [
+    Array [
+      0,
+      2,
+    ],
+    Array [
+      3.2,
+    ],
+  ],
+  "bounds": Array [
+    Array [
+      0,
+      2,
+    ],
+    Array [
+      0.8,
+      3.2,
+    ],
+  ],
+  "dimensions": Array [
+    2,
+    2.4000000000000004,
+  ],
+}
+`;
+
+exports[`Chart cap renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <path
+          d="M 384,0 L 0,192"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={24}
+    >
+      <g
+        fill="#FD6FFF"
+      >
+        <path
+          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Chart renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Chart size renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={96}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 120 120"
+    width={96}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 96,96 L 96,0"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 216 216"
+    width={192}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 192,192 L 192,0"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={384}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 408"
+    width={384}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,384 L 384,0"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={768}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 792 792"
+    width={768}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 768,768 L 768,0"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={1152}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 1176 1176"
+    width={1152}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 1152,1152 L 1152,0"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Chart thickness renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-3 -3 390 198"
+    width={384}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={6}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-6 -6 396 204"
+    width={384}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={12}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-24 -24 432 240"
+    width={384}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={48}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-48 -48 480 288"
+    width={384}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={96}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Chart type renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: block;
+  max-width: 100%;
+  overflow: visible;
+}
+
+<div
+  className="c0"
+>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <title>
+          sixty
+        </title>
+        <path
+          d="M 384,192 L 384,0"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="none"
+      >
+        <path
+          d="M 384,0 L 0,192"
+        />
+      </g>
+    </g>
+  </svg>
+  <svg
+    className="c1"
+    height={192}
+    preserveAspectRatio="none"
+    viewBox="-12 -12 408 216"
+    width={384}
+  >
+    <g
+      stroke="#FD6FFF"
+      strokeLinecap="butt"
+      strokeLinejoin="miter"
+      strokeWidth={24}
+    >
+      <g
+        fill="#FD6FFF"
+      >
+        <path
+          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;

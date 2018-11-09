@@ -1,0 +1,4564 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion AccordionPanel 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  overflow: auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c10 {
+  max-height: 0;
+  visibility: hidden;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    role="tablist"
+  >
+    <div
+      className="c2"
+    >
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="c3"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="c4"
+        >
+          <div
+            className="c5"
+          >
+            <h4
+              className="-h4 c6"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            className="c7"
+          >
+            <svg
+              aria-label="FormDown"
+              className="c8"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        className="c9"
+      >
+        <div
+          aria-hidden={true}
+          className="c10 c11"
+          open={false}
+        >
+          Panel body 1
+        </div>
+      </div>
+    </div>
+    <div
+      className="c2"
+    >
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="c3"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="c4"
+        >
+          <div
+            className="c5"
+          >
+            <h4
+              className="-h4 c6"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            className="c7"
+          >
+            <svg
+              aria-label="FormDown"
+              className="c8"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        className="c9"
+      >
+        <div
+          aria-hidden={true}
+          className="c10 c11"
+          open={false}
+        >
+          Panel body 2
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion change active index 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  overflow: auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    role="tablist"
+  >
+    <div
+      class="c2"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <h4
+              class="-h4 c6"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="c7"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c8"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="c9"
+      />
+    </div>
+    <div
+      class="c2"
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <h4
+              class="-h4 c6"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="c7"
+          >
+            <svg
+              aria-label="FormUp"
+              class="c8"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(1 0 0 -1 0 24)"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="c9"
+      >
+        Panel body 2
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion change active index 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 cYihDV"
+    role="tablist"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      />
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormUp"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(1 0 0 -1 0 24)"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        Panel body 2
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion change to second Panel 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  overflow: auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c10 {
+  max-height: 0;
+  visibility: hidden;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    role="tablist"
+  >
+    <div
+      class="c2"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <h4
+              class="-h4 c6"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="c7"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c8"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="c9"
+      >
+        <div
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          Panel body 1
+        </div>
+      </div>
+    </div>
+    <div
+      class="c2"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <h4
+              class="-h4 c6"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="c7"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c8"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="c9"
+      >
+        <div
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          Panel body 2
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion change to second Panel 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 cYihDV"
+    role="tablist"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          Panel body 1
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            .c0 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c0 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c0 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c0 *[stroke*="#"],
+.c0 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c0 *[fill-rule],
+.c0 *[FILL-RULE],
+.c0 *[fill*="#"],
+.c0 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+<svg
+              aria-label="FormUp"
+              class="c0"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(1 0 0 -1 0 24)"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          aria-hidden="false"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 dMYckW StyledBox-sc-13pk1d4-0 IRSNj"
+          open=""
+        >
+          Panel body 2
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion change to second Panel without onActive 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  overflow: auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    role="tablist"
+  >
+    <div
+      class="c2"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <h4
+              class="-h4 c6"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="c7"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c8"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="c9"
+      />
+    </div>
+    <div
+      class="c2"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <h4
+              class="-h4 c6"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="c7"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c8"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="c9"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion change to second Panel without onActive 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 cYihDV"
+    role="tablist"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      />
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            .c0 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c0 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c0 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c0 *[stroke*="#"],
+.c0 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c0 *[fill-rule],
+.c0 *[FILL-RULE],
+.c0 *[fill*="#"],
+.c0 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+<svg
+              aria-label="FormUp"
+              class="c0"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(1 0 0 -1 0 24)"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        Panel body 2
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion complex header 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  overflow: auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    role="tablist"
+  >
+    <div
+      className="c2"
+    >
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="c3"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div>
+          Panel 1 header
+        </div>
+      </button>
+      <div
+        className="c4"
+      />
+    </div>
+    <div
+      className="c2"
+    >
+      <button
+        aria-expanded={true}
+        aria-selected={true}
+        className="c3"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div>
+          Panel 2 header
+        </div>
+      </button>
+      <div
+        className="c4"
+      >
+        Panel body 2
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion complex title 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #FD6FFF;
+  stroke: #FD6FFF;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  overflow: auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  background: #333333;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(255,255,255,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c4 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c9 {
+  max-height: 0;
+  visibility: hidden;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    border-bottom: solid 1px rgba(255,255,255,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 0px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      role="tablist"
+    >
+      <div
+        className="c3"
+      >
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="c4"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="c5"
+          >
+            <div>
+              Panel 1 complex
+            </div>
+            <div
+              className="c6"
+            >
+              <svg
+                aria-label="FormDown"
+                className="c7"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+        <div
+          className="c8"
+        >
+          <div
+            aria-hidden={true}
+            className="c9 c10"
+            open={false}
+          >
+            Panel body 1
+          </div>
+        </div>
+      </div>
+      <div
+        className="c3"
+      >
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="c4"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="c5"
+          >
+            <div>
+              Panel 2 complex
+            </div>
+            <div
+              className="c6"
+            >
+              <svg
+                aria-label="FormDown"
+                className="c7"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+        <div
+          className="c8"
+        >
+          <div
+            aria-hidden={true}
+            className="c9 c10"
+            open={false}
+          >
+            Panel body 2
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion multiple panels 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  overflow: auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    role="tablist"
+  >
+    <div
+      class="c2"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <h4
+              class="-h4 c6"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="c7"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c8"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="c9"
+      />
+    </div>
+    <div
+      class="c2"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <h4
+              class="-h4 c6"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="c7"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c8"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="c9"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion multiple panels 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 cYihDV"
+    role="tablist"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      />
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            .c0 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c0 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c0 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c0 *[stroke*="#"],
+.c0 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c0 *[fill-rule],
+.c0 *[FILL-RULE],
+.c0 *[fill*="#"],
+.c0 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+<svg
+              aria-label="FormUp"
+              class="c0"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(1 0 0 -1 0 24)"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        Panel body 2
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion multiple panels 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 cYihDV"
+    role="tablist"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            .c0 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c0 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c0 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c0 *[stroke*="#"],
+.c0 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c0 *[fill-rule],
+.c0 *[FILL-RULE],
+.c0 *[fill*="#"],
+.c0 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+<svg
+              aria-label="FormUp"
+              class="c0"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(1 0 0 -1 0 24)"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        Panel body 1
+      </div>
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormUp"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(1 0 0 -1 0 24)"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        Panel body 2
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion multiple panels 4`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 cYihDV"
+    role="tablist"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormUp"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(1 0 0 -1 0 24)"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        Panel body 1
+      </div>
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            .c0 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c0 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c0 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c0 *[stroke*="#"],
+.c0 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c0 *[fill-rule],
+.c0 *[FILL-RULE],
+.c0 *[fill*="#"],
+.c0 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+<svg
+              aria-label="FormDown"
+              class="c0"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion multiple panels 5`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 cYihDV"
+    role="tablist"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            .c0 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c0 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c0 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c0 *[stroke*="#"],
+.c0 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c0 *[fill-rule],
+.c0 *[FILL-RULE],
+.c0 *[fill*="#"],
+.c0 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+<svg
+              aria-label="FormDown"
+              class="c0"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      />
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion no AccordionPanel 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  overflow: auto;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    role="tablist"
+  />
+</div>
+`;
+
+exports[`Accordion set on hover 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  overflow: auto;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c10 {
+  max-height: 0;
+  visibility: hidden;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    role="tablist"
+  >
+    <div
+      class="c2"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <h4
+              class="-h4 c6"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="c7"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c8"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="c9"
+      >
+        <div
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          Panel body 1
+        </div>
+      </div>
+    </div>
+    <div
+      class="c2"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="c3"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5"
+          >
+            <h4
+              class="-h4 c6"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="c7"
+          >
+            <svg
+              aria-label="FormDown"
+              class="c8"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="c9"
+      >
+        <div
+          aria-hidden="true"
+          class="c10 c11"
+        >
+          Panel body 2
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion set on hover 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 cYihDV"
+    role="tablist"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 QduAt"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          Panel body 1
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          Panel body 2
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion set on hover 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 cYihDV"
+    role="tablist"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 QduAt"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          Panel body 1
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 QduAt"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          Panel body 2
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion set on hover 4`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 cYihDV"
+    role="tablist"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          Panel body 1
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 QduAt"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          Panel body 2
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion set on hover 5`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div
+    class="StyledBox-sc-13pk1d4-0 cYihDV"
+    role="tablist"
+  >
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 1
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          Panel body 1
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-sc-323bzc-0 fRAxrl"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 erazuK"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFoGJP"
+          >
+            <h4
+              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+            >
+              Panel 2
+            </h4>
+          </div>
+          <div
+            class="StyledBox-sc-13pk1d4-0 kFjquy"
+          >
+            <svg
+              aria-label="FormDown"
+              class="StyledIcon-ofa7kd-0 dtlWir"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        class="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          aria-hidden="true"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          Panel body 2
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

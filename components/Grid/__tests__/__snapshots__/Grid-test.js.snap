@@ -1,0 +1,627 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid align renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c2 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c3 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+}
+
+.c4 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+  <div
+    className="c3"
+  />
+  <div
+    className="c4"
+  />
+</div>
+`;
+
+exports[`Grid alignContent renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+
+.c2 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+.c3 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+}
+
+.c4 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: space-around;
+  align-content: space-around;
+}
+
+.c5 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: flex-end;
+  -ms-flex-line-pack: end;
+  align-content: flex-end;
+}
+
+.c6 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+  <div
+    className="c3"
+  />
+  <div
+    className="c4"
+  />
+  <div
+    className="c5"
+  />
+  <div
+    className="c6"
+  />
+</div>
+`;
+
+exports[`Grid areas renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-areas: "header main footer" "header sidebar footer" ". .";
+  grid-template-columns: 75% 25%;
+  grid-template-rows: 48px 384px 96px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+</div>
+`;
+
+exports[`Grid columns renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: 50% 50%;
+}
+
+.c2 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: 33.33% 66.66%;
+}
+
+.c3 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: 25% 75%;
+}
+
+.c4 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: repeat( auto-fill,minmax(192px,1fr) );
+}
+
+.c5 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: repeat( auto-fit,minmax(192px,1fr) );
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+  <div
+    className="c3"
+  />
+  <div
+    className="c4"
+  />
+  <div
+    className="c5"
+  />
+</div>
+`;
+
+exports[`Grid fill renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: grid;
+  box-sizing: border-box;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.c3 {
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.c4 {
+  display: grid;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+  <div
+    className="c3"
+  />
+  <div
+    className="c4"
+  />
+</div>
+`;
+
+exports[`Grid gap renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  grid-gap: 12px 12px;
+}
+
+.c2 {
+  display: grid;
+  box-sizing: border-box;
+  grid-gap: 24px 24px;
+}
+
+.c3 {
+  display: grid;
+  box-sizing: border-box;
+  grid-gap: 48px 48px;
+}
+
+.c4 {
+  display: grid;
+  box-sizing: border-box;
+  grid-row-gap: 12px;
+}
+
+.c5 {
+  display: grid;
+  box-sizing: border-box;
+  grid-row-gap: 24px;
+}
+
+.c6 {
+  display: grid;
+  box-sizing: border-box;
+  grid-row-gap: 48px;
+}
+
+.c7 {
+  display: grid;
+  box-sizing: border-box;
+  grid-column-gap: 12px;
+}
+
+.c8 {
+  display: grid;
+  box-sizing: border-box;
+  grid-column-gap: 24px;
+}
+
+.c9 {
+  display: grid;
+  box-sizing: border-box;
+  grid-column-gap: 48px;
+}
+
+.c10 {
+  display: grid;
+  box-sizing: border-box;
+  grid-row-gap: 12px;
+  grid-column-gap: 24px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+  <div
+    className="c3"
+  />
+  <div
+    className="c4"
+  />
+  <div
+    className="c5"
+  />
+  <div
+    className="c6"
+  />
+  <div
+    className="c7"
+  />
+  <div
+    className="c8"
+  />
+  <div
+    className="c9"
+  />
+  <div
+    className="c10"
+  />
+</div>
+`;
+
+exports[`Grid justify renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  justify-items: flex-start;
+}
+
+.c2 {
+  display: grid;
+  box-sizing: border-box;
+  justify-items: center;
+}
+
+.c3 {
+  display: grid;
+  box-sizing: border-box;
+  justify-items: flex-end;
+}
+
+.c4 {
+  display: grid;
+  box-sizing: border-box;
+  justify-items: stretch;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+  <div
+    className="c3"
+  />
+  <div
+    className="c4"
+  />
+</div>
+`;
+
+exports[`Grid justifyContent renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c2 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c3 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c4 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+}
+
+.c5 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c6 {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-box-pack: stretch;
+  -webkit-justify-content: stretch;
+  -ms-flex-pack: stretch;
+  justify-content: stretch;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+  <div
+    className="c3"
+  />
+  <div
+    className="c4"
+  />
+  <div
+    className="c5"
+  />
+  <div
+    className="c6"
+  />
+</div>
+`;
+
+exports[`Grid renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+</div>
+`;
+
+exports[`Grid rows renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-rows: 192px 768px 384px;
+}
+
+.c2 {
+  display: grid;
+  box-sizing: border-box;
+  grid-auto-rows: 192px;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  />
+  <div
+    className="c2"
+  />
+</div>
+`;
+
+exports[`Grid tag renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+}
+
+<div
+  className="c0"
+>
+  <article
+    className="-article c1"
+  />
+</div>
+`;

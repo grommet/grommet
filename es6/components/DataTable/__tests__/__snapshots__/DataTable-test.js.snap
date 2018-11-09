@@ -1,0 +1,2506 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataTable aggregate 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: top;
+}
+
+.c2 {
+  height: 100%;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c2"
+      >
+        <th
+          className="c3"
+          scope="col"
+        >
+          <div
+            className="c4"
+          >
+            <span
+              className="c5"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          className="c3"
+          scope="col"
+        >
+          <div
+            className="c4"
+          >
+            <span
+              className="c5"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <td
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c5"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <td
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c5"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className=""
+      >
+        <td
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c5"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <td
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c5"
+            >
+              2
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      className=""
+    >
+      <tr
+        className="c2"
+      >
+        <td
+          className="c8"
+        >
+          <div
+            className="c9"
+          />
+        </td>
+        <td
+          className="c8"
+        >
+          <div
+            className="c9"
+          >
+            <span
+              className="c5"
+            >
+              3
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+`;
+
+exports[`DataTable basic 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c2 {
+  height: 100%;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c2"
+      >
+        <th
+          className="c3"
+          scope="col"
+        >
+          <div
+            className="c4"
+          >
+            <span
+              className="c5"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          className="c3"
+          scope="col"
+        >
+          <div
+            className="c4"
+          >
+            <span
+              className="c5"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <td
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c5"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <td
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c5"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className=""
+      >
+        <td
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c5"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <td
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c5"
+            >
+              2
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable empty 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  height: 100%;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c2"
+      />
+    </thead>
+    <tbody
+      className=""
+    />
+  </table>
+</div>
+`;
+
+exports[`DataTable footer 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-top: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: top;
+}
+
+.c2 {
+  height: 100%;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-top: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c2"
+      >
+        <th
+          className="c3"
+          scope="col"
+        >
+          <div
+            className="c4"
+          >
+            <span
+              className="c5"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          className="c3"
+          scope="col"
+        >
+          <div
+            className="c4"
+          >
+            <span
+              className="c5"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <td
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c5"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <td
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c5"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className=""
+      >
+        <td
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c5"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <td
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c5"
+            >
+              2
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      className=""
+    >
+      <tr
+        className="c2"
+      >
+        <td
+          className="c8"
+        >
+          <div
+            className="c9"
+          >
+            <span
+              className="c5"
+            >
+              Total
+            </span>
+          </div>
+        </td>
+        <td
+          className="c8"
+        >
+          <div
+            className="c9"
+          />
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+`;
+
+exports[`DataTable groupBy 1`] = `
+.c6 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: rgba(0,0,0,0.33);
+  stroke: rgba(0,0,0,0.33);
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  padding: 6px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 6px;
+}
+
+.c7 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+}
+
+.c11 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  width: 48px;
+  max-width: 48px;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.c2 {
+  height: 100%;
+}
+
+.c9 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c4 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c4:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #000000;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class="c2"
+      >
+        <td
+          class="c3"
+        >
+          <button
+            aria-label="expand"
+            class="c4"
+            type="button"
+          >
+            <div
+              class="c5"
+            >
+              <svg
+                aria-label="FormDown"
+                class="c6"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </td>
+        <th
+          class="c7"
+          scope="col"
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="c7"
+          scope="col"
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <td
+          class="c3"
+        >
+          <button
+            aria-label="expand"
+            class="c4"
+            type="button"
+          >
+            <div
+              class="c10"
+            >
+              <svg
+                aria-label="FormDown"
+                class="c6"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </td>
+        <th
+          class="c11"
+          scope="row"
+        >
+          <div
+            class="c12"
+          >
+            <span
+              class="c9"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="c11"
+        >
+          <div
+            class="c12"
+          />
+        </td>
+      </tr>
+      <tr
+        class=""
+      >
+        <td
+          class="c3"
+        >
+          <button
+            aria-label="expand"
+            class="c4"
+            type="button"
+          >
+            <div
+              class="c10"
+            >
+              <svg
+                aria-label="FormDown"
+                class="c6"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </td>
+        <th
+          class="c11"
+          scope="row"
+        >
+          <div
+            class="c12"
+          >
+            <span
+              class="c9"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="c11"
+        >
+          <div
+            class="c12"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable groupBy 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <table
+    class="StyledDataTable-xrlyjm-0 kTrXKK"
+  >
+    <thead
+      class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 bAIczD StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
+    >
+      <tr
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
+        >
+          <button
+            aria-label="expand"
+            class="StyledButton-sc-323bzc-0 kjdfHK"
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 gFEOoP"
+            >
+              <svg
+                aria-label="FormDown"
+                class="StyledIcon-ofa7kd-0 krKPIi"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+          scope="col"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 folWQp"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+          scope="col"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 folWQp"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledDataTable__StyledDataTableBody-xrlyjm-2 hbZQKY"
+    >
+      <tr
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
+        >
+          <button
+            aria-label="expand"
+            class="StyledButton-sc-323bzc-0 kjdfHK"
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 emftoK"
+            >
+              <svg
+                aria-label="FormDown"
+                class="StyledIcon-ofa7kd-0 krKPIi"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              one
+            </span>
+          </div>
+        </th>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+          />
+        </td>
+      </tr>
+      <tr
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
+        >
+          <button
+            aria-label="expand"
+            class="StyledButton-sc-323bzc-0 kjdfHK"
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 emftoK"
+            >
+              <svg
+                aria-label="FormDown"
+                class="StyledIcon-ofa7kd-0 krKPIi"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </td>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          scope="row"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              two
+            </span>
+          </div>
+        </th>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable resizeable 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-right: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+}
+
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c2 {
+  height: 100%;
+}
+
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c7 {
+  cursor: col-resize;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    border-right: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 0px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c2"
+      >
+        <th
+          className="c3"
+          scope="col"
+        >
+          <div
+            className="c4"
+          >
+            <div
+              className="c5"
+            >
+              <span
+                className="c6"
+              >
+                A
+              </span>
+            </div>
+            <div
+              className="c7 c8"
+              onMouseDown={[Function]}
+            />
+          </div>
+        </th>
+        <th
+          className="c3"
+          scope="col"
+        >
+          <div
+            className="c4"
+          >
+            <div
+              className="c5"
+            >
+              <span
+                className="c6"
+              >
+                B
+              </span>
+            </div>
+            <div
+              className="c7 c8"
+              onMouseDown={[Function]}
+            />
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <td
+          className="c9"
+        >
+          <div
+            className="c10"
+          >
+            <span
+              className="c6"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <td
+          className="c9"
+        >
+          <div
+            className="c10"
+          >
+            <span
+              className="c6"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className=""
+      >
+        <td
+          className="c9"
+        >
+          <div
+            className="c10"
+          >
+            <span
+              className="c6"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <td
+          className="c9"
+        >
+          <div
+            className="c10"
+          >
+            <span
+              className="c6"
+            >
+              2
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable sort 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c2 {
+  height: 100%;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #000000;
+}
+
+.c4 {
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  height: 100%;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <table
+    class="c1"
+  >
+    <thead
+      class=""
+    >
+      <tr
+        class="c2"
+      >
+        <th
+          class="c3"
+          scope="col"
+        >
+          <button
+            class="c4 c5"
+            type="button"
+          >
+            <div
+              class="c6"
+            >
+              <span
+                class="c7"
+              >
+                A
+              </span>
+            </div>
+          </button>
+        </th>
+        <th
+          class="c3"
+          scope="col"
+        >
+          <button
+            class="c4 c5"
+            type="button"
+          >
+            <div
+              class="c6"
+            >
+              <span
+                class="c7"
+              >
+                B
+              </span>
+            </div>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class=""
+    >
+      <tr
+        class=""
+      >
+        <td
+          class="c8"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c7"
+            >
+              zero
+            </span>
+          </div>
+        </td>
+        <td
+          class="c8"
+        >
+          <div
+            class="c9"
+          />
+        </td>
+      </tr>
+      <tr
+        class=""
+      >
+        <td
+          class="c8"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c7"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <td
+          class="c8"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c7"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class=""
+      >
+        <td
+          class="c8"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c7"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <td
+          class="c8"
+        >
+          <div
+            class="c9"
+          >
+            <span
+              class="c7"
+            >
+              2
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`DataTable sort 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <table
+    class="StyledDataTable-xrlyjm-0 kTrXKK"
+  >
+    <thead
+      class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 bAIczD StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
+    >
+      <tr
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+      >
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+          scope="col"
+        >
+          <button
+            class="Sorter__SorterButton-fzr2yb-0 bVTNxY StyledButton-sc-323bzc-0 kjdfHK"
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 fAhsMq"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                A
+              </span>
+              .c0 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 6px;
+}
+
+<div
+                class="c0"
+              />
+              .c0 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c0 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c0 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c0 *[stroke*="#"],
+.c0 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c0 *[fill-rule],
+.c0 *[FILL-RULE],
+.c0 *[fill*="#"],
+.c0 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+<svg
+                aria-label="FormDown"
+                class="c0"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </th>
+        <th
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+          scope="col"
+        >
+          <button
+            class="Sorter__SorterButton-fzr2yb-0 bVTNxY StyledButton-sc-323bzc-0 kjdfHK"
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 fAhsMq"
+            >
+              <span
+                class="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                B
+              </span>
+            </div>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="StyledDataTable__StyledDataTableBody-xrlyjm-2 hbZQKY"
+    >
+      <tr
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              1
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              2
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws"
+      >
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              zero
+            </span>
+          </div>
+        </td>
+        <td
+          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

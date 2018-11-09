@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grommet announce 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <div>
+    hi
+  </div>
+</div>
+`;
+
+exports[`Grommet announce 2`] = `
+<div
+  aria-live="assertive"
+  style="left: -100%; right: 100%; position: fixed; z-index: -1;"
+>
+  hello
+</div>
+`;
+
+exports[`Grommet announce 3`] = `
+<div
+  aria-live="assertive"
+  style="left: -100%; right: 100%; position: fixed; z-index: -1;"
+/>
+`;
+
+exports[`Grommet basic 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Grommet full 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+
+<div
+  className="c0"
+>
+  Grommet App
+</div>
+`;
+
+exports[`Grommet hpe theme 1`] = `
+.c0 {
+  font-family: 'Metric',Arial,sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+>
+  Grommet App
+</div>
+`;

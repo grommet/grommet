@@ -1,0 +1,498 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anchor disabled renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #1D67E3;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  opacity: 0.3;
+  cursor: default;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+<div
+  className="c0"
+>
+  <a
+    className="c1"
+    disabled={true}
+    onBlur={[Function]}
+    onFocus={[Function]}
+  />
+</div>
+`;
+
+exports[`Anchor focus renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #1D67E3;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border-color: #FD6FFF;
+  box-shadow: 0 0 2px 2px #FD6FFF;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c1 > circle,
+.c1 > ellipse,
+.c1 > line,
+.c1 > path,
+.c1 > polygon,
+.c1 > polyline,
+.c1 > rect {
+  outline: #FD6FFF solid 2px;
+}
+
+<div
+  className="c0"
+>
+  <a
+    className="c1"
+    href="#"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    Test
+  </a>
+</div>
+`;
+
+exports[`Anchor icon label renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #1D67E3;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <a
+    className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+  >
+    <span
+      className="c2"
+      style={
+        Object {
+          "display": "inline-flex",
+        }
+      }
+    >
+      <svg
+        color="#1D67E3"
+      />
+      <div
+        className="c3"
+      />
+      Test
+    </span>
+  </a>
+</div>
+`;
+
+exports[`Anchor primary renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #1D67E3;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div
+  className="c0"
+>
+  <a
+    className="c1"
+    href="#"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    Test
+  </a>
+</div>
+`;
+
+exports[`Anchor renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #1D67E3;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div
+  className="c0"
+>
+  <a
+    className="c1"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  />
+</div>
+`;
+
+exports[`Anchor renders with children 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #1D67E3;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div
+  className="c0"
+>
+  <a
+    className="c1"
+    href="#"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    children
+  </a>
+</div>
+`;
+
+exports[`Anchor reverse icon label renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #1D67E3;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <a
+    className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+  >
+    <span
+      className="c2"
+      style={
+        Object {
+          "display": "inline-flex",
+        }
+      }
+    >
+      Test
+      <div
+        className="c3"
+      />
+      <svg
+        color="#1D67E3"
+      />
+    </span>
+  </a>
+</div>
+`;
+
+exports[`Anchor warns about invalid icon render 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #1D67E3;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  padding: 12px;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div
+  className="c0"
+>
+  <a
+    className="c1"
+    href="#"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <svg
+      color="#1D67E3"
+    />
+  </a>
+</div>
+`;
+
+exports[`Anchor warns about invalid label render 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #1D67E3;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+<div
+  className="c0"
+>
+  <a
+    className="c1"
+    href="#"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    Test
+  </a>
+</div>
+`;

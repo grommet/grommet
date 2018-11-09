@@ -1,0 +1,2413 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel basic 1`] = `
+.c11 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c16 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c16 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c16 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c16 *[stroke*="#"],
+.c16 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c16 *[fill-rule],
+.c16 *[FILL-RULE],
+.c16 *[fill*="#"],
+.c16 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  opacity: 1;
+  -webkit-animation: iyuEas 1s 0s forwards;
+  animation: iyuEas 1s 0s forwards;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  padding: 0px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 0px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  padding: 12px;
+}
+
+.c17 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c17:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #000000;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    padding: 0px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <img
+            className=""
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c6"
+        >
+          <img
+            className=""
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div
+        className="c7"
+        tabIndex="0"
+      >
+        <div
+          className="c8"
+        >
+          <button
+            className="c9"
+            disabled={true}
+            onBlur={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <div
+              className="c10"
+            >
+              <svg
+                aria-label="Previous"
+                className="c11"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  strokeWidth="2"
+                  transform="matrix(-1 0 0 1 24 0)"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div
+          className="c12"
+        >
+          <div
+            className="c13"
+          >
+            <button
+              className="c14"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              type="button"
+            >
+              <div
+                className="c15"
+              >
+                <svg
+                  aria-label="Subtract"
+                  className="c16"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </div>
+            </button>
+            <button
+              className="c14"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              type="button"
+            >
+              <div
+                className="c15"
+              >
+                <svg
+                  aria-label="Subtract"
+                  className="c11"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          className="c8"
+        >
+          <button
+            className="c17"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <div
+              className="c10"
+            >
+              <svg
+                aria-label="Next"
+                className="c11"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel navigate 1`] = `
+.c11 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c16 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c16 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c16 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c16 *[stroke*="#"],
+.c16 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c16 *[fill-rule],
+.c16 *[FILL-RULE],
+.c16 *[fill*="#"],
+.c16 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  opacity: 1;
+  -webkit-animation: iyuEas 1s 0s forwards;
+  animation: iyuEas 1s 0s forwards;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  padding: 0px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 0px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  padding: 12px;
+}
+
+.c17 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c17:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #000000;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    padding: 0px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    data-testid="test-carousel"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c6"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c7"
+        tabindex="0"
+      >
+        <div
+          class="c8"
+        >
+          <button
+            class="c9"
+            disabled=""
+            type="button"
+          >
+            <div
+              class="c10"
+            >
+              <svg
+                aria-label="Previous"
+                class="c11"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  stroke-width="2"
+                  transform="matrix(-1 0 0 1 24 0)"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div
+          class="c12"
+        >
+          <div
+            class="c13"
+          >
+            <button
+              class="c14"
+              type="button"
+            >
+              <div
+                class="c15"
+              >
+                <svg
+                  aria-label="Subtract"
+                  class="c16"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+            <button
+              class="c14"
+              type="button"
+            >
+              <div
+                class="c15"
+              >
+                <svg
+                  aria-label="Subtract"
+                  class="c11"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="c8"
+        >
+          <button
+            class="c17"
+            type="button"
+          >
+            <div
+              class="c10"
+            >
+              <svg
+                aria-label="Next"
+                class="c11"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel navigate 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div
+    class="StyledStack-ajspsk-0 cBSAEZ"
+    data-testid="test-carousel"
+  >
+    <div
+      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gSqlow"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 eMweLo"
+        >
+          <img
+            class="StyledImage-ey4zx9-0 jtkYbl"
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gSqlow"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 kyLFAf"
+        >
+          <img
+            class="StyledImage-ey4zx9-0 jtkYbl"
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 eKHNGK"
+        tabindex="0"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 kjdfHK"
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 VhefZ"
+            >
+              <svg
+                aria-label="Previous"
+                class="StyledIcon-ofa7kd-0 bVfVoD"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  stroke-width="2"
+                  transform="matrix(-1 0 0 1 24 0)"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 JUlfQ"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 exddWn"
+          >
+            <button
+              class="StyledButton-sc-323bzc-0 dcpWVY"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+              >
+                <svg
+                  aria-label="Subtract"
+                  class="StyledIcon-ofa7kd-0 bVfVoD"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+            <button
+              class="StyledButton-sc-323bzc-0 dcpWVY"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+              >
+                <svg
+                  aria-label="Subtract"
+                  class="StyledIcon-ofa7kd-0 dtlWir"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 fzQtuL"
+            disabled=""
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 VhefZ"
+            >
+              <svg
+                aria-label="Next"
+                class="StyledIcon-ofa7kd-0 bVfVoD"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel navigate 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div
+    class="StyledStack-ajspsk-0 cBSAEZ"
+    data-testid="test-carousel"
+  >
+    <div
+      class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gSqlow"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 iDtakW"
+        >
+          <img
+            class="StyledImage-ey4zx9-0 jtkYbl"
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gSqlow"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 eMweLo"
+        >
+          <img
+            class="StyledImage-ey4zx9-0 jtkYbl"
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 eKHNGK"
+        tabindex="0"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 fzQtuL"
+            disabled=""
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 VhefZ"
+            >
+              <svg
+                aria-label="Previous"
+                class="StyledIcon-ofa7kd-0 bVfVoD"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  stroke-width="2"
+                  transform="matrix(-1 0 0 1 24 0)"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 JUlfQ"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 exddWn"
+          >
+            <button
+              class="StyledButton-sc-323bzc-0 dcpWVY"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+              >
+                <svg
+                  aria-label="Subtract"
+                  class="StyledIcon-ofa7kd-0 dtlWir"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+            <button
+              class="StyledButton-sc-323bzc-0 dcpWVY"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+              >
+                <svg
+                  aria-label="Subtract"
+                  class="StyledIcon-ofa7kd-0 bVfVoD"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 kjdfHK"
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 VhefZ"
+            >
+              <svg
+                aria-label="Next"
+                class="StyledIcon-ofa7kd-0 bVfVoD"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel play 1`] = `
+.c11 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c11 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c11 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c11 *[stroke*="#"],
+.c11 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c11 *[fill-rule],
+.c11 *[FILL-RULE],
+.c11 *[fill*="#"],
+.c11 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c16 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c16 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c16 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c16 *[stroke*="#"],
+.c16 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c16 *[fill-rule],
+.c16 *[FILL-RULE],
+.c16 *[fill*="#"],
+.c16 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  opacity: 1;
+  -webkit-animation: iyuEas 1s 0s forwards;
+  animation: iyuEas 1s 0s forwards;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  padding: 0px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 0px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+.c9 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c14 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  padding: 12px;
+}
+
+.c17 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c17:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #000000;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c12 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    padding: 0px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c4"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c3"
+      >
+        <div
+          class="c6"
+        >
+          <img
+            class=""
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c5"
+    >
+      <div
+        class="c7"
+        tabindex="0"
+      >
+        <div
+          class="c8"
+        >
+          <button
+            class="c9"
+            disabled=""
+            type="button"
+          >
+            <div
+              class="c10"
+            >
+              <svg
+                aria-label="Previous"
+                class="c11"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  stroke-width="2"
+                  transform="matrix(-1 0 0 1 24 0)"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div
+          class="c12"
+        >
+          <div
+            class="c13"
+          >
+            <button
+              class="c14"
+              type="button"
+            >
+              <div
+                class="c15"
+              >
+                <svg
+                  aria-label="Subtract"
+                  class="c16"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+            <button
+              class="c14"
+              type="button"
+            >
+              <div
+                class="c15"
+              >
+                <svg
+                  aria-label="Subtract"
+                  class="c11"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="c8"
+        >
+          <button
+            class="c17"
+            type="button"
+          >
+            <div
+              class="c10"
+            >
+              <svg
+                aria-label="Next"
+                class="c11"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel play 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div
+    class="StyledStack-ajspsk-0 cBSAEZ"
+  >
+    <div
+      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gSqlow"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 eMweLo"
+        >
+          <img
+            class="StyledImage-ey4zx9-0 jtkYbl"
+            src="//v2.grommet.io/assets/IMG_4245.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 gSqlow"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 kyLFAf"
+        >
+          <img
+            class="StyledImage-ey4zx9-0 jtkYbl"
+            src="//v2.grommet.io/assets/IMG_4210.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+    >
+      <div
+        class="StyledBox-sc-13pk1d4-0 eKHNGK"
+        tabindex="0"
+      >
+        <div
+          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 kjdfHK"
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 VhefZ"
+            >
+              <svg
+                aria-label="Previous"
+                class="StyledIcon-ofa7kd-0 bVfVoD"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  stroke-width="2"
+                  transform="matrix(-1 0 0 1 24 0)"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 JUlfQ"
+        >
+          <div
+            class="StyledBox-sc-13pk1d4-0 exddWn"
+          >
+            <button
+              class="StyledButton-sc-323bzc-0 dcpWVY"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+              >
+                <svg
+                  aria-label="Subtract"
+                  class="StyledIcon-ofa7kd-0 bVfVoD"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+            <button
+              class="StyledButton-sc-323bzc-0 dcpWVY"
+              type="button"
+            >
+              <div
+                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+              >
+                <svg
+                  aria-label="Subtract"
+                  class="StyledIcon-ofa7kd-0 dtlWir"
+                  height="24px"
+                  role="img"
+                  version="1.1"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+        >
+          <button
+            class="StyledButton-sc-323bzc-0 fzQtuL"
+            disabled=""
+            type="button"
+          >
+            <div
+              class="StyledBox-sc-13pk1d4-0 VhefZ"
+            >
+              <svg
+                aria-label="Next"
+                class="StyledIcon-ofa7kd-0 bVfVoD"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <polyline
+                  fill="none"
+                  points="7 2 17 12 7 22"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

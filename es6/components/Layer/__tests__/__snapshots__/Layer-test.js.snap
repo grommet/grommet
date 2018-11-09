@@ -1,0 +1,2124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layer dark context 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="non-modal-test"
+>
+  This is a non-modal layer
+</div>
+`;
+
+exports[`Layer dark context 2`] = `
+"@media only screen and (max-width:768px) {
+  .iWUbCl {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .iWUbCl {
+    padding: 0px;
+  }
+}"
+`;
+
+exports[`Layer full false 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="full-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="full-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer full false 2`] = `""`;
+
+exports[`Layer full horizontal 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  left: 0px;
+  right: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-animation: dcHpVA 0.2s ease-in-out forwards;
+  animation: dcHpVA 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="full-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="full-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer full horizontal 2`] = `""`;
+
+exports[`Layer full true 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  -webkit-animation: aUlIN 0.2s ease-in-out forwards;
+  animation: aUlIN 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="full-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="full-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer full true 2`] = `""`;
+
+exports[`Layer full vertical 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 0px;
+  bottom: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-animation: XCWMt 0.2s ease-in-out forwards;
+  animation: XCWMt 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="full-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="full-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer full vertical 2`] = `""`;
+
+exports[`Layer hidden 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  left: -100%;
+  right: 100%;
+  z-index: -1;
+  position: fixed;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="hidden-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="hidden-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer hidden 2`] = `""`;
+
+exports[`Layer hidden 3`] = `
+<div
+  class="StyledLayer-rmtehz-0 eMWFXo"
+  id="hidden-test"
+  tabindex="-1"
+>
+  <div
+    class="StyledLayer__StyledOverlay-rmtehz-1 gVTfaV"
+  />
+  <div
+    class="StyledLayer__StyledContainer-rmtehz-2 gRrEhW"
+    id="hidden-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer hidden 4`] = `""`;
+
+exports[`Layer is accessible 1`] = `
+<div
+  data-testid="test-body-node"
+>
+  <input />
+  <input
+    tabindex="10"
+  />
+</div>
+`;
+
+exports[`Layer is accessible 2`] = `
+<div
+  data-testid="test-layer-node"
+>
+  This is a layer
+  <input
+    data-testid="test-input"
+  />
+</div>
+`;
+
+exports[`Layer is accessible 3`] = `
+<div
+  data-testid="test-body-node"
+>
+  <input />
+  <input />
+</div>
+`;
+
+exports[`Layer margin large 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 48px - 48px);
+  max-width: calc(100% - 48px - 48px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="margin-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="margin-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer margin large 2`] = `""`;
+
+exports[`Layer margin medium 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 24px - 24px);
+  max-width: calc(100% - 24px - 24px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="margin-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="margin-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer margin medium 2`] = `""`;
+
+exports[`Layer margin none 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="margin-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="margin-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer margin none 2`] = `""`;
+
+exports[`Layer margin small 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 12px - 12px);
+  max-width: calc(100% - 12px - 12px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="margin-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="margin-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer margin small 2`] = `""`;
+
+exports[`Layer margin xsmall 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 6px - 6px);
+  max-width: calc(100% - 6px - 6px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="margin-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="margin-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer margin xsmall 2`] = `""`;
+
+exports[`Layer non-modal 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="non-modal-test"
+>
+  This is a non-modal layer
+</div>
+`;
+
+exports[`Layer non-modal 2`] = `""`;
+
+exports[`Layer plain 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="plain-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="plain-test"
+  >
+    This is a plain layer
+  </div>
+</div>
+`;
+
+exports[`Layer plain 2`] = `""`;
+
+exports[`Layer position bottom 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  bottom: 0px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  -webkit-animation: jsmUBO 0.2s ease-in-out forwards;
+  animation: jsmUBO 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="position-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="position-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer position bottom 2`] = `""`;
+
+exports[`Layer position center 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-animation: bBMZdm 0.2s ease-in-out forwards;
+  animation: bBMZdm 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="position-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="position-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer position center 2`] = `""`;
+
+exports[`Layer position left 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  left: 0px;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  -webkit-animation: fNWKbM 0.2s ease-in-out forwards;
+  animation: fNWKbM 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="position-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="position-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer position left 2`] = `""`;
+
+exports[`Layer position right 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  right: 0px;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  -webkit-animation: lhngOP 0.2s ease-in-out forwards;
+  animation: lhngOP 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="position-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="position-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer position right 2`] = `""`;
+
+exports[`Layer position top 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background: unset;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  outline: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.c1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0,0,0,0.5);
+  color: #f8f8f8;
+  pointer-events: all;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  background: #FFFFFF;
+  color: #444444;
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
+  position: fixed;
+  max-height: calc(100% - 0px - 0px);
+  max-width: calc(100% - 0px - 0px);
+  border-radius: 4px;
+  top: 0px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  -webkit-animation: bAkQbM 0.2s ease-in-out forwards;
+  animation: bAkQbM 0.2s ease-in-out forwards;
+}
+
+@media only screen and (max-width:768px) {
+  .c0 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    position: relative;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    position: relative;
+    max-height: none;
+    max-width: none;
+    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    -webkit-animation: none;
+    animation: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+<div
+  class="c0"
+  id="position-test"
+  tabindex="-1"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c2"
+    id="position-test"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer position top 2`] = `""`;

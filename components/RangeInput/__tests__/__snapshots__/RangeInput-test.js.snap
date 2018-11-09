@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RangeInput renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-appearance: none;
+  border-color: transparent;
+  height: 24px;
+  width: 100%;
+  padding: 0px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1::-moz-focus-inner {
+  border: none;
+}
+
+.c1::-moz-focus-outer {
+  border: none;
+}
+
+.c1::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+}
+
+.c1::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: -10.2px;
+}
+
+.c1::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c1::-moz-range-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+}
+
+.c1::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c1::-ms-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #7D4CDB;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c1:hover::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c1:hover::-ms-thumb {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c1::-ms-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+  color: transparent;
+}
+
+.c1::-ms-fill-lower {
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+.c1::-ms-fill-upper {
+  background: rgba(0,0,0,0.2);
+  border-color: transparent;
+}
+
+<div
+  className="c0"
+>
+  <input
+    className="c1"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    type="range"
+    value="50"
+  />
+</div>
+`;

@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paragraph margin renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  margin: 12px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+.c2 {
+  margin: 24px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+.c3 {
+  margin: 48px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+.c4 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+.c5 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+.c6 {
+  margin-top: 12px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1"
+  />
+  <p
+    className="c2"
+  />
+  <p
+    className="c3"
+  />
+  <p
+    className="c4"
+  />
+  <p
+    className="c5"
+  />
+  <p
+    className="c6"
+  />
+</div>
+`;
+
+exports[`Paragraph renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1"
+  />
+</div>
+`;
+
+exports[`Paragraph size renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+.c1 {
+  font-size: 14px;
+  line-height: 20px;
+  max-width: 336px;
+}
+
+.c3 {
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
+}
+
+.c4 {
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+}
+
+.c5 {
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1"
+    size="small"
+  />
+  <p
+    className="c2"
+    size="medium"
+  />
+  <p
+    className="c3"
+    size="large"
+  />
+  <p
+    className="c4"
+    size="xlarge"
+  />
+  <p
+    className="c5"
+    size="xxlarge"
+  />
+</div>
+`;
+
+exports[`Paragraph textAlign renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  text-align: left;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  text-align: center;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  text-align: right;
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1"
+  />
+  <p
+    className="c2"
+  />
+  <p
+    className="c3"
+  />
+</div>
+`;

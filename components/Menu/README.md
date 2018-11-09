@@ -1,0 +1,225 @@
+## Menu
+Presents a list of choices within a drop down via a control that
+      opens it.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=menu&module=%2Fsrc%2FMenu.js)
+## Usage
+
+```javascript
+import { Menu } from 'grommet';
+<Menu />
+```
+
+## Properties
+
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+```
+string
+```
+
+**alignSelf**
+
+How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.
+
+```
+start
+center
+end
+stretch
+```
+
+**gridArea**
+
+The name of the area to place
+    this inside a parent Grid.
+
+```
+string
+```
+
+**margin**
+
+The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.
+
+```
+none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string
+```
+
+**disabled**
+
+Whether the menu should be disabled.
+
+```
+boolean
+```
+
+**dropAlign**
+
+Where to place the drop down. The keys correspond to a side of the drop down.
+The values correspond to a side of the control. For instance,
+{left: 'left', top: 'bottom'} would align the left edges and the top of
+the drop down to the bottom of the control. At most one of left or right and
+one of top or bottom should be specified. Defaults to `{
+  "top": "top",
+  "left": "left"
+}`.
+
+```
+{
+  top: 
+    top
+    bottom,
+  bottom: 
+    top
+    bottom,
+  left: 
+    right
+    left,
+  right: 
+    right
+    left
+}
+```
+
+**dropBackground**
+
+Background color when drop is active
+
+```
+string
+{
+  color: string,
+  opacity: 
+    weak
+    medium
+    strong
+    boolean
+}
+```
+
+**dropTarget**
+
+Target where the drop will be aligned to. This should be
+      a React reference. Typically, this is not required as the drop will be
+      aligned to the Menu itself by default.
+
+```
+object
+```
+
+**icon**
+
+Indicates the icon shown as a control to open it.
+
+```
+boolean
+node
+```
+
+**items**
+
+Required. Menu items to be placed inside the drop down.
+The object values can be any Button prop, for example: label and onClick.
+
+```
+[object]
+```
+
+**label**
+
+Indicates the label shown as a control to open it.
+
+```
+string
+node
+```
+
+**messages**
+
+Custom messages. Used for accessibility by screen readers. Defaults to `{
+  "openMenu": "Open Menu",
+  "closeMenu": "Close Menu"
+}`.
+
+```
+{
+  closeMenu: string,
+  openMenu: string
+}
+```
+
+**size**
+
+The size of the menu. Defaults to `medium`.
+
+```
+small
+medium
+large
+xlarge
+string
+```
+  

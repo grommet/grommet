@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Markdown renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 600;
+}
+
+.c3 {
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
+  font-weight: 600;
+}
+
+.c4 {
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
+  font-weight: 600;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    font-size: 22px;
+    line-height: 28px;
+    max-width: 528px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <h1
+      className="-h1 c1"
+      id="h1"
+    >
+      H1
+    </h1>
+    <p
+      className="c2"
+    >
+      Paragraph
+    </p>
+    <h2
+      className="-h2 c3"
+      id="h2"
+    >
+      H2
+    </h2>
+    <h3
+      className="-h3 c4"
+      id="h3"
+    >
+      H3
+    </h3>
+    <h4
+      className="-h4 c5"
+      id="h4"
+    >
+      H4
+    </h4>
+  </div>
+</div>
+`;

@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkipLink basic 1`] = `
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #1D67E3;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  class="c0"
+>
+  <div>
+    <a
+      aria-hidden="true"
+      class="c1"
+      id="main"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
+    Main Content
+    <input
+      type="text"
+      value="main content"
+    />
+  </div>
+  <footer>
+    <a
+      aria-hidden="true"
+      class="c1"
+      id="footer"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
+    <input
+      type="text"
+      value="footer"
+    />
+  </footer>
+</div>
+`;
+
+exports[`SkipLink basic 2`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div>
+    <a
+      aria-hidden="true"
+      class="StyledAnchor-sc-1rp7lwl-0 Icjii"
+      id="main"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
+    Main Content
+    <input
+      type="text"
+      value="main content"
+    />
+  </div>
+  <footer>
+    <a
+      aria-hidden="true"
+      class="StyledAnchor-sc-1rp7lwl-0 Icjii"
+      id="footer"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
+    <input
+      type="text"
+      value="footer"
+    />
+  </footer>
+</div>
+`;
+
+exports[`SkipLink basic 3`] = `
+<div
+  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+>
+  <div>
+    <a
+      aria-hidden="true"
+      class="StyledAnchor-sc-1rp7lwl-0 Icjii"
+      id="main"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
+    Main Content
+    <input
+      type="text"
+      value="main content"
+    />
+  </div>
+  <footer>
+    <a
+      aria-hidden="true"
+      class="StyledAnchor-sc-1rp7lwl-0 Icjii"
+      id="footer"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
+    <input
+      type="text"
+      value="footer"
+    />
+  </footer>
+</div>
+`;
