@@ -18,7 +18,7 @@ Before opening an issue or pull request, please read the [Contributing](https://
 
   For NPM users:
   ```
-    $ npm install grommet@next
+    $ npm install grommet grommet-icons styled-components --save
   ```
 
   Detailed instructions are on the [Get Started](https://v2.grommet.io/use) page.
@@ -30,6 +30,8 @@ Before opening an issue or pull request, please read the [Contributing](https://
   ```
     $ npm run storybook
   ```
+  
+  or you can navigate our [Storybook site](https://storybook.grommet.io)
 
 ### Release History
 
