@@ -311,7 +311,10 @@ class LazyDrop extends Component {
               target={this.bottomTargetRef.current}
               responsive
             >
-              <Box height="xsmall" overflow="auto" pad={pad}>
+              <Box
+                height={pad === 'small' ? 'xsmall' : undefined}
+                pad={{ horizontal: 'large', vertical: pad }}
+              >
                 Drop Contents
               </Box>
             </Drop>
