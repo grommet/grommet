@@ -6,13 +6,23 @@ import { withForwardRef } from '../hocs';
 
 class SelectOption extends Component {
   shouldComponentUpdate(nextProps) {
-    const { active } = this.props;
-    const { active: nextActive } = nextProps;
-    return active !== nextActive;
+    const { active, disabled, option, selected } = this.props;
+    const {
+      active: nextActive,
+      disabled: nextDisabled,
+      option: nextOption,
+      selected: nextSelected,
+    } = nextProps;
+    return (
+      active !== nextActive ||
+      disabled !== nextDisabled ||
+      selected !== nextSelected ||
+      option !== nextOption
+    );
   }
 
   render() {
-    const { forwardRef, value, ...rest } = this.props;
+    const { forwardRef, ...rest } = this.props;
     return (
       <Box flex={false}>
         <Button

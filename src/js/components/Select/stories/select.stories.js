@@ -173,8 +173,8 @@ class SeasonsSelect extends Component {
         <Box direction="row">
           <Box align="start" basis="medium" direction="row">
             <Select
-              size="medium"
               placeholder="Select Season"
+              closeOnChange={false}
               multiple
               value={
                 selected && selected.length ? (
@@ -328,10 +328,6 @@ class CustomSearchSelect extends Component {
   render() {
     const { contentPartners, searching, selectedContentPartners } = this.state;
 
-    const selectedPartnerNames = selectedContentPartners.map(
-      ({ name }) => name,
-    );
-
     return (
       <Grommet theme={customSearchTheme}>
         <Box align="start" width="medium" direction="row">
@@ -361,10 +357,11 @@ class CustomSearchSelect extends Component {
                 } else {
                   newSelectedPartners.push(option);
                 }
-                this.setState({ selectedContentPartners: newSelectedPartners });
-              }}
-              onClose={() =>
+                const selectedPartnerNames = newSelectedPartners.map(
+                  ({ name }) => name,
+                );
                 this.setState({
+                  selectedContentPartners: newSelectedPartners,
                   contentPartners: allContentPartners.sort((p1, p2) => {
                     const p1Exists = selectedPartnerNames.includes(p1.name);
                     const p2Exists = selectedPartnerNames.includes(p2.name);
@@ -380,8 +377,8 @@ class CustomSearchSelect extends Component {
                     }
                     return 1;
                   }),
-                })
-              }
+                });
+              }}
               onSearch={query => {
                 this.setState({ searching: true }, () => {
                   setTimeout(() => {
