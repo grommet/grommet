@@ -269,8 +269,8 @@ function (_Component3) {
       basis: "medium",
       direction: "row"
     }, React.createElement(Select, {
-      size: "medium",
       placeholder: "Select Season",
+      closeOnChange: false,
       multiple: true,
       value: selected && selected.length ? React.createElement(Box, {
         wrap: true,
@@ -453,10 +453,6 @@ function (_Component4) {
         contentPartners = _this$state3.contentPartners,
         searching = _this$state3.searching,
         selectedContentPartners = _this$state3.selectedContentPartners;
-    var selectedPartnerNames = selectedContentPartners.map(function (_ref6) {
-      var name = _ref6.name;
-      return name;
-    });
     return React.createElement(Grommet, {
       theme: customSearchTheme
     }, React.createElement(Box, {
@@ -478,11 +474,11 @@ function (_Component4) {
         return contentPartners.indexOf(option);
       }),
       options: contentPartners,
-      onChange: function onChange(_ref7) {
-        var option = _ref7.option;
+      onChange: function onChange(_ref6) {
+        var option = _ref6.option;
         var newSelectedPartners = selectedContentPartners.concat();
-        var seasonIndex = newSelectedPartners.map(function (_ref8) {
-          var name = _ref8.name;
+        var seasonIndex = newSelectedPartners.map(function (_ref7) {
+          var name = _ref7.name;
           return name;
         }).indexOf(option.name);
 
@@ -492,12 +488,13 @@ function (_Component4) {
           newSelectedPartners.push(option);
         }
 
-        _this8.setState({
-          selectedContentPartners: newSelectedPartners
+        var selectedPartnerNames = newSelectedPartners.map(function (_ref8) {
+          var name = _ref8.name;
+          return name;
         });
-      },
-      onClose: function onClose() {
-        return _this8.setState({
+
+        _this8.setState({
+          selectedContentPartners: newSelectedPartners,
           contentPartners: allContentPartners.sort(function (p1, p2) {
             var p1Exists = selectedPartnerNames.includes(p1.name);
             var p2Exists = selectedPartnerNames.includes(p2.name);

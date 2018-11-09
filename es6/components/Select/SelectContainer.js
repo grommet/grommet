@@ -288,7 +288,6 @@ function (_Component) {
         ref: function ref(_ref) {
           _this3.optionsRef[index] = _ref;
         },
-        value: value,
         disabled: isDisabled || undefined,
         active: isActive,
         selected: isSelected,

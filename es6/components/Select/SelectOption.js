@@ -21,16 +21,22 @@ function (_Component) {
   var _proto = SelectOption.prototype;
 
   _proto.shouldComponentUpdate = function shouldComponentUpdate(nextProps) {
-    var active = this.props.active;
-    var nextActive = nextProps.active;
-    return active !== nextActive;
+    var _this$props = this.props,
+        active = _this$props.active,
+        disabled = _this$props.disabled,
+        option = _this$props.option,
+        selected = _this$props.selected;
+    var nextActive = nextProps.active,
+        nextDisabled = nextProps.disabled,
+        nextOption = nextProps.option,
+        nextSelected = nextProps.selected;
+    return active !== nextActive || disabled !== nextDisabled || selected !== nextSelected || option !== nextOption;
   };
 
   _proto.render = function render() {
-    var _this$props = this.props,
-        forwardRef = _this$props.forwardRef,
-        value = _this$props.value,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["forwardRef", "value"]);
+    var _this$props2 = this.props,
+        forwardRef = _this$props2.forwardRef,
+        rest = _objectWithoutPropertiesLoose(_this$props2, ["forwardRef"]);
 
     return React.createElement(Box, {
       flex: false
