@@ -19,9 +19,7 @@ export const doc = Calendar => {
     ...genericProps,
     animate: PropTypes.bool
       .description(
-        `
-      Whether to animate the calender as the user interacts with it.
-    `,
+        `Whether to animate the calender as the user interacts with it.`,
       )
       .defaultValue(true),
     bounds: PropTypes.arrayOf(PropTypes.string)
@@ -68,9 +66,9 @@ You can then use that to disable the previous and next buttons.
     locale: PropTypes.string
       .description('The locale to use.')
       .defaultValue('en-US'),
-    onReference: PropTypes.func.description(`
-      Called with an ISO8601 date when the user navigates to a different month.
-    `),
+    onReference: PropTypes.func.description(
+      `Called with an ISO8601 date when the user navigates to a different month.`,
+    ),
     onSelect: PropTypes.func.description(`Called with an ISO8601 date when
       the user selects a day.
       For single select, make this the subsequent \`date\` property value.
@@ -78,12 +76,10 @@ You can then use that to disable the previous and next buttons.
       Not specifying this property makes the component read only.`),
     range: PropTypes.bool
       .description(
-        `
-      Whether to automatically manage multiple date selection as a range.
-      When the user clicks the first date, onSelect will be called with that
-      date. When the user selects another date, onSelect will be called with
-      an array of two dates.
-    `,
+        `Whether to automatically manage multiple date selection as a range.
+        When the user clicks the first date, onSelect will be called with that
+        date. When the user selects another date, onSelect will be called with
+        an array of two dates.`,
       )
       .defaultValue(false),
     reference: PropTypes.string.description(
@@ -91,9 +87,7 @@ You can then use that to disable the previous and next buttons.
     ),
     showAdjacentDays: PropTypes.bool
       .description(
-        `
-      Whether to show the days from the previous and next months.
-    `,
+        `Whether to show the days from the previous and next months.`,
       )
       .defaultValue(true),
     size: PropTypes.oneOfType([
@@ -105,4 +99,108 @@ You can then use that to disable the previous and next buttons.
   };
 
   return DocumentedCalendar;
+};
+
+export const themeDoc = {
+  'global.size.small': {
+    description: 'The width of the calendar when small.',
+    type: 'string',
+    defaultValue: '192px',
+  },
+  'global.size.medium': {
+    description: 'The width of the calendar when medium.',
+    type: 'string',
+    defaultValue: '384px',
+  },
+  'global.size.large': {
+    description: 'The width of the calendar when large.',
+    type: 'string',
+    defaultValue: '768px',
+  },
+  'calendar.small.fontSize': {
+    description: 'The font size to use for days when small.',
+    type: 'string',
+    defaultValue: '14px',
+  },
+  'calendar.small.lineHeight': {
+    description: 'The line height to use for days when small.',
+    type: 'number',
+    defaultValue: 1.375,
+  },
+  'calendar.small.daySize': {
+    description: 'The size of a day when small.',
+    type: 'string',
+    defaultValue: '27.42px',
+  },
+  'calendar.small.slideDuration': {
+    description: 'How long it animate the slide between months when small.',
+    type: 'string',
+    defaultValue: '0.2s',
+  },
+  'calendar.medium.fontSize': {
+    description: 'The font size to use for days when medium.',
+    type: 'string',
+    defaultValue: '18px',
+  },
+  'calendar.medium.lineHeight': {
+    description: 'The line height to use for days when medium.',
+    type: 'number',
+    defaultValue: 1.45,
+  },
+  'calendar.medium.daySize': {
+    description: 'The size of a day when medium.',
+    type: 'string',
+    defaultValue: '54.84px',
+  },
+  'calendar.medium.slideDuration': {
+    description: 'How long it animate the slide between months when medium.',
+    type: 'string',
+    defaultValue: '0.5s',
+  },
+  'calendar.large.fontSize': {
+    description: 'The font size to use for days when large.',
+    type: 'string',
+    defaultValue: '30px',
+  },
+  'calendar.large.lineHeight': {
+    description: 'The line height to use for days when large.',
+    type: 'number',
+    defaultValue: 1.11,
+  },
+  'calendar.large.daySize': {
+    description: 'The size of a day when large.',
+    type: 'string',
+    defaultValue: '109.7px',
+  },
+  'calendar.large.slideDuration': {
+    description: 'How long it animate the slide between months when large.',
+    type: 'string',
+    defaultValue: '0.8s',
+  },
+  'calendar.icons.next': {
+    description: 'The icon to use for the next month navigation control.',
+    type: 'element',
+    defaultValue: '<Next />',
+  },
+  'calendar.icons.previous': {
+    description: 'The icon to use for the previous month navigation control.',
+    type: 'element',
+    defaultValue: '<Previous />',
+  },
+  'calendar.icons.small.next': {
+    description:
+      'The icon to use for the next month navigation control when small.',
+    type: 'element',
+    defaultValue: '<FormNext />',
+  },
+  'calendar.icons.small.previous': {
+    description:
+      'The icon to use for the previous month navigation control when small.',
+    type: 'element',
+    defaultValue: '<FormPrevious />',
+  },
+  'calendar.extend': {
+    description: 'Any additional style for the Calendar.',
+    type: 'string | (props) => {}',
+  },
 };
