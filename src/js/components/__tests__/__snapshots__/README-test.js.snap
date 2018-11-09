@@ -1701,9 +1701,7 @@ string
 
 **animate**
 
-
-      Whether to animate the calender as the user interacts with it.
-     Defaults to \`true\`.
+Whether to animate the calender as the user interacts with it. Defaults to \`true\`.
 
 \`\`\`
 boolean
@@ -1794,9 +1792,7 @@ string
 
 **onReference**
 
-
-      Called with an ISO8601 date when the user navigates to a different month.
-    
+Called with an ISO8601 date when the user navigates to a different month.
 
 \`\`\`
 function
@@ -1816,12 +1812,10 @@ function
 
 **range**
 
-
-      Whether to automatically manage multiple date selection as a range.
-      When the user clicks the first date, onSelect will be called with that
-      date. When the user selects another date, onSelect will be called with
-      an array of two dates.
-    
+Whether to automatically manage multiple date selection as a range.
+        When the user clicks the first date, onSelect will be called with that
+        date. When the user selects another date, onSelect will be called with
+        an array of two dates.
 
 \`\`\`
 boolean
@@ -1837,9 +1831,7 @@ string
 
 **showAdjacentDays**
 
-
-      Whether to show the days from the previous and next months.
-     Defaults to \`true\`.
+Whether to show the days from the previous and next months. Defaults to \`true\`.
 
 \`\`\`
 boolean
@@ -1855,7 +1847,209 @@ medium
 large
 string
 \`\`\`
-  ",
+  
+## Theme
+  
+**global.size.small**
+
+The width of the calendar when small. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+192px
+\`\`\`
+
+**global.size.medium**
+
+The width of the calendar when medium. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+384px
+\`\`\`
+
+**global.size.large**
+
+The width of the calendar when large. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+768px
+\`\`\`
+
+**calendar.small.fontSize**
+
+The font size to use for days when small. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+14px
+\`\`\`
+
+**calendar.small.lineHeight**
+
+The line height to use for days when small. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+1.375
+\`\`\`
+
+**calendar.small.daySize**
+
+The size of a day when small. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+27.42px
+\`\`\`
+
+**calendar.small.slideDuration**
+
+How long it animate the slide between months when small. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+0.2s
+\`\`\`
+
+**calendar.medium.fontSize**
+
+The font size to use for days when medium. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+
+**calendar.medium.lineHeight**
+
+The line height to use for days when medium. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+1.45
+\`\`\`
+
+**calendar.medium.daySize**
+
+The size of a day when medium. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+54.84px
+\`\`\`
+
+**calendar.medium.slideDuration**
+
+How long it animate the slide between months when medium. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+0.5s
+\`\`\`
+
+**calendar.large.fontSize**
+
+The font size to use for days when large. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+30px
+\`\`\`
+
+**calendar.large.lineHeight**
+
+The line height to use for days when large. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+1.11
+\`\`\`
+
+**calendar.large.daySize**
+
+The size of a day when large. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+109.7px
+\`\`\`
+
+**calendar.large.slideDuration**
+
+How long it animate the slide between months when large. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+0.8s
+\`\`\`
+
+**calendar.icons.next**
+
+The icon to use for the next month navigation control. Expects \`element\`.
+
+Defaults to
+
+\`\`\`
+<Next />
+\`\`\`
+
+**calendar.icons.previous**
+
+The icon to use for the previous month navigation control. Expects \`element\`.
+
+Defaults to
+
+\`\`\`
+<Previous />
+\`\`\`
+
+**calendar.icons.small.next**
+
+The icon to use for the next month navigation control when small. Expects \`element\`.
+
+Defaults to
+
+\`\`\`
+<FormNext />
+\`\`\`
+
+**calendar.icons.small.previous**
+
+The icon to use for the previous month navigation control when small. Expects \`element\`.
+
+Defaults to
+
+\`\`\`
+<FormPrevious />
+\`\`\`
+
+**calendar.extend**
+
+Any additional style for the Calendar. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Carousel": "## Carousel
 A carousel that cycles through children. Child components
       would typically be Images. It is the caller's responsibility to ensure
