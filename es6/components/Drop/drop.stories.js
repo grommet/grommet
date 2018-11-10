@@ -398,9 +398,6 @@ function (_Component4) {
       onClick: this.onOpenDrop
     }), openDrop && React.createElement(Drop, {
       target: this.boxRef.current,
-      align: {
-        top: 'bottom'
-      },
       onClickOutside: this.onCloseDrop,
       onEsc: this.onCloseDrop
     }, !openInnerDrop && React.createElement(Box, {
@@ -499,9 +496,11 @@ function (_Component5) {
       target: this.bottomTargetRef.current,
       responsive: true
     }, React.createElement(Box, {
-      height: "xsmall",
-      overflow: "auto",
-      pad: pad
+      height: pad === 'small' ? 'xsmall' : undefined,
+      pad: {
+        horizontal: 'large',
+        vertical: pad
+      }
     }, "Drop Contents"))));
   };
 

@@ -409,9 +409,6 @@ function (_Component4) {
       onClick: this.onOpenDrop
     }), openDrop && _react.default.createElement(_grommet.Drop, {
       target: this.boxRef.current,
-      align: {
-        top: 'bottom'
-      },
       onClickOutside: this.onCloseDrop,
       onEsc: this.onCloseDrop
     }, !openInnerDrop && _react.default.createElement(_grommet.Box, {
@@ -510,9 +507,11 @@ function (_Component5) {
       target: this.bottomTargetRef.current,
       responsive: true
     }, _react.default.createElement(_grommet.Box, {
-      height: "xsmall",
-      overflow: "auto",
-      pad: pad
+      height: pad === 'small' ? 'xsmall' : undefined,
+      pad: {
+        horizontal: 'large',
+        vertical: pad
+      }
     }, "Drop Contents"))));
   };
 

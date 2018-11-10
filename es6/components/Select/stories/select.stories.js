@@ -75,7 +75,12 @@ function (_Component) {
         options = _this$state.options,
         value = _this$state.value;
     return React.createElement(Grommet, {
+      full: true,
       theme: theme || grommet
+    }, React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "center"
     }, React.createElement(Select, {
       id: "select",
       name: "select",
@@ -88,7 +93,7 @@ function (_Component) {
           value: option
         });
       }
-    }));
+    })));
   };
 
   return SimpleSelect;
@@ -139,7 +144,12 @@ function (_Component2) {
         options = _this$state2.options,
         value = _this$state2.value;
     return React.createElement(Grommet, {
+      full: true,
       theme: grommet
+    }, React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "center"
     }, React.createElement(Select, {
       size: "medium",
       placeholder: "Select",
@@ -165,7 +175,7 @@ function (_Component2) {
           })
         });
       }
-    }));
+    })));
   };
 
   return SearchSelect;
@@ -261,13 +271,12 @@ function (_Component3) {
 
     var selected = this.state.selected;
     return React.createElement(Grommet, {
+      full: true,
       theme: grommet
     }, React.createElement(Box, {
-      direction: "row"
-    }, React.createElement(Box, {
-      align: "start",
-      basis: "medium",
-      direction: "row"
+      fill: true,
+      align: "center",
+      justify: "center"
     }, React.createElement(Select, {
       placeholder: "Select Season",
       closeOnChange: false,
@@ -291,7 +300,7 @@ function (_Component3) {
           selected: nextSelected.sort()
         });
       }
-    }, this.renderOption))));
+    }, this.renderOption)));
   };
 
   return SeasonsSelect;
@@ -454,11 +463,13 @@ function (_Component4) {
         searching = _this$state3.searching,
         selectedContentPartners = _this$state3.selectedContentPartners;
     return React.createElement(Grommet, {
+      full: true,
       theme: customSearchTheme
     }, React.createElement(Box, {
-      align: "start",
-      width: "medium",
-      direction: "row"
+      fill: true,
+      align: "center",
+      justify: "center",
+      width: "medium"
     }, React.createElement(SearchInputContext.Provider, {
       value: {
         searching: searching

@@ -91,7 +91,12 @@ function (_Component) {
         options = _this$state.options,
         value = _this$state.value;
     return _react.default.createElement(_grommet.Grommet, {
+      full: true,
       theme: theme || _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      fill: true,
+      align: "center",
+      justify: "center"
     }, _react.default.createElement(_grommet.Select, {
       id: "select",
       name: "select",
@@ -104,7 +109,7 @@ function (_Component) {
           value: option
         });
       }
-    }));
+    })));
   };
 
   return SimpleSelect;
@@ -155,7 +160,12 @@ function (_Component2) {
         options = _this$state2.options,
         value = _this$state2.value;
     return _react.default.createElement(_grommet.Grommet, {
+      full: true,
       theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      fill: true,
+      align: "center",
+      justify: "center"
     }, _react.default.createElement(_grommet.Select, {
       size: "medium",
       placeholder: "Select",
@@ -181,7 +191,7 @@ function (_Component2) {
           })
         });
       }
-    }));
+    })));
   };
 
   return SearchSelect;
@@ -277,13 +287,12 @@ function (_Component3) {
 
     var selected = this.state.selected;
     return _react.default.createElement(_grommet.Grommet, {
+      full: true,
       theme: _themes.grommet
     }, _react.default.createElement(_grommet.Box, {
-      direction: "row"
-    }, _react.default.createElement(_grommet.Box, {
-      align: "start",
-      basis: "medium",
-      direction: "row"
+      fill: true,
+      align: "center",
+      justify: "center"
     }, _react.default.createElement(_grommet.Select, {
       placeholder: "Select Season",
       closeOnChange: false,
@@ -307,7 +316,7 @@ function (_Component3) {
           selected: nextSelected.sort()
         });
       }
-    }, this.renderOption))));
+    }, this.renderOption)));
   };
 
   return SeasonsSelect;
@@ -470,11 +479,13 @@ function (_Component4) {
         searching = _this$state3.searching,
         selectedContentPartners = _this$state3.selectedContentPartners;
     return _react.default.createElement(_grommet.Grommet, {
+      full: true,
       theme: _theme.theme
     }, _react.default.createElement(_grommet.Box, {
-      align: "start",
-      width: "medium",
-      direction: "row"
+      fill: true,
+      align: "center",
+      justify: "center",
+      width: "medium"
     }, _react.default.createElement(_SearchInputContext.SearchInputContext.Provider, {
       value: {
         searching: searching

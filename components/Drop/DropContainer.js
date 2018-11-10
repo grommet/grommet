@@ -82,10 +82,10 @@ function (_Component) {
 
       _this.addScrollListener();
 
-      _this.place(true);
+      _this.place(false);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "place", function (resize) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "place", function (preserveHeight) {
       var _this$props2 = _this.props,
           align = _this$props2.align,
           dropTarget = _this$props2.dropTarget,
@@ -101,9 +101,10 @@ function (_Component) {
         // clear prior styling
         container.style.left = '';
         container.style.top = '';
+        container.style.bottom = '';
+        container.style.width = '';
 
-        if (resize) {
-          container.style.width = '';
+        if (!preserveHeight) {
           container.style.maxHeight = '';
         } // get bounds
 
@@ -135,11 +136,12 @@ function (_Component) {
           left -= left + width - windowWidth;
         } else if (left < 0) {
           left = 0;
-        } // set top position
+        } // set top or bottom position
 
 
         var top;
-        var maxHeight = resize ? undefined : containerRect.height;
+        var bottom;
+        var maxHeight = containerRect.height;
 
         if (align.top) {
           if (align.top === 'top') {
@@ -148,62 +150,61 @@ function (_Component) {
             top = targetRect.bottom;
           }
 
-          if (resize) {
-            maxHeight = Math.min(windowHeight - top);
-          }
+          maxHeight = windowHeight - top;
         } else if (align.bottom) {
           if (align.bottom === 'bottom') {
-            top = targetRect.bottom - containerRect.height;
-
-            if (resize) {
-              maxHeight = Math.min(targetRect.bottom - top, windowHeight - top);
-            }
+            // top = targetRect.bottom - containerRect.height;
+            // maxHeight = Math.min(targetRect.bottom - top, windowHeight - top);
+            bottom = targetRect.bottom;
           } else {
-            top = targetRect.top - containerRect.height;
-
-            if (resize) {
-              maxHeight = Math.min(targetRect.top - top, windowHeight - top);
-            }
+            // top = targetRect.top - containerRect.height;
+            // maxHeight = Math.min(targetRect.top - top, windowHeight - top);
+            bottom = targetRect.top;
           }
+
+          maxHeight = windowHeight - bottom;
         } else {
+          // center
           top = targetRect.top + targetRect.height / 2 - containerRect.height / 2;
-
-          if (resize) {
-            maxHeight = Math.min(windowHeight - top);
-          }
-        } // if we can't fit it all, see if there's more room the other direction
+          maxHeight = windowHeight - top;
+        } // if we can't fit it all, or we're rather close,
+        // see if there's more room the other direction
 
 
-        if (resize && (containerRect.height > maxHeight || maxHeight > windowHeight / 10)) {
+        if (responsive && (containerRect.height > maxHeight || maxHeight > windowHeight / 10)) {
           // We need more room than we have.
           if (align.top && top > windowHeight / 2) {
             // We put it below, but there's more room above, put it above
+            top = '';
+
             if (align.top === 'bottom') {
-              if (responsive) {
-                top = Math.max(targetRect.top - containerRect.height, 0);
-                maxHeight = targetRect.top - top;
-              }
-            } else if (responsive) {
-              top = Math.max(targetRect.bottom - containerRect.height, 0);
-              maxHeight = targetRect.bottom - top;
+              // top = Math.max(targetRect.top - containerRect.height, 0);
+              // maxHeight = targetRect.top - top;
+              bottom = targetRect.top;
+            } else {
+              // top = Math.max(targetRect.bottom - containerRect.height, 0);
+              // maxHeight = targetRect.bottom - top;
+              bottom = targetRect.bottom;
             }
+
+            maxHeight = windowHeight - bottom;
           } else if (align.bottom && maxHeight < windowHeight / 2) {
             // We put it above but there's more room below, put it below
+            bottom = '';
+
             if (align.bottom === 'bottom') {
-              if (responsive) {
-                top = targetRect.top;
-                maxHeight = windowHeight - top;
-              }
-            } else if (responsive) {
+              top = targetRect.top;
+            } else {
               top = targetRect.bottom;
-              maxHeight = windowHeight - top;
             }
+
+            maxHeight = windowHeight - top;
           }
         }
 
         container.style.left = left + "px";
 
-        if (resize && stretch) {
+        if (stretch) {
           // offset width by 0.1 to avoid a bug in ie11 that
           // unnecessarily wraps the text if width is the same
           // NOTE: turned off for now
@@ -212,10 +213,15 @@ function (_Component) {
         // is presenting issues with desktop scroll flickering
 
 
-        container.style.top = top + "px";
+        if (top !== '') {
+          container.style.top = top + "px";
+        }
 
-        if (resize) {
-          // maxHeight = windowHeight - (top || 0);
+        if (bottom !== '') {
+          container.style.bottom = windowHeight - bottom + "px";
+        }
+
+        if (!preserveHeight) {
           if (theme.drop && theme.drop.maxHeight) {
             maxHeight = Math.min(maxHeight, (0, _utils.parseMetricToNum)(theme.drop.maxHeight));
           }
@@ -263,11 +269,15 @@ function (_Component) {
     this.addScrollListener();
     window.addEventListener('resize', this.onResize);
     document.addEventListener('mousedown', this.onClickDocument);
-    this.place(true);
+    this.place(false);
 
     if (restrictFocus) {
       this.dropRef.current.focus();
     }
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate() {
+    this.place(true);
   };
 
   _proto.componentWillUnmount = function componentWillUnmount() {
