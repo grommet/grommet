@@ -236,7 +236,6 @@ class ProgressiveDrop extends Component {
           {openDrop && (
             <Drop
               target={this.boxRef.current}
-              align={{ top: 'bottom' }}
               onClickOutside={this.onCloseDrop}
               onEsc={this.onCloseDrop}
             >

@@ -193,8 +193,8 @@ export class DropContainer extends Component {
       // if we can't fit it all, or we're rather close,
       // see if there's more room the other direction
       if (
-        (responsive && containerRect.height > maxHeight) ||
-        maxHeight > windowHeight / 10
+        responsive &&
+        (containerRect.height > maxHeight || maxHeight > windowHeight / 10)
       ) {
         // We need more room than we have.
         if (align.top && top > windowHeight / 2) {
