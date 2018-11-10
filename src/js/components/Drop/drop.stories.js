@@ -236,7 +236,6 @@ class ProgressiveDrop extends Component {
           {openDrop && (
             <Drop
               target={this.boxRef.current}
-              align={{ top: 'bottom' }}
               onClickOutside={this.onCloseDrop}
               onEsc={this.onCloseDrop}
             >
@@ -311,7 +310,10 @@ class LazyDrop extends Component {
               target={this.bottomTargetRef.current}
               responsive
             >
-              <Box height="xsmall" overflow="auto" pad={pad}>
+              <Box
+                height={pad === 'small' ? 'xsmall' : undefined}
+                pad={{ horizontal: 'large', vertical: pad }}
+              >
                 Drop Contents
               </Box>
             </Drop>

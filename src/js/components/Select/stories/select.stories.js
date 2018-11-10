@@ -57,15 +57,17 @@ class SimpleSelect extends Component {
     const { theme } = this.props;
     const { options, value } = this.state;
     return (
-      <Grommet theme={theme || grommet}>
-        <Select
-          id="select"
-          name="select"
-          placeholder="Select"
-          value={value}
-          options={options}
-          onChange={({ option }) => this.setState({ value: option })}
-        />
+      <Grommet full theme={theme || grommet}>
+        <Box fill align="center" justify="center">
+          <Select
+            id="select"
+            name="select"
+            placeholder="Select"
+            value={value}
+            options={options}
+            onChange={({ option }) => this.setState({ value: option })}
+          />
+        </Box>
       </Grommet>
     );
   }
@@ -83,21 +85,23 @@ class SearchSelect extends Component {
   render() {
     const { options, value } = this.state;
     return (
-      <Grommet theme={grommet}>
-        <Select
-          size="medium"
-          placeholder="Select"
-          value={value}
-          options={options}
-          onChange={({ option }) => this.setState({ value: option })}
-          onClose={() => this.setState({ options: DEFAULT_OPTIONS })}
-          onSearch={text => {
-            const exp = new RegExp(text, 'i');
-            this.setState({
-              options: DEFAULT_OPTIONS.filter(o => exp.test(o)),
-            });
-          }}
-        />
+      <Grommet full theme={grommet}>
+        <Box fill align="center" justify="center">
+          <Select
+            size="medium"
+            placeholder="Select"
+            value={value}
+            options={options}
+            onChange={({ option }) => this.setState({ value: option })}
+            onClose={() => this.setState({ options: DEFAULT_OPTIONS })}
+            onSearch={text => {
+              const exp = new RegExp(text, 'i');
+              this.setState({
+                options: DEFAULT_OPTIONS.filter(o => exp.test(o)),
+              });
+            }}
+          />
+        </Box>
       </Grommet>
     );
   }
@@ -169,34 +173,30 @@ class SeasonsSelect extends Component {
   render() {
     const { selected } = this.state;
     return (
-      <Grommet theme={grommet}>
-        <Box direction="row">
-          <Box align="start" basis="medium" direction="row">
-            <Select
-              placeholder="Select Season"
-              closeOnChange={false}
-              multiple
-              value={
-                selected && selected.length ? (
-                  <Box wrap direction="row" style={{ width: '208px' }}>
-                    {selected.map(index =>
-                      this.renderSeason(allSeasons[index]),
-                    )}
-                  </Box>
-                ) : (
-                  undefined
-                )
-              }
-              options={allSeasons}
-              selected={selected}
-              disabled={[2, 6]}
-              onChange={({ selected: nextSelected }) => {
-                this.setState({ selected: nextSelected.sort() });
-              }}
-            >
-              {this.renderOption}
-            </Select>
-          </Box>
+      <Grommet full theme={grommet}>
+        <Box fill align="center" justify="center">
+          <Select
+            placeholder="Select Season"
+            closeOnChange={false}
+            multiple
+            value={
+              selected && selected.length ? (
+                <Box wrap direction="row" style={{ width: '208px' }}>
+                  {selected.map(index => this.renderSeason(allSeasons[index]))}
+                </Box>
+              ) : (
+                undefined
+              )
+            }
+            options={allSeasons}
+            selected={selected}
+            disabled={[2, 6]}
+            onChange={({ selected: nextSelected }) => {
+              this.setState({ selected: nextSelected.sort() });
+            }}
+          >
+            {this.renderOption}
+          </Select>
         </Box>
       </Grommet>
     );
@@ -329,8 +329,8 @@ class CustomSearchSelect extends Component {
     const { contentPartners, searching, selectedContentPartners } = this.state;
 
     return (
-      <Grommet theme={customSearchTheme}>
-        <Box align="start" width="medium" direction="row">
+      <Grommet full theme={customSearchTheme}>
+        <Box fill align="center" justify="center" width="medium">
           <SearchInputContext.Provider value={{ searching }}>
             <Select
               ref={this.selectRef}
