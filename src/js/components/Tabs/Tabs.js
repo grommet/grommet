@@ -39,9 +39,9 @@ class Tabs extends Component {
   render() {
     const {
       children,
+      flex,
       justify,
       messages: { tabContents },
-      scrollable,
       theme,
       ...rest
     } = this.props;
@@ -83,6 +83,7 @@ class Tabs extends Component {
       <StyledTabs
         as={Box}
         role="tablist"
+        flex={flex}
         {...rest}
         background={theme.tabs.background}
         theme={theme}
@@ -100,7 +101,7 @@ class Tabs extends Component {
           {tabs}
         </StyledTabsHeader>
         <StyledTabPanel
-          scrollable={scrollable}
+          flex={flex}
           theme={theme}
           aria-label={tabContentTitle}
           role="tabpanel"

@@ -17,11 +17,14 @@ export const doc = Tabs => {
   DocumentedTabs.propTypes = {
     ...genericProps,
     activeIndex: PropTypes.number.description(
-      `Active tab index. If specified, Tabs will be a controlled component. This means that future
-tab changes will not work unless you subscribe to onActive function and update activeIndex
-accordingly.`,
+      `Active tab index. If specified, Tabs will be a controlled component.
+This means that future tab changes will not work unless you subscribe to
+onActive function and update activeIndex accordingly.`,
     ),
     children: PropTypes.node.description('Array of Tab.').isRequired,
+    flex: PropTypes.oneOf(['grow', 'shrink', true, false]).description(
+      'Whether flex-grow and/or flex-shrink is true.',
+    ),
     justify: PropTypes.oneOf(['start', 'center', 'end'])
       .description('How to align the tabs along the main axis.')
       .defaultValue('center'),
@@ -35,14 +38,9 @@ accordingly.`,
         tabContents: 'Tab Contents',
       }),
     onActive: PropTypes.func.description(
-      `Function that will be called with the active tab index when the currently active
-tab changes.`,
+      `Function that will be called with the active tab index when the
+currently active tab changes.`,
     ),
-    scrollable: PropTypes.bool
-      .description(
-        'Whether the content inside the tab panel should scroll independently.',
-      )
-      .defaultValue(false),
   };
   return DocumentedTabs;
 };
