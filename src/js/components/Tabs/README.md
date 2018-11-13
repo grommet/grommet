@@ -158,4 +158,12 @@ tab changes.
 ```
 function
 ```
+
+**scrollable**
+
+Whether the content inside the tab panel should scroll independently.
+
+```
+boolean
+```
   

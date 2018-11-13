@@ -10,6 +10,7 @@ export interface TabsProps {
   justify?: "start" | "center" | "end";
   messages?: {tabContents: string};
   onActive?: (...args: any[]) => any;
+  scrollable?: boolean;
 }
 
 declare const Tabs: React.ComponentType<TabsProps>;

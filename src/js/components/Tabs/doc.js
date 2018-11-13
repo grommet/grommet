@@ -38,6 +38,11 @@ accordingly.`,
       `Function that will be called with the active tab index when the currently active
 tab changes.`,
     ),
+    scrollable: PropTypes.bool
+      .description(
+        'Whether the content inside the tab panel should scroll independently.',
+      )
+      .defaultValue(false),
   };
   return DocumentedTabs;
 };

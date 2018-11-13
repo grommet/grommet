@@ -32,6 +32,9 @@ exports[`Tabs Tab 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -268,6 +271,7 @@ exports[`Tabs Tab 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
+      className=""
       role="tabpanel"
     >
       Tab body 1
@@ -308,6 +312,9 @@ exports[`Tabs change to second tab 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -534,6 +541,7 @@ exports[`Tabs change to second tab 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
+      class=""
       role="tabpanel"
     >
       Tab body 1
@@ -547,11 +555,11 @@ exports[`Tabs change to second tab 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 IRSNj"
+    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hlYSr"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
     >
       <button
         aria-expanded="false"
@@ -590,6 +598,7 @@ exports[`Tabs change to second tab 2`] = `
     </div>
     <div
       aria-label="Tab 2 Tab Contents"
+      class="StyledTabs__StyledTabPanel-a4fwxl-1 depmXK"
       role="tabpanel"
     >
       Tab body 2
@@ -630,6 +639,9 @@ exports[`Tabs complex title 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -850,6 +862,7 @@ exports[`Tabs complex title 1`] = `
     </div>
     <div
       aria-label="1 Tab Contents"
+      className=""
       role="tabpanel"
     >
       Tab body 1
@@ -890,6 +903,9 @@ exports[`Tabs no Tab 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -946,6 +962,7 @@ exports[`Tabs no Tab 1`] = `
     />
     <div
       aria-label=" Tab Contents"
+      className=""
       role="tabpanel"
     />
   </div>
@@ -984,6 +1001,9 @@ exports[`Tabs set on hover 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -1210,6 +1230,7 @@ exports[`Tabs set on hover 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
+      class=""
       role="tabpanel"
     >
       Tab body 1
@@ -1223,11 +1244,11 @@ exports[`Tabs set on hover 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 IRSNj"
+    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hlYSr"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
     >
       <button
         aria-expanded="true"
@@ -1266,6 +1287,7 @@ exports[`Tabs set on hover 2`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
+      class="StyledTabs__StyledTabPanel-a4fwxl-1 depmXK"
       role="tabpanel"
     >
       Tab body 1
@@ -1279,11 +1301,11 @@ exports[`Tabs set on hover 3`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 IRSNj"
+    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hlYSr"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
     >
       <button
         aria-expanded="true"
@@ -1322,6 +1344,7 @@ exports[`Tabs set on hover 3`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
+      class="StyledTabs__StyledTabPanel-a4fwxl-1 depmXK"
       role="tabpanel"
     >
       Tab body 1
@@ -1335,11 +1358,11 @@ exports[`Tabs set on hover 4`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 IRSNj"
+    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hlYSr"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
     >
       <button
         aria-expanded="true"
@@ -1378,6 +1401,7 @@ exports[`Tabs set on hover 4`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
+      class="StyledTabs__StyledTabPanel-a4fwxl-1 depmXK"
       role="tabpanel"
     >
       Tab body 1
@@ -1391,11 +1415,11 @@ exports[`Tabs set on hover 5`] = `
   class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
 >
   <div
-    class="StyledTabs-a4fwxl-1 jRybGp StyledBox-sc-13pk1d4-0 IRSNj"
+    class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 hlYSr"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
     >
       <button
         aria-expanded="true"
@@ -1434,6 +1458,7 @@ exports[`Tabs set on hover 5`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
+      class="StyledTabs__StyledTabPanel-a4fwxl-1 depmXK"
       role="tabpanel"
     >
       Tab body 1

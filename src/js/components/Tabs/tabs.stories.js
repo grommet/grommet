@@ -11,7 +11,16 @@ import {
   TreeOption,
 } from 'grommet-icons';
 
-import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
+import {
+  Box,
+  Heading,
+  Grommet,
+  FormField,
+  Tab,
+  Tabs,
+  Text,
+  TextInput,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
@@ -417,10 +426,49 @@ const CustomTabs = () => (
   </Grommet>
 );
 
+const ScrollableTabs = () => (
+  <Grommet theme={grommet} full>
+    <Box fill>
+      <Tabs scrollable>
+        <Tab title="Tab 1">
+          <Box pad="xlarge" align="center" background="accent-1">
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+          </Box>
+        </Tab>
+        <Tab title="Tab 2">
+          <Box margin="small" pad="large" align="center" background="accent-2">
+            <TreeOption size="xlarge" />
+          </Box>
+        </Tab>
+      </Tabs>
+    </Box>
+  </Grommet>
+);
+
 storiesOf('Tabs', module)
   .add('Uncontrolled Tabs', () => <UncontrolledTabs />)
   .add('Controlled Tabs', () => <ControlledTabs />)
   .add('Responsive Tabs', () => <ResponsiveTabs />)
   .add('Rich Tabs', () => <RichTabs />)
   .add('CustomTheme', () => <CustomTabs />)
+  .add('Scrollable Tabs', () => <ScrollableTabs />)
   .add('Plain', () => <UncontrolledTabs plain />);
