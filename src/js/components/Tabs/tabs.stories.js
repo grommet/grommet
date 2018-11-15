@@ -431,9 +431,15 @@ const CustomTabs = () => (
 const ScrollableTabs = () => (
   <Grommet theme={grommet} full>
     <Box fill>
-      <Tabs scrollable>
+      <Tabs flex>
         <Tab title="Tab 1">
-          <Box pad="xlarge" align="center" background="accent-1">
+          <Box
+            fill
+            overflow="auto"
+            pad="xlarge"
+            align="center"
+            background="accent-1"
+          >
             <Heading>hello!</Heading>
             <Heading>hello!</Heading>
             <Heading>hello!</Heading>
