@@ -24,7 +24,8 @@ const columns = [
   {
     property: 'date',
     header: 'Date',
-    render: datum => new Date(datum.date).toLocaleDateString('en-US'),
+    render: datum =>
+      datum.date && new Date(datum.date).toLocaleDateString('en-US'),
     align: 'end',
   },
   {
@@ -70,10 +71,10 @@ for (let i = 0; i < 40; i += 1) {
 const DATA = [
   {
     name: 'Alan',
-    location: 'Los Gatos',
-    date: '2018-06-11',
-    percent: 20,
-    paid: 2345,
+    location: '',
+    date: '',
+    percent: 0,
+    paid: 0,
   },
   {
     name: 'Bryan',
