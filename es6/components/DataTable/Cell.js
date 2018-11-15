@@ -16,10 +16,8 @@ export var Cell = function Cell(_ref) {
   var content;
 
   if (render) {
-    if (datum[property]) {
-      content = render(datum);
-    }
-  } else if (datum[property]) {
+    content = render(datum);
+  } else if (datum[property] !== undefined) {
     content = datum[property];
   }
 

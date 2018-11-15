@@ -2234,7 +2234,13 @@ exports[`DataTable sort 1`] = `
         >
           <div
             class="c9"
-          />
+          >
+            <span
+              class="c7"
+            >
+              0
+            </span>
+          </div>
         </td>
       </tr>
       <tr
@@ -2497,7 +2503,13 @@ exports[`DataTable sort 2`] = `
         >
           <div
             class="StyledBox-sc-13pk1d4-0 eAAZJM"
-          />
+          >
+            <span
+              class="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              0
+            </span>
+          </div>
         </td>
       </tr>
     </tbody>
