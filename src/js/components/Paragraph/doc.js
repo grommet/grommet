@@ -29,3 +29,21 @@ export const doc = Paragraph => {
 
   return DocumentedParagraph;
 };
+
+export const themeDoc = {
+  'global.colors.text': {
+    description: 'The text color used inside the Paragraph.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
+  },
+  'global.text': {
+    description: 'The text size of the Paragraph text.',
+    type: 'string',
+    defaultValue: 'medium',
+  },
+  'paragraph.extend': {
+    description: 'Any additional style for the Paragraph.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+};

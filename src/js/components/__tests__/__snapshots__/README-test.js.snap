@@ -5093,7 +5093,39 @@ start
 center
 end
 \`\`\`
-  ",
+  
+## Theme
+  
+**global.colors.text**
+
+The text color used inside the Paragraph. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
+\`\`\`
+
+**global.text**
+
+The text size of the Paragraph text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+medium
+\`\`\`
+
+**paragraph.extend**
+
+Any additional style for the Paragraph. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "RadioButton": "## RadioButton
 A radio button control.
 
