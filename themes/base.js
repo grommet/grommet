@@ -624,6 +624,8 @@ var generate = function generate(baseSpacing, scale) {
       },
       // searchInput: undefined,
       step: 20,
+      container: {// extend: undefined,
+      },
       control: {// extend: undefined,
       }
     },

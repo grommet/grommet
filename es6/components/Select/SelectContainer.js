@@ -18,7 +18,9 @@ import { SelectOption } from './SelectOption';
 var ContainerBox = styled(Box).withConfig({
   displayName: "SelectContainer__ContainerBox",
   componentId: "sc-1wi0ul8-0"
-})(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}"]);
+})(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}", ";"], function (props) {
+  return props.theme.select.container && props.theme.select.container.extend;
+});
 var OptionsBox = styled(Box).withConfig({
   displayName: "SelectContainer__OptionsBox",
   componentId: "sc-1wi0ul8-1"

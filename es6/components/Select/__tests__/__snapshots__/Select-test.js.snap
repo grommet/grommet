@@ -993,7 +993,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hLVQfB {
+  .kZuSOe {
     width: 100%;
   }
 }"
@@ -2645,7 +2645,7 @@ exports[`Select multiple values 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hLVQfB {
+  .kZuSOe {
     width: 100%;
   }
 }"
@@ -3428,7 +3428,7 @@ exports[`Select opens 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hLVQfB {
+  .kZuSOe {
     width: 100%;
   }
 }"
@@ -4307,7 +4307,7 @@ exports[`Select search 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hLVQfB {
+  .kZuSOe {
     width: 100%;
   }
 }"

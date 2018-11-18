@@ -68,7 +68,10 @@ export var theme = {
     icons: {
       down: ArrowDown
     },
-    searchInput: SearchInput
+    searchInput: SearchInput,
+    container: {
+      extend: 'max-height: 250px;'
+    }
   },
   textInput: {
     extend: function extend(props) {

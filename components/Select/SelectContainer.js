@@ -36,7 +36,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var ContainerBox = (0, _styledComponents.default)(_Box.Box).withConfig({
   displayName: "SelectContainer__ContainerBox",
   componentId: "sc-1wi0ul8-0"
-})(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}"]);
+})(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}", ";"], function (props) {
+  return props.theme.select.container && props.theme.select.container.extend;
+});
 var OptionsBox = (0, _styledComponents.default)(_Box.Box).withConfig({
   displayName: "SelectContainer__OptionsBox",
   componentId: "sc-1wi0ul8-1"
