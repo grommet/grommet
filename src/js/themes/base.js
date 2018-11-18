@@ -581,6 +581,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // searchInput: undefined,
       step: 20,
+      container: {
+        // extend: undefined,
+      },
       control: {
         // extend: undefined,
       },

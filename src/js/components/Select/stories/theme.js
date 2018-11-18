@@ -74,6 +74,9 @@ export const theme = {
       down: ArrowDown,
     },
     searchInput: SearchInput,
+    container: {
+      extend: 'max-height: 250px;',
+    },
   },
   textInput: {
     extend: props => `

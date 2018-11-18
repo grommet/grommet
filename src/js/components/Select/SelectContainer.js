@@ -25,6 +25,9 @@ const ContainerBox = styled(Box)`
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     width: 100%;
   }
+
+  ${props =>
+    props.theme.select.container && props.theme.select.container.extend};
 `;
 
 const OptionsBox = styled(Box)`
