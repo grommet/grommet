@@ -21,6 +21,7 @@ const flexStyle = css`
 `;
 
 export const StyledTabPanel = styled.div`
+  min-height: 0;
   ${props => props.flex && flexStyle} ${props => props.theme.tabs.panel.extend};
 `;
 

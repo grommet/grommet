@@ -138,6 +138,10 @@ exports[`Tabs Tab 1`] = `
   color: #000000;
 }
 
+.c9 {
+  min-height: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -271,7 +275,7 @@ exports[`Tabs Tab 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      className=""
+      className="c9"
       role="tabpanel"
     >
       Tab body 1
@@ -418,6 +422,10 @@ exports[`Tabs change to second tab 1`] = `
   color: #000000;
 }
 
+.c9 {
+  min-height: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -541,7 +549,7 @@ exports[`Tabs change to second tab 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class=""
+      class="c9"
       role="tabpanel"
     >
       Tab body 1
@@ -598,7 +606,7 @@ exports[`Tabs change to second tab 2`] = `
     </div>
     <div
       aria-label="Tab 2 Tab Contents"
-      class="StyledTabs__StyledTabPanel-a4fwxl-1 depmXK"
+      class="StyledTabs__StyledTabPanel-a4fwxl-1 lchlbl"
       role="tabpanel"
     >
       Tab body 2
@@ -733,6 +741,10 @@ exports[`Tabs complex title 1`] = `
   color: #000000;
 }
 
+.c7 {
+  min-height: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -862,7 +874,7 @@ exports[`Tabs complex title 1`] = `
     </div>
     <div
       aria-label="1 Tab Contents"
-      className=""
+      className="c7"
       role="tabpanel"
     >
       Tab body 1
@@ -926,6 +938,10 @@ exports[`Tabs no Tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c3 {
+  min-height: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -962,7 +978,7 @@ exports[`Tabs no Tab 1`] = `
     />
     <div
       aria-label=" Tab Contents"
-      className=""
+      className="c3"
       role="tabpanel"
     />
   </div>
@@ -1107,6 +1123,10 @@ exports[`Tabs set on hover 1`] = `
   color: #000000;
 }
 
+.c9 {
+  min-height: 0;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -1230,7 +1250,7 @@ exports[`Tabs set on hover 1`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class=""
+      class="c9"
       role="tabpanel"
     >
       Tab body 1
@@ -1287,7 +1307,7 @@ exports[`Tabs set on hover 2`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="StyledTabs__StyledTabPanel-a4fwxl-1 depmXK"
+      class="StyledTabs__StyledTabPanel-a4fwxl-1 lchlbl"
       role="tabpanel"
     >
       Tab body 1
@@ -1344,7 +1364,7 @@ exports[`Tabs set on hover 3`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="StyledTabs__StyledTabPanel-a4fwxl-1 depmXK"
+      class="StyledTabs__StyledTabPanel-a4fwxl-1 lchlbl"
       role="tabpanel"
     >
       Tab body 1
@@ -1401,7 +1421,7 @@ exports[`Tabs set on hover 4`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="StyledTabs__StyledTabPanel-a4fwxl-1 depmXK"
+      class="StyledTabs__StyledTabPanel-a4fwxl-1 lchlbl"
       role="tabpanel"
     >
       Tab body 1
@@ -1458,7 +1478,7 @@ exports[`Tabs set on hover 5`] = `
     </div>
     <div
       aria-label="Tab 1 Tab Contents"
-      class="StyledTabs__StyledTabPanel-a4fwxl-1 depmXK"
+      class="StyledTabs__StyledTabPanel-a4fwxl-1 lchlbl"
       role="tabpanel"
     >
       Tab body 1
