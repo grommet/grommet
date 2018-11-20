@@ -157,6 +157,10 @@ export const focusStyle = css`
   box-shadow: 0 0 2px 2px
     ${props =>
       normalizeColor(props.theme.global.focus.border.color, props.theme)};
+
+  ::-moz-focus-inner {
+    border: 0;
+  }
 `;
 
 export const inputStyle = css`

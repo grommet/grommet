@@ -79,6 +79,10 @@ exports[`Anchor focus renders 1`] = `
   outline: #FD6FFF solid 2px;
 }
 
+.c1::-moz-focus-inner {
+  border: 0;
+}
+
 <div
   className="c0"
 >
