@@ -4,7 +4,7 @@ import { compose } from 'recompose';
 import { Box } from '../Box';
 import { withTheme } from '../hocs';
 
-import { StyledTabs, StyledTabsHeader } from './StyledTabs';
+import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 
 class Tabs extends Component {
   static defaultProps = {
@@ -39,6 +39,7 @@ class Tabs extends Component {
   render() {
     const {
       children,
+      flex,
       justify,
       messages: { tabContents },
       theme,
@@ -82,6 +83,7 @@ class Tabs extends Component {
       <StyledTabs
         as={Box}
         role="tablist"
+        flex={flex}
         {...rest}
         background={theme.tabs.background}
         theme={theme}
@@ -91,15 +93,21 @@ class Tabs extends Component {
           as={Box}
           direction="row"
           justify={justify}
+          flex={false}
           wrap
           background={theme.tabs.header.background}
           gap={theme.tabs.gap}
         >
           {tabs}
         </StyledTabsHeader>
-        <div aria-label={tabContentTitle} role="tabpanel">
+        <StyledTabPanel
+          flex={flex}
+          theme={theme}
+          aria-label={tabContentTitle}
+          role="tabpanel"
+        >
           {activeContent}
-        </div>
+        </StyledTabPanel>
       </StyledTabs>
     );
   }
