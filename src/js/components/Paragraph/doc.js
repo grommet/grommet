@@ -41,6 +41,48 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'medium',
   },
+  'global.edgeSize.small': {
+    description: 'The padding around paragraph.',
+    type: 'string',
+    defaultValue: '12px',
+  },
+  'global.edgeSize': {
+    description: 'The possible sizes for gap, margin, and pad.',
+    type: 'object',
+    defaultValue: `{
+  edgeSize: {
+    none: '0px',
+    hair: '1px',
+    xxsmall: '3px',
+    xsmall: '6px',
+    small: '12px',
+    medium: '24px',
+    large: '48px',
+    xlarge: '96px',
+    responsiveBreakpoint: 'small',
+  },
+}`,
+  },
+  'paragraph.maxWidth': {
+    description: `The maximum width.`,
+    type: 'string',
+    defaultValue: '',
+  },
+  'paragraph.size': {
+    description: `The font size of the paragraph text.`,
+    type: 'string',
+    defaultValue: '',
+  },
+  'paragraph.height': {
+    description: `The line height in the paragraph.`,
+    type: 'string',
+    defaultValue: '',
+  },
+  'paragraph.textAlign': {
+    description: `How to align the text inside the Paragraph.`,
+    type: 'string',
+    defaultValue: 'start',
+  },
   'paragraph.extend': {
     description: 'Any additional style for the Paragraph.',
     type: 'string | (props) => {}',
