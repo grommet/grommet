@@ -13,19 +13,24 @@ import { Car } from "grommet-icons/es6/icons/Car";
 import { CircleInformation } from "grommet-icons/es6/icons/CircleInformation";
 import { Currency } from "grommet-icons/es6/icons/Currency";
 import { TreeOption } from "grommet-icons/es6/icons/TreeOption";
-import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
+import { Box, Heading, Grommet, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
 var UncontrolledTabs = function UncontrolledTabs(_ref) {
   var plain = _ref.plain;
   return React.createElement(Grommet, {
-    theme: grommet
-  }, React.createElement(Tabs, null, React.createElement(Tab, {
+    theme: grommet,
+    full: true
+  }, React.createElement(Box, {
+    fill: true
+  }, React.createElement(Tabs, {
+    flex: true
+  }, React.createElement(Tab, {
     plain: plain,
     title: "Tab 1"
   }, React.createElement(Box, {
-    margin: "small",
+    fill: true,
     pad: "large",
     align: "center",
     background: "accent-1"
@@ -35,7 +40,7 @@ var UncontrolledTabs = function UncontrolledTabs(_ref) {
     plain: plain,
     title: "Tab 2"
   }, React.createElement(Box, {
-    margin: "small",
+    fill: true,
     pad: "large",
     align: "center",
     background: "accent-2"
@@ -45,13 +50,13 @@ var UncontrolledTabs = function UncontrolledTabs(_ref) {
     plain: plain,
     title: "Tab 3"
   }, React.createElement(Box, {
-    margin: "small",
+    fill: true,
     pad: "large",
     align: "center",
     background: "accent-3"
   }, React.createElement(Car, {
     size: "xlarge"
-  })))));
+  }))))));
 };
 
 UncontrolledTabs.defaultProps = {
@@ -463,6 +468,34 @@ var CustomTabs = function CustomTabs() {
   })))));
 };
 
+var ScrollableTabs = function ScrollableTabs() {
+  return React.createElement(Grommet, {
+    theme: grommet,
+    full: true
+  }, React.createElement(Box, {
+    fill: true
+  }, React.createElement(Tabs, {
+    flex: true
+  }, React.createElement(Tab, {
+    title: "Tab 1"
+  }, React.createElement(Box, {
+    fill: true,
+    overflow: "auto",
+    pad: "xlarge",
+    align: "center",
+    background: "accent-1"
+  }, React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"), React.createElement(Heading, null, "hello!"))), React.createElement(Tab, {
+    title: "Tab 2"
+  }, React.createElement(Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, React.createElement(TreeOption, {
+    size: "xlarge"
+  }))))));
+};
+
 storiesOf('Tabs', module).add('Uncontrolled Tabs', function () {
   return React.createElement(UncontrolledTabs, null);
 }).add('Controlled Tabs', function () {
@@ -473,6 +506,8 @@ storiesOf('Tabs', module).add('Uncontrolled Tabs', function () {
   return React.createElement(RichTabs, null);
 }).add('CustomTheme', function () {
   return React.createElement(CustomTabs, null);
+}).add('Scrollable Tabs', function () {
+  return React.createElement(ScrollableTabs, null);
 }).add('Plain', function () {
   return React.createElement(UncontrolledTabs, {
     plain: true

@@ -29,12 +29,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var UncontrolledTabs = function UncontrolledTabs(_ref) {
   var plain = _ref.plain;
   return _react.default.createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Tabs, null, _react.default.createElement(_grommet.Tab, {
+    theme: _themes.grommet,
+    full: true
+  }, _react.default.createElement(_grommet.Box, {
+    fill: true
+  }, _react.default.createElement(_grommet.Tabs, {
+    flex: true
+  }, _react.default.createElement(_grommet.Tab, {
     plain: plain,
     title: "Tab 1"
   }, _react.default.createElement(_grommet.Box, {
-    margin: "small",
+    fill: true,
     pad: "large",
     align: "center",
     background: "accent-1"
@@ -44,7 +49,7 @@ var UncontrolledTabs = function UncontrolledTabs(_ref) {
     plain: plain,
     title: "Tab 2"
   }, _react.default.createElement(_grommet.Box, {
-    margin: "small",
+    fill: true,
     pad: "large",
     align: "center",
     background: "accent-2"
@@ -54,13 +59,13 @@ var UncontrolledTabs = function UncontrolledTabs(_ref) {
     plain: plain,
     title: "Tab 3"
   }, _react.default.createElement(_grommet.Box, {
-    margin: "small",
+    fill: true,
     pad: "large",
     align: "center",
     background: "accent-3"
   }, _react.default.createElement(_grommetIcons.Car, {
     size: "xlarge"
-  })))));
+  }))))));
 };
 
 UncontrolledTabs.defaultProps = {
@@ -472,6 +477,34 @@ var CustomTabs = function CustomTabs() {
   })))));
 };
 
+var ScrollableTabs = function ScrollableTabs() {
+  return _react.default.createElement(_grommet.Grommet, {
+    theme: _themes.grommet,
+    full: true
+  }, _react.default.createElement(_grommet.Box, {
+    fill: true
+  }, _react.default.createElement(_grommet.Tabs, {
+    flex: true
+  }, _react.default.createElement(_grommet.Tab, {
+    title: "Tab 1"
+  }, _react.default.createElement(_grommet.Box, {
+    fill: true,
+    overflow: "auto",
+    pad: "xlarge",
+    align: "center",
+    background: "accent-1"
+  }, _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"))), _react.default.createElement(_grommet.Tab, {
+    title: "Tab 2"
+  }, _react.default.createElement(_grommet.Box, {
+    margin: "small",
+    pad: "large",
+    align: "center",
+    background: "accent-2"
+  }, _react.default.createElement(_grommetIcons.TreeOption, {
+    size: "xlarge"
+  }))))));
+};
+
 (0, _react2.storiesOf)('Tabs', module).add('Uncontrolled Tabs', function () {
   return _react.default.createElement(UncontrolledTabs, null);
 }).add('Controlled Tabs', function () {
@@ -482,6 +515,8 @@ var CustomTabs = function CustomTabs() {
   return _react.default.createElement(RichTabs, null);
 }).add('CustomTheme', function () {
   return _react.default.createElement(CustomTabs, null);
+}).add('Scrollable Tabs', function () {
+  return _react.default.createElement(ScrollableTabs, null);
 }).add('Plain', function () {
   return _react.default.createElement(UncontrolledTabs, {
     plain: true
