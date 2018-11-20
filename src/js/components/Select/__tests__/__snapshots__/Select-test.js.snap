@@ -835,9 +835,7 @@ exports[`Select complex options and children 3`] = `
 `;
 
 exports[`Select complex options and children 4`] = `
-"
-
-@media only screen and (max-width:768px) {
+"@media only screen and (max-width:768px) {
   .erazuK {
     margin: 0px;
   }
@@ -951,8 +949,6 @@ exports[`Select complex options and children 4`] = `
     padding: 6px;
   }
 }
-
-
 
 .fvCzyJ {
   font-size: 18px;
@@ -2475,9 +2471,7 @@ exports[`Select multiple values 3`] = `
 `;
 
 exports[`Select multiple values 4`] = `
-"
-
-@media only screen and (max-width:768px) {
+"@media only screen and (max-width:768px) {
   .erazuK {
     margin: 0px;
   }
@@ -2603,8 +2597,6 @@ exports[`Select multiple values 4`] = `
     padding: 3px;
   }
 }
-
-
 
 .fvCzyJ {
   font-size: 18px;
@@ -3270,9 +3262,7 @@ exports[`Select opens 3`] = `
 `;
 
 exports[`Select opens 4`] = `
-"
-
-@media only screen and (max-width:768px) {
+"@media only screen and (max-width:768px) {
   .erazuK {
     margin: 0px;
   }
@@ -3386,8 +3376,6 @@ exports[`Select opens 4`] = `
     padding: 6px;
   }
 }
-
-
 
 .fvCzyJ {
   font-size: 18px;
@@ -4137,9 +4125,7 @@ exports[`Select search 2`] = `
 `;
 
 exports[`Select search 3`] = `
-"
-
-@media only screen and (max-width:768px) {
+"@media only screen and (max-width:768px) {
   .erazuK {
     margin: 0px;
   }
@@ -4265,8 +4251,6 @@ exports[`Select search 3`] = `
     padding: 3px;
   }
 }
-
-
 
 .fvCzyJ {
   font-size: 18px;

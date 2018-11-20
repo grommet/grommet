@@ -41,42 +41,55 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'medium',
   },
-  'global.edgeSize.small': {
-    description: 'The padding around paragraph.',
-    type: 'string',
-    defaultValue: '12px',
-  },
   'global.edgeSize': {
-    description: 'The possible sizes for gap, margin, and pad.',
+    description: 'The possible sizes for margin.',
     type: 'object',
     defaultValue: `{
-  edgeSize: {
-    none: '0px',
-    hair: '1px',
-    xxsmall: '3px',
-    xsmall: '6px',
-    small: '12px',
-    medium: '24px',
-    large: '48px',
-    xlarge: '96px',
-    responsiveBreakpoint: 'small',
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '3px',
+        xsmall: '6px',
+        small: '12px',
+        medium: '24px',
+        large: '48px',
+        xlarge: '96px',
+        responsiveBreakpoint: 'small',
+      },
+    }`,
   },
-}`,
-  },
-  'paragraph.maxWidth': {
-    description: `The maximum width.`,
+  paragraph: {
+    description: `The maximum width, font-size and line height of the paragraph.`,
     type: 'string',
-    defaultValue: '',
-  },
-  'paragraph.size': {
-    description: `The font size of the paragraph text.`,
-    type: 'string',
-    defaultValue: '',
-  },
-  'paragraph.height': {
-    description: `The line height in the paragraph.`,
-    type: 'string',
-    defaultValue: '',
+    defaultValue: `{
+      size: { 
+        small: {
+          size: '14px',
+          height: '20px',
+          maxWidth: '336px',
+        },
+        medium: {
+          size: '18px',
+          height: '24px',
+          maxWidth: '432px',
+        },
+        large: {
+          size: '22px',
+          height: '28px',
+          maxWidth: '528px',
+        },
+        xlarge: {
+          size: '26px',
+          height: '32px',
+          maxWidth: '624px',
+        },
+        xxlarge: {
+          size: '34px',
+          height: '40px',
+          maxWidth: '816px',
+        },
+      },
+    }`,
   },
   'paragraph.textAlign': {
     description: `How to align the text inside the Paragraph.`,
