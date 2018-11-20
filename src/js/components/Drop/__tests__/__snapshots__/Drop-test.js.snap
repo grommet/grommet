@@ -80,9 +80,7 @@ exports[`Drop align left random 1`] = `
 `;
 
 exports[`Drop align left random 2`] = `
-"
-
-.iVWgBr {
+".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -111,8 +109,6 @@ exports[`Drop align left random 2`] = `
     padding: 0px;
   }
 }
-
-
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .fvCzyJ {
@@ -259,9 +255,7 @@ exports[`Drop align left right top bottom 1`] = `
 `;
 
 exports[`Drop align left right top bottom 2`] = `
-"
-
-.iVWgBr {
+".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -290,8 +284,6 @@ exports[`Drop align left right top bottom 2`] = `
     padding: 0px;
   }
 }
-
-
 
 .fvCzyJ {
   font-size: 18px;
@@ -412,9 +404,7 @@ exports[`Drop align right left top top 1`] = `
 `;
 
 exports[`Drop align right left top top 2`] = `
-"
-
-.iVWgBr {
+".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -443,8 +433,6 @@ exports[`Drop align right left top top 2`] = `
     padding: 0px;
   }
 }
-
-
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .fvCzyJ {
@@ -604,9 +592,7 @@ exports[`Drop align right random 1`] = `
 `;
 
 exports[`Drop align right random 2`] = `
-"
-
-.iVWgBr {
+".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -635,8 +621,6 @@ exports[`Drop align right random 2`] = `
     padding: 0px;
   }
 }
-
-
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .fvCzyJ {
@@ -796,9 +780,7 @@ exports[`Drop align right right bottom top 1`] = `
 `;
 
 exports[`Drop align right right bottom top 2`] = `
-"
-
-.iVWgBr {
+".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -827,8 +809,6 @@ exports[`Drop align right right bottom top 2`] = `
     padding: 0px;
   }
 }
-
-
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .fvCzyJ {
@@ -962,9 +942,7 @@ exports[`Drop align right right bottom top 3`] = `
 `;
 
 exports[`Drop align right right bottom top 4`] = `
-"
-
-.iVWgBr {
+".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -993,8 +971,6 @@ exports[`Drop align right right bottom top 4`] = `
     padding: 0px;
   }
 }
-
-
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .fvCzyJ {
@@ -1154,9 +1130,7 @@ exports[`Drop basic 1`] = `
 `;
 
 exports[`Drop basic 2`] = `
-"
-
-.iVWgBr {
+".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1185,8 +1159,6 @@ exports[`Drop basic 2`] = `
     padding: 0px;
   }
 }
-
-
 
 .fvCzyJ {
   font-size: 18px;
@@ -1307,9 +1279,7 @@ exports[`Drop close 1`] = `
 `;
 
 exports[`Drop close 2`] = `
-"
-
-.iVWgBr {
+".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1338,8 +1308,6 @@ exports[`Drop close 2`] = `
     padding: 0px;
   }
 }
-
-
 
 .fvCzyJ {
   font-size: 18px;
@@ -1499,9 +1467,7 @@ exports[`Drop invalid align 1`] = `
 `;
 
 exports[`Drop invalid align 2`] = `
-"
-
-.iVWgBr {
+".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1530,8 +1496,6 @@ exports[`Drop invalid align 2`] = `
     padding: 0px;
   }
 }
-
-
 
 .fvCzyJ {
   font-size: 18px;
@@ -1691,9 +1655,7 @@ exports[`Drop invoke onClickOutside 1`] = `
 `;
 
 exports[`Drop invoke onClickOutside 2`] = `
-"
-
-.iVWgBr {
+".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1722,8 +1684,6 @@ exports[`Drop invoke onClickOutside 2`] = `
     padding: 0px;
   }
 }
-
-
 
 .fvCzyJ {
   font-size: 18px;
@@ -1883,9 +1843,7 @@ exports[`Drop no stretch 1`] = `
 `;
 
 exports[`Drop no stretch 2`] = `
-"
-
-.iVWgBr {
+".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1914,8 +1872,6 @@ exports[`Drop no stretch 2`] = `
     padding: 0px;
   }
 }
-
-
 
 .fvCzyJ {
   font-size: 18px;
@@ -2075,9 +2031,7 @@ exports[`Drop resize 1`] = `
 `;
 
 exports[`Drop resize 2`] = `
-"
-
-.iVWgBr {
+".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2106,8 +2060,6 @@ exports[`Drop resize 2`] = `
     padding: 0px;
   }
 }
-
-
 
 .fvCzyJ {
   font-size: 18px;
@@ -2278,9 +2230,7 @@ exports[`Drop restrict focus 2`] = `
 `;
 
 exports[`Drop restrict focus 3`] = `
-"
-
-.iVWgBr {
+".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2309,8 +2259,6 @@ exports[`Drop restrict focus 3`] = `
     padding: 0px;
   }
 }
-
-
 
 .fvCzyJ {
   font-size: 18px;
