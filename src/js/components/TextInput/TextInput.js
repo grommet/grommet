@@ -260,6 +260,7 @@ class TextInput extends Component {
   };
 
   onEsc = event => {
+    event.stopPropagation();
     event.nativeEvent.stopImmediatePropagation(); // so Layer doesn't close
     this.setState({ showDrop: false });
   };

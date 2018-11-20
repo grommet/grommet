@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { createRef, Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
@@ -9,6 +9,13 @@ import { backgroundIsDark } from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 
+const hiddenAnchor = {
+  width: 0,
+  height: 0,
+  overflow: 'hidden',
+  position: 'absolute',
+};
+
 class LayerContainer extends Component {
   static defaultProps = {
     full: false,
@@ -16,6 +23,8 @@ class LayerContainer extends Component {
     modal: true,
     position: 'center',
   };
+
+  anchorRef = createRef();
 
   state = {};
 
@@ -51,6 +60,9 @@ class LayerContainer extends Component {
     const { position } = this.props;
     if (position !== 'hidden') {
       this.makeLayerVisible();
+      if (this.anchorRef.current) {
+        this.anchorRef.current.focus();
+      }
     }
   }
 
@@ -102,6 +114,7 @@ class LayerContainer extends Component {
     );
 
     if (modal) {
+      /* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */
       content = (
         <StyledLayer
           id={id}
@@ -112,6 +125,12 @@ class LayerContainer extends Component {
           tabIndex="-1"
           ref={this.layerRef}
         >
+          <a
+            ref={this.anchorRef}
+            tabIndex="-1"
+            aria-hidden="true"
+            style={hiddenAnchor}
+          />
           <StyledOverlay
             plain={plain}
             onMouseDown={onClickOutside}
@@ -121,14 +140,11 @@ class LayerContainer extends Component {
           {content}
         </StyledLayer>
       );
+      /* eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */
     }
 
     if (onEsc) {
-      content = (
-        <Keyboard target="document" onEsc={onEsc}>
-          {content}
-        </Keyboard>
-      );
+      content = <Keyboard onEsc={onEsc}>{content}</Keyboard>;
     }
 
     if (modal) {

@@ -248,6 +248,15 @@ export class DropContainer extends Component {
     }
   };
 
+  onEsc = event => {
+    const { onEsc } = this.props;
+    event.stopPropagation();
+    event.nativeEvent.stopImmediatePropagation();
+    if (onEsc) {
+      onEsc(event);
+    }
+  };
+
   render() {
     const {
       align: alignProp,
@@ -292,7 +301,7 @@ export class DropContainer extends Component {
 
     return (
       <FocusedContainer>
-        <Keyboard onEsc={onEsc} onKeyDown={onKeyDown} target="document">
+        <Keyboard onEsc={this.onEsc} onKeyDown={onKeyDown}>
           {content}
         </Keyboard>
       </FocusedContainer>

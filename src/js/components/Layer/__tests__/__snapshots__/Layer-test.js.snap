@@ -185,6 +185,11 @@ exports[`Layer full false 1`] = `
   id="full-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -308,6 +313,11 @@ exports[`Layer full horizontal 1`] = `
   id="full-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -429,6 +439,11 @@ exports[`Layer full true 1`] = `
   id="full-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -552,6 +567,11 @@ exports[`Layer full vertical 1`] = `
   id="full-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -655,6 +675,11 @@ exports[`Layer hidden 1`] = `
   id="hidden-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -675,6 +700,11 @@ exports[`Layer hidden 3`] = `
   id="hidden-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="StyledLayer__StyledOverlay-rmtehz-1 gVTfaV"
   />
@@ -828,6 +858,11 @@ exports[`Layer margin large 1`] = `
   id="margin-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -950,6 +985,11 @@ exports[`Layer margin medium 1`] = `
   id="margin-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -1072,6 +1112,11 @@ exports[`Layer margin none 1`] = `
   id="margin-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -1194,6 +1239,11 @@ exports[`Layer margin small 1`] = `
   id="margin-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -1316,6 +1366,11 @@ exports[`Layer margin xsmall 1`] = `
   id="margin-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -1499,6 +1554,11 @@ exports[`Layer plain 1`] = `
   id="plain-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -1621,6 +1681,11 @@ exports[`Layer position bottom 1`] = `
   id="position-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -1743,6 +1808,11 @@ exports[`Layer position center 1`] = `
   id="position-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -1865,6 +1935,11 @@ exports[`Layer position left 1`] = `
   id="position-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -1987,6 +2062,11 @@ exports[`Layer position right 1`] = `
   id="position-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
@@ -2109,6 +2189,11 @@ exports[`Layer position top 1`] = `
   id="position-test"
   tabindex="-1"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   <div
     class="c1"
   />
