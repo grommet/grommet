@@ -44,12 +44,6 @@ exports[`InfiniteScroll renderMarker 1`] = `
   className="c0"
 >
   <div>
-    0
-  </div>
-  <div>
-    1
-  </div>
-  <div>
     <span
       style={
         Object {
@@ -58,10 +52,16 @@ exports[`InfiniteScroll renderMarker 1`] = `
       }
     />
   </div>
+  <div>
+    0
+  </div>
+  <div>
+    1
+  </div>
 </div>
 `;
 
-exports[`InfiniteScroll show 1`] = `
+exports[`InfiniteScroll replace 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -75,22 +75,23 @@ exports[`InfiniteScroll show 1`] = `
 <div
   className="c0"
 >
+  <span
+    style={
+      Object {
+        "fontSize": 0,
+      }
+    }
+  />
   <div>
     0
   </div>
   <div>
     1
   </div>
-  <div>
-    2
-  </div>
-  <div>
-    3
-  </div>
 </div>
 `;
 
-exports[`InfiniteScroll step 1`] = `
+exports[`InfiniteScroll show 1`] = `
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -117,5 +118,41 @@ exports[`InfiniteScroll step 1`] = `
       }
     }
   />
+  <div>
+    2
+  </div>
+  <div>
+    3
+  </div>
+</div>
+`;
+
+exports[`InfiniteScroll step 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+>
+  <span
+    style={
+      Object {
+        "fontSize": 0,
+      }
+    }
+  />
+  <div>
+    0
+  </div>
+  <div>
+    1
+  </div>
 </div>
 `;

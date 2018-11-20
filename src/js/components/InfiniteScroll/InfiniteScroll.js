@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { findDOMNode } from 'react-dom';
 import Waypoint from 'react-waypoint';
 
 class InfiniteScroll extends PureComponent {
@@ -10,17 +9,24 @@ class InfiniteScroll extends PureComponent {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { show, step } = nextProps;
-    if (!prevState.count || (show && show < step * prevState.count)) {
-      let count = prevState.count || 1;
-      if (show && show > step * count) {
-        count = (show + step) / step;
+    if (
+      prevState.firstPage === undefined ||
+      (show && show >= step * (prevState.lastPage + 1))
+    ) {
+      let lastPage = prevState.lastPage || 0;
+      if (show && show >= step * (lastPage + 1)) {
+        lastPage = Math.floor((show + step) / step) - 1;
       }
-      return { count };
+      return { firstPage: 0, lastPage };
     }
     return null;
   }
 
   state = {};
+
+  beginPageRef = React.createRef();
+
+  endPageRef = React.createRef();
 
   showRef = React.createRef();
 
@@ -35,65 +41,126 @@ class InfiniteScroll extends PureComponent {
   }
 
   scrollShow = () => {
-    /* eslint-disable-next-line react/prop-types */
     const { show } = this.props;
     if (show && !this.initialScroll && this.showRef.current) {
       this.initialScroll = true;
       // on initial render, scroll to any 'show'
-      /* eslint-disable react/no-find-dom-node */
-      const element = findDOMNode(this.showRef.current);
-      element.scrollIntoView();
+      this.showRef.current.scrollIntoView();
+    }
+    if (
+      this.beginPageRef.current &&
+      this.endPageRef.current &&
+      !this.pageHeight
+    ) {
+      const beginRect = this.beginPageRef.current.getBoundingClientRect();
+      const endRect = this.endPageRef.current.getBoundingClientRect();
+      this.pageHeight = endRect.y + endRect.height - beginRect.y;
     }
   };
 
-  increaseOffset = () => {
-    /* eslint-disable-next-line react/prop-types */
+  nextPage = () => {
     const { items, onMore, step } = this.props;
-    const { count } = this.state;
+    const { firstPage, lastPage } = this.state;
+    const nextLastPage = lastPage + 1;
+    const nextFirstPage = lastPage === firstPage ? firstPage : nextLastPage - 1;
     this.setState(
-      { count: count + 1 },
+      { firstPage: nextFirstPage, lastPage: nextLastPage },
       // call onMore if we've reached the end of the items
-      () => onMore && (count + 1) * step >= items.length && onMore(),
+      () => onMore && nextLastPage * step >= items.length && onMore(),
     );
+  };
+
+  previousPage = () => {
+    const { firstPage } = this.state;
+    this.setState({
+      firstPage: Math.max(0, firstPage - 1),
+      lastPage: firstPage,
+    });
   };
 
   render() {
     const {
-      /* eslint-disable-next-line react/prop-types */
       children,
       items,
       renderMarker,
+      replace,
       scrollableAncestor,
       show,
       step,
     } = this.props;
-    const { count } = this.state;
-    const displayCount = step * count;
-    const waypointAt = displayCount - step / 2;
+    const { firstPage, lastPage } = this.state;
 
-    let marker = (
+    const firstIndex = firstPage * step;
+    const lastIndex = (lastPage + 1) * step - 1;
+    const topWaypointIndex = firstIndex ? Math.round(step * 0.25) : undefined;
+    const bottomWaypointIndex =
+      lastIndex - firstIndex - Math.round(step * 0.25);
+
+    let topMarker;
+    if (replace && firstIndex) {
+      topMarker = (
+        <Waypoint
+          key="topMarker"
+          onEnter={this.previousPage}
+          scrollableAncestor={scrollableAncestor}
+        />
+      );
+      if (renderMarker) {
+        // need to give it a key
+        topMarker = React.cloneElement(renderMarker(topMarker), {
+          key: 'topMarker',
+        });
+      }
+    }
+
+    let bottomMarker = (
       <Waypoint
-        key="marker"
-        onEnter={this.increaseOffset}
+        key="bottomMarker"
+        onEnter={this.nextPage}
         bottomOffsetX="-96px"
         scrollableAncestor={scrollableAncestor}
       />
     );
     if (renderMarker) {
       // need to give it a key
-      marker = React.cloneElement(renderMarker(marker), { key: 'marker' });
+      bottomMarker = React.cloneElement(renderMarker(bottomMarker), {
+        key: 'bottomMarker',
+      });
     }
 
-    return items.slice(0, displayCount).map((item, index) => {
+    // add one big placeholder for the earlier steps
+    const result = [];
+    if (replace && firstPage && this.pageHeight) {
+      let reservedSpace = (
+        <div key="reserved" style={{ height: firstPage * this.pageHeight }} />
+      );
+      if (renderMarker) {
+        reservedSpace = React.cloneElement(renderMarker(reservedSpace), {
+          key: 'reserved',
+        });
+      }
+      result.push(reservedSpace);
+    }
+
+    items.slice(firstIndex, lastIndex + 1).forEach((item, index) => {
       let child = children(item, index);
+      if (replace && !this.pageHeight && index === 0) {
+        child = React.cloneElement(child, { ref: this.beginPageRef });
+      } else if (replace && !this.pageHeight && index === step - 1) {
+        child = React.cloneElement(child, { ref: this.endPageRef });
+      }
       if (show && show === index) {
         child = React.cloneElement(child, { key: 'show', ref: this.showRef });
       }
-      if (index === waypointAt) {
-        return [child, marker];
+      if (topMarker && index === topWaypointIndex) {
+        result.push(topMarker);
+      } else if (bottomMarker && index === bottomWaypointIndex) {
+        result.push(bottomMarker);
       }
-      return child;
+      result.push(child);
     });
+
+    return result;
   }
 }
 

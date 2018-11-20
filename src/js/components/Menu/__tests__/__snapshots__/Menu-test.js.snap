@@ -667,7 +667,9 @@ exports[`Menu close by clicking outside 2`] = `
 `;
 
 exports[`Menu close by clicking outside 3`] = `
-"@media only screen and (max-width:768px) {
+"
+
+@media only screen and (max-width:768px) {
   .lgRCHI {
     margin: 0px;
   }
@@ -756,6 +758,8 @@ exports[`Menu close by clicking outside 3`] = `
     padding: 6px;
   }
 }
+
+
 
 .fvCzyJ {
   font-size: 18px;
@@ -2195,7 +2199,9 @@ exports[`Menu open and close on click 3`] = `
 `;
 
 exports[`Menu open and close on click 4`] = `
-"@media only screen and (max-width:768px) {
+"
+
+@media only screen and (max-width:768px) {
   .lgRCHI {
     margin: 0px;
   }
@@ -2284,6 +2290,8 @@ exports[`Menu open and close on click 4`] = `
     padding: 6px;
   }
 }
+
+
 
 .fvCzyJ {
   font-size: 18px;
@@ -3034,7 +3042,9 @@ exports[`Menu with dropAlign renders 2`] = `
 `;
 
 exports[`Menu with dropAlign renders 3`] = `
-"@media only screen and (max-width:768px) {
+"
+
+@media only screen and (max-width:768px) {
   .lgRCHI {
     margin: 0px;
   }
@@ -3123,6 +3133,8 @@ exports[`Menu with dropAlign renders 3`] = `
     padding: 6px;
   }
 }
+
+
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .fvCzyJ {

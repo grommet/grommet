@@ -38,4 +38,5 @@ storiesOf('InfiniteScroll', module)
         </Box>
       )}
     />
-  ));
+  ))
+  .add('Replace', () => <SimpleInfiniteScroll replace />);
