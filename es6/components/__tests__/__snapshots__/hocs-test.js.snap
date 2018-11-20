@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withFocus set focus 1`] = `
+<div
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  no focus
+</div>
+`;
+
+exports[`withFocus set focus 2`] = `
+<div
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  focus
+</div>
+`;

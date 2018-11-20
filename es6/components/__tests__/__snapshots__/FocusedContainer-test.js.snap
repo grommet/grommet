@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FocusedContainer basic 1`] = `
+<div
+  id="container"
+>
+  test focused container
+</div>
+`;
+
+exports[`FocusedContainer basic 2`] = `
+<div
+  id="focus-trap-test"
+>
+  <input
+    id="test"
+    tabindex="-1"
+  />
+</div>
+`;
+
+exports[`FocusedContainer basic 3`] = `
+<div
+  id="focus-trap-test"
+>
+  <input
+    id="test"
+    tabindex="-1"
+  />
+</div>
+`;
+
+exports[`FocusedContainer blurs 1`] = `
+<div
+  id="container"
+>
+  test focused container
+</div>
+`;
+
+exports[`FocusedContainer blurs 2`] = `
+<div
+  id="focus-trap-test"
+>
+  <input
+    id="test"
+    tabindex="-1"
+  />
+</div>
+`;
+
+exports[`FocusedContainer blurs 3`] = `
+<div
+  id="focus-trap-test"
+>
+  <input
+    id="test"
+    tabindex="-1"
+  />
+</div>
+`;
+
+exports[`FocusedContainer restrict scroll 1`] = `
+<div
+  id="container"
+>
+  test focused container
+</div>
+`;
+
+exports[`FocusedContainer restrict scroll 2`] = `"hidden"`;
+
+exports[`FocusedContainer restrict scroll 3`] = `""`;
