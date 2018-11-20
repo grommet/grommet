@@ -47,13 +47,12 @@ class Keyboard extends Component {
 
   render() {
     /* eslint-disable-next-line react/prop-types */
-    const { children, target } = this.props;
+    const { children } = this.props;
 
-    return target === 'document'
-      ? children
-      : cloneElement(Children.only(children), {
-          onKeyDown: this.onKeyDown,
-        });
+    return cloneElement(Children.only(children), {
+      // always add keydown to make sure document events can stop propagation
+      onKeyDown: this.onKeyDown,
+    });
   }
 }
 

@@ -251,7 +251,6 @@ export class DropContainer extends Component {
   onEsc = event => {
     const { onEsc } = this.props;
     event.stopPropagation();
-    event.nativeEvent.stopImmediatePropagation();
     if (onEsc) {
       onEsc(event);
     }
@@ -301,7 +300,7 @@ export class DropContainer extends Component {
 
     return (
       <FocusedContainer>
-        <Keyboard onEsc={this.onEsc} onKeyDown={onKeyDown}>
+        <Keyboard onEsc={this.onEsc} onKeyDown={onKeyDown} target="document">
           {content}
         </Keyboard>
       </FocusedContainer>
