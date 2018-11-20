@@ -14,6 +14,13 @@ import { Keyboard } from '../Keyboard';
 
 import { StyledDrop } from './StyledDrop';
 
+const preventLayerClose = event => {
+  const key = event.keyCode ? event.keyCode : event.which;
+
+  if (key === 27) {
+    event.stopPropagation();
+  }
+};
 export class DropContainer extends Component {
   static defaultProps = {
     align: {
@@ -299,8 +306,12 @@ export class DropContainer extends Component {
     }
 
     return (
-      <FocusedContainer>
-        <Keyboard onEsc={this.onEsc} onKeyDown={onKeyDown} target="document">
+      <FocusedContainer onKeyDown={onEsc && preventLayerClose}>
+        <Keyboard
+          onEsc={onEsc && this.onEsc}
+          onKeyDown={onKeyDown}
+          target="document"
+        >
           {content}
         </Keyboard>
       </FocusedContainer>
