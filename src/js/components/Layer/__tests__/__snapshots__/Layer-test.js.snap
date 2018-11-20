@@ -671,7 +671,7 @@ exports[`Layer hidden 2`] = `""`;
 
 exports[`Layer hidden 3`] = `
 <div
-  class="StyledLayer-rmtehz-0 eMWFXo"
+  class="StyledLayer-rmtehz-0 heCcTz"
   id="hidden-test"
   tabindex="-1"
 >
@@ -679,7 +679,7 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledOverlay-rmtehz-1 gVTfaV"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 gRrEhW"
+    class="StyledLayer__StyledContainer-rmtehz-2 bthiWV"
     id="hidden-test"
   >
     This is a layer

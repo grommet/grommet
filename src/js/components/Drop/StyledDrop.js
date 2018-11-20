@@ -1,6 +1,7 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
-import { backgroundStyle, baseStyle } from '../../utils';
+import { baseStyle } from '../../styles';
+import { backgroundStyle, normalizeColor } from '../../utils';
 
 function getTransformOriginStyle(align) {
   let vertical = 'top';
@@ -27,6 +28,13 @@ const dropKeyFrames = keyframes`
 
 export const StyledDrop = styled.div`
   ${baseStyle}
+  ${props =>
+    !props.plain &&
+    props.theme.global.colors.background &&
+    css`
+      background: ${normalizeColor('background', props.theme, true)};
+      color: ${normalizeColor('text', props.theme, true)};
+    `}
 
   border-radius: ${props => props.theme.global.drop.border.radius};
   position: fixed;

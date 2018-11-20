@@ -1449,7 +1449,7 @@ exports[`DataTable groupBy 1`] = `
 
 exports[`DataTable groupBy 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+  class="StyledGrommet-sc-19lkkz7-0 fBqKZm"
 >
   <table
     class="StyledDataTable-xrlyjm-0 kTrXKK"
@@ -2310,7 +2310,7 @@ exports[`DataTable sort 1`] = `
 
 exports[`DataTable sort 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+  class="StyledGrommet-sc-19lkkz7-0 fBqKZm"
 >
   <table
     class="StyledDataTable-xrlyjm-0 kTrXKK"

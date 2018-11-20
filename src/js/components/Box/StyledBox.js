@@ -1,9 +1,10 @@
 import styled, { css, keyframes } from 'styled-components';
 
+import { edgeStyle } from '../../styles';
+
 import {
   backgroundStyle,
   breakpointStyle,
-  edgeStyle,
   genericStyles,
   normalizeColor,
   overflowStyle,
@@ -498,11 +499,10 @@ const animationInitialStyle = item => {
   }
   if (Array.isArray(item)) {
     return item
-      .map(
-        a =>
-          typeof a === 'string'
-            ? animationObjectInitialStyle({ type: a })
-            : animationObjectInitialStyle(a),
+      .map(a =>
+        typeof a === 'string'
+          ? animationObjectInitialStyle({ type: a })
+          : animationObjectInitialStyle(a),
       )
       .join('');
   }

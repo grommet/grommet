@@ -800,13 +800,13 @@ exports[`Grommet dark theme 1`] = `
   font-family: Arial;
   font-size: 18px;
   line-height: 24px;
-  background: #111111;
-  color: #eeeeee;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  background: #111111;
+  color: #eeeeee;
 }
 
 @media only screen and (max-width:768px) {

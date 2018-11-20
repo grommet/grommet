@@ -378,7 +378,7 @@ exports[`TextInput close suggestion drop 3`] = `
   }
 }
 
-.fvCzyJ {
+.ldfuFH {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -404,7 +404,7 @@ exports[`TextInput close suggestion drop 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .fvCzyJ {
+  .ldfuFH {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -425,7 +425,7 @@ exports[`TextInput close suggestion drop 3`] = `
 
 exports[`TextInput close suggestion drop 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+  class="StyledGrommet-sc-19lkkz7-0 fBqKZm"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -724,7 +724,7 @@ exports[`TextInput complex suggestions 3`] = `
   }
 }
 
-.fvCzyJ {
+.ldfuFH {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -750,7 +750,7 @@ exports[`TextInput complex suggestions 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .fvCzyJ {
+  .ldfuFH {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -842,7 +842,7 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 exports[`TextInput handles next and previous without suggestion 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+  class="StyledGrommet-sc-19lkkz7-0 fBqKZm"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -1256,7 +1256,7 @@ exports[`TextInput select suggestion 3`] = `
   }
 }
 
-.fvCzyJ {
+.ldfuFH {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1282,7 +1282,7 @@ exports[`TextInput select suggestion 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .fvCzyJ {
+  .ldfuFH {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1303,7 +1303,7 @@ exports[`TextInput select suggestion 3`] = `
 
 exports[`TextInput select suggestion 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+  class="StyledGrommet-sc-19lkkz7-0 fBqKZm"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -1629,7 +1629,7 @@ exports[`TextInput suggestions 3`] = `
   }
 }
 
-.fvCzyJ {
+.ldfuFH {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1655,7 +1655,7 @@ exports[`TextInput suggestions 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .fvCzyJ {
+  .ldfuFH {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

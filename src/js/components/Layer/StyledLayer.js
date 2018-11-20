@@ -1,6 +1,8 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { backgroundStyle, baseStyle, breakpointStyle } from '../../utils';
+import { baseStyle } from '../../styles';
+
+import { backgroundStyle, breakpointStyle, normalizeColor } from '../../utils';
 
 const hiddenPositionStyle = css`
   left: -100%;
@@ -27,7 +29,14 @@ const responsiveLayerStyle = `
 `;
 
 export const StyledLayer = styled.div`
-  ${baseStyle} background: unset;
+  ${baseStyle} ${props =>
+    !props.plain &&
+    props.theme.global.colors.background &&
+    css`
+      background: ${normalizeColor('background', props.theme, true)};
+      color: ${normalizeColor('text', props.theme, true)};
+    `} 
+  background: unset;
   position: relative;
   z-index: 10;
   pointer-events: none;
