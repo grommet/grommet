@@ -15,9 +15,7 @@ const FLEX_MAP = {
 
 const flexStyle = css`
   flex: ${props =>
-    `${FLEX_MAP[props.flex]}${
-      props.flex !== true && !props.basis ? ' auto' : ''
-    }`};
+    `${FLEX_MAP[props.flex]}${props.flex !== true ? ' auto' : ''}`};
 `;
 
 export const StyledTabPanel = styled.div`
