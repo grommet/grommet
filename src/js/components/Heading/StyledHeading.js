@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { breakpointStyle, genericStyles, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const sizeStyle = props => {
   // size is a combination of the level and size properties
@@ -76,7 +77,7 @@ const colorStyle = css`
   color: ${props => normalizeColor(props.colorProp, props.theme)};
 `;
 
-export const StyledHeading = styled.h1`
+const StyledHeading = styled.h1`
   ${genericStyles}
   ${props => fontFamily(props)}
   ${props => sizeStyle(props)}
@@ -85,3 +86,8 @@ export const StyledHeading = styled.h1`
   ${props => props.colorProp && colorStyle}
   ${props => props.theme.heading && props.theme.heading.extend}
 `;
+
+StyledHeading.defaultProps = {};
+Object.setPrototypeOf(StyledHeading.defaultProps, defaultProps);
+
+export { StyledHeading };

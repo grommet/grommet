@@ -1,6 +1,12 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { backgroundStyle, baseStyle, breakpointStyle } from '../../utils';
+import {
+  baseStyle,
+  backgroundStyle,
+  breakpointStyle,
+  normalizeColor,
+} from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const hiddenPositionStyle = css`
   left: -100%;
@@ -26,8 +32,15 @@ const responsiveLayerStyle = `
   min-height: 100vh;
 `;
 
-export const StyledLayer = styled.div`
-  ${baseStyle} background: unset;
+const StyledLayer = styled.div`
+  ${baseStyle} ${props =>
+    !props.plain &&
+    props.theme.global.colors.background &&
+    css`
+      background: ${normalizeColor('background', props.theme, true)};
+      color: ${normalizeColor('text', props.theme, true)};
+    `} 
+  background: unset;
   position: relative;
   z-index: ${props => props.theme.layer.zIndex};
   pointer-events: none;
@@ -47,7 +60,10 @@ export const StyledLayer = styled.div`
   }} ${props => props.theme.layer && props.theme.layer.extend};
 `;
 
-export const StyledOverlay = styled.div`
+StyledLayer.defaultProps = {};
+Object.setPrototypeOf(StyledLayer.defaultProps, defaultProps);
+
+const StyledOverlay = styled.div`
   position: absolute;
   ${props => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
@@ -387,7 +403,7 @@ const responsiveContainerStyle = css`
   width: 100vw;
 `;
 
-export const StyledContainer = styled.div`
+const StyledContainer = styled.div`
   ${props => (!props.modal ? baseStyle : '')} display: flex;
   flex-direction: column;
   min-height: ${props => props.theme.global.size.xxsmall};
@@ -409,3 +425,8 @@ export const StyledContainer = styled.div`
     return '';
   }};
 `;
+
+StyledContainer.defaultProps = {};
+Object.setPrototypeOf(StyledContainer.defaultProps, defaultProps);
+
+export { StyledLayer, StyledOverlay, StyledContainer };

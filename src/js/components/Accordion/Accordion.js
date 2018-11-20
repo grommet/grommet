@@ -1,8 +1,6 @@
 import React, { Component, Children } from 'react';
-import { compose } from 'recompose';
 
 import { Box } from '../Box';
-import { withTheme } from '../hocs';
 
 import { AccordionContext } from './AccordionContext';
 
@@ -92,6 +90,6 @@ let AccordionDoc;
 if (process.env.NODE_ENV !== 'production') {
   AccordionDoc = require('./doc').doc(Accordion); // eslint-disable-line global-require
 }
-const AccordionWrapper = compose(withTheme)(AccordionDoc || Accordion);
+const AccordionWrapper = AccordionDoc || Accordion;
 
 export { AccordionWrapper as Accordion };

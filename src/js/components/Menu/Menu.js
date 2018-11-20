@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { withForwardRef, withTheme } from '../hocs';
+import { withForwardRef } from '../hocs';
 import { normalizeColor } from '../../utils';
 
 const ContainerBox = styled(Box)`
@@ -45,8 +46,7 @@ class Menu extends Component {
     if (activeItemIndex >= 0) {
       event.preventDefault();
       event.stopPropagation();
-      /* eslint-disable react/no-find-dom-node */
-      findDOMNode(this.buttonRefs[activeItemIndex]).click();
+      this.buttonRefs[activeItemIndex].click();
     }
   };
 
@@ -155,14 +155,10 @@ class Menu extends Component {
           dropAlign={dropAlign}
           dropTarget={dropTarget}
           open={open}
-          theme={theme}
           onOpen={() => this.setState({ open: true })}
           onClose={() => this.setState({ open: false })}
           dropContent={
-            <ContainerBox
-              theme={theme}
-              background={dropBackground || theme.menu.background}
-            >
+            <ContainerBox background={dropBackground || theme.menu.background}>
               {dropAlign.top === 'top' ? controlMirror : undefined}
               <Box overflow="auto">
                 {items.map((item, index) => (
@@ -200,6 +196,8 @@ class Menu extends Component {
     );
   }
 }
+
+Object.setPrototypeOf(Menu.defaultProps, defaultProps);
 
 let MenuDoc;
 if (process.env.NODE_ENV !== 'production') {

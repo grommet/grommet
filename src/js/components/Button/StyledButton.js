@@ -7,6 +7,7 @@ import {
   genericStyles,
   normalizeColor,
 } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const basicStyle = props => css`
   border: ${props.theme.button.border.width} solid
@@ -23,16 +24,14 @@ const basicStyle = props => css`
 `;
 
 const primaryStyle = props => css`
-  ${
-    backgroundStyle(
-      normalizeColor(
-        props.colorValue || props.theme.button.primary.color || 'control',
-        props.theme
-      ),
+  ${backgroundStyle(
+    normalizeColor(
+      props.colorValue || props.theme.button.primary.color || 'control',
       props.theme,
-      props.theme.button.color,
-    )
-  }
+    ),
+    props.theme,
+    props.theme.button.color,
+  )}
   border-radius: ${props.theme.button.border.radius};
 `;
 
@@ -90,7 +89,7 @@ const plainStyle = css`
   text-align: inherit;
 `;
 
-export const StyledButton = styled.button`
+const StyledButton = styled.button`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -127,3 +126,8 @@ export const StyledButton = styled.button`
   `}
   ${props => props.theme.button.extend}
 `;
+
+StyledButton.defaultProps = {};
+Object.setPrototypeOf(StyledButton.defaultProps, defaultProps);
+
+export { StyledButton };

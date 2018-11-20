@@ -807,6 +807,8 @@ exports[`Grommet dark theme 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  background: #111111;
+  color: #eeeeee;
 }
 
 @media only screen and (max-width:768px) {

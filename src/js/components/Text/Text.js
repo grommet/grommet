@@ -1,7 +1,4 @@
 import React from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from '../hocs';
 
 import { StyledText } from './StyledText';
 
@@ -17,6 +14,6 @@ let TextDoc;
 if (process.env.NODE_ENV !== 'production') {
   TextDoc = require('./doc').doc(Text); // eslint-disable-line global-require
 }
-const TextWrapper = compose(withTheme)(TextDoc || Text);
+const TextWrapper = TextDoc || Text;
 
 export { TextWrapper as Text };

@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import { Box } from '../Box';
-import { withFocus, withForwardRef, withTheme } from '../hocs';
+import { withTheme } from 'styled-components';
+
 import { removeUndefined } from '../../utils/object';
+import { defaultProps } from '../../default-props';
+
+import { Box } from '../Box';
+import { withFocus, withForwardRef } from '../hocs';
 
 import {
   StyledCheckBox,
@@ -68,8 +72,8 @@ class CheckBox extends Component {
     }
 
     const visual = toggle ? (
-      <StyledCheckBoxToggle focus={focus} theme={theme} checked={checked}>
-        <StyledCheckBoxKnob theme={theme} />
+      <StyledCheckBoxToggle focus={focus} checked={checked}>
+        <StyledCheckBoxKnob />
       </StyledCheckBoxToggle>
     ) : (
       <StyledCheckBoxBox
@@ -84,18 +88,17 @@ class CheckBox extends Component {
         }}
         round={theme.checkBox.check.radius}
         focus={focus}
-        theme={theme}
         checked={checked}
       >
         {!indeterminate &&
           checked &&
           (CheckedIcon ? (
-            <CheckedIcon as={StyledCheckBoxIcon} theme={theme} />
+            <CheckedIcon theme={theme} as={StyledCheckBoxIcon} />
           ) : (
             <StyledCheckBoxIcon
+              theme={theme}
               viewBox="0 0 24 24"
               preserveAspectRatio="xMidYMid meet"
-              theme={theme}
             >
               <path fill="none" d="M6,11.3 L10.3,16 L18,6.2" />
             </StyledCheckBoxIcon>
@@ -103,12 +106,12 @@ class CheckBox extends Component {
         {!checked &&
           indeterminate &&
           (IndeterminateIcon ? (
-            <IndeterminateIcon as={StyledCheckBoxIcon} theme={theme} />
+            <IndeterminateIcon theme={theme} as={StyledCheckBoxIcon} />
           ) : (
             <StyledCheckBoxIcon
+              theme={theme}
               viewBox="0 0 24 24"
               preserveAspectRatio="xMidYMid meet"
-              theme={theme}
             >
               <path fill="none" d="M6,12 L18,12" />
             </StyledCheckBoxIcon>
@@ -117,7 +120,7 @@ class CheckBox extends Component {
     );
 
     const checkBoxNode = (
-      <StyledCheckBox as={Box} align="center" justify="center" theme={theme}>
+      <StyledCheckBox as={Box} align="center" justify="center">
         <StyledCheckBoxInput
           {...rest}
           ref={forwardRef}
@@ -129,7 +132,6 @@ class CheckBox extends Component {
             disabled,
             onChange,
           })}
-          theme={theme}
           checked={checked}
           disabled={disabled}
         />
@@ -151,7 +153,6 @@ class CheckBox extends Component {
         as={props => <Box as="label" {...props} />}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
-        theme={theme}
         gap={theme.checkBox.gap || 'small'}
         checked={checked}
         onClick={event => {
@@ -168,6 +169,9 @@ class CheckBox extends Component {
     );
   }
 }
+
+CheckBox.defaultProps = {};
+Object.setPrototypeOf(CheckBox.defaultProps, defaultProps);
 
 let CheckBoxDoc;
 if (process.env.NODE_ENV !== 'production') {

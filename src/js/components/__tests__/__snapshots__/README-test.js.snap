@@ -530,7 +530,7 @@ string
 
 The amount of margin around the component. An object can
       be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+      margin on a particular side. Defaults to \`none\`.
 
 \`\`\`
 none
@@ -2888,7 +2888,7 @@ string
       context. 'footer' indicates what should be shown in the footer for
       the column. 'search' indicates whether a search filter should be
       made available for the column.
-    
+     Defaults to \`[]\`.
 
 \`\`\`
 [{
@@ -2920,7 +2920,7 @@ string
 
 **data**
 
-Array of data objects.
+Array of data objects. Defaults to \`[]\`.
 
 \`\`\`
 [{
@@ -3166,7 +3166,12 @@ string
 
 **children**
 
-Function that will be called when each value is rendered.
+Function that will be called when each value is rendered. Defaults to \`function children(value) {
+    return _react.default.createElement(_Box.Box, {
+      fill: true,
+      border: true
+    }, _react.default.createElement(_Text.Text, null, value.value));
+  }\`.
 
 \`\`\`
 function
@@ -3198,7 +3203,7 @@ string
 Required. Array of objects containing a value. The array should already be
       sorted from largest to smallest value. The caller can put other
       properties in the object. The children function will be called to
-      render the contents of each value.
+      render the contents of each value. Defaults to \`[]\`.
 
 \`\`\`
 [{
@@ -3335,7 +3340,7 @@ import { DropButton } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom title to be used by screen readers. Defaults to \`Open Drop\`.
 
 \`\`\`
 string
@@ -4125,7 +4130,7 @@ is too long to all fit.
 boolean
 \`\`\`
   ",
-  "Image": "## Image
+  "Image": "## StyledImage
 An image.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Image&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=image&module=%2Fsrc%2FImage.js)
@@ -4489,7 +4494,7 @@ horizontal
 
 The amount of margin around the Layer. An object can be specified to
 distinguish horizontal margin, vertical margin, and margin on a
-particular side of the layer
+particular side of the layer Defaults to \`none\`.
 
 \`\`\`
 none
@@ -4796,7 +4801,7 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick.
+The object values can be any Button prop, for example: label and onClick. Defaults to \`[]\`.
 
 \`\`\`
 [object]
@@ -4949,7 +4954,7 @@ string
 **background**
 
 Background color Defaults to \`{
-  \\"color\\": \\"light-2\\",
+  \\"color\\": \\"light-1\\",
   \\"opacity\\": \\"medium\\"
 }\`.
 
@@ -5454,7 +5459,10 @@ number
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers.
+Custom messages. Used for accessibility by screen readers. Defaults to \`{
+  \\"lower\\": \\"Lower Bounds\\",
+  \\"upper\\": \\"Upper Bounds\\"
+}\`.
 
 \`\`\`
 {
@@ -5529,7 +5537,7 @@ number
 
 **values**
 
-Required. The current values.
+Required. The current values. Defaults to \`[]\`.
 
 \`\`\`
 [number]
@@ -5758,7 +5766,7 @@ function
 **dropAlign**
 
 How to align the drop. Defaults to \`{
-  \\"top\\": \\"top\\",
+  \\"top\\": \\"bottom\\",
   \\"left\\": \\"left\\"
 }\`.
 
@@ -5812,7 +5820,9 @@ function
 
 **messages**
 
-Custom messages.
+Custom messages. Defaults to \`{
+  \\"multiple\\": \\"multiple\\"
+}\`.
 
 \`\`\`
 {
@@ -6924,7 +6934,7 @@ import { TextInput } from 'grommet';
 **dropAlign**
 
 How to align the drop. Defaults to \`{
-  \\"top\\": \\"top\\",
+  \\"top\\": \\"bottom\\",
   \\"left\\": \\"left\\"
 }\`.
 

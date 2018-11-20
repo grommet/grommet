@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
-import { compose } from 'recompose';
 
 import { getNewContainer } from '../../utils';
-import { withTheme } from '../hocs';
 
 import { LayerContainer } from './LayerContainer';
 
@@ -40,8 +38,7 @@ class Layer extends Component {
   }
 
   render() {
-    const { theme, ...rest } = this.props;
-    return createPortal(<LayerContainer {...rest} />, this.layerContainer);
+    return createPortal(<LayerContainer {...this.props} />, this.layerContainer);
   }
 }
 
@@ -49,6 +46,6 @@ let LayerDoc;
 if (process.env.NODE_ENV !== 'production') {
   LayerDoc = require('./doc').doc(Layer); // eslint-disable-line global-require
 }
-const LayerWrapper = compose(withTheme)(LayerDoc || Layer);
+const LayerWrapper = LayerDoc || Layer;
 
 export { LayerWrapper as Layer };

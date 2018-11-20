@@ -3,7 +3,7 @@ import { compose } from 'recompose';
 
 import { Button } from '../Button';
 import { Drop } from '../Drop';
-import { withForwardRef, withTheme } from '../hocs';
+import { withForwardRef } from '../hocs';
 import { setFocusWithoutScroll } from '../../utils';
 
 class DropButton extends Component {
@@ -72,7 +72,6 @@ class DropButton extends Component {
       dropTarget,
       id,
       open,
-      theme,
       ...rest
     } = this.props;
     const { show } = this.state;
@@ -116,7 +115,6 @@ if (process.env.NODE_ENV !== 'production') {
   DropButtonDoc = require('./doc').doc(DropButton); // eslint-disable-line global-require
 }
 const DropButtonWrapper = compose(
-  withTheme,
   withForwardRef,
 )(DropButtonDoc || DropButton);
 

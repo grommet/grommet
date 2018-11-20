@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from '../hocs';
 
 import { Bar } from './Bar';
 import { Circle } from './Circle';
@@ -55,6 +52,6 @@ let MeterDoc;
 if (process.env.NODE_ENV !== 'production') {
   MeterDoc = require('./doc').doc(Meter); // eslint-disable-line global-require
 }
-const MeterWrapper = compose(withTheme)(MeterDoc || Meter);
+const MeterWrapper = MeterDoc || Meter;
 
 export { MeterWrapper as Meter };

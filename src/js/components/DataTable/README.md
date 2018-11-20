@@ -121,7 +121,7 @@ string
       context. 'footer' indicates what should be shown in the footer for
       the column. 'search' indicates whether a search filter should be
       made available for the column.
-    
+     Defaults to `[]`.
 
 ```
 [{
@@ -153,7 +153,7 @@ string
 
 **data**
 
-Array of data objects.
+Array of data objects. Defaults to `[]`.
 
 ```
 [{

@@ -560,7 +560,7 @@ exports[`Tabs change to second tab 1`] = `
 
 exports[`Tabs change to second tab 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
@@ -1261,7 +1261,7 @@ exports[`Tabs set on hover 1`] = `
 
 exports[`Tabs set on hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
@@ -1318,7 +1318,7 @@ exports[`Tabs set on hover 2`] = `
 
 exports[`Tabs set on hover 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
@@ -1375,7 +1375,7 @@ exports[`Tabs set on hover 3`] = `
 
 exports[`Tabs set on hover 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
@@ -1432,7 +1432,7 @@ exports[`Tabs set on hover 4`] = `
 
 exports[`Tabs set on hover 5`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"

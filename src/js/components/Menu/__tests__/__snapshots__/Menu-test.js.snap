@@ -757,7 +757,7 @@ exports[`Menu close by clicking outside 3`] = `
   }
 }
 
-.tNmko {
+.fcwUgt {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -783,7 +783,7 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .fcwUgt {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1710,7 +1710,7 @@ exports[`Menu open and close on click 1`] = `
 
 exports[`Menu open and close on click 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <button
     aria-label="Open Menu"
@@ -2285,7 +2285,7 @@ exports[`Menu open and close on click 4`] = `
   }
 }
 
-.tNmko {
+.fcwUgt {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2311,7 +2311,7 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .fcwUgt {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3125,7 +3125,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .fcwUgt {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3137,7 +3137,7 @@ exports[`Menu with dropAlign renders 3`] = `
   }
 }
 
-.dFReaY {
+.jRTaAT {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3163,7 +3163,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .dFReaY {
+  .jRTaAT {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

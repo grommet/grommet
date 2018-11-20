@@ -110,7 +110,7 @@ string
 **background**
 
 Background color Defaults to `{
-  "color": "light-2",
+  "color": "light-1",
   "opacity": "medium"
 }`.
 

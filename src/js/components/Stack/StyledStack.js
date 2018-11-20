@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { genericStyles } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const fillStyle = `
   width: 100%;
@@ -10,12 +11,15 @@ const fillStyle = `
   display: flex;
 `;
 
-export const StyledStack = styled.div`
+const StyledStack = styled.div`
   position: relative;
   ${genericStyles}
   ${props => props.fillContainer && fillStyle}
   ${props => props.theme.stack && props.theme.stack.extend}
 `;
+
+StyledStack.defaultProps = {};
+Object.setPrototypeOf(StyledStack.defaultProps, defaultProps);
 
 const styleMap = {
   fill: `
@@ -67,7 +71,7 @@ const styleMap = {
   `,
 };
 
-export const StyledStackLayer = styled.div`
+const StyledStackLayer = styled.div`
   position: ${props => (props.guiding ? 'relative' : 'absolute')};
   ${props => props.guiding && 'display: block;'}
   ${props => !props.guiding && `${styleMap[props.anchor || 'fill']};`}
@@ -78,3 +82,8 @@ export const StyledStackLayer = styled.div`
     height: 100%;
   `}
 `;
+
+StyledStackLayer.defaultProps = {};
+Object.setPrototypeOf(StyledStackLayer.defaultProps, defaultProps);
+
+export { StyledStack, StyledStackLayer };

@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
+import { withTheme } from 'styled-components';
+
+import { normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
+
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Collapsible } from '../Collapsible';
 import { Heading } from '../Heading';
-import { withTheme, withForwardRef } from '../hocs';
-import { normalizeColor } from '../../utils';
+import { withForwardRef } from '../hocs';
 
 import { AccordionContext } from '../Accordion/AccordionContext';
 
@@ -130,6 +134,9 @@ class AccordionPanel extends Component {
     );
   }
 }
+
+AccordionPanel.defaultProps = {};
+Object.setPrototypeOf(AccordionPanel.defaultProps, defaultProps);
 
 let AccordionPanelDoc;
 if (process.env.NODE_ENV !== 'production') {

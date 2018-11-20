@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { base as baseTheme } from '../../themes';
-import { deepMerge } from '../../utils';
+import { ThemeContext } from 'styled-components';
 
-const ThemeContext = React.createContext(baseTheme);
+import { deepMerge } from '../../utils';
 
 ThemeContext.Extend = ({ children, value }) => (
   <ThemeContext.Consumer>

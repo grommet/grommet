@@ -1,11 +1,12 @@
 import React, { createRef, Component } from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
 import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
+import { defaultProps } from '../../default-props';
+
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
-import { withTheme } from '../hocs';
 import { backgroundIsDark } from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
@@ -103,7 +104,6 @@ class LayerContainer extends Component {
       <StyledContainer
         id={id}
         {...rest}
-        theme={theme}
         position={position}
         plain={plain}
         responsive={responsive}
@@ -122,7 +122,6 @@ class LayerContainer extends Component {
           id={id}
           plain={plain}
           position={position}
-          theme={theme}
           responsive={responsive}
           tabIndex="-1"
           ref={this.layerRef}
@@ -131,7 +130,6 @@ class LayerContainer extends Component {
             plain={plain}
             onMouseDown={onClickOutside}
             responsive={responsive}
-            theme={theme}
           />
           {content}
         </StyledLayer>
@@ -156,6 +154,8 @@ class LayerContainer extends Component {
     return content;
   }
 }
+
+Object.setPrototypeOf(LayerContainer.defaultProps, defaultProps);
 
 const LayerContainerWrapper = withTheme(LayerContainer);
 

@@ -16,7 +16,7 @@ import { DropButton } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom title to be used by screen readers. Defaults to `Open Drop`.
 
 ```
 string

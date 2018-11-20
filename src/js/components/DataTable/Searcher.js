@@ -1,5 +1,12 @@
 import React, { Component, Fragment } from 'react';
+
+import { compose } from 'recompose';
+
+import { withTheme } from 'styled-components';
+
 import { FormSearch } from 'grommet-icons';
+
+import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -8,7 +15,7 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { normalizeColor } from '../../utils';
 
-export class Searcher extends Component {
+class Searcher extends Component {
   inputRef = React.createRef();
 
   componentDidMount() {
@@ -69,3 +76,10 @@ export class Searcher extends Component {
     );
   }
 }
+
+Searcher.defaultProps = {};
+Object.setPrototypeOf(Searcher.defaultProps, defaultProps);
+
+const SearcherWrapper = compose(withTheme)(Searcher);
+
+export { SearcherWrapper as Searcher };

@@ -1,7 +1,9 @@
-/* eslint-disable react/no-find-dom-node */
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
+
+import { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -9,7 +11,7 @@ import { Menu } from '../Menu';
 import { Meter } from '../Meter';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
-import { withForwardRef, withTheme } from '../hocs';
+import { withForwardRef } from '../hocs';
 import { throttle } from '../../utils';
 
 import {
@@ -92,19 +94,21 @@ class Video extends Component {
   componentDidMount() {
     const { mute } = this.props;
     const { videoRef } = this.state;
-    const video = findDOMNode(videoRef.current);
+    const video = videoRef.current;
 
     if (mute) {
       this.mute();
     }
 
-    // hide all captioning to start with
-    const { textTracks } = video;
-    for (let i = 0; i < textTracks.length; i += 1) {
-      textTracks[i].mode = 'hidden';
-    }
+    if (video) {
+      // hide all captioning to start with
+      const { textTracks } = video;
+      for (let i = 0; i < textTracks.length; i += 1) {
+        textTracks[i].mode = 'hidden';
+      }
 
-    this.restate();
+      this.restate();
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -140,8 +144,7 @@ class Video extends Component {
 
   update = () => {
     const { videoRef } = this.state;
-    // eslint-disable-next-line react/no-find-dom-node
-    const video = findDOMNode(videoRef.current);
+    const video = videoRef.current;
     // Set flag for Video first play
     if (
       (!this.hasPlayed && !video.paused && !video.loading) ||
@@ -178,20 +181,18 @@ class Video extends Component {
 
   play = () => {
     const { videoRef } = this.state;
-    findDOMNode(videoRef.current).play();
+    videoRef.current.play();
   };
 
   pause = () => {
     const { videoRef } = this.state;
-    findDOMNode(videoRef.current).pause();
+    videoRef.current.pause();
   };
 
   scrub = event => {
     const { duration, scrubberRef } = this.state;
     if (scrubberRef.current) {
-      const scrubberRect = findDOMNode(
-        scrubberRef.current,
-      ).getBoundingClientRect();
+      const scrubberRect = scrubberRef.current.getBoundingClientRect();
       const percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
       this.setState({ scrubTime: duration * percent });
     }
@@ -200,37 +201,39 @@ class Video extends Component {
   seek = event => {
     const { duration, scrubberRef, videoRef } = this.state;
     if (scrubberRef.current) {
-      const scrubberRect = findDOMNode(
-        scrubberRef.current,
-      ).getBoundingClientRect();
+      const scrubberRect = scrubberRef.current.getBoundingClientRect();
       const percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
-      findDOMNode(videoRef.current).currentTime = duration * percent;
+      videoRef.current.currentTime = duration * percent;
     }
   };
 
   unmute = () => {
     const { videoRef } = this.state;
-    findDOMNode(videoRef.current).muted = false;
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+    }
   };
 
   mute = () => {
     const { videoRef } = this.state;
-    findDOMNode(videoRef.current).muted = true;
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+    }
   };
 
   louder = () => {
     const { videoRef } = this.state;
-    findDOMNode(videoRef.current).volume += VOLUME_STEP;
+    videoRef.current.volume += VOLUME_STEP;
   };
 
   quieter = () => {
     const { videoRef } = this.state;
-    findDOMNode(videoRef.current).volume -= VOLUME_STEP;
+    videoRef.current.volume -= VOLUME_STEP;
   };
 
   showCaptions = index => {
     const { videoRef } = this.state;
-    const { textTracks } = findDOMNode(videoRef.current);
+    const { textTracks } = videoRef.current;
     for (let i = 0; i < textTracks.length; i += 1) {
       textTracks[i].mode = i === index ? 'showing' : 'hidden';
     }
@@ -240,7 +243,7 @@ class Video extends Component {
 
   fullscreen = () => {
     const { videoRef } = this.state;
-    const video = findDOMNode(videoRef.current);
+    const video = videoRef.current;
     if (video.requestFullscreen) {
       video.requestFullscreen();
     } else if (video.msRequestFullscreen) {
@@ -269,7 +272,7 @@ class Video extends Component {
 
   restate = () => {
     const { captions, height, videoRef, width } = this.state;
-    const video = findDOMNode(videoRef.current);
+    const video = videoRef.current;
 
     if (video.videoHeight) {
       // set the size based on the video aspect ratio
@@ -411,7 +414,6 @@ class Video extends Component {
                   onMouseMove={this.scrub}
                   onMouseLeave={() => this.setState({ scrubTime: undefined })}
                   onClick={this.seek}
-                  theme={theme}
                 />
               </Stack>
             </Box>
@@ -487,13 +489,11 @@ class Video extends Component {
         alignSelf={alignSelf}
         gridArea={gridArea}
         margin={margin}
-        theme={theme}
         style={style}
       >
         <StyledVideo
           {...rest}
           ref={videoRef}
-          theme={theme}
           {...this.mediaEventProps}
           autoPlay={autoPlay || false}
           loop={loop || false}
@@ -505,6 +505,8 @@ class Video extends Component {
     );
   }
 }
+
+Object.setPrototypeOf(Video.defaultProps, defaultProps);
 
 let VideoDoc;
 if (process.env.NODE_ENV !== 'production') {
