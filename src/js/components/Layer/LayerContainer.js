@@ -111,14 +111,14 @@ class LayerContainer extends Component {
         responsive={responsive}
         ref={this.containerRef}
       >
-        {/*eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
+        {/* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
         <a
           ref={this.anchorRef}
           tabIndex="-1"
           aria-hidden="true"
           style={hiddenAnchor}
         />
-        {/*eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
+        {/* eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
         {children}
       </StyledContainer>
     );
