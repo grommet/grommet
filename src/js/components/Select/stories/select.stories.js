@@ -58,7 +58,7 @@ class SimpleSelect extends Component {
     const { options, value } = this.state;
     return (
       <Grommet full theme={theme || grommet}>
-        <Box fill align="center" justify="center">
+        <Box fill align="center" justify="start" pad="large">
           <Select
             id="select"
             name="select"
@@ -73,12 +73,21 @@ class SimpleSelect extends Component {
   }
 }
 
-const DEFAULT_OPTIONS = [];
-for (let i = 1; i <= 200; i += 1) DEFAULT_OPTIONS.push(`option ${i}`);
+const defaultOptions = [];
+const objectOptions = [];
+for (let i = 1; i <= 200; i += 1) {
+  defaultOptions.push(`option ${i}`);
+  objectOptions.push({
+    lab: `option ${i}`,
+    val: i,
+    dis: i % 5 === 0,
+    sel: i % 13 === 0,
+  });
+}
 
 class SearchSelect extends Component {
   state = {
-    options: DEFAULT_OPTIONS,
+    options: defaultOptions,
     value: '',
   };
 
@@ -86,18 +95,89 @@ class SearchSelect extends Component {
     const { options, value } = this.state;
     return (
       <Grommet full theme={grommet}>
-        <Box fill align="center" justify="center">
+        <Box fill align="center" justify="start" pad="large">
           <Select
             size="medium"
             placeholder="Select"
             value={value}
             options={options}
             onChange={({ option }) => this.setState({ value: option })}
-            onClose={() => this.setState({ options: DEFAULT_OPTIONS })}
+            onClose={() => this.setState({ options: defaultOptions })}
             onSearch={text => {
               const exp = new RegExp(text, 'i');
               this.setState({
-                options: DEFAULT_OPTIONS.filter(o => exp.test(o)),
+                options: defaultOptions.filter(o => exp.test(o)),
+              });
+            }}
+          />
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
+class SimpleMultiSelect extends Component {
+  state = {
+    options: defaultOptions,
+    value: '',
+  };
+
+  render() {
+    const { options, value } = this.state;
+    return (
+      <Grommet full theme={grommet}>
+        <Box fill align="center" justify="start" pad="large">
+          <Select
+            size="medium"
+            placeholder="Select"
+            multiple
+            value={value}
+            options={options}
+            onChange={({ value: nextValue }) =>
+              this.setState({ value: nextValue })
+            }
+            onClose={() => this.setState({ options: defaultOptions })}
+            onSearch={text => {
+              const exp = new RegExp(text, 'i');
+              this.setState({
+                options: defaultOptions.filter(o => exp.test(o)),
+              });
+            }}
+          />
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
+class ObjectMultiSelect extends Component {
+  state = {
+    options: objectOptions,
+    value: '',
+  };
+
+  render() {
+    const { options, value } = this.state;
+    return (
+      <Grommet full theme={grommet}>
+        <Box fill align="center" justify="start" pad="large">
+          <Select
+            size="medium"
+            placeholder="Select"
+            multiple
+            disabledKey="dis"
+            labelKey="lab"
+            valueKey="val"
+            value={value}
+            options={options}
+            onChange={({ value: nextValue }) =>
+              this.setState({ value: nextValue })
+            }
+            onClose={() => this.setState({ options: objectOptions })}
+            onSearch={text => {
+              const exp = new RegExp(text, 'i');
+              this.setState({
+                options: objectOptions.filter(o => exp.test(o.val)),
               });
             }}
           />
@@ -504,9 +584,11 @@ class ManyOptions extends Component {
 }
 
 storiesOf('Select', module)
-  .add('Simple Select', () => <SimpleSelect />)
-  .add('Search Select', () => <SearchSelect />)
-  .add('Seasons Select', () => <SeasonsSelect />)
+  .add('Simple', () => <SimpleSelect />)
+  .add('Search', () => <SearchSelect />)
+  .add('Simple Multiple', () => <SimpleMultiSelect />)
+  .add('Object Multiple', () => <ObjectMultiSelect />)
+  .add('Seasons', () => <SeasonsSelect />)
   .add('Custom Search', () => <CustomSearchSelect />)
   .add('Dark', () => <DarkSelect />)
   .add('Custom Colors', () => (

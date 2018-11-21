@@ -61,6 +61,7 @@ class Select extends Component {
       forwardRef,
       gridArea,
       id,
+      labelKey,
       margin,
       messages,
       onChange,
@@ -70,6 +71,7 @@ class Select extends Component {
       size,
       theme,
       value,
+      valueLabel,
       ...rest
     } = this.props;
     const { open } = this.state;
@@ -87,29 +89,41 @@ class Select extends Component {
 
     const SelectIcon = theme.select.icons.down;
     let selectValue;
-    let textValue;
-    if (!React.isValidElement(value)) {
-      if (Array.isArray(value)) {
-        if (value.length > 1) {
-          if (React.isValidElement(value[0])) {
-            selectValue = value;
+    let inputValue;
+    if (valueLabel) {
+      selectValue = valueLabel;
+    } else if (Array.isArray(value)) {
+      if (value.length > 1) {
+        if (React.isValidElement(value[0])) {
+          selectValue = value;
+        } else {
+          inputValue = messages.multiple;
+        }
+      } else if (value.length === 1) {
+        if (React.isValidElement(value[0])) {
+          [selectValue] = value;
+        } else if (labelKey && typeof value[0] === 'object') {
+          if (typeof labelKey === 'function') {
+            inputValue = labelKey(value[0]);
           } else {
-            textValue = messages.multiple;
-          }
-        } else if (value.length === 1) {
-          if (React.isValidElement(value[0])) {
-            [selectValue] = value;
-          } else {
-            [textValue] = value;
+            inputValue = value[0][labelKey];
           }
         } else {
-          textValue = '';
+          [inputValue] = value;
         }
       } else {
-        textValue = value;
+        inputValue = '';
       }
+    } else if (labelKey && typeof value === 'object') {
+      if (typeof labelKey === 'function') {
+        inputValue = labelKey(value);
+      } else {
+        inputValue = value[labelKey];
+      }
+    } else if (React.isValidElement(value)) {
+      selectValue = value; // deprecated in favor of valueLabel
     } else {
-      selectValue = value;
+      inputValue = value;
     }
 
     // const dark = theme.select.background ? colorIsDark(theme.select.background) : theme.dark;
@@ -160,7 +174,7 @@ class Select extends Component {
                   placeholder={placeholder}
                   plain
                   readOnly
-                  value={textValue}
+                  value={inputValue}
                   size={size}
                   onClick={disabled === true ? undefined : this.onOpen}
                 />
