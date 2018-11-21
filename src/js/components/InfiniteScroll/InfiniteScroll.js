@@ -82,6 +82,7 @@ class InfiniteScroll extends PureComponent {
     const {
       children,
       items,
+      onMore,
       renderMarker,
       replace,
       scrollableAncestor,
@@ -92,18 +93,24 @@ class InfiniteScroll extends PureComponent {
 
     const firstIndex = firstPage * step;
     const lastIndex = (lastPage + 1) * step - 1;
-    const topWaypointIndex = firstIndex ? Math.round(step * 0.25) : undefined;
-    const bottomWaypointIndex =
-      lastIndex - firstIndex - Math.round(step * 0.25);
 
     let topMarker;
     if (replace && firstIndex) {
+      let content;
+      if (replace && firstPage && this.pageHeight) {
+        // make it a placeholder for the earlier steps to preserve scroll position
+        content = <div style={{ height: firstPage * this.pageHeight }} />;
+      }
       topMarker = (
         <Waypoint
           key="topMarker"
+          fireOnRapidScroll
           onEnter={this.previousPage}
+          topOffsetX="-96px"
           scrollableAncestor={scrollableAncestor}
-        />
+        >
+          {content}
+        </Waypoint>
       );
       if (renderMarker) {
         // need to give it a key
@@ -113,33 +120,29 @@ class InfiniteScroll extends PureComponent {
       }
     }
 
-    let bottomMarker = (
-      <Waypoint
-        key="bottomMarker"
-        onEnter={this.nextPage}
-        bottomOffsetX="-96px"
-        scrollableAncestor={scrollableAncestor}
-      />
-    );
-    if (renderMarker) {
-      // need to give it a key
-      bottomMarker = React.cloneElement(renderMarker(bottomMarker), {
-        key: 'bottomMarker',
-      });
-    }
-
-    // add one big placeholder for the earlier steps
-    const result = [];
-    if (replace && firstPage && this.pageHeight) {
-      let reservedSpace = (
-        <div key="reserved" style={{ height: firstPage * this.pageHeight }} />
+    let bottomMarker;
+    if (onMore || lastIndex < (items.length - 1)) {
+      bottomMarker = (
+        <Waypoint
+          key="bottomMarker"
+          fireOnRapidScroll
+          onEnter={this.nextPage}
+          bottomOffsetX="-96px"
+          scrollableAncestor={scrollableAncestor}
+        />
       );
       if (renderMarker) {
-        reservedSpace = React.cloneElement(renderMarker(reservedSpace), {
-          key: 'reserved',
+        // need to give it a key
+        bottomMarker = React.cloneElement(renderMarker(bottomMarker), {
+          key: 'bottomMarker',
         });
       }
-      result.push(reservedSpace);
+    }
+
+    const result = [];
+
+    if (topMarker) {
+      result.push(topMarker);
     }
 
     items.slice(firstIndex, lastIndex + 1).forEach((item, index) => {
@@ -152,13 +155,12 @@ class InfiniteScroll extends PureComponent {
       if (show && show === index) {
         child = React.cloneElement(child, { key: 'show', ref: this.showRef });
       }
-      if (topMarker && index === topWaypointIndex) {
-        result.push(topMarker);
-      } else if (bottomMarker && index === bottomWaypointIndex) {
-        result.push(bottomMarker);
-      }
       result.push(child);
     });
+
+    if (bottomMarker) {
+      result.push(bottomMarker);
+    }
 
     return result;
   }
