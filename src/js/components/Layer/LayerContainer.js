@@ -60,6 +60,8 @@ class LayerContainer extends Component {
     const { position } = this.props;
     if (position !== 'hidden') {
       this.makeLayerVisible();
+      // once layer is open we set the focus in the hidden
+      // anchor so that you can start tabbing inside the layer
       if (this.anchorRef.current) {
         this.anchorRef.current.focus();
       }
@@ -109,12 +111,19 @@ class LayerContainer extends Component {
         responsive={responsive}
         ref={this.containerRef}
       >
+        {/*eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
+        <a
+          ref={this.anchorRef}
+          tabIndex="-1"
+          aria-hidden="true"
+          style={hiddenAnchor}
+        />
+        {/*eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
         {children}
       </StyledContainer>
     );
 
     if (modal) {
-      /* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */
       content = (
         <StyledLayer
           id={id}
@@ -125,12 +134,6 @@ class LayerContainer extends Component {
           tabIndex="-1"
           ref={this.layerRef}
         >
-          <a
-            ref={this.anchorRef}
-            tabIndex="-1"
-            aria-hidden="true"
-            style={hiddenAnchor}
-          />
           <StyledOverlay
             plain={plain}
             onMouseDown={onClickOutside}

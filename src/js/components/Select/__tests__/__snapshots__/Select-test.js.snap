@@ -950,7 +950,11 @@ exports[`Select complex options and children 4`] = `
   }
 }
 
+<<<<<<< HEAD
 .tNmko {
+=======
+.fvCzyJ {
+>>>>>>> Added comments to explain rationale behind keyboard changes.
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2598,7 +2602,11 @@ exports[`Select multiple values 4`] = `
   }
 }
 
+<<<<<<< HEAD
 .tNmko {
+=======
+.fvCzyJ {
+>>>>>>> Added comments to explain rationale behind keyboard changes.
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3377,7 +3385,11 @@ exports[`Select opens 4`] = `
   }
 }
 
+<<<<<<< HEAD
 .tNmko {
+=======
+.fvCzyJ {
+>>>>>>> Added comments to explain rationale behind keyboard changes.
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -4252,7 +4264,11 @@ exports[`Select search 3`] = `
   }
 }
 
+<<<<<<< HEAD
 .tNmko {
+=======
+.fvCzyJ {
+>>>>>>> Added comments to explain rationale behind keyboard changes.
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;

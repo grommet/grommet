@@ -59,6 +59,11 @@ exports[`Layer dark context 1`] = `
   class="c0"
   id="non-modal-test"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   This is a non-modal layer
 </div>
 `;
@@ -185,11 +190,6 @@ exports[`Layer full false 1`] = `
   id="full-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -197,6 +197,11 @@ exports[`Layer full false 1`] = `
     class="c2"
     id="full-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -313,11 +318,6 @@ exports[`Layer full horizontal 1`] = `
   id="full-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -325,6 +325,11 @@ exports[`Layer full horizontal 1`] = `
     class="c2"
     id="full-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -439,11 +444,6 @@ exports[`Layer full true 1`] = `
   id="full-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -451,6 +451,11 @@ exports[`Layer full true 1`] = `
     class="c2"
     id="full-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -567,11 +572,6 @@ exports[`Layer full vertical 1`] = `
   id="full-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -579,6 +579,11 @@ exports[`Layer full vertical 1`] = `
     class="c2"
     id="full-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -675,11 +680,6 @@ exports[`Layer hidden 1`] = `
   id="hidden-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -687,6 +687,11 @@ exports[`Layer hidden 1`] = `
     class="c2"
     id="hidden-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -700,11 +705,6 @@ exports[`Layer hidden 3`] = `
   id="hidden-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="StyledLayer__StyledOverlay-rmtehz-1 gVTfaV"
   />
@@ -712,6 +712,11 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledContainer-rmtehz-2 bwhceh"
     id="hidden-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -858,11 +863,6 @@ exports[`Layer margin large 1`] = `
   id="margin-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -870,6 +870,11 @@ exports[`Layer margin large 1`] = `
     class="c2"
     id="margin-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -985,11 +990,6 @@ exports[`Layer margin medium 1`] = `
   id="margin-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -997,6 +997,11 @@ exports[`Layer margin medium 1`] = `
     class="c2"
     id="margin-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -1112,11 +1117,6 @@ exports[`Layer margin none 1`] = `
   id="margin-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -1124,6 +1124,11 @@ exports[`Layer margin none 1`] = `
     class="c2"
     id="margin-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -1239,11 +1244,6 @@ exports[`Layer margin small 1`] = `
   id="margin-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -1251,6 +1251,11 @@ exports[`Layer margin small 1`] = `
     class="c2"
     id="margin-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -1366,11 +1371,6 @@ exports[`Layer margin xsmall 1`] = `
   id="margin-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -1378,6 +1378,11 @@ exports[`Layer margin xsmall 1`] = `
     class="c2"
     id="margin-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -1444,6 +1449,11 @@ exports[`Layer non-modal 1`] = `
   class="c0"
   id="non-modal-test"
 >
+  <a
+    aria-hidden="true"
+    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    tabindex="-1"
+  />
   This is a non-modal layer
 </div>
 `;
@@ -1554,11 +1564,6 @@ exports[`Layer plain 1`] = `
   id="plain-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -1566,6 +1571,11 @@ exports[`Layer plain 1`] = `
     class="c2"
     id="plain-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a plain layer
   </div>
 </div>
@@ -1681,11 +1691,6 @@ exports[`Layer position bottom 1`] = `
   id="position-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -1693,6 +1698,11 @@ exports[`Layer position bottom 1`] = `
     class="c2"
     id="position-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -1808,11 +1818,6 @@ exports[`Layer position center 1`] = `
   id="position-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -1820,6 +1825,11 @@ exports[`Layer position center 1`] = `
     class="c2"
     id="position-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -1935,11 +1945,6 @@ exports[`Layer position left 1`] = `
   id="position-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -1947,6 +1952,11 @@ exports[`Layer position left 1`] = `
     class="c2"
     id="position-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -2062,11 +2072,6 @@ exports[`Layer position right 1`] = `
   id="position-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -2074,6 +2079,11 @@ exports[`Layer position right 1`] = `
     class="c2"
     id="position-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>
@@ -2189,11 +2199,6 @@ exports[`Layer position top 1`] = `
   id="position-test"
   tabindex="-1"
 >
-  <a
-    aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
-    tabindex="-1"
-  />
   <div
     class="c1"
   />
@@ -2201,6 +2206,11 @@ exports[`Layer position top 1`] = `
     class="c2"
     id="position-test"
   >
+    <a
+      aria-hidden="true"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
     This is a layer
   </div>
 </div>

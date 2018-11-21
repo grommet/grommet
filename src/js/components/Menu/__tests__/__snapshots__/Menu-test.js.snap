@@ -757,7 +757,11 @@ exports[`Menu close by clicking outside 3`] = `
   }
 }
 
+<<<<<<< HEAD
 .tNmko {
+=======
+.fvCzyJ {
+>>>>>>> Added comments to explain rationale behind keyboard changes.
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2285,7 +2289,11 @@ exports[`Menu open and close on click 4`] = `
   }
 }
 
+<<<<<<< HEAD
 .tNmko {
+=======
+.fvCzyJ {
+>>>>>>> Added comments to explain rationale behind keyboard changes.
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;

@@ -14,6 +14,8 @@ import { Keyboard } from '../Keyboard';
 
 import { StyledDrop } from './StyledDrop';
 
+// using react synthetic event to be able to stop propagation that
+// would otherwise close the layer on ESC.
 const preventLayerClose = event => {
   const key = event.keyCode ? event.keyCode : event.which;
 
@@ -21,6 +23,7 @@ const preventLayerClose = event => {
     event.stopPropagation();
   }
 };
+
 export class DropContainer extends Component {
   static defaultProps = {
     align: {
