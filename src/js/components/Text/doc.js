@@ -52,3 +52,56 @@ is too long to all fit.`,
 
   return DocumentedText;
 };
+
+export const themeDoc = {
+  color: {
+    description: 'The text color used for Text.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
+  },
+  'global.edgeSize': {
+    description: 'The possible sizes for margin.',
+    type: 'object',
+    defaultValue: `{
+        none: '0px',
+        hair: '1px',
+        xxsmall: '3px',
+        xsmall: '6px',
+        small: '12px',
+        medium: '24px',
+        large: '48px',
+        xlarge: '96px',
+        responsiveBreakpoint: 'small',
+    }`,
+  },
+  text: {
+    description: `The possible sizes of the text in terms of its font-size and line-height.`,
+    type: 'object',
+    defaultValue: `{
+      xsmall: {
+        size: '12px',
+        height: '18px',
+       },
+      small: {
+        size: '14px',
+        height: '20px',
+       },
+      medium: {          
+        size: '18px',
+        height: '24px',
+      },
+      large: {
+        size: '22px',
+        height: '28px',
+      },
+      xlarge: {
+        size: '26px',
+        height: '32px',
+      },
+      xxlarge: {
+        size: '34px',
+        height: '40px',
+      },
+    }`,
+  },
+};
