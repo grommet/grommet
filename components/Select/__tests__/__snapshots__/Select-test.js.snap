@@ -950,7 +950,7 @@ exports[`Select complex options and children 4`] = `
   }
 }
 
-.fvCzyJ {
+.tNmko {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -976,7 +976,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .fvCzyJ {
+  .tNmko {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2598,7 +2598,7 @@ exports[`Select multiple values 4`] = `
   }
 }
 
-.fvCzyJ {
+.tNmko {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2624,7 +2624,7 @@ exports[`Select multiple values 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .fvCzyJ {
+  .tNmko {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3377,7 +3377,7 @@ exports[`Select opens 4`] = `
   }
 }
 
-.fvCzyJ {
+.tNmko {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3403,7 +3403,7 @@ exports[`Select opens 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .fvCzyJ {
+  .tNmko {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4252,7 +4252,7 @@ exports[`Select search 3`] = `
   }
 }
 
-.fvCzyJ {
+.tNmko {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -4278,7 +4278,7 @@ exports[`Select search 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .fvCzyJ {
+  .tNmko {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

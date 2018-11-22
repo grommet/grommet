@@ -9,12 +9,14 @@ var _colors = require("./colors");
 
 var _mixins = require("./mixins");
 
-var baseStyle = (0, _styledComponents.css)(["font-family:", ";font-size:", ";line-height:", ";", " box-sizing:border-box;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;"], function (props) {
+var baseStyle = (0, _styledComponents.css)(["font-family:", ";font-size:", ";line-height:", ";font-weight:", ";", " box-sizing:border-box;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;"], function (props) {
   return props.theme.global.font.family;
 }, function (props) {
   return props.theme.global.font.size;
 }, function (props) {
   return props.theme.global.font.height;
+}, function (props) {
+  return props.theme.global.font.weight;
 }, function (props) {
   return !props.plain && props.theme.global.colors.background && (0, _styledComponents.css)(["background:", ";color:", ";"], (0, _colors.normalizeColor)('background', props.theme, true), (0, _colors.normalizeColor)('text', props.theme, true));
 });
