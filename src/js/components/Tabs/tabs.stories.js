@@ -11,29 +11,40 @@ import {
   TreeOption,
 } from 'grommet-icons';
 
-import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
+import {
+  Box,
+  Heading,
+  Grommet,
+  FormField,
+  Tab,
+  Tabs,
+  Text,
+  TextInput,
+} from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
 const UncontrolledTabs = ({ plain }) => (
-  <Grommet theme={grommet}>
-    <Tabs>
-      <Tab plain={plain} title="Tab 1">
-        <Box margin="small" pad="large" align="center" background="accent-1">
-          <Attraction size="xlarge" />
-        </Box>
-      </Tab>
-      <Tab plain={plain} title="Tab 2">
-        <Box margin="small" pad="large" align="center" background="accent-2">
-          <TreeOption size="xlarge" />
-        </Box>
-      </Tab>
-      <Tab plain={plain} title="Tab 3">
-        <Box margin="small" pad="large" align="center" background="accent-3">
-          <Car size="xlarge" />
-        </Box>
-      </Tab>
-    </Tabs>
+  <Grommet theme={grommet} full>
+    <Box fill>
+      <Tabs flex>
+        <Tab plain={plain} title="Tab 1">
+          <Box fill pad="large" align="center" background="accent-1">
+            <Attraction size="xlarge" />
+          </Box>
+        </Tab>
+        <Tab plain={plain} title="Tab 2">
+          <Box fill pad="large" align="center" background="accent-2">
+            <TreeOption size="xlarge" />
+          </Box>
+        </Tab>
+        <Tab plain={plain} title="Tab 3">
+          <Box fill pad="large" align="center" background="accent-3">
+            <Car size="xlarge" />
+          </Box>
+        </Tab>
+      </Tabs>
+    </Box>
   </Grommet>
 );
 
@@ -417,10 +428,55 @@ const CustomTabs = () => (
   </Grommet>
 );
 
+const ScrollableTabs = () => (
+  <Grommet theme={grommet} full>
+    <Box fill>
+      <Tabs flex>
+        <Tab title="Tab 1">
+          <Box
+            fill
+            overflow="auto"
+            pad="xlarge"
+            align="center"
+            background="accent-1"
+          >
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+            <Heading>hello!</Heading>
+          </Box>
+        </Tab>
+        <Tab title="Tab 2">
+          <Box margin="small" pad="large" align="center" background="accent-2">
+            <TreeOption size="xlarge" />
+          </Box>
+        </Tab>
+      </Tabs>
+    </Box>
+  </Grommet>
+);
+
 storiesOf('Tabs', module)
   .add('Uncontrolled Tabs', () => <UncontrolledTabs />)
   .add('Controlled Tabs', () => <ControlledTabs />)
   .add('Responsive Tabs', () => <ResponsiveTabs />)
   .add('Rich Tabs', () => <RichTabs />)
   .add('CustomTheme', () => <CustomTabs />)
+  .add('Scrollable Tabs', () => <ScrollableTabs />)
   .add('Plain', () => <UncontrolledTabs plain />);
