@@ -131,14 +131,17 @@ boolean
 **disabled**
 
 Whether the entire select or individual options should be disabled.
-        When an array is provided, it indicates the indexes into 'options' of
-        the disabled options. When a function is provided, it is called with
-        each option to determine if the option should be disabled.
+        An array of numbers indicates the indexes into 'options' of the
+        disabled options. An array of strings or objects work the same way
+        as the 'value' to indicate which options are disabled.
 
 ```
 boolean
-[number]
-function
+[
+  number
+  string
+  object
+]
 ```
 
 **disabledKey**

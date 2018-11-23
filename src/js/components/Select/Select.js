@@ -66,8 +66,10 @@ class Select extends Component {
       messages,
       onChange,
       onClose,
+      options,
       placeholder,
       plain,
+      selected,
       size,
       theme,
       value,
@@ -89,7 +91,7 @@ class Select extends Component {
 
     const SelectIcon = theme.select.icons.down;
     let selectValue;
-    let inputValue;
+    let inputValue = '';
     if (valueLabel) {
       selectValue = valueLabel;
     } else if (Array.isArray(value)) {
@@ -122,6 +124,16 @@ class Select extends Component {
       }
     } else if (React.isValidElement(value)) {
       selectValue = value; // deprecated in favor of valueLabel
+    } else if (selected !== undefined) {
+      if (Array.isArray(selected)) {
+        if (selected.length > 1) {
+          inputValue = messages.multiple;
+        } else if (selected.length === 1) {
+          inputValue = options[selected[0]];
+        }
+      } else {
+        inputValue = options[selected];
+      }
     } else {
       inputValue = value;
     }

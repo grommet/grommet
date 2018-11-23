@@ -544,7 +544,7 @@ class ManyOptions extends Component {
             multiple
             closeOnChange={false}
             placeholder="select an option..."
-            value={selected}
+            selected={selected}
             options={options}
             onClose={() =>
               this.setState({
@@ -562,19 +562,15 @@ class ManyOptions extends Component {
                 }),
               })
             }
-            onChange={({ option }) => {
-              const newSelected = [...selected];
-              const selectedIndex = newSelected.indexOf(option);
-              if (selectedIndex >= 0) {
-                newSelected.splice(selectedIndex, 1);
-              } else {
-                newSelected.push(option);
-              }
-              this.setState({ selected: newSelected });
+            onChange={({ selected: nextSelected }) => {
+              this.setState({ selected: nextSelected });
             }}
           >
-            {option => (
-              <Option value={option} selected={selected.indexOf(option) >= 0} />
+            {(option, index) => (
+              <Option
+                value={option}
+                selected={selected.indexOf(index) !== -1}
+              />
             )}
           </Select>
         </Box>

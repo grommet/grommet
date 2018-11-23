@@ -243,31 +243,22 @@ class SelectContainer extends Component {
   };
 
   isDisabled = index => {
-    const { disabled, disabledKey, options, valueKey } = this.props;
+    const { disabled, disabledKey, options } = this.props;
     const option = options[index];
     let result;
-    if (!disabled) {
-      result = false;
-    } else if (disabledKey) {
+    if (disabledKey) {
       if (typeof disabledKey === 'function') {
         result = disabledKey(option, index);
       } else {
         result = option[disabledKey];
       }
-    } else if (typeof disabled === 'function') {
-      result = disabled(option);
-    } else {
-      let value;
-      if (valueKey) {
-        if (typeof valueKey === 'function') {
-          value = valueKey(option);
-        } else {
-          value = option[valueKey];
-        }
+    } else if (Array.isArray(disabled)) {
+      if (typeof disabled[0] === 'number') {
+        result = disabled.indexOf(index) !== -1;
       } else {
-        value = option;
+        const optionValue = this.optionValue(index);
+        result = disabled.indexOf(optionValue) !== -1;
       }
-      result = disabled.indexOf(value) !== -1;
     }
     return result;
   };
@@ -365,7 +356,9 @@ class SelectContainer extends Component {
                     selected={isSelected}
                     option={option}
                     onClick={
-                      !isDisabled && (() => this.selectOption(option, index))
+                      !isDisabled
+                        ? () => this.selectOption(option, index)
+                        : undefined
                     }
                   >
                     {children ? (

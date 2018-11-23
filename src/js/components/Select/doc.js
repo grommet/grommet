@@ -26,14 +26,19 @@ export const doc = Select => {
       .defaultValue(true),
     disabled: PropTypes.oneOfType([
       PropTypes.bool,
-      PropTypes.arrayOf(PropTypes.number),
-      PropTypes.func,
+      PropTypes.arrayOf(
+        PropTypes.oneOfType([
+          PropTypes.number,
+          PropTypes.string,
+          PropTypes.object,
+        ]),
+      ),
     ])
       .description(
         `Whether the entire select or individual options should be disabled.
-        When an array is provided, it indicates the indexes into 'options' of
-        the disabled options. When a function is provided, it is called with
-        each option to determine if the option should be disabled.`,
+        An array of numbers indicates the indexes into 'options' of the
+        disabled options. An array of strings or objects work the same way
+        as the 'value' to indicate which options are disabled.`,
       )
       .defaultValue(false),
     disabledKey: PropTypes.oneOfType([
