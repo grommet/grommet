@@ -14,3 +14,20 @@ export var doc = function doc(Text) {
   });
   return DocumentedText;
 };
+export var themeDoc = {
+  color: {
+    description: 'The text color used for Text.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: '#f8f8f8', light: '#444444' }"
+  },
+  'global.edgeSize': {
+    description: 'The possible sizes for margin.',
+    type: 'object',
+    defaultValue: "{\n        none: '0px',\n        hair: '1px',\n        xxsmall: '3px',\n        xsmall: '6px',\n        small: '12px',\n        medium: '24px',\n        large: '48px',\n        xlarge: '96px',\n        responsiveBreakpoint: 'small',\n    }"
+  },
+  text: {
+    description: "The possible sizes of the text in terms of its font-size and line-height.",
+    type: 'object',
+    defaultValue: "{\n      xsmall: {\n        size: '12px',\n        height: '18px',\n       },\n      small: {\n        size: '14px',\n        height: '20px',\n       },\n      medium: {          \n        size: '18px',\n        height: '24px',\n      },\n      large: {\n        size: '22px',\n        height: '28px',\n      },\n      xlarge: {\n        size: '26px',\n        height: '32px',\n      },\n      xxlarge: {\n        size: '34px',\n        height: '40px',\n      },\n    }"
+  }
+};
