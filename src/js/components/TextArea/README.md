@@ -77,3 +77,79 @@ What text to put in the textarea.
 string
 ```
   
+## Theme
+  
+**global.colors.placeholder**
+
+The text color used for Text. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: '#f8f8f8', light: '#444444' }
+```
+
+**global.control.border.width**
+
+undefined Expects `undefined`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.input.weight**
+
+undefined Expects `undefined`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.spacing**
+
+undefined Expects `undefined`.
+
+Defaults to
+
+```
+undefined
+```
+
+**textArea**
+
+The possible sizes of the text in terms of its font-size and line-height. Expects `object`.
+
+Defaults to
+
+```
+{
+      xsmall: {
+        size: '12px',
+        height: '18px',
+       },
+      small: {
+        size: '14px',
+        height: '20px',
+       },
+      medium: {          
+        size: '18px',
+        height: '24px',
+      },
+      large: {
+        size: '22px',
+        height: '28px',
+      },
+      xlarge: {
+        size: '26px',
+        height: '32px',
+      },
+      xxlarge: {
+        size: '34px',
+        height: '40px',
+      },
+    }
+```
