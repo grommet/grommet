@@ -35,3 +35,44 @@ Only use this when the containing context provides sufficient affordance.`,
 
   return DocumentedTextArea;
 };
+
+export const themeDoc = {
+  'global.colors.placeholder': {
+    description: 'The text color used for Text.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
+  },
+  'global.control.border.width': {},
+  'global.input.weight': {},
+  'global.spacing': {},
+  textArea: {
+    description: `The possible sizes of the text in terms of its font-size and line-height.`,
+    type: 'object',
+    defaultValue: `{
+      xsmall: {
+        size: '12px',
+        height: '18px',
+       },
+      small: {
+        size: '14px',
+        height: '20px',
+       },
+      medium: {          
+        size: '18px',
+        height: '24px',
+      },
+      large: {
+        size: '22px',
+        height: '28px',
+      },
+      xlarge: {
+        size: '26px',
+        height: '32px',
+      },
+      xxlarge: {
+        size: '34px',
+        height: '40px',
+      },
+    }`,
+  },
+};
