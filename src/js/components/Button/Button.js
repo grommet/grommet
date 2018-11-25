@@ -57,6 +57,7 @@ class Button extends Component {
       reverse,
       theme,
       type,
+      tag,
       ...rest
     } = this.props;
 
@@ -70,13 +71,20 @@ class Button extends Component {
           ],
       });
     }
+
+    let domTag = tag;
+    // Only set domTag to a if user did not provide a tag and provided an href
+    if (!domTag && href) {
+      domTag = 'a';
+    }
+
     const first = reverse ? label : buttonIcon;
     const second = reverse ? buttonIcon : label;
 
     return (
       <StyledButton
         {...rest}
-        as={href ? 'a' : undefined}
+        as={domTag}
         ref={forwardRef}
         aria-label={a11yTitle}
         colorValue={color}

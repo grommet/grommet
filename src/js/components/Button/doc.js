@@ -74,6 +74,7 @@ end of the anchor.`,
         'The type of button. Set the type to submit for the default button on forms.',
       )
       .defaultValue('button'),
+    tag: PropTypes.string.description(`The DOM tag to use for the element.`),
   };
 
   return DocumentedButton;
