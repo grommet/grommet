@@ -31,7 +31,7 @@ const IconLabelButton = () => (
 
 const PlainButton = props => (
   <Grommet theme={grommet}>
-    <Button hoverIndicator onClick={() => {}} {...props}>
+    <Button hoverIndicator="light-1" onClick={() => {}} {...props}>
       <Box pad="small" direction="row" align="center" gap="small">
         <Add />
         <Text>Add</Text>
@@ -48,7 +48,7 @@ const AnchorButton = () => (
 
 const RouteButton = () => (
   <Grommet theme={grommet}>
-    <RoutedButton hoverIndicator="light-5" label="Go" path="/" />
+    <RoutedButton label="Go" path="/" />
   </Grommet>
 );
 
