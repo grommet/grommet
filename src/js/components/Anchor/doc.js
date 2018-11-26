@@ -53,10 +53,7 @@ or just use children.`,
 this component. But, it can be adjusted directly via this size property, typically
 when it is not contained in a 'Heading', 'Paragraph', or 'Text'.`,
     ),
-    as: PropTypes.string.description(
-      `The DOM tag to use for the element. This the polymorphic as property of
-      Styled Components.`,
-    ),
+    as: PropTypes.string.description(`The DOM tag to use for the element.`),
   };
 
   return DocumentedAnchor;

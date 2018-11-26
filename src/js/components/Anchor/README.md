@@ -179,8 +179,7 @@ string
 
 **as**
 
-The DOM tag to use for the element. This the polymorphic as property of
-      Styled Components.
+The DOM tag to use for the element.
 
 ```
 string
