@@ -19,7 +19,7 @@ export interface ButtonProps {
   primary?: boolean;
   reverse?: boolean;
   type?: "button" | "reset" | "submit";
-  tag?: string;
+  as?: string;
 }
 
 declare const Button: React.ComponentType<ButtonProps>;

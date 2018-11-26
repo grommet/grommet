@@ -232,7 +232,7 @@ reset
 submit
 ```
 
-**tag**
+**as**
 
 The DOM tag to use for the element.
 

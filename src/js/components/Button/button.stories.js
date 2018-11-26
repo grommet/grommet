@@ -54,7 +54,7 @@ const RouteButton = () => (
 
 const CustomTagButton = () => (
   <Grommet theme={grommet}>
-    <Button tag="span" label="Go" path="/" />
+    <Button as="span" label="Go" path="/" />
   </Grommet>
 );
 

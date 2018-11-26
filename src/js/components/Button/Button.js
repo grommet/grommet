@@ -57,7 +57,7 @@ class Button extends Component {
       reverse,
       theme,
       type,
-      tag,
+      as,
       ...rest
     } = this.props;
 
@@ -72,7 +72,7 @@ class Button extends Component {
       });
     }
 
-    const domTag = !tag && href ? 'a' : tag;
+    const domTag = !as && href ? 'a' : as;
     const first = reverse ? label : buttonIcon;
     const second = reverse ? buttonIcon : label;
 

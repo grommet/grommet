@@ -224,7 +224,7 @@ test('Button is clickable', () => {
 test('renders tag', () => {
   const component = renderer.create(
     <Grommet>
-      <Button tag="span" />
+      <Button as="span" />
     </Grommet>,
   );
   const tree = component.toJSON();
