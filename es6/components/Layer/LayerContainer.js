@@ -8,14 +8,18 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
+import React, { createRef, Component } from 'react';
+import styled from 'styled-components';
 import { ThemeContext as IconThemeContext } from "grommet-icons/es6/contexts/ThemeContext";
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { withTheme } from '../hocs';
 import { backgroundIsDark } from '../../utils';
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
+var HiddenAnchor = styled.a.withConfig({
+  displayName: "LayerContainer__HiddenAnchor",
+  componentId: "sc-1srj14c-0"
+})(["width:0;height:0;overflow:hidden;position:absolute;"]);
 
 var LayerContainer =
 /*#__PURE__*/
@@ -31,6 +35,8 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "anchorRef", createRef());
+
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "containerRef", React.createRef());
@@ -38,8 +44,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "layerRef", React.createRef());
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "makeLayerVisible", function () {
-      /* eslint-disable-next-line react/no-find-dom-node */
-      var node = findDOMNode(_this.layerRef.current || _this.containerRef.current);
+      var node = _this.layerRef.current || _this.containerRef.current;
 
       if (node && node.scrollIntoView) {
         node.scrollIntoView();
@@ -83,7 +88,12 @@ function (_Component) {
     var position = this.props.position;
 
     if (position !== 'hidden') {
-      this.makeLayerVisible();
+      this.makeLayerVisible(); // once layer is open we set the focus in the hidden
+      // anchor so that you can start tabbing inside the layer
+
+      if (this.anchorRef.current) {
+        this.anchorRef.current.focus();
+      }
     }
   };
 
@@ -118,6 +128,10 @@ function (_Component) {
       plain: plain,
       responsive: responsive,
       ref: this.containerRef
+    }), React.createElement(HiddenAnchor, {
+      ref: this.anchorRef,
+      tabIndex: "-1",
+      "aria-hidden": "true"
     }), children);
 
     if (modal) {
@@ -135,11 +149,11 @@ function (_Component) {
         responsive: responsive,
         theme: theme
       }), content);
+      /* eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */
     }
 
     if (onEsc) {
       content = React.createElement(Keyboard, {
-        target: "document",
         onEsc: onEsc
       }, content);
     }

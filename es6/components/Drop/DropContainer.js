@@ -15,7 +15,17 @@ import { FocusedContainer } from '../FocusedContainer';
 import { backgroundIsDark, findScrollParents, findVisibleParent, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
-import { StyledDrop } from './StyledDrop';
+import { StyledDrop } from './StyledDrop'; // using react synthetic event to be able to stop propagation that
+// would otherwise close the layer on ESC.
+
+var preventLayerClose = function preventLayerClose(event) {
+  var key = event.keyCode ? event.keyCode : event.which;
+
+  if (key === 27) {
+    event.stopPropagation();
+  }
+};
+
 export var DropContainer =
 /*#__PURE__*/
 function (_Component) {
@@ -216,6 +226,15 @@ function (_Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onEsc", function (event) {
+      var onEsc = _this.props.onEsc;
+      event.stopPropagation();
+
+      if (onEsc) {
+        onEsc(event);
+      }
+    });
+
     return _this;
   }
 
@@ -304,8 +323,10 @@ function (_Component) {
       }, content);
     }
 
-    return React.createElement(FocusedContainer, null, React.createElement(Keyboard, {
-      onEsc: onEsc,
+    return React.createElement(FocusedContainer, {
+      onKeyDown: onEsc && preventLayerClose
+    }, React.createElement(Keyboard, {
+      onEsc: onEsc && this.onEsc,
       onKeyDown: onKeyDown,
       target: "document"
     }, content));

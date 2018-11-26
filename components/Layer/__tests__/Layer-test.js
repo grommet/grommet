@@ -20,6 +20,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
@@ -58,7 +60,10 @@ function (_Component) {
   _proto.render = function render() {
     var _this2 = this;
 
-    var children = this.props.children;
+    var _this$props = this.props,
+        children = _this$props.children,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["children"]);
+
     var showLayer = this.state.showLayer;
     var layer;
 
@@ -69,9 +74,7 @@ function (_Component) {
             showLayer: false
           });
         }
-      }, _react.default.createElement("div", {
-        "data-testid": "test-layer-node"
-      }, "This is a layer", _react.default.createElement("input", {
+      }, _react.default.createElement("div", rest, "This is a layer", _react.default.createElement("input", {
         "data-testid": "test-input"
       })));
     }
@@ -154,31 +157,27 @@ describe('Layer', function () {
     (0, _portal.expectPortal)('non-modal-test').toMatchSnapshot();
   });
   test('invokes onEsc', function () {
-    var map = {};
-    document.addEventListener = jest.fn(function (event, cb) {
-      map[event] = cb;
-    });
     var onEsc = jest.fn();
     (0, _reactTestingLibrary.render)(_react.default.createElement(_.Grommet, null, _react.default.createElement(_LayerContainer.LayerContainer, {
       onEsc: onEsc
     }, _react.default.createElement("input", {
       "data-testid": "test-input"
     }))));
-    map.keydown({
+    var inputNode = (0, _domTestingLibrary.getByTestId)(document, 'test-input');
+
+    _reactTestingLibrary.fireEvent.keyDown(inputNode, {
       key: 'Esc',
       keyCode: 27,
       which: 27
     });
+
     expect(onEsc).toBeCalled();
   });
   test('is accessible', function () {
-    var map = {};
-    document.addEventListener = jest.fn(function (event, cb) {
-      map[event] = cb;
-    });
     /* eslint-disable jsx-a11y/tabindex-no-positive */
-
-    (0, _reactTestingLibrary.render)(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeLayer, null, _react.default.createElement("div", {
+    (0, _reactTestingLibrary.render)(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeLayer, {
+      "data-testid": "test-layer-node"
+    }, _react.default.createElement("div", {
       "data-testid": "test-body-node"
     }, _react.default.createElement("input", null), _react.default.createElement("input", {
       tabIndex: "10"
@@ -187,13 +186,16 @@ describe('Layer', function () {
 
     var bodyNode = (0, _domTestingLibrary.getByTestId)(document, 'test-body-node');
     var layerNode = (0, _domTestingLibrary.getByTestId)(document, 'test-layer-node');
+    var inputNode = (0, _domTestingLibrary.getByTestId)(document, 'test-input');
     expect(bodyNode).toMatchSnapshot();
     expect(layerNode).toMatchSnapshot();
-    map.keydown({
+
+    _reactTestingLibrary.fireEvent.keyDown(inputNode, {
       key: 'Esc',
       keyCode: 27,
       which: 27
     });
+
     bodyNode = (0, _domTestingLibrary.getByTestId)(document, 'test-body-node');
     expect(bodyNode).toMatchSnapshot();
     expect((0, _domTestingLibrary.queryByTestId)(document, 'test-layer-node')).toBeNull();

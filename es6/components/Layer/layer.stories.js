@@ -120,7 +120,9 @@ function (_Component) {
     }, React.createElement(Heading, {
       level: 3,
       margin: "none"
-    }, "Confirm 2"), React.createElement(Box, {
+    }, "Confirm 2"), React.createElement(Select, {
+      options: ['one', 'two', 'three']
+    }), React.createElement(Box, {
       tag: "footer",
       gap: "small",
       direction: "row",
@@ -307,7 +309,8 @@ function (_Component3) {
       position: "bottom",
       full: "horizontal",
       modal: false,
-      responsive: false
+      responsive: false,
+      onEsc: this.onClose
     }, React.createElement(Box, {
       align: "start",
       pad: {

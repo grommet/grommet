@@ -1,3 +1,5 @@
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
@@ -7,7 +9,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import 'jest-styled-components';
-import { cleanup, render } from 'react-testing-library';
+import { cleanup, render, fireEvent } from 'react-testing-library';
 import { getByTestId, queryByTestId } from 'dom-testing-library';
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet, Box, Layer } from '../..';
@@ -45,7 +47,10 @@ function (_Component) {
   _proto.render = function render() {
     var _this2 = this;
 
-    var children = this.props.children;
+    var _this$props = this.props,
+        children = _this$props.children,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["children"]);
+
     var showLayer = this.state.showLayer;
     var layer;
 
@@ -56,9 +61,7 @@ function (_Component) {
             showLayer: false
           });
         }
-      }, React.createElement("div", {
-        "data-testid": "test-layer-node"
-      }, "This is a layer", React.createElement("input", {
+      }, React.createElement("div", rest, "This is a layer", React.createElement("input", {
         "data-testid": "test-input"
       })));
     }
@@ -141,17 +144,14 @@ describe('Layer', function () {
     expectPortal('non-modal-test').toMatchSnapshot();
   });
   test('invokes onEsc', function () {
-    var map = {};
-    document.addEventListener = jest.fn(function (event, cb) {
-      map[event] = cb;
-    });
     var onEsc = jest.fn();
     render(React.createElement(Grommet, null, React.createElement(LayerContainer, {
       onEsc: onEsc
     }, React.createElement("input", {
       "data-testid": "test-input"
     }))));
-    map.keydown({
+    var inputNode = getByTestId(document, 'test-input');
+    fireEvent.keyDown(inputNode, {
       key: 'Esc',
       keyCode: 27,
       which: 27
@@ -159,13 +159,10 @@ describe('Layer', function () {
     expect(onEsc).toBeCalled();
   });
   test('is accessible', function () {
-    var map = {};
-    document.addEventListener = jest.fn(function (event, cb) {
-      map[event] = cb;
-    });
     /* eslint-disable jsx-a11y/tabindex-no-positive */
-
-    render(React.createElement(Grommet, null, React.createElement(FakeLayer, null, React.createElement("div", {
+    render(React.createElement(Grommet, null, React.createElement(FakeLayer, {
+      "data-testid": "test-layer-node"
+    }, React.createElement("div", {
       "data-testid": "test-body-node"
     }, React.createElement("input", null), React.createElement("input", {
       tabIndex: "10"
@@ -174,9 +171,10 @@ describe('Layer', function () {
 
     var bodyNode = getByTestId(document, 'test-body-node');
     var layerNode = getByTestId(document, 'test-layer-node');
+    var inputNode = getByTestId(document, 'test-input');
     expect(bodyNode).toMatchSnapshot();
     expect(layerNode).toMatchSnapshot();
-    map.keydown({
+    fireEvent.keyDown(inputNode, {
       key: 'Esc',
       keyCode: 27,
       which: 27

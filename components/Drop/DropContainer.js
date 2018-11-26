@@ -31,6 +31,16 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+// using react synthetic event to be able to stop propagation that
+// would otherwise close the layer on ESC.
+var preventLayerClose = function preventLayerClose(event) {
+  var key = event.keyCode ? event.keyCode : event.which;
+
+  if (key === 27) {
+    event.stopPropagation();
+  }
+};
+
 var DropContainer =
 /*#__PURE__*/
 function (_Component) {
@@ -231,6 +241,15 @@ function (_Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onEsc", function (event) {
+      var onEsc = _this.props.onEsc;
+      event.stopPropagation();
+
+      if (onEsc) {
+        onEsc(event);
+      }
+    });
+
     return _this;
   }
 
@@ -320,8 +339,10 @@ function (_Component) {
       }, content);
     }
 
-    return _react.default.createElement(_FocusedContainer.FocusedContainer, null, _react.default.createElement(_Keyboard.Keyboard, {
-      onEsc: onEsc,
+    return _react.default.createElement(_FocusedContainer.FocusedContainer, {
+      onKeyDown: onEsc && preventLayerClose
+    }, _react.default.createElement(_Keyboard.Keyboard, {
+      onEsc: onEsc && this.onEsc,
       onKeyDown: onKeyDown,
       target: "document"
     }, content));

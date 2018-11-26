@@ -124,7 +124,9 @@ function (_Component) {
     }, _react.default.createElement(_grommet.Heading, {
       level: 3,
       margin: "none"
-    }, "Confirm 2"), _react.default.createElement(_grommet.Box, {
+    }, "Confirm 2"), _react.default.createElement(_grommet.Select, {
+      options: ['one', 'two', 'three']
+    }), _react.default.createElement(_grommet.Box, {
       tag: "footer",
       gap: "small",
       direction: "row",
@@ -311,7 +313,8 @@ function (_Component3) {
       position: "bottom",
       full: "horizontal",
       modal: false,
-      responsive: false
+      responsive: false,
+      onEsc: this.onClose
     }, _react.default.createElement(_grommet.Box, {
       align: "start",
       pad: {

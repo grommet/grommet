@@ -104,8 +104,6 @@ function (_Component) {
   };
 
   _proto.render = function render() {
-    var _this2 = this;
-
     var _this$props2 = this.props,
         disabled = _this$props2.disabled,
         dropAlign = _this$props2.dropAlign,
@@ -129,16 +127,7 @@ function (_Component) {
         align: dropAlign,
         target: dropTarget || (forwardRef || this.buttonRef).current,
         onClickOutside: this.onDropClose,
-        onEsc: function onEsc(event) {
-          // prevents layer to close on esc
-          event.stopPropagation();
-
-          if (event.nativeEvent) {
-            event.nativeEvent.stopImmediatePropagation();
-          }
-
-          _this2.onDropClose();
-        }
+        onEsc: this.onDropClose
       }, dropContent);
     }
 

@@ -29,7 +29,10 @@ function (_Component) {
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onEsc", function (event) {
-      event.nativeEvent.stopImmediatePropagation(); // so Layer doesn't close
+      // we have to stop both synthetic events and native events
+      // drop and layer should not close by pressing esc on this input
+      event.stopPropagation();
+      event.nativeEvent.stopImmediatePropagation();
     });
 
     return _this;
