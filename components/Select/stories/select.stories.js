@@ -96,7 +96,8 @@ function (_Component) {
     }, _react.default.createElement(_grommet.Box, {
       fill: true,
       align: "center",
-      justify: "center"
+      justify: "start",
+      pad: "large"
     }, _react.default.createElement(_grommet.Select, {
       id: "select",
       name: "select",
@@ -123,10 +124,17 @@ _defineProperty(SimpleSelect, "defaultProps", {
   theme: undefined
 });
 
-var DEFAULT_OPTIONS = [];
+var defaultOptions = [];
+var objectOptions = [];
 
 for (var i = 1; i <= 200; i += 1) {
-  DEFAULT_OPTIONS.push("option " + i);
+  defaultOptions.push("option " + i);
+  objectOptions.push({
+    lab: "option " + i,
+    val: i,
+    dis: i % 5 === 0,
+    sel: i % 13 === 0
+  });
 }
 
 var SearchSelect =
@@ -144,7 +152,7 @@ function (_Component2) {
     _this3 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "state", {
-      options: DEFAULT_OPTIONS,
+      options: defaultOptions,
       value: ''
     });
 
@@ -165,7 +173,8 @@ function (_Component2) {
     }, _react.default.createElement(_grommet.Box, {
       fill: true,
       align: "center",
-      justify: "center"
+      justify: "start",
+      pad: "large"
     }, _react.default.createElement(_grommet.Select, {
       size: "medium",
       placeholder: "Select",
@@ -179,14 +188,14 @@ function (_Component2) {
       },
       onClose: function onClose() {
         return _this4.setState({
-          options: DEFAULT_OPTIONS
+          options: defaultOptions
         });
       },
       onSearch: function onSearch(text) {
         var exp = new RegExp(text, 'i');
 
         _this4.setState({
-          options: DEFAULT_OPTIONS.filter(function (o) {
+          options: defaultOptions.filter(function (o) {
             return exp.test(o);
           })
         });
@@ -197,14 +206,12 @@ function (_Component2) {
   return SearchSelect;
 }(_react.Component);
 
-var allSeasons = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10'];
-
-var SeasonsSelect =
+var SimpleMultiSelect =
 /*#__PURE__*/
 function (_Component3) {
-  _inheritsLoose(SeasonsSelect, _Component3);
+  _inheritsLoose(SimpleMultiSelect, _Component3);
 
-  function SeasonsSelect() {
+  function SimpleMultiSelect() {
     var _this5;
 
     for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
@@ -214,20 +221,165 @@ function (_Component3) {
     _this5 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "state", {
+      options: defaultOptions,
+      value: ''
+    });
+
+    return _this5;
+  }
+
+  var _proto3 = SimpleMultiSelect.prototype;
+
+  _proto3.render = function render() {
+    var _this6 = this;
+
+    var _this$state3 = this.state,
+        options = _this$state3.options,
+        value = _this$state3.value;
+    return _react.default.createElement(_grommet.Grommet, {
+      full: true,
+      theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, _react.default.createElement(_grommet.Select, {
+      size: "medium",
+      placeholder: "Select",
+      multiple: true,
+      value: value,
+      options: options,
+      onChange: function onChange(_ref3) {
+        var nextValue = _ref3.value;
+        return _this6.setState({
+          value: nextValue
+        });
+      },
+      onClose: function onClose() {
+        return _this6.setState({
+          options: defaultOptions
+        });
+      },
+      onSearch: function onSearch(text) {
+        var exp = new RegExp(text, 'i');
+
+        _this6.setState({
+          options: defaultOptions.filter(function (o) {
+            return exp.test(o);
+          })
+        });
+      }
+    })));
+  };
+
+  return SimpleMultiSelect;
+}(_react.Component);
+
+var ObjectMultiSelect =
+/*#__PURE__*/
+function (_Component4) {
+  _inheritsLoose(ObjectMultiSelect, _Component4);
+
+  function ObjectMultiSelect() {
+    var _this7;
+
+    for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+      args[_key4] = arguments[_key4];
+    }
+
+    _this7 = _Component4.call.apply(_Component4, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this7)), "state", {
+      options: objectOptions,
+      value: ''
+    });
+
+    return _this7;
+  }
+
+  var _proto4 = ObjectMultiSelect.prototype;
+
+  _proto4.render = function render() {
+    var _this8 = this;
+
+    var _this$state4 = this.state,
+        options = _this$state4.options,
+        value = _this$state4.value;
+    return _react.default.createElement(_grommet.Grommet, {
+      full: true,
+      theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, _react.default.createElement(_grommet.Select, {
+      size: "medium",
+      placeholder: "Select",
+      multiple: true,
+      disabledKey: "dis",
+      labelKey: "lab",
+      valueKey: "val",
+      value: value,
+      options: options,
+      onChange: function onChange(_ref4) {
+        var nextValue = _ref4.value;
+        return _this8.setState({
+          value: nextValue
+        });
+      },
+      onClose: function onClose() {
+        return _this8.setState({
+          options: objectOptions
+        });
+      },
+      onSearch: function onSearch(text) {
+        var exp = new RegExp(text, 'i');
+
+        _this8.setState({
+          options: objectOptions.filter(function (o) {
+            return exp.test(o.val);
+          })
+        });
+      }
+    })));
+  };
+
+  return ObjectMultiSelect;
+}(_react.Component);
+
+var allSeasons = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10'];
+
+var SeasonsSelect =
+/*#__PURE__*/
+function (_Component5) {
+  _inheritsLoose(SeasonsSelect, _Component5);
+
+  function SeasonsSelect() {
+    var _this9;
+
+    for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+      args[_key5] = arguments[_key5];
+    }
+
+    _this9 = _Component5.call.apply(_Component5, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this9)), "state", {
       selected: []
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "onRemoveSeason", function (season) {
-      var selected = _this5.state.selected;
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this9)), "onRemoveSeason", function (season) {
+      var selected = _this9.state.selected;
       var nextSelected = selected.concat();
       nextSelected.splice(nextSelected.indexOf(allSeasons.indexOf(season)), 1);
 
-      _this5.setState({
+      _this9.setState({
         selected: nextSelected
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "renderSeason", function (season) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this9)), "renderSeason", function (season) {
       return _react.default.createElement(_grommet.Button, {
         key: "season_tag_" + season,
         href: "#",
@@ -235,7 +387,7 @@ function (_Component3) {
           event.preventDefault();
           event.stopPropagation();
 
-          _this5.onRemoveSeason(season);
+          _this9.onRemoveSeason(season);
         },
         onFocus: function onFocus(event) {
           return event.stopPropagation();
@@ -270,20 +422,20 @@ function (_Component3) {
       }))));
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "renderOption", function (option, index, options, state) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this9)), "renderOption", function (option, index, options, state) {
       return _react.default.createElement(_grommet.Box, {
         pad: "small",
         background: state.active ? 'active' : undefined
       }, option);
     });
 
-    return _this5;
+    return _this9;
   }
 
-  var _proto3 = SeasonsSelect.prototype;
+  var _proto5 = SeasonsSelect.prototype;
 
-  _proto3.render = function render() {
-    var _this6 = this;
+  _proto5.render = function render() {
+    var _this10 = this;
 
     var selected = this.state.selected;
     return _react.default.createElement(_grommet.Grommet, {
@@ -304,15 +456,15 @@ function (_Component3) {
           width: '208px'
         }
       }, selected.map(function (index) {
-        return _this6.renderSeason(allSeasons[index]);
+        return _this10.renderSeason(allSeasons[index]);
       })) : undefined,
       options: allSeasons,
       selected: selected,
       disabled: [2, 6],
-      onChange: function onChange(_ref3) {
-        var nextSelected = _ref3.selected;
+      onChange: function onChange(_ref5) {
+        var nextSelected = _ref5.selected;
 
-        _this6.setState({
+        _this10.setState({
           selected: nextSelected.sort()
         });
       }
@@ -362,35 +514,35 @@ var allContentPartners = [{
 
 var CustomSearchSelect =
 /*#__PURE__*/
-function (_Component4) {
-  _inheritsLoose(CustomSearchSelect, _Component4);
+function (_Component6) {
+  _inheritsLoose(CustomSearchSelect, _Component6);
 
   function CustomSearchSelect() {
-    var _this7;
+    var _this11;
 
-    for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
-      args[_key4] = arguments[_key4];
+    for (var _len6 = arguments.length, args = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
+      args[_key6] = arguments[_key6];
     }
 
-    _this7 = _Component4.call.apply(_Component4, [this].concat(args)) || this;
+    _this11 = _Component6.call.apply(_Component6, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this7)), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this11)), "state", {
       contentPartners: allContentPartners,
       selectedContentPartners: [],
       searching: false
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this7)), "selectRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this11)), "selectRef", (0, _react.createRef)());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this7)), "clearContentPartners", function () {
-      return _this7.setState({
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this11)), "clearContentPartners", function () {
+      return _this11.setState({
         selectedContentPartners: []
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this7)), "renderOption", function (_ref4) {
-      var name = _ref4.name;
-      var selectedContentPartners = _this7.state.selectedContentPartners;
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this11)), "renderOption", function (_ref6) {
+      var name = _ref6.name;
+      var selectedContentPartners = _this11.state.selectedContentPartners;
       return _react.default.createElement(_grommet.Box, {
         direction: "row",
         align: "center",
@@ -408,8 +560,8 @@ function (_Component4) {
       }));
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this7)), "renderContentPartners", function () {
-      var selectedContentPartners = _this7.state.selectedContentPartners;
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this11)), "renderContentPartners", function () {
+      var selectedContentPartners = _this11.state.selectedContentPartners;
       return _react.default.createElement(_grommet.Box, {
         direction: "row",
         gap: "xsmall",
@@ -437,8 +589,8 @@ function (_Component4) {
       }, _react.default.createElement(_grommet.Text, {
         size: "small",
         truncate: true
-      }, selectedContentPartners.map(function (_ref5) {
-        var name = _ref5.name;
+      }, selectedContentPartners.map(function (_ref7) {
+        var name = _ref7.name;
         return name;
       }).join(', '))), _react.default.createElement(_grommet.Button, {
         href: "#",
@@ -449,11 +601,11 @@ function (_Component4) {
           event.preventDefault();
           event.stopPropagation();
 
-          _this7.clearContentPartners();
+          _this11.clearContentPartners();
           /* eslint-disable-next-line react/no-find-dom-node */
 
 
-          (0, _reactDom.findDOMNode)(_this7.selectRef.current).focus();
+          (0, _reactDom.findDOMNode)(_this11.selectRef.current).focus();
         }
       }, _react.default.createElement(_grommet.Box, {
         background: "gray",
@@ -466,18 +618,18 @@ function (_Component4) {
       }))));
     });
 
-    return _this7;
+    return _this11;
   }
 
-  var _proto4 = CustomSearchSelect.prototype;
+  var _proto6 = CustomSearchSelect.prototype;
 
-  _proto4.render = function render() {
-    var _this8 = this;
+  _proto6.render = function render() {
+    var _this12 = this;
 
-    var _this$state3 = this.state,
-        contentPartners = _this$state3.contentPartners,
-        searching = _this$state3.searching,
-        selectedContentPartners = _this$state3.selectedContentPartners;
+    var _this$state5 = this.state,
+        contentPartners = _this$state5.contentPartners,
+        searching = _this$state5.searching,
+        selectedContentPartners = _this$state5.selectedContentPartners;
     return _react.default.createElement(_grommet.Grommet, {
       full: true,
       theme: _theme.theme
@@ -501,11 +653,11 @@ function (_Component4) {
         return contentPartners.indexOf(option);
       }),
       options: contentPartners,
-      onChange: function onChange(_ref6) {
-        var option = _ref6.option;
+      onChange: function onChange(_ref8) {
+        var option = _ref8.option;
         var newSelectedPartners = selectedContentPartners.concat();
-        var seasonIndex = newSelectedPartners.map(function (_ref7) {
-          var name = _ref7.name;
+        var seasonIndex = newSelectedPartners.map(function (_ref9) {
+          var name = _ref9.name;
           return name;
         }).indexOf(option.name);
 
@@ -515,12 +667,12 @@ function (_Component4) {
           newSelectedPartners.push(option);
         }
 
-        var selectedPartnerNames = newSelectedPartners.map(function (_ref8) {
-          var name = _ref8.name;
+        var selectedPartnerNames = newSelectedPartners.map(function (_ref10) {
+          var name = _ref10.name;
           return name;
         });
 
-        _this8.setState({
+        _this12.setState({
           selectedContentPartners: newSelectedPartners,
           contentPartners: allContentPartners.sort(function (p1, p2) {
             var p1Exists = selectedPartnerNames.includes(p1.name);
@@ -543,11 +695,11 @@ function (_Component4) {
         });
       },
       onSearch: function onSearch(query) {
-        _this8.setState({
+        _this12.setState({
           searching: true
         }, function () {
           setTimeout(function () {
-            _this8.setState({
+            _this12.setState({
               searching: false,
               contentPartners: allContentPartners.filter(function (s) {
                 return s.name.toLowerCase().indexOf(query.toLowerCase()) >= 0;
@@ -564,34 +716,34 @@ function (_Component4) {
 
 var DarkSelect =
 /*#__PURE__*/
-function (_Component5) {
-  _inheritsLoose(DarkSelect, _Component5);
+function (_Component7) {
+  _inheritsLoose(DarkSelect, _Component7);
 
   function DarkSelect() {
-    var _this9;
+    var _this13;
 
-    for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
-      args[_key5] = arguments[_key5];
+    for (var _len7 = arguments.length, args = new Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
+      args[_key7] = arguments[_key7];
     }
 
-    _this9 = _Component5.call.apply(_Component5, [this].concat(args)) || this;
+    _this13 = _Component7.call.apply(_Component7, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this9)), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this13)), "state", {
       options: ['one', 'two'],
       value: ''
     });
 
-    return _this9;
+    return _this13;
   }
 
-  var _proto5 = DarkSelect.prototype;
+  var _proto7 = DarkSelect.prototype;
 
-  _proto5.render = function render() {
-    var _this10 = this;
+  _proto7.render = function render() {
+    var _this14 = this;
 
-    var _this$state4 = this.state,
-        options = _this$state4.options,
-        value = _this$state4.value;
+    var _this$state6 = this.state,
+        options = _this$state6.options,
+        value = _this$state6.value;
     return _react.default.createElement(_grommet.Grommet, _extends({
       full: true,
       theme: _themes.grommet
@@ -604,9 +756,9 @@ function (_Component5) {
       placeholder: "Select",
       value: value,
       options: options,
-      onChange: function onChange(_ref9) {
-        var option = _ref9.option;
-        return _this10.setState({
+      onChange: function onChange(_ref11) {
+        var option = _ref11.option;
+        return _this14.setState({
           value: option
         });
       }
@@ -625,9 +777,9 @@ function (_PureComponent) {
     return _PureComponent.apply(this, arguments) || this;
   }
 
-  var _proto6 = Option.prototype;
+  var _proto8 = Option.prototype;
 
-  _proto6.render = function render() {
+  _proto8.render = function render() {
     var _this$props = this.props,
         value = _this$props.value,
         selected = _this$props.selected;
@@ -657,34 +809,34 @@ var theme = (0, _utils.deepMerge)(_themes.grommet, {
 
 var ManyOptions =
 /*#__PURE__*/
-function (_Component6) {
-  _inheritsLoose(ManyOptions, _Component6);
+function (_Component8) {
+  _inheritsLoose(ManyOptions, _Component8);
 
   function ManyOptions() {
-    var _this11;
+    var _this15;
 
-    for (var _len6 = arguments.length, args = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
-      args[_key6] = arguments[_key6];
+    for (var _len8 = arguments.length, args = new Array(_len8), _key8 = 0; _key8 < _len8; _key8++) {
+      args[_key8] = arguments[_key8];
     }
 
-    _this11 = _Component6.call.apply(_Component6, [this].concat(args)) || this;
+    _this15 = _Component8.call.apply(_Component8, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this11)), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this15)), "state", {
       selected: [],
       options: dummyOptions
     });
 
-    return _this11;
+    return _this15;
   }
 
-  var _proto7 = ManyOptions.prototype;
+  var _proto9 = ManyOptions.prototype;
 
-  _proto7.render = function render() {
-    var _this12 = this;
+  _proto9.render = function render() {
+    var _this16 = this;
 
-    var _this$state5 = this.state,
-        options = _this$state5.options,
-        selected = _this$state5.selected;
+    var _this$state7 = this.state,
+        options = _this$state7.options,
+        selected = _this$state7.selected;
     return _react.default.createElement(_grommet.Grommet, {
       theme: theme
     }, _react.default.createElement(_grommet.Box, {
@@ -693,10 +845,10 @@ function (_Component6) {
       multiple: true,
       closeOnChange: false,
       placeholder: "select an option...",
-      value: selected,
+      selected: selected,
       options: options,
       onClose: function onClose() {
-        return _this12.setState({
+        return _this16.setState({
           options: options.sort(function (p1, p2) {
             var p1Exists = selected.includes(p1);
             var p2Exists = selected.includes(p2);
@@ -713,25 +865,17 @@ function (_Component6) {
           })
         });
       },
-      onChange: function onChange(_ref10) {
-        var option = _ref10.option;
-        var newSelected = selected.concat();
-        var selectedIndex = newSelected.indexOf(option);
+      onChange: function onChange(_ref12) {
+        var nextSelected = _ref12.selected;
 
-        if (selectedIndex >= 0) {
-          newSelected.splice(selectedIndex, 1);
-        } else {
-          newSelected.push(option);
-        }
-
-        _this12.setState({
-          selected: newSelected
+        _this16.setState({
+          selected: nextSelected
         });
       }
-    }, function (option) {
+    }, function (option, index) {
       return _react.default.createElement(Option, {
         value: option,
-        selected: selected.indexOf(option) >= 0
+        selected: selected.indexOf(index) !== -1
       });
     })));
   };
@@ -739,11 +883,15 @@ function (_Component6) {
   return ManyOptions;
 }(_react.Component);
 
-(0, _react2.storiesOf)('Select', module).add('Simple Select', function () {
+(0, _react2.storiesOf)('Select', module).add('Simple', function () {
   return _react.default.createElement(SimpleSelect, null);
-}).add('Search Select', function () {
+}).add('Search', function () {
   return _react.default.createElement(SearchSelect, null);
-}).add('Seasons Select', function () {
+}).add('Simple Multiple', function () {
+  return _react.default.createElement(SimpleMultiSelect, null);
+}).add('Object Multiple', function () {
+  return _react.default.createElement(ObjectMultiSelect, null);
+}).add('Seasons', function () {
   return _react.default.createElement(SeasonsSelect, null);
 }).add('Custom Search', function () {
   return _react.default.createElement(CustomSearchSelect, null);

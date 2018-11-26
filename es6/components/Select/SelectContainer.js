@@ -163,6 +163,108 @@ function (_Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "optionLabel", function (index) {
+      var _this$props2 = _this.props,
+          options = _this$props2.options,
+          labelKey = _this$props2.labelKey;
+      var option = options[index];
+      var optionLabel;
+
+      if (labelKey) {
+        if (typeof labelKey === 'function') {
+          optionLabel = labelKey(option);
+        } else {
+          optionLabel = option[labelKey];
+        }
+      } else {
+        optionLabel = option;
+      }
+
+      return optionLabel;
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "optionValue", function (index) {
+      var _this$props3 = _this.props,
+          options = _this$props3.options,
+          valueKey = _this$props3.valueKey;
+      var option = options[index];
+      var optionValue;
+
+      if (valueKey) {
+        if (typeof valueKey === 'function') {
+          optionValue = valueKey(option);
+        } else {
+          optionValue = option[valueKey];
+        }
+      } else {
+        optionValue = option;
+      }
+
+      return optionValue;
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "isDisabled", function (index) {
+      var _this$props4 = _this.props,
+          disabled = _this$props4.disabled,
+          disabledKey = _this$props4.disabledKey,
+          options = _this$props4.options;
+      var option = options[index];
+      var result;
+
+      if (disabledKey) {
+        if (typeof disabledKey === 'function') {
+          result = disabledKey(option, index);
+        } else {
+          result = option[disabledKey];
+        }
+      } else if (Array.isArray(disabled)) {
+        if (typeof disabled[0] === 'number') {
+          result = disabled.indexOf(index) !== -1;
+        } else {
+          var optionValue = _this.optionValue(index);
+
+          result = disabled.indexOf(optionValue) !== -1;
+        }
+      }
+
+      return result;
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "isSelected", function (index) {
+      var _this$props5 = _this.props,
+          selected = _this$props5.selected,
+          value = _this$props5.value,
+          valueKey = _this$props5.valueKey;
+      var result;
+
+      if (selected) {
+        // deprecated in favor of value
+        result = selected.indexOf(index) !== -1;
+      } else {
+        var optionValue = _this.optionValue(index);
+
+        if (Array.isArray(value)) {
+          if (value.length === 0) {
+            result = false;
+          } else if (typeof value[0] !== 'object') {
+            result = value.indexOf(optionValue) !== -1;
+          } else if (valueKey) {
+            result = value.some(function (valueItem) {
+              var valueValue = typeof valueKey === 'function' ? valueKey(valueItem) : valueItem[valueKey];
+              return valueValue === optionValue;
+            });
+          }
+        } else if (valueKey && typeof value === 'object') {
+          var valueValue = typeof valueKey === 'function' ? valueKey(value) : value[valueKey];
+          result = valueValue === optionValue;
+        } else {
+          result = value === optionValue;
+        }
+      }
+
+      return result;
+    });
+
     return _this;
   }
 
@@ -195,7 +297,6 @@ function (_Component) {
   _proto.componentDidMount = function componentDidMount() {
     var _this2 = this;
 
-    /* eslint-disable-next-line react/prop-types */
     var onSearch = this.props.onSearch;
     var activeIndex = this.state.activeIndex; // timeout need to send the operation through event loop and allow time to the portal
     // to be available
@@ -233,21 +334,14 @@ function (_Component) {
   _proto.render = function render() {
     var _this3 = this;
 
-    /* eslint-disable react/prop-types */
-    var _this$props2 = this.props,
-        children = _this$props2.children,
-        disabled = _this$props2.disabled,
-        id = _this$props2.id,
-        name = _this$props2.name,
-        onKeyDown = _this$props2.onKeyDown,
-        onSearch = _this$props2.onSearch,
-        options = _this$props2.options,
-        searchPlaceholder = _this$props2.searchPlaceholder,
-        selected = _this$props2.selected,
-        theme = _this$props2.theme,
-        value = _this$props2.value;
-    /* eslint-enable react/prop-types */
-
+    var _this$props6 = this.props,
+        children = _this$props6.children,
+        id = _this$props6.id,
+        onKeyDown = _this$props6.onKeyDown,
+        onSearch = _this$props6.onSearch,
+        options = _this$props6.options,
+        searchPlaceholder = _this$props6.searchPlaceholder,
+        theme = _this$props6.theme;
     var _this$state = this.state,
         activeIndex = _this$state.activeIndex,
         search = _this$state.search;
@@ -283,10 +377,13 @@ function (_Component) {
       items: options,
       step: theme.select.step
     }, function (option, index) {
-      var isDisabled = Array.isArray(disabled) && disabled.indexOf(index) !== -1;
-      var isSelected = selected === index || Array.isArray(selected) && selected.indexOf(index) !== -1;
-      var isActive = isSelected || activeIndex === index || option && option === value || option && Array.isArray(value) && value.indexOf(option) !== -1;
+      var isDisabled = _this3.isDisabled(index);
+
+      var isSelected = _this3.isSelected(index);
+
+      var isActive = isSelected || activeIndex === index;
       return React.createElement(SelectOption, {
+        key: _this3.optionValue(index),
         ref: function ref(_ref) {
           _this3.optionsRef[index] = _ref;
         },
@@ -294,10 +391,9 @@ function (_Component) {
         active: isActive,
         selected: isSelected,
         option: option,
-        key: "option_" + (name || '') + "_" + index,
-        onClick: function onClick() {
+        onClick: !isDisabled ? function () {
           return _this3.selectOption(option, index);
-        }
+        } : undefined
       }, children ? children(option, index, options, {
         active: isActive,
         disabled: isDisabled,
@@ -307,7 +403,7 @@ function (_Component) {
         pad: "small"
       }, React.createElement(Text, {
         margin: "none"
-      }, option !== null && option !== undefined ? option.toString() : undefined)));
+      }, _this3.optionLabel(index))));
     }))));
   };
 

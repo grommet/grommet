@@ -111,16 +111,20 @@ function (_Component) {
         forwardRef = _this$props.forwardRef,
         gridArea = _this$props.gridArea,
         id = _this$props.id,
+        labelKey = _this$props.labelKey,
         margin = _this$props.margin,
         messages = _this$props.messages,
         onChange = _this$props.onChange,
         onClose = _this$props.onClose,
+        options = _this$props.options,
         placeholder = _this$props.placeholder,
         plain = _this$props.plain,
+        selected = _this$props.selected,
         size = _this$props.size,
         theme = _this$props.theme,
         value = _this$props.value,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "dropAlign", "dropTarget", "forwardRef", "gridArea", "id", "margin", "messages", "onChange", "onClose", "placeholder", "plain", "size", "theme", "value"]);
+        valueLabel = _this$props.valueLabel,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "dropAlign", "dropTarget", "forwardRef", "gridArea", "id", "labelKey", "margin", "messages", "onChange", "onClose", "options", "placeholder", "plain", "selected", "size", "theme", "value", "valueLabel"]);
 
     var open = this.state.open;
     delete rest.onSearch;
@@ -141,30 +145,52 @@ function (_Component) {
 
     var SelectIcon = theme.select.icons.down;
     var selectValue;
-    var textValue;
+    var inputValue = '';
 
-    if (!_react.default.isValidElement(value)) {
-      if (Array.isArray(value)) {
-        if (value.length > 1) {
-          if (_react.default.isValidElement(value[0])) {
-            selectValue = value;
+    if (valueLabel) {
+      selectValue = valueLabel;
+    } else if (Array.isArray(value)) {
+      if (value.length > 1) {
+        if (_react.default.isValidElement(value[0])) {
+          selectValue = value;
+        } else {
+          inputValue = messages.multiple;
+        }
+      } else if (value.length === 1) {
+        if (_react.default.isValidElement(value[0])) {
+          selectValue = value[0];
+        } else if (labelKey && typeof value[0] === 'object') {
+          if (typeof labelKey === 'function') {
+            inputValue = labelKey(value[0]);
           } else {
-            textValue = messages.multiple;
-          }
-        } else if (value.length === 1) {
-          if (_react.default.isValidElement(value[0])) {
-            selectValue = value[0];
-          } else {
-            textValue = value[0];
+            inputValue = value[0][labelKey];
           }
         } else {
-          textValue = '';
+          inputValue = value[0];
         }
       } else {
-        textValue = value;
+        inputValue = '';
+      }
+    } else if (labelKey && typeof value === 'object') {
+      if (typeof labelKey === 'function') {
+        inputValue = labelKey(value);
+      } else {
+        inputValue = value[labelKey];
+      }
+    } else if (_react.default.isValidElement(value)) {
+      selectValue = value; // deprecated in favor of valueLabel
+    } else if (selected !== undefined) {
+      if (Array.isArray(selected)) {
+        if (selected.length > 1) {
+          inputValue = messages.multiple;
+        } else if (selected.length === 1) {
+          inputValue = options[selected[0]];
+        }
+      } else {
+        inputValue = options[selected];
       }
     } else {
-      selectValue = value;
+      inputValue = value;
     } // const dark = theme.select.background ? colorIsDark(theme.select.background) : theme.dark;
 
 
@@ -207,7 +233,7 @@ function (_Component) {
       placeholder: placeholder,
       plain: true,
       readOnly: true,
-      value: textValue,
+      value: inputValue,
       size: size,
       onClick: disabled === true ? undefined : this.onOpen
     }))), _react.default.createElement(_Box.Box, {
