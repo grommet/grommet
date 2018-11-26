@@ -17,7 +17,7 @@ var doc = function doc(Button) {
     disabled: _reactDesc.PropTypes.bool.description('Whether the button is disabled.').defaultValue(false),
     fill: _reactDesc.PropTypes.bool.description('Whether the button expands to fill all of the available width and height.').defaultValue(false),
     focusIndicator: _reactDesc.PropTypes.bool.description("Whether when 'plain' it should receive a focus outline.").defaultValue(true),
-    hoverIndicator: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(['background']), _reactDesc.PropTypes.shape({
+    hoverIndicator: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.string, _reactDesc.PropTypes.oneOf(['background']), _reactDesc.PropTypes.shape({
       background: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.string])
     })]).description("The hover indicator to apply when the user is mousing over the\nbutton. An object can be also be specified for color index support:\n{background: 'neutral-2'}. This prop is meant to be used only\nwith plain Buttons.").defaultValue(false),
     href: _reactDesc.PropTypes.string.description('If specified, the button will behave like an anchor tag.'),

@@ -110,7 +110,7 @@ test('Button href renders', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
-test('Button hoverIndicator renders', function () {
+test('Button hoverIndicator background renders', function () {
   var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
     onClick: function onClick() {},
     hoverIndicator: "background"
@@ -172,6 +172,14 @@ test('Button hoverIndicator as object with invalid colorIndex renders', function
     hoverIndicator: {
       background: 'accent-100'
     }
+  }, "hoverIndicator")));
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+test('Button hoverIndicator color renders', function () {
+  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    onClick: function onClick() {},
+    hoverIndicator: "dark-5"
   }, "hoverIndicator")));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();

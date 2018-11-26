@@ -10,7 +10,7 @@ export var doc = function doc(Button) {
     disabled: PropTypes.bool.description('Whether the button is disabled.').defaultValue(false),
     fill: PropTypes.bool.description('Whether the button expands to fill all of the available width and height.').defaultValue(false),
     focusIndicator: PropTypes.bool.description("Whether when 'plain' it should receive a focus outline.").defaultValue(true),
-    hoverIndicator: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['background']), PropTypes.shape({
+    hoverIndicator: PropTypes.oneOfType([PropTypes.bool, PropTypes.string, PropTypes.oneOf(['background']), PropTypes.shape({
       background: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
     })]).description("The hover indicator to apply when the user is mousing over the\nbutton. An object can be also be specified for color index support:\n{background: 'neutral-2'}. This prop is meant to be used only\nwith plain Buttons.").defaultValue(false),
     href: PropTypes.string.description('If specified, the button will behave like an anchor tag.'),

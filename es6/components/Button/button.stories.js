@@ -50,7 +50,7 @@ var PlainButton = function PlainButton(props) {
   return React.createElement(Grommet, {
     theme: grommet
   }, React.createElement(Button, _extends({
-    hoverIndicator: true,
+    hoverIndicator: "light-1",
     onClick: function onClick() {}
   }, props), React.createElement(Box, {
     pad: "small",

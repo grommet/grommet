@@ -156,6 +156,7 @@ with plain Buttons.
 
 ```
 boolean
+string
 background
 {
   background: 
