@@ -72,12 +72,7 @@ class Button extends Component {
       });
     }
 
-    let domTag = tag;
-    // Only set domTag to a if user did not provide a tag and provided an href
-    if (!domTag && href) {
-      domTag = 'a';
-    }
-
+    const domTag = !tag && href ? 'a' : tag;
     const first = reverse ? label : buttonIcon;
     const second = reverse ? buttonIcon : label;
 
