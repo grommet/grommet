@@ -31,7 +31,7 @@ const IconLabelButton = () => (
 
 const PlainButton = props => (
   <Grommet theme={grommet}>
-    <Button hoverIndicator onClick={() => {}} {...props}>
+    <Button hoverIndicator="light-1" onClick={() => {}} {...props}>
       <Box pad="small" direction="row" align="center" gap="small">
         <Add />
         <Text>Add</Text>
@@ -180,9 +180,9 @@ const customButtonColor = deepMerge(grommet, {
 
 const ThemeColored = () => (
   <Grommet theme={customButtonColor}>
-    <Box align='start' gap='small'>
-      <Button primary label='Submit' onClick={() => {}} />
-      <Button primary color='dark-1' label='Submit' onClick={() => {}} />
+    <Box align="start" gap="small">
+      <Button primary label="Submit" onClick={() => {}} />
+      <Button primary color="dark-1" label="Submit" onClick={() => {}} />
     </Box>
   </Grommet>
 );
