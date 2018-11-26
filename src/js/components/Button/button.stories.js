@@ -48,7 +48,7 @@ const AnchorButton = () => (
 
 const RouteButton = () => (
   <Grommet theme={grommet}>
-    <RoutedButton label="Go" path="/" />
+    <RoutedButton hoverIndicator="light-5" label="Go" path="/" />
   </Grommet>
 );
 
@@ -180,9 +180,9 @@ const customButtonColor = deepMerge(grommet, {
 
 const ThemeColored = () => (
   <Grommet theme={customButtonColor}>
-    <Box align='start' gap='small'>
-      <Button primary label='Submit' onClick={() => {}} />
-      <Button primary color='dark-1' label='Submit' onClick={() => {}} />
+    <Box align="start" gap="small">
+      <Button primary label="Submit" onClick={() => {}} />
+      <Button primary color="dark-1" label="Submit" onClick={() => {}} />
     </Box>
   </Grommet>
 );

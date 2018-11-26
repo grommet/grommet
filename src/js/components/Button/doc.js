@@ -34,6 +34,7 @@ export const doc = Button => {
       .defaultValue(true),
     hoverIndicator: PropTypes.oneOfType([
       PropTypes.bool,
+      PropTypes.string,
       PropTypes.oneOf(['background']),
       PropTypes.shape({
         background: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),

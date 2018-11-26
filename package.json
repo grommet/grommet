@@ -44,6 +44,7 @@
     "styled-components": ">= 4.X"
   },
   "dependencies": {
+    "acorn": "^6.0.4",
     "css": "^2.2.3",
     "markdown-to-jsx": "^6.6.6",
     "polished": "^2.2.0",
