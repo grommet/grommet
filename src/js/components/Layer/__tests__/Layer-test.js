@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import 'jest-styled-components';
-import { cleanup, render } from 'react-testing-library';
+import { cleanup, render, fireEvent } from 'react-testing-library';
 import { getByTestId, queryByTestId } from 'dom-testing-library';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -21,13 +21,13 @@ class FakeLayer extends Component {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, ...rest } = this.props;
     const { showLayer } = this.state;
     let layer;
     if (showLayer) {
       layer = (
         <Layer onEsc={() => this.setState({ showLayer: false })}>
-          <div data-testid="test-layer-node">
+          <div {...rest}>
             This is a layer
             <input data-testid="test-input" />
           </div>
@@ -142,11 +142,6 @@ describe('Layer', () => {
   });
 
   test('invokes onEsc', () => {
-    const map = {};
-    document.addEventListener = jest.fn((event, cb) => {
-      map[event] = cb;
-    });
-
     const onEsc = jest.fn();
     render(
       <Grommet>
@@ -156,20 +151,16 @@ describe('Layer', () => {
       </Grommet>,
     );
 
-    map.keydown({ key: 'Esc', keyCode: 27, which: 27 });
+    const inputNode = getByTestId(document, 'test-input');
+    fireEvent.keyDown(inputNode, { key: 'Esc', keyCode: 27, which: 27 });
     expect(onEsc).toBeCalled();
   });
 
   test('is accessible', () => {
-    const map = {};
-    document.addEventListener = jest.fn((event, cb) => {
-      map[event] = cb;
-    });
-
     /* eslint-disable jsx-a11y/tabindex-no-positive */
     render(
       <Grommet>
-        <FakeLayer>
+        <FakeLayer data-testid="test-layer-node">
           <div data-testid="test-body-node">
             <input />
             <input tabIndex="10" />
@@ -181,10 +172,11 @@ describe('Layer', () => {
 
     let bodyNode = getByTestId(document, 'test-body-node');
     const layerNode = getByTestId(document, 'test-layer-node');
+    const inputNode = getByTestId(document, 'test-input');
     expect(bodyNode).toMatchSnapshot();
     expect(layerNode).toMatchSnapshot();
 
-    map.keydown({ key: 'Esc', keyCode: 27, which: 27 });
+    fireEvent.keyDown(inputNode, { key: 'Esc', keyCode: 27, which: 27 });
     bodyNode = getByTestId(document, 'test-body-node');
     expect(bodyNode).toMatchSnapshot();
     expect(queryByTestId(document, 'test-layer-node')).toBeNull();

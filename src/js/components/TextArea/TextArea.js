@@ -8,7 +8,10 @@ import { StyledTextArea } from './StyledTextArea';
 
 class TextArea extends Component {
   onEsc = event => {
-    event.nativeEvent.stopImmediatePropagation(); // so Layer doesn't close
+    // we have to stop both synthetic events and native events
+    // drop and layer should not close by pressing esc on this input
+    event.stopPropagation();
+    event.nativeEvent.stopImmediatePropagation();
   };
 
   render() {
