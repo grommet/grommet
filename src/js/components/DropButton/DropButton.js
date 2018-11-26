@@ -58,9 +58,8 @@ class DropButton extends Component {
   onToggle = () => {
     const { onClose, onOpen } = this.props;
     const { show } = this.state;
-    this.setState(
-      { show: !show },
-      () => (show ? onClose && onClose() : onOpen && onOpen()),
+    this.setState({ show: !show }, () =>
+      show ? onClose && onClose() : onOpen && onOpen(),
     );
   };
 

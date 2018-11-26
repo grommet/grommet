@@ -32,6 +32,15 @@ export const doc = InfiniteScroll => {
       be wrapped appropriately. This is needed when the default
       element, a <span>, isn't sufficient, such as a row of a table body.`,
     ),
+    replace: PropTypes.bool
+      .description(
+        `Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced. In general, this should be set to true within Drop containers
+      and false otherwise.`,
+      )
+      .defaultValue(false),
     scrollableAncestor: PropTypes.oneOfType([
       PropTypes.node,
       PropTypes.oneOf(['window']),

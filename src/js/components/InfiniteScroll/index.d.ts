@@ -5,6 +5,7 @@ export interface InfiniteScrollProps {
   items?: any[];
   onMore?: (...args: any[]) => any;
   renderMarker?: (...args: any[]) => any;
+  replace?: boolean;
   scrollableAncestor?: React.ReactNode | "window";
   show?: number;
   step?: number;
