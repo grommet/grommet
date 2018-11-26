@@ -232,3 +232,13 @@ test('Button is clickable', () => {
   button[0].props.onClick();
   expect(onClick).toBeCalled();
 });
+
+test('renders tag', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Button as="span" />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

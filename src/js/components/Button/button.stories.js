@@ -52,6 +52,12 @@ const RouteButton = () => (
   </Grommet>
 );
 
+const CustomTagButton = () => (
+  <Grommet theme={grommet}>
+    <Button as="span" label="Go" path="/" />
+  </Grommet>
+);
+
 const customTheme = {
   global: {
     font: {
@@ -200,4 +206,5 @@ storiesOf('Button', module)
   .add('Custom theme', () => <CustomThemeButton />)
   .add('Multiple Same Line', () => <MultipleButton />)
   .add('Colored', () => <ColoredButton />)
-  .add('Theme Colored', () => <ThemeColored />);
+  .add('Theme Colored', () => <ThemeColored />)
+  .add('Custom tag Button', () => <CustomTagButton />);
