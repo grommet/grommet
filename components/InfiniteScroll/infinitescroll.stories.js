@@ -48,4 +48,8 @@ var SimpleInfiniteScroll = function SimpleInfiniteScroll(props) {
       }, marker);
     }
   });
+}).add('Replace', function () {
+  return _react.default.createElement(SimpleInfiniteScroll, {
+    replace: true
+  });
 });

@@ -61,4 +61,17 @@ describe('InfiniteScroll', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('replace', function () {
+    var component = renderer.create(React.createElement(Grommet, null, React.createElement(InfiniteScroll, {
+      items: items,
+      step: 2,
+      replace: true
+    }, function (item, index) {
+      return React.createElement("div", {
+        key: index
+      }, item);
+    })));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

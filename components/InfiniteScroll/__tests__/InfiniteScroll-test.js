@@ -74,4 +74,18 @@ describe('InfiniteScroll', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('replace', function () {
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.InfiniteScroll, {
+      items: items,
+      step: 2,
+      replace: true
+    }, function (item, index) {
+      return _react.default.createElement("div", {
+        key: index
+      }, item);
+    })));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
