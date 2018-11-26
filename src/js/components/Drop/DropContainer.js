@@ -176,15 +176,14 @@ export class DropContainer extends Component {
         maxHeight = windowHeight - top;
       } else if (align.bottom) {
         if (align.bottom === 'bottom') {
-          // top = targetRect.bottom - containerRect.height;
-          // maxHeight = Math.min(targetRect.bottom - top, windowHeight - top);
+          top = targetRect.bottom - containerRect.height;
+          maxHeight = Math.min(targetRect.bottom - top, windowHeight - top);
           ({ bottom } = targetRect);
         } else {
-          // top = targetRect.top - containerRect.height;
-          // maxHeight = Math.min(targetRect.top - top, windowHeight - top);
+          top = targetRect.top - containerRect.height;
+          maxHeight = Math.min(targetRect.top - top, windowHeight - top);
           bottom = targetRect.top;
         }
-        maxHeight = windowHeight - bottom;
       } else {
         // center
         top = targetRect.top + targetRect.height / 2 - containerRect.height / 2;
