@@ -128,3 +128,13 @@ test('Anchor is clickable', () => {
   anchor[0].props.onClick();
   expect(onClick).toBeCalled();
 });
+
+test('renders tag', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Anchor href="#" label="Test" as="span" />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
