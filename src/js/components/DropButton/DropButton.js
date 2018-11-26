@@ -58,9 +58,8 @@ class DropButton extends Component {
   onToggle = () => {
     const { onClose, onOpen } = this.props;
     const { show } = this.state;
-    this.setState(
-      { show: !show },
-      () => (show ? onClose && onClose() : onOpen && onOpen()),
+    this.setState({ show: !show }, () =>
+      show ? onClose && onClose() : onOpen && onOpen(),
     );
   };
 
@@ -90,14 +89,7 @@ class DropButton extends Component {
           align={dropAlign}
           target={dropTarget || (forwardRef || this.buttonRef).current}
           onClickOutside={this.onDropClose}
-          onEsc={event => {
-            // prevents layer to close on esc
-            event.stopPropagation();
-            if (event.nativeEvent) {
-              event.nativeEvent.stopImmediatePropagation();
-            }
-            this.onDropClose();
-          }}
+          onEsc={this.onDropClose}
         >
           {dropContent}
         </Drop>

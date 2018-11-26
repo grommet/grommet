@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SkipLink basic 1`] = `
-.c1 {
+.c2 {
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
@@ -13,7 +13,7 @@ exports[`SkipLink basic 1`] = `
   outline: none;
 }
 
-.c1:hover {
+.c2:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
@@ -28,15 +28,21 @@ exports[`SkipLink basic 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c1 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 <div
   class="c0"
 >
   <div>
     <a
       aria-hidden="true"
-      class="c1"
+      class="c1 c2"
       id="main"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
       tabindex="-1"
     />
     Main Content
@@ -48,9 +54,8 @@ exports[`SkipLink basic 1`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="c1"
+      class="c1 c2"
       id="footer"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
       tabindex="-1"
     />
     <input
@@ -63,14 +68,13 @@ exports[`SkipLink basic 1`] = `
 
 exports[`SkipLink basic 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 Icjii"
+      class="SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 buKRUY StyledAnchor-sc-1rp7lwl-0 Icjii"
       id="main"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
       tabindex="-1"
     />
     Main Content
@@ -82,9 +86,8 @@ exports[`SkipLink basic 2`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 Icjii"
+      class="SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 buKRUY StyledAnchor-sc-1rp7lwl-0 Icjii"
       id="footer"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
       tabindex="-1"
     />
     <input
@@ -97,14 +100,13 @@ exports[`SkipLink basic 2`] = `
 
 exports[`SkipLink basic 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 gmnngJ"
+  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
 >
   <div>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 Icjii"
+      class="SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 buKRUY StyledAnchor-sc-1rp7lwl-0 Icjii"
       id="main"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
       tabindex="-1"
     />
     Main Content
@@ -116,9 +118,8 @@ exports[`SkipLink basic 3`] = `
   <footer>
     <a
       aria-hidden="true"
-      class="StyledAnchor-sc-1rp7lwl-0 Icjii"
+      class="SkipLinkTarget__HiddenAnchor-sc-16wjfgk-0 buKRUY StyledAnchor-sc-1rp7lwl-0 Icjii"
       id="footer"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
       tabindex="-1"
     />
     <input

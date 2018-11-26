@@ -7,6 +7,7 @@ export const baseStyle = css`
   font-family: ${props => props.theme.global.font.family};
   font-size: ${props => props.theme.global.font.size};
   line-height: ${props => props.theme.global.font.height};
+  font-weight: ${props => props.theme.global.font.weight};
   ${props =>
     !props.plain &&
     props.theme.global.colors.background &&

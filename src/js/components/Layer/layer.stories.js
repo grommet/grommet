@@ -90,6 +90,7 @@ class CenterLayer extends Component {
               <Heading level={3} margin="none">
                 Confirm 2
               </Heading>
+              <Select options={['one', 'two', 'three']} />
               <Box
                 tag="footer"
                 gap="small"
@@ -214,6 +215,7 @@ class NotificationLayer extends Component {
             full="horizontal"
             modal={false}
             responsive={false}
+            onEsc={this.onClose}
           >
             <Box
               align="start"

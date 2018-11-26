@@ -138,3 +138,90 @@ center
 end
 ```
   
+## Theme
+  
+**global.colors.text**
+
+The text color used inside the Paragraph. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: '#f8f8f8', light: '#444444' }
+```
+
+**global.edgeSize**
+
+The possible sizes for margin. Expects `object`.
+
+Defaults to
+
+```
+{
+        none: '0px',
+        hair: '1px',
+        xxsmall: '3px',
+        xsmall: '6px',
+        small: '12px',
+        medium: '24px',
+        large: '48px',
+        xlarge: '96px',
+        responsiveBreakpoint: 'small',
+    }
+```
+
+**paragraph**
+
+The possible sizes of the paragraph in terms of its max-width, font-size and line-height. Expects `object`.
+
+Defaults to
+
+```
+{
+      small: {
+        size: '14px',
+        height: '20px',
+        maxWidth: '336px',
+       },
+      medium: {          
+        size: '18px',
+        height: '24px',
+        maxWidth: '432px',
+      },
+      large: {
+        size: '22px',
+        height: '28px',
+        maxWidth: '528px',
+      },
+      xlarge: {
+        size: '26px',
+        height: '32px',
+        maxWidth: '624px',
+      },
+      xxlarge: {
+        size: '34px',
+        height: '40px',
+        maxWidth: '816px',
+      },
+    }
+```
+
+**paragraph.textAlign**
+
+How to align the text inside the Paragraph. Expects `string`.
+
+Defaults to
+
+```
+start
+```
+
+**paragraph.extend**
+
+Any additional style for the Paragraph. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
