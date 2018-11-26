@@ -195,3 +195,10 @@ test('Button is clickable', function () {
   button[0].props.onClick();
   expect(onClick).toBeCalled();
 });
+test('renders tag', function () {
+  var component = renderer.create(React.createElement(Grommet, null, React.createElement(Button, {
+    as: "span"
+  })));
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

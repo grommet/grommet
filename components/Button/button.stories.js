@@ -87,6 +87,16 @@ var RouteButton = function RouteButton() {
   }));
 };
 
+var CustomTagButton = function CustomTagButton() {
+  return _react.default.createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Button, {
+    as: "span",
+    label: "Go",
+    path: "/"
+  }));
+};
+
 var customTheme = {
   global: {
     font: {
@@ -281,4 +291,6 @@ var ThemeColored = function ThemeColored() {
   return _react.default.createElement(ColoredButton, null);
 }).add('Theme Colored', function () {
   return _react.default.createElement(ThemeColored, null);
+}).add('Custom tag Button', function () {
+  return _react.default.createElement(CustomTagButton, null);
 });

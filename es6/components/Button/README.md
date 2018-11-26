@@ -232,6 +232,14 @@ button
 reset
 submit
 ```
+
+**as**
+
+The DOM tag to use for the element.
+
+```
+string
+```
   
 ## Theme
   

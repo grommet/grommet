@@ -58,7 +58,8 @@ function (_Component) {
         reverse = _this$props.reverse,
         theme = _this$props.theme,
         type = _this$props.type,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "color", "forwardRef", "children", "disabled", "icon", "fill", "focus", "href", "label", "onClick", "plain", "primary", "reverse", "theme", "type"]);
+        as = _this$props.as,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "color", "forwardRef", "children", "disabled", "icon", "fill", "focus", "href", "label", "onClick", "plain", "primary", "reverse", "theme", "type", "as"]);
 
     var buttonIcon = icon; // only change color if user did not specify the color themselves...
 
@@ -68,10 +69,11 @@ function (_Component) {
       });
     }
 
+    var domTag = !as && href ? 'a' : as;
     var first = reverse ? label : buttonIcon;
     var second = reverse ? buttonIcon : label;
     return React.createElement(StyledButton, _extends({}, rest, {
-      as: href ? 'a' : undefined,
+      as: domTag,
       ref: forwardRef,
       "aria-label": a11yTitle,
       colorValue: color,

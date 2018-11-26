@@ -27,7 +27,8 @@ var doc = function doc(Button) {
     plain: _reactDesc.PropTypes.bool.description('Whether this is a plain button with no border or padding.').defaultValue(false),
     primary: _reactDesc.PropTypes.bool.description('Whether this is a primary button. There should be at most one per page or screen.').defaultValue(false),
     reverse: _reactDesc.PropTypes.bool.description("Whether an icon and label should be reversed so that the icon is at the\nend of the anchor.").defaultValue(false),
-    type: _reactDesc.PropTypes.oneOf(['button', 'reset', 'submit']).description('The type of button. Set the type to submit for the default button on forms.').defaultValue('button')
+    type: _reactDesc.PropTypes.oneOf(['button', 'reset', 'submit']).description('The type of button. Set the type to submit for the default button on forms.').defaultValue('button'),
+    as: _reactDesc.PropTypes.string.description("The DOM tag to use for the element.")
   });
   return DocumentedButton;
 };
