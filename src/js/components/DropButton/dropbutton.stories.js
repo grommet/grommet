@@ -116,7 +116,7 @@ class UserMenuDropButton extends Component {
                 height="36px"
                 width="36px"
                 round="full"
-                background={`url(//s.gravatar.com/avatar/b226da5c619b18b44eb95c30be393953?s=80)`}
+                background="url(//s.gravatar.com/avatar/b226da5c619b18b44eb95c30be393953?s=80)"
               />
             </DropButton>
           </Box>
