@@ -235,3 +235,13 @@ Defaults to
       },
     }
 ```
+
+**text.extend**
+
+Any additional style for Text. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```

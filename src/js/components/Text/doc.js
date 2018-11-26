@@ -104,4 +104,9 @@ export const themeDoc = {
       },
     }`,
   },
+  'text.extend': {
+    description: 'Any additional style for Text.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
 };
