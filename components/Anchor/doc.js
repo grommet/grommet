@@ -17,9 +17,10 @@ var doc = function doc(Anchor) {
     href: _reactDesc.PropTypes.string.description('Hyperlink reference to place in the anchor.'),
     icon: _reactDesc.PropTypes.element.description('Icon element to place in the anchor.'),
     label: _reactDesc.PropTypes.node.description('Label text to place in the anchor.'),
-    onClick: _reactDesc.PropTypes.func.description("Click handler. It can be used, for example, \n        to add analytics and track who clicked in the anchor."),
+    onClick: _reactDesc.PropTypes.func.description("Click handler. It can be used, for example,\n        to add analytics and track who clicked in the anchor."),
     reverse: _reactDesc.PropTypes.bool.description("Whether an icon and label should be reversed so that the\n        icon is at the end of the anchor.").defaultValue(false),
-    size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]).description("The font size is typically driven by the components containing\nthis component. But, it can be adjusted directly via this size property, typically\nwhen it is not contained in a 'Heading', 'Paragraph', or 'Text'.")
+    size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]).description("The font size is typically driven by the components containing\nthis component. But, it can be adjusted directly via this size property, typically\nwhen it is not contained in a 'Heading', 'Paragraph', or 'Text'."),
+    as: _reactDesc.PropTypes.string.description("The DOM tag to use for the element.")
   });
   return DocumentedAnchor;
 };

@@ -119,3 +119,13 @@ test('Anchor is clickable', function () {
   anchor[0].props.onClick();
   expect(onClick).toBeCalled();
 });
+test('renders tag', function () {
+  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Anchor, {
+    href: "#",
+    label: "Test",
+    as: "span"
+  })));
+
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
