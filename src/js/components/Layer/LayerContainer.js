@@ -1,5 +1,6 @@
 import React, { createRef, Component } from 'react';
-import { findDOMNode } from 'react-dom';
+import styled from 'styled-components';
+
 import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
 import { FocusedContainer } from '../FocusedContainer';
@@ -9,12 +10,12 @@ import { backgroundIsDark } from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 
-const hiddenAnchor = {
-  width: 0,
-  height: 0,
-  overflow: 'hidden',
-  position: 'absolute',
-};
+const HiddenAnchor = styled.a`
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+`;
 
 class LayerContainer extends Component {
   static defaultProps = {
@@ -76,10 +77,7 @@ class LayerContainer extends Component {
   }
 
   makeLayerVisible = () => {
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const node = findDOMNode(
-      this.layerRef.current || this.containerRef.current,
-    );
+    const node = this.layerRef.current || this.containerRef.current;
     if (node && node.scrollIntoView) {
       node.scrollIntoView();
     }
@@ -112,12 +110,7 @@ class LayerContainer extends Component {
         ref={this.containerRef}
       >
         {/* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
-        <a
-          ref={this.anchorRef}
-          tabIndex="-1"
-          aria-hidden="true"
-          style={hiddenAnchor}
-        />
+        <HiddenAnchor ref={this.anchorRef} tabIndex="-1" aria-hidden="true" />
         {/* eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
         {children}
       </StyledContainer>

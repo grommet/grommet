@@ -378,11 +378,7 @@ exports[`TextInput close suggestion drop 3`] = `
   }
 }
 
-<<<<<<< HEAD
 .tNmko {
-=======
-.fvCzyJ {
->>>>>>> Added comments to explain rationale behind keyboard changes.
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -728,11 +724,7 @@ exports[`TextInput complex suggestions 3`] = `
   }
 }
 
-<<<<<<< HEAD
 .tNmko {
-=======
-.fvCzyJ {
->>>>>>> Added comments to explain rationale behind keyboard changes.
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1264,11 +1256,7 @@ exports[`TextInput select suggestion 3`] = `
   }
 }
 
-<<<<<<< HEAD
 .tNmko {
-=======
-.fvCzyJ {
->>>>>>> Added comments to explain rationale behind keyboard changes.
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1641,11 +1629,7 @@ exports[`TextInput suggestions 3`] = `
   }
 }
 
-<<<<<<< HEAD
 .tNmko {
-=======
-.fvCzyJ {
->>>>>>> Added comments to explain rationale behind keyboard changes.
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;

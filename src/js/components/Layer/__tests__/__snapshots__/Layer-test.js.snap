@@ -35,6 +35,13 @@ exports[`Layer dark context 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
+.c1 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: relative;
@@ -61,7 +68,7 @@ exports[`Layer dark context 1`] = `
 >
   <a
     aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    class="c1"
     tabindex="-1"
   />
   This is a non-modal layer
@@ -150,6 +157,13 @@ exports[`Layer full false 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -199,7 +213,7 @@ exports[`Layer full false 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer
@@ -278,6 +292,13 @@ exports[`Layer full horizontal 1`] = `
   animation: dcHpVA 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -327,7 +348,7 @@ exports[`Layer full horizontal 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer
@@ -404,6 +425,13 @@ exports[`Layer full true 1`] = `
   animation: aUlIN 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -453,7 +481,7 @@ exports[`Layer full true 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer
@@ -532,6 +560,13 @@ exports[`Layer full vertical 1`] = `
   animation: XCWMt 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -581,7 +616,7 @@ exports[`Layer full vertical 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer
@@ -649,6 +684,13 @@ exports[`Layer hidden 1`] = `
   border-radius: 4px;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     position: relative;
@@ -689,7 +731,7 @@ exports[`Layer hidden 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer
@@ -714,7 +756,7 @@ exports[`Layer hidden 3`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="LayerContainer__HiddenAnchor-sc-1srj14c-0 LMZHJ"
       tabindex="-1"
     />
     This is a layer
@@ -823,6 +865,13 @@ exports[`Layer margin large 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -872,7 +921,7 @@ exports[`Layer margin large 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer
@@ -950,6 +999,13 @@ exports[`Layer margin medium 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -999,7 +1055,7 @@ exports[`Layer margin medium 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer
@@ -1077,6 +1133,13 @@ exports[`Layer margin none 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -1126,7 +1189,7 @@ exports[`Layer margin none 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer
@@ -1204,6 +1267,13 @@ exports[`Layer margin small 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -1253,7 +1323,7 @@ exports[`Layer margin small 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer
@@ -1331,6 +1401,13 @@ exports[`Layer margin xsmall 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -1380,7 +1457,7 @@ exports[`Layer margin xsmall 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer
@@ -1425,6 +1502,13 @@ exports[`Layer non-modal 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
+.c1 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: relative;
@@ -1451,7 +1535,7 @@ exports[`Layer non-modal 1`] = `
 >
   <a
     aria-hidden="true"
-    style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+    class="c1"
     tabindex="-1"
   />
   This is a non-modal layer
@@ -1524,6 +1608,13 @@ exports[`Layer plain 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -1573,7 +1664,7 @@ exports[`Layer plain 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a plain layer
@@ -1651,6 +1742,13 @@ exports[`Layer position bottom 1`] = `
   animation: jsmUBO 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -1700,7 +1798,7 @@ exports[`Layer position bottom 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer
@@ -1778,6 +1876,13 @@ exports[`Layer position center 1`] = `
   animation: bBMZdm 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -1827,7 +1932,7 @@ exports[`Layer position center 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer
@@ -1905,6 +2010,13 @@ exports[`Layer position left 1`] = `
   animation: fNWKbM 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -1954,7 +2066,7 @@ exports[`Layer position left 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer
@@ -2032,6 +2144,13 @@ exports[`Layer position right 1`] = `
   animation: lhngOP 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -2081,7 +2200,7 @@ exports[`Layer position right 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer
@@ -2159,6 +2278,13 @@ exports[`Layer position top 1`] = `
   animation: bAkQbM 0.2s ease-in-out forwards;
 }
 
+.c3 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
 @media only screen and (max-width:768px) {
   .c0 {
     position: absolute;
@@ -2208,7 +2334,7 @@ exports[`Layer position top 1`] = `
   >
     <a
       aria-hidden="true"
-      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      class="c3"
       tabindex="-1"
     />
     This is a layer

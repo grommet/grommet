@@ -1,16 +1,17 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { Anchor } from '../Anchor';
 
-const hiddenAnchor = {
-  width: 0,
-  height: 0,
-  overflow: 'hidden',
-  position: 'absolute',
-};
+const HiddenAnchor = styled(Anchor)`
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+`;
 
 export const SkipLinkTarget = ({ label, ...rest }) => (
-  <Anchor {...rest} tabIndex="-1" aria-hidden="true" style={hiddenAnchor}>
+  <HiddenAnchor {...rest} tabIndex="-1" aria-hidden="true">
     {label}
-  </Anchor>
+  </HiddenAnchor>
 );
