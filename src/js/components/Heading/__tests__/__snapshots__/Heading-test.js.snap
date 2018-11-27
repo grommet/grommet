@@ -848,16 +848,16 @@ exports[`Theme based font family renders 1`] = `
   className="c0"
 >
   <h1
-    className="-h1 c1"
+    className="c1"
   />
   <h2
-    className="-h2 c2"
+    className="c2"
   />
   <h3
-    className="-h3 c3"
+    className="c3"
   />
   <h4
-    className="-h4 c4"
+    className="c4"
   />
 </div>
 `;
