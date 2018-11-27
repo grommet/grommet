@@ -5100,6 +5100,14 @@ A color identifier to use for the text color.
 string
 \`\`\`
 
+**responsive**
+
+Whether margin should be scaled for mobile environments. Defaults to \`true\`.
+
+\`\`\`
+boolean
+\`\`\`
+
 **size**
 
 The size of the Paragraph text. Defaults to \`medium\`.

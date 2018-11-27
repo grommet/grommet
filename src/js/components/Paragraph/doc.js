@@ -16,6 +16,9 @@ export const doc = Paragraph => {
     color: PropTypes.string.description(
       'A color identifier to use for the text color.',
     ),
+    responsive: PropTypes.bool
+      .description(`Whether margin should be scaled for mobile environments.`)
+      .defaultValue(true),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'xxlarge']),
       PropTypes.string,
