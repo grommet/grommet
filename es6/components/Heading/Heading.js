@@ -6,25 +6,15 @@ import React from 'react';
 import { compose } from 'recompose';
 import { withTheme } from '../hocs';
 import { StyledHeading } from './StyledHeading';
-var styledComponents = {
-  div: StyledHeading
-}; // tag -> styled component
 
 var Heading = function Heading(props) {
   var color = props.color,
       level = props.level,
-      rest = _objectWithoutPropertiesLoose(props, ["color", "level"]);
-
-  var tag = "h" + level;
-  var StyledComponent = styledComponents[tag];
-
-  if (!StyledComponent) {
-    StyledComponent = StyledHeading.withComponent(tag);
-    styledComponents[tag] = StyledComponent;
-  } // enforce level to be a number
+      rest = _objectWithoutPropertiesLoose(props, ["color", "level"]); // enforce level to be a number
 
 
-  return React.createElement(StyledComponent, _extends({
+  return React.createElement(StyledHeading, _extends({
+    as: "h" + level,
     colorProp: color,
     level: +level
   }, rest));

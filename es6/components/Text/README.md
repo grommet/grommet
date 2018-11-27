@@ -134,6 +134,15 @@ string
 
 **tag**
 
+The DOM tag to use for the element. NOTE: This is deprecated in favor
+of indicating the DOM tag via the 'as' property.
+
+```
+string
+```
+
+**as**
+
 The DOM tag to use for the element. Defaults to `span`.
 
 ```
@@ -217,7 +226,7 @@ Defaults to
         size: '14px',
         height: '20px',
        },
-      medium: {          
+      medium: {
         size: '18px',
         height: '24px',
       },

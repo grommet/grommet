@@ -92,10 +92,19 @@ test('renders color', function () {
 });
 test('renders tag', function () {
   var component = renderer.create(React.createElement(Grommet, null, React.createElement(Text, {
-    tag: "div"
+    as: "div"
   })));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+test('proxies tag', function () {
+  var tagComponent = renderer.create(React.createElement(Grommet, null, React.createElement(Text, {
+    tag: "div"
+  })));
+  var asComponent = renderer.create(React.createElement(Grommet, null, React.createElement(Text, {
+    as: "div"
+  })));
+  expect(tagComponent.toJSON()).toEqual(asComponent.toJSON());
 });
 test('renders weight', function () {
   var component = renderer.create(React.createElement(Grommet, null, React.createElement(Text, {

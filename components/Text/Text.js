@@ -17,30 +17,20 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var styledComponents = {
-  span: _StyledText.StyledText
-}; // tag -> styled component
-
 var Text = function Text(_ref) {
   var color = _ref.color,
       tag = _ref.tag,
-      rest = _objectWithoutPropertiesLoose(_ref, ["color", "tag"]);
+      as = _ref.as,
+      rest = _objectWithoutPropertiesLoose(_ref, ["color", "tag", "as"]);
 
-  var StyledComponent = styledComponents[tag];
-
-  if (!StyledComponent) {
-    StyledComponent = _StyledText.StyledText.withComponent(tag);
-    styledComponents[tag] = StyledComponent;
-  }
-
-  return _react.default.createElement(StyledComponent, _extends({
+  return _react.default.createElement(_StyledText.StyledText, _extends({
+    as: !as && tag ? tag : as,
     colorProp: color
   }, rest));
 };
 
 Text.defaultProps = {
-  level: 1,
-  tag: 'span'
+  level: 1
 };
 var TextDoc;
 

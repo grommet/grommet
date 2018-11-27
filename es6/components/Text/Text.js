@@ -6,30 +6,21 @@ import React from 'react';
 import { compose } from 'recompose';
 import { withTheme } from '../hocs';
 import { StyledText } from './StyledText';
-var styledComponents = {
-  span: StyledText
-}; // tag -> styled component
 
 var Text = function Text(_ref) {
   var color = _ref.color,
       tag = _ref.tag,
-      rest = _objectWithoutPropertiesLoose(_ref, ["color", "tag"]);
+      as = _ref.as,
+      rest = _objectWithoutPropertiesLoose(_ref, ["color", "tag", "as"]);
 
-  var StyledComponent = styledComponents[tag];
-
-  if (!StyledComponent) {
-    StyledComponent = StyledText.withComponent(tag);
-    styledComponents[tag] = StyledComponent;
-  }
-
-  return React.createElement(StyledComponent, _extends({
+  return React.createElement(StyledText, _extends({
+    as: !as && tag ? tag : as,
     colorProp: color
   }, rest));
 };
 
 Text.defaultProps = {
-  level: 1,
-  tag: 'span'
+  level: 1
 };
 var TextDoc;
 

@@ -190,6 +190,14 @@ exports[`Calendar date 1`] = `
   color: #000000;
 }
 
+.c5 {
+  margin: 0px;
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
+  font-weight: 600;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 1.45;
@@ -289,14 +297,6 @@ exports[`Calendar date 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
-  margin: 0px;
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
-  font-weight: 600;
-}
-
 @media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
@@ -389,7 +389,7 @@ exports[`Calendar date 1`] = `
           className="c4"
         >
           <h3
-            className="-h3 c5"
+            className="c5"
             size="medium"
           >
             January 2018
@@ -1446,6 +1446,14 @@ exports[`Calendar dates 1`] = `
   color: #000000;
 }
 
+.c5 {
+  margin: 0px;
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
+  font-weight: 600;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 1.45;
@@ -1545,14 +1553,6 @@ exports[`Calendar dates 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
-  margin: 0px;
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
-  font-weight: 600;
-}
-
 @media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
@@ -1645,7 +1645,7 @@ exports[`Calendar dates 1`] = `
           className="c4"
         >
           <h3
-            className="-h3 c5"
+            className="c5"
             size="medium"
           >
             January 2018
@@ -2702,6 +2702,14 @@ exports[`Calendar firstDayOfWeek 1`] = `
   color: #000000;
 }
 
+.c5 {
+  margin: 0px;
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
+  font-weight: 600;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 1.45;
@@ -2801,14 +2809,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c5 {
-  margin: 0px;
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
-  font-weight: 600;
-}
-
 @media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
@@ -2901,7 +2901,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
           className="c4"
         >
           <h3
-            className="-h3 c5"
+            className="c5"
             size="medium"
           >
             January 2018
@@ -3779,7 +3779,7 @@ exports[`Calendar firstDayOfWeek 1`] = `
           className="c4"
         >
           <h3
-            className="-h3 c5"
+            className="c5"
             size="medium"
           >
             January 2018
@@ -5989,6 +5989,14 @@ exports[`Calendar reference 1`] = `
   color: #000000;
 }
 
+.c5 {
+  margin: 0px;
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
+  font-weight: 600;
+}
+
 .c1 {
   font-size: 18px;
   line-height: 1.45;
@@ -6066,14 +6074,6 @@ exports[`Calendar reference 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c5 {
-  margin: 0px;
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
-  font-weight: 600;
 }
 
 @media only screen and (max-width:768px) {
@@ -6168,7 +6168,7 @@ exports[`Calendar reference 1`] = `
           className="c4"
         >
           <h3
-            className="-h3 c5"
+            className="c5"
             size="medium"
           >
             January 2018
@@ -7333,6 +7333,30 @@ exports[`Calendar size 1`] = `
   color: #000000;
 }
 
+.c20 {
+  margin: 0px;
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
+  font-weight: 600;
+}
+
+.c5 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
+.c28 {
+  margin: 0px;
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
+  font-weight: 600;
+}
+
 .c18 {
   font-size: 18px;
   line-height: 1.45;
@@ -7564,30 +7588,6 @@ exports[`Calendar size 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c20 {
-  margin: 0px;
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
-  font-weight: 600;
-}
-
-.c28 {
-  margin: 0px;
-  font-size: 34px;
-  line-height: 40px;
-  max-width: 816px;
-  font-weight: 600;
-}
-
-.c5 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
-}
-
 @media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
@@ -7690,13 +7690,13 @@ exports[`Calendar size 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c28 {
+  .c5 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c28 {
+  .c5 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
@@ -7704,13 +7704,13 @@ exports[`Calendar size 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c28 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c28 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
@@ -7734,7 +7734,7 @@ exports[`Calendar size 1`] = `
           className="c4"
         >
           <h4
-            className="-h4 c5"
+            className="c5"
             size="small"
           >
             January 2018
@@ -8610,7 +8610,7 @@ exports[`Calendar size 1`] = `
           className="c19"
         >
           <h3
-            className="-h3 c20"
+            className="c20"
             size="medium"
           >
             January 2018
@@ -9488,7 +9488,7 @@ exports[`Calendar size 1`] = `
           className="c27"
         >
           <h3
-            className="-h3 c28"
+            className="c28"
             size="large"
           >
             January 2018

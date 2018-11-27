@@ -107,11 +107,22 @@ test('renders color', function () {
 });
 test('renders tag', function () {
   var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Text, {
-    tag: "div"
+    as: "div"
   })));
 
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+test('proxies tag', function () {
+  var tagComponent = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Text, {
+    tag: "div"
+  })));
+
+  var asComponent = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Text, {
+    as: "div"
+  })));
+
+  expect(tagComponent.toJSON()).toEqual(asComponent.toJSON());
 });
 test('renders weight', function () {
   var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Text, {

@@ -758,6 +758,7 @@ export interface TextProps {
   color?: string;
   size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xxlarge\\" | string;
   tag?: string;
+  as?: string;
   textAlign?: \\"start\\" | \\"center\\" | \\"end\\";
   truncate?: boolean;
   weight?: \\"normal\\" | \\"bold\\" | number;
