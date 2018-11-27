@@ -31,6 +31,7 @@ class CheckBox extends Component {
       reverse,
       theme,
       toggle,
+      indeterminate,
       ...rest
     } = this.props;
 
@@ -39,7 +40,22 @@ class CheckBox extends Component {
       hidden = <input name={name} type="hidden" value="true" />;
     }
 
-    const Icon = theme.checkBox.icons.checked;
+    if (checked && indeterminate) {
+      console.warn(
+        'Checkbox cannot be "checked" and "indeterminate" at the same time.',
+      );
+    }
+
+    if (toggle && indeterminate) {
+      console.warn(
+        'Checkbox of type toggle does not have "indeterminate" state.',
+      );
+    }
+
+    const {
+      checked: CheckedIcon,
+      indeterminate: IndeterminateIcon,
+    } = theme.checkBox.icons;
 
     let borderColor = normalizeColor(theme.checkBox.border.color, theme);
     if (checked) {
@@ -66,9 +82,10 @@ class CheckBox extends Component {
         theme={theme}
         checked={checked}
       >
-        {checked &&
-          (Icon ? (
-            <Icon as={StyledCheckBoxIcon} theme={theme} />
+        {!indeterminate &&
+          checked &&
+          (CheckedIcon ? (
+            <CheckedIcon as={StyledCheckBoxIcon} theme={theme} />
           ) : (
             <StyledCheckBoxIcon
               viewBox="0 0 24 24"
@@ -76,6 +93,19 @@ class CheckBox extends Component {
               theme={theme}
             >
               <path fill="none" d="M6,11.3 L10.3,16 L18,6.2" />
+            </StyledCheckBoxIcon>
+          ))}
+        {!checked &&
+          indeterminate &&
+          (IndeterminateIcon ? (
+            <IndeterminateIcon as={StyledCheckBoxIcon} theme={theme} />
+          ) : (
+            <StyledCheckBoxIcon
+              viewBox="0 0 24 24"
+              preserveAspectRatio="xMidYMid meet"
+              theme={theme}
+            >
+              <path fill="none" d="M2,12 L22,12" />
             </StyledCheckBoxIcon>
           ))}
       </StyledCheckBoxBox>
