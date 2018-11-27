@@ -37,9 +37,11 @@ function (_Component) {
 
     var sidebar = this.state.sidebar;
     return React.createElement(Grommet, {
+      full: true,
       theme: grommet
     }, React.createElement(Grid, {
-      rows: ['auto', 'medium'],
+      fill: true,
+      rows: ['auto', 'flex'],
       columns: ['auto', 'flex'],
       areas: [{
         name: 'header',
