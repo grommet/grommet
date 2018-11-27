@@ -27,6 +27,16 @@ var sizeStyle = function sizeStyle(props) {
   return '';
 };
 
+var fontFamily = function fontFamily(props) {
+  var font = props.theme.heading.level[props.level].font;
+
+  if (font && font.family) {
+    return css(["font-family:", ";"], font.family);
+  }
+
+  return props.theme.heading.font ? css(["font-family:", ";"], props.theme.heading.font.family) : '';
+};
+
 var TEXT_ALIGN_MAP = {
   center: 'center',
   end: 'right',
@@ -43,7 +53,7 @@ export var StyledHeading = styled.h1.withConfig({
   displayName: "StyledHeading",
   componentId: "sc-1rdh4aw-0"
 })(["", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
-  return props.theme.heading.font && css(["font-family:", ";"], props.theme.heading.font.family);
+  return fontFamily(props);
 }, function (props) {
   return sizeStyle(props);
 }, function (props) {

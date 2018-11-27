@@ -165,3 +165,44 @@ test('responsive renders', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+test('Theme based font family renders', function () {
+  var customTheme = {
+    heading: {
+      font: {
+        family: 'Fira Sans'
+      },
+      level: {
+        1: {
+          font: {
+            family: 'Arial'
+          }
+        },
+        2: {
+          font: {
+            family: 'Roboto'
+          }
+        },
+        3: {
+          font: {
+            family: 'Ubuntu'
+          }
+        }
+      }
+    }
+  };
+
+  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, {
+    theme: customTheme
+  }, _react.default.createElement(_.Heading, {
+    level: 1
+  }), _react.default.createElement(_.Heading, {
+    level: 2
+  }), _react.default.createElement(_.Heading, {
+    level: 3
+  }), _react.default.createElement(_.Heading, {
+    level: 4
+  })));
+
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

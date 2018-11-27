@@ -525,24 +525,32 @@ export var generate = function generate(baseSpacing, scale) {
       },
       level: {
         1: {
+          font: {// family: undefined,
+          },
           small: _extends({}, fontSizing(4)),
           medium: _extends({}, fontSizing(8)),
           large: _extends({}, fontSizing(16)),
           xlarge: _extends({}, fontSizing(24))
         },
         2: {
+          font: {// family: undefined,
+          },
           small: _extends({}, fontSizing(2)),
           medium: _extends({}, fontSizing(4)),
           large: _extends({}, fontSizing(8)),
           xlarge: _extends({}, fontSizing(12))
         },
         3: {
+          font: {// family: undefined,
+          },
           small: _extends({}, fontSizing(1)),
           medium: _extends({}, fontSizing(1)),
           large: _extends({}, fontSizing(4)),
           xlarge: _extends({}, fontSizing(6))
         },
         4: {
+          font: {// family: undefined,
+          },
           small: _extends({}, fontSizing(0)),
           medium: _extends({}, fontSizing(0)),
           large: _extends({}, fontSizing(0)),
