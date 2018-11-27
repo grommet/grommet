@@ -127,9 +127,21 @@ test('Theme based font family renders', () => {
         family: 'Fira Sans',
       },
       level: {
-        1: { family: 'Arial' },
-        2: { family: 'Roboto' },
-        3: { family: 'Ubuntu' },
+        1: {
+          font: {
+            family: 'Arial',
+          },
+        },
+        2: {
+          font: {
+            family: 'Roboto',
+          },
+        },
+        3: {
+          font: {
+            family: 'Ubuntu',
+          },
+        },
       },
     },
   };

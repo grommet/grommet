@@ -43,10 +43,10 @@ const sizeStyle = props => {
 };
 
 const fontFamily = props => {
-  const levelStyle = props.theme.heading.level[props.level];
-  if (levelStyle && levelStyle.family) {
+  const { font } = props.theme.heading.level[props.level];
+  if (font && font.family) {
     return css`
-      font-family: ${levelStyle.family};
+      font-family: ${font.family};
     `;
   }
   return props.theme.heading.font
