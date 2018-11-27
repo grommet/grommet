@@ -148,16 +148,12 @@ function (_Component) {
           maxHeight = windowHeight - top;
         } else if (align.bottom) {
           if (align.bottom === 'bottom') {
-            // top = targetRect.bottom - containerRect.height;
-            // maxHeight = Math.min(targetRect.bottom - top, windowHeight - top);
             bottom = targetRect.bottom;
           } else {
-            // top = targetRect.top - containerRect.height;
-            // maxHeight = Math.min(targetRect.top - top, windowHeight - top);
             bottom = targetRect.top;
           }
 
-          maxHeight = windowHeight - bottom;
+          maxHeight = bottom;
         } else {
           // center
           top = targetRect.top + targetRect.height / 2 - containerRect.height / 2;
@@ -166,7 +162,7 @@ function (_Component) {
         // see if there's more room the other direction
 
 
-        if (responsive && (containerRect.height > maxHeight || maxHeight > windowHeight / 10)) {
+        if (responsive && (containerRect.height > maxHeight || maxHeight < windowHeight / 10)) {
           // We need more room than we have.
           if (align.top && top > windowHeight / 2) {
             // We put it below, but there's more room above, put it above
@@ -182,7 +178,7 @@ function (_Component) {
               bottom = targetRect.bottom;
             }
 
-            maxHeight = windowHeight - bottom;
+            maxHeight = bottom;
           } else if (align.bottom && maxHeight < windowHeight / 2) {
             // We put it above but there's more room below, put it below
             bottom = '';

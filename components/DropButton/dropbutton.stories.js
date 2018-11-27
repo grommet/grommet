@@ -178,8 +178,69 @@ function (_Component2) {
   return CalendarDropButton;
 }(_react.Component);
 
+var UserMenuDropButton =
+/*#__PURE__*/
+function (_Component3) {
+  _inheritsLoose(UserMenuDropButton, _Component3);
+
+  function UserMenuDropButton() {
+    var _this5;
+
+    for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+      args[_key3] = arguments[_key3];
+    }
+
+    _this5 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "renderItems", function () {
+      return _react.default.createElement(_grommet.Box, null, _react.default.createElement("span", null, "hi"), _react.default.createElement("span", null, "hi"), _react.default.createElement("span", null, "hi"), _react.default.createElement("span", null, "hi"), _react.default.createElement("span", null, "hi"));
+    });
+
+    return _this5;
+  }
+
+  var _proto3 = UserMenuDropButton.prototype;
+
+  _proto3.componentDidMount = function componentDidMount() {
+    this.forceUpdate();
+  };
+
+  _proto3.render = function render() {
+    return _react.default.createElement(_grommet.Grommet, {
+      theme: _themes.grommet,
+      full: true
+    }, _react.default.createElement(_grommet.Box, {
+      fill: true
+    }, _react.default.createElement(_grommet.Box, {
+      fill: "vertical",
+      width: "60px",
+      background: "dark-2"
+    }, _react.default.createElement(_grommet.Box, {
+      flex: true
+    }), _react.default.createElement(_grommet.DropButton, {
+      alignSelf: "center",
+      margin: {
+        vertical: 'small'
+      },
+      dropContent: this.renderItems(),
+      dropAlign: {
+        bottom: 'top'
+      }
+    }, _react.default.createElement(_grommet.Box, {
+      height: "36px",
+      width: "36px",
+      round: "full",
+      background: "url(//s.gravatar.com/avatar/b226da5c619b18b44eb95c30be393953?s=80)"
+    })))));
+  };
+
+  return UserMenuDropButton;
+}(_react.Component);
+
 (0, _react2.storiesOf)('DropButton', module).add('Simple', function () {
   return _react.default.createElement(SimpleDropButton, null);
 }).add('Calendar', function () {
   return _react.default.createElement(CalendarDropButton, null);
+}).add('UserMenu', function () {
+  return _react.default.createElement(UserMenuDropButton, null);
 });
