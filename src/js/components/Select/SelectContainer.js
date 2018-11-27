@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import {
   debounce,
+  debounceDelay,
   isNodeAfterScroll,
   isNodeBeforeScroll,
   setFocusWithoutScroll,
@@ -124,12 +125,12 @@ class SelectContainer extends Component {
     );
   };
 
-  // wait 300ms of idle time before notifying that the search changed
-  // 300ms seems like the right amount to wait for after the used stopped typing
+  // wait a debounceDelay of idle time in ms, before notifying that the search changed.
+  // the debounceDelay timer starts to count when the user stopped typing
   onSearch = debounce(search => {
     const { onSearch } = this.props;
     onSearch(search);
-  }, 300);
+  }, debounceDelay(this.props));
 
   selectOption = (option, index) => {
     const { multiple, onChange, options, selected, value } = this.props;
