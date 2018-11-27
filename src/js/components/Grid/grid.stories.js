@@ -10,9 +10,10 @@ class AppGrid extends Component {
   render() {
     const { sidebar } = this.state;
     return (
-      <Grommet theme={grommet}>
+      <Grommet full theme={grommet}>
         <Grid
-          rows={['auto', 'medium']}
+          fill
+          rows={['auto', 'flex']}
           columns={['auto', 'flex']}
           areas={[
             { name: 'header', start: [0, 0], end: [1, 0] },
