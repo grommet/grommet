@@ -11,12 +11,6 @@ exports[`Markdown renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-}
-
 .c1 {
   font-size: 50px;
   line-height: 56px;
@@ -43,6 +37,12 @@ exports[`Markdown renders 1`] = `
   line-height: 24px;
   max-width: 432px;
   font-weight: 600;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
 }
 
 @media only screen and (max-width:768px) {
@@ -82,7 +82,7 @@ exports[`Markdown renders 1`] = `
 >
   <div>
     <h1
-      className="-h1 c1"
+      className="c1"
       id="h1"
     >
       H1
@@ -93,19 +93,19 @@ exports[`Markdown renders 1`] = `
       Paragraph
     </p>
     <h2
-      className="-h2 c3"
+      className="c3"
       id="h2"
     >
       H2
     </h2>
     <h3
-      className="-h3 c4"
+      className="c4"
       id="h3"
     >
       H3
     </h3>
     <h4
-      className="-h4 c5"
+      className="c5"
       id="h4"
     >
       H4

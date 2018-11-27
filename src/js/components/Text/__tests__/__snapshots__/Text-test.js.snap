@@ -277,7 +277,7 @@ exports[`renders tag 1`] = `
   className="c0"
 >
   <div
-    className="-div c1"
+    className="c1"
   />
 </div>
 `;

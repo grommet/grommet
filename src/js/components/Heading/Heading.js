@@ -5,10 +5,6 @@ import { withTheme } from '../hocs';
 
 import { StyledHeading } from './StyledHeading';
 
-const styledComponents = {
-  div: StyledHeading,
-}; // tag -> styled component
-
 const Heading = props => {
   const {
     color, // munged to avoid styled-components putting it in the DOM
@@ -16,15 +12,15 @@ const Heading = props => {
     ...rest
   } = props;
 
-  const tag = `h${level}`;
-  let StyledComponent = styledComponents[tag];
-  if (!StyledComponent) {
-    StyledComponent = StyledHeading.withComponent(tag);
-    styledComponents[tag] = StyledComponent;
-  }
-
   // enforce level to be a number
-  return <StyledComponent colorProp={color} level={+level} {...rest} />;
+  return (
+    <StyledHeading
+      as={`h${level}`}
+      colorProp={color}
+      level={+level}
+      {...rest}
+    />
+  );
 };
 
 Heading.defaultProps = {
