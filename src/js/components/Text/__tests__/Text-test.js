@@ -87,7 +87,7 @@ test('renders color', () => {
 test('renders tag', () => {
   const component = renderer.create(
     <Grommet>
-      <Text tag="div" />
+      <Text as="div" />
     </Grommet>,
   );
   const tree = component.toJSON();
