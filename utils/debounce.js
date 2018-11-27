@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.debounce = void 0;
+exports.debounceDelay = exports.debounce = void 0;
 
 var _this = void 0;
 
@@ -21,3 +21,10 @@ var debounce = function debounce(cb, timer) {
 };
 
 exports.debounce = debounce;
+
+var debounceDelay = function debounceDelay(_ref) {
+  var theme = _ref.theme;
+  return theme.global.debounceDelay;
+};
+
+exports.debounceDelay = debounceDelay;

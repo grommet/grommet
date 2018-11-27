@@ -14,3 +14,7 @@ export var debounce = function debounce(cb, timer) {
     }, timer);
   };
 };
+export var debounceDelay = function debounceDelay(_ref) {
+  var theme = _ref.theme;
+  return theme.global.debounceDelay;
+};

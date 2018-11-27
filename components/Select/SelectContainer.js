@@ -83,7 +83,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onSearch", (0, _utils.debounce)(function (search) {
       var onSearch = _this.props.onSearch;
       onSearch(search);
-    }, 300));
+    }, (0, _utils.debounceDelay)(_this.props)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "selectOption", function (option, index) {
       var _this$props = _this.props,

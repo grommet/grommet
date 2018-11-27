@@ -169,6 +169,8 @@ export var generate = function generate(baseSpacing, scale) {
           color: 'border'
         }
       },
+      debounceDelay: 300,
+      // The time to wait after the user stopped typing, measured in ms.
       drop: {
         background: '#ffffff',
         border: {

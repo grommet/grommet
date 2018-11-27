@@ -7,7 +7,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* eslint-disable react/no-find-dom-node */
 import React, { createRef, Component } from 'react';
 import styled from 'styled-components';
-import { debounce, isNodeAfterScroll, isNodeBeforeScroll, setFocusWithoutScroll } from '../../utils';
+import { debounce, debounceDelay, isNodeAfterScroll, isNodeBeforeScroll, setFocusWithoutScroll } from '../../utils';
 import { withTheme } from '../hocs';
 import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
@@ -65,7 +65,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onSearch", debounce(function (search) {
       var onSearch = _this.props.onSearch;
       onSearch(search);
-    }, 300));
+    }, debounceDelay(_this.props)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "selectOption", function (option, index) {
       var _this$props = _this.props,
