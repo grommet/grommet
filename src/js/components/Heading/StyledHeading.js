@@ -42,6 +42,20 @@ const sizeStyle = props => {
   return '';
 };
 
+const fontFamily = props => {
+  const { font } = props.theme.heading.level[props.level];
+  if (font && font.family) {
+    return css`
+      font-family: ${font.family};
+    `;
+  }
+  return props.theme.heading.font
+    ? css`
+        font-family: ${props.theme.heading.font.family};
+      `
+    : '';
+};
+
 const TEXT_ALIGN_MAP = {
   center: 'center',
   end: 'right',
@@ -64,11 +78,7 @@ const colorStyle = css`
 
 export const StyledHeading = styled.h1`
   ${genericStyles}
-  ${props =>
-    props.theme.heading.font &&
-    css`
-      font-family: ${props.theme.heading.font.family};
-    `}
+  ${props => fontFamily(props)}
   ${props => sizeStyle(props)}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.truncate && truncateStyle}

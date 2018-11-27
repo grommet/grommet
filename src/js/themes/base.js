@@ -477,24 +477,36 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       level: {
         1: {
+          font: {
+            // family: undefined,
+          },
           small: { ...fontSizing(4) },
           medium: { ...fontSizing(8) },
           large: { ...fontSizing(16) },
           xlarge: { ...fontSizing(24) },
         },
         2: {
+          font: {
+            // family: undefined,
+          },
           small: { ...fontSizing(2) },
           medium: { ...fontSizing(4) },
           large: { ...fontSizing(8) },
           xlarge: { ...fontSizing(12) },
         },
         3: {
+          font: {
+            // family: undefined,
+          },
           small: { ...fontSizing(1) },
           medium: { ...fontSizing(1) },
           large: { ...fontSizing(4) },
           xlarge: { ...fontSizing(6) },
         },
         4: {
+          font: {
+            // family: undefined,
+          },
           small: { ...fontSizing(0) },
           medium: { ...fontSizing(0) },
           large: { ...fontSizing(0) },
