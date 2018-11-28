@@ -247,6 +247,14 @@ Function that will be called when the Select drop closes.
 function
 ```
 
+**onOpen**
+
+Function that will be called when the Select drop opens.
+
+```
+function
+```
+
 **onSearch**
 
 Function that will be called when the user types in the search input.
