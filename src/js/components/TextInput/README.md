@@ -173,3 +173,99 @@ What text to put in the input.
 string
 ```
   
+## Theme
+  
+**global.colors.placeholder**
+
+The placeholder color used for TextArea. Expects `string`.
+
+Defaults to
+
+```
+#AAAAAA
+```
+
+**global.control.border.width**
+
+The border width. Expects `string`.
+
+Defaults to
+
+```
+1px
+```
+
+**global.input.weight**
+
+The font weight of the label. Expects `number`.
+
+Defaults to
+
+```
+600
+```
+
+**global.spacing**
+
+The padding of the text. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**select.step**
+
+How many items to render at a time. Expects `number`.
+
+Defaults to
+
+```
+20
+```
+
+**text**
+
+The possible sizes of the text in terms of its font-size and line-height. Expects `object`.
+
+Defaults to
+
+```
+{
+      xsmall: {
+        size: '12px',
+        height: '18px',
+       },
+      small: {
+        size: '14px',
+        height: '20px',
+       },
+      medium: {          
+        size: '18px',
+        height: '24px',
+      },
+      large: {
+        size: '22px',
+        height: '28px',
+      },
+      xlarge: {
+        size: '26px',
+        height: '32px',
+      },
+      xxlarge: {
+        size: '34px',
+        height: '40px',
+      },
+    }
+```
+
+**textInput.extend**
+
+Any additional style for Text. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
