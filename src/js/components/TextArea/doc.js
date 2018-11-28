@@ -38,13 +38,25 @@ Only use this when the containing context provides sufficient affordance.`,
 
 export const themeDoc = {
   'global.colors.placeholder': {
-    description: 'The text color used for Text.',
-    type: 'string | { dark: string, light: string }',
-    defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
+    description: 'The placeholder color used for TextArea.',
+    type: 'string',
+    defaultValue: '#AAAAAA',
   },
-  'global.control.border.width': {},
-  'global.input.weight': {},
-  'global.spacing': {},
+  'global.control.border.width': {
+    description: 'The border width.',
+    type: 'string',
+    defaultValue: '1px',
+  },
+  'global.input.weight': {
+    description: 'The font weight of the label.',
+    type: 'number',
+    defaultValue: 600,
+  },
+  'global.spacing': {
+    description: 'The padding of the text.',
+    type: 'string',
+    defaultValue: undefined,
+  },
   textArea: {
     description: `The possible sizes of the text in terms of its font-size and line-height.`,
     type: 'object',
@@ -74,5 +86,10 @@ export const themeDoc = {
         height: '40px',
       },
     }`,
+  },
+  'textArea.extend': {
+    description: 'Any additional style for Text.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
   },
 };
