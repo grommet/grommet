@@ -93,6 +93,9 @@ export const doc = Select => {
     onClose: PropTypes.func.description(
       'Function that will be called when the Select drop closes.',
     ),
+    onOpen: PropTypes.func.description(
+      'Function that will be called when the Select drop opens.',
+    ),
     onSearch: PropTypes.func.description(
       `Function that will be called when the user types in the search input.
       If this property is not provided, no search field will be rendered.`,
