@@ -145,7 +145,7 @@ node
 
 **onClick**
 
-Click handler. It can be used, for example, 
+Click handler. It can be used, for example,
         to add analytics and track who clicked in the anchor.
 
 ```
@@ -174,6 +174,14 @@ medium
 large
 xlarge
 xxlarge
+string
+```
+
+**as**
+
+The DOM tag to use for the element.
+
+```
 string
 ```
   

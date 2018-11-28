@@ -126,7 +126,7 @@ test('Button href renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Button hoverIndicator renders', () => {
+test('Button hoverIndicator background renders', () => {
   const component = renderer.create(
     <Grommet>
       <Button onClick={() => {}} hoverIndicator="background">
@@ -207,6 +207,18 @@ test('Button hoverIndicator as object with invalid colorIndex renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Button hoverIndicator color renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Button onClick={() => {}} hoverIndicator="dark-5">
+        hoverIndicator
+      </Button>
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Button is clickable', () => {
   const onClick = jest.fn();
   const component = renderer.create(
@@ -219,4 +231,14 @@ test('Button is clickable', () => {
   const button = findAllByType(tree, 'button');
   button[0].props.onClick();
   expect(onClick).toBeCalled();
+});
+
+test('renders tag', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Button as="span" />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });

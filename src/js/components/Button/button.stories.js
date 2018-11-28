@@ -31,7 +31,7 @@ const IconLabelButton = () => (
 
 const PlainButton = props => (
   <Grommet theme={grommet}>
-    <Button hoverIndicator onClick={() => {}} {...props}>
+    <Button hoverIndicator="light-1" onClick={() => {}} {...props}>
       <Box pad="small" direction="row" align="center" gap="small">
         <Add />
         <Text>Add</Text>
@@ -49,6 +49,12 @@ const AnchorButton = () => (
 const RouteButton = () => (
   <Grommet theme={grommet}>
     <RoutedButton label="Go" path="/" />
+  </Grommet>
+);
+
+const CustomTagButton = () => (
+  <Grommet theme={grommet}>
+    <Button as="span" label="Go" path="/" />
   </Grommet>
 );
 
@@ -180,9 +186,9 @@ const customButtonColor = deepMerge(grommet, {
 
 const ThemeColored = () => (
   <Grommet theme={customButtonColor}>
-    <Box align='start' gap='small'>
-      <Button primary label='Submit' onClick={() => {}} />
-      <Button primary color='dark-1' label='Submit' onClick={() => {}} />
+    <Box align="start" gap="small">
+      <Button primary label="Submit" onClick={() => {}} />
+      <Button primary color="dark-1" label="Submit" onClick={() => {}} />
     </Box>
   </Grommet>
 );
@@ -200,4 +206,5 @@ storiesOf('Button', module)
   .add('Custom theme', () => <CustomThemeButton />)
   .add('Multiple Same Line', () => <MultipleButton />)
   .add('Colored', () => <ColoredButton />)
-  .add('Theme Colored', () => <ThemeColored />);
+  .add('Theme Colored', () => <ThemeColored />)
+  .add('Custom tag Button', () => <CustomTagButton />);

@@ -156,6 +156,7 @@ with plain Buttons.
 
 ```
 boolean
+string
 background
 {
   background: 
@@ -230,6 +231,14 @@ The type of button. Set the type to submit for the default button on forms. Defa
 button
 reset
 submit
+```
+
+**as**
+
+The DOM tag to use for the element.
+
+```
+string
 ```
   
 ## Theme

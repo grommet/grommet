@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import {
   debounce,
+  debounceDelay,
   isNodeAfterScroll,
   isNodeBeforeScroll,
   setFocusWithoutScroll,
@@ -83,7 +84,6 @@ class SelectContainer extends Component {
   };
 
   componentDidMount() {
-    /* eslint-disable-next-line react/prop-types */
     const { onSearch } = this.props;
     const { activeIndex } = this.state;
     // timeout need to send the operation through event loop and allow time to the portal
@@ -125,22 +125,15 @@ class SelectContainer extends Component {
     );
   };
 
-  // wait 300ms of idle time before notifying that the search changed
-  // 300ms seems like the right amount to wait for after the used stopped typing
+  // wait a debounceDelay of idle time in ms, before notifying that the search changed.
+  // the debounceDelay timer starts to count when the user stopped typing
   onSearch = debounce(search => {
     const { onSearch } = this.props;
     onSearch(search);
-  }, 300);
+  }, debounceDelay(this.props));
 
   selectOption = (option, index) => {
-    const {
-      /* eslint-disable-next-line react/prop-types */
-      multiple,
-      onChange,
-      options,
-      selected,
-      value,
-    } = this.props;
+    const { multiple, onChange, options, selected, value } = this.props;
 
     if (onChange) {
       let nextValue = option;
@@ -218,22 +211,102 @@ class SelectContainer extends Component {
     }
   };
 
+  optionLabel = index => {
+    const { options, labelKey } = this.props;
+    const option = options[index];
+    let optionLabel;
+    if (labelKey) {
+      if (typeof labelKey === 'function') {
+        optionLabel = labelKey(option);
+      } else {
+        optionLabel = option[labelKey];
+      }
+    } else {
+      optionLabel = option;
+    }
+    return optionLabel;
+  };
+
+  optionValue = index => {
+    const { options, valueKey } = this.props;
+    const option = options[index];
+    let optionValue;
+    if (valueKey) {
+      if (typeof valueKey === 'function') {
+        optionValue = valueKey(option);
+      } else {
+        optionValue = option[valueKey];
+      }
+    } else {
+      optionValue = option;
+    }
+    return optionValue;
+  };
+
+  isDisabled = index => {
+    const { disabled, disabledKey, options } = this.props;
+    const option = options[index];
+    let result;
+    if (disabledKey) {
+      if (typeof disabledKey === 'function') {
+        result = disabledKey(option, index);
+      } else {
+        result = option[disabledKey];
+      }
+    } else if (Array.isArray(disabled)) {
+      if (typeof disabled[0] === 'number') {
+        result = disabled.indexOf(index) !== -1;
+      } else {
+        const optionValue = this.optionValue(index);
+        result = disabled.indexOf(optionValue) !== -1;
+      }
+    }
+    return result;
+  };
+
+  isSelected = index => {
+    const { selected, value, valueKey } = this.props;
+    let result;
+    if (selected) {
+      // deprecated in favor of value
+      result = selected.indexOf(index) !== -1;
+    } else {
+      const optionValue = this.optionValue(index);
+      if (Array.isArray(value)) {
+        if (value.length === 0) {
+          result = false;
+        } else if (typeof value[0] !== 'object') {
+          result = value.indexOf(optionValue) !== -1;
+        } else if (valueKey) {
+          result = value.some(valueItem => {
+            const valueValue =
+              typeof valueKey === 'function'
+                ? valueKey(valueItem)
+                : valueItem[valueKey];
+            return valueValue === optionValue;
+          });
+        }
+      } else if (valueKey && typeof value === 'object') {
+        const valueValue =
+          typeof valueKey === 'function' ? valueKey(value) : value[valueKey];
+        result = valueValue === optionValue;
+      } else {
+        result = value === optionValue;
+      }
+    }
+    return result;
+  };
+
   render() {
-    /* eslint-disable react/prop-types */
     const {
       children,
-      disabled,
       id,
-      name,
       onKeyDown,
       onSearch,
       options,
       searchPlaceholder,
-      selected,
       theme,
-      value,
     } = this.props;
-    /* eslint-enable react/prop-types */
     const { activeIndex, search } = this.state;
 
     const customSearchInput = theme.select.searchInput;
@@ -270,20 +343,12 @@ class SelectContainer extends Component {
           >
             <InfiniteScroll items={options} step={theme.select.step}>
               {(option, index) => {
-                const isDisabled =
-                  Array.isArray(disabled) && disabled.indexOf(index) !== -1;
-                const isSelected =
-                  selected === index ||
-                  (Array.isArray(selected) && selected.indexOf(index) !== -1);
-                const isActive =
-                  isSelected ||
-                  activeIndex === index ||
-                  (option && option === value) ||
-                  (option &&
-                    Array.isArray(value) &&
-                    value.indexOf(option) !== -1);
+                const isDisabled = this.isDisabled(index);
+                const isSelected = this.isSelected(index);
+                const isActive = isSelected || activeIndex === index;
                 return (
                   <SelectOption
+                    key={this.optionValue(index)}
                     ref={ref => {
                       this.optionsRef[index] = ref;
                     }}
@@ -291,8 +356,11 @@ class SelectContainer extends Component {
                     active={isActive}
                     selected={isSelected}
                     option={option}
-                    key={`option_${name || ''}_${index}`}
-                    onClick={() => this.selectOption(option, index)}
+                    onClick={
+                      !isDisabled
+                        ? () => this.selectOption(option, index)
+                        : undefined
+                    }
                   >
                     {children ? (
                       children(option, index, options, {
@@ -302,11 +370,7 @@ class SelectContainer extends Component {
                       })
                     ) : (
                       <Box align="start" pad="small">
-                        <Text margin="none">
-                          {option !== null && option !== undefined
-                            ? option.toString()
-                            : undefined}
-                        </Text>
+                        <Text margin="none">{this.optionLabel(index)}</Text>
                       </Box>
                     )}
                   </SelectOption>

@@ -10,7 +10,7 @@ export interface ButtonProps {
   disabled?: boolean;
   fill?: boolean;
   focusIndicator?: boolean;
-  hoverIndicator?: boolean | "background" | {background: boolean | string};
+  hoverIndicator?: boolean | string | "background" | {background: boolean | string};
   href?: string;
   icon?: JSX.Element;
   label?: React.ReactNode;
@@ -19,6 +19,7 @@ export interface ButtonProps {
   primary?: boolean;
   reverse?: boolean;
   type?: "button" | "reset" | "submit";
+  as?: string;
 }
 
 declare const Button: React.ComponentType<ButtonProps>;

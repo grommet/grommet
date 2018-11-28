@@ -14,7 +14,6 @@ class Box extends Component {
     margin: 'none',
     pad: 'none',
     responsive: true,
-    tag: 'div',
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -62,6 +61,7 @@ class Box extends Component {
       overflow, // munged to avoid styled-components putting it in the DOM
       responsive,
       tag,
+      as,
       theme: propsTheme,
       wrap, // munged to avoid styled-components putting it in the DOM,
       width, // munged to avoid styled-components putting it in the DOM
@@ -97,7 +97,7 @@ class Box extends Component {
 
     let content = (
       <StyledBox
-        as={tag}
+        as={!as && tag ? tag : as}
         aria-label={a11yTitle}
         ref={forwardRef}
         directionProp={direction}

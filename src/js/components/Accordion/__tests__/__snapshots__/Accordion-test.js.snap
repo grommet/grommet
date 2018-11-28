@@ -190,6 +190,13 @@ exports[`Accordion AccordionPanel 1`] = `
   visibility: hidden;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -198,13 +205,6 @@ exports[`Accordion AccordionPanel 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
 }
 
 @media only screen and (max-width:768px) {
@@ -336,7 +336,7 @@ exports[`Accordion AccordionPanel 1`] = `
             className="c5"
           >
             <h4
-              className="-h4 c6"
+              className="c6"
             >
               Panel 1
             </h4>
@@ -397,7 +397,7 @@ exports[`Accordion AccordionPanel 1`] = `
             className="c5"
           >
             <h4
-              className="-h4 c6"
+              className="c6"
             >
               Panel 2
             </h4>
@@ -608,6 +608,13 @@ exports[`Accordion change active index 1`] = `
   text-align: inherit;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -616,13 +623,6 @@ exports[`Accordion change active index 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
 }
 
 @media only screen and (max-width:768px) {
@@ -737,7 +737,7 @@ exports[`Accordion change active index 1`] = `
             class="c5"
           >
             <h4
-              class="-h4 c6"
+              class="c6"
             >
               Panel 1
             </h4>
@@ -785,7 +785,7 @@ exports[`Accordion change active index 1`] = `
             class="c5"
           >
             <h4
-              class="-h4 c6"
+              class="c6"
             >
               Panel 2
             </h4>
@@ -848,7 +848,7 @@ exports[`Accordion change active index 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 1
             </h4>
@@ -896,7 +896,7 @@ exports[`Accordion change active index 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 2
             </h4>
@@ -1124,6 +1124,13 @@ exports[`Accordion change to second Panel 1`] = `
   visibility: hidden;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1132,13 +1139,6 @@ exports[`Accordion change to second Panel 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
 }
 
 @media only screen and (max-width:768px) {
@@ -1265,7 +1265,7 @@ exports[`Accordion change to second Panel 1`] = `
             class="c5"
           >
             <h4
-              class="-h4 c6"
+              class="c6"
             >
               Panel 1
             </h4>
@@ -1320,7 +1320,7 @@ exports[`Accordion change to second Panel 1`] = `
             class="c5"
           >
             <h4
-              class="-h4 c6"
+              class="c6"
             >
               Panel 2
             </h4>
@@ -1387,7 +1387,7 @@ exports[`Accordion change to second Panel 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 1
             </h4>
@@ -1442,7 +1442,7 @@ exports[`Accordion change to second Panel 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 2
             </h4>
@@ -1686,6 +1686,13 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   text-align: inherit;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1694,13 +1701,6 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
 }
 
 @media only screen and (max-width:768px) {
@@ -1815,7 +1815,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
             class="c5"
           >
             <h4
-              class="-h4 c6"
+              class="c6"
             >
               Panel 1
             </h4>
@@ -1863,7 +1863,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
             class="c5"
           >
             <h4
-              class="-h4 c6"
+              class="c6"
             >
               Panel 2
             </h4>
@@ -1923,7 +1923,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 1
             </h4>
@@ -1971,7 +1971,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 2
             </h4>
@@ -2812,6 +2812,13 @@ exports[`Accordion multiple panels 1`] = `
   text-align: inherit;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2820,13 +2827,6 @@ exports[`Accordion multiple panels 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
 }
 
 @media only screen and (max-width:768px) {
@@ -2941,7 +2941,7 @@ exports[`Accordion multiple panels 1`] = `
             class="c5"
           >
             <h4
-              class="-h4 c6"
+              class="c6"
             >
               Panel 1
             </h4>
@@ -2989,7 +2989,7 @@ exports[`Accordion multiple panels 1`] = `
             class="c5"
           >
             <h4
-              class="-h4 c6"
+              class="c6"
             >
               Panel 2
             </h4>
@@ -3049,7 +3049,7 @@ exports[`Accordion multiple panels 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 1
             </h4>
@@ -3097,7 +3097,7 @@ exports[`Accordion multiple panels 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 2
             </h4>
@@ -3192,7 +3192,7 @@ exports[`Accordion multiple panels 3`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 1
             </h4>
@@ -3275,7 +3275,7 @@ exports[`Accordion multiple panels 3`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 2
             </h4>
@@ -3338,7 +3338,7 @@ exports[`Accordion multiple panels 4`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 1
             </h4>
@@ -3389,7 +3389,7 @@ exports[`Accordion multiple panels 4`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 2
             </h4>
@@ -3481,7 +3481,7 @@ exports[`Accordion multiple panels 5`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 1
             </h4>
@@ -3561,7 +3561,7 @@ exports[`Accordion multiple panels 5`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 2
             </h4>
@@ -3837,6 +3837,13 @@ exports[`Accordion set on hover 1`] = `
   visibility: hidden;
 }
 
+.c6 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3845,13 +3852,6 @@ exports[`Accordion set on hover 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c6 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
-  font-weight: 600;
 }
 
 @media only screen and (max-width:768px) {
@@ -3978,7 +3978,7 @@ exports[`Accordion set on hover 1`] = `
             class="c5"
           >
             <h4
-              class="-h4 c6"
+              class="c6"
             >
               Panel 1
             </h4>
@@ -4033,7 +4033,7 @@ exports[`Accordion set on hover 1`] = `
             class="c5"
           >
             <h4
-              class="-h4 c6"
+              class="c6"
             >
               Panel 2
             </h4>
@@ -4100,7 +4100,7 @@ exports[`Accordion set on hover 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 QduAt"
+              class="StyledHeading-sc-1rdh4aw-0 liBGQI"
             >
               Panel 1
             </h4>
@@ -4155,7 +4155,7 @@ exports[`Accordion set on hover 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 2
             </h4>
@@ -4222,7 +4222,7 @@ exports[`Accordion set on hover 3`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 QduAt"
+              class="StyledHeading-sc-1rdh4aw-0 liBGQI"
             >
               Panel 1
             </h4>
@@ -4277,7 +4277,7 @@ exports[`Accordion set on hover 3`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 QduAt"
+              class="StyledHeading-sc-1rdh4aw-0 liBGQI"
             >
               Panel 2
             </h4>
@@ -4344,7 +4344,7 @@ exports[`Accordion set on hover 4`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 1
             </h4>
@@ -4399,7 +4399,7 @@ exports[`Accordion set on hover 4`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 QduAt"
+              class="StyledHeading-sc-1rdh4aw-0 liBGQI"
             >
               Panel 2
             </h4>
@@ -4466,7 +4466,7 @@ exports[`Accordion set on hover 5`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 1
             </h4>
@@ -4521,7 +4521,7 @@ exports[`Accordion set on hover 5`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0-h4 lcpbRl"
+              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
             >
               Panel 2
             </h4>

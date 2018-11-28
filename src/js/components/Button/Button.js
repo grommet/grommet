@@ -57,6 +57,7 @@ class Button extends Component {
       reverse,
       theme,
       type,
+      as,
       ...rest
     } = this.props;
 
@@ -70,13 +71,15 @@ class Button extends Component {
           ],
       });
     }
+
+    const domTag = !as && href ? 'a' : as;
     const first = reverse ? label : buttonIcon;
     const second = reverse ? buttonIcon : label;
 
     return (
       <StyledButton
         {...rest}
-        as={href ? 'a' : undefined}
+        as={domTag}
         ref={forwardRef}
         aria-label={a11yTitle}
         colorValue={color}

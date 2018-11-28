@@ -660,7 +660,7 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
 </div>
 `;
 
-exports[`Button hoverIndicator renders 1`] = `
+exports[`Button hoverIndicator background renders 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -682,6 +682,56 @@ exports[`Button hoverIndicator renders 1`] = `
 .c1:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
+  color: #000000;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+>
+  <button
+    className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="button"
+  >
+    hoverIndicator
+  </button>
+</div>
+`;
+
+exports[`Button hoverIndicator color renders 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c1:hover {
+  background: #777777;
+  color: #f8f8f8;
   color: #000000;
 }
 
@@ -1324,5 +1374,54 @@ exports[`Button warns about invalid label render 1`] = `
       Test
     </div>
   </button>
+</div>
+`;
+
+exports[`renders tag 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+>
+  <span
+    className="c1"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    type="button"
+  />
 </div>
 `;

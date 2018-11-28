@@ -34,6 +34,7 @@ export const doc = Button => {
       .defaultValue(true),
     hoverIndicator: PropTypes.oneOfType([
       PropTypes.bool,
+      PropTypes.string,
       PropTypes.oneOf(['background']),
       PropTypes.shape({
         background: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
@@ -74,6 +75,7 @@ end of the anchor.`,
         'The type of button. Set the type to submit for the default button on forms.',
       )
       .defaultValue('button'),
+    as: PropTypes.string.description(`The DOM tag to use for the element.`),
   };
 
   return DocumentedButton;

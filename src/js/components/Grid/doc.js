@@ -138,7 +138,11 @@ space in the row axis.`,
       Specifying a single string will cause automatically added rows to be
       the specified size.`,
     ),
-    tag: PropTypes.string
+    tag: PropTypes.string.description(
+      `The DOM tag to use for the element. NOTE: This is deprecated in favor
+of indicating the DOM tag via the 'as' property.`,
+    ),
+    as: PropTypes.string
       .description('The DOM tag to use for the element.')
       .defaultValue('div'),
   };

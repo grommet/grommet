@@ -5,23 +5,12 @@ import { withTheme } from '../hocs';
 
 import { StyledText } from './StyledText';
 
-const styledComponents = {
-  span: StyledText,
-}; // tag -> styled component
-
-const Text = ({ color, tag, ...rest }) => {
-  let StyledComponent = styledComponents[tag];
-  if (!StyledComponent) {
-    StyledComponent = StyledText.withComponent(tag);
-    styledComponents[tag] = StyledComponent;
-  }
-
-  return <StyledComponent colorProp={color} {...rest} />;
-};
+const Text = ({ color, tag, as, ...rest }) => (
+  <StyledText as={!as && tag ? tag : as} colorProp={color} {...rest} />
+);
 
 Text.defaultProps = {
   level: 1,
-  tag: 'span',
 };
 
 let TextDoc;

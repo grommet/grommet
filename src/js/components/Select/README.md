@@ -131,10 +131,31 @@ boolean
 **disabled**
 
 Whether the entire select or individual options should be disabled.
+        An array of numbers indicates the indexes into 'options' of the
+        disabled options. An array of strings or objects work the same way
+        as the 'value' to indicate which options are disabled.
 
 ```
 boolean
-[number]
+[
+  number
+  string
+  object
+]
+```
+
+**disabledKey**
+
+When the options array contains objects, this property indicates how
+      to determine which options should be disabled. If a string is
+      provided, it is used as the key for each item object and if that key
+      returns truthy, the option is disabled. If a function is provided, it is
+      called with the option and the return value determines if the option
+      is disabled.
+
+```
+string
+function
 ```
 
 **dropAlign**
@@ -179,6 +200,19 @@ Whether when 'plain' it should receive a focus outline.
 boolean
 ```
 
+**labelKey**
+
+When the options array contains objects, this property indicates how
+      to determine the label of each option. If a string is
+      provided, it is used as the key to retrieve each option's label.
+      If a function is provided, it is called with the option and the
+      return value indicates the label.
+
+```
+string
+function
+```
+
 **messages**
 
 Custom messages.
@@ -208,6 +242,14 @@ function
 **onClose**
 
 Function that will be called when the Select drop closes.
+
+```
+function
+```
+
+**onOpen**
+
+Function that will be called when the Select drop opens.
 
 ```
 function
@@ -263,7 +305,8 @@ string
 **selected**
 
 Index of the currently selected option. When multiple, the set of
-      options selected. This property is required when multiple.
+      options selected. NOTE: This is deprecated in favor of indicating
+      the selected values via the 'value' property.
 
 ```
 number
@@ -286,7 +329,8 @@ string
 
 Currently selected value. This can be an array
       when multiple. Passing an element allows the caller to control how
-      the value is rendered.
+      the value is rendered. Passing an element is deprecated. Instead,
+      use the 'valueLabel' property.
 
 ```
 string
@@ -296,5 +340,27 @@ object
   string
   object
 ]
+```
+
+**valueLabel**
+
+Provides custom rendering of the value. If not provided, Select
+      will render the value automatically.
+
+```
+node
+```
+
+**valueKey**
+
+When the options array contains objects, this property indicates how
+      to determine the value of each option. If a string is
+      provided, it is used as the key to retrieve each option's value.
+      If a function is provided, it is called with the option and the
+      return value indicates the value.
+
+```
+string
+function
 ```
   

@@ -6,3 +6,5 @@ export const debounce = (cb, timer) => {
     timeout = setTimeout(() => cb.apply(context, args), timer);
   };
 };
+
+export const debounceDelay = ({ theme }) => theme.global.debounceDelay;

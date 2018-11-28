@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
+import React, { createRef, Component } from 'react';
+import styled from 'styled-components';
+
 import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
 import { FocusedContainer } from '../FocusedContainer';
@@ -9,6 +10,13 @@ import { backgroundIsDark } from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 
+const HiddenAnchor = styled.a`
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+`;
+
 class LayerContainer extends Component {
   static defaultProps = {
     full: false,
@@ -16,6 +24,8 @@ class LayerContainer extends Component {
     modal: true,
     position: 'center',
   };
+
+  anchorRef = createRef();
 
   state = {};
 
@@ -51,6 +61,11 @@ class LayerContainer extends Component {
     const { position } = this.props;
     if (position !== 'hidden') {
       this.makeLayerVisible();
+      // once layer is open we set the focus in the hidden
+      // anchor so that you can start tabbing inside the layer
+      if (this.anchorRef.current) {
+        this.anchorRef.current.focus();
+      }
     }
   }
 
@@ -62,10 +77,7 @@ class LayerContainer extends Component {
   }
 
   makeLayerVisible = () => {
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const node = findDOMNode(
-      this.layerRef.current || this.containerRef.current,
-    );
+    const node = this.layerRef.current || this.containerRef.current;
     if (node && node.scrollIntoView) {
       node.scrollIntoView();
     }
@@ -97,6 +109,9 @@ class LayerContainer extends Component {
         responsive={responsive}
         ref={this.containerRef}
       >
+        {/* eslint-disable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
+        <HiddenAnchor ref={this.anchorRef} tabIndex="-1" aria-hidden="true" />
+        {/* eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */}
         {children}
       </StyledContainer>
     );
@@ -121,14 +136,11 @@ class LayerContainer extends Component {
           {content}
         </StyledLayer>
       );
+      /* eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */
     }
 
     if (onEsc) {
-      content = (
-        <Keyboard target="document" onEsc={onEsc}>
-          {content}
-        </Keyboard>
-      );
+      content = <Keyboard onEsc={onEsc}>{content}</Keyboard>;
     }
 
     if (modal) {

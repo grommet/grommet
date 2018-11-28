@@ -12,6 +12,7 @@ export interface AnchorProps {
   onClick?: (...args: any[]) => any;
   reverse?: boolean;
   size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
+  as?: string;
 }
 
 declare const Anchor: React.ComponentType<AnchorProps>;

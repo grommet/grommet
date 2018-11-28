@@ -41,6 +41,12 @@ export const doc = CheckBox => {
     toggle: PropTypes.bool
       .description('Whether to visualize it as a toggle switch.')
       .defaultValue(false),
+    indeterminate: PropTypes.bool
+      .description(
+        `Whether state is indeterminate.
+NOTE: This can only be used with non-toggle components`,
+      )
+      .defaultValue(false),
   };
 
   return DocumentedCheckBox;

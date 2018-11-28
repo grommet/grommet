@@ -14,6 +14,16 @@ import { Keyboard } from '../Keyboard';
 
 import { StyledDrop } from './StyledDrop';
 
+// using react synthetic event to be able to stop propagation that
+// would otherwise close the layer on ESC.
+const preventLayerClose = event => {
+  const key = event.keyCode ? event.keyCode : event.which;
+
+  if (key === 27) {
+    event.stopPropagation();
+  }
+};
+
 export class DropContainer extends Component {
   static defaultProps = {
     align: {
@@ -176,15 +186,11 @@ export class DropContainer extends Component {
         maxHeight = windowHeight - top;
       } else if (align.bottom) {
         if (align.bottom === 'bottom') {
-          // top = targetRect.bottom - containerRect.height;
-          // maxHeight = Math.min(targetRect.bottom - top, windowHeight - top);
           ({ bottom } = targetRect);
         } else {
-          // top = targetRect.top - containerRect.height;
-          // maxHeight = Math.min(targetRect.top - top, windowHeight - top);
           bottom = targetRect.top;
         }
-        maxHeight = windowHeight - bottom;
+        maxHeight = bottom;
       } else {
         // center
         top = targetRect.top + targetRect.height / 2 - containerRect.height / 2;
@@ -194,7 +200,7 @@ export class DropContainer extends Component {
       // see if there's more room the other direction
       if (
         responsive &&
-        (containerRect.height > maxHeight || maxHeight > windowHeight / 10)
+        (containerRect.height > maxHeight || maxHeight < windowHeight / 10)
       ) {
         // We need more room than we have.
         if (align.top && top > windowHeight / 2) {
@@ -209,7 +215,7 @@ export class DropContainer extends Component {
             // maxHeight = targetRect.bottom - top;
             ({ bottom } = targetRect);
           }
-          maxHeight = windowHeight - bottom;
+          maxHeight = bottom;
         } else if (align.bottom && maxHeight < windowHeight / 2) {
           // We put it above but there's more room below, put it below
           bottom = '';
@@ -245,6 +251,14 @@ export class DropContainer extends Component {
         }
         container.style.maxHeight = `${maxHeight}px`;
       }
+    }
+  };
+
+  onEsc = event => {
+    const { onEsc } = this.props;
+    event.stopPropagation();
+    if (onEsc) {
+      onEsc(event);
     }
   };
 
@@ -291,8 +305,12 @@ export class DropContainer extends Component {
     }
 
     return (
-      <FocusedContainer>
-        <Keyboard onEsc={onEsc} onKeyDown={onKeyDown} target="document">
+      <FocusedContainer onKeyDown={onEsc && preventLayerClose}>
+        <Keyboard
+          onEsc={onEsc && this.onEsc}
+          onKeyDown={onKeyDown}
+          target="document"
+        >
           {content}
         </Keyboard>
       </FocusedContainer>

@@ -46,6 +46,7 @@ export interface AnchorProps {
   onClick?: (...args: any[]) => any;
   reverse?: boolean;
   size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xxlarge\\" | string;
+  as?: string;
 }
 
 declare const Anchor: React.ComponentType<AnchorProps>;
@@ -77,6 +78,7 @@ export interface BoxProps {
   responsive?: boolean;
   round?: boolean | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | string | {corner: \\"top\\" | \\"left\\" | \\"bottom\\" | \\"right\\" | \\"top-left\\" | \\"top-right\\" | \\"bottom-left\\" | \\"bottom-right\\",size: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string};
   tag?: string;
+  as?: string;
   width?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   wrap?: boolean;
 }
@@ -97,7 +99,7 @@ export interface ButtonProps {
   disabled?: boolean;
   fill?: boolean;
   focusIndicator?: boolean;
-  hoverIndicator?: boolean | \\"background\\" | {background: boolean | string};
+  hoverIndicator?: boolean | string | \\"background\\" | {background: boolean | string};
   href?: string;
   icon?: JSX.Element;
   label?: React.ReactNode;
@@ -106,6 +108,7 @@ export interface ButtonProps {
   primary?: boolean;
   reverse?: boolean;
   type?: \\"button\\" | \\"reset\\" | \\"submit\\";
+  as?: string;
 }
 
 declare const Button: React.ComponentType<ButtonProps>;
@@ -188,6 +191,7 @@ export interface CheckBoxProps {
   onChange?: (...args: any[]) => any;
   reverse?: boolean;
   toggle?: boolean;
+  indeterminate?: boolean;
 }
 
 declare const CheckBox: React.ComponentType<CheckBoxProps>;
@@ -339,6 +343,7 @@ export interface GridProps {
   justifyContent?: \\"start\\" | \\"center\\" | \\"end\\" | \\"between\\" | \\"around\\" | \\"stretch\\";
   rows?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"2/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"2/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\"[] | string[] | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   tag?: string;
+  as?: string;
 }
 
 declare const Grid: React.ComponentType<GridProps>;
@@ -397,6 +402,7 @@ export interface InfiniteScrollProps {
   items?: any[];
   onMore?: (...args: any[]) => any;
   renderMarker?: (...args: any[]) => any;
+  replace?: boolean;
   scrollableAncestor?: React.ReactNode | \\"window\\";
   show?: number;
   step?: number;
@@ -503,6 +509,7 @@ export interface ParagraphProps {
   gridArea?: string;
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   color?: string;
+  responsive?: boolean;
   size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xxlarge\\" | string;
   textAlign?: \\"start\\" | \\"center\\" | \\"end\\";
 }
@@ -594,14 +601,17 @@ export interface SelectProps {
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   children?: (...args: any[]) => any;
   closeOnChange?: boolean;
-  disabled?: boolean | number[];
+  disabled?: boolean | number | string | object[];
+  disabledKey?: string | (...args: any[]) => any;
   dropAlign?: {top: \\"top\\" | \\"bottom\\",bottom: \\"top\\" | \\"bottom\\",right: \\"left\\" | \\"right\\",left: \\"left\\" | \\"right\\"};
   dropTarget?: object;
   focusIndicator?: boolean;
+  labelKey?: string | (...args: any[]) => any;
   messages?: {multiple: string};
   multiple?: boolean;
   onChange?: (...args: any[]) => any;
   onClose?: (...args: any[]) => any;
+  onOpen?: (...args: any[]) => any;
   onSearch?: (...args: any[]) => any;
   options: string | JSX.Element | object[];
   placeholder?: string | React.ReactNode;
@@ -610,6 +620,8 @@ export interface SelectProps {
   selected?: number | number[];
   size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   value?: string | JSX.Element | object | string | object[];
+  valueLabel?: React.ReactNode;
+  valueKey?: string | (...args: any[]) => any;
 }
 
 declare const Select: React.ComponentType<SelectProps>;
@@ -750,6 +762,7 @@ export interface TextProps {
   color?: string;
   size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xxlarge\\" | string;
   tag?: string;
+  as?: string;
   textAlign?: \\"start\\" | \\"center\\" | \\"end\\";
   truncate?: boolean;
   weight?: \\"normal\\" | \\"bold\\" | number;

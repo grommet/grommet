@@ -511,6 +511,15 @@ string
 
 **tag**
 
+The DOM tag to use for the element. NOTE: This is deprecated in favor
+of indicating the DOM tag via the 'as' property.
+
+```
+string
+```
+
+**as**
+
 The DOM tag to use for the element. Defaults to `div`.
 
 ```

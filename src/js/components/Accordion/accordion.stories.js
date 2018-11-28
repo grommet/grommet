@@ -144,7 +144,7 @@ class RichAccordion extends Component {
               flex={false}
               border="bottom"
               background="light-2"
-              tag="header"
+              as="header"
               pad={{ horizontal: 'small' }}
             >
               <Heading level={3}>

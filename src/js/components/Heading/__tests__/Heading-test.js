@@ -119,3 +119,40 @@ test('responsive renders', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('Theme based font family renders', () => {
+  const customTheme = {
+    heading: {
+      font: {
+        family: 'Fira Sans',
+      },
+      level: {
+        1: {
+          font: {
+            family: 'Arial',
+          },
+        },
+        2: {
+          font: {
+            family: 'Roboto',
+          },
+        },
+        3: {
+          font: {
+            family: 'Ubuntu',
+          },
+        },
+      },
+    },
+  };
+  const component = renderer.create(
+    <Grommet theme={customTheme}>
+      <Heading level={1} />
+      <Heading level={2} />
+      <Heading level={3} />
+      <Heading level={4} />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

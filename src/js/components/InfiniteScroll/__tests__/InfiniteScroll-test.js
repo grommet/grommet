@@ -61,4 +61,16 @@ describe('InfiniteScroll', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('replace', () => {
+    const component = renderer.create(
+      <Grommet>
+        <InfiniteScroll items={items} step={2} replace>
+          {(item, index) => <div key={index}>{item}</div>}
+        </InfiniteScroll>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
