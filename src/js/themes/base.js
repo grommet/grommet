@@ -337,6 +337,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       icons: {
         // checked: undefined,
+        // indeterminate: undefined,
       },
       hover: {
         border: {

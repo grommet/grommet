@@ -69,3 +69,38 @@ test('CheckBox toggle renders', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('CheckBox indeterminate renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <CheckBox indeterminate />
+      <CheckBox indeterminate label="test label" />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('CheckBox indeterminate checked warns', () => {
+  const spy = jest.spyOn(global.console, 'warn');
+  renderer.create(
+    <Grommet>
+      <CheckBox indeterminate checked />
+    </Grommet>,
+  );
+  expect(spy).toBeCalledWith(
+    'Checkbox cannot be "checked" and "indeterminate" at the same time.',
+  );
+});
+
+test('CheckBox indeterminate toggle warns', () => {
+  const spy = jest.spyOn(global.console, 'warn');
+  renderer.create(
+    <Grommet>
+      <CheckBox indeterminate toggle />
+    </Grommet>,
+  );
+  expect(spy).toBeCalledWith(
+    'Checkbox of type toggle does not have "indeterminate" state.',
+  );
+});
