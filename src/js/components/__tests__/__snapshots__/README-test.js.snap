@@ -6918,6 +6918,16 @@ Defaults to
 600
 \`\`\`
 
+**global.focus.border.color**
+
+The color of the border when component is focused. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
 **global.spacing**
 
 The padding of the text. Expects \`string\`.
@@ -6926,41 +6936,6 @@ Defaults to
 
 \`\`\`
 undefined
-\`\`\`
-
-**textArea**
-
-The possible sizes of the text in terms of its font-size and line-height. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-      xsmall: {
-        size: '12px',
-        height: '18px',
-       },
-      small: {
-        size: '14px',
-        height: '20px',
-       },
-      medium: {          
-        size: '18px',
-        height: '24px',
-      },
-      large: {
-        size: '22px',
-        height: '28px',
-      },
-      xlarge: {
-        size: '26px',
-        height: '32px',
-      },
-      xxlarge: {
-        size: '34px',
-        height: '40px',
-      },
-    }
 \`\`\`
 
 **textArea.extend**

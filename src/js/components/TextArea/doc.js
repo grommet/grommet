@@ -52,40 +52,14 @@ export const themeDoc = {
     type: 'number',
     defaultValue: 600,
   },
+  'global.focus.border.color': {
+    description: `The color of the border when component is focused.`,
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'focus',
+  },
   'global.spacing': {
     description: 'The padding of the text.',
     type: 'string',
-    defaultValue: undefined,
-  },
-  textArea: {
-    description: `The possible sizes of the text in terms of its font-size and line-height.`,
-    type: 'object',
-    defaultValue: `{
-      xsmall: {
-        size: '12px',
-        height: '18px',
-       },
-      small: {
-        size: '14px',
-        height: '20px',
-       },
-      medium: {          
-        size: '18px',
-        height: '24px',
-      },
-      large: {
-        size: '22px',
-        height: '28px',
-      },
-      xlarge: {
-        size: '26px',
-        height: '32px',
-      },
-      xxlarge: {
-        size: '34px',
-        height: '40px',
-      },
-    }`,
   },
   'textArea.extend': {
     description: 'Any additional style for Text.',
