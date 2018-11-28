@@ -251,6 +251,92 @@ function (_Component4) {
   return CheckBoxInsideButton;
 }(Component);
 
+var IndeterminateCheckBox =
+/*#__PURE__*/
+function (_Component5) {
+  _inheritsLoose(IndeterminateCheckBox, _Component5);
+
+  function IndeterminateCheckBox() {
+    var _this6;
+
+    for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+      args[_key4] = arguments[_key4];
+    }
+
+    _this6 = _Component5.call.apply(_Component5, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this6)), "state", {
+      checked: [],
+      checkboxes: ['fruits', 'vegetables', 'olive oil']
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this6)), "onCheckAll", function (event) {
+      var checkboxes = _this6.state.checkboxes;
+
+      if (event.target.checked) {
+        _this6.setState({
+          checked: checkboxes
+        });
+      } else {
+        _this6.setState({
+          checked: []
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this6)), "onCheck", function (event, value) {
+      var checked = _this6.state.checked;
+
+      if (event.target.checked) {
+        checked.push(value);
+
+        _this6.setState({
+          checked: checked
+        });
+      } else {
+        _this6.setState({
+          checked: checked.filter(function (item) {
+            return item !== value;
+          })
+        });
+      }
+    });
+
+    return _this6;
+  }
+
+  var _proto5 = IndeterminateCheckBox.prototype;
+
+  _proto5.render = function render() {
+    var _this7 = this;
+
+    var _this$state = this.state,
+        checked = _this$state.checked,
+        checkboxes = _this$state.checkboxes;
+    return React.createElement(Grommet, {
+      theme: grommet
+    }, React.createElement(Box, null, React.createElement(CheckBox, {
+      checked: checked.length === 3,
+      indeterminate: checked.length > 0 && checked.length < 3,
+      label: React.createElement(Text, null, "Picked them all"),
+      onChange: this.onCheckAll
+    })), React.createElement(Box, {
+      direction: "row",
+      gap: "medium"
+    }, checkboxes.map(function (item) {
+      return React.createElement(CheckBox, {
+        checked: checked.indexOf(item) !== -1,
+        label: React.createElement(Text, null, item),
+        onChange: function onChange(e) {
+          return _this7.onCheck(e, item);
+        }
+      });
+    })));
+  };
+
+  return IndeterminateCheckBox;
+}(Component);
+
 storiesOf('CheckBox', module).add('Simple', function () {
   return React.createElement(SimpleCheckBox, null);
 }).add('Toggle', function () {
@@ -272,4 +358,6 @@ storiesOf('CheckBox', module).add('Simple', function () {
   return React.createElement(ThemedToggle, null);
 }).add('Inside a Button', function () {
   return React.createElement(CheckBoxInsideButton, null);
+}).add('Interminate CheckBox', function () {
+  return React.createElement(IndeterminateCheckBox, null);
 });

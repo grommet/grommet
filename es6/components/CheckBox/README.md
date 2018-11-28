@@ -77,4 +77,13 @@ Whether to visualize it as a toggle switch.
 ```
 boolean
 ```
+
+**indeterminate**
+
+Whether state is indeterminate.
+NOTE: This can only be used with non-toggle components
+
+```
+boolean
+```
   

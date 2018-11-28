@@ -363,6 +363,7 @@ export var generate = function generate(baseSpacing, scale) {
         // extend: undefined,
       },
       icons: {// checked: undefined,
+        // indeterminate: undefined,
       },
       hover: {
         border: {

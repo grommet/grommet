@@ -17,8 +17,23 @@ var CheckBox =
 function (_Component) {
   _inheritsLoose(CheckBox, _Component);
 
-  function CheckBox() {
-    return _Component.apply(this, arguments) || this;
+  function CheckBox(props) {
+    var _this;
+
+    _this = _Component.call(this, props) || this;
+    var checked = props.checked,
+        indeterminate = props.indeterminate,
+        toggle = props.toggle;
+
+    if (checked && indeterminate) {
+      console.warn('Checkbox cannot be "checked" and "indeterminate" at the same time.');
+    }
+
+    if (toggle && indeterminate) {
+      console.warn('Checkbox of type toggle does not have "indeterminate" state.');
+    }
+
+    return _this;
   }
 
   var _proto = CheckBox.prototype;
@@ -36,7 +51,8 @@ function (_Component) {
         reverse = _this$props.reverse,
         theme = _this$props.theme,
         toggle = _this$props.toggle,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["checked", "disabled", "focus", "forwardRef", "id", "label", "name", "onChange", "reverse", "theme", "toggle"]);
+        indeterminate = _this$props.indeterminate,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["checked", "disabled", "focus", "forwardRef", "id", "label", "name", "onChange", "reverse", "theme", "toggle", "indeterminate"]);
 
     var hidden;
 
@@ -48,7 +64,9 @@ function (_Component) {
       });
     }
 
-    var Icon = theme.checkBox.icons.checked;
+    var _theme$checkBox$icons = theme.checkBox.icons,
+        CheckedIcon = _theme$checkBox$icons.checked,
+        IndeterminateIcon = _theme$checkBox$icons.indeterminate;
     var borderColor = normalizeColor(theme.checkBox.border.color, theme);
 
     if (checked) {
@@ -75,7 +93,7 @@ function (_Component) {
       focus: focus,
       theme: theme,
       checked: checked
-    }, checked && (Icon ? React.createElement(Icon, {
+    }, !indeterminate && checked && (CheckedIcon ? React.createElement(CheckedIcon, {
       as: StyledCheckBoxIcon,
       theme: theme
     }) : React.createElement(StyledCheckBoxIcon, {
@@ -85,6 +103,16 @@ function (_Component) {
     }, React.createElement("path", {
       fill: "none",
       d: "M6,11.3 L10.3,16 L18,6.2"
+    }))), !checked && indeterminate && (IndeterminateIcon ? React.createElement(IndeterminateIcon, {
+      as: StyledCheckBoxIcon,
+      theme: theme
+    }) : React.createElement(StyledCheckBoxIcon, {
+      viewBox: "0 0 24 24",
+      preserveAspectRatio: "xMidYMid meet",
+      theme: theme
+    }, React.createElement("path", {
+      fill: "none",
+      d: "M6,12 L18,12"
     }))));
     var checkBoxNode = React.createElement(StyledCheckBox, {
       as: Box,

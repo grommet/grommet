@@ -17,7 +17,8 @@ var doc = function doc(CheckBox) {
     name: _reactDesc.PropTypes.string.description('The DOM name attribute value to use for the underlying <input/> element.'),
     onChange: _reactDesc.PropTypes.func.description("Function that will be called when the user clicks the check box. It\n      will be passed a React event object. The current state can be accessed\n      via event.target.checked. Same as React <input onChange={} />."),
     reverse: _reactDesc.PropTypes.bool.description('Whether to show the label in front of the checkbox.').defaultValue(false),
-    toggle: _reactDesc.PropTypes.bool.description('Whether to visualize it as a toggle switch.').defaultValue(false)
+    toggle: _reactDesc.PropTypes.bool.description('Whether to visualize it as a toggle switch.').defaultValue(false),
+    indeterminate: _reactDesc.PropTypes.bool.description("Whether state is indeterminate.\nNOTE: This can only be used with non-toggle components").defaultValue(false)
   };
   return DocumentedCheckBox;
 };

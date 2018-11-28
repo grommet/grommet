@@ -9,6 +9,7 @@ export interface CheckBoxProps {
   onChange?: (...args: any[]) => any;
   reverse?: boolean;
   toggle?: boolean;
+  indeterminate?: boolean;
 }
 
 declare const CheckBox: React.ComponentType<CheckBoxProps>;
