@@ -538,8 +538,8 @@ class ManyOptions extends Component {
   render() {
     const { options, selected } = this.state;
     return (
-      <Grommet theme={theme}>
-        <Box pad="xsmall">
+      <Grommet full theme={theme}>
+        <Box fill align="center" justify="start" pad="large">
           <Select
             multiple
             closeOnChange={false}

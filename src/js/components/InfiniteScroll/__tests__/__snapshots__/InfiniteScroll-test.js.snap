@@ -50,10 +50,11 @@ exports[`InfiniteScroll renderMarker 1`] = `
     1
   </div>
   <div>
-    <span
+    <div
       style={
         Object {
-          "fontSize": 0,
+          "flex": "0 0 0px",
+          "height": "0px",
         }
       }
     />
@@ -81,10 +82,11 @@ exports[`InfiniteScroll replace 1`] = `
   <div>
     1
   </div>
-  <span
+  <div
     style={
       Object {
-        "fontSize": 0,
+        "flex": "0 0 0px",
+        "height": "0px",
       }
     }
   />
@@ -140,10 +142,11 @@ exports[`InfiniteScroll step 1`] = `
   <div>
     1
   </div>
-  <span
+  <div
     style={
       Object {
-        "fontSize": 0,
+        "flex": "0 0 0px",
+        "height": "0px",
       }
     }
   />
