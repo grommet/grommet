@@ -48,6 +48,12 @@ export const doc = Drop => {
     target: PropTypes.object.description(
       'Target where the drop will be aligned to. This should be a React reference.',
     ).isRequired,
+    elevation: PropTypes.oneOfType([
+      PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description(
+      `Elevated height of the target, indicated via a drop shadow.`,
+    ),
   };
 
   return DocumentedDrop;
