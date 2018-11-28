@@ -30,7 +30,7 @@ export const StyledDrop = styled.div`
 
   border-radius: ${props => props.theme.global.drop.border.radius};
   position: fixed;
-  z-index: 20;
+  z-index: ${props => props.theme.global.drop.zIndex};
   outline: none;
   overflow: auto; //since we set max-height
 

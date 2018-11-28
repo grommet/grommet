@@ -29,7 +29,7 @@ const responsiveLayerStyle = `
 export const StyledLayer = styled.div`
   ${baseStyle} background: unset;
   position: relative;
-  z-index: 10;
+  z-index: ${props => props.theme.layer.zIndex};
   pointer-events: none;
   outline: none;
 
@@ -379,7 +379,7 @@ export const StyledContainer = styled.div`
     props.theme.layer.background &&
     backgroundStyle(props.theme.layer.background, props.theme)} outline: none;
   pointer-events: all;
-  z-index: 15;
+  z-index: ${props => props.theme.layer.container.zIndex};
 
   ${desktopContainerStyle} ${props => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {

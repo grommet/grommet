@@ -164,6 +164,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           radius: '0px',
         },
         shadowSize: 'small',
+        zIndex: '20',
       },
       edgeSize: {
         none: '0px',
@@ -525,10 +526,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       border: {
         radius: '4px',
       },
+      container: {
+        zIndex: '15',
+      },
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)',
       },
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
+      zIndex: '10',
     },
     menu: {
       // background: undefined,
