@@ -68,7 +68,8 @@ var doc = function doc(Box) {
       corner: _reactDesc.PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'top-left', 'top-right', 'bottom-left', 'bottom-right']),
       size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string])
     })]).description('How much to round the corners.').defaultValue(false),
-    tag: _reactDesc.PropTypes.string.description('The DOM tag to use for the element.').defaultValue('div'),
+    tag: _reactDesc.PropTypes.string.description("The DOM tag to use for the element. NOTE: This is deprecated in favor\nof indicating the DOM tag via the 'as' property."),
+    as: _reactDesc.PropTypes.string.description('The DOM tag to use for the element.').defaultValue('div'),
     width: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description('A fixed width.'),
     wrap: _reactDesc.PropTypes.bool.description("Whether children can wrap if they\n      can't all fit.").defaultValue(false)
   });

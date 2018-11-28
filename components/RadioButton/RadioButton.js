@@ -56,8 +56,11 @@ function (_Component) {
     }
 
     return _react.default.createElement(_StyledRadioButton.StyledRadioButtonContainer, _extends({
-      as: _Box.Box,
-      tag: "label",
+      as: function as(props) {
+        return _react.default.createElement(_Box.Box, _extends({
+          as: "label"
+        }, props));
+      },
       direction: "row",
       align: "center"
     }, (0, _utils.removeUndefined)({

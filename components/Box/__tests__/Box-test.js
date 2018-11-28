@@ -452,13 +452,24 @@ describe('Box', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('tag', function () {
+  test('as', function () {
     var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Box, {
-      tag: "header"
+      as: "header"
     })));
 
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+  test('tag proxied', function () {
+    var tagComponent = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Box, {
+      tag: "header"
+    })));
+
+    var asComponent = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Box, {
+      as: "header"
+    })));
+
+    expect(tagComponent.toJSON()).toEqual(asComponent.toJSON());
   });
   test('animation', function () {
     var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, ['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut'].map(function (type) {

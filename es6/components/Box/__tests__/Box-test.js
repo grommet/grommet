@@ -424,12 +424,21 @@ describe('Box', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('tag', function () {
+  test('as', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Box, {
-      tag: "header"
+      as: "header"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+  test('tag proxied', function () {
+    var tagComponent = renderer.create(React.createElement(Grommet, null, React.createElement(Box, {
+      tag: "header"
+    })));
+    var asComponent = renderer.create(React.createElement(Grommet, null, React.createElement(Box, {
+      as: "header"
+    })));
+    expect(tagComponent.toJSON()).toEqual(asComponent.toJSON());
   });
   test('animation', function () {
     var component = renderer.create(React.createElement(Grommet, null, ['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut'].map(function (type) {

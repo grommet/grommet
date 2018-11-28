@@ -92,7 +92,7 @@ function (_Component) {
       level: 3,
       margin: "none"
     }, "Confirm"), _react.default.createElement(_grommet.Text, null, "Are you sure you want to delete?"), _react.default.createElement(_grommet.Box, {
-      tag: "footer",
+      as: "footer",
       gap: "small",
       direction: "row",
       align: "center",
@@ -127,7 +127,7 @@ function (_Component) {
     }, "Confirm 2"), _react.default.createElement(_grommet.Select, {
       options: ['one', 'two', 'three']
     }), _react.default.createElement(_grommet.Box, {
-      tag: "footer",
+      as: "footer",
       gap: "small",
       direction: "row",
       align: "center",
@@ -206,7 +206,7 @@ function (_Component2) {
       onClickOutside: this.onClose,
       onEsc: this.onClose
     }, _react.default.createElement(_grommet.Box, {
-      tag: "form",
+      as: "form",
       fill: "vertical",
       overflow: "auto",
       width: "medium",
@@ -247,7 +247,7 @@ function (_Component2) {
       }
     }))), _react.default.createElement(_grommet.Box, {
       flex: false,
-      tag: "footer",
+      as: "footer",
       align: "start"
     }, _react.default.createElement(_grommet.Button, {
       type: "submit",
@@ -469,7 +469,7 @@ var ScrollBodyLayer = function ScrollBodyLayer() {
   }, _react.default.createElement(_grommet.Box, {
     direction: "row",
     align: "center",
-    tag: "header",
+    as: "header",
     elevation: "small",
     justify: "between"
   }, _react.default.createElement(_grommet.Text, {
@@ -483,7 +483,7 @@ var ScrollBodyLayer = function ScrollBodyLayer() {
     overflow: "auto",
     pad: "xsmall"
   }, _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body"), _react.default.createElement("span", null, "body")), _react.default.createElement(_grommet.Box, {
-    tag: "footer",
+    as: "footer",
     border: {
       side: 'top'
     },

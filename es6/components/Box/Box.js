@@ -83,11 +83,12 @@ function (_Component) {
         overflow = _this$props.overflow,
         responsive = _this$props.responsive,
         tag = _this$props.tag,
+        as = _this$props.as,
         propsTheme = _this$props.theme,
         wrap = _this$props.wrap,
         width = _this$props.width,
         height = _this$props.height,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "children", "direction", "elevation", "fill", "forwardRef", "gap", "overflow", "responsive", "tag", "theme", "wrap", "width", "height"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "children", "direction", "elevation", "fill", "forwardRef", "gap", "overflow", "responsive", "tag", "as", "theme", "wrap", "width", "height"]);
 
     var _this$state = this.state,
         stateTheme = _this$state.theme,
@@ -118,7 +119,7 @@ function (_Component) {
     }
 
     var content = React.createElement(StyledBox, _extends({
-      as: tag,
+      as: !as && tag ? tag : as,
       "aria-label": a11yTitle,
       ref: forwardRef,
       directionProp: direction,
@@ -155,8 +156,7 @@ _defineProperty(Box, "defaultProps", {
   direction: 'column',
   margin: 'none',
   pad: 'none',
-  responsive: true,
-  tag: 'div'
+  responsive: true
 });
 
 var BoxDoc;

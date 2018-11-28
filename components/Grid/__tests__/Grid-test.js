@@ -192,11 +192,22 @@ test('Grid fill renders', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
-test('Grid tag renders', function () {
+test('Grid as renders', function () {
   var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
-    tag: "article"
+    as: "article"
   })));
 
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+test('Grid proxies tag', function () {
+  var tagComponent = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
+    tag: "article"
+  })));
+
+  var asComponent = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
+    as: "article"
+  })));
+
+  expect(tagComponent.toJSON()).toEqual(asComponent.toJSON());
 });

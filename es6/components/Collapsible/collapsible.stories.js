@@ -244,7 +244,7 @@ function (_Component3) {
     }, React.createElement(Box, {
       fill: true
     }, React.createElement(Box, {
-      tag: "header",
+      as: "header",
       direction: "row",
       align: "center",
       pad: {

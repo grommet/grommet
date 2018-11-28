@@ -35,7 +35,8 @@ var doc = function doc(Grid) {
     justify: _reactDesc.PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description("How to align the individual items inside the grid when there is extra\nspace in the row axis.").defaultValue('stretch'),
     justifyContent: _reactDesc.PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description('How to align the contents along the row axis.'),
     rows: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(sizes), _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOf(sizes)), _reactDesc.PropTypes.string])), _reactDesc.PropTypes.oneOf(fixedSizes), _reactDesc.PropTypes.string]).description("Row sizes.\n      If an array value is an array, the inner array indicates the\n      minimum and maximum sizes for the row.\n      Specifying a single string will cause automatically added rows to be\n      the specified size."),
-    tag: _reactDesc.PropTypes.string.description('The DOM tag to use for the element.').defaultValue('div')
+    tag: _reactDesc.PropTypes.string.description("The DOM tag to use for the element. NOTE: This is deprecated in favor\nof indicating the DOM tag via the 'as' property."),
+    as: _reactDesc.PropTypes.string.description('The DOM tag to use for the element.').defaultValue('div')
   });
   return DocumentedGrid;
 };

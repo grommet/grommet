@@ -250,7 +250,7 @@ function (_Component3) {
     }, _react.default.createElement(_grommet.Box, {
       fill: true
     }, _react.default.createElement(_grommet.Box, {
-      tag: "header",
+      as: "header",
       direction: "row",
       align: "center",
       pad: {

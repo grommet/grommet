@@ -126,8 +126,11 @@ function (_Component) {
     return _react.default.createElement(_StyledCheckBox.StyledCheckBoxContainer, _extends({
       direction: "row",
       align: "center",
-      tag: "label",
-      as: _Box.Box,
+      as: function as(props) {
+        return _react.default.createElement(_Box.Box, _extends({
+          as: "label"
+        }, props));
+      },
       reverse: reverse
     }, (0, _object.removeUndefined)({
       htmlFor: id,

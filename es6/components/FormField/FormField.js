@@ -105,7 +105,7 @@ function (_Component) {
       },
       gap: "xsmall"
     }, label ? React.createElement(Text, _extends({
-      tag: "label",
+      as: "label",
       htmlFor: htmlFor
     }, formField.label), label) : undefined, help ? React.createElement(Text, _extends({}, formField.help, {
       color: formField.help.color[theme.dark ? 'dark' : 'light']

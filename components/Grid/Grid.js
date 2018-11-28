@@ -17,32 +17,20 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var styledComponents = {
-  div: _StyledGrid.StyledGrid
-}; // tag -> styled component
-
 var Grid = function Grid(props) {
   var fill = props.fill,
       rows = props.rows,
       tag = props.tag,
-      rest = _objectWithoutPropertiesLoose(props, ["fill", "rows", "tag"]);
+      as = props.as,
+      rest = _objectWithoutPropertiesLoose(props, ["fill", "rows", "tag", "as"]);
 
-  var StyledComponent = styledComponents[tag];
-
-  if (!StyledComponent) {
-    StyledComponent = _StyledGrid.StyledGrid.withComponent(tag);
-    styledComponents[tag] = StyledComponent;
-  }
-
-  return _react.default.createElement(StyledComponent, _extends({
+  return _react.default.createElement(_StyledGrid.StyledGrid, _extends({
+    as: !as && tag ? tag : as,
     fillContainer: fill,
     rowsProp: rows
   }, rest));
 };
 
-Grid.defaultProps = {
-  tag: 'div'
-};
 var GridDoc;
 
 if (process.env.NODE_ENV !== 'production') {

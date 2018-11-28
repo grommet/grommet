@@ -88,7 +88,7 @@ function (_Component) {
       level: 3,
       margin: "none"
     }, "Confirm"), React.createElement(Text, null, "Are you sure you want to delete?"), React.createElement(Box, {
-      tag: "footer",
+      as: "footer",
       gap: "small",
       direction: "row",
       align: "center",
@@ -123,7 +123,7 @@ function (_Component) {
     }, "Confirm 2"), React.createElement(Select, {
       options: ['one', 'two', 'three']
     }), React.createElement(Box, {
-      tag: "footer",
+      as: "footer",
       gap: "small",
       direction: "row",
       align: "center",
@@ -202,7 +202,7 @@ function (_Component2) {
       onClickOutside: this.onClose,
       onEsc: this.onClose
     }, React.createElement(Box, {
-      tag: "form",
+      as: "form",
       fill: "vertical",
       overflow: "auto",
       width: "medium",
@@ -243,7 +243,7 @@ function (_Component2) {
       }
     }))), React.createElement(Box, {
       flex: false,
-      tag: "footer",
+      as: "footer",
       align: "start"
     }, React.createElement(Button, {
       type: "submit",
@@ -465,7 +465,7 @@ var ScrollBodyLayer = function ScrollBodyLayer() {
   }, React.createElement(Box, {
     direction: "row",
     align: "center",
-    tag: "header",
+    as: "header",
     elevation: "small",
     justify: "between"
   }, React.createElement(Text, {
@@ -479,7 +479,7 @@ var ScrollBodyLayer = function ScrollBodyLayer() {
     overflow: "auto",
     pad: "xsmall"
   }, React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body"), React.createElement("span", null, "body")), React.createElement(Box, {
-    tag: "footer",
+    as: "footer",
     border: {
       side: 'top'
     },

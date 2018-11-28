@@ -111,8 +111,11 @@ function (_Component) {
     return React.createElement(StyledCheckBoxContainer, _extends({
       direction: "row",
       align: "center",
-      tag: "label",
-      as: Box,
+      as: function as(props) {
+        return React.createElement(Box, _extends({
+          as: "label"
+        }, props));
+      },
       reverse: reverse
     }, removeUndefined({
       htmlFor: id,

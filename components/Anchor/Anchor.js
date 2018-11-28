@@ -84,7 +84,7 @@ function (_Component) {
       href: !disabled ? href : undefined,
       onClick: !disabled ? onClick : undefined
     }), first && second ? _react.default.createElement(_Box.Box, {
-      tag: "span",
+      as: "span",
       direction: "row",
       align: "center",
       gap: "small",

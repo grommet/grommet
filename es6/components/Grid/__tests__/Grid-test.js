@@ -173,10 +173,19 @@ test('Grid fill renders', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
-test('Grid tag renders', function () {
+test('Grid as renders', function () {
   var component = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
-    tag: "article"
+    as: "article"
   })));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+test('Grid proxies tag', function () {
+  var tagComponent = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    tag: "article"
+  })));
+  var asComponent = renderer.create(React.createElement(Grommet, null, React.createElement(Grid, {
+    as: "article"
+  })));
+  expect(tagComponent.toJSON()).toEqual(asComponent.toJSON());
 });

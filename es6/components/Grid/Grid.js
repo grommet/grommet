@@ -6,32 +6,21 @@ import React from 'react';
 import { compose } from 'recompose';
 import { withTheme } from '../hocs';
 import { StyledGrid } from './StyledGrid';
-var styledComponents = {
-  div: StyledGrid
-}; // tag -> styled component
 
 var Grid = function Grid(props) {
   var fill = props.fill,
       rows = props.rows,
       tag = props.tag,
-      rest = _objectWithoutPropertiesLoose(props, ["fill", "rows", "tag"]);
+      as = props.as,
+      rest = _objectWithoutPropertiesLoose(props, ["fill", "rows", "tag", "as"]);
 
-  var StyledComponent = styledComponents[tag];
-
-  if (!StyledComponent) {
-    StyledComponent = StyledGrid.withComponent(tag);
-    styledComponents[tag] = StyledComponent;
-  }
-
-  return React.createElement(StyledComponent, _extends({
+  return React.createElement(StyledGrid, _extends({
+    as: !as && tag ? tag : as,
     fillContainer: fill,
     rowsProp: rows
   }, rest));
 };
 
-Grid.defaultProps = {
-  tag: 'div'
-};
 var GridDoc;
 
 if (process.env.NODE_ENV !== 'production') {
