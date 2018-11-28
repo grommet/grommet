@@ -14,6 +14,13 @@ import { cleanup, fireEvent, render } from 'react-testing-library';
 import { expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
 import { Drop } from '..';
+var customTheme = {
+  global: {
+    drop: {
+      shadowSize: 'large'
+    }
+  }
+};
 
 var TestInput =
 /*#__PURE__*/
@@ -49,7 +56,9 @@ function (_Component) {
   _proto.render = function render() {
     var _this$props = this.props,
         inputProps = _this$props.inputProps,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["inputProps"]);
+        theme = _this$props.theme,
+        elevation = _this$props.elevation,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["inputProps", "theme", "elevation"]);
 
     var showDrop = this.state.showDrop;
     var drop;
@@ -57,11 +66,14 @@ function (_Component) {
     if (showDrop) {
       drop = React.createElement(Drop, _extends({
         id: "drop-node",
+        elevation: elevation,
         target: this.inputRef.current
       }, rest), "this is a test");
     }
 
-    return React.createElement(Grommet, null, React.createElement("input", _extends({
+    return React.createElement(Grommet, {
+      theme: theme
+    }, React.createElement("input", _extends({
       ref: this.inputRef
     }, inputProps)), drop);
   };
@@ -179,5 +191,22 @@ describe('Drop', function () {
     expectPortal('drop-node').toMatchSnapshot();
     cleanup();
     expect(document.activeElement).toMatchSnapshot();
+  });
+  test('default elevation renders', function () {
+    render(React.createElement(TestInput, null));
+    expectPortal('drop-node').toMatchSnapshot();
+  });
+  test('theme elevation renders', function () {
+    render(React.createElement(TestInput, {
+      theme: customTheme
+    }));
+    expectPortal('drop-node').toMatchSnapshot();
+  });
+  test('props elevation renders', function () {
+    render(React.createElement(TestInput, {
+      theme: customTheme,
+      elevation: "medium"
+    }));
+    expectPortal('drop-node').toMatchSnapshot();
   });
 });

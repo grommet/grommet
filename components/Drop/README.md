@@ -86,4 +86,18 @@ Required. Target where the drop will be aligned to. This should be a React refer
 ```
 object
 ```
+
+**elevation**
+
+Elevated height of the target, indicated via a drop shadow.
+
+```
+none
+xsmall
+small
+medium
+large
+xlarge
+string
+```
   

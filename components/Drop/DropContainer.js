@@ -309,14 +309,15 @@ function (_Component) {
         onEsc = _this$props3.onEsc,
         onKeyDown = _this$props3.onKeyDown,
         propsTheme = _this$props3.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props3, ["align", "children", "onClickOutside", "onEsc", "onKeyDown", "theme"]);
+        elevation = _this$props3.elevation,
+        rest = _objectWithoutPropertiesLoose(_this$props3, ["align", "children", "onClickOutside", "onEsc", "onKeyDown", "theme", "elevation"]);
 
     var stateTheme = this.state.theme;
     var theme = stateTheme || propsTheme;
 
     var content = _react.default.createElement(_StyledDrop.StyledDrop, _extends({
       as: _Box.Box,
-      elevation: theme.global.drop.shadowSize || 'small',
+      elevation: elevation || theme.global.drop.shadowSize || 'small',
       tabIndex: "-1",
       ref: this.dropRef,
       alignProp: alignProp,

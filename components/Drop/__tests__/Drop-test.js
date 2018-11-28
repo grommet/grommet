@@ -24,6 +24,14 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var customTheme = {
+  global: {
+    drop: {
+      shadowSize: 'large'
+    }
+  }
+};
+
 var TestInput =
 /*#__PURE__*/
 function (_Component) {
@@ -58,7 +66,9 @@ function (_Component) {
   _proto.render = function render() {
     var _this$props = this.props,
         inputProps = _this$props.inputProps,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["inputProps"]);
+        theme = _this$props.theme,
+        elevation = _this$props.elevation,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["inputProps", "theme", "elevation"]);
 
     var showDrop = this.state.showDrop;
     var drop;
@@ -66,11 +76,14 @@ function (_Component) {
     if (showDrop) {
       drop = _react.default.createElement(_.Drop, _extends({
         id: "drop-node",
+        elevation: elevation,
         target: this.inputRef.current
       }, rest), "this is a test");
     }
 
-    return _react.default.createElement(_Grommet.Grommet, null, _react.default.createElement("input", _extends({
+    return _react.default.createElement(_Grommet.Grommet, {
+      theme: theme
+    }, _react.default.createElement("input", _extends({
       ref: this.inputRef
     }, inputProps)), drop);
   };
@@ -188,5 +201,22 @@ describe('Drop', function () {
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
     (0, _reactTestingLibrary.cleanup)();
     expect(document.activeElement).toMatchSnapshot();
+  });
+  test('default elevation renders', function () {
+    (0, _reactTestingLibrary.render)(_react.default.createElement(TestInput, null));
+    (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
+  });
+  test('theme elevation renders', function () {
+    (0, _reactTestingLibrary.render)(_react.default.createElement(TestInput, {
+      theme: customTheme
+    }));
+    (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
+  });
+  test('props elevation renders', function () {
+    (0, _reactTestingLibrary.render)(_react.default.createElement(TestInput, {
+      theme: customTheme,
+      elevation: "medium"
+    }));
+    (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
 });
