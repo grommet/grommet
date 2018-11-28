@@ -18,6 +18,23 @@ import {
 import { normalizeColor } from '../../utils';
 
 class CheckBox extends Component {
+  constructor(props) {
+    super(props);
+    const { checked, indeterminate, toggle } = props;
+
+    if (checked && indeterminate) {
+      console.warn(
+        'Checkbox cannot be "checked" and "indeterminate" at the same time.',
+      );
+    }
+
+    if (toggle && indeterminate) {
+      console.warn(
+        'Checkbox of type toggle does not have "indeterminate" state.',
+      );
+    }
+  }
+
   render() {
     const {
       checked,
@@ -38,18 +55,6 @@ class CheckBox extends Component {
     let hidden;
     if (disabled && checked) {
       hidden = <input name={name} type="hidden" value="true" />;
-    }
-
-    if (checked && indeterminate) {
-      console.warn(
-        'Checkbox cannot be "checked" and "indeterminate" at the same time.',
-      );
-    }
-
-    if (toggle && indeterminate) {
-      console.warn(
-        'Checkbox of type toggle does not have "indeterminate" state.',
-      );
     }
 
     const {
@@ -105,7 +110,7 @@ class CheckBox extends Component {
               preserveAspectRatio="xMidYMid meet"
               theme={theme}
             >
-              <path fill="none" d="M2,12 L22,12" />
+              <path fill="none" d="M6,12 L18,12" />
             </StyledCheckBoxIcon>
           ))}
       </StyledCheckBoxBox>

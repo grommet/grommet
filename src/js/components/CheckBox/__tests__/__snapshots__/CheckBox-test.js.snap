@@ -694,7 +694,7 @@ exports[`CheckBox indeterminate renders 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,12 L22,12"
+            d="M6,12 L18,12"
             fill="none"
           />
         </svg>
@@ -723,7 +723,7 @@ exports[`CheckBox indeterminate renders 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            d="M2,12 L22,12"
+            d="M6,12 L18,12"
             fill="none"
           />
         </svg>
