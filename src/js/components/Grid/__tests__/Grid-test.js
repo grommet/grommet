@@ -147,12 +147,26 @@ test('Grid fill renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Grid tag renders', () => {
+test('Grid as renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Grid tag="article" />
+      <Grid as="article" />
     </Grommet>,
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+test('Grid proxies tag', () => {
+  const tagComponent = renderer.create(
+    <Grommet>
+      <Grid tag="article" />
+    </Grommet>,
+  );
+  const asComponent = renderer.create(
+    <Grommet>
+      <Grid as="article" />
+    </Grommet>,
+  );
+  expect(tagComponent.toJSON()).toEqual(asComponent.toJSON());
 });

@@ -339,14 +339,28 @@ describe('Box', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('tag', () => {
+  test('as', () => {
     const component = renderer.create(
       <Grommet>
-        <Box tag="header" />
+        <Box as="header" />
       </Grommet>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  test('tag proxied', () => {
+    const tagComponent = renderer.create(
+      <Grommet>
+        <Box tag="header" />
+      </Grommet>,
+    );
+    const asComponent = renderer.create(
+      <Grommet>
+        <Box as="header" />
+      </Grommet>,
+    );
+    expect(tagComponent.toJSON()).toEqual(asComponent.toJSON());
   });
 
   test('animation', () => {

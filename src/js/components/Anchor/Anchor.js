@@ -63,7 +63,7 @@ class Anchor extends Component {
       >
         {first && second ? (
           <Box
-            tag="span"
+            as="span"
             direction="row"
             align="center"
             gap="small"

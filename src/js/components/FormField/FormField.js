@@ -95,7 +95,7 @@ class FormField extends Component {
             gap="xsmall"
           >
             {label ? (
-              <Text tag="label" htmlFor={htmlFor} {...formField.label}>
+              <Text as="label" htmlFor={htmlFor} {...formField.label}>
                 {label}
               </Text>
             ) : (

@@ -176,6 +176,31 @@ exports[`Grid areas renders 1`] = `
 </div>
 `;
 
+exports[`Grid as renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: grid;
+  box-sizing: border-box;
+}
+
+<div
+  className="c0"
+>
+  <article
+    className="c1"
+  />
+</div>
+`;
+
 exports[`Grid columns renders 1`] = `
 .c0 {
   font-size: 18px;
@@ -597,31 +622,6 @@ exports[`Grid rows renders 1`] = `
   />
   <div
     className="c2"
-  />
-</div>
-`;
-
-exports[`Grid tag renders 1`] = `
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: grid;
-  box-sizing: border-box;
-}
-
-<div
-  className="c0"
->
-  <article
-    className="-article c1"
   />
 </div>
 `;

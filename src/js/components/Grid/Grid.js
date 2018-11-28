@@ -5,29 +5,23 @@ import { withTheme } from '../hocs';
 
 import { StyledGrid } from './StyledGrid';
 
-const styledComponents = {
-  div: StyledGrid,
-}; // tag -> styled component
-
 const Grid = props => {
   const {
     fill, // munged to avoid styled-components putting it in the DOM
     rows, // munged to avoid styled-components putting it in the DOM
     tag,
+    as,
     ...rest
   } = props;
 
-  let StyledComponent = styledComponents[tag];
-  if (!StyledComponent) {
-    StyledComponent = StyledGrid.withComponent(tag);
-    styledComponents[tag] = StyledComponent;
-  }
-
-  return <StyledComponent fillContainer={fill} rowsProp={rows} {...rest} />;
-};
-
-Grid.defaultProps = {
-  tag: 'div',
+  return (
+    <StyledGrid
+      as={!as && tag ? tag : as}
+      fillContainer={fill}
+      rowsProp={rows}
+      {...rest}
+    />
+  );
 };
 
 let GridDoc;
