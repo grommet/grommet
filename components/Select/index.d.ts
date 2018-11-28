@@ -17,6 +17,7 @@ export interface SelectProps {
   multiple?: boolean;
   onChange?: (...args: any[]) => any;
   onClose?: (...args: any[]) => any;
+  onOpen?: (...args: any[]) => any;
   onSearch?: (...args: any[]) => any;
   options: string | JSX.Element | object[];
   placeholder?: string | React.ReactNode;

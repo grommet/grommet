@@ -34,6 +34,7 @@ var doc = function doc(Select) {
     multiple: _reactDesc.PropTypes.bool.description('Whether to allow multiple options to be selected.'),
     onChange: _reactDesc.PropTypes.func.description('Function that will be called when the user selects an option.'),
     onClose: _reactDesc.PropTypes.func.description('Function that will be called when the Select drop closes.'),
+    onOpen: _reactDesc.PropTypes.func.description('Function that will be called when the Select drop opens.'),
     onSearch: _reactDesc.PropTypes.func.description("Function that will be called when the user types in the search input.\n      If this property is not provided, no search field will be rendered."),
     options: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.element, _reactDesc.PropTypes.object])).description("Options can be either a string or an object. If an object is used, use\n      children callback in order to render anything based on the current item.").isRequired,
     placeholder: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]).description('Placeholder text to use when no value is provided.'),
