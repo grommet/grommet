@@ -113,8 +113,7 @@ class CheckBox extends Component {
       <StyledCheckBoxContainer
         direction="row"
         align="center"
-        tag="label"
-        as={Box}
+        as={props => <Box as="label" {...props} />}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
         theme={theme}

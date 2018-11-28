@@ -57,7 +57,7 @@ class CenterLayer extends Component {
               </Heading>
               <Text>Are you sure you want to delete?</Text>
               <Box
-                tag="footer"
+                as="footer"
                 gap="small"
                 direction="row"
                 align="center"
@@ -92,7 +92,7 @@ class CenterLayer extends Component {
               </Heading>
               <Select options={['one', 'two', 'three']} />
               <Box
-                tag="footer"
+                as="footer"
                 gap="small"
                 direction="row"
                 align="center"
@@ -136,7 +136,7 @@ class FormLayer extends Component {
               onEsc={this.onClose}
             >
               <Box
-                tag="form"
+                as="form"
                 fill="vertical"
                 overflow="auto"
                 width="medium"
@@ -169,7 +169,7 @@ class FormLayer extends Component {
                     />
                   </FormField>
                 </Box>
-                <Box flex={false} tag="footer" align="start">
+                <Box flex={false} as="footer" align="start">
                   <Button
                     type="submit"
                     label="Submit"
@@ -317,7 +317,7 @@ const ScrollBodyLayer = () => (
         <Box
           direction="row"
           align="center"
-          tag="header"
+          as="header"
           elevation="small"
           justify="between"
         >
@@ -390,7 +390,7 @@ const ScrollBodyLayer = () => (
           <span>body</span>
         </Box>
         <Box
-          tag="footer"
+          as="footer"
           border={{ side: 'top' }}
           pad="small"
           justify="end"
