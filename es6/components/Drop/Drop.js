@@ -70,7 +70,8 @@ _defineProperty(Drop, "defaultProps", {
   align: {
     top: 'top',
     left: 'left'
-  }
+  },
+  plain: false
 });
 
 var DropDoc;

@@ -9,6 +9,7 @@ export interface DropProps {
   stretch?: boolean;
   target: object;
   elevation?: "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
+  plain?: boolean;
 }
 
 declare const Drop: React.ComponentType<DropProps>;

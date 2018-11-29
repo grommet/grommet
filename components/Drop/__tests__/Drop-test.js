@@ -219,4 +219,10 @@ describe('Drop', function () {
     }));
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
+  test('plain renders', function () {
+    (0, _reactTestingLibrary.render)(_react.default.createElement(TestInput, {
+      plain: true
+    }));
+    (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
+  });
 });

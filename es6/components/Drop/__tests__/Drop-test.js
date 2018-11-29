@@ -209,4 +209,10 @@ describe('Drop', function () {
     }));
     expectPortal('drop-node').toMatchSnapshot();
   });
+  test('plain renders', function () {
+    render(React.createElement(TestInput, {
+      plain: true
+    }));
+    expectPortal('drop-node').toMatchSnapshot();
+  });
 });

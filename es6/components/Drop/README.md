@@ -100,4 +100,12 @@ large
 xlarge
 string
 ```
+
+**plain**
+
+Whether the drop element should have no background nor shadow
+
+```
+boolean
+```
   

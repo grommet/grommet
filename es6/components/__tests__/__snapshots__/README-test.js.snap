@@ -3308,6 +3308,14 @@ large
 xlarge
 string
 \`\`\`
+
+**plain**
+
+Whether the drop element should have no background nor shadow
+
+\`\`\`
+boolean
+\`\`\`
   ",
   "DropButton": "## DropButton
 A Button that when clicked will a Drop with the specified 'dropContent'.

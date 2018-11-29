@@ -565,6 +565,61 @@ function (_Component5) {
   return LazyDrop;
 }(Component);
 
+var PlainDrop =
+/*#__PURE__*/
+function (_Component6) {
+  _inheritsLoose(PlainDrop, _Component6);
+
+  function PlainDrop() {
+    var _this9;
+
+    for (var _len6 = arguments.length, args = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
+      args[_key6] = arguments[_key6];
+    }
+
+    _this9 = _Component6.call.apply(_Component6, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this9)), "targetRef", createRef());
+
+    return _this9;
+  }
+
+  var _proto6 = PlainDrop.prototype;
+
+  _proto6.componentDidMount = function componentDidMount() {
+    this.forceUpdate();
+  };
+
+  _proto6.render = function render() {
+    return React.createElement(Grommet, {
+      theme: grommet,
+      full: true
+    }, React.createElement(Box, {
+      background: "brand",
+      fill: true,
+      align: "center",
+      justify: "center"
+    }, React.createElement(Box, {
+      background: "dark-4",
+      pad: "medium",
+      align: "center",
+      justify: "start",
+      ref: this.targetRef
+    }, "Target"), this.targetRef.current && React.createElement(Drop, {
+      plain: true,
+      align: {
+        top: 'bottom',
+        left: 'left'
+      },
+      target: this.targetRef.current
+    }, React.createElement(Box, {
+      pad: "large"
+    }, "No background no shadow"))));
+  };
+
+  return PlainDrop;
+}(Component);
+
 storiesOf('Drop', module).add('Simple', function () {
   return React.createElement(SimpleDrop, null);
 }).add('All not stretch', function () {
@@ -573,4 +628,6 @@ storiesOf('Drop', module).add('Simple', function () {
   return React.createElement(ProgressiveDrop, null);
 }).add('Lazy', function () {
   return React.createElement(LazyDrop, null);
+}).add('Plain', function () {
+  return React.createElement(PlainDrop, null);
 });

@@ -33,7 +33,7 @@ var StyledDrop = _styledComponents.default.div.withConfig({
 })(["", " border-radius:", ";position:fixed;z-index:20;outline:none;overflow:auto;", " opacity:0;transform-origin:", ";animation:", " 0.1s forwards;animation-delay:0.01s;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){display:flex;align-items:stretch;}", ""], _utils.baseStyle, function (props) {
   return props.theme.global.drop.border.radius;
 }, function (props) {
-  return (0, _utils.backgroundStyle)(props.theme.global.drop.background, props.theme);
+  return !props.plain && (0, _utils.backgroundStyle)(props.theme.global.drop.background, props.theme);
 }, function (props) {
   return getTransformOriginStyle(props.alignProp);
 }, dropKeyFrames, function (props) {

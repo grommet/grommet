@@ -577,6 +577,61 @@ function (_Component5) {
   return LazyDrop;
 }(_react.Component);
 
+var PlainDrop =
+/*#__PURE__*/
+function (_Component6) {
+  _inheritsLoose(PlainDrop, _Component6);
+
+  function PlainDrop() {
+    var _this9;
+
+    for (var _len6 = arguments.length, args = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {
+      args[_key6] = arguments[_key6];
+    }
+
+    _this9 = _Component6.call.apply(_Component6, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this9)), "targetRef", (0, _react.createRef)());
+
+    return _this9;
+  }
+
+  var _proto6 = PlainDrop.prototype;
+
+  _proto6.componentDidMount = function componentDidMount() {
+    this.forceUpdate();
+  };
+
+  _proto6.render = function render() {
+    return _react.default.createElement(_grommet.Grommet, {
+      theme: _themes.grommet,
+      full: true
+    }, _react.default.createElement(_grommet.Box, {
+      background: "brand",
+      fill: true,
+      align: "center",
+      justify: "center"
+    }, _react.default.createElement(_grommet.Box, {
+      background: "dark-4",
+      pad: "medium",
+      align: "center",
+      justify: "start",
+      ref: this.targetRef
+    }, "Target"), this.targetRef.current && _react.default.createElement(_grommet.Drop, {
+      plain: true,
+      align: {
+        top: 'bottom',
+        left: 'left'
+      },
+      target: this.targetRef.current
+    }, _react.default.createElement(_grommet.Box, {
+      pad: "large"
+    }, "No background no shadow"))));
+  };
+
+  return PlainDrop;
+}(_react.Component);
+
 (0, _react2.storiesOf)('Drop', module).add('Simple', function () {
   return _react.default.createElement(SimpleDrop, null);
 }).add('All not stretch', function () {
@@ -585,4 +640,6 @@ function (_Component5) {
   return _react.default.createElement(ProgressiveDrop, null);
 }).add('Lazy', function () {
   return _react.default.createElement(LazyDrop, null);
+}).add('Plain', function () {
+  return _react.default.createElement(PlainDrop, null);
 });
