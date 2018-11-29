@@ -58,19 +58,35 @@ class InfiniteScroll extends PureComponent {
   };
 
   nextPage = page => () => {
-    const { items, onMore, replace, step } = this.props;
-    const { firstPage } = this.state;
-    this.setState(
-      { firstPage: replace ? page - 1 : firstPage, lastPage: page },
-      // call onMore if we've reached the end of the items
-      () => onMore && page * step >= items.length && onMore(),
-    );
+    // When scrolling very quickly, avoid queueing up repeated calls to change
+    // the visible pages.
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      const { items, onMore, replace, step } = this.props;
+      const { firstPage } = this.state;
+      this.setState(
+        {
+          firstPage: replace ? page - 1 : firstPage,
+          lastPage: page,
+        },
+        // call onMore if we've reached the end of the items
+        () => onMore && page * step >= items.length && onMore(),
+      );
+    }, 10); // 10ms was chosen empirically
   };
 
   previousPage = page => () => {
-    const { replace } = this.props;
-    const { lastPage } = this.state;
-    this.setState({ firstPage: page, lastPage: replace ? page + 1 : lastPage });
+    // When scrolling very quickly, avoid queueing up repeated calls to change
+    // the visible pages.
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      const { replace } = this.props;
+      const { lastPage } = this.state;
+      this.setState({
+        firstPage: page,
+        lastPage: replace ? page + 1 : lastPage,
+      });
+    }, 10); // 10ms was chosen empirically
   };
 
   render() {

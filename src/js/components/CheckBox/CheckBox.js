@@ -17,6 +17,14 @@ import {
 
 import { normalizeColor } from '../../utils';
 
+const stopLabelClick = event => {
+  // prevents clicking on the label trigging the event twice
+  // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
+  if (event.target.type !== 'checkbox') {
+    event.stopPropagation();
+  }
+};
+
 class CheckBox extends Component {
   constructor(props) {
     super(props);
@@ -154,13 +162,7 @@ class CheckBox extends Component {
         theme={theme}
         gap={theme.checkBox.gap || 'small'}
         checked={checked}
-        onClick={event => {
-          // prevents clicking on the label trigging the event twice
-          // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
-          if (event.target.type !== 'checkbox') {
-            event.stopPropagation();
-          }
-        }}
+        onClick={stopLabelClick}
       >
         {first}
         {second}

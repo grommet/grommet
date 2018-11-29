@@ -523,12 +523,6 @@ const dummyOptions = Array(2000)
   .map((_, i) => `option ${i}`)
   .sort();
 
-const theme = deepMerge(grommet, {
-  select: {
-    step: 100,
-  },
-});
-
 class ManyOptions extends Component {
   state = {
     selected: [],
@@ -538,7 +532,7 @@ class ManyOptions extends Component {
   render() {
     const { options, selected } = this.state;
     return (
-      <Grommet full theme={theme}>
+      <Grommet full theme={grommet}>
         <Box fill align="center" justify="start" pad="large">
           <Select
             multiple
