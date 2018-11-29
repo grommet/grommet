@@ -69,15 +69,28 @@ export const StyledOverlay = styled.div`
     )} pointer-events: all;
 `;
 
-const MARGINS = {
-  top: (margin, theme) =>
-    theme.global.edgeSize[margin.top || margin.vertical || margin] || '0px',
-  bottom: (margin, theme) =>
-    theme.global.edgeSize[margin.bottom || margin.vertical || margin] || '0px',
-  left: (margin, theme) =>
-    theme.global.edgeSize[margin.left || margin.horizontal || margin] || '0px',
-  right: (margin, theme) =>
-    theme.global.edgeSize[margin.right || margin.horizontal || margin] || '0px',
+const getMargin = (margin, theme, position) => {
+  const axis =
+    position === 'top' || position === 'bottom' ? 'vertical' : 'horizontal';
+  const marginValue = margin[position] || margin[axis] || margin;
+  const marginApplied = theme.global.edgeSize[marginValue] || marginValue;
+  const marginInTheme = !!theme.global.edgeSize[marginValue];
+
+  return !marginInTheme && typeof marginValue !== 'string'
+    ? '0px'
+    : marginApplied;
+};
+
+const MARGINS = (margin, theme, position = undefined) => {
+  if (position) {
+    return getMargin(margin, theme, position);
+  }
+  return {
+    top: getMargin(margin, theme, 'top'),
+    bottom: getMargin(margin, theme, 'bottom'),
+    left: getMargin(margin, theme, 'left'),
+    right: getMargin(margin, theme, 'right'),
+  };
 };
 
 const KEYFRAMES = {
@@ -181,60 +194,60 @@ const KEYFRAMES = {
 // as well so they must take into account the non-animated positioning.
 const POSITIONS = {
   center: {
-    vertical: (margin, theme) => css`
-      top: ${MARGINS.top(margin, theme)};
-      bottom: ${MARGINS.bottom(margin, theme)};
+    vertical: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
       left: 50%;
       transform: translateX(-50%);
       animation: ${KEYFRAMES.center.vertical} 0.2s ease-in-out forwards;
     `,
-    horizontal: (margin, theme) => css`
-      left: ${MARGINS.left(margin, theme)};
-      right: ${MARGINS.right(margin, theme)};
+    horizontal: margin => css`
+      left: ${margin.left};
+      right: ${margin.right};
       top: 50%;
       transform: translateY(-50%);
       animation: ${KEYFRAMES.center.horizontal} 0.2s ease-in-out forwards;
     `,
-    true: (margin, theme) => css`
-      top: ${MARGINS.top(margin, theme)};
-      bottom: ${MARGINS.bottom(margin, theme)};
-      left: ${MARGINS.left(margin, theme)};
-      right: ${MARGINS.right(margin, theme)};
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      right: ${margin.right};
       animation: ${KEYFRAMES.center.true} 0.2s ease-in-out forwards;
     `,
-    false: () => css`
-      top: 50%;
-      left: 50%;
+    false: margin => css`
+      top: calc(50% + ${margin.top});
+      left: calc(50% + ${margin.left});
       transform: translate(-50%, -50%);
       animation: ${KEYFRAMES.center.false} 0.2s ease-in-out forwards;
     `,
   },
 
   top: {
-    vertical: (margin, theme) => css`
-      top: ${MARGINS.top(margin, theme)};
-      bottom: ${MARGINS.bottom(margin, theme)};
+    vertical: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
       left: 50%;
       transform: translate(-50%, 0%);
       animation: ${KEYFRAMES.top.vertical} 0.2s ease-in-out forwards;
     `,
-    horizontal: (margin, theme) => css`
-      left: ${MARGINS.left(margin, theme)};
-      right: ${MARGINS.right(margin, theme)};
-      top: ${MARGINS.top(margin, theme)};
+    horizontal: margin => css`
+      left: ${margin.left};
+      right: ${margin.right};
+      top: ${margin.top};
       transform: translateY(0);
       animation: ${KEYFRAMES.top.horizontal} 0.2s ease-in-out forwards;
     `,
-    true: (margin, theme) => css`
-      top: ${MARGINS.top(margin, theme)};
-      bottom: ${MARGINS.bottom(margin, theme)};
-      left: ${MARGINS.left(margin, theme)};
-      right: ${MARGINS.right(margin, theme)};
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      right: ${margin.right};
       transform: translateY(0);
       animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
     `,
-    false: (margin, theme) => css`
-      top: ${MARGINS.top(margin, theme)};
+    false: margin => css`
+      top: ${margin.top};
       left: 50%;
       transform: translate(-50%, 0);
       animation: ${KEYFRAMES.top.false} 0.2s ease-in-out forwards;
@@ -242,30 +255,30 @@ const POSITIONS = {
   },
 
   bottom: {
-    vertical: (margin, theme) => css`
-      top: ${MARGINS.top(margin, theme)};
-      bottom: ${MARGINS.bottom(margin, theme)};
+    vertical: margin => css`
+      top: ${margin.top}
+      bottom: ${margin.bottom};
       left: 50%;
       transform: translate(-50%, 0);
       animation: ${KEYFRAMES.bottom.vertical} 0.2s ease-in-out forwards;
     `,
-    horizontal: (margin, theme) => css`
-      left: ${MARGINS.left(margin, theme)};
-      right: ${MARGINS.right(margin, theme)};
-      bottom: ${MARGINS.bottom(margin, theme)};
+    horizontal: margin => css`
+      left: ${margin.left};
+      right: ${margin.top};
+      bottom: ${margin.bottom};
       transform: translateY(0);
       animation: ${KEYFRAMES.bottom.horizontal} 0.2s ease-in-out forwards;
     `,
-    true: (margin, theme) => css`
-      top: ${MARGINS.top(margin, theme)};
-      bottom: ${MARGINS.bottom(margin, theme)};
-      left: ${MARGINS.left(margin, theme)};
-      right: ${MARGINS.right(margin, theme)};
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      right: ${margin.right};
       transform: translateY(0);
       animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
     `,
-    false: (margin, theme) => css`
-      bottom: ${MARGINS.bottom(margin, theme)};
+    false: margin => css`
+      bottom: ${margin.bottom};
       left: 50%;
       transform: translate(-50%, 0);
       animation: ${KEYFRAMES.bottom.false} 0.2s ease-in-out forwards;
@@ -273,30 +286,30 @@ const POSITIONS = {
   },
 
   left: {
-    vertical: (margin, theme) => css`
-      top: ${MARGINS.top(margin, theme)};
-      bottom: ${MARGINS.bottom(margin, theme)};
-      left: ${MARGINS.left(margin, theme)};
+    vertical: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
       transform: translateX(0);
       animation: ${KEYFRAMES.left.vertical} 0.2s ease-in-out forwards;
     `,
-    horizontal: (margin, theme) => css`
-      left: ${MARGINS.left(margin, theme)};
-      right: ${MARGINS.right(margin, theme)};
+    horizontal: margin => css`
+      left: ${margin.left};
+      right: ${margin.right};
       top: 50%;
       transform: translate(0, -50%);
       animation: ${KEYFRAMES.left.horizontal} 0.2s ease-in-out forwards;
     `,
-    true: (margin, theme) => css`
-      top: ${MARGINS.top(margin, theme)};
-      bottom: ${MARGINS.bottom(margin, theme)};
-      left: ${MARGINS.left(margin, theme)};
-      right: ${MARGINS.right(margin, theme)};
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      right: ${margin.right};
       transform: translateX(0);
       animation: ${KEYFRAMES.left.true} 0.2s ease-in-out forwards;
     `,
-    false: (margin, theme) => css`
-      left: ${MARGINS.left(margin, theme)};
+    false: margin => css`
+      left: ${margin.left};
       top: 50%;
       transform: translate(0, -50%);
       animation: ${KEYFRAMES.left.false} 0.2s ease-in-out forwards;
@@ -304,30 +317,30 @@ const POSITIONS = {
   },
 
   right: {
-    vertical: (margin, theme) => css`
-      top: ${MARGINS.top(margin, theme)};
-      bottom: ${MARGINS.bottom(margin, theme)};
-      right: ${MARGINS.right(margin, theme)};
+    vertical: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      right: ${margin.right};
       transform: translateX(0);
       animation: ${KEYFRAMES.right.vertical} 0.2s ease-in-out forwards;
     `,
-    horizontal: (margin, theme) => css`
-      left: ${MARGINS.left(margin, theme)};
-      right: ${MARGINS.right(margin, theme)};
+    horizontal: margin => css`
+      left: ${margin.left};
+      right: ${margin.right};
       top: 50%;
       transform: translate(0, -50%);
       animation: ${KEYFRAMES.right.horizontal} 0.2s ease-in-out forwards;
     `,
-    true: (margin, theme) => css`
-      top: ${MARGINS.top(margin, theme)};
-      bottom: ${MARGINS.bottom(margin, theme)};
-      left: ${MARGINS.left(margin, theme)};
-      right: ${MARGINS.right(margin, theme)};
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      right: ${margin.right};
       transform: translateX(0);
       animation: ${KEYFRAMES.right.true} 0.2s ease-in-out forwards;
     `,
-    false: (margin, theme) => css`
-      right: ${MARGINS.right(margin, theme)};
+    false: margin => css`
+      right: ${margin.right};
       top: 50%;
       transform: translate(0, -50%);
       animation: ${KEYFRAMES.right.false} 0.2s ease-in-out forwards;
@@ -338,20 +351,24 @@ const POSITIONS = {
 const desktopContainerStyle = css`
   position: ${props => (props.modal ? 'absolute' : 'fixed')};
   max-height: ${props =>
-    `calc(100% - ${MARGINS.top(props.margin, props.theme)} - ${MARGINS.bottom(
+    `calc(100% - ${MARGINS(props.margin, props.theme, 'top')} - ${MARGINS(
       props.margin,
       props.theme,
+      'bottom',
     )})`};
   max-width: ${props =>
-    `calc(100% - ${MARGINS.left(props.margin, props.theme)} - ${MARGINS.right(
+    `calc(100% - ${MARGINS(props.margin, props.theme, 'left')} - ${MARGINS(
       props.margin,
       props.theme,
+      'right',
     )})`};
   border-radius: ${props =>
     props.plain ? 0 : props.theme.layer.border.radius};
   ${props =>
     (props.position !== 'hidden' &&
-      POSITIONS[props.position][props.full](props.margin, props.theme)) ||
+      POSITIONS[props.position][props.full](
+        MARGINS(props.margin, props.theme),
+      )) ||
     ''};
 `;
 

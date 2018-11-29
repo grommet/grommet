@@ -86,6 +86,20 @@ describe('Layer', () => {
     }),
   );
 
+  test(`custom margin`, () => {
+    render(
+      <Grommet>
+        <Layer
+          id="margin-test"
+          margin={{ top: '50px', bottom: '40px', left: '30px', right: '20px' }}
+        >
+          This is a layer
+        </Layer>
+      </Grommet>,
+    );
+    expectPortal('margin-test').toMatchSnapshot();
+  });
+
   test('hidden', () => {
     const { rerender } = render(
       <Grommet>
