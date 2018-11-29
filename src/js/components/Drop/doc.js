@@ -54,6 +54,11 @@ export const doc = Drop => {
     ]).description(
       `Elevated height of the target, indicated via a drop shadow.`,
     ),
+    plain: PropTypes.bool
+      .description(
+        `Whether the drop element should have no background nor shadow`,
+      )
+      .defaultValue(false),
   };
 
   return DocumentedDrop;

@@ -155,4 +155,9 @@ describe('Drop', () => {
     render(<TestInput theme={customTheme} elevation="medium" />);
     expectPortal('drop-node').toMatchSnapshot();
   });
+
+  test('plain renders', () => {
+    render(<TestInput plain />);
+    expectPortal('drop-node').toMatchSnapshot();
+  });
 });
