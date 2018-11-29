@@ -2155,7 +2155,6 @@ exports[`Drop plain renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  box-shadow: none;
 }
 
 .c0 {
@@ -2253,7 +2252,7 @@ exports[`Drop plain renders 2`] = `
   }
 }
 
-.iKFnrI {
+.IRSNj {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2268,17 +2267,16 @@ exports[`Drop plain renders 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  box-shadow: none;
 }
 
 @media only screen and (max-width:768px) {
-  .iKFnrI {
+  .IRSNj {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iKFnrI {
+  .IRSNj {
     padding: 0px;
   }
 }
