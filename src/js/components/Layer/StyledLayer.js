@@ -215,9 +215,9 @@ const POSITIONS = {
       right: ${margin.right};
       animation: ${KEYFRAMES.center.true} 0.2s ease-in-out forwards;
     `,
-    false: () => css`
-      top: 50%;
-      left: 50%;
+    false: margin => css`
+      top: calc(50% + ${margin.top});
+      left: calc(50% + ${margin.left});
       transform: translate(-50%, -50%);
       animation: ${KEYFRAMES.center.false} 0.2s ease-in-out forwards;
     `,
@@ -247,10 +247,10 @@ const POSITIONS = {
       animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
     `,
     false: margin => css`
-      top: calc(50% + ${margin.top});
-      left: calc(50% + ${margin.left});
-      transform: translate(-50%, -50%);
-      animation: ${KEYFRAMES.center.false} 0.2s ease-in-out forwards;
+      top: ${margin.top};
+      left: 50%;
+      transform: translate(-50%, 0);
+      animation: ${KEYFRAMES.top.false} 0.2s ease-in-out forwards;
     `,
   },
 
@@ -278,7 +278,7 @@ const POSITIONS = {
       animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
     `,
     false: margin => css`
-      bottom: ${margin.top};
+      bottom: ${margin.bottom};
       left: 50%;
       transform: translate(-50%, 0);
       animation: ${KEYFRAMES.bottom.false} 0.2s ease-in-out forwards;
@@ -309,7 +309,7 @@ const POSITIONS = {
       animation: ${KEYFRAMES.left.true} 0.2s ease-in-out forwards;
     `,
     false: margin => css`
-      left: ${margin.top};
+      left: ${margin.left};
       top: 50%;
       transform: translate(0, -50%);
       animation: ${KEYFRAMES.left.false} 0.2s ease-in-out forwards;
