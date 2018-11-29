@@ -106,6 +106,18 @@ describe('Layer', function () {
       expectPortal('margin-test').toMatchSnapshot();
     });
   });
+  test("custom margin", function () {
+    render(React.createElement(Grommet, null, React.createElement(Layer, {
+      id: "margin-test",
+      margin: {
+        top: '50px',
+        bottom: '40px',
+        left: '30px',
+        right: '20px'
+      }
+    }, "This is a layer")));
+    expectPortal('margin-test').toMatchSnapshot();
+  });
   test('hidden', function () {
     var _render = render(React.createElement(Grommet, null, React.createElement(Layer, {
       id: "hidden-test",

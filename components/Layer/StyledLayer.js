@@ -52,20 +52,32 @@ var StyledOverlay = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledOverlay = StyledOverlay;
-var MARGINS = {
-  top: function top(margin, theme) {
-    return theme.global.edgeSize[margin.top || margin.vertical || margin] || '0px';
-  },
-  bottom: function bottom(margin, theme) {
-    return theme.global.edgeSize[margin.bottom || margin.vertical || margin] || '0px';
-  },
-  left: function left(margin, theme) {
-    return theme.global.edgeSize[margin.left || margin.horizontal || margin] || '0px';
-  },
-  right: function right(margin, theme) {
-    return theme.global.edgeSize[margin.right || margin.horizontal || margin] || '0px';
-  }
+
+var getMargin = function getMargin(margin, theme, position) {
+  var axis = position === 'top' || position === 'bottom' ? 'vertical' : 'horizontal';
+  var marginValue = margin[position] || margin[axis] || margin;
+  var marginApplied = theme.global.edgeSize[marginValue] || marginValue;
+  var marginInTheme = !!theme.global.edgeSize[marginValue];
+  return !marginInTheme && typeof marginValue !== 'string' ? '0px' : marginApplied;
 };
+
+var MARGINS = function MARGINS(margin, theme, position) {
+  if (position === void 0) {
+    position = undefined;
+  }
+
+  if (position) {
+    return getMargin(margin, theme, position);
+  }
+
+  return {
+    top: getMargin(margin, theme, 'top'),
+    bottom: getMargin(margin, theme, 'bottom'),
+    left: getMargin(margin, theme, 'left'),
+    right: getMargin(margin, theme, 'right')
+  };
+};
+
 var KEYFRAMES = {
   center: {
     vertical: (0, _styledComponents.keyframes)(["0%{transform:translateX(-50%) scale(0.8);}100%{transform:translateX(-50%) scale(1);}"]),
@@ -106,86 +118,86 @@ var KEYFRAMES = {
 
 var POSITIONS = {
   center: {
-    vertical: function vertical(margin, theme) {
-      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:50%;transform:translateX(-50%);animation:", " 0.2s ease-in-out forwards;"], MARGINS.top(margin, theme), MARGINS.bottom(margin, theme), KEYFRAMES.center.vertical);
+    vertical: function vertical(margin) {
+      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:50%;transform:translateX(-50%);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, KEYFRAMES.center.vertical);
     },
-    horizontal: function horizontal(margin, theme) {
-      return (0, _styledComponents.css)(["left:", ";right:", ";top:50%;transform:translateY(-50%);animation:", " 0.2s ease-in-out forwards;"], MARGINS.left(margin, theme), MARGINS.right(margin, theme), KEYFRAMES.center.horizontal);
+    horizontal: function horizontal(margin) {
+      return (0, _styledComponents.css)(["left:", ";right:", ";top:50%;transform:translateY(-50%);animation:", " 0.2s ease-in-out forwards;"], margin.left, margin.right, KEYFRAMES.center.horizontal);
     },
-    true: function _true(margin, theme) {
-      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";animation:", " 0.2s ease-in-out forwards;"], MARGINS.top(margin, theme), MARGINS.bottom(margin, theme), MARGINS.left(margin, theme), MARGINS.right(margin, theme), KEYFRAMES.center.true);
+    true: function _true(margin) {
+      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.center.true);
     },
-    false: function _false() {
-      return (0, _styledComponents.css)(["top:50%;left:50%;transform:translate(-50%,-50%);animation:", " 0.2s ease-in-out forwards;"], KEYFRAMES.center.false);
+    false: function _false(margin) {
+      return (0, _styledComponents.css)(["top:calc(50% + ", ");left:calc(50% + ", ");transform:translate(-50%,-50%);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.left, KEYFRAMES.center.false);
     }
   },
   top: {
-    vertical: function vertical(margin, theme) {
-      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:50%;transform:translate(-50%,0%);animation:", " 0.2s ease-in-out forwards;"], MARGINS.top(margin, theme), MARGINS.bottom(margin, theme), KEYFRAMES.top.vertical);
+    vertical: function vertical(margin) {
+      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:50%;transform:translate(-50%,0%);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, KEYFRAMES.top.vertical);
     },
-    horizontal: function horizontal(margin, theme) {
-      return (0, _styledComponents.css)(["left:", ";right:", ";top:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], MARGINS.left(margin, theme), MARGINS.right(margin, theme), MARGINS.top(margin, theme), KEYFRAMES.top.horizontal);
+    horizontal: function horizontal(margin) {
+      return (0, _styledComponents.css)(["left:", ";right:", ";top:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], margin.left, margin.right, margin.top, KEYFRAMES.top.horizontal);
     },
-    true: function _true(margin, theme) {
-      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], MARGINS.top(margin, theme), MARGINS.bottom(margin, theme), MARGINS.left(margin, theme), MARGINS.right(margin, theme), KEYFRAMES.top.true);
+    true: function _true(margin) {
+      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.top.true);
     },
-    false: function _false(margin, theme) {
-      return (0, _styledComponents.css)(["top:", ";left:50%;transform:translate(-50%,0);animation:", " 0.2s ease-in-out forwards;"], MARGINS.top(margin, theme), KEYFRAMES.top.false);
+    false: function _false(margin) {
+      return (0, _styledComponents.css)(["top:", ";left:50%;transform:translate(-50%,0);animation:", " 0.2s ease-in-out forwards;"], margin.top, KEYFRAMES.top.false);
     }
   },
   bottom: {
-    vertical: function vertical(margin, theme) {
-      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:50%;transform:translate(-50%,0);animation:", " 0.2s ease-in-out forwards;"], MARGINS.top(margin, theme), MARGINS.bottom(margin, theme), KEYFRAMES.bottom.vertical);
+    vertical: function vertical(margin) {
+      return (0, _styledComponents.css)(["top:", " bottom:", ";left:50%;transform:translate(-50%,0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, KEYFRAMES.bottom.vertical);
     },
-    horizontal: function horizontal(margin, theme) {
-      return (0, _styledComponents.css)(["left:", ";right:", ";bottom:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], MARGINS.left(margin, theme), MARGINS.right(margin, theme), MARGINS.bottom(margin, theme), KEYFRAMES.bottom.horizontal);
+    horizontal: function horizontal(margin) {
+      return (0, _styledComponents.css)(["left:", ";right:", ";bottom:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], margin.left, margin.top, margin.bottom, KEYFRAMES.bottom.horizontal);
     },
-    true: function _true(margin, theme) {
-      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], MARGINS.top(margin, theme), MARGINS.bottom(margin, theme), MARGINS.left(margin, theme), MARGINS.right(margin, theme), KEYFRAMES.bottom.true);
+    true: function _true(margin) {
+      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.bottom.true);
     },
-    false: function _false(margin, theme) {
-      return (0, _styledComponents.css)(["bottom:", ";left:50%;transform:translate(-50%,0);animation:", " 0.2s ease-in-out forwards;"], MARGINS.bottom(margin, theme), KEYFRAMES.bottom.false);
+    false: function _false(margin) {
+      return (0, _styledComponents.css)(["bottom:", ";left:50%;transform:translate(-50%,0);animation:", " 0.2s ease-in-out forwards;"], margin.bottom, KEYFRAMES.bottom.false);
     }
   },
   left: {
-    vertical: function vertical(margin, theme) {
-      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], MARGINS.top(margin, theme), MARGINS.bottom(margin, theme), MARGINS.left(margin, theme), KEYFRAMES.left.vertical);
+    vertical: function vertical(margin) {
+      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, KEYFRAMES.left.vertical);
     },
-    horizontal: function horizontal(margin, theme) {
-      return (0, _styledComponents.css)(["left:", ";right:", ";top:50%;transform:translate(0,-50%);animation:", " 0.2s ease-in-out forwards;"], MARGINS.left(margin, theme), MARGINS.right(margin, theme), KEYFRAMES.left.horizontal);
+    horizontal: function horizontal(margin) {
+      return (0, _styledComponents.css)(["left:", ";right:", ";top:50%;transform:translate(0,-50%);animation:", " 0.2s ease-in-out forwards;"], margin.left, margin.right, KEYFRAMES.left.horizontal);
     },
-    true: function _true(margin, theme) {
-      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], MARGINS.top(margin, theme), MARGINS.bottom(margin, theme), MARGINS.left(margin, theme), MARGINS.right(margin, theme), KEYFRAMES.left.true);
+    true: function _true(margin) {
+      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.left.true);
     },
-    false: function _false(margin, theme) {
-      return (0, _styledComponents.css)(["left:", ";top:50%;transform:translate(0,-50%);animation:", " 0.2s ease-in-out forwards;"], MARGINS.left(margin, theme), KEYFRAMES.left.false);
+    false: function _false(margin) {
+      return (0, _styledComponents.css)(["left:", ";top:50%;transform:translate(0,-50%);animation:", " 0.2s ease-in-out forwards;"], margin.left, KEYFRAMES.left.false);
     }
   },
   right: {
-    vertical: function vertical(margin, theme) {
-      return (0, _styledComponents.css)(["top:", ";bottom:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], MARGINS.top(margin, theme), MARGINS.bottom(margin, theme), MARGINS.right(margin, theme), KEYFRAMES.right.vertical);
+    vertical: function vertical(margin) {
+      return (0, _styledComponents.css)(["top:", ";bottom:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.right, KEYFRAMES.right.vertical);
     },
-    horizontal: function horizontal(margin, theme) {
-      return (0, _styledComponents.css)(["left:", ";right:", ";top:50%;transform:translate(0,-50%);animation:", " 0.2s ease-in-out forwards;"], MARGINS.left(margin, theme), MARGINS.right(margin, theme), KEYFRAMES.right.horizontal);
+    horizontal: function horizontal(margin) {
+      return (0, _styledComponents.css)(["left:", ";right:", ";top:50%;transform:translate(0,-50%);animation:", " 0.2s ease-in-out forwards;"], margin.left, margin.right, KEYFRAMES.right.horizontal);
     },
-    true: function _true(margin, theme) {
-      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], MARGINS.top(margin, theme), MARGINS.bottom(margin, theme), MARGINS.left(margin, theme), MARGINS.right(margin, theme), KEYFRAMES.right.true);
+    true: function _true(margin) {
+      return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.right.true);
     },
-    false: function _false(margin, theme) {
-      return (0, _styledComponents.css)(["right:", ";top:50%;transform:translate(0,-50%);animation:", " 0.2s ease-in-out forwards;"], MARGINS.right(margin, theme), KEYFRAMES.right.false);
+    false: function _false(margin) {
+      return (0, _styledComponents.css)(["right:", ";top:50%;transform:translate(0,-50%);animation:", " 0.2s ease-in-out forwards;"], margin.right, KEYFRAMES.right.false);
     }
   }
 };
 var desktopContainerStyle = (0, _styledComponents.css)(["position:", ";max-height:", ";max-width:", ";border-radius:", ";", ";"], function (props) {
   return props.modal ? 'absolute' : 'fixed';
 }, function (props) {
-  return "calc(100% - " + MARGINS.top(props.margin, props.theme) + " - " + MARGINS.bottom(props.margin, props.theme) + ")";
+  return "calc(100% - " + MARGINS(props.margin, props.theme, 'top') + " - " + MARGINS(props.margin, props.theme, 'bottom') + ")";
 }, function (props) {
-  return "calc(100% - " + MARGINS.left(props.margin, props.theme) + " - " + MARGINS.right(props.margin, props.theme) + ")";
+  return "calc(100% - " + MARGINS(props.margin, props.theme, 'left') + " - " + MARGINS(props.margin, props.theme, 'right') + ")";
 }, function (props) {
   return props.plain ? 0 : props.theme.layer.border.radius;
 }, function (props) {
-  return props.position !== 'hidden' && POSITIONS[props.position][props.full](props.margin, props.theme) || '';
+  return props.position !== 'hidden' && POSITIONS[props.position][props.full](MARGINS(props.margin, props.theme)) || '';
 });
 var responsiveContainerStyle = (0, _styledComponents.css)(["position:relative;max-height:none;max-width:none;border-radius:0;top:0;bottom:0;left:0;right:0;transform:none;animation:none;height:100vh;width:100vw;"]);
 

@@ -346,7 +346,13 @@ var MarginLayer = function MarginLayer() {
   return React.createElement(Grommet, {
     theme: grommet
   }, React.createElement(Layer, {
-    margin: "large"
+    full: true,
+    margin: {
+      left: '40px',
+      top: '50px',
+      right: '30px',
+      bottom: '10px'
+    }
   }, React.createElement(Box, {
     overflow: "auto"
   }, React.createElement(Box, {

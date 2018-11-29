@@ -119,6 +119,18 @@ describe('Layer', function () {
       (0, _portal.expectPortal)('margin-test').toMatchSnapshot();
     });
   });
+  test("custom margin", function () {
+    (0, _reactTestingLibrary.render)(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Layer, {
+      id: "margin-test",
+      margin: {
+        top: '50px',
+        bottom: '40px',
+        left: '30px',
+        right: '20px'
+      }
+    }, "This is a layer")));
+    (0, _portal.expectPortal)('margin-test').toMatchSnapshot();
+  });
   test('hidden', function () {
     var _render = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Layer, {
       id: "hidden-test",
