@@ -23,6 +23,9 @@ export const doc = Grommet => {
     theme: PropTypes.object.description(
       'Custom styles for Grommet app component.',
     ),
+    ssrHeaders: PropTypes.object.description(
+      'Request headers including the user-agent to guess device width',
+    ),
   };
 
   return DocumentedGrommet;

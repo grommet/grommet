@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 import { compose } from 'recompose';
+import MobileDetect from 'mobile-detect';
 
 import { ResponsiveContext, ThemeContext } from '../../contexts';
 import { base as baseTheme } from '../../themes/base';
@@ -110,10 +111,30 @@ class Grommet extends Component {
     }
   };
 
+  ssrResponsive() {
+    const { ssrHeader } = this.props;
+    const { theme } = this.state;
+    if (ssrHeader) {
+      const md = new MobileDetect(ssrHeader['user-agent']);
+      if (md.phone()) {
+        return getBreakpoint(theme.global.ssrBreakpoints.phone, theme)
+      }
+      if (md.tablet()) {
+        return getBreakpoint(theme.global.ssrBreakpoints.tablet, theme)
+      }
+      return getBreakpoint(theme.global.ssrBreakpoints.large, theme);
+    }
+    return undefined;
+  }
+
   render() {
     const { children, ...rest } = this.props;
     delete rest.theme;
-    const { responsive, theme } = this.state;
+    const { responsive: stateResponsive, theme } = this.state;
+
+    // Value from state should be correct once we resize
+    // On first render we try to guess otherwise set the default as a tablet
+    const responsive = stateResponsive  || this.ssrResponsive() || getBreakpoint(theme.global.ssrBreakpoints.tablet, theme);
 
     return (
       <ThemeContext.Provider value={theme}>

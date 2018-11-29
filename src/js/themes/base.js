@@ -148,6 +148,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         large: {}, // anything above 'medium'
       },
+      // Breakpoints used at SSR in order to guess a responsive breakpoint
+      ssrBreakpoints: {
+        phone: 500,
+        tablet: 900,
+        large: 1100,
+      },
       colors,
       control: {
         border: {

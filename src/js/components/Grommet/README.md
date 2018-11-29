@@ -34,4 +34,12 @@ Custom styles for Grommet app component.
 ```
 object
 ```
+
+**ssrHeaders**
+
+Request headers including the user-agent to guess device width
+
+```
+object
+```
   
