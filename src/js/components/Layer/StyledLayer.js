@@ -70,17 +70,13 @@ export const StyledOverlay = styled.div`
 `;
 
 const getMargin = (margin, theme, position) => {
-  const axe =
+  const axis =
     position === 'top' || position === 'bottom' ? 'vertical' : 'horizontal';
-  const marginApplied =
-    theme.global.edgeSize[margin[position] || margin[axe] || margin] ||
-    margin[position] ||
-    margin[axe] ||
-    margin;
+  const marginValue = margin[position] || margin[axis] || margin;
+  const marginApplied = theme.global.edgeSize[marginValue] || marginValue;
+  const marginInTheme = !!theme.global.edgeSize[marginValue];
 
-  return marginApplied &&
-    typeof marginApplied === 'object' &&
-    marginApplied.constructor === Object
+  return !marginInTheme && typeof marginValue !== 'string'
     ? '0px'
     : marginApplied;
 };
