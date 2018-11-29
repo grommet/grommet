@@ -101,7 +101,7 @@ Defaults to
 
 **global.input.weight**
 
-The font weight of the label. Expects `number`.
+The font weight of the text entered. Expects `number`.
 
 Defaults to
 

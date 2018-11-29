@@ -48,7 +48,7 @@ export const themeDoc = {
     defaultValue: '1px',
   },
   'global.input.weight': {
-    description: 'The font weight of the label.',
+    description: 'The font weight of the text entered.',
     type: 'number',
     defaultValue: 600,
   },
