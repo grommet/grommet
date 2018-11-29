@@ -13,6 +13,7 @@ class Drop extends Component {
       top: 'top',
       left: 'left',
     },
+    plain: false,
   };
 
   originalFocusedElement = document.activeElement;

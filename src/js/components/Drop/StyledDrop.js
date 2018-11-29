@@ -34,7 +34,9 @@ export const StyledDrop = styled.div`
   outline: none;
   overflow: auto; //since we set max-height
 
-  ${props => backgroundStyle(props.theme.global.drop.background, props.theme)}
+  ${props =>
+    !props.plain &&
+    backgroundStyle(props.theme.global.drop.background, props.theme)}
 
   opacity: 0;
   transform-origin: ${props => getTransformOriginStyle(props.alignProp)};
