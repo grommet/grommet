@@ -21,8 +21,10 @@ var dropKeyFrames = keyframes(["0%{opacity:0.5;transform:scale(0.8);}100%{opacit
 export var StyledDrop = styled.div.withConfig({
   displayName: "StyledDrop",
   componentId: "sc-16s5rx8-0"
-})(["", " border-radius:", ";position:fixed;z-index:20;outline:none;overflow:auto;", " opacity:0;transform-origin:", ";animation:", " 0.1s forwards;animation-delay:0.01s;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){display:flex;align-items:stretch;}", ""], baseStyle, function (props) {
+})(["", " border-radius:", ";position:fixed;z-index:", ";outline:none;overflow:auto;", " opacity:0;transform-origin:", ";animation:", " 0.1s forwards;animation-delay:0.01s;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){display:flex;align-items:stretch;}", ""], baseStyle, function (props) {
   return props.theme.global.drop.border.radius;
+}, function (props) {
+  return props.theme.global.drop.zIndex;
 }, function (props) {
   return !props.plain && backgroundStyle(props.theme.global.drop.background, props.theme);
 }, function (props) {

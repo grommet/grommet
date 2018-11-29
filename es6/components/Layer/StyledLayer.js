@@ -6,7 +6,9 @@ var responsiveLayerStyle = "\n  position: absolute;\n  width: 100%;\n  height: 1
 export var StyledLayer = styled.div.withConfig({
   displayName: "StyledLayer",
   componentId: "rmtehz-0"
-})(["", " background:unset;position:relative;z-index:10;pointer-events:none;outline:none;", " ", ";"], baseStyle, function (props) {
+})(["", " background:unset;position:relative;z-index:", ";pointer-events:none;outline:none;", " ", ";"], baseStyle, function (props) {
+  return props.theme.layer.zIndex;
+}, function (props) {
   if (props.position === 'hidden') {
     return hiddenPositionStyle;
   }
@@ -174,12 +176,14 @@ var responsiveContainerStyle = css(["position:relative;max-height:none;max-width
 export var StyledContainer = styled.div.withConfig({
   displayName: "StyledLayer__StyledContainer",
   componentId: "rmtehz-2"
-})(["", " display:flex;flex-direction:column;min-height:", ";", " outline:none;pointer-events:all;z-index:15;", " ", ";"], function (props) {
+})(["", " display:flex;flex-direction:column;min-height:", ";", " outline:none;pointer-events:all;z-index:", ";", " ", ";"], function (props) {
   return !props.modal ? baseStyle : '';
 }, function (props) {
   return props.theme.global.size.xxsmall;
 }, function (props) {
   return !props.plain && props.theme.layer.background && backgroundStyle(props.theme.layer.background, props.theme);
+}, function (props) {
+  return props.theme.layer.container.zIndex;
 }, desktopContainerStyle, function (props) {
   if (props.responsive && props.theme.layer.responsiveBreakpoint) {
     var breakpoint = props.theme.global.breakpoints[props.theme.layer.responsiveBreakpoint];

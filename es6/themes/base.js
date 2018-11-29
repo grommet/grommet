@@ -177,7 +177,8 @@ export var generate = function generate(baseSpacing, scale) {
           width: '0px',
           radius: '0px'
         },
-        shadowSize: 'small'
+        shadowSize: 'small',
+        zIndex: '20'
       },
       edgeSize: {
         none: '0px',
@@ -571,11 +572,15 @@ export var generate = function generate(baseSpacing, scale) {
       border: {
         radius: '4px'
       },
+      container: {
+        zIndex: '15'
+      },
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)'
       },
-      responsiveBreakpoint: 'small' // when Layer takes over the full screen
-
+      responsiveBreakpoint: 'small',
+      // when Layer takes over the full screen
+      zIndex: '10'
     },
     menu: {
       // background: undefined,
