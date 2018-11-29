@@ -246,7 +246,10 @@ class NotificationLayer extends Component {
 
 const MarginLayer = () => (
   <Grommet theme={grommet}>
-    <Layer margin="large">
+    <Layer
+      full
+      margin={{ left: '40px', top: '50px', right: '30px', bottom: '10px' }}
+    >
       <Box overflow="auto">
         <Box pad="xlarge">text</Box>
         <Box pad="xlarge">text</Box>
