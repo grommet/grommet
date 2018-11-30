@@ -41,8 +41,8 @@ const customBreakpointsTheme = {
   },
 };
 
+// eslint-disable-next-line react/no-multi-comp
 class SSRTester extends Component {
-  // eslint-disable-line react/no-multi-comp
   sizes = [];
 
   render() {
