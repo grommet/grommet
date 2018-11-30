@@ -131,7 +131,7 @@ boolean
 
 **children**
 
-Required. Array of AccordionPanels.
+Array of AccordionPanels.
 
 ```
 node
