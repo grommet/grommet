@@ -14,7 +14,7 @@ var doc = function doc(Accordion) {
   DocumentedAccordion.propTypes = _extends({}, _utils.genericProps, {
     activeIndex: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.number, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.number)]).description("Active panel index. If specified, Accordion will be a controlled component. This means that future\npanel changes will not work unless you subscribe to onActive function and update activeIndex\naccordingly.").defaultValue(0),
     animate: _reactDesc.PropTypes.bool.description('Transition content in & out with a slide down animation.').defaultValue(true),
-    children: _reactDesc.PropTypes.node.description('Array of AccordionPanels.').isRequired,
+    children: _reactDesc.PropTypes.node.description('Array of AccordionPanels.'),
     onActive: _reactDesc.PropTypes.func.description("Function that will be called when the active index changes.\nIt will always send an array with currently active panel indexes."),
     multiple: _reactDesc.PropTypes.bool.description('Allow multiple panels to be opened at once.').defaultValue(false),
     messages: _reactDesc.PropTypes.shape({

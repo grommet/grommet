@@ -11,7 +11,7 @@ export interface AccordionProps {
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   activeIndex?: number | number[];
   animate?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onActive?: (...args: any[]) => any;
   multiple?: boolean;
   messages?: {tabContents: string};
