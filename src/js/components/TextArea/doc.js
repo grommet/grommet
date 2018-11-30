@@ -57,9 +57,10 @@ export const themeDoc = {
     type: 'string | { dark: string, light: string }',
     defaultValue: 'focus',
   },
-  'global.spacing': {
+  'global.input.padding': {
     description: 'The padding of the text.',
     type: 'string',
+    defaultValue: '12px',
   },
   'textArea.extend': {
     description: 'Any additional style for Text.',

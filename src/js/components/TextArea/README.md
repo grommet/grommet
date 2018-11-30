@@ -119,14 +119,14 @@ Defaults to
 focus
 ```
 
-**global.spacing**
+**global.input.padding**
 
 The padding of the text. Expects `string`.
 
 Defaults to
 
 ```
-undefined
+12px
 ```
 
 **textArea.extend**
