@@ -29,8 +29,7 @@ accordingly.`,
     animate: PropTypes.bool
       .description('Transition content in & out with a slide down animation.')
       .defaultValue(true),
-    children: PropTypes.node.description('Array of AccordionPanels.')
-      .isRequired,
+    children: PropTypes.node.description('Array of AccordionPanels.'),
     onActive: PropTypes.func.description(
       `Function that will be called when the active index changes.
 It will always send an array with currently active panel indexes.`,
