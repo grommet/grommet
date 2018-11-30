@@ -4,17 +4,17 @@ import { storiesOf } from '@storybook/react';
 import { base } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
-import { Box, initializeDefaultTheme } from 'grommet';
+import { Box, initializeDefaults } from 'grommet';
 
-initializeDefaultTheme(
-  deepMerge(base, {
+initializeDefaults({
+  theme: deepMerge(base, {
     global: {
       colors: {
         brand: 'red',
       },
     },
   }),
-);
+});
 
 const CustomDefaultProps = () => (
   <Box background="brand" pad="small">

@@ -5,12 +5,12 @@ export * from './contexts';
 export * from './themes';
 
 let initialized = false;
-export const initializeDefaultTheme = theme => {
+export const initializeDefaults = props => {
   if (initialized) {
     console.warn(
       '[grommet]: default theme has been previously initialized. Make sure to only intialize the default theme once.',
     );
   }
-  defaultProps.theme = theme;
+  Object.keys(props).forEach(key => (defaultProps[key] = props[key])); // eslint-disable-line no-return-assign
   initialized = true;
 };
