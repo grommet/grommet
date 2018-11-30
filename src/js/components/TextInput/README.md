@@ -205,14 +205,14 @@ Defaults to
 600
 ```
 
-**global.spacing**
+**global.input.padding**
 
 The padding of the text. Expects `string`.
 
 Defaults to
 
 ```
-undefined
+12px
 ```
 
 **select.step**

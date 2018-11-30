@@ -109,10 +109,10 @@ export const themeDoc = {
     type: 'number',
     defaultValue: 600,
   },
-  'global.spacing': {
+  'global.input.padding': {
     description: 'The padding of the text.',
     type: 'string',
-    defaultValue: undefined,
+    defaultValue: '12px',
   },
   'select.step': {
     description: 'How many items to render at a time.',
