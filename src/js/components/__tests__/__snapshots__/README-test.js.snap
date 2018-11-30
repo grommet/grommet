@@ -5960,7 +5960,99 @@ When the options array contains objects, this property indicates how
 string
 function
 \`\`\`
-  ",
+  
+## Theme
+  
+**select.background**
+
+The background color used for Select. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.container**
+
+The container of the Select component. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.container.extend**
+
+Any additional style for the container of the Select component. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.control**
+
+The control of the Select component. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.control.extend**
+
+Any additional style for the control of the Select component. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.icons.color**
+
+The color used for Select icons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.icons.down**
+
+The down icon to use for opening the Select. Expects \`React.element\`.
+
+Defaults to
+
+\`\`\`
+<FormDown />
+\`\`\`
+
+**select.searchInput**
+
+The possible padding sizes and the focus indicator of the Select input field. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.step**
+
+How many items to render at a time. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+20
+\`\`\`
+",
   "SkipLinks": "## SkipLinks
 Describe a list of elements to skip to.
 

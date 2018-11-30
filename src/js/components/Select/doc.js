@@ -161,3 +161,53 @@ export const doc = Select => {
 
   return DocumentedSelect;
 };
+
+export const themeDoc = {
+  'select.background': {
+    description: 'The background color used for Select.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'select.container': {
+    description: 'The container of the Select component.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'select.container.extend': {
+    description:
+      'Any additional style for the container of the Select component.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'select.control': {
+    description: 'The control of the Select component.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'select.control.extend': {
+    description:
+      'Any additional style for the control of the Select component.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'select.icons.color': {
+    description: 'The color used for Select icons.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'select.icons.down': {
+    description: 'The down icon to use for opening the Select.',
+    type: 'React.element',
+    defaultValue: '<FormDown />',
+  },
+  'select.searchInput': {
+    description: `The possible padding sizes and the focus indicator of the Select input field.`,
+    type: 'object',
+    defaultValue: undefined,
+  },
+  'select.step': {
+    description: `How many items to render at a time.`,
+    type: 'number',
+    defaultValue: 20,
+  },
+};
