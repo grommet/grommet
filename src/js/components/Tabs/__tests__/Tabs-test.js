@@ -9,7 +9,9 @@ describe('Tabs', () => {
   test('no Tab', () => {
     const component = renderer.create(
       <Grommet>
-        <Tabs />
+        <Tabs>
+          <Tab />
+        </Tabs>
       </Grommet>,
     );
     expect(component.toJSON()).toMatchSnapshot();
