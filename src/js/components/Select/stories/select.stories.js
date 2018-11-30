@@ -521,7 +521,9 @@ class Option extends PureComponent {
 const dummyOptions = Array(2000)
   .fill()
   .map((_, i) => `option ${i}`)
-  .sort();
+  .sort((a, b) =>
+    a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }),
+  );
 
 class ManyOptions extends Component {
   state = {
@@ -552,7 +554,10 @@ class ManyOptions extends Component {
                   if (p1Exists && !p2Exists) {
                     return -1;
                   }
-                  return p1.localeCompare(p2);
+                  return p1.localeCompare(p2, undefined, {
+                    numeric: true,
+                    sensitivity: 'base',
+                  });
                 }),
               })
             }

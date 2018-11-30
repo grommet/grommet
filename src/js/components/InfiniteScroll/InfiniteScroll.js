@@ -114,7 +114,7 @@ class InfiniteScroll extends PureComponent {
           <Waypoint
             key={key}
             onEnter={this.previousPage(i)}
-            topOffsetX="-96px"
+            topOffset={`-${pageHeight / 2 || 96}px`}
             scrollableAncestor={scrollableAncestor}
           >
             <div
@@ -178,7 +178,7 @@ class InfiniteScroll extends PureComponent {
         <Waypoint
           key={key}
           onEnter={this.nextPage(i)}
-          bottomOffsetX="-96px"
+          bottomOffset={`-${pageHeight / 2 || 96}px`}
           scrollableAncestor={scrollableAncestor}
         >
           <div style={{ flex: `0 0 ${markerHeight}`, height: markerHeight }} />
