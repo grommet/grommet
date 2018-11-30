@@ -7,6 +7,14 @@ import { expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
 import { Drop } from '..';
 
+const customTheme = {
+  global: {
+    drop: {
+      shadowSize: 'large',
+    },
+  },
+};
+
 class TestInput extends Component {
   state = {
     showDrop: false,
@@ -19,18 +27,23 @@ class TestInput extends Component {
   }
 
   render() {
-    const { inputProps, ...rest } = this.props;
+    const { inputProps, theme, elevation, ...rest } = this.props;
     const { showDrop } = this.state;
     let drop;
     if (showDrop) {
       drop = (
-        <Drop id="drop-node" target={this.inputRef.current} {...rest}>
+        <Drop
+          id="drop-node"
+          elevation={elevation}
+          target={this.inputRef.current}
+          {...rest}
+        >
           this is a test
         </Drop>
       );
     }
     return (
-      <Grommet>
+      <Grommet theme={theme}>
         <input ref={this.inputRef} {...inputProps} />
         {drop}
       </Grommet>
@@ -126,5 +139,25 @@ describe('Drop', () => {
     cleanup();
 
     expect(document.activeElement).toMatchSnapshot();
+  });
+
+  test('default elevation renders', () => {
+    render(<TestInput />);
+    expectPortal('drop-node').toMatchSnapshot();
+  });
+
+  test('theme elevation renders', () => {
+    render(<TestInput theme={customTheme} />);
+    expectPortal('drop-node').toMatchSnapshot();
+  });
+
+  test('props elevation renders', () => {
+    render(<TestInput theme={customTheme} elevation="medium" />);
+    expectPortal('drop-node').toMatchSnapshot();
+  });
+
+  test('plain renders', () => {
+    render(<TestInput plain />);
+    expectPortal('drop-node').toMatchSnapshot();
   });
 });
