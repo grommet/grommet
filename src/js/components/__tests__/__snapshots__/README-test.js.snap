@@ -7083,16 +7083,6 @@ Defaults to
 1px
 \`\`\`
 
-**global.input.weight**
-
-The font weight of the label. Expects \`number\`.
-
-Defaults to
-
-\`\`\`
-600
-\`\`\`
-
 **global.input.padding**
 
 The padding of the text. Expects \`string\`.
@@ -7101,6 +7091,16 @@ Defaults to
 
 \`\`\`
 12px
+\`\`\`
+
+**global.input.weight**
+
+The font weight of the label. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+600
 \`\`\`
 
 **select.step**

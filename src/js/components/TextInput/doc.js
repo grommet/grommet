@@ -104,15 +104,15 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '1px',
   },
-  'global.input.weight': {
-    description: 'The font weight of the label.',
-    type: 'number',
-    defaultValue: 600,
-  },
   'global.input.padding': {
     description: 'The padding of the text.',
     type: 'string',
     defaultValue: '12px',
+  },
+  'global.input.weight': {
+    description: 'The font weight of the label.',
+    type: 'number',
+    defaultValue: 600,
   },
   'select.step': {
     description: 'How many items to render at a time.',
