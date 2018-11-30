@@ -446,18 +446,21 @@ function (_Component5) {
       align: "center",
       justify: "center"
     }, _react.default.createElement(_grommet.Select, {
-      placeholder: "Select Season",
       closeOnChange: false,
       multiple: true,
-      value: selected && selected.length ? _react.default.createElement(_grommet.Box, {
+      value: _react.default.createElement(_grommet.Box, {
         wrap: true,
         direction: "row",
-        style: {
-          width: '208px'
-        }
-      }, selected.map(function (index) {
+        width: "small"
+      }, selected && selected.length ? selected.map(function (index) {
         return _this10.renderSeason(allSeasons[index]);
-      })) : undefined,
+      }) : _react.default.createElement(_grommet.Box, {
+        pad: {
+          vertical: 'xsmall',
+          horizontal: 'small'
+        },
+        margin: "xsmall"
+      }, "Select Season")),
       options: allSeasons,
       selected: selected,
       disabled: [2, 6],

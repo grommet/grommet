@@ -430,18 +430,21 @@ function (_Component5) {
       align: "center",
       justify: "center"
     }, React.createElement(Select, {
-      placeholder: "Select Season",
       closeOnChange: false,
       multiple: true,
-      value: selected && selected.length ? React.createElement(Box, {
+      value: React.createElement(Box, {
         wrap: true,
         direction: "row",
-        style: {
-          width: '208px'
-        }
-      }, selected.map(function (index) {
+        width: "small"
+      }, selected && selected.length ? selected.map(function (index) {
         return _this10.renderSeason(allSeasons[index]);
-      })) : undefined,
+      }) : React.createElement(Box, {
+        pad: {
+          vertical: 'xsmall',
+          horizontal: 'small'
+        },
+        margin: "xsmall"
+      }, "Select Season")),
       options: allSeasons,
       selected: selected,
       disabled: [2, 6],
