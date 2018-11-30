@@ -8,7 +8,7 @@ import { RadioButton } from '..';
 test('RadioButton renders', () => {
   const component = renderer.create(
     <Grommet>
-      <RadioButton />
+      <RadioButton name="test empty" />
       <RadioButton id="test id" name="test name" />
     </Grommet>,
   );
@@ -19,8 +19,8 @@ test('RadioButton renders', () => {
 test('RadioButton label renders', () => {
   const component = renderer.create(
     <Grommet>
-      <RadioButton label="test label" />
-      <RadioButton label={<div>test label</div>} />
+      <RadioButton label="test label" name="test label" />
+      <RadioButton label={<div>test label</div>} name="test div label" />
     </Grommet>,
   );
   const tree = component.toJSON();
@@ -30,7 +30,7 @@ test('RadioButton label renders', () => {
 test('RadioButton checked renders', () => {
   const component = renderer.create(
     <Grommet>
-      <RadioButton checked />
+      <RadioButton checked name="test checked" />
     </Grommet>,
   );
   const tree = component.toJSON();
@@ -40,8 +40,8 @@ test('RadioButton checked renders', () => {
 test('RadioButton disabled renders', () => {
   const component = renderer.create(
     <Grommet>
-      <RadioButton disabled />
-      <RadioButton disabled checked />
+      <RadioButton disabled name="test disabled" />
+      <RadioButton disabled checked name="test checked disabled" />
     </Grommet>,
   );
   const tree = component.toJSON();
