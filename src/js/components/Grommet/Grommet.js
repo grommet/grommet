@@ -10,6 +10,7 @@ import {
   deepMerge,
   getBreakpoint,
   normalizeColor,
+  getDeviceBreakpoint,
 } from '../../utils';
 import { withIconTheme } from '../hocs';
 
@@ -112,17 +113,18 @@ class Grommet extends Component {
   };
 
   ssrResponsive() {
-    const { ssrHeader } = this.props;
+    const { userAgent } = this.props;
     const { theme } = this.state;
-    if (ssrHeader) {
-      const md = new MobileDetect(ssrHeader['user-agent']);
+
+    if (userAgent) {
+      const md = new MobileDetect(userAgent);
       if (md.phone()) {
-        return getBreakpoint(theme.global.ssrBreakpoints.phone, theme)
+        return getDeviceBreakpoint('phone', theme);
       }
       if (md.tablet()) {
-        return getBreakpoint(theme.global.ssrBreakpoints.tablet, theme)
+        return getDeviceBreakpoint('tablet', theme);
       }
-      return getBreakpoint(theme.global.ssrBreakpoints.large, theme);
+      return getDeviceBreakpoint('computer', theme);
     }
     return undefined;
   }
@@ -134,7 +136,10 @@ class Grommet extends Component {
 
     // Value from state should be correct once we resize
     // On first render we try to guess otherwise set the default as a tablet
-    const responsive = stateResponsive  || this.ssrResponsive() || getBreakpoint(theme.global.ssrBreakpoints.tablet, theme);
+    const responsive =
+      stateResponsive ||
+      this.ssrResponsive() ||
+      theme.global.deviceBreakpoints.tablet;
 
     return (
       <ThemeContext.Provider value={theme}>

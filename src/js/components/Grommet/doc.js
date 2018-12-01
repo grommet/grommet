@@ -23,8 +23,8 @@ export const doc = Grommet => {
     theme: PropTypes.object.description(
       'Custom styles for Grommet app component.',
     ),
-    ssrHeaders: PropTypes.object.description(
-      'Request headers including the user-agent to guess device width',
+    userAgent: PropTypes.string.description(
+      'User agent used to detect the device width for setting the initial breakpoint.',
     ),
   };
 

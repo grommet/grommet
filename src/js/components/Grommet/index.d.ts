@@ -4,7 +4,7 @@ export interface GrommetProps {
   full?: boolean;
   plain?: boolean;
   theme?: object;
-  ssrHeaders?: object;
+  userAgent?: string;
 }
 
 declare const Grommet: React.ComponentType<GrommetProps>;

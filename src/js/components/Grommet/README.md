@@ -35,11 +35,11 @@ Custom styles for Grommet app component.
 object
 ```
 
-**ssrHeaders**
+**userAgent**
 
-Request headers including the user-agent to guess device width
+User agent used to detect the device width for setting the initial breakpoint.
 
 ```
-object
+string
 ```
   

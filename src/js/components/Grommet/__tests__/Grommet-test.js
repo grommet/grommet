@@ -27,7 +27,12 @@ class TestAnnouncer extends Component {
 
 const customBreakpointsTheme = {
   global: {
-    ssrBreakpoints: {
+    deviceBreakpoints: {
+      phone: 'small',
+      tablet: 'medium',
+      computer: 'large',
+    },
+    breakpoints: {
       small: {
         value: 600,
       },
@@ -48,12 +53,12 @@ class SSRTester extends Component {
   render() {
     const { ua } = this.props;
     return (
-      <Grommet theme={customBreakpointsTheme} ssrHeader={{ 'user-agent': ua }}>
+      <Grommet theme={customBreakpointsTheme} userAgent={ua}>
         <ResponsiveContext.Consumer>
           {size => {
             this.sizes.push(size);
             return this.sizes.map(s => (
-              <Heading>{`Received size ${s} for ${ua}`}</Heading>
+              <Heading key={s}>{`Received size ${s} for ${ua}`}</Heading>
             ));
           }}
         </ResponsiveContext.Consumer>
