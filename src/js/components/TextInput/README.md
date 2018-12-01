@@ -177,7 +177,7 @@ string
   
 **global.colors.placeholder**
 
-The placeholder color used for TextArea. Expects `string`.
+The placeholder color used for TextInput. Expects `string`.
 
 Defaults to
 
@@ -262,7 +262,7 @@ Defaults to
 
 **textInput.extend**
 
-Any additional style for Text. Expects `string | (props) => {}`.
+Any additional style for TextInput. Expects `string | (props) => {}`.
 
 Defaults to
 

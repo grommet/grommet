@@ -95,7 +95,7 @@ suggestions and instead rely on the user to type more.`,
 
 export const themeDoc = {
   'global.colors.placeholder': {
-    description: 'The placeholder color used for TextArea.',
+    description: 'The placeholder color used for TextInput.',
     type: 'string',
     defaultValue: '#AAAAAA',
   },
@@ -150,7 +150,7 @@ export const themeDoc = {
     }`,
   },
   'textInput.extend': {
-    description: 'Any additional style for Text.',
+    description: 'Any additional style for TextInput.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
