@@ -418,7 +418,7 @@ Defaults to
 
 **select.searchInput**
 
-The possible padding sizes and the focus indicator of the Select input field. Expects `object`.
+The different properties of the Select input field. Expects `object`.
 
 Defaults to
 

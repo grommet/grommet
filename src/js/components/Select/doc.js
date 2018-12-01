@@ -191,7 +191,7 @@ export const themeDoc = {
     defaultValue: '<FormDown />',
   },
   'select.searchInput': {
-    description: `The possible padding sizes and the focus indicator of the Select input field.`,
+    description: `The different properties of the Select input field.`,
     type: 'object',
     defaultValue: undefined,
   },
