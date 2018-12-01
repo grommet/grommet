@@ -114,11 +114,6 @@ export const themeDoc = {
     type: 'number',
     defaultValue: 600,
   },
-  'select.step': {
-    description: 'How many items to render at a time.',
-    type: 'number',
-    defaultValue: 20,
-  },
   text: {
     description: `The possible sizes of the text in terms of its font-size and line-height.`,
     type: 'object',

@@ -215,16 +215,6 @@ Defaults to
 600
 ```
 
-**select.step**
-
-How many items to render at a time. Expects `number`.
-
-Defaults to
-
-```
-20
-```
-
 **text**
 
 The possible sizes of the text in terms of its font-size and line-height. Expects `object`.
