@@ -148,6 +148,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         large: {}, // anything above 'medium'
       },
+      // Breakpoints used at Server Side Rendering for the initial rendering
+      // These values correspond to the theme breakpoints
+      deviceBreakpoints: {
+        phone: 'small',
+        tablet: 'medium',
+        computer: 'large',
+      },
       colors,
       control: {
         border: {
@@ -164,6 +171,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           radius: '0px',
         },
         shadowSize: 'small',
+        zIndex: '20',
       },
       edgeSize: {
         none: '0px',
@@ -217,6 +225,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       input: {
+        padding: `${baseSpacing / 2}px`,
         weight: 600,
       },
       opacity: {
@@ -526,10 +535,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       border: {
         radius: '4px',
       },
+      container: {
+        zIndex: '15',
+      },
       overlay: {
         background: 'rgba(0, 0, 0, 0.5)',
       },
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
+      zIndex: '10',
     },
     menu: {
       // background: undefined,

@@ -270,6 +270,8 @@ export class DropContainer extends Component {
       onEsc,
       onKeyDown,
       theme: propsTheme,
+      elevation,
+      plain,
       ...rest
     } = this.props;
     const { theme: stateTheme } = this.state;
@@ -278,7 +280,10 @@ export class DropContainer extends Component {
     let content = (
       <StyledDrop
         as={Box}
-        elevation={theme.global.drop.shadowSize || 'small'}
+        plain={plain}
+        elevation={
+          !plain && (elevation || theme.global.drop.shadowSize || 'small')
+        }
         tabIndex="-1"
         ref={this.dropRef}
         alignProp={alignProp}

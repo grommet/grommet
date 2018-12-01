@@ -388,8 +388,44 @@ class LazyDrop extends Component {
   }
 }
 
+class PlainDrop extends Component {
+  targetRef = createRef();
+
+  componentDidMount() {
+    this.forceUpdate();
+  }
+
+  render() {
+    return (
+      <Grommet theme={grommet} full>
+        <Box background="brand" fill align="center" justify="center">
+          <Box
+            background="dark-4"
+            pad="medium"
+            align="center"
+            justify="start"
+            ref={this.targetRef}
+          >
+            Target
+          </Box>
+          {this.targetRef.current && (
+            <Drop
+              plain
+              align={{ top: 'bottom', left: 'left' }}
+              target={this.targetRef.current}
+            >
+              <Box pad="large">No background no shadow</Box>
+            </Drop>
+          )}
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Drop', module)
   .add('Simple', () => <SimpleDrop />)
   .add('All not stretch', () => <AllDrops />)
   .add('Progressive', () => <ProgressiveDrop />)
-  .add('Lazy', () => <LazyDrop />);
+  .add('Lazy', () => <LazyDrop />)
+  .add('Plain', () => <PlainDrop />);
