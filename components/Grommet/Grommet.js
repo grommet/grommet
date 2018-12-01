@@ -9,6 +9,8 @@ var _contexts = require("grommet-icons/contexts");
 
 var _recompose = require("recompose");
 
+var _mobileDetect = _interopRequireDefault(require("mobile-detect"));
+
 var _contexts2 = require("../../contexts");
 
 var _base = require("../../themes/base");
@@ -18,6 +20,8 @@ var _utils = require("../../utils");
 var _hocs = require("../hocs");
 
 var _StyledGrommet = require("./StyledGrommet");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -153,6 +157,27 @@ function (_Component) {
     window.removeEventListener('resize', this.onResize);
   };
 
+  _proto.deviceResponsive = function deviceResponsive() {
+    var userAgent = this.props.userAgent;
+    var theme = this.state.theme;
+
+    if (userAgent) {
+      var md = new _mobileDetect.default(userAgent);
+
+      if (md.phone()) {
+        return (0, _utils.getDeviceBreakpoint)('phone', theme);
+      }
+
+      if (md.tablet()) {
+        return (0, _utils.getDeviceBreakpoint)('tablet', theme);
+      }
+
+      return (0, _utils.getDeviceBreakpoint)('computer', theme);
+    }
+
+    return undefined;
+  };
+
   _proto.render = function render() {
     var _this$props = this.props,
         children = _this$props.children,
@@ -160,8 +185,11 @@ function (_Component) {
 
     delete rest.theme;
     var _this$state2 = this.state,
-        responsive = _this$state2.responsive,
-        theme = _this$state2.theme;
+        stateResponsive = _this$state2.responsive,
+        theme = _this$state2.theme; // Value from state should be correct once we resize
+    // On first render we try to guess otherwise set the default as a tablet
+
+    var responsive = stateResponsive || this.deviceResponsive() || theme.global.deviceBreakpoints.tablet;
     return _react.default.createElement(_contexts2.ThemeContext.Provider, {
       value: theme
     }, _react.default.createElement(_contexts.ThemeContext.Provider, {

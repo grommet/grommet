@@ -34,4 +34,12 @@ Custom styles for Grommet app component.
 ```
 object
 ```
+
+**userAgent**
+
+User agent used to detect the device width for setting the initial breakpoint.
+
+```
+string
+```
   

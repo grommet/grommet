@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.getBreakpoint = void 0;
+exports.getDeviceBreakpoint = exports.getBreakpoint = void 0;
 
 var getBreakpoint = function getBreakpoint(windowWidth, theme) {
   var result;
@@ -29,3 +29,9 @@ var getBreakpoint = function getBreakpoint(windowWidth, theme) {
 };
 
 exports.getBreakpoint = getBreakpoint;
+
+var getDeviceBreakpoint = function getDeviceBreakpoint(type, theme) {
+  return theme.global.deviceBreakpoints[type];
+};
+
+exports.getDeviceBreakpoint = getDeviceBreakpoint;

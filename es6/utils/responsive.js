@@ -22,3 +22,6 @@ export var getBreakpoint = function getBreakpoint(windowWidth, theme) {
   });
   return result;
 };
+export var getDeviceBreakpoint = function getDeviceBreakpoint(type, theme) {
+  return theme.global.deviceBreakpoints[type];
+};

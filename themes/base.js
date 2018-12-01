@@ -158,6 +158,13 @@ var generate = function generate(baseSpacing, scale) {
         large: {} // anything above 'medium'
 
       },
+      // Breakpoints used at Server Side Rendering for the initial rendering
+      // These values correspond to the theme breakpoints
+      deviceBreakpoints: {
+        phone: 'small',
+        tablet: 'medium',
+        computer: 'large'
+      },
       colors: colors,
       control: {
         border: {

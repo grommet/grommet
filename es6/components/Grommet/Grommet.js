@@ -11,9 +11,10 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import React, { Component } from 'react';
 import { ThemeContext as IconThemeContext } from "grommet-icons/es6/contexts/ThemeContext";
 import { compose } from 'recompose';
+import MobileDetect from 'mobile-detect';
 import { ResponsiveContext, ThemeContext } from '../../contexts';
 import { base as baseTheme } from '../../themes/base';
-import { colorIsDark, deepMerge, getBreakpoint, normalizeColor } from '../../utils';
+import { colorIsDark, deepMerge, getBreakpoint, normalizeColor, getDeviceBreakpoint } from '../../utils';
 import { withIconTheme } from '../hocs';
 import { StyledGrommet } from './StyledGrommet'; // grommet-icons isn't aware of the grommet dark background context.
 // Here, we reduce the grommet theme colors to the correct flat color
@@ -138,6 +139,27 @@ function (_Component) {
     window.removeEventListener('resize', this.onResize);
   };
 
+  _proto.deviceResponsive = function deviceResponsive() {
+    var userAgent = this.props.userAgent;
+    var theme = this.state.theme;
+
+    if (userAgent) {
+      var md = new MobileDetect(userAgent);
+
+      if (md.phone()) {
+        return getDeviceBreakpoint('phone', theme);
+      }
+
+      if (md.tablet()) {
+        return getDeviceBreakpoint('tablet', theme);
+      }
+
+      return getDeviceBreakpoint('computer', theme);
+    }
+
+    return undefined;
+  };
+
   _proto.render = function render() {
     var _this$props = this.props,
         children = _this$props.children,
@@ -145,8 +167,11 @@ function (_Component) {
 
     delete rest.theme;
     var _this$state2 = this.state,
-        responsive = _this$state2.responsive,
-        theme = _this$state2.theme;
+        stateResponsive = _this$state2.responsive,
+        theme = _this$state2.theme; // Value from state should be correct once we resize
+    // On first render we try to guess otherwise set the default as a tablet
+
+    var responsive = stateResponsive || this.deviceResponsive() || theme.global.deviceBreakpoints.tablet;
     return React.createElement(ThemeContext.Provider, {
       value: theme
     }, React.createElement(IconThemeContext.Provider, {

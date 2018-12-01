@@ -12,7 +12,8 @@ var doc = function doc(Grommet) {
   DocumentedGrommet.propTypes = {
     full: _reactDesc.PropTypes.bool.description('Whether to take the whole viewport.').defaultValue(false),
     plain: _reactDesc.PropTypes.bool.description('Whether or not Grommet should apply a global font-family, font-size, and line-height.').defaultValue(false),
-    theme: _reactDesc.PropTypes.object.description('Custom styles for Grommet app component.')
+    theme: _reactDesc.PropTypes.object.description('Custom styles for Grommet app component.'),
+    userAgent: _reactDesc.PropTypes.string.description('User agent used to detect the device width for setting the initial breakpoint.')
   };
   return DocumentedGrommet;
 };
