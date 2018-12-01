@@ -218,6 +218,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       input: {
+        padding: `${baseSpacing / 2}px`,
         weight: 600,
       },
       opacity: {
