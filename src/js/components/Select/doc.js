@@ -168,20 +168,10 @@ export const themeDoc = {
     type: 'string',
     defaultValue: undefined,
   },
-  'select.container': {
-    description: 'The container of the Select component.',
-    type: 'string',
-    defaultValue: undefined,
-  },
   'select.container.extend': {
     description:
       'Any additional style for the container of the Select component.',
     type: 'string | (props) => {}',
-    defaultValue: undefined,
-  },
-  'select.control': {
-    description: 'The control of the Select component.',
-    type: 'string',
     defaultValue: undefined,
   },
   'select.control.extend': {

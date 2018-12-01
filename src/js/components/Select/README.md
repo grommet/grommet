@@ -376,29 +376,9 @@ Defaults to
 undefined
 ```
 
-**select.container**
-
-The container of the Select component. Expects `string`.
-
-Defaults to
-
-```
-undefined
-```
-
 **select.container.extend**
 
 Any additional style for the container of the Select component. Expects `string | (props) => {}`.
-
-Defaults to
-
-```
-undefined
-```
-
-**select.control**
-
-The control of the Select component. Expects `string`.
 
 Defaults to
 
