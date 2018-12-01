@@ -63,7 +63,7 @@ export var focusStyle = css(["> circle,> ellipse,> line,> path,> polygon,> polyl
   return normalizeColor(props.theme.global.focus.border.color, props.theme);
 });
 export var inputStyle = css(["box-sizing:border-box;font-size:inherit;border:none;-webkit-appearance:none;padding:", "px;outline:none;background:transparent;color:inherit;", " margin:0;", " ", "::-webkit-search-decoration{-webkit-appearance:none;}"], function (props) {
-  return parseMetricToNum(props.theme.global.spacing) / 2 - parseMetricToNum(props.theme.global.control.border.width);
+  return parseMetricToNum(props.theme.global.input.padding) - parseMetricToNum(props.theme.global.control.border.width);
 }, function (props) {
   return props.theme.global.input.weight && css(["font-weight:", ";"], props.theme.global.input.weight);
 }, function (props) {

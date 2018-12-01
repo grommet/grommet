@@ -239,6 +239,7 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       input: {
+        padding: baseSpacing / 2 + "px",
         weight: 600
       },
       opacity: {

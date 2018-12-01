@@ -77,3 +77,64 @@ What text to put in the textarea.
 string
 ```
   
+## Theme
+  
+**global.colors.placeholder**
+
+The placeholder color used for TextArea. Expects `string`.
+
+Defaults to
+
+```
+#AAAAAA
+```
+
+**global.control.border.width**
+
+The border width. Expects `string`.
+
+Defaults to
+
+```
+1px
+```
+
+**global.input.weight**
+
+The font weight of the text entered. Expects `number`.
+
+Defaults to
+
+```
+600
+```
+
+**global.focus.border.color**
+
+The color of the border when component is focused. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
+```
+
+**global.input.padding**
+
+The padding of the text. Expects `string`.
+
+Defaults to
+
+```
+12px
+```
+
+**textArea.extend**
+
+Any additional style for Text. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
