@@ -46,6 +46,7 @@
   "dependencies": {
     "css": "^2.2.3",
     "markdown-to-jsx": "^6.6.6",
+    "mobile-detect": "^1.4.3",
     "polished": "^2.2.0",
     "prop-types": "^15.5.10",
     "react-desc": "^3.6.5",
