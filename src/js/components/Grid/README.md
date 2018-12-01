@@ -233,8 +233,7 @@ Whether the width and/or height should fill the container.
 ```
 horizontal
 vertical
-true
-false
+boolean
 ```
 
 **gap**

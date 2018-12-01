@@ -24,8 +24,7 @@ string
 Whether the width and height should fill the container.
 
 ```
-true
-false
+boolean
 ```
 
 **focusIndicator**

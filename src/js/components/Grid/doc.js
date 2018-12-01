@@ -90,7 +90,10 @@ space in the column axis.`,
       Specifying an object allows indicating how the columns
       stretch to fit the available space.`,
     ),
-    fill: PropTypes.oneOf(['horizontal', 'vertical', true, false]).description(
+    fill: PropTypes.oneOfType([
+      PropTypes.oneOf(['horizontal', 'vertical']),
+      PropTypes.bool,
+    ]).description(
       'Whether the width and/or height should fill the container.',
     ),
     gap: PropTypes.oneOfType([

@@ -13,7 +13,7 @@ export const doc = TextArea => {
 
   DocumentedTextArea.propTypes = {
     id: PropTypes.string.description('The id attribute of the textarea.'),
-    fill: PropTypes.oneOf([true, false])
+    fill: PropTypes.bool
       .description('Whether the width and height should fill the container.')
       .defaultValue(false),
     focusIndicator: PropTypes.bool.description(
