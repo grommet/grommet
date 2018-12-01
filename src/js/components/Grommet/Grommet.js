@@ -112,7 +112,7 @@ class Grommet extends Component {
     }
   };
 
-  ssrResponsive() {
+  deviceResponsive() {
     const { userAgent } = this.props;
     const { theme } = this.state;
 
@@ -138,7 +138,7 @@ class Grommet extends Component {
     // On first render we try to guess otherwise set the default as a tablet
     const responsive =
       stateResponsive ||
-      this.ssrResponsive() ||
+      this.deviceResponsive() ||
       theme.global.deviceBreakpoints.tablet;
 
     return (
