@@ -6547,6 +6547,11 @@ mixin-deep@^1.2.0:
   dependencies:
     minimist "0.0.8"
 
+mobile-detect@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/mobile-detect/-/mobile-detect-1.4.3.tgz#e436a3839f5807dd4d3cd4e081f7d3a51ffda2dd"
+  integrity sha512-UaahPNLllQsstHOEHAmVnTHCMQrAS9eL5Qgdi50QrYz6UgGk+Xziz2udz2GN6NYcyODcPLnasC7a7s6R2DjiaQ==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"

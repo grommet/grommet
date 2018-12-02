@@ -256,17 +256,21 @@ class SeasonsSelect extends Component {
       <Grommet full theme={grommet}>
         <Box fill align="center" justify="center">
           <Select
-            placeholder="Select Season"
             closeOnChange={false}
             multiple
             value={
-              selected && selected.length ? (
-                <Box wrap direction="row" style={{ width: '208px' }}>
-                  {selected.map(index => this.renderSeason(allSeasons[index]))}
-                </Box>
-              ) : (
-                undefined
-              )
+              <Box wrap direction="row" width="small">
+                {selected && selected.length ? (
+                  selected.map(index => this.renderSeason(allSeasons[index]))
+                ) : (
+                  <Box
+                    pad={{ vertical: 'xsmall', horizontal: 'small' }}
+                    margin="xsmall"
+                  >
+                    Select Season
+                  </Box>
+                )}
+              </Box>
             }
             options={allSeasons}
             selected={selected}
