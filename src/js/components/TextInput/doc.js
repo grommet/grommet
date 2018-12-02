@@ -92,3 +92,66 @@ suggestions and instead rely on the user to type more.`,
 
   return DocumentedTextInput;
 };
+
+export const themeDoc = {
+  'global.colors.placeholder': {
+    description: 'The placeholder color used for TextInput.',
+    type: 'string',
+    defaultValue: '#AAAAAA',
+  },
+  'global.control.border.width': {
+    description: 'The border width.',
+    type: 'string',
+    defaultValue: '1px',
+  },
+  'global.input.padding': {
+    description: 'The padding of the text.',
+    type: 'string',
+    defaultValue: '12px',
+  },
+  'global.input.weight': {
+    description: 'The font weight of the text.',
+    type: 'number',
+    defaultValue: 600,
+  },
+  'select.step': {
+    description: 'How many suggestions to render at a time.',
+    type: 'number',
+    defaultValue: 20,
+  },
+  text: {
+    description: `The possible sizes of the text in terms of its font-size and line-height.`,
+    type: 'object',
+    defaultValue: `{
+      xsmall: {
+        size: '12px',
+        height: '18px',
+       },
+      small: {
+        size: '14px',
+        height: '20px',
+       },
+      medium: {          
+        size: '18px',
+        height: '24px',
+      },
+      large: {
+        size: '22px',
+        height: '28px',
+      },
+      xlarge: {
+        size: '26px',
+        height: '32px',
+      },
+      xxlarge: {
+        size: '34px',
+        height: '40px',
+      },
+    }`,
+  },
+  'textInput.extend': {
+    description: 'Any additional style for TextInput.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+};
