@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.doc = void 0;
+exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -51,3 +51,41 @@ var doc = function doc(TextInput) {
 };
 
 exports.doc = doc;
+var themeDoc = {
+  'global.colors.placeholder': {
+    description: 'The placeholder color used for TextInput.',
+    type: 'string',
+    defaultValue: '#AAAAAA'
+  },
+  'global.control.border.width': {
+    description: 'The border width.',
+    type: 'string',
+    defaultValue: '1px'
+  },
+  'global.input.padding': {
+    description: 'The padding of the text.',
+    type: 'string',
+    defaultValue: '12px'
+  },
+  'global.input.weight': {
+    description: 'The font weight of the text.',
+    type: 'number',
+    defaultValue: 600
+  },
+  'select.step': {
+    description: 'How many suggestions to render at a time.',
+    type: 'number',
+    defaultValue: 20
+  },
+  text: {
+    description: "The possible sizes of the text in terms of its font-size and line-height.",
+    type: 'object',
+    defaultValue: "{\n      xsmall: {\n        size: '12px',\n        height: '18px',\n       },\n      small: {\n        size: '14px',\n        height: '20px',\n       },\n      medium: {          \n        size: '18px',\n        height: '24px',\n      },\n      large: {\n        size: '22px',\n        height: '28px',\n      },\n      xlarge: {\n        size: '26px',\n        height: '32px',\n      },\n      xxlarge: {\n        size: '34px',\n        height: '40px',\n      },\n    }"
+  },
+  'textInput.extend': {
+    description: 'Any additional style for TextInput.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  }
+};
+exports.themeDoc = themeDoc;

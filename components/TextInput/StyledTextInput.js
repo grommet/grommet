@@ -46,7 +46,7 @@ var StyledPlaceholder = _styledComponents.default.div.withConfig({
   displayName: "StyledTextInput__StyledPlaceholder",
   componentId: "sc-1x30a0s-2"
 })(["position:absolute;left:", "px;top:50%;transform:translateY(-50%);display:flex;justify-content:center;"], function (props) {
-  return (0, _utils.parseMetricToNum)(props.theme.global.spacing) / 2 - (0, _utils.parseMetricToNum)(props.theme.global.control.border.width);
+  return (0, _utils.parseMetricToNum)(props.theme.global.input.padding) - (0, _utils.parseMetricToNum)(props.theme.global.control.border.width);
 });
 
 exports.StyledPlaceholder = StyledPlaceholder;
