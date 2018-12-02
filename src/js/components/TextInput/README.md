@@ -207,7 +207,7 @@ Defaults to
 
 **global.input.weight**
 
-The font weight of the label. Expects `number`.
+The font weight of the text. Expects `number`.
 
 Defaults to
 
@@ -217,7 +217,7 @@ Defaults to
 
 **select.step**
 
-How many items to render at a time. Expects `number`.
+How many suggestions to render at a time. Expects `number`.
 
 Defaults to
 

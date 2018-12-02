@@ -110,12 +110,12 @@ export const themeDoc = {
     defaultValue: '12px',
   },
   'global.input.weight': {
-    description: 'The font weight of the label.',
+    description: 'The font weight of the text.',
     type: 'number',
     defaultValue: 600,
   },
   'select.step': {
-    description: 'How many items to render at a time.',
+    description: 'How many suggestions to render at a time.',
     type: 'number',
     defaultValue: 20,
   },
