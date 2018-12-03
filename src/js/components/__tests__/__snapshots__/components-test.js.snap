@@ -1827,7 +1827,7 @@ node",
       },
     ],
     "description": "An image.",
-    "name": "StyledImage",
+    "name": "Image",
     "properties": Array [
       Object {
         "description": "Custom title to be used by screen readers.",

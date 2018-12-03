@@ -16,7 +16,7 @@ const deriveMax = values => {
 
 class Meter extends Component {
   static defaultProps = {
-    background: { color: 'light-1', opacity: 'medium' },
+    background: { color: 'light-2', opacity: 'medium' },
     size: 'medium',
     thickness: 'medium',
     type: 'bar',

@@ -189,8 +189,6 @@ exports[`uses Grommet theme instead of default 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: #ffffff;
-  color: #444444;
 }
 
 @media only screen and (max-width:768px) {
