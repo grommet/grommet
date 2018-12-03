@@ -29,6 +29,14 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
+var stopLabelClick = function stopLabelClick(event) {
+  // prevents clicking on the label trigging the event twice
+  // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
+  if (event.target.type !== 'checkbox') {
+    event.stopPropagation();
+  }
+};
+
 var CheckBox =
 /*#__PURE__*/
 function (_Component) {
@@ -164,13 +172,7 @@ function (_Component) {
     }), {
       gap: theme.checkBox.gap || 'small',
       checked: checked,
-      onClick: function onClick(event) {
-        // prevents clicking on the label trigging the event twice
-        // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
-        if (event.target.type !== 'checkbox') {
-          event.stopPropagation();
-        }
-      }
+      onClick: stopLabelClick
     }), first, second);
   };
 

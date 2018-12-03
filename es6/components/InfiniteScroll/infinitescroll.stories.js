@@ -4,7 +4,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-var items = Array(200).fill().map(function (_, i) {
+var items = Array(2000).fill().map(function (_, i) {
   return "item " + (i + 1);
 });
 

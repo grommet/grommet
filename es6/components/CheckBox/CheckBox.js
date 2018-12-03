@@ -14,6 +14,14 @@ import { withFocus, withForwardRef } from '../hocs';
 import { StyledCheckBox, StyledCheckBoxBox, StyledCheckBoxIcon, StyledCheckBoxContainer, StyledCheckBoxInput, StyledCheckBoxToggle, StyledCheckBoxKnob } from './StyledCheckBox';
 import { normalizeColor } from '../../utils';
 
+var stopLabelClick = function stopLabelClick(event) {
+  // prevents clicking on the label trigging the event twice
+  // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
+  if (event.target.type !== 'checkbox') {
+    event.stopPropagation();
+  }
+};
+
 var CheckBox =
 /*#__PURE__*/
 function (_Component) {
@@ -147,13 +155,7 @@ function (_Component) {
     }), {
       gap: theme.checkBox.gap || 'small',
       checked: checked,
-      onClick: function onClick(event) {
-        // prevents clicking on the label trigging the event twice
-        // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
-        if (event.target.type !== 'checkbox') {
-          event.stopPropagation();
-        }
-      }
+      onClick: stopLabelClick
     }), first, second);
   };
 

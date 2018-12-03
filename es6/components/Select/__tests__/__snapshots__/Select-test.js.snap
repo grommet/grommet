@@ -661,6 +661,27 @@ exports[`Select complex options and children 3`] = `
   padding: 0px;
 }
 
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: NaNpx;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
 .c7 {
   display: inline-block;
   box-sizing: border-box;
@@ -769,6 +790,18 @@ exports[`Select complex options and children 3`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 0px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c0 {
     display: -webkit-box;
@@ -829,6 +862,9 @@ exports[`Select complex options and children 3`] = `
           </span>
         </button>
       </div>
+      <div
+        class="c8"
+      />
     </div>
   </div>
 </div>
@@ -947,6 +983,18 @@ exports[`Select complex options and children 4`] = `
 @media only screen and (max-width:768px) {
   .eEPVhE {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .pmTAv {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .pmTAv {
+    padding: 0px;
   }
 }
 
@@ -2259,6 +2307,27 @@ exports[`Select multiple values 3`] = `
   padding: 12px;
 }
 
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: NaNpx;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
 .c7 {
   display: inline-block;
   box-sizing: border-box;
@@ -2392,6 +2461,18 @@ exports[`Select multiple values 3`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding: 0px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c0 {
     display: -webkit-box;
@@ -2464,6 +2545,9 @@ exports[`Select multiple values 3`] = `
           </div>
         </button>
       </div>
+      <div
+        class="c10"
+      />
     </div>
   </div>
 </div>
@@ -2582,6 +2666,18 @@ exports[`Select multiple values 4`] = `
 @media only screen and (max-width:768px) {
   .eEPVhE {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .pmTAv {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .pmTAv {
+    padding: 0px;
   }
 }
 
@@ -3053,6 +3149,27 @@ exports[`Select opens 3`] = `
   padding: 12px;
 }
 
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: NaNpx;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
 .c7 {
   display: inline-block;
   box-sizing: border-box;
@@ -3183,6 +3300,18 @@ exports[`Select opens 3`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding: 0px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c0 {
     display: -webkit-box;
@@ -3255,6 +3384,9 @@ exports[`Select opens 3`] = `
           </div>
         </button>
       </div>
+      <div
+        class="c10"
+      />
     </div>
   </div>
 </div>
@@ -3376,6 +3508,18 @@ exports[`Select opens 4`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .pmTAv {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .pmTAv {
+    padding: 0px;
+  }
+}
+
 .tNmko {
   font-size: 18px;
   line-height: 24px;
@@ -3465,6 +3609,9 @@ exports[`Select opens 5`] = `
       </div>
     </button>
   </div>
+  <div
+    class="StyledBox-sc-13pk1d4-0 pmTAv"
+  />
 </div>
 `;
 
@@ -3826,6 +3973,27 @@ exports[`Select search 2`] = `
   padding: 12px;
 }
 
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: NaNpx;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
 .c4 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4021,6 +4189,18 @@ exports[`Select search 2`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c13 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c4 {
     margin: 0px;
   }
@@ -4118,6 +4298,9 @@ exports[`Select search 2`] = `
           </div>
         </button>
       </div>
+      <div
+        class="c13"
+      />
     </div>
   </div>
 </div>
@@ -4236,6 +4419,18 @@ exports[`Select search 3`] = `
 @media only screen and (max-width:768px) {
   .eEPVhE {
     padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .pmTAv {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .pmTAv {
+    padding: 0px;
   }
 }
 

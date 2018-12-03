@@ -372,7 +372,8 @@ function (_Component) {
       overflow: "auto"
     }, React.createElement(InfiniteScroll, {
       items: options,
-      step: theme.select.step
+      step: theme.select.step,
+      replace: true
     }, function (option, index) {
       var isDisabled = _this3.isDisabled(index);
 

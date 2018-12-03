@@ -51,7 +51,6 @@
     "polished": "^2.2.0",
     "prop-types": "^15.5.10",
     "react-desc": "^4.0.0",
-    "react-waypoint": "^8.0.1",
     "recompose": "^0.30.0"
   },
   "devDependencies": {

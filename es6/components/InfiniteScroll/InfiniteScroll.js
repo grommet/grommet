@@ -4,8 +4,9 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-import React, { PureComponent } from 'react';
-import Waypoint from 'react-waypoint';
+import React, { createRef, PureComponent } from 'react';
+import { findScrollParents } from '../../utils';
+import { Box } from '../Box';
 
 var InfiniteScroll =
 /*#__PURE__*/
@@ -23,78 +24,125 @@ function (_PureComponent) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "beginPageRef", React.createRef());
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "endPageRef", React.createRef());
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "showRef", React.createRef());
-
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "initialScroll", false);
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "aboveMarkerRef", createRef());
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "belowMarkerRef", createRef());
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "addScrollListener", function () {
+      var pageHeight = _this.state.pageHeight;
+
+      if (pageHeight && _this.belowMarkerRef.current && !_this.scrollParents) {
+        _this.scrollParents = findScrollParents(_this.belowMarkerRef.current);
+
+        _this.scrollParents.forEach(function (scrollParent) {
+          return scrollParent.addEventListener('scroll', _this.onScroll);
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "removeScrollListener", function () {
+      if (_this.scrollParents) {
+        _this.scrollParents.forEach(function (scrollParent) {
+          return scrollParent.removeEventListener('scroll', _this.place);
+        });
+
+        _this.scrollParents = undefined;
+      }
+    });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "scrollShow", function () {
       var show = _this.props.show;
 
-      if (show && !_this.initialScroll && _this.showRef.current) {
+      if (show && !_this.initialScroll && _this.showRef) {
         _this.initialScroll = true; // on initial render, scroll to any 'show'
 
-        _this.showRef.current.scrollIntoView();
-      }
-
-      if (_this.beginPageRef.current && _this.endPageRef.current && !_this.pageHeight) {
-        var beginRect = _this.beginPageRef.current.getBoundingClientRect();
-
-        var endRect = _this.endPageRef.current.getBoundingClientRect();
-
-        _this.pageHeight = endRect.y + endRect.height - beginRect.y;
+        _this.showRef.scrollIntoView();
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "nextPage", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setPageHeight", function () {
+      var pageHeight = _this.state.pageHeight;
+
+      if (_this.firstPageItemRef && _this.lasrtPageItemRef && !pageHeight) {
+        var beginRect = _this.firstPageItemRef.getBoundingClientRect();
+
+        var endRect = _this.lasrtPageItemRef.getBoundingClientRect();
+
+        var nextPageHeight = endRect.y + endRect.height - beginRect.y;
+
+        _this.setState({
+          pageHeight: nextPageHeight
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onScroll", function () {
       var _this$props = _this.props,
-          items = _this$props.items,
           onMore = _this$props.onMore,
-          step = _this$props.step;
+          replace = _this$props.replace;
       var _this$state = _this.state,
-          firstPage = _this$state.firstPage,
-          lastPage = _this$state.lastPage;
-      var nextLastPage = lastPage + 1;
-      var nextFirstPage = lastPage === firstPage ? firstPage : nextLastPage - 1;
+          beginPage = _this$state.beginPage,
+          endPage = _this$state.endPage,
+          lastPage = _this$state.lastPage,
+          pageHeight = _this$state.pageHeight;
 
-      _this.setState({
-        firstPage: nextFirstPage,
-        lastPage: nextLastPage
-      }, // call onMore if we've reached the end of the items
-      function () {
-        return onMore && nextLastPage * step >= items.length && onMore();
-      });
-    });
+      if (_this.scrollParents && _this.scrollParents[0] && pageHeight) {
+        var scrollParent = _this.scrollParents[0]; // Determine the window into the first scroll parent
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "previousPage", function () {
-      var firstPage = _this.state.firstPage;
+        var top;
+        var height;
 
-      _this.setState({
-        firstPage: Math.max(0, firstPage - 1),
-        lastPage: firstPage
-      });
+        if (scrollParent === document) {
+          top = document.documentElement.scrollTop || document.body.scrollTop;
+          height = window.innerHeight;
+        } else {
+          top = scrollParent.scrollTop;
+          var rect = scrollParent.getBoundingClientRect();
+          height = rect.height;
+        } // Figure out which pages we should make visible based on the scroll
+        // window.
+
+
+        var offset = height / 4;
+        var nextBeginPage = replace ? Math.min(lastPage, Math.max(0, Math.floor(Math.max(0, top - offset) / pageHeight))) : 0;
+        var nextEndPage = Math.min(lastPage, Math.max(!replace && endPage || 0, Math.floor((top + height + offset) / pageHeight)));
+
+        if (nextBeginPage !== beginPage || nextEndPage !== endPage) {
+          _this.setState({
+            beginPage: nextBeginPage,
+            endPage: nextEndPage
+          }, function () {
+            if (onMore && nextEndPage === lastPage) {
+              onMore();
+            }
+          });
+        }
+      }
     });
 
     return _this;
   }
 
   InfiniteScroll.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var show = nextProps.show,
+    var items = nextProps.items,
+        show = nextProps.show,
         step = nextProps.step;
+    var lastPage = Math.ceil(items.length / step) - 1;
 
-    if (prevState.firstPage === undefined || show && show >= step * (prevState.lastPage + 1)) {
-      var lastPage = prevState.lastPage || 0;
+    if (prevState.beginPage === undefined || show && show >= step * (prevState.lastPage + 1) || lastPage !== prevState.lastPage) {
+      var endPage = prevState.endPage || 0;
 
-      if (show && show >= step * (lastPage + 1)) {
-        lastPage = Math.floor((show + step) / step) - 1;
+      if (show && show >= step * (endPage + 1)) {
+        endPage = Math.floor((show + step) / step) - 1;
       }
 
       return {
-        firstPage: 0,
-        lastPage: lastPage
+        beginPage: 0,
+        endPage: endPage,
+        lastPage: lastPage,
+        pageHeight: undefined
       };
     }
 
@@ -104,15 +152,34 @@ function (_PureComponent) {
   var _proto = InfiniteScroll.prototype;
 
   _proto.componentDidMount = function componentDidMount() {
-    this.scrollShow();
+    var _this2 = this;
+
+    // ride out any animation, 100ms was chosen empirically
+    clearTimeout(this.animationDelayTimer);
+    this.animationDelayTimer = setTimeout(function () {
+      _this2.setPageHeight();
+
+      _this2.addScrollListener();
+
+      _this2.scrollShow();
+    }, 100);
   };
 
   _proto.componentDidUpdate = function componentDidUpdate() {
+    this.setPageHeight();
+    this.removeScrollListener();
+    this.addScrollListener();
     this.scrollShow();
   };
 
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    this.removeScrollListener();
+    clearTimeout(this.animationDelayTimer);
+    clearTimeout(this.scrollTimer);
+  };
+
   _proto.render = function render() {
-    var _this2 = this;
+    var _this3 = this;
 
     var _this$props2 = this.props,
         children = _this$props2.children,
@@ -120,94 +187,98 @@ function (_PureComponent) {
         onMore = _this$props2.onMore,
         renderMarker = _this$props2.renderMarker,
         replace = _this$props2.replace,
-        scrollableAncestor = _this$props2.scrollableAncestor,
         show = _this$props2.show,
         step = _this$props2.step;
     var _this$state2 = this.state,
-        firstPage = _this$state2.firstPage,
-        lastPage = _this$state2.lastPage;
-    var firstIndex = firstPage * step;
-    var lastIndex = (lastPage + 1) * step - 1;
-    var topMarker;
+        beginPage = _this$state2.beginPage,
+        endPage = _this$state2.endPage,
+        lastPage = _this$state2.lastPage,
+        pageHeight = _this$state2.pageHeight;
+    var firstIndex = beginPage * step;
+    var lastIndex = (endPage + 1) * step - 1;
+    var result = [];
 
-    if (replace && firstIndex) {
-      var content;
-
-      if (replace && firstPage && this.pageHeight) {
-        // make it a placeholder for the earlier steps to preserve scroll position
-        content = React.createElement("div", {
-          style: {
-            height: firstPage * this.pageHeight
-          }
-        });
-      }
-
-      topMarker = React.createElement(Waypoint, {
-        key: "topMarker",
-        fireOnRapidScroll: true,
-        onEnter: this.previousPage,
-        topOffsetX: "-96px",
-        scrollableAncestor: scrollableAncestor
-      }, content);
-
-      if (renderMarker) {
-        // need to give it a key
-        topMarker = React.cloneElement(renderMarker(topMarker), {
-          key: 'topMarker'
-        });
-      }
-    }
-
-    var bottomMarker;
-
-    if (onMore || lastIndex < items.length - 1) {
-      bottomMarker = React.createElement(Waypoint, {
-        key: "bottomMarker",
-        fireOnRapidScroll: true,
-        onEnter: this.nextPage,
-        bottomOffsetX: "-96px",
-        scrollableAncestor: scrollableAncestor
+    if (replace && pageHeight && firstIndex) {
+      var marker = React.createElement(Box, {
+        key: "above",
+        ref: this.aboveMarkerRef,
+        flex: false,
+        height: beginPage * pageHeight + "px"
       });
 
       if (renderMarker) {
         // need to give it a key
-        bottomMarker = React.cloneElement(renderMarker(bottomMarker), {
-          key: 'bottomMarker'
+        marker = React.cloneElement(renderMarker(marker), {
+          key: 'above'
         });
       }
-    }
 
-    var result = [];
-
-    if (topMarker) {
-      result.push(topMarker);
+      result.push(marker);
     }
 
     items.slice(firstIndex, lastIndex + 1).forEach(function (item, index) {
       var child = children(item, index);
 
-      if (replace && !_this2.pageHeight && index === 0) {
+      if (!pageHeight && index === 0) {
+        var _child = child,
+            _ref = _child.ref;
         child = React.cloneElement(child, {
-          ref: _this2.beginPageRef
+          ref: function ref(node) {
+            _this3.firstPageItemRef = node;
+
+            if (typeof _ref === 'function') {
+              _ref(node);
+            }
+          }
         });
-      } else if (replace && !_this2.pageHeight && index === step - 1) {
+      } else if (!pageHeight && index === step - 1) {
+        var _child2 = child,
+            _ref2 = _child2.ref;
         child = React.cloneElement(child, {
-          ref: _this2.endPageRef
+          ref: function ref(node) {
+            _this3.lasrtPageItemRef = node;
+
+            if (typeof _ref2 === 'function') {
+              _ref2(node);
+            }
+          }
         });
       }
 
       if (show && show === index) {
+        var _child3 = child,
+            _ref3 = _child3.ref;
         child = React.cloneElement(child, {
           key: 'show',
-          ref: _this2.showRef
+          ref: function ref(node) {
+            _this3.showRef = node;
+
+            if (typeof _ref3 === 'function') {
+              _ref3(node);
+            }
+          }
         });
       }
 
       result.push(child);
     });
 
-    if (bottomMarker) {
-      result.push(bottomMarker);
+    if (endPage < lastPage || replace || onMore) {
+      var _marker = React.createElement(Box, {
+        key: "below",
+        ref: this.belowMarkerRef,
+        flex: false,
+        height: (replace ? (lastPage - endPage) * pageHeight : 0) + "px"
+      });
+
+      if (renderMarker) {
+        // need to give it a key
+        _marker = React.cloneElement(renderMarker(_marker), {
+          key: 'below'
+        });
+      }
+
+      result.push(_marker);
     }
 
     return result;

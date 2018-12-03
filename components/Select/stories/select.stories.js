@@ -799,11 +799,11 @@ function (_PureComponent) {
 
 var dummyOptions = Array(2000).fill().map(function (_, i) {
   return "option " + i;
-}).sort();
-var theme = (0, _utils.deepMerge)(_themes.grommet, {
-  select: {
-    step: 100
-  }
+}).sort(function (a, b) {
+  return a.localeCompare(b, undefined, {
+    numeric: true,
+    sensitivity: 'base'
+  });
 });
 
 var ManyOptions =
@@ -837,9 +837,13 @@ function (_Component8) {
         options = _this$state7.options,
         selected = _this$state7.selected;
     return _react.default.createElement(_grommet.Grommet, {
-      theme: theme
+      full: true,
+      theme: _themes.grommet
     }, _react.default.createElement(_grommet.Box, {
-      pad: "xsmall"
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
     }, _react.default.createElement(_grommet.Select, {
       multiple: true,
       closeOnChange: false,
@@ -860,7 +864,10 @@ function (_Component8) {
               return -1;
             }
 
-            return p1.localeCompare(p2);
+            return p1.localeCompare(p2, undefined, {
+              numeric: true,
+              sensitivity: 'base'
+            });
           })
         });
       },
