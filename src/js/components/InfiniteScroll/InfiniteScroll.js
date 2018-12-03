@@ -86,11 +86,13 @@ class InfiniteScroll extends PureComponent {
 
   setPageHeight = () => {
     const { pageHeight } = this.state;
-    if (this.firstPageItemRef && this.lasrtPageItemRef && !pageHeight) {
+    if (this.firstPageItemRef && this.lastPageItemRef && !pageHeight) {
       const beginRect = this.firstPageItemRef.getBoundingClientRect();
-      const endRect = this.lasrtPageItemRef.getBoundingClientRect();
+      const endRect = this.lastPageItemRef.getBoundingClientRect();
       const nextPageHeight = endRect.y + endRect.height - beginRect.y;
-      this.setState({ pageHeight: nextPageHeight });
+      // In case the pageHeight is smaller than the visible area,
+      // we call onScroll to set the page boundaries appropriately.
+      this.setState({ pageHeight: nextPageHeight }, this.onScroll);
     }
   };
 
@@ -189,7 +191,7 @@ class InfiniteScroll extends PureComponent {
         const { ref } = child;
         child = React.cloneElement(child, {
           ref: node => {
-            this.lasrtPageItemRef = node;
+            this.lastPageItemRef = node;
             if (typeof ref === 'function') {
               ref(node);
             }
