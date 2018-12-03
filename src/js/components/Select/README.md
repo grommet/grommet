@@ -366,3 +366,74 @@ string
 function
 ```
   
+## Theme
+  
+**select.background**
+
+The background color used for Select. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**select.container.extend**
+
+Any additional style for the container of the Select component. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**select.control.extend**
+
+Any additional style for the control of the Select component. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**select.icons.color**
+
+The color used for Select icons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**select.icons.down**
+
+The down icon to use for opening the Select. Expects `React.element`.
+
+Defaults to
+
+```
+<FormDown />
+```
+
+**select.searchInput**
+
+Component for the Select search input field. Expects `React.component`.
+
+Defaults to
+
+```
+undefined
+```
+
+**select.step**
+
+How many items to render at a time. Expects `number`.
+
+Defaults to
+
+```
+20
+```
