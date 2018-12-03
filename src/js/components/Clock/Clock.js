@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from '../hocs';
 
 import { Analog } from './Analog';
 import { Digital } from './Digital';
@@ -192,6 +189,6 @@ let ClockDoc;
 if (process.env.NODE_ENV !== 'production') {
   ClockDoc = require('./doc').doc(Clock); // eslint-disable-line global-require
 }
-const ClockWrapper = compose(withTheme)(ClockDoc || Clock);
+const ClockWrapper = ClockDoc || Clock;
 
 export { ClockWrapper as Clock };

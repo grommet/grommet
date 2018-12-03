@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
+import { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
-import { withTheme } from '../hocs';
 
 import { StyledDiagram } from './StyledDiagram';
 
@@ -56,8 +57,7 @@ const findTarget = target => {
   if (typeof target === 'string') {
     return document.getElementById(target);
   }
-  /* eslint-disable-next-line react/no-find-dom-node */
-  return findDOMNode(target);
+  return target;
 };
 
 class Diagram extends Component {
@@ -82,8 +82,7 @@ class Diagram extends Component {
 
   onResize = () => {
     const { connectionPoints, width, height } = this.state;
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const svg = findDOMNode(this.svgRef.current);
+    const svg = this.svgRef.current;
     if (svg) {
       const rect = svg.getBoundingClientRect();
       if (rect.width !== width || rect.height !== height) {
@@ -100,10 +99,7 @@ class Diagram extends Component {
 
   placeConnections() {
     const { connections } = this.props;
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const containerRect = findDOMNode(
-      this.svgRef.current,
-    ).getBoundingClientRect();
+    const containerRect = this.svgRef.current.getBoundingClientRect();
     const connectionPoints = connections.map(
       ({ anchor, fromTarget, toTarget }) => {
         let points;
@@ -221,6 +217,8 @@ class Diagram extends Component {
     );
   }
 }
+
+Object.setPrototypeOf(Diagram.defaultProps, defaultProps);
 
 let DiagramDoc;
 if (process.env.NODE_ENV !== 'production') {

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
-import styled from 'styled-components';
+
+import { compose } from 'recompose';
+
+import styled, { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 
@@ -8,15 +12,14 @@ const ResizerBox = styled(Box)`
   cursor: col-resize;
 `;
 
-export class Resizer extends Component {
+class Resizer extends Component {
   state = {};
 
   ref = React.createRef();
 
   onMouseDown = event => {
     if (this.ref.current) {
-      /* eslint-disable-next-line react/no-find-dom-node */
-      const element = findDOMNode(this.ref.current);
+      const element = this.ref.current;
       const rect = element.getBoundingClientRect();
       this.setState({ start: event.clientX, width: rect.width }, () => {
         document.addEventListener('mousemove', this.onMouseMove);
@@ -60,3 +63,10 @@ export class Resizer extends Component {
     return children;
   }
 }
+
+Resizer.defaultProps = {};
+Object.setPrototypeOf(Resizer.defaultProps, defaultProps);
+
+const ResizerWrapper = compose(withTheme)(Resizer);
+
+export { ResizerWrapper as Resizer };

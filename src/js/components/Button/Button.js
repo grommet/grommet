@@ -1,9 +1,13 @@
 import React, { cloneElement, Children, Component } from 'react';
 import { compose } from 'recompose';
 
+import { withTheme } from 'styled-components';
+
 import { colorIsDark, normalizeBackground, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
+
 import { Box } from '../Box';
-import { withFocus, withForwardRef, withTheme } from '../hocs';
+import { withFocus, withForwardRef } from '../hocs';
 
 import { StyledButton } from './StyledButton';
 
@@ -96,7 +100,6 @@ class Button extends Component {
             : Children.count(children) > 0 || (icon && !label)
         }
         primary={primary}
-        theme={theme}
         type={!href ? type : undefined}
       >
         {first || second ? (
@@ -111,6 +114,8 @@ class Button extends Component {
     );
   }
 }
+
+Object.setPrototypeOf(Button.defaultProps, defaultProps);
 
 let ButtonDoc;
 if (process.env.NODE_ENV !== 'production') {

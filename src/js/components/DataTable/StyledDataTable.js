@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 
 import { genericStyles } from '../../utils';
+import { defaultProps } from '../../default-props';
 
-export const StyledDataTable = styled.table`
+const StyledDataTable = styled.table`
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
   ${genericStyles};
 `;
 
-export const StyledDataTableRow = styled.tr`
+StyledDataTable.defaultProps = {};
+Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps);
+
+const StyledDataTableRow = styled.tr`
   ${props =>
     props.size &&
     `
@@ -19,7 +23,10 @@ export const StyledDataTableRow = styled.tr`
   `};
 `;
 
-export const StyledDataTableBody = styled.tbody`
+StyledDataTableRow.defaultProps = {};
+Object.setPrototypeOf(StyledDataTableRow.defaultProps, defaultProps);
+
+const StyledDataTableBody = styled.tbody`
   ${props =>
     props.size &&
     `
@@ -30,7 +37,10 @@ export const StyledDataTableBody = styled.tbody`
   `};
 `;
 
-export const StyledDataTableHeader = styled.thead`
+StyledDataTableBody.defaultProps = {};
+Object.setPrototypeOf(StyledDataTableBody.defaultProps, defaultProps);
+
+const StyledDataTableHeader = styled.thead`
   ${props =>
     props.size &&
     `
@@ -40,7 +50,10 @@ export const StyledDataTableHeader = styled.thead`
   `};
 `;
 
-export const StyledDataTableFooter = styled.tfoot`
+StyledDataTableHeader.defaultProps = {};
+Object.setPrototypeOf(StyledDataTableHeader.defaultProps, defaultProps);
+
+const StyledDataTableFooter = styled.tfoot`
   ${props =>
     props.size &&
     `
@@ -49,3 +62,14 @@ export const StyledDataTableFooter = styled.tfoot`
     table-layout: fixed;
   `};
 `;
+
+StyledDataTableFooter.defaultProps = {};
+Object.setPrototypeOf(StyledDataTableFooter.defaultProps, defaultProps);
+
+export {
+  StyledDataTable,
+  StyledDataTableRow,
+  StyledDataTableBody,
+  StyledDataTableHeader,
+  StyledDataTableFooter,
+};

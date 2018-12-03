@@ -22,3 +22,6 @@ export const getBreakpoint = (windowWidth, theme) => {
     });
   return result;
 };
+
+export const getDeviceBreakpoint = (type, theme) =>
+  theme.global.deviceBreakpoints[type];

@@ -1,5 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import { compose } from 'recompose';
+import styled, { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
 
 import { Button } from '../Button';
 import { Box } from '../Box';
@@ -9,7 +12,7 @@ const SorterButton = styled(Button)`
   height: 100%;
 `;
 
-export const Sorter = ({
+const Sorter = ({
   align,
   children,
   fill,
@@ -49,3 +52,10 @@ export const Sorter = ({
 
   return content;
 };
+
+Sorter.defaultProps = {};
+Object.setPrototypeOf(Sorter.defaultProps, defaultProps);
+
+const SorterWrapper = compose(withTheme)(Sorter);
+
+export { SorterWrapper as Sorter };

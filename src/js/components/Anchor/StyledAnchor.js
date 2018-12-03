@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { focusStyle, genericStyles, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const disabledStyle = `
   opacity: 0.3;
@@ -23,7 +24,7 @@ const sizeStyle = props => {
   `;
 };
 
-export const StyledAnchor = styled.a`
+const StyledAnchor = styled.a`
   box-sizing: border-box;
   ${props => sizeStyle(props)}
   color: ${props =>
@@ -59,3 +60,8 @@ export const StyledAnchor = styled.a`
   ${props => props.focus && focusStyle}
   ${props => props.theme.anchor.extend}
 `;
+
+StyledAnchor.defaultProps = {};
+Object.setPrototypeOf(StyledAnchor.defaultProps, defaultProps);
+
+export { StyledAnchor };

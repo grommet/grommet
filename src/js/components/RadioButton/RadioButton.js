@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
+import { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
-
 import { Box } from '../Box';
-
-import { withFocus, withForwardRef, withTheme } from '../hocs';
+import { withFocus, withForwardRef } from '../hocs';
 
 import {
   StyledRadioButton,
@@ -45,7 +46,6 @@ class RadioButton extends Component {
         direction="row"
         align="center"
         {...removeUndefined({ htmlFor: id, disabled })}
-        theme={theme}
         onClick={event => {
           // prevents clicking on the label trigging the event twice
           // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
@@ -57,7 +57,6 @@ class RadioButton extends Component {
         <StyledRadioButton
           as={Box}
           margin={{ right: theme.radioButton.gap || 'small' }}
-          theme={theme}
         >
           <StyledRadioButtonInput
             {...rest}
@@ -70,10 +69,8 @@ class RadioButton extends Component {
               disabled,
               onChange,
             })}
-            theme={theme}
           />
           <StyledRadioButtonBox
-            theme={theme}
             focus={focus}
             as={Box}
             align="center"
@@ -88,12 +85,11 @@ class RadioButton extends Component {
           >
             {checked &&
               (Icon ? (
-                <Icon as={StyledRadioButtonIcon} theme={theme} />
+                <Icon as={StyledRadioButtonIcon} />
               ) : (
                 <StyledRadioButtonIcon
                   viewBox="0 0 24 24"
                   preserveAspectRatio="xMidYMid meet"
-                  theme={theme}
                 >
                   <circle cx={12} cy={12} r={6} />
                 </StyledRadioButtonIcon>
@@ -105,6 +101,9 @@ class RadioButton extends Component {
     );
   }
 }
+
+RadioButton.defaultProps = {};
+Object.setPrototypeOf(RadioButton.defaultProps, defaultProps);
 
 let RadioButtonDoc;
 if (process.env.NODE_ENV !== 'production') {

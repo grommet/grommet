@@ -1,8 +1,11 @@
 import React, { cloneElement, Children, Component } from 'react';
 import { compose } from 'recompose';
 
+import { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
+
 import { Box } from '../Box';
-import { withTheme } from '../hocs';
 
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 
@@ -86,10 +89,8 @@ class Tabs extends Component {
         flex={flex}
         {...rest}
         background={theme.tabs.background}
-        theme={theme}
       >
         <StyledTabsHeader
-          theme={theme}
           as={Box}
           direction="row"
           justify={justify}
@@ -102,7 +103,6 @@ class Tabs extends Component {
         </StyledTabsHeader>
         <StyledTabPanel
           flex={flex}
-          theme={theme}
           aria-label={tabContentTitle}
           role="tabpanel"
         >
@@ -112,6 +112,8 @@ class Tabs extends Component {
     );
   }
 }
+
+Object.setPrototypeOf(Tabs.defaultProps, defaultProps);
 
 let TabsDoc;
 if (process.env.NODE_ENV !== 'production') {

@@ -40,6 +40,39 @@ exports[`InfiniteScroll renderMarker 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -50,12 +83,8 @@ exports[`InfiniteScroll renderMarker 1`] = `
     1
   </div>
   <div>
-    <span
-      style={
-        Object {
-          "fontSize": 0,
-        }
-      }
+    <div
+      className="c1"
     />
   </div>
 </div>
@@ -72,6 +101,39 @@ exports[`InfiniteScroll replace 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: NaNpx;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -81,12 +143,8 @@ exports[`InfiniteScroll replace 1`] = `
   <div>
     1
   </div>
-  <span
-    style={
-      Object {
-        "fontSize": 0,
-      }
-    }
+  <div
+    className="c1"
   />
 </div>
 `;
@@ -131,6 +189,39 @@ exports[`InfiniteScroll step 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -140,12 +231,8 @@ exports[`InfiniteScroll step 1`] = `
   <div>
     1
   </div>
-  <span
-    style={
-      Object {
-        "fontSize": 0,
-      }
-    }
+  <div
+    className="c1"
   />
 </div>
 `;

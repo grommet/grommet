@@ -1,7 +1,4 @@
 import React from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from '../hocs';
 
 import { StyledParagraph } from './StyledParagraph';
 
@@ -13,6 +10,6 @@ let ParagraphDoc;
 if (process.env.NODE_ENV !== 'production') {
   ParagraphDoc = require('./doc').doc(Paragraph); // eslint-disable-line global-require
 }
-const ParagraphWrapper = compose(withTheme)(ParagraphDoc || Paragraph);
+const ParagraphWrapper = ParagraphDoc || Paragraph;
 
 export { ParagraphWrapper as Paragraph };

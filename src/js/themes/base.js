@@ -148,6 +148,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         large: {}, // anything above 'medium'
       },
+      // Breakpoints used at Server Side Rendering for the initial rendering
+      // These values correspond to the theme breakpoints
+      deviceBreakpoints: {
+        phone: 'small',
+        tablet: 'medium',
+        computer: 'large',
+      },
       colors,
       control: {
         border: {
@@ -218,6 +225,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       input: {
+        padding: `${baseSpacing / 2}px`,
         weight: 600,
       },
       opacity: {

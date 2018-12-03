@@ -1,10 +1,13 @@
 import React from 'react';
 import { compose } from 'recompose';
 
+import { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
+
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { TableCell } from '../TableCell';
-import { withTheme } from '../hocs';
 import { normalizeColor } from '../../utils';
 
 const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
@@ -33,6 +36,9 @@ const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
   }
   return <TableCell size="xxsmall" verticalAlign="top" />;
 };
+
+ExpanderCell.defaultProps = {};
+Object.setPrototypeOf(ExpanderCell.defaultProps, defaultProps);
 
 const ExpanderCellWrapper = compose(withTheme)(ExpanderCell);
 

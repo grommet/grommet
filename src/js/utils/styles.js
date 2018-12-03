@@ -170,7 +170,7 @@ export const inputStyle = css`
   border: none;
   -webkit-appearance: none;
   padding: ${props =>
-    parseMetricToNum(props.theme.global.spacing) / 2 -
+    parseMetricToNum(props.theme.global.input.padding) -
     parseMetricToNum(props.theme.global.control.border.width)}px;
   outline: none;
   background: transparent;

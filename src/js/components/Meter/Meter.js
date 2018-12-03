@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from '../hocs';
 
 import { Bar } from './Bar';
 import { Circle } from './Circle';
@@ -19,7 +16,7 @@ const deriveMax = values => {
 
 class Meter extends Component {
   static defaultProps = {
-    background: { color: 'light-1', opacity: 'medium' },
+    background: { color: 'light-2', opacity: 'medium' },
     size: 'medium',
     thickness: 'medium',
     type: 'bar',
@@ -55,6 +52,6 @@ let MeterDoc;
 if (process.env.NODE_ENV !== 'production') {
   MeterDoc = require('./doc').doc(Meter); // eslint-disable-line global-require
 }
-const MeterWrapper = compose(withTheme)(MeterDoc || Meter);
+const MeterWrapper = MeterDoc || Meter;
 
 export { MeterWrapper as Meter };
