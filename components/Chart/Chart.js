@@ -5,13 +5,13 @@ exports.Chart = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactDom = require("react-dom");
-
 var _recompose = require("recompose");
+
+var _styledComponents = require("styled-components");
 
 var _utils = require("../../utils");
 
-var _hocs = require("../hocs");
+var _defaultProps = require("../../default-props");
 
 var _StyledChart = require("./StyledChart");
 
@@ -166,14 +166,15 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "containerRef", (0, _react.createRef)());
+
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       containerWidth: 0,
       containerHeight: 0
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onResize", function () {
-      /* eslint-disable-next-line react/no-find-dom-node */
-      var containerNode = (0, _reactDom.findDOMNode)(_this.containerRef);
+      var containerNode = _this.containerRef.current;
 
       if (containerNode) {
         var parentNode = containerNode.parentNode;
@@ -222,8 +223,6 @@ function (_Component) {
   };
 
   _proto.render = function render() {
-    var _this2 = this;
-
     var _this$props = this.props,
         color = _this$props.color,
         onClick = _this$props.onClick,
@@ -262,14 +261,11 @@ function (_Component) {
     }
 
     return _react.default.createElement(_StyledChart.StyledChart, _extends({
-      ref: function ref(_ref6) {
-        _this2.containerRef = _ref6;
-      },
+      ref: this.containerRef,
       viewBox: viewBox,
       preserveAspectRatio: "none",
       width: size === 'full' ? '100%' : width,
-      height: size === 'full' ? '100%' : height,
-      theme: theme
+      height: size === 'full' ? '100%' : height
     }, rest), _react.default.createElement("g", {
       stroke: (0, _utils.normalizeColor)(colorName, theme),
       strokeWidth: strokeWidth,
@@ -293,11 +289,12 @@ _defineProperty(Chart, "defaultProps", {
   type: 'bar'
 });
 
+Object.setPrototypeOf(Chart.defaultProps, _defaultProps.defaultProps);
 var ChartDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   ChartDoc = require('./doc').doc(Chart); // eslint-disable-line global-require
 }
 
-var ChartWrapper = (0, _recompose.compose)(_hocs.withTheme)(ChartDoc || Chart);
+var ChartWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(ChartDoc || Chart);
 exports.Chart = ChartWrapper;

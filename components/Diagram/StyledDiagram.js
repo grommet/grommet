@@ -5,6 +5,8 @@ exports.StyledDiagram = void 0;
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _defaultProps = require("../../default-props");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var StyledDiagram = _styledComponents.default.svg.withConfig({
@@ -15,3 +17,5 @@ var StyledDiagram = _styledComponents.default.svg.withConfig({
 });
 
 exports.StyledDiagram = StyledDiagram;
+StyledDiagram.defaultProps = {};
+Object.setPrototypeOf(StyledDiagram.defaultProps, _defaultProps.defaultProps);

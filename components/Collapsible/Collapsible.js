@@ -5,17 +5,13 @@ exports.Collapsible = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactDom = require("react-dom");
-
 var _recompose = require("recompose");
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
-var _hocs = require("../hocs");
+var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -63,10 +59,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "ref", (0, _react.createRef)());
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getSnapshotBeforeUpdate", function () {
-      return (
-        /* eslint-disable-next-line react/no-find-dom-node */
-        _this.ref.current && (0, _reactDom.findDOMNode)(_this.ref.current).getBoundingClientRect()
-      );
+      return _this.ref.current && _this.ref.current.getBoundingClientRect();
     });
 
     _this.state = {
@@ -89,9 +82,7 @@ function (_Component) {
     var _this$state = this.state,
         animate = _this$state.animate,
         open = _this$state.open;
-    /* eslint-disable-next-line react/no-find-dom-node */
-
-    var container = (0, _reactDom.findDOMNode)(this.ref.current);
+    var container = this.ref.current;
     var dimension = animatedBoxProperty(direction);
     var boudingClientRect = container.getBoundingClientRect();
     var dimensionSize = boudingClientRect[dimension];
@@ -151,11 +142,13 @@ function (_Component) {
   return Collapsible;
 }(_react.Component);
 
+Collapsible.defaultProps = {};
+Object.setPrototypeOf(Collapsible.defaultProps, _defaultProps.defaultProps);
 var CollapsibleDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   CollapsibleDoc = require('./doc').doc(Collapsible); // eslint-disable-line global-require
 }
 
-var CollapsibleWrapper = (0, _recompose.compose)(_hocs.withTheme)(CollapsibleDoc || Collapsible);
+var CollapsibleWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(CollapsibleDoc || Collapsible);
 exports.Collapsible = CollapsibleWrapper;

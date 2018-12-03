@@ -14,7 +14,7 @@ import { TextInput } from 'grommet';
 **dropAlign**
 
 How to align the drop. Defaults to `{
-  "top": "top",
+  "top": "bottom",
   "left": "left"
 }`.
 

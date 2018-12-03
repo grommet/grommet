@@ -5,8 +5,6 @@ exports.Markdown = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
 var _markdownToJsx = _interopRequireDefault(require("markdown-to-jsx"));
 
 var _utils = require("../../utils");
@@ -14,8 +12,6 @@ var _utils = require("../../utils");
 var _Heading = require("../Heading");
 
 var _Paragraph = require("../Paragraph");
-
-var _hocs = require("../hocs");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -76,5 +72,5 @@ if (process.env.NODE_ENV !== 'production') {
   GrommetMarkdownDoc = require('./doc').doc(GrommetMarkdown); // eslint-disable-line global-require
 }
 
-var GrommetMarkdownWrapper = (0, _recompose.compose)(_hocs.withTheme)(GrommetMarkdownDoc || GrommetMarkdown);
+var GrommetMarkdownWrapper = GrommetMarkdownDoc || GrommetMarkdown;
 exports.Markdown = GrommetMarkdownWrapper;

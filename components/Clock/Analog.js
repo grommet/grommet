@@ -5,7 +5,13 @@ exports.Analog = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _recompose = require("recompose");
+
+var _styledComponents = require("styled-components");
+
 var _utils = require("../../utils");
+
+var _defaultProps = require("../../default-props");
 
 var _StyledClock = require("./StyledClock");
 
@@ -105,7 +111,6 @@ function (_Component) {
 
     if (precision === 'seconds') {
       secondHand = _react.default.createElement(_StyledClock.StyledSecond, {
-        theme: theme,
         x1: halfSize,
         y1: halfSize,
         x2: halfSize,
@@ -123,7 +128,6 @@ function (_Component) {
 
     if (precision === 'seconds' || precision === 'minutes') {
       minuteHand = _react.default.createElement(_StyledClock.StyledMinute, {
-        theme: theme,
         x1: halfSize,
         y1: halfSize,
         x2: halfSize,
@@ -142,10 +146,8 @@ function (_Component) {
       width: size,
       height: size,
       preserveAspectRatio: "xMidYMid meet",
-      viewBox: "0 0 " + size + " " + size,
-      theme: theme
+      viewBox: "0 0 " + size + " " + size
     }, rest), secondHand, minuteHand, _react.default.createElement(_StyledClock.StyledHour, {
-      theme: theme,
       x1: halfSize,
       y1: halfSize,
       x2: halfSize,
@@ -162,8 +164,10 @@ function (_Component) {
   return Analog;
 }(_react.Component);
 
-exports.Analog = Analog;
-
 _defineProperty(Analog, "defaultProps", {
   size: 'medium'
 });
+
+Object.setPrototypeOf(Analog.defaultProps, _defaultProps.defaultProps);
+var AnalogWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Analog);
+exports.Analog = AnalogWrapper;

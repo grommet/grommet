@@ -5,21 +5,19 @@ exports.LayerContainer = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _contexts = require("grommet-icons/contexts");
+
+var _defaultProps = require("../../default-props");
 
 var _FocusedContainer = require("../FocusedContainer");
 
 var _Keyboard = require("../Keyboard");
 
-var _hocs = require("../hocs");
-
 var _utils = require("../../utils");
 
 var _StyledLayer = require("./StyledLayer");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -141,7 +139,6 @@ function (_Component) {
     var content = _react.default.createElement(_StyledLayer.StyledContainer, _extends({
       id: id
     }, rest, {
-      theme: theme,
       position: position,
       plain: plain,
       responsive: responsive,
@@ -157,15 +154,13 @@ function (_Component) {
         id: id,
         plain: plain,
         position: position,
-        theme: theme,
         responsive: responsive,
         tabIndex: "-1",
         ref: this.layerRef
       }, _react.default.createElement(_StyledLayer.StyledOverlay, {
         plain: plain,
         onMouseDown: onClickOutside,
-        responsive: responsive,
-        theme: theme
+        responsive: responsive
       }), content);
       /* eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */
     }
@@ -198,5 +193,6 @@ _defineProperty(LayerContainer, "defaultProps", {
   position: 'center'
 });
 
-var LayerContainerWrapper = (0, _hocs.withTheme)(LayerContainer);
+Object.setPrototypeOf(LayerContainer.defaultProps, _defaultProps.defaultProps);
+var LayerContainerWrapper = (0, _styledComponents.withTheme)(LayerContainer);
 exports.LayerContainer = LayerContainerWrapper;

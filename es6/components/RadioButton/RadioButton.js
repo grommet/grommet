@@ -6,9 +6,11 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 import React, { Component } from 'react';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
 import { Box } from '../Box';
-import { withFocus, withForwardRef, withTheme } from '../hocs';
+import { withFocus, withForwardRef } from '../hocs';
 import { StyledRadioButton, StyledRadioButtonContainer, StyledRadioButtonIcon, StyledRadioButtonInput, StyledRadioButtonBox } from './StyledRadioButton';
 
 var RadioButton =
@@ -55,7 +57,6 @@ function (_Component) {
       htmlFor: id,
       disabled: disabled
     }), {
-      theme: theme,
       onClick: function onClick(event) {
         // prevents clicking on the label trigging the event twice
         // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
@@ -67,8 +68,7 @@ function (_Component) {
       as: Box,
       margin: {
         right: theme.radioButton.gap || 'small'
-      },
-      theme: theme
+      }
     }, React.createElement(StyledRadioButtonInput, _extends({}, rest, {
       ref: forwardRef,
       type: "radio"
@@ -78,10 +78,7 @@ function (_Component) {
       checked: checked,
       disabled: disabled,
       onChange: onChange
-    }), {
-      theme: theme
-    })), React.createElement(StyledRadioButtonBox, {
-      theme: theme,
+    }))), React.createElement(StyledRadioButtonBox, {
       focus: focus,
       as: Box,
       align: "center",
@@ -94,12 +91,10 @@ function (_Component) {
       },
       round: theme.radioButton.check.radius
     }, checked && (Icon ? React.createElement(Icon, {
-      as: StyledRadioButtonIcon,
-      theme: theme
+      as: StyledRadioButtonIcon
     }) : React.createElement(StyledRadioButtonIcon, {
       viewBox: "0 0 24 24",
-      preserveAspectRatio: "xMidYMid meet",
-      theme: theme
+      preserveAspectRatio: "xMidYMid meet"
     }, React.createElement("circle", {
       cx: 12,
       cy: 12,
@@ -110,6 +105,8 @@ function (_Component) {
   return RadioButton;
 }(Component);
 
+RadioButton.defaultProps = {};
+Object.setPrototypeOf(RadioButton.defaultProps, defaultProps);
 var RadioButtonDoc;
 
 if (process.env.NODE_ENV !== 'production') {

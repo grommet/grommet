@@ -10,6 +10,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Component } from 'react';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { normalizeColor, parseMetricToNum } from '../../utils';
@@ -122,5 +124,7 @@ function (_Component) {
   return EdgeControl;
 }(Component);
 
-var EdgeControlWrapper = compose(withForwardRef)(EdgeControl);
+EdgeControl.defaultProps = {};
+Object.setPrototypeOf(EdgeControl.defaultProps, defaultProps);
+var EdgeControlWrapper = compose(withForwardRef, withTheme)(EdgeControl);
 export { EdgeControlWrapper as EdgeControl };

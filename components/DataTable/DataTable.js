@@ -5,10 +5,6 @@ exports.DataTable = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
-var _hocs = require("../hocs");
-
 var _Header = require("./Header");
 
 var _Footer = require("./Footer");
@@ -153,8 +149,7 @@ function (_Component) {
         resizeable = _this$props.resizeable,
         size = _this$props.size,
         sortable = _this$props.sortable,
-        theme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["columns", "data", "groupBy", "onMore", "resizeable", "size", "sortable", "theme"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["columns", "data", "groupBy", "onMore", "resizeable", "size", "sortable"]);
 
     var _this$state = this.state,
         data = _this$state.data,
@@ -172,9 +167,7 @@ function (_Component) {
       console.warn('DataTable cannot combine "size" and "resizeble".');
     }
 
-    return _react.default.createElement(_StyledDataTable.StyledDataTable, _extends({
-      theme: theme
-    }, rest), _react.default.createElement(_Header.Header, {
+    return _react.default.createElement(_StyledDataTable.StyledDataTable, rest, _react.default.createElement(_Header.Header, {
       columns: columns,
       filtering: filtering,
       filters: filters,
@@ -182,7 +175,6 @@ function (_Component) {
       groupState: groupState,
       size: size,
       sort: sort,
-      theme: theme,
       widths: widths,
       onFiltering: this.onFiltering,
       onFilter: this.onFilter,
@@ -195,21 +187,18 @@ function (_Component) {
       groups: groups,
       groupState: groupState,
       primaryProperty: primaryProperty,
-      theme: theme,
       onToggle: this.onToggleGroup
     }) : _react.default.createElement(_Body.Body, {
       columns: columns,
       data: data,
       onMore: onMore,
       primaryProperty: primaryProperty,
-      size: size,
-      theme: theme
+      size: size
     }), showFooter && _react.default.createElement(_Footer.Footer, {
       columns: columns,
       footerValues: footerValues,
       groups: groups,
-      size: size,
-      theme: theme
+      size: size
     }));
   };
 
@@ -227,5 +216,5 @@ if (process.env.NODE_ENV !== 'production') {
   DataTableDoc = require('./doc').doc(DataTable); // eslint-disable-line global-require
 }
 
-var DataTableWrapper = (0, _recompose.compose)(_hocs.withTheme)(DataTableDoc || DataTable);
+var DataTableWrapper = DataTableDoc || DataTable;
 exports.DataTable = DataTableWrapper;

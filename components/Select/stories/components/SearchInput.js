@@ -5,8 +5,6 @@ exports.SearchInput = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactDom = require("react-dom");
-
 var _ = require("../../..");
 
 var _SearchBorderBox = require("./SearchBorderBox");
@@ -47,10 +45,13 @@ function (_Component) {
   _proto.componentDidMount = function componentDidMount() {
     var _this2 = this;
 
-    setTimeout(function () {
-      /* eslint-disable-next-line react/no-find-dom-node */
-      (0, _reactDom.findDOMNode)(_this2.textInputRef.current).focus();
+    this.focusTimeout = setTimeout(function () {
+      _this2.textInputRef.current.focus();
     }, 300);
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    clearTimeout(this.focusTimeout);
   };
 
   _proto.render = function render() {

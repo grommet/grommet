@@ -10,12 +10,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+import { normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
-import { withFocus, withTheme } from '../hocs';
-import { normalizeColor } from '../../utils';
+import { withFocus } from '../hocs';
 
 var Carousel =
 /*#__PURE__*/
@@ -212,6 +214,8 @@ function (_Component) {
   return Carousel;
 }(Component);
 
+Carousel.defaultProps = {};
+Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 var CarouselDoc;
 
 if (process.env.NODE_ENV !== 'production') {

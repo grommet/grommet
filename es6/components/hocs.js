@@ -10,10 +10,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* eslint-disable react/no-multi-comp */
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import getDisplayName from 'recompose/getDisplayName';
 import { ThemeContext as IconThemeContext } from "grommet-icons/es6/contexts/ThemeContext";
-import { AnnounceContext, ThemeContext } from '../contexts';
+import hoistNonReactStatics from 'hoist-non-react-statics';
+import { AnnounceContext } from '../contexts';
 export var withFocus = function withFocus(WrappedComponent) {
   var FocusableComponent =
   /*#__PURE__*/
@@ -43,9 +43,7 @@ export var withFocus = function withFocus(WrappedComponent) {
         // call wrapperNode.focus() inside componentWillUnmount
         // see Drop "this.originalFocusedElement.focus();" for reference
 
-        /* eslint-disable-next-line react/no-find-dom-node */
-
-        var wrapperNode = findDOMNode(wrappedRef.current);
+        var wrapperNode = wrappedRef.current;
 
         if (wrapperNode && wrapperNode.addEventListener) {
           wrapperNode.addEventListener('focus', _this.setFocus);
@@ -55,9 +53,7 @@ export var withFocus = function withFocus(WrappedComponent) {
       _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "componentWillUnmount", function () {
         var wrappedRef = _this.state.wrappedRef;
         window.removeEventListener('mousedown', _this.handleActiveMouse);
-        /* eslint-disable-next-line react/no-find-dom-node */
-
-        var wrapperNode = findDOMNode(wrappedRef.current);
+        var wrapperNode = wrappedRef.current;
 
         if (wrapperNode && wrapperNode.addEventListener) {
           wrapperNode.removeEventListener('focus', _this.setFocus);
@@ -170,46 +166,8 @@ export var withFocus = function withFocus(WrappedComponent) {
   });
   ForwardRef.displayName = getDisplayName(WrappedComponent);
   ForwardRef.name = ForwardRef.displayName;
-  return ForwardRef;
-};
-export var withTheme = function withTheme(WrappedComponent) {
-  var ThemedComponent =
-  /*#__PURE__*/
-  function (_Component2) {
-    _inheritsLoose(ThemedComponent, _Component2);
-
-    function ThemedComponent() {
-      return _Component2.apply(this, arguments) || this;
-    }
-
-    var _proto2 = ThemedComponent.prototype;
-
-    _proto2.render = function render() {
-      var _this$props2 = this.props,
-          withThemeRef = _this$props2.withThemeRef,
-          theme = _this$props2.theme,
-          rest = _objectWithoutPropertiesLoose(_this$props2, ["withThemeRef", "theme"]);
-
-      return React.createElement(WrappedComponent, _extends({
-        ref: withThemeRef
-      }, rest, {
-        theme: theme
-      }));
-    };
-
-    return ThemedComponent;
-  }(Component);
-
-  var ForwardRef = React.forwardRef(function (props, ref) {
-    return React.createElement(ThemeContext.Consumer, null, function (theme) {
-      return React.createElement(ThemedComponent, _extends({}, props, {
-        theme: theme,
-        withThemeRef: ref
-      }));
-    });
-  });
-  ForwardRef.displayName = getDisplayName(WrappedComponent);
-  ForwardRef.name = ForwardRef.displayName;
+  ForwardRef.defaultProps = WrappedComponent.defaultProps;
+  hoistNonReactStatics(ForwardRef, WrappedComponent);
   return ForwardRef;
 };
 export var withForwardRef = function withForwardRef(WrappedComponent) {
@@ -220,6 +178,8 @@ export var withForwardRef = function withForwardRef(WrappedComponent) {
   });
   ForwardRefComponent.displayName = getDisplayName(WrappedComponent);
   ForwardRefComponent.name = ForwardRefComponent.displayName;
+  ForwardRefComponent.defaultProps = WrappedComponent.defaultProps;
+  hoistNonReactStatics(ForwardRefComponent, WrappedComponent);
   return ForwardRefComponent;
 };
 export var withAnnounce = function withAnnounce(WrappedComponent) {
@@ -233,6 +193,8 @@ export var withAnnounce = function withAnnounce(WrappedComponent) {
   });
   ForwardRef.displayName = getDisplayName(WrappedComponent);
   ForwardRef.name = ForwardRef.displayName;
+  ForwardRef.defaultProps = WrappedComponent.defaultProps;
+  hoistNonReactStatics(ForwardRef, WrappedComponent);
   return ForwardRef;
 };
 export var withIconTheme = function withIconTheme(WrappedComponent) {
@@ -245,5 +207,7 @@ export var withIconTheme = function withIconTheme(WrappedComponent) {
   };
 
   IconThemeComponent.displayName = getDisplayName(WrappedComponent);
+  IconThemeComponent.defaultProps = WrappedComponent.defaultProps;
+  hoistNonReactStatics(IconThemeComponent, WrappedComponent);
   return IconThemeComponent;
 };

@@ -18,8 +18,7 @@ export var Body = function Body(_ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["columns", "data", "onMore", "primaryProperty", "size", "theme"]);
 
   return React.createElement(StyledDataTableBody, _extends({
-    size: size,
-    theme: theme
+    size: size
   }, rest), React.createElement(InfiniteScroll, {
     items: data,
     onMore: onMore,
@@ -37,8 +36,7 @@ export var Body = function Body(_ref) {
         context: "body",
         column: column,
         datum: datum,
-        scope: column.primary ? 'row' : undefined,
-        theme: theme
+        scope: column.primary ? 'row' : undefined
       });
     }));
   }));

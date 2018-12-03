@@ -9,10 +9,10 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
-import { withTheme } from '../hocs';
 import { StyledDiagram } from './StyledDiagram';
 
 var computeMidPoint = function computeMidPoint(fromPoint, toPoint) {
@@ -55,10 +55,8 @@ var findTarget = function findTarget(target) {
   if (typeof target === 'string') {
     return document.getElementById(target);
   }
-  /* eslint-disable-next-line react/no-find-dom-node */
 
-
-  return findDOMNode(target);
+  return target;
 };
 
 var Diagram =
@@ -87,9 +85,7 @@ function (_Component) {
           connectionPoints = _this$state.connectionPoints,
           width = _this$state.width,
           height = _this$state.height;
-      /* eslint-disable-next-line react/no-find-dom-node */
-
-      var svg = findDOMNode(_this.svgRef.current);
+      var svg = _this.svgRef.current;
 
       if (svg) {
         var rect = svg.getBoundingClientRect();
@@ -126,9 +122,7 @@ function (_Component) {
 
   _proto.placeConnections = function placeConnections() {
     var connections = this.props.connections;
-    /* eslint-disable-next-line react/no-find-dom-node */
-
-    var containerRect = findDOMNode(this.svgRef.current).getBoundingClientRect();
+    var containerRect = this.svgRef.current.getBoundingClientRect();
     var connectionPoints = connections.map(function (_ref) {
       var anchor = _ref.anchor,
           fromTarget = _ref.fromTarget,
@@ -252,6 +246,7 @@ _defineProperty(Diagram, "defaultProps", {
   connections: []
 });
 
+Object.setPrototypeOf(Diagram.defaultProps, defaultProps);
 var DiagramDoc;
 
 if (process.env.NODE_ENV !== 'production') {

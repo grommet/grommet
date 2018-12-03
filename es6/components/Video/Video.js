@@ -8,17 +8,17 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-/* eslint-disable react/no-find-dom-node */
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Menu } from '../Menu';
 import { Meter } from '../Meter';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
-import { withForwardRef, withTheme } from '../hocs';
+import { withForwardRef } from '../hocs';
 import { throttle } from '../../utils';
 import { StyledVideo, StyledVideoContainer, StyledVideoControls, StyledVideoScrubber } from './StyledVideo'; // Split the volume control into 6 segments. Empirically determined.
 
@@ -95,9 +95,8 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "update", function () {
-      var videoRef = _this.state.videoRef; // eslint-disable-next-line react/no-find-dom-node
-
-      var video = findDOMNode(videoRef.current); // Set flag for Video first play
+      var videoRef = _this.state.videoRef;
+      var video = videoRef.current; // Set flag for Video first play
 
       if (!_this.hasPlayed && !video.paused && !video.loading || video.currentTime) {
         _this.hasPlayed = true;
@@ -132,12 +131,12 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "play", function () {
       var videoRef = _this.state.videoRef;
-      findDOMNode(videoRef.current).play();
+      videoRef.current.play();
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "pause", function () {
       var videoRef = _this.state.videoRef;
-      findDOMNode(videoRef.current).pause();
+      videoRef.current.pause();
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "scrub", function (event) {
@@ -146,7 +145,7 @@ function (_Component) {
           scrubberRef = _this$state.scrubberRef;
 
       if (scrubberRef.current) {
-        var scrubberRect = findDOMNode(scrubberRef.current).getBoundingClientRect();
+        var scrubberRect = scrubberRef.current.getBoundingClientRect();
         var percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
 
         _this.setState({
@@ -162,37 +161,41 @@ function (_Component) {
           videoRef = _this$state2.videoRef;
 
       if (scrubberRef.current) {
-        var scrubberRect = findDOMNode(scrubberRef.current).getBoundingClientRect();
+        var scrubberRect = scrubberRef.current.getBoundingClientRect();
         var percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
-        findDOMNode(videoRef.current).currentTime = duration * percent;
+        videoRef.current.currentTime = duration * percent;
       }
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "unmute", function () {
       var videoRef = _this.state.videoRef;
-      findDOMNode(videoRef.current).muted = false;
+
+      if (videoRef.current) {
+        videoRef.current.muted = false;
+      }
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "mute", function () {
       var videoRef = _this.state.videoRef;
-      findDOMNode(videoRef.current).muted = true;
+
+      if (videoRef.current) {
+        videoRef.current.muted = true;
+      }
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "louder", function () {
       var videoRef = _this.state.videoRef;
-      findDOMNode(videoRef.current).volume += VOLUME_STEP;
+      videoRef.current.volume += VOLUME_STEP;
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "quieter", function () {
       var videoRef = _this.state.videoRef;
-      findDOMNode(videoRef.current).volume -= VOLUME_STEP;
+      videoRef.current.volume -= VOLUME_STEP;
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "showCaptions", function (index) {
       var videoRef = _this.state.videoRef;
-
-      var _findDOMNode = findDOMNode(videoRef.current),
-          textTracks = _findDOMNode.textTracks;
+      var textTracks = videoRef.current.textTracks;
 
       for (var i = 0; i < textTracks.length; i += 1) {
         textTracks[i].mode = i === index ? 'showing' : 'hidden';
@@ -204,7 +207,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "fullscreen", function () {
       var videoRef = _this.state.videoRef;
-      var video = findDOMNode(videoRef.current);
+      var video = videoRef.current;
 
       if (video.requestFullscreen) {
         video.requestFullscreen();
@@ -244,7 +247,7 @@ function (_Component) {
           height = _this$state3.height,
           videoRef = _this$state3.videoRef,
           width = _this$state3.width;
-      var video = findDOMNode(videoRef.current);
+      var video = videoRef.current;
 
       if (video.videoHeight) {
         // set the size based on the video aspect ratio
@@ -325,20 +328,22 @@ function (_Component) {
   _proto.componentDidMount = function componentDidMount() {
     var mute = this.props.mute;
     var videoRef = this.state.videoRef;
-    var video = findDOMNode(videoRef.current);
+    var video = videoRef.current;
 
     if (mute) {
       this.mute();
-    } // hide all captioning to start with
-
-
-    var textTracks = video.textTracks;
-
-    for (var i = 0; i < textTracks.length; i += 1) {
-      textTracks[i].mode = 'hidden';
     }
 
-    this.restate();
+    if (video) {
+      // hide all captioning to start with
+      var textTracks = video.textTracks;
+
+      for (var i = 0; i < textTracks.length; i += 1) {
+        textTracks[i].mode = 'hidden';
+      }
+
+      this.restate();
+    }
   };
 
   _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
@@ -441,8 +446,7 @@ function (_Component) {
           scrubTime: undefined
         });
       },
-      onClick: this.seek,
-      theme: theme
+      onClick: this.seek
     }))), React.createElement(Box, {
       pad: {
         horizontal: 'small'
@@ -525,11 +529,9 @@ function (_Component) {
       alignSelf: alignSelf,
       gridArea: gridArea,
       margin: margin,
-      theme: theme,
       style: style
     }), React.createElement(StyledVideo, _extends({}, rest, {
-      ref: videoRef,
-      theme: theme
+      ref: videoRef
     }, this.mediaEventProps, {
       autoPlay: autoPlay || false,
       loop: loop || false
@@ -543,6 +545,7 @@ _defineProperty(Video, "defaultProps", {
   controls: 'over'
 });
 
+Object.setPrototypeOf(Video.defaultProps, defaultProps);
 var VideoDoc;
 
 if (process.env.NODE_ENV !== 'production') {

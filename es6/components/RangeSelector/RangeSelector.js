@@ -9,10 +9,9 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 import { Box } from '../Box';
-import { withForwardRef, withTheme } from '../hocs';
+import { withForwardRef } from '../hocs';
 import { EdgeControl } from './EdgeControl';
 
 var RangeSelector =
@@ -39,9 +38,9 @@ function (_Component) {
           max = _this$props.max,
           min = _this$props.min,
           step = _this$props.step;
-      /* eslint-disable-next-line react/no-find-dom-node */
 
-      var rect = findDOMNode(_this.containerRef.current).getBoundingClientRect();
+      var rect = _this.containerRef.current.getBoundingClientRect();
+
       var value;
 
       if (direction === 'vertical') {
@@ -184,9 +183,8 @@ function (_Component) {
         round = _this$props4.round,
         size = _this$props4.size,
         step = _this$props4.step,
-        theme = _this$props4.theme,
         values = _this$props4.values,
-        rest = _objectWithoutPropertiesLoose(_this$props4, ["color", "direction", "forwardRef", "invert", "max", "messages", "min", "onChange", "opacity", "round", "size", "step", "theme", "values"]);
+        rest = _objectWithoutPropertiesLoose(_this$props4, ["color", "direction", "forwardRef", "invert", "max", "messages", "min", "onChange", "opacity", "round", "size", "step", "values"]);
 
     var _this$state2 = this.state,
         nextLower = _this$state2.nextLower,
@@ -218,7 +216,6 @@ function (_Component) {
       color: color,
       direction: direction,
       edge: "lower",
-      theme: theme,
       onMouseDown: onChange ? this.lowerMouseDown : undefined,
       onDecrease: onChange && lower - step >= min ? function () {
         return onChange([lower - step, upper]);
@@ -244,7 +241,6 @@ function (_Component) {
       color: color,
       direction: direction,
       edge: "upper",
-      theme: theme,
       onMouseDown: onChange ? this.upperMouseDown : undefined,
       onDecrease: onChange && upper - step >= lower ? function () {
         return onChange([lower, upper - step]);
@@ -288,5 +284,5 @@ if (process.env.NODE_ENV !== 'production') {
   RangeSelectorDoc = require('./doc').doc(RangeSelector); // eslint-disable-line global-require
 }
 
-var RangeSelectorWrapper = compose(withTheme, withForwardRef)(RangeSelectorDoc || RangeSelector);
+var RangeSelectorWrapper = compose(withForwardRef)(RangeSelectorDoc || RangeSelector);
 export { RangeSelectorWrapper as RangeSelector };

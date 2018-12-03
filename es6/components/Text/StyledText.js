@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { genericStyles, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 var marginStyle = function marginStyle(props) {
   if (typeof props.margin === 'string') {
@@ -60,7 +61,7 @@ var colorStyle = css(["color:", ";"], function (props) {
 var weightStyle = css(["font-weight:", ";"], function (props) {
   return props.weight;
 });
-export var StyledText = styled.span.withConfig({
+var StyledText = styled.span.withConfig({
   displayName: "StyledText",
   componentId: "sc-1sadyjn-0"
 })(["", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
@@ -78,3 +79,6 @@ export var StyledText = styled.span.withConfig({
 }, function (props) {
   return props.theme.text && props.theme.text.extend;
 });
+StyledText.defaultProps = {};
+Object.setPrototypeOf(StyledText.defaultProps, defaultProps);
+export { StyledText };

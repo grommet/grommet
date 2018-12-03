@@ -22,7 +22,7 @@ var doc = function doc(Select) {
       right: _reactDesc.PropTypes.oneOf(['left', 'right']),
       left: _reactDesc.PropTypes.oneOf(['left', 'right'])
     }).description('How to align the drop.').defaultValue({
-      top: 'top',
+      top: 'bottom',
       left: 'left'
     }),
     dropTarget: _reactDesc.PropTypes.object.description("Target where the options drop will be aligned to. This should be\n      a React reference. Typically, this is not required as the drop will be\n      aligned to the Select itself by default."),

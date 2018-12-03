@@ -7,17 +7,11 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactDom = require("react-dom");
 
-var _recompose = require("recompose");
-
 var _utils = require("../../utils");
-
-var _hocs = require("../hocs");
 
 var _LayerContainer = require("./LayerContainer");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
@@ -68,11 +62,7 @@ function (_Component) {
   };
 
   _proto.render = function render() {
-    var _this$props = this.props,
-        theme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["theme"]);
-
-    return (0, _reactDom.createPortal)(_react.default.createElement(_LayerContainer.LayerContainer, rest), this.layerContainer);
+    return (0, _reactDom.createPortal)(_react.default.createElement(_LayerContainer.LayerContainer, this.props), this.layerContainer);
   };
 
   return Layer;
@@ -92,5 +82,5 @@ if (process.env.NODE_ENV !== 'production') {
   LayerDoc = require('./doc').doc(Layer); // eslint-disable-line global-require
 }
 
-var LayerWrapper = (0, _recompose.compose)(_hocs.withTheme)(LayerDoc || Layer);
+var LayerWrapper = LayerDoc || Layer;
 exports.Layer = LayerWrapper;

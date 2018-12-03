@@ -5,13 +5,13 @@ exports.Diagram = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactDom = require("react-dom");
-
 var _recompose = require("recompose");
 
-var _utils = require("../../utils");
+var _styledComponents = require("styled-components");
 
-var _hocs = require("../hocs");
+var _defaultProps = require("../../default-props");
+
+var _utils = require("../../utils");
 
 var _StyledDiagram = require("./StyledDiagram");
 
@@ -67,10 +67,8 @@ var findTarget = function findTarget(target) {
   if (typeof target === 'string') {
     return document.getElementById(target);
   }
-  /* eslint-disable-next-line react/no-find-dom-node */
 
-
-  return (0, _reactDom.findDOMNode)(target);
+  return target;
 };
 
 var Diagram =
@@ -99,9 +97,7 @@ function (_Component) {
           connectionPoints = _this$state.connectionPoints,
           width = _this$state.width,
           height = _this$state.height;
-      /* eslint-disable-next-line react/no-find-dom-node */
-
-      var svg = (0, _reactDom.findDOMNode)(_this.svgRef.current);
+      var svg = _this.svgRef.current;
 
       if (svg) {
         var rect = svg.getBoundingClientRect();
@@ -138,9 +134,7 @@ function (_Component) {
 
   _proto.placeConnections = function placeConnections() {
     var connections = this.props.connections;
-    /* eslint-disable-next-line react/no-find-dom-node */
-
-    var containerRect = (0, _reactDom.findDOMNode)(this.svgRef.current).getBoundingClientRect();
+    var containerRect = this.svgRef.current.getBoundingClientRect();
     var connectionPoints = connections.map(function (_ref) {
       var anchor = _ref.anchor,
           fromTarget = _ref.fromTarget,
@@ -264,11 +258,12 @@ _defineProperty(Diagram, "defaultProps", {
   connections: []
 });
 
+Object.setPrototypeOf(Diagram.defaultProps, _defaultProps.defaultProps);
 var DiagramDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   DiagramDoc = require('./doc').doc(Diagram); // eslint-disable-line global-require
 }
 
-var DiagramWrapper = (0, _recompose.compose)(_hocs.withTheme)(DiagramDoc || Diagram);
+var DiagramWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(DiagramDoc || Diagram);
 exports.Diagram = DiagramWrapper;

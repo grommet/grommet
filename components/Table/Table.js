@@ -5,10 +5,6 @@ exports.Table = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _recompose = require("recompose");
-
-var _hocs = require("../hocs");
-
 var _StyledTable = require("./StyledTable");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -29,5 +25,5 @@ if (process.env.NODE_ENV !== 'production') {
   TableDoc = require('./doc').doc(Table); // eslint-disable-line global-require
 }
 
-var TableWrapper = (0, _recompose.compose)(_hocs.withTheme)(TableDoc || Table);
+var TableWrapper = TableDoc || Table;
 exports.Table = TableWrapper;

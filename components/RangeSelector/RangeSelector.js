@@ -5,8 +5,6 @@ exports.RangeSelector = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactDom = require("react-dom");
-
 var _recompose = require("recompose");
 
 var _Box = require("../Box");
@@ -51,9 +49,9 @@ function (_Component) {
           max = _this$props.max,
           min = _this$props.min,
           step = _this$props.step;
-      /* eslint-disable-next-line react/no-find-dom-node */
 
-      var rect = (0, _reactDom.findDOMNode)(_this.containerRef.current).getBoundingClientRect();
+      var rect = _this.containerRef.current.getBoundingClientRect();
+
       var value;
 
       if (direction === 'vertical') {
@@ -196,9 +194,8 @@ function (_Component) {
         round = _this$props4.round,
         size = _this$props4.size,
         step = _this$props4.step,
-        theme = _this$props4.theme,
         values = _this$props4.values,
-        rest = _objectWithoutPropertiesLoose(_this$props4, ["color", "direction", "forwardRef", "invert", "max", "messages", "min", "onChange", "opacity", "round", "size", "step", "theme", "values"]);
+        rest = _objectWithoutPropertiesLoose(_this$props4, ["color", "direction", "forwardRef", "invert", "max", "messages", "min", "onChange", "opacity", "round", "size", "step", "values"]);
 
     var _this$state2 = this.state,
         nextLower = _this$state2.nextLower,
@@ -230,7 +227,6 @@ function (_Component) {
       color: color,
       direction: direction,
       edge: "lower",
-      theme: theme,
       onMouseDown: onChange ? this.lowerMouseDown : undefined,
       onDecrease: onChange && lower - step >= min ? function () {
         return onChange([lower - step, upper]);
@@ -256,7 +252,6 @@ function (_Component) {
       color: color,
       direction: direction,
       edge: "upper",
-      theme: theme,
       onMouseDown: onChange ? this.upperMouseDown : undefined,
       onDecrease: onChange && upper - step >= lower ? function () {
         return onChange([lower, upper - step]);
@@ -300,5 +295,5 @@ if (process.env.NODE_ENV !== 'production') {
   RangeSelectorDoc = require('./doc').doc(RangeSelector); // eslint-disable-line global-require
 }
 
-var RangeSelectorWrapper = (0, _recompose.compose)(_hocs.withTheme, _hocs.withForwardRef)(RangeSelectorDoc || RangeSelector);
+var RangeSelectorWrapper = (0, _recompose.compose)(_hocs.withForwardRef)(RangeSelectorDoc || RangeSelector);
 exports.RangeSelector = RangeSelectorWrapper;

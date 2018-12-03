@@ -7,6 +7,8 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _utils = require("../../utils");
 
+var _defaultProps = require("../../default-props");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
@@ -25,6 +27,8 @@ var StyledRadioButtonContainer = _styledComponents.default.label.withConfig({
 });
 
 exports.StyledRadioButtonContainer = StyledRadioButtonContainer;
+StyledRadioButtonContainer.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonContainer.defaultProps, _defaultProps.defaultProps);
 
 var StyledRadioButtonInput = _styledComponents.default.input.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonInput",
@@ -34,6 +38,8 @@ var StyledRadioButtonInput = _styledComponents.default.input.withConfig({
 });
 
 exports.StyledRadioButtonInput = StyledRadioButtonInput;
+StyledRadioButtonInput.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonInput.defaultProps, _defaultProps.defaultProps);
 
 var StyledRadioButtonIcon = _styledComponents.default.svg.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonIcon",
@@ -49,6 +55,8 @@ var StyledRadioButtonIcon = _styledComponents.default.svg.withConfig({
 });
 
 exports.StyledRadioButtonIcon = StyledRadioButtonIcon;
+StyledRadioButtonIcon.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonIcon.defaultProps, _defaultProps.defaultProps);
 
 var StyledRadioButtonBox = _styledComponents.default.div.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonBox",
@@ -60,6 +68,8 @@ var StyledRadioButtonBox = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledRadioButtonBox = StyledRadioButtonBox;
+StyledRadioButtonBox.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonBox.defaultProps, _defaultProps.defaultProps);
 
 var StyledRadioButton = _styledComponents.default.div.withConfig({
   displayName: "StyledRadioButton",
@@ -69,3 +79,5 @@ var StyledRadioButton = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledRadioButton = StyledRadioButton;
+StyledRadioButton.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButton.defaultProps, _defaultProps.defaultProps);

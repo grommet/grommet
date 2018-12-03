@@ -5,11 +5,11 @@ exports.Menu = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactDom = require("react-dom");
-
 var _recompose = require("recompose");
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+
+var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
@@ -24,8 +24,6 @@ var _Text = require("../Text");
 var _hocs = require("../hocs");
 
 var _utils = require("../../utils");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -80,9 +78,8 @@ function (_Component) {
       if (activeItemIndex >= 0) {
         event.preventDefault();
         event.stopPropagation();
-        /* eslint-disable react/no-find-dom-node */
 
-        (0, _reactDom.findDOMNode)(_this.buttonRefs[activeItemIndex]).click();
+        _this.buttonRefs[activeItemIndex].click();
       }
     });
 
@@ -198,7 +195,6 @@ function (_Component) {
       dropAlign: dropAlign,
       dropTarget: dropTarget,
       open: open,
-      theme: theme,
       onOpen: function onOpen() {
         return _this2.setState({
           open: true
@@ -210,7 +206,6 @@ function (_Component) {
         });
       },
       dropContent: _react.default.createElement(ContainerBox, {
-        theme: theme,
         background: dropBackground || theme.menu.background
       }, dropAlign.top === 'top' ? controlMirror : undefined, _react.default.createElement(_Box.Box, {
         overflow: "auto"
@@ -257,11 +252,12 @@ _defineProperty(Menu, "defaultProps", {
   }
 });
 
+Object.setPrototypeOf(Menu.defaultProps, _defaultProps.defaultProps);
 var MenuDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   MenuDoc = require('./doc').doc(Menu); // eslint-disable-line global-require
 }
 
-var MenuWrapper = (0, _recompose.compose)(_hocs.withTheme, _hocs.withForwardRef)(MenuDoc || Menu);
+var MenuWrapper = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef)(MenuDoc || Menu);
 exports.Menu = MenuWrapper;

@@ -7,6 +7,10 @@ var _react = _interopRequireDefault(require("react"));
 
 var _recompose = require("recompose");
 
+var _styledComponents = require("styled-components");
+
+var _defaultProps = require("../../default-props");
+
 var _Box = require("../Box");
 
 var _TableRow = require("../TableRow");
@@ -14,8 +18,6 @@ var _TableRow = require("../TableRow");
 var _TableFooter = require("../TableFooter");
 
 var _TableCell = require("../TableCell");
-
-var _hocs = require("../hocs");
 
 var _Cell = require("./Cell");
 
@@ -45,11 +47,12 @@ var Footer = function Footer(_ref) {
       key: column.property,
       context: "footer",
       column: column,
-      datum: footerValues,
-      theme: theme
+      datum: footerValues
     });
   })));
 };
 
-var FooterWrapper = (0, _recompose.compose)(_hocs.withTheme)(Footer);
+Footer.defaultProps = {};
+Object.setPrototypeOf(Footer.defaultProps, _defaultProps.defaultProps);
+var FooterWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Footer);
 exports.Footer = FooterWrapper;

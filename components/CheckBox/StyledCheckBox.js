@@ -7,6 +7,8 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _utils = require("../../utils");
 
+var _defaultProps = require("../../default-props");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
@@ -30,6 +32,8 @@ var StyledCheckBoxIcon = _styledComponents.default.svg.withConfig({
 });
 
 exports.StyledCheckBoxIcon = StyledCheckBoxIcon;
+StyledCheckBoxIcon.defaultProps = {};
+Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, _defaultProps.defaultProps);
 
 var StyledCheckBoxContainer = _styledComponents.default.label.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxContainer",
@@ -45,6 +49,8 @@ var StyledCheckBoxContainer = _styledComponents.default.label.withConfig({
 });
 
 exports.StyledCheckBoxContainer = StyledCheckBoxContainer;
+StyledCheckBoxContainer.defaultProps = {};
+Object.setPrototypeOf(StyledCheckBoxContainer.defaultProps, _defaultProps.defaultProps);
 
 var StyledCheckBoxInput = _styledComponents.default.input.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxInput",
@@ -60,6 +66,8 @@ var StyledCheckBoxInput = _styledComponents.default.input.withConfig({
 });
 
 exports.StyledCheckBoxInput = StyledCheckBoxInput;
+StyledCheckBoxInput.defaultProps = {};
+Object.setPrototypeOf(StyledCheckBoxInput.defaultProps, _defaultProps.defaultProps);
 
 var StyledCheckBoxBox = _styledComponents.default.div.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxBox",
@@ -69,6 +77,8 @@ var StyledCheckBoxBox = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledCheckBoxBox = StyledCheckBoxBox;
+StyledCheckBoxBox.defaultProps = {};
+Object.setPrototypeOf(StyledCheckBoxBox.defaultProps, _defaultProps.defaultProps);
 
 var StyledCheckBoxToggle = _styledComponents.default.span.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxToggle",
@@ -92,6 +102,8 @@ var StyledCheckBoxToggle = _styledComponents.default.span.withConfig({
 });
 
 exports.StyledCheckBoxToggle = StyledCheckBoxToggle;
+StyledCheckBoxToggle.defaultProps = {};
+Object.setPrototypeOf(StyledCheckBoxToggle.defaultProps, _defaultProps.defaultProps);
 
 var StyledCheckBoxKnob = _styledComponents.default.span.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxKnob",
@@ -113,6 +125,8 @@ var StyledCheckBoxKnob = _styledComponents.default.span.withConfig({
 });
 
 exports.StyledCheckBoxKnob = StyledCheckBoxKnob;
+StyledCheckBoxKnob.defaultProps = {};
+Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, _defaultProps.defaultProps);
 
 var StyledCheckBox = _styledComponents.default.div.withConfig({
   displayName: "StyledCheckBox",
@@ -120,3 +134,5 @@ var StyledCheckBox = _styledComponents.default.div.withConfig({
 })(["position:relative;"]);
 
 exports.StyledCheckBox = StyledCheckBox;
+StyledCheckBox.defaultProps = {};
+Object.setPrototypeOf(StyledCheckBox.defaultProps, _defaultProps.defaultProps);

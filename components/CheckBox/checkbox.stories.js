@@ -334,6 +334,7 @@ function (_Component5) {
       gap: "medium"
     }, checkboxes.map(function (item) {
       return _react.default.createElement(_grommet.CheckBox, {
+        key: item,
         checked: checked.indexOf(item) !== -1,
         label: _react.default.createElement(_grommet.Text, null, item),
         onChange: function onChange(e) {

@@ -7,11 +7,15 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
+var _styledComponents = require("styled-components");
+
+var _object = require("../../utils/object");
+
+var _defaultProps = require("../../default-props");
+
 var _Box = require("../Box");
 
 var _hocs = require("../hocs");
-
-var _object = require("../../utils/object");
 
 var _StyledCheckBox = require("./StyledCheckBox");
 
@@ -88,11 +92,8 @@ function (_Component) {
 
     var visual = toggle ? _react.default.createElement(_StyledCheckBox.StyledCheckBoxToggle, {
       focus: focus,
-      theme: theme,
       checked: checked
-    }, _react.default.createElement(_StyledCheckBox.StyledCheckBoxKnob, {
-      theme: theme
-    })) : _react.default.createElement(_StyledCheckBox.StyledCheckBoxBox, {
+    }, _react.default.createElement(_StyledCheckBox.StyledCheckBoxKnob, null)) : _react.default.createElement(_StyledCheckBox.StyledCheckBoxBox, {
       as: _Box.Box,
       align: "center",
       justify: "center",
@@ -104,25 +105,24 @@ function (_Component) {
       },
       round: theme.checkBox.check.radius,
       focus: focus,
-      theme: theme,
       checked: checked
     }, !indeterminate && checked && (CheckedIcon ? _react.default.createElement(CheckedIcon, {
-      as: _StyledCheckBox.StyledCheckBoxIcon,
-      theme: theme
+      theme: theme,
+      as: _StyledCheckBox.StyledCheckBoxIcon
     }) : _react.default.createElement(_StyledCheckBox.StyledCheckBoxIcon, {
+      theme: theme,
       viewBox: "0 0 24 24",
-      preserveAspectRatio: "xMidYMid meet",
-      theme: theme
+      preserveAspectRatio: "xMidYMid meet"
     }, _react.default.createElement("path", {
       fill: "none",
       d: "M6,11.3 L10.3,16 L18,6.2"
     }))), !checked && indeterminate && (IndeterminateIcon ? _react.default.createElement(IndeterminateIcon, {
-      as: _StyledCheckBox.StyledCheckBoxIcon,
-      theme: theme
+      theme: theme,
+      as: _StyledCheckBox.StyledCheckBoxIcon
     }) : _react.default.createElement(_StyledCheckBox.StyledCheckBoxIcon, {
+      theme: theme,
       viewBox: "0 0 24 24",
-      preserveAspectRatio: "xMidYMid meet",
-      theme: theme
+      preserveAspectRatio: "xMidYMid meet"
     }, _react.default.createElement("path", {
       fill: "none",
       d: "M6,12 L18,12"
@@ -131,8 +131,7 @@ function (_Component) {
     var checkBoxNode = _react.default.createElement(_StyledCheckBox.StyledCheckBox, {
       as: _Box.Box,
       align: "center",
-      justify: "center",
-      theme: theme
+      justify: "center"
     }, _react.default.createElement(_StyledCheckBox.StyledCheckBoxInput, _extends({}, rest, {
       ref: forwardRef,
       type: "checkbox"
@@ -143,7 +142,6 @@ function (_Component) {
       disabled: disabled,
       onChange: onChange
     }), {
-      theme: theme,
       checked: checked,
       disabled: disabled
     })), visual, hidden);
@@ -164,7 +162,6 @@ function (_Component) {
       htmlFor: id,
       disabled: disabled
     }), {
-      theme: theme,
       gap: theme.checkBox.gap || 'small',
       checked: checked,
       onClick: function onClick(event) {
@@ -180,11 +177,13 @@ function (_Component) {
   return CheckBox;
 }(_react.Component);
 
+CheckBox.defaultProps = {};
+Object.setPrototypeOf(CheckBox.defaultProps, _defaultProps.defaultProps);
 var CheckBoxDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   CheckBoxDoc = require('./doc').doc(CheckBox); // eslint-disable-line global-require
 }
 
-var CheckBoxWrapper = (0, _recompose.compose)(_hocs.withFocus, _hocs.withTheme, _hocs.withForwardRef)(CheckBoxDoc || CheckBox);
+var CheckBoxWrapper = (0, _recompose.compose)(_hocs.withFocus, _styledComponents.withTheme, _hocs.withForwardRef)(CheckBoxDoc || CheckBox);
 exports.CheckBox = CheckBoxWrapper;

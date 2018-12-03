@@ -7,6 +7,8 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _utils = require("../../utils");
 
+var _defaultProps = require("../../default-props");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 var placeholderColor = (0, _styledComponents.css)(["color:", ";"], function (props) {
@@ -34,6 +36,8 @@ var StyledTextInput = _styledComponents.default.input.withConfig({
 });
 
 exports.StyledTextInput = StyledTextInput;
+StyledTextInput.defaultProps = {};
+Object.setPrototypeOf(StyledTextInput.defaultProps, _defaultProps.defaultProps);
 
 var StyledTextInputContainer = _styledComponents.default.div.withConfig({
   displayName: "StyledTextInput__StyledTextInputContainer",
@@ -41,6 +45,8 @@ var StyledTextInputContainer = _styledComponents.default.div.withConfig({
 })(["position:relative;width:100%;"]);
 
 exports.StyledTextInputContainer = StyledTextInputContainer;
+StyledTextInputContainer.defaultProps = {};
+Object.setPrototypeOf(StyledTextInputContainer.defaultProps, _defaultProps.defaultProps);
 
 var StyledPlaceholder = _styledComponents.default.div.withConfig({
   displayName: "StyledTextInput__StyledPlaceholder",
@@ -50,6 +56,8 @@ var StyledPlaceholder = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledPlaceholder = StyledPlaceholder;
+StyledPlaceholder.defaultProps = {};
+Object.setPrototypeOf(StyledPlaceholder.defaultProps, _defaultProps.defaultProps);
 
 var StyledSuggestions = _styledComponents.default.ol.withConfig({
   displayName: "StyledTextInput__StyledSuggestions",
@@ -57,3 +65,5 @@ var StyledSuggestions = _styledComponents.default.ol.withConfig({
 })(["border-top-left-radius:0;border-top-right-radius:0;margin:0;padding:0;list-style-type:none;"]);
 
 exports.StyledSuggestions = StyledSuggestions;
+StyledSuggestions.defaultProps = {};
+Object.setPrototypeOf(StyledSuggestions.defaultProps, _defaultProps.defaultProps);

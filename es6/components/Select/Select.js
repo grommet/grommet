@@ -10,13 +10,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Component } from 'react';
 import { compose } from 'recompose';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
+import { controlBorderStyle, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { TextInput } from '../TextInput';
-import { withForwardRef, withTheme } from '../hocs';
-import { controlBorderStyle, normalizeColor } from '../../utils';
+import { withForwardRef } from '../hocs';
 import { SelectContainer } from './SelectContainer';
 var SelectTextInput = styled(TextInput).withConfig({
   displayName: "Select__SelectTextInput",
@@ -30,6 +31,8 @@ var StyledSelectBox = styled(Box).withConfig({
 }, function (props) {
   return props.theme.select && props.theme.select.control && props.theme.select.control.extend;
 });
+StyledSelectBox.defaultProps = {};
+Object.setPrototypeOf(StyledSelectBox.defaultProps, defaultProps);
 
 var Select =
 /*#__PURE__*/
@@ -199,8 +202,7 @@ function (_Component) {
       direction: "row",
       justify: "between",
       background: theme.select.background,
-      plain: plain,
-      theme: theme
+      plain: plain
     }, React.createElement(Box, {
       direction: "row",
       flex: true,
@@ -245,6 +247,7 @@ _defineProperty(Select, "defaultProps", {
   }
 });
 
+Object.setPrototypeOf(Select.defaultProps, defaultProps);
 var SelectDoc;
 
 if (process.env.NODE_ENV !== 'production') {

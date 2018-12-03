@@ -9,9 +9,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { Component, Children } from 'react';
-import { compose } from 'recompose';
 import { Box } from '../Box';
-import { withTheme } from '../hocs';
 import { AccordionContext } from './AccordionContext';
 
 var activeAsArray = function activeAsArray(active) {
@@ -128,5 +126,5 @@ if (process.env.NODE_ENV !== 'production') {
   AccordionDoc = require('./doc').doc(Accordion); // eslint-disable-line global-require
 }
 
-var AccordionWrapper = compose(withTheme)(AccordionDoc || Accordion);
+var AccordionWrapper = AccordionDoc || Accordion;
 export { AccordionWrapper as Accordion };

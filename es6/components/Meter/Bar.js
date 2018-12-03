@@ -3,10 +3,14 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
+import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
-export var Bar = function Bar(props) {
+
+var Bar = function Bar(props) {
   var background = props.background,
       max = props.max,
       round = props.round,
@@ -70,8 +74,7 @@ export var Bar = function Bar(props) {
     height: height,
     round: round ? {
       size: thickness
-    } : undefined,
-    theme: theme
+    } : undefined
   }, rest), React.createElement("path", _extends({
     d: "M " + capOffset + "," + mid + " L " + (width - capOffset) + "," + mid,
     fill: "none"
@@ -80,6 +83,10 @@ export var Bar = function Bar(props) {
     strokeLinecap: round ? 'round' : 'square'
   })), paths);
 };
+
 Bar.defaultProps = {
   background: 'light-1'
 };
+Object.setPrototypeOf(Bar.defaultProps, defaultProps);
+var BarWrapper = compose(withTheme)(Bar);
+export { BarWrapper as Bar };

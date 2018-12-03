@@ -11,7 +11,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 import { Keyboard } from '../Keyboard';
-import { withFocus, withForwardRef, withTheme } from '../hocs';
+import { withFocus, withForwardRef } from '../hocs';
 import { StyledTextArea } from './StyledTextArea';
 
 var TextArea =
@@ -63,5 +63,5 @@ if (process.env.NODE_ENV !== 'production') {
   TextAreaDoc = require('./doc').doc(TextArea); // eslint-disable-line global-require
 }
 
-var TextAreaWrapper = compose(withFocus, withTheme, withForwardRef)(TextAreaDoc || TextArea);
+var TextAreaWrapper = compose(withFocus, withForwardRef)(TextAreaDoc || TextArea);
 export { TextAreaWrapper as TextArea };

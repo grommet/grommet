@@ -5,11 +5,11 @@ exports.SelectContainer = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _utils = require("../../utils");
 
-var _hocs = require("../hocs");
+var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
@@ -22,8 +22,6 @@ var _Text = require("../Text");
 var _TextInput = require("../TextInput");
 
 var _SelectOption = require("./SelectOption");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -147,7 +145,7 @@ function (_Component) {
         var buttonNode = _this.optionsRef[index];
         var selectNode = _this.selectRef.current;
 
-        if ((0, _utils.isNodeAfterScroll)(buttonNode, selectNode) && selectNode.scrollBy) {
+        if (buttonNode && (0, _utils.isNodeAfterScroll)(buttonNode, selectNode) && selectNode.scrollBy) {
           selectNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
         }
       });
@@ -164,7 +162,7 @@ function (_Component) {
         var buttonNode = _this.optionsRef[index];
         var selectNode = _this.selectRef.current;
 
-        if ((0, _utils.isNodeBeforeScroll)(buttonNode, selectNode) && selectNode.scrollBy) {
+        if (buttonNode && (0, _utils.isNodeBeforeScroll)(buttonNode, selectNode) && selectNode.scrollBy) {
           selectNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
         }
       });
@@ -371,8 +369,7 @@ function (_Component) {
       onDown: this.onNextOption,
       onKeyDown: onKeyDown
     }, _react.default.createElement(ContainerBox, {
-      id: id ? id + "__select-drop" : undefined,
-      theme: theme
+      id: id ? id + "__select-drop" : undefined
     }, onSearch && _react.default.createElement(_Box.Box, {
       pad: !customSearchInput ? 'xsmall' : undefined,
       flex: false
@@ -389,8 +386,7 @@ function (_Component) {
       role: "menubar",
       tabIndex: "-1",
       ref: this.selectRef,
-      overflow: "auto",
-      theme: theme
+      overflow: "auto"
     }, _react.default.createElement(_InfiniteScroll.InfiniteScroll, {
       items: options,
       step: theme.select.step
@@ -401,7 +397,7 @@ function (_Component) {
 
       var isActive = isSelected || activeIndex === index;
       return _react.default.createElement(_SelectOption.SelectOption, {
-        key: _this3.optionValue(index),
+        key: "option_" + index,
         ref: function ref(_ref) {
           _this3.optionsRef[index] = _ref;
         },
@@ -442,5 +438,6 @@ _defineProperty(SelectContainer, "defaultProps", {
   value: ''
 });
 
-var SelectContainerWrapper = (0, _hocs.withTheme)(SelectContainer);
+Object.setPrototypeOf(SelectContainer.defaultProps, _defaultProps.defaultProps);
+var SelectContainerWrapper = (0, _styledComponents.withTheme)(SelectContainer);
 exports.SelectContainer = SelectContainerWrapper;

@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { genericStyles } from '../../utils';
+import { defaultProps } from '../../default-props';
 var FIT_MAP = {
   cover: 'cover',
   contain: 'contain'
@@ -7,7 +8,7 @@ var FIT_MAP = {
 var fitStyle = css(["flex:1 1;overflow:hidden;object-fit:", ";"], function (props) {
   return FIT_MAP[props.fit];
 });
-export var StyledImage = styled.img.withConfig({
+var StyledImage = styled.img.withConfig({
   displayName: "StyledImage",
   componentId: "ey4zx9-0"
 })(["", " ", " ", ""], genericStyles, function (props) {
@@ -15,3 +16,6 @@ export var StyledImage = styled.img.withConfig({
 }, function (props) {
   return props.theme.image && props.theme.image.extend;
 });
+StyledImage.defaultProps = {};
+Object.setPrototypeOf(StyledImage.defaultProps, defaultProps);
+export { StyledImage };

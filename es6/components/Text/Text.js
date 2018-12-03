@@ -3,8 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import { compose } from 'recompose';
-import { withTheme } from '../hocs';
 import { StyledText } from './StyledText';
 
 var Text = function Text(_ref) {
@@ -28,5 +26,5 @@ if (process.env.NODE_ENV !== 'production') {
   TextDoc = require('./doc').doc(Text); // eslint-disable-line global-require
 }
 
-var TextWrapper = compose(withTheme)(TextDoc || Text);
+var TextWrapper = TextDoc || Text;
 export { TextWrapper as Text };

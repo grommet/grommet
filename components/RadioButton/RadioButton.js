@@ -7,6 +7,10 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
+var _styledComponents = require("styled-components");
+
+var _defaultProps = require("../../default-props");
+
 var _utils = require("../../utils");
 
 var _Box = require("../Box");
@@ -67,7 +71,6 @@ function (_Component) {
       htmlFor: id,
       disabled: disabled
     }), {
-      theme: theme,
       onClick: function onClick(event) {
         // prevents clicking on the label trigging the event twice
         // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
@@ -79,8 +82,7 @@ function (_Component) {
       as: _Box.Box,
       margin: {
         right: theme.radioButton.gap || 'small'
-      },
-      theme: theme
+      }
     }, _react.default.createElement(_StyledRadioButton.StyledRadioButtonInput, _extends({}, rest, {
       ref: forwardRef,
       type: "radio"
@@ -90,10 +92,7 @@ function (_Component) {
       checked: checked,
       disabled: disabled,
       onChange: onChange
-    }), {
-      theme: theme
-    })), _react.default.createElement(_StyledRadioButton.StyledRadioButtonBox, {
-      theme: theme,
+    }))), _react.default.createElement(_StyledRadioButton.StyledRadioButtonBox, {
       focus: focus,
       as: _Box.Box,
       align: "center",
@@ -106,12 +105,10 @@ function (_Component) {
       },
       round: theme.radioButton.check.radius
     }, checked && (Icon ? _react.default.createElement(Icon, {
-      as: _StyledRadioButton.StyledRadioButtonIcon,
-      theme: theme
+      as: _StyledRadioButton.StyledRadioButtonIcon
     }) : _react.default.createElement(_StyledRadioButton.StyledRadioButtonIcon, {
       viewBox: "0 0 24 24",
-      preserveAspectRatio: "xMidYMid meet",
-      theme: theme
+      preserveAspectRatio: "xMidYMid meet"
     }, _react.default.createElement("circle", {
       cx: 12,
       cy: 12,
@@ -122,11 +119,13 @@ function (_Component) {
   return RadioButton;
 }(_react.Component);
 
+RadioButton.defaultProps = {};
+Object.setPrototypeOf(RadioButton.defaultProps, _defaultProps.defaultProps);
 var RadioButtonDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   RadioButtonDoc = require('./doc').doc(RadioButton); // eslint-disable-line global-require
 }
 
-var RadioButtonWrapper = (0, _recompose.compose)(_hocs.withFocus, _hocs.withTheme, _hocs.withForwardRef)(RadioButtonDoc || RadioButton);
+var RadioButtonWrapper = (0, _recompose.compose)(_hocs.withFocus, _styledComponents.withTheme, _hocs.withForwardRef)(RadioButtonDoc || RadioButton);
 exports.RadioButton = RadioButtonWrapper;

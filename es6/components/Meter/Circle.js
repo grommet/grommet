@@ -3,10 +3,14 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
+import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
-export var Circle = function Circle(props) {
+
+var Circle = function Circle(props) {
   var background = props.background,
       max = props.max,
       round = props.round,
@@ -110,8 +114,7 @@ export var Circle = function Circle(props) {
   return React.createElement(StyledMeter, _extends({
     viewBox: "0 0 " + width + " " + width,
     width: size === 'full' ? '100%' : width,
-    height: size === 'full' ? '100%' : width,
-    theme: theme
+    height: size === 'full' ? '100%' : width
   }, rest), React.createElement("circle", _extends({
     cx: mid,
     cy: mid,
@@ -122,3 +125,8 @@ export var Circle = function Circle(props) {
     fill: "none"
   })), paths, pathCaps);
 };
+
+Circle.defaultProps = {};
+Object.setPrototypeOf(Circle.defaultProps, defaultProps);
+var CircleWrapper = compose(withTheme)(Circle);
+export { CircleWrapper as Circle };

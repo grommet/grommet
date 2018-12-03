@@ -5,11 +5,7 @@ exports.Accordion = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
 var _Box = require("../Box");
-
-var _hocs = require("../hocs");
 
 var _AccordionContext = require("./AccordionContext");
 
@@ -139,5 +135,5 @@ if (process.env.NODE_ENV !== 'production') {
   AccordionDoc = require('./doc').doc(Accordion); // eslint-disable-line global-require
 }
 
-var AccordionWrapper = (0, _recompose.compose)(_hocs.withTheme)(AccordionDoc || Accordion);
+var AccordionWrapper = AccordionDoc || Accordion;
 exports.Accordion = AccordionWrapper;

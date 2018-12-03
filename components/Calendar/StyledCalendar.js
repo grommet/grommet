@@ -7,6 +7,8 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _utils = require("../../utils");
 
+var _defaultProps = require("../../default-props");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 var sizeStyle = function sizeStyle(props) {
@@ -24,6 +26,8 @@ var StyledCalendar = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledCalendar = StyledCalendar;
+StyledCalendar.defaultProps = {};
+Object.setPrototypeOf(StyledCalendar.defaultProps, _defaultProps.defaultProps);
 
 var StyledWeeksContainer = _styledComponents.default.div.withConfig({
   displayName: "StyledCalendar__StyledWeeksContainer",
@@ -33,6 +37,8 @@ var StyledWeeksContainer = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledWeeksContainer = StyledWeeksContainer;
+StyledWeeksContainer.defaultProps = {};
+Object.setPrototypeOf(StyledWeeksContainer.defaultProps, _defaultProps.defaultProps);
 
 var slideStyle = function slideStyle(props) {
   var _props$slide = props.slide,
@@ -58,6 +64,8 @@ var StyledWeeks = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledWeeks = StyledWeeks;
+StyledWeeks.defaultProps = {};
+Object.setPrototypeOf(StyledWeeks.defaultProps, _defaultProps.defaultProps);
 
 var StyledWeek = _styledComponents.default.div.withConfig({
   displayName: "StyledCalendar__StyledWeek",
@@ -65,6 +73,8 @@ var StyledWeek = _styledComponents.default.div.withConfig({
 })(["display:flex;flex-direction:row;flex-justify:between;"]);
 
 exports.StyledWeek = StyledWeek;
+StyledWeek.defaultProps = {};
+Object.setPrototypeOf(StyledWeek.defaultProps, _defaultProps.defaultProps);
 
 var StyledDayContainer = _styledComponents.default.div.withConfig({
   displayName: "StyledCalendar__StyledDayContainer",
@@ -72,6 +82,8 @@ var StyledDayContainer = _styledComponents.default.div.withConfig({
 })(["flex:0 0 auto;"]);
 
 exports.StyledDayContainer = StyledDayContainer;
+StyledDayContainer.defaultProps = {};
+Object.setPrototypeOf(StyledDayContainer.defaultProps, _defaultProps.defaultProps);
 
 var daySizeStyle = function daySizeStyle(props) {
   var data = props.theme.calendar[props.sizeProp];
@@ -95,3 +107,5 @@ var StyledDay = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledDay = StyledDay;
+StyledDay.defaultProps = {};
+Object.setPrototypeOf(StyledDay.defaultProps, _defaultProps.defaultProps);

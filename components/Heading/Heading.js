@@ -5,10 +5,6 @@ exports.Heading = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _recompose = require("recompose");
-
-var _hocs = require("../hocs");
-
 var _StyledHeading = require("./StyledHeading");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -40,5 +36,5 @@ if (process.env.NODE_ENV !== 'production') {
   HeadingDoc = require('./doc').doc(Heading); // eslint-disable-line global-require
 }
 
-var HeadingWrapper = (0, _recompose.compose)(_hocs.withTheme)(HeadingDoc || Heading);
+var HeadingWrapper = HeadingDoc || Heading;
 exports.Heading = HeadingWrapper;

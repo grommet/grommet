@@ -7,6 +7,8 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _utils = require("../../utils");
 
+var _defaultProps = require("../../default-props");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var fillStyle = "\n  width: 100%;\n  height: 100%;\n  max-width: none;\n  flex-grow: 1;\n  display: flex;\n";
@@ -21,6 +23,8 @@ var StyledStack = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledStack = StyledStack;
+StyledStack.defaultProps = {};
+Object.setPrototypeOf(StyledStack.defaultProps, _defaultProps.defaultProps);
 var styleMap = {
   fill: "\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n  ",
   center: "\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n  ",
@@ -48,3 +52,5 @@ var StyledStackLayer = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledStackLayer = StyledStackLayer;
+StyledStackLayer.defaultProps = {};
+Object.setPrototypeOf(StyledStackLayer.defaultProps, _defaultProps.defaultProps);

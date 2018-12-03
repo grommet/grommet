@@ -10,13 +10,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Component, isValidElement } from 'react';
 import { compose } from 'recompose';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
-import { withAnnounce, withFocus, withForwardRef, withTheme } from '../hocs';
+import { withAnnounce, withFocus, withForwardRef } from '../hocs';
 import { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledSuggestions } from './StyledTextInput';
 
 function renderLabel(suggestion) {
@@ -292,9 +293,7 @@ function (_Component) {
       var _this$state3 = _this.state,
           activeSuggestionIndex = _this$state3.activeSuggestionIndex,
           selectedSuggestionIndex = _this$state3.selectedSuggestionIndex;
-      return React.createElement(StyledSuggestions, {
-        theme: theme
-      }, React.createElement(InfiniteScroll, {
+      return React.createElement(StyledSuggestions, null, React.createElement(InfiniteScroll, {
         items: suggestions,
         step: theme.select.step
       }, function (suggestion, index) {
@@ -406,9 +405,7 @@ function (_Component) {
 
     return React.createElement(StyledTextInputContainer, {
       plain: plain
-    }, placeholder && typeof placeholder !== 'string' && !value ? React.createElement(StyledPlaceholder, {
-      theme: theme
-    }, placeholder) : null, React.createElement(Keyboard, {
+    }, placeholder && typeof placeholder !== 'string' && !value ? React.createElement(StyledPlaceholder, null, placeholder) : null, React.createElement(Keyboard, {
       onEnter: this.onSuggestionSelect,
       onEsc: this.onEsc,
       onTab: this.onTab,
@@ -420,8 +417,7 @@ function (_Component) {
       ref: forwardRef || this.inputRef,
       autoComplete: "off",
       plain: plain,
-      placeholder: typeof placeholder === 'string' ? placeholder : undefined,
-      theme: theme
+      placeholder: typeof placeholder === 'string' ? placeholder : undefined
     }, rest, {
       defaultValue: renderLabel(defaultValue),
       value: renderLabel(value),
@@ -447,6 +443,7 @@ _defineProperty(TextInput, "defaultProps", {
   }
 });
 
+Object.setPrototypeOf(TextInput.defaultProps, defaultProps);
 var TextInputDoc;
 
 if (process.env.NODE_ENV !== 'production') {

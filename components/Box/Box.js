@@ -7,11 +7,15 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
+var _styledComponents = require("styled-components");
+
 var _contexts = require("grommet-icons/contexts");
 
 var _contexts2 = require("../../contexts");
 
 var _utils = require("../../utils");
+
+var _defaultProps = require("../../default-props");
 
 var _hocs = require("../hocs");
 
@@ -106,7 +110,6 @@ function (_Component) {
     var _this$state = this.state,
         stateTheme = _this$state.theme,
         priorTheme = _this$state.priorTheme;
-    var theme = stateTheme || propsTheme;
     var contents = children;
 
     if (gap) {
@@ -122,8 +125,7 @@ function (_Component) {
               key: index,
               gap: gap,
               directionProp: direction,
-              responsive: responsive,
-              theme: theme
+              responsive: responsive
             }));
           }
         }
@@ -144,7 +146,6 @@ function (_Component) {
       widthProp: width,
       heightProp: height,
       responsive: responsive,
-      theme: theme,
       priorTheme: priorTheme
     }, rest), contents);
 
@@ -173,11 +174,12 @@ _defineProperty(Box, "defaultProps", {
   responsive: true
 });
 
+Object.setPrototypeOf(Box.defaultProps, _defaultProps.defaultProps);
 var BoxDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
 }
 
-var BoxWrapper = (0, _recompose.compose)(_hocs.withTheme, _hocs.withForwardRef)(BoxDoc || Box);
+var BoxWrapper = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef)(BoxDoc || Box);
 exports.Box = BoxWrapper;

@@ -7,6 +7,12 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
+var _styledComponents = require("styled-components");
+
+var _utils = require("../../utils");
+
+var _defaultProps = require("../../default-props");
+
 var _Box = require("../Box");
 
 var _Button = require("../Button");
@@ -16,8 +22,6 @@ var _Collapsible = require("../Collapsible");
 var _Heading = require("../Heading");
 
 var _hocs = require("../hocs");
-
-var _utils = require("../../utils");
 
 var _AccordionContext = require("../Accordion/AccordionContext");
 
@@ -187,11 +191,13 @@ function (_Component) {
   return AccordionPanel;
 }(_react.Component);
 
+AccordionPanel.defaultProps = {};
+Object.setPrototypeOf(AccordionPanel.defaultProps, _defaultProps.defaultProps);
 var AccordionPanelDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   AccordionPanelDoc = require('./doc').doc(AccordionPanel); // eslint-disable-line global-require
 }
 
-var AccordionPanelWrapper = (0, _recompose.compose)(_hocs.withTheme, _hocs.withForwardRef)(AccordionPanelDoc || AccordionPanel);
+var AccordionPanelWrapper = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef)(AccordionPanelDoc || AccordionPanel);
 exports.AccordionPanel = AccordionPanelWrapper;

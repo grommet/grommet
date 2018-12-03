@@ -7,7 +7,11 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
+var _styledComponents = require("styled-components");
+
 var _utils = require("../../utils");
+
+var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
@@ -98,7 +102,6 @@ function (_Component) {
       onClick: onClick,
       plain: typeof plain !== 'undefined' ? plain : _react.Children.count(children) > 0 || icon && !label,
       primary: primary,
-      theme: theme,
       type: !href ? type : undefined
     }), first || second ? _react.default.createElement(_Box.Box, {
       direction: "row",
@@ -116,11 +119,12 @@ _defineProperty(Button, "defaultProps", {
   focusIndicator: true
 });
 
+Object.setPrototypeOf(Button.defaultProps, _defaultProps.defaultProps);
 var ButtonDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   ButtonDoc = require('./doc').doc(Button); // eslint-disable-line global-require
 }
 
-var ButtonWrapper = (0, _recompose.compose)(_hocs.withFocus, _hocs.withTheme, _hocs.withForwardRef)(ButtonDoc || Button);
+var ButtonWrapper = (0, _recompose.compose)(_hocs.withFocus, _styledComponents.withTheme, _hocs.withForwardRef)(ButtonDoc || Button);
 exports.Button = ButtonWrapper;

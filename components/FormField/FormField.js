@@ -7,6 +7,10 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
+var _styledComponents = require("styled-components");
+
+var _defaultProps = require("../../default-props");
+
 var _utils = require("../../utils");
 
 var _Box = require("../Box");
@@ -135,11 +139,13 @@ function (_Component) {
   return FormField;
 }(_react.Component);
 
+FormField.defaultProps = {};
+Object.setPrototypeOf(FormField.defaultProps, _defaultProps.defaultProps);
 var FormFieldDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   FormFieldDoc = require('./doc').doc(FormField); // eslint-disable-line global-require
 }
 
-var FormFieldWrapper = (0, _recompose.compose)(_hocs.withFocus, _hocs.withTheme)(FormFieldDoc || FormField);
+var FormFieldWrapper = (0, _recompose.compose)(_hocs.withFocus, _styledComponents.withTheme)(FormFieldDoc || FormField);
 exports.FormField = FormFieldWrapper;

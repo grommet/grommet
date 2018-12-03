@@ -1,12 +1,13 @@
 import styled, { css, keyframes } from 'styled-components';
 import { backgroundStyle, genericStyles, parseMetricToNum } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 var sizeStyle = function sizeStyle(props) {
   var data = props.theme.calendar[props.sizeProp];
   return css(["font-size:", ";line-height:", ";width:", ";"], data.fontSize, data.lineHeight, props.theme.global.size[props.sizeProp]);
 };
 
-export var StyledCalendar = styled.div.withConfig({
+var StyledCalendar = styled.div.withConfig({
   displayName: "StyledCalendar",
   componentId: "sc-1y4xhmp-0"
 })(["", " ", " ", ""], genericStyles, function (props) {
@@ -14,12 +15,16 @@ export var StyledCalendar = styled.div.withConfig({
 }, function (props) {
   return props.theme.calendar && props.theme.calendar.extend;
 });
-export var StyledWeeksContainer = styled.div.withConfig({
+StyledCalendar.defaultProps = {};
+Object.setPrototypeOf(StyledCalendar.defaultProps, defaultProps);
+var StyledWeeksContainer = styled.div.withConfig({
   displayName: "StyledCalendar__StyledWeeksContainer",
   componentId: "sc-1y4xhmp-1"
 })(["overflow:hidden;", ";"], function (props) {
   return "height: " + parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) * 6 + "px;";
 });
+StyledWeeksContainer.defaultProps = {};
+Object.setPrototypeOf(StyledWeeksContainer.defaultProps, defaultProps);
 
 var slideStyle = function slideStyle(props) {
   var _props$slide = props.slide,
@@ -37,27 +42,33 @@ var slideStyle = function slideStyle(props) {
   return css(["animation:", " ", " forwards;"], keyframes(["", ""], slideTransition), slideDuration);
 };
 
-export var StyledWeeks = styled.div.withConfig({
+var StyledWeeks = styled.div.withConfig({
   displayName: "StyledCalendar__StyledWeeks",
   componentId: "sc-1y4xhmp-2"
 })(["position:relative;", ";"], function (props) {
   return props.slide && slideStyle(props);
 });
-export var StyledWeek = styled.div.withConfig({
+StyledWeeks.defaultProps = {};
+Object.setPrototypeOf(StyledWeeks.defaultProps, defaultProps);
+var StyledWeek = styled.div.withConfig({
   displayName: "StyledCalendar__StyledWeek",
   componentId: "sc-1y4xhmp-3"
 })(["display:flex;flex-direction:row;flex-justify:between;"]);
-export var StyledDayContainer = styled.div.withConfig({
+StyledWeek.defaultProps = {};
+Object.setPrototypeOf(StyledWeek.defaultProps, defaultProps);
+var StyledDayContainer = styled.div.withConfig({
   displayName: "StyledCalendar__StyledDayContainer",
   componentId: "sc-1y4xhmp-4"
 })(["flex:0 0 auto;"]);
+StyledDayContainer.defaultProps = {};
+Object.setPrototypeOf(StyledDayContainer.defaultProps, defaultProps);
 
 var daySizeStyle = function daySizeStyle(props) {
   var data = props.theme.calendar[props.sizeProp];
   return css(["width:", ";height:", ";"], data.daySize, data.daySize);
 };
 
-export var StyledDay = styled.div.withConfig({
+var StyledDay = styled.div.withConfig({
   displayName: "StyledCalendar__StyledDay",
   componentId: "sc-1y4xhmp-5"
 })(["display:flex;justify-content:center;align-items:center;", " ", " ", " ", ""], function (props) {
@@ -72,3 +83,6 @@ export var StyledDay = styled.div.withConfig({
 }, function (props) {
   return props.isSelected && 'font-weight: bold;';
 });
+StyledDay.defaultProps = {};
+Object.setPrototypeOf(StyledDay.defaultProps, defaultProps);
+export { StyledCalendar, StyledWeeksContainer, StyledWeeks, StyledWeek, StyledDayContainer, StyledDay };

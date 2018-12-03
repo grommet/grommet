@@ -16,6 +16,13 @@ Object.keys(_contexts).forEach(function (key) {
   exports[key] = _contexts[key];
 });
 
+var _defaultProps = require("./default-props");
+
+Object.keys(_defaultProps).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _defaultProps[key];
+});
+
 var _themes = require("./themes");
 
 Object.keys(_themes).forEach(function (key) {

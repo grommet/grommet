@@ -7,6 +7,10 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
+var _styledComponents = require("styled-components");
+
+var _defaultProps = require("../../default-props");
+
 var _Box = require("../Box");
 
 var _Button = require("../Button");
@@ -14,8 +18,6 @@ var _Button = require("../Button");
 var _Heading = require("../Heading");
 
 var _Keyboard = require("../Keyboard");
-
-var _hocs = require("../hocs");
 
 var _StyledCalendar = require("./StyledCalendar");
 
@@ -352,8 +354,7 @@ function (_Component) {
       if (day.getDay() === firstDayOfWeek) {
         if (days) {
           weeks.push(_react.default.createElement(_StyledCalendar.StyledWeek, {
-            key: day.getTime(),
-            theme: theme
+            key: day.getTime()
           }, days));
         }
 
@@ -365,11 +366,9 @@ function (_Component) {
       if (!showAdjacentDays && otherMonth) {
         days.push(_react.default.createElement(_StyledCalendar.StyledDayContainer, {
           key: day.getTime(),
-          sizeProp: size,
-          theme: theme
+          sizeProp: size
         }, _react.default.createElement(_StyledCalendar.StyledDay, {
-          sizeProp: size,
-          theme: theme
+          sizeProp: size
         })));
       } else {
         var dateString = day.toISOString();
@@ -387,8 +386,7 @@ function (_Component) {
         var dayDisabled = (0, _utils.withinDates)(day, disabled) || bounds && !(0, _utils.betweenDates)(day, bounds);
         days.push(_react.default.createElement(_StyledCalendar.StyledDayContainer, {
           key: day.getTime(),
-          sizeProp: size,
-          theme: theme
+          sizeProp: size
         }, _react.default.createElement(_Button.Button, {
           ref: this.dayRefs[dateString],
           a11yTitle: day.toDateString(),
@@ -406,8 +404,7 @@ function (_Component) {
           inRange: inRange,
           otherMonth: day.getMonth() !== reference.getMonth(),
           isSelected: selected,
-          sizeProp: size,
-          theme: theme
+          sizeProp: size
         }, day.getDate()))));
       }
 
@@ -415,12 +412,10 @@ function (_Component) {
     }
 
     weeks.push(_react.default.createElement(_StyledCalendar.StyledWeek, {
-      key: day.getTime(),
-      theme: theme
+      key: day.getTime()
     }, days));
     return _react.default.createElement(_StyledCalendar.StyledCalendar, _extends({
-      sizeProp: size,
-      theme: theme
+      sizeProp: size
     }, rest), _react.default.createElement(_Keyboard.Keyboard, {
       onUp: function onUp(event) {
         event.preventDefault();
@@ -433,10 +428,10 @@ function (_Component) {
         _this2.setFocus((0, _utils.addDays)(focused, 7));
       },
       onLeft: function onLeft() {
-        return _this2.setFocus((0, _utils.addDays)(focused, -1));
+        return focused && _this2.setFocus((0, _utils.addDays)(focused, -1));
       },
       onRight: function onRight() {
-        return _this2.setFocus((0, _utils.addDays)(focused, 1));
+        return focused && _this2.setFocus((0, _utils.addDays)(focused, 1));
       }
     }, _react.default.createElement(_Box.Box, null, header ? header({
       date: reference,
@@ -450,12 +445,10 @@ function (_Component) {
       previousInBound: (0, _utils.betweenDates)(previousMonth, bounds),
       nextInBound: (0, _utils.betweenDates)(nextMonth, bounds)
     }) : this.renderCalendarHeader(previousMonth, nextMonth), _react.default.createElement(_StyledCalendar.StyledWeeksContainer, {
-      sizeProp: size,
-      theme: theme
+      sizeProp: size
     }, _react.default.createElement(_StyledCalendar.StyledWeeks, {
       slide: slide,
-      sizeProp: size,
-      theme: theme
+      sizeProp: size
     }, weeks)))));
   };
 
@@ -470,11 +463,12 @@ _defineProperty(Calendar, "defaultProps", {
   showAdjacentDays: true
 });
 
+Object.setPrototypeOf(Calendar.defaultProps, _defaultProps.defaultProps);
 var CalendarDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   CalendarDoc = require('./doc').doc(Calendar); // eslint-disable-line global-require
 }
 
-var CalendarWrapper = (0, _recompose.compose)(_hocs.withTheme)(CalendarDoc || Calendar);
+var CalendarWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(CalendarDoc || Calendar);
 exports.Calendar = CalendarWrapper;

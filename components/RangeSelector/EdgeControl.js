@@ -7,6 +7,10 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
+var _styledComponents = require("styled-components");
+
+var _defaultProps = require("../../default-props");
+
 var _Box = require("../Box");
 
 var _Keyboard = require("../Keyboard");
@@ -135,5 +139,7 @@ function (_Component) {
   return EdgeControl;
 }(_react.Component);
 
-var EdgeControlWrapper = (0, _recompose.compose)(_hocs.withForwardRef)(EdgeControl);
+EdgeControl.defaultProps = {};
+Object.setPrototypeOf(EdgeControl.defaultProps, _defaultProps.defaultProps);
+var EdgeControlWrapper = (0, _recompose.compose)(_hocs.withForwardRef, _styledComponents.withTheme)(EdgeControl);
 exports.EdgeControl = EdgeControlWrapper;

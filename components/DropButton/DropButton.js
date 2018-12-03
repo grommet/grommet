@@ -112,8 +112,7 @@ function (_Component) {
         dropTarget = _this$props2.dropTarget,
         id = _this$props2.id,
         open = _this$props2.open,
-        theme = _this$props2.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props2, ["disabled", "dropAlign", "forwardRef", "dropContent", "dropTarget", "id", "open", "theme"]);
+        rest = _objectWithoutPropertiesLoose(_this$props2, ["disabled", "dropAlign", "forwardRef", "dropContent", "dropTarget", "id", "open"]);
 
     var show = this.state.show;
     delete rest.onClose;
@@ -156,5 +155,5 @@ if (process.env.NODE_ENV !== 'production') {
   DropButtonDoc = require('./doc').doc(DropButton); // eslint-disable-line global-require
 }
 
-var DropButtonWrapper = (0, _recompose.compose)(_hocs.withTheme, _hocs.withForwardRef)(DropButtonDoc || DropButton);
+var DropButtonWrapper = (0, _recompose.compose)(_hocs.withForwardRef)(DropButtonDoc || DropButton);
 exports.DropButton = DropButtonWrapper;

@@ -178,9 +178,7 @@ function (_Component) {
       value: theme.icon
     }, React.createElement(ResponsiveContext.Provider, {
       value: responsive
-    }, React.createElement(StyledGrommet, _extends({}, rest, {
-      theme: theme
-    }), children))));
+    }, React.createElement(StyledGrommet, rest, children))));
   };
 
   return Grommet;

@@ -7,6 +7,8 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _utils = require("../../utils");
 
+var _defaultProps = require("../../default-props");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 var StyledHour = _styledComponents.default.line.withConfig({
@@ -19,6 +21,8 @@ var StyledHour = _styledComponents.default.line.withConfig({
 });
 
 exports.StyledHour = StyledHour;
+StyledHour.defaultProps = {};
+Object.setPrototypeOf(StyledHour.defaultProps, _defaultProps.defaultProps);
 
 var StyledMinute = _styledComponents.default.line.withConfig({
   displayName: "StyledClock__StyledMinute",
@@ -30,6 +34,8 @@ var StyledMinute = _styledComponents.default.line.withConfig({
 });
 
 exports.StyledMinute = StyledMinute;
+StyledMinute.defaultProps = {};
+Object.setPrototypeOf(StyledMinute.defaultProps, _defaultProps.defaultProps);
 
 var StyledSecond = _styledComponents.default.line.withConfig({
   displayName: "StyledClock__StyledSecond",
@@ -41,6 +47,8 @@ var StyledSecond = _styledComponents.default.line.withConfig({
 });
 
 exports.StyledSecond = StyledSecond;
+StyledSecond.defaultProps = {};
+Object.setPrototypeOf(StyledSecond.defaultProps, _defaultProps.defaultProps);
 
 var StyledAnalog = _styledComponents.default.svg.withConfig({
   displayName: "StyledClock__StyledAnalog",
@@ -54,6 +62,8 @@ var StyledAnalog = _styledComponents.default.svg.withConfig({
 });
 
 exports.StyledAnalog = StyledAnalog;
+StyledAnalog.defaultProps = {};
+Object.setPrototypeOf(StyledAnalog.defaultProps, _defaultProps.defaultProps);
 
 var sizeStyle = function sizeStyle(props) {
   // size is a combination of the level and size properties
@@ -70,6 +80,8 @@ var StyledDigitalDigit = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledDigitalDigit = StyledDigitalDigit;
+StyledDigitalDigit.defaultProps = {};
+Object.setPrototypeOf(StyledDigitalDigit.defaultProps, _defaultProps.defaultProps);
 var previousUp = (0, _styledComponents.keyframes)(["0%{transform:translateY(0);}100%{transform:translateY(-100%);}"]);
 var previousDown = (0, _styledComponents.keyframes)(["0%{transform:translateY(0);}100%{transform:translateY(100%);}"]);
 
@@ -81,6 +93,8 @@ var StyledDigitalPrevious = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledDigitalPrevious = StyledDigitalPrevious;
+StyledDigitalPrevious.defaultProps = {};
+Object.setPrototypeOf(StyledDigitalPrevious.defaultProps, _defaultProps.defaultProps);
 var nextUp = (0, _styledComponents.keyframes)(["0%{transform:translateY(100%);}100%{transform:translateY(0);}"]);
 var nextDown = (0, _styledComponents.keyframes)(["0%{transform:translateY(-100%);}100%{transform:translateY(0);}"]);
 
@@ -92,3 +106,5 @@ var StyledDigitalNext = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledDigitalNext = StyledDigitalNext;
+StyledDigitalNext.defaultProps = {};
+Object.setPrototypeOf(StyledDigitalNext.defaultProps, _defaultProps.defaultProps);

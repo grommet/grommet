@@ -10,8 +10,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { cloneElement, Children, Component } from 'react';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
-import { withTheme } from '../hocs';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 
 var Tabs =
@@ -110,10 +111,8 @@ function (_Component) {
       role: "tablist",
       flex: flex
     }, rest, {
-      background: theme.tabs.background,
-      theme: theme
+      background: theme.tabs.background
     }), React.createElement(StyledTabsHeader, {
-      theme: theme,
       as: Box,
       direction: "row",
       justify: justify,
@@ -123,7 +122,6 @@ function (_Component) {
       gap: theme.tabs.gap
     }, tabs), React.createElement(StyledTabPanel, {
       flex: flex,
-      theme: theme,
       "aria-label": tabContentTitle,
       role: "tabpanel"
     }, activeContent));
@@ -140,6 +138,7 @@ _defineProperty(Tabs, "defaultProps", {
   responsive: true
 });
 
+Object.setPrototypeOf(Tabs.defaultProps, defaultProps);
 var TabsDoc;
 
 if (process.env.NODE_ENV !== 'production') {

@@ -5,6 +5,12 @@ exports.Bar = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _recompose = require("recompose");
+
+var _styledComponents = require("styled-components");
+
+var _defaultProps = require("../../default-props");
+
 var _utils = require("../../utils");
 
 var _StyledMeter = require("./StyledMeter");
@@ -81,8 +87,7 @@ var Bar = function Bar(props) {
     height: height,
     round: round ? {
       size: thickness
-    } : undefined,
-    theme: theme
+    } : undefined
   }, rest), _react.default.createElement("path", _extends({
     d: "M " + capOffset + "," + mid + " L " + (width - capOffset) + "," + mid,
     fill: "none"
@@ -92,7 +97,9 @@ var Bar = function Bar(props) {
   })), paths);
 };
 
-exports.Bar = Bar;
 Bar.defaultProps = {
   background: 'light-1'
 };
+Object.setPrototypeOf(Bar.defaultProps, _defaultProps.defaultProps);
+var BarWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Bar);
+exports.Bar = BarWrapper;

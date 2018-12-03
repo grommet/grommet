@@ -4,8 +4,9 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React from 'react';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
-import { withTheme } from '../hocs';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
 
@@ -42,12 +43,13 @@ var TableCell = function TableCell(_ref) {
       size: size,
       tableContext: tableContext,
       tableContextTheme: tableContextTheme,
-      theme: theme,
       verticalAlign: verticalAlign || (tableContextTheme ? tableContextTheme.verticalAlign : undefined)
     }, plain ? rest : {}), plain ? children : React.createElement(Box, _extends({}, tableContextTheme, boxProps), children));
   });
 };
 
+TableCell.defaultProps = {};
+Object.setPrototypeOf(TableCell.defaultProps, defaultProps);
 var TableCellDoc;
 
 if (process.env.NODE_ENV !== 'production') {

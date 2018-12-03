@@ -5,8 +5,6 @@ exports.SkipLinks = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactDom = require("react-dom");
-
 var _Box = require("../Box");
 
 var _Heading = require("../Heading");
@@ -39,13 +37,14 @@ function (_Component) {
       showLayer: false
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "layerRef", (0, _react.createRef)());
+
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onBlur", function () {
       // timeout needed so it gives enough time for activeElement to be updated
       setTimeout(function () {
-        /* eslint-disable-next-line react/no-find-dom-node */
-        var layerNode = (0, _reactDom.findDOMNode)(_this.layerRef);
+        var layerNode = _this.layerRef.current;
 
-        if (!layerNode.contains(document.activeElement)) {
+        if (layerNode && layerNode.contains && !layerNode.contains(document.activeElement)) {
           _this.removeLayer();
         }
       }, 0);
@@ -80,9 +79,7 @@ function (_Component) {
     return _react.default.createElement(_Layer.Layer, {
       id: id,
       position: showLayer ? 'top' : 'hidden',
-      ref: function ref(_ref) {
-        _this2.layerRef = _ref;
-      },
+      ref: this.layerRef,
       onFocus: this.onFocus,
       onBlur: this.onBlur
     }, _react.default.createElement(_Box.Box, {

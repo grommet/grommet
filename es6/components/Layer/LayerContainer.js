@@ -9,11 +9,11 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { createRef, Component } from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { ThemeContext as IconThemeContext } from "grommet-icons/es6/contexts/ThemeContext";
+import { defaultProps } from '../../default-props';
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
-import { withTheme } from '../hocs';
 import { backgroundIsDark } from '../../utils';
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 var HiddenAnchor = styled.a.withConfig({
@@ -123,7 +123,6 @@ function (_Component) {
     var content = React.createElement(StyledContainer, _extends({
       id: id
     }, rest, {
-      theme: theme,
       position: position,
       plain: plain,
       responsive: responsive,
@@ -139,15 +138,13 @@ function (_Component) {
         id: id,
         plain: plain,
         position: position,
-        theme: theme,
         responsive: responsive,
         tabIndex: "-1",
         ref: this.layerRef
       }, React.createElement(StyledOverlay, {
         plain: plain,
         onMouseDown: onClickOutside,
-        responsive: responsive,
-        theme: theme
+        responsive: responsive
       }), content);
       /* eslint-enable jsx-a11y/anchor-is-valid, jsx-a11y/anchor-has-content */
     }
@@ -180,5 +177,6 @@ _defineProperty(LayerContainer, "defaultProps", {
   position: 'center'
 });
 
+Object.setPrototypeOf(LayerContainer.defaultProps, defaultProps);
 var LayerContainerWrapper = withTheme(LayerContainer);
 export { LayerContainerWrapper as LayerContainer };

@@ -3,8 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
-import { compose } from 'recompose';
-import { withTheme } from '../hocs';
 import { StyledGrid } from './StyledGrid';
 
 var Grid = function Grid(props) {
@@ -27,6 +25,6 @@ if (process.env.NODE_ENV !== 'production') {
   GridDoc = require('./doc').doc(Grid); // eslint-disable-line global-require
 }
 
-var GridWrapper = compose(withTheme)(GridDoc || Grid);
+var GridWrapper = GridDoc || Grid;
 GridWrapper.available = typeof window !== 'undefined' && window.CSS && window.CSS.supports && window.CSS.supports('display', 'grid');
 export { GridWrapper as Grid };

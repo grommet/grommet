@@ -5,6 +5,12 @@ exports.Header = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _recompose = require("recompose");
+
+var _styledComponents = require("styled-components");
+
+var _defaultProps = require("../../default-props");
+
 var _Box = require("../Box");
 
 var _TableHeader = require("../TableHeader");
@@ -74,7 +80,6 @@ var Header = function Header(_ref) {
     expanded: Object.keys(groupState).filter(function (k) {
       return !groupState[k].expanded;
     }).length === 0,
-    theme: theme,
     onToggle: onToggle
   }), columns.map(function (_ref3) {
     var property = _ref3.property,
@@ -90,7 +95,6 @@ var Header = function Header(_ref) {
         property: property,
         onSort: onSort,
         sort: sort,
-        theme: theme,
         themeProps: search ? innerThemeProps : dataTableContextTheme
       }, content);
     }
@@ -112,7 +116,6 @@ var Header = function Header(_ref) {
         filtering: filtering,
         filters: filters,
         property: property,
-        theme: theme,
         onFilter: onFilter,
         onFiltering: onFiltering
       }));
@@ -127,8 +130,7 @@ var Header = function Header(_ref) {
     if (onResize) {
       content = _react.default.createElement(_Resizer.Resizer, {
         property: property,
-        onResize: onResize,
-        theme: theme
+        onResize: onResize
       }, content);
     }
 
@@ -143,4 +145,7 @@ var Header = function Header(_ref) {
   })));
 };
 
-exports.Header = Header;
+Header.defaultProps = {};
+Object.setPrototypeOf(Header.defaultProps, _defaultProps.defaultProps);
+var HeaderWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Header);
+exports.Header = HeaderWrapper;

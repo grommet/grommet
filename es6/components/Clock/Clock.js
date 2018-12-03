@@ -9,8 +9,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { Component } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from '../hocs';
 import { Analog } from './Analog';
 import { Digital } from './Digital';
 var TIME_REGEXP = /T([0-9]{2}):([0-9]{2})(?::([0-9.,]{2,}))?/;
@@ -254,5 +252,5 @@ if (process.env.NODE_ENV !== 'production') {
   ClockDoc = require('./doc').doc(Clock); // eslint-disable-line global-require
 }
 
-var ClockWrapper = compose(withTheme)(ClockDoc || Clock);
+var ClockWrapper = ClockDoc || Clock;
 export { ClockWrapper as Clock };

@@ -5,13 +5,13 @@ exports.Resizer = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactDom = require("react-dom");
+var _recompose = require("recompose");
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+
+var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -48,8 +48,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMouseDown", function (event) {
       if (_this.ref.current) {
-        /* eslint-disable-next-line react/no-find-dom-node */
-        var element = (0, _reactDom.findDOMNode)(_this.ref.current);
+        var element = _this.ref.current;
         var rect = element.getBoundingClientRect();
 
         _this.setState({
@@ -117,4 +116,7 @@ function (_Component) {
   return Resizer;
 }(_react.Component);
 
-exports.Resizer = Resizer;
+Resizer.defaultProps = {};
+Object.setPrototypeOf(Resizer.defaultProps, _defaultProps.defaultProps);
+var ResizerWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Resizer);
+exports.Resizer = ResizerWrapper;

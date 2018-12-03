@@ -9,7 +9,10 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { Component } from 'react';
+import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
 import { ThemeContext as IconThemeContext } from "grommet-icons/es6/contexts/ThemeContext";
+import { defaultProps } from '../../default-props';
 import { ThemeContext } from '../../contexts';
 import { FocusedContainer } from '../FocusedContainer';
 import { backgroundIsDark, findScrollParents, findVisibleParent, parseMetricToNum } from '../../utils';
@@ -26,7 +29,7 @@ var preventLayerClose = function preventLayerClose(event) {
   }
 };
 
-export var DropContainer =
+var DropContainer =
 /*#__PURE__*/
 function (_Component) {
   _inheritsLoose(DropContainer, _Component);
@@ -306,8 +309,7 @@ function (_Component) {
       elevation: !plain && (elevation || theme.global.drop.shadowSize || 'small'),
       tabIndex: "-1",
       ref: this.dropRef,
-      alignProp: alignProp,
-      theme: theme
+      alignProp: alignProp
     }, rest), children);
 
     if (stateTheme) {
@@ -341,3 +343,7 @@ _defineProperty(DropContainer, "defaultProps", {
   },
   stretch: 'width'
 });
+
+Object.setPrototypeOf(DropContainer.defaultProps, defaultProps);
+var DropContainerWrapper = compose(withTheme)(DropContainer);
+export { DropContainerWrapper as DropContainer };

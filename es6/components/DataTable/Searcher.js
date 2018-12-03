@@ -5,14 +5,18 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { Component, Fragment } from 'react';
+import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
 import { FormSearch } from "grommet-icons/es6/icons/FormSearch";
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { normalizeColor } from '../../utils';
-export var Searcher =
+
+var Searcher =
 /*#__PURE__*/
 function (_Component) {
   _inheritsLoose(Searcher, _Component);
@@ -93,3 +97,8 @@ function (_Component) {
 
   return Searcher;
 }(Component);
+
+Searcher.defaultProps = {};
+Object.setPrototypeOf(Searcher.defaultProps, defaultProps);
+var SearcherWrapper = compose(withTheme)(Searcher);
+export { SearcherWrapper as Searcher };

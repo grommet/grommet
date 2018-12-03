@@ -7,6 +7,8 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _utils = require("../../utils");
 
+var _defaultProps = require("../../default-props");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 var FIT_MAP = {
@@ -29,6 +31,8 @@ var StyledVideo = _styledComponents.default.video.withConfig({
 });
 
 exports.StyledVideo = StyledVideo;
+StyledVideo.defaultProps = {};
+Object.setPrototypeOf(StyledVideo.defaultProps, _defaultProps.defaultProps);
 
 var StyledVideoContainer = _styledComponents.default.div.withConfig({
   displayName: "StyledVideo__StyledVideoContainer",
@@ -36,6 +40,8 @@ var StyledVideoContainer = _styledComponents.default.div.withConfig({
 })(["flex:1 1;display:flex;flex-direction:column;overflow:hidden;position:relative;", ";"], _utils.genericStyles);
 
 exports.StyledVideoContainer = StyledVideoContainer;
+StyledVideoContainer.defaultProps = {};
+Object.setPrototypeOf(StyledVideoContainer.defaultProps, _defaultProps.defaultProps);
 var positionStyle = (0, _styledComponents.css)(["position:absolute;left:0;right:0;bottom:0;"]);
 
 var StyledVideoControls = _styledComponents.default.div.withConfig({
@@ -48,6 +54,8 @@ var StyledVideoControls = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledVideoControls = StyledVideoControls;
+StyledVideoControls.defaultProps = {};
+Object.setPrototypeOf(StyledVideoControls.defaultProps, _defaultProps.defaultProps);
 var headStyle = (0, _styledComponents.css)(["::after{content:'';height:100%;width:", ";background:", ";position:absolute;left:", ";}"], function (props) {
   return props.theme.global.edgeSize.xsmall;
 }, function (props) {
@@ -64,3 +72,5 @@ var StyledVideoScrubber = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledVideoScrubber = StyledVideoScrubber;
+StyledVideoScrubber.defaultProps = {};
+Object.setPrototypeOf(StyledVideoScrubber.defaultProps, _defaultProps.defaultProps);

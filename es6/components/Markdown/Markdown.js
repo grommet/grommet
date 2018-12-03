@@ -5,12 +5,10 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 import React, { Component } from 'react';
-import { compose } from 'recompose';
 import Markdown from 'markdown-to-jsx';
 import { deepMerge } from '../../utils';
 import { Heading } from '../Heading';
 import { Paragraph } from '../Paragraph';
-import { withTheme } from '../hocs';
 
 var GrommetMarkdown =
 /*#__PURE__*/
@@ -61,5 +59,5 @@ if (process.env.NODE_ENV !== 'production') {
   GrommetMarkdownDoc = require('./doc').doc(GrommetMarkdown); // eslint-disable-line global-require
 }
 
-var GrommetMarkdownWrapper = compose(withTheme)(GrommetMarkdownDoc || GrommetMarkdown);
+var GrommetMarkdownWrapper = GrommetMarkdownDoc || GrommetMarkdown;
 export { GrommetMarkdownWrapper as Markdown };

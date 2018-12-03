@@ -7,11 +7,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactDom = require("react-dom");
 
-var _recompose = require("recompose");
-
 var _utils = require("../../utils");
-
-var _hocs = require("../hocs");
 
 var _DropContainer = require("./DropContainer");
 
@@ -92,5 +88,5 @@ if (process.env.NODE_ENV !== 'production') {
   DropDoc = require('./doc').doc(Drop); // eslint-disable-line global-require
 }
 
-var DropWrapper = (0, _recompose.compose)(_hocs.withTheme)(DropDoc || Drop);
+var DropWrapper = DropDoc || Drop;
 exports.Drop = DropWrapper;

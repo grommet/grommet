@@ -7,13 +7,15 @@ var _react = _interopRequireDefault(require("react"));
 
 var _recompose = require("recompose");
 
+var _styledComponents = require("styled-components");
+
+var _defaultProps = require("../../default-props");
+
 var _Box = require("../Box");
 
 var _Button = require("../Button");
 
 var _TableCell = require("../TableCell");
-
-var _hocs = require("../hocs");
 
 var _utils = require("../../utils");
 
@@ -57,5 +59,7 @@ var ExpanderCell = function ExpanderCell(_ref) {
   });
 };
 
-var ExpanderCellWrapper = (0, _recompose.compose)(_hocs.withTheme)(ExpanderCell);
+ExpanderCell.defaultProps = {};
+Object.setPrototypeOf(ExpanderCell.defaultProps, _defaultProps.defaultProps);
+var ExpanderCellWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(ExpanderCell);
 exports.ExpanderCell = ExpanderCellWrapper;

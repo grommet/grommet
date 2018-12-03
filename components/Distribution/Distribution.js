@@ -7,13 +7,9 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _recompose = require("recompose");
-
 var _Box = require("../Box");
 
 var _Text = require("../Text");
-
-var _hocs = require("../hocs");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60,9 +56,8 @@ function (_Component) {
         direction = _this$props.direction,
         fill = _this$props.fill,
         gap = _this$props.gap,
-        theme = _this$props.theme,
         values = _this$props.values,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["basis", "children", "direction", "fill", "gap", "theme", "values"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["basis", "children", "direction", "fill", "gap", "values"]);
 
     if (values.length === 1) {
       var value = values[0];
@@ -155,5 +150,5 @@ if (process.env.NODE_ENV !== 'production') {
   DistributionDoc = require('./doc').doc(Distribution); // eslint-disable-line global-require
 }
 
-var DistributionWrapper = (0, _recompose.compose)(_hocs.withTheme)(DistributionDoc || Distribution);
+var DistributionWrapper = DistributionDoc || Distribution;
 exports.Distribution = DistributionWrapper;

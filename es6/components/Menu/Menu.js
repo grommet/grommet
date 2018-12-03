@@ -9,15 +9,15 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { withForwardRef, withTheme } from '../hocs';
+import { withForwardRef } from '../hocs';
 import { normalizeColor } from '../../utils';
 var ContainerBox = styled(Box).withConfig({
   displayName: "Menu__ContainerBox",
@@ -60,9 +60,8 @@ function (_Component) {
       if (activeItemIndex >= 0) {
         event.preventDefault();
         event.stopPropagation();
-        /* eslint-disable react/no-find-dom-node */
 
-        findDOMNode(_this.buttonRefs[activeItemIndex]).click();
+        _this.buttonRefs[activeItemIndex].click();
       }
     });
 
@@ -175,7 +174,6 @@ function (_Component) {
       dropAlign: dropAlign,
       dropTarget: dropTarget,
       open: open,
-      theme: theme,
       onOpen: function onOpen() {
         return _this2.setState({
           open: true
@@ -187,7 +185,6 @@ function (_Component) {
         });
       },
       dropContent: React.createElement(ContainerBox, {
-        theme: theme,
         background: dropBackground || theme.menu.background
       }, dropAlign.top === 'top' ? controlMirror : undefined, React.createElement(Box, {
         overflow: "auto"
@@ -234,6 +231,7 @@ _defineProperty(Menu, "defaultProps", {
   }
 });
 
+Object.setPrototypeOf(Menu.defaultProps, defaultProps);
 var MenuDoc;
 
 if (process.env.NODE_ENV !== 'production') {

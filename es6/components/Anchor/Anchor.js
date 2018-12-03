@@ -6,10 +6,12 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 import React, { cloneElement, Component } from 'react';
 import { compose } from 'recompose';
-import { Box } from '../Box';
-import { withFocus, withForwardRef, withTheme } from '../hocs';
-import { StyledAnchor } from './StyledAnchor';
+import { withTheme } from 'styled-components';
 import { normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
+import { Box } from '../Box';
+import { withFocus, withForwardRef } from '../hocs';
+import { StyledAnchor } from './StyledAnchor';
 
 var Anchor =
 /*#__PURE__*/
@@ -68,7 +70,6 @@ function (_Component) {
       focus: focus,
       hasLabel: label,
       reverse: reverse,
-      theme: theme,
       href: !disabled ? href : undefined,
       onClick: !disabled ? onClick : undefined
     }), first && second ? React.createElement(Box, {
@@ -85,6 +86,8 @@ function (_Component) {
   return Anchor;
 }(Component);
 
+Anchor.defaultProps = {};
+Object.setPrototypeOf(Anchor.defaultProps, defaultProps);
 var AnchorDoc;
 
 if (process.env.NODE_ENV !== 'production') {

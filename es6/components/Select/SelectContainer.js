@@ -4,11 +4,10 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-/* eslint-disable react/no-find-dom-node */
 import React, { createRef, Component } from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { debounce, debounceDelay, isNodeAfterScroll, isNodeBeforeScroll, setFocusWithoutScroll } from '../../utils';
-import { withTheme } from '../hocs';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
@@ -129,7 +128,7 @@ function (_Component) {
         var buttonNode = _this.optionsRef[index];
         var selectNode = _this.selectRef.current;
 
-        if (isNodeAfterScroll(buttonNode, selectNode) && selectNode.scrollBy) {
+        if (buttonNode && isNodeAfterScroll(buttonNode, selectNode) && selectNode.scrollBy) {
           selectNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
         }
       });
@@ -146,7 +145,7 @@ function (_Component) {
         var buttonNode = _this.optionsRef[index];
         var selectNode = _this.selectRef.current;
 
-        if (isNodeBeforeScroll(buttonNode, selectNode) && selectNode.scrollBy) {
+        if (buttonNode && isNodeBeforeScroll(buttonNode, selectNode) && selectNode.scrollBy) {
           selectNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
         }
       });
@@ -353,8 +352,7 @@ function (_Component) {
       onDown: this.onNextOption,
       onKeyDown: onKeyDown
     }, React.createElement(ContainerBox, {
-      id: id ? id + "__select-drop" : undefined,
-      theme: theme
+      id: id ? id + "__select-drop" : undefined
     }, onSearch && React.createElement(Box, {
       pad: !customSearchInput ? 'xsmall' : undefined,
       flex: false
@@ -371,8 +369,7 @@ function (_Component) {
       role: "menubar",
       tabIndex: "-1",
       ref: this.selectRef,
-      overflow: "auto",
-      theme: theme
+      overflow: "auto"
     }, React.createElement(InfiniteScroll, {
       items: options,
       step: theme.select.step
@@ -383,7 +380,7 @@ function (_Component) {
 
       var isActive = isSelected || activeIndex === index;
       return React.createElement(SelectOption, {
-        key: _this3.optionValue(index),
+        key: "option_" + index,
         ref: function ref(_ref) {
           _this3.optionsRef[index] = _ref;
         },
@@ -424,5 +421,6 @@ _defineProperty(SelectContainer, "defaultProps", {
   value: ''
 });
 
+Object.setPrototypeOf(SelectContainer.defaultProps, defaultProps);
 var SelectContainerWrapper = withTheme(SelectContainer);
 export { SelectContainerWrapper as SelectContainer };

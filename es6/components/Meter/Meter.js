@@ -9,8 +9,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { Component } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from '../hocs';
 import { Bar } from './Bar';
 import { Circle } from './Circle';
 
@@ -87,7 +85,7 @@ function (_Component) {
 
 _defineProperty(Meter, "defaultProps", {
   background: {
-    color: 'light-1',
+    color: 'light-2',
     opacity: 'medium'
   },
   size: 'medium',
@@ -101,5 +99,5 @@ if (process.env.NODE_ENV !== 'production') {
   MeterDoc = require('./doc').doc(Meter); // eslint-disable-line global-require
 }
 
-var MeterWrapper = compose(withTheme)(MeterDoc || Meter);
+var MeterWrapper = MeterDoc || Meter;
 export { MeterWrapper as Meter };

@@ -1,6 +1,7 @@
 var _FLEX_MAP;
 
 import styled, { css, keyframes } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { backgroundStyle, breakpointStyle, edgeStyle, genericStyles, normalizeColor, overflowStyle } from '../../utils';
 var ALIGN_MAP = {
   baseline: 'baseline',
@@ -368,7 +369,7 @@ var animationStyle = css(["", ";"], function (props) {
   return css(["", " animation:", ";"], animationInitialStyle(props.animation), animationItemStyle(props.animation, props.theme));
 }); // NOTE: basis must be after flex! Otherwise, flex overrides basis
 
-export var StyledBox = styled.div.withConfig({
+var StyledBox = styled.div.withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
 })(["display:flex;box-sizing:border-box;outline:none;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
@@ -433,9 +434,14 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, theme) {
   return styles;
 };
 
-export var StyledBoxGap = styled.div.withConfig({
+StyledBox.defaultProps = {};
+Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
+var StyledBoxGap = styled.div.withConfig({
   displayName: "StyledBox__StyledBoxGap",
   componentId: "sc-13pk1d4-1"
 })(["flex:0 0 auto;", ";"], function (props) {
   return props.gap && gapStyle(props.directionProp, props.gap, props.responsive, props.theme);
 });
+StyledBoxGap.defaultProps = {};
+Object.setPrototypeOf(StyledBoxGap.defaultProps, defaultProps);
+export { StyledBox, StyledBoxGap };

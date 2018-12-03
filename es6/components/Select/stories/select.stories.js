@@ -7,7 +7,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { createRef, Component, PureComponent } from 'react';
-import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { FormClose } from "grommet-icons/es6/icons/FormClose";
@@ -589,10 +588,8 @@ function (_Component6) {
           event.stopPropagation();
 
           _this11.clearContentPartners();
-          /* eslint-disable-next-line react/no-find-dom-node */
 
-
-          findDOMNode(_this11.selectRef.current).focus();
+          _this11.selectRef.current.focus();
         }
       }, React.createElement(Box, {
         background: "gray",

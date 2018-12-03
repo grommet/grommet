@@ -9,7 +9,10 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { Component } from 'react';
+import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
 import { parseMetricToNum } from '../../utils';
+import { defaultProps } from '../../default-props';
 import { StyledAnalog, StyledHour, StyledMinute, StyledSecond } from './StyledClock'; // this will serve both minutes and hours (360 / 6)
 
 var ANGLE_UNIT = 6; // 360 / 12
@@ -39,7 +42,7 @@ var getClockState = function getClockState(_ref) {
   };
 };
 
-export var Analog =
+var Analog =
 /*#__PURE__*/
 function (_Component) {
   _inheritsLoose(Analog, _Component);
@@ -95,7 +98,6 @@ function (_Component) {
 
     if (precision === 'seconds') {
       secondHand = React.createElement(StyledSecond, {
-        theme: theme,
         x1: halfSize,
         y1: halfSize,
         x2: halfSize,
@@ -113,7 +115,6 @@ function (_Component) {
 
     if (precision === 'seconds' || precision === 'minutes') {
       minuteHand = React.createElement(StyledMinute, {
-        theme: theme,
         x1: halfSize,
         y1: halfSize,
         x2: halfSize,
@@ -132,10 +133,8 @@ function (_Component) {
       width: size,
       height: size,
       preserveAspectRatio: "xMidYMid meet",
-      viewBox: "0 0 " + size + " " + size,
-      theme: theme
+      viewBox: "0 0 " + size + " " + size
     }, rest), secondHand, minuteHand, React.createElement(StyledHour, {
-      theme: theme,
       x1: halfSize,
       y1: halfSize,
       x2: halfSize,
@@ -155,3 +154,7 @@ function (_Component) {
 _defineProperty(Analog, "defaultProps", {
   size: 'medium'
 });
+
+Object.setPrototypeOf(Analog.defaultProps, defaultProps);
+var AnalogWrapper = compose(withTheme)(Analog);
+export { AnalogWrapper as Analog };

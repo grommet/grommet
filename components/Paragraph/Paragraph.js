@@ -5,10 +5,6 @@ exports.Paragraph = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _recompose = require("recompose");
-
-var _hocs = require("../hocs");
-
 var _StyledParagraph = require("./StyledParagraph");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -32,5 +28,5 @@ if (process.env.NODE_ENV !== 'production') {
   ParagraphDoc = require('./doc').doc(Paragraph); // eslint-disable-line global-require
 }
 
-var ParagraphWrapper = (0, _recompose.compose)(_hocs.withTheme)(ParagraphDoc || Paragraph);
+var ParagraphWrapper = ParagraphDoc || Paragraph;
 exports.Paragraph = ParagraphWrapper;

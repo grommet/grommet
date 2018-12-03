@@ -7,9 +7,11 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
-var _Box = require("../Box");
+var _styledComponents = require("styled-components");
 
-var _hocs = require("../hocs");
+var _defaultProps = require("../../default-props");
+
+var _Box = require("../Box");
 
 var _StyledTabs = require("./StyledTabs");
 
@@ -123,10 +125,8 @@ function (_Component) {
       role: "tablist",
       flex: flex
     }, rest, {
-      background: theme.tabs.background,
-      theme: theme
+      background: theme.tabs.background
     }), _react.default.createElement(_StyledTabs.StyledTabsHeader, {
-      theme: theme,
       as: _Box.Box,
       direction: "row",
       justify: justify,
@@ -136,7 +136,6 @@ function (_Component) {
       gap: theme.tabs.gap
     }, tabs), _react.default.createElement(_StyledTabs.StyledTabPanel, {
       flex: flex,
-      theme: theme,
       "aria-label": tabContentTitle,
       role: "tabpanel"
     }, activeContent));
@@ -153,11 +152,12 @@ _defineProperty(Tabs, "defaultProps", {
   responsive: true
 });
 
+Object.setPrototypeOf(Tabs.defaultProps, _defaultProps.defaultProps);
 var TabsDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   TabsDoc = require('./doc').doc(Tabs); // eslint-disable-line global-require
 }
 
-var TabsWrapper = (0, _recompose.compose)(_hocs.withTheme)(TabsDoc || Tabs);
+var TabsWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(TabsDoc || Tabs);
 exports.Tabs = TabsWrapper;

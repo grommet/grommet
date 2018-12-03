@@ -5,9 +5,11 @@ exports.Video = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactDom = require("react-dom");
-
 var _recompose = require("recompose");
+
+var _styledComponents = require("styled-components");
+
+var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
@@ -113,9 +115,8 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "update", function () {
-      var videoRef = _this.state.videoRef; // eslint-disable-next-line react/no-find-dom-node
-
-      var video = (0, _reactDom.findDOMNode)(videoRef.current); // Set flag for Video first play
+      var videoRef = _this.state.videoRef;
+      var video = videoRef.current; // Set flag for Video first play
 
       if (!_this.hasPlayed && !video.paused && !video.loading || video.currentTime) {
         _this.hasPlayed = true;
@@ -150,12 +151,12 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "play", function () {
       var videoRef = _this.state.videoRef;
-      (0, _reactDom.findDOMNode)(videoRef.current).play();
+      videoRef.current.play();
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "pause", function () {
       var videoRef = _this.state.videoRef;
-      (0, _reactDom.findDOMNode)(videoRef.current).pause();
+      videoRef.current.pause();
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "scrub", function (event) {
@@ -164,7 +165,7 @@ function (_Component) {
           scrubberRef = _this$state.scrubberRef;
 
       if (scrubberRef.current) {
-        var scrubberRect = (0, _reactDom.findDOMNode)(scrubberRef.current).getBoundingClientRect();
+        var scrubberRect = scrubberRef.current.getBoundingClientRect();
         var percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
 
         _this.setState({
@@ -180,37 +181,41 @@ function (_Component) {
           videoRef = _this$state2.videoRef;
 
       if (scrubberRef.current) {
-        var scrubberRect = (0, _reactDom.findDOMNode)(scrubberRef.current).getBoundingClientRect();
+        var scrubberRect = scrubberRef.current.getBoundingClientRect();
         var percent = (event.clientX - scrubberRect.left) / scrubberRect.width;
-        (0, _reactDom.findDOMNode)(videoRef.current).currentTime = duration * percent;
+        videoRef.current.currentTime = duration * percent;
       }
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "unmute", function () {
       var videoRef = _this.state.videoRef;
-      (0, _reactDom.findDOMNode)(videoRef.current).muted = false;
+
+      if (videoRef.current) {
+        videoRef.current.muted = false;
+      }
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "mute", function () {
       var videoRef = _this.state.videoRef;
-      (0, _reactDom.findDOMNode)(videoRef.current).muted = true;
+
+      if (videoRef.current) {
+        videoRef.current.muted = true;
+      }
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "louder", function () {
       var videoRef = _this.state.videoRef;
-      (0, _reactDom.findDOMNode)(videoRef.current).volume += VOLUME_STEP;
+      videoRef.current.volume += VOLUME_STEP;
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "quieter", function () {
       var videoRef = _this.state.videoRef;
-      (0, _reactDom.findDOMNode)(videoRef.current).volume -= VOLUME_STEP;
+      videoRef.current.volume -= VOLUME_STEP;
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "showCaptions", function (index) {
       var videoRef = _this.state.videoRef;
-
-      var _findDOMNode = (0, _reactDom.findDOMNode)(videoRef.current),
-          textTracks = _findDOMNode.textTracks;
+      var textTracks = videoRef.current.textTracks;
 
       for (var i = 0; i < textTracks.length; i += 1) {
         textTracks[i].mode = i === index ? 'showing' : 'hidden';
@@ -222,7 +227,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "fullscreen", function () {
       var videoRef = _this.state.videoRef;
-      var video = (0, _reactDom.findDOMNode)(videoRef.current);
+      var video = videoRef.current;
 
       if (video.requestFullscreen) {
         video.requestFullscreen();
@@ -262,7 +267,7 @@ function (_Component) {
           height = _this$state3.height,
           videoRef = _this$state3.videoRef,
           width = _this$state3.width;
-      var video = (0, _reactDom.findDOMNode)(videoRef.current);
+      var video = videoRef.current;
 
       if (video.videoHeight) {
         // set the size based on the video aspect ratio
@@ -343,20 +348,22 @@ function (_Component) {
   _proto.componentDidMount = function componentDidMount() {
     var mute = this.props.mute;
     var videoRef = this.state.videoRef;
-    var video = (0, _reactDom.findDOMNode)(videoRef.current);
+    var video = videoRef.current;
 
     if (mute) {
       this.mute();
-    } // hide all captioning to start with
-
-
-    var textTracks = video.textTracks;
-
-    for (var i = 0; i < textTracks.length; i += 1) {
-      textTracks[i].mode = 'hidden';
     }
 
-    this.restate();
+    if (video) {
+      // hide all captioning to start with
+      var textTracks = video.textTracks;
+
+      for (var i = 0; i < textTracks.length; i += 1) {
+        textTracks[i].mode = 'hidden';
+      }
+
+      this.restate();
+    }
   };
 
   _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
@@ -459,8 +466,7 @@ function (_Component) {
           scrubTime: undefined
         });
       },
-      onClick: this.seek,
-      theme: theme
+      onClick: this.seek
     }))), _react.default.createElement(_Box.Box, {
       pad: {
         horizontal: 'small'
@@ -543,11 +549,9 @@ function (_Component) {
       alignSelf: alignSelf,
       gridArea: gridArea,
       margin: margin,
-      theme: theme,
       style: style
     }), _react.default.createElement(_StyledVideo.StyledVideo, _extends({}, rest, {
-      ref: videoRef,
-      theme: theme
+      ref: videoRef
     }, this.mediaEventProps, {
       autoPlay: autoPlay || false,
       loop: loop || false
@@ -561,11 +565,12 @@ _defineProperty(Video, "defaultProps", {
   controls: 'over'
 });
 
+Object.setPrototypeOf(Video.defaultProps, _defaultProps.defaultProps);
 var VideoDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   VideoDoc = require('./doc').doc(Video); // eslint-disable-line global-require
 }
 
-var VideoWrapper = (0, _recompose.compose)(_hocs.withTheme, _hocs.withForwardRef)(VideoDoc || Video);
+var VideoWrapper = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef)(VideoDoc || Video);
 exports.Video = VideoWrapper;

@@ -7,6 +7,8 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _utils = require("../../utils");
 
+var _defaultProps = require("../../default-props");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var StyledWorldMap = _styledComponents.default.svg.withConfig({
@@ -17,3 +19,5 @@ var StyledWorldMap = _styledComponents.default.svg.withConfig({
 });
 
 exports.StyledWorldMap = StyledWorldMap;
+StyledWorldMap.defaultProps = {};
+Object.setPrototypeOf(StyledWorldMap.defaultProps, _defaultProps.defaultProps);

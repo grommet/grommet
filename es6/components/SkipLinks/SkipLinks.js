@@ -4,8 +4,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-import React, { cloneElement, Component } from 'react';
-import { findDOMNode } from 'react-dom';
+import React, { createRef, cloneElement, Component } from 'react';
 import { Box } from '../Box';
 import { Heading } from '../Heading';
 import { Layer } from '../Layer';
@@ -28,13 +27,14 @@ function (_Component) {
       showLayer: false
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "layerRef", createRef());
+
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onBlur", function () {
       // timeout needed so it gives enough time for activeElement to be updated
       setTimeout(function () {
-        /* eslint-disable-next-line react/no-find-dom-node */
-        var layerNode = findDOMNode(_this.layerRef);
+        var layerNode = _this.layerRef.current;
 
-        if (!layerNode.contains(document.activeElement)) {
+        if (layerNode && layerNode.contains && !layerNode.contains(document.activeElement)) {
           _this.removeLayer();
         }
       }, 0);
@@ -69,9 +69,7 @@ function (_Component) {
     return React.createElement(Layer, {
       id: id,
       position: showLayer ? 'top' : 'hidden',
-      ref: function ref(_ref) {
-        _this2.layerRef = _ref;
-      },
+      ref: this.layerRef,
       onFocus: this.onFocus,
       onBlur: this.onBlur
     }, React.createElement(Box, {

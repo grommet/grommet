@@ -196,9 +196,7 @@ function (_Component) {
       value: theme.icon
     }, _react.default.createElement(_contexts2.ResponsiveContext.Provider, {
       value: responsive
-    }, _react.default.createElement(_StyledGrommet.StyledGrommet, _extends({}, rest, {
-      theme: theme
-    }), children))));
+    }, _react.default.createElement(_StyledGrommet.StyledGrommet, rest, children))));
   };
 
   return Grommet;

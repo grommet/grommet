@@ -7,7 +7,11 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+
+var _utils = require("../../utils");
+
+var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
@@ -19,11 +23,7 @@ var _TextInput = require("../TextInput");
 
 var _hocs = require("../hocs");
 
-var _utils = require("../../utils");
-
 var _SelectContainer = require("./SelectContainer");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -49,6 +49,8 @@ var StyledSelectBox = (0, _styledComponents.default)(_Box.Box).withConfig({
 }, function (props) {
   return props.theme.select && props.theme.select.control && props.theme.select.control.extend;
 });
+StyledSelectBox.defaultProps = {};
+Object.setPrototypeOf(StyledSelectBox.defaultProps, _defaultProps.defaultProps);
 
 var Select =
 /*#__PURE__*/
@@ -218,8 +220,7 @@ function (_Component) {
       direction: "row",
       justify: "between",
       background: theme.select.background,
-      plain: plain,
-      theme: theme
+      plain: plain
     }, _react.default.createElement(_Box.Box, {
       direction: "row",
       flex: true,
@@ -264,11 +265,12 @@ _defineProperty(Select, "defaultProps", {
   }
 });
 
+Object.setPrototypeOf(Select.defaultProps, _defaultProps.defaultProps);
 var SelectDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   SelectDoc = require('./doc').doc(Select); // eslint-disable-line global-require
 }
 
-var SelectWrapper = (0, _recompose.compose)(_hocs.withTheme, _hocs.withForwardRef)(SelectDoc || Select);
+var SelectWrapper = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef)(SelectDoc || Select);
 exports.Select = SelectWrapper;

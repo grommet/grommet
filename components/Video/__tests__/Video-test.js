@@ -11,17 +11,6 @@ var _ = require("../..");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import { mount } from 'enzyme';
-jest.mock('react-dom', function () {
-  return {
-    findDOMNode: function findDOMNode() {
-      return {
-        textTracks: [{
-          label: 'test'
-        }]
-      };
-    }
-  };
-});
 var CONTENTS = [_react.default.createElement("source", {
   key: "source"
 }), _react.default.createElement("track", {

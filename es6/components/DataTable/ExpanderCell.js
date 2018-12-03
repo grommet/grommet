@@ -4,10 +4,11 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React from 'react';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { TableCell } from '../TableCell';
-import { withTheme } from '../hocs';
 import { normalizeColor } from '../../utils';
 
 var ExpanderCell = function ExpanderCell(_ref) {
@@ -44,5 +45,7 @@ var ExpanderCell = function ExpanderCell(_ref) {
   });
 };
 
+ExpanderCell.defaultProps = {};
+Object.setPrototypeOf(ExpanderCell.defaultProps, defaultProps);
 var ExpanderCellWrapper = compose(withTheme)(ExpanderCell);
 export { ExpanderCellWrapper as ExpanderCell };

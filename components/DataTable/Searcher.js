@@ -5,7 +5,13 @@ exports.Searcher = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _recompose = require("recompose");
+
+var _styledComponents = require("styled-components");
+
 var _grommetIcons = require("grommet-icons");
+
+var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
@@ -109,4 +115,7 @@ function (_Component) {
   return Searcher;
 }(_react.Component);
 
-exports.Searcher = Searcher;
+Searcher.defaultProps = {};
+Object.setPrototypeOf(Searcher.defaultProps, _defaultProps.defaultProps);
+var SearcherWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Searcher);
+exports.Searcher = SearcherWrapper;

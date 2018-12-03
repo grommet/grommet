@@ -7,14 +7,16 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
-import styled from 'styled-components';
+import { compose } from 'recompose';
+import styled, { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 var ResizerBox = styled(Box).withConfig({
   displayName: "Resizer__ResizerBox",
   componentId: "sc-8l808w-0"
 })(["cursor:col-resize;"]);
-export var Resizer =
+
+var Resizer =
 /*#__PURE__*/
 function (_Component) {
   _inheritsLoose(Resizer, _Component);
@@ -34,8 +36,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMouseDown", function (event) {
       if (_this.ref.current) {
-        /* eslint-disable-next-line react/no-find-dom-node */
-        var element = findDOMNode(_this.ref.current);
+        var element = _this.ref.current;
         var rect = element.getBoundingClientRect();
 
         _this.setState({
@@ -102,3 +103,8 @@ function (_Component) {
 
   return Resizer;
 }(Component);
+
+Resizer.defaultProps = {};
+Object.setPrototypeOf(Resizer.defaultProps, defaultProps);
+var ResizerWrapper = compose(withTheme)(Resizer);
+export { ResizerWrapper as Resizer };

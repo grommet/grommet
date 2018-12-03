@@ -78,8 +78,7 @@ function (_Component) {
     /* eslint-disable-next-line react/prop-types */
     var _this$props = this.props,
         run = _this$props.run,
-        size = _this$props.size,
-        theme = _this$props.theme;
+        size = _this$props.size;
     var _this$state = this.state,
         number = _this$state.number,
         previous = _this$state.previous;
@@ -87,8 +86,7 @@ function (_Component) {
     if (previous !== undefined) {
       var direction = run === 'backward' ? 'down' : 'up';
       return _react.default.createElement(_StyledClock.StyledDigitalDigit, {
-        size: size,
-        theme: theme
+        size: size
       }, _react.default.createElement(_StyledClock.StyledDigitalPrevious, {
         direction: direction
       }, Math.floor(previous)), _react.default.createElement(_StyledClock.StyledDigitalNext, {
@@ -97,8 +95,7 @@ function (_Component) {
     }
 
     return _react.default.createElement(_StyledClock.StyledDigitalDigit, {
-      size: size,
-      theme: theme
+      size: size
     }, Math.floor(number));
   };
 
@@ -109,29 +106,25 @@ var Element = function Element(_ref) {
   var number = _ref.number,
       run = _ref.run,
       sep = _ref.sep,
-      size = _ref.size,
-      theme = _ref.theme;
+      size = _ref.size;
   var tens = Math.floor(number / 10);
   var ones = number % 10;
   var result = [_react.default.createElement(Digit, {
     key: "tens",
     run: run,
     size: size,
-    number: tens,
-    theme: theme
+    number: tens
   }), _react.default.createElement(Digit, {
     key: "ones",
     run: run,
     size: size,
-    number: ones,
-    theme: theme
+    number: ones
   })];
 
   if (sep) {
     result.unshift(_react.default.createElement(_StyledClock.StyledDigitalDigit, {
       key: "sep",
-      size: size,
-      theme: theme
+      size: size
     }, ":"));
   }
 
@@ -143,8 +136,7 @@ var Digital = function Digital(props) {
       precision = props.precision,
       run = props.run,
       size = props.size,
-      theme = props.theme,
-      rest = _objectWithoutPropertiesLoose(props, ["elements", "precision", "run", "size", "theme"]);
+      rest = _objectWithoutPropertiesLoose(props, ["elements", "precision", "run", "size"]);
 
   var seconds;
 
@@ -153,8 +145,7 @@ var Digital = function Digital(props) {
       number: elements.seconds,
       run: run,
       size: size,
-      sep: true,
-      theme: theme
+      sep: true
     });
   }
 
@@ -165,8 +156,7 @@ var Digital = function Digital(props) {
       number: elements.minutes,
       run: run,
       size: size,
-      sep: true,
-      theme: theme
+      sep: true
     });
   }
 
@@ -175,8 +165,7 @@ var Digital = function Digital(props) {
   }, rest), _react.default.createElement(Element, {
     number: elements.hours12 || elements.hours,
     run: run,
-    size: size,
-    theme: theme
+    size: size
   }), minutes, seconds);
 };
 

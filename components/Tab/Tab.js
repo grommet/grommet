@@ -7,6 +7,10 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
+var _styledComponents = require("styled-components");
+
+var _defaultProps = require("../../default-props");
+
 var _Box = require("../Box");
 
 var _Button = require("../Button");
@@ -162,7 +166,6 @@ function (_Component) {
       onBlur: this.onMouseOut
     }), _react.default.createElement(_StyledTab.StyledTab, _extends({
       as: _Box.Box,
-      theme: theme,
       plain: plain
     }, tabStyles), normalizedTitle));
   };
@@ -170,11 +173,13 @@ function (_Component) {
   return Tab;
 }(_react.Component);
 
+Tab.defaultProps = {};
+Object.setPrototypeOf(Tab.defaultProps, _defaultProps.defaultProps);
 var TabDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   TabDoc = require('./doc').doc(Tab); // eslint-disable-line global-require
 }
 
-var TabWrapper = (0, _recompose.compose)(_hocs.withTheme, _hocs.withForwardRef)(TabDoc || Tab);
+var TabWrapper = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef)(TabDoc || Tab);
 exports.Tab = TabWrapper;

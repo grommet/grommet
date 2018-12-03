@@ -7,7 +7,9 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+
+var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
@@ -22,8 +24,6 @@ var _Keyboard = require("../Keyboard");
 var _hocs = require("../hocs");
 
 var _StyledTextInput = require("./StyledTextInput");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -310,9 +310,7 @@ function (_Component) {
       var _this$state3 = _this.state,
           activeSuggestionIndex = _this$state3.activeSuggestionIndex,
           selectedSuggestionIndex = _this$state3.selectedSuggestionIndex;
-      return _react.default.createElement(_StyledTextInput.StyledSuggestions, {
-        theme: theme
-      }, _react.default.createElement(_InfiniteScroll.InfiniteScroll, {
+      return _react.default.createElement(_StyledTextInput.StyledSuggestions, null, _react.default.createElement(_InfiniteScroll.InfiniteScroll, {
         items: suggestions,
         step: theme.select.step
       }, function (suggestion, index) {
@@ -424,9 +422,7 @@ function (_Component) {
 
     return _react.default.createElement(_StyledTextInput.StyledTextInputContainer, {
       plain: plain
-    }, placeholder && typeof placeholder !== 'string' && !value ? _react.default.createElement(_StyledTextInput.StyledPlaceholder, {
-      theme: theme
-    }, placeholder) : null, _react.default.createElement(_Keyboard.Keyboard, {
+    }, placeholder && typeof placeholder !== 'string' && !value ? _react.default.createElement(_StyledTextInput.StyledPlaceholder, null, placeholder) : null, _react.default.createElement(_Keyboard.Keyboard, {
       onEnter: this.onSuggestionSelect,
       onEsc: this.onEsc,
       onTab: this.onTab,
@@ -438,8 +434,7 @@ function (_Component) {
       ref: forwardRef || this.inputRef,
       autoComplete: "off",
       plain: plain,
-      placeholder: typeof placeholder === 'string' ? placeholder : undefined,
-      theme: theme
+      placeholder: typeof placeholder === 'string' ? placeholder : undefined
     }, rest, {
       defaultValue: renderLabel(defaultValue),
       value: renderLabel(value),
@@ -465,11 +460,12 @@ _defineProperty(TextInput, "defaultProps", {
   }
 });
 
+Object.setPrototypeOf(TextInput.defaultProps, _defaultProps.defaultProps);
 var TextInputDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   TextInputDoc = require('./doc').doc(TextInput); // eslint-disable-line global-require
 }
 
-var TextInputWrapper = (0, _recompose.compose)(_hocs.withFocus, _hocs.withTheme, _hocs.withAnnounce, _hocs.withForwardRef)(TextInputDoc || TextInput);
+var TextInputWrapper = (0, _recompose.compose)(_hocs.withFocus, _styledComponents.withTheme, _hocs.withAnnounce, _hocs.withForwardRef)(TextInputDoc || TextInput);
 exports.TextInput = TextInputWrapper;

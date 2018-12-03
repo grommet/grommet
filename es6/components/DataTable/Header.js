@@ -3,6 +3,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React from 'react';
+import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { TableHeader } from '../TableHeader';
 import { TableRow } from '../TableRow';
@@ -13,7 +16,8 @@ import { Searcher } from './Searcher';
 import { Sorter } from './Sorter';
 import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableHeader, StyledDataTableRow } from './StyledDataTable';
-export var Header = function Header(_ref) {
+
+var Header = function Header(_ref) {
   var columns = _ref.columns,
       filtering = _ref.filtering,
       filters = _ref.filters,
@@ -56,7 +60,6 @@ export var Header = function Header(_ref) {
     expanded: Object.keys(groupState).filter(function (k) {
       return !groupState[k].expanded;
     }).length === 0,
-    theme: theme,
     onToggle: onToggle
   }), columns.map(function (_ref3) {
     var property = _ref3.property,
@@ -72,7 +75,6 @@ export var Header = function Header(_ref) {
         property: property,
         onSort: onSort,
         sort: sort,
-        theme: theme,
         themeProps: search ? innerThemeProps : dataTableContextTheme
       }, content);
     }
@@ -94,7 +96,6 @@ export var Header = function Header(_ref) {
         filtering: filtering,
         filters: filters,
         property: property,
-        theme: theme,
         onFilter: onFilter,
         onFiltering: onFiltering
       }));
@@ -109,8 +110,7 @@ export var Header = function Header(_ref) {
     if (onResize) {
       content = React.createElement(Resizer, {
         property: property,
-        onResize: onResize,
-        theme: theme
+        onResize: onResize
       }, content);
     }
 
@@ -124,3 +124,8 @@ export var Header = function Header(_ref) {
     }, content);
   })));
 };
+
+Header.defaultProps = {};
+Object.setPrototypeOf(Header.defaultProps, defaultProps);
+var HeaderWrapper = compose(withTheme)(Header);
+export { HeaderWrapper as Header };

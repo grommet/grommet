@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { genericStyles } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 var fillStyle = function fillStyle(fill) {
   if (fill === 'horizontal') {
@@ -163,7 +164,7 @@ var areasStyle = function areasStyle(props) {
   }).join(' ') + ";";
 };
 
-export var StyledGrid = styled.div.withConfig({
+var StyledGrid = styled.div.withConfig({
   displayName: "StyledGrid",
   componentId: "sc-1wofa1l-0"
 })(["display:grid;box-sizing:border-box;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
@@ -187,3 +188,6 @@ export var StyledGrid = styled.div.withConfig({
 }, function (props) {
   return props.theme.grid && props.theme.grid.extend;
 });
+StyledGrid.defaultProps = {};
+Object.setPrototypeOf(StyledGrid.defaultProps, defaultProps);
+export { StyledGrid };

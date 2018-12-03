@@ -10,10 +10,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
 import { ThemeContext as IconThemeContext } from "grommet-icons/es6/contexts/ThemeContext";
 import { ThemeContext } from '../../contexts';
 import { backgroundIsDark } from '../../utils';
-import { withForwardRef, withTheme } from '../hocs';
+import { defaultProps } from '../../default-props';
+import { withForwardRef } from '../hocs';
 import { StyledBox, StyledBoxGap } from './StyledBox';
 
 var Box =
@@ -93,7 +95,6 @@ function (_Component) {
     var _this$state = this.state,
         stateTheme = _this$state.theme,
         priorTheme = _this$state.priorTheme;
-    var theme = stateTheme || propsTheme;
     var contents = children;
 
     if (gap) {
@@ -108,8 +109,7 @@ function (_Component) {
               key: index,
               gap: gap,
               directionProp: direction,
-              responsive: responsive,
-              theme: theme
+              responsive: responsive
             }));
           }
         }
@@ -130,7 +130,6 @@ function (_Component) {
       widthProp: width,
       heightProp: height,
       responsive: responsive,
-      theme: theme,
       priorTheme: priorTheme
     }, rest), contents);
 
@@ -159,6 +158,7 @@ _defineProperty(Box, "defaultProps", {
   responsive: true
 });
 
+Object.setPrototypeOf(Box.defaultProps, defaultProps);
 var BoxDoc;
 
 if (process.env.NODE_ENV !== 'production') {

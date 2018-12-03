@@ -8,10 +8,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'recompose';
 import { Box } from '../Box';
 import { Text } from '../Text';
-import { withTheme } from '../hocs';
 
 var Value = function Value(_ref) {
   var basis = _ref.basis,
@@ -46,9 +44,8 @@ function (_Component) {
         direction = _this$props.direction,
         fill = _this$props.fill,
         gap = _this$props.gap,
-        theme = _this$props.theme,
         values = _this$props.values,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["basis", "children", "direction", "fill", "gap", "theme", "values"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["basis", "children", "direction", "fill", "gap", "values"]);
 
     if (values.length === 1) {
       var value = values[0];
@@ -141,5 +138,5 @@ if (process.env.NODE_ENV !== 'production') {
   DistributionDoc = require('./doc').doc(Distribution); // eslint-disable-line global-require
 }
 
-var DistributionWrapper = compose(withTheme)(DistributionDoc || Distribution);
+var DistributionWrapper = DistributionDoc || Distribution;
 export { DistributionWrapper as Distribution };

@@ -10,10 +10,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Component } from 'react';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
-import { withForwardRef, withTheme } from '../hocs';
+import { withForwardRef } from '../hocs';
 import { normalizeColor } from '../../utils';
 import { StyledTab } from './StyledTab';
 
@@ -148,7 +150,6 @@ function (_Component) {
       onBlur: this.onMouseOut
     }), React.createElement(StyledTab, _extends({
       as: Box,
-      theme: theme,
       plain: plain
     }, tabStyles), normalizedTitle));
   };
@@ -156,6 +157,8 @@ function (_Component) {
   return Tab;
 }(Component);
 
+Tab.defaultProps = {};
+Object.setPrototypeOf(Tab.defaultProps, defaultProps);
 var TabDoc;
 
 if (process.env.NODE_ENV !== 'production') {

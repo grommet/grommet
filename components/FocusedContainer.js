@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _reactDom = require("react-dom");
-
 var _utils = require("../utils");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -49,9 +47,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "removeTrap", function () {
       var restrictScroll = _this.props.restrictScroll;
-      /* eslint-disable-next-line react/no-find-dom-node */
-
-      var child = (0, _reactDom.findDOMNode)(_this.ref.current);
+      var child = _this.ref.current;
       (0, _utils.getBodyChildElements)().filter(isNotAncestorOf(child)).forEach(_utils.makeNodeFocusable);
 
       if (restrictScroll) {
@@ -61,9 +57,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "trapFocus", function () {
       var restrictScroll = _this.props.restrictScroll;
-      /* eslint-disable-next-line react/no-find-dom-node */
-
-      var child = (0, _reactDom.findDOMNode)(_this.ref.current);
+      var child = _this.ref.current;
       (0, _utils.getBodyChildElements)().filter(isNotAncestorOf(child)).forEach(_utils.makeNodeUnfocusable);
 
       if (restrictScroll) {

@@ -2,8 +2,6 @@
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactDom = require("react-dom");
-
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _react2 = require("@storybook/react");
@@ -605,10 +603,8 @@ function (_Component6) {
           event.stopPropagation();
 
           _this11.clearContentPartners();
-          /* eslint-disable-next-line react/no-find-dom-node */
 
-
-          (0, _reactDom.findDOMNode)(_this11.selectRef.current).focus();
+          _this11.selectRef.current.focus();
         }
       }, _react.default.createElement(_grommet.Box, {
         background: "gray",

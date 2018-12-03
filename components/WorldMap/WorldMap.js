@@ -5,13 +5,13 @@ exports.WorldMap = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactDom = require("react-dom");
-
 var _recompose = require("recompose");
 
-var _utils = require("../../utils");
+var _styledComponents = require("styled-components");
 
-var _hocs = require("../hocs");
+var _defaultProps = require("../../default-props");
+
+var _utils = require("../../utils");
 
 var _StyledWorldMap = require("./StyledWorldMap");
 
@@ -264,9 +264,9 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMouseMove", function (event) {
       var width = _this.state.width; // determine the map coordinates for where the mouse is
       // containerRef uses the group so we can handle aspect ratio scaling
-      // eslint-disable-next-line react/no-find-dom-node
 
-      var rect = (0, _reactDom.findDOMNode)(_this.containerRef).getBoundingClientRect();
+      var rect = _this.containerRef.getBoundingClientRect();
+
       var scale = rect.width / width; // since the SVG viewBox might be scaled
 
       var coords = [Math.round((event.clientX - rect.left) / scale / FACTOR), Math.round((event.clientY - rect.top) / scale / FACTOR)];
@@ -417,8 +417,7 @@ function (_Component) {
       viewBox: x + " " + y + " " + width + " " + height,
       preserveAspectRatio: "xMinYMin meet",
       width: width,
-      height: height,
-      theme: theme
+      height: height
     }, interactiveProps, rest), _react.default.createElement("g", {
       ref: function ref(_ref5) {
         _this2.containerRef = _ref5;
@@ -432,11 +431,13 @@ function (_Component) {
   return WorldMap;
 }(_react.Component);
 
+WorldMap.defaultProps = {};
+Object.setPrototypeOf(WorldMap.defaultProps, _defaultProps.defaultProps);
 var WorldMapDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   WorldMapDoc = require('./doc').doc(WorldMap); // eslint-disable-line global-require
 }
 
-var WorldMapWrapper = (0, _recompose.compose)(_hocs.withTheme)(WorldMapDoc || WorldMap);
+var WorldMapWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(WorldMapDoc || WorldMap);
 exports.WorldMap = WorldMapWrapper;

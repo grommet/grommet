@@ -6,7 +6,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 import React, { Component } from 'react';
 import { compose } from 'recompose';
-import { withFocus, withForwardRef, withTheme } from '../hocs';
+import { withFocus, withForwardRef } from '../hocs';
 import { StyledRangeInput } from './StyledRangeInput';
 
 var RangeInput =
@@ -40,5 +40,5 @@ if (process.env.NODE_ENV !== 'production') {
   RangeInputDoc = require('./doc').doc(RangeInput); // eslint-disable-line global-require
 }
 
-var RangeInputWrapper = compose(withFocus, withTheme, withForwardRef)(RangeInputDoc || RangeInput);
+var RangeInputWrapper = compose(withFocus, withForwardRef)(RangeInputDoc || RangeInput);
 export { RangeInputWrapper as RangeInput };

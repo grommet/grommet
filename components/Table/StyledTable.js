@@ -7,6 +7,8 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _utils = require("../../utils");
 
+var _defaultProps = require("../../default-props");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 var SIZE_MAP = {
@@ -35,6 +37,8 @@ var StyledTableCell = _styledComponents.default.td.withConfig({
 });
 
 exports.StyledTableCell = StyledTableCell;
+StyledTableCell.defaultProps = {};
+Object.setPrototypeOf(StyledTableCell.defaultProps, _defaultProps.defaultProps);
 
 var StyledTableDataCaption = _styledComponents.default.caption.withConfig({
   displayName: "StyledTable__StyledTableDataCaption",
@@ -42,6 +46,8 @@ var StyledTableDataCaption = _styledComponents.default.caption.withConfig({
 })(["display:none;"]);
 
 exports.StyledTableDataCaption = StyledTableDataCaption;
+StyledTableDataCaption.defaultProps = {};
+Object.setPrototypeOf(StyledTableDataCaption.defaultProps, _defaultProps.defaultProps);
 
 var StyledTableRow = _styledComponents.default.tr.withConfig({
   displayName: "StyledTable__StyledTableRow",
@@ -49,6 +55,8 @@ var StyledTableRow = _styledComponents.default.tr.withConfig({
 })(["height:100%;"]);
 
 exports.StyledTableRow = StyledTableRow;
+StyledTableRow.defaultProps = {};
+Object.setPrototypeOf(StyledTableRow.defaultProps, _defaultProps.defaultProps);
 
 var StyledTableBody = _styledComponents.default.tbody.withConfig({
   displayName: "StyledTable__StyledTableBody",
@@ -56,6 +64,8 @@ var StyledTableBody = _styledComponents.default.tbody.withConfig({
 })([""]);
 
 exports.StyledTableBody = StyledTableBody;
+StyledTableBody.defaultProps = {};
+Object.setPrototypeOf(StyledTableBody.defaultProps, _defaultProps.defaultProps);
 
 var StyledTableHeader = _styledComponents.default.thead.withConfig({
   displayName: "StyledTable__StyledTableHeader",
@@ -63,6 +73,8 @@ var StyledTableHeader = _styledComponents.default.thead.withConfig({
 })([""]);
 
 exports.StyledTableHeader = StyledTableHeader;
+StyledTableHeader.defaultProps = {};
+Object.setPrototypeOf(StyledTableHeader.defaultProps, _defaultProps.defaultProps);
 
 var StyledTableFooter = _styledComponents.default.tfoot.withConfig({
   displayName: "StyledTable__StyledTableFooter",
@@ -70,6 +82,8 @@ var StyledTableFooter = _styledComponents.default.tfoot.withConfig({
 })([""]);
 
 exports.StyledTableFooter = StyledTableFooter;
+StyledTableFooter.defaultProps = {};
+Object.setPrototypeOf(StyledTableFooter.defaultProps, _defaultProps.defaultProps);
 
 var StyledTable = _styledComponents.default.table.withConfig({
   displayName: "StyledTable",
@@ -79,3 +93,5 @@ var StyledTable = _styledComponents.default.table.withConfig({
 });
 
 exports.StyledTable = StyledTable;
+StyledTable.defaultProps = {};
+Object.setPrototypeOf(StyledTable.defaultProps, _defaultProps.defaultProps);

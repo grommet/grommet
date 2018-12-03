@@ -12,7 +12,7 @@ import React, { createRef, Component } from 'react';
 import { compose } from 'recompose';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
-import { withForwardRef, withTheme } from '../hocs';
+import { withForwardRef } from '../hocs';
 import { setFocusWithoutScroll } from '../../utils';
 
 var DropButton =
@@ -100,8 +100,7 @@ function (_Component) {
         dropTarget = _this$props2.dropTarget,
         id = _this$props2.id,
         open = _this$props2.open,
-        theme = _this$props2.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props2, ["disabled", "dropAlign", "forwardRef", "dropContent", "dropTarget", "id", "open", "theme"]);
+        rest = _objectWithoutPropertiesLoose(_this$props2, ["disabled", "dropAlign", "forwardRef", "dropContent", "dropTarget", "id", "open"]);
 
     var show = this.state.show;
     delete rest.onClose;
@@ -144,5 +143,5 @@ if (process.env.NODE_ENV !== 'production') {
   DropButtonDoc = require('./doc').doc(DropButton); // eslint-disable-line global-require
 }
 
-var DropButtonWrapper = compose(withTheme, withForwardRef)(DropButtonDoc || DropButton);
+var DropButtonWrapper = compose(withForwardRef)(DropButtonDoc || DropButton);
 export { DropButtonWrapper as DropButton };

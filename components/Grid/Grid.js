@@ -5,10 +5,6 @@ exports.Grid = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _recompose = require("recompose");
-
-var _hocs = require("../hocs");
-
 var _StyledGrid = require("./StyledGrid");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -37,6 +33,6 @@ if (process.env.NODE_ENV !== 'production') {
   GridDoc = require('./doc').doc(Grid); // eslint-disable-line global-require
 }
 
-var GridWrapper = (0, _recompose.compose)(_hocs.withTheme)(GridDoc || Grid);
+var GridWrapper = GridDoc || Grid;
 exports.Grid = GridWrapper;
 GridWrapper.available = typeof window !== 'undefined' && window.CSS && window.CSS.supports && window.CSS.supports('display', 'grid');

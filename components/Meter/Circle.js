@@ -5,6 +5,12 @@ exports.Circle = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _recompose = require("recompose");
+
+var _styledComponents = require("styled-components");
+
+var _defaultProps = require("../../default-props");
+
 var _utils = require("../../utils");
 
 var _StyledMeter = require("./StyledMeter");
@@ -123,8 +129,7 @@ var Circle = function Circle(props) {
   return _react.default.createElement(_StyledMeter.StyledMeter, _extends({
     viewBox: "0 0 " + width + " " + width,
     width: size === 'full' ? '100%' : width,
-    height: size === 'full' ? '100%' : width,
-    theme: theme
+    height: size === 'full' ? '100%' : width
   }, rest), _react.default.createElement("circle", _extends({
     cx: mid,
     cy: mid,
@@ -136,4 +141,7 @@ var Circle = function Circle(props) {
   })), paths, pathCaps);
 };
 
-exports.Circle = Circle;
+Circle.defaultProps = {};
+Object.setPrototypeOf(Circle.defaultProps, _defaultProps.defaultProps);
+var CircleWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Circle);
+exports.Circle = CircleWrapper;

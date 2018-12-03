@@ -8,11 +8,11 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
+import React, { createRef, Component } from 'react';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
 import { normalizeColor, parseMetricToNum } from '../../utils';
-import { withTheme } from '../hocs';
+import { defaultProps } from '../../default-props';
 import { StyledChart } from './StyledChart';
 import { normalizeValues, normalizeBounds } from './utils';
 
@@ -153,14 +153,15 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "containerRef", createRef());
+
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       containerWidth: 0,
       containerHeight: 0
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onResize", function () {
-      /* eslint-disable-next-line react/no-find-dom-node */
-      var containerNode = findDOMNode(_this.containerRef);
+      var containerNode = _this.containerRef.current;
 
       if (containerNode) {
         var parentNode = containerNode.parentNode;
@@ -209,8 +210,6 @@ function (_Component) {
   };
 
   _proto.render = function render() {
-    var _this2 = this;
-
     var _this$props = this.props,
         color = _this$props.color,
         onClick = _this$props.onClick,
@@ -249,14 +248,11 @@ function (_Component) {
     }
 
     return React.createElement(StyledChart, _extends({
-      ref: function ref(_ref6) {
-        _this2.containerRef = _ref6;
-      },
+      ref: this.containerRef,
       viewBox: viewBox,
       preserveAspectRatio: "none",
       width: size === 'full' ? '100%' : width,
-      height: size === 'full' ? '100%' : height,
-      theme: theme
+      height: size === 'full' ? '100%' : height
     }, rest), React.createElement("g", {
       stroke: normalizeColor(colorName, theme),
       strokeWidth: strokeWidth,
@@ -280,6 +276,7 @@ _defineProperty(Chart, "defaultProps", {
   type: 'bar'
 });
 
+Object.setPrototypeOf(Chart.defaultProps, defaultProps);
 var ChartDoc;
 
 if (process.env.NODE_ENV !== 'production') {

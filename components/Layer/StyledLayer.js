@@ -7,6 +7,8 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _utils = require("../../utils");
 
+var _defaultProps = require("../../default-props");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 var hiddenPositionStyle = (0, _styledComponents.css)(["left:-100%;right:100%;z-index:-1;position:fixed;"]);
@@ -36,6 +38,8 @@ var StyledLayer = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledLayer = StyledLayer;
+StyledLayer.defaultProps = {};
+Object.setPrototypeOf(StyledLayer.defaultProps, _defaultProps.defaultProps);
 
 var StyledOverlay = _styledComponents.default.div.withConfig({
   displayName: "StyledLayer__StyledOverlay",
@@ -225,3 +229,5 @@ var StyledContainer = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledContainer = StyledContainer;
+StyledContainer.defaultProps = {};
+Object.setPrototypeOf(StyledContainer.defaultProps, _defaultProps.defaultProps);

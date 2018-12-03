@@ -9,10 +9,10 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
-import { withTheme } from '../hocs';
 import { StyledWorldMap } from './StyledWorldMap'; // The graphic is drawn as a rectangular grid using coordinates spaced
 // by FACTOR pixels. The contents have both an area boundary for interaction
 // and dots described as rows where each row is described by three values:
@@ -251,9 +251,9 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMouseMove", function (event) {
       var width = _this.state.width; // determine the map coordinates for where the mouse is
       // containerRef uses the group so we can handle aspect ratio scaling
-      // eslint-disable-next-line react/no-find-dom-node
 
-      var rect = findDOMNode(_this.containerRef).getBoundingClientRect();
+      var rect = _this.containerRef.getBoundingClientRect();
+
       var scale = rect.width / width; // since the SVG viewBox might be scaled
 
       var coords = [Math.round((event.clientX - rect.left) / scale / FACTOR), Math.round((event.clientY - rect.top) / scale / FACTOR)];
@@ -404,8 +404,7 @@ function (_Component) {
       viewBox: x + " " + y + " " + width + " " + height,
       preserveAspectRatio: "xMinYMin meet",
       width: width,
-      height: height,
-      theme: theme
+      height: height
     }, interactiveProps, rest), React.createElement("g", {
       ref: function ref(_ref5) {
         _this2.containerRef = _ref5;
@@ -419,6 +418,8 @@ function (_Component) {
   return WorldMap;
 }(Component);
 
+WorldMap.defaultProps = {};
+Object.setPrototypeOf(WorldMap.defaultProps, defaultProps);
 var WorldMapDoc;
 
 if (process.env.NODE_ENV !== 'production') {

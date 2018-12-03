@@ -9,8 +9,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { Component } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from '../hocs';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Body } from './Body';
@@ -138,8 +136,7 @@ function (_Component) {
         resizeable = _this$props.resizeable,
         size = _this$props.size,
         sortable = _this$props.sortable,
-        theme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["columns", "data", "groupBy", "onMore", "resizeable", "size", "sortable", "theme"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["columns", "data", "groupBy", "onMore", "resizeable", "size", "sortable"]);
 
     var _this$state = this.state,
         data = _this$state.data,
@@ -157,9 +154,7 @@ function (_Component) {
       console.warn('DataTable cannot combine "size" and "resizeble".');
     }
 
-    return React.createElement(StyledDataTable, _extends({
-      theme: theme
-    }, rest), React.createElement(Header, {
+    return React.createElement(StyledDataTable, rest, React.createElement(Header, {
       columns: columns,
       filtering: filtering,
       filters: filters,
@@ -167,7 +162,6 @@ function (_Component) {
       groupState: groupState,
       size: size,
       sort: sort,
-      theme: theme,
       widths: widths,
       onFiltering: this.onFiltering,
       onFilter: this.onFilter,
@@ -180,21 +174,18 @@ function (_Component) {
       groups: groups,
       groupState: groupState,
       primaryProperty: primaryProperty,
-      theme: theme,
       onToggle: this.onToggleGroup
     }) : React.createElement(Body, {
       columns: columns,
       data: data,
       onMore: onMore,
       primaryProperty: primaryProperty,
-      size: size,
-      theme: theme
+      size: size
     }), showFooter && React.createElement(Footer, {
       columns: columns,
       footerValues: footerValues,
       groups: groups,
-      size: size,
-      theme: theme
+      size: size
     }));
   };
 
@@ -212,5 +203,5 @@ if (process.env.NODE_ENV !== 'production') {
   DataTableDoc = require('./doc').doc(DataTable); // eslint-disable-line global-require
 }
 
-var DataTableWrapper = compose(withTheme)(DataTableDoc || DataTable);
+var DataTableWrapper = DataTableDoc || DataTable;
 export { DataTableWrapper as DataTable };

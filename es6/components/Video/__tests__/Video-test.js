@@ -3,17 +3,6 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components'; // import { mount } from 'enzyme';
 
 import { Grommet, Video } from '../..';
-jest.mock('react-dom', function () {
-  return {
-    findDOMNode: function findDOMNode() {
-      return {
-        textTracks: [{
-          label: 'test'
-        }]
-      };
-    }
-  };
-});
 var CONTENTS = [React.createElement("source", {
   key: "source"
 }), React.createElement("track", {

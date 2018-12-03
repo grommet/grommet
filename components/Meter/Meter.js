@@ -5,10 +5,6 @@ exports.Meter = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
-var _hocs = require("../hocs");
-
 var _Bar = require("./Bar");
 
 var _Circle = require("./Circle");
@@ -98,7 +94,7 @@ function (_Component) {
 
 _defineProperty(Meter, "defaultProps", {
   background: {
-    color: 'light-1',
+    color: 'light-2',
     opacity: 'medium'
   },
   size: 'medium',
@@ -112,5 +108,5 @@ if (process.env.NODE_ENV !== 'production') {
   MeterDoc = require('./doc').doc(Meter); // eslint-disable-line global-require
 }
 
-var MeterWrapper = (0, _recompose.compose)(_hocs.withTheme)(MeterDoc || Meter);
+var MeterWrapper = MeterDoc || Meter;
 exports.Meter = MeterWrapper;

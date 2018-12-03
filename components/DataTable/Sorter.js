@@ -5,11 +5,17 @@ exports.Sorter = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _recompose = require("recompose");
+
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+
+var _defaultProps = require("../../default-props");
 
 var _Button = require("../Button");
 
 var _Box = require("../Box");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -56,4 +62,7 @@ var Sorter = function Sorter(_ref) {
   return content;
 };
 
-exports.Sorter = Sorter;
+Sorter.defaultProps = {};
+Object.setPrototypeOf(Sorter.defaultProps, _defaultProps.defaultProps);
+var SorterWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Sorter);
+exports.Sorter = SorterWrapper;

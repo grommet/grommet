@@ -5,10 +5,6 @@ exports.Text = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _recompose = require("recompose");
-
-var _hocs = require("../hocs");
-
 var _StyledText = require("./StyledText");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -38,5 +34,5 @@ if (process.env.NODE_ENV !== 'production') {
   TextDoc = require('./doc').doc(Text); // eslint-disable-line global-require
 }
 
-var TextWrapper = (0, _recompose.compose)(_hocs.withTheme)(TextDoc || Text);
+var TextWrapper = TextDoc || Text;
 exports.Text = TextWrapper;

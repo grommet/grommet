@@ -1,9 +1,10 @@
 import styled, { css, keyframes } from 'styled-components';
-import { backgroundStyle, baseStyle, breakpointStyle } from '../../utils';
+import { baseStyle, backgroundStyle, breakpointStyle } from '../../utils';
+import { defaultProps } from '../../default-props';
 var hiddenPositionStyle = css(["left:-100%;right:100%;z-index:-1;position:fixed;"]);
 var desktopLayerStyle = "\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  width: 100vw;\n  height: 100vh;\n";
 var responsiveLayerStyle = "\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n";
-export var StyledLayer = styled.div.withConfig({
+var StyledLayer = styled.div.withConfig({
   displayName: "StyledLayer",
   componentId: "rmtehz-0"
 })(["", " background:unset;position:relative;z-index:", ";pointer-events:none;outline:none;", " ", ";"], baseStyle, function (props) {
@@ -24,7 +25,9 @@ export var StyledLayer = styled.div.withConfig({
 }, function (props) {
   return props.theme.layer && props.theme.layer.extend;
 });
-export var StyledOverlay = styled.div.withConfig({
+StyledLayer.defaultProps = {};
+Object.setPrototypeOf(StyledLayer.defaultProps, defaultProps);
+var StyledOverlay = styled.div.withConfig({
   displayName: "StyledLayer__StyledOverlay",
   componentId: "rmtehz-1"
 })(["position:absolute;", " top:0px;left:0px;right:0px;bottom:0px;", " pointer-events:all;"], function (props) {
@@ -185,7 +188,7 @@ var desktopContainerStyle = css(["position:", ";max-height:", ";max-width:", ";b
   return props.position !== 'hidden' && POSITIONS[props.position][props.full](MARGINS(props.margin, props.theme)) || '';
 });
 var responsiveContainerStyle = css(["position:relative;max-height:none;max-width:none;border-radius:0;top:0;bottom:0;left:0;right:0;transform:none;animation:none;height:100vh;width:100vw;"]);
-export var StyledContainer = styled.div.withConfig({
+var StyledContainer = styled.div.withConfig({
   displayName: "StyledLayer__StyledContainer",
   componentId: "rmtehz-2"
 })(["", " display:flex;flex-direction:column;min-height:", ";", " outline:none;pointer-events:all;z-index:", ";", " ", ";"], function (props) {
@@ -207,3 +210,6 @@ export var StyledContainer = styled.div.withConfig({
 
   return '';
 });
+StyledContainer.defaultProps = {};
+Object.setPrototypeOf(StyledContainer.defaultProps, defaultProps);
+export { StyledLayer, StyledOverlay, StyledContainer };

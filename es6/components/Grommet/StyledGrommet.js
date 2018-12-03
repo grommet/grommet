@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 import { baseStyle } from '../../utils';
+import { defaultProps } from '../../default-props';
 var fullStyle = css(["width:100vw;height:100vh;overflow:auto;"]);
-export var StyledGrommet = styled.div.withConfig({
+var StyledGrommet = styled.div.withConfig({
   displayName: "StyledGrommet",
   componentId: "sc-19lkkz7-0"
 })(["", " ", " ", " ", ""], function (props) {
@@ -13,3 +14,6 @@ export var StyledGrommet = styled.div.withConfig({
 }, function (props) {
   return props.theme.grommet.extend;
 });
+StyledGrommet.defaultProps = {};
+Object.setPrototypeOf(StyledGrommet.defaultProps, defaultProps);
+export { StyledGrommet };

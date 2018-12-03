@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
-import { backgroundStyle, baseStyle } from '../../utils';
+import { baseStyle, backgroundStyle } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 function getTransformOriginStyle(align) {
   var vertical = 'top';
@@ -18,7 +19,7 @@ function getTransformOriginStyle(align) {
 }
 
 var dropKeyFrames = keyframes(["0%{opacity:0.5;transform:scale(0.8);}100%{opacity:1;transform:scale(1);}"]);
-export var StyledDrop = styled.div.withConfig({
+var StyledDrop = styled.div.withConfig({
   displayName: "StyledDrop",
   componentId: "sc-16s5rx8-0"
 })(["", " border-radius:", ";position:fixed;z-index:", ";outline:none;overflow:auto;", " opacity:0;transform-origin:", ";animation:", " 0.1s forwards;animation-delay:0.01s;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){display:flex;align-items:stretch;}", ""], baseStyle, function (props) {
@@ -32,3 +33,6 @@ export var StyledDrop = styled.div.withConfig({
 }, dropKeyFrames, function (props) {
   return props.theme.global.drop && props.theme.global.drop.extend;
 });
+StyledDrop.defaultProps = {};
+Object.setPrototypeOf(StyledDrop.defaultProps, defaultProps);
+export { StyledDrop };

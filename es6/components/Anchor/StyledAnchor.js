@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { focusStyle, genericStyles, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 var disabledStyle = "\n  opacity: 0.3;\n  cursor: default;\n  text-decoration: none;\n";
 
 var sizeStyle = function sizeStyle(props) {
@@ -12,7 +13,7 @@ var sizeStyle = function sizeStyle(props) {
   return css(["font-size:inherit;line-height:inherit;"]);
 };
 
-export var StyledAnchor = styled.a.withConfig({
+var StyledAnchor = styled.a.withConfig({
   displayName: "StyledAnchor",
   componentId: "sc-1rp7lwl-0"
 })(["box-sizing:border-box;", " color:", ";", " text-decoration:", ";cursor:pointer;outline:none;", " ", " ", " ", " ", " ", ""], function (props) {
@@ -34,3 +35,6 @@ export var StyledAnchor = styled.a.withConfig({
 }, function (props) {
   return props.theme.anchor.extend;
 });
+StyledAnchor.defaultProps = {};
+Object.setPrototypeOf(StyledAnchor.defaultProps, defaultProps);
+export { StyledAnchor };

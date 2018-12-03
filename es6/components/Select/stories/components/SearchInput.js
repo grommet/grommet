@@ -7,7 +7,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { createRef, Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { TextInput } from '../../..';
 import { SearchBorderBox } from './SearchBorderBox';
 import { SearchInputContext } from './SearchInputContext';
@@ -35,10 +34,13 @@ function (_Component) {
   _proto.componentDidMount = function componentDidMount() {
     var _this2 = this;
 
-    setTimeout(function () {
-      /* eslint-disable-next-line react/no-find-dom-node */
-      findDOMNode(_this2.textInputRef.current).focus();
+    this.focusTimeout = setTimeout(function () {
+      _this2.textInputRef.current.focus();
     }, 300);
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    clearTimeout(this.focusTimeout);
   };
 
   _proto.render = function render() {

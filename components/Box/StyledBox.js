@@ -5,6 +5,8 @@ exports.StyledBoxGap = exports.StyledBox = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
+var _defaultProps = require("../../default-props");
+
 var _utils = require("../../utils");
 
 var _FLEX_MAP;
@@ -444,6 +446,9 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, theme) {
   return styles;
 };
 
+StyledBox.defaultProps = {};
+Object.setPrototypeOf(StyledBox.defaultProps, _defaultProps.defaultProps);
+
 var StyledBoxGap = _styledComponents.default.div.withConfig({
   displayName: "StyledBox__StyledBoxGap",
   componentId: "sc-13pk1d4-1"
@@ -452,3 +457,5 @@ var StyledBoxGap = _styledComponents.default.div.withConfig({
 });
 
 exports.StyledBoxGap = StyledBoxGap;
+StyledBoxGap.defaultProps = {};
+Object.setPrototypeOf(StyledBoxGap.defaultProps, _defaultProps.defaultProps);

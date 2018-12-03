@@ -325,6 +325,7 @@ function (_Component5) {
       gap: "medium"
     }, checkboxes.map(function (item) {
       return React.createElement(CheckBox, {
+        key: item,
         checked: checked.indexOf(item) !== -1,
         label: React.createElement(Text, null, item),
         onChange: function onChange(e) {

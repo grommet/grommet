@@ -7,13 +7,17 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
+var _styledComponents = require("styled-components");
+
+var _utils = require("../../utils");
+
+var _defaultProps = require("../../default-props");
+
 var _Box = require("../Box");
 
 var _hocs = require("../hocs");
 
 var _StyledAnchor = require("./StyledAnchor");
-
-var _utils = require("../../utils");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -80,7 +84,6 @@ function (_Component) {
       focus: focus,
       hasLabel: label,
       reverse: reverse,
-      theme: theme,
       href: !disabled ? href : undefined,
       onClick: !disabled ? onClick : undefined
     }), first && second ? _react.default.createElement(_Box.Box, {
@@ -97,11 +100,13 @@ function (_Component) {
   return Anchor;
 }(_react.Component);
 
+Anchor.defaultProps = {};
+Object.setPrototypeOf(Anchor.defaultProps, _defaultProps.defaultProps);
 var AnchorDoc;
 
 if (process.env.NODE_ENV !== 'production') {
   AnchorDoc = require('./doc').doc(Anchor); // eslint-disable-line global-require
 }
 
-var AnchorWrapper = (0, _recompose.compose)(_hocs.withFocus, _hocs.withTheme, _hocs.withForwardRef)(AnchorDoc || Anchor);
+var AnchorWrapper = (0, _recompose.compose)(_hocs.withFocus, _styledComponents.withTheme, _hocs.withForwardRef)(AnchorDoc || Anchor);
 exports.Anchor = AnchorWrapper;

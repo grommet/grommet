@@ -8,9 +8,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { cloneElement, Children, Component } from 'react';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
 import { colorIsDark, normalizeBackground, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
-import { withFocus, withForwardRef, withTheme } from '../hocs';
+import { withFocus, withForwardRef } from '../hocs';
 import { StyledButton } from './StyledButton';
 
 var isDarkBackground = function isDarkBackground(props) {
@@ -86,7 +88,6 @@ function (_Component) {
       onClick: onClick,
       plain: typeof plain !== 'undefined' ? plain : Children.count(children) > 0 || icon && !label,
       primary: primary,
-      theme: theme,
       type: !href ? type : undefined
     }), first || second ? React.createElement(Box, {
       direction: "row",
@@ -104,6 +105,7 @@ _defineProperty(Button, "defaultProps", {
   focusIndicator: true
 });
 
+Object.setPrototypeOf(Button.defaultProps, defaultProps);
 var ButtonDoc;
 
 if (process.env.NODE_ENV !== 'production') {

@@ -5,10 +5,6 @@ exports.Clock = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
-var _hocs = require("../hocs");
-
 var _Analog = require("./Analog");
 
 var _Digital = require("./Digital");
@@ -266,5 +262,5 @@ if (process.env.NODE_ENV !== 'production') {
   ClockDoc = require('./doc').doc(Clock); // eslint-disable-line global-require
 }
 
-var ClockWrapper = (0, _recompose.compose)(_hocs.withTheme)(ClockDoc || Clock);
+var ClockWrapper = ClockDoc || Clock;
 exports.Clock = ClockWrapper;

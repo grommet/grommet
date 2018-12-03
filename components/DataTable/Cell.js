@@ -5,6 +5,12 @@ exports.Cell = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _recompose = require("recompose");
+
+var _styledComponents = require("styled-components");
+
+var _defaultProps = require("../../default-props");
+
 var _TableCell = require("../TableCell");
 
 var _Text = require("../Text");
@@ -43,4 +49,7 @@ var Cell = function Cell(_ref) {
   }), content);
 };
 
-exports.Cell = Cell;
+Cell.defaultProps = {};
+Object.setPrototypeOf(Cell.defaultProps, _defaultProps.defaultProps);
+var CellWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(Cell);
+exports.Cell = CellWrapper;

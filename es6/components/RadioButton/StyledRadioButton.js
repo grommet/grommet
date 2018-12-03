@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { focusStyle, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 var disabledStyle = "\n  opacity: 0.5;\n  cursor: default;\n";
-export var StyledRadioButtonContainer = styled.label.withConfig({
+var StyledRadioButtonContainer = styled.label.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonContainer",
   componentId: "g1f6ld-0"
 })(["user-select:none;", " ", ":hover input:not([disabled]) + div,:hover input:not([disabled]) + span{border-color:", ";}", ";"], function (props) {
@@ -13,13 +14,17 @@ export var StyledRadioButtonContainer = styled.label.withConfig({
 }, function (props) {
   return props.theme.radioButton.extend;
 });
-export var StyledRadioButtonInput = styled.input.withConfig({
+StyledRadioButtonContainer.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonContainer.defaultProps, defaultProps);
+var StyledRadioButtonInput = styled.input.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonInput",
   componentId: "g1f6ld-1"
 })(["position:absolute;opacity:0;top:0;left:0;width:100%;height:100%;margin:0;z-index:1;", ";"], function (props) {
   return !props.disabled && 'cursor: pointer;';
 });
-export var StyledRadioButtonIcon = styled.svg.withConfig({
+StyledRadioButtonInput.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonInput.defaultProps, defaultProps);
+var StyledRadioButtonIcon = styled.svg.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonIcon",
   componentId: "g1f6ld-2"
 })(["box-sizing:border-box;position:absolute;width:", ";height:", ";fill:", ";", ";"], function (props) {
@@ -31,7 +36,9 @@ export var StyledRadioButtonIcon = styled.svg.withConfig({
 }, function (props) {
   return props.theme.radioButton.icon.extend;
 });
-export var StyledRadioButtonBox = styled.div.withConfig({
+StyledRadioButtonIcon.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonIcon.defaultProps, defaultProps);
+var StyledRadioButtonBox = styled.div.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonBox",
   componentId: "g1f6ld-3"
 })(["", ";", ";"], function (props) {
@@ -39,9 +46,14 @@ export var StyledRadioButtonBox = styled.div.withConfig({
 }, function (props) {
   return props.theme.radioButton.check.extend;
 });
-export var StyledRadioButton = styled.div.withConfig({
+StyledRadioButtonBox.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonBox.defaultProps, defaultProps);
+var StyledRadioButton = styled.div.withConfig({
   displayName: "StyledRadioButton",
   componentId: "g1f6ld-4"
 })(["position:relative;", ";"], function (props) {
   return props.theme.radioButton && props.theme.radioButton.extend;
 });
+StyledRadioButton.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButton.defaultProps, defaultProps);
+export { StyledRadioButtonContainer, StyledRadioButtonInput, StyledRadioButtonIcon, StyledRadioButtonBox, StyledRadioButton };

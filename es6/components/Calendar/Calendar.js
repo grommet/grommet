@@ -8,14 +8,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-import React, { Component } from 'react'; // import { findDOMNode } from 'react-dom';
-
+import React, { Component } from 'react';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Heading } from '../Heading';
 import { Keyboard } from '../Keyboard';
-import { withTheme } from '../hocs';
 import { StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks, StyledWeeksContainer } from './StyledCalendar';
 import { addDays, addMonths, betweenDates, daysApart, endOfMonth, startOfMonth, subtractDays, subtractMonths, withinDates, updateDateRange } from './utils';
 var headingPadMap = {
@@ -337,8 +337,7 @@ function (_Component) {
       if (day.getDay() === firstDayOfWeek) {
         if (days) {
           weeks.push(React.createElement(StyledWeek, {
-            key: day.getTime(),
-            theme: theme
+            key: day.getTime()
           }, days));
         }
 
@@ -350,11 +349,9 @@ function (_Component) {
       if (!showAdjacentDays && otherMonth) {
         days.push(React.createElement(StyledDayContainer, {
           key: day.getTime(),
-          sizeProp: size,
-          theme: theme
+          sizeProp: size
         }, React.createElement(StyledDay, {
-          sizeProp: size,
-          theme: theme
+          sizeProp: size
         })));
       } else {
         var dateString = day.toISOString();
@@ -372,8 +369,7 @@ function (_Component) {
         var dayDisabled = withinDates(day, disabled) || bounds && !betweenDates(day, bounds);
         days.push(React.createElement(StyledDayContainer, {
           key: day.getTime(),
-          sizeProp: size,
-          theme: theme
+          sizeProp: size
         }, React.createElement(Button, {
           ref: this.dayRefs[dateString],
           a11yTitle: day.toDateString(),
@@ -391,8 +387,7 @@ function (_Component) {
           inRange: inRange,
           otherMonth: day.getMonth() !== reference.getMonth(),
           isSelected: selected,
-          sizeProp: size,
-          theme: theme
+          sizeProp: size
         }, day.getDate()))));
       }
 
@@ -400,12 +395,10 @@ function (_Component) {
     }
 
     weeks.push(React.createElement(StyledWeek, {
-      key: day.getTime(),
-      theme: theme
+      key: day.getTime()
     }, days));
     return React.createElement(StyledCalendar, _extends({
-      sizeProp: size,
-      theme: theme
+      sizeProp: size
     }, rest), React.createElement(Keyboard, {
       onUp: function onUp(event) {
         event.preventDefault();
@@ -418,10 +411,10 @@ function (_Component) {
         _this2.setFocus(addDays(focused, 7));
       },
       onLeft: function onLeft() {
-        return _this2.setFocus(addDays(focused, -1));
+        return focused && _this2.setFocus(addDays(focused, -1));
       },
       onRight: function onRight() {
-        return _this2.setFocus(addDays(focused, 1));
+        return focused && _this2.setFocus(addDays(focused, 1));
       }
     }, React.createElement(Box, null, header ? header({
       date: reference,
@@ -435,12 +428,10 @@ function (_Component) {
       previousInBound: betweenDates(previousMonth, bounds),
       nextInBound: betweenDates(nextMonth, bounds)
     }) : this.renderCalendarHeader(previousMonth, nextMonth), React.createElement(StyledWeeksContainer, {
-      sizeProp: size,
-      theme: theme
+      sizeProp: size
     }, React.createElement(StyledWeeks, {
       slide: slide,
-      sizeProp: size,
-      theme: theme
+      sizeProp: size
     }, weeks)))));
   };
 
@@ -455,6 +446,7 @@ _defineProperty(Calendar, "defaultProps", {
   showAdjacentDays: true
 });
 
+Object.setPrototypeOf(Calendar.defaultProps, defaultProps);
 var CalendarDoc;
 
 if (process.env.NODE_ENV !== 'production') {

@@ -5,10 +5,9 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { createRef, Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
-import styled from 'styled-components';
-import { withTheme } from '../hocs';
+import styled, { withTheme } from 'styled-components';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 
 var animatedBoxProperty = function animatedBoxProperty(direction) {
@@ -49,10 +48,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "ref", createRef());
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getSnapshotBeforeUpdate", function () {
-      return (
-        /* eslint-disable-next-line react/no-find-dom-node */
-        _this.ref.current && findDOMNode(_this.ref.current).getBoundingClientRect()
-      );
+      return _this.ref.current && _this.ref.current.getBoundingClientRect();
     });
 
     _this.state = {
@@ -75,9 +71,7 @@ function (_Component) {
     var _this$state = this.state,
         animate = _this$state.animate,
         open = _this$state.open;
-    /* eslint-disable-next-line react/no-find-dom-node */
-
-    var container = findDOMNode(this.ref.current);
+    var container = this.ref.current;
     var dimension = animatedBoxProperty(direction);
     var boudingClientRect = container.getBoundingClientRect();
     var dimensionSize = boudingClientRect[dimension];
@@ -137,6 +131,8 @@ function (_Component) {
   return Collapsible;
 }(Component);
 
+Collapsible.defaultProps = {};
+Object.setPrototypeOf(Collapsible.defaultProps, defaultProps);
 var CollapsibleDoc;
 
 if (process.env.NODE_ENV !== 'production') {

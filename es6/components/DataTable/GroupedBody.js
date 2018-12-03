@@ -19,8 +19,7 @@ export var GroupedBody = function GroupedBody(_ref) {
       rest = _objectWithoutPropertiesLoose(_ref, ["columns", "groupBy", "groups", "groupState", "primaryProperty", "onToggle", "size", "theme"]);
 
   return React.createElement(StyledDataTableBody, _extends({
-    size: size,
-    theme: theme
+    size: size
   }, rest), groups.map(function (group) {
     var expanded = groupState[group.key].expanded;
     var content = React.createElement(StyledDataTableRow, {
@@ -29,7 +28,6 @@ export var GroupedBody = function GroupedBody(_ref) {
     }, React.createElement(ExpanderCell, {
       context: expanded ? 'groupHeader' : 'body',
       expanded: expanded,
-      theme: theme,
       onToggle: onToggle(group.key)
     }), columns.map(function (column) {
       return React.createElement(Cell, {
@@ -37,8 +35,7 @@ export var GroupedBody = function GroupedBody(_ref) {
         context: expanded ? 'groupHeader' : 'body',
         column: column,
         datum: group.datum,
-        scope: column.property === groupBy ? 'row' : undefined,
-        theme: theme
+        scope: column.property === groupBy ? 'row' : undefined
       });
     }));
 
@@ -57,8 +54,7 @@ export var GroupedBody = function GroupedBody(_ref) {
             context: "body",
             column: column,
             datum: datum,
-            scope: column.primary ? 'row' : undefined,
-            theme: theme
+            scope: column.primary ? 'row' : undefined
           });
         }));
       }), React.createElement(StyledDataTableRow, {

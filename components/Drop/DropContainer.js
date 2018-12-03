@@ -5,7 +5,13 @@ exports.DropContainer = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _recompose = require("recompose");
+
+var _styledComponents = require("styled-components");
+
 var _contexts = require("grommet-icons/contexts");
+
+var _defaultProps = require("../../default-props");
 
 var _contexts2 = require("../../contexts");
 
@@ -322,8 +328,7 @@ function (_Component) {
       elevation: !plain && (elevation || theme.global.drop.shadowSize || 'small'),
       tabIndex: "-1",
       ref: this.dropRef,
-      alignProp: alignProp,
-      theme: theme
+      alignProp: alignProp
     }, rest), children);
 
     if (stateTheme) {
@@ -350,8 +355,6 @@ function (_Component) {
   return DropContainer;
 }(_react.Component);
 
-exports.DropContainer = DropContainer;
-
 _defineProperty(DropContainer, "defaultProps", {
   align: {
     top: 'top',
@@ -359,3 +362,7 @@ _defineProperty(DropContainer, "defaultProps", {
   },
   stretch: 'width'
 });
+
+Object.setPrototypeOf(DropContainer.defaultProps, _defaultProps.defaultProps);
+var DropContainerWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(DropContainer);
+exports.DropContainer = DropContainerWrapper;

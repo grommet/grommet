@@ -10,7 +10,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { findDOMNode } from 'react-dom';
 import { getBodyChildElements, makeNodeFocusable, makeNodeUnfocusable } from '../utils';
 
 var isNotAncestorOf = function isNotAncestorOf(child) {
@@ -37,9 +36,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "removeTrap", function () {
       var restrictScroll = _this.props.restrictScroll;
-      /* eslint-disable-next-line react/no-find-dom-node */
-
-      var child = findDOMNode(_this.ref.current);
+      var child = _this.ref.current;
       getBodyChildElements().filter(isNotAncestorOf(child)).forEach(makeNodeFocusable);
 
       if (restrictScroll) {
@@ -49,9 +46,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "trapFocus", function () {
       var restrictScroll = _this.props.restrictScroll;
-      /* eslint-disable-next-line react/no-find-dom-node */
-
-      var child = findDOMNode(_this.ref.current);
+      var child = _this.ref.current;
       getBodyChildElements().filter(isNotAncestorOf(child)).forEach(makeNodeUnfocusable);
 
       if (restrictScroll) {

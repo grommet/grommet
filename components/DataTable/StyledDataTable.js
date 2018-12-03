@@ -7,6 +7,8 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _utils = require("../../utils");
 
+var _defaultProps = require("../../default-props");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var StyledDataTable = _styledComponents.default.table.withConfig({
@@ -15,6 +17,8 @@ var StyledDataTable = _styledComponents.default.table.withConfig({
 })(["border-spacing:0;border-collapse:collapse;height:100%;", ";"], _utils.genericStyles);
 
 exports.StyledDataTable = StyledDataTable;
+StyledDataTable.defaultProps = {};
+Object.setPrototypeOf(StyledDataTable.defaultProps, _defaultProps.defaultProps);
 
 var StyledDataTableRow = _styledComponents.default.tr.withConfig({
   displayName: "StyledDataTable__StyledDataTableRow",
@@ -24,6 +28,8 @@ var StyledDataTableRow = _styledComponents.default.tr.withConfig({
 });
 
 exports.StyledDataTableRow = StyledDataTableRow;
+StyledDataTableRow.defaultProps = {};
+Object.setPrototypeOf(StyledDataTableRow.defaultProps, _defaultProps.defaultProps);
 
 var StyledDataTableBody = _styledComponents.default.tbody.withConfig({
   displayName: "StyledDataTable__StyledDataTableBody",
@@ -33,6 +39,8 @@ var StyledDataTableBody = _styledComponents.default.tbody.withConfig({
 });
 
 exports.StyledDataTableBody = StyledDataTableBody;
+StyledDataTableBody.defaultProps = {};
+Object.setPrototypeOf(StyledDataTableBody.defaultProps, _defaultProps.defaultProps);
 
 var StyledDataTableHeader = _styledComponents.default.thead.withConfig({
   displayName: "StyledDataTable__StyledDataTableHeader",
@@ -42,6 +50,8 @@ var StyledDataTableHeader = _styledComponents.default.thead.withConfig({
 });
 
 exports.StyledDataTableHeader = StyledDataTableHeader;
+StyledDataTableHeader.defaultProps = {};
+Object.setPrototypeOf(StyledDataTableHeader.defaultProps, _defaultProps.defaultProps);
 
 var StyledDataTableFooter = _styledComponents.default.tfoot.withConfig({
   displayName: "StyledDataTable__StyledDataTableFooter",
@@ -51,3 +61,5 @@ var StyledDataTableFooter = _styledComponents.default.tfoot.withConfig({
 });
 
 exports.StyledDataTableFooter = StyledDataTableFooter;
+StyledDataTableFooter.defaultProps = {};
+Object.setPrototypeOf(StyledDataTableFooter.defaultProps, _defaultProps.defaultProps);
