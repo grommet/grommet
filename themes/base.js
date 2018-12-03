@@ -642,16 +642,16 @@ var generate = function generate(baseSpacing, scale) {
     },
     select: {
       // background: undefined,
+      container: {// extend: undefined,
+      },
+      control: {// extend: undefined,
+      },
       icons: {
         // color: { dark: undefined, light: undefined },
         down: _grommetIcons.FormDown
       },
       // searchInput: undefined,
-      step: 20,
-      container: {// extend: undefined,
-      },
-      control: {// extend: undefined,
-      }
+      step: 20
     },
     tab: {
       active: {

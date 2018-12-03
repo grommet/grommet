@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.doc = void 0;
+exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -51,3 +51,41 @@ var doc = function doc(Select) {
 };
 
 exports.doc = doc;
+var themeDoc = {
+  'select.background': {
+    description: 'The background color used for Select.',
+    type: 'string',
+    defaultValue: undefined
+  },
+  'select.container.extend': {
+    description: 'Any additional style for the container of the Select component.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'select.control.extend': {
+    description: 'Any additional style for the control of the Select component.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'select.icons.color': {
+    description: 'The color used for Select icons.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined
+  },
+  'select.icons.down': {
+    description: 'The down icon to use for opening the Select.',
+    type: 'React.element',
+    defaultValue: '<FormDown />'
+  },
+  'select.searchInput': {
+    description: "Component for the Select search input field.",
+    type: 'React.component',
+    defaultValue: undefined
+  },
+  'select.step': {
+    description: "How many items to render at a time.",
+    type: 'number',
+    defaultValue: 20
+  }
+};
+exports.themeDoc = themeDoc;
