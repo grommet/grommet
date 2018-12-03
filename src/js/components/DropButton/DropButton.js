@@ -114,8 +114,6 @@ let DropButtonDoc;
 if (process.env.NODE_ENV !== 'production') {
   DropButtonDoc = require('./doc').doc(DropButton); // eslint-disable-line global-require
 }
-const DropButtonWrapper = compose(
-  withForwardRef,
-)(DropButtonDoc || DropButton);
+const DropButtonWrapper = compose(withForwardRef)(DropButtonDoc || DropButton);
 
 export { DropButtonWrapper as DropButton };

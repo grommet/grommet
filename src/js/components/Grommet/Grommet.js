@@ -145,9 +145,7 @@ class Grommet extends Component {
       <ThemeContext.Provider value={theme}>
         <IconThemeContext.Provider value={theme.icon}>
           <ResponsiveContext.Provider value={responsive}>
-            <StyledGrommet {...rest}>
-              {children}
-            </StyledGrommet>
+            <StyledGrommet {...rest}>{children}</StyledGrommet>
           </ResponsiveContext.Provider>
         </IconThemeContext.Provider>
       </ThemeContext.Provider>
