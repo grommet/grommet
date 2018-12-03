@@ -418,7 +418,7 @@ Defaults to
 
 **select.searchInput**
 
-The different properties of the Select input field. Expects `object`.
+Component for the Select search input field. Expects `React.component`.
 
 Defaults to
 

@@ -191,8 +191,8 @@ export const themeDoc = {
     defaultValue: '<FormDown />',
   },
   'select.searchInput': {
-    description: `The different properties of the Select input field.`,
-    type: 'object',
+    description: `Component for the Select search input field.`,
+    type: 'React.component',
     defaultValue: undefined,
   },
   'select.step': {
