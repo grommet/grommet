@@ -1,9 +1,9 @@
 import React, { createRef, Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
-import { withTheme } from '../hocs';
+import { defaultProps } from '../../default-props';
+
 import { Box } from '../Box';
 
 const animatedBoxProperty = direction =>
@@ -54,8 +54,7 @@ class Collapsible extends Component {
     } = this.props;
     const { animate, open } = this.state;
 
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const container = findDOMNode(this.ref.current);
+    const container = this.ref.current;
     const dimension = animatedBoxProperty(direction);
     const boudingClientRect = container.getBoundingClientRect();
     const dimensionSize = boudingClientRect[dimension];
@@ -101,8 +100,7 @@ class Collapsible extends Component {
   }
 
   getSnapshotBeforeUpdate = () =>
-    /* eslint-disable-next-line react/no-find-dom-node */
-    this.ref.current && findDOMNode(this.ref.current).getBoundingClientRect();
+    this.ref.current && this.ref.current.getBoundingClientRect();
 
   render() {
     /* eslint-disable-next-line react/prop-types */
@@ -122,6 +120,9 @@ class Collapsible extends Component {
     );
   }
 }
+
+Collapsible.defaultProps = {};
+Object.setPrototypeOf(Collapsible.defaultProps, defaultProps);
 
 let CollapsibleDoc;
 if (process.env.NODE_ENV !== 'production') {

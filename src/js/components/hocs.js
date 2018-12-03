@@ -1,10 +1,10 @@
 /* eslint-disable react/no-multi-comp */
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import getDisplayName from 'recompose/getDisplayName';
 import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
+import hoistNonReactStatics from 'hoist-non-react-statics';
 
-import { AnnounceContext, ThemeContext } from '../contexts';
+import { AnnounceContext } from '../contexts';
 
 export const withFocus = WrappedComponent => {
   class FocusableComponent extends Component {
@@ -33,8 +33,7 @@ export const withFocus = WrappedComponent => {
       // but react does not invoke it if you programically
       // call wrapperNode.focus() inside componentWillUnmount
       // see Drop "this.originalFocusedElement.focus();" for reference
-      /* eslint-disable-next-line react/no-find-dom-node */
-      const wrapperNode = findDOMNode(wrappedRef.current);
+      const wrapperNode = wrappedRef.current;
       if (wrapperNode && wrapperNode.addEventListener) {
         wrapperNode.addEventListener('focus', this.setFocus);
       }
@@ -43,8 +42,7 @@ export const withFocus = WrappedComponent => {
     componentWillUnmount = () => {
       const { wrappedRef } = this.state;
       window.removeEventListener('mousedown', this.handleActiveMouse);
-      /* eslint-disable-next-line react/no-find-dom-node */
-      const wrapperNode = findDOMNode(wrappedRef.current);
+      const wrapperNode = wrappedRef.current;
       if (wrapperNode && wrapperNode.addEventListener) {
         wrapperNode.removeEventListener('focus', this.setFocus);
       }
@@ -118,26 +116,8 @@ export const withFocus = WrappedComponent => {
 
   ForwardRef.displayName = getDisplayName(WrappedComponent);
   ForwardRef.name = ForwardRef.displayName;
-
-  return ForwardRef;
-};
-
-export const withTheme = WrappedComponent => {
-  class ThemedComponent extends Component {
-    render() {
-      const { withThemeRef, theme, ...rest } = this.props;
-      return <WrappedComponent ref={withThemeRef} {...rest} theme={theme} />;
-    }
-  }
-
-  const ForwardRef = React.forwardRef((props, ref) => (
-    <ThemeContext.Consumer>
-      {theme => <ThemedComponent {...props} theme={theme} withThemeRef={ref} />}
-    </ThemeContext.Consumer>
-  ));
-
-  ForwardRef.displayName = getDisplayName(WrappedComponent);
-  ForwardRef.name = ForwardRef.displayName;
+  ForwardRef.defaultProps = WrappedComponent.defaultProps;
+  hoistNonReactStatics(ForwardRef, WrappedComponent);
 
   return ForwardRef;
 };
@@ -149,6 +129,8 @@ export const withForwardRef = WrappedComponent => {
 
   ForwardRefComponent.displayName = getDisplayName(WrappedComponent);
   ForwardRefComponent.name = ForwardRefComponent.displayName;
+  ForwardRefComponent.defaultProps = WrappedComponent.defaultProps;
+  hoistNonReactStatics(ForwardRefComponent, WrappedComponent);
 
   return ForwardRefComponent;
 };
@@ -164,6 +146,8 @@ export const withAnnounce = WrappedComponent => {
 
   ForwardRef.displayName = getDisplayName(WrappedComponent);
   ForwardRef.name = ForwardRef.displayName;
+  ForwardRef.defaultProps = WrappedComponent.defaultProps;
+  hoistNonReactStatics(ForwardRef, WrappedComponent);
 
   return ForwardRef;
 };
@@ -176,6 +160,8 @@ export const withIconTheme = WrappedComponent => {
   );
 
   IconThemeComponent.displayName = getDisplayName(WrappedComponent);
+  IconThemeComponent.defaultProps = WrappedComponent.defaultProps;
+  hoistNonReactStatics(IconThemeComponent, WrappedComponent);
 
   return IconThemeComponent;
 };

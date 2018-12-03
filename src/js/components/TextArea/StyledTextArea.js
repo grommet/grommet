@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { focusStyle, inputStyle } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const placeholderColor = css`
   color: ${props => props.theme.global.colors.placeholder};
@@ -12,7 +13,7 @@ const plainStyle = css`
   -webkit-appearance: none;
 `;
 
-export const StyledTextArea = styled.textarea`
+const StyledTextArea = styled.textarea`
   ${inputStyle} width: 100%;
 
   ${props => props.fillArg && 'height: 100%;'} ${props =>
@@ -36,3 +37,8 @@ export const StyledTextArea = styled.textarea`
   ${props => props.focus && !props.plain && focusStyle};
   ${props => props.theme.textArea && props.theme.textArea.extend};
 `;
+
+StyledTextArea.defaultProps = {};
+Object.setPrototypeOf(StyledTextArea.defaultProps, defaultProps);
+
+export { StyledTextArea };

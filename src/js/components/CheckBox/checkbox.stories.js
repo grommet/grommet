@@ -207,6 +207,7 @@ class IndeterminateCheckBox extends Component {
         <Box direction="row" gap="medium">
           {checkboxes.map(item => (
             <CheckBox
+              key={item}
               checked={checked.indexOf(item) !== -1}
               label={<Text>{item}</Text>}
               onChange={e => this.onCheck(e, item)}

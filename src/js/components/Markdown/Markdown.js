@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { compose } from 'recompose';
 import Markdown from 'markdown-to-jsx';
 
 import { deepMerge } from '../../utils';
 
 import { Heading } from '../Heading';
 import { Paragraph } from '../Paragraph';
-import { withTheme } from '../hocs';
 
 class GrommetMarkdown extends Component {
   render() {
@@ -37,8 +35,6 @@ let GrommetMarkdownDoc;
 if (process.env.NODE_ENV !== 'production') {
   GrommetMarkdownDoc = require('./doc').doc(GrommetMarkdown); // eslint-disable-line global-require
 }
-const GrommetMarkdownWrapper = compose(withTheme)(
-  GrommetMarkdownDoc || GrommetMarkdown,
-);
+const GrommetMarkdownWrapper = GrommetMarkdownDoc || GrommetMarkdown;
 
 export { GrommetMarkdownWrapper as Markdown };

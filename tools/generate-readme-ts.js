@@ -4,6 +4,8 @@ import path from 'path';
 
 const code = '```';
 
+const replaceHoc = content => content.replace(/(With.*\()(.*)(\))/g, '$2');
+
 const getTypescriptDefinitionFile = (
   component,
   { properties },
@@ -82,8 +84,8 @@ components(FOLDER).forEach(component => {
     ),
   );
   const readmeContent = themeDoc
-    ? `${DocumentedComponent.toMarkdown()}\n${toMarkdown(themeDoc)}`
-    : `${DocumentedComponent.toMarkdown()}`;
+    ? `${replaceHoc(DocumentedComponent.toMarkdown())}\n${toMarkdown(themeDoc)}`
+    : `${replaceHoc(DocumentedComponent.toMarkdown())}`;
   del(readmeDestination).then(() =>
     fs.writeFileSync(readmeDestination, readmeContent),
   );

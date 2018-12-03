@@ -20,7 +20,7 @@ export const doc = TextInput => {
     })
       .description('How to align the drop.')
       .defaultValue({
-        top: 'top',
+        top: 'bottom',
         left: 'left',
       }),
     dropTarget: PropTypes.object.description(

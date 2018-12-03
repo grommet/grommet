@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { genericStyles, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const tabHoverStyle = css`
   &:hover {
@@ -21,8 +22,13 @@ const tabHoverStyle = css`
   }
 `;
 
-export const StyledTab = styled.div`
+const StyledTab = styled.div`
   ${genericStyles}
   ${props => !props.plain && props.theme.tab.hover && tabHoverStyle}
   ${props => props.theme.tab.extend}
 `;
+
+StyledTab.defaultProps = {};
+Object.setPrototypeOf(StyledTab.defaultProps, defaultProps);
+
+export { StyledTab };

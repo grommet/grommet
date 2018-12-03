@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { genericStyles } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const fillStyle = fill => {
   if (fill === 'horizontal') {
@@ -188,7 +189,7 @@ const areasStyle = props => {
     .join(' ')};`;
 };
 
-export const StyledGrid = styled.div`
+const StyledGrid = styled.div`
   display: grid;
   box-sizing: border-box;
 
@@ -204,3 +205,8 @@ export const StyledGrid = styled.div`
   ${props => props.rowsProp && rowsStyle(props)}
   ${props => props.theme.grid && props.theme.grid.extend}
 `;
+
+StyledGrid.defaultProps = {};
+Object.setPrototypeOf(StyledGrid.defaultProps, defaultProps);
+
+export { StyledGrid };

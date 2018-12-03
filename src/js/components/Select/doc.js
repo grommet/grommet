@@ -60,7 +60,7 @@ export const doc = Select => {
     })
       .description('How to align the drop.')
       .defaultValue({
-        top: 'top',
+        top: 'bottom',
         left: 'left',
       }),
     dropTarget: PropTypes.object.description(

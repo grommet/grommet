@@ -1,4 +1,9 @@
 import React from 'react';
+import { compose } from 'recompose';
+
+import { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { TableHeader } from '../TableHeader';
@@ -12,7 +17,7 @@ import { Sorter } from './Sorter';
 import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableHeader, StyledDataTableRow } from './StyledDataTable';
 
-export const Header = ({
+const Header = ({
   columns,
   filtering,
   filters,
@@ -50,7 +55,6 @@ export const Header = ({
               Object.keys(groupState).filter(k => !groupState[k].expanded)
                 .length === 0
             }
-            theme={theme}
             onToggle={onToggle}
           />
         )}
@@ -67,7 +71,6 @@ export const Header = ({
                 property={property}
                 onSort={onSort}
                 sort={sort}
-                theme={theme}
                 themeProps={search ? innerThemeProps : dataTableContextTheme}
               >
                 {content}
@@ -96,7 +99,6 @@ export const Header = ({
                   filtering={filtering}
                   filters={filters}
                   property={property}
-                  theme={theme}
                   onFilter={onFilter}
                   onFiltering={onFiltering}
                 />
@@ -117,7 +119,7 @@ export const Header = ({
 
           if (onResize) {
             content = (
-              <Resizer property={property} onResize={onResize} theme={theme}>
+              <Resizer property={property} onResize={onResize}>
                 {content}
               </Resizer>
             );
@@ -142,3 +144,10 @@ export const Header = ({
     </StyledDataTableHeader>
   );
 };
+
+Header.defaultProps = {};
+Object.setPrototypeOf(Header.defaultProps, defaultProps);
+
+const HeaderWrapper = compose(withTheme)(Header);
+
+export { HeaderWrapper as Header };

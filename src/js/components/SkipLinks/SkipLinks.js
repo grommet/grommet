@@ -1,5 +1,4 @@
-import React, { cloneElement, Component } from 'react';
-import { findDOMNode } from 'react-dom';
+import React, { createRef, cloneElement, Component } from 'react';
 
 import { Box } from '../Box';
 import { Heading } from '../Heading';
@@ -16,12 +15,17 @@ class SkipLinks extends Component {
     showLayer: false,
   };
 
+  layerRef = createRef();
+
   onBlur = () => {
     // timeout needed so it gives enough time for activeElement to be updated
     setTimeout(() => {
-      /* eslint-disable-next-line react/no-find-dom-node */
-      const layerNode = findDOMNode(this.layerRef);
-      if (!layerNode.contains(document.activeElement)) {
+      const layerNode = this.layerRef.current;
+      if (
+        layerNode &&
+        layerNode.contains &&
+        !layerNode.contains(document.activeElement)
+      ) {
         this.removeLayer();
       }
     }, 0);
@@ -43,9 +47,7 @@ class SkipLinks extends Component {
       <Layer
         id={id}
         position={showLayer ? 'top' : 'hidden'}
-        ref={ref => {
-          this.layerRef = ref;
-        }}
+        ref={this.layerRef}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
       >

@@ -1,10 +1,13 @@
 import React, { Children, cloneElement, Component } from 'react';
 import { compose } from 'recompose';
 
+import { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { Text } from '../Text';
-import { withFocus, withTheme } from '../hocs';
+import { withFocus } from '../hocs';
 
 class FormField extends Component {
   render() {
@@ -132,6 +135,9 @@ class FormField extends Component {
     );
   }
 }
+
+FormField.defaultProps = {};
+Object.setPrototypeOf(FormField.defaultProps, defaultProps);
 
 let FormFieldDoc;
 if (process.env.NODE_ENV !== 'production') {

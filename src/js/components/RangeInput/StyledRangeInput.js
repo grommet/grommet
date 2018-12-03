@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const rangeTrackStyle = css`
   box-sizing: border-box;
@@ -32,7 +33,7 @@ const firefoxMicrosoftThumbStyle = css`
   width: ${props => props.theme.global.spacing};
 `;
 
-export const StyledRangeInput = styled.input`
+const StyledRangeInput = styled.input`
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -131,3 +132,8 @@ export const StyledRangeInput = styled.input`
   ${props => props.focus && focusStyle}
   ${props => props.theme.rangeInput && props.theme.rangeInput.extend}
 `;
+
+StyledRangeInput.defaultProps = {};
+Object.setPrototypeOf(StyledRangeInput.defaultProps, defaultProps);
+
+export { StyledRangeInput };

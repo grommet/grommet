@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { genericStyles, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const marginStyle = props => {
   if (typeof props.margin === 'string') {
@@ -80,7 +81,7 @@ const weightStyle = css`
   font-weight: ${props => props.weight};
 `;
 
-export const StyledText = styled.span`
+const StyledText = styled.span`
   ${genericStyles}
   ${props => sizeStyle(props)}
   ${props => props.margin && marginStyle(props)}
@@ -91,3 +92,8 @@ export const StyledText = styled.span`
 
   ${props => props.theme.text && props.theme.text.extend}
 `;
+
+StyledText.defaultProps = {};
+Object.setPrototypeOf(StyledText.defaultProps, defaultProps);
+
+export { StyledText };

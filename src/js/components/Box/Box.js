@@ -1,10 +1,14 @@
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
+
 import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
 import { ThemeContext } from '../../contexts';
 import { backgroundIsDark } from '../../utils';
-import { withForwardRef, withTheme } from '../hocs';
+import { defaultProps } from '../../default-props';
+
+import { withForwardRef } from '../hocs';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
 
@@ -69,7 +73,6 @@ class Box extends Component {
       ...rest
     } = this.props;
     const { theme: stateTheme, priorTheme } = this.state;
-    const theme = stateTheme || propsTheme;
 
     let contents = children;
     if (gap) {
@@ -86,7 +89,6 @@ class Box extends Component {
                 gap={gap}
                 directionProp={direction}
                 responsive={responsive}
-                theme={theme}
               />,
             );
           }
@@ -108,7 +110,6 @@ class Box extends Component {
         widthProp={width}
         heightProp={height}
         responsive={responsive}
-        theme={theme}
         priorTheme={priorTheme}
         {...rest}
       >
@@ -134,6 +135,8 @@ class Box extends Component {
     return content;
   }
 }
+
+Object.setPrototypeOf(Box.defaultProps, defaultProps);
 
 let BoxDoc;
 if (process.env.NODE_ENV !== 'production') {

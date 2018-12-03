@@ -1,13 +1,15 @@
 import React, { Component, isValidElement } from 'react';
 import { compose } from 'recompose';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
-import { withAnnounce, withFocus, withForwardRef, withTheme } from '../hocs';
+import { withAnnounce, withFocus, withForwardRef } from '../hocs';
 
 import {
   StyledTextInput,
@@ -276,7 +278,7 @@ class TextInput extends Component {
     const { activeSuggestionIndex, selectedSuggestionIndex } = this.state;
 
     return (
-      <StyledSuggestions theme={theme}>
+      <StyledSuggestions>
         <InfiniteScroll items={suggestions} step={theme.select.step}>
           {(suggestion, index) => {
             const plain =
@@ -350,7 +352,7 @@ class TextInput extends Component {
     return (
       <StyledTextInputContainer plain={plain}>
         {placeholder && typeof placeholder !== 'string' && !value ? (
-          <StyledPlaceholder theme={theme}>{placeholder}</StyledPlaceholder>
+          <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         ) : null}
         <Keyboard
           onEnter={this.onSuggestionSelect}
@@ -368,7 +370,6 @@ class TextInput extends Component {
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
-            theme={theme}
             {...rest}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
@@ -382,6 +383,8 @@ class TextInput extends Component {
     );
   }
 }
+
+Object.setPrototypeOf(TextInput.defaultProps, defaultProps);
 
 let TextInputDoc;
 if (process.env.NODE_ENV !== 'production') {

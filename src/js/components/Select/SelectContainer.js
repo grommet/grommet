@@ -1,6 +1,5 @@
-/* eslint-disable react/no-find-dom-node */
 import React, { createRef, Component } from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
 import {
   debounce,
@@ -10,7 +9,8 @@ import {
   setFocusWithoutScroll,
 } from '../../utils';
 
-import { withTheme } from '../hocs';
+import { defaultProps } from '../../default-props';
+
 import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
@@ -182,7 +182,11 @@ class SelectContainer extends Component {
       const buttonNode = this.optionsRef[index];
       const selectNode = this.selectRef.current;
 
-      if (isNodeAfterScroll(buttonNode, selectNode) && selectNode.scrollBy) {
+      if (
+        buttonNode &&
+        isNodeAfterScroll(buttonNode, selectNode) &&
+        selectNode.scrollBy
+      ) {
         selectNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
       }
     });
@@ -196,7 +200,11 @@ class SelectContainer extends Component {
       const buttonNode = this.optionsRef[index];
       const selectNode = this.selectRef.current;
 
-      if (isNodeBeforeScroll(buttonNode, selectNode) && selectNode.scrollBy) {
+      if (
+        buttonNode &&
+        isNodeBeforeScroll(buttonNode, selectNode) &&
+        selectNode.scrollBy
+      ) {
         selectNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
       }
     });
@@ -319,7 +327,7 @@ class SelectContainer extends Component {
         onDown={this.onNextOption}
         onKeyDown={onKeyDown}
       >
-        <ContainerBox id={id ? `${id}__select-drop` : undefined} theme={theme}>
+        <ContainerBox id={id ? `${id}__select-drop` : undefined}>
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
               <SelectTextInput
@@ -339,7 +347,6 @@ class SelectContainer extends Component {
             tabIndex="-1"
             ref={this.selectRef}
             overflow="auto"
-            theme={theme}
           >
             <InfiniteScroll items={options} step={theme.select.step}>
               {(option, index) => {
@@ -348,7 +355,7 @@ class SelectContainer extends Component {
                 const isActive = isSelected || activeIndex === index;
                 return (
                   <SelectOption
-                    key={this.optionValue(index)}
+                    key={`option_${index}`}
                     ref={ref => {
                       this.optionsRef[index] = ref;
                     }}
@@ -383,6 +390,8 @@ class SelectContainer extends Component {
     );
   }
 }
+
+Object.setPrototypeOf(SelectContainer.defaultProps, defaultProps);
 
 const SelectContainerWrapper = withTheme(SelectContainer);
 

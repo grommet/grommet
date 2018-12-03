@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-// import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
+
+import { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Heading } from '../Heading';
 import { Keyboard } from '../Keyboard';
-import { withTheme } from '../hocs';
 
 import {
   StyledCalendar,
@@ -288,11 +290,7 @@ class Calendar extends Component {
     while (day.getTime() < end.getTime()) {
       if (day.getDay() === firstDayOfWeek) {
         if (days) {
-          weeks.push(
-            <StyledWeek key={day.getTime()} theme={theme}>
-              {days}
-            </StyledWeek>,
-          );
+          weeks.push(<StyledWeek key={day.getTime()}>{days}</StyledWeek>);
         }
         days = [];
       }
@@ -300,8 +298,8 @@ class Calendar extends Component {
       const otherMonth = day.getMonth() !== reference.getMonth();
       if (!showAdjacentDays && otherMonth) {
         days.push(
-          <StyledDayContainer key={day.getTime()} sizeProp={size} theme={theme}>
-            <StyledDay sizeProp={size} theme={theme} />
+          <StyledDayContainer key={day.getTime()} sizeProp={size}>
+            <StyledDay sizeProp={size} />
           </StyledDayContainer>,
         );
       } else {
@@ -320,7 +318,7 @@ class Calendar extends Component {
           withinDates(day, disabled) || (bounds && !betweenDates(day, bounds));
 
         days.push(
-          <StyledDayContainer key={day.getTime()} sizeProp={size} theme={theme}>
+          <StyledDayContainer key={day.getTime()} sizeProp={size}>
             <Button
               ref={this.dayRefs[dateString]}
               a11yTitle={day.toDateString()}
@@ -336,7 +334,6 @@ class Calendar extends Component {
                 otherMonth={day.getMonth() !== reference.getMonth()}
                 isSelected={selected}
                 sizeProp={size}
-                theme={theme}
               >
                 {day.getDate()}
               </StyledDay>
@@ -347,14 +344,10 @@ class Calendar extends Component {
 
       day = addDays(day, 1);
     }
-    weeks.push(
-      <StyledWeek key={day.getTime()} theme={theme}>
-        {days}
-      </StyledWeek>,
-    );
+    weeks.push(<StyledWeek key={day.getTime()}>{days}</StyledWeek>);
 
     return (
-      <StyledCalendar sizeProp={size} theme={theme} {...rest}>
+      <StyledCalendar sizeProp={size} {...rest}>
         <Keyboard
           onUp={event => {
             event.preventDefault();
@@ -364,8 +357,8 @@ class Calendar extends Component {
             event.preventDefault();
             this.setFocus(addDays(focused, 7));
           }}
-          onLeft={() => this.setFocus(addDays(focused, -1))}
-          onRight={() => this.setFocus(addDays(focused, 1))}
+          onLeft={() => focused && this.setFocus(addDays(focused, -1))}
+          onRight={() => focused && this.setFocus(addDays(focused, 1))}
         >
           <Box>
             {header
@@ -378,8 +371,8 @@ class Calendar extends Component {
                   nextInBound: betweenDates(nextMonth, bounds),
                 })
               : this.renderCalendarHeader(previousMonth, nextMonth)}
-            <StyledWeeksContainer sizeProp={size} theme={theme}>
-              <StyledWeeks slide={slide} sizeProp={size} theme={theme}>
+            <StyledWeeksContainer sizeProp={size}>
+              <StyledWeeks slide={slide} sizeProp={size}>
                 {weeks}
               </StyledWeeks>
             </StyledWeeksContainer>
@@ -389,6 +382,8 @@ class Calendar extends Component {
     );
   }
 }
+
+Object.setPrototypeOf(Calendar.defaultProps, defaultProps);
 
 let CalendarDoc;
 if (process.env.NODE_ENV !== 'production') {

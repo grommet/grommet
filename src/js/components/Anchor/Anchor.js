@@ -1,11 +1,15 @@
 import React, { cloneElement, Component } from 'react';
 import { compose } from 'recompose';
 
+import { withTheme } from 'styled-components';
+
+import { normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
+
 import { Box } from '../Box';
-import { withFocus, withForwardRef, withTheme } from '../hocs';
+import { withFocus, withForwardRef } from '../hocs';
 
 import { StyledAnchor } from './StyledAnchor';
-import { normalizeColor } from '../../utils';
 
 class Anchor extends Component {
   constructor(props) {
@@ -57,7 +61,6 @@ class Anchor extends Component {
         focus={focus}
         hasLabel={label}
         reverse={reverse}
-        theme={theme}
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
       >
@@ -79,6 +82,9 @@ class Anchor extends Component {
     );
   }
 }
+
+Anchor.defaultProps = {};
+Object.setPrototypeOf(Anchor.defaultProps, defaultProps);
 
 let AnchorDoc;
 if (process.env.NODE_ENV !== 'production') {
