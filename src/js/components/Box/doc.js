@@ -141,10 +141,14 @@ export const doc = Box => {
         via a drop shadow.`,
       )
       .defaultValue('none'),
-    flex: PropTypes.oneOf(['grow', 'shrink', true, false]).description(
-      'Whether flex-grow and/or flex-shrink is true.',
-    ),
-    fill: PropTypes.oneOf(['horizontal', 'vertical', true, false]).description(
+    flex: PropTypes.oneOfType([
+      PropTypes.oneOf(['grow', 'shrink']),
+      PropTypes.bool,
+    ]).description('Whether flex-grow and/or flex-shrink is true.'),
+    fill: PropTypes.oneOfType([
+      PropTypes.oneOf(['horizontal', 'vertical']),
+      PropTypes.bool,
+    ]).description(
       'Whether the width and/or height should fill the container.',
     ),
     gap: PropTypes.oneOfType([
