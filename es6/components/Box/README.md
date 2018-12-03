@@ -322,8 +322,7 @@ Whether flex-grow and/or flex-shrink is true.
 ```
 grow
 shrink
-true
-false
+boolean
 ```
 
 **fill**
@@ -333,8 +332,7 @@ Whether the width and/or height should fill the container.
 ```
 horizontal
 vertical
-true
-false
+boolean
 ```
 
 **gap**

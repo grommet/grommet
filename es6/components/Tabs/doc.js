@@ -7,7 +7,7 @@ export var doc = function doc(Tabs) {
   DocumentedTabs.propTypes = _extends({}, genericProps, {
     activeIndex: PropTypes.number.description("Active tab index. If specified, Tabs will be a controlled component.\nThis means that future tab changes will not work unless you subscribe to\nonActive function and update activeIndex accordingly."),
     children: PropTypes.node.description('Array of Tab.').isRequired,
-    flex: PropTypes.oneOf(['grow', 'shrink', true, false]).description('Whether flex-grow and/or flex-shrink is true.'),
+    flex: PropTypes.oneOfType([PropTypes.oneOf(['grow', 'shrink']), PropTypes.bool]).description('Whether flex-grow and/or flex-shrink is true.'),
     justify: PropTypes.oneOf(['start', 'center', 'end']).description('How to align the tabs along the main axis.').defaultValue('center'),
     messages: PropTypes.shape({
       tabContents: PropTypes.string

@@ -14,7 +14,7 @@ var doc = function doc(Tabs) {
   DocumentedTabs.propTypes = _extends({}, _utils.genericProps, {
     activeIndex: _reactDesc.PropTypes.number.description("Active tab index. If specified, Tabs will be a controlled component.\nThis means that future tab changes will not work unless you subscribe to\nonActive function and update activeIndex accordingly."),
     children: _reactDesc.PropTypes.node.description('Array of Tab.').isRequired,
-    flex: _reactDesc.PropTypes.oneOf(['grow', 'shrink', true, false]).description('Whether flex-grow and/or flex-shrink is true.'),
+    flex: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['grow', 'shrink']), _reactDesc.PropTypes.bool]).description('Whether flex-grow and/or flex-shrink is true.'),
     justify: _reactDesc.PropTypes.oneOf(['start', 'center', 'end']).description('How to align the tabs along the main axis.').defaultValue('center'),
     messages: _reactDesc.PropTypes.shape({
       tabContents: _reactDesc.PropTypes.string

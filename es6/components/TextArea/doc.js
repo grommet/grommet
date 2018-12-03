@@ -4,7 +4,7 @@ export var doc = function doc(TextArea) {
   var DocumentedTextArea = describe(TextArea).availableAt(getAvailableAtBadge('TextArea')).description('A textarea.').usage("import { TextArea } from 'grommet';\n<TextArea id='item' name='item' />");
   DocumentedTextArea.propTypes = {
     id: PropTypes.string.description('The id attribute of the textarea.'),
-    fill: PropTypes.oneOf([true, false]).description('Whether the width and height should fill the container.').defaultValue(false),
+    fill: PropTypes.bool.description('Whether the width and height should fill the container.').defaultValue(false),
     focusIndicator: PropTypes.bool.description('Whether the plain textarea should receive a focus outline.'),
     name: PropTypes.string.description('The name attribute of the textarea.'),
     onChange: PropTypes.func.description('Function that will be called when the user types in the textarea.'),
