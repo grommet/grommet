@@ -65,16 +65,17 @@ function (_PureComponent) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setPageHeight", function () {
       var pageHeight = _this.state.pageHeight;
 
-      if (_this.firstPageItemRef && _this.lasrtPageItemRef && !pageHeight) {
+      if (_this.firstPageItemRef && _this.lastPageItemRef && !pageHeight) {
         var beginRect = _this.firstPageItemRef.getBoundingClientRect();
 
-        var endRect = _this.lasrtPageItemRef.getBoundingClientRect();
+        var endRect = _this.lastPageItemRef.getBoundingClientRect();
 
-        var nextPageHeight = endRect.y + endRect.height - beginRect.y;
+        var nextPageHeight = endRect.y + endRect.height - beginRect.y; // In case the pageHeight is smaller than the visible area,
+        // we call onScroll to set the page boundaries appropriately.
 
         _this.setState({
           pageHeight: nextPageHeight
-        });
+        }, _this.onScroll);
       }
     });
 
@@ -217,9 +218,10 @@ function (_PureComponent) {
     }
 
     items.slice(firstIndex, lastIndex + 1).forEach(function (item, index) {
-      var child = children(item, index);
+      var itemsIndex = firstIndex + index;
+      var child = children(item, itemsIndex);
 
-      if (!pageHeight && index === 0) {
+      if (!pageHeight && itemsIndex === 0) {
         var _child = child,
             _ref = _child.ref;
         child = React.cloneElement(child, {
@@ -231,12 +233,12 @@ function (_PureComponent) {
             }
           }
         });
-      } else if (!pageHeight && index === step - 1) {
+      } else if (!pageHeight && itemsIndex === step - 1) {
         var _child2 = child,
             _ref2 = _child2.ref;
         child = React.cloneElement(child, {
           ref: function ref(node) {
-            _this3.lasrtPageItemRef = node;
+            _this3.lastPageItemRef = node;
 
             if (typeof _ref2 === 'function') {
               _ref2(node);
@@ -245,7 +247,7 @@ function (_PureComponent) {
         });
       }
 
-      if (show && show === index) {
+      if (show && show === itemsIndex) {
         var _child3 = child,
             _ref3 = _child3.ref;
         child = React.cloneElement(child, {
