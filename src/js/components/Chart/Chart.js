@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
+import React, { createRef, Component } from 'react';
 import { compose } from 'recompose';
 
+import { withTheme } from 'styled-components';
+
 import { normalizeColor, parseMetricToNum } from '../../utils';
-import { withTheme } from '../hocs';
+import { defaultProps } from '../../default-props';
 
 import { StyledChart } from './StyledChart';
 import { normalizeValues, normalizeBounds } from './utils';
@@ -130,6 +131,8 @@ class Chart extends Component {
     return null;
   }
 
+  containerRef = createRef();
+
   state = { containerWidth: 0, containerHeight: 0 };
 
   componentDidMount() {
@@ -142,8 +145,7 @@ class Chart extends Component {
   }
 
   onResize = () => {
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const containerNode = findDOMNode(this.containerRef);
+    const containerNode = this.containerRef.current;
     if (containerNode) {
       const { parentNode } = containerNode;
       if (parentNode) {
@@ -208,14 +210,11 @@ class Chart extends Component {
 
     return (
       <StyledChart
-        ref={ref => {
-          this.containerRef = ref;
-        }}
+        ref={this.containerRef}
         viewBox={viewBox}
         preserveAspectRatio="none"
         width={size === 'full' ? '100%' : width}
         height={size === 'full' ? '100%' : height}
-        theme={theme}
         {...rest}
       >
         <g
@@ -231,6 +230,8 @@ class Chart extends Component {
     );
   }
 }
+
+Object.setPrototypeOf(Chart.defaultProps, defaultProps);
 
 let ChartDoc;
 if (process.env.NODE_ENV !== 'production') {

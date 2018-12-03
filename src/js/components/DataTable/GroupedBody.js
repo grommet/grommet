@@ -17,7 +17,7 @@ export const GroupedBody = ({
   theme,
   ...rest
 }) => (
-  <StyledDataTableBody size={size} theme={theme} {...rest}>
+  <StyledDataTableBody size={size} {...rest}>
     {groups.map(group => {
       const { expanded } = groupState[group.key];
 
@@ -26,7 +26,6 @@ export const GroupedBody = ({
           <ExpanderCell
             context={expanded ? 'groupHeader' : 'body'}
             expanded={expanded}
-            theme={theme}
             onToggle={onToggle(group.key)}
           />
           {columns.map(column => (
@@ -36,7 +35,6 @@ export const GroupedBody = ({
               column={column}
               datum={group.datum}
               scope={column.property === groupBy ? 'row' : undefined}
-              theme={theme}
             />
           ))}
         </StyledDataTableRow>
@@ -58,7 +56,6 @@ export const GroupedBody = ({
                     column={column}
                     datum={datum}
                     scope={column.primary ? 'row' : undefined}
-                    theme={theme}
                   />
                 ))}
               </StyledDataTableRow>

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
-import { withForwardRef, withTheme } from '../hocs';
+import { withForwardRef } from '../hocs';
 
 import { EdgeControl } from './EdgeControl';
 
@@ -30,8 +29,7 @@ class RangeSelector extends Component {
 
   valueForMouseCoord = event => {
     const { direction, max, min, step } = this.props;
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const rect = findDOMNode(this.containerRef.current).getBoundingClientRect();
+    const rect = this.containerRef.current.getBoundingClientRect();
     let value;
     if (direction === 'vertical') {
       const y = event.clientY - (rect.y || 0); // unit test resilience
@@ -129,7 +127,6 @@ class RangeSelector extends Component {
       round,
       size,
       step,
-      theme,
       values,
       ...rest
     } = this.props;
@@ -163,7 +160,6 @@ class RangeSelector extends Component {
           color={color}
           direction={direction}
           edge="lower"
-          theme={theme}
           onMouseDown={onChange ? this.lowerMouseDown : undefined}
           onDecrease={
             onChange && lower - step >= min
@@ -194,7 +190,6 @@ class RangeSelector extends Component {
           color={color}
           direction={direction}
           edge="upper"
-          theme={theme}
           onMouseDown={onChange ? this.upperMouseDown : undefined}
           onDecrease={
             onChange && upper - step >= lower
@@ -224,9 +219,8 @@ let RangeSelectorDoc;
 if (process.env.NODE_ENV !== 'production') {
   RangeSelectorDoc = require('./doc').doc(RangeSelector); // eslint-disable-line global-require
 }
-const RangeSelectorWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(RangeSelectorDoc || RangeSelector);
+const RangeSelectorWrapper = compose(withForwardRef)(
+  RangeSelectorDoc || RangeSelector,
+);
 
 export { RangeSelectorWrapper as RangeSelector };

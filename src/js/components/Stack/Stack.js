@@ -1,7 +1,4 @@
 import React, { Children, Component } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from '../hocs';
 
 import { StyledStack, StyledStackLayer } from './StyledStack';
 
@@ -48,6 +45,6 @@ let StackDoc;
 if (process.env.NODE_ENV !== 'production') {
   StackDoc = require('./doc').doc(Stack); // eslint-disable-line global-require
 }
-const StackWrapper = compose(withTheme)(StackDoc || Stack);
+const StackWrapper = StackDoc || Stack;
 
 export { StackWrapper as Stack };

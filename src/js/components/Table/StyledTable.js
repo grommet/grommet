@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { genericStyles } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const SIZE_MAP = {
   '1/2': '50%',
@@ -19,7 +20,7 @@ const sizeStyle = css`
   overflow: hidden;
 `;
 
-export const StyledTableCell = styled.td`
+const StyledTableCell = styled.td`
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -31,23 +32,54 @@ export const StyledTableCell = styled.td`
   ${props => props.tableContextTheme && props.tableContextTheme.extend}
 `;
 
-export const StyledTableDataCaption = styled.caption`
+StyledTableCell.defaultProps = {};
+Object.setPrototypeOf(StyledTableCell.defaultProps, defaultProps);
+
+const StyledTableDataCaption = styled.caption`
   display: none;
 `;
 
-export const StyledTableRow = styled.tr`
+StyledTableDataCaption.defaultProps = {};
+Object.setPrototypeOf(StyledTableDataCaption.defaultProps, defaultProps);
+
+const StyledTableRow = styled.tr`
   height: 100%;
 `;
 
-export const StyledTableBody = styled.tbody``;
+StyledTableRow.defaultProps = {};
+Object.setPrototypeOf(StyledTableRow.defaultProps, defaultProps);
 
-export const StyledTableHeader = styled.thead``;
+const StyledTableBody = styled.tbody``;
 
-export const StyledTableFooter = styled.tfoot``;
+StyledTableBody.defaultProps = {};
+Object.setPrototypeOf(StyledTableBody.defaultProps, defaultProps);
 
-export const StyledTable = styled.table`
+const StyledTableHeader = styled.thead``;
+
+StyledTableHeader.defaultProps = {};
+Object.setPrototypeOf(StyledTableHeader.defaultProps, defaultProps);
+
+const StyledTableFooter = styled.tfoot``;
+
+StyledTableFooter.defaultProps = {};
+Object.setPrototypeOf(StyledTableFooter.defaultProps, defaultProps);
+
+const StyledTable = styled.table`
   border-spacing: 0;
   border-collapse: collapse;
 
   ${genericStyles} ${props => props.theme.table && props.theme.table.extend};
 `;
+
+StyledTable.defaultProps = {};
+Object.setPrototypeOf(StyledTable.defaultProps, defaultProps);
+
+export {
+  StyledTableCell,
+  StyledTableDataCaption,
+  StyledTableRow,
+  StyledTableBody,
+  StyledTableHeader,
+  StyledTableFooter,
+  StyledTable,
+};

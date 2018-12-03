@@ -161,7 +161,7 @@ function
 **dropAlign**
 
 How to align the drop. Defaults to `{
-  "top": "top",
+  "top": "bottom",
   "left": "left"
 }`.
 
@@ -215,7 +215,9 @@ function
 
 **messages**
 
-Custom messages.
+Custom messages. Defaults to `{
+  "multiple": "multiple"
+}`.
 
 ```
 {

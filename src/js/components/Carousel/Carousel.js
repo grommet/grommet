@@ -1,12 +1,16 @@
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
 
+import { withTheme } from 'styled-components';
+
+import { normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
+
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
-import { withFocus, withTheme } from '../hocs';
-import { normalizeColor } from '../../utils';
+import { withFocus } from '../hocs';
 
 class Carousel extends Component {
   state = { activeIndex: 0 };
@@ -171,6 +175,9 @@ class Carousel extends Component {
     );
   }
 }
+
+Carousel.defaultProps = {};
+Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 
 let CarouselDoc;
 if (process.env.NODE_ENV !== 'production') {

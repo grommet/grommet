@@ -1,5 +1,4 @@
 import React, { createRef, Component, PureComponent } from 'react';
-import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
@@ -397,8 +396,7 @@ class CustomSearchSelect extends Component {
             event.preventDefault();
             event.stopPropagation();
             this.clearContentPartners();
-            /* eslint-disable-next-line react/no-find-dom-node */
-            findDOMNode(this.selectRef.current).focus();
+            this.selectRef.current.focus();
           }}
         >
           <Box background="gray" round="full">

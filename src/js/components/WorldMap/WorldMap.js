@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
-import { normalizeColor, parseMetricToNum } from '../../utils';
+import { withTheme } from 'styled-components';
 
-import { withTheme } from '../hocs';
+import { defaultProps } from '../../default-props';
+import { normalizeColor, parseMetricToNum } from '../../utils';
 
 import { StyledWorldMap } from './StyledWorldMap';
 
@@ -502,8 +502,7 @@ class WorldMap extends Component {
     const { width } = this.state;
     // determine the map coordinates for where the mouse is
     // containerRef uses the group so we can handle aspect ratio scaling
-    // eslint-disable-next-line react/no-find-dom-node
-    const rect = findDOMNode(this.containerRef).getBoundingClientRect();
+    const rect = this.containerRef.getBoundingClientRect();
     const scale = rect.width / width; // since the SVG viewBox might be scaled
     const coords = [
       Math.round((event.clientX - rect.left) / scale / FACTOR),
@@ -653,7 +652,6 @@ class WorldMap extends Component {
         preserveAspectRatio="xMinYMin meet"
         width={width}
         height={height}
-        theme={theme}
         {...interactiveProps}
         {...rest}
       >
@@ -673,6 +671,9 @@ class WorldMap extends Component {
     );
   }
 }
+
+WorldMap.defaultProps = {};
+Object.setPrototypeOf(WorldMap.defaultProps, defaultProps);
 
 let WorldMapDoc;
 if (process.env.NODE_ENV !== 'production') {

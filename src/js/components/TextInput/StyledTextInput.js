@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { focusStyle, inputStyle, parseMetricToNum } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const placeholderColor = css`
   color: ${props => props.theme.global.colors.placeholder};
@@ -18,7 +19,7 @@ const plainStyle = css`
   border: none;
 `;
 
-export const StyledTextInput = styled.input`
+const StyledTextInput = styled.input`
   ${inputStyle} width: 100%;
 
   ${props => props.size && sizeStyle(props)} ${props =>
@@ -45,15 +46,21 @@ export const StyledTextInput = styled.input`
   ${props => props.theme.textInput && props.theme.textInput.extend};
 `;
 
-export const StyledTextInputContainer = styled.div`
+StyledTextInput.defaultProps = {};
+Object.setPrototypeOf(StyledTextInput.defaultProps, defaultProps);
+
+const StyledTextInputContainer = styled.div`
   position: relative;
   width: 100%;
 `;
 
-export const StyledPlaceholder = styled.div`
+StyledTextInputContainer.defaultProps = {};
+Object.setPrototypeOf(StyledTextInputContainer.defaultProps, defaultProps);
+
+const StyledPlaceholder = styled.div`
   position: absolute;
   left: ${props =>
-    parseMetricToNum(props.theme.global.spacing) / 2 -
+    parseMetricToNum(props.theme.global.input.padding) -
     parseMetricToNum(props.theme.global.control.border.width)}px;
   top: 50%;
   transform: translateY(-50%);
@@ -61,10 +68,23 @@ export const StyledPlaceholder = styled.div`
   justify-content: center;
 `;
 
-export const StyledSuggestions = styled.ol`
+StyledPlaceholder.defaultProps = {};
+Object.setPrototypeOf(StyledPlaceholder.defaultProps, defaultProps);
+
+const StyledSuggestions = styled.ol`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin: 0;
   padding: 0;
   list-style-type: none;
 `;
+
+StyledSuggestions.defaultProps = {};
+Object.setPrototypeOf(StyledSuggestions.defaultProps, defaultProps);
+
+export {
+  StyledTextInput,
+  StyledTextInputContainer,
+  StyledPlaceholder,
+  StyledSuggestions,
+};

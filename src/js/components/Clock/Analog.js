@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { compose } from 'recompose';
+
+import { withTheme } from 'styled-components';
 
 import { parseMetricToNum } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 import {
   StyledAnalog,
@@ -33,7 +37,7 @@ const getClockState = ({ hours, minutes, seconds }) => {
   };
 };
 
-export class Analog extends Component {
+class Analog extends Component {
   static defaultProps = {
     size: 'medium',
   };
@@ -64,7 +68,6 @@ export class Analog extends Component {
     if (precision === 'seconds') {
       secondHand = (
         <StyledSecond
-          theme={theme}
           x1={halfSize}
           y1={halfSize}
           x2={halfSize}
@@ -83,7 +86,6 @@ export class Analog extends Component {
     if (precision === 'seconds' || precision === 'minutes') {
       minuteHand = (
         <StyledMinute
-          theme={theme}
           x1={halfSize}
           y1={halfSize}
           x2={halfSize}
@@ -105,13 +107,11 @@ export class Analog extends Component {
         height={size}
         preserveAspectRatio="xMidYMid meet"
         viewBox={`0 0 ${size} ${size}`}
-        theme={theme}
         {...rest}
       >
         {secondHand}
         {minuteHand}
         <StyledHour
-          theme={theme}
           x1={halfSize}
           y1={halfSize}
           x2={halfSize}
@@ -127,3 +127,9 @@ export class Analog extends Component {
     );
   }
 }
+
+Object.setPrototypeOf(Analog.defaultProps, defaultProps);
+
+const AnalogWrapper = compose(withTheme)(Analog);
+
+export { AnalogWrapper as Analog };

@@ -113,7 +113,12 @@ string
 
 **children**
 
-Function that will be called when each value is rendered.
+Function that will be called when each value is rendered. Defaults to `function children(value) {
+    return _react.default.createElement(_Box.Box, {
+      fill: true,
+      border: true
+    }, _react.default.createElement(_Text.Text, null, value.value));
+  }`.
 
 ```
 function
@@ -145,7 +150,7 @@ string
 Required. Array of objects containing a value. The array should already be
       sorted from largest to smallest value. The caller can put other
       properties in the object. The children function will be called to
-      render the contents of each value.
+      render the contents of each value. Defaults to `[]`.
 
 ```
 [{

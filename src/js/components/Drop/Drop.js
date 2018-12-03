@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
-import { compose } from 'recompose';
 
 import { getNewContainer, setFocusWithoutScroll } from '../../utils';
-import { withTheme } from '../hocs';
 
 import { DropContainer } from './DropContainer';
 
@@ -52,6 +50,6 @@ let DropDoc;
 if (process.env.NODE_ENV !== 'production') {
   DropDoc = require('./doc').doc(Drop); // eslint-disable-line global-require
 }
-const DropWrapper = compose(withTheme)(DropDoc || Drop);
+const DropWrapper = DropDoc || Drop;
 
 export { DropWrapper as Drop };

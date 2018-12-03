@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import { compose } from 'recompose';
+
+import { withTheme } from 'styled-components';
+
 import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
+import { defaultProps } from '../../default-props';
 import { ThemeContext } from '../../contexts';
 import { FocusedContainer } from '../FocusedContainer';
 import {
@@ -24,7 +29,7 @@ const preventLayerClose = event => {
   }
 };
 
-export class DropContainer extends Component {
+class DropContainer extends Component {
   static defaultProps = {
     align: {
       top: 'top',
@@ -287,7 +292,6 @@ export class DropContainer extends Component {
         tabIndex="-1"
         ref={this.dropRef}
         alignProp={alignProp}
-        theme={theme}
         {...rest}
       >
         {children}
@@ -322,3 +326,9 @@ export class DropContainer extends Component {
     );
   }
 }
+
+Object.setPrototypeOf(DropContainer.defaultProps, defaultProps);
+
+const DropContainerWrapper = compose(withTheme)(DropContainer);
+
+export { DropContainerWrapper as DropContainer };

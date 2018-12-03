@@ -530,7 +530,7 @@ string
 
 The amount of margin around the component. An object can
       be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+      margin on a particular side. Defaults to \`none\`.
 
 \`\`\`
 none
@@ -2888,7 +2888,7 @@ string
       context. 'footer' indicates what should be shown in the footer for
       the column. 'search' indicates whether a search filter should be
       made available for the column.
-    
+     Defaults to \`[]\`.
 
 \`\`\`
 [{
@@ -2920,7 +2920,7 @@ string
 
 **data**
 
-Array of data objects.
+Array of data objects. Defaults to \`[]\`.
 
 \`\`\`
 [{
@@ -3166,7 +3166,12 @@ string
 
 **children**
 
-Function that will be called when each value is rendered.
+Function that will be called when each value is rendered. Defaults to \`function children(value) {
+    return _react.default.createElement(_Box.Box, {
+      fill: true,
+      border: true
+    }, _react.default.createElement(_Text.Text, null, value.value));
+  }\`.
 
 \`\`\`
 function
@@ -3198,7 +3203,7 @@ string
 Required. Array of objects containing a value. The array should already be
       sorted from largest to smallest value. The caller can put other
       properties in the object. The children function will be called to
-      render the contents of each value.
+      render the contents of each value. Defaults to \`[]\`.
 
 \`\`\`
 [{
@@ -3335,7 +3340,7 @@ import { DropButton } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom title to be used by screen readers. Defaults to \`Open Drop\`.
 
 \`\`\`
 string
@@ -4497,7 +4502,7 @@ horizontal
 
 The amount of margin around the Layer. An object can be specified to
 distinguish horizontal margin, vertical margin, and margin on a
-particular side of the layer
+particular side of the layer Defaults to \`none\`.
 
 \`\`\`
 none
@@ -4804,7 +4809,7 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick.
+The object values can be any Button prop, for example: label and onClick. Defaults to \`[]\`.
 
 \`\`\`
 [object]
@@ -5462,7 +5467,10 @@ number
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers.
+Custom messages. Used for accessibility by screen readers. Defaults to \`{
+  \\"lower\\": \\"Lower Bounds\\",
+  \\"upper\\": \\"Upper Bounds\\"
+}\`.
 
 \`\`\`
 {
@@ -5537,7 +5545,7 @@ number
 
 **values**
 
-Required. The current values.
+Required. The current values. Defaults to \`[]\`.
 
 \`\`\`
 [number]
@@ -5766,7 +5774,7 @@ function
 **dropAlign**
 
 How to align the drop. Defaults to \`{
-  \\"top\\": \\"top\\",
+  \\"top\\": \\"bottom\\",
   \\"left\\": \\"left\\"
 }\`.
 
@@ -5820,7 +5828,9 @@ function
 
 **messages**
 
-Custom messages.
+Custom messages. Defaults to \`{
+  \\"multiple\\": \\"multiple\\"
+}\`.
 
 \`\`\`
 {
@@ -6994,7 +7004,7 @@ import { TextInput } from 'grommet';
 **dropAlign**
 
 How to align the drop. Defaults to \`{
-  \\"top\\": \\"top\\",
+  \\"top\\": \\"bottom\\",
   \\"left\\": \\"left\\"
 }\`.
 
@@ -7152,7 +7162,104 @@ What text to put in the input.
 \`\`\`
 string
 \`\`\`
-  ",
+  
+## Theme
+  
+**global.colors.placeholder**
+
+The placeholder color used for TextInput. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+#AAAAAA
+\`\`\`
+
+**global.control.border.width**
+
+The border width. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+1px
+\`\`\`
+
+**global.input.padding**
+
+The padding of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+12px
+\`\`\`
+
+**global.input.weight**
+
+The font weight of the text. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+600
+\`\`\`
+
+**select.step**
+
+How many suggestions to render at a time. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+20
+\`\`\`
+
+**text**
+
+The possible sizes of the text in terms of its font-size and line-height. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      xsmall: {
+        size: '12px',
+        height: '18px',
+       },
+      small: {
+        size: '14px',
+        height: '20px',
+       },
+      medium: {          
+        size: '18px',
+        height: '24px',
+      },
+      large: {
+        size: '22px',
+        height: '28px',
+      },
+      xlarge: {
+        size: '26px',
+        height: '32px',
+      },
+      xxlarge: {
+        size: '34px',
+        height: '40px',
+      },
+    }
+\`\`\`
+
+**textInput.extend**
+
+Any additional style for TextInput. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Video": "## Video
 A video player.
 
