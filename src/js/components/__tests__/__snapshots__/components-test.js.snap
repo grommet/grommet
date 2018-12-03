@@ -470,16 +470,14 @@ string",
         "description": "Whether flex-grow and/or flex-shrink is true.",
         "format": "grow
 shrink
-true
-false",
+boolean",
         "name": "flex",
       },
       Object {
         "description": "Whether the width and/or height should fill the container.",
         "format": "horizontal
 vertical
-true
-false",
+boolean",
         "name": "fill",
       },
       Object {
@@ -2848,8 +2846,7 @@ onActive function and update activeIndex accordingly.",
         "description": "Whether flex-grow and/or flex-shrink is true.",
         "format": "grow
 shrink
-true
-false",
+boolean",
         "name": "flex",
       },
       Object {
@@ -2908,8 +2905,7 @@ currently active tab changes.",
       Object {
         "defaultValue": false,
         "description": "Whether the width and height should fill the container.",
-        "format": "true
-false",
+        "format": "boolean",
         "name": "fill",
       },
       Object {
