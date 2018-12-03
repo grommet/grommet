@@ -808,8 +808,7 @@ Whether flex-grow and/or flex-shrink is true.
 \`\`\`
 grow
 shrink
-true
-false
+boolean
 \`\`\`
 
 **fill**
@@ -819,8 +818,7 @@ Whether the width and/or height should fill the container.
 \`\`\`
 horizontal
 vertical
-true
-false
+boolean
 \`\`\`
 
 **gap**
@@ -3792,8 +3790,7 @@ Whether the width and/or height should fill the container.
 \`\`\`
 horizontal
 vertical
-true
-false
+boolean
 \`\`\`
 
 **gap**
@@ -6555,8 +6552,7 @@ Whether flex-grow and/or flex-shrink is true.
 \`\`\`
 grow
 shrink
-true
-false
+boolean
 \`\`\`
 
 **justify**
@@ -6873,8 +6869,7 @@ string
 Whether the width and height should fill the container.
 
 \`\`\`
-true
-false
+boolean
 \`\`\`
 
 **focusIndicator**
