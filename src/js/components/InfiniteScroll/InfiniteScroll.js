@@ -95,52 +95,48 @@ class InfiniteScroll extends PureComponent {
   };
 
   onScroll = () => {
-    // The timer keeps us from re-rendering too much and getting slow
-    clearTimeout(this.scrollTimer);
-    this.scrollTimer = setTimeout(() => {
-      const { onMore, replace } = this.props;
-      const { beginPage, endPage, lastPage, pageHeight } = this.state;
-      if (this.scrollParents && this.scrollParents[0] && pageHeight) {
-        const scrollParent = this.scrollParents[0];
-        // Determine the window into the first scroll parent
-        let top;
-        let height;
-        if (scrollParent === document) {
-          top = document.documentElement.scrollTop || document.body.scrollTop;
-          height = window.innerHeight;
-        } else {
-          top = scrollParent.scrollTop;
-          const rect = scrollParent.getBoundingClientRect();
-          ({ height } = rect);
-        }
-        // Figure out which pages we should make visible based on the scroll
-        // window.
-        const offset = height / 4;
-        const nextBeginPage = replace
-          ? Math.min(
-              lastPage,
-              Math.max(0, Math.floor(Math.max(0, top - offset) / pageHeight)),
-            )
-          : 0;
-        const nextEndPage = Math.min(
-          lastPage,
-          Math.max(
-            (!replace && endPage) || 0,
-            Math.floor((top + height + offset) / pageHeight),
-          ),
-        );
-        if (nextBeginPage !== beginPage || nextEndPage !== endPage) {
-          this.setState(
-            { beginPage: nextBeginPage, endPage: nextEndPage },
-            () => {
-              if (onMore && nextEndPage === lastPage) {
-                onMore();
-              }
-            },
-          );
-        }
+    const { onMore, replace } = this.props;
+    const { beginPage, endPage, lastPage, pageHeight } = this.state;
+    if (this.scrollParents && this.scrollParents[0] && pageHeight) {
+      const scrollParent = this.scrollParents[0];
+      // Determine the window into the first scroll parent
+      let top;
+      let height;
+      if (scrollParent === document) {
+        top = document.documentElement.scrollTop || document.body.scrollTop;
+        height = window.innerHeight;
+      } else {
+        top = scrollParent.scrollTop;
+        const rect = scrollParent.getBoundingClientRect();
+        ({ height } = rect);
       }
-    }, 10); // 10ms was chosen empirically
+      // Figure out which pages we should make visible based on the scroll
+      // window.
+      const offset = height / 4;
+      const nextBeginPage = replace
+        ? Math.min(
+            lastPage,
+            Math.max(0, Math.floor(Math.max(0, top - offset) / pageHeight)),
+          )
+        : 0;
+      const nextEndPage = Math.min(
+        lastPage,
+        Math.max(
+          (!replace && endPage) || 0,
+          Math.floor((top + height + offset) / pageHeight),
+        ),
+      );
+      if (nextBeginPage !== beginPage || nextEndPage !== endPage) {
+        this.setState(
+          { beginPage: nextBeginPage, endPage: nextEndPage },
+          () => {
+            if (onMore && nextEndPage === lastPage) {
+              onMore();
+            }
+          },
+        );
+      }
+    }
   };
 
   render() {
