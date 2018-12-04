@@ -40,8 +40,15 @@ class RangeSelector extends Component {
       const scaleX = rect.width / (max - min + 1) || 1; // unit test resilience
       value = Math.floor(x / scaleX) + min;
     }
-    // align with closest step
-    return value + (value % step);
+    // align with closest step within [min, max]
+    const result = value + (value % step);
+    if (result < min) {
+      return min;
+    }
+    if (result > max) {
+      return max;
+    }
+    return result;
   };
 
   onClick = event => {
