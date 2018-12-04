@@ -33,7 +33,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var wrapWithHocs = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef, (0, _hocs.withDocs)('./Box/doc'));
+var wrapWithHocs = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef, (0, _hocs.withDocs)('Box'));
 
 var BoxImpl =
 /*#__PURE__*/

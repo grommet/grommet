@@ -17,7 +17,7 @@ import { ThemeContext } from '../../contexts';
 import { backgroundIsDark } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { StyledBox, StyledBoxGap } from './StyledBox';
-var wrapWithHocs = compose(withTheme, withForwardRef, withDocs('./Box/doc'));
+var wrapWithHocs = compose(withTheme, withForwardRef, withDocs('Box'));
 
 var BoxImpl =
 /*#__PURE__*/

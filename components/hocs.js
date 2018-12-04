@@ -35,8 +35,8 @@ var doc = function doc() {
 
 
 if (process.env.NODE_ENV !== 'production') {
-  doc = function doc(path) {
-    return require(path).doc;
+  doc = function doc(component) {
+    return require("./" + component + "/doc").doc;
   }; // eslint-disable-line
 
 }
