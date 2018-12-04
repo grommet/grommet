@@ -13,7 +13,7 @@ import { StyledBox, StyledBoxGap } from './StyledBox';
 const wrapWithHocs = compose(
   withTheme,
   withForwardRef,
-  withDocs('./Box/doc'),
+  withDocs('Box'),
 );
 
 class BoxImpl extends Component {
