@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export interface RangeSelectorProps {
-  color?: string | {dark: string,light: string};
+  color?: string | {dark?: string,light?: string};
   direction?: "horizontal" | "vertical";
   invert?: boolean;
   max?: number;
