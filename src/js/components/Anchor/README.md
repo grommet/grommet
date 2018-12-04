@@ -185,6 +185,11 @@ The DOM tag to use for the element.
 string
 ```
   
+## Intrinsic element
+
+```
+a
+```
 ## Theme
   
 **global.focus.border.color**

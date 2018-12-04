@@ -22,6 +22,6 @@ export interface ButtonProps {
   as?: string;
 }
 
-declare const Button: React.ComponentType<ButtonProps>;
+declare const Button: React.ComponentType<ButtonProps & JSX.IntrinsicElements['button']>;
 
 export { Button };

@@ -37,6 +37,7 @@ node",
     "details": "We have a separate component from the browser
 base so we can style it. You can either set the icon and/or label properties
 or just use children.",
+    "intrinsicElement": "a",
     "name": "Anchor",
     "properties": Array [
       Object {
@@ -681,6 +682,7 @@ string",
       },
     ],
     "description": "A button. We have a separate component from the browser base so we can style it.",
+    "intrinsicElement": "button",
     "name": "Button",
     "properties": Array [
       Object {
@@ -1825,6 +1827,7 @@ node",
       },
     ],
     "description": "An image.",
+    "intrinsicElement": "img",
     "name": "Image",
     "properties": Array [
       Object {
@@ -2681,6 +2684,7 @@ node",
   "TableBody": [Function],
   "TableCell": Object {
     "description": "A cell of data in a table.",
+    "intrinsicElement": "td",
     "name": "TableCell",
     "properties": Array [
       Object {
@@ -2895,6 +2899,7 @@ currently active tab changes.",
       },
     ],
     "description": "A textarea.",
+    "intrinsicElement": "textarea",
     "name": "TextArea",
     "properties": Array [
       Object {
@@ -2957,6 +2962,7 @@ Only use this when the containing context provides sufficient affordance.",
       },
     ],
     "description": "A text input field with optional suggestions.",
+    "intrinsicElement": "input",
     "name": "TextInput",
     "properties": Array [
       Object {

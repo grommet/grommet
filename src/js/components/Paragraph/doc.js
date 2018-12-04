@@ -9,7 +9,8 @@ export const doc = Paragraph => {
     .usage(
       `import { Paragraph } from 'grommet';
 <Paragraph />`,
-    );
+    )
+    .intrinsicElement('p');
 
   DocumentedParagraph.propTypes = {
     ...genericProps,
@@ -63,7 +64,7 @@ export const themeDoc = {
         height: '20px',
         maxWidth: '336px',
        },
-      medium: {          
+      medium: {
         size: '18px',
         height: '24px',
         maxWidth: '432px',

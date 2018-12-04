@@ -6,7 +6,8 @@ export const doc = TableRow => {
     .usage(
       `import { TableRow } from 'grommet';
 <TableRow />`,
-    );
+    )
+    .intrinsicElement('tr');
 
   return DocumentedTableRow;
 };

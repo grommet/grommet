@@ -13,7 +13,8 @@ or just use children.`,
     )
     .usage(
       "import { Anchor } from 'grommet';\n<Anchor href={location} label='Label' />",
-    );
+    )
+    .intrinsicElement('a');
 
   DocumentedAnchor.propTypes = {
     ...genericProps,

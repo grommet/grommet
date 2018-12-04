@@ -9,7 +9,8 @@ export const doc = Text => {
     .usage(
       `import { Text } from 'grommet';
 <Text />`,
-    );
+    )
+    .intrinsicElement('span');
 
   DocumentedText.propTypes = {
     ...genericProps,
