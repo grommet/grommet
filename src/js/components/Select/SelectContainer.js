@@ -316,6 +316,7 @@ class SelectContainer extends Component {
       options,
       searchPlaceholder,
       theme,
+      height,
     } = this.props;
     const { activeIndex, search } = this.state;
 
@@ -349,6 +350,7 @@ class SelectContainer extends Component {
             tabIndex="-1"
             ref={this.selectRef}
             overflow="auto"
+            height={height}
           >
             <InfiniteScroll items={options} step={theme.select.step} replace>
               {(option, index) => {

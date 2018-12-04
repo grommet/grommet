@@ -65,6 +65,7 @@ class Select extends Component {
       dropTarget,
       forwardRef,
       gridArea,
+      height,
       id,
       labelKey,
       margin,
