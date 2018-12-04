@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
+import { css } from 'styled-components';
 
 import { Box, Button, Grommet, CheckBox, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -86,15 +87,26 @@ class ThemedCheckBox extends Component {
   }
 }
 
+const checkboxCheckStyle = css`
+  background-color: #2196f3;
+  border-color: #2196f3;
+`;
+
 const customToggleTheme = {
+  global: {
+    colors: {
+      'toggle-bg': '#757575',
+      'toggle-knob': 'white',
+    },
+  },
   checkBox: {
     border: {
       color: {
-        light: 'light-2',
+        light: 'toggle-bg',
       },
     },
     color: {
-      light: 'neutral-1',
+      light: 'toggle-knob',
     },
     check: {
       radius: '2px',
@@ -105,11 +117,21 @@ const customToggleTheme = {
       },
     },
     toggle: {
-      background: 'light-2',
+      background: 'toggle-bg',
       color: {
-        light: 'light-4',
+        light: 'toggle-knob',
       },
       size: '36px',
+      knob: {
+        extend: `
+          top: -4px;
+          box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
+        `,
+      },
+      extend: ({ checked }) => `
+        height: 14px;
+        ${checked && checkboxCheckStyle}
+      `,
     },
     gap: 'xsmall',
     size: '18px',
