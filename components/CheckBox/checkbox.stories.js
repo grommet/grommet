@@ -4,6 +4,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _react2 = require("@storybook/react");
 
+var _styledComponents = require("styled-components");
+
 var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
@@ -139,15 +141,22 @@ function (_Component2) {
   return ThemedCheckBox;
 }(_react.Component);
 
+var checkboxCheckStyle = (0, _styledComponents.css)(["background-color:#2196f3;border-color:#2196f3;"]);
 var customToggleTheme = {
+  global: {
+    colors: {
+      'toggle-bg': '#757575',
+      'toggle-knob': 'white'
+    }
+  },
   checkBox: {
     border: {
       color: {
-        light: 'light-2'
+        light: 'toggle-bg'
       }
     },
     color: {
-      light: 'neutral-1'
+      light: 'toggle-knob'
     },
     check: {
       radius: '2px'
@@ -158,11 +167,18 @@ var customToggleTheme = {
       }
     },
     toggle: {
-      background: 'light-2',
+      background: 'toggle-bg',
       color: {
-        light: 'light-4'
+        light: 'toggle-knob'
       },
-      size: '36px'
+      size: '36px',
+      knob: {
+        extend: "\n          top: -4px;\n          box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);\n        "
+      },
+      extend: function extend(_ref2) {
+        var checked = _ref2.checked;
+        return "\n        height: 14px;\n        " + (checked && checkboxCheckStyle) + "\n      ";
+      }
     },
     gap: 'xsmall',
     size: '18px'

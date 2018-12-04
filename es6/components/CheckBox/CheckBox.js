@@ -98,7 +98,9 @@ function (_Component) {
       },
       round: theme.checkBox.check.radius,
       focus: focus,
-      checked: checked
+      checked: checked,
+      disabled: disabled,
+      toggle: toggle
     }, !indeterminate && checked && (CheckedIcon ? React.createElement(CheckedIcon, {
       theme: theme,
       as: StyledCheckBoxIcon
