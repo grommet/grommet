@@ -1,0 +1,1 @@
+export { SyntaxInput } from './SyntaxInput';

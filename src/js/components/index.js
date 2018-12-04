@@ -36,6 +36,7 @@ export * from './SkipLink';
 export * from './SkipLinks';
 export * from './SkipLinkTarget';
 export * from './Stack';
+export * from './SyntaxInput';
 export * from './Table';
 export * from './TableBody';
 export * from './TableCell';
