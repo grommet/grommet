@@ -86,11 +86,13 @@ class InfiniteScroll extends PureComponent {
 
   setPageHeight = () => {
     const { pageHeight } = this.state;
-    if (this.firstPageItemRef && this.lasrtPageItemRef && !pageHeight) {
+    if (this.firstPageItemRef && this.lastPageItemRef && !pageHeight) {
       const beginRect = this.firstPageItemRef.getBoundingClientRect();
-      const endRect = this.lasrtPageItemRef.getBoundingClientRect();
+      const endRect = this.lastPageItemRef.getBoundingClientRect();
       const nextPageHeight = endRect.y + endRect.height - beginRect.y;
-      this.setState({ pageHeight: nextPageHeight });
+      // In case the pageHeight is smaller than the visible area,
+      // we call onScroll to set the page boundaries appropriately.
+      this.setState({ pageHeight: nextPageHeight }, this.onScroll);
     }
   };
 
@@ -173,8 +175,9 @@ class InfiniteScroll extends PureComponent {
     }
 
     items.slice(firstIndex, lastIndex + 1).forEach((item, index) => {
-      let child = children(item, index);
-      if (!pageHeight && index === 0) {
+      const itemsIndex = firstIndex + index;
+      let child = children(item, itemsIndex);
+      if (!pageHeight && itemsIndex === 0) {
         const { ref } = child;
         child = React.cloneElement(child, {
           ref: node => {
@@ -184,18 +187,18 @@ class InfiniteScroll extends PureComponent {
             }
           },
         });
-      } else if (!pageHeight && index === step - 1) {
+      } else if (!pageHeight && itemsIndex === step - 1) {
         const { ref } = child;
         child = React.cloneElement(child, {
           ref: node => {
-            this.lasrtPageItemRef = node;
+            this.lastPageItemRef = node;
             if (typeof ref === 'function') {
               ref(node);
             }
           },
         });
       }
-      if (show && show === index) {
+      if (show && show === itemsIndex) {
         const { ref } = child;
         child = React.cloneElement(child, {
           key: 'show',

@@ -97,6 +97,8 @@ class CheckBox extends Component {
         round={theme.checkBox.check.radius}
         focus={focus}
         checked={checked}
+        disabled={disabled}
+        toggle={toggle}
       >
         {!indeterminate &&
           checked &&
