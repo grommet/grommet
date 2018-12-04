@@ -66,10 +66,20 @@ function (_Component) {
         var scaleX = rect.width / (max - min + 1) || 1; // unit test resilience
 
         value = Math.floor(x / scaleX) + min;
-      } // align with closest step
+      } // align with closest step within [min, max]
 
 
-      return value + value % step;
+      var result = value + value % step;
+
+      if (result < min) {
+        return min;
+      }
+
+      if (result > max) {
+        return max;
+      }
+
+      return result;
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClick", function (event) {
