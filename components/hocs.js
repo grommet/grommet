@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.withIconTheme = exports.withAnnounce = exports.withForwardRef = exports.withFocus = void 0;
+exports.withIconTheme = exports.withAnnounce = exports.withForwardRef = exports.withFocus = exports.withDocs = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -26,6 +26,23 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var doc = function doc() {
+  return function (x) {
+    return x;
+  };
+}; // Do not use the documentation wrapper in production.
+
+
+if (process.env.NODE_ENV !== 'production') {
+  doc = function doc(path) {
+    return require(path).doc;
+  }; // eslint-disable-line
+
+}
+
+var withDocs = doc;
+exports.withDocs = withDocs;
 
 var withFocus = function withFocus(WrappedComponent) {
   var FocusableComponent =

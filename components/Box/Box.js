@@ -7,17 +7,17 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
+var _contexts = require("grommet-icons/contexts");
+
 var _styledComponents = require("styled-components");
 
-var _contexts = require("grommet-icons/contexts");
+var _hocs = require("../hocs");
 
 var _contexts2 = require("../../contexts");
 
 var _utils = require("../../utils");
 
 var _defaultProps = require("../../default-props");
-
-var _hocs = require("../hocs");
 
 var _StyledBox = require("./StyledBox");
 
@@ -33,12 +33,14 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var Box =
+var wrapWithHocs = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef, (0, _hocs.withDocs)('./Box/doc'));
+
+var BoxImpl =
 /*#__PURE__*/
 function (_Component) {
-  _inheritsLoose(Box, _Component);
+  _inheritsLoose(BoxImpl, _Component);
 
-  function Box() {
+  function BoxImpl() {
     var _this;
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -52,7 +54,7 @@ function (_Component) {
     return _this;
   }
 
-  Box.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
+  BoxImpl.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
     // Since Box can change the background color for its contents,
     // we update the theme to indicate whether the current context is `dark`
     // and what icon theme to use.
@@ -86,7 +88,7 @@ function (_Component) {
     return null;
   };
 
-  var _proto = Box.prototype;
+  var _proto = BoxImpl.prototype;
 
   _proto.render = function render() {
     var _this$props = this.props,
@@ -164,22 +166,18 @@ function (_Component) {
     return content;
   };
 
-  return Box;
+  return BoxImpl;
 }(_react.Component);
 
-_defineProperty(Box, "defaultProps", {
+_defineProperty(BoxImpl, "displayName", 'Box');
+
+_defineProperty(BoxImpl, "defaultProps", {
   direction: 'column',
   margin: 'none',
   pad: 'none',
   responsive: true
 });
 
-Object.setPrototypeOf(Box.defaultProps, _defaultProps.defaultProps);
-var BoxDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
-}
-
-var BoxWrapper = (0, _recompose.compose)(_styledComponents.withTheme, _hocs.withForwardRef)(BoxDoc || Box);
-exports.Box = BoxWrapper;
+Object.setPrototypeOf(BoxImpl.defaultProps, _defaultProps.defaultProps);
+var Box = wrapWithHocs(BoxImpl);
+exports.Box = Box;

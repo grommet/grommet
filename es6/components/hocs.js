@@ -14,6 +14,22 @@ import getDisplayName from 'recompose/getDisplayName';
 import { ThemeContext as IconThemeContext } from "grommet-icons/es6/contexts/ThemeContext";
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { AnnounceContext } from '../contexts';
+
+var doc = function doc() {
+  return function (x) {
+    return x;
+  };
+}; // Do not use the documentation wrapper in production.
+
+
+if (process.env.NODE_ENV !== 'production') {
+  doc = function doc(path) {
+    return require(path).doc;
+  }; // eslint-disable-line
+
+}
+
+export var withDocs = doc;
 export var withFocus = function withFocus(WrappedComponent) {
   var FocusableComponent =
   /*#__PURE__*/

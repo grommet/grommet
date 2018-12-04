@@ -10,20 +10,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
 import { ThemeContext as IconThemeContext } from "grommet-icons/es6/contexts/ThemeContext";
+import { withTheme } from 'styled-components';
+import { withForwardRef, withDocs } from '../hocs';
 import { ThemeContext } from '../../contexts';
 import { backgroundIsDark } from '../../utils';
 import { defaultProps } from '../../default-props';
-import { withForwardRef } from '../hocs';
 import { StyledBox, StyledBoxGap } from './StyledBox';
+var wrapWithHocs = compose(withTheme, withForwardRef, withDocs('./Box/doc'));
 
-var Box =
+var BoxImpl =
 /*#__PURE__*/
 function (_Component) {
-  _inheritsLoose(Box, _Component);
+  _inheritsLoose(BoxImpl, _Component);
 
-  function Box() {
+  function BoxImpl() {
     var _this;
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -37,7 +38,7 @@ function (_Component) {
     return _this;
   }
 
-  Box.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
+  BoxImpl.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
     // Since Box can change the background color for its contents,
     // we update the theme to indicate whether the current context is `dark`
     // and what icon theme to use.
@@ -71,7 +72,7 @@ function (_Component) {
     return null;
   };
 
-  var _proto = Box.prototype;
+  var _proto = BoxImpl.prototype;
 
   _proto.render = function render() {
     var _this$props = this.props,
@@ -148,22 +149,17 @@ function (_Component) {
     return content;
   };
 
-  return Box;
+  return BoxImpl;
 }(Component);
 
-_defineProperty(Box, "defaultProps", {
+_defineProperty(BoxImpl, "displayName", 'Box');
+
+_defineProperty(BoxImpl, "defaultProps", {
   direction: 'column',
   margin: 'none',
   pad: 'none',
   responsive: true
 });
 
-Object.setPrototypeOf(Box.defaultProps, defaultProps);
-var BoxDoc;
-
-if (process.env.NODE_ENV !== 'production') {
-  BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
-}
-
-var BoxWrapper = compose(withTheme, withForwardRef)(BoxDoc || Box);
-export { BoxWrapper as Box };
+Object.setPrototypeOf(BoxImpl.defaultProps, defaultProps);
+export var Box = wrapWithHocs(BoxImpl);
