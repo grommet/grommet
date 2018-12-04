@@ -117,6 +117,10 @@ Label color and icon color, if not specified on the icon.
 
 ```
 string
+{
+  dark: string,
+  light: string
+}
 ```
 
 **href**

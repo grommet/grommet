@@ -82,6 +82,7 @@ class DataTable extends Component {
       resizeable,
       size,
       sortable,
+      onSearch, // removing unknown DOM attributes
       ...rest
     } = this.props;
     const {

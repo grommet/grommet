@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = Button => {
   const DocumentedButton = describe(Button)
@@ -18,7 +18,7 @@ export const doc = Button => {
     active: PropTypes.bool
       .description('Whether the button is active.')
       .defaultValue(false),
-    color: PropTypes.string.description(
+    color: colorPropType.description(
       'Fill color for primary, border color otherwise.',
     ),
     disabled: PropTypes.bool

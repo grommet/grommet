@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = Anchor => {
   const DocumentedAnchor = describe(Anchor)
@@ -20,7 +20,7 @@ or just use children.`,
     a11yTitle: PropTypes.string.description(
       'Custom title to be used by screen readers.',
     ),
-    color: PropTypes.string.description(
+    color: colorPropType.description(
       'Label color and icon color, if not specified on the icon.',
     ),
     href: PropTypes.string.description(

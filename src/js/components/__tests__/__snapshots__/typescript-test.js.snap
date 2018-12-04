@@ -38,8 +38,13 @@ export interface AnchorProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
+<<<<<<< HEAD
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   color?: string;
+=======
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  color?: string | {dark: string,light: string};
+>>>>>>> Fixed component warnings
   href?: string;
   icon?: JSX.Element;
   label?: React.ReactNode;
@@ -95,7 +100,7 @@ export interface ButtonProps {
   gridArea?: string;
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   active?: boolean;
-  color?: string;
+  color?: string | {dark: string,light: string};
   disabled?: boolean;
   fill?: boolean;
   focusIndicator?: boolean;
@@ -253,7 +258,11 @@ export { DataTable };
   "Diagram": "import * as React from \\"react\\";
 
 export interface DiagramProps {
+<<<<<<< HEAD
   connections: {anchor?: \\"center\\" | \\"vertical\\" | \\"horizontal\\",color?: string,fromTarget: string | object,label?: string,offset?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,thickness?: \\"hair\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,toTarget: string | object,type?: \\"direct\\" | \\"curved\\" | \\"rectilinear\\"}[];
+=======
+  connections: {anchor: \\"center\\" | \\"vertical\\" | \\"horizontal\\",color: string | {dark: string,light: string},fromTarget: string | object,label: string,offset: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,thickness: \\"hair\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,toTarget: string | object,type: \\"direct\\" | \\"curved\\" | \\"rectilinear\\"}[];
+>>>>>>> Fixed component warnings
 }
 
 declare const Diagram: React.ComponentType<DiagramProps>;
@@ -371,8 +380,13 @@ export interface HeadingProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
+<<<<<<< HEAD
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   color?: string;
+=======
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  color?: string | {dark: string,light: string};
+>>>>>>> Fixed component warnings
   level?: \\"1\\" | \\"2\\" | \\"3\\" | \\"4\\" | \\"5\\" | \\"6\\" | \\"1\\" | \\"2\\" | \\"3\\" | \\"4\\" | \\"5\\" | \\"6\\";
   responsive?: boolean;
   size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
@@ -510,8 +524,13 @@ export interface ParagraphProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
+<<<<<<< HEAD
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   color?: string;
+=======
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  color?: string | {dark: string,light: string};
+>>>>>>> Fixed component warnings
   responsive?: boolean;
   size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xxlarge\\" | string;
   textAlign?: \\"start\\" | \\"center\\" | \\"end\\";
@@ -555,7 +574,7 @@ export { RangeInput };
   "RangeSelector": "import * as React from \\"react\\";
 
 export interface RangeSelectorProps {
-  color?: string;
+  color?: string | {dark: string,light: string};
   direction?: \\"horizontal\\" | \\"vertical\\";
   invert?: boolean;
   max?: number;
@@ -761,8 +780,13 @@ export interface TextProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
+<<<<<<< HEAD
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   color?: string;
+=======
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  color?: string | {dark: string,light: string};
+>>>>>>> Fixed component warnings
   size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xxlarge\\" | string;
   tag?: string;
   as?: string;
@@ -840,12 +864,21 @@ export interface WorldMapProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
+<<<<<<< HEAD
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   color?: string;
   continents?: {color?: string,name: \\"Africa\\" | \\"Asia\\" | \\"Australia\\" | \\"Europe\\" | \\"North America\\" | \\"South America\\",onClick?: (...args: any[]) => any,onHover?: (...args: any[]) => any}[];
   onSelectPlace?: (...args: any[]) => any;
   places?: {color?: string,name?: string,location: number[],onClick?: (...args: any[]) => any,onHover?: (...args: any[]) => any}[];
   hoverColor?: string;
+=======
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  color?: string | {dark: string,light: string};
+  continents?: {color: string | {dark: string,light: string},name: \\"Africa\\" | \\"Asia\\" | \\"Australia\\" | \\"Europe\\" | \\"North America\\" | \\"South America\\",onClick: (...args: any[]) => any,onHover: (...args: any[]) => any}[];
+  onSelectPlace?: (...args: any[]) => any;
+  places?: {color: string | {dark: string,light: string},name: string,location: number[],onClick: (...args: any[]) => any,onHover: (...args: any[]) => any}[];
+  hoverColor?: string | {dark: string,light: string};
+>>>>>>> Fixed component warnings
 }
 
 declare const WorldMap: React.ComponentType<WorldMapProps>;
