@@ -8,13 +8,13 @@ export interface AccordionProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   activeIndex?: number | number[];
   animate?: boolean;
   children?: React.ReactNode;
   onActive?: (...args: any[]) => any;
   multiple?: boolean;
-  messages?: {tabContents: string};
+  messages?: {tabContents?: string};
 }
 
 declare const Accordion: React.ComponentType<AccordionProps>;
@@ -38,7 +38,7 @@ export interface AnchorProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   color?: string;
   href?: string;
   icon?: JSX.Element;
@@ -59,13 +59,13 @@ export interface BoxProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   align?: \\"start\\" | \\"center\\" | \\"end\\" | \\"baseline\\" | \\"stretch\\";
   alignContent?: \\"start\\" | \\"center\\" | \\"end\\" | \\"between\\" | \\"around\\" | \\"stretch\\";
-  animation?: \\"fadeIn\\" | \\"fadeOut\\" | \\"jiggle\\" | \\"pulse\\" | \\"slideUp\\" | \\"slideDown\\" | \\"slideLeft\\" | \\"slideRight\\" | \\"zoomIn\\" | \\"zoomOut\\" | {type: \\"fadeIn\\" | \\"fadeOut\\" | \\"jiggle\\" | \\"pulse\\" | \\"slideUp\\" | \\"slideDown\\" | \\"slideLeft\\" | \\"slideRight\\" | \\"zoomIn\\" | \\"zoomOut\\",delay: number,duration: number,size: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\"} | \\"fadeIn\\" | \\"fadeOut\\" | \\"jiggle\\" | \\"pulse\\" | \\"slideUp\\" | \\"slideDown\\" | \\"slideLeft\\" | \\"slideRight\\" | \\"zoomIn\\" | \\"zoomOut\\" | {type: \\"fadeIn\\" | \\"fadeOut\\" | \\"jiggle\\" | \\"pulse\\" | \\"slideUp\\" | \\"slideDown\\" | \\"slideLeft\\" | \\"slideRight\\" | \\"zoomIn\\" | \\"zoomOut\\",delay: number,duration: number,size: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\"}[];
-  background?: string | {color: string,dark: boolean | string,image: string,position: string,opacity: \\"weak\\" | \\"medium\\" | \\"strong\\" | boolean,light: string};
+  animation?: \\"fadeIn\\" | \\"fadeOut\\" | \\"jiggle\\" | \\"pulse\\" | \\"slideUp\\" | \\"slideDown\\" | \\"slideLeft\\" | \\"slideRight\\" | \\"zoomIn\\" | \\"zoomOut\\" | {type?: \\"fadeIn\\" | \\"fadeOut\\" | \\"jiggle\\" | \\"pulse\\" | \\"slideUp\\" | \\"slideDown\\" | \\"slideLeft\\" | \\"slideRight\\" | \\"zoomIn\\" | \\"zoomOut\\",delay?: number,duration?: number,size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\"} | \\"fadeIn\\" | \\"fadeOut\\" | \\"jiggle\\" | \\"pulse\\" | \\"slideUp\\" | \\"slideDown\\" | \\"slideLeft\\" | \\"slideRight\\" | \\"zoomIn\\" | \\"zoomOut\\" | {type?: \\"fadeIn\\" | \\"fadeOut\\" | \\"jiggle\\" | \\"pulse\\" | \\"slideUp\\" | \\"slideDown\\" | \\"slideLeft\\" | \\"slideRight\\" | \\"zoomIn\\" | \\"zoomOut\\",delay?: number,duration?: number,size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\"}[];
+  background?: string | {color?: string,dark?: boolean | string,image?: string,position?: string,opacity?: \\"weak\\" | \\"medium\\" | \\"strong\\" | boolean,light?: string};
   basis?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"2/4\\" | \\"3/4\\" | \\"auto\\" | string;
-  border?: boolean | \\"top\\" | \\"left\\" | \\"bottom\\" | \\"right\\" | \\"horizontal\\" | \\"vertical\\" | \\"all\\" | {color: string | {dark: string,light: string},side: \\"top\\" | \\"left\\" | \\"bottom\\" | \\"right\\" | \\"horizontal\\" | \\"vertical\\" | \\"all\\",size: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string};
+  border?: boolean | \\"top\\" | \\"left\\" | \\"bottom\\" | \\"right\\" | \\"horizontal\\" | \\"vertical\\" | \\"all\\" | {color?: string | {dark?: string,light?: string},side?: \\"top\\" | \\"left\\" | \\"bottom\\" | \\"right\\" | \\"horizontal\\" | \\"vertical\\" | \\"all\\",size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string};
   direction?: \\"row\\" | \\"column\\" | \\"row-responsive\\";
   elevation?: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   flex?: \\"grow\\" | \\"shrink\\" | boolean;
@@ -73,10 +73,10 @@ export interface BoxProps {
   gap?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   height?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   justify?: \\"start\\" | \\"center\\" | \\"between\\" | \\"end\\";
-  overflow?: \\"auto\\" | \\"hidden\\" | \\"scroll\\" | \\"visible\\" | {horizontal: \\"auto\\" | \\"hidden\\" | \\"scroll\\" | \\"visible\\",vertical: \\"auto\\" | \\"hidden\\" | \\"scroll\\" | \\"visible\\"} | string;
-  pad?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  overflow?: \\"auto\\" | \\"hidden\\" | \\"scroll\\" | \\"visible\\" | {horizontal?: \\"auto\\" | \\"hidden\\" | \\"scroll\\" | \\"visible\\",vertical?: \\"auto\\" | \\"hidden\\" | \\"scroll\\" | \\"visible\\"} | string;
+  pad?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   responsive?: boolean;
-  round?: boolean | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | string | {corner: \\"top\\" | \\"left\\" | \\"bottom\\" | \\"right\\" | \\"top-left\\" | \\"top-right\\" | \\"bottom-left\\" | \\"bottom-right\\",size: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string};
+  round?: boolean | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | string | {corner?: \\"top\\" | \\"left\\" | \\"bottom\\" | \\"right\\" | \\"top-left\\" | \\"top-right\\" | \\"bottom-left\\" | \\"bottom-right\\",size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string};
   tag?: string;
   as?: string;
   width?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
@@ -93,13 +93,13 @@ export interface ButtonProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   active?: boolean;
   color?: string;
   disabled?: boolean;
   fill?: boolean;
   focusIndicator?: boolean;
-  hoverIndicator?: boolean | string | \\"background\\" | {background: boolean | string};
+  hoverIndicator?: boolean | string | \\"background\\" | {background?: boolean | string};
   href?: string;
   icon?: JSX.Element;
   label?: React.ReactNode;
@@ -121,7 +121,7 @@ export interface CalendarProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   animate?: boolean;
   bounds?: string[];
   date?: string;
@@ -148,7 +148,7 @@ export interface CarouselProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   fill?: boolean;
   play?: number;
 }
@@ -163,17 +163,17 @@ export interface ChartProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   bounds?: number[][];
-  color?: string | {color: string,opacity: \\"weak\\" | \\"medium\\" | \\"strong\\" | boolean};
+  color?: string | {color?: string,opacity?: \\"weak\\" | \\"medium\\" | \\"strong\\" | boolean};
   onClick?: (...args: any[]) => any;
   onHover?: (...args: any[]) => any;
   overflow?: boolean;
   round?: boolean;
-  size?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | {height: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | string,width: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | string} | string;
+  size?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | {height?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | string,width?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | string} | string;
   thickness?: \\"hair\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"none\\" | string;
   type?: \\"bar\\" | \\"line\\" | \\"area\\";
-  values: number | number[] | {label: string,onClick: (...args: any[]) => any,onHover: (...args: any[]) => any,value: number | number[]}[];
+  values: number | number[] | {label?: string,onClick?: (...args: any[]) => any,onHover?: (...args: any[]) => any,value: number | number[]}[];
 }
 
 declare const Chart: React.ComponentType<ChartProps>;
@@ -204,7 +204,7 @@ export interface ClockProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   hourLimit?: \\"12\\" | \\"24\\" | \\"12\\" | \\"24\\";
   onChange?: (...args: any[]) => any;
   precision?: \\"hours\\" | \\"minutes\\" | \\"seconds\\";
@@ -235,8 +235,8 @@ export interface DataTableProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
-  columns?: {align: \\"center\\" | \\"start\\" | \\"end\\",aggregate: \\"avg\\" | \\"max\\" | \\"min\\" | \\"sum\\",footer: React.ReactNode | {aggregate: boolean},header: string | React.ReactNode | {aggregate: boolean},property: string,render: (...args: any[]) => any,search: boolean}[];
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  columns?: {align?: \\"center\\" | \\"start\\" | \\"end\\",aggregate?: \\"avg\\" | \\"max\\" | \\"min\\" | \\"sum\\",footer?: React.ReactNode | {aggregate?: boolean},header?: string | React.ReactNode | {aggregate?: boolean},property: string,render?: (...args: any[]) => any,search?: boolean}[];
   data?: {}[];
   groupBy?: string;
   onMore?: (...args: any[]) => any;
@@ -253,7 +253,7 @@ export { DataTable };
   "Diagram": "import * as React from \\"react\\";
 
 export interface DiagramProps {
-  connections: {anchor: \\"center\\" | \\"vertical\\" | \\"horizontal\\",color: string,fromTarget: string | object,label: string,offset: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,thickness: \\"hair\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,toTarget: string | object,type: \\"direct\\" | \\"curved\\" | \\"rectilinear\\"}[];
+  connections: {anchor?: \\"center\\" | \\"vertical\\" | \\"horizontal\\",color?: string,fromTarget: string | object,label?: string,offset?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,thickness?: \\"hair\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,toTarget: string | object,type?: \\"direct\\" | \\"curved\\" | \\"rectilinear\\"}[];
 }
 
 declare const Diagram: React.ComponentType<DiagramProps>;
@@ -266,7 +266,7 @@ export interface DistributionProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   children?: (...args: any[]) => any;
   fill?: boolean;
   gap?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
@@ -280,7 +280,7 @@ export { Distribution };
   "Drop": "import * as React from \\"react\\";
 
 export interface DropProps {
-  align?: {top: \\"top\\" | \\"bottom\\",bottom: \\"top\\" | \\"bottom\\",right: \\"left\\" | \\"right\\",left: \\"left\\" | \\"right\\"};
+  align?: {top?: \\"top\\" | \\"bottom\\",bottom?: \\"top\\" | \\"bottom\\",right?: \\"left\\" | \\"right\\",left?: \\"left\\" | \\"right\\"};
   onClickOutside?: (...args: any[]) => any;
   onEsc?: (...args: any[]) => any;
   responsive?: boolean;
@@ -301,9 +301,9 @@ export interface DropButtonProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   disabled?: boolean;
-  dropAlign?: {top: \\"top\\" | \\"bottom\\",bottom: \\"top\\" | \\"bottom\\",right: \\"left\\" | \\"right\\",left: \\"left\\" | \\"right\\"};
+  dropAlign?: {top?: \\"top\\" | \\"bottom\\",bottom?: \\"top\\" | \\"bottom\\",right?: \\"left\\" | \\"right\\",left?: \\"left\\" | \\"right\\"};
   dropContent: JSX.Element;
   dropTarget?: object;
   onClose?: (...args: any[]) => any;
@@ -334,13 +334,13 @@ export interface GridProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   align?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   alignContent?: \\"start\\" | \\"center\\" | \\"end\\" | \\"between\\" | \\"around\\" | \\"stretch\\";
-  areas?: {name: string,start: number[],end: number[]}[];
-  columns?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"2/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"2/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\"[] | string[] | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {count: \\"fit\\" | \\"fill\\" | number,size: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"2/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\"[] | string} | string;
+  areas?: {name?: string,start?: number[],end?: number[]}[];
+  columns?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"2/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"2/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\"[] | string[] | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {count?: \\"fit\\" | \\"fill\\" | number,size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"2/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\"[] | string} | string;
   fill?: \\"horizontal\\" | \\"vertical\\" | boolean;
-  gap?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"none\\" | {row: \\"small\\" | \\"medium\\" | \\"large\\" | \\"none\\" | string,column: \\"small\\" | \\"medium\\" | \\"large\\" | \\"none\\" | string} | string;
+  gap?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"none\\" | {row?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"none\\" | string,column?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"none\\" | string} | string;
   justify?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   justifyContent?: \\"start\\" | \\"center\\" | \\"end\\" | \\"between\\" | \\"around\\" | \\"stretch\\";
   rows?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"2/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | \\"1/2\\" | \\"1/3\\" | \\"2/3\\" | \\"1/4\\" | \\"2/4\\" | \\"3/4\\" | \\"flex\\" | \\"auto\\"[] | string[] | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
@@ -371,7 +371,7 @@ export interface HeadingProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   color?: string;
   level?: \\"1\\" | \\"2\\" | \\"3\\" | \\"4\\" | \\"5\\" | \\"6\\" | \\"1\\" | \\"2\\" | \\"3\\" | \\"4\\" | \\"5\\" | \\"6\\";
   responsive?: boolean;
@@ -390,7 +390,7 @@ export interface ImageProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   fit?: \\"cover\\" | \\"contain\\";
 }
 
@@ -440,7 +440,7 @@ export { Keyboard };
 
 export interface LayerProps {
   full?: boolean | \\"vertical\\" | \\"horizontal\\";
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string} | string;
   modal?: boolean;
   onClickOutside?: (...args: any[]) => any;
   onEsc?: (...args: any[]) => any;
@@ -469,15 +469,15 @@ export interface MenuProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   disabled?: boolean;
-  dropAlign?: {top: \\"top\\" | \\"bottom\\",bottom: \\"top\\" | \\"bottom\\",left: \\"right\\" | \\"left\\",right: \\"right\\" | \\"left\\"};
-  dropBackground?: string | {color: string,opacity: \\"weak\\" | \\"medium\\" | \\"strong\\" | boolean};
+  dropAlign?: {top?: \\"top\\" | \\"bottom\\",bottom?: \\"top\\" | \\"bottom\\",left?: \\"right\\" | \\"left\\",right?: \\"right\\" | \\"left\\"};
+  dropBackground?: string | {color?: string,opacity?: \\"weak\\" | \\"medium\\" | \\"strong\\" | boolean};
   dropTarget?: object;
   icon?: boolean | React.ReactNode;
   items: object[];
   label?: string | React.ReactNode;
-  messages?: {closeMenu: string,openMenu: string};
+  messages?: {closeMenu?: string,openMenu?: string};
   size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
 }
 
@@ -491,13 +491,13 @@ export interface MeterProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
-  background?: string | {color: string,opacity: \\"weak\\" | \\"medium\\" | \\"strong\\" | boolean};
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  background?: string | {color?: string,opacity?: \\"weak\\" | \\"medium\\" | \\"strong\\" | boolean};
   round?: boolean;
   size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"full\\" | string;
   thickness?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   type?: \\"bar\\" | \\"circle\\";
-  values?: {color: string,highlight: boolean,label: string,onClick: (...args: any[]) => any,onHover: (...args: any[]) => any,value: number}[];
+  values?: {color?: string,highlight?: boolean,label: string,onClick?: (...args: any[]) => any,onHover?: (...args: any[]) => any,value: number}[];
 }
 
 declare const Meter: React.ComponentType<MeterProps>;
@@ -510,7 +510,7 @@ export interface ParagraphProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   color?: string;
   responsive?: boolean;
   size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xxlarge\\" | string;
@@ -559,7 +559,7 @@ export interface RangeSelectorProps {
   direction?: \\"horizontal\\" | \\"vertical\\";
   invert?: boolean;
   max?: number;
-  messages?: {lower: string,upper: string};
+  messages?: {lower?: string,upper?: string};
   min?: number;
   onChange?: (...args: any[]) => any;
   opacity?: \\"weak\\" | \\"medium\\" | \\"strong\\";
@@ -601,16 +601,16 @@ export interface SelectProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   children?: (...args: any[]) => any;
   closeOnChange?: boolean;
   disabled?: boolean | number | string | object[];
   disabledKey?: string | (...args: any[]) => any;
-  dropAlign?: {top: \\"top\\" | \\"bottom\\",bottom: \\"top\\" | \\"bottom\\",right: \\"left\\" | \\"right\\",left: \\"left\\" | \\"right\\"};
+  dropAlign?: {top?: \\"top\\" | \\"bottom\\",bottom?: \\"top\\" | \\"bottom\\",right?: \\"left\\" | \\"right\\",left?: \\"left\\" | \\"right\\"};
   dropTarget?: object;
   focusIndicator?: boolean;
   labelKey?: string | (...args: any[]) => any;
-  messages?: {multiple: string};
+  messages?: {multiple?: string};
   multiple?: boolean;
   onChange?: (...args: any[]) => any;
   onClose?: (...args: any[]) => any;
@@ -635,7 +635,7 @@ export { Select };
 
 export interface SkipLinksProps {
   children: React.ReactNode;
-  messages?: {skipTo: string};
+  messages?: {skipTo?: string};
 }
 
 declare const SkipLinks: React.ComponentType<SkipLinksProps>;
@@ -648,7 +648,7 @@ export interface StackProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   anchor?: \\"center\\" | \\"left\\" | \\"right\\" | \\"top\\" | \\"bottom\\" | \\"top-left\\" | \\"bottom-left\\" | \\"top-right\\" | \\"bottom-right\\";
   fill?: boolean;
   guidingChild?: number | \\"first\\" | \\"last\\";
@@ -675,7 +675,7 @@ export interface TableProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   caption?: string;
 }
 
@@ -742,12 +742,12 @@ export interface TabsProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   activeIndex?: number;
   children: React.ReactNode;
   flex?: \\"grow\\" | \\"shrink\\" | boolean;
   justify?: \\"start\\" | \\"center\\" | \\"end\\";
-  messages?: {tabContents: string};
+  messages?: {tabContents?: string};
   onActive?: (...args: any[]) => any;
 }
 
@@ -761,7 +761,7 @@ export interface TextProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   color?: string;
   size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xxlarge\\" | string;
   tag?: string;
@@ -795,11 +795,11 @@ export { TextArea };
   "TextInput": "import * as React from \\"react\\";
 
 export interface TextInputProps {
-  dropAlign?: {top: \\"top\\" | \\"bottom\\",bottom: \\"top\\" | \\"bottom\\",right: \\"left\\" | \\"right\\",left: \\"left\\" | \\"right\\"};
+  dropAlign?: {top?: \\"top\\" | \\"bottom\\",bottom?: \\"top\\" | \\"bottom\\",right?: \\"left\\" | \\"right\\",left?: \\"left\\" | \\"right\\"};
   dropTarget?: object;
   id?: string;
   focusIndicator?: boolean;
-  messages?: {enterSelect: string,suggestionsCount: string,suggestionsExist: string,suggestionIsOpen: string};
+  messages?: {enterSelect?: string,suggestionsCount?: string,suggestionsExist?: string,suggestionIsOpen?: string};
   name?: string;
   onChange?: (...args: any[]) => any;
   onSelect?: (...args: any[]) => any;
@@ -808,7 +808,7 @@ export interface TextInputProps {
   placeholder?: string | React.ReactNode;
   plain?: boolean;
   size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
-  suggestions?: {label: React.ReactNode,value: any} | string[];
+  suggestions?: {label?: React.ReactNode,value?: any} | string[];
   value?: string;
 }
 
@@ -822,7 +822,7 @@ export interface VideoProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   autoPlay?: boolean;
   controls?: \\"false\\" | \\"over\\" | \\"below\\";
   fit?: \\"cover\\" | \\"contain\\";
@@ -840,11 +840,11 @@ export interface WorldMapProps {
   a11yTitle?: string;
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
-  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
+  margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   color?: string;
-  continents?: {color: string,name: \\"Africa\\" | \\"Asia\\" | \\"Australia\\" | \\"Europe\\" | \\"North America\\" | \\"South America\\",onClick: (...args: any[]) => any,onHover: (...args: any[]) => any}[];
+  continents?: {color?: string,name: \\"Africa\\" | \\"Asia\\" | \\"Australia\\" | \\"Europe\\" | \\"North America\\" | \\"South America\\",onClick?: (...args: any[]) => any,onHover?: (...args: any[]) => any}[];
   onSelectPlace?: (...args: any[]) => any;
-  places?: {color: string,name: string,location: number[],onClick: (...args: any[]) => any,onHover: (...args: any[]) => any}[];
+  places?: {color?: string,name?: string,location: number[],onClick?: (...args: any[]) => any,onHover?: (...args: any[]) => any}[];
   hoverColor?: string;
 }
 
