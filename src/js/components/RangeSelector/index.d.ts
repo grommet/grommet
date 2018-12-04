@@ -5,7 +5,7 @@ export interface RangeSelectorProps {
   direction?: "horizontal" | "vertical";
   invert?: boolean;
   max?: number;
-  messages?: {lower: string,upper: string};
+  messages?: {lower?: string,upper?: string};
   min?: number;
   onChange?: (...args: any[]) => any;
   opacity?: "weak" | "medium" | "strong";

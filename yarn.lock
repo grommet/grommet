@@ -7741,10 +7741,10 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-desc@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-4.0.0.tgz#1e79ffe2b754cbde7762bc730e315ee463f1698a"
-  integrity sha512-meNaUDnTpwYd7WjwK1y7dAivABO/6IOODwtOjiJCpfOoxXSnFamIjZk27ztNCBkLP63W1RD1EvPoSiiLc1gIGw==
+react-desc@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-4.1.0.tgz#efdf783c67a4f4e26236f8fa64c702ca929e2257"
+  integrity sha512-gFL7VIY9DbQX1rl3CijIKVzRBx6zxX5fKgDdREPjcLggiYyTIzXpoaMLVi8+Mc0kQjKMtVksUAs7tVpog/6+Rw==
 
 react-dev-utils@^6.0.4, react-dev-utils@^6.1.0:
   version "6.1.1"
