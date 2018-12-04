@@ -1,0 +1,39 @@
+## Form
+A field in a form.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Form&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=form&module=%2Fsrc%2FForm.js)
+## Usage
+
+```javascript
+import { Form } from 'grommet';
+<Form />
+```
+
+## Properties
+
+**onChange**
+
+Function that will be called when any fields are updated.
+
+```
+function
+```
+
+**onSubmit**
+
+Function that will be called when the form is submitted.
+
+```
+function
+```
+
+**value**
+
+An object representing all of the data in the form. Defaults to `{}`.
+
+```
+{
+
+}
+```
+  

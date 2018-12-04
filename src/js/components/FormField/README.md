@@ -45,4 +45,59 @@ A short label describing the field
 string
 node
 ```
+
+**name**
+
+The name of the value data when in a Form and the name of
+      the input field.
+
+```
+string
+```
+
+**options**
+
+Array of options. If less than four, RadioButtons, otherwise, Select.
+
+```
+[
+  string
+  object
+]
+```
+
+**optionLabelKey**
+
+When options are objects, the key to get the label.
+
+```
+string
+function
+```
+
+**optionValueKey**
+
+When options are objects, the key to get the value.
+
+```
+string
+function
+```
+
+**required**
+
+Whether the field is required.
+
+```
+boolean
+```
+
+**validate**
+
+Validation rule. Provide a regular expression or a function.
+
+```
+object
+function
+```
   

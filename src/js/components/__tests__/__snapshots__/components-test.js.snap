@@ -1765,6 +1765,25 @@ string",
     "usage": "import { DropButton } from 'grommet';
 <DropButton dropContent={...} />",
   },
+  "Form": [Function],
+  "FormContext": Object {
+    "$$typeof": Symbol(react.context),
+    "Consumer": Object {
+      "$$typeof": Symbol(react.context),
+      "_calculateChangedBits": null,
+      "_context": [Circular],
+    },
+    "Provider": Object {
+      "$$typeof": Symbol(react.provider),
+      "_context": [Circular],
+    },
+    "_calculateChangedBits": null,
+    "_currentRenderer": null,
+    "_currentRenderer2": null,
+    "_currentValue": undefined,
+    "_currentValue2": undefined,
+    "_threadCount": 0,
+  },
   "FormField": Object {
     "availableAt": Array [
       Object {
@@ -1803,6 +1822,43 @@ node",
         "format": "string
 node",
         "name": "label",
+      },
+      Object {
+        "description": "The name of the value data when in a Form and the name of
+      the input field.",
+        "format": "string",
+        "name": "name",
+      },
+      Object {
+        "description": "Array of options. If less than four, RadioButtons, otherwise, Select.",
+        "format": "[
+  string
+  object
+]",
+        "name": "options",
+      },
+      Object {
+        "description": "When options are objects, the key to get the label.",
+        "format": "string
+function",
+        "name": "optionLabelKey",
+      },
+      Object {
+        "description": "When options are objects, the key to get the value.",
+        "format": "string
+function",
+        "name": "optionValueKey",
+      },
+      Object {
+        "description": "Whether the field is required.",
+        "format": "boolean",
+        "name": "required",
+      },
+      Object {
+        "description": "Validation rule. Provide a regular expression or a function.",
+        "format": "object
+function",
+        "name": "validate",
       },
     ],
     "usage": "import { FormField } from 'grommet';
