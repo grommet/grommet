@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { colorPropType, getAvailableAtBadge } from '../../utils';
 
 export const doc = Diagram => {
   const DocumentedDiagram = describe(Diagram)
@@ -15,7 +15,7 @@ export const doc = Diagram => {
     connections: PropTypes.arrayOf(
       PropTypes.shape({
         anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
-        color: PropTypes.string,
+        color: colorPropType,
         fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
           .isRequired,
         label: PropTypes.string, // for accessibility

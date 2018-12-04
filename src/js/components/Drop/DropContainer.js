@@ -287,7 +287,9 @@ class DropContainer extends Component {
         as={Box}
         plain={plain}
         elevation={
-          !plain && (elevation || theme.global.drop.shadowSize || 'small')
+          !plain
+            ? elevation || theme.global.drop.shadowSize || 'small'
+            : undefined
         }
         tabIndex="-1"
         ref={this.dropRef}

@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
 
 export const themeDoc = {
   'worldMap.color': {
@@ -53,10 +53,10 @@ export const doc = WorldMap => {
 
   DocumentedWorldMap.propTypes = {
     ...genericProps,
-    color: PropTypes.string.description('Default color'),
+    color: colorPropType.description('Default color'),
     continents: PropTypes.arrayOf(
       PropTypes.shape({
-        color: PropTypes.string,
+        color: colorPropType,
         name: PropTypes.oneOf([
           'Africa',
           'Asia',
@@ -74,14 +74,14 @@ export const doc = WorldMap => {
         It is passed the location.`),
     places: PropTypes.arrayOf(
       PropTypes.shape({
-        color: PropTypes.string,
+        color: colorPropType,
         name: PropTypes.string, // for a11y aria-label
         location: PropTypes.arrayOf(PropTypes.number).isRequired,
         onClick: PropTypes.func,
         onHover: PropTypes.func,
       }),
     ).description('Place details.'),
-    hoverColor: PropTypes.string.description(
+    hoverColor: colorPropType.description(
       'Color when hovering over places while selecting.',
     ),
   };
