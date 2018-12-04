@@ -1,18 +1,24 @@
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
+import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 import { withTheme } from 'styled-components';
 
-import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
-
+import { withForwardRef, withDocs } from '../hocs';
 import { ThemeContext } from '../../contexts';
 import { backgroundIsDark } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-import { withForwardRef } from '../hocs';
-
 import { StyledBox, StyledBoxGap } from './StyledBox';
 
-class Box extends Component {
+const wrapWithHocs = compose(
+  withTheme,
+  withForwardRef,
+  withDocs('./Box/doc'),
+);
+
+class BoxImpl extends Component {
+  static displayName = 'Box';
+
   static defaultProps = {
     direction: 'column',
     margin: 'none',
@@ -136,15 +142,6 @@ class Box extends Component {
   }
 }
 
-Object.setPrototypeOf(Box.defaultProps, defaultProps);
+Object.setPrototypeOf(BoxImpl.defaultProps, defaultProps);
 
-let BoxDoc;
-if (process.env.NODE_ENV !== 'production') {
-  BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
-}
-const BoxWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(BoxDoc || Box);
-
-export { BoxWrapper as Box };
+export const Box = wrapWithHocs(BoxImpl);
