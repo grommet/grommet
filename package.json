@@ -50,7 +50,7 @@
     "mobile-detect": "^1.4.3",
     "polished": "^2.2.0",
     "prop-types": "^15.5.10",
-    "react-desc": "^4.0.0",
+    "react-desc": "^4.1.0",
     "recompose": "^0.30.0"
   },
   "devDependencies": {
