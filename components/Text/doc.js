@@ -12,7 +12,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var doc = function doc(Text) {
   var DocumentedText = (0, _reactDesc.describe)(Text).availableAt((0, _utils.getAvailableAtBadge)('Text')).description('Arbitrary text.').usage("import { Text } from 'grommet';\n<Text />");
   DocumentedText.propTypes = _extends({}, _utils.genericProps, {
-    color: _reactDesc.PropTypes.string.description('A color identifier to use for the text color.'),
+    color: _utils.colorPropType.description('A color identifier to use for the text color.'),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]).description("The font size and line height are primarily driven by the chosen tag. But, it can\nbe adjusted via this size property. The tag should be set for semantic\ncorrectness and accessibility. This size property allows for stylistic\nadjustments."),
     tag: _reactDesc.PropTypes.string.description("The DOM tag to use for the element. NOTE: This is deprecated in favor\nof indicating the DOM tag via the 'as' property."),
     as: _reactDesc.PropTypes.string.description("The DOM tag to use for the element.").defaultValue('span'),

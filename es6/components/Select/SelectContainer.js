@@ -314,17 +314,19 @@ function (_Component) {
       } // scroll to active option if it is below the fold
 
 
-      if (activeIndex >= 0) {
+      if (activeIndex >= 0 && selectNode) {
         var optionNode = _this2.optionsRef[activeIndex];
 
         var _selectNode$getBoundi = selectNode.getBoundingClientRect(),
             containerBottom = _selectNode$getBoundi.bottom;
 
-        var _optionNode$getBoundi = optionNode.getBoundingClientRect(),
-            optionTop = _optionNode$getBoundi.bottom;
+        if (optionNode) {
+          var _optionNode$getBoundi = optionNode.getBoundingClientRect(),
+              optionTop = _optionNode$getBoundi.bottom;
 
-        if (containerBottom < optionTop) {
-          optionNode.scrollIntoView();
+          if (containerBottom < optionTop) {
+            optionNode.scrollIntoView();
+          }
         }
       }
     }, 0);

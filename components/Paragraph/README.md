@@ -113,6 +113,10 @@ A color identifier to use for the text color.
 
 ```
 string
+{
+  dark: string,
+  light: string
+}
 ```
 
 **responsive**

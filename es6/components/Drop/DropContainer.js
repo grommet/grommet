@@ -306,7 +306,7 @@ function (_Component) {
     var content = React.createElement(StyledDrop, _extends({
       as: Box,
       plain: plain,
-      elevation: !plain && (elevation || theme.global.drop.shadowSize || 'small'),
+      elevation: !plain ? elevation || theme.global.drop.shadowSize || 'small' : undefined,
       tabIndex: "-1",
       ref: this.dropRef,
       alignProp: alignProp

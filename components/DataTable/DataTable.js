@@ -149,7 +149,8 @@ function (_Component) {
         resizeable = _this$props.resizeable,
         size = _this$props.size,
         sortable = _this$props.sortable,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["columns", "data", "groupBy", "onMore", "resizeable", "size", "sortable"]);
+        onSearch = _this$props.onSearch,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["columns", "data", "groupBy", "onMore", "resizeable", "size", "sortable", "onSearch"]);
 
     var _this$state = this.state,
         data = _this$state.data,

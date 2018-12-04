@@ -12,7 +12,7 @@ var doc = function doc(Diagram) {
   DocumentedDiagram.propTypes = {
     connections: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       anchor: _reactDesc.PropTypes.oneOf(['center', 'vertical', 'horizontal']),
-      color: _reactDesc.PropTypes.string,
+      color: _utils.colorPropType,
       fromTarget: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.object]).isRequired,
       label: _reactDesc.PropTypes.string,
       // for accessibility

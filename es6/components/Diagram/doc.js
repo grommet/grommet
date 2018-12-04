@@ -1,11 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { colorPropType, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Diagram) {
   var DocumentedDiagram = describe(Diagram).availableAt(getAvailableAtBadge('Diagram')).description("Graphical lines between DOM elements.\n      Diagram is meant to be used with Stack.").usage("import { Diagram } from 'grommet';\n<Diagram />");
   DocumentedDiagram.propTypes = {
     connections: PropTypes.arrayOf(PropTypes.shape({
       anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
-      color: PropTypes.string,
+      color: colorPropType,
       fromTarget: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
       label: PropTypes.string,
       // for accessibility

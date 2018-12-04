@@ -1,9 +1,9 @@
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { colorPropType, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(RangeSelector) {
   var DocumentedRangeSelector = describe(RangeSelector).availableAt(getAvailableAtBadge('RangeSelector')).description('A control to allow selecting a range of values.').usage("import { RangeSelector } from 'grommet';\n<RangeSelector />");
   DocumentedRangeSelector.propTypes = {
-    color: PropTypes.string.description('What color to use to indicate the selection.'),
+    color: colorPropType.description('What color to use to indicate the selection.'),
     direction: PropTypes.oneOf(['horizontal', 'vertical']).description('').defaultValue('horizontal'),
     invert: PropTypes.bool.description('Whether to indicate what has not been selected.'),
     max: PropTypes.number.description('The maximum value permitted.').defaultValue(100),

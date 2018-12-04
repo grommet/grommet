@@ -4,6 +4,10 @@ export var backgroundPropType = PropTypes.oneOfType([PropTypes.string, PropTypes
   color: PropTypes.string,
   opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.bool])
 })]).description('Background color');
+export var colorPropType = PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
+  dark: PropTypes.string,
+  light: PropTypes.string
+})]);
 var MARGIN_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 export var genericProps = {
   a11yTitle: a11yTitlePropType,

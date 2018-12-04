@@ -334,6 +334,10 @@ Label color and icon color, if not specified on the icon.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **href**
@@ -1340,6 +1344,10 @@ Fill color for primary, border color otherwise.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **disabled**
@@ -3020,7 +3028,12 @@ Required. Array of objects describing the connections.
     center
     vertical
     horizontal,
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   fromTarget: 
     string
     object,
@@ -4069,6 +4082,10 @@ A color identifier to use for the text color.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **level**
@@ -5157,6 +5174,10 @@ A color identifier to use for the text color.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **responsive**
@@ -5435,6 +5456,10 @@ What color to use to indicate the selection.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **direction**
@@ -6773,6 +6798,10 @@ A color identifier to use for the text color.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **size**
@@ -7590,10 +7619,14 @@ string
 
 **color**
 
-Default color
+Color when hovering over places while selecting.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **continents**
@@ -7602,7 +7635,12 @@ Continent details.
 
 \`\`\`
 [{
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   name: 
     Africa
     Asia
@@ -7630,7 +7668,12 @@ Place details.
 
 \`\`\`
 [{
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   name: string,
   location: [number],
   onClick: function,
@@ -7644,6 +7687,10 @@ Color when hovering over places while selecting.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
   
 ## Theme

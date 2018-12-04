@@ -12,7 +12,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 var doc = function doc(Paragraph) {
   var DocumentedParagraph = (0, _reactDesc.describe)(Paragraph).availableAt((0, _utils.getAvailableAtBadge)('Paragraph')).description('A paragraph of text.').usage("import { Paragraph } from 'grommet';\n<Paragraph />");
   DocumentedParagraph.propTypes = _extends({}, _utils.genericProps, {
-    color: _reactDesc.PropTypes.string.description('A color identifier to use for the text color.'),
+    color: _utils.colorPropType.description('A color identifier to use for the text color.'),
     responsive: _reactDesc.PropTypes.bool.description("Whether margin should be scaled for mobile environments.").defaultValue(true),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]).description('The size of the Paragraph text.').defaultValue('medium'),
     textAlign: _reactDesc.PropTypes.oneOf(['start', 'center', 'end']).description('How to align the text inside the paragraph.').defaultValue('start')

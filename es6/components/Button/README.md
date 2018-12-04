@@ -121,6 +121,10 @@ Fill color for primary, border color otherwise.
 
 ```
 string
+{
+  dark: string,
+  light: string
+}
 ```
 
 **disabled**
