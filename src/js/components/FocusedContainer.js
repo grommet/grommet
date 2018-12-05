@@ -23,6 +23,7 @@ export class FocusedContainer extends Component {
   ref = React.createRef();
 
   componentDidMount() {
+    /* https://reactjs.org/docs/accessibility.html#wai-aria */
     /* eslint-disable react/destructuring-assignment */
     const ariaHidden = this.props['aria-hidden'];
 
