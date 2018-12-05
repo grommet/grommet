@@ -131,8 +131,8 @@ var POSITIONS = {
     true: function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.center.true);
     },
-    false: function _false(margin) {
-      return (0, _styledComponents.css)(["top:calc(50% + ", ");left:calc(50% + ", ");transform:translate(-50%,-50%);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.left, KEYFRAMES.center.false);
+    false: function _false() {
+      return (0, _styledComponents.css)(["top:50%;left:50%;transform:translate(-50%,-50%);animation:", " 0.2s ease-in-out forwards;"], KEYFRAMES.center.false);
     }
   },
   top: {

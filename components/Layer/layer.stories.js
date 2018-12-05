@@ -12,6 +12,10 @@ var _themes = require("grommet/themes");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
@@ -346,18 +350,21 @@ function (_Component3) {
   return NotificationLayer;
 }(_react.Component);
 
-var MarginLayer = function MarginLayer() {
+var MarginLayer = function MarginLayer(_ref2) {
+  var margin = _ref2.margin,
+      rest = _objectWithoutPropertiesLoose(_ref2, ["margin"]);
+
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Layer, {
-    full: true,
-    margin: {
+  }, _react.default.createElement(_grommet.Layer, _extends({
+    margin: margin || {
       left: '40px',
       top: '50px',
       right: '30px',
       bottom: '10px'
     }
-  }, _react.default.createElement(_grommet.Box, {
+  }, rest), _react.default.createElement(_grommet.Box, {
+    height: "small",
     overflow: "auto"
   }, _react.default.createElement(_grommet.Box, {
     pad: "xlarge"
@@ -510,7 +517,20 @@ var ScrollBodyLayer = function ScrollBodyLayer() {
 }).add('Notification', function () {
   return _react.default.createElement(NotificationLayer, null);
 }).add('Margin', function () {
-  return _react.default.createElement(MarginLayer, null);
+  return _react.default.createElement(MarginLayer, {
+    full: true
+  });
+}).add('Margin (Center)', function () {
+  return _react.default.createElement(MarginLayer, {
+    margin: "large"
+  });
+}).add('Margin Top (Center)', function () {
+  return _react.default.createElement(MarginLayer, {
+    margin: {
+      top: 'large'
+    },
+    position: "top"
+  });
 }).add('Plain', function () {
   return _react.default.createElement(PlainLayer, null);
 }).add('Full', function () {

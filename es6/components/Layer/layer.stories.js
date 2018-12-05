@@ -1,3 +1,7 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
@@ -342,18 +346,21 @@ function (_Component3) {
   return NotificationLayer;
 }(Component);
 
-var MarginLayer = function MarginLayer() {
+var MarginLayer = function MarginLayer(_ref2) {
+  var margin = _ref2.margin,
+      rest = _objectWithoutPropertiesLoose(_ref2, ["margin"]);
+
   return React.createElement(Grommet, {
     theme: grommet
-  }, React.createElement(Layer, {
-    full: true,
-    margin: {
+  }, React.createElement(Layer, _extends({
+    margin: margin || {
       left: '40px',
       top: '50px',
       right: '30px',
       bottom: '10px'
     }
-  }, React.createElement(Box, {
+  }, rest), React.createElement(Box, {
+    height: "small",
     overflow: "auto"
   }, React.createElement(Box, {
     pad: "xlarge"
@@ -506,7 +513,20 @@ storiesOf('Layer', module).add('Center', function () {
 }).add('Notification', function () {
   return React.createElement(NotificationLayer, null);
 }).add('Margin', function () {
-  return React.createElement(MarginLayer, null);
+  return React.createElement(MarginLayer, {
+    full: true
+  });
+}).add('Margin (Center)', function () {
+  return React.createElement(MarginLayer, {
+    margin: "large"
+  });
+}).add('Margin Top (Center)', function () {
+  return React.createElement(MarginLayer, {
+    margin: {
+      top: 'large'
+    },
+    position: "top"
+  });
 }).add('Plain', function () {
   return React.createElement(PlainLayer, null);
 }).add('Full', function () {

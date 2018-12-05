@@ -115,8 +115,8 @@ var POSITIONS = {
     true: function _true(margin) {
       return css(["top:", ";bottom:", ";left:", ";right:", ";animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.center.true);
     },
-    false: function _false(margin) {
-      return css(["top:calc(50% + ", ");left:calc(50% + ", ");transform:translate(-50%,-50%);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.left, KEYFRAMES.center.false);
+    false: function _false() {
+      return css(["top:50%;left:50%;transform:translate(-50%,-50%);animation:", " 0.2s ease-in-out forwards;"], KEYFRAMES.center.false);
     }
   },
   top: {
