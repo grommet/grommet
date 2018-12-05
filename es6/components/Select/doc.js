@@ -35,6 +35,7 @@ export var doc = function doc(Select) {
     searchPlaceholder: PropTypes.string.description('Placeholder text to use in the search box when the search input is empty.'),
     selected: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]).description("Index of the currently selected option. When multiple, the set of\n      options selected. NOTE: This is deprecated in favor of indicating\n      the selected values via the 'value' property."),
     size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The size of the select.'),
+    dropHeight: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The height of the drop container.'),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.element, // deprecated, use valueLabel
     PropTypes.object, PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object]))]).description("Currently selected value. This can be an array\n      when multiple. Passing an element allows the caller to control how\n      the value is rendered. Passing an element is deprecated. Instead,\n      use the 'valueLabel' property."),
     valueLabel: PropTypes.node.description("Provides custom rendering of the value. If not provided, Select\n      will render the value automatically."),

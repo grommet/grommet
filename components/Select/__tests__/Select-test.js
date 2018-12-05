@@ -322,4 +322,23 @@ describe('Select', function () {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
   });
+  ['small', 'medium', 'large'].forEach(function (dropHeight) {
+    test(dropHeight + " drop container height", function () {
+      var _render11 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+        id: "test-select",
+        size: "large",
+        options: ['one', 'two'],
+        selected: [],
+        value: [],
+        onChange: function onChange() {},
+        dropHeight: dropHeight,
+        placeholder: "test select"
+      })),
+          getByPlaceholderText = _render11.getByPlaceholderText;
+
+      _reactTestingLibrary.fireEvent.click(getByPlaceholderText('test select'));
+
+      expect(document.activeElement).toMatchSnapshot();
+    });
+  });
 });

@@ -354,6 +354,7 @@ function (_Component) {
 
     var _this$props6 = this.props,
         children = _this$props6.children,
+        dropHeight = _this$props6.dropHeight,
         id = _this$props6.id,
         onKeyDown = _this$props6.onKeyDown,
         onSearch = _this$props6.onSearch,
@@ -371,6 +372,7 @@ function (_Component) {
       onDown: this.onNextOption,
       onKeyDown: onKeyDown
     }, _react.default.createElement(ContainerBox, {
+      height: dropHeight,
       id: id ? id + "__select-drop" : undefined
     }, onSearch && _react.default.createElement(_Box.Box, {
       pad: !customSearchInput ? 'xsmall' : undefined,

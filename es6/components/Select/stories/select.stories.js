@@ -835,6 +835,7 @@ function (_Component8) {
       placeholder: "select an option...",
       selected: selected,
       options: options,
+      dropHeight: "medium",
       onClose: function onClose() {
         return _this16.setState({
           options: options.sort(function (p1, p2) {
