@@ -310,6 +310,7 @@ class SelectContainer extends Component {
   render() {
     const {
       children,
+      dropHeight,
       id,
       onKeyDown,
       onSearch,
@@ -329,7 +330,10 @@ class SelectContainer extends Component {
         onDown={this.onNextOption}
         onKeyDown={onKeyDown}
       >
-        <ContainerBox id={id ? `${id}__select-drop` : undefined}>
+        <ContainerBox
+          height={dropHeight}
+          id={id ? `${id}__select-drop` : undefined}
+        >
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
               <SelectTextInput

@@ -2640,6 +2640,16 @@ string",
         "name": "size",
       },
       Object {
+        "description": "The height of the drop container.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "dropHeight",
+      },
+      Object {
         "description": "Currently selected value. This can be an array
       when multiple. Passing an element allows the caller to control how
       the value is rendered. Passing an element is deprecated. Instead,

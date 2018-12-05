@@ -327,6 +327,19 @@ xlarge
 string
 ```
 
+**dropHeight**
+
+The height of the drop container.
+
+```
+xsmall
+small
+medium
+large
+xlarge
+string
+```
+
 **value**
 
 Currently selected value. This can be an array

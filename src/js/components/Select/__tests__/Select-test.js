@@ -307,4 +307,23 @@ describe('Select', () => {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
   });
+
+  ['small', 'medium', 'large'].forEach(dropHeight => {
+    test(`${dropHeight} drop container height`, () => {
+      const { getByPlaceholderText } = render(
+        <Select
+          id="test-select"
+          size="large"
+          options={['one', 'two']}
+          selected={[]}
+          value={[]}
+          onChange={() => {}}
+          dropHeight={dropHeight}
+          placeholder="test select"
+        />,
+      );
+      fireEvent.click(getByPlaceholderText('test select'));
+      expect(document.activeElement).toMatchSnapshot();
+    });
+  });
 });

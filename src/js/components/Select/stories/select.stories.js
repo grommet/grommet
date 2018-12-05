@@ -544,6 +544,7 @@ class ManyOptions extends Component {
             placeholder="select an option..."
             selected={selected}
             options={options}
+            dropHeight="medium"
             onClose={() =>
               this.setState({
                 options: options.sort((p1, p2) => {
