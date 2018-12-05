@@ -327,7 +327,7 @@ xlarge
 string
 ```
 
-**height**
+**dropHeight**
 
 The height of the drop container.
 

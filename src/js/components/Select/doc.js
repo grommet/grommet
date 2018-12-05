@@ -132,7 +132,7 @@ export const doc = Select => {
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ]).description('The size of the select.'),
-    height: PropTypes.oneOfType([
+    dropHeight: PropTypes.oneOfType([
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ]).description('The height of the drop container.'),

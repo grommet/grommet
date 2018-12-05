@@ -2644,7 +2644,7 @@ medium
 large
 xlarge
 string",
-        "name": "height",
+        "name": "dropHeight",
       },
       Object {
         "description": "Currently selected value. This can be an array

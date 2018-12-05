@@ -310,13 +310,13 @@ class SelectContainer extends Component {
   render() {
     const {
       children,
+      dropHeight,
       id,
       onKeyDown,
       onSearch,
       options,
       searchPlaceholder,
       theme,
-      height,
     } = this.props;
     const { activeIndex, search } = this.state;
 
@@ -330,7 +330,10 @@ class SelectContainer extends Component {
         onDown={this.onNextOption}
         onKeyDown={onKeyDown}
       >
-        <ContainerBox id={id ? `${id}__select-drop` : undefined}>
+        <ContainerBox
+          height={dropHeight}
+          id={id ? `${id}__select-drop` : undefined}
+        >
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
               <SelectTextInput
@@ -350,7 +353,6 @@ class SelectContainer extends Component {
             tabIndex="-1"
             ref={this.selectRef}
             overflow="auto"
-            height={height}
           >
             <InfiniteScroll items={options} step={theme.select.step} replace>
               {(option, index) => {
