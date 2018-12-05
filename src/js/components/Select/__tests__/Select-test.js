@@ -308,8 +308,8 @@ describe('Select', () => {
     expect(document.getElementById('test-select__drop')).toBeNull();
   });
 
-  ['small', 'medium', 'large'].forEach(size => {
-    test(`${size} drop container height`, () => {
+  ['small', 'medium', 'large'].forEach(dropHeight => {
+    test(`${dropHeight} drop container height`, () => {
       const { getByPlaceholderText } = render(
         <Select
           id="test-select"
@@ -318,7 +318,7 @@ describe('Select', () => {
           selected={[]}
           value={[]}
           onChange={() => {}}
-          dropHeight={size}
+          dropHeight={dropHeight}
           placeholder="test select"
         />,
       );
