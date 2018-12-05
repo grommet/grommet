@@ -1941,6 +1941,70 @@ contain",
   "Keyboard": [Function],
   "Layer": [Function],
   "Markdown": [Function],
+  "MaskedInput": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=MaskedInput&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=maskedinput&module=%2Fsrc%2FMaskedInput.js",
+      },
+    ],
+    "description": "An input field with formalized syntax.",
+    "name": "MaskedInput",
+    "properties": Array [
+      Object {
+        "description": "The id attribute of the input.",
+        "format": "string",
+        "name": "id",
+      },
+      Object {
+        "description": "The name attribute of the input.",
+        "format": "string",
+        "name": "name",
+      },
+      Object {
+        "description": "Function that will be called when the user types.",
+        "format": "function",
+        "name": "onChange",
+      },
+      Object {
+        "defaultValue": Array [],
+        "description": "Describes the structure of the mask.",
+        "format": "[{
+  length: 
+    number
+    [number],
+  onActive: function,
+  onInactive: function,
+  fixed: string,
+  options: [string]
+}]",
+        "name": "mask",
+      },
+      Object {
+        "description": "The size of the text.",
+        "format": "small
+medium
+large
+xlarge
+string",
+        "name": "size",
+      },
+      Object {
+        "description": "What text to put in the input. It will automatically be aligned to
+      the mask.",
+        "format": "string",
+        "name": "value",
+      },
+    ],
+    "usage": "import { MaskedInput } from 'grommet';
+<MaskedInput id='item' name='item' />",
+  },
   "Menu": Object {
     "availableAt": Array [
       Object {
@@ -2677,69 +2741,6 @@ function",
   "SkipLinkTarget": [Function],
   "SkipLinks": [Function],
   "Stack": [Function],
-  "SyntaxInput": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=SyntaxInput&full=0&addons=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=syntaxinput&module=%2Fsrc%2FSyntaxInput.js",
-      },
-    ],
-    "description": "An input field with formalized syntax.",
-    "name": "SyntaxInput",
-    "properties": Array [
-      Object {
-        "description": "The id attribute of the input.",
-        "format": "string",
-        "name": "id",
-      },
-      Object {
-        "description": "The name attribute of the input.",
-        "format": "string",
-        "name": "name",
-      },
-      Object {
-        "description": "Function that will be called when the user types in the input.",
-        "format": "function",
-        "name": "onChange",
-      },
-      Object {
-        "description": "Describes the structure of the syntax.",
-        "format": "[{
-  length: 
-    number
-    [number],
-  onActive: function,
-  onInactive: function,
-  fixed: string,
-  options: [string]
-}]",
-        "name": "schema",
-      },
-      Object {
-        "description": "The size of the SyntaxInput.",
-        "format": "small
-medium
-large
-xlarge
-string",
-        "name": "size",
-      },
-      Object {
-        "description": "What text to put in the input. It will automatically take
-      care of schema alignment",
-        "format": "string",
-        "name": "value",
-      },
-    ],
-    "usage": "import { SyntaxInput } from 'grommet';
-<SyntaxInput id='item' name='item' />",
-  },
   "Tab": Object {
     "description": "One tab within Tabs.",
     "name": "Tab",

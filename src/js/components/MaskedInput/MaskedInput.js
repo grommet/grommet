@@ -57,22 +57,36 @@ const parseValue = (mask, value) => {
         });
     }
     if (!found) {
-      const length = Array.isArray(item.length)
-        ? item.length[1]
-        : item.length || value.length - valueIndex;
-      const part = value.slice(valueIndex, valueIndex + length);
       if (item.regexp) {
-        if (item.regexp.test(part)) {
-          valueParts.push({
-            part,
-            beginIndex: valueIndex,
-            endIndex: valueIndex + length - 1,
-          });
-          valueIndex += length;
-          maskIndex += 1;
-          found = true;
+        const minLength = Array.isArray(item.length)
+          ? item.length[0]
+          : item.length;
+        const maxLength = Array.isArray(item.length)
+          ? item.length[1]
+          : item.length;
+        let length = maxLength;
+        while (!found && length >= minLength) {
+          const part = value.slice(valueIndex, valueIndex + length);
+          if (item.regexp.test(part)) {
+            valueParts.push({
+              part,
+              beginIndex: valueIndex,
+              endIndex: valueIndex + length - 1,
+            });
+            valueIndex += length;
+            maskIndex += 1;
+            found = true;
+          }
+          length -= 1;
+        }
+        if (!found) {
+          valueIndex = value.length;
         }
       } else {
+        const length = Array.isArray(item.length)
+          ? item.length[1]
+          : item.length || value.length - valueIndex;
+        const part = value.slice(valueIndex, valueIndex + length);
         valueParts.push({
           part,
           beginIndex: valueIndex,
@@ -120,7 +134,7 @@ class MaskedInput extends Component {
     clearTimeout(this.caretTimeout);
     this.caretTimeout = setTimeout(() => {
       const { mask } = this.props;
-      const { activemaskIndex, valueParts } = this.state;
+      const { activeMaskIndex, valueParts } = this.state;
       if (
         this.inputRef.current &&
         this.inputRef.current === document.activeElement
@@ -141,9 +155,9 @@ class MaskedInput extends Component {
         if (maskIndex && mask[maskIndex].fixed) {
           maskIndex -= 1; // fixed mask parts are never "active"
         }
-        if (activemaskIndex !== maskIndex) {
+        if (activeMaskIndex !== maskIndex) {
           // eslint-disable-next-line react/no-did-update-set-state
-          this.setState({ activemaskIndex: maskIndex });
+          this.setState({ activeMaskIndex: maskIndex });
         }
       }
     }, 10); // 10ms empirically chosen
@@ -158,7 +172,7 @@ class MaskedInput extends Component {
         !this.dropRef.current.contains ||
         !this.dropRef.current.contains(document.activeElement)
       ) {
-        this.setState({ activemaskIndex: undefined });
+        this.setState({ activeMaskIndex: undefined });
       }
     }, 10); // 10ms empirically chosen
   };
@@ -179,11 +193,11 @@ class MaskedInput extends Component {
 
   onOption = option => () => {
     const { onChange, mask } = this.props;
-    const { activemaskIndex, valueParts } = this.state;
+    const { activeMaskIndex, valueParts } = this.state;
     const nextValueParts = [...valueParts];
-    nextValueParts[activemaskIndex] = { part: option };
+    nextValueParts[activeMaskIndex] = { part: option };
     // add any fixed parts that follow
-    let index = activemaskIndex + 1;
+    let index = activeMaskIndex + 1;
     while (index < mask.length && !nextValueParts[index] && mask[index].fixed) {
       nextValueParts[index] = { part: mask[index].fixed };
       index += 1;
@@ -214,7 +228,7 @@ class MaskedInput extends Component {
       onKeyDown,
       ...rest
     } = this.props;
-    const { activemaskIndex } = this.state;
+    const { activeMaskIndex } = this.state;
 
     return (
       <StyledMaskedInputContainer plain={plain}>
@@ -250,13 +264,13 @@ class MaskedInput extends Component {
             onChange={this.onChange}
           />
         </Keyboard>
-        {activemaskIndex >= 0 && mask[activemaskIndex].options && (
+        {activeMaskIndex >= 0 && mask[activeMaskIndex].options && (
           <Drop
             align={{ top: 'bottom', left: 'left' }}
             target={this.inputRef.current}
           >
             <Box ref={this.dropRef}>
-              {mask[activemaskIndex].options.map(option => (
+              {mask[activeMaskIndex].options.map(option => (
                 <Box key={option} flex={false}>
                   <Button hoverIndicator onClick={this.onOption(option)}>
                     <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
