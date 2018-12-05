@@ -114,7 +114,7 @@ class SelectContainer extends Component {
     }, 0);
   }
 
-  onChange = event => {
+  onSearchChange = event => {
     this.setState(
       {
         search: event.target.value,
@@ -167,7 +167,6 @@ class SelectContainer extends Component {
       }
 
       onChange({
-        target: this.searchRef.current,
         option,
         value: nextValue,
         selected: nextSelected,
@@ -339,7 +338,7 @@ class SelectContainer extends Component {
                 type="search"
                 value={search}
                 placeholder={searchPlaceholder}
-                onChange={this.onChange}
+                onChange={this.onSearchChange}
               />
             </Box>
           )}
