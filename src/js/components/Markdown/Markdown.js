@@ -5,6 +5,7 @@ import { deepMerge } from '../../utils';
 
 import { Heading } from '../Heading';
 import { Paragraph } from '../Paragraph';
+import { Anchor } from '../Anchor';
 
 class GrommetMarkdown extends Component {
   render() {
@@ -22,6 +23,7 @@ class GrommetMarkdown extends Component {
     const overrides = deepMerge(
       {
         p: { component: Paragraph },
+        a: { component: Anchor },
       },
       heading,
       components,

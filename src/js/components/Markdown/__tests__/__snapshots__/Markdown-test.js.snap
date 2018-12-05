@@ -45,6 +45,23 @@ exports[`Markdown renders 1`] = `
   max-width: 432px;
 }
 
+.c6 {
+  box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
+  color: #1D67E3;
+  font-weight: 600;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c6:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     font-size: 34px;
@@ -110,6 +127,18 @@ exports[`Markdown renders 1`] = `
     >
       H4
     </h4>
+    <p
+      className="c2"
+    >
+      <a
+        className="c6"
+        href="#"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        a link
+      </a>
+    </p>
   </div>
 </div>
 `;
