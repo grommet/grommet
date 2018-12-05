@@ -6,6 +6,8 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
@@ -440,11 +442,7 @@ exports[`Video autoPlay renders 1`] = `
             <svg
               aria-label="Play"
               className="c7"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polygon
                 fill="none"
@@ -526,11 +524,7 @@ exports[`Video autoPlay renders 1`] = `
             <svg
               aria-label="Actions"
               className="c7"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <path
                 d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
@@ -553,6 +547,8 @@ exports[`Video controls renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
@@ -585,6 +581,8 @@ exports[`Video controls renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #666666;
   stroke: #666666;
 }
@@ -1091,11 +1089,7 @@ exports[`Video controls renders 1`] = `
             <svg
               aria-label="Play"
               className="c7"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polygon
                 fill="none"
@@ -1177,11 +1171,7 @@ exports[`Video controls renders 1`] = `
             <svg
               aria-label="Actions"
               className="c7"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <path
                 d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
@@ -1248,11 +1238,7 @@ exports[`Video controls renders 1`] = `
             <svg
               aria-label="Play"
               className="c23"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polygon
                 fill="none"
@@ -1333,11 +1319,7 @@ exports[`Video controls renders 1`] = `
             <svg
               aria-label="Actions"
               className="c23"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <path
                 d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
@@ -1360,6 +1342,8 @@ exports[`Video fit renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
@@ -1812,11 +1796,7 @@ exports[`Video fit renders 1`] = `
             <svg
               aria-label="Play"
               className="c7"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polygon
                 fill="none"
@@ -1898,11 +1878,7 @@ exports[`Video fit renders 1`] = `
             <svg
               aria-label="Actions"
               className="c7"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <path
                 d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
@@ -1972,11 +1948,7 @@ exports[`Video fit renders 1`] = `
             <svg
               aria-label="Play"
               className="c7"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polygon
                 fill="none"
@@ -2058,11 +2030,7 @@ exports[`Video fit renders 1`] = `
             <svg
               aria-label="Actions"
               className="c7"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <path
                 d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
@@ -2085,6 +2053,8 @@ exports[`Video loop renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
@@ -2519,11 +2489,7 @@ exports[`Video loop renders 1`] = `
             <svg
               aria-label="Play"
               className="c7"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polygon
                 fill="none"
@@ -2605,11 +2571,7 @@ exports[`Video loop renders 1`] = `
             <svg
               aria-label="Actions"
               className="c7"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <path
                 d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
@@ -2632,6 +2594,8 @@ exports[`Video mute renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
@@ -3066,11 +3030,7 @@ exports[`Video mute renders 1`] = `
             <svg
               aria-label="Play"
               className="c7"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polygon
                 fill="none"
@@ -3152,11 +3112,7 @@ exports[`Video mute renders 1`] = `
             <svg
               aria-label="Actions"
               className="c7"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <path
                 d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
@@ -3179,6 +3135,8 @@ exports[`Video renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
@@ -3613,11 +3571,7 @@ exports[`Video renders 1`] = `
             <svg
               aria-label="Play"
               className="c7"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polygon
                 fill="none"
@@ -3699,11 +3653,7 @@ exports[`Video renders 1`] = `
             <svg
               aria-label="Actions"
               className="c7"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <path
                 d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"

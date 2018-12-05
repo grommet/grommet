@@ -6,6 +6,8 @@ exports[`Accordion AccordionPanel 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -347,11 +349,7 @@ exports[`Accordion AccordionPanel 1`] = `
             <svg
               aria-label="FormDown"
               className="c8"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -408,11 +406,7 @@ exports[`Accordion AccordionPanel 1`] = `
             <svg
               aria-label="FormDown"
               className="c8"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -446,6 +440,8 @@ exports[`Accordion change active index 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -748,11 +744,7 @@ exports[`Accordion change active index 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -796,11 +788,7 @@ exports[`Accordion change active index 1`] = `
             <svg
               aria-label="FormUp"
               class="c8"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -858,12 +846,8 @@ exports[`Accordion change active index 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -906,12 +890,8 @@ exports[`Accordion change active index 2`] = `
           >
             <svg
               aria-label="FormUp"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -940,6 +920,8 @@ exports[`Accordion change to second Panel 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -1276,11 +1258,7 @@ exports[`Accordion change to second Panel 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -1331,11 +1309,7 @@ exports[`Accordion change to second Panel 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -1397,12 +1371,8 @@ exports[`Accordion change to second Panel 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -1455,6 +1425,8 @@ exports[`Accordion change to second Panel 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -1485,11 +1457,7 @@ exports[`Accordion change to second Panel 2`] = `
 <svg
               aria-label="FormUp"
               class="c0"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -1524,6 +1492,8 @@ exports[`Accordion change to second Panel without onActive 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -1826,11 +1796,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -1874,11 +1840,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -1933,12 +1895,8 @@ exports[`Accordion change to second Panel without onActive 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -1984,6 +1942,8 @@ exports[`Accordion change to second Panel without onActive 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -2014,11 +1974,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
 <svg
               aria-label="FormUp"
               class="c0"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -2233,8 +2189,10 @@ exports[`Accordion complex title 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #FD6FFF;
-  stroke: #FD6FFF;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
 }
 
 .c7 g {
@@ -2341,6 +2299,24 @@ exports[`Accordion complex title 1`] = `
   padding-right: 12px;
 }
 
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
 .c10 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2369,24 +2345,6 @@ exports[`Accordion complex title 1`] = `
   margin: 0px;
   background: #333333;
   color: #f8f8f8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  border-bottom: solid 1px rgba(255,255,255,0.33);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2478,6 +2436,24 @@ exports[`Accordion complex title 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c10 {
     margin: 0px;
   }
@@ -2497,24 +2473,6 @@ exports[`Accordion complex title 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    border-bottom: solid 1px rgba(255,255,255,0.33);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
     padding: 0px;
   }
 }
@@ -2556,11 +2514,7 @@ exports[`Accordion complex title 1`] = `
               <svg
                 aria-label="FormDown"
                 className="c7"
-                height="24px"
-                role="img"
-                version="1.1"
                 viewBox="0 0 24 24"
-                width="24px"
               >
                 <polyline
                   fill="none"
@@ -2611,11 +2565,7 @@ exports[`Accordion complex title 1`] = `
               <svg
                 aria-label="FormDown"
                 className="c7"
-                height="24px"
-                role="img"
-                version="1.1"
                 viewBox="0 0 24 24"
-                width="24px"
               >
                 <polyline
                   fill="none"
@@ -2650,6 +2600,8 @@ exports[`Accordion multiple panels 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -2952,11 +2904,7 @@ exports[`Accordion multiple panels 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -3000,11 +2948,7 @@ exports[`Accordion multiple panels 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -3059,12 +3003,8 @@ exports[`Accordion multiple panels 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -3110,6 +3050,8 @@ exports[`Accordion multiple panels 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -3140,11 +3082,7 @@ exports[`Accordion multiple panels 2`] = `
 <svg
               aria-label="FormUp"
               class="c0"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -3205,6 +3143,8 @@ exports[`Accordion multiple panels 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -3235,11 +3175,7 @@ exports[`Accordion multiple panels 3`] = `
 <svg
               aria-label="FormUp"
               class="c0"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -3285,12 +3221,8 @@ exports[`Accordion multiple panels 3`] = `
           >
             <svg
               aria-label="FormUp"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -3348,12 +3280,8 @@ exports[`Accordion multiple panels 4`] = `
           >
             <svg
               aria-label="FormUp"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -3402,6 +3330,8 @@ exports[`Accordion multiple panels 4`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -3432,11 +3362,7 @@ exports[`Accordion multiple panels 4`] = `
 <svg
               aria-label="FormDown"
               class="c0"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -3494,6 +3420,8 @@ exports[`Accordion multiple panels 5`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -3524,11 +3452,7 @@ exports[`Accordion multiple panels 5`] = `
 <svg
               aria-label="FormDown"
               class="c0"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -3571,12 +3495,8 @@ exports[`Accordion multiple panels 5`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -3653,6 +3573,8 @@ exports[`Accordion set on hover 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -3989,11 +3911,7 @@ exports[`Accordion set on hover 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -4044,11 +3962,7 @@ exports[`Accordion set on hover 1`] = `
             <svg
               aria-label="FormDown"
               class="c8"
-              height="24px"
-              role="img"
-              version="1.1"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -4110,12 +4024,8 @@ exports[`Accordion set on hover 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -4165,12 +4075,8 @@ exports[`Accordion set on hover 2`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -4232,12 +4138,8 @@ exports[`Accordion set on hover 3`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -4287,12 +4189,8 @@ exports[`Accordion set on hover 3`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -4354,12 +4252,8 @@ exports[`Accordion set on hover 4`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -4409,12 +4303,8 @@ exports[`Accordion set on hover 4`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -4476,12 +4366,8 @@ exports[`Accordion set on hover 5`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"
@@ -4531,12 +4417,8 @@ exports[`Accordion set on hover 5`] = `
           >
             <svg
               aria-label="FormDown"
-              class="StyledIcon-ofa7kd-0 dtlWir"
-              height="24px"
-              role="img"
-              version="1.1"
+              class="StyledIcon-ofa7kd-0 dSllCE"
               viewBox="0 0 24 24"
-              width="24px"
             >
               <polyline
                 fill="none"

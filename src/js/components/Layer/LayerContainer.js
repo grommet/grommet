@@ -1,13 +1,12 @@
 import React, { createRef, Component } from 'react';
-import styled, { withTheme } from 'styled-components';
-
-import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
+import styled from 'styled-components';
 
 import { defaultProps } from '../../default-props';
+import { ThemeContext } from '../../contexts';
+import { backgroundIsDark } from '../../utils';
 
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
-import { backgroundIsDark } from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 
@@ -26,33 +25,11 @@ class LayerContainer extends Component {
     position: 'center',
   };
 
+  static contextType = ThemeContext;
+
   anchorRef = createRef();
 
   state = {};
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { theme } = nextProps;
-    const { theme: stateTheme } = prevState;
-    // set dark context based on layer background, not Layer's container.
-    let { dark } = theme;
-    if (theme.layer.background) {
-      dark = backgroundIsDark(theme.layer.background, theme);
-    }
-    if (!dark !== !theme.dark) {
-      if (!stateTheme || dark !== stateTheme.dark) {
-        return {
-          theme: {
-            ...theme,
-            dark,
-            icon: dark ? theme.iconThemes.dark : theme.iconThemes.light,
-          },
-        };
-      }
-    } else if (stateTheme) {
-      return { theme: undefined };
-    }
-    return null;
-  }
 
   containerRef = React.createRef();
 
@@ -94,11 +71,10 @@ class LayerContainer extends Component {
       plain,
       position,
       responsive,
-      theme: propsTheme,
+      theme: defaultTheme,
       ...rest
     } = this.props;
-    const { theme: stateTheme } = this.state;
-    const theme = stateTheme || propsTheme;
+    const theme = this.context || defaultTheme;
 
     let content = (
       <StyledContainer
@@ -144,10 +120,17 @@ class LayerContainer extends Component {
     if (modal) {
       content = (
         <FocusedContainer hidden={position === 'hidden'} restrictScroll>
-          <IconThemeContext.Provider value={theme.icon}>
-            {content}
-          </IconThemeContext.Provider>
+          {content}
         </FocusedContainer>
+      );
+    }
+
+    const dark = backgroundIsDark(theme.layer.background, theme);
+    if (dark !== theme.dark) {
+      content = (
+        <ThemeContext.Provider value={{ ...theme, dark }}>
+          {content}
+        </ThemeContext.Provider>
       );
     }
 
@@ -157,6 +140,4 @@ class LayerContainer extends Component {
 
 Object.setPrototypeOf(LayerContainer.defaultProps, defaultProps);
 
-const LayerContainerWrapper = withTheme(LayerContainer);
-
-export { LayerContainerWrapper as LayerContainer };
+export { LayerContainer };

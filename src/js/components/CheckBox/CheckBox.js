@@ -160,7 +160,7 @@ class CheckBox extends Component {
       <StyledCheckBoxContainer
         direction="row"
         align="center"
-        as={props => <Box as="label" {...props} />}
+        as={props => <Box tag="label" {...props} />}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
         gap={theme.checkBox.gap || 'small'}

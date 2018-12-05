@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
-
-import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
 import { defaultProps } from '../../default-props';
 import { ThemeContext } from '../../contexts';
@@ -38,37 +33,7 @@ class DropContainer extends Component {
     stretch: 'width',
   };
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    // Since the drop background can be different from the current theme context,
-    // we update the theme to set the dark background context.
-    const { theme: propsTheme } = nextProps;
-    const { theme: stateTheme, priorTheme } = prevState;
-
-    const dark = backgroundIsDark(
-      propsTheme.global.drop.background,
-      propsTheme,
-    );
-
-    if (dark === propsTheme.dark && stateTheme) {
-      return { theme: undefined, priorTheme: undefined };
-    }
-    if (
-      dark !== propsTheme.dark &&
-      (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)
-    ) {
-      return {
-        theme: {
-          ...propsTheme,
-          dark,
-          icon: dark ? propsTheme.iconThemes.dark : propsTheme.iconThemes.light,
-        },
-        priorTheme: propsTheme,
-      };
-    }
-    return null;
-  }
-
-  state = {};
+  static contextType = ThemeContext;
 
   dropRef = React.createRef();
 
@@ -132,7 +97,14 @@ class DropContainer extends Component {
   // We try to preserve the maxHeight as changing it causes any scroll position
   // to be lost. We set the maxHeight on mount and if the window is resized.
   place = preserveHeight => {
-    const { align, dropTarget, responsive, stretch, theme } = this.props;
+    const {
+      align,
+      dropTarget,
+      responsive,
+      stretch,
+      theme: defaultTheme,
+    } = this.props;
+    const theme = this.context || defaultTheme;
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
     const target = dropTarget;
@@ -274,13 +246,12 @@ class DropContainer extends Component {
       onClickOutside,
       onEsc,
       onKeyDown,
-      theme: propsTheme,
+      theme: defaultTheme,
       elevation,
       plain,
       ...rest
     } = this.props;
-    const { theme: stateTheme } = this.state;
-    const theme = stateTheme || propsTheme;
+    const theme = this.context || defaultTheme;
 
     let content = (
       <StyledDrop
@@ -300,16 +271,10 @@ class DropContainer extends Component {
       </StyledDrop>
     );
 
-    if (stateTheme) {
-      if (stateTheme.dark !== propsTheme.dark && stateTheme.icon) {
-        content = (
-          <IconThemeContext.Provider value={stateTheme.icon}>
-            {content}
-          </IconThemeContext.Provider>
-        );
-      }
+    const dark = backgroundIsDark(theme.global.drop.background, theme);
+    if (dark !== theme.dark) {
       content = (
-        <ThemeContext.Provider value={stateTheme}>
+        <ThemeContext.Provider value={{ ...theme, dark }}>
           {content}
         </ThemeContext.Provider>
       );
@@ -331,6 +296,4 @@ class DropContainer extends Component {
 
 Object.setPrototypeOf(DropContainer.defaultProps, defaultProps);
 
-const DropContainerWrapper = compose(withTheme)(DropContainer);
-
-export { DropContainerWrapper as DropContainer };
+export { DropContainer };

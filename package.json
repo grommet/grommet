@@ -39,7 +39,8 @@
     "prettier": "pretty-quick --staged"
   },
   "peerDependencies": {
-    "grommet-icons": ">= 3.1.0",
+    "grommet-icons": ">= 4.0.0",
+    "grommet-styles": ">= 0.2.0",
     "react": ">= 16.4.1",
     "react-dom": ">= 16.4.1",
     "styled-components": ">= 4.X"
@@ -92,7 +93,8 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.9.1",
     "fs-extra": "^7.0.0",
-    "grommet-icons": "^3.1.0",
+    "grommet-icons": "^4.0.0",
+    "grommet-styles": "^0.2.0",
     "grommet-theme-aruba": "^0.1.0",
     "grommet-theme-dxc": "^0.1.0",
     "grommet-theme-hp": "^0.1.0",

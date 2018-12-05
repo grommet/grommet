@@ -15,6 +15,7 @@ class SimpleDrop extends Component {
   }
 
   render() {
+    console.log(this.targetRef.current);
     return (
       <Grommet theme={grommet} full>
         <Box fill align="center" justify="center">
@@ -33,6 +34,50 @@ class SimpleDrop extends Component {
               target={this.targetRef.current}
             >
               <Box pad="large">Drop Contents</Box>
+            </Drop>
+          )}
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
+const darkDropTheme = deepMerge(grommet, {
+  global: {
+    drop: {
+      background: '#000',
+    },
+  },
+});
+
+class DarkDrop extends Component {
+  targetRef = createRef();
+
+  componentDidMount() {
+    this.forceUpdate();
+  }
+
+  render() {
+    return (
+      <Grommet theme={darkDropTheme} full>
+        <Box fill align="center" justify="center">
+          <Box
+            background="dark-4"
+            pad="medium"
+            align="center"
+            justify="start"
+            ref={this.targetRef}
+          >
+            Target
+          </Box>
+          {this.targetRef.current && (
+            <Drop
+              align={{ top: 'bottom', left: 'left' }}
+              target={this.targetRef.current}
+            >
+              <Box pad="large">
+                <Text>Drop Contents</Text>
+              </Box>
             </Drop>
           )}
         </Box>
@@ -425,6 +470,7 @@ class PlainDrop extends Component {
 
 storiesOf('Drop', module)
   .add('Simple', () => <SimpleDrop />)
+  .add('Dark', () => <DarkDrop />)
   .add('All not stretch', () => <AllDrops />)
   .add('Progressive', () => <ProgressiveDrop />)
   .add('Lazy', () => <LazyDrop />)

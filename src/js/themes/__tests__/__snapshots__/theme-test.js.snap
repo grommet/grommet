@@ -6,6 +6,8 @@ exports[`Grommet custom theme 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #1D67E3;
   stroke: #1D67E3;
 }
@@ -38,6 +40,8 @@ exports[`Grommet custom theme 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #cc6633;
   stroke: #cc6633;
 }
@@ -70,6 +74,8 @@ exports[`Grommet custom theme 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #6194EB;
   stroke: #6194EB;
 }
@@ -280,11 +286,7 @@ exports[`Grommet custom theme 1`] = `
         <svg
           aria-label="Add"
           className="c4"
-          height="24px"
-          role="img"
-          version="1.1"
           viewBox="0 0 24 24"
-          width="24px"
         >
           <path
             d="M12,22 L12,2 M2,12 L22,12"
@@ -315,11 +317,7 @@ exports[`Grommet custom theme 1`] = `
         <svg
           aria-label="Add"
           className="c7"
-          height="24px"
-          role="img"
-          version="1.1"
           viewBox="0 0 24 24"
-          width="24px"
         >
           <path
             d="M12,22 L12,2 M2,12 L22,12"
@@ -354,11 +352,7 @@ exports[`Grommet custom theme 1`] = `
         <svg
           aria-label="Add"
           className="c10"
-          height="24px"
-          role="img"
-          version="1.1"
           viewBox="0 0 24 24"
-          width="24px"
         >
           <path
             d="M12,22 L12,2 M2,12 L22,12"
@@ -389,11 +383,7 @@ exports[`Grommet custom theme 1`] = `
         <svg
           aria-label="Add"
           className="c7"
-          height="24px"
-          role="img"
-          version="1.1"
           viewBox="0 0 24 24"
-          width="24px"
         >
           <path
             d="M12,22 L12,2 M2,12 L22,12"

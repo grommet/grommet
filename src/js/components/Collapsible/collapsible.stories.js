@@ -157,7 +157,7 @@ class HorizontalCollapsible extends Component {
       <Grommet full theme={grommet}>
         <Box fill>
           <Box
-            as="header"
+            tag="header"
             direction="row"
             align="center"
             pad={{ vertical: 'small', horizontal: 'medium' }}

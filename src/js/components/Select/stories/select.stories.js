@@ -400,6 +400,7 @@ class CustomSearchSelect extends Component {
           }}
         >
           <Box background="gray" round="full">
+            <Text>hoi</Text>
             <FormClose style={{ width: '12px', height: '12px' }} />
           </Box>
         </Button>

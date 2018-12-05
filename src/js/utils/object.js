@@ -41,3 +41,13 @@ export const removeUndefined = obj => {
   });
   return result;
 };
+
+export const removeKeys = (obj, keys) => {
+  const newObj = {};
+  Object.keys(obj).forEach(key => {
+    if (keys.indexOf(key) < 0) {
+      newObj[key] = obj[key];
+    }
+  });
+  return newObj;
+};

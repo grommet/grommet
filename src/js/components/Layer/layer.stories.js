@@ -16,6 +16,7 @@ import {
   TextInput,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from '../../utils';
 
 class CenterLayer extends Component {
   state = {};
@@ -57,7 +58,7 @@ class CenterLayer extends Component {
               </Heading>
               <Text>Are you sure you want to delete?</Text>
               <Box
-                as="footer"
+                tag="footer"
                 gap="small"
                 direction="row"
                 align="center"
@@ -322,7 +323,7 @@ const ScrollBodyLayer = () => (
         <Box
           direction="row"
           align="center"
-          as="header"
+          tag="header"
           elevation="small"
           justify="between"
         >
@@ -395,7 +396,7 @@ const ScrollBodyLayer = () => (
           <span>body</span>
         </Box>
         <Box
-          as="footer"
+          tag="footer"
           border={{ side: 'top' }}
           pad="small"
           justify="end"
@@ -409,8 +410,23 @@ const ScrollBodyLayer = () => (
   </Grommet>
 );
 
+const darkLayerTheme = deepMerge(grommet, {
+  layer: {
+    background: '#000000',
+  },
+});
+
+const DarkLayer = () => (
+  <Grommet theme={darkLayerTheme}>
+    <Layer>
+      <Text>hi</Text>
+    </Layer>
+  </Grommet>
+);
+
 storiesOf('Layer', module)
   .add('Center', () => <CenterLayer />)
+  .add('Dark', () => <DarkLayer />)
   .add('Form', () => <FormLayer />)
   .add('Notification', () => <NotificationLayer />)
   .add('Margin', () => <MarginLayer full />)

@@ -2,6 +2,7 @@ import { rgba } from 'polished';
 import { css } from 'styled-components';
 
 import {
+  base as iconBase,
   Actions,
   ClosedCaption,
   Expand,
@@ -18,7 +19,7 @@ import {
   VolumeLow,
 } from 'grommet-icons';
 
-import { normalizeColor, deepFreeze } from '../utils';
+import { deepMerge, deepFreeze, normalizeColor } from '../utils';
 
 const brandColor = '#7D4CDB';
 const accentColors = ['#FD6FFF', '#61EC9F', '#60EBE1', '#FFCA58'];
@@ -67,6 +68,10 @@ const colors = {
     dark: '#f8f8f8',
     light: '#444444',
   },
+  icon: {
+    dark: '#f8f8f8',
+    light: '#666666',
+  },
   white: '#FFFFFF',
 };
 
@@ -98,7 +103,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
 
   const borderWidth = 2;
 
-  const result = {
+  const result = deepMerge(iconBase, {
     global: {
       animation: {
         duration: '1s',
@@ -526,10 +531,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       responsiveBreakpoint: 'small', // when we scale the font size down
       weight: 600,
     },
-    icon: {
-      colors,
-    },
-    iconThemes: {},
     layer: {
       background: 'white',
       border: {
@@ -738,7 +739,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         base: '8px',
       },
     },
-  };
+  });
 
   return deepFreeze(result);
 };
