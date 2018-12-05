@@ -2,22 +2,22 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
-export const doc = SyntaxInput => {
-  const DocumentedSyntaxInput = describe(SyntaxInput)
-    .availableAt(getAvailableAtBadge('SyntaxInput'))
+export const doc = MaskedInput => {
+  const DocumentedMaskedInput = describe(MaskedInput)
+    .availableAt(getAvailableAtBadge('MaskedInput'))
     .description('An input field with formalized syntax.')
     .usage(
-      `import { SyntaxInput } from 'grommet';
-<SyntaxInput id='item' name='item' />`,
+      `import { MaskedInput } from 'grommet';
+<MaskedInput id='item' name='item' />`,
     );
 
-  DocumentedSyntaxInput.propTypes = {
+  DocumentedMaskedInput.propTypes = {
     id: PropTypes.string.description('The id attribute of the input.'),
     name: PropTypes.string.description('The name attribute of the input.'),
     onChange: PropTypes.func.description(
-      'Function that will be called when the user types in the input.',
+      'Function that will be called when the user types.',
     ),
-    schema: PropTypes.arrayOf(
+    mask: PropTypes.arrayOf(
       PropTypes.shape({
         length: PropTypes.oneOfType([
           PropTypes.number,
@@ -28,16 +28,16 @@ export const doc = SyntaxInput => {
         fixed: PropTypes.string,
         options: PropTypes.arrayOf(PropTypes.string),
       }),
-    ).description('Describes the structure of the syntax.'),
+    ).description('Describes the structure of the mask.'),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
-    ]).description('The size of the SyntaxInput.'),
+    ]).description('The size of the text.'),
     value: PropTypes.string.description(
-      `What text to put in the input. It will automatically take
-      care of schema alignment`,
+      `What text to put in the input. It will automatically be aligned to
+      the mask.`,
     ),
   };
 
-  return DocumentedSyntaxInput;
+  return DocumentedMaskedInput;
 };

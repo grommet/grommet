@@ -18,7 +18,7 @@ const plainStyle = css`
   border: none;
 `;
 
-export const StyledSyntaxInput = styled.input`
+export const StyledMaskedInput = styled.input`
   ${inputStyle} width: 100%;
 
   ${props => props.size && sizeStyle(props)} ${props =>
@@ -42,10 +42,10 @@ export const StyledSyntaxInput = styled.input`
   }
 
   ${props => props.focus && !props.plain && focusStyle};
-  ${props => props.theme.SyntaxInput && props.theme.SyntaxInput.extend};
+  ${props => props.theme.MaskedInput && props.theme.MaskedInput.extend};
 `;
 
-export const StyledSyntaxInputContainer = styled.div`
+export const StyledMaskedInputContainer = styled.div`
   position: relative;
   width: 100%;
 `;

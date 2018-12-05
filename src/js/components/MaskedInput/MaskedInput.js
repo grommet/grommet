@@ -9,30 +9,30 @@ import { Keyboard } from '../Keyboard';
 import { withFocus, withForwardRef } from '../hocs';
 
 import {
-  StyledSyntaxInput,
-  StyledSyntaxInputContainer,
-} from './StyledSyntaxInput';
+  StyledMaskedInput,
+  StyledMaskedInputContainer,
+} from './StyledMaskedInput';
 
-const parseValue = (schema, value) => {
-  // break the value up into schema parts
+const parseValue = (mask, value) => {
+  // break the value up into mask parts
   const valueParts = []; // { part, beginIndex, endIndex }
   let valueIndex = 0;
-  let schemaIndex = 0;
+  let maskIndex = 0;
   while (valueIndex < value.length) {
-    const item = schema[schemaIndex];
+    const item = mask[maskIndex];
     let found;
     if (item.fixed) {
       const { length } = item.fixed;
       valueParts.push({
         part: item.fixed,
         beginIndex: valueIndex,
-        endIndex: (valueIndex + length) - 1,
+        endIndex: valueIndex + length - 1,
       });
       const part = value.slice(valueIndex, valueIndex + length);
       if (part === item.fixed) {
         valueIndex += length;
       }
-      schemaIndex += 1;
+      maskIndex += 1;
       found = true;
     } else if (item.options) {
       // reverse assuming larger is later
@@ -47,10 +47,10 @@ const parseValue = (schema, value) => {
             valueParts.push({
               part,
               beginIndex: valueIndex,
-              endIndex: (valueIndex + length) - 1,
+              endIndex: valueIndex + length - 1,
             });
             valueIndex += length;
-            schemaIndex += 1;
+            maskIndex += 1;
             return true;
           }
           return false;
@@ -66,33 +66,37 @@ const parseValue = (schema, value) => {
           valueParts.push({
             part,
             beginIndex: valueIndex,
-            endIndex: (valueIndex + length) - 1,
+            endIndex: valueIndex + length - 1,
           });
           valueIndex += length;
-          schemaIndex += 1;
+          maskIndex += 1;
           found = true;
         }
       } else {
         valueParts.push({
           part,
           beginIndex: valueIndex,
-          endIndex: (valueIndex + length) - 1,
+          endIndex: valueIndex + length - 1,
         });
         valueIndex += length;
-        schemaIndex += 1;
+        maskIndex += 1;
       }
     }
   }
   return valueParts;
 };
 
-class SyntaxInput extends Component {
+class MaskedInput extends Component {
+  static defaultProps = {
+    mask: [],
+  };
+
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { schema, value } = nextProps;
-    const { priorSchema, priorValue } = prevState;
-    if (priorSchema !== schema || priorValue !== value) {
-      const valueParts = parseValue(schema, value);
-      return { priorSchema: schema, priorValue: value, valueParts };
+    const { mask, value } = nextProps;
+    const { priormask, priorValue } = prevState;
+    if (priormask !== mask || priorValue !== value) {
+      const valueParts = parseValue(mask, value);
+      return { priormask: mask, priorValue: value, valueParts };
     }
     return null;
   }
@@ -115,53 +119,58 @@ class SyntaxInput extends Component {
     // leave time for caret to be placed after receiving focus
     clearTimeout(this.caretTimeout);
     this.caretTimeout = setTimeout(() => {
-      const { schema } = this.props;
-      const { activeSchemaIndex, valueParts } = this.state;
-      if (this.inputRef.current && this.inputRef.current === document.activeElement) {
-        // determine which schema element the caret is at
+      const { mask } = this.props;
+      const { activemaskIndex, valueParts } = this.state;
+      if (
+        this.inputRef.current &&
+        this.inputRef.current === document.activeElement
+      ) {
+        // determine which mask element the caret is at
         const caretIndex = this.inputRef.current.selectionStart;
-        let schemaIndex;
+        let maskIndex;
         valueParts.some((part, index) => {
           if (part.beginIndex <= caretIndex && part.endIndex >= caretIndex) {
-            schemaIndex = index;
+            maskIndex = index;
             return true;
           }
           return false;
         });
-        if (schemaIndex === undefined && valueParts.length < schema.length) {
-          schemaIndex = valueParts.length; // first unused one
+        if (maskIndex === undefined && valueParts.length < mask.length) {
+          maskIndex = valueParts.length; // first unused one
         }
-        if (schemaIndex && schema[schemaIndex].fixed) {
-          schemaIndex -= 1; // fixed schema parts are never "active"
+        if (maskIndex && mask[maskIndex].fixed) {
+          maskIndex -= 1; // fixed mask parts are never "active"
         }
-        if (activeSchemaIndex !== schemaIndex) {
+        if (activemaskIndex !== maskIndex) {
           // eslint-disable-next-line react/no-did-update-set-state
-          this.setState({ activeSchemaIndex: schemaIndex });
+          this.setState({ activemaskIndex: maskIndex });
         }
       }
     }, 10); // 10ms empirically chosen
-  }
+  };
 
   onBlur = () => {
     // delay so we don't remove the drop before Button events can be processed
     clearTimeout(this.blurTimeout);
     this.blurTimeout = setTimeout(() => {
-      if (!this.dropRef.current
-        || !this.dropRef.current.contains
-        || !this.dropRef.current.contains(document.activeElement)) {
-        this.setState({ activeSchemaIndex: undefined });
+      if (
+        !this.dropRef.current ||
+        !this.dropRef.current.contains ||
+        !this.dropRef.current.contains(document.activeElement)
+      ) {
+        this.setState({ activemaskIndex: undefined });
       }
     }, 10); // 10ms empirically chosen
-  }
+  };
 
   // This could be due to a paste or as the user is typing.
   onChange = event => {
-    const { onChange, schema } = this.props;
+    const { onChange, mask } = this.props;
     const {
       target: { value },
     } = event;
-    // Align with the schema.
-    const valueParts = parseValue(schema, value);
+    // Align with the mask.
+    const valueParts = parseValue(mask, value);
     const nextValue = valueParts.map(part => part.part).join('');
     if (onChange) {
       onChange({ target: { ...event.target, value: nextValue } });
@@ -169,14 +178,14 @@ class SyntaxInput extends Component {
   };
 
   onOption = option => () => {
-    const { onChange, schema } = this.props;
-    const { activeSchemaIndex, valueParts } = this.state;
+    const { onChange, mask } = this.props;
+    const { activemaskIndex, valueParts } = this.state;
     const nextValueParts = [...valueParts];
-    nextValueParts[activeSchemaIndex] = { part: option };
+    nextValueParts[activemaskIndex] = { part: option };
     // add any fixed parts that follow
-    let index = activeSchemaIndex + 1;
-    while (index < schema.length && !nextValueParts[index] && schema[index].fixed) {
-      nextValueParts[index] = { part: schema[index].fixed };
+    let index = activemaskIndex + 1;
+    while (index < mask.length && !nextValueParts[index] && mask[index].fixed) {
+      nextValueParts[index] = { part: mask[index].fixed };
       index += 1;
     }
     const nextValue = nextValueParts.map(part => part.part).join('');
@@ -185,11 +194,11 @@ class SyntaxInput extends Component {
     if (onChange) {
       onChange({ target: { value: nextValue } });
     }
-  }
+  };
 
   renderPlaceholder = () => {
-    const { schema } = this.props;
-    return schema.map(item => item.placeholder || item.fixed).join('');
+    const { mask } = this.props;
+    return mask.map(item => item.placeholder || item.fixed).join('');
   };
 
   render() {
@@ -199,16 +208,16 @@ class SyntaxInput extends Component {
       id,
       placeholder,
       plain,
-      schema,
+      mask,
       value,
       onChange,
       onKeyDown,
       ...rest
     } = this.props;
-    const { activeSchemaIndex } = this.state;
+    const { activemaskIndex } = this.state;
 
     return (
-      <StyledSyntaxInputContainer plain={plain}>
+      <StyledMaskedInputContainer plain={plain}>
         <Keyboard
           onEsc={this.onEsc}
           onTab={this.onTab}
@@ -218,10 +227,10 @@ class SyntaxInput extends Component {
           onDown={this.onNextSuggestion}
           onKeyDown={onKeyDown}
         >
-          <StyledSyntaxInput
+          <StyledMaskedInput
             id={id}
-            ref={(node) => {
-              this.inputRef.current = node;;
+            ref={node => {
+              this.inputRef.current = node;
               if (forwardRef) {
                 if (typeof forwardRef === 'object') {
                   forwardRef.current = node;
@@ -241,13 +250,13 @@ class SyntaxInput extends Component {
             onChange={this.onChange}
           />
         </Keyboard>
-        {activeSchemaIndex >= 0 && schema[activeSchemaIndex].options && (
+        {activemaskIndex >= 0 && mask[activemaskIndex].options && (
           <Drop
             align={{ top: 'bottom', left: 'left' }}
             target={this.inputRef.current}
           >
             <Box ref={this.dropRef}>
-              {schema[activeSchemaIndex].options.map(option => (
+              {mask[activemaskIndex].options.map(option => (
                 <Box key={option} flex={false}>
                   <Button hoverIndicator onClick={this.onOption(option)}>
                     <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
@@ -259,19 +268,19 @@ class SyntaxInput extends Component {
             </Box>
           </Drop>
         )}
-      </StyledSyntaxInputContainer>
+      </StyledMaskedInputContainer>
     );
   }
 }
 
-let SyntaxInputDoc;
+let MaskedInputDoc;
 if (process.env.NODE_ENV !== 'production') {
-  SyntaxInputDoc = require('./doc').doc(SyntaxInput); // eslint-disable-line global-require
+  MaskedInputDoc = require('./doc').doc(MaskedInput); // eslint-disable-line global-require
 }
-const SyntaxInputWrapper = compose(
+const MaskedInputWrapper = compose(
   withFocus,
   withTheme,
   withForwardRef,
-)(SyntaxInputDoc || SyntaxInput);
+)(MaskedInputDoc || MaskedInput);
 
-export { SyntaxInputWrapper as SyntaxInput };
+export { MaskedInputWrapper as MaskedInput };

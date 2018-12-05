@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Grommet, SyntaxInput } from 'grommet';
+import { Box, Grommet, MaskedInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-class TimeSyntaxInput extends Component {
+class TimeMaskedInput extends Component {
   state = { value: '' };
 
   onChange = event => {
@@ -16,8 +16,8 @@ class TimeSyntaxInput extends Component {
       <Grommet full theme={grommet}>
         <Box fill align="center" justify="center">
           <Box width="medium">
-            <SyntaxInput
-              schema={[
+            <MaskedInput
+              mask={[
                 {
                   length: [1, 2],
                   options: [
@@ -61,7 +61,7 @@ class TimeSyntaxInput extends Component {
   }
 }
 
-class PhoneSyntaxInput extends Component {
+class PhoneMaskedInput extends Component {
   state = { value: '' };
 
   onChange = event => {
@@ -74,8 +74,8 @@ class PhoneSyntaxInput extends Component {
       <Grommet full theme={grommet}>
         <Box fill align="center" justify="center">
           <Box width="medium">
-            <SyntaxInput
-              schema={[
+            <MaskedInput
+              mask={[
                 { fixed: '(' },
                 {
                   length: 3,
@@ -106,7 +106,7 @@ class PhoneSyntaxInput extends Component {
   }
 }
 
-class EmailSyntaxInput extends Component {
+class EmailMaskedInput extends Component {
   state = { value: '' };
 
   onChange = event => {
@@ -119,8 +119,8 @@ class EmailSyntaxInput extends Component {
       <Grommet full theme={grommet}>
         <Box fill align="center" justify="center">
           <Box width="medium">
-            <SyntaxInput
-              schema={[
+            <MaskedInput
+              mask={[
                 {
                   regexp: /^[\w\-_.]+$/,
                   placeholder: 'example',
@@ -148,7 +148,7 @@ class EmailSyntaxInput extends Component {
 
 const IPv4ElementExp = /^[0-1][0-9][0-9]$|^2[0-4][0-9]$|^25[0-5]$|^[0-9][0-9]$|^[0-9]$/;
 
-class IPv4SyntaxInput extends Component {
+class IPv4MaskedInput extends Component {
   state = { value: '' };
 
   onChange = event => {
@@ -161,8 +161,8 @@ class IPv4SyntaxInput extends Component {
       <Grommet full theme={grommet}>
         <Box fill align="center" justify="center">
           <Box width="medium">
-            <SyntaxInput
-              schema={[
+            <MaskedInput
+              mask={[
                 {
                   length: [1, 3],
                   regexp: IPv4ElementExp,
@@ -197,8 +197,8 @@ class IPv4SyntaxInput extends Component {
   }
 }
 
-storiesOf('SyntaxInput', module)
-  .add('Time', () => <TimeSyntaxInput />)
-  .add('Phone', () => <PhoneSyntaxInput />)
-  .add('Email', () => <EmailSyntaxInput />)
-  .add('IPv4 Address', () => <IPv4SyntaxInput />);
+storiesOf('MaskedInput', module)
+  .add('Time', () => <TimeMaskedInput />)
+  .add('Phone', () => <PhoneMaskedInput />)
+  .add('Email', () => <EmailMaskedInput />)
+  .add('IPv4 Address', () => <IPv4MaskedInput />);
