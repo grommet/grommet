@@ -23,12 +23,15 @@ export class FocusedContainer extends Component {
   ref = React.createRef();
 
   componentDidMount() {
-    const { hidden } = this.props;
+    const { ariaHidden } = this.props;
+    console.log(`componentDidMount =>>> ariaHidden=${ariaHidden}`);
+
     // making sure trap focus always execute
     // after removeTrap for the case where two drops
     // are open at the same time
     setTimeout(() => {
-      if (!hidden) {
+      if (!ariaHidden) {
+        console.log(`calling trapFocus()`);
         this.trapFocus();
       }
     }, 0);

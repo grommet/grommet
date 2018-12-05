@@ -59,6 +59,7 @@ class LayerContainer extends Component {
   layerRef = React.createRef();
 
   componentDidMount() {
+    console.log('componentDidMount');
     const { position } = this.props;
     if (position !== 'hidden') {
       this.makeLayerVisible();
@@ -71,6 +72,7 @@ class LayerContainer extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    console.log('componentDidUpdate');
     const { position } = this.props;
     if (prevProps.position !== position && position !== 'hidden') {
       this.makeLayerVisible();
@@ -78,6 +80,7 @@ class LayerContainer extends Component {
   }
 
   makeLayerVisible = () => {
+    console.log('makeLayerVisible');
     const node = this.layerRef.current || this.containerRef.current;
     if (node && node.scrollIntoView) {
       node.scrollIntoView();
@@ -143,7 +146,7 @@ class LayerContainer extends Component {
 
     if (modal) {
       content = (
-        <FocusedContainer hidden={position === 'hidden'} restrictScroll>
+        <FocusedContainer aria-hidden={position === 'hidden'} restrictScroll>
           <IconThemeContext.Provider value={theme.icon}>
             {content}
           </IconThemeContext.Provider>
