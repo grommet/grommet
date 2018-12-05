@@ -220,9 +220,9 @@ const POSITIONS = {
       right: ${margin.right};
       animation: ${KEYFRAMES.center.true} 0.2s ease-in-out forwards;
     `,
-    false: margin => css`
-      top: calc(50% + ${margin.top});
-      left: calc(50% + ${margin.left});
+    false: () => css`
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
       animation: ${KEYFRAMES.center.false} 0.2s ease-in-out forwards;
     `,
