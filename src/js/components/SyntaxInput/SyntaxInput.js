@@ -113,7 +113,8 @@ class SyntaxInput extends Component {
 
   locateCaret = () => {
     // leave time for caret to be placed after receiving focus
-    setTimeout(() => {
+    clearTimeout(this.caretTimeout);
+    this.caretTimeout = setTimeout(() => {
       const { schema } = this.props;
       const { activeSchemaIndex, valueParts } = this.state;
       if (this.inputRef.current && this.inputRef.current === document.activeElement) {
@@ -138,18 +139,19 @@ class SyntaxInput extends Component {
           this.setState({ activeSchemaIndex: schemaIndex });
         }
       }
-    }, 2);
+    }, 10); // 10ms empirically chosen
   }
 
   onBlur = () => {
     // delay so we don't remove the drop before Button events can be processed
-    setTimeout(() => {
+    clearTimeout(this.blurTimeout);
+    this.blurTimeout = setTimeout(() => {
       if (!this.dropRef.current
         || !this.dropRef.current.contains
         || !this.dropRef.current.contains(document.activeElement)) {
         this.setState({ activeSchemaIndex: undefined });
       }
-    }, 10);
+    }, 10); // 10ms empirically chosen
   }
 
   // This could be due to a paste or as the user is typing.
