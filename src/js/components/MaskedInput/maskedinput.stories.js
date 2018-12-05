@@ -34,6 +34,7 @@ class TimeMaskedInput extends Component {
                     '11',
                     '12',
                   ],
+                  regexp: /^1[1-2]$|^[0-9]$/,
                   placeholder: 'hh',
                 },
                 { fixed: ':' },
