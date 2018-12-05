@@ -9,6 +9,7 @@ import Markdown from 'markdown-to-jsx';
 import { deepMerge } from '../../utils';
 import { Heading } from '../Heading';
 import { Paragraph } from '../Paragraph';
+import { Anchor } from '../Anchor';
 
 var GrommetMarkdown =
 /*#__PURE__*/
@@ -41,6 +42,9 @@ function (_Component) {
     var overrides = deepMerge({
       p: {
         component: Paragraph
+      },
+      a: {
+        component: Anchor
       }
     }, heading, components);
     return React.createElement(Markdown, _extends({
