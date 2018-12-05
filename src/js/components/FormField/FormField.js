@@ -6,8 +6,6 @@ import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
-import { RadioButton } from '../RadioButton';
-import { Select } from '../Select';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { withFocus } from '../hocs';
@@ -29,83 +27,26 @@ const validateField = (required, validate) => data => {
   return error;
 };
 
-const FormTextInput = ({ name, value, update }) => (
-  <TextInput
-    name={name}
-    value={value[name] || ''}
-    onChange={event => update(name, event.target.value)}
-    plain
-    focusIndicator={false}
-  />
-);
-
-const FormSelect = ({ labelKey, name, options, value, valueKey, update }) => (
-  <Select
-    name={name}
-    value={value[name] || ''}
-    options={options}
-    labelKey={labelKey}
-    valueKey={valueKey}
-    onChange={({ value: data }) => update(name, data)}
-    plain
-    focusIndicator={false}
-  />
-);
-
-const FormRadioButtons = ({ name, options, value, update }) => (
-  <Box margin={{ bottom: 'small' }}>
-    {options.map(option => (
-      <Box key={option} pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-        <RadioButton
-          name={name}
-          value={option}
-          label={option}
-          checked={value[name] === option}
-          onChange={() => update(name, option)}
-        />
-      </Box>
-    ))}
-  </Box>
-);
-
 class FormField extends Component {
   renderChildren = (value, update) => {
-    const { name, options, optionLabelKey, optionValueKey, type } = this.props;
-
-    let result;
-    if (options) {
-      if (options.length > 3) {
-        result = (
-          <FormSelect
-            name={name}
-            value={value}
-            update={update}
-            options={options}
-            labelKey={optionLabelKey}
-            valueKey={optionValueKey}
-          />
-        );
-      } else {
-        result = (
-          <FormRadioButtons
-            name={name}
-            value={value}
-            update={update}
-            options={options}
-          />
-        );
-      }
-    } else {
-      result = (
-        <FormTextInput name={name} value={value} update={update} type={type} />
-      );
-    }
-    return result;
+    const { name, component, required, ...rest } = this.props;
+    const Input = component || TextInput;
+    return (
+      <Input
+        name={name}
+        value={value[name] || ''}
+        onChange={event => update(name, event.value || event.target.value)}
+        plain
+        focusIndicator={false}
+        {...rest}
+      />
+    );
   };
 
   render() {
     const {
       children,
+      component,
       error,
       focus,
       help,

@@ -6,11 +6,29 @@ import {
   Button,
   Grommet,
   Form,
-  FormContext,
+  // FormContext,
   FormField,
+  RadioButton,
+  Select,
   TextArea,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
+
+const RadioButtonGroup = ({ name, onChange, options, value }) => (
+  <Box margin={{ bottom: 'small' }}>
+    {options.map(option => (
+      <Box key={option} pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+        <RadioButton
+          name={name}
+          value={option}
+          label={option}
+          checked={value === option}
+          onChange={() => onChange({ value: option })}
+        />
+      </Box>
+    ))}
+  </Box>
+);
 
 const Example = () => (
   <Grommet full theme={grommet}>
@@ -25,12 +43,19 @@ const Example = () => (
             required
             validate={{ regexp: /^[0-9]{4,6}$/, message: '4-6 digits' }}
           />
-          <FormField name="ampm" options={['am', 'pm']} />
+          <FormField
+            name="ampm"
+            component={RadioButtonGroup}
+            options={['morning', 'evening']}
+          />
           <FormField
             label="Size"
             name="size"
+            component={Select}
             options={['small', 'medium', 'large', 'xlarge']}
           />
+          <FormField label="Comments" name="comments" component={TextArea} />
+          {/* }
           <FormField label="Comments" name="comments">
             <FormContext.Consumer>
               {({ value, update }) => (
@@ -43,6 +68,7 @@ const Example = () => (
               )}
             </FormContext.Consumer>
           </FormField>
+          { */}
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
             <Button type="submit" label="Update" primary />

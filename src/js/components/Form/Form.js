@@ -16,7 +16,7 @@ class Form extends Component {
     return null;
   }
 
-  state = { errors: {}, value: {} };
+  state = { errors: {}, value: {}, touched: {} };
 
   validations = {};
 
@@ -42,9 +42,11 @@ class Form extends Component {
   };
 
   update = (name, data, error) => {
-    const { errors, value } = this.state;
+    const { errors, touched, value } = this.state;
     const nextValue = { ...value };
     nextValue[name] = data;
+    const nextTouched = { ...touched };
+    nextTouched[name] = true;
     const nextErrors = { ...errors };
     if (errors[name]) {
       const dataError =
@@ -55,7 +57,11 @@ class Form extends Component {
         delete nextErrors[name];
       }
     }
-    this.setState({ value: nextValue, errors: nextErrors });
+    this.setState({
+      value: nextValue,
+      errors: nextErrors,
+      touched: nextTouched,
+    });
   };
 
   addValidation = (name, validate) => {
@@ -64,13 +70,14 @@ class Form extends Component {
 
   render() {
     const { children, ...rest } = this.props;
-    const { errors, value } = this.state;
+    const { errors, touched, value } = this.state;
     return (
       <form {...rest} onSubmit={this.onSubmit}>
         <FormContext.Provider
           value={{
             addValidation: this.addValidation,
             errors,
+            touched,
             update: this.update,
             value,
           }}
