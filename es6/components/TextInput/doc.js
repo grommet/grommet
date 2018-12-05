@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils';
 export var doc = function doc(TextInput) {
-  var DocumentedTextInput = describe(TextInput).availableAt(getAvailableAtBadge('TextInput')).description('A text input field with optional suggestions.').usage("import { TextInput } from 'grommet';\n<TextInput id='item' name='item' />");
+  var DocumentedTextInput = describe(TextInput).availableAt(getAvailableAtBadge('TextInput')).description('A text input field with optional suggestions.').usage("import { TextInput } from 'grommet';\n<TextInput id='item' name='item' />").intrinsicElement('input');
   DocumentedTextInput.propTypes = {
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),
@@ -71,7 +71,7 @@ export var themeDoc = {
   text: {
     description: "The possible sizes of the text in terms of its font-size and line-height.",
     type: 'object',
-    defaultValue: "{\n      xsmall: {\n        size: '12px',\n        height: '18px',\n       },\n      small: {\n        size: '14px',\n        height: '20px',\n       },\n      medium: {          \n        size: '18px',\n        height: '24px',\n      },\n      large: {\n        size: '22px',\n        height: '28px',\n      },\n      xlarge: {\n        size: '26px',\n        height: '32px',\n      },\n      xxlarge: {\n        size: '34px',\n        height: '40px',\n      },\n    }"
+    defaultValue: "{\n      xsmall: {\n        size: '12px',\n        height: '18px',\n       },\n      small: {\n        size: '14px',\n        height: '20px',\n       },\n      medium: {\n        size: '18px',\n        height: '24px',\n      },\n      large: {\n        size: '22px',\n        height: '28px',\n      },\n      xlarge: {\n        size: '26px',\n        height: '32px',\n      },\n      xxlarge: {\n        size: '34px',\n        height: '40px',\n      },\n    }"
   },
   'textInput.extend': {
     description: 'Any additional style for TextInput.',

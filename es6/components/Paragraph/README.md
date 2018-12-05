@@ -150,6 +150,11 @@ center
 end
 ```
   
+## Intrinsic element
+
+```
+p
+```
 ## Theme
   
 **global.colors.text**
@@ -195,7 +200,7 @@ Defaults to
         height: '20px',
         maxWidth: '336px',
        },
-      medium: {          
+      medium: {
         size: '18px',
         height: '24px',
         maxWidth: '432px',

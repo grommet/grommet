@@ -49,7 +49,7 @@ export interface AnchorProps {
   as?: string;
 }
 
-declare const Anchor: React.ComponentType<AnchorProps>;
+declare const Anchor: React.ComponentType<AnchorProps & JSX.IntrinsicElements['a']>;
 
 export { Anchor };
 ",
@@ -111,7 +111,7 @@ export interface ButtonProps {
   as?: string;
 }
 
-declare const Button: React.ComponentType<ButtonProps>;
+declare const Button: React.ComponentType<ButtonProps & JSX.IntrinsicElements['button']>;
 
 export { Button };
 ",
@@ -394,7 +394,7 @@ export interface ImageProps {
   fit?: \\"cover\\" | \\"contain\\";
 }
 
-declare const Image: React.ComponentType<ImageProps>;
+declare const Image: React.ComponentType<ImageProps & JSX.IntrinsicElements['img']>;
 
 export { Image };
 ",
@@ -517,7 +517,7 @@ export interface ParagraphProps {
   textAlign?: \\"start\\" | \\"center\\" | \\"end\\";
 }
 
-declare const Paragraph: React.ComponentType<ParagraphProps>;
+declare const Paragraph: React.ComponentType<ParagraphProps & JSX.IntrinsicElements['p']>;
 
 export { Paragraph };
 ",
@@ -679,7 +679,7 @@ export interface TableProps {
   caption?: string;
 }
 
-declare const Table: React.ComponentType<TableProps>;
+declare const Table: React.ComponentType<TableProps & JSX.IntrinsicElements['table']>;
 
 export { Table };
 ",
@@ -689,7 +689,7 @@ export interface TableBodyProps {
   
 }
 
-declare const TableBody: React.ComponentType<TableBodyProps>;
+declare const TableBody: React.ComponentType<TableBodyProps & JSX.IntrinsicElements['tbody']>;
 
 export { TableBody };
 ",
@@ -702,7 +702,7 @@ export interface TableCellProps {
   verticalAlign?: \\"top\\" | \\"middle\\" | \\"bottom\\";
 }
 
-declare const TableCell: React.ComponentType<TableCellProps>;
+declare const TableCell: React.ComponentType<TableCellProps & JSX.IntrinsicElements['td']>;
 
 export { TableCell };
 ",
@@ -712,7 +712,7 @@ export interface TableFooterProps {
   
 }
 
-declare const TableFooter: React.ComponentType<TableFooterProps>;
+declare const TableFooter: React.ComponentType<TableFooterProps & JSX.IntrinsicElements['tfoot']>;
 
 export { TableFooter };
 ",
@@ -722,7 +722,7 @@ export interface TableHeaderProps {
   
 }
 
-declare const TableHeader: React.ComponentType<TableHeaderProps>;
+declare const TableHeader: React.ComponentType<TableHeaderProps & JSX.IntrinsicElements['thead']>;
 
 export { TableHeader };
 ",
@@ -732,7 +732,7 @@ export interface TableRowProps {
   
 }
 
-declare const TableRow: React.ComponentType<TableRowProps>;
+declare const TableRow: React.ComponentType<TableRowProps & JSX.IntrinsicElements['tr']>;
 
 export { TableRow };
 ",
@@ -771,7 +771,7 @@ export interface TextProps {
   weight?: \\"normal\\" | \\"bold\\" | number;
 }
 
-declare const Text: React.ComponentType<TextProps>;
+declare const Text: React.ComponentType<TextProps & JSX.IntrinsicElements['span']>;
 
 export { Text };
 ",
@@ -788,7 +788,7 @@ export interface TextAreaProps {
   value?: string;
 }
 
-declare const TextArea: React.ComponentType<TextAreaProps>;
+declare const TextArea: React.ComponentType<TextAreaProps & JSX.IntrinsicElements['textarea']>;
 
 export { TextArea };
 ",
@@ -812,7 +812,7 @@ export interface TextInputProps {
   value?: string;
 }
 
-declare const TextInput: React.ComponentType<TextInputProps>;
+declare const TextInput: React.ComponentType<TextInputProps & JSX.IntrinsicElements['input']>;
 
 export { TextInput };
 ",

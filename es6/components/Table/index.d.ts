@@ -8,6 +8,6 @@ export interface TableProps {
   caption?: string;
 }
 
-declare const Table: React.ComponentType<TableProps>;
+declare const Table: React.ComponentType<TableProps & JSX.IntrinsicElements['table']>;
 
 export { Table };

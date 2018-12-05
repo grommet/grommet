@@ -11,3 +11,8 @@ import { TableFooter } from 'grommet';
 ## Properties
 
   
+## Intrinsic element
+
+```
+tfoot
+```

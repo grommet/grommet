@@ -76,6 +76,11 @@ What text to put in the textarea.
 string
 ```
   
+## Intrinsic element
+
+```
+textarea
+```
 ## Theme
   
 **global.colors.placeholder**

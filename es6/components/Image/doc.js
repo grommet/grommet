@@ -10,7 +10,7 @@ export var themeDoc = {
   }
 };
 export var doc = function doc(Image) {
-  var DocumentedImage = describe(Image).availableAt(getAvailableAtBadge('Image')).description('An image.').usage("import { Image } from 'grommet';\n<Image/>");
+  var DocumentedImage = describe(Image).availableAt(getAvailableAtBadge('Image')).description('An image.').usage("import { Image } from 'grommet';\n<Image/>").intrinsicElement('img');
   DocumentedImage.propTypes = _extends({}, genericProps, {
     fit: PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.')
   });

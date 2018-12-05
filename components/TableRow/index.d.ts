@@ -4,6 +4,6 @@ export interface TableRowProps {
   
 }
 
-declare const TableRow: React.ComponentType<TableRowProps>;
+declare const TableRow: React.ComponentType<TableRowProps & JSX.IntrinsicElements['tr']>;
 
 export { TableRow };

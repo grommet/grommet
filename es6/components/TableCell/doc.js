@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 export var doc = function doc(TableCell) {
-  var DocumentedTableCell = describe(TableCell).description('A cell of data in a table.').usage("import { TableCell } from 'grommet';\n<TableCell />");
+  var DocumentedTableCell = describe(TableCell).description('A cell of data in a table.').usage("import { TableCell } from 'grommet';\n<TableCell />").intrinsicElement('td');
   DocumentedTableCell.propTypes = {
     plain: PropTypes.bool.description('Whether default styling context should be removed.').defaultValue(false),
     scope: PropTypes.oneOf(['col', 'row']).description("For header cells, what scope the header is for.\n        Typically, the cells in a TableHeader have 'col' scope and\n        the primary cell in each row in the TableBody has 'row' scope."),

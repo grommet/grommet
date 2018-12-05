@@ -11,3 +11,8 @@ import { TableHeader } from 'grommet';
 ## Properties
 
   
+## Intrinsic element
+
+```
+thead
+```

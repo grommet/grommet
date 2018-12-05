@@ -173,6 +173,11 @@ What text to put in the input.
 string
 ```
   
+## Intrinsic element
+
+```
+input
+```
 ## Theme
   
 **global.colors.placeholder**
@@ -241,7 +246,7 @@ Defaults to
         size: '14px',
         height: '20px',
        },
-      medium: {          
+      medium: {
         size: '18px',
         height: '24px',
       },

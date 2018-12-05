@@ -6,7 +6,7 @@ exports.doc = void 0;
 var _reactDesc = require("react-desc");
 
 var doc = function doc(TableCell) {
-  var DocumentedTableCell = (0, _reactDesc.describe)(TableCell).description('A cell of data in a table.').usage("import { TableCell } from 'grommet';\n<TableCell />");
+  var DocumentedTableCell = (0, _reactDesc.describe)(TableCell).description('A cell of data in a table.').usage("import { TableCell } from 'grommet';\n<TableCell />").intrinsicElement('td');
   DocumentedTableCell.propTypes = {
     plain: _reactDesc.PropTypes.bool.description('Whether default styling context should be removed.').defaultValue(false),
     scope: _reactDesc.PropTypes.oneOf(['col', 'row']).description("For header cells, what scope the header is for.\n        Typically, the cells in a TableHeader have 'col' scope and\n        the primary cell in each row in the TableBody has 'row' scope."),

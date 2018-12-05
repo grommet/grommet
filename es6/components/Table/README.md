@@ -115,3 +115,8 @@ One line description.
 string
 ```
   
+## Intrinsic element
+
+```
+table
+```

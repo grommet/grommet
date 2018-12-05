@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe, PropTypes } from 'react-desc';
 import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Button) {
-  var DocumentedButton = describe(Button).availableAt(getAvailableAtBadge('Button')).description('A button. We have a separate component from the browser base so we can style it.').usage("import { Button } from 'grommet';\n<Button primary={true} label='Label' />");
+  var DocumentedButton = describe(Button).availableAt(getAvailableAtBadge('Button')).description('A button. We have a separate component from the browser base so we can style it.').usage("import { Button } from 'grommet';\n<Button primary={true} label='Label' />").intrinsicElement('button');
   DocumentedButton.propTypes = _extends({}, genericProps, {
     active: PropTypes.bool.description('Whether the button is active.').defaultValue(false),
     color: colorPropType.description('Fill color for primary, border color otherwise.'),

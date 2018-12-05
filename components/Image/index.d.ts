@@ -8,6 +8,6 @@ export interface ImageProps {
   fit?: "cover" | "contain";
 }
 
-declare const Image: React.ComponentType<ImageProps>;
+declare const Image: React.ComponentType<ImageProps & JSX.IntrinsicElements['img']>;
 
 export { Image };

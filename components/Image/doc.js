@@ -19,7 +19,7 @@ var themeDoc = {
 exports.themeDoc = themeDoc;
 
 var doc = function doc(Image) {
-  var DocumentedImage = (0, _reactDesc.describe)(Image).availableAt((0, _utils.getAvailableAtBadge)('Image')).description('An image.').usage("import { Image } from 'grommet';\n<Image/>");
+  var DocumentedImage = (0, _reactDesc.describe)(Image).availableAt((0, _utils.getAvailableAtBadge)('Image')).description('An image.').usage("import { Image } from 'grommet';\n<Image/>").intrinsicElement('img');
   DocumentedImage.propTypes = _extends({}, _utils.genericProps, {
     fit: _reactDesc.PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.')
   });

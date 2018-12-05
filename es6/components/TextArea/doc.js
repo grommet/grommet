@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils';
 export var doc = function doc(TextArea) {
-  var DocumentedTextArea = describe(TextArea).availableAt(getAvailableAtBadge('TextArea')).description('A textarea.').usage("import { TextArea } from 'grommet';\n<TextArea id='item' name='item' />");
+  var DocumentedTextArea = describe(TextArea).availableAt(getAvailableAtBadge('TextArea')).description('A textarea.').usage("import { TextArea } from 'grommet';\n<TextArea id='item' name='item' />").intrinsicElement('textarea');
   DocumentedTextArea.propTypes = {
     id: PropTypes.string.description('The id attribute of the textarea.'),
     fill: PropTypes.bool.description('Whether the width and height should fill the container.').defaultValue(false),
