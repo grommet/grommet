@@ -23,15 +23,14 @@ export class FocusedContainer extends Component {
   ref = React.createRef();
 
   componentDidMount() {
-    const { ariaHidden } = this.props;
-    console.log(`componentDidMount =>>> ariaHidden=${ariaHidden}`);
+    /* eslint-disable react/destructuring-assignment */
+    const ariaHidden = this.props['aria-hidden'];
 
     // making sure trap focus always execute
     // after removeTrap for the case where two drops
     // are open at the same time
     setTimeout(() => {
       if (!ariaHidden) {
-        console.log(`calling trapFocus()`);
         this.trapFocus();
       }
     }, 0);

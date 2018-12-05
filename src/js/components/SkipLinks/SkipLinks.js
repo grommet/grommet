@@ -18,12 +18,9 @@ class SkipLinks extends Component {
   layerRef = createRef();
 
   onBlur = () => {
-    console.log('onBlur');
     // timeout needed so it gives enough time for activeElement to be updated
     setTimeout(() => {
       const layerNode = this.layerRef.current;
-      console.log(layerNode);
-      console.log(document.activeElement);
       if (
         layerNode &&
         layerNode.layerContainer.contains &&
@@ -35,12 +32,10 @@ class SkipLinks extends Component {
   };
 
   onFocus = () => {
-    console.log('onFocus');
     this.setState({ showLayer: true });
   };
 
   removeLayer = () => {
-    console.log('removeLayer');
     this.setState({ showLayer: false });
   };
 
