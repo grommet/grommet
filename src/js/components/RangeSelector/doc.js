@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { colorPropType, getAvailableAtBadge } from '../../utils';
 
 export const doc = RangeSelector => {
   const DocumentedRangeSelector = describe(RangeSelector)
@@ -12,7 +12,7 @@ export const doc = RangeSelector => {
     );
 
   DocumentedRangeSelector.propTypes = {
-    color: PropTypes.string.description(
+    color: colorPropType.description(
       'What color to use to indicate the selection.',
     ),
     direction: PropTypes.oneOf(['horizontal', 'vertical'])

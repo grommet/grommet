@@ -244,13 +244,15 @@ class NotificationLayer extends Component {
   }
 }
 
-const MarginLayer = () => (
+const MarginLayer = ({ margin, ...rest }) => (
   <Grommet theme={grommet}>
     <Layer
-      full
-      margin={{ left: '40px', top: '50px', right: '30px', bottom: '10px' }}
+      margin={
+        margin || { left: '40px', top: '50px', right: '30px', bottom: '10px' }
+      }
+      {...rest}
     >
-      <Box overflow="auto">
+      <Box height="small" overflow="auto">
         <Box pad="xlarge">text</Box>
         <Box pad="xlarge">text</Box>
         <Box pad="xlarge">text</Box>
@@ -411,7 +413,11 @@ storiesOf('Layer', module)
   .add('Center', () => <CenterLayer />)
   .add('Form', () => <FormLayer />)
   .add('Notification', () => <NotificationLayer />)
-  .add('Margin', () => <MarginLayer />)
+  .add('Margin', () => <MarginLayer full />)
+  .add('Margin (Center)', () => <MarginLayer margin="large" />)
+  .add('Margin Top (Center)', () => (
+    <MarginLayer margin={{ top: 'large' }} position="top" />
+  ))
   .add('Plain', () => <PlainLayer />)
   .add('Full', () => <FullLayer />)
   .add('Fixed Header, Scroll Body', () => <ScrollBodyLayer />);

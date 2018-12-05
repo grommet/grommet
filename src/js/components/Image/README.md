@@ -116,6 +116,11 @@ cover
 contain
 ```
   
+## Intrinsic element
+
+```
+img
+```
 ## Theme
   
 **image.extend**

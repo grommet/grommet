@@ -602,18 +602,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     select: {
       // background: undefined,
-      icons: {
-        // color: { dark: undefined, light: undefined },
-        down: FormDown,
-      },
-      // searchInput: undefined,
-      step: 20,
       container: {
         // extend: undefined,
       },
       control: {
         // extend: undefined,
       },
+      icons: {
+        // color: { dark: undefined, light: undefined },
+        down: FormDown,
+      },
+      // searchInput: undefined,
+      step: 20,
     },
     tab: {
       active: {

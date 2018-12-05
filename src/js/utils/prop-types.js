@@ -15,6 +15,11 @@ export const backgroundPropType = PropTypes.oneOfType([
   }),
 ]).description('Background color');
 
+export const colorPropType = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.shape({ dark: PropTypes.string, light: PropTypes.string }),
+]);
+
 const MARGIN_SIZES = [
   'xxsmall',
   'xsmall',

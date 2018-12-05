@@ -447,6 +447,7 @@ exports[`CheckBox disabled renders 1`] = `
       />
       <div
         className="c6"
+        disabled={true}
       />
     </div>
   </label>
@@ -470,6 +471,7 @@ exports[`CheckBox disabled renders 1`] = `
       <div
         checked={true}
         className="c7"
+        disabled={true}
       >
         <svg
           className="c8"

@@ -121,6 +121,10 @@ Fill color for primary, border color otherwise.
 
 ```
 string
+{
+  dark: string,
+  light: string
+}
 ```
 
 **disabled**
@@ -241,6 +245,11 @@ The DOM tag to use for the element.
 string
 ```
   
+## Intrinsic element
+
+```
+button
+```
 ## Theme
   
 **global.hover.color**

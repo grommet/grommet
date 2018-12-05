@@ -3,8 +3,16 @@ import React, { Component } from 'react';
 import getDisplayName from 'recompose/getDisplayName';
 import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-
 import { AnnounceContext } from '../contexts';
+
+let doc = () => x => x;
+
+// Do not use the documentation wrapper in production.
+if (process.env.NODE_ENV !== 'production') {
+  doc = component => require(`./${component}/doc`).doc; // eslint-disable-line
+}
+
+export const withDocs = doc;
 
 export const withFocus = WrappedComponent => {
   class FocusableComponent extends Component {
