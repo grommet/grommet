@@ -43,6 +43,13 @@ class TimeSyntaxInput extends Component {
                   regexp: /^[0-5][0-9]$|^[0-9]$/,
                   placeholder: 'mm',
                 },
+                { fixed: ' ' },
+                {
+                  length: 2,
+                  options: ['am', 'pm'],
+                  regexp: /^[ap]m$|^[AP]M$|^[aApP]$/,
+                  placeholder: 'ap',
+                },
               ]}
               value={value}
               onChange={this.onChange}
