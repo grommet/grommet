@@ -6,7 +6,8 @@ export const doc = TableFooter => {
     .usage(
       `import { TableFooter } from 'grommet';
 <TableFooter />`,
-    );
+    )
+    .intrinsicElement('tfoot');
 
   return DocumentedTableFooter;
 };

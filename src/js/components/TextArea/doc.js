@@ -9,7 +9,8 @@ export const doc = TextArea => {
     .usage(
       `import { TextArea } from 'grommet';
 <TextArea id='item' name='item' />`,
-    );
+    )
+    .intrinsicElement('textarea');
 
   DocumentedTextArea.propTypes = {
     id: PropTypes.string.description('The id attribute of the textarea.'),

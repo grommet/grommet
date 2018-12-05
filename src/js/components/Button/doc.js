@@ -11,7 +11,8 @@ export const doc = Button => {
     .usage(
       `import { Button } from 'grommet';
 <Button primary={true} label='Label' />`,
-    );
+    )
+    .intrinsicElement('button');
 
   DocumentedButton.propTypes = {
     ...genericProps,

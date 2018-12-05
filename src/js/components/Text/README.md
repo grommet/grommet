@@ -182,6 +182,11 @@ bold
 number
 ```
   
+## Intrinsic element
+
+```
+span
+```
 ## Theme
   
 **color**

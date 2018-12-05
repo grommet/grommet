@@ -9,7 +9,8 @@ export const doc = TextInput => {
     .usage(
       `import { TextInput } from 'grommet';
 <TextInput id='item' name='item' />`,
-    );
+    )
+    .intrinsicElement('input');
 
   DocumentedTextInput.propTypes = {
     dropAlign: PropTypes.shape({
@@ -131,7 +132,7 @@ export const themeDoc = {
         size: '14px',
         height: '20px',
        },
-      medium: {          
+      medium: {
         size: '18px',
         height: '24px',
       },

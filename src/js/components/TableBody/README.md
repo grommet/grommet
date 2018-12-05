@@ -11,3 +11,8 @@ import { TableBody } from 'grommet';
 ## Properties
 
   
+## Intrinsic element
+
+```
+tbody
+```

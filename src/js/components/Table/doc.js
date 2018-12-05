@@ -9,7 +9,8 @@ export const doc = Table => {
     .usage(
       `import { Table, TableHeader, TableFooter, TableBody, TableRow } from 'grommet';
 <Table />`,
-    );
+    )
+    .intrinsicElement('table');
 
   DocumentedTable.propTypes = {
     ...genericProps,

@@ -11,3 +11,8 @@ import { TableRow } from 'grommet';
 ## Properties
 
   
+## Intrinsic element
+
+```
+tr
+```

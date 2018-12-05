@@ -17,7 +17,8 @@ export const doc = Image => {
     .usage(
       `import { Image } from 'grommet';
 <Image/>`,
-    );
+    )
+    .intrinsicElement('img');
 
   DocumentedImage.propTypes = {
     ...genericProps,

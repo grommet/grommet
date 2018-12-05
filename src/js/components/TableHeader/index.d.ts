@@ -4,6 +4,6 @@ export interface TableHeaderProps {
   
 }
 
-declare const TableHeader: React.ComponentType<TableHeaderProps>;
+declare const TableHeader: React.ComponentType<TableHeaderProps & JSX.IntrinsicElements['thead']>;
 
 export { TableHeader };
