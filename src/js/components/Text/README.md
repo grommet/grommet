@@ -113,6 +113,10 @@ A color identifier to use for the text color.
 
 ```
 string
+{
+  dark: string,
+  light: string
+}
 ```
 
 **size**
@@ -178,6 +182,11 @@ bold
 number
 ```
   
+## Intrinsic element
+
+```
+span
+```
 ## Theme
   
 **color**

@@ -17,6 +17,10 @@ What color to use to indicate the selection.
 
 ```
 string
+{
+  dark: string,
+  light: string
+}
 ```
 
 **direction**

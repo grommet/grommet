@@ -334,6 +334,10 @@ Label color and icon color, if not specified on the icon.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **href**
@@ -402,6 +406,11 @@ The DOM tag to use for the element.
 string
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+a
+\`\`\`
 ## Theme
   
 **global.focus.border.color**
@@ -1340,6 +1349,10 @@ Fill color for primary, border color otherwise.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **disabled**
@@ -1460,6 +1473,11 @@ The DOM tag to use for the element.
 string
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+button
+\`\`\`
 ## Theme
   
 **global.hover.color**
@@ -3020,7 +3038,12 @@ Required. Array of objects describing the connections.
     center
     vertical
     horizontal,
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   fromTarget: 
     string
     object,
@@ -4069,6 +4092,10 @@ A color identifier to use for the text color.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **level**
@@ -4253,6 +4280,11 @@ cover
 contain
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+img
+\`\`\`
 ## Theme
   
 **image.extend**
@@ -5157,6 +5189,10 @@ A color identifier to use for the text color.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **responsive**
@@ -5190,6 +5226,11 @@ center
 end
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+p
+\`\`\`
 ## Theme
   
 **global.colors.text**
@@ -5235,7 +5276,7 @@ Defaults to
         height: '20px',
         maxWidth: '336px',
        },
-      medium: {          
+      medium: {
         size: '18px',
         height: '24px',
         maxWidth: '432px',
@@ -5435,6 +5476,10 @@ What color to use to indicate the selection.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **direction**
@@ -6446,7 +6491,12 @@ One line description.
 \`\`\`
 string
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+table
+\`\`\`",
   "TableBody": "## TableBody
 The body of a table.
 
@@ -6459,7 +6509,12 @@ import { TableBody } from 'grommet';
 
 ## Properties
 
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+tbody
+\`\`\`",
   "TableCell": "## TableCell
 A cell of data in a table.
 
@@ -6521,7 +6576,12 @@ top
 middle
 bottom
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+td
+\`\`\`",
   "TableFooter": "## TableFooter
 The footer of a table.
 
@@ -6534,7 +6594,12 @@ import { TableFooter } from 'grommet';
 
 ## Properties
 
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+tfoot
+\`\`\`",
   "TableHeader": "## TableHeader
 The header of a table.
 
@@ -6547,7 +6612,12 @@ import { TableHeader } from 'grommet';
 
 ## Properties
 
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+thead
+\`\`\`",
   "TableRow": "## TableRow
 A row of cells in a table.
 
@@ -6560,7 +6630,12 @@ import { TableRow } from 'grommet';
 
 ## Properties
 
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+tr
+\`\`\`",
   "Tabs": "## Tabs
 A tabular view component.
 
@@ -6847,6 +6922,10 @@ A color identifier to use for the text color.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **size**
@@ -6912,6 +6991,11 @@ bold
 number
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+span
+\`\`\`
 ## Theme
   
 **color**
@@ -7067,6 +7151,11 @@ What text to put in the textarea.
 string
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+textarea
+\`\`\`
 ## Theme
   
 **global.colors.placeholder**
@@ -7304,6 +7393,11 @@ What text to put in the input.
 string
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+input
+\`\`\`
 ## Theme
   
 **global.colors.placeholder**
@@ -7372,7 +7466,7 @@ Defaults to
         size: '14px',
         height: '20px',
        },
-      medium: {          
+      medium: {
         size: '18px',
         height: '24px',
       },
@@ -7664,10 +7758,14 @@ string
 
 **color**
 
-Default color
+Color when hovering over places while selecting.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **continents**
@@ -7676,7 +7774,12 @@ Continent details.
 
 \`\`\`
 [{
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   name: 
     Africa
     Asia
@@ -7704,7 +7807,12 @@ Place details.
 
 \`\`\`
 [{
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   name: string,
   location: [number],
   onClick: function,
@@ -7718,6 +7826,10 @@ Color when hovering over places while selecting.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
   
 ## Theme

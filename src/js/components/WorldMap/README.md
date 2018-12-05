@@ -109,10 +109,14 @@ string
 
 **color**
 
-Default color
+Color when hovering over places while selecting.
 
 ```
 string
+{
+  dark: string,
+  light: string
+}
 ```
 
 **continents**
@@ -121,7 +125,12 @@ Continent details.
 
 ```
 [{
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   name: 
     Africa
     Asia
@@ -149,7 +158,12 @@ Place details.
 
 ```
 [{
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   name: string,
   location: [number],
   onClick: function,
@@ -163,6 +177,10 @@ Color when hovering over places while selecting.
 
 ```
 string
+{
+  dark: string,
+  light: string
+}
 ```
   
 ## Theme

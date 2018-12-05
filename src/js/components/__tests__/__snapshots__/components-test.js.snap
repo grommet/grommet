@@ -37,6 +37,7 @@ node",
     "details": "We have a separate component from the browser
 base so we can style it. You can either set the icon and/or label properties
 or just use children.",
+    "intrinsicElement": "a",
     "name": "Anchor",
     "properties": Array [
       Object {
@@ -124,8 +125,12 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "Label color and icon color, if not specified on the icon.",
-        "format": "string",
+        "description": "Color when hovering over places while selecting.",
+        "format": "string
+{
+  dark: string,
+  light: string
+}",
         "name": "color",
       },
       Object {
@@ -681,6 +686,7 @@ string",
       },
     ],
     "description": "A button. We have a separate component from the browser base so we can style it.",
+    "intrinsicElement": "button",
     "name": "Button",
     "properties": Array [
       Object {
@@ -774,8 +780,12 @@ string",
         "name": "active",
       },
       Object {
-        "description": "Fill color for primary, border color otherwise.",
-        "format": "string",
+        "description": "Color when hovering over places while selecting.",
+        "format": "string
+{
+  dark: string,
+  light: string
+}",
         "name": "color",
       },
       Object {
@@ -1563,7 +1573,12 @@ vertical",
     center
     vertical
     horizontal,
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   fromTarget: 
     string
     object,
@@ -1825,6 +1840,7 @@ node",
       },
     ],
     "description": "An image.",
+    "intrinsicElement": "img",
     "name": "Image",
     "properties": Array [
       Object {
@@ -2257,8 +2273,12 @@ string",
     "name": "RangeSelector",
     "properties": Array [
       Object {
-        "description": "What color to use to indicate the selection.",
-        "format": "string",
+        "description": "Color when hovering over places while selecting.",
+        "format": "string
+{
+  dark: string,
+  light: string
+}",
         "name": "color",
       },
       Object {
@@ -2744,6 +2764,7 @@ node",
   "TableBody": [Function],
   "TableCell": Object {
     "description": "A cell of data in a table.",
+    "intrinsicElement": "td",
     "name": "TableCell",
     "properties": Array [
       Object {
@@ -2958,6 +2979,7 @@ currently active tab changes.",
       },
     ],
     "description": "A textarea.",
+    "intrinsicElement": "textarea",
     "name": "TextArea",
     "properties": Array [
       Object {
@@ -3020,6 +3042,7 @@ Only use this when the containing context provides sufficient affordance.",
       },
     ],
     "description": "A text input field with optional suggestions.",
+    "intrinsicElement": "input",
     "name": "TextInput",
     "properties": Array [
       Object {
@@ -3379,14 +3402,23 @@ string",
         "name": "margin",
       },
       Object {
-        "description": "Default color",
-        "format": "string",
+        "description": "Color when hovering over places while selecting.",
+        "format": "string
+{
+  dark: string,
+  light: string
+}",
         "name": "color",
       },
       Object {
         "description": "Continent details.",
         "format": "[{
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   name: 
     Africa
     Asia
@@ -3408,7 +3440,12 @@ string",
       Object {
         "description": "Place details.",
         "format": "[{
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   name: string,
   location: [number],
   onClick: function,
@@ -3418,7 +3455,11 @@ string",
       },
       Object {
         "description": "Color when hovering over places while selecting.",
-        "format": "string",
+        "format": "string
+{
+  dark: string,
+  light: string
+}",
         "name": "hoverColor",
       },
     ],

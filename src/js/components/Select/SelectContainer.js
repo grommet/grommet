@@ -100,13 +100,15 @@ class SelectContainer extends Component {
       }
 
       // scroll to active option if it is below the fold
-      if (activeIndex >= 0) {
+      if (activeIndex >= 0 && selectNode) {
         const optionNode = this.optionsRef[activeIndex];
         const { bottom: containerBottom } = selectNode.getBoundingClientRect();
-        const { bottom: optionTop } = optionNode.getBoundingClientRect();
+        if (optionNode) {
+          const { bottom: optionTop } = optionNode.getBoundingClientRect();
 
-        if (containerBottom < optionTop) {
-          optionNode.scrollIntoView();
+          if (containerBottom < optionTop) {
+            optionNode.scrollIntoView();
+          }
         }
       }
     }, 0);

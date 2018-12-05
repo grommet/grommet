@@ -39,7 +39,7 @@ export interface AnchorProps {
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
-  color?: string;
+  color?: string | {dark?: string,light?: string};
   href?: string;
   icon?: JSX.Element;
   label?: React.ReactNode;
@@ -49,7 +49,7 @@ export interface AnchorProps {
   as?: string;
 }
 
-declare const Anchor: React.ComponentType<AnchorProps>;
+declare const Anchor: React.ComponentType<AnchorProps & JSX.IntrinsicElements['a']>;
 
 export { Anchor };
 ",
@@ -95,7 +95,7 @@ export interface ButtonProps {
   gridArea?: string;
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
   active?: boolean;
-  color?: string;
+  color?: string | {dark?: string,light?: string};
   disabled?: boolean;
   fill?: boolean;
   focusIndicator?: boolean;
@@ -111,7 +111,7 @@ export interface ButtonProps {
   as?: string;
 }
 
-declare const Button: React.ComponentType<ButtonProps>;
+declare const Button: React.ComponentType<ButtonProps & JSX.IntrinsicElements['button']>;
 
 export { Button };
 ",
@@ -253,7 +253,7 @@ export { DataTable };
   "Diagram": "import * as React from \\"react\\";
 
 export interface DiagramProps {
-  connections: {anchor?: \\"center\\" | \\"vertical\\" | \\"horizontal\\",color?: string,fromTarget: string | object,label?: string,offset?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,thickness?: \\"hair\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,toTarget: string | object,type?: \\"direct\\" | \\"curved\\" | \\"rectilinear\\"}[];
+  connections: {anchor?: \\"center\\" | \\"vertical\\" | \\"horizontal\\",color?: string | {dark?: string,light?: string},fromTarget: string | object,label?: string,offset?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,thickness?: \\"hair\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,toTarget: string | object,type?: \\"direct\\" | \\"curved\\" | \\"rectilinear\\"}[];
 }
 
 declare const Diagram: React.ComponentType<DiagramProps>;
@@ -372,7 +372,7 @@ export interface HeadingProps {
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
-  color?: string;
+  color?: string | {dark?: string,light?: string};
   level?: \\"1\\" | \\"2\\" | \\"3\\" | \\"4\\" | \\"5\\" | \\"6\\" | \\"1\\" | \\"2\\" | \\"3\\" | \\"4\\" | \\"5\\" | \\"6\\";
   responsive?: boolean;
   size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
@@ -394,7 +394,7 @@ export interface ImageProps {
   fit?: \\"cover\\" | \\"contain\\";
 }
 
-declare const Image: React.ComponentType<ImageProps>;
+declare const Image: React.ComponentType<ImageProps & JSX.IntrinsicElements['img']>;
 
 export { Image };
 ",
@@ -511,13 +511,13 @@ export interface ParagraphProps {
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
-  color?: string;
+  color?: string | {dark?: string,light?: string};
   responsive?: boolean;
   size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xxlarge\\" | string;
   textAlign?: \\"start\\" | \\"center\\" | \\"end\\";
 }
 
-declare const Paragraph: React.ComponentType<ParagraphProps>;
+declare const Paragraph: React.ComponentType<ParagraphProps & JSX.IntrinsicElements['p']>;
 
 export { Paragraph };
 ",
@@ -555,7 +555,7 @@ export { RangeInput };
   "RangeSelector": "import * as React from \\"react\\";
 
 export interface RangeSelectorProps {
-  color?: string;
+  color?: string | {dark?: string,light?: string};
   direction?: \\"horizontal\\" | \\"vertical\\";
   invert?: boolean;
   max?: number;
@@ -694,7 +694,7 @@ export interface TableProps {
   caption?: string;
 }
 
-declare const Table: React.ComponentType<TableProps>;
+declare const Table: React.ComponentType<TableProps & JSX.IntrinsicElements['table']>;
 
 export { Table };
 ",
@@ -704,7 +704,7 @@ export interface TableBodyProps {
   
 }
 
-declare const TableBody: React.ComponentType<TableBodyProps>;
+declare const TableBody: React.ComponentType<TableBodyProps & JSX.IntrinsicElements['tbody']>;
 
 export { TableBody };
 ",
@@ -717,7 +717,7 @@ export interface TableCellProps {
   verticalAlign?: \\"top\\" | \\"middle\\" | \\"bottom\\";
 }
 
-declare const TableCell: React.ComponentType<TableCellProps>;
+declare const TableCell: React.ComponentType<TableCellProps & JSX.IntrinsicElements['td']>;
 
 export { TableCell };
 ",
@@ -727,7 +727,7 @@ export interface TableFooterProps {
   
 }
 
-declare const TableFooter: React.ComponentType<TableFooterProps>;
+declare const TableFooter: React.ComponentType<TableFooterProps & JSX.IntrinsicElements['tfoot']>;
 
 export { TableFooter };
 ",
@@ -737,7 +737,7 @@ export interface TableHeaderProps {
   
 }
 
-declare const TableHeader: React.ComponentType<TableHeaderProps>;
+declare const TableHeader: React.ComponentType<TableHeaderProps & JSX.IntrinsicElements['thead']>;
 
 export { TableHeader };
 ",
@@ -747,7 +747,7 @@ export interface TableRowProps {
   
 }
 
-declare const TableRow: React.ComponentType<TableRowProps>;
+declare const TableRow: React.ComponentType<TableRowProps & JSX.IntrinsicElements['tr']>;
 
 export { TableRow };
 ",
@@ -777,7 +777,7 @@ export interface TextProps {
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
-  color?: string;
+  color?: string | {dark?: string,light?: string};
   size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | \\"xxlarge\\" | string;
   tag?: string;
   as?: string;
@@ -786,7 +786,7 @@ export interface TextProps {
   weight?: \\"normal\\" | \\"bold\\" | number;
 }
 
-declare const Text: React.ComponentType<TextProps>;
+declare const Text: React.ComponentType<TextProps & JSX.IntrinsicElements['span']>;
 
 export { Text };
 ",
@@ -803,7 +803,7 @@ export interface TextAreaProps {
   value?: string;
 }
 
-declare const TextArea: React.ComponentType<TextAreaProps>;
+declare const TextArea: React.ComponentType<TextAreaProps & JSX.IntrinsicElements['textarea']>;
 
 export { TextArea };
 ",
@@ -827,7 +827,7 @@ export interface TextInputProps {
   value?: string;
 }
 
-declare const TextInput: React.ComponentType<TextInputProps>;
+declare const TextInput: React.ComponentType<TextInputProps & JSX.IntrinsicElements['input']>;
 
 export { TextInput };
 ",
@@ -856,11 +856,11 @@ export interface WorldMapProps {
   alignSelf?: \\"start\\" | \\"center\\" | \\"end\\" | \\"stretch\\";
   gridArea?: string;
   margin?: \\"none\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | {bottom?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,horizontal?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,left?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,right?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,top?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,vertical?: \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string} | string;
-  color?: string;
-  continents?: {color?: string,name: \\"Africa\\" | \\"Asia\\" | \\"Australia\\" | \\"Europe\\" | \\"North America\\" | \\"South America\\",onClick?: (...args: any[]) => any,onHover?: (...args: any[]) => any}[];
+  color?: string | {dark?: string,light?: string};
+  continents?: {color?: string | {dark?: string,light?: string},name: \\"Africa\\" | \\"Asia\\" | \\"Australia\\" | \\"Europe\\" | \\"North America\\" | \\"South America\\",onClick?: (...args: any[]) => any,onHover?: (...args: any[]) => any}[];
   onSelectPlace?: (...args: any[]) => any;
-  places?: {color?: string,name?: string,location: number[],onClick?: (...args: any[]) => any,onHover?: (...args: any[]) => any}[];
-  hoverColor?: string;
+  places?: {color?: string | {dark?: string,light?: string},name?: string,location: number[],onClick?: (...args: any[]) => any,onHover?: (...args: any[]) => any}[];
+  hoverColor?: string | {dark?: string,light?: string};
 }
 
 declare const WorldMap: React.ComponentType<WorldMapProps>;

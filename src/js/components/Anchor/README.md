@@ -117,6 +117,10 @@ Label color and icon color, if not specified on the icon.
 
 ```
 string
+{
+  dark: string,
+  light: string
+}
 ```
 
 **href**
@@ -185,6 +189,11 @@ The DOM tag to use for the element.
 string
 ```
   
+## Intrinsic element
+
+```
+a
+```
 ## Theme
   
 **global.focus.border.color**

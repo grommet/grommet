@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge, genericProps } from '../../utils';
+import { colorPropType, getAvailableAtBadge, genericProps } from '../../utils';
 
 export const doc = Paragraph => {
   const DocumentedParagraph = describe(Paragraph)
@@ -9,11 +9,12 @@ export const doc = Paragraph => {
     .usage(
       `import { Paragraph } from 'grommet';
 <Paragraph />`,
-    );
+    )
+    .intrinsicElement('p');
 
   DocumentedParagraph.propTypes = {
     ...genericProps,
-    color: PropTypes.string.description(
+    color: colorPropType.description(
       'A color identifier to use for the text color.',
     ),
     responsive: PropTypes.bool
@@ -63,7 +64,7 @@ export const themeDoc = {
         height: '20px',
         maxWidth: '336px',
        },
-      medium: {          
+      medium: {
         size: '18px',
         height: '24px',
         maxWidth: '432px',
