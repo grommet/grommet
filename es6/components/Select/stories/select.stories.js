@@ -322,7 +322,7 @@ function (_Component4) {
 
         _this8.setState({
           options: objectOptions.filter(function (o) {
-            return exp.test(o.val);
+            return exp.test(o.lab);
           })
         });
       }
