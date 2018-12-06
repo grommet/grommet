@@ -4100,7 +4100,7 @@ exports[`Accordion set on hover 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 ksqrCh"
+              class="StyledHeading-sc-1rdh4aw-0 iOLzha"
             >
               Panel 1
             </h4>
@@ -4222,7 +4222,7 @@ exports[`Accordion set on hover 3`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 ksqrCh"
+              class="StyledHeading-sc-1rdh4aw-0 iOLzha"
             >
               Panel 1
             </h4>
@@ -4277,7 +4277,7 @@ exports[`Accordion set on hover 3`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 ksqrCh"
+              class="StyledHeading-sc-1rdh4aw-0 iOLzha"
             >
               Panel 2
             </h4>
@@ -4399,7 +4399,7 @@ exports[`Accordion set on hover 4`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 ksqrCh"
+              class="StyledHeading-sc-1rdh4aw-0 iOLzha"
             >
               Panel 2
             </h4>

@@ -1,4 +1,4 @@
-  import { rgba } from 'polished';
+import { rgba } from 'polished';
 import { css } from 'styled-components';
 
 import {
@@ -31,18 +31,8 @@ const statusColors = {
   unknown: '#CCCCCC',
   disabled: '#CCCCCC',
 };
-const darkColors = [
-  '#333333',
-  '#555555',
-  '#777777',
-  '#999999',
-];
-const lightColors = [
-  '#F8F8F8',
-  '#F2F2F2',
-  '#EDEDED',
-  '#DADADA',
-];
+const darkColors = ['#333333', '#555555', '#777777', '#999999'];
+const lightColors = ['#F8F8F8', '#F2F2F2', '#EDEDED', '#DADADA'];
 const focusColor = accentColors[0];
 
 const colors = {
@@ -381,8 +371,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         minute: {
           color: {
-            dark: 'light-5',
-            light: 'dark-5',
+            dark: 'light-4',
+            light: 'dark-3',
           },
           width: `${baseSpacing / 6}px`,
           size: `${Math.round(baseSpacing / 2)}px`,
@@ -470,8 +460,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       help: {
         color: {
-          dark: 'dark-5',
-          light: 'dark-5',
+          dark: 'dark-3',
+          light: 'dark-3',
         },
       },
       label: {},

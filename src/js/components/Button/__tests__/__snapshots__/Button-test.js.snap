@@ -730,8 +730,8 @@ exports[`Button hoverIndicator color renders 1`] = `
 }
 
 .c1:hover {
-  background: dark-5;
-  color: #444444;
+  background: #777777;
+  color: #f8f8f8;
   color: #000000;
 }
 

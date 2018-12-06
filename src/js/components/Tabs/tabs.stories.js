@@ -388,7 +388,7 @@ const customTheme = deepMerge(grommet, {
     `,
   },
   tabs: {
-    background: 'dark-4',
+    background: 'dark-3',
     header: {
       background: 'dark-2',
       extend: ({ theme }) => css`

@@ -64,7 +64,7 @@ class CenterLayer extends Component {
                 justify="end"
                 pad={{ top: 'medium', bottom: 'small' }}
               >
-                <Button label="Open 2" onClick={this.onOpen2} color="dark-6" />
+                <Button label="Open 2" onClick={this.onOpen2} color="dark-3" />
                 <Button
                   label={
                     <Text color="white">
@@ -99,7 +99,7 @@ class CenterLayer extends Component {
                 justify="end"
                 pad={{ top: 'medium', bottom: 'small' }}
               >
-                <Button label="Close" onClick={this.onClose2} color="dark-6" />
+                <Button label="Close" onClick={this.onClose2} color="dark-3" />
               </Box>
             </Box>
           </Layer>

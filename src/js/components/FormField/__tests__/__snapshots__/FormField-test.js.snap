@@ -371,7 +371,7 @@ exports[`renders help 1`] = `
 .c3 {
   font-size: 18px;
   line-height: 24px;
-  color: dark-5;
+  color: #777777;
 }
 
 @media only screen and (max-width:768px) {
