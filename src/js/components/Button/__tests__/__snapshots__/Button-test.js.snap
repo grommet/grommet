@@ -38,7 +38,7 @@ exports[`Button color renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #FD6FFF;
+  border: 2px solid #6FFFB0;
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
@@ -49,7 +49,7 @@ exports[`Button color renders 1`] = `
 }
 
 .c1:hover {
-  box-shadow: 0px 0px 0px 2px #FD6FFF;
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
 .c3 {
@@ -64,13 +64,13 @@ exports[`Button color renders 1`] = `
   background: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #FD6FFF;
+  border: 2px solid #6FFFB0;
   border-radius: 18px;
   color: #444444;
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  background: #FD6FFF;
+  background: #6FFFB0;
   color: #444444;
   border-radius: 18px;
   -webkit-transition: 0.1s ease-in-out;
@@ -78,7 +78,7 @@ exports[`Button color renders 1`] = `
 }
 
 .c3:hover {
-  box-shadow: 0px 0px 0px 2px #FD6FFF;
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
 .c4 {
@@ -311,8 +311,8 @@ exports[`Button focus renders 1`] = `
   padding: 4px 22px;
   font-size: 18px;
   line-height: 24px;
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
+  border-color: #6FFFB0;
+  box-shadow: 0 0 2px 2px #6FFFB0;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
 }
@@ -324,7 +324,7 @@ exports[`Button focus renders 1`] = `
 .c1 > polygon,
 .c1 > polyline,
 .c1 > rect {
-  outline: #FD6FFF solid 2px;
+  outline: #6FFFB0 solid 2px;
 }
 
 .c1::-moz-focus-inner {
@@ -730,8 +730,8 @@ exports[`Button hoverIndicator color renders 1`] = `
 }
 
 .c1:hover {
-  background: #777777;
-  color: #f8f8f8;
+  background: dark-5;
+  color: #444444;
   color: #000000;
 }
 

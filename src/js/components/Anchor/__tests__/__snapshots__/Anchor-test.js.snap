@@ -60,8 +60,8 @@ exports[`Anchor focus renders 1`] = `
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
+  border-color: #6FFFB0;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c1:hover {
@@ -76,7 +76,7 @@ exports[`Anchor focus renders 1`] = `
 .c1 > polygon,
 .c1 > polyline,
 .c1 > rect {
-  outline: #FD6FFF solid 2px;
+  outline: #6FFFB0 solid 2px;
 }
 
 .c1::-moz-focus-inner {
