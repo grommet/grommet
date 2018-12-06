@@ -95,7 +95,6 @@ class CheckBox extends Component {
           color: borderColor,
         }}
         round={theme.checkBox.check.radius}
-        focus={focus}
         checked={checked}
         disabled={disabled}
         toggle={toggle}
@@ -161,7 +160,6 @@ class CheckBox extends Component {
         direction="row"
         align="center"
         as={props => <Box tag="label" {...props} />}
-        reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
         gap={theme.checkBox.gap || 'small'}
         checked={checked}

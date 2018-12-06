@@ -4,6 +4,7 @@ import { compose } from 'recompose';
 import { withTheme } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
+import { keepKeys } from '../../utils';
 
 import { Box } from '../Box';
 import { TableRow } from '../TableRow';
@@ -12,13 +13,19 @@ import { TableCell } from '../TableCell';
 
 import { Cell } from './Cell';
 import { StyledDataTableFooter } from './StyledDataTable';
+import { boxProps } from '../Box/doc';
 
 const Footer = ({ columns, footerValues, groups, theme, ...rest }) => (
   <StyledDataTableFooter as={TableFooter} {...rest}>
     <TableRow>
       {groups && (
         <TableCell size="xxsmall" plain verticalAlign="top">
-          <Box {...{ ...theme.table.footer, ...theme.dataTable.footer }} />
+          <Box
+            {...keepKeys(
+              { ...theme.table.footer, ...theme.dataTable.footer },
+              boxProps,
+            )}
+          />
         </TableCell>
       )}
       {columns.map(column => (

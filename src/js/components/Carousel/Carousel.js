@@ -10,7 +10,6 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
-import { withFocus } from '../hocs';
 
 class Carousel extends Component {
   state = { activeIndex: 0 };
@@ -78,7 +77,7 @@ class Carousel extends Component {
   };
 
   render() {
-    const { children, fill, focus, theme, ...rest } = this.props;
+    const { children, fill, theme, ...rest } = this.props;
     const { activeIndex, priorActiveIndex } = this.state;
 
     const lastIndex = Children.count(children) - 1;
@@ -133,13 +132,7 @@ class Carousel extends Component {
       <Keyboard onLeft={onLeft} onRight={onRight}>
         <Stack guidingChild={activeIndex} fill={fill} {...rest}>
           {wrappedChildren}
-          <Box
-            tabIndex="0"
-            focus={focus}
-            fill
-            direction="row"
-            justify="between"
-          >
+          <Box tabIndex="0" fill direction="row" justify="between">
             <Box fill="vertical">
               <Button
                 fill
@@ -183,9 +176,6 @@ let CarouselDoc;
 if (process.env.NODE_ENV !== 'production') {
   CarouselDoc = require('./doc').doc(Carousel); // eslint-disable-line global-require
 }
-const CarouselWrapper = compose(
-  withFocus,
-  withTheme,
-)(CarouselDoc || Carousel);
+const CarouselWrapper = compose(withTheme)(CarouselDoc || Carousel);
 
 export { CarouselWrapper as Carousel };

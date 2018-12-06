@@ -9,10 +9,17 @@ import {
   findVisibleParent,
   parseMetricToNum,
 } from '../../utils';
+
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 
 import { StyledDrop } from './StyledDrop';
+
+const DropBox = React.forwardRef(
+  ({ alignProp, plain, restrictFocus, stretch, ...rest }, ref) => (
+    <Box ref={ref} {...rest} />
+  ),
+);
 
 // using react synthetic event to be able to stop propagation that
 // would otherwise close the layer on ESC.
@@ -251,11 +258,12 @@ class DropContainer extends Component {
       plain,
       ...rest
     } = this.props;
+    delete rest.dropTarget;
     const theme = this.context || defaultTheme;
 
     let content = (
       <StyledDrop
-        as={Box}
+        as={DropBox}
         plain={plain}
         elevation={
           !plain

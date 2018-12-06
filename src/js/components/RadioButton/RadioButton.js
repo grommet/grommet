@@ -42,7 +42,7 @@ class RadioButton extends Component {
 
     return (
       <StyledRadioButtonContainer
-        as={props => <Box as="label" {...props} />}
+        as={props => <Box tag="label" {...props} />}
         direction="row"
         align="center"
         {...removeUndefined({ htmlFor: id, disabled })}

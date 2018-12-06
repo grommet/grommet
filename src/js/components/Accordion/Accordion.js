@@ -64,6 +64,7 @@ class Accordion extends Component {
     const { animate, children, messages, ...rest } = this.props;
     const { activeIndexes } = this.state;
 
+    delete rest.activeIndex;
     delete rest.onActive;
 
     return (

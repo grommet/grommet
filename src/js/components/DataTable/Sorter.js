@@ -6,6 +6,8 @@ import { defaultProps } from '../../default-props';
 
 import { Button } from '../Button';
 import { Box } from '../Box';
+import { keepKeys } from '../../utils';
+import { boxProps } from '../Box/doc';
 
 const SorterButton = styled(Button)`
   flex-shrink: 1;
@@ -30,7 +32,7 @@ const Sorter = ({
   }
   let content = (
     <Box
-      {...themeProps}
+      {...keepKeys(themeProps, boxProps)}
       flex="shrink"
       direction="row"
       justify={align}

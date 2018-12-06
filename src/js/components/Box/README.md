@@ -122,7 +122,7 @@ stretch
 **alignContent**
 
 How to align the contents when there is extra space in
-        the cross axis. Defaults to `stretch`.
+      the cross axis. Defaults to `stretch`.
 
 ```
 start
@@ -136,8 +136,8 @@ stretch
 **animation**
 
 Animation effect(s) to use. 'duration' and 'delay' should
-        be in milliseconds. 'jiggle' and 'pulse' types are intended for
-        small elements, like icons.
+      be in milliseconds. 'jiggle' and 'pulse' types are intended for
+      small elements, like icons.
 
 ```
 fadeIn
@@ -209,8 +209,8 @@ zoomOut
 **background**
 
 Either a color identifier to use for the background
-        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
-        is not needed if color is provided.
+      color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
+      is not needed if color is provided.
 
 ```
 string
@@ -303,7 +303,7 @@ row-responsive
 **elevation**
 
 Elevated height above the underlying context, indicated
-        via a drop shadow. Defaults to `none`.
+      via a drop shadow. Defaults to `none`.
 
 ```
 none
@@ -338,8 +338,8 @@ boolean
 **gap**
 
 The amount of spacing between child elements. This
-        should not be used in conjunction with 'wrap' as the gap elements
-        will not wrap gracefully.
+      should not be used in conjunction with 'wrap' as the gap elements
+      will not wrap gracefully.
 
 ```
 xsmall
@@ -401,8 +401,8 @@ string
 **pad**
 
 The amount of padding around the box contents. An
-        object can be specified to distinguish horizontal padding, vertical
-        padding, and padding on a particular side of the box Defaults to `none`.
+      object can be specified to distinguish horizontal padding, vertical
+      padding, and padding on a particular side of the box Defaults to `none`.
 
 ```
 none
@@ -468,7 +468,7 @@ string
 **responsive**
 
 Whether margin, pad, and border
-      sizes should be scaled for mobile environments. Defaults to `true`.
+    sizes should be scaled for mobile environments. Defaults to `true`.
 
 ```
 boolean
@@ -509,15 +509,6 @@ string
 
 **tag**
 
-The DOM tag to use for the element. NOTE: This is deprecated in favor
-of indicating the DOM tag via the 'as' property.
-
-```
-string
-```
-
-**as**
-
 The DOM tag to use for the element. Defaults to `div`.
 
 ```
@@ -540,7 +531,7 @@ string
 **wrap**
 
 Whether children can wrap if they
-      can't all fit.
+    can't all fit.
 
 ```
 boolean

@@ -8,7 +8,8 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { TableCell } from '../TableCell';
-import { normalizeColor } from '../../utils';
+import { normalizeColor, keepKeys } from '../../utils';
+import { boxProps } from '../Box/doc';
 
 const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
   const ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
@@ -23,8 +24,11 @@ const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
           onClick={onToggle}
         >
           <Box
-            {...{ ...theme.table[context], ...theme.dataTable[context] }}
-            {...rest}
+            {...keepKeys(
+              { ...theme.table[context], ...theme.dataTable[context] },
+              boxProps,
+            )}
+            {...keepKeys(rest, boxProps)}
             align="center"
             pad="xsmall"
           >

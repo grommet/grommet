@@ -108,6 +108,13 @@ exports[`Anchor icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -127,13 +134,6 @@ exports[`Anchor icon label renders 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   padding: 0px;
-}
-
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 12px;
 }
 
 .c1 {
@@ -328,6 +328,13 @@ exports[`Anchor reverse icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -347,13 +354,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   padding: 0px;
-}
-
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 12px;
 }
 
 .c1 {

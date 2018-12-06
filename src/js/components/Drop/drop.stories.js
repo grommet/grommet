@@ -15,7 +15,6 @@ class SimpleDrop extends Component {
   }
 
   render() {
-    console.log(this.targetRef.current);
     return (
       <Grommet theme={grommet} full>
         <Box fill align="center" justify="center">

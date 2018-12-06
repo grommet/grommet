@@ -75,6 +75,8 @@ const Element = ({ number, run, sep, size }) => {
 
 export const Digital = props => {
   const { elements, precision, run, size, ...rest } = props;
+  delete rest.hourLimit;
+  delete rest.time;
   let seconds;
   if (precision === 'seconds') {
     seconds = <Element number={elements.seconds} run={run} size={size} sep />;

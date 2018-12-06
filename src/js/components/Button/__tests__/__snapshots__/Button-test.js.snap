@@ -810,6 +810,13 @@ exports[`Button href renders 1`] = `
 `;
 
 exports[`Button icon label renders 1`] = `
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -833,13 +840,6 @@ exports[`Button icon label renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   padding: 0px;
-}
-
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 12px;
 }
 
 .c1 {
@@ -1103,6 +1103,13 @@ exports[`Button renders 1`] = `
 `;
 
 exports[`Button reverse icon label renders 1`] = `
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1126,13 +1133,6 @@ exports[`Button reverse icon label renders 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   padding: 0px;
-}
-
-.c3 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 12px;
 }
 
 .c1 {

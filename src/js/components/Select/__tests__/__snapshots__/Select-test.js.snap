@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select basic 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -12,55 +12,30 @@ exports[`Select basic 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0px;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -82,7 +57,7 @@ exports[`Select basic 1`] = `
   padding: 0px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -121,7 +96,7 @@ exports[`Select basic 1`] = `
   text-align: inherit;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   border: none;
@@ -138,37 +113,57 @@ exports[`Select basic 1`] = `
   border: none;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c4 {
   cursor: pointer;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -186,26 +181,14 @@ exports[`Select basic 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     padding: 0px;
   }
 }
@@ -221,17 +204,17 @@ exports[`Select basic 1`] = `
   type="button"
 >
   <div
-    className="c1 c2"
+    className="c1"
   >
     <div
-      className="c3"
+      className="c2"
     >
       <div
-        className="c4"
+        className="c3"
       >
         <input
           autoComplete="off"
-          className="c5 c6"
+          className="c4 c5"
           id="test-select__input"
           onBlur={[Function]}
           onChange={[Function]}
@@ -245,7 +228,7 @@ exports[`Select basic 1`] = `
       </div>
     </div>
     <div
-      className="c7"
+      className="c6"
       style={
         Object {
           "minWidth": "auto",
@@ -254,7 +237,7 @@ exports[`Select basic 1`] = `
     >
       <svg
         aria-label="FormDown"
-        className="c8"
+        className="c7"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -270,7 +253,7 @@ exports[`Select basic 1`] = `
 `;
 
 exports[`Select complex options and children 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -281,55 +264,30 @@ exports[`Select complex options and children 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0px;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -351,7 +309,7 @@ exports[`Select complex options and children 1`] = `
   padding: 0px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -390,7 +348,7 @@ exports[`Select complex options and children 1`] = `
   text-align: inherit;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   border: none;
@@ -407,37 +365,57 @@ exports[`Select complex options and children 1`] = `
   border: none;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c4 {
   cursor: pointer;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -455,26 +433,14 @@ exports[`Select complex options and children 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     padding: 0px;
   }
 }
@@ -486,17 +452,17 @@ exports[`Select complex options and children 1`] = `
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c1"
   >
     <div
-      class="c3"
+      class="c2"
     >
       <div
-        class="c4"
+        class="c3"
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c4 c5"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -507,12 +473,12 @@ exports[`Select complex options and children 1`] = `
       </div>
     </div>
     <div
-      class="c7"
+      class="c6"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="c8"
+        class="c7"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -535,10 +501,10 @@ exports[`Select complex options and children 2`] = `
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hFvoei StyledBox-sc-13pk1d4-0 erazuK"
+    class="Box__StyledBox-sc-1gl0s0v-0 Select__StyledSelectBox-sc-17idtfo-1 dKVFZS"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 XINUX"
+      class="Box__StyledBox-sc-1gl0s0v-0 bksDlG"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -556,7 +522,7 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 eLQtUu"
+      class="Box__StyledBox-sc-1gl0s0v-0 bXYCwZ"
       style="min-width: auto;"
     >
       <svg
@@ -595,45 +561,7 @@ exports[`Select complex options and children 3`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  padding: 0px;
-  overflow: auto;
-}
-
-.c6 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -653,7 +581,7 @@ exports[`Select complex options and children 3`] = `
   padding: 0px;
 }
 
-.c8 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -674,7 +602,7 @@ exports[`Select complex options and children 3`] = `
   padding: 0px;
 }
 
-.c7 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -692,7 +620,7 @@ exports[`Select complex options and children 3`] = `
   text-align: inherit;
 }
 
-.c7:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -724,10 +652,42 @@ exports[`Select complex options and children 3`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
   max-height: inherit;
 }
 
-.c4 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  padding: 0px;
+  overflow: auto;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
@@ -747,25 +707,13 @@ exports[`Select complex options and children 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     padding: 0px;
   }
 }
@@ -778,18 +726,6 @@ exports[`Select complex options and children 3`] = `
 
 @media only screen and (max-width:768px) {
   .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
     padding: 0px;
   }
 }
@@ -807,9 +743,33 @@ exports[`Select complex options and children 3`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c2 {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
   }
 }
 
@@ -820,19 +780,19 @@ exports[`Select complex options and children 3`] = `
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2"
     id="test-select__select-drop"
   >
     <div
-      class="c4 c5"
+      class="c3"
       role="menubar"
       tabindex="-1"
     >
       <div
-        class="c6"
+        class="c4"
       >
         <button
-          class="c7"
+          class="c5"
           role="menuitem"
           type="button"
         >
@@ -842,10 +802,10 @@ exports[`Select complex options and children 3`] = `
         </button>
       </div>
       <div
-        class="c6"
+        class="c4"
       >
         <button
-          class="c7"
+          class="c5"
           role="menuitem"
           type="button"
         >
@@ -855,7 +815,7 @@ exports[`Select complex options and children 3`] = `
         </button>
       </div>
       <div
-        class="c8"
+        class="c6"
       />
     </div>
   </div>
@@ -864,43 +824,31 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width:768px) {
-  .erazuK {
+  .bksDlG {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .erazuK {
+  .bksDlG {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .XINUX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .XINUX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eLQtUu {
+  .bXYCwZ {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .eLQtUu {
+  .bXYCwZ {
     padding: 0px;
   }
 }
 
-.iVWgBr {
+.eicWmG {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -919,73 +867,49 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .eicWmG {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .eicWmG {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .jffzSS {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .jffzSS {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iZGdeq {
+  .JLmoP {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iZGdeq {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jqGCfM {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jqGCfM {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
+  .JLmoP {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .pmTAv {
+  .ksCFTb {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .pmTAv {
+  .ksCFTb {
     padding: 0px;
   }
 }
@@ -1028,15 +952,39 @@ exports[`Select complex options and children 4`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .ewzkJA {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ewzkJA {
+    padding: 0px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kZuSOe {
+  .ewzkJA {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .elRilU {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .elRilU {
+    padding: 0px;
   }
 }"
 `;
 
 exports[`Select deselect an option 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1047,55 +995,30 @@ exports[`Select deselect an option 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0px;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1117,7 +1040,7 @@ exports[`Select deselect an option 1`] = `
   padding: 0px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1156,7 +1079,7 @@ exports[`Select deselect an option 1`] = `
   text-align: inherit;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   border: none;
@@ -1173,37 +1096,57 @@ exports[`Select deselect an option 1`] = `
   border: none;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c4 {
   cursor: pointer;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -1221,26 +1164,14 @@ exports[`Select deselect an option 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     padding: 0px;
   }
 }
@@ -1252,17 +1183,17 @@ exports[`Select deselect an option 1`] = `
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c1"
   >
     <div
-      class="c3"
+      class="c2"
     >
       <div
-        class="c4"
+        class="c3"
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c4 c5"
           id="test-select__input"
           multiple=""
           placeholder="test select"
@@ -1274,12 +1205,12 @@ exports[`Select deselect an option 1`] = `
       </div>
     </div>
     <div
-      class="c7"
+      class="c6"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="c8"
+        class="c7"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -1295,7 +1226,7 @@ exports[`Select deselect an option 1`] = `
 `;
 
 exports[`Select disabled 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1306,55 +1237,30 @@ exports[`Select disabled 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0px;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1376,7 +1282,7 @@ exports[`Select disabled 1`] = `
   padding: 0px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1417,7 +1323,7 @@ exports[`Select disabled 1`] = `
   cursor: default;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   border: none;
@@ -1434,37 +1340,57 @@ exports[`Select disabled 1`] = `
   border: none;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c4 {
   cursor: pointer;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -1482,26 +1408,14 @@ exports[`Select disabled 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     padding: 0px;
   }
 }
@@ -1514,17 +1428,17 @@ exports[`Select disabled 1`] = `
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c1"
   >
     <div
-      class="c3"
+      class="c2"
     >
       <div
-        class="c4"
+        class="c3"
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c4 c5"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1535,12 +1449,12 @@ exports[`Select disabled 1`] = `
       </div>
     </div>
     <div
-      class="c7"
+      class="c6"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="c8"
+        class="c7"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -1564,10 +1478,10 @@ exports[`Select disabled 2`] = `
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hFvoei StyledBox-sc-13pk1d4-0 erazuK"
+    class="Box__StyledBox-sc-1gl0s0v-0 Select__StyledSelectBox-sc-17idtfo-1 dKVFZS"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 XINUX"
+      class="Box__StyledBox-sc-1gl0s0v-0 bksDlG"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -1585,7 +1499,7 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 eLQtUu"
+      class="Box__StyledBox-sc-1gl0s0v-0 bXYCwZ"
       style="min-width: auto;"
     >
       <svg
@@ -1606,7 +1520,7 @@ exports[`Select disabled 2`] = `
 `;
 
 exports[`Select multiple 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1617,55 +1531,30 @@ exports[`Select multiple 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0px;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1687,7 +1576,7 @@ exports[`Select multiple 1`] = `
   padding: 0px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1726,7 +1615,7 @@ exports[`Select multiple 1`] = `
   text-align: inherit;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   border: none;
@@ -1743,37 +1632,57 @@ exports[`Select multiple 1`] = `
   border: none;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c4 {
   cursor: pointer;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -1791,26 +1700,14 @@ exports[`Select multiple 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     padding: 0px;
   }
 }
@@ -1826,17 +1723,17 @@ exports[`Select multiple 1`] = `
   type="button"
 >
   <div
-    className="c1 c2"
+    className="c1"
   >
     <div
-      className="c3"
+      className="c2"
     >
       <div
-        className="c4"
+        className="c3"
       >
         <input
           autoComplete="off"
-          className="c5 c6"
+          className="c4 c5"
           id="test-select__input"
           multiple={true}
           onBlur={[Function]}
@@ -1852,7 +1749,7 @@ exports[`Select multiple 1`] = `
       </div>
     </div>
     <div
-      className="c7"
+      className="c6"
       style={
         Object {
           "minWidth": "auto",
@@ -1861,7 +1758,7 @@ exports[`Select multiple 1`] = `
     >
       <svg
         aria-label="FormDown"
-        className="c8"
+        className="c7"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -1877,7 +1774,7 @@ exports[`Select multiple 1`] = `
 `;
 
 exports[`Select multiple values 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1888,55 +1785,30 @@ exports[`Select multiple values 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0px;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1958,7 +1830,7 @@ exports[`Select multiple values 1`] = `
   padding: 0px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1997,7 +1869,7 @@ exports[`Select multiple values 1`] = `
   text-align: inherit;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   border: none;
@@ -2014,37 +1886,57 @@ exports[`Select multiple values 1`] = `
   border: none;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c4 {
   cursor: pointer;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -2062,26 +1954,14 @@ exports[`Select multiple values 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     padding: 0px;
   }
 }
@@ -2093,17 +1973,17 @@ exports[`Select multiple values 1`] = `
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c1"
   >
     <div
-      class="c3"
+      class="c2"
     >
       <div
-        class="c4"
+        class="c3"
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c4 c5"
           id="test-select__input"
           multiple=""
           placeholder="test select"
@@ -2115,12 +1995,12 @@ exports[`Select multiple values 1`] = `
       </div>
     </div>
     <div
-      class="c7"
+      class="c6"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="c8"
+        class="c7"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -2143,10 +2023,10 @@ exports[`Select multiple values 2`] = `
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hFvoei StyledBox-sc-13pk1d4-0 erazuK"
+    class="Box__StyledBox-sc-1gl0s0v-0 Select__StyledSelectBox-sc-17idtfo-1 dKVFZS"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 XINUX"
+      class="Box__StyledBox-sc-1gl0s0v-0 bksDlG"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -2165,7 +2045,7 @@ exports[`Select multiple values 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 eLQtUu"
+      class="Box__StyledBox-sc-1gl0s0v-0 bXYCwZ"
       style="min-width: auto;"
     >
       <svg
@@ -2204,45 +2084,7 @@ exports[`Select multiple values 3`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  padding: 0px;
-  overflow: auto;
-}
-
-.c6 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2262,7 +2104,7 @@ exports[`Select multiple values 3`] = `
   padding: 0px;
 }
 
-.c8 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2283,7 +2125,7 @@ exports[`Select multiple values 3`] = `
   padding: 12px;
 }
 
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2304,7 +2146,7 @@ exports[`Select multiple values 3`] = `
   padding: 0px;
 }
 
-.c7 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2325,7 +2167,7 @@ exports[`Select multiple values 3`] = `
   color: #000000;
 }
 
-.c7:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -2356,7 +2198,7 @@ exports[`Select multiple values 3`] = `
   animation-delay: 0.01s;
 }
 
-.c9 {
+.c7 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -2367,10 +2209,42 @@ exports[`Select multiple values 3`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
   max-height: inherit;
 }
 
-.c4 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  padding: 0px;
+  overflow: auto;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
@@ -2390,25 +2264,13 @@ exports[`Select multiple values 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     padding: 0px;
   }
 }
@@ -2421,30 +2283,18 @@ exports[`Select multiple values 3`] = `
 
 @media only screen and (max-width:768px) {
   .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c8 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c8 {
     padding: 0px;
   }
 }
@@ -2462,9 +2312,33 @@ exports[`Select multiple values 3`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c2 {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
   }
 }
 
@@ -2475,27 +2349,27 @@ exports[`Select multiple values 3`] = `
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2"
     id="test-select__select-drop"
   >
     <div
-      class="c4 c5"
+      class="c3"
       role="menubar"
       tabindex="-1"
     >
       <div
-        class="c6"
+        class="c4"
       >
         <button
-          class="c7"
+          class="c5"
           role="menuitem"
           type="button"
         >
           <div
-            class="c8"
+            class="c6"
           >
             <span
-              class="c9"
+              class="c7"
             >
               one
             </span>
@@ -2503,18 +2377,18 @@ exports[`Select multiple values 3`] = `
         </button>
       </div>
       <div
-        class="c6"
+        class="c4"
       >
         <button
-          class="c7"
+          class="c5"
           role="menuitem"
           type="button"
         >
           <div
-            class="c8"
+            class="c6"
           >
             <span
-              class="c9"
+              class="c7"
             >
               two
             </span>
@@ -2522,7 +2396,7 @@ exports[`Select multiple values 3`] = `
         </button>
       </div>
       <div
-        class="c10"
+        class="c8"
       />
     </div>
   </div>
@@ -2531,43 +2405,31 @@ exports[`Select multiple values 3`] = `
 
 exports[`Select multiple values 4`] = `
 "@media only screen and (max-width:768px) {
-  .erazuK {
+  .bksDlG {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .erazuK {
+  .bksDlG {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .XINUX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .XINUX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eLQtUu {
+  .bXYCwZ {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .eLQtUu {
+  .bXYCwZ {
     padding: 0px;
   }
 }
 
-.iVWgBr {
+.eicWmG {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2586,85 +2448,61 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .eicWmG {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .eicWmG {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .jffzSS {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .jffzSS {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iZGdeq {
+  .JLmoP {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iZGdeq {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jqGCfM {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jqGCfM {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
+  .JLmoP {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .pmTAv {
+  .ksCFTb {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .pmTAv {
+  .ksCFTb {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .keIKGj {
+  .eJBhmB {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .keIKGj {
+  .eJBhmB {
     padding: 3px;
   }
 }
@@ -2707,15 +2545,39 @@ exports[`Select multiple values 4`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .ewzkJA {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ewzkJA {
+    padding: 0px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kZuSOe {
+  .ewzkJA {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .elRilU {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .elRilU {
+    padding: 0px;
   }
 }"
 `;
 
 exports[`Select opens 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2726,55 +2588,30 @@ exports[`Select opens 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0px;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2796,7 +2633,7 @@ exports[`Select opens 1`] = `
   padding: 0px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2835,7 +2672,7 @@ exports[`Select opens 1`] = `
   text-align: inherit;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   border: none;
@@ -2852,37 +2689,57 @@ exports[`Select opens 1`] = `
   border: none;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c4 {
   cursor: pointer;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -2900,26 +2757,14 @@ exports[`Select opens 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     padding: 0px;
   }
 }
@@ -2931,17 +2776,17 @@ exports[`Select opens 1`] = `
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c1"
   >
     <div
-      class="c3"
+      class="c2"
     >
       <div
-        class="c4"
+        class="c3"
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c4 c5"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -2952,12 +2797,12 @@ exports[`Select opens 1`] = `
       </div>
     </div>
     <div
-      class="c7"
+      class="c6"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="c8"
+        class="c7"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -2980,10 +2825,10 @@ exports[`Select opens 2`] = `
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hFvoei StyledBox-sc-13pk1d4-0 erazuK"
+    class="Box__StyledBox-sc-1gl0s0v-0 Select__StyledSelectBox-sc-17idtfo-1 dKVFZS"
   >
     <div
-      class="StyledBox-sc-13pk1d4-0 XINUX"
+      class="Box__StyledBox-sc-1gl0s0v-0 bksDlG"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
@@ -3001,7 +2846,7 @@ exports[`Select opens 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-sc-13pk1d4-0 eLQtUu"
+      class="Box__StyledBox-sc-1gl0s0v-0 bXYCwZ"
       style="min-width: auto;"
     >
       <svg
@@ -3040,45 +2885,7 @@ exports[`Select opens 3`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  padding: 0px;
-  overflow: auto;
-}
-
-.c6 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3098,7 +2905,7 @@ exports[`Select opens 3`] = `
   padding: 0px;
 }
 
-.c8 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3119,7 +2926,7 @@ exports[`Select opens 3`] = `
   padding: 12px;
 }
 
-.c10 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3140,7 +2947,7 @@ exports[`Select opens 3`] = `
   padding: 0px;
 }
 
-.c7 {
+.c5 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3158,7 +2965,7 @@ exports[`Select opens 3`] = `
   text-align: inherit;
 }
 
-.c7:hover {
+.c5:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -3189,7 +2996,7 @@ exports[`Select opens 3`] = `
   animation-delay: 0.01s;
 }
 
-.c9 {
+.c7 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -3200,10 +3007,42 @@ exports[`Select opens 3`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
   max-height: inherit;
 }
 
-.c4 {
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  padding: 0px;
+  overflow: auto;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
@@ -3223,25 +3062,13 @@ exports[`Select opens 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c5 {
+  .c4 {
     padding: 0px;
   }
 }
@@ -3254,30 +3081,18 @@ exports[`Select opens 3`] = `
 
 @media only screen and (max-width:768px) {
   .c6 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c8 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c8 {
     padding: 0px;
   }
 }
@@ -3295,9 +3110,33 @@ exports[`Select opens 3`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c2 {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
   }
 }
 
@@ -3308,27 +3147,27 @@ exports[`Select opens 3`] = `
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2"
     id="test-select__select-drop"
   >
     <div
-      class="c4 c5"
+      class="c3"
       role="menubar"
       tabindex="-1"
     >
       <div
-        class="c6"
+        class="c4"
       >
         <button
-          class="c7"
+          class="c5"
           role="menuitem"
           type="button"
         >
           <div
-            class="c8"
+            class="c6"
           >
             <span
-              class="c9"
+              class="c7"
             >
               one
             </span>
@@ -3336,18 +3175,18 @@ exports[`Select opens 3`] = `
         </button>
       </div>
       <div
-        class="c6"
+        class="c4"
       >
         <button
-          class="c7"
+          class="c5"
           role="menuitem"
           type="button"
         >
           <div
-            class="c8"
+            class="c6"
           >
             <span
-              class="c9"
+              class="c7"
             >
               two
             </span>
@@ -3355,7 +3194,7 @@ exports[`Select opens 3`] = `
         </button>
       </div>
       <div
-        class="c10"
+        class="c8"
       />
     </div>
   </div>
@@ -3364,43 +3203,31 @@ exports[`Select opens 3`] = `
 
 exports[`Select opens 4`] = `
 "@media only screen and (max-width:768px) {
-  .erazuK {
+  .bksDlG {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .erazuK {
+  .bksDlG {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .XINUX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .XINUX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eLQtUu {
+  .bXYCwZ {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .eLQtUu {
+  .bXYCwZ {
     padding: 0px;
   }
 }
 
-.iVWgBr {
+.eicWmG {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3419,73 +3246,49 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .eicWmG {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .eicWmG {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .jffzSS {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .jffzSS {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iZGdeq {
+  .JLmoP {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iZGdeq {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jqGCfM {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jqGCfM {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
+  .JLmoP {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .pmTAv {
+  .ksCFTb {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .pmTAv {
+  .ksCFTb {
     padding: 0px;
   }
 }
@@ -3528,21 +3331,45 @@ exports[`Select opens 4`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .ewzkJA {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ewzkJA {
+    padding: 0px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kZuSOe {
+  .ewzkJA {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .elRilU {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .elRilU {
+    padding: 0px;
   }
 }"
 `;
 
 exports[`Select opens 5`] = `
 <div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-1 jZWhdj StyledBox-sc-13pk1d4-0 iZGdeq"
+  class="Box__StyledBox-sc-1gl0s0v-0 SelectContainer__OptionsBox-sc-1wi0ul8-1 elRilU"
   role="menubar"
   tabindex="-1"
 >
   <div
-    class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    class="Box__StyledBox-sc-1gl0s0v-0 jffzSS"
   >
     <button
       class="StyledButton-sc-323bzc-0 gFnwgj"
@@ -3550,7 +3377,7 @@ exports[`Select opens 5`] = `
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eEPVhE"
+        class="Box__StyledBox-sc-1gl0s0v-0 JLmoP"
       >
         <span
           class="StyledText-sc-1sadyjn-0 fLjoaM"
@@ -3561,7 +3388,7 @@ exports[`Select opens 5`] = `
     </button>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 jqGCfM"
+    class="Box__StyledBox-sc-1gl0s0v-0 jffzSS"
   >
     <button
       class="StyledButton-sc-323bzc-0 gFnwgj"
@@ -3569,7 +3396,7 @@ exports[`Select opens 5`] = `
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eEPVhE"
+        class="Box__StyledBox-sc-1gl0s0v-0 JLmoP"
       >
         <span
           class="StyledText-sc-1sadyjn-0 fLjoaM"
@@ -3580,13 +3407,13 @@ exports[`Select opens 5`] = `
     </button>
   </div>
   <div
-    class="StyledBox-sc-13pk1d4-0 pmTAv"
+    class="Box__StyledBox-sc-1gl0s0v-0 ksCFTb"
   />
 </div>
 `;
 
 exports[`Select search 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -3597,55 +3424,30 @@ exports[`Select search 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0px;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3667,7 +3469,7 @@ exports[`Select search 1`] = `
   padding: 0px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3706,7 +3508,7 @@ exports[`Select search 1`] = `
   text-align: inherit;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   border: none;
@@ -3723,37 +3525,57 @@ exports[`Select search 1`] = `
   border: none;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c4 {
   cursor: pointer;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -3771,26 +3593,14 @@ exports[`Select search 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     padding: 0px;
   }
 }
@@ -3802,17 +3612,17 @@ exports[`Select search 1`] = `
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c1"
   >
     <div
-      class="c3"
+      class="c2"
     >
       <div
-        class="c4"
+        class="c3"
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c4 c5"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -3823,12 +3633,12 @@ exports[`Select search 1`] = `
       </div>
     </div>
     <div
-      class="c7"
+      class="c6"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="c8"
+        class="c7"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -3862,45 +3672,7 @@ exports[`Select search 2`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  padding: 0px;
-  overflow: auto;
-}
-
-.c9 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3920,7 +3692,7 @@ exports[`Select search 2`] = `
   padding: 0px;
 }
 
-.c11 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3941,7 +3713,7 @@ exports[`Select search 2`] = `
   padding: 12px;
 }
 
-.c13 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3962,7 +3734,7 @@ exports[`Select search 2`] = `
   padding: 0px;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3982,7 +3754,7 @@ exports[`Select search 2`] = `
   padding: 6px;
 }
 
-.c10 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4000,7 +3772,7 @@ exports[`Select search 2`] = `
   text-align: inherit;
 }
 
-.c10:hover {
+.c8:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -4031,7 +3803,7 @@ exports[`Select search 2`] = `
   animation-delay: 0.01s;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   border: none;
@@ -4049,33 +3821,33 @@ exports[`Select search 2`] = `
   line-height: 20px;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c5 {
+.c4 {
   position: relative;
   width: 100%;
 }
 
-.c12 {
+.c10 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -4086,10 +3858,42 @@ exports[`Select search 2`] = `
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
   max-height: inherit;
 }
 
-.c7 {
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  padding: 0px;
+  overflow: auto;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
@@ -4109,25 +3913,13 @@ exports[`Select search 2`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c7 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     padding: 0px;
   }
 }
@@ -4140,42 +3932,30 @@ exports[`Select search 2`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c11 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c11 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c13 {
+  .c11 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c3 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c3 {
     padding: 3px;
   }
 }
@@ -4193,9 +3973,33 @@ exports[`Select search 2`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .c2 {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 0px;
   }
 }
 
@@ -4206,41 +4010,41 @@ exports[`Select search 2`] = `
   tabindex="-1"
 >
   <div
-    class="c2 c3"
+    class="c2"
     id="test-select__select-drop"
   >
     <div
-      class="c4"
+      class="c3"
     >
       <div
-        class="c5"
+        class="c4"
       >
         <input
           autocomplete="off"
-          class="c6"
+          class="c5"
           type="search"
           value=""
         />
       </div>
     </div>
     <div
-      class="c7 c8"
+      class="c6"
       role="menubar"
       tabindex="-1"
     >
       <div
-        class="c9"
+        class="c7"
       >
         <button
-          class="c10"
+          class="c8"
           role="menuitem"
           type="button"
         >
           <div
-            class="c11"
+            class="c9"
           >
             <span
-              class="c12"
+              class="c10"
             >
               one
             </span>
@@ -4248,18 +4052,18 @@ exports[`Select search 2`] = `
         </button>
       </div>
       <div
-        class="c9"
+        class="c7"
       >
         <button
-          class="c10"
+          class="c8"
           role="menuitem"
           type="button"
         >
           <div
-            class="c11"
+            class="c9"
           >
             <span
-              class="c12"
+              class="c10"
             >
               two
             </span>
@@ -4267,7 +4071,7 @@ exports[`Select search 2`] = `
         </button>
       </div>
       <div
-        class="c13"
+        class="c11"
       />
     </div>
   </div>
@@ -4276,43 +4080,31 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width:768px) {
-  .erazuK {
+  .bksDlG {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .erazuK {
+  .bksDlG {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .XINUX {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .XINUX {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eLQtUu {
+  .bXYCwZ {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .eLQtUu {
+  .bXYCwZ {
     padding: 0px;
   }
 }
 
-.iVWgBr {
+.eicWmG {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4331,85 +4123,61 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .eicWmG {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .eicWmG {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .jffzSS {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .IRSNj {
+  .jffzSS {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iZGdeq {
+  .JLmoP {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iZGdeq {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jqGCfM {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .jqGCfM {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eEPVhE {
+  .JLmoP {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .pmTAv {
+  .ksCFTb {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .pmTAv {
+  .ksCFTb {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .keIKGj {
+  .eJBhmB {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .keIKGj {
+  .eJBhmB {
     padding: 3px;
   }
 }
@@ -4452,15 +4220,39 @@ exports[`Select search 3`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .ewzkJA {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ewzkJA {
+    padding: 0px;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kZuSOe {
+  .ewzkJA {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .elRilU {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .elRilU {
+    padding: 0px;
   }
 }"
 `;
 
 exports[`Select select an option 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4471,55 +4263,30 @@ exports[`Select select an option 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0px;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4541,7 +4308,7 @@ exports[`Select select an option 1`] = `
   padding: 0px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4580,7 +4347,7 @@ exports[`Select select an option 1`] = `
   text-align: inherit;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   border: none;
@@ -4597,37 +4364,57 @@ exports[`Select select an option 1`] = `
   border: none;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c4 {
   cursor: pointer;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -4645,26 +4432,14 @@ exports[`Select select an option 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     padding: 0px;
   }
 }
@@ -4676,17 +4451,17 @@ exports[`Select select an option 1`] = `
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c1"
   >
     <div
-      class="c3"
+      class="c2"
     >
       <div
-        class="c4"
+        class="c3"
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c4 c5"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4697,12 +4472,12 @@ exports[`Select select an option 1`] = `
       </div>
     </div>
     <div
-      class="c7"
+      class="c6"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="c8"
+        class="c7"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -4752,31 +4527,6 @@ exports[`Select select an option with complex options 1`] = `
   stroke: none;
 }
 
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0px;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4838,16 +4588,27 @@ exports[`Select select an option with complex options 1`] = `
   text-align: inherit;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 @media only screen and (max-width:768px) {
@@ -4913,7 +4674,7 @@ exports[`Select select an option with complex options 1`] = `
 `;
 
 exports[`Select select an option with enter 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -4924,55 +4685,30 @@ exports[`Select select an option with enter 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0px;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4994,7 +4730,7 @@ exports[`Select select an option with enter 1`] = `
   padding: 0px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5033,7 +4769,7 @@ exports[`Select select an option with enter 1`] = `
   text-align: inherit;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   border: none;
@@ -5050,37 +4786,57 @@ exports[`Select select an option with enter 1`] = `
   border: none;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c4 {
   cursor: pointer;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -5098,26 +4854,14 @@ exports[`Select select an option with enter 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     padding: 0px;
   }
 }
@@ -5129,17 +4873,17 @@ exports[`Select select an option with enter 1`] = `
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c1"
   >
     <div
-      class="c3"
+      class="c2"
     >
       <div
-        class="c4"
+        class="c3"
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c4 c5"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -5150,12 +4894,12 @@ exports[`Select select an option with enter 1`] = `
       </div>
     </div>
     <div
-      class="c7"
+      class="c6"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="c8"
+        class="c7"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -5171,7 +4915,7 @@ exports[`Select select an option with enter 1`] = `
 `;
 
 exports[`Select select another option 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5182,55 +4926,30 @@ exports[`Select select another option 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0px;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5252,7 +4971,7 @@ exports[`Select select another option 1`] = `
   padding: 0px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5291,7 +5010,7 @@ exports[`Select select another option 1`] = `
   text-align: inherit;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   border: none;
@@ -5308,37 +5027,57 @@ exports[`Select select another option 1`] = `
   border: none;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c4 {
   cursor: pointer;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -5356,26 +5095,14 @@ exports[`Select select another option 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     padding: 0px;
   }
 }
@@ -5387,17 +5114,17 @@ exports[`Select select another option 1`] = `
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c1"
   >
     <div
-      class="c3"
+      class="c2"
     >
       <div
-        class="c4"
+        class="c3"
       >
         <input
           autocomplete="off"
-          class="c5 c6"
+          class="c4 c5"
           id="test-select__input"
           multiple=""
           placeholder="test select"
@@ -5409,12 +5136,12 @@ exports[`Select select another option 1`] = `
       </div>
     </div>
     <div
-      class="c7"
+      class="c6"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="c8"
+        class="c7"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -5430,7 +5157,7 @@ exports[`Select select another option 1`] = `
 `;
 
 exports[`Select size 1`] = `
-.c8 {
+.c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5441,55 +5168,30 @@ exports[`Select size 1`] = `
   stroke: #7D4CDB;
 }
 
-.c8 g {
+.c7 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c8 *:not([stroke])[fill="none"] {
+.c7 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
 .c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0px;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5511,7 +5213,7 @@ exports[`Select size 1`] = `
   padding: 0px;
 }
 
-.c7 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5550,7 +5252,7 @@ exports[`Select size 1`] = `
   text-align: inherit;
 }
 
-.c6 {
+.c5 {
   box-sizing: border-box;
   font-size: inherit;
   border: none;
@@ -5569,37 +5271,57 @@ exports[`Select size 1`] = `
   border: none;
 }
 
-.c6::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c6::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-placeholder {
+.c5::-moz-placeholder {
   color: #AAAAAA;
 }
 
-.c6:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   color: #AAAAAA;
 }
 
-.c6::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
   outline: none;
 }
 
-.c4 {
+.c3 {
   position: relative;
   width: 100%;
 }
 
-.c5 {
+.c4 {
   cursor: pointer;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -5617,26 +5339,14 @@ exports[`Select size 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     padding: 0px;
   }
 }
@@ -5652,17 +5362,17 @@ exports[`Select size 1`] = `
   type="button"
 >
   <div
-    className="c1 c2"
+    className="c1"
   >
     <div
-      className="c3"
+      className="c2"
     >
       <div
-        className="c4"
+        className="c3"
       >
         <input
           autoComplete="off"
-          className="c5 c6"
+          className="c4 c5"
           id="test-select__input"
           onBlur={[Function]}
           onChange={[Function]}
@@ -5678,7 +5388,7 @@ exports[`Select size 1`] = `
       </div>
     </div>
     <div
-      className="c7"
+      className="c6"
       style={
         Object {
           "minWidth": "auto",
@@ -5687,7 +5397,7 @@ exports[`Select size 1`] = `
     >
       <svg
         aria-label="FormDown"
-        className="c8"
+        className="c7"
         viewBox="0 0 24 24"
       >
         <polyline

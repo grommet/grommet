@@ -4,8 +4,10 @@ import { compose } from 'recompose';
 import { withTheme } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
+import { keepKeys } from '../../utils';
 
 import { Box } from '../Box';
+import { boxProps } from '../Box/doc';
 
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
@@ -29,12 +31,6 @@ const TableCell = ({
       } else {
         tableContextTheme = theme.table && theme.table.body;
       }
-      const boxProps = { ...rest };
-      Object.keys(boxProps).forEach(key => {
-        if (tableContextTheme[key] && boxProps[key] === undefined) {
-          delete boxProps[key];
-        }
-      });
 
       return (
         <StyledTableCell
@@ -52,7 +48,10 @@ const TableCell = ({
           {plain ? (
             children
           ) : (
-            <Box {...tableContextTheme} {...boxProps}>
+            <Box
+              {...keepKeys(rest, boxProps)}
+              {...keepKeys(tableContextTheme, boxProps)}
+            >
               {children}
             </Box>
           )}

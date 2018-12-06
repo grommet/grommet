@@ -1,18 +1,7 @@
-import React from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import { css, keyframes } from 'styled-components';
+import { normalizeColor } from 'grommet-styles';
 
-import { defaultProps } from '../../default-props';
-
-import { BoxInner } from './BoxInner';
-
-import {
-  backgroundStyle,
-  breakpointStyle,
-  edgeStyle,
-  genericStyles,
-  normalizeColor,
-  overflowStyle,
-} from '../../utils';
+import { breakpointStyle } from '../../utils';
 
 const ALIGN_MAP = {
   baseline: 'baseline',
@@ -22,7 +11,7 @@ const ALIGN_MAP = {
   stretch: 'stretch',
 };
 
-const alignStyle = css`
+export const alignStyle = css`
   align-items: ${props => ALIGN_MAP[props.align]};
 `;
 
@@ -35,7 +24,7 @@ const ALIGN_CONTENT_MAP = {
   stretch: 'stretch',
 };
 
-const alignContentStyle = css`
+export const alignContentStyle = css`
   align-content: ${props => ALIGN_CONTENT_MAP[props.alignContent]};
 `;
 
@@ -50,7 +39,7 @@ const BASIS_MAP = {
   '2/3': '66.66%',
 };
 
-const basisStyle = css`
+export const basisStyle = css`
   flex-basis: ${props =>
     BASIS_MAP[props.basis] ||
     props.theme.global.size[props.basis] ||
@@ -61,7 +50,7 @@ const basisStyle = css`
 // https://stackoverflow.com/questions/36247140/why-doesnt-flex-item-shrink-past-content-size
 // we assume we are in the context of a Box going the other direction
 // TODO: revisit this
-const directionStyle = (direction, theme) => {
+export const directionStyle = (direction, theme) => {
   const styles = [
     css`
       min-width: 0;
@@ -88,7 +77,7 @@ const directionStyle = (direction, theme) => {
   return styles;
 };
 
-const elevationStyle = css`
+export const elevationStyle = css`
   box-shadow: ${props =>
     props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
       props.elevation
@@ -102,14 +91,14 @@ const FLEX_MAP = {
   shrink: '0 1',
 };
 
-const flexStyle = css`
+export const flexStyle = css`
   flex: ${props =>
     `${FLEX_MAP[props.flex]}${
       props.flex !== true && !props.basis ? ' auto' : ''
     }`};
 `;
 
-const fillStyle = fill => {
+export const fillStyle = fill => {
   if (fill === 'horizontal') {
     return 'width: 100%;';
   }
@@ -132,13 +121,13 @@ const JUSTIFY_MAP = {
   start: 'flex-start',
 };
 
-const justifyStyle = css`
+export const justifyStyle = css`
   justify-content: ${props => JUSTIFY_MAP[props.justify]};
 `;
 
-const wrapStyle = 'flex-wrap: wrap;';
+export const wrapStyle = 'flex-wrap: wrap;';
 
-const borderStyle = (data, responsive, theme) => {
+export const borderStyle = (data, responsive, theme) => {
   const styles = [];
   const color = normalizeColor(data.color || 'border', theme);
   const borderSize = data.size || 'xsmall';
@@ -218,7 +207,7 @@ const ROUND_MAP = {
   full: '100%',
 };
 
-const roundStyle = (data, responsive, theme) => {
+export const roundStyle = (data, responsive, theme) => {
   const breakpoint =
     theme.box.responsiveBreakpoint &&
     theme.global.breakpoints[theme.box.responsiveBreakpoint];
@@ -516,111 +505,7 @@ const animationInitialStyle = item => {
   return '';
 };
 
-const animationStyle = css`
-  ${props => css`
-    ${animationInitialStyle(props.animation)}
-    animation: ${animationItemStyle(props.animation, props.theme)};
-  `};
+export const animationStyle = css`
+  ${props => animationInitialStyle(props.animation)}
+  animation: ${props => animationItemStyle(props.animation, props.theme)};
 `;
-
-// NOTE: basis must be after flex! Otherwise, flex overrides basis
-const StyledBox = styled(BoxInner).attrs(({ theme }) => ({
-  theme,
-}))`
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  ${props => !props.basis && 'max-width: 100%;'};
-
-  ${genericStyles}
-  ${props =>
-    props.height &&
-    `height: ${props.theme.global.size[props.height] || props.height};`}
-  ${props =>
-    props.width &&
-    `width: ${props.theme.global.size[props.width] || props.width};`}
-  ${props => props.align && alignStyle}
-  ${props => props.alignContent && alignContentStyle}
-  ${props => props.background && backgroundStyle(props.background, props.theme)}
-  ${props =>
-    props.border && borderStyle(props.border, props.responsive, props.theme)}
-  ${props => props.direction && directionStyle(props.direction, props.theme)}
-  ${props => props.flex !== undefined && flexStyle}
-  ${props => props.basis && basisStyle}
-  ${props => props.fill && fillStyle(props.fill)}
-  ${props => props.justify && justifyStyle}
-  ${props =>
-    props.pad &&
-    edgeStyle(
-      'padding',
-      props.pad,
-      props.responsive,
-      props.theme.box.responsiveBreakpoint,
-      props.theme,
-    )}
-  ${props =>
-    props.round && roundStyle(props.round, props.responsive, props.theme)}
-  ${props => props.wrap && wrapStyle}
-  ${props => props.overflow && overflowStyle(props.overflow)}
-  ${props => props.elevation && elevationStyle}
-  ${props => props.animation && animationStyle}
-  ${props => props.theme.box && props.theme.box.extend}
-`;
-
-const gapStyle = (direction, gap, responsive, theme) => {
-  const breakpoint =
-    theme.box.responsiveBreakpoint &&
-    theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  const responsiveSize =
-    breakpoint && breakpoint.edgeSize[gap] && breakpoint.edgeSize[gap];
-  const styles = [];
-  if (direction === 'column') {
-    styles.push(
-      css`
-        height: ${theme.global.edgeSize[gap]};
-      `,
-    );
-    if (responsiveSize) {
-      styles.push(breakpointStyle(breakpoint, `height: ${responsiveSize};`));
-    }
-  } else {
-    styles.push(`width: ${theme.global.edgeSize[gap]};`);
-    if (responsive && direction === 'row-responsive') {
-      styles.push(
-        breakpointStyle(
-          breakpoint,
-          `
-        width: auto;
-        height: ${responsiveSize};
-      `,
-        ),
-      );
-    }
-  }
-  return styles;
-};
-
-StyledBox.defaultProps = {
-  direction: 'column',
-  margin: 'none',
-  pad: 'none',
-  responsive: true,
-};
-Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
-
-const BoxGap = ({ direction, gap, responsive, theme, ...rest }) => (
-  <div {...rest} />
-);
-const StyledBoxGap = styled(BoxGap).attrs(props => ({
-  theme: props.theme,
-}))`
-  flex: 0 0 auto;
-  ${props =>
-    props.gap &&
-    gapStyle(props.direction, props.gap, props.responsive, props.theme)};
-`;
-
-StyledBoxGap.defaultProps = {};
-Object.setPrototypeOf(StyledBoxGap.defaultProps, defaultProps);
-
-export { StyledBox, StyledBoxGap };

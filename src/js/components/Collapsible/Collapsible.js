@@ -4,12 +4,12 @@ import styled, { withTheme } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
-import { Box } from '../Box';
-
 const animatedBoxProperty = direction =>
   direction === 'horizontal' ? 'width' : 'height';
 
-const AnimatedBox = styled(Box)`
+const AnimatedBox = styled.div`
+  display: flex;
+  flex-direction: column;
   ${props =>
     !props.animate &&
     (props.open

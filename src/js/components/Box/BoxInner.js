@@ -3,33 +3,11 @@ import React, { Children, Component } from 'react';
 import { backgroundIsDark, removeKeys } from '../../utils';
 import { ThemeContext } from '../../contexts';
 
-import { StyledBoxGap } from './StyledBox';
+import { BoxGap } from './BoxGap';
 import { boxProps } from './doc';
 
 class BoxInner extends Component {
-  static displayName = 'Box';
   static contextType = ThemeContext;
-
-  state = {
-    backgroundChanged: false,
-  };
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { background } = nextProps;
-    const { previousBackground, backgroundChanged } = prevState;
-    if (previousBackground !== background) {
-      return {
-        previousBackground: background,
-        backgroundChanged: true,
-      };
-    }
-    if (backgroundChanged) {
-      return {
-        backgroundChanged: false,
-      };
-    }
-    return null;
-  }
 
   render() {
     const {
@@ -45,7 +23,7 @@ class BoxInner extends Component {
       theme: propTheme,
       ...rest
     } = this.props;
-    const { backgroundChanged } = this.state;
+    delete rest.focus;
     const theme = this.context || propTheme;
 
     let contents = children;
@@ -58,7 +36,7 @@ class BoxInner extends Component {
             firstIndex = index;
           } else {
             contents.push(
-              <StyledBoxGap
+              <BoxGap
                 key={index}
                 gap={gap}
                 direction={direction}
@@ -71,7 +49,7 @@ class BoxInner extends Component {
       });
     }
 
-    if (backgroundChanged && background) {
+    if (background) {
       const dark = backgroundIsDark(background, theme);
       contents = (
         <ThemeContext.Provider value={{ ...theme, dark }}>
@@ -80,16 +58,16 @@ class BoxInner extends Component {
       );
     }
 
-    const Component = tag;
+    const BoxTag = tag;
 
     return (
-      <Component
+      <BoxTag
         aria-label={a11yTitle}
         ref={forwardRef}
         {...removeKeys(rest, boxProps)}
       >
         {contents}
-      </Component>
+      </BoxTag>
     );
   }
 }

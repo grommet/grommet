@@ -468,8 +468,6 @@ exports[`Carousel basic 1`] = `
 >
   <div
     className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
     onKeyDown={[Function]}
   >
     <div
@@ -1260,10 +1258,10 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gSqlow"
+        class="Box__StyledBox-sc-1gl0s0v-0 hpWYNa"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eMweLo"
+          class="Box__StyledBox-sc-1gl0s0v-0 hkqeGv"
         >
           <img
             class="StyledImage-ey4zx9-0 jtkYbl"
@@ -1276,10 +1274,10 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gSqlow"
+        class="Box__StyledBox-sc-1gl0s0v-0 hpWYNa"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kyLFAf"
+          class="Box__StyledBox-sc-1gl0s0v-0 dwOzXt"
         >
           <img
             class="StyledImage-ey4zx9-0 jtkYbl"
@@ -1292,18 +1290,18 @@ exports[`Carousel navigate 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eKHNGK"
+        class="Box__StyledBox-sc-1gl0s0v-0 euECgb"
         tabindex="0"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+          class="Box__StyledBox-sc-1gl0s0v-0 blJknX"
         >
           <button
             class="StyledButton-sc-323bzc-0 kjdfHK"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 VhefZ"
+              class="Box__StyledBox-sc-1gl0s0v-0 gLaZbV"
             >
               <svg
                 aria-label="Previous"
@@ -1322,17 +1320,17 @@ exports[`Carousel navigate 2`] = `
           </button>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 JUlfQ"
+          class="Box__StyledBox-sc-1gl0s0v-0 cJDjdP"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 exddWn"
+            class="Box__StyledBox-sc-1gl0s0v-0 dNlDbT"
           >
             <button
               class="StyledButton-sc-323bzc-0 dcpWVY"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+                class="Box__StyledBox-sc-1gl0s0v-0 cQWlcq"
               >
                 <svg
                   aria-label="Subtract"
@@ -1353,7 +1351,7 @@ exports[`Carousel navigate 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+                class="Box__StyledBox-sc-1gl0s0v-0 cQWlcq"
               >
                 <svg
                   aria-label="Subtract"
@@ -1372,7 +1370,7 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+          class="Box__StyledBox-sc-1gl0s0v-0 blJknX"
         >
           <button
             class="StyledButton-sc-323bzc-0 fzQtuL"
@@ -1380,7 +1378,7 @@ exports[`Carousel navigate 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 VhefZ"
+              class="Box__StyledBox-sc-1gl0s0v-0 gLaZbV"
             >
               <svg
                 aria-label="Next"
@@ -1415,10 +1413,10 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gSqlow"
+        class="Box__StyledBox-sc-1gl0s0v-0 hpWYNa"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 iDtakW"
+          class="Box__StyledBox-sc-1gl0s0v-0 hPpNuL"
         >
           <img
             class="StyledImage-ey4zx9-0 jtkYbl"
@@ -1431,10 +1429,10 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gSqlow"
+        class="Box__StyledBox-sc-1gl0s0v-0 hpWYNa"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eMweLo"
+          class="Box__StyledBox-sc-1gl0s0v-0 hkqeGv"
         >
           <img
             class="StyledImage-ey4zx9-0 jtkYbl"
@@ -1447,11 +1445,11 @@ exports[`Carousel navigate 3`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eKHNGK"
+        class="Box__StyledBox-sc-1gl0s0v-0 euECgb"
         tabindex="0"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+          class="Box__StyledBox-sc-1gl0s0v-0 blJknX"
         >
           <button
             class="StyledButton-sc-323bzc-0 fzQtuL"
@@ -1459,7 +1457,7 @@ exports[`Carousel navigate 3`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 VhefZ"
+              class="Box__StyledBox-sc-1gl0s0v-0 gLaZbV"
             >
               <svg
                 aria-label="Previous"
@@ -1478,17 +1476,17 @@ exports[`Carousel navigate 3`] = `
           </button>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 JUlfQ"
+          class="Box__StyledBox-sc-1gl0s0v-0 cJDjdP"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 exddWn"
+            class="Box__StyledBox-sc-1gl0s0v-0 dNlDbT"
           >
             <button
               class="StyledButton-sc-323bzc-0 dcpWVY"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+                class="Box__StyledBox-sc-1gl0s0v-0 cQWlcq"
               >
                 <svg
                   aria-label="Subtract"
@@ -1509,7 +1507,7 @@ exports[`Carousel navigate 3`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+                class="Box__StyledBox-sc-1gl0s0v-0 cQWlcq"
               >
                 <svg
                   aria-label="Subtract"
@@ -1528,14 +1526,14 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+          class="Box__StyledBox-sc-1gl0s0v-0 blJknX"
         >
           <button
             class="StyledButton-sc-323bzc-0 kjdfHK"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 VhefZ"
+              class="Box__StyledBox-sc-1gl0s0v-0 gLaZbV"
             >
               <svg
                 aria-label="Next"
@@ -2185,10 +2183,10 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gSqlow"
+        class="Box__StyledBox-sc-1gl0s0v-0 hpWYNa"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 eMweLo"
+          class="Box__StyledBox-sc-1gl0s0v-0 hkqeGv"
         >
           <img
             class="StyledImage-ey4zx9-0 jtkYbl"
@@ -2201,10 +2199,10 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 gSqlow"
+        class="Box__StyledBox-sc-1gl0s0v-0 hpWYNa"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 kyLFAf"
+          class="Box__StyledBox-sc-1gl0s0v-0 dwOzXt"
         >
           <img
             class="StyledImage-ey4zx9-0 jtkYbl"
@@ -2217,18 +2215,18 @@ exports[`Carousel play 2`] = `
       class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eKHNGK"
+        class="Box__StyledBox-sc-1gl0s0v-0 euECgb"
         tabindex="0"
       >
         <div
-          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+          class="Box__StyledBox-sc-1gl0s0v-0 blJknX"
         >
           <button
             class="StyledButton-sc-323bzc-0 kjdfHK"
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 VhefZ"
+              class="Box__StyledBox-sc-1gl0s0v-0 gLaZbV"
             >
               <svg
                 aria-label="Previous"
@@ -2247,17 +2245,17 @@ exports[`Carousel play 2`] = `
           </button>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 JUlfQ"
+          class="Box__StyledBox-sc-1gl0s0v-0 cJDjdP"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 exddWn"
+            class="Box__StyledBox-sc-1gl0s0v-0 dNlDbT"
           >
             <button
               class="StyledButton-sc-323bzc-0 dcpWVY"
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+                class="Box__StyledBox-sc-1gl0s0v-0 cQWlcq"
               >
                 <svg
                   aria-label="Subtract"
@@ -2278,7 +2276,7 @@ exports[`Carousel play 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+                class="Box__StyledBox-sc-1gl0s0v-0 cQWlcq"
               >
                 <svg
                   aria-label="Subtract"
@@ -2297,7 +2295,7 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-sc-13pk1d4-0 dkhTXm"
+          class="Box__StyledBox-sc-1gl0s0v-0 blJknX"
         >
           <button
             class="StyledButton-sc-323bzc-0 fzQtuL"
@@ -2305,7 +2303,7 @@ exports[`Carousel play 2`] = `
             type="button"
           >
             <div
-              class="StyledBox-sc-13pk1d4-0 VhefZ"
+              class="Box__StyledBox-sc-1gl0s0v-0 gLaZbV"
             >
               <svg
                 aria-label="Next"

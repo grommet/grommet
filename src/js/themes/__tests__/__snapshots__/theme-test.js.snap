@@ -103,6 +103,13 @@ exports[`Grommet custom theme 1`] = `
   stroke: none;
 }
 
+.c5 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -158,13 +165,6 @@ exports[`Grommet custom theme 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   padding: 0px;
-}
-
-.c5 {
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 12px;
 }
 
 .c2 {

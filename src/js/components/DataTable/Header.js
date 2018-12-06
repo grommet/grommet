@@ -4,8 +4,10 @@ import { compose } from 'recompose';
 import { withTheme } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
+import { keepKeys } from '../../utils';
 
 import { Box } from '../Box';
+import { boxProps } from '../Box/doc';
 import { TableHeader } from '../TableHeader';
 import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
@@ -81,7 +83,11 @@ const Header = ({
           if (search && filters) {
             if (!onSort) {
               content = (
-                <Box justify="center" align={align} {...innerThemeProps}>
+                <Box
+                  justify="center"
+                  align={align}
+                  {...keepKeys(innerThemeProps, boxProps)}
+                >
                   {content}
                 </Box>
               );
@@ -92,7 +98,7 @@ const Header = ({
                 direction="row"
                 justify="between"
                 align="center"
-                {...outerThemeProps}
+                {...keepKeys(outerThemeProps, boxProps)}
               >
                 {content}
                 <Searcher
@@ -107,7 +113,7 @@ const Header = ({
           } else if (!onSort) {
             content = (
               <Box
-                {...dataTableContextTheme}
+                {...keepKeys(dataTableContextTheme, boxProps)}
                 fill
                 justify="center"
                 align={align}

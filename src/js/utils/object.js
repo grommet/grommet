@@ -51,3 +51,13 @@ export const removeKeys = (obj, keys) => {
   });
   return newObj;
 };
+
+export const keepKeys = (obj, keys) => {
+  const newObj = {};
+  Object.keys(obj).forEach(key => {
+    if (keys.indexOf(key) >= 0) {
+      newObj[key] = obj[key];
+    }
+  });
+  return newObj;
+};
