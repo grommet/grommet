@@ -176,7 +176,7 @@ class ObjectMultiSelect extends Component {
             onSearch={text => {
               const exp = new RegExp(text, 'i');
               this.setState({
-                options: objectOptions.filter(o => exp.test(o.val)),
+                options: objectOptions.filter(o => exp.test(o.lab)),
               });
             }}
           />
