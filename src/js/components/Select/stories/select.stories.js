@@ -419,6 +419,7 @@ class CustomSearchSelect extends Component {
               closeOnChange={false}
               placeholder="Select Content Partners"
               searchPlaceholder="Search Content Partners"
+              emptySearchMessage="No partners found"
               multiple
               value={
                 selectedContentPartners.length

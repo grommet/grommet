@@ -39,6 +39,7 @@ class SelectContainer extends Component {
   static defaultProps = {
     children: null,
     disabled: undefined,
+    emptySearchMessage: 'No matches found',
     id: undefined,
     multiple: false,
     name: undefined,
@@ -310,6 +311,7 @@ class SelectContainer extends Component {
     const {
       children,
       dropHeight,
+      emptySearchMessage,
       id,
       onKeyDown,
       onSearch,
@@ -353,42 +355,54 @@ class SelectContainer extends Component {
             ref={this.selectRef}
             overflow="auto"
           >
-            <InfiniteScroll items={options} step={theme.select.step} replace>
-              {(option, index) => {
-                const isDisabled = this.isDisabled(index);
-                const isSelected = this.isSelected(index);
-                const isActive = isSelected || activeIndex === index;
-                return (
-                  <SelectOption
-                    key={`option_${index}`}
-                    ref={ref => {
-                      this.optionsRef[index] = ref;
-                    }}
-                    disabled={isDisabled || undefined}
-                    active={isActive}
-                    selected={isSelected}
-                    option={option}
-                    onClick={
-                      !isDisabled
-                        ? () => this.selectOption(option, index)
-                        : undefined
-                    }
-                  >
-                    {children ? (
-                      children(option, index, options, {
-                        active: isActive,
-                        disabled: isDisabled,
-                        selected: isSelected,
-                      })
-                    ) : (
-                      <Box align="start" pad="small">
-                        <Text margin="none">{this.optionLabel(index)}</Text>
-                      </Box>
-                    )}
-                  </SelectOption>
-                );
-              }}
-            </InfiniteScroll>
+            {options.length > 0 ? (
+              <InfiniteScroll items={options} step={theme.select.step} replace>
+                {(option, index) => {
+                  const isDisabled = this.isDisabled(index);
+                  const isSelected = this.isSelected(index);
+                  const isActive = isSelected || activeIndex === index;
+                  return (
+                    <SelectOption
+                      key={`option_${index}`}
+                      ref={ref => {
+                        this.optionsRef[index] = ref;
+                      }}
+                      disabled={isDisabled || undefined}
+                      active={isActive}
+                      selected={isSelected}
+                      option={option}
+                      onClick={
+                        !isDisabled
+                          ? () => this.selectOption(option, index)
+                          : undefined
+                      }
+                    >
+                      {children ? (
+                        children(option, index, options, {
+                          active: isActive,
+                          disabled: isDisabled,
+                          selected: isSelected,
+                        })
+                      ) : (
+                        <Box align="start" pad="small">
+                          <Text margin="none">{this.optionLabel(index)}</Text>
+                        </Box>
+                      )}
+                    </SelectOption>
+                  );
+                }}
+              </InfiniteScroll>
+            ) : (
+              <SelectOption
+                key="search_empty"
+                disabled
+                option={emptySearchMessage}
+              >
+                <Box align="start" pad="small">
+                  <Text margin="none">{emptySearchMessage}</Text>
+                </Box>
+              </SelectOption>
+            )}
           </OptionsBox>
         </ContainerBox>
       </Keyboard>
