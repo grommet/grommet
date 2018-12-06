@@ -63,6 +63,7 @@ const colors = {
   },
   focus: focusColor,
   placeholder: '#AAAAAA',
+  selected: 'brand',
   text: {
     dark: '#f8f8f8',
     light: '#444444',
@@ -232,6 +233,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         strong: 0.8,
         medium: 0.4,
         weak: 0.1,
+      },
+      selected: {
+        background: 'selected',
+        color: 'white',
       },
       spacing: `${baseSpacing}px`,
       size: {

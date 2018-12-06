@@ -6,6 +6,7 @@ import {
   debounceDelay,
   isNodeAfterScroll,
   isNodeBeforeScroll,
+  selectedStyle,
   setFocusWithoutScroll,
 } from '../../utils';
 
@@ -33,6 +34,10 @@ const ContainerBox = styled(Box)`
 
 const OptionsBox = styled(Box)`
   scroll-behavior: smooth;
+`;
+
+const OptionBox = styled(Box)`
+  ${props => props.selected && selectedStyle}
 `;
 
 class SelectContainer extends Component {
@@ -135,7 +140,7 @@ class SelectContainer extends Component {
     onSearch(search);
   }, debounceDelay(this.props));
 
-  selectOption = (option, index) => {
+  selectOption = (option, index) => () => {
     const { multiple, onChange, options, selected, value } = this.props;
 
     if (onChange) {
@@ -175,41 +180,78 @@ class SelectContainer extends Component {
     }
   };
 
+  // We use the state keyboardNavigating to prevent mouse over interaction
+  // from triggering changing the activeIndex due to scrolling.
+  clearKeyboardNavigation = () => {
+    clearTimeout(this.keyboardNavTimer);
+    this.keyboardNavTimer = setTimeout(() => {
+      this.setState({ keyboardNavigating: false });
+    }, 100); // 100ms was empirically determined
+  };
+
   onNextOption = event => {
     const { options } = this.props;
     const { activeIndex } = this.state;
     event.preventDefault();
-    const index = Math.min(activeIndex + 1, options.length - 1);
-    this.setState({ activeIndex: index }, () => {
-      const buttonNode = this.optionsRef[index];
-      const selectNode = this.selectRef.current;
+    let nextActiveIndex = activeIndex + 1;
+    while (
+      nextActiveIndex < options.length &&
+      this.isDisabled(nextActiveIndex)
+    ) {
+      nextActiveIndex += 1;
+    }
+    if (nextActiveIndex !== options.length) {
+      this.setState(
+        { activeIndex: nextActiveIndex, keyboardNavigating: true },
+        () => {
+          const buttonNode = this.optionsRef[nextActiveIndex];
+          const selectNode = this.selectRef.current;
 
-      if (
-        buttonNode &&
-        isNodeAfterScroll(buttonNode, selectNode) &&
-        selectNode.scrollBy
-      ) {
-        selectNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
-      }
-    });
+          if (
+            buttonNode &&
+            isNodeAfterScroll(buttonNode, selectNode) &&
+            selectNode.scrollBy
+          ) {
+            selectNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
+          }
+          this.clearKeyboardNavigation();
+        },
+      );
+    }
   };
 
   onPreviousOption = event => {
     const { activeIndex } = this.state;
     event.preventDefault();
-    const index = Math.max(activeIndex - 1, 0);
-    this.setState({ activeIndex: index }, () => {
-      const buttonNode = this.optionsRef[index];
-      const selectNode = this.selectRef.current;
+    let nextActiveIndex = activeIndex - 1;
+    while (nextActiveIndex >= 0 && this.isDisabled(nextActiveIndex)) {
+      nextActiveIndex -= 1;
+    }
+    if (nextActiveIndex >= 0) {
+      this.setState(
+        { activeIndex: nextActiveIndex, keyboardNavigating: true },
+        () => {
+          const buttonNode = this.optionsRef[nextActiveIndex];
+          const selectNode = this.selectRef.current;
 
-      if (
-        buttonNode &&
-        isNodeBeforeScroll(buttonNode, selectNode) &&
-        selectNode.scrollBy
-      ) {
-        selectNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
-      }
-    });
+          if (
+            buttonNode &&
+            isNodeBeforeScroll(buttonNode, selectNode) &&
+            selectNode.scrollBy
+          ) {
+            selectNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
+          }
+          this.clearKeyboardNavigation();
+        },
+      );
+    }
+  };
+
+  onActiveOption = index => () => {
+    const { keyboardNavigating } = this.state;
+    if (!keyboardNavigating) {
+      this.setState({ activeIndex: index });
+    }
   };
 
   onSelectOption = event => {
@@ -217,7 +259,7 @@ class SelectContainer extends Component {
     const { activeIndex } = this.state;
     if (activeIndex >= 0) {
       event.preventDefault(); // prevent submitting forms
-      this.selectOption(options[activeIndex], activeIndex);
+      this.selectOption(options[activeIndex], activeIndex)();
     }
   };
 
@@ -360,7 +402,7 @@ class SelectContainer extends Component {
                 {(option, index) => {
                   const isDisabled = this.isDisabled(index);
                   const isSelected = this.isSelected(index);
-                  const isActive = isSelected || activeIndex === index;
+                  const isActive = activeIndex === index;
                   return (
                     <SelectOption
                       key={`option_${index}`}
@@ -369,11 +411,13 @@ class SelectContainer extends Component {
                       }}
                       disabled={isDisabled || undefined}
                       active={isActive}
-                      selected={isSelected}
                       option={option}
+                      onMouseOver={
+                        !isDisabled ? this.onActiveOption(index) : undefined
+                      }
                       onClick={
                         !isDisabled
-                          ? () => this.selectOption(option, index)
+                          ? this.selectOption(option, index)
                           : undefined
                       }
                     >
@@ -384,9 +428,13 @@ class SelectContainer extends Component {
                           selected: isSelected,
                         })
                       ) : (
-                        <Box align="start" pad="small">
+                        <OptionBox
+                          align="start"
+                          pad="small"
+                          selected={isSelected}
+                        >
                           <Text margin="none">{this.optionLabel(index)}</Text>
-                        </Box>
+                        </OptionBox>
                       )}
                     </SelectOption>
                   );
@@ -398,9 +446,9 @@ class SelectContainer extends Component {
                 disabled
                 option={emptySearchMessage}
               >
-                <Box align="start" pad="small">
+                <OptionBox align="start" pad="small">
                   <Text margin="none">{emptySearchMessage}</Text>
-                </Box>
+                </OptionBox>
               </SelectOption>
             )}
           </OptionsBox>
