@@ -39,6 +39,7 @@ class SelectContainer extends Component {
   static defaultProps = {
     children: null,
     disabled: undefined,
+    emptySearchMessage: 'No matches found',
     id: undefined,
     multiple: false,
     name: undefined,
