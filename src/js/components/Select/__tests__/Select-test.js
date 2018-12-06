@@ -326,4 +326,21 @@ describe('Select', () => {
       expect(document.activeElement).toMatchSnapshot();
     });
   });
+
+  test('empty results search', () => {
+    const { getByPlaceholderText } = render(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={[]}
+        onSearch={() => {}}
+        emptySearchMessage="no results"
+      />,
+    );
+    fireEvent.click(getByPlaceholderText('test select'));
+    document.activeElement.value = 'a';
+    fireEvent.input(document.activeElement);
+
+    expect(document.activeElement).toMatchSnapshot();
+  });
 });

@@ -161,6 +161,11 @@ export const doc = Select => {
       If a function is provided, it is called with the option and the
       return value indicates the value.`,
     ),
+    emptySearchMessage: PropTypes.string
+      .description(
+        `Empty option message to display when no matching results were found`,
+      )
+      .defaultValue('No matches found'),
   };
 
   return DocumentedSelect;

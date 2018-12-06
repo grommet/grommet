@@ -6033,6 +6033,14 @@ When the options array contains objects, this property indicates how
 string
 function
 \`\`\`
+
+**emptySearchMessage**
+
+Empty option message to display when no matching results were found Defaults to \`No matches found\`.
+
+\`\`\`
+string
+\`\`\`
   
 ## Theme
   
