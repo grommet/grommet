@@ -67,7 +67,7 @@ function (_Component) {
       activeIndex: -1
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChange", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onSearchChange", function (event) {
       _this.setState({
         search: event.target.value,
         activeIndex: -1
@@ -125,7 +125,6 @@ function (_Component) {
         }
 
         onChange({
-          target: _this.searchRef.current,
           option: option,
           value: nextValue,
           selected: nextSelected
@@ -384,7 +383,7 @@ function (_Component) {
       type: "search",
       value: search,
       placeholder: searchPlaceholder,
-      onChange: this.onChange
+      onChange: this.onSearchChange
     })), _react.default.createElement(OptionsBox, {
       flex: "shrink",
       role: "menubar",

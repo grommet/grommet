@@ -70,6 +70,8 @@ function (_Component) {
       open: false
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputRef", _react.default.createRef());
+
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onOpen", function () {
       var onOpen = _this.props.onOpen;
 
@@ -141,7 +143,9 @@ function (_Component) {
           args[_key2 - 1] = arguments[_key2];
         }
 
-        onChange.apply(void 0, [event].concat(args));
+        onChange.apply(void 0, [_extends({}, event, {
+          target: _this2.inputRef.current
+        })].concat(args));
       }
     };
 
@@ -227,7 +231,8 @@ function (_Component) {
       basis: "auto"
     }, selectValue || _react.default.createElement(SelectTextInput, _extends({
       a11yTitle: a11yTitle && "" + a11yTitle + (typeof value === 'string' ? ", " + value : ''),
-      id: id ? id + "__input" : undefined
+      id: id ? id + "__input" : undefined,
+      ref: this.inputRef
     }, rest, {
       tabIndex: "-1",
       type: "text",
