@@ -337,6 +337,7 @@ function (_Component) {
     var _this$props6 = this.props,
         children = _this$props6.children,
         dropHeight = _this$props6.dropHeight,
+        emptySearchMessage = _this$props6.emptySearchMessage,
         id = _this$props6.id,
         onKeyDown = _this$props6.onKeyDown,
         onSearch = _this$props6.onSearch,
@@ -373,7 +374,7 @@ function (_Component) {
       tabIndex: "-1",
       ref: this.selectRef,
       overflow: "auto"
-    }, React.createElement(InfiniteScroll, {
+    }, options.length > 0 ? React.createElement(InfiniteScroll, {
       items: options,
       step: theme.select.step,
       replace: true
@@ -405,7 +406,16 @@ function (_Component) {
       }, React.createElement(Text, {
         margin: "none"
       }, _this3.optionLabel(index))));
-    }))));
+    }) : React.createElement(SelectOption, {
+      key: "search_empty",
+      disabled: true,
+      option: emptySearchMessage
+    }, React.createElement(Box, {
+      align: "start",
+      pad: "small"
+    }, React.createElement(Text, {
+      margin: "none"
+    }, emptySearchMessage))))));
   };
 
   return SelectContainer;
@@ -414,6 +424,7 @@ function (_Component) {
 _defineProperty(SelectContainer, "defaultProps", {
   children: null,
   disabled: undefined,
+  emptySearchMessage: 'No matches found',
   id: undefined,
   multiple: false,
   name: undefined,

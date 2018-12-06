@@ -29,6 +29,7 @@ export interface SelectProps {
   value?: string | JSX.Element | object | string | object[];
   valueLabel?: React.ReactNode;
   valueKey?: string | (...args: any[]) => any;
+  emptySearchMessage?: string;
 }
 
 declare const Select: React.ComponentType<SelectProps>;

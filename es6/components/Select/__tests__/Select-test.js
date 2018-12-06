@@ -298,4 +298,19 @@ describe('Select', function () {
       expect(document.activeElement).toMatchSnapshot();
     });
   });
+  test('empty results search', function () {
+    var _render12 = render(React.createElement(Select, {
+      id: "test-select",
+      placeholder: "test select",
+      options: [],
+      onSearch: function onSearch() {},
+      emptySearchMessage: "no results"
+    })),
+        getByPlaceholderText = _render12.getByPlaceholderText;
+
+    fireEvent.click(getByPlaceholderText('test select'));
+    document.activeElement.value = 'a';
+    fireEvent.input(document.activeElement);
+    expect(document.activeElement).toMatchSnapshot();
+  });
 });

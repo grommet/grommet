@@ -2679,6 +2679,12 @@ object
 function",
         "name": "valueKey",
       },
+      Object {
+        "defaultValue": "No matches found",
+        "description": "Empty option message to display when no matching results were found",
+        "format": "string",
+        "name": "emptySearchMessage",
+      },
     ],
     "usage": "import { Select } from 'grommet';
 <Select />",

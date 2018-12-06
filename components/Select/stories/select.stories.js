@@ -646,6 +646,7 @@ function (_Component6) {
       closeOnChange: false,
       placeholder: "Select Content Partners",
       searchPlaceholder: "Search Content Partners",
+      emptySearchMessage: "No partners found",
       multiple: true,
       value: selectedContentPartners.length ? this.renderContentPartners() : undefined,
       selected: selectedContentPartners.map(function (option) {

@@ -341,4 +341,22 @@ describe('Select', function () {
       expect(document.activeElement).toMatchSnapshot();
     });
   });
+  test('empty results search', function () {
+    var _render12 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+      id: "test-select",
+      placeholder: "test select",
+      options: [],
+      onSearch: function onSearch() {},
+      emptySearchMessage: "no results"
+    })),
+        getByPlaceholderText = _render12.getByPlaceholderText;
+
+    _reactTestingLibrary.fireEvent.click(getByPlaceholderText('test select'));
+
+    document.activeElement.value = 'a';
+
+    _reactTestingLibrary.fireEvent.input(document.activeElement);
+
+    expect(document.activeElement).toMatchSnapshot();
+  });
 });
