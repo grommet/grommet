@@ -18,7 +18,7 @@ Before opening an issue or pull request, please read the [Contributing](https://
 
   For NPM users:
   ```
-    $ npm install grommet grommet-icons styled-components --save
+    $ npm install grommet grommet-icons@3.x styled-components --save
   ```
 
   Detailed instructions are on the [Get Started](https://v2.grommet.io/use) page.
