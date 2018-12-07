@@ -161,8 +161,8 @@ function (_Component2) {
     _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "state", {
-      fourthOption: 'one',
-      open: false
+      open: false,
+      select: ''
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onOpen", function () {
@@ -187,7 +187,7 @@ function (_Component2) {
 
     var _this$state2 = this.state,
         open = _this$state2.open,
-        fourthOption = _this$state2.fourthOption;
+        select = _this$state2.select;
     return React.createElement(Grommet, {
       theme: grommet,
       full: true
@@ -232,20 +232,19 @@ function (_Component2) {
       label: "First"
     }, React.createElement(TextInput, null)), React.createElement(FormField, {
       label: "Second"
-    }, React.createElement(TextInput, null)), React.createElement(FormField, {
-      label: "Third"
-    }, React.createElement(TextArea, null)), React.createElement(FormField, {
-      label: "Fourth"
     }, React.createElement(Select, {
-      options: ['one', 'two', 'three'],
-      value: fourthOption,
+      options: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'],
+      value: select,
+      onSearch: function onSearch() {},
       onChange: function onChange(_ref) {
         var option = _ref.option;
         return _this3.setState({
-          fourthOption: option
+          select: option
         });
       }
-    }))), React.createElement(Box, {
+    })), React.createElement(FormField, {
+      label: "Third"
+    }, React.createElement(TextArea, null))), React.createElement(Box, {
       flex: false,
       as: "footer",
       align: "start"

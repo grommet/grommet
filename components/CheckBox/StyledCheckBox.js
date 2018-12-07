@@ -38,7 +38,7 @@ Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, _defaultProps.defaultProp
 var StyledCheckBoxContainer = _styledComponents.default.label.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxContainer",
   componentId: "sc-1dbk5ju-1"
-})(["user-select:none;", " ", " ", " ", ""], function (props) {
+})(["display:flex;flex-direction:row;align-items:center;user-select:none;", " ", " ", " ", ""], function (props) {
   return props.disabled && disabledStyle;
 }, function (props) {
   return !props.disabled && 'cursor: pointer;';
@@ -72,7 +72,9 @@ Object.setPrototypeOf(StyledCheckBoxInput.defaultProps, _defaultProps.defaultPro
 var StyledCheckBoxBox = _styledComponents.default.div.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxBox",
   componentId: "sc-1dbk5ju-3"
-})(["", ";"], function (props) {
+})(["", ";", ";"], function (props) {
+  return props.focus && _utils.focusStyle;
+}, function (props) {
   return props.theme.checkBox.check.extend;
 });
 

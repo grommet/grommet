@@ -64,6 +64,8 @@ function (_Component) {
   var _proto = CheckBox.prototype;
 
   _proto.render = function render() {
+    var _ref;
+
     var _this$props = this.props,
         checked = _this$props.checked,
         disabled = _this$props.disabled,
@@ -79,6 +81,14 @@ function (_Component) {
         indeterminate = _this$props.indeterminate,
         rest = _objectWithoutPropertiesLoose(_this$props, ["checked", "disabled", "focus", "forwardRef", "id", "label", "name", "onChange", "reverse", "theme", "toggle", "indeterminate"]);
 
+    var themeableProps = {
+      checked: checked,
+      disabled: disabled,
+      focus: focus,
+      reverse: reverse,
+      toggle: toggle,
+      indeterminate: indeterminate
+    };
     var hidden;
 
     if (disabled && checked) {
@@ -98,10 +108,7 @@ function (_Component) {
       borderColor = (0, _utils.normalizeColor)(theme.checkBox.color || 'control', theme);
     }
 
-    var visual = toggle ? _react.default.createElement(_StyledCheckBox.StyledCheckBoxToggle, {
-      focus: focus,
-      checked: checked
-    }, _react.default.createElement(_StyledCheckBox.StyledCheckBoxKnob, null)) : _react.default.createElement(_StyledCheckBox.StyledCheckBoxBox, {
+    var visual = toggle ? _react.default.createElement(_StyledCheckBox.StyledCheckBoxToggle, themeableProps, _react.default.createElement(_StyledCheckBox.StyledCheckBoxKnob, themeableProps)) : _react.default.createElement(_StyledCheckBox.StyledCheckBoxBox, _extends({
       as: _Box.Box,
       align: "center",
       justify: "center",
@@ -111,38 +118,36 @@ function (_Component) {
         size: theme.checkBox.border.width,
         color: borderColor
       },
-      round: theme.checkBox.check.radius,
-      focus: focus,
-      checked: checked,
-      disabled: disabled,
-      toggle: toggle
-    }, !indeterminate && checked && (CheckedIcon ? _react.default.createElement(CheckedIcon, {
+      round: theme.checkBox.check.radius
+    }, themeableProps), !indeterminate && checked && (CheckedIcon ? _react.default.createElement(CheckedIcon, {
       theme: theme,
       as: _StyledCheckBox.StyledCheckBoxIcon
-    }) : _react.default.createElement(_StyledCheckBox.StyledCheckBoxIcon, {
+    }) : _react.default.createElement(_StyledCheckBox.StyledCheckBoxIcon, _extends({
       theme: theme,
       viewBox: "0 0 24 24",
       preserveAspectRatio: "xMidYMid meet"
-    }, _react.default.createElement("path", {
+    }, themeableProps), _react.default.createElement("path", {
       fill: "none",
       d: "M6,11.3 L10.3,16 L18,6.2"
     }))), !checked && indeterminate && (IndeterminateIcon ? _react.default.createElement(IndeterminateIcon, {
       theme: theme,
       as: _StyledCheckBox.StyledCheckBoxIcon
-    }) : _react.default.createElement(_StyledCheckBox.StyledCheckBoxIcon, {
+    }) : _react.default.createElement(_StyledCheckBox.StyledCheckBoxIcon, _extends({
       theme: theme,
       viewBox: "0 0 24 24",
       preserveAspectRatio: "xMidYMid meet"
-    }, _react.default.createElement("path", {
+    }, themeableProps), _react.default.createElement("path", {
       fill: "none",
       d: "M6,12 L18,12"
     }))));
+    var side = reverse ? 'left' : 'right';
 
-    var checkBoxNode = _react.default.createElement(_StyledCheckBox.StyledCheckBox, {
+    var checkBoxNode = _react.default.createElement(_StyledCheckBox.StyledCheckBox, _extends({
       as: _Box.Box,
       align: "center",
-      justify: "center"
-    }, _react.default.createElement(_StyledCheckBox.StyledCheckBoxInput, _extends({}, rest, {
+      justify: "center",
+      margin: (_ref = {}, _ref[side] = theme.checkBox.gap || 'small', _ref)
+    }, themeableProps), _react.default.createElement(_StyledCheckBox.StyledCheckBoxInput, _extends({}, rest, {
       ref: forwardRef,
       type: "checkbox"
     }, (0, _object.removeUndefined)({
@@ -151,31 +156,20 @@ function (_Component) {
       checked: checked,
       disabled: disabled,
       onChange: onChange
-    }), {
-      checked: checked,
-      disabled: disabled
-    })), visual, hidden);
+    }), themeableProps)), visual, hidden);
 
     var normalizedLabel = typeof label === 'string' ? _react.default.createElement("span", null, label) : label;
     var first = reverse ? normalizedLabel : checkBoxNode;
     var second = reverse ? checkBoxNode : normalizedLabel;
     return _react.default.createElement(_StyledCheckBox.StyledCheckBoxContainer, _extends({
-      direction: "row",
-      align: "center",
-      as: function as(props) {
-        return _react.default.createElement(_Box.Box, _extends({
-          as: "label"
-        }, props));
-      },
       reverse: reverse
     }, (0, _object.removeUndefined)({
       htmlFor: id,
       disabled: disabled
     }), {
-      gap: theme.checkBox.gap || 'small',
       checked: checked,
       onClick: stopLabelClick
-    }), first, second);
+    }, themeableProps), first, second);
   };
 
   return CheckBox;

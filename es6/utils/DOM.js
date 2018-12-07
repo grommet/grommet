@@ -150,9 +150,10 @@ export var isNodeAfterScroll = function isNodeAfterScroll(node, target) {
       bottom = _node$getBoundingClie.bottom;
 
   var _target$getBoundingCl = target.getBoundingClientRect(),
-      height = _target$getBoundingCl.height;
+      height = _target$getBoundingCl.height,
+      top = _target$getBoundingCl.top;
 
-  return bottom >= height;
+  return bottom >= top + height;
 };
 export var isNodeBeforeScroll = function isNodeBeforeScroll(node, target) {
   if (target === void 0) {
