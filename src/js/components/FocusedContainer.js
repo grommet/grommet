@@ -23,15 +23,12 @@ export class FocusedContainer extends Component {
   ref = React.createRef();
 
   componentDidMount() {
-    /* https://reactjs.org/docs/accessibility.html#wai-aria */
-    /* eslint-disable react/destructuring-assignment */
-    const ariaHidden = this.props['aria-hidden'];
-
+    const { hidden } = this.props;
     // making sure trap focus always execute
     // after removeTrap for the case where two drops
     // are open at the same time
     setTimeout(() => {
-      if (!ariaHidden) {
+      if (!hidden) {
         this.trapFocus();
       }
     }, 0);
@@ -66,10 +63,10 @@ export class FocusedContainer extends Component {
   };
 
   render() {
-    const { children, ...rest } = this.props;
+    const { children, hidden, ...rest } = this.props;
     delete rest.restrictScroll;
     return (
-      <div ref={this.ref} {...rest}>
+      <div ref={this.ref} aria-hidden={hidden} {...rest}>
         {children}
       </div>
     );
