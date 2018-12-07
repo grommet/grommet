@@ -19,7 +19,7 @@ You can install Grommet using either of the methods below.
 For NPM users:
 
 ```
-  $ npm install grommet grommet-icons@3.x styled-components --save
+  $ npm install grommet styled-components --save
 ```
 
 Detailed instructions are on the [Get Started](https://v2.grommet.io/use) page.
