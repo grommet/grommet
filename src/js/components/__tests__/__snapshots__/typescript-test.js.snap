@@ -469,7 +469,7 @@ export interface MaskedInputProps {
   id?: string;
   name?: string;
   onChange?: (...args: any[]) => any;
-  mask?: {length?: number | number[],onActive?: (...args: any[]) => any,onInactive?: (...args: any[]) => any,fixed?: string,options?: string[]}[];
+  mask?: {length?: number | number[],fixed?: string,options?: string[],regexp?: {}}[];
   size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   value?: string;
 }

@@ -29,7 +29,7 @@ string
 
 **onChange**
 
-Function that will be called when the user types.
+Function that will be called when the user types or pastes text.
 
 ```
 function
@@ -37,17 +37,21 @@ function
 
 **mask**
 
-Describes the structure of the mask. Defaults to `[]`.
+Describes the structure of the mask. If a regexp is provided, it should
+      allow both the final full string element as well as partial strings
+      as the user types characters one by one. Defaults to `[]`.
 
 ```
 [{
   length: 
     number
     [number],
-  onActive: function,
-  onInactive: function,
   fixed: string,
-  options: [string]
+  options: [string],
+  regexp: 
+    {
+
+    }
 }]
 ```
 
@@ -65,8 +69,8 @@ string
 
 **value**
 
-What text to put in the input. It will automatically be aligned to
-      the mask.
+What text to put in the input. The caller should ensure that it
+      is initially valid with respect to the mask.
 
 ```
 string
