@@ -700,12 +700,6 @@ exports[`Select complex options and children 3`] = `
   text-align: inherit;
 }
 
-.c7:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -842,6 +836,7 @@ exports[`Select complex options and children 3`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <span>
@@ -855,6 +850,7 @@ exports[`Select complex options and children 3`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <span>
@@ -1976,6 +1972,7 @@ exports[`Select empty results search 1`] = `
           class="c10"
           disabled=""
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
@@ -2130,12 +2127,6 @@ exports[`Select large drop container height 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c7:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
 }
 
 .c0 {
@@ -2296,6 +2287,7 @@ exports[`Select large drop container height 1`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
@@ -2315,6 +2307,7 @@ exports[`Select large drop container height 1`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
@@ -2474,12 +2467,6 @@ exports[`Select medium drop container height 1`] = `
   text-align: inherit;
 }
 
-.c7:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2638,6 +2625,7 @@ exports[`Select medium drop container height 1`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
@@ -2657,6 +2645,7 @@ exports[`Select medium drop container height 1`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
@@ -3343,7 +3332,7 @@ exports[`Select multiple values 3`] = `
   padding: 0px;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3364,7 +3353,7 @@ exports[`Select multiple values 3`] = `
   padding: 12px;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3401,15 +3390,6 @@ exports[`Select multiple values 3`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
-.c7:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
 }
 
 .c0 {
@@ -3437,7 +3417,7 @@ exports[`Select multiple values 3`] = `
   animation-delay: 0.01s;
 }
 
-.c9 {
+.c10 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -3458,6 +3438,12 @@ exports[`Select multiple values 3`] = `
   scroll-behavior: smooth;
 }
 
+.c8 {
+  background: #7D4CDB;
+  color: #f8f8f8;
+  color: #FFFFFF;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -3507,25 +3493,25 @@ exports[`Select multiple values 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c11 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c11 {
     padding: 0px;
   }
 }
@@ -3570,13 +3556,14 @@ exports[`Select multiple values 3`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
-            class="c8"
+            class="c8 c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               one
             </span>
@@ -3589,13 +3576,14 @@ exports[`Select multiple values 3`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
-            class="c8"
+            class="c8 c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               two
             </span>
@@ -3603,7 +3591,7 @@ exports[`Select multiple values 3`] = `
         </button>
       </div>
       <div
-        class="c10"
+        class="c11"
       />
     </div>
   </div>
@@ -4245,12 +4233,6 @@ exports[`Select opens 3`] = `
   text-align: inherit;
 }
 
-.c7:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4409,6 +4391,7 @@ exports[`Select opens 3`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
@@ -4428,6 +4411,7 @@ exports[`Select opens 3`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
@@ -4632,12 +4616,13 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 jqGCfM"
   >
     <button
-      class="StyledButton-sc-323bzc-0 gFnwgj"
+      class="StyledButton-sc-323bzc-0 fRAxrl"
       role="menuitem"
+      tabindex="-1"
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eEPVhE"
+        class="SelectContainer__OptionBox-sc-1wi0ul8-2 dvNFzh StyledBox-sc-13pk1d4-0 eEPVhE"
       >
         <span
           class="StyledText-sc-1sadyjn-0 fLjoaM"
@@ -4651,12 +4636,13 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 jqGCfM"
   >
     <button
-      class="StyledButton-sc-323bzc-0 gFnwgj"
+      class="StyledButton-sc-323bzc-0 fRAxrl"
       role="menuitem"
+      tabindex="-1"
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eEPVhE"
+        class="SelectContainer__OptionBox-sc-1wi0ul8-2 dvNFzh StyledBox-sc-13pk1d4-0 eEPVhE"
       >
         <span
           class="StyledText-sc-1sadyjn-0 fLjoaM"
@@ -5089,12 +5075,6 @@ exports[`Select search 2`] = `
   text-align: inherit;
 }
 
-.c10:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -5323,6 +5303,7 @@ exports[`Select search 2`] = `
         <button
           class="c10"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
@@ -5342,6 +5323,7 @@ exports[`Select search 2`] = `
         <button
           class="c10"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
@@ -6942,12 +6924,6 @@ exports[`Select small drop container height 1`] = `
   text-align: inherit;
 }
 
-.c7:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -7106,6 +7082,7 @@ exports[`Select small drop container height 1`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
@@ -7125,6 +7102,7 @@ exports[`Select small drop container height 1`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
