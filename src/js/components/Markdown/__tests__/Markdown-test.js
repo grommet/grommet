@@ -15,6 +15,8 @@ Paragraph
 ### H3
 
 #### H4
+
+[a link](#)
 `;
 
 test('Markdown renders', () => {

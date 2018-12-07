@@ -2640,6 +2640,16 @@ string",
         "name": "size",
       },
       Object {
+        "description": "The height of the drop container.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "dropHeight",
+      },
+      Object {
         "description": "Currently selected value. This can be an array
       when multiple. Passing an element allows the caller to control how
       the value is rendered. Passing an element is deprecated. Instead,
@@ -2668,6 +2678,12 @@ object
         "format": "string
 function",
         "name": "valueKey",
+      },
+      Object {
+        "defaultValue": "No matches found",
+        "description": "Empty option message to display when no matching results were found",
+        "format": "string",
+        "name": "emptySearchMessage",
       },
     ],
     "usage": "import { Select } from 'grommet';

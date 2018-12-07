@@ -14,31 +14,33 @@ Before opening an issue or pull request, please read the [Contributing](https://
 
 ### Install
 
-  You can install Grommet using either of the methods below.
+You can install Grommet using either of the methods below.
 
-  For NPM users:
-  ```
-    $ npm install grommet grommet-icons styled-components --save
-  ```
+For NPM users:
 
-  Detailed instructions are on the [Get Started](https://v2.grommet.io/use) page.
+```
+  $ npm install grommet grommet-icons@3.x styled-components --save
+```
+
+Detailed instructions are on the [Get Started](https://v2.grommet.io/use) page.
 
 ### Explore
 
-  We have a few examples on Storybook, you can see them by running:
+We have a few examples on Storybook, you can see them by running:
 
-  ```
-    $ npm run storybook
-  ```
-  
-  or you can navigate our [Storybook site](https://storybook.grommet.io)
+```
+  $ npm run storybook
+```
+
+or you can navigate our [Storybook site](https://storybook.grommet.io)
 
 ### Release History
 
-  See the [Change Log](https://github.com/grommet/grommet/wiki/Change-Log).
+See the [Change Log](https://github.com/grommet/grommet/wiki/Change-Log).
 
 ### Tools Behind Grommet
 
- Grommet is produced using these great tools
- * [Travis CI](https://travis-ci.org/grommet/grommet) for continuous integration
- * [Waffle.io](https://waffle.io/grommet/grommet) for backlog tracking
+Grommet is produced using these great tools
+
+- [Travis CI](https://travis-ci.org/grommet/grommet) for continuous integration
+- [Waffle.io](https://waffle.io/grommet/grommet) for backlog tracking

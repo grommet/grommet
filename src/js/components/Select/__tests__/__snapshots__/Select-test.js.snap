@@ -6,6 +6,8 @@ exports[`Select basic 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -253,11 +255,7 @@ exports[`Select basic 1`] = `
       <svg
         aria-label="FormDown"
         className="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -277,6 +275,8 @@ exports[`Select complex options and children 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -513,11 +513,7 @@ exports[`Select complex options and children 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -565,12 +561,8 @@ exports[`Select complex options and children 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dtlWir"
-        height="24px"
-        role="img"
-        version="1.1"
+        class="StyledIcon-ofa7kd-0 dSllCE"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -698,12 +690,6 @@ exports[`Select complex options and children 3`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c7:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
 }
 
 .c0 {
@@ -842,6 +828,7 @@ exports[`Select complex options and children 3`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <span>
@@ -855,6 +842,7 @@ exports[`Select complex options and children 3`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <span>
@@ -1049,6 +1037,8 @@ exports[`Select deselect an option 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -1286,11 +1276,7 @@ exports[`Select deselect an option 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -1310,6 +1296,8 @@ exports[`Select disabled 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -1549,11 +1537,7 @@ exports[`Select disabled 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -1602,12 +1586,8 @@ exports[`Select disabled 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dtlWir"
-        height="24px"
-        role="img"
-        version="1.1"
+        class="StyledIcon-ofa7kd-0 dSllCE"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -1621,12 +1601,1064 @@ exports[`Select disabled 2`] = `
 </button>
 `;
 
+exports[`Select empty results search 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  padding: 0px;
+  overflow: auto;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 6px;
+}
+
+.c10 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  overflow: auto;
+  background: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c6 {
+  box-sizing: border-box;
+  font-size: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c6:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5 {
+  position: relative;
+  width: 100%;
+}
+
+.c12 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.c2 {
+  max-height: inherit;
+}
+
+.c7 {
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 3px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c2 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  id="test-select__drop"
+  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+    id="test-select__select-drop"
+  >
+    <div
+      class="c4"
+    >
+      <div
+        class="c5"
+      >
+        <input
+          autocomplete="off"
+          class="c6"
+          type="search"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="c7 c8"
+      role="menubar"
+      tabindex="-1"
+    >
+      <div
+        class="c9"
+      >
+        <button
+          class="c10"
+          disabled=""
+          role="menuitem"
+          tabindex="-1"
+          type="button"
+        >
+          <div
+            class="c11"
+          >
+            <span
+              class="c12"
+            >
+              no results
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select large drop container height 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  padding: 0px;
+  overflow: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: NaNpx;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: 768px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  overflow: auto;
+  background: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.c2 {
+  max-height: inherit;
+}
+
+.c4 {
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c2 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  id="test-select__drop"
+  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+    id="test-select__select-drop"
+  >
+    <div
+      class="c4 c5"
+      role="menubar"
+      tabindex="-1"
+    >
+      <div
+        class="c6"
+      >
+        <button
+          class="c7"
+          role="menuitem"
+          tabindex="-1"
+          type="button"
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              one
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="c6"
+      >
+        <button
+          class="c7"
+          role="menuitem"
+          tabindex="-1"
+          type="button"
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              two
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="c10"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select medium drop container height 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  padding: 0px;
+  overflow: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: NaNpx;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: 384px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  overflow: auto;
+  background: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.c2 {
+  max-height: inherit;
+}
+
+.c4 {
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c2 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  id="test-select__drop"
+  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+    id="test-select__select-drop"
+  >
+    <div
+      class="c4 c5"
+      role="menubar"
+      tabindex="-1"
+    >
+      <div
+        class="c6"
+      >
+        <button
+          class="c7"
+          role="menuitem"
+          tabindex="-1"
+          type="button"
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              one
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="c6"
+      >
+        <button
+          class="c7"
+          role="menuitem"
+          tabindex="-1"
+          type="button"
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              two
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="c10"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Select multiple 1`] = `
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -1876,11 +2908,7 @@ exports[`Select multiple 1`] = `
       <svg
         aria-label="FormDown"
         className="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -1900,6 +2928,8 @@ exports[`Select multiple values 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -2137,11 +3167,7 @@ exports[`Select multiple values 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -2190,12 +3216,8 @@ exports[`Select multiple values 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dtlWir"
-        height="24px"
-        role="img"
-        version="1.1"
+        class="StyledIcon-ofa7kd-0 dSllCE"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -2286,7 +3308,7 @@ exports[`Select multiple values 3`] = `
   padding: 0px;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2307,7 +3329,7 @@ exports[`Select multiple values 3`] = `
   padding: 12px;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2344,15 +3366,6 @@ exports[`Select multiple values 3`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
-}
-
-.c7:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
 }
 
 .c0 {
@@ -2380,7 +3393,7 @@ exports[`Select multiple values 3`] = `
   animation-delay: 0.01s;
 }
 
-.c9 {
+.c10 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -2401,6 +3414,12 @@ exports[`Select multiple values 3`] = `
   scroll-behavior: smooth;
 }
 
+.c8 {
+  background: #7D4CDB;
+  color: #f8f8f8;
+  color: #FFFFFF;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -2450,25 +3469,25 @@ exports[`Select multiple values 3`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c9 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c11 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c10 {
+  .c11 {
     padding: 0px;
   }
 }
@@ -2513,13 +3532,14 @@ exports[`Select multiple values 3`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
-            class="c8"
+            class="c8 c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               one
             </span>
@@ -2532,13 +3552,14 @@ exports[`Select multiple values 3`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
-            class="c8"
+            class="c8 c9"
           >
             <span
-              class="c9"
+              class="c10"
             >
               two
             </span>
@@ -2546,7 +3567,7 @@ exports[`Select multiple values 3`] = `
         </button>
       </div>
       <div
-        class="c10"
+        class="c11"
       />
     </div>
   </div>
@@ -2744,6 +3765,8 @@ exports[`Select opens 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -2980,11 +4003,7 @@ exports[`Select opens 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -3032,12 +4051,8 @@ exports[`Select opens 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dtlWir"
-        height="24px"
-        role="img"
-        version="1.1"
+        class="StyledIcon-ofa7kd-0 dSllCE"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -3186,12 +4201,6 @@ exports[`Select opens 3`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c7:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
 }
 
 .c0 {
@@ -3352,6 +4361,7 @@ exports[`Select opens 3`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
@@ -3371,6 +4381,7 @@ exports[`Select opens 3`] = `
         <button
           class="c7"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
@@ -3575,12 +4586,13 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 jqGCfM"
   >
     <button
-      class="StyledButton-sc-323bzc-0 gFnwgj"
+      class="StyledButton-sc-323bzc-0 fRAxrl"
       role="menuitem"
+      tabindex="-1"
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eEPVhE"
+        class="SelectContainer__OptionBox-sc-1wi0ul8-2 dvNFzh StyledBox-sc-13pk1d4-0 eEPVhE"
       >
         <span
           class="StyledText-sc-1sadyjn-0 fLjoaM"
@@ -3594,12 +4606,13 @@ exports[`Select opens 5`] = `
     class="StyledBox-sc-13pk1d4-0 jqGCfM"
   >
     <button
-      class="StyledButton-sc-323bzc-0 gFnwgj"
+      class="StyledButton-sc-323bzc-0 fRAxrl"
       role="menuitem"
+      tabindex="-1"
       type="button"
     >
       <div
-        class="StyledBox-sc-13pk1d4-0 eEPVhE"
+        class="SelectContainer__OptionBox-sc-1wi0ul8-2 dvNFzh StyledBox-sc-13pk1d4-0 eEPVhE"
       >
         <span
           class="StyledText-sc-1sadyjn-0 fLjoaM"
@@ -3621,6 +4634,8 @@ exports[`Select search 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -3857,11 +4872,7 @@ exports[`Select search 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -4030,12 +5041,6 @@ exports[`Select search 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c10:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
-  color: #000000;
 }
 
 .c0 {
@@ -4266,6 +5271,7 @@ exports[`Select search 2`] = `
         <button
           class="c10"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
@@ -4285,6 +5291,7 @@ exports[`Select search 2`] = `
         <button
           class="c10"
           role="menuitem"
+          tabindex="-1"
           type="button"
         >
           <div
@@ -4497,6 +5504,8 @@ exports[`Select select an option 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -4733,11 +5742,7 @@ exports[`Select select an option 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -4757,6 +5762,8 @@ exports[`Select select an option with complex options 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -4930,11 +5937,7 @@ exports[`Select select an option with complex options 1`] = `
       <svg
         aria-label="FormDown"
         class="c4"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -4954,6 +5957,8 @@ exports[`Select select an option with enter 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -5190,11 +6195,7 @@ exports[`Select select an option with enter 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -5214,6 +6215,8 @@ exports[`Select select another option 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -5451,11 +6454,7 @@ exports[`Select select another option 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -5728,12 +6727,7 @@ exports[`Select size 1`] = `
       <svg
         aria-label="FormDown"
         className="c8"
-        height="24px"
-        role="img"
-        size="large"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -5745,4 +6739,342 @@ exports[`Select size 1`] = `
     </div>
   </div>
 </button>
+`;
+
+exports[`Select small drop container height 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  padding: 0px;
+  overflow: auto;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: NaNpx;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: 192px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c7 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+  outline: none;
+  overflow: auto;
+  background: #ffffff;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.c2 {
+  max-height: inherit;
+}
+
+.c4 {
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .c2 {
+    width: 100%;
+  }
+}
+
+<div
+  class="c0 c1"
+  id="test-select__drop"
+  style="max-height: 768px; left: 0px; width: 0.1px; top: 0px;"
+  tabindex="-1"
+>
+  <div
+    class="c2 c3"
+    id="test-select__select-drop"
+  >
+    <div
+      class="c4 c5"
+      role="menubar"
+      tabindex="-1"
+    >
+      <div
+        class="c6"
+      >
+        <button
+          class="c7"
+          role="menuitem"
+          tabindex="-1"
+          type="button"
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              one
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="c6"
+      >
+        <button
+          class="c7"
+          role="menuitem"
+          tabindex="-1"
+          type="button"
+        >
+          <div
+            class="c8"
+          >
+            <span
+              class="c9"
+            >
+              two
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="c10"
+      />
+    </div>
+  </div>
+</div>
 `;

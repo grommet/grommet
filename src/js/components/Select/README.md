@@ -327,6 +327,19 @@ xlarge
 string
 ```
 
+**dropHeight**
+
+The height of the drop container.
+
+```
+xsmall
+small
+medium
+large
+xlarge
+string
+```
+
 **value**
 
 Currently selected value. This can be an array
@@ -364,6 +377,14 @@ When the options array contains objects, this property indicates how
 ```
 string
 function
+```
+
+**emptySearchMessage**
+
+Empty option message to display when no matching results were found Defaults to `No matches found`.
+
+```
+string
 ```
   
 ## Theme

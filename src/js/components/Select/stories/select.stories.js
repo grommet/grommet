@@ -176,7 +176,7 @@ class ObjectMultiSelect extends Component {
             onSearch={text => {
               const exp = new RegExp(text, 'i');
               this.setState({
-                options: objectOptions.filter(o => exp.test(o.val)),
+                options: objectOptions.filter(o => exp.test(o.lab)),
               });
             }}
           />
@@ -419,6 +419,7 @@ class CustomSearchSelect extends Component {
               closeOnChange={false}
               placeholder="Select Content Partners"
               searchPlaceholder="Search Content Partners"
+              emptySearchMessage="No partners found"
               multiple
               value={
                 selectedContentPartners.length
@@ -544,6 +545,7 @@ class ManyOptions extends Component {
             placeholder="select an option..."
             selected={selected}
             options={options}
+            dropHeight="medium"
             onClose={() =>
               this.setState({
                 options: options.sort((p1, p2) => {

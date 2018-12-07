@@ -1,7 +1,6 @@
 /* eslint-disable react/no-multi-comp */
 import React, { Component } from 'react';
 import getDisplayName from 'recompose/getDisplayName';
-import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { AnnounceContext } from '../contexts';
 
@@ -158,18 +157,4 @@ export const withAnnounce = WrappedComponent => {
   hoistNonReactStatics(ForwardRef, WrappedComponent);
 
   return ForwardRef;
-};
-
-export const withIconTheme = WrappedComponent => {
-  const IconThemeComponent = props => (
-    <IconThemeContext.Consumer>
-      {iconTheme => <WrappedComponent {...props} iconTheme={iconTheme} />}
-    </IconThemeContext.Consumer>
-  );
-
-  IconThemeComponent.displayName = getDisplayName(WrappedComponent);
-  IconThemeComponent.defaultProps = WrappedComponent.defaultProps;
-  hoistNonReactStatics(IconThemeComponent, WrappedComponent);
-
-  return IconThemeComponent;
 };
