@@ -24,13 +24,11 @@ function (_Component) {
     var _this$props = this.props,
         active = _this$props.active,
         disabled = _this$props.disabled,
-        option = _this$props.option,
-        selected = _this$props.selected;
+        option = _this$props.option;
     var nextActive = nextProps.active,
         nextDisabled = nextProps.disabled,
-        nextOption = nextProps.option,
-        nextSelected = nextProps.selected;
-    return active !== nextActive || disabled !== nextDisabled || selected !== nextSelected || option !== nextOption;
+        nextOption = nextProps.option;
+    return active !== nextActive || disabled !== nextDisabled || option !== nextOption;
   };
 
   _proto.render = function render() {
@@ -41,9 +39,9 @@ function (_Component) {
     return React.createElement(Box, {
       flex: false
     }, React.createElement(Button, _extends({
+      tabIndex: "-1",
       ref: forwardRef,
-      role: "menuitem",
-      hoverIndicator: "background"
+      role: "menuitem"
     }, rest)));
   };
 

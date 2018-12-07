@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.activeStyle = exports.backgroundStyle = exports.backgroundIsDark = exports.normalizeBackground = void 0;
+exports.selectedStyle = exports.activeStyle = exports.backgroundStyle = exports.backgroundIsDark = exports.normalizeBackground = void 0;
 
 var _styledComponents = require("styled-components");
 
@@ -123,3 +123,9 @@ var activeStyle = (0, _styledComponents.css)(["", " color:", ";"], function (pro
   return (0, _colors.normalizeColor)(props.theme.global.hover.color, props.theme);
 });
 exports.activeStyle = activeStyle;
+var selectedStyle = (0, _styledComponents.css)(["", " color:", ";"], function (props) {
+  return backgroundStyle((0, _colors.normalizeColor)(props.theme.global.selected.background, props.theme), props.theme);
+}, function (props) {
+  return (0, _colors.normalizeColor)(props.theme.global.selected.color, props.theme);
+});
+exports.selectedStyle = selectedStyle;

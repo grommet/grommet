@@ -41,6 +41,12 @@ var OptionsBox = (0, _styledComponents.default)(_Box.Box).withConfig({
   displayName: "SelectContainer__OptionsBox",
   componentId: "sc-1wi0ul8-1"
 })(["scroll-behavior:smooth;"]);
+var OptionBox = (0, _styledComponents.default)(_Box.Box).withConfig({
+  displayName: "SelectContainer__OptionBox",
+  componentId: "sc-1wi0ul8-2"
+})(["", ""], function (props) {
+  return props.selected && _utils.selectedStyle;
+});
 
 var SelectContainer =
 /*#__PURE__*/
@@ -84,87 +90,128 @@ function (_Component) {
     }, (0, _utils.debounceDelay)(_this.props)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "selectOption", function (option, index) {
-      var _this$props = _this.props,
-          multiple = _this$props.multiple,
-          onChange = _this$props.onChange,
-          options = _this$props.options,
-          selected = _this$props.selected,
-          value = _this$props.value;
+      return function () {
+        var _this$props = _this.props,
+            multiple = _this$props.multiple,
+            onChange = _this$props.onChange,
+            options = _this$props.options,
+            selected = _this$props.selected,
+            value = _this$props.value;
 
-      if (onChange) {
-        var nextValue = option;
-        var nextSelected = index;
+        if (onChange) {
+          var nextValue = option;
+          var nextSelected = index;
 
-        if (multiple) {
-          nextValue = [];
-          nextSelected = [];
-          var removed = false;
-          var selectedIndexes = [];
+          if (multiple) {
+            nextValue = [];
+            nextSelected = [];
+            var removed = false;
+            var selectedIndexes = [];
 
-          if (Array.isArray(selected)) {
-            selectedIndexes = selected;
-          } else if (Array.isArray(value)) {
-            selectedIndexes = value.map(function (v) {
-              return options.indexOf(v);
-            });
-          }
-
-          selectedIndexes.forEach(function (selectedIndex) {
-            if (selectedIndex === index) {
-              removed = true;
-            } else {
-              nextValue.push(options[selectedIndex]);
-              nextSelected.push(selectedIndex);
+            if (Array.isArray(selected)) {
+              selectedIndexes = selected;
+            } else if (Array.isArray(value)) {
+              selectedIndexes = value.map(function (v) {
+                return options.indexOf(v);
+              });
             }
-          });
 
-          if (!removed) {
-            nextValue.push(option);
-            nextSelected.push(index);
+            selectedIndexes.forEach(function (selectedIndex) {
+              if (selectedIndex === index) {
+                removed = true;
+              } else {
+                nextValue.push(options[selectedIndex]);
+                nextSelected.push(selectedIndex);
+              }
+            });
+
+            if (!removed) {
+              nextValue.push(option);
+              nextSelected.push(index);
+            }
           }
-        }
 
-        onChange({
-          option: option,
-          value: nextValue,
-          selected: nextSelected
+          onChange({
+            option: option,
+            value: nextValue,
+            selected: nextSelected
+          });
+        }
+      };
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "clearKeyboardNavigation", function () {
+      clearTimeout(_this.keyboardNavTimer);
+      _this.keyboardNavTimer = setTimeout(function () {
+        _this.setState({
+          keyboardNavigating: false
         });
-      }
+      }, 100); // 100ms was empirically determined
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onNextOption", function (event) {
       var options = _this.props.options;
       var activeIndex = _this.state.activeIndex;
       event.preventDefault();
-      var index = Math.min(activeIndex + 1, options.length - 1);
+      var nextActiveIndex = activeIndex + 1;
 
-      _this.setState({
-        activeIndex: index
-      }, function () {
-        var buttonNode = _this.optionsRef[index];
-        var selectNode = _this.selectRef.current;
+      while (nextActiveIndex < options.length && _this.isDisabled(nextActiveIndex)) {
+        nextActiveIndex += 1;
+      }
 
-        if (buttonNode && (0, _utils.isNodeAfterScroll)(buttonNode, selectNode) && selectNode.scrollBy) {
-          selectNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
-        }
-      });
+      if (nextActiveIndex !== options.length) {
+        _this.setState({
+          activeIndex: nextActiveIndex,
+          keyboardNavigating: true
+        }, function () {
+          var buttonNode = _this.optionsRef[nextActiveIndex];
+          var selectNode = _this.selectRef.current;
+
+          if (buttonNode && (0, _utils.isNodeAfterScroll)(buttonNode, selectNode) && selectNode.scrollBy) {
+            selectNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
+          }
+
+          _this.clearKeyboardNavigation();
+        });
+      }
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onPreviousOption", function (event) {
       var activeIndex = _this.state.activeIndex;
       event.preventDefault();
-      var index = Math.max(activeIndex - 1, 0);
+      var nextActiveIndex = activeIndex - 1;
 
-      _this.setState({
-        activeIndex: index
-      }, function () {
-        var buttonNode = _this.optionsRef[index];
-        var selectNode = _this.selectRef.current;
+      while (nextActiveIndex >= 0 && _this.isDisabled(nextActiveIndex)) {
+        nextActiveIndex -= 1;
+      }
 
-        if (buttonNode && (0, _utils.isNodeBeforeScroll)(buttonNode, selectNode) && selectNode.scrollBy) {
-          selectNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
+      if (nextActiveIndex >= 0) {
+        _this.setState({
+          activeIndex: nextActiveIndex,
+          keyboardNavigating: true
+        }, function () {
+          var buttonNode = _this.optionsRef[nextActiveIndex];
+          var selectNode = _this.selectRef.current;
+
+          if (buttonNode && (0, _utils.isNodeBeforeScroll)(buttonNode, selectNode) && selectNode.scrollBy) {
+            selectNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
+          }
+
+          _this.clearKeyboardNavigation();
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onActiveOption", function (index) {
+      return function () {
+        var keyboardNavigating = _this.state.keyboardNavigating;
+
+        if (!keyboardNavigating) {
+          _this.setState({
+            activeIndex: index
+          });
         }
-      });
+      };
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onSelectOption", function (event) {
@@ -174,7 +221,7 @@ function (_Component) {
       if (activeIndex >= 0) {
         event.preventDefault(); // prevent submitting forms
 
-        _this.selectOption(options[activeIndex], activeIndex);
+        _this.selectOption(options[activeIndex], activeIndex)();
       }
     });
 
@@ -400,7 +447,7 @@ function (_Component) {
 
       var isSelected = _this3.isSelected(index);
 
-      var isActive = isSelected || activeIndex === index;
+      var isActive = activeIndex === index;
       return _react.default.createElement(_SelectOption.SelectOption, {
         key: "option_" + index,
         ref: function ref(_ref) {
@@ -408,18 +455,17 @@ function (_Component) {
         },
         disabled: isDisabled || undefined,
         active: isActive,
-        selected: isSelected,
         option: option,
-        onClick: !isDisabled ? function () {
-          return _this3.selectOption(option, index);
-        } : undefined
+        onMouseOver: !isDisabled ? _this3.onActiveOption(index) : undefined,
+        onClick: !isDisabled ? _this3.selectOption(option, index) : undefined
       }, children ? children(option, index, options, {
         active: isActive,
         disabled: isDisabled,
         selected: isSelected
-      }) : _react.default.createElement(_Box.Box, {
+      }) : _react.default.createElement(OptionBox, {
         align: "start",
-        pad: "small"
+        pad: "small",
+        selected: isSelected
       }, _react.default.createElement(_Text.Text, {
         margin: "none"
       }, _this3.optionLabel(index))));
@@ -427,7 +473,7 @@ function (_Component) {
       key: "search_empty",
       disabled: true,
       option: emptySearchMessage
-    }, _react.default.createElement(_Box.Box, {
+    }, _react.default.createElement(OptionBox, {
       align: "start",
       pad: "small"
     }, _react.default.createElement(_Text.Text, {

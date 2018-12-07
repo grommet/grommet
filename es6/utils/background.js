@@ -106,3 +106,8 @@ export var activeStyle = css(["", " color:", ";"], function (props) {
 }, function (props) {
   return normalizeColor(props.theme.global.hover.color, props.theme);
 });
+export var selectedStyle = css(["", " color:", ";"], function (props) {
+  return backgroundStyle(normalizeColor(props.theme.global.selected.background, props.theme), props.theme);
+}, function (props) {
+  return normalizeColor(props.theme.global.selected.color, props.theme);
+});
