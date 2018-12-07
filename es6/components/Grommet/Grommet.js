@@ -6,51 +6,22 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import React, { Component } from 'react';
-import { ThemeContext as IconThemeContext } from "grommet-icons/es6/contexts/ThemeContext";
-import { compose } from 'recompose';
 import MobileDetect from 'mobile-detect';
+import { colorIsDark } from 'grommet-styles';
 import { ResponsiveContext, ThemeContext } from '../../contexts';
-import { base as baseTheme } from '../../themes/base';
-import { colorIsDark, deepMerge, getBreakpoint, normalizeColor, getDeviceBreakpoint } from '../../utils';
-import { withIconTheme } from '../hocs';
-import { StyledGrommet } from './StyledGrommet'; // grommet-icons isn't aware of the grommet dark background context.
-// Here, we reduce the grommet theme colors to the correct flat color
-// namespace for grommet-icons.
+import { deepMerge, getBreakpoint, getDeviceBreakpoint } from '../../utils';
+import { base as baseTheme } from '../../themes';
+import { withDocs } from '../hocs';
+import { StyledGrommet } from './StyledGrommet';
+var wrapWithHocs = withDocs('Grommet');
 
-var reduceIconTheme = function reduceIconTheme(iconTheme, dark) {
-  var result = _extends({}, iconTheme, {
-    colors: _extends({}, iconTheme.colors)
-  });
-
-  Object.keys(result.colors).forEach(function (key) {
-    if (typeof result.colors[key] === 'object') {
-      result.colors[key] = normalizeColor(result.colors[key][dark ? 'dark' : 'light'], {
-        dark: dark,
-        global: {
-          colors: result.colors
-        }
-      });
-    } else {
-      result.colors[key] = normalizeColor(result.colors[key], {
-        dark: dark,
-        global: {
-          colors: result.colors
-        }
-      });
-    }
-  });
-  return result;
-};
-
-var Grommet =
+var GrommetImpl =
 /*#__PURE__*/
 function (_Component) {
-  _inheritsLoose(Grommet, _Component);
+  _inheritsLoose(GrommetImpl, _Component);
 
-  function Grommet() {
+  function GrommetImpl() {
     var _this;
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -77,58 +48,32 @@ function (_Component) {
     return _this;
   }
 
-  Grommet.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var iconTheme = nextProps.iconTheme,
-        theme = nextProps.theme;
+  GrommetImpl.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
+    var _nextProps$theme = nextProps.theme,
+        theme = _nextProps$theme === void 0 ? {} : _nextProps$theme;
     var stateTheme = prevState.theme,
-        themeProp = prevState.themeProp,
-        iconThemeProp = prevState.iconThemeProp;
-    var nextTheme;
+        themeProp = prevState.themeProp;
+    var nextTheme = deepMerge(baseTheme, theme);
 
-    if (theme && (theme !== themeProp || iconTheme !== iconThemeProp)) {
-      // in case the supplied theme has global.colors but not icon.colors,
-      // pre-merge the current base icon colors with the new theme colors.
-      var iconColoredTheme = theme;
-
-      if (!theme.icon || !theme.icon.colors) {
-        iconColoredTheme = _extends({}, theme);
-        iconColoredTheme.icon = _extends({}, theme.icon || {});
-        iconColoredTheme.icon.colors = deepMerge(baseTheme.icon.colors, (theme.global || {}).colors);
+    if (!stateTheme || theme !== themeProp) {
+      if (typeof theme.dark === 'undefined') {
+        // calculate if background is dark or not
+        // otherwise respect the property passed in the theme
+        var colors = nextTheme.global.colors;
+        var color = colors.background;
+        nextTheme.dark = color ? colorIsDark(color) : false;
       }
 
-      nextTheme = deepMerge(baseTheme, iconColoredTheme);
-    } else if (!theme && (themeProp || !stateTheme)) {
-      nextTheme = baseTheme;
-    }
-
-    if (nextTheme) {
-      var _ref = nextTheme.global || baseTheme.global,
-          colors = _ref.colors;
-
-      var color = colors.background;
-      var dark = color ? colorIsDark(color) : false;
-      var lightIconTheme = deepMerge(iconTheme, nextTheme.icon);
-      var iconThemes = {
-        dark: reduceIconTheme(deepMerge(lightIconTheme, {
-          color: colors.text.dark
-        }), true),
-        light: reduceIconTheme(lightIconTheme, false)
-      };
       return {
-        theme: _extends({}, nextTheme, {
-          dark: dark,
-          icon: dark ? iconThemes.dark : iconThemes.light,
-          iconThemes: iconThemes
-        }),
-        themeProp: theme,
-        iconThemeProp: iconTheme
+        theme: nextTheme,
+        themeProp: theme
       };
     }
 
     return null;
   };
 
-  var _proto = Grommet.prototype;
+  var _proto = GrommetImpl.prototype;
 
   _proto.componentDidMount = function componentDidMount() {
     window.addEventListener('resize', this.onResize);
@@ -167,28 +112,21 @@ function (_Component) {
 
     delete rest.theme;
     var _this$state2 = this.state,
-        stateResponsive = _this$state2.responsive,
-        theme = _this$state2.theme; // Value from state should be correct once we resize
+        theme = _this$state2.theme,
+        stateResponsive = _this$state2.responsive; // Value from state should be correct once we resize
     // On first render we try to guess otherwise set the default as a tablet
 
     var responsive = stateResponsive || this.deviceResponsive() || theme.global.deviceBreakpoints.tablet;
     return React.createElement(ThemeContext.Provider, {
       value: theme
-    }, React.createElement(IconThemeContext.Provider, {
-      value: theme.icon
     }, React.createElement(ResponsiveContext.Provider, {
       value: responsive
-    }, React.createElement(StyledGrommet, rest, children))));
+    }, React.createElement(StyledGrommet, rest, children)));
   };
 
-  return Grommet;
+  return GrommetImpl;
 }(Component);
 
-var GrommetDoc;
+_defineProperty(GrommetImpl, "displayName", 'Grommet');
 
-if (process.env.NODE_ENV !== 'production') {
-  GrommetDoc = require('./doc').doc(Grommet); // eslint-disable-line global-require
-}
-
-var GrommetWrapper = compose(withIconTheme)(GrommetDoc || Grommet);
-export { GrommetWrapper as Grommet };
+export var Grommet = wrapWithHocs(GrommetImpl);

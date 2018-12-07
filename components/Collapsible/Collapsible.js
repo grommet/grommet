@@ -83,36 +83,39 @@ function (_Component) {
         animate = _this$state.animate,
         open = _this$state.open;
     var container = this.ref.current;
-    var dimension = animatedBoxProperty(direction);
-    var boudingClientRect = container.getBoundingClientRect();
-    var dimensionSize = boudingClientRect[dimension];
-    var shouldAnimate = animate && prevState.open !== open;
 
-    if (open && snapshot[dimension] && dimensionSize !== snapshot[dimension]) {
-      shouldAnimate = true;
-    }
+    if (container) {
+      var dimension = animatedBoxProperty(direction);
+      var boudingClientRect = container.getBoundingClientRect();
+      var dimensionSize = boudingClientRect[dimension];
+      var shouldAnimate = animate && prevState.open !== open;
 
-    if (shouldAnimate) {
-      if (this.animationTimeout) {
-        clearTimeout(this.animationTimeout);
+      if (open && snapshot[dimension] && dimensionSize !== snapshot[dimension]) {
+        shouldAnimate = true;
       }
 
-      var speed = Math.max(dimensionSize / baseline * minSpeed, minSpeed);
-      container.style["max-" + dimension] = snapshot[dimension] + "px";
-      container.style.overflow = 'hidden';
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-          container.style.transition = "max-" + dimension + " " + speed + "ms, visibility 50ms";
-          container.style["max-" + dimension] = open ? dimensionSize + "px" : '0px';
-          _this2.animationTimeout = setTimeout(function () {
-            container.removeAttribute('style');
+      if (shouldAnimate) {
+        if (this.animationTimeout) {
+          clearTimeout(this.animationTimeout);
+        }
 
-            _this2.setState({
-              animate: false
-            });
-          }, speed);
+        var speed = Math.max(dimensionSize / baseline * minSpeed, minSpeed);
+        container.style["max-" + dimension] = snapshot[dimension] + "px";
+        container.style.overflow = 'hidden';
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            container.style.transition = "max-" + dimension + " " + speed + "ms, visibility 50ms";
+            container.style["max-" + dimension] = open ? dimensionSize + "px" : '0px';
+            _this2.animationTimeout = setTimeout(function () {
+              container.removeAttribute('style');
+
+              _this2.setState({
+                animate: false
+              });
+            }, speed);
+          });
         });
-      });
+      }
     }
   };
 

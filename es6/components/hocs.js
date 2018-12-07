@@ -11,7 +11,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* eslint-disable react/no-multi-comp */
 import React, { Component } from 'react';
 import getDisplayName from 'recompose/getDisplayName';
-import { ThemeContext as IconThemeContext } from "grommet-icons/es6/contexts/ThemeContext";
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { AnnounceContext } from '../contexts';
 
@@ -212,18 +211,4 @@ export var withAnnounce = function withAnnounce(WrappedComponent) {
   ForwardRef.defaultProps = WrappedComponent.defaultProps;
   hoistNonReactStatics(ForwardRef, WrappedComponent);
   return ForwardRef;
-};
-export var withIconTheme = function withIconTheme(WrappedComponent) {
-  var IconThemeComponent = function IconThemeComponent(props) {
-    return React.createElement(IconThemeContext.Consumer, null, function (iconTheme) {
-      return React.createElement(WrappedComponent, _extends({}, props, {
-        iconTheme: iconTheme
-      }));
-    });
-  };
-
-  IconThemeComponent.displayName = getDisplayName(WrappedComponent);
-  IconThemeComponent.defaultProps = WrappedComponent.defaultProps;
-  hoistNonReactStatics(IconThemeComponent, WrappedComponent);
-  return IconThemeComponent;
 };

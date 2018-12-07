@@ -1,6 +1,6 @@
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
@@ -9,9 +9,9 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import React, { createRef, Component } from 'react';
-import styled, { withTheme } from 'styled-components';
-import { ThemeContext as IconThemeContext } from "grommet-icons/es6/contexts/ThemeContext";
+import styled from 'styled-components';
 import { defaultProps } from '../../default-props';
+import { ThemeContext } from '../../contexts';
 import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { backgroundIsDark } from '../../utils';
@@ -37,8 +37,6 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "anchorRef", createRef());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
-
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "containerRef", React.createRef());
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "layerRef", React.createRef());
@@ -53,34 +51,6 @@ function (_Component) {
 
     return _this;
   }
-
-  LayerContainer.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    var theme = nextProps.theme;
-    var stateTheme = prevState.theme; // set dark context based on layer background, not Layer's container.
-
-    var dark = theme.dark;
-
-    if (theme.layer.background) {
-      dark = backgroundIsDark(theme.layer.background, theme);
-    }
-
-    if (!dark !== !theme.dark) {
-      if (!stateTheme || dark !== stateTheme.dark) {
-        return {
-          theme: _extends({}, theme, {
-            dark: dark,
-            icon: dark ? theme.iconThemes.dark : theme.iconThemes.light
-          })
-        };
-      }
-    } else if (stateTheme) {
-      return {
-        theme: undefined
-      };
-    }
-
-    return null;
-  };
 
   var _proto = LayerContainer.prototype;
 
@@ -118,8 +88,7 @@ function (_Component) {
         propsTheme = _this$props.theme,
         rest = _objectWithoutPropertiesLoose(_this$props, ["children", "id", "modal", "onClickOutside", "onEsc", "plain", "position", "responsive", "theme"]);
 
-    var stateTheme = this.state.theme;
-    var theme = stateTheme || propsTheme;
+    var theme = this.context || propsTheme;
     var content = React.createElement(StyledContainer, _extends({
       id: id
     }, rest, {
@@ -155,13 +124,23 @@ function (_Component) {
       }, content);
     }
 
+    if (theme.layer.background) {
+      var dark = backgroundIsDark(theme.layer.background, theme);
+
+      if (dark !== theme.dark) {
+        content = React.createElement(ThemeContext.Provider, {
+          value: _extends({}, theme, {
+            dark: dark
+          })
+        }, content);
+      }
+    }
+
     if (modal) {
       content = React.createElement(FocusedContainer, {
         hidden: position === 'hidden',
         restrictScroll: true
-      }, React.createElement(IconThemeContext.Provider, {
-        value: theme.icon
-      }, content));
+      }, content);
     }
 
     return content;
@@ -169,6 +148,8 @@ function (_Component) {
 
   return LayerContainer;
 }(Component);
+
+_defineProperty(LayerContainer, "contextType", ThemeContext);
 
 _defineProperty(LayerContainer, "defaultProps", {
   full: false,
@@ -178,5 +159,4 @@ _defineProperty(LayerContainer, "defaultProps", {
 });
 
 Object.setPrototypeOf(LayerContainer.defaultProps, defaultProps);
-var LayerContainerWrapper = withTheme(LayerContainer);
-export { LayerContainerWrapper as LayerContainer };
+export { LayerContainer };

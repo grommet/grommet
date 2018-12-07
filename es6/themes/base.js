@@ -2,6 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import { rgba } from 'polished';
 import { css } from 'styled-components';
+import { base as iconBase } from "grommet-icons/es6/icons/base";
 import { Actions } from "grommet-icons/es6/icons/Actions";
 import { ClosedCaption } from "grommet-icons/es6/icons/ClosedCaption";
 import { Expand } from "grommet-icons/es6/icons/Expand";
@@ -16,7 +17,7 @@ import { Previous } from "grommet-icons/es6/icons/Previous";
 import { Subtract } from "grommet-icons/es6/icons/Subtract";
 import { Volume } from "grommet-icons/es6/icons/Volume";
 import { VolumeLow } from "grommet-icons/es6/icons/VolumeLow";
-import { normalizeColor, deepFreeze } from '../utils';
+import { deepMerge, deepFreeze, normalizeColor } from '../utils';
 var brandColor = '#7D4CDB';
 var accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
 var neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
@@ -49,6 +50,10 @@ var colors = {
   text: {
     dark: '#f8f8f8',
     light: '#444444'
+  },
+  icon: {
+    dark: '#f8f8f8',
+    light: '#666666'
   },
   white: '#FFFFFF'
 };
@@ -91,7 +96,7 @@ export var generate = function generate(baseSpacing, scale) {
   };
 
   var borderWidth = 2;
-  var result = {
+  var result = deepMerge(iconBase, {
     global: {
       animation: {
         duration: '1s',
@@ -576,10 +581,6 @@ export var generate = function generate(baseSpacing, scale) {
       // when we scale the font size down
       weight: 600
     },
-    icon: {
-      colors: colors
-    },
-    iconThemes: {},
     layer: {
       background: 'white',
       border: {
@@ -791,7 +792,7 @@ export var generate = function generate(baseSpacing, scale) {
         base: '8px'
       }
     }
-  };
+  });
   return deepFreeze(result);
 };
 export var base = generate(24);

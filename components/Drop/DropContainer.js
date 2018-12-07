@@ -5,15 +5,9 @@ exports.DropContainer = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _recompose = require("recompose");
-
-var _styledComponents = require("styled-components");
-
-var _contexts = require("grommet-icons/contexts");
-
 var _defaultProps = require("../../default-props");
 
-var _contexts2 = require("../../contexts");
+var _contexts = require("../../contexts");
 
 var _FocusedContainer = require("../FocusedContainer");
 
@@ -27,9 +21,9 @@ var _StyledDrop = require("./StyledDrop");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
@@ -60,8 +54,6 @@ function (_Component) {
     }
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "dropRef", _react.default.createRef());
 
@@ -255,34 +247,6 @@ function (_Component) {
     return _this;
   }
 
-  DropContainer.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
-    // Since the drop background can be different from the current theme context,
-    // we update the theme to set the dark background context.
-    var propsTheme = nextProps.theme;
-    var stateTheme = prevState.theme,
-        priorTheme = prevState.priorTheme;
-    var dark = (0, _utils.backgroundIsDark)(propsTheme.global.drop.background, propsTheme);
-
-    if (dark === propsTheme.dark && stateTheme) {
-      return {
-        theme: undefined,
-        priorTheme: undefined
-      };
-    }
-
-    if (dark !== propsTheme.dark && (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)) {
-      return {
-        theme: _extends({}, propsTheme, {
-          dark: dark,
-          icon: dark ? propsTheme.iconThemes.dark : propsTheme.iconThemes.light
-        }),
-        priorTheme: propsTheme
-      };
-    }
-
-    return null;
-  };
-
   var _proto = DropContainer.prototype;
 
   _proto.componentDidMount = function componentDidMount() {
@@ -314,13 +278,12 @@ function (_Component) {
         onClickOutside = _this$props3.onClickOutside,
         onEsc = _this$props3.onEsc,
         onKeyDown = _this$props3.onKeyDown,
-        propsTheme = _this$props3.theme,
         elevation = _this$props3.elevation,
         plain = _this$props3.plain,
-        rest = _objectWithoutPropertiesLoose(_this$props3, ["align", "children", "onClickOutside", "onEsc", "onKeyDown", "theme", "elevation", "plain"]);
+        propsTheme = _this$props3.theme,
+        rest = _objectWithoutPropertiesLoose(_this$props3, ["align", "children", "onClickOutside", "onEsc", "onKeyDown", "elevation", "plain", "theme"]);
 
-    var stateTheme = this.state.theme;
-    var theme = stateTheme || propsTheme;
+    var theme = this.context || propsTheme;
 
     var content = _react.default.createElement(_StyledDrop.StyledDrop, _extends({
       as: _Box.Box,
@@ -331,16 +294,16 @@ function (_Component) {
       alignProp: alignProp
     }, rest), children);
 
-    if (stateTheme) {
-      if (stateTheme.dark !== propsTheme.dark && stateTheme.icon) {
+    if (theme.global.drop.background) {
+      var dark = (0, _utils.backgroundIsDark)(theme.global.drop.background, theme);
+
+      if (dark !== theme.dark) {
         content = _react.default.createElement(_contexts.ThemeContext.Provider, {
-          value: stateTheme.icon
+          value: _extends({}, theme, {
+            dark: dark
+          })
         }, content);
       }
-
-      content = _react.default.createElement(_contexts2.ThemeContext.Provider, {
-        value: stateTheme
-      }, content);
     }
 
     return _react.default.createElement(_FocusedContainer.FocusedContainer, {
@@ -355,6 +318,10 @@ function (_Component) {
   return DropContainer;
 }(_react.Component);
 
+exports.DropContainer = DropContainer;
+
+_defineProperty(DropContainer, "contextType", _contexts.ThemeContext);
+
 _defineProperty(DropContainer, "defaultProps", {
   align: {
     top: 'top',
@@ -364,5 +331,3 @@ _defineProperty(DropContainer, "defaultProps", {
 });
 
 Object.setPrototypeOf(DropContainer.defaultProps, _defaultProps.defaultProps);
-var DropContainerWrapper = (0, _recompose.compose)(_styledComponents.withTheme)(DropContainer);
-exports.DropContainer = DropContainerWrapper;

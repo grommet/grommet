@@ -1,17 +1,15 @@
 "use strict";
 
 exports.__esModule = true;
-exports.withIconTheme = exports.withAnnounce = exports.withForwardRef = exports.withFocus = exports.withDocs = void 0;
+exports.withAnnounce = exports.withForwardRef = exports.withFocus = exports.withDocs = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
 var _getDisplayName = _interopRequireDefault(require("recompose/getDisplayName"));
 
-var _contexts = require("grommet-icons/contexts");
-
 var _hoistNonReactStatics = _interopRequireDefault(require("hoist-non-react-statics"));
 
-var _contexts2 = require("../contexts");
+var _contexts = require("../contexts");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -222,7 +220,7 @@ exports.withForwardRef = withForwardRef;
 
 var withAnnounce = function withAnnounce(WrappedComponent) {
   var ForwardRef = _react.default.forwardRef(function (props, ref) {
-    return _react.default.createElement(_contexts2.AnnounceContext.Consumer, null, function (announce) {
+    return _react.default.createElement(_contexts.AnnounceContext.Consumer, null, function (announce) {
       return _react.default.createElement(WrappedComponent, _extends({}, props, {
         announce: announce,
         ref: ref
@@ -238,20 +236,3 @@ var withAnnounce = function withAnnounce(WrappedComponent) {
 };
 
 exports.withAnnounce = withAnnounce;
-
-var withIconTheme = function withIconTheme(WrappedComponent) {
-  var IconThemeComponent = function IconThemeComponent(props) {
-    return _react.default.createElement(_contexts.ThemeContext.Consumer, null, function (iconTheme) {
-      return _react.default.createElement(WrappedComponent, _extends({}, props, {
-        iconTheme: iconTheme
-      }));
-    });
-  };
-
-  IconThemeComponent.displayName = (0, _getDisplayName.default)(WrappedComponent);
-  IconThemeComponent.defaultProps = WrappedComponent.defaultProps;
-  (0, _hoistNonReactStatics.default)(IconThemeComponent, WrappedComponent);
-  return IconThemeComponent;
-};
-
-exports.withIconTheme = withIconTheme;

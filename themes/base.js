@@ -46,6 +46,10 @@ var colors = {
     dark: '#f8f8f8',
     light: '#444444'
   },
+  icon: {
+    dark: '#f8f8f8',
+    light: '#666666'
+  },
   white: '#FFFFFF'
 };
 
@@ -88,7 +92,7 @@ var generate = function generate(baseSpacing, scale) {
   };
 
   var borderWidth = 2;
-  var result = {
+  var result = (0, _utils.deepMerge)(_grommetIcons.base, {
     global: {
       animation: {
         duration: '1s',
@@ -573,10 +577,6 @@ var generate = function generate(baseSpacing, scale) {
       // when we scale the font size down
       weight: 600
     },
-    icon: {
-      colors: colors
-    },
-    iconThemes: {},
     layer: {
       background: 'white',
       border: {
@@ -788,7 +788,7 @@ var generate = function generate(baseSpacing, scale) {
         base: '8px'
       }
     }
-  };
+  });
   return (0, _utils.deepFreeze)(result);
 };
 

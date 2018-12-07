@@ -269,70 +269,72 @@ function (_Component) {
           width = _this$state3.width;
       var video = videoRef.current;
 
-      if (video.videoHeight) {
-        // set the size based on the video aspect ratio
-        var rect = video.getBoundingClientRect();
-        var ratio = rect.width / rect.height;
-        var videoRatio = video.videoWidth / video.videoHeight;
+      if (video) {
+        if (video.videoHeight) {
+          // set the size based on the video aspect ratio
+          var rect = video.getBoundingClientRect();
+          var ratio = rect.width / rect.height;
+          var videoRatio = video.videoWidth / video.videoHeight;
 
-        if (videoRatio > ratio) {
-          var nextHeight = rect.width / videoRatio;
+          if (videoRatio > ratio) {
+            var nextHeight = rect.width / videoRatio;
 
-          if (nextHeight !== height) {
-            _this.setState({
-              height: nextHeight,
-              width: undefined
-            });
-          }
-        } else {
-          var nextWidth = rect.height * videoRatio;
+            if (nextHeight !== height) {
+              _this.setState({
+                height: nextHeight,
+                width: undefined
+              });
+            }
+          } else {
+            var nextWidth = rect.height * videoRatio;
 
-          if (nextWidth !== width) {
-            _this.setState({
-              height: undefined,
-              width: nextWidth
-            });
-          }
-        }
-      } // remember the state of the text tracks for subsequent rendering
-
-
-      var textTracks = video.textTracks;
-
-      if (textTracks.length > 0) {
-        if (textTracks.length === 1) {
-          var active = textTracks[0].mode === 'showing';
-
-          if (!captions || !captions[0] || captions[0].active !== active) {
-            _this.setState({
-              captions: [{
-                active: active
-              }]
-            });
-          }
-        } else {
-          var nextCaptions = [];
-          var set = false;
-
-          for (var i = 0; i < textTracks.length; i += 1) {
-            var track = textTracks[i];
-
-            var _active = track.mode === 'showing';
-
-            nextCaptions.push({
-              label: track.label,
-              active: _active
-            });
-
-            if (!captions || !captions[i] || captions[i].active !== _active) {
-              set = true;
+            if (nextWidth !== width) {
+              _this.setState({
+                height: undefined,
+                width: nextWidth
+              });
             }
           }
+        } // remember the state of the text tracks for subsequent rendering
 
-          if (set) {
-            _this.setState({
-              captions: nextCaptions
-            });
+
+        var textTracks = video.textTracks;
+
+        if (textTracks.length > 0) {
+          if (textTracks.length === 1) {
+            var active = textTracks[0].mode === 'showing';
+
+            if (!captions || !captions[0] || captions[0].active !== active) {
+              _this.setState({
+                captions: [{
+                  active: active
+                }]
+              });
+            }
+          } else {
+            var nextCaptions = [];
+            var set = false;
+
+            for (var i = 0; i < textTracks.length; i += 1) {
+              var track = textTracks[i];
+
+              var _active = track.mode === 'showing';
+
+              nextCaptions.push({
+                label: track.label,
+                active: _active
+              });
+
+              if (!captions || !captions[i] || captions[i].active !== _active) {
+                set = true;
+              }
+            }
+
+            if (set) {
+              _this.setState({
+                captions: nextCaptions
+              });
+            }
           }
         }
       }

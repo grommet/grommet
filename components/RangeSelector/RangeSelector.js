@@ -207,9 +207,10 @@ function (_Component) {
         size = _this$props4.size,
         step = _this$props4.step,
         values = _this$props4.values,
-        rest = _objectWithoutPropertiesLoose(_this$props4, ["color", "direction", "forwardRef", "invert", "max", "messages", "min", "onChange", "opacity", "round", "size", "step", "values"]);
+        propsTheme = _this$props4.theme,
+        rest = _objectWithoutPropertiesLoose(_this$props4, ["color", "direction", "forwardRef", "invert", "max", "messages", "min", "onChange", "opacity", "round", "size", "step", "values", "theme"]);
 
-    var theme = this.context;
+    var theme = this.context || propsTheme;
     var _this$state2 = this.state,
         nextLower = _this$state2.nextLower,
         nextUpper = _this$state2.nextUpper;
