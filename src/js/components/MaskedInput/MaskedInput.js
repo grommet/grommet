@@ -114,10 +114,10 @@ class MaskedInput extends Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { mask, value } = nextProps;
-    const { priormask, priorValue } = prevState;
-    if (priormask !== mask || priorValue !== value) {
+    const { priorMask, priorValue } = prevState;
+    if (priorMask !== mask || priorValue !== value) {
       const valueParts = parseValue(mask, value);
-      return { priormask: mask, priorValue: value, valueParts };
+      return { priorMask: mask, priorValue: value, valueParts };
     }
     return null;
   }

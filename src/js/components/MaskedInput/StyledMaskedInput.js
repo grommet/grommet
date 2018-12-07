@@ -1,10 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, inputStyle } from '../../utils';
-
-const placeholderColor = css`
-  color: ${props => props.theme.global.colors.placeholder};
-`;
+import { focusStyle, inputStyle, placeholderStyle } from '../../utils';
 
 const sizeStyle = props => {
   const data = props.theme.text[props.size];
@@ -22,19 +18,9 @@ export const StyledMaskedInput = styled.input`
   ${inputStyle} width: 100%;
 
   ${props => props.size && sizeStyle(props)} ${props =>
-    props.plain && plainStyle}
+  props.plain && plainStyle}
 
-  &::-webkit-input-placeholder {
-    ${placeholderColor};
-  }
-
-  &::-moz-placeholder {
-    ${placeholderColor};
-  }
-
-  &:-ms-input-placeholder {
-    ${placeholderColor};
-  }
+  ${placeholderStyle}
 
   &::-moz-focus-inner {
     border: none;

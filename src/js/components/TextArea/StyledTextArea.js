@@ -1,11 +1,7 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, inputStyle } from '../../utils';
+import { focusStyle, inputStyle, placeholderStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
-
-const placeholderColor = css`
-  color: ${props => props.theme.global.colors.placeholder};
-`;
 
 const plainStyle = css`
   border: none;
@@ -17,17 +13,9 @@ const StyledTextArea = styled.textarea`
   ${inputStyle} width: 100%;
 
   ${props => props.fillArg && 'height: 100%;'} ${props =>
-    props.plain && plainStyle} &::-webkit-input-placeholder {
-    ${placeholderColor};
-  }
+  props.plain && plainStyle}
 
-  &::-moz-placeholder {
-    ${placeholderColor};
-  }
-
-  &:-ms-input-placeholder {
-    ${placeholderColor};
-  }
+  ${placeholderStyle}
 
   &::-moz-focus-inner {
     border: none;
