@@ -80,7 +80,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
           color,
           background.opacity === true
             ? theme.global.opacity.medium
-            : theme.global.opacity[background.opacity],
+            : theme.global.opacity[background.opacity] || background.opacity,
         ) || color;
       styles.push(css`
         background-color: ${backgroundColor};

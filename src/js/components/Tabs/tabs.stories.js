@@ -337,7 +337,7 @@ const RichTabs = () => (
       <Tab
         title={
           <RichTabTitle
-            icon={<CircleInformation color="accent-1" />}
+            icon={<CircleInformation color="accent-2" />}
             label="Personal Data"
           />
         }
@@ -348,7 +348,7 @@ const RichTabs = () => (
       </Tab>
       <Tab
         title={
-          <RichTabTitle icon={<Currency color="neutral-5" />} label="Payment" />
+          <RichTabTitle icon={<Currency color="neutral-2" />} label="Payment" />
         }
       >
         <FormField label="Card Number">
@@ -388,7 +388,7 @@ const customTheme = deepMerge(grommet, {
     `,
   },
   tabs: {
-    background: 'dark-4',
+    background: 'dark-3',
     header: {
       background: 'dark-2',
       extend: ({ theme }) => css`
@@ -417,7 +417,7 @@ const CustomTabs = () => (
       </Tab>
       <Tab
         title={
-          <RichTabTitle icon={<Currency color="neutral-5" />} label="Payment" />
+          <RichTabTitle icon={<Currency color="light-3" />} label="Payment" />
         }
       >
         <FormField label="Card Number">

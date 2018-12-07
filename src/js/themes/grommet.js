@@ -12,12 +12,6 @@ export const grommet = deepFreeze({
         '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",  "Helvetica Neue", Arial, sans-serif,  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     },
   },
-  anchor: {
-    color: {
-      dark: '#FD6FFF',
-      light: '#9060EB',
-    },
-  },
   button: {
     extend: css`
       ${props => !props.plain && 'font-weight: bold;'};
