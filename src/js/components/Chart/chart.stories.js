@@ -8,22 +8,28 @@ import { calcs } from './calcs';
 
 const BarChart = () => (
   <Grommet theme={grommet}>
-    <Chart type="bar" values={[[10, 20], [20, 30], [30, 15]]} />
+    <Box align="center" pad="large">
+      <Chart type="bar" values={[[10, 20], [20, 30], [30, 15]]} />
+    </Box>
   </Grommet>
 );
 
 const LineChart = () => (
   <Grommet theme={grommet}>
-    <Chart type="line" values={[20, 30, 15]} />
+    <Box align="center" pad="large">
+      <Chart type="line" values={[20, 30, 15]} />
+    </Box>
   </Grommet>
 );
 
 const AreaChart = () => (
   <Grommet theme={grommet}>
-    <Chart
-      type="area"
-      values={[{ value: [10, 20] }, { value: [20, 30] }, { value: [30, 15] }]}
-    />
+    <Box align="center" pad="large">
+      <Chart
+        type="area"
+        values={[{ value: [10, 20] }, { value: [20, 30] }, { value: [30, 15] }]}
+      />
+    </Box>
   </Grommet>
 );
 
@@ -69,7 +75,7 @@ class RichChart extends Component {
     };
     return (
       <Grommet theme={grommet}>
-        <Box align="center">
+        <Box align="center" pad="large">
           <Box
             direction="row"
             justify="between"

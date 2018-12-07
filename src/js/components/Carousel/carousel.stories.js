@@ -6,7 +6,7 @@ import { Grommet, Box, Carousel } from 'grommet';
 
 const SimpleCarousel = () => (
   <Grommet>
-    <Box justify="center" align="center">
+    <Box align="center" pad="large">
       <Carousel>
         <Box pad="xlarge" background="accent-1">
           <Attraction size="xlarge" />

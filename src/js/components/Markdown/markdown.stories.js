@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Markdown } from 'grommet';
+import { Box, Grommet, Markdown } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const CONTENT = `
@@ -15,7 +15,9 @@ const CONTENT = `
 
 const SimpleMarkdown = () => (
   <Grommet theme={grommet}>
-    <Markdown>{CONTENT}</Markdown>
+    <Box align="center" pad="large">
+      <Markdown>{CONTENT}</Markdown>
+    </Box>
   </Grommet>
 );
 

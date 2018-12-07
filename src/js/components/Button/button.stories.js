@@ -8,7 +8,7 @@ import { deepMerge } from '../../utils';
 
 const SimpleButton = props => (
   <Grommet theme={grommet}>
-    <Box align="start">
+    <Box align="center" pad="large">
       <Button label="Submit" onClick={() => {}} {...props} />
     </Box>
   </Grommet>
@@ -16,13 +16,15 @@ const SimpleButton = props => (
 
 const IconButton = () => (
   <Grommet theme={grommet}>
-    <Button icon={<Add />} hoverIndicator onClick={() => {}} />
+    <Box align="center" pad="large">
+      <Button icon={<Add />} hoverIndicator onClick={() => {}} />
+    </Box>
   </Grommet>
 );
 
 const IconLabelButton = () => (
   <Grommet theme={grommet}>
-    <Box align="start" gap="small">
+    <Box align="center" pad="large" gap="small">
       <Button icon={<Add />} label="Add" onClick={() => {}} primary />
       <Button icon={<Add />} label="Add" onClick={() => {}} />
     </Box>
@@ -31,30 +33,38 @@ const IconLabelButton = () => (
 
 const PlainButton = props => (
   <Grommet theme={grommet}>
-    <Button hoverIndicator="light-1" onClick={() => {}} {...props}>
-      <Box pad="small" direction="row" align="center" gap="small">
-        <Add />
-        <Text>Add</Text>
-      </Box>
-    </Button>
+    <Box align="center" pad="large">
+      <Button hoverIndicator="light-1" onClick={() => {}} {...props}>
+        <Box pad="small" direction="row" align="center" gap="small">
+          <Add />
+          <Text>Add</Text>
+        </Box>
+      </Button>
+    </Box>
   </Grommet>
 );
 
 const AnchorButton = () => (
   <Grommet theme={grommet}>
-    <Button label="Go" href="#" />
+    <Box align="center" pad="large">
+      <Button label="Go" href="#" />
+    </Box>
   </Grommet>
 );
 
 const RouteButton = () => (
   <Grommet theme={grommet}>
-    <RoutedButton label="Go" path="/" />
+    <Box align="center" pad="large">
+      <RoutedButton label="Go" path="/" />
+    </Box>
   </Grommet>
 );
 
 const CustomTagButton = () => (
   <Grommet theme={grommet}>
-    <Button as="span" label="Go" path="/" />
+    <Box align="center" pad="large">
+      <Button as="span" label="Go" path="/" />
+    </Box>
   </Grommet>
 );
 
@@ -96,52 +106,56 @@ const customTheme = {
 
 const CustomThemeButton = () => (
   <Grommet theme={customTheme}>
-    <Button label="Submit" onClick={() => {}} primary />
+    <Box align="center" pad="large">
+      <Button label="Submit" onClick={() => {}} primary />
+    </Box>
   </Grommet>
 );
 
 const MultipleButton = () => (
   <Grommet theme={grommet}>
-    <Box direction="row" align="center" gap="small" pad="xsmall">
-      <Button label="Cancel" onClick={() => {}} />
-      <Button
-        color="dark-1"
-        primary
-        icon={<Add color="accent-1" />}
-        label="Add"
-        onClick={() => {}}
-      />
-    </Box>
-    <Box direction="row" align="center" gap="small" pad="xsmall">
-      <Button label="Cancel" onClick={() => {}} />
-      <Button
-        color="dark-1"
-        primary
-        icon={<Add />}
-        label="Add"
-        onClick={() => {}}
-      />
-    </Box>
-    <Box direction="row" align="center" gap="small" pad="xsmall">
-      <Button label="Cancel" onClick={() => {}} />
-      <Button primary icon={<Add />} label="Add" onClick={() => {}} />
-    </Box>
-    <Box direction="row" align="center" gap="small" pad="xsmall">
-      <Button label="Cancel" onClick={() => {}} />
-      <Button
-        color="light-2"
-        primary
-        icon={<Add />}
-        label="Add"
-        onClick={() => {}}
-      />
+    <Box align="center" pad="large">
+      <Box direction="row" align="center" gap="small" pad="xsmall">
+        <Button label="Cancel" onClick={() => {}} />
+        <Button
+          color="dark-1"
+          primary
+          icon={<Add color="accent-1" />}
+          label="Add"
+          onClick={() => {}}
+        />
+      </Box>
+      <Box direction="row" align="center" gap="small" pad="xsmall">
+        <Button label="Cancel" onClick={() => {}} />
+        <Button
+          color="dark-1"
+          primary
+          icon={<Add />}
+          label="Add"
+          onClick={() => {}}
+        />
+      </Box>
+      <Box direction="row" align="center" gap="small" pad="xsmall">
+        <Button label="Cancel" onClick={() => {}} />
+        <Button primary icon={<Add />} label="Add" onClick={() => {}} />
+      </Box>
+      <Box direction="row" align="center" gap="small" pad="xsmall">
+        <Button label="Cancel" onClick={() => {}} />
+        <Button
+          color="light-2"
+          primary
+          icon={<Add />}
+          label="Add"
+          onClick={() => {}}
+        />
+      </Box>
     </Box>
   </Grommet>
 );
 
 const ColoredButton = props => (
   <Grommet theme={grommet}>
-    <Box align="start" gap="small">
+    <Box align="center" pad="large" gap="small">
       <Button
         primary
         color="dark-1"
@@ -186,7 +200,7 @@ const customButtonColor = deepMerge(grommet, {
 
 const ThemeColored = () => (
   <Grommet theme={customButtonColor}>
-    <Box align="start" gap="small">
+    <Box align="center" pad="large" gap="small">
       <Button primary label="Submit" onClick={() => {}} />
       <Button primary color="dark-1" label="Submit" onClick={() => {}} />
     </Box>
