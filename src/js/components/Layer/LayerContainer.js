@@ -133,7 +133,6 @@ class LayerContainer extends Component {
         </FocusedContainer>
       );
     }
-
     return content;
   }
 }
