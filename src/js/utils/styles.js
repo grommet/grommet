@@ -205,6 +205,24 @@ export const overflowStyle = overflowProp => {
   `;
 };
 
+const placeholderColor = css`
+  color: ${props => props.theme.global.colors.placeholder};
+`;
+
+export const placeholderStyle = css`
+  &::-webkit-input-placeholder {
+    ${placeholderColor};
+  }
+
+  &::-moz-placeholder {
+    ${placeholderColor};
+  }
+
+  &:-ms-input-placeholder {
+    ${placeholderColor};
+  }
+`;
+
 // evalStyle() converts a styled-components item into a string
 export const evalStyle = (arg, theme) => {
   if (arg && Array.isArray(arg) && typeof arg[0] === 'function') {

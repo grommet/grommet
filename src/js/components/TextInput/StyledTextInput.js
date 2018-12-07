@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, inputStyle, parseMetricToNum } from '../../utils';
+import {
+  focusStyle,
+  inputStyle,
+  parseMetricToNum,
+  placeholderStyle,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
-
-const placeholderColor = css`
-  color: ${props => props.theme.global.colors.placeholder};
-`;
 
 const sizeStyle = props => {
   const data = props.theme.text[props.size];
@@ -23,19 +24,9 @@ const StyledTextInput = styled.input`
   ${inputStyle} width: 100%;
 
   ${props => props.size && sizeStyle(props)} ${props =>
-    props.plain && plainStyle}
+  props.plain && plainStyle}
 
-  &::-webkit-input-placeholder {
-    ${placeholderColor};
-  }
-
-  &::-moz-placeholder {
-    ${placeholderColor};
-  }
-
-  &:-ms-input-placeholder {
-    ${placeholderColor};
-  }
+  ${placeholderStyle}
 
   &::-moz-focus-inner {
     border: none;
