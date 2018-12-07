@@ -307,4 +307,40 @@ describe('Select', () => {
     expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
   });
+
+  ['small', 'medium', 'large'].forEach(dropHeight => {
+    test(`${dropHeight} drop container height`, () => {
+      const { getByPlaceholderText } = render(
+        <Select
+          id="test-select"
+          size="large"
+          options={['one', 'two']}
+          selected={[]}
+          value={[]}
+          onChange={() => {}}
+          dropHeight={dropHeight}
+          placeholder="test select"
+        />,
+      );
+      fireEvent.click(getByPlaceholderText('test select'));
+      expect(document.activeElement).toMatchSnapshot();
+    });
+  });
+
+  test('empty results search', () => {
+    const { getByPlaceholderText } = render(
+      <Select
+        id="test-select"
+        placeholder="test select"
+        options={[]}
+        onSearch={() => {}}
+        emptySearchMessage="no results"
+      />,
+    );
+    fireEvent.click(getByPlaceholderText('test select'));
+    document.activeElement.value = 'a';
+    fireEvent.input(document.activeElement);
+
+    expect(document.activeElement).toMatchSnapshot();
+  });
 });

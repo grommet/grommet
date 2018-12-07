@@ -37,7 +37,7 @@ class AppGrid extends Component {
           {sidebar && (
             <Box
               gridArea="sidebar"
-              background="dark-5"
+              background="dark-3"
               width="small"
               animation={[
                 { type: 'fadeIn', duration: 300 },

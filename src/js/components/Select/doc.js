@@ -132,6 +132,10 @@ export const doc = Select => {
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ]).description('The size of the select.'),
+    dropHeight: PropTypes.oneOfType([
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description('The height of the drop container.'),
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element, // deprecated, use valueLabel
@@ -157,6 +161,11 @@ export const doc = Select => {
       If a function is provided, it is called with the option and the
       return value indicates the value.`,
     ),
+    emptySearchMessage: PropTypes.string
+      .description(
+        `Empty option message to display when no matching results were found`,
+      )
+      .defaultValue('No matches found'),
   };
 
   return DocumentedSelect;

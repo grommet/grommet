@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
+import { ThemeContext } from '../../contexts';
+
 import { Box } from '../Box';
 import { withForwardRef } from '../hocs';
 
 import { EdgeControl } from './EdgeControl';
 
 class RangeSelector extends Component {
+  static contextType = ThemeContext;
+
   static defaultProps = {
     direction: 'horizontal',
     max: 100,
@@ -137,6 +141,7 @@ class RangeSelector extends Component {
       values,
       ...rest
     } = this.props;
+    const theme = this.context;
     const { nextLower, nextUpper } = this.state;
 
     const lower = nextLower !== undefined ? nextLower : values[0];
@@ -155,7 +160,10 @@ class RangeSelector extends Component {
         <Box
           style={{ flex: `${lower - min} 0 0` }}
           background={
-            invert ? { color: color || 'light-4', opacity } : undefined
+            invert
+              ? // preserve existing dark, instead of using darknes of this color
+                { color: color || 'light-4', opacity, dark: theme.dark }
+              : undefined
           }
           fill={fill}
           round={round}
@@ -185,7 +193,10 @@ class RangeSelector extends Component {
             cursor: direction === 'vertical' ? 'ns-resize' : 'ew-resize',
           }}
           background={
-            invert ? undefined : { color: color || 'control', opacity }
+            invert
+              ? undefined
+              : // preserve existing dark, instead of using darknes of this color
+                { color: color || 'control', opacity, dark: theme.dark }
           }
           fill={fill}
           round={round}
@@ -212,7 +223,10 @@ class RangeSelector extends Component {
         <Box
           style={{ flex: `${max - upper} 0 0` }}
           background={
-            invert ? { color: color || 'light-4', opacity } : undefined
+            invert
+              ? // preserve existing dark, instead of using darknes of this color
+                { color: color || 'light-4', opacity, dark: theme.dark }
+              : undefined
           }
           fill={fill}
           round={round}

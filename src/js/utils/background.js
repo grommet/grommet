@@ -80,15 +80,16 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
           color,
           background.opacity === true
             ? theme.global.opacity.medium
-            : theme.global.opacity[background.opacity],
+            : theme.global.opacity[background.opacity] || background.opacity,
         ) || color;
       styles.push(css`
         background-color: ${backgroundColor};
-        ${(!background.opacity || background.opacity !== 'weak')
-          && `color: ${
-            textColor[background.dark || colorIsDark(backgroundColor)
-              ? 'dark' : 'light']};`
-        }
+        ${(!background.opacity || background.opacity !== 'weak') &&
+          `color: ${
+            textColor[
+              background.dark || colorIsDark(backgroundColor) ? 'dark' : 'light'
+            ]
+          };`}
       `);
     }
     if (background.dark === false) {
@@ -130,4 +131,14 @@ export const activeStyle = css`
     )}
   color: ${props =>
     normalizeColor(props.theme.global.hover.color, props.theme)};
+`;
+
+export const selectedStyle = css`
+  ${props =>
+    backgroundStyle(
+      normalizeColor(props.theme.global.selected.background, props.theme),
+      props.theme,
+    )}
+  color: ${props =>
+    normalizeColor(props.theme.global.selected.color, props.theme)};
 `;

@@ -36,6 +36,8 @@ class Select extends Component {
 
   state = { open: false };
 
+  inputRef = React.createRef();
+
   onOpen = () => {
     const { onOpen } = this.props;
     this.setState({ open: true }, () => {
@@ -90,7 +92,7 @@ class Select extends Component {
         this.onClose();
       }
       if (onChange) {
-        onChange(event, ...args);
+        onChange({ ...event, target: this.inputRef.current }, ...args);
       }
     };
 
@@ -184,6 +186,7 @@ class Select extends Component {
                     }`
                   }
                   id={id ? `${id}__input` : undefined}
+                  ref={this.inputRef}
                   {...rest}
                   tabIndex="-1"
                   type="text"

@@ -21,31 +21,31 @@ import {
 import { normalizeColor, deepFreeze } from '../utils';
 
 const brandColor = '#7D4CDB';
-const accentColors = ['#FD6FFF', '#61EC9F', '#60EBE1', '#FFCA58'];
-const neutralColors = ['#3D138D', '#BE60EB', '#00C781', '#6194EB', '#FFB202'];
+const accentColors = ['#6FFFB0', '#FD6FFF', '#6FFFB0', '#FFCA58'];
+const neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
 const statusColors = {
-  critical: '#EB6060',
-  error: '#EB6060',
-  warning: '#F7E463',
-  ok: '#7CD992',
-  unknown: '#a8a8a8',
-  disabled: '#a8a8a8',
+  critical: '#6FFFB0',
+  error: '#6FFFB0',
+  warning: '#FFAA15',
+  ok: '#00C781',
+  unknown: '#CCCCCC',
+  disabled: '#CCCCCC',
 };
 const darkColors = [
   '#333333',
-  '#444444',
   '#555555',
-  '#666666',
   '#777777',
+  '#999999',
+  '#999999',
   '#999999',
 ];
 const lightColors = [
-  '#F6F6F6',
-  '#EEEEEE',
-  '#DDDDDD',
-  '#CCCCCC',
-  '#BBBBBB',
-  '#AAAAAA',
+  '#F8F8F8',
+  '#F2F2F2',
+  '#EDEDED',
+  '#DADADA',
+  '#DADADA',
+  '#DADADA',
 ];
 const focusColor = accentColors[0];
 
@@ -63,6 +63,7 @@ const colors = {
   },
   focus: focusColor,
   placeholder: '#AAAAAA',
+  selected: 'brand',
   text: {
     dark: '#f8f8f8',
     light: '#444444',
@@ -233,6 +234,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         medium: 0.4,
         weak: 0.1,
       },
+      selected: {
+        background: 'selected',
+        color: 'white',
+      },
       spacing: `${baseSpacing}px`,
       size: {
         xxsmall: `${baseSpacing * 2}px`, // 48
@@ -256,8 +261,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       textDecoration: 'none',
       fontWeight: 600,
       color: {
-        dark: '#6194EB',
-        light: '#1D67E3',
+        dark: 'accent-1',
+        light: 'brand',
       },
       hover: {
         textDecoration: 'underline',
@@ -385,8 +390,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         minute: {
           color: {
-            dark: 'light-5',
-            light: 'dark-5',
+            dark: 'light-4',
+            light: 'dark-3',
           },
           width: `${baseSpacing / 6}px`,
           size: `${Math.round(baseSpacing / 2)}px`,
@@ -474,8 +479,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       help: {
         color: {
-          dark: 'dark-5',
-          light: 'dark-5',
+          dark: 'dark-3',
+          light: 'dark-3',
         },
       },
       label: {},

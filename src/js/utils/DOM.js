@@ -140,8 +140,8 @@ export const findVisibleParent = element => {
 
 export const isNodeAfterScroll = (node, target = window) => {
   const { bottom } = node.getBoundingClientRect();
-  const { height } = target.getBoundingClientRect();
-  return bottom >= height;
+  const { height, top } = target.getBoundingClientRect();
+  return bottom >= top + height;
 };
 
 export const isNodeBeforeScroll = (node, target = window) => {
