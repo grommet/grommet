@@ -110,10 +110,7 @@ class CenterLayer extends Component {
 }
 
 class FormLayer extends Component {
-  state = {
-    fourthOption: 'one',
-    open: false,
-  };
+  state = { open: false, select: '' };
 
   onOpen = () => this.setState({ open: true });
 
@@ -122,7 +119,7 @@ class FormLayer extends Component {
   };
 
   render() {
-    const { open, fourthOption } = this.state;
+    const { open, select } = this.state;
     return (
       <Grommet theme={grommet} full>
         <Box fill align="center" justify="center">
@@ -154,19 +151,26 @@ class FormLayer extends Component {
                     <TextInput />
                   </FormField>
                   <FormField label="Second">
-                    <TextInput />
+                    <Select
+                      options={[
+                        'one',
+                        'two',
+                        'three',
+                        'four',
+                        'five',
+                        'six',
+                        'seven',
+                        'eight',
+                      ]}
+                      value={select}
+                      onSearch={() => {}}
+                      onChange={({ option }) =>
+                        this.setState({ select: option })
+                      }
+                    />
                   </FormField>
                   <FormField label="Third">
                     <TextArea />
-                  </FormField>
-                  <FormField label="Fourth">
-                    <Select
-                      options={['one', 'two', 'three']}
-                      value={fourthOption}
-                      onChange={({ option }) =>
-                        this.setState({ fourthOption: option })
-                      }
-                    />
                   </FormField>
                 </Box>
                 <Box flex={false} as="footer" align="start">
