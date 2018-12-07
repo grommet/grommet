@@ -76,7 +76,7 @@ function (_Component) {
       size: "large"
     }, "Title")), React.createElement(Text, null, "my@email")), sidebar && React.createElement(Box, {
       gridArea: "sidebar",
-      background: "dark-5",
+      background: "dark-3",
       width: "small",
       animation: [{
         type: 'fadeIn',

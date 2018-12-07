@@ -399,7 +399,7 @@ function (_Component) {
         volume = _this$state4.volume;
     var over = controls === 'over';
     var background = over && (theme.video.controls && theme.video.controls.background || {
-      color: 'dark-2',
+      color: 'dark-1',
       opacity: 'strong'
     });
     var iconColor = over && (theme.video.icons.color || 'light-1');

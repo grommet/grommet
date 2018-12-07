@@ -91,7 +91,7 @@ function (_Component) {
         }
       }, icon, React.createElement(Heading, {
         level: 4,
-        color: hovering ? 'dark-1' : 'dark-5'
+        color: hovering ? 'dark-1' : 'dark-3'
       }, label));
     });
 
@@ -233,11 +233,11 @@ function (_Component2) {
     }, React.createElement(Box, {
       gap: "xsmall"
     }, React.createElement(Text, {
-      color: "dark-5"
+      color: "dark-3"
     }, React.createElement("strong", null, "Purpose")), React.createElement(Text, null, "Used for general announcements like new releases, trainings...")), React.createElement(Box, {
       gap: "xsmall"
     }, React.createElement(Text, {
-      color: "dark-5"
+      color: "dark-3"
     }, React.createElement("strong", null, "Created")), React.createElement(Text, null, "Created by Bryan Jacquot on January 19, 2016")))), React.createElement(RichPanel, {
       icon: React.createElement(Bookmark, {
         color: "accent-1"
@@ -255,7 +255,7 @@ function (_Component2) {
         maxHeight: '400px'
       }
     }, React.createElement(Text, {
-      color: "dark-5"
+      color: "dark-3"
     }, "Below is the top message in", React.createElement("strong", null, "#announcements"), "."), React.createElement(Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), React.createElement(Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), React.createElement(Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), React.createElement(Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), React.createElement(Text, null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")) : loading), React.createElement(RichPanel, {
       icon: React.createElement(User, {
         color: "accent-2"

@@ -206,7 +206,7 @@ test('Button hoverIndicator as object with invalid colorIndex renders', function
 test('Button hoverIndicator color renders', function () {
   var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
     onClick: function onClick() {},
-    hoverIndicator: "dark-5"
+    hoverIndicator: "dark-3"
   }, "hoverIndicator")));
 
   var tree = component.toJSON();

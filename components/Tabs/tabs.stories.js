@@ -386,7 +386,7 @@ var RichTabs = function RichTabs() {
   }, _react.default.createElement(_grommet.Tabs, null, _react.default.createElement(_grommet.Tab, {
     title: _react.default.createElement(RichTabTitle, {
       icon: _react.default.createElement(_grommetIcons.CircleInformation, {
-        color: "accent-1"
+        color: "accent-2"
       }),
       label: "Personal Data"
     })
@@ -397,7 +397,7 @@ var RichTabs = function RichTabs() {
   }))), _react.default.createElement(_grommet.Tab, {
     title: _react.default.createElement(RichTabTitle, {
       icon: _react.default.createElement(_grommetIcons.Currency, {
-        color: "neutral-5"
+        color: "neutral-2"
       }),
       label: "Payment"
     })
@@ -437,7 +437,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     }
   },
   tabs: {
-    background: 'dark-4',
+    background: 'dark-3',
     header: {
       background: 'dark-2',
       extend: function extend(_ref4) {
@@ -466,7 +466,7 @@ var CustomTabs = function CustomTabs() {
   }))), _react.default.createElement(_grommet.Tab, {
     title: _react.default.createElement(RichTabTitle, {
       icon: _react.default.createElement(_grommetIcons.Currency, {
-        color: "neutral-5"
+        color: "light-3"
       }),
       label: "Payment"
     })

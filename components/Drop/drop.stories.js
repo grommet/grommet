@@ -58,7 +58,7 @@ function (_Component) {
       align: "center",
       justify: "center"
     }, _react.default.createElement(_grommet.Box, {
-      background: "dark-4",
+      background: "dark-3",
       pad: "medium",
       align: "center",
       justify: "start",
@@ -130,7 +130,7 @@ function (_Component2) {
       pad: "small"
     }, _react.default.createElement(_grommet.Text, null, label), _react.default.createElement(_grommet.Box, {
       margin: "xlarge",
-      background: "dark-4",
+      background: "dark-3",
       pad: {
         horizontal: 'large',
         vertical: 'medium'
@@ -499,7 +499,7 @@ function (_Component5) {
         horizontal: 'small'
       }
     }, _react.default.createElement(_grommet.Box, {
-      background: "dark-4",
+      background: "dark-3",
       pad: "medium",
       align: "center",
       ref: this.topLeftTargetRef
@@ -517,7 +517,7 @@ function (_Component5) {
         vertical: pad
       }
     }, "align top to bottom")), _react.default.createElement(_grommet.Box, {
-      background: "dark-4",
+      background: "dark-3",
       pad: "medium",
       align: "center",
       ref: this.topRightTargetRef
@@ -538,7 +538,7 @@ function (_Component5) {
       direction: "row",
       justify: "between"
     }, _react.default.createElement(_grommet.Box, {
-      background: "dark-4",
+      background: "dark-3",
       pad: "medium",
       ref: this.bottomLeftTargetRef
     }, "Target"), this.bottomLeftTargetRef.current && _react.default.createElement(_grommet.Drop, {
@@ -555,7 +555,7 @@ function (_Component5) {
         vertical: pad
       }
     }, "align bottom to top")), _react.default.createElement(_grommet.Box, {
-      background: "dark-4",
+      background: "dark-3",
       pad: "medium",
       ref: this.bottomRightTargetRef
     }, "Target"), this.bottomRightTargetRef.current && _react.default.createElement(_grommet.Drop, {
@@ -612,7 +612,7 @@ function (_Component6) {
       align: "center",
       justify: "center"
     }, _react.default.createElement(_grommet.Box, {
-      background: "dark-4",
+      background: "dark-3",
       pad: "medium",
       align: "center",
       justify: "start",

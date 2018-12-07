@@ -108,7 +108,7 @@ function (_Component) {
     }, _react.default.createElement(_grommet.Button, {
       label: "Open 2",
       onClick: this.onOpen2,
-      color: "dark-6"
+      color: "dark-3"
     }), _react.default.createElement(_grommet.Button, {
       label: _react.default.createElement(_grommet.Text, {
         color: "white"
@@ -143,7 +143,7 @@ function (_Component) {
     }, _react.default.createElement(_grommet.Button, {
       label: "Close",
       onClick: this.onClose2,
-      color: "dark-6"
+      color: "dark-3"
     })))));
   };
 

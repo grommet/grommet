@@ -59,7 +59,7 @@ Object.setPrototypeOf(StyledVideoControls.defaultProps, _defaultProps.defaultPro
 var headStyle = (0, _styledComponents.css)(["::after{content:'';height:100%;width:", ";background:", ";position:absolute;left:", ";}"], function (props) {
   return props.theme.global.edgeSize.xsmall;
 }, function (props) {
-  return (0, _utils.normalizeColor)('light-5', props.theme);
+  return (0, _utils.normalizeColor)('light-4', props.theme);
 }, function (props) {
   return props.value + "%";
 });

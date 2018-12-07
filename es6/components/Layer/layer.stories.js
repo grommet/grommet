@@ -104,7 +104,7 @@ function (_Component) {
     }, React.createElement(Button, {
       label: "Open 2",
       onClick: this.onOpen2,
-      color: "dark-6"
+      color: "dark-3"
     }), React.createElement(Button, {
       label: React.createElement(Text, {
         color: "white"
@@ -139,7 +139,7 @@ function (_Component) {
     }, React.createElement(Button, {
       label: "Close",
       onClick: this.onClose2,
-      color: "dark-6"
+      color: "dark-3"
     })))));
   };
 

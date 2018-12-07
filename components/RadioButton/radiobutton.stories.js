@@ -74,7 +74,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
     size: '18px',
     hover: {
       border: {
-        color: 'dark-4'
+        color: 'dark-3'
       }
     },
     check: {

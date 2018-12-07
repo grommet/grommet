@@ -258,7 +258,7 @@ function (_Component3) {
         horizontal: 'medium'
       },
       justify: "between",
-      background: "neutral-4",
+      background: "neutral-3",
       elevation: "large",
       style: {
         zIndex: '1000'

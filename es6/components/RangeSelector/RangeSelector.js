@@ -10,6 +10,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Component } from 'react';
 import { compose } from 'recompose';
+import { ThemeContext } from '../../contexts';
 import { Box } from '../Box';
 import { withForwardRef } from '../hocs';
 import { EdgeControl } from './EdgeControl';
@@ -196,6 +197,7 @@ function (_Component) {
         values = _this$props4.values,
         rest = _objectWithoutPropertiesLoose(_this$props4, ["color", "direction", "forwardRef", "invert", "max", "messages", "min", "onChange", "opacity", "round", "size", "step", "values"]);
 
+    var theme = this.context;
     var _this$state2 = this.state,
         nextLower = _this$state2.nextLower,
         nextUpper = _this$state2.nextUpper;
@@ -213,9 +215,11 @@ function (_Component) {
       style: {
         flex: lower - min + " 0 0"
       },
-      background: invert ? {
+      background: invert ? // preserve existing dark, instead of using darknes of this color
+      {
         color: color || 'light-4',
-        opacity: opacity
+        opacity: opacity,
+        dark: theme.dark
       } : undefined,
       fill: fill,
       round: round
@@ -238,9 +242,11 @@ function (_Component) {
         flex: upper - lower + 1 + " 0 0",
         cursor: direction === 'vertical' ? 'ns-resize' : 'ew-resize'
       },
-      background: invert ? undefined : {
+      background: invert ? undefined : // preserve existing dark, instead of using darknes of this color
+      {
         color: color || 'control',
-        opacity: opacity
+        opacity: opacity,
+        dark: theme.dark
       },
       fill: fill,
       round: round,
@@ -262,9 +268,11 @@ function (_Component) {
       style: {
         flex: max - upper + " 0 0"
       },
-      background: invert ? {
+      background: invert ? // preserve existing dark, instead of using darknes of this color
+      {
         color: color || 'light-4',
-        opacity: opacity
+        opacity: opacity,
+        dark: theme.dark
       } : undefined,
       fill: fill,
       round: round
@@ -273,6 +281,8 @@ function (_Component) {
 
   return RangeSelector;
 }(Component);
+
+_defineProperty(RangeSelector, "contextType", ThemeContext);
 
 _defineProperty(RangeSelector, "defaultProps", {
   direction: 'horizontal',

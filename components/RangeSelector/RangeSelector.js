@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
+var _contexts = require("../../contexts");
+
 var _Box = require("../Box");
 
 var _hocs = require("../hocs");
@@ -207,6 +209,7 @@ function (_Component) {
         values = _this$props4.values,
         rest = _objectWithoutPropertiesLoose(_this$props4, ["color", "direction", "forwardRef", "invert", "max", "messages", "min", "onChange", "opacity", "round", "size", "step", "values"]);
 
+    var theme = this.context;
     var _this$state2 = this.state,
         nextLower = _this$state2.nextLower,
         nextUpper = _this$state2.nextUpper;
@@ -224,9 +227,11 @@ function (_Component) {
       style: {
         flex: lower - min + " 0 0"
       },
-      background: invert ? {
+      background: invert ? // preserve existing dark, instead of using darknes of this color
+      {
         color: color || 'light-4',
-        opacity: opacity
+        opacity: opacity,
+        dark: theme.dark
       } : undefined,
       fill: fill,
       round: round
@@ -249,9 +254,11 @@ function (_Component) {
         flex: upper - lower + 1 + " 0 0",
         cursor: direction === 'vertical' ? 'ns-resize' : 'ew-resize'
       },
-      background: invert ? undefined : {
+      background: invert ? undefined : // preserve existing dark, instead of using darknes of this color
+      {
         color: color || 'control',
-        opacity: opacity
+        opacity: opacity,
+        dark: theme.dark
       },
       fill: fill,
       round: round,
@@ -273,9 +280,11 @@ function (_Component) {
       style: {
         flex: max - upper + " 0 0"
       },
-      background: invert ? {
+      background: invert ? // preserve existing dark, instead of using darknes of this color
+      {
         color: color || 'light-4',
-        opacity: opacity
+        opacity: opacity,
+        dark: theme.dark
       } : undefined,
       fill: fill,
       round: round
@@ -284,6 +293,8 @@ function (_Component) {
 
   return RangeSelector;
 }(_react.Component);
+
+_defineProperty(RangeSelector, "contextType", _contexts.ThemeContext);
 
 _defineProperty(RangeSelector, "defaultProps", {
   direction: 'horizontal',

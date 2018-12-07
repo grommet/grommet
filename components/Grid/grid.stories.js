@@ -83,7 +83,7 @@ function (_Component) {
       size: "large"
     }, "Title")), _react.default.createElement(_grommet.Text, null, "my@email")), sidebar && _react.default.createElement(_grommet.Box, {
       gridArea: "sidebar",
-      background: "dark-5",
+      background: "dark-3",
       width: "small",
       animation: [{
         type: 'fadeIn',

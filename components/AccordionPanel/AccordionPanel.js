@@ -61,7 +61,7 @@ function (_Component) {
           dark = _this$props.theme.dark;
 
       _this.setState({
-        hover: dark ? 'light-4' : 'dark-6'
+        hover: dark ? 'light-4' : 'dark-3'
       });
 
       if (onMouseOver) {
@@ -95,7 +95,7 @@ function (_Component) {
           dark = _this$props2.theme.dark;
 
       _this.setState({
-        hover: dark ? 'light-4' : 'dark-6'
+        hover: dark ? 'light-4' : 'dark-3'
       });
 
       if (onFocus) {

@@ -46,7 +46,7 @@ function (_Component) {
       align: "center",
       justify: "center"
     }, React.createElement(Box, {
-      background: "dark-4",
+      background: "dark-3",
       pad: "medium",
       align: "center",
       justify: "start",
@@ -118,7 +118,7 @@ function (_Component2) {
       pad: "small"
     }, React.createElement(Text, null, label), React.createElement(Box, {
       margin: "xlarge",
-      background: "dark-4",
+      background: "dark-3",
       pad: {
         horizontal: 'large',
         vertical: 'medium'
@@ -487,7 +487,7 @@ function (_Component5) {
         horizontal: 'small'
       }
     }, React.createElement(Box, {
-      background: "dark-4",
+      background: "dark-3",
       pad: "medium",
       align: "center",
       ref: this.topLeftTargetRef
@@ -505,7 +505,7 @@ function (_Component5) {
         vertical: pad
       }
     }, "align top to bottom")), React.createElement(Box, {
-      background: "dark-4",
+      background: "dark-3",
       pad: "medium",
       align: "center",
       ref: this.topRightTargetRef
@@ -526,7 +526,7 @@ function (_Component5) {
       direction: "row",
       justify: "between"
     }, React.createElement(Box, {
-      background: "dark-4",
+      background: "dark-3",
       pad: "medium",
       ref: this.bottomLeftTargetRef
     }, "Target"), this.bottomLeftTargetRef.current && React.createElement(Drop, {
@@ -543,7 +543,7 @@ function (_Component5) {
         vertical: pad
       }
     }, "align bottom to top")), React.createElement(Box, {
-      background: "dark-4",
+      background: "dark-3",
       pad: "medium",
       ref: this.bottomRightTargetRef
     }, "Target"), this.bottomRightTargetRef.current && React.createElement(Drop, {
@@ -600,7 +600,7 @@ function (_Component6) {
       align: "center",
       justify: "center"
     }, React.createElement(Box, {
-      background: "dark-4",
+      background: "dark-3",
       pad: "medium",
       align: "center",
       justify: "start",

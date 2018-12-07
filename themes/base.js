@@ -14,18 +14,18 @@ var _utils = require("../utils");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var brandColor = '#7D4CDB';
-var accentColors = ['#FD6FFF', '#61EC9F', '#60EBE1', '#FFCA58'];
-var neutralColors = ['#3D138D', '#BE60EB', '#00C781', '#6194EB', '#FFB202'];
+var accentColors = ['#6FFFB0', '#FD6FFF', '#6FFFB0', '#FFCA58'];
+var neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
 var statusColors = {
-  critical: '#EB6060',
-  error: '#EB6060',
-  warning: '#F7E463',
-  ok: '#7CD992',
-  unknown: '#a8a8a8',
-  disabled: '#a8a8a8'
+  critical: '#6FFFB0',
+  error: '#6FFFB0',
+  warning: '#FFAA15',
+  ok: '#00C781',
+  unknown: '#CCCCCC',
+  disabled: '#CCCCCC'
 };
-var darkColors = ['#333333', '#444444', '#555555', '#666666', '#777777', '#999999'];
-var lightColors = ['#F6F6F6', '#EEEEEE', '#DDDDDD', '#CCCCCC', '#BBBBBB', '#AAAAAA'];
+var darkColors = ['#333333', '#555555', '#777777', '#999999', '#999999', '#999999'];
+var lightColors = ['#F8F8F8', '#F2F2F2', '#EDEDED', '#DADADA', '#DADADA', '#DADADA'];
 var focusColor = accentColors[0];
 var colors = {
   active: (0, _polished.rgba)(221, 221, 221, 0.5),
@@ -286,8 +286,8 @@ var generate = function generate(baseSpacing, scale) {
       textDecoration: 'none',
       fontWeight: 600,
       color: {
-        dark: '#6194EB',
-        light: '#1D67E3'
+        dark: 'accent-1',
+        light: 'brand'
       },
       hover: {
         textDecoration: 'underline' // fontWeight: undefined,
@@ -412,8 +412,8 @@ var generate = function generate(baseSpacing, scale) {
         },
         minute: {
           color: {
-            dark: 'light-5',
-            light: 'dark-5'
+            dark: 'light-4',
+            light: 'dark-3'
           },
           width: baseSpacing / 6 + "px",
           size: Math.round(baseSpacing / 2) + "px",
@@ -525,8 +525,8 @@ var generate = function generate(baseSpacing, scale) {
       },
       help: {
         color: {
-          dark: 'dark-5',
-          light: 'dark-5'
+          dark: 'dark-3',
+          light: 'dark-3'
         }
       },
       label: {}

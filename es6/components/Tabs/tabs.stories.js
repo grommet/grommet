@@ -377,7 +377,7 @@ var RichTabs = function RichTabs() {
   }, React.createElement(Tabs, null, React.createElement(Tab, {
     title: React.createElement(RichTabTitle, {
       icon: React.createElement(CircleInformation, {
-        color: "accent-1"
+        color: "accent-2"
       }),
       label: "Personal Data"
     })
@@ -388,7 +388,7 @@ var RichTabs = function RichTabs() {
   }))), React.createElement(Tab, {
     title: React.createElement(RichTabTitle, {
       icon: React.createElement(Currency, {
-        color: "neutral-5"
+        color: "neutral-2"
       }),
       label: "Payment"
     })
@@ -428,7 +428,7 @@ var customTheme = deepMerge(grommet, {
     }
   },
   tabs: {
-    background: 'dark-4',
+    background: 'dark-3',
     header: {
       background: 'dark-2',
       extend: function extend(_ref4) {
@@ -457,7 +457,7 @@ var CustomTabs = function CustomTabs() {
   }))), React.createElement(Tab, {
     title: React.createElement(RichTabTitle, {
       icon: React.createElement(Currency, {
-        color: "neutral-5"
+        color: "light-3"
       }),
       label: "Payment"
     })
