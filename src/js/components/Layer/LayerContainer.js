@@ -128,7 +128,7 @@ class LayerContainer extends Component {
 
     if (modal) {
       content = (
-        <FocusedContainer aria-hidden={position === 'hidden'} restrictScroll>
+        <FocusedContainer hidden={position === 'hidden'} restrictScroll>
           {content}
         </FocusedContainer>
       );

@@ -2,6 +2,7 @@
 
 exports[`FocusedContainer basic 1`] = `
 <div
+  aria-hidden="false"
   id="container"
 >
   test focused container
@@ -32,6 +33,7 @@ exports[`FocusedContainer basic 3`] = `
 
 exports[`FocusedContainer blurs 1`] = `
 <div
+  aria-hidden="false"
   id="container"
 >
   test focused container
@@ -62,6 +64,7 @@ exports[`FocusedContainer blurs 3`] = `
 
 exports[`FocusedContainer restrict scroll 1`] = `
 <div
+  aria-hidden="false"
   id="container"
 >
   test focused container
