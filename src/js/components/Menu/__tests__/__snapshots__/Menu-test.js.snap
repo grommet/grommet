@@ -114,6 +114,8 @@ exports[`Menu close by clicking outside 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -241,11 +243,7 @@ exports[`Menu close by clicking outside 1`] = `
       <svg
         aria-label="FormDown"
         class="c5"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -265,6 +263,8 @@ exports[`Menu close by clicking outside 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -612,11 +612,7 @@ exports[`Menu close by clicking outside 2`] = `
           <svg
             aria-label="FormDown"
             class="c9"
-            height="24px"
-            role="img"
-            version="1.1"
             viewBox="0 0 24 24"
-            width="24px"
           >
             <polyline
               fill="none"
@@ -802,6 +798,8 @@ exports[`Menu close on esc 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -929,11 +927,7 @@ exports[`Menu close on esc 1`] = `
       <svg
         aria-label="FormDown"
         class="c5"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -953,6 +947,8 @@ exports[`Menu close on tab 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -1080,11 +1076,7 @@ exports[`Menu close on tab 1`] = `
       <svg
         aria-label="FormDown"
         class="c5"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -1104,6 +1096,8 @@ exports[`Menu custom message 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -1234,11 +1228,7 @@ exports[`Menu custom message 1`] = `
       <svg
         aria-label="FormDown"
         className="c5"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -1258,6 +1248,8 @@ exports[`Menu disabled 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -1388,11 +1380,7 @@ exports[`Menu disabled 1`] = `
       <svg
         aria-label="FormDown"
         class="c5"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -1412,6 +1400,8 @@ exports[`Menu navigate through suggestions and select 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -1539,11 +1529,7 @@ exports[`Menu navigate through suggestions and select 1`] = `
       <svg
         aria-label="FormDown"
         class="c5"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -1563,6 +1549,8 @@ exports[`Menu open and close on click 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -1690,11 +1678,7 @@ exports[`Menu open and close on click 1`] = `
       <svg
         aria-label="FormDown"
         class="c5"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -1731,12 +1715,8 @@ exports[`Menu open and close on click 2`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dtlWir"
-        height="24px"
-        role="img"
-        version="1.1"
+        class="StyledIcon-ofa7kd-0 dSllCE"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -1756,6 +1736,8 @@ exports[`Menu open and close on click 3`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -2127,11 +2109,7 @@ exports[`Menu open and close on click 3`] = `
           <svg
             aria-label="FormDown"
             class="c9"
-            height="24px"
-            role="img"
-            version="1.1"
             viewBox="0 0 24 24"
-            width="24px"
           >
             <polyline
               fill="none"
@@ -2330,6 +2308,8 @@ exports[`Menu select an item 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -2457,11 +2437,7 @@ exports[`Menu select an item 1`] = `
       <svg
         aria-label="FormDown"
         class="c5"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -2481,6 +2457,8 @@ exports[`Menu with dropAlign renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -2608,11 +2586,7 @@ exports[`Menu with dropAlign renders 1`] = `
       <svg
         aria-label="FormDown"
         class="c5"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -2632,6 +2606,8 @@ exports[`Menu with dropAlign renders 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -2979,11 +2955,7 @@ exports[`Menu with dropAlign renders 2`] = `
           <svg
             aria-label="FormDown"
             class="c9"
-            height="24px"
-            role="img"
-            version="1.1"
             viewBox="0 0 24 24"
-            width="24px"
           >
             <polyline
               fill="none"

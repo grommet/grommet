@@ -55,41 +55,47 @@ class Collapsible extends Component {
     const { animate, open } = this.state;
 
     const container = this.ref.current;
-    const dimension = animatedBoxProperty(direction);
-    const boudingClientRect = container.getBoundingClientRect();
-    const dimensionSize = boudingClientRect[dimension];
+    if (container) {
+      const dimension = animatedBoxProperty(direction);
+      const boudingClientRect = container.getBoundingClientRect();
+      const dimensionSize = boudingClientRect[dimension];
 
-    let shouldAnimate = animate && prevState.open !== open;
+      let shouldAnimate = animate && prevState.open !== open;
 
-    if (open && snapshot[dimension] && dimensionSize !== snapshot[dimension]) {
-      shouldAnimate = true;
-    }
-
-    if (shouldAnimate) {
-      if (this.animationTimeout) {
-        clearTimeout(this.animationTimeout);
+      if (
+        open &&
+        snapshot[dimension] &&
+        dimensionSize !== snapshot[dimension]
+      ) {
+        shouldAnimate = true;
       }
 
-      const speed = Math.max((dimensionSize / baseline) * minSpeed, minSpeed);
+      if (shouldAnimate) {
+        if (this.animationTimeout) {
+          clearTimeout(this.animationTimeout);
+        }
 
-      container.style[`max-${dimension}`] = `${snapshot[dimension]}px`;
-      container.style.overflow = 'hidden';
+        const speed = Math.max((dimensionSize / baseline) * minSpeed, minSpeed);
 
-      requestAnimationFrame(() => {
+        container.style[`max-${dimension}`] = `${snapshot[dimension]}px`;
+        container.style.overflow = 'hidden';
+
         requestAnimationFrame(() => {
-          container.style.transition = `max-${dimension} ${speed}ms, visibility 50ms`;
-          container.style[`max-${dimension}`] = open
-            ? `${dimensionSize}px`
-            : '0px';
+          requestAnimationFrame(() => {
+            container.style.transition = `max-${dimension} ${speed}ms, visibility 50ms`;
+            container.style[`max-${dimension}`] = open
+              ? `${dimensionSize}px`
+              : '0px';
 
-          this.animationTimeout = setTimeout(() => {
-            container.removeAttribute('style');
-            this.setState({
-              animate: false,
-            });
-          }, speed);
+            this.animationTimeout = setTimeout(() => {
+              container.removeAttribute('style');
+              this.setState({
+                animate: false,
+              });
+            }, speed);
+          });
         });
-      });
+      }
     }
   }
 

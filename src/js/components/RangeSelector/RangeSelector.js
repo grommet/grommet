@@ -139,9 +139,10 @@ class RangeSelector extends Component {
       size,
       step,
       values,
+      theme: propsTheme,
       ...rest
     } = this.props;
-    const theme = this.context;
+    const theme = this.context || propsTheme;
     const { nextLower, nextUpper } = this.state;
 
     const lower = nextLower !== undefined ? nextLower : values[0];
