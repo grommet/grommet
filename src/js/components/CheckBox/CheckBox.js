@@ -64,6 +64,15 @@ class CheckBox extends Component {
       ...rest
     } = this.props;
 
+    const themeableProps = {
+      checked,
+      disabled,
+      focus,
+      reverse,
+      toggle,
+      indeterminate,
+    };
+
     let hidden;
     if (disabled && checked) {
       hidden = <input name={name} type="hidden" value="true" />;
@@ -80,8 +89,8 @@ class CheckBox extends Component {
     }
 
     const visual = toggle ? (
-      <StyledCheckBoxToggle focus={focus} checked={checked}>
-        <StyledCheckBoxKnob />
+      <StyledCheckBoxToggle {...themeableProps}>
+        <StyledCheckBoxKnob {...themeableProps} />
       </StyledCheckBoxToggle>
     ) : (
       <StyledCheckBoxBox
@@ -95,10 +104,7 @@ class CheckBox extends Component {
           color: borderColor,
         }}
         round={theme.checkBox.check.radius}
-        focus={focus}
-        checked={checked}
-        disabled={disabled}
-        toggle={toggle}
+        {...themeableProps}
       >
         {!indeterminate &&
           checked &&
@@ -109,6 +115,7 @@ class CheckBox extends Component {
               theme={theme}
               viewBox="0 0 24 24"
               preserveAspectRatio="xMidYMid meet"
+              {...themeableProps}
             >
               <path fill="none" d="M6,11.3 L10.3,16 L18,6.2" />
             </StyledCheckBoxIcon>
@@ -122,6 +129,7 @@ class CheckBox extends Component {
               theme={theme}
               viewBox="0 0 24 24"
               preserveAspectRatio="xMidYMid meet"
+              {...themeableProps}
             >
               <path fill="none" d="M6,12 L18,12" />
             </StyledCheckBoxIcon>
@@ -129,8 +137,15 @@ class CheckBox extends Component {
       </StyledCheckBoxBox>
     );
 
+    const side = reverse ? 'left' : 'right';
     const checkBoxNode = (
-      <StyledCheckBox as={Box} align="center" justify="center">
+      <StyledCheckBox
+        as={Box}
+        align="center"
+        justify="center"
+        margin={{ [side]: theme.checkBox.gap || 'small' }}
+        {...themeableProps}
+      >
         <StyledCheckBoxInput
           {...rest}
           ref={forwardRef}
@@ -142,8 +157,7 @@ class CheckBox extends Component {
             disabled,
             onChange,
           })}
-          checked={checked}
-          disabled={disabled}
+          {...themeableProps}
         />
         {visual}
         {hidden}
@@ -158,14 +172,11 @@ class CheckBox extends Component {
 
     return (
       <StyledCheckBoxContainer
-        direction="row"
-        align="center"
-        as={props => <Box as="label" {...props} />}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
-        gap={theme.checkBox.gap || 'small'}
         checked={checked}
         onClick={stopLabelClick}
+        {...themeableProps}
       >
         {first}
         {second}
