@@ -2171,7 +2171,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@6.x.x, babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0, babel-runtime@^6.5.0:
+babel-runtime@6.x.x, babel-runtime@^6.11.6, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0, babel-runtime@^6.5.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
@@ -4645,9 +4645,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
   integrity sha512-6uHUhOPEBgQ24HM+r6b/QwWfZq+yiFcipKFrOFiBEnWdy5sdzYoi+pJeQaPI5qOLRFqWmAXUPQNsielzdLoecA==
 
 grommet-icons@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-4.0.0.tgz#41d2def68d96617ef8c6a4391dd94329b862bcd5"
-  integrity sha512-AMmBcedzfjGQu7KV3YU3F0dxq1Kr7L16j/3xO/q8rBqrtczjgDCBgWrYM6MqwXaoDuLf3dl/8YAcqrBTYkgIjQ==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-4.0.1.tgz#20dea0759607f959cb3ab2a90339ab5de71b87ea"
+  integrity sha512-gw1S2lmgb0bmq7Pb9Or4HtvzSFBOUjjtXl8eaCT8hW52ib39b5fKVib6q84PHnInIxs3ka3VQj24Lm2ytRawfw==
+  dependencies:
+    grommet-styles "^0.2.0"
 
 grommet-styles@^0.2.0:
   version "0.2.0"
@@ -6536,9 +6538,9 @@ minipass@^2.2.1, minipass@^2.3.4:
     yallist "^3.0.0"
 
 minizlib@^1.1.1:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/minizlib/-/minizlib-1.2.0.tgz#59517387478fd98d8017ed0299c6cb16cbd12da3"
-  integrity sha512-vQhkoouK/oKRVuFJynustmW3wrqZEXOrfbVVirvOVeglH4TNvIkcqiyojlIbbZYYDJZSbEKEXmDudg+tyRkm6g==
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/minizlib/-/minizlib-1.2.1.tgz#dd27ea6136243c7c880684e8672bb3a45fd9b614"
+  integrity sha512-7+4oTUOWKg7AuL3vloEWekXY2/D20cevzsrNT2kGWm+39J9hGTCBv8VI5Pm5lXZ/o3/mdR4f8rflAPhnQb8mPA==
   dependencies:
     minipass "^2.2.1"
 
@@ -7866,11 +7868,11 @@ react-style-proptype@^3.0.0:
     prop-types "^15.5.4"
 
 react-syntax-highlighter@^10.0.0:
-  version "10.1.1"
-  resolved "https://registry.yarnpkg.com/react-syntax-highlighter/-/react-syntax-highlighter-10.1.1.tgz#1bf7ad4f2f16d2978b04594407b670671b4d3316"
-  integrity sha512-2EzDjKuU51BuL9CZ5qfGJ9+6m9BKGm+IJODyeR7ANC3g3wQY1LPxEzo6vDPsdV1EzDbYUAAai3AYtSBaKVusuw==
+  version "10.1.2"
+  resolved "https://registry.yarnpkg.com/react-syntax-highlighter/-/react-syntax-highlighter-10.1.2.tgz#645ad5e3d8667fd7a2b73fc1059f871055d23f82"
+  integrity sha512-p/xy9rb13Cr+SaErdOvJWTYH8moDrlszv4LPDd314pk5PmT6OTWQYFy66tBZFWhM2xk6bh4BttTU9SYje5c75g==
   dependencies:
-    babel-runtime "^6.18.0"
+    "@babel/runtime" "^7.1.2"
     highlight.js "~9.12.0"
     lowlight "~1.9.1"
     prismjs "^1.8.4"

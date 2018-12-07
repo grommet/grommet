@@ -2,7 +2,6 @@ import { rgba } from 'polished';
 import { css } from 'styled-components';
 
 import {
-  base as iconBase,
   Actions,
   ClosedCaption,
   Expand,
@@ -18,6 +17,7 @@ import {
   Volume,
   VolumeLow,
 } from 'grommet-icons';
+import { base as iconBase } from 'grommet-icons/themes';
 
 import { deepMerge, deepFreeze, normalizeColor } from '../utils';
 
