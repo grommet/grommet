@@ -92,11 +92,13 @@ function (_Component) {
   _proto.render = function render() {
     var _this$props = this.props,
         children = _this$props.children,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["children"]);
+        hidden = _this$props.hidden,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "hidden"]);
 
     delete rest.restrictScroll;
     return _react.default.createElement("div", _extends({
-      ref: this.ref
+      ref: this.ref,
+      "aria-hidden": hidden
     }, rest), children);
   };
 

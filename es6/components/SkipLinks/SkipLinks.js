@@ -34,7 +34,7 @@ function (_Component) {
       setTimeout(function () {
         var layerNode = _this.layerRef.current;
 
-        if (layerNode && layerNode.contains && !layerNode.contains(document.activeElement)) {
+        if (layerNode && layerNode.layerContainer.contains && !layerNode.layerContainer.contains(document.activeElement)) {
           _this.removeLayer();
         }
       }, 0);
