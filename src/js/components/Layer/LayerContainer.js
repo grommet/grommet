@@ -19,6 +19,7 @@ const HiddenAnchor = styled.a`
 
 class LayerContainer extends Component {
   static contextType = ThemeContext;
+
   static defaultProps = {
     full: false,
     margin: 'none',

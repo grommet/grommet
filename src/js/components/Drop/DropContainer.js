@@ -26,6 +26,7 @@ const preventLayerClose = event => {
 
 class DropContainer extends Component {
   static contextType = ThemeContext;
+
   static defaultProps = {
     align: {
       top: 'top',

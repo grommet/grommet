@@ -15,6 +15,7 @@ const wrapWithHocs = compose(
 
 class BoxImpl extends Component {
   static contextType = ThemeContext;
+
   static displayName = 'Box';
 
   static defaultProps = {
