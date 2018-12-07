@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import {
+  Box,
   Grommet,
   Table,
   TableBody,
@@ -68,37 +69,39 @@ const COLUMNS = [
 
 const DefaultTable = () => (
   <Grommet theme={grommet}>
-    <Table caption="Default Table">
-      <TableHeader>
-        <TableRow>
-          {COLUMNS.map(c => (
-            <TableCell key={c.property} scope="col" align={c.align}>
-              <Text>{c.label}</Text>
-            </TableCell>
-          ))}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {DATA.map(datum => (
-          <TableRow key={datum.id}>
+    <Box align="center" pad="large">
+      <Table caption="Default Table">
+        <TableHeader>
+          <TableRow>
             {COLUMNS.map(c => (
-              <TableCell key={c.property} scope={c.dataScope} align={c.align}>
-                <Text>{c.format ? c.format(datum) : datum[c.property]}</Text>
+              <TableCell key={c.property} scope="col" align={c.align}>
+                <Text>{c.label}</Text>
               </TableCell>
             ))}
           </TableRow>
-        ))}
-      </TableBody>
-      <TableFooter>
-        <TableRow>
-          {COLUMNS.map(c => (
-            <TableCell key={c.property} align={c.align}>
-              <Text>{c.footer}</Text>
-            </TableCell>
+        </TableHeader>
+        <TableBody>
+          {DATA.map(datum => (
+            <TableRow key={datum.id}>
+              {COLUMNS.map(c => (
+                <TableCell key={c.property} scope={c.dataScope} align={c.align}>
+                  <Text>{c.format ? c.format(datum) : datum[c.property]}</Text>
+                </TableCell>
+              ))}
+            </TableRow>
           ))}
-        </TableRow>
-      </TableFooter>
-    </Table>
+        </TableBody>
+        <TableFooter>
+          <TableRow>
+            {COLUMNS.map(c => (
+              <TableCell key={c.property} align={c.align}>
+                <Text>{c.footer}</Text>
+              </TableCell>
+            ))}
+          </TableRow>
+        </TableFooter>
+      </Table>
+    </Box>
   </Grommet>
 );
 
@@ -122,37 +125,39 @@ const customTheme = {
 
 const CustomThemeTable = () => (
   <Grommet theme={customTheme}>
-    <Table caption="Custom Theme Table">
-      <TableHeader>
-        <TableRow>
-          {COLUMNS.map(c => (
-            <TableCell key={c.property} scope="col" align={c.align}>
-              <Text>{c.label}</Text>
-            </TableCell>
-          ))}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {DATA.map(datum => (
-          <TableRow key={datum.id}>
+    <Box align="center" pad="large">
+      <Table caption="Custom Theme Table">
+        <TableHeader>
+          <TableRow>
             {COLUMNS.map(c => (
-              <TableCell key={c.property} scope={c.dataScope} align={c.align}>
-                <Text>{c.format ? c.format(datum) : datum[c.property]}</Text>
+              <TableCell key={c.property} scope="col" align={c.align}>
+                <Text>{c.label}</Text>
               </TableCell>
             ))}
           </TableRow>
-        ))}
-      </TableBody>
-      <TableFooter>
-        <TableRow>
-          {COLUMNS.map(c => (
-            <TableCell key={c.property} align={c.align}>
-              <Text>{c.footer}</Text>
-            </TableCell>
+        </TableHeader>
+        <TableBody>
+          {DATA.map(datum => (
+            <TableRow key={datum.id}>
+              {COLUMNS.map(c => (
+                <TableCell key={c.property} scope={c.dataScope} align={c.align}>
+                  <Text>{c.format ? c.format(datum) : datum[c.property]}</Text>
+                </TableCell>
+              ))}
+            </TableRow>
           ))}
-        </TableRow>
-      </TableFooter>
-    </Table>
+        </TableBody>
+        <TableFooter>
+          <TableRow>
+            {COLUMNS.map(c => (
+              <TableCell key={c.property} align={c.align}>
+                <Text>{c.footer}</Text>
+              </TableCell>
+            ))}
+          </TableRow>
+        </TableFooter>
+      </Table>
+    </Box>
   </Grommet>
 );
 

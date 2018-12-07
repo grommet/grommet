@@ -1,18 +1,22 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Clock } from 'grommet';
+import { Box, Grommet, Clock } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const DigitalClock = () => (
   <Grommet theme={grommet}>
-    <Clock type="digital" />
+    <Box align="center" justify="start" pad="large">
+      <Clock type="digital" />
+    </Box>
   </Grommet>
 );
 
 const AnalogClock = () => (
   <Grommet theme={grommet}>
-    <Clock type="analog" />
+    <Box align="center" justify="start" pad="large">
+      <Clock type="analog" />
+    </Box>
   </Grommet>
 );
 
