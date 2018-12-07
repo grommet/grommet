@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
 
+import { ThemeContext } from '../../contexts';
+import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
@@ -18,7 +19,11 @@ const parseValue = (mask, value) => {
   const valueParts = []; // { part, beginIndex, endIndex }
   let valueIndex = 0;
   let maskIndex = 0;
-  while (valueIndex < value.length) {
+  while (
+    value !== undefined &&
+    valueIndex < value.length &&
+    maskIndex < mask.length
+  ) {
     const item = mask[maskIndex];
     let found;
     if (item.fixed) {
@@ -101,6 +106,8 @@ const parseValue = (mask, value) => {
 };
 
 class MaskedInput extends Component {
+  static contextType = ThemeContext;
+
   static defaultProps = {
     mask: [],
   };
@@ -121,12 +128,16 @@ class MaskedInput extends Component {
 
   dropRef = React.createRef();
 
-  componentDidMount() {
-    this.locateCaret();
+  componentDidUpdate() {
+    const { focused } = this.state;
+    if (focused) {
+      this.locateCaret();
+    }
   }
 
-  componentDidUpdate() {
-    this.locateCaret();
+  componentWillUnmount() {
+    clearTimeout(this.caretTimeout);
+    clearTimeout(this.blurTimeout);
   }
 
   locateCaret = () => {
@@ -135,10 +146,7 @@ class MaskedInput extends Component {
     this.caretTimeout = setTimeout(() => {
       const { mask } = this.props;
       const { activeMaskIndex, valueParts } = this.state;
-      if (
-        this.inputRef.current &&
-        this.inputRef.current === document.activeElement
-      ) {
+      if (this.inputRef.current) {
         // determine which mask element the caret is at
         const caretIndex = this.inputRef.current.selectionStart;
         let maskIndex;
@@ -157,10 +165,19 @@ class MaskedInput extends Component {
         }
         if (activeMaskIndex !== maskIndex) {
           // eslint-disable-next-line react/no-did-update-set-state
-          this.setState({ activeMaskIndex: maskIndex });
+          this.setState({ activeMaskIndex: maskIndex, activeOptionIndex: -1 });
         }
       }
     }, 10); // 10ms empirically chosen
+  };
+
+  onFocus = event => {
+    const { onFocus } = this.props;
+    this.locateCaret();
+    this.setState({ focused: true });
+    if (onFocus) {
+      onFocus(event);
+    }
   };
 
   onBlur = () => {
@@ -172,7 +189,7 @@ class MaskedInput extends Component {
         !this.dropRef.current.contains ||
         !this.dropRef.current.contains(document.activeElement)
       ) {
-        this.setState({ activeMaskIndex: undefined });
+        this.setState({ activeMaskIndex: undefined, focused: false });
       }
     }, 10); // 10ms empirically chosen
   };
@@ -210,6 +227,45 @@ class MaskedInput extends Component {
     }
   };
 
+  onNextOption = event => {
+    const { mask } = this.props;
+    const { activeMaskIndex, activeOptionIndex } = this.state;
+    const item = mask[activeMaskIndex];
+    if (item && item.options) {
+      event.preventDefault();
+      const index = Math.min(activeOptionIndex + 1, item.options.length - 1);
+      this.setState({ activeOptionIndex: index });
+    }
+  };
+
+  onPreviousOption = event => {
+    const { mask } = this.props;
+    const { activeMaskIndex, activeOptionIndex } = this.state;
+    if (activeMaskIndex >= 0 && mask[activeMaskIndex].options) {
+      event.preventDefault();
+      const index = Math.max(activeOptionIndex - 1, 0);
+      this.setState({ activeOptionIndex: index });
+    }
+  };
+
+  onSelectOption = event => {
+    const { mask } = this.props;
+    const { activeMaskIndex, activeOptionIndex } = this.state;
+    if (activeMaskIndex >= 0 && activeOptionIndex >= 0) {
+      event.preventDefault();
+      const option = mask[activeMaskIndex].options[activeOptionIndex];
+      this.onOption(option)();
+    }
+  };
+
+  onEsc = event => {
+    // we have to stop both synthetic events and native events
+    // drop and layer should not close by pressing esc on this input
+    event.stopPropagation();
+    event.nativeEvent.stopImmediatePropagation();
+    this.inputRef.current.blur();
+  };
+
   renderPlaceholder = () => {
     const { mask } = this.props;
     return mask.map(item => item.placeholder || item.fixed).join('');
@@ -226,9 +282,11 @@ class MaskedInput extends Component {
       value,
       onChange,
       onKeyDown,
+      theme: propsTheme,
       ...rest
     } = this.props;
-    const { activeMaskIndex } = this.state;
+    const theme = this.context || propsTheme;
+    const { activeMaskIndex, activeOptionIndex } = this.state;
 
     return (
       <StyledMaskedInputContainer plain={plain}>
@@ -237,8 +295,9 @@ class MaskedInput extends Component {
           onTab={this.onTab}
           onLeft={this.locateCaret}
           onRight={this.locateCaret}
-          onUp={this.onPreviousSuggestion}
-          onDown={this.onNextSuggestion}
+          onUp={this.onPreviousOption}
+          onDown={this.onNextOption}
+          onEnter={this.onSelectOption}
           onKeyDown={onKeyDown}
         >
           <StyledMaskedInput
@@ -259,21 +318,36 @@ class MaskedInput extends Component {
             {...rest}
             defaultValue={defaultValue}
             value={value}
-            onFocus={() => this.locateCaret()}
+            theme={theme}
+            onFocus={this.onFocus}
             onBlur={this.onBlur}
             onChange={this.onChange}
           />
         </Keyboard>
         {activeMaskIndex >= 0 && mask[activeMaskIndex].options && (
           <Drop
+            id={id ? `masked-input-drop__${id}` : undefined}
             align={{ top: 'bottom', left: 'left' }}
+            responsive={false}
             target={this.inputRef.current}
           >
             <Box ref={this.dropRef}>
-              {mask[activeMaskIndex].options.map(option => (
+              {mask[activeMaskIndex].options.map((option, index) => (
                 <Box key={option} flex={false}>
-                  <Button hoverIndicator onClick={this.onOption(option)}>
-                    <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+                  <Button
+                    tabIndex="-1"
+                    onClick={this.onOption(option)}
+                    onMouseOver={() =>
+                      this.setState({ activeOptionIndex: index })
+                    }
+                    onFocus={() => {}}
+                  >
+                    <Box
+                      pad={{ horizontal: 'small', vertical: 'xsmall' }}
+                      background={
+                        activeOptionIndex === index ? 'active' : undefined
+                      }
+                    >
                       {option}
                     </Box>
                   </Button>
@@ -287,13 +361,14 @@ class MaskedInput extends Component {
   }
 }
 
+Object.setPrototypeOf(MaskedInput.defaultProps, defaultProps);
+
 let MaskedInputDoc;
 if (process.env.NODE_ENV !== 'production') {
   MaskedInputDoc = require('./doc').doc(MaskedInput); // eslint-disable-line global-require
 }
 const MaskedInputWrapper = compose(
   withFocus,
-  withTheme,
   withForwardRef,
 )(MaskedInputDoc || MaskedInput);
 
