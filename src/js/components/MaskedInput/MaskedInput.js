@@ -63,12 +63,12 @@ const parseValue = (mask, value) => {
     }
     if (!found) {
       if (item.regexp) {
-        const minLength = Array.isArray(item.length)
-          ? item.length[0]
-          : item.length;
-        const maxLength = Array.isArray(item.length)
-          ? item.length[1]
-          : item.length;
+        const minLength =
+          (Array.isArray(item.length) && item.length[0]) || item.length || 1;
+        const maxLength =
+          (Array.isArray(item.length) && item.length[1]) ||
+          item.length ||
+          value.length - valueIndex;
         let length = maxLength;
         while (!found && length >= minLength) {
           const part = value.slice(valueIndex, valueIndex + length);
