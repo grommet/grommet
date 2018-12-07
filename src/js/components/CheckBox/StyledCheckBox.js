@@ -33,6 +33,9 @@ StyledCheckBoxIcon.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, defaultProps);
 
 const StyledCheckBoxContainer = styled.label`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   user-select: none;
   ${props => props.disabled && disabledStyle}
   ${props => !props.disabled && 'cursor: pointer;'}
@@ -66,6 +69,7 @@ StyledCheckBoxInput.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxInput.defaultProps, defaultProps);
 
 const StyledCheckBoxBox = styled.div`
+  ${props => props.focus && focusStyle};
   ${props => props.theme.checkBox.check.extend};
 `;
 
