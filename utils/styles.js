@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.genericStyles = exports.evalStyle = exports.overflowStyle = exports.inputStyle = exports.focusStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
+exports.genericStyles = exports.evalStyle = exports.placeholderStyle = exports.overflowStyle = exports.inputStyle = exports.focusStyle = exports.edgeStyle = exports.controlBorderStyle = exports.baseStyle = void 0;
 
 var _styledComponents = require("styled-components");
 
@@ -91,10 +91,15 @@ var overflowStyle = function overflowStyle(overflowProp) {
   }
 
   return (0, _styledComponents.css)(["", " ", ";"], overflowProp.horizontal && "overflow-x: " + overflowProp.horizontal + ";", overflowProp.vertical && "overflow-y: " + overflowProp.vertical + ";");
-}; // evalStyle() converts a styled-components item into a string
-
+};
 
 exports.overflowStyle = overflowStyle;
+var placeholderColor = (0, _styledComponents.css)(["color:", ";"], function (props) {
+  return props.theme.global.colors.placeholder;
+});
+var placeholderStyle = (0, _styledComponents.css)(["&::-webkit-input-placeholder{", ";}&::-moz-placeholder{", ";}&:-ms-input-placeholder{", ";}"], placeholderColor, placeholderColor, placeholderColor); // evalStyle() converts a styled-components item into a string
+
+exports.placeholderStyle = placeholderStyle;
 
 var evalStyle = function evalStyle(arg, theme) {
   if (arg && Array.isArray(arg) && typeof arg[0] === 'function') {

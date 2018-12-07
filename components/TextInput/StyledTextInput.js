@@ -11,10 +11,6 @@ var _defaultProps = require("../../default-props");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-var placeholderColor = (0, _styledComponents.css)(["color:", ";"], function (props) {
-  return props.theme.global.colors.placeholder;
-});
-
 var sizeStyle = function sizeStyle(props) {
   var data = props.theme.text[props.size];
   return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size, data.height);
@@ -25,11 +21,11 @@ var plainStyle = (0, _styledComponents.css)(["border:none;"]);
 var StyledTextInput = _styledComponents.default.input.withConfig({
   displayName: "StyledTextInput",
   componentId: "sc-1x30a0s-0"
-})(["", " width:100%;", " ", " &::-webkit-input-placeholder{", ";}&::-moz-placeholder{", ";}&:-ms-input-placeholder{", ";}&::-moz-focus-inner{border:none;outline:none;}", ";", ";"], _utils.inputStyle, function (props) {
+})(["", " width:100%;", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", ";"], _utils.inputStyle, function (props) {
   return props.size && sizeStyle(props);
 }, function (props) {
   return props.plain && plainStyle;
-}, placeholderColor, placeholderColor, placeholderColor, function (props) {
+}, _utils.placeholderStyle, function (props) {
   return props.focus && !props.plain && _utils.focusStyle;
 }, function (props) {
   return props.theme.textInput && props.theme.textInput.extend;

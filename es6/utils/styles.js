@@ -75,7 +75,11 @@ export var overflowStyle = function overflowStyle(overflowProp) {
   }
 
   return css(["", " ", ";"], overflowProp.horizontal && "overflow-x: " + overflowProp.horizontal + ";", overflowProp.vertical && "overflow-y: " + overflowProp.vertical + ";");
-}; // evalStyle() converts a styled-components item into a string
+};
+var placeholderColor = css(["color:", ";"], function (props) {
+  return props.theme.global.colors.placeholder;
+});
+export var placeholderStyle = css(["&::-webkit-input-placeholder{", ";}&::-moz-placeholder{", ";}&:-ms-input-placeholder{", ";}"], placeholderColor, placeholderColor, placeholderColor); // evalStyle() converts a styled-components item into a string
 
 export var evalStyle = function evalStyle(arg, theme) {
   if (arg && Array.isArray(arg) && typeof arg[0] === 'function') {
