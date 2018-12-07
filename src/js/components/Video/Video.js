@@ -335,7 +335,7 @@ class Video extends Component {
     const background =
       over &&
       ((theme.video.controls && theme.video.controls.background) || {
-        color: 'dark-2',
+        color: 'dark-1',
         opacity: 'strong',
       });
     const iconColor = over && (theme.video.icons.color || 'light-1');

@@ -31,8 +31,22 @@ const statusColors = {
   unknown: '#CCCCCC',
   disabled: '#CCCCCC',
 };
-const darkColors = ['#333333', '#555555', '#777777', '#999999'];
-const lightColors = ['#F8F8F8', '#F2F2F2', '#EDEDED', '#DADADA'];
+const darkColors = [
+  '#333333',
+  '#555555',
+  '#777777',
+  '#999999',
+  '#999999',
+  '#999999',
+];
+const lightColors = [
+  '#F8F8F8',
+  '#F2F2F2',
+  '#EDEDED',
+  '#DADADA',
+  '#DADADA',
+  '#DADADA',
+];
 const focusColor = accentColors[0];
 
 const colors = {
@@ -242,8 +256,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       textDecoration: 'none',
       fontWeight: 600,
       color: {
-        dark: '#6194EB',
-        light: '#1D67E3',
+        dark: 'accent-1',
+        light: 'brand',
       },
       hover: {
         textDecoration: 'underline',

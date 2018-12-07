@@ -6,8 +6,8 @@ exports[`Grommet custom theme 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #1D67E3;
-  stroke: #1D67E3;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
 }
 
 .c4 g {
@@ -70,8 +70,8 @@ exports[`Grommet custom theme 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #6194EB;
-  stroke: #6194EB;
+  fill: #6FFFB0;
+  stroke: #6FFFB0;
 }
 
 .c10 g {
@@ -165,7 +165,7 @@ exports[`Grommet custom theme 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #1D67E3;
+  color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -199,7 +199,7 @@ exports[`Grommet custom theme 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #6194EB;
+  color: #6FFFB0;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -1077,6 +1077,24 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
+    className="c8"
+  >
+    <span
+      className="c2"
+    >
+      dark-5
+    </span>
+  </div>
+  <div
+    className="c8"
+  >
+    <span
+      className="c2"
+    >
+      dark-6
+    </span>
+  </div>
+  <div
     className="c9"
   >
     <span
@@ -1119,6 +1137,24 @@ exports[`Grommet dark theme 1`] = `
       className="c2"
     >
       light-4
+    </span>
+  </div>
+  <div
+    className="c13"
+  >
+    <span
+      className="c2"
+    >
+      light-5
+    </span>
+  </div>
+  <div
+    className="c13"
+  >
+    <span
+      className="c2"
+    >
+      light-6
     </span>
   </div>
   <div
@@ -1815,6 +1851,24 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
+    className="c8"
+  >
+    <span
+      className="c2"
+    >
+      dark-5
+    </span>
+  </div>
+  <div
+    className="c8"
+  >
+    <span
+      className="c2"
+    >
+      dark-6
+    </span>
+  </div>
+  <div
     className="c1"
   >
     <span
@@ -1857,6 +1911,24 @@ exports[`Grommet default theme 1`] = `
       className="c2"
     >
       light-4
+    </span>
+  </div>
+  <div
+    className="c12"
+  >
+    <span
+      className="c2"
+    >
+      light-5
+    </span>
+  </div>
+  <div
+    className="c12"
+  >
+    <span
+      className="c2"
+    >
+      light-6
     </span>
   </div>
   <div
@@ -2585,6 +2657,24 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
+    className="c9"
+  >
+    <span
+      className="c2"
+    >
+      dark-5
+    </span>
+  </div>
+  <div
+    className="c9"
+  >
+    <span
+      className="c2"
+    >
+      dark-6
+    </span>
+  </div>
+  <div
     className="c1"
   >
     <span
@@ -2627,6 +2717,24 @@ exports[`Grommet hpe theme 1`] = `
       className="c2"
     >
       light-4
+    </span>
+  </div>
+  <div
+    className="c13"
+  >
+    <span
+      className="c2"
+    >
+      light-5
+    </span>
+  </div>
+  <div
+    className="c13"
+  >
+    <span
+      className="c2"
+    >
+      light-6
     </span>
   </div>
   <div
