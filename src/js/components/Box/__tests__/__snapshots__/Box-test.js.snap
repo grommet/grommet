@@ -1239,8 +1239,8 @@ exports[`Box background 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==) no-repeat center center;
-  background-size: cover;
+  background: #FF4040;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1258,12 +1258,8 @@ exports[`Box background 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
-  background-repeat: no-repeat;
-  background-position: center center;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==) no-repeat center center;
   background-size: cover;
-  color: #444444;
-  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1285,6 +1281,29 @@ exports[`Box background 1`] = `
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  color: #444444;
+  color: #444444;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   color: #f8f8f8;
   color: #f8f8f8;
   min-width: 0;
@@ -1295,7 +1314,7 @@ exports[`Box background 1`] = `
   padding: 0px;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1317,7 +1336,7 @@ exports[`Box background 1`] = `
   padding: 0px;
 }
 
-.c10 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1461,6 +1480,18 @@ exports[`Box background 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c11 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c11 {
+    padding: 0px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -1480,9 +1511,6 @@ exports[`Box background 1`] = `
     className="c5"
   />
   <div
-    className="c2"
-  />
-  <div
     className="c6"
   />
   <div
@@ -1496,6 +1524,9 @@ exports[`Box background 1`] = `
   />
   <div
     className="c10"
+  />
+  <div
+    className="c11"
   />
 </div>
 `;
@@ -2784,7 +2815,7 @@ exports[`Box elevation 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 4px 4px rgba(255,255,255,0.40);
 }
 
 .c8 {

@@ -274,45 +274,47 @@ class Video extends Component {
     const { captions, height, videoRef, width } = this.state;
     const video = videoRef.current;
 
-    if (video.videoHeight) {
-      // set the size based on the video aspect ratio
-      const rect = video.getBoundingClientRect();
-      const ratio = rect.width / rect.height;
-      const videoRatio = video.videoWidth / video.videoHeight;
-      if (videoRatio > ratio) {
-        const nextHeight = rect.width / videoRatio;
-        if (nextHeight !== height) {
-          this.setState({ height: nextHeight, width: undefined });
-        }
-      } else {
-        const nextWidth = rect.height * videoRatio;
-        if (nextWidth !== width) {
-          this.setState({ height: undefined, width: nextWidth });
-        }
-      }
-    }
-
-    // remember the state of the text tracks for subsequent rendering
-    const { textTracks } = video;
-    if (textTracks.length > 0) {
-      if (textTracks.length === 1) {
-        const active = textTracks[0].mode === 'showing';
-        if (!captions || !captions[0] || captions[0].active !== active) {
-          this.setState({ captions: [{ active }] });
-        }
-      } else {
-        const nextCaptions = [];
-        let set = false;
-        for (let i = 0; i < textTracks.length; i += 1) {
-          const track = textTracks[i];
-          const active = track.mode === 'showing';
-          nextCaptions.push({ label: track.label, active });
-          if (!captions || !captions[i] || captions[i].active !== active) {
-            set = true;
+    if (video) {
+      if (video.videoHeight) {
+        // set the size based on the video aspect ratio
+        const rect = video.getBoundingClientRect();
+        const ratio = rect.width / rect.height;
+        const videoRatio = video.videoWidth / video.videoHeight;
+        if (videoRatio > ratio) {
+          const nextHeight = rect.width / videoRatio;
+          if (nextHeight !== height) {
+            this.setState({ height: nextHeight, width: undefined });
+          }
+        } else {
+          const nextWidth = rect.height * videoRatio;
+          if (nextWidth !== width) {
+            this.setState({ height: undefined, width: nextWidth });
           }
         }
-        if (set) {
-          this.setState({ captions: nextCaptions });
+      }
+
+      // remember the state of the text tracks for subsequent rendering
+      const { textTracks } = video;
+      if (textTracks.length > 0) {
+        if (textTracks.length === 1) {
+          const active = textTracks[0].mode === 'showing';
+          if (!captions || !captions[0] || captions[0].active !== active) {
+            this.setState({ captions: [{ active }] });
+          }
+        } else {
+          const nextCaptions = [];
+          let set = false;
+          for (let i = 0; i < textTracks.length; i += 1) {
+            const track = textTracks[i];
+            const active = track.mode === 'showing';
+            nextCaptions.push({ label: track.label, active });
+            if (!captions || !captions[i] || captions[i].active !== active) {
+              set = true;
+            }
+          }
+          if (set) {
+            this.setState({ captions: nextCaptions });
+          }
         }
       }
     }

@@ -2,6 +2,7 @@ import { rgba } from 'polished';
 import { css } from 'styled-components';
 
 import {
+  base as iconBase,
   Actions,
   ClosedCaption,
   Expand,
@@ -18,14 +19,14 @@ import {
   VolumeLow,
 } from 'grommet-icons';
 
-import { normalizeColor, deepFreeze } from '../utils';
+import { deepMerge, deepFreeze, normalizeColor } from '../utils';
 
 const brandColor = '#7D4CDB';
-const accentColors = ['#6FFFB0', '#FD6FFF', '#6FFFB0', '#FFCA58'];
+const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
 const neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
 const statusColors = {
-  critical: '#6FFFB0',
-  error: '#6FFFB0',
+  critical: '#FF4040',
+  error: '#FF4040',
   warning: '#FFAA15',
   ok: '#00C781',
   unknown: '#CCCCCC',
@@ -68,6 +69,10 @@ const colors = {
     dark: '#f8f8f8',
     light: '#444444',
   },
+  icon: {
+    dark: '#f8f8f8',
+    light: '#666666',
+  },
   white: '#FFFFFF',
 };
 
@@ -99,7 +104,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
 
   const borderWidth = 2;
 
-  const result = {
+  const result = deepMerge(iconBase, {
     global: {
       animation: {
         duration: '1s',
@@ -531,10 +536,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       responsiveBreakpoint: 'small', // when we scale the font size down
       weight: 600,
     },
-    icon: {
-      colors,
-    },
-    iconThemes: {},
     layer: {
       background: 'white',
       border: {
@@ -743,7 +744,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         base: '8px',
       },
     },
-  };
+  });
 
   return deepFreeze(result);
 };
