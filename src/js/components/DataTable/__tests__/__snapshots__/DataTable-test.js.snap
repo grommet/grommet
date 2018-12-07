@@ -975,6 +975,8 @@ exports[`DataTable groupBy 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: rgba(0,0,0,0.33);
   stroke: rgba(0,0,0,0.33);
 }
@@ -1283,11 +1285,7 @@ exports[`DataTable groupBy 1`] = `
               <svg
                 aria-label="FormDown"
                 class="c6"
-                height="24px"
-                role="img"
-                version="1.1"
                 viewBox="0 0 24 24"
-                width="24px"
               >
                 <polyline
                   fill="none"
@@ -1349,11 +1347,7 @@ exports[`DataTable groupBy 1`] = `
               <svg
                 aria-label="FormDown"
                 class="c6"
-                height="24px"
-                role="img"
-                version="1.1"
                 viewBox="0 0 24 24"
-                width="24px"
               >
                 <polyline
                   fill="none"
@@ -1404,11 +1398,7 @@ exports[`DataTable groupBy 1`] = `
               <svg
                 aria-label="FormDown"
                 class="c6"
-                height="24px"
-                role="img"
-                version="1.1"
                 viewBox="0 0 24 24"
-                width="24px"
               >
                 <polyline
                   fill="none"
@@ -1473,12 +1463,8 @@ exports[`DataTable groupBy 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 krKPIi"
-                height="24px"
-                role="img"
-                version="1.1"
+                class="StyledIcon-ofa7kd-0 eoTmgW"
                 viewBox="0 0 24 24"
-                width="24px"
               >
                 <polyline
                   fill="none"
@@ -1539,12 +1525,8 @@ exports[`DataTable groupBy 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 krKPIi"
-                height="24px"
-                role="img"
-                version="1.1"
+                class="StyledIcon-ofa7kd-0 eoTmgW"
                 viewBox="0 0 24 24"
-                width="24px"
               >
                 <polyline
                   fill="none"
@@ -1594,12 +1576,8 @@ exports[`DataTable groupBy 2`] = `
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-ofa7kd-0 krKPIi"
-                height="24px"
-                role="img"
-                version="1.1"
+                class="StyledIcon-ofa7kd-0 eoTmgW"
                 viewBox="0 0 24 24"
-                width="24px"
               >
                 <polyline
                   fill="none"
@@ -2352,6 +2330,8 @@ exports[`DataTable sort 2`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #666666;
   stroke: #666666;
 }
@@ -2382,11 +2362,7 @@ exports[`DataTable sort 2`] = `
 <svg
                 aria-label="FormDown"
                 class="c0"
-                height="24px"
-                role="img"
-                version="1.1"
                 viewBox="0 0 24 24"
-                width="24px"
               >
                 <polyline
                   fill="none"

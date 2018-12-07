@@ -6,6 +6,8 @@ exports[`Select basic 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -253,11 +255,7 @@ exports[`Select basic 1`] = `
       <svg
         aria-label="FormDown"
         className="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -277,6 +275,8 @@ exports[`Select complex options and children 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -513,11 +513,7 @@ exports[`Select complex options and children 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -565,12 +561,8 @@ exports[`Select complex options and children 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dtlWir"
-        height="24px"
-        role="img"
-        version="1.1"
+        class="StyledIcon-ofa7kd-0 dSllCE"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -1045,6 +1037,8 @@ exports[`Select deselect an option 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -1282,11 +1276,7 @@ exports[`Select deselect an option 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -1306,6 +1296,8 @@ exports[`Select disabled 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -1545,11 +1537,7 @@ exports[`Select disabled 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -1598,12 +1586,8 @@ exports[`Select disabled 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dtlWir"
-        height="24px"
-        role="img"
-        version="1.1"
+        class="StyledIcon-ofa7kd-0 dSllCE"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -2673,6 +2657,8 @@ exports[`Select multiple 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -2922,11 +2908,7 @@ exports[`Select multiple 1`] = `
       <svg
         aria-label="FormDown"
         className="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -2946,6 +2928,8 @@ exports[`Select multiple values 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -3183,11 +3167,7 @@ exports[`Select multiple values 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -3236,12 +3216,8 @@ exports[`Select multiple values 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dtlWir"
-        height="24px"
-        role="img"
-        version="1.1"
+        class="StyledIcon-ofa7kd-0 dSllCE"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -3789,6 +3765,8 @@ exports[`Select opens 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -4025,11 +4003,7 @@ exports[`Select opens 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -4077,12 +4051,8 @@ exports[`Select opens 2`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dtlWir"
-        height="24px"
-        role="img"
-        version="1.1"
+        class="StyledIcon-ofa7kd-0 dSllCE"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -4664,6 +4634,8 @@ exports[`Select search 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -4900,11 +4872,7 @@ exports[`Select search 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -5536,6 +5504,8 @@ exports[`Select select an option 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -5772,11 +5742,7 @@ exports[`Select select an option 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -5796,6 +5762,8 @@ exports[`Select select an option with complex options 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -5969,11 +5937,7 @@ exports[`Select select an option with complex options 1`] = `
       <svg
         aria-label="FormDown"
         class="c4"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -5993,6 +5957,8 @@ exports[`Select select an option with enter 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -6229,11 +6195,7 @@ exports[`Select select an option with enter 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -6253,6 +6215,8 @@ exports[`Select select another option 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #7D4CDB;
   stroke: #7D4CDB;
 }
@@ -6490,11 +6454,7 @@ exports[`Select select another option 1`] = `
       <svg
         aria-label="FormDown"
         class="c8"
-        height="24px"
-        role="img"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
@@ -6767,12 +6727,7 @@ exports[`Select size 1`] = `
       <svg
         aria-label="FormDown"
         className="c8"
-        height="24px"
-        role="img"
-        size="large"
-        version="1.1"
         viewBox="0 0 24 24"
-        width="24px"
       >
         <polyline
           fill="none"
