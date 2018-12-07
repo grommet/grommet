@@ -9,6 +9,8 @@ var _styledComponents = require("styled-components");
 
 var _grommetIcons = require("grommet-icons");
 
+var _themes = require("grommet-icons/themes");
+
 var _utils = require("../utils");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -92,7 +94,7 @@ var generate = function generate(baseSpacing, scale) {
   };
 
   var borderWidth = 2;
-  var result = (0, _utils.deepMerge)(_grommetIcons.base, {
+  var result = (0, _utils.deepMerge)(_themes.base, {
     global: {
       animation: {
         duration: '1s',

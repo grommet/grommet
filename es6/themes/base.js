@@ -2,7 +2,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import { base as iconBase } from "grommet-icons/es6/icons/base";
 import { Actions } from "grommet-icons/es6/icons/Actions";
 import { ClosedCaption } from "grommet-icons/es6/icons/ClosedCaption";
 import { Expand } from "grommet-icons/es6/icons/Expand";
@@ -17,6 +16,7 @@ import { Previous } from "grommet-icons/es6/icons/Previous";
 import { Subtract } from "grommet-icons/es6/icons/Subtract";
 import { Volume } from "grommet-icons/es6/icons/Volume";
 import { VolumeLow } from "grommet-icons/es6/icons/VolumeLow";
+import { base as iconBase } from "grommet-icons/es6/themes/base";
 import { deepMerge, deepFreeze, normalizeColor } from '../utils';
 var brandColor = '#7D4CDB';
 var accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
