@@ -213,7 +213,7 @@ exports[`renders error 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  border-bottom: solid 1px #6FFFB0;
+  border-bottom: solid 1px #FF4040;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -225,7 +225,7 @@ exports[`renders error 1`] = `
 .c4 {
   font-size: 18px;
   line-height: 24px;
-  color: #6FFFB0;
+  color: #FF4040;
 }
 
 @media only screen and (max-width:768px) {
@@ -268,7 +268,7 @@ exports[`renders error 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    border-bottom: solid 1px #6FFFB0;
+    border-bottom: solid 1px #FF4040;
   }
 }
 
