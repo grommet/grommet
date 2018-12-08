@@ -51,7 +51,8 @@ function (_Component) {
     return React.createElement(Grommet, {
       theme: grommet
     }, React.createElement(Box, {
-      align: "start"
+      align: "center",
+      pad: "large"
     }, React.createElement(Stack, null, React.createElement(Box, {
       direction: direction === 'vertical' ? 'column' : 'row',
       justify: "between"

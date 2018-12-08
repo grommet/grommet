@@ -51,12 +51,15 @@ function (_Component) {
     var date = this.state.date;
     return _react.default.createElement(_grommet.Grommet, {
       theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
     }, _react.default.createElement(_grommet.Calendar, {
       date: date,
       onSelect: this.onSelect,
       size: "small",
       bounds: ['2018-09-08', '2018-12-13']
-    }));
+    })));
   };
 
   return SimpleCalendar;
@@ -65,9 +68,12 @@ function (_Component) {
 var RangeCalendar = function RangeCalendar() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Calendar, {
     range: true
-  }));
+  })));
 };
 
 var now = new Date();
@@ -123,6 +129,8 @@ function (_Component2) {
     return _react.default.createElement(_grommet.Grommet, {
       theme: _themes.grommet
     }, _react.default.createElement(_grommet.Box, {
+      justify: "center",
+      pad: "large",
       direction: "row",
       gap: "small"
     }, _react.default.createElement(_grommet.Calendar, {
@@ -242,6 +250,9 @@ function (_Component3) {
     var date = this.state.date;
     return _react.default.createElement(_grommet.Grommet, {
       theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
     }, _react.default.createElement(_grommet.Calendar, {
       date: date,
       onSelect: this.onSelect,
@@ -271,7 +282,7 @@ function (_Component3) {
           onClick: onNextMonth
         }, _react.default.createElement(_grommet.Box, null, _react.default.createElement(_grommetIcons.FormNextLink, null))));
       }
-    }));
+    })));
   };
 
   return CustomHeaderCalendar;
@@ -282,10 +293,13 @@ function (_Component3) {
 var DSTCalendar = function DSTCalendar() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Calendar, {
     date: "2018-11-04T07:00:00.000Z",
     bounds: ['2013-11-06', '2018-12-06']
-  }));
+  })));
 };
 
 (0, _react2.storiesOf)('Calendar', module).add('Simple', function () {

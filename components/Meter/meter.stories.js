@@ -13,32 +13,39 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var BarMeter = function BarMeter() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Meter, {
     type: "bar",
     background: "light-2",
     values: [{
       value: 30
     }]
-  }));
+  })));
 };
 
 var CircleMeter = function CircleMeter() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Meter, {
     type: "circle",
     background: "light-2",
     values: [{
       value: 30
     }]
-  }));
+  })));
 };
 
 var LabelledMeter = function LabelledMeter() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, _react.default.createElement(_grommet.Box, {
-    align: "start"
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Stack, {
     anchor: "center"
   }, _react.default.createElement(_grommet.Meter, {

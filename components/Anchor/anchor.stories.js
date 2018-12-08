@@ -15,9 +15,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _react2.storiesOf)('Anchor', module).add('Default', function () {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Anchor, {
     href: "#"
-  }, "Link"));
+  }, "Link")));
 }).add('Colors', function () {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
@@ -56,6 +59,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 }).add('Size', function () {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall'].map(function (size) {
     return _react.default.createElement(_grommet.Box, {
       key: size,
@@ -65,12 +71,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
       label: size,
       href: "#"
     }));
-  }));
+  })));
 }).add('Inline', function () {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, "This is ", _react.default.createElement(_grommet.Anchor, {
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
+  }, _react.default.createElement(_grommet.Paragraph, null, "This is ", _react.default.createElement(_grommet.Anchor, {
     label: "an inline link",
     href: "#"
-  }), " with surrounding text.");
+  }), " with surrounding text.")));
 });

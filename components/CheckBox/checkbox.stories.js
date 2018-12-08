@@ -52,11 +52,14 @@ function (_Component) {
     var checked = this.state.checked;
     return _react.default.createElement(_grommet.Grommet, {
       theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
     }, _react.default.createElement(_grommet.CheckBox, _extends({}, this.props, {
       label: "Choice",
       checked: checked,
       onChange: this.onChange
-    })));
+    }))));
   };
 
   return SimpleCheckBox;
@@ -131,11 +134,14 @@ function (_Component2) {
     var checked = this.state.checked;
     return _react.default.createElement(_grommet.Grommet, {
       theme: (0, _utils.deepMerge)(_themes.grommet, customCheckBoxTheme)
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
     }, _react.default.createElement(_grommet.CheckBox, _extends({}, this.props, {
       label: "Choice",
       checked: checked,
       onChange: this.onChange
-    })));
+    }))));
   };
 
   return ThemedCheckBox;
@@ -218,12 +224,15 @@ function (_Component3) {
     var checked = this.state.checked;
     return _react.default.createElement(_grommet.Grommet, {
       theme: (0, _utils.deepMerge)(_themes.grommet, customToggleTheme)
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
     }, _react.default.createElement(_grommet.CheckBox, _extends({}, this.props, {
       label: "Choice",
       checked: checked,
       onChange: this.onChange,
       toggle: true
-    })));
+    }))));
   };
 
   return ThemedToggle;
@@ -258,7 +267,10 @@ function (_Component4) {
     var checked = this.state.checked;
     return _react.default.createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, null, _react.default.createElement(_grommet.Button, {
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, _react.default.createElement(_grommet.Button, {
       hoverIndicator: "background",
       onClick: function onClick() {
         _this5.setState({
@@ -340,24 +352,27 @@ function (_Component5) {
         checkboxes = _this$state.checkboxes;
     return _react.default.createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, null, _react.default.createElement(_grommet.CheckBox, {
-      checked: checked.length === 3,
-      indeterminate: checked.length > 0 && checked.length < 3,
-      label: _react.default.createElement(_grommet.Text, null, "Picked them all"),
-      onChange: this.onCheckAll
-    })), _react.default.createElement(_grommet.Box, {
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, _react.default.createElement(_grommet.Box, {
       direction: "row",
       gap: "medium"
-    }, checkboxes.map(function (item) {
+    }, _react.default.createElement(_grommet.CheckBox, {
+      checked: checked.length === 3,
+      indeterminate: checked.length > 0 && checked.length < 3,
+      label: "All",
+      onChange: this.onCheckAll
+    }), checkboxes.map(function (item) {
       return _react.default.createElement(_grommet.CheckBox, {
         key: item,
         checked: checked.indexOf(item) !== -1,
-        label: _react.default.createElement(_grommet.Text, null, item),
+        label: item,
         onChange: function onChange(e) {
           return _this7.onCheck(e, item);
         }
       });
-    })));
+    }))));
   };
 
   return IndeterminateCheckBox;

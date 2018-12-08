@@ -53,7 +53,8 @@ function (_Component) {
     }, _react.default.createElement(_grommet.Box, {
       fill: true,
       align: "center",
-      justify: "center"
+      justify: "start",
+      pad: "large"
     }, _react.default.createElement(_grommet.Box, {
       width: "medium"
     }, _react.default.createElement(_grommet.MaskedInput, {
@@ -122,7 +123,8 @@ function (_Component2) {
     }, _react.default.createElement(_grommet.Box, {
       fill: true,
       align: "center",
-      justify: "center"
+      justify: "start",
+      pad: "large"
     }, _react.default.createElement(_grommet.Box, {
       width: "medium"
     }, _react.default.createElement(_grommet.MaskedInput, {
@@ -192,7 +194,8 @@ function (_Component3) {
     }, _react.default.createElement(_grommet.Box, {
       fill: true,
       align: "center",
-      justify: "center"
+      justify: "start",
+      pad: "large"
     }, _react.default.createElement(_grommet.Box, {
       width: "medium"
     }, _react.default.createElement(_grommet.MaskedInput, {
@@ -257,7 +260,8 @@ function (_Component4) {
     }, _react.default.createElement(_grommet.Box, {
       fill: true,
       align: "center",
-      justify: "center"
+      justify: "start",
+      pad: "large"
     }, _react.default.createElement(_grommet.Box, {
       width: "medium"
     }, _react.default.createElement(_grommet.MaskedInput, {

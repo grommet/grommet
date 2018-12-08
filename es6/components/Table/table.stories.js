@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Table, TableBody, TableCell, TableFooter, TableHeader, TableRow, Text } from 'grommet';
+import { Box, Grommet, Table, TableBody, TableCell, TableFooter, TableHeader, TableRow, Text } from 'grommet';
 import { grommet } from 'grommet/themes'; // Always should store amount in cents to avoid precision errors
 
 var DATA = [{
@@ -53,6 +53,9 @@ var COLUMNS = [{
 var DefaultTable = function DefaultTable() {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(Table, {
     caption: "Default Table"
   }, React.createElement(TableHeader, null, React.createElement(TableRow, null, COLUMNS.map(function (c) {
@@ -76,7 +79,7 @@ var DefaultTable = function DefaultTable() {
       key: c.property,
       align: c.align
     }, React.createElement(Text, null, c.footer));
-  })))));
+  }))))));
 };
 
 var customTheme = {
@@ -100,6 +103,9 @@ var customTheme = {
 var CustomThemeTable = function CustomThemeTable() {
   return React.createElement(Grommet, {
     theme: customTheme
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(Table, {
     caption: "Custom Theme Table"
   }, React.createElement(TableHeader, null, React.createElement(TableRow, null, COLUMNS.map(function (c) {
@@ -123,7 +129,7 @@ var CustomThemeTable = function CustomThemeTable() {
       key: c.property,
       align: c.align
     }, React.createElement(Text, null, c.footer));
-  })))));
+  }))))));
 };
 
 storiesOf('Table', module).add('Default', function () {

@@ -14,8 +14,8 @@ var SimpleMenu = function SimpleMenu() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, _react.default.createElement(_grommet.Box, {
-    direction: "row",
-    gap: "large"
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Menu, {
     label: "Actions",
     items: [{

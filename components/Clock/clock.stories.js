@@ -13,17 +13,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var DigitalClock = function DigitalClock() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    justify: "start",
+    pad: "large"
   }, _react.default.createElement(_grommet.Clock, {
     type: "digital"
-  }));
+  })));
 };
 
 var AnalogClock = function AnalogClock() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    justify: "start",
+    pad: "large"
   }, _react.default.createElement(_grommet.Clock, {
     type: "analog"
-  }));
+  })));
 };
 
 (0, _react2.storiesOf)('Clock', module).add('Digital Clock', function () {

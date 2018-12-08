@@ -6,32 +6,39 @@ import { grommet } from 'grommet/themes';
 var BarMeter = function BarMeter() {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(Meter, {
     type: "bar",
     background: "light-2",
     values: [{
       value: 30
     }]
-  }));
+  })));
 };
 
 var CircleMeter = function CircleMeter() {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(Meter, {
     type: "circle",
     background: "light-2",
     values: [{
       value: 30
     }]
-  }));
+  })));
 };
 
 var LabelledMeter = function LabelledMeter() {
   return React.createElement(Grommet, {
     theme: grommet
   }, React.createElement(Box, {
-    align: "start"
+    align: "center",
+    pad: "large"
   }, React.createElement(Stack, {
     anchor: "center"
   }, React.createElement(Meter, {

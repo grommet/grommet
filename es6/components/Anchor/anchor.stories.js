@@ -1,14 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Add } from "grommet-icons/es6/icons/Add";
-import { Anchor, Box, Grommet } from 'grommet';
+import { Anchor, Box, Grommet, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
 storiesOf('Anchor', module).add('Default', function () {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(Anchor, {
     href: "#"
-  }, "Link"));
+  }, "Link")));
 }).add('Colors', function () {
   return React.createElement(Grommet, {
     theme: grommet
@@ -47,6 +50,9 @@ storiesOf('Anchor', module).add('Default', function () {
 }).add('Size', function () {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, ['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall'].map(function (size) {
     return React.createElement(Box, {
       key: size,
@@ -56,12 +62,15 @@ storiesOf('Anchor', module).add('Default', function () {
       label: size,
       href: "#"
     }));
-  }));
+  })));
 }).add('Inline', function () {
   return React.createElement(Grommet, {
     theme: grommet
-  }, "This is ", React.createElement(Anchor, {
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
+  }, React.createElement(Paragraph, null, "This is ", React.createElement(Anchor, {
     label: "an inline link",
     href: "#"
-  }), " with surrounding text.");
+  }), " with surrounding text.")));
 });

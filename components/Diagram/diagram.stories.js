@@ -47,6 +47,9 @@ var connection = function connection(fromTarget, toTarget, _temp) {
 var SimpleDiagram = function SimpleDiagram() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Stack, null, _react.default.createElement(_grommet.Box, null, _react.default.createElement(_grommet.Box, {
     direction: "row"
   }, [1, 2, 3].map(function (id) {
@@ -69,7 +72,7 @@ var SimpleDiagram = function SimpleDiagram() {
       color: 'accent-2',
       anchor: 'horizontal'
     })]
-  })));
+  }))));
 };
 
 (0, _react2.storiesOf)('Diagram', module).add('Simple Diagram', function () {

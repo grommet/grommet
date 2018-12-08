@@ -7,8 +7,8 @@ import { Grommet, Box, Carousel } from 'grommet';
 
 var SimpleCarousel = function SimpleCarousel() {
   return React.createElement(Grommet, null, React.createElement(Box, {
-    justify: "center",
-    align: "center"
+    align: "center",
+    pad: "large"
   }, React.createElement(Carousel, null, React.createElement(Box, {
     pad: "xlarge",
     background: "accent-1"

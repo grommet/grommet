@@ -20,7 +20,8 @@ var SimpleButton = function SimpleButton(props) {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, _react.default.createElement(_grommet.Box, {
-    align: "start"
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Button, _extends({
     label: "Submit",
     onClick: function onClick() {}
@@ -30,18 +31,22 @@ var SimpleButton = function SimpleButton(props) {
 var IconButton = function IconButton() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Button, {
     icon: _react.default.createElement(_grommetIcons.Add, null),
     hoverIndicator: true,
     onClick: function onClick() {}
-  }));
+  })));
 };
 
 var IconLabelButton = function IconLabelButton() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, _react.default.createElement(_grommet.Box, {
-    align: "start",
+    align: "center",
+    pad: "large",
     gap: "small"
   }, _react.default.createElement(_grommet.Button, {
     icon: _react.default.createElement(_grommetIcons.Add, null),
@@ -58,6 +63,9 @@ var IconLabelButton = function IconLabelButton() {
 var PlainButton = function PlainButton(props) {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Button, _extends({
     hoverIndicator: "light-1",
     onClick: function onClick() {}
@@ -66,35 +74,44 @@ var PlainButton = function PlainButton(props) {
     direction: "row",
     align: "center",
     gap: "small"
-  }, _react.default.createElement(_grommetIcons.Add, null), _react.default.createElement(_grommet.Text, null, "Add"))));
+  }, _react.default.createElement(_grommetIcons.Add, null), _react.default.createElement(_grommet.Text, null, "Add")))));
 };
 
 var AnchorButton = function AnchorButton() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Button, {
     label: "Go",
     href: "#"
-  }));
+  })));
 };
 
 var RouteButton = function RouteButton() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.RoutedButton, {
     label: "Go",
     path: "/"
-  }));
+  })));
 };
 
 var CustomTagButton = function CustomTagButton() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Button, {
     as: "span",
     label: "Go",
     path: "/"
-  }));
+  })));
 };
 
 var customTheme = {
@@ -130,16 +147,22 @@ var customTheme = {
 var CustomThemeButton = function CustomThemeButton() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: customTheme
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Button, {
     label: "Submit",
     onClick: function onClick() {},
     primary: true
-  }));
+  })));
 };
 
 var MultipleButton = function MultipleButton() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Box, {
     direction: "row",
     align: "center",
@@ -197,14 +220,15 @@ var MultipleButton = function MultipleButton() {
     icon: _react.default.createElement(_grommetIcons.Add, null),
     label: "Add",
     onClick: function onClick() {}
-  })));
+  }))));
 };
 
 var ColoredButton = function ColoredButton(props) {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, _react.default.createElement(_grommet.Box, {
-    align: "start",
+    align: "center",
+    pad: "large",
     gap: "small"
   }, _react.default.createElement(_grommet.Button, _extends({
     primary: true,
@@ -245,7 +269,8 @@ var ThemeColored = function ThemeColored() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: customButtonColor
   }, _react.default.createElement(_grommet.Box, {
-    align: "start",
+    align: "center",
+    pad: "large",
     gap: "small"
   }, _react.default.createElement(_grommet.Button, {
     primary: true,

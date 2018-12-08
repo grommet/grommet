@@ -50,10 +50,13 @@ function (_Component) {
     var places = this.state.places;
     return _react.default.createElement(_grommet.Grommet, {
       theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
     }, _react.default.createElement(_grommet.WorldMap, {
       onSelectPlace: this.onSelectPlace,
       places: places
-    }));
+    })));
   };
 
   return SimpleWorldMap;

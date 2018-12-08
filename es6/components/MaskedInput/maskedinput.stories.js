@@ -46,7 +46,8 @@ function (_Component) {
     }, React.createElement(Box, {
       fill: true,
       align: "center",
-      justify: "center"
+      justify: "start",
+      pad: "large"
     }, React.createElement(Box, {
       width: "medium"
     }, React.createElement(MaskedInput, {
@@ -115,7 +116,8 @@ function (_Component2) {
     }, React.createElement(Box, {
       fill: true,
       align: "center",
-      justify: "center"
+      justify: "start",
+      pad: "large"
     }, React.createElement(Box, {
       width: "medium"
     }, React.createElement(MaskedInput, {
@@ -185,7 +187,8 @@ function (_Component3) {
     }, React.createElement(Box, {
       fill: true,
       align: "center",
-      justify: "center"
+      justify: "start",
+      pad: "large"
     }, React.createElement(Box, {
       width: "medium"
     }, React.createElement(MaskedInput, {
@@ -250,7 +253,8 @@ function (_Component4) {
     }, React.createElement(Box, {
       fill: true,
       align: "center",
-      justify: "center"
+      justify: "start",
+      pad: "large"
     }, React.createElement(Box, {
       width: "medium"
     }, React.createElement(MaskedInput, {

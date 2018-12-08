@@ -40,6 +40,9 @@ var connection = function connection(fromTarget, toTarget, _temp) {
 var SimpleDiagram = function SimpleDiagram() {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(Stack, null, React.createElement(Box, null, React.createElement(Box, {
     direction: "row"
   }, [1, 2, 3].map(function (id) {
@@ -62,7 +65,7 @@ var SimpleDiagram = function SimpleDiagram() {
       color: 'accent-2',
       anchor: 'horizontal'
     })]
-  })));
+  }))));
 };
 
 storiesOf('Diagram', module).add('Simple Diagram', function () {

@@ -15,7 +15,10 @@ var CONTENT = "\n  # Out of Breath\n\n  You know, sometimes in life it seems lik
 var SimpleMarkdown = function SimpleMarkdown() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Markdown, null, CONTENT));
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
+  }, _react.default.createElement(_grommet.Markdown, null, CONTENT)));
 };
 
 (0, _react2.storiesOf)('Markdown', module).add('Simple Markdown', function () {

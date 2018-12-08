@@ -51,10 +51,13 @@ function (_Component) {
     var value = this.state.value;
     return _react.default.createElement(_grommet.Grommet, {
       theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
     }, _react.default.createElement(_grommet.TextArea, _extends({
       value: value,
       onChange: this.onChange
-    }, this.props)));
+    }, this.props))));
   };
 
   return SimpleTextArea;

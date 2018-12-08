@@ -63,6 +63,9 @@ function (_Component) {
         suggestions = _this$state.suggestions;
     return React.createElement(Grommet, {
       theme: grommet
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
     }, React.createElement(FormField, _extends({
       label: "Label",
       htmlFor: "text-input"
@@ -73,7 +76,7 @@ function (_Component) {
       onChange: this.onChange,
       onSelect: this.onSelect,
       suggestions: suggestions
-    })));
+    }))));
   };
 
   return FormFieldTextInput;
@@ -82,18 +85,24 @@ function (_Component) {
 var FormFieldTextArea = function FormFieldTextArea(props) {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(FormField, _extends({
     label: "Label",
     htmlFor: "text-area"
   }, props), React.createElement(TextArea, {
     id: "text-area",
     placeholder: "placeholder"
-  })));
+  }))));
 };
 
 var FormFieldCheckBox = function FormFieldCheckBox(props) {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(FormField, _extends({
     label: "Label",
     htmlFor: "check-box"
@@ -105,12 +114,15 @@ var FormFieldCheckBox = function FormFieldCheckBox(props) {
   }, React.createElement(CheckBox, {
     id: "check-box",
     label: "CheckBox"
-  }))));
+  })))));
 };
 
 var FormFieldToggle = function FormFieldToggle(props) {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(FormField, _extends({
     label: "Label",
     htmlFor: "check-box"
@@ -123,7 +135,7 @@ var FormFieldToggle = function FormFieldToggle(props) {
     id: "check-box",
     label: "CheckBox",
     toggle: true
-  }))));
+  })))));
 };
 
 var allOptions = Array(100).fill().map(function (_, i) {
@@ -162,6 +174,9 @@ function (_Component2) {
         options = _this$state2.options;
     return React.createElement(Grommet, {
       theme: grommet
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
     }, React.createElement(FormField, _extends({
       label: "Label",
       htmlFor: "select"
@@ -176,7 +191,7 @@ function (_Component2) {
           value: option
         });
       }
-    })));
+    }))));
   };
 
   return FormFieldSelect;
@@ -185,6 +200,9 @@ function (_Component2) {
 var FormFieldHelpError = function FormFieldHelpError(props) {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(FormField, _extends({
     label: "Label",
     htmlFor: "text-input"
@@ -196,7 +214,7 @@ var FormFieldHelpError = function FormFieldHelpError(props) {
     placeholder: "placeholder",
     value: "Value",
     onChange: function onChange() {}
-  })));
+  }))));
 };
 
 storiesOf('FormField', module).add('TextInput', function () {

@@ -7,8 +7,8 @@ var SimpleMenu = function SimpleMenu() {
   return React.createElement(Grommet, {
     theme: grommet
   }, React.createElement(Box, {
-    direction: "row",
-    gap: "large"
+    align: "center",
+    pad: "large"
   }, React.createElement(Menu, {
     label: "Actions",
     items: [{

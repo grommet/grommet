@@ -124,25 +124,34 @@ var DATA = [{
 var SimpleDataTable = function SimpleDataTable() {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(DataTable, {
     columns: columns,
     data: DATA
-  }));
+  })));
 };
 
 var SizedDataTable = function SizedDataTable() {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(DataTable, {
     columns: columns,
     data: data,
     size: "medium"
-  }));
+  })));
 };
 
 var TunableDataTable = function TunableDataTable() {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(DataTable, {
     columns: columns.map(function (c) {
       return _extends({}, c, {
@@ -152,7 +161,7 @@ var TunableDataTable = function TunableDataTable() {
     data: DATA,
     sortable: true,
     resizeable: true
-  }));
+  })));
 };
 
 var groupColumns = columns.concat();
@@ -224,6 +233,9 @@ function (_Component) {
     var servedData = this.state.data;
     return React.createElement(Grommet, {
       theme: grommet
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
     }, React.createElement(DataTable, {
       columns: columns.map(function (column) {
         return _extends({}, column, {
@@ -232,7 +244,7 @@ function (_Component) {
       }),
       data: servedData,
       onSearch: this.onSearch
-    }));
+    })));
   };
 
   return ServedDataTable;

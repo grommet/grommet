@@ -54,12 +54,20 @@ function (_Component) {
   _proto.render = function render() {
     var value = this.state.value;
     return _react.default.createElement(_grommet.Grommet, {
+      full: true,
       theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, _react.default.createElement(_grommet.Box, {
+      width: "medium"
     }, _react.default.createElement(_grommet.TextInput, {
       ref: this.ref,
       value: value,
       onChange: this.onChange
-    }));
+    }))));
   };
 
   return SimpleTextInput;
@@ -107,13 +115,21 @@ function (_Component2) {
   _proto2.render = function render() {
     var value = this.state.value;
     return _react.default.createElement(_grommet.Grommet, {
+      full: true,
       theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, _react.default.createElement(_grommet.Box, {
+      width: "medium"
     }, _react.default.createElement(_grommet.TextInput, {
       value: value,
       onChange: this.onChange,
       onSelect: this.onSelect,
       suggestions: suggestions
-    }));
+    }))));
   };
 
   return SuggestionsTextInput;

@@ -6,7 +6,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, RangeInput } from 'grommet';
+import { Box, Grommet, RangeInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var SimpleRangeInput =
@@ -42,10 +42,13 @@ function (_Component) {
     var value = this.state.value;
     return React.createElement(Grommet, {
       theme: grommet
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
     }, React.createElement(RangeInput, {
       value: value,
       onChange: this.onChange
-    }));
+    })));
   };
 
   return SimpleRangeInput;

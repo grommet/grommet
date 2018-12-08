@@ -12,8 +12,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var SimpleCarousel = function SimpleCarousel() {
   return _react.default.createElement(_grommet.Grommet, null, _react.default.createElement(_grommet.Box, {
-    justify: "center",
-    align: "center"
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Carousel, null, _react.default.createElement(_grommet.Box, {
     pad: "xlarge",
     background: "accent-1"

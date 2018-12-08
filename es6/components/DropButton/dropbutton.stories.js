@@ -72,6 +72,9 @@ function (_Component) {
     var open = this.state.open;
     return React.createElement(Grommet, {
       theme: grommet
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
     }, React.createElement(DropButton, {
       label: "Open",
       open: open,
@@ -83,7 +86,7 @@ function (_Component) {
       dropContent: React.createElement(DropContent, {
         onClose: this.onClose
       })
-    }));
+    })));
   };
 
   return SimpleDropButton;
@@ -139,6 +142,9 @@ function (_Component2) {
         open = _this$state.open;
     return React.createElement(Grommet, {
       theme: grommet
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
     }, React.createElement(DropButton, {
       open: open,
       onClose: function onClose() {
@@ -162,7 +168,7 @@ function (_Component2) {
       pad: "small"
     }, React.createElement(Text, null, date ? new Date(date).toLocaleDateString() : 'Select date'), React.createElement(FormDown, {
       color: "brand"
-    }))));
+    })))));
   };
 
   return CalendarDropButton;

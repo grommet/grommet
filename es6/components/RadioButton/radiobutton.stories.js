@@ -41,6 +41,8 @@ function (_Component) {
     return React.createElement(Grommet, {
       theme: grommet
     }, React.createElement(Box, {
+      align: "center",
+      pad: "large",
       gap: "small"
     }, React.createElement(RadioButton, _extends({
       label: "Choice 1",
@@ -114,7 +116,9 @@ function (_Component2) {
     return React.createElement(Grommet, {
       theme: customTheme
     }, React.createElement(Box, {
-      gap: "xsmall"
+      align: "center",
+      pad: "large",
+      gap: "small"
     }, React.createElement(RadioButton, {
       label: "Choice 1",
       name: "radio",
@@ -162,6 +166,9 @@ function (_Component3) {
     var selected = this.state.selected;
     return React.createElement(Grommet, {
       theme: grommet
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
     }, React.createElement(Button, {
       hoverIndicator: "background",
       onClick: function onClick() {
@@ -180,7 +187,7 @@ function (_Component3) {
       name: "radio",
       value: "c1",
       checked: selected === 'c1'
-    }, this.props))));
+    }, this.props)))));
   };
 
   return CheckBoxInsideButton;

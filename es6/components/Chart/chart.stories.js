@@ -15,24 +15,33 @@ import { calcs } from './calcs';
 var BarChart = function BarChart() {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(Chart, {
     type: "bar",
     values: [[10, 20], [20, 30], [30, 15]]
-  }));
+  })));
 };
 
 var LineChart = function LineChart() {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(Chart, {
     type: "line",
     values: [20, 30, 15]
-  }));
+  })));
 };
 
 var AreaChart = function AreaChart() {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(Chart, {
     type: "area",
     values: [{
@@ -42,7 +51,7 @@ var AreaChart = function AreaChart() {
     }, {
       value: [30, 15]
     }]
-  }));
+  })));
 };
 
 var RichChart =
@@ -134,7 +143,8 @@ function (_Component) {
     return React.createElement(Grommet, {
       theme: grommet
     }, React.createElement(Box, {
-      align: "center"
+      align: "center",
+      pad: "large"
     }, React.createElement(Box, {
       direction: "row",
       justify: "between",

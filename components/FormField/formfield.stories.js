@@ -71,6 +71,9 @@ function (_Component) {
         suggestions = _this$state.suggestions;
     return _react.default.createElement(_grommet.Grommet, {
       theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
     }, _react.default.createElement(_grommet.FormField, _extends({
       label: "Label",
       htmlFor: "text-input"
@@ -81,7 +84,7 @@ function (_Component) {
       onChange: this.onChange,
       onSelect: this.onSelect,
       suggestions: suggestions
-    })));
+    }))));
   };
 
   return FormFieldTextInput;
@@ -90,18 +93,24 @@ function (_Component) {
 var FormFieldTextArea = function FormFieldTextArea(props) {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.FormField, _extends({
     label: "Label",
     htmlFor: "text-area"
   }, props), _react.default.createElement(_grommet.TextArea, {
     id: "text-area",
     placeholder: "placeholder"
-  })));
+  }))));
 };
 
 var FormFieldCheckBox = function FormFieldCheckBox(props) {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.FormField, _extends({
     label: "Label",
     htmlFor: "check-box"
@@ -113,12 +122,15 @@ var FormFieldCheckBox = function FormFieldCheckBox(props) {
   }, _react.default.createElement(_grommet.CheckBox, {
     id: "check-box",
     label: "CheckBox"
-  }))));
+  })))));
 };
 
 var FormFieldToggle = function FormFieldToggle(props) {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.FormField, _extends({
     label: "Label",
     htmlFor: "check-box"
@@ -131,7 +143,7 @@ var FormFieldToggle = function FormFieldToggle(props) {
     id: "check-box",
     label: "CheckBox",
     toggle: true
-  }))));
+  })))));
 };
 
 var allOptions = Array(100).fill().map(function (_, i) {
@@ -170,6 +182,9 @@ function (_Component2) {
         options = _this$state2.options;
     return _react.default.createElement(_grommet.Grommet, {
       theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
     }, _react.default.createElement(_grommet.FormField, _extends({
       label: "Label",
       htmlFor: "select"
@@ -184,7 +199,7 @@ function (_Component2) {
           value: option
         });
       }
-    })));
+    }))));
   };
 
   return FormFieldSelect;
@@ -193,6 +208,9 @@ function (_Component2) {
 var FormFieldHelpError = function FormFieldHelpError(props) {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.FormField, _extends({
     label: "Label",
     htmlFor: "text-input"
@@ -204,7 +222,7 @@ var FormFieldHelpError = function FormFieldHelpError(props) {
     placeholder: "placeholder",
     value: "Value",
     onChange: function onChange() {}
-  })));
+  }))));
 };
 
 (0, _react2.storiesOf)('FormField', module).add('TextInput', function () {

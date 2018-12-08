@@ -47,12 +47,15 @@ function (_Component) {
     var date = this.state.date;
     return React.createElement(Grommet, {
       theme: grommet
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
     }, React.createElement(Calendar, {
       date: date,
       onSelect: this.onSelect,
       size: "small",
       bounds: ['2018-09-08', '2018-12-13']
-    }));
+    })));
   };
 
   return SimpleCalendar;
@@ -61,9 +64,12 @@ function (_Component) {
 var RangeCalendar = function RangeCalendar() {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(Calendar, {
     range: true
-  }));
+  })));
 };
 
 var now = new Date();
@@ -119,6 +125,8 @@ function (_Component2) {
     return React.createElement(Grommet, {
       theme: grommet
     }, React.createElement(Box, {
+      justify: "center",
+      pad: "large",
       direction: "row",
       gap: "small"
     }, React.createElement(Calendar, {
@@ -238,6 +246,9 @@ function (_Component3) {
     var date = this.state.date;
     return React.createElement(Grommet, {
       theme: grommet
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
     }, React.createElement(Calendar, {
       date: date,
       onSelect: this.onSelect,
@@ -267,7 +278,7 @@ function (_Component3) {
           onClick: onNextMonth
         }, React.createElement(Box, null, React.createElement(FormNextLink, null))));
       }
-    }));
+    })));
   };
 
   return CustomHeaderCalendar;
@@ -278,10 +289,13 @@ function (_Component3) {
 var DSTCalendar = function DSTCalendar() {
   return React.createElement(Grommet, {
     theme: grommet
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
   }, React.createElement(Calendar, {
     date: "2018-11-04T07:00:00.000Z",
     bounds: ['2013-11-06', '2018-12-06']
-  }));
+  })));
 };
 
 storiesOf('Calendar', module).add('Simple', function () {

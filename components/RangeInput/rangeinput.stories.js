@@ -49,10 +49,13 @@ function (_Component) {
     var value = this.state.value;
     return _react.default.createElement(_grommet.Grommet, {
       theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
     }, _react.default.createElement(_grommet.RangeInput, {
       value: value,
       onChange: this.onChange
-    }));
+    })));
   };
 
   return SimpleRangeInput;

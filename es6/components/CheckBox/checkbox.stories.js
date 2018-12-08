@@ -42,11 +42,14 @@ function (_Component) {
     var checked = this.state.checked;
     return React.createElement(Grommet, {
       theme: grommet
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
     }, React.createElement(CheckBox, _extends({}, this.props, {
       label: "Choice",
       checked: checked,
       onChange: this.onChange
-    })));
+    }))));
   };
 
   return SimpleCheckBox;
@@ -121,11 +124,14 @@ function (_Component2) {
     var checked = this.state.checked;
     return React.createElement(Grommet, {
       theme: deepMerge(grommet, customCheckBoxTheme)
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
     }, React.createElement(CheckBox, _extends({}, this.props, {
       label: "Choice",
       checked: checked,
       onChange: this.onChange
-    })));
+    }))));
   };
 
   return ThemedCheckBox;
@@ -208,12 +214,15 @@ function (_Component3) {
     var checked = this.state.checked;
     return React.createElement(Grommet, {
       theme: deepMerge(grommet, customToggleTheme)
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
     }, React.createElement(CheckBox, _extends({}, this.props, {
       label: "Choice",
       checked: checked,
       onChange: this.onChange,
       toggle: true
-    })));
+    }))));
   };
 
   return ThemedToggle;
@@ -248,7 +257,10 @@ function (_Component4) {
     var checked = this.state.checked;
     return React.createElement(Grommet, {
       theme: grommet
-    }, React.createElement(Box, null, React.createElement(Button, {
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, React.createElement(Button, {
       hoverIndicator: "background",
       onClick: function onClick() {
         _this5.setState({
@@ -330,24 +342,27 @@ function (_Component5) {
         checkboxes = _this$state.checkboxes;
     return React.createElement(Grommet, {
       theme: grommet
-    }, React.createElement(Box, null, React.createElement(CheckBox, {
-      checked: checked.length === 3,
-      indeterminate: checked.length > 0 && checked.length < 3,
-      label: React.createElement(Text, null, "Picked them all"),
-      onChange: this.onCheckAll
-    })), React.createElement(Box, {
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, React.createElement(Box, {
       direction: "row",
       gap: "medium"
-    }, checkboxes.map(function (item) {
+    }, React.createElement(CheckBox, {
+      checked: checked.length === 3,
+      indeterminate: checked.length > 0 && checked.length < 3,
+      label: "All",
+      onChange: this.onCheckAll
+    }), checkboxes.map(function (item) {
       return React.createElement(CheckBox, {
         key: item,
         checked: checked.indexOf(item) !== -1,
-        label: React.createElement(Text, null, item),
+        label: item,
         onChange: function onChange(e) {
           return _this7.onCheck(e, item);
         }
       });
-    })));
+    }))));
   };
 
   return IndeterminateCheckBox;

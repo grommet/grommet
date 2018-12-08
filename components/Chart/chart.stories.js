@@ -23,24 +23,33 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var BarChart = function BarChart() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Chart, {
     type: "bar",
     values: [[10, 20], [20, 30], [30, 15]]
-  }));
+  })));
 };
 
 var LineChart = function LineChart() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Chart, {
     type: "line",
     values: [20, 30, 15]
-  }));
+  })));
 };
 
 var AreaChart = function AreaChart() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
   }, _react.default.createElement(_grommet.Chart, {
     type: "area",
     values: [{
@@ -50,7 +59,7 @@ var AreaChart = function AreaChart() {
     }, {
       value: [30, 15]
     }]
-  }));
+  })));
 };
 
 var RichChart =
@@ -142,7 +151,8 @@ function (_Component) {
     return _react.default.createElement(_grommet.Grommet, {
       theme: _themes.grommet
     }, _react.default.createElement(_grommet.Box, {
-      align: "center"
+      align: "center",
+      pad: "large"
     }, _react.default.createElement(_grommet.Box, {
       direction: "row",
       justify: "between",

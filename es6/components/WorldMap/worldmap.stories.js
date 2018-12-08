@@ -6,7 +6,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, WorldMap } from 'grommet';
+import { Box, Grommet, WorldMap } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var SimpleWorldMap =
@@ -43,10 +43,13 @@ function (_Component) {
     var places = this.state.places;
     return React.createElement(Grommet, {
       theme: grommet
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
     }, React.createElement(WorldMap, {
       onSelectPlace: this.onSelectPlace,
       places: places
-    }));
+    })));
   };
 
   return SimpleWorldMap;
