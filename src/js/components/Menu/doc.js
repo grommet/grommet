@@ -77,3 +77,26 @@ The object values can be any Button prop, for example: label and onClick.`,
 
   return DocumentedMenu;
 };
+
+export const themeDoc = {
+  'global.colors.control': {
+    description: 'The icon control color used for Menu icon.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'menu.background': {
+    description: 'The background color used for Menu.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'menu.extend': {
+    description: 'Any additional style for the Menu.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'menu.icons.down': {
+    description: 'The down icon to use for opening the Menu.',
+    type: 'React.element',
+    defaultValue: '<FormDown />',
+  },
+};
