@@ -14,7 +14,7 @@ class TimeMaskedInput extends Component {
     const { value } = this.state;
     return (
       <Grommet full theme={grommet}>
-        <Box fill align="center" justify="center">
+        <Box fill align="center" justify="start" pad="large">
           <Box width="medium">
             <MaskedInput
               mask={[
@@ -73,7 +73,7 @@ class PhoneMaskedInput extends Component {
     const { value } = this.state;
     return (
       <Grommet full theme={grommet}>
-        <Box fill align="center" justify="center">
+        <Box fill align="center" justify="start" pad="large">
           <Box width="medium">
             <MaskedInput
               mask={[
@@ -118,7 +118,7 @@ class EmailMaskedInput extends Component {
     const { value } = this.state;
     return (
       <Grommet full theme={grommet}>
-        <Box fill align="center" justify="center">
+        <Box fill align="center" justify="start" pad="large">
           <Box width="medium">
             <MaskedInput
               mask={[
@@ -160,7 +160,7 @@ class IPv4MaskedInput extends Component {
     const { value } = this.state;
     return (
       <Grommet full theme={grommet}>
-        <Box fill align="center" justify="center">
+        <Box fill align="center" justify="start" pad="large">
           <Box width="medium">
             <MaskedInput
               mask={[

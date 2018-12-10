@@ -3,13 +3,15 @@ import { storiesOf } from '@storybook/react';
 
 import { Add } from 'grommet-icons';
 
-import { Anchor, Box, Grommet } from 'grommet';
+import { Anchor, Box, Grommet, Paragraph } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 storiesOf('Anchor', module)
   .add('Default', () => (
     <Grommet theme={grommet}>
-      <Anchor href="#">Link</Anchor>
+      <Box align="center" pad="large">
+        <Anchor href="#">Link</Anchor>
+      </Box>
     </Grommet>
   ))
   .add('Colors', () => (
@@ -29,15 +31,24 @@ storiesOf('Anchor', module)
   ))
   .add('Size', () => (
     <Grommet theme={grommet}>
-      {['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall'].map(size => (
-        <Box key={size} margin="small">
-          <Anchor size={size} label={size} href="#" />
-        </Box>
-      ))}
+      <Box align="center" pad="large">
+        {['xxlarge', 'xlarge', 'large', 'medium', 'small', 'xsmall'].map(
+          size => (
+            <Box key={size} margin="small">
+              <Anchor size={size} label={size} href="#" />
+            </Box>
+          ),
+        )}
+      </Box>
     </Grommet>
   ))
   .add('Inline', () => (
     <Grommet theme={grommet}>
-      This is <Anchor label="an inline link" href="#" /> with surrounding text.
+      <Box align="center" pad="large">
+        <Paragraph>
+          This is <Anchor label="an inline link" href="#" /> with surrounding
+          text.
+        </Paragraph>
+      </Box>
     </Grommet>
   ));

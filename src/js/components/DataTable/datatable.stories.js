@@ -129,27 +129,33 @@ const DATA = [
 
 const SimpleDataTable = () => (
   <Grommet theme={grommet}>
-    <DataTable columns={columns} data={DATA} />
+    <Box align="center" pad="large">
+      <DataTable columns={columns} data={DATA} />
+    </Box>
   </Grommet>
 );
 
 const SizedDataTable = () => (
   <Grommet theme={grommet}>
-    <DataTable columns={columns} data={data} size="medium" />
+    <Box align="center" pad="large">
+      <DataTable columns={columns} data={data} size="medium" />
+    </Box>
   </Grommet>
 );
 
 const TunableDataTable = () => (
   <Grommet theme={grommet}>
-    <DataTable
-      columns={columns.map(c => ({
-        ...c,
-        search: c.property === 'name' || c.property === 'location',
-      }))}
-      data={DATA}
-      sortable
-      resizeable
-    />
+    <Box align="center" pad="large">
+      <DataTable
+        columns={columns.map(c => ({
+          ...c,
+          search: c.property === 'name' || c.property === 'location',
+        }))}
+        data={DATA}
+        sortable
+        resizeable
+      />
+    </Box>
   </Grommet>
 );
 
@@ -189,15 +195,17 @@ class ServedDataTable extends Component {
     const { data: servedData } = this.state;
     return (
       <Grommet theme={grommet}>
-        <DataTable
-          columns={columns.map(column => ({
-            ...column,
-            search:
-              column.property === 'name' || column.property === 'location',
-          }))}
-          data={servedData}
-          onSearch={this.onSearch}
-        />
+        <Box align="center" pad="large">
+          <DataTable
+            columns={columns.map(column => ({
+              ...column,
+              search:
+                column.property === 'name' || column.property === 'location',
+            }))}
+            data={servedData}
+            onSearch={this.onSearch}
+          />
+        </Box>
       </Grommet>
     );
   }

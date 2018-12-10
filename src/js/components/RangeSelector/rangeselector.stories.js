@@ -18,7 +18,7 @@ class SimpleRangeSelector extends Component {
     const { values } = this.state;
     return (
       <Grommet theme={grommet}>
-        <Box align="start">
+        <Box align="center" pad="large">
           <Stack>
             <Box
               direction={direction === 'vertical' ? 'column' : 'row'}

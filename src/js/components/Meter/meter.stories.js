@@ -6,19 +6,23 @@ import { grommet } from 'grommet/themes';
 
 const BarMeter = () => (
   <Grommet theme={grommet}>
-    <Meter type="bar" background="light-2" values={[{ value: 30 }]} />
+    <Box align="center" pad="large">
+      <Meter type="bar" background="light-2" values={[{ value: 30 }]} />
+    </Box>
   </Grommet>
 );
 
 const CircleMeter = () => (
   <Grommet theme={grommet}>
-    <Meter type="circle" background="light-2" values={[{ value: 30 }]} />
+    <Box align="center" pad="large">
+      <Meter type="circle" background="light-2" values={[{ value: 30 }]} />
+    </Box>
   </Grommet>
 );
 
 const LabelledMeter = () => (
   <Grommet theme={grommet}>
-    <Box align="start">
+    <Box align="center" pad="large">
       <Stack anchor="center">
         <Meter
           type="circle"
