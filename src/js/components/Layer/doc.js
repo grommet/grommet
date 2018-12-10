@@ -77,11 +77,15 @@ particular side of the layer`,
       .defaultValue(false),
     position: PropTypes.oneOf([
       'bottom',
+      'bottom-left',
+      'bottom-right',
       'center',
       'hidden',
       'left',
       'right',
       'top',
+      'top-left',
+      'top-right',
     ])
       .description('Position of the layer content.')
       .defaultValue('center'),
