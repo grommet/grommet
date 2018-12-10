@@ -411,6 +411,7 @@ class SelectContainer extends Component {
                       }}
                       disabled={isDisabled || undefined}
                       active={isActive}
+                      selected={isSelected}
                       option={option}
                       onMouseOver={
                         !isDisabled ? this.onActiveOption(index) : undefined

@@ -164,6 +164,7 @@ class ObjectMultiSelect extends Component {
             size="medium"
             placeholder="Select"
             multiple
+            closeOnChange={false}
             disabledKey="dis"
             labelKey="lab"
             valueKey="val"
