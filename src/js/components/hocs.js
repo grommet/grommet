@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import getDisplayName from 'recompose/getDisplayName';
 import hoistNonReactStatics from 'hoist-non-react-statics';
+import { withTheme } from 'styled-components';
 import { AnnounceContext } from '../contexts';
 
 let doc = () => x => x;
@@ -158,3 +159,5 @@ export const withAnnounce = WrappedComponent => {
 
   return ForwardRef;
 };
+
+export { withTheme };
