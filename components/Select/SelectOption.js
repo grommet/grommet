@@ -34,11 +34,13 @@ function (_Component) {
     var _this$props = this.props,
         active = _this$props.active,
         disabled = _this$props.disabled,
-        option = _this$props.option;
+        option = _this$props.option,
+        selected = _this$props.selected;
     var nextActive = nextProps.active,
         nextDisabled = nextProps.disabled,
-        nextOption = nextProps.option;
-    return active !== nextActive || disabled !== nextDisabled || option !== nextOption;
+        nextOption = nextProps.option,
+        nextSelected = nextProps.selected;
+    return active !== nextActive || selected !== nextSelected || disabled !== nextDisabled || option !== nextOption;
   };
 
   _proto.render = function render() {

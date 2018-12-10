@@ -438,6 +438,7 @@ function (_Component) {
         },
         disabled: isDisabled || undefined,
         active: isActive,
+        selected: isSelected,
         option: option,
         onMouseOver: !isDisabled ? _this3.onActiveOption(index) : undefined,
         onClick: !isDisabled ? _this3.selectOption(option, index) : undefined

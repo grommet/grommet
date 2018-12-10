@@ -301,6 +301,7 @@ function (_Component4) {
       size: "medium",
       placeholder: "Select",
       multiple: true,
+      closeOnChange: false,
       disabledKey: "dis",
       labelKey: "lab",
       valueKey: "val",
