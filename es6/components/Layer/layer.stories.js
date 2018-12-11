@@ -146,12 +146,12 @@ function (_Component) {
   return CenterLayer;
 }(Component);
 
-var FormLayer =
+var CornerLayer =
 /*#__PURE__*/
 function (_Component2) {
-  _inheritsLoose(FormLayer, _Component2);
+  _inheritsLoose(CornerLayer, _Component2);
 
-  function FormLayer() {
+  function CornerLayer() {
     var _this2;
 
     for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
@@ -160,10 +160,7 @@ function (_Component2) {
 
     _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "state", {
-      open: false,
-      select: ''
-    });
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "state", {});
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onOpen", function () {
       return _this2.setState({
@@ -172,7 +169,7 @@ function (_Component2) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onClose", function () {
-      _this2.setState({
+      return _this2.setState({
         open: undefined
       });
     });
@@ -180,10 +177,75 @@ function (_Component2) {
     return _this2;
   }
 
-  var _proto2 = FormLayer.prototype;
+  var _proto2 = CornerLayer.prototype;
 
   _proto2.render = function render() {
-    var _this3 = this;
+    var open = this.state.open;
+    return React.createElement(Grommet, {
+      theme: grommet,
+      full: true
+    }, React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "center"
+    }, React.createElement(Button, {
+      icon: React.createElement(Add, {
+        color: "brand"
+      }),
+      label: React.createElement(Text, null, React.createElement("strong", null, "Add Corner Layer")),
+      onClick: this.onOpen,
+      plain: true
+    })), open && React.createElement(Layer, {
+      position: "top-right"
+    }, React.createElement(Box, {
+      height: "small",
+      overflow: "auto"
+    }, React.createElement(Box, {
+      pad: "xlarge"
+    }, "Corner top-right position"))));
+  };
+
+  return CornerLayer;
+}(Component);
+
+var FormLayer =
+/*#__PURE__*/
+function (_Component3) {
+  _inheritsLoose(FormLayer, _Component3);
+
+  function FormLayer() {
+    var _this3;
+
+    for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+      args[_key3] = arguments[_key3];
+    }
+
+    _this3 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "state", {
+      open: false,
+      select: ''
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "onOpen", function () {
+      return _this3.setState({
+        open: true
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "onClose", function () {
+      _this3.setState({
+        open: undefined
+      });
+    });
+
+    return _this3;
+  }
+
+  var _proto3 = FormLayer.prototype;
+
+  _proto3.render = function render() {
+    var _this4 = this;
 
     var _this$state2 = this.state,
         open = _this$state2.open,
@@ -238,7 +300,7 @@ function (_Component2) {
       onSearch: function onSearch() {},
       onChange: function onChange(_ref) {
         var option = _ref.option;
-        return _this3.setState({
+        return _this4.setState({
           select: option
         });
       }
@@ -261,38 +323,38 @@ function (_Component2) {
 
 var NotificationLayer =
 /*#__PURE__*/
-function (_Component3) {
-  _inheritsLoose(NotificationLayer, _Component3);
+function (_Component4) {
+  _inheritsLoose(NotificationLayer, _Component4);
 
   function NotificationLayer() {
-    var _this4;
+    var _this5;
 
-    for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-      args[_key3] = arguments[_key3];
+    for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+      args[_key4] = arguments[_key4];
     }
 
-    _this4 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
+    _this5 = _Component4.call.apply(_Component4, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this4)), "state", {});
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this4)), "onOpen", function () {
-      return _this4.setState({
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "onOpen", function () {
+      return _this5.setState({
         open: true
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this4)), "onClose", function () {
-      return _this4.setState({
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "onClose", function () {
+      return _this5.setState({
         open: undefined
       });
     });
 
-    return _this4;
+    return _this5;
   }
 
-  var _proto3 = NotificationLayer.prototype;
+  var _proto4 = NotificationLayer.prototype;
 
-  _proto3.render = function render() {
+  _proto4.render = function render() {
     var open = this.state.open;
     return React.createElement(Grommet, {
       theme: grommet,
@@ -399,29 +461,29 @@ var PlainLayer = function PlainLayer() {
 
 var FullLayer =
 /*#__PURE__*/
-function (_Component4) {
-  _inheritsLoose(FullLayer, _Component4);
+function (_Component5) {
+  _inheritsLoose(FullLayer, _Component5);
 
   function FullLayer() {
-    var _this5;
+    var _this6;
 
-    for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
-      args[_key4] = arguments[_key4];
+    for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+      args[_key5] = arguments[_key5];
     }
 
-    _this5 = _Component4.call.apply(_Component4, [this].concat(args)) || this;
+    _this6 = _Component5.call.apply(_Component5, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this6)), "state", {
       showLayer: false
     });
 
-    return _this5;
+    return _this6;
   }
 
-  var _proto4 = FullLayer.prototype;
+  var _proto5 = FullLayer.prototype;
 
-  _proto4.render = function render() {
-    var _this6 = this;
+  _proto5.render = function render() {
+    var _this7 = this;
 
     var showLayer = this.state.showLayer;
     return React.createElement(Grommet, {
@@ -438,7 +500,7 @@ function (_Component4) {
       color: "accent-3",
       label: "Show",
       onClick: function onClick() {
-        return _this6.setState({
+        return _this7.setState({
           showLayer: true
         });
       }
@@ -453,7 +515,7 @@ function (_Component4) {
       primary: true,
       label: "Close",
       onClick: function onClick() {
-        return _this6.setState({
+        return _this7.setState({
           showLayer: false
         });
       }
@@ -507,6 +569,8 @@ var ScrollBodyLayer = function ScrollBodyLayer() {
 
 storiesOf('Layer', module).add('Center', function () {
   return React.createElement(CenterLayer, null);
+}).add('CornerLayer', function () {
+  return React.createElement(CornerLayer, null);
 }).add('Form', function () {
   return React.createElement(FormLayer, null);
 }).add('Notification', function () {
