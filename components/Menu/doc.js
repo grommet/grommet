@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.doc = void 0;
+exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -46,3 +46,26 @@ var doc = function doc(Menu) {
 };
 
 exports.doc = doc;
+var themeDoc = {
+  'global.colors.control': {
+    description: 'The color to use for the icon.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined
+  },
+  'menu.background': {
+    description: 'The color for the background of the menu Drop when it is open.',
+    type: 'string',
+    defaultValue: undefined
+  },
+  'menu.extend': {
+    description: 'Any additional style for the Menu.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'menu.icons.down': {
+    description: 'The icon to show to the right of the label.',
+    type: 'React.element',
+    defaultValue: '<FormDown />'
+  }
+};
+exports.themeDoc = themeDoc;
