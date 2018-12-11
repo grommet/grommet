@@ -44,3 +44,12 @@ export const doc = Stack => {
 
   return DocumentedStack;
 };
+
+export const themeDoc = {
+  'stack.extend': {
+    description:
+      'Any additional style for the control of the Stack component.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+};
