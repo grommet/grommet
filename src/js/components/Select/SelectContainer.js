@@ -19,18 +19,7 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
 import { SelectOption } from './SelectOption';
-
-const ContainerBox = styled(Box)`
-  max-height: inherit;
-
-  /* IE11 hack to get drop contents to not overflow */
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    width: 100%;
-  }
-
-  ${props =>
-    props.theme.select.container && props.theme.select.container.extend};
-`;
+import { StyledContainer } from './StyledSelect';
 
 const OptionsBox = styled(Box)`
   scroll-behavior: smooth;
@@ -373,9 +362,10 @@ class SelectContainer extends Component {
         onDown={this.onNextOption}
         onKeyDown={onKeyDown}
       >
-        <ContainerBox
-          height={dropHeight}
+        <StyledContainer
+          as={Box}
           id={id ? `${id}__select-drop` : undefined}
+          dropHeight={dropHeight}
         >
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
@@ -453,7 +443,7 @@ class SelectContainer extends Component {
               </SelectOption>
             )}
           </OptionsBox>
-        </ContainerBox>
+        </StyledContainer>
       </Keyboard>
     );
   }
