@@ -144,3 +144,14 @@ first
 last
 ```
   
+## Theme
+  
+**stack.extend**
+
+Any additional style for the control of the Select component. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
