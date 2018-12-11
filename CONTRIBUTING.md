@@ -1,25 +1,36 @@
-Contribution Guide
+Contributing
 ==================
+
+Thank you for reaching this contribution page and showing the true gremlin in you!
+In Grommet we do believe that the more the merrier, and we are welcoming you for making this step of joining our contribution community and helping us make Grommet the best way to streamline the way you develop apps.
+You came to the right place to start your contribution, follow the guidlines and let us know if we can help with anything else. 
+
+Grommet projects
+----------------
 
 Grommet is divided into a several projects; the following are notable:
 
 -   [grommet](https://github.com/grommet/grommet) - the primary
     Grommet project
--   [grommet-bower](https://github.com/grommet/grommet-bower) -
-    the Bower distribution of Grommet
--   [grommet-toolbox](https://github.com/grommet/grommet-toolbox) -
-    the developer environment for Grommet applications
--   [grommet-index](https://github.com/grommet/grommet-index) -
-    UI and example server for searching, filtering, and displaying mass quantities of items
--   [grommet-templates](https://github.com/grommet/grommet-templates) -
-    Higher order abstraction composite components built from Grommet core components
--   [grommet-docs](https://github.com/grommet/grommet-docs)
-    Website project and documentation for Grommet
--   [grommet-design](https://github.com/grommet/grommet-design)
-    Grommet design resources, including sticker sheets, app templates, and icons
--   [html-jsx-loader](https://github.com/grommet/html-jsx-loader) -
-    a html loader module to convert HTML to JSX for Webpack used as part
-    of the documentation
+-   [grommet-icons](https://github.com/grommet/grommet-icons) -
+    Iconography for Grommet and React.js
+-   [react-desc](https://github.com/grommet/react-desc)
+    Add a schema to your React components based on React PropTypes
+-   [design-kit](https://github.com/grommet/design-kit)
+    The Grommet Design Kit provides a set of sticker sheets and templates to help bootstrap your design process.
+
+YOU can Become a Contributor 
+---------------------------
+
+Quick steps and ideas of how you can become a contributor!
+
+1.  Code Code Code (and file Pull Request)
+2.  Create design assets
+3.  You may submit updates and improvements to the documentation.
+4.  Submit articles and guides which are also part of the documentation.
+5.  Help a Grommet designer or developer by answering questions on
+    StackOverflow, Slack and GitHub.
+6.  File issues of Github or ask in our Slack community
 
 Contributing
 ------------
@@ -38,9 +49,9 @@ and help you find out if someone else is working on the same thing.
 
 -   If you want to contribute design assets or style guide revisions,
     please open a [GitHub pull
-    request](https://github.com/grommet/grommet-design/pulls) or open a
-    [GitHub issue](https://github.com/grommet/grommet-design/issues) against the
-    grommet-design project.
+    request](https://github.com/grommet/design-kit/pulls) or open a
+    [GitHub issue](https://github.com/grommet/design-kit/issues) against the
+    design-kit project.
 -   If you want to raise an issue such as a defect or an enhancement
     request please open a GitHub issue for the appropriate project.  Please
     keep the following in mind:
@@ -118,17 +129,6 @@ project. The Grommet style guide and designer assets are open for
 contributions just as the development platform. You may either submit an
 issue on GitHub with a detailed recommendation, or open a pull request
 with the updated assets.
-
-Other Ways to Contribute
-------------------------
-
-If you don't feel like creating design assets or writing code, you can
-still contribute to the project!
-
-1.  You may submit updates and improvements to the documentation.
-2.  Submit articles and guides which are also part of the documentation.
-3.  Help a Grommet designer or developer by answering questions on
-    StackOverflow, Slack and GitHub.
 
 Submitting Code Pull Requests
 -----------------------------
