@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.doc = void 0;
+exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -20,3 +20,11 @@ var doc = function doc(Stack) {
 };
 
 exports.doc = doc;
+var themeDoc = {
+  'stack.extend': {
+    description: 'Any additional style for the control of the Stack component.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  }
+};
+exports.themeDoc = themeDoc;

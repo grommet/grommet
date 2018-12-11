@@ -11,3 +11,10 @@ export var doc = function doc(Stack) {
   });
   return DocumentedStack;
 };
+export var themeDoc = {
+  'stack.extend': {
+    description: 'Any additional style for the control of the Stack component.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  }
+};
