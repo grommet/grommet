@@ -12,6 +12,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 import React, { Component } from 'react';
 import getDisplayName from 'recompose/getDisplayName';
 import hoistNonReactStatics from 'hoist-non-react-statics';
+import { withTheme } from 'styled-components';
 import { AnnounceContext } from '../contexts';
 
 var doc = function doc() {
@@ -212,3 +213,4 @@ export var withAnnounce = function withAnnounce(WrappedComponent) {
   hoistNonReactStatics(ForwardRef, WrappedComponent);
   return ForwardRef;
 };
+export { withTheme };

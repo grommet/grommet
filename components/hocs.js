@@ -9,6 +9,10 @@ var _getDisplayName = _interopRequireDefault(require("recompose/getDisplayName")
 
 var _hoistNonReactStatics = _interopRequireDefault(require("hoist-non-react-statics"));
 
+var _styledComponents = require("styled-components");
+
+exports.withTheme = _styledComponents.withTheme;
+
 var _contexts = require("../contexts");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
