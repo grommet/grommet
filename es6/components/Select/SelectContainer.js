@@ -14,19 +14,14 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { SelectOption } from './SelectOption';
-var ContainerBox = styled(Box).withConfig({
-  displayName: "SelectContainer__ContainerBox",
-  componentId: "sc-1wi0ul8-0"
-})(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}", ";"], function (props) {
-  return props.theme.select.container && props.theme.select.container.extend;
-});
+import { StyledContainer } from './StyledSelect';
 var OptionsBox = styled(Box).withConfig({
   displayName: "SelectContainer__OptionsBox",
-  componentId: "sc-1wi0ul8-1"
+  componentId: "sc-1wi0ul8-0"
 })(["scroll-behavior:smooth;"]);
 var OptionBox = styled(Box).withConfig({
   displayName: "SelectContainer__OptionBox",
-  componentId: "sc-1wi0ul8-2"
+  componentId: "sc-1wi0ul8-1"
 })(["", ""], function (props) {
   return props.selected && selectedStyle;
 });
@@ -401,9 +396,10 @@ function (_Component) {
       onUp: this.onPreviousOption,
       onDown: this.onNextOption,
       onKeyDown: onKeyDown
-    }, React.createElement(ContainerBox, {
-      height: dropHeight,
-      id: id ? id + "__select-drop" : undefined
+    }, React.createElement(StyledContainer, {
+      as: Box,
+      id: id ? id + "__select-drop" : undefined,
+      dropHeight: dropHeight
     }, onSearch && React.createElement(Box, {
       pad: !customSearchInput ? 'xsmall' : undefined,
       flex: false

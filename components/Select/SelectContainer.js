@@ -23,6 +23,8 @@ var _TextInput = require("../TextInput");
 
 var _SelectOption = require("./SelectOption");
 
+var _StyledSelect = require("./StyledSelect");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
@@ -31,19 +33,13 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var ContainerBox = (0, _styledComponents.default)(_Box.Box).withConfig({
-  displayName: "SelectContainer__ContainerBox",
-  componentId: "sc-1wi0ul8-0"
-})(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}", ";"], function (props) {
-  return props.theme.select.container && props.theme.select.container.extend;
-});
 var OptionsBox = (0, _styledComponents.default)(_Box.Box).withConfig({
   displayName: "SelectContainer__OptionsBox",
-  componentId: "sc-1wi0ul8-1"
+  componentId: "sc-1wi0ul8-0"
 })(["scroll-behavior:smooth;"]);
 var OptionBox = (0, _styledComponents.default)(_Box.Box).withConfig({
   displayName: "SelectContainer__OptionBox",
-  componentId: "sc-1wi0ul8-2"
+  componentId: "sc-1wi0ul8-1"
 })(["", ""], function (props) {
   return props.selected && _utils.selectedStyle;
 });
@@ -418,9 +414,10 @@ function (_Component) {
       onUp: this.onPreviousOption,
       onDown: this.onNextOption,
       onKeyDown: onKeyDown
-    }, _react.default.createElement(ContainerBox, {
-      height: dropHeight,
-      id: id ? id + "__select-drop" : undefined
+    }, _react.default.createElement(_StyledSelect.StyledContainer, {
+      as: _Box.Box,
+      id: id ? id + "__select-drop" : undefined,
+      dropHeight: dropHeight
     }, onSearch && _react.default.createElement(_Box.Box, {
       pad: !customSearchInput ? 'xsmall' : undefined,
       flex: false
