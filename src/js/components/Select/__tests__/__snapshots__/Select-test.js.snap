@@ -1025,7 +1025,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kZuSOe {
+  .hLCmqq {
     width: 100%;
   }
 }"
@@ -1994,6 +1994,23 @@ exports[`Select large drop container height 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2077,24 +2094,6 @@ exports[`Select large drop container height 1`] = `
   padding: 0px;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  height: 768px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
 .c7 {
   display: inline-block;
   box-sizing: border-box;
@@ -2149,7 +2148,7 @@ exports[`Select large drop container height 1`] = `
 }
 
 .c2 {
-  max-height: inherit;
+  max-height: 768px;
 }
 
 .c4 {
@@ -2167,6 +2166,18 @@ exports[`Select large drop container height 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
     padding: 0px;
   }
 }
@@ -2215,18 +2226,6 @@ exports[`Select large drop container height 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
     padding: 0px;
   }
 }
@@ -2332,6 +2331,23 @@ exports[`Select medium drop container height 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2415,24 +2431,6 @@ exports[`Select medium drop container height 1`] = `
   padding: 0px;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  height: 384px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
 .c7 {
   display: inline-block;
   box-sizing: border-box;
@@ -2487,7 +2485,7 @@ exports[`Select medium drop container height 1`] = `
 }
 
 .c2 {
-  max-height: inherit;
+  max-height: 384px;
 }
 
 .c4 {
@@ -2505,6 +2503,18 @@ exports[`Select medium drop container height 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
     padding: 0px;
   }
 }
@@ -2553,18 +2563,6 @@ exports[`Select medium drop container height 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
     padding: 0px;
   }
 }
@@ -3753,7 +3751,7 @@ exports[`Select multiple values 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kZuSOe {
+  .hLCmqq {
     width: 100%;
   }
 }"
@@ -4570,7 +4568,7 @@ exports[`Select opens 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kZuSOe {
+  .hLCmqq {
     width: 100%;
   }
 }"
@@ -4578,7 +4576,7 @@ exports[`Select opens 4`] = `
 
 exports[`Select opens 5`] = `
 <div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-1 jZWhdj StyledBox-sc-13pk1d4-0 iZGdeq"
+  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 hdgcff StyledBox-sc-13pk1d4-0 iZGdeq"
   role="menubar"
   tabindex="-1"
 >
@@ -4592,7 +4590,7 @@ exports[`Select opens 5`] = `
       type="button"
     >
       <div
-        class="SelectContainer__OptionBox-sc-1wi0ul8-2 dvNFzh StyledBox-sc-13pk1d4-0 eEPVhE"
+        class="SelectContainer__OptionBox-sc-1wi0ul8-1 ixLLDr StyledBox-sc-13pk1d4-0 eEPVhE"
       >
         <span
           class="StyledText-sc-1sadyjn-0 fLjoaM"
@@ -4612,7 +4610,7 @@ exports[`Select opens 5`] = `
       type="button"
     >
       <div
-        class="SelectContainer__OptionBox-sc-1wi0ul8-2 dvNFzh StyledBox-sc-13pk1d4-0 eEPVhE"
+        class="SelectContainer__OptionBox-sc-1wi0ul8-1 ixLLDr StyledBox-sc-13pk1d4-0 eEPVhE"
       >
         <span
           class="StyledText-sc-1sadyjn-0 fLjoaM"
@@ -5492,7 +5490,7 @@ exports[`Select search 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .kZuSOe {
+  .hLCmqq {
     width: 100%;
   }
 }"
@@ -6760,6 +6758,23 @@ exports[`Select small drop container height 1`] = `
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
 .c5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6843,24 +6858,6 @@ exports[`Select small drop container height 1`] = `
   padding: 0px;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  height: 192px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
 .c7 {
   display: inline-block;
   box-sizing: border-box;
@@ -6915,7 +6912,7 @@ exports[`Select small drop container height 1`] = `
 }
 
 .c2 {
-  max-height: inherit;
+  max-height: 192px;
 }
 
 .c4 {
@@ -6933,6 +6930,18 @@ exports[`Select small drop container height 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
     padding: 0px;
   }
 }
@@ -6981,18 +6990,6 @@ exports[`Select small drop container height 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
     padding: 0px;
   }
 }

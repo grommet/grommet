@@ -6,14 +6,16 @@ import { withForwardRef } from '../hocs';
 
 class SelectOption extends Component {
   shouldComponentUpdate(nextProps) {
-    const { active, disabled, option } = this.props;
+    const { active, disabled, option, selected } = this.props;
     const {
       active: nextActive,
       disabled: nextDisabled,
       option: nextOption,
+      selected: nextSelected,
     } = nextProps;
     return (
       active !== nextActive ||
+      selected !== nextSelected ||
       disabled !== nextDisabled ||
       option !== nextOption
     );

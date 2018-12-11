@@ -4621,11 +4621,15 @@ Position of the layer content. Defaults to \`center\`.
 
 \`\`\`
 bottom
+bottom-left
+bottom-right
 center
 hidden
 left
 right
 top
+top-left
+top-right
 \`\`\`
 
 **responsive**
