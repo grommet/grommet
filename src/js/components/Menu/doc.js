@@ -80,12 +80,13 @@ The object values can be any Button prop, for example: label and onClick.`,
 
 export const themeDoc = {
   'global.colors.control': {
-    description: 'The icon control color used for Menu icon.',
+    description: 'The color to use for the icon.',
     type: 'string | { dark: string, light: string }',
     defaultValue: undefined,
   },
   'menu.background': {
-    description: 'The background color used for Menu.',
+    description:
+      'The color for the background of the menu Drop when it is open.',
     type: 'string',
     defaultValue: undefined,
   },
@@ -95,7 +96,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'menu.icons.down': {
-    description: 'The down icon to use for opening the Menu.',
+    description: 'The icon to show to the right of the label.',
     type: 'React.element',
     defaultValue: '<FormDown />',
   },

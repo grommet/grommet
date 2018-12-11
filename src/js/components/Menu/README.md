@@ -227,7 +227,7 @@ string
   
 **global.colors.control**
 
-The icon control color used for Menu icon. Expects `string | { dark: string, light: string }`.
+The color to use for the icon. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -237,7 +237,7 @@ undefined
 
 **menu.background**
 
-The background color used for Menu. Expects `string`.
+The color for the background of the menu Drop when it is open. Expects `string`.
 
 Defaults to
 
@@ -257,7 +257,7 @@ undefined
 
 **menu.icons.down**
 
-The down icon to use for opening the Menu. Expects `React.element`.
+The icon to show to the right of the label. Expects `React.element`.
 
 Defaults to
 
