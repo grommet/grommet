@@ -48,7 +48,7 @@ export const doc = Stack => {
 export const themeDoc = {
   'stack.extend': {
     description:
-      'Any additional style for the control of the Select component.',
+      'Any additional style for the control of the Stack component.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },

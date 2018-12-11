@@ -148,7 +148,7 @@ last
   
 **stack.extend**
 
-Any additional style for the control of the Select component. Expects `string | (props) => {}`.
+Any additional style for the control of the Stack component. Expects `string | (props) => {}`.
 
 Defaults to
 
