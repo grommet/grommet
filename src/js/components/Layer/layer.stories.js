@@ -109,6 +109,41 @@ class CenterLayer extends Component {
   }
 }
 
+class CornerLayer extends Component {
+  state = {};
+
+  onOpen = () => this.setState({ open: true });
+
+  onClose = () => this.setState({ open: undefined });
+
+  render() {
+    const { open } = this.state;
+    return (
+      <Grommet theme={grommet} full>
+        <Box fill align="center" justify="center">
+          <Button
+            icon={<Add color="brand" />}
+            label={
+              <Text>
+                <strong>Add Corner Layer</strong>
+              </Text>
+            }
+            onClick={this.onOpen}
+            plain
+          />
+        </Box>
+        {open && (
+          <Layer position="top-right">
+            <Box height="small" overflow="auto">
+              <Box pad="xlarge">Corner top-right position</Box>
+            </Box>
+          </Layer>
+        )}
+      </Grommet>
+    );
+  }
+}
+
 class FormLayer extends Component {
   state = { open: false, select: '' };
 
@@ -415,6 +450,7 @@ const ScrollBodyLayer = () => (
 
 storiesOf('Layer', module)
   .add('Center', () => <CenterLayer />)
+  .add('CornerLayer', () => <CornerLayer />)
   .add('Form', () => <FormLayer />)
   .add('Notification', () => <NotificationLayer />)
   .add('Margin', () => <MarginLayer full />)

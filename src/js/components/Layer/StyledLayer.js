@@ -76,7 +76,9 @@ const StyledOverlay = styled.div`
 
 const getMargin = (margin, theme, position) => {
   const axis =
-    position === 'top' || position === 'bottom' ? 'vertical' : 'horizontal';
+    position.includes('top') || position.includes('bottom')
+      ? 'vertical'
+      : 'horizontal';
   const marginValue = margin[position] || margin[axis] || margin;
   const marginApplied = theme.global.edgeSize[marginValue] || marginValue;
   const marginInTheme = !!theme.global.edgeSize[marginValue];
@@ -91,10 +93,14 @@ const MARGINS = (margin, theme, position = undefined) => {
     return getMargin(margin, theme, position);
   }
   return {
-    top: getMargin(margin, theme, 'top'),
     bottom: getMargin(margin, theme, 'bottom'),
+    'bottom-left': getMargin(margin, theme, 'bottom-left'),
+    'bottom-right': getMargin(margin, theme, 'bottom-right'),
     left: getMargin(margin, theme, 'left'),
     right: getMargin(margin, theme, 'right'),
+    top: getMargin(margin, theme, 'top'),
+    'top-right': getMargin(margin, theme, 'top-right'),
+    'top-left': getMargin(margin, theme, 'top-left'),
   };
 };
 
@@ -349,6 +355,130 @@ const POSITIONS = {
       top: 50%;
       transform: translate(0, -50%);
       animation: ${KEYFRAMES.right.false} 0.2s ease-in-out forwards;
+    `,
+  },
+
+  'top-right': {
+    vertical: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      right: ${margin.right};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+    horizontal: margin => css`
+      left: ${margin.left};
+      right: ${margin.right};
+      top: 0;
+      transform: translateX(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      right: ${margin.right};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+    false: margin => css`
+      top: ${margin.top};
+      right: ${margin.right};
+      transform: translateY(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+  },
+
+  'top-left': {
+    vertical: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+    horizontal: margin => css`
+      left: ${margin.left};
+      right: ${margin.right};
+      top: 0;
+      transform: translateX(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      right: ${margin.right};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+    false: margin => css`
+      top: ${margin.top};
+      left: ${margin.left};
+      transform: translateY(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+  },
+
+  'bottom-right': {
+    vertical: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      right: ${margin.right};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+    `,
+    horizontal: margin => css`
+      left: ${margin.left};
+      right: ${margin.right};
+      bottom: ${margin.bottom};
+      transform: translateY(0);
+      animation: ${KEYFRAMES.bottom.horizontal} 0.2s ease-in-out forwards;
+    `,
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      right: ${margin.right};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+    `,
+    false: margin => css`
+      bottom: ${margin.bottom};
+      right: ${margin.right};
+      transform: translateY(0);
+      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+    `,
+  },
+
+  'bottom-left': {
+    vertical: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+    `,
+    horizontal: margin => css`
+      left: ${margin.left};
+      right: ${margin.right};
+      bottom: ${margin.bottom};
+      transform: translateY(0);
+      animation: ${KEYFRAMES.bottom.horizontal} 0.2s ease-in-out forwards;
+    `,
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      right: ${margin.right};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+    `,
+    false: margin => css`
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      transform: translateY(0);
+      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
     `,
   },
 };
