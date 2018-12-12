@@ -187,7 +187,7 @@ Defaults to
 
 **global.size.xxsmall**
 
-The possible sizes for the Layer minimal height. Expects `string`.
+The minimal height of the Layer. Expects `string`.
 
 Defaults to
 

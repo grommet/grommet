@@ -141,7 +141,7 @@ export const themeDoc = {
       }`,
   },
   'global.size.xxsmall': {
-    description: 'The possible sizes for the Layer minimal height.',
+    description: 'The minimal height of the Layer.',
     type: 'string',
     defaultValue: '48px',
   },
