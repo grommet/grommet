@@ -139,3 +139,108 @@ Whether the layer should take full width and height on mobile Defaults to `true`
 boolean
 ```
   
+## Theme
+  
+**global.breakpoints**
+
+The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects `object`.
+
+Defaults to
+
+```
+{
+      small: {
+        value: '768px',
+        borderSize: {
+          xsmall: '1px',
+          small: '2px',
+          medium: '4px',
+          large: '6px',
+          xlarge: '12px',
+        },
+        edgeSize: {
+          none: '0px',
+          hair: '1px',
+          xxsmall: '2px',
+          xsmall: '3px',
+          small: '6px',
+          medium: '12px',
+          large: '24px',
+          xlarge: '48px',
+        },
+        size: {
+          xxsmall: '24px',
+          xsmall: '48px',
+          small: '96px',
+          medium: '192px',
+          large: '384px',
+          xlarge: '768px',
+          full: '100%',
+        },
+      },
+      medium: {
+        value: '1536px',
+      },
+      large: {},
+      }
+```
+
+**global.size.xxsmall**
+
+The possible sizes for the Layer minimal height. Expects `string`.
+
+Defaults to
+
+```
+48px
+```
+
+**layer.container.zIndex**
+
+The stack order of Layer Container Expects `number`.
+
+Defaults to
+
+```
+15
+```
+
+**layer.extend**
+
+Any additional style for Layer. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**layer.overlay.background**
+
+The background of the Layer overlay Expects `string`.
+
+Defaults to
+
+```
+rgba(0, 0, 0, 0.5)
+```
+
+**layer.responsiveBreakpoint**
+
+The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round. Expects `string`.
+
+Defaults to
+
+```
+small
+```
+
+**layer.zIndex**
+
+The stack order of Layer Expects `number`.
+
+Defaults to
+
+```
+10
+```

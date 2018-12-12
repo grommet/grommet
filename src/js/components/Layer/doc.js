@@ -98,3 +98,77 @@ particular side of the layer`,
 
   return DocumentedLayer;
 };
+
+export const themeDoc = {
+  'global.breakpoints': {
+    description:
+      'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
+    type: 'object',
+    defaultValue: `{
+      small: {
+        value: '768px',
+        borderSize: {
+          xsmall: '1px',
+          small: '2px',
+          medium: '4px',
+          large: '6px',
+          xlarge: '12px',
+        },
+        edgeSize: {
+          none: '0px',
+          hair: '1px',
+          xxsmall: '2px',
+          xsmall: '3px',
+          small: '6px',
+          medium: '12px',
+          large: '24px',
+          xlarge: '48px',
+        },
+        size: {
+          xxsmall: '24px',
+          xsmall: '48px',
+          small: '96px',
+          medium: '192px',
+          large: '384px',
+          xlarge: '768px',
+          full: '100%',
+        },
+      },
+      medium: {
+        value: '1536px',
+      },
+      large: {},
+      }`,
+  },
+  'global.size.xxsmall': {
+    description: 'The possible sizes for the Layer minimal height.',
+    type: 'string',
+    defaultValue: '48px',
+  },
+  'layer.container.zIndex': {
+    description: 'The stack order of Layer Container',
+    type: 'number',
+    defaultValue: '15',
+  },
+  'layer.extend': {
+    description: 'Any additional style for Layer.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'layer.overlay.background': {
+    description: 'The background of the Layer overlay',
+    type: 'string',
+    defaultValue: 'rgba(0, 0, 0, 0.5)',
+  },
+  'layer.responsiveBreakpoint': {
+    description:
+      'The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round.',
+    type: 'string',
+    defaultValue: 'small',
+  },
+  'layer.zIndex': {
+    description: 'The stack order of Layer',
+    type: 'number',
+    defaultValue: '10',
+  },
+};
