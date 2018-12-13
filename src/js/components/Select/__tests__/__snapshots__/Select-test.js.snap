@@ -722,6 +722,7 @@ exports[`Select complex options and children 3`] = `
 }
 
 .c4 {
+  position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
@@ -1823,6 +1824,7 @@ exports[`Select empty results search 1`] = `
 }
 
 .c7 {
+  position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
@@ -2152,6 +2154,7 @@ exports[`Select large drop container height 1`] = `
 }
 
 .c4 {
+  position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
@@ -2489,6 +2492,7 @@ exports[`Select medium drop container height 1`] = `
 }
 
 .c4 {
+  position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
@@ -3406,6 +3410,7 @@ exports[`Select multiple values 3`] = `
 }
 
 .c4 {
+  position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
@@ -4241,6 +4246,7 @@ exports[`Select opens 3`] = `
 }
 
 .c4 {
+  position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
@@ -4576,7 +4582,7 @@ exports[`Select opens 4`] = `
 
 exports[`Select opens 5`] = `
 <div
-  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 hdgcff StyledBox-sc-13pk1d4-0 iZGdeq"
+  class="SelectContainer__OptionsBox-sc-1wi0ul8-0 eBHXEP StyledBox-sc-13pk1d4-0 iZGdeq"
   role="menubar"
   tabindex="-1"
 >
@@ -5125,6 +5131,7 @@ exports[`Select search 2`] = `
 }
 
 .c7 {
+  position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
@@ -6916,6 +6923,7 @@ exports[`Select small drop container height 1`] = `
 }
 
 .c4 {
+  position: relative;
   -webkit-scroll-behavior: smooth;
   -moz-scroll-behavior: smooth;
   -ms-scroll-behavior: smooth;
