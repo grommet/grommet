@@ -146,7 +146,7 @@ export const themeDoc = {
     defaultValue: '48px',
   },
   'layer.container.zIndex': {
-    description: 'The stack order of Layer Container',
+    description: 'The stack order of Layer Container.',
     type: 'number',
     defaultValue: '15',
   },
@@ -156,7 +156,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'layer.overlay.background': {
-    description: 'The background of the Layer overlay',
+    description: 'The background of the Layer overlay.',
     type: 'string',
     defaultValue: 'rgba(0, 0, 0, 0.5)',
   },
@@ -167,7 +167,7 @@ export const themeDoc = {
     defaultValue: 'small',
   },
   'layer.zIndex': {
-    description: 'The stack order of Layer',
+    description: 'The stack order of Layer.',
     type: 'number',
     defaultValue: '10',
   },

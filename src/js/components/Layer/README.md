@@ -197,7 +197,7 @@ Defaults to
 
 **layer.container.zIndex**
 
-The stack order of Layer Container Expects `number`.
+The stack order of Layer Container. Expects `number`.
 
 Defaults to
 
@@ -217,7 +217,7 @@ undefined
 
 **layer.overlay.background**
 
-The background of the Layer overlay Expects `string`.
+The background of the Layer overlay. Expects `string`.
 
 Defaults to
 
@@ -237,7 +237,7 @@ small
 
 **layer.zIndex**
 
-The stack order of Layer Expects `number`.
+The stack order of Layer. Expects `number`.
 
 Defaults to
 
