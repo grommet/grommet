@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { createGlobalStyle } from 'styled-components';
 import MobileDetect from 'mobile-detect';
 
 import { colorIsDark } from 'grommet-styles';
@@ -12,6 +13,10 @@ import { withDocs } from '../hocs';
 import { StyledGrommet } from './StyledGrommet';
 
 const wrapWithHocs = withDocs('Grommet');
+
+const FullGlobalStyle = createGlobalStyle`
+  body { margin: 0; }
+`;
 
 class GrommetImpl extends Component {
   static displayName = 'Grommet';
@@ -77,7 +82,7 @@ class GrommetImpl extends Component {
   }
 
   render() {
-    const { children, ...rest } = this.props;
+    const { children, full, ...rest } = this.props;
     delete rest.theme;
     const { theme, responsive: stateResponsive } = this.state;
 
@@ -91,7 +96,10 @@ class GrommetImpl extends Component {
     return (
       <ThemeContext.Provider value={theme}>
         <ResponsiveContext.Provider value={responsive}>
-          <StyledGrommet {...rest}>{children}</StyledGrommet>
+          <StyledGrommet full={full} {...rest}>
+            {children}
+          </StyledGrommet>
+          {full && <FullGlobalStyle />}
         </ResponsiveContext.Provider>
       </ThemeContext.Provider>
     );
