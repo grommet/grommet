@@ -47,6 +47,7 @@ class SuggestionsTextInput extends Component {
           <Box width="medium">
             <TextInput
               value={value}
+              dropHeight="small"
               onChange={this.onChange}
               onSelect={this.onSelect}
               suggestions={suggestions}
