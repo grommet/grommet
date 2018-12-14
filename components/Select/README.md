@@ -182,6 +182,19 @@ How to align the drop. Defaults to `{
 }
 ```
 
+**dropHeight**
+
+The height of the drop container.
+
+```
+xsmall
+small
+medium
+large
+xlarge
+string
+```
+
 **dropTarget**
 
 Target where the options drop will be aligned to. This should be
@@ -320,19 +333,6 @@ number
 The size of the select.
 
 ```
-small
-medium
-large
-xlarge
-string
-```
-
-**dropHeight**
-
-The height of the drop container.
-
-```
-xsmall
 small
 medium
 large

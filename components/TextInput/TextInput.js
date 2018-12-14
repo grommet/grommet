@@ -9,6 +9,8 @@ var _recompose = require("recompose");
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
+var _grommetStyles = require("grommet-styles");
+
 var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
@@ -60,7 +62,9 @@ function stringLabel(suggestion) {
 var ContainerBox = (0, _styledComponents.default)(_Box.Box).withConfig({
   displayName: "TextInput__ContainerBox",
   componentId: "sc-1ai0c08-0"
-})(["max-height:inherit;@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}"]);
+})(["", ";@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}"], function (props) {
+  return props.dropHeight ? (0, _grommetStyles.sizeStyle)('max-height', props.dropHeight, props.theme) : 'max-height: inherit;';
+});
 
 var TextInput =
 /*#__PURE__*/
@@ -379,6 +383,7 @@ function (_Component) {
     var _this$props10 = this.props,
         defaultValue = _this$props10.defaultValue,
         dropAlign = _this$props10.dropAlign,
+        dropHeight = _this$props10.dropHeight,
         dropTarget = _this$props10.dropTarget,
         forwardRef = _this$props10.forwardRef,
         id = _this$props10.id,
@@ -387,7 +392,7 @@ function (_Component) {
         theme = _this$props10.theme,
         value = _this$props10.value,
         onKeyDown = _this$props10.onKeyDown,
-        rest = _objectWithoutPropertiesLoose(_this$props10, ["defaultValue", "dropAlign", "dropTarget", "forwardRef", "id", "placeholder", "plain", "theme", "value", "onKeyDown"]);
+        rest = _objectWithoutPropertiesLoose(_this$props10, ["defaultValue", "dropAlign", "dropHeight", "dropTarget", "forwardRef", "id", "placeholder", "plain", "theme", "value", "onKeyDown"]);
 
     delete rest.onChange; // se we can manage in this.onChange()
 
@@ -416,7 +421,8 @@ function (_Component) {
           });
         }
       }, _react.default.createElement(ContainerBox, {
-        overflow: "auto"
+        overflow: "auto",
+        dropHeight: dropHeight
       }, this.renderSuggestions()));
     }
 

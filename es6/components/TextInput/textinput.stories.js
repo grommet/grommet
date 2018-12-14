@@ -117,6 +117,7 @@ function (_Component2) {
       width: "medium"
     }, React.createElement(TextInput, {
       value: value,
+      dropHeight: "small",
       onChange: this.onChange,
       onSelect: this.onSelect,
       suggestions: suggestions

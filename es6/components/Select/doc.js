@@ -18,6 +18,7 @@ export var doc = function doc(Select) {
       top: 'bottom',
       left: 'left'
     }),
+    dropHeight: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The height of the drop container.'),
     dropTarget: PropTypes.object.description("Target where the options drop will be aligned to. This should be\n      a React reference. Typically, this is not required as the drop will be\n      aligned to the Select itself by default."),
     focusIndicator: PropTypes.bool.description("Whether when 'plain' it should receive a focus outline."),
     labelKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description("When the options array contains objects, this property indicates how\n      to determine the label of each option. If a string is\n      provided, it is used as the key to retrieve each option's label.\n      If a function is provided, it is called with the option and the\n      return value indicates the label."),
@@ -35,7 +36,6 @@ export var doc = function doc(Select) {
     searchPlaceholder: PropTypes.string.description('Placeholder text to use in the search box when the search input is empty.'),
     selected: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]).description("Index of the currently selected option. When multiple, the set of\n      options selected. NOTE: This is deprecated in favor of indicating\n      the selected values via the 'value' property."),
     size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The size of the select.'),
-    dropHeight: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The height of the drop container.'),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.element, // deprecated, use valueLabel
     PropTypes.object, PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object]))]).description("Currently selected value. This can be an array\n      when multiple. Passing an element allows the caller to control how\n      the value is rendered. Passing an element is deprecated. Instead,\n      use the 'valueLabel' property."),
     valueLabel: PropTypes.node.description("Provides custom rendering of the value. If not provided, Select\n      will render the value automatically."),

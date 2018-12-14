@@ -249,4 +249,23 @@ describe('TextInput', function () {
     expect(onSelect).not.toBeCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
+  ['small', 'medium', 'large'].forEach(function (dropHeight) {
+    test(dropHeight + " drop height", function (done) {
+      var _render8 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.TextInput, {
+        "data-testid": "test-input",
+        id: "item",
+        name: "item",
+        suggestions: ['test', 'test1'],
+        dropHeight: dropHeight
+      })),
+          getByTestId = _render8.getByTestId;
+
+      _reactTestingLibrary.fireEvent.focus(getByTestId('test-input'));
+
+      setTimeout(function () {
+        (0, _portal.expectPortal)('text-input-drop__item').toMatchSnapshot();
+        done();
+      }, 50);
+    });
+  });
 });

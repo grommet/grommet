@@ -126,6 +126,7 @@ function (_Component2) {
       width: "medium"
     }, _react.default.createElement(_grommet.TextInput, {
       value: value,
+      dropHeight: "small",
       onChange: this.onChange,
       onSelect: this.onSelect,
       suggestions: suggestions

@@ -39,8 +39,9 @@ function (_Component) {
   _proto.render = function render() {
     var _this$props = this.props,
         components = _this$props.components,
+        options = _this$props.options,
         theme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["components", "theme"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["components", "options", "theme"]);
 
     var heading = [1, 2, 3, 4].reduce(function (obj, level) {
       var result = _extends({}, obj);
@@ -60,7 +61,7 @@ function (_Component) {
       a: {
         component: _Anchor.Anchor
       }
-    }, heading, components);
+    }, heading, components, options && options.overrides);
     return _react.default.createElement(_markdownToJsx.default, _extends({
       options: {
         overrides: overrides

@@ -9,7 +9,7 @@ export interface AnchorProps {
   href?: string;
   icon?: JSX.Element;
   label?: React.ReactNode;
-  onClick?: (...args: any[]) => any;
+  onClick?: ((...args: any[]) => any);
   reverse?: boolean;
   size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
   as?: string;

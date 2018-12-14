@@ -10,7 +10,7 @@ export interface TabsProps {
   flex?: "grow" | "shrink" | boolean;
   justify?: "start" | "center" | "end";
   messages?: {tabContents?: string};
-  onActive?: (...args: any[]) => any;
+  onActive?: ((...args: any[]) => any);
 }
 
 declare const Tabs: React.ComponentType<TabsProps>;

@@ -33,10 +33,11 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+// position relative is so scroll can be managed correctly
 var OptionsBox = (0, _styledComponents.default)(_Box.Box).withConfig({
   displayName: "SelectContainer__OptionsBox",
   componentId: "sc-1wi0ul8-0"
-})(["scroll-behavior:smooth;"]);
+})(["position:relative;scroll-behavior:smooth;"]);
 var OptionBox = (0, _styledComponents.default)(_Box.Box).withConfig({
   displayName: "SelectContainer__OptionBox",
   componentId: "sc-1wi0ul8-1"
@@ -58,11 +59,11 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "optionsRef", {});
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "optionRefs", {});
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "searchRef", (0, _react.createRef)());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "selectRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "optionsRef", (0, _react.createRef)());
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       search: '',
@@ -160,11 +161,11 @@ function (_Component) {
           activeIndex: nextActiveIndex,
           keyboardNavigating: true
         }, function () {
-          var buttonNode = _this.optionsRef[nextActiveIndex];
-          var selectNode = _this.selectRef.current;
+          var buttonNode = _this.optionRefs[nextActiveIndex];
+          var optionsNode = _this.optionsRef.current;
 
-          if (buttonNode && (0, _utils.isNodeAfterScroll)(buttonNode, selectNode) && selectNode.scrollBy) {
-            selectNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
+          if (buttonNode && (0, _utils.isNodeAfterScroll)(buttonNode, optionsNode) && optionsNode.scrollTo) {
+            optionsNode.scrollTo(0, buttonNode.offsetTop - (optionsNode.getBoundingClientRect().height - buttonNode.getBoundingClientRect().height));
           }
 
           _this.clearKeyboardNavigation();
@@ -186,11 +187,11 @@ function (_Component) {
           activeIndex: nextActiveIndex,
           keyboardNavigating: true
         }, function () {
-          var buttonNode = _this.optionsRef[nextActiveIndex];
-          var selectNode = _this.selectRef.current;
+          var buttonNode = _this.optionRefs[nextActiveIndex];
+          var optionsNode = _this.optionsRef.current;
 
-          if (buttonNode && (0, _utils.isNodeBeforeScroll)(buttonNode, selectNode) && selectNode.scrollBy) {
-            selectNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
+          if (buttonNode && (0, _utils.isNodeBeforeScroll)(buttonNode, optionsNode) && optionsNode.scrollTo) {
+            optionsNode.scrollTo(0, buttonNode.offsetTop);
           }
 
           _this.clearKeyboardNavigation();
@@ -360,7 +361,7 @@ function (_Component) {
     // to be available
 
     setTimeout(function () {
-      var selectNode = _this2.selectRef.current;
+      var optionsNode = _this2.optionsRef.current;
 
       if (onSearch) {
         var input = _this2.searchRef.current;
@@ -368,16 +369,16 @@ function (_Component) {
         if (input && input.focus) {
           (0, _utils.setFocusWithoutScroll)(input);
         }
-      } else if (selectNode) {
-        (0, _utils.setFocusWithoutScroll)(selectNode);
+      } else if (optionsNode) {
+        (0, _utils.setFocusWithoutScroll)(optionsNode);
       } // scroll to active option if it is below the fold
 
 
-      if (activeIndex >= 0 && selectNode) {
-        var optionNode = _this2.optionsRef[activeIndex];
+      if (activeIndex >= 0 && optionsNode) {
+        var optionNode = _this2.optionRefs[activeIndex];
 
-        var _selectNode$getBoundi = selectNode.getBoundingClientRect(),
-            containerBottom = _selectNode$getBoundi.bottom;
+        var _optionsNode$getBound = optionsNode.getBoundingClientRect(),
+            containerBottom = _optionsNode$getBound.bottom;
 
         if (optionNode) {
           var _optionNode$getBoundi = optionNode.getBoundingClientRect(),
@@ -433,7 +434,7 @@ function (_Component) {
       flex: "shrink",
       role: "menubar",
       tabIndex: "-1",
-      ref: this.selectRef,
+      ref: this.optionsRef,
       overflow: "auto"
     }, options.length > 0 ? _react.default.createElement(_InfiniteScroll.InfiniteScroll, {
       items: options,
@@ -448,7 +449,7 @@ function (_Component) {
       return _react.default.createElement(_SelectOption.SelectOption, {
         key: "option_" + index,
         ref: function ref(_ref) {
-          _this3.optionsRef[index] = _ref;
+          _this3.optionRefs[index] = _ref;
         },
         disabled: isDisabled || undefined,
         active: isActive,

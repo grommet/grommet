@@ -22,3 +22,40 @@ export var doc = function doc(Layer) {
   };
   return DocumentedLayer;
 };
+export var themeDoc = {
+  'global.breakpoints': {
+    description: 'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
+    type: 'object',
+    defaultValue: "{\n      small: {\n        value: '768px',\n        borderSize: {\n          xsmall: '1px',\n          small: '2px',\n          medium: '4px',\n          large: '6px',\n          xlarge: '12px',\n        },\n        edgeSize: {\n          none: '0px',\n          hair: '1px',\n          xxsmall: '2px',\n          xsmall: '3px',\n          small: '6px',\n          medium: '12px',\n          large: '24px',\n          xlarge: '48px',\n        },\n        size: {\n          xxsmall: '24px',\n          xsmall: '48px',\n          small: '96px',\n          medium: '192px',\n          large: '384px',\n          xlarge: '768px',\n          full: '100%',\n        },\n      },\n      medium: {\n        value: '1536px',\n      },\n      large: {},\n      }"
+  },
+  'global.size.xxsmall': {
+    description: 'The minimal height of the Layer.',
+    type: 'string',
+    defaultValue: '48px'
+  },
+  'layer.container.zIndex': {
+    description: 'The stack order of Layer Container.',
+    type: 'number',
+    defaultValue: '15'
+  },
+  'layer.extend': {
+    description: 'Any additional style for Layer.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'layer.overlay.background': {
+    description: 'The background of the Layer overlay.',
+    type: 'string',
+    defaultValue: 'rgba(0, 0, 0, 0.5)'
+  },
+  'layer.responsiveBreakpoint': {
+    description: 'The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round.',
+    type: 'string',
+    defaultValue: 'small'
+  },
+  'layer.zIndex': {
+    description: 'The stack order of Layer.',
+    type: 'number',
+    defaultValue: '10'
+  }
+};

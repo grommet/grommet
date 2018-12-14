@@ -11,10 +11,10 @@ export interface CalendarProps {
   dates?: string | string[][];
   disabled?: string | string[][];
   firstDayOfWeek?: "0" | "1";
-  header?: (...args: any[]) => any;
+  header?: ((...args: any[]) => any);
   locale?: string;
-  onReference?: (...args: any[]) => any;
-  onSelect?: (...args: any[]) => any;
+  onReference?: ((...args: any[]) => any);
+  onSelect?: ((...args: any[]) => any);
   range?: boolean;
   reference?: string;
   showAdjacentDays?: boolean;
