@@ -17,6 +17,12 @@ export const doc = Layer => {
     );
 
   DocumentedLayer.propTypes = {
+    animate: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.string,
+    ])
+      .description('Transition content in & out with a slide down animation.')
+      .defaultValue(true),
     full: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['vertical', 'horizontal']),

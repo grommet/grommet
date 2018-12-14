@@ -4513,6 +4513,15 @@ import { Layer } from 'grommet';
 
 ## Properties
 
+**animate**
+
+Transition content in & out with a slide down animation. Defaults to \`true\`.
+
+\`\`\`
+boolean
+string
+\`\`\`
+
 **full**
 
 Whether the width and/or height should fill the current viewport size.

@@ -197,6 +197,16 @@ const KEYFRAMES = {
   },
 };
 
+const getKeyframes = (animate, position, full) => {
+  if (animate === "true") {
+    return css`${KEYFRAMES[position][full]} 0.2s ease-in-out forwards` ;
+  }
+  if (animate === "false") {
+    return 'none';
+  }
+  return css`${KEYFRAMES[position][full]} ${animate}`;
+} 
+
 // POSITIONS combines 'position', 'full', and 'margin' properties, since
 // they are all interdependent.
 // Basically, non-full axes combine 50% position with -50% translation.
@@ -210,27 +220,27 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       left: 50%;
       transform: translateX(-50%);
-      animation: ${KEYFRAMES.center.vertical} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "center", "vertical")}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       top: 50%;
       transform: translateY(-50%);
-      animation: ${KEYFRAMES.center.horizontal} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "center", "horizontal")}
     `,
     true: margin => css`
       top: ${margin.top};
       bottom: ${margin.bottom};
       left: ${margin.left};
       right: ${margin.right};
-      animation: ${KEYFRAMES.center.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "center", "true")}
     `,
     false: () => css`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      animation: ${KEYFRAMES.center.false} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "center", "false")}
     `,
   },
 
@@ -240,14 +250,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       left: 50%;
       transform: translate(-50%, 0%);
-      animation: ${KEYFRAMES.top.vertical} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "top", "vertical")}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       top: ${margin.top};
       transform: translateY(0);
-      animation: ${KEYFRAMES.top.horizontal} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "top", "horizontal")}
     `,
     true: margin => css`
       top: ${margin.top};
@@ -255,13 +265,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateY(0);
-      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "top", "true")}
     `,
     false: margin => css`
       top: ${margin.top};
       left: 50%;
       transform: translate(-50%, 0);
-      animation: ${KEYFRAMES.top.false} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "top", "false")}
     `,
   },
 
@@ -271,14 +281,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       left: 50%;
       transform: translate(-50%, 0);
-      animation: ${KEYFRAMES.bottom.vertical} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "bottom", "vertical")}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.top};
       bottom: ${margin.bottom};
       transform: translateY(0);
-      animation: ${KEYFRAMES.bottom.horizontal} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "bottom", "horizontal")}
     `,
     true: margin => css`
       top: ${margin.top};
@@ -286,13 +296,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateY(0);
-      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "bottom", "true")}
     `,
     false: margin => css`
       bottom: ${margin.bottom};
       left: 50%;
       transform: translate(-50%, 0);
-      animation: ${KEYFRAMES.bottom.false} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "bottom", "false")}
     `,
   },
 
@@ -302,14 +312,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       left: ${margin.left};
       transform: translateX(0);
-      animation: ${KEYFRAMES.left.vertical} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "left", "vertical")}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       top: 50%;
       transform: translate(0, -50%);
-      animation: ${KEYFRAMES.left.horizontal} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "left", "horizontal")}
     `,
     true: margin => css`
       top: ${margin.top};
@@ -317,13 +327,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateX(0);
-      animation: ${KEYFRAMES.left.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "left", "true")}
     `,
     false: margin => css`
       left: ${margin.left};
       top: 50%;
       transform: translate(0, -50%);
-      animation: ${KEYFRAMES.left.false} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "left", "false")}
     `,
   },
 
@@ -333,14 +343,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       right: ${margin.right};
       transform: translateX(0);
-      animation: ${KEYFRAMES.right.vertical} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "right", "vertical")}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       top: 50%;
       transform: translate(0, -50%);
-      animation: ${KEYFRAMES.right.horizontal} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "right", "horizontal")}
     `,
     true: margin => css`
       top: ${margin.top};
@@ -348,13 +358,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateX(0);
-      animation: ${KEYFRAMES.right.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "right", "true")}
     `,
     false: margin => css`
       right: ${margin.right};
       top: 50%;
       transform: translate(0, -50%);
-      animation: ${KEYFRAMES.right.false} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "right", "false")}
     `,
   },
 
@@ -364,14 +374,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       right: ${margin.right};
       transform: translateX(0);
-      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "top", "true")};
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       top: 0;
       transform: translateX(0);
-      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "top", "true")};
     `,
     true: margin => css`
       top: ${margin.top};
@@ -379,13 +389,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateX(0);
-      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "top", "true")};
     `,
     false: margin => css`
       top: ${margin.top};
       right: ${margin.right};
       transform: translateY(0);
-      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "top", "true")};
     `,
   },
 
@@ -395,14 +405,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       left: ${margin.left};
       transform: translateX(0);
-      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "top", "true")}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       top: 0;
       transform: translateX(0);
-      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "top", "true")}
     `,
     true: margin => css`
       top: ${margin.top};
@@ -410,13 +420,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateX(0);
-      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "top", "true")}
     `,
     false: margin => css`
       top: ${margin.top};
       left: ${margin.left};
       transform: translateY(0);
-      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "top", "true")}
     `,
   },
 
@@ -426,14 +436,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       right: ${margin.right};
       transform: translateX(0);
-      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "bottom", "true")}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       bottom: ${margin.bottom};
       transform: translateY(0);
-      animation: ${KEYFRAMES.bottom.horizontal} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "bottom", "true")}
     `,
     true: margin => css`
       top: ${margin.top};
@@ -441,13 +451,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateX(0);
-      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "bottom", "true")}
     `,
     false: margin => css`
       bottom: ${margin.bottom};
       right: ${margin.right};
       transform: translateY(0);
-      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "bottom", "true")}
     `,
   },
 
@@ -457,14 +467,14 @@ const POSITIONS = {
       bottom: ${margin.bottom};
       left: ${margin.left};
       transform: translateX(0);
-      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "bottom", "true")}
     `,
     horizontal: margin => css`
       left: ${margin.left};
       right: ${margin.right};
       bottom: ${margin.bottom};
       transform: translateY(0);
-      animation: ${KEYFRAMES.bottom.horizontal} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "bottom", "true")}
     `,
     true: margin => css`
       top: ${margin.top};
@@ -472,13 +482,13 @@ const POSITIONS = {
       left: ${margin.left};
       right: ${margin.right};
       transform: translateX(0);
-      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "bottom", "true")}
     `,
     false: margin => css`
       bottom: ${margin.bottom};
       left: ${margin.left};
       transform: translateY(0);
-      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+      animation: ${props => getKeyframes(props.animate, "bottom", "true")}
     `,
   },
 };
