@@ -31,7 +31,7 @@ vertical
   
 **collapsible.minSpeed**
 
-The minimum speed of Collapsible animation in milliseconds Expects `number`.
+The minimum speed of Collapsible animation in milliseconds. Expects `number`.
 
 Defaults to
 
@@ -41,7 +41,7 @@ Defaults to
 
 **collapsible.baseline**
 
-The baseline  Expects `number`.
+Default height to be used to calculate the optimal collapsible speed. Expects `number`.
 
 Defaults to
 

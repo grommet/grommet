@@ -22,12 +22,12 @@ export const doc = Collapsible => {
 
 export const themeDoc = {
   'collapsible.minSpeed': {
-    description: 'The minimum speed of Collapsible animation in milliseconds',
+    description: 'The minimum speed of Collapsible animation in milliseconds.',
     type: 'number',
     defaultValue: 200,
   },
   'collapsible.baseline': {
-    description: 'The baseline ',
+    description: 'Default height to be used to calculate the optimal collapsible speed.',
     type: 'number',
     defaultValue: 500,
   },
