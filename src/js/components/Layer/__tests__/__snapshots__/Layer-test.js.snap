@@ -64,8 +64,8 @@ exports[`Layer custom margin 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm;
-  animation: bBMZdm;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -165,8 +165,8 @@ exports[`Layer dark context 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm;
-  animation: bBMZdm;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c1 {
@@ -287,8 +287,8 @@ exports[`Layer full false 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm;
-  animation: bBMZdm;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -422,8 +422,8 @@ exports[`Layer full horizontal 1`] = `
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  -webkit-animation: dcHpVA;
-  animation: dcHpVA;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -555,8 +555,8 @@ exports[`Layer full true 1`] = `
   bottom: 0px;
   left: 0px;
   right: 0px;
-  -webkit-animation: aUlIN;
-  animation: aUlIN;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -690,8 +690,8 @@ exports[`Layer full vertical 1`] = `
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  -webkit-animation: XCWMt;
-  animation: XCWMt;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -885,7 +885,7 @@ exports[`Layer hidden 3`] = `
     class="StyledLayer__StyledOverlay-rmtehz-1 gVTfaV"
   />
   <div
-    class="StyledLayer__StyledContainer-rmtehz-2 hsQxOj"
+    class="StyledLayer__StyledContainer-rmtehz-2 gvgFWT"
     id="hidden-test"
   >
     <a
@@ -995,8 +995,8 @@ exports[`Layer margin large 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm;
-  animation: bBMZdm;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -1129,8 +1129,8 @@ exports[`Layer margin medium 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm;
-  animation: bBMZdm;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -1263,8 +1263,8 @@ exports[`Layer margin none 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm;
-  animation: bBMZdm;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -1397,8 +1397,8 @@ exports[`Layer margin small 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm;
-  animation: bBMZdm;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -1531,8 +1531,8 @@ exports[`Layer margin xsmall 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm;
-  animation: bBMZdm;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -1632,8 +1632,8 @@ exports[`Layer non-modal 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm;
-  animation: bBMZdm;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c1 {
@@ -1738,8 +1738,8 @@ exports[`Layer plain 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm;
-  animation: bBMZdm;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -1872,8 +1872,8 @@ exports[`Layer position bottom 1`] = `
   -webkit-transform: translate(-50%,0);
   -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
-  -webkit-animation: jsmUBO;
-  animation: jsmUBO;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -2006,8 +2006,8 @@ exports[`Layer position center 1`] = `
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  -webkit-animation: bBMZdm;
-  animation: bBMZdm;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -2140,8 +2140,8 @@ exports[`Layer position left 1`] = `
   -webkit-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
-  -webkit-animation: fNWKbM;
-  animation: fNWKbM;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -2274,8 +2274,8 @@ exports[`Layer position right 1`] = `
   -webkit-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
-  -webkit-animation: lhngOP;
-  animation: lhngOP;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {
@@ -2408,8 +2408,8 @@ exports[`Layer position top 1`] = `
   -webkit-transform: translate(-50%,0);
   -ms-transform: translate(-50%,0);
   transform: translate(-50%,0);
-  -webkit-animation: bAkQbM;
-  animation: bAkQbM;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .c3 {

@@ -198,13 +198,12 @@ const KEYFRAMES = {
 };
 
 const getKeyframes = (animate, position, full) => {
-  if (animate === "true") {
-    return css`${KEYFRAMES[position][full]} 0.2s ease-in-out forwards` ;
-  }
-  if (animate === "false") {
+  if (!animate) {
     return 'none';
   }
-  return css`${KEYFRAMES[position][full]} ${animate}`;
+  return animate === true ?
+    css`${KEYFRAMES[position][full]} 0.2s ease-in-out forwards` :
+    css`${KEYFRAMES[position][full]} ${animate}`;
 } 
 
 // POSITIONS combines 'position', 'full', and 'margin' properties, since
