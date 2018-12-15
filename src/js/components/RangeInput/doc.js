@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils';
 export const doc = RangeInput => {
   const DocumentedRangeInput = describe(RangeInput)
     .availableAt(getAvailableAtBadge('RangeInput'))
-    .description('A range input with custom styles.')
+    .description('A slider control to input a value within a fixed range.')
     .usage(
       `import { RangeInput } from 'grommet';
 <RangeInput />`,

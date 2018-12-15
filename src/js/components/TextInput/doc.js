@@ -5,7 +5,9 @@ import { getAvailableAtBadge } from '../../utils';
 export const doc = TextInput => {
   const DocumentedTextInput = describe(TextInput)
     .availableAt(getAvailableAtBadge('TextInput'))
-    .description('A text input field with optional suggestions.')
+    .description(
+      'A control to input a single line of text, with optional suggestions.',
+    )
     .usage(
       `import { TextInput } from 'grommet';
 <TextInput id='item' name='item' />`,

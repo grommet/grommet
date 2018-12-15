@@ -494,7 +494,9 @@ undefined
 \`\`\`
 ",
   "Box": "## Box
-A flexible box that lays out its contents along a single direction.
+A container that lays out its contents in one direction. Box
+      provides CSS flexbox capabilities for layout, as well as general
+      styling of things like background color, border, and animation.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Box&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=box&module=%2Fsrc%2FBox.js)
 ## Usage
@@ -1227,7 +1229,7 @@ small
 \`\`\`
 ",
   "Button": "## Button
-A button. We have a separate component from the browser base so we can style it.
+A button.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Button&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=button&module=%2Fsrc%2FButton.js)
 ## Usage
@@ -1631,7 +1633,7 @@ undefined
 \`\`\`
 ",
   "Calendar": "## Calendar
-Calendar of days in months.
+A calendar of days displayed by month.
       It can be used to select a single date, a range of dates, or multiple
       individual dates.
 
@@ -2753,7 +2755,7 @@ digital
 \`\`\`
   ",
   "Collapsible": "## Collapsible
-A react component that expand/collapse animation.
+Expand or collapse animation.
 
 ## Usage
 
@@ -3007,8 +3009,9 @@ boolean
 \`\`\`
   ",
   "Diagram": "## Diagram
-Graphical lines between DOM elements.
-      Diagram is meant to be used with Stack.
+Graphical connection lines. Diagram is meant to be used with Stack.
+      Boxes can be used in the \`guidingChild\` layer of Stack and then
+      Diagram can be used to draw lines connecting the Boxes.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Diagram&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=diagram&module=%2Fsrc%2FDiagram.js)
 ## Usage
@@ -3069,7 +3072,7 @@ Required. Array of objects describing the connections.
 \`\`\`
   ",
   "Distribution": "## Distribution
-Approximately proportionally sized grid of boxes. The
+Proportionally sized grid of boxes. The proportions are approximate. The
       area given to each box isn't mathematically precise according to the
       ratio to the total values. Instead, the boxes are laid out in a
       manner that makes them more visually easy to scan. For example,
@@ -3229,7 +3232,7 @@ Required. Array of objects containing a value. The array should already be
 \`\`\`
   ",
   "Drop": "## Drop
-A drop container that opens next to a target.
+A container that is overlaid next to a target.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Drop&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=drop&module=%2Fsrc%2FDrop.js)
 ## Usage
@@ -3340,9 +3343,10 @@ boolean
 \`\`\`
   ",
   "DropButton": "## DropButton
-A Button that when clicked will a Drop with the specified 'dropContent'.
-      When opened, the drop will control the focus so that the contents behind
-      it are not focusable. All properties of Button can be passed through.
+A Button that controls a Drop. When opened, the Drop will contain
+      whatever is specified via \`dropContent\`. The Drop will control the focus
+      so that the contents behind it are not focusable. All properties of
+      Button can be passed through.
       
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DropButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js)
@@ -3527,7 +3531,9 @@ boolean
 \`\`\`
   ",
   "FormField": "## FormField
-A field in a form.
+A single field in a form. FormField wraps an input component with
+      a label, help, and/or error messaging. It typically contains an input
+      control like TextInput, TextArea, Select, etc.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=FormField&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=formfield&module=%2Fsrc%2FFormField.js)
 ## Usage
@@ -3577,9 +3583,9 @@ node
   "Grid": "## Grid
 A grid system for laying out content. To use, define the
 rows and columns, create area names for adjacent cells, and then
-place Box components inside those areas using the Box.gridArea property.
+place Box components inside those areas using the gridArea property.
 See https://css-tricks.com/snippets/css/complete-guide-grid/.
-The availability of Grid can be tested via 'Grid.available'. Use this
+The availability of Grid can be tested via \`Grid.available\`. Use this
 to create fallback rendering for older browsers, like ie11.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Grid&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grid&module=%2Fsrc%2FGrid.js)
@@ -3929,7 +3935,7 @@ string
 \`\`\`
   ",
   "Grommet": "## Grommet
-This is the top level Grommet container.
+The top level Grommet container.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Grommet&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grommet&module=%2Fsrc%2FGrommet.js)
 ## Usage
@@ -4391,7 +4397,7 @@ number
 \`\`\`
   ",
   "Keyboard": "## Keyboard
-A react component that handles keyboard key presses.
+A handler of keyboard key presses.
 
 ## Usage
 
@@ -4500,8 +4506,9 @@ function
 \`\`\`
   ",
   "Layer": "## Layer
-A modal overlay. It is the caller's responsibility to provide a control for
-      the user to close the layer.
+An overlay. Layer is typically modal and anchored to an edge, corner, or
+      center of the window. It is the caller's responsibility to provide a
+      control for the user to close the layer.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Layer&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=layer&module=%2Fsrc%2FLayer.js)
 ## Usage
@@ -4847,8 +4854,9 @@ string
 \`\`\`
   ",
   "Menu": "## Menu
-Presents a list of choices within a drop down via a control that
-      opens it.
+A control that opens a Drop containing plain Buttons. The labels
+      and behavior of the contained Buttons are described via the \`items\`
+      property.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=menu&module=%2Fsrc%2FMenu.js)
 ## Usage
@@ -5618,7 +5626,7 @@ function
 \`\`\`
   ",
   "RangeInput": "## RangeInput
-A range input with custom styles.
+A slider control to input a value within a fixed range.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RangeInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeinput&module=%2Fsrc%2FRangeInput.js)
 ## Usage
@@ -5692,7 +5700,7 @@ string
 \`\`\`
   ",
   "RangeSelector": "## RangeSelector
-A control to allow selecting a range of values.
+A control to input a range of values.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RangeSelector&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeselector&module=%2Fsrc%2FRangeSelector.js)
 ## Usage
@@ -5888,7 +5896,7 @@ replace
 \`\`\`
   ",
   "Select": "## Select
-An select-like field with optional search capability.
+A control to select a value, with optional search.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Select&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=select&module=%2Fsrc%2FSelect.js)
 ## Usage
@@ -6382,7 +6390,11 @@ Custom messages for SkipLinks. Used for accessibility by screen readers. Default
 \`\`\`
   ",
   "Stack": "## Stack
-Stacks components on top of the first child component.
+A container that stacks contents on top of each other. One child is
+      designated as the \`guidingChild\` which determines the size. All
+      other children are placed within that size, either above or below
+      based on their order. Stack is typically used to decorate Meter, Chart,
+      or icons.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Stack&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=stack&module=%2Fsrc%2FStack.js)
 ## Usage
@@ -6830,7 +6842,7 @@ import { TableRow } from 'grommet';
 tr
 \`\`\`",
   "Tabs": "## Tabs
-A tabular view component.
+A container with controls to show one Tab at a time.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Tabs&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=tabs&module=%2Fsrc%2FTabs.js)
 ## Usage
@@ -7267,7 +7279,7 @@ undefined
 \`\`\`
 ",
   "TextArea": "## TextArea
-A textarea.
+A control to input multiple lines of text.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=TextArea&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textarea&module=%2Fsrc%2FTextArea.js)
 ## Usage
@@ -7412,7 +7424,7 @@ undefined
 \`\`\`
 ",
   "TextInput": "## TextInput
-A text input field with optional suggestions.
+A control to input a single line of text, with optional suggestions.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=TextInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textinput&module=%2Fsrc%2FTextInput.js)
 ## Usage

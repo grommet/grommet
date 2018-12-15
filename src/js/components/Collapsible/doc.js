@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 export const doc = Collapsible => {
   const DocumentedCollapsible = describe(Collapsible)
-    .description('A react component that expand/collapse animation.')
+    .description('Expand or collapse animation.')
     .usage(
       `import { Collapsible } from 'grommet';
 <Collapsible open={true}>test</Collapsible>`,

@@ -1,5 +1,5 @@
 ## Collapsible
-A react component that expand/collapse animation.
+Expand or collapse animation.
 
 ## Usage
 

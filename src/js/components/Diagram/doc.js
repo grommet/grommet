@@ -6,8 +6,9 @@ export const doc = Diagram => {
   const DocumentedDiagram = describe(Diagram)
     .availableAt(getAvailableAtBadge('Diagram'))
     .description(
-      `Graphical lines between DOM elements.
-      Diagram is meant to be used with Stack.`,
+      `Graphical connection lines. Diagram is meant to be used with Stack.
+      Boxes can be used in the \`guidingChild\` layer of Stack and then
+      Diagram can be used to draw lines connecting the Boxes.`,
     )
     .usage("import { Diagram } from 'grommet';\n<Diagram />");
 
