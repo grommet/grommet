@@ -1,8 +1,9 @@
 import * as React from "react";
 
 export interface FormProps {
-  onChange?: (...args: any[]) => any;
-  onSubmit?: (...args: any[]) => any;
+  errors?: {};
+  onChange?: ((...args: any[]) => any);
+  onSubmit?: ((...args: any[]) => any);
   value?: {};
 }
 

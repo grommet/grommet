@@ -11,6 +11,17 @@ import { Form } from 'grommet';
 
 ## Properties
 
+**errors**
+
+An object representing any errors in the data. They keys should
+        match the keys in the value object. Defaults to `{}`.
+
+```
+{
+
+}
+```
+
 **onChange**
 
 Function that will be called when any fields are updated.

@@ -6,11 +6,9 @@ export interface FormFieldProps {
   htmlFor?: string;
   label?: string | React.ReactNode;
   name?: string;
-  options?: string | object[];
-  optionLabelKey?: string | (...args: any[]) => any;
-  optionValueKey?: string | (...args: any[]) => any;
+  pad?: boolean;
   required?: boolean;
-  validate?: object | (...args: any[]) => any;
+  validate?: object | ((...args: any[]) => any);
 }
 
 declare const FormField: React.ComponentType<FormFieldProps>;

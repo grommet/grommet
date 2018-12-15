@@ -4,20 +4,22 @@ import { storiesOf } from '@storybook/react';
 import {
   Box,
   Button,
+  CheckBox,
   Grommet,
   Form,
   // FormContext,
   FormField,
   RadioButton,
+  RangeInput,
   Select,
   TextArea,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const RadioButtonGroup = ({ name, onChange, options, value }) => (
-  <Box margin={{ bottom: 'small' }}>
+  <Box gap="small">
     {options.map(option => (
-      <Box key={option} pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+      <Box key={option}>
         <RadioButton
           name={name}
           value={option}
@@ -44,8 +46,15 @@ const Example = () => (
             validate={{ regexp: /^[0-9]{4,6}$/, message: '4-6 digits' }}
           />
           <FormField
+            name="subscribe"
+            component={CheckBox}
+            pad
+            label="Subscribe?"
+          />
+          <FormField
             name="ampm"
             component={RadioButtonGroup}
+            pad
             options={['morning', 'evening']}
           />
           <FormField
@@ -55,6 +64,14 @@ const Example = () => (
             options={['small', 'medium', 'large', 'xlarge']}
           />
           <FormField label="Comments" name="comments" component={TextArea} />
+          <FormField
+            label="Age"
+            name="age"
+            component={RangeInput}
+            pad
+            min={15}
+            max={75}
+          />
           {/* }
           <FormField label="Comments" name="comments">
             <FormContext.Consumer>

@@ -55,33 +55,12 @@ The name of the value data when in a Form and the name of
 string
 ```
 
-**options**
+**pad**
 
-Array of options. If less than four, RadioButtons, otherwise, Select.
-
-```
-[
-  string
-  object
-]
-```
-
-**optionLabelKey**
-
-When options are objects, the key to get the label.
+Whether to add padding to align with the padding of TextInput.
 
 ```
-string
-function
-```
-
-**optionValueKey**
-
-When options are objects, the key to get the value.
-
-```
-string
-function
+boolean
 ```
 
 **required**
@@ -94,7 +73,10 @@ boolean
 
 **validate**
 
-Validation rule. Provide a regular expression or a function.
+Validation rule. Provide a regular expression or a function. If a
+      function is provided, it will be called with two arguments, the value
+      for this field and the entire value object. This permits validation to
+      encompass multiple fields.
 
 ```
 object

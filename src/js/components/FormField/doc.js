@@ -28,25 +28,18 @@ export const doc = FormField => {
       `The name of the value data when in a Form and the name of
       the input field.`,
     ),
-    options: PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-    ).description(
-      'Array of options. If less than four, RadioButtons, otherwise, Select.',
+    pad: PropTypes.bool.description(
+      'Whether to add padding to align with the padding of TextInput.',
     ),
-    optionLabelKey: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.func,
-    ]).description('When options are objects, the key to get the label.'),
-    optionValueKey: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.func,
-    ]).description('When options are objects, the key to get the value.'),
     required: PropTypes.bool.description('Whether the field is required.'),
     validate: PropTypes.oneOfType([
       PropTypes.object, // regular expression
       PropTypes.func,
     ]).description(
-      'Validation rule. Provide a regular expression or a function.',
+      `Validation rule. Provide a regular expression or a function. If a
+      function is provided, it will be called with two arguments, the value
+      for this field and the entire value object. This permits validation to
+      encompass multiple fields.`,
     ),
   };
 

@@ -1845,24 +1845,9 @@ node",
         "name": "name",
       },
       Object {
-        "description": "Array of options. If less than four, RadioButtons, otherwise, Select.",
-        "format": "[
-  string
-  object
-]",
-        "name": "options",
-      },
-      Object {
-        "description": "When options are objects, the key to get the label.",
-        "format": "string
-function",
-        "name": "optionLabelKey",
-      },
-      Object {
-        "description": "When options are objects, the key to get the value.",
-        "format": "string
-function",
-        "name": "optionValueKey",
+        "description": "Whether to add padding to align with the padding of TextInput.",
+        "format": "boolean",
+        "name": "pad",
       },
       Object {
         "description": "Whether the field is required.",
@@ -1870,7 +1855,10 @@ function",
         "name": "required",
       },
       Object {
-        "description": "Validation rule. Provide a regular expression or a function.",
+        "description": "Validation rule. Provide a regular expression or a function. If a
+      function is provided, it will be called with two arguments, the value
+      for this field and the entire value object. This permits validation to
+      encompass multiple fields.",
         "format": "object
 function",
         "name": "validate",

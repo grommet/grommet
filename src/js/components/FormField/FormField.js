@@ -6,6 +6,7 @@ import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
+import { CheckBox } from '../CheckBox';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 import { withFocus } from '../hocs';
@@ -31,6 +32,16 @@ class FormField extends Component {
   renderChildren = (value, update) => {
     const { name, component, required, ...rest } = this.props;
     const Input = component || TextInput;
+    if (Input === CheckBox) {
+      return (
+        <Input
+          name={name}
+          checked={value[name] || false}
+          onChange={event => update(name, event.target.checked)}
+          {...rest}
+        />
+      );
+    }
     return (
       <Input
         name={name}
@@ -53,6 +64,7 @@ class FormField extends Component {
       htmlFor,
       label,
       name,
+      pad,
       required,
       style,
       theme,
@@ -73,6 +85,14 @@ class FormField extends Component {
             addValidation(name, validateField(required, validate));
             normalizedError = error || errors[name];
             contents = children || this.renderChildren(value, update);
+          }
+
+          if (pad) {
+            contents = (
+              <Box pad={{ horizontal: 'small', bottom: 'small' }}>
+                {contents}
+              </Box>
+            );
           }
 
           let borderColor;
@@ -151,12 +171,12 @@ class FormField extends Component {
               style={outerStyle}
               {...rest}
             >
-              {label || help ? (
+              {(label && component !== CheckBox) || help ? (
                 <Box
                   margin={{ vertical: 'xsmall', horizontal: 'small' }}
                   gap="xsmall"
                 >
-                  {label ? (
+                  {label && component !== CheckBox ? (
                     <Text as="label" htmlFor={htmlFor} {...formField.label}>
                       {label}
                     </Text>

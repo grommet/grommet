@@ -12,6 +12,12 @@ export const doc = Form => {
     );
 
   DocumentedForm.propTypes = {
+    errors: PropTypes.shape({})
+      .description(
+        `An object representing any errors in the data. They keys should
+        match the keys in the value object.`,
+      )
+      .defaultValue({}),
     onChange: PropTypes.func.description(
       'Function that will be called when any fields are updated.',
     ),

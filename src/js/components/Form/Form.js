@@ -8,10 +8,15 @@ class Form extends Component {
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { value } = nextProps;
-    const { priorValue } = prevState;
-    if (!priorValue || value !== priorValue) {
-      return { value, priorValue: value };
+    const { value, errors } = nextProps;
+    const { priorValue, priorErrors } = prevState;
+    if (!priorValue || value !== priorValue || errors !== priorErrors) {
+      return {
+        value,
+        priorValue: value,
+        errors: errors || {},
+        priorErrors: errors,
+      };
     }
     return null;
   }
@@ -27,7 +32,7 @@ class Form extends Component {
     const nextErrors = { ...errors };
     Object.keys(this.validations).forEach(name => {
       const validate = this.validations[name];
-      const error = validate && validate(value[name]);
+      const error = validate && validate(value[name], value);
       if (error) {
         nextErrors[name] = error;
       } else {
@@ -49,10 +54,11 @@ class Form extends Component {
     nextTouched[name] = true;
     const nextErrors = { ...errors };
     if (errors[name]) {
-      const dataError =
-        error || (this.validations[name] && this.validations[name](data));
-      if (dataError) {
-        nextErrors[name] = dataError;
+      const nextError =
+        error ||
+        (this.validations[name] && this.validations[name](data, nextValue));
+      if (nextError) {
+        nextErrors[name] = nextError;
       } else {
         delete nextErrors[name];
       }
