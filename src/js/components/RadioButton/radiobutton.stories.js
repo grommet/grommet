@@ -17,7 +17,7 @@ class SimpleRadioButton extends Component {
     const { selected } = this.state;
     return (
       <Grommet theme={grommet}>
-        <Box gap="small">
+        <Box align="center" pad="large" gap="small">
           <RadioButton
             label="Choice 1"
             name="radio"
@@ -46,7 +46,7 @@ const customTheme = deepMerge(grommet, {
     size: '18px',
     hover: {
       border: {
-        color: 'dark-4',
+        color: 'dark-3',
       },
     },
     check: {
@@ -69,7 +69,7 @@ class CustomRadioButton extends Component {
     const { selected } = this.state;
     return (
       <Grommet theme={customTheme}>
-        <Box gap="xsmall">
+        <Box align="center" pad="large" gap="small">
           <RadioButton
             label="Choice 1"
             name="radio"
@@ -97,24 +97,26 @@ class CheckBoxInsideButton extends Component {
     const { selected } = this.state;
     return (
       <Grommet theme={grommet}>
-        <Button
-          hoverIndicator="background"
-          onClick={() => {
-            if (selected) {
-              this.setState({ selected: undefined });
-            } else {
-              this.setState({ selected: 'c1' });
-            }
-          }}
-        >
-          <RadioButton
-            label="Choice 1"
-            name="radio"
-            value="c1"
-            checked={selected === 'c1'}
-            {...this.props}
-          />
-        </Button>
+        <Box align="center" pad="large">
+          <Button
+            hoverIndicator="background"
+            onClick={() => {
+              if (selected) {
+                this.setState({ selected: undefined });
+              } else {
+                this.setState({ selected: 'c1' });
+              }
+            }}
+          >
+            <RadioButton
+              label="Choice 1"
+              name="radio"
+              value="c1"
+              checked={selected === 'c1'}
+              {...this.props}
+            />
+          </Button>
+        </Box>
       </Grommet>
     );
   }

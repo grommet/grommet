@@ -24,12 +24,14 @@ class SimpleCalendar extends Component {
     const { date } = this.state;
     return (
       <Grommet theme={grommet}>
-        <Calendar
-          date={date}
-          onSelect={this.onSelect}
-          size="small"
-          bounds={['2018-09-08', '2018-12-13']}
-        />
+        <Box align="center" pad="large">
+          <Calendar
+            date={date}
+            onSelect={this.onSelect}
+            size="small"
+            bounds={['2018-09-08', '2018-12-13']}
+          />
+        </Box>
       </Grommet>
     );
   }
@@ -37,7 +39,9 @@ class SimpleCalendar extends Component {
 
 const RangeCalendar = () => (
   <Grommet theme={grommet}>
-    <Calendar range />
+    <Box align="center" pad="large">
+      <Calendar range />
+    </Box>
   </Grommet>
 );
 
@@ -63,7 +67,7 @@ class DualCalendar extends Component {
     const { date, dates, reference1, reference2 } = this.state;
     return (
       <Grommet theme={grommet}>
-        <Box direction="row" gap="small">
+        <Box justify="center" pad="large" direction="row" gap="small">
           <Calendar
             animate={false}
             showAdjacentDays={false}
@@ -160,41 +164,43 @@ class CustomHeaderCalendar extends Component {
     const { date } = this.state;
     return (
       <Grommet theme={grommet}>
-        <Calendar
-          date={date}
-          onSelect={this.onSelect}
-          size="small"
-          bounds={['2018-09-08', '2018-12-13']}
-          header={({
-            date: currentDate,
-            locale,
-            onPreviousMonth,
-            onNextMonth,
-            previousInBound,
-            nextInBound,
-          }) => (
-            <Box direction="row" align="center" justify="between">
-              <Button disabled={!previousInBound} onClick={onPreviousMonth}>
-                <Box>
-                  <FormPreviousLink />
-                </Box>
-              </Button>
-              <Text size="small">
-                <strong>
-                  {currentDate.toLocaleDateString(locale, {
-                    month: 'long',
-                    year: 'numeric',
-                  })}
-                </strong>
-              </Text>
-              <Button disabled={!nextInBound} onClick={onNextMonth}>
-                <Box>
-                  <FormNextLink />
-                </Box>
-              </Button>
-            </Box>
-          )}
-        />
+        <Box align="center" pad="large">
+          <Calendar
+            date={date}
+            onSelect={this.onSelect}
+            size="small"
+            bounds={['2018-09-08', '2018-12-13']}
+            header={({
+              date: currentDate,
+              locale,
+              onPreviousMonth,
+              onNextMonth,
+              previousInBound,
+              nextInBound,
+            }) => (
+              <Box direction="row" align="center" justify="between">
+                <Button disabled={!previousInBound} onClick={onPreviousMonth}>
+                  <Box>
+                    <FormPreviousLink />
+                  </Box>
+                </Button>
+                <Text size="small">
+                  <strong>
+                    {currentDate.toLocaleDateString(locale, {
+                      month: 'long',
+                      year: 'numeric',
+                    })}
+                  </strong>
+                </Text>
+                <Button disabled={!nextInBound} onClick={onNextMonth}>
+                  <Box>
+                    <FormNextLink />
+                  </Box>
+                </Button>
+              </Box>
+            )}
+          />
+        </Box>
       </Grommet>
     );
   }
@@ -204,10 +210,12 @@ class CustomHeaderCalendar extends Component {
 // crossing the daylight savings time boundary (from California).
 const DSTCalendar = () => (
   <Grommet theme={grommet}>
-    <Calendar
-      date="2018-11-04T07:00:00.000Z"
-      bounds={['2013-11-06', '2018-12-06']}
-    />
+    <Box align="center" pad="large">
+      <Calendar
+        date="2018-11-04T07:00:00.000Z"
+        bounds={['2013-11-06', '2018-12-06']}
+      />
+    </Box>
   </Grommet>
 );
 

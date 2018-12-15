@@ -63,6 +63,10 @@ export const doc = Select => {
         top: 'bottom',
         left: 'left',
       }),
+    dropHeight: PropTypes.oneOfType([
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description('The height of the drop container.'),
     dropTarget: PropTypes.object.description(
       `Target where the options drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be
@@ -157,6 +161,11 @@ export const doc = Select => {
       If a function is provided, it is called with the option and the
       return value indicates the value.`,
     ),
+    emptySearchMessage: PropTypes.string
+      .description(
+        `Empty option message to display when no matching results were found`,
+      )
+      .defaultValue('No matches found'),
   };
 
   return DocumentedSelect;

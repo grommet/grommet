@@ -34,8 +34,8 @@ export const doc = DataTable => {
         render: PropTypes.func,
         search: PropTypes.bool,
       }),
-    ).description(`
-      A description of the data. The order controls the column order.
+    ).description(
+      `A description of the data. The order controls the column order.
       'property' indicates which property in the data objects to associate
       the column with. 'header' indicates what to display in the column
       header. 'render' allows for custom rendering of body cells. Use 'render'
@@ -45,8 +45,8 @@ export const doc = DataTable => {
       column should be aggregated. This only applies to a footer or groupBy
       context. 'footer' indicates what should be shown in the footer for
       the column. 'search' indicates whether a search filter should be
-      made available for the column.
-    `),
+      made available for the column.`,
+    ),
     data: PropTypes.arrayOf(PropTypes.shape({})).description(
       'Array of data objects.',
     ),
@@ -72,12 +72,12 @@ export const doc = DataTable => {
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
-    ]).description(`
-      The height of the table body. If set, the table body will have a fixed
+    ]).description(
+      `The height of the table body. If set, the table body will have a fixed
       height and the rows will be scrollable within it. In order to preserve
       header and footer cell alignment, all cells will have the same
-      width. This cannot be used in combination with 'resizeable'.
-    `),
+      width. This cannot be used in combination with 'resizeable'.`,
+    ),
     sortable: PropTypes.bool.description(
       'Whether to allow the user to sort columns.',
     ),

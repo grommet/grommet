@@ -2892,8 +2892,7 @@ string
 
 **columns**
 
-
-      A description of the data. The order controls the column order.
+A description of the data. The order controls the column order.
       'property' indicates which property in the data objects to associate
       the column with. 'header' indicates what to display in the column
       header. 'render' allows for custom rendering of body cells. Use 'render'
@@ -2903,8 +2902,7 @@ string
       column should be aggregated. This only applies to a footer or groupBy
       context. 'footer' indicates what should be shown in the footer for
       the column. 'search' indicates whether a search filter should be
-      made available for the column.
-     Defaults to \`[]\`.
+      made available for the column. Defaults to \`[]\`.
 
 \`\`\`
 [{
@@ -2987,12 +2985,10 @@ boolean
 
 **size**
 
-
-      The height of the table body. If set, the table body will have a fixed
+The height of the table body. If set, the table body will have a fixed
       height and the rows will be scrollable within it. In order to preserve
       header and footer cell alignment, all cells will have the same
       width. This cannot be used in combination with 'resizeable'.
-    
 
 \`\`\`
 small
@@ -4719,11 +4715,15 @@ Position of the layer content. Defaults to \`center\`.
 
 \`\`\`
 bottom
+bottom-left
+bottom-right
 center
 hidden
 left
 right
 top
+top-left
+top-right
 \`\`\`
 
 **responsive**
@@ -4733,7 +4733,113 @@ Whether the layer should take full width and height on mobile Defaults to \`true
 \`\`\`
 boolean
 \`\`\`
-  ",
+  
+## Theme
+  
+**global.breakpoints**
+
+The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      small: {
+        value: '768px',
+        borderSize: {
+          xsmall: '1px',
+          small: '2px',
+          medium: '4px',
+          large: '6px',
+          xlarge: '12px',
+        },
+        edgeSize: {
+          none: '0px',
+          hair: '1px',
+          xxsmall: '2px',
+          xsmall: '3px',
+          small: '6px',
+          medium: '12px',
+          large: '24px',
+          xlarge: '48px',
+        },
+        size: {
+          xxsmall: '24px',
+          xsmall: '48px',
+          small: '96px',
+          medium: '192px',
+          large: '384px',
+          xlarge: '768px',
+          full: '100%',
+        },
+      },
+      medium: {
+        value: '1536px',
+      },
+      large: {},
+      }
+\`\`\`
+
+**global.size.xxsmall**
+
+The minimal height of the Layer. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+48px
+\`\`\`
+
+**layer.container.zIndex**
+
+The stack order of Layer Container. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+15
+\`\`\`
+
+**layer.extend**
+
+Any additional style for Layer. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**layer.overlay.background**
+
+The background of the Layer overlay. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+rgba(0, 0, 0, 0.5)
+\`\`\`
+
+**layer.responsiveBreakpoint**
+
+The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**layer.zIndex**
+
+The stack order of Layer. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+10
+\`\`\`
+",
   "Markdown": "## GrommetMarkdown
 Markdown formatting using Grommet components.
 
@@ -4747,6 +4853,92 @@ import { Markdown } from 'grommet';
 
 ## Properties
 
+**components**
+
+Custom components to override default html tags such as 'img' or 'pre'.
+By default only 'p' and 'a' are overrided with the Paragraph and Anchor components
+
+\`\`\`
+{ test: element, ... }
+\`\`\`
+  ",
+  "MaskedInput": "## MaskedInput
+An input field with formalized syntax.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=MaskedInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=maskedinput&module=%2Fsrc%2FMaskedInput.js)
+## Usage
+
+\`\`\`javascript
+import { MaskedInput } from 'grommet';
+<MaskedInput id='item' name='item' />
+\`\`\`
+
+## Properties
+
+**id**
+
+The id attribute of the input.
+
+\`\`\`
+string
+\`\`\`
+
+**name**
+
+The name attribute of the input.
+
+\`\`\`
+string
+\`\`\`
+
+**onChange**
+
+Function that will be called when the user types or pastes text.
+
+\`\`\`
+function
+\`\`\`
+
+**mask**
+
+Describes the structure of the mask. If a regexp is provided, it should
+      allow both the final full string element as well as partial strings
+      as the user types characters one by one. Defaults to \`[]\`.
+
+\`\`\`
+[{
+  length: 
+    number
+    [number],
+  fixed: string,
+  options: [string],
+  regexp: 
+    {
+
+    }
+}]
+\`\`\`
+
+**size**
+
+The size of the text.
+
+\`\`\`
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
+**value**
+
+What text to put in the input. The caller should ensure that it
+      is initially valid with respect to the mask.
+
+\`\`\`
+string
+\`\`\`
   ",
   "Menu": "## Menu
 Presents a list of choices within a drop down via a control that
@@ -4972,7 +5164,49 @@ large
 xlarge
 string
 \`\`\`
-  ",
+  
+## Theme
+  
+**global.colors.control**
+
+The color to use for the icon. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**menu.background**
+
+The color for the background of the menu Drop when it is open. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**menu.extend**
+
+Any additional style for the Menu. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**menu.icons.down**
+
+The icon to show to the right of the label. Expects \`React.element\`.
+
+Defaults to
+
+\`\`\`
+<FormDown />
+\`\`\`
+",
   "Meter": "## Meter
 A graphical meter.
 
@@ -5931,6 +6165,19 @@ How to align the drop. Defaults to \`{
 }
 \`\`\`
 
+**dropHeight**
+
+The height of the drop container.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
 **dropTarget**
 
 Target where the options drop will be aligned to. This should be
@@ -6113,6 +6360,14 @@ When the options array contains objects, this property indicates how
 \`\`\`
 string
 function
+\`\`\`
+
+**emptySearchMessage**
+
+Empty option message to display when no matching results were found Defaults to \`No matches found\`.
+
+\`\`\`
+string
 \`\`\`
   
 ## Theme
@@ -6365,7 +6620,19 @@ number
 first
 last
 \`\`\`
-  ",
+  
+## Theme
+  
+**stack.extend**
+
+Any additional style for the control of the Stack component. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Tab": "## Tab
 One tab within Tabs.
 
@@ -7273,6 +7540,19 @@ How to align the drop. Defaults to \`{
     left
     right
 }
+\`\`\`
+
+**dropHeight**
+
+The height of the drop container.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+string
 \`\`\`
 
 **dropTarget**

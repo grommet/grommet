@@ -24,6 +24,10 @@ export const doc = TextInput => {
         top: 'bottom',
         left: 'left',
       }),
+    dropHeight: PropTypes.oneOfType([
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description('The height of the drop container.'),
     dropTarget: PropTypes.object.description(
       `Target where any suggestions drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be

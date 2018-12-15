@@ -15,7 +15,7 @@ exports[`Anchor disabled renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #1D67E3;
+  color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -54,14 +54,14 @@ exports[`Anchor focus renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #1D67E3;
+  color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
+  border-color: #6FFFB0;
+  box-shadow: 0 0 2px 2px #6FFFB0;
 }
 
 .c1:hover {
@@ -76,7 +76,7 @@ exports[`Anchor focus renders 1`] = `
 .c1 > polygon,
 .c1 > polyline,
 .c1 > rect {
-  outline: #FD6FFF solid 2px;
+  outline: #6FFFB0 solid 2px;
 }
 
 .c1::-moz-focus-inner {
@@ -140,7 +140,7 @@ exports[`Anchor icon label renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #1D67E3;
+  color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -183,7 +183,7 @@ exports[`Anchor icon label renders 1`] = `
       }
     >
       <svg
-        color="#1D67E3"
+        color="#7D4CDB"
       />
       <div
         className="c3"
@@ -209,7 +209,7 @@ exports[`Anchor primary renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #1D67E3;
+  color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -251,7 +251,7 @@ exports[`Anchor renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #1D67E3;
+  color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -290,7 +290,7 @@ exports[`Anchor renders with children 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #1D67E3;
+  color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -360,7 +360,7 @@ exports[`Anchor reverse icon label renders 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #1D67E3;
+  color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -407,7 +407,7 @@ exports[`Anchor reverse icon label renders 1`] = `
         className="c3"
       />
       <svg
-        color="#1D67E3"
+        color="#7D4CDB"
       />
     </span>
   </a>
@@ -429,7 +429,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #1D67E3;
+  color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -453,7 +453,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
     onFocus={[Function]}
   >
     <svg
-      color="#1D67E3"
+      color="#7D4CDB"
     />
   </a>
 </div>
@@ -474,7 +474,7 @@ exports[`Anchor warns about invalid label render 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #1D67E3;
+  color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -516,7 +516,7 @@ exports[`renders tag 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #1D67E3;
+  color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;

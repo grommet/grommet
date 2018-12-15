@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.1.1",
+  "version": "2.2.1",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -39,7 +39,6 @@
     "prettier": "pretty-quick --staged"
   },
   "peerDependencies": {
-    "grommet-icons": ">= 3.1.0",
     "react": ">= 16.4.1",
     "react-dom": ">= 16.4.1",
     "styled-components": ">= 4.X"
@@ -47,6 +46,8 @@
   "dependencies": {
     "css": "^2.2.3",
     "hoist-non-react-statics": "^3.2.0",
+    "grommet-icons": "^4.0.0",
+    "grommet-styles": "^0.2.0",
     "markdown-to-jsx": "^6.6.6",
     "mobile-detect": "^1.4.3",
     "polished": "^2.2.0",
@@ -92,7 +93,6 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.9.1",
     "fs-extra": "^7.0.0",
-    "grommet-icons": "^3.1.0",
     "grommet-theme-aruba": "^0.1.0",
     "grommet-theme-dxc": "^0.1.0",
     "grommet-theme-hp": "^0.1.0",

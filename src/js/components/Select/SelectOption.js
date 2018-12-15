@@ -15,8 +15,8 @@ class SelectOption extends Component {
     } = nextProps;
     return (
       active !== nextActive ||
-      disabled !== nextDisabled ||
       selected !== nextSelected ||
+      disabled !== nextDisabled ||
       option !== nextOption
     );
   }
@@ -25,12 +25,7 @@ class SelectOption extends Component {
     const { forwardRef, ...rest } = this.props;
     return (
       <Box flex={false}>
-        <Button
-          ref={forwardRef}
-          role="menuitem"
-          hoverIndicator="background"
-          {...rest}
-        />
+        <Button tabIndex="-1" ref={forwardRef} role="menuitem" {...rest} />
       </Box>
     );
   }

@@ -182,6 +182,19 @@ How to align the drop. Defaults to `{
 }
 ```
 
+**dropHeight**
+
+The height of the drop container.
+
+```
+xsmall
+small
+medium
+large
+xlarge
+string
+```
+
 **dropTarget**
 
 Target where the options drop will be aligned to. This should be
@@ -364,6 +377,14 @@ When the options array contains objects, this property indicates how
 ```
 string
 function
+```
+
+**emptySearchMessage**
+
+Empty option message to display when no matching results were found Defaults to `No matches found`.
+
+```
+string
 ```
   
 ## Theme

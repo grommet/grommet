@@ -188,4 +188,24 @@ describe('TextInput', () => {
     expect(onSelect).not.toBeCalled();
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  ['small', 'medium', 'large'].forEach(dropHeight => {
+    test(`${dropHeight} drop height`, done => {
+      const { getByTestId } = render(
+        <TextInput
+          data-testid="test-input"
+          id="item"
+          name="item"
+          suggestions={['test', 'test1']}
+          dropHeight={dropHeight}
+        />,
+      );
+
+      fireEvent.focus(getByTestId('test-input'));
+      setTimeout(() => {
+        expectPortal('text-input-drop__item').toMatchSnapshot();
+        done();
+      }, 50);
+    });
+  });
 });

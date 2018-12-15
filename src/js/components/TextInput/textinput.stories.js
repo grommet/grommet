@@ -17,8 +17,12 @@ class SimpleTextInput extends Component {
   render() {
     const { value } = this.state;
     return (
-      <Grommet theme={grommet}>
-        <TextInput ref={this.ref} value={value} onChange={this.onChange} />
+      <Grommet full theme={grommet}>
+        <Box fill align="center" justify="start" pad="large">
+          <Box width="medium">
+            <TextInput ref={this.ref} value={value} onChange={this.onChange} />
+          </Box>
+        </Box>
       </Grommet>
     );
   }
@@ -38,13 +42,18 @@ class SuggestionsTextInput extends Component {
   render() {
     const { value } = this.state;
     return (
-      <Grommet theme={grommet}>
-        <TextInput
-          value={value}
-          onChange={this.onChange}
-          onSelect={this.onSelect}
-          suggestions={suggestions}
-        />
+      <Grommet full theme={grommet}>
+        <Box fill align="center" justify="start" pad="large">
+          <Box width="medium">
+            <TextInput
+              value={value}
+              dropHeight="small"
+              onChange={this.onChange}
+              onSelect={this.onSelect}
+              suggestions={suggestions}
+            />
+          </Box>
+        </Box>
       </Grommet>
     );
   }

@@ -42,12 +42,14 @@ class SimpleDropButton extends Component {
     const { open } = this.state;
     return (
       <Grommet theme={grommet}>
-        <DropButton
-          label="Open"
-          open={open}
-          onClose={() => this.setState({ open: undefined })}
-          dropContent={<DropContent onClose={this.onClose} />}
-        />
+        <Box align="center" pad="large">
+          <DropButton
+            label="Open"
+            open={open}
+            onClose={() => this.setState({ open: undefined })}
+            dropContent={<DropContent onClose={this.onClose} />}
+          />
+        </Box>
       </Grommet>
     );
   }
@@ -67,19 +69,21 @@ class CalendarDropButton extends Component {
     const { date, open } = this.state;
     return (
       <Grommet theme={grommet}>
-        <DropButton
-          open={open}
-          onClose={() => this.setState({ open: false })}
-          onOpen={() => this.setState({ open: true })}
-          dropContent={<Calendar date={date} onSelect={this.onSelect} />}
-        >
-          <Box direction="row" gap="medium" align="center" pad="small">
-            <Text>
-              {date ? new Date(date).toLocaleDateString() : 'Select date'}
-            </Text>
-            <FormDown color="brand" />
-          </Box>
-        </DropButton>
+        <Box align="center" pad="large">
+          <DropButton
+            open={open}
+            onClose={() => this.setState({ open: false })}
+            onOpen={() => this.setState({ open: true })}
+            dropContent={<Calendar date={date} onSelect={this.onSelect} />}
+          >
+            <Box direction="row" gap="medium" align="center" pad="small">
+              <Text>
+                {date ? new Date(date).toLocaleDateString() : 'Select date'}
+              </Text>
+              <FormDown color="brand" />
+            </Box>
+          </DropButton>
+        </Box>
       </Grommet>
     );
   }

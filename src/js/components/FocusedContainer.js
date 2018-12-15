@@ -63,10 +63,10 @@ export class FocusedContainer extends Component {
   };
 
   render() {
-    const { children, ...rest } = this.props;
+    const { children, hidden, ...rest } = this.props;
     delete rest.restrictScroll;
     return (
-      <div ref={this.ref} {...rest}>
+      <div ref={this.ref} aria-hidden={hidden} {...rest}>
         {children}
       </div>
     );

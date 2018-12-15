@@ -23,8 +23,8 @@ class SkipLinks extends Component {
       const layerNode = this.layerRef.current;
       if (
         layerNode &&
-        layerNode.contains &&
-        !layerNode.contains(document.activeElement)
+        layerNode.layerContainer.contains &&
+        !layerNode.layerContainer.contains(document.activeElement)
       ) {
         this.removeLayer();
       }

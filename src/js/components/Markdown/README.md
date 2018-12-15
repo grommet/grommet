@@ -11,4 +11,12 @@ import { Markdown } from 'grommet';
 
 ## Properties
 
+**components**
+
+Custom components to override default html tags such as 'img' or 'pre'.
+By default only 'p' and 'a' are overrided with the Paragraph and Anchor components
+
+```
+{ test: element, ... }
+```
   

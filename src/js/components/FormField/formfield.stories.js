@@ -34,16 +34,18 @@ class FormFieldTextInput extends Component {
     const { value, suggestions } = this.state;
     return (
       <Grommet theme={grommet}>
-        <FormField label="Label" htmlFor="text-input" {...this.props}>
-          <TextInput
-            id="text-input"
-            placeholder="placeholder"
-            value={value}
-            onChange={this.onChange}
-            onSelect={this.onSelect}
-            suggestions={suggestions}
-          />
-        </FormField>
+        <Box align="center" pad="large">
+          <FormField label="Label" htmlFor="text-input" {...this.props}>
+            <TextInput
+              id="text-input"
+              placeholder="placeholder"
+              value={value}
+              onChange={this.onChange}
+              onSelect={this.onSelect}
+              suggestions={suggestions}
+            />
+          </FormField>
+        </Box>
       </Grommet>
     );
   }
@@ -51,29 +53,35 @@ class FormFieldTextInput extends Component {
 
 const FormFieldTextArea = props => (
   <Grommet theme={grommet}>
-    <FormField label="Label" htmlFor="text-area" {...props}>
-      <TextArea id="text-area" placeholder="placeholder" />
-    </FormField>
+    <Box align="center" pad="large">
+      <FormField label="Label" htmlFor="text-area" {...props}>
+        <TextArea id="text-area" placeholder="placeholder" />
+      </FormField>
+    </Box>
   </Grommet>
 );
 
 const FormFieldCheckBox = props => (
   <Grommet theme={grommet}>
-    <FormField label="Label" htmlFor="check-box" {...props}>
-      <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-        <CheckBox id="check-box" label="CheckBox" />
-      </Box>
-    </FormField>
+    <Box align="center" pad="large">
+      <FormField label="Label" htmlFor="check-box" {...props}>
+        <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+          <CheckBox id="check-box" label="CheckBox" />
+        </Box>
+      </FormField>
+    </Box>
   </Grommet>
 );
 
 const FormFieldToggle = props => (
   <Grommet theme={grommet}>
-    <FormField label="Label" htmlFor="check-box" {...props}>
-      <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-        <CheckBox id="check-box" label="CheckBox" toggle />
-      </Box>
-    </FormField>
+    <Box align="center" pad="large">
+      <FormField label="Label" htmlFor="check-box" {...props}>
+        <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
+          <CheckBox id="check-box" label="CheckBox" toggle />
+        </Box>
+      </FormField>
+    </Box>
   </Grommet>
 );
 
@@ -88,15 +96,17 @@ class FormFieldSelect extends Component {
     const { value, options } = this.state;
     return (
       <Grommet theme={grommet}>
-        <FormField label="Label" htmlFor="select" {...this.props}>
-          <Select
-            id="select"
-            placeholder="placeholder"
-            options={options}
-            value={value}
-            onChange={({ option }) => this.setState({ value: option })}
-          />
-        </FormField>
+        <Box align="center" pad="large">
+          <FormField label="Label" htmlFor="select" {...this.props}>
+            <Select
+              id="select"
+              placeholder="placeholder"
+              options={options}
+              value={value}
+              onChange={({ option }) => this.setState({ value: option })}
+            />
+          </FormField>
+        </Box>
       </Grommet>
     );
   }
@@ -104,20 +114,22 @@ class FormFieldSelect extends Component {
 
 const FormFieldHelpError = props => (
   <Grommet theme={grommet}>
-    <FormField
-      label="Label"
-      htmlFor="text-input"
-      {...props}
-      help="Text to help the user know what is possible"
-      error="Text to call attention to an issue with this field"
-    >
-      <TextInput
-        id="text-input"
-        placeholder="placeholder"
-        value="Value"
-        onChange={() => {}}
-      />
-    </FormField>
+    <Box align="center" pad="large">
+      <FormField
+        label="Label"
+        htmlFor="text-input"
+        {...props}
+        help="Text to help the user know what is possible"
+        error="Text to call attention to an issue with this field"
+      >
+        <TextInput
+          id="text-input"
+          placeholder="placeholder"
+          value="Value"
+          onChange={() => {}}
+        />
+      </FormField>
+    </Box>
   </Grommet>
 );
 

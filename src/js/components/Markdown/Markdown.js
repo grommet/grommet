@@ -5,10 +5,11 @@ import { deepMerge } from '../../utils';
 
 import { Heading } from '../Heading';
 import { Paragraph } from '../Paragraph';
+import { Anchor } from '../Anchor';
 
 class GrommetMarkdown extends Component {
   render() {
-    const { components, theme, ...rest } = this.props;
+    const { components, options, theme, ...rest } = this.props;
 
     const heading = [1, 2, 3, 4].reduce((obj, level) => {
       const result = { ...obj };
@@ -22,9 +23,11 @@ class GrommetMarkdown extends Component {
     const overrides = deepMerge(
       {
         p: { component: Paragraph },
+        a: { component: Anchor },
       },
       heading,
       components,
+      options && options.overrides,
     );
 
     return <Markdown options={{ overrides }} {...rest} />;

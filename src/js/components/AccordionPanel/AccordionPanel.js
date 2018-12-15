@@ -24,7 +24,7 @@ class AccordionPanel extends Component {
       onMouseOver,
       theme: { dark },
     } = this.props;
-    this.setState({ hover: dark ? 'light-4' : 'dark-6' });
+    this.setState({ hover: dark ? 'light-4' : 'dark-3' });
     if (onMouseOver) {
       onMouseOver(args);
     }
@@ -43,7 +43,7 @@ class AccordionPanel extends Component {
       onFocus,
       theme: { dark },
     } = this.props;
-    this.setState({ hover: dark ? 'light-4' : 'dark-6' });
+    this.setState({ hover: dark ? 'light-4' : 'dark-3' });
     if (onFocus) {
       onFocus(args);
     }
