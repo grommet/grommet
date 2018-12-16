@@ -5,7 +5,13 @@ import { genericProps, getAvailableAtBadge } from '../../utils';
 export const doc = Stack => {
   const DocumentedStack = describe(Stack)
     .availableAt(getAvailableAtBadge('Stack'))
-    .description('Stacks components on top of the first child component.')
+    .description(
+      `A container that stacks contents on top of each other. One child is
+      designated as the \`guidingChild\` which determines the size. All
+      other children are placed within that size, either above or below
+      based on their order. Stack is typically used to decorate Meter, Chart,
+      or icons.`,
+    )
     .usage(
       `import { Stack } from 'grommet';
 <Stack />`,
@@ -47,8 +53,7 @@ export const doc = Stack => {
 
 export const themeDoc = {
   'stack.extend': {
-    description:
-      'Any additional style for the control of the Stack component.',
+    description: 'Any additional style for the control of the Stack component.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },

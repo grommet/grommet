@@ -28,7 +28,9 @@ export const doc = Box => {
   const DocumentedBox = describe(Box)
     .availableAt(getAvailableAtBadge('Box'))
     .description(
-      'A flexible box that lays out its contents along a single direction.',
+      `A container that lays out its contents in one direction. Box
+      provides CSS flexbox capabilities for layout, as well as general
+      styling of things like background color, border, and animation.`,
     )
     .usage("import { Box } from 'grommet';\n<Box />");
   DocumentedBox.propTypes = {

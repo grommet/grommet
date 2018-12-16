@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 export const doc = Keyboard => {
   const DocumentedKeyboard = describe(Keyboard)
-    .description('A react component that handles keyboard key presses.')
+    .description('A handler of keyboard key presses.')
     .usage(
       `import { Keyboard } from 'grommet';
 <Keyboard onUp={() => {}} />`,

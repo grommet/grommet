@@ -9,8 +9,9 @@ export const doc = Menu => {
   const DocumentedMenu = describe(Menu)
     .availableAt(getAvailableAtBadge('Menu'))
     .description(
-      `Presents a list of choices within a drop down via a control that
-      opens it.`,
+      `A control that opens a Drop containing plain Buttons. The labels
+      and behavior of the contained Buttons are described via the \`items\`
+      property.`,
     )
     .usage(
       `import { Menu } from 'grommet';

@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils';
 export const doc = TextArea => {
   const DocumentedTextArea = describe(TextArea)
     .availableAt(getAvailableAtBadge('TextArea'))
-    .description('A textarea.')
+    .description('A control to input multiple lines of text.')
     .usage(
       `import { TextArea } from 'grommet';
 <TextArea id='item' name='item' />`,

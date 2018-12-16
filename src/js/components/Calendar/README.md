@@ -1,5 +1,5 @@
 ## Calendar
-Calendar of days in months.
+A calendar of days displayed by month.
       It can be used to select a single date, a range of dates, or multiple
       individual dates.
 

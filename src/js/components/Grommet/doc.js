@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils';
 export const doc = Grommet => {
   const DocumentedGrommet = describe(Grommet)
     .availableAt(getAvailableAtBadge('Grommet'))
-    .description('This is the top level Grommet container.')
+    .description('The top level Grommet container.')
     .usage(
       `import { Grommet } from 'grommet';
 <Grommet>...</Grommet>`,
