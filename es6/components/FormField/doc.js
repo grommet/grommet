@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils';
 export var doc = function doc(FormField) {
-  var DocumentedFormField = describe(FormField).availableAt(getAvailableAtBadge('FormField')).description('A field in a form.').usage("import { FormField } from 'grommet';\n<FormField />");
+  var DocumentedFormField = describe(FormField).availableAt(getAvailableAtBadge('FormField')).description("A single field in a form. FormField wraps an input component with\n      a label, help, and/or error messaging. It typically contains an input\n      control like TextInput, TextArea, Select, etc.").usage("import { FormField } from 'grommet';\n<FormField />");
   DocumentedFormField.propTypes = {
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description('Any error text describing issues with the field'),
     help: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description('Any help text describing how the field works'),

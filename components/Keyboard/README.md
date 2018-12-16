@@ -1,5 +1,5 @@
 ## Keyboard
-A react component that handles keyboard key presses.
+A handler of keyboard key presses.
 
 ## Usage
 

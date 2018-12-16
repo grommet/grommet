@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Calendar) {
-  var DocumentedCalendar = describe(Calendar).availableAt(getAvailableAtBadge('Calendar')).description("Calendar of days in months.\n      It can be used to select a single date, a range of dates, or multiple\n      individual dates.").usage("import { Calendar } from 'grommet';\n<Calendar />");
+  var DocumentedCalendar = describe(Calendar).availableAt(getAvailableAtBadge('Calendar')).description("A calendar of days displayed by month.\n      It can be used to select a single date, a range of dates, or multiple\n      individual dates.").usage("import { Calendar } from 'grommet';\n<Calendar />");
   DocumentedCalendar.propTypes = _extends({}, genericProps, {
     animate: PropTypes.bool.description("Whether to animate the calender as the user interacts with it.").defaultValue(true),
     bounds: PropTypes.arrayOf(PropTypes.string).description("An array of two numbers indicating the limits on\n        navigation in ISO8601 format"),

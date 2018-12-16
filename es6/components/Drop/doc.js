@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Drop) {
-  var DocumentedDrop = describe(Drop).availableAt(getAvailableAtBadge('Drop')).description('A drop container that opens next to a target.').usage("import { Drop } from 'grommet';\n<Drop target={reference}>...</Drop>");
+  var DocumentedDrop = describe(Drop).availableAt(getAvailableAtBadge('Drop')).description('A container that is overlaid next to a target.').usage("import { Drop } from 'grommet';\n<Drop target={reference}>...</Drop>");
   DocumentedDrop.propTypes = {
     align: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),

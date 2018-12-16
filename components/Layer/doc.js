@@ -10,7 +10,7 @@ var _utils = require("../../utils");
 var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 
 var doc = function doc(Layer) {
-  var DocumentedLayer = (0, _reactDesc.describe)(Layer).availableAt((0, _utils.getAvailableAtBadge)('Layer')).description("A modal overlay. It is the caller's responsibility to provide a control for\n      the user to close the layer.").usage("import { Layer } from 'grommet';\n<Layer />");
+  var DocumentedLayer = (0, _reactDesc.describe)(Layer).availableAt((0, _utils.getAvailableAtBadge)('Layer')).description("An overlay. Layer is typically modal and anchored to an edge, corner, or\n      center of the window. It is the caller's responsibility to provide a\n      control for the user to close the layer.").usage("import { Layer } from 'grommet';\n<Layer />");
   DocumentedLayer.propTypes = {
     full: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(['vertical', 'horizontal'])]).description('Whether the width and/or height should fill the current viewport size.').defaultValue(false),
     margin: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none'].concat(PAD_SIZES)), _reactDesc.PropTypes.shape({

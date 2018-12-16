@@ -6,7 +6,7 @@ exports.doc = void 0;
 var _reactDesc = require("react-desc");
 
 var doc = function doc(Keyboard) {
-  var DocumentedKeyboard = (0, _reactDesc.describe)(Keyboard).description('A react component that handles keyboard key presses.').usage("import { Keyboard } from 'grommet';\n<Keyboard onUp={() => {}} />");
+  var DocumentedKeyboard = (0, _reactDesc.describe)(Keyboard).description('A handler of keyboard key presses.').usage("import { Keyboard } from 'grommet';\n<Keyboard onUp={() => {}} />");
   DocumentedKeyboard.propTypes = {
     target: _reactDesc.PropTypes.oneOf(['component', 'document']).description('Where to listen for the keyboard presses.').defaultValue('component'),
     onBackspace: _reactDesc.PropTypes.func.description('Function that will be called when the user presses the backspace key.'),

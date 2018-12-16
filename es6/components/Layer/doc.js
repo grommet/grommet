@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils';
 var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 export var doc = function doc(Layer) {
-  var DocumentedLayer = describe(Layer).availableAt(getAvailableAtBadge('Layer')).description("A modal overlay. It is the caller's responsibility to provide a control for\n      the user to close the layer.").usage("import { Layer } from 'grommet';\n<Layer />");
+  var DocumentedLayer = describe(Layer).availableAt(getAvailableAtBadge('Layer')).description("An overlay. Layer is typically modal and anchored to an edge, corner, or\n      center of the window. It is the caller's responsibility to provide a\n      control for the user to close the layer.").usage("import { Layer } from 'grommet';\n<Layer />");
   DocumentedLayer.propTypes = {
     full: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['vertical', 'horizontal'])]).description('Whether the width and/or height should fill the current viewport size.').defaultValue(false),
     margin: PropTypes.oneOfType([PropTypes.oneOf(['none'].concat(PAD_SIZES)), PropTypes.shape({

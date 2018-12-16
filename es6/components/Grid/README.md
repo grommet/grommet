@@ -1,9 +1,9 @@
 ## Grid
 A grid system for laying out content. To use, define the
 rows and columns, create area names for adjacent cells, and then
-place Box components inside those areas using the Box.gridArea property.
+place Box components inside those areas using the gridArea property.
 See https://css-tricks.com/snippets/css/complete-guide-grid/.
-The availability of Grid can be tested via 'Grid.available'. Use this
+The availability of Grid can be tested via `Grid.available`. Use this
 to create fallback rendering for older browsers, like ie11.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Grid&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grid&module=%2Fsrc%2FGrid.js)

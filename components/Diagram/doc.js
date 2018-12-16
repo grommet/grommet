@@ -8,7 +8,7 @@ var _reactDesc = require("react-desc");
 var _utils = require("../../utils");
 
 var doc = function doc(Diagram) {
-  var DocumentedDiagram = (0, _reactDesc.describe)(Diagram).availableAt((0, _utils.getAvailableAtBadge)('Diagram')).description("Graphical lines between DOM elements.\n      Diagram is meant to be used with Stack.").usage("import { Diagram } from 'grommet';\n<Diagram />");
+  var DocumentedDiagram = (0, _reactDesc.describe)(Diagram).availableAt((0, _utils.getAvailableAtBadge)('Diagram')).description("Graphical connection lines. Diagram is meant to be used with Stack.\n      Boxes can be used in the `guidingChild` layer of Stack and then\n      Diagram can be used to draw lines connecting the Boxes.").usage("import { Diagram } from 'grommet';\n<Diagram />");
   DocumentedDiagram.propTypes = {
     connections: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       anchor: _reactDesc.PropTypes.oneOf(['center', 'vertical', 'horizontal']),
