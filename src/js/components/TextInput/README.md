@@ -35,6 +35,19 @@ How to align the drop. Defaults to `{
 }
 ```
 
+**dropHeight**
+
+The height of the drop container.
+
+```
+xsmall
+small
+medium
+large
+xlarge
+string
+```
+
 **dropTarget**
 
 Target where any suggestions drop will be aligned to. This should be

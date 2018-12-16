@@ -2,6 +2,7 @@ import * as React from "react";
 
 export interface TextInputProps {
   dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",right?: "left" | "right",left?: "left" | "right"};
+  dropHeight?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   dropTarget?: object;
   id?: string;
   focusIndicator?: boolean;

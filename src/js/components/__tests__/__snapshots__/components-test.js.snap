@@ -2606,6 +2606,16 @@ function",
         "name": "dropAlign",
       },
       Object {
+        "description": "The height of the drop container.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "dropHeight",
+      },
+      Object {
         "description": "Target where the options drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be
       aligned to the Select itself by default.",
@@ -2706,16 +2716,6 @@ large
 xlarge
 string",
         "name": "size",
-      },
-      Object {
-        "description": "The height of the drop container.",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "dropHeight",
       },
       Object {
         "description": "Currently selected value. This can be an array
@@ -3087,6 +3087,16 @@ Only use this when the containing context provides sufficient affordance.",
     right
 }",
         "name": "dropAlign",
+      },
+      Object {
+        "description": "The height of the drop container.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "dropHeight",
       },
       Object {
         "description": "Target where any suggestions drop will be aligned to. This should be
