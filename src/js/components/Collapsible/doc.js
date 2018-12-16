@@ -19,3 +19,21 @@ export const doc = Collapsible => {
 
   return DocumentedCollapsible;
 };
+
+export const themeDoc = {
+  'collapsible.minSpeed': {
+    description: 'The minimum speed of Collapsible animation in milliseconds.',
+    type: 'number',
+    defaultValue: 200,
+  },
+  'collapsible.baseline': {
+    description: 'Default height to be used to calculate the optimal collapsible speed.',
+    type: 'number',
+    defaultValue: 500,
+  },
+  'collapsible.extend': {
+    description: 'Any additional style for the Anchor when hovering.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+}
