@@ -26,7 +26,12 @@ Required. Array of objects describing the connections.
     center
     vertical
     horizontal,
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   fromTarget: 
     string
     object,

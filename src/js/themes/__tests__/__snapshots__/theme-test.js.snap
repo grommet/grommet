@@ -6,8 +6,10 @@ exports[`Grommet custom theme 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #1D67E3;
-  stroke: #1D67E3;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
 }
 
 .c4 g {
@@ -38,6 +40,8 @@ exports[`Grommet custom theme 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
   fill: #cc6633;
   stroke: #cc6633;
 }
@@ -70,8 +74,10 @@ exports[`Grommet custom theme 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #6194EB;
-  stroke: #6194EB;
+  width: 24px;
+  height: 24px;
+  fill: #6FFFB0;
+  stroke: #6FFFB0;
 }
 
 .c10 g {
@@ -165,7 +171,7 @@ exports[`Grommet custom theme 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #1D67E3;
+  color: #7D4CDB;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -199,7 +205,7 @@ exports[`Grommet custom theme 1`] = `
   box-sizing: border-box;
   font-size: inherit;
   line-height: inherit;
-  color: #6194EB;
+  color: #6FFFB0;
   font-weight: 600;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -280,11 +286,7 @@ exports[`Grommet custom theme 1`] = `
         <svg
           aria-label="Add"
           className="c4"
-          height="24px"
-          role="img"
-          version="1.1"
           viewBox="0 0 24 24"
-          width="24px"
         >
           <path
             d="M12,22 L12,2 M2,12 L22,12"
@@ -315,11 +317,7 @@ exports[`Grommet custom theme 1`] = `
         <svg
           aria-label="Add"
           className="c7"
-          height="24px"
-          role="img"
-          version="1.1"
           viewBox="0 0 24 24"
-          width="24px"
         >
           <path
             d="M12,22 L12,2 M2,12 L22,12"
@@ -354,11 +352,7 @@ exports[`Grommet custom theme 1`] = `
         <svg
           aria-label="Add"
           className="c10"
-          height="24px"
-          role="img"
-          version="1.1"
           viewBox="0 0 24 24"
-          width="24px"
         >
           <path
             d="M12,22 L12,2 M2,12 L22,12"
@@ -389,11 +383,7 @@ exports[`Grommet custom theme 1`] = `
         <svg
           aria-label="Add"
           className="c7"
-          height="24px"
-          role="img"
-          version="1.1"
           viewBox="0 0 24 24"
-          width="24px"
         >
           <path
             d="M12,22 L12,2 M2,12 L22,12"
@@ -494,7 +484,7 @@ exports[`Grommet dark theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #444444;
+  background: #555555;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -512,7 +502,7 @@ exports[`Grommet dark theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #555555;
+  background: #777777;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -530,7 +520,7 @@ exports[`Grommet dark theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #666666;
+  background: #999999;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -548,7 +538,7 @@ exports[`Grommet dark theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #777777;
+  background: #FFCA58;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -566,7 +556,7 @@ exports[`Grommet dark theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #FFCA58;
+  background: #F8F8F8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -584,7 +574,7 @@ exports[`Grommet dark theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #F6F6F6;
+  background: #F2F2F2;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -602,7 +592,7 @@ exports[`Grommet dark theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #EEEEEE;
+  background: #EDEDED;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -620,7 +610,7 @@ exports[`Grommet dark theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #DDDDDD;
+  background: #DADADA;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -638,7 +628,7 @@ exports[`Grommet dark theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #CCCCCC;
+  background: #EB6060;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -656,7 +646,7 @@ exports[`Grommet dark theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #BBBBBB;
+  background: #01C781;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -674,7 +664,7 @@ exports[`Grommet dark theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #EB6060;
+  background: #6095EB;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -692,7 +682,7 @@ exports[`Grommet dark theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #01C781;
+  background: #FF3333;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -710,7 +700,7 @@ exports[`Grommet dark theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #6095EB;
+  background: #a8a8a8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -728,42 +718,6 @@ exports[`Grommet dark theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #FF3333;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  background: #a8a8a8;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
   background: #7DD892;
   min-width: 0;
   min-height: 0;
@@ -773,7 +727,7 @@ exports[`Grommet dark theme 1`] = `
   padding: 0px;
 }
 
-.c22 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1037,30 +991,6 @@ exports[`Grommet dark theme 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c21 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c21 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c22 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c22 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
@@ -1137,7 +1067,7 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c9"
+    className="c8"
   >
     <span
       className="c2"
@@ -1146,7 +1076,16 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c10"
+    className="c8"
+  >
+    <span
+      className="c2"
+    >
+      dark-6
+    </span>
+  </div>
+  <div
+    className="c9"
   >
     <span
       className="c2"
@@ -1155,7 +1094,7 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c11"
+    className="c10"
   >
     <span
       className="c2"
@@ -1164,7 +1103,7 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c12"
+    className="c11"
   >
     <span
       className="c2"
@@ -1173,7 +1112,7 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c13"
+    className="c12"
   >
     <span
       className="c2"
@@ -1182,7 +1121,7 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c14"
+    className="c13"
   >
     <span
       className="c2"
@@ -1191,7 +1130,7 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c15"
+    className="c13"
   >
     <span
       className="c2"
@@ -1200,7 +1139,16 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c16"
+    className="c13"
+  >
+    <span
+      className="c2"
+    >
+      light-6
+    </span>
+  </div>
+  <div
+    className="c14"
   >
     <span
       className="c2"
@@ -1209,7 +1157,7 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c17"
+    className="c15"
   >
     <span
       className="c2"
@@ -1218,7 +1166,7 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c18"
+    className="c16"
   >
     <span
       className="c2"
@@ -1227,7 +1175,7 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c19"
+    className="c17"
   >
     <span
       className="c2"
@@ -1236,7 +1184,7 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c20"
+    className="c18"
   >
     <span
       className="c2"
@@ -1245,7 +1193,7 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c21"
+    className="c19"
   >
     <span
       className="c2"
@@ -1254,7 +1202,7 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c20"
+    className="c18"
   >
     <span
       className="c2"
@@ -1263,7 +1211,7 @@ exports[`Grommet dark theme 1`] = `
     </span>
   </div>
   <div
-    className="c22"
+    className="c20"
   >
     <span
       className="c2"
@@ -1284,7 +1232,7 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #FD6FFF;
+  background: #6FFFB0;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1303,7 +1251,7 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #61EC9F;
+  background: #FD6FFF;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1322,7 +1270,7 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #60EBE1;
+  background: #81FCED;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1379,7 +1327,7 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #444444;
+  background: #555555;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1398,7 +1346,7 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #555555;
+  background: #777777;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1417,8 +1365,8 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #666666;
-  color: #f8f8f8;
+  background: #999999;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1436,8 +1384,8 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #777777;
-  color: #f8f8f8;
+  background: #F8F8F8;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1455,7 +1403,7 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #F6F6F6;
+  background: #F2F2F2;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1474,7 +1422,7 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #EEEEEE;
+  background: #EDEDED;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1493,7 +1441,7 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #DDDDDD;
+  background: #DADADA;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1512,8 +1460,8 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #CCCCCC;
-  color: #444444;
+  background: #00873D;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1523,25 +1471,6 @@ exports[`Grommet default theme 1`] = `
 }
 
 .c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  background: #BBBBBB;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
-.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1560,6 +1489,25 @@ exports[`Grommet default theme 1`] = `
   padding: 0px;
 }
 
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  background: #00739D;
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
 .c17 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1569,8 +1517,8 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #BE60EB;
-  color: #444444;
+  background: #FF4040;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1588,7 +1536,7 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #00C781;
+  background: #CCCCCC;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1607,7 +1555,7 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #EB6060;
+  background: #00C781;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1626,45 +1574,7 @@ exports[`Grommet default theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #a8a8a8;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  background: #7CD992;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
-.c22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  background: #F7E463;
+  background: #FFAA15;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1917,30 +1827,6 @@ exports[`Grommet default theme 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c21 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c21 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c22 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c22 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
@@ -2017,12 +1903,21 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    className="c10"
+    className="c9"
   >
     <span
       className="c2"
     >
       dark-5
+    </span>
+  </div>
+  <div
+    className="c9"
+  >
+    <span
+      className="c2"
+    >
+      dark-6
     </span>
   </div>
   <div
@@ -2035,7 +1930,7 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    className="c11"
+    className="c10"
   >
     <span
       className="c2"
@@ -2044,7 +1939,7 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    className="c12"
+    className="c11"
   >
     <span
       className="c2"
@@ -2053,7 +1948,7 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    className="c13"
+    className="c12"
   >
     <span
       className="c2"
@@ -2062,7 +1957,7 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    className="c14"
+    className="c13"
   >
     <span
       className="c2"
@@ -2071,7 +1966,7 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    className="c15"
+    className="c13"
   >
     <span
       className="c2"
@@ -2080,7 +1975,16 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    className="c16"
+    className="c13"
+  >
+    <span
+      className="c2"
+    >
+      light-6
+    </span>
+  </div>
+  <div
+    className="c14"
   >
     <span
       className="c2"
@@ -2089,7 +1993,7 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    className="c17"
+    className="c15"
   >
     <span
       className="c2"
@@ -2098,7 +2002,7 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    className="c18"
+    className="c16"
   >
     <span
       className="c2"
@@ -2107,7 +2011,7 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    className="c19"
+    className="c17"
   >
     <span
       className="c2"
@@ -2116,7 +2020,7 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    className="c20"
+    className="c18"
   >
     <span
       className="c2"
@@ -2125,7 +2029,7 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    className="c21"
+    className="c19"
   >
     <span
       className="c2"
@@ -2134,7 +2038,7 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    className="c20"
+    className="c18"
   >
     <span
       className="c2"
@@ -2143,7 +2047,7 @@ exports[`Grommet default theme 1`] = `
     </span>
   </div>
   <div
-    className="c22"
+    className="c20"
   >
     <span
       className="c2"
@@ -2183,7 +2087,7 @@ exports[`Grommet hpe theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #444444;
+  background: #555555;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -2202,7 +2106,7 @@ exports[`Grommet hpe theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #555555;
+  background: #777777;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -2221,8 +2125,8 @@ exports[`Grommet hpe theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #666666;
-  color: #f8f8f8;
+  background: #999999;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2240,8 +2144,8 @@ exports[`Grommet hpe theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #777777;
-  color: #f8f8f8;
+  background: #F8F8F8;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2259,7 +2163,7 @@ exports[`Grommet hpe theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #F6F6F6;
+  background: #F2F2F2;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2278,7 +2182,7 @@ exports[`Grommet hpe theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #EEEEEE;
+  background: #EDEDED;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2297,7 +2201,7 @@ exports[`Grommet hpe theme 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #DDDDDD;
+  background: #DADADA;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2307,7 +2211,7 @@ exports[`Grommet hpe theme 1`] = `
   padding: 0px;
 }
 
-.c14 {
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2317,25 +2221,6 @@ exports[`Grommet hpe theme 1`] = `
   max-width: 100%;
   margin: 0px;
   background: #CCCCCC;
-  color: #444444;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 0px;
-}
-
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  background: #BBBBBB;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2421,7 +2306,7 @@ exports[`Grommet hpe theme 1`] = `
   padding: 0px;
 }
 
-.c16 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2440,7 +2325,7 @@ exports[`Grommet hpe theme 1`] = `
   padding: 0px;
 }
 
-.c17 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2459,7 +2344,7 @@ exports[`Grommet hpe theme 1`] = `
   padding: 0px;
 }
 
-.c18 {
+.c16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2478,7 +2363,7 @@ exports[`Grommet hpe theme 1`] = `
   padding: 0px;
 }
 
-.c19 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2497,7 +2382,7 @@ exports[`Grommet hpe theme 1`] = `
   padding: 0px;
 }
 
-.c20 {
+.c19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2629,25 +2514,13 @@ exports[`Grommet hpe theme 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
+  .c18 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c14 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
+  .c18 {
     padding: 0px;
   }
 }
@@ -2701,6 +2574,30 @@ exports[`Grommet hpe theme 1`] = `
 }
 
 @media only screen and (max-width:768px) {
+  .c14 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
   .c16 {
     margin: 0px;
   }
@@ -2725,18 +2622,6 @@ exports[`Grommet hpe theme 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c18 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c19 {
     margin: 0px;
   }
@@ -2744,18 +2629,6 @@ exports[`Grommet hpe theme 1`] = `
 
 @media only screen and (max-width:768px) {
   .c19 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c20 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c20 {
     padding: 0px;
   }
 }
@@ -2836,12 +2709,21 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c10"
+    className="c9"
   >
     <span
       className="c2"
     >
       dark-5
+    </span>
+  </div>
+  <div
+    className="c9"
+  >
+    <span
+      className="c2"
+    >
+      dark-6
     </span>
   </div>
   <div
@@ -2854,7 +2736,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c11"
+    className="c10"
   >
     <span
       className="c2"
@@ -2863,7 +2745,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c12"
+    className="c11"
   >
     <span
       className="c2"
@@ -2872,7 +2754,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c13"
+    className="c12"
   >
     <span
       className="c2"
@@ -2881,7 +2763,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c14"
+    className="c13"
   >
     <span
       className="c2"
@@ -2890,7 +2772,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c15"
+    className="c13"
   >
     <span
       className="c2"
@@ -2899,7 +2781,16 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c16"
+    className="c13"
+  >
+    <span
+      className="c2"
+    >
+      light-6
+    </span>
+  </div>
+  <div
+    className="c14"
   >
     <span
       className="c2"
@@ -2908,7 +2799,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c17"
+    className="c15"
   >
     <span
       className="c2"
@@ -2917,7 +2808,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c18"
+    className="c16"
   >
     <span
       className="c2"
@@ -2926,7 +2817,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c19"
+    className="c17"
   >
     <span
       className="c2"
@@ -2935,7 +2826,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c14"
+    className="c18"
   >
     <span
       className="c2"
@@ -2953,7 +2844,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c14"
+    className="c18"
   >
     <span
       className="c2"
@@ -2962,7 +2853,7 @@ exports[`Grommet hpe theme 1`] = `
     </span>
   </div>
   <div
-    className="c20"
+    className="c19"
   >
     <span
       className="c2"

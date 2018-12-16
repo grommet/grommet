@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { focusStyle, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const disabledStyle = `
   opacity: 0.5;
@@ -15,7 +16,7 @@ const hoverStyle = css`
   }
 `;
 
-export const StyledCheckBoxIcon = styled.svg`
+const StyledCheckBoxIcon = styled.svg`
   box-sizing: border-box;
   position: absolute;
   stroke-width: ${props => props.theme.checkBox.check.thickness};
@@ -28,7 +29,13 @@ export const StyledCheckBoxIcon = styled.svg`
   ${props => props.theme.checkBox.icon.extend};
 `;
 
-export const StyledCheckBoxContainer = styled.label`
+StyledCheckBoxIcon.defaultProps = {};
+Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, defaultProps);
+
+const StyledCheckBoxContainer = styled.label`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   user-select: none;
   ${props => props.disabled && disabledStyle}
   ${props => !props.disabled && 'cursor: pointer;'}
@@ -36,7 +43,10 @@ export const StyledCheckBoxContainer = styled.label`
   ${props => props.theme.checkBox.extend}
 `;
 
-export const StyledCheckBoxInput = styled.input`
+StyledCheckBoxContainer.defaultProps = {};
+Object.setPrototypeOf(StyledCheckBoxContainer.defaultProps, defaultProps);
+
+const StyledCheckBoxInput = styled.input`
   position: absolute;
   opacity: 0;
   top: 0;
@@ -55,11 +65,18 @@ export const StyledCheckBoxInput = styled.input`
   }
 `;
 
-export const StyledCheckBoxBox = styled.div`
+StyledCheckBoxInput.defaultProps = {};
+Object.setPrototypeOf(StyledCheckBoxInput.defaultProps, defaultProps);
+
+const StyledCheckBoxBox = styled.div`
+  ${props => props.focus && focusStyle};
   ${props => props.theme.checkBox.check.extend};
 `;
 
-export const StyledCheckBoxToggle = styled.span`
+StyledCheckBoxBox.defaultProps = {};
+Object.setPrototypeOf(StyledCheckBoxBox.defaultProps, defaultProps);
+
+const StyledCheckBoxToggle = styled.span`
   box-sizing: border-box;
   position: relative;
   vertical-align: middle;
@@ -79,7 +96,10 @@ export const StyledCheckBoxToggle = styled.span`
   ${props => props.theme.checkBox.toggle.extend};
 `;
 
-export const StyledCheckBoxKnob = styled.span`
+StyledCheckBoxToggle.defaultProps = {};
+Object.setPrototypeOf(StyledCheckBoxToggle.defaultProps, defaultProps);
+
+const StyledCheckBoxKnob = styled.span`
   box-sizing: border-box;
   position: absolute;
   top: -${props => props.theme.checkBox.border.width};
@@ -96,6 +116,22 @@ export const StyledCheckBoxKnob = styled.span`
   ${props => props.theme.checkBox.toggle.knob.extend};
 `;
 
-export const StyledCheckBox = styled.div`
+StyledCheckBoxKnob.defaultProps = {};
+Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, defaultProps);
+
+const StyledCheckBox = styled.div`
   position: relative;
 `;
+
+StyledCheckBox.defaultProps = {};
+Object.setPrototypeOf(StyledCheckBox.defaultProps, defaultProps);
+
+export {
+  StyledCheckBoxIcon,
+  StyledCheckBoxContainer,
+  StyledCheckBoxInput,
+  StyledCheckBoxBox,
+  StyledCheckBoxToggle,
+  StyledCheckBoxKnob,
+  StyledCheckBox,
+};

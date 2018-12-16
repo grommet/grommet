@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from '../hocs';
 
 import { Header } from './Header';
 import { Footer } from './Footer';
@@ -85,7 +82,7 @@ class DataTable extends Component {
       resizeable,
       size,
       sortable,
-      theme,
+      onSearch, // removing unknown DOM attributes
       ...rest
     } = this.props;
     const {
@@ -106,7 +103,7 @@ class DataTable extends Component {
     }
 
     return (
-      <StyledDataTable theme={theme} {...rest}>
+      <StyledDataTable {...rest}>
         <Header
           columns={columns}
           filtering={filtering}
@@ -115,7 +112,6 @@ class DataTable extends Component {
           groupState={groupState}
           size={size}
           sort={sort}
-          theme={theme}
           widths={widths}
           onFiltering={this.onFiltering}
           onFilter={this.onFilter}
@@ -130,7 +126,6 @@ class DataTable extends Component {
             groups={groups}
             groupState={groupState}
             primaryProperty={primaryProperty}
-            theme={theme}
             onToggle={this.onToggleGroup}
           />
         ) : (
@@ -140,7 +135,6 @@ class DataTable extends Component {
             onMore={onMore}
             primaryProperty={primaryProperty}
             size={size}
-            theme={theme}
           />
         )}
         {showFooter && (
@@ -149,7 +143,6 @@ class DataTable extends Component {
             footerValues={footerValues}
             groups={groups}
             size={size}
-            theme={theme}
           />
         )}
       </StyledDataTable>
@@ -161,6 +154,6 @@ let DataTableDoc;
 if (process.env.NODE_ENV !== 'production') {
   DataTableDoc = require('./doc').doc(DataTable); // eslint-disable-line global-require
 }
-const DataTableWrapper = compose(withTheme)(DataTableDoc || DataTable);
+const DataTableWrapper = DataTableDoc || DataTable;
 
 export { DataTableWrapper as DataTable };

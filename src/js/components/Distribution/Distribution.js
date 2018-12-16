@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'recompose';
 
 import { Box } from '../Box';
 import { Text } from '../Text';
-
-import { withTheme } from '../hocs';
 
 const Value = ({ basis, children }) => (
   <Box basis={basis} flex="shrink" overflow="hidden">
@@ -38,7 +35,6 @@ class Distribution extends Component {
       direction,
       fill,
       gap,
-      theme,
       values,
       ...rest
     } = this.props;
@@ -124,6 +120,6 @@ let DistributionDoc;
 if (process.env.NODE_ENV !== 'production') {
   DistributionDoc = require('./doc').doc(Distribution); // eslint-disable-line global-require
 }
-const DistributionWrapper = compose(withTheme)(DistributionDoc || Distribution);
+const DistributionWrapper = DistributionDoc || Distribution;
 
 export { DistributionWrapper as Distribution };

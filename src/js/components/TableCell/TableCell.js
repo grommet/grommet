@@ -1,8 +1,11 @@
 import React from 'react';
 import { compose } from 'recompose';
 
+import { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
+
 import { Box } from '../Box';
-import { withTheme } from '../hocs';
 
 import { TableContext } from '../Table/TableContext';
 import { StyledTableCell } from '../Table/StyledTable';
@@ -40,7 +43,6 @@ const TableCell = ({
           size={size}
           tableContext={tableContext}
           tableContextTheme={tableContextTheme}
-          theme={theme}
           verticalAlign={
             verticalAlign ||
             (tableContextTheme ? tableContextTheme.verticalAlign : undefined)
@@ -59,6 +61,9 @@ const TableCell = ({
     }}
   </TableContext.Consumer>
 );
+
+TableCell.defaultProps = {};
+Object.setPrototypeOf(TableCell.defaultProps, defaultProps);
 
 let TableCellDoc;
 if (process.env.NODE_ENV !== 'production') {

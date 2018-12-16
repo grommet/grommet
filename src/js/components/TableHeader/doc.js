@@ -6,7 +6,8 @@ export const doc = TableHeader => {
     .usage(
       `import { TableHeader } from 'grommet';
 <TableHeader />`,
-    );
+    )
+    .intrinsicElement('thead');
 
   return DocumentedTableHeader;
 };

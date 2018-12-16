@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { genericStyles, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const colorStyle = css`
   color: ${props => normalizeColor(props.colorProp, props.theme)};
@@ -26,7 +27,7 @@ const textAlignStyle = css`
   text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
 `;
 
-export const StyledParagraph = styled.p`
+const StyledParagraph = styled.p`
   ${genericStyles}
   ${props => sizeStyle(props)}
   ${props => props.textAlign && textAlignStyle}
@@ -34,3 +35,8 @@ export const StyledParagraph = styled.p`
 
   ${props => props.theme.paragraph && props.theme.paragraph.extend}
 `;
+
+StyledParagraph.defaultProps = {};
+Object.setPrototypeOf(StyledParagraph.defaultProps, defaultProps);
+
+export { StyledParagraph };

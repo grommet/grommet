@@ -1,5 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 
+import { defaultProps } from '../../default-props';
+
 import {
   backgroundStyle,
   breakpointStyle,
@@ -85,9 +87,9 @@ const directionStyle = (direction, theme) => {
 
 const elevationStyle = css`
   box-shadow: ${props =>
-    props.theme.global.elevation[
-      (props.priorTheme || props.theme).dark ? 'dark' : 'light'
-    ][props.elevationProp]};
+    props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
+      props.elevationProp
+    ]};
 `;
 
 const FLEX_MAP = {
@@ -498,11 +500,10 @@ const animationInitialStyle = item => {
   }
   if (Array.isArray(item)) {
     return item
-      .map(
-        a =>
-          typeof a === 'string'
-            ? animationObjectInitialStyle({ type: a })
-            : animationObjectInitialStyle(a),
+      .map(a =>
+        typeof a === 'string'
+          ? animationObjectInitialStyle({ type: a })
+          : animationObjectInitialStyle(a),
       )
       .join('');
   }
@@ -520,7 +521,7 @@ const animationStyle = css`
 `;
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-export const StyledBox = styled.div`
+const StyledBox = styled.div`
   display: flex;
   box-sizing: border-box;
   outline: none;
@@ -595,9 +596,17 @@ const gapStyle = (directionProp, gap, responsive, theme) => {
   return styles;
 };
 
-export const StyledBoxGap = styled.div`
+StyledBox.defaultProps = {};
+Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
+
+const StyledBoxGap = styled.div`
   flex: 0 0 auto;
   ${props =>
     props.gap &&
     gapStyle(props.directionProp, props.gap, props.responsive, props.theme)};
 `;
+
+StyledBoxGap.defaultProps = {};
+Object.setPrototypeOf(StyledBoxGap.defaultProps, defaultProps);
+
+export { StyledBox, StyledBoxGap };

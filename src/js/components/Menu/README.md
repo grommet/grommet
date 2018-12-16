@@ -182,7 +182,7 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick.
+The object values can be any Button prop, for example: label and onClick. Defaults to `[]`.
 
 ```
 [object]
@@ -223,3 +223,44 @@ xlarge
 string
 ```
   
+## Theme
+  
+**global.colors.control**
+
+The color to use for the icon. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**menu.background**
+
+The color for the background of the menu Drop when it is open. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**menu.extend**
+
+Any additional style for the Menu. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**menu.icons.down**
+
+The icon to show to the right of the label. Expects `React.element`.
+
+Defaults to
+
+```
+<FormDown />
+```

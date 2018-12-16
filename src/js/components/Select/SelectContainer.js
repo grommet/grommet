@@ -1,16 +1,17 @@
-/* eslint-disable react/no-find-dom-node */
 import React, { createRef, Component } from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
 import {
   debounce,
   debounceDelay,
   isNodeAfterScroll,
   isNodeBeforeScroll,
+  selectedStyle,
   setFocusWithoutScroll,
 } from '../../utils';
 
-import { withTheme } from '../hocs';
+import { defaultProps } from '../../default-props';
+
 import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
@@ -18,27 +19,23 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
 import { SelectOption } from './SelectOption';
+import { StyledContainer } from './StyledSelect';
 
-const ContainerBox = styled(Box)`
-  max-height: inherit;
-
-  /* IE11 hack to get drop contents to not overflow */
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    width: 100%;
-  }
-
-  ${props =>
-    props.theme.select.container && props.theme.select.container.extend};
+// position relative is so scroll can be managed correctly
+const OptionsBox = styled(Box)`
+  position: relative;
+  scroll-behavior: smooth;
 `;
 
-const OptionsBox = styled(Box)`
-  scroll-behavior: smooth;
+const OptionBox = styled(Box)`
+  ${props => props.selected && selectedStyle}
 `;
 
 class SelectContainer extends Component {
   static defaultProps = {
     children: null,
     disabled: undefined,
+    emptySearchMessage: 'No matches found',
     id: undefined,
     multiple: false,
     name: undefined,
@@ -50,11 +47,11 @@ class SelectContainer extends Component {
     value: '',
   };
 
-  optionsRef = {};
+  optionRefs = {};
 
   searchRef = createRef();
 
-  selectRef = createRef();
+  optionsRef = createRef();
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { options, value, onSearch } = nextProps;
@@ -89,30 +86,32 @@ class SelectContainer extends Component {
     // timeout need to send the operation through event loop and allow time to the portal
     // to be available
     setTimeout(() => {
-      const selectNode = this.selectRef.current;
+      const optionsNode = this.optionsRef.current;
       if (onSearch) {
         const input = this.searchRef.current;
         if (input && input.focus) {
           setFocusWithoutScroll(input);
         }
-      } else if (selectNode) {
-        setFocusWithoutScroll(selectNode);
+      } else if (optionsNode) {
+        setFocusWithoutScroll(optionsNode);
       }
 
       // scroll to active option if it is below the fold
-      if (activeIndex >= 0) {
-        const optionNode = this.optionsRef[activeIndex];
-        const { bottom: containerBottom } = selectNode.getBoundingClientRect();
-        const { bottom: optionTop } = optionNode.getBoundingClientRect();
+      if (activeIndex >= 0 && optionsNode) {
+        const optionNode = this.optionRefs[activeIndex];
+        const { bottom: containerBottom } = optionsNode.getBoundingClientRect();
+        if (optionNode) {
+          const { bottom: optionTop } = optionNode.getBoundingClientRect();
 
-        if (containerBottom < optionTop) {
-          optionNode.scrollIntoView();
+          if (containerBottom < optionTop) {
+            optionNode.scrollIntoView();
+          }
         }
       }
     }, 0);
   }
 
-  onChange = event => {
+  onSearchChange = event => {
     this.setState(
       {
         search: event.target.value,
@@ -132,7 +131,7 @@ class SelectContainer extends Component {
     onSearch(search);
   }, debounceDelay(this.props));
 
-  selectOption = (option, index) => {
+  selectOption = (option, index) => () => {
     const { multiple, onChange, options, selected, value } = this.props;
 
     if (onChange) {
@@ -165,7 +164,6 @@ class SelectContainer extends Component {
       }
 
       onChange({
-        target: this.searchRef.current,
         option,
         value: nextValue,
         selected: nextSelected,
@@ -173,33 +171,83 @@ class SelectContainer extends Component {
     }
   };
 
+  // We use the state keyboardNavigating to prevent mouse over interaction
+  // from triggering changing the activeIndex due to scrolling.
+  clearKeyboardNavigation = () => {
+    clearTimeout(this.keyboardNavTimer);
+    this.keyboardNavTimer = setTimeout(() => {
+      this.setState({ keyboardNavigating: false });
+    }, 100); // 100ms was empirically determined
+  };
+
   onNextOption = event => {
     const { options } = this.props;
     const { activeIndex } = this.state;
     event.preventDefault();
-    const index = Math.min(activeIndex + 1, options.length - 1);
-    this.setState({ activeIndex: index }, () => {
-      const buttonNode = this.optionsRef[index];
-      const selectNode = this.selectRef.current;
+    let nextActiveIndex = activeIndex + 1;
+    while (
+      nextActiveIndex < options.length &&
+      this.isDisabled(nextActiveIndex)
+    ) {
+      nextActiveIndex += 1;
+    }
+    if (nextActiveIndex !== options.length) {
+      this.setState(
+        { activeIndex: nextActiveIndex, keyboardNavigating: true },
+        () => {
+          const buttonNode = this.optionRefs[nextActiveIndex];
+          const optionsNode = this.optionsRef.current;
 
-      if (isNodeAfterScroll(buttonNode, selectNode) && selectNode.scrollBy) {
-        selectNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
-      }
-    });
+          if (
+            buttonNode &&
+            isNodeAfterScroll(buttonNode, optionsNode) &&
+            optionsNode.scrollTo
+          ) {
+            optionsNode.scrollTo(
+              0,
+              buttonNode.offsetTop -
+                (optionsNode.getBoundingClientRect().height -
+                  buttonNode.getBoundingClientRect().height),
+            );
+          }
+          this.clearKeyboardNavigation();
+        },
+      );
+    }
   };
 
   onPreviousOption = event => {
     const { activeIndex } = this.state;
     event.preventDefault();
-    const index = Math.max(activeIndex - 1, 0);
-    this.setState({ activeIndex: index }, () => {
-      const buttonNode = this.optionsRef[index];
-      const selectNode = this.selectRef.current;
+    let nextActiveIndex = activeIndex - 1;
+    while (nextActiveIndex >= 0 && this.isDisabled(nextActiveIndex)) {
+      nextActiveIndex -= 1;
+    }
+    if (nextActiveIndex >= 0) {
+      this.setState(
+        { activeIndex: nextActiveIndex, keyboardNavigating: true },
+        () => {
+          const buttonNode = this.optionRefs[nextActiveIndex];
+          const optionsNode = this.optionsRef.current;
 
-      if (isNodeBeforeScroll(buttonNode, selectNode) && selectNode.scrollBy) {
-        selectNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
-      }
-    });
+          if (
+            buttonNode &&
+            isNodeBeforeScroll(buttonNode, optionsNode) &&
+            optionsNode.scrollTo
+          ) {
+            optionsNode.scrollTo(0, buttonNode.offsetTop);
+          }
+          this.clearKeyboardNavigation();
+        },
+      );
+    }
+  };
+
+  onActiveOption = index => () => {
+    const { keyboardNavigating } = this.state;
+    if (!keyboardNavigating) {
+      this.setState({ activeIndex: index });
+    }
   };
 
   onSelectOption = event => {
@@ -207,7 +255,7 @@ class SelectContainer extends Component {
     const { activeIndex } = this.state;
     if (activeIndex >= 0) {
       event.preventDefault(); // prevent submitting forms
-      this.selectOption(options[activeIndex], activeIndex);
+      this.selectOption(options[activeIndex], activeIndex)();
     }
   };
 
@@ -300,6 +348,8 @@ class SelectContainer extends Component {
   render() {
     const {
       children,
+      dropHeight,
+      emptySearchMessage,
       id,
       onKeyDown,
       onSearch,
@@ -319,7 +369,11 @@ class SelectContainer extends Component {
         onDown={this.onNextOption}
         onKeyDown={onKeyDown}
       >
-        <ContainerBox id={id ? `${id}__select-drop` : undefined} theme={theme}>
+        <StyledContainer
+          as={Box}
+          id={id ? `${id}__select-drop` : undefined}
+          dropHeight={dropHeight}
+        >
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
               <SelectTextInput
@@ -329,7 +383,7 @@ class SelectContainer extends Component {
                 type="search"
                 value={search}
                 placeholder={searchPlaceholder}
-                onChange={this.onChange}
+                onChange={this.onSearchChange}
               />
             </Box>
           )}
@@ -337,52 +391,72 @@ class SelectContainer extends Component {
             flex="shrink"
             role="menubar"
             tabIndex="-1"
-            ref={this.selectRef}
+            ref={this.optionsRef}
             overflow="auto"
-            theme={theme}
           >
-            <InfiniteScroll items={options} step={theme.select.step}>
-              {(option, index) => {
-                const isDisabled = this.isDisabled(index);
-                const isSelected = this.isSelected(index);
-                const isActive = isSelected || activeIndex === index;
-                return (
-                  <SelectOption
-                    key={this.optionValue(index)}
-                    ref={ref => {
-                      this.optionsRef[index] = ref;
-                    }}
-                    disabled={isDisabled || undefined}
-                    active={isActive}
-                    selected={isSelected}
-                    option={option}
-                    onClick={
-                      !isDisabled
-                        ? () => this.selectOption(option, index)
-                        : undefined
-                    }
-                  >
-                    {children ? (
-                      children(option, index, options, {
-                        active: isActive,
-                        disabled: isDisabled,
-                        selected: isSelected,
-                      })
-                    ) : (
-                      <Box align="start" pad="small">
-                        <Text margin="none">{this.optionLabel(index)}</Text>
-                      </Box>
-                    )}
-                  </SelectOption>
-                );
-              }}
-            </InfiniteScroll>
+            {options.length > 0 ? (
+              <InfiniteScroll items={options} step={theme.select.step} replace>
+                {(option, index) => {
+                  const isDisabled = this.isDisabled(index);
+                  const isSelected = this.isSelected(index);
+                  const isActive = activeIndex === index;
+                  return (
+                    <SelectOption
+                      key={`option_${index}`}
+                      ref={ref => {
+                        this.optionRefs[index] = ref;
+                      }}
+                      disabled={isDisabled || undefined}
+                      active={isActive}
+                      selected={isSelected}
+                      option={option}
+                      onMouseOver={
+                        !isDisabled ? this.onActiveOption(index) : undefined
+                      }
+                      onClick={
+                        !isDisabled
+                          ? this.selectOption(option, index)
+                          : undefined
+                      }
+                    >
+                      {children ? (
+                        children(option, index, options, {
+                          active: isActive,
+                          disabled: isDisabled,
+                          selected: isSelected,
+                        })
+                      ) : (
+                        <OptionBox
+                          align="start"
+                          pad="small"
+                          selected={isSelected}
+                        >
+                          <Text margin="none">{this.optionLabel(index)}</Text>
+                        </OptionBox>
+                      )}
+                    </SelectOption>
+                  );
+                }}
+              </InfiniteScroll>
+            ) : (
+              <SelectOption
+                key="search_empty"
+                disabled
+                option={emptySearchMessage}
+              >
+                <OptionBox align="start" pad="small">
+                  <Text margin="none">{emptySearchMessage}</Text>
+                </OptionBox>
+              </SelectOption>
+            )}
           </OptionsBox>
-        </ContainerBox>
+        </StyledContainer>
       </Keyboard>
     );
   }
 }
+
+Object.setPrototypeOf(SelectContainer.defaultProps, defaultProps);
 
 const SelectContainerWrapper = withTheme(SelectContainer);
 

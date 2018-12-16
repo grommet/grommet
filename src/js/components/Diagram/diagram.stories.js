@@ -29,26 +29,28 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
 
 const SimpleDiagram = () => (
   <Grommet theme={grommet}>
-    <Stack>
-      <Box>
-        <Box direction="row">
-          {[1, 2, 3].map(id => (
-            <Node key={id} id={id} />
-          ))}
+    <Box align="center" pad="large">
+      <Stack>
+        <Box>
+          <Box direction="row">
+            {[1, 2, 3].map(id => (
+              <Node key={id} id={id} />
+            ))}
+          </Box>
+          <Box direction="row">
+            {[4, 5].map(id => (
+              <Node key={id} id={id} background="neutral-2" />
+            ))}
+          </Box>
         </Box>
-        <Box direction="row">
-          {[4, 5].map(id => (
-            <Node key={id} id={id} background="neutral-2" />
-          ))}
-        </Box>
-      </Box>
-      <Diagram
-        connections={[
-          connection('1', '5', { color: 'accent-2' }),
-          connection('3', '5', { color: 'accent-2', anchor: 'horizontal' }),
-        ]}
-      />
-    </Stack>
+        <Diagram
+          connections={[
+            connection('1', '5', { color: 'accent-2' }),
+            connection('3', '5', { color: 'accent-2', anchor: 'horizontal' }),
+          ]}
+        />
+      </Stack>
+    </Box>
   </Grommet>
 );
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import { withFocus, withForwardRef, withTheme } from '../hocs';
+import { withFocus, withForwardRef } from '../hocs';
 
 import { StyledRangeInput } from './StyledRangeInput';
 
@@ -17,7 +17,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const RangeInputWrapper = compose(
   withFocus,
-  withTheme,
   withForwardRef,
 )(RangeInputDoc || RangeInput);
 

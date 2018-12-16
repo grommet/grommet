@@ -1,13 +1,16 @@
 import React, { Component, isValidElement } from 'react';
 import { compose } from 'recompose';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
+import { sizeStyle } from 'grommet-styles';
+
+import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
-import { withAnnounce, withFocus, withForwardRef, withTheme } from '../hocs';
+import { withAnnounce, withFocus, withForwardRef } from '../hocs';
 
 import {
   StyledTextInput,
@@ -34,7 +37,10 @@ function stringLabel(suggestion) {
 }
 
 const ContainerBox = styled(Box)`
-  max-height: inherit;
+  ${props =>
+    props.dropHeight
+      ? sizeStyle('max-height', props.dropHeight, props.theme)
+      : 'max-height: inherit;'};
 
   /* IE11 hack to get drop contents to not overflow */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -276,7 +282,7 @@ class TextInput extends Component {
     const { activeSuggestionIndex, selectedSuggestionIndex } = this.state;
 
     return (
-      <StyledSuggestions theme={theme}>
+      <StyledSuggestions>
         <InfiniteScroll items={suggestions} step={theme.select.step}>
           {(suggestion, index) => {
             const plain =
@@ -313,6 +319,7 @@ class TextInput extends Component {
     const {
       defaultValue,
       dropAlign,
+      dropHeight,
       dropTarget,
       forwardRef,
       id,
@@ -341,7 +348,7 @@ class TextInput extends Component {
           onClickOutside={() => this.setState({ showDrop: false })}
           onEsc={() => this.setState({ showDrop: false })}
         >
-          <ContainerBox overflow="auto">
+          <ContainerBox overflow="auto" dropHeight={dropHeight}>
             {this.renderSuggestions()}
           </ContainerBox>
         </Drop>
@@ -350,7 +357,7 @@ class TextInput extends Component {
     return (
       <StyledTextInputContainer plain={plain}>
         {placeholder && typeof placeholder !== 'string' && !value ? (
-          <StyledPlaceholder theme={theme}>{placeholder}</StyledPlaceholder>
+          <StyledPlaceholder>{placeholder}</StyledPlaceholder>
         ) : null}
         <Keyboard
           onEnter={this.onSuggestionSelect}
@@ -368,7 +375,6 @@ class TextInput extends Component {
             placeholder={
               typeof placeholder === 'string' ? placeholder : undefined
             }
-            theme={theme}
             {...rest}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
@@ -382,6 +388,8 @@ class TextInput extends Component {
     );
   }
 }
+
+Object.setPrototypeOf(TextInput.defaultProps, defaultProps);
 
 let TextInputDoc;
 if (process.env.NODE_ENV !== 'production') {

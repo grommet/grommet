@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 import { focusStyle, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const disabledStyle = `
   opacity: 0.5;
   cursor: default;
 `;
 
-export const StyledRadioButtonContainer = styled.label`
+const StyledRadioButtonContainer = styled.label`
   user-select: none;
   ${props => props.disabled && disabledStyle} ${props =>
     !props.disabled &&
@@ -22,7 +23,10 @@ export const StyledRadioButtonContainer = styled.label`
   ${props => props.theme.radioButton.extend};
 `;
 
-export const StyledRadioButtonInput = styled.input`
+StyledRadioButtonContainer.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonContainer.defaultProps, defaultProps);
+
+const StyledRadioButtonInput = styled.input`
   position: absolute;
   opacity: 0;
   top: 0;
@@ -34,7 +38,10 @@ export const StyledRadioButtonInput = styled.input`
   ${props => !props.disabled && 'cursor: pointer;'};
 `;
 
-export const StyledRadioButtonIcon = styled.svg`
+StyledRadioButtonInput.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonInput.defaultProps, defaultProps);
+
+const StyledRadioButtonIcon = styled.svg`
   box-sizing: border-box;
   position: absolute;
   width: ${props =>
@@ -49,13 +56,30 @@ export const StyledRadioButtonIcon = styled.svg`
   ${props => props.theme.radioButton.icon.extend};
 `;
 
-export const StyledRadioButtonBox = styled.div`
+StyledRadioButtonIcon.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonIcon.defaultProps, defaultProps);
+
+const StyledRadioButtonBox = styled.div`
   ${props => props.focus && focusStyle};
   ${props => props.theme.radioButton.check.extend};
 `;
 
-export const StyledRadioButton = styled.div`
+StyledRadioButtonBox.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButtonBox.defaultProps, defaultProps);
+
+const StyledRadioButton = styled.div`
   position: relative;
 
   ${props => props.theme.radioButton && props.theme.radioButton.extend};
 `;
+
+StyledRadioButton.defaultProps = {};
+Object.setPrototypeOf(StyledRadioButton.defaultProps, defaultProps);
+
+export {
+  StyledRadioButtonContainer,
+  StyledRadioButtonInput,
+  StyledRadioButtonIcon,
+  StyledRadioButtonBox,
+  StyledRadioButton,
+};

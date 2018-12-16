@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, RangeInput } from 'grommet';
+import { Box, Grommet, RangeInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 class SimpleRangeInput extends Component {
@@ -13,7 +13,9 @@ class SimpleRangeInput extends Component {
     const { value } = this.state;
     return (
       <Grommet theme={grommet}>
-        <RangeInput value={value} onChange={this.onChange} />
+        <Box align="center" pad="large">
+          <RangeInput value={value} onChange={this.onChange} />
+        </Box>
       </Grommet>
     );
   }

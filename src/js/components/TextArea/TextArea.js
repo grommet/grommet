@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { compose } from 'recompose';
 
 import { Keyboard } from '../Keyboard';
-import { withFocus, withForwardRef, withTheme } from '../hocs';
+import { withFocus, withForwardRef } from '../hocs';
 
 import { StyledTextArea } from './StyledTextArea';
 
@@ -30,7 +30,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 const TextAreaWrapper = compose(
   withFocus,
-  withTheme,
   withForwardRef,
 )(TextAreaDoc || TextArea);
 

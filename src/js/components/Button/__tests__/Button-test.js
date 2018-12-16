@@ -210,7 +210,7 @@ test('Button hoverIndicator as object with invalid colorIndex renders', () => {
 test('Button hoverIndicator color renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button onClick={() => {}} hoverIndicator="dark-5">
+      <Button onClick={() => {}} hoverIndicator="dark-3">
         hoverIndicator
       </Button>
     </Grommet>,

@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
+import { ThemeContext } from '../../contexts';
+
 import { Box } from '../Box';
-import { withForwardRef, withTheme } from '../hocs';
+import { withForwardRef } from '../hocs';
 
 import { EdgeControl } from './EdgeControl';
 
 class RangeSelector extends Component {
+  static contextType = ThemeContext;
+
   static defaultProps = {
     direction: 'horizontal',
     max: 100,
@@ -30,8 +33,7 @@ class RangeSelector extends Component {
 
   valueForMouseCoord = event => {
     const { direction, max, min, step } = this.props;
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const rect = findDOMNode(this.containerRef.current).getBoundingClientRect();
+    const rect = this.containerRef.current.getBoundingClientRect();
     let value;
     if (direction === 'vertical') {
       const y = event.clientY - (rect.y || 0); // unit test resilience
@@ -42,8 +44,15 @@ class RangeSelector extends Component {
       const scaleX = rect.width / (max - min + 1) || 1; // unit test resilience
       value = Math.floor(x / scaleX) + min;
     }
-    // align with closest step
-    return value + (value % step);
+    // align with closest step within [min, max]
+    const result = value + (value % step);
+    if (result < min) {
+      return min;
+    }
+    if (result > max) {
+      return max;
+    }
+    return result;
   };
 
   onClick = event => {
@@ -129,10 +138,11 @@ class RangeSelector extends Component {
       round,
       size,
       step,
-      theme,
       values,
+      theme: propsTheme,
       ...rest
     } = this.props;
+    const theme = this.context || propsTheme;
     const { nextLower, nextUpper } = this.state;
 
     const lower = nextLower !== undefined ? nextLower : values[0];
@@ -151,7 +161,10 @@ class RangeSelector extends Component {
         <Box
           style={{ flex: `${lower - min} 0 0` }}
           background={
-            invert ? { color: color || 'light-4', opacity } : undefined
+            invert
+              ? // preserve existing dark, instead of using darknes of this color
+                { color: color || 'light-4', opacity, dark: theme.dark }
+              : undefined
           }
           fill={fill}
           round={round}
@@ -163,7 +176,6 @@ class RangeSelector extends Component {
           color={color}
           direction={direction}
           edge="lower"
-          theme={theme}
           onMouseDown={onChange ? this.lowerMouseDown : undefined}
           onDecrease={
             onChange && lower - step >= min
@@ -182,7 +194,10 @@ class RangeSelector extends Component {
             cursor: direction === 'vertical' ? 'ns-resize' : 'ew-resize',
           }}
           background={
-            invert ? undefined : { color: color || 'control', opacity }
+            invert
+              ? undefined
+              : // preserve existing dark, instead of using darknes of this color
+                { color: color || 'control', opacity, dark: theme.dark }
           }
           fill={fill}
           round={round}
@@ -194,7 +209,6 @@ class RangeSelector extends Component {
           color={color}
           direction={direction}
           edge="upper"
-          theme={theme}
           onMouseDown={onChange ? this.upperMouseDown : undefined}
           onDecrease={
             onChange && upper - step >= lower
@@ -210,7 +224,10 @@ class RangeSelector extends Component {
         <Box
           style={{ flex: `${max - upper} 0 0` }}
           background={
-            invert ? { color: color || 'light-4', opacity } : undefined
+            invert
+              ? // preserve existing dark, instead of using darknes of this color
+                { color: color || 'light-4', opacity, dark: theme.dark }
+              : undefined
           }
           fill={fill}
           round={round}
@@ -224,9 +241,8 @@ let RangeSelectorDoc;
 if (process.env.NODE_ENV !== 'production') {
   RangeSelectorDoc = require('./doc').doc(RangeSelector); // eslint-disable-line global-require
 }
-const RangeSelectorWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(RangeSelectorDoc || RangeSelector);
+const RangeSelectorWrapper = compose(withForwardRef)(
+  RangeSelectorDoc || RangeSelector,
+);
 
 export { RangeSelectorWrapper as RangeSelector };

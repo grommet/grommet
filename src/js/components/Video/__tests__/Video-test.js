@@ -5,10 +5,6 @@ import 'jest-styled-components';
 
 import { Grommet, Video } from '../..';
 
-jest.mock('react-dom', () => ({
-  findDOMNode: () => ({ textTracks: [{ label: 'test' }] }),
-}));
-
 const CONTENTS = [<source key="source" />, <track key="track" />];
 
 test('Video renders', () => {

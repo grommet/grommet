@@ -1,4 +1,4 @@
-import { describe } from 'react-desc';
+import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
@@ -11,9 +11,12 @@ export const doc = Markdown => {
       <Markdown>{content}</Markdown>`,
     );
 
-  // DocumentedMarkdown.propTypes = {
-  //   content: PropTypes.string.description('The markdown text to render.'),
-  // };
+  DocumentedMarkdown.propTypes = {
+    components: PropTypes.objectOf(PropTypes.element).description(
+      `Custom components to override default html tags such as 'img' or 'pre'.
+By default only 'p' and 'a' are overrided with the Paragraph and Anchor components`,
+    ),
+  };
 
   return DocumentedMarkdown;
 };

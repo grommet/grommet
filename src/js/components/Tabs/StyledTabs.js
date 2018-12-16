@@ -1,10 +1,14 @@
 import styled, { css } from 'styled-components';
 
 import { genericStyles } from '../../utils';
+import { defaultProps } from '../../default-props';
 
-export const StyledTabsHeader = styled.div`
+const StyledTabsHeader = styled.div`
   ${props => props.theme.tabs.header.extend};
 `;
+
+StyledTabsHeader.defaultProps = {};
+Object.setPrototypeOf(StyledTabsHeader.defaultProps, defaultProps);
 
 const FLEX_MAP = {
   [true]: '1 1',
@@ -18,11 +22,19 @@ const flexStyle = css`
     `${FLEX_MAP[props.flex]}${props.flex !== true ? ' auto' : ''}`};
 `;
 
-export const StyledTabPanel = styled.div`
+const StyledTabPanel = styled.div`
   min-height: 0;
   ${props => props.flex && flexStyle} ${props => props.theme.tabs.panel.extend};
 `;
 
-export const StyledTabs = styled.div`
+StyledTabPanel.defaultProps = {};
+Object.setPrototypeOf(StyledTabPanel.defaultProps, defaultProps);
+
+const StyledTabs = styled.div`
   ${genericStyles} ${props => props.theme.tabs.extend};
 `;
+
+StyledTabs.defaultProps = {};
+Object.setPrototypeOf(StyledTabs.defaultProps, defaultProps);
+
+export { StyledTabsHeader, StyledTabPanel, StyledTabs };

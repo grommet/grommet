@@ -16,7 +16,7 @@ export const Body = ({
   theme,
   ...rest
 }) => (
-  <StyledDataTableBody size={size} theme={theme} {...rest}>
+  <StyledDataTableBody size={size} {...rest}>
     <InfiniteScroll
       items={data}
       onMore={onMore}
@@ -36,7 +36,6 @@ export const Body = ({
               column={column}
               datum={datum}
               scope={column.primary ? 'row' : undefined}
-              theme={theme}
             />
           ))}
         </StyledDataTableRow>

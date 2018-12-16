@@ -1,9 +1,14 @@
 import React from 'react';
+import { compose } from 'recompose';
+
+import { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
 
 import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 
-export const Cell = ({
+const Cell = ({
   column: { align, property, primary, render },
   context,
   datum,
@@ -28,3 +33,10 @@ export const Cell = ({
     </TableCell>
   );
 };
+
+Cell.defaultProps = {};
+Object.setPrototypeOf(Cell.defaultProps, defaultProps);
+
+const CellWrapper = compose(withTheme)(Cell);
+
+export { CellWrapper as Cell };

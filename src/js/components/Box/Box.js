@@ -1,14 +1,23 @@
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
-import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
+import { withForwardRef, withDocs } from '../hocs';
 import { ThemeContext } from '../../contexts';
+import { defaultProps } from '../../default-props';
 import { backgroundIsDark } from '../../utils';
-import { withForwardRef, withTheme } from '../hocs';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
 
-class Box extends Component {
+const wrapWithHocs = compose(
+  withForwardRef,
+  withDocs('Box'),
+);
+
+class BoxImpl extends Component {
+  static contextType = ThemeContext;
+
+  static displayName = 'Box';
+
   static defaultProps = {
     direction: 'column',
     margin: 'none',
@@ -16,42 +25,10 @@ class Box extends Component {
     responsive: true,
   };
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    // Since Box can change the background color for its contents,
-    // we update the theme to indicate whether the current context is `dark`
-    // and what icon theme to use.
-    const { background, theme: propsTheme } = nextProps;
-    const { theme: stateTheme, priorTheme } = prevState;
-
-    let { dark } = propsTheme;
-    if (background) {
-      dark = backgroundIsDark(background, propsTheme);
-    }
-
-    if (dark === propsTheme.dark && stateTheme) {
-      return { theme: undefined, priorTheme: undefined };
-    }
-    if (
-      dark !== propsTheme.dark &&
-      (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)
-    ) {
-      return {
-        theme: {
-          ...propsTheme,
-          dark,
-          icon: dark ? propsTheme.iconThemes.dark : propsTheme.iconThemes.light,
-        },
-        priorTheme: propsTheme,
-      };
-    }
-    return null;
-  }
-
-  state = {};
-
   render() {
     const {
       a11yTitle,
+      background,
       children,
       direction,
       elevation, // munged to avoid styled-components putting it in the DOM
@@ -62,15 +39,13 @@ class Box extends Component {
       responsive,
       tag,
       as,
-      theme: propsTheme,
       wrap, // munged to avoid styled-components putting it in the DOM,
       width, // munged to avoid styled-components putting it in the DOM
       height, // munged to avoid styled-components putting it in the DOM
+      theme: propsTheme,
       ...rest
     } = this.props;
-    const { theme: stateTheme, priorTheme } = this.state;
-    const theme = stateTheme || propsTheme;
-
+    const theme = this.context || propsTheme;
     let contents = children;
     if (gap) {
       contents = [];
@@ -86,7 +61,6 @@ class Box extends Component {
                 gap={gap}
                 directionProp={direction}
                 responsive={responsive}
-                theme={theme}
               />,
             );
           }
@@ -99,6 +73,7 @@ class Box extends Component {
       <StyledBox
         as={!as && tag ? tag : as}
         aria-label={a11yTitle}
+        background={background}
         ref={forwardRef}
         directionProp={direction}
         elevationProp={elevation}
@@ -108,40 +83,27 @@ class Box extends Component {
         widthProp={width}
         heightProp={height}
         responsive={responsive}
-        theme={theme}
-        priorTheme={priorTheme}
         {...rest}
       >
         {contents}
       </StyledBox>
     );
 
-    if (stateTheme) {
-      if (stateTheme.dark !== propsTheme.dark && stateTheme.icon) {
+    if (background) {
+      const dark = backgroundIsDark(background, theme);
+      if (dark !== theme.dark) {
         content = (
-          <IconThemeContext.Provider value={stateTheme.icon}>
+          <ThemeContext.Provider value={{ ...theme, dark }}>
             {content}
-          </IconThemeContext.Provider>
+          </ThemeContext.Provider>
         );
       }
-      content = (
-        <ThemeContext.Provider value={stateTheme}>
-          {content}
-        </ThemeContext.Provider>
-      );
     }
 
     return content;
   }
 }
 
-let BoxDoc;
-if (process.env.NODE_ENV !== 'production') {
-  BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
-}
-const BoxWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(BoxDoc || Box);
+Object.setPrototypeOf(BoxImpl.defaultProps, defaultProps);
 
-export { BoxWrapper as Box };
+export const Box = wrapWithHocs(BoxImpl);

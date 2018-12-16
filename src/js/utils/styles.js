@@ -170,7 +170,7 @@ export const inputStyle = css`
   border: none;
   -webkit-appearance: none;
   padding: ${props =>
-    parseMetricToNum(props.theme.global.spacing) / 2 -
+    parseMetricToNum(props.theme.global.input.padding) -
     parseMetricToNum(props.theme.global.control.border.width)}px;
   outline: none;
   background: transparent;
@@ -204,6 +204,24 @@ export const overflowStyle = overflowProp => {
       `overflow-y: ${overflowProp.vertical};`};
   `;
 };
+
+const placeholderColor = css`
+  color: ${props => props.theme.global.colors.placeholder};
+`;
+
+export const placeholderStyle = css`
+  &::-webkit-input-placeholder {
+    ${placeholderColor};
+  }
+
+  &::-moz-placeholder {
+    ${placeholderColor};
+  }
+
+  &:-ms-input-placeholder {
+    ${placeholderColor};
+  }
+`;
 
 // evalStyle() converts a styled-components item into a string
 export const evalStyle = (arg, theme) => {

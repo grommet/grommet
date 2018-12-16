@@ -1,13 +1,13 @@
 import * as React from "react";
 
 export interface RangeSelectorProps {
-  color?: string;
+  color?: string | {dark?: string,light?: string};
   direction?: "horizontal" | "vertical";
   invert?: boolean;
   max?: number;
-  messages?: {lower: string,upper: string};
+  messages?: {lower?: string,upper?: string};
   min?: number;
-  onChange?: (...args: any[]) => any;
+  onChange?: ((...args: any[]) => any);
   opacity?: "weak" | "medium" | "strong";
   round?: "xsmall" | "small" | "medium" | "large" | "full" | string;
   size?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string;

@@ -1163,7 +1163,7 @@ exports[`Box background 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #FD6FFF;
+  background: #6FFFB0;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1182,7 +1182,7 @@ exports[`Box background 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #3D138D;
+  background: #00873D;
   color: #f8f8f8;
   min-width: 0;
   min-height: 0;
@@ -1201,7 +1201,7 @@ exports[`Box background 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #F6F6F6;
+  background: #F8F8F8;
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -1239,8 +1239,8 @@ exports[`Box background 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  background: #EB6060;
-  color: #444444;
+  background: #FF4040;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -1350,7 +1350,7 @@ exports[`Box background 1`] = `
   background-position: center center;
   background-size: cover;
   color: inherit;
-  background-color: rgba(253,111,255,1);
+  background-color: rgba(111,255,176,1);
   color: #444444;
   min-width: 0;
   min-height: 0;
@@ -2151,7 +2151,7 @@ exports[`Box border 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
-  border: solid 1px #FD6FFF;
+  border: solid 1px #6FFFB0;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -2368,7 +2368,7 @@ exports[`Box border 1`] = `
 
 @media only screen and (max-width:768px) {
   .c8 {
-    border: solid 1px #FD6FFF;
+    border: solid 1px #6FFFB0;
   }
 }
 
@@ -2815,7 +2815,7 @@ exports[`Box elevation 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
+  box-shadow: 0px 4px 4px rgba(255,255,255,0.40);
 }
 
 .c8 {

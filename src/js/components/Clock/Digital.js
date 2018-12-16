@@ -35,12 +35,12 @@ class Digit extends Component {
 
   render() {
     /* eslint-disable-next-line react/prop-types */
-    const { run, size, theme } = this.props;
+    const { run, size } = this.props;
     const { number, previous } = this.state;
     if (previous !== undefined) {
       const direction = run === 'backward' ? 'down' : 'up';
       return (
-        <StyledDigitalDigit size={size} theme={theme}>
+        <StyledDigitalDigit size={size}>
           <StyledDigitalPrevious direction={direction}>
             {Math.floor(previous)}
           </StyledDigitalPrevious>
@@ -51,23 +51,21 @@ class Digit extends Component {
       );
     }
     return (
-      <StyledDigitalDigit size={size} theme={theme}>
-        {Math.floor(number)}
-      </StyledDigitalDigit>
+      <StyledDigitalDigit size={size}>{Math.floor(number)}</StyledDigitalDigit>
     );
   }
 }
 
-const Element = ({ number, run, sep, size, theme }) => {
+const Element = ({ number, run, sep, size }) => {
   const tens = Math.floor(number / 10);
   const ones = number % 10;
   const result = [
-    <Digit key="tens" run={run} size={size} number={tens} theme={theme} />,
-    <Digit key="ones" run={run} size={size} number={ones} theme={theme} />,
+    <Digit key="tens" run={run} size={size} number={tens} />,
+    <Digit key="ones" run={run} size={size} number={ones} />,
   ];
   if (sep) {
     result.unshift(
-      <StyledDigitalDigit key="sep" size={size} theme={theme}>
+      <StyledDigitalDigit key="sep" size={size}>
         :
       </StyledDigitalDigit>,
     );
@@ -76,30 +74,14 @@ const Element = ({ number, run, sep, size, theme }) => {
 };
 
 export const Digital = props => {
-  const { elements, precision, run, size, theme, ...rest } = props;
+  const { elements, precision, run, size, ...rest } = props;
   let seconds;
   if (precision === 'seconds') {
-    seconds = (
-      <Element
-        number={elements.seconds}
-        run={run}
-        size={size}
-        sep
-        theme={theme}
-      />
-    );
+    seconds = <Element number={elements.seconds} run={run} size={size} sep />;
   }
   let minutes;
   if (precision === 'minutes' || precision === 'seconds') {
-    minutes = (
-      <Element
-        number={elements.minutes}
-        run={run}
-        size={size}
-        sep
-        theme={theme}
-      />
-    );
+    minutes = <Element number={elements.minutes} run={run} size={size} sep />;
   }
   return (
     <Box direction="row" {...rest}>
@@ -107,7 +89,6 @@ export const Digital = props => {
         number={elements.hours12 || elements.hours}
         run={run}
         size={size}
-        theme={theme}
       />
       {minutes}
       {seconds}

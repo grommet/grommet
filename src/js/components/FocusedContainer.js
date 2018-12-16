@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { findDOMNode } from 'react-dom';
 
 import {
   getBodyChildElements,
@@ -41,8 +40,7 @@ export class FocusedContainer extends Component {
 
   removeTrap = () => {
     const { restrictScroll } = this.props;
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const child = findDOMNode(this.ref.current);
+    const child = this.ref.current;
     getBodyChildElements()
       .filter(isNotAncestorOf(child))
       .forEach(makeNodeFocusable);
@@ -53,8 +51,7 @@ export class FocusedContainer extends Component {
 
   trapFocus = () => {
     const { restrictScroll } = this.props;
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const child = findDOMNode(this.ref.current);
+    const child = this.ref.current;
     getBodyChildElements()
       .filter(isNotAncestorOf(child))
       .forEach(makeNodeUnfocusable);
@@ -66,10 +63,10 @@ export class FocusedContainer extends Component {
   };
 
   render() {
-    const { children, ...rest } = this.props;
+    const { children, hidden, ...rest } = this.props;
     delete rest.restrictScroll;
     return (
-      <div ref={this.ref} {...rest}>
+      <div ref={this.ref} aria-hidden={hidden} {...rest}>
         {children}
       </div>
     );

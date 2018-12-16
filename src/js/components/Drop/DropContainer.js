@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
 
+import { defaultProps } from '../../default-props';
 import { ThemeContext } from '../../contexts';
 import { FocusedContainer } from '../FocusedContainer';
 import {
@@ -24,7 +24,9 @@ const preventLayerClose = event => {
   }
 };
 
-export class DropContainer extends Component {
+class DropContainer extends Component {
+  static contextType = ThemeContext;
+
   static defaultProps = {
     align: {
       top: 'top',
@@ -32,38 +34,6 @@ export class DropContainer extends Component {
     },
     stretch: 'width',
   };
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    // Since the drop background can be different from the current theme context,
-    // we update the theme to set the dark background context.
-    const { theme: propsTheme } = nextProps;
-    const { theme: stateTheme, priorTheme } = prevState;
-
-    const dark = backgroundIsDark(
-      propsTheme.global.drop.background,
-      propsTheme,
-    );
-
-    if (dark === propsTheme.dark && stateTheme) {
-      return { theme: undefined, priorTheme: undefined };
-    }
-    if (
-      dark !== propsTheme.dark &&
-      (!stateTheme || dark !== stateTheme.dark || propsTheme !== priorTheme)
-    ) {
-      return {
-        theme: {
-          ...propsTheme,
-          dark,
-          icon: dark ? propsTheme.iconThemes.dark : propsTheme.iconThemes.light,
-        },
-        priorTheme: propsTheme,
-      };
-    }
-    return null;
-  }
-
-  state = {};
 
   dropRef = React.createRef();
 
@@ -269,44 +239,40 @@ export class DropContainer extends Component {
       onClickOutside,
       onEsc,
       onKeyDown,
-      theme: propsTheme,
       elevation,
       plain,
+      theme: propsTheme,
       ...rest
     } = this.props;
-    const { theme: stateTheme } = this.state;
-    const theme = stateTheme || propsTheme;
+    const theme = this.context || propsTheme;
 
     let content = (
       <StyledDrop
         as={Box}
         plain={plain}
         elevation={
-          !plain && (elevation || theme.global.drop.shadowSize || 'small')
+          !plain
+            ? elevation || theme.global.drop.shadowSize || 'small'
+            : undefined
         }
         tabIndex="-1"
         ref={this.dropRef}
         alignProp={alignProp}
-        theme={theme}
         {...rest}
       >
         {children}
       </StyledDrop>
     );
 
-    if (stateTheme) {
-      if (stateTheme.dark !== propsTheme.dark && stateTheme.icon) {
+    if (theme.global.drop.background) {
+      const dark = backgroundIsDark(theme.global.drop.background, theme);
+      if (dark !== theme.dark) {
         content = (
-          <IconThemeContext.Provider value={stateTheme.icon}>
+          <ThemeContext.Provider value={{ ...theme, dark }}>
             {content}
-          </IconThemeContext.Provider>
+          </ThemeContext.Provider>
         );
       }
-      content = (
-        <ThemeContext.Provider value={stateTheme}>
-          {content}
-        </ThemeContext.Provider>
-      );
     }
 
     return (
@@ -322,3 +288,7 @@ export class DropContainer extends Component {
     );
   }
 }
+
+Object.setPrototypeOf(DropContainer.defaultProps, defaultProps);
+
+export { DropContainer };

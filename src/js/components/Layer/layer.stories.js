@@ -64,7 +64,7 @@ class CenterLayer extends Component {
                 justify="end"
                 pad={{ top: 'medium', bottom: 'small' }}
               >
-                <Button label="Open 2" onClick={this.onOpen2} color="dark-6" />
+                <Button label="Open 2" onClick={this.onOpen2} color="dark-3" />
                 <Button
                   label={
                     <Text color="white">
@@ -99,7 +99,7 @@ class CenterLayer extends Component {
                 justify="end"
                 pad={{ top: 'medium', bottom: 'small' }}
               >
-                <Button label="Close" onClick={this.onClose2} color="dark-6" />
+                <Button label="Close" onClick={this.onClose2} color="dark-3" />
               </Box>
             </Box>
           </Layer>
@@ -109,11 +109,43 @@ class CenterLayer extends Component {
   }
 }
 
+class CornerLayer extends Component {
+  state = {};
+
+  onOpen = () => this.setState({ open: true });
+
+  onClose = () => this.setState({ open: undefined });
+
+  render() {
+    const { open } = this.state;
+    return (
+      <Grommet theme={grommet} full>
+        <Box fill align="center" justify="center">
+          <Button
+            icon={<Add color="brand" />}
+            label={
+              <Text>
+                <strong>Add Corner Layer</strong>
+              </Text>
+            }
+            onClick={this.onOpen}
+            plain
+          />
+        </Box>
+        {open && (
+          <Layer position="top-right">
+            <Box height="small" overflow="auto">
+              <Box pad="xlarge">Corner top-right position</Box>
+            </Box>
+          </Layer>
+        )}
+      </Grommet>
+    );
+  }
+}
+
 class FormLayer extends Component {
-  state = {
-    fourthOption: 'one',
-    open: false,
-  };
+  state = { open: false, select: '' };
 
   onOpen = () => this.setState({ open: true });
 
@@ -122,7 +154,7 @@ class FormLayer extends Component {
   };
 
   render() {
-    const { open, fourthOption } = this.state;
+    const { open, select } = this.state;
     return (
       <Grommet theme={grommet} full>
         <Box fill align="center" justify="center">
@@ -154,19 +186,26 @@ class FormLayer extends Component {
                     <TextInput />
                   </FormField>
                   <FormField label="Second">
-                    <TextInput />
+                    <Select
+                      options={[
+                        'one',
+                        'two',
+                        'three',
+                        'four',
+                        'five',
+                        'six',
+                        'seven',
+                        'eight',
+                      ]}
+                      value={select}
+                      onSearch={() => {}}
+                      onChange={({ option }) =>
+                        this.setState({ select: option })
+                      }
+                    />
                   </FormField>
                   <FormField label="Third">
                     <TextArea />
-                  </FormField>
-                  <FormField label="Fourth">
-                    <Select
-                      options={['one', 'two', 'three']}
-                      value={fourthOption}
-                      onChange={({ option }) =>
-                        this.setState({ fourthOption: option })
-                      }
-                    />
                   </FormField>
                 </Box>
                 <Box flex={false} as="footer" align="start">
@@ -244,13 +283,15 @@ class NotificationLayer extends Component {
   }
 }
 
-const MarginLayer = () => (
+const MarginLayer = ({ margin, ...rest }) => (
   <Grommet theme={grommet}>
     <Layer
-      full
-      margin={{ left: '40px', top: '50px', right: '30px', bottom: '10px' }}
+      margin={
+        margin || { left: '40px', top: '50px', right: '30px', bottom: '10px' }
+      }
+      {...rest}
     >
-      <Box overflow="auto">
+      <Box height="small" overflow="auto">
         <Box pad="xlarge">text</Box>
         <Box pad="xlarge">text</Box>
         <Box pad="xlarge">text</Box>
@@ -409,9 +450,14 @@ const ScrollBodyLayer = () => (
 
 storiesOf('Layer', module)
   .add('Center', () => <CenterLayer />)
+  .add('CornerLayer', () => <CornerLayer />)
   .add('Form', () => <FormLayer />)
   .add('Notification', () => <NotificationLayer />)
-  .add('Margin', () => <MarginLayer />)
+  .add('Margin', () => <MarginLayer full />)
+  .add('Margin (Center)', () => <MarginLayer margin="large" />)
+  .add('Margin Top (Center)', () => (
+    <MarginLayer margin={{ top: 'large' }} position="top" />
+  ))
   .add('Plain', () => <PlainLayer />)
   .add('Full', () => <FullLayer />)
   .add('Fixed Header, Scroll Body', () => <ScrollBodyLayer />);

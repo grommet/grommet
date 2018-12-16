@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = Heading => {
   const DocumentedHeading = describe(Heading)
@@ -13,7 +13,7 @@ export const doc = Heading => {
 
   DocumentedHeading.propTypes = {
     ...genericProps,
-    color: PropTypes.string.description(
+    color: colorPropType.description(
       'A color identifier to use for the text color.',
     ),
     level: PropTypes.oneOf([1, 2, 3, 4, 5, 6, '1', '2', '3', '4', '5', '6'])

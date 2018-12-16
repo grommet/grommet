@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
+import { css } from 'styled-components';
 
 import { Box, Button, Grommet, CheckBox, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -19,12 +20,14 @@ class SimpleCheckBox extends Component {
     const { checked } = this.state;
     return (
       <Grommet theme={grommet}>
-        <CheckBox
-          {...this.props}
-          label="Choice"
-          checked={checked}
-          onChange={this.onChange}
-        />
+        <Box align="center" pad="large">
+          <CheckBox
+            {...this.props}
+            label="Choice"
+            checked={checked}
+            onChange={this.onChange}
+          />
+        </Box>
       </Grommet>
     );
   }
@@ -75,26 +78,39 @@ class ThemedCheckBox extends Component {
     const { checked } = this.state;
     return (
       <Grommet theme={deepMerge(grommet, customCheckBoxTheme)}>
-        <CheckBox
-          {...this.props}
-          label="Choice"
-          checked={checked}
-          onChange={this.onChange}
-        />
+        <Box align="center" pad="large">
+          <CheckBox
+            {...this.props}
+            label="Choice"
+            checked={checked}
+            onChange={this.onChange}
+          />
+        </Box>
       </Grommet>
     );
   }
 }
 
+const checkboxCheckStyle = css`
+  background-color: #2196f3;
+  border-color: #2196f3;
+`;
+
 const customToggleTheme = {
+  global: {
+    colors: {
+      'toggle-bg': '#757575',
+      'toggle-knob': 'white',
+    },
+  },
   checkBox: {
     border: {
       color: {
-        light: 'light-2',
+        light: 'toggle-bg',
       },
     },
     color: {
-      light: 'neutral-1',
+      light: 'toggle-knob',
     },
     check: {
       radius: '2px',
@@ -105,11 +121,21 @@ const customToggleTheme = {
       },
     },
     toggle: {
-      background: 'light-2',
+      background: 'toggle-bg',
       color: {
-        light: 'light-4',
+        light: 'toggle-knob',
       },
       size: '36px',
+      knob: {
+        extend: `
+          top: -4px;
+          box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
+        `,
+      },
+      extend: ({ checked }) => `
+        height: 14px;
+        ${checked && checkboxCheckStyle}
+      `,
     },
     gap: 'xsmall',
     size: '18px',
@@ -125,13 +151,15 @@ class ThemedToggle extends Component {
     const { checked } = this.state;
     return (
       <Grommet theme={deepMerge(grommet, customToggleTheme)}>
-        <CheckBox
-          {...this.props}
-          label="Choice"
-          checked={checked}
-          onChange={this.onChange}
-          toggle
-        />
+        <Box align="center" pad="large">
+          <CheckBox
+            {...this.props}
+            label="Choice"
+            checked={checked}
+            onChange={this.onChange}
+            toggle
+          />
+        </Box>
       </Grommet>
     );
   }
@@ -146,7 +174,7 @@ class CheckBoxInsideButton extends Component {
     const { checked } = this.state;
     return (
       <Grommet theme={grommet}>
-        <Box>
+        <Box align="center" pad="large">
           <Button
             hoverIndicator="background"
             onClick={() => {
@@ -196,22 +224,23 @@ class IndeterminateCheckBox extends Component {
 
     return (
       <Grommet theme={grommet}>
-        <Box>
-          <CheckBox
-            checked={checked.length === 3}
-            indeterminate={checked.length > 0 && checked.length < 3}
-            label={<Text>Picked them all</Text>}
-            onChange={this.onCheckAll}
-          />
-        </Box>
-        <Box direction="row" gap="medium">
-          {checkboxes.map(item => (
+        <Box align="center" pad="large">
+          <Box direction="row" gap="medium">
             <CheckBox
-              checked={checked.indexOf(item) !== -1}
-              label={<Text>{item}</Text>}
-              onChange={e => this.onCheck(e, item)}
+              checked={checked.length === 3}
+              indeterminate={checked.length > 0 && checked.length < 3}
+              label="All"
+              onChange={this.onCheckAll}
             />
-          ))}
+            {checkboxes.map(item => (
+              <CheckBox
+                key={item}
+                checked={checked.indexOf(item) !== -1}
+                label={item}
+                onChange={e => this.onCheck(e, item)}
+              />
+            ))}
+          </Box>
         </Box>
       </Grommet>
     );

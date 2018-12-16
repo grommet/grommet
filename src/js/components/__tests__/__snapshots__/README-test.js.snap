@@ -334,6 +334,10 @@ Label color and icon color, if not specified on the icon.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **href**
@@ -402,6 +406,11 @@ The DOM tag to use for the element.
 string
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+a
+\`\`\`
 ## Theme
   
 **global.focus.border.color**
@@ -530,7 +539,7 @@ string
 
 The amount of margin around the component. An object can
       be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+      margin on a particular side. Defaults to \`none\`.
 
 \`\`\`
 none
@@ -808,8 +817,7 @@ Whether flex-grow and/or flex-shrink is true.
 \`\`\`
 grow
 shrink
-true
-false
+boolean
 \`\`\`
 
 **fill**
@@ -819,8 +827,7 @@ Whether the width and/or height should fill the container.
 \`\`\`
 horizontal
 vertical
-true
-false
+boolean
 \`\`\`
 
 **gap**
@@ -1342,6 +1349,10 @@ Fill color for primary, border color otherwise.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **disabled**
@@ -1462,6 +1473,11 @@ The DOM tag to use for the element.
 string
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+button
+\`\`\`
 ## Theme
   
 **global.hover.color**
@@ -2764,7 +2780,39 @@ Direction to animate the collapsible content. Defaults to \`vertical\`.
 horizontal
 vertical
 \`\`\`
-  ",
+  
+## Theme
+  
+**collapsible.minSpeed**
+
+The minimum speed of Collapsible animation in milliseconds. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+200
+\`\`\`
+
+**collapsible.baseline**
+
+Default height to be used to calculate the optimal collapsible speed. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+500
+\`\`\`
+
+**collapsible.extend**
+
+Any additional style for the Anchor when hovering. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "DataTable": "## DataTable
 A data driven table.
 
@@ -2876,8 +2924,7 @@ string
 
 **columns**
 
-
-      A description of the data. The order controls the column order.
+A description of the data. The order controls the column order.
       'property' indicates which property in the data objects to associate
       the column with. 'header' indicates what to display in the column
       header. 'render' allows for custom rendering of body cells. Use 'render'
@@ -2887,8 +2934,7 @@ string
       column should be aggregated. This only applies to a footer or groupBy
       context. 'footer' indicates what should be shown in the footer for
       the column. 'search' indicates whether a search filter should be
-      made available for the column.
-    
+      made available for the column. Defaults to \`[]\`.
 
 \`\`\`
 [{
@@ -2920,7 +2966,7 @@ string
 
 **data**
 
-Array of data objects.
+Array of data objects. Defaults to \`[]\`.
 
 \`\`\`
 [{
@@ -2971,12 +3017,10 @@ boolean
 
 **size**
 
-
-      The height of the table body. If set, the table body will have a fixed
+The height of the table body. If set, the table body will have a fixed
       height and the rows will be scrollable within it. In order to preserve
       header and footer cell alignment, all cells will have the same
       width. This cannot be used in combination with 'resizeable'.
-    
 
 \`\`\`
 small
@@ -3022,7 +3066,12 @@ Required. Array of objects describing the connections.
     center
     vertical
     horizontal,
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   fromTarget: 
     string
     object,
@@ -3166,7 +3215,12 @@ string
 
 **children**
 
-Function that will be called when each value is rendered.
+Function that will be called when each value is rendered. Defaults to \`function children(value) {
+    return _react.default.createElement(_Box.Box, {
+      fill: true,
+      border: true
+    }, _react.default.createElement(_Text.Text, null, value.value));
+  }\`.
 
 \`\`\`
 function
@@ -3198,7 +3252,7 @@ string
 Required. Array of objects containing a value. The array should already be
       sorted from largest to smallest value. The caller can put other
       properties in the object. The children function will be called to
-      render the contents of each value.
+      render the contents of each value. Defaults to \`[]\`.
 
 \`\`\`
 [{
@@ -3335,7 +3389,7 @@ import { DropButton } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by screen readers.
+Custom title to be used by screen readers. Defaults to \`Open Drop\`.
 
 \`\`\`
 string
@@ -3787,8 +3841,7 @@ Whether the width and/or height should fill the container.
 \`\`\`
 horizontal
 vertical
-true
-false
+boolean
 \`\`\`
 
 **gap**
@@ -3943,6 +3996,14 @@ Custom styles for Grommet app component.
 \`\`\`
 object
 \`\`\`
+
+**userAgent**
+
+User agent used to detect the device width for setting the initial breakpoint.
+
+\`\`\`
+string
+\`\`\`
   ",
   "Heading": "## Heading
 Heading text structed in levels.
@@ -4059,6 +4120,10 @@ A color identifier to use for the text color.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **level**
@@ -4243,6 +4308,11 @@ cover
 contain
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+img
+\`\`\`
 ## Theme
   
 **image.extend**
@@ -4489,7 +4559,7 @@ horizontal
 
 The amount of margin around the Layer. An object can be specified to
 distinguish horizontal margin, vertical margin, and margin on a
-particular side of the layer
+particular side of the layer Defaults to \`none\`.
 
 \`\`\`
 none
@@ -4583,11 +4653,15 @@ Position of the layer content. Defaults to \`center\`.
 
 \`\`\`
 bottom
+bottom-left
+bottom-right
 center
 hidden
 left
 right
 top
+top-left
+top-right
 \`\`\`
 
 **responsive**
@@ -4597,7 +4671,113 @@ Whether the layer should take full width and height on mobile Defaults to \`true
 \`\`\`
 boolean
 \`\`\`
-  ",
+  
+## Theme
+  
+**global.breakpoints**
+
+The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      small: {
+        value: '768px',
+        borderSize: {
+          xsmall: '1px',
+          small: '2px',
+          medium: '4px',
+          large: '6px',
+          xlarge: '12px',
+        },
+        edgeSize: {
+          none: '0px',
+          hair: '1px',
+          xxsmall: '2px',
+          xsmall: '3px',
+          small: '6px',
+          medium: '12px',
+          large: '24px',
+          xlarge: '48px',
+        },
+        size: {
+          xxsmall: '24px',
+          xsmall: '48px',
+          small: '96px',
+          medium: '192px',
+          large: '384px',
+          xlarge: '768px',
+          full: '100%',
+        },
+      },
+      medium: {
+        value: '1536px',
+      },
+      large: {},
+      }
+\`\`\`
+
+**global.size.xxsmall**
+
+The minimal height of the Layer. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+48px
+\`\`\`
+
+**layer.container.zIndex**
+
+The stack order of Layer Container. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+15
+\`\`\`
+
+**layer.extend**
+
+Any additional style for Layer. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**layer.overlay.background**
+
+The background of the Layer overlay. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+rgba(0, 0, 0, 0.5)
+\`\`\`
+
+**layer.responsiveBreakpoint**
+
+The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**layer.zIndex**
+
+The stack order of Layer. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+10
+\`\`\`
+",
   "Markdown": "## GrommetMarkdown
 Markdown formatting using Grommet components.
 
@@ -4611,6 +4791,92 @@ import { Markdown } from 'grommet';
 
 ## Properties
 
+**components**
+
+Custom components to override default html tags such as 'img' or 'pre'.
+By default only 'p' and 'a' are overrided with the Paragraph and Anchor components
+
+\`\`\`
+{ test: element, ... }
+\`\`\`
+  ",
+  "MaskedInput": "## MaskedInput
+An input field with formalized syntax.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=MaskedInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=maskedinput&module=%2Fsrc%2FMaskedInput.js)
+## Usage
+
+\`\`\`javascript
+import { MaskedInput } from 'grommet';
+<MaskedInput id='item' name='item' />
+\`\`\`
+
+## Properties
+
+**id**
+
+The id attribute of the input.
+
+\`\`\`
+string
+\`\`\`
+
+**name**
+
+The name attribute of the input.
+
+\`\`\`
+string
+\`\`\`
+
+**onChange**
+
+Function that will be called when the user types or pastes text.
+
+\`\`\`
+function
+\`\`\`
+
+**mask**
+
+Describes the structure of the mask. If a regexp is provided, it should
+      allow both the final full string element as well as partial strings
+      as the user types characters one by one. Defaults to \`[]\`.
+
+\`\`\`
+[{
+  length: 
+    number
+    [number],
+  fixed: string,
+  options: [string],
+  regexp: 
+    {
+
+    }
+}]
+\`\`\`
+
+**size**
+
+The size of the text.
+
+\`\`\`
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
+**value**
+
+What text to put in the input. The caller should ensure that it
+      is initially valid with respect to the mask.
+
+\`\`\`
+string
+\`\`\`
   ",
   "Menu": "## Menu
 Presents a list of choices within a drop down via a control that
@@ -4796,7 +5062,7 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-The object values can be any Button prop, for example: label and onClick.
+The object values can be any Button prop, for example: label and onClick. Defaults to \`[]\`.
 
 \`\`\`
 [object]
@@ -4836,7 +5102,49 @@ large
 xlarge
 string
 \`\`\`
-  ",
+  
+## Theme
+  
+**global.colors.control**
+
+The color to use for the icon. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**menu.background**
+
+The color for the background of the menu Drop when it is open. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**menu.extend**
+
+Any additional style for the Menu. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**menu.icons.down**
+
+The icon to show to the right of the label. Expects \`React.element\`.
+
+Defaults to
+
+\`\`\`
+<FormDown />
+\`\`\`
+",
   "Meter": "## Meter
 A graphical meter.
 
@@ -5147,6 +5455,10 @@ A color identifier to use for the text color.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **responsive**
@@ -5180,6 +5492,11 @@ center
 end
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+p
+\`\`\`
 ## Theme
   
 **global.colors.text**
@@ -5225,7 +5542,7 @@ Defaults to
         height: '20px',
         maxWidth: '336px',
        },
-      medium: {          
+      medium: {
         size: '18px',
         height: '24px',
         maxWidth: '432px',
@@ -5425,6 +5742,10 @@ What color to use to indicate the selection.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **direction**
@@ -5454,7 +5775,10 @@ number
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers.
+Custom messages. Used for accessibility by screen readers. Defaults to \`{
+  \\"lower\\": \\"Lower Bounds\\",
+  \\"upper\\": \\"Upper Bounds\\"
+}\`.
 
 \`\`\`
 {
@@ -5529,7 +5853,7 @@ number
 
 **values**
 
-Required. The current values.
+Required. The current values. Defaults to \`[]\`.
 
 \`\`\`
 [number]
@@ -5758,7 +6082,7 @@ function
 **dropAlign**
 
 How to align the drop. Defaults to \`{
-  \\"top\\": \\"top\\",
+  \\"top\\": \\"bottom\\",
   \\"left\\": \\"left\\"
 }\`.
 
@@ -5777,6 +6101,19 @@ How to align the drop. Defaults to \`{
     left
     right
 }
+\`\`\`
+
+**dropHeight**
+
+The height of the drop container.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+string
 \`\`\`
 
 **dropTarget**
@@ -5812,7 +6149,9 @@ function
 
 **messages**
 
-Custom messages.
+Custom messages. Defaults to \`{
+  \\"multiple\\": \\"multiple\\"
+}\`.
 
 \`\`\`
 {
@@ -5960,7 +6299,87 @@ When the options array contains objects, this property indicates how
 string
 function
 \`\`\`
-  ",
+
+**emptySearchMessage**
+
+Empty option message to display when no matching results were found Defaults to \`No matches found\`.
+
+\`\`\`
+string
+\`\`\`
+  
+## Theme
+  
+**select.background**
+
+The background color used for Select. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.container.extend**
+
+Any additional style for the container of the Select component. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.control.extend**
+
+Any additional style for the control of the Select component. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.icons.color**
+
+The color used for Select icons. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.icons.down**
+
+The down icon to use for opening the Select. Expects \`React.element\`.
+
+Defaults to
+
+\`\`\`
+<FormDown />
+\`\`\`
+
+**select.searchInput**
+
+Component for the Select search input field. Expects \`React.component\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.step**
+
+How many items to render at a time. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+20
+\`\`\`
+",
   "SkipLinks": "## SkipLinks
 Describe a list of elements to skip to.
 
@@ -6139,7 +6558,19 @@ number
 first
 last
 \`\`\`
-  ",
+  
+## Theme
+  
+**stack.extend**
+
+Any additional style for the control of the Stack component. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Tab": "## Tab
 One tab within Tabs.
 
@@ -6285,7 +6716,12 @@ One line description.
 \`\`\`
 string
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+table
+\`\`\`",
   "TableBody": "## TableBody
 The body of a table.
 
@@ -6298,7 +6734,12 @@ import { TableBody } from 'grommet';
 
 ## Properties
 
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+tbody
+\`\`\`",
   "TableCell": "## TableCell
 A cell of data in a table.
 
@@ -6360,7 +6801,12 @@ top
 middle
 bottom
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+td
+\`\`\`",
   "TableFooter": "## TableFooter
 The footer of a table.
 
@@ -6373,7 +6819,12 @@ import { TableFooter } from 'grommet';
 
 ## Properties
 
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+tfoot
+\`\`\`",
   "TableHeader": "## TableHeader
 The header of a table.
 
@@ -6386,7 +6837,12 @@ import { TableHeader } from 'grommet';
 
 ## Properties
 
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+thead
+\`\`\`",
   "TableRow": "## TableRow
 A row of cells in a table.
 
@@ -6399,7 +6855,12 @@ import { TableRow } from 'grommet';
 
 ## Properties
 
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+tr
+\`\`\`",
   "Tabs": "## Tabs
 A tabular view component.
 
@@ -6537,8 +6998,7 @@ Whether flex-grow and/or flex-shrink is true.
 \`\`\`
 grow
 shrink
-true
-false
+boolean
 \`\`\`
 
 **justify**
@@ -6687,6 +7147,10 @@ A color identifier to use for the text color.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **size**
@@ -6752,6 +7216,11 @@ bold
 number
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+span
+\`\`\`
 ## Theme
   
 **color**
@@ -6855,8 +7324,7 @@ string
 Whether the width and height should fill the container.
 
 \`\`\`
-true
-false
+boolean
 \`\`\`
 
 **focusIndicator**
@@ -6907,7 +7375,74 @@ What text to put in the textarea.
 \`\`\`
 string
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+textarea
+\`\`\`
+## Theme
+  
+**global.colors.placeholder**
+
+The placeholder color used for TextArea. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+#AAAAAA
+\`\`\`
+
+**global.control.border.width**
+
+The border width. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+1px
+\`\`\`
+
+**global.input.weight**
+
+The font weight of the text entered. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+600
+\`\`\`
+
+**global.focus.border.color**
+
+The color of the border when component is focused. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.input.padding**
+
+The padding of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+12px
+\`\`\`
+
+**textArea.extend**
+
+Any additional style for Text. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "TextInput": "## TextInput
 A text input field with optional suggestions.
 
@@ -6924,7 +7459,7 @@ import { TextInput } from 'grommet';
 **dropAlign**
 
 How to align the drop. Defaults to \`{
-  \\"top\\": \\"top\\",
+  \\"top\\": \\"bottom\\",
   \\"left\\": \\"left\\"
 }\`.
 
@@ -6943,6 +7478,19 @@ How to align the drop. Defaults to \`{
     left
     right
 }
+\`\`\`
+
+**dropHeight**
+
+The height of the drop container.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+string
 \`\`\`
 
 **dropTarget**
@@ -7082,7 +7630,109 @@ What text to put in the input.
 \`\`\`
 string
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+input
+\`\`\`
+## Theme
+  
+**global.colors.placeholder**
+
+The placeholder color used for TextInput. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+#AAAAAA
+\`\`\`
+
+**global.control.border.width**
+
+The border width. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+1px
+\`\`\`
+
+**global.input.padding**
+
+The padding of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+12px
+\`\`\`
+
+**global.input.weight**
+
+The font weight of the text. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+600
+\`\`\`
+
+**select.step**
+
+How many suggestions to render at a time. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+20
+\`\`\`
+
+**text**
+
+The possible sizes of the text in terms of its font-size and line-height. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      xsmall: {
+        size: '12px',
+        height: '18px',
+       },
+      small: {
+        size: '14px',
+        height: '20px',
+       },
+      medium: {
+        size: '18px',
+        height: '24px',
+      },
+      large: {
+        size: '22px',
+        height: '28px',
+      },
+      xlarge: {
+        size: '26px',
+        height: '32px',
+      },
+      xxlarge: {
+        size: '34px',
+        height: '40px',
+      },
+    }
+\`\`\`
+
+**textInput.extend**
+
+Any additional style for TextInput. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Video": "## Video
 A video player.
 
@@ -7346,10 +7996,14 @@ string
 
 **color**
 
-Default color
+Color when hovering over places while selecting.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
 
 **continents**
@@ -7358,7 +8012,12 @@ Continent details.
 
 \`\`\`
 [{
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   name: 
     Africa
     Asia
@@ -7386,7 +8045,12 @@ Place details.
 
 \`\`\`
 [{
-  color: string,
+  color: 
+    string
+    {
+      dark: string,
+      light: string
+    },
   name: string,
   location: [number],
   onClick: function,
@@ -7400,6 +8064,10 @@ Color when hovering over places while selecting.
 
 \`\`\`
 string
+{
+  dark: string,
+  light: string
+}
 \`\`\`
   
 ## Theme

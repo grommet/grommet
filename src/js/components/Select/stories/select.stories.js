@@ -1,5 +1,4 @@
 import React, { createRef, Component, PureComponent } from 'react';
-import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
@@ -165,6 +164,7 @@ class ObjectMultiSelect extends Component {
             size="medium"
             placeholder="Select"
             multiple
+            closeOnChange={false}
             disabledKey="dis"
             labelKey="lab"
             valueKey="val"
@@ -177,7 +177,7 @@ class ObjectMultiSelect extends Component {
             onSearch={text => {
               const exp = new RegExp(text, 'i');
               this.setState({
-                options: objectOptions.filter(o => exp.test(o.val)),
+                options: objectOptions.filter(o => exp.test(o.lab)),
               });
             }}
           />
@@ -397,8 +397,7 @@ class CustomSearchSelect extends Component {
             event.preventDefault();
             event.stopPropagation();
             this.clearContentPartners();
-            /* eslint-disable-next-line react/no-find-dom-node */
-            findDOMNode(this.selectRef.current).focus();
+            this.selectRef.current.focus();
           }}
         >
           <Box background="gray" round="full">
@@ -421,6 +420,7 @@ class CustomSearchSelect extends Component {
               closeOnChange={false}
               placeholder="Select Content Partners"
               searchPlaceholder="Search Content Partners"
+              emptySearchMessage="No partners found"
               multiple
               value={
                 selectedContentPartners.length
@@ -525,13 +525,9 @@ class Option extends PureComponent {
 const dummyOptions = Array(2000)
   .fill()
   .map((_, i) => `option ${i}`)
-  .sort();
-
-const theme = deepMerge(grommet, {
-  select: {
-    step: 100,
-  },
-});
+  .sort((a, b) =>
+    a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }),
+  );
 
 class ManyOptions extends Component {
   state = {
@@ -542,14 +538,15 @@ class ManyOptions extends Component {
   render() {
     const { options, selected } = this.state;
     return (
-      <Grommet theme={theme}>
-        <Box pad="xsmall">
+      <Grommet full theme={grommet}>
+        <Box fill align="center" justify="start" pad="large">
           <Select
             multiple
             closeOnChange={false}
             placeholder="select an option..."
             selected={selected}
             options={options}
+            dropHeight="medium"
             onClose={() =>
               this.setState({
                 options: options.sort((p1, p2) => {
@@ -562,7 +559,10 @@ class ManyOptions extends Component {
                   if (p1Exists && !p2Exists) {
                     return -1;
                   }
-                  return p1.localeCompare(p2);
+                  return p1.localeCompare(p2, undefined, {
+                    numeric: true,
+                    sensitivity: 'base',
+                  });
                 }),
               })
             }

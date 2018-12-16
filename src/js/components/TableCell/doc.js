@@ -6,7 +6,8 @@ export const doc = TableCell => {
     .usage(
       `import { TableCell } from 'grommet';
 <TableCell />`,
-    );
+    )
+    .intrinsicElement('td');
 
   DocumentedTableCell.propTypes = {
     plain: PropTypes.bool

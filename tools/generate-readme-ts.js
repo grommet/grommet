@@ -4,9 +4,11 @@ import path from 'path';
 
 const code = '```';
 
+const replaceHoc = content => content.replace(/(With.*\()(.*)(\))/g, '$2');
+
 const getTypescriptDefinitionFile = (
   component,
-  { properties },
+  { properties, intrinsicElement },
 ) => `import * as React from "react";
 
 export interface ${component}Props {
@@ -18,7 +20,9 @@ export interface ${component}Props {
     .join('\n  ')}
 }
 
-declare const ${component}: React.ComponentType<${component}Props>;
+declare const ${component}: React.ComponentType<${component}Props${
+  intrinsicElement ? ` & JSX.IntrinsicElements['${intrinsicElement}']` : ''
+}>;
 
 export { ${component} };
 `;
@@ -82,8 +86,8 @@ components(FOLDER).forEach(component => {
     ),
   );
   const readmeContent = themeDoc
-    ? `${DocumentedComponent.toMarkdown()}\n${toMarkdown(themeDoc)}`
-    : `${DocumentedComponent.toMarkdown()}`;
+    ? `${replaceHoc(DocumentedComponent.toMarkdown())}\n${toMarkdown(themeDoc)}`
+    : `${replaceHoc(DocumentedComponent.toMarkdown())}`;
   del(readmeDestination).then(() =>
     fs.writeFileSync(readmeDestination, readmeContent),
   );

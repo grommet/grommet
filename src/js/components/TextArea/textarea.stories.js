@@ -13,7 +13,9 @@ class SimpleTextArea extends Component {
     const { value } = this.state;
     return (
       <Grommet theme={grommet}>
-        <TextArea value={value} onChange={this.onChange} {...this.props} />
+        <Box align="center" pad="large">
+          <TextArea value={value} onChange={this.onChange} {...this.props} />
+        </Box>
       </Grommet>
     );
   }

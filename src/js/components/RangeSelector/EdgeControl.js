@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
+import { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
+
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { normalizeColor, parseMetricToNum } from '../../utils';
@@ -82,6 +86,12 @@ class EdgeControl extends Component {
   }
 }
 
-const EdgeControlWrapper = compose(withForwardRef)(EdgeControl);
+EdgeControl.defaultProps = {};
+Object.setPrototypeOf(EdgeControl.defaultProps, defaultProps);
+
+const EdgeControlWrapper = compose(
+  withForwardRef,
+  withTheme,
+)(EdgeControl);
 
 export { EdgeControlWrapper as EdgeControl };

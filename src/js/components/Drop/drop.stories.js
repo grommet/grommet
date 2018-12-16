@@ -19,7 +19,7 @@ class SimpleDrop extends Component {
       <Grommet theme={grommet} full>
         <Box fill align="center" justify="center">
           <Box
-            background="dark-4"
+            background="dark-3"
             pad="medium"
             align="center"
             justify="start"
@@ -66,7 +66,7 @@ class Set extends Component {
         <Text>{label}</Text>
         <Box
           margin="xlarge"
-          background="dark-4"
+          background="dark-3"
           pad={{ horizontal: 'large', vertical: 'medium' }}
           align="center"
           justify="center"
@@ -293,7 +293,7 @@ class LazyDrop extends Component {
         <Box fill justify="between" pad="large" gap="small">
           <Box direction="row" justify="between" pad={{ horizontal: 'small' }}>
             <Box
-              background="dark-4"
+              background="dark-3"
               pad="medium"
               align="center"
               ref={this.topLeftTargetRef}
@@ -315,7 +315,7 @@ class LazyDrop extends Component {
               </Drop>
             )}
             <Box
-              background="dark-4"
+              background="dark-3"
               pad="medium"
               align="center"
               ref={this.topRightTargetRef}
@@ -340,7 +340,7 @@ class LazyDrop extends Component {
 
           <Box direction="row" justify="between">
             <Box
-              background="dark-4"
+              background="dark-3"
               pad="medium"
               ref={this.bottomLeftTargetRef}
             >
@@ -361,7 +361,7 @@ class LazyDrop extends Component {
               </Drop>
             )}
             <Box
-              background="dark-4"
+              background="dark-3"
               pad="medium"
               ref={this.bottomRightTargetRef}
             >
@@ -400,7 +400,7 @@ class PlainDrop extends Component {
       <Grommet theme={grommet} full>
         <Box background="brand" fill align="center" justify="center">
           <Box
-            background="dark-4"
+            background="dark-3"
             pad="medium"
             align="center"
             justify="start"

@@ -135,8 +135,7 @@ Whether flex-grow and/or flex-shrink is true.
 ```
 grow
 shrink
-true
-false
+boolean
 ```
 
 **justify**

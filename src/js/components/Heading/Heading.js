@@ -1,7 +1,4 @@
 import React from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from '../hocs';
 
 import { StyledHeading } from './StyledHeading';
 
@@ -32,6 +29,6 @@ let HeadingDoc;
 if (process.env.NODE_ENV !== 'production') {
   HeadingDoc = require('./doc').doc(Heading); // eslint-disable-line global-require
 }
-const HeadingWrapper = compose(withTheme)(HeadingDoc || Heading);
+const HeadingWrapper = HeadingDoc || Heading;
 
 export { HeadingWrapper as Heading };

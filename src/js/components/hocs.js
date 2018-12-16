@@ -1,10 +1,18 @@
 /* eslint-disable react/no-multi-comp */
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import getDisplayName from 'recompose/getDisplayName';
-import { ThemeContext as IconThemeContext } from 'grommet-icons/contexts';
+import hoistNonReactStatics from 'hoist-non-react-statics';
+import { withTheme } from 'styled-components';
+import { AnnounceContext } from '../contexts';
 
-import { AnnounceContext, ThemeContext } from '../contexts';
+let doc = () => x => x;
+
+// Do not use the documentation wrapper in production.
+if (process.env.NODE_ENV !== 'production') {
+  doc = component => require(`./${component}/doc`).doc; // eslint-disable-line
+}
+
+export const withDocs = doc;
 
 export const withFocus = WrappedComponent => {
   class FocusableComponent extends Component {
@@ -33,8 +41,7 @@ export const withFocus = WrappedComponent => {
       // but react does not invoke it if you programically
       // call wrapperNode.focus() inside componentWillUnmount
       // see Drop "this.originalFocusedElement.focus();" for reference
-      /* eslint-disable-next-line react/no-find-dom-node */
-      const wrapperNode = findDOMNode(wrappedRef.current);
+      const wrapperNode = wrappedRef.current;
       if (wrapperNode && wrapperNode.addEventListener) {
         wrapperNode.addEventListener('focus', this.setFocus);
       }
@@ -43,8 +50,7 @@ export const withFocus = WrappedComponent => {
     componentWillUnmount = () => {
       const { wrappedRef } = this.state;
       window.removeEventListener('mousedown', this.handleActiveMouse);
-      /* eslint-disable-next-line react/no-find-dom-node */
-      const wrapperNode = findDOMNode(wrappedRef.current);
+      const wrapperNode = wrappedRef.current;
       if (wrapperNode && wrapperNode.addEventListener) {
         wrapperNode.removeEventListener('focus', this.setFocus);
       }
@@ -118,26 +124,8 @@ export const withFocus = WrappedComponent => {
 
   ForwardRef.displayName = getDisplayName(WrappedComponent);
   ForwardRef.name = ForwardRef.displayName;
-
-  return ForwardRef;
-};
-
-export const withTheme = WrappedComponent => {
-  class ThemedComponent extends Component {
-    render() {
-      const { withThemeRef, theme, ...rest } = this.props;
-      return <WrappedComponent ref={withThemeRef} {...rest} theme={theme} />;
-    }
-  }
-
-  const ForwardRef = React.forwardRef((props, ref) => (
-    <ThemeContext.Consumer>
-      {theme => <ThemedComponent {...props} theme={theme} withThemeRef={ref} />}
-    </ThemeContext.Consumer>
-  ));
-
-  ForwardRef.displayName = getDisplayName(WrappedComponent);
-  ForwardRef.name = ForwardRef.displayName;
+  ForwardRef.defaultProps = WrappedComponent.defaultProps;
+  hoistNonReactStatics(ForwardRef, WrappedComponent);
 
   return ForwardRef;
 };
@@ -149,6 +137,8 @@ export const withForwardRef = WrappedComponent => {
 
   ForwardRefComponent.displayName = getDisplayName(WrappedComponent);
   ForwardRefComponent.name = ForwardRefComponent.displayName;
+  ForwardRefComponent.defaultProps = WrappedComponent.defaultProps;
+  hoistNonReactStatics(ForwardRefComponent, WrappedComponent);
 
   return ForwardRefComponent;
 };
@@ -164,18 +154,10 @@ export const withAnnounce = WrappedComponent => {
 
   ForwardRef.displayName = getDisplayName(WrappedComponent);
   ForwardRef.name = ForwardRef.displayName;
+  ForwardRef.defaultProps = WrappedComponent.defaultProps;
+  hoistNonReactStatics(ForwardRef, WrappedComponent);
 
   return ForwardRef;
 };
 
-export const withIconTheme = WrappedComponent => {
-  const IconThemeComponent = props => (
-    <IconThemeContext.Consumer>
-      {iconTheme => <WrappedComponent {...props} iconTheme={iconTheme} />}
-    </IconThemeContext.Consumer>
-  );
-
-  IconThemeComponent.displayName = getDisplayName(WrappedComponent);
-
-  return IconThemeComponent;
-};
+export { withTheme };

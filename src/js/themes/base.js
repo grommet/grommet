@@ -17,35 +17,36 @@ import {
   Volume,
   VolumeLow,
 } from 'grommet-icons';
+import { base as iconBase } from 'grommet-icons/themes';
 
-import { normalizeColor, deepFreeze } from '../utils';
+import { deepMerge, deepFreeze, normalizeColor } from '../utils';
 
 const brandColor = '#7D4CDB';
-const accentColors = ['#FD6FFF', '#61EC9F', '#60EBE1', '#FFCA58'];
-const neutralColors = ['#3D138D', '#BE60EB', '#00C781', '#6194EB', '#FFB202'];
+const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
+const neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D'];
 const statusColors = {
-  critical: '#EB6060',
-  error: '#EB6060',
-  warning: '#F7E463',
-  ok: '#7CD992',
-  unknown: '#a8a8a8',
-  disabled: '#a8a8a8',
+  critical: '#FF4040',
+  error: '#FF4040',
+  warning: '#FFAA15',
+  ok: '#00C781',
+  unknown: '#CCCCCC',
+  disabled: '#CCCCCC',
 };
 const darkColors = [
   '#333333',
-  '#444444',
   '#555555',
-  '#666666',
   '#777777',
+  '#999999',
+  '#999999',
   '#999999',
 ];
 const lightColors = [
-  '#F6F6F6',
-  '#EEEEEE',
-  '#DDDDDD',
-  '#CCCCCC',
-  '#BBBBBB',
-  '#AAAAAA',
+  '#F8F8F8',
+  '#F2F2F2',
+  '#EDEDED',
+  '#DADADA',
+  '#DADADA',
+  '#DADADA',
 ];
 const focusColor = accentColors[0];
 
@@ -63,9 +64,14 @@ const colors = {
   },
   focus: focusColor,
   placeholder: '#AAAAAA',
+  selected: 'brand',
   text: {
     dark: '#f8f8f8',
     light: '#444444',
+  },
+  icon: {
+    dark: '#f8f8f8',
+    light: '#666666',
   },
   white: '#FFFFFF',
 };
@@ -98,7 +104,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
 
   const borderWidth = 2;
 
-  const result = {
+  const result = deepMerge(iconBase, {
     global: {
       animation: {
         duration: '1s',
@@ -147,6 +153,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           value: baseSpacing * 64, // 1536
         },
         large: {}, // anything above 'medium'
+      },
+      // Breakpoints used at Server Side Rendering for the initial rendering
+      // These values correspond to the theme breakpoints
+      deviceBreakpoints: {
+        phone: 'small',
+        tablet: 'medium',
+        computer: 'large',
       },
       colors,
       control: {
@@ -218,12 +231,17 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       input: {
+        padding: `${baseSpacing / 2}px`,
         weight: 600,
       },
       opacity: {
         strong: 0.8,
         medium: 0.4,
         weak: 0.1,
+      },
+      selected: {
+        background: 'selected',
+        color: 'white',
       },
       spacing: `${baseSpacing}px`,
       size: {
@@ -248,8 +266,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       textDecoration: 'none',
       fontWeight: 600,
       color: {
-        dark: '#6194EB',
-        light: '#1D67E3',
+        dark: 'accent-1',
+        light: 'brand',
       },
       hover: {
         textDecoration: 'underline',
@@ -377,8 +395,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
         minute: {
           color: {
-            dark: 'light-5',
-            light: 'dark-5',
+            dark: 'light-4',
+            light: 'dark-3',
           },
           width: `${baseSpacing / 6}px`,
           size: `${Math.round(baseSpacing / 2)}px`,
@@ -466,8 +484,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       help: {
         color: {
-          dark: 'dark-5',
-          light: 'dark-5',
+          dark: 'dark-3',
+          light: 'dark-3',
         },
       },
       label: {},
@@ -518,10 +536,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       responsiveBreakpoint: 'small', // when we scale the font size down
       weight: 600,
     },
-    icon: {
-      colors,
-    },
-    iconThemes: {},
     layer: {
       background: 'white',
       border: {
@@ -594,18 +608,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     select: {
       // background: undefined,
-      icons: {
-        // color: { dark: undefined, light: undefined },
-        down: FormDown,
-      },
-      // searchInput: undefined,
-      step: 20,
       container: {
         // extend: undefined,
       },
       control: {
         // extend: undefined,
       },
+      icons: {
+        // color: { dark: undefined, light: undefined },
+        down: FormDown,
+      },
+      // searchInput: undefined,
+      step: 20,
     },
     tab: {
       active: {
@@ -730,7 +744,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         base: '8px',
       },
     },
-  };
+  });
 
   return deepFreeze(result);
 };

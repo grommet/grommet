@@ -1,7 +1,4 @@
 import React from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from '../hocs';
 
 import { StyledGrid } from './StyledGrid';
 
@@ -28,7 +25,7 @@ let GridDoc;
 if (process.env.NODE_ENV !== 'production') {
   GridDoc = require('./doc').doc(Grid); // eslint-disable-line global-require
 }
-const GridWrapper = compose(withTheme)(GridDoc || Grid);
+const GridWrapper = GridDoc || Grid;
 
 GridWrapper.available =
   typeof window !== 'undefined' &&

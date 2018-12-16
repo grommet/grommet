@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import { Box } from '../Box';
-import { withFocus, withForwardRef, withTheme } from '../hocs';
+import { withTheme } from 'styled-components';
+
 import { removeUndefined } from '../../utils/object';
+import { defaultProps } from '../../default-props';
+
+import { Box } from '../Box';
+import { withFocus, withForwardRef } from '../hocs';
 
 import {
   StyledCheckBox,
@@ -16,6 +20,14 @@ import {
 } from './StyledCheckBox';
 
 import { normalizeColor } from '../../utils';
+
+const stopLabelClick = event => {
+  // prevents clicking on the label trigging the event twice
+  // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
+  if (event.target.type !== 'checkbox') {
+    event.stopPropagation();
+  }
+};
 
 class CheckBox extends Component {
   constructor(props) {
@@ -52,6 +64,15 @@ class CheckBox extends Component {
       ...rest
     } = this.props;
 
+    const themeableProps = {
+      checked,
+      disabled,
+      focus,
+      reverse,
+      toggle,
+      indeterminate,
+    };
+
     let hidden;
     if (disabled && checked) {
       hidden = <input name={name} type="hidden" value="true" />;
@@ -68,8 +89,8 @@ class CheckBox extends Component {
     }
 
     const visual = toggle ? (
-      <StyledCheckBoxToggle focus={focus} theme={theme} checked={checked}>
-        <StyledCheckBoxKnob theme={theme} />
+      <StyledCheckBoxToggle {...themeableProps}>
+        <StyledCheckBoxKnob {...themeableProps} />
       </StyledCheckBoxToggle>
     ) : (
       <StyledCheckBoxBox
@@ -83,19 +104,18 @@ class CheckBox extends Component {
           color: borderColor,
         }}
         round={theme.checkBox.check.radius}
-        focus={focus}
-        theme={theme}
-        checked={checked}
+        {...themeableProps}
       >
         {!indeterminate &&
           checked &&
           (CheckedIcon ? (
-            <CheckedIcon as={StyledCheckBoxIcon} theme={theme} />
+            <CheckedIcon theme={theme} as={StyledCheckBoxIcon} />
           ) : (
             <StyledCheckBoxIcon
+              theme={theme}
               viewBox="0 0 24 24"
               preserveAspectRatio="xMidYMid meet"
-              theme={theme}
+              {...themeableProps}
             >
               <path fill="none" d="M6,11.3 L10.3,16 L18,6.2" />
             </StyledCheckBoxIcon>
@@ -103,12 +123,13 @@ class CheckBox extends Component {
         {!checked &&
           indeterminate &&
           (IndeterminateIcon ? (
-            <IndeterminateIcon as={StyledCheckBoxIcon} theme={theme} />
+            <IndeterminateIcon theme={theme} as={StyledCheckBoxIcon} />
           ) : (
             <StyledCheckBoxIcon
+              theme={theme}
               viewBox="0 0 24 24"
               preserveAspectRatio="xMidYMid meet"
-              theme={theme}
+              {...themeableProps}
             >
               <path fill="none" d="M6,12 L18,12" />
             </StyledCheckBoxIcon>
@@ -116,8 +137,15 @@ class CheckBox extends Component {
       </StyledCheckBoxBox>
     );
 
+    const side = reverse ? 'left' : 'right';
     const checkBoxNode = (
-      <StyledCheckBox as={Box} align="center" justify="center" theme={theme}>
+      <StyledCheckBox
+        as={Box}
+        align="center"
+        justify="center"
+        margin={{ [side]: theme.checkBox.gap || 'small' }}
+        {...themeableProps}
+      >
         <StyledCheckBoxInput
           {...rest}
           ref={forwardRef}
@@ -129,9 +157,7 @@ class CheckBox extends Component {
             disabled,
             onChange,
           })}
-          theme={theme}
-          checked={checked}
-          disabled={disabled}
+          {...themeableProps}
         />
         {visual}
         {hidden}
@@ -146,21 +172,11 @@ class CheckBox extends Component {
 
     return (
       <StyledCheckBoxContainer
-        direction="row"
-        align="center"
-        as={props => <Box as="label" {...props} />}
         reverse={reverse}
         {...removeUndefined({ htmlFor: id, disabled })}
-        theme={theme}
-        gap={theme.checkBox.gap || 'small'}
         checked={checked}
-        onClick={event => {
-          // prevents clicking on the label trigging the event twice
-          // https://stackoverflow.com/questions/24501497/why-the-onclick-element-will-trigger-twice-for-label-element
-          if (event.target.type !== 'checkbox') {
-            event.stopPropagation();
-          }
-        }}
+        onClick={stopLabelClick}
+        {...themeableProps}
       >
         {first}
         {second}
@@ -168,6 +184,9 @@ class CheckBox extends Component {
     );
   }
 }
+
+CheckBox.defaultProps = {};
+Object.setPrototypeOf(CheckBox.defaultProps, defaultProps);
 
 let CheckBoxDoc;
 if (process.env.NODE_ENV !== 'production') {

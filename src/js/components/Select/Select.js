@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
+
+import { controlBorderStyle, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { TextInput } from '../TextInput';
-import { withForwardRef, withTheme } from '../hocs';
-import { controlBorderStyle, normalizeColor } from '../../utils';
+import { withForwardRef } from '../hocs';
 
 import { SelectContainer } from './SelectContainer';
 
@@ -22,6 +24,9 @@ const StyledSelectBox = styled(Box)`
     props.theme.select.control.extend};
 `;
 
+StyledSelectBox.defaultProps = {};
+Object.setPrototypeOf(StyledSelectBox.defaultProps, defaultProps);
+
 class Select extends Component {
   static defaultProps = {
     closeOnChange: true,
@@ -30,6 +35,8 @@ class Select extends Component {
   };
 
   state = { open: false };
+
+  inputRef = React.createRef();
 
   onOpen = () => {
     const { onOpen } = this.props;
@@ -85,7 +92,7 @@ class Select extends Component {
         this.onClose();
       }
       if (onChange) {
-        onChange(event, ...args);
+        onChange({ ...event, target: this.inputRef.current }, ...args);
       }
     };
 
@@ -168,7 +175,6 @@ class Select extends Component {
             justify="between"
             background={theme.select.background}
             plain={plain}
-            theme={theme}
           >
             <Box direction="row" flex basis="auto">
               {selectValue || (
@@ -180,6 +186,7 @@ class Select extends Component {
                     }`
                   }
                   id={id ? `${id}__input` : undefined}
+                  ref={this.inputRef}
                   {...rest}
                   tabIndex="-1"
                   type="text"
@@ -205,6 +212,8 @@ class Select extends Component {
     );
   }
 }
+
+Object.setPrototypeOf(Select.defaultProps, defaultProps);
 
 let SelectDoc;
 if (process.env.NODE_ENV !== 'production') {

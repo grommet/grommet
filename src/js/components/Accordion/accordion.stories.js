@@ -74,7 +74,7 @@ class RichPanel extends Component {
         pad={{ horizontal: 'small' }}
       >
         {icon}
-        <Heading level={4} color={hovering ? 'dark-1' : 'dark-5'}>
+        <Heading level={4} color={hovering ? 'dark-1' : 'dark-3'}>
           {label}
         </Heading>
       </Box>
@@ -173,7 +173,7 @@ class RichAccordion extends Component {
                     gap="medium"
                   >
                     <Box gap="xsmall">
-                      <Text color="dark-5">
+                      <Text color="dark-3">
                         <strong>Purpose</strong>
                       </Text>
                       <Text>
@@ -182,7 +182,7 @@ class RichAccordion extends Component {
                       </Text>
                     </Box>
                     <Box gap="xsmall">
-                      <Text color="dark-5">
+                      <Text color="dark-3">
                         <strong>Created</strong>
                       </Text>
                       <Text>Created by Bryan Jacquot on January 19, 2016</Text>
@@ -204,7 +204,7 @@ class RichAccordion extends Component {
                       overflow="auto"
                       style={{ maxHeight: '400px' }}
                     >
-                      <Text color="dark-5">
+                      <Text color="dark-3">
                         Below is the top message in
                         <strong>#announcements</strong>.
                       </Text>

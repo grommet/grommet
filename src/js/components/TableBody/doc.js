@@ -6,7 +6,8 @@ export const doc = TableBody => {
     .usage(
       `import { TableBody } from 'grommet';
 <TableBody />`,
-    );
+    )
+    .intrinsicElement('tbody');
 
   return DocumentedTableBody;
 };

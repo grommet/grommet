@@ -113,6 +113,10 @@ A color identifier to use for the text color.
 
 ```
 string
+{
+  dark: string,
+  light: string
+}
 ```
 
 **responsive**
@@ -146,6 +150,11 @@ center
 end
 ```
   
+## Intrinsic element
+
+```
+p
+```
 ## Theme
   
 **global.colors.text**
@@ -191,7 +200,7 @@ Defaults to
         height: '20px',
         maxWidth: '336px',
        },
-      medium: {          
+      medium: {
         size: '18px',
         height: '24px',
         maxWidth: '432px',

@@ -1,11 +1,15 @@
 import React from 'react';
+import { compose } from 'recompose';
 
+import { withTheme } from 'styled-components';
+
+import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
 
 import { StyledMeter } from './StyledMeter';
 import { strokeProps, defaultColor } from './utils';
 
-export const Bar = props => {
+const Bar = props => {
   const {
     background,
     max,
@@ -70,7 +74,6 @@ export const Bar = props => {
       width={size === 'full' ? '100%' : width}
       height={height}
       round={round ? { size: thickness } : undefined}
-      theme={theme}
       {...rest}
     >
       <path
@@ -88,3 +91,9 @@ export const Bar = props => {
 Bar.defaultProps = {
   background: 'light-1',
 };
+
+Object.setPrototypeOf(Bar.defaultProps, defaultProps);
+
+const BarWrapper = compose(withTheme)(Bar);
+
+export { BarWrapper as Bar };

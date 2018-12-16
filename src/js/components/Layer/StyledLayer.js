@@ -1,6 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { backgroundStyle, baseStyle, breakpointStyle } from '../../utils';
+import { baseStyle, backgroundStyle, breakpointStyle } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const hiddenPositionStyle = css`
   left: -100%;
@@ -26,8 +27,9 @@ const responsiveLayerStyle = `
   min-height: 100vh;
 `;
 
-export const StyledLayer = styled.div`
-  ${baseStyle} background: unset;
+const StyledLayer = styled.div`
+  ${baseStyle}
+  background: unset;
   position: relative;
   z-index: ${props => props.theme.layer.zIndex};
   pointer-events: none;
@@ -47,7 +49,10 @@ export const StyledLayer = styled.div`
   }} ${props => props.theme.layer && props.theme.layer.extend};
 `;
 
-export const StyledOverlay = styled.div`
+StyledLayer.defaultProps = {};
+Object.setPrototypeOf(StyledLayer.defaultProps, defaultProps);
+
+const StyledOverlay = styled.div`
   position: absolute;
   ${props => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
@@ -71,7 +76,9 @@ export const StyledOverlay = styled.div`
 
 const getMargin = (margin, theme, position) => {
   const axis =
-    position === 'top' || position === 'bottom' ? 'vertical' : 'horizontal';
+    position.includes('top') || position.includes('bottom')
+      ? 'vertical'
+      : 'horizontal';
   const marginValue = margin[position] || margin[axis] || margin;
   const marginApplied = theme.global.edgeSize[marginValue] || marginValue;
   const marginInTheme = !!theme.global.edgeSize[marginValue];
@@ -86,10 +93,14 @@ const MARGINS = (margin, theme, position = undefined) => {
     return getMargin(margin, theme, position);
   }
   return {
-    top: getMargin(margin, theme, 'top'),
     bottom: getMargin(margin, theme, 'bottom'),
+    'bottom-left': getMargin(margin, theme, 'bottom-left'),
+    'bottom-right': getMargin(margin, theme, 'bottom-right'),
     left: getMargin(margin, theme, 'left'),
     right: getMargin(margin, theme, 'right'),
+    top: getMargin(margin, theme, 'top'),
+    'top-right': getMargin(margin, theme, 'top-right'),
+    'top-left': getMargin(margin, theme, 'top-left'),
   };
 };
 
@@ -215,9 +226,9 @@ const POSITIONS = {
       right: ${margin.right};
       animation: ${KEYFRAMES.center.true} 0.2s ease-in-out forwards;
     `,
-    false: margin => css`
-      top: calc(50% + ${margin.top});
-      left: calc(50% + ${margin.left});
+    false: () => css`
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
       animation: ${KEYFRAMES.center.false} 0.2s ease-in-out forwards;
     `,
@@ -346,6 +357,130 @@ const POSITIONS = {
       animation: ${KEYFRAMES.right.false} 0.2s ease-in-out forwards;
     `,
   },
+
+  'top-right': {
+    vertical: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      right: ${margin.right};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+    horizontal: margin => css`
+      left: ${margin.left};
+      right: ${margin.right};
+      top: 0;
+      transform: translateX(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      right: ${margin.right};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+    false: margin => css`
+      top: ${margin.top};
+      right: ${margin.right};
+      transform: translateY(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+  },
+
+  'top-left': {
+    vertical: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+    horizontal: margin => css`
+      left: ${margin.left};
+      right: ${margin.right};
+      top: 0;
+      transform: translateX(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      right: ${margin.right};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+    false: margin => css`
+      top: ${margin.top};
+      left: ${margin.left};
+      transform: translateY(0);
+      animation: ${KEYFRAMES.top.true} 0.2s ease-in-out forwards;
+    `,
+  },
+
+  'bottom-right': {
+    vertical: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      right: ${margin.right};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+    `,
+    horizontal: margin => css`
+      left: ${margin.left};
+      right: ${margin.right};
+      bottom: ${margin.bottom};
+      transform: translateY(0);
+      animation: ${KEYFRAMES.bottom.horizontal} 0.2s ease-in-out forwards;
+    `,
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      right: ${margin.right};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+    `,
+    false: margin => css`
+      bottom: ${margin.bottom};
+      right: ${margin.right};
+      transform: translateY(0);
+      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+    `,
+  },
+
+  'bottom-left': {
+    vertical: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+    `,
+    horizontal: margin => css`
+      left: ${margin.left};
+      right: ${margin.right};
+      bottom: ${margin.bottom};
+      transform: translateY(0);
+      animation: ${KEYFRAMES.bottom.horizontal} 0.2s ease-in-out forwards;
+    `,
+    true: margin => css`
+      top: ${margin.top};
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      right: ${margin.right};
+      transform: translateX(0);
+      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+    `,
+    false: margin => css`
+      bottom: ${margin.bottom};
+      left: ${margin.left};
+      transform: translateY(0);
+      animation: ${KEYFRAMES.bottom.true} 0.2s ease-in-out forwards;
+    `,
+  },
 };
 
 const desktopContainerStyle = css`
@@ -387,7 +522,7 @@ const responsiveContainerStyle = css`
   width: 100vw;
 `;
 
-export const StyledContainer = styled.div`
+const StyledContainer = styled.div`
   ${props => (!props.modal ? baseStyle : '')} display: flex;
   flex-direction: column;
   min-height: ${props => props.theme.global.size.xxsmall};
@@ -409,3 +544,8 @@ export const StyledContainer = styled.div`
     return '';
   }};
 `;
+
+StyledContainer.defaultProps = {};
+Object.setPrototypeOf(StyledContainer.defaultProps, defaultProps);
+
+export { StyledLayer, StyledOverlay, StyledContainer };

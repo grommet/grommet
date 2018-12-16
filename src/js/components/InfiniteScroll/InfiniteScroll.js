@@ -1,5 +1,6 @@
-import React, { PureComponent } from 'react';
-import Waypoint from 'react-waypoint';
+import React, { createRef, PureComponent } from 'react';
+import { findScrollParents } from '../../utils';
+import { Box } from '../Box';
 
 class InfiniteScroll extends PureComponent {
   static defaultProps = {
@@ -8,74 +9,136 @@ class InfiniteScroll extends PureComponent {
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { show, step } = nextProps;
+    const { items, show, step } = nextProps;
+    const lastPage = Math.ceil(items.length / step) - 1;
     if (
-      prevState.firstPage === undefined ||
-      (show && show >= step * (prevState.lastPage + 1))
+      prevState.beginPage === undefined ||
+      ((show && show >= step * (prevState.lastPage + 1)) ||
+        lastPage !== prevState.lastPage)
     ) {
-      let lastPage = prevState.lastPage || 0;
-      if (show && show >= step * (lastPage + 1)) {
-        lastPage = Math.floor((show + step) / step) - 1;
+      let endPage = prevState.endPage || 0;
+      if (show && show >= step * (endPage + 1)) {
+        endPage = Math.floor((show + step) / step) - 1;
       }
-      return { firstPage: 0, lastPage };
+      return { beginPage: 0, endPage, lastPage, pageHeight: undefined };
     }
     return null;
   }
 
   state = {};
 
-  beginPageRef = React.createRef();
-
-  endPageRef = React.createRef();
-
-  showRef = React.createRef();
-
   initialScroll = false;
 
+  aboveMarkerRef = createRef();
+
+  belowMarkerRef = createRef();
+
   componentDidMount() {
-    this.scrollShow();
+    // ride out any animation, 100ms was chosen empirically
+    clearTimeout(this.animationDelayTimer);
+    this.animationDelayTimer = setTimeout(() => {
+      this.setPageHeight();
+      this.addScrollListener();
+      this.scrollShow();
+    }, 100);
   }
 
   componentDidUpdate() {
+    this.setPageHeight();
+    this.removeScrollListener();
+    this.addScrollListener();
     this.scrollShow();
   }
 
+  componentWillUnmount() {
+    this.removeScrollListener();
+    clearTimeout(this.animationDelayTimer);
+    clearTimeout(this.scrollTimer);
+  }
+
+  addScrollListener = () => {
+    const { pageHeight } = this.state;
+    if (pageHeight && this.belowMarkerRef.current && !this.scrollParents) {
+      this.scrollParents = findScrollParents(this.belowMarkerRef.current);
+      this.scrollParents.forEach(scrollParent =>
+        scrollParent.addEventListener('scroll', this.onScroll),
+      );
+    }
+  };
+
+  removeScrollListener = () => {
+    if (this.scrollParents) {
+      this.scrollParents.forEach(scrollParent =>
+        scrollParent.removeEventListener('scroll', this.place),
+      );
+      this.scrollParents = undefined;
+    }
+  };
+
   scrollShow = () => {
     const { show } = this.props;
-    if (show && !this.initialScroll && this.showRef.current) {
+    if (show && !this.initialScroll && this.showRef) {
       this.initialScroll = true;
       // on initial render, scroll to any 'show'
-      this.showRef.current.scrollIntoView();
-    }
-    if (
-      this.beginPageRef.current &&
-      this.endPageRef.current &&
-      !this.pageHeight
-    ) {
-      const beginRect = this.beginPageRef.current.getBoundingClientRect();
-      const endRect = this.endPageRef.current.getBoundingClientRect();
-      this.pageHeight = endRect.y + endRect.height - beginRect.y;
+      this.showRef.scrollIntoView();
     }
   };
 
-  nextPage = () => {
-    const { items, onMore, step } = this.props;
-    const { firstPage, lastPage } = this.state;
-    const nextLastPage = lastPage + 1;
-    const nextFirstPage = lastPage === firstPage ? firstPage : nextLastPage - 1;
-    this.setState(
-      { firstPage: nextFirstPage, lastPage: nextLastPage },
-      // call onMore if we've reached the end of the items
-      () => onMore && nextLastPage * step >= items.length && onMore(),
-    );
+  setPageHeight = () => {
+    const { pageHeight } = this.state;
+    if (this.firstPageItemRef && this.lastPageItemRef && !pageHeight) {
+      const beginRect = this.firstPageItemRef.getBoundingClientRect();
+      const endRect = this.lastPageItemRef.getBoundingClientRect();
+      const nextPageHeight = endRect.y + endRect.height - beginRect.y;
+      // In case the pageHeight is smaller than the visible area,
+      // we call onScroll to set the page boundaries appropriately.
+      this.setState({ pageHeight: nextPageHeight }, this.onScroll);
+    }
   };
 
-  previousPage = () => {
-    const { firstPage } = this.state;
-    this.setState({
-      firstPage: Math.max(0, firstPage - 1),
-      lastPage: firstPage,
-    });
+  onScroll = () => {
+    const { onMore, replace } = this.props;
+    const { beginPage, endPage, lastPage, pageHeight } = this.state;
+    if (this.scrollParents && this.scrollParents[0] && pageHeight) {
+      const scrollParent = this.scrollParents[0];
+      // Determine the window into the first scroll parent
+      let top;
+      let height;
+      if (scrollParent === document) {
+        top = document.documentElement.scrollTop || document.body.scrollTop;
+        height = window.innerHeight;
+      } else {
+        top = scrollParent.scrollTop;
+        const rect = scrollParent.getBoundingClientRect();
+        ({ height } = rect);
+      }
+      // Figure out which pages we should make visible based on the scroll
+      // window.
+      const offset = height / 4;
+      const nextBeginPage = replace
+        ? Math.min(
+            lastPage,
+            Math.max(0, Math.floor(Math.max(0, top - offset) / pageHeight)),
+          )
+        : 0;
+      const nextEndPage = Math.min(
+        lastPage,
+        Math.max(
+          (!replace && endPage) || 0,
+          Math.floor((top + height + offset) / pageHeight),
+        ),
+      );
+      if (nextBeginPage !== beginPage || nextEndPage !== endPage) {
+        this.setState(
+          { beginPage: nextBeginPage, endPage: nextEndPage },
+          () => {
+            if (onMore && nextEndPage === lastPage) {
+              onMore();
+            }
+          },
+        );
+      }
+    }
   };
 
   render() {
@@ -85,81 +148,85 @@ class InfiniteScroll extends PureComponent {
       onMore,
       renderMarker,
       replace,
-      scrollableAncestor,
       show,
       step,
     } = this.props;
-    const { firstPage, lastPage } = this.state;
+    const { beginPage, endPage, lastPage, pageHeight } = this.state;
 
-    const firstIndex = firstPage * step;
-    const lastIndex = (lastPage + 1) * step - 1;
+    const firstIndex = beginPage * step;
+    const lastIndex = (endPage + 1) * step - 1;
 
-    let topMarker;
-    if (replace && firstIndex) {
-      let content;
-      if (replace && firstPage && this.pageHeight) {
-        // make it a placeholder for the earlier steps to preserve scroll position
-        content = <div style={{ height: firstPage * this.pageHeight }} />;
-      }
-      topMarker = (
-        <Waypoint
-          key="topMarker"
-          fireOnRapidScroll
-          onEnter={this.previousPage}
-          topOffsetX="-96px"
-          scrollableAncestor={scrollableAncestor}
-        >
-          {content}
-        </Waypoint>
-      );
-      if (renderMarker) {
-        // need to give it a key
-        topMarker = React.cloneElement(renderMarker(topMarker), {
-          key: 'topMarker',
-        });
-      }
-    }
+    const result = [];
 
-    let bottomMarker;
-    if (onMore || lastIndex < (items.length - 1)) {
-      bottomMarker = (
-        <Waypoint
-          key="bottomMarker"
-          fireOnRapidScroll
-          onEnter={this.nextPage}
-          bottomOffsetX="-96px"
-          scrollableAncestor={scrollableAncestor}
+    if (replace && pageHeight && firstIndex) {
+      let marker = (
+        <Box
+          key="above"
+          ref={this.aboveMarkerRef}
+          flex={false}
+          height={`${beginPage * pageHeight}px`}
         />
       );
       if (renderMarker) {
         // need to give it a key
-        bottomMarker = React.cloneElement(renderMarker(bottomMarker), {
-          key: 'bottomMarker',
-        });
+        marker = React.cloneElement(renderMarker(marker), { key: 'above' });
       }
-    }
-
-    const result = [];
-
-    if (topMarker) {
-      result.push(topMarker);
+      result.push(marker);
     }
 
     items.slice(firstIndex, lastIndex + 1).forEach((item, index) => {
-      let child = children(item, index);
-      if (replace && !this.pageHeight && index === 0) {
-        child = React.cloneElement(child, { ref: this.beginPageRef });
-      } else if (replace && !this.pageHeight && index === step - 1) {
-        child = React.cloneElement(child, { ref: this.endPageRef });
+      const itemsIndex = firstIndex + index;
+      let child = children(item, itemsIndex);
+      if (!pageHeight && itemsIndex === 0) {
+        const { ref } = child;
+        child = React.cloneElement(child, {
+          ref: node => {
+            this.firstPageItemRef = node;
+            if (typeof ref === 'function') {
+              ref(node);
+            }
+          },
+        });
+      } else if (!pageHeight && itemsIndex === step - 1) {
+        const { ref } = child;
+        child = React.cloneElement(child, {
+          ref: node => {
+            this.lastPageItemRef = node;
+            if (typeof ref === 'function') {
+              ref(node);
+            }
+          },
+        });
       }
-      if (show && show === index) {
-        child = React.cloneElement(child, { key: 'show', ref: this.showRef });
+      if (show && show === itemsIndex) {
+        const { ref } = child;
+        child = React.cloneElement(child, {
+          key: 'show',
+          ref: node => {
+            this.showRef = node;
+            if (typeof ref === 'function') {
+              ref(node);
+            }
+          },
+        });
       }
       result.push(child);
     });
 
-    if (bottomMarker) {
-      result.push(bottomMarker);
+    if (endPage < lastPage || replace || onMore) {
+      let marker = (
+        <Box
+          key="below"
+          ref={this.belowMarkerRef}
+          flex={false}
+          height={`${replace ? (lastPage - endPage) * pageHeight : 0}px`}
+        />
+      );
+      if (renderMarker) {
+        // need to give it a key
+        marker = React.cloneElement(renderMarker(marker), { key: 'below' });
+      }
+      result.push(marker);
     }
 
     return result;

@@ -44,7 +44,7 @@ string
 
 The amount of margin around the component. An object can
       be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.
+      margin on a particular side. Defaults to `none`.
 
 ```
 none
@@ -322,8 +322,7 @@ Whether flex-grow and/or flex-shrink is true.
 ```
 grow
 shrink
-true
-false
+boolean
 ```
 
 **fill**
@@ -333,8 +332,7 @@ Whether the width and/or height should fill the container.
 ```
 horizontal
 vertical
-true
-false
+boolean
 ```
 
 **gap**

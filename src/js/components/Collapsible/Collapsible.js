@@ -1,9 +1,9 @@
 import React, { createRef, Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
-import { withTheme } from '../hocs';
+import { defaultProps } from '../../default-props';
+
 import { Box } from '../Box';
 
 const animatedBoxProperty = direction =>
@@ -54,43 +54,48 @@ class Collapsible extends Component {
     } = this.props;
     const { animate, open } = this.state;
 
-    /* eslint-disable-next-line react/no-find-dom-node */
-    const container = findDOMNode(this.ref.current);
-    const dimension = animatedBoxProperty(direction);
-    const boudingClientRect = container.getBoundingClientRect();
-    const dimensionSize = boudingClientRect[dimension];
+    const container = this.ref.current;
+    if (container) {
+      const dimension = animatedBoxProperty(direction);
+      const boudingClientRect = container.getBoundingClientRect();
+      const dimensionSize = boudingClientRect[dimension];
 
-    let shouldAnimate = animate && prevState.open !== open;
+      let shouldAnimate = animate && prevState.open !== open;
 
-    if (open && snapshot[dimension] && dimensionSize !== snapshot[dimension]) {
-      shouldAnimate = true;
-    }
-
-    if (shouldAnimate) {
-      if (this.animationTimeout) {
-        clearTimeout(this.animationTimeout);
+      if (
+        open &&
+        snapshot[dimension] &&
+        dimensionSize !== snapshot[dimension]
+      ) {
+        shouldAnimate = true;
       }
 
-      const speed = Math.max((dimensionSize / baseline) * minSpeed, minSpeed);
+      if (shouldAnimate) {
+        if (this.animationTimeout) {
+          clearTimeout(this.animationTimeout);
+        }
 
-      container.style[`max-${dimension}`] = `${snapshot[dimension]}px`;
-      container.style.overflow = 'hidden';
+        const speed = Math.max((dimensionSize / baseline) * minSpeed, minSpeed);
 
-      requestAnimationFrame(() => {
+        container.style[`max-${dimension}`] = `${snapshot[dimension]}px`;
+        container.style.overflow = 'hidden';
+
         requestAnimationFrame(() => {
-          container.style.transition = `max-${dimension} ${speed}ms, visibility 50ms`;
-          container.style[`max-${dimension}`] = open
-            ? `${dimensionSize}px`
-            : '0px';
+          requestAnimationFrame(() => {
+            container.style.transition = `max-${dimension} ${speed}ms, visibility 50ms`;
+            container.style[`max-${dimension}`] = open
+              ? `${dimensionSize}px`
+              : '0px';
 
-          this.animationTimeout = setTimeout(() => {
-            container.removeAttribute('style');
-            this.setState({
-              animate: false,
-            });
-          }, speed);
+            this.animationTimeout = setTimeout(() => {
+              container.removeAttribute('style');
+              this.setState({
+                animate: false,
+              });
+            }, speed);
+          });
         });
-      });
+      }
     }
   }
 
@@ -101,8 +106,7 @@ class Collapsible extends Component {
   }
 
   getSnapshotBeforeUpdate = () =>
-    /* eslint-disable-next-line react/no-find-dom-node */
-    this.ref.current && findDOMNode(this.ref.current).getBoundingClientRect();
+    this.ref.current && this.ref.current.getBoundingClientRect();
 
   render() {
     /* eslint-disable-next-line react/prop-types */
@@ -122,6 +126,9 @@ class Collapsible extends Component {
     );
   }
 }
+
+Collapsible.defaultProps = {};
+Object.setPrototypeOf(Collapsible.defaultProps, defaultProps);
 
 let CollapsibleDoc;
 if (process.env.NODE_ENV !== 'production') {

@@ -14,7 +14,7 @@ import { TextInput } from 'grommet';
 **dropAlign**
 
 How to align the drop. Defaults to `{
-  "top": "top",
+  "top": "bottom",
   "left": "left"
 }`.
 
@@ -33,6 +33,19 @@ How to align the drop. Defaults to `{
     left
     right
 }
+```
+
+**dropHeight**
+
+The height of the drop container.
+
+```
+xsmall
+small
+medium
+large
+xlarge
+string
 ```
 
 **dropTarget**
@@ -173,3 +186,104 @@ What text to put in the input.
 string
 ```
   
+## Intrinsic element
+
+```
+input
+```
+## Theme
+  
+**global.colors.placeholder**
+
+The placeholder color used for TextInput. Expects `string`.
+
+Defaults to
+
+```
+#AAAAAA
+```
+
+**global.control.border.width**
+
+The border width. Expects `string`.
+
+Defaults to
+
+```
+1px
+```
+
+**global.input.padding**
+
+The padding of the text. Expects `string`.
+
+Defaults to
+
+```
+12px
+```
+
+**global.input.weight**
+
+The font weight of the text. Expects `number`.
+
+Defaults to
+
+```
+600
+```
+
+**select.step**
+
+How many suggestions to render at a time. Expects `number`.
+
+Defaults to
+
+```
+20
+```
+
+**text**
+
+The possible sizes of the text in terms of its font-size and line-height. Expects `object`.
+
+Defaults to
+
+```
+{
+      xsmall: {
+        size: '12px',
+        height: '18px',
+       },
+      small: {
+        size: '14px',
+        height: '20px',
+       },
+      medium: {
+        size: '18px',
+        height: '24px',
+      },
+      large: {
+        size: '22px',
+        height: '28px',
+      },
+      xlarge: {
+        size: '26px',
+        height: '32px',
+      },
+      xxlarge: {
+        size: '34px',
+        height: '40px',
+      },
+    }
+```
+
+**textInput.extend**
+
+Any additional style for TextInput. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
