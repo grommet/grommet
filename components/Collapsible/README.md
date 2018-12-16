@@ -27,3 +27,34 @@ horizontal
 vertical
 ```
   
+## Theme
+  
+**collapsible.minSpeed**
+
+The minimum speed of Collapsible animation in milliseconds. Expects `number`.
+
+Defaults to
+
+```
+200
+```
+
+**collapsible.baseline**
+
+Default height to be used to calculate the optimal collapsible speed. Expects `number`.
+
+Defaults to
+
+```
+500
+```
+
+**collapsible.extend**
+
+Any additional style for the Anchor when hovering. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
