@@ -5,7 +5,11 @@ import { getAvailableAtBadge } from '../../utils';
 export const doc = FormField => {
   const DocumentedFormField = describe(FormField)
     .availableAt(getAvailableAtBadge('FormField'))
-    .description('A field in a form.')
+    .description(
+      `A single field in a form. FormField wraps an input component with
+      a label, help, and/or error messaging. It typically contains an input
+      control like TextInput, TextArea, Select, etc.`,
+    )
     .usage(
       `import { FormField } from 'grommet';
 <FormField />`,

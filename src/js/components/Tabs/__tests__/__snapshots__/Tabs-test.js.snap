@@ -928,6 +928,45 @@ exports[`Tabs no Tab 1`] = `
   flex-wrap: wrap;
 }
 
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-bottom: solid 2px #000000;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -938,7 +977,18 @@ exports[`Tabs no Tab 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c3 {
+.c4 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.c4:hover {
+  color: #000000;
+}
+
+.c6 {
   min-height: 0;
 }
 
@@ -966,6 +1016,32 @@ exports[`Tabs no Tab 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    border-bottom: solid 2px #000000;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-bottom: 3px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -975,10 +1051,27 @@ exports[`Tabs no Tab 1`] = `
   >
     <div
       className="c2"
-    />
+    >
+      <button
+        aria-expanded={true}
+        aria-selected={true}
+        className="c3"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="c4 c5"
+        />
+      </button>
+    </div>
     <div
-      aria-label=" Tab Contents"
-      className="c3"
+      aria-label="1 Tab Contents"
+      className="c6"
       role="tabpanel"
     />
   </div>

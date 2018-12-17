@@ -196,7 +196,9 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=box&module=%2Fsrc%2FBox.js",
       },
     ],
-    "description": "A flexible box that lays out its contents along a single direction.",
+    "description": "A container that lays out its contents in one direction. Box
+      provides CSS flexbox capabilities for layout, as well as general
+      styling of things like background color, border, and animation.",
     "name": "Box",
     "properties": Array [
       Object {
@@ -685,7 +687,7 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=button&module=%2Fsrc%2FButton.js",
       },
     ],
-    "description": "A button. We have a separate component from the browser base so we can style it.",
+    "description": "A button.",
     "intrinsicElement": "button",
     "name": "Button",
     "properties": Array [
@@ -892,7 +894,7 @@ submit",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=calendar&module=%2Fsrc%2FCalendar.js",
       },
     ],
-    "description": "Calendar of days in months.
+    "description": "A calendar of days displayed by month.
       It can be used to select a single date, a range of dates, or multiple
       individual dates.",
     "name": "Calendar",
@@ -1524,7 +1526,7 @@ NOTE: This can only be used with non-toggle components",
   },
   "Clock": [Function],
   "Collapsible": Object {
-    "description": "A react component that expand/collapse animation.",
+    "description": "Expand or collapse animation.",
     "name": "Collapsible",
     "properties": Array [
       Object {
@@ -1557,8 +1559,9 @@ vertical",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=diagram&module=%2Fsrc%2FDiagram.js",
       },
     ],
-    "description": "Graphical lines between DOM elements.
-      Diagram is meant to be used with Stack.",
+    "description": "Graphical connection lines. Diagram is meant to be used with Stack.
+      Boxes can be used in the \`guidingChild\` layer of Stack and then
+      Diagram can be used to draw lines connecting the Boxes.",
     "name": "Diagram",
     "properties": Array [
       Object {
@@ -1627,9 +1630,10 @@ vertical",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js",
       },
     ],
-    "description": "A Button that when clicked will a Drop with the specified 'dropContent'.
-      When opened, the drop will control the focus so that the contents behind
-      it are not focusable. All properties of Button can be passed through.
+    "description": "A Button that controls a Drop. When opened, the Drop will contain
+      whatever is specified via \`dropContent\`. The Drop will control the focus
+      so that the contents behind it are not focusable. All properties of
+      Button can be passed through.
       ",
     "name": "DropButton",
     "properties": Array [
@@ -1812,7 +1816,9 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=formfield&module=%2Fsrc%2FFormField.js",
       },
     ],
-    "description": "A field in a form.",
+    "description": "A single field in a form. FormField wraps an input component with
+      a label, help, and/or error messaging. It typically contains an input
+      control like TextInput, TextArea, Select, etc.",
     "name": "FormField",
     "properties": Array [
       Object {
@@ -2066,8 +2072,9 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=menu&module=%2Fsrc%2FMenu.js",
       },
     ],
-    "description": "Presents a list of choices within a drop down via a control that
-      opens it.",
+    "description": "A control that opens a Drop containing plain Buttons. The labels
+      and behavior of the contained Buttons are described via the \`items\`
+      property.",
     "name": "Menu",
     "properties": Array [
       Object {
@@ -2321,7 +2328,7 @@ with the same name so form submissions work.",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeinput&module=%2Fsrc%2FRangeInput.js",
       },
     ],
-    "description": "A range input with custom styles.",
+    "description": "A slider control to input a value within a fixed range.",
     "name": "RangeInput",
     "properties": Array [
       Object {
@@ -2381,7 +2388,7 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeselector&module=%2Fsrc%2FRangeSelector.js",
       },
     ],
-    "description": "A control to allow selecting a range of values.",
+    "description": "A control to input a range of values.",
     "name": "RangeSelector",
     "properties": Array [
       Object {
@@ -2499,7 +2506,7 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=select&module=%2Fsrc%2FSelect.js",
       },
     ],
-    "description": "An select-like field with optional search capability.",
+    "description": "A control to select a value, with optional search.",
     "name": "Select",
     "properties": Array [
       Object {
@@ -2891,7 +2898,7 @@ bottom",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=tabs&module=%2Fsrc%2FTabs.js",
       },
     ],
-    "description": "A tabular view component.",
+    "description": "A container with controls to show one Tab at a time.",
     "name": "Tabs",
     "properties": Array [
       Object {
@@ -3043,7 +3050,7 @@ currently active tab changes.",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textarea&module=%2Fsrc%2FTextArea.js",
       },
     ],
-    "description": "A textarea.",
+    "description": "A control to input multiple lines of text.",
     "intrinsicElement": "textarea",
     "name": "TextArea",
     "properties": Array [
@@ -3106,7 +3113,7 @@ Only use this when the containing context provides sufficient affordance.",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textinput&module=%2Fsrc%2FTextInput.js",
       },
     ],
-    "description": "A text input field with optional suggestions.",
+    "description": "A control to input a single line of text, with optional suggestions.",
     "intrinsicElement": "input",
     "name": "TextInput",
     "properties": Array [

@@ -5,9 +5,7 @@ import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
 export const doc = Button => {
   const DocumentedButton = describe(Button)
     .availableAt(getAvailableAtBadge('Button'))
-    .description(
-      'A button. We have a separate component from the browser base so we can style it.',
-    )
+    .description('A button.')
     .usage(
       `import { Button } from 'grommet';
 <Button primary={true} label='Label' />`,

@@ -5,7 +5,7 @@ import { genericProps, getAvailableAtBadge } from '../../utils';
 export const doc = Select => {
   const DocumentedSelect = describe(Select)
     .availableAt(getAvailableAtBadge('Select'))
-    .description('An select-like field with optional search capability.')
+    .description('A control to select a value, with optional search.')
     .usage(
       `import { Select } from 'grommet';
 <Select />`,
