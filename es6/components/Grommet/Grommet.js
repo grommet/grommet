@@ -1,3 +1,5 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
@@ -6,7 +8,20 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _templateObject() {
+  var data = _taggedTemplateLiteralLoose(["\n  body { margin: 0; }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.slice(0); } strings.raw = raw; return strings; }
+
 import React, { Component } from 'react';
+import { createGlobalStyle } from 'styled-components';
 import MobileDetect from 'mobile-detect';
 import { colorIsDark } from 'grommet-styles';
 import { ResponsiveContext, ThemeContext } from '../../contexts';
@@ -15,6 +30,7 @@ import { base as baseTheme } from '../../themes';
 import { withDocs } from '../hocs';
 import { StyledGrommet } from './StyledGrommet';
 var wrapWithHocs = withDocs('Grommet');
+var FullGlobalStyle = createGlobalStyle(_templateObject());
 
 var GrommetImpl =
 /*#__PURE__*/
@@ -108,7 +124,8 @@ function (_Component) {
   _proto.render = function render() {
     var _this$props = this.props,
         children = _this$props.children,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["children"]);
+        full = _this$props.full,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "full"]);
 
     delete rest.theme;
     var _this$state2 = this.state,
@@ -121,7 +138,9 @@ function (_Component) {
       value: theme
     }, React.createElement(ResponsiveContext.Provider, {
       value: responsive
-    }, React.createElement(StyledGrommet, rest, children)));
+    }, React.createElement(StyledGrommet, _extends({
+      full: full
+    }, rest), children), full && React.createElement(FullGlobalStyle, null)));
   };
 
   return GrommetImpl;
