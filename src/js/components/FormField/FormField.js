@@ -14,7 +14,7 @@ import { FormContext } from '../Form/FormContext';
 
 const validateField = (required, validate) => data => {
   let error;
-  if (required && !data) {
+  if (required && (data === undefined || data === '')) {
     error = 'required';
   } else if (validate) {
     if (typeof validate === 'function') {
