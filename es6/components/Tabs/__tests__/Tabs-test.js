@@ -5,7 +5,7 @@ import { render, fireEvent } from 'react-testing-library';
 import { Grommet, Tab, Tabs } from '../..';
 describe('Tabs', function () {
   test('no Tab', function () {
-    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Tabs, null)));
+    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Tabs, null, React.createElement(Tab, null))));
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('Tab', function () {

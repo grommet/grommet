@@ -14,7 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 describe('Tabs', function () {
   test('no Tab', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Tabs, null)));
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Tabs, null, _react.default.createElement(_.Tab, null))));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
