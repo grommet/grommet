@@ -37,7 +37,12 @@ const Example = () => (
     <Box fill align="center" justify="center">
       <Box width="medium">
         <Form onSubmit={event => console.log('Submit', event.value)}>
-          <FormField label="Name" name="name" required />
+          <FormField
+            label="Name"
+            name="name"
+            required
+            validate={{ regexp: /^[a-z]/i }}
+          />
           <FormField label="Email" name="email" type="email" required />
           <FormField
             label="Employee ID"

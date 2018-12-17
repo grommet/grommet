@@ -12,16 +12,16 @@ import { TextInput } from '../TextInput';
 import { withFocus } from '../hocs';
 import { FormContext } from '../Form/FormContext';
 
-const validateField = (required, validate) => data => {
+const validateField = (required, validate, messages) => data => {
   let error;
   if (required && (data === undefined || data === '')) {
-    error = 'required';
+    error = messages.required;
   } else if (validate) {
     if (typeof validate === 'function') {
       error = validate(data);
     } else if (validate.regexp) {
       if (!validate.regexp.test(data)) {
-        error = validate.message || 'invalid';
+        error = validate.message || messages.invalid;
       }
     }
   }
@@ -81,8 +81,8 @@ class FormField extends Component {
           let contents = children;
 
           if (context) {
-            const { addValidation, errors, value, update } = context;
-            addValidation(name, validateField(required, validate));
+            const { addValidation, errors, value, update, messages } = context;
+            addValidation(name, validateField(required, validate, messages));
             normalizedError = error || errors[name];
             contents = children || this.renderChildren(value, update);
           }

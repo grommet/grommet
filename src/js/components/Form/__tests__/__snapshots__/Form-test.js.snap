@@ -15,6 +15,12 @@ exports[`Form empty 1`] = `
   className="c0"
 >
   <form
+    messages={
+      Object {
+        "invalid": "invalid",
+        "required": "required",
+      }
+    }
     onSubmit={[Function]}
     theme={
       Object {
@@ -918,6 +924,12 @@ exports[`Form with field 1`] = `
   className="c0"
 >
   <form
+    messages={
+      Object {
+        "invalid": "invalid",
+        "required": "required",
+      }
+    }
     onSubmit={[Function]}
     theme={
       Object {

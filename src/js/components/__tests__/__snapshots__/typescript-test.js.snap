@@ -319,6 +319,7 @@ export { DropButton };
 
 export interface FormProps {
   errors?: {};
+  messages?: {invalid?: string,required?: string};
   onChange?: ((...args: any[]) => any);
   onSubmit?: ((...args: any[]) => any);
   value?: {};

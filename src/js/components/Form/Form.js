@@ -1,21 +1,41 @@
 import React, { Component } from 'react';
 import { defaultProps } from '../../default-props';
+import { deepMerge } from '../../utils';
 import { FormContext } from './FormContext';
+
+const defaultMessages = {
+  invalid: 'invalid',
+  required: 'required',
+};
 
 class Form extends Component {
   static defaultProps = {
+    messages: defaultMessages,
     value: {},
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { value, errors } = nextProps;
-    const { priorValue, priorErrors } = prevState;
-    if (!priorValue || value !== priorValue || errors !== priorErrors) {
+    const { value, errors, messages } = nextProps;
+    const {
+      value: stateValue,
+      errors: stateErrors,
+      priorValue,
+      priorErrors,
+      priorMessages,
+    } = prevState;
+    if (
+      !priorValue ||
+      value !== priorValue ||
+      errors !== priorErrors ||
+      messages !== priorMessages
+    ) {
       return {
-        value,
+        value: value !== priorValue ? value : stateValue,
         priorValue: value,
-        errors: errors || {},
+        errors: (errors !== priorErrors ? errors : stateErrors) || {},
         priorErrors: errors,
+        messages: deepMerge(defaultMessages, messages),
+        priorMessages: messages,
       };
     }
     return null;
@@ -76,13 +96,14 @@ class Form extends Component {
 
   render() {
     const { children, ...rest } = this.props;
-    const { errors, touched, value } = this.state;
+    const { errors, touched, value, messages } = this.state;
     return (
       <form {...rest} onSubmit={this.onSubmit}>
         <FormContext.Provider
           value={{
             addValidation: this.addValidation,
             errors,
+            messages,
             touched,
             update: this.update,
             value,

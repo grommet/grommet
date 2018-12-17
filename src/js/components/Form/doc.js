@@ -18,6 +18,12 @@ export const doc = Form => {
         match the keys in the value object.`,
       )
       .defaultValue({}),
+    messages: PropTypes.shape({
+      invalid: PropTypes.string,
+      required: PropTypes.string,
+    })
+      .description('Custom messages. Used for accessibility by screen readers.')
+      .defaultValue({ invalid: 'invalid', required: 'required' }),
     onChange: PropTypes.func.description(
       'Function that will be called when any fields are updated.',
     ),

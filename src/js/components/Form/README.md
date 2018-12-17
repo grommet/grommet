@@ -22,6 +22,20 @@ An object representing any errors in the data. They keys should
 }
 ```
 
+**messages**
+
+Custom messages. Used for accessibility by screen readers. Defaults to `{
+  "invalid": "invalid",
+  "required": "required"
+}`.
+
+```
+{
+  invalid: string,
+  required: string
+}
+```
+
 **onChange**
 
 Function that will be called when any fields are updated.
