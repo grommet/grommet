@@ -288,7 +288,8 @@ all
     medium
     large
     xlarge
-    string
+    string,
+  style: string
 }
 ```
 

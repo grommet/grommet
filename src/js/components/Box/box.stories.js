@@ -118,6 +118,22 @@ const BorderBox = () => (
           </Box>
         ))}
       </Box>
+      <Box direction="row-responsive" gap="small" align="start">
+        {[
+          'solid',
+          'dashed',
+          'dotted',
+          'double',
+          'groove',
+          'ridge',
+          'inset',
+          'outset',
+        ].map(type => (
+          <Box key={type} pad="small" border={{ type, size: 'medium' }}>
+            {type}
+          </Box>
+        ))}
+      </Box>
     </Box>
   </Grommet>
 );
