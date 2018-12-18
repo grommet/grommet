@@ -183,7 +183,14 @@ var RoundBox = function RoundBox() {
         corner: corner
       }
     }, corner);
-  }))));
+  }), _react.default.createElement(_2.Box, {
+    background: "brand",
+    pad: "small",
+    round: {
+      corner: 'left',
+      size: '15px'
+    }
+  }, "left rounded corner px value"))));
 };
 
 var BackgroundBox = function BackgroundBox() {

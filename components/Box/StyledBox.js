@@ -147,8 +147,8 @@ var roundStyle = function roundStyle(data, responsive, theme) {
   var styles = [];
 
   if (typeof data === 'object') {
-    var size = ROUND_MAP[data.size] || theme.global.edgeSize[data.size || 'medium'];
-    var responsiveSize = breakpoint && breakpoint.edgeSize[data.size] && breakpoint.edgeSize[data.size];
+    var size = ROUND_MAP[data.size] || theme.global.edgeSize[data.size || 'medium'] || data.size;
+    var responsiveSize = breakpoint && breakpoint.edgeSize[data.size] && (breakpoint.edgeSize[data.size] || data.size);
 
     if (data.corner === 'top') {
       styles.push((0, _styledComponents.css)(["border-top-left-radius:", ";border-top-right-radius:", ";"], size, size));
