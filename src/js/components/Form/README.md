@@ -24,7 +24,7 @@ An object representing any errors in the data. They keys should
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers. Defaults to `{
+Custom validation messages. Defaults to `{
   "invalid": "invalid",
   "required": "required"
 }`.
@@ -46,7 +46,8 @@ function
 
 **onSubmit**
 
-Function that will be called when the form is submitted.
+Function that will be called when the form is submitted. It will be
+      called with two arguments, an event and the latest value object.
 
 ```
 function

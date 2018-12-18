@@ -3588,7 +3588,7 @@ An object representing any errors in the data. They keys should
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers. Defaults to \`{
+Custom validation messages. Defaults to \`{
   \\"invalid\\": \\"invalid\\",
   \\"required\\": \\"required\\"
 }\`.
@@ -3610,7 +3610,8 @@ function
 
 **onSubmit**
 
-Function that will be called when the form is submitted.
+Function that will be called when the form is submitted. It will be
+      called with two arguments, an event and the latest value object.
 
 \`\`\`
 function
@@ -3706,10 +3707,14 @@ boolean
 Validation rule. Provide a regular expression or a function. If a
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
-      encompass multiple fields.
+      encompass multiple fields. The function should return a string message
+      indicating describing the validation issue, if any.
 
 \`\`\`
-object
+{
+  regexp: object,
+  message: string
+}
 function
 \`\`\`
   ",

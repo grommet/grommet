@@ -37,13 +37,17 @@ export const doc = FormField => {
     ),
     required: PropTypes.bool.description('Whether the field is required.'),
     validate: PropTypes.oneOfType([
-      PropTypes.object, // regular expression
+      PropTypes.shape({
+        regexp: PropTypes.object, // regular expression
+        message: PropTypes.string,
+      }),
       PropTypes.func,
     ]).description(
       `Validation rule. Provide a regular expression or a function. If a
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
-      encompass multiple fields.`,
+      encompass multiple fields. The function should return a string message
+      indicating describing the validation issue, if any.`,
     ),
   };
 

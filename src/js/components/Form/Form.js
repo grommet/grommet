@@ -48,6 +48,9 @@ class Form extends Component {
   onSubmit = event => {
     const { onSubmit } = this.props;
     const { errors, value } = this.state;
+    // Don't submit the form via browser form action. We don't want it
+    // if the validation fails. And, we assume a javascript action handler
+    // otherwise.
     event.preventDefault();
     const nextErrors = { ...errors };
     Object.keys(this.validations).forEach(name => {
