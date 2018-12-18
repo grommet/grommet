@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { defaultProps } from '../../default-props';
-import { deepMerge } from '../../utils';
 import { FormContext } from './FormContext';
 
 const defaultMessages = {
@@ -34,7 +33,7 @@ class Form extends Component {
         priorValue: value,
         errors: (errors !== priorErrors ? errors : stateErrors) || {},
         priorErrors: errors,
-        messages: deepMerge(defaultMessages, messages),
+        messages: { ...defaultMessages, ...messages },
         priorMessages: messages,
       };
     }
