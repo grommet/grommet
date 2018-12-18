@@ -196,6 +196,16 @@ Defaults to
 48px
 ```
 
+**layer.background**
+
+The background color of the Layer Container. Expects `string`.
+
+Defaults to
+
+```
+white
+```
+
 **layer.container.zIndex**
 
 The stack order of Layer Container. Expects `number`.
