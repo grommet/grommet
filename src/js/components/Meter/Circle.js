@@ -22,7 +22,9 @@ const Circle = props => {
   } = props;
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]);
-  const height = parseMetricToNum(theme.global.edgeSize[thickness]);
+  const height = parseMetricToNum(
+    theme.global.edgeSize[thickness] || thickness,
+  );
   const mid = width / 2;
   const radius = width / 2 - height / 2;
   const anglePer = 360 / max;
