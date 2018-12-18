@@ -69,7 +69,6 @@ class FormField extends Component {
       style,
       theme,
       validate,
-      ...rest
     } = this.props;
     const { formField } = theme;
     const { border } = formField;
@@ -169,7 +168,6 @@ class FormField extends Component {
               }
               margin={abut ? undefined : { bottom: 'small' }}
               style={outerStyle}
-              {...rest}
             >
               {(label && component !== CheckBox) || help ? (
                 <Box

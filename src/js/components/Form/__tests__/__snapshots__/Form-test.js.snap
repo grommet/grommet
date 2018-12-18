@@ -15,789 +15,189 @@ exports[`Form empty 1`] = `
   className="c0"
 >
   <form
-    messages={
-      Object {
-        "invalid": "invalid",
-        "required": "required",
-      }
-    }
     onSubmit={[Function]}
-    theme={
-      Object {
-        "accordion": Object {
-          "icons": Object {
-            "collapse": [Function],
-            "expand": [Function],
-          },
-        },
-        "anchor": Object {
-          "color": Object {
-            "dark": "accent-1",
-            "light": "brand",
-          },
-          "fontWeight": 600,
-          "hover": Object {
-            "textDecoration": "underline",
-          },
-          "textDecoration": "none",
-        },
-        "box": Object {
-          "responsiveBreakpoint": "small",
-        },
-        "button": Object {
-          "border": Object {
-            "radius": "18px",
-            "width": "2px",
-          },
-          "disabled": Object {
-            "opacity": 0.3,
-          },
-          "maxWidth": "384px",
-          "minWidth": "96px",
-          "padding": Object {
-            "horizontal": "22px",
-            "vertical": "4px",
-          },
-          "primary": Object {},
-        },
-        "calendar": Object {
-          "icons": Object {
-            "next": [Function],
-            "previous": [Function],
-            "small": Object {
-              "next": [Function],
-              "previous": [Function],
-            },
-          },
-          "large": Object {
-            "daySize": "109.71428571428571px",
-            "fontSize": "30px",
-            "lineHeight": 1.11,
-            "slideDuration": "0.8s",
-          },
-          "medium": Object {
-            "daySize": "54.857142857142854px",
-            "fontSize": "18px",
-            "lineHeight": 1.45,
-            "slideDuration": "0.5s",
-          },
-          "small": Object {
-            "daySize": "27.428571428571427px",
-            "fontSize": "14px",
-            "lineHeight": 1.375,
-            "slideDuration": "0.2s",
-          },
-        },
-        "carousel": Object {
-          "icons": Object {
-            "current": [Function],
-            "next": [Function],
-            "previous": [Function],
-          },
-        },
-        "checkBox": Object {
-          "border": Object {
-            "color": Object {
-              "dark": "rgba(255, 255, 255, 0.5)",
-              "light": "rgba(0, 0, 0, 0.15)",
-            },
-            "width": "2px",
-          },
-          "check": Object {
-            "radius": "4px",
-            "thickness": "4px",
-          },
-          "hover": Object {
-            "border": Object {
-              "color": Object {
-                "dark": "white",
-                "light": "black",
-              },
-            },
-          },
-          "icon": Object {},
-          "icons": Object {},
-          "size": "24px",
-          "toggle": Object {
-            "color": Object {
-              "dark": "#d9d9d9",
-              "light": "#d9d9d9",
-            },
-            "knob": Object {},
-            "radius": "24px",
-            "size": "48px",
-          },
-        },
-        "clock": Object {
-          "analog": Object {
-            "hour": Object {
-              "color": Object {
-                "dark": "light-2",
-                "light": "dark-3",
-              },
-              "shape": "round",
-              "size": "24px",
-              "width": "8px",
-            },
-            "minute": Object {
-              "color": Object {
-                "dark": "light-4",
-                "light": "dark-3",
-              },
-              "shape": "round",
-              "size": "12px",
-              "width": "4px",
-            },
-            "second": Object {
-              "color": Object {
-                "dark": "accent-1",
-                "light": "accent-1",
-              },
-              "shape": "round",
-              "size": "9px",
-              "width": "3px",
-            },
-            "size": Object {
-              "huge": "288px",
-              "large": "144px",
-              "medium": "96px",
-              "small": "72px",
-              "xlarge": "216px",
-            },
-          },
-          "digital": Object {
-            "text": Object {
-              "large": Object {
-                "height": 1.167,
-                "size": "22px",
-              },
-              "medium": Object {
-                "height": 1.375,
-                "size": "18px",
-              },
-              "small": Object {
-                "height": 1.43,
-                "size": "14px",
-              },
-              "xlarge": Object {
-                "height": 1.1875,
-                "size": "26px",
-              },
-              "xsmall": Object {
-                "height": 1.5,
-                "size": "10px",
-              },
-              "xxlarge": Object {
-                "height": 1.125,
-                "size": "34px",
-              },
-            },
-          },
-        },
-        "collapsible": Object {
-          "baseline": 500,
-          "minSpeed": 200,
-        },
-        "dataTable": Object {
-          "groupHeader": Object {
-            "background": Object {
-              "dark": "dark-2",
-              "light": "light-2",
-            },
-            "border": Object {
-              "side": "bottom",
-              "size": "xsmall",
-            },
-            "fill": "vertical",
-            "pad": Object {
-              "horizontal": "small",
-              "vertical": "xsmall",
-            },
-          },
-          "header": Object {},
-          "icons": Object {
-            "ascending": [Function],
-            "contract": [Function],
-            "descending": [Function],
-            "expand": [Function],
-          },
-          "primary": Object {
-            "weight": "bold",
-          },
-          "resize": Object {
-            "border": Object {
-              "color": "border",
-              "side": "right",
-            },
-          },
-        },
-        "formField": Object {
-          "border": Object {
-            "color": "border",
-            "error": Object {
-              "color": Object {
-                "dark": "white",
-                "light": "status-critical",
-              },
-            },
-            "position": "inner",
-            "side": "bottom",
-          },
-          "error": Object {
-            "color": Object {
-              "dark": "status-critical",
-              "light": "status-critical",
-            },
-          },
-          "help": Object {
-            "color": Object {
-              "dark": "dark-3",
-              "light": "dark-3",
-            },
-          },
-          "label": Object {},
-        },
-        "global": Object {
-          "animation": Object {
-            "duration": "1s",
-            "jiggle": Object {
-              "duration": "0.1s",
-            },
-          },
-          "borderSize": Object {
-            "large": "12px",
-            "medium": "4px",
-            "small": "2px",
-            "xlarge": "24px",
-            "xsmall": "1px",
-          },
-          "breakpoints": Object {
-            "large": Object {},
-            "medium": Object {
-              "value": 1536,
-            },
-            "small": Object {
-              "borderSize": Object {
-                "large": "6px",
-                "medium": "4px",
-                "small": "2px",
-                "xlarge": "12px",
-                "xsmall": "1px",
-              },
-              "edgeSize": Object {
-                "hair": "1px",
-                "large": "24px",
-                "medium": "12px",
-                "none": "0px",
-                "small": "6px",
-                "xlarge": "48px",
-                "xsmall": "3px",
-                "xxsmall": "2px",
-              },
-              "size": Object {
-                "full": "100%",
-                "large": "384px",
-                "medium": "192px",
-                "small": "96px",
-                "xlarge": "768px",
-                "xsmall": "48px",
-                "xxsmall": "24px",
-              },
-              "value": 768,
-            },
-          },
-          "colors": Object {
-            "accent-1": "#6FFFB0",
-            "accent-2": "#FD6FFF",
-            "accent-3": "#81FCED",
-            "accent-4": "#FFCA58",
-            "active": "rgba(221,221,221,0.5)",
-            "black": "#000000",
-            "border": Object {
-              "dark": "rgba(255,255,255,0.33)",
-              "light": "rgba(0,0,0,0.33)",
-            },
-            "brand": "#7D4CDB",
-            "control": Object {
-              "dark": "accent-1",
-              "light": "brand",
-            },
-            "dark-1": "#333333",
-            "dark-2": "#555555",
-            "dark-3": "#777777",
-            "dark-4": "#999999",
-            "dark-5": "#999999",
-            "dark-6": "#999999",
-            "focus": "#6FFFB0",
-            "icon": Object {
-              "0": "#",
-              "1": "6",
-              "2": "6",
-              "3": "6",
-              "4": "6",
-              "5": "6",
-              "6": "6",
-              "dark": "#f8f8f8",
-              "light": "#666666",
-            },
-            "light-1": "#F8F8F8",
-            "light-2": "#F2F2F2",
-            "light-3": "#EDEDED",
-            "light-4": "#DADADA",
-            "light-5": "#DADADA",
-            "light-6": "#DADADA",
-            "neutral-1": "#00873D",
-            "neutral-2": "#3D138D",
-            "neutral-3": "#00739D",
-            "neutral-4": "#A2423D",
-            "placeholder": "#AAAAAA",
-            "selected": "brand",
-            "status-critical": "#FF4040",
-            "status-disabled": "#CCCCCC",
-            "status-error": "#FF4040",
-            "status-ok": "#00C781",
-            "status-unknown": "#CCCCCC",
-            "status-warning": "#FFAA15",
-            "text": Object {
-              "dark": "#f8f8f8",
-              "light": "#444444",
-            },
-            "white": "#FFFFFF",
-          },
-          "control": Object {
-            "border": Object {
-              "color": "border",
-              "radius": "4px",
-              "width": "1px",
-            },
-          },
-          "debounceDelay": 300,
-          "deviceBreakpoints": Object {
-            "computer": "large",
-            "phone": "small",
-            "tablet": "medium",
-          },
-          "drop": Object {
-            "background": "#ffffff",
-            "border": Object {
-              "radius": "0px",
-              "width": "0px",
-            },
-            "shadowSize": "small",
-            "zIndex": "20",
-          },
-          "edgeSize": Object {
-            "hair": "1px",
-            "large": "48px",
-            "medium": "24px",
-            "none": "0px",
-            "responsiveBreakpoint": "small",
-            "small": "12px",
-            "xlarge": "96px",
-            "xsmall": "6px",
-            "xxsmall": "3px",
-          },
-          "elevation": Object {
-            "dark": Object {
-              "large": "0px 8px 16px rgba(255, 255, 255, 0.40)",
-              "medium": "0px 6px 8px rgba(255, 255, 255, 0.40)",
-              "none": "none",
-              "small": "0px 4px 4px rgba(255, 255, 255, 0.40)",
-              "xlarge": "0px 12px 24px rgba(255, 255, 255, 0.40)",
-              "xsmall": "0px 2px 2px rgba(255, 255, 255, 0.40)",
-            },
-            "light": Object {
-              "large": "0px 8px 16px rgba(0, 0, 0, 0.20)",
-              "medium": "0px 4px 8px rgba(0, 0, 0, 0.20)",
-              "none": "none",
-              "small": "0px 2px 4px rgba(0, 0, 0, 0.20)",
-              "xlarge": "0px 12px 24px rgba(0, 0, 0, 0.20)",
-              "xsmall": "0px 1px 2px rgba(0, 0, 0, 0.20)",
-            },
-          },
-          "focus": Object {
-            "border": Object {
-              "color": "focus",
-            },
-          },
-          "font": Object {
-            "height": "24px",
-            "maxWidth": "432px",
-            "size": "18px",
-          },
-          "hover": Object {
-            "background": Object {
-              "dark": Object {
-                "color": "active",
-                "opacity": "medium",
-              },
-              "light": Object {
-                "color": "active",
-                "opacity": "medium",
-              },
-            },
-            "color": Object {
-              "dark": "white",
-              "light": "black",
-            },
-          },
-          "input": Object {
-            "padding": "12px",
-            "weight": 600,
-          },
-          "opacity": Object {
-            "medium": 0.4,
-            "strong": 0.8,
-            "weak": 0.1,
-          },
-          "selected": Object {
-            "background": "selected",
-            "color": "white",
-          },
-          "size": Object {
-            "full": "100%",
-            "large": "768px",
-            "medium": "384px",
-            "small": "192px",
-            "xlarge": "1152px",
-            "xsmall": "96px",
-            "xxlarge": "1536px",
-            "xxsmall": "48px",
-          },
-          "spacing": "24px",
-        },
-        "grommet": Object {},
-        "heading": Object {
-          "font": Object {},
-          "level": Object {
-            "1": Object {
-              "font": Object {},
-              "large": Object {
-                "height": "88px",
-                "maxWidth": "1968px",
-                "size": "82px",
-              },
-              "medium": Object {
-                "height": "56px",
-                "maxWidth": "1200px",
-                "size": "50px",
-              },
-              "small": Object {
-                "height": "40px",
-                "maxWidth": "816px",
-                "size": "34px",
-              },
-              "xlarge": Object {
-                "height": "120px",
-                "maxWidth": "2736px",
-                "size": "114px",
-              },
-            },
-            "2": Object {
-              "font": Object {},
-              "large": Object {
-                "height": "56px",
-                "maxWidth": "1200px",
-                "size": "50px",
-              },
-              "medium": Object {
-                "height": "40px",
-                "maxWidth": "816px",
-                "size": "34px",
-              },
-              "small": Object {
-                "height": "32px",
-                "maxWidth": "624px",
-                "size": "26px",
-              },
-              "xlarge": Object {
-                "height": "72px",
-                "maxWidth": "1584px",
-                "size": "66px",
-              },
-            },
-            "3": Object {
-              "font": Object {},
-              "large": Object {
-                "height": "40px",
-                "maxWidth": "816px",
-                "size": "34px",
-              },
-              "medium": Object {
-                "height": "28px",
-                "maxWidth": "528px",
-                "size": "22px",
-              },
-              "small": Object {
-                "height": "28px",
-                "maxWidth": "528px",
-                "size": "22px",
-              },
-              "xlarge": Object {
-                "height": "48px",
-                "maxWidth": "1008px",
-                "size": "42px",
-              },
-            },
-            "4": Object {
-              "font": Object {},
-              "large": Object {
-                "height": "24px",
-                "maxWidth": "432px",
-                "size": "18px",
-              },
-              "medium": Object {
-                "height": "24px",
-                "maxWidth": "432px",
-                "size": "18px",
-              },
-              "small": Object {
-                "height": "24px",
-                "maxWidth": "432px",
-                "size": "18px",
-              },
-              "xlarge": Object {
-                "height": "24px",
-                "maxWidth": "432px",
-                "size": "18px",
-              },
-            },
-          },
-          "responsiveBreakpoint": "small",
-          "weight": 600,
-        },
-        "icon": Object {
-          "size": Object {
-            "large": "48px",
-            "medium": "24px",
-            "small": "12px",
-            "xlarge": "96px",
-          },
-        },
-        "layer": Object {
-          "background": "white",
-          "border": Object {
-            "radius": "4px",
-          },
-          "container": Object {
-            "zIndex": "15",
-          },
-          "overlay": Object {
-            "background": "rgba(0, 0, 0, 0.5)",
-          },
-          "responsiveBreakpoint": "small",
-          "zIndex": "10",
-        },
-        "menu": Object {
-          "icons": Object {
-            "down": [Function],
-          },
-        },
-        "paragraph": Object {
-          "large": Object {
-            "height": "28px",
-            "maxWidth": "528px",
-            "size": "22px",
-          },
-          "medium": Object {
-            "height": "24px",
-            "maxWidth": "432px",
-            "size": "18px",
-          },
-          "small": Object {
-            "height": "20px",
-            "maxWidth": "336px",
-            "size": "14px",
-          },
-          "xlarge": Object {
-            "height": "32px",
-            "maxWidth": "624px",
-            "size": "26px",
-          },
-          "xxlarge": Object {
-            "height": "40px",
-            "maxWidth": "816px",
-            "size": "34px",
-          },
-        },
-        "radioButton": Object {
-          "border": Object {
-            "color": Object {
-              "dark": "rgba(255, 255, 255, 0.5)",
-              "light": "rgba(0, 0, 0, 0.15)",
-            },
-            "width": "2px",
-          },
-          "check": Object {
-            "radius": "100%",
-          },
-          "gap": "small",
-          "hover": Object {
-            "border": Object {
-              "color": Object {
-                "dark": "white",
-                "light": "black",
-              },
-            },
-          },
-          "icon": Object {},
-          "icons": Object {},
-          "size": "24px",
-        },
-        "rangeInput": Object {
-          "thumb": Object {},
-          "track": Object {
-            "color": Array [
-              [Function],
-              ";",
-            ],
-            "height": "4px",
-          },
-        },
-        "select": Object {
-          "container": Object {},
-          "control": Object {},
-          "icons": Object {
-            "down": [Function],
-          },
-          "step": 20,
-        },
-        "tab": Object {
-          "active": Object {
-            "color": "text",
-          },
-          "border": Object {
-            "active": Object {
-              "color": Object {
-                "dark": "white",
-                "light": "black",
-              },
-            },
-            "color": Object {
-              "dark": "accent-1",
-              "light": "brand",
-            },
-            "hover": Object {
-              "color": Object {
-                "dark": "white",
-                "light": "black",
-              },
-            },
-            "side": "bottom",
-            "size": "small",
-          },
-          "color": "control",
-          "hover": Object {
-            "color": Object {
-              "dark": "white",
-              "light": "black",
-            },
-          },
-          "margin": Object {
-            "horizontal": "small",
-            "vertical": "xxsmall",
-          },
-          "pad": Object {
-            "bottom": "xsmall",
-          },
-        },
-        "table": Object {
-          "body": Object {
-            "align": "start",
-            "pad": Object {
-              "horizontal": "small",
-              "vertical": "xsmall",
-            },
-          },
-          "footer": Object {
-            "align": "start",
-            "border": "top",
-            "fill": "vertical",
-            "pad": Object {
-              "horizontal": "small",
-              "vertical": "xsmall",
-            },
-            "verticalAlign": "top",
-          },
-          "header": Object {
-            "align": "start",
-            "border": "bottom",
-            "fill": "vertical",
-            "pad": Object {
-              "horizontal": "small",
-              "vertical": "xsmall",
-            },
-            "verticalAlign": "bottom",
-          },
-        },
-        "tabs": Object {
-          "header": Object {},
-          "panel": Object {},
-        },
-        "text": Object {
-          "large": Object {
-            "height": "28px",
-            "maxWidth": "528px",
-            "size": "22px",
-          },
-          "medium": Object {
-            "height": "24px",
-            "maxWidth": "432px",
-            "size": "18px",
-          },
-          "small": Object {
-            "height": "20px",
-            "maxWidth": "336px",
-            "size": "14px",
-          },
-          "xlarge": Object {
-            "height": "32px",
-            "maxWidth": "624px",
-            "size": "26px",
-          },
-          "xsmall": Object {
-            "height": "18px",
-            "maxWidth": "288px",
-            "size": "12px",
-          },
-          "xxlarge": Object {
-            "height": "40px",
-            "maxWidth": "816px",
-            "size": "34px",
-          },
-        },
-        "video": Object {
-          "captions": Object {
-            "background": "rgba(0, 0, 0, 0.7)",
-          },
-          "icons": Object {
-            "closedCaption": [Function],
-            "configure": [Function],
-            "fullScreen": [Function],
-            "pause": [Function],
-            "play": [Function],
-            "reduceVolume": [Function],
-            "volume": [Function],
-          },
-        },
-        "worldMap": Object {
-          "color": "light-3",
-          "continent": Object {
-            "active": "8px",
-            "base": "6px",
-          },
-          "hover": Object {
-            "color": "light-4",
-          },
-          "place": Object {
-            "active": "20px",
-            "base": "8px",
-          },
-        },
-      }
-    }
-    value={Object {}}
   />
+</div>
+`;
+
+exports[`Form update 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c5 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  background: #7D4CDB;
+  color: #f8f8f8;
+  border-radius: 18px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.c5:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c4 {
+  box-sizing: border-box;
+  font-size: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  border: none;
+}
+
+.c4::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c4:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c3 {
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <form>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <input
+            autocomplete="off"
+            class="c4"
+            name="test"
+            placeholder="test input"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      class="c5"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
 </div>
 `;
 
@@ -924,793 +324,10 @@ exports[`Form with field 1`] = `
   className="c0"
 >
   <form
-    messages={
-      Object {
-        "invalid": "invalid",
-        "required": "required",
-      }
-    }
     onSubmit={[Function]}
-    theme={
-      Object {
-        "accordion": Object {
-          "icons": Object {
-            "collapse": [Function],
-            "expand": [Function],
-          },
-        },
-        "anchor": Object {
-          "color": Object {
-            "dark": "accent-1",
-            "light": "brand",
-          },
-          "fontWeight": 600,
-          "hover": Object {
-            "textDecoration": "underline",
-          },
-          "textDecoration": "none",
-        },
-        "box": Object {
-          "responsiveBreakpoint": "small",
-        },
-        "button": Object {
-          "border": Object {
-            "radius": "18px",
-            "width": "2px",
-          },
-          "disabled": Object {
-            "opacity": 0.3,
-          },
-          "maxWidth": "384px",
-          "minWidth": "96px",
-          "padding": Object {
-            "horizontal": "22px",
-            "vertical": "4px",
-          },
-          "primary": Object {},
-        },
-        "calendar": Object {
-          "icons": Object {
-            "next": [Function],
-            "previous": [Function],
-            "small": Object {
-              "next": [Function],
-              "previous": [Function],
-            },
-          },
-          "large": Object {
-            "daySize": "109.71428571428571px",
-            "fontSize": "30px",
-            "lineHeight": 1.11,
-            "slideDuration": "0.8s",
-          },
-          "medium": Object {
-            "daySize": "54.857142857142854px",
-            "fontSize": "18px",
-            "lineHeight": 1.45,
-            "slideDuration": "0.5s",
-          },
-          "small": Object {
-            "daySize": "27.428571428571427px",
-            "fontSize": "14px",
-            "lineHeight": 1.375,
-            "slideDuration": "0.2s",
-          },
-        },
-        "carousel": Object {
-          "icons": Object {
-            "current": [Function],
-            "next": [Function],
-            "previous": [Function],
-          },
-        },
-        "checkBox": Object {
-          "border": Object {
-            "color": Object {
-              "dark": "rgba(255, 255, 255, 0.5)",
-              "light": "rgba(0, 0, 0, 0.15)",
-            },
-            "width": "2px",
-          },
-          "check": Object {
-            "radius": "4px",
-            "thickness": "4px",
-          },
-          "hover": Object {
-            "border": Object {
-              "color": Object {
-                "dark": "white",
-                "light": "black",
-              },
-            },
-          },
-          "icon": Object {},
-          "icons": Object {},
-          "size": "24px",
-          "toggle": Object {
-            "color": Object {
-              "dark": "#d9d9d9",
-              "light": "#d9d9d9",
-            },
-            "knob": Object {},
-            "radius": "24px",
-            "size": "48px",
-          },
-        },
-        "clock": Object {
-          "analog": Object {
-            "hour": Object {
-              "color": Object {
-                "dark": "light-2",
-                "light": "dark-3",
-              },
-              "shape": "round",
-              "size": "24px",
-              "width": "8px",
-            },
-            "minute": Object {
-              "color": Object {
-                "dark": "light-4",
-                "light": "dark-3",
-              },
-              "shape": "round",
-              "size": "12px",
-              "width": "4px",
-            },
-            "second": Object {
-              "color": Object {
-                "dark": "accent-1",
-                "light": "accent-1",
-              },
-              "shape": "round",
-              "size": "9px",
-              "width": "3px",
-            },
-            "size": Object {
-              "huge": "288px",
-              "large": "144px",
-              "medium": "96px",
-              "small": "72px",
-              "xlarge": "216px",
-            },
-          },
-          "digital": Object {
-            "text": Object {
-              "large": Object {
-                "height": 1.167,
-                "size": "22px",
-              },
-              "medium": Object {
-                "height": 1.375,
-                "size": "18px",
-              },
-              "small": Object {
-                "height": 1.43,
-                "size": "14px",
-              },
-              "xlarge": Object {
-                "height": 1.1875,
-                "size": "26px",
-              },
-              "xsmall": Object {
-                "height": 1.5,
-                "size": "10px",
-              },
-              "xxlarge": Object {
-                "height": 1.125,
-                "size": "34px",
-              },
-            },
-          },
-        },
-        "collapsible": Object {
-          "baseline": 500,
-          "minSpeed": 200,
-        },
-        "dataTable": Object {
-          "groupHeader": Object {
-            "background": Object {
-              "dark": "dark-2",
-              "light": "light-2",
-            },
-            "border": Object {
-              "side": "bottom",
-              "size": "xsmall",
-            },
-            "fill": "vertical",
-            "pad": Object {
-              "horizontal": "small",
-              "vertical": "xsmall",
-            },
-          },
-          "header": Object {},
-          "icons": Object {
-            "ascending": [Function],
-            "contract": [Function],
-            "descending": [Function],
-            "expand": [Function],
-          },
-          "primary": Object {
-            "weight": "bold",
-          },
-          "resize": Object {
-            "border": Object {
-              "color": "border",
-              "side": "right",
-            },
-          },
-        },
-        "formField": Object {
-          "border": Object {
-            "color": "border",
-            "error": Object {
-              "color": Object {
-                "dark": "white",
-                "light": "status-critical",
-              },
-            },
-            "position": "inner",
-            "side": "bottom",
-          },
-          "error": Object {
-            "color": Object {
-              "dark": "status-critical",
-              "light": "status-critical",
-            },
-          },
-          "help": Object {
-            "color": Object {
-              "dark": "dark-3",
-              "light": "dark-3",
-            },
-          },
-          "label": Object {},
-        },
-        "global": Object {
-          "animation": Object {
-            "duration": "1s",
-            "jiggle": Object {
-              "duration": "0.1s",
-            },
-          },
-          "borderSize": Object {
-            "large": "12px",
-            "medium": "4px",
-            "small": "2px",
-            "xlarge": "24px",
-            "xsmall": "1px",
-          },
-          "breakpoints": Object {
-            "large": Object {},
-            "medium": Object {
-              "value": 1536,
-            },
-            "small": Object {
-              "borderSize": Object {
-                "large": "6px",
-                "medium": "4px",
-                "small": "2px",
-                "xlarge": "12px",
-                "xsmall": "1px",
-              },
-              "edgeSize": Object {
-                "hair": "1px",
-                "large": "24px",
-                "medium": "12px",
-                "none": "0px",
-                "small": "6px",
-                "xlarge": "48px",
-                "xsmall": "3px",
-                "xxsmall": "2px",
-              },
-              "size": Object {
-                "full": "100%",
-                "large": "384px",
-                "medium": "192px",
-                "small": "96px",
-                "xlarge": "768px",
-                "xsmall": "48px",
-                "xxsmall": "24px",
-              },
-              "value": 768,
-            },
-          },
-          "colors": Object {
-            "accent-1": "#6FFFB0",
-            "accent-2": "#FD6FFF",
-            "accent-3": "#81FCED",
-            "accent-4": "#FFCA58",
-            "active": "rgba(221,221,221,0.5)",
-            "black": "#000000",
-            "border": Object {
-              "dark": "rgba(255,255,255,0.33)",
-              "light": "rgba(0,0,0,0.33)",
-            },
-            "brand": "#7D4CDB",
-            "control": Object {
-              "dark": "accent-1",
-              "light": "brand",
-            },
-            "dark-1": "#333333",
-            "dark-2": "#555555",
-            "dark-3": "#777777",
-            "dark-4": "#999999",
-            "dark-5": "#999999",
-            "dark-6": "#999999",
-            "focus": "#6FFFB0",
-            "icon": Object {
-              "0": "#",
-              "1": "6",
-              "2": "6",
-              "3": "6",
-              "4": "6",
-              "5": "6",
-              "6": "6",
-              "dark": "#f8f8f8",
-              "light": "#666666",
-            },
-            "light-1": "#F8F8F8",
-            "light-2": "#F2F2F2",
-            "light-3": "#EDEDED",
-            "light-4": "#DADADA",
-            "light-5": "#DADADA",
-            "light-6": "#DADADA",
-            "neutral-1": "#00873D",
-            "neutral-2": "#3D138D",
-            "neutral-3": "#00739D",
-            "neutral-4": "#A2423D",
-            "placeholder": "#AAAAAA",
-            "selected": "brand",
-            "status-critical": "#FF4040",
-            "status-disabled": "#CCCCCC",
-            "status-error": "#FF4040",
-            "status-ok": "#00C781",
-            "status-unknown": "#CCCCCC",
-            "status-warning": "#FFAA15",
-            "text": Object {
-              "dark": "#f8f8f8",
-              "light": "#444444",
-            },
-            "white": "#FFFFFF",
-          },
-          "control": Object {
-            "border": Object {
-              "color": "border",
-              "radius": "4px",
-              "width": "1px",
-            },
-          },
-          "debounceDelay": 300,
-          "deviceBreakpoints": Object {
-            "computer": "large",
-            "phone": "small",
-            "tablet": "medium",
-          },
-          "drop": Object {
-            "background": "#ffffff",
-            "border": Object {
-              "radius": "0px",
-              "width": "0px",
-            },
-            "shadowSize": "small",
-            "zIndex": "20",
-          },
-          "edgeSize": Object {
-            "hair": "1px",
-            "large": "48px",
-            "medium": "24px",
-            "none": "0px",
-            "responsiveBreakpoint": "small",
-            "small": "12px",
-            "xlarge": "96px",
-            "xsmall": "6px",
-            "xxsmall": "3px",
-          },
-          "elevation": Object {
-            "dark": Object {
-              "large": "0px 8px 16px rgba(255, 255, 255, 0.40)",
-              "medium": "0px 6px 8px rgba(255, 255, 255, 0.40)",
-              "none": "none",
-              "small": "0px 4px 4px rgba(255, 255, 255, 0.40)",
-              "xlarge": "0px 12px 24px rgba(255, 255, 255, 0.40)",
-              "xsmall": "0px 2px 2px rgba(255, 255, 255, 0.40)",
-            },
-            "light": Object {
-              "large": "0px 8px 16px rgba(0, 0, 0, 0.20)",
-              "medium": "0px 4px 8px rgba(0, 0, 0, 0.20)",
-              "none": "none",
-              "small": "0px 2px 4px rgba(0, 0, 0, 0.20)",
-              "xlarge": "0px 12px 24px rgba(0, 0, 0, 0.20)",
-              "xsmall": "0px 1px 2px rgba(0, 0, 0, 0.20)",
-            },
-          },
-          "focus": Object {
-            "border": Object {
-              "color": "focus",
-            },
-          },
-          "font": Object {
-            "height": "24px",
-            "maxWidth": "432px",
-            "size": "18px",
-          },
-          "hover": Object {
-            "background": Object {
-              "dark": Object {
-                "color": "active",
-                "opacity": "medium",
-              },
-              "light": Object {
-                "color": "active",
-                "opacity": "medium",
-              },
-            },
-            "color": Object {
-              "dark": "white",
-              "light": "black",
-            },
-          },
-          "input": Object {
-            "padding": "12px",
-            "weight": 600,
-          },
-          "opacity": Object {
-            "medium": 0.4,
-            "strong": 0.8,
-            "weak": 0.1,
-          },
-          "selected": Object {
-            "background": "selected",
-            "color": "white",
-          },
-          "size": Object {
-            "full": "100%",
-            "large": "768px",
-            "medium": "384px",
-            "small": "192px",
-            "xlarge": "1152px",
-            "xsmall": "96px",
-            "xxlarge": "1536px",
-            "xxsmall": "48px",
-          },
-          "spacing": "24px",
-        },
-        "grommet": Object {},
-        "heading": Object {
-          "font": Object {},
-          "level": Object {
-            "1": Object {
-              "font": Object {},
-              "large": Object {
-                "height": "88px",
-                "maxWidth": "1968px",
-                "size": "82px",
-              },
-              "medium": Object {
-                "height": "56px",
-                "maxWidth": "1200px",
-                "size": "50px",
-              },
-              "small": Object {
-                "height": "40px",
-                "maxWidth": "816px",
-                "size": "34px",
-              },
-              "xlarge": Object {
-                "height": "120px",
-                "maxWidth": "2736px",
-                "size": "114px",
-              },
-            },
-            "2": Object {
-              "font": Object {},
-              "large": Object {
-                "height": "56px",
-                "maxWidth": "1200px",
-                "size": "50px",
-              },
-              "medium": Object {
-                "height": "40px",
-                "maxWidth": "816px",
-                "size": "34px",
-              },
-              "small": Object {
-                "height": "32px",
-                "maxWidth": "624px",
-                "size": "26px",
-              },
-              "xlarge": Object {
-                "height": "72px",
-                "maxWidth": "1584px",
-                "size": "66px",
-              },
-            },
-            "3": Object {
-              "font": Object {},
-              "large": Object {
-                "height": "40px",
-                "maxWidth": "816px",
-                "size": "34px",
-              },
-              "medium": Object {
-                "height": "28px",
-                "maxWidth": "528px",
-                "size": "22px",
-              },
-              "small": Object {
-                "height": "28px",
-                "maxWidth": "528px",
-                "size": "22px",
-              },
-              "xlarge": Object {
-                "height": "48px",
-                "maxWidth": "1008px",
-                "size": "42px",
-              },
-            },
-            "4": Object {
-              "font": Object {},
-              "large": Object {
-                "height": "24px",
-                "maxWidth": "432px",
-                "size": "18px",
-              },
-              "medium": Object {
-                "height": "24px",
-                "maxWidth": "432px",
-                "size": "18px",
-              },
-              "small": Object {
-                "height": "24px",
-                "maxWidth": "432px",
-                "size": "18px",
-              },
-              "xlarge": Object {
-                "height": "24px",
-                "maxWidth": "432px",
-                "size": "18px",
-              },
-            },
-          },
-          "responsiveBreakpoint": "small",
-          "weight": 600,
-        },
-        "icon": Object {
-          "size": Object {
-            "large": "48px",
-            "medium": "24px",
-            "small": "12px",
-            "xlarge": "96px",
-          },
-        },
-        "layer": Object {
-          "background": "white",
-          "border": Object {
-            "radius": "4px",
-          },
-          "container": Object {
-            "zIndex": "15",
-          },
-          "overlay": Object {
-            "background": "rgba(0, 0, 0, 0.5)",
-          },
-          "responsiveBreakpoint": "small",
-          "zIndex": "10",
-        },
-        "menu": Object {
-          "icons": Object {
-            "down": [Function],
-          },
-        },
-        "paragraph": Object {
-          "large": Object {
-            "height": "28px",
-            "maxWidth": "528px",
-            "size": "22px",
-          },
-          "medium": Object {
-            "height": "24px",
-            "maxWidth": "432px",
-            "size": "18px",
-          },
-          "small": Object {
-            "height": "20px",
-            "maxWidth": "336px",
-            "size": "14px",
-          },
-          "xlarge": Object {
-            "height": "32px",
-            "maxWidth": "624px",
-            "size": "26px",
-          },
-          "xxlarge": Object {
-            "height": "40px",
-            "maxWidth": "816px",
-            "size": "34px",
-          },
-        },
-        "radioButton": Object {
-          "border": Object {
-            "color": Object {
-              "dark": "rgba(255, 255, 255, 0.5)",
-              "light": "rgba(0, 0, 0, 0.15)",
-            },
-            "width": "2px",
-          },
-          "check": Object {
-            "radius": "100%",
-          },
-          "gap": "small",
-          "hover": Object {
-            "border": Object {
-              "color": Object {
-                "dark": "white",
-                "light": "black",
-              },
-            },
-          },
-          "icon": Object {},
-          "icons": Object {},
-          "size": "24px",
-        },
-        "rangeInput": Object {
-          "thumb": Object {},
-          "track": Object {
-            "color": Array [
-              [Function],
-              ";",
-            ],
-            "height": "4px",
-          },
-        },
-        "select": Object {
-          "container": Object {},
-          "control": Object {},
-          "icons": Object {
-            "down": [Function],
-          },
-          "step": 20,
-        },
-        "tab": Object {
-          "active": Object {
-            "color": "text",
-          },
-          "border": Object {
-            "active": Object {
-              "color": Object {
-                "dark": "white",
-                "light": "black",
-              },
-            },
-            "color": Object {
-              "dark": "accent-1",
-              "light": "brand",
-            },
-            "hover": Object {
-              "color": Object {
-                "dark": "white",
-                "light": "black",
-              },
-            },
-            "side": "bottom",
-            "size": "small",
-          },
-          "color": "control",
-          "hover": Object {
-            "color": Object {
-              "dark": "white",
-              "light": "black",
-            },
-          },
-          "margin": Object {
-            "horizontal": "small",
-            "vertical": "xxsmall",
-          },
-          "pad": Object {
-            "bottom": "xsmall",
-          },
-        },
-        "table": Object {
-          "body": Object {
-            "align": "start",
-            "pad": Object {
-              "horizontal": "small",
-              "vertical": "xsmall",
-            },
-          },
-          "footer": Object {
-            "align": "start",
-            "border": "top",
-            "fill": "vertical",
-            "pad": Object {
-              "horizontal": "small",
-              "vertical": "xsmall",
-            },
-            "verticalAlign": "top",
-          },
-          "header": Object {
-            "align": "start",
-            "border": "bottom",
-            "fill": "vertical",
-            "pad": Object {
-              "horizontal": "small",
-              "vertical": "xsmall",
-            },
-            "verticalAlign": "bottom",
-          },
-        },
-        "tabs": Object {
-          "header": Object {},
-          "panel": Object {},
-        },
-        "text": Object {
-          "large": Object {
-            "height": "28px",
-            "maxWidth": "528px",
-            "size": "22px",
-          },
-          "medium": Object {
-            "height": "24px",
-            "maxWidth": "432px",
-            "size": "18px",
-          },
-          "small": Object {
-            "height": "20px",
-            "maxWidth": "336px",
-            "size": "14px",
-          },
-          "xlarge": Object {
-            "height": "32px",
-            "maxWidth": "624px",
-            "size": "26px",
-          },
-          "xsmall": Object {
-            "height": "18px",
-            "maxWidth": "288px",
-            "size": "12px",
-          },
-          "xxlarge": Object {
-            "height": "40px",
-            "maxWidth": "816px",
-            "size": "34px",
-          },
-        },
-        "video": Object {
-          "captions": Object {
-            "background": "rgba(0, 0, 0, 0.7)",
-          },
-          "icons": Object {
-            "closedCaption": [Function],
-            "configure": [Function],
-            "fullScreen": [Function],
-            "pause": [Function],
-            "play": [Function],
-            "reduceVolume": [Function],
-            "volume": [Function],
-          },
-        },
-        "worldMap": Object {
-          "color": "light-3",
-          "continent": Object {
-            "active": "8px",
-            "base": "6px",
-          },
-          "hover": Object {
-            "color": "light-4",
-          },
-          "place": Object {
-            "active": "20px",
-            "base": "8px",
-          },
-        },
-      }
-    }
-    value={Object {}}
   >
     <div
       className="c1"
-      onBlur={[Function]}
-      onFocus={[Function]}
     >
       <div
         className="c2"

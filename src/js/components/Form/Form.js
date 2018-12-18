@@ -60,7 +60,7 @@ class Form extends Component {
       }
     });
     if (Object.keys(nextErrors).length === 0 && onSubmit) {
-      onSubmit({ ...event, value });
+      onSubmit(event, value);
     } else {
       this.setState({ errors: nextErrors });
     }
@@ -96,6 +96,9 @@ class Form extends Component {
 
   render() {
     const { children, ...rest } = this.props;
+    delete rest.messages;
+    delete rest.theme;
+    delete rest.value;
     const { errors, touched, value, messages } = this.state;
     return (
       <form {...rest} onSubmit={this.onSubmit}>
