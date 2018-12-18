@@ -146,6 +146,11 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '48px',
   },
+  'layer.background': {
+    description: 'The background color of the Layer Container.',
+    type: 'string',
+    defaultValue: 'white',
+  },
   'layer.container.zIndex': {
     description: 'The stack order of Layer Container.',
     type: 'number',
