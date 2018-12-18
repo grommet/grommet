@@ -222,11 +222,13 @@ const roundStyle = (data, responsive, theme) => {
   const styles = [];
   if (typeof data === 'object') {
     const size =
-      ROUND_MAP[data.size] || theme.global.edgeSize[data.size || 'medium'];
+      ROUND_MAP[data.size] ||
+      theme.global.edgeSize[data.size || 'medium'] ||
+      data.size;
     const responsiveSize =
       breakpoint &&
       breakpoint.edgeSize[data.size] &&
-      breakpoint.edgeSize[data.size];
+      (breakpoint.edgeSize[data.size] || data.size);
     if (data.corner === 'top') {
       styles.push(css`
         border-top-left-radius: ${size};

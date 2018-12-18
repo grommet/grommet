@@ -150,6 +150,13 @@ const RoundBox = () => (
             {corner}
           </Box>
         ))}
+        <Box
+          background="brand"
+          pad="small"
+          round={{ corner: 'left', size: '15px' }}
+        >
+          left rounded corner px value
+        </Box>
       </Grid>
     </Box>
   </Grommet>
