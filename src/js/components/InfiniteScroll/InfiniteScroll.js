@@ -1,4 +1,5 @@
 import React, { createRef, PureComponent } from 'react';
+import { findDOMNode } from 'react-dom';
 import { findScrollParents } from '../../utils';
 import { Box } from '../Box';
 
@@ -87,8 +88,12 @@ class InfiniteScroll extends PureComponent {
   setPageHeight = () => {
     const { pageHeight } = this.state;
     if (this.firstPageItemRef && this.lastPageItemRef && !pageHeight) {
-      const beginRect = this.firstPageItemRef.getBoundingClientRect();
-      const endRect = this.lastPageItemRef.getBoundingClientRect();
+      /* eslint-disable react/no-find-dom-node */
+      const beginRect = findDOMNode(
+        this.firstPageItemRef,
+      ).getBoundingClientRect();
+      const endRect = findDOMNode(this.lastPageItemRef).getBoundingClientRect();
+      /* eslint-enable react/no-find-dom-node */
       const nextPageHeight = endRect.y + endRect.height - beginRect.y;
       // In case the pageHeight is smaller than the visible area,
       // we call onScroll to set the page boundaries appropriately.

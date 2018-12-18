@@ -27,6 +27,29 @@ const SimpleInfiniteScroll = props => (
   </Grommet>
 );
 
+/* eslint-disable react/prefer-stateless-function */
+class MyItem extends Component {
+  render() {
+    const { item } = this.props;
+    return (
+      <Box pad="medium" border={{ side: 'bottom' }} align="center">
+        <Text>{item}</Text>
+      </Box>
+    );
+  }
+}
+/* eslint-enable react/prefer-stateless-function */
+
+const ClassChildrenInfiniteScroll = props => (
+  <Grommet theme={grommet}>
+    <Box>
+      <InfiniteScroll items={allItems} {...props}>
+        {item => <MyItem key={item} item={item} />}
+      </InfiniteScroll>
+    </Box>
+  </Grommet>
+);
+
 class LazyInfiniteScroll extends Component {
   state = { items: allItems.slice(0, 200) };
 
@@ -73,4 +96,5 @@ storiesOf('InfiniteScroll', module)
     />
   ))
   .add('Replace', () => <SimpleInfiniteScroll replace />)
-  .add('onMore', () => <LazyInfiniteScroll />);
+  .add('onMore', () => <LazyInfiniteScroll />)
+  .add('Class Children', () => <ClassChildrenInfiniteScroll />);
