@@ -1,7 +1,16 @@
-import React, { createRef, PureComponent } from 'react';
+import React, { createRef, Component, PureComponent } from 'react';
 import { findDOMNode } from 'react-dom';
 import { findScrollParents } from '../../utils';
 import { Box } from '../Box';
+
+// Wraps an item to ensure we can get a ref to it
+/* eslint-disable react/no-multi-comp, react/no-find-dom-node */
+class Ref extends Component {
+  render() {
+    const { children } = this.props;
+    return children;
+  }
+}
 
 class InfiniteScroll extends PureComponent {
   static defaultProps = {
@@ -30,9 +39,13 @@ class InfiniteScroll extends PureComponent {
 
   initialScroll = false;
 
-  aboveMarkerRef = createRef();
-
   belowMarkerRef = createRef();
+
+  firstPageItemRef = createRef();
+
+  lastPageItemRef = createRef();
+
+  showRef = createRef();
 
   componentDidMount() {
     // ride out any animation, 100ms was chosen empirically
@@ -78,21 +91,27 @@ class InfiniteScroll extends PureComponent {
 
   scrollShow = () => {
     const { show } = this.props;
-    if (show && !this.initialScroll && this.showRef) {
+    if (show && !this.initialScroll && this.showRef.current) {
       this.initialScroll = true;
       // on initial render, scroll to any 'show'
-      this.showRef.scrollIntoView();
+      findDOMNode(this.showRef.current).scrollIntoView();
     }
   };
 
   setPageHeight = () => {
     const { pageHeight } = this.state;
-    if (this.firstPageItemRef && this.lastPageItemRef && !pageHeight) {
+    if (
+      this.firstPageItemRef.current &&
+      this.lastPageItemRef.current &&
+      !pageHeight
+    ) {
       /* eslint-disable react/no-find-dom-node */
       const beginRect = findDOMNode(
-        this.firstPageItemRef,
+        this.firstPageItemRef.current,
       ).getBoundingClientRect();
-      const endRect = findDOMNode(this.lastPageItemRef).getBoundingClientRect();
+      const endRect = findDOMNode(
+        this.lastPageItemRef.current,
+      ).getBoundingClientRect();
       /* eslint-enable react/no-find-dom-node */
       const nextPageHeight = endRect.y + endRect.height - beginRect.y;
       // In case the pageHeight is smaller than the visible area,
@@ -165,12 +184,7 @@ class InfiniteScroll extends PureComponent {
 
     if (replace && pageHeight && firstIndex) {
       let marker = (
-        <Box
-          key="above"
-          ref={this.aboveMarkerRef}
-          flex={false}
-          height={`${beginPage * pageHeight}px`}
-        />
+        <Box key="above" flex={false} height={`${beginPage * pageHeight}px`} />
       );
       if (renderMarker) {
         // need to give it a key
@@ -183,37 +197,24 @@ class InfiniteScroll extends PureComponent {
       const itemsIndex = firstIndex + index;
       let child = children(item, itemsIndex);
       if (!pageHeight && itemsIndex === 0) {
-        const { ref } = child;
-        child = React.cloneElement(child, {
-          ref: node => {
-            this.firstPageItemRef = node;
-            if (typeof ref === 'function') {
-              ref(node);
-            }
-          },
-        });
+        child = (
+          <Ref key="first" ref={this.firstPageItemRef}>
+            {child}
+          </Ref>
+        );
       } else if (!pageHeight && itemsIndex === step - 1) {
-        const { ref } = child;
-        child = React.cloneElement(child, {
-          ref: node => {
-            this.lastPageItemRef = node;
-            if (typeof ref === 'function') {
-              ref(node);
-            }
-          },
-        });
+        child = (
+          <Ref key="last" ref={this.lastPageItemRef}>
+            {child}
+          </Ref>
+        );
       }
       if (show && show === itemsIndex) {
-        const { ref } = child;
-        child = React.cloneElement(child, {
-          key: 'show',
-          ref: node => {
-            this.showRef = node;
-            if (typeof ref === 'function') {
-              ref(node);
-            }
-          },
-        });
+        child = (
+          <Ref key="show" ref={this.showRef}>
+            {child}
+          </Ref>
+        );
       }
       result.push(child);
     });
@@ -245,3 +246,4 @@ if (process.env.NODE_ENV !== 'production') {
 const InfiniteScrollWrapper = InfiniteScrollDoc || InfiniteScroll;
 
 export { InfiniteScrollWrapper as InfiniteScroll };
+/* eslint-enable react/no-find-dom-node, react/no-multi-comp */

@@ -2398,30 +2398,87 @@ exports[`DataTable sort 2`] = `
     <tbody
       class="StyledDataTable__StyledDataTableBody-xrlyjm-2 hbZQKY"
     >
-      <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws"
+      .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c0 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<tr
+        class=""
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          class="c0"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+            class="c1"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="c2"
             >
               one
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          class="c0"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+            class="c1"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="c2"
             >
               1
             </span>
@@ -2458,30 +2515,87 @@ exports[`DataTable sort 2`] = `
           </div>
         </td>
       </tr>
-      <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws"
+      .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c0 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<tr
+        class=""
       >
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          class="c0"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+            class="c1"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="c2"
             >
               zero
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          class="c0"
         >
           <div
-            class="StyledBox-sc-13pk1d4-0 eAAZJM"
+            class="c1"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="c2"
             >
               0
             </span>
