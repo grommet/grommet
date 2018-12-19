@@ -21,7 +21,7 @@ var Bar = function Bar(props) {
       rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "theme", "thickness", "values"]);
 
   var width = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]);
-  var height = parseMetricToNum(theme.global.edgeSize[thickness]); // account for the round cap, if any
+  var height = parseMetricToNum(theme.global.edgeSize[thickness] || thickness); // account for the round cap, if any
 
   var capOffset = round ? height / 2 : 0;
   var mid = height / 2;

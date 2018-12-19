@@ -126,6 +126,9 @@ describe('Meter', function () {
       thickness: "xlarge",
       values: VALUES
     }), _react.default.createElement(_.Meter, {
+      thickness: "55px",
+      values: VALUES
+    }), _react.default.createElement(_.Meter, {
       type: "circle",
       thickness: "xsmall",
       values: VALUES
@@ -144,6 +147,10 @@ describe('Meter', function () {
     }), _react.default.createElement(_.Meter, {
       type: "circle",
       thickness: "xlarge",
+      values: VALUES
+    }), _react.default.createElement(_.Meter, {
+      type: "circle",
+      thickness: "55px",
       values: VALUES
     })));
 

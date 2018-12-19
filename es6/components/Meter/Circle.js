@@ -21,7 +21,7 @@ var Circle = function Circle(props) {
       rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "theme", "thickness", "values"]);
 
   var width = size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]);
-  var height = parseMetricToNum(theme.global.edgeSize[thickness]);
+  var height = parseMetricToNum(theme.global.edgeSize[thickness] || thickness);
   var mid = width / 2;
   var radius = width / 2 - height / 2;
   var anglePer = 360 / max;
