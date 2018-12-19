@@ -315,6 +315,9 @@ describe('Box', () => {
         <Box border={{ size: 'medium' }} />
         <Box border={{ size: 'large' }} />
         <Box border={{ size: 'xlarge' }} />
+        <Box border={{ style: 'dotted' }} />
+        <Box border={{ style: 'double' }} />
+        <Box border={{ style: 'dashed' }} />
       </Grommet>,
     );
     const tree = component.toJSON();

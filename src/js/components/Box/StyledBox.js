@@ -139,8 +139,9 @@ const borderStyle = (data, responsive, theme) => {
   const styles = [];
   const color = normalizeColor(data.color || 'border', theme);
   const borderSize = data.size || 'xsmall';
+  const style = data.style || 'solid';
   const side = typeof data === 'string' ? data : data.side || 'all';
-  const value = `solid ${theme.global.borderSize[borderSize] ||
+  const value = `${style} ${theme.global.borderSize[borderSize] ||
     borderSize} ${color}`;
   const breakpoint =
     theme.box.responsiveBreakpoint &&
@@ -148,7 +149,7 @@ const borderStyle = (data, responsive, theme) => {
   const responsiveValue =
     breakpoint &&
     (breakpoint.borderSize[borderSize] || borderSize) &&
-    `solid ${breakpoint.borderSize[borderSize] || borderSize} ${color}`;
+    `${style} ${breakpoint.borderSize[borderSize] || borderSize} ${color}`;
   if (
     side === 'top' ||
     side === 'bottom' ||
