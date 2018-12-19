@@ -19,7 +19,7 @@ var sizeStyle = function sizeStyle(props) {
 
   if (levelStyle) {
     var data = levelStyle[size];
-    var styles = [(0, _styledComponents.css)(["font-size:", ";line-height:", ";max-width:", ";font-weight:", ";"], data.size, data.height, data.maxWidth, headingTheme.weight)];
+    var styles = [(0, _styledComponents.css)(["font-size:", ";line-height:", ";max-width:", ";font-weight:", ";"], data.size, data.height, data.maxWidth, levelStyle.font.weight || headingTheme.weight)];
 
     if (props.responsive && headingTheme.responsiveBreakpoint) {
       var breakpoint = props.theme.global.breakpoints[headingTheme.responsiveBreakpoint];

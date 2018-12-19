@@ -187,3 +187,40 @@ test('Theme based font family renders', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+test('Theme based font weight renders', function () {
+  var customTheme = {
+    heading: {
+      weight: 600,
+      level: {
+        1: {
+          font: {
+            weight: '700'
+          }
+        },
+        2: {
+          font: {
+            weight: '400'
+          }
+        },
+        3: {
+          font: {
+            weight: '200'
+          }
+        }
+      }
+    }
+  };
+  var component = renderer.create(React.createElement(Grommet, {
+    theme: customTheme
+  }, React.createElement(Heading, {
+    level: 1
+  }), React.createElement(Heading, {
+    level: 2
+  }), React.createElement(Heading, {
+    level: 3
+  }), React.createElement(Heading, {
+    level: 4
+  })));
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

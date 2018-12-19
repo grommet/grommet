@@ -546,6 +546,7 @@ export var generate = function generate(baseSpacing, scale) {
       level: {
         1: {
           font: {// family: undefined,
+            // weight: undefined,
           },
           small: _extends({}, fontSizing(4)),
           medium: _extends({}, fontSizing(8)),
@@ -554,6 +555,7 @@ export var generate = function generate(baseSpacing, scale) {
         },
         2: {
           font: {// family: undefined,
+            // weight: undefined,
           },
           small: _extends({}, fontSizing(2)),
           medium: _extends({}, fontSizing(4)),
@@ -562,6 +564,7 @@ export var generate = function generate(baseSpacing, scale) {
         },
         3: {
           font: {// family: undefined,
+            // weight: undefined,
           },
           small: _extends({}, fontSizing(1)),
           medium: _extends({}, fontSizing(1)),
@@ -570,6 +573,7 @@ export var generate = function generate(baseSpacing, scale) {
         },
         4: {
           font: {// family: undefined,
+            // weight: undefined,
           },
           small: _extends({}, fontSizing(0)),
           medium: _extends({}, fontSizing(0)),
