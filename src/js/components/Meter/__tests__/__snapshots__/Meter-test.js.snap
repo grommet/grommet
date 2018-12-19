@@ -852,6 +852,31 @@ exports[`Meter thickness 1`] = `
   </svg>
   <svg
     className="c1"
+    height={55}
+    preserveAspectRatio="none"
+    viewBox="0 0 384 55"
+    width={384}
+  >
+    <path
+      d="M 0,27.5 L 384,27.5"
+      fill="none"
+      stroke="#F2F2F2"
+      strokeLinecap="square"
+      strokeOpacity="0.4"
+      strokeWidth={55}
+    />
+    <path
+      d="M 0,27.5 L 76.8,27.5"
+      fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeWidth={55}
+    />
+  </svg>
+  <svg
+    className="c1"
     height={384}
     viewBox="0 0 384 384"
     width={384}
@@ -978,6 +1003,32 @@ exports[`Meter thickness 1`] = `
       stroke="#6FFFB0"
       strokeLinecap="butt"
       strokeWidth={96}
+    />
+  </svg>
+  <svg
+    className="c1"
+    height={384}
+    viewBox="0 0 384 384"
+    width={384}
+  >
+    <circle
+      cx={192}
+      cy={192}
+      fill="none"
+      r={164.5}
+      stroke="#F2F2F2"
+      strokeLinecap="square"
+      strokeOpacity="0.4"
+      strokeWidth={55}
+    />
+    <path
+      d="M 348.4487969306 141.1667044253 A 164.5000000000 164.5000000000 0 0 0 192.0000000000 27.5000000000"
+      fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeWidth={55}
     />
   </svg>
 </div>
