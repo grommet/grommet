@@ -289,7 +289,16 @@ all
     large
     xlarge
     string,
-  style: string
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
 }
 ```
 

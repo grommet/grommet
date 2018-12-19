@@ -129,7 +129,17 @@ export const doc = Box => {
           PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
           PropTypes.string,
         ]),
-        style: PropTypes.string,
+        style: PropTypes.oneOf([
+          'solid',
+          'dashed',
+          'dotted',
+          'double',
+          'groove',
+          'ridge',
+          'inset',
+          'outset',
+          'hidden',
+        ]).defaultValue('solid'),
       }),
     ]).description('Include a border.'),
     direction: PropTypes.oneOf(['row', 'column', 'row-responsive'])
