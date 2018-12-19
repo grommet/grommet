@@ -499,6 +499,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         1: {
           font: {
             // family: undefined,
+            // weight: undefined,
           },
           small: { ...fontSizing(4) },
           medium: { ...fontSizing(8) },
@@ -508,6 +509,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         2: {
           font: {
             // family: undefined,
+            // weight: undefined,
           },
           small: { ...fontSizing(2) },
           medium: { ...fontSizing(4) },
@@ -517,6 +519,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         3: {
           font: {
             // family: undefined,
+            // weight: undefined,
           },
           small: { ...fontSizing(1) },
           medium: { ...fontSizing(1) },
@@ -526,6 +529,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         4: {
           font: {
             // family: undefined,
+            // weight: undefined,
           },
           small: { ...fontSizing(0) },
           medium: { ...fontSizing(0) },
