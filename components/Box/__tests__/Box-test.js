@@ -424,6 +424,18 @@ describe('Box', function () {
       border: {
         size: 'xlarge'
       }
+    }), _react.default.createElement(_.Box, {
+      border: {
+        style: 'dotted'
+      }
+    }), _react.default.createElement(_.Box, {
+      border: {
+        style: 'double'
+      }
+    }), _react.default.createElement(_.Box, {
+      border: {
+        style: 'dashed'
+      }
     })));
 
     var tree = component.toJSON();

@@ -288,7 +288,17 @@ all
     medium
     large
     xlarge
-    string
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
 }
 ```
 

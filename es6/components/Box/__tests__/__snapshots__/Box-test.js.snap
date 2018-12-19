@@ -2232,6 +2232,60 @@ exports[`Box border 1`] = `
   padding: 0px;
 }
 
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border: dotted 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border: double 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border: dashed 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -2450,6 +2504,60 @@ exports[`Box border 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c13 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    border: dotted 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    border: double 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    border: dashed 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    padding: 0px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -2494,6 +2602,15 @@ exports[`Box border 1`] = `
   />
   <div
     className="c12"
+  />
+  <div
+    className="c13"
+  />
+  <div
+    className="c14"
+  />
+  <div
+    className="c15"
   />
 </div>
 `;

@@ -138,6 +138,19 @@ var BorderBox = function BorderBox() {
         size: size
       }
     }, size);
+  })), React.createElement(Box, {
+    direction: "row-responsive",
+    gap: "small",
+    align: "start"
+  }, ['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset'].map(function (type) {
+    return React.createElement(Box, {
+      key: type,
+      pad: "small",
+      border: {
+        type: type,
+        size: 'medium'
+      }
+    }, type);
   }))));
 };
 

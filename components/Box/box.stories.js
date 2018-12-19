@@ -145,6 +145,19 @@ var BorderBox = function BorderBox() {
         size: size
       }
     }, size);
+  })), _react.default.createElement(_2.Box, {
+    direction: "row-responsive",
+    gap: "small",
+    align: "start"
+  }, ['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge', 'inset', 'outset'].map(function (type) {
+    return _react.default.createElement(_2.Box, {
+      key: type,
+      pad: "small",
+      border: {
+        type: type,
+        size: 'medium'
+      }
+    }, type);
   }))));
 };
 

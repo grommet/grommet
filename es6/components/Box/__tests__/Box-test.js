@@ -398,6 +398,18 @@ describe('Box', function () {
       border: {
         size: 'xlarge'
       }
+    }), React.createElement(Box, {
+      border: {
+        style: 'dotted'
+      }
+    }), React.createElement(Box, {
+      border: {
+        style: 'double'
+      }
+    }), React.createElement(Box, {
+      border: {
+        style: 'dashed'
+      }
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();

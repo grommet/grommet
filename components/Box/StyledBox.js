@@ -104,10 +104,11 @@ var borderStyle = function borderStyle(data, responsive, theme) {
   var styles = [];
   var color = (0, _utils.normalizeColor)(data.color || 'border', theme);
   var borderSize = data.size || 'xsmall';
+  var style = data.style || 'solid';
   var side = typeof data === 'string' ? data : data.side || 'all';
-  var value = "solid " + (theme.global.borderSize[borderSize] || borderSize) + " " + color;
+  var value = style + " " + (theme.global.borderSize[borderSize] || borderSize) + " " + color;
   var breakpoint = theme.box.responsiveBreakpoint && theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  var responsiveValue = breakpoint && (breakpoint.borderSize[borderSize] || borderSize) && "solid " + (breakpoint.borderSize[borderSize] || borderSize) + " " + color;
+  var responsiveValue = breakpoint && (breakpoint.borderSize[borderSize] || borderSize) && style + " " + (breakpoint.borderSize[borderSize] || borderSize) + " " + color;
 
   if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
     styles.push((0, _styledComponents.css)(["border-", ":", ";"], side, value));
