@@ -1,7 +1,17 @@
-import React, { createRef, PureComponent } from 'react';
+import React, { Component, createRef, PureComponent } from 'react';
+import { findDOMNode } from 'react-dom'; // need this for finding item DOM elements
 import { findScrollParents } from '../../utils';
 import { Box } from '../Box';
 
+// Wraps an item to ensure we can get a ref to it
+class Ref extends Component {
+  render() {
+    const { children } = this.props;
+    return children;
+  }
+}
+
+// eslint-disable-next-line react/no-multi-comp
 class InfiniteScroll extends PureComponent {
   static defaultProps = {
     items: [],
@@ -28,6 +38,12 @@ class InfiniteScroll extends PureComponent {
   state = {};
 
   initialScroll = false;
+
+  showRef = createRef();
+
+  firstPageItemRef = createRef();
+
+  lastPageItemRef = createRef();
 
   aboveMarkerRef = createRef();
 
@@ -77,18 +93,29 @@ class InfiniteScroll extends PureComponent {
 
   scrollShow = () => {
     const { show } = this.props;
-    if (show && !this.initialScroll && this.showRef) {
+    if (show && !this.initialScroll && this.showRef.current) {
       this.initialScroll = true;
       // on initial render, scroll to any 'show'
-      this.showRef.scrollIntoView();
+      // eslint-disable-next-line react/no-find-dom-node
+      findDOMNode(this.showRef.current).scrollIntoView();
     }
   };
 
   setPageHeight = () => {
     const { pageHeight } = this.state;
-    if (this.firstPageItemRef && this.lastPageItemRef && !pageHeight) {
-      const beginRect = this.firstPageItemRef.getBoundingClientRect();
-      const endRect = this.lastPageItemRef.getBoundingClientRect();
+    if (
+      this.firstPageItemRef.current &&
+      this.lastPageItemRef.current &&
+      !pageHeight
+    ) {
+      // eslint-disable-next-line react/no-find-dom-node
+      const beginRect = findDOMNode(
+        this.firstPageItemRef.current,
+      ).getBoundingClientRect();
+      // eslint-disable-next-line react/no-find-dom-node
+      const endRect = findDOMNode(
+        this.lastPageItemRef.current,
+      ).getBoundingClientRect();
       const nextPageHeight = endRect.y + endRect.height - beginRect.y;
       // In case the pageHeight is smaller than the visible area,
       // we call onScroll to set the page boundaries appropriately.
@@ -178,37 +205,24 @@ class InfiniteScroll extends PureComponent {
       const itemsIndex = firstIndex + index;
       let child = children(item, itemsIndex);
       if (!pageHeight && itemsIndex === 0) {
-        const { ref } = child;
-        child = React.cloneElement(child, {
-          ref: node => {
-            this.firstPageItemRef = node;
-            if (typeof ref === 'function') {
-              ref(node);
-            }
-          },
-        });
+        child = (
+          <Ref key="first" ref={this.firstPageItemRef}>
+            {child}
+          </Ref>
+        );
       } else if (!pageHeight && itemsIndex === step - 1) {
-        const { ref } = child;
-        child = React.cloneElement(child, {
-          ref: node => {
-            this.lastPageItemRef = node;
-            if (typeof ref === 'function') {
-              ref(node);
-            }
-          },
-        });
+        child = (
+          <Ref key="last" ref={this.lastPageItemRef}>
+            {child}
+          </Ref>
+        );
       }
       if (show && show === itemsIndex) {
-        const { ref } = child;
-        child = React.cloneElement(child, {
-          key: 'show',
-          ref: node => {
-            this.showRef = node;
-            if (typeof ref === 'function') {
-              ref(node);
-            }
-          },
-        });
+        child = (
+          <Ref key="show" ref={this.showRef}>
+            {child}
+          </Ref>
+        );
       }
       result.push(child);
     });
