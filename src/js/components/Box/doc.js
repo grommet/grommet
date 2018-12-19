@@ -157,7 +157,13 @@ export const doc = Box => {
     flex: PropTypes.oneOfType([
       PropTypes.oneOf(['grow', 'shrink']),
       PropTypes.bool,
-    ]).description('Whether flex-grow and/or flex-shrink is true.'),
+      PropTypes.shape({
+        grow: PropTypes.number,
+        shrink: PropTypes.number,
+      }),
+    ]).description(
+      'Whether flex-grow and/or flex-shrink is true and at a desired factor.',
+    ),
     fill: PropTypes.oneOfType([
       PropTypes.oneOf(['horizontal', 'vertical']),
       PropTypes.bool,

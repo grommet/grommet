@@ -99,9 +99,17 @@ const FLEX_MAP = {
   shrink: '0 1',
 };
 
+const flexGrowShrinkProp = flex => {
+  if (typeof flex === 'boolean' || typeof flex === 'string') {
+    return FLEX_MAP[flex];
+  }
+
+  return `${flex.grow ? flex.grow : 0} ${flex.shrink ? flex.shrink : 0}`;
+};
+
 const flexStyle = css`
   flex: ${props =>
-    `${FLEX_MAP[props.flex]}${
+    `${flexGrowShrinkProp(props.flex)}${
       props.flex !== true && !props.basis ? ' auto' : ''
     }`};
 `;

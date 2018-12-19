@@ -484,10 +484,14 @@ string",
         "name": "elevation",
       },
       Object {
-        "description": "Whether flex-grow and/or flex-shrink is true.",
+        "description": "Whether flex-grow and/or flex-shrink is true and at a desired factor.",
         "format": "grow
 shrink
-boolean",
+boolean
+{
+  grow: number,
+  shrink: number
+}",
         "name": "flex",
       },
       Object {

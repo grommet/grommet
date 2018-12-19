@@ -68,7 +68,7 @@ export interface BoxProps {
   border?: boolean | \\"top\\" | \\"left\\" | \\"bottom\\" | \\"right\\" | \\"horizontal\\" | \\"vertical\\" | \\"all\\" | {color?: string | {dark?: string,light?: string},side?: \\"top\\" | \\"left\\" | \\"bottom\\" | \\"right\\" | \\"horizontal\\" | \\"vertical\\" | \\"all\\",size?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string,style?: \\"solid\\" | \\"dashed\\" | \\"dotted\\" | \\"double\\" | \\"groove\\" | \\"ridge\\" | \\"inset\\" | \\"outset\\" | \\"hidden\\"};
   direction?: \\"row\\" | \\"column\\" | \\"row-responsive\\";
   elevation?: \\"none\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
-  flex?: \\"grow\\" | \\"shrink\\" | boolean;
+  flex?: \\"grow\\" | \\"shrink\\" | boolean | {grow?: number,shrink?: number};
   fill?: \\"horizontal\\" | \\"vertical\\" | boolean;
   gap?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
   height?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
