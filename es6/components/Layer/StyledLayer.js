@@ -101,6 +101,15 @@ var KEYFRAMES = {
     true: keyframes(["0%{transform:translateX(100%);}100%{transform:translateX(0);}"]),
     false: keyframes(["0%{transform:translate(100%,-50%);}100%{transform:translate(0,-50%);}"])
   }
+};
+
+var getAnimationStyle = function getAnimationStyle(animate, position, full) {
+  if (animate === void 0) {
+    animate = true;
+  }
+
+  var defaultAnimation = css(["animation:", " 0.2s ease-in-out forwards"], KEYFRAMES[position][full]);
+  return animate ? defaultAnimation : '';
 }; // POSITIONS combines 'position', 'full', and 'margin' properties, since
 // they are all interdependent.
 // Basically, non-full axes combine 50% position with -50% translation.
@@ -108,131 +117,204 @@ var KEYFRAMES = {
 // The keyframe animations are included as they are done via translations
 // as well so they must take into account the non-animated positioning.
 
+
 var POSITIONS = {
   center: {
     vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";left:50%;transform:translateX(-50%);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, KEYFRAMES.center.vertical);
+      return css(["top:", ";bottom:", ";left:50%;transform:translateX(-50%);", ""], margin.top, margin.bottom, function (props) {
+        return getAnimationStyle(props.animate, 'center', 'vertical');
+      });
     },
     horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";top:50%;transform:translateY(-50%);animation:", " 0.2s ease-in-out forwards;"], margin.left, margin.right, KEYFRAMES.center.horizontal);
+      return css(["left:", ";right:", ";top:50%;transform:translateY(-50%);", ""], margin.left, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'center', 'horizontal');
+      });
     },
     true: function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.center.true);
+      return css(["top:", ";bottom:", ";left:", ";right:", ";", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'center', 'true');
+      });
     },
     false: function _false() {
-      return css(["top:50%;left:50%;transform:translate(-50%,-50%);animation:", " 0.2s ease-in-out forwards;"], KEYFRAMES.center.false);
+      return css(["top:50%;left:50%;transform:translate(-50%,-50%);", ""], function (props) {
+        return getAnimationStyle(props.animate, 'center', 'false');
+      });
     }
   },
   top: {
     vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";left:50%;transform:translate(-50%,0%);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, KEYFRAMES.top.vertical);
+      return css(["top:", ";bottom:", ";left:50%;transform:translate(-50%,0%);", ""], margin.top, margin.bottom, function (props) {
+        return getAnimationStyle(props.animate, 'top', 'vertical');
+      });
     },
     horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";top:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], margin.left, margin.right, margin.top, KEYFRAMES.top.horizontal);
+      return css(["left:", ";right:", ";top:", ";transform:translateY(0);", ""], margin.left, margin.right, margin.top, function (props) {
+        return getAnimationStyle(props.animate, 'top', 'horizontal');
+      });
     },
     true: function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.top.true);
+      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'top', 'true');
+      });
     },
     false: function _false(margin) {
-      return css(["top:", ";left:50%;transform:translate(-50%,0);animation:", " 0.2s ease-in-out forwards;"], margin.top, KEYFRAMES.top.false);
+      return css(["top:", ";left:50%;transform:translate(-50%,0);", ""], margin.top, function (props) {
+        return getAnimationStyle(props.animate, 'top', 'false');
+      });
     }
   },
   bottom: {
     vertical: function vertical(margin) {
-      return css(["top:", " bottom:", ";left:50%;transform:translate(-50%,0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, KEYFRAMES.bottom.vertical);
+      return css(["top:", " bottom:", ";left:50%;transform:translate(-50%,0);", ""], margin.top, margin.bottom, function (props) {
+        return getAnimationStyle(props.animate, 'bottom', 'vertical');
+      });
     },
     horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";bottom:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], margin.left, margin.top, margin.bottom, KEYFRAMES.bottom.horizontal);
+      return css(["left:", ";right:", ";bottom:", ";transform:translateY(0);", ""], margin.left, margin.top, margin.bottom, function (props) {
+        return getAnimationStyle(props.animate, 'bottom', 'horizontal');
+      });
     },
     true: function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.bottom.true);
+      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'bottom', 'true');
+      });
     },
     false: function _false(margin) {
-      return css(["bottom:", ";left:50%;transform:translate(-50%,0);animation:", " 0.2s ease-in-out forwards;"], margin.bottom, KEYFRAMES.bottom.false);
+      return css(["bottom:", ";left:50%;transform:translate(-50%,0);", ""], margin.bottom, function (props) {
+        return getAnimationStyle(props.animate, 'bottom', 'false');
+      });
     }
   },
   left: {
     vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";left:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, KEYFRAMES.left.vertical);
+      return css(["top:", ";bottom:", ";left:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, function (props) {
+        return getAnimationStyle(props.animate, 'left', 'vertical');
+      });
     },
     horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";top:50%;transform:translate(0,-50%);animation:", " 0.2s ease-in-out forwards;"], margin.left, margin.right, KEYFRAMES.left.horizontal);
+      return css(["left:", ";right:", ";top:50%;transform:translate(0,-50%);", ""], margin.left, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'left', 'horizontal');
+      });
     },
     true: function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.left.true);
+      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'left', 'true');
+      });
     },
     false: function _false(margin) {
-      return css(["left:", ";top:50%;transform:translate(0,-50%);animation:", " 0.2s ease-in-out forwards;"], margin.left, KEYFRAMES.left.false);
+      return css(["left:", ";top:50%;transform:translate(0,-50%);", ""], margin.left, function (props) {
+        return getAnimationStyle(props.animate, 'left', 'false');
+      });
     }
   },
   right: {
     vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.right, KEYFRAMES.right.vertical);
+      return css(["top:", ";bottom:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'right', 'vertical');
+      });
     },
     horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";top:50%;transform:translate(0,-50%);animation:", " 0.2s ease-in-out forwards;"], margin.left, margin.right, KEYFRAMES.right.horizontal);
+      return css(["left:", ";right:", ";top:50%;transform:translate(0,-50%);", ""], margin.left, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'right', 'horizontal');
+      });
     },
     true: function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.right.true);
+      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'right', 'true');
+      });
     },
     false: function _false(margin) {
-      return css(["right:", ";top:50%;transform:translate(0,-50%);animation:", " 0.2s ease-in-out forwards;"], margin.right, KEYFRAMES.right.false);
+      return css(["right:", ";top:50%;transform:translate(0,-50%);", ""], margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'right', 'false');
+      });
     }
   },
   'top-right': {
     vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.right, KEYFRAMES.top.true);
+      return css(["top:", ";bottom:", ";right:", ";transform:translateX(0);", ";"], margin.top, margin.bottom, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'top', 'true');
+      });
     },
     horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";top:0;transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.left, margin.right, KEYFRAMES.top.true);
+      return css(["left:", ";right:", ";top:0;transform:translateX(0);", ";"], margin.left, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'top', 'true');
+      });
     },
     true: function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.top.true);
+      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ";"], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'top', 'true');
+      });
     },
     false: function _false(margin) {
-      return css(["top:", ";right:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.right, KEYFRAMES.top.true);
+      return css(["top:", ";right:", ";transform:translateY(0);", ";"], margin.top, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'top', 'true');
+      });
     }
   },
   'top-left': {
     vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";left:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, KEYFRAMES.top.true);
+      return css(["top:", ";bottom:", ";left:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, function (props) {
+        return getAnimationStyle(props.animate, 'top', 'true');
+      });
     },
     horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";top:0;transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.left, margin.right, KEYFRAMES.top.true);
+      return css(["left:", ";right:", ";top:0;transform:translateX(0);", ""], margin.left, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'top', 'true');
+      });
     },
     true: function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.top.true);
+      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'top', 'true');
+      });
     },
     false: function _false(margin) {
-      return css(["top:", ";left:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.left, KEYFRAMES.top.true);
+      return css(["top:", ";left:", ";transform:translateY(0);", ""], margin.top, margin.left, function (props) {
+        return getAnimationStyle(props.animate, 'top', 'true');
+      });
     }
   },
   'bottom-right': {
     vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.right, KEYFRAMES.bottom.true);
+      return css(["top:", ";bottom:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'bottom', 'true');
+      });
     },
     horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";bottom:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], margin.left, margin.right, margin.bottom, KEYFRAMES.bottom.horizontal);
+      return css(["left:", ";right:", ";bottom:", ";transform:translateY(0);", ""], margin.left, margin.right, margin.bottom, function (props) {
+        return getAnimationStyle(props.animate, 'bottom', 'true');
+      });
     },
     true: function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.bottom.true);
+      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'bottom', 'true');
+      });
     },
     false: function _false(margin) {
-      return css(["bottom:", ";right:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], margin.bottom, margin.right, KEYFRAMES.bottom.true);
+      return css(["bottom:", ";right:", ";transform:translateY(0);", ""], margin.bottom, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'bottom', 'true');
+      });
     }
   },
   'bottom-left': {
     vertical: function vertical(margin) {
-      return css(["top:", ";bottom:", ";left:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, KEYFRAMES.bottom.true);
+      return css(["top:", ";bottom:", ";left:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, function (props) {
+        return getAnimationStyle(props.animate, 'bottom', 'true');
+      });
     },
     horizontal: function horizontal(margin) {
-      return css(["left:", ";right:", ";bottom:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], margin.left, margin.right, margin.bottom, KEYFRAMES.bottom.horizontal);
+      return css(["left:", ";right:", ";bottom:", ";transform:translateY(0);", ""], margin.left, margin.right, margin.bottom, function (props) {
+        return getAnimationStyle(props.animate, 'bottom', 'true');
+      });
     },
     true: function _true(margin) {
-      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);animation:", " 0.2s ease-in-out forwards;"], margin.top, margin.bottom, margin.left, margin.right, KEYFRAMES.bottom.true);
+      return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
+        return getAnimationStyle(props.animate, 'bottom', 'true');
+      });
     },
     false: function _false(margin) {
-      return css(["bottom:", ";left:", ";transform:translateY(0);animation:", " 0.2s ease-in-out forwards;"], margin.bottom, margin.left, KEYFRAMES.bottom.true);
+      return css(["bottom:", ";left:", ";transform:translateY(0);", ""], margin.bottom, margin.left, function (props) {
+        return getAnimationStyle(props.animate, 'bottom', 'true');
+      });
     }
   }
 };

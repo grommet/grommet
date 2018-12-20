@@ -13,6 +13,14 @@ import { Layer } from 'grommet';
 
 ## Properties
 
+**animate**
+
+Animation transition of the Layer content when it opens. Defaults to `true`.
+
+```
+boolean
+```
+
 **full**
 
 Whether the width and/or height should fill the current viewport size.

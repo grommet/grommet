@@ -4,6 +4,7 @@ var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 export var doc = function doc(Layer) {
   var DocumentedLayer = describe(Layer).availableAt(getAvailableAtBadge('Layer')).description("An overlay. Layer is typically modal and anchored to an edge, corner, or\n      center of the window. It is the caller's responsibility to provide a\n      control for the user to close the layer.").usage("import { Layer } from 'grommet';\n<Layer />");
   DocumentedLayer.propTypes = {
+    animate: PropTypes.bool.description('Animation transition of the Layer content when it opens.').defaultValue(true),
     full: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['vertical', 'horizontal'])]).description('Whether the width and/or height should fill the current viewport size.').defaultValue(false),
     margin: PropTypes.oneOfType([PropTypes.oneOf(['none'].concat(PAD_SIZES)), PropTypes.shape({
       bottom: PropTypes.oneOfType([PropTypes.oneOf(PAD_SIZES), PropTypes.string]),
