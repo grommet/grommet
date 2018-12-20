@@ -18,6 +18,9 @@ export const doc = Layer => {
     );
 
   DocumentedLayer.propTypes = {
+    animate: PropTypes.bool
+      .description('Animation transition of the Layer content when it opens.')
+      .defaultValue(true),
     full: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['vertical', 'horizontal']),
