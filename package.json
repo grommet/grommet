@@ -40,6 +40,7 @@
     "e2e": "concurrently 'npm run storybook' 'npm run cypress:test' -k -s first && npm run visual-regression",
     "cypress:test": "wait-on http-get://localhost:9001/?selectedKind=Components && cypress run",
     "cypress:run": "cypress run",
+    "cypress:update": "rimraf cypress/screenshots/base/* && npm run cypress:run && mv cypress/screenshots/new/* cypress/screenshots/base",
     "visual-regression": "rimraf cypress/screenshots/diff/* && node ./cypress/differ.js"
   },
   "peerDependencies": {

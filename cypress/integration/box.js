@@ -1,7 +1,15 @@
 import { getComponentStories, takeScreenshots } from '../utils';
 
-const component = 'Meter';
-const stories = ['Circle', 'Labelled', 'Bar'];
+const component = 'Box';
+const stories = [
+  'Custom color',
+  'Fixed sizes',
+  'Border',
+  'Round',
+  'Background',
+  'Elevation',
+  'Simple Box',
+];
 
 describe(`${component} storybook`, () => {
   beforeEach(() => {
