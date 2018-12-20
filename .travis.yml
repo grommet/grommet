@@ -16,7 +16,7 @@ jobs:
     - stage: test
       script: npm run test
     - stage: test
-      script: npm run e2e
+      script: npm install && npm run e2e
     - stage: build
       script: |
         if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
