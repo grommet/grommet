@@ -59,7 +59,7 @@ describe('MaskedInput', function () {
       expect(onChange).not.toBeCalled();
       expect(onFocus).toBeCalled();
       done();
-    }, 100);
+    }, 300);
   });
   test('option via mouse', function (done) {
     var onChange = jest.fn();
@@ -99,7 +99,7 @@ describe('MaskedInput', function () {
         }
       }));
       done();
-    }, 100);
+    }, 300);
   });
   test('option via keyboard', function (done) {
     var onChange = jest.fn();
@@ -159,7 +159,7 @@ describe('MaskedInput', function () {
         }
       }));
       done();
-    }, 100);
+    }, 300);
   });
   test('next and previous without options', function (done) {
     var onChange = jest.fn();
@@ -206,6 +206,6 @@ describe('MaskedInput', function () {
       expect(onChange).not.toBeCalled();
       expect(container.firstChild).toMatchSnapshot();
       done();
-    }, 100);
+    }, 300);
   });
 });

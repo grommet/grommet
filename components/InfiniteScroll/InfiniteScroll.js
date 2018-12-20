@@ -5,17 +5,41 @@ exports.InfiniteScroll = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _reactDom = require("react-dom");
+
 var _utils = require("../../utils");
 
 var _Box = require("../Box");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+// Wraps an item to ensure we can get a ref to it
+
+/* eslint-disable react/no-multi-comp, react/no-find-dom-node */
+var Ref =
+/*#__PURE__*/
+function (_Component) {
+  _inheritsLoose(Ref, _Component);
+
+  function Ref() {
+    return _Component.apply(this, arguments) || this;
+  }
+
+  var _proto = Ref.prototype;
+
+  _proto.render = function render() {
+    var children = this.props.children;
+    return children;
+  };
+
+  return Ref;
+}(_react.Component);
 
 var InfiniteScroll =
 /*#__PURE__*/
@@ -35,9 +59,13 @@ function (_PureComponent) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "initialScroll", false);
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "aboveMarkerRef", (0, _react.createRef)());
-
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "belowMarkerRef", (0, _react.createRef)());
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "firstPageItemRef", (0, _react.createRef)());
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "lastPageItemRef", (0, _react.createRef)());
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "showRef", (0, _react.createRef)());
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "addScrollListener", function () {
       var pageHeight = _this.state.pageHeight;
@@ -64,20 +92,21 @@ function (_PureComponent) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "scrollShow", function () {
       var show = _this.props.show;
 
-      if (show && !_this.initialScroll && _this.showRef) {
+      if (show && !_this.initialScroll && _this.showRef.current) {
         _this.initialScroll = true; // on initial render, scroll to any 'show'
 
-        _this.showRef.scrollIntoView();
+        (0, _reactDom.findDOMNode)(_this.showRef.current).scrollIntoView();
       }
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setPageHeight", function () {
       var pageHeight = _this.state.pageHeight;
 
-      if (_this.firstPageItemRef && _this.lastPageItemRef && !pageHeight) {
-        var beginRect = _this.firstPageItemRef.getBoundingClientRect();
-
-        var endRect = _this.lastPageItemRef.getBoundingClientRect();
+      if (_this.firstPageItemRef.current && _this.lastPageItemRef.current && !pageHeight) {
+        /* eslint-disable react/no-find-dom-node */
+        var beginRect = (0, _reactDom.findDOMNode)(_this.firstPageItemRef.current).getBoundingClientRect();
+        var endRect = (0, _reactDom.findDOMNode)(_this.lastPageItemRef.current).getBoundingClientRect();
+        /* eslint-enable react/no-find-dom-node */
 
         var nextPageHeight = endRect.y + endRect.height - beginRect.y; // In case the pageHeight is smaller than the visible area,
         // we call onScroll to set the page boundaries appropriately.
@@ -159,9 +188,9 @@ function (_PureComponent) {
     return null;
   };
 
-  var _proto = InfiniteScroll.prototype;
+  var _proto2 = InfiniteScroll.prototype;
 
-  _proto.componentDidMount = function componentDidMount() {
+  _proto2.componentDidMount = function componentDidMount() {
     var _this2 = this;
 
     // ride out any animation, 100ms was chosen empirically
@@ -175,20 +204,20 @@ function (_PureComponent) {
     }, 100);
   };
 
-  _proto.componentDidUpdate = function componentDidUpdate() {
+  _proto2.componentDidUpdate = function componentDidUpdate() {
     this.setPageHeight();
     this.removeScrollListener();
     this.addScrollListener();
     this.scrollShow();
   };
 
-  _proto.componentWillUnmount = function componentWillUnmount() {
+  _proto2.componentWillUnmount = function componentWillUnmount() {
     this.removeScrollListener();
     clearTimeout(this.animationDelayTimer);
     clearTimeout(this.scrollTimer);
   };
 
-  _proto.render = function render() {
+  _proto2.render = function render() {
     var _this3 = this;
 
     var _this$props2 = this.props,
@@ -211,7 +240,6 @@ function (_PureComponent) {
     if (replace && pageHeight && firstIndex) {
       var marker = _react.default.createElement(_Box.Box, {
         key: "above",
-        ref: this.aboveMarkerRef,
         flex: false,
         height: beginPage * pageHeight + "px"
       });
@@ -231,44 +259,22 @@ function (_PureComponent) {
       var child = children(item, itemsIndex);
 
       if (!pageHeight && itemsIndex === 0) {
-        var _child = child,
-            _ref = _child.ref;
-        child = _react.default.cloneElement(child, {
-          ref: function ref(node) {
-            _this3.firstPageItemRef = node;
-
-            if (typeof _ref === 'function') {
-              _ref(node);
-            }
-          }
-        });
+        child = _react.default.createElement(Ref, {
+          key: "first",
+          ref: _this3.firstPageItemRef
+        }, child);
       } else if (!pageHeight && itemsIndex === step - 1) {
-        var _child2 = child,
-            _ref2 = _child2.ref;
-        child = _react.default.cloneElement(child, {
-          ref: function ref(node) {
-            _this3.lastPageItemRef = node;
-
-            if (typeof _ref2 === 'function') {
-              _ref2(node);
-            }
-          }
-        });
+        child = _react.default.createElement(Ref, {
+          key: "last",
+          ref: _this3.lastPageItemRef
+        }, child);
       }
 
       if (show && show === itemsIndex) {
-        var _child3 = child,
-            _ref3 = _child3.ref;
-        child = _react.default.cloneElement(child, {
-          key: 'show',
-          ref: function ref(node) {
-            _this3.showRef = node;
-
-            if (typeof _ref3 === 'function') {
-              _ref3(node);
-            }
-          }
-        });
+        child = _react.default.createElement(Ref, {
+          key: "show",
+          ref: _this3.showRef
+        }, child);
       }
 
       result.push(child);
@@ -310,4 +316,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 var InfiniteScrollWrapper = InfiniteScrollDoc || InfiniteScroll;
+/* eslint-enable react/no-find-dom-node, react/no-multi-comp */
+
 exports.InfiniteScroll = InfiniteScrollWrapper;

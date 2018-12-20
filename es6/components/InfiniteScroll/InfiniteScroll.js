@@ -1,12 +1,34 @@
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-import React, { createRef, PureComponent } from 'react';
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+import React, { createRef, Component, PureComponent } from 'react';
+import { findDOMNode } from 'react-dom';
 import { findScrollParents } from '../../utils';
-import { Box } from '../Box';
+import { Box } from '../Box'; // Wraps an item to ensure we can get a ref to it
+
+/* eslint-disable react/no-multi-comp, react/no-find-dom-node */
+
+var Ref =
+/*#__PURE__*/
+function (_Component) {
+  _inheritsLoose(Ref, _Component);
+
+  function Ref() {
+    return _Component.apply(this, arguments) || this;
+  }
+
+  var _proto = Ref.prototype;
+
+  _proto.render = function render() {
+    var children = this.props.children;
+    return children;
+  };
+
+  return Ref;
+}(Component);
 
 var InfiniteScroll =
 /*#__PURE__*/
@@ -26,9 +48,13 @@ function (_PureComponent) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "initialScroll", false);
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "aboveMarkerRef", createRef());
-
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "belowMarkerRef", createRef());
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "firstPageItemRef", createRef());
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "lastPageItemRef", createRef());
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "showRef", createRef());
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "addScrollListener", function () {
       var pageHeight = _this.state.pageHeight;
@@ -55,20 +81,21 @@ function (_PureComponent) {
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "scrollShow", function () {
       var show = _this.props.show;
 
-      if (show && !_this.initialScroll && _this.showRef) {
+      if (show && !_this.initialScroll && _this.showRef.current) {
         _this.initialScroll = true; // on initial render, scroll to any 'show'
 
-        _this.showRef.scrollIntoView();
+        findDOMNode(_this.showRef.current).scrollIntoView();
       }
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setPageHeight", function () {
       var pageHeight = _this.state.pageHeight;
 
-      if (_this.firstPageItemRef && _this.lastPageItemRef && !pageHeight) {
-        var beginRect = _this.firstPageItemRef.getBoundingClientRect();
-
-        var endRect = _this.lastPageItemRef.getBoundingClientRect();
+      if (_this.firstPageItemRef.current && _this.lastPageItemRef.current && !pageHeight) {
+        /* eslint-disable react/no-find-dom-node */
+        var beginRect = findDOMNode(_this.firstPageItemRef.current).getBoundingClientRect();
+        var endRect = findDOMNode(_this.lastPageItemRef.current).getBoundingClientRect();
+        /* eslint-enable react/no-find-dom-node */
 
         var nextPageHeight = endRect.y + endRect.height - beginRect.y; // In case the pageHeight is smaller than the visible area,
         // we call onScroll to set the page boundaries appropriately.
@@ -150,9 +177,9 @@ function (_PureComponent) {
     return null;
   };
 
-  var _proto = InfiniteScroll.prototype;
+  var _proto2 = InfiniteScroll.prototype;
 
-  _proto.componentDidMount = function componentDidMount() {
+  _proto2.componentDidMount = function componentDidMount() {
     var _this2 = this;
 
     // ride out any animation, 100ms was chosen empirically
@@ -166,20 +193,20 @@ function (_PureComponent) {
     }, 100);
   };
 
-  _proto.componentDidUpdate = function componentDidUpdate() {
+  _proto2.componentDidUpdate = function componentDidUpdate() {
     this.setPageHeight();
     this.removeScrollListener();
     this.addScrollListener();
     this.scrollShow();
   };
 
-  _proto.componentWillUnmount = function componentWillUnmount() {
+  _proto2.componentWillUnmount = function componentWillUnmount() {
     this.removeScrollListener();
     clearTimeout(this.animationDelayTimer);
     clearTimeout(this.scrollTimer);
   };
 
-  _proto.render = function render() {
+  _proto2.render = function render() {
     var _this3 = this;
 
     var _this$props2 = this.props,
@@ -202,7 +229,6 @@ function (_PureComponent) {
     if (replace && pageHeight && firstIndex) {
       var marker = React.createElement(Box, {
         key: "above",
-        ref: this.aboveMarkerRef,
         flex: false,
         height: beginPage * pageHeight + "px"
       });
@@ -222,44 +248,22 @@ function (_PureComponent) {
       var child = children(item, itemsIndex);
 
       if (!pageHeight && itemsIndex === 0) {
-        var _child = child,
-            _ref = _child.ref;
-        child = React.cloneElement(child, {
-          ref: function ref(node) {
-            _this3.firstPageItemRef = node;
-
-            if (typeof _ref === 'function') {
-              _ref(node);
-            }
-          }
-        });
+        child = React.createElement(Ref, {
+          key: "first",
+          ref: _this3.firstPageItemRef
+        }, child);
       } else if (!pageHeight && itemsIndex === step - 1) {
-        var _child2 = child,
-            _ref2 = _child2.ref;
-        child = React.cloneElement(child, {
-          ref: function ref(node) {
-            _this3.lastPageItemRef = node;
-
-            if (typeof _ref2 === 'function') {
-              _ref2(node);
-            }
-          }
-        });
+        child = React.createElement(Ref, {
+          key: "last",
+          ref: _this3.lastPageItemRef
+        }, child);
       }
 
       if (show && show === itemsIndex) {
-        var _child3 = child,
-            _ref3 = _child3.ref;
-        child = React.cloneElement(child, {
-          key: 'show',
-          ref: function ref(node) {
-            _this3.showRef = node;
-
-            if (typeof _ref3 === 'function') {
-              _ref3(node);
-            }
-          }
-        });
+        child = React.createElement(Ref, {
+          key: "show",
+          ref: _this3.showRef
+        }, child);
       }
 
       result.push(child);
@@ -302,3 +306,4 @@ if (process.env.NODE_ENV !== 'production') {
 
 var InfiniteScrollWrapper = InfiniteScrollDoc || InfiniteScroll;
 export { InfiniteScrollWrapper as InfiniteScroll };
+/* eslint-enable react/no-find-dom-node, react/no-multi-comp */
