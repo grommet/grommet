@@ -197,19 +197,11 @@ const KEYFRAMES = {
   },
 };
 
-const getAnimationStyle = (animate, position, full) => {
-  if (animate === false) {
-    return '';
-  }
+const getAnimationStyle = (animate = true, position, full) => {
+  const defaultAnimation = css`animation: ${KEYFRAMES[position][full]} 0.2s ease-in-out forwards`;
 
-  return animate === true || animate === undefined
-    ? css`
-        animation: ${KEYFRAMES[position][full]} 0.2s ease-in-out forwards;
-      `
-    : css`
-        animation: ${KEYFRAMES[position][full]} ${animate};
-      `;
-};
+  return animate ? defaultAnimation : '';
+}
 
 // POSITIONS combines 'position', 'full', and 'margin' properties, since
 // they are all interdependent.

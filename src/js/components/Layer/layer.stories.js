@@ -133,7 +133,7 @@ class CornerLayer extends Component {
           />
         </Box>
         {open && (
-          <Layer position="top-right" animate="0.6s ease-in-out forwards">
+          <Layer position="top-right">
             <Box height="small" overflow="auto">
               <Box pad="xlarge">Corner top-right position</Box>
             </Box>

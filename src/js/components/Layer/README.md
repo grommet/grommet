@@ -18,7 +18,6 @@ Animation transition of the Layer content when it opens. Defaults to `true`.
 
 ```
 boolean
-string
 ```
 
 **full**
