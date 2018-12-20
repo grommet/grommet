@@ -5,13 +5,21 @@ sudo: false
 cache:
   directories:
     - node_modules
-script:
-  - npm run lint
-  - npm run test
-  - npm run e2e
-  - |
-    if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
-      git config --global user.name "Grommet Community Bot"
-      git config --global user.email "grommet@hpe.com"
-      npm run build && npm run release-stable
-    fi
+stages:
+  - test
+  - build
+jobs:
+  include:
+    - stage: test
+      script: npm run lint
+    - stage: test
+      script: npm run test
+    - stage: test
+      script: npm run e2e
+    - stage: build
+      script: |
+        if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
+          git config --global user.name "Grommet Community Bot"
+          git config --global user.email "grommet@hpe.com"
+          npm run build && npm run release-stable
+        fi
