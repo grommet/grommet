@@ -28,8 +28,9 @@ export const doc = Form => {
       'Function that will be called when any fields are updated.',
     ),
     onSubmit: PropTypes.func.description(
-      `Function that will be called when the form is submitted. It will be
-      called with two arguments, an event and the latest value object.`,
+      `Function that will be called when the form is submitted. The
+      single argument is an event containing the latest value object
+      via \`event.value\`.`,
     ),
     value: PropTypes.shape({})
       .description('An object representing all of the data in the form.')

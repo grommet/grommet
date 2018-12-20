@@ -46,8 +46,9 @@ function
 
 **onSubmit**
 
-Function that will be called when the form is submitted. It will be
-      called with two arguments, an event and the latest value object.
+Function that will be called when the form is submitted. The
+      single argument is an event containing the latest value object
+      via `event.value`.
 
 ```
 function

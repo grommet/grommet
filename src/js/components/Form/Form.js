@@ -62,7 +62,10 @@ class Form extends Component {
       }
     });
     if (Object.keys(nextErrors).length === 0 && onSubmit) {
-      onSubmit(event, value);
+      event.persist(); // extract from React's synthetic event pool
+      const adjustedEvent = event;
+      adjustedEvent.value = value;
+      onSubmit(adjustedEvent);
     } else {
       this.setState({ errors: nextErrors });
     }

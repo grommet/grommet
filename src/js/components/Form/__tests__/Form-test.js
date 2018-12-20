@@ -64,8 +64,7 @@ describe('Form', () => {
     expect(validate).toBeCalledWith('value');
     fireEvent.click(getByText('Submit'));
     expect(onSubmit).toBeCalledWith(
-      expect.anything(),
-      expect.objectContaining({ test: 'value' }),
+      expect.objectContaining({ value: { test: 'value' } }),
     );
   });
 });

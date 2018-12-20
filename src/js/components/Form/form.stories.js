@@ -36,7 +36,7 @@ const Example = () => (
   <Grommet full theme={grommet}>
     <Box fill align="center" justify="center">
       <Box width="medium">
-        <Form onSubmit={event => console.log('Submit', event.value)}>
+        <Form onSubmit={({ value }) => console.log('Submit', value)}>
           <FormField
             label="Name"
             name="name"
