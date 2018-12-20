@@ -1,7 +1,22 @@
 import { getComponentStories, takeScreenshots } from '../utils';
 
-const component = 'Meter';
-const stories = ['Circle', 'Labelled', 'Bar'];
+const component = 'Button';
+const stories = [
+  'Primary',
+  'Icon',
+  'Icon Label',
+  'Disabled',
+  'Plain',
+  'Anchor',
+  'RoutedButton',
+  'Active',
+  'Custom theme',
+  'Multiple Same Line',
+  'Colored',
+  'Theme Colored',
+  'Custom tag Button',
+  'Default',
+];
 
 describe(`${component} storybook`, () => {
   beforeEach(() => {

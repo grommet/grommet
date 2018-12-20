@@ -27,7 +27,9 @@
     "afterEach": true,
     "beforeEach": true,
     "MouseEvent": true,
-    "requestAnimationFrame": true
+    "requestAnimationFrame": true,
+    "cy": true,
+    "context": true
   },
   "rules": {
     "indent": "off",

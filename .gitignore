@@ -13,3 +13,5 @@ yarn-error.log
 grommet-*-licenses.json
 grommet-*-src-with-dependecies.tgz
 .cache/
+cypress/screenshots/diff/
+cypress/screenshots/new/
