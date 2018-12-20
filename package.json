@@ -37,7 +37,9 @@
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",
     "build-storybook": "build-storybook -c storybook -o storybook-static",
     "prettier": "pretty-quick --staged",
-    "e2e": "cypress run",
+    "e2e": "concurrently 'npm run storybook' 'npm run cypress:test' -k -s first",
+    "cypress:test": "wait-on http-get://localhost:9001/?selectedKind=Components && cypress run",
+    "cypress:run": "cypress run",
     "visual-regression": "rimraf cypress/screenshots/diff/* && node ./cypress/differ.js"
   },
   "peerDependencies": {
@@ -46,6 +48,7 @@
     "styled-components": ">= 4.X"
   },
   "dependencies": {
+    "concurrently": "^4.1.0",
     "css": "^2.2.3",
     "hoist-non-react-statics": "^3.2.0",
     "grommet-icons": "^4.0.0",
@@ -55,7 +58,8 @@
     "polished": "^2.2.0",
     "prop-types": "^15.5.10",
     "react-desc": "^4.1.2",
-    "recompose": "^0.30.0"
+    "recompose": "^0.30.0",
+    "wait-on": "^3.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
