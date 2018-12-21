@@ -459,3 +459,13 @@ Defaults to
 ```
 undefined
 ```
+
+**calendar.day.extend**
+
+Any additional style for the day of Calendar. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
