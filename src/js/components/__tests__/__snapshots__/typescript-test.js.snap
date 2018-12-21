@@ -315,6 +315,20 @@ declare const DropButton: React.ComponentType<DropButtonProps>;
 
 export { DropButton };
 ",
+  "Form": "import * as React from \\"react\\";
+
+export interface FormProps {
+  errors?: {};
+  messages?: {invalid?: string,required?: string};
+  onChange?: ((...args: any[]) => any);
+  onSubmit?: ((...args: any[]) => any);
+  value?: {};
+}
+
+declare const Form: React.ComponentType<FormProps>;
+
+export { Form };
+",
   "FormField": "import * as React from \\"react\\";
 
 export interface FormFieldProps {
@@ -322,6 +336,10 @@ export interface FormFieldProps {
   help?: string | React.ReactNode;
   htmlFor?: string;
   label?: string | React.ReactNode;
+  name?: string;
+  pad?: boolean;
+  required?: boolean;
+  validate?: {regexp?: object,message?: string} | ((...args: any[]) => any);
 }
 
 declare const FormField: React.ComponentType<FormFieldProps>;

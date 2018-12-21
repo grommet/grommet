@@ -80,6 +80,18 @@ class Button extends Component {
     const first = reverse ? label : buttonIcon;
     const second = reverse ? buttonIcon : label;
 
+    let contents;
+    if (first && second) {
+      contents = (
+        <Box direction="row" align="center" justify="center" gap="small">
+          {first}
+          {second}
+        </Box>
+      );
+    } else {
+      contents = first || second || children;
+    }
+
     return (
       <StyledButton
         {...rest}
@@ -102,14 +114,7 @@ class Button extends Component {
         primary={primary}
         type={!href ? type : undefined}
       >
-        {first || second ? (
-          <Box direction="row" align="center" justify="center" gap="small">
-            {first}
-            {second}
-          </Box>
-        ) : (
-          children
-        )}
+        {contents}
       </StyledButton>
     );
   }

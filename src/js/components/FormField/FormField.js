@@ -6,132 +6,214 @@ import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
+import { CheckBox } from '../CheckBox';
 import { Text } from '../Text';
+import { TextInput } from '../TextInput';
 import { withFocus } from '../hocs';
+import { FormContext } from '../Form/FormContext';
+
+const validateField = (required, validate, messages) => data => {
+  let error;
+  if (required && (data === undefined || data === '')) {
+    error = messages.required;
+  } else if (validate) {
+    if (typeof validate === 'function') {
+      error = validate(data);
+    } else if (validate.regexp) {
+      if (!validate.regexp.test(data)) {
+        error = validate.message || messages.invalid;
+      }
+    }
+  }
+  return error;
+};
 
 class FormField extends Component {
+  renderChildren = (value, update) => {
+    const { name, component, required, ...rest } = this.props;
+    const Input = component || TextInput;
+    if (Input === CheckBox) {
+      return (
+        <Input
+          name={name}
+          checked={value[name] || false}
+          onChange={event => update(name, event.target.checked)}
+          {...rest}
+        />
+      );
+    }
+    return (
+      <Input
+        name={name}
+        value={value[name] || ''}
+        onChange={event => update(name, event.value || event.target.value)}
+        plain
+        focusIndicator={false}
+        {...rest}
+      />
+    );
+  };
+
   render() {
     const {
       children,
+      component,
       error,
       focus,
       help,
       htmlFor,
       label,
+      name,
+      pad,
+      required,
       style,
       theme,
-      ...rest
+      validate,
     } = this.props;
     const { formField } = theme;
     const { border } = formField;
 
-    let contents = children;
-
-    let borderColor;
-    if (focus) {
-      borderColor = 'focus';
-    } else if (error) {
-      borderColor = (border && border.error.color) || 'status-critical';
-    } else {
-      borderColor = (border && border.color) || 'border';
-    }
-    let abut;
-    let outerStyle = style;
-
-    if (border) {
-      const normalizedChildren = Children.map(children, child => {
-        if (child) {
-          return cloneElement(child, { plain: true, focusIndicator: false });
-        }
-        return child;
-      });
-
-      contents = (
-        <Box
-          ref={ref => {
-            this.childContainerRef = ref;
-          }}
-          border={
-            border.position === 'inner'
-              ? { ...border, side: border.side || 'bottom', color: borderColor }
-              : undefined
-          }
-        >
-          {normalizedChildren}
-        </Box>
-      );
-
-      abut =
-        border.position === 'outer' &&
-        (border.side === 'all' || border.side === 'horizontal' || !border.side);
-      if (abut) {
-        // marginBottom is set to overlap adjacent fields
-        let marginBottom = '-1px';
-        if (border.size) {
-          marginBottom = `-${parseMetricToNum(
-            theme.global.borderSize[border.size],
-          )}px`;
-        }
-        outerStyle = {
-          position: focus ? 'relative' : undefined,
-          marginBottom,
-          zIndex: focus ? 10 : undefined,
-          ...style,
-        };
-      }
-    }
-
     return (
-      <Box
-        border={
-          border && border.position === 'outer'
-            ? { ...border, color: borderColor }
-            : undefined
-        }
-        margin={abut ? undefined : { bottom: 'small' }}
-        style={outerStyle}
-        {...rest}
-      >
-        {label || help ? (
-          <Box
-            margin={{ vertical: 'xsmall', horizontal: 'small' }}
-            gap="xsmall"
-          >
-            {label ? (
-              <Text as="label" htmlFor={htmlFor} {...formField.label}>
-                {label}
-              </Text>
-            ) : (
-              undefined
-            )}
-            {help ? (
-              <Text
-                {...formField.help}
-                color={formField.help.color[theme.dark ? 'dark' : 'light']}
+      <FormContext.Consumer>
+        {context => {
+          let normalizedError = error;
+          let contents = children;
+
+          if (context) {
+            const { addValidation, errors, value, update, messages } = context;
+            addValidation(name, validateField(required, validate, messages));
+            normalizedError = error || errors[name];
+            contents = children || this.renderChildren(value, update);
+          }
+
+          if (pad) {
+            contents = (
+              <Box pad={{ horizontal: 'small', bottom: 'small' }}>
+                {contents}
+              </Box>
+            );
+          }
+
+          let borderColor;
+          if (focus) {
+            borderColor = 'focus';
+          } else if (normalizedError) {
+            borderColor = (border && border.error.color) || 'status-critical';
+          } else {
+            borderColor = (border && border.color) || 'border';
+          }
+          let abut;
+          let outerStyle = style;
+
+          if (border) {
+            const normalizedChildren = children
+              ? Children.map(children, child => {
+                  if (child) {
+                    return cloneElement(child, {
+                      plain: true,
+                      focusIndicator: false,
+                    });
+                  }
+                  return child;
+                })
+              : contents;
+
+            contents = (
+              <Box
+                ref={ref => {
+                  this.childContainerRef = ref;
+                }}
+                border={
+                  border.position === 'inner'
+                    ? {
+                        ...border,
+                        side: border.side || 'bottom',
+                        color: borderColor,
+                      }
+                    : undefined
+                }
               >
-                {help}
-              </Text>
-            ) : (
-              undefined
-            )}
-          </Box>
-        ) : (
-          undefined
-        )}
-        {contents}
-        {error ? (
-          <Box margin={{ vertical: 'xsmall', horizontal: 'small' }}>
-            <Text
-              {...formField.error}
-              color={formField.error.color[theme.dark ? 'dark' : 'light']}
+                {normalizedChildren}
+              </Box>
+            );
+
+            abut =
+              border.position === 'outer' &&
+              (border.side === 'all' ||
+                border.side === 'horizontal' ||
+                !border.side);
+            if (abut) {
+              // marginBottom is set to overlap adjacent fields
+              let marginBottom = '-1px';
+              if (border.size) {
+                marginBottom = `-${parseMetricToNum(
+                  theme.global.borderSize[border.size],
+                )}px`;
+              }
+              outerStyle = {
+                position: focus ? 'relative' : undefined,
+                marginBottom,
+                zIndex: focus ? 10 : undefined,
+                ...style,
+              };
+            }
+          }
+
+          return (
+            <Box
+              border={
+                border && border.position === 'outer'
+                  ? { ...border, color: borderColor }
+                  : undefined
+              }
+              margin={abut ? undefined : { bottom: 'small' }}
+              style={outerStyle}
             >
-              {error}
-            </Text>
-          </Box>
-        ) : (
-          undefined
-        )}
-      </Box>
+              {(label && component !== CheckBox) || help ? (
+                <Box
+                  margin={{ vertical: 'xsmall', horizontal: 'small' }}
+                  gap="xsmall"
+                >
+                  {label && component !== CheckBox ? (
+                    <Text as="label" htmlFor={htmlFor} {...formField.label}>
+                      {label}
+                    </Text>
+                  ) : (
+                    undefined
+                  )}
+                  {help ? (
+                    <Text
+                      {...formField.help}
+                      color={
+                        formField.help.color[theme.dark ? 'dark' : 'light']
+                      }
+                    >
+                      {help}
+                    </Text>
+                  ) : (
+                    undefined
+                  )}
+                </Box>
+              ) : (
+                undefined
+              )}
+              {contents}
+              {normalizedError ? (
+                <Box margin={{ vertical: 'xsmall', horizontal: 'small' }}>
+                  <Text
+                    {...formField.error}
+                    color={formField.error.color[theme.dark ? 'dark' : 'light']}
+                  >
+                    {normalizedError}
+                  </Text>
+                </Box>
+              ) : (
+                undefined
+              )}
+            </Box>
+          );
+        }}
+      </FormContext.Consumer>
     );
   }
 }

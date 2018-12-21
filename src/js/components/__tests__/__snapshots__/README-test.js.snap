@@ -3572,6 +3572,72 @@ Whether the drop should be open or not. Setting this property does not
 boolean
 \`\`\`
   ",
+  "Form": "## Form
+A field in a form.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Form&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=form&module=%2Fsrc%2FForm.js)
+## Usage
+
+\`\`\`javascript
+import { Form } from 'grommet';
+<Form />
+\`\`\`
+
+## Properties
+
+**errors**
+
+An object representing any errors in the data. They keys should
+        match the keys in the value object. Defaults to \`{}\`.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**messages**
+
+Custom validation messages. Defaults to \`{
+  \\"invalid\\": \\"invalid\\",
+  \\"required\\": \\"required\\"
+}\`.
+
+\`\`\`
+{
+  invalid: string,
+  required: string
+}
+\`\`\`
+
+**onChange**
+
+Function that will be called when any fields are updated.
+
+\`\`\`
+function
+\`\`\`
+
+**onSubmit**
+
+Function that will be called when the form is submitted. The
+      single argument is an event containing the latest value object
+      via \`event.value\`.
+
+\`\`\`
+function
+\`\`\`
+
+**value**
+
+An object representing all of the data in the form. Defaults to \`{}\`.
+
+\`\`\`
+{
+
+}
+\`\`\`
+  ",
   "FormField": "## FormField
 A single field in a form. FormField wraps an input component with
       a label, help, and/or error messaging. It typically contains an input
@@ -3620,6 +3686,47 @@ A short label describing the field
 \`\`\`
 string
 node
+\`\`\`
+
+**name**
+
+The name of the value data when in a Form and the name of
+      the input field.
+
+\`\`\`
+string
+\`\`\`
+
+**pad**
+
+Whether to add padding to align with the padding of TextInput.
+
+\`\`\`
+boolean
+\`\`\`
+
+**required**
+
+Whether the field is required.
+
+\`\`\`
+boolean
+\`\`\`
+
+**validate**
+
+Validation rule. Provide a regular expression or a function. If a
+      function is provided, it will be called with two arguments, the value
+      for this field and the entire value object. This permits validation to
+      encompass multiple fields. The function should return a string message
+      describing the validation issue, if any.
+
+\`\`\`
+{
+  regexp: object,
+  message: string
+}
+function
 \`\`\`
   ",
   "Grid": "## Grid

@@ -35,7 +35,7 @@ exports[`Carousel basic 1`] = `
   stroke: none;
 }
 
-.c16 {
+.c15 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -46,25 +46,25 @@ exports[`Carousel basic 1`] = `
   stroke: #7D4CDB;
 }
 
-.c16 g {
+.c15 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c16 *:not([stroke])[fill="none"] {
+.c15 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c16 *[stroke*="#"],
-.c16 *[STROKE*="#"] {
+.c15 *[stroke*="#"],
+.c15 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c16 *[fill-rule],
-.c16 *[FILL-RULE],
-.c16 *[fill*="#"],
-.c16 *[FILL*="#"] {
+.c15 *[fill-rule],
+.c15 *[FILL-RULE],
+.c15 *[fill*="#"],
+.c15 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -238,31 +238,6 @@ exports[`Carousel basic 1`] = `
   padding: 0px;
 }
 
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -308,7 +283,7 @@ exports[`Carousel basic 1`] = `
   padding: 12px;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -332,7 +307,7 @@ exports[`Carousel basic 1`] = `
   flex: 1 0 auto;
 }
 
-.c17:hover {
+.c16:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -447,18 +422,6 @@ exports[`Carousel basic 1`] = `
 
 @media only screen and (max-width:768px) {
   .c13 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
     padding: 0px;
   }
 }
@@ -553,22 +516,18 @@ exports[`Carousel basic 1`] = `
               onFocus={[Function]}
               type="button"
             >
-              <div
+              <svg
+                aria-label="Subtract"
                 className="c15"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-label="Subtract"
-                  className="c16"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M2,12 L22,12"
-                    fill="none"
-                    stroke="#000"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </div>
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
             </button>
             <button
               className="c14"
@@ -577,22 +536,18 @@ exports[`Carousel basic 1`] = `
               onFocus={[Function]}
               type="button"
             >
-              <div
-                className="c15"
+              <svg
+                aria-label="Subtract"
+                className="c11"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-label="Subtract"
-                  className="c11"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M2,12 L22,12"
-                    fill="none"
-                    stroke="#000"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </div>
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
             </button>
           </div>
         </div>
@@ -600,7 +555,7 @@ exports[`Carousel basic 1`] = `
           className="c8"
         >
           <button
-            className="c17"
+            className="c16"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -666,7 +621,7 @@ exports[`Carousel navigate 1`] = `
   stroke: none;
 }
 
-.c16 {
+.c15 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -677,25 +632,25 @@ exports[`Carousel navigate 1`] = `
   stroke: #7D4CDB;
 }
 
-.c16 g {
+.c15 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c16 *:not([stroke])[fill="none"] {
+.c15 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c16 *[stroke*="#"],
-.c16 *[STROKE*="#"] {
+.c15 *[stroke*="#"],
+.c15 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c16 *[fill-rule],
-.c16 *[FILL-RULE],
-.c16 *[fill*="#"],
-.c16 *[FILL*="#"] {
+.c15 *[fill-rule],
+.c15 *[FILL-RULE],
+.c15 *[fill*="#"],
+.c15 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -869,31 +824,6 @@ exports[`Carousel navigate 1`] = `
   padding: 0px;
 }
 
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -939,7 +869,7 @@ exports[`Carousel navigate 1`] = `
   padding: 12px;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -963,7 +893,7 @@ exports[`Carousel navigate 1`] = `
   flex: 1 0 auto;
 }
 
-.c17:hover {
+.c16:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -1082,18 +1012,6 @@ exports[`Carousel navigate 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c15 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    padding: 0px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -1177,43 +1095,35 @@ exports[`Carousel navigate 1`] = `
               class="c14"
               type="button"
             >
-              <div
+              <svg
+                aria-label="Subtract"
                 class="c15"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-label="Subtract"
-                  class="c16"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M2,12 L22,12"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
             </button>
             <button
               class="c14"
               type="button"
             >
-              <div
-                class="c15"
+              <svg
+                aria-label="Subtract"
+                class="c11"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-label="Subtract"
-                  class="c11"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M2,12 L22,12"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
             </button>
           </div>
         </div>
@@ -1221,7 +1131,7 @@ exports[`Carousel navigate 1`] = `
           class="c8"
         >
           <button
-            class="c17"
+            class="c16"
             type="button"
           >
             <div
@@ -1331,43 +1241,35 @@ exports[`Carousel navigate 2`] = `
               class="StyledButton-sc-323bzc-0 dcpWVY"
               type="button"
             >
-              <div
-                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-ofa7kd-0 iOkQrb"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-label="Subtract"
-                  class="StyledIcon-ofa7kd-0 iOkQrb"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M2,12 L22,12"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
             </button>
             <button
               class="StyledButton-sc-323bzc-0 dcpWVY"
               type="button"
             >
-              <div
-                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-ofa7kd-0 dSllCE"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-label="Subtract"
-                  class="StyledIcon-ofa7kd-0 dSllCE"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M2,12 L22,12"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
             </button>
           </div>
         </div>
@@ -1487,43 +1389,35 @@ exports[`Carousel navigate 3`] = `
               class="StyledButton-sc-323bzc-0 dcpWVY"
               type="button"
             >
-              <div
-                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-ofa7kd-0 dSllCE"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-label="Subtract"
-                  class="StyledIcon-ofa7kd-0 dSllCE"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M2,12 L22,12"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
             </button>
             <button
               class="StyledButton-sc-323bzc-0 dcpWVY"
               type="button"
             >
-              <div
-                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-ofa7kd-0 iOkQrb"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-label="Subtract"
-                  class="StyledIcon-ofa7kd-0 iOkQrb"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M2,12 L22,12"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
             </button>
           </div>
         </div>
@@ -1593,7 +1487,7 @@ exports[`Carousel play 1`] = `
   stroke: none;
 }
 
-.c16 {
+.c15 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1604,25 +1498,25 @@ exports[`Carousel play 1`] = `
   stroke: #7D4CDB;
 }
 
-.c16 g {
+.c15 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c16 *:not([stroke])[fill="none"] {
+.c15 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c16 *[stroke*="#"],
-.c16 *[STROKE*="#"] {
+.c15 *[stroke*="#"],
+.c15 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c16 *[fill-rule],
-.c16 *[FILL-RULE],
-.c16 *[fill*="#"],
-.c16 *[FILL*="#"] {
+.c15 *[fill-rule],
+.c15 *[FILL-RULE],
+.c15 *[fill*="#"],
+.c15 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1796,31 +1690,6 @@ exports[`Carousel play 1`] = `
   padding: 0px;
 }
 
-.c15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
 .c9 {
   display: inline-block;
   box-sizing: border-box;
@@ -1866,7 +1735,7 @@ exports[`Carousel play 1`] = `
   padding: 12px;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1890,7 +1759,7 @@ exports[`Carousel play 1`] = `
   flex: 1 0 auto;
 }
 
-.c17:hover {
+.c16:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -2009,18 +1878,6 @@ exports[`Carousel play 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c15 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    padding: 0px;
-  }
-}
-
 <div
   class="c0"
 >
@@ -2103,43 +1960,35 @@ exports[`Carousel play 1`] = `
               class="c14"
               type="button"
             >
-              <div
+              <svg
+                aria-label="Subtract"
                 class="c15"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-label="Subtract"
-                  class="c16"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M2,12 L22,12"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
             </button>
             <button
               class="c14"
               type="button"
             >
-              <div
-                class="c15"
+              <svg
+                aria-label="Subtract"
+                class="c11"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-label="Subtract"
-                  class="c11"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M2,12 L22,12"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
             </button>
           </div>
         </div>
@@ -2147,7 +1996,7 @@ exports[`Carousel play 1`] = `
           class="c8"
         >
           <button
-            class="c17"
+            class="c16"
             type="button"
           >
             <div
@@ -2256,43 +2105,35 @@ exports[`Carousel play 2`] = `
               class="StyledButton-sc-323bzc-0 dcpWVY"
               type="button"
             >
-              <div
-                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-ofa7kd-0 iOkQrb"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-label="Subtract"
-                  class="StyledIcon-ofa7kd-0 iOkQrb"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M2,12 L22,12"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
             </button>
             <button
               class="StyledButton-sc-323bzc-0 dcpWVY"
               type="button"
             >
-              <div
-                class="StyledBox-sc-13pk1d4-0 hHwlHq"
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-ofa7kd-0 dSllCE"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  aria-label="Subtract"
-                  class="StyledIcon-ofa7kd-0 dSllCE"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M2,12 L22,12"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
             </button>
           </div>
         </div>

@@ -1,31 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button color renders 1`] = `
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -52,7 +27,7 @@ exports[`Button color renders 1`] = `
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c3 {
+.c2 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -77,11 +52,11 @@ exports[`Button color renders 1`] = `
   transition: 0.1s ease-in-out;
 }
 
-.c3:hover {
+.c2:hover {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c4 {
+.c3 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -106,11 +81,11 @@ exports[`Button color renders 1`] = `
   transition: 0.1s ease-in-out;
 }
 
-.c4:hover {
+.c3:hover {
   box-shadow: 0px 0px 0px 2px #111111;
 }
 
-.c5 {
+.c4 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -135,7 +110,7 @@ exports[`Button color renders 1`] = `
   transition: 0.1s ease-in-out;
 }
 
-.c5:hover {
+.c4:hover {
   box-shadow: 0px 0px 0px 2px #123;
 }
 
@@ -149,18 +124,6 @@ exports[`Button color renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
@@ -171,11 +134,16 @@ exports[`Button color renders 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <div
-      className="c2"
-    >
-      Test
-    </div>
+    Test
+  </button>
+  <button
+    className="c2"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="button"
+  >
+    Test
   </button>
   <button
     className="c3"
@@ -184,11 +152,7 @@ exports[`Button color renders 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <div
-      className="c2"
-    >
-      Test
-    </div>
+    Test
   </button>
   <button
     className="c4"
@@ -197,24 +161,7 @@ exports[`Button color renders 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <div
-      className="c2"
-    >
-      Test
-    </div>
-  </button>
-  <button
-    className="c5"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    type="button"
-  >
-    <div
-      className="c2"
-    >
-      Test
-    </div>
+    Test
   </button>
 </div>
 `;
@@ -268,31 +215,6 @@ exports[`Button disabled renders 1`] = `
 `;
 
 exports[`Button focus renders 1`] = `
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -341,18 +263,6 @@ exports[`Button focus renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
@@ -363,11 +273,7 @@ exports[`Button focus renders 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <div
-      className="c2"
-    >
-      Test
-    </div>
+    Test
   </button>
 </div>
 `;
@@ -914,31 +820,6 @@ exports[`Button icon label renders 1`] = `
 `;
 
 exports[`Button primary renders 1`] = `
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -978,18 +859,6 @@ exports[`Button primary renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
@@ -1000,41 +869,12 @@ exports[`Button primary renders 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <div
-      className="c2"
-    >
-      Test
-    </div>
+    Test
   </button>
 </div>
 `;
 
 exports[`Button renders 1`] = `
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1071,18 +911,6 @@ exports[`Button renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
@@ -1093,11 +921,7 @@ exports[`Button renders 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <div
-      className="c2"
-    >
-      Test
-    </div>
+    Test
   </button>
 </div>
 `;
@@ -1207,31 +1031,6 @@ exports[`Button reverse icon label renders 1`] = `
 `;
 
 exports[`Button warns about invalid icon render 1`] = `
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1261,18 +1060,6 @@ exports[`Button warns about invalid icon render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
@@ -1283,41 +1070,12 @@ exports[`Button warns about invalid icon render 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <div
-      className="c2"
-    >
-      <svg />
-    </div>
+    <svg />
   </button>
 </div>
 `;
 
 exports[`Button warns about invalid label render 1`] = `
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1346,18 +1104,6 @@ exports[`Button warns about invalid label render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
@@ -1368,11 +1114,7 @@ exports[`Button warns about invalid label render 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <div
-      className="c2"
-    >
-      Test
-    </div>
+    Test
   </button>
 </div>
 `;

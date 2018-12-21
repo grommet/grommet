@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Video autoPlay renders 1`] = `
-.c7 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -12,25 +12,25 @@ exports[`Video autoPlay renders 1`] = `
   stroke: #F8F8F8;
 }
 
-.c7 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -62,32 +62,7 @@ exports[`Video autoPlay renders 1`] = `
   padding: 0px;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -111,7 +86,7 @@ exports[`Video autoPlay renders 1`] = `
   padding: 0px;
 }
 
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -131,7 +106,7 @@ exports[`Video autoPlay renders 1`] = `
   padding: 0px;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -149,7 +124,7 @@ exports[`Video autoPlay renders 1`] = `
   padding-right: 12px;
 }
 
-.c18 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -199,7 +174,7 @@ exports[`Video autoPlay renders 1`] = `
   color: #FFFFFF;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -217,16 +192,16 @@ exports[`Video autoPlay renders 1`] = `
   text-align: inherit;
 }
 
-.c10 {
+.c9 {
   position: relative;
 }
 
-.c11 {
+.c10 {
   position: relative;
   display: block;
 }
 
-.c13 {
+.c12 {
   position: absolute;
   top: 0;
   left: 0;
@@ -234,7 +209,7 @@ exports[`Video autoPlay renders 1`] = `
   right: 0;
 }
 
-.c16 {
+.c15 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -244,7 +219,7 @@ exports[`Video autoPlay renders 1`] = `
   margin-right: 0px;
 }
 
-.c19 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -259,12 +234,12 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c12 {
+.c11 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c12 path {
+.c11 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -306,7 +281,7 @@ exports[`Video autoPlay renders 1`] = `
   opacity: 1;
 }
 
-.c14 {
+.c13 {
   cursor: pointer;
 }
 
@@ -323,13 +298,13 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     padding: 0px;
   }
 }
@@ -347,38 +322,26 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c17 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c17 {
     padding: 6px;
   }
 }
@@ -436,38 +399,34 @@ exports[`Video autoPlay renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <div
+          <svg
+            aria-label="Play"
             className="c6"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Play"
-              className="c7"
-              viewBox="0 0 24 24"
-            >
-              <polygon
-                fill="none"
-                points="3 22 21 12 3 2"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
-          </div>
+            <polygon
+              fill="none"
+              points="3 22 21 12 3 2"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
         </button>
         <div
-          className="c8"
+          className="c7"
         >
           <div
-            className="c9"
+            className="c8"
           >
             <div
-              className="c10"
+              className="c9"
             >
               <div
-                className="c11"
+                className="c10"
               >
                 <svg
                   aria-label="Video progress"
-                  className="c12"
+                  className="c11"
                   height={12}
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -483,10 +442,10 @@ exports[`Video autoPlay renders 1`] = `
                 </svg>
               </div>
               <div
-                className="c13"
+                className="c12"
               >
                 <div
-                  className="c14"
+                  className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
                   onMouseMove={[Function]}
@@ -497,10 +456,10 @@ exports[`Video autoPlay renders 1`] = `
             </div>
           </div>
           <div
-            className="c15"
+            className="c14"
           >
             <span
-              className="c16"
+              className="c15"
             >
               NaN:NaN
             </span>
@@ -508,7 +467,7 @@ exports[`Video autoPlay renders 1`] = `
         </div>
         <button
           aria-label="Open Menu"
-          className="c17"
+          className="c16"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -516,14 +475,14 @@ exports[`Video autoPlay renders 1`] = `
           type="button"
         >
           <div
-            className="c18"
+            className="c17"
           >
             <span
-              className="c19"
+              className="c18"
             />
             <svg
               aria-label="Actions"
-              className="c7"
+              className="c6"
               viewBox="0 0 24 24"
             >
               <path
@@ -542,7 +501,7 @@ exports[`Video autoPlay renders 1`] = `
 `;
 
 exports[`Video controls renders 1`] = `
-.c7 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -553,30 +512,30 @@ exports[`Video controls renders 1`] = `
   stroke: #F8F8F8;
 }
 
-.c7 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c23 {
+.c22 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -587,25 +546,25 @@ exports[`Video controls renders 1`] = `
   stroke: #666666;
 }
 
-.c23 g {
+.c22 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c23 *:not([stroke])[fill="none"] {
+.c22 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c23 *[stroke*="#"],
-.c23 *[STROKE*="#"] {
+.c22 *[stroke*="#"],
+.c22 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*="#"],
-.c23 *[FILL*="#"] {
+.c22 *[fill-rule],
+.c22 *[FILL-RULE],
+.c22 *[fill*="#"],
+.c22 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -637,32 +596,7 @@ exports[`Video controls renders 1`] = `
   padding: 0px;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -686,7 +620,7 @@ exports[`Video controls renders 1`] = `
   padding: 0px;
 }
 
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -706,7 +640,7 @@ exports[`Video controls renders 1`] = `
   padding: 0px;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -724,7 +658,7 @@ exports[`Video controls renders 1`] = `
   padding-right: 12px;
 }
 
-.c18 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -749,7 +683,7 @@ exports[`Video controls renders 1`] = `
   padding: 12px;
 }
 
-.c21 {
+.c20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -799,7 +733,7 @@ exports[`Video controls renders 1`] = `
   color: #FFFFFF;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -817,7 +751,7 @@ exports[`Video controls renders 1`] = `
   text-align: inherit;
 }
 
-.c22 {
+.c21 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -836,22 +770,22 @@ exports[`Video controls renders 1`] = `
   padding: 12px;
 }
 
-.c22:hover {
+.c21:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
 }
 
-.c10 {
+.c9 {
   position: relative;
 }
 
-.c11 {
+.c10 {
   position: relative;
   display: block;
 }
 
-.c13 {
+.c12 {
   position: absolute;
   top: 0;
   left: 0;
@@ -859,7 +793,7 @@ exports[`Video controls renders 1`] = `
   right: 0;
 }
 
-.c16 {
+.c15 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -869,7 +803,7 @@ exports[`Video controls renders 1`] = `
   margin-right: 0px;
 }
 
-.c19 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -884,12 +818,12 @@ exports[`Video controls renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c12 {
+.c11 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c12 path {
+.c11 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -931,7 +865,7 @@ exports[`Video controls renders 1`] = `
   opacity: 1;
 }
 
-.c20 {
+.c19 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
   flex: 0 0;
@@ -941,7 +875,7 @@ exports[`Video controls renders 1`] = `
   opacity: 1;
 }
 
-.c14 {
+.c13 {
   cursor: pointer;
 }
 
@@ -958,13 +892,13 @@ exports[`Video controls renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     padding: 0px;
   }
 }
@@ -982,50 +916,38 @@ exports[`Video controls renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c17 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c17 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c21 {
+  .c20 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c21 {
+  .c20 {
     padding: 0px;
   }
 }
@@ -1083,38 +1005,34 @@ exports[`Video controls renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <div
+          <svg
+            aria-label="Play"
             className="c6"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Play"
-              className="c7"
-              viewBox="0 0 24 24"
-            >
-              <polygon
-                fill="none"
-                points="3 22 21 12 3 2"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
-          </div>
+            <polygon
+              fill="none"
+              points="3 22 21 12 3 2"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
         </button>
         <div
-          className="c8"
+          className="c7"
         >
           <div
-            className="c9"
+            className="c8"
           >
             <div
-              className="c10"
+              className="c9"
             >
               <div
-                className="c11"
+                className="c10"
               >
                 <svg
                   aria-label="Video progress"
-                  className="c12"
+                  className="c11"
                   height={12}
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -1130,10 +1048,10 @@ exports[`Video controls renders 1`] = `
                 </svg>
               </div>
               <div
-                className="c13"
+                className="c12"
               >
                 <div
-                  className="c14"
+                  className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
                   onMouseMove={[Function]}
@@ -1144,10 +1062,10 @@ exports[`Video controls renders 1`] = `
             </div>
           </div>
           <div
-            className="c15"
+            className="c14"
           >
             <span
-              className="c16"
+              className="c15"
             >
               NaN:NaN
             </span>
@@ -1155,7 +1073,7 @@ exports[`Video controls renders 1`] = `
         </div>
         <button
           aria-label="Open Menu"
-          className="c17"
+          className="c16"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1163,14 +1081,14 @@ exports[`Video controls renders 1`] = `
           type="button"
         >
           <div
-            className="c18"
+            className="c17"
           >
             <span
-              className="c19"
+              className="c18"
             />
             <svg
               aria-label="Actions"
-              className="c7"
+              className="c6"
               viewBox="0 0 24 24"
             >
               <path
@@ -1220,50 +1138,46 @@ exports[`Video controls renders 1`] = `
       <track />
     </video>
     <div
-      className="c20"
+      className="c19"
     >
       <div
-        className="c21"
+        className="c20"
       >
         <button
-          className="c22"
+          className="c21"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           type="button"
         >
-          <div
-            className="c6"
+          <svg
+            aria-label="Play"
+            className="c22"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Play"
-              className="c23"
-              viewBox="0 0 24 24"
-            >
-              <polygon
-                fill="none"
-                points="3 22 21 12 3 2"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
-          </div>
+            <polygon
+              fill="none"
+              points="3 22 21 12 3 2"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
         </button>
         <div
-          className="c8"
+          className="c7"
         >
           <div
-            className="c9"
+            className="c8"
           >
             <div
-              className="c10"
+              className="c9"
             >
               <div
-                className="c11"
+                className="c10"
               >
                 <svg
                   aria-label="Video progress"
-                  className="c12"
+                  className="c11"
                   height={12}
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -1278,10 +1192,10 @@ exports[`Video controls renders 1`] = `
                 </svg>
               </div>
               <div
-                className="c13"
+                className="c12"
               >
                 <div
-                  className="c14"
+                  className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
                   onMouseMove={[Function]}
@@ -1292,10 +1206,10 @@ exports[`Video controls renders 1`] = `
             </div>
           </div>
           <div
-            className="c15"
+            className="c14"
           >
             <span
-              className="c16"
+              className="c15"
             >
               NaN:NaN
             </span>
@@ -1303,7 +1217,7 @@ exports[`Video controls renders 1`] = `
         </div>
         <button
           aria-label="Open Menu"
-          className="c17"
+          className="c16"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1311,14 +1225,14 @@ exports[`Video controls renders 1`] = `
           type="button"
         >
           <div
-            className="c18"
+            className="c17"
           >
             <span
-              className="c19"
+              className="c18"
             />
             <svg
               aria-label="Actions"
-              className="c23"
+              className="c22"
               viewBox="0 0 24 24"
             >
               <path
@@ -1337,7 +1251,7 @@ exports[`Video controls renders 1`] = `
 `;
 
 exports[`Video fit renders 1`] = `
-.c7 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1348,25 +1262,25 @@ exports[`Video fit renders 1`] = `
   stroke: #F8F8F8;
 }
 
-.c7 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1398,32 +1312,7 @@ exports[`Video fit renders 1`] = `
   padding: 0px;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1447,7 +1336,7 @@ exports[`Video fit renders 1`] = `
   padding: 0px;
 }
 
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1467,7 +1356,7 @@ exports[`Video fit renders 1`] = `
   padding: 0px;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1485,7 +1374,7 @@ exports[`Video fit renders 1`] = `
   padding-right: 12px;
 }
 
-.c18 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1535,7 +1424,7 @@ exports[`Video fit renders 1`] = `
   color: #FFFFFF;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1553,16 +1442,16 @@ exports[`Video fit renders 1`] = `
   text-align: inherit;
 }
 
-.c10 {
+.c9 {
   position: relative;
 }
 
-.c11 {
+.c10 {
   position: relative;
   display: block;
 }
 
-.c13 {
+.c12 {
   position: absolute;
   top: 0;
   left: 0;
@@ -1570,7 +1459,7 @@ exports[`Video fit renders 1`] = `
   right: 0;
 }
 
-.c16 {
+.c15 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -1580,7 +1469,7 @@ exports[`Video fit renders 1`] = `
   margin-right: 0px;
 }
 
-.c19 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -1595,12 +1484,12 @@ exports[`Video fit renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c12 {
+.c11 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c12 path {
+.c11 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -1618,7 +1507,7 @@ exports[`Video fit renders 1`] = `
   background: rgba(0,0,0,0.7);
 }
 
-.c20 {
+.c19 {
   max-width: 100%;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
@@ -1627,7 +1516,7 @@ exports[`Video fit renders 1`] = `
   object-fit: contain;
 }
 
-.c20::cue {
+.c19::cue {
   background: rgba(0,0,0,0.7);
 }
 
@@ -1660,7 +1549,7 @@ exports[`Video fit renders 1`] = `
   opacity: 1;
 }
 
-.c14 {
+.c13 {
   cursor: pointer;
 }
 
@@ -1677,13 +1566,13 @@ exports[`Video fit renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     padding: 0px;
   }
 }
@@ -1701,38 +1590,26 @@ exports[`Video fit renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c17 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c17 {
     padding: 6px;
   }
 }
@@ -1790,38 +1667,34 @@ exports[`Video fit renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <div
+          <svg
+            aria-label="Play"
             className="c6"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Play"
-              className="c7"
-              viewBox="0 0 24 24"
-            >
-              <polygon
-                fill="none"
-                points="3 22 21 12 3 2"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
-          </div>
+            <polygon
+              fill="none"
+              points="3 22 21 12 3 2"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
         </button>
         <div
-          className="c8"
+          className="c7"
         >
           <div
-            className="c9"
+            className="c8"
           >
             <div
-              className="c10"
+              className="c9"
             >
               <div
-                className="c11"
+                className="c10"
               >
                 <svg
                   aria-label="Video progress"
-                  className="c12"
+                  className="c11"
                   height={12}
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -1837,10 +1710,10 @@ exports[`Video fit renders 1`] = `
                 </svg>
               </div>
               <div
-                className="c13"
+                className="c12"
               >
                 <div
-                  className="c14"
+                  className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
                   onMouseMove={[Function]}
@@ -1851,10 +1724,10 @@ exports[`Video fit renders 1`] = `
             </div>
           </div>
           <div
-            className="c15"
+            className="c14"
           >
             <span
-              className="c16"
+              className="c15"
             >
               NaN:NaN
             </span>
@@ -1862,7 +1735,7 @@ exports[`Video fit renders 1`] = `
         </div>
         <button
           aria-label="Open Menu"
-          className="c17"
+          className="c16"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1870,14 +1743,14 @@ exports[`Video fit renders 1`] = `
           type="button"
         >
           <div
-            className="c18"
+            className="c17"
           >
             <span
-              className="c19"
+              className="c18"
             />
             <svg
               aria-label="Actions"
-              className="c7"
+              className="c6"
               viewBox="0 0 24 24"
             >
               <path
@@ -1900,7 +1773,7 @@ exports[`Video fit renders 1`] = `
   >
     <video
       autoPlay={false}
-      className="c20"
+      className="c19"
       loop={false}
       onAbort={[Function]}
       onCanPlay={[Function]}
@@ -1942,38 +1815,34 @@ exports[`Video fit renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <div
+          <svg
+            aria-label="Play"
             className="c6"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Play"
-              className="c7"
-              viewBox="0 0 24 24"
-            >
-              <polygon
-                fill="none"
-                points="3 22 21 12 3 2"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
-          </div>
+            <polygon
+              fill="none"
+              points="3 22 21 12 3 2"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
         </button>
         <div
-          className="c8"
+          className="c7"
         >
           <div
-            className="c9"
+            className="c8"
           >
             <div
-              className="c10"
+              className="c9"
             >
               <div
-                className="c11"
+                className="c10"
               >
                 <svg
                   aria-label="Video progress"
-                  className="c12"
+                  className="c11"
                   height={12}
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -1989,10 +1858,10 @@ exports[`Video fit renders 1`] = `
                 </svg>
               </div>
               <div
-                className="c13"
+                className="c12"
               >
                 <div
-                  className="c14"
+                  className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
                   onMouseMove={[Function]}
@@ -2003,10 +1872,10 @@ exports[`Video fit renders 1`] = `
             </div>
           </div>
           <div
-            className="c15"
+            className="c14"
           >
             <span
-              className="c16"
+              className="c15"
             >
               NaN:NaN
             </span>
@@ -2014,7 +1883,7 @@ exports[`Video fit renders 1`] = `
         </div>
         <button
           aria-label="Open Menu"
-          className="c17"
+          className="c16"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -2022,14 +1891,14 @@ exports[`Video fit renders 1`] = `
           type="button"
         >
           <div
-            className="c18"
+            className="c17"
           >
             <span
-              className="c19"
+              className="c18"
             />
             <svg
               aria-label="Actions"
-              className="c7"
+              className="c6"
               viewBox="0 0 24 24"
             >
               <path
@@ -2048,7 +1917,7 @@ exports[`Video fit renders 1`] = `
 `;
 
 exports[`Video loop renders 1`] = `
-.c7 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2059,25 +1928,25 @@ exports[`Video loop renders 1`] = `
   stroke: #F8F8F8;
 }
 
-.c7 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2109,32 +1978,7 @@ exports[`Video loop renders 1`] = `
   padding: 0px;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2158,7 +2002,7 @@ exports[`Video loop renders 1`] = `
   padding: 0px;
 }
 
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2178,7 +2022,7 @@ exports[`Video loop renders 1`] = `
   padding: 0px;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2196,7 +2040,7 @@ exports[`Video loop renders 1`] = `
   padding-right: 12px;
 }
 
-.c18 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2246,7 +2090,7 @@ exports[`Video loop renders 1`] = `
   color: #FFFFFF;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2264,16 +2108,16 @@ exports[`Video loop renders 1`] = `
   text-align: inherit;
 }
 
-.c10 {
+.c9 {
   position: relative;
 }
 
-.c11 {
+.c10 {
   position: relative;
   display: block;
 }
 
-.c13 {
+.c12 {
   position: absolute;
   top: 0;
   left: 0;
@@ -2281,7 +2125,7 @@ exports[`Video loop renders 1`] = `
   right: 0;
 }
 
-.c16 {
+.c15 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -2291,7 +2135,7 @@ exports[`Video loop renders 1`] = `
   margin-right: 0px;
 }
 
-.c19 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -2306,12 +2150,12 @@ exports[`Video loop renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c12 {
+.c11 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c12 path {
+.c11 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -2353,7 +2197,7 @@ exports[`Video loop renders 1`] = `
   opacity: 1;
 }
 
-.c14 {
+.c13 {
   cursor: pointer;
 }
 
@@ -2370,13 +2214,13 @@ exports[`Video loop renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     padding: 0px;
   }
 }
@@ -2394,38 +2238,26 @@ exports[`Video loop renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c17 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c17 {
     padding: 6px;
   }
 }
@@ -2483,38 +2315,34 @@ exports[`Video loop renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <div
+          <svg
+            aria-label="Play"
             className="c6"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Play"
-              className="c7"
-              viewBox="0 0 24 24"
-            >
-              <polygon
-                fill="none"
-                points="3 22 21 12 3 2"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
-          </div>
+            <polygon
+              fill="none"
+              points="3 22 21 12 3 2"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
         </button>
         <div
-          className="c8"
+          className="c7"
         >
           <div
-            className="c9"
+            className="c8"
           >
             <div
-              className="c10"
+              className="c9"
             >
               <div
-                className="c11"
+                className="c10"
               >
                 <svg
                   aria-label="Video progress"
-                  className="c12"
+                  className="c11"
                   height={12}
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -2530,10 +2358,10 @@ exports[`Video loop renders 1`] = `
                 </svg>
               </div>
               <div
-                className="c13"
+                className="c12"
               >
                 <div
-                  className="c14"
+                  className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
                   onMouseMove={[Function]}
@@ -2544,10 +2372,10 @@ exports[`Video loop renders 1`] = `
             </div>
           </div>
           <div
-            className="c15"
+            className="c14"
           >
             <span
-              className="c16"
+              className="c15"
             >
               NaN:NaN
             </span>
@@ -2555,7 +2383,7 @@ exports[`Video loop renders 1`] = `
         </div>
         <button
           aria-label="Open Menu"
-          className="c17"
+          className="c16"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -2563,14 +2391,14 @@ exports[`Video loop renders 1`] = `
           type="button"
         >
           <div
-            className="c18"
+            className="c17"
           >
             <span
-              className="c19"
+              className="c18"
             />
             <svg
               aria-label="Actions"
-              className="c7"
+              className="c6"
               viewBox="0 0 24 24"
             >
               <path
@@ -2589,7 +2417,7 @@ exports[`Video loop renders 1`] = `
 `;
 
 exports[`Video mute renders 1`] = `
-.c7 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -2600,25 +2428,25 @@ exports[`Video mute renders 1`] = `
   stroke: #F8F8F8;
 }
 
-.c7 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -2650,32 +2478,7 @@ exports[`Video mute renders 1`] = `
   padding: 0px;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2699,7 +2502,7 @@ exports[`Video mute renders 1`] = `
   padding: 0px;
 }
 
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2719,7 +2522,7 @@ exports[`Video mute renders 1`] = `
   padding: 0px;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2737,7 +2540,7 @@ exports[`Video mute renders 1`] = `
   padding-right: 12px;
 }
 
-.c18 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2787,7 +2590,7 @@ exports[`Video mute renders 1`] = `
   color: #FFFFFF;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2805,16 +2608,16 @@ exports[`Video mute renders 1`] = `
   text-align: inherit;
 }
 
-.c10 {
+.c9 {
   position: relative;
 }
 
-.c11 {
+.c10 {
   position: relative;
   display: block;
 }
 
-.c13 {
+.c12 {
   position: absolute;
   top: 0;
   left: 0;
@@ -2822,7 +2625,7 @@ exports[`Video mute renders 1`] = `
   right: 0;
 }
 
-.c16 {
+.c15 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -2832,7 +2635,7 @@ exports[`Video mute renders 1`] = `
   margin-right: 0px;
 }
 
-.c19 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -2847,12 +2650,12 @@ exports[`Video mute renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c12 {
+.c11 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c12 path {
+.c11 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -2894,7 +2697,7 @@ exports[`Video mute renders 1`] = `
   opacity: 1;
 }
 
-.c14 {
+.c13 {
   cursor: pointer;
 }
 
@@ -2911,13 +2714,13 @@ exports[`Video mute renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     padding: 0px;
   }
 }
@@ -2935,38 +2738,26 @@ exports[`Video mute renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c17 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c17 {
     padding: 6px;
   }
 }
@@ -3024,38 +2815,34 @@ exports[`Video mute renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <div
+          <svg
+            aria-label="Play"
             className="c6"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Play"
-              className="c7"
-              viewBox="0 0 24 24"
-            >
-              <polygon
-                fill="none"
-                points="3 22 21 12 3 2"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
-          </div>
+            <polygon
+              fill="none"
+              points="3 22 21 12 3 2"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
         </button>
         <div
-          className="c8"
+          className="c7"
         >
           <div
-            className="c9"
+            className="c8"
           >
             <div
-              className="c10"
+              className="c9"
             >
               <div
-                className="c11"
+                className="c10"
               >
                 <svg
                   aria-label="Video progress"
-                  className="c12"
+                  className="c11"
                   height={12}
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -3071,10 +2858,10 @@ exports[`Video mute renders 1`] = `
                 </svg>
               </div>
               <div
-                className="c13"
+                className="c12"
               >
                 <div
-                  className="c14"
+                  className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
                   onMouseMove={[Function]}
@@ -3085,10 +2872,10 @@ exports[`Video mute renders 1`] = `
             </div>
           </div>
           <div
-            className="c15"
+            className="c14"
           >
             <span
-              className="c16"
+              className="c15"
             >
               NaN:NaN
             </span>
@@ -3096,7 +2883,7 @@ exports[`Video mute renders 1`] = `
         </div>
         <button
           aria-label="Open Menu"
-          className="c17"
+          className="c16"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -3104,14 +2891,14 @@ exports[`Video mute renders 1`] = `
           type="button"
         >
           <div
-            className="c18"
+            className="c17"
           >
             <span
-              className="c19"
+              className="c18"
             />
             <svg
               aria-label="Actions"
-              className="c7"
+              className="c6"
               viewBox="0 0 24 24"
             >
               <path
@@ -3130,7 +2917,7 @@ exports[`Video mute renders 1`] = `
 `;
 
 exports[`Video renders 1`] = `
-.c7 {
+.c6 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -3141,25 +2928,25 @@ exports[`Video renders 1`] = `
   stroke: #F8F8F8;
 }
 
-.c7 g {
+.c6 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c6 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -3191,32 +2978,7 @@ exports[`Video renders 1`] = `
   padding: 0px;
 }
 
-.c6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-}
-
-.c8 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3240,7 +3002,7 @@ exports[`Video renders 1`] = `
   padding: 0px;
 }
 
-.c9 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3260,7 +3022,7 @@ exports[`Video renders 1`] = `
   padding: 0px;
 }
 
-.c15 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3278,7 +3040,7 @@ exports[`Video renders 1`] = `
   padding-right: 12px;
 }
 
-.c18 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3328,7 +3090,7 @@ exports[`Video renders 1`] = `
   color: #FFFFFF;
 }
 
-.c17 {
+.c16 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3346,16 +3108,16 @@ exports[`Video renders 1`] = `
   text-align: inherit;
 }
 
-.c10 {
+.c9 {
   position: relative;
 }
 
-.c11 {
+.c10 {
   position: relative;
   display: block;
 }
 
-.c13 {
+.c12 {
   position: absolute;
   top: 0;
   left: 0;
@@ -3363,7 +3125,7 @@ exports[`Video renders 1`] = `
   right: 0;
 }
 
-.c16 {
+.c15 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -3373,7 +3135,7 @@ exports[`Video renders 1`] = `
   margin-right: 0px;
 }
 
-.c19 {
+.c18 {
   font-size: 18px;
   line-height: 24px;
 }
@@ -3388,12 +3150,12 @@ exports[`Video renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c12 {
+.c11 {
   max-width: 100%;
   overflow: hidden;
 }
 
-.c12 path {
+.c11 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -3435,7 +3197,7 @@ exports[`Video renders 1`] = `
   opacity: 1;
 }
 
-.c14 {
+.c13 {
   cursor: pointer;
 }
 
@@ -3452,13 +3214,13 @@ exports[`Video renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
+  .c7 {
     padding: 0px;
   }
 }
@@ -3476,38 +3238,26 @@ exports[`Video renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c14 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c15 {
+  .c14 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c17 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c18 {
+  .c17 {
     padding: 6px;
   }
 }
@@ -3565,38 +3315,34 @@ exports[`Video renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <div
+          <svg
+            aria-label="Play"
             className="c6"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Play"
-              className="c7"
-              viewBox="0 0 24 24"
-            >
-              <polygon
-                fill="none"
-                points="3 22 21 12 3 2"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
-          </div>
+            <polygon
+              fill="none"
+              points="3 22 21 12 3 2"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
         </button>
         <div
-          className="c8"
+          className="c7"
         >
           <div
-            className="c9"
+            className="c8"
           >
             <div
-              className="c10"
+              className="c9"
             >
               <div
-                className="c11"
+                className="c10"
               >
                 <svg
                   aria-label="Video progress"
-                  className="c12"
+                  className="c11"
                   height={12}
                   preserveAspectRatio="none"
                   viewBox="0 0 288 12"
@@ -3612,10 +3358,10 @@ exports[`Video renders 1`] = `
                 </svg>
               </div>
               <div
-                className="c13"
+                className="c12"
               >
                 <div
-                  className="c14"
+                  className="c13"
                   onClick={[Function]}
                   onMouseLeave={[Function]}
                   onMouseMove={[Function]}
@@ -3626,10 +3372,10 @@ exports[`Video renders 1`] = `
             </div>
           </div>
           <div
-            className="c15"
+            className="c14"
           >
             <span
-              className="c16"
+              className="c15"
             >
               NaN:NaN
             </span>
@@ -3637,7 +3383,7 @@ exports[`Video renders 1`] = `
         </div>
         <button
           aria-label="Open Menu"
-          className="c17"
+          className="c16"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -3645,14 +3391,14 @@ exports[`Video renders 1`] = `
           type="button"
         >
           <div
-            className="c18"
+            className="c17"
           >
             <span
-              className="c19"
+              className="c18"
             />
             <svg
               aria-label="Actions"
-              className="c7"
+              className="c6"
               viewBox="0 0 24 24"
             >
               <path
