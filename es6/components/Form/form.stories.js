@@ -1,0 +1,109 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { Box, Button, CheckBox, Grommet, Form, // FormContext,
+FormField, RadioButton, RangeInput, Select, TextArea } from 'grommet';
+import { grommet } from 'grommet/themes';
+
+var RadioButtonGroup = function RadioButtonGroup(_ref) {
+  var name = _ref.name,
+      _onChange = _ref.onChange,
+      options = _ref.options,
+      value = _ref.value;
+  return React.createElement(Box, {
+    gap: "small"
+  }, options.map(function (option) {
+    return React.createElement(Box, {
+      key: option
+    }, React.createElement(RadioButton, {
+      name: name,
+      value: option,
+      label: option,
+      checked: value === option,
+      onChange: function onChange() {
+        return _onChange({
+          value: option
+        });
+      }
+    }));
+  }));
+};
+
+var Example = function Example() {
+  return React.createElement(Grommet, {
+    full: true,
+    theme: grommet
+  }, React.createElement(Box, {
+    fill: true,
+    align: "center",
+    justify: "center"
+  }, React.createElement(Box, {
+    width: "medium"
+  }, React.createElement(Form, {
+    onSubmit: function onSubmit(_ref2) {
+      var value = _ref2.value;
+      return console.log('Submit', value);
+    }
+  }, React.createElement(FormField, {
+    label: "Name",
+    name: "name",
+    required: true,
+    validate: {
+      regexp: /^[a-z]/i
+    }
+  }), React.createElement(FormField, {
+    label: "Email",
+    name: "email",
+    type: "email",
+    required: true
+  }), React.createElement(FormField, {
+    label: "Employee ID",
+    name: "employeeId",
+    required: true,
+    validate: {
+      regexp: /^[0-9]{4,6}$/,
+      message: '4-6 digits'
+    }
+  }), React.createElement(FormField, {
+    name: "subscribe",
+    component: CheckBox,
+    pad: true,
+    label: "Subscribe?"
+  }), React.createElement(FormField, {
+    name: "ampm",
+    component: RadioButtonGroup,
+    pad: true,
+    options: ['morning', 'evening']
+  }), React.createElement(FormField, {
+    label: "Size",
+    name: "size",
+    component: Select,
+    options: ['small', 'medium', 'large', 'xlarge']
+  }), React.createElement(FormField, {
+    label: "Comments",
+    name: "comments",
+    component: TextArea
+  }), React.createElement(FormField, {
+    label: "Age",
+    name: "age",
+    component: RangeInput,
+    pad: true,
+    min: 15,
+    max: 75
+  }), React.createElement(Box, {
+    direction: "row",
+    justify: "between",
+    margin: {
+      top: 'medium'
+    }
+  }, React.createElement(Button, {
+    label: "Cancel"
+  }), React.createElement(Button, {
+    type: "submit",
+    label: "Update",
+    primary: true
+  }))))));
+};
+
+storiesOf('Form', module).add('All', function () {
+  return React.createElement(Example, null);
+});

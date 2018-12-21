@@ -47,4 +47,45 @@ A short label describing the field
 string
 node
 ```
+
+**name**
+
+The name of the value data when in a Form and the name of
+      the input field.
+
+```
+string
+```
+
+**pad**
+
+Whether to add padding to align with the padding of TextInput.
+
+```
+boolean
+```
+
+**required**
+
+Whether the field is required.
+
+```
+boolean
+```
+
+**validate**
+
+Validation rule. Provide a regular expression or a function. If a
+      function is provided, it will be called with two arguments, the value
+      for this field and the entire value object. This permits validation to
+      encompass multiple fields. The function should return a string message
+      describing the validation issue, if any.
+
+```
+{
+  regexp: object,
+  message: string
+}
+function
+```
   

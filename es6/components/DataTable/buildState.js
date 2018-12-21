@@ -135,7 +135,7 @@ var sortData = function sortData(nextProps, prevState, nextState) {
   if (sort) {
     var property = sort.property,
         ascending = sort.ascending;
-    nextData = data.concat();
+    nextData = [].concat(data);
     var before = ascending ? 1 : -1;
     var after = ascending ? -1 : 1;
     nextData.sort(function (d1, d2) {

@@ -355,7 +355,7 @@ function (_Component5) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this9)), "onRemoveSeason", function (season) {
       var selected = _this9.state.selected;
-      var nextSelected = selected.concat();
+      var nextSelected = [].concat(selected);
       nextSelected.splice(nextSelected.indexOf(allSeasons.indexOf(season)), 1);
 
       _this9.setState({
@@ -641,7 +641,7 @@ function (_Component6) {
       options: contentPartners,
       onChange: function onChange(_ref8) {
         var option = _ref8.option;
-        var newSelectedPartners = selectedContentPartners.concat();
+        var newSelectedPartners = [].concat(selectedContentPartners);
         var seasonIndex = newSelectedPartners.map(function (_ref9) {
           var name = _ref9.name;
           return name;

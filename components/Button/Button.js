@@ -88,6 +88,19 @@ function (_Component) {
     var domTag = !as && href ? 'a' : as;
     var first = reverse ? label : buttonIcon;
     var second = reverse ? buttonIcon : label;
+    var contents;
+
+    if (first && second) {
+      contents = _react.default.createElement(_Box.Box, {
+        direction: "row",
+        align: "center",
+        justify: "center",
+        gap: "small"
+      }, first, second);
+    } else {
+      contents = first || second || children;
+    }
+
     return _react.default.createElement(_StyledButton.StyledButton, _extends({}, rest, {
       as: domTag,
       ref: forwardRef,
@@ -103,12 +116,7 @@ function (_Component) {
       plain: typeof plain !== 'undefined' ? plain : _react.Children.count(children) > 0 || icon && !label,
       primary: primary,
       type: !href ? type : undefined
-    }), first || second ? _react.default.createElement(_Box.Box, {
-      direction: "row",
-      align: "center",
-      justify: "center",
-      gap: "small"
-    }, first, second) : children);
+    }), contents);
   };
 
   return Button;

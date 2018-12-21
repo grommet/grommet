@@ -228,7 +228,7 @@ function (_Component) {
         var _this$state2 = _this.state,
             activeMaskIndex = _this$state2.activeMaskIndex,
             valueParts = _this$state2.valueParts;
-        var nextValueParts = valueParts.concat();
+        var nextValueParts = [].concat(valueParts);
         nextValueParts[activeMaskIndex] = {
           part: option
         }; // add any fixed parts that follow

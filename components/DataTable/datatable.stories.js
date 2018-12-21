@@ -172,7 +172,7 @@ var TunableDataTable = function TunableDataTable() {
   })));
 };
 
-var groupColumns = columns.concat();
+var groupColumns = [].concat(columns);
 var first = groupColumns[0];
 groupColumns[0] = _extends({}, groupColumns[1]);
 groupColumns[1] = _extends({}, first);

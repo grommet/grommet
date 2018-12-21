@@ -45,7 +45,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onPanelChange", function (index) {
       var activeIndexes = _this.state.activeIndexes;
-      var nextActiveIndexes = (activeIndexes || []).concat();
+      var nextActiveIndexes = [].concat(activeIndexes || []);
       var _this$props = _this.props,
           onActive = _this$props.onActive,
           multiple = _this$props.multiple;
