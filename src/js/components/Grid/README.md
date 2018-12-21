@@ -352,3 +352,55 @@ The DOM tag to use for the element. Defaults to `div`.
 string
 ```
   
+## Theme
+  
+**global.edgeSize**
+
+The possible sizes for the grid gap. Expects `object`.
+
+Defaults to
+
+```
+{
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '3px',
+        xsmall: '6px',
+        small: '12px',
+        medium: '24px',
+        large: '48px',
+        xlarge: '96px',
+        responsiveBreakpoint: 'small',
+      },
+    }
+```
+
+**global.size**
+
+The possible sizes for row and column. Expects `object`.
+
+Defaults to
+
+```
+{
+      xxsmall: '48px',
+      xsmall: '96px',
+      small: '192px',
+      medium: '384px',
+      large: '768px',
+      xlarge: '1152px',
+      xxlarge: '1536px',
+      full: '100%',
+    }
+```
+
+**grid.extend**
+
+Any additional style for the Grid. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
