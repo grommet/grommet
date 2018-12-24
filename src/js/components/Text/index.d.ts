@@ -10,7 +10,7 @@ export interface TextProps {
   alignSelf?: GrommetAlignSelfOrJustify;
   gridArea?: string;
   margin?: GrommetMargin;
-  color?: string | {dark?: string,light?: string};
+  color?: string | {dark?: string, light?: string};
   size?: GrommetSizeXSToXL | string;
   tag?: string;
   as?: string;

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { AnyFunction, GrommetSizeXXSToXL } from '../../types/common';
 
 export interface RangeSelectorProps {
-  color?: string | {dark?: string,light?: string};
+  color?: string | {dark?: string, light?: string};
   direction?: 'horizontal' | 'vertical';
   invert?: boolean;
   max?: number;

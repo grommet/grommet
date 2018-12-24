@@ -10,7 +10,7 @@ export interface HeadingProps {
   alignSelf?: GrommetAlignSelfOrJustify;
   gridArea?: string;
   margin?: GrommetMargin;
-  color?: string | {dark?: string,light?: string};;
+  color?: string | {dark?: string, light?: string}; ;
   level?: '1' | '2' | '3' | '4' | '5' | '6' | '1' | '2' | '3' | '4' | '5' | '6';
   responsive?: boolean;
   size?: GrommetSizeSToXL | string;

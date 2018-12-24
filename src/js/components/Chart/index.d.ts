@@ -13,15 +13,15 @@ export interface ChartProps {
   gridArea?: string;
   margin?: GrommetMargin;
   bounds?: number[][];
-  color?: string | {color: string, opacity: 'weak' | 'medium' | 'strong' | boolean};
+  color?: string | Partial<{color: string, opacity: 'weak' | 'medium' | 'strong' | boolean}>;
   onClick?: AnyFunction;
   onHover?: AnyFunction;
   overflow?: boolean;
   round?: boolean;
-  size?: GrommetSizeXXSToXL | 'full' | {
+  size?: GrommetSizeXXSToXL | 'full' | Partial<{
     height: GrommetSizeXXSToXL | 'full' | string,
     width: GrommetSizeXXSToXL | 'full' | string,
-  } | string;
+  }> | string;
   thickness?: 'hair' | GrommetSizeXSToXL | 'none' | string;
   type?: 'bar' | 'line' | 'area';
   values: number | number[] | {label?: string, onClick: AnyFunction, onHover: AnyFunction, value: number | number[]}[];

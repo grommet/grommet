@@ -10,7 +10,7 @@ export interface MeterProps {
   alignSelf?: GrommetAlignSelfOrJustify;
   gridArea?: string;
   margin?: GrommetMargin;
-  background?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean};
+  background?: string | {color?: string, opacity?: 'weak' | 'medium' | 'strong' | boolean};
   round?: boolean;
   size?: GrommetSizeXSToXL | 'full' | string;
   thickness?: GrommetSizeXSToXL | string;

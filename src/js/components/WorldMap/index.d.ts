@@ -10,15 +10,15 @@ export interface WorldMapProps {
   alignSelf?: GrommetAlignSelfOrJustify;
   gridArea?: string;
   margin?: GrommetMargin;
-  color?: string | {dark?: string,light?: string};
+  color?: string | {dark?: string, light?: string};
   continents?: {
-    color: string  | {dark?: string,light?: string},
+    color: string  | {dark?: string, light?: string},
     name: 'Africa' | 'Asia' | 'Australia' | 'Europe' | 'North America' | 'South America',
     onClick: AnyFunction,
     onHover: AnyFunction,
   }[];
   onSelectPlace?: AnyFunction;
-  places?: {color: string  | {dark?: string,light?: string}, name: string, location: number[], onClick: AnyFunction, onHover: AnyFunction}[];
+  places?: {color: string  | {dark?: string, light?: string}, name: string, location: number[], onClick: AnyFunction, onHover: AnyFunction}[];
   hoverColor?: string;
 }
 

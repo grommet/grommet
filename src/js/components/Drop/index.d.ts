@@ -9,7 +9,7 @@ export interface DropProps {
   restrictFocus?: boolean;
   stretch?: boolean;
   target: object;
-  elevation?: "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
+  elevation?: 'none' | 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
   plain?: boolean;
 }
 

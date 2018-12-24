@@ -3,7 +3,7 @@ import { AnyFunction, GrommetSizeSToXL } from '../../types/common';
 
 export interface TextInputProps {
   dropAlign?: {top?: 'top' | 'bottom', bottom?: 'top' | 'bottom', right?: 'left' | 'right', left?: 'left' | 'right'};
-  dropHeight?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
+  dropHeight?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
   dropTarget?: object;
   id?: string;
   focusIndicator?: boolean;

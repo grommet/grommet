@@ -11,11 +11,11 @@ export interface ButtonProps {
   gridArea?: string;
   margin?: GrommetMargin;
   active?: boolean;
-  color?: string | {dark?: string,light?: string};
+  color?: string | {dark?: string, light?: string};
   disabled?: boolean;
   fill?: boolean;
   focusIndicator?: boolean;
-  hoverIndicator?: boolean | 'background' | {background?: boolean | string};
+  hoverIndicator?: boolean | string | 'background' | {background?: boolean | string};
   href?: string;
   icon?: JSX.Element;
   label?: React.ReactNode;

@@ -9,7 +9,7 @@ export interface ParagraphProps {
   alignSelf?: GrommetAlignSelfOrJustify;
   gridArea?: string;
   margin?: GrommetMargin;
-  color?: string  | {dark?: string,light?: string};;
+  color?: string  | {dark?: string, light?: string}; ;
   responsive?: boolean;
   size?: GrommetSizeSToXL | 'xxlarge' | string;
   textAlign?: 'start' | 'center' | 'end';

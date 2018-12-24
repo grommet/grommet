@@ -12,7 +12,7 @@ export interface TabsProps {
   margin?: GrommetMargin;
   activeIndex?: number;
   children: React.ReactNode;
-  flex?: "grow" | "shrink" | boolean;
+  flex?: 'grow' | 'shrink' | boolean;
   justify?: 'start' | 'center' | 'end';
   messages?: {tabContents?: string};
   onActive?: AnyFunction;

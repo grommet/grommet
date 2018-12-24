@@ -9,7 +9,7 @@ export interface LayerProps {
   onClickOutside?: AnyFunction;
   onEsc?: AnyFunction;
   plain?: boolean;
-  position?: "bottom" | "bottom-left" | "bottom-right" | "center" | "hidden" | "left" | "right" | "top" | "top-left" | "top-right";
+  position?: 'bottom' | 'bottom-left' | 'bottom-right' | 'center' | 'hidden' | 'left' | 'right' | 'top' | 'top-left' | 'top-right';
   responsive?: boolean;
 }
 
