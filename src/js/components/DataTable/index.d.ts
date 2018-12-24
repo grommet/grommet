@@ -1,17 +1,22 @@
-import * as React from "react";
+import * as React from 'react';
+import {
+  AnyFunction,
+  GrommetAlignSelfOrJustify,
+  GrommetMargin, GrommetSizeSToXL,
+} from '../../types/common';
 
 export interface DataTableProps {
   a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  alignSelf?: GrommetAlignSelfOrJustify;
   gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
-  columns?: {align?: "center" | "start" | "end",aggregate?: "avg" | "max" | "min" | "sum",footer?: React.ReactNode | {aggregate?: boolean},header?: string | React.ReactNode | {aggregate?: boolean},property: string,render?: ((...args: any[]) => any),search?: boolean}[];
+  margin?: GrommetMargin;
+  columns?: {align?: 'center' | 'start' | 'end', aggregate?: 'avg' | 'max' | 'min' | 'sum', footer?: React.ReactNode | {aggregate?: boolean}, header?: string | React.ReactNode | {aggregate?: boolean}, property: string, render?: AnyFunction, search?: boolean}[];
   data?: {}[];
   groupBy?: string;
-  onMore?: ((...args: any[]) => any);
-  onSearch?: ((...args: any[]) => any);
+  onMore?: AnyFunction;
+  onSearch?: AnyFunction;
   resizeable?: boolean;
-  size?: "small" | "medium" | "large" | "xlarge" | string;
+  size?: GrommetSizeSToXL | string;
   sortable?: boolean;
 }
 

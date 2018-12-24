@@ -1,0 +1,27 @@
+{
+  "defaultSeverity": "error",
+  "linterOptions": {
+    "exclude": [
+      "*.js"
+    ]
+  },
+  "extends": [
+    "tslint:recommended"
+  ],
+  "jsRules": {},
+  "rules": {
+    "quotemark": [true, "single"],
+    "no-console": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "interface-name": false,
+    "interface-over-type-literal": false,
+    "align": false,
+    "member-access": false,
+    "variable-name": false,
+    "max-classes-per-file": false,
+    "no-namespace": false,
+    "array-type": [true, "array"]
+  },
+  "rulesDirectory": []
+}

@@ -1,15 +1,20 @@
-import * as React from "react";
+import * as React from 'react';
+import {
+  GrommetAlignSelfOrJustify,
+  GrommetMargin,
+  GrommetSizeSToXL,
+} from '../../types/common';
 
 export interface HeadingProps {
   a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  alignSelf?: GrommetAlignSelfOrJustify;
   gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
-  color?: string | {dark?: string,light?: string};
-  level?: "1" | "2" | "3" | "4" | "5" | "6" | "1" | "2" | "3" | "4" | "5" | "6";
+  margin?: GrommetMargin;
+  color?: string | {dark?: string,light?: string};;
+  level?: '1' | '2' | '3' | '4' | '5' | '6' | '1' | '2' | '3' | '4' | '5' | '6';
   responsive?: boolean;
-  size?: "small" | "medium" | "large" | "xlarge" | string;
-  textAlign?: "start" | "center" | "end";
+  size?: GrommetSizeSToXL | string;
+  textAlign?: 'start' | 'center' | 'end';
   truncate?: boolean;
 }
 

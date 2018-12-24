@@ -1,16 +1,21 @@
-import * as React from "react";
+import * as React from 'react';
+import {
+  AnyFunction,
+  GrommetAlignSelfOrJustify,
+  GrommetMargin,
+} from '../../types/common';
 
 export interface DropButtonProps {
   a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  alignSelf?: GrommetAlignSelfOrJustify;
   gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  margin?: GrommetMargin;
   disabled?: boolean;
-  dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",right?: "left" | "right",left?: "left" | "right"};
+  dropAlign?: {top?: 'top' | 'bottom', bottom?: 'top' | 'bottom', right?: 'left' | 'right', left?: 'left' | 'right'};
   dropContent: JSX.Element;
   dropTarget?: object;
-  onClose?: ((...args: any[]) => any);
-  onOpen?: ((...args: any[]) => any);
+  onClose?: AnyFunction;
+  onOpen?: AnyFunction;
   open?: boolean;
 }
 

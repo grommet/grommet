@@ -1,31 +1,36 @@
-import * as React from "react";
+import * as React from 'react';
+import {
+  AnyFunction, GrommetAlignSelfOrJustify,
+  GrommetMargin,
+  GrommetSizeSToXL,
+} from '../../types/common';
 
 export interface SelectProps {
   a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  alignSelf?: GrommetAlignSelfOrJustify;
   gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
-  children?: ((...args: any[]) => any);
+  margin?: GrommetMargin;
+  children?: AnyFunction;
   closeOnChange?: boolean;
   disabled?: boolean | number | string | object[];
   disabledKey?: string | ((...args: any[]) => any);
-  dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",right?: "left" | "right",left?: "left" | "right"};
+  dropAlign?: {top?: 'top' | 'bottom', bottom?: 'top' | 'bottom', right?: 'left' | 'right', left?: 'left' | 'right'};
   dropHeight?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   dropTarget?: object;
   focusIndicator?: boolean;
   labelKey?: string | ((...args: any[]) => any);
   messages?: {multiple?: string};
   multiple?: boolean;
-  onChange?: ((...args: any[]) => any);
-  onClose?: ((...args: any[]) => any);
-  onOpen?: ((...args: any[]) => any);
-  onSearch?: ((...args: any[]) => any);
+  onChange?: AnyFunction;
+  onClose?: AnyFunction;
+  onOpen?: AnyFunction;
+  onSearch?: AnyFunction;
   options: string | JSX.Element | object[];
   placeholder?: string | React.ReactNode;
   plain?: boolean;
   searchPlaceholder?: string;
   selected?: number | number[];
-  size?: "small" | "medium" | "large" | "xlarge" | string;
+  size?: GrommetSizeSToXL | string;
   value?: string | JSX.Element | object | string | object[];
   valueLabel?: React.ReactNode;
   valueKey?: string | ((...args: any[]) => any);

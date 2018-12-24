@@ -1,12 +1,12 @@
-import * as React from "react";
+import * as React from 'react';
+import { AnyFunction } from '../../types/common';
 
 export interface InfiniteScrollProps {
-  children?: ((...args: any[]) => any);
+  children?: AnyFunction;
   items?: any[];
-  onMore?: ((...args: any[]) => any);
-  renderMarker?: ((...args: any[]) => any);
-  replace?: boolean;
-  scrollableAncestor?: React.ReactNode | "window";
+  onMore?: AnyFunction;
+  renderMarker?: AnyFunction;
+  scrollableAncestor?: React.ReactNode | 'window';
   show?: number;
   step?: number;
 }

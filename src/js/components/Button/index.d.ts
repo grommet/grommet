@@ -1,24 +1,29 @@
-import * as React from "react";
+import * as React from 'react';
+import {
+  AnyFunction,
+  GrommetAlignSelfOrJustify,
+  GrommetMargin,
+} from '../../types/common';
 
 export interface ButtonProps {
   a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  alignSelf?: GrommetAlignSelfOrJustify;
   gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  margin?: GrommetMargin;
   active?: boolean;
   color?: string | {dark?: string,light?: string};
   disabled?: boolean;
   fill?: boolean;
   focusIndicator?: boolean;
-  hoverIndicator?: boolean | string | "background" | {background?: boolean | string};
+  hoverIndicator?: boolean | 'background' | {background?: boolean | string};
   href?: string;
   icon?: JSX.Element;
   label?: React.ReactNode;
-  onClick?: ((...args: any[]) => any);
+  onClick?: AnyFunction;
   plain?: boolean;
   primary?: boolean;
   reverse?: boolean;
-  type?: "button" | "reset" | "submit";
+  type?: 'button' | 'reset' | 'submit';
   as?: string;
 }
 

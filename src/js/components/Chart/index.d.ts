@@ -1,20 +1,30 @@
-import * as React from "react";
+import * as React from 'react';
+import {
+  AnyFunction,
+  GrommetAlignSelfOrJustify,
+  GrommetMargin,
+  GrommetSizeXXSToXL,
+  GrommetSizeXSToXL,
+} from '../../types/common';
 
 export interface ChartProps {
   a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  alignSelf?: GrommetAlignSelfOrJustify;
   gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  margin?: GrommetMargin;
   bounds?: number[][];
-  color?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean};
-  onClick?: ((...args: any[]) => any);
-  onHover?: ((...args: any[]) => any);
+  color?: string | {color: string, opacity: 'weak' | 'medium' | 'strong' | boolean};
+  onClick?: AnyFunction;
+  onHover?: AnyFunction;
   overflow?: boolean;
   round?: boolean;
-  size?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | {height?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string,width?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string} | string;
-  thickness?: "hair" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "none" | string;
-  type?: "bar" | "line" | "area";
-  values: number | number[] | {label?: string,onClick?: ((...args: any[]) => any),onHover?: ((...args: any[]) => any),value: number | number[]}[];
+  size?: GrommetSizeXXSToXL | 'full' | {
+    height: GrommetSizeXXSToXL | 'full' | string,
+    width: GrommetSizeXXSToXL | 'full' | string,
+  } | string;
+  thickness?: 'hair' | GrommetSizeXSToXL | 'none' | string;
+  type?: 'bar' | 'line' | 'area';
+  values: number | number[] | {label?: string, onClick: AnyFunction, onHover: AnyFunction, value: number | number[]}[];
 }
 
 declare const Chart: React.ComponentType<ChartProps>;

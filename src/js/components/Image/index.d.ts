@@ -1,11 +1,12 @@
-import * as React from "react";
+import * as React from 'react';
+import { GrommetAlignSelfOrJustify, GrommetMargin } from '../../types/common';
 
 export interface ImageProps {
   a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  alignSelf?: GrommetAlignSelfOrJustify;
   gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
-  fit?: "cover" | "contain";
+  margin?: GrommetMargin;
+  fit?: 'cover' | 'contain';
 }
 
 declare const Image: React.ComponentType<ImageProps & JSX.IntrinsicElements['img']>;

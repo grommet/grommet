@@ -1,17 +1,23 @@
-import * as React from "react";
+import * as React from 'react';
+import {
+  AnyFunction,
+  GrommetAlignSelfOrJustify,
+  GrommetMargin,
+  GrommetSizeXSToXL,
+} from '../../types/common';
 
 export interface AnchorProps {
   a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  alignSelf?: GrommetAlignSelfOrJustify;
   gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
+  margin?: GrommetMargin;
   color?: string | {dark?: string,light?: string};
   href?: string;
   icon?: JSX.Element;
   label?: React.ReactNode;
-  onClick?: ((...args: any[]) => any);
+  onClick?: AnyFunction;
   reverse?: boolean;
-  size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
+  size?: GrommetSizeXSToXL | 'xxlarge' | string;
   as?: string;
 }
 

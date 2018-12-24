@@ -1,4 +1,5 @@
-import * as React from "react";
+import * as React from 'react';
+import { AnyFunction } from '../../types/common';
 
 export interface RadioButtonProps {
   checked?: boolean;
@@ -6,7 +7,7 @@ export interface RadioButtonProps {
   id?: string;
   label?: React.ReactNode;
   name: string;
-  onChange?: ((...args: any[]) => any);
+  onChange?: AnyFunction;
 }
 
 declare const RadioButton: React.ComponentType<RadioButtonProps>;

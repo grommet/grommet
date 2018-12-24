@@ -1,19 +1,24 @@
-import * as React from "react";
+import * as React from 'react';
+import {
+  GrommetAlignSelfOrJustify,
+  GrommetMargin,
+  GrommetSizeXSToXL,
+} from '../../types/common';
 
 export interface GridProps {
   a11yTitle?: string;
-  alignSelf?: "start" | "center" | "end" | "stretch";
+  alignSelf?: GrommetAlignSelfOrJustify;
   gridArea?: string;
-  margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
-  align?: "start" | "center" | "end" | "stretch";
-  alignContent?: "start" | "center" | "end" | "between" | "around" | "stretch";
-  areas?: {name?: string,start?: number[],end?: number[]}[];
-  columns?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "flex" | "auto" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "flex" | "auto"[] | string[] | "xsmall" | "small" | "medium" | "large" | "xlarge" | {count?: "fit" | "fill" | number,size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "flex" | "auto"[] | string} | string;
-  fill?: "horizontal" | "vertical" | boolean;
-  gap?: "small" | "medium" | "large" | "none" | {row?: "small" | "medium" | "large" | "none" | string,column?: "small" | "medium" | "large" | "none" | string} | string;
-  justify?: "start" | "center" | "end" | "stretch";
-  justifyContent?: "start" | "center" | "end" | "between" | "around" | "stretch";
-  rows?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "flex" | "auto" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "flex" | "auto"[] | string[] | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
+  margin?: GrommetMargin;
+  align?: GrommetAlignSelfOrJustify;
+  alignContent?: 'start' | 'center' | 'end' | 'between' | 'around' | 'stretch';
+  areas?: {name?: string, start?: number[], end?: number[]}[];
+  columns?: GrommetSizeXSToXL | 'full' | '1/2' | '1/3' | '2/3' | '1/4' | '2/4' | '3/4' | 'flex' | 'auto' | GrommetSizeXSToXL | 'full' | '1/2' | '1/3' | '2/3' | '1/4' | '2/4' | '3/4' | 'flex' | 'auto'[] | string[] | GrommetSizeXSToXL | {count: 'fit' | 'fill' | number, size: GrommetSizeXSToXL | GrommetSizeXSToXL | 'full' | '1/2' | '1/3' | '2/3' | '1/4' | '2/4' | '3/4' | 'flex' | 'auto'[] | string} | string;
+  fill?: 'horizontal' | 'vertical' | boolean;
+  gap?: 'small' | 'medium' | 'large' | 'none' | {row?: 'small' | 'medium' | 'large' | 'none' | string, column?: 'small' | 'medium' | 'large' | 'none' | string} | string;
+  justify?: GrommetAlignSelfOrJustify;
+  justifyContent?: 'start' | 'center' | 'end' | 'between' | 'around' | 'stretch';
+  rows?: GrommetSizeXSToXL | 'full' | '1/2' | '1/3' | '2/3' | '1/4' | '2/4' | '3/4' | 'flex' | 'auto' | GrommetSizeXSToXL | 'full' | '1/2' | '1/3' | '2/3' | '1/4' | '2/4' | '3/4' | 'flex' | 'auto'[] | string[] | GrommetSizeXSToXL | string;
   tag?: string;
   as?: string;
 }

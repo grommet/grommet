@@ -1,16 +1,17 @@
-import * as React from "react";
+import * as React from 'react';
+import { AnyFunction, GrommetSizeXXSToXL } from '../../types/common';
 
 export interface RangeSelectorProps {
   color?: string | {dark?: string,light?: string};
-  direction?: "horizontal" | "vertical";
+  direction?: 'horizontal' | 'vertical';
   invert?: boolean;
   max?: number;
-  messages?: {lower?: string,upper?: string};
+  messages?: {lower?: string, upper?: string};
   min?: number;
-  onChange?: ((...args: any[]) => any);
-  opacity?: "weak" | "medium" | "strong";
-  round?: "xsmall" | "small" | "medium" | "large" | "full" | string;
-  size?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string;
+  onChange?: AnyFunction;
+  opacity?: 'weak' | 'medium' | 'strong';
+  round?: 'xsmall' | 'small' | 'medium' | 'large' | 'full' | string;
+  size?: GrommetSizeXXSToXL | 'full' | string;
   step?: number;
   values: number[];
 }

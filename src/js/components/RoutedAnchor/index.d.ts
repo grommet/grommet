@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
 export interface RoutedAnchorProps {
   path: string;
-  method?: "push" | "replace";
+  method?: 'push' | 'replace';
 }
 
 declare const RoutedAnchor: React.ComponentType<RoutedAnchorProps>;
