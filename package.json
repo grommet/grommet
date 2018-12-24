@@ -116,6 +116,7 @@
     "simple-git": "^1.95.0",
     "styled-components": "^4.1.1",
     "tarball-extract": "^0.0.6",
+    "ts-lint": "^4.5.1",
     "typescript": "^3.2.2",
     "webpack": "^4.10.2",
     "webpack-cli": "^3.0.7"
