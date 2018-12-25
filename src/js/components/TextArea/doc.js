@@ -32,6 +32,12 @@ export const doc = TextArea => {
 Only use this when the containing context provides sufficient affordance.`,
     ),
     value: PropTypes.string.description('What text to put in the textarea.'),
+    resize: PropTypes.oneOfType([
+      PropTypes.oneOf(['vertical', 'horizontal']),
+      PropTypes.bool,
+    ])
+      .description('Whether user is allowed to resize the textarea.')
+      .defaultValue(true),
   };
 
   return DocumentedTextArea;
