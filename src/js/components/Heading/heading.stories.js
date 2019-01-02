@@ -19,7 +19,7 @@ H.propTypes = {
 
 const Set = ({ size }) => (
   <div>
-    {[1, 2, 3, 4].map(level => (
+    {[1, 2, 3, 4, 5, 6].map(level => (
       <H key={level} level={level} size={size} />
     ))}
   </div>

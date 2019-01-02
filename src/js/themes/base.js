@@ -536,6 +536,26 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           large: { ...fontSizing(0) },
           xlarge: { ...fontSizing(0) },
         },
+        5: {
+          font: {
+            // family: undefined,
+            // weight: undefined,
+          },
+          small: { ...fontSizing(-0.5) },
+          medium: { ...fontSizing(-0.5) },
+          large: { ...fontSizing(-0.5) },
+          xlarge: { ...fontSizing(-0.5) },
+        },
+        6: {
+          font: {
+            // family: undefined,
+            // weight: undefined,
+          },
+          small: { ...fontSizing(-1) },
+          medium: { ...fontSizing(-1) },
+          large: { ...fontSizing(-1) },
+          xlarge: { ...fontSizing(-1) },
+        },
       },
       responsiveBreakpoint: 'small', // when we scale the font size down
       weight: 600,
