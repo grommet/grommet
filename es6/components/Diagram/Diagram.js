@@ -217,7 +217,8 @@ function (_Component) {
           var d = COMMANDS[type || 'curved'](points[0], points[1], offsetWidth, anchor);
           var strokeWidth = thickness ? parseMetricToNum(theme.global.edgeSize[thickness] || thickness) : 1;
           path = React.createElement("path", _extends({
-            key: "" + (index + 0)
+            // eslint-disable-next-line react/no-array-index-key
+            key: index
           }, cleanedRest, {
             stroke: normalizeColor(color || 'accent-1', theme),
             strokeWidth: strokeWidth,

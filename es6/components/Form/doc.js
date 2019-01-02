@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Form) {
-  var DocumentedForm = describe(Form).availableAt(getAvailableAtBadge('Form')).description('A field in a form.').usage("import { Form } from 'grommet';\n<Form />");
+  var DocumentedForm = describe(Form).availableAt(getAvailableAtBadge('Form')).description('A form that manages state for its fields.').usage("import { Form } from 'grommet';\n<Form />");
   DocumentedForm.propTypes = {
     errors: PropTypes.shape({}).description("An object representing any errors in the data. They keys should\n        match the keys in the value object.").defaultValue({}),
     messages: PropTypes.shape({

@@ -155,7 +155,8 @@ function (_Component) {
     var selectors = [];
 
     var wrappedChildren = _react.Children.map(children, function (child, index) {
-      selectors.push(_react.default.createElement(_Button.Button, {
+      selectors.push(_react.default.createElement(_Button.Button // eslint-disable-next-line react/no-array-index-key
+      , {
         key: index,
         icon: _react.default.createElement(CurrentIcon, {
           color: activeIndex === index ? iconColor : undefined

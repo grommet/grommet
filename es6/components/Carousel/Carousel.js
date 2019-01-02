@@ -138,7 +138,8 @@ function (_Component) {
     var iconColor = normalizeColor(theme.carousel.icons.color || 'control', theme);
     var selectors = [];
     var wrappedChildren = Children.map(children, function (child, index) {
-      selectors.push(React.createElement(Button, {
+      selectors.push(React.createElement(Button // eslint-disable-next-line react/no-array-index-key
+      , {
         key: index,
         icon: React.createElement(CurrentIcon, {
           color: activeIndex === index ? iconColor : undefined

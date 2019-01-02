@@ -82,9 +82,11 @@ var FixedSizesBox = function FixedSizesBox() {
       vertical: 'scroll'
     }
   }, Array(20).fill().map(function (_, i) {
-    return React.createElement(Text, {
-      key: "" + (i + 0)
-    }, "Small (" + i + ")");
+    return (// eslint-disable-next-line react/no-array-index-key
+      React.createElement(Text, {
+        key: i
+      }, "Small (" + i + ")")
+    );
   })), React.createElement(Box, {
     width: "medium",
     height: "medium",

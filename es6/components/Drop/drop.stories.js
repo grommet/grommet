@@ -127,8 +127,9 @@ function (_Component2) {
       justify: "center",
       ref: this.targetRef
     }, "\xA0"), this.targetRef.current && React.createElement(Fragment, null, aligns.map(function (align, index) {
-      return React.createElement(OneDrop, {
-        key: "" + (index + 0),
+      return React.createElement(OneDrop // eslint-disable-next-line react/no-array-index-key
+      , {
+        key: index,
         align: align,
         target: _this3.targetRef.current
       });

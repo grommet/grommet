@@ -57,7 +57,8 @@ function (_Component) {
           if (firstIndex === undefined) {
             firstIndex = index;
           } else {
-            contents.push(React.createElement(StyledBoxGap, {
+            contents.push(React.createElement(StyledBoxGap // eslint-disable-next-line react/no-array-index-key
+            , {
               key: index,
               gap: gap,
               directionProp: direction,

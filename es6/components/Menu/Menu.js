@@ -189,29 +189,31 @@ function (_Component) {
       }, dropAlign.top === 'top' ? controlMirror : undefined, React.createElement(Box, {
         overflow: "auto"
       }, items.map(function (item, index) {
-        return React.createElement(Box, {
-          key: "menuItem_" + (index + 0),
-          flex: false
-        }, React.createElement(Button, {
-          ref: function ref(_ref) {
-            _this2.buttonRefs[index] = _ref;
-          },
-          active: activeItemIndex === index,
-          hoverIndicator: "background",
-          disabled: !item.onClick && !item.href,
-          onClick: function onClick() {
-            item.onClick.apply(item, arguments);
+        return (// eslint-disable-next-line react/no-array-index-key
+          React.createElement(Box, {
+            key: index,
+            flex: false
+          }, React.createElement(Button, {
+            ref: function ref(_ref) {
+              _this2.buttonRefs[index] = _ref;
+            },
+            active: activeItemIndex === index,
+            hoverIndicator: "background",
+            disabled: !item.onClick && !item.href,
+            onClick: function onClick() {
+              item.onClick.apply(item, arguments);
 
-            if (item.close !== false) {
-              _this2.onDropClose();
-            }
-          },
-          href: item.href
-        }, React.createElement(Box, {
-          align: "start",
-          pad: "small",
-          direction: "row"
-        }, item.icon, item.label)));
+              if (item.close !== false) {
+                _this2.onDropClose();
+              }
+            },
+            href: item.href
+          }, React.createElement(Box, {
+            align: "start",
+            pad: "small",
+            direction: "row"
+          }, item.icon, item.label)))
+        );
       })), dropAlign.bottom === 'bottom' ? controlMirror : undefined)
     }), content));
   };

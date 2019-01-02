@@ -210,29 +210,31 @@ function (_Component) {
       }, dropAlign.top === 'top' ? controlMirror : undefined, _react.default.createElement(_Box.Box, {
         overflow: "auto"
       }, items.map(function (item, index) {
-        return _react.default.createElement(_Box.Box, {
-          key: "menuItem_" + (index + 0),
-          flex: false
-        }, _react.default.createElement(_Button.Button, {
-          ref: function ref(_ref) {
-            _this2.buttonRefs[index] = _ref;
-          },
-          active: activeItemIndex === index,
-          hoverIndicator: "background",
-          disabled: !item.onClick && !item.href,
-          onClick: function onClick() {
-            item.onClick.apply(item, arguments);
+        return (// eslint-disable-next-line react/no-array-index-key
+          _react.default.createElement(_Box.Box, {
+            key: index,
+            flex: false
+          }, _react.default.createElement(_Button.Button, {
+            ref: function ref(_ref) {
+              _this2.buttonRefs[index] = _ref;
+            },
+            active: activeItemIndex === index,
+            hoverIndicator: "background",
+            disabled: !item.onClick && !item.href,
+            onClick: function onClick() {
+              item.onClick.apply(item, arguments);
 
-            if (item.close !== false) {
-              _this2.onDropClose();
-            }
-          },
-          href: item.href
-        }, _react.default.createElement(_Box.Box, {
-          align: "start",
-          pad: "small",
-          direction: "row"
-        }, item.icon, item.label)));
+              if (item.close !== false) {
+                _this2.onDropClose();
+              }
+            },
+            href: item.href
+          }, _react.default.createElement(_Box.Box, {
+            align: "start",
+            pad: "small",
+            direction: "row"
+          }, item.icon, item.label)))
+        );
       })), dropAlign.bottom === 'bottom' ? controlMirror : undefined)
     }), content));
   };

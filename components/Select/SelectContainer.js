@@ -446,8 +446,9 @@ function (_Component) {
       var isSelected = _this3.isSelected(index);
 
       var isActive = activeIndex === index;
-      return _react.default.createElement(_SelectOption.SelectOption, {
-        key: "option_" + index,
+      return _react.default.createElement(_SelectOption.SelectOption // eslint-disable-next-line react/no-array-index-key
+      , {
+        key: index,
         ref: function ref(_ref) {
           _this3.optionRefs[index] = _ref;
         },
