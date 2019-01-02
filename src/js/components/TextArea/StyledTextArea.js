@@ -9,11 +9,25 @@ const plainStyle = css`
   -webkit-appearance: none;
 `;
 
+const resizeStyle = resize => {
+  if (resize === 'horizontal') {
+    return 'resize: horizontal;';
+  }
+  if (resize === 'vertical') {
+    return 'resize: vertical;';
+  }
+  if (resize) {
+    return 'resize: both;';
+  }
+  return 'resize: none;';
+};
+
 const StyledTextArea = styled.textarea`
   ${inputStyle} width: 100%;
+  ${props => props.resize !== undefined && resizeStyle(props.resize)}
 
-  ${props => props.fillArg && 'height: 100%;'} ${props =>
-  props.plain && plainStyle}
+  ${props => props.fillArg && 'height: 100%;'}
+  ${props => props.plain && plainStyle}
 
   ${placeholderStyle}
 

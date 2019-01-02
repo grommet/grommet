@@ -3114,6 +3114,14 @@ Only use this when the containing context provides sufficient affordance.",
         "format": "string",
         "name": "value",
       },
+      Object {
+        "defaultValue": true,
+        "description": "Whether user is allowed to resize the textarea.",
+        "format": "vertical
+horizontal
+boolean",
+        "name": "resize",
+      },
     ],
     "usage": "import { TextArea } from 'grommet';
 <TextArea id='item' name='item' />",

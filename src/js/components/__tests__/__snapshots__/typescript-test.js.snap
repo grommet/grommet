@@ -822,6 +822,7 @@ export interface TextAreaProps {
   placeholder?: string;
   plain?: boolean;
   value?: string;
+  resize?: \\"vertical\\" | \\"horizontal\\" | boolean;
 }
 
 declare const TextArea: React.ComponentType<TextAreaProps & JSX.IntrinsicElements['textarea']>;
