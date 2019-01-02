@@ -30,7 +30,7 @@ H.propTypes = {
 
 var Set = function Set(_ref2) {
   var size = _ref2.size;
-  return _react.default.createElement("div", null, [1, 2, 3, 4].map(function (level) {
+  return _react.default.createElement("div", null, [1, 2, 3, 4, 5, 6].map(function (level) {
     return _react.default.createElement(H, {
       key: level,
       level: level,
