@@ -71,7 +71,7 @@ var daySizeStyle = function daySizeStyle(props) {
 var StyledDay = styled.div.withConfig({
   displayName: "StyledCalendar__StyledDay",
   componentId: "sc-1y4xhmp-5"
-})(["display:flex;justify-content:center;align-items:center;", " ", " ", " ", ""], function (props) {
+})(["display:flex;justify-content:center;align-items:center;", " ", " ", " ", " ", ""], function (props) {
   return daySizeStyle(props);
 }, function (props) {
   return props.isSelected && backgroundStyle('control', props.theme) || props.inRange && backgroundStyle({
@@ -82,6 +82,8 @@ var StyledDay = styled.div.withConfig({
   return props.otherMonth && 'opacity: 0.5;';
 }, function (props) {
   return props.isSelected && 'font-weight: bold;';
+}, function (props) {
+  return props.theme.calendar && props.theme.calendar.day && props.theme.calendar.day.extend;
 });
 StyledDay.defaultProps = {};
 Object.setPrototypeOf(StyledDay.defaultProps, defaultProps);

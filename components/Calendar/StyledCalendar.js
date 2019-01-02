@@ -93,7 +93,7 @@ var daySizeStyle = function daySizeStyle(props) {
 var StyledDay = _styledComponents.default.div.withConfig({
   displayName: "StyledCalendar__StyledDay",
   componentId: "sc-1y4xhmp-5"
-})(["display:flex;justify-content:center;align-items:center;", " ", " ", " ", ""], function (props) {
+})(["display:flex;justify-content:center;align-items:center;", " ", " ", " ", " ", ""], function (props) {
   return daySizeStyle(props);
 }, function (props) {
   return props.isSelected && (0, _utils.backgroundStyle)('control', props.theme) || props.inRange && (0, _utils.backgroundStyle)({
@@ -104,6 +104,8 @@ var StyledDay = _styledComponents.default.div.withConfig({
   return props.otherMonth && 'opacity: 0.5;';
 }, function (props) {
   return props.isSelected && 'font-weight: bold;';
+}, function (props) {
+  return props.theme.calendar && props.theme.calendar.day && props.theme.calendar.day.extend;
 });
 
 exports.StyledDay = StyledDay;

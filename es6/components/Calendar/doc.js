@@ -121,5 +121,9 @@ export var themeDoc = {
   'calendar.extend': {
     description: 'Any additional style for the Calendar.',
     type: 'string | (props) => {}'
+  },
+  'calendar.day.extend': {
+    description: 'Any additional style for the day of Calendar.',
+    type: 'string | (props) => {}'
   }
 };
