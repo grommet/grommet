@@ -188,7 +188,8 @@ class Diagram extends Component {
 
             path = (
               <path
-                key={`${index + 0}`}
+                // eslint-disable-next-line react/no-array-index-key
+                key={index}
                 {...cleanedRest}
                 stroke={normalizeColor(color || 'accent-1', theme)}
                 strokeWidth={strokeWidth}

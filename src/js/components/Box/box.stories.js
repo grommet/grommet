@@ -66,7 +66,8 @@ const FixedSizesBox = () => (
         {Array(20)
           .fill()
           .map((_, i) => (
-            <Text key={`${i + 0}`}>{`Small (${i})`}</Text>
+            // eslint-disable-next-line react/no-array-index-key
+            <Text key={i}>{`Small (${i})`}</Text>
           ))}
       </Box>
       <Box
