@@ -95,11 +95,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
   const fontScale = baseSpacing / scale; // 4
 
   const fontSizing = factor => ({
-    size: `${baseFontSize + factor * fontScale}px`,
-    height: `${baseSpacing + factor * fontScale}px`,
+    size: `${baseFontSize + (factor * fontScale)}px`,
+    height: `${baseSpacing + (factor * fontScale)}px`,
     // maxWidth chosen to be ~50 characters wide
     // see: https://ux.stackexchange.com/a/34125
-    maxWidth: `${baseSpacing * (baseFontSize + factor * fontScale)}px`,
+    maxWidth: `${baseSpacing * (baseFontSize + (factor * fontScale))}px`,
   });
 
   const borderWidth = 2;
@@ -522,7 +522,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             // weight: undefined,
           },
           small: { ...fontSizing(1) },
-          medium: { ...fontSizing(1) },
+          medium: { ...fontSizing(2) },
           large: { ...fontSizing(4) },
           xlarge: { ...fontSizing(6) },
         },
