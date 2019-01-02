@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export type ResponsiveValue = 'wide' | 'narrow';
+export type ResponsiveValue = string;
 
 declare const ResponsiveContext: React.Context<ResponsiveValue>;
 
