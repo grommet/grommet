@@ -26,9 +26,9 @@ exports[`Markdown renders 1`] = `
 }
 
 .c4 {
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
   font-weight: 600;
 }
 
@@ -72,9 +72,9 @@ exports[`Markdown renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 624px;
   }
 }
 
