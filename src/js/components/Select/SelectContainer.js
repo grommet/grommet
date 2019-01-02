@@ -402,7 +402,8 @@ class SelectContainer extends Component {
                   const isActive = activeIndex === index;
                   return (
                     <SelectOption
-                      key={`option_${index}`}
+                      // eslint-disable-next-line react/no-array-index-key
+                      key={index}
                       ref={ref => {
                         this.optionRefs[index] = ref;
                       }}

@@ -162,7 +162,8 @@ class Menu extends Component {
               {dropAlign.top === 'top' ? controlMirror : undefined}
               <Box overflow="auto">
                 {items.map((item, index) => (
-                  <Box key={`menuItem_${index + 0}`} flex={false}>
+                  // eslint-disable-next-line react/no-array-index-key
+                  <Box key={index} flex={false}>
                     <Button
                       ref={ref => {
                         this.buttonRefs[index] = ref;
