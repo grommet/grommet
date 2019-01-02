@@ -95,6 +95,7 @@ class Carousel extends Component {
     const wrappedChildren = Children.map(children, (child, index) => {
       selectors.push(
         <Button
+          // eslint-disable-next-line react/no-array-index-key
           key={index}
           icon={
             <CurrentIcon

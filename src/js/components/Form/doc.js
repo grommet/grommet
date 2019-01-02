@@ -5,7 +5,7 @@ import { getAvailableAtBadge } from '../../utils';
 export const doc = Form => {
   const DocumentedForm = describe(Form)
     .availableAt(getAvailableAtBadge('Form'))
-    .description('A field in a form.')
+    .description('A form that manages state for its fields.')
     .usage(
       `import { Form } from 'grommet';
 <Form />`,
