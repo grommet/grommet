@@ -188,6 +188,9 @@ describe('Box', () => {
           <Box flex={false} />
           <Box flex="grow" />
           <Box flex="shrink" />
+          <Box flex={{ grow: 2 }} />
+          <Box flex={{ shrink: 2 }} />
+          <Box flex={{ grow: 2, shrink: 2 }} />
         </Box>
       </Grommet>,
     );
