@@ -75,6 +75,16 @@ What text to put in the textarea.
 ```
 string
 ```
+
+**resize**
+
+Whether user is allowed to resize the textarea. Defaults to `true`.
+
+```
+vertical
+horizontal
+boolean
+```
   
 ## Intrinsic element
 

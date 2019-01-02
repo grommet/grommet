@@ -107,7 +107,13 @@ function (_Component2) {
 }(Component);
 
 storiesOf('TextArea', module).add('Simple', function () {
-  return React.createElement(SimpleTextArea, null);
+  return React.createElement(SimpleTextArea, {
+    resize: true
+  });
 }).add('Fill', function () {
   return React.createElement(FillTextArea, null);
+}).add('Non resizable', function () {
+  return React.createElement(SimpleTextArea, {
+    resize: false
+  });
 });

@@ -10,7 +10,8 @@ export var doc = function doc(TextArea) {
     onChange: PropTypes.func.description('Function that will be called when the user types in the textarea.'),
     placeholder: PropTypes.string.description('Placeholder text to use when no value is provided.'),
     plain: PropTypes.bool.description("Whether this is a plain textarea with no border or padding.\nOnly use this when the containing context provides sufficient affordance."),
-    value: PropTypes.string.description('What text to put in the textarea.')
+    value: PropTypes.string.description('What text to put in the textarea.'),
+    resize: PropTypes.oneOfType([PropTypes.oneOf(['vertical', 'horizontal']), PropTypes.bool]).description('Whether user is allowed to resize the textarea.').defaultValue(true)
   };
   return DocumentedTextArea;
 };

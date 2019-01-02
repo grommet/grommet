@@ -114,7 +114,13 @@ function (_Component2) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('TextArea', module).add('Simple', function () {
-  return _react.default.createElement(SimpleTextArea, null);
+  return _react.default.createElement(SimpleTextArea, {
+    resize: true
+  });
 }).add('Fill', function () {
   return _react.default.createElement(FillTextArea, null);
+}).add('Non resizable', function () {
+  return _react.default.createElement(SimpleTextArea, {
+    resize: false
+  });
 });

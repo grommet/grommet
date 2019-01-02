@@ -63,4 +63,16 @@ describe('TextArea', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  [true, false, 'horizontal', 'vertical'].forEach(function (resize) {
+    test("resize " + resize, function () {
+      var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.TextArea, {
+        id: "item",
+        name: "item",
+        resize: resize
+      })));
+
+      var tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+  });
 });
