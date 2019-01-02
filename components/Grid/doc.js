@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.doc = void 0;
+exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -42,3 +42,21 @@ var doc = function doc(Grid) {
 };
 
 exports.doc = doc;
+var themeDoc = {
+  'global.edgeSize': {
+    description: 'The possible sizes for the grid gap.',
+    type: 'object',
+    defaultValue: "{\n      edgeSize: {\n        none: '0px',\n        hair: '1px',\n        xxsmall: '3px',\n        xsmall: '6px',\n        small: '12px',\n        medium: '24px',\n        large: '48px',\n        xlarge: '96px',\n        responsiveBreakpoint: 'small',\n      },\n    }"
+  },
+  'global.size': {
+    description: 'The possible sizes for row and column.',
+    type: 'object',
+    defaultValue: "{\n      xxsmall: '48px',\n      xsmall: '96px',\n      small: '192px',\n      medium: '384px',\n      large: '768px',\n      xlarge: '1152px',\n      xxlarge: '1536px',\n      full: '100%',\n    }"
+  },
+  'grid.extend': {
+    description: 'Any additional style for the Grid.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  }
+};
+exports.themeDoc = themeDoc;
