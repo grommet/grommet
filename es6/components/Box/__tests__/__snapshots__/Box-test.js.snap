@@ -3341,6 +3341,66 @@ exports[`Box flex 1`] = `
   padding: 0px;
 }
 
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 2 0 auto;
+  -ms-flex: 2 0 auto;
+  flex: 2 0 auto;
+  padding: 0px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 2 auto;
+  -ms-flex: 0 2 auto;
+  flex: 0 2 auto;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 2 2 auto;
+  -ms-flex: 2 2 auto;
+  flex: 2 2 auto;
+  padding: 0px;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -3397,6 +3457,42 @@ exports[`Box flex 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
     padding: 0px;
   }
 }
@@ -3418,6 +3514,15 @@ exports[`Box flex 1`] = `
     />
     <div
       className="c5"
+    />
+    <div
+      className="c6"
+    />
+    <div
+      className="c7"
+    />
+    <div
+      className="c8"
     />
   </div>
 </div>

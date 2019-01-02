@@ -329,12 +329,16 @@ string
 
 **flex**
 
-Whether flex-grow and/or flex-shrink is true.
+Whether flex-grow and/or flex-shrink is true and at a desired factor.
 
 ```
 grow
 shrink
 boolean
+{
+  grow: number,
+  shrink: number
+}
 ```
 
 **fill**

@@ -59,8 +59,17 @@ var elevationStyle = css(["box-shadow:", ";"], function (props) {
   return props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][props.elevationProp];
 });
 var FLEX_MAP = (_FLEX_MAP = {}, _FLEX_MAP[true] = '1 1', _FLEX_MAP[false] = '0 0', _FLEX_MAP.grow = '1 0', _FLEX_MAP.shrink = '0 1', _FLEX_MAP);
+
+var flexGrowShrinkProp = function flexGrowShrinkProp(flex) {
+  if (typeof flex === 'boolean' || typeof flex === 'string') {
+    return FLEX_MAP[flex];
+  }
+
+  return (flex.grow ? flex.grow : 0) + " " + (flex.shrink ? flex.shrink : 0);
+};
+
 var flexStyle = css(["flex:", ";"], function (props) {
-  return "" + FLEX_MAP[props.flex] + (props.flex !== true && !props.basis ? ' auto' : '');
+  return "" + flexGrowShrinkProp(props.flex) + (props.flex !== true && !props.basis ? ' auto' : '');
 });
 
 var fillStyle = function fillStyle(fillProp) {

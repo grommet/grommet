@@ -181,6 +181,19 @@ describe('Box', function () {
       flex: "grow"
     }), React.createElement(Box, {
       flex: "shrink"
+    }), React.createElement(Box, {
+      flex: {
+        grow: 2
+      }
+    }), React.createElement(Box, {
+      flex: {
+        shrink: 2
+      }
+    }), React.createElement(Box, {
+      flex: {
+        grow: 2,
+        shrink: 2
+      }
     }))));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
