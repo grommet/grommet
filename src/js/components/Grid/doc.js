@@ -152,3 +152,42 @@ of indicating the DOM tag via the 'as' property.`,
 
   return DocumentedGrid;
 };
+
+export const themeDoc = {
+  'global.edgeSize': {
+    description: 'The possible sizes for the grid gap.',
+    type: 'object',
+    defaultValue: `{
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '3px',
+        xsmall: '6px',
+        small: '12px',
+        medium: '24px',
+        large: '48px',
+        xlarge: '96px',
+        responsiveBreakpoint: 'small',
+      },
+    }`,
+  },
+  'global.size': {
+    description: 'The possible sizes for row and column.',
+    type: 'object',
+    defaultValue: `{
+      xxsmall: '48px',
+      xsmall: '96px',
+      small: '192px',
+      medium: '384px',
+      large: '768px',
+      xlarge: '1152px',
+      xxlarge: '1536px',
+      full: '100%',
+    }`,
+  },
+  'grid.extend': {
+    description: 'Any additional style for the Grid.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+}
