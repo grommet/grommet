@@ -167,9 +167,9 @@ exports[`Calendar date 1`] = `
 
 .c5 {
   margin: 0px;
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
   font-weight: 600;
 }
 
@@ -1368,9 +1368,9 @@ exports[`Calendar dates 1`] = `
 
 .c5 {
   margin: 0px;
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
   font-weight: 600;
 }
 
@@ -2569,9 +2569,9 @@ exports[`Calendar firstDayOfWeek 1`] = `
 
 .c5 {
   margin: 0px;
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
   font-weight: 600;
 }
 
@@ -5777,9 +5777,9 @@ exports[`Calendar reference 1`] = `
 
 .c5 {
   margin: 0px;
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
   font-weight: 600;
 }
 
@@ -7034,9 +7034,9 @@ exports[`Calendar size 1`] = `
 
 .c19 {
   margin: 0px;
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
   font-weight: 600;
 }
 

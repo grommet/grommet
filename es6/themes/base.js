@@ -567,7 +567,7 @@ export var generate = function generate(baseSpacing, scale) {
             // weight: undefined,
           },
           small: _extends({}, fontSizing(1)),
-          medium: _extends({}, fontSizing(1)),
+          medium: _extends({}, fontSizing(2)),
           large: _extends({}, fontSizing(4)),
           xlarge: _extends({}, fontSizing(6))
         },
