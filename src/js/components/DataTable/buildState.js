@@ -24,7 +24,7 @@ const aggregateColumn = (column, data) => {
 };
 
 const findPrimary = (nextProps, prevState, nextState) => {
-  const { columns } = nextProps;
+  const { columns, primaryKey } = nextProps;
 
   let primaryProperty;
   columns.forEach(column => {
@@ -34,7 +34,7 @@ const findPrimary = (nextProps, prevState, nextState) => {
     }
   });
   if (!primaryProperty && columns.length > 0) {
-    primaryProperty = columns[0].property;
+    primaryProperty = primaryKey || columns[0].property;
   }
 
   return { ...nextState, primaryProperty };

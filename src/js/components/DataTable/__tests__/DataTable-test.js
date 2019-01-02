@@ -35,6 +35,23 @@ describe('DataTable', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('primaryKey', () => {
+    const component = renderer.create(
+      <Grommet>
+        <DataTable
+          columns={[
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
+          ]}
+          data={[{ a: 'one', b: 1 }, { a: 'two', b: 2 }]}
+          primaryKey="b"
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('footer', () => {
     const component = renderer.create(
       <Grommet>
