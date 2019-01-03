@@ -37,10 +37,11 @@
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",
     "build-storybook": "build-storybook -c storybook -o storybook-static",
     "prettier": "pretty-quick --staged",
-    "e2e": "concurrently 'npm run storybook' 'npm run cypress:test' -k -s first && npm run visual-regression",
+    "e2e": "npm run e2e:bootstrap && npm run visual-regression",
+    "e2e:bootstrap": "concurrently 'npm run storybook' 'npm run cypress:test' -k -s first",
     "cypress:test": "wait-on http-get://localhost:9001/?selectedKind=Components && cypress run",
     "cypress:run": "cypress run",
-    "cypress:update": "rimraf cypress/screenshots/base/* && npm run cypress:run && mv cypress/screenshots/new/* cypress/screenshots/base",
+    "cypress:update": "rimraf cypress/screenshots/base/* && npm run e2e:bootstrap && mv cypress/screenshots/new/* cypress/screenshots/base",
     "visual-regression": "rimraf cypress/screenshots/diff/* && node ./cypress/differ.js"
   },
   "peerDependencies": {
