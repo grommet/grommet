@@ -6,6 +6,13 @@ import { deepMerge } from '../../utils';
 import { Heading } from '../Heading';
 import { Paragraph } from '../Paragraph';
 import { Anchor } from '../Anchor';
+import { Image } from '../Image';
+import { Table } from '../Table';
+import { TableBody } from '../TableBody';
+import { TableCell } from '../TableCell';
+import { TableFooter } from '../TableFooter';
+import { TableHeader } from '../TableHeader';
+import { TableRow } from '../TableRow';
 
 class GrommetMarkdown extends Component {
   render() {
@@ -22,15 +29,23 @@ class GrommetMarkdown extends Component {
 
     const overrides = deepMerge(
       {
-        p: { component: Paragraph },
         a: { component: Anchor },
+        img: { component: Image },
+        p: { component: Paragraph },
+        table: { component: Table },
+        td: { component: TableCell },
+        tbody: { component: TableBody },
+        tfoot: { component: TableFooter },
+        th: { component: TableCell },
+        thead: { component: TableHeader },
+        tr: { component: TableRow },
       },
       heading,
       components,
       options && options.overrides,
     );
 
-    return <Markdown options={{ overrides }} {...rest} />;
+    return <Markdown options={{ ...options, overrides }} {...rest} />;
   }
 }
 
