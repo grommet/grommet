@@ -62,7 +62,7 @@ exports[`DataTable aggregate 1`] = `
   padding-bottom: 6px;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -105,7 +105,7 @@ exports[`DataTable aggregate 1`] = `
   height: 100%;
 }
 
-.c8 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -121,6 +121,12 @@ exports[`DataTable aggregate 1`] = `
 .c5 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c1 {
@@ -176,26 +182,26 @@ exports[`DataTable aggregate 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     border-top: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -249,19 +255,20 @@ exports[`DataTable aggregate 1`] = `
       <tr
         className=""
       >
-        <td
+        <th
           className="c6"
+          scope="row"
         >
           <div
             className="c7"
           >
             <span
-              className="c5"
+              className="c8"
             >
               one
             </span>
           </div>
-        </td>
+        </th>
         <td
           className="c6"
         >
@@ -279,19 +286,20 @@ exports[`DataTable aggregate 1`] = `
       <tr
         className=""
       >
-        <td
+        <th
           className="c6"
+          scope="row"
         >
           <div
             className="c7"
           >
             <span
-              className="c5"
+              className="c8"
             >
               two
             </span>
           </div>
-        </td>
+        </th>
         <td
           className="c6"
         >
@@ -314,17 +322,17 @@ exports[`DataTable aggregate 1`] = `
         className="c2"
       >
         <td
-          className="c8"
+          className="c9"
         >
           <div
-            className="c9"
+            className="c10"
           />
         </td>
         <td
-          className="c8"
+          className="c9"
         >
           <div
-            className="c9"
+            className="c10"
           >
             <span
               className="c5"
@@ -427,6 +435,12 @@ exports[`DataTable basic 1`] = `
   line-height: 24px;
 }
 
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
@@ -527,19 +541,20 @@ exports[`DataTable basic 1`] = `
       <tr
         className=""
       >
-        <td
+        <th
           className="c6"
+          scope="row"
         >
           <div
             className="c7"
           >
             <span
-              className="c5"
+              className="c8"
             >
               one
             </span>
           </div>
-        </td>
+        </th>
         <td
           className="c6"
         >
@@ -557,19 +572,20 @@ exports[`DataTable basic 1`] = `
       <tr
         className=""
       >
-        <td
+        <th
           className="c6"
+          scope="row"
         >
           <div
             className="c7"
           >
             <span
-              className="c5"
+              className="c8"
             >
               two
             </span>
           </div>
-        </td>
+        </th>
         <td
           className="c6"
         >
@@ -692,7 +708,7 @@ exports[`DataTable footer 1`] = `
   padding-bottom: 6px;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -735,7 +751,7 @@ exports[`DataTable footer 1`] = `
   height: 100%;
 }
 
-.c8 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -751,6 +767,12 @@ exports[`DataTable footer 1`] = `
 .c5 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c1 {
@@ -806,26 +828,26 @@ exports[`DataTable footer 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     border-top: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c9 {
+  .c10 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -879,19 +901,20 @@ exports[`DataTable footer 1`] = `
       <tr
         className=""
       >
-        <td
+        <th
           className="c6"
+          scope="row"
         >
           <div
             className="c7"
           >
             <span
-              className="c5"
+              className="c8"
             >
               one
             </span>
           </div>
-        </td>
+        </th>
         <td
           className="c6"
         >
@@ -909,19 +932,20 @@ exports[`DataTable footer 1`] = `
       <tr
         className=""
       >
-        <td
+        <th
           className="c6"
+          scope="row"
         >
           <div
             className="c7"
           >
             <span
-              className="c5"
+              className="c8"
             >
               two
             </span>
           </div>
-        </td>
+        </th>
         <td
           className="c6"
         >
@@ -944,23 +968,23 @@ exports[`DataTable footer 1`] = `
         className="c2"
       >
         <td
-          className="c8"
+          className="c9"
         >
           <div
-            className="c9"
+            className="c10"
           >
             <span
-              className="c5"
+              className="c8"
             >
               Total
             </span>
           </div>
         </td>
         <td
-          className="c8"
+          className="c9"
         >
           <div
-            className="c9"
+            className="c10"
           />
         </td>
       </tr>
@@ -1616,6 +1640,264 @@ exports[`DataTable groupBy 2`] = `
 </div>
 `;
 
+exports[`DataTable primaryKey 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c3 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+  vertical-align: bottom;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  height: 100%;
+}
+
+.c2 {
+  height: 100%;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c8 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className="c2"
+      >
+        <th
+          className="c3"
+          scope="col"
+        >
+          <div
+            className="c4"
+          >
+            <span
+              className="c5"
+            >
+              A
+            </span>
+          </div>
+        </th>
+        <th
+          className="c3"
+          scope="col"
+        >
+          <div
+            className="c4"
+          >
+            <span
+              className="c5"
+            >
+              B
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <td
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c5"
+            >
+              one
+            </span>
+          </div>
+        </td>
+        <th
+          className="c6"
+          scope="row"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c8"
+            >
+              1
+            </span>
+          </div>
+        </th>
+      </tr>
+      <tr
+        className=""
+      >
+        <td
+          className="c6"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c5"
+            >
+              two
+            </span>
+          </div>
+        </td>
+        <th
+          className="c6"
+          scope="row"
+        >
+          <div
+            className="c7"
+          >
+            <span
+              className="c8"
+            >
+              2
+            </span>
+          </div>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`DataTable resizeable 1`] = `
 .c0 {
   font-size: 18px;
@@ -1742,6 +2024,12 @@ exports[`DataTable resizeable 1`] = `
 .c6 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c7 {
@@ -1894,19 +2182,20 @@ exports[`DataTable resizeable 1`] = `
       <tr
         className=""
       >
-        <td
+        <th
           className="c9"
+          scope="row"
         >
           <div
             className="c10"
           >
             <span
-              className="c6"
+              className="c11"
             >
               one
             </span>
           </div>
-        </td>
+        </th>
         <td
           className="c9"
         >
@@ -1924,19 +2213,20 @@ exports[`DataTable resizeable 1`] = `
       <tr
         className=""
       >
-        <td
+        <th
           className="c9"
+          scope="row"
         >
           <div
             className="c10"
           >
             <span
-              className="c6"
+              className="c11"
             >
               two
             </span>
           </div>
-        </td>
+        </th>
         <td
           className="c9"
         >
@@ -2045,6 +2335,12 @@ exports[`DataTable sort 1`] = `
 .c7 {
   font-size: 18px;
   line-height: 24px;
+}
+
+.c10 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
 }
 
 .c5 {
@@ -2194,19 +2490,20 @@ exports[`DataTable sort 1`] = `
       <tr
         class=""
       >
-        <td
+        <th
           class="c8"
+          scope="row"
         >
           <div
             class="c9"
           >
             <span
-              class="c7"
+              class="c10"
             >
               zero
             </span>
           </div>
-        </td>
+        </th>
         <td
           class="c8"
         >
@@ -2224,19 +2521,20 @@ exports[`DataTable sort 1`] = `
       <tr
         class=""
       >
-        <td
+        <th
           class="c8"
+          scope="row"
         >
           <div
             class="c9"
           >
             <span
-              class="c7"
+              class="c10"
             >
               one
             </span>
           </div>
-        </td>
+        </th>
         <td
           class="c8"
         >
@@ -2254,19 +2552,20 @@ exports[`DataTable sort 1`] = `
       <tr
         class=""
       >
-        <td
+        <th
           class="c8"
+          scope="row"
         >
           <div
             class="c9"
           >
             <span
-              class="c7"
+              class="c10"
             >
               two
             </span>
           </div>
-        </td>
+        </th>
         <td
           class="c8"
         >
@@ -2430,9 +2729,15 @@ exports[`DataTable sort 2`] = `
   height: 100%;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c2 {
   font-size: 18px;
   line-height: 24px;
+  font-weight: bold;
 }
 
 @media only screen and (max-width:768px) {
@@ -2458,8 +2763,9 @@ exports[`DataTable sort 2`] = `
 <tr
         class=""
       >
-        <td
+        <th
           class="c0"
+          scope="row"
         >
           <div
             class="c1"
@@ -2470,7 +2776,7 @@ exports[`DataTable sort 2`] = `
               one
             </span>
           </div>
-        </td>
+        </th>
         <td
           class="c0"
         >
@@ -2478,7 +2784,7 @@ exports[`DataTable sort 2`] = `
             class="c1"
           >
             <span
-              class="c2"
+              class="c3"
             >
               1
             </span>
@@ -2488,19 +2794,20 @@ exports[`DataTable sort 2`] = `
       <tr
         class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws"
       >
-        <td
+        <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          scope="row"
         >
           <div
             class="StyledBox-sc-13pk1d4-0 eAAZJM"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="StyledText-sc-1sadyjn-0 dndifk"
             >
               two
             </span>
           </div>
-        </td>
+        </th>
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
         >
@@ -2547,9 +2854,15 @@ exports[`DataTable sort 2`] = `
   height: 100%;
 }
 
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c2 {
   font-size: 18px;
   line-height: 24px;
+  font-weight: bold;
 }
 
 @media only screen and (max-width:768px) {
@@ -2575,8 +2888,9 @@ exports[`DataTable sort 2`] = `
 <tr
         class=""
       >
-        <td
+        <th
           class="c0"
+          scope="row"
         >
           <div
             class="c1"
@@ -2587,7 +2901,7 @@ exports[`DataTable sort 2`] = `
               zero
             </span>
           </div>
-        </td>
+        </th>
         <td
           class="c0"
         >
@@ -2595,7 +2909,7 @@ exports[`DataTable sort 2`] = `
             class="c1"
           >
             <span
-              class="c2"
+              class="c3"
             >
               0
             </span>

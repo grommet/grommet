@@ -23,10 +23,10 @@ var Cell = function Cell(_ref) {
   var _ref$column = _ref.column,
       align = _ref$column.align,
       property = _ref$column.property,
-      primary = _ref$column.primary,
       render = _ref$column.render,
       context = _ref.context,
       datum = _ref.datum,
+      primaryProperty = _ref.primaryProperty,
       scope = _ref.scope,
       theme = _ref.theme;
   var content;
@@ -38,7 +38,7 @@ var Cell = function Cell(_ref) {
   }
 
   if (typeof content === 'string' || typeof content === 'number') {
-    var textProps = primary ? theme.dataTable.primary : {};
+    var textProps = property === primaryProperty ? theme.dataTable.primary : {};
     content = _react.default.createElement(_Text.Text, textProps, content);
   }
 
