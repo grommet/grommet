@@ -16,6 +16,12 @@ jobs:
             - ~/.cache
             - node_modules
       - run:
+          name: Running linter
+          command: npm run lint
+      - run:
+          name: Running jest
+          command: npm run test
+      - run:
           name: Running E2E tests
           command: npm run e2e
       - store_test_results:
