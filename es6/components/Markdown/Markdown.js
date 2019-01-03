@@ -10,6 +10,13 @@ import { deepMerge } from '../../utils';
 import { Heading } from '../Heading';
 import { Paragraph } from '../Paragraph';
 import { Anchor } from '../Anchor';
+import { Image } from '../Image';
+import { Table } from '../Table';
+import { TableBody } from '../TableBody';
+import { TableCell } from '../TableCell';
+import { TableFooter } from '../TableFooter';
+import { TableHeader } from '../TableHeader';
+import { TableRow } from '../TableRow';
 
 var GrommetMarkdown =
 /*#__PURE__*/
@@ -41,17 +48,41 @@ function (_Component) {
       return result;
     }, {});
     var overrides = deepMerge({
+      a: {
+        component: Anchor
+      },
+      img: {
+        component: Image
+      },
       p: {
         component: Paragraph
       },
-      a: {
-        component: Anchor
+      table: {
+        component: Table
+      },
+      td: {
+        component: TableCell
+      },
+      tbody: {
+        component: TableBody
+      },
+      tfoot: {
+        component: TableFooter
+      },
+      th: {
+        component: TableCell
+      },
+      thead: {
+        component: TableHeader
+      },
+      tr: {
+        component: TableRow
       }
     }, heading, components, options && options.overrides);
     return React.createElement(Markdown, _extends({
-      options: {
+      options: _extends({}, options, {
         overrides: overrides
-      }
+      })
     }, rest));
   };
 
