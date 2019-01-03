@@ -11,16 +11,23 @@ const directories = readdirSync(BaseScreenshots);
 const constructPath = (dir, base) => path.format({dir, base});
 
 const differ = (file) => {
-  try {
-    execSync(`./node_modules/.bin/blink-diff --no-copy --output "${constructPath(DiffScreenshots, file)}" "${constructPath(BaseScreenshots, file)}" "${constructPath(NewScreenshots, file)}"`)
-  } catch (err) {
-    console.warn(`Diff of ${file} failed with status ${err.status}`)
-  }
+  execSync(`./node_modules/.bin/blink-diff --no-copy --output "${constructPath(DiffScreenshots, file)}" "${constructPath(BaseScreenshots, file)}" "${constructPath(NewScreenshots, file)}"`)
 }
+
+const errors = [];
 
 directories.forEach((directory) => {
   mkdirSync(constructPath(DiffScreenshots, directory));
   readdirSync(constructPath(BaseScreenshots, directory)).forEach((file) => {
-    differ(constructPath(directory, file));
+    try {
+      differ(constructPath(directory, file));
+    } catch (err) {
+      errors.push(`Diff of ${file} failed with status ${err.status}`);
+    }
   })
 })
+
+if (errors.length > 0) {
+  console.warn(errors.join("\n"));
+  process.exit(1);
+}
