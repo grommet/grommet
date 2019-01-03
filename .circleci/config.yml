@@ -7,16 +7,19 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          keys:
-            - yarn-cypress-cache-{{ checksum "yarn.lock" }}
+        keys:
+          - yarn-cypress-cache-{{ checksum "yarn.lock" }}
       - run: npm install
       - save_cache:
-          key: yarn-cypress-cache-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache
-            - node_modules
+        key: yarn-cypress-cache-{{ checksum "yarn.lock" }}
+        paths:
+          - ~/.cache
+          - node_modules
       - run:
-          name: Running E2E tests
-          command: npm run e2e
+        name: Running E2E tests
+        command: npm run e2e
       - store_test_results:
-          path: cypress/screenshots/diff
+        path: cypress/screenshots/diff
+      - store_artifacts:
+        path: cypress/screenshots/diff
+        destination: cypress-diff
