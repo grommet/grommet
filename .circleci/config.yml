@@ -15,12 +15,36 @@ jobs:
           paths:
             - ~/.cache
             - node_modules
+  lint:
+    docker:
+      - image: cypress/browsers:chrome69
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-cypress-cache-{{ checksum "yarn.lock" }}
       - run:
           name: Running linter
           command: npm run lint
+  jest:
+    docker:
+      - image: cypress/browsers:chrome69
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-cypress-cache-{{ checksum "yarn.lock" }}
       - run:
           name: Running jest
           command: npm run test
+  e2e:
+    docker:
+      - image: cypress/browsers:chrome69
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-cypress-cache-{{ checksum "yarn.lock" }}
       - run:
           name: Running E2E tests
           command: npm run e2e
@@ -29,3 +53,19 @@ jobs:
       - store_artifacts:
           path: cypress/screenshots/diff
           destination: cypress-diff
+
+
+workflows:
+  version: 2
+  build_test:
+    jobs:
+      - build
+      - lint:
+          requires:
+            - build
+      - jest:
+          requires:
+            - build
+      - e2e:
+          requires:
+            - build
