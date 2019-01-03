@@ -13,7 +13,14 @@ import { TableCell } from '../TableCell';
 import { Cell } from './Cell';
 import { StyledDataTableFooter } from './StyledDataTable';
 
-const Footer = ({ columns, footerValues, groups, theme, ...rest }) => (
+const Footer = ({
+  columns,
+  footerValues,
+  groups,
+  primaryProperty,
+  theme,
+  ...rest
+}) => (
   <StyledDataTableFooter as={TableFooter} {...rest}>
     <TableRow>
       {groups && (
@@ -27,6 +34,7 @@ const Footer = ({ columns, footerValues, groups, theme, ...rest }) => (
           context="footer"
           column={column}
           datum={footerValues}
+          primaryProperty={primaryProperty}
         />
       ))}
     </TableRow>

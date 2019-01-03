@@ -142,6 +142,7 @@ class DataTable extends Component {
             columns={columns}
             footerValues={footerValues}
             groups={groups}
+            primaryProperty={primaryProperty}
             size={size}
           />
         )}

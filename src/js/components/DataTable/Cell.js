@@ -9,9 +9,10 @@ import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 
 const Cell = ({
-  column: { align, property, primary, render },
+  column: { align, property, render },
   context,
   datum,
+  primaryProperty,
   scope,
   theme,
 }) => {
@@ -23,7 +24,8 @@ const Cell = ({
   }
 
   if (typeof content === 'string' || typeof content === 'number') {
-    const textProps = primary ? theme.dataTable.primary : {};
+    const textProps =
+      property === primaryProperty ? theme.dataTable.primary : {};
     content = <Text {...textProps}>{content}</Text>;
   }
 

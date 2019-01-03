@@ -30,6 +30,7 @@ export const doc = DataTable => {
             aggregate: PropTypes.bool,
           }),
         ]),
+        primary: PropTypes.bool,
         property: PropTypes.string.isRequired,
         render: PropTypes.func,
         search: PropTypes.bool,
@@ -45,7 +46,10 @@ export const doc = DataTable => {
       column should be aggregated. This only applies to a footer or groupBy
       context. 'footer' indicates what should be shown in the footer for
       the column. 'search' indicates whether a search filter should be
-      made available for the column.`,
+      made available for the column. 'primary' indicates that this property
+      should be used as the unique identifier, which gives the cell 'row' scope
+      for accessibility. If 'primary' is not used for any column, and
+      'primaryKey' isn't specified either, then the first column will be used.`,
     ),
     data: PropTypes.arrayOf(PropTypes.shape({})).description(
       'Array of data objects.',
@@ -65,6 +69,12 @@ export const doc = DataTable => {
       this function will be called with an object with keys for property
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.`,
+    ),
+    primaryKey: PropTypes.string.description(
+      `When supplied, indicates the property for a data object to use to
+      get a unique identifier. See also the 'columns.primary' description.
+      Use this property when the columns approach will not work for your
+      data set.`,
     ),
     resizeable: PropTypes.bool.description(
       'Whether to allow the user to resize column widths.',

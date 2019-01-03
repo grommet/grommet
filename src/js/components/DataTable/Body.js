@@ -35,7 +35,12 @@ export const Body = ({
               context="body"
               column={column}
               datum={datum}
-              scope={column.primary ? 'row' : undefined}
+              primaryProperty={primaryProperty}
+              scope={
+                column.primary || column.property === primaryProperty
+                  ? 'row'
+                  : undefined
+              }
             />
           ))}
         </StyledDataTableRow>
