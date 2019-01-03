@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node
+      - image: cypress/browsers:chrome69
     steps:
       - checkout
       - restore_cache:
