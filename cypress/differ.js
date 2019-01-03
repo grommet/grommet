@@ -11,7 +11,7 @@ const directories = readdirSync(BaseScreenshots);
 const constructPath = (dir, base) => path.format({dir, base});
 
 const differ = (file) => {
-  execSync(`./node_modules/.bin/blink-diff --threshold-type percent --threshold 5 --no-copy --output "${constructPath(DiffScreenshots, file)}" "${constructPath(BaseScreenshots, file)}" "${constructPath(NewScreenshots, file)}"`)
+  execSync(`./node_modules/.bin/blink-diff --threshold-type percent --threshold 2 --no-copy --output "${constructPath(DiffScreenshots, file)}" "${constructPath(BaseScreenshots, file)}" "${constructPath(NewScreenshots, file)}"`)
 }
 
 const errors = [];
