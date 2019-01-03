@@ -14,7 +14,7 @@ jobs:
           key: yarn-cypress-cache-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache
-            - node_modules
+            - ./node_modules
   lint:
     docker:
       - image: cypress/browsers:chrome69
