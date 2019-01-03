@@ -9,7 +9,7 @@ jobs:
       - restore_cache:
           keys:
             - yarn-cypress-cache-{{ checksum "yarn.lock" }}
-      - run: npm install
+      - run: yarn install
       - save_cache:
           key: yarn-cypress-cache-{{ checksum "yarn.lock" }}
           paths:
@@ -24,6 +24,9 @@ jobs:
           keys:
             - yarn-cypress-cache-{{ checksum "yarn.lock" }}
       - run:
+          name: Install node modules
+          command: yarn --frozen-lockfile
+      - run:
           name: Running linter
           command: npm run lint
   jest:
@@ -35,6 +38,9 @@ jobs:
           keys:
             - yarn-cypress-cache-{{ checksum "yarn.lock" }}
       - run:
+          name: Install node modules
+          command: yarn --frozen-lockfile
+      - run:
           name: Running jest
           command: npm run test
   e2e:
@@ -45,6 +51,9 @@ jobs:
       - restore_cache:
           keys:
             - yarn-cypress-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install node modules
+          command: yarn --frozen-lockfile
       - run:
           name: Running E2E tests
           command: npm run e2e
