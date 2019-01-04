@@ -8463,10 +8463,10 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-desc@^4.1.0:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-4.1.1.tgz#0d92903dc217f6ea1086216e7ee8a880ba533627"
-  integrity sha512-EJdjChvH0oNuWm077ygTDQxffMi+E62PEi66s8XC3WzW8DgbxROdMtld9xtC2Zd7MvD3nAk7XDixrbhp6DABbA==
+react-desc@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-4.1.2.tgz#83fc4ede66b2d45ae4ef63c18421474d55972966"
+  integrity sha512-JAVe89uaLr0HZ0IKodnpTPNgNyJ/SPDQnl3VJPVwI+SpebmHvJiBNZEOwX201QmSbsVGqRY8ql/VFPlAx85WzA==
 
 react-dev-utils@^6.0.4, react-dev-utils@^6.1.0:
   version "6.1.1"
