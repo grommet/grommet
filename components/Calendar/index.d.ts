@@ -8,8 +8,8 @@ export interface CalendarProps {
   animate?: boolean;
   bounds?: string[];
   date?: string;
-  dates?: string | string[][];
-  disabled?: string | string[][];
+  dates?: (string | string[])[];
+  disabled?: (string | string[])[];
   firstDayOfWeek?: "0" | "1";
   header?: ((...args: any[]) => any);
   locale?: string;
