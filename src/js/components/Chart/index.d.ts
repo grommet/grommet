@@ -14,7 +14,7 @@ export interface ChartProps {
   size?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | {height?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string,width?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "full" | string} | string;
   thickness?: "hair" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "none" | string;
   type?: "bar" | "line" | "area";
-  values: number | number[] | {label?: string,onClick?: ((...args: any[]) => any),onHover?: ((...args: any[]) => any),value: number | number[]}[];
+  values: (number | number[] | {label?: string,onClick?: ((...args: any[]) => any),onHover?: ((...args: any[]) => any),value: number | number[]})[];
 }
 
 declare const Chart: React.ComponentType<ChartProps>;

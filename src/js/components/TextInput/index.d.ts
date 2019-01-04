@@ -15,7 +15,7 @@ export interface TextInputProps {
   placeholder?: string | React.ReactNode;
   plain?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
-  suggestions?: {label?: React.ReactNode,value?: any} | string[];
+  suggestions?: ({label?: React.ReactNode,value?: any} | string)[];
   value?: string;
 }
 
