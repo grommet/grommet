@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.doc = void 0;
+exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -19,3 +19,26 @@ var doc = function doc(Carousel) {
 };
 
 exports.doc = doc;
+var themeDoc = {
+  'carousel.icons.next': {
+    description: 'The icon to use for the next image navigation control.',
+    type: 'element',
+    defaultValue: '<Next />'
+  },
+  'carousel.icons.previous': {
+    description: 'The icon to use for the previous image navigation control.',
+    type: 'element',
+    defaultValue: '<Previous />'
+  },
+  'carousel.icons.current': {
+    description: 'The icon to use on the middle navigation control. One icon per carousel image.',
+    type: 'element',
+    defaultValue: '<Next />'
+  },
+  'carousel.icons.color': {
+    description: 'The color used for Carousel icons.',
+    type: 'string',
+    defaultValue: undefined
+  }
+};
+exports.themeDoc = themeDoc;
