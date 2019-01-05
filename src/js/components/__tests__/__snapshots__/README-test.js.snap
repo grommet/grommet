@@ -2595,7 +2595,12 @@ NOTE: This can only be used with non-toggle components
 \`\`\`
 boolean
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+input
+\`\`\`",
   "Clock": "## Clock
 A clock with timezone awareness.
 
@@ -3600,7 +3605,12 @@ Whether the drop should be open or not. Setting this property does not
 \`\`\`
 boolean
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+button
+\`\`\`",
   "Form": "## Form
 A form that manages state for its fields.
 
@@ -3666,7 +3676,12 @@ An object representing all of the data in the form. Defaults to \`{}\`.
 
 }
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+form
+\`\`\`",
   "FormField": "## FormField
 A single field in a form. FormField wraps an input component with
       a label, help, and/or error messaging. It typically contains an input
@@ -5101,7 +5116,12 @@ What text to put in the input. The caller should ensure that it
 \`\`\`
 string
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+input
+\`\`\`",
   "Menu": "## Menu
 A control that opens a Drop containing plain Buttons. The labels
       and behavior of the contained Buttons are described via the \`items\`
@@ -5328,6 +5348,11 @@ xlarge
 string
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+button
+\`\`\`
 ## Theme
   
 **global.colors.control**
@@ -5947,7 +5972,12 @@ The current value.
 number
 string
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+input
+\`\`\`",
   "RangeSelector": "## RangeSelector
 A control to input a range of values.
 
@@ -6113,7 +6143,12 @@ Indicates whether the browser history should be appended to or replaced. Default
 push
 replace
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+a
+\`\`\`",
   "RoutedButton": "## RoutedButton
 A button with support for React Router.
 
@@ -6143,7 +6178,12 @@ Indicates whether the browser history should be appended to or replaced. Default
 push
 replace
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+button
+\`\`\`",
   "Select": "## Select
 A control to select a value, with optional search.
 
@@ -6533,6 +6573,11 @@ Empty option message to display when no matching results were found Defaults to 
 string
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+select
+\`\`\`
 ## Theme
   
 **select.background**
@@ -8123,7 +8168,12 @@ Enables video muting. This option is best used with the autoPlay flag.
 \`\`\`
 boolean
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+video
+\`\`\`",
   "WorldMap": "## WorldMap
 A map of the world, or a continent.
 

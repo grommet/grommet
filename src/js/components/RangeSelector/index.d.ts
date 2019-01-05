@@ -15,6 +15,6 @@ export interface RangeSelectorProps {
   values: number[];
 }
 
-declare const RangeSelector: React.ComponentType<RangeSelectorProps>;
+declare const RangeSelector: React.ComponentType<RangeSelectorProps & JSX.IntrinsicElements['div']>;
 
 export { RangeSelector };

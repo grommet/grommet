@@ -16,7 +16,8 @@ import { SelectContainer } from './SelectContainer';
 const SelectTextInput = styled(TextInput)`
   cursor: pointer;
 `;
-const StyledSelectBox = styled(Box)`
+
+const StyledSelectDropButton = styled(DropButton)`
   ${props => !props.plain && controlBorderStyle};
   ${props =>
     props.theme.select &&
@@ -24,8 +25,19 @@ const StyledSelectBox = styled(Box)`
     props.theme.select.control.extend};
 `;
 
-StyledSelectBox.defaultProps = {};
-Object.setPrototypeOf(StyledSelectBox.defaultProps, defaultProps);
+StyledSelectDropButton.defaultProps = {};
+Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
+
+// const StyledSelectBox = styled(Box)`
+//   ${props => !props.plain && controlBorderStyle};
+//   ${props =>
+//     props.theme.select &&
+//     props.theme.select.control &&
+//     props.theme.select.control.extend};
+// `;
+
+// StyledSelectBox.defaultProps = {};
+// Object.setPrototypeOf(StyledSelectBox.defaultProps, defaultProps);
 
 class Select extends Component {
   static defaultProps = {
@@ -153,7 +165,7 @@ class Select extends Component {
 
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
-        <DropButton
+        <StyledSelectDropButton
           ref={forwardRef}
           id={id}
           disabled={disabled === true || undefined}
@@ -169,7 +181,7 @@ class Select extends Component {
             <SelectContainer {...this.props} onChange={onSelectChange} />
           }
         >
-          <StyledSelectBox
+          <Box
             align="center"
             direction="row"
             justify="between"
@@ -206,8 +218,8 @@ class Select extends Component {
             >
               <SelectIcon color={iconColor} size={size} />
             </Box>
-          </StyledSelectBox>
-        </DropButton>
+          </Box>
+        </StyledSelectDropButton>
       </Keyboard>
     );
   }

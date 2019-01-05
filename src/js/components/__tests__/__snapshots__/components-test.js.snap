@@ -1478,6 +1478,7 @@ area",
       },
     ],
     "description": "A checkbox toggle control.",
+    "intrinsicElement": "input",
     "name": "CheckBox",
     "properties": Array [
       Object {
@@ -1649,6 +1650,7 @@ vertical",
       so that the contents behind it are not focusable. All properties of
       Button can be passed through.
       ",
+    "intrinsicElement": "button",
     "name": "DropButton",
     "properties": Array [
       Object {
@@ -2023,6 +2025,7 @@ contain",
       },
     ],
     "description": "An input field with formalized syntax.",
+    "intrinsicElement": "input",
     "name": "MaskedInput",
     "properties": Array [
       Object {
@@ -2093,6 +2096,7 @@ string",
     "description": "A control that opens a Drop containing plain Buttons. The labels
       and behavior of the contained Buttons are described via the \`items\`
       property.",
+    "intrinsicElement": "button",
     "name": "Menu",
     "properties": Array [
       Object {
@@ -2347,6 +2351,7 @@ with the same name so form submissions work.",
       },
     ],
     "description": "A slider control to input a value within a fixed range.",
+    "intrinsicElement": "input",
     "name": "RangeInput",
     "properties": Array [
       Object {
@@ -2525,6 +2530,7 @@ string",
       },
     ],
     "description": "A control to select a value, with optional search.",
+    "intrinsicElement": "select",
     "name": "Select",
     "properties": Array [
       Object {
@@ -3290,6 +3296,7 @@ suggestions and instead rely on the user to type more.",
       },
     ],
     "description": "A video player.",
+    "intrinsicElement": "video",
     "name": "Video",
     "properties": Array [
       Object {

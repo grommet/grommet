@@ -9,7 +9,8 @@ export const doc = Form => {
     .usage(
       `import { Form } from 'grommet';
 <Form />`,
-    );
+    )
+    .intrinsicElement('form');
 
   DocumentedForm.propTypes = {
     errors: PropTypes.shape({})

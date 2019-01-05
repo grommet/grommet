@@ -28,6 +28,6 @@ export interface BoxProps {
   wrap?: boolean;
 }
 
-declare const Box: React.ComponentType<BoxProps>;
+declare const Box: React.ComponentType<BoxProps & JSX.IntrinsicElements['div']>;
 
 export { Box };

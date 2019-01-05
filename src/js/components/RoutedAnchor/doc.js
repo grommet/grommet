@@ -8,7 +8,8 @@ export const doc = RoutedAnchor => {
     .description('An Anchor with support for React Router.')
     .usage(
       "import { RoutedAnchor } from 'grommet';\n<RoutedAnchor primary={true} path='/documentation' />",
-    );
+    )
+    .intrinsicElement('a');
   DocumentedRoutedAnchor.propTypes = { ...ROUTER_PROPS };
   return DocumentedRoutedAnchor;
 };

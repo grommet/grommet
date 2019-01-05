@@ -9,7 +9,8 @@ export const doc = RangeInput => {
     .usage(
       `import { RangeInput } from 'grommet';
 <RangeInput />`,
-    );
+    )
+    .intrinsicElement('input');
 
   DocumentedRangeInput.propTypes = {
     id: PropTypes.string.description('The id attribute of the range input.'),

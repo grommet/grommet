@@ -72,3 +72,8 @@ number
 string
 ```
   
+## Intrinsic element
+
+```
+input
+```

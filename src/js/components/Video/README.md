@@ -150,3 +150,8 @@ Enables video muting. This option is best used with the autoPlay flag.
 boolean
 ```
   
+## Intrinsic element
+
+```
+video
+```

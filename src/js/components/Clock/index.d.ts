@@ -14,6 +14,6 @@ export interface ClockProps {
   type?: "analog" | "digital";
 }
 
-declare const Clock: React.ComponentType<ClockProps>;
+declare const Clock: React.ComponentType<ClockProps & JSX.IntrinsicElements['div']>;
 
 export { Clock };

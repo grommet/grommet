@@ -28,3 +28,8 @@ push
 replace
 ```
   
+## Intrinsic element
+
+```
+button
+```
