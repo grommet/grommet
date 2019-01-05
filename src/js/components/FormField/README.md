@@ -89,3 +89,8 @@ Validation rule. Provide a regular expression or a function. If a
 function
 ```
   
+## Intrinsic element
+
+```
+div
+```

@@ -27,3 +27,8 @@ string
 node
 ```
   
+## Intrinsic element
+
+```
+button
+```

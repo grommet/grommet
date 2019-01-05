@@ -6,7 +6,8 @@ export const doc = Chart => {
   const DocumentedChart = describe(Chart)
     .availableAt(getAvailableAtBadge('Chart'))
     .description('A graphical chart.')
-    .usage("import { Chart } from 'grommet';\n<Chart />");
+    .usage("import { Chart } from 'grommet';\n<Chart />")
+    .intrinsicElement('svg');
 
   DocumentedChart.propTypes = {
     ...genericProps,

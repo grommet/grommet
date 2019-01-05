@@ -27,6 +27,11 @@ horizontal
 vertical
 ```
   
+## Intrinsic element
+
+```
+div
+```
 ## Theme
   
 **collapsible.minSpeed**

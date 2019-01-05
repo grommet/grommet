@@ -18,6 +18,13 @@ Custom components and props to override html elements such as 'img'
       with grommet components
 
 ```
-{ test: shape, ... }
+{
+
+}
 ```
   
+## Intrinsic element
+
+```
+div
+```

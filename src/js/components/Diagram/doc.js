@@ -10,7 +10,8 @@ export const doc = Diagram => {
       Boxes can be used in the \`guidingChild\` layer of Stack and then
       Diagram can be used to draw lines connecting the Boxes.`,
     )
-    .usage("import { Diagram } from 'grommet';\n<Diagram />");
+    .usage("import { Diagram } from 'grommet';\n<Diagram />")
+    .intrinsicElement('svg');
 
   DocumentedDiagram.propTypes = {
     connections: PropTypes.arrayOf(

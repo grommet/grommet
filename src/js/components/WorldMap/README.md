@@ -183,6 +183,11 @@ string
 }
 ```
   
+## Intrinsic element
+
+```
+svg
+```
 ## Theme
   
 **worldMap.color**

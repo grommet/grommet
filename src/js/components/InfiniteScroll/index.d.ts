@@ -11,6 +11,6 @@ export interface InfiniteScrollProps {
   step?: number;
 }
 
-declare const InfiniteScroll: React.ComponentType<InfiniteScrollProps & JSX.IntrinsicElements['div']>;
+declare const InfiniteScroll: React.ComponentType<InfiniteScrollProps>;
 
 export { InfiniteScroll };

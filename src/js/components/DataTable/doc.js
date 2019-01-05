@@ -9,7 +9,8 @@ export const doc = DataTable => {
     .usage(
       `import { DataTable } from 'grommet';
 <DataTable />`,
-    );
+    )
+    .intrinsicElement('table');
 
   DocumentedDataTable.propTypes = {
     ...genericProps,

@@ -176,7 +176,7 @@ export interface ChartProps {
   values: (number | number[] | {label?: string,onClick?: ((...args: any[]) => any),onHover?: ((...args: any[]) => any),value: number | number[]})[];
 }
 
-declare const Chart: React.ComponentType<ChartProps & JSX.IntrinsicElements['div']>;
+declare const Chart: React.ComponentType<ChartProps & JSX.IntrinsicElements['svg']>;
 
 export { Chart };
 ",
@@ -214,7 +214,7 @@ export interface ClockProps {
   type?: \\"analog\\" | \\"digital\\";
 }
 
-declare const Clock: React.ComponentType<ClockProps & JSX.IntrinsicElements['div']>;
+declare const Clock: React.ComponentType<ClockProps & (JSX.IntrinsicElements['div'] | JSX.IntrinsicElements['svg'])>;
 
 export { Clock };
 ",
@@ -247,7 +247,7 @@ export interface DataTableProps {
   sortable?: boolean;
 }
 
-declare const DataTable: React.ComponentType<DataTableProps & JSX.IntrinsicElements['div']>;
+declare const DataTable: React.ComponentType<DataTableProps & JSX.IntrinsicElements['table']>;
 
 export { DataTable };
 ",
@@ -257,7 +257,7 @@ export interface DiagramProps {
   connections: {anchor?: \\"center\\" | \\"vertical\\" | \\"horizontal\\",color?: string | {dark?: string,light?: string},fromTarget: string | object,label?: string,offset?: \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,thickness?: \\"hair\\" | \\"xxsmall\\" | \\"xsmall\\" | \\"small\\" | \\"medium\\" | \\"large\\" | string,toTarget: string | object,type?: \\"direct\\" | \\"curved\\" | \\"rectilinear\\"}[];
 }
 
-declare const Diagram: React.ComponentType<DiagramProps & JSX.IntrinsicElements['div']>;
+declare const Diagram: React.ComponentType<DiagramProps & JSX.IntrinsicElements['svg']>;
 
 export { Diagram };
 ",
@@ -399,7 +399,7 @@ export interface HeadingProps {
   truncate?: boolean;
 }
 
-declare const Heading: React.ComponentType<HeadingProps & JSX.IntrinsicElements['div']>;
+declare const Heading: React.ComponentType<HeadingProps & (JSX.IntrinsicElements['h1'] | JSX.IntrinsicElements['h2'] | JSX.IntrinsicElements['h3'] | JSX.IntrinsicElements['h4'])>;
 
 export { Heading };
 ",
@@ -430,7 +430,7 @@ export interface InfiniteScrollProps {
   step?: number;
 }
 
-declare const InfiniteScroll: React.ComponentType<InfiniteScrollProps & JSX.IntrinsicElements['div']>;
+declare const InfiniteScroll: React.ComponentType<InfiniteScrollProps>;
 
 export { InfiniteScroll };
 ",
@@ -443,6 +443,7 @@ export interface KeyboardProps {
   onDown?: ((...args: any[]) => any);
   onEnter?: ((...args: any[]) => any);
   onEsc?: ((...args: any[]) => any);
+  onKeyDown?: ((...args: any[]) => any);
   onLeft?: ((...args: any[]) => any);
   onRight?: ((...args: any[]) => any);
   onShift?: ((...args: any[]) => any);
@@ -451,7 +452,7 @@ export interface KeyboardProps {
   onUp?: ((...args: any[]) => any);
 }
 
-declare const Keyboard: React.ComponentType<KeyboardProps & JSX.IntrinsicElements['div']>;
+declare const Keyboard: React.ComponentType<KeyboardProps>;
 
 export { Keyboard };
 ",
@@ -476,7 +477,7 @@ export { Layer };
   "Markdown": "import * as React from \\"react\\";
 
 export interface MarkdownProps {
-  components?: { [key: string]: {component?: JSX.Element,props?: {}} };
+  components?: {};
 }
 
 declare const Markdown: React.ComponentType<MarkdownProps & JSX.IntrinsicElements['div']>;
@@ -535,7 +536,7 @@ export interface MeterProps {
   values?: {color?: string,highlight?: boolean,label: string,onClick?: ((...args: any[]) => any),onHover?: ((...args: any[]) => any),value: number}[];
 }
 
-declare const Meter: React.ComponentType<MeterProps & JSX.IntrinsicElements['div']>;
+declare const Meter: React.ComponentType<MeterProps & JSX.IntrinsicElements['svg']>;
 
 export { Meter };
 ",
@@ -567,7 +568,7 @@ export interface RadioButtonProps {
   onChange?: ((...args: any[]) => any);
 }
 
-declare const RadioButton: React.ComponentType<RadioButtonProps & JSX.IntrinsicElements['div']>;
+declare const RadioButton: React.ComponentType<RadioButtonProps & JSX.IntrinsicElements['input']>;
 
 export { RadioButton };
 ",
@@ -675,7 +676,7 @@ export interface SkipLinksProps {
   messages?: {skipTo?: string};
 }
 
-declare const SkipLinks: React.ComponentType<SkipLinksProps & JSX.IntrinsicElements['div']>;
+declare const SkipLinks: React.ComponentType<SkipLinksProps>;
 
 export { SkipLinks };
 ",
@@ -702,7 +703,7 @@ export interface TabProps {
   title?: string | React.ReactNode;
 }
 
-declare const Tab: React.ComponentType<TabProps & JSX.IntrinsicElements['div']>;
+declare const Tab: React.ComponentType<TabProps & JSX.IntrinsicElements['button']>;
 
 export { Tab };
 ",
@@ -887,7 +888,7 @@ export interface WorldMapProps {
   hoverColor?: string | {dark?: string,light?: string};
 }
 
-declare const WorldMap: React.ComponentType<WorldMapProps & JSX.IntrinsicElements['div']>;
+declare const WorldMap: React.ComponentType<WorldMapProps & JSX.IntrinsicElements['svg']>;
 
 export { WorldMap };
 ",

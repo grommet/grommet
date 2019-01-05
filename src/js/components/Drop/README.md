@@ -109,3 +109,8 @@ Whether the drop element should have no background nor shadow
 boolean
 ```
   
+## Intrinsic element
+
+```
+div
+```

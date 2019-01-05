@@ -9,7 +9,8 @@ export const doc = Grommet => {
     .usage(
       `import { Grommet } from 'grommet';
 <Grommet>...</Grommet>`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedGrommet.propTypes = {
     full: PropTypes.bool

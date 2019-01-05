@@ -59,6 +59,14 @@ Function that will be called when the user presses the esc key.
 function
 ```
 
+**onKeyDown**
+
+Function that will be called when the user presses any key.
+
+```
+function
+```
+
 **onLeft**
 
 Function that will be called when the user presses the left key.

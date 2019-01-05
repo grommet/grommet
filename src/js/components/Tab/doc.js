@@ -6,7 +6,8 @@ export const doc = Tab => {
     .usage(
       `import { Tab } from 'grommet';
 <Tab />`,
-    );
+    )
+    .intrinsicElement('button');
 
   DocumentedTab.propTypes = {
     plain: PropTypes.bool

@@ -12,7 +12,8 @@ export const doc = Tabs => {
   <Tab title='Tab 1'>...</Tab>
   <Tab title='Tab 2'>...</Tab>
 </Tabs>`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedTabs.propTypes = {
     ...genericProps,

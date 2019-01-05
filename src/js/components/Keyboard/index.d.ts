@@ -7,6 +7,7 @@ export interface KeyboardProps {
   onDown?: ((...args: any[]) => any);
   onEnter?: ((...args: any[]) => any);
   onEsc?: ((...args: any[]) => any);
+  onKeyDown?: ((...args: any[]) => any);
   onLeft?: ((...args: any[]) => any);
   onRight?: ((...args: any[]) => any);
   onShift?: ((...args: any[]) => any);
@@ -15,6 +16,6 @@ export interface KeyboardProps {
   onUp?: ((...args: any[]) => any);
 }
 
-declare const Keyboard: React.ComponentType<KeyboardProps & JSX.IntrinsicElements['div']>;
+declare const Keyboard: React.ComponentType<KeyboardProps>;
 
 export { Keyboard };

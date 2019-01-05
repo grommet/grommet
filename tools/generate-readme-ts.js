@@ -20,8 +20,17 @@ export interface ${component}Props {
     .join('\n  ')}
 }
 
-declare const ${component}: React.ComponentType<${component}Props & ${`JSX.IntrinsicElements['${intrinsicElement ||
-  'div'}']`}>;
+declare const ${component}: React.ComponentType<${component}Props${
+  intrinsicElement
+    ? ` & ${
+        Array.isArray(intrinsicElement)
+          ? `(${intrinsicElement
+              .map(e => `JSX.IntrinsicElements['${e}']`)
+              .join(' | ')})`
+          : `JSX.IntrinsicElements['${intrinsicElement}']`
+      }`
+    : ''
+}>;
 
 export { ${component} };
 `;

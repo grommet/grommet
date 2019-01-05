@@ -13,7 +13,8 @@ export const doc = FormField => {
     .usage(
       `import { FormField } from 'grommet';
 <FormField />`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedFormField.propTypes = {
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
