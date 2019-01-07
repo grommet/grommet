@@ -28,17 +28,6 @@ const StyledSelectDropButton = styled(DropButton)`
 StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
 
-// const StyledSelectBox = styled(Box)`
-//   ${props => !props.plain && controlBorderStyle};
-//   ${props =>
-//     props.theme.select &&
-//     props.theme.select.control &&
-//     props.theme.select.control.extend};
-// `;
-
-// StyledSelectBox.defaultProps = {};
-// Object.setPrototypeOf(StyledSelectBox.defaultProps, defaultProps);
-
 class Select extends Component {
   static defaultProps = {
     closeOnChange: true,
