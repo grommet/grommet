@@ -238,3 +238,8 @@ Whether to allow the user to sort columns.
 boolean
 ```
   
+## Intrinsic element
+
+```
+table
+```

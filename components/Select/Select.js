@@ -41,16 +41,16 @@ var SelectTextInput = (0, _styledComponents.default)(_TextInput.TextInput).withC
   displayName: "Select__SelectTextInput",
   componentId: "sc-17idtfo-0"
 })(["cursor:pointer;"]);
-var StyledSelectBox = (0, _styledComponents.default)(_Box.Box).withConfig({
-  displayName: "Select__StyledSelectBox",
+var StyledSelectDropButton = (0, _styledComponents.default)(_DropButton.DropButton).withConfig({
+  displayName: "Select__StyledSelectDropButton",
   componentId: "sc-17idtfo-1"
 })(["", ";", ";"], function (props) {
   return !props.plain && _utils.controlBorderStyle;
 }, function (props) {
   return props.theme.select && props.theme.select.control && props.theme.select.control.extend;
 });
-StyledSelectBox.defaultProps = {};
-Object.setPrototypeOf(StyledSelectBox.defaultProps, _defaultProps.defaultProps);
+StyledSelectDropButton.defaultProps = {};
+Object.setPrototypeOf(StyledSelectDropButton.defaultProps, _defaultProps.defaultProps);
 
 var Select =
 /*#__PURE__*/
@@ -204,7 +204,7 @@ function (_Component) {
     return _react.default.createElement(_Keyboard.Keyboard, {
       onDown: this.onOpen,
       onUp: this.onOpen
-    }, _react.default.createElement(_DropButton.DropButton, {
+    }, _react.default.createElement(StyledSelectDropButton, {
       ref: forwardRef,
       id: id,
       disabled: disabled === true || undefined,
@@ -219,7 +219,7 @@ function (_Component) {
       dropContent: _react.default.createElement(_SelectContainer.SelectContainer, _extends({}, this.props, {
         onChange: onSelectChange
       }))
-    }, _react.default.createElement(StyledSelectBox, {
+    }, _react.default.createElement(_Box.Box, {
       align: "center",
       direction: "row",
       justify: "between",

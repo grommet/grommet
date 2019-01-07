@@ -10,7 +10,7 @@ var _utils = require("../../utils");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(DataTable) {
-  var DocumentedDataTable = (0, _reactDesc.describe)(DataTable).availableAt((0, _utils.getAvailableAtBadge)('DataTable')).description('A data driven table.').usage("import { DataTable } from 'grommet';\n<DataTable />");
+  var DocumentedDataTable = (0, _reactDesc.describe)(DataTable).availableAt((0, _utils.getAvailableAtBadge)('DataTable')).description('A data driven table.').usage("import { DataTable } from 'grommet';\n<DataTable />").intrinsicElement('table');
   DocumentedDataTable.propTypes = _extends({}, _utils.genericProps, {
     columns: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       align: _reactDesc.PropTypes.oneOf(['center', 'start', 'end']),

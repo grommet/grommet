@@ -10,7 +10,7 @@ var _utils = require("../../utils");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Meter) {
-  var DocumentedMeter = (0, _reactDesc.describe)(Meter).availableAt((0, _utils.getAvailableAtBadge)('Meter')).description('A graphical meter.').usage("import { Meter } from 'grommet';\n<Meter />");
+  var DocumentedMeter = (0, _reactDesc.describe)(Meter).availableAt((0, _utils.getAvailableAtBadge)('Meter')).description('A graphical meter.').usage("import { Meter } from 'grommet';\n<Meter />").intrinsicElement('svg');
   DocumentedMeter.propTypes = _extends({}, _utils.genericProps, {
     background: _utils.backgroundPropType.defaultValue({
       color: 'light-2',

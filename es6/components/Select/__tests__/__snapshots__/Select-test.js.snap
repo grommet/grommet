@@ -103,7 +103,7 @@ exports[`Select basic 1`] = `
   padding: 0px;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -168,7 +168,7 @@ exports[`Select basic 1`] = `
   cursor: pointer;
 }
 
-.c1 {
+.c0 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -212,7 +212,7 @@ exports[`Select basic 1`] = `
 
 <button
   aria-label="Open Drop"
-  className="c0"
+  className="c0 c1"
   id="test-select"
   onBlur={[Function]}
   onClick={[Function]}
@@ -221,7 +221,7 @@ exports[`Select basic 1`] = `
   type="button"
 >
   <div
-    className="c1 c2"
+    className="c2"
   >
     <div
       className="c3"
@@ -372,7 +372,7 @@ exports[`Select complex options and children 1`] = `
   padding: 0px;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -437,7 +437,7 @@ exports[`Select complex options and children 1`] = `
   cursor: pointer;
 }
 
-.c1 {
+.c0 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -481,12 +481,12 @@ exports[`Select complex options and children 1`] = `
 
 <button
   aria-label="Open Drop"
-  class="c0"
+  class="c0 c1"
   id="test-select"
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c2"
   >
     <div
       class="c3"
@@ -530,12 +530,12 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 fRAxrl"
+  class="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 fRAxrl"
   id="test-select"
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hFvoei StyledBox-sc-13pk1d4-0 erazuK"
+    class="StyledBox-sc-13pk1d4-0 erazuK"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 XINUX"
@@ -1135,7 +1135,7 @@ exports[`Select deselect an option 1`] = `
   padding: 0px;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1200,7 +1200,7 @@ exports[`Select deselect an option 1`] = `
   cursor: pointer;
 }
 
-.c1 {
+.c0 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -1244,12 +1244,12 @@ exports[`Select deselect an option 1`] = `
 
 <button
   aria-label="Open Drop"
-  class="c0"
+  class="c0 c1"
   id="test-select"
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c2"
   >
     <div
       class="c3"
@@ -1394,7 +1394,7 @@ exports[`Select disabled 1`] = `
   padding: 0px;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1461,7 +1461,7 @@ exports[`Select disabled 1`] = `
   cursor: pointer;
 }
 
-.c1 {
+.c0 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -1505,13 +1505,13 @@ exports[`Select disabled 1`] = `
 
 <button
   aria-label="Open Drop"
-  class="c0"
+  class="c0 c1"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c2"
   >
     <div
       class="c3"
@@ -1555,13 +1555,13 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 giLeBY"
+  class="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 giLeBY"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hFvoei StyledBox-sc-13pk1d4-0 erazuK"
+    class="StyledBox-sc-13pk1d4-0 erazuK"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 XINUX"
@@ -2756,7 +2756,7 @@ exports[`Select multiple 1`] = `
   padding: 0px;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2821,7 +2821,7 @@ exports[`Select multiple 1`] = `
   cursor: pointer;
 }
 
-.c1 {
+.c0 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -2865,7 +2865,7 @@ exports[`Select multiple 1`] = `
 
 <button
   aria-label="Open Drop"
-  className="c0"
+  className="c0 c1"
   id="test-select"
   onBlur={[Function]}
   onClick={[Function]}
@@ -2874,7 +2874,7 @@ exports[`Select multiple 1`] = `
   type="button"
 >
   <div
-    className="c1 c2"
+    className="c2"
   >
     <div
       className="c3"
@@ -3027,7 +3027,7 @@ exports[`Select multiple values 1`] = `
   padding: 0px;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3092,7 +3092,7 @@ exports[`Select multiple values 1`] = `
   cursor: pointer;
 }
 
-.c1 {
+.c0 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -3136,12 +3136,12 @@ exports[`Select multiple values 1`] = `
 
 <button
   aria-label="Open Drop"
-  class="c0"
+  class="c0 c1"
   id="test-select"
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c2"
   >
     <div
       class="c3"
@@ -3186,12 +3186,12 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 fRAxrl"
+  class="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 fRAxrl"
   id="test-select"
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hFvoei StyledBox-sc-13pk1d4-0 erazuK"
+    class="StyledBox-sc-13pk1d4-0 erazuK"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 XINUX"
@@ -3865,7 +3865,7 @@ exports[`Select opens 1`] = `
   padding: 0px;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -3930,7 +3930,7 @@ exports[`Select opens 1`] = `
   cursor: pointer;
 }
 
-.c1 {
+.c0 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -3974,12 +3974,12 @@ exports[`Select opens 1`] = `
 
 <button
   aria-label="Open Drop"
-  class="c0"
+  class="c0 c1"
   id="test-select"
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c2"
   >
     <div
       class="c3"
@@ -4023,12 +4023,12 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-sc-323bzc-0 fRAxrl"
+  class="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 fRAxrl"
   id="test-select"
   type="button"
 >
   <div
-    class="Select__StyledSelectBox-sc-17idtfo-1 hFvoei StyledBox-sc-13pk1d4-0 erazuK"
+    class="StyledBox-sc-13pk1d4-0 erazuK"
   >
     <div
       class="StyledBox-sc-13pk1d4-0 XINUX"
@@ -4735,7 +4735,7 @@ exports[`Select search 1`] = `
   padding: 0px;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -4800,7 +4800,7 @@ exports[`Select search 1`] = `
   cursor: pointer;
 }
 
-.c1 {
+.c0 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -4844,12 +4844,12 @@ exports[`Select search 1`] = `
 
 <button
   aria-label="Open Drop"
-  class="c0"
+  class="c0 c1"
   id="test-select"
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c2"
   >
     <div
       class="c3"
@@ -5606,7 +5606,7 @@ exports[`Select select an option 1`] = `
   padding: 0px;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -5671,7 +5671,7 @@ exports[`Select select an option 1`] = `
   cursor: pointer;
 }
 
-.c1 {
+.c0 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -5715,12 +5715,12 @@ exports[`Select select an option 1`] = `
 
 <button
   aria-label="Open Drop"
-  class="c0"
+  class="c0 c1"
   id="test-select"
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c2"
   >
     <div
       class="c3"
@@ -5762,7 +5762,7 @@ exports[`Select select an option 1`] = `
 `;
 
 exports[`Select select an option with complex options 1`] = `
-.c4 {
+.c5 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5773,30 +5773,30 @@ exports[`Select select an option with complex options 1`] = `
   stroke: #7D4CDB;
 }
 
-.c4 g {
+.c5 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c4 *:not([stroke])[fill="none"] {
+.c5 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c4 *[fill-rule],
-.c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5821,7 +5821,7 @@ exports[`Select select an option with complex options 1`] = `
   padding: 0px;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5843,7 +5843,7 @@ exports[`Select select an option with complex options 1`] = `
   padding: 0px;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5864,7 +5864,7 @@ exports[`Select select an option with complex options 1`] = `
   padding: 0px;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -5882,16 +5882,9 @@ exports[`Select select an option with complex options 1`] = `
   text-align: inherit;
 }
 
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    padding: 0px;
-  }
+.c0 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
 }
 
 @media only screen and (max-width:768px) {
@@ -5908,40 +5901,52 @@ exports[`Select select an option with complex options 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c3 {
+  .c4 {
     padding: 0px;
   }
 }
 
 <button
   aria-label="Open Drop"
-  class="c0"
+  class="c0 c1"
   id="test-select"
   type="button"
 >
   <div
-    class="c1"
+    class="c2"
   >
     <div
-      class="c2"
+      class="c3"
     >
       <span>
         one
       </span>
     </div>
     <div
-      class="c3"
+      class="c4"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="c4"
+        class="c5"
         viewBox="0 0 24 24"
       >
         <polyline
@@ -6059,7 +6064,7 @@ exports[`Select select an option with enter 1`] = `
   padding: 0px;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6124,7 +6129,7 @@ exports[`Select select an option with enter 1`] = `
   cursor: pointer;
 }
 
-.c1 {
+.c0 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -6168,12 +6173,12 @@ exports[`Select select an option with enter 1`] = `
 
 <button
   aria-label="Open Drop"
-  class="c0"
+  class="c0 c1"
   id="test-select"
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c2"
   >
     <div
       class="c3"
@@ -6317,7 +6322,7 @@ exports[`Select select another option 1`] = `
   padding: 0px;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6382,7 +6387,7 @@ exports[`Select select another option 1`] = `
   cursor: pointer;
 }
 
-.c1 {
+.c0 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -6426,12 +6431,12 @@ exports[`Select select another option 1`] = `
 
 <button
   aria-label="Open Drop"
-  class="c0"
+  class="c0 c1"
   id="test-select"
   type="button"
 >
   <div
-    class="c1 c2"
+    class="c2"
   >
     <div
       class="c3"
@@ -6576,7 +6581,7 @@ exports[`Select size 1`] = `
   padding: 0px;
 }
 
-.c0 {
+.c1 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -6643,7 +6648,7 @@ exports[`Select size 1`] = `
   cursor: pointer;
 }
 
-.c1 {
+.c0 {
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
 }
@@ -6687,7 +6692,7 @@ exports[`Select size 1`] = `
 
 <button
   aria-label="Open Drop"
-  className="c0"
+  className="c0 c1"
   id="test-select"
   onBlur={[Function]}
   onClick={[Function]}
@@ -6696,7 +6701,7 @@ exports[`Select size 1`] = `
   type="button"
 >
   <div
-    className="c1 c2"
+    className="c2"
   >
     <div
       className="c3"

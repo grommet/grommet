@@ -148,6 +148,11 @@ Whether the layer should take full width and height on mobile Defaults to `true`
 boolean
 ```
   
+## Intrinsic element
+
+```
+div
+```
 ## Theme
   
 **global.breakpoints**

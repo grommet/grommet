@@ -8,7 +8,7 @@ var _reactDesc = require("react-desc");
 var _utils = require("../../utils");
 
 var doc = function doc(FormField) {
-  var DocumentedFormField = (0, _reactDesc.describe)(FormField).availableAt((0, _utils.getAvailableAtBadge)('FormField')).description("A single field in a form. FormField wraps an input component with\n      a label, help, and/or error messaging. It typically contains an input\n      control like TextInput, TextArea, Select, etc.").usage("import { FormField } from 'grommet';\n<FormField />");
+  var DocumentedFormField = (0, _reactDesc.describe)(FormField).availableAt((0, _utils.getAvailableAtBadge)('FormField')).description("A single field in a form. FormField wraps an input component with\n      a label, help, and/or error messaging. It typically contains an input\n      control like TextInput, TextArea, Select, etc.").usage("import { FormField } from 'grommet';\n<FormField />").intrinsicElement('div');
   DocumentedFormField.propTypes = {
     error: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]).description('Any error text describing issues with the field'),
     help: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.node]).description('Any help text describing how the field works'),

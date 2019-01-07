@@ -5,6 +5,6 @@ export interface RoutedButtonProps {
   method?: "push" | "replace";
 }
 
-declare const RoutedButton: React.ComponentType<RoutedButtonProps>;
+declare const RoutedButton: React.ComponentType<RoutedButtonProps & JSX.IntrinsicElements['button']>;
 
 export { RoutedButton };

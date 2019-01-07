@@ -128,6 +128,11 @@ If specified, the number of
 number
 ```
   
+## Intrinsic element
+
+```
+div
+```
 ## Theme
   
 **carousel.icons.next**

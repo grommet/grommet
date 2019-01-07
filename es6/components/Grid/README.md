@@ -352,6 +352,11 @@ The DOM tag to use for the element. Defaults to `div`.
 string
 ```
   
+## Intrinsic element
+
+```
+div
+```
 ## Theme
   
 **global.edgeSize**

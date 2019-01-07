@@ -8,7 +8,7 @@ var _reactDesc = require("react-desc");
 var _utils = require("../../utils");
 
 var doc = function doc(CheckBox) {
-  var DocumentedCheckBox = (0, _reactDesc.describe)(CheckBox).availableAt((0, _utils.getAvailableAtBadge)('CheckBox')).description('A checkbox toggle control.').usage("import { CheckBox } from 'grommet';\n<CheckBox />");
+  var DocumentedCheckBox = (0, _reactDesc.describe)(CheckBox).availableAt((0, _utils.getAvailableAtBadge)('CheckBox')).description('A checkbox toggle control.').usage("import { CheckBox } from 'grommet';\n<CheckBox />").intrinsicElement('input');
   DocumentedCheckBox.propTypes = {
     checked: _reactDesc.PropTypes.bool.description('Same as React <input checked={} />').defaultValue(false),
     disabled: _reactDesc.PropTypes.bool.description("Same as React <input disabled={} />. Also adds a hidden input element\n      with the same name so form submissions work.").defaultValue(false),

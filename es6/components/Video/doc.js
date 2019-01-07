@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Video) {
-  var DocumentedVideo = describe(Video).availableAt(getAvailableAtBadge('Video')).description('A video player.').usage("import { Video } from 'grommet';\n<Video />");
+  var DocumentedVideo = describe(Video).availableAt(getAvailableAtBadge('Video')).description('A video player.').usage("import { Video } from 'grommet';\n<Video />").intrinsicElement('video');
   DocumentedVideo.propTypes = _extends({}, genericProps, {
     autoPlay: PropTypes.bool.description('Enables automatic playback of the video as soon as it is loaded.'),
     controls: PropTypes.oneOf([false, 'over', 'below']).description('Whether to show playback controls and where to place them.').defaultValue('over'),

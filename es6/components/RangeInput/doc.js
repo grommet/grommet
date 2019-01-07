@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils';
 export var doc = function doc(RangeInput) {
-  var DocumentedRangeInput = describe(RangeInput).availableAt(getAvailableAtBadge('RangeInput')).description('A slider control to input a value within a fixed range.').usage("import { RangeInput } from 'grommet';\n<RangeInput />");
+  var DocumentedRangeInput = describe(RangeInput).availableAt(getAvailableAtBadge('RangeInput')).description('A slider control to input a value within a fixed range.').usage("import { RangeInput } from 'grommet';\n<RangeInput />").intrinsicElement('input');
   DocumentedRangeInput.propTypes = {
     id: PropTypes.string.description('The id attribute of the range input.'),
     min: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).description('The minimum value permitted.'),

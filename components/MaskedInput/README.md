@@ -76,3 +76,8 @@ What text to put in the input. The caller should ensure that it
 string
 ```
   
+## Intrinsic element
+
+```
+input
+```

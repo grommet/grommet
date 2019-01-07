@@ -148,6 +148,11 @@ first
 last
 ```
   
+## Intrinsic element
+
+```
+div
+```
 ## Theme
   
 **stack.extend**

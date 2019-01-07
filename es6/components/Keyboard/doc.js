@@ -8,6 +8,7 @@ export var doc = function doc(Keyboard) {
     onDown: PropTypes.func.description('Function that will be called when the user presses the down key.'),
     onEnter: PropTypes.func.description('Function that will be called when the user presses the enter key.'),
     onEsc: PropTypes.func.description('Function that will be called when the user presses the esc key.'),
+    onKeyDown: PropTypes.func.description('Function that will be called when the user presses any key.'),
     onLeft: PropTypes.func.description('Function that will be called when the user presses the left key.'),
     onRight: PropTypes.func.description('Function that will be called when the user presses the right key.'),
     onShift: PropTypes.func.description('Function that will be called when the user presses the shift key.'),

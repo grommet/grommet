@@ -64,3 +64,8 @@ An object representing all of the data in the form. Defaults to `{}`.
 }
 ```
   
+## Intrinsic element
+
+```
+form
+```

@@ -13,6 +13,6 @@ export interface HeadingProps {
   truncate?: boolean;
 }
 
-declare const Heading: React.ComponentType<HeadingProps>;
+declare const Heading: React.ComponentType<HeadingProps & (JSX.IntrinsicElements['h1'] | JSX.IntrinsicElements['h2'] | JSX.IntrinsicElements['h3'] | JSX.IntrinsicElements['h4'])>;
 
 export { Heading };

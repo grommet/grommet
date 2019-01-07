@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Distribution) {
-  var DocumentedDistribution = describe(Distribution).availableAt(getAvailableAtBadge('Distribution')).description("Proportionally sized grid of boxes. The proportions are approximate. The\n      area given to each box isn't mathematically precise according to the\n      ratio to the total values. Instead, the boxes are laid out in a\n      manner that makes them more visually easy to scan. For example,\n      two values of 48 and 52 will actually each get 50% of the area.").usage("import { Distribution } from 'grommet';\n<Distribution />");
+  var DocumentedDistribution = describe(Distribution).availableAt(getAvailableAtBadge('Distribution')).description("Proportionally sized grid of boxes. The proportions are approximate. The\n      area given to each box isn't mathematically precise according to the\n      ratio to the total values. Instead, the boxes are laid out in a\n      manner that makes them more visually easy to scan. For example,\n      two values of 48 and 52 will actually each get 50% of the area.").usage("import { Distribution } from 'grommet';\n<Distribution />").intrinsicElement('div');
   DocumentedDistribution.propTypes = _extends({}, genericProps, {
     children: PropTypes.func.description('Function that will be called when each value is rendered.'),
     fill: PropTypes.bool.description('Whether the distribution expands to fill all of the available width and height.').defaultValue(false),

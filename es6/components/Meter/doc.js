@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe, PropTypes } from 'react-desc';
 import { backgroundPropType, genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Meter) {
-  var DocumentedMeter = describe(Meter).availableAt(getAvailableAtBadge('Meter')).description('A graphical meter.').usage("import { Meter } from 'grommet';\n<Meter />");
+  var DocumentedMeter = describe(Meter).availableAt(getAvailableAtBadge('Meter')).description('A graphical meter.').usage("import { Meter } from 'grommet';\n<Meter />").intrinsicElement('svg');
   DocumentedMeter.propTypes = _extends({}, genericProps, {
     background: backgroundPropType.defaultValue({
       color: 'light-2',

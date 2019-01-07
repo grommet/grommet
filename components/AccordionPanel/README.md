@@ -21,6 +21,11 @@ If specified, the entire panel header will be managed by the caller.
 node
 ```
   
+## Intrinsic element
+
+```
+div
+```
 ## Theme
   
 **accordion.icons.collapse**

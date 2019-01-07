@@ -8,7 +8,7 @@ var _reactDesc = require("react-desc");
 var _utils = require("../../utils");
 
 var doc = function doc(Drop) {
-  var DocumentedDrop = (0, _reactDesc.describe)(Drop).availableAt((0, _utils.getAvailableAtBadge)('Drop')).description('A container that is overlaid next to a target.').usage("import { Drop } from 'grommet';\n<Drop target={reference}>...</Drop>");
+  var DocumentedDrop = (0, _reactDesc.describe)(Drop).availableAt((0, _utils.getAvailableAtBadge)('Drop')).description('A container that is overlaid next to a target.').usage("import { Drop } from 'grommet';\n<Drop target={reference}>...</Drop>").intrinsicElement('div');
   DocumentedDrop.propTypes = {
     align: _reactDesc.PropTypes.shape({
       top: _reactDesc.PropTypes.oneOf(['top', 'bottom']),

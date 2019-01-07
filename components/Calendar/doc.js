@@ -10,7 +10,7 @@ var _utils = require("../../utils");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(Calendar) {
-  var DocumentedCalendar = (0, _reactDesc.describe)(Calendar).availableAt((0, _utils.getAvailableAtBadge)('Calendar')).description("A calendar of days displayed by month.\n      It can be used to select a single date, a range of dates, or multiple\n      individual dates.").usage("import { Calendar } from 'grommet';\n<Calendar />");
+  var DocumentedCalendar = (0, _reactDesc.describe)(Calendar).availableAt((0, _utils.getAvailableAtBadge)('Calendar')).description("A calendar of days displayed by month.\n      It can be used to select a single date, a range of dates, or multiple\n      individual dates.").usage("import { Calendar } from 'grommet';\n<Calendar />").intrinsicElement('div');
   DocumentedCalendar.propTypes = _extends({}, _utils.genericProps, {
     animate: _reactDesc.PropTypes.bool.description("Whether to animate the calender as the user interacts with it.").defaultValue(true),
     bounds: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.string).description("An array of two numbers indicating the limits on\n        navigation in ISO8601 format"),

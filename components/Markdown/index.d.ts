@@ -1,9 +1,9 @@
 import * as React from "react";
 
 export interface MarkdownProps {
-  components?: { [key: string]: JSX.Element };
+  components?: {};
 }
 
-declare const Markdown: React.ComponentType<MarkdownProps>;
+declare const Markdown: React.ComponentType<MarkdownProps & JSX.IntrinsicElements['div']>;
 
 export { Markdown };

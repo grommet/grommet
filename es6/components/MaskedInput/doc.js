@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils';
 export var doc = function doc(MaskedInput) {
-  var DocumentedMaskedInput = describe(MaskedInput).availableAt(getAvailableAtBadge('MaskedInput')).description('An input field with formalized syntax.').usage("import { MaskedInput } from 'grommet';\n<MaskedInput id='item' name='item' />");
+  var DocumentedMaskedInput = describe(MaskedInput).availableAt(getAvailableAtBadge('MaskedInput')).description('An input field with formalized syntax.').usage("import { MaskedInput } from 'grommet';\n<MaskedInput id='item' name='item' />").intrinsicElement('input');
   DocumentedMaskedInput.propTypes = {
     id: PropTypes.string.description('The id attribute of the input.'),
     name: PropTypes.string.description('The name attribute of the input.'),

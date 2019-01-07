@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Clock) {
-  var DocumentedClock = describe(Clock).availableAt(getAvailableAtBadge('Clock')).description('A clock with timezone awareness.').usage("import { Clock } from 'grommet';\n<Clock />");
+  var DocumentedClock = describe(Clock).availableAt(getAvailableAtBadge('Clock')).description('A clock with timezone awareness.').usage("import { Clock } from 'grommet';\n<Clock />").intrinsicElement(['div', 'svg']);
   DocumentedClock.propTypes = _extends({}, genericProps, {
     hourLimit: PropTypes.oneOf([12, 24, '12', '24']).description('Whether to roll over the hours after 12 or after 24.').defaultValue(24),
     onChange: PropTypes.func.description("If the clock is running, this function will be called with the\n      current time value each time it changes."),

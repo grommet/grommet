@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(DataTable) {
-  var DocumentedDataTable = describe(DataTable).availableAt(getAvailableAtBadge('DataTable')).description('A data driven table.').usage("import { DataTable } from 'grommet';\n<DataTable />");
+  var DocumentedDataTable = describe(DataTable).availableAt(getAvailableAtBadge('DataTable')).description('A data driven table.').usage("import { DataTable } from 'grommet';\n<DataTable />").intrinsicElement('table');
   DocumentedDataTable.propTypes = _extends({}, genericProps, {
     columns: PropTypes.arrayOf(PropTypes.shape({
       align: PropTypes.oneOf(['center', 'start', 'end']),

@@ -1,7 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge } from '../../utils';
 export var doc = function doc(CheckBox) {
-  var DocumentedCheckBox = describe(CheckBox).availableAt(getAvailableAtBadge('CheckBox')).description('A checkbox toggle control.').usage("import { CheckBox } from 'grommet';\n<CheckBox />");
+  var DocumentedCheckBox = describe(CheckBox).availableAt(getAvailableAtBadge('CheckBox')).description('A checkbox toggle control.').usage("import { CheckBox } from 'grommet';\n<CheckBox />").intrinsicElement('input');
   DocumentedCheckBox.propTypes = {
     checked: PropTypes.bool.description('Same as React <input checked={} />').defaultValue(false),
     disabled: PropTypes.bool.description("Same as React <input disabled={} />. Also adds a hidden input element\n      with the same name so form submissions work.").defaultValue(false),

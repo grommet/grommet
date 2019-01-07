@@ -12,7 +12,7 @@ var ANIMATION_SHAPE = PropTypes.shape({
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge'])
 });
 export var doc = function doc(Box) {
-  var DocumentedBox = describe(Box).availableAt(getAvailableAtBadge('Box')).description("A container that lays out its contents in one direction. Box\n      provides CSS flexbox capabilities for layout, as well as general\n      styling of things like background color, border, and animation.").usage("import { Box } from 'grommet';\n<Box />");
+  var DocumentedBox = describe(Box).availableAt(getAvailableAtBadge('Box')).description("A container that lays out its contents in one direction. Box\n      provides CSS flexbox capabilities for layout, as well as general\n      styling of things like background color, border, and animation.").usage("import { Box } from 'grommet';\n<Box />").intrinsicElement('div');
   DocumentedBox.propTypes = _extends({}, genericProps, {
     align: PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']).description('How to align the contents along the cross axis.'),
     alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']).description("How to align the contents when there is extra space in\n        the cross axis.").defaultValue('stretch'),

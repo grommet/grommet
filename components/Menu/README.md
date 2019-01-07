@@ -224,6 +224,11 @@ xlarge
 string
 ```
   
+## Intrinsic element
+
+```
+button
+```
 ## Theme
   
 **global.colors.control**

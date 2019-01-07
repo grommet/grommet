@@ -5,6 +5,7 @@ Object {
   "Accordion": [Function],
   "AccordionPanel": Object {
     "description": "An Accordion panel.",
+    "intrinsicElement": "div",
     "name": "AccordionPanel",
     "properties": Array [
       Object {
@@ -199,6 +200,7 @@ string",
     "description": "A container that lays out its contents in one direction. Box
       provides CSS flexbox capabilities for layout, as well as general
       styling of things like background color, border, and animation.",
+    "intrinsicElement": "div",
     "name": "Box",
     "properties": Array [
       Object {
@@ -911,6 +913,7 @@ submit",
     "description": "A calendar of days displayed by month.
       It can be used to select a single date, a range of dates, or multiple
       individual dates.",
+    "intrinsicElement": "div",
     "name": "Calendar",
     "properties": Array [
       Object {
@@ -1130,6 +1133,7 @@ string",
     "description": "A carousel that cycles through children. Child components
       would typically be Images. It is the caller's responsibility to ensure
       that all children are the same size.",
+    "intrinsicElement": "div",
     "name": "Carousel",
     "properties": Array [
       Object {
@@ -1247,6 +1251,7 @@ string",
       },
     ],
     "description": "A graphical chart.",
+    "intrinsicElement": "svg",
     "name": "Chart",
     "properties": Array [
       Object {
@@ -1478,6 +1483,7 @@ area",
       },
     ],
     "description": "A checkbox toggle control.",
+    "intrinsicElement": "input",
     "name": "CheckBox",
     "properties": Array [
       Object {
@@ -1541,6 +1547,7 @@ NOTE: This can only be used with non-toggle components",
   "Clock": [Function],
   "Collapsible": Object {
     "description": "Expand or collapse animation.",
+    "intrinsicElement": "div",
     "name": "Collapsible",
     "properties": Array [
       Object {
@@ -1576,6 +1583,7 @@ vertical",
     "description": "Graphical connection lines. Diagram is meant to be used with Stack.
       Boxes can be used in the \`guidingChild\` layer of Stack and then
       Diagram can be used to draw lines connecting the Boxes.",
+    "intrinsicElement": "svg",
     "name": "Diagram",
     "properties": Array [
       Object {
@@ -1649,6 +1657,7 @@ vertical",
       so that the contents behind it are not focusable. All properties of
       Button can be passed through.
       ",
+    "intrinsicElement": "button",
     "name": "DropButton",
     "properties": Array [
       Object {
@@ -1833,6 +1842,7 @@ string",
     "description": "A single field in a form. FormField wraps an input component with
       a label, help, and/or error messaging. It typically contains an input
       control like TextInput, TextArea, Select, etc.",
+    "intrinsicElement": "div",
     "name": "FormField",
     "properties": Array [
       Object {
@@ -2023,6 +2033,7 @@ contain",
       },
     ],
     "description": "An input field with formalized syntax.",
+    "intrinsicElement": "input",
     "name": "MaskedInput",
     "properties": Array [
       Object {
@@ -2093,6 +2104,7 @@ string",
     "description": "A control that opens a Drop containing plain Buttons. The labels
       and behavior of the contained Buttons are described via the \`items\`
       property.",
+    "intrinsicElement": "button",
     "name": "Menu",
     "properties": Array [
       Object {
@@ -2293,6 +2305,7 @@ string",
       },
     ],
     "description": "A radio button control.",
+    "intrinsicElement": "input",
     "name": "RadioButton",
     "properties": Array [
       Object {
@@ -2347,6 +2360,7 @@ with the same name so form submissions work.",
       },
     ],
     "description": "A slider control to input a value within a fixed range.",
+    "intrinsicElement": "input",
     "name": "RangeInput",
     "properties": Array [
       Object {
@@ -2407,6 +2421,7 @@ string",
       },
     ],
     "description": "A control to input a range of values.",
+    "intrinsicElement": "div",
     "name": "RangeSelector",
     "properties": Array [
       Object {
@@ -2525,6 +2540,7 @@ string",
       },
     ],
     "description": "A control to select a value, with optional search.",
+    "intrinsicElement": "select",
     "name": "Select",
     "properties": Array [
       Object {
@@ -2832,6 +2848,7 @@ function",
   "Stack": [Function],
   "Tab": Object {
     "description": "One tab within Tabs.",
+    "intrinsicElement": "button",
     "name": "Tab",
     "properties": Array [
       Object {
@@ -2917,6 +2934,7 @@ bottom",
       },
     ],
     "description": "A container with controls to show one Tab at a time.",
+    "intrinsicElement": "div",
     "name": "Tabs",
     "properties": Array [
       Object {
@@ -3290,6 +3308,7 @@ suggestions and instead rely on the user to type more.",
       },
     ],
     "description": "A video player.",
+    "intrinsicElement": "video",
     "name": "Video",
     "properties": Array [
       Object {
@@ -3423,6 +3442,7 @@ contain",
       },
     ],
     "description": "A map of the world, or a continent.",
+    "intrinsicElement": "svg",
     "name": "WorldMap",
     "properties": Array [
       Object {

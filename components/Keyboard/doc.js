@@ -14,6 +14,7 @@ var doc = function doc(Keyboard) {
     onDown: _reactDesc.PropTypes.func.description('Function that will be called when the user presses the down key.'),
     onEnter: _reactDesc.PropTypes.func.description('Function that will be called when the user presses the enter key.'),
     onEsc: _reactDesc.PropTypes.func.description('Function that will be called when the user presses the esc key.'),
+    onKeyDown: _reactDesc.PropTypes.func.description('Function that will be called when the user presses any key.'),
     onLeft: _reactDesc.PropTypes.func.description('Function that will be called when the user presses the left key.'),
     onRight: _reactDesc.PropTypes.func.description('Function that will be called when the user presses the right key.'),
     onShift: _reactDesc.PropTypes.func.description('Function that will be called when the user presses the shift key.'),

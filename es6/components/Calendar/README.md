@@ -258,6 +258,11 @@ large
 string
 ```
   
+## Intrinsic element
+
+```
+div
+```
 ## Theme
   
 **global.size.small**

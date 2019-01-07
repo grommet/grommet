@@ -186,3 +186,8 @@ Whether the drop should be open or not. Setting this property does not
 boolean
 ```
   
+## Intrinsic element
+
+```
+button
+```
