@@ -15,7 +15,8 @@ export const doc = Stack => {
     .usage(
       `import { Stack } from 'grommet';
 <Stack />`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedStack.propTypes = {
     ...genericProps,

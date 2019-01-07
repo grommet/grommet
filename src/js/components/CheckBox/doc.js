@@ -9,7 +9,8 @@ export const doc = CheckBox => {
     .usage(
       `import { CheckBox } from 'grommet';
 <CheckBox />`,
-    );
+    )
+    .intrinsicElement('input');
 
   DocumentedCheckBox.propTypes = {
     checked: PropTypes.bool

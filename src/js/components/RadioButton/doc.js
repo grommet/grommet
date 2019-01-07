@@ -9,7 +9,8 @@ export const doc = RadioButton => {
     .usage(
       `import { RadioButton } from 'grommet';
 <RadioButton />`,
-    );
+    )
+    .intrinsicElement('input');
 
   DocumentedRadioButton.propTypes = {
     checked: PropTypes.bool.description('Same as React <input checked={} />'),

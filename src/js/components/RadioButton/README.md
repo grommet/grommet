@@ -62,3 +62,8 @@ Function that will be called when the user clicks the radio button. It
 function
 ```
   
+## Intrinsic element
+
+```
+input
+```

@@ -1,9 +1,9 @@
 import { describe, PropTypes } from 'react-desc';
 
 export function doc(Panel) {
-  const DocumentedAccordionPanel = describe(Panel).description(
-    'An Accordion panel.',
-  );
+  const DocumentedAccordionPanel = describe(Panel)
+    .description('An Accordion panel.')
+    .intrinsicElement('div');
   DocumentedAccordionPanel.propTypes = {
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
       'The panel label.',

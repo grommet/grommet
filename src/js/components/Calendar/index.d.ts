@@ -21,6 +21,6 @@ export interface CalendarProps {
   size?: "small" | "medium" | "large" | string;
 }
 
-declare const Calendar: React.ComponentType<CalendarProps>;
+declare const Calendar: React.ComponentType<CalendarProps & JSX.IntrinsicElements['div']>;
 
 export { Calendar };

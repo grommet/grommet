@@ -61,3 +61,8 @@ Required. Array of objects describing the connections.
 }]
 ```
   
+## Intrinsic element
+
+```
+svg
+```

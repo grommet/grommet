@@ -12,6 +12,6 @@ export interface DropProps {
   plain?: boolean;
 }
 
-declare const Drop: React.ComponentType<DropProps>;
+declare const Drop: React.ComponentType<DropProps & JSX.IntrinsicElements['div']>;
 
 export { Drop };

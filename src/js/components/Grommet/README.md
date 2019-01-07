@@ -43,3 +43,8 @@ User agent used to detect the device width for setting the initial breakpoint.
 string
 ```
   
+## Intrinsic element
+
+```
+div
+```

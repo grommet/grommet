@@ -9,7 +9,8 @@ export const doc = Clock => {
     .usage(
       `import { Clock } from 'grommet';
 <Clock />`,
-    );
+    )
+    .intrinsicElement(['div', 'svg']);
 
   DocumentedClock.propTypes = {
     ...genericProps,

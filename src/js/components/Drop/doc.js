@@ -8,7 +8,8 @@ export const doc = Drop => {
     .description('A container that is overlaid next to a target.')
     .usage(
       "import { Drop } from 'grommet';\n<Drop target={reference}>...</Drop>",
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedDrop.propTypes = {
     align: PropTypes.shape({

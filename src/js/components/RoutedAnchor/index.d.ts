@@ -5,6 +5,6 @@ export interface RoutedAnchorProps {
   method?: "push" | "replace";
 }
 
-declare const RoutedAnchor: React.ComponentType<RoutedAnchorProps>;
+declare const RoutedAnchor: React.ComponentType<RoutedAnchorProps & JSX.IntrinsicElements['a']>;
 
 export { RoutedAnchor };

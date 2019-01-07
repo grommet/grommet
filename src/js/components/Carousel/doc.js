@@ -13,7 +13,8 @@ export const doc = Carousel => {
     .usage(
       `import { Carousel } from 'grommet';
 <Carousel />`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedCarousel.propTypes = {
     ...genericProps,

@@ -10,6 +10,6 @@ export interface StackProps {
   guidingChild?: number | "first" | "last";
 }
 
-declare const Stack: React.ComponentType<StackProps>;
+declare const Stack: React.ComponentType<StackProps & JSX.IntrinsicElements['div']>;
 
 export { Stack };

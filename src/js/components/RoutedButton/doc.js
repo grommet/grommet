@@ -9,7 +9,8 @@ export const doc = RoutedButton => {
     .usage(
       `import { RoutedButton } from 'grommet';
 <RoutedButton primary={true} path='/documentation' />`,
-    );
+    )
+    .intrinsicElement('button');
   DocumentedRoutedButton.propTypes = { ...ROUTER_PROPS };
   return DocumentedRoutedButton;
 };

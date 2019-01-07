@@ -35,7 +35,8 @@ to create fallback rendering for older browsers, like ie11.`,
     .usage(
       `import { Grid } from 'grommet';
 <Grid />`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedGrid.propTypes = {
     ...genericProps,
@@ -190,4 +191,4 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
-}
+};

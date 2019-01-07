@@ -9,7 +9,8 @@ export const doc = Select => {
     .usage(
       `import { Select } from 'grommet';
 <Select />`,
-    );
+    )
+    .intrinsicElement('select');
 
   DocumentedSelect.propTypes = {
     ...genericProps,

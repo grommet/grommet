@@ -13,7 +13,8 @@ export const doc = Meter => {
     .usage(
       `import { Meter } from 'grommet';
 <Meter />`,
-    );
+    )
+    .intrinsicElement('svg');
 
   DocumentedMeter.propTypes = {
     ...genericProps,

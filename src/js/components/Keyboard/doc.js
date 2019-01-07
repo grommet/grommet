@@ -27,6 +27,9 @@ export const doc = Keyboard => {
     onEsc: PropTypes.func.description(
       'Function that will be called when the user presses the esc key.',
     ),
+    onKeyDown: PropTypes.func.description(
+      'Function that will be called when the user presses any key.',
+    ),
     onLeft: PropTypes.func.description(
       'Function that will be called when the user presses the left key.',
     ),

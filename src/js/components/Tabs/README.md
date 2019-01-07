@@ -169,3 +169,8 @@ currently active tab changes.
 function
 ```
   
+## Intrinsic element
+
+```
+div
+```

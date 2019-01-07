@@ -15,7 +15,8 @@ export const doc = DropButton => {
     .usage(
       `import { DropButton } from 'grommet';
 <DropButton dropContent={...} />`,
-    );
+    )
+    .intrinsicElement('button');
 
   DocumentedDropButton.propTypes = {
     ...genericProps,

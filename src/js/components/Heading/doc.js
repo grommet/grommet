@@ -9,7 +9,8 @@ export const doc = Heading => {
     .usage(
       `import { Heading } from 'grommet';
 <Heading />`,
-    );
+    )
+    .intrinsicElement(['h1', 'h2', 'h3', 'h4']);
 
   DocumentedHeading.propTypes = {
     ...genericProps,

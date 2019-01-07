@@ -11,6 +11,6 @@ export interface DistributionProps {
   values: {value: number}[];
 }
 
-declare const Distribution: React.ComponentType<DistributionProps>;
+declare const Distribution: React.ComponentType<DistributionProps & JSX.IntrinsicElements['div']>;
 
 export { Distribution };

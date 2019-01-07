@@ -9,12 +9,14 @@ export const doc = Markdown => {
     .usage(
       `import { Markdown } from 'grommet';
       <Markdown>{content}</Markdown>`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedMarkdown.propTypes = {
-    components: PropTypes.objectOf(PropTypes.element).description(
-      `Custom components to override default html tags such as 'img' or 'pre'.
-By default only 'p' and 'a' are overrided with the Paragraph and Anchor components`,
+    components: PropTypes.shape({}).description(
+      `Custom components and props to override html elements such as 'img'
+      or 'pre'. By default 'a', 'p', 'img', and table elements are overriden
+      with grommet components`,
     ),
   };
 

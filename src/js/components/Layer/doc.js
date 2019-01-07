@@ -15,7 +15,8 @@ export const doc = Layer => {
     .usage(
       `import { Layer } from 'grommet';
 <Layer />`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedLayer.propTypes = {
     animate: PropTypes.bool

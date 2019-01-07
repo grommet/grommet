@@ -193,3 +193,8 @@ Array of value objects describing the data.
 }]
 ```
   
+## Intrinsic element
+
+```
+svg
+```

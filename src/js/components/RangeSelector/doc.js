@@ -9,7 +9,8 @@ export const doc = RangeSelector => {
     .usage(
       `import { RangeSelector } from 'grommet';
 <RangeSelector />`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedRangeSelector.propTypes = {
     color: colorPropType.description(

@@ -166,3 +166,8 @@ Custom messages for Tabs. Used for accessibility by screen readers. Defaults to 
 }
 ```
   
+## Intrinsic element
+
+```
+div
+```

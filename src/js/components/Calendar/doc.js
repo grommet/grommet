@@ -13,7 +13,8 @@ export const doc = Calendar => {
     .usage(
       `import { Calendar } from 'grommet';
 <Calendar />`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedCalendar.propTypes = {
     ...genericProps,

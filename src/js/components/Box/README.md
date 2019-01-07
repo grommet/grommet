@@ -562,6 +562,11 @@ Whether children can wrap if they
 boolean
 ```
   
+## Intrinsic element
+
+```
+div
+```
 ## Theme
   
 **global.animation**

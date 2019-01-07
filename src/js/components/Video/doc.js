@@ -9,7 +9,8 @@ export const doc = Video => {
     .usage(
       `import { Video } from 'grommet';
 <Video />`,
-    );
+    )
+    .intrinsicElement('video');
 
   DocumentedVideo.propTypes = {
     ...genericProps,

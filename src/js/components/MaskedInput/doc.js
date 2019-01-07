@@ -9,7 +9,8 @@ export const doc = MaskedInput => {
     .usage(
       `import { MaskedInput } from 'grommet';
 <MaskedInput id='item' name='item' />`,
-    );
+    )
+    .intrinsicElement('input');
 
   DocumentedMaskedInput.propTypes = {
     id: PropTypes.string.description('The id attribute of the input.'),

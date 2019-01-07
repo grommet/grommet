@@ -16,7 +16,8 @@ export const doc = Menu => {
     .usage(
       `import { Menu } from 'grommet';
 <Menu />`,
-    );
+    )
+    .intrinsicElement('button');
 
   DocumentedMenu.propTypes = {
     ...genericProps,

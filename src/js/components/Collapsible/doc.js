@@ -6,7 +6,8 @@ export const doc = Collapsible => {
     .usage(
       `import { Collapsible } from 'grommet';
 <Collapsible open={true}>test</Collapsible>`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedCollapsible.propTypes = {
     open: PropTypes.bool.description(
@@ -27,7 +28,8 @@ export const themeDoc = {
     defaultValue: 200,
   },
   'collapsible.baseline': {
-    description: 'Default height to be used to calculate the optimal collapsible speed.',
+    description:
+      'Default height to be used to calculate the optimal collapsible speed.',
     type: 'number',
     defaultValue: 500,
   },
@@ -36,4 +38,4 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
-}
+};
