@@ -257,6 +257,7 @@ class ControlledDataTable extends Component {
                 ),
                 header: (
                   <CheckBox
+                    checked={checked.length === DATA.length}
                     indeterminate={
                       checked.length > 0 && checked.length < DATA.length
                     }
