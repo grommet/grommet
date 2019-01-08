@@ -259,6 +259,7 @@ exports[`DataTable aggregate 1`] = `
     >
       <tr
         className="c3"
+        onClick={[Function]}
       >
         <th
           className="c7"
@@ -290,6 +291,7 @@ exports[`DataTable aggregate 1`] = `
       </tr>
       <tr
         className="c3"
+        onClick={[Function]}
       >
         <th
           className="c7"
@@ -550,6 +552,7 @@ exports[`DataTable basic 1`] = `
     >
       <tr
         className="c3"
+        onClick={[Function]}
       >
         <th
           className="c7"
@@ -581,6 +584,7 @@ exports[`DataTable basic 1`] = `
       </tr>
       <tr
         className="c3"
+        onClick={[Function]}
       >
         <th
           className="c7"
@@ -920,6 +924,7 @@ exports[`DataTable footer 1`] = `
     >
       <tr
         className="c3"
+        onClick={[Function]}
       >
         <th
           className="c7"
@@ -951,6 +956,7 @@ exports[`DataTable footer 1`] = `
       </tr>
       <tr
         className="c3"
+        onClick={[Function]}
       >
         <th
           className="c7"
@@ -1863,6 +1869,7 @@ exports[`DataTable primaryKey 1`] = `
     >
       <tr
         className="c3"
+        onClick={[Function]}
       >
         <td
           className="c7"
@@ -1894,6 +1901,7 @@ exports[`DataTable primaryKey 1`] = `
       </tr>
       <tr
         className="c3"
+        onClick={[Function]}
       >
         <td
           className="c7"
@@ -2216,6 +2224,7 @@ exports[`DataTable resizeable 1`] = `
     >
       <tr
         className="c3"
+        onClick={[Function]}
       >
         <th
           className="c10"
@@ -2247,6 +2256,7 @@ exports[`DataTable resizeable 1`] = `
       </tr>
       <tr
         className="c3"
+        onClick={[Function]}
       >
         <th
           className="c10"

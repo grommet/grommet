@@ -3120,6 +3120,15 @@ When supplied, and when at least one column has 'search' enabled,
 function
 \`\`\`
 
+**onRowClick**
+
+When supplied, it will be called when a row is clicked and it will
+      provide you with the event and datum of the corresponding row.
+
+\`\`\`
+function
+\`\`\`
+
 **primaryKey**
 
 When supplied, indicates the property for a data object to use to
