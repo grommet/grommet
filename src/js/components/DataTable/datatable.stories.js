@@ -211,6 +211,13 @@ class ServedDataTable extends Component {
   }
 }
 
+const controlledColumns = [...columns];
+const name = controlledColumns[0];
+const totals = controlledColumns[4];
+delete name.footer;
+delete totals.footer;
+delete totals.aggregate;
+
 class ControlledDataTable extends Component {
   state = {
     checked: [],
@@ -233,6 +240,7 @@ class ControlledDataTable extends Component {
 
   render() {
     const { checked } = this.state;
+
     return (
       <Grommet theme={grommet}>
         <Box align="center" pad="medium">
@@ -240,31 +248,26 @@ class ControlledDataTable extends Component {
             columns={[
               {
                 property: 'checkbox',
+                render: datum => (
+                  <CheckBox
+                    key={datum.name}
+                    checked={checked.indexOf(datum.name) !== -1}
+                    onChange={e => this.onCheck(e, datum.name)}
+                  />
+                ),
                 header: (
-                  <Box margin={{ left: 'small' }} pad={{ bottom: 'small' }}>
-                    <CheckBox
-                      checked={checked.length === DATA.length}
-                      indeterminate={
-                        checked.length > 0 && checked.length < DATA.length
-                      }
-                      onChange={this.onCheckAll}
-                    />
-                  </Box>
+                  <CheckBox
+                    indeterminate={
+                      checked.length > 0 && checked.length < DATA.length
+                    }
+                    onChange={this.onCheckAll}
+                  />
                 ),
                 sortable: false,
               },
-              ...columns,
+              ...controlledColumns,
             ].map(col => ({ ...col }))}
-            data={DATA.map(datum => ({
-              checkbox: (
-                <CheckBox
-                  key={datum.name}
-                  checked={checked.indexOf(datum.name) !== -1}
-                  onChange={e => this.onCheck(e, datum.name)}
-                />
-              ),
-              ...datum,
-            }))}
+            data={DATA}
             sortable
             size="medium"
           />

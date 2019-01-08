@@ -103,7 +103,7 @@ const Header = ({
                 />
               </Box>
             );
-          } else if (!onSort) {
+          } else if (!onSort || sortable === false) {
             content = (
               <Box
                 {...dataTableContextTheme}
