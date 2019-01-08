@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { genericStyles } from '../../utils';
+import { genericStyles, backgroundStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const SIZE_MAP = {
@@ -42,7 +42,16 @@ const StyledTableDataCaption = styled.caption`
 StyledTableDataCaption.defaultProps = {};
 Object.setPrototypeOf(StyledTableDataCaption.defaultProps, defaultProps);
 
+const hoverStyle = css`
+  &:hover {
+    ${props => backgroundStyle(props.theme.global.hover.background, props.theme)}
+    ${props => `color: ${normalizeColor(props.theme.global.hover.color, props.theme)}`};
+  }
+  cursor: pointer;
+`;
+
 const StyledTableRow = styled.tr`
+  ${props => props.hoverIndicator && hoverStyle}
   height: 100%;
 `;
 

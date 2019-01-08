@@ -1503,7 +1503,7 @@ exports[`DataTable groupBy 2`] = `
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 bAIczD StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 drboDW"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
@@ -1565,7 +1565,7 @@ exports[`DataTable groupBy 2`] = `
       class="StyledDataTable__StyledDataTableBody-xrlyjm-2 hbZQKY StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 drboDW"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
@@ -1616,7 +1616,7 @@ exports[`DataTable groupBy 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 drboDW"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
@@ -2646,7 +2646,7 @@ exports[`DataTable sort 2`] = `
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 bAIczD StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 drboDW"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
@@ -2846,7 +2846,7 @@ exports[`DataTable sort 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 drboDW"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"

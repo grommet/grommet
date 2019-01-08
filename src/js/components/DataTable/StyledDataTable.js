@@ -18,6 +18,8 @@ const StyledDataTable = styled(Table)`
 StyledDataTable.defaultProps = {};
 Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps);
 
+
+
 const StyledDataTableRow = styled(TableRow)`
   ${props =>
     props.size &&
