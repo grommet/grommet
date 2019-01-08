@@ -10,6 +10,13 @@ import { TableRow } from 'grommet';
 
 ## Properties
 
+**hoverIndicator**
+
+Whether to apply the hover indicator when the user is mousing over row.
+
+```
+boolean
+```
   
 ## Intrinsic element
 

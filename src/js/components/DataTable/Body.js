@@ -40,6 +40,7 @@ export const Body = ({
             onClick={evt => onClick(evt, datum)}
             key={datum[primaryProperty]}
             size={size}
+            hoverIndicator={onRowClick !== undefined}
           >
             {columns.map(column => (
               <Cell

@@ -222,7 +222,7 @@ class ControlledDataTable extends Component {
     checked: [],
   };
 
-  handleCheck = (value) => {
+  handleCheck = value => {
     const { checked } = this.state;
     if (checked.indexOf(value) !== -1) {
       this.setState({ checked: checked.filter(item => item !== value) });
@@ -232,12 +232,12 @@ class ControlledDataTable extends Component {
     }
   };
 
-  onCheck = (value) => {
+  onCheck = value => {
     const { rowClick } = this.props;
     if (!rowClick) {
-      this.handleCheck(value)
+      this.handleCheck(value);
     }
-  }
+  };
 
   onCheckAll = event =>
     this.setState({
@@ -247,18 +247,19 @@ class ControlledDataTable extends Component {
   onRowClick = (_, datum) => {
     const { rowClick } = this.props;
     if (rowClick) {
-      this.handleCheck(datum.name)
+      this.handleCheck(datum.name);
     }
   };
 
   render() {
+    const { rowClick } = this.props;
     const { checked } = this.state;
 
     return (
       <Grommet theme={grommet}>
         <Box align="center" pad="medium">
           <DataTable
-            onRowClick={this.onRowClick}
+            onRowClick={rowClick && this.onRowClick}
             columns={[
               {
                 property: 'checkbox',
