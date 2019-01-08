@@ -83,6 +83,7 @@ class DataTable extends Component {
       size,
       sortable,
       onSearch, // removing unknown DOM attributes
+      onRowClick,
       ...rest
     } = this.props;
     const {
@@ -135,6 +136,7 @@ class DataTable extends Component {
             onMore={onMore}
             primaryProperty={primaryProperty}
             size={size}
+            onRowClick={onRowClick}
           />
         )}
         {showFooter && (

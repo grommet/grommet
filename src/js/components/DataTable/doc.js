@@ -72,6 +72,10 @@ export const doc = DataTable => {
       names and values which are the search text strings. This is typically
       employed so a back-end can be used to search through the data.`,
     ),
+    onRowClick: PropTypes.func.description(
+      `When supplied, it will be called when a row is clicked and it will
+      provide you with the event and datum of the corresponding row.`,
+    ),
     primaryKey: PropTypes.string.description(
       `When supplied, indicates the property for a data object to use to
       get a unique identifier. See also the 'columns.primary' description.

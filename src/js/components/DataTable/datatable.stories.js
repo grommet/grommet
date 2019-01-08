@@ -222,20 +222,34 @@ class ControlledDataTable extends Component {
     checked: [],
   };
 
-  onCheck = (event, value) => {
+  handleCheck = (value) => {
     const { checked } = this.state;
-    if (event.target.checked) {
+    if (checked.indexOf(value) !== -1) {
+      this.setState({ checked: checked.filter(item => item !== value) });
+    } else {
       checked.push(value);
       this.setState({ checked });
-    } else {
-      this.setState({ checked: checked.filter(item => item !== value) });
     }
   };
+
+  onCheck = (value) => {
+    const { rowClick } = this.props;
+    if (!rowClick) {
+      this.handleCheck(value)
+    }
+  }
 
   onCheckAll = event =>
     this.setState({
       checked: event.target.checked ? DATA.map(datum => datum.name) : [],
     });
+
+  onRowClick = (_, datum) => {
+    const { rowClick } = this.props;
+    if (rowClick) {
+      this.handleCheck(datum.name)
+    }
+  };
 
   render() {
     const { checked } = this.state;
@@ -244,6 +258,7 @@ class ControlledDataTable extends Component {
       <Grommet theme={grommet}>
         <Box align="center" pad="medium">
           <DataTable
+            onRowClick={this.onRowClick}
             columns={[
               {
                 property: 'checkbox',
@@ -251,7 +266,7 @@ class ControlledDataTable extends Component {
                   <CheckBox
                     key={datum.name}
                     checked={checked.indexOf(datum.name) !== -1}
-                    onChange={e => this.onCheck(e, datum.name)}
+                    onChange={() => this.onCheck(datum.name)}
                   />
                 ),
                 header: (
@@ -283,4 +298,5 @@ storiesOf('DataTable', module)
   .add('Tunable DataTable', () => <TunableDataTable />)
   .add('Grouped DataTable', () => <GroupedDataTable />)
   .add('Served DataTable', () => <ServedDataTable />)
-  .add('Controlled DataTable', () => <ControlledDataTable />);
+  .add('Controlled DataTable', () => <ControlledDataTable />)
+  .add('Clickable rows DataTable', () => <ControlledDataTable rowClick />);
