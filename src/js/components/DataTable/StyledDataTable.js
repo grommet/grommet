@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import { genericStyles } from '../../utils';
+import { genericStyles, backgroundStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const StyledDataTable = styled.table`
@@ -13,7 +13,16 @@ const StyledDataTable = styled.table`
 StyledDataTable.defaultProps = {};
 Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps);
 
+const hoverStyle = css`
+  &:hover {
+    ${props => backgroundStyle(props.theme.global.hover.background, props.theme)}
+    ${props => `color: ${normalizeColor(props.theme.global.hover.color, props.theme)}`};
+  }
+  cursor: pointer;
+`;
+
 const StyledDataTableRow = styled.tr`
+  ${props => props.hoverIndicator && hoverStyle}
   ${props =>
     props.size &&
     `

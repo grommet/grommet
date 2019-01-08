@@ -1478,7 +1478,7 @@ exports[`DataTable groupBy 2`] = `
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 bAIczD StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 bYmmUz StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
@@ -1540,7 +1540,7 @@ exports[`DataTable groupBy 2`] = `
       class="StyledDataTable__StyledDataTableBody-xrlyjm-2 hbZQKY"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 bYmmUz"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
@@ -1591,7 +1591,7 @@ exports[`DataTable groupBy 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 bYmmUz"
       >
         <td
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezoiKY"
@@ -2606,7 +2606,7 @@ exports[`DataTable sort 2`] = `
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 bAIczD StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
     >
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 bYmmUz StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
@@ -2802,7 +2802,7 @@ exports[`DataTable sort 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws"
+        class="StyledDataTable__StyledDataTableRow-xrlyjm-1 bYmmUz"
       >
         <th
           class="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
