@@ -241,6 +241,7 @@ export interface DataTableProps {
   groupBy?: string;
   onMore?: ((...args: any[]) => any);
   onSearch?: ((...args: any[]) => any);
+  onRowClick?: ((...args: any[]) => any);
   primaryKey?: string;
   resizeable?: boolean;
   size?: \\"small\\" | \\"medium\\" | \\"large\\" | \\"xlarge\\" | string;
