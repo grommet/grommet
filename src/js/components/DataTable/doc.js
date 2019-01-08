@@ -35,6 +35,7 @@ export const doc = DataTable => {
         property: PropTypes.string.isRequired,
         render: PropTypes.func,
         search: PropTypes.bool,
+        sortable: PropTypes.bool,
       }),
     ).description(
       `A description of the data. The order controls the column order.

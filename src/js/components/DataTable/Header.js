@@ -59,11 +59,10 @@ const Header = ({
           />
         )}
 
-        {columns.map(({ property, header, align, search }) => {
+        {columns.map(({ property, header, align, search, sortable }) => {
           let content =
             typeof header === 'string' ? <Text>{header}</Text> : header;
-
-          if (onSort) {
+          if (onSort && sortable !== false) {
             content = (
               <Sorter
                 align={align}
@@ -104,7 +103,7 @@ const Header = ({
                 />
               </Box>
             );
-          } else if (!onSort) {
+          } else if (!onSort || sortable === false) {
             content = (
               <Box
                 {...dataTableContextTheme}
