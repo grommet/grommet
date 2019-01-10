@@ -3,7 +3,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(Select) {
-  var DocumentedSelect = describe(Select).availableAt(getAvailableAtBadge('Select')).description('A control to select a value, with optional search.').usage("import { Select } from 'grommet';\n<Select />").intrinsicElement('select');
+  var DocumentedSelect = describe(Select).availableAt(getAvailableAtBadge('Select')).description('A control to select a value, with optional search.').usage("import { Select } from 'grommet';\n<Select />"); // We don't include svg due to a collision on the values property
+  // .intrinsicElement('select');
+
   DocumentedSelect.propTypes = _extends({}, genericProps, {
     children: PropTypes.func.description("Function that will be called when each option is rendered.\n      It will be passed (option, index, options, state) where option\n      is the option to render, index is the index of that option in the\n      options array, and state is an object with\n      { active, disabled, selected } keys indicating the current state\n      of the option."),
     closeOnChange: PropTypes.bool.description('Wether to close the drop when a selection is made.').defaultValue(true),
