@@ -9,8 +9,9 @@ export const doc = Select => {
     .usage(
       `import { Select } from 'grommet';
 <Select />`,
-    )
-    .intrinsicElement('select');
+    );
+  // We don't include svg due to a collision on the values property
+  // .intrinsicElement('select');
 
   DocumentedSelect.propTypes = {
     ...genericProps,

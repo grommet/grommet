@@ -13,8 +13,9 @@ export const doc = Meter => {
     .usage(
       `import { Meter } from 'grommet';
 <Meter />`,
-    )
-    .intrinsicElement('svg');
+    );
+  // We don't include svg due to a collision on the values property
+  // .intrinsicElement('svg');
 
   DocumentedMeter.propTypes = {
     ...genericProps,

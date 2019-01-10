@@ -32,6 +32,6 @@ export interface SelectProps {
   emptySearchMessage?: string;
 }
 
-declare const Select: React.ComponentType<SelectProps & JSX.IntrinsicElements['select']>;
+declare const Select: React.ComponentType<SelectProps>;
 
 export { Select };

@@ -176,7 +176,7 @@ export interface ChartProps {
   values: (number | number[] | {label?: string,onClick?: ((...args: any[]) => any),onHover?: ((...args: any[]) => any),value: number | number[]})[];
 }
 
-declare const Chart: React.ComponentType<ChartProps & JSX.IntrinsicElements['svg']>;
+declare const Chart: React.ComponentType<ChartProps>;
 
 export { Chart };
 ",
@@ -536,7 +536,7 @@ export interface MeterProps {
   values?: {color?: string,highlight?: boolean,label: string,onClick?: ((...args: any[]) => any),onHover?: ((...args: any[]) => any),value: number}[];
 }
 
-declare const Meter: React.ComponentType<MeterProps & JSX.IntrinsicElements['svg']>;
+declare const Meter: React.ComponentType<MeterProps>;
 
 export { Meter };
 ",
@@ -665,7 +665,7 @@ export interface SelectProps {
   emptySearchMessage?: string;
 }
 
-declare const Select: React.ComponentType<SelectProps & JSX.IntrinsicElements['select']>;
+declare const Select: React.ComponentType<SelectProps>;
 
 export { Select };
 ",

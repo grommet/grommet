@@ -1251,7 +1251,6 @@ string",
       },
     ],
     "description": "A graphical chart.",
-    "intrinsicElement": "svg",
     "name": "Chart",
     "properties": Array [
       Object {
@@ -2540,7 +2539,6 @@ string",
       },
     ],
     "description": "A control to select a value, with optional search.",
-    "intrinsicElement": "select",
     "name": "Select",
     "properties": Array [
       Object {

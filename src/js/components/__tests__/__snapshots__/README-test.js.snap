@@ -2573,12 +2573,7 @@ Required. Array of value objects describing the data.
   }
 ]
 \`\`\`
-  
-## Intrinsic element
-
-\`\`\`
-svg
-\`\`\`",
+  ",
   "CheckBox": "## CheckBox
 A checkbox toggle control.
 
@@ -5732,12 +5727,7 @@ Array of value objects describing the data.
   value: number
 }]
 \`\`\`
-  
-## Intrinsic element
-
-\`\`\`
-svg
-\`\`\`",
+  ",
   "Paragraph": "## Paragraph
 A paragraph of text.
 
@@ -6731,11 +6721,6 @@ Empty option message to display when no matching results were found Defaults to 
 string
 \`\`\`
   
-## Intrinsic element
-
-\`\`\`
-select
-\`\`\`
 ## Theme
   
 **select.background**
