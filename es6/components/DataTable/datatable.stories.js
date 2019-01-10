@@ -8,7 +8,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Box, DataTable, Meter, Text } from 'grommet';
+import { Grommet, Box, DataTable, Meter, Text, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
 var amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -250,6 +250,101 @@ function (_Component) {
   return ServedDataTable;
 }(Component);
 
+var controlledColumns = [].concat(columns);
+var name = controlledColumns[0];
+var totals = controlledColumns[4];
+delete name.footer;
+delete totals.footer;
+delete totals.aggregate;
+
+var ControlledDataTable =
+/*#__PURE__*/
+function (_Component2) {
+  _inheritsLoose(ControlledDataTable, _Component2);
+
+  function ControlledDataTable() {
+    var _this2;
+
+    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "state", {
+      checked: []
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onCheck", function (event, value) {
+      var checked = _this2.state.checked;
+
+      if (event.target.checked) {
+        checked.push(value);
+
+        _this2.setState({
+          checked: checked
+        });
+      } else {
+        _this2.setState({
+          checked: checked.filter(function (item) {
+            return item !== value;
+          })
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onCheckAll", function (event) {
+      return _this2.setState({
+        checked: event.target.checked ? DATA.map(function (datum) {
+          return datum.name;
+        }) : []
+      });
+    });
+
+    return _this2;
+  }
+
+  var _proto2 = ControlledDataTable.prototype;
+
+  _proto2.render = function render() {
+    var _this3 = this;
+
+    var checked = this.state.checked;
+    return React.createElement(Grommet, {
+      theme: grommet
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "medium"
+    }, React.createElement(DataTable, {
+      columns: [{
+        property: 'checkbox',
+        render: function render(datum) {
+          return React.createElement(CheckBox, {
+            key: datum.name,
+            checked: checked.indexOf(datum.name) !== -1,
+            onChange: function onChange(e) {
+              return _this3.onCheck(e, datum.name);
+            }
+          });
+        },
+        header: React.createElement(CheckBox, {
+          checked: checked.length === DATA.length,
+          indeterminate: checked.length > 0 && checked.length < DATA.length,
+          onChange: this.onCheckAll
+        }),
+        sortable: false
+      }].concat(controlledColumns).map(function (col) {
+        return _extends({}, col);
+      }),
+      data: DATA,
+      sortable: true,
+      size: "medium"
+    })));
+  };
+
+  return ControlledDataTable;
+}(Component);
+
 storiesOf('DataTable', module).add('Simple DataTable', function () {
   return React.createElement(SimpleDataTable, null);
 }).add('Sized DataTable', function () {
@@ -260,4 +355,6 @@ storiesOf('DataTable', module).add('Simple DataTable', function () {
   return React.createElement(GroupedDataTable, null);
 }).add('Served DataTable', function () {
   return React.createElement(ServedDataTable, null);
+}).add('Controlled DataTable', function () {
+  return React.createElement(ControlledDataTable, null);
 });

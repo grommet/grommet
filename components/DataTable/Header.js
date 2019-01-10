@@ -85,10 +85,11 @@ var Header = function Header(_ref) {
     var property = _ref3.property,
         header = _ref3.header,
         align = _ref3.align,
-        search = _ref3.search;
+        search = _ref3.search,
+        sortable = _ref3.sortable;
     var content = typeof header === 'string' ? _react.default.createElement(_Text.Text, null, header) : header;
 
-    if (onSort) {
+    if (onSort && sortable !== false) {
       content = _react.default.createElement(_Sorter.Sorter, {
         align: align,
         fill: !search,
@@ -119,7 +120,7 @@ var Header = function Header(_ref) {
         onFilter: onFilter,
         onFiltering: onFiltering
       }));
-    } else if (!onSort) {
+    } else if (!onSort || sortable === false) {
       content = _react.default.createElement(_Box.Box, _extends({}, dataTableContextTheme, {
         fill: true,
         justify: "center",

@@ -149,7 +149,8 @@ A description of the data. The order controls the column order.
   primary: boolean,
   property: string,
   render: function,
-  search: boolean
+  search: boolean,
+  sortable: boolean
 }]
 ```
 

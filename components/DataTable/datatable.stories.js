@@ -258,6 +258,101 @@ function (_Component) {
   return ServedDataTable;
 }(_react.Component);
 
+var controlledColumns = [].concat(columns);
+var name = controlledColumns[0];
+var totals = controlledColumns[4];
+delete name.footer;
+delete totals.footer;
+delete totals.aggregate;
+
+var ControlledDataTable =
+/*#__PURE__*/
+function (_Component2) {
+  _inheritsLoose(ControlledDataTable, _Component2);
+
+  function ControlledDataTable() {
+    var _this2;
+
+    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "state", {
+      checked: []
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onCheck", function (event, value) {
+      var checked = _this2.state.checked;
+
+      if (event.target.checked) {
+        checked.push(value);
+
+        _this2.setState({
+          checked: checked
+        });
+      } else {
+        _this2.setState({
+          checked: checked.filter(function (item) {
+            return item !== value;
+          })
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onCheckAll", function (event) {
+      return _this2.setState({
+        checked: event.target.checked ? DATA.map(function (datum) {
+          return datum.name;
+        }) : []
+      });
+    });
+
+    return _this2;
+  }
+
+  var _proto2 = ControlledDataTable.prototype;
+
+  _proto2.render = function render() {
+    var _this3 = this;
+
+    var checked = this.state.checked;
+    return _react.default.createElement(_grommet.Grommet, {
+      theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "medium"
+    }, _react.default.createElement(_grommet.DataTable, {
+      columns: [{
+        property: 'checkbox',
+        render: function render(datum) {
+          return _react.default.createElement(_grommet.CheckBox, {
+            key: datum.name,
+            checked: checked.indexOf(datum.name) !== -1,
+            onChange: function onChange(e) {
+              return _this3.onCheck(e, datum.name);
+            }
+          });
+        },
+        header: _react.default.createElement(_grommet.CheckBox, {
+          checked: checked.length === DATA.length,
+          indeterminate: checked.length > 0 && checked.length < DATA.length,
+          onChange: this.onCheckAll
+        }),
+        sortable: false
+      }].concat(controlledColumns).map(function (col) {
+        return _extends({}, col);
+      }),
+      data: DATA,
+      sortable: true,
+      size: "medium"
+    })));
+  };
+
+  return ControlledDataTable;
+}(_react.Component);
+
 (0, _react2.storiesOf)('DataTable', module).add('Simple DataTable', function () {
   return _react.default.createElement(SimpleDataTable, null);
 }).add('Sized DataTable', function () {
@@ -268,4 +363,6 @@ function (_Component) {
   return _react.default.createElement(GroupedDataTable, null);
 }).add('Served DataTable', function () {
   return _react.default.createElement(ServedDataTable, null);
+}).add('Controlled DataTable', function () {
+  return _react.default.createElement(ControlledDataTable, null);
 });
