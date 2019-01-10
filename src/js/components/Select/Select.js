@@ -169,13 +169,13 @@ class Select extends Component {
           dropContent={
             <SelectContainer {...this.props} onChange={onSelectChange} />
           }
+          plain={plain}
         >
           <Box
             align="center"
             direction="row"
             justify="between"
             background={theme.select.background}
-            plain={plain}
           >
             <Box direction="row" flex basis="auto">
               {selectValue || (
