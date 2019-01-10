@@ -5762,7 +5762,7 @@ exports[`Select select an option 1`] = `
 `;
 
 exports[`Select select an option with complex options 1`] = `
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -5773,30 +5773,30 @@ exports[`Select select an option with complex options 1`] = `
   stroke: #7D4CDB;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
 
-.c2 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5821,7 +5821,7 @@ exports[`Select select an option with complex options 1`] = `
   padding: 0px;
 }
 
-.c3 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5843,7 +5843,7 @@ exports[`Select select an option with complex options 1`] = `
   padding: 0px;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5864,7 +5864,7 @@ exports[`Select select an option with complex options 1`] = `
   padding: 0px;
 }
 
-.c1 {
+.c0 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -5882,9 +5882,16 @@ exports[`Select select an option with complex options 1`] = `
   text-align: inherit;
 }
 
-.c0 {
-  border: 1px solid rgba(0,0,0,0.33);
-  border-radius: 4px;
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -5901,52 +5908,40 @@ exports[`Select select an option with complex options 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c3 {
     padding: 0px;
   }
 }
 
 <button
   aria-label="Open Drop"
-  class="c0 c1"
+  class="c0"
   id="test-select"
   type="button"
 >
   <div
-    class="c2"
+    class="c1"
   >
     <div
-      class="c3"
+      class="c2"
     >
       <span>
         one
       </span>
     </div>
     <div
-      class="c4"
+      class="c3"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="c5"
+        class="c4"
         viewBox="0 0 24 24"
       >
         <polyline
