@@ -1,6 +1,7 @@
 // colors.js
 declare const normalizeColor: (color: string, theme: object, required?: boolean) => string;
 
+export {normalizeColor}
 // object.js
 export type DeepReadonly<T extends object> = {
   readonly [K in keyof T]: T[K] extends object ? DeepReadonly<T[K]> : T[K];
