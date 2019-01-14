@@ -25,13 +25,13 @@
     "node": ">= 8"
   },
   "scripts": {
-    "generate-readme-ts": "cross-env NODE_ENV=production babel-node ./tools/generate-readme-ts",
+    "generate-readme": "cross-env NODE_ENV=production babel-node ./tools/generate-readme",
     "build": "webpack --mode production && babel ./src/js/ --ignore '__tests__' --out-dir ./dist --copy-files && cross-env BABEL_ENV=es6 babel ./src/js/ --ignore '__tests__' --out-dir ./dist/es6 --copy-files",
     "release-stable": "babel-node ./tools/release-stable",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
-    "test": "npm run generate-readme-ts && jest --runInBand",
-    "test-update": "npm run generate-readme-ts && jest --updateSnapshot",
+    "test": "npm run generate-readme && jest --runInBand",
+    "test-update": "npm run generate-readme && jest --updateSnapshot",
     "test-watch": "jest --watchAll",
     "pack": "babel-node ./tools/pack",
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",

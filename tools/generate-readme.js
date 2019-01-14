@@ -6,35 +6,6 @@ const code = '```';
 
 const replaceHoc = content => content.replace(/(With.*\()(.*)(\))/g, '$2');
 
-const getTypescriptDefinitionFile = (
-  component,
-  { properties, intrinsicElement },
-) => `import * as React from "react";
-
-export interface ${component}Props {
-  ${(properties || [])
-    .map(
-      ({ name, format, required }) =>
-        `${name}${required ? '' : '?'}: ${format};`,
-    )
-    .join('\n  ')}
-}
-
-declare const ${component}: React.ComponentType<${component}Props${
-  intrinsicElement
-    ? ` & ${
-        Array.isArray(intrinsicElement)
-          ? `(${intrinsicElement
-              .map(e => `JSX.IntrinsicElements['${e}']`)
-              .join(' | ')})`
-          : `JSX.IntrinsicElements['${intrinsicElement}']`
-      }`
-    : ''
-}>;
-
-export { ${component} };
-`;
-
 const toMarkdown = theme => {
   const themeProps = Object.keys(theme).map(
     themeEntry => `
@@ -76,23 +47,9 @@ components(FOLDER).forEach(component => {
   /* eslint-enable */
 
   const readmeDestination = path.join(FOLDER, component, 'README.md');
-  const typescriptDefinitionDestination = path.join(
-    FOLDER,
-    component,
-    'index.d.ts',
-  );
 
   const DocumentedComponent = doc(Component);
 
-  del(typescriptDefinitionDestination).then(() =>
-    fs.writeFileSync(
-      typescriptDefinitionDestination,
-      getTypescriptDefinitionFile(
-        component,
-        DocumentedComponent.toTypescript(),
-      ),
-    ),
-  );
   const readmeContent = themeDoc
     ? `${replaceHoc(DocumentedComponent.toMarkdown())}\n${toMarkdown(themeDoc)}`
     : `${replaceHoc(DocumentedComponent.toMarkdown())}`;
