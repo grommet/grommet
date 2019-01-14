@@ -211,12 +211,11 @@ class ServedDataTable extends Component {
   }
 }
 
-const controlledColumns = [...columns];
-const name = controlledColumns[0];
-const totals = controlledColumns[4];
-delete name.footer;
-delete totals.footer;
-delete totals.aggregate;
+const controlledColumns = columns.map(col => Object.assign({}, col));
+delete controlledColumns[0].footer;
+delete controlledColumns[3].footer;
+delete controlledColumns[4].footer;
+delete controlledColumns[4].aggregate;
 
 class ControlledDataTable extends Component {
   state = {

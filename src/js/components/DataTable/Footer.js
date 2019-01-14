@@ -7,7 +7,6 @@ import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
 import { TableRow } from '../TableRow';
-import { TableFooter } from '../TableFooter';
 import { TableCell } from '../TableCell';
 
 import { Cell } from './Cell';
@@ -21,7 +20,7 @@ const Footer = ({
   theme,
   ...rest
 }) => (
-  <StyledDataTableFooter as={TableFooter} {...rest}>
+  <StyledDataTableFooter {...rest}>
     <TableRow>
       {groups && (
         <TableCell size="xxsmall" plain verticalAlign="top">
