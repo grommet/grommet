@@ -6,8 +6,6 @@ import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
-import { TableHeader } from '../TableHeader';
-import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 
@@ -46,8 +44,8 @@ const Header = ({
   }))(dataTableContextTheme);
   const { border, background, ...innerThemeProps } = dataTableContextTheme;
   return (
-    <StyledDataTableHeader as={TableHeader} {...rest}>
-      <StyledDataTableRow as={TableRow}>
+    <StyledDataTableHeader {...rest}>
+      <StyledDataTableRow>
         {groups && (
           <ExpanderCell
             context="header"
