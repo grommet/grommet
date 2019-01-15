@@ -58,11 +58,10 @@ jobs:
           name: Running E2E tests
           command: npm run e2e
       - store_test_results:
-          path: cypress/screenshots/diff
+          path: cypress/snapshots/diff
       - store_artifacts:
-          path: cypress/screenshots/diff
+          path: cypress/snapshots/diff
           destination: cypress-diff
-
 
 workflows:
   version: 2

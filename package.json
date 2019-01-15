@@ -37,12 +37,10 @@
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",
     "build-storybook": "build-storybook -c storybook -o storybook-static",
     "prettier": "pretty-quick --staged",
-    "e2e": "npm run e2e:bootstrap && npm run visual-regression",
-    "e2e:bootstrap": "concurrently 'npm run storybook' 'npm run cypress:test' -k -s first",
+    "e2e": "concurrently 'npm run storybook' 'npm run cypress:test' -k -s first",
     "cypress:test": "wait-on http-get://localhost:9001/?selectedKind=Components && cypress run",
     "cypress:run": "cypress run",
-    "cypress:update": "rimraf cypress/screenshots/base/* && npm run e2e:bootstrap && mv cypress/screenshots/new/* cypress/screenshots/base",
-    "visual-regression": "rimraf cypress/screenshots/diff/* && node ./cypress/differ.js"
+    "cypress:update": "cypress run  --env updateSnapshots=true"
   },
   "peerDependencies": {
     "react": ">= 16.4.1",
@@ -52,9 +50,9 @@
   "dependencies": {
     "concurrently": "^4.1.0",
     "css": "^2.2.3",
-    "hoist-non-react-statics": "^3.2.0",
     "grommet-icons": "^4.0.0",
     "grommet-styles": "^0.2.0",
+    "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "^6.6.6",
     "mobile-detect": "^1.4.3",
     "polished": "^2.2.0",
@@ -91,6 +89,7 @@
     "copy-webpack-plugin": "^4.5.3",
     "cross-env": "^5.1.6",
     "cypress": "^3.1.3",
+    "cypress-image-snapshot": "^3.0.0",
     "del": "^3.0.0",
     "dom-testing-library": "^3.9.0",
     "eslint": "^5.6.1",
