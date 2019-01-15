@@ -27,5 +27,5 @@ import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
 
 addMatchImageSnapshotCommand({
   customDiffDir: 'cypress/snapshots/diff',
-  failureThreshold: 3,
+  failureThreshold: 0.3,
 });
