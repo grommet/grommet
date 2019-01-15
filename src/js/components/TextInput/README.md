@@ -287,3 +287,23 @@ Defaults to
 ```
 undefined
 ```
+
+**textInput.placeholder.extend**
+
+Any additional style for non-string placeholder inside TextInput. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**textInput.suggestions.extend**
+
+Any additional style for TextInput suggestions. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```

@@ -57,6 +57,11 @@ const StyledPlaceholder = styled.div`
   transform: translateY(-50%);
   display: flex;
   justify-content: center;
+
+  ${props =>
+    props.theme.textInput &&
+    props.theme.textInput.placeholder &&
+    props.theme.textInput.placeholder.extend};
 `;
 
 StyledPlaceholder.defaultProps = {};
@@ -68,6 +73,11 @@ const StyledSuggestions = styled.ol`
   margin: 0;
   padding: 0;
   list-style-type: none;
+
+  ${props =>
+    props.theme.textInput &&
+    props.theme.textInput.suggestions &&
+    props.theme.textInput.suggestions.extend};
 `;
 
 StyledSuggestions.defaultProps = {};
