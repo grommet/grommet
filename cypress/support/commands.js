@@ -25,4 +25,7 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 import { addMatchImageSnapshotCommand } from 'cypress-image-snapshot/command';
 
-addMatchImageSnapshotCommand({ customDiffDir: 'cypress/snapshots/diff' });
+addMatchImageSnapshotCommand({
+  customDiffDir: 'cypress/snapshots/diff',
+  failureThreshold: 0.05,
+});
