@@ -58,6 +58,12 @@
       "rules": {
         "react/jsx-one-expression-per-line": 0
       }
+    },
+    {
+      "files": ["cypress/*/*.js"],
+      "rules": {
+        "import/no-extraneous-dependencies": 0
+      }
     }
   ]
 }
