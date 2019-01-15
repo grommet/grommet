@@ -17,9 +17,9 @@ export const Body = ({
   onRowClick,
   ...rest
 }) => {
-  const onClick = (evt, datum) => {
+  const onClick = (event, datum) => {
     if (onRowClick) {
-      onRowClick(evt, datum);
+      onRowClick(event, datum);
     }
   };
 
@@ -37,7 +37,7 @@ export const Body = ({
       >
         {datum => (
           <StyledDataTableRow
-            onClick={evt => onClick(evt, datum)}
+            onClick={event => onClick(event, datum)}
             key={datum[primaryProperty]}
             size={size}
             hoverIndicator={onRowClick !== undefined}
