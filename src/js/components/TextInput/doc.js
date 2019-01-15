@@ -161,4 +161,15 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'textInput.placeholder.extend': {
+    description:
+      'Any additional style for non-string placeholder inside TextInput.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'textInput.suggestions.extend': {
+    description: 'Any additional style for TextInput suggestions.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
 };
