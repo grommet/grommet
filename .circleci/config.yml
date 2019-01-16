@@ -25,7 +25,7 @@ jobs:
             - yarn-cypress-cache-{{ checksum "yarn.lock" }}
       - run:
           name: Install node modules
-          command: yarn --frozen-lockfile
+          command: yarn install
       - run:
           name: Running linter
           command: npm run lint
@@ -39,7 +39,7 @@ jobs:
             - yarn-cypress-cache-{{ checksum "yarn.lock" }}
       - run:
           name: Install node modules
-          command: yarn --frozen-lockfile
+          command: yarn install
       - run:
           name: Running jest
           command: npm run test
@@ -53,7 +53,7 @@ jobs:
             - yarn-cypress-cache-{{ checksum "yarn.lock" }}
       - run:
           name: Install node modules
-          command: yarn --frozen-lockfile
+          command: yarn install
       - run:
           name: Running E2E tests
           command: npm run e2e
