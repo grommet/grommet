@@ -13,10 +13,6 @@ var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
-var _TableHeader = require("../TableHeader");
-
-var _TableRow = require("../TableRow");
-
 var _TableCell = require("../TableCell");
 
 var _Text = require("../Text");
@@ -71,11 +67,7 @@ var Header = function Header(_ref) {
       background = dataTableContextTheme.background,
       innerThemeProps = _objectWithoutPropertiesLoose(dataTableContextTheme, ["border", "background"]);
 
-  return _react.default.createElement(_StyledDataTable.StyledDataTableHeader, _extends({
-    as: _TableHeader.TableHeader
-  }, rest), _react.default.createElement(_StyledDataTable.StyledDataTableRow, {
-    as: _TableRow.TableRow
-  }, groups && _react.default.createElement(_ExpanderCell.ExpanderCell, {
+  return _react.default.createElement(_StyledDataTable.StyledDataTableHeader, rest, _react.default.createElement(_StyledDataTable.StyledDataTableRow, null, groups && _react.default.createElement(_ExpanderCell.ExpanderCell, {
     context: "header",
     expanded: Object.keys(groupState).filter(function (k) {
       return !groupState[k].expanded;

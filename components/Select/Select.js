@@ -218,13 +218,13 @@ function (_Component) {
       onClose: this.onClose,
       dropContent: _react.default.createElement(_SelectContainer.SelectContainer, _extends({}, this.props, {
         onChange: onSelectChange
-      }))
+      })),
+      plain: plain
     }, _react.default.createElement(_Box.Box, {
       align: "center",
       direction: "row",
       justify: "between",
-      background: theme.select.background,
-      plain: plain
+      background: theme.select.background
     }, _react.default.createElement(_Box.Box, {
       direction: "row",
       flex: true,

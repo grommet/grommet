@@ -59,6 +59,10 @@ describe('Box', function () {
     }), _react.default.createElement(_.Box, {
       justify: "between"
     }), _react.default.createElement(_.Box, {
+      justify: "around"
+    }), _react.default.createElement(_.Box, {
+      justify: "evenly"
+    }), _react.default.createElement(_.Box, {
       justify: "end"
     })));
 

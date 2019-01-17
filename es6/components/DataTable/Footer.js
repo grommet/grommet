@@ -8,7 +8,6 @@ import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { TableRow } from '../TableRow';
-import { TableFooter } from '../TableFooter';
 import { TableCell } from '../TableCell';
 import { Cell } from './Cell';
 import { StyledDataTableFooter } from './StyledDataTable';
@@ -21,9 +20,7 @@ var Footer = function Footer(_ref) {
       theme = _ref.theme,
       rest = _objectWithoutPropertiesLoose(_ref, ["columns", "footerValues", "groups", "primaryProperty", "theme"]);
 
-  return React.createElement(StyledDataTableFooter, _extends({
-    as: TableFooter
-  }, rest), React.createElement(TableRow, null, groups && React.createElement(TableCell, {
+  return React.createElement(StyledDataTableFooter, rest, React.createElement(TableRow, null, groups && React.createElement(TableCell, {
     size: "xxsmall",
     plain: true,
     verticalAlign: "top"

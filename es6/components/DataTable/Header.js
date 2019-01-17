@@ -7,8 +7,6 @@ import { compose } from 'recompose';
 import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
-import { TableHeader } from '../TableHeader';
-import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 import { Resizer } from './Resizer';
@@ -51,11 +49,7 @@ var Header = function Header(_ref) {
       background = dataTableContextTheme.background,
       innerThemeProps = _objectWithoutPropertiesLoose(dataTableContextTheme, ["border", "background"]);
 
-  return React.createElement(StyledDataTableHeader, _extends({
-    as: TableHeader
-  }, rest), React.createElement(StyledDataTableRow, {
-    as: TableRow
-  }, groups && React.createElement(ExpanderCell, {
+  return React.createElement(StyledDataTableHeader, rest, React.createElement(StyledDataTableRow, null, groups && React.createElement(ExpanderCell, {
     context: "header",
     expanded: Object.keys(groupState).filter(function (k) {
       return !groupState[k].expanded;

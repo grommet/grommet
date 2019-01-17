@@ -1,13 +1,18 @@
 import styled from 'styled-components';
 import { genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
-var StyledDataTable = styled.table.withConfig({
+import { TableRow } from '../TableRow';
+import { Table } from '../Table';
+import { TableBody } from '../TableBody';
+import { TableHeader } from '../TableHeader';
+import { TableFooter } from '../TableFooter';
+var StyledDataTable = styled(Table).withConfig({
   displayName: "StyledDataTable",
   componentId: "xrlyjm-0"
 })(["border-spacing:0;border-collapse:collapse;height:100%;", ";"], genericStyles);
 StyledDataTable.defaultProps = {};
 Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps);
-var StyledDataTableRow = styled.tr.withConfig({
+var StyledDataTableRow = styled(TableRow).withConfig({
   displayName: "StyledDataTable__StyledDataTableRow",
   componentId: "xrlyjm-1"
 })(["", ";"], function (props) {
@@ -15,7 +20,7 @@ var StyledDataTableRow = styled.tr.withConfig({
 });
 StyledDataTableRow.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableRow.defaultProps, defaultProps);
-var StyledDataTableBody = styled.tbody.withConfig({
+var StyledDataTableBody = styled(TableBody).withConfig({
   displayName: "StyledDataTable__StyledDataTableBody",
   componentId: "xrlyjm-2"
 })(["", ";"], function (props) {
@@ -23,7 +28,7 @@ var StyledDataTableBody = styled.tbody.withConfig({
 });
 StyledDataTableBody.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableBody.defaultProps, defaultProps);
-var StyledDataTableHeader = styled.thead.withConfig({
+var StyledDataTableHeader = styled(TableHeader).withConfig({
   displayName: "StyledDataTable__StyledDataTableHeader",
   componentId: "xrlyjm-3"
 })(["", ";"], function (props) {
@@ -31,7 +36,7 @@ var StyledDataTableHeader = styled.thead.withConfig({
 });
 StyledDataTableHeader.defaultProps = {};
 Object.setPrototypeOf(StyledDataTableHeader.defaultProps, defaultProps);
-var StyledDataTableFooter = styled.tfoot.withConfig({
+var StyledDataTableFooter = styled(TableFooter).withConfig({
   displayName: "StyledDataTable__StyledDataTableFooter",
   componentId: "xrlyjm-4"
 })(["", ";"], function (props) {

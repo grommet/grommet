@@ -1,4 +1,5 @@
 import * as React from "react";
+import { ButtonProps } from "../Button";
 
 export interface DropButtonProps {
   a11yTitle?: string;
@@ -14,6 +15,6 @@ export interface DropButtonProps {
   open?: boolean;
 }
 
-declare const DropButton: React.ComponentType<DropButtonProps & JSX.IntrinsicElements['button']>;
+declare const DropButton: React.ComponentType<DropButtonProps & ButtonProps>;
 
 export { DropButton };

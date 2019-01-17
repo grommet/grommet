@@ -44,7 +44,7 @@ export var doc = function doc(Box) {
     fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]).description('Whether the width and/or height should fill the container.'),
     gap: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("The amount of spacing between child elements. This\n        should not be used in conjunction with 'wrap' as the gap elements\n        will not wrap gracefully."),
     height: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('A fixed height.'),
-    justify: PropTypes.oneOf(['start', 'center', 'between', 'end']).description('How to align the contents along the main axis.'),
+    justify: PropTypes.oneOf(['start', 'center', 'between', 'around', 'evenly', 'end']).description('How to align the contents along the main axis.'),
     overflow: PropTypes.oneOfType([PropTypes.oneOf(OVERFLOW_VALUES), PropTypes.shape({
       horizontal: PropTypes.oneOf(OVERFLOW_VALUES),
       vertical: PropTypes.oneOf(OVERFLOW_VALUES)

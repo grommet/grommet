@@ -250,12 +250,13 @@ function (_Component) {
   return ServedDataTable;
 }(Component);
 
-var controlledColumns = [].concat(columns);
-var name = controlledColumns[0];
-var totals = controlledColumns[4];
-delete name.footer;
-delete totals.footer;
-delete totals.aggregate;
+var controlledColumns = columns.map(function (col) {
+  return Object.assign({}, col);
+});
+delete controlledColumns[0].footer;
+delete controlledColumns[3].footer;
+delete controlledColumns[4].footer;
+delete controlledColumns[4].aggregate;
 
 var ControlledDataTable =
 /*#__PURE__*/

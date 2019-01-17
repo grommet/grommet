@@ -8,8 +8,7 @@ export interface TextInputProps {
   focusIndicator?: boolean;
   messages?: {enterSelect?: string,suggestionsCount?: string,suggestionsExist?: string,suggestionIsOpen?: string};
   name?: string;
-  onChange?: ((...args: any[]) => any);
-  onSelect?: ((...args: any[]) => any);
+  onSelect?: ((x: { target: React.RefObject<HTMLElement>['current'], suggestion: any }) => void);
   onSuggestionsOpen?: ((...args: any[]) => any);
   onSuggestionsClose?: ((...args: any[]) => any);
   placeholder?: string | React.ReactNode;
@@ -19,6 +18,8 @@ export interface TextInputProps {
   value?: string;
 }
 
-declare const TextInput: React.ComponentType<TextInputProps & JSX.IntrinsicElements['input']>;
+type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
+
+declare const TextInput: React.ComponentType<TextInputProps & Omit<JSX.IntrinsicElements['input'], 'onSelect'>>;
 
 export { TextInput };

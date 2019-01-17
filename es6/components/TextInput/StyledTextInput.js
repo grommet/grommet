@@ -31,15 +31,19 @@ Object.setPrototypeOf(StyledTextInputContainer.defaultProps, defaultProps);
 var StyledPlaceholder = styled.div.withConfig({
   displayName: "StyledTextInput__StyledPlaceholder",
   componentId: "sc-1x30a0s-2"
-})(["position:absolute;left:", "px;top:50%;transform:translateY(-50%);display:flex;justify-content:center;"], function (props) {
+})(["position:absolute;left:", "px;top:50%;transform:translateY(-50%);display:flex;justify-content:center;", ";"], function (props) {
   return parseMetricToNum(props.theme.global.input.padding) - parseMetricToNum(props.theme.global.control.border.width);
+}, function (props) {
+  return props.theme.textInput && props.theme.textInput.placeholder && props.theme.textInput.placeholder.extend;
 });
 StyledPlaceholder.defaultProps = {};
 Object.setPrototypeOf(StyledPlaceholder.defaultProps, defaultProps);
 var StyledSuggestions = styled.ol.withConfig({
   displayName: "StyledTextInput__StyledSuggestions",
   componentId: "sc-1x30a0s-3"
-})(["border-top-left-radius:0;border-top-right-radius:0;margin:0;padding:0;list-style-type:none;"]);
+})(["border-top-left-radius:0;border-top-right-radius:0;margin:0;padding:0;list-style-type:none;", ";"], function (props) {
+  return props.theme.textInput && props.theme.textInput.suggestions && props.theme.textInput.suggestions.extend;
+});
 StyledSuggestions.defaultProps = {};
 Object.setPrototypeOf(StyledSuggestions.defaultProps, defaultProps);
 export { StyledTextInput, StyledTextInputContainer, StyledPlaceholder, StyledSuggestions };

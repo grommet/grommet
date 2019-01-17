@@ -47,8 +47,10 @@ Object.setPrototypeOf(StyledTextInputContainer.defaultProps, _defaultProps.defau
 var StyledPlaceholder = _styledComponents.default.div.withConfig({
   displayName: "StyledTextInput__StyledPlaceholder",
   componentId: "sc-1x30a0s-2"
-})(["position:absolute;left:", "px;top:50%;transform:translateY(-50%);display:flex;justify-content:center;"], function (props) {
+})(["position:absolute;left:", "px;top:50%;transform:translateY(-50%);display:flex;justify-content:center;", ";"], function (props) {
   return (0, _utils.parseMetricToNum)(props.theme.global.input.padding) - (0, _utils.parseMetricToNum)(props.theme.global.control.border.width);
+}, function (props) {
+  return props.theme.textInput && props.theme.textInput.placeholder && props.theme.textInput.placeholder.extend;
 });
 
 exports.StyledPlaceholder = StyledPlaceholder;
@@ -58,7 +60,9 @@ Object.setPrototypeOf(StyledPlaceholder.defaultProps, _defaultProps.defaultProps
 var StyledSuggestions = _styledComponents.default.ol.withConfig({
   displayName: "StyledTextInput__StyledSuggestions",
   componentId: "sc-1x30a0s-3"
-})(["border-top-left-radius:0;border-top-right-radius:0;margin:0;padding:0;list-style-type:none;"]);
+})(["border-top-left-radius:0;border-top-right-radius:0;margin:0;padding:0;list-style-type:none;", ";"], function (props) {
+  return props.theme.textInput && props.theme.textInput.suggestions && props.theme.textInput.suggestions.extend;
+});
 
 exports.StyledSuggestions = StyledSuggestions;
 StyledSuggestions.defaultProps = {};

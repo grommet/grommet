@@ -15,8 +15,6 @@ var _Box = require("../Box");
 
 var _TableRow = require("../TableRow");
 
-var _TableFooter = require("../TableFooter");
-
 var _TableCell = require("../TableCell");
 
 var _Cell = require("./Cell");
@@ -37,9 +35,7 @@ var Footer = function Footer(_ref) {
       theme = _ref.theme,
       rest = _objectWithoutPropertiesLoose(_ref, ["columns", "footerValues", "groups", "primaryProperty", "theme"]);
 
-  return _react.default.createElement(_StyledDataTable.StyledDataTableFooter, _extends({
-    as: _TableFooter.TableFooter
-  }, rest), _react.default.createElement(_TableRow.TableRow, null, groups && _react.default.createElement(_TableCell.TableCell, {
+  return _react.default.createElement(_StyledDataTable.StyledDataTableFooter, rest, _react.default.createElement(_TableRow.TableRow, null, groups && _react.default.createElement(_TableCell.TableCell, {
     size: "xxsmall",
     plain: true,
     verticalAlign: "top"

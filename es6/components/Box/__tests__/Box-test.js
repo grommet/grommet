@@ -46,6 +46,10 @@ describe('Box', function () {
     }), React.createElement(Box, {
       justify: "between"
     }), React.createElement(Box, {
+      justify: "around"
+    }), React.createElement(Box, {
+      justify: "evenly"
+    }), React.createElement(Box, {
       justify: "end"
     })));
     var tree = component.toJSON();

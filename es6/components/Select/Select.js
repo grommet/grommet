@@ -200,13 +200,13 @@ function (_Component) {
       onClose: this.onClose,
       dropContent: React.createElement(SelectContainer, _extends({}, this.props, {
         onChange: onSelectChange
-      }))
+      })),
+      plain: plain
     }, React.createElement(Box, {
       align: "center",
       direction: "row",
       justify: "between",
-      background: theme.select.background,
-      plain: plain
+      background: theme.select.background
     }, React.createElement(Box, {
       direction: "row",
       flex: true,
