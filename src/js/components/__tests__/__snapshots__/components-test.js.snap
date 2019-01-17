@@ -530,6 +530,8 @@ string",
         "format": "start
 center
 between
+around
+evenly
 end",
         "name": "justify",
       },
