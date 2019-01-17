@@ -387,6 +387,8 @@ How to align the contents along the main axis.
 start
 center
 between
+around
+evenly
 end
 ```
 

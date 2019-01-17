@@ -56,6 +56,8 @@ describe('Box', () => {
         <Box justify="start" />
         <Box justify="center" />
         <Box justify="between" />
+        <Box justify="around" />
+        <Box justify="evenly" />
         <Box justify="end" />
       </Grommet>,
     );

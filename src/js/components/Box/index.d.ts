@@ -17,7 +17,7 @@ export interface BoxProps {
   fill?: "horizontal" | "vertical" | boolean;
   gap?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   height?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
-  justify?: "start" | "center" | "between" | "end";
+  justify?: "start" | "center" | "between" | "around" | "evenly" | "end";
   overflow?: "auto" | "hidden" | "scroll" | "visible" | {horizontal?: "auto" | "hidden" | "scroll" | "visible",vertical?: "auto" | "hidden" | "scroll" | "visible"} | string;
   pad?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
   responsive?: boolean;
