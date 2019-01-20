@@ -94,7 +94,10 @@ Only use this when the containing context provides sufficient affordance`,
       `Suggestions to show. It is recommended to avoid showing too many
 suggestions and instead rely on the user to type more.`,
     ),
-    value: PropTypes.string.description('What text to put in the input.'),
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]).description('What text to put in the input.'),
   };
 
   return DocumentedTextInput;
