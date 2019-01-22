@@ -15,7 +15,7 @@ export interface TextInputProps {
   plain?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
   suggestions?: ({label?: React.ReactNode,value?: any} | string)[];
-  value?: string;
+  value?: string | number;
 }
 
 type Omit<T, K> = Pick<T, Exclude<keyof T, K>>

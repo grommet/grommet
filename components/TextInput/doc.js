@@ -46,7 +46,7 @@ var doc = function doc(TextInput) {
       label: _reactDesc.PropTypes.node,
       value: _reactDesc.PropTypes.any
     }), _reactDesc.PropTypes.string])).description("Suggestions to show. It is recommended to avoid showing too many\nsuggestions and instead rely on the user to type more."),
-    value: _reactDesc.PropTypes.string.description('What text to put in the input.')
+    value: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.number]).description('What text to put in the input.')
   };
   return DocumentedTextInput;
 };

@@ -184,6 +184,7 @@ What text to put in the input.
 
 ```
 string
+number
 ```
   
 ## Intrinsic element

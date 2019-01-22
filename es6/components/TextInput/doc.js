@@ -39,7 +39,7 @@ export var doc = function doc(TextInput) {
       label: PropTypes.node,
       value: PropTypes.any
     }), PropTypes.string])).description("Suggestions to show. It is recommended to avoid showing too many\nsuggestions and instead rely on the user to type more."),
-    value: PropTypes.string.description('What text to put in the input.')
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).description('What text to put in the input.')
   };
   return DocumentedTextInput;
 };

@@ -3287,7 +3287,8 @@ suggestions and instead rely on the user to type more.",
       },
       Object {
         "description": "What text to put in the input.",
-        "format": "string",
+        "format": "string
+number",
         "name": "value",
       },
     ],
