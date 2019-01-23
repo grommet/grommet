@@ -126,6 +126,7 @@ function (_Component) {
         dropBackground = _this$props.dropBackground,
         dropTarget = _this$props.dropTarget,
         forwardRef = _this$props.forwardRef,
+        justifyContent = _this$props.justifyContent,
         icon = _this$props.icon,
         items = _this$props.items,
         label = _this$props.label,
@@ -133,7 +134,7 @@ function (_Component) {
         onKeyDown = _this$props.onKeyDown,
         size = _this$props.size,
         theme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "disabled", "dropAlign", "dropBackground", "dropTarget", "forwardRef", "icon", "items", "label", "messages", "onKeyDown", "size", "theme"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "disabled", "dropAlign", "dropBackground", "dropTarget", "forwardRef", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "size", "theme"]);
 
     var _this$state3 = this.state,
         activeItemIndex = _this$state3.activeItemIndex,
@@ -142,7 +143,7 @@ function (_Component) {
     var iconColor = normalizeColor('control', theme);
     var content = children || React.createElement(Box, {
       direction: "row",
-      justify: "start",
+      justify: justifyContent,
       align: "center",
       pad: "small",
       gap: label && icon !== false ? 'small' : undefined
@@ -230,7 +231,8 @@ _defineProperty(Menu, "defaultProps", {
   messages: {
     openMenu: 'Open Menu',
     closeMenu: 'Close Menu'
-  }
+  },
+  justifyContent: 'start'
 });
 
 Object.setPrototypeOf(Menu.defaultProps, defaultProps);

@@ -35,6 +35,23 @@ describe('Menu', function () {
     })));
     expect(component.toJSON()).toMatchSnapshot();
   });
+  test('justify content', function () {
+    var component = renderer.create(React.createElement(Grommet, null, ['start', 'center', 'end', 'between', 'around', 'stretch'].map(function (justifyContent) {
+      return React.createElement(Menu, {
+        label: justifyContent + " Menu",
+        messages: {
+          openMenu: 'Abrir Menu'
+        },
+        items: [{
+          label: 'Item 1'
+        }, {
+          label: 'Item 2'
+        }],
+        justifyContent: justifyContent
+      });
+    })));
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   test('open and close on click', function () {
     window.scrollTo = jest.fn();
 
