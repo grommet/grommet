@@ -31,3 +31,15 @@ export const doc = Grommet => {
 
   return DocumentedGrommet;
 };
+
+export const themeDoc = {
+  'grommet.extend': {
+    description: 'Any additional style for Grommet.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },  
+  'global.font.face': {
+
+  },
+
+}
