@@ -155,3 +155,64 @@ boolean
 ```
 video
 ```
+## Theme
+  
+**dark**
+
+dark color defenition to consider when the Video renders the background color of the scrubber Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.colors**
+
+The background color of the video scrubber. Expects `string`.
+
+Defaults to
+
+```
+light-4
+```
+
+**global.edgeSize.responsiveBreakpoint**
+
+The actual breakpoint to trigger changes in the video component layout. Expects `string`.
+
+Defaults to
+
+```
+small
+```
+
+**global.edgeSize.xsmall**
+
+The width of the video scrubber. Expects `object`.
+
+Defaults to
+
+```
+6px
+```
+
+**video.captions.background**
+
+The caption background color of the video  Expects `string`.
+
+Defaults to
+
+```
+rgba(0, 0, 0, 0.7)
+```
+
+**video.extend**
+
+Any additional style for Video. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```

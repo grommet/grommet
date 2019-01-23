@@ -31,3 +31,36 @@ export const doc = Video => {
 
   return DocumentedVideo;
 };
+
+export const themeDoc = {
+  'dark': {
+    description: 'dark color defenition to consider when the Video renders the background color of the scrubber',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'global.colors': {
+    description: 'The background color of the video scrubber.',
+    type: 'string',
+    defaultValue: 'light-4',
+  },
+  'global.edgeSize.responsiveBreakpoint': {
+    description: 'The actual breakpoint to trigger changes in the video component layout.',
+    type: 'string',
+    defaultValue: 'small',
+  },  
+  'global.edgeSize.xsmall': {
+    description: 'The width of the video scrubber.',
+    type: 'object',
+    defaultValue: '6px',
+  },
+  'video.captions.background': {
+    description: 'The caption background color of the video ',
+    type: 'string',
+    defaultValue: 'rgba(0, 0, 0, 0.7)',
+  },
+  'video.extend': {
+    description: 'Any additional style for Video.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+}
