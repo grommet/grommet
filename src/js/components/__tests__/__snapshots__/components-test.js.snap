@@ -2245,6 +2245,17 @@ one of top or bottom should be specified.",
         "name": "dropTarget",
       },
       Object {
+        "defaultValue": "start",
+        "description": "How to align the contents along the row axis.",
+        "format": "start
+center
+end
+between
+around
+stretch",
+        "name": "justifyContent",
+      },
+      Object {
         "description": "Indicates the icon shown as a control to open it.",
         "format": "boolean
 node",

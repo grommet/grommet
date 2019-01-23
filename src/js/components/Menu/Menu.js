@@ -28,6 +28,7 @@ class Menu extends Component {
     dropAlign: { top: 'top', left: 'left' },
     items: [],
     messages: { openMenu: 'Open Menu', closeMenu: 'Close Menu' },
+    justifyContent: 'start',
   };
 
   state = { activeItemIndex: -1, open: false };
@@ -95,6 +96,7 @@ class Menu extends Component {
       dropBackground,
       dropTarget,
       forwardRef,
+      justifyContent,
       icon,
       items,
       label,
@@ -112,7 +114,7 @@ class Menu extends Component {
     const content = children || (
       <Box
         direction="row"
-        justify="start"
+        justify={justifyContent}
         align="center"
         pad="small"
         gap={label && icon !== false ? 'small' : undefined}
