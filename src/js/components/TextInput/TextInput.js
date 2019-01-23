@@ -396,7 +396,7 @@ if (process.env.NODE_ENV !== 'production') {
   TextInputDoc = require('./doc').doc(TextInput); // eslint-disable-line global-require
 }
 const TextInputWrapper = compose(
-  withFocus,
+  withFocus({ focusWithMouse: true }),
   withTheme,
   withAnnounce,
   withForwardRef,

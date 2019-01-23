@@ -226,7 +226,7 @@ if (process.env.NODE_ENV !== 'production') {
   FormFieldDoc = require('./doc').doc(FormField); // eslint-disable-line global-require
 }
 const FormFieldWrapper = compose(
-  withFocus,
+  withFocus({ focusWithMouse: true }),
   withTheme,
 )(FormFieldDoc || FormField);
 
