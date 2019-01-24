@@ -397,6 +397,7 @@ class Video extends Component {
                   background={
                     over &&
                     ((theme.video.scrubber &&
+                      theme.video.scrubber.track &&
                       theme.video.scrubber.track.color) ||
                       'dark-3')
                   }

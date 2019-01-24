@@ -60,7 +60,7 @@ const headStyle = css`
     content: '';
     height: 100%;
     width: ${props => props.theme.global.edgeSize.xsmall};
-    background: ${props => normalizeColor('light-4', props.theme)};
+    background: ${props => normalizeColor(props.theme.video.scrubber.background, props.theme)};
     position: absolute;
     left: ${props => `${props.value}%`};
   }

@@ -8358,16 +8358,6 @@ video
 \`\`\`
 ## Theme
   
-**global.colors**
-
-The background color of the video scrubber. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-light-4
-\`\`\`
-
 **global.edgeSize.responsiveBreakpoint**
 
 The actual breakpoint to trigger changes in the video component layout. Expects \`string\`.
@@ -8396,6 +8386,16 @@ Defaults to
 
 \`\`\`
 rgba(0, 0, 0, 0.7)
+\`\`\`
+
+**video.scrubber.background**
+
+The background color of the video scrubber. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+light-4
 \`\`\`
 
 **video.extend**

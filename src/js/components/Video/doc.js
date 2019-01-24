@@ -33,11 +33,6 @@ export const doc = Video => {
 };
 
 export const themeDoc = {
-  'global.colors': {
-    description: 'The background color of the video scrubber.',
-    type: 'string',
-    defaultValue: 'light-4',
-  },
   'global.edgeSize.responsiveBreakpoint': {
     description: 'The actual breakpoint to trigger changes in the video component layout.',
     type: 'string',
@@ -52,6 +47,11 @@ export const themeDoc = {
     description: 'The caption background color of the video ',
     type: 'string',
     defaultValue: 'rgba(0, 0, 0, 0.7)',
+  },
+  'video.scrubber.background': {
+    description: 'The background color of the video scrubber.',
+    type: 'string',
+    defaultValue: 'light-4',
   },
   'video.extend': {
     description: 'Any additional style for Video.',
