@@ -157,16 +157,6 @@ video
 ```
 ## Theme
   
-**dark**
-
-dark color defenition to consider when the Video renders the background color of the scrubber Expects `string`.
-
-Defaults to
-
-```
-undefined
-```
-
 **global.colors**
 
 The background color of the video scrubber. Expects `string`.

@@ -33,11 +33,6 @@ export const doc = Video => {
 };
 
 export const themeDoc = {
-  'dark': {
-    description: 'dark color defenition to consider when the Video renders the background color of the scrubber',
-    type: 'string',
-    defaultValue: undefined,
-  },
   'global.colors': {
     description: 'The background color of the video scrubber.',
     type: 'string',
