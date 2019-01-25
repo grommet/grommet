@@ -187,8 +187,9 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onBlur", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onBlur", function (event) {
       // delay so we don't remove the drop before Button events can be processed
+      var onBlur = _this.props.onBlur;
       clearTimeout(_this.blurTimeout);
       _this.blurTimeout = setTimeout(function () {
         if (!_this.dropRef.current || !_this.dropRef.current.contains || !_this.dropRef.current.contains(document.activeElement)) {
@@ -198,6 +199,10 @@ function (_Component) {
           });
         }
       }, 10); // 10ms empirically chosen
+
+      if (onBlur) {
+        onBlur(event);
+      }
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChange", function (event) {

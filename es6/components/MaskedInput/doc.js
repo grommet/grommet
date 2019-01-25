@@ -6,6 +6,7 @@ export var doc = function doc(MaskedInput) {
     id: PropTypes.string.description('The id attribute of the input.'),
     name: PropTypes.string.description('The name attribute of the input.'),
     onChange: PropTypes.func.description("Function that will be called when the user types or pastes text."),
+    onBlur: PropTypes.func.description("Function that will be called when the user leaves the field."),
     mask: PropTypes.arrayOf(PropTypes.shape({
       length: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]),
       fixed: PropTypes.string,

@@ -5217,6 +5217,14 @@ Function that will be called when the user types or pastes text.
 function
 \`\`\`
 
+**onBlur**
+
+Function that will be called when the user leaves the field.
+
+\`\`\`
+function
+\`\`\`
+
 **mask**
 
 Describes the structure of the mask. If a regexp is provided, it should

@@ -13,6 +13,7 @@ var doc = function doc(MaskedInput) {
     id: _reactDesc.PropTypes.string.description('The id attribute of the input.'),
     name: _reactDesc.PropTypes.string.description('The name attribute of the input.'),
     onChange: _reactDesc.PropTypes.func.description("Function that will be called when the user types or pastes text."),
+    onBlur: _reactDesc.PropTypes.func.description("Function that will be called when the user leaves the field."),
     mask: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       length: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.number, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.number)]),
       fixed: _reactDesc.PropTypes.string,
