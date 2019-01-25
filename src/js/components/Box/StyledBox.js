@@ -131,9 +131,11 @@ const fillStyle = fillProp => {
 };
 
 const JUSTIFY_MAP = {
+  around: 'space-around',
   between: 'space-between',
   center: 'center',
   end: 'flex-end',
+  evenly: 'space-evenly',
   start: 'flex-start',
 };
 

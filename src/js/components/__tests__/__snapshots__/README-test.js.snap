@@ -892,6 +892,8 @@ How to align the contents along the main axis.
 start
 center
 between
+around
+evenly
 end
 \`\`\`
 
@@ -5434,6 +5436,19 @@ Target where the drop will be aligned to. This should be
 object
 \`\`\`
 
+**justifyContent**
+
+How to align the contents along the row axis. Defaults to \`start\`.
+
+\`\`\`
+start
+center
+end
+between
+around
+stretch
+\`\`\`
+
 **icon**
 
 Indicates the icon shown as a control to open it.
@@ -8072,6 +8087,7 @@ What text to put in the input.
 
 \`\`\`
 string
+number
 \`\`\`
   
 ## Intrinsic element

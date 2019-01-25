@@ -53,6 +53,16 @@ one of top or bottom should be specified.`,
       a React reference. Typically, this is not required as the drop will be
       aligned to the Menu itself by default.`,
     ),
+    justifyContent: PropTypes.oneOf([
+      'start',
+      'center',
+      'end',
+      'between',
+      'around',
+      'stretch',
+    ])
+      .description('How to align the contents along the row axis.')
+      .defaultValue('start'),
     icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]).description(
       'Indicates the icon shown as a control to open it.',
     ),

@@ -171,6 +171,19 @@ Target where the drop will be aligned to. This should be
 object
 ```
 
+**justifyContent**
+
+How to align the contents along the row axis. Defaults to `start`.
+
+```
+start
+center
+end
+between
+around
+stretch
+```
+
 **icon**
 
 Indicates the icon shown as a control to open it.
