@@ -39,7 +39,9 @@ export const themeDoc = {
     defaultValue: undefined,
   },  
   'global.font.face': {
-
+    description: 'Custom font face declaration',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
   },
 
 }

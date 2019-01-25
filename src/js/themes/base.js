@@ -213,7 +213,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'focus',
         },
       },
-      font: { ...fontSizing(0) },
+      font: { 
+        ...fontSizing(0), 
+        face: undefined, 
+      },
       hover: {
         background: {
           dark: {
