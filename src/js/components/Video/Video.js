@@ -335,11 +335,12 @@ class Video extends Component {
     } = this.state;
     const over = controls === 'over';
     const background =
-      over &&
+      over ?
       ((theme.video.controls && theme.video.controls.background) || {
         color: 'dark-1',
         opacity: 'strong',
-      });
+      }):
+      undefined;
     const iconColor = over && (theme.video.icons.color || 'light-1');
 
     const formattedTime = formatTime(scrubTime || currentTime || duration);
@@ -395,11 +396,12 @@ class Video extends Component {
                 <Meter
                   aria-label="Video progress"
                   background={
-                    over &&
+                    over ?
                     ((theme.video.scrubber &&
                       theme.video.scrubber.track &&
                       theme.video.scrubber.track.color) ||
-                      'dark-3')
+                      'dark-3'):
+                      undefined
                   }
                   size="full"
                   thickness="small"
