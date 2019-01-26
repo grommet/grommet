@@ -5217,6 +5217,14 @@ Function that will be called when the user types or pastes text.
 function
 \`\`\`
 
+**onBlur**
+
+Function that will be called when the user leaves the field.
+
+\`\`\`
+function
+\`\`\`
+
 **mask**
 
 Describes the structure of the mask. If a regexp is provided, it should
@@ -5434,6 +5442,19 @@ Target where the drop will be aligned to. This should be
 
 \`\`\`
 object
+\`\`\`
+
+**justifyContent**
+
+How to align the contents along the row axis. Defaults to \`start\`.
+
+\`\`\`
+start
+center
+end
+between
+around
+stretch
 \`\`\`
 
 **icon**

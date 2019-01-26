@@ -675,6 +675,66 @@ exports[`Menu close by clicking outside 3`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .cVwgrz {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .cVwgrz {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ivYkuG {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ivYkuG {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .fvxKol {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .fvxKol {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .cbpbOe {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .cbpbOe {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .gfbxOq {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .gfbxOq {
+    padding: 6px;
+  }
+}
+
 .iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1387,6 +1447,509 @@ exports[`Menu disabled 1`] = `
           points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu justify content 1`] = `
+.c5 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c5 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c5 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c5 *[stroke*="#"],
+.c5 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
+.c5 *[fill*="#"],
+.c5 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 12px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 12px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  padding: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 12px;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding: 6px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <button
+    aria-label="Abrir Menu"
+    className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <div
+      className="c2"
+    >
+      <span
+        className="c3"
+      >
+        start Menu
+      </span>
+      <div
+        className="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        className="c5"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+  <button
+    aria-label="Abrir Menu"
+    className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <div
+      className="c6"
+    >
+      <span
+        className="c3"
+      >
+        center Menu
+      </span>
+      <div
+        className="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        className="c5"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+  <button
+    aria-label="Abrir Menu"
+    className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <div
+      className="c7"
+    >
+      <span
+        className="c3"
+      >
+        end Menu
+      </span>
+      <div
+        className="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        className="c5"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+  <button
+    aria-label="Abrir Menu"
+    className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <div
+      className="c8"
+    >
+      <span
+        className="c3"
+      >
+        between Menu
+      </span>
+      <div
+        className="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        className="c5"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+  <button
+    aria-label="Abrir Menu"
+    className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <div
+      className="c9"
+    >
+      <span
+        className="c3"
+      >
+        around Menu
+      </span>
+      <div
+        className="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        className="c5"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+  <button
+    aria-label="Abrir Menu"
+    className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <div
+      className="c10"
+    >
+      <span
+        className="c3"
+      >
+        stretch Menu
+      </span>
+      <div
+        className="c4"
+      />
+      <svg
+        aria-label="FormDown"
+        className="c5"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          strokeWidth="2"
         />
       </svg>
     </div>
@@ -2181,6 +2744,66 @@ exports[`Menu open and close on click 4`] = `
 
 @media only screen and (max-width:768px) {
   .lgRCHI {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .cVwgrz {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .cVwgrz {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ivYkuG {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ivYkuG {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .fvxKol {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .fvxKol {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .cbpbOe {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .cbpbOe {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .gfbxOq {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .gfbxOq {
     padding: 6px;
   }
 }
@@ -3014,6 +3637,66 @@ exports[`Menu with dropAlign renders 3`] = `
 
 @media only screen and (max-width:768px) {
   .lgRCHI {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .cVwgrz {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .cVwgrz {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ivYkuG {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .ivYkuG {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .fvxKol {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .fvxKol {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .cbpbOe {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .cbpbOe {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .gfbxOq {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .gfbxOq {
     padding: 6px;
   }
 }

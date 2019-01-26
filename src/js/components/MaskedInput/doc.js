@@ -18,6 +18,9 @@ export const doc = MaskedInput => {
     onChange: PropTypes.func.description(
       `Function that will be called when the user types or pastes text.`,
     ),
+    onBlur: PropTypes.func.description(
+      `Function that will be called when the user leaves the field.`,
+    ),
     mask: PropTypes.arrayOf(
       PropTypes.shape({
         length: PropTypes.oneOfType([

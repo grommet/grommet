@@ -40,6 +40,24 @@ describe('Menu', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  test('justify content', () => {
+    const component = renderer.create(
+      <Grommet>
+        {['start', 'center', 'end', 'between', 'around', 'stretch'].map(
+          justifyContent => (
+            <Menu
+              label={`${justifyContent} Menu`}
+              messages={{ openMenu: 'Abrir Menu' }}
+              items={[{ label: 'Item 1' }, { label: 'Item 2' }]}
+              justifyContent={justifyContent}
+            />
+          ),
+        )}
+      </Grommet>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
   test('open and close on click', () => {
     window.scrollTo = jest.fn();
     const { getByText, container } = render(

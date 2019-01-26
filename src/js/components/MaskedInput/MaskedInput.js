@@ -180,8 +180,9 @@ class MaskedInput extends Component {
     }
   };
 
-  onBlur = () => {
+  onBlur = event => {
     // delay so we don't remove the drop before Button events can be processed
+    const { onBlur } = this.props;
     clearTimeout(this.blurTimeout);
     this.blurTimeout = setTimeout(() => {
       if (
@@ -192,6 +193,9 @@ class MaskedInput extends Component {
         this.setState({ activeMaskIndex: undefined, focused: false });
       }
     }, 10); // 10ms empirically chosen
+    if (onBlur) {
+      onBlur(event);
+    }
   };
 
   // This could be due to a paste or as the user is typing.
