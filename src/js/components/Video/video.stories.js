@@ -7,7 +7,7 @@ import { grommet } from 'grommet/themes';
 const SimpleVideo = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <Video controls={false}>
+      <Video>
         <source
           src="http://techslides.com/demos/sample-videos/small.webm"
           type="video/webm"
