@@ -215,7 +215,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       font: { 
         ...fontSizing(0), 
-        face: undefined, 
+        // face: undefined, 
       },
       hover: {
         background: {
