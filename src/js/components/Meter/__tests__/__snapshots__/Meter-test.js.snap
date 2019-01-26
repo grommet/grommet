@@ -17,8 +17,8 @@ exports[`Meter background 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
@@ -144,8 +144,8 @@ exports[`Meter basic 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
@@ -196,8 +196,8 @@ exports[`Meter default 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
@@ -239,8 +239,8 @@ exports[`Meter many values 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
@@ -338,8 +338,8 @@ exports[`Meter round 1`] = `
 }
 
 .c2 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 .c1 {
@@ -349,8 +349,8 @@ exports[`Meter round 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
@@ -436,8 +436,8 @@ exports[`Meter size 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
@@ -718,8 +718,8 @@ exports[`Meter thickness 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
@@ -1051,8 +1051,8 @@ exports[`Meter type 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
