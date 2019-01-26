@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, RadioButtonGroup, TextInput } from 'grommet';
+import { Box, Grommet, RadioButtonGroup } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 class SimpleRadioButtonGroup extends Component {
@@ -17,7 +17,6 @@ class SimpleRadioButtonGroup extends Component {
     return (
       <Grommet theme={grommet}>
         <Box align="center" pad="large">
-          <TextInput />
           <RadioButtonGroup
             name="radio"
             options={[
@@ -29,7 +28,6 @@ class SimpleRadioButtonGroup extends Component {
             onChange={this.onChange}
             {...this.props}
           />
-          <TextInput />
         </Box>
       </Grommet>
     );
