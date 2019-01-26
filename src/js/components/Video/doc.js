@@ -48,7 +48,7 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'rgba(0, 0, 0, 0.7)',
   },
-  'video.scrubber.background': {
+  'video.scrubber.color': {
     description: 'The background color of the video scrubber.',
     type: 'string',
     defaultValue: 'light-4',

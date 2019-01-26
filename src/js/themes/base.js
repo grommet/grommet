@@ -754,7 +754,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       // scrubber: { track: { color: undefined } },
       scrubber: {
-        background: 'light-4',
+        color: 'light-4',
       },
     },
     worldMap: {

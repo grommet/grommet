@@ -8409,7 +8409,7 @@ Defaults to
 rgba(0, 0, 0, 0.7)
 \`\`\`
 
-**video.scrubber.background**
+**video.scrubber.color**
 
 The background color of the video scrubber. Expects \`string\`.
 
