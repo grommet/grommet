@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 export const doc = RadioButton => {
   const DocumentedRadioButton = describe(RadioButton)
@@ -39,4 +39,9 @@ with the same name so form submissions work.`,
   };
 
   return DocumentedRadioButton;
+};
+
+export const themeDoc = {
+  ...themeDocUtils.focusStyle,
+  ...themeDocUtils.normalizeColor,
 };

@@ -423,16 +423,6 @@ a
 \`\`\`
 ## Theme
   
-**global.focus.border.color**
-
-The color around the Anchor when in focus. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-focus
-\`\`\`
-
 **anchor.color**
 
 The color of the label text and icon strokes. Expects \`string | { dark: string, light: string }\`.
@@ -501,6 +491,26 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.colors.text**
+
+The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 ",
   "Box": "## Box
@@ -1107,72 +1117,6 @@ Defaults to
 }
 \`\`\`
 
-**global.breakpoints**
-
-The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-  small: {
-    value: '768px',
-    borderSize: {
-      xsmall: '1px',
-      small: '2px',
-      medium: '4px',
-      large: '6px',
-      xlarge: '12px',
-    },
-    edgeSize: {
-      none: '0px',
-      hair: '1px',
-      xxsmall: '2px',
-      xsmall: '3px',
-      small: '6px',
-      medium: '12px',
-      large: '24px',
-      xlarge: '48px',
-    },
-    size: {
-      xxsmall: '24px',
-      xsmall: '48px',
-      small: '96px',
-      medium: '192px',
-      large: '384px',
-      xlarge: '768px',
-      full: '100%',
-    },
-  },
-  medium: {
-    value: '1536px',
-  },
-  large: {},
-}
-\`\`\`
-
-**global.edgeSize**
-
-The possible sizes for gap, margin, and pad. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-  edgeSize: {
-    none: '0px',
-    hair: '1px',
-    xxsmall: '3px',
-    xsmall: '6px',
-    small: '12px',
-    medium: '24px',
-    large: '48px',
-    xlarge: '96px',
-    responsiveBreakpoint: 'small',
-  },
-}
-\`\`\`
-
 **global.elevation**
 
 The possible shadows in Box elevation. Expects \`object\`.
@@ -1198,16 +1142,6 @@ Defaults to
     xlarge: '0px 10px 24px rgba(255, 255, 255, 0.40)',
   },
 }
-\`\`\`
-
-**global.colors.text**
-
-The text color used inside the Box. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 
 **global.opacity.medium**
@@ -1257,6 +1191,82 @@ Defaults to
 
 \`\`\`
 small
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for any of gap, margin, and pad. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+\`\`\`
+
+**global.breakpoints**
+
+The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    small: {
+      value: '768px',
+      borderSize: {
+        xsmall: '1px',
+        small: '2px',
+        medium: '4px',
+        large: '6px',
+        xlarge: '12px',
+      },
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '2px',
+        xsmall: '3px',
+        small: '6px',
+        medium: '12px',
+        large: '24px',
+        xlarge: '48px',
+      },
+      size: {
+        xxsmall: '24px',
+        xsmall: '48px',
+        small: '96px',
+        medium: '192px',
+        large: '384px',
+        xlarge: '768px',
+        full: '100%',
+      },
+    },
+    medium: {
+      value: '1536px',
+    },
+    large: {},
+  }
+\`\`\`
+
+**global.colors.text**
+
+The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 ",
   "Button": "## Button
@@ -1661,6 +1671,26 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.colors.text**
+
+The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 ",
   "Calendar": "## Calendar
@@ -2669,7 +2699,29 @@ boolean
 
 \`\`\`
 input
-\`\`\`",
+\`\`\`
+## Theme
+  
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.colors.text**
+
+The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
+\`\`\`
+",
   "Clock": "## Clock
 A clock with timezone awareness.
 
@@ -2856,7 +2908,19 @@ digital
 
 \`\`\`
 div,svg
-\`\`\`",
+\`\`\`
+## Theme
+  
+**global.colors.text**
+
+The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
+\`\`\`
+",
   "Collapsible": "## Collapsible
 Expand or collapse animation.
 
@@ -4281,28 +4345,6 @@ div
 \`\`\`
 ## Theme
   
-**global.edgeSize**
-
-The possible sizes for the grid gap. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-      edgeSize: {
-        none: '0px',
-        hair: '1px',
-        xxsmall: '3px',
-        xsmall: '6px',
-        small: '12px',
-        medium: '24px',
-        large: '48px',
-        xlarge: '96px',
-        responsiveBreakpoint: 'small',
-      },
-    }
-\`\`\`
-
 **global.size**
 
 The possible sizes for row and column. Expects \`object\`.
@@ -4330,6 +4372,28 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for any of gap, margin, and pad. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
 \`\`\`
 ",
   "Grommet": "## Grommet
@@ -4593,7 +4657,63 @@ boolean
 
 \`\`\`
 h1,h2,h3,h4
-\`\`\`",
+\`\`\`
+## Theme
+  
+**global.breakpoints**
+
+The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    small: {
+      value: '768px',
+      borderSize: {
+        xsmall: '1px',
+        small: '2px',
+        medium: '4px',
+        large: '6px',
+        xlarge: '12px',
+      },
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '2px',
+        xsmall: '3px',
+        small: '6px',
+        medium: '12px',
+        large: '24px',
+        xlarge: '48px',
+      },
+      size: {
+        xxsmall: '24px',
+        xsmall: '48px',
+        small: '96px',
+        medium: '192px',
+        large: '384px',
+        xlarge: '768px',
+        full: '100%',
+      },
+    },
+    medium: {
+      value: '1536px',
+    },
+    large: {},
+  }
+\`\`\`
+
+**global.colors.text**
+
+The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
+\`\`\`
+",
   "Image": "## Image
 An image.
 
@@ -5100,50 +5220,6 @@ div
 \`\`\`
 ## Theme
   
-**global.breakpoints**
-
-The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-      small: {
-        value: '768px',
-        borderSize: {
-          xsmall: '1px',
-          small: '2px',
-          medium: '4px',
-          large: '6px',
-          xlarge: '12px',
-        },
-        edgeSize: {
-          none: '0px',
-          hair: '1px',
-          xxsmall: '2px',
-          xsmall: '3px',
-          small: '6px',
-          medium: '12px',
-          large: '24px',
-          xlarge: '48px',
-        },
-        size: {
-          xxsmall: '24px',
-          xsmall: '48px',
-          small: '96px',
-          medium: '192px',
-          large: '384px',
-          xlarge: '768px',
-          full: '100%',
-        },
-      },
-      medium: {
-        value: '1536px',
-      },
-      large: {},
-      }
-\`\`\`
-
 **global.size.xxsmall**
 
 The minimal height of the Layer. Expects \`string\`.
@@ -5212,6 +5288,50 @@ Defaults to
 
 \`\`\`
 10
+\`\`\`
+
+**global.breakpoints**
+
+The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    small: {
+      value: '768px',
+      borderSize: {
+        xsmall: '1px',
+        small: '2px',
+        medium: '4px',
+        large: '6px',
+        xlarge: '12px',
+      },
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '2px',
+        xsmall: '3px',
+        small: '6px',
+        medium: '12px',
+        large: '24px',
+        xlarge: '48px',
+      },
+      size: {
+        xxsmall: '24px',
+        xsmall: '48px',
+        small: '96px',
+        medium: '192px',
+        large: '384px',
+        xlarge: '768px',
+        full: '100%',
+      },
+    },
+    medium: {
+      value: '1536px',
+    },
+    large: {},
+  }
 \`\`\`
 ",
   "Markdown": "## GrommetMarkdown
@@ -5334,7 +5454,49 @@ string
 
 \`\`\`
 input
-\`\`\`",
+\`\`\`
+## Theme
+  
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.colors.placeholder**
+
+The placeholder color used for the component. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+#AAAAAA
+\`\`\`
+
+**global.input.weight**
+
+The font weight of the text entered. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+600
+\`\`\`
+
+**global.input.padding**
+
+The padding of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+12px
+\`\`\`
+",
   "Menu": "## Menu
 A control that opens a Drop containing plain Buttons. The labels
       and behavior of the contained Buttons are described via the \`items\`
@@ -5975,36 +6137,6 @@ p
 \`\`\`
 ## Theme
   
-**global.colors.text**
-
-The text color used inside the Paragraph. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
-\`\`\`
-
-**global.edgeSize**
-
-The possible sizes for margin. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-        none: '0px',
-        hair: '1px',
-        xxsmall: '3px',
-        xsmall: '6px',
-        small: '12px',
-        medium: '24px',
-        large: '48px',
-        xlarge: '96px',
-        responsiveBreakpoint: 'small',
-    }
-\`\`\`
-
 **paragraph**
 
 The possible sizes of the paragraph in terms of its max-width, font-size and line-height. Expects \`object\`.
@@ -6059,6 +6191,38 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.colors.text**
+
+The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for any of gap, margin, and pad. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
 \`\`\`
 ",
   "RadioButton": "## RadioButton
@@ -6132,7 +6296,29 @@ function
 
 \`\`\`
 input
-\`\`\`",
+\`\`\`
+## Theme
+  
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.colors.text**
+
+The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
+\`\`\`
+",
   "RadioButtonGroup": "## RadioButtonGroup
 A group of radio buttons.
 
@@ -6270,7 +6456,29 @@ string
 
 \`\`\`
 input
-\`\`\`",
+\`\`\`
+## Theme
+  
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.colors.text**
+
+The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
+\`\`\`
+",
   "RangeSelector": "## RangeSelector
 A control to input a range of values.
 
@@ -7176,7 +7384,19 @@ node
 
 \`\`\`
 button
-\`\`\`",
+\`\`\`
+## Theme
+  
+**global.colors.text**
+
+The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
+\`\`\`
+",
   "Table": "## Table
 A table of data organized in cells.
 
@@ -7815,26 +8035,6 @@ Defaults to
 { dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 
-**global.edgeSize**
-
-The possible sizes for margin. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-        none: '0px',
-        hair: '1px',
-        xxsmall: '3px',
-        xsmall: '6px',
-        small: '12px',
-        medium: '24px',
-        large: '48px',
-        xlarge: '96px',
-        responsiveBreakpoint: 'small',
-    }
-\`\`\`
-
 **text**
 
 The possible sizes of the text in terms of its font-size and line-height. Expects \`object\`.
@@ -7878,6 +8078,38 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.colors.text**
+
+The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for any of gap, margin, and pad. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
 \`\`\`
 ",
   "TextArea": "## TextArea
@@ -7975,24 +8207,34 @@ textarea
 \`\`\`
 ## Theme
   
+**textArea.extend**
+
+Any additional style for Text. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
 **global.colors.placeholder**
 
-The placeholder color used for TextArea. Expects \`string\`.
+The placeholder color used for the component. Expects \`string\`.
 
 Defaults to
 
 \`\`\`
 #AAAAAA
-\`\`\`
-
-**global.control.border.width**
-
-The border width. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-1px
 \`\`\`
 
 **global.input.weight**
@@ -8005,16 +8247,6 @@ Defaults to
 600
 \`\`\`
 
-**global.focus.border.color**
-
-The color of the border when component is focused. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-focus
-\`\`\`
-
 **global.input.padding**
 
 The padding of the text. Expects \`string\`.
@@ -8023,16 +8255,6 @@ Defaults to
 
 \`\`\`
 12px
-\`\`\`
-
-**textArea.extend**
-
-Any additional style for Text. Expects \`string | (props) => {}\`.
-
-Defaults to
-
-\`\`\`
-undefined
 \`\`\`
 ",
   "TextInput": "## TextInput
@@ -8231,46 +8453,6 @@ input
 \`\`\`
 ## Theme
   
-**global.colors.placeholder**
-
-The placeholder color used for TextInput. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-#AAAAAA
-\`\`\`
-
-**global.control.border.width**
-
-The border width. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-1px
-\`\`\`
-
-**global.input.padding**
-
-The padding of the text. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-12px
-\`\`\`
-
-**global.input.weight**
-
-The font weight of the text. Expects \`number\`.
-
-Defaults to
-
-\`\`\`
-600
-\`\`\`
-
 **select.step**
 
 How many suggestions to render at a time. Expects \`number\`.
@@ -8344,6 +8526,46 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.colors.placeholder**
+
+The placeholder color used for the component. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+#AAAAAA
+\`\`\`
+
+**global.input.weight**
+
+The font weight of the text entered. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+600
+\`\`\`
+
+**global.input.padding**
+
+The padding of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+12px
 \`\`\`
 ",
   "Video": "## Video
@@ -8553,6 +8775,16 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.colors.text**
+
+The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 ",
   "WorldMap": "## WorldMap

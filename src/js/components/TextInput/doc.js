@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 export const doc = TextInput => {
   const DocumentedTextInput = describe(TextInput)
@@ -104,26 +104,6 @@ suggestions and instead rely on the user to type more.`,
 };
 
 export const themeDoc = {
-  'global.colors.placeholder': {
-    description: 'The placeholder color used for TextInput.',
-    type: 'string',
-    defaultValue: '#AAAAAA',
-  },
-  'global.control.border.width': {
-    description: 'The border width.',
-    type: 'string',
-    defaultValue: '1px',
-  },
-  'global.input.padding': {
-    description: 'The padding of the text.',
-    type: 'string',
-    defaultValue: '12px',
-  },
-  'global.input.weight': {
-    description: 'The font weight of the text.',
-    type: 'number',
-    defaultValue: 600,
-  },
   'select.step': {
     description: 'How many suggestions to render at a time.',
     type: 'number',
@@ -175,4 +155,7 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  ...themeDocUtils.focusStyle,
+  ...themeDocUtils.placeholderStyle,
+  ...themeDocUtils.inputStyle,
 };

@@ -1,6 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
+import {
+  colorPropType,
+  genericProps,
+  getAvailableAtBadge,
+  themeDocUtils,
+} from '../../utils';
 
 export const doc = Heading => {
   const DocumentedHeading = describe(Heading)
@@ -53,4 +58,9 @@ is too long to all fit.`,
   };
 
   return DocumentedHeading;
+};
+
+export const themeDoc = {
+  ...themeDocUtils.breakpointStyle,
+  ...themeDocUtils.normalizeColor,
 };

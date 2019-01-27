@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 const fixedSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sizes = [
@@ -155,23 +155,6 @@ of indicating the DOM tag via the 'as' property.`,
 };
 
 export const themeDoc = {
-  'global.edgeSize': {
-    description: 'The possible sizes for the grid gap.',
-    type: 'object',
-    defaultValue: `{
-      edgeSize: {
-        none: '0px',
-        hair: '1px',
-        xxsmall: '3px',
-        xsmall: '6px',
-        small: '12px',
-        medium: '24px',
-        large: '48px',
-        xlarge: '96px',
-        responsiveBreakpoint: 'small',
-      },
-    }`,
-  },
   'global.size': {
     description: 'The possible sizes for row and column.',
     type: 'object',
@@ -191,4 +174,5 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  ...themeDocUtils.edgeStyle,
 };

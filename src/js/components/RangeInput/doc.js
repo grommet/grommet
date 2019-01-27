@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 export const doc = RangeInput => {
   const DocumentedRangeInput = describe(RangeInput)
@@ -36,4 +36,9 @@ export const doc = RangeInput => {
   };
 
   return DocumentedRangeInput;
+};
+
+export const themeDoc = {
+  ...themeDocUtils.focusStyle,
+  ...themeDocUtils.normalizeColor,
 };
