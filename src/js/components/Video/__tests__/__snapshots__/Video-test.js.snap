@@ -1186,7 +1186,9 @@ exports[`Video controls renders 1`] = `
                   <path
                     d="M 0,6 L 288,6"
                     fill="none"
+                    stroke="#F2F2F2"
                     strokeLinecap="square"
+                    strokeOpacity="0.4"
                     strokeWidth={12}
                   />
                 </svg>

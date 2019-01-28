@@ -155,3 +155,54 @@ boolean
 ```
 video
 ```
+## Theme
+  
+**global.edgeSize.responsiveBreakpoint**
+
+The actual breakpoint to trigger changes in the video component layout. Expects `string`.
+
+Defaults to
+
+```
+small
+```
+
+**global.edgeSize.xsmall**
+
+The width of the video scrubber. Expects `object`.
+
+Defaults to
+
+```
+6px
+```
+
+**video.captions.background**
+
+The caption background color of the video  Expects `string`.
+
+Defaults to
+
+```
+rgba(0, 0, 0, 0.7)
+```
+
+**video.scrubber.color**
+
+The background color of the video scrubber. Expects `string`.
+
+Defaults to
+
+```
+light-4
+```
+
+**video.extend**
+
+Any additional style for Video. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
