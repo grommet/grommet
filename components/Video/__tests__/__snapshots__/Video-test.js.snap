@@ -240,8 +240,8 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c11 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 .c2 {
@@ -824,8 +824,8 @@ exports[`Video controls renders 1`] = `
 }
 
 .c11 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 .c2 {
@@ -1492,8 +1492,8 @@ exports[`Video fit renders 1`] = `
 }
 
 .c11 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 .c2 {
@@ -2158,8 +2158,8 @@ exports[`Video loop renders 1`] = `
 }
 
 .c11 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 .c2 {
@@ -2658,8 +2658,8 @@ exports[`Video mute renders 1`] = `
 }
 
 .c11 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 .c2 {
@@ -3158,8 +3158,8 @@ exports[`Video renders 1`] = `
 }
 
 .c11 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 .c2 {
