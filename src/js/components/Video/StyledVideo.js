@@ -60,7 +60,8 @@ const headStyle = css`
     content: '';
     height: 100%;
     width: ${props => props.theme.global.edgeSize.xsmall};
-    background: ${props => normalizeColor(props.theme.video.scrubber.color, props.theme)};
+    background: ${props =>
+      normalizeColor(props.theme.video.scrubber.color, props.theme)};
     position: absolute;
     left: ${props => `${props.value}%`};
   }
@@ -68,6 +69,8 @@ const headStyle = css`
 
 const StyledVideoScrubber = styled.div`
   cursor: pointer;
+  width: 100%;
+  height: 100%;
   ${props => props.value && headStyle};
 `;
 
