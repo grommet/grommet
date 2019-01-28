@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.doc = void 0;
+exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -19,3 +19,16 @@ var doc = function doc(Grommet) {
 };
 
 exports.doc = doc;
+var themeDoc = {
+  'grommet.extend': {
+    description: 'Any additional style for Grommet.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'global.font.face': {
+    description: 'Custom font face declaration',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  }
+};
+exports.themeDoc = themeDoc;

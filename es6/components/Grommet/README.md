@@ -48,3 +48,24 @@ string
 ```
 div
 ```
+## Theme
+  
+**grommet.extend**
+
+Any additional style for Grommet. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.font.face**
+
+Custom font face declaration Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
