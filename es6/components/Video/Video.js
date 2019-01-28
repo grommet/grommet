@@ -380,10 +380,10 @@ function (_Component) {
         scrubTime = _this$state4.scrubTime,
         volume = _this$state4.volume;
     var over = controls === 'over';
-    var background = over && (theme.video.controls && theme.video.controls.background || {
+    var background = over ? theme.video.controls && theme.video.controls.background || {
       color: 'dark-1',
       opacity: 'strong'
-    });
+    } : undefined;
     var iconColor = over && (theme.video.icons.color || 'light-1');
     var formattedTime = formatTime(scrubTime || currentTime || duration);
     var Icons = {
@@ -431,7 +431,7 @@ function (_Component) {
       flex: true
     }, React.createElement(Stack, null, React.createElement(Meter, {
       "aria-label": "Video progress",
-      background: over && (theme.video.scrubber && theme.video.scrubber.track.color || 'dark-3'),
+      background: over ? theme.video.scrubber && theme.video.scrubber.track && theme.video.scrubber.track.color || 'dark-3' : undefined,
       size: "full",
       thickness: "small",
       values: [{

@@ -795,8 +795,11 @@ var generate = function generate(baseSpacing, scale) {
         reduceVolume: _grommetIcons.VolumeLow,
         volume: _grommetIcons.Volume // color: { dark: undefined, light: undefined },
 
-      } // scrubber: { track: { color: undefined } },
-
+      },
+      // scrubber: { track: { color: undefined } },
+      scrubber: {
+        color: 'light-4'
+      }
     },
     worldMap: {
       color: 'light-3',

@@ -13,3 +13,30 @@ export var doc = function doc(Video) {
   });
   return DocumentedVideo;
 };
+export var themeDoc = {
+  'global.edgeSize.responsiveBreakpoint': {
+    description: 'The actual breakpoint to trigger changes in the video component layout.',
+    type: 'string',
+    defaultValue: 'small'
+  },
+  'global.edgeSize.xsmall': {
+    description: 'The width of the video scrubber.',
+    type: 'object',
+    defaultValue: '6px'
+  },
+  'video.captions.background': {
+    description: 'The caption background color of the video ',
+    type: 'string',
+    defaultValue: 'rgba(0, 0, 0, 0.7)'
+  },
+  'video.scrubber.color': {
+    description: 'The background color of the video scrubber.',
+    type: 'string',
+    defaultValue: 'light-4'
+  },
+  'video.extend': {
+    description: 'Any additional style for Video.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  }
+};
