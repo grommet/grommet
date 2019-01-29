@@ -69,6 +69,8 @@ class FormField extends Component {
       style,
       theme,
       validate,
+      onBlur,
+      onFocus,
     } = this.props;
     const { formField } = theme;
     const { border } = formField;
@@ -95,7 +97,7 @@ class FormField extends Component {
           }
 
           let borderColor;
-          if (focus) {
+          if (focus && !normalizedError) {
             borderColor = 'focus';
           } else if (normalizedError) {
             borderColor = (border && border.error.color) || 'status-critical';
@@ -112,6 +114,8 @@ class FormField extends Component {
                     return cloneElement(child, {
                       plain: true,
                       focusIndicator: false,
+                      onBlur,
+                      onFocus,
                     });
                   }
                   return child;
@@ -226,7 +230,7 @@ if (process.env.NODE_ENV !== 'production') {
   FormFieldDoc = require('./doc').doc(FormField); // eslint-disable-line global-require
 }
 const FormFieldWrapper = compose(
-  withFocus,
+  withFocus({ focusWithMouse: true }),
   withTheme,
 )(FormFieldDoc || FormField);
 

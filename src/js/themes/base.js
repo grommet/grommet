@@ -95,11 +95,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
   const fontScale = baseSpacing / scale; // 4
 
   const fontSizing = factor => ({
-    size: `${baseFontSize + (factor * fontScale)}px`,
-    height: `${baseSpacing + (factor * fontScale)}px`,
+    size: `${baseFontSize + factor * fontScale}px`,
+    height: `${baseSpacing + factor * fontScale}px`,
     // maxWidth chosen to be ~50 characters wide
     // see: https://ux.stackexchange.com/a/34125
-    maxWidth: `${baseSpacing * (baseFontSize + (factor * fontScale))}px`,
+    maxWidth: `${baseSpacing * (baseFontSize + factor * fontScale)}px`,
   });
 
   const borderWidth = 2;
@@ -213,7 +213,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'focus',
         },
       },
-      font: { ...fontSizing(0) },
+      font: {
+        ...fontSizing(0),
+        // face: undefined,
+      },
       hover: {
         background: {
           dark: {
@@ -753,6 +756,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
       },
       // scrubber: { track: { color: undefined } },
+      scrubber: {
+        color: 'light-4',
+      },
     },
     worldMap: {
       color: 'light-3',

@@ -15,7 +15,7 @@ const StyledMeter = styled.svg`
   ${genericStyles} ${props => props.round && roundStyle}
 
   path {
-    transition: all 0.3s;
+    transition: stroke 0.3s, stroke-width 0.3s;
   }
 
   ${props => props.theme.meter && props.theme.meter.extend};

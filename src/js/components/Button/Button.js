@@ -127,7 +127,7 @@ if (process.env.NODE_ENV !== 'production') {
   ButtonDoc = require('./doc').doc(Button); // eslint-disable-line global-require
 }
 const ButtonWrapper = compose(
-  withFocus,
+  withFocus(),
   withTheme,
   withForwardRef,
 )(ButtonDoc || Button);

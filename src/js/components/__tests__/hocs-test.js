@@ -10,7 +10,7 @@ const TestDiv = props => {
   return <div {...rest}>{focus ? 'focus' : 'no focus'}</div>;
 };
 
-const Test = withFocus(TestDiv);
+const Test = withFocus()(TestDiv);
 
 test('withFocus set focus', done => {
   const component = renderer.create(<Test />);
