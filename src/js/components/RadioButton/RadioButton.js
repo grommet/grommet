@@ -6,7 +6,7 @@ import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
 import { Box } from '../Box';
-import { withFocus, withForwardRef } from '../hocs';
+import { withForwardRef } from '../hocs';
 
 import {
   StyledRadioButton,
@@ -110,7 +110,6 @@ if (process.env.NODE_ENV !== 'production') {
   RadioButtonDoc = require('./doc').doc(RadioButton); // eslint-disable-line global-require
 }
 const RadioButtonWrapper = compose(
-  withFocus(),
   withTheme,
   withForwardRef,
 )(RadioButtonDoc || RadioButton);

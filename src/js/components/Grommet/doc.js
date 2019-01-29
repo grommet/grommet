@@ -37,11 +37,10 @@ export const themeDoc = {
     description: 'Any additional style for Grommet.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
-  },  
+  },
   'global.font.face': {
     description: 'Custom font face declaration',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
-
-}
+};

@@ -34,10 +34,11 @@ export const doc = Video => {
 
 export const themeDoc = {
   'global.edgeSize.responsiveBreakpoint': {
-    description: 'The actual breakpoint to trigger changes in the video component layout.',
+    description:
+      'The actual breakpoint to trigger changes in the video component layout.',
     type: 'string',
     defaultValue: 'small',
-  },  
+  },
   'global.edgeSize.xsmall': {
     description: 'The width of the video scrubber.',
     type: 'object',
@@ -58,4 +59,4 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
-}
+};

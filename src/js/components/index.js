@@ -29,6 +29,7 @@ export * from './Menu';
 export * from './Meter';
 export * from './Paragraph';
 export * from './RadioButton';
+export * from './RadioButtonGroup';
 export * from './RangeInput';
 export * from './RangeSelector';
 export * from './RoutedAnchor';
