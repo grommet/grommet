@@ -66,3 +66,44 @@ Required. Array of objects describing the connections.
 ```
 svg
 ```
+## Theme
+  
+**global.edgeSize**
+
+The possible sizes for the connections thickness and offset. Expects `object`.
+
+Defaults to
+
+```
+{
+        none: '0px',
+        hair: '1px',
+        xxsmall: '3px',
+        xsmall: '6px',
+        small: '12px',
+        medium: '24px',
+        large: '48px',
+        xlarge: '96px',
+        responsiveBreakpoint: 'small',
+    }
+```
+
+**diagram.extend**
+
+Any additional style for Diagram. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**diagram.line.color**
+
+The color of the connection line. Expects `string`.
+
+Defaults to
+
+```
+accent-1
+```

@@ -51,3 +51,31 @@ export const doc = Diagram => {
 
   return DocumentedDiagram;
 };
+
+export const themeDoc = {
+  'global.edgeSize': {
+    description: 'The possible sizes for the connections thickness and offset.',
+    type: 'object',
+    defaultValue: `{
+        none: '0px',
+        hair: '1px',
+        xxsmall: '3px',
+        xsmall: '6px',
+        small: '12px',
+        medium: '24px',
+        large: '48px',
+        xlarge: '96px',
+        responsiveBreakpoint: 'small',
+    }`,
+  },
+  'diagram.extend': {
+    description: 'Any additional style for Diagram.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'diagram.line.color': {
+    description: 'The color of the connection line.',
+    type: 'string',
+    defaultValue: 'accent-1',
+  },
+}
