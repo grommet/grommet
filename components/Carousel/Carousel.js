@@ -241,5 +241,5 @@ if (process.env.NODE_ENV !== 'production') {
   CarouselDoc = require('./doc').doc(Carousel); // eslint-disable-line global-require
 }
 
-var CarouselWrapper = (0, _recompose.compose)(_hocs.withFocus, _styledComponents.withTheme)(CarouselDoc || Carousel);
+var CarouselWrapper = (0, _recompose.compose)((0, _hocs.withFocus)(), _styledComponents.withTheme)(CarouselDoc || Carousel);
 exports.Carousel = CarouselWrapper;

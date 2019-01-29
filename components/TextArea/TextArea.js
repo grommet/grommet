@@ -74,5 +74,7 @@ if (process.env.NODE_ENV !== 'production') {
   TextAreaDoc = require('./doc').doc(TextArea); // eslint-disable-line global-require
 }
 
-var TextAreaWrapper = (0, _recompose.compose)(_hocs.withFocus, _hocs.withForwardRef)(TextAreaDoc || TextArea);
+var TextAreaWrapper = (0, _recompose.compose)((0, _hocs.withFocus)({
+  focusWithMouse: true
+}), _hocs.withForwardRef)(TextAreaDoc || TextArea);
 exports.TextArea = TextAreaWrapper;

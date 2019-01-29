@@ -19,7 +19,7 @@ var TestDiv = function TestDiv(props) {
   return _react.default.createElement("div", rest, focus ? 'focus' : 'no focus');
 };
 
-var Test = (0, _hocs.withFocus)(TestDiv);
+var Test = (0, _hocs.withFocus)()(TestDiv);
 test('withFocus set focus', function (done) {
   var component = _reactTestRenderer.default.create(_react.default.createElement(Test, null));
 

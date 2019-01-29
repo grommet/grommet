@@ -12,7 +12,7 @@ var TestDiv = function TestDiv(props) {
   return React.createElement("div", rest, focus ? 'focus' : 'no focus');
 };
 
-var Test = withFocus(TestDiv);
+var Test = withFocus()(TestDiv);
 test('withFocus set focus', function (done) {
   var component = renderer.create(React.createElement(Test, null));
   var tree = component.toJSON();

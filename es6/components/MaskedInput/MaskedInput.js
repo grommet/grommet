@@ -465,5 +465,7 @@ if (process.env.NODE_ENV !== 'production') {
   MaskedInputDoc = require('./doc').doc(MaskedInput); // eslint-disable-line global-require
 }
 
-var MaskedInputWrapper = compose(withFocus, withForwardRef)(MaskedInputDoc || MaskedInput);
+var MaskedInputWrapper = compose(withFocus({
+  focusWithMouse: true
+}), withForwardRef)(MaskedInputDoc || MaskedInput);
 export { MaskedInputWrapper as MaskedInput };

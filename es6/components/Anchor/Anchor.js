@@ -94,5 +94,5 @@ if (process.env.NODE_ENV !== 'production') {
   AnchorDoc = require('./doc').doc(Anchor); // eslint-disable-line global-require
 }
 
-var AnchorWrapper = compose(withFocus, withTheme, withForwardRef)(AnchorDoc || Anchor);
+var AnchorWrapper = compose(withFocus(), withTheme, withForwardRef)(AnchorDoc || Anchor);
 export { AnchorWrapper as Anchor };

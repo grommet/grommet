@@ -122,7 +122,9 @@ function (_Component) {
         required = _this$props2.required,
         style = _this$props2.style,
         theme = _this$props2.theme,
-        validate = _this$props2.validate;
+        validate = _this$props2.validate,
+        onBlur = _this$props2.onBlur,
+        onFocus = _this$props2.onFocus;
     var formField = theme.formField;
     var border = formField.border;
     return _react.default.createElement(_FormContext.FormContext.Consumer, null, function (context) {
@@ -151,7 +153,7 @@ function (_Component) {
 
       var borderColor;
 
-      if (focus) {
+      if (focus && !normalizedError) {
         borderColor = 'focus';
       } else if (normalizedError) {
         borderColor = border && border.error.color || 'status-critical';
@@ -167,7 +169,9 @@ function (_Component) {
           if (child) {
             return (0, _react.cloneElement)(child, {
               plain: true,
-              focusIndicator: false
+              focusIndicator: false,
+              onBlur: onBlur,
+              onFocus: onFocus
             });
           }
 
@@ -241,5 +245,7 @@ if (process.env.NODE_ENV !== 'production') {
   FormFieldDoc = require('./doc').doc(FormField); // eslint-disable-line global-require
 }
 
-var FormFieldWrapper = (0, _recompose.compose)(_hocs.withFocus, _styledComponents.withTheme)(FormFieldDoc || FormField);
+var FormFieldWrapper = (0, _recompose.compose)((0, _hocs.withFocus)({
+  focusWithMouse: true
+}), _styledComponents.withTheme)(FormFieldDoc || FormField);
 exports.FormField = FormFieldWrapper;

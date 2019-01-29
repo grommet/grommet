@@ -455,5 +455,7 @@ if (process.env.NODE_ENV !== 'production') {
   TextInputDoc = require('./doc').doc(TextInput); // eslint-disable-line global-require
 }
 
-var TextInputWrapper = compose(withFocus, withTheme, withAnnounce, withForwardRef)(TextInputDoc || TextInput);
+var TextInputWrapper = compose(withFocus({
+  focusWithMouse: true
+}), withTheme, withAnnounce, withForwardRef)(TextInputDoc || TextInput);
 export { TextInputWrapper as TextInput };
