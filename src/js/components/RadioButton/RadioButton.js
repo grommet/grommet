@@ -110,7 +110,7 @@ if (process.env.NODE_ENV !== 'production') {
   RadioButtonDoc = require('./doc').doc(RadioButton); // eslint-disable-line global-require
 }
 const RadioButtonWrapper = compose(
-  withFocus,
+  withFocus(),
   withTheme,
   withForwardRef,
 )(RadioButtonDoc || RadioButton);

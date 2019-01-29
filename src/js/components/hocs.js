@@ -14,7 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 export const withDocs = doc;
 
-export const withFocus = WrappedComponent => {
+export const withFocus = ({ focusWithMouse } = {}) => WrappedComponent => {
   class FocusableComponent extends Component {
     static getDerivedStateFromProps(nextProps, prevState) {
       const { withFocusRef } = nextProps;
@@ -35,7 +35,12 @@ export const withFocus = WrappedComponent => {
 
     componentDidMount = () => {
       const { wrappedRef } = this.state;
-      window.addEventListener('mousedown', this.handleActiveMouse);
+
+      // components such as anchors and buttons should not retain focus after
+      // being clicked while text-based components should
+      if (!focusWithMouse) {
+        window.addEventListener('mousedown', this.handleActiveMouse);
+      }
 
       // we could be using onFocus in the wrapper node itself
       // but react does not invoke it if you programically

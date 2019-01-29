@@ -29,7 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
   TextAreaDoc = require('./doc').doc(TextArea); // eslint-disable-line global-require
 }
 const TextAreaWrapper = compose(
-  withFocus,
+  withFocus({ focusWithMouse: true }),
   withForwardRef,
 )(TextAreaDoc || TextArea);
 

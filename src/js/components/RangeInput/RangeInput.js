@@ -16,7 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
   RangeInputDoc = require('./doc').doc(RangeInput); // eslint-disable-line global-require
 }
 const RangeInputWrapper = compose(
-  withFocus,
+  withFocus(),
   withForwardRef,
 )(RangeInputDoc || RangeInput);
 

@@ -193,7 +193,7 @@ if (process.env.NODE_ENV !== 'production') {
   CheckBoxDoc = require('./doc').doc(CheckBox); // eslint-disable-line global-require
 }
 const CheckBoxWrapper = compose(
-  withFocus,
+  withFocus(),
   withTheme,
   withForwardRef,
 )(CheckBoxDoc || CheckBox);
