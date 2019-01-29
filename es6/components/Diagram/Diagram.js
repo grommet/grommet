@@ -233,7 +233,7 @@ function (_Component) {
             // eslint-disable-next-line react/no-array-index-key
             key: index
           }, cleanedRest, {
-            stroke: normalizeColor(color || 'accent-1', theme),
+            stroke: normalizeColor(color || theme.diagram.line.color, theme),
             strokeWidth: strokeWidth,
             strokeLinecap: round ? 'round' : 'butt',
             strokeLinejoin: round ? 'round' : 'miter',

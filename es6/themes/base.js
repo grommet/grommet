@@ -510,6 +510,12 @@ export var generate = function generate(baseSpacing, scale) {
         weight: 'bold'
       }
     },
+    diagram: {
+      // extend: undefined,
+      line: {
+        color: 'accent-1'
+      }
+    },
     // drop: {
     //   maxHeight: undefined,
     // },

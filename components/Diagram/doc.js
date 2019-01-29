@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.doc = void 0;
+exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -26,3 +26,21 @@ var doc = function doc(Diagram) {
 };
 
 exports.doc = doc;
+var themeDoc = {
+  'global.edgeSize': {
+    description: 'The possible sizes for the connections thickness and offset.',
+    type: 'object',
+    defaultValue: "{\n        none: '0px',\n        hair: '1px',\n        xxsmall: '3px',\n        xsmall: '6px',\n        small: '12px',\n        medium: '24px',\n        large: '48px',\n        xlarge: '96px',\n        responsiveBreakpoint: 'small',\n    }"
+  },
+  'diagram.extend': {
+    description: 'Any additional style for Diagram.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'diagram.line.color': {
+    description: 'The color of the connection line.',
+    type: 'string',
+    defaultValue: 'accent-1'
+  }
+};
+exports.themeDoc = themeDoc;

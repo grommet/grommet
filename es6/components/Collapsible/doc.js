@@ -19,7 +19,7 @@ export var themeDoc = {
     defaultValue: 500
   },
   'collapsible.extend': {
-    description: 'Any additional style for the Anchor when hovering.',
+    description: 'Any additional style for Collapsible.',
     type: 'string | (props) => {}',
     defaultValue: undefined
   }
