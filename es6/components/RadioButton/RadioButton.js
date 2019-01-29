@@ -10,7 +10,7 @@ import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
 import { Box } from '../Box';
-import { withFocus, withForwardRef } from '../hocs';
+import { withForwardRef } from '../hocs';
 import { StyledRadioButton, StyledRadioButtonContainer, StyledRadioButtonIcon, StyledRadioButtonInput, StyledRadioButtonBox } from './StyledRadioButton';
 
 var RadioButton =
@@ -113,5 +113,5 @@ if (process.env.NODE_ENV !== 'production') {
   RadioButtonDoc = require('./doc').doc(RadioButton); // eslint-disable-line global-require
 }
 
-var RadioButtonWrapper = compose(withFocus(), withTheme, withForwardRef)(RadioButtonDoc || RadioButton);
+var RadioButtonWrapper = compose(withTheme, withForwardRef)(RadioButtonDoc || RadioButton);
 export { RadioButtonWrapper as RadioButton };

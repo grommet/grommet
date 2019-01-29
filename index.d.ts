@@ -29,6 +29,7 @@ export * from './components/Menu';
 export * from './components/Meter';
 export * from './components/Paragraph';
 export * from './components/RadioButton';
+export * from './components/RadioButtonGroup';
 export * from './components/RangeInput';
 export * from './components/RangeSelector';
 export * from './components/RoutedAnchor';

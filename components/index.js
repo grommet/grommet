@@ -219,6 +219,13 @@ Object.keys(_RadioButton).forEach(function (key) {
   exports[key] = _RadioButton[key];
 });
 
+var _RadioButtonGroup = require("./RadioButtonGroup");
+
+Object.keys(_RadioButtonGroup).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _RadioButtonGroup[key];
+});
+
 var _RangeInput = require("./RangeInput");
 
 Object.keys(_RangeInput).forEach(function (key) {
