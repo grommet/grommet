@@ -82,7 +82,6 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onResize", function () {
       var _this$state = _this.state,
-          connectionPoints = _this$state.connectionPoints,
           width = _this$state.width,
           height = _this$state.height;
       var svg = _this.svgRef.current;
@@ -96,14 +95,24 @@ function (_Component) {
             height: rect.height,
             connectionPoints: undefined
           });
-        } else if (!connectionPoints) {
-          _this.placeConnections();
         }
       }
     });
 
     return _this;
   }
+
+  Diagram.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
+    // track whether the connections array changes so we can trigger re-placing
+    if (nextProps.connections !== prevState.connections) {
+      return {
+        connections: nextProps.connections,
+        connectionPoints: undefined
+      };
+    }
+
+    return null;
+  };
 
   var _proto = Diagram.prototype;
 
@@ -113,7 +122,11 @@ function (_Component) {
   };
 
   _proto.componentDidUpdate = function componentDidUpdate() {
-    this.onResize();
+    var connectionPoints = this.state.connectionPoints;
+
+    if (!connectionPoints) {
+      this.placeConnections();
+    }
   };
 
   _proto.componentWillUnmount = function componentWillUnmount() {

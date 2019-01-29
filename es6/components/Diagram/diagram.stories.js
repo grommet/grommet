@@ -1,3 +1,9 @@
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
@@ -37,36 +43,90 @@ var connection = function connection(fromTarget, toTarget, _temp) {
   }, rest);
 };
 
-var SimpleDiagram = function SimpleDiagram() {
-  return React.createElement(Grommet, {
-    theme: grommet
-  }, React.createElement(Box, {
-    align: "center",
-    pad: "large"
-  }, React.createElement(Stack, null, React.createElement(Box, null, React.createElement(Box, {
-    direction: "row"
-  }, [1, 2, 3].map(function (id) {
-    return React.createElement(Node, {
-      key: id,
-      id: id
+var fullTopRow = [1, 2, 3];
+
+var SimpleDiagram =
+/*#__PURE__*/
+function (_React$Component) {
+  _inheritsLoose(SimpleDiagram, _React$Component);
+
+  function SimpleDiagram() {
+    var _this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      topRow: fullTopRow.slice(0, 1)
     });
-  })), React.createElement(Box, {
-    direction: "row"
-  }, [4, 5].map(function (id) {
-    return React.createElement(Node, {
-      key: id,
-      id: id,
-      background: "neutral-2"
-    });
-  }))), React.createElement(Diagram, {
-    connections: [connection('1', '5', {
+
+    return _this;
+  }
+
+  var _proto = SimpleDiagram.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var _this2 = this;
+
+    this.timer = setInterval(function () {
+      var topRow = _this2.state.topRow;
+
+      _this2.setState({
+        topRow: fullTopRow.slice(0, topRow.length < fullTopRow.length ? topRow.length + 1 : 1)
+      });
+    }, 2000);
+  };
+
+  _proto.render = function render() {
+    var topRow = this.state.topRow;
+    var connections = [connection('1', '5', {
       color: 'accent-2'
-    }), connection('3', '5', {
-      color: 'accent-2',
-      anchor: 'horizontal'
-    })]
-  }))));
-};
+    })];
+
+    if (topRow.length >= 2) {
+      connections.push(connection('4', '2', {
+        color: 'accent-1',
+        anchor: 'horizontal'
+      }));
+    }
+
+    if (topRow.length >= 3) {
+      connections.push(connection('3', '5', {
+        color: 'accent-2',
+        anchor: 'horizontal'
+      }));
+    }
+
+    return React.createElement(Grommet, {
+      theme: grommet
+    }, React.createElement(Box, {
+      align: "start",
+      pad: "large"
+    }, React.createElement(Stack, null, React.createElement(Box, null, React.createElement(Box, {
+      direction: "row"
+    }, topRow.map(function (id) {
+      return React.createElement(Node, {
+        key: id,
+        id: id
+      });
+    })), React.createElement(Box, {
+      direction: "row"
+    }, [4, 5].map(function (id) {
+      return React.createElement(Node, {
+        key: id,
+        id: id,
+        background: "neutral-2"
+      });
+    }))), React.createElement(Diagram, {
+      connections: connections
+    }))));
+  };
+
+  return SimpleDiagram;
+}(React.Component);
 
 storiesOf('Diagram', module).add('Simple Diagram', function () {
   return React.createElement(SimpleDiagram, null);
