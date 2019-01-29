@@ -642,35 +642,6 @@ exports[`RadioButtonGroup object options just value 1`] = `
   padding: 0px;
 }
 
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  height: 24px;
-  width: 24px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border: solid 2px rgba(0,0,0,0.15);
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0px;
-  border-radius: 100%;
-}
-
 .c9 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -687,6 +658,35 @@ exports[`RadioButtonGroup object options just value 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0px;
+  border-radius: 100%;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: 24px;
+  width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 2px rgba(0,0,0,0.15);
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -781,24 +781,6 @@ exports[`RadioButtonGroup object options just value 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    border: solid 2px rgba(0,0,0,0.15);
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c9 {
     margin: 0px;
   }
@@ -812,6 +794,24 @@ exports[`RadioButtonGroup object options just value 1`] = `
 
 @media only screen and (max-width:768px) {
   .c9 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
     padding: 0px;
   }
 }
@@ -969,6 +969,35 @@ exports[`RadioButtonGroup string options 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border: solid 2px #7D4CDB;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0px;
+  border-radius: 100%;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  height: 24px;
+  width: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   border: solid 2px rgba(0,0,0,0.15);
   min-width: 0;
   min-height: 0;
@@ -983,7 +1012,7 @@ exports[`RadioButtonGroup string options 1`] = `
   border-radius: 100%;
 }
 
-.c8 {
+.c9 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -1013,6 +1042,14 @@ exports[`RadioButtonGroup string options 1`] = `
   margin: 0;
   z-index: 1;
   cursor: pointer;
+}
+
+.c8 {
+  box-sizing: border-box;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
 }
 
 .c4 {
@@ -1063,7 +1100,7 @@ exports[`RadioButtonGroup string options 1`] = `
 
 @media only screen and (max-width:768px) {
   .c7 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px #7D4CDB;
   }
 }
 
@@ -1074,7 +1111,25 @@ exports[`RadioButtonGroup string options 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
     height: 6px;
   }
 }
@@ -1090,27 +1145,46 @@ exports[`RadioButtonGroup string options 1`] = `
   >
     <label
       className="c2 c3"
+      htmlFor="one"
       onClick={[Function]}
     >
       <div
         className="c4 c5"
       >
         <input
-          checked={false}
+          checked={true}
           className="c6"
+          id="one"
           name="test"
           type="radio"
+          value="one"
         />
         <div
           className="c7"
-        />
+        >
+          <svg
+            className="c8"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              cx={12}
+              cy={12}
+              r={6}
+            />
+          </svg>
+        </div>
       </div>
+      <span>
+        one
+      </span>
     </label>
     <div
-      className="c8"
+      className="c9"
     />
     <label
       className="c2 c3"
+      htmlFor="two"
       onClick={[Function]}
     >
       <div
@@ -1119,13 +1193,18 @@ exports[`RadioButtonGroup string options 1`] = `
         <input
           checked={false}
           className="c6"
+          id="two"
           name="test"
           type="radio"
+          value="two"
         />
         <div
-          className="c7"
+          className="c10"
         />
       </div>
+      <span>
+        two
+      </span>
     </label>
   </div>
 </div>

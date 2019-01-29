@@ -10,13 +10,12 @@ import { withForwardRef } from '../hocs';
 class RadioButtonGroup extends Component {
   static getDerivedStateFromProps(nextProps) {
     const { options, value } = nextProps;
-    if (typeof options === 'string') {
-      return {
-        options: options.map(o => ({ id: o, label: o, value: o })),
-        value,
-      };
-    }
-    return { options, value };
+    return {
+      options: options.map(o =>
+        typeof o === 'string' ? { id: o, label: o, value: o } : o,
+      ),
+      value,
+    };
   }
 
   state = {};
