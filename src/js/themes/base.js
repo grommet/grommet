@@ -464,6 +464,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         weight: 'bold',
       },
     },
+    diagram: {
+      // extend: undefined,
+      line: {
+        color: 'accent-1',
+      },
+    },
     // drop: {
     //   maxHeight: undefined,
     // },

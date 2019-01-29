@@ -56,7 +56,7 @@ Defaults to
 
 **collapsible.extend**
 
-Any additional style for the Anchor when hovering. Expects `string | (props) => {}`.
+Any additional style for Collapsible. Expects `string | (props) => {}`.
 
 Defaults to
 
