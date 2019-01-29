@@ -213,19 +213,9 @@ Defaults to
 undefined
 ```
 
-**global.colors.text**
-
-The text color used inside the component. Expects `string | { dark: string, light: string }`.
-
-Defaults to
-
-```
-{ dark: '#f8f8f8', light: '#444444' }
-```
-
 **global.edgeSize**
 
-The possible sizes for any of gap, margin, and pad. Expects `object`.
+The possible sizes for margin. Expects `object`.
 
 Defaults to
 

@@ -505,7 +505,7 @@ focus
 
 **global.colors.text**
 
-The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+The text color used inside the Anchor. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -1261,7 +1261,7 @@ Defaults to
 
 **global.colors.text**
 
-The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+The text color used inside the Box. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -1685,7 +1685,7 @@ focus
 
 **global.colors.text**
 
-The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+The text color of the label. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -2699,29 +2699,7 @@ boolean
 
 \`\`\`
 input
-\`\`\`
-## Theme
-  
-**global.focus.border.color**
-
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-focus
-\`\`\`
-
-**global.colors.text**
-
-The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
-\`\`\`
-",
+\`\`\`",
   "Clock": "## Clock
 A clock with timezone awareness.
 
@@ -2910,17 +2888,7 @@ digital
 div,svg
 \`\`\`
 ## Theme
-  
-**global.colors.text**
-
-The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
-\`\`\`
-",
+  ",
   "Collapsible": "## Collapsible
 Expand or collapse animation.
 
@@ -4376,7 +4344,7 @@ undefined
 
 **global.edgeSize**
 
-The possible sizes for any of gap, margin, and pad. Expects \`object\`.
+The possible sizes for the grid gap. Expects \`object\`.
 
 Defaults to
 
@@ -4662,7 +4630,7 @@ h1,h2,h3,h4
   
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
+The possible breakpoints that could affect font-size and max-width Expects \`object\`.
 
 Defaults to
 
@@ -4706,7 +4674,7 @@ Defaults to
 
 **global.colors.text**
 
-The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
+The text color of the heading Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -6193,19 +6161,9 @@ Defaults to
 undefined
 \`\`\`
 
-**global.colors.text**
-
-The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
-\`\`\`
-
 **global.edgeSize**
 
-The possible sizes for any of gap, margin, and pad. Expects \`object\`.
+The possible sizes for margin. Expects \`object\`.
 
 Defaults to
 
@@ -6296,29 +6254,7 @@ function
 
 \`\`\`
 input
-\`\`\`
-## Theme
-  
-**global.focus.border.color**
-
-The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-focus
-\`\`\`
-
-**global.colors.text**
-
-The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
-\`\`\`
-",
+\`\`\`",
   "RadioButtonGroup": "## RadioButtonGroup
 A group of radio buttons.
 
@@ -6467,16 +6403,6 @@ Defaults to
 
 \`\`\`
 focus
-\`\`\`
-
-**global.colors.text**
-
-The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 ",
   "RangeSelector": "## RangeSelector
@@ -7386,17 +7312,7 @@ node
 button
 \`\`\`
 ## Theme
-  
-**global.colors.text**
-
-The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
-\`\`\`
-",
+  ",
   "Table": "## Table
 A table of data organized in cells.
 
@@ -8080,19 +7996,9 @@ Defaults to
 undefined
 \`\`\`
 
-**global.colors.text**
-
-The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
-\`\`\`
-
 **global.edgeSize**
 
-The possible sizes for any of gap, margin, and pad. Expects \`object\`.
+The possible sizes for margin. Expects \`object\`.
 
 Defaults to
 
@@ -8775,16 +8681,6 @@ Defaults to
 
 \`\`\`
 undefined
-\`\`\`
-
-**global.colors.text**
-
-The text color used inside the component. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 ",
   "WorldMap": "## WorldMap

@@ -187,12 +187,3 @@ div,svg
 ```
 ## Theme
   
-**global.colors.text**
-
-The text color used inside the component. Expects `string | { dark: string, light: string }`.
-
-Defaults to
-
-```
-{ dark: '#f8f8f8', light: '#444444' }
-```

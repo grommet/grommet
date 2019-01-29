@@ -357,7 +357,11 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'small',
   },
-  ...themeDocUtils.edgeStyle,
-  ...themeDocUtils.breakpointStyle,
-  ...themeDocUtils.normalizeColor,
+  ...themeDocUtils.edgeStyle(
+    'The possible sizes for any of gap, margin, and pad.',
+  ),
+  ...themeDocUtils.breakpointStyle(
+    'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
+  ),
+  ...themeDocUtils.normalizeColor('The text color used inside the Box.'),
 };

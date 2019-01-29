@@ -414,7 +414,7 @@ focus
 
 **global.colors.text**
 
-The text color used inside the component. Expects `string | { dark: string, light: string }`.
+The text color of the label. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 

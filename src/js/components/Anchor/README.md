@@ -278,7 +278,7 @@ focus
 
 **global.colors.text**
 
-The text color used inside the component. Expects `string | { dark: string, light: string }`.
+The text color used inside the Anchor. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 

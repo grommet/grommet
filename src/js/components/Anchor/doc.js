@@ -104,5 +104,5 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   ...themeDocUtils.focusStyle,
-  ...themeDocUtils.normalizeColor,
+  ...themeDocUtils.normalizeColor('The text color used inside the Anchor.'),
 };

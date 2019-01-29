@@ -192,7 +192,7 @@ h1,h2,h3,h4
   
 **global.breakpoints**
 
-The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects `object`.
+The possible breakpoints that could affect font-size and max-width Expects `object`.
 
 Defaults to
 
@@ -236,7 +236,7 @@ Defaults to
 
 **global.colors.text**
 
-The text color used inside the component. Expects `string | { dark: string, light: string }`.
+The text color of the heading Expects `string | { dark: string, light: string }`.
 
 Defaults to
 

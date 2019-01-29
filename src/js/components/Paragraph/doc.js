@@ -81,6 +81,5 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
-  ...themeDocUtils.normalizeColor,
-  ...themeDocUtils.edgeStyle,
+  ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
 };

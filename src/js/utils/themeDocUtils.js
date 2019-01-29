@@ -25,9 +25,9 @@ export const themeDocUtils = {
       defaultValue: '12px',
     },
   },
-  edgeStyle: {
+  edgeStyle: description => ({
     'global.edgeSize': {
-      description: 'The possible sizes for any of gap, margin, and pad.',
+      description,
       type: 'object',
       defaultValue: `{
     edgeSize: {
@@ -43,11 +43,11 @@ export const themeDocUtils = {
     },
   }`,
     },
-  },
-  breakpointStyle: {
+  }),
+  // 'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
+  breakpointStyle: description => ({
     'global.breakpoints': {
-      description:
-        'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
+      description,
       type: 'object',
       defaultValue: `{
     small: {
@@ -85,12 +85,12 @@ export const themeDocUtils = {
     large: {},
   }`,
     },
-  },
-  normalizeColor: {
+  }),
+  normalizeColor: description => ({
     'global.colors.text': {
-      description: 'The text color used inside the component.',
+      description,
       type: 'string | { dark: string, light: string }',
       defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
     },
-  },
+  }),
 };

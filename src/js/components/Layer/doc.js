@@ -141,5 +141,7 @@ export const themeDoc = {
     type: 'number',
     defaultValue: '10',
   },
-  ...themeDocUtils.breakpointStyle,
+  ...themeDocUtils.breakpointStyle(
+    'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
+  ),
 };

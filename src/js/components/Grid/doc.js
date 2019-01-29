@@ -174,5 +174,5 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
-  ...themeDocUtils.edgeStyle,
+  ...themeDocUtils.edgeStyle('The possible sizes for the grid gap.'),
 };

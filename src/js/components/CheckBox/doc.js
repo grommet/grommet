@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge, themeDocUtils } from '../../utils';
+import { getAvailableAtBadge } from '../../utils';
 
 export const doc = CheckBox => {
   const DocumentedCheckBox = describe(CheckBox)
@@ -51,9 +51,4 @@ NOTE: This can only be used with non-toggle components`,
   };
 
   return DocumentedCheckBox;
-};
-
-export const themeDoc = {
-  ...themeDocUtils.focusStyle,
-  ...themeDocUtils.normalizeColor,
 };

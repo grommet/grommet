@@ -61,6 +61,8 @@ is too long to all fit.`,
 };
 
 export const themeDoc = {
-  ...themeDocUtils.breakpointStyle,
-  ...themeDocUtils.normalizeColor,
+  ...themeDocUtils.breakpointStyle(
+    'The possible breakpoints that could affect font-size and max-width',
+  ),
+  ...themeDocUtils.normalizeColor('The text color of the heading'),
 };

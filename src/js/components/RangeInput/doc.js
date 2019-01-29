@@ -40,5 +40,4 @@ export const doc = RangeInput => {
 
 export const themeDoc = {
   ...themeDocUtils.focusStyle,
-  ...themeDocUtils.normalizeColor,
 };

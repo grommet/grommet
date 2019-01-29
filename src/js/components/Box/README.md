@@ -746,7 +746,7 @@ Defaults to
 
 **global.colors.text**
 
-The text color used inside the component. Expects `string | { dark: string, light: string }`.
+The text color used inside the Box. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
