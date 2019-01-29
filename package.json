@@ -39,8 +39,8 @@
     "prettier": "pretty-quick --staged"
   },
   "peerDependencies": {
-    "react": ">= 16.4.1",
-    "react-dom": ">= 16.4.1",
+    "react": ">= 16.6.1",
+    "react-dom": ">= 16.6.1",
     "styled-components": ">= 4.X"
   },
   "dependencies": {
