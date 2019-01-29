@@ -213,7 +213,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'focus',
         },
       },
-      font: { ...fontSizing(0) },
+      font: { 
+        ...fontSizing(0), 
+        // face: undefined, 
+      },
       hover: {
         background: {
           dark: {
@@ -753,6 +756,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
       },
       // scrubber: { track: { color: undefined } },
+      scrubber: {
+        color: 'light-4',
+      },
     },
     worldMap: {
       color: 'light-3',
