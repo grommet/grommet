@@ -54,7 +54,6 @@ const StyledCheckBoxInput = styled.input`
   width: 100%;
   height: 100%;
   margin: 0;
-  z-index: 1;
   ${props => !props.disabled && 'cursor: pointer;'} :checked + span > span {
     left: calc(
       ${props => props.theme.checkBox.toggle.size} -
@@ -119,9 +118,7 @@ const StyledCheckBoxKnob = styled.span`
 StyledCheckBoxKnob.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, defaultProps);
 
-const StyledCheckBox = styled.div`
-  position: relative;
-`;
+const StyledCheckBox = styled.div``;
 
 StyledCheckBox.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBox.defaultProps, defaultProps);
