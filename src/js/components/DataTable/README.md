@@ -122,7 +122,9 @@ A description of the data. The order controls the column order.
       made available for the column. 'primary' indicates that this property
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
-      'primaryKey' isn't specified either, then the first column will be used. Defaults to `[]`.
+      'primaryKey' isn't specified either, then the first column will be used.
+      'selection' indicates that the column indicates the selection state
+      of the row. Defaults to `[]`.
 
 ```
 [{
@@ -150,6 +152,7 @@ A description of the data. The order controls the column order.
   property: string,
   render: function,
   search: boolean,
+  selection: boolean,
   sortable: boolean
 }]
 ```
@@ -170,6 +173,16 @@ Property to group data by.
 
 ```
 string
+```
+
+**onChange**
+
+Called when the user toggles a row selection. It is called with
+      two arguments, the toggled index and an array of all resulting indexes
+      selected. This array can be passed back via 'selected'.
+
+```
+function
 ```
 
 **onMore**
@@ -214,6 +227,14 @@ Whether to allow the user to resize column widths.
 
 ```
 boolean
+```
+
+**selected**
+
+Array of indexes in `data` indicating which items are currently selected.
+
+```
+[number]
 ```
 
 **size**

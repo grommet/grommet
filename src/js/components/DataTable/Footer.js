@@ -29,7 +29,7 @@ const Footer = ({
       )}
       {columns.map(column => (
         <Cell
-          key={column.property}
+          key={column.property || column.selection}
           context="footer"
           column={column}
           datum={footerValues}

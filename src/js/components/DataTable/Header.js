@@ -6,6 +6,7 @@ import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
+import { CheckBox } from '../CheckBox';
 import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 
@@ -57,86 +58,94 @@ const Header = ({
           />
         )}
 
-        {columns.map(({ property, header, align, search, sortable }) => {
-          let content =
-            typeof header === 'string' ? <Text>{header}</Text> : header;
-          if (onSort && sortable !== false) {
-            content = (
-              <Sorter
-                align={align}
-                fill={!search}
-                property={property}
-                onSort={onSort}
-                sort={sort}
-                themeProps={search ? innerThemeProps : dataTableContextTheme}
-              >
-                {content}
-              </Sorter>
-            );
-          }
-
-          if (search && filters) {
-            if (!onSort) {
+        {columns.map(
+          ({ property, header, align, search, selection, sortable }) => {
+            let content;
+            if (selection) {
+              content = <CheckBox />;
+            } else if (typeof header === 'string') {
+              content = <Text>{header}</Text>;
+            } else {
+              content = header;
+            }
+            if (onSort && sortable !== false) {
               content = (
-                <Box justify="center" align={align} {...innerThemeProps}>
+                <Sorter
+                  align={align}
+                  fill={!search}
+                  property={property}
+                  onSort={onSort}
+                  sort={sort}
+                  themeProps={search ? innerThemeProps : dataTableContextTheme}
+                >
+                  {content}
+                </Sorter>
+              );
+            }
+
+            if (search && filters) {
+              if (!onSort) {
+                content = (
+                  <Box justify="center" align={align} {...innerThemeProps}>
+                    {content}
+                  </Box>
+                );
+              }
+              content = (
+                <Box
+                  fill
+                  direction="row"
+                  justify="between"
+                  align="center"
+                  {...outerThemeProps}
+                >
+                  {content}
+                  <Searcher
+                    filtering={filtering}
+                    filters={filters}
+                    property={property}
+                    onFilter={onFilter}
+                    onFiltering={onFiltering}
+                  />
+                </Box>
+              );
+            } else if (!onSort || sortable === false) {
+              content = (
+                <Box
+                  {...dataTableContextTheme}
+                  fill
+                  justify="center"
+                  align={align}
+                >
                   {content}
                 </Box>
               );
             }
-            content = (
-              <Box
-                fill
-                direction="row"
-                justify="between"
-                align="center"
-                {...outerThemeProps}
+
+            if (onResize) {
+              content = (
+                <Resizer property={property} onResize={onResize}>
+                  {content}
+                </Resizer>
+              );
+            }
+
+            return (
+              <TableCell
+                key={property || selection}
+                scope="col"
+                plain
+                style={
+                  widths && widths[property]
+                    ? { width: widths[property] }
+                    : undefined
+                }
               >
                 {content}
-                <Searcher
-                  filtering={filtering}
-                  filters={filters}
-                  property={property}
-                  onFilter={onFilter}
-                  onFiltering={onFiltering}
-                />
-              </Box>
+              </TableCell>
             );
-          } else if (!onSort || sortable === false) {
-            content = (
-              <Box
-                {...dataTableContextTheme}
-                fill
-                justify="center"
-                align={align}
-              >
-                {content}
-              </Box>
-            );
-          }
-
-          if (onResize) {
-            content = (
-              <Resizer property={property} onResize={onResize}>
-                {content}
-              </Resizer>
-            );
-          }
-
-          return (
-            <TableCell
-              key={property}
-              scope="col"
-              plain
-              style={
-                widths && widths[property]
-                  ? { width: widths[property] }
-                  : undefined
-              }
-            >
-              {content}
-            </TableCell>
-          );
-        })}
+          },
+        )}
       </StyledDataTableRow>
     </StyledDataTableHeader>
   );

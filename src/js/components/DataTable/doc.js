@@ -35,6 +35,7 @@ export const doc = DataTable => {
         property: PropTypes.string.isRequired,
         render: PropTypes.func,
         search: PropTypes.bool,
+        selection: PropTypes.bool,
         sortable: PropTypes.bool,
       }),
     ).description(
@@ -51,12 +52,19 @@ export const doc = DataTable => {
       made available for the column. 'primary' indicates that this property
       should be used as the unique identifier, which gives the cell 'row' scope
       for accessibility. If 'primary' is not used for any column, and
-      'primaryKey' isn't specified either, then the first column will be used.`,
+      'primaryKey' isn't specified either, then the first column will be used.
+      'selection' indicates that the column indicates the selection state
+      of the row.`,
     ),
     data: PropTypes.arrayOf(PropTypes.shape({})).description(
       'Array of data objects.',
     ),
     groupBy: PropTypes.string.description('Property to group data by.'),
+    onChange: PropTypes.func.description(
+      `Called when the user toggles a row selection. It is called with
+      two arguments, the toggled index and an array of all resulting indexes
+      selected. This array can be passed back via 'selected'.`,
+    ),
     onMore: PropTypes.func.description(
       `Use this to indicate that 'data' doesn't contain all that it could.
       It will be called when all of the data rows have been rendered.
@@ -80,6 +88,9 @@ export const doc = DataTable => {
     ),
     resizeable: PropTypes.bool.description(
       'Whether to allow the user to resize column widths.',
+    ),
+    selected: PropTypes.arrayOf(PropTypes.number).description(
+      'Array of indexes in `data` indicating which items are currently selected.',
     ),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),

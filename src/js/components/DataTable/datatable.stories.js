@@ -277,10 +277,33 @@ class ControlledDataTable extends Component {
   }
 }
 
+class SelectableDataTable extends Component {
+  state = { selected: [] };
+
+  render() {
+    const { selected } = this.state;
+    return (
+      <Grommet theme={grommet}>
+        <Box align="center" pad="medium">
+          <DataTable
+            columns={[{ selection: true }, ...columns].map(col => ({ ...col }))}
+            data={DATA}
+            selected={selected}
+            onChange={nextSelected => this.setState({ selected: nextSelected })}
+            sortable
+            size="medium"
+          />
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('DataTable', module)
   .add('Simple DataTable', () => <SimpleDataTable />)
   .add('Sized DataTable', () => <SizedDataTable />)
   .add('Tunable DataTable', () => <TunableDataTable />)
   .add('Grouped DataTable', () => <GroupedDataTable />)
   .add('Served DataTable', () => <ServedDataTable />)
-  .add('Controlled DataTable', () => <ControlledDataTable />);
+  .add('Controlled DataTable', () => <ControlledDataTable />)
+  .add('Selectable', () => <SelectableDataTable />);

@@ -80,8 +80,10 @@ class DataTable extends Component {
       groupBy,
       onMore,
       resizeable,
+      selected,
       size,
       sortable,
+      onChange,
       onSearch, // removing unknown DOM attributes
       ...rest
     } = this.props;
@@ -132,8 +134,10 @@ class DataTable extends Component {
           <Body
             columns={columns}
             data={data}
+            onChange={onChange}
             onMore={onMore}
             primaryProperty={primaryProperty}
+            selected={selected}
             size={size}
           />
         )}

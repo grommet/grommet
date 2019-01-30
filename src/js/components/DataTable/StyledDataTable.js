@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import { genericStyles } from '../../utils';
+import { backgroundStyle, genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 import { TableRow } from '../TableRow';
 import { Table } from '../Table';
@@ -26,6 +26,15 @@ const StyledDataTableRow = styled(TableRow)`
     width: 100%;
     table-layout: fixed;
   `};
+  ${props =>
+    props.selectable &&
+    css`
+    &:hover {
+      ${backgroundStyle(props.theme.global.hover.background, props.theme)}
+      color: ${normalizeColor(props.theme.global.hover.color, props.theme)};
+      cursor: pointer;
+    }
+  `}
 `;
 
 StyledDataTableRow.defaultProps = {};
