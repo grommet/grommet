@@ -12,12 +12,13 @@ import { StyledTableCell } from '../Table/StyledTable';
 
 var TableCell = function TableCell(_ref) {
   var children = _ref.children,
+      colSpan = _ref.colSpan,
       plain = _ref.plain,
       scope = _ref.scope,
       size = _ref.size,
       theme = _ref.theme,
       verticalAlign = _ref.verticalAlign,
-      rest = _objectWithoutPropertiesLoose(_ref, ["children", "plain", "scope", "size", "theme", "verticalAlign"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["children", "colSpan", "plain", "scope", "size", "theme", "verticalAlign"]);
 
   return React.createElement(TableContext.Consumer, null, function (tableContext) {
     var tableContextTheme;
@@ -41,6 +42,7 @@ var TableCell = function TableCell(_ref) {
       as: scope ? 'th' : undefined,
       scope: scope,
       size: size,
+      colSpan: colSpan,
       tableContext: tableContext,
       tableContextTheme: tableContextTheme,
       verticalAlign: verticalAlign || (tableContextTheme ? tableContextTheme.verticalAlign : undefined)
