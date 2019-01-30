@@ -12,6 +12,7 @@ import { StyledTableCell } from '../Table/StyledTable';
 
 const TableCell = ({
   children,
+  colSpan,
   plain,
   scope,
   size,
@@ -41,6 +42,7 @@ const TableCell = ({
           as={scope ? 'th' : undefined}
           scope={scope}
           size={size}
+          colSpan={colSpan}
           tableContext={tableContext}
           tableContextTheme={tableContextTheme}
           verticalAlign={
