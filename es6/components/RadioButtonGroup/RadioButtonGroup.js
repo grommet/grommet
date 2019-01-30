@@ -102,37 +102,28 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onFocus", function (event) {
-      var onFocus = _this.props.onFocus;
-      var focus = _this.state.focus;
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onFocus", function () {
+      // Delay just a wee bit so Chrome doesn't missing turning the button on.
+      // Chrome behaves differently in that focus is given to radio buttons
+      // when the user selects one, unlike Safari and Firefox.
+      setTimeout(function () {
+        var focus = _this.state.focus;
 
-      if (!focus) {
-        _this.setState({
-          focus: true
-        }, function () {
-          var valueIndex = _this.valueIndex() || 0;
-
-          _this.optionRefs[valueIndex].focus();
-        });
-      }
-
-      if (onFocus) {
-        onFocus(event);
-      }
+        if (!focus) {
+          _this.setState({
+            focus: true
+          });
+        }
+      }, 1);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onBlur", function (event) {
-      var onBlur = _this.props.onBlur;
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onBlur", function () {
       var focus = _this.state.focus;
 
       if (focus) {
         _this.setState({
           focus: false
         });
-      }
-
-      if (onBlur) {
-        onBlur(event);
       }
     });
 
@@ -171,17 +162,14 @@ function (_Component) {
         selectedValue = _this$state2.value;
     return React.createElement(Keyboard, {
       target: "document",
-      onUp: this.onPrevious,
-      onDown: this.onNext,
-      onLeft: this.onPrevious,
-      onRight: this.onNext
+      onUp: focus ? this.onPrevious : undefined,
+      onDown: focus ? this.onNext : undefined,
+      onLeft: focus ? this.onPrevious : undefined,
+      onRight: focus ? this.onNext : undefined
     }, React.createElement(Box, _extends({
       ref: forwardRef,
       gap: "small"
-    }, rest, {
-      onFocus: this.onFocus,
-      onBlur: this.onBlur
-    }), options.map(function (_ref, index) {
+    }, rest), options.map(function (_ref, index) {
       var disabled = _ref.disabled,
           id = _ref.id,
           label = _ref.label,
@@ -198,7 +186,9 @@ function (_Component) {
         focus: focus && (value === selectedValue || selectedValue === undefined && !index),
         id: id,
         value: value,
-        onChange: onChange
+        onChange: onChange,
+        onFocus: _this2.onFocus,
+        onBlur: _this2.onBlur
       });
     })));
   };
