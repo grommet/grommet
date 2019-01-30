@@ -31,7 +31,7 @@ Object.setPrototypeOf(StyledTextInputContainer.defaultProps, defaultProps);
 var StyledPlaceholder = styled.div.withConfig({
   displayName: "StyledTextInput__StyledPlaceholder",
   componentId: "sc-1x30a0s-2"
-})(["position:absolute;left:", "px;top:50%;transform:translateY(-50%);display:flex;justify-content:center;", ";"], function (props) {
+})(["position:absolute;left:", "px;top:50%;transform:translateY(-50%);display:flex;justify-content:center;pointer-events:none;", ";"], function (props) {
   return parseMetricToNum(props.theme.global.input.padding) - parseMetricToNum(props.theme.global.control.border.width);
 }, function (props) {
   return props.theme.textInput && props.theme.textInput.placeholder && props.theme.textInput.placeholder.extend;
