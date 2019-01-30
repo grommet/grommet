@@ -67,28 +67,22 @@ class RadioButtonGroup extends Component {
     }
   };
 
-  onFocus = event => {
-    const { onFocus } = this.props;
-    const { focus } = this.state;
-    if (!focus) {
-      this.setState({ focus: true }, () => {
-        const valueIndex = this.valueIndex() || 0;
-        this.optionRefs[valueIndex].focus();
-      });
-    }
-    if (onFocus) {
-      onFocus(event);
-    }
+  onFocus = () => {
+    // Delay just a wee bit so Chrome doesn't missing turning the button on.
+    // Chrome behaves differently in that focus is given to radio buttons
+    // when the user selects one, unlike Safari and Firefox.
+    setTimeout(() => {
+      const { focus } = this.state;
+      if (!focus) {
+        this.setState({ focus: true });
+      }
+    }, 1);
   };
 
-  onBlur = event => {
-    const { onBlur } = this.props;
+  onBlur = () => {
     const { focus } = this.state;
     if (focus) {
       this.setState({ focus: false });
-    }
-    if (onBlur) {
-      onBlur(event);
     }
   };
 
@@ -98,18 +92,12 @@ class RadioButtonGroup extends Component {
     return (
       <Keyboard
         target="document"
-        onUp={this.onPrevious}
-        onDown={this.onNext}
-        onLeft={this.onPrevious}
-        onRight={this.onNext}
+        onUp={focus ? this.onPrevious : undefined}
+        onDown={focus ? this.onNext : undefined}
+        onLeft={focus ? this.onPrevious : undefined}
+        onRight={focus ? this.onNext : undefined}
       >
-        <Box
-          ref={forwardRef}
-          gap="small"
-          {...rest}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-        >
+        <Box ref={forwardRef} gap="small" {...rest}>
           {options.map(({ disabled, id, label, value }, index) => (
             <RadioButton
               ref={ref => {
@@ -128,6 +116,8 @@ class RadioButtonGroup extends Component {
               id={id}
               value={value}
               onChange={onChange}
+              onFocus={this.onFocus}
+              onBlur={this.onBlur}
             />
           ))}
         </Box>

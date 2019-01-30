@@ -45,8 +45,6 @@ exports[`RadioButtonGroup default 1`] = `
 >
   <div
     className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
   />
 </div>
 `;
@@ -247,8 +245,6 @@ exports[`RadioButtonGroup object options 1`] = `
 >
   <div
     className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c2 c3"
@@ -263,6 +259,8 @@ exports[`RadioButtonGroup object options 1`] = `
           className="c6"
           id="onE"
           name="test"
+          onBlur={[Function]}
+          onFocus={[Function]}
           type="radio"
           value="one"
         />
@@ -290,6 +288,8 @@ exports[`RadioButtonGroup object options 1`] = `
           className="c6"
           id="twO"
           name="test"
+          onBlur={[Function]}
+          onFocus={[Function]}
           type="radio"
           value="two"
         />
@@ -526,8 +526,6 @@ exports[`RadioButtonGroup object options disabled 1`] = `
 >
   <div
     className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
   >
     <label
       className="c2 c3"
@@ -542,6 +540,8 @@ exports[`RadioButtonGroup object options disabled 1`] = `
           className="c6"
           disabled={true}
           name="test"
+          onBlur={[Function]}
+          onFocus={[Function]}
           type="radio"
           value="one"
         />
@@ -564,6 +564,8 @@ exports[`RadioButtonGroup object options disabled 1`] = `
           checked={false}
           className="c10"
           name="test"
+          onBlur={[Function]}
+          onFocus={[Function]}
           type="radio"
           value="two"
         />
@@ -827,8 +829,6 @@ exports[`RadioButtonGroup object options just value 1`] = `
 >
   <div
     className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
     value="two"
   >
     <label
@@ -842,6 +842,8 @@ exports[`RadioButtonGroup object options just value 1`] = `
           checked={false}
           className="c6"
           name="test"
+          onBlur={[Function]}
+          onFocus={[Function]}
           type="radio"
           value="one"
         />
@@ -864,6 +866,8 @@ exports[`RadioButtonGroup object options just value 1`] = `
           checked={true}
           className="c6"
           name="test"
+          onBlur={[Function]}
+          onFocus={[Function]}
           type="radio"
           value="two"
         />
@@ -1139,8 +1143,6 @@ exports[`RadioButtonGroup string options 1`] = `
 >
   <div
     className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
     value="one"
   >
     <label
@@ -1156,6 +1158,8 @@ exports[`RadioButtonGroup string options 1`] = `
           className="c6"
           id="one"
           name="test"
+          onBlur={[Function]}
+          onFocus={[Function]}
           type="radio"
           value="one"
         />
@@ -1195,6 +1199,8 @@ exports[`RadioButtonGroup string options 1`] = `
           className="c6"
           id="two"
           name="test"
+          onBlur={[Function]}
+          onFocus={[Function]}
           type="radio"
           value="two"
         />
