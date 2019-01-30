@@ -57,6 +57,7 @@ const StyledPlaceholder = styled.div`
   transform: translateY(-50%);
   display: flex;
   justify-content: center;
+  pointer-events: none;
 
   ${props =>
     props.theme.textInput &&
