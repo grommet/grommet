@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Stack Fill Stack 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledStack-ajspsk-0 fRHLog"
+  >
+    <div
+      className="StyledStack__StyledStackLayer-ajspsk-1 fGljlS"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 bPKNjd"
+      >
+        Test
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Stack Simple Stack 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+>
+  <div
+    className="StyledStack-ajspsk-0 cBSAEZ"
+  >
+    <div
+      className="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 loYnqj"
+      />
+    </div>
+    <div
+      className="StyledStack__StyledStackLayer-ajspsk-1 gIepzX"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 jahPMX"
+      />
+    </div>
+  </div>
+</div>
+`;

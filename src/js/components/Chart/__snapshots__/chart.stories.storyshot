@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Chart Area Chart 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <svg
+      className="StyledChart-sc-1nae0gf-0 gecgMB"
+      height={192}
+      preserveAspectRatio="none"
+      viewBox="-12 -12 408 216"
+      width={384}
+    >
+      <g
+        stroke="#6FFFB0"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+        strokeWidth={24}
+      >
+        <g
+          fill="#6FFFB0"
+        >
+          <path
+            d="M 128,64 L 256,0 L 384,96 L 384,192 L 256,192 L 128,192 Z"
+          />
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Chart Bar Chart 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <svg
+      className="StyledChart-sc-1nae0gf-0 gecgMB"
+      height={192}
+      preserveAspectRatio="none"
+      viewBox="-12 -12 408 216"
+      width={384}
+    >
+      <g
+        stroke="#6FFFB0"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+        strokeWidth={24}
+      >
+        <g
+          fill="none"
+        >
+          <title />
+          <path
+            d="M 128,192 L 128,64"
+          />
+        </g>
+        <g
+          fill="none"
+        >
+          <title />
+          <path
+            d="M 256,192 L 256,0"
+          />
+        </g>
+        <g
+          fill="none"
+        >
+          <title />
+          <path
+            d="M 384,192 L 384,96"
+          />
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Chart Line Chart 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <svg
+      className="StyledChart-sc-1nae0gf-0 gecgMB"
+      height={192}
+      preserveAspectRatio="none"
+      viewBox="-12 -12 408 216"
+      width={384}
+    >
+      <g
+        stroke="#6FFFB0"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+        strokeWidth={24}
+      >
+        <g
+          fill="none"
+        >
+          <path
+            d="M 0,64 L 192,0 L 384,96"
+          />
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Chart Rich Chart 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 dbeEbI"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        May 20
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        May 26
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Jun 2
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Jun 9
+      </span>
+    </div>
+    <div
+      className="StyledStack-ajspsk-0 cBSAEZ"
+    >
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 jVTEtw"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 fEkgLT"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFjquy"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                12500
+              </span>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 dXDrNj"
+            />
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 gQLnBt"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFjquy"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                11500
+              </span>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 dXDrNj"
+            />
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 gQLnBt"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFjquy"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                10500
+              </span>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 dXDrNj"
+            />
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 kjiHZj"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFjquy"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                9500
+              </span>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 dXDrNj"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+      >
+        <svg
+          className="StyledChart-sc-1nae0gf-0 gecgMB"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="0 0 384 192"
+          width={384}
+        >
+          <g
+            opacity={0.4}
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeWidth={1}
+          >
+            <g
+              fill="#6FFFB0"
+            >
+              <path
+                d="M 0,171.0548480000001 L 19.2,155.25324800000013 L 38.4,156.04300800000016 L 57.6,148.1422080000001 L 76.8,132.34060800000012 L 96,133.13036800000015 L 115.2,125.22956800000009 L 134.4,109.4279680000001 L 153.6,110.21772800000012 L 172.79999999999998,102.31692800000008 L 192,86.5153280000001 L 211.2,87.3050880000001 L 230.4,79.40428800000005 L 249.6,71.503488 L 268.8,55.701888000000025 L 288,56.491648000000055 L 307.2,48.590847999999994 L 326.4,32.789248000000015 L 345.59999999999997,33.579008000000016 L 364.8,25.678207999999984 L 384,9.876608000000004 L 384,192 L 364.8,192 L 345.59999999999997,192 L 326.4,192 L 307.2,192 L 288,192 L 268.8,192 L 249.6,192 L 230.4,192 L 211.2,192 L 192,192 L 172.79999999999998,192 L 153.6,192 L 134.4,192 L 115.2,192 L 96,192 L 76.8,192 L 57.6,192 L 38.4,192 L 19.2,192 L 0,192 Z"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+      >
+        <svg
+          className="StyledChart-sc-1nae0gf-0 gecgMB"
+          height={192}
+          preserveAspectRatio="none"
+          viewBox="0 0 384 192"
+          width={384}
+        >
+          <g
+            opacity={0.8}
+            stroke="#81FCED"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={12}
+          >
+            <g
+              fill="none"
+            >
+              <path
+                d="M 0,171.0548480000001 L 19.2,155.25324800000013 L 38.4,156.04300800000016 L 57.6,148.1422080000001 L 76.8,132.34060800000012 L 96,133.13036800000015 L 115.2,125.22956800000009 L 134.4,109.4279680000001 L 153.6,110.21772800000012 L 172.79999999999998,102.31692800000008 L 192,86.5153280000001 L 211.2,87.3050880000001 L 230.4,79.40428800000005 L 249.6,71.503488 L 268.8,55.701888000000025 L 288,56.491648000000055 L 307.2,48.590847999999994 L 326.4,32.789248000000015 L 345.59999999999997,33.579008000000016 L 364.8,25.678207999999984 L 384,9.876608000000004"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

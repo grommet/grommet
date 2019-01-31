@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Video Simple Video 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledVideo__StyledVideoContainer-w4v8h9-1 wBEeC"
+      onMouseEnter={[Function]}
+      onMouseMove={[Function]}
+      onTouchStart={[Function]}
+    >
+      <video
+        autoPlay={false}
+        className="StyledVideo-w4v8h9-0 iKrJlI"
+        loop={false}
+        onAbort={[Function]}
+        onCanPlay={[Function]}
+        onCanPlayThrough={[Function]}
+        onDurationChange={[Function]}
+        onEmptied={[Function]}
+        onEncrypted={[Function]}
+        onEnded={[Function]}
+        onError={[Function]}
+        onLoadStart={[Function]}
+        onLoadedData={[Function]}
+        onLoadedMetadata={[Function]}
+        onPause={[Function]}
+        onPlay={[Function]}
+        onPlaying={[Function]}
+        onProgress={[Function]}
+        onRateChange={[Function]}
+        onSeeked={[Function]}
+        onSeeking={[Function]}
+        onStalled={[Function]}
+        onSuspend={[Function]}
+        onTimeUpdate={[Function]}
+        onVolumeChange={[Function]}
+        onWaiting={[Function]}
+      >
+        <source
+          src="http://techslides.com/demos/sample-videos/small.webm"
+          type="video/webm"
+        />
+        <source
+          src="http://techslides.com/demos/sample-videos/small.ogv"
+          type="video/ogg"
+        />
+        <source
+          src="http://techslides.com/demos/sample-videos/small.mp4"
+          type="video/mp4"
+        />
+        <source
+          src="http://techslides.com/demos/sample-videos/small.3gp"
+          type="video/3gp"
+        />
+      </video>
+      <div
+        className="StyledVideo__StyledVideoControls-w4v8h9-2 eLcKEG"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 kaefHA"
+        >
+          <button
+            className="StyledButton-sc-323bzc-0 gzbApz"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <svg
+              aria-label="Play"
+              className="StyledIcon-ofa7kd-0 cLeQGG"
+              viewBox="0 0 24 24"
+            >
+              <polygon
+                fill="none"
+                points="3 22 21 12 3 2"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+          <div
+            className="StyledBox-sc-13pk1d4-0 gLUQAp"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 gYrpnw"
+            >
+              <div
+                className="StyledStack-ajspsk-0 cBSAEZ"
+              >
+                <div
+                  className="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+                >
+                  <svg
+                    aria-label="Video progress"
+                    className="StyledMeter-nsxarx-0 hNIOaV"
+                    height={12}
+                    preserveAspectRatio="none"
+                    viewBox="0 0 288 12"
+                    width="100%"
+                  >
+                    <path
+                      d="M 0,6 L 288,6"
+                      fill="none"
+                      stroke="#777777"
+                      strokeLinecap="square"
+                      strokeWidth={12}
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+                >
+                  <div
+                    className="StyledVideo__StyledVideoScrubber-w4v8h9-3 dxNfKW"
+                    onClick={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseMove={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFjquy"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fLjoaM"
+              >
+                NaN:NaN
+              </span>
+            </div>
+          </div>
+          <button
+            aria-label="Open Menu"
+            className="StyledButton-sc-323bzc-0 iauybm"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            type="button"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 lgRCHI"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              />
+              <svg
+                aria-label="Actions"
+                className="StyledIcon-ofa7kd-0 cLeQGG"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                  fill="none"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

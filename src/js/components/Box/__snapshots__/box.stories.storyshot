@@ -1,0 +1,605 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Box Background 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 eEPVhE"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 fDhInr"
+    >
+      brand opacity
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <div
+      className="StyledBox-sc-13pk1d4-0 jEfvtO"
+    >
+      brand
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <div
+      className="StyledBox-sc-13pk1d4-0 jslNc"
+    >
+      image
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <div
+      className="StyledBox-sc-13pk1d4-0 dKIdDh"
+    >
+      image + color
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Box Border 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 eEPVhE"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 jgopih"
+    >
+      true
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <div
+      className="StyledBox-sc-13pk1d4-0 iuIeUn"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 ewOCJh"
+      >
+        horizontal
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 cdvXba"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 iNefZj"
+      >
+        vertical
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 cdvXba"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 hQAHni"
+      >
+        left
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 cdvXba"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 cvSZWu"
+      >
+        top
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 cdvXba"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 fMTGAG"
+      >
+        right
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 cdvXba"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 bVnAjO"
+      >
+        bottom
+      </div>
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <div
+      className="StyledBox-sc-13pk1d4-0 hrZSuW"
+    >
+      color
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <div
+      className="StyledBox-sc-13pk1d4-0 dOKaTN"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 csIvBH"
+      >
+        small
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 cdvXba"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 faYpev"
+      >
+        medium
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 cdvXba"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 fcVyXc"
+      >
+        large
+      </div>
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <div
+      className="StyledBox-sc-13pk1d4-0 dOKaTN"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 faYpev"
+      >
+        solid
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 cdvXba"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 faYpev"
+      >
+        dashed
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 cdvXba"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 faYpev"
+      >
+        dotted
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 cdvXba"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 faYpev"
+      >
+        double
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 cdvXba"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 faYpev"
+      >
+        groove
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 cdvXba"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 faYpev"
+      >
+        ridge
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 cdvXba"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 faYpev"
+      >
+        inset
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 cdvXba"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 faYpev"
+      >
+        outset
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Box Custom color 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 dYUSlQ"
+  >
+    <span
+      className="StyledText-sc-1sadyjn-0 bJAFmT"
+    >
+      I have a linear gradient background
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Box Elevation 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 eEPVhE"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 cKsVJh"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        on white
+      </span>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 irlfVP"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 dAtnid"
+      >
+        <span
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+        >
+          on dark
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Box Fixed sizes 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 jNCHQI"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 iJxRSU"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (0)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (1)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (2)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (3)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (4)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (5)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (6)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (7)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (8)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (9)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (10)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (11)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (12)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (13)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (14)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (15)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (16)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (17)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (18)
+      </span>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Small (19)
+      </span>
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <div
+      className="StyledBox-sc-13pk1d4-0 cmveFL"
+    >
+      Medium
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <div
+      className="StyledBox-sc-13pk1d4-0 hKwlMl"
+    >
+      Large
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Box Round 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 jNCHQI"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 cOgvkf"
+    >
+      true
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <div
+      className="StyledGrid-sc-1wofa1l-0 cyvVNF"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 enfGGG"
+      >
+        xsmall
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 hCjcLu"
+      >
+        small
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 eAzYdJ"
+      >
+        medium
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 dRWujR"
+      >
+        large
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 MgKdD"
+      >
+        xlarge
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 hzBVBZ"
+      >
+        full
+      </div>
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <div
+      className="StyledGrid-sc-1wofa1l-0 cyvVNF"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 kryjMj"
+      >
+        left
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 ZDFYZ"
+      >
+        top
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 bPTAc"
+      >
+        right
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 gEaKgB"
+      >
+        bottom
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 iNfXcj"
+      >
+        top-left
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 kBvopH"
+      >
+        top-right
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 hZauOe"
+      >
+        bottom-left
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 eBQSnx"
+      >
+        bottom-right
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 gYVQRi"
+      >
+        left rounded corner px value
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Box Simple Box 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 hMuEuB"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 hvTsth"
+    >
+      <svg
+        aria-label="Attraction"
+        className="StyledIcon-ofa7kd-0 TfAtP"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M13,2 L14.5,2.5 L13,3 L13,2 Z M14,18 L15,23 L13,23 L14,18 Z M14,16.5 L16,23 L12,23 L14,16.5 Z M12,6 L21,11 L21,13 L3,13 L3,11 L12,6 Z M4.5,13 L19.5,13 C19.5,17.1666667 21,23 21,23 L3,23 C3,23 4.5,17.1666667 4.5,13 Z M4.5,13 L19.5,13 C19.5,17.1666667 21,23 21,23 L3,23 C3,23 4.5,17.1666667 4.5,13 Z"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+      />
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Party
+      </span>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+      />
+      <a
+        className="StyledAnchor-sc-1rp7lwl-0 jgeOSx"
+        href=""
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        Link
+      </a>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+      />
+      <button
+        className="StyledButton-sc-323bzc-0 arPcl"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 guFpJZ"
+    />
+    <div
+      className="StyledBox-sc-13pk1d4-0 vPEFN"
+    >
+      <svg
+        aria-label="Car"
+        className="StyledIcon-ofa7kd-0 gYYdru"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M1,10.9970301 C1,10.4463856 1.43945834,10 2.00246167,10 L21.9975383,10 C22.5511826,10 23,10.4530363 23,10.9970301 L23,17.0029699 C23,17.5536144 22.5605417,18 21.9975383,18 L2.00246167,18 C1.44881738,18 1,17.5469637 1,17.0029699 L1,10.9970301 Z M6,2 L18,2 L22,10 L2,10 L6,2 Z M12,10.5 L15,5 M3,18 L6,18 L6,20.9906311 C6,21.5480902 5.55733967,22 5.00104344,22 L3.99895656,22 C3.44724809,22 3,21.5566468 3,20.9906311 L3,18 Z M18,18 L21,18 L21,20.9906311 C21,21.5480902 20.5573397,22 20.0010434,22 L18.9989566,22 C18.4472481,22 18,21.5566468 18,20.9906311 L18,18 Z M5,15 C5.55228475,15 6,14.5522847 6,14 C6,13.4477153 5.55228475,13 5,13 C4.44771525,13 4,13.4477153 4,14 C4,14.5522847 4.44771525,15 5,15 Z M19,15 C19.5522847,15 20,14.5522847 20,14 C20,13.4477153 19.5522847,13 19,13 C18.4477153,13 18,13.4477153 18,14 C18,14.5522847 18.4477153,15 19,15 Z M12,13 L12,15 M14,13 L14,15 M10,13 L10,15"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+      />
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Travel
+      </span>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+      />
+      <a
+        className="StyledAnchor-sc-1rp7lwl-0 llbwuF"
+        href=""
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        Link
+      </a>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+      />
+      <button
+        className="StyledButton-sc-323bzc-0 kGkZgQ"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        Button
+      </button>
+    </div>
+  </div>
+</div>
+`;

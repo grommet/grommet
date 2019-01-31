@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Menu Simple Menu 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <button
+      aria-label="Open Menu"
+      className="StyledButton-sc-323bzc-0 iauybm"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 lgRCHI"
+      >
+        <span
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+        >
+          Actions
+        </span>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+        />
+        <svg
+          aria-label="FormDown"
+          className="StyledIcon-ofa7kd-0 dSllCE"
+          viewBox="0 0 24 24"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+`;

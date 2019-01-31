@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Text All 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 kVTNVM"
+  >
+    <span
+      className="StyledText-sc-1sadyjn-0 jNPGlP"
+      size="xxlarge"
+    >
+      Text xxlarge
+    </span>
+  </div>
+  <div
+    className="StyledBox-sc-13pk1d4-0 kVTNVM"
+  >
+    <span
+      className="StyledText-sc-1sadyjn-0 cNzL"
+      size="xlarge"
+    >
+      Text xlarge
+    </span>
+  </div>
+  <div
+    className="StyledBox-sc-13pk1d4-0 kVTNVM"
+  >
+    <span
+      className="StyledText-sc-1sadyjn-0 jScuyG"
+      size="large"
+    >
+      Text large
+    </span>
+  </div>
+  <div
+    className="StyledBox-sc-13pk1d4-0 kVTNVM"
+  >
+    <span
+      className="StyledText-sc-1sadyjn-0 fWSbXS"
+      size="medium"
+    >
+      Text medium
+    </span>
+  </div>
+  <div
+    className="StyledBox-sc-13pk1d4-0 kVTNVM"
+  >
+    <span
+      className="StyledText-sc-1sadyjn-0 gNZQxf"
+      size="small"
+    >
+      Text small
+    </span>
+  </div>
+  <div
+    className="StyledBox-sc-13pk1d4-0 kVTNVM"
+  >
+    <span
+      className="StyledText-sc-1sadyjn-0 bDGmcM"
+      size="xsmall"
+    >
+      Text xsmall
+    </span>
+  </div>
+  <div
+    className="StyledBox-sc-13pk1d4-0 kVTNVM"
+  >
+    <span
+      className="StyledText-sc-1sadyjn-0 iJLeMF"
+      size="77px"
+    >
+      Text 77px
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Text Color 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <span
+    className="StyledText-sc-1sadyjn-0 kzpnjW"
+  >
+    Colored Text
+  </span>
+</div>
+`;

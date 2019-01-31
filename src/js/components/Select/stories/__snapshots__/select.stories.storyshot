@@ -1,0 +1,683 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Select Custom Colors 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 jznqqB"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 chjyJw"
+  >
+    <button
+      aria-label="Open Drop"
+      className="Select__StyledSelectDropButton-sc-17idtfo-1 gTKGcr StyledButton-sc-323bzc-0 fRAxrl"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 qioMX"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 XINUX"
+        >
+          <div
+            className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+          >
+            <input
+              autoComplete="off"
+              className="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 gQHocF"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Select"
+              readOnly={true}
+              tabIndex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="StyledBox-sc-13pk1d4-0 eLQtUu"
+          style={
+            Object {
+              "minWidth": "auto",
+            }
+          }
+        >
+          <svg
+            aria-label="FormDown"
+            className="StyledIcon-ofa7kd-0 ildldD"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Select Custom Rounded 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 aNXhX"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 KvEcD"
+  >
+    <button
+      aria-label="Open Drop"
+      className="Select__StyledSelectDropButton-sc-17idtfo-1 kIHlkZ StyledButton-sc-323bzc-0 iauybm"
+      id="select"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 erazuK"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 XINUX"
+        >
+          <div
+            className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+          >
+            <input
+              autoComplete="off"
+              className="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 pcTmi"
+              id="select__input"
+              name="select"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Select"
+              readOnly={true}
+              tabIndex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="StyledBox-sc-13pk1d4-0 eLQtUu"
+          style={
+            Object {
+              "minWidth": "auto",
+            }
+          }
+        >
+          <svg
+            aria-label="FormDown"
+            className="StyledIcon-ofa7kd-0 dSllCE"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Select Custom Search 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 jznqqB"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 bcozht"
+  >
+    <button
+      aria-label="Open Drop"
+      className="Select__StyledSelectDropButton-sc-17idtfo-1 lgRaPt StyledButton-sc-323bzc-0 fRAxrl"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 erazuK"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 XINUX"
+        >
+          <div
+            className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+          >
+            <input
+              autoComplete="off"
+              className="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 iwxIEA"
+              multiple={true}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Select Content Partners"
+              readOnly={true}
+              tabIndex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="StyledBox-sc-13pk1d4-0 eLQtUu"
+          style={
+            Object {
+              "minWidth": "auto",
+            }
+          }
+        >
+          <svg
+            color="#7D4CDB"
+            fill="rgba(0, 0, 0, 0.54)"
+            height="20"
+            width="10"
+          >
+            <path
+              d="m0,7.5l5,5l5,-5l-10,0z"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Select Dark 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 chjyJw"
+  >
+    <button
+      aria-label="Open Drop"
+      className="Select__StyledSelectDropButton-sc-17idtfo-1 gTKGcr StyledButton-sc-323bzc-0 iauybm"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 erazuK"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 XINUX"
+        >
+          <div
+            className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+          >
+            <input
+              autoComplete="off"
+              className="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 gQHocF"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Select"
+              readOnly={true}
+              tabIndex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="StyledBox-sc-13pk1d4-0 eLQtUu"
+          style={
+            Object {
+              "minWidth": "auto",
+            }
+          }
+        >
+          <svg
+            aria-label="FormDown"
+            className="StyledIcon-ofa7kd-0 ildldD"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Select Lots of options 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 KvEcD"
+  >
+    <button
+      aria-label="Open Drop"
+      className="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 iauybm"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 erazuK"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 XINUX"
+        >
+          <div
+            className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+          >
+            <input
+              autoComplete="off"
+              className="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 cuRQxH"
+              multiple={true}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="select an option..."
+              readOnly={true}
+              tabIndex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="StyledBox-sc-13pk1d4-0 eLQtUu"
+          style={
+            Object {
+              "minWidth": "auto",
+            }
+          }
+        >
+          <svg
+            aria-label="FormDown"
+            className="StyledIcon-ofa7kd-0 dSllCE"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Select Object Multiple 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 KvEcD"
+  >
+    <button
+      aria-label="Open Drop"
+      className="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 iauybm"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 erazuK"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 XINUX"
+        >
+          <div
+            className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+          >
+            <input
+              autoComplete="off"
+              className="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 QrAAd"
+              multiple={true}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Select"
+              readOnly={true}
+              size="medium"
+              tabIndex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="StyledBox-sc-13pk1d4-0 eLQtUu"
+          style={
+            Object {
+              "minWidth": "auto",
+            }
+          }
+        >
+          <svg
+            aria-label="FormDown"
+            className="StyledIcon-ofa7kd-0 dSllCE"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Select Search 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 KvEcD"
+  >
+    <button
+      aria-label="Open Drop"
+      className="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 iauybm"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 erazuK"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 XINUX"
+        >
+          <div
+            className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+          >
+            <input
+              autoComplete="off"
+              className="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 QrAAd"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Select"
+              readOnly={true}
+              size="medium"
+              tabIndex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="StyledBox-sc-13pk1d4-0 eLQtUu"
+          style={
+            Object {
+              "minWidth": "auto",
+            }
+          }
+        >
+          <svg
+            aria-label="FormDown"
+            className="StyledIcon-ofa7kd-0 dSllCE"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Select Seasons 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 bTrVGp"
+  >
+    <button
+      aria-label="Open Drop"
+      className="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 iauybm"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 erazuK"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 XINUX"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 bZdtcW"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kXzPjQ"
+            >
+              Select Season
+            </div>
+          </div>
+        </div>
+        <div
+          className="StyledBox-sc-13pk1d4-0 eLQtUu"
+          style={
+            Object {
+              "minWidth": "auto",
+            }
+          }
+        >
+          <svg
+            aria-label="FormDown"
+            className="StyledIcon-ofa7kd-0 dSllCE"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Select Simple 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 KvEcD"
+  >
+    <button
+      aria-label="Open Drop"
+      className="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 iauybm"
+      id="select"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 erazuK"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 XINUX"
+        >
+          <div
+            className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+          >
+            <input
+              autoComplete="off"
+              className="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 cuRQxH"
+              id="select__input"
+              name="select"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Select"
+              readOnly={true}
+              tabIndex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="StyledBox-sc-13pk1d4-0 eLQtUu"
+          style={
+            Object {
+              "minWidth": "auto",
+            }
+          }
+        >
+          <svg
+            aria-label="FormDown"
+            className="StyledIcon-ofa7kd-0 dSllCE"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Select Simple Multiple 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 KvEcD"
+  >
+    <button
+      aria-label="Open Drop"
+      className="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 iauybm"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 erazuK"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 XINUX"
+        >
+          <div
+            className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+          >
+            <input
+              autoComplete="off"
+              className="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 QrAAd"
+              multiple={true}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Select"
+              readOnly={true}
+              size="medium"
+              tabIndex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="StyledBox-sc-13pk1d4-0 eLQtUu"
+          style={
+            Object {
+              "minWidth": "auto",
+            }
+          }
+        >
+          <svg
+            aria-label="FormDown"
+            className="StyledIcon-ofa7kd-0 dSllCE"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+`;

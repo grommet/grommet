@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Drop All not stretch 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 WHkOE"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 jgopih"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        left: left
+      </span>
+      <div
+        className="StyledBox-sc-13pk1d4-0 kyTzti"
+      >
+         
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jgopih"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        left: right
+      </span>
+      <div
+        className="StyledBox-sc-13pk1d4-0 kyTzti"
+      >
+         
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jgopih"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        (center horizontal)
+      </span>
+      <div
+        className="StyledBox-sc-13pk1d4-0 kyTzti"
+      >
+         
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jgopih"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        right: left
+      </span>
+      <div
+        className="StyledBox-sc-13pk1d4-0 kyTzti"
+      >
+         
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jgopih"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        right: right
+      </span>
+      <div
+        className="StyledBox-sc-13pk1d4-0 kyTzti"
+      >
+         
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jgopih"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        top: top
+      </span>
+      <div
+        className="StyledBox-sc-13pk1d4-0 kyTzti"
+      >
+         
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jgopih"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        top: bottom
+      </span>
+      <div
+        className="StyledBox-sc-13pk1d4-0 kyTzti"
+      >
+         
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jgopih"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        (center vertical)
+      </span>
+      <div
+        className="StyledBox-sc-13pk1d4-0 kyTzti"
+      >
+         
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jgopih"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        bottom: top
+      </span>
+      <div
+        className="StyledBox-sc-13pk1d4-0 kyTzti"
+      >
+         
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jgopih"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        bottom: bottom
+      </span>
+      <div
+        className="StyledBox-sc-13pk1d4-0 kyTzti"
+      >
+         
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jgopih"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        (center vertical and horizontal)
+      </span>
+      <div
+        className="StyledBox-sc-13pk1d4-0 kyTzti"
+      >
+         
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Drop Lazy 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 lenPaR"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 fXaqNM"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 gifilu"
+      >
+        Target
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 gifilu"
+      >
+        Target
+      </div>
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <div
+      className="StyledBox-sc-13pk1d4-0 jFuDqS"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 ajvkv"
+      >
+        Target
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 ajvkv"
+      >
+        Target
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Drop Plain 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 jZqosp"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 izDIsY"
+    >
+      Target
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Drop Progressive 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 bTrVGp"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 cawECJ"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      Click me
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Drop Simple 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 bTrVGp"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 izDIsY"
+    >
+      Target
+    </div>
+  </div>
+</div>
+`;

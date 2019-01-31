@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots TextArea Fill 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 iMPFFx"
+  >
+    <textarea
+      className="StyledTextArea-sc-17i3mwp-0 VqiQs"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots TextArea Non resizable 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <textarea
+      className="StyledTextArea-sc-17i3mwp-0 dyuXxo"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots TextArea Simple 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <textarea
+      className="StyledTextArea-sc-17i3mwp-0 byaZRZ"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      value=""
+    />
+  </div>
+</div>
+`;

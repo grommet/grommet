@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots RadioButtonGroup Simple 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 IRSNj"
+    >
+      <label
+        className="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 jEXpGU StyledBox-sc-13pk1d4-0 gQLnBt"
+        onClick={[Function]}
+      >
+        <div
+          className="StyledRadioButton-g1f6ld-4 gvOSdV StyledBox-sc-13pk1d4-0 kvuUVC"
+        >
+          <input
+            checked={false}
+            className="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 QWfqj"
+            name="radio"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="radio"
+            value="c1"
+          />
+          <div
+            className="StyledRadioButton__StyledRadioButtonBox-g1f6ld-3 lnEyXE StyledBox-sc-13pk1d4-0 ghGSYb"
+          />
+        </div>
+        <span>
+          Choice 1
+        </span>
+      </label>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+      />
+      <label
+        className="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 jEXpGU StyledBox-sc-13pk1d4-0 gQLnBt"
+        onClick={[Function]}
+      >
+        <div
+          className="StyledRadioButton-g1f6ld-4 gvOSdV StyledBox-sc-13pk1d4-0 kvuUVC"
+        >
+          <input
+            checked={false}
+            className="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 QWfqj"
+            name="radio"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="radio"
+            value="c2"
+          />
+          <div
+            className="StyledRadioButton__StyledRadioButtonBox-g1f6ld-3 lnEyXE StyledBox-sc-13pk1d4-0 ghGSYb"
+          />
+        </div>
+        <span>
+          Choice 2
+        </span>
+      </label>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+      />
+      <label
+        className="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 jEXpGU StyledBox-sc-13pk1d4-0 gQLnBt"
+        onClick={[Function]}
+      >
+        <div
+          className="StyledRadioButton-g1f6ld-4 gvOSdV StyledBox-sc-13pk1d4-0 kvuUVC"
+        >
+          <input
+            checked={false}
+            className="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 QWfqj"
+            name="radio"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="radio"
+            value="c3"
+          />
+          <div
+            className="StyledRadioButton__StyledRadioButtonBox-g1f6ld-3 lnEyXE StyledBox-sc-13pk1d4-0 ghGSYb"
+          />
+        </div>
+        <span>
+          Choice 3
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
+`;

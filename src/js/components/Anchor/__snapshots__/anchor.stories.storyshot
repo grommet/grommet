@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Anchor Colors 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 hroMnY"
+  >
+    <a
+      className="StyledAnchor-sc-1rp7lwl-0 cGnAoG"
+      href="#"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <svg
+        aria-label="Add"
+        className="StyledIcon-ofa7kd-0 dSllCE"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12,22 L12,2 M2,12 L22,12"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </a>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 irlfVP"
+    />
+    <a
+      className="StyledAnchor-sc-1rp7lwl-0 jgeOSx"
+      href="#"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <span
+        className="StyledBox-sc-13pk1d4-0 gQLnBt"
+        style={
+          Object {
+            "display": "inline-flex",
+          }
+        }
+      >
+        <svg
+          aria-label="Add"
+          className="StyledIcon-ofa7kd-0 dSllCE"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+        />
+        Add
+      </span>
+    </a>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 irlfVP"
+    />
+    <a
+      className="StyledAnchor-sc-1rp7lwl-0 jgeOSx"
+      href="#"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      Add
+    </a>
+  </div>
+  <div
+    className="StyledBox-sc-13pk1d4-0 hdhLPu"
+  >
+    <a
+      className="StyledAnchor-sc-1rp7lwl-0 komeRd"
+      href="#"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <svg
+        aria-label="Add"
+        className="StyledIcon-ofa7kd-0 ildldD"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12,22 L12,2 M2,12 L22,12"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </a>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 irlfVP"
+    />
+    <a
+      className="StyledAnchor-sc-1rp7lwl-0 llbwuF"
+      href="#"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <span
+        className="StyledBox-sc-13pk1d4-0 gQLnBt"
+        style={
+          Object {
+            "display": "inline-flex",
+          }
+        }
+      >
+        <svg
+          aria-label="Add"
+          className="StyledIcon-ofa7kd-0 ildldD"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+        />
+        Add
+      </span>
+    </a>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 irlfVP"
+    />
+    <a
+      className="StyledAnchor-sc-1rp7lwl-0 llbwuF"
+      href="#"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <span
+        className="StyledBox-sc-13pk1d4-0 gQLnBt"
+        style={
+          Object {
+            "display": "inline-flex",
+          }
+        }
+      >
+        <svg
+          aria-label="Add"
+          className="StyledIcon-ofa7kd-0 ildldD"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+        />
+        Add
+      </span>
+    </a>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 irlfVP"
+    />
+    <a
+      className="StyledAnchor-sc-1rp7lwl-0 llbwuF"
+      href="#"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      Add
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Anchor Default 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <a
+      className="StyledAnchor-sc-1rp7lwl-0 jgeOSx"
+      href="#"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      Link
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Anchor Inline 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <p
+      className="StyledParagraph-tbetod-0 kxFtnQ"
+    >
+      This is 
+      <a
+        className="StyledAnchor-sc-1rp7lwl-0 jgeOSx"
+        href="#"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        an inline link
+      </a>
+       with surrounding text.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Anchor Size 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 kVTNVM"
+    >
+      <a
+        className="StyledAnchor-sc-1rp7lwl-0 fFuYdw"
+        href="#"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        size="xxlarge"
+      >
+        xxlarge
+      </a>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 kVTNVM"
+    >
+      <a
+        className="StyledAnchor-sc-1rp7lwl-0 jkFEHC"
+        href="#"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        size="xlarge"
+      >
+        xlarge
+      </a>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 kVTNVM"
+    >
+      <a
+        className="StyledAnchor-sc-1rp7lwl-0 dlbpfR"
+        href="#"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        size="large"
+      >
+        large
+      </a>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 kVTNVM"
+    >
+      <a
+        className="StyledAnchor-sc-1rp7lwl-0 eiLvfc"
+        href="#"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        size="medium"
+      >
+        medium
+      </a>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 kVTNVM"
+    >
+      <a
+        className="StyledAnchor-sc-1rp7lwl-0 egMoUH"
+        href="#"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        size="small"
+      >
+        small
+      </a>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 kVTNVM"
+    >
+      <a
+        className="StyledAnchor-sc-1rp7lwl-0 jnfOQF"
+        href="#"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        size="xsmall"
+      >
+        xsmall
+      </a>
+    </div>
+  </div>
+</div>
+`;

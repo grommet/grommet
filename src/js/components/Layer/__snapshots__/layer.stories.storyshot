@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Layer Center 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 bTrVGp"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 iauybm"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 hHwlHq"
+      >
+        <svg
+          aria-label="Trash"
+          className="StyledIcon-ofa7kd-0 iOkQrb"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M4,5 L20,5 L20,23 L4,23 L4,5 Z M1,5 L23,5 M9,1 L15,1 L15,5 L9,5 L9,1 Z M9,1 L15,1 L15,5 L9,5 L9,1 Z M15,9 L15,19 M9,9 L9,19"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+        />
+        <span
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+        >
+          <strong>
+            Remove
+          </strong>
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layer CornerLayer 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 bTrVGp"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 iauybm"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 hHwlHq"
+      >
+        <svg
+          aria-label="Add"
+          className="StyledIcon-ofa7kd-0 dSllCE"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+        />
+        <span
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+        >
+          <strong>
+            Add Corner Layer
+          </strong>
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layer Form 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 bTrVGp"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 arPcl"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 hHwlHq"
+      >
+        <svg
+          aria-label="Add"
+          className="StyledIcon-ofa7kd-0 iOkQrb"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+        />
+        Add
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layer Full 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 gqzhno"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 cZCHMh"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      Show
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layer Notification 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 bTrVGp"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 iauybm"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 hHwlHq"
+      >
+        <svg
+          aria-label="Add"
+          className="StyledIcon-ofa7kd-0 dSllCE"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+        />
+        <span
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+        >
+          <strong>
+            Add
+          </strong>
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;

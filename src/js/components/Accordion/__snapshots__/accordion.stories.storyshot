@@ -1,0 +1,797 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Accordion Custom Header 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 cYihDV"
+    role="tablist"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded={true}
+        aria-selected={true}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 jhfAqz"
+        >
+          <strong>
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              Panel 1
+            </span>
+          </strong>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+          />
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            -
+          </span>
+        </div>
+      </button>
+      <div
+        className="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          aria-hidden={false}
+          className="Collapsible__AnimatedBox-sc-15kniua-0 dMYckW StyledBox-sc-13pk1d4-0 IRSNj"
+          open={true}
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 fyiRCu"
+            style={
+              Object {
+                "height": "800px",
+              }
+            }
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              Panel 1 contents
+            </span>
+            <div
+              className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+            >
+              <input
+                autoComplete="off"
+                className="StyledTextInput-sc-1x30a0s-0 iQGivQ"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 jhfAqz"
+        >
+          <strong>
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              Panel 2
+            </span>
+          </strong>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+          />
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            +
+          </span>
+        </div>
+      </button>
+      <div
+        className="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          aria-hidden={true}
+          className="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+          open={false}
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 fyiRCu"
+            style={
+              Object {
+                "height": "50px",
+              }
+            }
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              Panel 2 contents
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jqGCfM"
+    >
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 jhfAqz"
+        >
+          <strong>
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              Panel 3
+            </span>
+          </strong>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+          />
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            +
+          </span>
+        </div>
+      </button>
+      <div
+        className="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          aria-hidden={true}
+          className="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+          open={false}
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 fyiRCu"
+            style={
+              Object {
+                "height": "300px",
+              }
+            }
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+            >
+              Panel 3 contents
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Accordion Dark no animation 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 iWYtfe"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 cYihDV"
+      role="tablist"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 jqGCfM"
+      >
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 erazuK"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFoGJP"
+            >
+              <h4
+                className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              >
+                Panel 1
+              </h4>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFjquy"
+            >
+              <svg
+                aria-label="FormDown"
+                className="StyledIcon-ofa7kd-0 ildldD"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+        <div
+          className="StyledBox-sc-13pk1d4-0 gcIhDK"
+        />
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 jqGCfM"
+      >
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 erazuK"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFoGJP"
+            >
+              <h4
+                className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              >
+                Panel 2
+              </h4>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFjquy"
+            >
+              <svg
+                aria-label="FormDown"
+                className="StyledIcon-ofa7kd-0 ildldD"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+        <div
+          className="StyledBox-sc-13pk1d4-0 gcIhDK"
+        />
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 jqGCfM"
+      >
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 erazuK"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFoGJP"
+            >
+              <h4
+                className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              >
+                Panel 3
+              </h4>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFjquy"
+            >
+              <svg
+                aria-label="FormDown"
+                className="StyledIcon-ofa7kd-0 ildldD"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+        <div
+          className="StyledBox-sc-13pk1d4-0 gcIhDK"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Accordion Multiple 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 IRSNj"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 cYihDV"
+      multiple={true}
+      role="tablist"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 jqGCfM"
+      >
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 erazuK"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFoGJP"
+            >
+              <h4
+                className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              >
+                Panel 1
+              </h4>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFjquy"
+            >
+              <svg
+                aria-label="FormDown"
+                className="StyledIcon-ofa7kd-0 dSllCE"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+        <div
+          className="StyledBox-sc-13pk1d4-0 gZSidW"
+        >
+          <div
+            aria-hidden={true}
+            className="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+            open={false}
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 imQOMg"
+              style={
+                Object {
+                  "height": "800px",
+                }
+              }
+            >
+              Panel 1 contents
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 jqGCfM"
+      >
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 erazuK"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFoGJP"
+            >
+              <h4
+                className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              >
+                Panel 2
+              </h4>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFjquy"
+            >
+              <svg
+                aria-label="FormDown"
+                className="StyledIcon-ofa7kd-0 dSllCE"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+        <div
+          className="StyledBox-sc-13pk1d4-0 gZSidW"
+        >
+          <div
+            aria-hidden={true}
+            className="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+            open={false}
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 imQOMg"
+              style={
+                Object {
+                  "height": "50px",
+                }
+              }
+            >
+              Panel 2 contents
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 jqGCfM"
+      >
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 erazuK"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFoGJP"
+            >
+              <h4
+                className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              >
+                Panel 3
+              </h4>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFjquy"
+            >
+              <svg
+                aria-label="FormDown"
+                className="StyledIcon-ofa7kd-0 dSllCE"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+        <div
+          className="StyledBox-sc-13pk1d4-0 gZSidW"
+        >
+          <div
+            aria-hidden={true}
+            className="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+            open={false}
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 imQOMg"
+              style={
+                Object {
+                  "height": "300px",
+                }
+              }
+            >
+              Panel 3 contents
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Accordion Simple 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 IRSNj"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 cYihDV"
+      role="tablist"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 jqGCfM"
+      >
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 erazuK"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFoGJP"
+            >
+              <h4
+                className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              >
+                Panel 1
+              </h4>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFjquy"
+            >
+              <svg
+                aria-label="FormDown"
+                className="StyledIcon-ofa7kd-0 dSllCE"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+        <div
+          className="StyledBox-sc-13pk1d4-0 gZSidW"
+        >
+          <div
+            aria-hidden={true}
+            className="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+            open={false}
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 imQOMg"
+              style={
+                Object {
+                  "height": "800px",
+                }
+              }
+            >
+              Panel 1 contents
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 jqGCfM"
+      >
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 erazuK"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFoGJP"
+            >
+              <h4
+                className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              >
+                Panel 2
+              </h4>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFjquy"
+            >
+              <svg
+                aria-label="FormDown"
+                className="StyledIcon-ofa7kd-0 dSllCE"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+        <div
+          className="StyledBox-sc-13pk1d4-0 gZSidW"
+        >
+          <div
+            aria-hidden={true}
+            className="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+            open={false}
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 imQOMg"
+              style={
+                Object {
+                  "height": "50px",
+                }
+              }
+            >
+              Panel 2 contents
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 jqGCfM"
+      >
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 erazuK"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFoGJP"
+            >
+              <h4
+                className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              >
+                Panel 3
+              </h4>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 kFjquy"
+            >
+              <svg
+                aria-label="FormDown"
+                className="StyledIcon-ofa7kd-0 dSllCE"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+        <div
+          className="StyledBox-sc-13pk1d4-0 gZSidW"
+        >
+          <div
+            aria-hidden={true}
+            className="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+            open={false}
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 imQOMg"
+              style={
+                Object {
+                  "height": "300px",
+                }
+              }
+            >
+              Panel 3 contents
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

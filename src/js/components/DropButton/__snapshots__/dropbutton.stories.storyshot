@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots DropButton Calendar 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <button
+      aria-label="Open Drop"
+      className="StyledButton-sc-323bzc-0 iauybm"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 dtInQ"
+      >
+        <span
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+        >
+          Select date
+        </span>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hyyRSo"
+        />
+        <svg
+          aria-label="FormDown"
+          className="StyledIcon-ofa7kd-0 dSllCE"
+          viewBox="0 0 24 24"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots DropButton Simple 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <button
+      aria-label="Open Drop"
+      className="StyledButton-sc-323bzc-0 arPcl"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      Open
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots DropButton UserMenu 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 cXRmiT"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 eJOEdt"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 gYrpnw"
+      />
+      <button
+        aria-label="Open Drop"
+        className="StyledButton-sc-323bzc-0 voIly"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 dWDOzc"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;

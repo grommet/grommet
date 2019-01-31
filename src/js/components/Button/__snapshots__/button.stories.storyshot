@@ -1,0 +1,591 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button Active 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 kmdrjp"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 dtInQ"
+      >
+        <svg
+          aria-label="Add"
+          className="StyledIcon-ofa7kd-0 iOkQrb"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+        />
+        <span
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+        >
+          Add
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Anchor 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <a
+      className="StyledButton-sc-323bzc-0 arPcl"
+      href="#"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      Go
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Colored 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 hJqjyg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      Submit
+    </button>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <button
+      className="StyledButton-sc-323bzc-0 jztAaq"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      Submit
+    </button>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <button
+      className="StyledButton-sc-323bzc-0 jupXXb"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      Submit
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Custom tag Button 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <span
+      className="StyledButton-sc-323bzc-0 arPcl"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      Go
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Custom theme 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 vzMDw"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 jEvJpU"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      Submit
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Default 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 arPcl"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      Submit
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Disabled 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 fetdSR"
+      disabled={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      Submit
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Icon 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 bHGWny"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      <svg
+        aria-label="Add"
+        className="StyledIcon-ofa7kd-0 iOkQrb"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12,22 L12,2 M2,12 L22,12"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Icon Label 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 cawECJ"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 hHwlHq"
+      >
+        <svg
+          aria-label="Add"
+          className="StyledIcon-ofa7kd-0 jAaLrm"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+        />
+        Add
+      </div>
+    </button>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <button
+      className="StyledButton-sc-323bzc-0 arPcl"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 hHwlHq"
+      >
+        <svg
+          aria-label="Add"
+          className="StyledIcon-ofa7kd-0 iOkQrb"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+        />
+        Add
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Multiple Same Line 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 kqWSPS"
+    >
+      <button
+        className="StyledButton-sc-323bzc-0 arPcl"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        Cancel
+      </button>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+      />
+      <button
+        className="StyledButton-sc-323bzc-0 hJqjyg"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 hHwlHq"
+        >
+          <svg
+            aria-label="Add"
+            className="StyledIcon-ofa7kd-0 ildldD"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12,22 L12,2 M2,12 L22,12"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+          />
+          Add
+        </div>
+      </button>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 kqWSPS"
+    >
+      <button
+        className="StyledButton-sc-323bzc-0 arPcl"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        Cancel
+      </button>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+      />
+      <button
+        className="StyledButton-sc-323bzc-0 hJqjyg"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 hHwlHq"
+        >
+          <svg
+            aria-label="Add"
+            className="StyledIcon-ofa7kd-0 jAaLrm"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12,22 L12,2 M2,12 L22,12"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+          />
+          Add
+        </div>
+      </button>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 kqWSPS"
+    >
+      <button
+        className="StyledButton-sc-323bzc-0 arPcl"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        Cancel
+      </button>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+      />
+      <button
+        className="StyledButton-sc-323bzc-0 cawECJ"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 hHwlHq"
+        >
+          <svg
+            aria-label="Add"
+            className="StyledIcon-ofa7kd-0 jAaLrm"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12,22 L12,2 M2,12 L22,12"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+          />
+          Add
+        </div>
+      </button>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 kqWSPS"
+    >
+      <button
+        className="StyledButton-sc-323bzc-0 arPcl"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        Cancel
+      </button>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+      />
+      <button
+        className="StyledButton-sc-323bzc-0 grlpbM"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 hHwlHq"
+        >
+          <svg
+            aria-label="Add"
+            className="StyledIcon-ofa7kd-0 cZXyLU"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12,22 L12,2 M2,12 L22,12"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+          />
+          Add
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Plain 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 bjjljL"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 dtInQ"
+      >
+        <svg
+          aria-label="Add"
+          className="StyledIcon-ofa7kd-0 iOkQrb"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+        />
+        <span
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+        >
+          Add
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Primary 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 cawECJ"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      Submit
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button RoutedButton 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <a
+      className="StyledButton-sc-323bzc-0 arPcl"
+      disabled={false}
+      href="/"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      Go
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Theme Colored 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 YgbUh"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 cISVPj"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      Submit
+    </button>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <button
+      className="StyledButton-sc-323bzc-0 kCBokE"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      Submit
+    </button>
+  </div>
+</div>
+`;

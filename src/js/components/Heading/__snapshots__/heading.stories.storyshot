@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Heading All 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledGrid-sc-1wofa1l-0 ctyqCq"
+  >
+    <div>
+      <h1
+        className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+        size="medium"
+      >
+        Heading 1 medium
+      </h1>
+      <h2
+        className="StyledHeading-sc-1rdh4aw-0 dSWBwh"
+        size="medium"
+      >
+        Heading 2 medium
+      </h2>
+      <h3
+        className="StyledHeading-sc-1rdh4aw-0 gRvHvF"
+        size="medium"
+      >
+        Heading 3 medium
+      </h3>
+      <h4
+        className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+        size="medium"
+      >
+        Heading 4 medium
+      </h4>
+      <h5
+        className="StyledHeading-sc-1rdh4aw-0 djDvmr"
+        size="medium"
+      >
+        Heading 5 medium
+      </h5>
+      <h6
+        className="StyledHeading-sc-1rdh4aw-0 eTzQtS"
+        size="medium"
+      >
+        Heading 6 medium
+      </h6>
+    </div>
+    <div>
+      <h1
+        className="StyledHeading-sc-1rdh4aw-0 dSWBwh"
+        size="small"
+      >
+        Heading 1 small
+      </h1>
+      <h2
+        className="StyledHeading-sc-1rdh4aw-0 inPHuw"
+        size="small"
+      >
+        Heading 2 small
+      </h2>
+      <h3
+        className="StyledHeading-sc-1rdh4aw-0 jXPWRz"
+        size="small"
+      >
+        Heading 3 small
+      </h3>
+      <h4
+        className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+        size="small"
+      >
+        Heading 4 small
+      </h4>
+      <h5
+        className="StyledHeading-sc-1rdh4aw-0 djDvmr"
+        size="small"
+      >
+        Heading 5 small
+      </h5>
+      <h6
+        className="StyledHeading-sc-1rdh4aw-0 eTzQtS"
+        size="small"
+      >
+        Heading 6 small
+      </h6>
+    </div>
+    <div>
+      <h1
+        className="StyledHeading-sc-1rdh4aw-0 goNcum"
+        size="large"
+      >
+        Heading 1 large
+      </h1>
+      <h2
+        className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+        size="large"
+      >
+        Heading 2 large
+      </h2>
+      <h3
+        className="StyledHeading-sc-1rdh4aw-0 GyKgi"
+        size="large"
+      >
+        Heading 3 large
+      </h3>
+      <h4
+        className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+        size="large"
+      >
+        Heading 4 large
+      </h4>
+      <h5
+        className="StyledHeading-sc-1rdh4aw-0 djDvmr"
+        size="large"
+      >
+        Heading 5 large
+      </h5>
+      <h6
+        className="StyledHeading-sc-1rdh4aw-0 eTzQtS"
+        size="large"
+      >
+        Heading 6 large
+      </h6>
+    </div>
+    <div>
+      <h1
+        className="StyledHeading-sc-1rdh4aw-0 KZgxt"
+        size="xlarge"
+      >
+        Heading 1 xlarge
+      </h1>
+      <h2
+        className="StyledHeading-sc-1rdh4aw-0 jKRXCp"
+        size="xlarge"
+      >
+        Heading 2 xlarge
+      </h2>
+      <h3
+        className="StyledHeading-sc-1rdh4aw-0 jrpNej"
+        size="xlarge"
+      >
+        Heading 3 xlarge
+      </h3>
+      <h4
+        className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+        size="xlarge"
+      >
+        Heading 4 xlarge
+      </h4>
+      <h5
+        className="StyledHeading-sc-1rdh4aw-0 djDvmr"
+        size="xlarge"
+      >
+        Heading 5 xlarge
+      </h5>
+      <h6
+        className="StyledHeading-sc-1rdh4aw-0 eTzQtS"
+        size="xlarge"
+      >
+        Heading 6 xlarge
+      </h6>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Heading Color 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <h1
+    className="StyledHeading-sc-1rdh4aw-0 juBuDT"
+  >
+    Colored Heading
+  </h1>
+</div>
+`;
+
+exports[`Storyshots Heading Custom Level 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <h5
+    className="StyledHeading-sc-1rdh4aw-0 htfSHk"
+  >
+    Heading level 5
+  </h5>
+</div>
+`;

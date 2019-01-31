@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots MaskedInput Email 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 KvEcD"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 ipWbUu"
+    >
+      <div
+        className="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 kyyRCm"
+      >
+        <input
+          autoComplete="off"
+          className="StyledMaskedInput-sc-99vkfa-0 gEfnDg"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="example@my.com"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots MaskedInput IPv4 Address 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 KvEcD"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 ipWbUu"
+    >
+      <div
+        className="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 kyyRCm"
+      >
+        <input
+          autoComplete="off"
+          className="StyledMaskedInput-sc-99vkfa-0 gEfnDg"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="xxx.xxx.xxx.xxx"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots MaskedInput Phone 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 KvEcD"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 ipWbUu"
+    >
+      <div
+        className="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 kyyRCm"
+      >
+        <input
+          autoComplete="off"
+          className="StyledMaskedInput-sc-99vkfa-0 gEfnDg"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="(xxx) xxx-xxxx"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots MaskedInput Time 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 KvEcD"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 ipWbUu"
+    >
+      <div
+        className="StyledMaskedInput__StyledMaskedInputContainer-sc-99vkfa-1 kyyRCm"
+      >
+        <input
+          autoComplete="off"
+          className="StyledMaskedInput-sc-99vkfa-0 gEfnDg"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="hh:mm ap"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

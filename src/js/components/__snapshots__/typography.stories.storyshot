@@ -1,0 +1,290 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Typography Large 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 hroMnY"
+  >
+    <div>
+      <h1
+        className="StyledHeading-sc-1rdh4aw-0 goNcum"
+        size="large"
+      >
+        Heading 1 - Large
+      </h1>
+      <span
+        className="StyledText-sc-1sadyjn-0 jNPGlP"
+        size="xxlarge"
+      >
+        Text XXLarge
+      </span>
+      <p
+        className="StyledParagraph-tbetod-0 fxfsYb"
+        size="xlarge"
+      >
+        Paragraph - XLarge
+        
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+      </p>
+      <h2
+        className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+        size="large"
+      >
+        Heading 2 - Large
+      </h2>
+      <span
+        className="StyledText-sc-1sadyjn-0 cNzL"
+        size="xlarge"
+      >
+        Text XLarge
+      </span>
+      <p
+        className="StyledParagraph-tbetod-0 fDxcig"
+        size="large"
+      >
+        Paragraph - Large
+        
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+      </p>
+      <h3
+        className="StyledHeading-sc-1rdh4aw-0 GyKgi"
+        size="large"
+      >
+        Heading 3 - Large
+      </h3>
+      <span
+        className="StyledText-sc-1sadyjn-0 jScuyG"
+        size="large"
+      >
+        Text Large
+      </span>
+      <p
+        className="StyledParagraph-tbetod-0 kxFtnQ"
+      >
+        Paragraph - Medium
+        
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+      </p>
+      <h4
+        className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+        size="large"
+      >
+        Heading 4 - Large
+      </h4>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Text Medium
+      </span>
+      <p
+        className="StyledParagraph-tbetod-0 kxFtnQ"
+      >
+        Paragraph - Medium
+        
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Typography Medium 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 hroMnY"
+  >
+    <div>
+      <h1
+        className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+      >
+        Heading 1 - Medium
+      </h1>
+      <span
+        className="StyledText-sc-1sadyjn-0 cNzL"
+        size="xlarge"
+      >
+        Text XLarge
+      </span>
+      <p
+        className="StyledParagraph-tbetod-0 fDxcig"
+        size="large"
+      >
+        Paragraph - Large
+        
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+      </p>
+      <h2
+        className="StyledHeading-sc-1rdh4aw-0 dSWBwh"
+      >
+        Heading 2 - Medium
+      </h2>
+      <span
+        className="StyledText-sc-1sadyjn-0 jScuyG"
+        size="large"
+      >
+        Text Large
+      </span>
+      <p
+        className="StyledParagraph-tbetod-0 kxFtnQ"
+      >
+        Paragraph - Medium
+        
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+      </p>
+      <h3
+        className="StyledHeading-sc-1rdh4aw-0 gRvHvF"
+      >
+        Heading 3 - Medium
+      </h3>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Text Medium
+      </span>
+      <p
+        className="StyledParagraph-tbetod-0 kxFtnQ"
+      >
+        Paragraph - Medium
+        
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+      </p>
+      <h4
+        className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+      >
+        Heading 4 - Medium
+      </h4>
+      <span
+        className="StyledText-sc-1sadyjn-0 gNZQxf"
+        size="small"
+      >
+        Text Small
+      </span>
+      <p
+        className="StyledParagraph-tbetod-0 JlbWj"
+        size="small"
+      >
+        Paragraph - Small
+        
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Typography Small 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 hroMnY"
+  >
+    <div>
+      <h1
+        className="StyledHeading-sc-1rdh4aw-0 dSWBwh"
+        size="small"
+      >
+        Heading 1 - Small
+      </h1>
+      <span
+        className="StyledText-sc-1sadyjn-0 jScuyG"
+        size="large"
+      >
+        Text Large
+      </span>
+      <p
+        className="StyledParagraph-tbetod-0 kxFtnQ"
+      >
+        Paragraph - Medium
+        
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+      </p>
+      <h2
+        className="StyledHeading-sc-1rdh4aw-0 inPHuw"
+        size="small"
+      >
+        Heading 2 - Small
+      </h2>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Text Medium
+      </span>
+      <p
+        className="StyledParagraph-tbetod-0 kxFtnQ"
+      >
+        Paragraph - Medium
+        
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+      </p>
+      <h3
+        className="StyledHeading-sc-1rdh4aw-0 jXPWRz"
+        size="small"
+      >
+        Heading 3 - Small
+      </h3>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        Text Medium
+      </span>
+      <p
+        className="StyledParagraph-tbetod-0 JlbWj"
+        size="small"
+      >
+        Paragraph - Small
+        
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+      </p>
+      <h4
+        className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+        size="small"
+      >
+        Heading 4 - Small
+      </h4>
+      <span
+        className="StyledText-sc-1sadyjn-0 gNZQxf"
+        size="small"
+      >
+        Text Small
+      </span>
+      <p
+        className="StyledParagraph-tbetod-0 JlbWj"
+        size="small"
+      >
+        Paragraph - Small
+        
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+      </p>
+    </div>
+  </div>
+</div>
+`;

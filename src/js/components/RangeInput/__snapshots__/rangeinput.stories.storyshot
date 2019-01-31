@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots RangeInput Simple RangeInput 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <input
+      className="StyledRangeInput-sc-15st9ck-0 jwjKzR"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      type="range"
+      value={5}
+    />
+  </div>
+</div>
+`;

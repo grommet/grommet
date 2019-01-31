@@ -1,0 +1,365 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Markdown Component Override Markdown 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div>
+      <h1
+        className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+        id="out-of-breath"
+      >
+        Out of Breath
+      </h1>
+      <p
+        className="StyledParagraph-tbetod-0 kxFtnQ"
+      >
+          You know, sometimes in life it seems like there's no way out. Like
+  a sheep trapped in a maze designed by wolves.
+      </p>
+      <p
+        className="StyledParagraph-tbetod-0 kxFtnQ"
+      >
+          
+        <a
+          className="StyledAnchor-sc-1rp7lwl-0 jgeOSx"
+          href="#"
+          onBlur={[Function]}
+          onFocus={[Function]}
+        >
+          reference
+        </a>
+      </p>
+      <pre
+        className="markdownstories__StyledPre-sc-4hkfd5-0 jkgfzB"
+      >
+        <code>
+          import { Grommet } from '..';
+        </code>
+      </pre>
+      <blockquote>
+        <p
+          className="StyledParagraph-tbetod-0 kxFtnQ"
+        >
+          i carry your heart with me
+        </p>
+      </blockquote>
+      <p
+        className="StyledParagraph-tbetod-0 kxFtnQ"
+      >
+          
+        <img
+          alt="alt text"
+          className="StyledImage-ey4zx9-0 jtkYbl"
+          src="//v2.grommet.io/assets/IMG_4245.jpg"
+          title="Markdown Image"
+        />
+      </p>
+      <table
+        className="StyledTable-sc-1m3u5g-6 qwhVU"
+      >
+        <thead
+          className="StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
+        >
+          <tr
+            className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+          >
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eoKPJA"
+                style={Object {}}
+              >
+                Markdown
+              </div>
+            </td>
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eoKPJA"
+                style={Object {}}
+              >
+                Less
+              </div>
+            </td>
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eoKPJA"
+                style={Object {}}
+              >
+                Pretty
+              </div>
+            </td>
+          </tr>
+        </thead>
+        <tbody
+          className="StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
+        >
+          <tr
+            className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+          >
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                style={Object {}}
+              >
+                <em>
+                  Still
+                </em>
+              </div>
+            </td>
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                style={Object {}}
+              >
+                <code>
+                  renders
+                </code>
+              </div>
+            </td>
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                style={Object {}}
+              >
+                <strong>
+                  nicely
+                </strong>
+              </div>
+            </td>
+          </tr>
+          <tr
+            className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+          >
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                style={Object {}}
+              >
+                1
+              </div>
+            </td>
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                style={Object {}}
+              >
+                2
+              </div>
+            </td>
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                style={Object {}}
+              >
+                3
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Markdown Simple Markdown 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div>
+      <h1
+        className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+        id="out-of-breath"
+      >
+        Out of Breath
+      </h1>
+      <p
+        className="StyledParagraph-tbetod-0 kxFtnQ"
+      >
+          You know, sometimes in life it seems like there's no way out. Like
+  a sheep trapped in a maze designed by wolves.
+      </p>
+      <p
+        className="StyledParagraph-tbetod-0 kxFtnQ"
+      >
+          
+        <a
+          className="StyledAnchor-sc-1rp7lwl-0 jgeOSx"
+          href="#"
+          onBlur={[Function]}
+          onFocus={[Function]}
+        >
+          reference
+        </a>
+      </p>
+      <pre>
+        <code>
+          import { Grommet } from '..';
+        </code>
+      </pre>
+      <blockquote>
+        <p
+          className="StyledParagraph-tbetod-0 kxFtnQ"
+        >
+          i carry your heart with me
+        </p>
+      </blockquote>
+      <p
+        className="StyledParagraph-tbetod-0 kxFtnQ"
+      >
+          
+        <img
+          alt="alt text"
+          className="StyledImage-ey4zx9-0 jtkYbl"
+          src="//v2.grommet.io/assets/IMG_4245.jpg"
+          title="Markdown Image"
+        />
+      </p>
+      <table
+        className="StyledTable-sc-1m3u5g-6 qwhVU"
+      >
+        <thead
+          className="StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
+        >
+          <tr
+            className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+          >
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eoKPJA"
+                style={Object {}}
+              >
+                Markdown
+              </div>
+            </td>
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eoKPJA"
+                style={Object {}}
+              >
+                Less
+              </div>
+            </td>
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eoKPJA"
+                style={Object {}}
+              >
+                Pretty
+              </div>
+            </td>
+          </tr>
+        </thead>
+        <tbody
+          className="StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
+        >
+          <tr
+            className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+          >
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                style={Object {}}
+              >
+                <em>
+                  Still
+                </em>
+              </div>
+            </td>
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                style={Object {}}
+              >
+                <code>
+                  renders
+                </code>
+              </div>
+            </td>
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                style={Object {}}
+              >
+                <strong>
+                  nicely
+                </strong>
+              </div>
+            </td>
+          </tr>
+          <tr
+            className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+          >
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                style={Object {}}
+              >
+                1
+              </div>
+            </td>
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                style={Object {}}
+              >
+                2
+              </div>
+            </td>
+            <td
+              className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                style={Object {}}
+              >
+                3
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;

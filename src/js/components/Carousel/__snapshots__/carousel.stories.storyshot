@@ -1,0 +1,238 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Carousel Simple Carousel 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledStack-ajspsk-0 cBSAEZ"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+    >
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 gSqlow"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 IRSNj"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 jpLNgO"
+            >
+              <svg
+                aria-label="Attraction"
+                className="StyledIcon-ofa7kd-0 ifyVeF"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M13,2 L14.5,2.5 L13,3 L13,2 Z M14,18 L15,23 L13,23 L14,18 Z M14,16.5 L16,23 L12,23 L14,16.5 Z M12,6 L21,11 L21,13 L3,13 L3,11 L12,6 Z M4.5,13 L19.5,13 C19.5,17.1666667 21,23 21,23 L3,23 C3,23 4.5,17.1666667 4.5,13 Z M4.5,13 L19.5,13 C19.5,17.1666667 21,23 21,23 L3,23 C3,23 4.5,17.1666667 4.5,13 Z"
+                  fill="none"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 gSqlow"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 eMweLo"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 iwqtac"
+            >
+              <svg
+                aria-label="TreeOption"
+                className="StyledIcon-ofa7kd-0 ifyVeF"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7,13 L11.375,6 L9,6 L12,2 L15,6 L12.625,6 L17,13 L15,13 L19,19.6666667 L5,19.6666667 L9,13 L7,13 Z M12,24 L12,20"
+                  fill="none"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 gSqlow"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 eMweLo"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 kgToqV"
+            >
+              <svg
+                aria-label="Car"
+                className="StyledIcon-ofa7kd-0 ifyVeF"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M1,10.9970301 C1,10.4463856 1.43945834,10 2.00246167,10 L21.9975383,10 C22.5511826,10 23,10.4530363 23,10.9970301 L23,17.0029699 C23,17.5536144 22.5605417,18 21.9975383,18 L2.00246167,18 C1.44881738,18 1,17.5469637 1,17.0029699 L1,10.9970301 Z M6,2 L18,2 L22,10 L2,10 L6,2 Z M12,10.5 L15,5 M3,18 L6,18 L6,20.9906311 C6,21.5480902 5.55733967,22 5.00104344,22 L3.99895656,22 C3.44724809,22 3,21.5566468 3,20.9906311 L3,18 Z M18,18 L21,18 L21,20.9906311 C21,21.5480902 20.5573397,22 20.0010434,22 L18.9989566,22 C18.4472481,22 18,21.5566468 18,20.9906311 L18,18 Z M5,15 C5.55228475,15 6,14.5522847 6,14 C6,13.4477153 5.55228475,13 5,13 C4.44771525,13 4,13.4477153 4,14 C4,14.5522847 4.44771525,15 5,15 Z M19,15 C19.5522847,15 20,14.5522847 20,14 C20,13.4477153 19.5522847,13 19,13 C18.4477153,13 18,13.4477153 18,14 C18,14.5522847 18.4477153,15 19,15 Z M12,13 L12,15 M14,13 L14,15 M10,13 L10,15"
+                  fill="none"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 eKHNGK"
+          tabIndex="0"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 dkhTXm"
+          >
+            <button
+              className="StyledButton-sc-323bzc-0 fzQtuL"
+              disabled={true}
+              onBlur={[Function]}
+              onFocus={[Function]}
+              type="button"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 VhefZ"
+              >
+                <svg
+                  aria-label="Previous"
+                  className="StyledIcon-ofa7kd-0 iOkQrb"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="7 2 17 12 7 22"
+                    stroke="#000"
+                    strokeWidth="2"
+                    transform="matrix(-1 0 0 1 24 0)"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 JUlfQ"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 exddWn"
+            >
+              <button
+                className="StyledButton-sc-323bzc-0 dcpWVY"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-label="Subtract"
+                  className="StyledIcon-ofa7kd-0 dSllCE"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </button>
+              <button
+                className="StyledButton-sc-323bzc-0 dcpWVY"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-label="Subtract"
+                  className="StyledIcon-ofa7kd-0 iOkQrb"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </button>
+              <button
+                className="StyledButton-sc-323bzc-0 dcpWVY"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-label="Subtract"
+                  className="StyledIcon-ofa7kd-0 iOkQrb"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M2,12 L22,12"
+                    fill="none"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 dkhTXm"
+          >
+            <button
+              className="StyledButton-sc-323bzc-0 kjdfHK"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              type="button"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 VhefZ"
+              >
+                <svg
+                  aria-label="Next"
+                  className="StyledIcon-ofa7kd-0 iOkQrb"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="7 2 17 12 7 22"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

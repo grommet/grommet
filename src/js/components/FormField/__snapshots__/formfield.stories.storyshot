@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots FormField CheckBox 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 CAsMy"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 fsgjrx"
+      >
+        <label
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+          htmlFor="check-box"
+        >
+          Label
+        </label>
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 hkPRCG"
+          onBlur={[Function]}
+          onFocus={[Function]}
+        >
+          <label
+            className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bVmNDQ"
+            htmlFor="check-box"
+            onClick={[Function]}
+          >
+            <div
+              className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 emCRMK"
+            >
+              <div
+                className="StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 fxKnpz StyledBox-sc-13pk1d4-0 jFlQDV"
+              />
+              <input
+                className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 brHjRm"
+                id="check-box"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                type="checkbox"
+              />
+            </div>
+            <span>
+              CheckBox
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots FormField Help and error 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 CAsMy"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 fsgjrx"
+      >
+        <label
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+          htmlFor="text-input"
+        >
+          Label
+        </label>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 bQFWhA"
+        />
+        <span
+          className="StyledText-sc-1sadyjn-0 eCXRhA"
+        >
+          Text to help the user know what is possible
+        </span>
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 fVtecF"
+      >
+        <div
+          className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+        >
+          <input
+            autoComplete="off"
+            className="StyledTextInput-sc-1x30a0s-0 cuRQxH"
+            id="text-input"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            placeholder="placeholder"
+            value="Value"
+          />
+        </div>
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 fsgjrx"
+      >
+        <span
+          className="StyledText-sc-1sadyjn-0 hOyydb"
+        >
+          Text to call attention to an issue with this field
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots FormField Select 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 CAsMy"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 fsgjrx"
+      >
+        <label
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+          htmlFor="select"
+        >
+          Label
+        </label>
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <button
+          aria-label="Open Drop"
+          className="Select__StyledSelectDropButton-sc-17idtfo-1 gQjIFS StyledButton-sc-323bzc-0 iauybm"
+          id="select"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 erazuK"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 XINUX"
+            >
+              <div
+                className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+              >
+                <input
+                  autoComplete="off"
+                  className="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 cuRQxH"
+                  id="select__input"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="placeholder"
+                  readOnly={true}
+                  tabIndex="-1"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 eLQtUu"
+              style={
+                Object {
+                  "minWidth": "auto",
+                }
+              }
+            >
+              <svg
+                aria-label="FormDown"
+                className="StyledIcon-ofa7kd-0 dSllCE"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots FormField TextArea 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 CAsMy"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 fsgjrx"
+      >
+        <label
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+          htmlFor="text-area"
+        >
+          Label
+        </label>
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <textarea
+          className="StyledTextArea-sc-17i3mwp-0 eAGDzg"
+          id="text-area"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          placeholder="placeholder"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots FormField TextInput 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 CAsMy"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 fsgjrx"
+      >
+        <label
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+          htmlFor="text-input"
+        >
+          Label
+        </label>
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+        >
+          <input
+            autoComplete="off"
+            className="StyledTextInput-sc-1x30a0s-0 cuRQxH"
+            id="text-input"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            placeholder="placeholder"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots FormField Toggle 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 CAsMy"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 fsgjrx"
+      >
+        <label
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+          htmlFor="check-box"
+        >
+          Label
+        </label>
+      </div>
+      <div
+        className="StyledBox-sc-13pk1d4-0 gZSidW"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 hkPRCG"
+          onBlur={[Function]}
+          onFocus={[Function]}
+        >
+          <label
+            className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bVmNDQ"
+            htmlFor="check-box"
+            onClick={[Function]}
+          >
+            <div
+              className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 emCRMK"
+            >
+              <span
+                className="StyledCheckBox__StyledCheckBoxToggle-sc-1dbk5ju-4 dEfQFc"
+              >
+                <span
+                  className="StyledCheckBox__StyledCheckBoxKnob-sc-1dbk5ju-5 dwaSfW"
+                />
+              </span>
+              <input
+                className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 brHjRm"
+                id="check-box"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                type="checkbox"
+              />
+            </div>
+            <span>
+              CheckBox
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

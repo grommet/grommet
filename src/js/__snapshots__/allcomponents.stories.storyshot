@@ -1,0 +1,2383 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components All 1`] = `
+Array [
+  <div
+    className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 iICbXh"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 juhgWU"
+      >
+        <button
+          aria-label="Open Drop"
+          className="Select__StyledSelectDropButton-sc-17idtfo-1 gQjIFS StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          type="button"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 erazuK"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 XINUX"
+            >
+              <div
+                className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+              >
+                <input
+                  autoComplete="off"
+                  className="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 WvAlJ"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  readOnly={true}
+                  size="small"
+                  tabIndex="-1"
+                  type="text"
+                  value="grommet"
+                />
+              </div>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 eLQtUu"
+              style={
+                Object {
+                  "minWidth": "auto",
+                }
+              }
+            >
+              <svg
+                aria-label="FormDown"
+                className="StyledIcon-ofa7kd-0 dojsYy"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 guFpJZ"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 juhgWU"
+      >
+        <input
+          className="StyledRangeInput-sc-15st9ck-0 jwjKzR"
+          max={36}
+          min={16}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          step={2}
+          type="range"
+          value={24}
+        />
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 guFpJZ"
+      />
+      <span
+        className="StyledText-sc-1sadyjn-0 gNZQxf"
+        size="small"
+      >
+        24px base spacing
+      </span>
+    </div>
+  </div>,
+  <div
+    className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 fAEFxl"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 hGdrtQ"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 jmbpej"
+        >
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 eIHIwq"
+          >
+            Heading
+          </h1>
+          <p
+            className="StyledParagraph-tbetod-0 kxFtnQ"
+          >
+            Paragraph
+          </p>
+          <span
+            className="StyledText-sc-1sadyjn-0 fWSbXS"
+          >
+            Text
+          </span>
+          <a
+            className="StyledAnchor-sc-1rp7lwl-0 jgeOSx"
+            href=""
+            onBlur={[Function]}
+            onFocus={[Function]}
+          >
+            Anchor
+          </a>
+          <button
+            aria-label="Open Menu"
+            className="StyledButton-sc-323bzc-0 iauybm"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            type="button"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 lgRCHI"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                Menu
+              </span>
+              <div
+                className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+              />
+              <svg
+                aria-label="FormDown"
+                className="StyledIcon-ofa7kd-0 dSllCE"
+                viewBox="0 0 24 24"
+              >
+                <polyline
+                  fill="none"
+                  points="18 9 12 15 6 9"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          </button>
+          <button
+            className="StyledButton-sc-323bzc-0 arPcl"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            Button
+          </button>
+        </div>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iCPMSy"
+        />
+        <div
+          className="StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          <button
+            aria-label="Open Drop"
+            className="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 iauybm"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            type="button"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 erazuK"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 XINUX"
+              >
+                <div
+                  className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+                >
+                  <input
+                    autoComplete="off"
+                    className="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 cuRQxH"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    placeholder="Select"
+                    readOnly={true}
+                    tabIndex="-1"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                className="StyledBox-sc-13pk1d4-0 eLQtUu"
+                style={
+                  Object {
+                    "minWidth": "auto",
+                  }
+                }
+              >
+                <svg
+                  aria-label="FormDown"
+                  className="StyledIcon-ofa7kd-0 dSllCE"
+                  viewBox="0 0 24 24"
+                >
+                  <polyline
+                    fill="none"
+                    points="18 9 12 15 6 9"
+                    stroke="#000"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </button>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+          />
+          <label
+            checked={true}
+            className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bVmNDQ"
+            onClick={[Function]}
+          >
+            <div
+              checked={true}
+              className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 emCRMK"
+            >
+              <div
+                checked={true}
+                className="StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 fxKnpz StyledBox-sc-13pk1d4-0 hjQCXB"
+              >
+                <svg
+                  checked={true}
+                  className="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gjQDWv"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6,11.3 L10.3,16 L18,6.2"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+              <input
+                checked={true}
+                className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 brHjRm"
+                name="check"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="checkbox"
+              />
+            </div>
+            <span>
+              CheckBox
+            </span>
+          </label>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+          />
+          <label
+            checked={true}
+            className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bVmNDQ"
+            onClick={[Function]}
+          >
+            <div
+              checked={true}
+              className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 emCRMK"
+            >
+              <span
+                checked={true}
+                className="StyledCheckBox__StyledCheckBoxToggle-sc-1dbk5ju-4 dEfQFc"
+              >
+                <span
+                  checked={true}
+                  className="StyledCheckBox__StyledCheckBoxKnob-sc-1dbk5ju-5 dwaSfW"
+                />
+              </span>
+              <input
+                checked={true}
+                className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 brHjRm"
+                name="toggle"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                type="checkbox"
+              />
+            </div>
+            <span>
+              CheckBox toggle
+            </span>
+          </label>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+          />
+          <label
+            className="StyledRadioButton__StyledRadioButtonContainer-g1f6ld-0 jEXpGU StyledBox-sc-13pk1d4-0 gQLnBt"
+            onClick={[Function]}
+          >
+            <div
+              className="StyledRadioButton-g1f6ld-4 gvOSdV StyledBox-sc-13pk1d4-0 kvuUVC"
+            >
+              <input
+                checked={true}
+                className="StyledRadioButton__StyledRadioButtonInput-g1f6ld-1 QWfqj"
+                name="radio"
+                onChange={[Function]}
+                type="radio"
+              />
+              <div
+                className="StyledRadioButton__StyledRadioButtonBox-g1f6ld-3 lnEyXE StyledBox-sc-13pk1d4-0 ejyRXV"
+              >
+                <svg
+                  className="StyledRadioButton__StyledRadioButtonIcon-g1f6ld-2 eGLLHg"
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    cx={12}
+                    cy={12}
+                    r={6}
+                  />
+                </svg>
+              </div>
+            </div>
+            <span>
+              RadioButton
+            </span>
+          </label>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+          />
+          <div
+            className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+          >
+            <input
+              autoComplete="off"
+              className="StyledTextInput-sc-1x30a0s-0 iQGivQ"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="TextInput"
+            />
+          </div>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+          />
+          <textarea
+            className="StyledTextArea-sc-17i3mwp-0 gStxUs"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            placeholder="TextArea"
+          />
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+          />
+          <input
+            className="StyledRangeInput-sc-15st9ck-0 jwjKzR"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="range"
+            value={24}
+          />
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+          />
+          <div
+            className="StyledStack-ajspsk-0 cBSAEZ"
+          >
+            <div
+              className="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 jFuDqS"
+              >
+                <div
+                  className="StyledBox-sc-13pk1d4-0 jNCHQI"
+                >
+                  <span
+                    className="StyledText-sc-1sadyjn-0 fWSbXS"
+                    style={
+                      Object {
+                        "fontFamily": "monospace",
+                      }
+                    }
+                  >
+                    0
+                  </span>
+                </div>
+                <div
+                  className="StyledBox-sc-13pk1d4-0 jNCHQI"
+                >
+                  <span
+                    className="StyledText-sc-1sadyjn-0 fWSbXS"
+                    style={
+                      Object {
+                        "fontFamily": "monospace",
+                      }
+                    }
+                  >
+                    1
+                  </span>
+                </div>
+                <div
+                  className="StyledBox-sc-13pk1d4-0 jNCHQI"
+                >
+                  <span
+                    className="StyledText-sc-1sadyjn-0 fWSbXS"
+                    style={
+                      Object {
+                        "fontFamily": "monospace",
+                      }
+                    }
+                  >
+                    2
+                  </span>
+                </div>
+                <div
+                  className="StyledBox-sc-13pk1d4-0 jNCHQI"
+                >
+                  <span
+                    className="StyledText-sc-1sadyjn-0 fWSbXS"
+                    style={
+                      Object {
+                        "fontFamily": "monospace",
+                      }
+                    }
+                  >
+                    3
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              className="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 jOTgOx"
+                onClick={[Function]}
+              >
+                <div
+                  className="StyledBox-sc-13pk1d4-0 ivtHeQ"
+                  style={
+                    Object {
+                      "flex": "1 0 0",
+                    }
+                  }
+                />
+                <div
+                  className="StyledBox-sc-13pk1d4-0 iWpSsm"
+                  onKeyDown={[Function]}
+                  style={
+                    Object {
+                      "flex": "0 0 1px",
+                    }
+                  }
+                >
+                  <div
+                    aria-label="Lower Bounds"
+                    className="StyledBox-sc-13pk1d4-0 curWnu"
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "cursor": "col-resize",
+                        "minHeight": 12,
+                        "minWidth": 12,
+                        "zIndex": 10,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <div
+                      className="StyledBox-sc-13pk1d4-0 jSmsVW"
+                    >
+                      <svg
+                        height={12}
+                        viewBox="0 0 12 12"
+                        width={12}
+                      >
+                        <circle
+                          cx={6}
+                          cy={6}
+                          fill="#7D4CDB"
+                          r={6}
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="StyledBox-sc-13pk1d4-0 icAUYm"
+                  onMouseDown={[Function]}
+                  style={
+                    Object {
+                      "cursor": "ew-resize",
+                      "flex": "2 0 0",
+                    }
+                  }
+                />
+                <div
+                  className="StyledBox-sc-13pk1d4-0 iWpSsm"
+                  onKeyDown={[Function]}
+                  style={
+                    Object {
+                      "flex": "0 0 1px",
+                    }
+                  }
+                >
+                  <div
+                    aria-label="Upper Bounds"
+                    className="StyledBox-sc-13pk1d4-0 curWnu"
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "cursor": "col-resize",
+                        "minHeight": 12,
+                        "minWidth": 12,
+                        "zIndex": 10,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <div
+                      className="StyledBox-sc-13pk1d4-0 jSmsVW"
+                    >
+                      <svg
+                        height={12}
+                        viewBox="0 0 12 12"
+                        width={12}
+                      >
+                        <circle
+                          cx={6}
+                          cy={6}
+                          fill="#7D4CDB"
+                          r={6}
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="StyledBox-sc-13pk1d4-0 ivtHeQ"
+                  style={
+                    Object {
+                      "flex": "1 0 0",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+          />
+          <div
+            className="StyledBox-sc-13pk1d4-0 CAsMy"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 fsgjrx"
+            >
+              <label
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                FormField
+              </label>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 gZSidW"
+            >
+              <div
+                className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+              >
+                <input
+                  autoComplete="off"
+                  className="StyledTextInput-sc-1x30a0s-0 cuRQxH"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="TextInput"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iCPMSy"
+        />
+        <div
+          className="StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          <div
+            className="StyledCalendar-sc-1y4xhmp-0 juswuO"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 IRSNj"
+              onKeyDown={[Function]}
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 erazuK"
+              >
+                <div
+                  className="StyledBox-sc-13pk1d4-0 gGLWve"
+                >
+                  <h4
+                    className="StyledHeading-sc-1rdh4aw-0 euJpnK"
+                    size="small"
+                  >
+                    January 2019
+                  </h4>
+                </div>
+                <div
+                  className="StyledBox-sc-13pk1d4-0 daybir"
+                >
+                  <button
+                    aria-label="December 2018"
+                    className="StyledButton-sc-323bzc-0 ekpqDU"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    type="button"
+                  >
+                    <svg
+                      aria-label="FormPrevious"
+                      className="StyledIcon-ofa7kd-0 iOkQrb"
+                      viewBox="0 0 24 24"
+                    >
+                      <polyline
+                        fill="none"
+                        points="9 6 15 12 9 18"
+                        stroke="#000"
+                        strokeWidth="2"
+                        transform="matrix(-1 0 0 1 24 0)"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    aria-label="February 2019"
+                    className="StyledButton-sc-323bzc-0 ekpqDU"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    type="button"
+                  >
+                    <svg
+                      aria-label="FormNext"
+                      className="StyledIcon-ofa7kd-0 iOkQrb"
+                      viewBox="0 0 24 24"
+                    >
+                      <polyline
+                        fill="none"
+                        points="9 6 15 12 9 18"
+                        stroke="#000"
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                className="StyledCalendar__StyledWeeksContainer-sc-1y4xhmp-1 iVJJtC"
+              >
+                <div
+                  className="StyledCalendar__StyledWeeks-sc-1y4xhmp-2 mlOjn"
+                >
+                  <div
+                    className="StyledCalendar__StyledWeek-sc-1y4xhmp-3 gcVUJU"
+                  >
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Sun Dec 30 2018"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 gjJAhO"
+                        >
+                          30
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Mon Dec 31 2018"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 gjJAhO"
+                        >
+                          31
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Tue Jan 01 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          1
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Wed Jan 02 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          2
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Thu Jan 03 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          3
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Fri Jan 04 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          4
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Sat Jan 05 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          5
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    className="StyledCalendar__StyledWeek-sc-1y4xhmp-3 gcVUJU"
+                  >
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Sun Jan 06 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          6
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Mon Jan 07 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          7
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Tue Jan 08 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          8
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Wed Jan 09 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          9
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Thu Jan 10 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          10
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Fri Jan 11 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          11
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Sat Jan 12 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          12
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    className="StyledCalendar__StyledWeek-sc-1y4xhmp-3 gcVUJU"
+                  >
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Sun Jan 13 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          13
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Mon Jan 14 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          14
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Tue Jan 15 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          15
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Wed Jan 16 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          16
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Thu Jan 17 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          17
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Fri Jan 18 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          18
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Sat Jan 19 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          19
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    className="StyledCalendar__StyledWeek-sc-1y4xhmp-3 gcVUJU"
+                  >
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Sun Jan 20 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          20
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Mon Jan 21 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          21
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Tue Jan 22 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          22
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Wed Jan 23 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          23
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Thu Jan 24 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          24
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Fri Jan 25 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          25
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Sat Jan 26 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          26
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    className="StyledCalendar__StyledWeek-sc-1y4xhmp-3 gcVUJU"
+                  >
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Sun Jan 27 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          27
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Mon Jan 28 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          28
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Tue Jan 29 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          29
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Wed Jan 30 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          30
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Thu Jan 31 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 PwTIt"
+                        >
+                          31
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Fri Feb 01 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 gjJAhO"
+                        >
+                          1
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Sat Feb 02 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 gjJAhO"
+                        >
+                          2
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    className="StyledCalendar__StyledWeek-sc-1y4xhmp-3 gcVUJU"
+                  >
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Sun Feb 03 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 gjJAhO"
+                        >
+                          3
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Mon Feb 04 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 gjJAhO"
+                        >
+                          4
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Tue Feb 05 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 gjJAhO"
+                        >
+                          5
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Wed Feb 06 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 gjJAhO"
+                        >
+                          6
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Thu Feb 07 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 gjJAhO"
+                        >
+                          7
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Fri Feb 08 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 gjJAhO"
+                        >
+                          8
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      className="StyledCalendar__StyledDayContainer-sc-1y4xhmp-4 ecXcHA"
+                    >
+                      <button
+                        aria-label="Sat Feb 09 2019"
+                        className="StyledButton-sc-323bzc-0 cQBVxg"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        type="button"
+                      >
+                        <div
+                          className="StyledCalendar__StyledDay-sc-1y4xhmp-5 gjJAhO"
+                        >
+                          9
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 irlfVP"
+          />
+          <div
+            className="StyledBox-sc-13pk1d4-0 ffeAql"
+          >
+            <div
+              className="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
+              size="medium"
+            >
+              1
+            </div>
+            <div
+              className="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
+              size="medium"
+            >
+              7
+            </div>
+            <div
+              className="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
+              size="medium"
+            >
+              :
+            </div>
+            <div
+              className="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
+              size="medium"
+            >
+              1
+            </div>
+            <div
+              className="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
+              size="medium"
+            >
+              6
+            </div>
+            <div
+              className="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
+              size="medium"
+            >
+              :
+            </div>
+            <div
+              className="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
+              size="medium"
+            >
+              1
+            </div>
+            <div
+              className="StyledClock__StyledDigitalDigit-y4xw8s-4 hQDjOB"
+              size="medium"
+            >
+              9
+            </div>
+          </div>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 irlfVP"
+          />
+          <svg
+            className="StyledClock__StyledAnalog-y4xw8s-3 jDcyXz"
+            height={96}
+            preserveAspectRatio="xMidYMid meet"
+            size="medium"
+            version="1.1"
+            viewBox="0 0 96 96"
+            width={96}
+          >
+            <line
+              className="StyledClock__StyledSecond-y4xw8s-2 isEYCz"
+              stroke="#000000"
+              strokeLinecap="round"
+              style={
+                Object {
+                  "transform": "rotate(114deg)",
+                  "transformOrigin": "48px 48px",
+                }
+              }
+              x1={48}
+              x2={48}
+              y1={48}
+              y2={9}
+            />
+            <line
+              className="StyledClock__StyledMinute-y4xw8s-1 fsPksi"
+              stroke="#000000"
+              strokeLinecap="round"
+              style={
+                Object {
+                  "transform": "rotate(96deg)",
+                  "transformOrigin": "48px 48px",
+                }
+              }
+              x1={48}
+              x2={48}
+              y1={48}
+              y2={12}
+            />
+            <line
+              className="StyledClock__StyledHour-y4xw8s-0 jpscyg"
+              stroke="#000000"
+              strokeLinecap="round"
+              style={
+                Object {
+                  "transform": "rotate(158deg)",
+                  "transformOrigin": "48px 48px",
+                }
+              }
+              x1={48}
+              x2={48}
+              y1={48}
+              y2={24}
+            />
+          </svg>
+        </div>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iCPMSy"
+        />
+        <div
+          className="StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          <svg
+            className="StyledChart-sc-1nae0gf-0 gecgMB"
+            height={192}
+            preserveAspectRatio="none"
+            viewBox="-12 -12 216 216"
+            width={192}
+          >
+            <g
+              stroke="#6FFFB0"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={24}
+            >
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 64,192 L 64,64"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 128,192 L 128,0"
+                />
+              </g>
+              <g
+                fill="none"
+              >
+                <title />
+                <path
+                  d="M 192,192 L 192,96"
+                />
+              </g>
+            </g>
+          </svg>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 irlfVP"
+          />
+          <svg
+            className="StyledMeter-nsxarx-0 jDFZLj"
+            height={24}
+            preserveAspectRatio="none"
+            viewBox="0 0 192 24"
+            width={192}
+          >
+            <path
+              d="M 12,12 L 180,12"
+              fill="none"
+              stroke="#EDEDED"
+              strokeLinecap="round"
+              strokeWidth={24}
+            />
+            <path
+              d="M 12,12 L 62.4,12"
+              fill="none"
+              stroke="#6FFFB0"
+              strokeLinecap="round"
+              strokeWidth={24}
+            />
+          </svg>
+        </div>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iCPMSy"
+        />
+        <div
+          className="StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 jfrFjE"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 WhTTa"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 hnRtC"
+              >
+                <span
+                  className="StyledText-sc-1sadyjn-0 jScuyG"
+                  size="large"
+                >
+                  50
+                </span>
+              </div>
+            </div>
+            <div
+              className="StyledBox__StyledBoxGap-sc-13pk1d4-1 gufrXq"
+            />
+            <div
+              className="StyledBox-sc-13pk1d4-0 WhTTa"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 WhTTa"
+              >
+                <div
+                  className="StyledBox-sc-13pk1d4-0 bVYxYw"
+                >
+                  <span
+                    className="StyledText-sc-1sadyjn-0 jScuyG"
+                    size="large"
+                  >
+                    30
+                  </span>
+                </div>
+              </div>
+              <div
+                className="StyledBox__StyledBoxGap-sc-13pk1d4-1 bQFWhA"
+              />
+              <div
+                className="StyledBox-sc-13pk1d4-0 hlvjhO"
+              >
+                <div
+                  className="StyledBox-sc-13pk1d4-0 WhTTa"
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 eOZCuX"
+                  >
+                    <span
+                      className="StyledText-sc-1sadyjn-0 jScuyG"
+                      size="large"
+                    >
+                      20
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="StyledBox__StyledBoxGap-sc-13pk1d4-1 gufrXq"
+                />
+                <div
+                  className="StyledBox-sc-13pk1d4-0 WhTTa"
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 gZIAOq"
+                  >
+                    <div
+                      className="StyledBox-sc-13pk1d4-0 hnRtC"
+                    >
+                      <span
+                        className="StyledText-sc-1sadyjn-0 jScuyG"
+                        size="large"
+                      >
+                        10
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    className="StyledBox__StyledBoxGap-sc-13pk1d4-1 bQFWhA"
+                  />
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 bvVNlg"
+                  >
+                    <div
+                      className="StyledBox-sc-13pk1d4-0 eOZCuX"
+                    >
+                      <span
+                        className="StyledText-sc-1sadyjn-0 jScuyG"
+                        size="large"
+                      >
+                        5
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+          />
+          <div
+            className="StyledStack-ajspsk-0 cBSAEZ"
+          >
+            <div
+              className="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 IRSNj"
+              >
+                <div
+                  className="StyledBox-sc-13pk1d4-0 ffeAql"
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 jnxczA"
+                    id={1}
+                  />
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 jnxczA"
+                    id={2}
+                  />
+                </div>
+                <div
+                  className="StyledBox-sc-13pk1d4-0 ffeAql"
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 jnxczA"
+                    id={3}
+                  />
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 jnxczA"
+                    id={4}
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+            >
+              <svg
+                className="StyledDiagram-sc-1vzeu9f-0 fdZIWM"
+                preserveAspectRatio="xMinYMin meet"
+                viewBox="0 0 0 0"
+              >
+                <g />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iCPMSy"
+        />
+        <div
+          className="StyledBox-sc-13pk1d4-0 eiNvvo"
+        >
+          <table
+            className="StyledDataTable-xrlyjm-0 kTrXKK StyledTable-sc-1m3u5g-6 qwhVU"
+          >
+            <thead
+              className="StyledDataTable__StyledDataTableHeader-xrlyjm-3 bAIczD StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
+            >
+              <tr
+                className="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+              >
+                <th
+                  className="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+                  scope="col"
+                >
+                  <button
+                    className="Sorter__SorterButton-fzr2yb-0 bVTNxY StyledButton-sc-323bzc-0 fLzSES"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    type="button"
+                  >
+                    <div
+                      className="StyledBox-sc-13pk1d4-0 fAhsMq"
+                    >
+                      <span
+                        className="StyledText-sc-1sadyjn-0 fWSbXS"
+                      >
+                        Name
+                      </span>
+                    </div>
+                  </button>
+                </th>
+                <th
+                  className="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+                  scope="col"
+                >
+                  <button
+                    className="Sorter__SorterButton-fzr2yb-0 bVTNxY StyledButton-sc-323bzc-0 fLzSES"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    type="button"
+                  >
+                    <div
+                      className="StyledBox-sc-13pk1d4-0 fAhsMq"
+                    >
+                      <span
+                        className="StyledText-sc-1sadyjn-0 fWSbXS"
+                      >
+                        Color
+                      </span>
+                    </div>
+                  </button>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              className="StyledDataTable__StyledDataTableBody-xrlyjm-2 hbZQKY StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
+            >
+              <tr
+                className="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+              >
+                <th
+                  className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+                  scope="row"
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                  >
+                    <span
+                      className="StyledText-sc-1sadyjn-0 dndifk"
+                    >
+                      Alan
+                    </span>
+                  </div>
+                </th>
+                <td
+                  className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                  >
+                    <span
+                      className="StyledText-sc-1sadyjn-0 fWSbXS"
+                    >
+                      blue
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                className="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+              >
+                <th
+                  className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+                  scope="row"
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                  >
+                    <span
+                      className="StyledText-sc-1sadyjn-0 dndifk"
+                    >
+                      Chris
+                    </span>
+                  </div>
+                </th>
+                <td
+                  className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                  >
+                    <span
+                      className="StyledText-sc-1sadyjn-0 fWSbXS"
+                    >
+                      purple
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                className="StyledDataTable__StyledDataTableRow-xrlyjm-1 ezpFws StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+              >
+                <th
+                  className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+                  scope="row"
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                  >
+                    <span
+                      className="StyledText-sc-1sadyjn-0 dndifk"
+                    >
+                      Eric
+                    </span>
+                  </div>
+                </th>
+                <td
+                  className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 eAAZJM"
+                  >
+                    <span
+                      className="StyledText-sc-1sadyjn-0 fWSbXS"
+                    >
+                      orange
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iCPMSy"
+        />
+        <div
+          className="StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 cYihDV"
+            role="tablist"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 jqGCfM"
+            >
+              <button
+                aria-expanded={false}
+                aria-selected={false}
+                className="StyledButton-sc-323bzc-0 iauybm"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                role="tab"
+                type="button"
+              >
+                <div
+                  className="StyledBox-sc-13pk1d4-0 erazuK"
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 kFoGJP"
+                  >
+                    <h4
+                      className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+                    >
+                      Accordion Panel 1
+                    </h4>
+                  </div>
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 kFjquy"
+                  >
+                    <svg
+                      aria-label="FormDown"
+                      className="StyledIcon-ofa7kd-0 dSllCE"
+                      viewBox="0 0 24 24"
+                    >
+                      <polyline
+                        fill="none"
+                        points="18 9 12 15 6 9"
+                        stroke="#000"
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <div
+                className="StyledBox-sc-13pk1d4-0 gZSidW"
+              >
+                <div
+                  aria-hidden={true}
+                  className="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+                  open={false}
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 jNCHQI"
+                  >
+                    <span
+                      className="StyledText-sc-1sadyjn-0 fWSbXS"
+                    >
+                      Accordion panel 1 content
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="StyledBox-sc-13pk1d4-0 jqGCfM"
+            >
+              <button
+                aria-expanded={false}
+                aria-selected={false}
+                className="StyledButton-sc-323bzc-0 iauybm"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                role="tab"
+                type="button"
+              >
+                <div
+                  className="StyledBox-sc-13pk1d4-0 erazuK"
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 kFoGJP"
+                  >
+                    <h4
+                      className="StyledHeading-sc-1rdh4aw-0 hlZfma"
+                    >
+                      Accordion Panel 2
+                    </h4>
+                  </div>
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 kFjquy"
+                  >
+                    <svg
+                      aria-label="FormDown"
+                      className="StyledIcon-ofa7kd-0 dSllCE"
+                      viewBox="0 0 24 24"
+                    >
+                      <polyline
+                        fill="none"
+                        points="18 9 12 15 6 9"
+                        stroke="#000"
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              <div
+                className="StyledBox-sc-13pk1d4-0 gZSidW"
+              >
+                <div
+                  aria-hidden={true}
+                  className="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+                  open={false}
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 jNCHQI"
+                  >
+                    <span
+                      className="StyledText-sc-1sadyjn-0 fWSbXS"
+                    >
+                      Accordion panel 2 content
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iCPMSy"
+        />
+        <div
+          className="StyledBox-sc-13pk1d4-0 IRSNj"
+        >
+          <div
+            className="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
+            role="tablist"
+          >
+            <div
+              className="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
+            >
+              <button
+                aria-expanded={true}
+                aria-selected={true}
+                className="StyledButton-sc-323bzc-0 iauybm"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                role="tab"
+                type="button"
+              >
+                <div
+                  className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
+                >
+                  <span
+                    className="StyledText-sc-1sadyjn-0 iEgnbY"
+                  >
+                    Tab 1
+                  </span>
+                </div>
+              </button>
+              <button
+                aria-expanded={false}
+                aria-selected={false}
+                className="StyledButton-sc-323bzc-0 iauybm"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                role="tab"
+                type="button"
+              >
+                <div
+                  className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+                >
+                  <span
+                    className="StyledText-sc-1sadyjn-0 gnzBzL"
+                  >
+                    Tab 2
+                  </span>
+                </div>
+              </button>
+            </div>
+            <div
+              aria-label="Tab 1 Tab Contents"
+              className="StyledTabs__StyledTabPanel-a4fwxl-1 lchlbl"
+              role="tabpanel"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 jNCHQI"
+              >
+                <span
+                  className="StyledText-sc-1sadyjn-0 fWSbXS"
+                >
+                  Tab 1 content
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iCPMSy"
+        />
+        <div
+          className="StyledBox-sc-13pk1d4-0 eiNvvo"
+        >
+          <div
+            className="StyledVideo__StyledVideoContainer-w4v8h9-1 wBEeC"
+            onMouseEnter={[Function]}
+            onMouseMove={[Function]}
+            onTouchStart={[Function]}
+          >
+            <video
+              autoPlay={false}
+              className="StyledVideo-w4v8h9-0 iKrJlI"
+              loop={false}
+              onAbort={[Function]}
+              onCanPlay={[Function]}
+              onCanPlayThrough={[Function]}
+              onDurationChange={[Function]}
+              onEmptied={[Function]}
+              onEncrypted={[Function]}
+              onEnded={[Function]}
+              onError={[Function]}
+              onLoadStart={[Function]}
+              onLoadedData={[Function]}
+              onLoadedMetadata={[Function]}
+              onPause={[Function]}
+              onPlay={[Function]}
+              onPlaying={[Function]}
+              onProgress={[Function]}
+              onRateChange={[Function]}
+              onSeeked={[Function]}
+              onSeeking={[Function]}
+              onStalled={[Function]}
+              onSuspend={[Function]}
+              onTimeUpdate={[Function]}
+              onVolumeChange={[Function]}
+              onWaiting={[Function]}
+            >
+              <source
+                src="http://techslides.com/demos/sample-videos/small.webm"
+                type="video/webm"
+              />
+              <source
+                src="http://techslides.com/demos/sample-videos/small.ogv"
+                type="video/ogg"
+              />
+              <source
+                src="http://techslides.com/demos/sample-videos/small.mp4"
+                type="video/mp4"
+              />
+              <source
+                src="http://techslides.com/demos/sample-videos/small.3gp"
+                type="video/3gp"
+              />
+            </video>
+            <div
+              className="StyledVideo__StyledVideoControls-w4v8h9-2 eLcKEG"
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 kaefHA"
+              >
+                <button
+                  className="StyledButton-sc-323bzc-0 gzbApz"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-label="Play"
+                    className="StyledIcon-ofa7kd-0 cLeQGG"
+                    viewBox="0 0 24 24"
+                  >
+                    <polygon
+                      fill="none"
+                      points="3 22 21 12 3 2"
+                      stroke="#000"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </button>
+                <div
+                  className="StyledBox-sc-13pk1d4-0 gLUQAp"
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 gYrpnw"
+                  >
+                    <div
+                      className="StyledStack-ajspsk-0 cBSAEZ"
+                    >
+                      <div
+                        className="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+                      >
+                        <svg
+                          aria-label="Video progress"
+                          className="StyledMeter-nsxarx-0 hNIOaV"
+                          height={12}
+                          preserveAspectRatio="none"
+                          viewBox="0 0 288 12"
+                          width="100%"
+                        >
+                          <path
+                            d="M 0,6 L 288,6"
+                            fill="none"
+                            stroke="#777777"
+                            strokeLinecap="square"
+                            strokeWidth={12}
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+                      >
+                        <div
+                          className="StyledVideo__StyledVideoScrubber-w4v8h9-3 dxNfKW"
+                          onClick={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseMove={[Function]}
+                          role="button"
+                          tabIndex={0}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 kFjquy"
+                  >
+                    <span
+                      className="StyledText-sc-1sadyjn-0 fLjoaM"
+                    >
+                      NaN:NaN
+                    </span>
+                  </div>
+                </div>
+                <button
+                  aria-label="Open Menu"
+                  className="StyledButton-sc-323bzc-0 iauybm"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <div
+                    className="StyledBox-sc-13pk1d4-0 lgRCHI"
+                  >
+                    <span
+                      className="StyledText-sc-1sadyjn-0 fWSbXS"
+                    />
+                    <svg
+                      aria-label="Actions"
+                      className="StyledIcon-ofa7kd-0 cLeQGG"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12,17.5 C15.0375661,17.5 17.5,15.0375661 17.5,12 C17.5,8.96243388 15.0375661,6.5 12,6.5 C8.96243388,6.5 6.5,8.96243388 6.5,12 C6.5,15.0375661 8.96243388,17.5 12,17.5 Z M12,6.5 L12,1 M12,23 L12,17.5 M1,12 L6.5,12 M17.5,12 L23,12 M4.4375,4.4375 L8.5625,8.5625 M15.4375,15.4375 L19.5625,19.5625 M19.5625,4.4375 L15.4375,8.5625 M8.5625,15.4375 L4.4375,19.5625"
+                        fill="none"
+                        stroke="#000"
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Components Default Theme 1`] = `
+<div
+  className="StyledBox-sc-13pk1d4-0 cQmXwY"
+>
+  Hello
+</div>
+`;

@@ -1,0 +1,523 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Table Custom Theme 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <table
+      className="StyledTable-sc-1m3u5g-6 qwhVU"
+    >
+      <caption
+        className="StyledTable__StyledTableDataCaption-sc-1m3u5g-1 cYitBY"
+      >
+        Custom Theme Table
+      </caption>
+      <thead
+        className="StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
+      >
+        <tr
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        >
+          <th
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+            scope="col"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 fyhTNS"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                Name
+              </span>
+            </div>
+          </th>
+          <th
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+            scope="col"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 fyhTNS"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                Email
+              </span>
+            </div>
+          </th>
+          <th
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+            scope="col"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 bGNXGw"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                Amount
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        className="StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
+      >
+        <tr
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        >
+          <th
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            scope="row"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 iIGvkG"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                <span
+                  className="StyledText-sc-1sadyjn-0 dndifk"
+                >
+                  Eric
+                </span>
+              </span>
+            </div>
+          </th>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 iIGvkG"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                eric@local
+              </span>
+            </div>
+          </td>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 lnoSxM"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                $37.75
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        >
+          <th
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            scope="row"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 iIGvkG"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                <span
+                  className="StyledText-sc-1sadyjn-0 dndifk"
+                >
+                  Chris
+                </span>
+              </span>
+            </div>
+          </th>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 iIGvkG"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                chris@local
+              </span>
+            </div>
+          </td>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 lnoSxM"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                $58.25
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        >
+          <th
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            scope="row"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 iIGvkG"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                <span
+                  className="StyledText-sc-1sadyjn-0 dndifk"
+                >
+                  Alan
+                </span>
+              </span>
+            </div>
+          </th>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 iIGvkG"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                alan@local
+              </span>
+            </div>
+          </td>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 lnoSxM"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                $43.00
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot
+        className="StyledTable__StyledTableFooter-sc-1m3u5g-5 zMIVX"
+      >
+        <tr
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        >
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 edcjKh"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 bHFFyB"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              />
+            </div>
+          </td>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 edcjKh"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 bHFFyB"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              />
+            </div>
+          </td>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 edcjKh"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 icJcDN"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                $139.00
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Table Default 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <table
+      className="StyledTable-sc-1m3u5g-6 qwhVU"
+    >
+      <caption
+        className="StyledTable__StyledTableDataCaption-sc-1m3u5g-1 cYitBY"
+      >
+        Default Table
+      </caption>
+      <thead
+        className="StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
+      >
+        <tr
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        >
+          <th
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+            scope="col"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 eoKPJA"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                Name
+              </span>
+            </div>
+          </th>
+          <th
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+            scope="col"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 eoKPJA"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                Email
+              </span>
+            </div>
+          </th>
+          <th
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 hNAgVv"
+            scope="col"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 khmoKb"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                Amount
+              </span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        className="StyledTable__StyledTableBody-sc-1m3u5g-3 dwInxx"
+      >
+        <tr
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        >
+          <th
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            scope="row"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 eAAZJM"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                <span
+                  className="StyledText-sc-1sadyjn-0 dndifk"
+                >
+                  Eric
+                </span>
+              </span>
+            </div>
+          </th>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 eAAZJM"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                eric@local
+              </span>
+            </div>
+          </td>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 jfDyzp"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                $37.75
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        >
+          <th
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            scope="row"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 eAAZJM"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                <span
+                  className="StyledText-sc-1sadyjn-0 dndifk"
+                >
+                  Chris
+                </span>
+              </span>
+            </div>
+          </th>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 eAAZJM"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                chris@local
+              </span>
+            </div>
+          </td>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 jfDyzp"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                $58.25
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        >
+          <th
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+            scope="row"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 eAAZJM"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                <span
+                  className="StyledText-sc-1sadyjn-0 dndifk"
+                >
+                  Alan
+                </span>
+              </span>
+            </div>
+          </th>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 eAAZJM"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                alan@local
+              </span>
+            </div>
+          </td>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 ezepRo"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 jfDyzp"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                $43.00
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot
+        className="StyledTable__StyledTableFooter-sc-1m3u5g-5 zMIVX"
+      >
+        <tr
+          className="StyledTable__StyledTableRow-sc-1m3u5g-2 kXgizX"
+        >
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 edcjKh"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 bGwdLS"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              />
+            </div>
+          </td>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 edcjKh"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 bGwdLS"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              />
+            </div>
+          </td>
+          <td
+            className="StyledTable__StyledTableCell-sc-1m3u5g-0 edcjKh"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 dAbHWk"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 fWSbXS"
+              >
+                $139.00
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+`;

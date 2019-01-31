@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Grid App 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledGrid-sc-1wofa1l-0 dgUwaQ"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 brLKxe"
+    >
+      <button
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        <span
+          className="StyledText-sc-1sadyjn-0 jScuyG"
+          size="large"
+        >
+          Title
+        </span>
+      </button>
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        my@email
+      </span>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 iEMIW"
+    >
+      <a
+        className="StyledButton-sc-323bzc-0 bbSvIx"
+        href="#"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 hcMawI"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 fWSbXS"
+          >
+            First
+          </span>
+        </div>
+      </a>
+      <a
+        className="StyledButton-sc-323bzc-0 bbSvIx"
+        href="#"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 hcMawI"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 fWSbXS"
+          >
+            Second
+          </span>
+        </div>
+      </a>
+      <a
+        className="StyledButton-sc-323bzc-0 bbSvIx"
+        href="#"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 hcMawI"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 fWSbXS"
+          >
+            Third
+          </span>
+        </div>
+      </a>
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 nyobr"
+    >
+      <span
+        className="StyledText-sc-1sadyjn-0 fWSbXS"
+      >
+        main
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Grid N-column layout 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledGrid-sc-1wofa1l-0 btvPfv"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 jtZTQd"
+    >
+      Item 1
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jtZTQd"
+    >
+      Item 2
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jtZTQd"
+    >
+      Item 3
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jtZTQd"
+    >
+      Item 4
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jtZTQd"
+    >
+      Item 5
+    </div>
+    <div
+      className="StyledBox-sc-13pk1d4-0 jtZTQd"
+    >
+      Item 6
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Grid Percentages 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledGrid-sc-1wofa1l-0 dNHVhv"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 jKaxHV"
+    />
+    <div
+      className="StyledBox-sc-13pk1d4-0 hUHAPY"
+    />
+  </div>
+</div>
+`;

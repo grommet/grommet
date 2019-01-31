@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ResponsiveContext Custom Breakpoints 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 iRwVaq"
+  >
+    <h1
+      className="StyledHeading-sc-1rdh4aw-0 hjzvgP"
+    >
+      Hi, I'm middle, resize me!
+    </h1>
+  </div>
+</div>
+`;

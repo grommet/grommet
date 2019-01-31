@@ -1,0 +1,895 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots RangeSelector Simple 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledStack-ajspsk-0 cBSAEZ"
+    >
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 jFuDqS"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              10
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              11
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              12
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              13
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              14
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              15
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              16
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              17
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              18
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              19
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              20
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 jOTgOx"
+          onClick={[Function]}
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 dkhTXm"
+            style={
+              Object {
+                "flex": "2 0 0",
+              }
+            }
+          />
+          <div
+            className="StyledBox-sc-13pk1d4-0 iWpSsm"
+            onKeyDown={[Function]}
+            style={
+              Object {
+                "flex": "0 0 1px",
+              }
+            }
+          >
+            <div
+              aria-label="Lower Bounds"
+              className="StyledBox-sc-13pk1d4-0 curWnu"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              style={
+                Object {
+                  "cursor": "col-resize",
+                  "minHeight": 12,
+                  "minWidth": 12,
+                  "zIndex": 10,
+                }
+              }
+              tabIndex={0}
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 jSmsVW"
+              >
+                <svg
+                  height={12}
+                  viewBox="0 0 12 12"
+                  width={12}
+                >
+                  <circle
+                    cx={6}
+                    cy={6}
+                    fill="#7D4CDB"
+                    r={6}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 nYVGP"
+            onMouseDown={[Function]}
+            style={
+              Object {
+                "cursor": "ew-resize",
+                "flex": "5 0 0",
+              }
+            }
+          />
+          <div
+            className="StyledBox-sc-13pk1d4-0 iWpSsm"
+            onKeyDown={[Function]}
+            style={
+              Object {
+                "flex": "0 0 1px",
+              }
+            }
+          >
+            <div
+              aria-label="Upper Bounds"
+              className="StyledBox-sc-13pk1d4-0 curWnu"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              style={
+                Object {
+                  "cursor": "col-resize",
+                  "minHeight": 12,
+                  "minWidth": 12,
+                  "zIndex": 10,
+                }
+              }
+              tabIndex={0}
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 jSmsVW"
+              >
+                <svg
+                  height={12}
+                  viewBox="0 0 12 12"
+                  width={12}
+                >
+                  <circle
+                    cx={6}
+                    cy={6}
+                    fill="#7D4CDB"
+                    r={6}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 dkhTXm"
+            style={
+              Object {
+                "flex": "4 0 0",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots RangeSelector Step 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledStack-ajspsk-0 cBSAEZ"
+    >
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 jFuDqS"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              10
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              11
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              12
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              13
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              14
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              15
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              16
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              17
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              18
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              19
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              20
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 jOTgOx"
+          onClick={[Function]}
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 dkhTXm"
+            style={
+              Object {
+                "flex": "2 0 0",
+              }
+            }
+          />
+          <div
+            className="StyledBox-sc-13pk1d4-0 iWpSsm"
+            onKeyDown={[Function]}
+            style={
+              Object {
+                "flex": "0 0 1px",
+              }
+            }
+          >
+            <div
+              aria-label="Lower Bounds"
+              className="StyledBox-sc-13pk1d4-0 curWnu"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              style={
+                Object {
+                  "cursor": "col-resize",
+                  "minHeight": 12,
+                  "minWidth": 12,
+                  "zIndex": 10,
+                }
+              }
+              tabIndex={0}
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 jSmsVW"
+              >
+                <svg
+                  height={12}
+                  viewBox="0 0 12 12"
+                  width={12}
+                >
+                  <circle
+                    cx={6}
+                    cy={6}
+                    fill="#7D4CDB"
+                    r={6}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 nYVGP"
+            onMouseDown={[Function]}
+            style={
+              Object {
+                "cursor": "ew-resize",
+                "flex": "5 0 0",
+              }
+            }
+          />
+          <div
+            className="StyledBox-sc-13pk1d4-0 iWpSsm"
+            onKeyDown={[Function]}
+            style={
+              Object {
+                "flex": "0 0 1px",
+              }
+            }
+          >
+            <div
+              aria-label="Upper Bounds"
+              className="StyledBox-sc-13pk1d4-0 curWnu"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              style={
+                Object {
+                  "cursor": "col-resize",
+                  "minHeight": 12,
+                  "minWidth": 12,
+                  "zIndex": 10,
+                }
+              }
+              tabIndex={0}
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 jSmsVW"
+              >
+                <svg
+                  height={12}
+                  viewBox="0 0 12 12"
+                  width={12}
+                >
+                  <circle
+                    cx={6}
+                    cy={6}
+                    fill="#7D4CDB"
+                    r={6}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 dkhTXm"
+            style={
+              Object {
+                "flex": "4 0 0",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots RangeSelector Vertical 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledStack-ajspsk-0 cBSAEZ"
+    >
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 hthihK"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              10
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              11
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              12
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              13
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              14
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              15
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              16
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              17
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              18
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              19
+            </span>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 fDDgYo"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 fWSbXS"
+              style={
+                Object {
+                  "fontFamily": "monospace",
+                }
+              }
+            >
+              20
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 cXRmiT"
+          onClick={[Function]}
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 cXRmiT"
+            style={
+              Object {
+                "flex": "2 0 0",
+              }
+            }
+          />
+          <div
+            className="StyledBox-sc-13pk1d4-0 hqOrhj"
+            onKeyDown={[Function]}
+            style={
+              Object {
+                "flex": "0 0 1px",
+              }
+            }
+          >
+            <div
+              aria-label="Lower Bounds"
+              className="StyledBox-sc-13pk1d4-0 fNxlDs"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              style={
+                Object {
+                  "cursor": "row-resize",
+                  "minHeight": 12,
+                  "minWidth": 12,
+                  "zIndex": 10,
+                }
+              }
+              tabIndex={0}
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eqpMIF"
+              >
+                <svg
+                  height={12}
+                  viewBox="0 0 12 12"
+                  width={12}
+                >
+                  <circle
+                    cx={6}
+                    cy={6}
+                    fill="#7D4CDB"
+                    r={6}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 YdNIo"
+            onMouseDown={[Function]}
+            style={
+              Object {
+                "cursor": "ns-resize",
+                "flex": "5 0 0",
+              }
+            }
+          />
+          <div
+            className="StyledBox-sc-13pk1d4-0 hqOrhj"
+            onKeyDown={[Function]}
+            style={
+              Object {
+                "flex": "0 0 1px",
+              }
+            }
+          >
+            <div
+              aria-label="Upper Bounds"
+              className="StyledBox-sc-13pk1d4-0 fNxlDs"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseDown={[Function]}
+              style={
+                Object {
+                  "cursor": "row-resize",
+                  "minHeight": 12,
+                  "minWidth": 12,
+                  "zIndex": 10,
+                }
+              }
+              tabIndex={0}
+            >
+              <div
+                className="StyledBox-sc-13pk1d4-0 eqpMIF"
+              >
+                <svg
+                  height={12}
+                  viewBox="0 0 12 12"
+                  width={12}
+                >
+                  <circle
+                    cx={6}
+                    cy={6}
+                    fill="#7D4CDB"
+                    r={6}
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="StyledBox-sc-13pk1d4-0 cXRmiT"
+            style={
+              Object {
+                "flex": "4 0 0",
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

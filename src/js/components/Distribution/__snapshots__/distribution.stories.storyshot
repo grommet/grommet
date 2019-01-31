@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Distribution Simple 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 eYGFze"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 WhTTa"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 hnRtC"
+      >
+        <span
+          className="StyledText-sc-1sadyjn-0 jScuyG"
+          size="large"
+        >
+          50
+        </span>
+      </div>
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 gufrXq"
+    />
+    <div
+      className="StyledBox-sc-13pk1d4-0 WhTTa"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 WhTTa"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 hcwEd"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 jScuyG"
+            size="large"
+          >
+            30
+          </span>
+        </div>
+      </div>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 bQFWhA"
+      />
+      <div
+        className="StyledBox-sc-13pk1d4-0 hlvjhO"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 WhTTa"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 kXhQHd"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 jScuyG"
+              size="large"
+            >
+              20
+            </span>
+          </div>
+        </div>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 gufrXq"
+        />
+        <div
+          className="StyledBox-sc-13pk1d4-0 WhTTa"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 gZIAOq"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 hnRtC"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 jScuyG"
+                size="large"
+              >
+                10
+              </span>
+            </div>
+          </div>
+          <div
+            className="StyledBox__StyledBoxGap-sc-13pk1d4-1 bQFWhA"
+          />
+          <div
+            className="StyledBox-sc-13pk1d4-0 bvVNlg"
+          >
+            <div
+              className="StyledBox-sc-13pk1d4-0 hcwEd"
+            >
+              <span
+                className="StyledText-sc-1sadyjn-0 jScuyG"
+                size="large"
+              >
+                5
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

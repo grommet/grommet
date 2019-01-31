@@ -1,0 +1,430 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots CheckBox Disabled 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <label
+      checked={true}
+      className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bLfkqt"
+      disabled={true}
+      onClick={[Function]}
+    >
+      <div
+        checked={true}
+        className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 emCRMK"
+        disabled={true}
+      >
+        <div
+          checked={true}
+          className="StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 fxKnpz StyledBox-sc-13pk1d4-0 hjQCXB"
+          disabled={true}
+        >
+          <svg
+            checked={true}
+            className="StyledCheckBox__StyledCheckBoxIcon-sc-1dbk5ju-0 gjQDWv"
+            disabled={true}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6,11.3 L10.3,16 L18,6.2"
+              fill="none"
+            />
+          </svg>
+        </div>
+        <input
+          type="hidden"
+          value="true"
+        />
+        <input
+          checked={true}
+          className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 gyVKKL"
+          disabled={true}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+        />
+      </div>
+      <span>
+        Choice
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots CheckBox Inside a Button 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 cQBVxg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      <label
+        checked={false}
+        className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bVmNDQ"
+        onClick={[Function]}
+      >
+        <div
+          checked={false}
+          className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 emCRMK"
+        >
+          <div
+            checked={false}
+            className="StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 fxKnpz StyledBox-sc-13pk1d4-0 jFlQDV"
+          />
+          <input
+            checked={false}
+            className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 brHjRm"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            tabIndex="-1"
+            type="checkbox"
+          />
+        </div>
+        <span
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+        >
+          Hi
+        </span>
+      </label>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots CheckBox Interminate CheckBox 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 ffeAql"
+    >
+      <label
+        checked={false}
+        className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bVmNDQ"
+        onClick={[Function]}
+      >
+        <div
+          checked={false}
+          className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 emCRMK"
+        >
+          <div
+            checked={false}
+            className="StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 fxKnpz StyledBox-sc-13pk1d4-0 jFlQDV"
+          />
+          <input
+            checked={false}
+            className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 brHjRm"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="checkbox"
+          />
+        </div>
+        <span>
+          All
+        </span>
+      </label>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hyyRSo"
+      />
+      <label
+        checked={false}
+        className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bVmNDQ"
+        onClick={[Function]}
+      >
+        <div
+          checked={false}
+          className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 emCRMK"
+        >
+          <div
+            checked={false}
+            className="StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 fxKnpz StyledBox-sc-13pk1d4-0 jFlQDV"
+          />
+          <input
+            checked={false}
+            className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 brHjRm"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="checkbox"
+          />
+        </div>
+        <span>
+          fruits
+        </span>
+      </label>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hyyRSo"
+      />
+      <label
+        checked={false}
+        className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bVmNDQ"
+        onClick={[Function]}
+      >
+        <div
+          checked={false}
+          className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 emCRMK"
+        >
+          <div
+            checked={false}
+            className="StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 fxKnpz StyledBox-sc-13pk1d4-0 jFlQDV"
+          />
+          <input
+            checked={false}
+            className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 brHjRm"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="checkbox"
+          />
+        </div>
+        <span>
+          vegetables
+        </span>
+      </label>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hyyRSo"
+      />
+      <label
+        checked={false}
+        className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bVmNDQ"
+        onClick={[Function]}
+      >
+        <div
+          checked={false}
+          className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 emCRMK"
+        >
+          <div
+            checked={false}
+            className="StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 fxKnpz StyledBox-sc-13pk1d4-0 jFlQDV"
+          />
+          <input
+            checked={false}
+            className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 brHjRm"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            type="checkbox"
+          />
+        </div>
+        <span>
+          olive oil
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots CheckBox Reverse 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <label
+      checked={false}
+      className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bVmNDQ"
+      onClick={[Function]}
+    >
+      <span>
+        Choice
+      </span>
+      <div
+        checked={false}
+        className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 hDcpDz"
+      >
+        <div
+          checked={false}
+          className="StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 fxKnpz StyledBox-sc-13pk1d4-0 jFlQDV"
+        />
+        <input
+          checked={false}
+          className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 brHjRm"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots CheckBox Simple 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <label
+      checked={false}
+      className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bVmNDQ"
+      onClick={[Function]}
+    >
+      <div
+        checked={false}
+        className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 emCRMK"
+      >
+        <div
+          checked={false}
+          className="StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 fxKnpz StyledBox-sc-13pk1d4-0 jFlQDV"
+        />
+        <input
+          checked={false}
+          className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 brHjRm"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+        />
+      </div>
+      <span>
+        Choice
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots CheckBox Themed CheckBox 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <label
+      checked={false}
+      className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 jvUYcT"
+      onClick={[Function]}
+    >
+      <div
+        checked={false}
+        className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 eiPWxy"
+      >
+        <div
+          checked={false}
+          className="StyledCheckBox__StyledCheckBoxBox-sc-1dbk5ju-3 daBgyu StyledBox-sc-13pk1d4-0 iOSkOv"
+        />
+        <input
+          checked={false}
+          className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 kPzRQI"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+        />
+      </div>
+      <span>
+        Choice
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots CheckBox Themed Toggle 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <label
+      checked={false}
+      className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 dmDLcc"
+      onClick={[Function]}
+    >
+      <div
+        checked={false}
+        className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 eiPWxy"
+      >
+        <span
+          checked={false}
+          className="StyledCheckBox__StyledCheckBoxToggle-sc-1dbk5ju-4 dHsqxb"
+        >
+          <span
+            checked={false}
+            className="StyledCheckBox__StyledCheckBoxKnob-sc-1dbk5ju-5 bdeSwA"
+          />
+        </span>
+        <input
+          checked={false}
+          className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 epDcuY"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+        />
+      </div>
+      <span>
+        Choice
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots CheckBox Toggle 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <label
+      checked={false}
+      className="StyledCheckBox__StyledCheckBoxContainer-sc-1dbk5ju-1 bVmNDQ"
+      onClick={[Function]}
+    >
+      <div
+        checked={false}
+        className="StyledCheckBox-sc-1dbk5ju-6 fmaCus StyledBox-sc-13pk1d4-0 emCRMK"
+      >
+        <span
+          checked={false}
+          className="StyledCheckBox__StyledCheckBoxToggle-sc-1dbk5ju-4 dEfQFc"
+        >
+          <span
+            checked={false}
+            className="StyledCheckBox__StyledCheckBoxKnob-sc-1dbk5ju-5 dwaSfW"
+          />
+        </span>
+        <input
+          checked={false}
+          className="StyledCheckBox__StyledCheckBoxInput-sc-1dbk5ju-2 brHjRm"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          type="checkbox"
+        />
+      </div>
+      <span>
+        Choice
+      </span>
+    </label>
+  </div>
+</div>
+`;

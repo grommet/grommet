@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Paragraph All 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <p
+    className="StyledParagraph-tbetod-0 iZYwzg"
+    size="xxlarge"
+  >
+    Paragraph xxlarge
+    
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+  </p>
+  <p
+    className="StyledParagraph-tbetod-0 fxfsYb"
+    size="xlarge"
+  >
+    Paragraph xlarge
+    
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+  </p>
+  <p
+    className="StyledParagraph-tbetod-0 fDxcig"
+    size="large"
+  >
+    Paragraph large
+    
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+  </p>
+  <p
+    className="StyledParagraph-tbetod-0 kxFtnQ"
+    size="medium"
+  >
+    Paragraph medium
+    
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+  </p>
+  <p
+    className="StyledParagraph-tbetod-0 JlbWj"
+    size="small"
+  >
+    Paragraph small
+    
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+  </p>
+  <p
+    className="StyledParagraph-tbetod-0 bStKrJ"
+  >
+    This is an error message.
+  </p>
+</div>
+`;

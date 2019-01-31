@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Grommet Plain 1`] = `
+Array [
+  <div
+    className="StyledGrommet-sc-19lkkz7-0 fnzzpJ"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 hroMnY"
+    >
+      <p>
+        Plain Grommet
+      </p>
+    </div>
+  </div>,
+  <div
+    className="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  >
+    <div
+      className="StyledBox-sc-13pk1d4-0 hroMnY"
+    >
+      <p>
+        Not plain Grommet
+      </p>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Grommet Theme 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 hroMnY"
+  >
+    <a
+      className="StyledAnchor-sc-1rp7lwl-0 gwSODh"
+      onBlur={[Function]}
+      onFocus={[Function]}
+    >
+      <span
+        className="StyledBox-sc-13pk1d4-0 gQLnBt"
+        style={
+          Object {
+            "display": "inline-flex",
+          }
+        }
+      >
+        <svg
+          aria-label="Add"
+          className="StyledIcon-ofa7kd-0 ddKrPL"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12,22 L12,2 M2,12 L22,12"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <div
+          className="StyledBox__StyledBoxGap-sc-13pk1d4-1 iChEkS"
+        />
+        Add
+      </span>
+    </a>
+  </div>
+</div>
+`;

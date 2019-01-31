@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Meter Bar 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <svg
+      className="StyledMeter-nsxarx-0 hNIOaV"
+      height={24}
+      preserveAspectRatio="none"
+      viewBox="0 0 384 24"
+      width={384}
+    >
+      <path
+        d="M 0,12 L 384,12"
+        fill="none"
+        stroke="#F2F2F2"
+        strokeLinecap="square"
+        strokeWidth={24}
+      />
+      <path
+        d="M 0,12 L 115.2,12"
+        fill="none"
+        stroke="#6FFFB0"
+        strokeLinecap="butt"
+        strokeWidth={24}
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Meter Circle 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <svg
+      className="StyledMeter-nsxarx-0 hNIOaV"
+      height={384}
+      viewBox="0 0 384 384"
+      width={384}
+    >
+      <circle
+        cx={192}
+        cy={192}
+        fill="none"
+        r={180}
+        stroke="#F2F2F2"
+        strokeLinecap="square"
+        strokeWidth={24}
+      />
+      <path
+        d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
+        fill="none"
+        stroke="#6FFFB0"
+        strokeLinecap="butt"
+        strokeWidth={24}
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Meter Labelled 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 DOiol"
+  >
+    <div
+      className="StyledStack-ajspsk-0 cBSAEZ"
+    >
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+      >
+        <svg
+          className="StyledMeter-nsxarx-0 hNIOaV"
+          height={96}
+          viewBox="0 0 96 96"
+          width={96}
+        >
+          <circle
+            cx={48}
+            cy={48}
+            fill="none"
+            r={42}
+            stroke="#F2F2F2"
+            strokeLinecap="square"
+            strokeWidth={12}
+          />
+          <path
+            d="M 87.9443736844 60.9787137637 A 42.0000000000 42.0000000000 0 0 0 48.0000000000 6.0000000000"
+            fill="none"
+            stroke="#6FFFB0"
+            strokeLinecap="butt"
+            strokeWidth={12}
+          />
+        </svg>
+      </div>
+      <div
+        className="StyledStack__StyledStackLayer-ajspsk-1 gIepzX"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 dVpPDS"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 hmAbKA"
+            size="xlarge"
+          >
+            30
+          </span>
+          <span
+            className="StyledText-sc-1sadyjn-0 gNZQxf"
+            size="small"
+          >
+            %
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

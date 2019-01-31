@@ -1,0 +1,1244 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Tabs Controlled Tabs 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
+    role="tablist"
+  >
+    <div
+      className="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
+    >
+      <button
+        aria-expanded={true}
+        aria-selected={true}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 iEgnbY"
+          >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 2
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 3
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Tab 1 Tab Contents"
+      className="StyledTabs__StyledTabPanel-a4fwxl-1 lchlbl"
+      role="tabpanel"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 hMJPmS"
+      >
+        <svg
+          aria-label="Attraction"
+          className="StyledIcon-ofa7kd-0 ifyVeF"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M13,2 L14.5,2.5 L13,3 L13,2 Z M14,18 L15,23 L13,23 L14,18 Z M14,16.5 L16,23 L12,23 L14,16.5 Z M12,6 L21,11 L21,13 L3,13 L3,11 L12,6 Z M4.5,13 L19.5,13 C19.5,17.1666667 21,23 21,23 L3,23 C3,23 4.5,17.1666667 4.5,13 Z M4.5,13 L19.5,13 C19.5,17.1666667 21,23 21,23 L3,23 C3,23 4.5,17.1666667 4.5,13 Z"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs CustomTheme 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 kmHvAh"
+    role="tablist"
+  >
+    <div
+      className="StyledTabs__StyledTabsHeader-a4fwxl-0 fQDyak StyledBox-sc-13pk1d4-0 fPNHdL"
+    >
+      <button
+        aria-expanded={true}
+        aria-selected={true}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 gKocvh StyledBox-sc-13pk1d4-0 cRkliW"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 lgQMws"
+          >
+            <svg
+              aria-label="CircleInformation"
+              className="StyledIcon-ofa7kd-0 ildldD"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,10 L12,18 M12,6 L12,8"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+            <div
+              className="StyledBox__StyledBoxGap-sc-13pk1d4-1 gufrXq"
+            />
+            <span
+              className="StyledText-sc-1sadyjn-0 gNZQxf"
+              size="small"
+            >
+              <strong>
+                Personal Data
+              </strong>
+            </span>
+          </div>
+        </div>
+      </button>
+      <div
+        className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hyyRSo"
+      />
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 gKocvh StyledBox-sc-13pk1d4-0 efXJQN"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 lgQMws"
+          >
+            <svg
+              aria-label="Currency"
+              className="StyledIcon-ofa7kd-0 bwXOgj"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M1,5 L23,5 L23,19 L1,19 L1,5 Z M2,9 L2,9 C3.65685425,9 5,7.65685425 5,6 M2,15 L2,15 C3.65685425,15 5,16.3431458 5,18 M22,9 L22,9 C20.3431458,9 19,7.65685425 19,6 M22,15 L22,15 C20.3431458,15 19,16.3431458 19,18 M12,16 C13.6568542,16 15,14.209139 15,12 C15,9.790861 13.6568542,8 12,8 C10.3431458,8 9,9.790861 9,12 C9,14.209139 10.3431458,16 12,16 Z"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+            <div
+              className="StyledBox__StyledBoxGap-sc-13pk1d4-1 gufrXq"
+            />
+            <span
+              className="StyledText-sc-1sadyjn-0 gNZQxf"
+              size="small"
+            >
+              <strong>
+                Payment
+              </strong>
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="1 Tab Contents"
+      className="StyledTabs__StyledTabPanel-a4fwxl-1 lchlbl"
+      role="tabpanel"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 CAsMy"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 fsgjrx"
+        >
+          <label
+            className="StyledText-sc-1sadyjn-0 fWSbXS"
+          >
+            Name
+          </label>
+        </div>
+        <div
+          className="StyledBox-sc-13pk1d4-0 gcIhDK"
+        >
+          <div
+            className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+          >
+            <input
+              autoComplete="off"
+              className="StyledTextInput-sc-1x30a0s-0 gQHocF"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Enter your name..."
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs Plain 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 cXRmiT"
+  >
+    <div
+      className="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 gYrpnw"
+      role="tablist"
+    >
+      <div
+        className="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
+      >
+        <button
+          aria-expanded={true}
+          aria-selected={true}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledTab-sc-1nnwnsb-0 gkAZWh StyledBox-sc-13pk1d4-0 IRSNj"
+          >
+            Tab 1
+          </div>
+        </button>
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledTab-sc-1nnwnsb-0 gkAZWh StyledBox-sc-13pk1d4-0 IRSNj"
+          >
+            Tab 2
+          </div>
+        </button>
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledTab-sc-1nnwnsb-0 gkAZWh StyledBox-sc-13pk1d4-0 IRSNj"
+          >
+            Tab 3
+          </div>
+        </button>
+      </div>
+      <div
+        aria-label="Tab 1 Tab Contents"
+        className="StyledTabs__StyledTabPanel-a4fwxl-1 exVaoB"
+        role="tabpanel"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 bxIAU"
+        >
+          <svg
+            aria-label="Attraction"
+            className="StyledIcon-ofa7kd-0 ifyVeF"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M13,2 L14.5,2.5 L13,3 L13,2 Z M14,18 L15,23 L13,23 L14,18 Z M14,16.5 L16,23 L12,23 L14,16.5 Z M12,6 L21,11 L21,13 L3,13 L3,11 L12,6 Z M4.5,13 L19.5,13 C19.5,17.1666667 21,23 21,23 L3,23 C3,23 4.5,17.1666667 4.5,13 Z M4.5,13 L19.5,13 C19.5,17.1666667 21,23 21,23 L3,23 C3,23 4.5,17.1666667 4.5,13 Z"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs Responsive Tabs 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
+    role="tablist"
+  >
+    <div
+      className="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
+    >
+      <button
+        aria-expanded={true}
+        aria-selected={true}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 iEgnbY"
+          >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 2
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 3
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 4
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 5
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 6
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 7
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 8
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 9
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 10
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 11
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 12
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 13
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 14
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 15
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 16
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 17
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 18
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 19
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gnzBzL"
+          >
+            Tab 20
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Tab 1 Tab Contents"
+      className="StyledTabs__StyledTabPanel-a4fwxl-1 lchlbl"
+      role="tabpanel"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 hMJPmS"
+      >
+        <svg
+          aria-label="Attraction"
+          className="StyledIcon-ofa7kd-0 ifyVeF"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M13,2 L14.5,2.5 L13,3 L13,2 Z M14,18 L15,23 L13,23 L14,18 Z M14,16.5 L16,23 L12,23 L14,16.5 Z M12,6 L21,11 L21,13 L3,13 L3,11 L12,6 Z M4.5,13 L19.5,13 C19.5,17.1666667 21,23 21,23 L3,23 C3,23 4.5,17.1666667 4.5,13 Z M4.5,13 L19.5,13 C19.5,17.1666667 21,23 21,23 L3,23 C3,23 4.5,17.1666667 4.5,13 Z"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs Rich Tabs 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
+    role="tablist"
+  >
+    <div
+      className="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
+    >
+      <button
+        aria-expanded={true}
+        aria-selected={true}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 lgQMws"
+          >
+            <svg
+              aria-label="CircleInformation"
+              className="StyledIcon-ofa7kd-0 hHobyb"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,10 L12,18 M12,6 L12,8"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+            <div
+              className="StyledBox__StyledBoxGap-sc-13pk1d4-1 gufrXq"
+            />
+            <span
+              className="StyledText-sc-1sadyjn-0 gNZQxf"
+              size="small"
+            >
+              <strong>
+                Personal Data
+              </strong>
+            </span>
+          </div>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="StyledButton-sc-323bzc-0 iauybm"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 lgQMws"
+          >
+            <svg
+              aria-label="Currency"
+              className="StyledIcon-ofa7kd-0 lpkNHu"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M1,5 L23,5 L23,19 L1,19 L1,5 Z M2,9 L2,9 C3.65685425,9 5,7.65685425 5,6 M2,15 L2,15 C3.65685425,15 5,16.3431458 5,18 M22,9 L22,9 C20.3431458,9 19,7.65685425 19,6 M22,15 L22,15 C20.3431458,15 19,16.3431458 19,18 M12,16 C13.6568542,16 15,14.209139 15,12 C15,9.790861 13.6568542,8 12,8 C10.3431458,8 9,9.790861 9,12 C9,14.209139 10.3431458,16 12,16 Z"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+            <div
+              className="StyledBox__StyledBoxGap-sc-13pk1d4-1 gufrXq"
+            />
+            <span
+              className="StyledText-sc-1sadyjn-0 gNZQxf"
+              size="small"
+            >
+              <strong>
+                Payment
+              </strong>
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="1 Tab Contents"
+      className="StyledTabs__StyledTabPanel-a4fwxl-1 lchlbl"
+      role="tabpanel"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 CAsMy"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 fsgjrx"
+        >
+          <label
+            className="StyledText-sc-1sadyjn-0 fWSbXS"
+          >
+            Name
+          </label>
+        </div>
+        <div
+          className="StyledBox-sc-13pk1d4-0 gZSidW"
+        >
+          <div
+            className="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
+          >
+            <input
+              autoComplete="off"
+              className="StyledTextInput-sc-1x30a0s-0 cuRQxH"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Enter your name..."
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs Scrollable Tabs 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 cXRmiT"
+  >
+    <div
+      className="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 gYrpnw"
+      role="tablist"
+    >
+      <div
+        className="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
+      >
+        <button
+          aria-expanded={true}
+          aria-selected={true}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 iEgnbY"
+            >
+              Tab 1
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 gnzBzL"
+            >
+              Tab 2
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        aria-label="Tab 1 Tab Contents"
+        className="StyledTabs__StyledTabPanel-a4fwxl-1 exVaoB"
+        role="tabpanel"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 gpQhdE"
+        >
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+          <h1
+            className="StyledHeading-sc-1rdh4aw-0 jVpYfH"
+          >
+            hello!
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Tabs Uncontrolled Tabs 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 cXRmiT"
+  >
+    <div
+      className="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 gYrpnw"
+      role="tablist"
+    >
+      <div
+        className="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
+      >
+        <button
+          aria-expanded={true}
+          aria-selected={true}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 iEgnbY"
+            >
+              Tab 1
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 gnzBzL"
+            >
+              Tab 2
+            </span>
+          </div>
+        </button>
+        <button
+          aria-expanded={false}
+          aria-selected={false}
+          className="StyledButton-sc-323bzc-0 iauybm"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="tab"
+          type="button"
+        >
+          <div
+            className="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 gnzBzL"
+            >
+              Tab 3
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        aria-label="Tab 1 Tab Contents"
+        className="StyledTabs__StyledTabPanel-a4fwxl-1 exVaoB"
+        role="tabpanel"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 bxIAU"
+        >
+          <svg
+            aria-label="Attraction"
+            className="StyledIcon-ofa7kd-0 ifyVeF"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M13,2 L14.5,2.5 L13,3 L13,2 Z M14,18 L15,23 L13,23 L14,18 Z M14,16.5 L16,23 L12,23 L14,16.5 Z M12,6 L21,11 L21,13 L3,13 L3,11 L12,6 Z M4.5,13 L19.5,13 C19.5,17.1666667 21,23 21,23 L3,23 C3,23 4.5,17.1666667 4.5,13 Z M4.5,13 L19.5,13 C19.5,17.1666667 21,23 21,23 L3,23 C3,23 4.5,17.1666667 4.5,13 Z"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,287 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Collapsible Default 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 jmbpej"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 cawECJ"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      Toggle
+    </button>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <div
+      aria-hidden={true}
+      className="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+      open={false}
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 gExqFV"
+      >
+        <span
+          className="StyledText-sc-1sadyjn-0 fWSbXS"
+        >
+          This is a box inside a Collapsible component
+        </span>
+      </div>
+    </div>
+    <div
+      className="StyledBox__StyledBoxGap-sc-13pk1d4-1 hPsznL"
+    />
+    <span
+      className="StyledText-sc-1sadyjn-0 fWSbXS"
+    >
+      This is other content outside the Collapsible box
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Collapsible Horizontal 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 dvDJyW"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 cXRmiT"
+  >
+    <header
+      className="StyledBox-sc-13pk1d4-0 ACIH"
+      style={
+        Object {
+          "zIndex": "1000",
+        }
+      }
+    >
+      <h3
+        className="StyledHeading-sc-1rdh4aw-0 eLrZPP"
+      >
+        <strong>
+          My App
+        </strong>
+      </h3>
+      <button
+        className="StyledButton-sc-323bzc-0 ekpqDU"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        <svg
+          aria-label="Notification"
+          className="StyledIcon-ofa7kd-0 fAQkVd"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M4,19 L4,9 C4,4.582 7.582,1 12,1 C16.418,1 20,4.582 20,9 L20,19 M1,19 L23,19 M15,19 L15,20 C15,21.657 13.657,23 12,23 C10.343,23 9,21.657 9,20 L9,19"
+            fill="none"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+      </button>
+    </header>
+    <div
+      className="StyledBox-sc-13pk1d4-0 cdlADg"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 QIaXS"
+      >
+        Dashboard content goes here
+      </div>
+      <div
+        aria-hidden={true}
+        className="Collapsible__AnimatedBox-sc-15kniua-0 eoFcYk StyledBox-sc-13pk1d4-0 IRSNj"
+        open={false}
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 gkvHUg"
+        >
+          Sidebar
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Collapsible Nested 1`] = `
+<div
+  className="StyledGrommet-sc-19lkkz7-0 bYWoze"
+>
+  <div
+    className="StyledBox-sc-13pk1d4-0 dfMVfp"
+  >
+    <button
+      className="StyledButton-sc-323bzc-0 cQBVxg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 kqWSPS"
+      >
+        <svg
+          aria-label="FormNext"
+          className="StyledIcon-ofa7kd-0 dSllCE"
+          viewBox="0 0 24 24"
+        >
+          <polyline
+            fill="none"
+            points="9 6 15 12 9 18"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <span
+          className="StyledText-sc-1sadyjn-0 gNZQxf"
+          size="small"
+        >
+          Accordion
+        </span>
+      </div>
+    </button>
+    <div
+      aria-hidden={true}
+      className="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+      open={false}
+    >
+      <button
+        className="StyledButton-sc-323bzc-0 cQBVxg"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 lcXZRX"
+        >
+          <svg
+            aria-label="FormNext"
+            className="StyledIcon-ofa7kd-0 dSllCE"
+            viewBox="0 0 24 24"
+          >
+            <polyline
+              fill="none"
+              points="9 6 15 12 9 18"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+          <span
+            className="StyledText-sc-1sadyjn-0 gNZQxf"
+            size="small"
+          >
+            Accordion Basics
+          </span>
+        </div>
+      </button>
+      <div
+        aria-hidden={true}
+        className="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+        open={false}
+      >
+        <button
+          className="StyledButton-sc-323bzc-0 cQBVxg"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          type="button"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 bkMlHA"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 gNZQxf"
+              size="small"
+            >
+              Submenu item 1
+            </span>
+          </div>
+        </button>
+        <button
+          className="StyledButton-sc-323bzc-0 cQBVxg"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          type="button"
+        >
+          <div
+            className="StyledBox-sc-13pk1d4-0 bkMlHA"
+          >
+            <span
+              className="StyledText-sc-1sadyjn-0 gNZQxf"
+              size="small"
+            >
+              Submenu item 2
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+    <button
+      className="StyledButton-sc-323bzc-0 cQBVxg"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      type="button"
+    >
+      <div
+        className="StyledBox-sc-13pk1d4-0 kqWSPS"
+      >
+        <svg
+          aria-label="FormNext"
+          className="StyledIcon-ofa7kd-0 dSllCE"
+          viewBox="0 0 24 24"
+        >
+          <polyline
+            fill="none"
+            points="9 6 15 12 9 18"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+        <span
+          className="StyledText-sc-1sadyjn-0 gNZQxf"
+          size="small"
+        >
+          Button
+        </span>
+      </div>
+    </button>
+    <div
+      aria-hidden={true}
+      className="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+      open={false}
+    >
+      <button
+        className="StyledButton-sc-323bzc-0 cQBVxg"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        type="button"
+      >
+        <div
+          className="StyledBox-sc-13pk1d4-0 bkMlHA"
+        >
+          <span
+            className="StyledText-sc-1sadyjn-0 gNZQxf"
+            size="small"
+          >
+            Submenu item 1
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
