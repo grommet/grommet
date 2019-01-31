@@ -590,6 +590,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         down: FormDown,
       },
     },
+    meter: {
+      color: 'accent-1',
+      // extend: undefined,
+    },
     paragraph: {
       small: { ...fontSizing(-1) },
       medium: { ...fontSizing(0) },

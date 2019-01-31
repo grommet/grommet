@@ -65,3 +65,46 @@ export const doc = Meter => {
 
   return DocumentedMeter;
 };
+
+
+export const themeDoc = {
+  'global.edgeSize': {
+    description: 'The border-radius of the styled Meter. thickness, height and width of the Bar Meter, height of the Circle Meter.',
+    type: 'object',
+    defaultValue: `{
+        none: '0px',
+        hair: '1px',
+        xxsmall: '3px',
+        xsmall: '6px',
+        small: '12px',
+        medium: '24px',
+        large: '48px',
+        xlarge: '96px',
+        responsiveBreakpoint: 'small',
+    }`,
+  },
+  'global.opacity.medium': {
+    description: 'The opacity value used on the Meter color.',
+    type: 'number',
+    defaultValue: '0.4',
+  },
+  'global.size': {
+    description: 'The possible sizes for Circle Meter width.',
+    type: 'object',
+    defaultValue: `{
+      xxsmall: '48px',
+      xsmall: '96px',
+      small: '192px',
+      medium: '384px',
+      large: '768px',
+      xlarge: '1152px',
+      xxlarge: '1536px',
+      full: '100%',
+    }`,
+  },
+  'meter.extend': {
+    description: 'Any additional style for Meter.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+}
