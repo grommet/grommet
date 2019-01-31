@@ -586,14 +586,14 @@ const gapStyle = (directionProp, gap, responsive, theme) => {
   if (directionProp === 'column') {
     styles.push(
       css`
-        height: ${theme.global.edgeSize[gap]};
+        height: ${theme.global.edgeSize[gap] || gap};
       `,
     );
     if (responsiveSize) {
       styles.push(breakpointStyle(breakpoint, `height: ${responsiveSize};`));
     }
   } else {
-    styles.push(`width: ${theme.global.edgeSize[gap]};`);
+    styles.push(`width: ${theme.global.edgeSize[gap] || gap};`);
     if (responsive && directionProp === 'row-responsive') {
       styles.push(
         breakpointStyle(
