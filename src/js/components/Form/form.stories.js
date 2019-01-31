@@ -13,8 +13,8 @@ import {
   RangeInput,
   Select,
   TextArea,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from '..';
+import { grommet } from '../../themes';
 
 const RadioButtonGroup = ({ name, onChange, options, value }) => (
   <Box gap="small">

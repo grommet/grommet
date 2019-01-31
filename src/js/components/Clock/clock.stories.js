@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, Clock } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, Clock } from '..';
+import { grommet } from '../../themes';
 
 const DigitalClock = () => (
   <Grommet theme={grommet}>

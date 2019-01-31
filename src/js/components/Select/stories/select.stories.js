@@ -4,10 +4,10 @@ import { storiesOf } from '@storybook/react';
 
 import { FormClose } from 'grommet-icons';
 
-import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { grommet } from '../../../themes';
+import { deepMerge } from '../../../utils';
 
+import { Box, Button, CheckBox, Grommet, Select, Text } from '../..';
 import { theme as customSearchTheme } from './theme';
 import { SearchInputContext } from './components/SearchInputContext';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Menu } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, Menu } from '..';
+import { grommet } from '../../themes';
 
 const SimpleMenu = () => (
   <Grommet theme={grommet}>

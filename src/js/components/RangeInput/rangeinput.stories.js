@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, RangeInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, RangeInput } from '..';
+import { grommet } from '../../themes';
 
 class SimpleRangeInput extends Component {
   state = { value: 5 };

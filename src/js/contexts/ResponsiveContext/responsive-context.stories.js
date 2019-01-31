@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { deepMerge } from 'grommet/utils';
-import { grommet } from 'grommet/themes';
+import { deepMerge } from '../../utils';
+import { grommet } from '../../themes';
 
-import { Box, Grommet, Heading, ResponsiveContext } from 'grommet';
+import { Box, Grommet, Heading, ResponsiveContext } from '../..';
 
 const customBreakpoints = deepMerge(grommet, {
   global: {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Image } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, Image } from '..';
+import { grommet } from '../../themes';
 
 const Simple = () => (
   <Grommet theme={grommet}>

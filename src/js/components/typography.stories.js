@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Heading, Paragraph, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, Heading, Paragraph, Text } from '.';
+import { grommet } from '../themes';
 
 const paragraphFiller = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

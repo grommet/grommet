@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { css } from 'styled-components';
 
-import { Box, Button, Grommet, CheckBox, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { normalizeColor, deepMerge } from 'grommet/utils';
+import { Box, Button, Grommet, CheckBox, Text } from '..';
+import { grommet } from '../../themes';
+import { normalizeColor, deepMerge } from '../../utils';
 
 import { FormCheckmark } from 'grommet-icons';
 

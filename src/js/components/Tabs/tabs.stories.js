@@ -20,9 +20,9 @@ import {
   Tabs,
   Text,
   TextInput,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+} from '..';
+import { grommet } from '../../themes';
+import { deepMerge } from '../../utils';
 
 const UncontrolledTabs = ({ plain }) => (
   <Grommet theme={grommet} full>

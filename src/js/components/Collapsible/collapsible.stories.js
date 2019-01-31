@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import { FormDown, FormNext, Notification } from 'grommet-icons';
 
-import { Box, Button, Collapsible, Heading, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Collapsible, Heading, Grommet, Text } from '..';
+import { grommet } from '../../themes';
 
 class SimpleCollapsible extends Component {
   state = {

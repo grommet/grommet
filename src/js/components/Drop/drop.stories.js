@@ -2,9 +2,9 @@ import React, { createRef, Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Drop, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { ThemeContext } from 'grommet/contexts';
+import { Box, Button, Drop, Grommet, Text } from '..';
+import { grommet } from '../../themes';
+import { ThemeContext } from '../../contexts';
 import { deepMerge } from '../../utils';
 
 class SimpleDrop extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Grommet, MaskedInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, MaskedInput } from '..';
+import { grommet } from '../../themes';
 
 class TimeMaskedInput extends Component {
   state = { value: '' };

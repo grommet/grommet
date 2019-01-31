@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Grommet, RadioButton } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { Box, Button, Grommet, RadioButton } from '..';
+import { grommet } from '../../themes';
+import { deepMerge } from '../../utils';
 
 class SimpleRadioButton extends Component {
   constructor(props) {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, Video } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, Video } from '..';
+import { grommet } from '../../themes';
 
 const SimpleVideo = () => (
   <Grommet theme={grommet}>

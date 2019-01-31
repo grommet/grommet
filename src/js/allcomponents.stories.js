@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
+import { hpe } from 'grommet-theme-hpe';
+import { aruba } from 'grommet-theme-aruba';
+import { hp } from 'grommet-theme-hp';
+import { dxc } from 'grommet-theme-dxc';
+import { v1 } from 'grommet-theme-v1';
+
+import { deepMerge } from './utils';
+import { generate } from './themes/base';
+import { grommet, dark } from './themes';
 import {
   Grommet,
   Accordion,
@@ -32,15 +41,7 @@ import {
   TextArea,
   TextInput,
   Video,
-} from 'grommet';
-import { grommet, dark } from 'grommet/themes';
-import { generate } from 'grommet/themes/base';
-import { deepMerge } from 'grommet/utils';
-import { hpe } from 'grommet-theme-hpe';
-import { aruba } from 'grommet-theme-aruba';
-import { hp } from 'grommet-theme-hp';
-import { dxc } from 'grommet-theme-dxc';
-import { v1 } from 'grommet-theme-v1';
+} from '.';
 
 const Node = ({ id, ...rest }) => (
   <Box

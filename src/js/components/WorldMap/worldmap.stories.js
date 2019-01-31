@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, WorldMap } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, WorldMap } from '..';
+import { grommet } from '../../themes';
 
 class SimpleWorldMap extends Component {
   state = {};

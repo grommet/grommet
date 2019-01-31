@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, DataTable, Meter, Text, CheckBox } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, DataTable, Meter, Text, CheckBox } from '..';
+import { grommet } from '../../themes';
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',

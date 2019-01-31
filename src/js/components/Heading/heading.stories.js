@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Grid, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { Grommet, Grid, Heading } from '..';
+import { grommet } from '../../themes';
+import { deepMerge } from '../../utils';
 
 const H = ({ level, size }) => (
   <Heading level={level} size={size}>

@@ -11,8 +11,8 @@ import {
   TableHeader,
   TableRow,
   Text,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from '..';
+import { grommet } from '../../themes';
 
 // Always should store amount in cents to avoid precision errors
 const DATA = [

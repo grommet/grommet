@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, TextArea } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, TextArea } from '..';
+import { grommet } from '../../themes';
 
 class SimpleTextArea extends Component {
   state = { value: '' };

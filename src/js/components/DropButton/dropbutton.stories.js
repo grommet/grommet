@@ -11,8 +11,8 @@ import {
   DropButton,
   Heading,
   Text,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from '..';
+import { grommet } from '../../themes';
 
 const DropContent = ({ onClose }) => (
   <Box pad="small">

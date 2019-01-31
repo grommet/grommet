@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Stack } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, Stack } from '..';
+import { grommet } from '../../themes';
 
 const SimpleStack = () => (
   <Grommet>

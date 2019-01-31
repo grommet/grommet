@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 
-import { Box, Grommet, Markdown } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, Markdown } from '..';
+import { grommet } from '../../themes';
 
 const CONTENT = `
   # Out of Breath
@@ -14,7 +14,7 @@ const CONTENT = `
   [reference](#)
 
 \`\`\`
-import { Grommet } from 'grommet';
+import { Grommet } from '..';
 \`\`\`
 
   > i carry your heart with me

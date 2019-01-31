@@ -9,8 +9,8 @@ import {
   Select,
   TextArea,
   TextInput,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from '..';
+import { grommet } from '../../themes';
 
 const allSuggestions = Array(100)
   .fill()
