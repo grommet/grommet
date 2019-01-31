@@ -66,7 +66,6 @@ export const doc = Meter => {
   return DocumentedMeter;
 };
 
-
 export const themeDoc = {
   'global.edgeSize': {
     description: 'The border-radius of the styled Meter. thickness, height and width of the Bar Meter, height of the Circle Meter.',
