@@ -101,6 +101,11 @@ export const themeDoc = {
       full: '100%',
     }`,
   },
+  'meter.color': {
+    description: 'The color used for the Meter.',
+    type: 'string',
+    defaultValue: 'accent-1',
+  },
   'meter.extend': {
     description: 'Any additional style for Meter.',
     type: 'string | (props) => {}',

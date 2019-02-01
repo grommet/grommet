@@ -5867,6 +5867,16 @@ Defaults to
     }
 \`\`\`
 
+**meter.color**
+
+The color used for the Meter. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+accent-1
+\`\`\`
+
 **meter.extend**
 
 Any additional style for Meter. Expects \`string | (props) => {}\`.
