@@ -34,6 +34,7 @@ test('Grid columns renders', () => {
       <Grid columns={['1/4', '3/4']} />
       <Grid columns="small" />
       <Grid columns={{ count: 'fit', size: 'small' }} />
+      <Grid columns={{ count: 'full', size: ['small', 'medium'] }} />
     </Grommet>,
   );
   const tree = component.toJSON();
