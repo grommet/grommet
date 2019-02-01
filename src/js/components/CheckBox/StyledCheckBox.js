@@ -118,7 +118,9 @@ const StyledCheckBoxKnob = styled.span`
 StyledCheckBoxKnob.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, defaultProps);
 
-const StyledCheckBox = styled.div``;
+const StyledCheckBox = styled.div`
+  position: relative;
+`;
 
 StyledCheckBox.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBox.defaultProps, defaultProps);
