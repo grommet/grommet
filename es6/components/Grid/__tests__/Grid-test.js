@@ -31,6 +31,11 @@ test('Grid columns renders', function () {
       count: 'fit',
       size: 'small'
     }
+  }), React.createElement(Grid, {
+    columns: {
+      count: 'full',
+      size: ['small', 'medium']
+    }
   })));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();

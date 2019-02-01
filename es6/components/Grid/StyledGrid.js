@@ -96,6 +96,10 @@ var getRepeatCount = function getRepeatCount(count) {
 };
 
 var getRepeatSize = function getRepeatSize(size, theme) {
+  if (Array.isArray(size)) {
+    return "minmax(" + (theme.global.size[size[0]] || size[0]) + ", " + (theme.global.size[size[1]] || size[1]) + ")";
+  }
+
   return "minmax(" + (theme.global.size[size] || size) + ", 1fr)";
 };
 
