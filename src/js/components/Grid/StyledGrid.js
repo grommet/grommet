@@ -105,8 +105,13 @@ const SIZE_MAP = {
 const getRepeatCount = count =>
   typeof count === 'number' ? count : `auto-${count}`;
 
-const getRepeatSize = (size, theme) =>
-  `minmax(${theme.global.size[size] || size}, 1fr)`;
+const getRepeatSize = (size, theme) => {
+  if (Array.isArray(size)) {
+    return `minmax(${theme.global.size[size[0]] || size[0]}, ${theme.global
+      .size[size[1]] || size[1]})`;
+  }
+  return `minmax(${theme.global.size[size] || size}, 1fr)`;
+};
 
 const sizeFor = (size, props, isRow) => {
   const mapped = SIZE_MAP[size];
