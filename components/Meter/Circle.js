@@ -56,7 +56,7 @@ var Circle = function Circle(props) {
         pathRest = _objectWithoutPropertiesLoose(valueArg, ["color", "highlight", "label", "onHover", "value"]);
 
     var key = "p-" + index;
-    var colorName = color || (index === values.length - 1 ? 'accent-1' : (0, _utils2.defaultColor)(index, theme));
+    var colorName = color || (index === values.length - 1 ? theme.meter.color : (0, _utils2.defaultColor)(index, theme));
     var endAngle;
 
     if (startValue + value >= max) {

@@ -42,7 +42,7 @@ var Bar = function Bar(props) {
     var key = "p-" + index;
     var delta = value * (width - 2 * capOffset) / max;
     var d = "M " + start + "," + mid + " L " + (start + delta) + "," + mid;
-    var colorName = color || (index === values.length - 1 ? 'accent-1' : defaultColor(index, theme));
+    var colorName = color || (index === values.length - 1 ? theme.meter.color : defaultColor(index, theme));
     var hoverProps;
 
     if (onHover) {

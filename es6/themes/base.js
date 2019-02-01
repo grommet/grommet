@@ -631,6 +631,10 @@ export var generate = function generate(baseSpacing, scale) {
         down: FormDown
       }
     },
+    meter: {
+      color: 'accent-1' // extend: undefined,
+
+    },
     paragraph: {
       small: _extends({}, fontSizing(-1)),
       medium: _extends({}, fontSizing(0)),

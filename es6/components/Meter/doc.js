@@ -27,3 +27,30 @@ export var doc = function doc(Meter) {
   });
   return DocumentedMeter;
 };
+export var themeDoc = {
+  'global.edgeSize': {
+    description: 'The border-radius of the styled Meter. thickness, height and width of the Bar Meter, height of the Circle Meter.',
+    type: 'object',
+    defaultValue: "{\n        none: '0px',\n        hair: '1px',\n        xxsmall: '3px',\n        xsmall: '6px',\n        small: '12px',\n        medium: '24px',\n        large: '48px',\n        xlarge: '96px',\n        responsiveBreakpoint: 'small',\n    }"
+  },
+  'global.opacity.medium': {
+    description: 'The opacity value used on the Meter color.',
+    type: 'number',
+    defaultValue: '0.4'
+  },
+  'global.size': {
+    description: 'The possible sizes for Circle Meter width.',
+    type: 'object',
+    defaultValue: "{\n      xxsmall: '48px',\n      xsmall: '96px',\n      small: '192px',\n      medium: '384px',\n      large: '768px',\n      xlarge: '1152px',\n      xxlarge: '1536px',\n      full: '100%',\n    }"
+  },
+  'meter.color': {
+    description: 'The color used for the Meter.',
+    type: 'string',
+    defaultValue: 'accent-1'
+  },
+  'meter.extend': {
+    description: 'Any additional style for Meter.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  }
+};
