@@ -1,0 +1,31 @@
+import styled  from 'styled-components';
+import { defaultProps } from '../../default-props';
+
+// TODO get height from jens
+const StyledAudio = styled.audio`
+  max-width: 100%;
+  background: ${props => props.theme.audio.captions.background};
+
+  ${props => props.theme.audio && props.theme.audio.extend};
+`;
+
+StyledAudio.defaultProps = {};
+Object.setPrototypeOf(StyledAudio.defaultProps, defaultProps);
+
+const StyledAudioContainer = styled.div`
+  position: relative;
+  width: ${props => props.theme.global.size.medium};
+`;
+
+StyledAudioContainer.defaultProps = {};
+Object.setPrototypeOf(StyledAudioContainer.defaultProps, defaultProps);
+
+const StyledAudioControls = styled.div`
+  transition: opacity 0.3s;
+  pointer-events: none
+`;
+
+StyledAudioControls.defaultProps = {};
+Object.setPrototypeOf(StyledAudioControls.defaultProps, defaultProps);
+
+export { StyledAudio, StyledAudioControls, StyledAudioContainer };
