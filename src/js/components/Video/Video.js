@@ -12,7 +12,7 @@ import { Meter } from '../Meter';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 import { withForwardRef } from '../hocs';
-import { throttle } from '../../utils';
+import { throttle, formatTime } from '../../utils';
 
 import {
   StyledVideo,
@@ -23,18 +23,6 @@ import {
 
 // Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
-
-const formatTime = time => {
-  let minutes = Math.round(time / 60);
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  let seconds = Math.round(time) % 60;
-  if (seconds < 10) {
-    seconds = `0${seconds}`;
-  }
-  return `${minutes}:${seconds}`;
-};
 
 const videoEvents = [
   'onAbort',
