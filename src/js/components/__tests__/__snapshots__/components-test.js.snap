@@ -291,7 +291,7 @@ string",
         "name": "autoPlay",
       },
       Object {
-        "defaultValue": "true",
+        "defaultValue": true,
         "description": "Whether to show playback controls.",
         "format": "false
 true",
