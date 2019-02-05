@@ -13,6 +13,7 @@ export interface SelectProps {
   dropHeight?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   dropTarget?: object;
   focusIndicator?: boolean;
+  id?: string;
   labelKey?: string | ((...args: any[]) => any);
   messages?: {multiple?: string};
   multiple?: boolean;

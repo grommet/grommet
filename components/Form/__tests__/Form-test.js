@@ -45,6 +45,9 @@ describe('Form', function () {
       required: true,
       validate: validate,
       placeholder: "test input"
+    }), _react.default.createElement(_FormField.FormField, {
+      name: "test2",
+      placeholder: "test-2 input"
     }), _react.default.createElement(_Button.Button, {
       type: "submit",
       primary: true,
@@ -56,15 +59,17 @@ describe('Form', function () {
 
     expect(container.firstChild).toMatchSnapshot();
 
-    _reactTestingLibrary.fireEvent.click(getByText('Submit'));
-
     _reactTestingLibrary.fireEvent.change(getByPlaceholderText('test input'), {
       target: {
         value: 'v'
       }
     });
 
-    expect(validate).toBeCalledWith('v');
+    _reactTestingLibrary.fireEvent.click(getByText('Submit'));
+
+    expect(validate).toBeCalledWith('v', {
+      test: 'v'
+    });
 
     _reactTestingLibrary.fireEvent.change(getByPlaceholderText('test input'), {
       target: {
@@ -72,13 +77,22 @@ describe('Form', function () {
       }
     });
 
-    expect(validate).toBeCalledWith('value');
+    _reactTestingLibrary.fireEvent.change(getByPlaceholderText('test-2 input'), {
+      target: {
+        value: 'value-2'
+      }
+    });
 
     _reactTestingLibrary.fireEvent.click(getByText('Submit'));
 
+    expect(validate).toBeCalledWith('value', {
+      test: 'value',
+      test2: 'value-2'
+    });
     expect(onSubmit).toBeCalledWith(expect.objectContaining({
       value: {
-        test: 'value'
+        test: 'value',
+        test2: 'value-2'
       }
     }));
   });

@@ -38,14 +38,14 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var validateField = function validateField(required, validate, messages) {
-  return function (data) {
+  return function (value, data) {
     var error;
 
     if (required && (data === undefined || data === '')) {
       error = messages.required;
     } else if (validate) {
       if (typeof validate === 'function') {
-        error = validate(data);
+        error = validate(value, data);
       } else if (validate.regexp) {
         if (!validate.regexp.test(data)) {
           error = validate.message || messages.invalid;
