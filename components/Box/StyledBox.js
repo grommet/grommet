@@ -442,13 +442,13 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, theme) {
   var styles = [];
 
   if (directionProp === 'column') {
-    styles.push((0, _styledComponents.css)(["height:", ";"], theme.global.edgeSize[gap]));
+    styles.push((0, _styledComponents.css)(["height:", ";"], theme.global.edgeSize[gap] || gap));
 
     if (responsiveSize) {
       styles.push((0, _utils.breakpointStyle)(breakpoint, "height: " + responsiveSize + ";"));
     }
   } else {
-    styles.push("width: " + theme.global.edgeSize[gap] + ";");
+    styles.push("width: " + (theme.global.edgeSize[gap] || gap) + ";");
 
     if (responsive && directionProp === 'row-responsive') {
       styles.push((0, _utils.breakpointStyle)(breakpoint, "\n        width: auto;\n        height: " + responsiveSize + ";\n      "));

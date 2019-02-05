@@ -3628,6 +3628,13 @@ exports[`Box gap 1`] = `
       className="c2"
     />
   </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    />
+  </div>
 </div>
 `;
 

@@ -430,13 +430,13 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, theme) {
   var styles = [];
 
   if (directionProp === 'column') {
-    styles.push(css(["height:", ";"], theme.global.edgeSize[gap]));
+    styles.push(css(["height:", ";"], theme.global.edgeSize[gap] || gap));
 
     if (responsiveSize) {
       styles.push(breakpointStyle(breakpoint, "height: " + responsiveSize + ";"));
     }
   } else {
-    styles.push("width: " + theme.global.edgeSize[gap] + ";");
+    styles.push("width: " + (theme.global.edgeSize[gap] || gap) + ";");
 
     if (responsive && directionProp === 'row-responsive') {
       styles.push(breakpointStyle(breakpoint, "\n        width: auto;\n        height: " + responsiveSize + ";\n      "));
