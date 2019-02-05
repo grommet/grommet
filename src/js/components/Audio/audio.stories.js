@@ -23,4 +23,6 @@ const SimpleAudio = () => (
     </Grommet>
 );
 
+// TODO add a story for background music
+
 storiesOf('Audio', module).add('Sample Audio', () => <SimpleAudio />);

@@ -622,34 +622,16 @@ boolean
 
 **controls**
 
-Whether to show playback controls and where to place them. Defaults to \`not sure\`.
+Whether to show playback controls. Defaults to \`true\`.
 
 \`\`\`
 false
-over
-below
-\`\`\`
-
-**fit**
-
-How the image fills its container.
-
-\`\`\`
-cover
-contain
+true
 \`\`\`
 
 **loop**
 
 Enables continuous audio looping.
-
-\`\`\`
-boolean
-\`\`\`
-
-**mute**
-
-Enables audio muting. This option is best used with the autoPlay flag.
 
 \`\`\`
 boolean

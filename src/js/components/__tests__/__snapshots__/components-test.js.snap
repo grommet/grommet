@@ -184,6 +184,128 @@ string",
     "usage": "import { Anchor } from 'grommet';
 <Anchor href={location} label='Label' />",
   },
+  "Audio": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=Audio&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=audio&module=%2Fsrc%2FAudio.js",
+      },
+    ],
+    "description": "A Audio player.",
+    "intrinsicElement": "audio",
+    "name": "Audio",
+    "properties": Array [
+      Object {
+        "description": "Custom title to be used by screen readers.",
+        "format": "string",
+        "name": "a11yTitle",
+      },
+      Object {
+        "description": "How to align along the cross axis when contained in
+      a Box or along the column axis when contained in a Grid.",
+        "format": "start
+center
+end
+stretch",
+        "name": "alignSelf",
+      },
+      Object {
+        "description": "The name of the area to place
+    this inside a parent Grid.",
+        "format": "string",
+        "name": "gridArea",
+      },
+      Object {
+        "description": "The amount of margin around the component. An object can
+      be specified to distinguish horizontal margin, vertical margin, and
+      margin on a particular side.",
+        "format": "none
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+{
+  bottom: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  horizontal: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  left: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  right: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  top: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string,
+  vertical: 
+    xxsmall
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    string
+}
+string",
+        "name": "margin",
+      },
+      Object {
+        "description": "Enables automatic playback of the audio as soon as it is loaded.",
+        "format": "boolean",
+        "name": "autoPlay",
+      },
+      Object {
+        "defaultValue": "true",
+        "description": "Whether to show playback controls.",
+        "format": "false
+true",
+        "name": "controls",
+      },
+      Object {
+        "description": "Enables continuous audio looping.",
+        "format": "boolean",
+        "name": "loop",
+      },
+    ],
+    "usage": "import { Audio } from 'grommet';
+<Audio />",
+  },
   "Box": Object {
     "availableAt": Array [
       Object {

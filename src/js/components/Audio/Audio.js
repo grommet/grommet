@@ -5,43 +5,104 @@ import { withTheme } from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
-import { Stack } from '../Stack';
 import { Text } from '../Text';
 import { withForwardRef } from '../hocs';
 
 // import { defaultProps } from '../../default-props';
 
-import { formatTime } from '../../utils';
+import { throttle, formatTime } from '../../utils';
 
 import { StyledAudio, StyledAudioControls, StyledAudioContainer } from './StyledAudio';
 
+// TODO cleanups!!
+const audioEvents = [
+    'onAbort',
+    'onCanPlay',
+    'onCanPlayThrough',
+    'onDurationChange',
+    'onEmptied',
+    'onEncrypted',
+    'onEnded',
+    'onError',
+    'onLoadedData',
+    'onLoadedMetadata',
+    'onLoadStart',
+    'onPause',
+    'onPlay',
+    'onPlaying',
+    'onProgress',
+    'onRateChange',
+    'onSeeked',
+    'onSeeking',
+    'onStalled',
+    'onSuspend',
+    'onTimeUpdate',
+    'onVolumeChange',
+    'onWaiting',
+  ];
 class Audio extends Component {
+
+    static defaultProps = {
+        controls: true,
+    };
 
     state = {
         audioRef: React.createRef(),
     };
 
+    constructor(props) {
+        super(props);
+        this.update = throttle(this.update, 100, this);
+        this.mediaEventProps = this.injectUpdateVideoEvents();
+    }
+
     componentDidMount() {
         // const { audioRef } = this.state;
         // const audio = audioRef.current;
+        // TODO fix issue of displaying NaN
     }
 
-    componentDidUpdate(prevProps) {
-        const { autoPlay } = this.props;
-        if (autoPlay && !prevProps.autoPlay) {
-            // Caller wants the video to play now.
-            this.play();
-        }
-        this.restate();
-    }
+    // componentDidUpdate(prevProps) {
+    //     const { autoPlay } = this.props;
+    //     if (autoPlay && !prevProps.autoPlay) {
+    //         // Caller wants the audio to play right after it loads.
+    //         console.log("Plzzzzzzzzzzzzzzzzzzz");
+    //         this.play();
+    //     }
+    // }
+
+    injectUpdateVideoEvents = () =>
+        audioEvents.reduce((previousValue, currentValue) => {
+            const nextValue = { ...previousValue };
+            nextValue[currentValue] = e => {
+                if (
+                    currentValue in this.props &&
+                    /* eslint-disable react/destructuring-assignment */
+                    typeof this.props[currentValue] === 'function'
+                ) {
+                    this.props[currentValue](e);
+                    /* eslint-enable react/destructuring-assignment */
+                }
+                this.update();
+            };
+
+            return nextValue;
+        }, {});
 
     update = () => {
         const { audioRef } = this.state;
         const audio = audioRef.current;
 
+        let { interacting } = this.state;
+        if (audio.ended) {
+          interacting = false;
+        }
+
         this.setState({
             duration: audio.duration,
             playing: !audio.paused,
+            interacting,
+            // volume: audio.volume,
         });
     };
 
@@ -69,10 +130,24 @@ class Audio extends Component {
         }
     };
 
+    interactionStart = () => {
+        this.setState({ interacting: true });
+        clearTimeout(this.interactionTimer);
+        this.interactionTimer = setTimeout(this.interactionStop, 3000);
+    };
+
+    interactionStop = () => {
+        const { focus } = this.state;
+        if (!focus && !this.unmounted) {
+            this.setState({ interacting: false });
+        }
+    };
+
     renderControls() {
         const { theme } = this.props;
-        const { duration, playing } = this.state;
+        const { duration, playing, interacting } = this.state;
 
+        console.log("duration", duration);
         const background = (theme.audio.controls && theme.audio.controls.background) || {
             color: 'dark-1',
             opacity: 'strong',
@@ -87,7 +162,9 @@ class Audio extends Component {
         };
 
         return (
-          <StyledAudioControls>
+          <StyledAudioControls
+            active={interacting}
+          >
             <Box 
               direction="row" 
               align="center" 
@@ -98,7 +175,7 @@ class Audio extends Component {
               <Button
                 icon={
                   playing ? (
-                    <Icons.Pause color="white" />
+                    <Icons.Pause color="white" /> // TODO refactor color to theme?
                   ) : (
                     <Icons.Play color="white" />
                   )
@@ -106,13 +183,15 @@ class Audio extends Component {
                 hoverIndicator="background"
                 onClick={playing ? this.pause : this.play}
               />
-              <Text textAlign="center" margin="none">{formattedTime}</Text>
+              <Box pad={{ horizontal: 'small' }}>
+                <Text textAlign="center" margin="none">{duration ? formattedTime : ''}</Text>
+              </Box>
             </Box>
             <Box pad={{ horizontal: 'small' }}>
               <Button
                 icon={<Icons.Volume color="white" />}
                 hoverIndicator="background"
-                onClick={playing ? this.pause : this.play}
+                onClick={() => {}}
               />
             </Box>
             </Box>
@@ -136,7 +215,7 @@ class Audio extends Component {
 
         const { audioRef, height, width} = this.state;
 
-        const controlsElement = this.renderControls();
+        const controlsElement = controls ? this.renderControls() : undefined;
 
         const mouseEventListeners = {
             onMouseEnter: this.interactionStart,
@@ -147,9 +226,9 @@ class Audio extends Component {
         let style;
         if (width) {
             style = { width };
-          } else if (height) {
+        } else if (height) {
             style = { height };
-          }
+        }
 
         return (
           <StyledAudioContainer
@@ -159,18 +238,19 @@ class Audio extends Component {
             margin={margin}
             style={style}
           >
-            <Stack fill>
               <StyledAudio 
+                {...rest}
+                {...this.mediaEventProps}
                 autoPlay={autoPlay || false} 
                 loop={loop || false}
                 muted={muted || false}
                 ref={audioRef} 
-                {...rest}
+
               >
               {children}
               </StyledAudio>
             {controlsElement}
-            </Stack>
+          
           </StyledAudioContainer>
         );
     }

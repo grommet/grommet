@@ -22,7 +22,7 @@ Object.setPrototypeOf(StyledAudioContainer.defaultProps, defaultProps);
 
 const StyledAudioControls = styled.div`
   transition: opacity 0.3s;
-  pointer-events: none
+  ${props => (props.active ? 'opacity: 1;' : 'pointer-events: none')};
 `;
 
 StyledAudioControls.defaultProps = {};
