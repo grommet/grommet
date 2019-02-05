@@ -12,13 +12,13 @@ import { TextInput } from '../TextInput';
 import { withFocus } from '../hocs';
 import { FormContext } from '../Form/FormContext';
 
-const validateField = (required, validate, messages) => data => {
+const validateField = (required, validate, messages) => (value, data) => {
   let error;
   if (required && (data === undefined || data === '')) {
     error = messages.required;
   } else if (validate) {
     if (typeof validate === 'function') {
-      error = validate(data);
+      error = validate(value, data);
     } else if (validate.regexp) {
       if (!validate.regexp.test(data)) {
         error = validate.message || messages.invalid;
