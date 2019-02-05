@@ -242,6 +242,12 @@ exports[`Grid columns renders 1`] = `
   grid-template-columns: repeat( auto-fit,minmax(192px,1fr) );
 }
 
+.c6 {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: repeat( auto-full,minmax(192px,384px) );
+}
+
 <div
   className="c0"
 >
@@ -259,6 +265,9 @@ exports[`Grid columns renders 1`] = `
   />
   <div
     className="c5"
+  />
+  <div
+    className="c6"
   />
 </div>
 `;

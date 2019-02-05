@@ -193,3 +193,73 @@ Array of value objects describing the data.
 }]
 ```
   
+## Theme
+  
+**global.edgeSize**
+
+The border-radius of the styled Meter. thickness, height and width of the Bar Meter, height of the Circle Meter. Expects `object`.
+
+Defaults to
+
+```
+{
+        none: '0px',
+        hair: '1px',
+        xxsmall: '3px',
+        xsmall: '6px',
+        small: '12px',
+        medium: '24px',
+        large: '48px',
+        xlarge: '96px',
+        responsiveBreakpoint: 'small',
+    }
+```
+
+**global.opacity.medium**
+
+The opacity value used on the Meter color. Expects `number`.
+
+Defaults to
+
+```
+0.4
+```
+
+**global.size**
+
+The possible sizes for Circle Meter width. Expects `object`.
+
+Defaults to
+
+```
+{
+      xxsmall: '48px',
+      xsmall: '96px',
+      small: '192px',
+      medium: '384px',
+      large: '768px',
+      xlarge: '1152px',
+      xxlarge: '1536px',
+      full: '100%',
+    }
+```
+
+**meter.color**
+
+The color used for the Meter. Expects `string`.
+
+Defaults to
+
+```
+accent-1
+```
+
+**meter.extend**
+
+Any additional style for Meter. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
