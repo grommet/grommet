@@ -191,6 +191,25 @@ exports[`Form update 1`] = `
         </div>
       </div>
     </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <input
+            autocomplete="off"
+            class="c4"
+            name="test2"
+            placeholder="test-2 input"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
     <button
       class="c5"
       type="submit"
