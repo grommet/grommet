@@ -17,7 +17,8 @@ import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
 import { base as iconBase } from 'grommet-icons/themes/base';
 
-import { deepMerge, deepFreeze, normalizeColor } from '../utils';
+import { deepFreeze, deepMerge } from '../utils/object';
+import { normalizeColor } from '../utils/colors';
 
 const brandColor = '#7D4CDB';
 const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];

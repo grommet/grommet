@@ -1,7 +1,8 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 
-import { normalizeColor, deepFreeze } from '../utils';
+import { deepFreeze } from '../utils/object';
+import { normalizeColor } from '../utils/colors';
 
 const controlColor = '#FFCA58';
 const accentColors = ['#FD6FFF', '#60EB9F', '#60EBE1', '#FFCA58'];
