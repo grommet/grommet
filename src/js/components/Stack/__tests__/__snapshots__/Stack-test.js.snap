@@ -437,6 +437,109 @@ exports[`guidingChild renders 1`] = `
 </div>
 `;
 
+exports[`interactiveChild renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.c4 {
+  position: relative;
+  display: block;
+  pointer-events: none;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div>
+        first
+      </div>
+    </div>
+    <div
+      className="c3"
+    >
+      <div>
+        second
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c4"
+    >
+      <div>
+        first
+      </div>
+    </div>
+    <div
+      className="c5"
+    >
+      <div>
+        second
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <div>
+        first
+      </div>
+    </div>
+    <div
+      className="c3"
+    >
+      <div>
+        second
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders 1`] = `
 .c0 {
   font-size: 18px;

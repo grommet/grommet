@@ -47,6 +47,13 @@ export const doc = Stack => {
       will be positioned within that area. Defaults to 'first'.`,
       )
       .defaultValue('first'),
+    interactiveChild: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOf(['first', 'last']),
+    ]).description(
+      `Which child to restrict user interaction to. All other children
+      will have user interaction disabled.`,
+    ),
   };
 
   return DocumentedStack;
