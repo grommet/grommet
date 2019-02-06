@@ -7,9 +7,35 @@ var _polished = require("polished");
 
 var _styledComponents = require("styled-components");
 
-var _grommetIcons = require("grommet-icons");
+var _Actions = require("grommet-icons/icons/Actions");
 
-var _themes = require("grommet-icons/themes");
+var _ClosedCaption = require("grommet-icons/icons/ClosedCaption");
+
+var _Expand = require("grommet-icons/icons/Expand");
+
+var _FormDown = require("grommet-icons/icons/FormDown");
+
+var _FormNext = require("grommet-icons/icons/FormNext");
+
+var _FormPrevious = require("grommet-icons/icons/FormPrevious");
+
+var _FormUp = require("grommet-icons/icons/FormUp");
+
+var _Next = require("grommet-icons/icons/Next");
+
+var _Pause = require("grommet-icons/icons/Pause");
+
+var _Play = require("grommet-icons/icons/Play");
+
+var _Previous = require("grommet-icons/icons/Previous");
+
+var _Subtract = require("grommet-icons/icons/Subtract");
+
+var _Volume = require("grommet-icons/icons/Volume");
+
+var _VolumeLow = require("grommet-icons/icons/VolumeLow");
+
+var _base = require("grommet-icons/themes/base");
 
 var _utils = require("../utils");
 
@@ -94,7 +120,7 @@ var generate = function generate(baseSpacing, scale) {
   };
 
   var borderWidth = 2;
-  var result = (0, _utils.deepMerge)(_themes.base, {
+  var result = (0, _utils.deepMerge)(_base.base, {
     global: {
       animation: {
         duration: '1s',
@@ -283,8 +309,8 @@ var generate = function generate(baseSpacing, scale) {
     },
     accordion: {
       icons: {
-        collapse: _grommetIcons.FormUp,
-        expand: _grommetIcons.FormDown // color: { dark: undefined, light: undefined },
+        collapse: _FormUp.FormUp,
+        expand: _FormDown.FormDown // color: { dark: undefined, light: undefined },
 
       }
     },
@@ -347,19 +373,19 @@ var generate = function generate(baseSpacing, scale) {
         slideDuration: '0.8s'
       },
       icons: {
-        previous: _grommetIcons.Previous,
-        next: _grommetIcons.Next,
+        previous: _Previous.Previous,
+        next: _Next.Next,
         small: {
-          previous: _grommetIcons.FormPrevious,
-          next: _grommetIcons.FormNext
+          previous: _FormPrevious.FormPrevious,
+          next: _FormNext.FormNext
         }
       }
     },
     carousel: {
       icons: {
-        current: _grommetIcons.Subtract,
-        next: _grommetIcons.Next,
-        previous: _grommetIcons.Previous // color: undefined,
+        current: _Subtract.Subtract,
+        next: _Next.Next,
+        previous: _Previous.Previous // color: undefined,
 
       }
     },
@@ -493,10 +519,10 @@ var generate = function generate(baseSpacing, scale) {
         }
       },
       icons: {
-        ascending: _grommetIcons.FormDown,
-        contract: _grommetIcons.FormUp,
-        descending: _grommetIcons.FormUp,
-        expand: _grommetIcons.FormDown
+        ascending: _FormDown.FormDown,
+        contract: _FormUp.FormUp,
+        descending: _FormUp.FormUp,
+        expand: _FormDown.FormDown
       },
       resize: {
         border: {
@@ -626,7 +652,7 @@ var generate = function generate(baseSpacing, scale) {
       // background: undefined,
       // extend: undefined,
       icons: {
-        down: _grommetIcons.FormDown
+        down: _FormDown.FormDown
       }
     },
     meter: {
@@ -687,7 +713,7 @@ var generate = function generate(baseSpacing, scale) {
       },
       icons: {
         // color: { dark: undefined, light: undefined },
-        down: _grommetIcons.FormDown
+        down: _FormDown.FormDown
       },
       // searchInput: undefined,
       step: 20
@@ -797,13 +823,13 @@ var generate = function generate(baseSpacing, scale) {
       },
       // controls: { background: undefined },
       icons: {
-        closedCaption: _grommetIcons.ClosedCaption,
-        configure: _grommetIcons.Actions,
-        fullScreen: _grommetIcons.Expand,
-        pause: _grommetIcons.Pause,
-        play: _grommetIcons.Play,
-        reduceVolume: _grommetIcons.VolumeLow,
-        volume: _grommetIcons.Volume // color: { dark: undefined, light: undefined },
+        closedCaption: _ClosedCaption.ClosedCaption,
+        configure: _Actions.Actions,
+        fullScreen: _Expand.Expand,
+        pause: _Pause.Pause,
+        play: _Play.Play,
+        reduceVolume: _VolumeLow.VolumeLow,
+        volume: _Volume.Volume // color: { dark: undefined, light: undefined },
 
       },
       // scrubber: { track: { color: undefined } },

@@ -7,7 +7,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 import React, { Component, Fragment } from 'react';
 import { compose } from 'recompose';
 import { withTheme } from 'styled-components';
-import { FormSearch } from "grommet-icons/es6/icons/FormSearch";
+import { FormSearch } from 'grommet-icons/icons/FormSearch';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';

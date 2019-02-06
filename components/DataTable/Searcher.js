@@ -9,7 +9,7 @@ var _recompose = require("recompose");
 
 var _styledComponents = require("styled-components");
 
-var _grommetIcons = require("grommet-icons");
+var _FormSearch = require("grommet-icons/icons/FormSearch");
 
 var _defaultProps = require("../../default-props");
 
@@ -102,7 +102,7 @@ function (_Component) {
         horizontal: 'small'
       }
     }, _react.default.createElement(_Text.Text, null, filters[property])) : null, _react.default.createElement(_Button.Button, {
-      icon: _react.default.createElement(_grommetIcons.FormSearch, {
+      icon: _react.default.createElement(_FormSearch.FormSearch, {
         color: (0, _utils.normalizeColor)(filtering === property ? 'brand' : 'border', theme)
       }),
       hoverIndicator: true,
