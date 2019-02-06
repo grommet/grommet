@@ -5,6 +5,7 @@ import { withTheme } from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { Meter } from '../Meter';
 import { Text } from '../Text';
 import { withForwardRef } from '../hocs';
 
@@ -13,6 +14,9 @@ import { withForwardRef } from '../hocs';
 import { throttle, formatTime } from '../../utils';
 
 import { StyledAudio, StyledAudioControls, StyledAudioContainer } from './StyledAudio';
+
+// TODO refactor to include video Split the volume control into 6 segments. Empirically determined.
+const VOLUME_STEP = 0.166667;
 
 // TODO cleanups!!
 const audioEvents = [
@@ -59,7 +63,6 @@ class Audio extends Component {
     componentDidMount() {
         // const { audioRef } = this.state;
         // const audio = audioRef.current;
-        // TODO fix issue of displaying NaN
     }
 
     // componentDidUpdate(prevProps) {
@@ -130,6 +133,16 @@ class Audio extends Component {
         }
     };
 
+    louder = () => {
+        const { videoRef } = this.state;
+        videoRef.current.volume += VOLUME_STEP;
+    };
+
+    quieter = () => {
+        const { videoRef } = this.state;
+        videoRef.current.volume -= VOLUME_STEP;
+    };
+
     interactionStart = () => {
         this.setState({ interacting: true });
         clearTimeout(this.interactionTimer);
@@ -147,7 +160,6 @@ class Audio extends Component {
         const { theme } = this.props;
         const { duration, playing, interacting } = this.state;
 
-        console.log("duration", duration);
         const background = (theme.audio.controls && theme.audio.controls.background) || {
             color: 'dark-1',
             opacity: 'strong',
@@ -187,11 +199,22 @@ class Audio extends Component {
                 <Text textAlign="center" margin="none">{duration ? formattedTime : ''}</Text>
               </Box>
             </Box>
-            <Box pad={{ horizontal: 'small' }}>
+            <Box pad={{ horizontal: 'small' }} direction="row" align="center">
               <Button
                 icon={<Icons.Volume color="white" />}
                 hoverIndicator="background"
                 onClick={() => {}}
+              />
+              {/* need to debug background */}
+              <Meter 
+                round 
+                background={theme.audio.volume.color || 'brand'}
+                size="xsmall" 
+                thickness="small"
+                values={[
+                  { value: 1 },
+                  { value: 0.2 },
+                ]} 
               />
             </Box>
             </Box>

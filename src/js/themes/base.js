@@ -280,12 +280,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     audio: {
-      captions: {
-        background: 'rgba(0, 0, 0, 0.7)',
-      },
       // controls: { background: undefined },
       icons: {
-        closedCaption: ClosedCaption,
         pause: Pause,
         play: Play,
         volume: Volume,
@@ -293,6 +289,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       scrubber: {
         color: 'light-4',
+      },
+      volume: {
+        color: 'brand',
       },
     },
     box: {
