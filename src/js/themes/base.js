@@ -1,23 +1,21 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 
-import {
-  Actions,
-  ClosedCaption,
-  Expand,
-  FormDown,
-  FormNext,
-  FormPrevious,
-  FormUp,
-  Next,
-  Pause,
-  Play,
-  Previous,
-  Subtract,
-  Volume,
-  VolumeLow,
-} from 'grommet-icons';
-import { base as iconBase } from 'grommet-icons/themes';
+import { Actions } from 'grommet-icons/icons/Actions';
+import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
+import { Expand } from 'grommet-icons/icons/Expand';
+import { FormDown } from 'grommet-icons/icons/FormDown';
+import { FormNext } from 'grommet-icons/icons/FormNext';
+import { FormPrevious } from 'grommet-icons/icons/FormPrevious';
+import { FormUp } from 'grommet-icons/icons/FormUp';
+import { Next } from 'grommet-icons/icons/Next';
+import { Pause } from 'grommet-icons/icons/Pause';
+import { Play } from 'grommet-icons/icons/Play';
+import { Previous } from 'grommet-icons/icons/Previous';
+import { Subtract } from 'grommet-icons/icons/Subtract';
+import { Volume } from 'grommet-icons/icons/Volume';
+import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
+import { base as iconBase } from 'grommet-icons/themes/base';
 
 import { deepMerge, deepFreeze, normalizeColor } from '../utils';
 
