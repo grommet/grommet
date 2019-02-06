@@ -5,7 +5,13 @@ export interface MaskedInputProps {
   name?: string;
   onChange?: ((...args: any[]) => any);
   onBlur?: ((...args: any[]) => any);
-  mask?: {length?: number | number[],fixed?: string,options?: string[],regexp?: {}}[];
+  mask?: Array<{
+    length?: number | number[];
+    fixed?: string;
+    options?: string[];
+    regexp?: {};
+    placeholder?: string;
+  }>;
   size?: "small" | "medium" | "large" | "xlarge" | string;
   value?: string;
 }
