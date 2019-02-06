@@ -81,6 +81,7 @@ const StyledStackLayer = styled.div`
     width: 100%;
     height: 100%;
   `}
+  ${props => !props.interactive && `pointer-events: none;`}
 `;
 
 StyledStackLayer.defaultProps = {};

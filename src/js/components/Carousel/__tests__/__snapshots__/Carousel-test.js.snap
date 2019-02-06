@@ -1167,7 +1167,7 @@ exports[`Carousel navigate 2`] = `
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+      class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 gSqlow"
@@ -1183,7 +1183,7 @@ exports[`Carousel navigate 2`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+      class="StyledStack__StyledStackLayer-ajspsk-1 zZZtW"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 gSqlow"
@@ -1199,7 +1199,7 @@ exports[`Carousel navigate 2`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+      class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 eKHNGK"
@@ -1314,7 +1314,7 @@ exports[`Carousel navigate 3`] = `
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+      class="StyledStack__StyledStackLayer-ajspsk-1 zZZtW"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 gSqlow"
@@ -1330,7 +1330,7 @@ exports[`Carousel navigate 3`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+      class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 gSqlow"
@@ -1346,7 +1346,7 @@ exports[`Carousel navigate 3`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+      class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 eKHNGK"
@@ -2031,7 +2031,7 @@ exports[`Carousel play 2`] = `
     class="StyledStack-ajspsk-0 cBSAEZ"
   >
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+      class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 gSqlow"
@@ -2047,7 +2047,7 @@ exports[`Carousel play 2`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 fNScQY"
+      class="StyledStack__StyledStackLayer-ajspsk-1 zZZtW"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 gSqlow"
@@ -2063,7 +2063,7 @@ exports[`Carousel play 2`] = `
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-ajspsk-1 hFvDUx"
+      class="StyledStack__StyledStackLayer-ajspsk-1 ekmpaB"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 eKHNGK"

@@ -138,7 +138,7 @@ class RichChart extends Component {
 }
 
 storiesOf('Chart', module)
-  .add('Bar Chart', () => <BarChart />)
-  .add('Line Chart', () => <LineChart />)
-  .add('Area Chart', () => <AreaChart />)
-  .add('Rich Chart', () => <RichChart />);
+  .add('Bar', () => <BarChart />)
+  .add('Line', () => <LineChart />)
+  .add('Area', () => <AreaChart />)
+  .add('Rich', () => <RichChart />);

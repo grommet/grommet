@@ -57,3 +57,15 @@ test('fill renders', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('interactiveChild renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Stack interactiveChild="first">{CONTENTS}</Stack>
+      <Stack interactiveChild="last">{CONTENTS}</Stack>
+      <Stack interactiveChild={0}>{CONTENTS}</Stack>
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
