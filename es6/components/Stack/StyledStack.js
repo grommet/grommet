@@ -27,7 +27,7 @@ var styleMap = {
 var StyledStackLayer = styled.div.withConfig({
   displayName: "StyledStack__StyledStackLayer",
   componentId: "ajspsk-1"
-})(["position:", ";", " ", " ", ""], function (props) {
+})(["position:", ";", " ", " ", " ", ""], function (props) {
   return props.guiding ? 'relative' : 'absolute';
 }, function (props) {
   return props.guiding && 'display: block;';
@@ -35,6 +35,8 @@ var StyledStackLayer = styled.div.withConfig({
   return !props.guiding && styleMap[props.anchor || 'fill'] + ";";
 }, function (props) {
   return props.fillContainer && "\n    width: 100%;\n    height: 100%;\n  ";
+}, function (props) {
+  return !props.interactive && "pointer-events: none;";
 });
 StyledStackLayer.defaultProps = {};
 Object.setPrototypeOf(StyledStackLayer.defaultProps, defaultProps);

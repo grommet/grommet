@@ -69,3 +69,15 @@ test('fill renders', function () {
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+test('interactiveChild renders', function () {
+  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Stack, {
+    interactiveChild: "first"
+  }, CONTENTS), _react.default.createElement(_.Stack, {
+    interactiveChild: "last"
+  }, CONTENTS), _react.default.createElement(_.Stack, {
+    interactiveChild: 0
+  }, CONTENTS)));
+
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

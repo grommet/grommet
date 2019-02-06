@@ -207,12 +207,12 @@ function (_Component) {
   return RichChart;
 }(Component);
 
-storiesOf('Chart', module).add('Bar Chart', function () {
+storiesOf('Chart', module).add('Bar', function () {
   return React.createElement(BarChart, null);
-}).add('Line Chart', function () {
+}).add('Line', function () {
   return React.createElement(LineChart, null);
-}).add('Area Chart', function () {
+}).add('Area', function () {
   return React.createElement(AreaChart, null);
-}).add('Rich Chart', function () {
+}).add('Rich', function () {
   return React.createElement(RichChart, null);
 });

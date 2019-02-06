@@ -10,10 +10,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Component } from 'react';
 import { compose } from 'recompose';
+import styled from 'styled-components';
 import { ThemeContext } from '../../contexts';
 import { Box } from '../Box';
 import { withForwardRef } from '../hocs';
 import { EdgeControl } from './EdgeControl';
+var Container = styled(Box).withConfig({
+  displayName: "RangeSelector__Container",
+  componentId: "siof5p-0"
+})(["user-select:none;"]);
 
 var RangeSelector =
 /*#__PURE__*/
@@ -206,7 +211,7 @@ function (_Component) {
     var upper = nextUpper !== undefined ? nextUpper : values[1]; // It needs to be true when vertical, due to how browsers manage height
 
     var fill = direction === 'vertical' ? true : 'vertical';
-    return React.createElement(Box, _extends({
+    return React.createElement(Container, _extends({
       ref: this.containerRef,
       direction: direction === 'vertical' ? 'column' : 'row',
       fill: fill

@@ -7,6 +7,8 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
 var _contexts = require("../../contexts");
 
 var _Box = require("../Box");
@@ -14,6 +16,8 @@ var _Box = require("../Box");
 var _hocs = require("../hocs");
 
 var _EdgeControl = require("./EdgeControl");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -26,6 +30,11 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Container = (0, _styledComponents.default)(_Box.Box).withConfig({
+  displayName: "RangeSelector__Container",
+  componentId: "siof5p-0"
+})(["user-select:none;"]);
 
 var RangeSelector =
 /*#__PURE__*/
@@ -218,7 +227,7 @@ function (_Component) {
     var upper = nextUpper !== undefined ? nextUpper : values[1]; // It needs to be true when vertical, due to how browsers manage height
 
     var fill = direction === 'vertical' ? true : 'vertical';
-    return _react.default.createElement(_Box.Box, _extends({
+    return _react.default.createElement(Container, _extends({
       ref: this.containerRef,
       direction: direction === 'vertical' ? 'column' : 'row',
       fill: fill

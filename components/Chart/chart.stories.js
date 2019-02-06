@@ -215,12 +215,12 @@ function (_Component) {
   return RichChart;
 }(_react.Component);
 
-(0, _react2.storiesOf)('Chart', module).add('Bar Chart', function () {
+(0, _react2.storiesOf)('Chart', module).add('Bar', function () {
   return _react.default.createElement(BarChart, null);
-}).add('Line Chart', function () {
+}).add('Line', function () {
   return _react.default.createElement(LineChart, null);
-}).add('Area Chart', function () {
+}).add('Area', function () {
   return _react.default.createElement(AreaChart, null);
-}).add('Rich Chart', function () {
+}).add('Rich', function () {
   return _react.default.createElement(RichChart, null);
 });

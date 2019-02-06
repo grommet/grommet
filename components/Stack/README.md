@@ -147,6 +147,17 @@ number
 first
 last
 ```
+
+**interactiveChild**
+
+Which child to restrict user interaction to. All other children
+      will have user interaction disabled.
+
+```
+number
+first
+last
+```
   
 ## Intrinsic element
 

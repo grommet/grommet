@@ -15,13 +15,38 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var Stack =
 /*#__PURE__*/
 function (_Component) {
   _inheritsLoose(Stack, _Component);
 
   function Stack() {
-    return _Component.apply(this, arguments) || this;
+    var _this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "toChildIndex", function (child) {
+      var children = _this.props.children;
+      var index = child;
+
+      if (index === 'first' || !index) {
+        index = 0;
+      } else if (index === 'last') {
+        index = _react.default.Children.count(children) - 1;
+      }
+
+      return index;
+    });
+
+    return _this;
   }
 
   var _proto = Stack.prototype;
@@ -32,31 +57,28 @@ function (_Component) {
         children = _this$props.children,
         fill = _this$props.fill,
         guidingChild = _this$props.guidingChild,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["anchor", "children", "fill", "guidingChild"]); // make all children but the first absolutely positioned
+        interactiveChild = _this$props.interactiveChild,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["anchor", "children", "fill", "guidingChild", "interactiveChild"]);
 
-
-    var guidingIndex = guidingChild;
-
-    if (guidingIndex === 'first' || !guidingIndex) {
-      guidingIndex = 0;
-    } else if (guidingIndex === 'last') {
-      guidingIndex = _react.default.Children.count(children) - 1;
-    }
-
+    var guidingIndex = this.toChildIndex(guidingChild);
+    var interactiveIndex = interactiveChild && this.toChildIndex(interactiveChild);
     var childIndex = 0;
 
     var styledChildren = _react.Children.map(children, function (child) {
       if (child) {
+        var interactive = interactiveChild === undefined || interactiveIndex === childIndex;
         var layer;
 
         if (childIndex === guidingIndex) {
           layer = _react.default.createElement(_StyledStack.StyledStackLayer, {
             guiding: true,
-            fillContainer: fill
+            fillContainer: fill,
+            interactive: interactive
           }, child);
         } else {
           layer = _react.default.createElement(_StyledStack.StyledStackLayer, {
-            anchor: anchor
+            anchor: anchor,
+            interactive: interactive
           }, child);
         }
 
