@@ -5,9 +5,9 @@ exports.grommet = void 0;
 
 var _styledComponents = require("styled-components");
 
-var _utils = require("../utils");
+var _object = require("../utils/object");
 
-var grommet = (0, _utils.deepFreeze)({
+var grommet = (0, _object.deepFreeze)({
   global: {
     colors: {
       background: '#ffffff'

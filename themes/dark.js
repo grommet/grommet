@@ -7,7 +7,9 @@ var _polished = require("polished");
 
 var _styledComponents = require("styled-components");
 
-var _utils = require("../utils");
+var _object = require("../utils/object");
+
+var _colors = require("../utils/colors");
 
 var controlColor = '#FFCA58';
 var accentColors = ['#FD6FFF', '#60EB9F', '#60EBE1', '#FFCA58'];
@@ -48,7 +50,7 @@ colorArray(neutralColors, 'neutral');
 Object.keys(statusColors).forEach(function (color) {
   colors["status-" + color] = statusColors[color];
 });
-var dark = (0, _utils.deepFreeze)({
+var dark = (0, _object.deepFreeze)({
   global: {
     colors: colors,
     drop: {
@@ -57,7 +59,7 @@ var dark = (0, _utils.deepFreeze)({
     focus: {
       border: {
         color: (0, _styledComponents.css)(["", ";"], function (props) {
-          return (0, _utils.normalizeColor)('focus', props.theme);
+          return (0, _colors.normalizeColor)('focus', props.theme);
         }),
         width: '2px'
       }

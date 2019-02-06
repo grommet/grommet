@@ -1,6 +1,7 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
-import { normalizeColor, deepFreeze } from '../utils';
+import { deepFreeze } from '../utils/object';
+import { normalizeColor } from '../utils/colors';
 var controlColor = '#FFCA58';
 var accentColors = ['#FD6FFF', '#60EB9F', '#60EBE1', '#FFCA58'];
 var neutralColors = ['#EB6060', '#01C781', '#6095EB', '#FFB200'];

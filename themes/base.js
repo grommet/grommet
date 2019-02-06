@@ -37,7 +37,9 @@ var _VolumeLow = require("grommet-icons/icons/VolumeLow");
 
 var _base = require("grommet-icons/themes/base");
 
-var _utils = require("../utils");
+var _object = require("../utils/object");
+
+var _colors = require("../utils/colors");
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -120,7 +122,7 @@ var generate = function generate(baseSpacing, scale) {
   };
 
   var borderWidth = 2;
-  var result = (0, _utils.deepMerge)(_base.base, {
+  var result = (0, _object.deepMerge)(_base.base, {
     global: {
       animation: {
         duration: '1s',
@@ -699,7 +701,7 @@ var generate = function generate(baseSpacing, scale) {
       track: {
         height: '4px',
         color: (0, _styledComponents.css)(["", ";"], function (props) {
-          return (0, _polished.rgba)((0, _utils.normalizeColor)('border', props.theme), 0.2);
+          return (0, _polished.rgba)((0, _colors.normalizeColor)('border', props.theme), 0.2);
         })
       },
       thumb: {// color: { dark: undefined, light: undefined },
@@ -852,7 +854,7 @@ var generate = function generate(baseSpacing, scale) {
       }
     }
   });
-  return (0, _utils.deepFreeze)(result);
+  return (0, _object.deepFreeze)(result);
 };
 
 exports.generate = generate;

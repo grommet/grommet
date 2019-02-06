@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { deepFreeze } from '../utils';
+import { deepFreeze } from '../utils/object';
 export var grommet = deepFreeze({
   global: {
     colors: {
