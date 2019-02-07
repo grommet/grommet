@@ -13,7 +13,7 @@ class DataTable extends Component {
     data: [],
   };
 
-  state = {};
+  state = { checked: [] };
 
   static getDerivedStateFromProps(nextProps, prevState) {
     return buildState(nextProps, prevState);
@@ -72,6 +72,31 @@ class DataTable extends Component {
     this.setState({ widths: nextWidths });
   };
 
+  onSelect = datums => {
+    const { checked } = this.state;
+    const { primaryProperty } = this.props;
+    let nextChecked = checked.slice(0); // clone array
+
+    datums.forEach(datum => {
+      const value = datum[primaryProperty];
+      if (checked.indexOf(value) !== -1) {
+        nextChecked = nextChecked.filter(item => item !== value);
+      } else {
+        nextChecked.push(value);
+      }
+    });
+    this.setState({ checked: nextChecked });
+  };
+
+  onSelectAll = event => {
+    const { data, primaryProperty } = this.props;
+    this.setState({
+      checked: event.target.checked
+        ? data.map(datum => datum[primaryProperty])
+        : [],
+    });
+  };
+
   render() {
     const {
       /* eslint-disable-next-line react/prop-types */
@@ -81,6 +106,7 @@ class DataTable extends Component {
       onMore,
       resizeable,
       size,
+      selectable,
       sortable,
       onSearch, // removing unknown DOM attributes
       onRowClick,
@@ -97,11 +123,35 @@ class DataTable extends Component {
       showFooter,
       sort,
       widths,
+      checked,
     } = this.state;
 
     if (size && resizeable) {
       console.warn('DataTable cannot combine "size" and "resizeble".');
     }
+    if (selectable && !primaryProperty) {
+      console.warn('DataTable is selectable bit no primaryProperty is defined');
+    }
+    if (selectable && !columns.find(column => column.property === 'checkbox')) {
+      console.warn(
+        'DataTable is selectable but you did not define a corresponding column.',
+      );
+      columns.unshift({
+        property: 'checkbox',
+        align: 'start',
+      });
+    }
+
+    const onClick = (event, datums) => {
+      if (!Array.isArray(datums)) {
+        this.onSelect([datums]);
+      } else {
+        this.onSelect(datums);
+      }
+      if (onRowClick) {
+        onRowClick(event, datums);
+      }
+    };
 
     return (
       <StyledDataTable {...rest}>
@@ -114,11 +164,17 @@ class DataTable extends Component {
           size={size}
           sort={sort}
           widths={widths}
+          headerChecked={checked.length === propsData.length}
+          headerIndeterminate={
+            checked.length > 0 && checked.length < propsData.length
+          }
           onFiltering={this.onFiltering}
           onFilter={this.onFilter}
           onResize={resizeable ? this.onResize : undefined}
           onSort={sortable ? this.onSort : undefined}
           onToggle={this.onToggleGroups}
+          onSelectAll={this.onSelectAll}
+          selectable={selectable}
         />
         {groups ? (
           <GroupedBody
@@ -126,17 +182,24 @@ class DataTable extends Component {
             groupBy={groupBy}
             groups={groups}
             groupState={groupState}
+            checked={checked}
             primaryProperty={primaryProperty}
             onToggle={this.onToggleGroup}
+            selectable={selectable}
+            onRowClick={onRowClick}
+            onSelect={onClick}
           />
         ) : (
           <Body
             columns={columns}
             data={data}
             onMore={onMore}
+            checked={checked}
             primaryProperty={primaryProperty}
             size={size}
+            selectable={selectable}
             onRowClick={onRowClick}
+            onSelect={onClick}
           />
         )}
         {showFooter && (

@@ -8,6 +8,7 @@ import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { TableCell } from '../TableCell';
 import { Text } from '../Text';
+import { CheckBox } from '../CheckBox';
 
 import { Resizer } from './Resizer';
 import { Searcher } from './Searcher';
@@ -21,11 +22,14 @@ const Header = ({
   filters,
   groups,
   groupState,
+  headerChecked,
+  headerIndeterminate,
   onFilter,
   onFiltering,
   onResize,
   onSort,
   onToggle,
+  onSelectAll,
   sort,
   theme,
   widths,
@@ -43,6 +47,7 @@ const Header = ({
     background,
   }))(dataTableContextTheme);
   const { border, background, ...innerThemeProps } = dataTableContextTheme;
+
   return (
     <StyledDataTableHeader {...rest}>
       <StyledDataTableRow>
@@ -58,6 +63,26 @@ const Header = ({
         )}
 
         {columns.map(({ property, header, align, search, sortable }) => {
+          if (property === 'checkbox') {
+            return (
+              <TableCell
+                key={property}
+                scope="col"
+                style={
+                  widths && widths[property]
+                    ? { width: widths[property] }
+                    : undefined
+                }
+                align={align || 'start'}
+              >
+                <CheckBox
+                  checked={headerChecked}
+                  indeterminate={headerIndeterminate}
+                  onChange={event => onSelectAll(event)}
+                />
+              </TableCell>
+            );
+          }
           let content =
             typeof header === 'string' ? <Text>{header}</Text> : header;
           if (onSort && sortable !== false) {

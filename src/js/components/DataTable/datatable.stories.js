@@ -166,9 +166,18 @@ groupColumns[1] = { ...first };
 groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 
-const GroupedDataTable = () => (
+const GroupedDataTable = ({ selectable }) => (
   <Grommet theme={grommet}>
-    <DataTable columns={groupColumns} data={DATA} groupBy="location" sortable />
+    <Box gap="medium">
+      <DataTable
+        columns={groupColumns}
+        data={DATA}
+        groupBy="location"
+        sortable
+        selectable={selectable}
+        primaryProperty="name"
+      />
+    </Box>
   </Grommet>
 );
 
@@ -293,6 +302,27 @@ class ControlledDataTable extends Component {
   }
 }
 
+const SelectableDataTable = () => (
+  <Grommet theme={grommet}>
+    <Box align="center" pad="medium">
+      <DataTable
+        columns={[
+          ...controlledColumns,
+          {
+            property: 'checkbox',
+            align: 'end',
+          },
+        ].map(col => ({ ...col }))}
+        data={DATA}
+        size="medium"
+        sortable
+        selectable
+        primaryProperty="name"
+      />
+    </Box>
+  </Grommet>
+);
+
 storiesOf('DataTable', module)
   .add('Simple DataTable', () => <SimpleDataTable />)
   .add('Sized DataTable', () => <SizedDataTable />)
@@ -300,4 +330,6 @@ storiesOf('DataTable', module)
   .add('Grouped DataTable', () => <GroupedDataTable />)
   .add('Served DataTable', () => <ServedDataTable />)
   .add('Controlled DataTable', () => <ControlledDataTable />)
-  .add('Clickable rows DataTable', () => <ControlledDataTable rowClick />);
+  .add('Clickable rows DataTable', () => <ControlledDataTable rowClick />)
+  .add('Selectable rows DataTable', () => <SelectableDataTable />)
+  .add('Selectable grouped DataTable', () => <GroupedDataTable selectable />);

@@ -15,11 +15,17 @@ export const GroupedBody = ({
   onToggle,
   size,
   theme,
+  checked,
+  selectable,
+  onSelect,
   ...rest
 }) => (
   <StyledDataTableBody size={size} {...rest}>
     {groups.map(group => {
       const { expanded } = groupState[group.key];
+      const groupPrimaryProperties = group.data.map(
+        datum => datum[primaryProperty],
+      );
 
       let content = (
         <StyledDataTableRow key={group.key} size={size}>
@@ -35,6 +41,13 @@ export const GroupedBody = ({
               column={column}
               datum={group.datum}
               scope={column.property === groupBy ? 'row' : undefined}
+              isChecked={groupPrimaryProperties.every(item =>
+                checked.includes(item),
+              )}
+              isIndeterminate={groupPrimaryProperties.some(item =>
+                checked.includes(item),
+              )}
+              onClick={event => onSelect(event, group.data)}
             />
           ))}
         </StyledDataTableRow>
@@ -45,7 +58,12 @@ export const GroupedBody = ({
           <Fragment key={group.key}>
             {content}
             {group.data.map(datum => (
-              <StyledDataTableRow key={datum[primaryProperty]} size={size}>
+              <StyledDataTableRow
+                onClick={event => onSelect(event, datum)}
+                hoverIndicator={selectable}
+                key={datum[primaryProperty]}
+                size={size}
+              >
                 <TableCell verticalAlign="bottom">
                   {groupState[group.key].expanded}
                 </TableCell>
@@ -56,6 +74,8 @@ export const GroupedBody = ({
                     column={column}
                     datum={datum}
                     scope={column.primary ? 'row' : undefined}
+                    isChecked={checked.indexOf(datum[primaryProperty]) !== -1}
+                    onClick={event => onSelect(event, datum)}
                   />
                 ))}
               </StyledDataTableRow>
