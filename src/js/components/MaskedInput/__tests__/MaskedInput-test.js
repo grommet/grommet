@@ -87,7 +87,7 @@ describe('MaskedInput', () => {
         expect.objectContaining({ target: { value: 'aa!' } }),
       );
       done();
-    }, 300);
+    }, 500);
   });
 
   test('option via keyboard', done => {
