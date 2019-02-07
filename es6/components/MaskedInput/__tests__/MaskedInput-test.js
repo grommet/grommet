@@ -83,7 +83,7 @@ describe('MaskedInput', function () {
         }
       }));
       done();
-    }, 300);
+    }, 500);
   });
   test('option via keyboard', function (done) {
     var onChange = jest.fn();
