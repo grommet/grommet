@@ -233,13 +233,3 @@ Defaults to
     large: {},
   }
 ```
-
-**global.colors.text**
-
-The text color of the heading Expects `string | { dark: string, light: string }`.
-
-Defaults to
-
-```
-{ dark: '#f8f8f8', light: '#444444' }
-```

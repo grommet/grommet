@@ -629,6 +629,16 @@ Defaults to
 }
 ```
 
+**global.colors.text**
+
+The text color used inside the Box. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: '#f8f8f8', light: '#444444' }
+```
+
 **global.opacity.medium**
 
 The value used when background opacity is set to true. Expects `number`.
@@ -742,14 +752,4 @@ Defaults to
     },
     large: {},
   }
-```
-
-**global.colors.text**
-
-The text color used inside the Box. Expects `string | { dark: string, light: string }`.
-
-Defaults to
-
-```
-{ dark: '#f8f8f8', light: '#444444' }
 ```

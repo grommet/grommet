@@ -32,5 +32,3 @@ node
 ```
 button
 ```
-## Theme
-  

@@ -185,5 +185,3 @@ digital
 ```
 div,svg
 ```
-## Theme
-  

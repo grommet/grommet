@@ -1,5 +1,4 @@
 import { describe, PropTypes } from 'react-desc';
-import { themeDocUtils } from '../../utils';
 
 export const doc = Tab => {
   const DocumentedTab = describe(Tab)
@@ -20,8 +19,4 @@ export const doc = Tab => {
   };
 
   return DocumentedTab;
-};
-
-export const themeDoc = {
-  ...themeDocUtils.normalizeColor,
 };

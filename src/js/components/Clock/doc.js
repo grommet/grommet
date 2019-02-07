@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
+import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = Clock => {
   const DocumentedClock = describe(Clock)
@@ -51,8 +51,4 @@ export const doc = Clock => {
   };
 
   return DocumentedClock;
-};
-
-export const themeDoc = {
-  ...themeDocUtils.normalizeColor,
 };

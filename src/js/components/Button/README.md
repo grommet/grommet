@@ -411,13 +411,3 @@ Defaults to
 ```
 focus
 ```
-
-**global.colors.text**
-
-The text color of the label. Expects `string | { dark: string, light: string }`.
-
-Defaults to
-
-```
-{ dark: '#f8f8f8', light: '#444444' }
-```

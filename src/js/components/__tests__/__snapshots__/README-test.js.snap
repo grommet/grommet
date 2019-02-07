@@ -502,16 +502,6 @@ Defaults to
 \`\`\`
 focus
 \`\`\`
-
-**global.colors.text**
-
-The text color used inside the Anchor. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
-\`\`\`
 ",
   "Box": "## Box
 A container that lays out its contents in one direction. Box
@@ -1144,6 +1134,16 @@ Defaults to
 }
 \`\`\`
 
+**global.colors.text**
+
+The text color used inside the Box. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
+\`\`\`
+
 **global.opacity.medium**
 
 The value used when background opacity is set to true. Expects \`number\`.
@@ -1257,16 +1257,6 @@ Defaults to
     },
     large: {},
   }
-\`\`\`
-
-**global.colors.text**
-
-The text color used inside the Box. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 ",
   "Button": "## Button
@@ -1681,16 +1671,6 @@ Defaults to
 
 \`\`\`
 focus
-\`\`\`
-
-**global.colors.text**
-
-The text color of the label. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 ",
   "Calendar": "## Calendar
@@ -2886,9 +2866,7 @@ digital
 
 \`\`\`
 div,svg
-\`\`\`
-## Theme
-  ",
+\`\`\`",
   "Collapsible": "## Collapsible
 Expand or collapse animation.
 
@@ -4670,16 +4648,6 @@ Defaults to
     },
     large: {},
   }
-\`\`\`
-
-**global.colors.text**
-
-The text color of the heading Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 ",
   "Image": "## Image
@@ -7310,9 +7278,7 @@ node
 
 \`\`\`
 button
-\`\`\`
-## Theme
-  ",
+\`\`\`",
   "Table": "## Table
 A table of data organized in cells.
 

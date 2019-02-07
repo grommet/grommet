@@ -64,5 +64,4 @@ export const themeDoc = {
   ...themeDocUtils.breakpointStyle(
     'The possible breakpoints that could affect font-size and max-width',
   ),
-  ...themeDocUtils.normalizeColor('The text color of the heading'),
 };

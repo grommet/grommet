@@ -327,6 +327,11 @@ export const themeDoc = {
   },
 }`,
   },
+  'global.colors.text': {
+    description: 'The text color used inside the Box.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
+  },
   'global.opacity.medium': {
     description: 'The value used when background opacity is set to true.',
     type: 'number',
@@ -363,5 +368,4 @@ export const themeDoc = {
   ...themeDocUtils.breakpointStyle(
     'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
   ),
-  ...themeDocUtils.normalizeColor('The text color used inside the Box.'),
 };

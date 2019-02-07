@@ -158,5 +158,4 @@ export const themeDoc = {
     type: 'string | (props) => {}',
   },
   ...themeDocUtils.focusStyle,
-  ...themeDocUtils.normalizeColor('The text color of the label.'),
 };

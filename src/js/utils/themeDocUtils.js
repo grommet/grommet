@@ -86,11 +86,4 @@ export const themeDocUtils = {
   }`,
     },
   }),
-  normalizeColor: description => ({
-    'global.colors.text': {
-      description,
-      type: 'string | { dark: string, light: string }',
-      defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
-    },
-  }),
 };
