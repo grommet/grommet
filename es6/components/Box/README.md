@@ -602,72 +602,6 @@ Defaults to
 }
 ```
 
-**global.breakpoints**
-
-The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects `object`.
-
-Defaults to
-
-```
-{
-  small: {
-    value: '768px',
-    borderSize: {
-      xsmall: '1px',
-      small: '2px',
-      medium: '4px',
-      large: '6px',
-      xlarge: '12px',
-    },
-    edgeSize: {
-      none: '0px',
-      hair: '1px',
-      xxsmall: '2px',
-      xsmall: '3px',
-      small: '6px',
-      medium: '12px',
-      large: '24px',
-      xlarge: '48px',
-    },
-    size: {
-      xxsmall: '24px',
-      xsmall: '48px',
-      small: '96px',
-      medium: '192px',
-      large: '384px',
-      xlarge: '768px',
-      full: '100%',
-    },
-  },
-  medium: {
-    value: '1536px',
-  },
-  large: {},
-}
-```
-
-**global.edgeSize**
-
-The possible sizes for gap, margin, and pad. Expects `object`.
-
-Defaults to
-
-```
-{
-  edgeSize: {
-    none: '0px',
-    hair: '1px',
-    xxsmall: '3px',
-    xsmall: '6px',
-    small: '12px',
-    medium: '24px',
-    large: '48px',
-    xlarge: '96px',
-    responsiveBreakpoint: 'small',
-  },
-}
-```
-
 **global.elevation**
 
 The possible shadows in Box elevation. Expects `object`.
@@ -752,4 +686,70 @@ Defaults to
 
 ```
 small
+```
+
+**global.edgeSize**
+
+The possible sizes for any of gap, margin, and pad. Expects `object`.
+
+Defaults to
+
+```
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+```
+
+**global.breakpoints**
+
+The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects `object`.
+
+Defaults to
+
+```
+{
+    small: {
+      value: '768px',
+      borderSize: {
+        xsmall: '1px',
+        small: '2px',
+        medium: '4px',
+        large: '6px',
+        xlarge: '12px',
+      },
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '2px',
+        xsmall: '3px',
+        small: '6px',
+        medium: '12px',
+        large: '24px',
+        xlarge: '48px',
+      },
+      size: {
+        xxsmall: '24px',
+        xsmall: '48px',
+        small: '96px',
+        medium: '192px',
+        large: '384px',
+        xlarge: '768px',
+        full: '100%',
+      },
+    },
+    medium: {
+      value: '1536px',
+    },
+    large: {},
+  }
 ```

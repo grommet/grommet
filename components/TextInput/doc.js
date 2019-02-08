@@ -7,6 +7,8 @@ var _reactDesc = require("react-desc");
 
 var _utils = require("../../utils");
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 var doc = function doc(TextInput) {
   var DocumentedTextInput = (0, _reactDesc.describe)(TextInput).availableAt((0, _utils.getAvailableAtBadge)('TextInput')).description('A control to input a single line of text, with optional suggestions.').usage("import { TextInput } from 'grommet';\n<TextInput id='item' name='item' />").intrinsicElement('input');
   DocumentedTextInput.propTypes = {
@@ -52,27 +54,8 @@ var doc = function doc(TextInput) {
 };
 
 exports.doc = doc;
-var themeDoc = {
-  'global.colors.placeholder': {
-    description: 'The placeholder color used for TextInput.',
-    type: 'string',
-    defaultValue: '#AAAAAA'
-  },
-  'global.control.border.width': {
-    description: 'The border width.',
-    type: 'string',
-    defaultValue: '1px'
-  },
-  'global.input.padding': {
-    description: 'The padding of the text.',
-    type: 'string',
-    defaultValue: '12px'
-  },
-  'global.input.weight': {
-    description: 'The font weight of the text.',
-    type: 'number',
-    defaultValue: 600
-  },
+
+var themeDoc = _extends({
   'select.step': {
     description: 'How many suggestions to render at a time.',
     type: 'number',
@@ -98,5 +81,6 @@ var themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined
   }
-};
+}, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.placeholderStyle, _utils.themeDocUtils.inputStyle);
+
 exports.themeDoc = themeDoc;

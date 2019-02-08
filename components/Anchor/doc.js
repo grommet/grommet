@@ -26,12 +26,8 @@ var doc = function doc(Anchor) {
 };
 
 exports.doc = doc;
-var themeDoc = {
-  'global.focus.border.color': {
-    description: 'The color around the Anchor when in focus.',
-    type: 'string | { dark: string, light: string }',
-    defaultValue: 'focus'
-  },
+
+var themeDoc = _extends({
   'anchor.color': {
     description: 'The color of the label text and icon strokes.',
     type: 'string | { dark: string, light: string }',
@@ -67,5 +63,6 @@ var themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined
   }
-};
+}, _utils.themeDocUtils.focusStyle);
+
 exports.themeDoc = themeDoc;

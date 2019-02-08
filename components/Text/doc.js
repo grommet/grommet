@@ -24,16 +24,12 @@ var doc = function doc(Text) {
 };
 
 exports.doc = doc;
-var themeDoc = {
+
+var themeDoc = _extends({
   color: {
     description: 'The text color used for Text.',
     type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }"
-  },
-  'global.edgeSize': {
-    description: 'The possible sizes for margin.',
-    type: 'object',
-    defaultValue: "{\n        none: '0px',\n        hair: '1px',\n        xxsmall: '3px',\n        xsmall: '6px',\n        small: '12px',\n        medium: '24px',\n        large: '48px',\n        xlarge: '96px',\n        responsiveBreakpoint: 'small',\n    }"
   },
   text: {
     description: "The possible sizes of the text in terms of its font-size and line-height.",
@@ -45,5 +41,6 @@ var themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined
   }
-};
+}, _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
+
 exports.themeDoc = themeDoc;

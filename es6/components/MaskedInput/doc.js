@@ -1,5 +1,7 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 export var doc = function doc(MaskedInput) {
   var DocumentedMaskedInput = describe(MaskedInput).availableAt(getAvailableAtBadge('MaskedInput')).description('An input field with formalized syntax.').usage("import { MaskedInput } from 'grommet';\n<MaskedInput id='item' name='item' />").intrinsicElement('input');
   DocumentedMaskedInput.propTypes = {
@@ -19,3 +21,4 @@ export var doc = function doc(MaskedInput) {
   };
   return DocumentedMaskedInput;
 };
+export var themeDoc = _extends({}, themeDocUtils.focusStyle, themeDocUtils.placeholderStyle, themeDocUtils.inputStyle);

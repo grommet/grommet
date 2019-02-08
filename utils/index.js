@@ -85,3 +85,10 @@ Object.keys(_throttle).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   exports[key] = _throttle[key];
 });
+
+var _themeDocUtils = require("./themeDocUtils");
+
+Object.keys(_themeDocUtils).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  exports[key] = _themeDocUtils[key];
+});

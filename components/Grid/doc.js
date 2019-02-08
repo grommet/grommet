@@ -42,12 +42,8 @@ var doc = function doc(Grid) {
 };
 
 exports.doc = doc;
-var themeDoc = {
-  'global.edgeSize': {
-    description: 'The possible sizes for the grid gap.',
-    type: 'object',
-    defaultValue: "{\n      edgeSize: {\n        none: '0px',\n        hair: '1px',\n        xxsmall: '3px',\n        xsmall: '6px',\n        small: '12px',\n        medium: '24px',\n        large: '48px',\n        xlarge: '96px',\n        responsiveBreakpoint: 'small',\n      },\n    }"
-  },
+
+var themeDoc = _extends({
   'global.size': {
     description: 'The possible sizes for row and column.',
     type: 'object',
@@ -58,5 +54,6 @@ var themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined
   }
-};
+}, _utils.themeDocUtils.edgeStyle('The possible sizes for the grid gap.'));
+
 exports.themeDoc = themeDoc;

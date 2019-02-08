@@ -7,6 +7,8 @@ var _reactDesc = require("react-desc");
 
 var _utils = require("../../utils");
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 
 var doc = function doc(Layer) {
@@ -33,12 +35,8 @@ var doc = function doc(Layer) {
 };
 
 exports.doc = doc;
-var themeDoc = {
-  'global.breakpoints': {
-    description: 'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
-    type: 'object',
-    defaultValue: "{\n      small: {\n        value: '768px',\n        borderSize: {\n          xsmall: '1px',\n          small: '2px',\n          medium: '4px',\n          large: '6px',\n          xlarge: '12px',\n        },\n        edgeSize: {\n          none: '0px',\n          hair: '1px',\n          xxsmall: '2px',\n          xsmall: '3px',\n          small: '6px',\n          medium: '12px',\n          large: '24px',\n          xlarge: '48px',\n        },\n        size: {\n          xxsmall: '24px',\n          xsmall: '48px',\n          small: '96px',\n          medium: '192px',\n          large: '384px',\n          xlarge: '768px',\n          full: '100%',\n        },\n      },\n      medium: {\n        value: '1536px',\n      },\n      large: {},\n      }"
-  },
+
+var themeDoc = _extends({
   'global.size.xxsmall': {
     description: 'The minimal height of the Layer.',
     type: 'string',
@@ -74,5 +72,6 @@ var themeDoc = {
     type: 'number',
     defaultValue: '10'
   }
-};
+}, _utils.themeDocUtils.breakpointStyle('The possible breakpoints that could affect border, direction, gap, margin, pad, and round.'));
+
 exports.themeDoc = themeDoc;

@@ -1,5 +1,7 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 export var doc = function doc(TextArea) {
   var DocumentedTextArea = describe(TextArea).availableAt(getAvailableAtBadge('TextArea')).description('A control to input multiple lines of text.').usage("import { TextArea } from 'grommet';\n<TextArea id='item' name='item' />").intrinsicElement('textarea');
   DocumentedTextArea.propTypes = {
@@ -15,35 +17,10 @@ export var doc = function doc(TextArea) {
   };
   return DocumentedTextArea;
 };
-export var themeDoc = {
-  'global.colors.placeholder': {
-    description: 'The placeholder color used for TextArea.',
-    type: 'string',
-    defaultValue: '#AAAAAA'
-  },
-  'global.control.border.width': {
-    description: 'The border width.',
-    type: 'string',
-    defaultValue: '1px'
-  },
-  'global.input.weight': {
-    description: 'The font weight of the text entered.',
-    type: 'number',
-    defaultValue: 600
-  },
-  'global.focus.border.color': {
-    description: "The color of the border when component is focused.",
-    type: 'string | { dark: string, light: string }',
-    defaultValue: 'focus'
-  },
-  'global.input.padding': {
-    description: 'The padding of the text.',
-    type: 'string',
-    defaultValue: '12px'
-  },
+export var themeDoc = _extends({
   'textArea.extend': {
     description: 'Any additional style for Text.',
     type: 'string | (props) => {}',
     defaultValue: undefined
   }
-};
+}, themeDocUtils.focusStyle, themeDocUtils.placeholderStyle, themeDocUtils.inputStyle);

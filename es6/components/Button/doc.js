@@ -1,7 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
+import { colorPropType, genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
 export var doc = function doc(Button) {
   var DocumentedButton = describe(Button).availableAt(getAvailableAtBadge('Button')).description('A button.').usage("import { Button } from 'grommet';\n<Button primary={true} label='Label' />").intrinsicElement('button');
   DocumentedButton.propTypes = _extends({}, genericProps, {
@@ -25,7 +25,7 @@ export var doc = function doc(Button) {
   });
   return DocumentedButton;
 };
-export var themeDoc = {
+export var themeDoc = _extends({
   'global.hover.color': {
     description: 'The background color when hovering.',
     type: 'string',
@@ -97,4 +97,4 @@ export var themeDoc = {
     description: 'Any additional style for the Button.',
     type: 'string | (props) => {}'
   }
-};
+}, themeDocUtils.focusStyle);

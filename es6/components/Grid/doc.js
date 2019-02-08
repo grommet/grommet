@@ -1,7 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
 var fixedSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 var sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'full', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'flex', 'auto'];
 var edgeSizes = ['small', 'medium', 'large', 'none'];
@@ -32,12 +32,7 @@ export var doc = function doc(Grid) {
   });
   return DocumentedGrid;
 };
-export var themeDoc = {
-  'global.edgeSize': {
-    description: 'The possible sizes for the grid gap.',
-    type: 'object',
-    defaultValue: "{\n      edgeSize: {\n        none: '0px',\n        hair: '1px',\n        xxsmall: '3px',\n        xsmall: '6px',\n        small: '12px',\n        medium: '24px',\n        large: '48px',\n        xlarge: '96px',\n        responsiveBreakpoint: 'small',\n      },\n    }"
-  },
+export var themeDoc = _extends({
   'global.size': {
     description: 'The possible sizes for row and column.',
     type: 'object',
@@ -48,4 +43,4 @@ export var themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined
   }
-};
+}, themeDocUtils.edgeStyle('The possible sizes for the grid gap.'));

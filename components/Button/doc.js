@@ -34,7 +34,8 @@ var doc = function doc(Button) {
 };
 
 exports.doc = doc;
-var themeDoc = {
+
+var themeDoc = _extends({
   'global.hover.color': {
     description: 'The background color when hovering.',
     type: 'string',
@@ -106,5 +107,6 @@ var themeDoc = {
     description: 'Any additional style for the Button.',
     type: 'string | (props) => {}'
   }
-};
+}, _utils.themeDocUtils.focusStyle);
+
 exports.themeDoc = themeDoc;

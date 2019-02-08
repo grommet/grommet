@@ -21,17 +21,8 @@ var doc = function doc(Paragraph) {
 };
 
 exports.doc = doc;
-var themeDoc = {
-  'global.colors.text': {
-    description: 'The text color used inside the Paragraph.',
-    type: 'string | { dark: string, light: string }',
-    defaultValue: "{ dark: '#f8f8f8', light: '#444444' }"
-  },
-  'global.edgeSize': {
-    description: 'The possible sizes for margin.',
-    type: 'object',
-    defaultValue: "{\n        none: '0px',\n        hair: '1px',\n        xxsmall: '3px',\n        xsmall: '6px',\n        small: '12px',\n        medium: '24px',\n        large: '48px',\n        xlarge: '96px',\n        responsiveBreakpoint: 'small',\n    }"
-  },
+
+var themeDoc = _extends({
   paragraph: {
     description: "The possible sizes of the paragraph in terms of its max-width, font-size and line-height.",
     type: 'object',
@@ -47,5 +38,6 @@ var themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined
   }
-};
+}, _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
+
 exports.themeDoc = themeDoc;

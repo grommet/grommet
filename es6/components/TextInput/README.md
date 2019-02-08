@@ -194,46 +194,6 @@ input
 ```
 ## Theme
   
-**global.colors.placeholder**
-
-The placeholder color used for TextInput. Expects `string`.
-
-Defaults to
-
-```
-#AAAAAA
-```
-
-**global.control.border.width**
-
-The border width. Expects `string`.
-
-Defaults to
-
-```
-1px
-```
-
-**global.input.padding**
-
-The padding of the text. Expects `string`.
-
-Defaults to
-
-```
-12px
-```
-
-**global.input.weight**
-
-The font weight of the text. Expects `number`.
-
-Defaults to
-
-```
-600
-```
-
 **select.step**
 
 How many suggestions to render at a time. Expects `number`.
@@ -307,4 +267,44 @@ Defaults to
 
 ```
 undefined
+```
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
+```
+
+**global.colors.placeholder**
+
+The placeholder color used for the component. Expects `string`.
+
+Defaults to
+
+```
+#AAAAAA
+```
+
+**global.input.weight**
+
+The font weight of the text entered. Expects `number`.
+
+Defaults to
+
+```
+600
+```
+
+**global.input.padding**
+
+The padding of the text. Expects `string`.
+
+Defaults to
+
+```
+12px
 ```

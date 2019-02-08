@@ -77,3 +77,14 @@ string
 ```
 input
 ```
+## Theme
+  
+**global.focus.border.color**
+
+The color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
+```

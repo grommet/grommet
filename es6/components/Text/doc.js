@@ -1,7 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import { describe, PropTypes } from 'react-desc';
-import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
+import { colorPropType, genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
 export var doc = function doc(Text) {
   var DocumentedText = describe(Text).availableAt(getAvailableAtBadge('Text')).description('Arbitrary text.').usage("import { Text } from 'grommet';\n<Text />").intrinsicElement('span');
   DocumentedText.propTypes = _extends({}, genericProps, {
@@ -15,16 +15,11 @@ export var doc = function doc(Text) {
   });
   return DocumentedText;
 };
-export var themeDoc = {
+export var themeDoc = _extends({
   color: {
     description: 'The text color used for Text.',
     type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }"
-  },
-  'global.edgeSize': {
-    description: 'The possible sizes for margin.',
-    type: 'object',
-    defaultValue: "{\n        none: '0px',\n        hair: '1px',\n        xxsmall: '3px',\n        xsmall: '6px',\n        small: '12px',\n        medium: '24px',\n        large: '48px',\n        xlarge: '96px',\n        responsiveBreakpoint: 'small',\n    }"
   },
   text: {
     description: "The possible sizes of the text in terms of its font-size and line-height.",
@@ -36,4 +31,4 @@ export var themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined
   }
-};
+}, themeDocUtils.edgeStyle('The possible sizes for margin.'));

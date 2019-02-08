@@ -1,5 +1,7 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 export var doc = function doc(RangeInput) {
   var DocumentedRangeInput = describe(RangeInput).availableAt(getAvailableAtBadge('RangeInput')).description('A slider control to input a value within a fixed range.').usage("import { RangeInput } from 'grommet';\n<RangeInput />").intrinsicElement('input');
   DocumentedRangeInput.propTypes = {
@@ -13,3 +15,4 @@ export var doc = function doc(RangeInput) {
   };
   return DocumentedRangeInput;
 };
+export var themeDoc = _extends({}, themeDocUtils.focusStyle);

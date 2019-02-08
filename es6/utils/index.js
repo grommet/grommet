@@ -10,3 +10,4 @@ export * from './object';
 export * from './responsive';
 export * from './router';
 export * from './throttle';
+export * from './themeDocUtils';

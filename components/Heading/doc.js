@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.doc = void 0;
+exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -23,3 +23,7 @@ var doc = function doc(Heading) {
 };
 
 exports.doc = doc;
+
+var themeDoc = _extends({}, _utils.themeDocUtils.breakpointStyle('The possible breakpoints that could affect font-size and max-width'));
+
+exports.themeDoc = themeDoc;
