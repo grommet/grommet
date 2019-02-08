@@ -1,6 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
+import {
+  colorPropType,
+  genericProps,
+  getAvailableAtBadge,
+  themeDocUtils,
+} from '../../utils';
 
 export const doc = Anchor => {
   const DocumentedAnchor = describe(Anchor)
@@ -61,11 +66,6 @@ when it is not contained in a 'Heading', 'Paragraph', or 'Text'.`,
 };
 
 export const themeDoc = {
-  'global.focus.border.color': {
-    description: 'The color around the Anchor when in focus.',
-    type: 'string | { dark: string, light: string }',
-    defaultValue: 'focus',
-  },
   'anchor.color': {
     description: 'The color of the label text and icon strokes.',
     type: 'string | { dark: string, light: string }',
@@ -103,4 +103,5 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  ...themeDocUtils.focusStyle,
 };

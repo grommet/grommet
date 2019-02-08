@@ -5,16 +5,17 @@ export interface DataTableProps {
   alignSelf?: "start" | "center" | "end" | "stretch";
   gridArea?: string;
   margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
-  columns?: {align?: "center" | "start" | "end",aggregate?: "avg" | "max" | "min" | "sum",footer?: React.ReactNode | {aggregate?: boolean},header?: string | React.ReactNode | {aggregate?: boolean},property: string,render?: (...args: any[]) => any,search?: boolean}[];
+  columns?: {align?: "center" | "start" | "end",aggregate?: "avg" | "max" | "min" | "sum",footer?: React.ReactNode | {aggregate?: boolean},header?: string | React.ReactNode | {aggregate?: boolean},primary?: boolean,property: string,render?: ((...args: any[]) => any),search?: boolean,sortable?: boolean}[];
   data?: {}[];
   groupBy?: string;
-  onMore?: (...args: any[]) => any;
-  onSearch?: (...args: any[]) => any;
+  onMore?: ((...args: any[]) => any);
+  onSearch?: ((...args: any[]) => any);
+  primaryKey?: string;
   resizeable?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
   sortable?: boolean;
 }
 
-declare const DataTable: React.ComponentType<DataTableProps>;
+declare const DataTable: React.ComponentType<DataTableProps & JSX.IntrinsicElements['table']>;
 
 export { DataTable };

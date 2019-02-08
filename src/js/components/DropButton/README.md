@@ -1,7 +1,8 @@
 ## DropButton
-A Button that when clicked will a Drop with the specified 'dropContent'.
-      When opened, the drop will control the focus so that the contents behind
-      it are not focusable. All properties of Button can be passed through.
+A Button that controls a Drop. When opened, the Drop will contain
+      whatever is specified via `dropContent`. The Drop will control the focus
+      so that the contents behind it are not focusable. All properties of
+      Button can be passed through.
       
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DropButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js)
@@ -185,3 +186,8 @@ Whether the drop should be open or not. Setting this property does not
 boolean
 ```
   
+## Intrinsic element
+
+```
+button
+```

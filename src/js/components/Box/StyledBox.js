@@ -99,9 +99,17 @@ const FLEX_MAP = {
   shrink: '0 1',
 };
 
+const flexGrowShrinkProp = flex => {
+  if (typeof flex === 'boolean' || typeof flex === 'string') {
+    return FLEX_MAP[flex];
+  }
+
+  return `${flex.grow ? flex.grow : 0} ${flex.shrink ? flex.shrink : 0}`;
+};
+
 const flexStyle = css`
   flex: ${props =>
-    `${FLEX_MAP[props.flex]}${
+    `${flexGrowShrinkProp(props.flex)}${
       props.flex !== true && !props.basis ? ' auto' : ''
     }`};
 `;
@@ -123,9 +131,11 @@ const fillStyle = fillProp => {
 };
 
 const JUSTIFY_MAP = {
+  around: 'space-around',
   between: 'space-between',
   center: 'center',
   end: 'flex-end',
+  evenly: 'space-evenly',
   start: 'flex-start',
 };
 
@@ -139,8 +149,9 @@ const borderStyle = (data, responsive, theme) => {
   const styles = [];
   const color = normalizeColor(data.color || 'border', theme);
   const borderSize = data.size || 'xsmall';
+  const style = data.style || 'solid';
   const side = typeof data === 'string' ? data : data.side || 'all';
-  const value = `solid ${theme.global.borderSize[borderSize] ||
+  const value = `${style} ${theme.global.borderSize[borderSize] ||
     borderSize} ${color}`;
   const breakpoint =
     theme.box.responsiveBreakpoint &&
@@ -148,7 +159,7 @@ const borderStyle = (data, responsive, theme) => {
   const responsiveValue =
     breakpoint &&
     (breakpoint.borderSize[borderSize] || borderSize) &&
-    `solid ${breakpoint.borderSize[borderSize] || borderSize} ${color}`;
+    `${style} ${breakpoint.borderSize[borderSize] || borderSize} ${color}`;
   if (
     side === 'top' ||
     side === 'bottom' ||
@@ -222,11 +233,13 @@ const roundStyle = (data, responsive, theme) => {
   const styles = [];
   if (typeof data === 'object') {
     const size =
-      ROUND_MAP[data.size] || theme.global.edgeSize[data.size || 'medium'];
+      ROUND_MAP[data.size] ||
+      theme.global.edgeSize[data.size || 'medium'] ||
+      data.size;
     const responsiveSize =
       breakpoint &&
       breakpoint.edgeSize[data.size] &&
-      breakpoint.edgeSize[data.size];
+      (breakpoint.edgeSize[data.size] || data.size);
     if (data.corner === 'top') {
       styles.push(css`
         border-top-left-radius: ${size};
@@ -573,14 +586,14 @@ const gapStyle = (directionProp, gap, responsive, theme) => {
   if (directionProp === 'column') {
     styles.push(
       css`
-        height: ${theme.global.edgeSize[gap]};
+        height: ${theme.global.edgeSize[gap] || gap};
       `,
     );
     if (responsiveSize) {
       styles.push(breakpointStyle(breakpoint, `height: ${responsiveSize};`));
     }
   } else {
-    styles.push(`width: ${theme.global.edgeSize[gap]};`);
+    styles.push(`width: ${theme.global.edgeSize[gap] || gap};`);
     if (responsive && directionProp === 'row-responsive') {
       styles.push(
         breakpointStyle(

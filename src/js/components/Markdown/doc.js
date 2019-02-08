@@ -1,4 +1,4 @@
-import { describe } from 'react-desc';
+import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
@@ -9,11 +9,16 @@ export const doc = Markdown => {
     .usage(
       `import { Markdown } from 'grommet';
       <Markdown>{content}</Markdown>`,
-    );
+    )
+    .intrinsicElement('div');
 
-  // DocumentedMarkdown.propTypes = {
-  //   content: PropTypes.string.description('The markdown text to render.'),
-  // };
+  DocumentedMarkdown.propTypes = {
+    components: PropTypes.shape({}).description(
+      `Custom components and props to override html elements such as 'img'
+      or 'pre'. By default 'a', 'p', 'img', and table elements are overriden
+      with grommet components`,
+    ),
+  };
 
   return DocumentedMarkdown;
 };

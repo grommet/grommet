@@ -1,5 +1,5 @@
 ## TextArea
-A textarea.
+A control to input multiple lines of text.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=TextArea&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textarea&module=%2Fsrc%2FTextArea.js)
 ## Usage
@@ -75,6 +75,16 @@ What text to put in the textarea.
 ```
 string
 ```
+
+**resize**
+
+Whether user is allowed to resize the textarea. Defaults to `true`.
+
+```
+vertical
+horizontal
+boolean
+```
   
 ## Intrinsic element
 
@@ -83,24 +93,34 @@ textarea
 ```
 ## Theme
   
+**textArea.extend**
+
+Any additional style for Text. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
+```
+
 **global.colors.placeholder**
 
-The placeholder color used for TextArea. Expects `string`.
+The placeholder color used for the component. Expects `string`.
 
 Defaults to
 
 ```
 #AAAAAA
-```
-
-**global.control.border.width**
-
-The border width. Expects `string`.
-
-Defaults to
-
-```
-1px
 ```
 
 **global.input.weight**
@@ -113,16 +133,6 @@ Defaults to
 600
 ```
 
-**global.focus.border.color**
-
-The color of the border when component is focused. Expects `string | { dark: string, light: string }`.
-
-Defaults to
-
-```
-focus
-```
-
 **global.input.padding**
 
 The padding of the text. Expects `string`.
@@ -131,14 +141,4 @@ Defaults to
 
 ```
 12px
-```
-
-**textArea.extend**
-
-Any additional style for Text. Expects `string | (props) => {}`.
-
-Defaults to
-
-```
-undefined
 ```

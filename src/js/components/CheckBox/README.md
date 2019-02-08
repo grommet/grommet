@@ -87,3 +87,8 @@ NOTE: This can only be used with non-toggle components
 boolean
 ```
   
+## Intrinsic element
+
+```
+input
+```

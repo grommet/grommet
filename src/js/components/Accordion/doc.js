@@ -12,7 +12,8 @@ export const doc = Accordion => {
   <AccordionPanel label='Panel 1'>...</AccordionPanel>
   <AccordionPanel label='Panek 2'>...</AccordionPanel>
 </Accordion>`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedAccordion.propTypes = {
     ...genericProps,

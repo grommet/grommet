@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 export const doc = MaskedInput => {
   const DocumentedMaskedInput = describe(MaskedInput)
@@ -9,13 +9,17 @@ export const doc = MaskedInput => {
     .usage(
       `import { MaskedInput } from 'grommet';
 <MaskedInput id='item' name='item' />`,
-    );
+    )
+    .intrinsicElement('input');
 
   DocumentedMaskedInput.propTypes = {
     id: PropTypes.string.description('The id attribute of the input.'),
     name: PropTypes.string.description('The name attribute of the input.'),
     onChange: PropTypes.func.description(
       `Function that will be called when the user types or pastes text.`,
+    ),
+    onBlur: PropTypes.func.description(
+      `Function that will be called when the user leaves the field.`,
     ),
     mask: PropTypes.arrayOf(
       PropTypes.shape({
@@ -43,4 +47,10 @@ export const doc = MaskedInput => {
   };
 
   return DocumentedMaskedInput;
+};
+
+export const themeDoc = {
+  ...themeDocUtils.focusStyle,
+  ...themeDocUtils.placeholderStyle,
+  ...themeDocUtils.inputStyle,
 };

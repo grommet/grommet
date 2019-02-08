@@ -1,6 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
+import {
+  colorPropType,
+  genericProps,
+  getAvailableAtBadge,
+  themeDocUtils,
+} from '../../utils';
 
 export const doc = Text => {
   const DocumentedText = describe(Text)
@@ -64,21 +69,6 @@ export const themeDoc = {
     type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
   },
-  'global.edgeSize': {
-    description: 'The possible sizes for margin.',
-    type: 'object',
-    defaultValue: `{
-        none: '0px',
-        hair: '1px',
-        xxsmall: '3px',
-        xsmall: '6px',
-        small: '12px',
-        medium: '24px',
-        large: '48px',
-        xlarge: '96px',
-        responsiveBreakpoint: 'small',
-    }`,
-  },
   text: {
     description: `The possible sizes of the text in terms of its font-size and line-height.`,
     type: 'object',
@@ -114,4 +104,5 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
 };

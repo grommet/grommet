@@ -1,15 +1,16 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 export const doc = RangeInput => {
   const DocumentedRangeInput = describe(RangeInput)
     .availableAt(getAvailableAtBadge('RangeInput'))
-    .description('A range input with custom styles.')
+    .description('A slider control to input a value within a fixed range.')
     .usage(
       `import { RangeInput } from 'grommet';
 <RangeInput />`,
-    );
+    )
+    .intrinsicElement('input');
 
   DocumentedRangeInput.propTypes = {
     id: PropTypes.string.description('The id attribute of the range input.'),
@@ -35,4 +36,8 @@ export const doc = RangeInput => {
   };
 
   return DocumentedRangeInput;
+};
+
+export const themeDoc = {
+  ...themeDocUtils.focusStyle,
 };

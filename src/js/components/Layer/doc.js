@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large'];
 
@@ -8,15 +8,20 @@ export const doc = Layer => {
   const DocumentedLayer = describe(Layer)
     .availableAt(getAvailableAtBadge('Layer'))
     .description(
-      `A modal overlay. It is the caller's responsibility to provide a control for
-      the user to close the layer.`,
+      `An overlay. Layer is typically modal and anchored to an edge, corner, or
+      center of the window. It is the caller's responsibility to provide a
+      control for the user to close the layer.`,
     )
     .usage(
       `import { Layer } from 'grommet';
 <Layer />`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedLayer.propTypes = {
+    animate: PropTypes.bool
+      .description('Animation transition of the Layer content when it opens.')
+      .defaultValue(true),
     full: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.oneOf(['vertical', 'horizontal']),
@@ -97,4 +102,46 @@ particular side of the layer`,
   };
 
   return DocumentedLayer;
+};
+
+export const themeDoc = {
+  'global.size.xxsmall': {
+    description: 'The minimal height of the Layer.',
+    type: 'string',
+    defaultValue: '48px',
+  },
+  'layer.background': {
+    description: 'The background color of the Layer Container.',
+    type: 'string',
+    defaultValue: 'white',
+  },
+  'layer.container.zIndex': {
+    description: 'The stack order of Layer Container.',
+    type: 'number',
+    defaultValue: '15',
+  },
+  'layer.extend': {
+    description: 'Any additional style for Layer.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'layer.overlay.background': {
+    description: 'The background of the Layer overlay.',
+    type: 'string',
+    defaultValue: 'rgba(0, 0, 0, 0.5)',
+  },
+  'layer.responsiveBreakpoint': {
+    description:
+      'The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round.',
+    type: 'string',
+    defaultValue: 'small',
+  },
+  'layer.zIndex': {
+    description: 'The stack order of Layer.',
+    type: 'number',
+    defaultValue: '10',
+  },
+  ...themeDocUtils.breakpointStyle(
+    'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
+  ),
 };

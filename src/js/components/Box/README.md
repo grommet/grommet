@@ -1,5 +1,7 @@
 ## Box
-A flexible box that lays out its contents along a single direction.
+A container that lays out its contents in one direction. Box
+      provides CSS flexbox capabilities for layout, as well as general
+      styling of things like background color, border, and animation.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Box&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=box&module=%2Fsrc%2FBox.js)
 ## Usage
@@ -286,7 +288,17 @@ all
     medium
     large
     xlarge
-    string
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
 }
 ```
 
@@ -317,12 +329,16 @@ string
 
 **flex**
 
-Whether flex-grow and/or flex-shrink is true.
+Whether flex-grow and/or flex-shrink is true and at a desired factor.
 
 ```
 grow
 shrink
 boolean
+{
+  grow: number,
+  shrink: number
+}
 ```
 
 **fill**
@@ -371,6 +387,8 @@ How to align the contents along the main axis.
 start
 center
 between
+around
+evenly
 end
 ```
 
@@ -546,6 +564,11 @@ Whether children can wrap if they
 boolean
 ```
   
+## Intrinsic element
+
+```
+div
+```
 ## Theme
   
 **global.animation**
@@ -576,72 +599,6 @@ Defaults to
   medium: '4px',
   large: '12px',
   xlarge: '24px,
-}
-```
-
-**global.breakpoints**
-
-The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects `object`.
-
-Defaults to
-
-```
-{
-  small: {
-    value: '768px',
-    borderSize: {
-      xsmall: '1px',
-      small: '2px',
-      medium: '4px',
-      large: '6px',
-      xlarge: '12px',
-    },
-    edgeSize: {
-      none: '0px',
-      hair: '1px',
-      xxsmall: '2px',
-      xsmall: '3px',
-      small: '6px',
-      medium: '12px',
-      large: '24px',
-      xlarge: '48px',
-    },
-    size: {
-      xxsmall: '24px',
-      xsmall: '48px',
-      small: '96px',
-      medium: '192px',
-      large: '384px',
-      xlarge: '768px',
-      full: '100%',
-    },
-  },
-  medium: {
-    value: '1536px',
-  },
-  large: {},
-}
-```
-
-**global.edgeSize**
-
-The possible sizes for gap, margin, and pad. Expects `object`.
-
-Defaults to
-
-```
-{
-  edgeSize: {
-    none: '0px',
-    hair: '1px',
-    xxsmall: '3px',
-    xsmall: '6px',
-    small: '12px',
-    medium: '24px',
-    large: '48px',
-    xlarge: '96px',
-    responsiveBreakpoint: 'small',
-  },
 }
 ```
 
@@ -729,4 +686,70 @@ Defaults to
 
 ```
 small
+```
+
+**global.edgeSize**
+
+The possible sizes for any of gap, margin, and pad. Expects `object`.
+
+Defaults to
+
+```
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+```
+
+**global.breakpoints**
+
+The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects `object`.
+
+Defaults to
+
+```
+{
+    small: {
+      value: '768px',
+      borderSize: {
+        xsmall: '1px',
+        small: '2px',
+        medium: '4px',
+        large: '6px',
+        xlarge: '12px',
+      },
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '2px',
+        xsmall: '3px',
+        small: '6px',
+        medium: '12px',
+        large: '24px',
+        xlarge: '48px',
+      },
+      size: {
+        xxsmall: '24px',
+        xsmall: '48px',
+        small: '96px',
+        medium: '192px',
+        large: '384px',
+        xlarge: '768px',
+        full: '100%',
+      },
+    },
+    medium: {
+      value: '1536px',
+    },
+    large: {},
+  }
 ```

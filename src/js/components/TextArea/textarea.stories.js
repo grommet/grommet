@@ -43,5 +43,6 @@ class FillTextArea extends Component {
 }
 
 storiesOf('TextArea', module)
-  .add('Simple', () => <SimpleTextArea />)
-  .add('Fill', () => <FillTextArea />);
+  .add('Simple', () => <SimpleTextArea resize />)
+  .add('Fill', () => <FillTextArea />)
+  .add('Non resizable', () => <SimpleTextArea resize={false} />);

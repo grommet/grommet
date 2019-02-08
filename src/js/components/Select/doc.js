@@ -5,11 +5,13 @@ import { genericProps, getAvailableAtBadge } from '../../utils';
 export const doc = Select => {
   const DocumentedSelect = describe(Select)
     .availableAt(getAvailableAtBadge('Select'))
-    .description('An select-like field with optional search capability.')
+    .description('A control to select a value, with optional search.')
     .usage(
       `import { Select } from 'grommet';
 <Select />`,
     );
+  // We don't include svg due to a collision on the values property
+  // .intrinsicElement('select');
 
   DocumentedSelect.propTypes = {
     ...genericProps,
@@ -63,6 +65,10 @@ export const doc = Select => {
         top: 'bottom',
         left: 'left',
       }),
+    dropHeight: PropTypes.oneOfType([
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description('The height of the drop container.'),
     dropTarget: PropTypes.object.description(
       `Target where the options drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be
@@ -132,10 +138,6 @@ export const doc = Select => {
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ]).description('The size of the select.'),
-    dropHeight: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-      PropTypes.string,
-    ]).description('The height of the drop container.'),
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.element, // deprecated, use valueLabel

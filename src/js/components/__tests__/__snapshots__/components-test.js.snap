@@ -5,6 +5,7 @@ Object {
   "Accordion": [Function],
   "AccordionPanel": Object {
     "description": "An Accordion panel.",
+    "intrinsicElement": "div",
     "name": "AccordionPanel",
     "properties": Array [
       Object {
@@ -196,7 +197,10 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=box&module=%2Fsrc%2FBox.js",
       },
     ],
-    "description": "A flexible box that lays out its contents along a single direction.",
+    "description": "A container that lays out its contents in one direction. Box
+      provides CSS flexbox capabilities for layout, as well as general
+      styling of things like background color, border, and animation.",
+    "intrinsicElement": "div",
     "name": "Box",
     "properties": Array [
       Object {
@@ -446,7 +450,17 @@ all
     medium
     large
     xlarge
-    string
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
 }",
         "name": "border",
       },
@@ -472,10 +486,14 @@ string",
         "name": "elevation",
       },
       Object {
-        "description": "Whether flex-grow and/or flex-shrink is true.",
+        "description": "Whether flex-grow and/or flex-shrink is true and at a desired factor.",
         "format": "grow
 shrink
-boolean",
+boolean
+{
+  grow: number,
+  shrink: number
+}",
         "name": "flex",
       },
       Object {
@@ -512,6 +530,8 @@ string",
         "format": "start
 center
 between
+around
+evenly
 end",
         "name": "justify",
       },
@@ -685,7 +705,7 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=button&module=%2Fsrc%2FButton.js",
       },
     ],
-    "description": "A button. We have a separate component from the browser base so we can style it.",
+    "description": "A button.",
     "intrinsicElement": "button",
     "name": "Button",
     "properties": Array [
@@ -892,9 +912,10 @@ submit",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=calendar&module=%2Fsrc%2FCalendar.js",
       },
     ],
-    "description": "Calendar of days in months.
+    "description": "A calendar of days displayed by month.
       It can be used to select a single date, a range of dates, or multiple
       individual dates.",
+    "intrinsicElement": "div",
     "name": "Calendar",
     "properties": Array [
       Object {
@@ -1114,6 +1135,7 @@ string",
     "description": "A carousel that cycles through children. Child components
       would typically be Images. It is the caller's responsibility to ensure
       that all children are the same size.",
+    "intrinsicElement": "div",
     "name": "Carousel",
     "properties": Array [
       Object {
@@ -1462,6 +1484,7 @@ area",
       },
     ],
     "description": "A checkbox toggle control.",
+    "intrinsicElement": "input",
     "name": "CheckBox",
     "properties": Array [
       Object {
@@ -1524,7 +1547,8 @@ NOTE: This can only be used with non-toggle components",
   },
   "Clock": [Function],
   "Collapsible": Object {
-    "description": "A react component that expand/collapse animation.",
+    "description": "Expand or collapse animation.",
+    "intrinsicElement": "div",
     "name": "Collapsible",
     "properties": Array [
       Object {
@@ -1557,8 +1581,10 @@ vertical",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=diagram&module=%2Fsrc%2FDiagram.js",
       },
     ],
-    "description": "Graphical lines between DOM elements.
-      Diagram is meant to be used with Stack.",
+    "description": "Graphical connection lines. Diagram is meant to be used with Stack.
+      Boxes can be used in the \`guidingChild\` layer of Stack and then
+      Diagram can be used to draw lines connecting the Boxes.",
+    "intrinsicElement": "svg",
     "name": "Diagram",
     "properties": Array [
       Object {
@@ -1627,10 +1653,12 @@ vertical",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js",
       },
     ],
-    "description": "A Button that when clicked will a Drop with the specified 'dropContent'.
-      When opened, the drop will control the focus so that the contents behind
-      it are not focusable. All properties of Button can be passed through.
+    "description": "A Button that controls a Drop. When opened, the Drop will contain
+      whatever is specified via \`dropContent\`. The Drop will control the focus
+      so that the contents behind it are not focusable. All properties of
+      Button can be passed through.
       ",
+    "intrinsicElement": "button",
     "name": "DropButton",
     "properties": Array [
       Object {
@@ -1780,6 +1808,25 @@ string",
     "usage": "import { DropButton } from 'grommet';
 <DropButton dropContent={...} />",
   },
+  "Form": [Function],
+  "FormContext": Object {
+    "$$typeof": Symbol(react.context),
+    "Consumer": Object {
+      "$$typeof": Symbol(react.context),
+      "_calculateChangedBits": null,
+      "_context": [Circular],
+    },
+    "Provider": Object {
+      "$$typeof": Symbol(react.provider),
+      "_context": [Circular],
+    },
+    "_calculateChangedBits": null,
+    "_currentRenderer": null,
+    "_currentRenderer2": null,
+    "_currentValue": undefined,
+    "_currentValue2": undefined,
+    "_threadCount": 0,
+  },
   "FormField": Object {
     "availableAt": Array [
       Object {
@@ -1793,7 +1840,10 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=formfield&module=%2Fsrc%2FFormField.js",
       },
     ],
-    "description": "A field in a form.",
+    "description": "A single field in a form. FormField wraps an input component with
+      a label, help, and/or error messaging. It typically contains an input
+      control like TextInput, TextArea, Select, etc.",
+    "intrinsicElement": "div",
     "name": "FormField",
     "properties": Array [
       Object {
@@ -1818,6 +1868,35 @@ node",
         "format": "string
 node",
         "name": "label",
+      },
+      Object {
+        "description": "The name of the value data when in a Form and the name of
+      the input field.",
+        "format": "string",
+        "name": "name",
+      },
+      Object {
+        "description": "Whether to add padding to align with the padding of TextInput.",
+        "format": "boolean",
+        "name": "pad",
+      },
+      Object {
+        "description": "Whether the field is required.",
+        "format": "boolean",
+        "name": "required",
+      },
+      Object {
+        "description": "Validation rule. Provide a regular expression or a function. If a
+      function is provided, it will be called with two arguments, the value
+      for this field and the entire value object. This permits validation to
+      encompass multiple fields. The function should return a string message
+      describing the validation issue, if any.",
+        "format": "{
+  regexp: object,
+  message: string
+}
+function",
+        "name": "validate",
       },
     ],
     "usage": "import { FormField } from 'grommet';
@@ -1955,6 +2034,7 @@ contain",
       },
     ],
     "description": "An input field with formalized syntax.",
+    "intrinsicElement": "input",
     "name": "MaskedInput",
     "properties": Array [
       Object {
@@ -1971,6 +2051,11 @@ contain",
         "description": "Function that will be called when the user types or pastes text.",
         "format": "function",
         "name": "onChange",
+      },
+      Object {
+        "description": "Function that will be called when the user leaves the field.",
+        "format": "function",
+        "name": "onBlur",
       },
       Object {
         "defaultValue": Array [],
@@ -2022,8 +2107,10 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=menu&module=%2Fsrc%2FMenu.js",
       },
     ],
-    "description": "Presents a list of choices within a drop down via a control that
-      opens it.",
+    "description": "A control that opens a Drop containing plain Buttons. The labels
+      and behavior of the contained Buttons are described via the \`items\`
+      property.",
+    "intrinsicElement": "button",
     "name": "Menu",
     "properties": Array [
       Object {
@@ -2163,6 +2250,17 @@ one of top or bottom should be specified.",
         "name": "dropTarget",
       },
       Object {
+        "defaultValue": "start",
+        "description": "How to align the contents along the row axis.",
+        "format": "start
+center
+end
+between
+around
+stretch",
+        "name": "justifyContent",
+      },
+      Object {
         "description": "Indicates the icon shown as a control to open it.",
         "format": "boolean
 node",
@@ -2224,6 +2322,9 @@ string",
       },
     ],
     "description": "A radio button control.",
+    "details": "RadioButton should typically not be used directly.
+      Instead, use RadioButtonGroup.",
+    "intrinsicElement": "input",
     "name": "RadioButton",
     "properties": Array [
       Object {
@@ -2264,6 +2365,58 @@ with the same name so form submissions work.",
     "usage": "import { RadioButton } from 'grommet';
 <RadioButton />",
   },
+  "RadioButtonGroup": Object {
+    "availableAt": Array [
+      Object {
+        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
+        "label": "Storybook",
+        "url": "https://storybook.grommet.io/?selectedKind=RadioButtonGroup&full=0&addons=0&stories=1&panelRight=0",
+      },
+      Object {
+        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
+        "label": "CodeSandbox",
+        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=radiobuttongroup&module=%2Fsrc%2FRadioButtonGroup.js",
+      },
+    ],
+    "description": "A group of radio buttons.",
+    "intrinsicElement": "div",
+    "name": "RadioButtonGroup",
+    "properties": Array [
+      Object {
+        "description": "The DOM name attribute value to use for the underlying <input/> elements.",
+        "format": "string",
+        "name": "name",
+        "required": true,
+      },
+      Object {
+        "description": "Function that will be called when the user clicks on of the radio
+      buttons. It will be passed a React event object.",
+        "format": "function",
+        "name": "onChange",
+      },
+      Object {
+        "description": "Options can be either a string or an object.",
+        "format": "[string]
+[{
+  disabled: boolean,
+  id: string,
+  label: 
+    string
+    element,
+  value: string
+}]",
+        "name": "options",
+        "required": true,
+      },
+      Object {
+        "description": "Currently selected option value.",
+        "format": "string",
+        "name": "value",
+      },
+    ],
+    "usage": "import { RadioButtonGroup } from 'grommet';
+<RadioButtonGroup />",
+  },
   "RangeInput": Object {
     "availableAt": Array [
       Object {
@@ -2277,7 +2430,8 @@ with the same name so form submissions work.",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeinput&module=%2Fsrc%2FRangeInput.js",
       },
     ],
-    "description": "A range input with custom styles.",
+    "description": "A slider control to input a value within a fixed range.",
+    "intrinsicElement": "input",
     "name": "RangeInput",
     "properties": Array [
       Object {
@@ -2337,7 +2491,8 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeselector&module=%2Fsrc%2FRangeSelector.js",
       },
     ],
-    "description": "A control to allow selecting a range of values.",
+    "description": "A control to input a range of values.",
+    "intrinsicElement": "div",
     "name": "RangeSelector",
     "properties": Array [
       Object {
@@ -2455,7 +2610,7 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=select&module=%2Fsrc%2FSelect.js",
       },
     ],
-    "description": "An select-like field with optional search capability.",
+    "description": "A control to select a value, with optional search.",
     "name": "Select",
     "properties": Array [
       Object {
@@ -2606,6 +2761,16 @@ function",
         "name": "dropAlign",
       },
       Object {
+        "description": "The height of the drop container.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "dropHeight",
+      },
+      Object {
         "description": "Target where the options drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be
       aligned to the Select itself by default.",
@@ -2708,16 +2873,6 @@ string",
         "name": "size",
       },
       Object {
-        "description": "The height of the drop container.",
-        "format": "xsmall
-small
-medium
-large
-xlarge
-string",
-        "name": "dropHeight",
-      },
-      Object {
         "description": "Currently selected value. This can be an array
       when multiple. Passing an element allows the caller to control how
       the value is rendered. Passing an element is deprecated. Instead,
@@ -2763,6 +2918,7 @@ function",
   "Stack": [Function],
   "Tab": Object {
     "description": "One tab within Tabs.",
+    "intrinsicElement": "button",
     "name": "Tab",
     "properties": Array [
       Object {
@@ -2847,7 +3003,8 @@ bottom",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=tabs&module=%2Fsrc%2FTabs.js",
       },
     ],
-    "description": "A tabular view component.",
+    "description": "A container with controls to show one Tab at a time.",
+    "intrinsicElement": "div",
     "name": "Tabs",
     "properties": Array [
       Object {
@@ -2999,7 +3156,7 @@ currently active tab changes.",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textarea&module=%2Fsrc%2FTextArea.js",
       },
     ],
-    "description": "A textarea.",
+    "description": "A control to input multiple lines of text.",
     "intrinsicElement": "textarea",
     "name": "TextArea",
     "properties": Array [
@@ -3045,6 +3202,14 @@ Only use this when the containing context provides sufficient affordance.",
         "format": "string",
         "name": "value",
       },
+      Object {
+        "defaultValue": true,
+        "description": "Whether user is allowed to resize the textarea.",
+        "format": "vertical
+horizontal
+boolean",
+        "name": "resize",
+      },
     ],
     "usage": "import { TextArea } from 'grommet';
 <TextArea id='item' name='item' />",
@@ -3062,7 +3227,7 @@ Only use this when the containing context provides sufficient affordance.",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textinput&module=%2Fsrc%2FTextInput.js",
       },
     ],
-    "description": "A text input field with optional suggestions.",
+    "description": "A control to input a single line of text, with optional suggestions.",
     "intrinsicElement": "input",
     "name": "TextInput",
     "properties": Array [
@@ -3087,6 +3252,16 @@ Only use this when the containing context provides sufficient affordance.",
     right
 }",
         "name": "dropAlign",
+      },
+      Object {
+        "description": "The height of the drop container.",
+        "format": "xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "dropHeight",
       },
       Object {
         "description": "Target where any suggestions drop will be aligned to. This should be
@@ -3182,7 +3357,8 @@ suggestions and instead rely on the user to type more.",
       },
       Object {
         "description": "What text to put in the input.",
-        "format": "string",
+        "format": "string
+number",
         "name": "value",
       },
     ],
@@ -3203,6 +3379,7 @@ suggestions and instead rely on the user to type more.",
       },
     ],
     "description": "A video player.",
+    "intrinsicElement": "video",
     "name": "Video",
     "properties": Array [
       Object {
@@ -3336,6 +3513,7 @@ contain",
       },
     ],
     "description": "A map of the world, or a continent.",
+    "intrinsicElement": "svg",
     "name": "WorldMap",
     "properties": Array [
       Object {

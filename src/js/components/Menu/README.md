@@ -1,6 +1,7 @@
 ## Menu
-Presents a list of choices within a drop down via a control that
-      opens it.
+A control that opens a Drop containing plain Buttons. The labels
+      and behavior of the contained Buttons are described via the `items`
+      property.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=menu&module=%2Fsrc%2FMenu.js)
 ## Usage
@@ -170,6 +171,19 @@ Target where the drop will be aligned to. This should be
 object
 ```
 
+**justifyContent**
+
+How to align the contents along the row axis. Defaults to `start`.
+
+```
+start
+center
+end
+between
+around
+stretch
+```
+
 **icon**
 
 Indicates the icon shown as a control to open it.
@@ -223,6 +237,11 @@ xlarge
 string
 ```
   
+## Intrinsic element
+
+```
+button
+```
 ## Theme
   
 **global.colors.control**

@@ -170,8 +170,7 @@ exports[`RadioButton checked renders 1`] = `
       <input
         checked={true}
         className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
+        name="test checked"
         type="radio"
       />
       <div
@@ -412,8 +411,7 @@ exports[`RadioButton disabled renders 1`] = `
       <input
         className="c5"
         disabled={true}
-        onBlur={[Function]}
-        onFocus={[Function]}
+        name="test disabled"
         type="radio"
       />
       <div
@@ -433,8 +431,7 @@ exports[`RadioButton disabled renders 1`] = `
         checked={true}
         className="c5"
         disabled={true}
-        onBlur={[Function]}
-        onFocus={[Function]}
+        name="test checked disabled"
         type="radio"
       />
       <div
@@ -618,8 +615,7 @@ exports[`RadioButton label renders 1`] = `
     >
       <input
         className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
+        name="test label"
         type="radio"
       />
       <div
@@ -639,8 +635,7 @@ exports[`RadioButton label renders 1`] = `
     >
       <input
         className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
+        name="test div label"
         type="radio"
       />
       <div
@@ -815,8 +810,7 @@ exports[`RadioButton renders 1`] = `
     >
       <input
         className="c5"
-        onBlur={[Function]}
-        onFocus={[Function]}
+        name="test empty"
         type="radio"
       />
       <div
@@ -836,8 +830,6 @@ exports[`RadioButton renders 1`] = `
         className="c5"
         id="test id"
         name="test name"
-        onBlur={[Function]}
-        onFocus={[Function]}
         type="radio"
       />
       <div

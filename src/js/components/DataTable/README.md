@@ -119,7 +119,10 @@ A description of the data. The order controls the column order.
       column should be aggregated. This only applies to a footer or groupBy
       context. 'footer' indicates what should be shown in the footer for
       the column. 'search' indicates whether a search filter should be
-      made available for the column. Defaults to `[]`.
+      made available for the column. 'primary' indicates that this property
+      should be used as the unique identifier, which gives the cell 'row' scope
+      for accessibility. If 'primary' is not used for any column, and
+      'primaryKey' isn't specified either, then the first column will be used. Defaults to `[]`.
 
 ```
 [{
@@ -143,9 +146,11 @@ A description of the data. The order controls the column order.
     {
       aggregate: boolean
     },
+  primary: boolean,
   property: string,
   render: function,
-  search: boolean
+  search: boolean,
+  sortable: boolean
 }]
 ```
 
@@ -192,6 +197,17 @@ When supplied, and when at least one column has 'search' enabled,
 function
 ```
 
+**primaryKey**
+
+When supplied, indicates the property for a data object to use to
+      get a unique identifier. See also the 'columns.primary' description.
+      Use this property when the columns approach will not work for your
+      data set.
+
+```
+string
+```
+
 **resizeable**
 
 Whether to allow the user to resize column widths.
@@ -223,3 +239,8 @@ Whether to allow the user to sort columns.
 boolean
 ```
   
+## Intrinsic element
+
+```
+table
+```

@@ -6,14 +6,15 @@ export const doc = Calendar => {
   const DocumentedCalendar = describe(Calendar)
     .availableAt(getAvailableAtBadge('Calendar'))
     .description(
-      `Calendar of days in months.
+      `A calendar of days displayed by month.
       It can be used to select a single date, a range of dates, or multiple
       individual dates.`,
     )
     .usage(
       `import { Calendar } from 'grommet';
 <Calendar />`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedCalendar.propTypes = {
     ...genericProps,
@@ -201,6 +202,10 @@ export const themeDoc = {
   },
   'calendar.extend': {
     description: 'Any additional style for the Calendar.',
+    type: 'string | (props) => {}',
+  },
+  'calendar.day.extend': {
+    description: 'Any additional style for the day of Calendar.',
     type: 'string | (props) => {}',
   },
 };

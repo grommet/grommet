@@ -128,3 +128,49 @@ If specified, the number of
 number
 ```
   
+## Intrinsic element
+
+```
+div
+```
+## Theme
+  
+**carousel.icons.next**
+
+The icon to use for the next image navigation control. Expects `element`.
+
+Defaults to
+
+```
+<Next />
+```
+
+**carousel.icons.previous**
+
+The icon to use for the previous image navigation control. Expects `element`.
+
+Defaults to
+
+```
+<Previous />
+```
+
+**carousel.icons.current**
+
+The icon to use on the middle navigation control. One icon per carousel image. Expects `element`.
+
+Defaults to
+
+```
+<Next />
+```
+
+**carousel.icons.color**
+
+The color used for Carousel icons. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```

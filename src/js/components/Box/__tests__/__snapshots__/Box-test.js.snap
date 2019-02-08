@@ -2232,6 +2232,60 @@ exports[`Box border 1`] = `
   padding: 0px;
 }
 
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border: dotted 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border: double 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border: dashed 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -2450,6 +2504,60 @@ exports[`Box border 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c13 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    border: dotted 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c13 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    border: double 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    border: dashed 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c15 {
+    padding: 0px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -2494,6 +2602,15 @@ exports[`Box border 1`] = `
   />
   <div
     className="c12"
+  />
+  <div
+    className="c13"
+  />
+  <div
+    className="c14"
+  />
+  <div
+    className="c15"
   />
 </div>
 `;
@@ -3224,6 +3341,66 @@ exports[`Box flex 1`] = `
   padding: 0px;
 }
 
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 2 0 auto;
+  -ms-flex: 2 0 auto;
+  flex: 2 0 auto;
+  padding: 0px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 2 auto;
+  -ms-flex: 0 2 auto;
+  flex: 0 2 auto;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 2 2 auto;
+  -ms-flex: 2 2 auto;
+  flex: 2 2 auto;
+  padding: 0px;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -3280,6 +3457,42 @@ exports[`Box flex 1`] = `
 
 @media only screen and (max-width:768px) {
   .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
     padding: 0px;
   }
 }
@@ -3301,6 +3514,15 @@ exports[`Box flex 1`] = `
     />
     <div
       className="c5"
+    />
+    <div
+      className="c6"
+    />
+    <div
+      className="c7"
+    />
+    <div
+      className="c8"
     />
   </div>
 </div>
@@ -3378,6 +3600,13 @@ exports[`Box gap 1`] = `
 <div
   className="c0"
 >
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    />
+  </div>
   <div
     className="c1"
   >
@@ -3762,6 +3991,48 @@ exports[`Box justify 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
@@ -3817,6 +4088,30 @@ exports[`Box justify 1`] = `
   }
 }
 
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    padding: 0px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -3831,6 +4126,12 @@ exports[`Box justify 1`] = `
   />
   <div
     className="c4"
+  />
+  <div
+    className="c5"
+  />
+  <div
+    className="c6"
   />
 </div>
 `;

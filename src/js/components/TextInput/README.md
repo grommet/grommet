@@ -1,5 +1,5 @@
 ## TextInput
-A text input field with optional suggestions.
+A control to input a single line of text, with optional suggestions.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=TextInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textinput&module=%2Fsrc%2FTextInput.js)
 ## Usage
@@ -33,6 +33,19 @@ How to align the drop. Defaults to `{
     left
     right
 }
+```
+
+**dropHeight**
+
+The height of the drop container.
+
+```
+xsmall
+small
+medium
+large
+xlarge
+string
 ```
 
 **dropTarget**
@@ -171,6 +184,7 @@ What text to put in the input.
 
 ```
 string
+number
 ```
   
 ## Intrinsic element
@@ -180,46 +194,6 @@ input
 ```
 ## Theme
   
-**global.colors.placeholder**
-
-The placeholder color used for TextInput. Expects `string`.
-
-Defaults to
-
-```
-#AAAAAA
-```
-
-**global.control.border.width**
-
-The border width. Expects `string`.
-
-Defaults to
-
-```
-1px
-```
-
-**global.input.padding**
-
-The padding of the text. Expects `string`.
-
-Defaults to
-
-```
-12px
-```
-
-**global.input.weight**
-
-The font weight of the text. Expects `number`.
-
-Defaults to
-
-```
-600
-```
-
 **select.step**
 
 How many suggestions to render at a time. Expects `number`.
@@ -273,4 +247,64 @@ Defaults to
 
 ```
 undefined
+```
+
+**textInput.placeholder.extend**
+
+Any additional style for non-string placeholder inside TextInput. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**textInput.suggestions.extend**
+
+Any additional style for TextInput suggestions. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
+```
+
+**global.colors.placeholder**
+
+The placeholder color used for the component. Expects `string`.
+
+Defaults to
+
+```
+#AAAAAA
+```
+
+**global.input.weight**
+
+The font weight of the text entered. Expects `number`.
+
+Defaults to
+
+```
+600
+```
+
+**global.input.padding**
+
+The padding of the text. Expects `string`.
+
+Defaults to
+
+```
+12px
 ```

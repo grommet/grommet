@@ -5,14 +5,15 @@ import { genericProps, getAvailableAtBadge } from '../../utils';
 export const doc = Tabs => {
   const DocumentedTabs = describe(Tabs)
     .availableAt(getAvailableAtBadge('Tabs'))
-    .description('A tabular view component.')
+    .description('A container with controls to show one Tab at a time.')
     .usage(
       `import { Tabs, Tab } from 'grommet';
 <Tabs>
   <Tab title='Tab 1'>...</Tab>
   <Tab title='Tab 2'>...</Tab>
 </Tabs>`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedTabs.propTypes = {
     ...genericProps,

@@ -95,6 +95,7 @@ class Carousel extends Component {
     const wrappedChildren = Children.map(children, (child, index) => {
       selectors.push(
         <Button
+          // eslint-disable-next-line react/no-array-index-key
           key={index}
           icon={
             <CurrentIcon
@@ -184,7 +185,7 @@ if (process.env.NODE_ENV !== 'production') {
   CarouselDoc = require('./doc').doc(Carousel); // eslint-disable-line global-require
 }
 const CarouselWrapper = compose(
-  withFocus,
+  withFocus(),
   withTheme,
 )(CarouselDoc || Carousel);
 

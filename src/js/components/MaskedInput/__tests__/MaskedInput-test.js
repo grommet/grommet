@@ -50,7 +50,7 @@ describe('MaskedInput', () => {
       expect(onChange).not.toBeCalled();
       expect(onFocus).toBeCalled();
       done();
-    }, 100);
+    }, 300);
   });
 
   test('option via mouse', done => {
@@ -87,7 +87,7 @@ describe('MaskedInput', () => {
         expect.objectContaining({ target: { value: 'aa!' } }),
       );
       done();
-    }, 100);
+    }, 500);
   });
 
   test('option via keyboard', done => {
@@ -125,7 +125,7 @@ describe('MaskedInput', () => {
         expect.objectContaining({ target: { value: 'aa!' } }),
       );
       done();
-    }, 100);
+    }, 300);
   });
 
   test('next and previous without options', done => {
@@ -159,6 +159,6 @@ describe('MaskedInput', () => {
       expect(onChange).not.toBeCalled();
       expect(container.firstChild).toMatchSnapshot();
       done();
-    }, 100);
+    }, 300);
   });
 });

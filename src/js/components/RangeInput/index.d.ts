@@ -5,11 +5,11 @@ export interface RangeInputProps {
   min?: number | string;
   max?: number | string;
   name?: string;
-  onChange?: (...args: any[]) => any;
+  onChange?: ((...args: any[]) => any);
   step?: number;
   value?: number | string;
 }
 
-declare const RangeInput: React.ComponentType<RangeInputProps>;
+declare const RangeInput: React.ComponentType<RangeInputProps & JSX.IntrinsicElements['input']>;
 
 export { RangeInput };

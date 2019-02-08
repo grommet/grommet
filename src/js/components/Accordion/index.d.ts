@@ -8,11 +8,11 @@ export interface AccordionProps {
   activeIndex?: number | number[];
   animate?: boolean;
   children?: React.ReactNode;
-  onActive?: (...args: any[]) => any;
+  onActive?: ((...args: any[]) => any);
   multiple?: boolean;
   messages?: {tabContents?: string};
 }
 
-declare const Accordion: React.ComponentType<AccordionProps>;
+declare const Accordion: React.ComponentType<AccordionProps & JSX.IntrinsicElements['div']>;
 
 export { Accordion };

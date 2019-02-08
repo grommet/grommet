@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, DataTable, Meter, Text } from 'grommet';
+import { Grommet, Box, DataTable, Meter, Text, CheckBox } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
@@ -211,9 +211,76 @@ class ServedDataTable extends Component {
   }
 }
 
+const controlledColumns = columns.map(col => Object.assign({}, col));
+delete controlledColumns[0].footer;
+delete controlledColumns[3].footer;
+delete controlledColumns[4].footer;
+delete controlledColumns[4].aggregate;
+
+class ControlledDataTable extends Component {
+  state = {
+    checked: [],
+  };
+
+  onCheck = (event, value) => {
+    const { checked } = this.state;
+    if (event.target.checked) {
+      checked.push(value);
+      this.setState({ checked });
+    } else {
+      this.setState({ checked: checked.filter(item => item !== value) });
+    }
+  };
+
+  onCheckAll = event =>
+    this.setState({
+      checked: event.target.checked ? DATA.map(datum => datum.name) : [],
+    });
+
+  render() {
+    const { checked } = this.state;
+
+    return (
+      <Grommet theme={grommet}>
+        <Box align="center" pad="medium">
+          <DataTable
+            columns={[
+              {
+                property: 'checkbox',
+                render: datum => (
+                  <CheckBox
+                    key={datum.name}
+                    checked={checked.indexOf(datum.name) !== -1}
+                    onChange={e => this.onCheck(e, datum.name)}
+                  />
+                ),
+                header: (
+                  <CheckBox
+                    checked={checked.length === DATA.length}
+                    indeterminate={
+                      checked.length > 0 && checked.length < DATA.length
+                    }
+                    onChange={this.onCheckAll}
+                  />
+                ),
+                sortable: false,
+              },
+              ...controlledColumns,
+            ].map(col => ({ ...col }))}
+            data={DATA}
+            sortable
+            size="medium"
+          />
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('DataTable', module)
   .add('Simple DataTable', () => <SimpleDataTable />)
   .add('Sized DataTable', () => <SizedDataTable />)
   .add('Tunable DataTable', () => <TunableDataTable />)
   .add('Grouped DataTable', () => <GroupedDataTable />)
-  .add('Served DataTable', () => <ServedDataTable />);
+  .add('Served DataTable', () => <ServedDataTable />)
+  .add('Controlled DataTable', () => <ControlledDataTable />);

@@ -17,8 +17,8 @@ exports[`Meter background 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
@@ -144,8 +144,8 @@ exports[`Meter basic 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
@@ -196,8 +196,8 @@ exports[`Meter default 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
@@ -239,8 +239,8 @@ exports[`Meter many values 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
@@ -338,8 +338,8 @@ exports[`Meter round 1`] = `
 }
 
 .c2 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 .c1 {
@@ -349,8 +349,8 @@ exports[`Meter round 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
@@ -436,8 +436,8 @@ exports[`Meter size 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
@@ -718,8 +718,8 @@ exports[`Meter thickness 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div
@@ -852,6 +852,31 @@ exports[`Meter thickness 1`] = `
   </svg>
   <svg
     className="c1"
+    height={55}
+    preserveAspectRatio="none"
+    viewBox="0 0 384 55"
+    width={384}
+  >
+    <path
+      d="M 0,27.5 L 384,27.5"
+      fill="none"
+      stroke="#F2F2F2"
+      strokeLinecap="square"
+      strokeOpacity="0.4"
+      strokeWidth={55}
+    />
+    <path
+      d="M 0,27.5 L 76.8,27.5"
+      fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeWidth={55}
+    />
+  </svg>
+  <svg
+    className="c1"
     height={384}
     viewBox="0 0 384 384"
     width={384}
@@ -980,6 +1005,32 @@ exports[`Meter thickness 1`] = `
       strokeWidth={96}
     />
   </svg>
+  <svg
+    className="c1"
+    height={384}
+    viewBox="0 0 384 384"
+    width={384}
+  >
+    <circle
+      cx={192}
+      cy={192}
+      fill="none"
+      r={164.5}
+      stroke="#F2F2F2"
+      strokeLinecap="square"
+      strokeOpacity="0.4"
+      strokeWidth={55}
+    />
+    <path
+      d="M 348.4487969306 141.1667044253 A 164.5000000000 164.5000000000 0 0 0 192.0000000000 27.5000000000"
+      fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#6FFFB0"
+      strokeLinecap="butt"
+      strokeWidth={55}
+    />
+  </svg>
 </div>
 `;
 
@@ -1000,8 +1051,8 @@ exports[`Meter type 1`] = `
 }
 
 .c1 path {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: stroke 0.3s,stroke-width 0.3s;
+  transition: stroke 0.3s,stroke-width 0.3s;
 }
 
 <div

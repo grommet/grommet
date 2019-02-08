@@ -1,6 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
+import {
+  colorPropType,
+  genericProps,
+  getAvailableAtBadge,
+  themeDocUtils,
+} from '../../utils';
 
 export const doc = Heading => {
   const DocumentedHeading = describe(Heading)
@@ -9,7 +14,8 @@ export const doc = Heading => {
     .usage(
       `import { Heading } from 'grommet';
 <Heading />`,
-    );
+    )
+    .intrinsicElement(['h1', 'h2', 'h3', 'h4']);
 
   DocumentedHeading.propTypes = {
     ...genericProps,
@@ -52,4 +58,10 @@ is too long to all fit.`,
   };
 
   return DocumentedHeading;
+};
+
+export const themeDoc = {
+  ...themeDocUtils.breakpointStyle(
+    'The possible breakpoints that could affect font-size and max-width',
+  ),
 };

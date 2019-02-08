@@ -4,7 +4,7 @@ import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
 
-import { FormSearch } from 'grommet-icons';
+import { FormSearch } from 'grommet-icons/icons/FormSearch';
 
 import { defaultProps } from '../../default-props';
 

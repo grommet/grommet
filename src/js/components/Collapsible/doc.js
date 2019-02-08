@@ -2,11 +2,12 @@ import { describe, PropTypes } from 'react-desc';
 
 export const doc = Collapsible => {
   const DocumentedCollapsible = describe(Collapsible)
-    .description('A react component that expand/collapse animation.')
+    .description('Expand or collapse animation.')
     .usage(
       `import { Collapsible } from 'grommet';
 <Collapsible open={true}>test</Collapsible>`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedCollapsible.propTypes = {
     open: PropTypes.bool.description(
@@ -18,4 +19,23 @@ export const doc = Collapsible => {
   };
 
   return DocumentedCollapsible;
+};
+
+export const themeDoc = {
+  'collapsible.minSpeed': {
+    description: 'The minimum speed of Collapsible animation in milliseconds.',
+    type: 'number',
+    defaultValue: 200,
+  },
+  'collapsible.baseline': {
+    description:
+      'Default height to be used to calculate the optimal collapsible speed.',
+    type: 'number',
+    defaultValue: 500,
+  },
+  'collapsible.extend': {
+    description: 'Any additional style for Collapsible.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
 };

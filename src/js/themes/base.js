@@ -1,25 +1,24 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 
-import {
-  Actions,
-  ClosedCaption,
-  Expand,
-  FormDown,
-  FormNext,
-  FormPrevious,
-  FormUp,
-  Next,
-  Pause,
-  Play,
-  Previous,
-  Subtract,
-  Volume,
-  VolumeLow,
-} from 'grommet-icons';
-import { base as iconBase } from 'grommet-icons/themes';
+import { Actions } from 'grommet-icons/icons/Actions';
+import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
+import { Expand } from 'grommet-icons/icons/Expand';
+import { FormDown } from 'grommet-icons/icons/FormDown';
+import { FormNext } from 'grommet-icons/icons/FormNext';
+import { FormPrevious } from 'grommet-icons/icons/FormPrevious';
+import { FormUp } from 'grommet-icons/icons/FormUp';
+import { Next } from 'grommet-icons/icons/Next';
+import { Pause } from 'grommet-icons/icons/Pause';
+import { Play } from 'grommet-icons/icons/Play';
+import { Previous } from 'grommet-icons/icons/Previous';
+import { Subtract } from 'grommet-icons/icons/Subtract';
+import { Volume } from 'grommet-icons/icons/Volume';
+import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
+import { base as iconBase } from 'grommet-icons/themes/base';
 
-import { deepMerge, deepFreeze, normalizeColor } from '../utils';
+import { deepFreeze, deepMerge } from '../utils/object';
+import { normalizeColor } from '../utils/colors';
 
 const brandColor = '#7D4CDB';
 const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
@@ -213,7 +212,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'focus',
         },
       },
-      font: { ...fontSizing(0) },
+      font: {
+        ...fontSizing(0),
+        // face: undefined,
+      },
       hover: {
         background: {
           dark: {
@@ -461,6 +463,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         weight: 'bold',
       },
     },
+    diagram: {
+      // extend: undefined,
+      line: {
+        color: 'accent-1',
+      },
+    },
     // drop: {
     //   maxHeight: undefined,
     // },
@@ -499,6 +507,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         1: {
           font: {
             // family: undefined,
+            // weight: undefined,
           },
           small: { ...fontSizing(4) },
           medium: { ...fontSizing(8) },
@@ -508,6 +517,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         2: {
           font: {
             // family: undefined,
+            // weight: undefined,
           },
           small: { ...fontSizing(2) },
           medium: { ...fontSizing(4) },
@@ -517,20 +527,42 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         3: {
           font: {
             // family: undefined,
+            // weight: undefined,
           },
           small: { ...fontSizing(1) },
-          medium: { ...fontSizing(1) },
+          medium: { ...fontSizing(2) },
           large: { ...fontSizing(4) },
           xlarge: { ...fontSizing(6) },
         },
         4: {
           font: {
             // family: undefined,
+            // weight: undefined,
           },
           small: { ...fontSizing(0) },
           medium: { ...fontSizing(0) },
           large: { ...fontSizing(0) },
           xlarge: { ...fontSizing(0) },
+        },
+        5: {
+          font: {
+            // family: undefined,
+            // weight: undefined,
+          },
+          small: { ...fontSizing(-0.5) },
+          medium: { ...fontSizing(-0.5) },
+          large: { ...fontSizing(-0.5) },
+          xlarge: { ...fontSizing(-0.5) },
+        },
+        6: {
+          font: {
+            // family: undefined,
+            // weight: undefined,
+          },
+          small: { ...fontSizing(-1) },
+          medium: { ...fontSizing(-1) },
+          large: { ...fontSizing(-1) },
+          xlarge: { ...fontSizing(-1) },
         },
       },
       responsiveBreakpoint: 'small', // when we scale the font size down
@@ -556,6 +588,10 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       icons: {
         down: FormDown,
       },
+    },
+    meter: {
+      color: 'accent-1',
+      // extend: undefined,
     },
     paragraph: {
       small: { ...fontSizing(-1) },
@@ -729,6 +765,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
       },
       // scrubber: { track: { color: undefined } },
+      scrubber: {
+        color: 'light-4',
+      },
     },
     worldMap: {
       color: 'light-3',

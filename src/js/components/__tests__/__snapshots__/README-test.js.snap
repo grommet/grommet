@@ -169,7 +169,12 @@ Custom messages for Tabs. Used for accessibility by screen readers. Defaults to 
   tabContents: string
 }
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "AccordionPanel": "## AccordionPanel
 An Accordion panel.
 
@@ -193,6 +198,11 @@ If specified, the entire panel header will be managed by the caller.
 node
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
 ## Theme
   
 **accordion.icons.collapse**
@@ -413,16 +423,6 @@ a
 \`\`\`
 ## Theme
   
-**global.focus.border.color**
-
-The color around the Anchor when in focus. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-focus
-\`\`\`
-
 **anchor.color**
 
 The color of the label text and icon strokes. Expects \`string | { dark: string, light: string }\`.
@@ -492,9 +492,21 @@ Defaults to
 \`\`\`
 undefined
 \`\`\`
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
 ",
   "Box": "## Box
-A flexible box that lays out its contents along a single direction.
+A container that lays out its contents in one direction. Box
+      provides CSS flexbox capabilities for layout, as well as general
+      styling of things like background color, border, and animation.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Box&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=box&module=%2Fsrc%2FBox.js)
 ## Usage
@@ -781,7 +793,17 @@ all
     medium
     large
     xlarge
-    string
+    string,
+  style: 
+    solid
+    dashed
+    dotted
+    double
+    groove
+    ridge
+    inset
+    outset
+    hidden
 }
 \`\`\`
 
@@ -812,12 +834,16 @@ string
 
 **flex**
 
-Whether flex-grow and/or flex-shrink is true.
+Whether flex-grow and/or flex-shrink is true and at a desired factor.
 
 \`\`\`
 grow
 shrink
 boolean
+{
+  grow: number,
+  shrink: number
+}
 \`\`\`
 
 **fill**
@@ -866,6 +892,8 @@ How to align the contents along the main axis.
 start
 center
 between
+around
+evenly
 end
 \`\`\`
 
@@ -1041,6 +1069,11 @@ Whether children can wrap if they
 boolean
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
 ## Theme
   
 **global.animation**
@@ -1071,72 +1104,6 @@ Defaults to
   medium: '4px',
   large: '12px',
   xlarge: '24px,
-}
-\`\`\`
-
-**global.breakpoints**
-
-The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-  small: {
-    value: '768px',
-    borderSize: {
-      xsmall: '1px',
-      small: '2px',
-      medium: '4px',
-      large: '6px',
-      xlarge: '12px',
-    },
-    edgeSize: {
-      none: '0px',
-      hair: '1px',
-      xxsmall: '2px',
-      xsmall: '3px',
-      small: '6px',
-      medium: '12px',
-      large: '24px',
-      xlarge: '48px',
-    },
-    size: {
-      xxsmall: '24px',
-      xsmall: '48px',
-      small: '96px',
-      medium: '192px',
-      large: '384px',
-      xlarge: '768px',
-      full: '100%',
-    },
-  },
-  medium: {
-    value: '1536px',
-  },
-  large: {},
-}
-\`\`\`
-
-**global.edgeSize**
-
-The possible sizes for gap, margin, and pad. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-  edgeSize: {
-    none: '0px',
-    hair: '1px',
-    xxsmall: '3px',
-    xsmall: '6px',
-    small: '12px',
-    medium: '24px',
-    large: '48px',
-    xlarge: '96px',
-    responsiveBreakpoint: 'small',
-  },
 }
 \`\`\`
 
@@ -1225,9 +1192,75 @@ Defaults to
 \`\`\`
 small
 \`\`\`
+
+**global.edgeSize**
+
+The possible sizes for any of gap, margin, and pad. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+\`\`\`
+
+**global.breakpoints**
+
+The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    small: {
+      value: '768px',
+      borderSize: {
+        xsmall: '1px',
+        small: '2px',
+        medium: '4px',
+        large: '6px',
+        xlarge: '12px',
+      },
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '2px',
+        xsmall: '3px',
+        small: '6px',
+        medium: '12px',
+        large: '24px',
+        xlarge: '48px',
+      },
+      size: {
+        xxsmall: '24px',
+        xsmall: '48px',
+        small: '96px',
+        medium: '192px',
+        large: '384px',
+        xlarge: '768px',
+        full: '100%',
+      },
+    },
+    medium: {
+      value: '1536px',
+    },
+    large: {},
+  }
+\`\`\`
 ",
   "Button": "## Button
-A button. We have a separate component from the browser base so we can style it.
+A button.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Button&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=button&module=%2Fsrc%2FButton.js)
 ## Usage
@@ -1629,9 +1662,19 @@ Defaults to
 \`\`\`
 undefined
 \`\`\`
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
 ",
   "Calendar": "## Calendar
-Calendar of days in months.
+A calendar of days displayed by month.
       It can be used to select a single date, a range of dates, or multiple
       individual dates.
 
@@ -1890,6 +1933,11 @@ large
 string
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
 ## Theme
   
 **global.size.small**
@@ -2091,6 +2139,16 @@ Defaults to
 \`\`\`
 undefined
 \`\`\`
+
+**calendar.day.extend**
+
+Any additional style for the day of Calendar. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
 ",
   "Carousel": "## Carousel
 A carousel that cycles through children. Child components
@@ -2221,7 +2279,54 @@ If specified, the number of
 \`\`\`
 number
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
+## Theme
+  
+**carousel.icons.next**
+
+The icon to use for the next image navigation control. Expects \`element\`.
+
+Defaults to
+
+\`\`\`
+<Next />
+\`\`\`
+
+**carousel.icons.previous**
+
+The icon to use for the previous image navigation control. Expects \`element\`.
+
+Defaults to
+
+\`\`\`
+<Previous />
+\`\`\`
+
+**carousel.icons.current**
+
+The icon to use on the middle navigation control. One icon per carousel image. Expects \`element\`.
+
+Defaults to
+
+\`\`\`
+<Next />
+\`\`\`
+
+**carousel.icons.color**
+
+The color used for Carousel icons. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Chart": "## Chart
 A graphical chart.
 
@@ -2569,7 +2674,12 @@ NOTE: This can only be used with non-toggle components
 \`\`\`
 boolean
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+input
+\`\`\`",
   "Clock": "## Clock
 A clock with timezone awareness.
 
@@ -2751,9 +2861,14 @@ What type of visualization to show. Defaults to \`analog\`.
 analog
 digital
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+div,svg
+\`\`\`",
   "Collapsible": "## Collapsible
-A react component that expand/collapse animation.
+Expand or collapse animation.
 
 ## Usage
 
@@ -2780,7 +2895,44 @@ Direction to animate the collapsible content. Defaults to \`vertical\`.
 horizontal
 vertical
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
+## Theme
+  
+**collapsible.minSpeed**
+
+The minimum speed of Collapsible animation in milliseconds. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+200
+\`\`\`
+
+**collapsible.baseline**
+
+Default height to be used to calculate the optimal collapsible speed. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+500
+\`\`\`
+
+**collapsible.extend**
+
+Any additional style for Collapsible. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "DataTable": "## DataTable
 A data driven table.
 
@@ -2902,7 +3054,10 @@ A description of the data. The order controls the column order.
       column should be aggregated. This only applies to a footer or groupBy
       context. 'footer' indicates what should be shown in the footer for
       the column. 'search' indicates whether a search filter should be
-      made available for the column. Defaults to \`[]\`.
+      made available for the column. 'primary' indicates that this property
+      should be used as the unique identifier, which gives the cell 'row' scope
+      for accessibility. If 'primary' is not used for any column, and
+      'primaryKey' isn't specified either, then the first column will be used. Defaults to \`[]\`.
 
 \`\`\`
 [{
@@ -2926,9 +3081,11 @@ A description of the data. The order controls the column order.
     {
       aggregate: boolean
     },
+  primary: boolean,
   property: string,
   render: function,
-  search: boolean
+  search: boolean,
+  sortable: boolean
 }]
 \`\`\`
 
@@ -2975,6 +3132,17 @@ When supplied, and when at least one column has 'search' enabled,
 function
 \`\`\`
 
+**primaryKey**
+
+When supplied, indicates the property for a data object to use to
+      get a unique identifier. See also the 'columns.primary' description.
+      Use this property when the columns approach will not work for your
+      data set.
+
+\`\`\`
+string
+\`\`\`
+
 **resizeable**
 
 Whether to allow the user to resize column widths.
@@ -3005,10 +3173,16 @@ Whether to allow the user to sort columns.
 \`\`\`
 boolean
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+table
+\`\`\`",
   "Diagram": "## Diagram
-Graphical lines between DOM elements.
-      Diagram is meant to be used with Stack.
+Graphical connection lines. Diagram is meant to be used with Stack.
+      Boxes can be used in the \`guidingChild\` layer of Stack and then
+      Diagram can be used to draw lines connecting the Boxes.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Diagram&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=diagram&module=%2Fsrc%2FDiagram.js)
 ## Usage
@@ -3067,9 +3241,56 @@ Required. Array of objects describing the connections.
     rectilinear
 }]
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+svg
+\`\`\`
+## Theme
+  
+**global.edgeSize**
+
+The possible sizes for the connections thickness and offset. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+        none: '0px',
+        hair: '1px',
+        xxsmall: '3px',
+        xsmall: '6px',
+        small: '12px',
+        medium: '24px',
+        large: '48px',
+        xlarge: '96px',
+        responsiveBreakpoint: 'small',
+    }
+\`\`\`
+
+**diagram.extend**
+
+Any additional style for Diagram. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**diagram.line.color**
+
+The color of the connection line. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+accent-1
+\`\`\`
+",
   "Distribution": "## Distribution
-Approximately proportionally sized grid of boxes. The
+Proportionally sized grid of boxes. The proportions are approximate. The
       area given to each box isn't mathematically precise according to the
       ratio to the total values. Instead, the boxes are laid out in a
       manner that makes them more visually easy to scan. For example,
@@ -3227,9 +3448,14 @@ Required. Array of objects containing a value. The array should already be
   value: number
 }]
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "Drop": "## Drop
-A drop container that opens next to a target.
+A container that is overlaid next to a target.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Drop&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=drop&module=%2Fsrc%2FDrop.js)
 ## Usage
@@ -3338,11 +3564,17 @@ Whether the drop element should have no background nor shadow
 \`\`\`
 boolean
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "DropButton": "## DropButton
-A Button that when clicked will a Drop with the specified 'dropContent'.
-      When opened, the drop will control the focus so that the contents behind
-      it are not focusable. All properties of Button can be passed through.
+A Button that controls a Drop. When opened, the Drop will contain
+      whatever is specified via \`dropContent\`. The Drop will control the focus
+      so that the contents behind it are not focusable. All properties of
+      Button can be passed through.
       
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DropButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js)
@@ -3525,9 +3757,87 @@ Whether the drop should be open or not. Setting this property does not
 \`\`\`
 boolean
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+button
+\`\`\`",
+  "Form": "## Form
+A form that manages state for its fields.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Form&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=form&module=%2Fsrc%2FForm.js)
+## Usage
+
+\`\`\`javascript
+import { Form } from 'grommet';
+<Form />
+\`\`\`
+
+## Properties
+
+**errors**
+
+An object representing any errors in the data. They keys should
+        match the keys in the value object. Defaults to \`{}\`.
+
+\`\`\`
+{
+
+}
+\`\`\`
+
+**messages**
+
+Custom validation messages. Defaults to \`{
+  \\"invalid\\": \\"invalid\\",
+  \\"required\\": \\"required\\"
+}\`.
+
+\`\`\`
+{
+  invalid: string,
+  required: string
+}
+\`\`\`
+
+**onChange**
+
+Function that will be called when any fields are updated.
+
+\`\`\`
+function
+\`\`\`
+
+**onSubmit**
+
+Function that will be called when the form is submitted. The
+      single argument is an event containing the latest value object
+      via \`event.value\`.
+
+\`\`\`
+function
+\`\`\`
+
+**value**
+
+An object representing all of the data in the form. Defaults to \`{}\`.
+
+\`\`\`
+{
+
+}
+\`\`\`
+  
+## Intrinsic element
+
+\`\`\`
+form
+\`\`\`",
   "FormField": "## FormField
-A field in a form.
+A single field in a form. FormField wraps an input component with
+      a label, help, and/or error messaging. It typically contains an input
+      control like TextInput, TextArea, Select, etc.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=FormField&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=formfield&module=%2Fsrc%2FFormField.js)
 ## Usage
@@ -3573,13 +3883,59 @@ A short label describing the field
 string
 node
 \`\`\`
-  ",
+
+**name**
+
+The name of the value data when in a Form and the name of
+      the input field.
+
+\`\`\`
+string
+\`\`\`
+
+**pad**
+
+Whether to add padding to align with the padding of TextInput.
+
+\`\`\`
+boolean
+\`\`\`
+
+**required**
+
+Whether the field is required.
+
+\`\`\`
+boolean
+\`\`\`
+
+**validate**
+
+Validation rule. Provide a regular expression or a function. If a
+      function is provided, it will be called with two arguments, the value
+      for this field and the entire value object. This permits validation to
+      encompass multiple fields. The function should return a string message
+      describing the validation issue, if any.
+
+\`\`\`
+{
+  regexp: object,
+  message: string
+}
+function
+\`\`\`
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "Grid": "## Grid
 A grid system for laying out content. To use, define the
 rows and columns, create area names for adjacent cells, and then
-place Box components inside those areas using the Box.gridArea property.
+place Box components inside those areas using the gridArea property.
 See https://css-tricks.com/snippets/css/complete-guide-grid/.
-The availability of Grid can be tested via 'Grid.available'. Use this
+The availability of Grid can be tested via \`Grid.available\`. Use this
 to create fallback rendering for older browsers, like ie11.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Grid&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grid&module=%2Fsrc%2FGrid.js)
@@ -3927,9 +4283,67 @@ The DOM tag to use for the element. Defaults to \`div\`.
 \`\`\`
 string
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
+## Theme
+  
+**global.size**
+
+The possible sizes for row and column. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      xxsmall: '48px',
+      xsmall: '96px',
+      small: '192px',
+      medium: '384px',
+      large: '768px',
+      xlarge: '1152px',
+      xxlarge: '1536px',
+      full: '100%',
+    }
+\`\`\`
+
+**grid.extend**
+
+Any additional style for the Grid. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for the grid gap. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+\`\`\`
+",
   "Grommet": "## Grommet
-This is the top level Grommet container.
+The top level Grommet container.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Grommet&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grommet&module=%2Fsrc%2FGrommet.js)
 ## Usage
@@ -3972,7 +4386,34 @@ User agent used to detect the device width for setting the initial breakpoint.
 \`\`\`
 string
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
+## Theme
+  
+**grommet.extend**
+
+Any additional style for Grommet. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.font.face**
+
+Custom font face declaration Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Heading": "## Heading
 Heading text structed in levels.
 
@@ -4157,7 +4598,58 @@ is too long to all fit.
 \`\`\`
 boolean
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+h1,h2,h3,h4
+\`\`\`
+## Theme
+  
+**global.breakpoints**
+
+The possible breakpoints that could affect font-size and max-width Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    small: {
+      value: '768px',
+      borderSize: {
+        xsmall: '1px',
+        small: '2px',
+        medium: '4px',
+        large: '6px',
+        xlarge: '12px',
+      },
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '2px',
+        xsmall: '3px',
+        small: '6px',
+        medium: '12px',
+        large: '24px',
+        xlarge: '48px',
+      },
+      size: {
+        xxsmall: '24px',
+        xsmall: '48px',
+        small: '96px',
+        medium: '192px',
+        large: '384px',
+        xlarge: '768px',
+        full: '100%',
+      },
+    },
+    medium: {
+      value: '1536px',
+    },
+    large: {},
+  }
+\`\`\`
+",
   "Image": "## Image
 An image.
 
@@ -4391,7 +4883,7 @@ number
 \`\`\`
   ",
   "Keyboard": "## Keyboard
-A react component that handles keyboard key presses.
+A handler of keyboard key presses.
 
 ## Usage
 
@@ -4451,6 +4943,14 @@ Function that will be called when the user presses the esc key.
 function
 \`\`\`
 
+**onKeyDown**
+
+Function that will be called when the user presses any key.
+
+\`\`\`
+function
+\`\`\`
+
 **onLeft**
 
 Function that will be called when the user presses the left key.
@@ -4500,8 +5000,9 @@ function
 \`\`\`
   ",
   "Layer": "## Layer
-A modal overlay. It is the caller's responsibility to provide a control for
-      the user to close the layer.
+An overlay. Layer is typically modal and anchored to an edge, corner, or
+      center of the window. It is the caller's responsibility to provide a
+      control for the user to close the layer.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Layer&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=layer&module=%2Fsrc%2FLayer.js)
 ## Usage
@@ -4512,6 +5013,14 @@ import { Layer } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**animate**
+
+Animation transition of the Layer content when it opens. Defaults to \`true\`.
+
+\`\`\`
+boolean
+\`\`\`
 
 **full**
 
@@ -4639,7 +5148,128 @@ Whether the layer should take full width and height on mobile Defaults to \`true
 \`\`\`
 boolean
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
+## Theme
+  
+**global.size.xxsmall**
+
+The minimal height of the Layer. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+48px
+\`\`\`
+
+**layer.background**
+
+The background color of the Layer Container. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+white
+\`\`\`
+
+**layer.container.zIndex**
+
+The stack order of Layer Container. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+15
+\`\`\`
+
+**layer.extend**
+
+Any additional style for Layer. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**layer.overlay.background**
+
+The background of the Layer overlay. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+rgba(0, 0, 0, 0.5)
+\`\`\`
+
+**layer.responsiveBreakpoint**
+
+The actual breakpoint to trigger changes in the border, direction, gap, margin, pad, and round. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**layer.zIndex**
+
+The stack order of Layer. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+10
+\`\`\`
+
+**global.breakpoints**
+
+The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    small: {
+      value: '768px',
+      borderSize: {
+        xsmall: '1px',
+        small: '2px',
+        medium: '4px',
+        large: '6px',
+        xlarge: '12px',
+      },
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '2px',
+        xsmall: '3px',
+        small: '6px',
+        medium: '12px',
+        large: '24px',
+        xlarge: '48px',
+      },
+      size: {
+        xxsmall: '24px',
+        xsmall: '48px',
+        small: '96px',
+        medium: '192px',
+        large: '384px',
+        xlarge: '768px',
+        full: '100%',
+      },
+    },
+    medium: {
+      value: '1536px',
+    },
+    large: {},
+  }
+\`\`\`
+",
   "Markdown": "## GrommetMarkdown
 Markdown formatting using Grommet components.
 
@@ -4653,7 +5283,23 @@ import { Markdown } from 'grommet';
 
 ## Properties
 
-  ",
+**components**
+
+Custom components and props to override html elements such as 'img'
+      or 'pre'. By default 'a', 'p', 'img', and table elements are overriden
+      with grommet components
+
+\`\`\`
+{
+
+}
+\`\`\`
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "MaskedInput": "## MaskedInput
 An input field with formalized syntax.
 
@@ -4686,6 +5332,14 @@ string
 **onChange**
 
 Function that will be called when the user types or pastes text.
+
+\`\`\`
+function
+\`\`\`
+
+**onBlur**
+
+Function that will be called when the user leaves the field.
 
 \`\`\`
 function
@@ -4731,10 +5385,58 @@ What text to put in the input. The caller should ensure that it
 \`\`\`
 string
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+input
+\`\`\`
+## Theme
+  
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.colors.placeholder**
+
+The placeholder color used for the component. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+#AAAAAA
+\`\`\`
+
+**global.input.weight**
+
+The font weight of the text entered. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+600
+\`\`\`
+
+**global.input.padding**
+
+The padding of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+12px
+\`\`\`
+",
   "Menu": "## Menu
-Presents a list of choices within a drop down via a control that
-      opens it.
+A control that opens a Drop containing plain Buttons. The labels
+      and behavior of the contained Buttons are described via the \`items\`
+      property.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=menu&module=%2Fsrc%2FMenu.js)
 ## Usage
@@ -4904,6 +5606,19 @@ Target where the drop will be aligned to. This should be
 object
 \`\`\`
 
+**justifyContent**
+
+How to align the contents along the row axis. Defaults to \`start\`.
+
+\`\`\`
+start
+center
+end
+between
+around
+stretch
+\`\`\`
+
 **icon**
 
 Indicates the icon shown as a control to open it.
@@ -4957,6 +5672,11 @@ xlarge
 string
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+button
+\`\`\`
 ## Theme
   
 **global.colors.control**
@@ -5193,7 +5913,78 @@ Array of value objects describing the data.
   value: number
 }]
 \`\`\`
-  ",
+  
+## Theme
+  
+**global.edgeSize**
+
+The border-radius of the styled Meter. thickness, height and width of the Bar Meter, height of the Circle Meter. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+        none: '0px',
+        hair: '1px',
+        xxsmall: '3px',
+        xsmall: '6px',
+        small: '12px',
+        medium: '24px',
+        large: '48px',
+        xlarge: '96px',
+        responsiveBreakpoint: 'small',
+    }
+\`\`\`
+
+**global.opacity.medium**
+
+The opacity value used on the Meter color. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+0.4
+\`\`\`
+
+**global.size**
+
+The possible sizes for Circle Meter width. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      xxsmall: '48px',
+      xsmall: '96px',
+      small: '192px',
+      medium: '384px',
+      large: '768px',
+      xlarge: '1152px',
+      xxlarge: '1536px',
+      full: '100%',
+    }
+\`\`\`
+
+**meter.color**
+
+The color used for the Meter. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+accent-1
+\`\`\`
+
+**meter.extend**
+
+Any additional style for Meter. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Paragraph": "## Paragraph
 A paragraph of text.
 
@@ -5353,36 +6144,6 @@ p
 \`\`\`
 ## Theme
   
-**global.colors.text**
-
-The text color used inside the Paragraph. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
-\`\`\`
-
-**global.edgeSize**
-
-The possible sizes for margin. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-        none: '0px',
-        hair: '1px',
-        xxsmall: '3px',
-        xsmall: '6px',
-        small: '12px',
-        medium: '24px',
-        large: '48px',
-        xlarge: '96px',
-        responsiveBreakpoint: 'small',
-    }
-\`\`\`
-
 **paragraph**
 
 The possible sizes of the paragraph in terms of its max-width, font-size and line-height. Expects \`object\`.
@@ -5438,9 +6199,34 @@ Defaults to
 \`\`\`
 undefined
 \`\`\`
+
+**global.edgeSize**
+
+The possible sizes for margin. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+\`\`\`
 ",
   "RadioButton": "## RadioButton
 A radio button control.
+
+RadioButton should typically not be used directly.
+      Instead, use RadioButtonGroup.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RadioButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=radiobutton&module=%2Fsrc%2FRadioButton.js)
 ## Usage
@@ -5502,9 +6288,73 @@ Function that will be called when the user clicks the radio button. It
 \`\`\`
 function
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+input
+\`\`\`",
+  "RadioButtonGroup": "## RadioButtonGroup
+A group of radio buttons.
+
+[![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RadioButtonGroup&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=radiobuttongroup&module=%2Fsrc%2FRadioButtonGroup.js)
+## Usage
+
+\`\`\`javascript
+import { RadioButtonGroup } from 'grommet';
+<RadioButtonGroup />
+\`\`\`
+
+## Properties
+
+**name**
+
+Required. The DOM name attribute value to use for the underlying <input/> elements.
+
+\`\`\`
+string
+\`\`\`
+
+**onChange**
+
+Function that will be called when the user clicks on of the radio
+      buttons. It will be passed a React event object.
+
+\`\`\`
+function
+\`\`\`
+
+**options**
+
+Required. Options can be either a string or an object.
+
+\`\`\`
+[string]
+[{
+  disabled: boolean,
+  id: string,
+  label: 
+    string
+    element,
+  value: string
+}]
+\`\`\`
+
+**value**
+
+Currently selected option value.
+
+\`\`\`
+string
+\`\`\`
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "RangeInput": "## RangeInput
-A range input with custom styles.
+A slider control to input a value within a fixed range.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RangeInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeinput&module=%2Fsrc%2FRangeInput.js)
 ## Usage
@@ -5576,9 +6426,26 @@ The current value.
 number
 string
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+input
+\`\`\`
+## Theme
+  
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+",
   "RangeSelector": "## RangeSelector
-A control to allow selecting a range of values.
+A control to input a range of values.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=RangeSelector&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeselector&module=%2Fsrc%2FRangeSelector.js)
 ## Usage
@@ -5712,7 +6579,12 @@ Required. The current values. Defaults to \`[]\`.
 \`\`\`
 [number]
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "RoutedAnchor": "## RoutedAnchor
 An Anchor with support for React Router.
 
@@ -5742,7 +6614,12 @@ Indicates whether the browser history should be appended to or replaced. Default
 push
 replace
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+a
+\`\`\`",
   "RoutedButton": "## RoutedButton
 A button with support for React Router.
 
@@ -5772,9 +6649,14 @@ Indicates whether the browser history should be appended to or replaced. Default
 push
 replace
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+button
+\`\`\`",
   "Select": "## Select
-An select-like field with optional search capability.
+A control to select a value, with optional search.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Select&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=select&module=%2Fsrc%2FSelect.js)
 ## Usage
@@ -5957,6 +6839,19 @@ How to align the drop. Defaults to \`{
 }
 \`\`\`
 
+**dropHeight**
+
+The height of the drop container.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+string
+\`\`\`
+
 **dropTarget**
 
 Target where the options drop will be aligned to. This should be
@@ -6095,19 +6990,6 @@ number
 The size of the select.
 
 \`\`\`
-small
-medium
-large
-xlarge
-string
-\`\`\`
-
-**dropHeight**
-
-The height of the drop container.
-
-\`\`\`
-xsmall
 small
 medium
 large
@@ -6268,7 +7150,11 @@ Custom messages for SkipLinks. Used for accessibility by screen readers. Default
 \`\`\`
   ",
   "Stack": "## Stack
-Stacks components on top of the first child component.
+A container that stacks contents on top of each other. One child is
+      designated as the \`guidingChild\` which determines the size. All
+      other children are placed within that size, either above or below
+      based on their order. Stack is typically used to decorate Meter, Chart,
+      or icons.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Stack&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=stack&module=%2Fsrc%2FStack.js)
 ## Usage
@@ -6412,7 +7298,35 @@ number
 first
 last
 \`\`\`
-  ",
+
+**interactiveChild**
+
+Which child to restrict user interaction to. All other children
+      will have user interaction disabled.
+
+\`\`\`
+number
+first
+last
+\`\`\`
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`
+## Theme
+  
+**stack.extend**
+
+Any additional style for the control of the Stack component. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Tab": "## Tab
 One tab within Tabs.
 
@@ -6441,7 +7355,12 @@ The title of the tab.
 string
 node
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+button
+\`\`\`",
   "Table": "## Table
 A table of data organized in cells.
 
@@ -6704,7 +7623,7 @@ import { TableRow } from 'grommet';
 tr
 \`\`\`",
   "Tabs": "## Tabs
-A tabular view component.
+A container with controls to show one Tab at a time.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Tabs&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=tabs&module=%2Fsrc%2FTabs.js)
 ## Usage
@@ -6873,7 +7792,12 @@ currently active tab changes.
 \`\`\`
 function
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+div
+\`\`\`",
   "Text": "## Text
 Arbitrary text.
 
@@ -7075,26 +7999,6 @@ Defaults to
 { dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 
-**global.edgeSize**
-
-The possible sizes for margin. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-        none: '0px',
-        hair: '1px',
-        xxsmall: '3px',
-        xsmall: '6px',
-        small: '12px',
-        medium: '24px',
-        large: '48px',
-        xlarge: '96px',
-        responsiveBreakpoint: 'small',
-    }
-\`\`\`
-
 **text**
 
 The possible sizes of the text in terms of its font-size and line-height. Expects \`object\`.
@@ -7139,9 +8043,31 @@ Defaults to
 \`\`\`
 undefined
 \`\`\`
+
+**global.edgeSize**
+
+The possible sizes for margin. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+\`\`\`
 ",
   "TextArea": "## TextArea
-A textarea.
+A control to input multiple lines of text.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=TextArea&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textarea&module=%2Fsrc%2FTextArea.js)
 ## Usage
@@ -7217,6 +8143,16 @@ What text to put in the textarea.
 \`\`\`
 string
 \`\`\`
+
+**resize**
+
+Whether user is allowed to resize the textarea. Defaults to \`true\`.
+
+\`\`\`
+vertical
+horizontal
+boolean
+\`\`\`
   
 ## Intrinsic element
 
@@ -7225,24 +8161,34 @@ textarea
 \`\`\`
 ## Theme
   
+**textArea.extend**
+
+Any additional style for Text. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
 **global.colors.placeholder**
 
-The placeholder color used for TextArea. Expects \`string\`.
+The placeholder color used for the component. Expects \`string\`.
 
 Defaults to
 
 \`\`\`
 #AAAAAA
-\`\`\`
-
-**global.control.border.width**
-
-The border width. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-1px
 \`\`\`
 
 **global.input.weight**
@@ -7255,16 +8201,6 @@ Defaults to
 600
 \`\`\`
 
-**global.focus.border.color**
-
-The color of the border when component is focused. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-focus
-\`\`\`
-
 **global.input.padding**
 
 The padding of the text. Expects \`string\`.
@@ -7274,19 +8210,9 @@ Defaults to
 \`\`\`
 12px
 \`\`\`
-
-**textArea.extend**
-
-Any additional style for Text. Expects \`string | (props) => {}\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
 ",
   "TextInput": "## TextInput
-A text input field with optional suggestions.
+A control to input a single line of text, with optional suggestions.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=TextInput&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textinput&module=%2Fsrc%2FTextInput.js)
 ## Usage
@@ -7320,6 +8246,19 @@ How to align the drop. Defaults to \`{
     left
     right
 }
+\`\`\`
+
+**dropHeight**
+
+The height of the drop container.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+string
 \`\`\`
 
 **dropTarget**
@@ -7458,6 +8397,7 @@ What text to put in the input.
 
 \`\`\`
 string
+number
 \`\`\`
   
 ## Intrinsic element
@@ -7467,46 +8407,6 @@ input
 \`\`\`
 ## Theme
   
-**global.colors.placeholder**
-
-The placeholder color used for TextInput. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-#AAAAAA
-\`\`\`
-
-**global.control.border.width**
-
-The border width. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-1px
-\`\`\`
-
-**global.input.padding**
-
-The padding of the text. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-12px
-\`\`\`
-
-**global.input.weight**
-
-The font weight of the text. Expects \`number\`.
-
-Defaults to
-
-\`\`\`
-600
-\`\`\`
-
 **select.step**
 
 How many suggestions to render at a time. Expects \`number\`.
@@ -7560,6 +8460,66 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**textInput.placeholder.extend**
+
+Any additional style for non-string placeholder inside TextInput. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**textInput.suggestions.extend**
+
+Any additional style for TextInput suggestions. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.colors.placeholder**
+
+The placeholder color used for the component. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+#AAAAAA
+\`\`\`
+
+**global.input.weight**
+
+The font weight of the text entered. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+600
+\`\`\`
+
+**global.input.padding**
+
+The padding of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+12px
 \`\`\`
 ",
   "Video": "## Video
@@ -7713,7 +8673,64 @@ Enables video muting. This option is best used with the autoPlay flag.
 \`\`\`
 boolean
 \`\`\`
-  ",
+  
+## Intrinsic element
+
+\`\`\`
+video
+\`\`\`
+## Theme
+  
+**global.edgeSize.responsiveBreakpoint**
+
+The actual breakpoint to trigger changes in the video component layout. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**global.edgeSize.xsmall**
+
+The width of the video scrubber. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+6px
+\`\`\`
+
+**video.captions.background**
+
+The caption background color of the video  Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+rgba(0, 0, 0, 0.7)
+\`\`\`
+
+**video.scrubber.color**
+
+The background color of the video scrubber. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+light-4
+\`\`\`
+
+**video.extend**
+
+Any additional style for Video. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "WorldMap": "## WorldMap
 A map of the world, or a continent.
 
@@ -7899,6 +8916,11 @@ string
 }
 \`\`\`
   
+## Intrinsic element
+
+\`\`\`
+svg
+\`\`\`
 ## Theme
   
 **worldMap.color**

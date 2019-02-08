@@ -1,13 +1,16 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
+import {
+  colorPropType,
+  genericProps,
+  getAvailableAtBadge,
+  themeDocUtils,
+} from '../../utils';
 
 export const doc = Button => {
   const DocumentedButton = describe(Button)
     .availableAt(getAvailableAtBadge('Button'))
-    .description(
-      'A button. We have a separate component from the browser base so we can style it.',
-    )
+    .description('A button.')
     .usage(
       `import { Button } from 'grommet';
 <Button primary={true} label='Label' />`,
@@ -154,4 +157,5 @@ export const themeDoc = {
     description: 'Any additional style for the Button.',
     type: 'string | (props) => {}',
   },
+  ...themeDocUtils.focusStyle,
 };

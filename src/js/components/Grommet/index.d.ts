@@ -7,6 +7,6 @@ export interface GrommetProps {
   userAgent?: string;
 }
 
-declare const Grommet: React.ComponentType<GrommetProps>;
+declare const Grommet: React.ComponentType<GrommetProps & JSX.IntrinsicElements['div']>;
 
 export { Grommet };

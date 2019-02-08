@@ -146,6 +146,8 @@ class CheckBox extends Component {
         margin={{ [side]: theme.checkBox.gap || 'small' }}
         {...themeableProps}
       >
+        {visual}
+        {hidden}
         <StyledCheckBoxInput
           {...rest}
           ref={forwardRef}
@@ -159,8 +161,6 @@ class CheckBox extends Component {
           })}
           {...themeableProps}
         />
-        {visual}
-        {hidden}
       </StyledCheckBox>
     );
 
@@ -193,7 +193,7 @@ if (process.env.NODE_ENV !== 'production') {
   CheckBoxDoc = require('./doc').doc(CheckBox); // eslint-disable-line global-require
 }
 const CheckBoxWrapper = compose(
-  withFocus,
+  withFocus(),
   withTheme,
   withForwardRef,
 )(CheckBoxDoc || CheckBox);

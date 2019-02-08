@@ -22,7 +22,9 @@ const Bar = props => {
   } = props;
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]);
-  const height = parseMetricToNum(theme.global.edgeSize[thickness]);
+  const height = parseMetricToNum(
+    theme.global.edgeSize[thickness] || thickness,
+  );
   // account for the round cap, if any
   const capOffset = round ? height / 2 : 0;
   const mid = height / 2;
@@ -39,7 +41,7 @@ const Bar = props => {
       const d = `M ${start},${mid} L ${start + delta},${mid}`;
       const colorName =
         color ||
-        (index === values.length - 1 ? 'accent-1' : defaultColor(index, theme));
+        (index === values.length - 1 ? theme.meter.color : defaultColor(index, theme));
       let hoverProps;
       if (onHover) {
         hoverProps = {

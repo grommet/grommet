@@ -35,6 +35,14 @@ Function that will be called when the user types or pastes text.
 function
 ```
 
+**onBlur**
+
+Function that will be called when the user leaves the field.
+
+```
+function
+```
+
 **mask**
 
 Describes the structure of the mask. If a regexp is provided, it should
@@ -76,3 +84,49 @@ What text to put in the input. The caller should ensure that it
 string
 ```
   
+## Intrinsic element
+
+```
+input
+```
+## Theme
+  
+**global.focus.border.color**
+
+The color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
+```
+
+**global.colors.placeholder**
+
+The placeholder color used for the component. Expects `string`.
+
+Defaults to
+
+```
+#AAAAAA
+```
+
+**global.input.weight**
+
+The font weight of the text entered. Expects `number`.
+
+Defaults to
+
+```
+600
+```
+
+**global.input.padding**
+
+The padding of the text. Expects `string`.
+
+Defaults to
+
+```
+12px
+```

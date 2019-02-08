@@ -49,7 +49,8 @@ export const doc = WorldMap => {
   const DocumentedWorldMap = describe(WorldMap)
     .availableAt(getAvailableAtBadge('WorldMap'))
     .description('A map of the world, or a continent.')
-    .usage("import { WorldMap } from 'grommet';\n<WorldMap />");
+    .usage("import { WorldMap } from 'grommet';\n<WorldMap />")
+    .intrinsicElement('svg');
 
   DocumentedWorldMap.propTypes = {
     ...genericProps,

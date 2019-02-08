@@ -62,9 +62,9 @@ exports[`Heading level renders 1`] = `
 }
 
 .c3 {
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
   font-weight: 600;
 }
 
@@ -85,9 +85,9 @@ exports[`Heading level renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 624px;
   }
 }
 
@@ -407,7 +407,7 @@ exports[`Heading size renders 1`] = `
   font-weight: 600;
 }
 
-.c6 {
+.c1 {
   font-size: 34px;
   line-height: 40px;
   max-width: 816px;
@@ -415,9 +415,9 @@ exports[`Heading size renders 1`] = `
 }
 
 .c8 {
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
   font-weight: 600;
 }
 
@@ -425,13 +425,6 @@ exports[`Heading size renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
-  font-weight: 600;
-}
-
-.c1 {
-  font-size: 34px;
-  line-height: 40px;
-  max-width: 816px;
   font-weight: 600;
 }
 
@@ -456,10 +449,17 @@ exports[`Heading size renders 1`] = `
   font-weight: 600;
 }
 
-.c7 {
+.c6 {
   font-size: 66px;
   line-height: 72px;
   max-width: 1584px;
+  font-weight: 600;
+}
+
+.c7 {
+  font-size: 22px;
+  line-height: 28px;
+  max-width: 528px;
   font-weight: 600;
 }
 
@@ -486,10 +486,10 @@ exports[`Heading size renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
+  .c1 {
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 624px;
   }
 }
 
@@ -506,14 +506,6 @@ exports[`Heading size renders 1`] = `
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    font-size: 26px;
-    line-height: 32px;
-    max-width: 624px;
   }
 }
 
@@ -542,10 +534,18 @@ exports[`Heading size renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c7 {
+  .c6 {
     font-size: 42px;
     line-height: 48px;
     max-width: 1008px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
   }
 }
 
@@ -589,7 +589,7 @@ exports[`Heading size renders 1`] = `
     size="small"
   />
   <h2
-    className="c6"
+    className="c1"
     size="medium"
   />
   <h2
@@ -597,11 +597,11 @@ exports[`Heading size renders 1`] = `
     size="large"
   />
   <h2
-    className="c7"
+    className="c6"
     size="xlarge"
   />
   <h3
-    className="c8"
+    className="c7"
     size="small"
   />
   <h3
@@ -798,9 +798,9 @@ exports[`Theme based font family renders 1`] = `
 
 .c3 {
   font-family: Ubuntu;
-  font-size: 22px;
-  line-height: 28px;
-  max-width: 528px;
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
   font-weight: 600;
 }
 
@@ -822,9 +822,9 @@ exports[`Theme based font family renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    font-size: 22px;
-    line-height: 28px;
-    max-width: 528px;
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 624px;
   }
 }
 
@@ -838,6 +838,95 @@ exports[`Theme based font family renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c4 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="c1"
+  />
+  <h2
+    className="c2"
+  />
+  <h3
+    className="c3"
+  />
+  <h4
+    className="c4"
+  />
+</div>
+`;
+
+exports[`Theme based font weight renders 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
+.c1 {
+  font-size: 50px;
+  line-height: 56px;
+  max-width: 1200px;
+  font-weight: 700;
+}
+
+.c2 {
+  font-size: 34px;
+  line-height: 40px;
+  max-width: 816px;
+  font-weight: 400;
+}
+
+.c3 {
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 200;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 816px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 624px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;

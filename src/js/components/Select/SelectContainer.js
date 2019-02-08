@@ -21,7 +21,9 @@ import { TextInput } from '../TextInput';
 import { SelectOption } from './SelectOption';
 import { StyledContainer } from './StyledSelect';
 
+// position relative is so scroll can be managed correctly
 const OptionsBox = styled(Box)`
+  position: relative;
   scroll-behavior: smooth;
 `;
 
@@ -45,11 +47,11 @@ class SelectContainer extends Component {
     value: '',
   };
 
-  optionsRef = {};
+  optionRefs = {};
 
   searchRef = createRef();
 
-  selectRef = createRef();
+  optionsRef = createRef();
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { options, value, onSearch } = nextProps;
@@ -84,20 +86,20 @@ class SelectContainer extends Component {
     // timeout need to send the operation through event loop and allow time to the portal
     // to be available
     setTimeout(() => {
-      const selectNode = this.selectRef.current;
+      const optionsNode = this.optionsRef.current;
       if (onSearch) {
         const input = this.searchRef.current;
         if (input && input.focus) {
           setFocusWithoutScroll(input);
         }
-      } else if (selectNode) {
-        setFocusWithoutScroll(selectNode);
+      } else if (optionsNode) {
+        setFocusWithoutScroll(optionsNode);
       }
 
       // scroll to active option if it is below the fold
-      if (activeIndex >= 0 && selectNode) {
-        const optionNode = this.optionsRef[activeIndex];
-        const { bottom: containerBottom } = selectNode.getBoundingClientRect();
+      if (activeIndex >= 0 && optionsNode) {
+        const optionNode = this.optionRefs[activeIndex];
+        const { bottom: containerBottom } = optionsNode.getBoundingClientRect();
         if (optionNode) {
           const { bottom: optionTop } = optionNode.getBoundingClientRect();
 
@@ -193,15 +195,20 @@ class SelectContainer extends Component {
       this.setState(
         { activeIndex: nextActiveIndex, keyboardNavigating: true },
         () => {
-          const buttonNode = this.optionsRef[nextActiveIndex];
-          const selectNode = this.selectRef.current;
+          const buttonNode = this.optionRefs[nextActiveIndex];
+          const optionsNode = this.optionsRef.current;
 
           if (
             buttonNode &&
-            isNodeAfterScroll(buttonNode, selectNode) &&
-            selectNode.scrollBy
+            isNodeAfterScroll(buttonNode, optionsNode) &&
+            optionsNode.scrollTo
           ) {
-            selectNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
+            optionsNode.scrollTo(
+              0,
+              buttonNode.offsetTop -
+                (optionsNode.getBoundingClientRect().height -
+                  buttonNode.getBoundingClientRect().height),
+            );
           }
           this.clearKeyboardNavigation();
         },
@@ -220,15 +227,15 @@ class SelectContainer extends Component {
       this.setState(
         { activeIndex: nextActiveIndex, keyboardNavigating: true },
         () => {
-          const buttonNode = this.optionsRef[nextActiveIndex];
-          const selectNode = this.selectRef.current;
+          const buttonNode = this.optionRefs[nextActiveIndex];
+          const optionsNode = this.optionsRef.current;
 
           if (
             buttonNode &&
-            isNodeBeforeScroll(buttonNode, selectNode) &&
-            selectNode.scrollBy
+            isNodeBeforeScroll(buttonNode, optionsNode) &&
+            optionsNode.scrollTo
           ) {
-            selectNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
+            optionsNode.scrollTo(0, buttonNode.offsetTop);
           }
           this.clearKeyboardNavigation();
         },
@@ -384,7 +391,7 @@ class SelectContainer extends Component {
             flex="shrink"
             role="menubar"
             tabIndex="-1"
-            ref={this.selectRef}
+            ref={this.optionsRef}
             overflow="auto"
           >
             {options.length > 0 ? (
@@ -395,9 +402,10 @@ class SelectContainer extends Component {
                   const isActive = activeIndex === index;
                   return (
                     <SelectOption
-                      key={`option_${index}`}
+                      // eslint-disable-next-line react/no-array-index-key
+                      key={index}
                       ref={ref => {
-                        this.optionsRef[index] = ref;
+                        this.optionRefs[index] = ref;
                       }}
                       disabled={isDisabled || undefined}
                       active={isActive}

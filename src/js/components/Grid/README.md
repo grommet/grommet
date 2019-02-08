@@ -1,9 +1,9 @@
 ## Grid
 A grid system for laying out content. To use, define the
 rows and columns, create area names for adjacent cells, and then
-place Box components inside those areas using the Box.gridArea property.
+place Box components inside those areas using the gridArea property.
 See https://css-tricks.com/snippets/css/complete-guide-grid/.
-The availability of Grid can be tested via 'Grid.available'. Use this
+The availability of Grid can be tested via `Grid.available`. Use this
 to create fallback rendering for older browsers, like ie11.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Grid&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grid&module=%2Fsrc%2FGrid.js)
@@ -352,3 +352,60 @@ The DOM tag to use for the element. Defaults to `div`.
 string
 ```
   
+## Intrinsic element
+
+```
+div
+```
+## Theme
+  
+**global.size**
+
+The possible sizes for row and column. Expects `object`.
+
+Defaults to
+
+```
+{
+      xxsmall: '48px',
+      xsmall: '96px',
+      small: '192px',
+      medium: '384px',
+      large: '768px',
+      xlarge: '1152px',
+      xxlarge: '1536px',
+      full: '100%',
+    }
+```
+
+**grid.extend**
+
+Any additional style for the Grid. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.edgeSize**
+
+The possible sizes for the grid gap. Expects `object`.
+
+Defaults to
+
+```
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+```

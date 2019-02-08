@@ -1,5 +1,5 @@
 ## Keyboard
-A react component that handles keyboard key presses.
+A handler of keyboard key presses.
 
 ## Usage
 
@@ -54,6 +54,14 @@ function
 **onEsc**
 
 Function that will be called when the user presses the esc key.
+
+```
+function
+```
+
+**onKeyDown**
+
+Function that will be called when the user presses any key.
 
 ```
 function

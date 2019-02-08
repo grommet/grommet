@@ -63,6 +63,17 @@ const findTarget = target => {
 class Diagram extends Component {
   static defaultProps = { connections: [] };
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    // track whether the connections array changes so we can trigger re-placing
+    if (nextProps.connections !== prevState.connections) {
+      return {
+        connections: nextProps.connections,
+        connectionPoints: undefined,
+      };
+    }
+    return null;
+  }
+
   state = { height: 0, width: 0 };
 
   svgRef = React.createRef();
@@ -73,7 +84,10 @@ class Diagram extends Component {
   }
 
   componentDidUpdate() {
-    this.onResize();
+    const { connectionPoints } = this.state;
+    if (!connectionPoints) {
+      this.placeConnections();
+    }
   }
 
   componentWillUnmount() {
@@ -81,7 +95,7 @@ class Diagram extends Component {
   }
 
   onResize = () => {
-    const { connectionPoints, width, height } = this.state;
+    const { width, height } = this.state;
     const svg = this.svgRef.current;
     if (svg) {
       const rect = svg.getBoundingClientRect();
@@ -91,8 +105,6 @@ class Diagram extends Component {
           height: rect.height,
           connectionPoints: undefined,
         });
-      } else if (!connectionPoints) {
-        this.placeConnections();
       }
     }
   };
@@ -188,9 +200,10 @@ class Diagram extends Component {
 
             path = (
               <path
-                key={`${index + 0}`}
+                // eslint-disable-next-line react/no-array-index-key
+                key={index}
                 {...cleanedRest}
-                stroke={normalizeColor(color || 'accent-1', theme)}
+                stroke={normalizeColor(color || theme.diagram.line.color, theme)}
                 strokeWidth={strokeWidth}
                 strokeLinecap={round ? 'round' : 'butt'}
                 strokeLinejoin={round ? 'round' : 'miter'}

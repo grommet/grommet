@@ -2,7 +2,7 @@ import { describe, PropTypes } from 'react-desc';
 
 export const doc = Keyboard => {
   const DocumentedKeyboard = describe(Keyboard)
-    .description('A react component that handles keyboard key presses.')
+    .description('A handler of keyboard key presses.')
     .usage(
       `import { Keyboard } from 'grommet';
 <Keyboard onUp={() => {}} />`,
@@ -26,6 +26,9 @@ export const doc = Keyboard => {
     ),
     onEsc: PropTypes.func.description(
       'Function that will be called when the user presses the esc key.',
+    ),
+    onKeyDown: PropTypes.func.description(
+      'Function that will be called when the user presses any key.',
     ),
     onLeft: PropTypes.func.description(
       'Function that will be called when the user presses the left key.',

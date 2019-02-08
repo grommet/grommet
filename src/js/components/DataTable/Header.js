@@ -6,8 +6,6 @@ import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
 
 import { Box } from '../Box';
-import { TableHeader } from '../TableHeader';
-import { TableRow } from '../TableRow';
 import { TableCell } from '../TableCell';
 import { Text } from '../Text';
 
@@ -46,8 +44,8 @@ const Header = ({
   }))(dataTableContextTheme);
   const { border, background, ...innerThemeProps } = dataTableContextTheme;
   return (
-    <StyledDataTableHeader as={TableHeader} {...rest}>
-      <StyledDataTableRow as={TableRow}>
+    <StyledDataTableHeader {...rest}>
+      <StyledDataTableRow>
         {groups && (
           <ExpanderCell
             context="header"
@@ -59,11 +57,10 @@ const Header = ({
           />
         )}
 
-        {columns.map(({ property, header, align, search }) => {
+        {columns.map(({ property, header, align, search, sortable }) => {
           let content =
             typeof header === 'string' ? <Text>{header}</Text> : header;
-
-          if (onSort) {
+          if (onSort && sortable !== false) {
             content = (
               <Sorter
                 align={align}
@@ -104,7 +101,7 @@ const Header = ({
                 />
               </Box>
             );
-          } else if (!onSort) {
+          } else if (!onSort || sortable === false) {
             content = (
               <Box
                 {...dataTableContextTheme}

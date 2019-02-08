@@ -1,5 +1,5 @@
 ## Distribution
-Approximately proportionally sized grid of boxes. The
+Proportionally sized grid of boxes. The proportions are approximate. The
       area given to each box isn't mathematically precise according to the
       ratio to the total values. Instead, the boxes are laid out in a
       manner that makes them more visually easy to scan. For example,
@@ -158,3 +158,8 @@ Required. Array of objects containing a value. The array should already be
 }]
 ```
   
+## Intrinsic element
+
+```
+div
+```

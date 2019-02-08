@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 const fixedSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sizes = [
@@ -27,15 +27,16 @@ export const doc = Grid => {
     .description(
       `A grid system for laying out content. To use, define the
 rows and columns, create area names for adjacent cells, and then
-place Box components inside those areas using the Box.gridArea property.
+place Box components inside those areas using the gridArea property.
 See https://css-tricks.com/snippets/css/complete-guide-grid/.
-The availability of Grid can be tested via 'Grid.available'. Use this
+The availability of Grid can be tested via \`Grid.available\`. Use this
 to create fallback rendering for older browsers, like ie11.`,
     )
     .usage(
       `import { Grid } from 'grommet';
 <Grid />`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedGrid.propTypes = {
     ...genericProps,
@@ -151,4 +152,27 @@ of indicating the DOM tag via the 'as' property.`,
   };
 
   return DocumentedGrid;
+};
+
+export const themeDoc = {
+  'global.size': {
+    description: 'The possible sizes for row and column.',
+    type: 'object',
+    defaultValue: `{
+      xxsmall: '48px',
+      xsmall: '96px',
+      small: '192px',
+      medium: '384px',
+      large: '768px',
+      xlarge: '1152px',
+      xxlarge: '1536px',
+      full: '100%',
+    }`,
+  },
+  'grid.extend': {
+    description: 'Any additional style for the Grid.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  ...themeDocUtils.edgeStyle('The possible sizes for the grid gap.'),
 };

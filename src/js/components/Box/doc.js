@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge, genericProps } from '../../utils';
+import { getAvailableAtBadge, genericProps, themeDocUtils } from '../../utils';
 
 const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
@@ -28,9 +28,12 @@ export const doc = Box => {
   const DocumentedBox = describe(Box)
     .availableAt(getAvailableAtBadge('Box'))
     .description(
-      'A flexible box that lays out its contents along a single direction.',
+      `A container that lays out its contents in one direction. Box
+      provides CSS flexbox capabilities for layout, as well as general
+      styling of things like background color, border, and animation.`,
     )
-    .usage("import { Box } from 'grommet';\n<Box />");
+    .usage("import { Box } from 'grommet';\n<Box />")
+    .intrinsicElement('div');
   DocumentedBox.propTypes = {
     ...genericProps,
     align: PropTypes.oneOf([
@@ -127,6 +130,17 @@ export const doc = Box => {
           PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
           PropTypes.string,
         ]),
+        style: PropTypes.oneOf([
+          'solid',
+          'dashed',
+          'dotted',
+          'double',
+          'groove',
+          'ridge',
+          'inset',
+          'outset',
+          'hidden',
+        ]).defaultValue('solid'),
       }),
     ]).description('Include a border.'),
     direction: PropTypes.oneOf(['row', 'column', 'row-responsive'])
@@ -144,7 +158,13 @@ export const doc = Box => {
     flex: PropTypes.oneOfType([
       PropTypes.oneOf(['grow', 'shrink']),
       PropTypes.bool,
-    ]).description('Whether flex-grow and/or flex-shrink is true.'),
+      PropTypes.shape({
+        grow: PropTypes.number,
+        shrink: PropTypes.number,
+      }),
+    ]).description(
+      'Whether flex-grow and/or flex-shrink is true and at a desired factor.',
+    ),
     fill: PropTypes.oneOfType([
       PropTypes.oneOf(['horizontal', 'vertical']),
       PropTypes.bool,
@@ -161,9 +181,14 @@ export const doc = Box => {
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ]).description('A fixed height.'),
-    justify: PropTypes.oneOf(['start', 'center', 'between', 'end']).description(
-      'How to align the contents along the main axis.',
-    ),
+    justify: PropTypes.oneOf([
+      'start',
+      'center',
+      'between',
+      'around',
+      'evenly',
+      'end',
+    ]).description('How to align the contents along the main axis.'),
     overflow: PropTypes.oneOfType([
       PropTypes.oneOf(OVERFLOW_VALUES),
       PropTypes.shape({
@@ -280,63 +305,6 @@ export const themeDoc = {
   xlarge: '24px,
 }`,
   },
-  'global.breakpoints': {
-    description:
-      'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
-    type: 'object',
-    defaultValue: `{
-  small: {
-    value: '768px',
-    borderSize: {
-      xsmall: '1px',
-      small: '2px',
-      medium: '4px',
-      large: '6px',
-      xlarge: '12px',
-    },
-    edgeSize: {
-      none: '0px',
-      hair: '1px',
-      xxsmall: '2px',
-      xsmall: '3px',
-      small: '6px',
-      medium: '12px',
-      large: '24px',
-      xlarge: '48px',
-    },
-    size: {
-      xxsmall: '24px',
-      xsmall: '48px',
-      small: '96px',
-      medium: '192px',
-      large: '384px',
-      xlarge: '768px',
-      full: '100%',
-    },
-  },
-  medium: {
-    value: '1536px',
-  },
-  large: {},
-}`,
-  },
-  'global.edgeSize': {
-    description: 'The possible sizes for gap, margin, and pad.',
-    type: 'object',
-    defaultValue: `{
-  edgeSize: {
-    none: '0px',
-    hair: '1px',
-    xxsmall: '3px',
-    xsmall: '6px',
-    small: '12px',
-    medium: '24px',
-    large: '48px',
-    xlarge: '96px',
-    responsiveBreakpoint: 'small',
-  },
-}`,
-  },
   'global.elevation': {
     description: 'The possible shadows in Box elevation.',
     type: 'object',
@@ -394,4 +362,10 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'small',
   },
+  ...themeDocUtils.edgeStyle(
+    'The possible sizes for any of gap, margin, and pad.',
+  ),
+  ...themeDocUtils.breakpointStyle(
+    'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
+  ),
 };

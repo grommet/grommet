@@ -56,6 +56,8 @@ describe('Box', () => {
         <Box justify="start" />
         <Box justify="center" />
         <Box justify="between" />
+        <Box justify="around" />
+        <Box justify="evenly" />
         <Box justify="end" />
       </Grommet>,
     );
@@ -188,6 +190,9 @@ describe('Box', () => {
           <Box flex={false} />
           <Box flex="grow" />
           <Box flex="shrink" />
+          <Box flex={{ grow: 2 }} />
+          <Box flex={{ shrink: 2 }} />
+          <Box flex={{ grow: 2, shrink: 2 }} />
         </Box>
       </Grommet>,
     );
@@ -213,7 +218,7 @@ describe('Box', () => {
   test('gap', () => {
     const component = renderer.create(
       <Grommet>
-        {['xsmall', 'small', 'medium', 'large'].map(gap => (
+        {['xsmall', 'small', 'medium', 'large', '80px'].map(gap => (
           <Box key={gap} gap={gap} direction="row">
             <Box />
           </Box>
@@ -315,6 +320,9 @@ describe('Box', () => {
         <Box border={{ size: 'medium' }} />
         <Box border={{ size: 'large' }} />
         <Box border={{ size: 'xlarge' }} />
+        <Box border={{ style: 'dotted' }} />
+        <Box border={{ style: 'double' }} />
+        <Box border={{ style: 'dashed' }} />
       </Grommet>,
     );
     const tree = component.toJSON();

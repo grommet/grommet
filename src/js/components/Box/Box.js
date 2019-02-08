@@ -57,6 +57,7 @@ class BoxImpl extends Component {
           } else {
             contents.push(
               <StyledBoxGap
+                // eslint-disable-next-line react/no-array-index-key
                 key={index}
                 gap={gap}
                 directionProp={direction}

@@ -57,4 +57,16 @@ describe('TextArea', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  [true, false, 'horizontal', 'vertical'].forEach(resize => {
+    test(`resize ${resize}`, () => {
+      const component = renderer.create(
+        <Grommet>
+          <TextArea id="item" name="item" resize={resize} />
+        </Grommet>,
+      );
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+  });
 });

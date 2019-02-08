@@ -5,11 +5,12 @@ import { colorPropType, getAvailableAtBadge } from '../../utils';
 export const doc = RangeSelector => {
   const DocumentedRangeSelector = describe(RangeSelector)
     .availableAt(getAvailableAtBadge('RangeSelector'))
-    .description('A control to allow selecting a range of values.')
+    .description('A control to input a range of values.')
     .usage(
       `import { RangeSelector } from 'grommet';
 <RangeSelector />`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedRangeSelector.propTypes = {
     color: colorPropType.description(

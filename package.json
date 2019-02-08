@@ -1,17 +1,19 @@
 {
   "name": "grommet",
-  "version": "2.2.1",
+  "version": "2.4.0",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
-  "sideEffects": false,
+  "sideEffects": [
+    "./src/js/contexts/ThemeContext/ThemeContext.js"
+  ],
   "description": "focus on the essential experience",
   "authors": [
     "Alan Souza",
     "Bryan Jacquot",
     "Chris Carlozzi",
     "Eric Soderberg",
-    "Shimi Yacobi"
+    "Shimrit Yacobi"
   ],
   "homepage": "http://grommet.io",
   "bugs": "https://github.com/grommet/grommet/issues",
@@ -25,13 +27,13 @@
     "node": ">= 8"
   },
   "scripts": {
-    "generate-readme-ts": "cross-env NODE_ENV=production babel-node ./tools/generate-readme-ts",
+    "generate-readme": "cross-env NODE_ENV=production babel-node ./tools/generate-readme",
     "build": "webpack --mode production && babel ./src/js/ --ignore '__tests__' --out-dir ./dist --copy-files && cross-env BABEL_ENV=es6 babel ./src/js/ --ignore '__tests__' --out-dir ./dist/es6 --copy-files",
     "release-stable": "babel-node ./tools/release-stable",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
-    "test": "npm run generate-readme-ts && jest --runInBand",
-    "test-update": "npm run generate-readme-ts && jest --updateSnapshot",
+    "test": "npm run generate-readme && jest --runInBand",
+    "test-update": "npm run generate-readme && jest --updateSnapshot",
     "test-watch": "jest --watchAll",
     "pack": "babel-node ./tools/pack",
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",
@@ -39,20 +41,20 @@
     "prettier": "pretty-quick --staged"
   },
   "peerDependencies": {
-    "react": ">= 16.4.1",
-    "react-dom": ">= 16.4.1",
+    "react": ">= 16.6.1",
+    "react-dom": ">= 16.6.1",
     "styled-components": ">= 4.X"
   },
   "dependencies": {
     "css": "^2.2.3",
-    "hoist-non-react-statics": "^3.2.0",
-    "grommet-icons": "^4.0.0",
+    "grommet-icons": "^4.2.0",
     "grommet-styles": "^0.2.0",
+    "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "^6.6.6",
     "mobile-detect": "^1.4.3",
     "polished": "^2.2.0",
     "prop-types": "^15.5.10",
-    "react-desc": "^4.1.0",
+    "react-desc": "^4.1.2",
     "recompose": "^0.30.0"
   },
   "devDependencies": {
@@ -68,7 +70,7 @@
     "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
-    "@emotion/core": "^0.13.1",
+    "@emotion/core": "^10.0.5",
     "@storybook/addon-options": "^4.0.0",
     "@storybook/addon-storysource": "^4.0.0",
     "@storybook/addons": "^4.0.0",
@@ -79,7 +81,7 @@
     "babel-loader": "^8.0.0-beta.6",
     "babel-plugin-styled-components": "^1.6.4",
     "babel-plugin-transform-imports": "^1.5.0",
-    "clean-webpack-plugin": "^0.1.19",
+    "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.5.3",
     "cross-env": "^5.1.6",
     "del": "^3.0.0",
@@ -101,6 +103,7 @@
     "jest": "^23.1.0",
     "jest-cli": "^23.1.0",
     "jest-styled-components": "^6.2.0",
+    "jsdom": "^13.1.0",
     "pre-commit": "^1.2.2",
     "prettier": "^1.14.3",
     "pretty-quick": "^1.8.0",
@@ -109,7 +112,7 @@
     "react-dom": "^16.4.0",
     "react-test-renderer": "^16.4.0",
     "react-testing-library": "^5.2.0",
-    "regenerator-runtime": "^0.12.1",
+    "regenerator-runtime": "^0.13.1",
     "require-reload": "^0.2.2",
     "simple-git": "^1.95.0",
     "styled-components": "^4.1.1",

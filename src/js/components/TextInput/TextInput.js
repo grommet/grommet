@@ -1,6 +1,7 @@
 import React, { Component, isValidElement } from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
+import { sizeStyle } from 'grommet-styles';
 
 import { defaultProps } from '../../default-props';
 
@@ -36,7 +37,10 @@ function stringLabel(suggestion) {
 }
 
 const ContainerBox = styled(Box)`
-  max-height: inherit;
+  ${props =>
+    props.dropHeight
+      ? sizeStyle('max-height', props.dropHeight, props.theme)
+      : 'max-height: inherit;'};
 
   /* IE11 hack to get drop contents to not overflow */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -315,6 +319,7 @@ class TextInput extends Component {
     const {
       defaultValue,
       dropAlign,
+      dropHeight,
       dropTarget,
       forwardRef,
       id,
@@ -343,7 +348,7 @@ class TextInput extends Component {
           onClickOutside={() => this.setState({ showDrop: false })}
           onEsc={() => this.setState({ showDrop: false })}
         >
-          <ContainerBox overflow="auto">
+          <ContainerBox overflow="auto" dropHeight={dropHeight}>
             {this.renderSuggestions()}
           </ContainerBox>
         </Drop>
@@ -391,7 +396,7 @@ if (process.env.NODE_ENV !== 'production') {
   TextInputDoc = require('./doc').doc(TextInput); // eslint-disable-line global-require
 }
 const TextInputWrapper = compose(
-  withFocus,
+  withFocus({ focusWithMouse: true }),
   withTheme,
   withAnnounce,
   withForwardRef,

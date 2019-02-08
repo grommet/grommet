@@ -1,11 +1,13 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 export const doc = TextInput => {
   const DocumentedTextInput = describe(TextInput)
     .availableAt(getAvailableAtBadge('TextInput'))
-    .description('A text input field with optional suggestions.')
+    .description(
+      'A control to input a single line of text, with optional suggestions.',
+    )
     .usage(
       `import { TextInput } from 'grommet';
 <TextInput id='item' name='item' />`,
@@ -24,6 +26,10 @@ export const doc = TextInput => {
         top: 'bottom',
         left: 'left',
       }),
+    dropHeight: PropTypes.oneOfType([
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description('The height of the drop container.'),
     dropTarget: PropTypes.object.description(
       `Target where any suggestions drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be
@@ -88,33 +94,16 @@ Only use this when the containing context provides sufficient affordance`,
       `Suggestions to show. It is recommended to avoid showing too many
 suggestions and instead rely on the user to type more.`,
     ),
-    value: PropTypes.string.description('What text to put in the input.'),
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]).description('What text to put in the input.'),
   };
 
   return DocumentedTextInput;
 };
 
 export const themeDoc = {
-  'global.colors.placeholder': {
-    description: 'The placeholder color used for TextInput.',
-    type: 'string',
-    defaultValue: '#AAAAAA',
-  },
-  'global.control.border.width': {
-    description: 'The border width.',
-    type: 'string',
-    defaultValue: '1px',
-  },
-  'global.input.padding': {
-    description: 'The padding of the text.',
-    type: 'string',
-    defaultValue: '12px',
-  },
-  'global.input.weight': {
-    description: 'The font weight of the text.',
-    type: 'number',
-    defaultValue: 600,
-  },
   'select.step': {
     description: 'How many suggestions to render at a time.',
     type: 'number',
@@ -155,4 +144,18 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'textInput.placeholder.extend': {
+    description:
+      'Any additional style for non-string placeholder inside TextInput.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'textInput.suggestions.extend': {
+    description: 'Any additional style for TextInput suggestions.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  ...themeDocUtils.focusStyle,
+  ...themeDocUtils.placeholderStyle,
+  ...themeDocUtils.inputStyle,
 };

@@ -66,7 +66,8 @@ const FixedSizesBox = () => (
         {Array(20)
           .fill()
           .map((_, i) => (
-            <Text key={`${i + 0}`}>{`Small (${i})`}</Text>
+            // eslint-disable-next-line react/no-array-index-key
+            <Text key={i}>{`Small (${i})`}</Text>
           ))}
       </Box>
       <Box
@@ -118,6 +119,22 @@ const BorderBox = () => (
           </Box>
         ))}
       </Box>
+      <Box direction="row-responsive" gap="small" align="start">
+        {[
+          'solid',
+          'dashed',
+          'dotted',
+          'double',
+          'groove',
+          'ridge',
+          'inset',
+          'outset',
+        ].map(type => (
+          <Box key={type} pad="small" border={{ type, size: 'medium' }}>
+            {type}
+          </Box>
+        ))}
+      </Box>
     </Box>
   </Grommet>
 );
@@ -150,6 +167,13 @@ const RoundBox = () => (
             {corner}
           </Box>
         ))}
+        <Box
+          background="brand"
+          pad="small"
+          round={{ corner: 'left', size: '15px' }}
+        >
+          left rounded corner px value
+        </Box>
       </Grid>
     </Box>
   </Grommet>

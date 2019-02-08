@@ -28,6 +28,7 @@ class Menu extends Component {
     dropAlign: { top: 'top', left: 'left' },
     items: [],
     messages: { openMenu: 'Open Menu', closeMenu: 'Close Menu' },
+    justifyContent: 'start',
   };
 
   state = { activeItemIndex: -1, open: false };
@@ -95,6 +96,7 @@ class Menu extends Component {
       dropBackground,
       dropTarget,
       forwardRef,
+      justifyContent,
       icon,
       items,
       label,
@@ -112,7 +114,7 @@ class Menu extends Component {
     const content = children || (
       <Box
         direction="row"
-        justify="start"
+        justify={justifyContent}
         align="center"
         pad="small"
         gap={label && icon !== false ? 'small' : undefined}
@@ -162,7 +164,8 @@ class Menu extends Component {
               {dropAlign.top === 'top' ? controlMirror : undefined}
               <Box overflow="auto">
                 {items.map((item, index) => (
-                  <Box key={`menuItem_${index + 0}`} flex={false}>
+                  // eslint-disable-next-line react/no-array-index-key
+                  <Box key={index} flex={false}>
                     <Button
                       ref={ref => {
                         this.buttonRefs[index] = ref;

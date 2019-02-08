@@ -6,15 +6,17 @@ export const doc = DropButton => {
   const DocumentedDropButton = describe(DropButton)
     .availableAt(getAvailableAtBadge('DropButton'))
     .description(
-      `A Button that when clicked will a Drop with the specified 'dropContent'.
-      When opened, the drop will control the focus so that the contents behind
-      it are not focusable. All properties of Button can be passed through.
+      `A Button that controls a Drop. When opened, the Drop will contain
+      whatever is specified via \`dropContent\`. The Drop will control the focus
+      so that the contents behind it are not focusable. All properties of
+      Button can be passed through.
       `,
     )
     .usage(
       `import { DropButton } from 'grommet';
 <DropButton dropContent={...} />`,
-    );
+    )
+    .intrinsicElement('button');
 
   DocumentedDropButton.propTypes = {
     ...genericProps,

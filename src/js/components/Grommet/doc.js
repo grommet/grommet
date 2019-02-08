@@ -5,11 +5,12 @@ import { getAvailableAtBadge } from '../../utils';
 export const doc = Grommet => {
   const DocumentedGrommet = describe(Grommet)
     .availableAt(getAvailableAtBadge('Grommet'))
-    .description('This is the top level Grommet container.')
+    .description('The top level Grommet container.')
     .usage(
       `import { Grommet } from 'grommet';
 <Grommet>...</Grommet>`,
-    );
+    )
+    .intrinsicElement('div');
 
   DocumentedGrommet.propTypes = {
     full: PropTypes.bool
@@ -29,4 +30,17 @@ export const doc = Grommet => {
   };
 
   return DocumentedGrommet;
+};
+
+export const themeDoc = {
+  'grommet.extend': {
+    description: 'Any additional style for Grommet.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'global.font.face': {
+    description: 'Custom font face declaration',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
 };

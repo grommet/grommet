@@ -9,6 +9,7 @@ export interface MenuProps {
   dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",left?: "right" | "left",right?: "right" | "left"};
   dropBackground?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean};
   dropTarget?: object;
+  justifyContent?: "start" | "center" | "end" | "between" | "around" | "stretch";
   icon?: boolean | React.ReactNode;
   items: object[];
   label?: string | React.ReactNode;
@@ -16,6 +17,6 @@ export interface MenuProps {
   size?: "small" | "medium" | "large" | "xlarge" | string;
 }
 
-declare const Menu: React.ComponentType<MenuProps>;
+declare const Menu: React.ComponentType<MenuProps & JSX.IntrinsicElements['button']>;
 
 export { Menu };

@@ -6,10 +6,15 @@ export const doc = RadioButton => {
   const DocumentedRadioButton = describe(RadioButton)
     .availableAt(getAvailableAtBadge('RadioButton'))
     .description('A radio button control.')
+    .details(
+      `RadioButton should typically not be used directly.
+      Instead, use RadioButtonGroup.`,
+    )
     .usage(
       `import { RadioButton } from 'grommet';
 <RadioButton />`,
-    );
+    )
+    .intrinsicElement('input');
 
   DocumentedRadioButton.propTypes = {
     checked: PropTypes.bool.description('Same as React <input checked={} />'),
