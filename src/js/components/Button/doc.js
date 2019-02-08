@@ -1,6 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
+import {
+  colorPropType,
+  genericProps,
+  getAvailableAtBadge,
+  themeDocUtils,
+} from '../../utils';
 
 export const doc = Button => {
   const DocumentedButton = describe(Button)
@@ -152,4 +157,5 @@ export const themeDoc = {
     description: 'Any additional style for the Button.',
     type: 'string | (props) => {}',
   },
+  ...themeDocUtils.focusStyle,
 };

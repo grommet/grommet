@@ -196,16 +196,6 @@ a
 ```
 ## Theme
   
-**global.focus.border.color**
-
-The color around the Anchor when in focus. Expects `string | { dark: string, light: string }`.
-
-Defaults to
-
-```
-focus
-```
-
 **anchor.color**
 
 The color of the label text and icon strokes. Expects `string | { dark: string, light: string }`.
@@ -274,4 +264,14 @@ Defaults to
 
 ```
 undefined
+```
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
 ```

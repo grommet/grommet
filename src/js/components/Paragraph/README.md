@@ -157,36 +157,6 @@ p
 ```
 ## Theme
   
-**global.colors.text**
-
-The text color used inside the Paragraph. Expects `string | { dark: string, light: string }`.
-
-Defaults to
-
-```
-{ dark: '#f8f8f8', light: '#444444' }
-```
-
-**global.edgeSize**
-
-The possible sizes for margin. Expects `object`.
-
-Defaults to
-
-```
-{
-        none: '0px',
-        hair: '1px',
-        xxsmall: '3px',
-        xsmall: '6px',
-        small: '12px',
-        medium: '24px',
-        large: '48px',
-        xlarge: '96px',
-        responsiveBreakpoint: 'small',
-    }
-```
-
 **paragraph**
 
 The possible sizes of the paragraph in terms of its max-width, font-size and line-height. Expects `object`.
@@ -241,4 +211,26 @@ Defaults to
 
 ```
 undefined
+```
+
+**global.edgeSize**
+
+The possible sizes for margin. Expects `object`.
+
+Defaults to
+
+```
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
 ```
