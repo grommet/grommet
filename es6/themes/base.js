@@ -366,6 +366,8 @@ export var generate = function generate(baseSpacing, scale) {
 
       }
     },
+    chart: {// extend: undefined,
+    },
     checkBox: {
       border: {
         color: {
