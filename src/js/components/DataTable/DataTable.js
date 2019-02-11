@@ -97,6 +97,21 @@ class DataTable extends Component {
     });
   };
 
+  onClick = (event, datums) => {
+    const { selectable, onRowClick } = this.props;
+    if (selectable) {
+      if (!Array.isArray(datums)) {
+        this.onSelect([datums]);
+      } else {
+        this.onSelect(datums);
+      }
+    }
+
+    if (onRowClick) {
+      onRowClick(event, datums);
+    }
+  };
+
   render() {
     const {
       /* eslint-disable-next-line react/prop-types */
@@ -142,17 +157,6 @@ class DataTable extends Component {
       });
     }
 
-    const onClick = (event, datums) => {
-      if (!Array.isArray(datums)) {
-        this.onSelect([datums]);
-      } else {
-        this.onSelect(datums);
-      }
-      if (onRowClick) {
-        onRowClick(event, datums);
-      }
-    };
-
     return (
       <StyledDataTable {...rest}>
         <Header
@@ -187,7 +191,7 @@ class DataTable extends Component {
             onToggle={this.onToggleGroup}
             selectable={selectable}
             onRowClick={onRowClick}
-            onSelect={onClick}
+            onClick={this.onClick}
           />
         ) : (
           <Body
@@ -199,7 +203,7 @@ class DataTable extends Component {
             size={size}
             selectable={selectable}
             onRowClick={onRowClick}
-            onSelect={onClick}
+            onClick={this.onClick}
           />
         )}
         {showFooter && (

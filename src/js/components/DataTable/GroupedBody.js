@@ -17,7 +17,8 @@ export const GroupedBody = ({
   theme,
   checked,
   selectable,
-  onSelect,
+  onRowClick,
+  onClick,
   ...rest
 }) => (
   <StyledDataTableBody size={size} {...rest}>
@@ -47,7 +48,7 @@ export const GroupedBody = ({
               isIndeterminate={groupPrimaryProperties.some(item =>
                 checked.includes(item),
               )}
-              onClick={event => onSelect(event, group.data)}
+              onClick={event => onClick(event, group.data)}
             />
           ))}
         </StyledDataTableRow>
@@ -59,8 +60,8 @@ export const GroupedBody = ({
             {content}
             {group.data.map(datum => (
               <StyledDataTableRow
-                onClick={event => onSelect(event, datum)}
-                hoverIndicator={selectable}
+                onClick={event => onClick(event, datum)}
+                hoverIndicator={selectable || onRowClick !== undefined}
                 key={datum[primaryProperty]}
                 size={size}
               >
@@ -75,7 +76,7 @@ export const GroupedBody = ({
                     datum={datum}
                     scope={column.primary ? 'row' : undefined}
                     isChecked={checked.indexOf(datum[primaryProperty]) !== -1}
-                    onClick={event => onSelect(event, datum)}
+                    onClick={event => onClick(event, datum)}
                   />
                 ))}
               </StyledDataTableRow>

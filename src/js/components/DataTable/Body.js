@@ -43,7 +43,8 @@ export class Body extends Component {
       primaryProperty,
       size,
       theme,
-      onSelect,
+      onClick,
+      onRowClick,
       selectable,
       ...rest
     } = this.props;
@@ -63,10 +64,10 @@ export class Body extends Component {
           >
             {(datum, index) => (
               <StyledDataTableRow
-                onClick={event => onSelect(event, datum)}
+                onClick={event => onClick(event, datum)}
                 key={datum[primaryProperty]}
                 size={size}
-                hoverIndicator={selectable}
+                hoverIndicator={selectable || onRowClick !== undefined}
                 ref={ref => {
                   this.rowRefs[index] = ref;
                 }}
@@ -78,7 +79,7 @@ export class Body extends Component {
                     column={column}
                     datum={datum}
                     isChecked={checked.indexOf(datum[primaryProperty]) !== -1}
-                    onClick={event => onSelect(event, datum)}
+                    onClick={event => onClick(event, datum)}
                     primaryProperty={primaryProperty}
                     scope={
                       column.primary || column.property === primaryProperty
