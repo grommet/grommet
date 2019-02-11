@@ -131,7 +131,7 @@ function (_Component) {
       align: "center",
       justify: "center",
       margin: (_ref = {}, _ref[side] = theme.checkBox.gap || 'small', _ref)
-    }, themeableProps), visual, hidden, React.createElement(StyledCheckBoxInput, _extends({}, rest, {
+    }, themeableProps), React.createElement(StyledCheckBoxInput, _extends({}, rest, {
       ref: forwardRef,
       type: "checkbox"
     }, removeUndefined({
@@ -140,7 +140,7 @@ function (_Component) {
       checked: checked,
       disabled: disabled,
       onChange: onChange
-    }), themeableProps)));
+    }), themeableProps)), visual, hidden);
     var normalizedLabel = typeof label === 'string' ? React.createElement("span", null, label) : label;
     var first = reverse ? normalizedLabel : checkBoxNode;
     var second = reverse ? checkBoxNode : normalizedLabel;

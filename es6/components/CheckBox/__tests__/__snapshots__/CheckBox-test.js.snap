@@ -36,7 +36,7 @@ exports[`CheckBox checked renders 1`] = `
   padding: 0px;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -65,7 +65,7 @@ exports[`CheckBox checked renders 1`] = `
   border-radius: 4px;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   position: absolute;
   stroke-width: 4px;
@@ -98,7 +98,7 @@ exports[`CheckBox checked renders 1`] = `
   border-color: #000000;
 }
 
-.c6 {
+.c4 {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -109,7 +109,7 @@ exports[`CheckBox checked renders 1`] = `
   cursor: pointer;
 }
 
-.c6:checked + span > span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -131,19 +131,19 @@ exports[`CheckBox checked renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px #7D4CDB;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding: 0px;
   }
 }
@@ -160,13 +160,20 @@ exports[`CheckBox checked renders 1`] = `
       checked={true}
       className="c2 c3"
     >
-      <div
+      <input
         checked={true}
         className="c4"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        type="checkbox"
+      />
+      <div
+        checked={true}
+        className="c5"
       >
         <svg
           checked={true}
-          className="c5"
+          className="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -176,13 +183,6 @@ exports[`CheckBox checked renders 1`] = `
           />
         </svg>
       </div>
-      <input
-        checked={true}
-        className="c6"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        type="checkbox"
-      />
     </div>
   </label>
 </div>
@@ -224,7 +224,7 @@ exports[`CheckBox disabled renders 1`] = `
   padding: 0px;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -316,7 +316,7 @@ exports[`CheckBox disabled renders 1`] = `
   border-color: #000000;
 }
 
-.c5 {
+.c4 {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -326,7 +326,7 @@ exports[`CheckBox disabled renders 1`] = `
   margin: 0;
 }
 
-.c5:checked + span > span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -348,19 +348,19 @@ exports[`CheckBox disabled renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding: 0px;
   }
 }
@@ -395,16 +395,16 @@ exports[`CheckBox disabled renders 1`] = `
       className="c2 c3"
       disabled={true}
     >
-      <div
-        className="c4"
-        disabled={true}
-      />
       <input
-        className="c5"
+        className="c4"
         disabled={true}
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
+      />
+      <div
+        className="c5"
+        disabled={true}
       />
     </div>
   </label>
@@ -419,6 +419,14 @@ exports[`CheckBox disabled renders 1`] = `
       className="c2 c3"
       disabled={true}
     >
+      <input
+        checked={true}
+        className="c4"
+        disabled={true}
+        onBlur={[Function]}
+        onFocus={[Function]}
+        type="checkbox"
+      />
       <div
         checked={true}
         className="c6"
@@ -440,14 +448,6 @@ exports[`CheckBox disabled renders 1`] = `
       <input
         type="hidden"
         value="true"
-      />
-      <input
-        checked={true}
-        className="c5"
-        disabled={true}
-        onBlur={[Function]}
-        onFocus={[Function]}
-        type="checkbox"
       />
     </div>
   </label>
@@ -490,7 +490,7 @@ exports[`CheckBox indeterminate renders 1`] = `
   padding: 0px;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -519,7 +519,7 @@ exports[`CheckBox indeterminate renders 1`] = `
   border-radius: 4px;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   position: absolute;
   stroke-width: 4px;
@@ -552,7 +552,7 @@ exports[`CheckBox indeterminate renders 1`] = `
   border-color: #000000;
 }
 
-.c6 {
+.c4 {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -563,7 +563,7 @@ exports[`CheckBox indeterminate renders 1`] = `
   cursor: pointer;
 }
 
-.c6:checked + span > span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -585,19 +585,19 @@ exports[`CheckBox indeterminate renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding: 0px;
   }
 }
@@ -612,11 +612,17 @@ exports[`CheckBox indeterminate renders 1`] = `
     <div
       className="c2 c3"
     >
-      <div
+      <input
         className="c4"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        type="checkbox"
+      />
+      <div
+        className="c5"
       >
         <svg
-          className="c5"
+          className="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -626,12 +632,6 @@ exports[`CheckBox indeterminate renders 1`] = `
           />
         </svg>
       </div>
-      <input
-        className="c6"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        type="checkbox"
-      />
     </div>
   </label>
   <label
@@ -641,11 +641,17 @@ exports[`CheckBox indeterminate renders 1`] = `
     <div
       className="c2 c3"
     >
-      <div
+      <input
         className="c4"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        type="checkbox"
+      />
+      <div
+        className="c5"
       >
         <svg
-          className="c5"
+          className="c6"
           preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 24 24"
         >
@@ -655,12 +661,6 @@ exports[`CheckBox indeterminate renders 1`] = `
           />
         </svg>
       </div>
-      <input
-        className="c6"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        type="checkbox"
-      />
     </div>
     <span>
       test label
@@ -705,7 +705,7 @@ exports[`CheckBox label renders 1`] = `
   padding: 0px;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -758,7 +758,7 @@ exports[`CheckBox label renders 1`] = `
   border-color: #000000;
 }
 
-.c5 {
+.c4 {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -769,7 +769,7 @@ exports[`CheckBox label renders 1`] = `
   cursor: pointer;
 }
 
-.c5:checked + span > span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -791,19 +791,19 @@ exports[`CheckBox label renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding: 0px;
   }
 }
@@ -818,14 +818,14 @@ exports[`CheckBox label renders 1`] = `
     <div
       className="c2 c3"
     >
-      <div
-        className="c4"
-      />
       <input
-        className="c5"
+        className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
+      />
+      <div
+        className="c5"
       />
     </div>
     <span>
@@ -839,14 +839,14 @@ exports[`CheckBox label renders 1`] = `
     <div
       className="c2 c3"
     >
-      <div
-        className="c4"
-      />
       <input
-        className="c5"
+        className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
+      />
+      <div
+        className="c5"
       />
     </div>
     <div>
@@ -892,7 +892,7 @@ exports[`CheckBox renders 1`] = `
   padding: 0px;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -945,7 +945,7 @@ exports[`CheckBox renders 1`] = `
   border-color: #000000;
 }
 
-.c5 {
+.c4 {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -956,7 +956,7 @@ exports[`CheckBox renders 1`] = `
   cursor: pointer;
 }
 
-.c5:checked + span > span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -978,19 +978,19 @@ exports[`CheckBox renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding: 0px;
   }
 }
@@ -1005,14 +1005,14 @@ exports[`CheckBox renders 1`] = `
     <div
       className="c2 c3"
     >
-      <div
-        className="c4"
-      />
       <input
-        className="c5"
+        className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
+      />
+      <div
+        className="c5"
       />
     </div>
   </label>
@@ -1024,16 +1024,16 @@ exports[`CheckBox renders 1`] = `
     <div
       className="c2 c3"
     >
-      <div
-        className="c4"
-      />
       <input
-        className="c5"
+        className="c4"
         id="test id"
         name="test name"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
+      />
+      <div
+        className="c5"
       />
     </div>
   </label>
@@ -1051,7 +1051,7 @@ exports[`CheckBox reverse renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1129,7 +1129,7 @@ exports[`CheckBox reverse renders 1`] = `
   border-color: #000000;
 }
 
-.c5 {
+.c4 {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -1140,7 +1140,7 @@ exports[`CheckBox reverse renders 1`] = `
   cursor: pointer;
 }
 
-.c5:checked + span > span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
@@ -1150,19 +1150,19 @@ exports[`CheckBox reverse renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     border: solid 2px rgba(0,0,0,0.15);
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c4 {
+  .c5 {
     padding: 0px;
   }
 }
@@ -1192,14 +1192,14 @@ exports[`CheckBox reverse renders 1`] = `
     <div
       className="c2 c3"
     >
-      <div
-        className="c4"
-      />
       <input
-        className="c5"
+        className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
+      />
+      <div
+        className="c5"
       />
     </div>
   </label>
@@ -1266,7 +1266,7 @@ exports[`CheckBox toggle renders 1`] = `
   border-color: #000000;
 }
 
-.c6 {
+.c4 {
   position: absolute;
   opacity: 0;
   top: 0;
@@ -1277,12 +1277,12 @@ exports[`CheckBox toggle renders 1`] = `
   cursor: pointer;
 }
 
-.c6:checked + span > span {
+.c4:checked + span > span {
   left: calc( 48px - 24px );
   background: #7D4CDB;
 }
 
-.c4 {
+.c5 {
   box-sizing: border-box;
   position: relative;
   vertical-align: middle;
@@ -1295,7 +1295,7 @@ exports[`CheckBox toggle renders 1`] = `
   background-color: transparent;
 }
 
-.c5 {
+.c6 {
   box-sizing: border-box;
   position: absolute;
   top: -2px;
@@ -1334,19 +1334,19 @@ exports[`CheckBox toggle renders 1`] = `
     <div
       className="c2 c3"
     >
-      <span
-        className="c4"
-      >
-        <span
-          className="c5"
-        />
-      </span>
       <input
-        className="c6"
+        className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
+      <span
+        className="c5"
+      >
+        <span
+          className="c6"
+        />
+      </span>
     </div>
   </label>
   <label
@@ -1358,22 +1358,22 @@ exports[`CheckBox toggle renders 1`] = `
       checked={true}
       className="c2 c3"
     >
-      <span
-        checked={true}
-        className="c4"
-      >
-        <span
-          checked={true}
-          className="c5"
-        />
-      </span>
       <input
         checked={true}
-        className="c6"
+        className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
+      <span
+        checked={true}
+        className="c5"
+      >
+        <span
+          checked={true}
+          className="c6"
+        />
+      </span>
     </div>
   </label>
   <label
@@ -1383,19 +1383,19 @@ exports[`CheckBox toggle renders 1`] = `
     <div
       className="c2 c3"
     >
-      <span
-        className="c4"
-      >
-        <span
-          className="c5"
-        />
-      </span>
       <input
-        className="c6"
+        className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
         type="checkbox"
       />
+      <span
+        className="c5"
+      >
+        <span
+          className="c6"
+        />
+      </span>
     </div>
     <span>
       test label
