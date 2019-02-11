@@ -339,6 +339,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: undefined,
       },
     },
+    chart: {
+      // extend: undefined,
+    },
     checkBox: {
       border: {
         color: {
