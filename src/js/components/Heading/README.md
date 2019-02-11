@@ -233,3 +233,45 @@ Defaults to
     large: {},
   }
 ```
+
+**heading.extend**
+
+Any additional style for Heading. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**heading.level**
+
+The level that impacts line height, max width, font size, weight and family of the Heading. Expects `object`.
+
+Defaults to
+
+```
+
+      1: {
+        medium: { 
+          font-size: 34px,
+          line-hieght: 40px,
+          max-width: 826px,
+        },
+      },
+      weight: 600,
+      font:
+        {
+          family: undefined,
+        }
+```
+
+**heading.responsiveBreakpoint**
+
+The breakpoint to trigger changes in the Heading layout. The actual values will be derived from global.breakpoints. Expects `string`.
+
+Defaults to
+
+```
+small
+```
