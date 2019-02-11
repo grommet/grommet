@@ -215,9 +215,12 @@ class AllDrops extends Component {
 class ProgressiveDrop extends Component {
   boxRef = createRef();
 
+  innerBoxRef = createRef();
+
   state = {
     openDrop: false,
     openInnerDrop: false,
+    interactedWithInnerButton: false,
   };
 
   onCloseDrop = () => this.setState({ openDrop: false, openInnerDrop: false });
@@ -225,7 +228,7 @@ class ProgressiveDrop extends Component {
   onOpenDrop = () => this.setState({ openDrop: true, openInnerDrop: false });
 
   render() {
-    const { openDrop, openInnerDrop } = this.state;
+    const { openDrop, openInnerDrop, interactedWithInnerButton } = this.state;
     return (
       <Grommet theme={grommet} full>
         <Box fill align="center" justify="center">
@@ -241,17 +244,34 @@ class ProgressiveDrop extends Component {
               onClickOutside={this.onCloseDrop}
               onEsc={this.onCloseDrop}
             >
-              {!openInnerDrop && (
-                <Box pad="large">
-                  <Button
-                    primary
-                    label="Click me again"
-                    onClick={() => this.setState({ openInnerDrop: true })}
-                  />
-                </Box>
-              )}
+              <Box pad="large" ref={this.innerBoxRef}>
+                <Button
+                  primary
+                  label="Click me again"
+                  onClick={() => this.setState({ openInnerDrop: true })}
+                />
+              </Box>
               {openInnerDrop && (
-                <Box pad="large">You can click outside now</Box>
+                <Drop
+                  target={this.innerBoxRef.current}
+                  onClickOutside={() => this.setState({ openInnerDrop: false })}
+                  onEsc={() => this.setState({ openInnerDrop: false })}
+                  align={{ top: 'bottom', right: 'right' }}
+                >
+                  <Box pad="large">
+                    <Button
+                      primary
+                      label={
+                        interactedWithInnerButton
+                          ? 'Good job!'
+                          : 'You can interact with me'
+                      }
+                      onClick={() =>
+                        this.setState({ interactedWithInnerButton: true })
+                      }
+                    />
+                  </Box>
+                </Drop>
               )}
             </Drop>
           )}

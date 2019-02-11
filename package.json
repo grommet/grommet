@@ -70,7 +70,7 @@
     "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
-    "@emotion/core": "^10.0.5",
+    "@emotion/core": "^0.13.1",
     "@storybook/addon-options": "^4.0.0",
     "@storybook/addon-storysource": "^4.0.0",
     "@storybook/addons": "^4.0.0",
