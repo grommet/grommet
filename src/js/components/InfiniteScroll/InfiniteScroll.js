@@ -54,6 +54,7 @@ class InfiniteScroll extends PureComponent {
       this.setPageHeight();
       this.addScrollListener();
       this.scrollShow();
+      this.onScroll();
     }, 100);
   }
 
