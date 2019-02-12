@@ -67,7 +67,7 @@ class Accordion extends Component {
     delete rest.onActive;
 
     return (
-      <Box role="tablist" {...rest} overflow="auto">
+      <Box role="tablist" {...rest}>
         {Children.toArray(children).map((panel, index) => (
           <AccordionContext.Provider
             key={`accordion-panel_${index + 0}`}

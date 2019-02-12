@@ -180,11 +180,11 @@ class Chart extends Component {
     const width =
       sizeWidth === 'full'
         ? containerWidth
-        : parseMetricToNum(theme.global.size[sizeWidth]);
+        : parseMetricToNum(theme.global.size[sizeWidth] || sizeWidth);
     const height =
       sizeHeight === 'full'
         ? containerHeight
-        : parseMetricToNum(theme.global.size[sizeHeight]);
+        : parseMetricToNum(theme.global.size[sizeHeight] || sizeHeight);
     const strokeWidth = parseMetricToNum(theme.global.edgeSize[thickness]);
     const scale = [
       width / (bounds[0][1] - bounds[0][0]),
