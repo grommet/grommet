@@ -40,7 +40,8 @@ var LineChart = function LineChart() {
     pad: "large"
   }, _react.default.createElement(_grommet.Chart, {
     type: "line",
-    values: [20, 30, 15]
+    values: [20, 30, 15],
+    size: "290px"
   })));
 };
 

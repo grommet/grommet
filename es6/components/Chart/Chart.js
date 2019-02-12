@@ -230,8 +230,8 @@ function (_Component) {
         values = _this$state.values;
     var sizeWidth = typeof size === 'string' ? size : size.width || 'medium';
     var sizeHeight = typeof size === 'string' ? size : size.height || 'medium';
-    var width = sizeWidth === 'full' ? containerWidth : parseMetricToNum(theme.global.size[sizeWidth]);
-    var height = sizeHeight === 'full' ? containerHeight : parseMetricToNum(theme.global.size[sizeHeight]);
+    var width = sizeWidth === 'full' ? containerWidth : parseMetricToNum(theme.global.size[sizeWidth] || sizeWidth);
+    var height = sizeHeight === 'full' ? containerHeight : parseMetricToNum(theme.global.size[sizeHeight] || sizeHeight);
     var strokeWidth = parseMetricToNum(theme.global.edgeSize[thickness]);
     var scale = [width / (bounds[0][1] - bounds[0][0]), height / (bounds[1][1] - bounds[1][0])];
     var viewBox = overflow ? "0 0 " + width + " " + height : "-" + strokeWidth / 2 + " -" + strokeWidth / 2 + " " + (width + strokeWidth) + " " + (height + strokeWidth);
