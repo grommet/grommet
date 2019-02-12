@@ -93,9 +93,7 @@ function (_Component) {
     delete rest.onActive;
     return React.createElement(Box, _extends({
       role: "tablist"
-    }, rest, {
-      overflow: "auto"
-    }), Children.toArray(children).map(function (panel, index) {
+    }, rest), Children.toArray(children).map(function (panel, index) {
       return React.createElement(AccordionContext.Provider, {
         key: "accordion-panel_" + (index + 0),
         value: {
