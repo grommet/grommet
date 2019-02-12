@@ -16,19 +16,7 @@ class Drop extends Component {
 
   originalFocusedElement = document.activeElement;
 
-  constructor(props) {
-    super(props);
-
-    this.dropContainer = getNewContainer();
-
-    // prevents mouse events from propagating upward to elements behind the drop.
-    // this prevents a nested drop from closing its parent when the user clicks
-    // inside it, since a 'nested' drop is technically an unrelated sibling in the
-    // DOM due to React portals.
-    this.dropContainer.addEventListener('mousedown', ev => {
-      ev.stopPropagation();
-    });
-  }
+  dropContainer = getNewContainer();
 
   componentWillUnmount() {
     const { restrictFocus } = this.props;
