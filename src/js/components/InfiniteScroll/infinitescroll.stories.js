@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
+import { Grid, Grommet, Box, Image, InfiniteScroll, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const allItems = Array(2000)
@@ -83,6 +83,21 @@ class LazyInfiniteScroll extends Component {
   }
 }
 
+const GridInfiniteScroll = () => (
+  <Grommet theme={grommet}>
+    <Grid columns="xsmall">
+      <InfiniteScroll items={allItems} step={12}>
+        {item => (
+          <Box as="article" pad="xsmall">
+            <Image src="https://via.placeholder.com/350x150" />
+            <Text>{item}</Text>
+          </Box>
+        )}
+      </InfiniteScroll>
+    </Grid>
+  </Grommet>
+);
+
 storiesOf('InfiniteScroll', module)
   .add('Simple', () => <SimpleInfiniteScroll />)
   .add('Show 118th item', () => <SimpleInfiniteScroll show={117} />)
@@ -97,4 +112,5 @@ storiesOf('InfiniteScroll', module)
   ))
   .add('Replace', () => <SimpleInfiniteScroll replace />)
   .add('onMore', () => <LazyInfiniteScroll />)
-  .add('Class Children', () => <ClassChildrenInfiniteScroll />);
+  .add('Class Children', () => <ClassChildrenInfiniteScroll />)
+  .add('Grid', () => <GridInfiniteScroll />);

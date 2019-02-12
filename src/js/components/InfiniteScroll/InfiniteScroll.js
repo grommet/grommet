@@ -99,6 +99,7 @@ class InfiniteScroll extends PureComponent {
   };
 
   setPageHeight = () => {
+    const { step } = this.props;
     const { pageHeight } = this.state;
     if (
       this.firstPageItemRef.current &&
@@ -114,27 +115,42 @@ class InfiniteScroll extends PureComponent {
       ).getBoundingClientRect();
       /* eslint-enable react/no-find-dom-node */
       const nextPageHeight = endRect.y + endRect.height - beginRect.y;
+      // Check if the items are arranged in a single column or not.
+      const multiColumn = nextPageHeight / step < endRect.height;
+      const pageArea = endRect.height * endRect.width * step;
       // In case the pageHeight is smaller than the visible area,
       // we call onScroll to set the page boundaries appropriately.
-      this.setState({ pageHeight: nextPageHeight }, this.onScroll);
+      this.setState(
+        { multiColumn, pageArea, pageHeight: nextPageHeight },
+        this.onScroll,
+      );
     }
   };
 
   onScroll = () => {
     const { onMore, replace } = this.props;
-    const { beginPage, endPage, lastPage, pageHeight } = this.state;
+    const {
+      beginPage,
+      endPage,
+      lastPage,
+      multiColumn,
+      pageArea,
+      pageHeight,
+    } = this.state;
     if (this.scrollParents && this.scrollParents[0] && pageHeight) {
       const scrollParent = this.scrollParents[0];
       // Determine the window into the first scroll parent
       let top;
       let height;
+      let width;
       if (scrollParent === document) {
         top = document.documentElement.scrollTop || document.body.scrollTop;
         height = window.innerHeight;
+        width = window.innerWidth;
       } else {
         top = scrollParent.scrollTop;
         const rect = scrollParent.getBoundingClientRect();
-        ({ height } = rect);
+        ({ height, width } = rect);
       }
       // Figure out which pages we should make visible based on the scroll
       // window.
@@ -142,14 +158,21 @@ class InfiniteScroll extends PureComponent {
       const nextBeginPage = replace
         ? Math.min(
             lastPage,
-            Math.max(0, Math.floor(Math.max(0, top - offset) / pageHeight)),
+            Math.max(
+              0,
+              multiColumn
+                ? Math.floor((Math.max(0, top - offset) * width) / pageArea)
+                : Math.floor(Math.max(0, top - offset) / pageHeight),
+            ),
           )
         : 0;
       const nextEndPage = Math.min(
         lastPage,
         Math.max(
           (!replace && endPage) || 0,
-          Math.floor((top + height + offset) / pageHeight),
+          multiColumn
+            ? Math.ceil(((top + height + offset) * width) / pageArea)
+            : Math.floor((top + height + offset) / pageHeight),
         ),
       );
       if (nextBeginPage !== beginPage || nextEndPage !== endPage) {
