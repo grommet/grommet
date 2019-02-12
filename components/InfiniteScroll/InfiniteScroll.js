@@ -100,6 +100,7 @@ function (_PureComponent) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setPageHeight", function () {
+      var step = _this.props.step;
       var pageHeight = _this.state.pageHeight;
 
       if (_this.firstPageItemRef.current && _this.lastPageItemRef.current && !pageHeight) {
@@ -108,10 +109,15 @@ function (_PureComponent) {
         var endRect = (0, _reactDom.findDOMNode)(_this.lastPageItemRef.current).getBoundingClientRect();
         /* eslint-enable react/no-find-dom-node */
 
-        var nextPageHeight = endRect.y + endRect.height - beginRect.y; // In case the pageHeight is smaller than the visible area,
+        var nextPageHeight = endRect.y + endRect.height - beginRect.y; // Check if the items are arranged in a single column or not.
+
+        var multiColumn = nextPageHeight / step < endRect.height;
+        var pageArea = endRect.height * endRect.width * step; // In case the pageHeight is smaller than the visible area,
         // we call onScroll to set the page boundaries appropriately.
 
         _this.setState({
+          multiColumn: multiColumn,
+          pageArea: pageArea,
           pageHeight: nextPageHeight
         }, _this.onScroll);
       }
@@ -125,6 +131,8 @@ function (_PureComponent) {
           beginPage = _this$state.beginPage,
           endPage = _this$state.endPage,
           lastPage = _this$state.lastPage,
+          multiColumn = _this$state.multiColumn,
+          pageArea = _this$state.pageArea,
           pageHeight = _this$state.pageHeight;
 
       if (_this.scrollParents && _this.scrollParents[0] && pageHeight) {
@@ -132,21 +140,24 @@ function (_PureComponent) {
 
         var top;
         var height;
+        var width;
 
         if (scrollParent === document) {
           top = document.documentElement.scrollTop || document.body.scrollTop;
           height = window.innerHeight;
+          width = window.innerWidth;
         } else {
           top = scrollParent.scrollTop;
           var rect = scrollParent.getBoundingClientRect();
           height = rect.height;
+          width = rect.width;
         } // Figure out which pages we should make visible based on the scroll
         // window.
 
 
         var offset = height / 4;
-        var nextBeginPage = replace ? Math.min(lastPage, Math.max(0, Math.floor(Math.max(0, top - offset) / pageHeight))) : 0;
-        var nextEndPage = Math.min(lastPage, Math.max(!replace && endPage || 0, Math.floor((top + height + offset) / pageHeight)));
+        var nextBeginPage = replace ? Math.min(lastPage, Math.max(0, multiColumn ? Math.floor(Math.max(0, top - offset) * width / pageArea) : Math.floor(Math.max(0, top - offset) / pageHeight))) : 0;
+        var nextEndPage = Math.min(lastPage, Math.max(!replace && endPage || 0, multiColumn ? Math.ceil((top + height + offset) * width / pageArea) : Math.floor((top + height + offset) / pageHeight)));
 
         if (nextBeginPage !== beginPage || nextEndPage !== endPage) {
           _this.setState({

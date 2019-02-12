@@ -136,6 +136,24 @@ function (_Component2) {
   return LazyInfiniteScroll;
 }(_react.Component);
 
+var GridInfiniteScroll = function GridInfiniteScroll() {
+  return _react.default.createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Grid, {
+    columns: "xsmall"
+  }, _react.default.createElement(_grommet.InfiniteScroll, {
+    items: allItems,
+    step: 12
+  }, function (item) {
+    return _react.default.createElement(_grommet.Box, {
+      as: "article",
+      pad: "xsmall"
+    }, _react.default.createElement(_grommet.Image, {
+      src: "https://via.placeholder.com/350x150"
+    }), _react.default.createElement(_grommet.Text, null, item));
+  })));
+};
+
 (0, _react2.storiesOf)('InfiniteScroll', module).add('Simple', function () {
   return _react.default.createElement(SimpleInfiniteScroll, null);
 }).add('Show 118th item', function () {
@@ -159,4 +177,6 @@ function (_Component2) {
   return _react.default.createElement(LazyInfiniteScroll, null);
 }).add('Class Children', function () {
   return _react.default.createElement(ClassChildrenInfiniteScroll, null);
+}).add('Grid', function () {
+  return _react.default.createElement(GridInfiniteScroll, null);
 });

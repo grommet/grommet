@@ -8,7 +8,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
+import { Grid, Grommet, Box, Image, InfiniteScroll, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 var allItems = Array(2000).fill().map(function (_, i) {
   return "item " + (i + 1);
@@ -128,6 +128,24 @@ function (_Component2) {
   return LazyInfiniteScroll;
 }(Component);
 
+var GridInfiniteScroll = function GridInfiniteScroll() {
+  return React.createElement(Grommet, {
+    theme: grommet
+  }, React.createElement(Grid, {
+    columns: "xsmall"
+  }, React.createElement(InfiniteScroll, {
+    items: allItems,
+    step: 12
+  }, function (item) {
+    return React.createElement(Box, {
+      as: "article",
+      pad: "xsmall"
+    }, React.createElement(Image, {
+      src: "https://via.placeholder.com/350x150"
+    }), React.createElement(Text, null, item));
+  })));
+};
+
 storiesOf('InfiniteScroll', module).add('Simple', function () {
   return React.createElement(SimpleInfiniteScroll, null);
 }).add('Show 118th item', function () {
@@ -151,4 +169,6 @@ storiesOf('InfiniteScroll', module).add('Simple', function () {
   return React.createElement(LazyInfiniteScroll, null);
 }).add('Class Children', function () {
   return React.createElement(ClassChildrenInfiniteScroll, null);
+}).add('Grid', function () {
+  return React.createElement(GridInfiniteScroll, null);
 });
