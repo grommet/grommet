@@ -201,6 +201,8 @@ function (_PureComponent) {
       _this2.addScrollListener();
 
       _this2.scrollShow();
+
+      _this2.onScroll();
     }, 100);
   };
 
