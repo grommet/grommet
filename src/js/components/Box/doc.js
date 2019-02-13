@@ -87,6 +87,7 @@ export const doc = Box => {
         'medium',
         'large',
         'xlarge',
+        'xxlarge',
         'full',
         '1/2',
         '1/3',
@@ -185,7 +186,15 @@ export const doc = Box => {
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully.`),
     height: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'xxlarge',
+      ]),
       PropTypes.string,
     ]).description('A fixed height.'),
     justify: PropTypes.oneOf([
@@ -277,7 +286,15 @@ of indicating the DOM tag via the 'as' property.`,
       .description('The DOM tag to use for the element.')
       .defaultValue('div'),
     width: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'xxlarge',
+      ]),
       PropTypes.string,
     ]).description('A fixed width.'),
     wrap: PropTypes.bool

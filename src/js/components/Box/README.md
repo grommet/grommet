@@ -243,6 +243,7 @@ small
 medium
 large
 xlarge
+xxlarge
 full
 1/2
 1/3
@@ -372,11 +373,13 @@ string
 A fixed height.
 
 ```
+xxsmall
 xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string
 ```
 
@@ -548,11 +551,13 @@ string
 A fixed width.
 
 ```
+xxsmall
 xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string
 ```
 
