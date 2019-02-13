@@ -11,6 +11,7 @@ import {
   TextInput,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 
 const allSuggestions = Array(100)
   .fill()
@@ -133,10 +134,42 @@ const FormFieldHelpError = props => (
   </Grommet>
 );
 
+const customFormFieldTheme = {
+  global: {
+    font: {
+      size: '13px',
+    },
+    input: {
+      weight: 400,
+    },
+  },
+  formField: {
+    label: {
+      color: 'dark-3',
+      size: 'xsmall',
+      margin: { vertical: 0, bottom: 'small', horizontal: 0 },
+      weight: '600',
+    },
+    border: false,
+    margin: 0,
+  },
+};
+
+const CustomFormField = () => (
+  <Grommet theme={deepMerge(grommet, customFormFieldTheme)}>
+    <Box align="center" pad="large">
+      <FormField label="Label" htmlFor="text-area">
+        <TextArea id="text-area" placeholder="placeholder" />
+      </FormField>
+    </Box>
+  </Grommet>
+);
+
 storiesOf('FormField', module)
   .add('TextInput', () => <FormFieldTextInput />)
   .add('TextArea', () => <FormFieldTextArea />)
   .add('Select', () => <FormFieldSelect />)
   .add('CheckBox', () => <FormFieldCheckBox />)
   .add('Toggle', () => <FormFieldToggle />)
-  .add('Help and error', () => <FormFieldHelpError />);
+  .add('Help and error', () => <FormFieldHelpError />)
+  .add('Custom Theme', () => <CustomFormField />);
