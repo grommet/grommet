@@ -372,20 +372,19 @@ function (_Component4) {
       plain: true
     })), open && React.createElement(Layer, {
       position: "bottom",
-      full: "horizontal",
       modal: false,
-      responsive: false,
-      onEsc: this.onClose
-    }, React.createElement(Box, {
-      align: "start",
-      pad: {
+      margin: {
         vertical: 'medium',
         horizontal: 'small'
-      }
+      },
+      onEsc: this.onClose,
+      responsive: false,
+      plain: true
     }, React.createElement(Box, {
       align: "center",
       direction: "row",
       gap: "small",
+      justify: "between",
       round: "medium",
       elevation: "medium",
       pad: {
@@ -401,7 +400,7 @@ function (_Component4) {
       icon: React.createElement(FormClose, null),
       onClick: this.onClose,
       plain: true
-    })))));
+    }))));
   };
 
   return NotificationLayer;

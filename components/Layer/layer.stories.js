@@ -376,20 +376,19 @@ function (_Component4) {
       plain: true
     })), open && _react.default.createElement(_grommet.Layer, {
       position: "bottom",
-      full: "horizontal",
       modal: false,
-      responsive: false,
-      onEsc: this.onClose
-    }, _react.default.createElement(_grommet.Box, {
-      align: "start",
-      pad: {
+      margin: {
         vertical: 'medium',
         horizontal: 'small'
-      }
+      },
+      onEsc: this.onClose,
+      responsive: false,
+      plain: true
     }, _react.default.createElement(_grommet.Box, {
       align: "center",
       direction: "row",
       gap: "small",
+      justify: "between",
       round: "medium",
       elevation: "medium",
       pad: {
@@ -405,7 +404,7 @@ function (_Component4) {
       icon: _react.default.createElement(_grommetIcons.FormClose, null),
       onClick: this.onClose,
       plain: true
-    })))));
+    }))));
   };
 
   return NotificationLayer;
