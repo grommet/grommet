@@ -1,0 +1,29 @@
+{
+  "name": "template_starter",
+  "version": "1.0.0",
+  "description": "Boilerplate for grommet templates",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot --port 3000",
+    "build": "webpack --mode production"
+  },
+  "author": "Shimrit Yacobi",
+  "license": "MIT",
+  "dependencies": {
+    "grommet": "*",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "styled-components": "^4.1.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.0-beta.6",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
