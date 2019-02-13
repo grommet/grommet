@@ -25,7 +25,7 @@ export var doc = function doc(Box) {
       opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.bool]),
       light: PropTypes.string
     })]).description("Either a color identifier to use for the background\n        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark\n        is not needed if color is provided."),
-    basis: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'auto']), PropTypes.string]).description("A fixed or relative size along its container's main axis."),
+    basis: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'full', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'auto']), PropTypes.string]).description("A fixed or relative size along its container's main axis."),
     border: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['top', 'left', 'bottom', 'right', 'horizontal', 'vertical', 'all']), PropTypes.shape({
       color: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
         dark: PropTypes.string,
@@ -43,7 +43,7 @@ export var doc = function doc(Box) {
     })]).description('Whether flex-grow and/or flex-shrink is true and at a desired factor.'),
     fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]).description('Whether the width and/or height should fill the container.'),
     gap: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("The amount of spacing between child elements. This\n        should not be used in conjunction with 'wrap' as the gap elements\n        will not wrap gracefully."),
-    height: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('A fixed height.'),
+    height: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string]).description('A fixed height.'),
     justify: PropTypes.oneOf(['start', 'center', 'between', 'around', 'evenly', 'end']).description('How to align the contents along the main axis.'),
     overflow: PropTypes.oneOfType([PropTypes.oneOf(OVERFLOW_VALUES), PropTypes.shape({
       horizontal: PropTypes.oneOf(OVERFLOW_VALUES),
@@ -64,7 +64,7 @@ export var doc = function doc(Box) {
     })]).description('How much to round the corners.').defaultValue(false),
     tag: PropTypes.string.description("The DOM tag to use for the element. NOTE: This is deprecated in favor\nof indicating the DOM tag via the 'as' property."),
     as: PropTypes.string.description('The DOM tag to use for the element.').defaultValue('div'),
-    width: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('A fixed width.'),
+    width: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string]).description('A fixed width.'),
     wrap: PropTypes.bool.description("Whether children can wrap if they\n      can't all fit.").defaultValue(false)
   });
   return DocumentedBox;
