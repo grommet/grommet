@@ -507,7 +507,8 @@ boolean",
         "description": "The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully.",
-        "format": "xsmall
+        "format": "xxsmall
+xsmall
 small
 medium
 large

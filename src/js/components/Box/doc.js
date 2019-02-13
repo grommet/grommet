@@ -172,7 +172,14 @@ export const doc = Box => {
       'Whether the width and/or height should fill the container.',
     ),
     gap: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+      ]),
       PropTypes.string,
     ]).description(`The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements

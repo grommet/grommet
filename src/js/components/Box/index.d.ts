@@ -15,7 +15,7 @@ export interface BoxProps {
   elevation?: "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   flex?: "grow" | "shrink" | boolean | {grow?: number,shrink?: number};
   fill?: "horizontal" | "vertical" | boolean;
-  gap?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
+  gap?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   height?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   justify?: "start" | "center" | "between" | "around" | "evenly" | "end";
   overflow?: "auto" | "hidden" | "scroll" | "visible" | {horizontal?: "auto" | "hidden" | "scroll" | "visible",vertical?: "auto" | "hidden" | "scroll" | "visible"} | string;
