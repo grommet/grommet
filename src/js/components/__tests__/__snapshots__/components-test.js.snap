@@ -518,11 +518,13 @@ string",
       },
       Object {
         "description": "A fixed height.",
-        "format": "xsmall
+        "format": "xxsmall
+xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string",
         "name": "height",
       },
@@ -674,11 +676,13 @@ of indicating the DOM tag via the 'as' property.",
       },
       Object {
         "description": "A fixed width.",
-        "format": "xsmall
+        "format": "xxsmall
+xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string",
         "name": "width",
       },
