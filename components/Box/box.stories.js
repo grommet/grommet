@@ -245,17 +245,25 @@ var ElevationBox = function ElevationBox() {
     theme: _themes.grommet
   }, _react.default.createElement(_2.Box, {
     pad: "small",
-    gap: "small",
     align: "start"
   }, _react.default.createElement(_2.Box, {
     pad: "medium",
     background: "dark-1",
     elevation: "medium",
     gap: "medium"
-  }, _react.default.createElement(_2.Text, null, "on white"), _react.default.createElement(_2.Box, {
+  }, _react.default.createElement(_2.Text, null, "dark on white"), _react.default.createElement(_2.Box, {
+    pad: "medium",
+    elevation: "medium",
+    gap: "medium"
+  }, _react.default.createElement(_2.Text, null, "dark on dark"), _react.default.createElement(_2.Box, {
+    pad: "medium",
+    background: "light-1",
+    elevation: "medium",
+    gap: "medium"
+  }, _react.default.createElement(_2.Text, null, "light on dark"), _react.default.createElement(_2.Box, {
     pad: "medium",
     elevation: "medium"
-  }, _react.default.createElement(_2.Text, null, "on dark")))));
+  }, _react.default.createElement(_2.Text, null, "light on light")))))));
 };
 
 (0, _react2.storiesOf)('Box', module).add('Simple Box', function () {

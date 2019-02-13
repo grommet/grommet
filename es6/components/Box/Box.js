@@ -84,15 +84,20 @@ function (_Component) {
       widthProp: width,
       heightProp: height,
       responsive: responsive
-    }, rest), contents);
+    }, rest), contents); // When a Box changes the darkness, it sets darkChanged so that StyledBox
+    // can know what the underlying darkness is when deciding which elevation
+    // to show.
 
-    if (background) {
+    if (background || theme.darkChanged) {
       var dark = backgroundIsDark(background, theme);
+      var darkChanged = dark !== undefined && dark !== theme.dark;
 
-      if (dark !== theme.dark) {
+      if (darkChanged || theme.darkChanged) {
+        dark = dark === undefined ? theme.dark : dark;
         content = React.createElement(ThemeContext.Provider, {
           value: _extends({}, theme, {
-            dark: dark
+            dark: dark,
+            darkChanged: darkChanged
           })
         }, content);
       }
