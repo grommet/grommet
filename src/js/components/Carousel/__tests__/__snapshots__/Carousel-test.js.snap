@@ -483,6 +483,8 @@ exports[`Carousel basic 1`] = `
             disabled={true}
             onBlur={[Function]}
             onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
             type="button"
           >
             <div
@@ -515,6 +517,8 @@ exports[`Carousel basic 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
               type="button"
             >
               <svg
@@ -535,6 +539,8 @@ exports[`Carousel basic 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
               type="button"
             >
               <svg
@@ -561,6 +567,8 @@ exports[`Carousel basic 1`] = `
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
             type="button"
           >
             <div

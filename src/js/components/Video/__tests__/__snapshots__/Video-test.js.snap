@@ -400,6 +400,8 @@ exports[`Video autoPlay renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <svg
@@ -475,6 +477,8 @@ exports[`Video autoPlay renders 1`] = `
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <div
@@ -1010,6 +1014,8 @@ exports[`Video controls renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <svg
@@ -1085,6 +1091,8 @@ exports[`Video controls renders 1`] = `
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <div
@@ -1155,6 +1163,8 @@ exports[`Video controls renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <svg
@@ -1231,6 +1241,8 @@ exports[`Video controls renders 1`] = `
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <div
@@ -1677,6 +1689,8 @@ exports[`Video fit renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <svg
@@ -1752,6 +1766,8 @@ exports[`Video fit renders 1`] = `
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <div
@@ -1825,6 +1841,8 @@ exports[`Video fit renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <svg
@@ -1900,6 +1918,8 @@ exports[`Video fit renders 1`] = `
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <div
@@ -2328,6 +2348,8 @@ exports[`Video loop renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <svg
@@ -2403,6 +2425,8 @@ exports[`Video loop renders 1`] = `
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <div
@@ -2831,6 +2855,8 @@ exports[`Video mute renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <svg
@@ -2906,6 +2932,8 @@ exports[`Video mute renders 1`] = `
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <div
@@ -3334,6 +3362,8 @@ exports[`Video renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <svg
@@ -3409,6 +3439,8 @@ exports[`Video renders 1`] = `
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
           type="button"
         >
           <div
