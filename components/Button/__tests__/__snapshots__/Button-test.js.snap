@@ -1047,6 +1047,7 @@ exports[`Button warns about invalid icon render 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  line-height: 0;
   padding: 12px;
 }
 

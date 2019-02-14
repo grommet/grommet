@@ -25,11 +25,15 @@ var IconButton = function IconButton() {
   }, React.createElement(Box, {
     align: "center",
     pad: "large"
+  }, React.createElement(Box, {
+    round: "full",
+    overflow: "hidden",
+    background: "neutral-1"
   }, React.createElement(Button, {
     icon: React.createElement(Add, null),
     hoverIndicator: true,
     onClick: function onClick() {}
-  })));
+  }))));
 };
 
 var IconLabelButton = function IconLabelButton() {

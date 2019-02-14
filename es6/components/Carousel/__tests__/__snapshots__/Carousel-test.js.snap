@@ -280,6 +280,7 @@ exports[`Carousel basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  line-height: 0;
   padding: 12px;
 }
 
@@ -866,6 +867,7 @@ exports[`Carousel navigate 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  line-height: 0;
   padding: 12px;
 }
 
@@ -1238,7 +1240,7 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-sc-13pk1d4-0 exddWn"
           >
             <button
-              class="StyledButton-sc-323bzc-0 dcpWVY"
+              class="StyledButton-sc-323bzc-0 lbUBVe"
               type="button"
             >
               <svg
@@ -1255,7 +1257,7 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 dcpWVY"
+              class="StyledButton-sc-323bzc-0 lbUBVe"
               type="button"
             >
               <svg
@@ -1386,7 +1388,7 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-sc-13pk1d4-0 exddWn"
           >
             <button
-              class="StyledButton-sc-323bzc-0 dcpWVY"
+              class="StyledButton-sc-323bzc-0 lbUBVe"
               type="button"
             >
               <svg
@@ -1403,7 +1405,7 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 dcpWVY"
+              class="StyledButton-sc-323bzc-0 lbUBVe"
               type="button"
             >
               <svg
@@ -1732,6 +1734,7 @@ exports[`Carousel play 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  line-height: 0;
   padding: 12px;
 }
 
@@ -2102,7 +2105,7 @@ exports[`Carousel play 2`] = `
             class="StyledBox-sc-13pk1d4-0 exddWn"
           >
             <button
-              class="StyledButton-sc-323bzc-0 dcpWVY"
+              class="StyledButton-sc-323bzc-0 lbUBVe"
               type="button"
             >
               <svg
@@ -2119,7 +2122,7 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 dcpWVY"
+              class="StyledButton-sc-323bzc-0 lbUBVe"
               type="button"
             >
               <svg

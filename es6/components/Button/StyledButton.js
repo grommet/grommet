@@ -63,7 +63,7 @@ var StyledButton = styled.button.withConfig({
 }, function (props) {
   return props.fillContainer && fillStyle;
 }, function (props) {
-  return props.hasIcon && !props.hasLabel && "\n    padding: " + props.theme.global.edgeSize.small + ";\n  ";
+  return props.hasIcon && !props.hasLabel && "\n    line-height: 0;\n    padding: " + props.theme.global.edgeSize.small + ";\n  ";
 }, function (props) {
   return props.theme.button.extend;
 });

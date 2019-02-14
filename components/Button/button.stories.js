@@ -34,11 +34,15 @@ var IconButton = function IconButton() {
   }, _react.default.createElement(_grommet.Box, {
     align: "center",
     pad: "large"
+  }, _react.default.createElement(_grommet.Box, {
+    round: "full",
+    overflow: "hidden",
+    background: "neutral-1"
   }, _react.default.createElement(_grommet.Button, {
     icon: _react.default.createElement(_grommetIcons.Add, null),
     hoverIndicator: true,
     onClick: function onClick() {}
-  })));
+  }))));
 };
 
 var IconLabelButton = function IconLabelButton() {
