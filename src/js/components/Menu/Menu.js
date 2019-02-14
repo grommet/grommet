@@ -172,7 +172,7 @@ class Menu extends Component {
                       }}
                       active={activeItemIndex === index}
                       hoverIndicator="background"
-                      disabled={!item.onClick && !item.href}
+                      disabled={item.disabled || (!item.onClick && !item.href)}
                       onClick={(...args) => {
                         item.onClick(...args);
                         if (item.close !== false) {

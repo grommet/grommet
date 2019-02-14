@@ -12,6 +12,7 @@ const SimpleMenu = () => (
         items={[
           { label: 'Launch', onClick: () => {} },
           { label: 'Abort', onClick: () => {} },
+          { label: 'Disabled', disabled: true },
         ]}
       />
     </Box>
