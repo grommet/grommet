@@ -17,7 +17,9 @@ const SimpleButton = props => (
 const IconButton = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <Button icon={<Add />} hoverIndicator onClick={() => {}} />
+      <Box round="full" overflow="hidden" background="neutral-1">
+        <Button icon={<Add />} hoverIndicator onClick={() => {}} />
+      </Box>
     </Box>
   </Grommet>
 );
