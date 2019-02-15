@@ -22,6 +22,8 @@ import {
 class Audio extends Component {
   static defaultProps = {
     controls: true,
+    mute: false,
+    loop: false,
   };
 
   state = {
@@ -59,7 +61,7 @@ class Audio extends Component {
     console.log('updating..');
 
     let { interacting } = this.state;
-    if (audio.ended) {
+    if (audio && audio.ended) {
       interacting = false;
     }
 
@@ -102,7 +104,7 @@ class Audio extends Component {
   renderControls() {
     const { theme } = this.props;
     const {
-      duration, // follow ABC
+      duration,
       interacting,
       playing,
       rangeInputValue,
@@ -171,7 +173,7 @@ class Audio extends Component {
   render() {
     const {
       alignSelf,
-      autoPlay,
+      autoplay,
       children,
       controls,
       gridArea,
@@ -182,7 +184,7 @@ class Audio extends Component {
       ...rest
     } = this.props;
 
-    const { audioRef} = this.state;
+    const { audioRef } = this.state;
 
     const controlsElement = controls ? this.renderControls() : undefined;
 
@@ -202,9 +204,9 @@ class Audio extends Component {
         <StyledAudio
           {...rest}
           {...this.mediaEventProps}
-          autoPlay={autoPlay || false}
-          loop={loop || false}
-          muted={muted || false}
+          autoPlay={autoplay || false}
+          loop={loop}
+          muted={muted}
           ref={audioRef}
         >
           {children}
