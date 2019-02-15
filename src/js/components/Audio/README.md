@@ -120,13 +120,20 @@ boolean
 Whether to show playback controls. Defaults to `true`.
 
 ```
-false
-true
+boolean
 ```
 
 **loop**
 
 Enables continuous audio looping.
+
+```
+boolean
+```
+
+**muted**
+
+Enables audio muting. This option is best used with the autoPlay flag.
 
 ```
 boolean

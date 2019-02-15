@@ -306,7 +306,7 @@ string",
         "defaultValue": false,
         "description": "Enables audio muting. This option is best used with the autoPlay flag.",
         "format": "boolean",
-        "name": "mute",
+        "name": "muted",
       },
     ],
     "usage": "import { Audio } from 'grommet';

@@ -636,7 +636,7 @@ Enables continuous audio looping.
 boolean
 \`\`\`
 
-**mute**
+**muted**
 
 Enables audio muting. This option is best used with the autoPlay flag.
 
