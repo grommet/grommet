@@ -1,0 +1,2369 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Audio autoplay renders 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(51,51,51,0.8);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  padding: 12px;
+}
+
+.c6:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #FFFFFF;
+}
+
+.c11 {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-appearance: none;
+  border-color: transparent;
+  height: 24px;
+  width: 100%;
+  padding: 0px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c11:focus {
+  outline: none;
+}
+
+.c11::-moz-focus-inner {
+  border: none;
+}
+
+.c11::-moz-focus-outer {
+  border: none;
+}
+
+.c11::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+}
+
+.c11::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: -10.2px;
+}
+
+.c11::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11::-moz-range-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+}
+
+.c11::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c11::-ms-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c11:hover::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11:hover::-ms-thumb {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11::-ms-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+  color: transparent;
+}
+
+.c11::-ms-fill-lower {
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+}
+
+.c11::-ms-fill-upper {
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+}
+
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c1 {
+  position: relative;
+  width: 384px;
+}
+
+.c3 {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    onMouseEnter={[Function]}
+    onMouseMove={[Function]}
+    onTouchStart={[Function]}
+  >
+    <audio
+      autoPlay={true}
+      className="c2"
+      loop={false}
+      onAbort={[Function]}
+      onCanPlay={[Function]}
+      onCanPlayThrough={[Function]}
+      onDurationChange={[Function]}
+      onEmptied={[Function]}
+      onEncrypted={[Function]}
+      onEnded={[Function]}
+      onError={[Function]}
+      onLoadStart={[Function]}
+      onLoadedData={[Function]}
+      onLoadedMetadata={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      onPlaying={[Function]}
+      onProgress={[Function]}
+      onRateChange={[Function]}
+      onSeeked={[Function]}
+      onSeeking={[Function]}
+      onStalled={[Function]}
+      onSuspend={[Function]}
+      onTimeUpdate={[Function]}
+      onVolumeChange={[Function]}
+      onWaiting={[Function]}
+    >
+      <source />
+      <track />
+    </audio>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          <button
+            className="c6"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <svg
+              aria-label="Play"
+              className="c7"
+              viewBox="0 0 24 24"
+            >
+              <polygon
+                fill="none"
+                points="3 22 21 12 3 2"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+          <div
+            className="c8"
+          >
+            <span
+              className="c9"
+            >
+              
+            </span>
+          </div>
+        </div>
+        <div
+          className="c10"
+        >
+          <button
+            className="c6"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <svg
+              aria-label="Volume"
+              className="c7"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+          <input
+            className="c11"
+            max={1}
+            min={0}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            size="full"
+            step={0.1}
+            type="range"
+            values={1}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Audio controls renders 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(51,51,51,0.8);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  padding: 12px;
+}
+
+.c6:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #FFFFFF;
+}
+
+.c11 {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-appearance: none;
+  border-color: transparent;
+  height: 24px;
+  width: 100%;
+  padding: 0px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c11:focus {
+  outline: none;
+}
+
+.c11::-moz-focus-inner {
+  border: none;
+}
+
+.c11::-moz-focus-outer {
+  border: none;
+}
+
+.c11::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+}
+
+.c11::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: -10.2px;
+}
+
+.c11::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11::-moz-range-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+}
+
+.c11::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c11::-ms-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c11:hover::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11:hover::-ms-thumb {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11::-ms-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+  color: transparent;
+}
+
+.c11::-ms-fill-lower {
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+}
+
+.c11::-ms-fill-upper {
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+}
+
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c1 {
+  position: relative;
+  width: 384px;
+}
+
+.c3 {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    onMouseEnter={[Function]}
+    onMouseMove={[Function]}
+    onTouchStart={[Function]}
+  >
+    <audio
+      autoPlay={false}
+      className="c2"
+      loop={false}
+      onAbort={[Function]}
+      onCanPlay={[Function]}
+      onCanPlayThrough={[Function]}
+      onDurationChange={[Function]}
+      onEmptied={[Function]}
+      onEncrypted={[Function]}
+      onEnded={[Function]}
+      onError={[Function]}
+      onLoadStart={[Function]}
+      onLoadedData={[Function]}
+      onLoadedMetadata={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      onPlaying={[Function]}
+      onProgress={[Function]}
+      onRateChange={[Function]}
+      onSeeked={[Function]}
+      onSeeking={[Function]}
+      onStalled={[Function]}
+      onSuspend={[Function]}
+      onTimeUpdate={[Function]}
+      onVolumeChange={[Function]}
+      onWaiting={[Function]}
+    >
+      <source />
+      <track />
+    </audio>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          <button
+            className="c6"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <svg
+              aria-label="Play"
+              className="c7"
+              viewBox="0 0 24 24"
+            >
+              <polygon
+                fill="none"
+                points="3 22 21 12 3 2"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+          <div
+            className="c8"
+          >
+            <span
+              className="c9"
+            >
+              
+            </span>
+          </div>
+        </div>
+        <div
+          className="c10"
+        >
+          <button
+            className="c6"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <svg
+              aria-label="Volume"
+              className="c7"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+          <input
+            className="c11"
+            max={1}
+            min={0}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            size="full"
+            step={0.1}
+            type="range"
+            values={1}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="c1"
+    onMouseEnter={[Function]}
+    onMouseMove={[Function]}
+    onTouchStart={[Function]}
+  >
+    <audio
+      autoPlay={false}
+      className="c2"
+      loop={false}
+      onAbort={[Function]}
+      onCanPlay={[Function]}
+      onCanPlayThrough={[Function]}
+      onDurationChange={[Function]}
+      onEmptied={[Function]}
+      onEncrypted={[Function]}
+      onEnded={[Function]}
+      onError={[Function]}
+      onLoadStart={[Function]}
+      onLoadedData={[Function]}
+      onLoadedMetadata={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      onPlaying={[Function]}
+      onProgress={[Function]}
+      onRateChange={[Function]}
+      onSeeked={[Function]}
+      onSeeking={[Function]}
+      onStalled={[Function]}
+      onSuspend={[Function]}
+      onTimeUpdate={[Function]}
+      onVolumeChange={[Function]}
+      onWaiting={[Function]}
+    >
+      <source />
+      <track />
+    </audio>
+  </div>
+</div>
+`;
+
+exports[`Audio loop renders 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(51,51,51,0.8);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  padding: 12px;
+}
+
+.c6:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #FFFFFF;
+}
+
+.c11 {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-appearance: none;
+  border-color: transparent;
+  height: 24px;
+  width: 100%;
+  padding: 0px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c11:focus {
+  outline: none;
+}
+
+.c11::-moz-focus-inner {
+  border: none;
+}
+
+.c11::-moz-focus-outer {
+  border: none;
+}
+
+.c11::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+}
+
+.c11::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: -10.2px;
+}
+
+.c11::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11::-moz-range-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+}
+
+.c11::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c11::-ms-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c11:hover::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11:hover::-ms-thumb {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11::-ms-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+  color: transparent;
+}
+
+.c11::-ms-fill-lower {
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+}
+
+.c11::-ms-fill-upper {
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+}
+
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c1 {
+  position: relative;
+  width: 384px;
+}
+
+.c3 {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    onMouseEnter={[Function]}
+    onMouseMove={[Function]}
+    onTouchStart={[Function]}
+  >
+    <audio
+      autoPlay={false}
+      className="c2"
+      loop={true}
+      onAbort={[Function]}
+      onCanPlay={[Function]}
+      onCanPlayThrough={[Function]}
+      onDurationChange={[Function]}
+      onEmptied={[Function]}
+      onEncrypted={[Function]}
+      onEnded={[Function]}
+      onError={[Function]}
+      onLoadStart={[Function]}
+      onLoadedData={[Function]}
+      onLoadedMetadata={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      onPlaying={[Function]}
+      onProgress={[Function]}
+      onRateChange={[Function]}
+      onSeeked={[Function]}
+      onSeeking={[Function]}
+      onStalled={[Function]}
+      onSuspend={[Function]}
+      onTimeUpdate={[Function]}
+      onVolumeChange={[Function]}
+      onWaiting={[Function]}
+    >
+      <source />
+      <track />
+    </audio>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          <button
+            className="c6"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <svg
+              aria-label="Play"
+              className="c7"
+              viewBox="0 0 24 24"
+            >
+              <polygon
+                fill="none"
+                points="3 22 21 12 3 2"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+          <div
+            className="c8"
+          >
+            <span
+              className="c9"
+            >
+              
+            </span>
+          </div>
+        </div>
+        <div
+          className="c10"
+        >
+          <button
+            className="c6"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <svg
+              aria-label="Volume"
+              className="c7"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+          <input
+            className="c11"
+            max={1}
+            min={0}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            size="full"
+            step={0.1}
+            type="range"
+            values={1}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Audio mute renders 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(51,51,51,0.8);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  padding: 12px;
+}
+
+.c6:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #FFFFFF;
+}
+
+.c11 {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-appearance: none;
+  border-color: transparent;
+  height: 24px;
+  width: 100%;
+  padding: 0px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c11:focus {
+  outline: none;
+}
+
+.c11::-moz-focus-inner {
+  border: none;
+}
+
+.c11::-moz-focus-outer {
+  border: none;
+}
+
+.c11::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+}
+
+.c11::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: -10.2px;
+}
+
+.c11::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11::-moz-range-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+}
+
+.c11::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c11::-ms-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c11:hover::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11:hover::-ms-thumb {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11::-ms-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+  color: transparent;
+}
+
+.c11::-ms-fill-lower {
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+}
+
+.c11::-ms-fill-upper {
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+}
+
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c1 {
+  position: relative;
+  width: 384px;
+}
+
+.c3 {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    onMouseEnter={[Function]}
+    onMouseMove={[Function]}
+    onTouchStart={[Function]}
+  >
+    <audio
+      autoPlay={false}
+      className="c2"
+      loop={false}
+      onAbort={[Function]}
+      onCanPlay={[Function]}
+      onCanPlayThrough={[Function]}
+      onDurationChange={[Function]}
+      onEmptied={[Function]}
+      onEncrypted={[Function]}
+      onEnded={[Function]}
+      onError={[Function]}
+      onLoadStart={[Function]}
+      onLoadedData={[Function]}
+      onLoadedMetadata={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      onPlaying={[Function]}
+      onProgress={[Function]}
+      onRateChange={[Function]}
+      onSeeked={[Function]}
+      onSeeking={[Function]}
+      onStalled={[Function]}
+      onSuspend={[Function]}
+      onTimeUpdate={[Function]}
+      onVolumeChange={[Function]}
+      onWaiting={[Function]}
+    >
+      <source />
+      <track />
+    </audio>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          <button
+            className="c6"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <svg
+              aria-label="Play"
+              className="c7"
+              viewBox="0 0 24 24"
+            >
+              <polygon
+                fill="none"
+                points="3 22 21 12 3 2"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+          <div
+            className="c8"
+          >
+            <span
+              className="c9"
+            >
+              
+            </span>
+          </div>
+        </div>
+        <div
+          className="c10"
+        >
+          <button
+            className="c6"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <svg
+              aria-label="Volume"
+              className="c7"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+          <input
+            className="c11"
+            max={1}
+            min={0}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            size="full"
+            step={0.1}
+            type="range"
+            values={1}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Audio renders 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(51,51,51,0.8);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c6 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  padding: 12px;
+}
+
+.c6:hover {
+  background-color: rgba(221,221,221,0.4);
+  color: #444444;
+  color: #FFFFFF;
+}
+
+.c11 {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-appearance: none;
+  border-color: transparent;
+  height: 24px;
+  width: 100%;
+  padding: 0px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.c11:focus {
+  outline: none;
+}
+
+.c11::-moz-focus-inner {
+  border: none;
+}
+
+.c11::-moz-focus-outer {
+  border: none;
+}
+
+.c11::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+}
+
+.c11::-webkit-slider-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: -10.2px;
+}
+
+.c11::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11::-moz-range-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+}
+
+.c11::-moz-range-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c11::-ms-thumb {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-top: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+.c11:hover::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11:hover::-ms-thumb {
+  box-shadow: 0px 0px 0px 2px #6FFFB0;
+}
+
+.c11::-ms-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+  color: transparent;
+}
+
+.c11::-ms-fill-lower {
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+}
+
+.c11::-ms-fill-upper {
+  background: rgba(255,255,255,0.2);
+  border-color: transparent;
+}
+
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c1 {
+  position: relative;
+  width: 384px;
+}
+
+.c3 {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c10 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    onMouseEnter={[Function]}
+    onMouseMove={[Function]}
+    onTouchStart={[Function]}
+  >
+    <audio
+      autoPlay={false}
+      className="c2"
+      loop={false}
+      onAbort={[Function]}
+      onCanPlay={[Function]}
+      onCanPlayThrough={[Function]}
+      onDurationChange={[Function]}
+      onEmptied={[Function]}
+      onEncrypted={[Function]}
+      onEnded={[Function]}
+      onError={[Function]}
+      onLoadStart={[Function]}
+      onLoadedData={[Function]}
+      onLoadedMetadata={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      onPlaying={[Function]}
+      onProgress={[Function]}
+      onRateChange={[Function]}
+      onSeeked={[Function]}
+      onSeeking={[Function]}
+      onStalled={[Function]}
+      onSuspend={[Function]}
+      onTimeUpdate={[Function]}
+      onVolumeChange={[Function]}
+      onWaiting={[Function]}
+    >
+      <source />
+      <track />
+    </audio>
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <div
+          className="c5"
+        >
+          <button
+            className="c6"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <svg
+              aria-label="Play"
+              className="c7"
+              viewBox="0 0 24 24"
+            >
+              <polygon
+                fill="none"
+                points="3 22 21 12 3 2"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+          <div
+            className="c8"
+          >
+            <span
+              className="c9"
+            >
+              
+            </span>
+          </div>
+        </div>
+        <div
+          className="c10"
+        >
+          <button
+            className="c6"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            type="button"
+          >
+            <svg
+              aria-label="Volume"
+              className="c7"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
+                fill="none"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+          <input
+            className="c11"
+            max={1}
+            min={0}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            size="full"
+            step={0.1}
+            type="range"
+            values={1}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

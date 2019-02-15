@@ -293,14 +293,20 @@ string",
       Object {
         "defaultValue": true,
         "description": "Whether to show playback controls.",
-        "format": "false
-true",
+        "format": "boolean",
         "name": "controls",
       },
       Object {
+        "defaultValue": false,
         "description": "Enables continuous audio looping.",
         "format": "boolean",
         "name": "loop",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Enables audio muting. This option is best used with the autoPlay flag.",
+        "format": "boolean",
+        "name": "mute",
       },
     ],
     "usage": "import { Audio } from 'grommet';
