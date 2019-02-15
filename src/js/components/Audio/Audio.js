@@ -5,7 +5,7 @@ import { withTheme } from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
-import { Meter } from '../Meter';
+import { RangeInput } from '../RangeInput';
 import { Text } from '../Text';
 import { withForwardRef } from '../hocs';
 
@@ -13,279 +13,280 @@ import { withForwardRef } from '../hocs';
 
 import { throttle, formatTime } from '../../utils';
 
-import { StyledAudio, StyledAudioControls, StyledAudioContainer } from './StyledAudio';
+import {
+  StyledAudio,
+  StyledAudioControls,
+  StyledAudioContainer,
+} from './StyledAudio';
 
-// TODO refactor to include video Split the volume control into 6 segments. Empirically determined.
-const VOLUME_STEP = 0.166667;
-
-// TODO cleanups!!
+// TODO cleanups!! compare with html audio
 const audioEvents = [
-    'onAbort',
-    'onCanPlay',
-    'onCanPlayThrough',
-    'onDurationChange',
-    'onEmptied',
-    'onEncrypted',
-    'onEnded',
-    'onError',
-    'onLoadedData',
-    'onLoadedMetadata',
-    'onLoadStart',
-    'onPause',
-    'onPlay',
-    'onPlaying',
-    'onProgress',
-    'onRateChange',
-    'onSeeked',
-    'onSeeking',
-    'onStalled',
-    'onSuspend',
-    'onTimeUpdate',
-    'onVolumeChange',
-    'onWaiting',
-  ];
+  'onAbort',
+  'onCanPlay',
+  'onCanPlayThrough',
+  'onDurationChange',
+  'onEmptied',
+  'onEncrypted',
+  'onEnded',
+  'onError',
+  'onLoadedData',
+  'onLoadedMetadata',
+  'onLoadStart',
+  'onPause',
+  'onPlay',
+  'onPlaying',
+  'onProgress',
+  'onRateChange',
+  'onSeeked',
+  'onSeeking',
+  'onStalled',
+  'onSuspend',
+  'onTimeUpdate',
+  'onVolumeChange',
+  'onWaiting',
+];
 class Audio extends Component {
+  static defaultProps = {
+    controls: true,
+  };
 
-    static defaultProps = {
-        controls: true,
-    };
+  state = {
+    audioRef: React.createRef(),
+    rangeInputValue: 1,
+  };
 
-    state = {
-        audioRef: React.createRef(),
-    };
+  constructor(props) {
+    super(props);
+    this.update = throttle(this.update, 100, this);
+    this.mediaEventProps = this.injectUpdateVideoEvents();
+  }
 
-    constructor(props) {
-        super(props);
-        this.update = throttle(this.update, 100, this);
-        this.mediaEventProps = this.injectUpdateVideoEvents();
+  componentDidMount() {
+    // const { audioRef } = this.state;
+    // const audio = audioRef.current;
+  }
+
+  // componentDidUpdate(prevProps) {
+  //     const { autoPlay } = this.props;
+  //     if (autoPlay && !prevProps.autoPlay) {
+  //         // Caller wants the audio to play right after it loads.
+  //         console.log("Plzzzzzzzzzzzzzzzzzzz");
+  //         this.play();
+  //     }
+  // }
+
+  injectUpdateVideoEvents = () =>
+    audioEvents.reduce((previousValue, currentValue) => {
+      const nextValue = { ...previousValue };
+      nextValue[currentValue] = e => {
+        if (
+          currentValue in this.props &&
+          /* eslint-disable react/destructuring-assignment */
+          typeof this.props[currentValue] === 'function'
+        ) {
+          this.props[currentValue](e);
+          /* eslint-enable react/destructuring-assignment */
+        }
+        this.update();
+      };
+
+      return nextValue;
+    }, {});
+
+  update = () => {
+    const { audioRef } = this.state;
+    const audio = audioRef.current;
+    console.log('updating..');
+
+    let { interacting } = this.state;
+    if (audio.ended) {
+      interacting = false;
     }
 
-    componentDidMount() {
-        // const { audioRef } = this.state;
-        // const audio = audioRef.current;
+    this.setState({
+      duration: audio.duration,
+      playing: !audio.paused,
+      interacting,
+      // volume: audio.volume,
+    });
+  };
+
+  play = () => {
+    const { audioRef } = this.state;
+    audioRef.current.play();
+  };
+
+  pause = () => {
+    const { audioRef } = this.state;
+    audioRef.current.pause();
+  };
+
+  unmute = () => {
+    const { audioRef } = this.state;
+    if (audioRef.current) {
+      audioRef.current.muted = false;
     }
+  };
 
-    // componentDidUpdate(prevProps) {
-    //     const { autoPlay } = this.props;
-    //     if (autoPlay && !prevProps.autoPlay) {
-    //         // Caller wants the audio to play right after it loads.
-    //         console.log("Plzzzzzzzzzzzzzzzzzzz");
-    //         this.play();
-    //     }
-    // }
+  mute = () => {
+    const { audioRef } = this.state;
+    if (audioRef.current) {
+      audioRef.current.muted = true;
+    }
+  };
 
-    injectUpdateVideoEvents = () =>
-        audioEvents.reduce((previousValue, currentValue) => {
-            const nextValue = { ...previousValue };
-            nextValue[currentValue] = e => {
-                if (
-                    currentValue in this.props &&
-                    /* eslint-disable react/destructuring-assignment */
-                    typeof this.props[currentValue] === 'function'
-                ) {
-                    this.props[currentValue](e);
-                    /* eslint-enable react/destructuring-assignment */
-                }
-                this.update();
-            };
+  interactionStart = () => {
+    this.setState({ interacting: true });
+    clearTimeout(this.interactionTimer);
+    this.interactionTimer = setTimeout(this.interactionStop, 3000);
+  };
 
-            return nextValue;
-        }, {});
+  interactionStop = () => {
+    const { focus } = this.state;
+    if (!focus && !this.unmounted) {
+      this.setState({ interacting: false });
+    }
+  };
 
-    update = () => {
-        const { audioRef } = this.state;
-        const audio = audioRef.current;
+  setVolume = value => {
+    console.log(value);
+    const { audioRef } = this.state;
+    audioRef.current.volume = value;
+    console.log('audio.volume', audioRef.current.volume);
+    this.setState({ rangeInputValue: value });
+  };
 
-        let { interacting } = this.state;
-        if (audio.ended) {
-          interacting = false;
-        }
+  renderControls() {
+    const { theme } = this.props;
+    const {
+      duration, // follow ABC
+      interacting,
+      playing,
+      rangeInputValue,
+    } = this.state;
 
-        this.setState({
-            duration: audio.duration,
-            playing: !audio.paused,
-            interacting,
-            // volume: audio.volume,
-        });
+    const background = (theme.audio.controls &&
+      theme.audio.controls.background) || {
+      color: 'dark-1',
+      opacity: 'strong',
     };
 
-    play = () => {
-        const { audioRef } = this.state;
-        audioRef.current.play();
+    const formattedTime = formatTime(duration);
+    const Icons = {
+      Pause: theme.audio.icons.pause,
+      Play: theme.audio.icons.play,
+      Volume: theme.audio.icons.volume,
     };
 
-    pause = () => {
-        const { audioRef } = this.state;
-        audioRef.current.pause();
-    };
-
-    unmute = () => {
-        const { audioRef } = this.state;
-        if (audioRef.current) {
-            audioRef.current.muted = false;
-        }
-    };
-
-    mute = () => {
-        const { audioRef } = this.state;
-        if (audioRef.current) {
-            audioRef.current.muted = true;
-        }
-    };
-
-    louder = () => {
-        const { videoRef } = this.state;
-        videoRef.current.volume += VOLUME_STEP;
-    };
-
-    quieter = () => {
-        const { videoRef } = this.state;
-        videoRef.current.volume -= VOLUME_STEP;
-    };
-
-    interactionStart = () => {
-        this.setState({ interacting: true });
-        clearTimeout(this.interactionTimer);
-        this.interactionTimer = setTimeout(this.interactionStop, 3000);
-    };
-
-    interactionStop = () => {
-        const { focus } = this.state;
-        if (!focus && !this.unmounted) {
-            this.setState({ interacting: false });
-        }
-    };
-
-    renderControls() {
-        const { theme } = this.props;
-        const { duration, playing, interacting } = this.state;
-
-        const background = (theme.audio.controls && theme.audio.controls.background) || {
-            color: 'dark-1',
-            opacity: 'strong',
-        }
-    
-        const formattedTime = formatTime(duration);
-
-        const Icons = {
-            Pause: theme.audio.icons.pause, 
-            Play: theme.audio.icons.play,
-            Volume: theme.audio.icons.volume,
-        };
-
-        return (
-          <StyledAudioControls
-            active={interacting}
-          >
-            <Box 
-              direction="row" 
-              align="center" 
-              justify="between" 
-              background={background}
-            >
-            <Box align="center" direction="row">
-              <Button
-                icon={
-                  playing ? (
-                    <Icons.Pause color="white" /> // TODO refactor color to theme?
-                  ) : (
-                    <Icons.Play color="white" />
-                  )
-                }
-                hoverIndicator="background"
-                onClick={playing ? this.pause : this.play}
-              />
-              <Box pad={{ horizontal: 'small' }}>
-                <Text textAlign="center" margin="none">{duration ? formattedTime : ''}</Text>
-              </Box>
+    return (
+      <StyledAudioControls active={interacting}>
+        <Box
+          direction="row"
+          align="center"
+          justify="between"
+          background={background}
+        >
+          <Box align="center" direction="row">
+            <Button
+              icon={
+                playing ? (
+                  <Icons.Pause color="white" /> // TODO refactor color to theme?
+                ) : (
+                  <Icons.Play color="white" />
+                )
+              }
+              hoverIndicator="background"
+              onClick={playing ? this.pause : this.play}
+            />
+            <Box pad={{ horizontal: 'small' }}>
+              <Text textAlign="center" margin="none">
+                {duration ? formattedTime : ''}
+              </Text>
             </Box>
-            <Box pad={{ horizontal: 'small' }} direction="row" align="center">
-              <Button
-                icon={<Icons.Volume color="white" />}
-                hoverIndicator="background"
-                onClick={() => {}}
-              />
-              {/* need to debug background */}
-              <Meter 
-                round 
-                background={theme.audio.volume.color || 'brand'}
-                size="xsmall" 
-                thickness="small"
-                values={[
-                  { value: 1 },
-                  { value: 0.2 },
-                ]} 
-              />
-            </Box>
-            </Box>
-          </StyledAudioControls>
-        );
+          </Box>
+          <Box pad={{ horizontal: 'small' }} direction="row" align="center">
+            {/* make hover to show hide on responsive  */}
+            <Button
+              icon={<Icons.Volume color="white" />}
+              hoverIndicator="background"
+            />
+            <RangeInput
+              min={0}
+              max={1}
+              step={0.1}
+              size="full"
+              round="large"
+              values={rangeInputValue}
+              onChange={event => this.setVolume(event.target.value)}
+            />
+          </Box>
+        </Box>
+      </StyledAudioControls>
+    );
+  }
+
+  render() {
+    const {
+      alignSelf,
+      autoPlay,
+      children,
+      controls,
+      gridArea,
+      loop,
+      margin,
+      muted,
+      // theme,
+      ...rest
+    } = this.props;
+
+    const { audioRef, height, width } = this.state;
+
+    const controlsElement = controls ? this.renderControls() : undefined;
+
+    const mouseEventListeners = {
+      onMouseEnter: this.interactionStart,
+      onMouseMove: this.interactionStart,
+      onTouchStart: this.interactionStart,
+    };
+
+    let style;
+    if (width) {
+      style = { width };
+    } else if (height) {
+      style = { height };
     }
 
-    render() {
-        const {
-            alignSelf,
-            autoPlay,
-            children,
-            controls,
-            gridArea,
-            loop,
-            margin,
-            muted,
-            // theme,
-            ...rest
-        } = this.props;
-
-        const { audioRef, height, width} = this.state;
-
-        const controlsElement = controls ? this.renderControls() : undefined;
-
-        const mouseEventListeners = {
-            onMouseEnter: this.interactionStart,
-            onMouseMove: this.interactionStart,
-            onTouchStart: this.interactionStart,
-        };
-
-        let style;
-        if (width) {
-            style = { width };
-        } else if (height) {
-            style = { height };
-        }
-
-        return (
-          <StyledAudioContainer
-            {...mouseEventListeners}
-            alignSelf={alignSelf}
-            gridArea={gridArea}
-            margin={margin}
-            style={style}
-          >
-              <StyledAudio 
-                {...rest}
-                {...this.mediaEventProps}
-                autoPlay={autoPlay || false} 
-                loop={loop || false}
-                muted={muted || false}
-                ref={audioRef} 
-
-              >
-              {children}
-              </StyledAudio>
-            {controlsElement}
-          
-          </StyledAudioContainer>
-        );
-    }
+    return (
+      <StyledAudioContainer
+        {...mouseEventListeners}
+        alignSelf={alignSelf}
+        gridArea={gridArea}
+        margin={margin}
+        style={style}
+      >
+        <StyledAudio
+          {...rest}
+          {...this.mediaEventProps}
+          autoPlay={autoPlay || false}
+          loop={loop || false}
+          muted={muted || false}
+          ref={audioRef}
+        >
+          {children}
+        </StyledAudio>
+        {controlsElement}
+      </StyledAudioContainer>
+    );
+  }
 }
 
 let AudioDoc;
 if (process.env.NODE_ENV !== 'production') {
-    AudioDoc = require('./doc').doc(Audio); // eslint-disable-line global-require
-  }
+  AudioDoc = require('./doc').doc(Audio); // eslint-disable-line global-require
+}
 const AudioWrapper = compose(
-    withTheme,
-    withForwardRef,
+  withTheme,
+  withForwardRef,
 )(AudioDoc || Audio);
 
 export { AudioWrapper as Audio };

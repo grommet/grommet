@@ -291,7 +291,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         color: 'light-4',
       },
       volume: {
+        background: 'light-4',
         color: 'brand',
+        opacity: 'strong',
       },
     },
     box: {
