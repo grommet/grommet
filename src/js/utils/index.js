@@ -1,4 +1,3 @@
-
 export * from './background';
 export * from './colors';
 export * from './debounce';
@@ -10,5 +9,5 @@ export * from './prop-types';
 export * from './responsive';
 export * from './router';
 export * from './styles';
-export * from './time';
+export * from './media';
 export * from './throttle';

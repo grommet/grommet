@@ -1,4 +1,4 @@
-import styled  from 'styled-components';
+import styled from 'styled-components';
 import { defaultProps } from '../../default-props';
 
 // TODO get height from jens
@@ -13,6 +13,7 @@ Object.setPrototypeOf(StyledAudio.defaultProps, defaultProps);
 
 const StyledAudioContainer = styled.div`
   position: relative;
+  
   width: ${props => props.theme.global.size.medium};
 `;
 
@@ -21,6 +22,7 @@ Object.setPrototypeOf(StyledAudioContainer.defaultProps, defaultProps);
 
 const StyledAudioControls = styled.div`
   transition: opacity 0.3s;
+  
   ${props => (props.active ? 'opacity: 1;' : 'pointer-events: none')};
 `;
 

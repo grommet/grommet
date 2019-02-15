@@ -12,7 +12,7 @@ import { Meter } from '../Meter';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 import { withForwardRef } from '../hocs';
-import { throttle, formatTime } from '../../utils';
+import { throttle, formatTime, mediaEvents } from '../../utils';
 
 import {
   StyledVideo,
@@ -23,32 +23,6 @@ import {
 
 // Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
-
-const videoEvents = [
-  'onAbort',
-  'onCanPlay',
-  'onCanPlayThrough',
-  'onDurationChange',
-  'onEmptied',
-  'onEncrypted',
-  'onEnded',
-  'onError',
-  'onLoadedData',
-  'onLoadedMetadata',
-  'onLoadStart',
-  'onPause',
-  'onPlay',
-  'onPlaying',
-  'onProgress',
-  'onRateChange',
-  'onSeeked',
-  'onSeeking',
-  'onStalled',
-  'onSuspend',
-  'onTimeUpdate',
-  'onVolumeChange',
-  'onWaiting',
-];
 
 class Video extends Component {
   static defaultProps = {
@@ -113,7 +87,7 @@ class Video extends Component {
   }
 
   injectUpdateVideoEvents = () =>
-    videoEvents.reduce((previousValue, currentValue) => {
+    mediaEvents.reduce((previousValue, currentValue) => {
       const nextValue = { ...previousValue };
       nextValue[currentValue] = e => {
         if (

@@ -11,40 +11,14 @@ import { withForwardRef } from '../hocs';
 
 // import { defaultProps } from '../../default-props';
 
-import { throttle, formatTime } from '../../utils';
+import { throttle, formatTime, mediaEvents } from '../../utils';
 
 import {
   StyledAudio,
-  StyledAudioControls,
   StyledAudioContainer,
+  StyledAudioControls,
 } from './StyledAudio';
 
-// TODO cleanups!! compare with html audio
-const audioEvents = [
-  'onAbort',
-  'onCanPlay',
-  'onCanPlayThrough',
-  'onDurationChange',
-  'onEmptied',
-  'onEncrypted',
-  'onEnded',
-  'onError',
-  'onLoadedData',
-  'onLoadedMetadata',
-  'onLoadStart',
-  'onPause',
-  'onPlay',
-  'onPlaying',
-  'onProgress',
-  'onRateChange',
-  'onSeeked',
-  'onSeeking',
-  'onStalled',
-  'onSuspend',
-  'onTimeUpdate',
-  'onVolumeChange',
-  'onWaiting',
-];
 class Audio extends Component {
   static defaultProps = {
     controls: true,
@@ -58,25 +32,11 @@ class Audio extends Component {
   constructor(props) {
     super(props);
     this.update = throttle(this.update, 100, this);
-    this.mediaEventProps = this.injectUpdateVideoEvents();
+    this.mediaEventProps = this.injectUpdateAudioEvents();
   }
 
-  componentDidMount() {
-    // const { audioRef } = this.state;
-    // const audio = audioRef.current;
-  }
-
-  // componentDidUpdate(prevProps) {
-  //     const { autoPlay } = this.props;
-  //     if (autoPlay && !prevProps.autoPlay) {
-  //         // Caller wants the audio to play right after it loads.
-  //         console.log("Plzzzzzzzzzzzzzzzzzzz");
-  //         this.play();
-  //     }
-  // }
-
-  injectUpdateVideoEvents = () =>
-    audioEvents.reduce((previousValue, currentValue) => {
+  injectUpdateAudioEvents = () =>
+    mediaEvents.reduce((previousValue, currentValue) => {
       const nextValue = { ...previousValue };
       nextValue[currentValue] = e => {
         if (
@@ -107,7 +67,6 @@ class Audio extends Component {
       duration: audio.duration,
       playing: !audio.paused,
       interacting,
-      // volume: audio.volume,
     });
   };
 
@@ -119,20 +78,6 @@ class Audio extends Component {
   pause = () => {
     const { audioRef } = this.state;
     audioRef.current.pause();
-  };
-
-  unmute = () => {
-    const { audioRef } = this.state;
-    if (audioRef.current) {
-      audioRef.current.muted = false;
-    }
-  };
-
-  mute = () => {
-    const { audioRef } = this.state;
-    if (audioRef.current) {
-      audioRef.current.muted = true;
-    }
   };
 
   interactionStart = () => {
@@ -149,10 +94,8 @@ class Audio extends Component {
   };
 
   setVolume = value => {
-    console.log(value);
     const { audioRef } = this.state;
     audioRef.current.volume = value;
-    console.log('audio.volume', audioRef.current.volume);
     this.setState({ rangeInputValue: value });
   };
 
@@ -239,7 +182,7 @@ class Audio extends Component {
       ...rest
     } = this.props;
 
-    const { audioRef, height, width } = this.state;
+    const { audioRef} = this.state;
 
     const controlsElement = controls ? this.renderControls() : undefined;
 
@@ -249,20 +192,12 @@ class Audio extends Component {
       onTouchStart: this.interactionStart,
     };
 
-    let style;
-    if (width) {
-      style = { width };
-    } else if (height) {
-      style = { height };
-    }
-
     return (
       <StyledAudioContainer
         {...mouseEventListeners}
         alignSelf={alignSelf}
         gridArea={gridArea}
         margin={margin}
-        style={style}
       >
         <StyledAudio
           {...rest}
