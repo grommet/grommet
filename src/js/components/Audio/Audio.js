@@ -9,8 +9,6 @@ import { RangeInput } from '../RangeInput';
 import { Text } from '../Text';
 import { withForwardRef } from '../hocs';
 
-// import { defaultProps } from '../../default-props';
-
 import { throttle, formatTime, mediaEvents } from '../../utils';
 
 import {
@@ -58,7 +56,6 @@ class Audio extends Component {
   update = () => {
     const { audioRef } = this.state;
     const audio = audioRef.current;
-    console.log('updating..');
 
     let { interacting } = this.state;
     if (audio && audio.ended) {
@@ -103,12 +100,7 @@ class Audio extends Component {
 
   renderControls() {
     const { theme } = this.props;
-    const {
-      duration,
-      interacting,
-      playing,
-      rangeInputValue,
-    } = this.state;
+    const { duration, interacting, playing, rangeInputValue } = this.state;
 
     const background = (theme.audio.controls &&
       theme.audio.controls.background) || {
@@ -135,9 +127,9 @@ class Audio extends Component {
             <Button
               icon={
                 playing ? (
-                  <Icons.Pause color="white" /> // TODO refactor color to theme?
+                  <Icons.Pause color={theme.audio.icons.color} />
                 ) : (
-                  <Icons.Play color="white" />
+                  <Icons.Play color={theme.audio.icons.color} />
                 )
               }
               hoverIndicator="background"
@@ -149,12 +141,14 @@ class Audio extends Component {
               </Text>
             </Box>
           </Box>
-          <Box pad={{ horizontal: 'small' }} direction="row" align="center">
+          <Box
+            pad={{ horizontal: 'small' }}
+            direction="row"
+            align="center"
+            gap="xsmall"
+          >
             {/* make hover to show hide on responsive  */}
-            <Button
-              icon={<Icons.Volume color="white" />}
-              hoverIndicator="background"
-            />
+            <Icons.Volume color="white" />
             <RangeInput
               min={0}
               max={1}
@@ -180,7 +174,6 @@ class Audio extends Component {
       loop,
       margin,
       muted,
-      // theme,
       ...rest
     } = this.props;
 

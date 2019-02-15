@@ -123,6 +123,13 @@ exports[`Audio autoplay renders 1`] = `
   padding-right: 12px;
 }
 
+.c11 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 6px;
+}
+
 .c6 {
   display: inline-block;
   box-sizing: border-box;
@@ -148,7 +155,7 @@ exports[`Audio autoplay renders 1`] = `
   color: #FFFFFF;
 }
 
-.c11 {
+.c12 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -160,26 +167,26 @@ exports[`Audio autoplay renders 1`] = `
   background: transparent;
 }
 
-.c11:focus {
+.c12:focus {
   outline: none;
 }
 
-.c11::-moz-focus-inner {
+.c12::-moz-focus-inner {
   border: none;
 }
 
-.c11::-moz-focus-outer {
+.c12::-moz-focus-outer {
   border: none;
 }
 
-.c11::-webkit-slider-runnable-track {
+.c12::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c11::-webkit-slider-thumb {
+.c12::-webkit-slider-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -192,18 +199,18 @@ exports[`Audio autoplay renders 1`] = `
   margin-top: -10.2px;
 }
 
-.c11::-webkit-slider-thumb:hover {
+.c12::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11::-moz-range-track {
+.c12::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c11::-moz-range-thumb {
+.c12::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -218,7 +225,7 @@ exports[`Audio autoplay renders 1`] = `
   width: 24px;
 }
 
-.c11::-ms-thumb {
+.c12::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -233,15 +240,15 @@ exports[`Audio autoplay renders 1`] = `
   width: 24px;
 }
 
-.c11:hover::-moz-range-thumb {
+.c12:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11:hover::-ms-thumb {
+.c12:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11::-ms-track {
+.c12::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -250,12 +257,12 @@ exports[`Audio autoplay renders 1`] = `
   color: transparent;
 }
 
-.c11::-ms-fill-lower {
+.c12::-ms-fill-lower {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c11::-ms-fill-upper {
+.c12::-ms-fill-upper {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
@@ -428,27 +435,23 @@ exports[`Audio autoplay renders 1`] = `
         <div
           className="c10"
         >
-          <button
-            className="c6"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <svg
+            aria-label="Volume"
+            className="c7"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Volume"
-              className="c7"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
-                fill="none"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
-          </button>
-          <input
+            <path
+              d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+          <div
             className="c11"
+          />
+          <input
+            className="c12"
             max={1}
             min={0}
             onBlur={[Function]}
@@ -589,6 +592,13 @@ exports[`Audio controls renders 1`] = `
   padding-right: 12px;
 }
 
+.c11 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 6px;
+}
+
 .c6 {
   display: inline-block;
   box-sizing: border-box;
@@ -614,7 +624,7 @@ exports[`Audio controls renders 1`] = `
   color: #FFFFFF;
 }
 
-.c11 {
+.c12 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -626,26 +636,26 @@ exports[`Audio controls renders 1`] = `
   background: transparent;
 }
 
-.c11:focus {
+.c12:focus {
   outline: none;
 }
 
-.c11::-moz-focus-inner {
+.c12::-moz-focus-inner {
   border: none;
 }
 
-.c11::-moz-focus-outer {
+.c12::-moz-focus-outer {
   border: none;
 }
 
-.c11::-webkit-slider-runnable-track {
+.c12::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c11::-webkit-slider-thumb {
+.c12::-webkit-slider-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -658,18 +668,18 @@ exports[`Audio controls renders 1`] = `
   margin-top: -10.2px;
 }
 
-.c11::-webkit-slider-thumb:hover {
+.c12::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11::-moz-range-track {
+.c12::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c11::-moz-range-thumb {
+.c12::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -684,7 +694,7 @@ exports[`Audio controls renders 1`] = `
   width: 24px;
 }
 
-.c11::-ms-thumb {
+.c12::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -699,15 +709,15 @@ exports[`Audio controls renders 1`] = `
   width: 24px;
 }
 
-.c11:hover::-moz-range-thumb {
+.c12:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11:hover::-ms-thumb {
+.c12:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11::-ms-track {
+.c12::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -716,12 +726,12 @@ exports[`Audio controls renders 1`] = `
   color: transparent;
 }
 
-.c11::-ms-fill-lower {
+.c12::-ms-fill-lower {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c11::-ms-fill-upper {
+.c12::-ms-fill-upper {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
@@ -894,27 +904,23 @@ exports[`Audio controls renders 1`] = `
         <div
           className="c10"
         >
-          <button
-            className="c6"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <svg
+            aria-label="Volume"
+            className="c7"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Volume"
-              className="c7"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
-                fill="none"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
-          </button>
-          <input
+            <path
+              d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+          <div
             className="c11"
+          />
+          <input
+            className="c12"
             max={1}
             min={0}
             onBlur={[Function]}
@@ -1093,6 +1099,13 @@ exports[`Audio loop renders 1`] = `
   padding-right: 12px;
 }
 
+.c11 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 6px;
+}
+
 .c6 {
   display: inline-block;
   box-sizing: border-box;
@@ -1118,7 +1131,7 @@ exports[`Audio loop renders 1`] = `
   color: #FFFFFF;
 }
 
-.c11 {
+.c12 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -1130,26 +1143,26 @@ exports[`Audio loop renders 1`] = `
   background: transparent;
 }
 
-.c11:focus {
+.c12:focus {
   outline: none;
 }
 
-.c11::-moz-focus-inner {
+.c12::-moz-focus-inner {
   border: none;
 }
 
-.c11::-moz-focus-outer {
+.c12::-moz-focus-outer {
   border: none;
 }
 
-.c11::-webkit-slider-runnable-track {
+.c12::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c11::-webkit-slider-thumb {
+.c12::-webkit-slider-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1162,18 +1175,18 @@ exports[`Audio loop renders 1`] = `
   margin-top: -10.2px;
 }
 
-.c11::-webkit-slider-thumb:hover {
+.c12::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11::-moz-range-track {
+.c12::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c11::-moz-range-thumb {
+.c12::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1188,7 +1201,7 @@ exports[`Audio loop renders 1`] = `
   width: 24px;
 }
 
-.c11::-ms-thumb {
+.c12::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1203,15 +1216,15 @@ exports[`Audio loop renders 1`] = `
   width: 24px;
 }
 
-.c11:hover::-moz-range-thumb {
+.c12:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11:hover::-ms-thumb {
+.c12:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11::-ms-track {
+.c12::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -1220,12 +1233,12 @@ exports[`Audio loop renders 1`] = `
   color: transparent;
 }
 
-.c11::-ms-fill-lower {
+.c12::-ms-fill-lower {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c11::-ms-fill-upper {
+.c12::-ms-fill-upper {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
@@ -1398,27 +1411,23 @@ exports[`Audio loop renders 1`] = `
         <div
           className="c10"
         >
-          <button
-            className="c6"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <svg
+            aria-label="Volume"
+            className="c7"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Volume"
-              className="c7"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
-                fill="none"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
-          </button>
-          <input
+            <path
+              d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+          <div
             className="c11"
+          />
+          <input
+            className="c12"
             max={1}
             min={0}
             onBlur={[Function]}
@@ -1559,6 +1568,13 @@ exports[`Audio mute renders 1`] = `
   padding-right: 12px;
 }
 
+.c11 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 6px;
+}
+
 .c6 {
   display: inline-block;
   box-sizing: border-box;
@@ -1584,7 +1600,7 @@ exports[`Audio mute renders 1`] = `
   color: #FFFFFF;
 }
 
-.c11 {
+.c12 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -1596,26 +1612,26 @@ exports[`Audio mute renders 1`] = `
   background: transparent;
 }
 
-.c11:focus {
+.c12:focus {
   outline: none;
 }
 
-.c11::-moz-focus-inner {
+.c12::-moz-focus-inner {
   border: none;
 }
 
-.c11::-moz-focus-outer {
+.c12::-moz-focus-outer {
   border: none;
 }
 
-.c11::-webkit-slider-runnable-track {
+.c12::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c11::-webkit-slider-thumb {
+.c12::-webkit-slider-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1628,18 +1644,18 @@ exports[`Audio mute renders 1`] = `
   margin-top: -10.2px;
 }
 
-.c11::-webkit-slider-thumb:hover {
+.c12::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11::-moz-range-track {
+.c12::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c11::-moz-range-thumb {
+.c12::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1654,7 +1670,7 @@ exports[`Audio mute renders 1`] = `
   width: 24px;
 }
 
-.c11::-ms-thumb {
+.c12::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1669,15 +1685,15 @@ exports[`Audio mute renders 1`] = `
   width: 24px;
 }
 
-.c11:hover::-moz-range-thumb {
+.c12:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11:hover::-ms-thumb {
+.c12:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11::-ms-track {
+.c12::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -1686,12 +1702,12 @@ exports[`Audio mute renders 1`] = `
   color: transparent;
 }
 
-.c11::-ms-fill-lower {
+.c12::-ms-fill-lower {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c11::-ms-fill-upper {
+.c12::-ms-fill-upper {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
@@ -1864,27 +1880,23 @@ exports[`Audio mute renders 1`] = `
         <div
           className="c10"
         >
-          <button
-            className="c6"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <svg
+            aria-label="Volume"
+            className="c7"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Volume"
-              className="c7"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
-                fill="none"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
-          </button>
-          <input
+            <path
+              d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+          <div
             className="c11"
+          />
+          <input
+            className="c12"
             max={1}
             min={0}
             onBlur={[Function]}
@@ -2025,6 +2037,13 @@ exports[`Audio renders 1`] = `
   padding-right: 12px;
 }
 
+.c11 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 6px;
+}
+
 .c6 {
   display: inline-block;
   box-sizing: border-box;
@@ -2050,7 +2069,7 @@ exports[`Audio renders 1`] = `
   color: #FFFFFF;
 }
 
-.c11 {
+.c12 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -2062,26 +2081,26 @@ exports[`Audio renders 1`] = `
   background: transparent;
 }
 
-.c11:focus {
+.c12:focus {
   outline: none;
 }
 
-.c11::-moz-focus-inner {
+.c12::-moz-focus-inner {
   border: none;
 }
 
-.c11::-moz-focus-outer {
+.c12::-moz-focus-outer {
   border: none;
 }
 
-.c11::-webkit-slider-runnable-track {
+.c12::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c11::-webkit-slider-thumb {
+.c12::-webkit-slider-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -2094,18 +2113,18 @@ exports[`Audio renders 1`] = `
   margin-top: -10.2px;
 }
 
-.c11::-webkit-slider-thumb:hover {
+.c12::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11::-moz-range-track {
+.c12::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c11::-moz-range-thumb {
+.c12::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -2120,7 +2139,7 @@ exports[`Audio renders 1`] = `
   width: 24px;
 }
 
-.c11::-ms-thumb {
+.c12::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -2135,15 +2154,15 @@ exports[`Audio renders 1`] = `
   width: 24px;
 }
 
-.c11:hover::-moz-range-thumb {
+.c12:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11:hover::-ms-thumb {
+.c12:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c11::-ms-track {
+.c12::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -2152,12 +2171,12 @@ exports[`Audio renders 1`] = `
   color: transparent;
 }
 
-.c11::-ms-fill-lower {
+.c12::-ms-fill-lower {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c11::-ms-fill-upper {
+.c12::-ms-fill-upper {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
@@ -2330,27 +2349,23 @@ exports[`Audio renders 1`] = `
         <div
           className="c10"
         >
-          <button
-            className="c6"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <svg
+            aria-label="Volume"
+            className="c7"
+            viewBox="0 0 24 24"
           >
-            <svg
-              aria-label="Volume"
-              className="c7"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
-                fill="none"
-                stroke="#000"
-                strokeWidth="2"
-              />
-            </svg>
-          </button>
-          <input
+            <path
+              d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+          <div
             className="c11"
+          />
+          <input
+            className="c12"
             max={1}
             min={0}
             onBlur={[Function]}

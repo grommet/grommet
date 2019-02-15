@@ -144,3 +144,74 @@ boolean
 ```
 audio
 ```
+## Theme
+  
+**audio.controls.background**
+
+The background color of the Audio controls Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**audio.extend**
+
+Any additional style for Audio. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**audio.icons.color**
+
+The color used for the icons Expects `string`.
+
+Defaults to
+
+```
+white
+```
+
+**audio.icons.pause**
+
+The icon that indicates pause mode Expects `React.element`.
+
+Defaults to
+
+```
+<Pause />
+```
+
+**audio.icons.play**
+
+The icon that indicates play mode Expects `React.element`.
+
+Defaults to
+
+```
+<Play />
+```
+
+**audio.icons.volume**
+
+The volume icon indicator Expects `React.element`.
+
+Defaults to
+
+```
+<Volume />
+```
+
+**global.size.medium**
+
+The width size of the Audio container Expects `string`.
+
+Defaults to
+
+```
+384px
+```

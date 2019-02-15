@@ -285,7 +285,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         pause: Pause,
         play: Play,
         volume: Volume,
-        // color: { dark: undefined, light: undefined },
+        color: 'white',
       },
       scrubber: {
         color: 'light-4',
