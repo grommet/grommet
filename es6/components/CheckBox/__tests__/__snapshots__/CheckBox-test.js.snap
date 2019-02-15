@@ -116,6 +116,9 @@ exports[`CheckBox checked renders 1`] = `
 
 .c2 {
   position: relative;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -333,6 +336,9 @@ exports[`CheckBox disabled renders 1`] = `
 
 .c2 {
   position: relative;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -570,6 +576,9 @@ exports[`CheckBox indeterminate renders 1`] = `
 
 .c2 {
   position: relative;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -776,6 +785,9 @@ exports[`CheckBox label renders 1`] = `
 
 .c2 {
   position: relative;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -963,6 +975,9 @@ exports[`CheckBox renders 1`] = `
 
 .c2 {
   position: relative;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -1147,6 +1162,9 @@ exports[`CheckBox reverse renders 1`] = `
 
 .c2 {
   position: relative;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 @media only screen and (max-width:768px) {
@@ -1310,6 +1328,9 @@ exports[`CheckBox toggle renders 1`] = `
 
 .c2 {
   position: relative;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 @media only screen and (max-width:768px) {

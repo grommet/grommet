@@ -133,7 +133,7 @@ Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, _defaultProps.defaultProp
 var StyledCheckBox = _styledComponents.default.div.withConfig({
   displayName: "StyledCheckBox",
   componentId: "sc-1dbk5ju-6"
-})(["position:relative;"]);
+})(["position:relative;flex-shrink:0;"]);
 
 exports.StyledCheckBox = StyledCheckBox;
 StyledCheckBox.defaultProps = {};
