@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Box, Grommet, RangeInput } from 'grommet';
-import { Volume } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
+
+import { Volume } from 'grommet-icons';
 
 class SimpleRangeInput extends Component {
   state = { value: 5 };
