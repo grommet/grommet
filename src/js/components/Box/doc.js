@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge, genericProps } from '../../utils';
+import { getAvailableAtBadge, genericProps, themeDocUtils } from '../../utils';
 
 const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
@@ -87,6 +87,7 @@ export const doc = Box => {
         'medium',
         'large',
         'xlarge',
+        'xxlarge',
         'full',
         '1/2',
         '1/3',
@@ -172,13 +173,28 @@ export const doc = Box => {
       'Whether the width and/or height should fill the container.',
     ),
     gap: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+      ]),
       PropTypes.string,
     ]).description(`The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully.`),
     height: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'xxlarge',
+      ]),
       PropTypes.string,
     ]).description('A fixed height.'),
     justify: PropTypes.oneOf([
@@ -270,7 +286,15 @@ of indicating the DOM tag via the 'as' property.`,
       .description('The DOM tag to use for the element.')
       .defaultValue('div'),
     width: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'xxlarge',
+      ]),
       PropTypes.string,
     ]).description('A fixed width.'),
     wrap: PropTypes.bool
@@ -303,63 +327,6 @@ export const themeDoc = {
   medium: '4px',
   large: '12px',
   xlarge: '24px,
-}`,
-  },
-  'global.breakpoints': {
-    description:
-      'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
-    type: 'object',
-    defaultValue: `{
-  small: {
-    value: '768px',
-    borderSize: {
-      xsmall: '1px',
-      small: '2px',
-      medium: '4px',
-      large: '6px',
-      xlarge: '12px',
-    },
-    edgeSize: {
-      none: '0px',
-      hair: '1px',
-      xxsmall: '2px',
-      xsmall: '3px',
-      small: '6px',
-      medium: '12px',
-      large: '24px',
-      xlarge: '48px',
-    },
-    size: {
-      xxsmall: '24px',
-      xsmall: '48px',
-      small: '96px',
-      medium: '192px',
-      large: '384px',
-      xlarge: '768px',
-      full: '100%',
-    },
-  },
-  medium: {
-    value: '1536px',
-  },
-  large: {},
-}`,
-  },
-  'global.edgeSize': {
-    description: 'The possible sizes for gap, margin, and pad.',
-    type: 'object',
-    defaultValue: `{
-  edgeSize: {
-    none: '0px',
-    hair: '1px',
-    xxsmall: '3px',
-    xsmall: '6px',
-    small: '12px',
-    medium: '24px',
-    large: '48px',
-    xlarge: '96px',
-    responsiveBreakpoint: 'small',
-  },
 }`,
   },
   'global.elevation': {
@@ -419,4 +386,10 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'small',
   },
+  ...themeDocUtils.edgeStyle(
+    'The possible sizes for any of gap, margin, and pad.',
+  ),
+  ...themeDocUtils.breakpointStyle(
+    'The possible breakpoints that could affect border, direction, gap, margin, pad, and round.',
+  ),
 };

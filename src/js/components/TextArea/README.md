@@ -93,24 +93,34 @@ textarea
 ```
 ## Theme
   
+**textArea.extend**
+
+Any additional style for Text. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+focus
+```
+
 **global.colors.placeholder**
 
-The placeholder color used for TextArea. Expects `string`.
+The placeholder color used for the component. Expects `string`.
 
 Defaults to
 
 ```
 #AAAAAA
-```
-
-**global.control.border.width**
-
-The border width. Expects `string`.
-
-Defaults to
-
-```
-1px
 ```
 
 **global.input.weight**
@@ -123,16 +133,6 @@ Defaults to
 600
 ```
 
-**global.focus.border.color**
-
-The color of the border when component is focused. Expects `string | { dark: string, light: string }`.
-
-Defaults to
-
-```
-focus
-```
-
 **global.input.padding**
 
 The padding of the text. Expects `string`.
@@ -141,14 +141,4 @@ Defaults to
 
 ```
 12px
-```
-
-**textArea.extend**
-
-Any additional style for Text. Expects `string | (props) => {}`.
-
-Defaults to
-
-```
-undefined
 ```

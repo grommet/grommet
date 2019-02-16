@@ -536,6 +536,7 @@ small
 medium
 large
 xlarge
+xxlarge
 full
 1/2
 1/3
@@ -635,7 +636,8 @@ boolean",
         "description": "The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully.",
-        "format": "xsmall
+        "format": "xxsmall
+xsmall
 small
 medium
 large
@@ -645,11 +647,13 @@ string",
       },
       Object {
         "description": "A fixed height.",
-        "format": "xsmall
+        "format": "xxsmall
+xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string",
         "name": "height",
       },
@@ -801,11 +805,13 @@ of indicating the DOM tag via the 'as' property.",
       },
       Object {
         "description": "A fixed width.",
-        "format": "xsmall
+        "format": "xxsmall
+xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string",
         "name": "width",
       },

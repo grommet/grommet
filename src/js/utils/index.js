@@ -11,3 +11,4 @@ export * from './router';
 export * from './styles';
 export * from './media';
 export * from './throttle';
+export * from './themeDocUtils';

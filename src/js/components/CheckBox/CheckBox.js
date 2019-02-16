@@ -146,8 +146,6 @@ class CheckBox extends Component {
         margin={{ [side]: theme.checkBox.gap || 'small' }}
         {...themeableProps}
       >
-        {visual}
-        {hidden}
         <StyledCheckBoxInput
           {...rest}
           ref={forwardRef}
@@ -161,6 +159,8 @@ class CheckBox extends Component {
           })}
           {...themeableProps}
         />
+        {visual}
+        {hidden}
       </StyledCheckBox>
     );
 

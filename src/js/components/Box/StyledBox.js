@@ -87,9 +87,12 @@ const directionStyle = (direction, theme) => {
 
 const elevationStyle = css`
   box-shadow: ${props =>
-    props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
-      props.elevationProp
-    ]};
+    props.theme.global.elevation[
+      (props.theme.dark && !props.theme.darkChanged) ||
+      (!props.theme.dark && props.theme.darkChanged)
+        ? 'dark'
+        : 'light'
+    ][props.elevationProp]};
 `;
 
 const FLEX_MAP = {
@@ -586,14 +589,14 @@ const gapStyle = (directionProp, gap, responsive, theme) => {
   if (directionProp === 'column') {
     styles.push(
       css`
-        height: ${theme.global.edgeSize[gap]};
+        height: ${theme.global.edgeSize[gap] || gap};
       `,
     );
     if (responsiveSize) {
       styles.push(breakpointStyle(breakpoint, `height: ${responsiveSize};`));
     }
   } else {
-    styles.push(`width: ${theme.global.edgeSize[gap]};`);
+    styles.push(`width: ${theme.global.edgeSize[gap] || gap};`);
     if (responsive && directionProp === 'row-responsive') {
       styles.push(
         breakpointStyle(

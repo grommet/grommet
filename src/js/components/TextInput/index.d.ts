@@ -20,6 +20,6 @@ export interface TextInputProps {
 
 type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
 
-declare const TextInput: React.ComponentType<TextInputProps & Omit<JSX.IntrinsicElements['input'], 'onSelect'>>;
+declare const TextInput: React.ComponentType<TextInputProps & Omit<JSX.IntrinsicElements['input'], 'onSelect' | 'size'>>;
 
 export { TextInput };

@@ -144,3 +144,73 @@ const data = calcs(<values>, { coarseness: 5, steps: [1, 1] });`,
 
   return DocumentedCalcs;
 };
+
+export const themeDoc = {
+  'chart.extend': {
+    description: 'Any additional style for the Chart.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'global.colors': {
+    description: 'color options used for Chart fill area.',
+    type: 'object',
+    defaultValue: `  
+      active: rgba(221, 221, 221, 0.5),
+      black: '#000000',
+      border: {
+        dark: rgba(255, 255, 255, 0.33),
+        light: rgba(0, 0, 0, 0.33),
+      },
+      brand: brandColor,
+      control: {
+        dark: 'accent-1',
+        light: 'brand',
+      },
+      focus: focusColor,
+      placeholder: '#AAAAAA',
+      selected: 'brand',
+      text: {
+        dark: '#f8f8f8',
+        light: '#444444',
+      },
+      icon: {
+        dark: '#f8f8f8',
+        light: '#666666',
+      },
+      white: '#FFFFFF',`,
+  },
+  'global.edgeSize': {
+    description: 'The possible sizes for the thickness in the Chart.',
+    type: 'object',
+    defaultValue: `{
+        none: '0px',
+        hair: '1px',
+        xxsmall: '3px',
+        xsmall: '6px',
+        small: '12px',
+        medium: '24px',
+        large: '48px',
+        xlarge: '96px',
+        responsiveBreakpoint: 'small',
+    }`,
+  },
+  'global.opacity': {
+    description: 'The opacity of the Chart stroke.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'global.size': {
+    description: 'The possible sizes for Chart width and height.',
+    type: 'object',
+    defaultValue: `{
+      xxsmall: '48px',
+      xsmall: '96px',
+      small: '192px',
+      medium: '384px',
+      large: '768px',
+      xlarge: '1152px',
+      xxlarge: '1536px',
+      full: '100%',
+      }`,
+  },
+};

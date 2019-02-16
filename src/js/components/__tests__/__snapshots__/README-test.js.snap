@@ -423,16 +423,6 @@ a
 \`\`\`
 ## Theme
   
-**global.focus.border.color**
-
-The color around the Anchor when in focus. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-focus
-\`\`\`
-
 **anchor.color**
 
 The color of the label text and icon strokes. Expects \`string | { dark: string, light: string }\`.
@@ -501,6 +491,16 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
 \`\`\`
 ",
   "Audio": "## Audio
@@ -966,6 +966,7 @@ small
 medium
 large
 xlarge
+xxlarge
 full
 1/2
 1/3
@@ -1081,6 +1082,7 @@ The amount of spacing between child elements. This
         will not wrap gracefully.
 
 \`\`\`
+xxsmall
 xsmall
 small
 medium
@@ -1094,11 +1096,13 @@ string
 A fixed height.
 
 \`\`\`
+xxsmall
 xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string
 \`\`\`
 
@@ -1270,11 +1274,13 @@ string
 A fixed width.
 
 \`\`\`
+xxsmall
 xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string
 \`\`\`
 
@@ -1322,72 +1328,6 @@ Defaults to
   medium: '4px',
   large: '12px',
   xlarge: '24px,
-}
-\`\`\`
-
-**global.breakpoints**
-
-The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-  small: {
-    value: '768px',
-    borderSize: {
-      xsmall: '1px',
-      small: '2px',
-      medium: '4px',
-      large: '6px',
-      xlarge: '12px',
-    },
-    edgeSize: {
-      none: '0px',
-      hair: '1px',
-      xxsmall: '2px',
-      xsmall: '3px',
-      small: '6px',
-      medium: '12px',
-      large: '24px',
-      xlarge: '48px',
-    },
-    size: {
-      xxsmall: '24px',
-      xsmall: '48px',
-      small: '96px',
-      medium: '192px',
-      large: '384px',
-      xlarge: '768px',
-      full: '100%',
-    },
-  },
-  medium: {
-    value: '1536px',
-  },
-  large: {},
-}
-\`\`\`
-
-**global.edgeSize**
-
-The possible sizes for gap, margin, and pad. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-  edgeSize: {
-    none: '0px',
-    hair: '1px',
-    xxsmall: '3px',
-    xsmall: '6px',
-    small: '12px',
-    medium: '24px',
-    large: '48px',
-    xlarge: '96px',
-    responsiveBreakpoint: 'small',
-  },
 }
 \`\`\`
 
@@ -1475,6 +1415,72 @@ Defaults to
 
 \`\`\`
 small
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for any of gap, margin, and pad. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+\`\`\`
+
+**global.breakpoints**
+
+The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    small: {
+      value: '768px',
+      borderSize: {
+        xsmall: '1px',
+        small: '2px',
+        medium: '4px',
+        large: '6px',
+        xlarge: '12px',
+      },
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '2px',
+        xsmall: '3px',
+        small: '6px',
+        medium: '12px',
+        large: '24px',
+        xlarge: '48px',
+      },
+      size: {
+        xxsmall: '24px',
+        xsmall: '48px',
+        small: '96px',
+        medium: '192px',
+        large: '384px',
+        xlarge: '768px',
+        full: '100%',
+      },
+    },
+    medium: {
+      value: '1536px',
+    },
+    large: {},
+  }
 \`\`\`
 ",
   "Button": "## Button
@@ -1879,6 +1885,16 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
 \`\`\`
 ",
   "Calendar": "## Calendar
@@ -2793,7 +2809,101 @@ Required. Array of value objects describing the data.
   }
 ]
 \`\`\`
-  ",
+  
+## Theme
+  
+**chart.extend**
+
+Any additional style for the Chart. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.colors**
+
+color options used for Chart fill area. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+  
+      active: rgba(221, 221, 221, 0.5),
+      black: '#000000',
+      border: {
+        dark: rgba(255, 255, 255, 0.33),
+        light: rgba(0, 0, 0, 0.33),
+      },
+      brand: brandColor,
+      control: {
+        dark: 'accent-1',
+        light: 'brand',
+      },
+      focus: focusColor,
+      placeholder: '#AAAAAA',
+      selected: 'brand',
+      text: {
+        dark: '#f8f8f8',
+        light: '#444444',
+      },
+      icon: {
+        dark: '#f8f8f8',
+        light: '#666666',
+      },
+      white: '#FFFFFF',
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for the thickness in the Chart. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+        none: '0px',
+        hair: '1px',
+        xxsmall: '3px',
+        xsmall: '6px',
+        small: '12px',
+        medium: '24px',
+        large: '48px',
+        xlarge: '96px',
+        responsiveBreakpoint: 'small',
+    }
+\`\`\`
+
+**global.opacity**
+
+The opacity of the Chart stroke. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.size**
+
+The possible sizes for Chart width and height. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      xxsmall: '48px',
+      xsmall: '96px',
+      small: '192px',
+      medium: '384px',
+      large: '768px',
+      xlarge: '1152px',
+      xxlarge: '1536px',
+      full: '100%',
+      }
+\`\`\`
+",
   "CheckBox": "## CheckBox
 A checkbox toggle control.
 
@@ -4499,28 +4609,6 @@ div
 \`\`\`
 ## Theme
   
-**global.edgeSize**
-
-The possible sizes for the grid gap. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-      edgeSize: {
-        none: '0px',
-        hair: '1px',
-        xxsmall: '3px',
-        xsmall: '6px',
-        small: '12px',
-        medium: '24px',
-        large: '48px',
-        xlarge: '96px',
-        responsiveBreakpoint: 'small',
-      },
-    }
-\`\`\`
-
 **global.size**
 
 The possible sizes for row and column. Expects \`object\`.
@@ -4548,6 +4636,28 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for the grid gap. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
 \`\`\`
 ",
   "Grommet": "## Grommet
@@ -4811,7 +4921,95 @@ boolean
 
 \`\`\`
 h1,h2,h3,h4
-\`\`\`",
+\`\`\`
+## Theme
+  
+**global.breakpoints**
+
+The possible breakpoints that could affect font-size and max-width Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    small: {
+      value: '768px',
+      borderSize: {
+        xsmall: '1px',
+        small: '2px',
+        medium: '4px',
+        large: '6px',
+        xlarge: '12px',
+      },
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '2px',
+        xsmall: '3px',
+        small: '6px',
+        medium: '12px',
+        large: '24px',
+        xlarge: '48px',
+      },
+      size: {
+        xxsmall: '24px',
+        xsmall: '48px',
+        small: '96px',
+        medium: '192px',
+        large: '384px',
+        xlarge: '768px',
+        full: '100%',
+      },
+    },
+    medium: {
+      value: '1536px',
+    },
+    large: {},
+  }
+\`\`\`
+
+**heading.extend**
+
+Any additional style for Heading. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**heading.level**
+
+The level that impacts line height, max width, font size, weight and family of the Heading. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+
+      1: {
+        medium: { 
+          font-size: 34px,
+          line-hieght: 40px,
+          max-width: 826px,
+        },
+      },
+      weight: 600,
+      font:
+        {
+          family: undefined,
+        }
+\`\`\`
+
+**heading.responsiveBreakpoint**
+
+The breakpoint to trigger changes in the Heading layout. The actual values will be derived from global.breakpoints. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+",
   "Image": "## Image
 An image.
 
@@ -5318,50 +5516,6 @@ div
 \`\`\`
 ## Theme
   
-**global.breakpoints**
-
-The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-      small: {
-        value: '768px',
-        borderSize: {
-          xsmall: '1px',
-          small: '2px',
-          medium: '4px',
-          large: '6px',
-          xlarge: '12px',
-        },
-        edgeSize: {
-          none: '0px',
-          hair: '1px',
-          xxsmall: '2px',
-          xsmall: '3px',
-          small: '6px',
-          medium: '12px',
-          large: '24px',
-          xlarge: '48px',
-        },
-        size: {
-          xxsmall: '24px',
-          xsmall: '48px',
-          small: '96px',
-          medium: '192px',
-          large: '384px',
-          xlarge: '768px',
-          full: '100%',
-        },
-      },
-      medium: {
-        value: '1536px',
-      },
-      large: {},
-      }
-\`\`\`
-
 **global.size.xxsmall**
 
 The minimal height of the Layer. Expects \`string\`.
@@ -5430,6 +5584,50 @@ Defaults to
 
 \`\`\`
 10
+\`\`\`
+
+**global.breakpoints**
+
+The possible breakpoints that could affect border, direction, gap, margin, pad, and round. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    small: {
+      value: '768px',
+      borderSize: {
+        xsmall: '1px',
+        small: '2px',
+        medium: '4px',
+        large: '6px',
+        xlarge: '12px',
+      },
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '2px',
+        xsmall: '3px',
+        small: '6px',
+        medium: '12px',
+        large: '24px',
+        xlarge: '48px',
+      },
+      size: {
+        xxsmall: '24px',
+        xsmall: '48px',
+        small: '96px',
+        medium: '192px',
+        large: '384px',
+        xlarge: '768px',
+        full: '100%',
+      },
+    },
+    medium: {
+      value: '1536px',
+    },
+    large: {},
+  }
 \`\`\`
 ",
   "Markdown": "## GrommetMarkdown
@@ -5552,7 +5750,49 @@ string
 
 \`\`\`
 input
-\`\`\`",
+\`\`\`
+## Theme
+  
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.colors.placeholder**
+
+The placeholder color used for the component. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+#AAAAAA
+\`\`\`
+
+**global.input.weight**
+
+The font weight of the text entered. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+600
+\`\`\`
+
+**global.input.padding**
+
+The padding of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+12px
+\`\`\`
+",
   "Menu": "## Menu
 A control that opens a Drop containing plain Buttons. The labels
       and behavior of the contained Buttons are described via the \`items\`
@@ -6264,36 +6504,6 @@ p
 \`\`\`
 ## Theme
   
-**global.colors.text**
-
-The text color used inside the Paragraph. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
-\`\`\`
-
-**global.edgeSize**
-
-The possible sizes for margin. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-        none: '0px',
-        hair: '1px',
-        xxsmall: '3px',
-        xsmall: '6px',
-        small: '12px',
-        medium: '24px',
-        large: '48px',
-        xlarge: '96px',
-        responsiveBreakpoint: 'small',
-    }
-\`\`\`
-
 **paragraph**
 
 The possible sizes of the paragraph in terms of its max-width, font-size and line-height. Expects \`object\`.
@@ -6348,6 +6558,28 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for margin. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
 \`\`\`
 ",
   "RadioButton": "## RadioButton
@@ -6559,7 +6791,19 @@ string
 
 \`\`\`
 input
-\`\`\`",
+\`\`\`
+## Theme
+  
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+",
   "RangeSelector": "## RangeSelector
 A control to input a range of values.
 
@@ -7414,6 +7658,17 @@ number
 first
 last
 \`\`\`
+
+**interactiveChild**
+
+Which child to restrict user interaction to. All other children
+      will have user interaction disabled.
+
+\`\`\`
+number
+first
+last
+\`\`\`
   
 ## Intrinsic element
 
@@ -8104,26 +8359,6 @@ Defaults to
 { dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 
-**global.edgeSize**
-
-The possible sizes for margin. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-        none: '0px',
-        hair: '1px',
-        xxsmall: '3px',
-        xsmall: '6px',
-        small: '12px',
-        medium: '24px',
-        large: '48px',
-        xlarge: '96px',
-        responsiveBreakpoint: 'small',
-    }
-\`\`\`
-
 **text**
 
 The possible sizes of the text in terms of its font-size and line-height. Expects \`object\`.
@@ -8167,6 +8402,28 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for margin. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
 \`\`\`
 ",
   "TextArea": "## TextArea
@@ -8264,24 +8521,34 @@ textarea
 \`\`\`
 ## Theme
   
+**textArea.extend**
+
+Any additional style for Text. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
 **global.colors.placeholder**
 
-The placeholder color used for TextArea. Expects \`string\`.
+The placeholder color used for the component. Expects \`string\`.
 
 Defaults to
 
 \`\`\`
 #AAAAAA
-\`\`\`
-
-**global.control.border.width**
-
-The border width. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-1px
 \`\`\`
 
 **global.input.weight**
@@ -8294,16 +8561,6 @@ Defaults to
 600
 \`\`\`
 
-**global.focus.border.color**
-
-The color of the border when component is focused. Expects \`string | { dark: string, light: string }\`.
-
-Defaults to
-
-\`\`\`
-focus
-\`\`\`
-
 **global.input.padding**
 
 The padding of the text. Expects \`string\`.
@@ -8312,16 +8569,6 @@ Defaults to
 
 \`\`\`
 12px
-\`\`\`
-
-**textArea.extend**
-
-Any additional style for Text. Expects \`string | (props) => {}\`.
-
-Defaults to
-
-\`\`\`
-undefined
 \`\`\`
 ",
   "TextInput": "## TextInput
@@ -8520,46 +8767,6 @@ input
 \`\`\`
 ## Theme
   
-**global.colors.placeholder**
-
-The placeholder color used for TextInput. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-#AAAAAA
-\`\`\`
-
-**global.control.border.width**
-
-The border width. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-1px
-\`\`\`
-
-**global.input.padding**
-
-The padding of the text. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-12px
-\`\`\`
-
-**global.input.weight**
-
-The font weight of the text. Expects \`number\`.
-
-Defaults to
-
-\`\`\`
-600
-\`\`\`
-
 **select.step**
 
 How many suggestions to render at a time. Expects \`number\`.
@@ -8633,6 +8840,46 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.focus.border.color**
+
+The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+focus
+\`\`\`
+
+**global.colors.placeholder**
+
+The placeholder color used for the component. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+#AAAAAA
+\`\`\`
+
+**global.input.weight**
+
+The font weight of the text entered. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+600
+\`\`\`
+
+**global.input.padding**
+
+The padding of the text. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+12px
 \`\`\`
 ",
   "Video": "## Video

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
+import styled from 'styled-components';
 
 import { ThemeContext } from '../../contexts';
 
@@ -7,6 +8,10 @@ import { Box } from '../Box';
 import { withForwardRef } from '../hocs';
 
 import { EdgeControl } from './EdgeControl';
+
+const Container = styled(Box)`
+  user-select: none;
+`;
 
 class RangeSelector extends Component {
   static contextType = ThemeContext;
@@ -151,7 +156,7 @@ class RangeSelector extends Component {
     const fill = direction === 'vertical' ? true : 'vertical';
 
     return (
-      <Box
+      <Container
         ref={this.containerRef}
         direction={direction === 'vertical' ? 'column' : 'row'}
         fill={fill}
@@ -232,7 +237,7 @@ class RangeSelector extends Component {
           fill={fill}
           round={round}
         />
-      </Box>
+      </Container>
     );
   }
 }

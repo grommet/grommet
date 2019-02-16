@@ -48,23 +48,30 @@ describe('Form', () => {
             validate={validate}
             placeholder="test input"
           />
+          <FormField name="test2" placeholder="test-2 input" />
           <Button type="submit" primary label="Submit" />
         </Form>
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByText('Submit'));
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'v' },
     });
-    expect(validate).toBeCalledWith('v');
+    fireEvent.click(getByText('Submit'));
+    expect(validate).toBeCalledWith('v', { test: 'v' });
     fireEvent.change(getByPlaceholderText('test input'), {
       target: { value: 'value' },
     });
-    expect(validate).toBeCalledWith('value');
+    fireEvent.change(getByPlaceholderText('test-2 input'), {
+      target: { value: 'value-2' },
+    });
     fireEvent.click(getByText('Submit'));
+    expect(validate).toBeCalledWith('value', {
+      test: 'value',
+      test2: 'value-2',
+    });
     expect(onSubmit).toBeCalledWith(
-      expect.objectContaining({ value: { test: 'value' } }),
+      expect.objectContaining({ value: { test: 'value', test2: 'value-2' } }),
     );
   });
 });

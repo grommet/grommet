@@ -188,3 +188,90 @@ boolean
 ```
 h1,h2,h3,h4
 ```
+## Theme
+  
+**global.breakpoints**
+
+The possible breakpoints that could affect font-size and max-width Expects `object`.
+
+Defaults to
+
+```
+{
+    small: {
+      value: '768px',
+      borderSize: {
+        xsmall: '1px',
+        small: '2px',
+        medium: '4px',
+        large: '6px',
+        xlarge: '12px',
+      },
+      edgeSize: {
+        none: '0px',
+        hair: '1px',
+        xxsmall: '2px',
+        xsmall: '3px',
+        small: '6px',
+        medium: '12px',
+        large: '24px',
+        xlarge: '48px',
+      },
+      size: {
+        xxsmall: '24px',
+        xsmall: '48px',
+        small: '96px',
+        medium: '192px',
+        large: '384px',
+        xlarge: '768px',
+        full: '100%',
+      },
+    },
+    medium: {
+      value: '1536px',
+    },
+    large: {},
+  }
+```
+
+**heading.extend**
+
+Any additional style for Heading. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**heading.level**
+
+The level that impacts line height, max width, font size, weight and family of the Heading. Expects `object`.
+
+Defaults to
+
+```
+
+      1: {
+        medium: { 
+          font-size: 34px,
+          line-hieght: 40px,
+          max-width: 826px,
+        },
+      },
+      weight: 600,
+      font:
+        {
+          family: undefined,
+        }
+```
+
+**heading.responsiveBreakpoint**
+
+The breakpoint to trigger changes in the Heading layout. The actual values will be derived from global.breakpoints. Expects `string`.
+
+Defaults to
+
+```
+small
+```

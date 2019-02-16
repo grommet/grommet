@@ -2932,7 +2932,7 @@ exports[`Box elevation 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  box-shadow: 0px 4px 4px rgba(255,255,255,0.40);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 .c8 {
@@ -3600,6 +3600,13 @@ exports[`Box gap 1`] = `
 <div
   className="c0"
 >
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    />
+  </div>
   <div
     className="c1"
   >

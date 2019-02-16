@@ -1,6 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { colorPropType, genericProps, getAvailableAtBadge } from '../../utils';
+import {
+  colorPropType,
+  genericProps,
+  getAvailableAtBadge,
+  themeDocUtils,
+} from '../../utils';
 
 export const doc = Heading => {
   const DocumentedHeading = describe(Heading)
@@ -53,4 +58,39 @@ is too long to all fit.`,
   };
 
   return DocumentedHeading;
+};
+
+export const themeDoc = {
+  ...themeDocUtils.breakpointStyle(
+    'The possible breakpoints that could affect font-size and max-width',
+  ),
+  'heading.extend': {
+    description: 'Any additional style for Heading.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'heading.level': {
+    description:
+      'The level that impacts line height, max width, font size, weight and family of the Heading.',
+    type: 'object',
+    defaultValue: `
+      1: {
+        medium: { 
+          font-size: 34px,
+          line-hieght: 40px,
+          max-width: 826px,
+        },
+      },
+      weight: 600,
+      font:
+        {
+          family: undefined,
+        }`,
+  },
+  'heading.responsiveBreakpoint': {
+    description:
+      'The breakpoint to trigger changes in the Heading layout. The actual values will be derived from global.breakpoints.',
+    type: 'string',
+    defaultValue: 'small',
+  },
 };

@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 export const doc = MaskedInput => {
   const DocumentedMaskedInput = describe(MaskedInput)
@@ -47,4 +47,10 @@ export const doc = MaskedInput => {
   };
 
   return DocumentedMaskedInput;
+};
+
+export const themeDoc = {
+  ...themeDocUtils.focusStyle,
+  ...themeDocUtils.placeholderStyle,
+  ...themeDocUtils.inputStyle,
 };

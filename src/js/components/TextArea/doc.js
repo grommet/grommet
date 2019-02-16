@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 export const doc = TextArea => {
   const DocumentedTextArea = describe(TextArea)
@@ -44,34 +44,12 @@ Only use this when the containing context provides sufficient affordance.`,
 };
 
 export const themeDoc = {
-  'global.colors.placeholder': {
-    description: 'The placeholder color used for TextArea.',
-    type: 'string',
-    defaultValue: '#AAAAAA',
-  },
-  'global.control.border.width': {
-    description: 'The border width.',
-    type: 'string',
-    defaultValue: '1px',
-  },
-  'global.input.weight': {
-    description: 'The font weight of the text entered.',
-    type: 'number',
-    defaultValue: 600,
-  },
-  'global.focus.border.color': {
-    description: `The color of the border when component is focused.`,
-    type: 'string | { dark: string, light: string }',
-    defaultValue: 'focus',
-  },
-  'global.input.padding': {
-    description: 'The padding of the text.',
-    type: 'string',
-    defaultValue: '12px',
-  },
   'textArea.extend': {
     description: 'Any additional style for Text.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  ...themeDocUtils.focusStyle,
+  ...themeDocUtils.placeholderStyle,
+  ...themeDocUtils.inputStyle,
 };
