@@ -11,9 +11,10 @@ const StyledAudio = styled.audio`
 StyledAudio.defaultProps = {};
 Object.setPrototypeOf(StyledAudio.defaultProps, defaultProps);
 
+// TODO check if width in necessary
 const StyledAudioContainer = styled.div`
   position: relative;
-  
+
   width: ${props => props.theme.global.size.medium};
 `;
 
@@ -22,7 +23,7 @@ Object.setPrototypeOf(StyledAudioContainer.defaultProps, defaultProps);
 
 const StyledAudioControls = styled.div`
   transition: opacity 0.3s;
-  
+
   ${props => (props.active ? 'opacity: 1;' : 'pointer-events: none')};
 `;
 

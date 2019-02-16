@@ -135,20 +135,20 @@ class Audio extends Component {
               hoverIndicator="background"
               onClick={playing ? this.pause : this.play}
             />
-            <Box pad={{ horizontal: 'small' }}>
+            <Box pad={{ horizontal: 'xsmall' }}>
               <Text textAlign="center" margin="none">
                 {duration ? formattedTime : ''}
               </Text>
             </Box>
           </Box>
           <Box
-            pad={{ horizontal: 'small' }}
+            pad={{ horizontal: 'xsmall' }}
             direction="row"
             align="center"
             gap="xsmall"
           >
             {/* make hover to show hide on responsive  */}
-            <Icons.Volume color="white" />
+            <Icons.Volume color={theme.audio.icons.color} />
             <RangeInput
               min={0}
               max={1}
