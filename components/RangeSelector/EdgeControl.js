@@ -81,7 +81,6 @@ function (_Component) {
         cursor = _DIRECTION_PROPS$dire.cursor,
         fill = _DIRECTION_PROPS$dire.fill;
     var size = (0, _utils.parseMetricToNum)(theme.global.spacing) / 2;
-    var halfSize = size / 2;
     var keyboardProps = direction === 'vertical' ? {
       onUp: onDecrease,
       onDown: onIncrease
@@ -90,6 +89,7 @@ function (_Component) {
       onRight: onIncrease
     };
     var boxDirection = direction === 'vertical' ? 'row' : 'column';
+    var type = theme.rangeSelector && theme.rangeSelector.edge && theme.rangeSelector.edge.type || 'disc';
     return _react.default.createElement(_Keyboard.Keyboard, keyboardProps, _react.default.createElement(_Box.Box, {
       direction: boxDirection,
       style: {
@@ -100,10 +100,11 @@ function (_Component) {
     }, _react.default.createElement(_Box.Box, _extends({
       ref: forwardRef,
       direction: boxDirection,
-      justify: "center",
+      justify: type === 'bar' ? 'stretch' : 'center',
       align: "center",
+      basis: "full",
       fill: fill,
-      margin: "xsmall",
+      margin: type === 'bar' ? undefined : 'xsmall',
       style: {
         cursor: cursor,
         minWidth: size,
@@ -120,20 +121,22 @@ function (_Component) {
           focused: false
         });
       }
-    }, rest), _react.default.createElement(_Box.Box, {
-      direction: boxDirection,
-      round: "small",
-      focus: focused
-    }, _react.default.createElement("svg", {
-      viewBox: "0 0 " + size + " " + size,
-      width: size,
-      height: size
-    }, _react.default.createElement("circle", {
-      cx: halfSize,
-      cy: halfSize,
-      r: halfSize,
-      fill: (0, _utils.normalizeColor)(color || 'control', theme)
-    }))))));
+    }, rest), type === 'bar' ? _react.default.createElement(_Box.Box, {
+      flex: true,
+      width: size + "px",
+      background: (0, _utils.normalizeColor)(color || 'control', theme),
+      border: focused ? {
+        color: (0, _utils.normalizeColor)('focus', theme)
+      } : undefined
+    }) : _react.default.createElement(_Box.Box, {
+      width: size + (focused ? 2 : 0) + "px",
+      height: size + (focused ? 2 : 0) + "px",
+      round: "full",
+      background: (0, _utils.normalizeColor)(color || 'control', theme),
+      border: focused ? {
+        color: (0, _utils.normalizeColor)('focus', theme)
+      } : undefined
+    }))));
   };
 
   return EdgeControl;
