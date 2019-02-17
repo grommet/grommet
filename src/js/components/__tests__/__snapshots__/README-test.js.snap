@@ -2611,7 +2611,7 @@ color options used for Chart fill area. Expects \`object\`.
 Defaults to
 
 \`\`\`
-undefined
+accent-1
 \`\`\`
 
 **global.edgeSize**

@@ -154,7 +154,7 @@ export const themeDoc = {
   'global.colors': {
     description: 'color options used for Chart fill area.',
     type: 'object',
-    defaultValue: undefined,
+    defaultValue: 'accent-1',
   },
   'global.edgeSize': {
     description: 'The possible sizes for the thickness in the Chart.',
