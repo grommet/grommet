@@ -276,30 +276,7 @@ color options used for Chart fill area. Expects `object`.
 Defaults to
 
 ```
-  
-      active: rgba(221, 221, 221, 0.5),
-      black: '#000000',
-      border: {
-        dark: rgba(255, 255, 255, 0.33),
-        light: rgba(0, 0, 0, 0.33),
-      },
-      brand: brandColor,
-      control: {
-        dark: 'accent-1',
-        light: 'brand',
-      },
-      focus: focusColor,
-      placeholder: '#AAAAAA',
-      selected: 'brand',
-      text: {
-        dark: '#f8f8f8',
-        light: '#444444',
-      },
-      icon: {
-        dark: '#f8f8f8',
-        light: '#666666',
-      },
-      white: '#FFFFFF',
+undefined
 ```
 
 **global.edgeSize**
