@@ -25,6 +25,10 @@ const StyledAudioControls = styled.div`
   transition: opacity 0.3s;
 
   ${props => (props.active ? 'opacity: 1;' : 'pointer-events: none')};
+  ${props =>
+    props.theme.audio &&
+    props.theme.audio.controls &&
+    props.theme.audio.controls.extend};
 `;
 
 StyledAudioControls.defaultProps = {};
