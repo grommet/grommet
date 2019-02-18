@@ -464,7 +464,7 @@ exports[`Video autoPlay renders 1`] = `
             <span
               className="c15"
             >
-              NaN:NaN
+              
             </span>
           </div>
         </div>
@@ -1074,7 +1074,7 @@ exports[`Video controls renders 1`] = `
             <span
               className="c15"
             >
-              NaN:NaN
+              
             </span>
           </div>
         </div>
@@ -1220,7 +1220,7 @@ exports[`Video controls renders 1`] = `
             <span
               className="c15"
             >
-              NaN:NaN
+              
             </span>
           </div>
         </div>
@@ -1741,7 +1741,7 @@ exports[`Video fit renders 1`] = `
             <span
               className="c15"
             >
-              NaN:NaN
+              
             </span>
           </div>
         </div>
@@ -1889,7 +1889,7 @@ exports[`Video fit renders 1`] = `
             <span
               className="c15"
             >
-              NaN:NaN
+              
             </span>
           </div>
         </div>
@@ -2392,7 +2392,7 @@ exports[`Video loop renders 1`] = `
             <span
               className="c15"
             >
-              NaN:NaN
+              
             </span>
           </div>
         </div>
@@ -2895,7 +2895,7 @@ exports[`Video mute renders 1`] = `
             <span
               className="c15"
             >
-              NaN:NaN
+              
             </span>
           </div>
         </div>
@@ -3398,7 +3398,7 @@ exports[`Video renders 1`] = `
             <span
               className="c15"
             >
-              NaN:NaN
+              
             </span>
           </div>
         </div>

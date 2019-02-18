@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Audio autoplay renders 1`] = `
-.c7 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -12,25 +12,25 @@ exports[`Audio autoplay renders 1`] = `
   stroke: #FFFFFF;
 }
 
-.c7 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -44,12 +44,29 @@ exports[`Audio autoplay renders 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  background-color: rgba(51,51,51,0.8);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
-  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -62,7 +79,7 @@ exports[`Audio autoplay renders 1`] = `
   padding: 0px;
 }
 
-.c5 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -83,7 +100,7 @@ exports[`Audio autoplay renders 1`] = `
   padding: 0px;
 }
 
-.c8 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -94,14 +111,14 @@ exports[`Audio autoplay renders 1`] = `
   margin: 0px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
-.c10 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -119,18 +136,18 @@ exports[`Audio autoplay renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
-.c11 {
+.c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 6px;
 }
 
-.c6 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -146,16 +163,17 @@ exports[`Audio autoplay renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  line-height: 0;
   padding: 12px;
 }
 
-.c6:hover {
+.c8:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #FFFFFF;
 }
 
-.c12 {
+.c5 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -167,50 +185,50 @@ exports[`Audio autoplay renders 1`] = `
   background: transparent;
 }
 
-.c12:focus {
+.c5:focus {
   outline: none;
 }
 
-.c12::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
 }
 
-.c12::-moz-focus-outer {
+.c5::-moz-focus-outer {
   border: none;
 }
 
-.c12::-webkit-slider-runnable-track {
+.c5::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c12::-webkit-slider-thumb {
-  box-sizing: border-box;
-  position: relative;
-  border-radius: 24px;
-  height: 24px;
-  width: 24px;
-  overflow: visible;
-  background: #6FFFB0;
-  -webkit-appearance: none;
-  cursor: pointer;
+.c5::-webkit-slider-thumb {
   margin-top: -10.2px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
 }
 
-.c12::-webkit-slider-thumb:hover {
+.c5::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12::-moz-range-track {
+.c5::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c12::-moz-range-thumb {
+.c5::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -225,7 +243,7 @@ exports[`Audio autoplay renders 1`] = `
   width: 24px;
 }
 
-.c12::-ms-thumb {
+.c5::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -240,15 +258,15 @@ exports[`Audio autoplay renders 1`] = `
   width: 24px;
 }
 
-.c12:hover::-moz-range-thumb {
+.c5:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12:hover::-ms-thumb {
+.c5:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12::-ms-track {
+.c5::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -257,17 +275,17 @@ exports[`Audio autoplay renders 1`] = `
   color: transparent;
 }
 
-.c12::-ms-fill-lower {
+.c5::-ms-fill-lower {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c12::-ms-fill-upper {
+.c5::-ms-fill-upper {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c9 {
+.c11 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -276,6 +294,18 @@ exports[`Audio autoplay renders 1`] = `
   margin-left: 0px;
   margin-right: 0px;
   text-align: center;
+}
+
+.c13 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+  color: #999999;
 }
 
 .c2 {
@@ -316,27 +346,26 @@ exports[`Audio autoplay renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
-    padding-left: 6px;
-    padding-right: 6px;
+  .c7 {
+    padding: 0px;
   }
 }
 
@@ -348,8 +377,21 @@ exports[`Audio autoplay renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
 
@@ -399,69 +441,91 @@ exports[`Audio autoplay renders 1`] = `
       <div
         className="c4"
       >
-        <div
+        <input
           className="c5"
+          max={1}
+          min={0}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          step={0.1}
+          type="range"
+          value={0}
+        />
+        <div
+          className="c6"
         >
-          <button
-            className="c6"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <div
+            className="c7"
+          >
+            <button
+              className="c8"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              type="button"
+            >
+              <svg
+                aria-label="Play"
+                className="c9"
+                viewBox="0 0 24 24"
+              >
+                <polygon
+                  fill="none"
+                  points="3 22 21 12 3 2"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </button>
+            <div
+              className="c10"
+            >
+              <span
+                className="c11"
+              >
+                00:00
+              </span>
+              <div
+                className="c12"
+              />
+              <span
+                className="c13"
+              >
+                
+              </span>
+            </div>
+          </div>
+          <div
+            className="c14"
           >
             <svg
-              aria-label="Play"
-              className="c7"
+              aria-label="Volume"
+              className="c9"
               viewBox="0 0 24 24"
             >
-              <polygon
+              <path
+                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
                 fill="none"
-                points="3 22 21 12 3 2"
                 stroke="#000"
                 strokeWidth="2"
               />
             </svg>
-          </button>
-          <div
-            className="c8"
-          >
-            <span
-              className="c9"
-            >
-              
-            </span>
-          </div>
-        </div>
-        <div
-          className="c10"
-        >
-          <svg
-            aria-label="Volume"
-            className="c7"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
-              fill="none"
-              stroke="#000"
-              strokeWidth="2"
+            <div
+              className="c12"
             />
-          </svg>
-          <div
-            className="c11"
-          />
-          <input
-            className="c12"
-            max={1}
-            min={0}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            size="full"
-            step={0.1}
-            type="range"
-            values={1}
-          />
+            <input
+              className="c5"
+              max={1}
+              min={0}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              step={0.1}
+              type="range"
+              value={1}
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -470,7 +534,7 @@ exports[`Audio autoplay renders 1`] = `
 `;
 
 exports[`Audio controls renders 1`] = `
-.c7 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -481,25 +545,25 @@ exports[`Audio controls renders 1`] = `
   stroke: #FFFFFF;
 }
 
-.c7 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -513,12 +577,29 @@ exports[`Audio controls renders 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  background-color: rgba(51,51,51,0.8);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
-  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -531,7 +612,7 @@ exports[`Audio controls renders 1`] = `
   padding: 0px;
 }
 
-.c5 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -552,7 +633,7 @@ exports[`Audio controls renders 1`] = `
   padding: 0px;
 }
 
-.c8 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -563,14 +644,14 @@ exports[`Audio controls renders 1`] = `
   margin: 0px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
-.c10 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -588,18 +669,18 @@ exports[`Audio controls renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
-.c11 {
+.c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 6px;
 }
 
-.c6 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -615,16 +696,17 @@ exports[`Audio controls renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  line-height: 0;
   padding: 12px;
 }
 
-.c6:hover {
+.c8:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #FFFFFF;
 }
 
-.c12 {
+.c5 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -636,50 +718,50 @@ exports[`Audio controls renders 1`] = `
   background: transparent;
 }
 
-.c12:focus {
+.c5:focus {
   outline: none;
 }
 
-.c12::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
 }
 
-.c12::-moz-focus-outer {
+.c5::-moz-focus-outer {
   border: none;
 }
 
-.c12::-webkit-slider-runnable-track {
+.c5::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c12::-webkit-slider-thumb {
-  box-sizing: border-box;
-  position: relative;
-  border-radius: 24px;
-  height: 24px;
-  width: 24px;
-  overflow: visible;
-  background: #6FFFB0;
-  -webkit-appearance: none;
-  cursor: pointer;
+.c5::-webkit-slider-thumb {
   margin-top: -10.2px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
 }
 
-.c12::-webkit-slider-thumb:hover {
+.c5::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12::-moz-range-track {
+.c5::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c12::-moz-range-thumb {
+.c5::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -694,7 +776,7 @@ exports[`Audio controls renders 1`] = `
   width: 24px;
 }
 
-.c12::-ms-thumb {
+.c5::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -709,15 +791,15 @@ exports[`Audio controls renders 1`] = `
   width: 24px;
 }
 
-.c12:hover::-moz-range-thumb {
+.c5:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12:hover::-ms-thumb {
+.c5:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12::-ms-track {
+.c5::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -726,17 +808,17 @@ exports[`Audio controls renders 1`] = `
   color: transparent;
 }
 
-.c12::-ms-fill-lower {
+.c5::-ms-fill-lower {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c12::-ms-fill-upper {
+.c5::-ms-fill-upper {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c9 {
+.c11 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -745,6 +827,18 @@ exports[`Audio controls renders 1`] = `
   margin-left: 0px;
   margin-right: 0px;
   text-align: center;
+}
+
+.c13 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+  color: #999999;
 }
 
 .c2 {
@@ -785,27 +879,26 @@ exports[`Audio controls renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
-    padding-left: 6px;
-    padding-right: 6px;
+  .c7 {
+    padding: 0px;
   }
 }
 
@@ -817,8 +910,21 @@ exports[`Audio controls renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
 
@@ -868,69 +974,91 @@ exports[`Audio controls renders 1`] = `
       <div
         className="c4"
       >
-        <div
+        <input
           className="c5"
+          max={1}
+          min={0}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          step={0.1}
+          type="range"
+          value={0}
+        />
+        <div
+          className="c6"
         >
-          <button
-            className="c6"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <div
+            className="c7"
+          >
+            <button
+              className="c8"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              type="button"
+            >
+              <svg
+                aria-label="Play"
+                className="c9"
+                viewBox="0 0 24 24"
+              >
+                <polygon
+                  fill="none"
+                  points="3 22 21 12 3 2"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </button>
+            <div
+              className="c10"
+            >
+              <span
+                className="c11"
+              >
+                00:00
+              </span>
+              <div
+                className="c12"
+              />
+              <span
+                className="c13"
+              >
+                
+              </span>
+            </div>
+          </div>
+          <div
+            className="c14"
           >
             <svg
-              aria-label="Play"
-              className="c7"
+              aria-label="Volume"
+              className="c9"
               viewBox="0 0 24 24"
             >
-              <polygon
+              <path
+                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
                 fill="none"
-                points="3 22 21 12 3 2"
                 stroke="#000"
                 strokeWidth="2"
               />
             </svg>
-          </button>
-          <div
-            className="c8"
-          >
-            <span
-              className="c9"
-            >
-              
-            </span>
-          </div>
-        </div>
-        <div
-          className="c10"
-        >
-          <svg
-            aria-label="Volume"
-            className="c7"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
-              fill="none"
-              stroke="#000"
-              strokeWidth="2"
+            <div
+              className="c12"
             />
-          </svg>
-          <div
-            className="c11"
-          />
-          <input
-            className="c12"
-            max={1}
-            min={0}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            size="full"
-            step={0.1}
-            type="range"
-            values={1}
-          />
+            <input
+              className="c5"
+              max={1}
+              min={0}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              step={0.1}
+              type="range"
+              value={1}
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -977,7 +1105,7 @@ exports[`Audio controls renders 1`] = `
 `;
 
 exports[`Audio loop renders 1`] = `
-.c7 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -988,25 +1116,25 @@ exports[`Audio loop renders 1`] = `
   stroke: #FFFFFF;
 }
 
-.c7 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1020,12 +1148,29 @@ exports[`Audio loop renders 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  background-color: rgba(51,51,51,0.8);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
-  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1038,7 +1183,7 @@ exports[`Audio loop renders 1`] = `
   padding: 0px;
 }
 
-.c5 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1059,7 +1204,7 @@ exports[`Audio loop renders 1`] = `
   padding: 0px;
 }
 
-.c8 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1070,14 +1215,14 @@ exports[`Audio loop renders 1`] = `
   margin: 0px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
-.c10 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1095,18 +1240,18 @@ exports[`Audio loop renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
-.c11 {
+.c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 6px;
 }
 
-.c6 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1122,16 +1267,17 @@ exports[`Audio loop renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  line-height: 0;
   padding: 12px;
 }
 
-.c6:hover {
+.c8:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #FFFFFF;
 }
 
-.c12 {
+.c5 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -1143,50 +1289,50 @@ exports[`Audio loop renders 1`] = `
   background: transparent;
 }
 
-.c12:focus {
+.c5:focus {
   outline: none;
 }
 
-.c12::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
 }
 
-.c12::-moz-focus-outer {
+.c5::-moz-focus-outer {
   border: none;
 }
 
-.c12::-webkit-slider-runnable-track {
+.c5::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c12::-webkit-slider-thumb {
-  box-sizing: border-box;
-  position: relative;
-  border-radius: 24px;
-  height: 24px;
-  width: 24px;
-  overflow: visible;
-  background: #6FFFB0;
-  -webkit-appearance: none;
-  cursor: pointer;
+.c5::-webkit-slider-thumb {
   margin-top: -10.2px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
 }
 
-.c12::-webkit-slider-thumb:hover {
+.c5::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12::-moz-range-track {
+.c5::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c12::-moz-range-thumb {
+.c5::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1201,7 +1347,7 @@ exports[`Audio loop renders 1`] = `
   width: 24px;
 }
 
-.c12::-ms-thumb {
+.c5::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1216,15 +1362,15 @@ exports[`Audio loop renders 1`] = `
   width: 24px;
 }
 
-.c12:hover::-moz-range-thumb {
+.c5:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12:hover::-ms-thumb {
+.c5:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12::-ms-track {
+.c5::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -1233,17 +1379,17 @@ exports[`Audio loop renders 1`] = `
   color: transparent;
 }
 
-.c12::-ms-fill-lower {
+.c5::-ms-fill-lower {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c12::-ms-fill-upper {
+.c5::-ms-fill-upper {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c9 {
+.c11 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -1252,6 +1398,18 @@ exports[`Audio loop renders 1`] = `
   margin-left: 0px;
   margin-right: 0px;
   text-align: center;
+}
+
+.c13 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+  color: #999999;
 }
 
 .c2 {
@@ -1292,27 +1450,26 @@ exports[`Audio loop renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
-    padding-left: 6px;
-    padding-right: 6px;
+  .c7 {
+    padding: 0px;
   }
 }
 
@@ -1324,8 +1481,21 @@ exports[`Audio loop renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
 
@@ -1375,69 +1545,91 @@ exports[`Audio loop renders 1`] = `
       <div
         className="c4"
       >
-        <div
+        <input
           className="c5"
+          max={1}
+          min={0}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          step={0.1}
+          type="range"
+          value={0}
+        />
+        <div
+          className="c6"
         >
-          <button
-            className="c6"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <div
+            className="c7"
+          >
+            <button
+              className="c8"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              type="button"
+            >
+              <svg
+                aria-label="Play"
+                className="c9"
+                viewBox="0 0 24 24"
+              >
+                <polygon
+                  fill="none"
+                  points="3 22 21 12 3 2"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </button>
+            <div
+              className="c10"
+            >
+              <span
+                className="c11"
+              >
+                00:00
+              </span>
+              <div
+                className="c12"
+              />
+              <span
+                className="c13"
+              >
+                
+              </span>
+            </div>
+          </div>
+          <div
+            className="c14"
           >
             <svg
-              aria-label="Play"
-              className="c7"
+              aria-label="Volume"
+              className="c9"
               viewBox="0 0 24 24"
             >
-              <polygon
+              <path
+                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
                 fill="none"
-                points="3 22 21 12 3 2"
                 stroke="#000"
                 strokeWidth="2"
               />
             </svg>
-          </button>
-          <div
-            className="c8"
-          >
-            <span
-              className="c9"
-            >
-              
-            </span>
-          </div>
-        </div>
-        <div
-          className="c10"
-        >
-          <svg
-            aria-label="Volume"
-            className="c7"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
-              fill="none"
-              stroke="#000"
-              strokeWidth="2"
+            <div
+              className="c12"
             />
-          </svg>
-          <div
-            className="c11"
-          />
-          <input
-            className="c12"
-            max={1}
-            min={0}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            size="full"
-            step={0.1}
-            type="range"
-            values={1}
-          />
+            <input
+              className="c5"
+              max={1}
+              min={0}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              step={0.1}
+              type="range"
+              value={1}
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -1446,7 +1638,7 @@ exports[`Audio loop renders 1`] = `
 `;
 
 exports[`Audio mute renders 1`] = `
-.c7 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1457,25 +1649,25 @@ exports[`Audio mute renders 1`] = `
   stroke: #FFFFFF;
 }
 
-.c7 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1489,12 +1681,29 @@ exports[`Audio mute renders 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  background-color: rgba(51,51,51,0.8);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
-  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1507,7 +1716,7 @@ exports[`Audio mute renders 1`] = `
   padding: 0px;
 }
 
-.c5 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1528,7 +1737,7 @@ exports[`Audio mute renders 1`] = `
   padding: 0px;
 }
 
-.c8 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1539,14 +1748,14 @@ exports[`Audio mute renders 1`] = `
   margin: 0px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
-.c10 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1564,18 +1773,18 @@ exports[`Audio mute renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
-.c11 {
+.c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 6px;
 }
 
-.c6 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1591,16 +1800,17 @@ exports[`Audio mute renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  line-height: 0;
   padding: 12px;
 }
 
-.c6:hover {
+.c8:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #FFFFFF;
 }
 
-.c12 {
+.c5 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -1612,50 +1822,50 @@ exports[`Audio mute renders 1`] = `
   background: transparent;
 }
 
-.c12:focus {
+.c5:focus {
   outline: none;
 }
 
-.c12::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
 }
 
-.c12::-moz-focus-outer {
+.c5::-moz-focus-outer {
   border: none;
 }
 
-.c12::-webkit-slider-runnable-track {
+.c5::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c12::-webkit-slider-thumb {
-  box-sizing: border-box;
-  position: relative;
-  border-radius: 24px;
-  height: 24px;
-  width: 24px;
-  overflow: visible;
-  background: #6FFFB0;
-  -webkit-appearance: none;
-  cursor: pointer;
+.c5::-webkit-slider-thumb {
   margin-top: -10.2px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
 }
 
-.c12::-webkit-slider-thumb:hover {
+.c5::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12::-moz-range-track {
+.c5::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c12::-moz-range-thumb {
+.c5::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1670,7 +1880,7 @@ exports[`Audio mute renders 1`] = `
   width: 24px;
 }
 
-.c12::-ms-thumb {
+.c5::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -1685,15 +1895,15 @@ exports[`Audio mute renders 1`] = `
   width: 24px;
 }
 
-.c12:hover::-moz-range-thumb {
+.c5:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12:hover::-ms-thumb {
+.c5:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12::-ms-track {
+.c5::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -1702,17 +1912,17 @@ exports[`Audio mute renders 1`] = `
   color: transparent;
 }
 
-.c12::-ms-fill-lower {
+.c5::-ms-fill-lower {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c12::-ms-fill-upper {
+.c5::-ms-fill-upper {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c9 {
+.c11 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -1721,6 +1931,18 @@ exports[`Audio mute renders 1`] = `
   margin-left: 0px;
   margin-right: 0px;
   text-align: center;
+}
+
+.c13 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+  color: #999999;
 }
 
 .c2 {
@@ -1761,27 +1983,26 @@ exports[`Audio mute renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
-    padding-left: 6px;
-    padding-right: 6px;
+  .c7 {
+    padding: 0px;
   }
 }
 
@@ -1793,8 +2014,21 @@ exports[`Audio mute renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
 
@@ -1844,69 +2078,91 @@ exports[`Audio mute renders 1`] = `
       <div
         className="c4"
       >
-        <div
+        <input
           className="c5"
+          max={1}
+          min={0}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          step={0.1}
+          type="range"
+          value={0}
+        />
+        <div
+          className="c6"
         >
-          <button
-            className="c6"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <div
+            className="c7"
+          >
+            <button
+              className="c8"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              type="button"
+            >
+              <svg
+                aria-label="Play"
+                className="c9"
+                viewBox="0 0 24 24"
+              >
+                <polygon
+                  fill="none"
+                  points="3 22 21 12 3 2"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </button>
+            <div
+              className="c10"
+            >
+              <span
+                className="c11"
+              >
+                00:00
+              </span>
+              <div
+                className="c12"
+              />
+              <span
+                className="c13"
+              >
+                
+              </span>
+            </div>
+          </div>
+          <div
+            className="c14"
           >
             <svg
-              aria-label="Play"
-              className="c7"
+              aria-label="Volume"
+              className="c9"
               viewBox="0 0 24 24"
             >
-              <polygon
+              <path
+                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
                 fill="none"
-                points="3 22 21 12 3 2"
                 stroke="#000"
                 strokeWidth="2"
               />
             </svg>
-          </button>
-          <div
-            className="c8"
-          >
-            <span
-              className="c9"
-            >
-              
-            </span>
-          </div>
-        </div>
-        <div
-          className="c10"
-        >
-          <svg
-            aria-label="Volume"
-            className="c7"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
-              fill="none"
-              stroke="#000"
-              strokeWidth="2"
+            <div
+              className="c12"
             />
-          </svg>
-          <div
-            className="c11"
-          />
-          <input
-            className="c12"
-            max={1}
-            min={0}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            size="full"
-            step={0.1}
-            type="range"
-            values={1}
-          />
+            <input
+              className="c5"
+              max={1}
+              min={0}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              step={0.1}
+              type="range"
+              value={1}
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -1915,7 +2171,7 @@ exports[`Audio mute renders 1`] = `
 `;
 
 exports[`Audio renders 1`] = `
-.c7 {
+.c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -1926,25 +2182,25 @@ exports[`Audio renders 1`] = `
   stroke: #FFFFFF;
 }
 
-.c7 g {
+.c9 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c7 *:not([stroke])[fill="none"] {
+.c9 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c7 *[stroke*="#"],
-.c7 *[STROKE*="#"] {
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c7 *[fill-rule],
-.c7 *[FILL-RULE],
-.c7 *[fill*="#"],
-.c7 *[FILL*="#"] {
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1958,12 +2214,29 @@ exports[`Audio renders 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  background-color: rgba(51,51,51,0.8);
+  color: #f8f8f8;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(51,51,51,0.8);
-  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1976,7 +2249,7 @@ exports[`Audio renders 1`] = `
   padding: 0px;
 }
 
-.c5 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1997,7 +2270,7 @@ exports[`Audio renders 1`] = `
   padding: 0px;
 }
 
-.c8 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2008,14 +2281,14 @@ exports[`Audio renders 1`] = `
   margin: 0px;
   min-width: 0;
   min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
-.c10 {
+.c14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2033,18 +2306,18 @@ exports[`Audio renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
-.c11 {
+.c12 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   width: 6px;
 }
 
-.c6 {
+.c8 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -2060,16 +2333,17 @@ exports[`Audio renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  line-height: 0;
   padding: 12px;
 }
 
-.c6:hover {
+.c8:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #FFFFFF;
 }
 
-.c12 {
+.c5 {
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
@@ -2081,50 +2355,50 @@ exports[`Audio renders 1`] = `
   background: transparent;
 }
 
-.c12:focus {
+.c5:focus {
   outline: none;
 }
 
-.c12::-moz-focus-inner {
+.c5::-moz-focus-inner {
   border: none;
 }
 
-.c12::-moz-focus-outer {
+.c5::-moz-focus-outer {
   border: none;
 }
 
-.c12::-webkit-slider-runnable-track {
+.c5::-webkit-slider-runnable-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c12::-webkit-slider-thumb {
-  box-sizing: border-box;
-  position: relative;
-  border-radius: 24px;
-  height: 24px;
-  width: 24px;
-  overflow: visible;
-  background: #6FFFB0;
-  -webkit-appearance: none;
-  cursor: pointer;
+.c5::-webkit-slider-thumb {
   margin-top: -10.2px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 24px;
+  height: 24px;
+  width: 24px;
+  overflow: visible;
+  background: #6FFFB0;
+  -webkit-appearance: none;
+  cursor: pointer;
 }
 
-.c12::-webkit-slider-thumb:hover {
+.c5::-webkit-slider-thumb:hover {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12::-moz-range-track {
+.c5::-moz-range-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
   background: rgba(255,255,255,0.2);
 }
 
-.c12::-moz-range-thumb {
+.c5::-moz-range-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -2139,7 +2413,7 @@ exports[`Audio renders 1`] = `
   width: 24px;
 }
 
-.c12::-ms-thumb {
+.c5::-ms-thumb {
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -2154,15 +2428,15 @@ exports[`Audio renders 1`] = `
   width: 24px;
 }
 
-.c12:hover::-moz-range-thumb {
+.c5:hover::-moz-range-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12:hover::-ms-thumb {
+.c5:hover::-ms-thumb {
   box-shadow: 0px 0px 0px 2px #6FFFB0;
 }
 
-.c12::-ms-track {
+.c5::-ms-track {
   box-sizing: border-box;
   width: 100%;
   height: 4px;
@@ -2171,17 +2445,17 @@ exports[`Audio renders 1`] = `
   color: transparent;
 }
 
-.c12::-ms-fill-lower {
+.c5::-ms-fill-lower {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c12::-ms-fill-upper {
+.c5::-ms-fill-upper {
   background: rgba(255,255,255,0.2);
   border-color: transparent;
 }
 
-.c9 {
+.c11 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
@@ -2190,6 +2464,18 @@ exports[`Audio renders 1`] = `
   margin-left: 0px;
   margin-right: 0px;
   text-align: center;
+}
+
+.c13 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+  color: #999999;
 }
 
 .c2 {
@@ -2230,27 +2516,26 @@ exports[`Audio renders 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c5 {
+  .c6 {
     padding: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
+  .c7 {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .c8 {
-    padding-left: 6px;
-    padding-right: 6px;
+  .c7 {
+    padding: 0px;
   }
 }
 
@@ -2262,8 +2547,21 @@ exports[`Audio renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c10 {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 }
 
@@ -2313,69 +2611,91 @@ exports[`Audio renders 1`] = `
       <div
         className="c4"
       >
-        <div
+        <input
           className="c5"
+          max={1}
+          min={0}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          step={0.1}
+          type="range"
+          value={0}
+        />
+        <div
+          className="c6"
         >
-          <button
-            className="c6"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            type="button"
+          <div
+            className="c7"
+          >
+            <button
+              className="c8"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              type="button"
+            >
+              <svg
+                aria-label="Play"
+                className="c9"
+                viewBox="0 0 24 24"
+              >
+                <polygon
+                  fill="none"
+                  points="3 22 21 12 3 2"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </button>
+            <div
+              className="c10"
+            >
+              <span
+                className="c11"
+              >
+                00:00
+              </span>
+              <div
+                className="c12"
+              />
+              <span
+                className="c13"
+              >
+                
+              </span>
+            </div>
+          </div>
+          <div
+            className="c14"
           >
             <svg
-              aria-label="Play"
-              className="c7"
+              aria-label="Volume"
+              className="c9"
               viewBox="0 0 24 24"
             >
-              <polygon
+              <path
+                d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
                 fill="none"
-                points="3 22 21 12 3 2"
                 stroke="#000"
                 strokeWidth="2"
               />
             </svg>
-          </button>
-          <div
-            className="c8"
-          >
-            <span
-              className="c9"
-            >
-              
-            </span>
-          </div>
-        </div>
-        <div
-          className="c10"
-        >
-          <svg
-            aria-label="Volume"
-            className="c7"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M15,16 C17.209,16 19,14.209 19,12 C19,9.791 17.209,8 15,8 M15,20 C20,20 23,16.411 23,12 C23,7.589 19.411,4 15,4 M1,12 L1,8 L6,8 L12,3 L12,21 L6,16 L1,16 L1,12"
-              fill="none"
-              stroke="#000"
-              strokeWidth="2"
+            <div
+              className="c12"
             />
-          </svg>
-          <div
-            className="c11"
-          />
-          <input
-            className="c12"
-            max={1}
-            min={0}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            size="full"
-            step={0.1}
-            type="range"
-            values={1}
-          />
+            <input
+              className="c5"
+              max={1}
+              min={0}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              step={0.1}
+              type="range"
+              value={1}
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -17,6 +17,8 @@ import {
   StyledAudioControls,
 } from './StyledAudio';
 
+// default value for the volume can range from 0 to 1. (HTML audio defaults to 1 i.e. max volume)
+const INITIAL_VOLUME = 0.3;
 class Audio extends Component {
   static defaultProps = {
     controls: true,
@@ -24,15 +26,29 @@ class Audio extends Component {
     loop: false,
   };
 
+  // default value for step before it is calculated according to the audio duration
+  scrubberStep = 0.1;
+
   state = {
     audioRef: React.createRef(),
-    rangeInputValue: 1,
+    volumeValue: 1,
+    scrubberValue: 0,
   };
 
   constructor(props) {
     super(props);
     this.update = throttle(this.update, 100, this);
     this.mediaEventProps = this.injectUpdateAudioEvents();
+  }
+
+  componentDidMount() {
+    const { audioRef } = this.state;
+    const audio = audioRef.current;
+
+    if (audio) {
+      audio.volume = INITIAL_VOLUME;
+      this.setState({ volumeValue: INITIAL_VOLUME });
+    }
   }
 
   injectUpdateAudioEvents = () =>
@@ -62,10 +78,20 @@ class Audio extends Component {
       interacting = false;
     }
 
+    let scrubberUpdate = 0;
+    if (audio.duration) {
+      // smooth scrubbing - total number of segments to use for the scrubber are equal to the duration in milliseconds
+      // the step is reciprocal to the number of segments for smooth transition
+      this.scrubberStep = 1 / (audio.duration * 1000);
+      scrubberUpdate = audio.currentTime / audio.duration;
+    }
+
     this.setState({
+      currentTime: audio.currentTime,
       duration: audio.duration,
-      playing: !audio.paused,
       interacting,
+      playing: !audio.paused,
+      scrubberValue: scrubberUpdate,
     });
   };
 
@@ -95,12 +121,29 @@ class Audio extends Component {
   setVolume = value => {
     const { audioRef } = this.state;
     audioRef.current.volume = value;
-    this.setState({ rangeInputValue: value });
+    this.setState({ volumeValue: value });
+  };
+
+  seek = value => {
+    const { audioRef, duration } = this.state;
+
+    if (audioRef.current) {
+      const precentageProgress = value * duration;
+      audioRef.current.currentTime = precentageProgress;
+      this.setState({ scrubberValue: value });
+    }
   };
 
   renderControls() {
     const { theme } = this.props;
-    const { duration, interacting, playing, rangeInputValue } = this.state;
+    const {
+      currentTime,
+      duration,
+      interacting,
+      playing,
+      scrubberValue,
+      volumeValue,
+    } = this.state;
 
     const background = (theme.audio.controls &&
       theme.audio.controls.background) || {
@@ -108,7 +151,9 @@ class Audio extends Component {
       opacity: 'strong',
     };
 
-    const formattedTime = formatTime(duration);
+    const durationFormattedTime = formatTime(duration);
+    const scrubFormattedTime = formatTime(currentTime);
+
     const Icons = {
       Pause: theme.audio.icons.pause,
       Play: theme.audio.icons.play,
@@ -117,47 +162,56 @@ class Audio extends Component {
 
     return (
       <StyledAudioControls active={interacting}>
-        <Box
-          direction="row"
-          align="center"
-          justify="between"
-          background={background}
-        >
-          <Box align="center" direction="row">
-            <Button
-              icon={
-                playing ? (
-                  <Icons.Pause color={theme.audio.icons.color} />
-                ) : (
-                  <Icons.Play color={theme.audio.icons.color} />
-                )
-              }
-              hoverIndicator="background"
-              onClick={playing ? this.pause : this.play}
-            />
-            <Box pad={{ horizontal: 'xsmall' }}>
-              <Text textAlign="center" margin="none">
-                {duration ? formattedTime : ''}
-              </Text>
+        <Box direction="column" background={background}>
+          <RangeInput
+            min={0}
+            max={1}
+            step={this.scrubberStep}
+            value={scrubberValue}
+            onChange={event => this.seek(event.target.value)}
+          />
+          <Box direction="row" align="center" justify="between">
+            <Box align="center" direction="row">
+              <Button
+                icon={
+                  playing ? (
+                    <Icons.Pause color={theme.audio.icons.color} />
+                  ) : (
+                    <Icons.Play color={theme.audio.icons.color} />
+                  )
+                }
+                hoverIndicator="background"
+                onClick={playing ? this.pause : this.play}
+              />
+              <Box pad={{ horizontal: 'xsmall' }} direction="row" gap="xsmall">
+                <Text textAlign="center" margin="none">
+                  {scrubFormattedTime || '00:00'}
+                </Text>
+                <Text
+                  textAlign="center"
+                  margin="none"
+                  color={theme.audio.controls.duration.color}
+                >
+                  {durationFormattedTime}
+                </Text>
+              </Box>
             </Box>
-          </Box>
-          <Box
-            pad={{ horizontal: 'xsmall' }}
-            direction="row"
-            align="center"
-            gap="xsmall"
-          >
-            {/* make hover to show hide on responsive  */}
-            <Icons.Volume color={theme.audio.icons.color} />
-            <RangeInput
-              min={0}
-              max={1}
-              step={0.1}
-              size="full"
-              round="large"
-              values={rangeInputValue}
-              onChange={event => this.setVolume(event.target.value)}
-            />
+            <Box
+              pad={{ horizontal: 'xsmall' }}
+              direction="row"
+              align="center"
+              gap="xsmall"
+            >
+              {/* make hover to show hide on responsive  */}
+              <Icons.Volume color={theme.audio.icons.color} />
+              <RangeInput
+                min={0}
+                max={1}
+                step={0.1}
+                value={volumeValue}
+                onChange={event => this.setVolume(event.target.value)}
+              />
+            </Box>
           </Box>
         </Box>
       </StyledAudioControls>

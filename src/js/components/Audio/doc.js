@@ -39,6 +39,11 @@ export const themeDoc = {
     type: 'string | { dark: string, light: string }',
     defaultValue: undefined,
   },
+  'audio.controls.extend': {
+    description: 'Any additional style for the Audio controls.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
   'audio.extend': {
     description: 'Any additional style for Audio.',
     type: 'string | (props) => {}',

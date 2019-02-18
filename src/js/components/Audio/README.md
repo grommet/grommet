@@ -156,6 +156,16 @@ Defaults to
 undefined
 ```
 
+**audio.controls.extend**
+
+Any additional style for the Audio controls. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **audio.extend**
 
 Any additional style for Audio. Expects `string | (props) => {}`.
