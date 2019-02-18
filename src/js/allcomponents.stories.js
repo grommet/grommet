@@ -6,6 +6,7 @@ import {
   Accordion,
   AccordionPanel,
   Anchor,
+  Audio,
   Box,
   Button,
   Calendar,
@@ -280,6 +281,20 @@ class Components extends Component {
             type="video/3gp"
           />
         </Video>
+      </Box>,
+      <Box key="audio" alignSelf="start">
+        <Audio>
+          <source
+            src="http://techslides.com/demos/samples/sample.mp3"
+            type="audio/mp3"
+          />
+          <track src="subtitles_en.vtt" kind="subtitles" label="English" />
+          <source
+            src="http://techslides.com/demos/samples/sample.ogg"
+            type="audio/ogg"
+          />
+          <track src="subtitles_no.vtt" kind="subtitles" label="English" />
+        </Audio>
       </Box>,
     ];
 

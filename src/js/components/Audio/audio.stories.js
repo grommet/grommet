@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Audio, Box, Heading, Grommet } from 'grommet';
 import { Music } from 'grommet-icons';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 
 const SimpleAudio = () => (
   <Grommet theme={grommet}>
@@ -16,7 +17,6 @@ const SimpleAudio = () => (
         <track
           src="subtitles_en.vtt"
           kind="subtitles"
-          caption="shimi"
           label="English"
         />
         <source
@@ -26,7 +26,45 @@ const SimpleAudio = () => (
         <track
           src="subtitles_no.vtt"
           kind="subtitles"
-          caption="shimi"
+          label="Norwegian"
+        />
+      </Audio>
+    </Box>
+  </Grommet>
+);
+
+const customThemedAudio = deepMerge(grommet, {
+  audio: {
+    controls: {
+      background: 'light-4',
+      extend: () => `opacity: 0.9; margin: 10px`,
+    },
+    icons: {
+      color: 'brand',
+    },
+  },
+});
+
+const CustomThemeAudio = () => (
+  <Grommet theme={customThemedAudio}>
+    <Box align="center" pad="large">
+      <Audio>
+        <source
+          src="https://dl.espressif.com/dl/audio/ff-16b-1c-44100hz.mp3"
+          type="audio/mp3"
+        />
+        <track
+          src="subtitles_en.vtt"
+          kind="subtitles"
+          label="English"
+        />
+        <source
+          src="https://dl.espressif.com/dl/audio/ff-16b-1c-44100hz.ogg"
+          type="audio/ogg"
+        />
+        <track
+          src="subtitles_no.vtt"
+          kind="subtitles"
           label="Norwegian"
         />
       </Audio>
@@ -54,7 +92,6 @@ const BackgroundAudio = () => (
         <track
           src="subtitles_en.vtt"
           kind="subtitles"
-          caption="shimi"
           label="English"
         />
         <source
@@ -64,7 +101,6 @@ const BackgroundAudio = () => (
         <track
           src="subtitles_no.vtt"
           kind="subtitles"
-          caption="shimi"
           label="Norwegian"
         />
       </Audio>
@@ -73,5 +109,6 @@ const BackgroundAudio = () => (
 );
 
 storiesOf('Audio', module)
-  .add('Sample Audio', () => <SimpleAudio />)
-  .add('Background Audio', () => <BackgroundAudio />);
+  .add('Simple Audio', () => <SimpleAudio />)
+  .add('Themed Audio', () => <CustomThemeAudio />)
+  .add('Background Music', () => <BackgroundAudio />);
