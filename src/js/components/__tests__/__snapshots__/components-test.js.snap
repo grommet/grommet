@@ -288,7 +288,7 @@ string",
       Object {
         "description": "Enables automatic playback of the audio as soon as it is loaded.",
         "format": "boolean",
-        "name": "autoPlay",
+        "name": "autoplay",
       },
       Object {
         "defaultValue": true,

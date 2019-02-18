@@ -202,7 +202,7 @@ class Audio extends Component {
               align="center"
               gap="xsmall"
             >
-              {/* make hover to show hide on responsive  */}
+              {/* TODO make hover to show hide on responsive  */}
               <Icons.Volume color={theme.audio.icons.color} />
               <RangeInput
                 min={0}

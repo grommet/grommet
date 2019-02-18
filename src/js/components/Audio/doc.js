@@ -14,7 +14,7 @@ export const doc = Audio => {
 
   DocumentedAudio.propTypes = {
     ...genericProps,
-    autoPlay: PropTypes.bool.description(
+    autoplay: PropTypes.bool.description(
       'Enables automatic playback of the audio as soon as it is loaded.',
     ),
     controls: PropTypes.bool

@@ -107,7 +107,7 @@ xlarge
 string
 ```
 
-**autoPlay**
+**autoplay**
 
 Enables automatic playback of the audio as soon as it is loaded.
 

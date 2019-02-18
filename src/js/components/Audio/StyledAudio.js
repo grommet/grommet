@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { defaultProps } from '../../default-props';
 
-// TODO get height from jens
 const StyledAudio = styled.audio`
   max-width: 100%;
 
@@ -11,7 +10,7 @@ const StyledAudio = styled.audio`
 StyledAudio.defaultProps = {};
 Object.setPrototypeOf(StyledAudio.defaultProps, defaultProps);
 
-// TODO check if width in necessary
+// TODO check if width in necessary after supporting ressponsive
 const StyledAudioContainer = styled.div`
   position: relative;
 
