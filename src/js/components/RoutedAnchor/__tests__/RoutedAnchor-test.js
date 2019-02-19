@@ -38,10 +38,12 @@ class FakeRouter extends Component {
 }
 
 describe('RoutedAnchor', () => {
+  const replace = jest.fn();
+  const push = jest.fn();
   test('renders', () => {
     const component = renderer.create(
       <Grommet>
-        <FakeRouter>
+        <FakeRouter push={push} replace={replace}>
           <RoutedAnchor label="Test" path="/" />
         </FakeRouter>
       </Grommet>,
@@ -52,12 +54,11 @@ describe('RoutedAnchor', () => {
 
   test('is clickable', () => {
     const preventDefault = jest.fn();
-    const push = jest.fn();
     const onClick = jest.fn();
     const component = renderer.create(
       <Grommet>
-        <FakeRouter push={push}>
-          <RoutedAnchor label="Test" onClick={onClick} />
+        <FakeRouter push={push} replace={replace}>
+          <RoutedAnchor label="Test" onClick={onClick} path="/" />
         </FakeRouter>
       </Grommet>,
     );
@@ -74,8 +75,8 @@ describe('RoutedAnchor', () => {
     const onClick = jest.fn();
     const component = renderer.create(
       <Grommet>
-        <FakeRouter>
-          <RoutedAnchor label="Test" onClick={onClick} />
+        <FakeRouter push={push} replace={replace}>
+          <RoutedAnchor label="Test" onClick={onClick} path="/" />
         </FakeRouter>
       </Grommet>,
     );
@@ -93,10 +94,9 @@ describe('RoutedAnchor', () => {
 
   test('calls router context push', () => {
     const preventDefault = jest.fn();
-    const push = jest.fn();
     const component = renderer.create(
       <Grommet>
-        <FakeRouter push={push}>
+        <FakeRouter push={push} replace={replace}>
           <RoutedAnchor label="Test" path="/" />
         </FakeRouter>
       </Grommet>,
@@ -113,10 +113,9 @@ describe('RoutedAnchor', () => {
 
   test('calls router context replace', () => {
     const preventDefault = jest.fn();
-    const replace = jest.fn();
     const component = renderer.create(
       <Grommet>
-        <FakeRouter replace={replace}>
+        <FakeRouter replace={replace} push={push}>
           <RoutedAnchor label="Test" path="/" method="replace" />
         </FakeRouter>
       </Grommet>,
