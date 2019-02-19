@@ -60,7 +60,7 @@ var themeDoc = {
   'global.colors': {
     description: 'color options used for Chart fill area.',
     type: 'object',
-    defaultValue: "  \n      active: rgba(221, 221, 221, 0.5),\n      black: '#000000',\n      border: {\n        dark: rgba(255, 255, 255, 0.33),\n        light: rgba(0, 0, 0, 0.33),\n      },\n      brand: brandColor,\n      control: {\n        dark: 'accent-1',\n        light: 'brand',\n      },\n      focus: focusColor,\n      placeholder: '#AAAAAA',\n      selected: 'brand',\n      text: {\n        dark: '#f8f8f8',\n        light: '#444444',\n      },\n      icon: {\n        dark: '#f8f8f8',\n        light: '#666666',\n      },\n      white: '#FFFFFF',"
+    defaultValue: 'accent-1'
   },
   'global.edgeSize': {
     description: 'The possible sizes for the thickness in the Chart.',
