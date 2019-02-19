@@ -198,13 +198,16 @@ export const doc = Box => {
       PropTypes.string,
     ]).description('A fixed height.'),
     justify: PropTypes.oneOf([
-      'start',
-      'center',
-      'between',
       'around',
-      'evenly',
+      'between',
+      'center',
       'end',
-    ]).description('How to align the contents along the main axis.'),
+      'evenly',
+      'start',
+      'stretch',
+    ])
+      .description('How to align the contents along the main axis.')
+      .defaultValue('stretch'),
     overflow: PropTypes.oneOfType([
       PropTypes.oneOf(OVERFLOW_VALUES),
       PropTypes.shape({
