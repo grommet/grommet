@@ -10,6 +10,6 @@ export interface RangeInputProps {
   value?: number | string;
 }
 
-declare const RangeInput: React.ComponentType<RangeInputProps & JSX.IntrinsicElements['input']>;
+declare const RangeInput: React.ComponentClass<RangeInputProps & JSX.IntrinsicElements['input']>;
 
 export { RangeInput };

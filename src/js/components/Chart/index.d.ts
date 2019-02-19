@@ -17,6 +17,6 @@ export interface ChartProps {
   values: (number | number[] | {label?: string,onClick?: ((...args: any[]) => any),onHover?: ((...args: any[]) => any),value: number | number[]})[];
 }
 
-declare const Chart: React.ComponentType<ChartProps>;
+declare const Chart: React.ComponentClass<ChartProps>;
 
 export { Chart };

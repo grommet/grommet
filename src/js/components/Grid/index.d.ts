@@ -18,6 +18,6 @@ export interface GridProps {
   as?: string;
 }
 
-declare const Grid: React.ComponentType<GridProps & JSX.IntrinsicElements['div']>;
+declare const Grid: React.FC<GridProps & JSX.IntrinsicElements['div']>;
 
 export { Grid };
