@@ -355,7 +355,7 @@ export const themeDoc = {
 }`,
   },
   'global.colors.text': {
-    description: 'The text color used inside the Box.',
+    description: 'The text color when the Box changes the background color',
     type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
   },
