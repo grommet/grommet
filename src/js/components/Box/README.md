@@ -385,15 +385,16 @@ string
 
 **justify**
 
-How to align the contents along the main axis.
+How to align the contents along the main axis. Defaults to `stretch`.
 
 ```
-start
-center
-between
 around
-evenly
+between
+center
 end
+evenly
+start
+stretch
 ```
 
 **overflow**
