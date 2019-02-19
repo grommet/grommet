@@ -14,6 +14,6 @@ export interface TextProps {
   weight?: "normal" | "bold" | number;
 }
 
-declare const Text: React.ComponentType<TextProps & JSX.IntrinsicElements['span']>;
+declare const Text: React.FC<TextProps & JSX.IntrinsicElements['span']>;
 
 export { Text };

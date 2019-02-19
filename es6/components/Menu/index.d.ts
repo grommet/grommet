@@ -17,6 +17,6 @@ export interface MenuProps {
   size?: "small" | "medium" | "large" | "xlarge" | string;
 }
 
-declare const Menu: React.ComponentType<MenuProps & JSX.IntrinsicElements['button']>;
+declare const Menu: React.ComponentClass<MenuProps & JSX.IntrinsicElements['button']>;
 
 export { Menu };

@@ -104,6 +104,8 @@ exports[`DropButton closed 1`] = `
   onBlur={[Function]}
   onClick={[Function]}
   onFocus={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
   type="button"
 >
   Dropper
@@ -249,6 +251,8 @@ exports[`DropButton opened 1`] = `
   onBlur={[Function]}
   onClick={[Function]}
   onFocus={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
   type="button"
 >
   Dropper

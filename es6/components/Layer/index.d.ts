@@ -12,6 +12,6 @@ export interface LayerProps {
   responsive?: boolean;
 }
 
-declare const Layer: React.ComponentType<LayerProps & JSX.IntrinsicElements['div']>;
+declare const Layer: React.ComponentClass<LayerProps & JSX.IntrinsicElements['div']>;
 
 export { Layer };

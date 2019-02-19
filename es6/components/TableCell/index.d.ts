@@ -7,6 +7,6 @@ export interface TableCellProps {
   verticalAlign?: "top" | "middle" | "bottom";
 }
 
-declare const TableCell: React.ComponentType<TableCellProps & JSX.IntrinsicElements['td']>;
+declare const TableCell: React.FC<TableCellProps & JSX.IntrinsicElements['td']>;
 
 export { TableCell };

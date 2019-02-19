@@ -8,6 +8,6 @@ export interface FormProps {
   value?: {};
 }
 
-declare const Form: React.ComponentType<FormProps & JSX.IntrinsicElements['form']>;
+declare const Form: React.ComponentClass<FormProps & JSX.IntrinsicElements['form']>;
 
 export { Form };

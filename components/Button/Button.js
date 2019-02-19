@@ -27,6 +27,8 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var isDarkBackground = function isDarkBackground(props) {
@@ -43,6 +45,33 @@ function (_Component) {
     var _this;
 
     _this = _Component.call(this, props) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onOver", function (event) {
+      var onOver = _this.props.onOver;
+
+      _this.setState({
+        hover: true
+      });
+
+      if (onOver) {
+        onOver(event);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onOut", function (event) {
+      var onOut = _this.props.onOut;
+
+      _this.setState({
+        hover: false
+      });
+
+      if (onOut) {
+        onOut(event);
+      }
+    });
+
     var children = props.children,
         icon = props.icon,
         label = props.label;
@@ -77,6 +106,7 @@ function (_Component) {
         as = _this$props.as,
         rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "color", "forwardRef", "children", "disabled", "icon", "fill", "focus", "href", "label", "onClick", "plain", "primary", "reverse", "theme", "type", "as"]);
 
+    var hover = this.state.hover;
     var buttonIcon = icon; // only change color if user did not specify the color themselves...
 
     if (primary && icon && !icon.props.color) {
@@ -97,9 +127,17 @@ function (_Component) {
         justify: "center",
         gap: "small"
       }, first, second);
+    } else if (typeof children === 'function') {
+      contents = children({
+        hover: hover,
+        focus: focus
+      });
     } else {
       contents = first || second || children;
-    }
+    } // the key events are covered by withFocus()
+
+    /* eslint-disable jsx-a11y/mouse-events-have-key-events */
+
 
     return _react.default.createElement(_StyledButton.StyledButton, _extends({}, rest, {
       as: domTag,
@@ -113,6 +151,8 @@ function (_Component) {
       focus: focus,
       href: href,
       onClick: onClick,
+      onMouseOver: this.onOver,
+      onMouseOut: this.onOut,
       plain: typeof plain !== 'undefined' ? plain : _react.Children.count(children) > 0 || icon && !label,
       primary: primary,
       type: !href ? type : undefined
