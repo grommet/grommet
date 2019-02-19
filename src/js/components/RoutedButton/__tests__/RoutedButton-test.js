@@ -37,10 +37,12 @@ class FakeRouter extends Component {
 }
 
 describe('RoutedButton', () => {
+  const push = jest.fn();
+  const replace = jest.fn();
   test('renders', () => {
     const component = renderer.create(
       <Grommet>
-        <FakeRouter>
+        <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" path="/" />
         </FakeRouter>
       </Grommet>,
@@ -51,7 +53,6 @@ describe('RoutedButton', () => {
 
   test('RoutedButton is clickable', () => {
     const preventDefault = jest.fn();
-    const push = jest.fn();
     const onClick = jest.fn();
     const component = renderer.create(
       <Grommet>
@@ -73,7 +74,7 @@ describe('RoutedButton', () => {
     const onClick = jest.fn();
     const component = renderer.create(
       <Grommet>
-        <FakeRouter>
+        <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" onClick={onClick} />
         </FakeRouter>
       </Grommet>,
@@ -92,10 +93,9 @@ describe('RoutedButton', () => {
 
   test('RoutedButton calls router context push', () => {
     const preventDefault = jest.fn();
-    const push = jest.fn();
     const component = renderer.create(
       <Grommet>
-        <FakeRouter push={push}>
+        <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" path="/" />
         </FakeRouter>
       </Grommet>,
@@ -112,10 +112,9 @@ describe('RoutedButton', () => {
 
   test('RoutedButton calls router context replace', () => {
     const preventDefault = jest.fn();
-    const replace = jest.fn();
     const component = renderer.create(
       <Grommet>
-        <FakeRouter replace={replace}>
+        <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" path="/" method="replace" />
         </FakeRouter>
       </Grommet>,
