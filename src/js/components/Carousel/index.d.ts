@@ -9,6 +9,6 @@ export interface CarouselProps {
   play?: number;
 }
 
-declare const Carousel: React.ComponentType<CarouselProps & JSX.IntrinsicElements['div']>;
+declare const Carousel: React.ComponentClass<CarouselProps & JSX.IntrinsicElements['div']>;
 
 export { Carousel };

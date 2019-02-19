@@ -15,6 +15,6 @@ export interface AnchorProps {
   as?: string;
 }
 
-declare const Anchor: React.ComponentType<AnchorProps & JSX.IntrinsicElements['a']>;
+declare const Anchor: React.ComponentClass<AnchorProps & JSX.IntrinsicElements['a']>;
 
 export { Anchor };

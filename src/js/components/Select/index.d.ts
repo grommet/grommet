@@ -33,6 +33,6 @@ export interface SelectProps {
   emptySearchMessage?: string;
 }
 
-declare const Select: React.ComponentType<SelectProps>;
+declare const Select: React.ComponentClass<SelectProps>;
 
 export { Select };
