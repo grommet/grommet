@@ -43,6 +43,24 @@ class Button extends Component {
     }
   }
 
+  state = {};
+
+  onOver = event => {
+    const { onOver } = this.props;
+    this.setState({ hover: true });
+    if (onOver) {
+      onOver(event);
+    }
+  };
+
+  onOut = event => {
+    const { onOut } = this.props;
+    this.setState({ hover: false });
+    if (onOut) {
+      onOut(event);
+    }
+  };
+
   render() {
     const {
       a11yTitle,
@@ -64,6 +82,7 @@ class Button extends Component {
       as,
       ...rest
     } = this.props;
+    const { hover } = this.state;
 
     let buttonIcon = icon;
     // only change color if user did not specify the color themselves...
@@ -88,10 +107,14 @@ class Button extends Component {
           {second}
         </Box>
       );
+    } else if (typeof children === 'function') {
+      contents = children({ hover, focus });
     } else {
       contents = first || second || children;
     }
 
+    // the key events are covered by withFocus()
+    /* eslint-disable jsx-a11y/mouse-events-have-key-events */
     return (
       <StyledButton
         {...rest}
@@ -106,6 +129,8 @@ class Button extends Component {
         focus={focus}
         href={href}
         onClick={onClick}
+        onMouseOver={this.onOver}
+        onMouseOut={this.onOut}
         plain={
           typeof plain !== 'undefined'
             ? plain
