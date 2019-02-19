@@ -88,3 +88,73 @@ Defaults to
 ```
 focus
 ```
+
+**global.spacing**
+
+The height, width and border-radius of the range thumb. Expects `string`.
+
+Defaults to
+
+```
+24px
+```
+
+**rangeInput.extend**
+
+Any additional style for the RangeInput. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**rangeInput.thumb.color**
+
+The color of the thumb. Expects `string | { dark: undefined, light: undefined }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**rangeInput.thumb.extend**
+
+Any additional style for the thumb. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**rangeInput.track.color**
+
+The color of the track. Expects `string`.
+
+Defaults to
+
+```
+{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }
+```
+
+**rangeInput.track.extend**
+
+Any additional style for the track. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**rangeInput.track.height**
+
+The height of the track. Expects `string`.
+
+Defaults to
+
+```
+4px
+```

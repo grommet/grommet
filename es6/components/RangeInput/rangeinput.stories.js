@@ -8,6 +8,8 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box, Grommet, RangeInput } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
+import { Volume } from "grommet-icons/es6/icons/Volume";
 
 var SimpleRangeInput =
 /*#__PURE__*/
@@ -54,6 +56,83 @@ function (_Component) {
   return SimpleRangeInput;
 }(Component);
 
+var customThemeRangeInput = deepMerge(grommet, {
+  global: {
+    spacing: '12px'
+  },
+  rangeInput: {
+    track: {
+      color: 'accent-2',
+      height: '12px',
+      extend: function extend() {
+        return "border-radius: 10px";
+      }
+    },
+    thumb: {
+      color: 'neutral-2',
+      extend: function extend() {
+        return "\n        margin: 0;\n        ";
+      }
+    }
+  }
+});
+
+var CustomRangeInput =
+/*#__PURE__*/
+function (_Component2) {
+  _inheritsLoose(CustomRangeInput, _Component2);
+
+  function CustomRangeInput() {
+    var _this2;
+
+    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "state", {
+      value: 0.4
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onChange", function (event) {
+      return _this2.setState({
+        value: event.target.value
+      });
+    });
+
+    return _this2;
+  }
+
+  var _proto2 = CustomRangeInput.prototype;
+
+  _proto2.render = function render() {
+    var value = this.state.value;
+    return React.createElement(Grommet, {
+      theme: customThemeRangeInput
+    }, React.createElement(Box, {
+      direction: "row",
+      align: "center",
+      pad: "large",
+      gap: "small"
+    }, React.createElement(Volume, {
+      color: "neutral-2"
+    }), React.createElement(Box, {
+      align: "center"
+    }, React.createElement(RangeInput, {
+      min: 0,
+      max: 1,
+      step: 0.1,
+      value: value,
+      onChange: this.onChange
+    }))));
+  };
+
+  return CustomRangeInput;
+}(Component);
+
 storiesOf('RangeInput', module).add('Simple RangeInput', function () {
   return React.createElement(SimpleRangeInput, null);
+}).add('Custom RangeInput', function () {
+  return React.createElement(CustomRangeInput, null);
 });
