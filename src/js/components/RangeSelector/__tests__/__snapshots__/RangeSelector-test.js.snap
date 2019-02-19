@@ -1389,11 +1389,9 @@ exports[`RangeSelector handle keyboard 1`] = `
   >
     <div
       class="c3"
-      style="flex: 20 0 0px;"
     />
     <div
       class="c4"
-      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
@@ -1408,11 +1406,10 @@ exports[`RangeSelector handle keyboard 1`] = `
     </div>
     <div
       class="c7"
-      style="flex: 11 0 0px; cursor: ew-resize;"
+      style="cursor: ew-resize;"
     />
     <div
       class="c4"
-      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
@@ -1427,7 +1424,6 @@ exports[`RangeSelector handle keyboard 1`] = `
     </div>
     <div
       class="c3"
-      style="flex: 70 0 0px;"
     />
   </div>
 </div>
@@ -1660,11 +1656,9 @@ exports[`RangeSelector handle mouse 1`] = `
   >
     <div
       class="c3"
-      style="flex: 20 0 0px;"
     />
     <div
       class="c4"
-      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Lower Bounds"
@@ -1679,11 +1673,10 @@ exports[`RangeSelector handle mouse 1`] = `
     </div>
     <div
       class="c7"
-      style="flex: 11 0 0px; cursor: ew-resize;"
+      style="cursor: ew-resize;"
     />
     <div
       class="c4"
-      style="flex: 0 0 1px;"
     >
       <div
         aria-label="Upper Bounds"
@@ -1698,7 +1691,6 @@ exports[`RangeSelector handle mouse 1`] = `
     </div>
     <div
       class="c3"
-      style="flex: 70 0 0px;"
     />
   </div>
 </div>
