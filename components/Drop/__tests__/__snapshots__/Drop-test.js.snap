@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Drop align left random 1`] = `
+exports[`Drop align left left 1`] = `
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -72,14 +72,14 @@ exports[`Drop align left random 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="width: 0.1px; bottom: 768px; max-height: 0px;"
+  style="left: 0px; width: 0.1px; bottom: 768px; max-height: 0px;"
   tabindex="-1"
 >
   this is a test
 </div>
 `;
 
-exports[`Drop align left random 2`] = `
+exports[`Drop align left left 2`] = `
 ".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
@@ -512,7 +512,7 @@ exports[`Drop align right left top top 2`] = `
 }"
 `;
 
-exports[`Drop align right random 1`] = `
+exports[`Drop align right right 1`] = `
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -584,14 +584,14 @@ exports[`Drop align right random 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="width: 0.1px; top: 0px; max-height: 768px;"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   this is a test
 </div>
 `;
 
-exports[`Drop align right random 2`] = `
+exports[`Drop align right right 2`] = `
 ".iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;

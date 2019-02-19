@@ -106,10 +106,10 @@ describe('Drop', function () {
     }));
     expectPortal('drop-node').toMatchSnapshot();
   });
-  test('align left random', function () {
+  test('align left left', function () {
     render(React.createElement(TestInput, {
       align: {
-        left: 'random',
+        left: 'left',
         bottom: 'bottom'
       }
     }));
@@ -133,10 +133,10 @@ describe('Drop', function () {
     }));
     expectPortal('drop-node').toMatchSnapshot();
   });
-  test('align right random', function () {
+  test('align right right', function () {
     render(React.createElement(TestInput, {
       align: {
-        right: 'random'
+        right: 'right'
       }
     }));
     expectPortal('drop-node').toMatchSnapshot();

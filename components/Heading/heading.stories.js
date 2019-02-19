@@ -85,11 +85,14 @@ var customlevel = (0, _utils.deepMerge)(_themes.grommet, {
           height: '20px'
         }
       }
+    },
+    extend: function extend(props) {
+      return "color: " + props.theme.global.colors.brand;
     }
   }
 });
 
-var CustomLevel = function CustomLevel() {
+var CustomHeading = function CustomHeading() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: customlevel
   }, _react.default.createElement(_grommet.Heading, {
@@ -101,6 +104,6 @@ var CustomLevel = function CustomLevel() {
   return _react.default.createElement(All, null);
 }).add('Color', function () {
   return _react.default.createElement(Color, null);
-}).add('Custom Level', function () {
-  return _react.default.createElement(CustomLevel, null);
+}).add('Custom Heading', function () {
+  return _react.default.createElement(CustomHeading, null);
 });

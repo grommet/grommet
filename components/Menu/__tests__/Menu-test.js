@@ -51,6 +51,7 @@ describe('Menu', function () {
   test('justify content', function () {
     var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, ['start', 'center', 'end', 'between', 'around', 'stretch'].map(function (justifyContent) {
       return _react.default.createElement(_.Menu, {
+        key: justifyContent,
         label: justifyContent + " Menu",
         messages: {
           openMenu: 'Abrir Menu'

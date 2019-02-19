@@ -66,8 +66,13 @@ _defineProperty(FakeRouter, "childContextTypes", {
 });
 
 describe('RoutedAnchor', function () {
+  var replace = jest.fn();
+  var push = jest.fn();
   test('renders', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(FakeRouter, null, _react.default.createElement(_.RoutedAnchor, {
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(FakeRouter, {
+      push: push,
+      replace: replace
+    }, _react.default.createElement(_.RoutedAnchor, {
       label: "Test",
       path: "/"
     }))));
@@ -77,14 +82,15 @@ describe('RoutedAnchor', function () {
   });
   test('is clickable', function () {
     var preventDefault = jest.fn();
-    var push = jest.fn();
     var onClick = jest.fn();
 
     var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(FakeRouter, {
-      push: push
+      push: push,
+      replace: replace
     }, _react.default.createElement(_.RoutedAnchor, {
       label: "Test",
-      onClick: onClick
+      onClick: onClick,
+      path: "/"
     }))));
 
     var tree = component.toJSON();
@@ -99,9 +105,13 @@ describe('RoutedAnchor', function () {
   test('skips onClick if right clicked', function () {
     var onClick = jest.fn();
 
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(FakeRouter, null, _react.default.createElement(_.RoutedAnchor, {
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(FakeRouter, {
+      push: push,
+      replace: replace
+    }, _react.default.createElement(_.RoutedAnchor, {
       label: "Test",
-      onClick: onClick
+      onClick: onClick,
+      path: "/"
     }))));
 
     var tree = component.toJSON();
@@ -116,10 +126,10 @@ describe('RoutedAnchor', function () {
   });
   test('calls router context push', function () {
     var preventDefault = jest.fn();
-    var push = jest.fn();
 
     var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(FakeRouter, {
-      push: push
+      push: push,
+      replace: replace
     }, _react.default.createElement(_.RoutedAnchor, {
       label: "Test",
       path: "/"
@@ -135,10 +145,10 @@ describe('RoutedAnchor', function () {
   });
   test('calls router context replace', function () {
     var preventDefault = jest.fn();
-    var replace = jest.fn();
 
     var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(FakeRouter, {
-      replace: replace
+      replace: replace,
+      push: push
     }, _react.default.createElement(_.RoutedAnchor, {
       label: "Test",
       path: "/",

@@ -116,10 +116,10 @@ describe('Drop', function () {
     }));
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
-  test('align left random', function () {
+  test('align left left', function () {
     (0, _reactTestingLibrary.render)(_react.default.createElement(TestInput, {
       align: {
-        left: 'random',
+        left: 'left',
         bottom: 'bottom'
       }
     }));
@@ -143,10 +143,10 @@ describe('Drop', function () {
     }));
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();
   });
-  test('align right random', function () {
+  test('align right right', function () {
     (0, _reactTestingLibrary.render)(_react.default.createElement(TestInput, {
       align: {
-        right: 'random'
+        right: 'right'
       }
     }));
     (0, _portal.expectPortal)('drop-node').toMatchSnapshot();

@@ -33,7 +33,7 @@ test('Grid columns renders', function () {
     }
   }), React.createElement(Grid, {
     columns: {
-      count: 'full',
+      count: 'fill',
       size: ['small', 'medium']
     }
   })));

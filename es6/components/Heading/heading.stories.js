@@ -76,11 +76,14 @@ var customlevel = deepMerge(grommet, {
           height: '20px'
         }
       }
+    },
+    extend: function extend(props) {
+      return "color: " + props.theme.global.colors.brand;
     }
   }
 });
 
-var CustomLevel = function CustomLevel() {
+var CustomHeading = function CustomHeading() {
   return React.createElement(Grommet, {
     theme: customlevel
   }, React.createElement(Heading, {
@@ -92,6 +95,6 @@ storiesOf('Heading', module).add('All', function () {
   return React.createElement(All, null);
 }).add('Color', function () {
   return React.createElement(Color, null);
-}).add('Custom Level', function () {
-  return React.createElement(CustomLevel, null);
+}).add('Custom Heading', function () {
+  return React.createElement(CustomHeading, null);
 });

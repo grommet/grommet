@@ -64,8 +64,13 @@ _defineProperty(FakeRouter, "childContextTypes", {
 });
 
 describe('RoutedButton', function () {
+  var push = jest.fn();
+  var replace = jest.fn();
   test('renders', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeRouter, null, _react.default.createElement(_.RoutedButton, {
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeRouter, {
+      replace: replace,
+      push: push
+    }, _react.default.createElement(_.RoutedButton, {
       label: "Test",
       path: "/"
     }))));
@@ -75,7 +80,6 @@ describe('RoutedButton', function () {
   });
   test('RoutedButton is clickable', function () {
     var preventDefault = jest.fn();
-    var push = jest.fn();
     var onClick = jest.fn();
 
     var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeRouter, {
@@ -97,7 +101,10 @@ describe('RoutedButton', function () {
   test('RoutedButton skips onClick if right clicked', function () {
     var onClick = jest.fn();
 
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeRouter, null, _react.default.createElement(_.RoutedButton, {
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeRouter, {
+      replace: replace,
+      push: push
+    }, _react.default.createElement(_.RoutedButton, {
       label: "Test",
       onClick: onClick
     }))));
@@ -114,9 +121,9 @@ describe('RoutedButton', function () {
   });
   test('RoutedButton calls router context push', function () {
     var preventDefault = jest.fn();
-    var push = jest.fn();
 
     var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeRouter, {
+      replace: replace,
       push: push
     }, _react.default.createElement(_.RoutedButton, {
       label: "Test",
@@ -133,10 +140,10 @@ describe('RoutedButton', function () {
   });
   test('RoutedButton calls router context replace', function () {
     var preventDefault = jest.fn();
-    var replace = jest.fn();
 
     var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeRouter, {
-      replace: replace
+      replace: replace,
+      push: push
     }, _react.default.createElement(_.RoutedButton, {
       label: "Test",
       path: "/",

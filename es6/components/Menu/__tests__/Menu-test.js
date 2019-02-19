@@ -38,6 +38,7 @@ describe('Menu', function () {
   test('justify content', function () {
     var component = renderer.create(React.createElement(Grommet, null, ['start', 'center', 'end', 'between', 'around', 'stretch'].map(function (justifyContent) {
       return React.createElement(Menu, {
+        key: justifyContent,
         label: justifyContent + " Menu",
         messages: {
           openMenu: 'Abrir Menu'
