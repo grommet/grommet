@@ -74,6 +74,14 @@ export const doc = Box => {
           PropTypes.oneOf(['weak', 'medium', 'strong']),
           PropTypes.bool,
         ]),
+        repeat: PropTypes.oneOfType([
+          PropTypes.oneOf(['no-repeat', 'repeat']),
+          PropTypes.string,
+        ]),
+        size: PropTypes.oneOfType([
+          PropTypes.oneOf(['cover', 'contain']),
+          PropTypes.string,
+        ]),
         light: PropTypes.string,
       }),
     ]).description(`Either a color identifier to use for the background
