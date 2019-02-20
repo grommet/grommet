@@ -85,6 +85,7 @@ class Components extends Component {
 
   render() {
     const {
+      background,
       baseSize,
       checkBox,
       radioButton,
@@ -303,6 +304,16 @@ class Components extends Component {
               />
             </Box>
             <Box basis="small">
+              <Select
+                plain
+                placeholder="background"
+                size="small"
+                options={['default', 'dark-1', 'light-1']}
+                value={background}
+                onChange={event => this.setState({ background: event.option })}
+              />
+            </Box>
+            <Box basis="small">
               <RangeInput
                 min={16}
                 max={36}
@@ -319,9 +330,7 @@ class Components extends Component {
         <Grommet theme={theme}>
           <Box
             pad="medium"
-            background={
-              theme.global.colors.background || theme.global.colors.white
-            }
+            background={background || theme.global.colors.background}
             overflow="auto"
           >
             {Grid.available ? (
