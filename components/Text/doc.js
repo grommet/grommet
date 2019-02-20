@@ -26,9 +26,9 @@ var doc = function doc(Text) {
 exports.doc = doc;
 
 var themeDoc = _extends({
-  'global.colors.text': {
+  color: {
     description: 'The text color used for Text.',
-    type: 'object | { dark: string, light: string }',
+    type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }"
   },
   text: {

@@ -24,7 +24,7 @@ var doc = function doc(Heading) {
 
 exports.doc = doc;
 
-var themeDoc = _extends({}, _utils.themeDocUtils.breakpointStyle('The possible breakpoints that could affect font-size and max-width'), _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'), {
+var themeDoc = _extends({}, _utils.themeDocUtils.breakpointStyle('The possible breakpoints that could affect font-size and max-width'), {
   'heading.extend': {
     description: 'Any additional style for Heading.',
     type: 'string | (props) => {}',
@@ -33,17 +33,7 @@ var themeDoc = _extends({}, _utils.themeDocUtils.breakpointStyle('The possible b
   'heading.level': {
     description: 'The level that impacts line height, max width, font size, weight and family of the Heading.',
     type: 'object',
-    defaultValue: "\n      1: {\n        medium: {\n          size: 34px,\n          height: 40px,\n          width: 826px,\n        },\n      },\n      weight: 600,\n      font:\n        {\n          family: undefined,\n        }"
-  },
-  'heading.weight': {
-    description: 'Default heading weight used unless a per level heading is defined.',
-    type: 'number',
-    defaultValue: 600
-  },
-  'heading.font': {
-    description: 'Default heading font used unless a per level heading is defined.',
-    type: 'object',
-    defaultValue: undefined
+    defaultValue: "\n      1: {\n        medium: { \n          font-size: 34px,\n          line-hieght: 40px,\n          max-width: 826px,\n        },\n      },\n      weight: 600,\n      font:\n        {\n          family: undefined,\n        }"
   },
   'heading.responsiveBreakpoint': {
     description: 'The breakpoint to trigger changes in the Heading layout. The actual values will be derived from global.breakpoints.',

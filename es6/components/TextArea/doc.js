@@ -22,22 +22,5 @@ export var themeDoc = _extends({
     description: 'Any additional style for Text.',
     type: 'string | (props) => {}',
     defaultValue: undefined
-  },
-  'global.control.border': {
-    description: 'The border of the textarea.',
-    type: 'object',
-    defaultValue: {
-      width: '1px',
-      radius: '4px',
-      color: 'border'
-    }
-  },
-  'global.colors.border': {
-    description: 'The color of the borders',
-    type: 'object',
-    defaultValue: {
-      dark: 'rgba(255, 255, 255, 0.33)',
-      light: 'rgba(0, 0, 0, 0.33)'
-    }
   }
 }, themeDocUtils.focusStyle, themeDocUtils.placeholderStyle, themeDocUtils.inputStyle);

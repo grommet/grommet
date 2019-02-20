@@ -234,28 +234,6 @@ Defaults to
   }
 ```
 
-**global.edgeSize**
-
-The possible sizes for margin. Expects `object`.
-
-Defaults to
-
-```
-{
-    edgeSize: {
-      none: '0px',
-      hair: '1px',
-      xxsmall: '3px',
-      xsmall: '6px',
-      small: '12px',
-      medium: '24px',
-      large: '48px',
-      xlarge: '96px',
-      responsiveBreakpoint: 'small',
-    },
-  }
-```
-
 **heading.extend**
 
 Any additional style for Heading. Expects `string | (props) => {}`.
@@ -275,10 +253,10 @@ Defaults to
 ```
 
       1: {
-        medium: {
-          size: 34px,
-          height: 40px,
-          width: 826px,
+        medium: { 
+          font-size: 34px,
+          line-hieght: 40px,
+          max-width: 826px,
         },
       },
       weight: 600,
@@ -286,26 +264,6 @@ Defaults to
         {
           family: undefined,
         }
-```
-
-**heading.weight**
-
-Default heading weight used unless a per level heading is defined. Expects `number`.
-
-Defaults to
-
-```
-600
-```
-
-**heading.font**
-
-Default heading font used unless a per level heading is defined. Expects `object`.
-
-Defaults to
-
-```
-undefined
 ```
 
 **heading.responsiveBreakpoint**

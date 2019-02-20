@@ -189,9 +189,9 @@ span
 ```
 ## Theme
   
-**global.colors.text**
+**color**
 
-The text color used for Text. Expects `object | { dark: string, light: string }`.
+The text color used for Text. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 

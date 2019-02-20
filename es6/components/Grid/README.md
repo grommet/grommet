@@ -390,7 +390,7 @@ undefined
 
 **global.edgeSize**
 
-The possible sizes for the grid margin and gap. Expects `object`.
+The possible sizes for the grid gap. Expects `object`.
 
 Defaults to
 
