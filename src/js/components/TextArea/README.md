@@ -105,7 +105,7 @@ undefined
 
 **global.control.border**
 
-The border of the input. Expects `object`.
+The border of the textarea. Expects `object`.
 
 Defaults to
 

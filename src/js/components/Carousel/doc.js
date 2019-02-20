@@ -51,12 +51,12 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'global.colors.icon': {
-    description: 'The color used for Select icons.',
+    description: 'The color used for Carousel icons.',
     type: 'object',
     defaultValue: {
       dark: '#f8f8f8',
       light: '#666666',
     },
   },
-  ...themeDocUtils.edgeStyle('The possible sizes for margin and pad.'),
+  ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
 };

@@ -177,7 +177,7 @@ undefined
 
 **global.colors.icon**
 
-The color used for Select icons. Expects `object`.
+The color used for Carousel icons. Expects `object`.
 
 Defaults to
 
@@ -187,7 +187,7 @@ Defaults to
 
 **global.edgeSize**
 
-The possible sizes for margin and pad. Expects `object`.
+The possible sizes for margin. Expects `object`.
 
 Defaults to
 

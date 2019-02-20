@@ -2377,7 +2377,7 @@ undefined
 
 **global.colors.icon**
 
-The color used for Select icons. Expects \`object\`.
+The color used for Carousel icons. Expects \`object\`.
 
 Defaults to
 
@@ -2387,7 +2387,7 @@ Defaults to
 
 **global.edgeSize**
 
-The possible sizes for margin and pad. Expects \`object\`.
+The possible sizes for margin. Expects \`object\`.
 
 Defaults to
 
@@ -4867,7 +4867,7 @@ Defaults to
       1: {
         medium: {
           size: 34px,
-          hieght: 40px,
+          height: 40px,
           width: 826px,
         },
       },
@@ -8431,7 +8431,7 @@ undefined
 
 **global.control.border**
 
-The border of the input. Expects \`object\`.
+The border of the textarea. Expects \`object\`.
 
 Defaults to
 

@@ -50,7 +50,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'global.control.border': {
-    description: 'The border of the input.',
+    description: 'The border of the textarea.',
     type: 'object',
     defaultValue: {
       width: '1px',

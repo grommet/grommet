@@ -277,7 +277,7 @@ Defaults to
       1: {
         medium: {
           size: 34px,
-          hieght: 40px,
+          height: 40px,
           width: 826px,
         },
       },
