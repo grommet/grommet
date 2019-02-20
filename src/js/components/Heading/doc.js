@@ -64,6 +64,7 @@ export const themeDoc = {
   ...themeDocUtils.breakpointStyle(
     'The possible breakpoints that could affect font-size and max-width',
   ),
+  ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
   'heading.extend': {
     description: 'Any additional style for Heading.',
     type: 'string | (props) => {}',
@@ -75,10 +76,10 @@ export const themeDoc = {
     type: 'object',
     defaultValue: `
       1: {
-        medium: { 
-          font-size: 34px,
-          line-hieght: 40px,
-          max-width: 826px,
+        medium: {
+          size: 34px,
+          hieght: 40px,
+          width: 826px,
         },
       },
       weight: 600,
@@ -86,6 +87,18 @@ export const themeDoc = {
         {
           family: undefined,
         }`,
+  },
+  'heading.weight': {
+    description:
+      'Default heading weight used unless a per level heading is defined.',
+    type: 'number',
+    defaultValue: 600,
+  },
+  'heading.font': {
+    description:
+      'Default heading font used unless a per level heading is defined.',
+    type: 'object',
+    defaultValue: undefined,
   },
   'heading.responsiveBreakpoint': {
     description:

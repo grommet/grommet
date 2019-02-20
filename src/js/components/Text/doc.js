@@ -64,9 +64,9 @@ is too long to all fit.`,
 };
 
 export const themeDoc = {
-  color: {
+  'global.colors.text': {
     description: 'The text color used for Text.',
-    type: 'string | { dark: string, light: string }',
+    type: 'object | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
   },
   text: {
