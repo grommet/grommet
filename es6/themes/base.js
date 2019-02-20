@@ -706,6 +706,16 @@ export var generate = function generate(baseSpacing, scale) {
       thumb: {// color: { dark: undefined, light: undefined },
       }
     },
+    rangeSelector: {
+      background: {
+        invert: {
+          color: 'light-4'
+        }
+      } // edge: {
+      //   type: undefined,
+      // },
+
+    },
     select: {
       // background: undefined,
       container: {// extend: undefined,

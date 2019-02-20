@@ -8,6 +8,8 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
+var _utils = require("grommet/utils");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -93,8 +95,103 @@ _defineProperty(SimpleRangeSelector, "defaultProps", {
   direction: 'horizontal'
 });
 
+var customThemeRangeSelector = (0, _utils.deepMerge)(_themes.grommet, {
+  global: {
+    spacing: '14px',
+    colors: {
+      control: 'accent-2'
+    }
+  },
+  rangeSelector: {
+    background: {
+      invert: {
+        color: 'brand'
+      }
+    },
+    edge: {
+      type: 'bar'
+    }
+  }
+});
+
+var ThemedRangeSelector =
+/*#__PURE__*/
+function (_Component2) {
+  _inheritsLoose(ThemedRangeSelector, _Component2);
+
+  function ThemedRangeSelector() {
+    var _this2;
+
+    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "state", {
+      values: [12, 16]
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onChange", function (values) {
+      return _this2.setState({
+        values: values
+      });
+    });
+
+    return _this2;
+  }
+
+  var _proto2 = ThemedRangeSelector.prototype;
+
+  _proto2.render = function render() {
+    var _this$props2 = this.props,
+        direction = _this$props2.direction,
+        rest = _objectWithoutPropertiesLoose(_this$props2, ["direction"]);
+
+    var values = this.state.values;
+    return _react.default.createElement(_grommet.Grommet, {
+      theme: customThemeRangeSelector
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, _react.default.createElement(_grommet.Stack, null, _react.default.createElement(_grommet.Box, {
+      direction: direction === 'vertical' ? 'column' : 'row',
+      justify: "between"
+    }, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function (value) {
+      return _react.default.createElement(_grommet.Box, {
+        key: value,
+        width: "xxsmall",
+        height: "xxsmall",
+        align: "center",
+        pad: "small",
+        border: false
+      }, _react.default.createElement(_grommet.Text, {
+        style: {
+          fontFamily: 'monospace'
+        }
+      }, value));
+    })), _react.default.createElement(_grommet.RangeSelector, _extends({
+      invert: true,
+      direction: direction,
+      min: 10,
+      max: 20,
+      size: "full",
+      values: values,
+      onChange: this.onChange
+    }, rest)))));
+  };
+
+  return ThemedRangeSelector;
+}(_react.Component);
+
+_defineProperty(ThemedRangeSelector, "defaultProps", {
+  direction: 'horizontal'
+});
+
 (0, _react2.storiesOf)('RangeSelector', module).add('Simple', function () {
   return _react.default.createElement(SimpleRangeSelector, null);
+}).add('Themed', function () {
+  return _react.default.createElement(ThemedRangeSelector, null);
 }).add('Step', function () {
   return _react.default.createElement(SimpleRangeSelector, {
     step: 2

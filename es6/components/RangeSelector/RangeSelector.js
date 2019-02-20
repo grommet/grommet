@@ -223,7 +223,7 @@ function (_Component) {
       },
       background: invert ? // preserve existing dark, instead of using darknes of this color
       {
-        color: color || 'light-4',
+        color: color || theme.rangeSelector.background.invert.color,
         opacity: opacity,
         dark: theme.dark
       } : undefined,
@@ -276,7 +276,7 @@ function (_Component) {
       },
       background: invert ? // preserve existing dark, instead of using darknes of this color
       {
-        color: color || 'light-4',
+        color: color || theme.rangeSelector.background.invert.color,
         opacity: opacity,
         dark: theme.dark
       } : undefined,

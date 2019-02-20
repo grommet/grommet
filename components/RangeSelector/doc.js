@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.doc = void 0;
+exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -30,3 +30,26 @@ var doc = function doc(RangeSelector) {
 };
 
 exports.doc = doc;
+var themeDoc = {
+  'global.colors.controls': {
+    description: 'The color foe the edge controls',
+    type: 'string | { dark: undefined, light: undefined }',
+    defaultValue: '{dark: accent-1, light: brand}'
+  },
+  'global.spacing': {
+    description: 'The size of the edge controls thumb.',
+    type: 'string',
+    defaultValue: '24px'
+  },
+  'rangeSelector.background.invert.color': {
+    description: 'The background color on an invert display',
+    type: 'string',
+    defaultValue: 'light-4'
+  },
+  'rangeSelector.edge.type': {
+    description: 'The edge style type',
+    type: 'string',
+    defaultValue: undefined
+  }
+};
+exports.themeDoc = themeDoc;

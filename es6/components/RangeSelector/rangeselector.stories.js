@@ -12,6 +12,7 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 
 var SimpleRangeSelector =
 /*#__PURE__*/
@@ -86,8 +87,103 @@ _defineProperty(SimpleRangeSelector, "defaultProps", {
   direction: 'horizontal'
 });
 
+var customThemeRangeSelector = deepMerge(grommet, {
+  global: {
+    spacing: '14px',
+    colors: {
+      control: 'accent-2'
+    }
+  },
+  rangeSelector: {
+    background: {
+      invert: {
+        color: 'brand'
+      }
+    },
+    edge: {
+      type: 'bar'
+    }
+  }
+});
+
+var ThemedRangeSelector =
+/*#__PURE__*/
+function (_Component2) {
+  _inheritsLoose(ThemedRangeSelector, _Component2);
+
+  function ThemedRangeSelector() {
+    var _this2;
+
+    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "state", {
+      values: [12, 16]
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onChange", function (values) {
+      return _this2.setState({
+        values: values
+      });
+    });
+
+    return _this2;
+  }
+
+  var _proto2 = ThemedRangeSelector.prototype;
+
+  _proto2.render = function render() {
+    var _this$props2 = this.props,
+        direction = _this$props2.direction,
+        rest = _objectWithoutPropertiesLoose(_this$props2, ["direction"]);
+
+    var values = this.state.values;
+    return React.createElement(Grommet, {
+      theme: customThemeRangeSelector
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, React.createElement(Stack, null, React.createElement(Box, {
+      direction: direction === 'vertical' ? 'column' : 'row',
+      justify: "between"
+    }, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function (value) {
+      return React.createElement(Box, {
+        key: value,
+        width: "xxsmall",
+        height: "xxsmall",
+        align: "center",
+        pad: "small",
+        border: false
+      }, React.createElement(Text, {
+        style: {
+          fontFamily: 'monospace'
+        }
+      }, value));
+    })), React.createElement(RangeSelector, _extends({
+      invert: true,
+      direction: direction,
+      min: 10,
+      max: 20,
+      size: "full",
+      values: values,
+      onChange: this.onChange
+    }, rest)))));
+  };
+
+  return ThemedRangeSelector;
+}(Component);
+
+_defineProperty(ThemedRangeSelector, "defaultProps", {
+  direction: 'horizontal'
+});
+
 storiesOf('RangeSelector', module).add('Simple', function () {
   return React.createElement(SimpleRangeSelector, null);
+}).add('Themed', function () {
+  return React.createElement(ThemedRangeSelector, null);
 }).add('Step', function () {
   return React.createElement(SimpleRangeSelector, {
     step: 2
