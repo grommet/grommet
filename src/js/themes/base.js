@@ -648,6 +648,13 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     select: {
       // background: undefined,
       container: {
+        box: {
+          align: 'start',
+          pad: 'small',
+        },
+        text: {
+          margin: 'none',
+        },
         // extend: undefined,
       },
       control: {
