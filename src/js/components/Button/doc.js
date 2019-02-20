@@ -11,6 +11,11 @@ export const doc = Button => {
   const DocumentedButton = describe(Button)
     .availableAt(getAvailableAtBadge('Button'))
     .description('A button.')
+    .details(
+      `You can provide a single function child that will be called with
+      'hover' and 'focus' keys. This allows you to customize the rendering
+      of the Button in those cases.`,
+    )
     .usage(
       `import { Button } from 'grommet';
 <Button primary={true} label='Label' />`,
