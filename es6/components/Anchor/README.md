@@ -266,6 +266,26 @@ Defaults to
 undefined
 ```
 
+**text.medium.size**
+
+The font size of the text label. Expects `string`.
+
+Defaults to
+
+```
+18px
+```
+
+**text.medium.height**
+
+The line height of the text label. Expects `string`.
+
+Defaults to
+
+```
+24px
+```
+
 **global.focus.border.color**
 
 The color around the component when in focus. Expects `string | { dark: string, light: string }`.
@@ -274,4 +294,26 @@ Defaults to
 
 ```
 focus
+```
+
+**global.edgeSize**
+
+The possible sizes for margin. Expects `object`.
+
+Defaults to
+
+```
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
 ```

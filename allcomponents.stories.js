@@ -104,6 +104,7 @@ function (_Component) {
     var _this2 = this;
 
     var _this$state = this.state,
+        background = _this$state.background,
         baseSize = _this$state.baseSize,
         checkBox = _this$state.checkBox,
         radioButton = _this$state.radioButton,
@@ -341,8 +342,17 @@ function (_Component) {
       src: "http://techslides.com/demos/sample-videos/small.3gp",
       type: "video/3gp"
     })))];
-    return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_grommet.Grommet, {
-      theme: _themes.grommet
+    return _react.default.createElement("div", {
+      style: {
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column'
+      }
+    }, _react.default.createElement(_grommet.Grommet, {
+      theme: _themes.grommet,
+      style: {
+        flex: '0 0 auto'
+      }
     }, _react.default.createElement(_grommet.Box, {
       direction: "row-responsive",
       gap: "medium",
@@ -363,6 +373,19 @@ function (_Component) {
       }
     })), _react.default.createElement(_grommet.Box, {
       basis: "small"
+    }, _react.default.createElement(_grommet.Select, {
+      plain: true,
+      placeholder: "background",
+      size: "small",
+      options: ['default', 'dark-1', 'light-1'],
+      value: background,
+      onChange: function onChange(event) {
+        return _this2.setState({
+          background: event.option
+        });
+      }
+    })), _react.default.createElement(_grommet.Box, {
+      basis: "small"
     }, _react.default.createElement(_grommet.RangeInput, {
       min: 16,
       max: 36,
@@ -376,10 +399,14 @@ function (_Component) {
     })), _react.default.createElement(_grommet.Text, {
       size: "small"
     }, baseSize + "px base spacing"))), _react.default.createElement(_grommet.Grommet, {
-      theme: theme
+      theme: theme,
+      style: {
+        flex: '1 1'
+      }
     }, _react.default.createElement(_grommet.Box, {
+      fill: true,
       pad: "medium",
-      background: theme.global.colors.background || theme.global.colors.white,
+      background: background || theme.global.colors.background,
       overflow: "auto"
     }, _grommet.Grid.available ? _react.default.createElement(_grommet.Grid, {
       columns: "small",

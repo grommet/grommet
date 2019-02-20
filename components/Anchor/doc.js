@@ -62,7 +62,17 @@ var themeDoc = _extends({
     description: 'Any additional style for the Anchor.',
     type: 'string | (props) => {}',
     defaultValue: undefined
+  },
+  'text.medium.size': {
+    description: 'The font size of the text label.',
+    type: 'string',
+    defaultValue: '18px'
+  },
+  'text.medium.height': {
+    description: 'The line height of the text label.',
+    type: 'string',
+    defaultValue: '24px'
   }
-}, _utils.themeDocUtils.focusStyle);
+}, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
 
 exports.themeDoc = themeDoc;

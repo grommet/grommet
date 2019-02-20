@@ -90,6 +90,7 @@ function (_Component) {
     var _this2 = this;
 
     var _this$state = this.state,
+        background = _this$state.background,
         baseSize = _this$state.baseSize,
         checkBox = _this$state.checkBox,
         radioButton = _this$state.radioButton,
@@ -327,8 +328,17 @@ function (_Component) {
       src: "http://techslides.com/demos/sample-videos/small.3gp",
       type: "video/3gp"
     })))];
-    return React.createElement(React.Fragment, null, React.createElement(Grommet, {
-      theme: grommet
+    return React.createElement("div", {
+      style: {
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column'
+      }
+    }, React.createElement(Grommet, {
+      theme: grommet,
+      style: {
+        flex: '0 0 auto'
+      }
     }, React.createElement(Box, {
       direction: "row-responsive",
       gap: "medium",
@@ -349,6 +359,19 @@ function (_Component) {
       }
     })), React.createElement(Box, {
       basis: "small"
+    }, React.createElement(Select, {
+      plain: true,
+      placeholder: "background",
+      size: "small",
+      options: ['default', 'dark-1', 'light-1'],
+      value: background,
+      onChange: function onChange(event) {
+        return _this2.setState({
+          background: event.option
+        });
+      }
+    })), React.createElement(Box, {
+      basis: "small"
     }, React.createElement(RangeInput, {
       min: 16,
       max: 36,
@@ -362,10 +385,14 @@ function (_Component) {
     })), React.createElement(Text, {
       size: "small"
     }, baseSize + "px base spacing"))), React.createElement(Grommet, {
-      theme: theme
+      theme: theme,
+      style: {
+        flex: '1 1'
+      }
     }, React.createElement(Box, {
+      fill: true,
       pad: "medium",
-      background: theme.global.colors.background || theme.global.colors.white,
+      background: background || theme.global.colors.background,
       overflow: "auto"
     }, Grid.available ? React.createElement(Grid, {
       columns: "small",
