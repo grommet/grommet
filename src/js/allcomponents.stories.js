@@ -285,8 +285,10 @@ class Components extends Component {
     ];
 
     return (
-      <React.Fragment>
-        <Grommet theme={grommet}>
+      <div
+        style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}
+      >
+        <Grommet theme={grommet} style={{ flex: '0 0 auto' }}>
           <Box
             direction="row-responsive"
             gap="medium"
@@ -327,8 +329,9 @@ class Components extends Component {
             <Text size="small">{`${baseSize}px base spacing`}</Text>
           </Box>
         </Grommet>
-        <Grommet theme={theme}>
+        <Grommet theme={theme} style={{ flex: '1 1' }}>
           <Box
+            fill
             pad="medium"
             background={background || theme.global.colors.background}
             overflow="auto"
@@ -344,7 +347,7 @@ class Components extends Component {
             )}
           </Box>
         </Grommet>
-      </React.Fragment>
+      </div>
     );
   }
 }
