@@ -16,6 +16,6 @@ export interface DataTableProps {
   sortable?: boolean;
 }
 
-declare const DataTable: React.ComponentType<DataTableProps & JSX.IntrinsicElements['table']>;
+declare const DataTable: React.ComponentClass<DataTableProps & JSX.IntrinsicElements['table']>;
 
 export { DataTable };

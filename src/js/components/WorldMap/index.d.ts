@@ -12,6 +12,6 @@ export interface WorldMapProps {
   hoverColor?: string | {dark?: string,light?: string};
 }
 
-declare const WorldMap: React.ComponentType<WorldMapProps & JSX.IntrinsicElements['svg']>;
+declare const WorldMap: React.ComponentClass<WorldMapProps & JSX.IntrinsicElements['svg']>;
 
 export { WorldMap };

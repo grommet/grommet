@@ -4,10 +4,10 @@ import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Video } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-const SimpleVideo = () => (
+const SimpleVideo = props => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <Video>
+      <Video {...props}>
         <source
           src="http://techslides.com/demos/sample-videos/small.webm"
           type="video/webm"
@@ -29,4 +29,6 @@ const SimpleVideo = () => (
   </Grommet>
 );
 
-storiesOf('Video', module).add('Simple Video', () => <SimpleVideo />);
+storiesOf('Video', module)
+  .add('Simple', () => <SimpleVideo />)
+  .add('Controls Below', () => <SimpleVideo controls="below" />);

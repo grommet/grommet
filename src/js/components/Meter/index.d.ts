@@ -13,6 +13,6 @@ export interface MeterProps {
   values?: {color?: string,highlight?: boolean,label: string,onClick?: ((...args: any[]) => any),onHover?: ((...args: any[]) => any),value: number}[];
 }
 
-declare const Meter: React.ComponentType<MeterProps>;
+declare const Meter: React.ComponentClass<MeterProps>;
 
 export { Meter };

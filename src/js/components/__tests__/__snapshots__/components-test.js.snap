@@ -530,13 +530,15 @@ string",
         "name": "height",
       },
       Object {
+        "defaultValue": "stretch",
         "description": "How to align the contents along the main axis.",
-        "format": "start
-center
+        "format": "around
 between
-around
+center
+end
 evenly
-end",
+start
+stretch",
         "name": "justify",
       },
       Object {

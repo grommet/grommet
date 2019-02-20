@@ -13,6 +13,6 @@ export interface AccordionProps {
   messages?: {tabContents?: string};
 }
 
-declare const Accordion: React.ComponentType<AccordionProps & JSX.IntrinsicElements['div']>;
+declare const Accordion: React.ComponentClass<AccordionProps & JSX.IntrinsicElements['div']>;
 
 export { Accordion };

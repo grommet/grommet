@@ -46,6 +46,7 @@ describe('Menu', () => {
         {['start', 'center', 'end', 'between', 'around', 'stretch'].map(
           justifyContent => (
             <Menu
+              key={justifyContent}
               label={`${justifyContent} Menu`}
               messages={{ openMenu: 'Abrir Menu' }}
               items={[{ label: 'Item 1' }, { label: 'Item 2' }]}

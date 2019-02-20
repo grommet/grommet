@@ -64,9 +64,10 @@ const customlevel = deepMerge(grommet, {
         },
       },
     },
+    extend: props => `color: ${props.theme.global.colors.brand}`,
   },
 });
-const CustomLevel = () => (
+const CustomHeading = () => (
   <Grommet theme={customlevel}>
     <Heading level={5}>Heading level 5</Heading>
   </Grommet>
@@ -75,4 +76,4 @@ const CustomLevel = () => (
 storiesOf('Heading', module)
   .add('All', () => <All />)
   .add('Color', () => <Color />)
-  .add('Custom Level', () => <CustomLevel />);
+  .add('Custom Heading', () => <CustomHeading />);

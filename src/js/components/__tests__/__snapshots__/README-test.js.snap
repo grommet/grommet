@@ -493,6 +493,26 @@ Defaults to
 undefined
 \`\`\`
 
+**text.medium.size**
+
+The font size of the text label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+
+**text.medium.height**
+
+The line height of the text label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
 **global.focus.border.color**
 
 The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
@@ -501,6 +521,28 @@ Defaults to
 
 \`\`\`
 focus
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for margin. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
 \`\`\`
 ",
   "Box": "## Box
@@ -890,15 +932,16 @@ string
 
 **justify**
 
-How to align the contents along the main axis.
+How to align the contents along the main axis. Defaults to \`stretch\`.
 
 \`\`\`
-start
-center
-between
 around
-evenly
+between
+center
 end
+evenly
+start
+stretch
 \`\`\`
 
 **overflow**
@@ -1142,7 +1185,7 @@ Defaults to
 
 **global.colors.text**
 
-The text color used inside the Box. Expects \`string | { dark: string, light: string }\`.
+The text color when the Box changes the background color Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -2332,6 +2375,38 @@ Defaults to
 \`\`\`
 undefined
 \`\`\`
+
+**global.colors.icon**
+
+The color used for Carousel icons. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for margin. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+\`\`\`
 ",
   "Chart": "## Chart
 A graphical chart.
@@ -2611,30 +2686,7 @@ color options used for Chart fill area. Expects \`object\`.
 Defaults to
 
 \`\`\`
-  
-      active: rgba(221, 221, 221, 0.5),
-      black: '#000000',
-      border: {
-        dark: rgba(255, 255, 255, 0.33),
-        light: rgba(0, 0, 0, 0.33),
-      },
-      brand: brandColor,
-      control: {
-        dark: 'accent-1',
-        light: 'brand',
-      },
-      focus: focusColor,
-      placeholder: '#AAAAAA',
-      selected: 'brand',
-      text: {
-        dark: '#f8f8f8',
-        light: '#444444',
-      },
-      icon: {
-        dark: '#f8f8f8',
-        light: '#666666',
-      },
-      white: '#FFFFFF',
+accent-1
 \`\`\`
 
 **global.edgeSize**
@@ -4422,7 +4474,7 @@ undefined
 
 **global.edgeSize**
 
-The possible sizes for the grid gap. Expects \`object\`.
+The possible sizes for the grid margin and gap. Expects \`object\`.
 
 Defaults to
 
@@ -4750,6 +4802,28 @@ Defaults to
   }
 \`\`\`
 
+**global.edgeSize**
+
+The possible sizes for margin. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+\`\`\`
+
 **heading.extend**
 
 Any additional style for Heading. Expects \`string | (props) => {}\`.
@@ -4769,10 +4843,10 @@ Defaults to
 \`\`\`
 
       1: {
-        medium: { 
-          font-size: 34px,
-          line-hieght: 40px,
-          max-width: 826px,
+        medium: {
+          size: 34px,
+          height: 40px,
+          width: 826px,
         },
       },
       weight: 600,
@@ -4780,6 +4854,26 @@ Defaults to
         {
           family: undefined,
         }
+\`\`\`
+
+**heading.weight**
+
+Default heading weight used unless a per level heading is defined. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+600
+\`\`\`
+
+**heading.font**
+
+Default heading font used unless a per level heading is defined. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **heading.responsiveBreakpoint**
@@ -8243,9 +8337,9 @@ span
 \`\`\`
 ## Theme
   
-**color**
+**global.colors.text**
 
-The text color used for Text. Expects \`string | { dark: string, light: string }\`.
+The text color used for Text. Expects \`object | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -8423,6 +8517,26 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.control.border**
+
+The border of the textarea. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
+\`\`\`
+
+**global.colors.border**
+
+The color of the borders Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
 \`\`\`
 
 **global.focus.border.color**
@@ -8734,6 +8848,26 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.control.border**
+
+The border of the input. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
+\`\`\`
+
+**global.colors.border**
+
+The color of the borders Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
 \`\`\`
 
 **global.focus.border.color**
