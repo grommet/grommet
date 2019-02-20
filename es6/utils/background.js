@@ -67,7 +67,7 @@ export var backgroundStyle = function backgroundStyle(backgroundArg, theme, text
         color = 'inherit';
       }
 
-      styles.push(css(["background-image:", ";background-repeat:no-repeat;background-position:", ";background-size:cover;color:", ";"], background.image, background.position || 'center center', color));
+      styles.push(css(["background-image:", ";background-repeat:", ";background-position:", ";background-size:", ";color:", ";"], background.image, background.repeat || 'no-repeat', background.position || 'center center', background.size || 'cover', color));
     }
 
     if (background.color) {
