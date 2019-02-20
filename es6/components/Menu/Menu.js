@@ -132,9 +132,10 @@ function (_Component) {
         label = _this$props.label,
         messages = _this$props.messages,
         onKeyDown = _this$props.onKeyDown,
+        plain = _this$props.plain,
         size = _this$props.size,
         theme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "disabled", "dropAlign", "dropBackground", "dropTarget", "forwardRef", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "size", "theme"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "disabled", "dropAlign", "dropBackground", "dropTarget", "forwardRef", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "plain", "size", "theme"]);
 
     var _this$state3 = this.state,
         activeItemIndex = _this$state3.activeItemIndex,
@@ -157,8 +158,13 @@ function (_Component) {
       flex: false
     }, React.createElement(Button, {
       a11yTitle: messages.closeMenu || 'Close Menu',
+      plain: plain,
       onClick: this.onDropClose
-    }, content));
+    }, typeof content === 'function' ? function (props) {
+      return content(_extends({}, props, {
+        drop: true
+      }));
+    } : content));
     return React.createElement(Keyboard, {
       onEnter: this.onSelectMenuItem,
       onSpace: this.onSelectMenuItem,
@@ -174,6 +180,7 @@ function (_Component) {
       disabled: disabled,
       dropAlign: dropAlign,
       dropTarget: dropTarget,
+      plain: plain,
       open: open,
       onOpen: function onOpen() {
         return _this2.setState({

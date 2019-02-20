@@ -13,7 +13,7 @@ var VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 var HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
 var doc = function doc(Menu) {
-  var DocumentedMenu = (0, _reactDesc.describe)(Menu).availableAt((0, _utils.getAvailableAtBadge)('Menu')).description("A control that opens a Drop containing plain Buttons. The labels\n      and behavior of the contained Buttons are described via the `items`\n      property.").usage("import { Menu } from 'grommet';\n<Menu />").intrinsicElement('button');
+  var DocumentedMenu = (0, _reactDesc.describe)(Menu).availableAt((0, _utils.getAvailableAtBadge)('Menu')).description("A control that opens a Drop containing plain Buttons.").details("The labels and behavior of the contained Buttons are described\n      via the `items` property.\n      You can provide a single function child that will be called with\n      'hover', 'focus', and 'drop' keys. This allows you to customize\n      the rendering of the Menu button in those cases.").usage("import { Menu } from 'grommet';\n<Menu />").intrinsicElement('button');
   DocumentedMenu.propTypes = _extends({}, _utils.genericProps, {
     disabled: _reactDesc.PropTypes.bool.description('Whether the menu should be disabled.').defaultValue(false),
     dropAlign: _reactDesc.PropTypes.shape({
