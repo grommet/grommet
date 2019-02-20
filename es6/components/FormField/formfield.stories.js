@@ -10,6 +10,7 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Box, CheckBox, FormField, Select, TextArea, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 var allSuggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
 });
@@ -217,6 +218,46 @@ var FormFieldHelpError = function FormFieldHelpError(props) {
   }))));
 };
 
+var customFormFieldTheme = {
+  global: {
+    font: {
+      size: '13px'
+    },
+    input: {
+      weight: 400
+    }
+  },
+  formField: {
+    label: {
+      color: 'dark-3',
+      size: 'xsmall',
+      margin: {
+        vertical: '0',
+        bottom: 'small',
+        horizontal: '0'
+      },
+      weight: 600
+    },
+    border: false,
+    margin: 0
+  }
+};
+
+var CustomFormField = function CustomFormField() {
+  return React.createElement(Grommet, {
+    theme: deepMerge(grommet, customFormFieldTheme)
+  }, React.createElement(Box, {
+    align: "center",
+    pad: "large"
+  }, React.createElement(FormField, {
+    label: "Label",
+    htmlFor: "text-area"
+  }, React.createElement(TextArea, {
+    id: "text-area",
+    placeholder: "placeholder"
+  }))));
+};
+
 storiesOf('FormField', module).add('TextInput', function () {
   return React.createElement(FormFieldTextInput, null);
 }).add('TextArea', function () {
@@ -229,4 +270,6 @@ storiesOf('FormField', module).add('TextInput', function () {
   return React.createElement(FormFieldToggle, null);
 }).add('Help and error', function () {
   return React.createElement(FormFieldHelpError, null);
+}).add('Custom Theme', function () {
+  return React.createElement(CustomFormField, null);
 });

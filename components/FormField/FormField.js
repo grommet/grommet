@@ -7,7 +7,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _recompose = require("recompose");
 
-var _styledComponents = require("styled-components");
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _defaultProps = require("../../default-props");
 
@@ -57,6 +57,13 @@ var validateField = function validateField(required, validate, messages) {
   };
 };
 
+var FormFieldBox = (0, _styledComponents.default)(_Box.Box).withConfig({
+  displayName: "FormField__FormFieldBox",
+  componentId: "m9hood-0"
+})(["", ""], function (props) {
+  return props.theme.formField.extend;
+});
+
 var FormField =
 /*#__PURE__*/
 function (_Component) {
@@ -78,6 +85,7 @@ function (_Component) {
           required = _this$props.required,
           rest = _objectWithoutPropertiesLoose(_this$props, ["name", "component", "required"]);
 
+      delete rest.className;
       var Input = component || _TextInput.TextInput;
 
       if (Input === _CheckBox.CheckBox) {
@@ -111,6 +119,7 @@ function (_Component) {
 
     var _this$props2 = this.props,
         children = _this$props2.children,
+        className = _this$props2.className,
         component = _this$props2.component,
         error = _this$props2.error,
         focus = _this$props2.focus,
@@ -143,12 +152,7 @@ function (_Component) {
       }
 
       if (pad) {
-        contents = _react.default.createElement(_Box.Box, {
-          pad: {
-            horizontal: 'small',
-            bottom: 'small'
-          }
-        }, contents);
+        contents = _react.default.createElement(_Box.Box, formField.content, contents);
       }
 
       var borderColor;
@@ -204,33 +208,21 @@ function (_Component) {
         }
       }
 
-      return _react.default.createElement(_Box.Box, {
+      return _react.default.createElement(FormFieldBox, {
+        className: className,
         border: border && border.position === 'outer' ? _extends({}, border, {
           color: borderColor
         }) : undefined,
-        margin: abut ? undefined : {
-          bottom: 'small'
-        },
+        margin: abut ? undefined : _extends({}, formField.margin),
         style: outerStyle
-      }, label && component !== _CheckBox.CheckBox || help ? _react.default.createElement(_Box.Box, {
-        margin: {
-          vertical: 'xsmall',
-          horizontal: 'small'
-        },
-        gap: "xsmall"
-      }, label && component !== _CheckBox.CheckBox ? _react.default.createElement(_Text.Text, _extends({
+      }, label && component !== _CheckBox.CheckBox || help ? _react.default.createElement(_react.default.Fragment, null, label && component !== _CheckBox.CheckBox && _react.default.createElement(_Text.Text, _extends({
         as: "label",
         htmlFor: htmlFor
-      }, formField.label), label) : undefined, help ? _react.default.createElement(_Text.Text, _extends({}, formField.help, {
+      }, formField.label), label), help && _react.default.createElement(_Text.Text, _extends({}, formField.help, {
         color: formField.help.color[theme.dark ? 'dark' : 'light']
-      }), help) : undefined) : undefined, contents, normalizedError ? _react.default.createElement(_Box.Box, {
-        margin: {
-          vertical: 'xsmall',
-          horizontal: 'small'
-        }
-      }, _react.default.createElement(_Text.Text, _extends({}, formField.error, {
+      }), help)) : undefined, contents, normalizedError && _react.default.createElement(_Text.Text, _extends({}, formField.error, {
         color: formField.error.color[theme.dark ? 'dark' : 'light']
-      }), normalizedError)) : undefined);
+      }), normalizedError));
     });
   };
 

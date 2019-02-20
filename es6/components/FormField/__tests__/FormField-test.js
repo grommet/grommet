@@ -1,9 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import styled from 'styled-components';
 import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
 import { FormField } from '..';
 import { TextInput } from '../../TextInput';
+var CustomFormField = styled(FormField).withConfig({
+  displayName: "FormField-test__CustomFormField",
+  componentId: "sc-1ddfx0c-0"
+})(["font-size:40px;"]);
 test('renders', function () {
   var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, null), React.createElement(FormField, null, React.createElement(TextInput, null))));
   var tree = component.toJSON();
@@ -32,6 +37,13 @@ test('renders error', function () {
 });
 test('renders htmlFor', function () {
   var component = renderer.create(React.createElement(Grommet, null, React.createElement(FormField, {
+    htmlFor: "test-id"
+  })));
+  var tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+test('renders custom formfield', function () {
+  var component = renderer.create(React.createElement(Grommet, null, React.createElement(CustomFormField, {
     htmlFor: "test-id"
   })));
   var tree = component.toJSON();

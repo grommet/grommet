@@ -534,19 +534,41 @@ export var generate = function generate(baseSpacing, scale) {
           }
         }
       },
+      content: {
+        pad: {
+          horizontal: 'small',
+          bottom: 'small'
+        }
+      },
       error: {
+        margin: {
+          vertical: 'xsmall',
+          horizontal: 'small'
+        },
         color: {
           dark: 'status-critical',
           light: 'status-critical'
         }
       },
       help: {
+        margin: {
+          left: 'small'
+        },
         color: {
           dark: 'dark-3',
           light: 'dark-3'
         }
       },
-      label: {}
+      label: {
+        margin: {
+          vertical: 'xsmall',
+          horizontal: 'small'
+        }
+      },
+      margin: {
+        bottom: 'small'
+      } // extend: undefined,
+
     },
     grommet: {},
     heading: {

@@ -8,6 +8,8 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
+var _utils = require("grommet/utils");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -225,6 +227,46 @@ var FormFieldHelpError = function FormFieldHelpError(props) {
   }))));
 };
 
+var customFormFieldTheme = {
+  global: {
+    font: {
+      size: '13px'
+    },
+    input: {
+      weight: 400
+    }
+  },
+  formField: {
+    label: {
+      color: 'dark-3',
+      size: 'xsmall',
+      margin: {
+        vertical: '0',
+        bottom: 'small',
+        horizontal: '0'
+      },
+      weight: 600
+    },
+    border: false,
+    margin: 0
+  }
+};
+
+var CustomFormField = function CustomFormField() {
+  return _react.default.createElement(_grommet.Grommet, {
+    theme: (0, _utils.deepMerge)(_themes.grommet, customFormFieldTheme)
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large"
+  }, _react.default.createElement(_grommet.FormField, {
+    label: "Label",
+    htmlFor: "text-area"
+  }, _react.default.createElement(_grommet.TextArea, {
+    id: "text-area",
+    placeholder: "placeholder"
+  }))));
+};
+
 (0, _react2.storiesOf)('FormField', module).add('TextInput', function () {
   return _react.default.createElement(FormFieldTextInput, null);
 }).add('TextArea', function () {
@@ -237,4 +279,6 @@ var FormFieldHelpError = function FormFieldHelpError(props) {
   return _react.default.createElement(FormFieldToggle, null);
 }).add('Help and error', function () {
   return _react.default.createElement(FormFieldHelpError, null);
+}).add('Custom Theme', function () {
+  return _react.default.createElement(CustomFormField, null);
 });
