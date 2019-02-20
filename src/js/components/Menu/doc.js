@@ -8,10 +8,13 @@ const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 export const doc = Menu => {
   const DocumentedMenu = describe(Menu)
     .availableAt(getAvailableAtBadge('Menu'))
-    .description(
-      `A control that opens a Drop containing plain Buttons. The labels
-      and behavior of the contained Buttons are described via the \`items\`
-      property.`,
+    .description(`A control that opens a Drop containing plain Buttons.`)
+    .details(
+      `The labels and behavior of the contained Buttons are described
+      via the \`items\` property.
+      You can provide a single function child that will be called with
+      'hover', 'focus', and 'drop' keys. This allows you to customize
+      the rendering of the Menu button in those cases.`,
     )
     .usage(
       `import { Menu } from 'grommet';
