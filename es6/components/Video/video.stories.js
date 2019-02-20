@@ -3,13 +3,13 @@ import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Video } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-var SimpleVideo = function SimpleVideo() {
+var SimpleVideo = function SimpleVideo(props) {
   return React.createElement(Grommet, {
     theme: grommet
   }, React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Video, null, React.createElement("source", {
+  }, React.createElement(Video, props, React.createElement("source", {
     src: "http://techslides.com/demos/sample-videos/small.webm",
     type: "video/webm"
   }), React.createElement("source", {
@@ -24,6 +24,10 @@ var SimpleVideo = function SimpleVideo() {
   }))));
 };
 
-storiesOf('Video', module).add('Simple Video', function () {
+storiesOf('Video', module).add('Simple', function () {
   return React.createElement(SimpleVideo, null);
+}).add('Controls Below', function () {
+  return React.createElement(SimpleVideo, {
+    controls: "below"
+  });
 });

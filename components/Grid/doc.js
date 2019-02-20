@@ -54,6 +54,6 @@ var themeDoc = _extends({
     type: 'string | (props) => {}',
     defaultValue: undefined
   }
-}, _utils.themeDocUtils.edgeStyle('The possible sizes for the grid gap.'));
+}, _utils.themeDocUtils.edgeStyle('The possible sizes for the grid margin and gap.'));
 
 exports.themeDoc = themeDoc;

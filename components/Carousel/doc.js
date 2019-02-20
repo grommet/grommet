@@ -19,7 +19,8 @@ var doc = function doc(Carousel) {
 };
 
 exports.doc = doc;
-var themeDoc = {
+
+var themeDoc = _extends({
   'carousel.icons.next': {
     description: 'The icon to use for the next image navigation control.',
     type: 'element',
@@ -39,6 +40,15 @@ var themeDoc = {
     description: 'The color used for Carousel icons.',
     type: 'string',
     defaultValue: undefined
+  },
+  'global.colors.icon': {
+    description: 'The color used for Carousel icons.',
+    type: 'object',
+    defaultValue: {
+      dark: '#f8f8f8',
+      light: '#666666'
+    }
   }
-};
+}, _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
+
 exports.themeDoc = themeDoc;

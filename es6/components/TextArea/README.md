@@ -103,6 +103,26 @@ Defaults to
 undefined
 ```
 
+**global.control.border**
+
+The border of the textarea. Expects `object`.
+
+Defaults to
+
+```
+[object Object]
+```
+
+**global.colors.border**
+
+The color of the borders Expects `object`.
+
+Defaults to
+
+```
+[object Object]
+```
+
 **global.focus.border.color**
 
 The color around the component when in focus. Expects `string | { dark: string, light: string }`.
