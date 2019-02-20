@@ -659,6 +659,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
       },
     },
+    rangeSelector: {
+      background: {
+        invert: {
+          color: 'light-4',
+        },
+      },
+      // edge: {
+      //   type: undefined,
+      // },
+    },
     select: {
       // background: undefined,
       container: {
