@@ -43,7 +43,7 @@
   },
   "overrides": [
     {
-      "files": ["*.stories.js"],
+      "files": ["*.stories.js", "**/stories/**"],
       "rules": {
         "import/no-unresolved": 0,
         "import/extensions": 0,
