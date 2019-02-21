@@ -45,19 +45,19 @@ class Button extends Component {
 
   state = {};
 
-  onOver = event => {
-    const { onOver } = this.props;
+  onMouseOver = event => {
+    const { onMouseOver } = this.props;
     this.setState({ hover: true });
-    if (onOver) {
-      onOver(event);
+    if (onMouseOver) {
+      onMouseOver(event);
     }
   };
 
-  onOut = event => {
-    const { onOut } = this.props;
+  onMouseOut = event => {
+    const { onMouseOut } = this.props;
     this.setState({ hover: false });
-    if (onOut) {
-      onOut(event);
+    if (onMouseOut) {
+      onMouseOut(event);
     }
   };
 
@@ -129,8 +129,8 @@ class Button extends Component {
         focus={focus}
         href={href}
         onClick={onClick}
-        onMouseOver={this.onOver}
-        onMouseOut={this.onOut}
+        onMouseOver={this.onMouseOver}
+        onMouseOut={this.onMouseOut}
         plain={
           typeof plain !== 'undefined'
             ? plain
