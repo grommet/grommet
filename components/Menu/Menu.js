@@ -228,7 +228,7 @@ function (_Component) {
             },
             active: activeItemIndex === index,
             hoverIndicator: "background",
-            disabled: !item.onClick && !item.href,
+            disabled: item.disabled,
             onClick: function onClick() {
               item.onClick.apply(item, arguments);
 

@@ -26,6 +26,9 @@ var SimpleMenu = function SimpleMenu() {
     }, {
       label: 'Abort',
       onClick: function onClick() {}
+    }, {
+      label: 'Disabled',
+      disabled: true
     }]
   })));
 };
