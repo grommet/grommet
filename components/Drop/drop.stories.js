@@ -368,9 +368,12 @@ function (_Component4) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "boxRef", (0, _react.createRef)());
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "innerBoxRef", (0, _react.createRef)());
+
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "state", {
       openDrop: false,
-      openInnerDrop: false
+      openInnerDrop: false,
+      interactedWithInnerButton: false
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "onCloseDrop", function () {
@@ -397,7 +400,8 @@ function (_Component4) {
 
     var _this$state = this.state,
         openDrop = _this$state.openDrop,
-        openInnerDrop = _this$state.openInnerDrop;
+        openInnerDrop = _this$state.openInnerDrop,
+        interactedWithInnerButton = _this$state.interactedWithInnerButton;
     return _react.default.createElement(_grommet.Grommet, {
       theme: _themes.grommet,
       full: true
@@ -414,8 +418,9 @@ function (_Component4) {
       target: this.boxRef.current,
       onClickOutside: this.onCloseDrop,
       onEsc: this.onCloseDrop
-    }, !openInnerDrop && _react.default.createElement(_grommet.Box, {
-      pad: "large"
+    }, _react.default.createElement(_grommet.Box, {
+      pad: "large",
+      ref: this.innerBoxRef
     }, _react.default.createElement(_grommet.Button, {
       primary: true,
       label: "Click me again",
@@ -424,9 +429,33 @@ function (_Component4) {
           openInnerDrop: true
         });
       }
-    })), openInnerDrop && _react.default.createElement(_grommet.Box, {
+    })), openInnerDrop && _react.default.createElement(_grommet.Drop, {
+      target: this.innerBoxRef.current,
+      onClickOutside: function onClickOutside() {
+        return _this6.setState({
+          openInnerDrop: false
+        });
+      },
+      onEsc: function onEsc() {
+        return _this6.setState({
+          openInnerDrop: false
+        });
+      },
+      align: {
+        top: 'bottom',
+        right: 'right'
+      }
+    }, _react.default.createElement(_grommet.Box, {
       pad: "large"
-    }, "You can click outside now"))));
+    }, _react.default.createElement(_grommet.Button, {
+      primary: true,
+      label: interactedWithInnerButton ? 'Good job!' : 'You can interact with me',
+      onClick: function onClick() {
+        return _this6.setState({
+          interactedWithInnerButton: true
+        });
+      }
+    }))))));
   };
 
   return ProgressiveDrop;

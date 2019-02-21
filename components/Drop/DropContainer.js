@@ -244,6 +244,22 @@ function (_Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "preventClickBubbling", function (event) {
+      event.stopPropagation();
+      /**
+       * the React event system actually listens to all events at the top level
+       * and then handles its own bubbling / capturing virtually. This means that
+       * even if we call stopPropagation, it only affects the React synthetic
+       * event, and the native event still bubbles upward.
+       * Any code that uses native events (like the close listener in this class)
+       * will still get the bubbled event, unless we also call
+       * event.nativeEvent.stopImmediatePropagation, which bridges the gap from
+       * React synthetic event to native DOM event.
+       */
+
+      event.nativeEvent.stopImmediatePropagation();
+    });
+
     return _this;
   }
 
@@ -291,7 +307,8 @@ function (_Component) {
       elevation: !plain ? elevation || theme.global.drop.shadowSize || 'small' : undefined,
       tabIndex: "-1",
       ref: this.dropRef,
-      alignProp: alignProp
+      alignProp: alignProp,
+      onMouseDown: this.preventClickBubbling
     }, rest), children);
 
     if (theme.global.drop.background) {

@@ -356,9 +356,12 @@ function (_Component4) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "boxRef", createRef());
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "innerBoxRef", createRef());
+
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "state", {
       openDrop: false,
-      openInnerDrop: false
+      openInnerDrop: false,
+      interactedWithInnerButton: false
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "onCloseDrop", function () {
@@ -385,7 +388,8 @@ function (_Component4) {
 
     var _this$state = this.state,
         openDrop = _this$state.openDrop,
-        openInnerDrop = _this$state.openInnerDrop;
+        openInnerDrop = _this$state.openInnerDrop,
+        interactedWithInnerButton = _this$state.interactedWithInnerButton;
     return React.createElement(Grommet, {
       theme: grommet,
       full: true
@@ -402,8 +406,9 @@ function (_Component4) {
       target: this.boxRef.current,
       onClickOutside: this.onCloseDrop,
       onEsc: this.onCloseDrop
-    }, !openInnerDrop && React.createElement(Box, {
-      pad: "large"
+    }, React.createElement(Box, {
+      pad: "large",
+      ref: this.innerBoxRef
     }, React.createElement(Button, {
       primary: true,
       label: "Click me again",
@@ -412,9 +417,33 @@ function (_Component4) {
           openInnerDrop: true
         });
       }
-    })), openInnerDrop && React.createElement(Box, {
+    })), openInnerDrop && React.createElement(Drop, {
+      target: this.innerBoxRef.current,
+      onClickOutside: function onClickOutside() {
+        return _this6.setState({
+          openInnerDrop: false
+        });
+      },
+      onEsc: function onEsc() {
+        return _this6.setState({
+          openInnerDrop: false
+        });
+      },
+      align: {
+        top: 'bottom',
+        right: 'right'
+      }
+    }, React.createElement(Box, {
       pad: "large"
-    }, "You can click outside now"))));
+    }, React.createElement(Button, {
+      primary: true,
+      label: interactedWithInnerButton ? 'Good job!' : 'You can interact with me',
+      onClick: function onClick() {
+        return _this6.setState({
+          interactedWithInnerButton: true
+        });
+      }
+    }))))));
   };
 
   return ProgressiveDrop;
