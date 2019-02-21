@@ -48,27 +48,27 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onOver", function (event) {
-      var onOver = _this.props.onOver;
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMouseOver", function (event) {
+      var onMouseOver = _this.props.onMouseOver;
 
       _this.setState({
         hover: true
       });
 
-      if (onOver) {
-        onOver(event);
+      if (onMouseOver) {
+        onMouseOver(event);
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onOut", function (event) {
-      var onOut = _this.props.onOut;
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMouseOut", function (event) {
+      var onMouseOut = _this.props.onMouseOut;
 
       _this.setState({
         hover: false
       });
 
-      if (onOut) {
-        onOut(event);
+      if (onMouseOut) {
+        onMouseOut(event);
       }
     });
 
@@ -151,8 +151,8 @@ function (_Component) {
       focus: focus,
       href: href,
       onClick: onClick,
-      onMouseOver: this.onOver,
-      onMouseOut: this.onOut,
+      onMouseOver: this.onMouseOver,
+      onMouseOut: this.onMouseOut,
       plain: typeof plain !== 'undefined' ? plain : _react.Children.count(children) > 0 || icon && !label,
       primary: primary,
       type: !href ? type : undefined
