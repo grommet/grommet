@@ -410,17 +410,19 @@ var customTheme = deepMerge(grommet, {
   },
   tab: {
     active: {
-      background: 'dark-1'
+      background: 'dark-1',
+      color: 'accent-1'
     },
     background: 'dark-3',
+    border: undefined,
+    color: 'white',
     hover: {
       background: 'dark-1'
     },
-    border: undefined,
     margin: undefined,
     pad: {
       bottom: undefined,
-      horizontal: 'xsmall'
+      horizontal: 'small'
     },
     extend: function extend(_ref3) {
       var theme = _ref3.theme;
@@ -429,6 +431,7 @@ var customTheme = deepMerge(grommet, {
   },
   tabs: {
     background: 'dark-3',
+    gap: 'medium',
     header: {
       background: 'dark-2',
       extend: function extend(_ref4) {
@@ -436,7 +439,12 @@ var customTheme = deepMerge(grommet, {
         return css(["padding:", ";box-shadow:", ";"], theme.global.edgeSize.small, theme.global.elevation.light.medium);
       }
     },
-    gap: 'medium'
+    panel: {
+      extend: function extend(_ref5) {
+        var theme = _ref5.theme;
+        return css(["padding:", ";box-shadow:", ";"], theme.global.edgeSize.large, theme.global.elevation.light.medium);
+      }
+    }
   }
 });
 
@@ -465,7 +473,9 @@ var CustomTabs = function CustomTabs() {
     label: "Card Number"
   }, React.createElement(TextInput, {
     placeholder: "Enter your card number..."
-  })))));
+  }))), React.createElement(Tab, {
+    title: "Simple Tab"
+  }, "This Tab has a different styling than the RichTabTitle (e.g tab.active.color)")));
 };
 
 var ScrollableTabs = function ScrollableTabs() {
@@ -496,17 +506,17 @@ var ScrollableTabs = function ScrollableTabs() {
   }))))));
 };
 
-storiesOf('Tabs', module).add('Uncontrolled Tabs', function () {
+storiesOf('Tabs', module).add('Uncontrolled', function () {
   return React.createElement(UncontrolledTabs, null);
-}).add('Controlled Tabs', function () {
+}).add('Controlled', function () {
   return React.createElement(ControlledTabs, null);
-}).add('Responsive Tabs', function () {
+}).add('Responsive', function () {
   return React.createElement(ResponsiveTabs, null);
-}).add('Rich Tabs', function () {
+}).add('Rich', function () {
   return React.createElement(RichTabs, null);
-}).add('CustomTheme', function () {
+}).add('Custom Theme', function () {
   return React.createElement(CustomTabs, null);
-}).add('Scrollable Tabs', function () {
+}).add('Scrollable', function () {
   return React.createElement(ScrollableTabs, null);
 }).add('Plain', function () {
   return React.createElement(UncontrolledTabs, {

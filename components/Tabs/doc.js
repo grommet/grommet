@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.doc = void 0;
+exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -27,3 +27,36 @@ var doc = function doc(Tabs) {
 };
 
 exports.doc = doc;
+var themeDoc = {
+  'tabs.background': {
+    description: 'background styling of Tabs.',
+    type: 'object',
+    defaultValue: undefined
+  },
+  'tabs.extend': {
+    description: 'Any additional style for Tabs.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'tabs.gap': {
+    description: 'The gap size between the Tabs.',
+    type: 'string',
+    defaultValue: undefined
+  },
+  'tabs.header.background': {
+    description: 'The background styles of Tabs header.',
+    type: '',
+    defaultValue: undefined
+  },
+  'tabs.header.extend': {
+    description: 'Any additional style for Tabs header.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'tabs.panel.extend': {
+    description: 'Any additional style for Tabs panel.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  }
+};
+exports.themeDoc = themeDoc;

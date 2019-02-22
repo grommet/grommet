@@ -419,17 +419,19 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   },
   tab: {
     active: {
-      background: 'dark-1'
+      background: 'dark-1',
+      color: 'accent-1'
     },
     background: 'dark-3',
+    border: undefined,
+    color: 'white',
     hover: {
       background: 'dark-1'
     },
-    border: undefined,
     margin: undefined,
     pad: {
       bottom: undefined,
-      horizontal: 'xsmall'
+      horizontal: 'small'
     },
     extend: function extend(_ref3) {
       var theme = _ref3.theme;
@@ -438,6 +440,7 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
   },
   tabs: {
     background: 'dark-3',
+    gap: 'medium',
     header: {
       background: 'dark-2',
       extend: function extend(_ref4) {
@@ -445,7 +448,12 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
         return (0, _styledComponents.css)(["padding:", ";box-shadow:", ";"], theme.global.edgeSize.small, theme.global.elevation.light.medium);
       }
     },
-    gap: 'medium'
+    panel: {
+      extend: function extend(_ref5) {
+        var theme = _ref5.theme;
+        return (0, _styledComponents.css)(["padding:", ";box-shadow:", ";"], theme.global.edgeSize.large, theme.global.elevation.light.medium);
+      }
+    }
   }
 });
 
@@ -474,7 +482,9 @@ var CustomTabs = function CustomTabs() {
     label: "Card Number"
   }, _react.default.createElement(_grommet.TextInput, {
     placeholder: "Enter your card number..."
-  })))));
+  }))), _react.default.createElement(_grommet.Tab, {
+    title: "Simple Tab"
+  }, "This Tab has a different styling than the RichTabTitle (e.g tab.active.color)")));
 };
 
 var ScrollableTabs = function ScrollableTabs() {
@@ -505,17 +515,17 @@ var ScrollableTabs = function ScrollableTabs() {
   }))))));
 };
 
-(0, _react2.storiesOf)('Tabs', module).add('Uncontrolled Tabs', function () {
+(0, _react2.storiesOf)('Tabs', module).add('Uncontrolled', function () {
   return _react.default.createElement(UncontrolledTabs, null);
-}).add('Controlled Tabs', function () {
+}).add('Controlled', function () {
   return _react.default.createElement(ControlledTabs, null);
-}).add('Responsive Tabs', function () {
+}).add('Responsive', function () {
   return _react.default.createElement(ResponsiveTabs, null);
-}).add('Rich Tabs', function () {
+}).add('Rich', function () {
   return _react.default.createElement(RichTabs, null);
-}).add('CustomTheme', function () {
+}).add('Custom Theme', function () {
   return _react.default.createElement(CustomTabs, null);
-}).add('Scrollable Tabs', function () {
+}).add('Scrollable', function () {
   return _react.default.createElement(ScrollableTabs, null);
 }).add('Plain', function () {
   return _react.default.createElement(UncontrolledTabs, {

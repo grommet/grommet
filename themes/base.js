@@ -777,7 +777,8 @@ var generate = function generate(baseSpacing, scale) {
           color: {
             dark: 'white',
             light: 'black'
-          }
+          } // extend: undefined,
+
         }
       },
       color: 'control',
@@ -801,12 +802,12 @@ var generate = function generate(baseSpacing, scale) {
     tabs: {
       // background: undefined,
       // extend: undefined,
+      // gap: undefined,
       header: {// background: undefined,
         // extend: undefined,
       },
       panel: {// extend: undefined,
-      } // gap: undefined,
-
+      }
     },
     table: {
       header: {
