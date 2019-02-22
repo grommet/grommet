@@ -708,6 +708,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             dark: 'white',
             light: 'black',
           },
+          // extend: undefined,
         },
       },
       color: 'control',
@@ -731,6 +732,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     tabs: {
       // background: undefined,
       // extend: undefined,
+      // gap: undefined,
       header: {
         // background: undefined,
         // extend: undefined,
@@ -738,7 +740,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       panel: {
         // extend: undefined,
       },
-      // gap: undefined,
     },
     table: {
       header: {
