@@ -681,6 +681,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
         down: FormDown,
       },
+      options: {
+        box: {
+          align: 'start',
+          pad: 'small',
+        },
+        text: {
+          margin: 'none',
+        },
+      },
       // searchInput: undefined,
       step: 20,
     },
