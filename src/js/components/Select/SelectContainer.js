@@ -428,10 +428,10 @@ class SelectContainer extends Component {
                         })
                       ) : (
                         <OptionBox
-                          {...theme.select.container.box}
+                          {...theme.select.options.box}
                           selected={isSelected}
                         >
-                          <Text {...theme.select.container.text}>
+                          <Text {...theme.select.options.text}>
                             {this.optionLabel(index)}
                           </Text>
                         </OptionBox>
@@ -446,7 +446,7 @@ class SelectContainer extends Component {
                 disabled
                 option={emptySearchMessage}
               >
-                <OptionBox {...theme.select.container.box}>
+                <OptionBox {...theme.select.options.box}>
                   <Text {...theme.select.container.text}>
                     {emptySearchMessage}
                   </Text>

@@ -399,9 +399,9 @@ Defaults to
 undefined
 ```
 
-**select.container.box**
+**select.options.container**
 
-Any valid Box prop for the drop container. Expects `object`.
+Any valid Box prop for the options container. Expects `object`.
 
 Defaults to
 
@@ -409,9 +409,9 @@ Defaults to
 { align: 'start', pad: 'small' }
 ```
 
-**select.container.text**
+**select.options.text**
 
-Any valid Text prop for text used inside drop container. Expects `object`.
+Any valid Text prop for text used inside the options container. Expects `object`.
 
 Defaults to
 
