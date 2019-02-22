@@ -96,7 +96,7 @@ control
 
 **tab.hover.background**
 
-background color of the Tab on hover. Expects ``.
+background style of the Tab on hover. Expects ``.
 
 Defaults to
 
@@ -141,5 +141,5 @@ The pad of Tab. Expects `object`.
 Defaults to
 
 ```
-{bottom: 'xsmall'}
+{ bottom: 'xsmall' }
 ```
