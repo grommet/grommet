@@ -7708,7 +7708,119 @@ node
 
 \`\`\`
 button
-\`\`\`",
+\`\`\`
+## Theme
+  
+**tab.active**
+
+styles for the active tab. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{color: 'text', background: undefined }
+\`\`\`
+
+**tab.background**
+
+background styling of Tab. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tab.border**
+
+border styles of the tab Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      side: 'bottom',
+      size: 'small',
+      color: {
+        dark: 'accent-1',
+        light: 'brand',
+      },
+      active: {
+        color: {
+          dark: 'white',
+          light: 'black',
+        },
+      },
+      hover: {
+        color: {
+          dark: 'white',
+          light: 'black',
+        },
+        // extend: undefined,
+      },
+    }
+\`\`\`
+
+**tab.color**
+
+text color for the Tab. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+control
+\`\`\`
+
+**tab.hover.background**
+
+background color of the Tab on hover. Expects \`\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tab.hover.color**
+
+text color of the tab on hover. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'black' }
+\`\`\`
+
+**tab.hover.extend**
+
+Any additional style for Tab hover. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tab.margin**
+
+The margin of Tab. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ vertical: 'xxsmall', horizontal: 'small' }
+\`\`\`
+
+**tab.pad**
+
+The pad of Tab. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{bottom: 'xsmall'}
+\`\`\`
+",
   "Table": "## Table
 A table of data organized in cells.
 
@@ -8145,7 +8257,69 @@ function
 
 \`\`\`
 div
-\`\`\`",
+\`\`\`
+## Theme
+  
+**tabs.background**
+
+background styling of Tabs. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.extend**
+
+Any additional style for Tabs. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.gap**
+
+The gap size between the Tabs. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.background**
+
+The background styles of Tabs header. Expects \`\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.extend**
+
+Any additional style for Tabs header. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.panel.extend**
+
+Any additional style for Tabs panel. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Text": "## Text
 Arbitrary text.
 

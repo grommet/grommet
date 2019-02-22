@@ -69,10 +69,15 @@ class Tab extends Component {
 
     if (!plain) {
       if (typeof title !== 'string') {
+        console.log("typeof title !== 'string'");
         normalizedTitle = title;
       } else if (active) {
         normalizedTitle = <Text {...theme.tab.active}>{title}</Text>;
       } else {
+        console.log('In Tab !plain');
+        console.log('over', over);
+        console.log('theme.tab.hover.color ', theme.tab.hover.color);
+        console.log('theme.tab.color ', theme.tab.color);
         normalizedTitle = (
           <Text color={over ? theme.tab.hover.color : theme.tab.color}>
             {title}
