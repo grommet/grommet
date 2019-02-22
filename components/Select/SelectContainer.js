@@ -27,6 +27,8 @@ var _StyledSelect = require("./StyledSelect");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
@@ -462,23 +464,14 @@ function (_Component) {
         active: isActive,
         disabled: isDisabled,
         selected: isSelected
-      }) : _react.default.createElement(OptionBox, {
-        align: "start",
-        pad: "small",
+      }) : _react.default.createElement(OptionBox, _extends({}, theme.select.options.box, {
         selected: isSelected
-      }, _react.default.createElement(_Text.Text, {
-        margin: "none"
-      }, _this3.optionLabel(index))));
+      }), _react.default.createElement(_Text.Text, theme.select.options.text, _this3.optionLabel(index))));
     }) : _react.default.createElement(_SelectOption.SelectOption, {
       key: "search_empty",
       disabled: true,
       option: emptySearchMessage
-    }, _react.default.createElement(OptionBox, {
-      align: "start",
-      pad: "small"
-    }, _react.default.createElement(_Text.Text, {
-      margin: "none"
-    }, emptySearchMessage))))));
+    }, _react.default.createElement(OptionBox, theme.select.options.box, _react.default.createElement(_Text.Text, theme.select.container.text, emptySearchMessage))))));
   };
 
   return SelectContainer;

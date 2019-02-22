@@ -1,3 +1,5 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
@@ -444,23 +446,14 @@ function (_Component) {
         active: isActive,
         disabled: isDisabled,
         selected: isSelected
-      }) : React.createElement(OptionBox, {
-        align: "start",
-        pad: "small",
+      }) : React.createElement(OptionBox, _extends({}, theme.select.options.box, {
         selected: isSelected
-      }, React.createElement(Text, {
-        margin: "none"
-      }, _this3.optionLabel(index))));
+      }), React.createElement(Text, theme.select.options.text, _this3.optionLabel(index))));
     }) : React.createElement(SelectOption, {
       key: "search_empty",
       disabled: true,
       option: emptySearchMessage
-    }, React.createElement(OptionBox, {
-      align: "start",
-      pad: "small"
-    }, React.createElement(Text, {
-      margin: "none"
-    }, emptySearchMessage))))));
+    }, React.createElement(OptionBox, theme.select.options.box, React.createElement(Text, theme.select.container.text, emptySearchMessage))))));
   };
 
   return SelectContainer;

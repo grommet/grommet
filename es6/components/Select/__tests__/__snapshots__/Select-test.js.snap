@@ -1812,13 +1812,8 @@ exports[`Select empty results search 1`] = `
 }
 
 .c12 {
-  margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .c2 {

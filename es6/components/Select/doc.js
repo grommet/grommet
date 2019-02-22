@@ -52,6 +52,16 @@ export var themeDoc = {
     type: 'string',
     defaultValue: undefined
   },
+  'select.options.container': {
+    description: 'Any valid Box prop for the options container.',
+    type: 'object',
+    defaultValue: "{ align: 'start', pad: 'small' }"
+  },
+  'select.options.text': {
+    description: 'Any valid Text prop for text used inside the options container.',
+    type: 'object',
+    defaultValue: "{ margin: 'none }"
+  },
   'select.container.extend': {
     description: 'Any additional style for the container of the Select component.',
     type: 'string | (props) => {}',

@@ -726,6 +726,15 @@ export var generate = function generate(baseSpacing, scale) {
         // color: { dark: undefined, light: undefined },
         down: FormDown
       },
+      options: {
+        box: {
+          align: 'start',
+          pad: 'small'
+        },
+        text: {
+          margin: 'none'
+        }
+      },
       // searchInput: undefined,
       step: 20
     },

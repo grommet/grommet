@@ -70,6 +70,9 @@ export var theme = {
     },
     searchInput: SearchInput,
     container: {
+      text: {
+        size: 'small'
+      },
       extend: 'max-height: 250px;'
     }
   },

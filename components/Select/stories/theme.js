@@ -80,6 +80,9 @@ var theme = {
     },
     searchInput: _SearchInput.SearchInput,
     container: {
+      text: {
+        size: 'small'
+      },
       extend: 'max-height: 250px;'
     }
   },
