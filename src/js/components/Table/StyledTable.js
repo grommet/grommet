@@ -67,7 +67,7 @@ Object.setPrototypeOf(StyledTableFooter.defaultProps, defaultProps);
 const StyledTable = styled.table`
   border-spacing: 0;
   border-collapse: collapse;
-
+  width: inherit;
   ${genericStyles} ${props => props.theme.table && props.theme.table.extend};
 `;
 
