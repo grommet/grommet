@@ -8,6 +8,7 @@ cache:
 script:
   - npm run lint
   - npm run test
+  - npm run "uxpin-merge --webpack-config ./webpack.config.uxpin.js --wrapper ./tools/UXPinWrapper.js --uxpin-domain merge.uxpin.cloud"
   - |
     if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
       git config --global user.name "Grommet Community Bot"
