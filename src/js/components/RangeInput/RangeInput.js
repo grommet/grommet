@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withFocus, withForwardRef } from '../hocs';
@@ -21,3 +22,17 @@ const RangeInputWrapper = compose(
 )(RangeInputDoc || RangeInput);
 
 export { RangeInputWrapper as RangeInput };
+
+/* PropTypes for UXPin Merge */
+RangeInput.propTypes = {
+  id: PropTypes.string,
+  min: PropTypes.number,
+  max: PropTypes.number,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  step: PropTypes.number,
+  value: PropTypes.number,
+}
+
+/* Export default for UXPin Merge */
+export default RangeInput;

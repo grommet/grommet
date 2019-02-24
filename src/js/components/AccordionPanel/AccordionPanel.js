@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -148,3 +149,15 @@ const AccordionPanelWrapper = compose(
 )(AccordionPanelDoc || AccordionPanel);
 
 export { AccordionPanelWrapper as AccordionPanel };
+
+/* PropTypes declaration for Merge.
+** Temporarily Merge doesn't support TS.
+*/
+
+AccordionPanel.propTypes = {
+  label: PropTypes.node,
+  header: PropTypes.node,
+}
+
+/* Export Default for UXPin Merge */
+export default AccordionPanel;

@@ -271,3 +271,6 @@ const InfiniteScrollWrapper = InfiniteScrollDoc || InfiniteScroll;
 
 export { InfiniteScrollWrapper as InfiniteScroll };
 /* eslint-enable react/no-find-dom-node, react/no-multi-comp */
+
+/* Export for UXPin Merge */
+export default InfiniteScroll;

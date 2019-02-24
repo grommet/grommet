@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -199,3 +200,20 @@ const CheckBoxWrapper = compose(
 )(CheckBoxDoc || CheckBox);
 
 export { CheckBoxWrapper as CheckBox };
+
+/* PropTypes for UXPin Merge */
+
+CheckBox.propTypes = {
+  checked:  PropTypes.bool,
+  disabled:  PropTypes.bool,
+  id:  PropTypes.string,
+  label:  PropTypes.node,
+  name:  PropTypes.string,
+  onChange:  PropTypes.func,
+  reverse:  PropTypes.bool,
+  toggle:  PropTypes.bool,
+  indeterminate:  PropTypes.bool,
+}
+
+/* Export for UXPin Merge */
+export default CheckBox;

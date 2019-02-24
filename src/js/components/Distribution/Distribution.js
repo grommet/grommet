@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import { Box } from '../Box';
 import { Text } from '../Text';
 
@@ -123,3 +122,20 @@ if (process.env.NODE_ENV !== 'production') {
 const DistributionWrapper = DistributionDoc || Distribution;
 
 export { DistributionWrapper as Distribution };
+
+/* PropTypes for UXPin Merge */
+Distribution.propTypes = {
+  a11yTitle: PropTypes.string,
+  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  gridArea: PropTypes.string,
+  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  children: PropTypes.func,
+  fill: PropTypes.bool,
+  gap: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge"]),
+  values: PropTypes.object,
+  direction: PropTypes.string,
+  basis: PropTypes.string,
+}
+
+/* Export for UXPin Merge */
+export default Distribution;

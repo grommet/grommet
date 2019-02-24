@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { defaultProps } from '../../default-props';
 import { FormContext } from './FormContext';
 
@@ -135,3 +136,19 @@ const FormWrapper = FormDoc || Form;
 FormWrapper.displayName = 'Form';
 
 export { FormWrapper as Form };
+
+/* PropTypes for UXPin Merge */
+
+Form.propTypes = {
+  children: PropTypes.node,
+  errors: PropTypes.object,
+  messages: PropTypes.shape({
+    invalid: PropTypes.string,
+    required: PropTypes.string}),
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+  value: PropTypes.object,
+};
+
+/* Export for UXPin Merge */
+export default Form;

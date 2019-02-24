@@ -1,5 +1,5 @@
 import React, { Children, Component } from 'react';
-
+import PropTypes from 'prop-types';
 import { StyledStack, StyledStackLayer } from './StyledStack';
 
 class Stack extends Component {
@@ -72,3 +72,19 @@ if (process.env.NODE_ENV !== 'production') {
 const StackWrapper = StackDoc || Stack;
 
 export { StackWrapper as Stack };
+
+/* PropTypes for UXPin Merge */
+Stack.propTypes = {
+  children: PropTypes.node,
+  a11yTitle: PropTypes.string,
+  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  gridArea: PropTypes.string,
+  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  anchor: PropTypes.oneOf(["center", "left", "right", "top", "bottom", "top-left", "bottom-left", "top-right", "bottom-right"]),
+  fill: PropTypes.bool,
+  guidingChild: PropTypes.oneOf(["first", "last"]),
+  interactiveChild: PropTypes.oneOf(["first", "last"]),
+}
+
+/* Export default for UXPin Merge */
+export default Stack;

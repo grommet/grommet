@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -240,3 +241,28 @@ if (process.env.NODE_ENV !== 'production') {
 const DiagramWrapper = compose(withTheme)(DiagramDoc || Diagram);
 
 export { DiagramWrapper as Diagram };
+
+/* PropTypes for UXPin Merge */
+Diagram.propTypes = {
+  children: PropTypes.node,
+  connections: PropTypes.arrayOf(
+    PropTypes.shape({
+      fromTarget: PropTypes.string,
+      toTarget: PropTypes.string,
+      thickness: PropTypes.string,
+      color: PropTypes.string,
+      type: PropTypes.oneOf(["direct", "curved", "rectilinear"]),
+    }),
+  ),
+  anchor: PropTypes.oneOf(["center", "vertical", "horizontal"]),
+  color: PropTypes.string,
+  fromTarget: PropTypes.object,
+  label: PropTypes.string,
+  offset: PropTypes.oneOf(["xsmall", "small", "medium", "large"]),
+  thickness: PropTypes.oneOf(["hair", "xxsmall", "xsmall", "small", "medium", "large"]),
+  toTarget: PropTypes.object,
+  type: PropTypes.oneOf(["direct", "curved", "rectilinear"]),
+}
+
+/* Export for UXPin Merge */
+export default Diagram;

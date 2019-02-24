@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 
@@ -226,3 +227,55 @@ const SelectWrapper = compose(
 )(SelectDoc || Select);
 
 export { SelectWrapper as Select };
+
+/* PropTypes for UXPin Merge */
+Select.propTypes = {
+  a11yTitle: PropTypes.string,
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
+  gridArea: PropTypes.string,
+  margin: PropTypes.oneOf([
+    'none',
+    'xxsmall',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+  ]),
+  children: PropTypes.node,
+  closeOnChange: PropTypes.bool,
+  disabled: PropTypes.bool,
+  disabledKey: PropTypes.string,
+  dropAlign: PropTypes.shape({
+    top: PropTypes.oneOf(['top', 'bottom']),
+    bottom: PropTypes.oneOf(['top', 'bottom']),
+    right: PropTypes.oneOf(['left', 'right']),
+    left: PropTypes.oneOf(['left', 'right']),
+  }),
+  dropHeight: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+  dropTarget: PropTypes.object,
+  focusIndicator: PropTypes.bool,
+  id: PropTypes.string,
+  labelKey: PropTypes.string,
+  messages: PropTypes.shape({
+    multiple: PropTypes.string,
+  }),
+  multiple: PropTypes.bool,
+  onChange: PropTypes.func,
+  onClose: PropTypes.func,
+  onOpen: PropTypes.func,
+  onSearch: PropTypes.func,
+  options: PropTypes.object,
+  placeholder: PropTypes.node,
+  plain: PropTypes.bool,
+  searchPlaceholder: PropTypes.string,
+  selected: PropTypes.arrayOf(PropTypes.number),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+  value: PropTypes.string,
+  valueLabel: PropTypes.node,
+  valueKey: PropTypes.string,
+  emptySearchMessage: PropTypes.string,
+};
+
+/* Export default for UXPin Merge */
+export default Select;

@@ -1,4 +1,5 @@
 import { Children, Component, cloneElement } from 'react';
+import PropTypes from 'prop-types';
 
 const KEYS = {
   8: 'onBackspace',
@@ -64,3 +65,24 @@ if (process.env.NODE_ENV !== 'production') {
 const KeyboardWrapper = KeyboardDoc || Keyboard;
 
 export { KeyboardWrapper as Keyboard };
+
+/* PropTypes for UXPin Merge */
+
+Keyboard.propTypes = {
+  target: PropTypes.oneOf(["component", "document"]),
+  onBackspace: PropTypes.func,
+  onComma: PropTypes.func,
+  onDown: PropTypes.func,
+  onEnter: PropTypes.func,
+  onEsc: PropTypes.func,
+  onKeyDown: PropTypes.func,
+  onLeft: PropTypes.func,
+  onRight: PropTypes.func,
+  onShift: PropTypes.func,
+  onSpace: PropTypes.func,
+  onTab: PropTypes.func,
+  onUp: PropTypes.func,
+};
+
+/* Export default for UXPin Merge */
+export default Keyboard;

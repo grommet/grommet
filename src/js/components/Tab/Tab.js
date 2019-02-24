@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -139,3 +140,13 @@ const TabWrapper = compose(
 )(TabDoc || Tab);
 
 export { TabWrapper as Tab };
+
+/* PropTypes for UXPin Merge */
+Tab.propTypes = {
+  children: PropTypes.node,
+  plain: PropTypes.bool,
+  title: PropTypes.string,
+}
+
+/* Export default for UXPin Merge */
+export default Tab;

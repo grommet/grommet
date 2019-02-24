@@ -1,4 +1,5 @@
 import React, { Component, isValidElement } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 import { sizeStyle } from 'grommet-styles';
@@ -403,3 +404,39 @@ const TextInputWrapper = compose(
 )(TextInputDoc || TextInput);
 
 export { TextInputWrapper as TextInput };
+
+/* PropTypes for UXPin Merge */
+
+TextInput.propTypes = {
+  dropAlign: PropTypes.shape({
+    top: PropTypes.oneOf(["top", "bottom"]),
+    bottom: PropTypes.oneOf(["top", "bottom"]),
+    right: PropTypes.oneOf(["left", "right"]),
+    left: PropTypes.oneOf(["left", "right"]),
+  }),
+  dropHeight: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge"]),
+  dropTarget: PropTypes.object,
+  id: PropTypes.string,
+  focusIndicator: PropTypes.bool,
+  messages: PropTypes.shape({
+    enterSelect: PropTypes.string,
+    suggestionsCount: PropTypes.string,
+    suggestionsExist: PropTypes.string,
+    suggestionIsOpen: PropTypes.string,
+  }),
+  name: PropTypes.string,
+  onSelect: PropTypes.func,
+  onSuggestionsOpen: PropTypes.func,
+  onSuggestionsClose: PropTypes.func,
+  placeholder: PropTypes.node,
+  plain: PropTypes.bool,
+  size: PropTypes.oneOf(["small", "medium", "large", "xlarge"]),
+  suggestions: PropTypes.arrayOf(PropTypes.shape({
+    label: React.ReactNode,
+    value: PropTypes.string,
+  })),
+  value: PropTypes.string,
+}
+
+/* Export for UXPin Merge */
+export default TextInput;

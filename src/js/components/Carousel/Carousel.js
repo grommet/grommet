@@ -1,4 +1,5 @@
 import React, { Children, Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -189,4 +190,17 @@ const CarouselWrapper = compose(
   withTheme,
 )(CarouselDoc || Carousel);
 
+/* PropTypes for UXPin Merge */
+Carousel.propTypes = {
+  children: PropTypes.node,
+  a11yTitle: PropTypes.string,
+  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  gridArea: PropTypes.string,
+  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  fill: PropTypes.bool,
+  play: PropTypes.number,
+};
+
 export { CarouselWrapper as Carousel };
+/* Export for UXPin Merge */
+export default Carousel;

@@ -1,4 +1,5 @@
 import React, { Children, cloneElement, Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 
@@ -225,3 +226,19 @@ const FormFieldWrapper = compose(
 )(FormFieldDoc || FormField);
 
 export { FormFieldWrapper as FormField };
+
+/* PropTypes for UXPin Merge */
+FormField.propTypes = {
+  children: PropTypes.node,
+  error: PropTypes.node,
+  help: PropTypes.node,
+  htmlFor: PropTypes.string,
+  label: PropTypes.node,
+  name: PropTypes.string,
+  pad: PropTypes.bool,
+  required: PropTypes.bool,
+  validate: PropTypes.func,
+}
+
+/* Export for UXPin Merge */
+export default FormField;

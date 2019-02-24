@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
-
 import { withTheme } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
@@ -74,3 +74,15 @@ if (process.env.NODE_ENV !== 'production') {
 const TableCellWrapper = compose(withTheme)(TableCellDoc || TableCell);
 
 export { TableCellWrapper as TableCell };
+
+/* PropTypes for UXPin Merge */
+TableCell.propTypes = {
+  children: PropTypes.node,
+  plain: PropTypes.bool,
+  scope: PropTypes.oneOf(["col", "row"]),
+  size: PropTypes.oneOf(["xxsmall", "xsmall", "small", "medium", "large", "xlarge", "1/2", "1/3", "2/3", "1/4", "2/4", "3/4"]),
+  verticalAlign: PropTypes.oneOf(["top", "middle", "bottom"]),
+}
+
+/* Export default for UXPin Merge */
+export default TableCell;

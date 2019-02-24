@@ -1,4 +1,5 @@
 import React, { createRef, Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 
@@ -137,3 +138,13 @@ if (process.env.NODE_ENV !== 'production') {
 const CollapsibleWrapper = compose(withTheme)(CollapsibleDoc || Collapsible);
 
 export { CollapsibleWrapper as Collapsible };
+
+/* PropTypes for UXPin Merge */
+Collapsible.propTypes = {
+  open: PropTypes.bool,
+  direction: PropTypes.oneOf(["horizontal", "vertical"]),
+  children: PropTypes.node,
+}
+
+/* Export for UXPin Merge */
+export default Collapsible;

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableHeader } from '../Table/StyledTable';
 
@@ -16,3 +16,11 @@ if (process.env.NODE_ENV !== 'production') {
 const TableHeaderWrapper = TableHeaderDoc || TableHeader;
 
 export { TableHeaderWrapper as TableHeader };
+
+/* PropTypes for UXPin Merge */
+TableHeader.propTypes = {
+  children: PropTypes.node,
+};
+
+/* Export for UXPin Merge */
+export default TableHeader;

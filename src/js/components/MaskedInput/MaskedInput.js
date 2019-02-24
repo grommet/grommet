@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { ThemeContext } from '../../contexts';
@@ -377,3 +378,26 @@ const MaskedInputWrapper = compose(
 )(MaskedInputDoc || MaskedInput);
 
 export { MaskedInputWrapper as MaskedInput };
+
+/* PropTypes for UXPin Merge */
+
+MaskedInput.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  onBlur: PropTypes.func,
+  mask: PropTypes.arrayOf(
+    PropTypes.shape({
+      length: PropTypes.arrayOf(PropTypes.number),
+      fixed: PropTypes.string,
+      options: PropTypes.arrayOf(PropTypes.string),
+      regexp: PropTypes.string,
+      placeholder: PropTypes.string,
+    })
+  ),
+  size: PropTypes.oneOf(["small", "medium", "large", "xlarge"]),
+  value: PropTypes.string,
+}
+
+/* Export for UXPin Merge */
+export default MaskedInput;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import { Analog } from './Analog';
 import { Digital } from './Digital';
 
@@ -192,3 +192,20 @@ if (process.env.NODE_ENV !== 'production') {
 const ClockWrapper = ClockDoc || Clock;
 
 export { ClockWrapper as Clock };
+
+/* PropTypes for UXPin Merge */
+Clock.propTypes = {
+  a11yTitle: PropTypes.string,
+  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  gridArea: PropTypes.string,
+  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  hourLimit: PropTypes.oneOf(["12", "24", "12", "24"]),
+  onChange: PropTypes.func,
+  precision: PropTypes.oneOf(["hours", "minutes", "seconds"]),
+  run: PropTypes.oneOf(["backward", "forward"]),
+  size: PropTypes.oneOf(["small", "medium", "large", "xlarge"]),
+  time: PropTypes.string,
+  type: PropTypes.oneOf(["analog", "digital"]),
+}
+
+export default Clock;

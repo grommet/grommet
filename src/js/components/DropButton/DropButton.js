@@ -1,4 +1,5 @@
 import React, { createRef, Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { Button } from '../Button';
@@ -117,3 +118,40 @@ if (process.env.NODE_ENV !== 'production') {
 const DropButtonWrapper = compose(withForwardRef)(DropButtonDoc || DropButton);
 
 export { DropButtonWrapper as DropButton };
+
+/* PropTypes for UXPin Merge */
+DropButton.propTypes = {
+  a11yTitle: PropTypes.string,
+  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  gridArea: PropTypes.string,
+  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  disabled: PropTypes.bool,
+  dropAlign: PropTypes.shape({
+    top: PropTypes.oneOf(["top", "bottom"]),
+    bottom: PropTypes.oneOf(["top", "bottom"]),
+    right: PropTypes.oneOf(["left", "right"]),
+    left: PropTypes.oneOf(["left", "right"]),
+  }),
+  dropContent: PropTypes.node,
+  dropTarget: PropTypes.object,
+  onClose: PropTypes.func,
+  onOpen: PropTypes.func,
+  open: PropTypes.bool,
+  active: PropTypes.bool,
+  color: PropTypes.string,
+  fill: PropTypes.bool,
+  focusIndicator: PropTypes.bool,
+  hoverIndicator: PropTypes.bool,
+  href: PropTypes.string,
+  icon: PropTypes.node,
+  label: PropTypes.string,
+  onClick: PropTypes.func,
+  plain: PropTypes.bool,
+  primary: PropTypes.bool,
+  reverse: PropTypes.bool,
+  type: PropTypes.oneOf(["button", "reset", "submit"]),
+  as: PropTypes.string,
+}
+
+/* Export for UXPin Merge */
+export default DropButton;

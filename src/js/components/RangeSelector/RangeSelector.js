@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import styled from 'styled-components';
 
@@ -259,3 +260,23 @@ const RangeSelectorWrapper = compose(withForwardRef)(
 );
 
 export { RangeSelectorWrapper as RangeSelector };
+
+/* PropTypes for UXPin Merge */
+RangeSelector.propTypes = {
+  color: PropTypes.string,
+  direction: PropTypes.oneOf(["horizontal", "vertical"]),
+  invert: PropTypes.bool,
+  max: PropTypes.number,
+  messages: PropTypes.object,
+  min: PropTypes.number,
+  onChange: PropTypes.func,
+  opacity: PropTypes.oneOf(["weak", "medium", "strong"]),
+  round: PropTypes.oneOf(["xsmall", "small", "medium", "large", "full"]),
+  size: PropTypes.oneOf(["xxsmall", "xsmall", "small", "medium", "large", "xlarge", "full"]),
+  step: PropTypes.number,
+  values: PropTypes.object,
+  children: PropTypes.node,
+}
+
+/* export for UXPin Merge */
+export default RangeSelector;

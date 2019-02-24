@@ -38,8 +38,14 @@
     "react/prop-types": 0,
     "react/jsx-one-expression-per-line": 0,
     "react/jsx-wrap-multilines": 0,
+    "react/require-default-props": false,
+    "react/no-unused-prop-types": false,
+    "react/forbid-prop-types": false,
     "no-useless-concat": 0,
-    "react/jsx-indent": 0
+    "react/jsx-indent": 0,
+    "import/no-named-as-default": false,
+    "import/no-extraneous-dependencies": false,
+    "no-irregular-whitespace": 0
   },
   "overrides": [
     {

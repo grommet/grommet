@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 
@@ -217,3 +218,52 @@ const MenuWrapper = compose(
 )(MenuDoc || Menu);
 
 export { MenuWrapper as Menu };
+
+/* PropTypes for UXPinMerge */
+
+Menu.propTypes = {
+  a11yTitle: PropTypes.string,
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
+  gridArea: PropTypes.string,
+  margin: PropTypes.oneOf([
+    'none',
+    'xxsmall',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+  ]),
+  disabled: PropTypes.bool,
+  dropAlign: PropTypes.arrayOf(
+    PropTypes.shape({
+      top: PropTypes.oneOf(['top', 'bottom']),
+      bottom: PropTypes.oneOf(['top', 'bottom']),
+      left: PropTypes.oneOf(['right', 'left']),
+      right: PropTypes.oneOf(['right', 'left']),
+    }),
+  ),
+  dropBackground: PropTypes.string,
+  dropTarget: PropTypes.object,
+  justifyContent: PropTypes.oneOf([
+    'start',
+    'center',
+    'end',
+    'between',
+    'around',
+    'stretch',
+  ]),
+  icon: PropTypes.bool,
+  items: PropTypes.arrayOf(PropTypes.object),
+  label: PropTypes.node,
+  messages: PropTypes.arrayOf(
+    PropTypes.shape({
+      closeMenu: PropTypes.string,
+      openMenu: PropTypes.string,
+    }),
+  ),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+};
+
+/* Export default for UXPin Merge */
+export default Menu;

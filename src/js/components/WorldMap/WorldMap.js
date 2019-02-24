@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -682,3 +683,34 @@ if (process.env.NODE_ENV !== 'production') {
 const WorldMapWrapper = compose(withTheme)(WorldMapDoc || WorldMap);
 
 export { WorldMapWrapper as WorldMap };
+
+/* PropTypes for UXPin Merge */
+WorldMap.propTypes = {
+  a11yTitle: PropTypes.string,
+  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  gridArea: PropTypes.string,
+  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  color: PropTypes.string,
+  continents: PropTypes.arrayOf(
+    PropTypes.shape({
+      color: PropTypes.string,
+      name: PropTypes.oneOf(["Africa", "Asia", "Australia", "Europe", "North America", "South America"]),
+      onClick: PropTypes.func,
+      onHover: PropTypes.func,
+    }),
+  ),
+  onSelectPlace: PropTypes.func,
+  places: PropTypes.arrayOf(
+    PropTypes.shape({
+      color: PropTypes.string,
+      name: PropTypes.string,
+      location: PropTypes.arrayOf(PropTypes.number),
+      onClick: PropTypes.func,
+      onHover: PropTypes.func,
+    }),
+  ),
+  hoverColor: PropTypes.string,
+}
+
+/* Export for UXPin Merge */
+export default WorldMap;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import { Bar } from './Bar';
 import { Circle } from './Circle';
 
@@ -55,3 +55,29 @@ if (process.env.NODE_ENV !== 'production') {
 const MeterWrapper = MeterDoc || Meter;
 
 export { MeterWrapper as Meter };
+
+/* PropTypes for UXPin Merge */
+Meter.propTypes = {
+  a11yTitle: PropTypes.string,
+  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  gridArea: PropTypes.string,
+  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  background: PropTypes.string,
+  round: PropTypes.bool,
+  size: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge", "full"]),
+  thickness: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge"]),
+  type: PropTypes.oneOf(["bar", "circle"]),
+  values: PropTypes.arrayOf(
+    PropTypes.shape({
+      color: PropTypes.string,
+      highlight: PropTypes.bool,
+      label: PropTypes.string,
+      onClick: PropTypes.func,
+      onHover: PropTypes.func,
+      value: PropTypes.number,
+    }),
+  ),
+}
+
+/* Export for UXPin Merge */
+export default Meter;

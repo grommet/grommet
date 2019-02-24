@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -115,3 +116,16 @@ const RadioButtonWrapper = compose(
 )(RadioButtonDoc || RadioButton);
 
 export { RadioButtonWrapper as RadioButton };
+
+/* PropTypes for UXPin Merge */
+RadioButton.propTypes = {
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  id: PropTypes.string,
+  label: PropTypes.node,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+};
+
+/* Export default for UXPin Merge */
+export default RadioButton;

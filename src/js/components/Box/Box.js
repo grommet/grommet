@@ -13,6 +13,7 @@ const wrapWithHocs = compose(
   withDocs('Box'),
 );
 
+/* Modification for UXPin Merge */
 class BoxImpl extends Component {
   static contextType = ThemeContext;
 

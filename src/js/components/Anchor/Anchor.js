@@ -1,4 +1,5 @@
 import React, { cloneElement, Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -96,4 +97,23 @@ const AnchorWrapper = compose(
   withForwardRef,
 )(AnchorDoc || Anchor);
 
+/* PropTypes for UXPin Merge */
+Anchor.propTypes = {
+  a11yTitle: PropTypes.string,
+  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  gridArea: PropTypes.string,
+  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  color: PropTypes.string,
+  href: PropTypes.string,
+  icon: PropTypes.node,
+  label: PropTypes.node,
+  onClick: PropTypes.func,
+  reverse: PropTypes.bool,
+  size: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge", "xxlarge"]),
+  as: PropTypes.string,
+}
+
 export { AnchorWrapper as Anchor };
+
+/* Export for UXPin Merge */
+export default Anchor;

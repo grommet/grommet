@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { TableContext } from '../Table/TableContext';
 import { StyledTableFooter } from '../Table/StyledTable';
 
@@ -16,3 +16,11 @@ if (process.env.NODE_ENV !== 'production') {
 const TableFooterWrapper = TableFooterDoc || TableFooter;
 
 export { TableFooterWrapper as TableFooter };
+
+/* PropTypes for UXPin Merge */
+TableFooter.propTypes = {
+  children: PropTypes.node,
+}
+
+/* Export default for UXPin Merge */
+export default TableFooter;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -392,3 +393,27 @@ if (process.env.NODE_ENV !== 'production') {
 const CalendarWrapper = compose(withTheme)(CalendarDoc || Calendar);
 
 export { CalendarWrapper as Calendar };
+
+Calendar.propTypes = {
+  a11yTitle: PropTypes.string,
+  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  gridArea: PropTypes.string,
+  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  animate: PropTypes.bool,
+  bounds: PropTypes.object,
+  date: PropTypes.string,
+  dates: PropTypes.object,
+  disabled: PropTypes.object,
+  firstDayOfWeek: PropTypes.oneOf(["0", "1"]),
+  header: PropTypes.func,
+  locale: PropTypes.string,
+  onReference: PropTypes.func,
+  onSelect: PropTypes.func,
+  range: PropTypes.bool,
+  reference: PropTypes.string,
+  showAdjacentDays: PropTypes.bool,
+  size: PropTypes.oneOf(["small", "medium", "large"]),
+}
+
+/* Export for UXPin Merge */
+export default Calendar;

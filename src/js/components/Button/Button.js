@@ -1,4 +1,5 @@
 import React, { cloneElement, Children, Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -157,4 +158,29 @@ const ButtonWrapper = compose(
   withForwardRef,
 )(ButtonDoc || Button);
 
+Button.propTypes = {
+  a11yTitle: PropTypes.string,
+  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  gridArea: PropTypes.string,
+  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  active: PropTypes.bool,
+  color: PropTypes.string,
+  disabled: PropTypes.bool,
+  fill: PropTypes.bool,
+  focusIndicator: PropTypes.bool,
+  hoverIndicator: PropTypes.bool,
+  href: PropTypes.string,
+  icon: PropTypes.node,
+  label: PropTypes.string,
+  onClick: PropTypes.func,
+  plain: PropTypes.bool,
+  primary: PropTypes.bool,
+  reverse: PropTypes.bool,
+  type: PropTypes.oneOf(["button", "reset", "submit"]),
+  as: PropTypes.string,
+}
+
 export { ButtonWrapper as Button };
+
+/* Export default for UXPin Merge */
+export default Button;

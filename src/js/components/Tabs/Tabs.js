@@ -1,4 +1,5 @@
 import React, { cloneElement, Children, Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withTheme } from 'styled-components';
@@ -122,3 +123,23 @@ if (process.env.NODE_ENV !== 'production') {
 const TabsWrapper = compose(withTheme)(TabsDoc || Tabs);
 
 export { TabsWrapper as Tabs };
+
+/* PropTypes for UXPin Merge */
+Tabs.propTypes = {
+  a11yTitle: PropTypes.string,
+  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  gridArea: PropTypes.string,
+  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  activeIndex: PropTypes.number,
+  children: PropTypes.node,
+  flex: PropTypes.oneOf(["grow", "shrink"]),
+  justify: PropTypes.oneOf(["start", "center", "end"]),
+  messages: PropTypes.shape({
+    tabContents: PropTypes.string,
+  }),
+  onActive: PropTypes.func,
+  responsive: PropTypes.bool,
+}
+
+/* Export default UXPin Merge  */
+export default Tabs;

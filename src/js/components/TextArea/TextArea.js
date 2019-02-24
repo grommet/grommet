@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { Keyboard } from '../Keyboard';
@@ -34,3 +35,19 @@ const TextAreaWrapper = compose(
 )(TextAreaDoc || TextArea);
 
 export { TextAreaWrapper as TextArea };
+
+/* PropTypes for UXPin Merge */
+TextArea.propTypes = {
+  id: PropTypes.string,
+  fill: PropTypes.bool,
+  focusIndicator: PropTypes.bool,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
+  plain: PropTypes.bool,
+  value: PropTypes.string,
+  resize: PropTypes.oneOf(["vertical", "horizontal"]),
+}
+
+/* Export Default for UXPin Merge */
+export default TextArea;

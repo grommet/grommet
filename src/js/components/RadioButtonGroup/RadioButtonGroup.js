@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { defaultProps } from '../../default-props';
@@ -138,3 +139,14 @@ const RadioButtonGroupWrapper = compose(withForwardRef)(
 );
 
 export { RadioButtonGroupWrapper as RadioButtonGroup };
+
+/* PropTypes for UXPin Merge */
+RadioButtonGroup.propTypes = {
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  options: PropTypes.object,
+  value: PropTypes.string,
+}
+
+/* Export for UXPin Merge */
+export default RadioButtonGroup;

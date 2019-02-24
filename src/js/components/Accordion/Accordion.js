@@ -1,5 +1,5 @@
 import React, { Component, Children } from 'react';
-
+import PropTypes from 'prop-types';
 import { Box } from '../Box';
 
 import { AccordionContext } from './AccordionContext';
@@ -93,3 +93,23 @@ if (process.env.NODE_ENV !== 'production') {
 const AccordionWrapper = AccordionDoc || Accordion;
 
 export { AccordionWrapper as Accordion };
+
+/* PropTypes declaration for Merge.
+** Temporarily Merge doesn't support TS.
+*/
+
+Accordion.propTypes = {
+  a11yTitle: PropTypes.string,
+  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  gridArea: PropTypes.string,
+  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  activeIndex: PropTypes.number,
+  animate: PropTypes.bool,
+  children: PropTypes.node,
+  onActive: PropTypes.func,
+  multiple: PropTypes.bool,
+  messages: PropTypes.node,
+}
+
+/* Export Default for Merge */
+export default Accordion;
