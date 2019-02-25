@@ -16,21 +16,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var BarMeter = function BarMeter() {
-  return _react.default.createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, _react.default.createElement(_grommet.Meter, {
-    type: "bar",
-    background: "light-2",
-    values: [{
-      value: 30
-    }]
-  })));
-};
-
 var CircleMeter =
 /*#__PURE__*/
 function (_React$Component) {
@@ -90,40 +75,6 @@ function (_React$Component) {
   return CircleMeter;
 }(_react.default.Component);
 
-var LabelledMeter = function LabelledMeter() {
-  return _react.default.createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Box, {
-    align: "center",
-    pad: "large"
-  }, _react.default.createElement(_grommet.Stack, {
-    anchor: "center"
-  }, _react.default.createElement(_grommet.Meter, {
-    type: "circle",
-    background: "light-2",
-    values: [{
-      value: 30
-    }],
-    size: "xsmall",
-    thickness: "small"
-  }), _react.default.createElement(_grommet.Box, {
-    direction: "row",
-    align: "center",
-    pad: {
-      bottom: 'xsmall'
-    }
-  }, _react.default.createElement(_grommet.Text, {
-    size: "xlarge",
-    weight: "bold"
-  }, "30"), _react.default.createElement(_grommet.Text, {
-    size: "small"
-  }, "%")))));
-};
-
-(0, _react2.storiesOf)('Meter', module).add('Bar', function () {
-  return _react.default.createElement(BarMeter, null);
-}).add('Circle', function () {
+(0, _react2.storiesOf)('Meter', module).add('Circle', function () {
   return _react.default.createElement(CircleMeter, null);
-}).add('Labelled', function () {
-  return _react.default.createElement(LabelledMeter, null);
 });
