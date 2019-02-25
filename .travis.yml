@@ -4,6 +4,8 @@ node_js:
 sudo: false
 install:
   - npm install
+cache:
+  directories:
+    - node_modules
 script:
-  - npm run $HOME/node_modules/.bin/uxpin-merge --webpack-config ./webpack.config.uxpin.js --wrapper ./tools/UXPinWrapper.js
-  - |
+  - npm run $HOME/node_modules/@uxpin/merge-cli/bin/uxpin-mergee --webpack-config ./webpack.config.uxpin.js --wrapper ./tools/UXPinWrapper.js
