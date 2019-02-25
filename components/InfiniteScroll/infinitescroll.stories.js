@@ -140,12 +140,14 @@ var GridInfiniteScroll = function GridInfiniteScroll() {
   return _react.default.createElement(_grommet.Grommet, {
     theme: _themes.grommet
   }, _react.default.createElement(_grommet.Grid, {
-    columns: "xsmall"
+    columns: "xsmall",
+    rows: "small"
   }, _react.default.createElement(_grommet.InfiniteScroll, {
     items: allItems,
     step: 12
   }, function (item) {
     return _react.default.createElement(_grommet.Box, {
+      key: item,
       as: "article",
       pad: "xsmall"
     }, _react.default.createElement(_grommet.Image, {

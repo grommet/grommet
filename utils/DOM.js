@@ -47,6 +47,9 @@ var findScrollParents = function findScrollParents(element, horizontal) {
 
     if (result.length === 0) {
       result.push(document);
+    } else if (result[0].tagName.toLowerCase() === 'body') {
+      result.length = 0;
+      result.push(document);
     }
   }
 
