@@ -2,11 +2,10 @@ language: node_js
 node_js:
   - 8
 sudo: false
-cache:
-  directories:
-    - node_modules
+before_install:
+  - export PATH="$HOME"
 install:
   - npm install
 script:
-  - npm run ./node_modules/.bin/uxpin-merge --webpack-config ./webpack.config.uxpin.js --wrapper ./tools/UXPinWrapper.js
+  - npm run $HOME/node_modules/.bin/uxpin-merge --webpack-config ./webpack.config.uxpin.js --wrapper ./tools/UXPinWrapper.js
   - |
