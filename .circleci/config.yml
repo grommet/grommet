@@ -6,7 +6,7 @@ defaults: &defaults
     - image: circleci/node:10
 
 jobs:
-  build:
+  checkout:
     <<: *defaults
     steps:
       - checkout
@@ -39,6 +39,18 @@ jobs:
       - run:
           name: Running jest
           command: yarn test
+  build:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: Build
+          command: yarn build
+      - persist_to_workspace:
+          root: ~/grommet-ci
+          paths:
+            - ./
   release:
     <<: *defaults
     steps:
@@ -48,21 +60,25 @@ jobs:
           command: |
             git config --global user.name "Grommet Community Bot"
             git config --global user.email "grommet@hpe.com"
-            yarn build && yarn release-stable
+            yarn release-stable
 workflows:
   build_test:
     jobs:
-      - build
+      - checkout
       - lint:
           requires:
-            - build
+            - checkout
       - jest:
           requires:
-            - build
+            - checkout
+      - build:
+          requires:
+            - checkout
       - release:
           requires:
             - jest
             - lint
+            - build
           filters:
             branches:
               only:
