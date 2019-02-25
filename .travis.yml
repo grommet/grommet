@@ -2,10 +2,15 @@ language: node_js
 node_js:
   - 8
 sudo: false
-install:
-  - npm install
 cache:
   directories:
     - node_modules
 script:
-  - npm run $HOME/node_modules/@uxpin/merge-cli/bin/uxpin-merge --webpack-config ./webpack.config.uxpin.js --wrapper ./tools/UXPinWrapper.js
+  - npm run lint
+  - npm run test
+  - |
+    if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
+      git config --global user.name "Grommet Community Bot"
+      git config --global user.email "grommet@hpe.com"
+      npm run build && npm run release-stable
+    fi
