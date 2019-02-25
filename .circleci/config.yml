@@ -48,7 +48,7 @@ jobs:
           command: |
             git config --global user.name "Grommet Community Bot"
             git config --global user.email "grommet@hpe.com"
-            yarn build
+            yarn build && yarn release-stable
 workflows:
   build_test:
     jobs:
