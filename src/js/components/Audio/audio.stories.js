@@ -14,20 +14,12 @@ const SimpleAudio = () => (
           src="http://techslides.com/demos/samples/sample.mp3"
           type="audio/mp3"
         />
-        <track
-          src="subtitles_en.vtt"
-          kind="subtitles"
-          label="English"
-        />
+        <track src="subtitles_en.vtt" kind="subtitles" label="English" />
         <source
           src="http://techslides.com/demos/samples/sample.ogg"
           type="audio/ogg"
         />
-        <track
-          src="subtitles_no.vtt"
-          kind="subtitles"
-          label="Norwegian"
-        />
+        <track src="subtitles_no.vtt" kind="subtitles" label="Norwegian" />
       </Audio>
     </Box>
   </Grommet>
@@ -38,6 +30,9 @@ const customThemedAudio = deepMerge(grommet, {
     controls: {
       background: 'light-4',
       extend: () => `opacity: 0.9; margin: 10px`,
+      text: {
+        color: 'dark-3',
+      },
     },
     icons: {
       color: 'brand',
@@ -53,20 +48,12 @@ const CustomThemeAudio = () => (
           src="https://dl.espressif.com/dl/audio/ff-16b-1c-44100hz.mp3"
           type="audio/mp3"
         />
-        <track
-          src="subtitles_en.vtt"
-          kind="subtitles"
-          label="English"
-        />
+        <track src="subtitles_en.vtt" kind="subtitles" label="English" />
         <source
           src="https://dl.espressif.com/dl/audio/ff-16b-1c-44100hz.ogg"
           type="audio/ogg"
         />
-        <track
-          src="subtitles_no.vtt"
-          kind="subtitles"
-          label="Norwegian"
-        />
+        <track src="subtitles_no.vtt" kind="subtitles" label="Norwegian" />
       </Audio>
     </Box>
   </Grommet>
@@ -89,20 +76,12 @@ const BackgroundAudio = () => (
           src="https://dl.espressif.com/dl/audio/ff-16b-1c-44100hz.mp3"
           type="audio/mp3"
         />
-        <track
-          src="subtitles_en.vtt"
-          kind="subtitles"
-          label="English"
-        />
+        <track src="subtitles_en.vtt" kind="subtitles" label="English" />
         <source
           src="https://dl.espressif.com/dl/audio/ff-16b-1c-44100hz.ogg"
           type="audio/ogg"
         />
-        <track
-          src="subtitles_no.vtt"
-          kind="subtitles"
-          label="Norwegian"
-        />
+        <track src="subtitles_no.vtt" kind="subtitles" label="Norwegian" />
       </Audio>
     </Box>
   </Grommet>

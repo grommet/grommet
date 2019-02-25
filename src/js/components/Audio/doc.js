@@ -5,7 +5,7 @@ import { genericProps, getAvailableAtBadge } from '../../utils';
 export const doc = Audio => {
   const DocumentedAudio = describe(Audio)
     .availableAt(getAvailableAtBadge('Audio'))
-    .description('A Audio player.')
+    .description('An Audio player.')
     .usage(
       `import { Audio } from 'grommet';
 <Audio />`,
@@ -44,6 +44,11 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'audio.controls.text.color': {
+    description: 'The time duration text shown on the Audio controls',
+    type: 'string',
+    defaultValue: 'dark-5',
+  },
   'audio.extend': {
     description: 'Any additional style for Audio.',
     type: 'string | (props) => {}',
@@ -68,6 +73,21 @@ export const themeDoc = {
     description: 'The volume icon indicator',
     type: 'React.element',
     defaultValue: '<Volume />',
+  },
+  'audio.volume.background': {
+    description: 'The background color of the volume bar',
+    type: 'string',
+    defaultValue: '',
+  },
+  'audio.volume.color': {
+    description: 'The background color of the volume bar',
+    type: 'string',
+    defaultValue: 'brand',
+  },
+  'audio.volume.opacity': {
+    description: 'The background color of the volume bar',
+    type: 'string',
+    defaultValue: '',
   },
   'global.size.medium': {
     description: 'The width size of the Audio container',

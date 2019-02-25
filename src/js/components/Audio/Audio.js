@@ -17,8 +17,6 @@ import {
   StyledAudioControls,
 } from './StyledAudio';
 
-// default value for the volume can range from 0 to 1. (HTML audio defaults to 1 i.e. max volume)
-const INITIAL_VOLUME = 0.3;
 class Audio extends Component {
   static defaultProps = {
     controls: true,
@@ -39,16 +37,6 @@ class Audio extends Component {
     super(props);
     this.update = throttle(this.update, 100, this);
     this.mediaEventProps = this.injectUpdateAudioEvents();
-  }
-
-  componentDidMount() {
-    const { audioRef } = this.state;
-    const audio = audioRef.current;
-
-    if (audio) {
-      audio.volume = INITIAL_VOLUME;
-      this.setState({ volumeValue: INITIAL_VOLUME });
-    }
   }
 
   injectUpdateAudioEvents = () =>
@@ -190,7 +178,7 @@ class Audio extends Component {
                 <Text
                   textAlign="center"
                   margin="none"
-                  color={theme.audio.controls.duration.color}
+                  color={theme.audio.controls.text.color}
                 >
                   {durationFormattedTime}
                 </Text>

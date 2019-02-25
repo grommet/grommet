@@ -279,30 +279,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // extend: undefined,
     },
     audio: {
-      icons: {
-        pause: Pause,
-        play: Play,
-        volume: Volume,
-        color: 'white',
-      },
-      volume: {
-        background: 'light-4',
-        color: 'brand',
-        opacity: 'strong',
-      },
+      // background: undefined,
       controls: {
-        volume: {
-          rangeInput: {
-            thumb: {
-              color: 'brand',
-            },
-          },
-        },
-        duration: {
+        // extend: undefined,
+        text: {
           color: 'dark-5',
         },
       },
       // extend: undefined,
+      icons: {
+        color: 'white',
+        pause: Pause,
+        play: Play,
+        volume: Volume,
+      },
     },
     box: {
       responsiveBreakpoint: 'small', // when we switch rows to columns

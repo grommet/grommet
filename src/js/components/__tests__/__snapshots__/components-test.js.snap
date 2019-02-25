@@ -197,7 +197,7 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=audio&module=%2Fsrc%2FAudio.js",
       },
     ],
-    "description": "A Audio player.",
+    "description": "An Audio player.",
     "intrinsicElement": "audio",
     "name": "Audio",
     "properties": Array [

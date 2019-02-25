@@ -504,7 +504,7 @@ focus
 \`\`\`
 ",
   "Audio": "## Audio
-A Audio player.
+An Audio player.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Audio&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=audio&module=%2Fsrc%2FAudio.js)
 ## Usage
@@ -671,6 +671,16 @@ Defaults to
 undefined
 \`\`\`
 
+**audio.controls.text.color**
+
+The time duration text shown on the Audio controls Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+dark-5
+\`\`\`
+
 **audio.extend**
 
 Any additional style for Audio. Expects \`string | (props) => {}\`.
@@ -719,6 +729,36 @@ Defaults to
 
 \`\`\`
 <Volume />
+\`\`\`
+
+**audio.volume.background**
+
+The background color of the volume bar Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+
+\`\`\`
+
+**audio.volume.color**
+
+The background color of the volume bar Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+brand
+\`\`\`
+
+**audio.volume.opacity**
+
+The background color of the volume bar Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+
 \`\`\`
 
 **global.size.medium**
