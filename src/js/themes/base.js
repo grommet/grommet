@@ -783,6 +783,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
     },
+    // textArea: {
+    //   extend: undefined,
+    // },
     // textInput: {
     //   extend: undefined,
     // },
