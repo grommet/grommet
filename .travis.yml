@@ -5,7 +5,8 @@ sudo: false
 cache:
   directories:
     - node_modules
-script:
+install:
   - npm install
+script:
   - npm run ./node_modules/.bin/uxpin-merge --webpack-config ./webpack.config.uxpin.js --wrapper ./tools/UXPinWrapper.js
   - |
