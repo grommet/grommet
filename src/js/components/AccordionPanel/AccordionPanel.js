@@ -120,7 +120,12 @@ class AccordionPanel extends Component {
                   </Box>
                 )}
               </Button>
-              <Box border={{ side: 'bottom', color: 'border' }}>
+              <Box
+                border={{
+                  side: 'bottom',
+                  color: theme.accordion.border.color || 'border',
+                }}
+              >
                 {animate ? (
                   <Collapsible open={active}>{children}</Collapsible>
                 ) : (

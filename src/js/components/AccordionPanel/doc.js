@@ -26,4 +26,9 @@ export const themeDoc = {
     type: 'React.element',
     defaultValue: '<FormDown />',
   },
+  'accordion.border.color': {
+    description: 'The possible border colors in the accordion.',
+    type: 'React.element',
+    defaultValue: 'border',
+  },
 };

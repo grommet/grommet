@@ -263,6 +263,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         expand: FormDown,
         // color: { dark: undefined, light: undefined },
       },
+      border: {
+        // color: { dark: undefined, light: undefined },
+      },
     },
     anchor: {
       textDecoration: 'none',

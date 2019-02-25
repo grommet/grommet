@@ -47,3 +47,13 @@ Defaults to
 ```
 <FormDown />
 ```
+
+**accordion.border.color**
+
+The possible border colors in the accordion. Expects `React.element`.
+
+Defaults to
+
+```
+border
+```
