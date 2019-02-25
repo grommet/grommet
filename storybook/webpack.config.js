@@ -4,7 +4,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.stories\.js?$/,
+        test: /\.stories\.js$|\/stories\/.*\.js$/,
         loaders: [
           {
             loader: require.resolve('@storybook/addon-storysource/loader'),
@@ -21,7 +21,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'grommet': path.resolve(__dirname, '../src/js'),
+      grommet: path.resolve(__dirname, '../src/js'),
     },
   },
 };

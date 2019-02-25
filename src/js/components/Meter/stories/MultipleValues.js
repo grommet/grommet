@@ -5,7 +5,7 @@ import { Grommet, Box, Meter, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 class MultipleValues extends Component {
-  state = { total: 70 };
+  state = { total: 100 };
 
   render() {
     const { active, label, total } = this.state;
@@ -18,10 +18,10 @@ class MultipleValues extends Component {
               background="light-2"
               values={[
                 {
-                  value: 40,
+                  value: 70,
                   onHover: over =>
                     this.setState({
-                      active: over ? 40 : 0,
+                      active: over ? 70 : 0,
                       label: over ? 'in use' : undefined,
                     }),
                 },
