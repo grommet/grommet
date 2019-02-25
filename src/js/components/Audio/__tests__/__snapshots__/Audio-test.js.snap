@@ -463,6 +463,8 @@ exports[`Audio autoplay renders 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
               type="button"
             >
               <svg
@@ -996,6 +998,8 @@ exports[`Audio controls renders 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
               type="button"
             >
               <svg
@@ -1567,6 +1571,8 @@ exports[`Audio loop renders 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
               type="button"
             >
               <svg
@@ -2100,6 +2106,8 @@ exports[`Audio mute renders 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
               type="button"
             >
               <svg
@@ -2633,6 +2641,8 @@ exports[`Audio renders 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
               type="button"
             >
               <svg
