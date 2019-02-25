@@ -20,7 +20,7 @@ jobs:
             - ~/.cache
             - ./node_modules
       - persist_to_workspace:
-          root: grommet-ci
+          root: ~/grommet-ci
           paths:
             - ./
   lint:
