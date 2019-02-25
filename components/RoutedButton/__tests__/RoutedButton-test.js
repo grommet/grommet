@@ -83,15 +83,17 @@ describe('RoutedButton', function () {
     var onClick = jest.fn();
 
     var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeRouter, {
+      replace: replace,
       push: push
     }, _react.default.createElement(_.RoutedButton, {
       label: "Test",
-      onClick: onClick
+      onClick: onClick,
+      path: "/"
     }))));
 
     var tree = component.toJSON();
-    var button = (0, _utils.findAllByType)(tree, 'button');
-    button[0].props.onClick({
+    var anchor = (0, _utils.findAllByType)(tree, 'a');
+    anchor[0].props.onClick({
       preventDefault: preventDefault
     });
     expect(onClick).toBeCalled();
@@ -106,15 +108,16 @@ describe('RoutedButton', function () {
       push: push
     }, _react.default.createElement(_.RoutedButton, {
       label: "Test",
-      onClick: onClick
+      onClick: onClick,
+      path: "/"
     }))));
 
     var tree = component.toJSON();
-    var button = (0, _utils.findAllByType)(tree, 'button');
-    button[0].props.onClick({
+    var anchor = (0, _utils.findAllByType)(tree, 'a');
+    anchor[0].props.onClick({
       ctrlKey: true
     });
-    button[0].props.onClick({
+    anchor[0].props.onClick({
       metaKey: true
     });
     expect(onClick).not.toBeCalled();

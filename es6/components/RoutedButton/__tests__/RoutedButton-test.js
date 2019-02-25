@@ -70,14 +70,16 @@ describe('RoutedButton', function () {
     var preventDefault = jest.fn();
     var onClick = jest.fn();
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(FakeRouter, {
+      replace: replace,
       push: push
     }, React.createElement(RoutedButton, {
       label: "Test",
-      onClick: onClick
+      onClick: onClick,
+      path: "/"
     }))));
     var tree = component.toJSON();
-    var button = findAllByType(tree, 'button');
-    button[0].props.onClick({
+    var anchor = findAllByType(tree, 'a');
+    anchor[0].props.onClick({
       preventDefault: preventDefault
     });
     expect(onClick).toBeCalled();
@@ -91,14 +93,15 @@ describe('RoutedButton', function () {
       push: push
     }, React.createElement(RoutedButton, {
       label: "Test",
-      onClick: onClick
+      onClick: onClick,
+      path: "/"
     }))));
     var tree = component.toJSON();
-    var button = findAllByType(tree, 'button');
-    button[0].props.onClick({
+    var anchor = findAllByType(tree, 'a');
+    anchor[0].props.onClick({
       ctrlKey: true
     });
-    button[0].props.onClick({
+    anchor[0].props.onClick({
       metaKey: true
     });
     expect(onClick).not.toBeCalled();

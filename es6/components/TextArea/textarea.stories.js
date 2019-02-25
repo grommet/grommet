@@ -10,6 +10,7 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Grommet, Box, TextArea } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 
 var SimpleTextArea =
 /*#__PURE__*/
@@ -56,12 +57,20 @@ function (_Component) {
   return SimpleTextArea;
 }(Component);
 
-var FillTextArea =
+var customTheme = deepMerge(grommet, {
+  textArea: {
+    extend: function extend() {
+      return "\n      font-size: 40px;\n      color: red;\n    ";
+    }
+  }
+});
+
+var ThemedTextArea =
 /*#__PURE__*/
 function (_Component2) {
-  _inheritsLoose(FillTextArea, _Component2);
+  _inheritsLoose(ThemedTextArea, _Component2);
 
-  function FillTextArea() {
+  function ThemedTextArea() {
     var _this2;
 
     for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
@@ -83,9 +92,59 @@ function (_Component2) {
     return _this2;
   }
 
-  var _proto2 = FillTextArea.prototype;
+  var _proto2 = ThemedTextArea.prototype;
 
   _proto2.render = function render() {
+    var value = this.state.value;
+    return React.createElement(Grommet, {
+      theme: customTheme
+    }, React.createElement(Box, {
+      width: "large",
+      height: "medium",
+      border: {
+        color: 'brand',
+        size: 'medium'
+      }
+    }, React.createElement(TextArea, {
+      value: value,
+      onChange: this.onChange,
+      fill: true
+    })));
+  };
+
+  return ThemedTextArea;
+}(Component);
+
+var FillTextArea =
+/*#__PURE__*/
+function (_Component3) {
+  _inheritsLoose(FillTextArea, _Component3);
+
+  function FillTextArea() {
+    var _this3;
+
+    for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+      args[_key3] = arguments[_key3];
+    }
+
+    _this3 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "state", {
+      value: ''
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "onChange", function (event) {
+      return _this3.setState({
+        value: event.target.value
+      });
+    });
+
+    return _this3;
+  }
+
+  var _proto3 = FillTextArea.prototype;
+
+  _proto3.render = function render() {
     var value = this.state.value;
     return React.createElement(Grommet, {
       theme: grommet
@@ -112,6 +171,8 @@ storiesOf('TextArea', module).add('Simple', function () {
   });
 }).add('Fill', function () {
   return React.createElement(FillTextArea, null);
+}).add('Themed', function () {
+  return React.createElement(ThemedTextArea, null);
 }).add('Non resizable', function () {
   return React.createElement(SimpleTextArea, {
     resize: false

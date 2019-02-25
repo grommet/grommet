@@ -835,6 +835,9 @@ export var generate = function generate(baseSpacing, scale) {
       xlarge: _extends({}, fontSizing(2)),
       xxlarge: _extends({}, fontSizing(4))
     },
+    // textArea: {
+    //   extend: undefined,
+    // },
     // textInput: {
     //   extend: undefined,
     // },
