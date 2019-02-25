@@ -7,10 +7,3 @@ cache:
     - node_modules
 script:
   - npm run lint
-  - npm run test
-  - |
-    if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
-      git config --global user.name "Grommet Community Bot"
-      git config --global user.email "grommet@hpe.com"
-      npm run build && npm run release-stable
-    fi
