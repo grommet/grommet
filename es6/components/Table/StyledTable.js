@@ -59,7 +59,7 @@ Object.setPrototypeOf(StyledTableFooter.defaultProps, defaultProps);
 var StyledTable = styled.table.withConfig({
   displayName: "StyledTable",
   componentId: "sc-1m3u5g-6"
-})(["border-spacing:0;border-collapse:collapse;", " ", ";"], genericStyles, function (props) {
+})(["border-spacing:0;border-collapse:collapse;width:inherit;", " ", ";"], genericStyles, function (props) {
   return props.theme.table && props.theme.table.extend;
 });
 StyledTable.defaultProps = {};
