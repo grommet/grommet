@@ -399,6 +399,26 @@ Defaults to
 undefined
 ```
 
+**select.options.container**
+
+Any valid Box prop for the options container. Expects `object`.
+
+Defaults to
+
+```
+{ align: 'start', pad: 'small' }
+```
+
+**select.options.text**
+
+Any valid Text prop for text used inside the options container. Expects `object`.
+
+Defaults to
+
+```
+{ margin: 'none }
+```
+
 **select.container.extend**
 
 Any additional style for the container of the Select component. Expects `string | (props) => {}`.
