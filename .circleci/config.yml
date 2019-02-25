@@ -1,0 +1,51 @@
+version: 2.1
+
+defaults: &defaults
+  working_directory: ~/grommet-ci
+  docker:
+    - image: circleci/node:10
+
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ checksum "yarn.lock" }}
+      - run: yarn --frozen-lockfile
+      - save_cache:
+          key: yarn-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache
+            - ./node_modules
+      - persist_to_workspace:
+          root: ~/grommet-ci
+          paths:
+            - ./
+  lint:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: Running linter
+          command: yarn lint
+  jest:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: Running jest
+          command: yarn test
+workflows:
+  build_test:
+    jobs:
+      - build
+      - lint:
+          requires:
+            - build
+      - jest:
+          requires:
+            - build
