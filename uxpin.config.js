@@ -2,6 +2,12 @@ module.exports = {
   components: {
     categories: [
       {
+        name: 'Experimental',
+        include: [
+          'src/js/components/Select/SelectInteractive/SelectInteractive.js',
+        ],
+      },
+      {
         name: 'Type',
         include: [
           'src/js/components/Heading/Heading.js',

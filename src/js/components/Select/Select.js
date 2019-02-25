@@ -265,7 +265,7 @@ Select.propTypes = {
   onClose: PropTypes.func,
   onOpen: PropTypes.func,
   onSearch: PropTypes.func,
-  options: PropTypes.object,
+  options: PropTypes.array,
   placeholder: PropTypes.node,
   plain: PropTypes.bool,
   searchPlaceholder: PropTypes.string,
