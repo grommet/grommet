@@ -19,7 +19,7 @@ const validateField = (required, validate, messages) => (value, data) => {
     if (typeof validate === 'function') {
       error = validate(value, data);
     } else if (validate.regexp) {
-      if (!validate.regexp.test(data)) {
+      if (!validate.regexp.test(value)) {
         error = validate.message || messages.invalid;
       }
     }
