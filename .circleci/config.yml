@@ -45,11 +45,10 @@ jobs:
       - attach_workspace:
           at: ~/grommet-ci
       - run:
-          command: git config --global user.name "Grommet Community Bot"
-      - run:
-          command: git config --global user.email "grommet@hpe.com"
-      - run:
-          command: yarn build
+          command: |
+            git config --global user.name "Grommet Community Bot"
+            git config --global user.email "grommet@hpe.com"
+            yarn build
 workflows:
   build_test:
     jobs:
