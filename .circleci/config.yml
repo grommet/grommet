@@ -39,6 +39,15 @@ jobs:
       - run:
           name: Running jest
           command: yarn test
+  release:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      -run:
+          - git config --global user.name "Grommet Community Bot"
+          - git config --global user.email "grommet@hpe.com"
+          - yarn build
 workflows:
   build_test:
     jobs:
@@ -49,3 +58,11 @@ workflows:
       - jest:
           requires:
             - build
+      - release:
+          requires:
+            - jest
+            - lint
+          filters:
+            branches:
+              only:
+                - master
