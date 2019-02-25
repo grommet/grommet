@@ -73,7 +73,7 @@ const StyledRangeInput = styled.input`
   }
 
   &::-webkit-slider-thumb {
-    margin-top: -${props => parseMetricToNum(props.theme.global.spacing) * 0.425}px;
+    margin-top: -${props => (parseMetricToNum(props.theme.global.spacing) - parseMetricToNum(props.theme.rangeInput.track.height || 0)) * 0.5}px;
     ${rangeThumbStyle}
 
     ${props =>
