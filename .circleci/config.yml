@@ -44,7 +44,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/grommet-ci
-      -run:
+      - run:
           - git config --global user.name "Grommet Community Bot"
           - git config --global user.email "grommet@hpe.com"
           - yarn build
