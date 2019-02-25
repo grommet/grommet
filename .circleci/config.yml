@@ -51,6 +51,12 @@ jobs:
           root: ~/grommet-ci
           paths:
             - ./
+      - run:
+          name: ls
+          command: ls -lah
+      - run:
+          name: pwd
+          command: pwd
   release:
     <<: *defaults
     steps:
