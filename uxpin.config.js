@@ -8,7 +8,6 @@ module.exports = {
           'src/js/components/Markdown/Markdown/Markdown.js',
           'src/js/components/Paragraph/Paragraph.js',
           'src/js/components/Text/Text.js',
-
         ],
       },
       {
@@ -47,7 +46,6 @@ module.exports = {
           'src/js/components/Chart/Chart.js',
           'src/js/components/Clock/Clock.js',
           'src/js/components/Collapsible/Collapsible.js',
-          'src/js/components/Diagram/Diagram.js',
           'src/js/components/Keyboard/Keyboard.js',
           'src/js/components/Meter/Meter.js',
           'src/js/components/WorldMap/WorldMap.js',
