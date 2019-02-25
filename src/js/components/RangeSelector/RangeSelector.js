@@ -168,7 +168,11 @@ class RangeSelector extends Component {
           background={
             invert
               ? // preserve existing dark, instead of using darknes of this color
-                { color: color || 'light-4', opacity, dark: theme.dark }
+                {
+                  color: color || theme.rangeSelector.background.invert.color,
+                  opacity,
+                  dark: theme.dark,
+                }
               : undefined
           }
           fill={fill}
@@ -231,7 +235,11 @@ class RangeSelector extends Component {
           background={
             invert
               ? // preserve existing dark, instead of using darknes of this color
-                { color: color || 'light-4', opacity, dark: theme.dark }
+                {
+                  color: color || theme.rangeSelector.background.invert.color,
+                  opacity,
+                  dark: theme.dark,
+                }
               : undefined
           }
           fill={fill}

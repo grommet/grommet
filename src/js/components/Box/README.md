@@ -228,6 +228,14 @@ string
     medium
     strong
     boolean,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
   light: string
 }
 ```
@@ -385,15 +393,16 @@ string
 
 **justify**
 
-How to align the contents along the main axis.
+How to align the contents along the main axis. Defaults to `stretch`.
 
 ```
-start
-center
-between
 around
-evenly
+between
+center
 end
+evenly
+start
+stretch
 ```
 
 **overflow**
@@ -637,7 +646,7 @@ Defaults to
 
 **global.colors.text**
 
-The text color used inside the Box. Expects `string | { dark: string, light: string }`.
+The text color when the Box changes the background color Expects `string | { dark: string, light: string }`.
 
 Defaults to
 

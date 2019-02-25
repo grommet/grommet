@@ -12,6 +12,6 @@ export interface VideoProps {
   mute?: boolean;
 }
 
-declare const Video: React.ComponentType<VideoProps & JSX.IntrinsicElements['video']>;
+declare const Video: React.ComponentClass<VideoProps & JSX.IntrinsicElements['video']>;
 
 export { Video };

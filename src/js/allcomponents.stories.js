@@ -86,6 +86,7 @@ class Components extends Component {
 
   render() {
     const {
+      background,
       baseSize,
       checkBox,
       radioButton,
@@ -299,8 +300,10 @@ class Components extends Component {
     ];
 
     return (
-      <React.Fragment>
-        <Grommet theme={grommet}>
+      <div
+        style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}
+      >
+        <Grommet theme={grommet} style={{ flex: '0 0 auto' }}>
           <Box
             direction="row-responsive"
             gap="medium"
@@ -318,6 +321,16 @@ class Components extends Component {
               />
             </Box>
             <Box basis="small">
+              <Select
+                plain
+                placeholder="background"
+                size="small"
+                options={['default', 'dark-1', 'light-1']}
+                value={background}
+                onChange={event => this.setState({ background: event.option })}
+              />
+            </Box>
+            <Box basis="small">
               <RangeInput
                 min={16}
                 max={36}
@@ -331,12 +344,11 @@ class Components extends Component {
             <Text size="small">{`${baseSize}px base spacing`}</Text>
           </Box>
         </Grommet>
-        <Grommet theme={theme}>
+        <Grommet theme={theme} style={{ flex: '1 1' }}>
           <Box
+            fill
             pad="medium"
-            background={
-              theme.global.colors.background || theme.global.colors.white
-            }
+            background={background || theme.global.colors.background}
             overflow="auto"
           >
             {Grid.available ? (
@@ -350,7 +362,7 @@ class Components extends Component {
             )}
           </Box>
         </Grommet>
-      </React.Fragment>
+      </div>
     );
   }
 }

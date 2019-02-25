@@ -1,7 +1,6 @@
 import React, { Children, cloneElement, Component } from 'react';
 import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
@@ -20,7 +19,7 @@ const validateField = (required, validate, messages) => (value, data) => {
     if (typeof validate === 'function') {
       error = validate(value, data);
     } else if (validate.regexp) {
-      if (!validate.regexp.test(data)) {
+      if (!validate.regexp.test(value)) {
         error = validate.message || messages.invalid;
       }
     }
@@ -28,9 +27,14 @@ const validateField = (required, validate, messages) => (value, data) => {
   return error;
 };
 
+const FormFieldBox = styled(Box)`
+  ${props => props.theme.formField.extend}
+`;
+
 class FormField extends Component {
   renderChildren = (value, update) => {
     const { name, component, required, ...rest } = this.props;
+    delete rest.className;
     const Input = component || TextInput;
     if (Input === CheckBox) {
       return (
@@ -57,6 +61,7 @@ class FormField extends Component {
   render() {
     const {
       children,
+      className,
       component,
       error,
       focus,
@@ -89,11 +94,7 @@ class FormField extends Component {
           }
 
           if (pad) {
-            contents = (
-              <Box pad={{ horizontal: 'small', bottom: 'small' }}>
-                {contents}
-              </Box>
-            );
+            contents = <Box {...formField.content}>{contents}</Box>;
           }
 
           let borderColor;
@@ -121,7 +122,6 @@ class FormField extends Component {
                   return child;
                 })
               : contents;
-
             contents = (
               <Box
                 ref={ref => {
@@ -164,28 +164,24 @@ class FormField extends Component {
           }
 
           return (
-            <Box
+            <FormFieldBox
+              className={className}
               border={
                 border && border.position === 'outer'
                   ? { ...border, color: borderColor }
                   : undefined
               }
-              margin={abut ? undefined : { bottom: 'small' }}
+              margin={abut ? undefined : { ...formField.margin }}
               style={outerStyle}
             >
               {(label && component !== CheckBox) || help ? (
-                <Box
-                  margin={{ vertical: 'xsmall', horizontal: 'small' }}
-                  gap="xsmall"
-                >
-                  {label && component !== CheckBox ? (
+                <>
+                  {label && component !== CheckBox && (
                     <Text as="label" htmlFor={htmlFor} {...formField.label}>
                       {label}
                     </Text>
-                  ) : (
-                    undefined
                   )}
-                  {help ? (
+                  {help && (
                     <Text
                       {...formField.help}
                       color={
@@ -194,27 +190,21 @@ class FormField extends Component {
                     >
                       {help}
                     </Text>
-                  ) : (
-                    undefined
                   )}
-                </Box>
+                </>
               ) : (
                 undefined
               )}
               {contents}
-              {normalizedError ? (
-                <Box margin={{ vertical: 'xsmall', horizontal: 'small' }}>
-                  <Text
-                    {...formField.error}
-                    color={formField.error.color[theme.dark ? 'dark' : 'light']}
-                  >
-                    {normalizedError}
-                  </Text>
-                </Box>
-              ) : (
-                undefined
+              {normalizedError && (
+                <Text
+                  {...formField.error}
+                  color={formField.error.color[theme.dark ? 'dark' : 'light']}
+                >
+                  {normalizedError}
+                </Text>
               )}
-            </Box>
+            </FormFieldBox>
           );
         }}
       </FormContext.Consumer>

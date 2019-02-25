@@ -174,3 +174,64 @@ function
 ```
 div
 ```
+## Theme
+  
+**tabs.background**
+
+background styling of Tabs. Expects `object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.extend**
+
+Any additional style for Tabs. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.gap**
+
+The gap size between the Tabs. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.header.background**
+
+The background styles of Tabs header. Expects ``.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.header.extend**
+
+Any additional style for Tabs header. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.panel.extend**
+
+Any additional style for Tabs panel. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```

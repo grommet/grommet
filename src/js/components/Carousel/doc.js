@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { genericProps, getAvailableAtBadge } from '../../utils';
+import { genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 export const doc = Carousel => {
   const DocumentedCarousel = describe(Carousel)
@@ -50,4 +50,13 @@ export const themeDoc = {
     type: 'string',
     defaultValue: undefined,
   },
+  'global.colors.icon': {
+    description: 'The color used for Carousel icons.',
+    type: 'object',
+    defaultValue: {
+      dark: '#f8f8f8',
+      light: '#666666',
+    },
+  },
+  ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
 };
