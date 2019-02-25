@@ -8,6 +8,7 @@ exports[`Table caption renders 1`] = `
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c0 {
@@ -39,6 +40,7 @@ exports[`Table renders 1`] = `
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c0 {
@@ -64,6 +66,7 @@ exports[`TableBody renders 1`] = `
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c0 {
@@ -106,6 +109,7 @@ exports[`TableCell plain renders 1`] = `
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c0 {
@@ -249,6 +253,7 @@ exports[`TableCell renders 1`] = `
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c0 {
@@ -463,6 +468,7 @@ exports[`TableCell scope renders 1`] = `
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c0 {
@@ -694,6 +700,7 @@ exports[`TableCell size renders 1`] = `
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c0 {
@@ -921,6 +928,7 @@ exports[`TableCell verticalAlign renders 1`] = `
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c0 {
@@ -1002,6 +1010,7 @@ exports[`TableFooter renders 1`] = `
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c0 {
@@ -1031,6 +1040,7 @@ exports[`TableHeader renders 1`] = `
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c0 {
@@ -1064,6 +1074,7 @@ exports[`TableRow renders 1`] = `
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c0 {
