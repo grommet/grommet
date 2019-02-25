@@ -56,15 +56,14 @@ describe('RoutedButton', () => {
     const onClick = jest.fn();
     const component = renderer.create(
       <Grommet>
-        <FakeRouter push={push}>
-          <RoutedButton label="Test" onClick={onClick} />
+        <FakeRouter replace={replace} push={push}>
+          <RoutedButton label="Test" onClick={onClick} path="/" />
         </FakeRouter>
       </Grommet>,
     );
     const tree = component.toJSON();
-
-    const button = findAllByType(tree, 'button');
-    button[0].props.onClick({ preventDefault });
+    const anchor = findAllByType(tree, 'a');
+    anchor[0].props.onClick({ preventDefault });
     expect(onClick).toBeCalled();
     expect(push).toBeCalled();
     expect(preventDefault).toBeCalled();
@@ -75,17 +74,17 @@ describe('RoutedButton', () => {
     const component = renderer.create(
       <Grommet>
         <FakeRouter replace={replace} push={push}>
-          <RoutedButton label="Test" onClick={onClick} />
+          <RoutedButton label="Test" onClick={onClick} path="/" />
         </FakeRouter>
       </Grommet>,
     );
     const tree = component.toJSON();
 
-    const button = findAllByType(tree, 'button');
-    button[0].props.onClick({
+    const anchor = findAllByType(tree, 'a');
+    anchor[0].props.onClick({
       ctrlKey: true,
     });
-    button[0].props.onClick({
+    anchor[0].props.onClick({
       metaKey: true,
     });
     expect(onClick).not.toBeCalled();
