@@ -59,14 +59,29 @@ export { MeterWrapper as Meter };
 /* PropTypes for UXPin Merge */
 Meter.propTypes = {
   a11yTitle: PropTypes.string,
-  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   gridArea: PropTypes.string,
-  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
-  background: PropTypes.string,
+  margin: PropTypes.oneOf([
+    'none',
+    'xxsmall',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+  ]),
+  background: PropTypes.object,
   round: PropTypes.bool,
-  size: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge", "full"]),
-  thickness: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge"]),
-  type: PropTypes.oneOf(["bar", "circle"]),
+  size: PropTypes.oneOf([
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+    'full',
+  ]),
+  thickness: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+  type: PropTypes.oneOf(['bar', 'circle']),
   values: PropTypes.arrayOf(
     PropTypes.shape({
       color: PropTypes.string,
@@ -77,7 +92,7 @@ Meter.propTypes = {
       value: PropTypes.number,
     }),
   ),
-}
+};
 
 /* Export for UXPin Merge */
 export default Meter;

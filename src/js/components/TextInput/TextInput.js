@@ -409,12 +409,12 @@ export { TextInputWrapper as TextInput };
 
 TextInput.propTypes = {
   dropAlign: PropTypes.shape({
-    top: PropTypes.oneOf(["top", "bottom"]),
-    bottom: PropTypes.oneOf(["top", "bottom"]),
-    right: PropTypes.oneOf(["left", "right"]),
-    left: PropTypes.oneOf(["left", "right"]),
+    top: PropTypes.oneOf(['top', 'bottom']),
+    bottom: PropTypes.oneOf(['top', 'bottom']),
+    right: PropTypes.oneOf(['left', 'right']),
+    left: PropTypes.oneOf(['left', 'right']),
   }),
-  dropHeight: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge"]),
+  dropHeight: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   dropTarget: PropTypes.object,
   id: PropTypes.string,
   focusIndicator: PropTypes.bool,
@@ -430,13 +430,15 @@ TextInput.propTypes = {
   onSuggestionsClose: PropTypes.func,
   placeholder: PropTypes.node,
   plain: PropTypes.bool,
-  size: PropTypes.oneOf(["small", "medium", "large", "xlarge"]),
-  suggestions: PropTypes.arrayOf(PropTypes.shape({
-    label: React.ReactNode,
-    value: PropTypes.string,
-  })),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+  suggestions: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: React.string,
+      value: PropTypes.string,
+    }),
+  ),
   value: PropTypes.string,
-}
+};
 
 /* Export for UXPin Merge */
 export default TextInput;

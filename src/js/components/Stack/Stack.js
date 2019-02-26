@@ -100,8 +100,8 @@ Stack.propTypes = {
     'bottom-right',
   ]),
   fill: PropTypes.bool,
-  guidingChild: PropTypes.oneOf(['0', 'first', 'last']),
-  interactiveChild: PropTypes.oneOf(['0', 'first', 'last']),
+  guidingChild: PropTypes.oneOf([0, 1, 'first', 'last']),
+  interactiveChild: PropTypes.oneOf([0, 1, 'first', 'last']),
 };
 
 /* Export default for UXPin Merge */

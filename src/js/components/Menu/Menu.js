@@ -235,14 +235,12 @@ Menu.propTypes = {
     'xlarge',
   ]),
   disabled: PropTypes.bool,
-  dropAlign: PropTypes.arrayOf(
-    PropTypes.shape({
-      top: PropTypes.oneOf(['top', 'bottom']),
-      bottom: PropTypes.oneOf(['top', 'bottom']),
-      left: PropTypes.oneOf(['right', 'left']),
-      right: PropTypes.oneOf(['right', 'left']),
-    }),
-  ),
+  dropAlign: PropTypes.shape({
+    top: PropTypes.oneOf(['top', 'bottom']),
+    bottom: PropTypes.oneOf(['top', 'bottom']),
+    left: PropTypes.oneOf(['right', 'left']),
+    right: PropTypes.oneOf(['right', 'left']),
+  }),
   dropBackground: PropTypes.string,
   dropTarget: PropTypes.object,
   justifyContent: PropTypes.oneOf([
@@ -253,7 +251,7 @@ Menu.propTypes = {
     'around',
     'stretch',
   ]),
-  icon: PropTypes.bool,
+  icon: PropTypes.oneOfType(PropTypes.string, PropTypes.object, PropTypes.node),
   items: PropTypes.arrayOf(PropTypes.object),
   label: PropTypes.node,
   messages: PropTypes.arrayOf(

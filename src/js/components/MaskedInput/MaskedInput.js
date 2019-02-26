@@ -391,13 +391,13 @@ MaskedInput.propTypes = {
       length: PropTypes.arrayOf(PropTypes.number),
       fixed: PropTypes.string,
       options: PropTypes.arrayOf(PropTypes.string),
-      regexp: PropTypes.string,
+      regexp: PropTypes.any,
       placeholder: PropTypes.string,
-    })
+    }),
   ),
-  size: PropTypes.oneOf(["small", "medium", "large", "xlarge"]),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   value: PropTypes.string,
-}
+};
 
 /* Export for UXPin Merge */
 export default MaskedInput;

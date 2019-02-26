@@ -207,7 +207,7 @@ Clock.propTypes = {
     'large',
     'xlarge',
   ]),
-  hourLimit: PropTypes.oneOf(['12', '24']),
+  hourLimit: PropTypes.oneOf([12, 24, '12', '24']),
   onChange: PropTypes.func,
   precision: PropTypes.oneOf(['hours', 'minutes', 'seconds']),
   run: PropTypes.oneOf([true, false, 'backward', 'forward']),
