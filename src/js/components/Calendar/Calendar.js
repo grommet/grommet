@@ -396,15 +396,23 @@ export { CalendarWrapper as Calendar };
 
 Calendar.propTypes = {
   a11yTitle: PropTypes.string,
-  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   gridArea: PropTypes.string,
-  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  margin: PropTypes.oneOf([
+    'none',
+    'xxsmall',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+  ]),
   animate: PropTypes.bool,
-  bounds: PropTypes.object,
+  bounds: PropTypes.array,
   date: PropTypes.string,
-  dates: PropTypes.object,
+  dates: PropTypes.array,
   disabled: PropTypes.object,
-  firstDayOfWeek: PropTypes.oneOf(["0", "1"]),
+  firstDayOfWeek: PropTypes.oneOf([0, 1]),
   header: PropTypes.func,
   locale: PropTypes.string,
   onReference: PropTypes.func,
@@ -412,8 +420,8 @@ Calendar.propTypes = {
   range: PropTypes.bool,
   reference: PropTypes.string,
   showAdjacentDays: PropTypes.bool,
-  size: PropTypes.oneOf(["small", "medium", "large"]),
-}
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+};
 
 /* Export for UXPin Merge */
 export default Calendar;

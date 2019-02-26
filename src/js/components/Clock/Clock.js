@@ -196,16 +196,31 @@ export { ClockWrapper as Clock };
 /* PropTypes for UXPin Merge */
 Clock.propTypes = {
   a11yTitle: PropTypes.string,
-  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   gridArea: PropTypes.string,
-  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
-  hourLimit: PropTypes.oneOf(["12", "24", "12", "24"]),
+  margin: PropTypes.oneOf([
+    'none',
+    'xxsmall',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+  ]),
+  hourLimit: PropTypes.oneOf(['12', '24']),
   onChange: PropTypes.func,
-  precision: PropTypes.oneOf(["hours", "minutes", "seconds"]),
-  run: PropTypes.oneOf(["backward", "forward"]),
-  size: PropTypes.oneOf(["small", "medium", "large", "xlarge"]),
+  precision: PropTypes.oneOf(['hours', 'minutes', 'seconds']),
+  run: PropTypes.oneOf([true, false, 'backward', 'forward']),
+  size: PropTypes.oneOf([
+    'xxsmall',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+  ]),
   time: PropTypes.string,
-  type: PropTypes.oneOf(["analog", "digital"]),
-}
+  type: PropTypes.oneOf(['analog', 'digital']),
+};
 
 export default Clock;

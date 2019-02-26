@@ -242,7 +242,6 @@ Select.propTypes = {
     'large',
     'xlarge',
   ]),
-  children: PropTypes.node,
   closeOnChange: PropTypes.bool,
   disabled: PropTypes.bool,
   disabledKey: PropTypes.string,

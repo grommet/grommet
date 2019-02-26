@@ -46,8 +46,8 @@ TextArea.propTypes = {
   placeholder: PropTypes.string,
   plain: PropTypes.bool,
   value: PropTypes.string,
-  resize: PropTypes.oneOf(["vertical", "horizontal"]),
-}
+  resize: PropTypes.oneOf([true, false, 'vertical', 'horizontal']),
+};
 
 /* Export Default for UXPin Merge */
 export default TextArea;

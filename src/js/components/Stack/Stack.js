@@ -77,14 +77,32 @@ export { StackWrapper as Stack };
 Stack.propTypes = {
   children: PropTypes.node,
   a11yTitle: PropTypes.string,
-  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   gridArea: PropTypes.string,
-  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
-  anchor: PropTypes.oneOf(["center", "left", "right", "top", "bottom", "top-left", "bottom-left", "top-right", "bottom-right"]),
+  margin: PropTypes.oneOf([
+    'none',
+    'xxsmall',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+  ]),
+  anchor: PropTypes.oneOf([
+    'center',
+    'left',
+    'right',
+    'top',
+    'bottom',
+    'top-left',
+    'bottom-left',
+    'top-right',
+    'bottom-right',
+  ]),
   fill: PropTypes.bool,
-  guidingChild: PropTypes.oneOf(["first", "last"]),
-  interactiveChild: PropTypes.oneOf(["first", "last"]),
-}
+  guidingChild: PropTypes.oneOf(['0', 'first', 'last']),
+  interactiveChild: PropTypes.oneOf(['0', 'first', 'last']),
+};
 
 /* Export default for UXPin Merge */
 export default Stack;

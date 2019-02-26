@@ -160,15 +160,23 @@ const ButtonWrapper = compose(
 
 Button.propTypes = {
   a11yTitle: PropTypes.string,
-  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   gridArea: PropTypes.string,
-  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  margin: PropTypes.oneOf([
+    'none',
+    'xxsmall',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+  ]),
   active: PropTypes.bool,
   color: PropTypes.string,
   disabled: PropTypes.bool,
   fill: PropTypes.bool,
-  focusIndicator: PropTypes.bool,
-  hoverIndicator: PropTypes.bool,
+  focusIndicator: PropTypes.string,
+  hoverIndicator: PropTypes.string,
   href: PropTypes.string,
   icon: PropTypes.node,
   label: PropTypes.string,
@@ -176,9 +184,9 @@ Button.propTypes = {
   plain: PropTypes.bool,
   primary: PropTypes.bool,
   reverse: PropTypes.bool,
-  type: PropTypes.oneOf(["button", "reset", "submit"]),
+  type: PropTypes.oneOf(['button', 'reset', 'submit']),
   as: PropTypes.string,
-}
+};
 
 export { ButtonWrapper as Button };
 

@@ -21,18 +21,33 @@ export { TextWrapper as Text };
 Text.propTypes = {
   children: PropTypes.node,
   a11yTitle: PropTypes.string,
-  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   gridArea: PropTypes.string,
-  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  margin: PropTypes.oneOf([
+    'none',
+    'xxsmall',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+  ]),
   color: PropTypes.string,
-  size: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge", "xxlarge"]),
+  size: PropTypes.oneOf([
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+    'xxlarge',
+  ]),
   tag: PropTypes.string,
   as: PropTypes.string,
-  textAlign: PropTypes.oneOf(["start", "center", "end"]),
+  textAlign: PropTypes.oneOf(['start', 'center', 'end']),
   truncate: PropTypes.bool,
-  weight: PropTypes.number,
+  weight: PropTypes.string,
   level: PropTypes.number,
-}
+};
 
 /* Export default for UXPin Merge */
 export default Text;

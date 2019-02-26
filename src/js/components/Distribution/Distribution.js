@@ -126,16 +126,24 @@ export { DistributionWrapper as Distribution };
 /* PropTypes for UXPin Merge */
 Distribution.propTypes = {
   a11yTitle: PropTypes.string,
-  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   gridArea: PropTypes.string,
-  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  margin: PropTypes.oneOf([
+    'none',
+    'xxsmall',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+  ]),
   children: PropTypes.func,
   fill: PropTypes.bool,
-  gap: PropTypes.oneOf(["xsmall", "small", "medium", "large", "xlarge"]),
-  values: PropTypes.object,
+  gap: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+  values: PropTypes.array,
   direction: PropTypes.string,
   basis: PropTypes.string,
-}
+};
 
 /* Export for UXPin Merge */
 export default Distribution;

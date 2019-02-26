@@ -246,20 +246,44 @@ export { ChartWrapper as Chart };
 
 Chart.propTypes = {
   a11yTitle: PropTypes.string,
-  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   gridArea: PropTypes.string,
-  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  margin: PropTypes.oneOf([
+    'none',
+    'xxsmall',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+  ]),
   bounds: PropTypes.object,
   color: PropTypes.string,
   onClick: PropTypes.func,
   onHover: PropTypes.func,
   overflow: PropTypes.bool,
   round: PropTypes.bool,
-  size: PropTypes.oneOf(["xxsmall", "xsmall", "small", "medium", "large", "xlarge", "full"]),
-  thickness: PropTypes.oneOf(["hair", "xsmall", "small", "medium", "large", "xlarge", "none"]),
-  type: PropTypes.oneOf(["bar", "line", "area"]),
-  values: PropTypes.object,
-}
+  size: PropTypes.oneOf([
+    'xxsmall',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+    'full',
+  ]),
+  thickness: PropTypes.oneOf([
+    'hair',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+    'none',
+  ]),
+  type: PropTypes.oneOf(['bar', 'line', 'area']),
+  values: PropTypes.array,
+};
 
 /* Export for UXPin Merge */
 export default Chart;

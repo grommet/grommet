@@ -31,8 +31,8 @@ RangeInput.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func,
   step: PropTypes.number,
-  value: PropTypes.number,
-}
+  value: PropTypes.string,
+};
 
 /* Export default for UXPin Merge */
 export default RangeInput;

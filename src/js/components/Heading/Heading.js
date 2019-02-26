@@ -36,16 +36,24 @@ export { HeadingWrapper as Heading };
 Heading.propTypes = {
   children: PropTypes.node,
   a11yTitle: PropTypes.string,
-  alignSelf: PropTypes.oneOf(["start", "center", "end", "stretch"]),
+  alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
   gridArea: PropTypes.string,
-  margin: PropTypes.oneOf(["none", "xxsmall", "xsmall", "small", "medium", "large", "xlarge"]),
+  margin: PropTypes.oneOf([
+    'none',
+    'xxsmall',
+    'xsmall',
+    'small',
+    'medium',
+    'large',
+    'xlarge',
+  ]),
   color: PropTypes.string,
-  level: PropTypes.oneOf(["1", "2", "3", "4", "5", "6", "1", "2", "3", "4", "5", "6"]),
+  level: PropTypes.oneOf(['1', '2', '3', '4', '5', '6']),
   responsive: PropTypes.bool,
-  size: PropTypes.oneOf(["small", "medium", "large", "xlarge"]),
-  textAlign: PropTypes.oneOf(["start", "center", "end"]),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+  textAlign: PropTypes.oneOf(['start', 'center', 'end']),
   truncate: PropTypes.bool,
-}
+};
 
 /* Export for UXPin Merge */
 export default Heading;
