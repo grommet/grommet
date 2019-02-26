@@ -1,6 +1,8 @@
 # Grommet + UXPin Merge
 Integration of [Grommet](https://github.com/grommet/grommet) with UXPin Merge Technology. Check out [Merge Wiki](https://wikiuxpin.atlassian.net/wiki/spaces/MA) for detailed documentation
 
+![alt text](https://i.imgur.com/bLp5zRb.png "Grommet and Merge")
+
 ## About Grommet and this repository.
 
 [Grommet](https://v2.grommet.io/) is a popular open-source design system. In the words of creators:
@@ -34,7 +36,15 @@ If you wish to push Grommet components to your UXPin account – check guide to 
 
 ## Examples
 
-_to be added_
+![alt text](https://i.imgur.com/ltui3jP.gif "Grommet in UXPin Merge")
+
+![alt text](https://i.imgur.com/AJSZ13X.gif "Grommet Calendar in Merge")
+
+## Theming
+
+Theming is supported through `UXPinWrapper.js` component located in `./tools`. This wrapper uses `Grommet` component to pass theme to all components integrated with Merge.
+
+⚠️ `Grommet` component renders additional `div` wrapper. That causes problems with the size of bounding box in UXPin editor. The preferred way of UXPin Merge to work with theme providers is via [HOC](https://reactjs.org/docs/higher-order-components.html).
 
 ## Supported components
 
@@ -113,6 +123,9 @@ Integration with CI server leads to a powerful workflow, with that however comes
 * ⚠️ Don't keep your UXPin authorization token in any file checked into your git repository.
 * ⚠️ Treat contributing to Master branch just like deploying production code. *Any* change will be automatically reflected in the UXPin library and projects. 
 If you want to experiment with components – start a new branch and use Merge dev environment – experiment mode (in this repository launched via `npm start`)
+
+
+
 
 ---------------------------------
 
