@@ -103,6 +103,16 @@ Defaults to
 undefined
 ```
 
+**textArea.disabled.opacity**
+
+The opacity when the textArea is disabled. Expects `number`.
+
+Defaults to
+
+```
+0.3
+```
+
 **global.control.border**
 
 The border of the textarea. Expects `object`.

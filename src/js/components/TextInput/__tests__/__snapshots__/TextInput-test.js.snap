@@ -432,7 +432,7 @@ exports[`TextInput close suggestion drop 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 iQGivQ"
+      class="StyledTextInput-sc-1x30a0s-0 bkKCTq"
       data-testid="test-input"
       id="item"
       name="item"
@@ -769,6 +769,64 @@ exports[`TextInput complex suggestions 3`] = `
 }"
 `;
 
+exports[`TextInput disabled 1`] = `
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  opacity: 0.3;
+  cursor: default;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c1:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <input
+    autocomplete="off"
+    class="c1"
+    disabled=""
+    name="item"
+    value=""
+  />
+</div>
+`;
+
 exports[`TextInput handles next and previous without suggestion 1`] = `
 .c0 {
   font-size: 18px;
@@ -849,7 +907,7 @@ exports[`TextInput handles next and previous without suggestion 2`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 iQGivQ"
+      class="StyledTextInput-sc-1x30a0s-0 bkKCTq"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1934,7 +1992,7 @@ exports[`TextInput select suggestion 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 krBnvJ"
+      class="StyledTextInput-sc-1x30a0s-0 eUDPhm"
       data-testid="test-input"
       id="item"
       name="item"

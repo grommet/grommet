@@ -785,12 +785,18 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
     },
-    // textArea: {
-    //   extend: undefined,
-    // },
-    // textInput: {
-    //   extend: undefined,
-    // },
+    textArea: {
+      disabled: {
+        opacity: 0.3,
+      },
+      extend: undefined,
+    },
+    textInput: {
+      disabled: {
+        opacity: 0.3,
+      },
+      extend: undefined,
+    },
     video: {
       captions: {
         background: 'rgba(0, 0, 0, 0.7)',

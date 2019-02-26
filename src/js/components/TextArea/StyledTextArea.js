@@ -22,12 +22,18 @@ const resizeStyle = resize => {
   return 'resize: none;';
 };
 
+const disabledStyle = css`
+  opacity: ${props => props.theme.textArea.disabled.opacity};
+  cursor: default;
+`;
+
 const StyledTextArea = styled.textarea`
   ${inputStyle} width: 100%;
   ${props => props.resize !== undefined && resizeStyle(props.resize)}
 
   ${props => props.fillArg && 'height: 100%;'}
   ${props => props.plain && plainStyle}
+  ${props => props.disabled && disabledStyle}
 
   ${placeholderStyle}
 

@@ -49,6 +49,11 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'textArea.disabled.opacity': {
+    description: 'The opacity when the textArea is disabled.',
+    type: 'number',
+    defaultValue: 0.3,
+  },
   'global.control.border': {
     description: 'The border of the textarea.',
     type: 'object',

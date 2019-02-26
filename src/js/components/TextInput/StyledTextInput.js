@@ -20,6 +20,11 @@ const plainStyle = css`
   border: none;
 `;
 
+const disabledStyle = css`
+  opacity: ${props => props.theme.textInput.disabled.opacity};
+  cursor: default;
+`;
+
 const StyledTextInput = styled.input`
   ${inputStyle} width: 100%;
 
@@ -34,6 +39,7 @@ const StyledTextInput = styled.input`
   }
 
   ${props => props.focus && !props.plain && focusStyle};
+  ${props => props.disabled && disabledStyle}
   ${props => props.theme.textInput && props.theme.textInput.extend};
 `;
 
