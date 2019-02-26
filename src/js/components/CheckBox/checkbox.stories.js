@@ -194,6 +194,46 @@ class CheckBoxInsideButton extends Component {
   }
 }
 
+const items = Array(8)
+  .fill()
+  .map((_, i) => `item ${i + 1}`);
+
+class CheckBoxWithStickyDiv extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { checked: !!props.checked };
+  }
+
+  onChange = event => this.setState({ checked: event.target.checked });
+
+  render() {
+    const { checked } = this.state;
+    return (
+      <Grommet theme={grommet}>
+        <Box align="center" pad="large">
+          <div
+            style={{ height: '100px', overflow: 'auto', position: 'relative' }}
+          >
+            <div style={{ background: '#EEE', position: 'sticky', top: 0 }}>
+              Click Me!
+            </div>
+            {items.map(item => (
+              <CheckBox
+                key={item}
+                checked={checked}
+                label={item}
+                onChange={event =>
+                  this.setState({ checked: event.target.checked })
+                }
+              />
+            ))}
+          </div>
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 class IndeterminateCheckBox extends Component {
   state = {
     checked: [],
@@ -255,4 +295,5 @@ storiesOf('CheckBox', module)
   .add('Themed CheckBox', () => <ThemedCheckBox />)
   .add('Themed Toggle', () => <ThemedToggle />)
   .add('Inside a Button', () => <CheckBoxInsideButton />)
+  .add('With Sticky Div', () => <CheckBoxWithStickyDiv />)
   .add('Interminate CheckBox', () => <IndeterminateCheckBox />);
