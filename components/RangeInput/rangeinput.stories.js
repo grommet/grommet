@@ -78,10 +78,7 @@ var customThemeRangeInput = (0, _utils.deepMerge)(_themes.grommet, {
       }
     },
     thumb: {
-      color: 'neutral-2',
-      extend: function extend() {
-        return "\n        margin: 0;\n        ";
-      }
+      color: 'neutral-2'
     }
   }
 });

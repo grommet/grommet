@@ -69,10 +69,7 @@ var customThemeRangeInput = deepMerge(grommet, {
       }
     },
     thumb: {
-      color: 'neutral-2',
-      extend: function extend() {
-        return "\n        margin: 0;\n        ";
-      }
+      color: 'neutral-2'
     }
   }
 });
