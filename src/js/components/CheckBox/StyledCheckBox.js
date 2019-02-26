@@ -52,6 +52,7 @@ const StyledCheckBoxInput = styled.input`
   width: 100%;
   height: 100%;
   margin: 0;
+  display: none;
   ${props => !props.disabled && 'cursor: pointer;'} :checked + span > span {
     left: calc(
       ${props => props.theme.checkBox.toggle.size} -

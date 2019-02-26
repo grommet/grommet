@@ -218,13 +218,19 @@ class CheckBoxWithStickyDiv extends Component {
       <Grommet theme={grommet}>
         <Box align="center" pad="large">
           <div
-            style={{ height: '100px', overflow: 'auto', position: 'relative' }}
+            style={{
+              height: '100px',
+              width: '150px',
+              overflow: 'auto',
+              position: 'relative',
+            }}
           >
             <div style={{ background: '#EEE', position: 'sticky', top: 0 }}>
               Click Me!
             </div>
             {checkboxes.map(item => (
               <CheckBox
+                key={item}
                 checked={checked.indexOf(item) !== -1}
                 label={item}
                 onChange={e => this.onCheck(e, item)}
