@@ -13,13 +13,13 @@ import { FormContext } from '../Form/FormContext';
 
 const validateField = (required, validate, messages) => (value, data) => {
   let error;
-  if (required && (data === undefined || data === '')) {
+  if (required && (value === undefined || value === '')) {
     error = messages.required;
   } else if (validate) {
     if (typeof validate === 'function') {
       error = validate(value, data);
     } else if (validate.regexp) {
-      if (!validate.regexp.test(data)) {
+      if (!validate.regexp.test(value)) {
         error = validate.message || messages.invalid;
       }
     }

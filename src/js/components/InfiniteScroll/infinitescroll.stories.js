@@ -85,10 +85,10 @@ class LazyInfiniteScroll extends Component {
 
 const GridInfiniteScroll = () => (
   <Grommet theme={grommet}>
-    <Grid columns="xsmall">
+    <Grid columns="xsmall" rows="small">
       <InfiniteScroll items={allItems} step={12}>
         {item => (
-          <Box as="article" pad="xsmall">
+          <Box key={item} as="article" pad="xsmall">
             <Image src="https://via.placeholder.com/350x150" />
             <Text>{item}</Text>
           </Box>
