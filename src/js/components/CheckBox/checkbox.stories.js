@@ -194,20 +194,26 @@ class CheckBoxInsideButton extends Component {
   }
 }
 
-const items = Array(8)
-  .fill()
-  .map((_, i) => `item ${i + 1}`);
-
 class CheckBoxWithStickyDiv extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { checked: !!props.checked };
-  }
+  state = {
+    checked: [],
+    checkboxes: Array(8)
+      .fill()
+      .map((_, i) => `item ${i + 1}`),
+  };
 
-  onChange = event => this.setState({ checked: event.target.checked });
+  onCheck = (event, value) => {
+    const { checked } = this.state;
+    if (event.target.checked) {
+      checked.push(value);
+      this.setState({ checked });
+    } else {
+      this.setState({ checked: checked.filter(item => item !== value) });
+    }
+  };
 
   render() {
-    const { checked } = this.state;
+    const { checked, checkboxes } = this.state;
     return (
       <Grommet theme={grommet}>
         <Box align="center" pad="large">
@@ -217,14 +223,11 @@ class CheckBoxWithStickyDiv extends Component {
             <div style={{ background: '#EEE', position: 'sticky', top: 0 }}>
               Click Me!
             </div>
-            {items.map(item => (
+            {checkboxes.map(item => (
               <CheckBox
-                key={item}
-                checked={checked}
+                checked={checked.indexOf(item) !== -1}
                 label={item}
-                onChange={event =>
-                  this.setState({ checked: event.target.checked })
-                }
+                onChange={e => this.onCheck(e, item)}
               />
             ))}
           </div>
