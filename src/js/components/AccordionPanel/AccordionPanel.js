@@ -155,6 +155,7 @@ export { AccordionPanelWrapper as AccordionPanel };
 */
 
 AccordionPanel.propTypes = {
+  children: PropTypes.node,
   label: PropTypes.node,
   header: PropTypes.node,
 }
