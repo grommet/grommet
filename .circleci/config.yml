@@ -61,6 +61,17 @@ jobs:
             git config --global user.name "Grommet Community Bot"
             git config --global user.email "grommet@hpe.com"
             yarn release-stable
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/grommet-ci/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish
 workflows:
   build_test:
     jobs:
@@ -83,3 +94,13 @@ workflows:
             branches:
               only:
                 - master
+      - publish:
+          requires:
+            - jest
+            - lint
+            - build
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
