@@ -2,15 +2,6 @@ module.exports = {
   components: {
     categories: [
       {
-        name: 'Experimental',
-        include: [
-          'src/js/components/Select/SelectInteractive/SelectInteractive.js',
-          'src/js/components/Checkbox/CheckboxInteractive/CheckboxInteractive.js',
-          'src/js/components/RadioButton/RadioButtonInteractive/RadioButtonInteractive.js',
-          'src/js/components/RadioButtonGroup/RadioButtonGroupInteractive/RadioButtonGroupInteractive.js',
-        ],
-      },
-      {
         name: 'Type',
         include: [
           'src/js/components/Heading/Heading.js',
@@ -74,6 +65,15 @@ module.exports = {
           'src/js/components/Box/Box/Box.js',
           'src/js/components/Grid/Grid.js',
           'src/js/components/Stack/Stack.js',
+        ],
+      },
+      {
+        name: 'Experimental',
+        include: [
+          'src/js/components/Select/SelectInteractive/SelectInteractive.js',
+          'src/js/components/CheckBox/CheckBoxInteractive/CheckBoxInteractive.js',
+          'src/js/components/RadioButton/RadioButtonInteractive/RadioButtonInteractive.js',
+          'src/js/components/RadioButtonGroup/RadioButtonGroupInteractive/RadioButtonGroupInteractive.js',
         ],
       },
     ],
