@@ -5,6 +5,9 @@ module.exports = {
         name: 'Experimental',
         include: [
           'src/js/components/Select/SelectInteractive/SelectInteractive.js',
+          'src/js/components/Checkbox/CheckboxInteractive/CheckboxInteractive.js',
+          'src/js/components/RadioButton/RadioButtonInteractive/RadioButtonInteractive.js',
+          'src/js/components/RadioButtonGroup/RadioButtonGroupInteractive/RadioButtonGroupInteractive.js',
         ],
       },
       {
@@ -93,11 +96,4 @@ module.exports = {
  * Form – doesn't pass children from preset.
  * Keyboard – not sure how it should work.
  * RangeSelector – doesn't render content correctly
- *
- * ToDo:
- * - Controlled Checkbox
- * - Controlled Menu
- * - Controlled Radio
- * - Controlled RadioGroup
- * - Controlled Select
  */

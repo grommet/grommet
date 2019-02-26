@@ -144,9 +144,9 @@ export { RadioButtonGroupWrapper as RadioButtonGroup };
 RadioButtonGroup.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func,
-  options: PropTypes.object,
+  options: PropTypes.array,
   value: PropTypes.string,
-}
+};
 
 /* Export for UXPin Merge */
 export default RadioButtonGroup;
