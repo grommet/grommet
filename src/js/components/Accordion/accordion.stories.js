@@ -72,27 +72,24 @@ const SimpleAccordion = props => {
   );
 };
 
-const CustomAccordion = props => {
-  const { animate, multiple, ...rest } = props;
-  return (
-    <Grommet theme={CustomAccordionTheme}>
-      <Box {...rest}>
-        <Accordion animate={animate} multiple>
-          <AccordionPanel label="Panel 1">
-            <Box background="light-2" style={{ height: '200px' }}>
-              Important Info
-            </Box>
-          </AccordionPanel>
-          <AccordionPanel label="Panel 2">
-            <Box background="light-2" style={{ height: '50px' }}>
-              Important Info
-            </Box>
-          </AccordionPanel>
-        </Accordion>
-      </Box>
-    </Grommet>
-  );
-};
+const CustomAccordion = ({ animate, multiple, ...rest }) => (
+  <Grommet theme={CustomAccordionTheme}>
+    <Box {...rest}>
+      <Accordion animate={animate} multiple>
+        <AccordionPanel label="Panel 1">
+          <Box background="light-2" height="small">
+            Important Info
+          </Box>
+        </AccordionPanel>
+        <AccordionPanel label="Panel 2">
+          <Box background="light-2" height="xsmall">
+            Important Info
+          </Box>
+        </AccordionPanel>
+      </Accordion>
+    </Box>
+  </Grommet>
+);
 
 class RichPanel extends Component {
   state = {
