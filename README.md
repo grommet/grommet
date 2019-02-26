@@ -36,9 +36,9 @@ If you wish to push Grommet components to your UXPin account – check guide to 
 
 ## Examples
 
-![alt text](https://i.imgur.com/ltui3jP.gif "Grommet in UXPin Merge")
+![alt text](https://github.com/uxpin-merge/grommet/blob/master/img/grommet_1.gif "Grommet in UXPin Merge")
 
-![alt text](https://i.imgur.com/AJSZ13X.gif "Grommet Calendar in Merge")
+![alt text](https://github.com/uxpin-merge/grommet/blob/master/img/grommet_calendar.gif "Grommet Calendar in Merge")
 
 ## Theming
 
