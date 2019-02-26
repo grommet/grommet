@@ -13,7 +13,7 @@ import { FormContext } from '../Form/FormContext';
 
 const validateField = (required, validate, messages) => (value, data) => {
   let error;
-  if (required && (data === undefined || data === '')) {
+  if (required && (value === undefined || value === '')) {
     error = messages.required;
   } else if (validate) {
     if (typeof validate === 'function') {
