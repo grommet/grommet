@@ -61,7 +61,7 @@ jobs:
             git config --global user.name "Grommet Community Bot"
             git config --global user.email "grommet@hpe.com"
             yarn release-stable
-  deploy:
+  publish:
     <<: *defaults
     steps:
       - attach_workspace:
