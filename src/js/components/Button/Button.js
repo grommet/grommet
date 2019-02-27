@@ -67,9 +67,13 @@ class Button extends Component {
 
     let buttonIcon = icon;
     // only change color if user did not specify the color themselves...
-    if (primary && icon && !icon.props.color) {
+    if (icon && !icon.props.color) {
+      const themeColor = primary
+        ? theme.button.primary.color
+        : theme.button.color;
       buttonIcon = cloneElement(icon, {
         color:
+          normalizeColor(themeColor || 'text', theme) ||
           theme.global.colors.text[
             isDarkBackground(this.props) ? 'dark' : 'light'
           ],

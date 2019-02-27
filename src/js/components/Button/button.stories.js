@@ -1,10 +1,24 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Add } from 'grommet-icons';
+import { Add, Home } from 'grommet-icons';
 
 import { Box, Button, Grommet, RoutedButton, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from '../../utils';
+
+const theme = {
+  button: {
+    color: 'red',
+  },
+};
+
+const ThemeColorButton = () => (
+  <Grommet theme={theme}>
+    <Box height="small" pad="medium" align="center">
+      <Button icon={<Home />} label="ss" />
+    </Box>
+  </Grommet>
+);
 
 const SimpleButton = props => (
   <Grommet theme={grommet}>
@@ -209,6 +223,7 @@ const ThemeColored = () => (
 
 storiesOf('Button', module)
   .add('Default', () => <SimpleButton />)
+  .add('Colored Icon', () => <ThemeColorButton />)
   .add('Primary', () => <SimpleButton primary />)
   .add('Icon', () => <IconButton />)
   .add('Icon Label', () => <IconLabelButton />)
