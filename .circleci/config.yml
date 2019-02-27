@@ -75,7 +75,10 @@ jobs:
 workflows:
   build_test:
     jobs:
-      - checkout
+      - checkout:
+          filters:
+            tags:
+              only: /.*/
       - lint:
           requires:
             - checkout
