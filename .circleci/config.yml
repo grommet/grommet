@@ -79,12 +79,21 @@ workflows:
       - lint:
           requires:
             - checkout
+          filters:
+            tags:
+              only: /.*/
       - jest:
           requires:
             - checkout
+          filters:
+            tags:
+              only: /.*/
       - build:
           requires:
             - checkout
+          filters:
+            tags:
+              only: /.*/
       - release:
           requires:
             - jest
