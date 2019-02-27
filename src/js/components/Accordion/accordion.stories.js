@@ -6,6 +6,8 @@ import {
   CircleInformation,
   FormSubtract,
   FormAdd,
+  SubtractCircle,
+  AddCircle,
   User,
 } from 'grommet-icons';
 
@@ -27,6 +29,17 @@ const richAccordionTheme = {
       collapse: FormSubtract,
       expand: FormAdd,
     },
+  },
+};
+
+const CustomAccordionTheme = {
+  accordion: {
+    icons: {
+      collapse: SubtractCircle,
+      expand: AddCircle,
+      color: 'hotpink',
+    },
+    border: undefined,
   },
 };
 
@@ -56,6 +69,25 @@ const SimpleAccordion = props => {
     </Grommet>
   );
 };
+
+const CustomAccordion = ({ animate, multiple, ...rest }) => (
+  <Grommet theme={CustomAccordionTheme}>
+    <Box {...rest}>
+      <Accordion animate={animate} multiple>
+        <AccordionPanel label="Panel 1">
+          <Box background="light-2" height="small">
+            Important Info
+          </Box>
+        </AccordionPanel>
+        <AccordionPanel label="Panel 2">
+          <Box background="light-2" height="xsmall">
+            Important Info
+          </Box>
+        </AccordionPanel>
+      </Accordion>
+    </Box>
+  </Grommet>
+);
 
 class RichPanel extends Component {
   state = {
@@ -346,6 +378,7 @@ class CustomHeaderAccordion extends Component {
 
 storiesOf('Accordion', module)
   .add('Simple', () => <SimpleAccordion />)
+  .add('Custom Theme', () => <CustomAccordion />)
   .add('Dark no animation', () => (
     <SimpleAccordion animate={false} background="dark-2" />
   ))
