@@ -115,6 +115,14 @@ How the image fills its container.
 cover
 contain
 ```
+
+**fallback**
+
+Fallback image used when src is failing to load
+
+```
+string
+```
   
 ## Intrinsic element
 

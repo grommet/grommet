@@ -25,6 +25,9 @@ export const doc = Image => {
     fit: PropTypes.oneOf(['cover', 'contain']).description(
       'How the image fills its container.',
     ),
+    fallback: PropTypes.string.description(
+      'Fallback image used when src is failing to load',
+    ),
   };
 
   return DocumentedImage;

@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
+import { render } from 'react-testing-library';
 
 import { Grommet } from '../../Grommet';
 import { Image } from '..';
