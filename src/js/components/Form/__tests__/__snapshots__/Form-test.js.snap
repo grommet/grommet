@@ -40,6 +40,26 @@ exports[`Form regexp validation 1`] = `
 </span>
 `;
 
+exports[`Form required validation 1`] = `
+.c0 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  color: #FF4040;
+}
+
+<span
+  class="c0"
+>
+  required
+</span>
+`;
+
 exports[`Form update 1`] = `
 .c0 {
   font-size: 18px;

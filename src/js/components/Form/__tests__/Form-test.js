@@ -103,4 +103,23 @@ describe('Form', () => {
     fireEvent.click(getByText('Submit'));
     expect(queryByText('invalid')).toBeNull();
   });
+
+  test('required validation', () => {
+    const onSubmit = jest.fn();
+    const { getByPlaceholderText, getByText, queryByText } = render(
+      <Grommet>
+        <Form onSubmit={onSubmit}>
+          <FormField name="test" required placeholder="test input" />
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+
+    fireEvent.click(getByText('Submit'));
+    expect(queryByText('required')).toMatchSnapshot();
+    fireEvent.change(getByPlaceholderText('test input'), {
+      target: { value: '1' },
+    });
+    expect(queryByText('required')).toBeNull();
+  });
 });
