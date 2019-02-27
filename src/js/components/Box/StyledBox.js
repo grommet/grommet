@@ -193,10 +193,6 @@ const borderStyle = (data, responsive, theme) => {
         ),
       );
     }
-  } else if (side === 'none') {
-    styles.push(css`
-      border: 'none;
-    `);
   } else if (side === 'horizontal') {
     styles.push(css`
       border-top: ${value};

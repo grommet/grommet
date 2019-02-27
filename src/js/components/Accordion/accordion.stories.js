@@ -39,10 +39,7 @@ const CustomAccordionTheme = {
       expand: AddCircle,
       color: 'hotpink',
     },
-    border: {
-      color: 'blue',
-      side: 'top',
-    },
+    border: undefined,
   },
 };
 
