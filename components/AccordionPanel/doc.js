@@ -25,6 +25,11 @@ var themeDoc = {
     description: 'The icon to use when the panel is collapsed.',
     type: 'React.element',
     defaultValue: '<FormDown />'
+  },
+  'accordion.border': {
+    description: 'The border to use in the accordion.',
+    type: 'React.element',
+    defaultValue: 'side: bottom, color: border'
   }
 };
 exports.themeDoc = themeDoc;

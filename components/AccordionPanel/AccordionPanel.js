@@ -178,10 +178,7 @@ function (_Component) {
       }, _react.default.createElement(AccordionIcon, {
         color: iconColor
       })))), _react.default.createElement(_Box.Box, {
-        border: {
-          side: 'bottom',
-          color: 'border'
-        }
+        border: theme.accordion.border
       }, animate ? _react.default.createElement(_Collapsible.Collapsible, {
         open: active
       }, children) : active && children));

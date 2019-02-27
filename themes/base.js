@@ -314,6 +314,10 @@ var generate = function generate(baseSpacing, scale) {
         collapse: _FormUp.FormUp,
         expand: _FormDown.FormDown // color: { dark: undefined, light: undefined },
 
+      },
+      border: {
+        side: 'bottom',
+        color: 'border'
       }
     },
     anchor: {

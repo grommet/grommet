@@ -12,6 +12,8 @@ import { Bookmark } from "grommet-icons/es6/icons/Bookmark";
 import { CircleInformation } from "grommet-icons/es6/icons/CircleInformation";
 import { FormSubtract } from "grommet-icons/es6/icons/FormSubtract";
 import { FormAdd } from "grommet-icons/es6/icons/FormAdd";
+import { SubtractCircle } from "grommet-icons/es6/icons/SubtractCircle";
+import { AddCircle } from "grommet-icons/es6/icons/AddCircle";
 import { User } from "grommet-icons/es6/icons/User";
 import { Accordion, AccordionPanel, Box, Grommet, Heading, Text, TextInput, ThemeContext } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -21,6 +23,16 @@ var richAccordionTheme = {
       collapse: FormSubtract,
       expand: FormAdd
     }
+  }
+};
+var CustomAccordionTheme = {
+  accordion: {
+    icons: {
+      collapse: SubtractCircle,
+      expand: AddCircle,
+      color: 'hotpink'
+    },
+    border: undefined
   }
 };
 
@@ -56,6 +68,29 @@ var SimpleAccordion = function SimpleAccordion(props) {
       height: '300px'
     }
   }, "Panel 3 contents")))));
+};
+
+var CustomAccordion = function CustomAccordion(_ref) {
+  var animate = _ref.animate,
+      multiple = _ref.multiple,
+      rest = _objectWithoutPropertiesLoose(_ref, ["animate", "multiple"]);
+
+  return React.createElement(Grommet, {
+    theme: CustomAccordionTheme
+  }, React.createElement(Box, rest, React.createElement(Accordion, {
+    animate: animate,
+    multiple: true
+  }, React.createElement(AccordionPanel, {
+    label: "Panel 1"
+  }, React.createElement(Box, {
+    background: "light-2",
+    height: "small"
+  }, "Important Info")), React.createElement(AccordionPanel, {
+    label: "Panel 2"
+  }, React.createElement(Box, {
+    background: "light-2",
+    height: "xsmall"
+  }, "Important Info")))));
 };
 
 var RichPanel =
@@ -353,6 +388,8 @@ function (_Component3) {
 
 storiesOf('Accordion', module).add('Simple', function () {
   return React.createElement(SimpleAccordion, null);
+}).add('Custom Theme', function () {
+  return React.createElement(CustomAccordion, null);
 }).add('Dark no animation', function () {
   return React.createElement(SimpleAccordion, {
     animate: false,

@@ -28,6 +28,16 @@ var richAccordionTheme = {
     }
   }
 };
+var CustomAccordionTheme = {
+  accordion: {
+    icons: {
+      collapse: _grommetIcons.SubtractCircle,
+      expand: _grommetIcons.AddCircle,
+      color: 'hotpink'
+    },
+    border: undefined
+  }
+};
 
 var SimpleAccordion = function SimpleAccordion(props) {
   var animate = props.animate,
@@ -61,6 +71,29 @@ var SimpleAccordion = function SimpleAccordion(props) {
       height: '300px'
     }
   }, "Panel 3 contents")))));
+};
+
+var CustomAccordion = function CustomAccordion(_ref) {
+  var animate = _ref.animate,
+      multiple = _ref.multiple,
+      rest = _objectWithoutPropertiesLoose(_ref, ["animate", "multiple"]);
+
+  return _react.default.createElement(_grommet.Grommet, {
+    theme: CustomAccordionTheme
+  }, _react.default.createElement(_grommet.Box, rest, _react.default.createElement(_grommet.Accordion, {
+    animate: animate,
+    multiple: true
+  }, _react.default.createElement(_grommet.AccordionPanel, {
+    label: "Panel 1"
+  }, _react.default.createElement(_grommet.Box, {
+    background: "light-2",
+    height: "small"
+  }, "Important Info")), _react.default.createElement(_grommet.AccordionPanel, {
+    label: "Panel 2"
+  }, _react.default.createElement(_grommet.Box, {
+    background: "light-2",
+    height: "xsmall"
+  }, "Important Info")))));
 };
 
 var RichPanel =
@@ -359,6 +392,8 @@ function (_Component3) {
 
 (0, _react2.storiesOf)('Accordion', module).add('Simple', function () {
   return _react.default.createElement(SimpleAccordion, null);
+}).add('Custom Theme', function () {
+  return _react.default.createElement(CustomAccordion, null);
 }).add('Dark no animation', function () {
   return _react.default.createElement(SimpleAccordion, {
     animate: false,

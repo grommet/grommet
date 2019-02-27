@@ -289,6 +289,10 @@ export var generate = function generate(baseSpacing, scale) {
         collapse: FormUp,
         expand: FormDown // color: { dark: undefined, light: undefined },
 
+      },
+      border: {
+        side: 'bottom',
+        color: 'border'
       }
     },
     anchor: {
