@@ -96,4 +96,75 @@ describe('Form', function () {
       }
     }));
   });
+  test('regexp validation', function () {
+    var onSubmit = jest.fn();
+
+    var _render2 = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Form, {
+      onSubmit: onSubmit
+    }, _react.default.createElement(_FormField.FormField, {
+      name: "test",
+      required: true,
+      validate: {
+        regexp: /^[a-z]/i
+      },
+      placeholder: "test input"
+    }), _react.default.createElement(_Button.Button, {
+      type: "submit",
+      primary: true,
+      label: "Submit"
+    })))),
+        getByPlaceholderText = _render2.getByPlaceholderText,
+        getByText = _render2.getByText,
+        queryByText = _render2.queryByText;
+
+    _reactTestingLibrary.fireEvent.change(getByPlaceholderText('test input'), {
+      target: {
+        value: '1'
+      }
+    });
+
+    _reactTestingLibrary.fireEvent.click(getByText('Submit'));
+
+    expect(getByText('invalid')).toMatchSnapshot();
+
+    _reactTestingLibrary.fireEvent.change(getByPlaceholderText('test input'), {
+      target: {
+        value: 'a'
+      }
+    });
+
+    _reactTestingLibrary.fireEvent.click(getByText('Submit'));
+
+    expect(queryByText('invalid')).toBeNull();
+  });
+  test('required validation', function () {
+    var onSubmit = jest.fn();
+
+    var _render3 = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Form, {
+      onSubmit: onSubmit
+    }, _react.default.createElement(_FormField.FormField, {
+      name: "test",
+      required: true,
+      placeholder: "test input"
+    }), _react.default.createElement(_Button.Button, {
+      type: "submit",
+      primary: true,
+      label: "Submit"
+    })))),
+        getByPlaceholderText = _render3.getByPlaceholderText,
+        getByText = _render3.getByText,
+        queryByText = _render3.queryByText;
+
+    _reactTestingLibrary.fireEvent.click(getByText('Submit'));
+
+    expect(queryByText('required')).toMatchSnapshot();
+
+    _reactTestingLibrary.fireEvent.change(getByPlaceholderText('test input'), {
+      target: {
+        value: '1'
+      }
+    });
+
+    expect(queryByText('required')).toBeNull();
+  });
 });
