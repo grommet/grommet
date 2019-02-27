@@ -2,7 +2,6 @@ import { rgba } from 'polished';
 import { css } from 'styled-components';
 import { deepFreeze } from '../utils/object';
 import { normalizeColor } from '../utils/colors';
-var controlColor = '#FFCA58';
 var accentColors = ['#FD6FFF', '#60EB9F', '#60EBE1', '#FFCA58'];
 var neutralColors = ['#EB6060', '#01C781', '#6095EB', '#FFB200'];
 var statusColors = {
@@ -14,19 +13,26 @@ var statusColors = {
   disabled: '#a8a8a8'
 };
 var backgroundColor = '#111111';
-var textColor = '#eeeeee';
-var borderColor = rgba(255, 255, 255, 0.33);
-var activeColor = rgba(102, 102, 102, 0.5);
 var colors = {
-  active: activeColor,
+  active: rgba(102, 102, 102, 0.5),
   background: backgroundColor,
   black: '#000000',
-  border: borderColor,
+  border: rgba(255, 255, 255, 0.33),
   brand: '#FD6FFF',
-  control: controlColor,
-  focus: controlColor,
+  control: {
+    dark: '#FFCA58',
+    light: '#403216'
+  },
+  focus: '#FFCA58',
+  icon: {
+    dark: '#f8f8f8',
+    light: '#666666'
+  },
   placeholder: '#AAAAAA',
-  text: textColor,
+  text: {
+    dark: '#eeeeee',
+    light: '#444444'
+  },
   white: '#FFFFFF'
 };
 
@@ -60,18 +66,10 @@ export var dark = deepFreeze({
     },
     input: {
       weight: 700
-    },
-    text: {
-      dark: textColor,
-      light: '#000000'
     }
   },
   anchor: {
-    color: controlColor
-  },
-  icon: {
-    color: textColor,
-    colors: colors
+    color: 'control'
   },
   layer: {
     background: backgroundColor,
