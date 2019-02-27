@@ -48,12 +48,12 @@ Defaults to
 <FormDown />
 ```
 
-**accordion.border.color**
+**accordion.border**
 
-The possible border colors in the accordion. Expects `React.element`.
+The border to use in the accordion. Expects `React.element`.
 
 Defaults to
 
 ```
-border
+side: bottom, color: border
 ```

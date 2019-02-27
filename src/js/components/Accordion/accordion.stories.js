@@ -41,6 +41,7 @@ const CustomAccordionTheme = {
     },
     border: {
       color: 'blue',
+      side: 'top',
     },
   },
 };

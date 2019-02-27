@@ -264,7 +264,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
       },
       border: {
-        // color: { dark: undefined, light: undefined },
+        side: 'bottom',
+        color: 'border',
       },
     },
     anchor: {
