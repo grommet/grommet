@@ -15,7 +15,7 @@ const theme = {
 const ThemeColorButton = () => (
   <Grommet theme={theme}>
     <Box height="small" pad="medium" align="center">
-      <Button icon={<Home />} label="ss" />
+      <Button icon={<Home />} label="home" />
     </Box>
   </Grommet>
 );
