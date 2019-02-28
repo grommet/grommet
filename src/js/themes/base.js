@@ -212,6 +212,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           color: 'focus',
         },
       },
+      disabled: {
+        opacity: 0.3,
+      },
       font: {
         ...fontSizing(0),
         // face: undefined,
@@ -295,9 +298,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       // color: { dark: undefined, light: undefined }
       primary: {
         // color: { dark: undefined, light: undefined }
-      },
-      disabled: {
-        opacity: 0.3,
       },
       padding: {
         vertical: `${baseSpacing / 4 - borderWidth}px`,

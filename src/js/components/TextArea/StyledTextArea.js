@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, inputStyle, placeholderStyle } from '../../utils';
+import {
+  focusStyle,
+  inputStyle,
+  placeholderStyle,
+  disabledStyle,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const plainStyle = css`
@@ -22,18 +27,13 @@ const resizeStyle = resize => {
   return 'resize: none;';
 };
 
-const disabledStyle = css`
-  opacity: ${props => props.theme.textArea.disabled.opacity};
-  cursor: default;
-`;
-
 const StyledTextArea = styled.textarea`
   ${inputStyle} width: 100%;
   ${props => props.resize !== undefined && resizeStyle(props.resize)}
 
   ${props => props.fillArg && 'height: 100%;'}
   ${props => props.plain && plainStyle}
-  ${props => props.disabled && disabledStyle}
+  ${props => props.disabled && disabledStyle()}
 
   ${placeholderStyle}
 

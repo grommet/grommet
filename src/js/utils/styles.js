@@ -252,3 +252,8 @@ export const genericStyles = css`
       props.theme,
     )}
 `;
+
+export const disabledStyle = componentStyle => css`
+  opacity: ${props => componentStyle || props.theme.global.disabled.opacity};
+  cursor: default;
+`;

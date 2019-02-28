@@ -5,6 +5,7 @@ import {
   inputStyle,
   parseMetricToNum,
   placeholderStyle,
+  disabledStyle,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
@@ -18,11 +19,6 @@ const sizeStyle = props => {
 
 const plainStyle = css`
   border: none;
-`;
-
-const disabledStyle = css`
-  opacity: ${props => props.theme.textInput.disabled.opacity};
-  cursor: default;
 `;
 
 const StyledTextInput = styled.input`
@@ -39,7 +35,7 @@ const StyledTextInput = styled.input`
   }
 
   ${props => props.focus && !props.plain && focusStyle};
-  ${props => props.disabled && disabledStyle}
+  ${props => props.disabled && disabledStyle()}
   ${props => props.theme.textInput && props.theme.textInput.extend};
 `;
 

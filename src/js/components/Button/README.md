@@ -348,7 +348,7 @@ undefined
 
 **button.disabled.opacity**
 
-The opacity when the button is disabled. Expects `number`.
+The opacity when the button is disabled. To be deprecated in V3, use global.disabled.opacity instead. Expects `number`.
 
 Defaults to
 
@@ -394,4 +394,14 @@ Defaults to
 
 ```
 focus
+```
+
+**global.disabled.opacity**
+
+The opacity when a component is disabled. Expects `number`.
+
+Defaults to
+
+```
+0.3
 ```

@@ -134,7 +134,8 @@ export const themeDoc = {
     type: 'string | { dark: string, light: string }',
   },
   'button.disabled.opacity': {
-    description: 'The opacity when the button is disabled.',
+    description:
+      'The opacity when the button is disabled. To be deprecated in V3, use global.disabled.opacity instead.',
     type: 'number',
     defaultValue: 0.3,
   },
@@ -153,4 +154,5 @@ export const themeDoc = {
     type: 'string | (props) => {}',
   },
   ...themeDocUtils.focusStyle,
+  ...themeDocUtils.disabledStyle,
 };
