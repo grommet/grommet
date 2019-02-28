@@ -17,7 +17,6 @@ var colors = {
   active: rgba(102, 102, 102, 0.5),
   background: backgroundColor,
   black: '#000000',
-  border: rgba(255, 255, 255, 0.33),
   brand: '#FD6FFF',
   control: {
     dark: '#FFCA58',
