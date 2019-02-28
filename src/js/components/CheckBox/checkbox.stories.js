@@ -219,7 +219,7 @@ class CheckBoxWithStickyDiv extends Component {
         <Box pad="large" align="center">
           <Box
             height="120px"
-            width="xsmall"
+            width="120px"
             overflow="auto"
             style={{
               position: 'relative',
@@ -230,7 +230,7 @@ class CheckBoxWithStickyDiv extends Component {
               background={{ color: 'neutral-1' }}
               style={{ position: 'sticky', top: 0 }}
             >
-              Click Me!
+              Click &amp; Scroll
             </Box>
             {checkboxes.map(item => (
               <CheckBox
