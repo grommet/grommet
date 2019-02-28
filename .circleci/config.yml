@@ -39,6 +39,20 @@ jobs:
       - run:
           name: Running jest
           command: yarn test
+  e2e:
+    docker:
+      - image: cypress/browsers:chrome69
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: Running E2E tests
+          command: npm run e2e
+      - store_test_results:
+          path: cypress/snapshots/diff
+      - store_artifacts:
+          path: cypress/snapshots/diff
+          destination: cypress-diff
   build:
     <<: *defaults
     steps:
@@ -91,6 +105,12 @@ workflows:
           filters:
             tags:
               only: /.*/
+      - e2e:
+          requires:
+            - checkout
+          filters:
+            tags:
+              only: /.*/
       - build:
           requires:
             - checkout
@@ -102,6 +122,7 @@ workflows:
             - jest
             - lint
             - build
+            - e2e
           filters:
             branches:
               only:
@@ -111,6 +132,7 @@ workflows:
             - jest
             - lint
             - build
+            - e2e
           filters:
             tags:
               only: /^v.*/

@@ -27,7 +27,9 @@
     "afterEach": true,
     "beforeEach": true,
     "MouseEvent": true,
-    "requestAnimationFrame": true
+    "requestAnimationFrame": true,
+    "cy": true,
+    "context": true
   },
   "rules": {
     "indent": "off",
@@ -55,6 +57,12 @@
       "files": ["anchor.stories.js"],
       "rules": {
         "react/jsx-one-expression-per-line": 0
+      }
+    },
+    {
+      "files": ["cypress/*/*.js"],
+      "rules": {
+        "import/no-extraneous-dependencies": 0
       }
     }
   ]
