@@ -83,16 +83,6 @@ var themeDoc = _extends({
     type: 'number',
     defaultValue: 0.3
   },
-  'button.minWidth': {
-    description: "The minimum width.",
-    type: 'string',
-    defaultValue: '96px'
-  },
-  'button.maxWidth': {
-    description: "The maximum width.",
-    type: 'string',
-    defaultValue: '384px'
-  },
   'button.padding.horizontal': {
     description: 'The horizontal padding.',
     type: 'string',

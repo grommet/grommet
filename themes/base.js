@@ -351,8 +351,6 @@ var generate = function generate(baseSpacing, scale) {
       disabled: {
         opacity: 0.3
       },
-      minWidth: baseSpacing * 4 + "px",
-      maxWidth: baseSpacing * 16 + "px",
       padding: {
         vertical: baseSpacing / 4 - borderWidth + "px",
         horizontal: baseSpacing - borderWidth + "px"
