@@ -5,20 +5,31 @@ defaults: &defaults
   docker:
     - image: circleci/node:10
 
+aliases:
+  persist_cache: &persist_cache
+    save_cache:
+      name: Save node modules cache
+      key: yarn-cache-{{ checksum "yarn.lock" }}
+      paths:
+        - ./node_modules
+        - ~/.cache
+  restore_cache: &restore_cache
+    restore_cache:
+      name: Restore node_modules cache
+      keys:
+        - yarn-cache-{{ checksum "yarn.lock" }}
+  attach_to_bootstrap: &attach_to_bootstrap
+    attach_workspace:
+      at: ~/grommet-ci
+
 jobs:
   checkout:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - yarn-cache-{{ checksum "yarn.lock" }}
+      - <<: *restore_cache
       - run: yarn --frozen-lockfile
-      - save_cache:
-          key: yarn-cache-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache
-            - ./node_modules
+      - <<: *persist_cache
       - persist_to_workspace:
           root: ~/grommet-ci
           paths:
@@ -26,16 +37,14 @@ jobs:
   lint:
     <<: *defaults
     steps:
-      - attach_workspace:
-          at: ~/grommet-ci
+      - <<: *attach_to_bootstrap
       - run:
           name: Running linter
           command: yarn lint
   jest:
     <<: *defaults
     steps:
-      - attach_workspace:
-          at: ~/grommet-ci
+      - <<: *attach_to_bootstrap
       - run:
           name: Running jest
           command: yarn test
@@ -44,15 +53,9 @@ jobs:
       - image: cypress/browsers:chrome69
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - yarn-cache-{{ checksum "yarn.lock" }}
+      - <<: *restore_cache
       - run: yarn --frozen-lockfile
-      - save_cache:
-          key: yarn-cache-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache
-            - ./node_modules
+      - <<: *persist_cache
       - run:
           name: Running E2E tests
           command: yarn e2e
