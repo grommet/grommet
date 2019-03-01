@@ -37,8 +37,10 @@ const SimpleAccordion = props => {
       <Box {...rest}>
         <Accordion animate={animate} multiple={multiple}>
           <AccordionPanel label="Panel 1">
-            <Box background="light-2" style={{ height: '800px' }}>
-              Panel 1 contents
+            <Box background="light-2" overflow="auto" height="medium">
+              <Box height="large" flex={false}>
+                Panel 1 contents
+              </Box>
             </Box>
           </AccordionPanel>
           <AccordionPanel label="Panel 2">

@@ -20,6 +20,7 @@ const AnimatedBox = styled(Box)`
       : `
     max-${animatedBoxProperty(props.collapsibleDirection)}: 0;
     visibility: hidden;
+    overflow: hidden;
   `)};
 `;
 
