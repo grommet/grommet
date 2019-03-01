@@ -5,8 +5,8 @@ import { Grommet, Box, Button, Chart, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Next, Previous } from 'grommet-icons';
 
-import { calcs } from './calcs';
-import { generateData } from './story-data';
+import { calcs } from '../calcs';
+import { generateData } from './data';
 
 const intervalDays = {
   '1 week': 7,
