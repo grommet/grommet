@@ -650,6 +650,75 @@ function (_Component6) {
   return PlainDrop;
 }(Component);
 
+var TooltipDrop =
+/*#__PURE__*/
+function (_Component7) {
+  _inheritsLoose(TooltipDrop, _Component7);
+
+  function TooltipDrop() {
+    var _this10;
+
+    for (var _len7 = arguments.length, args = new Array(_len7), _key7 = 0; _key7 < _len7; _key7++) {
+      args[_key7] = arguments[_key7];
+    }
+
+    _this10 = _Component7.call.apply(_Component7, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this10)), "state", {});
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this10)), "ref", createRef());
+
+    return _this10;
+  }
+
+  var _proto7 = TooltipDrop.prototype;
+
+  _proto7.render = function render() {
+    var _this11 = this;
+
+    var over = this.state.over;
+    return React.createElement(Grommet, {
+      theme: grommet,
+      full: true
+    }, React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "center"
+    }, React.createElement(Button, {
+      label: "Button",
+      ref: this.ref,
+      onMouseOver: function onMouseOver() {
+        return _this11.setState({
+          over: true
+        });
+      },
+      onMouseOut: function onMouseOut() {
+        return _this11.setState({
+          over: false
+        });
+      },
+      onFocus: function onFocus() {},
+      onBlur: function onBlur() {}
+    }), this.ref.current && over && React.createElement(Drop, {
+      align: {
+        left: 'right'
+      },
+      target: this.ref.current,
+      plain: true
+    }, React.createElement(Box, {
+      margin: "xsmall",
+      pad: "small",
+      background: "dark-3",
+      round: {
+        size: 'medium',
+        corner: 'left'
+      }
+    }, "tooltip contents"))));
+  };
+
+  return TooltipDrop;
+}(Component);
+
 storiesOf('Drop', module).add('Simple', function () {
   return React.createElement(SimpleDrop, null);
 }).add('All not stretch', function () {
@@ -660,4 +729,6 @@ storiesOf('Drop', module).add('Simple', function () {
   return React.createElement(LazyDrop, null);
 }).add('Plain', function () {
   return React.createElement(PlainDrop, null);
+}).add('Tooltip', function () {
+  return React.createElement(TooltipDrop, null);
 });

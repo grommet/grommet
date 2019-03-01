@@ -53,10 +53,12 @@ var SimpleAccordion = function SimpleAccordion(props) {
     label: "Panel 1"
   }, _react.default.createElement(_grommet.Box, {
     background: "light-2",
-    style: {
-      height: '800px'
-    }
-  }, "Panel 1 contents")), _react.default.createElement(_grommet.AccordionPanel, {
+    overflow: "auto",
+    height: "medium"
+  }, _react.default.createElement(_grommet.Box, {
+    height: "large",
+    flex: false
+  }, "Panel 1 contents"))), _react.default.createElement(_grommet.AccordionPanel, {
     label: "Panel 2"
   }, _react.default.createElement(_grommet.Box, {
     background: "light-2",

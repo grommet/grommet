@@ -50,10 +50,12 @@ var SimpleAccordion = function SimpleAccordion(props) {
     label: "Panel 1"
   }, React.createElement(Box, {
     background: "light-2",
-    style: {
-      height: '800px'
-    }
-  }, "Panel 1 contents")), React.createElement(AccordionPanel, {
+    overflow: "auto",
+    height: "medium"
+  }, React.createElement(Box, {
+    height: "large",
+    flex: false
+  }, "Panel 1 contents"))), React.createElement(AccordionPanel, {
     label: "Panel 2"
   }, React.createElement(Box, {
     background: "light-2",
