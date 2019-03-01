@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Anchor, Box } from 'grommet';
+import { grommet, Grommet, Anchor, Box } from 'grommet';
 import { Add } from 'grommet-icons';
 
 const customTheme = {
@@ -35,6 +35,20 @@ const Plain = () => (
   </Fragment>
 );
 
+const GrommetVars = () => (
+  <Grommet theme={grommet} cssVars>
+    <Box pad="medium" background="var(--accent-2)" gap="medium">
+      <Box>
+        Checkout Grommet variables, you can find them in the StyledGrommet DOM.
+      </Box>
+      <Box with>
+        For example, the background color in this Box is using var(--accent-2)
+      </Box>
+    </Box>
+  </Grommet>
+);
+
 storiesOf('Grommet', module)
+  .add('Plain', () => <Plain />)
   .add('Theme', () => <Themed />)
-  .add('Plain', () => <Plain />);
+  .add('Vars', () => <GrommetVars />);
