@@ -3,10 +3,10 @@ import styled, { css } from 'styled-components';
 import {
   activeStyle,
   backgroundStyle,
+  disabledStyle,
   focusStyle,
   genericStyles,
   normalizeColor,
-  disabledStyle,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 

@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 
 import {
+  disabledStyle,
   focusStyle,
   inputStyle,
   placeholderStyle,
-  disabledStyle,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
