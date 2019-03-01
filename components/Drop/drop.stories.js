@@ -18,9 +18,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -38,7 +38,7 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "targetRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this), "targetRef", (0, _react.createRef)());
 
     return _this;
   }
@@ -108,7 +108,7 @@ function (_Component2) {
 
     _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "targetRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this2), "targetRef", (0, _react.createRef)());
 
     return _this2;
   }
@@ -170,7 +170,7 @@ function (_Component3) {
 
     _this4 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this4)), "targetRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this4), "targetRef", (0, _react.createRef)());
 
     return _this4;
   }
@@ -366,24 +366,24 @@ function (_Component4) {
 
     _this5 = _Component4.call.apply(_Component4, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "boxRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this5), "boxRef", (0, _react.createRef)());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "innerBoxRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this5), "innerBoxRef", (0, _react.createRef)());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "state", {
+    _defineProperty(_assertThisInitialized(_this5), "state", {
       openDrop: false,
       openInnerDrop: false,
       interactedWithInnerButton: false
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "onCloseDrop", function () {
+    _defineProperty(_assertThisInitialized(_this5), "onCloseDrop", function () {
       return _this5.setState({
         openDrop: false,
         openInnerDrop: false
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "onOpenDrop", function () {
+    _defineProperty(_assertThisInitialized(_this5), "onOpenDrop", function () {
       return _this5.setState({
         openDrop: true,
         openInnerDrop: false
@@ -484,17 +484,17 @@ function (_Component5) {
 
     _this7 = _Component5.call.apply(_Component5, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this7)), "state", {
+    _defineProperty(_assertThisInitialized(_this7), "state", {
       pad: 'small'
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this7)), "topLeftTargetRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this7), "topLeftTargetRef", (0, _react.createRef)());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this7)), "topRightTargetRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this7), "topRightTargetRef", (0, _react.createRef)());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this7)), "bottomLeftTargetRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this7), "bottomLeftTargetRef", (0, _react.createRef)());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this7)), "bottomRightTargetRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this7), "bottomRightTargetRef", (0, _react.createRef)());
 
     return _this7;
   }
@@ -621,7 +621,7 @@ function (_Component6) {
 
     _this9 = _Component6.call.apply(_Component6, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this9)), "targetRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this9), "targetRef", (0, _react.createRef)());
 
     return _this9;
   }
@@ -676,9 +676,9 @@ function (_Component7) {
 
     _this10 = _Component7.call.apply(_Component7, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this10)), "state", {});
+    _defineProperty(_assertThisInitialized(_this10), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this10)), "ref", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this10), "ref", (0, _react.createRef)());
 
     return _this10;
   }

@@ -31,9 +31,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -58,21 +58,21 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       activeItemIndex: -1,
       open: false
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "buttonRefs", {});
+    _defineProperty(_assertThisInitialized(_this), "buttonRefs", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onDropClose", function () {
+    _defineProperty(_assertThisInitialized(_this), "onDropClose", function () {
       _this.setState({
         activeItemIndex: -1,
         open: false
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onSelectMenuItem", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onSelectMenuItem", function (event) {
       var activeItemIndex = _this.state.activeItemIndex;
 
       if (activeItemIndex >= 0) {
@@ -83,7 +83,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onNextMenuItem", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onNextMenuItem", function (event) {
       event.preventDefault();
       var _this$state = _this.state,
           activeItemIndex = _this$state.activeItemIndex,
@@ -106,7 +106,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onPreviousMenuItem", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onPreviousMenuItem", function (event) {
       event.preventDefault();
       var _this$state2 = _this.state,
           activeItemIndex = _this$state2.activeItemIndex,

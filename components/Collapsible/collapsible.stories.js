@@ -16,9 +16,9 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -36,7 +36,7 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       open: false
     });
 
@@ -113,7 +113,7 @@ function (_Component2) {
 
     _this3 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "state", {
+    _defineProperty(_assertThisInitialized(_this3), "state", {
       openMenu1: false,
       openSubmenu1: false,
       openMenu2: false
@@ -231,7 +231,7 @@ function (_Component3) {
 
     _this5 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "state", {
+    _defineProperty(_assertThisInitialized(_this5), "state", {
       openNotification: false
     });
 

@@ -10,9 +10,9 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -66,7 +66,7 @@ function (_React$Component) {
 
     _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       topRow: fullTopRow.slice(0, 1)
     });
 

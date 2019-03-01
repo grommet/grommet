@@ -2,9 +2,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -30,11 +30,11 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
+    _defineProperty(_assertThisInitialized(_this), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "optionRefs", []);
+    _defineProperty(_assertThisInitialized(_this), "optionRefs", []);
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "valueIndex", function () {
+    _defineProperty(_assertThisInitialized(_this), "valueIndex", function () {
       var _this$state = _this.state,
           options = _this$state.options,
           value = _this$state.value;
@@ -50,7 +50,7 @@ function (_Component) {
       return result;
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onNext", function () {
+    _defineProperty(_assertThisInitialized(_this), "onNext", function () {
       var onChange = _this.props.onChange;
       var options = _this.state.options;
 
@@ -76,7 +76,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onPrevious", function () {
+    _defineProperty(_assertThisInitialized(_this), "onPrevious", function () {
       var onChange = _this.props.onChange;
       var options = _this.state.options;
 
@@ -102,7 +102,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onFocus", function () {
+    _defineProperty(_assertThisInitialized(_this), "onFocus", function () {
       // Delay just a wee bit so Chrome doesn't missing turning the button on.
       // Chrome behaves differently in that focus is given to radio buttons
       // when the user selects one, unlike Safari and Firefox.
@@ -117,7 +117,7 @@ function (_Component) {
       }, 1);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onBlur", function () {
+    _defineProperty(_assertThisInitialized(_this), "onBlur", function () {
       var focus = _this.state.focus;
 
       if (focus) {

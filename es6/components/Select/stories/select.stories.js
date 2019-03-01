@@ -1,8 +1,8 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -56,7 +56,7 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       options: ['one', 'two'],
       value: ''
     });
@@ -134,7 +134,7 @@ function (_Component2) {
 
     _this3 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "state", {
+    _defineProperty(_assertThisInitialized(_this3), "state", {
       options: defaultOptions,
       value: ''
     });
@@ -203,7 +203,7 @@ function (_Component3) {
 
     _this5 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "state", {
+    _defineProperty(_assertThisInitialized(_this5), "state", {
       options: defaultOptions,
       value: ''
     });
@@ -273,7 +273,7 @@ function (_Component4) {
 
     _this7 = _Component4.call.apply(_Component4, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this7)), "state", {
+    _defineProperty(_assertThisInitialized(_this7), "state", {
       options: objectOptions,
       value: ''
     });
@@ -349,11 +349,11 @@ function (_Component5) {
 
     _this9 = _Component5.call.apply(_Component5, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this9)), "state", {
+    _defineProperty(_assertThisInitialized(_this9), "state", {
       selected: []
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this9)), "onRemoveSeason", function (season) {
+    _defineProperty(_assertThisInitialized(_this9), "onRemoveSeason", function (season) {
       var selected = _this9.state.selected;
       var nextSelected = [].concat(selected);
       nextSelected.splice(nextSelected.indexOf(allSeasons.indexOf(season)), 1);
@@ -363,7 +363,7 @@ function (_Component5) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this9)), "renderSeason", function (season) {
+    _defineProperty(_assertThisInitialized(_this9), "renderSeason", function (season) {
       return React.createElement(Button, {
         key: "season_tag_" + season,
         href: "#",
@@ -406,7 +406,7 @@ function (_Component5) {
       }))));
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this9)), "renderOption", function (option, index, options, state) {
+    _defineProperty(_assertThisInitialized(_this9), "renderOption", function (option, index, options, state) {
       return React.createElement(Box, {
         pad: "small",
         background: state.active ? 'active' : undefined
@@ -513,21 +513,21 @@ function (_Component6) {
 
     _this11 = _Component6.call.apply(_Component6, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this11)), "state", {
+    _defineProperty(_assertThisInitialized(_this11), "state", {
       contentPartners: allContentPartners,
       selectedContentPartners: [],
       searching: false
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this11)), "selectRef", createRef());
+    _defineProperty(_assertThisInitialized(_this11), "selectRef", createRef());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this11)), "clearContentPartners", function () {
+    _defineProperty(_assertThisInitialized(_this11), "clearContentPartners", function () {
       return _this11.setState({
         selectedContentPartners: []
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this11)), "renderOption", function (_ref6) {
+    _defineProperty(_assertThisInitialized(_this11), "renderOption", function (_ref6) {
       var name = _ref6.name;
       var selectedContentPartners = _this11.state.selectedContentPartners;
       return React.createElement(Box, {
@@ -547,7 +547,7 @@ function (_Component6) {
       }));
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this11)), "renderContentPartners", function () {
+    _defineProperty(_assertThisInitialized(_this11), "renderContentPartners", function () {
       var selectedContentPartners = _this11.state.selectedContentPartners;
       return React.createElement(Box, {
         direction: "row",
@@ -714,7 +714,7 @@ function (_Component7) {
 
     _this13 = _Component7.call.apply(_Component7, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this13)), "state", {
+    _defineProperty(_assertThisInitialized(_this13), "state", {
       options: ['one', 'two'],
       value: ''
     });
@@ -807,7 +807,7 @@ function (_Component8) {
 
     _this15 = _Component8.call.apply(_Component8, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this15)), "state", {
+    _defineProperty(_assertThisInitialized(_this15), "state", {
       selected: [],
       options: dummyOptions
     });

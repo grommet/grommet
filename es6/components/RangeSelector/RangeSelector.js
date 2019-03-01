@@ -2,9 +2,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -34,11 +34,11 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
+    _defineProperty(_assertThisInitialized(_this), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "containerRef", React.createRef());
+    _defineProperty(_assertThisInitialized(_this), "containerRef", React.createRef());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "valueForMouseCoord", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "valueForMouseCoord", function (event) {
       var _this$props = _this.props,
           direction = _this$props.direction,
           max = _this$props.max,
@@ -77,7 +77,7 @@ function (_Component) {
       return result;
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClick", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onClick", function (event) {
       var _this$props2 = _this.props,
           onChange = _this$props2.onChange,
           values = _this$props2.values;
@@ -100,7 +100,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "lowerMouseDown", function () {
+    _defineProperty(_assertThisInitialized(_this), "lowerMouseDown", function () {
       _this.setState({
         changing: 'lower'
       });
@@ -109,7 +109,7 @@ function (_Component) {
       window.addEventListener('mouseup', _this.mouseUp);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "upperMouseDown", function () {
+    _defineProperty(_assertThisInitialized(_this), "upperMouseDown", function () {
       _this.setState({
         changing: 'upper'
       });
@@ -118,7 +118,7 @@ function (_Component) {
       window.addEventListener('mouseup', _this.mouseUp);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "selectionMouseDown", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "selectionMouseDown", function (event) {
       var moveValue = _this.valueForMouseCoord(event);
 
       _this.setState({
@@ -130,7 +130,7 @@ function (_Component) {
       window.addEventListener('mouseup', _this.mouseUp);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "mouseMove", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "mouseMove", function (event) {
       var _this$props3 = _this.props,
           max = _this$props3.max,
           min = _this$props3.min,
@@ -166,7 +166,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "mouseUp", function () {
+    _defineProperty(_assertThisInitialized(_this), "mouseUp", function () {
       _this.setState({
         changing: undefined
       });

@@ -14,9 +14,9 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -38,12 +38,12 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       value: '',
       suggestions: allSuggestions
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChange", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (event) {
       var value = event.taget.value;
       var exp = new RegExp(value, 'i');
       var suggestions = allSuggestions.filter(function (s) {
@@ -56,7 +56,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onSelect", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onSelect", function (event) {
       return _this.setState({
         value: event.suggestion
       });
@@ -166,7 +166,7 @@ function (_Component2) {
 
     _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "state", {
+    _defineProperty(_assertThisInitialized(_this2), "state", {
       value: '',
       options: allOptions
     });

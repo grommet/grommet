@@ -1,8 +1,8 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -43,18 +43,18 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "optionRefs", {});
+    _defineProperty(_assertThisInitialized(_this), "optionRefs", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "searchRef", createRef());
+    _defineProperty(_assertThisInitialized(_this), "searchRef", createRef());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "optionsRef", createRef());
+    _defineProperty(_assertThisInitialized(_this), "optionsRef", createRef());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       search: '',
       activeIndex: -1
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onSearchChange", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onSearchChange", function (event) {
       _this.setState({
         search: event.target.value,
         activeIndex: -1
@@ -65,12 +65,12 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onSearch", debounce(function (search) {
+    _defineProperty(_assertThisInitialized(_this), "onSearch", debounce(function (search) {
       var onSearch = _this.props.onSearch;
       onSearch(search);
     }, debounceDelay(_this.props)));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "selectOption", function (option, index) {
+    _defineProperty(_assertThisInitialized(_this), "selectOption", function (option, index) {
       return function () {
         var _this$props = _this.props,
             multiple = _this$props.multiple,
@@ -121,7 +121,7 @@ function (_Component) {
       };
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "clearKeyboardNavigation", function () {
+    _defineProperty(_assertThisInitialized(_this), "clearKeyboardNavigation", function () {
       clearTimeout(_this.keyboardNavTimer);
       _this.keyboardNavTimer = setTimeout(function () {
         _this.setState({
@@ -130,7 +130,7 @@ function (_Component) {
       }, 100); // 100ms was empirically determined
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onNextOption", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onNextOption", function (event) {
       var options = _this.props.options;
       var activeIndex = _this.state.activeIndex;
       event.preventDefault();
@@ -157,7 +157,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onPreviousOption", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onPreviousOption", function (event) {
       var activeIndex = _this.state.activeIndex;
       event.preventDefault();
       var nextActiveIndex = activeIndex - 1;
@@ -183,7 +183,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onActiveOption", function (index) {
+    _defineProperty(_assertThisInitialized(_this), "onActiveOption", function (index) {
       return function () {
         var keyboardNavigating = _this.state.keyboardNavigating;
 
@@ -195,7 +195,7 @@ function (_Component) {
       };
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onSelectOption", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onSelectOption", function (event) {
       var options = _this.props.options;
       var activeIndex = _this.state.activeIndex;
 
@@ -206,7 +206,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "optionLabel", function (index) {
+    _defineProperty(_assertThisInitialized(_this), "optionLabel", function (index) {
       var _this$props2 = _this.props,
           options = _this$props2.options,
           labelKey = _this$props2.labelKey;
@@ -226,7 +226,7 @@ function (_Component) {
       return optionLabel;
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "optionValue", function (index) {
+    _defineProperty(_assertThisInitialized(_this), "optionValue", function (index) {
       var _this$props3 = _this.props,
           options = _this$props3.options,
           valueKey = _this$props3.valueKey;
@@ -246,7 +246,7 @@ function (_Component) {
       return optionValue;
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "isDisabled", function (index) {
+    _defineProperty(_assertThisInitialized(_this), "isDisabled", function (index) {
       var _this$props4 = _this.props,
           disabled = _this$props4.disabled,
           disabledKey = _this$props4.disabledKey,
@@ -273,7 +273,7 @@ function (_Component) {
       return result;
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "isSelected", function (index) {
+    _defineProperty(_assertThisInitialized(_this), "isSelected", function (index) {
       var _this$props5 = _this.props,
           selected = _this$props5.selected,
           value = _this$props5.value,

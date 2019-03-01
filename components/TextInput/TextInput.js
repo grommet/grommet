@@ -33,9 +33,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -80,14 +80,14 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       activeSuggestionIndex: -1,
       showDrop: false
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputRef", _react.default.createRef());
+    _defineProperty(_assertThisInitialized(_this), "inputRef", _react.default.createRef());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "announce", function (message, mode) {
+    _defineProperty(_assertThisInitialized(_this), "announce", function (message, mode) {
       var _this$props = _this.props,
           announce = _this$props.announce,
           suggestions = _this$props.suggestions;
@@ -97,7 +97,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "announceSuggestionsCount", function () {
+    _defineProperty(_assertThisInitialized(_this), "announceSuggestionsCount", function () {
       var _this$props2 = _this.props,
           suggestions = _this$props2.suggestions,
           suggestionsCount = _this$props2.messages.suggestionsCount;
@@ -105,19 +105,19 @@ function (_Component) {
       _this.announce(suggestions.length + " " + suggestionsCount);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "announceSuggestionsExist", function () {
+    _defineProperty(_assertThisInitialized(_this), "announceSuggestionsExist", function () {
       var suggestionsExist = _this.props.messages.suggestionsExist;
 
       _this.announce(suggestionsExist);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "announceSuggestionsIsOpen", function () {
+    _defineProperty(_assertThisInitialized(_this), "announceSuggestionsIsOpen", function () {
       var suggestionIsOpen = _this.props.messages.suggestionIsOpen;
 
       _this.announce(suggestionIsOpen);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "announceSuggestion", function (index) {
+    _defineProperty(_assertThisInitialized(_this), "announceSuggestion", function (index) {
       var _this$props3 = _this.props,
           suggestions = _this$props3.suggestions,
           enterSelect = _this$props3.messages.enterSelect;
@@ -129,7 +129,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "resetSuggestions", function () {
+    _defineProperty(_assertThisInitialized(_this), "resetSuggestions", function () {
       // delay this to avoid re-render interupting event delivery
       // https://github.com/grommet/grommet/issues/2154
       // 10ms was chosen empirically based on ie11 using TextInput
@@ -148,7 +148,7 @@ function (_Component) {
       }, 10);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getSelectedSuggestionIndex", function () {
+    _defineProperty(_assertThisInitialized(_this), "getSelectedSuggestionIndex", function () {
       var _this$props4 = _this.props,
           suggestions = _this$props4.suggestions,
           value = _this$props4.value;
@@ -162,7 +162,7 @@ function (_Component) {
       return suggestionValues.indexOf(value);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onShowSuggestions", function () {
+    _defineProperty(_assertThisInitialized(_this), "onShowSuggestions", function () {
       // Get values of suggestions, so we can highlight selected suggestion
       var selectedSuggestionIndex = _this.getSelectedSuggestionIndex();
 
@@ -173,7 +173,7 @@ function (_Component) {
       }, _this.announceSuggestionsIsOpen);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onNextSuggestion", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onNextSuggestion", function (event) {
       var suggestions = _this.props.suggestions;
       var _this$state = _this.state,
           activeSuggestionIndex = _this$state.activeSuggestionIndex,
@@ -195,7 +195,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onPreviousSuggestion", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onPreviousSuggestion", function (event) {
       var suggestions = _this.props.suggestions;
       var _this$state2 = _this.state,
           activeSuggestionIndex = _this$state2.activeSuggestionIndex,
@@ -213,7 +213,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClickSuggestion", function (suggestion) {
+    _defineProperty(_assertThisInitialized(_this), "onClickSuggestion", function (suggestion) {
       var _this$props5 = _this.props,
           forwardRef = _this$props5.forwardRef,
           onSelect = _this$props5.onSelect;
@@ -230,7 +230,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onSuggestionSelect", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onSuggestionSelect", function (event) {
       var _this$props6 = _this.props,
           forwardRef = _this$props6.forwardRef,
           onSelect = _this$props6.onSelect,
@@ -255,7 +255,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onFocus", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onFocus", function (event) {
       var _this$props7 = _this.props,
           onFocus = _this$props7.onFocus,
           suggestions = _this$props7.suggestions;
@@ -271,7 +271,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onBlur", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onBlur", function (event) {
       var onBlur = _this.props.onBlur;
       clearTimeout(_this.resetTimer);
 
@@ -280,7 +280,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChange", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (event) {
       var onChange = _this.props.onChange;
 
       _this.resetSuggestions();
@@ -290,7 +290,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onEsc", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onEsc", function (event) {
       // we have to stop both synthetic events and native events
       // drop and layer should not close by pressing esc on this input
       event.stopPropagation();
@@ -301,13 +301,13 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTab", function () {
+    _defineProperty(_assertThisInitialized(_this), "onTab", function () {
       _this.setState({
         showDrop: false
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "renderSuggestions", function () {
+    _defineProperty(_assertThisInitialized(_this), "renderSuggestions", function () {
       var _this$props8 = _this.props,
           suggestions = _this$props8.suggestions,
           theme = _this$props8.theme;

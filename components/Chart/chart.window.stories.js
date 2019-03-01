@@ -16,9 +16,9 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -70,15 +70,15 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
+    _defineProperty(_assertThisInitialized(_this), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChange", function (range) {
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (range) {
       _this.setState({
         range: range
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onHover", function (value) {
+    _defineProperty(_assertThisInitialized(_this), "onHover", function (value) {
       return function (over) {
         _this.setState({
           hover: over ? value : undefined

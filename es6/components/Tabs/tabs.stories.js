@@ -1,6 +1,6 @@
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -80,9 +80,9 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
+    _defineProperty(_assertThisInitialized(_this), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onActive", function (index) {
+    _defineProperty(_assertThisInitialized(_this), "onActive", function (index) {
       return _this.setState({
         index: index
       });
@@ -147,9 +147,9 @@ function (_Component2) {
 
     _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "state", {});
+    _defineProperty(_assertThisInitialized(_this2), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onActive", function (index) {
+    _defineProperty(_assertThisInitialized(_this2), "onActive", function (index) {
       return _this2.setState({
         index: index
       });

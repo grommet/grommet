@@ -2,9 +2,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -33,11 +33,11 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       activeIndex: 0
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "play", function () {
+    _defineProperty(_assertThisInitialized(_this), "play", function () {
       var play = _this.props.play;
       clearInterval(_this.timer);
       _this.timer = setInterval(function () {
@@ -59,7 +59,7 @@ function (_Component) {
       }, play);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onRight", function () {
+    _defineProperty(_assertThisInitialized(_this), "onRight", function () {
       var activeIndex = _this.state.activeIndex;
       clearInterval(_this.timer);
 
@@ -69,7 +69,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onLeft", function () {
+    _defineProperty(_assertThisInitialized(_this), "onLeft", function () {
       var activeIndex = _this.state.activeIndex;
       clearInterval(_this.timer);
 
@@ -79,7 +79,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onSelect", function (index) {
+    _defineProperty(_assertThisInitialized(_this), "onSelect", function (index) {
       return function () {
         var activeIndex = _this.state.activeIndex;
         clearInterval(_this.timer);

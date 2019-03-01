@@ -16,9 +16,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -36,27 +36,27 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
+    _defineProperty(_assertThisInitialized(_this), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onOpen", function () {
+    _defineProperty(_assertThisInitialized(_this), "onOpen", function () {
       return _this.setState({
         open: true
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClose", function () {
+    _defineProperty(_assertThisInitialized(_this), "onClose", function () {
       return _this.setState({
         open: undefined
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onOpen2", function () {
+    _defineProperty(_assertThisInitialized(_this), "onOpen2", function () {
       return _this.setState({
         open2: true
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClose2", function () {
+    _defineProperty(_assertThisInitialized(_this), "onClose2", function () {
       return _this.setState({
         open2: undefined
       });
@@ -164,15 +164,15 @@ function (_Component2) {
 
     _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "state", {});
+    _defineProperty(_assertThisInitialized(_this2), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onOpen", function () {
+    _defineProperty(_assertThisInitialized(_this2), "onOpen", function () {
       return _this2.setState({
         open: true
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onClose", function () {
+    _defineProperty(_assertThisInitialized(_this2), "onClose", function () {
       return _this2.setState({
         open: undefined
       });
@@ -226,18 +226,18 @@ function (_Component3) {
 
     _this3 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "state", {
+    _defineProperty(_assertThisInitialized(_this3), "state", {
       open: false,
       select: ''
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "onOpen", function () {
+    _defineProperty(_assertThisInitialized(_this3), "onOpen", function () {
       return _this3.setState({
         open: true
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "onClose", function () {
+    _defineProperty(_assertThisInitialized(_this3), "onClose", function () {
       _this3.setState({
         open: undefined
       });
@@ -339,15 +339,15 @@ function (_Component4) {
 
     _this5 = _Component4.call.apply(_Component4, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "state", {});
+    _defineProperty(_assertThisInitialized(_this5), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "onOpen", function () {
+    _defineProperty(_assertThisInitialized(_this5), "onOpen", function () {
       return _this5.setState({
         open: true
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "onClose", function () {
+    _defineProperty(_assertThisInitialized(_this5), "onClose", function () {
       return _this5.setState({
         open: undefined
       });
@@ -476,7 +476,7 @@ function (_Component5) {
 
     _this6 = _Component5.call.apply(_Component5, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this6)), "state", {
+    _defineProperty(_assertThisInitialized(_this6), "state", {
       showLayer: false
     });
 

@@ -76,7 +76,7 @@ function (_Component2) {
 
     _this = _Component2.call.apply(_Component2, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "sizes", []);
+    _defineProperty(_assertThisInitialized(_this), "sizes", []);
 
     return _this;
   }

@@ -2,9 +2,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -40,9 +40,9 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "dropRef", React.createRef());
+    _defineProperty(_assertThisInitialized(_this), "dropRef", React.createRef());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "addScrollListener", function () {
+    _defineProperty(_assertThisInitialized(_this), "addScrollListener", function () {
       var dropTarget = _this.props.dropTarget;
       _this.scrollParents = findScrollParents(dropTarget);
 
@@ -51,13 +51,13 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "removeScrollListener", function () {
+    _defineProperty(_assertThisInitialized(_this), "removeScrollListener", function () {
       _this.scrollParents.forEach(function (scrollParent) {
         return scrollParent.removeEventListener('scroll', _this.place);
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClickDocument", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onClickDocument", function (event) {
       var _this$props = _this.props,
           dropTarget = _this$props.dropTarget,
           onClickOutside = _this$props.onClickOutside;
@@ -70,7 +70,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onResize", function () {
+    _defineProperty(_assertThisInitialized(_this), "onResize", function () {
       _this.removeScrollListener();
 
       _this.addScrollListener();
@@ -78,7 +78,7 @@ function (_Component) {
       _this.place(false);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "place", function (preserveHeight) {
+    _defineProperty(_assertThisInitialized(_this), "place", function (preserveHeight) {
       var _this$props2 = _this.props,
           align = _this$props2.align,
           dropTarget = _this$props2.dropTarget,
@@ -220,7 +220,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onEsc", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onEsc", function (event) {
       var onEsc = _this.props.onEsc;
       event.stopPropagation();
 
@@ -229,7 +229,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "preventClickBubbling", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "preventClickBubbling", function (event) {
       event.stopPropagation();
       /**
        * the React event system actually listens to all events at the top level

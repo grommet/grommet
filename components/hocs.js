@@ -23,9 +23,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -65,14 +65,14 @@ var withFocus = function withFocus(_temp) {
 
         _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-        _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "mouseActive", false);
+        _defineProperty(_assertThisInitialized(_this), "mouseActive", false);
 
-        _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+        _defineProperty(_assertThisInitialized(_this), "state", {
           focus: false,
           wrappedRef: _react.default.createRef()
         });
 
-        _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "componentDidMount", function () {
+        _defineProperty(_assertThisInitialized(_this), "componentDidMount", function () {
           var wrappedRef = _this.state.wrappedRef; // components such as anchors and buttons should not retain focus after
           // being clicked while text-based components should
 
@@ -91,7 +91,7 @@ var withFocus = function withFocus(_temp) {
           }
         });
 
-        _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "componentWillUnmount", function () {
+        _defineProperty(_assertThisInitialized(_this), "componentWillUnmount", function () {
           var wrappedRef = _this.state.wrappedRef;
           window.removeEventListener('mousedown', _this.handleActiveMouse);
           var wrapperNode = wrappedRef.current;
@@ -104,7 +104,7 @@ var withFocus = function withFocus(_temp) {
           clearTimeout(_this.mouseTimer);
         });
 
-        _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleActiveMouse", function () {
+        _defineProperty(_assertThisInitialized(_this), "handleActiveMouse", function () {
           // from https://marcysutton.com/button-focus-hell/
           _this.mouseActive = true; // this avoids showing focus when clicking around
 
@@ -116,7 +116,7 @@ var withFocus = function withFocus(_temp) {
           }, 150);
         });
 
-        _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setFocus", function () {
+        _defineProperty(_assertThisInitialized(_this), "setFocus", function () {
           // delay setting focus to avoid interupting events,
           // 1ms was chosen empirically based on ie11 using Select and TextInput
           // with and without a FormField.
@@ -132,7 +132,7 @@ var withFocus = function withFocus(_temp) {
           }, 1);
         });
 
-        _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "resetFocus", function () {
+        _defineProperty(_assertThisInitialized(_this), "resetFocus", function () {
           clearTimeout(_this.focusTimer);
           _this.focusTimer = setTimeout(function () {
             var focus = _this.state.focus;

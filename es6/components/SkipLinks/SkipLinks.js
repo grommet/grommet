@@ -1,6 +1,6 @@
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -23,13 +23,13 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       showLayer: false
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "layerRef", createRef());
+    _defineProperty(_assertThisInitialized(_this), "layerRef", createRef());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onBlur", function () {
+    _defineProperty(_assertThisInitialized(_this), "onBlur", function () {
       // timeout needed so it gives enough time for activeElement to be updated
       setTimeout(function () {
         var layerNode = _this.layerRef.current;
@@ -40,13 +40,13 @@ function (_Component) {
       }, 0);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onFocus", function () {
+    _defineProperty(_assertThisInitialized(_this), "onFocus", function () {
       _this.setState({
         showLayer: true
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "removeLayer", function () {
+    _defineProperty(_assertThisInitialized(_this), "removeLayer", function () {
       _this.setState({
         showLayer: false
       });

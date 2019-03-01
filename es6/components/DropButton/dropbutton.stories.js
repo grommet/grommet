@@ -1,6 +1,6 @@
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -47,9 +47,9 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
+    _defineProperty(_assertThisInitialized(_this), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClose", function () {
+    _defineProperty(_assertThisInitialized(_this), "onClose", function () {
       _this.setState({
         open: false
       });
@@ -106,11 +106,11 @@ function (_Component2) {
 
     _this3 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "state", {
+    _defineProperty(_assertThisInitialized(_this3), "state", {
       date: undefined
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "onClose", function () {
+    _defineProperty(_assertThisInitialized(_this3), "onClose", function () {
       _this3.setState({
         open: false
       });
@@ -122,7 +122,7 @@ function (_Component2) {
       }, 1);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "onSelect", function (date) {
+    _defineProperty(_assertThisInitialized(_this3), "onSelect", function (date) {
       return _this3.setState({
         date: date,
         open: false
@@ -188,7 +188,7 @@ function (_Component3) {
 
     _this5 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this5)), "renderItems", function () {
+    _defineProperty(_assertThisInitialized(_this5), "renderItems", function () {
       return React.createElement(Box, null, React.createElement("span", null, "hi"), React.createElement("span", null, "hi"), React.createElement("span", null, "hi"), React.createElement("span", null, "hi"), React.createElement("span", null, "hi"));
     });
 

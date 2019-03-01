@@ -10,9 +10,9 @@ var _themes = require("grommet/themes");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -30,11 +30,11 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       value: ''
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChange", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (event) {
       _this.setState({
         value: event.target.value
       });
@@ -100,11 +100,11 @@ function (_Component2) {
 
     _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "state", {
+    _defineProperty(_assertThisInitialized(_this2), "state", {
       value: ''
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onChange", function (event) {
+    _defineProperty(_assertThisInitialized(_this2), "onChange", function (event) {
       _this2.setState({
         value: event.target.value
       });
@@ -171,11 +171,11 @@ function (_Component3) {
 
     _this3 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "state", {
+    _defineProperty(_assertThisInitialized(_this3), "state", {
       value: ''
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "onChange", function (event) {
+    _defineProperty(_assertThisInitialized(_this3), "onChange", function (event) {
       _this3.setState({
         value: event.target.value
       });
@@ -237,11 +237,11 @@ function (_Component4) {
 
     _this4 = _Component4.call.apply(_Component4, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this4)), "state", {
+    _defineProperty(_assertThisInitialized(_this4), "state", {
       value: ''
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this4)), "onChange", function (event) {
+    _defineProperty(_assertThisInitialized(_this4), "onChange", function (event) {
       _this4.setState({
         value: event.target.value
       });

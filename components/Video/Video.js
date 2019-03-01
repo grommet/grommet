@@ -35,9 +35,9 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -86,15 +86,15 @@ function (_Component) {
 
     _this = _Component.call(this, props) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       captions: [],
       scrubberRef: _react.default.createRef(),
       videoRef: _react.default.createRef()
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "hasPlayed", false);
+    _defineProperty(_assertThisInitialized(_this), "hasPlayed", false);
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "injectUpdateVideoEvents", function () {
+    _defineProperty(_assertThisInitialized(_this), "injectUpdateVideoEvents", function () {
       return videoEvents.reduce(function (previousValue, currentValue) {
         var nextValue = _extends({}, previousValue);
 
@@ -114,7 +114,7 @@ function (_Component) {
       }, {});
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "update", function () {
+    _defineProperty(_assertThisInitialized(_this), "update", function () {
       var videoRef = _this.state.videoRef;
       var video = videoRef.current; // Set flag for Video first play
 
@@ -149,17 +149,17 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "play", function () {
+    _defineProperty(_assertThisInitialized(_this), "play", function () {
       var videoRef = _this.state.videoRef;
       videoRef.current.play();
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "pause", function () {
+    _defineProperty(_assertThisInitialized(_this), "pause", function () {
       var videoRef = _this.state.videoRef;
       videoRef.current.pause();
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "scrub", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "scrub", function (event) {
       var _this$state = _this.state,
           duration = _this$state.duration,
           scrubberRef = _this$state.scrubberRef;
@@ -174,7 +174,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "seek", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "seek", function (event) {
       var _this$state2 = _this.state,
           duration = _this$state2.duration,
           scrubberRef = _this$state2.scrubberRef,
@@ -187,7 +187,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "unmute", function () {
+    _defineProperty(_assertThisInitialized(_this), "unmute", function () {
       var videoRef = _this.state.videoRef;
 
       if (videoRef.current) {
@@ -195,7 +195,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "mute", function () {
+    _defineProperty(_assertThisInitialized(_this), "mute", function () {
       var videoRef = _this.state.videoRef;
 
       if (videoRef.current) {
@@ -203,17 +203,17 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "louder", function () {
+    _defineProperty(_assertThisInitialized(_this), "louder", function () {
       var videoRef = _this.state.videoRef;
       videoRef.current.volume += VOLUME_STEP;
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "quieter", function () {
+    _defineProperty(_assertThisInitialized(_this), "quieter", function () {
       var videoRef = _this.state.videoRef;
       videoRef.current.volume -= VOLUME_STEP;
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "showCaptions", function (index) {
+    _defineProperty(_assertThisInitialized(_this), "showCaptions", function (index) {
       var videoRef = _this.state.videoRef;
       var textTracks = videoRef.current.textTracks;
 
@@ -225,7 +225,7 @@ function (_Component) {
       _this.forceUpdate();
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "fullscreen", function () {
+    _defineProperty(_assertThisInitialized(_this), "fullscreen", function () {
       var videoRef = _this.state.videoRef;
       var video = videoRef.current;
 
@@ -242,7 +242,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "interactionStart", function () {
+    _defineProperty(_assertThisInitialized(_this), "interactionStart", function () {
       _this.setState({
         interacting: true
       });
@@ -251,7 +251,7 @@ function (_Component) {
       _this.interactionTimer = setTimeout(_this.interactionStop, 3000);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "interactionStop", function () {
+    _defineProperty(_assertThisInitialized(_this), "interactionStop", function () {
       var focus = _this.state.focus;
 
       if (!focus && !_this.unmounted) {
@@ -261,7 +261,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "restate", function () {
+    _defineProperty(_assertThisInitialized(_this), "restate", function () {
       var _this$state3 = _this.state,
           captions = _this$state3.captions,
           height = _this$state3.height,
@@ -340,7 +340,7 @@ function (_Component) {
       }
     });
 
-    _this.update = (0, _utils.throttle)(_this.update, 100, _assertThisInitialized(_assertThisInitialized(_this)));
+    _this.update = (0, _utils.throttle)(_this.update, 100, _assertThisInitialized(_this));
     _this.mediaEventProps = _this.injectUpdateVideoEvents();
     return _this;
   }

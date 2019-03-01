@@ -1,6 +1,6 @@
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -196,11 +196,11 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       data: DATA
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onSearch", function (search) {
+    _defineProperty(_assertThisInitialized(_this), "onSearch", function (search) {
       var nextData;
 
       if (search) {
@@ -272,11 +272,11 @@ function (_Component2) {
 
     _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "state", {
+    _defineProperty(_assertThisInitialized(_this2), "state", {
       checked: []
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onCheck", function (event, value) {
+    _defineProperty(_assertThisInitialized(_this2), "onCheck", function (event, value) {
       var checked = _this2.state.checked;
 
       if (event.target.checked) {
@@ -294,7 +294,7 @@ function (_Component2) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "onCheckAll", function (event) {
+    _defineProperty(_assertThisInitialized(_this2), "onCheckAll", function (event) {
       return _this2.setState({
         checked: event.target.checked ? DATA.map(function (datum) {
           return datum.name;

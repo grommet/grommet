@@ -87,11 +87,11 @@ function (_Component2) {
 
     _this = _Component2.call.apply(_Component2, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       items: allItems.slice(0, 200)
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMore", function () {
+    _defineProperty(_assertThisInitialized(_this), "onMore", function () {
       setTimeout(function () {
         var items = _this.state.items;
 

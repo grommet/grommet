@@ -17,9 +17,9 @@ var _StyledWorldMap = require("./StyledWorldMap");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -252,16 +252,16 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
+    _defineProperty(_assertThisInitialized(_this), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMouseOver", function () {
+    _defineProperty(_assertThisInitialized(_this), "onMouseOver", function () {
       // track when we're over the map to avoid dealing with mouse moves
       _this.setState({
         over: true
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMouseMove", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onMouseMove", function (event) {
       var width = _this.state.width; // determine the map coordinates for where the mouse is
       // containerRef uses the group so we can handle aspect ratio scaling
 
@@ -276,7 +276,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMouseLeave", function () {
+    _defineProperty(_assertThisInitialized(_this), "onMouseLeave", function () {
       _this.setState({
         over: false,
         activeCoords: undefined

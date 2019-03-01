@@ -29,9 +29,9 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -142,13 +142,13 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
+    _defineProperty(_assertThisInitialized(_this), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputRef", _react.default.createRef());
+    _defineProperty(_assertThisInitialized(_this), "inputRef", _react.default.createRef());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "dropRef", _react.default.createRef());
+    _defineProperty(_assertThisInitialized(_this), "dropRef", _react.default.createRef());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "locateCaret", function () {
+    _defineProperty(_assertThisInitialized(_this), "locateCaret", function () {
       // leave time for caret to be placed after receiving focus
       clearTimeout(_this.caretTimeout);
       _this.caretTimeout = setTimeout(function () {
@@ -189,7 +189,7 @@ function (_Component) {
       }, 10); // 10ms empirically chosen
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onFocus", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onFocus", function (event) {
       var onFocus = _this.props.onFocus;
 
       _this.locateCaret();
@@ -203,7 +203,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onBlur", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onBlur", function (event) {
       // delay so we don't remove the drop before Button events can be processed
       var onBlur = _this.props.onBlur;
       clearTimeout(_this.blurTimeout);
@@ -221,7 +221,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChange", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (event) {
       var _this$props = _this.props,
           onChange = _this$props.onChange,
           mask = _this$props.mask;
@@ -241,7 +241,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onOption", function (option) {
+    _defineProperty(_assertThisInitialized(_this), "onOption", function (option) {
       return function () {
         var _this$props2 = _this.props,
             onChange = _this$props2.onChange,
@@ -279,7 +279,7 @@ function (_Component) {
       };
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onNextOption", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onNextOption", function (event) {
       var mask = _this.props.mask;
       var _this$state3 = _this.state,
           activeMaskIndex = _this$state3.activeMaskIndex,
@@ -296,7 +296,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onPreviousOption", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onPreviousOption", function (event) {
       var mask = _this.props.mask;
       var _this$state4 = _this.state,
           activeMaskIndex = _this$state4.activeMaskIndex,
@@ -312,7 +312,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onSelectOption", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onSelectOption", function (event) {
       var mask = _this.props.mask;
       var _this$state5 = _this.state,
           activeMaskIndex = _this$state5.activeMaskIndex,
@@ -326,7 +326,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onEsc", function (event) {
+    _defineProperty(_assertThisInitialized(_this), "onEsc", function (event) {
       // we have to stop both synthetic events and native events
       // drop and layer should not close by pressing esc on this input
       event.stopPropagation();
@@ -335,7 +335,7 @@ function (_Component) {
       _this.inputRef.current.blur();
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "renderPlaceholder", function () {
+    _defineProperty(_assertThisInitialized(_this), "renderPlaceholder", function () {
       var mask = _this.props.mask;
       return mask.map(function (item) {
         return item.placeholder || item.fixed;

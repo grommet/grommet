@@ -55,19 +55,19 @@ function (_PureComponent) {
 
     _this = _PureComponent.call.apply(_PureComponent, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
+    _defineProperty(_assertThisInitialized(_this), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "initialScroll", false);
+    _defineProperty(_assertThisInitialized(_this), "initialScroll", false);
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "belowMarkerRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this), "belowMarkerRef", (0, _react.createRef)());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "firstPageItemRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this), "firstPageItemRef", (0, _react.createRef)());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "lastPageItemRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this), "lastPageItemRef", (0, _react.createRef)());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "showRef", (0, _react.createRef)());
+    _defineProperty(_assertThisInitialized(_this), "showRef", (0, _react.createRef)());
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "addScrollListener", function () {
+    _defineProperty(_assertThisInitialized(_this), "addScrollListener", function () {
       var pageHeight = _this.state.pageHeight;
 
       if (pageHeight && _this.belowMarkerRef.current && !_this.scrollParents) {
@@ -79,7 +79,7 @@ function (_PureComponent) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "removeScrollListener", function () {
+    _defineProperty(_assertThisInitialized(_this), "removeScrollListener", function () {
       if (_this.scrollParents) {
         _this.scrollParents.forEach(function (scrollParent) {
           return scrollParent.removeEventListener('scroll', _this.place);
@@ -89,7 +89,7 @@ function (_PureComponent) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "scrollShow", function () {
+    _defineProperty(_assertThisInitialized(_this), "scrollShow", function () {
       var show = _this.props.show;
 
       if (show && !_this.initialScroll && _this.showRef.current) {
@@ -99,7 +99,7 @@ function (_PureComponent) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setPageHeight", function () {
+    _defineProperty(_assertThisInitialized(_this), "setPageHeight", function () {
       var step = _this.props.step;
       var pageHeight = _this.state.pageHeight;
 
@@ -123,7 +123,7 @@ function (_PureComponent) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onScroll", function () {
+    _defineProperty(_assertThisInitialized(_this), "onScroll", function () {
       var _this$props = _this.props,
           onMore = _this$props.onMore,
           replace = _this$props.replace;

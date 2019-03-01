@@ -1,8 +1,8 @@
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -80,11 +80,11 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
+    _defineProperty(_assertThisInitialized(_this), "state", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "dayRefs", {});
+    _defineProperty(_assertThisInitialized(_this), "dayRefs", {});
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "clearSlideStateLater", function () {
+    _defineProperty(_assertThisInitialized(_this), "clearSlideStateLater", function () {
       clearTimeout(_this.timer);
       _this.timer = setTimeout(function () {
         var targetStartEnd = _this.state.targetStartEnd;
@@ -101,7 +101,7 @@ function (_Component) {
       }, 800);
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setReference", function (reference) {
+    _defineProperty(_assertThisInitialized(_this), "setReference", function (reference) {
       var _this$props = _this.props,
           animate = _this$props.animate,
           bounds = _this$props.bounds,
@@ -152,7 +152,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onFocus", function (day) {
+    _defineProperty(_assertThisInitialized(_this), "onFocus", function (day) {
       return function () {
         var bounds = _this.props.bounds;
         var reference = _this.state.reference;
@@ -169,7 +169,7 @@ function (_Component) {
       };
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClickDay", function (dateString) {
+    _defineProperty(_assertThisInitialized(_this), "onClickDay", function (dateString) {
       return function () {
         var _this$props2 = _this.props,
             onSelect = _this$props2.onSelect,
@@ -189,7 +189,7 @@ function (_Component) {
       };
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setFocus", function (day) {
+    _defineProperty(_assertThisInitialized(_this), "setFocus", function (day) {
       var ref = _this.dayRefs[day.toISOString()];
 
       if (ref && ref.current) {
@@ -197,7 +197,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "renderCalendarHeader", function (previousMonth, nextMonth) {
+    _defineProperty(_assertThisInitialized(_this), "renderCalendarHeader", function (previousMonth, nextMonth) {
       var _this$props3 = _this.props,
           bounds = _this$props3.bounds,
           locale = _this$props3.locale,

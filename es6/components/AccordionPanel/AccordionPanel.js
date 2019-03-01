@@ -2,9 +2,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -34,11 +34,11 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(_args)) || this;
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       hover: undefined
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMouseOver", function () {
+    _defineProperty(_assertThisInitialized(_this), "onMouseOver", function () {
       var _this$props = _this.props,
           onMouseOver = _this$props.onMouseOver,
           dark = _this$props.theme.dark;
@@ -56,7 +56,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMouseOut", function () {
+    _defineProperty(_assertThisInitialized(_this), "onMouseOut", function () {
       var onMouseOut = _this.props.onMouseOut;
 
       _this.setState({
@@ -72,7 +72,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onFocus", function () {
+    _defineProperty(_assertThisInitialized(_this), "onFocus", function () {
       var _this$props2 = _this.props,
           onFocus = _this$props2.onFocus,
           dark = _this$props2.theme.dark;
@@ -90,7 +90,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onBlur", function () {
+    _defineProperty(_assertThisInitialized(_this), "onBlur", function () {
       var onBlur = _this.props.onBlur;
 
       _this.setState({
