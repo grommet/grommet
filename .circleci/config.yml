@@ -43,8 +43,16 @@ jobs:
     docker:
       - image: cypress/browsers:chrome69
     steps:
-      - attach_workspace:
-          at: ~/grommet-ci
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ checksum "yarn.lock" }}
+      - run: yarn --frozen-lockfile
+      - save_cache:
+          key: yarn-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache
+            - ./node_modules
       - run:
           name: Running E2E tests
           command: yarn e2e
@@ -106,8 +114,6 @@ workflows:
             tags:
               only: /.*/
       - e2e:
-          requires:
-            - checkout
           filters:
             tags:
               only: /.*/
