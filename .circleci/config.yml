@@ -47,7 +47,7 @@ jobs:
           at: ~/grommet-ci
       - run:
           name: Running E2E tests
-          command: npm run e2e
+          command: yarn e2e
       - store_test_results:
           path: cypress/snapshots/diff
       - store_artifacts:
