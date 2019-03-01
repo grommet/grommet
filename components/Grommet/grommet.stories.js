@@ -40,8 +40,23 @@ var Plain = function Plain() {
   }, _react.default.createElement("p", null, "Not plain Grommet"))));
 };
 
-(0, _react2.storiesOf)('Grommet', module).add('Theme', function () {
-  return _react.default.createElement(Themed, null);
-}).add('Plain', function () {
+var GrommetVars = function GrommetVars() {
+  return _react.default.createElement(_grommet.Grommet, {
+    theme: _grommet.grommet,
+    cssVars: true
+  }, _react.default.createElement(_grommet.Box, {
+    pad: "medium",
+    background: "var(--accent-2)",
+    gap: "medium"
+  }, _react.default.createElement(_grommet.Box, null, "Checkout Grommet variables, you can find them in the StyledGrommet DOM."), _react.default.createElement(_grommet.Box, {
+    with: true
+  }, "For example, the background color in this Box is using var(--accent-2)")));
+};
+
+(0, _react2.storiesOf)('Grommet', module).add('Plain', function () {
   return _react.default.createElement(Plain, null);
+}).add('Theme', function () {
+  return _react.default.createElement(Themed, null);
+}).add('Vars', function () {
+  return _react.default.createElement(GrommetVars, null);
 });

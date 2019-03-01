@@ -116,6 +116,12 @@ describe('Grommet', function () {
     }, "Grommet App"));
     expect(component.toJSON()).toMatchSnapshot();
   });
+  test('cssVars', function () {
+    var component = renderer.create(React.createElement(Grommet, {
+      cssVars: true
+    }, "Grommet App"));
+    expect(component.toJSON()).toMatchSnapshot();
+  });
   test('full', function () {
     var component = renderer.create(React.createElement(Grommet, {
       full: true

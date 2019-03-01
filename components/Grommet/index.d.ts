@@ -1,6 +1,7 @@
 import * as React from "react";
 
 export interface GrommetProps {
+  cssVars?: boolean;
   full?: boolean;
   plain?: boolean;
   theme?: object;

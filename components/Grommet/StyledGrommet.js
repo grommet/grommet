@@ -16,7 +16,7 @@ var fullStyle = (0, _styledComponents.css)(["width:100vw;height:100vh;overflow:a
 var StyledGrommet = _styledComponents.default.div.withConfig({
   displayName: "StyledGrommet",
   componentId: "sc-19lkkz7-0"
-})(["", " ", " ", " ", ""], function (props) {
+})(["", " ", " ", " ", " ", ""], function (props) {
   return !props.plain && _utils.baseStyle;
 }, function (props) {
   return props.full && fullStyle;
@@ -24,6 +24,12 @@ var StyledGrommet = _styledComponents.default.div.withConfig({
   return props.theme.global.font.face;
 }, function (props) {
   return props.theme.grommet.extend;
+}, function (props) {
+  return props.cssVars && Object.keys(props.theme.global.colors).filter(function (k) {
+    return typeof props.theme.global.colors[k] === 'string';
+  }).map(function (k) {
+    return "--" + k + ": " + props.theme.global.colors[k] + ";";
+  }).join('\n');
 });
 
 exports.StyledGrommet = StyledGrommet;
