@@ -52,7 +52,7 @@ const StyledCheckBoxInput = styled.input`
   width: 100%;
   height: 100%;
   margin: 0;
-  display: none;
+
   ${props => !props.disabled && 'cursor: pointer;'} :checked + span > span {
     left: calc(
       ${props => props.theme.checkBox.toggle.size} -
@@ -60,6 +60,26 @@ const StyledCheckBoxInput = styled.input`
     );
     background: ${props =>
       normalizeColor(props.theme.checkBox.color || 'control', props.theme)};
+  }
+  /* Firefox */
+  @-moz-document url-prefix() {
+    & {
+      height: 0;
+    }
+  }
+
+  /* Microsoft IE10 and above */
+  @media all and (-ms-high-contrast: none) {
+    & {
+      height: 0;
+    }
+  }
+
+  /* Microsoft Edge */
+  @supports (-ms-ime-align: auto) {
+    & {
+      height: 0;
+    }
   }
 `;
 
