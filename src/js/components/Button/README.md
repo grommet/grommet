@@ -247,6 +247,7 @@ The DOM tag to use for the element.
 
 ```
 string
+function
 ```
   
 ## Intrinsic element

@@ -20,7 +20,7 @@ export interface ButtonProps {
   primary?: boolean;
   reverse?: boolean;
   type?: "button" | "reset" | "submit";
-  as?: string;
+  as?: string | React.Component | React.FC | ((...args: any[]) => any);
 }
 
 declare const Button: React.ComponentClass<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>>;

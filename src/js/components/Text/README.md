@@ -151,6 +151,7 @@ The DOM tag to use for the element. Defaults to `span`.
 
 ```
 string
+function
 ```
 
 **textAlign**

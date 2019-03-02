@@ -13,7 +13,7 @@ export interface AnchorProps {
   onClick?: ((...args: any[]) => any);
   reverse?: boolean;
   size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
-  as?: string;
+  as?: string | React.Component | React.FC | ((...args: any[]) => any);
 }
 
 declare const Anchor: React.ComponentClass<AnchorProps & Omit<JSX.IntrinsicElements['a'], 'color'>>;

@@ -146,7 +146,7 @@ space in the row axis.`,
       `The DOM tag to use for the element. NOTE: This is deprecated in favor
 of indicating the DOM tag via the 'as' property.`,
     ),
-    as: PropTypes.string
+    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
       .description('The DOM tag to use for the element.')
       .defaultValue('div'),
   };

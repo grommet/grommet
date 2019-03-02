@@ -553,6 +553,7 @@ The DOM tag to use for the element. Defaults to `div`.
 
 ```
 string
+function
 ```
 
 **width**
