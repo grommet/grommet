@@ -10,8 +10,8 @@ import { Grommet, Box, Button, Chart, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { Next } from "grommet-icons/es6/icons/Next";
 import { Previous } from "grommet-icons/es6/icons/Previous";
-import { calcs } from './calcs';
-import { generateData } from './story-data';
+import { calcs } from '../calcs';
+import { generateData } from './data';
 var intervalDays = {
   '1 week': 7,
   '30 days': 30,

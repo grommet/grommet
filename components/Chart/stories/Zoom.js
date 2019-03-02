@@ -10,9 +10,9 @@ var _themes = require("grommet/themes");
 
 var _grommetIcons = require("grommet-icons");
 
-var _calcs2 = require("./calcs");
+var _calcs2 = require("../calcs");
 
-var _storyData = require("./story-data");
+var _data = require("./data");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -217,7 +217,7 @@ function (_Component) {
 
 (0, _react2.storiesOf)('Chart', module).add('Zoom', function () {
   return _react.default.createElement(ZoomChart, {
-    data: (0, _storyData.generateData)(1000, 100),
+    data: (0, _data.generateData)(1000, 100),
     max: 100
   });
 });

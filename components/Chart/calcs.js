@@ -72,17 +72,23 @@ var calcs = function calcs(values, options) {
 
 
   var thickness;
+  var pad;
 
   if (calcValues.length < 5) {
     thickness = 'xlarge';
+    pad = 'large';
   } else if (calcValues.length < 11) {
     thickness = 'large';
+    pad = 'medium';
   } else if (calcValues.length < 21) {
     thickness = 'medium';
+    pad = 'small';
   } else if (calcValues.length < 61) {
     thickness = 'small';
+    pad = 'xsmall';
   } else if (calcValues.length < 121) {
     thickness = 'xsmall';
+    pad = 'xxsmall';
   } else {
     thickness = 'hair';
   }
@@ -91,6 +97,7 @@ var calcs = function calcs(values, options) {
     axis: [xAxis, yAxis],
     bounds: bounds,
     dimensions: dimensions,
+    pad: pad,
     thickness: thickness
   };
 };

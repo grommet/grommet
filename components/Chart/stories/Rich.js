@@ -1,3 +1,17 @@
+"use strict";
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _react2 = require("@storybook/react");
+
+var _grommet = require("grommet");
+
+var _themes = require("grommet/themes");
+
+var _calcs2 = require("../calcs");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
@@ -5,12 +19,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
-import { Grommet, Box, Chart, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { calcs } from './calcs';
 
 var RichChart =
 /*#__PURE__*/
@@ -61,7 +69,7 @@ function (_Component) {
       });
     });
 
-    var _calcs = calcs(values, {
+    var _calcs = (0, _calcs2.calcs)(values, {
       coarseness: 5,
       steps: [3, 3]
     }),
@@ -98,12 +106,12 @@ function (_Component) {
       values: values,
       overflow: true
     };
-    return React.createElement(Grommet, {
-      theme: grommet
-    }, React.createElement(Box, {
+    return _react.default.createElement(_grommet.Grommet, {
+      theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
       align: "center",
       pad: "large"
-    }, React.createElement(Box, {
+    }, _react.default.createElement(_grommet.Box, {
       direction: "row",
       justify: "between",
       width: "medium",
@@ -111,12 +119,12 @@ function (_Component) {
         vertical: 'small'
       }
     }, xAxis.map(function (x) {
-      return React.createElement(Text, {
+      return _react.default.createElement(_grommet.Text, {
         key: x
       }, x);
-    })), React.createElement(Stack, {
+    })), _react.default.createElement(_grommet.Stack, {
       guidingChild: "last"
-    }, React.createElement(Box, {
+    }, _react.default.createElement(_grommet.Box, {
       fill: true,
       justify: "between"
     }, yAxis.map(function (y, index) {
@@ -132,26 +140,26 @@ function (_Component) {
         align = 'center';
       }
 
-      return React.createElement(Box, {
+      return _react.default.createElement(_grommet.Box, {
         key: y,
         direction: "row",
         align: align
-      }, React.createElement(Box, {
+      }, _react.default.createElement(_grommet.Box, {
         pad: {
           horizontal: 'small'
         }
-      }, React.createElement(Text, null, y)), React.createElement(Box, {
+      }, _react.default.createElement(_grommet.Text, null, y)), _react.default.createElement(_grommet.Box, {
         border: "top",
         flex: true
       }));
-    })), React.createElement(Chart, _extends({}, chartProps, {
+    })), _react.default.createElement(_grommet.Chart, _extends({}, chartProps, {
       type: "area",
       color: {
         color: 'accent-1',
         opacity: 'medium'
       },
       thickness: "hair"
-    })), React.createElement(Chart, _extends({}, chartProps, {
+    })), _react.default.createElement(_grommet.Chart, _extends({}, chartProps, {
       type: "line",
       round: true,
       color: {
@@ -163,8 +171,8 @@ function (_Component) {
   };
 
   return RichChart;
-}(Component);
+}(_react.Component);
 
-storiesOf('Chart', module).add('Rich', function () {
-  return React.createElement(RichChart, null);
+(0, _react2.storiesOf)('Chart', module).add('Rich', function () {
+  return _react.default.createElement(RichChart, null);
 });

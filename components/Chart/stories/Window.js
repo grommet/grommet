@@ -1,3 +1,19 @@
+"use strict";
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _react2 = require("@storybook/react");
+
+var _grommet = require("grommet");
+
+var _themes = require("grommet/themes");
+
+var _calcs3 = require("../calcs");
+
+var _data = require("./data");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
@@ -6,13 +22,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-import React, { Component } from 'react';
-import { storiesOf } from '@storybook/react';
-import { Grommet, Box, Chart, RangeSelector, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { calcs } from './calcs';
-import { generateData } from './story-data'; // compress data for outer control chart
-
+// compress data for outer control chart
 var compressData = function compressData(data, max, count) {
   var result = [];
   var bucketSize = Math.round(data.length / count);
@@ -89,7 +99,7 @@ function (_Component) {
     if (!prevState.outerValues) {
       outerValues = compressData(data, max, 101);
 
-      var _calcs = calcs(outerValues, {
+      var _calcs = (0, _calcs3.calcs)(outerValues, {
         min: 0,
         max: max
       });
@@ -109,7 +119,7 @@ function (_Component) {
       };
     });
 
-    var _calcs2 = calcs(innerValues, {
+    var _calcs2 = (0, _calcs3.calcs)(innerValues, {
       min: 0,
       max: max
     }),
@@ -144,25 +154,25 @@ function (_Component) {
         outerValues = _this$state.outerValues,
         range = _this$state.range,
         thickness = _this$state.thickness;
-    return React.createElement(Grommet, {
-      theme: grommet
-    }, React.createElement(Box, {
+    return _react.default.createElement(_grommet.Grommet, {
+      theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
       pad: "large"
-    }, React.createElement(Box, {
+    }, _react.default.createElement(_grommet.Box, {
       direction: "row",
       justify: "between"
     }, innerAxis[0].reverse().map(function (t) {
-      return React.createElement(Text, {
+      return _react.default.createElement(_grommet.Text, {
         key: t
       }, new Date(t).toLocaleDateString());
-    })), React.createElement(Stack, {
+    })), _react.default.createElement(_grommet.Stack, {
       guidingChild: "first",
       interactiveChild: "first"
-    }, React.createElement(Box, {
+    }, _react.default.createElement(_grommet.Box, {
       pad: {
         horizontal: thickness
       }
-    }, React.createElement(Chart, {
+    }, _react.default.createElement(_grommet.Chart, {
       type: "bar",
       color: "accent-2",
       overflow: true,
@@ -177,38 +187,38 @@ function (_Component) {
         width: 'full',
         height: 'small'
       }
-    })), React.createElement(Box, {
+    })), _react.default.createElement(_grommet.Box, {
       fill: true,
       justify: "between"
-    }, React.createElement(Box, {
+    }, _react.default.createElement(_grommet.Box, {
       border: {
         side: 'top'
       },
       align: "start"
-    }, React.createElement(Box, {
+    }, _react.default.createElement(_grommet.Box, {
       pad: "xsmall",
       background: {
         color: 'white',
         opacity: 'medium'
       }
-    }, React.createElement(Text, null, innerAxis[1][0]))), React.createElement(Box, {
+    }, _react.default.createElement(_grommet.Text, null, innerAxis[1][0]))), _react.default.createElement(_grommet.Box, {
       border: {
         side: 'bottom',
         color: 'accent-2',
         size: 'medium'
       },
       align: "start"
-    }, React.createElement(Box, {
+    }, _react.default.createElement(_grommet.Box, {
       pad: "xsmall",
       background: {
         color: 'white',
         opacity: 'medium'
       }
-    }, React.createElement(Text, null, innerAxis[1][1])))), hover && React.createElement(Box, {
+    }, _react.default.createElement(_grommet.Text, null, innerAxis[1][1])))), hover && _react.default.createElement(_grommet.Box, {
       fill: true,
       align: "center",
       justify: "center"
-    }, React.createElement(Box, {
+    }, _react.default.createElement(_grommet.Box, {
       animation: {
         type: 'fadeIn',
         duration: 100
@@ -222,10 +232,10 @@ function (_Component) {
         color: 'accent-2'
       },
       round: true
-    }, React.createElement(Text, {
+    }, _react.default.createElement(_grommet.Text, {
       size: "large",
       weight: "bold"
-    }, hover.value[1]), React.createElement(Text, null, new Date(hover.value[0]).toLocaleDateString())))), React.createElement(Stack, null, React.createElement(Chart, {
+    }, hover.value[1]), _react.default.createElement(_grommet.Text, null, new Date(hover.value[0]).toLocaleDateString())))), _react.default.createElement(_grommet.Stack, null, _react.default.createElement(_grommet.Chart, {
       type: "line",
       bounds: outerBounds,
       values: outerValues,
@@ -234,7 +244,7 @@ function (_Component) {
         height: 'xxsmall'
       },
       thickness: "xxsmall"
-    }), React.createElement(RangeSelector, {
+    }), _react.default.createElement(_grommet.RangeSelector, {
       min: 0,
       max: data.length,
       size: "full",
@@ -248,11 +258,11 @@ function (_Component) {
   };
 
   return WindowChart;
-}(Component);
+}(_react.Component);
 
-storiesOf('Chart', module).add('Window', function () {
-  return React.createElement(WindowChart, {
-    data: generateData(1000, 100),
+(0, _react2.storiesOf)('Chart', module).add('Window', function () {
+  return _react.default.createElement(WindowChart, {
+    data: (0, _data.generateData)(1000, 100),
     max: 100
   });
 });

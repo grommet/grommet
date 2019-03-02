@@ -25,6 +25,7 @@ Object {
     2,
     2.4000000000000004,
   ],
+  "pad": "large",
   "thickness": "xlarge",
 }
 `;
