@@ -64,7 +64,7 @@ space in the column axis.`,
     columns: PropTypes.oneOfType([
       PropTypes.arrayOf(
         PropTypes.oneOfType([
-          PropTypes.arrayOf(PropTypes.OneOfType([
+          PropTypes.arrayOf(PropTypes.oneOfType([
             PropTypes.oneOf(sizes),
             PropTypes.string
           ])),
@@ -131,7 +131,7 @@ space in the row axis.`,
     rows: PropTypes.oneOfType([
       PropTypes.arrayOf(
         PropTypes.oneOfType([
-          PropTypes.arrayOf(PropTypes.OneOfType([
+          PropTypes.arrayOf(PropTypes.oneOfType([
             PropTypes.oneOf(sizes),
             PropTypes.string
           ])),
