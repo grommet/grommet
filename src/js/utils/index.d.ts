@@ -19,6 +19,8 @@ export interface DeepMerge {
   <T extends object, S extends object[]>(target: T, ...sources: S): T & S[number];
 }
 
+export type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
+
 declare const isObject: (item:any) => boolean;
 declare const deepFreeze: DeepFreeze;
 declare const deepMerge: DeepMerge;
