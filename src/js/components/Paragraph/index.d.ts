@@ -12,6 +12,6 @@ export interface ParagraphProps {
   textAlign?: "start" | "center" | "end";
 }
 
-declare const Paragraph: React.FC<ParagraphProps & Omit<JSX.IntrinsicElements['p'], 'color'|'string'>>;
+declare const Paragraph: React.FC<ParagraphProps & Omit<JSX.IntrinsicElements['p'], 'color'>>;
 
 export { Paragraph };

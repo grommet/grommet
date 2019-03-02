@@ -16,6 +16,6 @@ export interface AnchorProps {
   as?: string;
 }
 
-declare const Anchor: React.ComponentClass<AnchorProps & Omit<JSX.IntrinsicElements['a'], 'color'|'string'>>;
+declare const Anchor: React.ComponentClass<AnchorProps & Omit<JSX.IntrinsicElements['a'], 'color'>>;
 
 export { Anchor };

@@ -23,6 +23,6 @@ export interface ButtonProps {
   as?: string;
 }
 
-declare const Button: React.ComponentClass<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color' | 'string'>>;
+declare const Button: React.ComponentClass<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>>;
 
 export { Button };
