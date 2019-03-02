@@ -289,7 +289,8 @@ export const doc = Box => {
     ])
       .description('How much to round the corners.')
       .defaultValue(false),
-    tag: PropTypes.string.description(
+    tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+      .description(
       `The DOM tag to use for the element. NOTE: This is deprecated in favor
 of indicating the DOM tag via the 'as' property.`,
     ),

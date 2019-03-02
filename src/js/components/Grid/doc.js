@@ -1,6 +1,6 @@
-import { describe, PropTypes } from 'react-desc';
+import {describe, PropTypes} from 'react-desc';
 
-import { genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
+import {genericProps, getAvailableAtBadge, themeDocUtils} from '../../utils';
 
 const fixedSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sizes = [
@@ -64,8 +64,11 @@ space in the column axis.`,
     columns: PropTypes.oneOfType([
       PropTypes.arrayOf(
         PropTypes.oneOfType([
+          PropTypes.arrayOf(PropTypes.OneOfTypes([
+            PropTypes.oneOf(sizes),
+            PropTypes.string
+          ])),
           PropTypes.oneOf(sizes),
-          PropTypes.arrayOf(PropTypes.oneOf(sizes)),
           PropTypes.string,
         ]),
       ),
@@ -128,8 +131,11 @@ space in the row axis.`,
     rows: PropTypes.oneOfType([
       PropTypes.arrayOf(
         PropTypes.oneOfType([
+          PropTypes.arrayOf(PropTypes.OneOfTypes([
+            PropTypes.oneOf(sizes),
+            PropTypes.string
+          ])),
           PropTypes.oneOf(sizes),
-          PropTypes.arrayOf(PropTypes.oneOf(sizes)),
           PropTypes.string,
         ]),
       ),
@@ -142,10 +148,10 @@ space in the row axis.`,
       Specifying a single string will cause automatically added rows to be
       the specified size.`,
     ),
-    tag: PropTypes.string.description(
-      `The DOM tag to use for the element. NOTE: This is deprecated in favor
-of indicating the DOM tag via the 'as' property.`,
-    ),
+    tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+      .description(`The DOM tag to use for the element. NOTE: This is deprecated
+      in favor of indicating the DOM tag via the 'as' property.`,
+      ),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
       .description('The DOM tag to use for the element.')
       .defaultValue('div'),
