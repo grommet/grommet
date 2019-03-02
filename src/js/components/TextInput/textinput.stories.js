@@ -31,7 +31,14 @@ const PasswordInput = ({ value, ...rest }) => {
   const [inputValue, setValue] = useState(value);
   const [reveal, setReveal] = useState(false);
   return (
-    <Box width="medium" margin="large" round="small" border>
+    <Box
+      width="medium"
+      direction="row"
+      margin="large"
+      align="center"
+      round="small"
+      border
+    >
       <TextInput
         plain
         type={reveal ? 'text' : 'password'}
