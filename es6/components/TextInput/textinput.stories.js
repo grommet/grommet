@@ -1,13 +1,19 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-import React, { createRef, Component } from 'react';
+import React, { createRef, Component, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Search } from "grommet-icons/es6/icons/Search";
-import { Box, Image, Grommet, Text, TextInput } from 'grommet';
+import { FormLock } from "grommet-icons/es6/icons/FormLock";
+import { View } from "grommet-icons/es6/icons/View";
+import { Box, Image, Grommet, Text, TextInput, Button } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
@@ -63,6 +69,44 @@ function (_Component) {
 
   return SimpleTextInput;
 }(Component);
+
+var PasswordInput = function PasswordInput(_ref) {
+  var value = _ref.value,
+      rest = _objectWithoutPropertiesLoose(_ref, ["value"]);
+
+  var _useState = useState(value),
+      inputValue = _useState[0],
+      setValue = _useState[1];
+
+  var _useState2 = useState(false),
+      reveal = _useState2[0],
+      setReveal = _useState2[1];
+
+  return React.createElement(Box, {
+    width: "medium",
+    direction: "row",
+    margin: "large",
+    align: "center",
+    round: "small",
+    border: true
+  }, React.createElement(TextInput, _extends({
+    plain: true,
+    type: reveal ? 'text' : 'password',
+    value: inputValue,
+    onChange: function onChange(event) {
+      return setValue(event.target.value);
+    }
+  }, rest)), React.createElement(Button, {
+    icon: reveal ? React.createElement(FormLock, {
+      size: "medium"
+    }) : React.createElement(View, {
+      size: "medium"
+    }),
+    onClick: function onClick() {
+      return setReveal(!reveal);
+    }
+  }));
+};
 
 var suggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
@@ -226,12 +270,12 @@ function (_Component3) {
       var _this3$state = _this3.state,
           value = _this3$state.value,
           suggestedFolks = _this3$state.suggestedFolks;
-      return suggestedFolks.filter(function (_ref) {
-        var name = _ref.name;
+      return suggestedFolks.filter(function (_ref2) {
+        var name = _ref2.name;
         return name.toLowerCase().indexOf(value.toLowerCase()) >= 0;
-      }).map(function (_ref2, index, list) {
-        var name = _ref2.name,
-            imageUrl = _ref2.imageUrl;
+      }).map(function (_ref3, index, list) {
+        var name = _ref3.name,
+            imageUrl = _ref3.imageUrl;
         return {
           label: React.createElement(Box, {
             direction: "row",
@@ -324,6 +368,8 @@ function (_Component3) {
 
 storiesOf('TextInput', module).add('Simple TextInput', function () {
   return React.createElement(SimpleTextInput, null);
+}).add('Password input', function () {
+  return React.createElement(PasswordInput, null);
 }).add('Suggestions TextInput', function () {
   return React.createElement(SuggestionsTextInput, null);
 }).add('Custom Suggestions', function () {

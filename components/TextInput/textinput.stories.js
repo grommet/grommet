@@ -14,6 +14,10 @@ var _utils = require("grommet/utils");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
@@ -72,6 +76,44 @@ function (_Component) {
 
   return SimpleTextInput;
 }(_react.Component);
+
+var PasswordInput = function PasswordInput(_ref) {
+  var value = _ref.value,
+      rest = _objectWithoutPropertiesLoose(_ref, ["value"]);
+
+  var _useState = (0, _react.useState)(value),
+      inputValue = _useState[0],
+      setValue = _useState[1];
+
+  var _useState2 = (0, _react.useState)(false),
+      reveal = _useState2[0],
+      setReveal = _useState2[1];
+
+  return _react.default.createElement(_grommet.Box, {
+    width: "medium",
+    direction: "row",
+    margin: "large",
+    align: "center",
+    round: "small",
+    border: true
+  }, _react.default.createElement(_grommet.TextInput, _extends({
+    plain: true,
+    type: reveal ? 'text' : 'password',
+    value: inputValue,
+    onChange: function onChange(event) {
+      return setValue(event.target.value);
+    }
+  }, rest)), _react.default.createElement(_grommet.Button, {
+    icon: reveal ? _react.default.createElement(_grommetIcons.FormLock, {
+      size: "medium"
+    }) : _react.default.createElement(_grommetIcons.View, {
+      size: "medium"
+    }),
+    onClick: function onClick() {
+      return setReveal(!reveal);
+    }
+  }));
+};
 
 var suggestions = Array(100).fill().map(function (_, i) {
   return "suggestion " + (i + 1);
@@ -235,12 +277,12 @@ function (_Component3) {
       var _this3$state = _this3.state,
           value = _this3$state.value,
           suggestedFolks = _this3$state.suggestedFolks;
-      return suggestedFolks.filter(function (_ref) {
-        var name = _ref.name;
+      return suggestedFolks.filter(function (_ref2) {
+        var name = _ref2.name;
         return name.toLowerCase().indexOf(value.toLowerCase()) >= 0;
-      }).map(function (_ref2, index, list) {
-        var name = _ref2.name,
-            imageUrl = _ref2.imageUrl;
+      }).map(function (_ref3, index, list) {
+        var name = _ref3.name,
+            imageUrl = _ref3.imageUrl;
         return {
           label: _react.default.createElement(_grommet.Box, {
             direction: "row",
@@ -333,6 +375,8 @@ function (_Component3) {
 
 (0, _react2.storiesOf)('TextInput', module).add('Simple TextInput', function () {
   return _react.default.createElement(SimpleTextInput, null);
+}).add('Password input', function () {
+  return _react.default.createElement(PasswordInput, null);
 }).add('Suggestions TextInput', function () {
   return _react.default.createElement(SuggestionsTextInput, null);
 }).add('Custom Suggestions', function () {
