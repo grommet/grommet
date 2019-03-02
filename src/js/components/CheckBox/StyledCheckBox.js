@@ -50,7 +50,7 @@ const StyledCheckBoxInput = styled.input`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 0;
   margin: 0;
 
   ${props => !props.disabled && 'cursor: pointer;'} :checked + span > span {
@@ -60,26 +60,6 @@ const StyledCheckBoxInput = styled.input`
     );
     background: ${props =>
       normalizeColor(props.theme.checkBox.color || 'control', props.theme)};
-  }
-  /* Firefox */
-  @-moz-document url-prefix() {
-    & {
-      height: 0;
-    }
-  }
-
-  /* Microsoft IE10 and above */
-  @media all and (-ms-high-contrast: none) {
-    & {
-      height: 0;
-    }
-  }
-
-  /* Microsoft Edge */
-  @supports (-ms-ime-align: auto) {
-    & {
-      height: 0;
-    }
   }
 `;
 
