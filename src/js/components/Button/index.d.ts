@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Omit } from "../../utils";
 
 export interface ButtonProps {
   a11yTitle?: string;
@@ -22,6 +23,6 @@ export interface ButtonProps {
   as?: string;
 }
 
-declare const Button: React.ComponentClass<ButtonProps & JSX.IntrinsicElements['button']>;
+declare const Button: React.ComponentClass<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color' | 'string'>>;
 
 export { Button };
