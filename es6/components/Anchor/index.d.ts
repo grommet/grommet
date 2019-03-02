@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Omit } from "../../utils";
 
 export interface AnchorProps {
   a11yTitle?: string;
@@ -15,6 +16,6 @@ export interface AnchorProps {
   as?: string;
 }
 
-declare const Anchor: React.ComponentClass<AnchorProps & JSX.IntrinsicElements['a']>;
+declare const Anchor: React.ComponentClass<AnchorProps & Omit<JSX.IntrinsicElements['a'], 'color'>>;
 
 export { Anchor };
