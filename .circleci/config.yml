@@ -18,7 +18,7 @@ aliases:
       name: Restore node_modules cache
       keys:
         - yarn-cache-{{ checksum "yarn.lock" }}
-  attach_to_bootstrap: &attach_to_bootstrap
+  attach: &attach
     attach_workspace:
       at: ~/grommet-ci
 
@@ -37,14 +37,14 @@ jobs:
   lint:
     <<: *defaults
     steps:
-      - <<: *attach_to_bootstrap
+      - <<: *attach
       - run:
           name: Running linter
           command: yarn lint
   jest:
     <<: *defaults
     steps:
-      - <<: *attach_to_bootstrap
+      - <<: *attach
       - run:
           name: Running jest
           command: yarn test

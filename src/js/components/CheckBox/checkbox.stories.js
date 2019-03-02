@@ -196,7 +196,7 @@ class CheckBoxInsideButton extends Component {
 
 class IndeterminateCheckBox extends Component {
   state = {
-    checked: [],
+    checked: ['vegetables'],
     checkboxes: ['fruits', 'vegetables', 'olive oil'],
   };
 
@@ -255,4 +255,4 @@ storiesOf('CheckBox', module)
   .add('Themed CheckBox', () => <ThemedCheckBox />)
   .add('Themed Toggle', () => <ThemedToggle />)
   .add('Inside a Button', () => <CheckBoxInsideButton />)
-  .add('Interminate CheckBox', () => <IndeterminateCheckBox />);
+  .add('Indeterminate CheckBox', () => <IndeterminateCheckBox />);

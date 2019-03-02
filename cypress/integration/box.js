@@ -1,4 +1,4 @@
-import { getComponentStories, takeScreenshots } from '../utils';
+import { screenshotTestWrapper } from '../utils';
 
 const component = 'Box';
 const stories = [
@@ -11,15 +11,4 @@ const stories = [
   'Simple Box',
 ];
 
-describe(`${component} storybook`, () => {
-  beforeEach(() => {
-    // Visiting the storybook each test removes any state build up from other tests
-    // This should probably default to index story and then have each context pick
-    // its own component and test it
-    cy.viewport(1280, 720);
-    cy.visit(getComponentStories(component));
-  });
-  it('stories screenshots', () => {
-    takeScreenshots(component, stories);
-  });
-});
+screenshotTestWrapper(component, stories);
