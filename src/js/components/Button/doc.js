@@ -85,7 +85,7 @@ end of the anchor.`,
       )
       .defaultValue('button'),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
-      `The DOM tag to use for the element.`,
+      `The DOM tag or react component to use for the element.`,
     ),
   };
 

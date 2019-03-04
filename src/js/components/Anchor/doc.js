@@ -60,7 +60,7 @@ this component. But, it can be adjusted directly via this size property, typical
 when it is not contained in a 'Heading', 'Paragraph', or 'Text'.`,
     ),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
-      `The DOM tag to use for the element.`,
+      `The DOM tag or react component to use for the element.`,
     ),
   };
 

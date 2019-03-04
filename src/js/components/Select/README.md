@@ -451,7 +451,7 @@ undefined
 
 **select.icons.down**
 
-The down icon to use for opening the Select. Expects `React.element`.
+The down icon to use for opening the Select. Expects `React.Element`.
 
 Defaults to
 

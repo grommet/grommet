@@ -289,13 +289,12 @@ export const doc = Box => {
     ])
       .description('How much to round the corners.')
       .defaultValue(false),
-    tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
-      .description(
+    tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
       `The DOM tag to use for the element. NOTE: This is deprecated in favor
 of indicating the DOM tag via the 'as' property.`,
     ),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
-      .description('The DOM tag to use for the element.')
+      .description('The DOM tag or react component to use for the element.')
       .defaultValue('div'),
     width: PropTypes.oneOfType([
       PropTypes.oneOf([

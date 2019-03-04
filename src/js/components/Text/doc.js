@@ -1,4 +1,4 @@
-import {describe, PropTypes} from 'react-desc';
+import { describe, PropTypes } from 'react-desc';
 
 import {
   colorPropType,
@@ -38,13 +38,12 @@ be adjusted via this size property. The tag should be set for semantic
 correctness and accessibility. This size property allows for stylistic
 adjustments.`,
     ),
-    tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
-      .description(
-        `The DOM tag to use for the element. NOTE: This is deprecated in favor 
+    tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
+      `The DOM tag to use for the element. NOTE: This is deprecated in favor
          of indicating the DOM tag via the 'as' property.`,
-      ),
+    ),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
-      .description(`The DOM tag to use for the element.`)
+      .description(`The DOM tag or react component to use for the element.`)
       .defaultValue('span'),
     textAlign: PropTypes.oneOf(['start', 'center', 'end'])
       .description('How to align the text inside the component.')

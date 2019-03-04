@@ -183,7 +183,7 @@ string
 
 **as**
 
-The DOM tag to use for the element.
+The DOM tag or react component to use for the element.
 
 ```
 string

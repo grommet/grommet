@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Omit } from "../../utils";
+import { Omit, PolymorphicType } from "../../utils";
 
 export interface AnchorProps {
   a11yTitle?: string;
@@ -13,7 +13,7 @@ export interface AnchorProps {
   onClick?: ((...args: any[]) => any);
   reverse?: boolean;
   size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
-  as?: string | React.Component | React.FC | ((...args: any[]) => any);
+  as?: PolymorphicType;
 }
 
 declare const Anchor: React.ComponentClass<AnchorProps & Omit<JSX.IntrinsicElements['a'], 'color'>>;

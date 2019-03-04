@@ -207,7 +207,7 @@ div
   
 **accordion.icons.collapse**
 
-The icon to use when the panel is expanded. Expects \`React.element\`.
+The icon to use when the panel is expanded. Expects \`React.Element\`.
 
 Defaults to
 
@@ -217,7 +217,7 @@ Defaults to
 
 **accordion.icons.expand**
 
-The icon to use when the panel is collapsed. Expects \`React.element\`.
+The icon to use when the panel is collapsed. Expects \`React.Element\`.
 
 Defaults to
 
@@ -227,7 +227,7 @@ Defaults to
 
 **accordion.border**
 
-The border to use in the accordion. Expects \`React.element\`.
+The border to use in the accordion. Expects \`React.Element\`.
 
 Defaults to
 
@@ -420,10 +420,11 @@ string
 
 **as**
 
-The DOM tag to use for the element.
+The DOM tag or react component to use for the element.
 
 \`\`\`
 string
+function
 \`\`\`
   
 ## Intrinsic element
@@ -1102,14 +1103,16 @@ of indicating the DOM tag via the 'as' property.
 
 \`\`\`
 string
+function
 \`\`\`
 
 **as**
 
-The DOM tag to use for the element. Defaults to \`div\`.
+The DOM tag or react component to use for the element. Defaults to \`div\`.
 
 \`\`\`
 string
+function
 \`\`\`
 
 **width**
@@ -1571,10 +1574,11 @@ submit
 
 **as**
 
-The DOM tag to use for the element.
+The DOM tag or react component to use for the element.
 
 \`\`\`
 string
+function
 \`\`\`
   
 ## Intrinsic element
@@ -4247,6 +4251,23 @@ Column sizes.
 
 \`\`\`
 [
+  [
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    full
+    1/2
+    1/3
+    2/3
+    1/4
+    2/4
+    3/4
+    flex
+    auto
+    string
+  ]
   xsmall
   small
   medium
@@ -4261,20 +4282,6 @@ Column sizes.
   3/4
   flex
   auto
-  [xsmall
-small
-medium
-large
-xlarge
-full
-1/2
-1/3
-2/3
-1/4
-2/4
-3/4
-flex
-auto]
   string
 ]
 xsmall
@@ -4383,6 +4390,23 @@ Row sizes.
 
 \`\`\`
 [
+  [
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    full
+    1/2
+    1/3
+    2/3
+    1/4
+    2/4
+    3/4
+    flex
+    auto
+    string
+  ]
   xsmall
   small
   medium
@@ -4397,20 +4421,6 @@ Row sizes.
   3/4
   flex
   auto
-  [xsmall
-small
-medium
-large
-xlarge
-full
-1/2
-1/3
-2/3
-1/4
-2/4
-3/4
-flex
-auto]
   string
 ]
 xsmall
@@ -4423,19 +4433,21 @@ string
 
 **tag**
 
-The DOM tag to use for the element. NOTE: This is deprecated in favor
-of indicating the DOM tag via the 'as' property.
+The DOM tag to use for the element. NOTE: This is deprecated
+      in favor of indicating the DOM tag via the 'as' property.
 
 \`\`\`
 string
+function
 \`\`\`
 
 **as**
 
-The DOM tag to use for the element. Defaults to \`div\`.
+The DOM tag or react component to use for the element. Defaults to \`div\`.
 
 \`\`\`
 string
+function
 \`\`\`
   
 ## Intrinsic element
@@ -5961,7 +5973,7 @@ undefined
 
 **menu.icons.down**
 
-The icon to show to the right of the label. Expects \`React.element\`.
+The icon to show to the right of the label. Expects \`React.Element\`.
 
 Defaults to
 
@@ -7470,7 +7482,7 @@ undefined
 
 **select.icons.down**
 
-The down icon to use for opening the Select. Expects \`React.element\`.
+The down icon to use for opening the Select. Expects \`React.Element\`.
 
 Defaults to
 
@@ -8495,18 +8507,20 @@ string
 **tag**
 
 The DOM tag to use for the element. NOTE: This is deprecated in favor
-of indicating the DOM tag via the 'as' property.
+         of indicating the DOM tag via the 'as' property.
 
 \`\`\`
 string
+function
 \`\`\`
 
 **as**
 
-The DOM tag to use for the element. Defaults to \`span\`.
+The DOM tag or react component to use for the element. Defaults to \`span\`.
 
 \`\`\`
 string
+function
 \`\`\`
 
 **textAlign**

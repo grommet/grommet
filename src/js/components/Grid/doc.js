@@ -1,6 +1,6 @@
-import {describe, PropTypes} from 'react-desc';
+import { describe, PropTypes } from 'react-desc';
 
-import {genericProps, getAvailableAtBadge, themeDocUtils} from '../../utils';
+import { genericProps, getAvailableAtBadge, themeDocUtils } from '../../utils';
 
 const fixedSizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 const sizes = [
@@ -64,10 +64,9 @@ space in the column axis.`,
     columns: PropTypes.oneOfType([
       PropTypes.arrayOf(
         PropTypes.oneOfType([
-          PropTypes.arrayOf(PropTypes.oneOfType([
-            PropTypes.oneOf(sizes),
-            PropTypes.string
-          ])),
+          PropTypes.arrayOf(
+            PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]),
+          ),
           PropTypes.oneOf(sizes),
           PropTypes.string,
         ]),
@@ -131,10 +130,9 @@ space in the row axis.`,
     rows: PropTypes.oneOfType([
       PropTypes.arrayOf(
         PropTypes.oneOfType([
-          PropTypes.arrayOf(PropTypes.oneOfType([
-            PropTypes.oneOf(sizes),
-            PropTypes.string
-          ])),
+          PropTypes.arrayOf(
+            PropTypes.oneOfType([PropTypes.oneOf(sizes), PropTypes.string]),
+          ),
           PropTypes.oneOf(sizes),
           PropTypes.string,
         ]),
@@ -150,10 +148,9 @@ space in the row axis.`,
     ),
     tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
       .description(`The DOM tag to use for the element. NOTE: This is deprecated
-      in favor of indicating the DOM tag via the 'as' property.`,
-      ),
+      in favor of indicating the DOM tag via the 'as' property.`),
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
-      .description('The DOM tag to use for the element.')
+      .description('The DOM tag or react component to use for the element.')
       .defaultValue('div'),
   };
 
