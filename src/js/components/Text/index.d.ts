@@ -7,8 +7,8 @@ export interface TextProps {
   margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
   color?: string | {dark?: string,light?: string};
   size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | string;
-  tag?: string | React.component | React.fc | ((...args: any[]) => any);
-  as?: string | React.component | React.fc | ((...args: any[]) => any);
+  tag?: string | React.Component | React.FC | ((...args: any[]) => any);
+  as?: string | React.Component | React.FC | ((...args: any[]) => any);
   textAlign?: "start" | "center" | "end";
   truncate?: boolean;
   weight?: "normal" | "bold" | number;

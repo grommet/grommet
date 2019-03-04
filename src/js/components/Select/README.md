@@ -461,7 +461,7 @@ Defaults to
 
 **select.searchInput**
 
-Component for the Select search input field. Expects `React.component`.
+Component for the Select search input field. Expects `React.Component`.
 
 Defaults to
 

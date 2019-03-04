@@ -209,12 +209,12 @@ export const themeDoc = {
   },
   'select.icons.down': {
     description: 'The down icon to use for opening the Select.',
-    type: 'React.element',
+    type: 'React.Element',
     defaultValue: '<FormDown />',
   },
   'select.searchInput': {
     description: `Component for the Select search input field.`,
-    type: 'React.component',
+    type: 'React.Component',
     defaultValue: undefined,
   },
   'select.step': {
