@@ -70,7 +70,7 @@ particular side of the layer`,
       )
       .defaultValue(true),
     onClickOutside: PropTypes.func.description(
-      'Function that will be invoked when the user clicks outside the layer.',
+      'Function that will be invoked on modal layers when the user clicks outside the layer.',
     ),
     onEsc: PropTypes.func.description(
       'Function that will be called when the user presses the escape key inside the layer.',
