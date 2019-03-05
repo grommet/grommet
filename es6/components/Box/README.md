@@ -545,14 +545,16 @@ of indicating the DOM tag via the 'as' property.
 
 ```
 string
+function
 ```
 
 **as**
 
-The DOM tag to use for the element. Defaults to `div`.
+The DOM tag or react component to use for the element. Defaults to `div`.
 
 ```
 string
+function
 ```
 
 **width**

@@ -20,6 +20,7 @@ export interface DeepMerge {
 }
 
 export type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
+export type PolymorphicType = keyof JSX.IntrinsicElements | React.ComponentType<any>
 
 declare const isObject: (item:any) => boolean;
 declare const deepFreeze: DeepFreeze;

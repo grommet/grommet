@@ -18,17 +18,17 @@ function doc(Panel) {
 var themeDoc = {
   'accordion.icons.collapse': {
     description: 'The icon to use when the panel is expanded.',
-    type: 'React.element',
+    type: 'React.Element',
     defaultValue: '<FormUp />'
   },
   'accordion.icons.expand': {
     description: 'The icon to use when the panel is collapsed.',
-    type: 'React.element',
+    type: 'React.Element',
     defaultValue: '<FormDown />'
   },
   'accordion.border': {
     description: 'The border to use in the accordion.',
-    type: 'React.element',
+    type: 'React.Element',
     defaultValue: 'side: bottom, color: border'
   }
 };

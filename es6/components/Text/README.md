@@ -139,18 +139,20 @@ string
 **tag**
 
 The DOM tag to use for the element. NOTE: This is deprecated in favor
-of indicating the DOM tag via the 'as' property.
+         of indicating the DOM tag via the 'as' property.
 
 ```
 string
+function
 ```
 
 **as**
 
-The DOM tag to use for the element. Defaults to `span`.
+The DOM tag or react component to use for the element. Defaults to `span`.
 
 ```
 string
+function
 ```
 
 **textAlign**

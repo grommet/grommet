@@ -65,7 +65,7 @@ var themeDoc = {
   },
   'menu.icons.down': {
     description: 'The icon to show to the right of the label.',
-    type: 'React.element',
+    type: 'React.Element',
     defaultValue: '<FormDown />'
   }
 };

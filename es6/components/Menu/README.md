@@ -280,7 +280,7 @@ undefined
 
 **menu.icons.down**
 
-The icon to show to the right of the label. Expects `React.element`.
+The icon to show to the right of the label. Expects `React.Element`.
 
 Defaults to
 
