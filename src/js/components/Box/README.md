@@ -319,6 +319,8 @@ The orientation to layout the child components in. Defaults to `column`.
 row
 column
 row-responsive
+row-reverse
+column-reverse
 ```
 
 **elevation**
@@ -646,14 +648,14 @@ Defaults to
 }
 ```
 
-**global.colors.text**
+**global.colors.border**
 
-The text color when the Box changes the background color Expects `string | { dark: string, light: string }`.
+The color of the border Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-{ dark: '#f8f8f8', light: '#444444' }
+{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33), }
 ```
 
 **global.opacity.medium**
