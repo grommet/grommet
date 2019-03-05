@@ -152,7 +152,13 @@ export const doc = Box => {
         ]).defaultValue('solid'),
       }),
     ]).description('Include a border.'),
-    direction: PropTypes.oneOf(['row', 'column', 'row-responsive'])
+    direction: PropTypes.oneOf([
+      'row',
+      'column',
+      'row-responsive',
+      'row-reverse',
+      'column-reverse',
+    ])
       .description('The orientation to layout the child components in.')
       .defaultValue('column'),
     elevation: PropTypes.oneOfType([
@@ -362,10 +368,11 @@ export const themeDoc = {
   },
 }`,
   },
-  'global.colors.text': {
-    description: 'The text color when the Box changes the background color',
+  'global.colors.border': {
+    description: 'The color of the border',
     type: 'string | { dark: string, light: string }',
-    defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
+    defaultValue:
+      '{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33), }',
   },
   'global.opacity.medium': {
     description: 'The value used when background opacity is set to true.',

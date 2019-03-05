@@ -13,7 +13,7 @@ export interface BoxProps {
   background?: string | {color?: string,dark?: boolean | string,image?: string,position?: string,opacity?: "weak" | "medium" | "strong" | boolean,repeat?: "no-repeat" | "repeat" | string,size?: "cover" | "contain" | string,light?: string};
   basis?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" | "full" | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "auto" | string;
   border?: boolean | "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all" | {color?: string | {dark?: string,light?: string},side?: "top" | "left" | "bottom" | "right" | "horizontal" | "vertical" | "all",size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string,style?: "solid" | "dashed" | "dotted" | "double" | "groove" | "ridge" | "inset" | "outset" | "hidden"};
-  direction?: "row" | "column" | "row-responsive";
+  direction?: "row" | "column" | "row-responsive" | 'row-reverse' | 'column-reverse';
   elevation?: "none" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   flex?: "grow" | "shrink" | boolean | {grow?: number,shrink?: number};
   fill?: "horizontal" | "vertical" | boolean;

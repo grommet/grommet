@@ -479,7 +479,9 @@ all
         "description": "The orientation to layout the child components in.",
         "format": "row
 column
-row-responsive",
+row-responsive
+row-reverse
+column-reverse",
         "name": "direction",
       },
       Object {
