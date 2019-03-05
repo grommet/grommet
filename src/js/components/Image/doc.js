@@ -26,7 +26,7 @@ export const doc = Image => {
       'How the image fills its container.',
     ),
     fallback: PropTypes.string.description(
-      'Fallback image used when src is failing to load',
+      'Specifies the URL of the fallback image used when src is failing to load',
     ),
   };
 
