@@ -71,6 +71,14 @@ class Form extends Component {
     }
   };
 
+  onReset = event => {
+    const { onReset } = this.props;
+    if (onReset) {
+      onReset(event);
+    }
+    this.setState({ errors: {}, value: {}, touched: {} });
+  };
+
   update = (name, data, error) => {
     const { errors, touched, value } = this.state;
     const nextValue = { ...value };
@@ -106,7 +114,7 @@ class Form extends Component {
     delete rest.value;
     const { errors, touched, value, messages } = this.state;
     return (
-      <form {...rest} onSubmit={this.onSubmit}>
+      <form {...rest} onReset={this.onReset} onSubmit={this.onSubmit}>
         <FormContext.Provider
           value={{
             addValidation: this.addValidation,

@@ -1866,6 +1866,11 @@ string",
     "name": "FormField",
     "properties": Array [
       Object {
+        "description": "The component to insert in the FormField. Grommet will add update the form values when this field changes",
+        "format": "function",
+        "name": "component",
+      },
+      Object {
         "description": "Any error text describing issues with the field",
         "format": "string
 node",

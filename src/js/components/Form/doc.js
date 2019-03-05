@@ -33,6 +33,10 @@ export const doc = Form => {
       single argument is an event containing the latest value object
       via \`event.value\`.`,
     ),
+    onReset: PropTypes.func.description(
+      `Function that will be called when the form is reset. The
+      single argument is the event provided by react.`,
+    ),
     value: PropTypes.shape({})
       .description('An object representing all of the data in the form.')
       .defaultValue({}),
