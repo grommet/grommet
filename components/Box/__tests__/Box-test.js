@@ -26,6 +26,10 @@ describe('Box', function () {
       direction: "row-responsive"
     }), _react.default.createElement(_.Box, {
       direction: "column"
+    }), _react.default.createElement(_.Box, {
+      direction: "column-reverse"
+    }), _react.default.createElement(_.Box, {
+      direction: "row-reverse"
     })));
 
     var tree = component.toJSON();

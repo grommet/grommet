@@ -277,6 +277,36 @@ Defaults to
 12px
 ```
 
+**global.colors.control**
+
+The color of the border. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'accent-1', light: 'brand', }
+```
+
+**global.colors.brand**
+
+The light version of the border. Expects `string`.
+
+Defaults to
+
+```
+#7D4CDB
+```
+
+**global.colors.text**
+
+The color of the text label. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: '#f8f8f8', light: '#444444' }
+```
+
 **text.medium.size**
 
 The font size of the text label. Expects `string`.

@@ -36,6 +36,21 @@ export var themeDoc = _extends({
     type: 'string',
     defaultValue: '12px'
   },
+  'global.colors.control': {
+    description: 'The color of the border.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: 'accent-1', light: 'brand', }"
+  },
+  'global.colors.brand': {
+    description: 'The light version of the border.',
+    type: 'string',
+    defaultValue: '#7D4CDB'
+  },
+  'global.colors.text': {
+    description: 'The color of the text label.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: "{ dark: '#f8f8f8', light: '#444444' }"
+  },
   'text.medium.size': {
     description: 'The font size of the text label.',
     type: 'string',

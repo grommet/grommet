@@ -16,6 +16,10 @@ describe('Box', function () {
       direction: "row-responsive"
     }), React.createElement(Box, {
       direction: "column"
+    }), React.createElement(Box, {
+      direction: "column-reverse"
+    }), React.createElement(Box, {
+      direction: "row-reverse"
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
