@@ -34,8 +34,19 @@ var Fit = function Fit() {
   }))));
 };
 
+var Fallback = function Fallback() {
+  return React.createElement(Grommet, {
+    theme: grommet
+  }, React.createElement(Image, {
+    fallback: "//v2.grommet.io/assets/IMG_4245.jpg",
+    src: "//v2.grommet.io/assets/IMG_4245_not_exists.jpg"
+  }));
+};
+
 storiesOf('Image', module).add('Simple', function () {
   return React.createElement(Simple, null);
 }).add('Fit', function () {
   return React.createElement(Fit, null);
+}).add('Fallback', function () {
+  return React.createElement(Fallback, null);
 });

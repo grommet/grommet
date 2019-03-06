@@ -21,7 +21,8 @@ exports.themeDoc = themeDoc;
 var doc = function doc(Image) {
   var DocumentedImage = (0, _reactDesc.describe)(Image).availableAt((0, _utils.getAvailableAtBadge)('Image')).description('An image.').usage("import { Image } from 'grommet';\n<Image/>").intrinsicElement('img');
   DocumentedImage.propTypes = _extends({}, _utils.genericProps, {
-    fit: _reactDesc.PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.')
+    fit: _reactDesc.PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
+    fallback: _reactDesc.PropTypes.string.description('Specifies the URL of the fallback image used when src is failing to load')
   });
   return DocumentedImage;
 };

@@ -12,7 +12,8 @@ export var themeDoc = {
 export var doc = function doc(Image) {
   var DocumentedImage = describe(Image).availableAt(getAvailableAtBadge('Image')).description('An image.').usage("import { Image } from 'grommet';\n<Image/>").intrinsicElement('img');
   DocumentedImage.propTypes = _extends({}, genericProps, {
-    fit: PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.')
+    fit: PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
+    fallback: PropTypes.string.description('Specifies the URL of the fallback image used when src is failing to load')
   });
   return DocumentedImage;
 };
