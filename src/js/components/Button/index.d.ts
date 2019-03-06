@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Omit, PolymorphicType } from "../../utils";
 
 export interface ButtonProps {
   a11yTitle?: string;
@@ -19,9 +20,9 @@ export interface ButtonProps {
   primary?: boolean;
   reverse?: boolean;
   type?: "button" | "reset" | "submit";
-  as?: string;
+  as?: PolymorphicType;
 }
 
-declare const Button: React.ComponentType<ButtonProps & JSX.IntrinsicElements['button']>;
+declare const Button: React.ComponentClass<ButtonProps & Omit<JSX.IntrinsicElements['button'], 'color'>>;
 
 export { Button };

@@ -7,6 +7,6 @@ export interface RadioButtonGroupProps {
   value?: string;
 }
 
-declare const RadioButtonGroup: React.ComponentType<RadioButtonGroupProps & JSX.IntrinsicElements['div']>;
+declare const RadioButtonGroup: React.ComponentClass<RadioButtonGroupProps & JSX.IntrinsicElements['div']>;
 
 export { RadioButtonGroup };

@@ -37,10 +37,12 @@ class FakeRouter extends Component {
 }
 
 describe('RoutedButton', () => {
+  const push = jest.fn();
+  const replace = jest.fn();
   test('renders', () => {
     const component = renderer.create(
       <Grommet>
-        <FakeRouter>
+        <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" path="/" />
         </FakeRouter>
       </Grommet>,
@@ -51,19 +53,17 @@ describe('RoutedButton', () => {
 
   test('RoutedButton is clickable', () => {
     const preventDefault = jest.fn();
-    const push = jest.fn();
     const onClick = jest.fn();
     const component = renderer.create(
       <Grommet>
-        <FakeRouter push={push}>
-          <RoutedButton label="Test" onClick={onClick} />
+        <FakeRouter replace={replace} push={push}>
+          <RoutedButton label="Test" onClick={onClick} path="/" />
         </FakeRouter>
       </Grommet>,
     );
     const tree = component.toJSON();
-
-    const button = findAllByType(tree, 'button');
-    button[0].props.onClick({ preventDefault });
+    const anchor = findAllByType(tree, 'a');
+    anchor[0].props.onClick({ preventDefault });
     expect(onClick).toBeCalled();
     expect(push).toBeCalled();
     expect(preventDefault).toBeCalled();
@@ -73,18 +73,18 @@ describe('RoutedButton', () => {
     const onClick = jest.fn();
     const component = renderer.create(
       <Grommet>
-        <FakeRouter>
-          <RoutedButton label="Test" onClick={onClick} />
+        <FakeRouter replace={replace} push={push}>
+          <RoutedButton label="Test" onClick={onClick} path="/" />
         </FakeRouter>
       </Grommet>,
     );
     const tree = component.toJSON();
 
-    const button = findAllByType(tree, 'button');
-    button[0].props.onClick({
+    const anchor = findAllByType(tree, 'a');
+    anchor[0].props.onClick({
       ctrlKey: true,
     });
-    button[0].props.onClick({
+    anchor[0].props.onClick({
       metaKey: true,
     });
     expect(onClick).not.toBeCalled();
@@ -92,10 +92,9 @@ describe('RoutedButton', () => {
 
   test('RoutedButton calls router context push', () => {
     const preventDefault = jest.fn();
-    const push = jest.fn();
     const component = renderer.create(
       <Grommet>
-        <FakeRouter push={push}>
+        <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" path="/" />
         </FakeRouter>
       </Grommet>,
@@ -112,10 +111,9 @@ describe('RoutedButton', () => {
 
   test('RoutedButton calls router context replace', () => {
     const preventDefault = jest.fn();
-    const replace = jest.fn();
     const component = renderer.create(
       <Grommet>
-        <FakeRouter replace={replace}>
+        <FakeRouter replace={replace} push={push}>
           <RoutedButton label="Test" path="/" method="replace" />
         </FakeRouter>
       </Grommet>,

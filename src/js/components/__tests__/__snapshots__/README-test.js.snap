@@ -207,7 +207,7 @@ div
   
 **accordion.icons.collapse**
 
-The icon to use when the panel is expanded. Expects \`React.element\`.
+The icon to use when the panel is expanded. Expects \`React.Element\`.
 
 Defaults to
 
@@ -217,12 +217,22 @@ Defaults to
 
 **accordion.icons.expand**
 
-The icon to use when the panel is collapsed. Expects \`React.element\`.
+The icon to use when the panel is collapsed. Expects \`React.Element\`.
 
 Defaults to
 
 \`\`\`
 <FormDown />
+\`\`\`
+
+**accordion.border**
+
+The border to use in the accordion. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+side: bottom, color: border
 \`\`\`
 ",
   "Anchor": "## Anchor
@@ -410,10 +420,11 @@ string
 
 **as**
 
-The DOM tag to use for the element.
+The DOM tag or react component to use for the element.
 
 \`\`\`
 string
+function
 \`\`\`
   
 ## Intrinsic element
@@ -493,6 +504,26 @@ Defaults to
 undefined
 \`\`\`
 
+**text.medium.size**
+
+The font size of the text label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+18px
+\`\`\`
+
+**text.medium.height**
+
+The line height of the text label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
 **global.focus.border.color**
 
 The color around the component when in focus. Expects \`string | { dark: string, light: string }\`.
@@ -501,6 +532,28 @@ Defaults to
 
 \`\`\`
 focus
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for margin. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
 \`\`\`
 ",
   "Box": "## Box
@@ -733,6 +786,14 @@ string
     medium
     strong
     boolean,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
   light: string
 }
 \`\`\`
@@ -748,6 +809,7 @@ small
 medium
 large
 xlarge
+xxlarge
 full
 1/2
 1/3
@@ -815,6 +877,8 @@ The orientation to layout the child components in. Defaults to \`column\`.
 row
 column
 row-responsive
+row-reverse
+column-reverse
 \`\`\`
 
 **elevation**
@@ -863,6 +927,7 @@ The amount of spacing between child elements. This
         will not wrap gracefully.
 
 \`\`\`
+xxsmall
 xsmall
 small
 medium
@@ -876,25 +941,28 @@ string
 A fixed height.
 
 \`\`\`
+xxsmall
 xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string
 \`\`\`
 
 **justify**
 
-How to align the contents along the main axis.
+How to align the contents along the main axis. Defaults to \`stretch\`.
 
 \`\`\`
-start
-center
-between
 around
-evenly
+between
+center
 end
+evenly
+start
+stretch
 \`\`\`
 
 **overflow**
@@ -1037,14 +1105,16 @@ of indicating the DOM tag via the 'as' property.
 
 \`\`\`
 string
+function
 \`\`\`
 
 **as**
 
-The DOM tag to use for the element. Defaults to \`div\`.
+The DOM tag or react component to use for the element. Defaults to \`div\`.
 
 \`\`\`
 string
+function
 \`\`\`
 
 **width**
@@ -1052,11 +1122,13 @@ string
 A fixed width.
 
 \`\`\`
+xxsmall
 xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string
 \`\`\`
 
@@ -1134,14 +1206,14 @@ Defaults to
 }
 \`\`\`
 
-**global.colors.text**
+**global.colors.border**
 
-The text color used inside the Box. Expects \`string | { dark: string, light: string }\`.
+The color of the border Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
-{ dark: '#f8f8f8', light: '#444444' }
+{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33), }
 \`\`\`
 
 **global.opacity.medium**
@@ -1261,6 +1333,10 @@ Defaults to
 ",
   "Button": "## Button
 A button.
+
+You can provide a single function child that will be called with
+      'hover' and 'focus' keys. This allows you to customize the rendering
+      of the Button in those cases.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Button&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=button&module=%2Fsrc%2FButton.js)
 ## Usage
@@ -1500,10 +1576,11 @@ submit
 
 **as**
 
-The DOM tag to use for the element.
+The DOM tag or react component to use for the element.
 
 \`\`\`
 string
+function
 \`\`\`
   
 ## Intrinsic element
@@ -1531,6 +1608,36 @@ Defaults to
 
 \`\`\`
 12px
+\`\`\`
+
+**global.colors.control**
+
+The color of the border. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'accent-1', light: 'brand', }
+\`\`\`
+
+**global.colors.brand**
+
+The light version of the border. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+#7D4CDB
+\`\`\`
+
+**global.colors.text**
+
+The color of the text label. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#f8f8f8', light: '#444444' }
 \`\`\`
 
 **text.medium.size**
@@ -1611,26 +1718,6 @@ Defaults to
 
 \`\`\`
 0.3
-\`\`\`
-
-**button.minWidth**
-
-The minimum width. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-96px
-\`\`\`
-
-**button.maxWidth**
-
-The maximum width. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-384px
 \`\`\`
 
 **button.padding.horizontal**
@@ -2326,6 +2413,38 @@ Defaults to
 \`\`\`
 undefined
 \`\`\`
+
+**global.colors.icon**
+
+The color used for Carousel icons. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
+\`\`\`
+
+**global.edgeSize**
+
+The possible sizes for margin. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+\`\`\`
 ",
   "Chart": "## Chart
 A graphical chart.
@@ -2605,30 +2724,7 @@ color options used for Chart fill area. Expects \`object\`.
 Defaults to
 
 \`\`\`
-  
-      active: rgba(221, 221, 221, 0.5),
-      black: '#000000',
-      border: {
-        dark: rgba(255, 255, 255, 0.33),
-        light: rgba(0, 0, 0, 0.33),
-      },
-      brand: brandColor,
-      control: {
-        dark: 'accent-1',
-        light: 'brand',
-      },
-      focus: focusColor,
-      placeholder: '#AAAAAA',
-      selected: 'brand',
-      text: {
-        dark: '#f8f8f8',
-        light: '#444444',
-      },
-      icon: {
-        dark: '#f8f8f8',
-        light: '#666666',
-      },
-      white: '#FFFFFF',
+accent-1
 \`\`\`
 
 **global.edgeSize**
@@ -4187,6 +4283,23 @@ Column sizes.
 
 \`\`\`
 [
+  [
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    full
+    1/2
+    1/3
+    2/3
+    1/4
+    2/4
+    3/4
+    flex
+    auto
+    string
+  ]
   xsmall
   small
   medium
@@ -4201,20 +4314,6 @@ Column sizes.
   3/4
   flex
   auto
-  [xsmall
-small
-medium
-large
-xlarge
-full
-1/2
-1/3
-2/3
-1/4
-2/4
-3/4
-flex
-auto]
   string
 ]
 xsmall
@@ -4323,6 +4422,23 @@ Row sizes.
 
 \`\`\`
 [
+  [
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    full
+    1/2
+    1/3
+    2/3
+    1/4
+    2/4
+    3/4
+    flex
+    auto
+    string
+  ]
   xsmall
   small
   medium
@@ -4337,20 +4453,6 @@ Row sizes.
   3/4
   flex
   auto
-  [xsmall
-small
-medium
-large
-xlarge
-full
-1/2
-1/3
-2/3
-1/4
-2/4
-3/4
-flex
-auto]
   string
 ]
 xsmall
@@ -4363,19 +4465,21 @@ string
 
 **tag**
 
-The DOM tag to use for the element. NOTE: This is deprecated in favor
-of indicating the DOM tag via the 'as' property.
+The DOM tag to use for the element. NOTE: This is deprecated
+      in favor of indicating the DOM tag via the 'as' property.
 
 \`\`\`
 string
+function
 \`\`\`
 
 **as**
 
-The DOM tag to use for the element. Defaults to \`div\`.
+The DOM tag or react component to use for the element. Defaults to \`div\`.
 
 \`\`\`
 string
+function
 \`\`\`
   
 ## Intrinsic element
@@ -4416,7 +4520,7 @@ undefined
 
 **global.edgeSize**
 
-The possible sizes for the grid gap. Expects \`object\`.
+The possible sizes for the grid margin and gap. Expects \`object\`.
 
 Defaults to
 
@@ -4460,6 +4564,14 @@ boolean
 **plain**
 
 Whether or not Grommet should apply a global font-family, font-size, and line-height.
+
+\`\`\`
+boolean
+\`\`\`
+
+**cssVars**
+
+Whether to expose the css variables.
 
 \`\`\`
 boolean
@@ -4744,6 +4856,28 @@ Defaults to
   }
 \`\`\`
 
+**global.edgeSize**
+
+The possible sizes for margin. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+    edgeSize: {
+      none: '0px',
+      hair: '1px',
+      xxsmall: '3px',
+      xsmall: '6px',
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+      responsiveBreakpoint: 'small',
+    },
+  }
+\`\`\`
+
 **heading.extend**
 
 Any additional style for Heading. Expects \`string | (props) => {}\`.
@@ -4763,10 +4897,10 @@ Defaults to
 \`\`\`
 
       1: {
-        medium: { 
-          font-size: 34px,
-          line-hieght: 40px,
-          max-width: 826px,
+        medium: {
+          size: 34px,
+          height: 40px,
+          width: 826px,
         },
       },
       weight: 600,
@@ -4774,6 +4908,26 @@ Defaults to
         {
           family: undefined,
         }
+\`\`\`
+
+**heading.weight**
+
+Default heading weight used unless a per level heading is defined. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+600
+\`\`\`
+
+**heading.font**
+
+Default heading font used unless a per level heading is defined. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **heading.responsiveBreakpoint**
@@ -4902,6 +5056,14 @@ How the image fills its container.
 \`\`\`
 cover
 contain
+\`\`\`
+
+**fallback**
+
+Specifies the URL of the fallback image used when src is failing to load
+
+\`\`\`
+string
 \`\`\`
   
 ## Intrinsic element
@@ -5238,7 +5400,7 @@ boolean
 
 **onClickOutside**
 
-Function that will be invoked when the user clicks outside the layer.
+Function that will be invoked on modal layers when the user clicks outside the layer.
 
 \`\`\`
 function
@@ -5570,9 +5732,13 @@ Defaults to
 \`\`\`
 ",
   "Menu": "## Menu
-A control that opens a Drop containing plain Buttons. The labels
-      and behavior of the contained Buttons are described via the \`items\`
-      property.
+A control that opens a Drop containing plain Buttons.
+
+The labels and behavior of the contained Buttons are described
+      via the \`items\` property.
+      You can provide a single function child that will be called with
+      'hover', 'focus', and 'drop' keys. This allows you to customize
+      the rendering of the Menu button in those cases.
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Menu&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=menu&module=%2Fsrc%2FMenu.js)
 ## Usage
@@ -5847,7 +6013,7 @@ undefined
 
 **menu.icons.down**
 
-The icon to show to the right of the label. Expects \`React.element\`.
+The icon to show to the right of the label. Expects \`React.Element\`.
 
 Defaults to
 
@@ -6579,6 +6745,76 @@ Defaults to
 \`\`\`
 focus
 \`\`\`
+
+**global.spacing**
+
+The height, width and border-radius of the range thumb. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**rangeInput.extend**
+
+Any additional style for the RangeInput. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**rangeInput.thumb.color**
+
+The color of the thumb. Expects \`string | { dark: undefined, light: undefined }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**rangeInput.thumb.extend**
+
+Any additional style for the thumb. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**rangeInput.track.color**
+
+The color of the track. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }
+\`\`\`
+
+**rangeInput.track.extend**
+
+Any additional style for the track. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**rangeInput.track.height**
+
+The height of the track. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+4px
+\`\`\`
 ",
   "RangeSelector": "## RangeSelector
 A control to input a range of values.
@@ -6720,7 +6956,49 @@ Required. The current values. Defaults to \`[]\`.
 
 \`\`\`
 div
-\`\`\`",
+\`\`\`
+## Theme
+  
+**global.colors.controls**
+
+The color foe the edge controls Expects \`string | { dark: undefined, light: undefined }\`.
+
+Defaults to
+
+\`\`\`
+{dark: accent-1, light: brand}
+\`\`\`
+
+**global.spacing**
+
+The size of the edge controls thumb. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**rangeSelector.background.invert.color**
+
+The background color on an invert display Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+light-4
+\`\`\`
+
+**rangeSelector.edge.type**
+
+The edge style type Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "RoutedAnchor": "## RoutedAnchor
 An Anchor with support for React Router.
 
@@ -7192,6 +7470,26 @@ Defaults to
 undefined
 \`\`\`
 
+**select.options.container**
+
+Any valid Box prop for the options container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ align: 'start', pad: 'small' }
+\`\`\`
+
+**select.options.text**
+
+Any valid Text prop for text used inside the options container. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ margin: 'none }
+\`\`\`
+
 **select.container.extend**
 
 Any additional style for the container of the Select component. Expects \`string | (props) => {}\`.
@@ -7224,7 +7522,7 @@ undefined
 
 **select.icons.down**
 
-The down icon to use for opening the Select. Expects \`React.element\`.
+The down icon to use for opening the Select. Expects \`React.Element\`.
 
 Defaults to
 
@@ -7234,7 +7532,7 @@ Defaults to
 
 **select.searchInput**
 
-Component for the Select search input field. Expects \`React.component\`.
+Component for the Select search input field. Expects \`React.Component\`.
 
 Defaults to
 
@@ -7496,7 +7794,119 @@ node
 
 \`\`\`
 button
-\`\`\`",
+\`\`\`
+## Theme
+  
+**tab.active**
+
+styles for the active tab. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{color: 'text', background: undefined }
+\`\`\`
+
+**tab.background**
+
+background styling of Tab. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tab.border**
+
+border styles of the tab Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{
+      side: 'bottom',
+      size: 'small',
+      color: {
+        dark: 'accent-1',
+        light: 'brand',
+      },
+      active: {
+        color: {
+          dark: 'white',
+          light: 'black',
+        },
+      },
+      hover: {
+        color: {
+          dark: 'white',
+          light: 'black',
+        },
+        // extend: undefined,
+      },
+    }
+\`\`\`
+
+**tab.color**
+
+text color for the Tab. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+control
+\`\`\`
+
+**tab.hover.background**
+
+background style of the Tab on hover. Expects \`\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tab.hover.color**
+
+text color of the tab on hover. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'black' }
+\`\`\`
+
+**tab.hover.extend**
+
+Any additional style for Tab hover. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tab.margin**
+
+The margin of Tab. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ vertical: 'xxsmall', horizontal: 'small' }
+\`\`\`
+
+**tab.pad**
+
+The pad of Tab. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{ bottom: 'xsmall' }
+\`\`\`
+",
   "Table": "## Table
 A table of data organized in cells.
 
@@ -7933,7 +8343,69 @@ function
 
 \`\`\`
 div
-\`\`\`",
+\`\`\`
+## Theme
+  
+**tabs.background**
+
+background styling of Tabs. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.extend**
+
+Any additional style for Tabs. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.gap**
+
+The gap size between the Tabs. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.background**
+
+The background styles of Tabs header. Expects \`\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.header.extend**
+
+Any additional style for Tabs header. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**tabs.panel.extend**
+
+Any additional style for Tabs panel. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+",
   "Text": "## Text
 Arbitrary text.
 
@@ -8075,18 +8547,20 @@ string
 **tag**
 
 The DOM tag to use for the element. NOTE: This is deprecated in favor
-of indicating the DOM tag via the 'as' property.
+         of indicating the DOM tag via the 'as' property.
 
 \`\`\`
 string
+function
 \`\`\`
 
 **as**
 
-The DOM tag to use for the element. Defaults to \`span\`.
+The DOM tag or react component to use for the element. Defaults to \`span\`.
 
 \`\`\`
 string
+function
 \`\`\`
 
 **textAlign**
@@ -8125,9 +8599,9 @@ span
 \`\`\`
 ## Theme
   
-**color**
+**global.colors.text**
 
-The text color used for Text. Expects \`string | { dark: string, light: string }\`.
+The text color used for Text. Expects \`object | { dark: string, light: string }\`.
 
 Defaults to
 
@@ -8305,6 +8779,26 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.control.border**
+
+The border of the textarea. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
+\`\`\`
+
+**global.colors.border**
+
+The color of the borders Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
 \`\`\`
 
 **global.focus.border.color**
@@ -8616,6 +9110,26 @@ Defaults to
 
 \`\`\`
 undefined
+\`\`\`
+
+**global.control.border**
+
+The border of the input. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
+\`\`\`
+
+**global.colors.border**
+
+The color of the borders Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+[object Object]
 \`\`\`
 
 **global.focus.border.color**

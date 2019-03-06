@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Omit } from "../../utils";
 
 export interface TextInputProps {
   dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",right?: "left" | "right",left?: "left" | "right"};
@@ -18,8 +19,6 @@ export interface TextInputProps {
   value?: string | number;
 }
 
-type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
-
-declare const TextInput: React.ComponentType<TextInputProps & Omit<JSX.IntrinsicElements['input'], 'onSelect' | 'size'>>;
+declare const TextInput: React.ComponentClass<TextInputProps & Omit<JSX.IntrinsicElements['input'], 'onSelect' | 'size'>>;
 
 export { TextInput };

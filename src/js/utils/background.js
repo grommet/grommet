@@ -67,9 +67,9 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
       }
       styles.push(css`
         background-image: ${background.image};
-        background-repeat: no-repeat;
+        background-repeat: ${background.repeat || 'no-repeat'};
         background-position: ${background.position || 'center center'};
-        background-size: cover;
+        background-size: ${background.size || 'cover'};
         color: ${color};
       `);
     }

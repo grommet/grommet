@@ -23,6 +23,16 @@ const Fit = () => (
   </Grommet>
 );
 
+const Fallback = () => (
+  <Grommet theme={grommet}>
+    <Image
+      fallback="//v2.grommet.io/assets/IMG_4245.jpg"
+      src="//v2.grommet.io/assets/IMG_4245_not_exists.jpg"
+    />
+  </Grommet>
+);
+
 storiesOf('Image', module)
   .add('Simple', () => <Simple />)
-  .add('Fit', () => <Fit />);
+  .add('Fit', () => <Fit />)
+  .add('Fallback', () => <Fallback />);

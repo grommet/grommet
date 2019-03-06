@@ -139,3 +139,44 @@ Required. The current values. Defaults to `[]`.
 ```
 div
 ```
+## Theme
+  
+**global.colors.controls**
+
+The color foe the edge controls Expects `string | { dark: undefined, light: undefined }`.
+
+Defaults to
+
+```
+{dark: accent-1, light: brand}
+```
+
+**global.spacing**
+
+The size of the edge controls thumb. Expects `string`.
+
+Defaults to
+
+```
+24px
+```
+
+**rangeSelector.background.invert.color**
+
+The background color on an invert display Expects `string`.
+
+Defaults to
+
+```
+light-4
+```
+
+**rangeSelector.edge.type**
+
+The edge style type Expects `string`.
+
+Defaults to
+
+```
+undefined
+```

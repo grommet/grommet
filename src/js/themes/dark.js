@@ -4,7 +4,6 @@ import { css } from 'styled-components';
 import { deepFreeze } from '../utils/object';
 import { normalizeColor } from '../utils/colors';
 
-const controlColor = '#FFCA58';
 const accentColors = ['#FD6FFF', '#60EB9F', '#60EBE1', '#FFCA58'];
 const neutralColors = ['#EB6060', '#01C781', '#6095EB', '#FFB200'];
 const statusColors = {
@@ -16,20 +15,26 @@ const statusColors = {
   disabled: '#a8a8a8',
 };
 const backgroundColor = '#111111';
-const textColor = '#eeeeee';
-const borderColor = rgba(255, 255, 255, 0.33);
-const activeColor = rgba(102, 102, 102, 0.5);
 
 const colors = {
-  active: activeColor,
+  active: rgba(102, 102, 102, 0.5),
   background: backgroundColor,
   black: '#000000',
-  border: borderColor,
   brand: '#FD6FFF',
-  control: controlColor,
-  focus: controlColor,
+  control: {
+    dark: '#FFCA58',
+    light: '#403216',
+  },
+  focus: '#FFCA58',
+  icon: {
+    dark: '#f8f8f8',
+    light: '#666666',
+  },
   placeholder: '#AAAAAA',
-  text: textColor,
+  text: {
+    dark: '#eeeeee',
+    light: '#444444',
+  },
   white: '#FFFFFF',
 };
 
@@ -64,17 +69,9 @@ export const dark = deepFreeze({
     input: {
       weight: 700,
     },
-    text: {
-      dark: textColor,
-      light: '#000000',
-    },
   },
   anchor: {
-    color: controlColor,
-  },
-  icon: {
-    color: textColor,
-    colors,
+    color: 'control',
   },
   layer: {
     background: backgroundColor,

@@ -69,19 +69,25 @@ export const calcs = (values, options = {}) => {
   // These values were emirically determined, trying to balance visibility
   // and overlap across resolutions.
   let thickness;
+  let pad;
   if (calcValues.length < 5) {
     thickness = 'xlarge';
+    pad = 'large';
   } else if (calcValues.length < 11) {
     thickness = 'large';
+    pad = 'medium';
   } else if (calcValues.length < 21) {
     thickness = 'medium';
+    pad = 'small';
   } else if (calcValues.length < 61) {
     thickness = 'small';
+    pad = 'xsmall';
   } else if (calcValues.length < 121) {
     thickness = 'xsmall';
+    pad = 'xxsmall';
   } else {
     thickness = 'hair';
   }
 
-  return { axis: [xAxis, yAxis], bounds, dimensions, thickness };
+  return { axis: [xAxis, yAxis], bounds, dimensions, pad, thickness };
 };

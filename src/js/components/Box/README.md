@@ -228,6 +228,14 @@ string
     medium
     strong
     boolean,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
   light: string
 }
 ```
@@ -243,6 +251,7 @@ small
 medium
 large
 xlarge
+xxlarge
 full
 1/2
 1/3
@@ -310,6 +319,8 @@ The orientation to layout the child components in. Defaults to `column`.
 row
 column
 row-responsive
+row-reverse
+column-reverse
 ```
 
 **elevation**
@@ -358,6 +369,7 @@ The amount of spacing between child elements. This
         will not wrap gracefully.
 
 ```
+xxsmall
 xsmall
 small
 medium
@@ -371,25 +383,28 @@ string
 A fixed height.
 
 ```
+xxsmall
 xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string
 ```
 
 **justify**
 
-How to align the contents along the main axis.
+How to align the contents along the main axis. Defaults to `stretch`.
 
 ```
-start
-center
-between
 around
-evenly
+between
+center
 end
+evenly
+start
+stretch
 ```
 
 **overflow**
@@ -532,14 +547,16 @@ of indicating the DOM tag via the 'as' property.
 
 ```
 string
+function
 ```
 
 **as**
 
-The DOM tag to use for the element. Defaults to `div`.
+The DOM tag or react component to use for the element. Defaults to `div`.
 
 ```
 string
+function
 ```
 
 **width**
@@ -547,11 +564,13 @@ string
 A fixed width.
 
 ```
+xxsmall
 xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string
 ```
 
@@ -629,14 +648,14 @@ Defaults to
 }
 ```
 
-**global.colors.text**
+**global.colors.border**
 
-The text color used inside the Box. Expects `string | { dark: string, light: string }`.
+The color of the border Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-{ dark: '#f8f8f8', light: '#444444' }
+{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33), }
 ```
 
 **global.opacity.medium**

@@ -120,6 +120,7 @@ Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, defaultProps);
 
 const StyledCheckBox = styled.div`
   position: relative;
+  flex-shrink: 0;
 `;
 
 StyledCheckBox.defaultProps = {};

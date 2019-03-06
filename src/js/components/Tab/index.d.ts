@@ -5,6 +5,6 @@ export interface TabProps {
   title?: string | React.ReactNode;
 }
 
-declare const Tab: React.ComponentType<TabProps & JSX.IntrinsicElements['button']>;
+declare const Tab: React.ComponentClass<TabProps & JSX.IntrinsicElements['button']>;
 
 export { Tab };

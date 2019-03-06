@@ -59,7 +59,9 @@ or just use children.`,
 this component. But, it can be adjusted directly via this size property, typically
 when it is not contained in a 'Heading', 'Paragraph', or 'Text'.`,
     ),
-    as: PropTypes.string.description(`The DOM tag to use for the element.`),
+    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
+      `The DOM tag or react component to use for the element.`,
+    ),
   };
 
   return DocumentedAnchor;
@@ -103,5 +105,16 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'text.medium.size': {
+    description: 'The font size of the text label.',
+    type: 'string',
+    defaultValue: '18px',
+  },
+  'text.medium.height': {
+    description: 'The line height of the text label.',
+    type: 'string',
+    defaultValue: '24px',
+  },
   ...themeDocUtils.focusStyle,
+  ...themeDocUtils.edgeStyle('The possible sizes for margin.'),
 };

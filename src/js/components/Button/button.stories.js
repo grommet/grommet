@@ -17,7 +17,9 @@ const SimpleButton = props => (
 const IconButton = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <Button icon={<Add />} hoverIndicator onClick={() => {}} />
+      <Box round="full" overflow="hidden" background="neutral-1">
+        <Button icon={<Add />} hoverIndicator onClick={() => {}} />
+      </Box>
     </Box>
   </Grommet>
 );
@@ -207,6 +209,31 @@ const ThemeColored = () => (
   </Grommet>
 );
 
+const SidebarButton = ({ label, onClick }) => (
+  <Button plain onClick={onClick}>
+    {({ hover }) => (
+      <Box
+        background={hover ? 'accent-1' : undefined}
+        pad={{ horizontal: 'large', vertical: 'medium' }}
+      >
+        <Text size="large">{label}</Text>
+      </Box>
+    )}
+  </Button>
+);
+
+const SidebarButtons = () => (
+  <Grommet full theme={grommet}>
+    <Box fill direction="row">
+      <Box background="neutral-1">
+        <SidebarButton label="Dashboard" onClick={() => {}} />
+        <SidebarButton label="Devices" onClick={() => {}} />
+        <SidebarButton label="Settings" onClick={() => {}} />
+      </Box>
+    </Box>
+  </Grommet>
+);
+
 storiesOf('Button', module)
   .add('Default', () => <SimpleButton />)
   .add('Primary', () => <SimpleButton primary />)
@@ -221,4 +248,5 @@ storiesOf('Button', module)
   .add('Multiple Same Line', () => <MultipleButton />)
   .add('Colored', () => <ColoredButton />)
   .add('Theme Colored', () => <ThemeColored />)
-  .add('Custom tag Button', () => <CustomTagButton />);
+  .add('Custom tag Button', () => <CustomTagButton />)
+  .add('Sidebar', () => <SidebarButtons />);

@@ -280,6 +280,7 @@ exports[`Carousel basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  line-height: 0;
   padding: 12px;
 }
 
@@ -446,6 +447,7 @@ exports[`Carousel basic 1`] = `
         >
           <img
             className=""
+            onError={[Function]}
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
@@ -462,6 +464,7 @@ exports[`Carousel basic 1`] = `
         >
           <img
             className=""
+            onError={[Function]}
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
@@ -482,6 +485,8 @@ exports[`Carousel basic 1`] = `
             disabled={true}
             onBlur={[Function]}
             onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
             type="button"
           >
             <div
@@ -514,6 +519,8 @@ exports[`Carousel basic 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
               type="button"
             >
               <svg
@@ -534,6 +541,8 @@ exports[`Carousel basic 1`] = `
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
               type="button"
             >
               <svg
@@ -560,6 +569,8 @@ exports[`Carousel basic 1`] = `
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
             type="button"
           >
             <div
@@ -866,6 +877,7 @@ exports[`Carousel navigate 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  line-height: 0;
   padding: 12px;
 }
 
@@ -1160,7 +1172,7 @@ exports[`Carousel navigate 1`] = `
 
 exports[`Carousel navigate 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledStack-ajspsk-0 cBSAEZ"
@@ -1238,7 +1250,7 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-sc-13pk1d4-0 exddWn"
           >
             <button
-              class="StyledButton-sc-323bzc-0 dcpWVY"
+              class="StyledButton-sc-323bzc-0 lbUBVe"
               type="button"
             >
               <svg
@@ -1255,7 +1267,7 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 dcpWVY"
+              class="StyledButton-sc-323bzc-0 lbUBVe"
               type="button"
             >
               <svg
@@ -1307,7 +1319,7 @@ exports[`Carousel navigate 2`] = `
 
 exports[`Carousel navigate 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledStack-ajspsk-0 cBSAEZ"
@@ -1386,7 +1398,7 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-sc-13pk1d4-0 exddWn"
           >
             <button
-              class="StyledButton-sc-323bzc-0 dcpWVY"
+              class="StyledButton-sc-323bzc-0 lbUBVe"
               type="button"
             >
               <svg
@@ -1403,7 +1415,7 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 dcpWVY"
+              class="StyledButton-sc-323bzc-0 lbUBVe"
               type="button"
             >
               <svg
@@ -1732,6 +1744,7 @@ exports[`Carousel play 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  line-height: 0;
   padding: 12px;
 }
 
@@ -2025,7 +2038,7 @@ exports[`Carousel play 1`] = `
 
 exports[`Carousel play 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledStack-ajspsk-0 cBSAEZ"
@@ -2102,7 +2115,7 @@ exports[`Carousel play 2`] = `
             class="StyledBox-sc-13pk1d4-0 exddWn"
           >
             <button
-              class="StyledButton-sc-323bzc-0 dcpWVY"
+              class="StyledButton-sc-323bzc-0 lbUBVe"
               type="button"
             >
               <svg
@@ -2119,7 +2132,7 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 dcpWVY"
+              class="StyledButton-sc-323bzc-0 lbUBVe"
               type="button"
             >
               <svg

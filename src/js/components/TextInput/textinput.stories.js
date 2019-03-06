@@ -1,9 +1,8 @@
-import React, { createRef, Component } from 'react';
+import React, { createRef, Component, useState } from 'react';
 import { storiesOf } from '@storybook/react';
+import { Search, FormLock, View } from 'grommet-icons';
 
-import { Search } from 'grommet-icons';
-
-import { Box, Image, Grommet, Text, TextInput } from 'grommet';
+import { Box, Image, Grommet, Text, TextInput, Button } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 
@@ -27,6 +26,33 @@ class SimpleTextInput extends Component {
     );
   }
 }
+
+const PasswordInput = ({ value, ...rest }) => {
+  const [inputValue, setValue] = useState(value);
+  const [reveal, setReveal] = useState(false);
+  return (
+    <Box
+      width="medium"
+      direction="row"
+      margin="large"
+      align="center"
+      round="small"
+      border
+    >
+      <TextInput
+        plain
+        type={reveal ? 'text' : 'password'}
+        value={inputValue}
+        onChange={event => setValue(event.target.value)}
+        {...rest}
+      />
+      <Button
+        icon={reveal ? <FormLock size="medium" /> : <View size="medium" />}
+        onClick={() => setReveal(!reveal)}
+      />
+    </Box>
+  );
+};
 
 const suggestions = Array(100)
   .fill()
@@ -229,5 +255,6 @@ class CustomSuggestionsTextInput extends Component {
 
 storiesOf('TextInput', module)
   .add('Simple TextInput', () => <SimpleTextInput />)
+  .add('Password input', () => <PasswordInput />)
   .add('Suggestions TextInput', () => <SuggestionsTextInput />)
   .add('Custom Suggestions', () => <CustomSuggestionsTextInput />);

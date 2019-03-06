@@ -371,16 +371,18 @@ const customTheme = deepMerge(grommet, {
   tab: {
     active: {
       background: 'dark-1',
+      color: 'accent-1',
     },
     background: 'dark-3',
+    border: undefined,
+    color: 'white',
     hover: {
       background: 'dark-1',
     },
-    border: undefined,
     margin: undefined,
     pad: {
       bottom: undefined,
-      horizontal: 'xsmall',
+      horizontal: 'small',
     },
     extend: ({ theme }) => css`
       border-radius: ${theme.global.control.border.radius};
@@ -389,6 +391,7 @@ const customTheme = deepMerge(grommet, {
   },
   tabs: {
     background: 'dark-3',
+    gap: 'medium',
     header: {
       background: 'dark-2',
       extend: ({ theme }) => css`
@@ -396,7 +399,12 @@ const customTheme = deepMerge(grommet, {
         box-shadow: ${theme.global.elevation.light.medium};
       `,
     },
-    gap: 'medium',
+    panel: {
+      extend: ({ theme }) => css`
+        padding: ${theme.global.edgeSize.large};
+        box-shadow: ${theme.global.elevation.light.medium};
+      `,
+    },
   },
 });
 
@@ -423,6 +431,10 @@ const CustomTabs = () => (
         <FormField label="Card Number">
           <TextInput placeholder="Enter your card number..." />
         </FormField>
+      </Tab>
+      <Tab title="Simple Tab">
+        This Tab has a different styling than the RichTabTitle (e.g
+        tab.active.color)
       </Tab>
     </Tabs>
   </Grommet>
@@ -473,10 +485,10 @@ const ScrollableTabs = () => (
 );
 
 storiesOf('Tabs', module)
-  .add('Uncontrolled Tabs', () => <UncontrolledTabs />)
-  .add('Controlled Tabs', () => <ControlledTabs />)
-  .add('Responsive Tabs', () => <ResponsiveTabs />)
-  .add('Rich Tabs', () => <RichTabs />)
-  .add('CustomTheme', () => <CustomTabs />)
-  .add('Scrollable Tabs', () => <ScrollableTabs />)
+  .add('Uncontrolled', () => <UncontrolledTabs />)
+  .add('Controlled', () => <ControlledTabs />)
+  .add('Responsive', () => <ResponsiveTabs />)
+  .add('Rich', () => <RichTabs />)
+  .add('Custom Theme', () => <CustomTabs />)
+  .add('Scrollable', () => <ScrollableTabs />)
   .add('Plain', () => <UncontrolledTabs plain />);

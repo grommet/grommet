@@ -399,6 +399,26 @@ Defaults to
 undefined
 ```
 
+**select.options.container**
+
+Any valid Box prop for the options container. Expects `object`.
+
+Defaults to
+
+```
+{ align: 'start', pad: 'small' }
+```
+
+**select.options.text**
+
+Any valid Text prop for text used inside the options container. Expects `object`.
+
+Defaults to
+
+```
+{ margin: 'none }
+```
+
 **select.container.extend**
 
 Any additional style for the container of the Select component. Expects `string | (props) => {}`.
@@ -431,7 +451,7 @@ undefined
 
 **select.icons.down**
 
-The down icon to use for opening the Select. Expects `React.element`.
+The down icon to use for opening the Select. Expects `React.Element`.
 
 Defaults to
 
@@ -441,7 +461,7 @@ Defaults to
 
 **select.searchInput**
 
-Component for the Select search input field. Expects `React.component`.
+Component for the Select search input field. Expects `React.Component`.
 
 Defaults to
 

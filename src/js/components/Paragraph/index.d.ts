@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Omit } from "../../utils";
 
 export interface ParagraphProps {
   a11yTitle?: string;
@@ -11,6 +12,6 @@ export interface ParagraphProps {
   textAlign?: "start" | "center" | "end";
 }
 
-declare const Paragraph: React.ComponentType<ParagraphProps & JSX.IntrinsicElements['p']>;
+declare const Paragraph: React.FC<ParagraphProps & Omit<JSX.IntrinsicElements['p'], 'color'>>;
 
 export { Paragraph };

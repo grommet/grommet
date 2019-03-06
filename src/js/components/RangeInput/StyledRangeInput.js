@@ -9,6 +9,10 @@ const rangeTrackStyle = css`
   height: ${props => props.theme.rangeInput.track.height};
   background: ${props =>
     normalizeColor(props.theme.rangeInput.track.color, props.theme)};
+  ${props =>
+    props.theme.rangeInput &&
+    props.theme.rangeInput.track &&
+    props.theme.rangeInput.track.extend}
 `;
 
 const rangeThumbStyle = css`
@@ -25,12 +29,20 @@ const rangeThumbStyle = css`
     )};
   -webkit-appearance: none;
   cursor: pointer;
+  ${props =>
+    props.theme.rangeInput &&
+    props.theme.rangeInput.thumb &&
+    props.theme.rangeInput.thumb.extend}
 `;
 
 const firefoxMicrosoftThumbStyle = css`
   ${rangeThumbStyle} margin-top: 0px;
   height: ${props => props.theme.global.spacing};
   width: ${props => props.theme.global.spacing};
+  ${props =>
+    props.theme.rangeInput &&
+    props.theme.rangeInput.thumb &&
+    props.theme.rangeInput.thumb.extend}
 `;
 
 const StyledRangeInput = styled.input`
@@ -61,10 +73,8 @@ const StyledRangeInput = styled.input`
   }
 
   &::-webkit-slider-thumb {
+    margin-top: -${props => (parseMetricToNum(props.theme.global.spacing) - parseMetricToNum(props.theme.rangeInput.track.height || 0)) * 0.5}px;
     ${rangeThumbStyle}
-
-    margin-top: -${props =>
-      parseMetricToNum(props.theme.global.spacing) * 0.425}px;
 
     ${props =>
       !props.disabled &&

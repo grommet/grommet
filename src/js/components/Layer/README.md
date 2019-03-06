@@ -101,7 +101,7 @@ boolean
 
 **onClickOutside**
 
-Function that will be invoked when the user clicks outside the layer.
+Function that will be invoked on modal layers when the user clicks outside the layer.
 
 ```
 function

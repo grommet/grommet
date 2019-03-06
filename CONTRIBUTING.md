@@ -169,7 +169,7 @@ to modify component to documentation then you only need to have a look at the
 `doc.js` files.
 
 These files are used to generate the documentation on the grommet website. That
-code lives at the [grommet-site](https://github.com/grommet/grommet-site repository.
+code lives at the [grommet-site](https://github.com/grommet/grommet-site) repository.
 
 ## Need more help?
 

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Omit } from "../../utils";
 
 export interface RangeSelectorProps {
   color?: string | {dark?: string,light?: string};
@@ -15,6 +16,6 @@ export interface RangeSelectorProps {
   values: number[];
 }
 
-declare const RangeSelector: React.ComponentType<RangeSelectorProps & JSX.IntrinsicElements['div']>;
+declare const RangeSelector: React.ComponentClass<RangeSelectorProps & Omit<JSX.IntrinsicElements['div'], 'color'>>;
 
 export { RangeSelector };

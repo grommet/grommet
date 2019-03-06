@@ -1,6 +1,10 @@
 ## Button
 A button.
 
+You can provide a single function child that will be called with
+      'hover' and 'focus' keys. This allows you to customize the rendering
+      of the Button in those cases.
+
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=Button&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=button&module=%2Fsrc%2FButton.js)
 ## Usage
 
@@ -239,10 +243,11 @@ submit
 
 **as**
 
-The DOM tag to use for the element.
+The DOM tag or react component to use for the element.
 
 ```
 string
+function
 ```
   
 ## Intrinsic element
@@ -270,6 +275,36 @@ Defaults to
 
 ```
 12px
+```
+
+**global.colors.control**
+
+The color of the border. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: 'accent-1', light: 'brand', }
+```
+
+**global.colors.brand**
+
+The light version of the border. Expects `string`.
+
+Defaults to
+
+```
+#7D4CDB
+```
+
+**global.colors.text**
+
+The color of the text label. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: '#f8f8f8', light: '#444444' }
 ```
 
 **text.medium.size**
@@ -350,26 +385,6 @@ Defaults to
 
 ```
 0.3
-```
-
-**button.minWidth**
-
-The minimum width. Expects `string`.
-
-Defaults to
-
-```
-96px
-```
-
-**button.maxWidth**
-
-The maximum width. Expects `string`.
-
-Defaults to
-
-```
-384px
 ```
 
 **button.padding.horizontal**

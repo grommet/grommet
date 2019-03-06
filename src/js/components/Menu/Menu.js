@@ -102,6 +102,7 @@ class Menu extends Component {
       label,
       messages,
       onKeyDown,
+      plain,
       size,
       theme,
       ...rest
@@ -132,9 +133,12 @@ class Menu extends Component {
       <Box flex={false}>
         <Button
           a11yTitle={messages.closeMenu || 'Close Menu'}
+          plain={plain}
           onClick={this.onDropClose}
         >
-          {content}
+          {typeof content === 'function'
+            ? props => content({ ...props, drop: true })
+            : content}
         </Button>
       </Box>
     );
@@ -156,6 +160,7 @@ class Menu extends Component {
           disabled={disabled}
           dropAlign={dropAlign}
           dropTarget={dropTarget}
+          plain={plain}
           open={open}
           onOpen={() => this.setState({ open: true })}
           onClose={() => this.setState({ open: false })}
@@ -172,7 +177,7 @@ class Menu extends Component {
                       }}
                       active={activeItemIndex === index}
                       hoverIndicator="background"
-                      disabled={!item.onClick && !item.href}
+                      disabled={item.disabled}
                       onClick={(...args) => {
                         item.onClick(...args);
                         if (item.close !== false) {

@@ -22,6 +22,8 @@ describe('Box', () => {
         <Box direction="row" />
         <Box direction="row-responsive" />
         <Box direction="column" />
+        <Box direction="column-reverse" />
+        <Box direction="row-reverse" />
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -143,6 +145,20 @@ describe('Box', () => {
             image:
               'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
             color: 'accent-1',
+          }}
+        />
+        <Box
+          background={{
+            image:
+              'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
+            size: 'contain',
+          }}
+        />
+        <Box
+          background={{
+            image:
+              'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
+            repeat: 'repeat',
           }}
         />
       </Grommet>,

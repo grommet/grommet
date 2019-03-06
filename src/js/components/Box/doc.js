@@ -74,6 +74,14 @@ export const doc = Box => {
           PropTypes.oneOf(['weak', 'medium', 'strong']),
           PropTypes.bool,
         ]),
+        repeat: PropTypes.oneOfType([
+          PropTypes.oneOf(['no-repeat', 'repeat']),
+          PropTypes.string,
+        ]),
+        size: PropTypes.oneOfType([
+          PropTypes.oneOf(['cover', 'contain']),
+          PropTypes.string,
+        ]),
         light: PropTypes.string,
       }),
     ]).description(`Either a color identifier to use for the background
@@ -87,6 +95,7 @@ export const doc = Box => {
         'medium',
         'large',
         'xlarge',
+        'xxlarge',
         'full',
         '1/2',
         '1/3',
@@ -143,7 +152,13 @@ export const doc = Box => {
         ]).defaultValue('solid'),
       }),
     ]).description('Include a border.'),
-    direction: PropTypes.oneOf(['row', 'column', 'row-responsive'])
+    direction: PropTypes.oneOf([
+      'row',
+      'column',
+      'row-responsive',
+      'row-reverse',
+      'column-reverse',
+    ])
       .description('The orientation to layout the child components in.')
       .defaultValue('column'),
     elevation: PropTypes.oneOfType([
@@ -172,23 +187,41 @@ export const doc = Box => {
       'Whether the width and/or height should fill the container.',
     ),
     gap: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+      ]),
       PropTypes.string,
     ]).description(`The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully.`),
     height: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'xxlarge',
+      ]),
       PropTypes.string,
     ]).description('A fixed height.'),
     justify: PropTypes.oneOf([
-      'start',
-      'center',
-      'between',
       'around',
-      'evenly',
+      'between',
+      'center',
       'end',
-    ]).description('How to align the contents along the main axis.'),
+      'evenly',
+      'start',
+      'stretch',
+    ])
+      .description('How to align the contents along the main axis.')
+      .defaultValue('stretch'),
     overflow: PropTypes.oneOfType([
       PropTypes.oneOf(OVERFLOW_VALUES),
       PropTypes.shape({
@@ -262,15 +295,23 @@ export const doc = Box => {
     ])
       .description('How much to round the corners.')
       .defaultValue(false),
-    tag: PropTypes.string.description(
+    tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
       `The DOM tag to use for the element. NOTE: This is deprecated in favor
 of indicating the DOM tag via the 'as' property.`,
     ),
-    as: PropTypes.string
-      .description('The DOM tag to use for the element.')
+    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+      .description('The DOM tag or react component to use for the element.')
       .defaultValue('div'),
     width: PropTypes.oneOfType([
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf([
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+        'xxlarge',
+      ]),
       PropTypes.string,
     ]).description('A fixed width.'),
     wrap: PropTypes.bool
@@ -327,10 +368,11 @@ export const themeDoc = {
   },
 }`,
   },
-  'global.colors.text': {
-    description: 'The text color used inside the Box.',
+  'global.colors.border': {
+    description: 'The color of the border',
     type: 'string | { dark: string, light: string }',
-    defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
+    defaultValue:
+      '{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33), }',
   },
   'global.opacity.medium': {
     description: 'The value used when background opacity is set to true.',

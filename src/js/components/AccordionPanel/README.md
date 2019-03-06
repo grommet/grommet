@@ -30,7 +30,7 @@ div
   
 **accordion.icons.collapse**
 
-The icon to use when the panel is expanded. Expects `React.element`.
+The icon to use when the panel is expanded. Expects `React.Element`.
 
 Defaults to
 
@@ -40,10 +40,20 @@ Defaults to
 
 **accordion.icons.expand**
 
-The icon to use when the panel is collapsed. Expects `React.element`.
+The icon to use when the panel is collapsed. Expects `React.Element`.
 
 Defaults to
 
 ```
 <FormDown />
+```
+
+**accordion.border**
+
+The border to use in the accordion. Expects `React.Element`.
+
+Defaults to
+
+```
+side: bottom, color: border
 ```

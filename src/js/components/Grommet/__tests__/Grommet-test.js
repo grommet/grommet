@@ -82,6 +82,11 @@ describe('Grommet', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  test('cssVars', () => {
+    const component = renderer.create(<Grommet cssVars>Grommet App</Grommet>);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
   test('full', () => {
     const component = renderer.create(<Grommet full>Grommet App</Grommet>);
     expect(component.toJSON()).toMatchSnapshot();
