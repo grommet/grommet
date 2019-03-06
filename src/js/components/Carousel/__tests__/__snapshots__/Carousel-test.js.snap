@@ -69,6 +69,40 @@ exports[`Carousel basic 1`] = `
   stroke: none;
 }
 
+.c16 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #444444;
+  stroke: #444444;
+}
+
+.c16 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c16 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c16 *[stroke*="#"],
+.c16 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c16 *[fill-rule],
+.c16 *[FILL-RULE],
+.c16 *[fill*="#"],
+.c16 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -284,7 +318,7 @@ exports[`Carousel basic 1`] = `
   padding: 12px;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -308,7 +342,7 @@ exports[`Carousel basic 1`] = `
   flex: 1 0 auto;
 }
 
-.c16:hover {
+.c17:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -547,7 +581,7 @@ exports[`Carousel basic 1`] = `
             >
               <svg
                 aria-label="Subtract"
-                className="c11"
+                className="c16"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -564,7 +598,7 @@ exports[`Carousel basic 1`] = `
           className="c8"
         >
           <button
-            className="c16"
+            className="c17"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -662,6 +696,40 @@ exports[`Carousel navigate 1`] = `
 .c15 *[FILL-RULE],
 .c15 *[fill*="#"],
 .c15 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c16 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #444444;
+  stroke: #444444;
+}
+
+.c16 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c16 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c16 *[stroke*="#"],
+.c16 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c16 *[fill-rule],
+.c16 *[FILL-RULE],
+.c16 *[fill*="#"],
+.c16 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -881,7 +949,7 @@ exports[`Carousel navigate 1`] = `
   padding: 12px;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -905,7 +973,7 @@ exports[`Carousel navigate 1`] = `
   flex: 1 0 auto;
 }
 
-.c16:hover {
+.c17:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -1126,7 +1194,7 @@ exports[`Carousel navigate 1`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="c11"
+                class="c16"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1143,7 +1211,7 @@ exports[`Carousel navigate 1`] = `
           class="c8"
         >
           <button
-            class="c16"
+            class="c17"
             type="button"
           >
             <div
@@ -1255,7 +1323,7 @@ exports[`Carousel navigate 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 iOkQrb"
+                class="StyledIcon-ofa7kd-0 cZXyLU"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1420,7 +1488,7 @@ exports[`Carousel navigate 3`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 iOkQrb"
+                class="StyledIcon-ofa7kd-0 cZXyLU"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -1529,6 +1597,40 @@ exports[`Carousel play 1`] = `
 .c15 *[FILL-RULE],
 .c15 *[fill*="#"],
 .c15 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c16 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #444444;
+  stroke: #444444;
+}
+
+.c16 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c16 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c16 *[stroke*="#"],
+.c16 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c16 *[fill-rule],
+.c16 *[FILL-RULE],
+.c16 *[fill*="#"],
+.c16 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1748,7 +1850,7 @@ exports[`Carousel play 1`] = `
   padding: 12px;
 }
 
-.c16 {
+.c17 {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
@@ -1772,7 +1874,7 @@ exports[`Carousel play 1`] = `
   flex: 1 0 auto;
 }
 
-.c16:hover {
+.c17:hover {
   background-color: rgba(221,221,221,0.4);
   color: #444444;
   color: #000000;
@@ -1992,7 +2094,7 @@ exports[`Carousel play 1`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="c11"
+                class="c16"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -2009,7 +2111,7 @@ exports[`Carousel play 1`] = `
           class="c8"
         >
           <button
-            class="c16"
+            class="c17"
             type="button"
           >
             <div
@@ -2120,7 +2222,7 @@ exports[`Carousel play 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-ofa7kd-0 iOkQrb"
+                class="StyledIcon-ofa7kd-0 cZXyLU"
                 viewBox="0 0 24 24"
               >
                 <path
