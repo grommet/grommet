@@ -30,7 +30,7 @@ Merge is currently only available for selected beta users.
 1. Fork this repository and clone it to your computer.
 2. Install dependencies with `npm install`
 3. Log in to your UXPin beta account (approved for alpha and beta tests by UXPin Inc.)
-4. Start Merge dev environment with `npm start`
+4. Start Merge dev environment with `npm run uxpin:experiment`
 
 If you wish to push Grommet components to your UXPin account – check guide to integration with CI servers in our [WIKI](https://wikiuxpin.atlassian.net/wiki/spaces/MA/pages/665845792/CI+Servers) 
 
