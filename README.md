@@ -1,6 +1,11 @@
 # Grommet: focus on the essential experience
 
-[![Slack](http://alansouzati.github.io/artic/img/slack-badge.svg)](http://slackin.grommet.io)
+[![pr's Welcome](https://img.shields.io/badge/pr's-welcome-7d4cdb.svg)](https://github.com/grommet/grommet/pulls)
+[![slack](https://img.shields.io/badge/join%20the%20community-slack-fd6fff.svg)](http://slackin.grommet.io)
+[![follow](https://img.shields.io/twitter/follow/grommet_io.svg?label=follow%20&style=social)](https://twitter.com/grommet_io)
+[![view blogs](https://img.shields.io/badge/view%20blogs%20on-medium-000000.svg)](https://medium.com/grommet-io)
+[![npm package](https://img.shields.io/npm/v/grommet.svg?color=ffca58)](https://www.npmjs.com/package/grommet)
+[![npm downloads](https://img.shields.io/npm/dm/grommet.svg?color=3d138d)](https://www.npmjs.com/package/grommet)
 
 <img align="right" height="260" src="https://v2.grommet.io/img/stak-hurrah.svg">
 
