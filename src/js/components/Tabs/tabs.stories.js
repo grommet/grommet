@@ -361,6 +361,9 @@ const RichTabs = () => (
 
 const customTheme = deepMerge(grommet, {
   global: {
+    edgeSize: {
+      small: '6px'
+    },
     elevation: {
       light: {
         small: '0px 1px 5px rgba(0, 0, 0, 0.50)',

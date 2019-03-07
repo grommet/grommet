@@ -176,6 +176,36 @@ div
 ```
 ## Theme
   
+**global.borderSize**
+
+The size of the border Expects `object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.colors.border**
+
+color of the border Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.edgeSize.small**
+
+the possible sizes for margin, pad and gap Expects `string`.
+
+Defaults to
+
+```
+6px
+```
+
 **tabs.background**
 
 background styling of Tabs. Expects `object`.

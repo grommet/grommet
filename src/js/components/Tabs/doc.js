@@ -48,6 +48,21 @@ currently active tab changes.`,
 };
 
 export const themeDoc = {
+  'global.borderSize': {
+    description: 'The size of the border',
+    type: 'object',
+    defaultValue: undefined,
+  },
+  'global.colors.border': {
+    description: 'color of the border',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'global.edgeSize.small': {
+    description: 'the possible sizes for margin, pad and gap',
+    type: 'string',
+    defaultValue: '6px',
+  },
   'tabs.background': {
     description: 'background styling of Tabs.',
     type: 'object',
