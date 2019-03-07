@@ -8,8 +8,8 @@ exports[`Calendar date 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c8 g {
@@ -1298,8 +1298,8 @@ exports[`Calendar dates 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c8 g {
@@ -2588,8 +2588,8 @@ exports[`Calendar firstDayOfWeek 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c8 g {
@@ -6061,8 +6061,8 @@ exports[`Calendar reference 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c8 g {
@@ -7331,8 +7331,8 @@ exports[`Calendar size 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c8 g {
@@ -7365,8 +7365,8 @@ exports[`Calendar size 1`] = `
   flex: 0 0 auto;
   width: 48px;
   height: 48px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c27 g {
