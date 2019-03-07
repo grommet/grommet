@@ -141,7 +141,47 @@ div
 ```
 ## Theme
   
-**global.colors.controls**
+**global.colors.focus**
+
+The possible sizes for the margin, padding and gap Expects `string`.
+
+Defaults to
+
+```
+accent-1
+```
+
+**global.edgeSize**
+
+The color for the focus Expects `object`.
+
+Defaults to
+
+```
+small
+```
+
+**global.borderSize**
+
+The size of the border Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.colors.border**
+
+The color for the border Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.colors.control**
 
 The color foe the edge controls Expects `string | { dark: undefined, light: undefined }`.
 

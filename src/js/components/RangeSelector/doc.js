@@ -72,7 +72,27 @@ export const doc = RangeSelector => {
 };
 
 export const themeDoc = {
-  'global.colors.controls': {
+  'global.colors.focus': {
+    description: 'The possible sizes for the margin, padding and gap',
+    type: 'string',
+    defaultValue: 'accent-1',
+  },
+  'global.edgeSize': {
+    description: 'The color for the focus',
+    type: 'object',
+    defaultValue: 'small',
+  },
+  'global.borderSize': {
+    description: 'The size of the border',
+    type: 'string',
+    defaultValue: 'undefined',
+  },
+  'global.colors.border': {
+    description: 'The color for the border',
+    type: 'string',
+    defaultValue: 'undefined',
+  },
+  'global.colors.control': {
     description: 'The color foe the edge controls',
     type: 'string | { dark: undefined, light: undefined }',
     defaultValue: '{dark: accent-1, light: brand}',
