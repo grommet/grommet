@@ -549,8 +549,8 @@ exports[`Video controls renders 1`] = `
   flex: 0 0 auto;
   width: 24px;
   height: 24px;
-  fill: #444444;
-  stroke: #444444;
+  fill: #666666;
+  stroke: #666666;
 }
 
 .c22 g {
@@ -572,40 +572,6 @@ exports[`Video controls renders 1`] = `
 .c22 *[FILL-RULE],
 .c22 *[fill*="#"],
 .c22 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c23 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #666666;
-  stroke: #666666;
-}
-
-.c23 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c23 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c23 *[stroke*="#"],
-.c23 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c23 *[fill-rule],
-.c23 *[FILL-RULE],
-.c23 *[fill*="#"],
-.c23 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -1287,7 +1253,7 @@ exports[`Video controls renders 1`] = `
             />
             <svg
               aria-label="Actions"
-              className="c23"
+              className="c22"
               viewBox="0 0 24 24"
             >
               <path
@@ -3502,3 +3468,4 @@ exports[`Video renders 1`] = `
   </div>
 </div>
 `;
+
