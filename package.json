@@ -5,7 +5,7 @@
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
   "sideEffects": [
-    "./src/js/contexts/ThemeContext/ThemeContext.js"
+    "./es6/contexts/ThemeContext/ThemeContext.js"
   ],
   "description": "focus on the essential experience",
   "authors": [
