@@ -7,7 +7,7 @@ import { Grommet } from '../src/js/components/Grommet';
 
 export default function UXPinWrapper({ children }) {
   return (
-    <Grommet theme={hpe}>
+    <Grommet theme={aruba}>
       {children}
     </Grommet>
   );
