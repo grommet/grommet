@@ -2758,6 +2758,11 @@ function",
         "required": true,
       },
       Object {
+        "description": "Initial state of the select component",
+        "format": "boolean",
+        "name": "open",
+      },
+      Object {
         "description": "Placeholder text to use when no value is provided.",
         "format": "string
 node",

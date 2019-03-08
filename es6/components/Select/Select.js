@@ -39,18 +39,10 @@ var Select =
 function (_Component) {
   _inheritsLoose(Select, _Component);
 
-  function Select() {
+  function Select(props) {
     var _this;
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      open: false
-    });
+    _this = _Component.call(this, props) || this;
 
     _defineProperty(_assertThisInitialized(_this), "inputRef", React.createRef());
 
@@ -78,6 +70,9 @@ function (_Component) {
       });
     });
 
+    _this.state = {
+      open: props.open
+    };
     return _this;
   }
 
@@ -121,8 +116,8 @@ function (_Component) {
       }
 
       if (onChange) {
-        for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
-          args[_key2 - 1] = arguments[_key2];
+        for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+          args[_key - 1] = arguments[_key];
         }
 
         onChange.apply(void 0, [_extends({}, event, {

@@ -313,4 +313,13 @@ describe('Select', function () {
     fireEvent.input(document.activeElement);
     expect(document.activeElement).toMatchSnapshot();
   });
+  test('open default state', function () {
+    render(React.createElement(Select, {
+      open: true,
+      id: "test-select",
+      placeholder: "test select",
+      options: ['one', 'two']
+    }));
+    expect(document.getElementById('test-select__drop')).not.toBeNull();
+  });
 });

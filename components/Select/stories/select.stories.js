@@ -24,6 +24,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
@@ -84,7 +86,10 @@ function (_Component) {
   _proto.render = function render() {
     var _this2 = this;
 
-    var theme = this.props.theme;
+    var _this$props = this.props,
+        theme = _this$props.theme,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["theme"]);
+
     var _this$state = this.state,
         options = _this$state.options,
         value = _this$state.value;
@@ -96,7 +101,7 @@ function (_Component) {
       align: "center",
       justify: "start",
       pad: "large"
-    }, _react.default.createElement(_grommet.Select, {
+    }, _react.default.createElement(_grommet.Select, _extends({
       id: "select",
       name: "select",
       placeholder: "Select",
@@ -108,7 +113,7 @@ function (_Component) {
           value: option
         });
       }
-    })));
+    }, rest))));
   };
 
   return SimpleSelect;
@@ -125,13 +130,13 @@ _defineProperty(SimpleSelect, "defaultProps", {
 var defaultOptions = [];
 var objectOptions = [];
 
-for (var i = 1; i <= 200; i += 1) {
-  defaultOptions.push("option " + i);
+for (var _i = 1; _i <= 200; _i += 1) {
+  defaultOptions.push("option " + _i);
   objectOptions.push({
-    lab: "option " + i,
-    val: i,
-    dis: i % 5 === 0,
-    sel: i % 13 === 0
+    lab: "option " + _i,
+    val: _i,
+    dis: _i % 5 === 0,
+    sel: _i % 13 === 0
   });
 }
 
@@ -781,9 +786,9 @@ function (_PureComponent) {
   var _proto8 = Option.prototype;
 
   _proto8.render = function render() {
-    var _this$props = this.props,
-        value = _this$props.value,
-        selected = _this$props.selected;
+    var _this$props2 = this.props,
+        value = _this$props2.value,
+        selected = _this$props2.selected;
     return _react.default.createElement(_grommet.Box, {
       direction: "row",
       gap: "small",
@@ -920,8 +925,9 @@ function (_Component8) {
       }
     }
   });
-}).add('Custom Rounded', function () {
+}).add('Custom', function () {
   return _react.default.createElement(SimpleSelect, {
+    open: true,
     theme: customRoundedTheme
   });
 }).add('Lots of options', function () {

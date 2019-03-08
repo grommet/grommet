@@ -33,6 +33,7 @@ export var doc = function doc(Select) {
     onOpen: PropTypes.func.description('Function that will be called when the Select drop opens.'),
     onSearch: PropTypes.func.description("Function that will be called when the user types in the search input.\n      If this property is not provided, no search field will be rendered."),
     options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.object])).description("Options can be either a string or an object. If an object is used, use\n      children callback in order to render anything based on the current item.").isRequired,
+    open: PropTypes.bool.description("Initial state of the select component"),
     placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description('Placeholder text to use when no value is provided.'),
     plain: PropTypes.bool.description('Whether this is a plain Select input with no border or padding.'),
     searchPlaceholder: PropTypes.string.description('Placeholder text to use in the search box when the search input is empty.'),

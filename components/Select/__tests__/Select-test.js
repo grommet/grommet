@@ -359,4 +359,13 @@ describe('Select', function () {
 
     expect(document.activeElement).toMatchSnapshot();
   });
+  test('open default state', function () {
+    (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+      open: true,
+      id: "test-select",
+      placeholder: "test select",
+      options: ['one', 'two']
+    }));
+    expect(document.getElementById('test-select__drop')).not.toBeNull();
+  });
 });

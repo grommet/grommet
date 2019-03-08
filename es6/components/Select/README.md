@@ -292,6 +292,14 @@ Required. Options can be either a string or an object. If an object is used, use
 ]
 ```
 
+**open**
+
+Initial state of the select component
+
+```
+boolean
+```
+
 **placeholder**
 
 Placeholder text to use when no value is provided.
