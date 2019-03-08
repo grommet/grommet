@@ -116,6 +116,7 @@ export const doc = Select => {
       `Options can be either a string or an object. If an object is used, use
       children callback in order to render anything based on the current item.`,
     ).isRequired,
+    open: PropTypes.bool.description(`Initial state of the select component`),
     placeholder: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.node,

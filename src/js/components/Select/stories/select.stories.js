@@ -53,7 +53,7 @@ class SimpleSelect extends Component {
   };
 
   render() {
-    const { theme } = this.props;
+    const { theme, ...rest } = this.props;
     const { options, value } = this.state;
     return (
       <Grommet full theme={theme || grommet}>
@@ -65,6 +65,7 @@ class SimpleSelect extends Component {
             value={value}
             options={options}
             onChange={({ option }) => this.setState({ value: option })}
+            {...rest}
           />
         </Box>
       </Grommet>
@@ -599,5 +600,5 @@ storiesOf('Select', module)
       }}
     />
   ))
-  .add('Custom Rounded', () => <SimpleSelect theme={customRoundedTheme} />)
+  .add('Custom', () => <SimpleSelect open theme={customRoundedTheme} />)
   .add('Lots of options', () => <ManyOptions />);

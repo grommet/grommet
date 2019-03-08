@@ -35,9 +35,13 @@ class Select extends Component {
     messages: { multiple: 'multiple' },
   };
 
-  state = { open: false };
-
   inputRef = React.createRef();
+
+  constructor(props) {
+    super(props);
+
+    this.state = { open: props.open };
+  }
 
   onOpen = () => {
     const { onOpen } = this.props;
