@@ -77,23 +77,32 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'accent-1',
   },
-  'global.edgeSize': {
+  'global.edgeSize.small': {
     description: 'The possible sizes for the margin, padding and gap',
-    type: 'object',
-    defaultValue: 'small',
+    type: 'string',
+    defaultValue: '6px',
   },
   'global.borderSize': {
     description: 'The size of the border',
     type: 'string',
-    defaultValue: 'undefined',
+    defaultValue: `{
+      xsmall: '1px',
+      small: '2px',
+      medium: '4px',
+      large: '12px',
+      xlarge: '24px,
+    }`,
   },
   'global.colors.border': {
     description: 'The color for the border',
     type: 'string',
-    defaultValue: 'undefined',
+    defaultValue: {
+      dark: 'rgba(255, 255, 255, 0.33)',
+      light: 'rgba(0, 0, 0, 0.33)',
+    },
   },
   'global.colors.control': {
-    description: 'The color foe the edge controls',
+    description: 'The color for the edge controls',
     type: 'string | { dark: undefined, light: undefined }',
     defaultValue: '{dark: accent-1, light: brand}',
   },

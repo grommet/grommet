@@ -143,7 +143,7 @@ div
   
 **global.colors.focus**
 
-The possible sizes for the margin, padding and gap Expects `string`.
+TThe color when there is a focus Expects `string`.
 
 Defaults to
 
@@ -151,14 +151,14 @@ Defaults to
 accent-1
 ```
 
-**global.edgeSize**
+**global.edgeSize.small**
 
-The color for the focus Expects `object`.
+The possible sizes for the margin, padding and gap Expects `string`.
 
 Defaults to
 
 ```
-small
+6px
 ```
 
 **global.borderSize**
@@ -168,7 +168,13 @@ The size of the border Expects `string`.
 Defaults to
 
 ```
-undefined
+{
+      xsmall: '1px',
+      small: '2px',
+      medium: '4px',
+      large: '12px',
+      xlarge: '24px,
+    }
 ```
 
 **global.colors.border**
@@ -178,12 +184,12 @@ The color for the border Expects `string`.
 Defaults to
 
 ```
-undefined
+[object Object]
 ```
 
 **global.colors.control**
 
-The color foe the edge controls Expects `string | { dark: undefined, light: undefined }`.
+The color for the edge controls Expects `string | { dark: undefined, light: undefined }`.
 
 Defaults to
 

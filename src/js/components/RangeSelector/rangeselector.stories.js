@@ -56,6 +56,9 @@ class SimpleRangeSelector extends Component {
 
 const customThemeRangeSelector = deepMerge(grommet, {
   global: {
+    borderSize: {
+      small: '6px',
+    },
     edgeSize: {
       small: '13px',
     },
