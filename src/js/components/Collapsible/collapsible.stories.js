@@ -178,7 +178,7 @@ class HorizontalCollapsible extends Component {
           </Box>
           <Box flex direction="row">
             <Box flex align="center" justify="center">
-              Dashboard content goes here
+              Dashboard content goes here, click on the notification icon
             </Box>
             <Collapsible direction="horizontal" open={openNotification}>
               <Box
@@ -188,7 +188,7 @@ class HorizontalCollapsible extends Component {
                 pad="small"
                 elevation="small"
               >
-                Sidebar
+                <Text size="xlarge">Sidebar</Text>
               </Box>
             </Collapsible>
           </Box>
