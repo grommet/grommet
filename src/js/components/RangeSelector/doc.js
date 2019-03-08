@@ -73,12 +73,12 @@ export const doc = RangeSelector => {
 
 export const themeDoc = {
   'global.colors.focus': {
-    description: 'The possible sizes for the margin, padding and gap',
+    description: 'TThe color when there is a focus',
     type: 'string',
     defaultValue: 'accent-1',
   },
   'global.edgeSize': {
-    description: 'The color for the focus',
+    description: 'The possible sizes for the margin, padding and gap',
     type: 'object',
     defaultValue: 'small',
   },
