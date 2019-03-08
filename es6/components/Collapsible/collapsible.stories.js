@@ -277,7 +277,7 @@ function (_Component3) {
       flex: true,
       align: "center",
       justify: "center"
-    }, "Dashboard content goes here"), React.createElement(Collapsible, {
+    }, "Dashboard content goes here, click on the notification icon"), React.createElement(Collapsible, {
       direction: "horizontal",
       open: openNotification
     }, React.createElement(Box, {
@@ -286,7 +286,9 @@ function (_Component3) {
       background: "light-2",
       pad: "small",
       elevation: "small"
-    }, "Sidebar")))));
+    }, React.createElement(Text, {
+      size: "xlarge"
+    }, "Sidebar"))))));
   };
 
   return HorizontalCollapsible;

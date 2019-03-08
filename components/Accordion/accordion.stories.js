@@ -86,16 +86,22 @@ var CustomAccordion = function CustomAccordion(_ref) {
     animate: animate,
     multiple: true
   }, _react.default.createElement(_grommet.AccordionPanel, {
-    label: "Panel 1"
+    label: _react.default.createElement(_grommet.Text, {
+      size: "large"
+    }, "Panel 1")
   }, _react.default.createElement(_grommet.Box, {
     background: "light-2",
     height: "small"
   }, "Important Info")), _react.default.createElement(_grommet.AccordionPanel, {
-    label: "Panel 2"
+    label: _react.default.createElement(_grommet.Text, {
+      size: "medium"
+    }, "Panel 2")
   }, _react.default.createElement(_grommet.Box, {
     background: "light-2",
     height: "xsmall"
-  }, "Important Info")))));
+  }, _react.default.createElement(_grommet.Text, {
+    size: "small"
+  }, "Important Info"))))));
 };
 
 var RichPanel =

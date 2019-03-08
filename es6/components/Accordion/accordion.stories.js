@@ -83,16 +83,22 @@ var CustomAccordion = function CustomAccordion(_ref) {
     animate: animate,
     multiple: true
   }, React.createElement(AccordionPanel, {
-    label: "Panel 1"
+    label: React.createElement(Text, {
+      size: "large"
+    }, "Panel 1")
   }, React.createElement(Box, {
     background: "light-2",
     height: "small"
   }, "Important Info")), React.createElement(AccordionPanel, {
-    label: "Panel 2"
+    label: React.createElement(Text, {
+      size: "medium"
+    }, "Panel 2")
   }, React.createElement(Box, {
     background: "light-2",
     height: "xsmall"
-  }, "Important Info")))));
+  }, React.createElement(Text, {
+    size: "small"
+  }, "Important Info"))))));
 };
 
 var RichPanel =

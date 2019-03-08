@@ -283,7 +283,7 @@ function (_Component3) {
       flex: true,
       align: "center",
       justify: "center"
-    }, "Dashboard content goes here"), _react.default.createElement(_grommet.Collapsible, {
+    }, "Dashboard content goes here, click on the notification icon"), _react.default.createElement(_grommet.Collapsible, {
       direction: "horizontal",
       open: openNotification
     }, _react.default.createElement(_grommet.Box, {
@@ -292,7 +292,9 @@ function (_Component3) {
       background: "light-2",
       pad: "small",
       elevation: "small"
-    }, "Sidebar")))));
+    }, _react.default.createElement(_grommet.Text, {
+      size: "xlarge"
+    }, "Sidebar"))))));
   };
 
   return HorizontalCollapsible;
