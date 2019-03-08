@@ -269,14 +269,24 @@ Defaults to
 undefined
 ```
 
-**global.control.border**
+**global.control.border.width**
 
-The border of the input. Expects `object`.
+The border width. Expects `string`.
 
 Defaults to
 
 ```
-[object Object]
+1px
+```
+
+**global.control.border.radius**
+
+The border radius. Expects `string`.
+
+Defaults to
+
+```
+4px
 ```
 
 **global.colors.border**

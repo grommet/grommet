@@ -49,15 +49,21 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
-  'global.control.border': {
-    description: 'The border of the textarea.',
-    type: 'object',
-    defaultValue: {
-      width: '1px',
-      radius: '4px',
-      color: 'border',
-    },
+  'global.control.border.width': {
+    description: 'The border width.',
+    type: 'string',
+    defaultValue: '1px',
   },
+  'global.control.border.radius': {
+    description: 'The border radius.',
+    type: 'string',
+    defaultValue: '4px',
+  },
+  /*   'global.control.border.color': {
+    description: 'The border radius.',
+    type: 'string',
+    defaultValue: 'border',
+  }, */
   'global.colors.border': {
     description: 'The color of the borders',
     type: 'object',
