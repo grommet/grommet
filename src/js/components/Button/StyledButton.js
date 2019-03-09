@@ -123,8 +123,14 @@ const StyledButton = styled.button`
     !props.hasLabel &&
     `
     line-height: 0;
-    padding: ${props.theme.global.edgeSize.small};
   `}
+${props =>
+  !props.plain &&
+  props.hasIcon &&
+  !props.hasLabel &&
+  `
+padding: ${props.theme.global.edgeSize.small};
+`}
   ${props => props.theme.button.extend}
 `;
 

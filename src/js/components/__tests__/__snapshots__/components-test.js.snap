@@ -889,7 +889,7 @@ causes the Button to be disabled.",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether this is a plain button with no border or padding.",
+        "description": "Whether this is a plain button with no border or padding. Defaults to false unless the icon prop exists without a label, or the Button has children.",
         "format": "boolean",
         "name": "plain",
       },

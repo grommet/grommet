@@ -208,7 +208,7 @@ function
 
 **plain**
 
-Whether this is a plain button with no border or padding.
+Whether this is a plain button with no border or padding. Defaults to false unless the icon prop exists without a label, or the Button has children.
 
 ```
 boolean

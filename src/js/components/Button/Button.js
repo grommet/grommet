@@ -112,7 +112,15 @@ class Button extends Component {
     } else {
       contents = first || second || children;
     }
-
+    console.log('plain', plain);
+    console.log('icon && !label', icon && !label);
+    console.log('Children.count(children) > 0', Children.count(children) > 0);
+    console.log(
+      'logic',
+      typeof plain !== 'undefined'
+        ? plain
+        : Children.count(children) > 0 || (icon && !label),
+    );
     // the key events are covered by withFocus()
     /* eslint-disable jsx-a11y/mouse-events-have-key-events */
     return (

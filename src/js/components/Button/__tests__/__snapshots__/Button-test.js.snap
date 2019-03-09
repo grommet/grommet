@@ -1200,7 +1200,6 @@ exports[`Button warns about invalid icon 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c0 {

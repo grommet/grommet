@@ -66,7 +66,9 @@ with plain Buttons.`,
 causes the Button to be disabled.`,
     ),
     plain: PropTypes.bool
-      .description('Whether this is a plain button with no border or padding.')
+      .description(
+        'Whether this is a plain button with no border or padding. Defaults to false unless the icon prop exists without a label, or the Button has children.',
+      )
       .defaultValue(false),
     primary: PropTypes.bool
       .description(
