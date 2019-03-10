@@ -1,6 +1,5 @@
 import * as React from "react";
-
-import { ButtonProps  } from "../Button"
+import { ButtonProps } from "../Button"
 
 export interface RoutedButtonProps {
   path: string;
