@@ -1,5 +1,6 @@
 import { addDecorator, configure } from '@storybook/react';
 import { withOptions } from '@storybook/addon-options';
+import grommetLight from './theme.js';
 
 const req = require.context(
   '../src/js',
@@ -13,8 +14,7 @@ function loadStories() {
 
 addDecorator(
   withOptions({
-    name: 'Grommet Storybook',
-    url: 'https://v2.grommet.io',
+    theme: grommetLight,
   }),
 );
 
