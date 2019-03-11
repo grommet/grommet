@@ -39,6 +39,9 @@ var Example = function Example() {
   }, React.createElement(Box, {
     width: "medium"
   }, React.createElement(Form, {
+    onReset: function onReset(event) {
+      return console.log(event);
+    },
     onSubmit: function onSubmit(_ref2) {
       var value = _ref2.value;
       return console.log('Submit', value);
@@ -97,6 +100,9 @@ var Example = function Example() {
     }
   }, React.createElement(Button, {
     label: "Cancel"
+  }), React.createElement(Button, {
+    type: "reset",
+    label: "Reset"
   }), React.createElement(Button, {
     type: "submit",
     label: "Update",

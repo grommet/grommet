@@ -74,6 +74,20 @@ function (_Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_this), "onReset", function (event) {
+      var onReset = _this.props.onReset;
+
+      if (onReset) {
+        onReset(event);
+      }
+
+      _this.setState({
+        errors: {},
+        value: {},
+        touched: {}
+      });
+    });
+
     _defineProperty(_assertThisInitialized(_this), "update", function (name, data, error) {
       var _this$state2 = _this.state,
           errors = _this$state2.errors,
@@ -154,6 +168,7 @@ function (_Component) {
         value = _this$state3.value,
         messages = _this$state3.messages;
     return React.createElement("form", _extends({}, rest, {
+      onReset: this.onReset,
       onSubmit: this.onSubmit
     }), React.createElement(FormContext.Provider, {
       value: {

@@ -45,6 +45,9 @@ var Example = function Example() {
   }, _react.default.createElement(_grommet.Box, {
     width: "medium"
   }, _react.default.createElement(_grommet.Form, {
+    onReset: function onReset(event) {
+      return console.log(event);
+    },
     onSubmit: function onSubmit(_ref2) {
       var value = _ref2.value;
       return console.log('Submit', value);
@@ -103,6 +106,9 @@ var Example = function Example() {
     }
   }, _react.default.createElement(_grommet.Button, {
     label: "Cancel"
+  }), _react.default.createElement(_grommet.Button, {
+    type: "reset",
+    label: "Reset"
   }), _react.default.createElement(_grommet.Button, {
     type: "submit",
     label: "Update",

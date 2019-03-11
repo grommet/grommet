@@ -278,12 +278,12 @@ function (_Component4) {
   return CheckBoxInsideButton;
 }(Component);
 
-var IndeterminateCheckBox =
+var CheckBoxWithStickyDiv =
 /*#__PURE__*/
 function (_Component5) {
-  _inheritsLoose(IndeterminateCheckBox, _Component5);
+  _inheritsLoose(CheckBoxWithStickyDiv, _Component5);
 
-  function IndeterminateCheckBox() {
+  function CheckBoxWithStickyDiv() {
     var _this6;
 
     for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
@@ -294,21 +294,9 @@ function (_Component5) {
 
     _defineProperty(_assertThisInitialized(_this6), "state", {
       checked: [],
-      checkboxes: ['fruits', 'vegetables', 'olive oil']
-    });
-
-    _defineProperty(_assertThisInitialized(_this6), "onCheckAll", function (event) {
-      var checkboxes = _this6.state.checkboxes;
-
-      if (event.target.checked) {
-        _this6.setState({
-          checked: checkboxes
-        });
-      } else {
-        _this6.setState({
-          checked: []
-        });
-      }
+      checkboxes: Array(8).fill().map(function (_, i) {
+        return "item " + (i + 1);
+      })
     });
 
     _defineProperty(_assertThisInitialized(_this6), "onCheck", function (event, value) {
@@ -332,7 +320,7 @@ function (_Component5) {
     return _this6;
   }
 
-  var _proto5 = IndeterminateCheckBox.prototype;
+  var _proto5 = CheckBoxWithStickyDiv.prototype;
 
   _proto5.render = function render() {
     var _this7 = this;
@@ -340,6 +328,104 @@ function (_Component5) {
     var _this$state = this.state,
         checked = _this$state.checked,
         checkboxes = _this$state.checkboxes;
+    return React.createElement(Grommet, {
+      theme: grommet
+    }, React.createElement(Box, {
+      pad: "large",
+      align: "center"
+    }, React.createElement(Box, {
+      height: "120px",
+      width: "120px",
+      overflow: "auto",
+      style: {
+        position: 'relative',
+        display: 'block'
+      }
+    }, React.createElement(Box, {
+      background: {
+        color: 'neutral-1'
+      },
+      style: {
+        position: 'sticky',
+        top: 0
+      }
+    }, "Click & Scroll"), checkboxes.map(function (item) {
+      return React.createElement(CheckBox, {
+        key: item,
+        checked: checked.indexOf(item) !== -1,
+        label: item,
+        onChange: function onChange(e) {
+          return _this7.onCheck(e, item);
+        }
+      });
+    }))));
+  };
+
+  return CheckBoxWithStickyDiv;
+}(Component);
+
+var IndeterminateCheckBox =
+/*#__PURE__*/
+function (_Component6) {
+  _inheritsLoose(IndeterminateCheckBox, _Component6);
+
+  function IndeterminateCheckBox() {
+    var _this8;
+
+    for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+      args[_key5] = arguments[_key5];
+    }
+
+    _this8 = _Component6.call.apply(_Component6, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_this8), "state", {
+      checked: [],
+      checkboxes: ['fruits', 'vegetables', 'olive oil']
+    });
+
+    _defineProperty(_assertThisInitialized(_this8), "onCheckAll", function (event) {
+      var checkboxes = _this8.state.checkboxes;
+
+      if (event.target.checked) {
+        _this8.setState({
+          checked: checkboxes
+        });
+      } else {
+        _this8.setState({
+          checked: []
+        });
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this8), "onCheck", function (event, value) {
+      var checked = _this8.state.checked;
+
+      if (event.target.checked) {
+        checked.push(value);
+
+        _this8.setState({
+          checked: checked
+        });
+      } else {
+        _this8.setState({
+          checked: checked.filter(function (item) {
+            return item !== value;
+          })
+        });
+      }
+    });
+
+    return _this8;
+  }
+
+  var _proto6 = IndeterminateCheckBox.prototype;
+
+  _proto6.render = function render() {
+    var _this9 = this;
+
+    var _this$state2 = this.state,
+        checked = _this$state2.checked,
+        checkboxes = _this$state2.checkboxes;
     return React.createElement(Grommet, {
       theme: grommet
     }, React.createElement(Box, {
@@ -359,7 +445,7 @@ function (_Component5) {
         checked: checked.indexOf(item) !== -1,
         label: item,
         onChange: function onChange(e) {
-          return _this7.onCheck(e, item);
+          return _this9.onCheck(e, item);
         }
       });
     }))));
@@ -389,6 +475,8 @@ storiesOf('CheckBox', module).add('Simple', function () {
   return React.createElement(ThemedToggle, null);
 }).add('Inside a Button', function () {
   return React.createElement(CheckBoxInsideButton, null);
+}).add('With Sticky Div', function () {
+  return React.createElement(CheckBoxWithStickyDiv, null);
 }).add('Interminate CheckBox', function () {
   return React.createElement(IndeterminateCheckBox, null);
 });

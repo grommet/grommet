@@ -54,6 +54,15 @@ Function that will be called when the form is submitted. The
 function
 ```
 
+**onReset**
+
+Function that will be called when the form is reset. The
+      single argument is the event provided by react.
+
+```
+function
+```
+
 **value**
 
 An object representing all of the data in the form. Defaults to `{}`.

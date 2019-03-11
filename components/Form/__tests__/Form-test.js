@@ -167,4 +167,32 @@ describe('Form', function () {
 
     expect(queryByText('required')).toBeNull();
   });
+  test('reset clears form', function () {
+    var onReset = jest.fn();
+
+    var _render4 = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Form, {
+      onReset: onReset
+    }, _react.default.createElement(_FormField.FormField, {
+      name: "test",
+      required: true,
+      placeholder: "test input"
+    }), _react.default.createElement(_Button.Button, {
+      type: "reset",
+      primary: true,
+      label: "Reset"
+    })))),
+        getByPlaceholderText = _render4.getByPlaceholderText,
+        getByText = _render4.getByText,
+        queryByText = _render4.queryByText;
+
+    _reactTestingLibrary.fireEvent.change(getByPlaceholderText('test input'), {
+      target: {
+        value: 'Input has changed'
+      }
+    });
+
+    _reactTestingLibrary.fireEvent.click(getByText('Reset'));
+
+    expect(queryByText('Input has changed')).toBeNull();
+  });
 });

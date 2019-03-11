@@ -19,7 +19,7 @@ var hoverStyle = (0, _styledComponents.css)([":hover input:not([disabled]) + div
 var StyledCheckBoxIcon = _styledComponents.default.svg.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxIcon",
   componentId: "sc-1dbk5ju-0"
-})(["box-sizing:border-box;position:absolute;stroke-width:", ";stroke:", ";width:", ";height:", ";", ";"], function (props) {
+})(["box-sizing:border-box;stroke-width:", ";stroke:", ";width:", ";height:", ";", ";"], function (props) {
   return props.theme.checkBox.check.thickness;
 }, function (props) {
   return (0, _utils.normalizeColor)(props.theme.checkBox.color || 'control', props.theme);
@@ -55,7 +55,7 @@ Object.setPrototypeOf(StyledCheckBoxContainer.defaultProps, _defaultProps.defaul
 var StyledCheckBoxInput = _styledComponents.default.input.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxInput",
   componentId: "sc-1dbk5ju-2"
-})(["position:absolute;opacity:0;top:0;left:0;width:100%;height:100%;margin:0;", ":checked + span > span{left:calc( ", " - ", " );background:", ";}"], function (props) {
+})(["opacity:0;top:0;left:0;width:100%;height:0;margin:0;", ":checked + span > span{left:calc( ", " - ", " );background:", ";}"], function (props) {
   return !props.disabled && 'cursor: pointer;';
 }, function (props) {
   return props.theme.checkBox.toggle.size;
@@ -85,7 +85,7 @@ Object.setPrototypeOf(StyledCheckBoxBox.defaultProps, _defaultProps.defaultProps
 var StyledCheckBoxToggle = _styledComponents.default.span.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxToggle",
   componentId: "sc-1dbk5ju-4"
-})(["box-sizing:border-box;position:relative;vertical-align:middle;display:inline-block;width:", ";height:", ";border:", " solid;border-color:", ";border-radius:", ";background-color:", ";", ";", ";"], function (props) {
+})(["box-sizing:border-box;vertical-align:middle;display:inline-block;width:", ";height:", ";border:", " solid;border-color:", ";border-radius:", ";background-color:", ";", ";", ";"], function (props) {
   return props.theme.checkBox.toggle.size;
 }, function (props) {
   return props.theme.checkBox.size;
@@ -110,7 +110,7 @@ Object.setPrototypeOf(StyledCheckBoxToggle.defaultProps, _defaultProps.defaultPr
 var StyledCheckBoxKnob = _styledComponents.default.span.withConfig({
   displayName: "StyledCheckBox__StyledCheckBoxKnob",
   componentId: "sc-1dbk5ju-5"
-})(["box-sizing:border-box;position:absolute;top:-", ";left:-", ";transition:all 0.3s;width:", ";height:", ";background:", ";border-radius:", ";", ";"], function (props) {
+})(["box-sizing:border-box;position:relative;display:inherit;top:-", ";left:-", ";transition:all 0.3s;width:", ";height:", ";background:", ";border-radius:", ";", ";"], function (props) {
   return props.theme.checkBox.border.width;
 }, function (props) {
   return props.theme.checkBox.border.width;
@@ -133,7 +133,7 @@ Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, _defaultProps.defaultProp
 var StyledCheckBox = _styledComponents.default.div.withConfig({
   displayName: "StyledCheckBox",
   componentId: "sc-1dbk5ju-6"
-})(["position:relative;flex-shrink:0;"]);
+})(["flex-shrink:0;"]);
 
 exports.StyledCheckBox = StyledCheckBox;
 StyledCheckBox.defaultProps = {};

@@ -20,6 +20,7 @@ var doc = function doc(Form) {
     }),
     onChange: _reactDesc.PropTypes.func.description('Function that will be called when any fields are updated.'),
     onSubmit: _reactDesc.PropTypes.func.description("Function that will be called when the form is submitted. The\n      single argument is an event containing the latest value object\n      via `event.value`."),
+    onReset: _reactDesc.PropTypes.func.description("Function that will be called when the form is reset. The\n      single argument is the event provided by react."),
     value: _reactDesc.PropTypes.shape({}).description('An object representing all of the data in the form.').defaultValue({})
   };
   return DocumentedForm;

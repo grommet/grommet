@@ -15,6 +15,7 @@ exports[`Form empty 1`] = `
   className="c0"
 >
   <form
+    onReset={[Function]}
     onSubmit={[Function]}
   />
 </div>
@@ -383,6 +384,7 @@ exports[`Form with field 1`] = `
   className="c0"
 >
   <form
+    onReset={[Function]}
     onSubmit={[Function]}
   >
     <div
