@@ -67,7 +67,6 @@ exports[`CheckBox checked renders 1`] = `
 
 .c6 {
   box-sizing: border-box;
-  position: absolute;
   stroke-width: 4px;
   stroke: #7D4CDB;
   width: 24px;
@@ -99,7 +98,6 @@ exports[`CheckBox checked renders 1`] = `
 }
 
 .c4 {
-  position: absolute;
   opacity: 0;
   top: 0;
   left: 0;
@@ -115,7 +113,6 @@ exports[`CheckBox checked renders 1`] = `
 }
 
 .c2 {
-  position: relative;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -148,6 +145,18 @@ exports[`CheckBox checked renders 1`] = `
 @media only screen and (max-width:768px) {
   .c5 {
     padding: 0px;
+  }
+}
+
+@media all and (-ms-high-contrast:none) {
+  .c4 {
+    height: 0;
+  }
+}
+
+@supports (-ms-ime-align:auto) {
+  .c4 {
+    height: 0;
   }
 }
 
@@ -287,7 +296,6 @@ exports[`CheckBox disabled renders 1`] = `
 
 .c7 {
   box-sizing: border-box;
-  position: absolute;
   stroke-width: 4px;
   stroke: #7D4CDB;
   width: 24px;
@@ -320,7 +328,6 @@ exports[`CheckBox disabled renders 1`] = `
 }
 
 .c4 {
-  position: absolute;
   opacity: 0;
   top: 0;
   left: 0;
@@ -335,7 +342,6 @@ exports[`CheckBox disabled renders 1`] = `
 }
 
 .c2 {
-  position: relative;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -386,6 +392,18 @@ exports[`CheckBox disabled renders 1`] = `
 @media only screen and (max-width:768px) {
   .c6 {
     padding: 0px;
+  }
+}
+
+@media all and (-ms-high-contrast:none) {
+  .c4 {
+    height: 0;
+  }
+}
+
+@supports (-ms-ime-align:auto) {
+  .c4 {
+    height: 0;
   }
 }
 
@@ -527,7 +545,6 @@ exports[`CheckBox indeterminate renders 1`] = `
 
 .c6 {
   box-sizing: border-box;
-  position: absolute;
   stroke-width: 4px;
   stroke: #7D4CDB;
   width: 24px;
@@ -559,7 +576,6 @@ exports[`CheckBox indeterminate renders 1`] = `
 }
 
 .c4 {
-  position: absolute;
   opacity: 0;
   top: 0;
   left: 0;
@@ -575,7 +591,6 @@ exports[`CheckBox indeterminate renders 1`] = `
 }
 
 .c2 {
-  position: relative;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -608,6 +623,18 @@ exports[`CheckBox indeterminate renders 1`] = `
 @media only screen and (max-width:768px) {
   .c5 {
     padding: 0px;
+  }
+}
+
+@media all and (-ms-high-contrast:none) {
+  .c4 {
+    height: 0;
+  }
+}
+
+@supports (-ms-ime-align:auto) {
+  .c4 {
+    height: 0;
   }
 }
 
@@ -768,7 +795,6 @@ exports[`CheckBox label renders 1`] = `
 }
 
 .c4 {
-  position: absolute;
   opacity: 0;
   top: 0;
   left: 0;
@@ -784,7 +810,6 @@ exports[`CheckBox label renders 1`] = `
 }
 
 .c2 {
-  position: relative;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -817,6 +842,18 @@ exports[`CheckBox label renders 1`] = `
 @media only screen and (max-width:768px) {
   .c5 {
     padding: 0px;
+  }
+}
+
+@media all and (-ms-high-contrast:none) {
+  .c4 {
+    height: 0;
+  }
+}
+
+@supports (-ms-ime-align:auto) {
+  .c4 {
+    height: 0;
   }
 }
 
@@ -958,7 +995,6 @@ exports[`CheckBox renders 1`] = `
 }
 
 .c4 {
-  position: absolute;
   opacity: 0;
   top: 0;
   left: 0;
@@ -974,7 +1010,6 @@ exports[`CheckBox renders 1`] = `
 }
 
 .c2 {
-  position: relative;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -1007,6 +1042,18 @@ exports[`CheckBox renders 1`] = `
 @media only screen and (max-width:768px) {
   .c5 {
     padding: 0px;
+  }
+}
+
+@media all and (-ms-high-contrast:none) {
+  .c4 {
+    height: 0;
+  }
+}
+
+@supports (-ms-ime-align:auto) {
+  .c4 {
+    height: 0;
   }
 }
 
@@ -1145,7 +1192,6 @@ exports[`CheckBox reverse renders 1`] = `
 }
 
 .c4 {
-  position: absolute;
   opacity: 0;
   top: 0;
   left: 0;
@@ -1161,7 +1207,6 @@ exports[`CheckBox reverse renders 1`] = `
 }
 
 .c2 {
-  position: relative;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -1194,6 +1239,18 @@ exports[`CheckBox reverse renders 1`] = `
 @media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
+  }
+}
+
+@media all and (-ms-high-contrast:none) {
+  .c4 {
+    height: 0;
+  }
+}
+
+@supports (-ms-ime-align:auto) {
+  .c4 {
+    height: 0;
   }
 }
 
@@ -1285,7 +1342,6 @@ exports[`CheckBox toggle renders 1`] = `
 }
 
 .c4 {
-  position: absolute;
   opacity: 0;
   top: 0;
   left: 0;
@@ -1302,7 +1358,6 @@ exports[`CheckBox toggle renders 1`] = `
 
 .c5 {
   box-sizing: border-box;
-  position: relative;
   vertical-align: middle;
   display: inline-block;
   width: 48px;
@@ -1315,7 +1370,8 @@ exports[`CheckBox toggle renders 1`] = `
 
 .c6 {
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
+  display: inherit;
   top: -2px;
   left: -2px;
   -webkit-transition: all 0.3s;
@@ -1327,7 +1383,6 @@ exports[`CheckBox toggle renders 1`] = `
 }
 
 .c2 {
-  position: relative;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -1342,6 +1397,18 @@ exports[`CheckBox toggle renders 1`] = `
 @media only screen and (max-width:768px) {
   .c3 {
     padding: 0px;
+  }
+}
+
+@media all and (-ms-high-contrast:none) {
+  .c4 {
+    height: 0;
+  }
+}
+
+@supports (-ms-ime-align:auto) {
+  .c4 {
+    height: 0;
   }
 }
 
