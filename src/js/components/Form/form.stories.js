@@ -36,7 +36,10 @@ const Example = () => (
   <Grommet full theme={grommet}>
     <Box fill align="center" justify="center">
       <Box width="medium">
-        <Form onSubmit={({ value }) => console.log('Submit', value)}>
+        <Form
+          onReset={event => console.log(event)}
+          onSubmit={({ value }) => console.log('Submit', value)}
+        >
           <FormField
             label="Name"
             name="name"
@@ -93,6 +96,7 @@ const Example = () => (
           { */}
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
+            <Button type="reset" label="Reset" />
             <Button type="submit" label="Update" primary />
           </Box>
         </Form>
