@@ -33,7 +33,11 @@ const StyledTextArea = styled.textarea`
 
   ${props => props.fillArg && 'height: 100%;'}
   ${props => props.plain && plainStyle}
-  ${props => props.disabled && disabledStyle()}
+  ${props =>
+    props.disabled &&
+    disabledStyle(
+      props.theme.textArea.disabled && props.theme.textArea.disabled.opacity,
+    )}
 
   ${placeholderStyle}
 

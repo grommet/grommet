@@ -134,8 +134,7 @@ export const themeDoc = {
     type: 'string | { dark: string, light: string }',
   },
   'button.disabled.opacity': {
-    description:
-      'The opacity when the button is disabled. To be deprecated in V3, use global.disabled.opacity instead.',
+    description: 'The opacity when the button is disabled.',
     type: 'number',
     defaultValue: 0.3,
   },

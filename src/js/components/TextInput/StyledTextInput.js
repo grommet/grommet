@@ -35,7 +35,11 @@ const StyledTextInput = styled.input`
   }
 
   ${props => props.focus && !props.plain && focusStyle};
-  ${props => props.disabled && disabledStyle()}
+  ${props =>
+    props.disabled &&
+    disabledStyle(
+      props.theme.textInput.disabled && props.theme.textInput.disabled.opacity,
+    )}
   ${props => props.theme.textInput && props.theme.textInput.extend};
 `;
 

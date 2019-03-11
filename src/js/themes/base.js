@@ -167,6 +167,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           radius: '4px',
           color: 'border',
         },
+        disabled: {
+          opacity: 0.3,
+        },
       },
       debounceDelay: 300, // The time to wait after the user stopped typing, measured in ms.
       drop: {
@@ -211,9 +214,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         border: {
           color: 'focus',
         },
-      },
-      disabled: {
-        opacity: 0.3,
       },
       font: {
         ...fontSizing(0),
@@ -299,6 +299,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       primary: {
         // color: { dark: undefined, light: undefined }
       },
+      disabled: undefined,
       padding: {
         vertical: `${baseSpacing / 4 - borderWidth}px`,
         horizontal: `${baseSpacing - borderWidth}px`,
@@ -785,12 +786,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
     },
-    // textArea: {
-    //   extend: undefined,
-    // },
-    // textInput: {
-    //   extend: undefined,
-    // },
+    textArea: {
+      extend: undefined,
+      disabled: undefined,
+    },
+    textInput: {
+      extend: undefined,
+      disabled: undefined,
+    },
     video: {
       captions: {
         background: 'rgba(0, 0, 0, 0.7)',
