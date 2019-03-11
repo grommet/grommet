@@ -32,12 +32,10 @@ exports[`Image fit renders 1`] = `
 >
   <img
     className="c1"
-    onError={[Function]}
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
   <img
     className="c2"
-    onError={[Function]}
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -59,7 +57,6 @@ exports[`Image renders 1`] = `
 >
   <img
     className=""
-    onError={[Function]}
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>

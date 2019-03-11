@@ -16,16 +16,25 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var Image = function Image(_ref) {
   var src = _ref.src,
       fallback = _ref.fallback,
-      rest = _objectWithoutPropertiesLoose(_ref, ["src", "fallback"]);
+      onError = _ref.onError,
+      rest = _objectWithoutPropertiesLoose(_ref, ["src", "fallback", "onError"]);
 
   var _useState = (0, _react.useState)(false),
       imageMissing = _useState[0],
       setImageMissing = _useState[1];
 
-  return _react.default.createElement(_StyledImage.StyledImage, _extends({}, rest, {
-    onError: function onError() {
-      return setImageMissing(true);
-    },
+  var handleError = function handleError(event) {
+    if (onError) {
+      onError(event);
+    }
+
+    setImageMissing(true);
+  };
+
+  var extraProps = {
+    onError: (onError || fallback) && handleError
+  };
+  return _react.default.createElement(_StyledImage.StyledImage, _extends({}, rest, extraProps, {
     src: !imageMissing ? src : fallback
   }));
 };
