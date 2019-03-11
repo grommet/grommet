@@ -275,7 +275,6 @@ exports[`Markdown renders 1`] = `
       <img
         alt="alt text"
         className=""
-        onError={[Function]}
         src="//v2.grommet.io/assets/IMG_4245.jpg"
         title="Markdown Image"
       />
