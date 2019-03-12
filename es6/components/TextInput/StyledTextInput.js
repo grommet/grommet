@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { focusStyle, inputStyle, parseMetricToNum, placeholderStyle } from '../../utils';
+import { disabledStyle, focusStyle, inputStyle, parseMetricToNum, placeholderStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 var sizeStyle = function sizeStyle(props) {
@@ -11,12 +11,14 @@ var plainStyle = css(["border:none;"]);
 var StyledTextInput = styled.input.withConfig({
   displayName: "StyledTextInput",
   componentId: "sc-1x30a0s-0"
-})(["", " width:100%;", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", ";"], inputStyle, function (props) {
+})(["", " width:100%;", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", " ", ";"], inputStyle, function (props) {
   return props.size && sizeStyle(props);
 }, function (props) {
   return props.plain && plainStyle;
 }, placeholderStyle, function (props) {
   return props.focus && !props.plain && focusStyle;
+}, function (props) {
+  return props.disabled && disabledStyle(props.theme.textInput.disabled && props.theme.textInput.disabled.opacity);
 }, function (props) {
   return props.theme.textInput && props.theme.textInput.extend;
 });

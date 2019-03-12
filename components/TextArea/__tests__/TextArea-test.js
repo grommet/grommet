@@ -43,6 +43,17 @@ describe('TextArea', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('disabled', function () {
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.TextArea, {
+      disabled: true,
+      id: "item",
+      name: "item",
+      plain: true
+    })));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   test('focusIndicator', function () {
     var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.TextArea, {
       id: "item",

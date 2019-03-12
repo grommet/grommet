@@ -206,6 +206,9 @@ var generate = function generate(baseSpacing, scale) {
           width: '1px',
           radius: '4px',
           color: 'border'
+        },
+        disabled: {
+          opacity: 0.3
         }
       },
       debounceDelay: 300,
@@ -348,9 +351,7 @@ var generate = function generate(baseSpacing, scale) {
       // color: { dark: undefined, light: undefined }
       primary: {// color: { dark: undefined, light: undefined }
       },
-      disabled: {
-        opacity: 0.3
-      },
+      // disabled: { opacity: undefined },
       padding: {
         vertical: baseSpacing / 4 - borderWidth + "px",
         horizontal: baseSpacing - borderWidth + "px"
@@ -862,12 +863,12 @@ var generate = function generate(baseSpacing, scale) {
       xlarge: _extends({}, fontSizing(2)),
       xxlarge: _extends({}, fontSizing(4))
     },
-    // textArea: {
-    //   extend: undefined,
-    // },
-    // textInput: {
-    //   extend: undefined,
-    // },
+    textArea: {// extend: undefined,
+      // disabled: { opacity: undefined },
+    },
+    textInput: {// extend: undefined,
+      // disabled: { opacity: undefined },
+    },
     video: {
       captions: {
         background: 'rgba(0, 0, 0, 0.7)'

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { activeStyle, backgroundStyle, focusStyle, genericStyles, normalizeColor } from '../../utils';
+import { activeStyle, backgroundStyle, disabledStyle, focusStyle, genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
 var basicStyle = function basicStyle(props) {
@@ -9,10 +9,6 @@ var basicStyle = function basicStyle(props) {
 var primaryStyle = function primaryStyle(props) {
   return css(["", " border-radius:", ";"], backgroundStyle(normalizeColor(props.colorValue || props.theme.button.primary.color || 'control', props.theme), props.theme, props.theme.button.color), props.theme.button.border.radius);
 };
-
-var disabledStyle = css(["opacity:", ";cursor:default;"], function (props) {
-  return props.theme.button.disabled.opacity;
-});
 
 function getHoverColor(props) {
   if (props.colorValue) {
@@ -40,7 +36,8 @@ var hoverStyle = css(["&:hover{", " ", ";}"], function (props) {
   return !props.plain && css(["box-shadow:0px 0px 0px 2px ", ";"], getHoverColor(props));
 });
 var fillStyle = "\n  width: 100%;\n  height: 100%;\n  max-width: none;\n  flex: 1 0 auto;\n";
-var plainStyle = css(["color:inherit;border:none;padding:0;text-align:inherit;"]);
+var plainStyle = css(["color:inherit;border:none;padding:0;text-align:inherit;"]); // Deprecate props.theme.button.disabled.opacity in V3
+
 var StyledButton = styled.button.withConfig({
   displayName: "StyledButton",
   componentId: "sc-323bzc-0"
@@ -55,7 +52,7 @@ var StyledButton = styled.button.withConfig({
 }, function (props) {
   return !props.disabled && props.active && activeStyle;
 }, function (props) {
-  return props.disabled && disabledStyle;
+  return props.disabled && disabledStyle(props.theme.button.disabled && props.theme.button.disabled.opacity);
 }, function (props) {
   return props.focus && (!props.plain || props.focusIndicator) && focusStyle;
 }, function (props) {

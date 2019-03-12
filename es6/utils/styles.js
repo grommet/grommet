@@ -103,3 +103,8 @@ export var genericStyles = css(["", " ", " ", ""], function (props) {
 }, function (props) {
   return props.margin && edgeStyle('margin', props.margin, props.responsive, props.theme.global.edgeSize.responsiveBreakpoint, props.theme);
 });
+export var disabledStyle = function disabledStyle(componentStyle) {
+  return css(["opacity:", ";cursor:default;"], function (props) {
+    return componentStyle || props.theme.global.control.disabled.opacity;
+  });
+};

@@ -71,6 +71,11 @@ export var themeDoc = _extends({
     type: 'string | (props) => {}',
     defaultValue: undefined
   },
+  'textInput.disabled.opacity': {
+    description: 'The opacity when the textInput is disabled.',
+    type: 'number',
+    defaultValue: 0.3
+  },
   'global.control.border': {
     description: 'The border of the input.',
     type: 'object',
@@ -88,4 +93,4 @@ export var themeDoc = _extends({
       light: 'rgba(0, 0, 0, 0.33)'
     }
   }
-}, themeDocUtils.focusStyle, themeDocUtils.placeholderStyle, themeDocUtils.inputStyle);
+}, themeDocUtils.focusStyle, themeDocUtils.placeholderStyle, themeDocUtils.disabledStyle, themeDocUtils.inputStyle);

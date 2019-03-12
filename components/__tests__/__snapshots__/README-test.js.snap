@@ -1759,6 +1759,16 @@ Defaults to
 \`\`\`
 focus
 \`\`\`
+
+**global.control.disabled.opacity**
+
+The opacity when a component is disabled. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+0.3
+\`\`\`
 ",
   "Calendar": "## Calendar
 A calendar of days displayed by month.
@@ -8806,6 +8816,16 @@ Defaults to
 undefined
 \`\`\`
 
+**textArea.disabled.opacity**
+
+The opacity when the textArea is disabled. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+0.3
+\`\`\`
+
 **global.control.border**
 
 The border of the textarea. Expects \`object\`.
@@ -8864,6 +8884,16 @@ Defaults to
 
 \`\`\`
 12px
+\`\`\`
+
+**global.control.disabled.opacity**
+
+The opacity when a component is disabled. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+0.3
 \`\`\`
 ",
   "TextInput": "## TextInput
@@ -9137,6 +9167,16 @@ Defaults to
 undefined
 \`\`\`
 
+**textInput.disabled.opacity**
+
+The opacity when the textInput is disabled. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+0.3
+\`\`\`
+
 **global.control.border**
 
 The border of the input. Expects \`object\`.
@@ -9175,6 +9215,16 @@ Defaults to
 
 \`\`\`
 #AAAAAA
+\`\`\`
+
+**global.control.disabled.opacity**
+
+The opacity when a component is disabled. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+0.3
 \`\`\`
 
 **global.input.weight**

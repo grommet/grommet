@@ -112,6 +112,6 @@ var themeDoc = _extends({
     description: 'Any additional style for the Button.',
     type: 'string | (props) => {}'
   }
-}, _utils.themeDocUtils.focusStyle);
+}, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.disabledStyle);
 
 exports.themeDoc = themeDoc;

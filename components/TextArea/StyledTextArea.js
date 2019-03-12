@@ -32,12 +32,14 @@ var resizeStyle = function resizeStyle(resize) {
 var StyledTextArea = _styledComponents.default.textarea.withConfig({
   displayName: "StyledTextArea",
   componentId: "sc-17i3mwp-0"
-})(["", " width:100%;", " ", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", ";"], _utils.inputStyle, function (props) {
+})(["", " width:100%;", " ", " ", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", ";"], _utils.inputStyle, function (props) {
   return props.resize !== undefined && resizeStyle(props.resize);
 }, function (props) {
   return props.fillArg && 'height: 100%;';
 }, function (props) {
   return props.plain && plainStyle;
+}, function (props) {
+  return props.disabled && (0, _utils.disabledStyle)(props.theme.textArea.disabled && props.theme.textArea.disabled.opacity);
 }, _utils.placeholderStyle, function (props) {
   return props.focus && !props.plain && _utils.focusStyle;
 }, function (props) {

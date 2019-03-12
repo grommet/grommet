@@ -21,12 +21,14 @@ var plainStyle = (0, _styledComponents.css)(["border:none;"]);
 var StyledTextInput = _styledComponents.default.input.withConfig({
   displayName: "StyledTextInput",
   componentId: "sc-1x30a0s-0"
-})(["", " width:100%;", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", ";"], _utils.inputStyle, function (props) {
+})(["", " width:100%;", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", " ", ";"], _utils.inputStyle, function (props) {
   return props.size && sizeStyle(props);
 }, function (props) {
   return props.plain && plainStyle;
 }, _utils.placeholderStyle, function (props) {
   return props.focus && !props.plain && _utils.focusStyle;
+}, function (props) {
+  return props.disabled && (0, _utils.disabledStyle)(props.theme.textInput.disabled && props.theme.textInput.disabled.opacity);
 }, function (props) {
   return props.theme.textInput && props.theme.textInput.extend;
 });
