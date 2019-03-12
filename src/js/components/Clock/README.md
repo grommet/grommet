@@ -279,7 +279,7 @@ Defaults to
 
 **clock.analog.second.color**
 
-The color of the seconds hand Expects `string`.
+The color of the seconds hand Expects `string | { dark: string, light: string }`.
 
 Defaults to
 

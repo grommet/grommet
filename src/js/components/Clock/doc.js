@@ -101,7 +101,7 @@ export const themeDoc = {
   },
   'clock.analog.second.color': {
     description: 'The color of the seconds hand',
-    type: 'string',
+    type: 'string | { dark: string, light: string }',
     defaultValue: 'dark: accent-1, light: accent-1',
   },
   'clock.analog.second.shape': {

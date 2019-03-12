@@ -54,6 +54,6 @@ const CustomAnalogClock = () => (
 );
 
 storiesOf('Clock', module)
-  .add('Digital Clock', () => <DigitalClock />)
-  .add('Analog Clock', () => <AnalogClock />)
-  .add('Custom Analog Clock', () => <CustomAnalogClock />);
+  .add('Digital', () => <DigitalClock />)
+  .add('Analog', () => <AnalogClock />)
+  .add('Custom Analog', () => <CustomAnalogClock />);
