@@ -91,6 +91,26 @@ input
 ```
 ## Theme
   
+**maskedInput.extend**
+
+Any additional style for MaskedInput. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**text.medium**
+
+The size of the text for the maskedInput. Expects `string`.
+
+Defaults to
+
+```
+18px
+```
+
 **global.focus.border.color**
 
 The color around the component when in focus. Expects `string | { dark: string, light: string }`.

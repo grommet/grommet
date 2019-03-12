@@ -601,6 +601,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
       zIndex: '10',
     },
+    maskedInput: {
+      // extend: undefined,
+    },
     menu: {
       // background: undefined,
       // extend: undefined,

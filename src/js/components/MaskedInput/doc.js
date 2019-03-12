@@ -50,6 +50,16 @@ export const doc = MaskedInput => {
 };
 
 export const themeDoc = {
+  'maskedInput.extend': {
+    description: 'Any additional style for MaskedInput.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'text.medium': {
+    description: 'The size of the text for the maskedInput.',
+    type: 'string',
+    defaultValue: '18px',
+  },
   ...themeDocUtils.focusStyle,
   ...themeDocUtils.placeholderStyle,
   ...themeDocUtils.inputStyle,
