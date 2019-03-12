@@ -199,12 +199,12 @@ undefined
 
 **clock.analog.hour.color**
 
-The color of the hour hand. Expects `string`.
+The color of the hour hand. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-dark: light-2, light: dark-3
+{ dark: light-2, light: dark-3 }
 ```
 
 **clock.analog.hour.shape**
@@ -239,12 +239,12 @@ Defaults to
 
 **clock.analog.minute.color**
 
-The border to use in the accordion. Expects `string`.
+The border to use in the accordion. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
 ```
-dark: light-4, light: dark-3
+{ dark: light-4, light: dark-3 }
 ```
 
 **clock.analog.minute.shape**
@@ -284,7 +284,7 @@ The color of the seconds hand Expects `string | { dark: string, light: string }`
 Defaults to
 
 ```
-dark: accent-1, light: accent-1
+{ dark: accent-1, light: accent-1 }
 ```
 
 **clock.analog.second.shape**
