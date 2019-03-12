@@ -299,7 +299,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       primary: {
         // color: { dark: undefined, light: undefined }
       },
-      disabled: undefined,
+      // disabled: { opacity: undefined },
       padding: {
         vertical: `${baseSpacing / 4 - borderWidth}px`,
         horizontal: `${baseSpacing - borderWidth}px`,
@@ -787,12 +787,12 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xxlarge: { ...fontSizing(4) },
     },
     textArea: {
-      extend: undefined,
-      disabled: undefined,
+      // extend: undefined,
+      // disabled: { opacity: undefined },
     },
     textInput: {
-      extend: undefined,
-      disabled: undefined,
+      // extend: undefined,
+      // disabled: { opacity: undefined },
     },
     video: {
       captions: {
