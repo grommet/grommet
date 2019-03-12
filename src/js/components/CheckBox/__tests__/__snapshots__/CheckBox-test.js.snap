@@ -99,9 +99,7 @@ exports[`CheckBox checked renders 1`] = `
 
 .c4 {
   opacity: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 0;
   height: 0;
   margin: 0;
   cursor: pointer;
@@ -317,9 +315,7 @@ exports[`CheckBox disabled renders 1`] = `
 
 .c4 {
   opacity: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 0;
   height: 0;
   margin: 0;
 }
@@ -553,9 +549,7 @@ exports[`CheckBox indeterminate renders 1`] = `
 
 .c4 {
   opacity: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 0;
   height: 0;
   margin: 0;
   cursor: pointer;
@@ -760,9 +754,7 @@ exports[`CheckBox label renders 1`] = `
 
 .c4 {
   opacity: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 0;
   height: 0;
   margin: 0;
   cursor: pointer;
@@ -948,9 +940,7 @@ exports[`CheckBox renders 1`] = `
 
 .c4 {
   opacity: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 0;
   height: 0;
   margin: 0;
   cursor: pointer;
@@ -1133,9 +1123,7 @@ exports[`CheckBox reverse renders 1`] = `
 
 .c4 {
   opacity: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 0;
   height: 0;
   margin: 0;
   cursor: pointer;
@@ -1271,9 +1259,7 @@ exports[`CheckBox toggle renders 1`] = `
 
 .c4 {
   opacity: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 0;
   height: 0;
   margin: 0;
   cursor: pointer;
