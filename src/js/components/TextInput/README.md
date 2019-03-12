@@ -269,6 +269,16 @@ Defaults to
 undefined
 ```
 
+**textInput.disabled.opacity**
+
+The opacity when the textInput is disabled. Expects `number`.
+
+Defaults to
+
+```
+0.3
+```
+
 **global.control.border**
 
 The border of the input. Expects `object`.
@@ -307,6 +317,16 @@ Defaults to
 
 ```
 #AAAAAA
+```
+
+**global.control.disabled.opacity**
+
+The opacity when a component is disabled. Expects `number`.
+
+Defaults to
+
+```
+0.3
 ```
 
 **global.input.weight**

@@ -155,6 +155,11 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'textInput.disabled.opacity': {
+    description: 'The opacity when the textInput is disabled.',
+    type: 'number',
+    defaultValue: 0.3,
+  },
   'global.control.border': {
     description: 'The border of the input.',
     type: 'object',
@@ -174,5 +179,6 @@ export const themeDoc = {
   },
   ...themeDocUtils.focusStyle,
   ...themeDocUtils.placeholderStyle,
+  ...themeDocUtils.disabledStyle,
   ...themeDocUtils.inputStyle,
 };

@@ -86,4 +86,11 @@ export const themeDocUtils = {
   }`,
     },
   }),
+  disabledStyle: {
+    'global.control.disabled.opacity': {
+      description: 'The opacity when a component is disabled.',
+      type: 'number',
+      defaultValue: 0.3,
+    },
+  },
 };

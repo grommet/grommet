@@ -170,4 +170,5 @@ export const themeDoc = {
     type: 'string | (props) => {}',
   },
   ...themeDocUtils.focusStyle,
+  ...themeDocUtils.disabledStyle,
 };

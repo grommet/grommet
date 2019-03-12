@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, inputStyle, placeholderStyle } from '../../utils';
+import {
+  disabledStyle,
+  focusStyle,
+  inputStyle,
+  placeholderStyle,
+} from '../../utils';
 import { defaultProps } from '../../default-props';
 
 const plainStyle = css`
@@ -28,6 +33,11 @@ const StyledTextArea = styled.textarea`
 
   ${props => props.fillArg && 'height: 100%;'}
   ${props => props.plain && plainStyle}
+  ${props =>
+    props.disabled &&
+    disabledStyle(
+      props.theme.textArea.disabled && props.theme.textArea.disabled.opacity,
+    )}
 
   ${placeholderStyle}
 

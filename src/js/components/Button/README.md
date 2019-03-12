@@ -426,3 +426,13 @@ Defaults to
 ```
 focus
 ```
+
+**global.control.disabled.opacity**
+
+The opacity when a component is disabled. Expects `number`.
+
+Defaults to
+
+```
+0.3
+```

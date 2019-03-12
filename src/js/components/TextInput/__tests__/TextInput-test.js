@@ -17,6 +17,11 @@ describe('TextInput', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('disabled', () => {
+    const { container } = render(<TextInput disabled name="item" />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('suggestions', done => {
     const onChange = jest.fn();
     const onFocus = jest.fn();
