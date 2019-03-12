@@ -391,6 +391,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     clock: {
       analog: {
+        // extend: undefined,
         hour: {
           color: {
             dark: 'light-2',

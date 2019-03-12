@@ -3059,6 +3059,16 @@ div,svg
 \`\`\`
 ## Theme
   
+**clock.analog.extend**
+
+Any additional style for Clock. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
 **clock.analog.hour.color**
 
 The color of the hour hand. Expects \`string\`.

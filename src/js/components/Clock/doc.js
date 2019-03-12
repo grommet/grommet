@@ -54,6 +54,11 @@ export const doc = Clock => {
 };
 
 export const themeDoc = {
+  'clock.analog.extend': {
+    description: 'Any additional style for Clock.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
   'clock.analog.hour.color': {
     description: 'The color of the hour hand.',
     type: 'string',
