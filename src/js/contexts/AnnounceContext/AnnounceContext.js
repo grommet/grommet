@@ -13,7 +13,7 @@ const createAnnouncer = () => {
 };
 
 export const AnnounceContext = React.createContext(
-  (message, mode = 'polite') => {
+  (message, mode = 'polite', timeout = 500) => {
     // we only create a new container if we don't have one already
     // we create a separate node so that grommet does not set aria-hidden to it
     const announcer =
@@ -24,6 +24,6 @@ export const AnnounceContext = React.createContext(
     announcer.setAttribute('aria-live', mode);
     setTimeout(() => {
       announcer.innerHTML = '';
-    }, 500);
+    }, timeout);
   },
 );
