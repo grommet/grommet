@@ -99,6 +99,7 @@ exports[`CheckBox checked renders 1`] = `
 
 .c4 {
   opacity: 0;
+  -moz-appearance: none;
   width: 0;
   height: 0;
   margin: 0;
@@ -315,6 +316,7 @@ exports[`CheckBox disabled renders 1`] = `
 
 .c4 {
   opacity: 0;
+  -moz-appearance: none;
   width: 0;
   height: 0;
   margin: 0;
@@ -549,6 +551,7 @@ exports[`CheckBox indeterminate renders 1`] = `
 
 .c4 {
   opacity: 0;
+  -moz-appearance: none;
   width: 0;
   height: 0;
   margin: 0;
@@ -754,6 +757,7 @@ exports[`CheckBox label renders 1`] = `
 
 .c4 {
   opacity: 0;
+  -moz-appearance: none;
   width: 0;
   height: 0;
   margin: 0;
@@ -940,6 +944,7 @@ exports[`CheckBox renders 1`] = `
 
 .c4 {
   opacity: 0;
+  -moz-appearance: none;
   width: 0;
   height: 0;
   margin: 0;
@@ -1123,6 +1128,7 @@ exports[`CheckBox reverse renders 1`] = `
 
 .c4 {
   opacity: 0;
+  -moz-appearance: none;
   width: 0;
   height: 0;
   margin: 0;
@@ -1259,6 +1265,7 @@ exports[`CheckBox toggle renders 1`] = `
 
 .c4 {
   opacity: 0;
+  -moz-appearance: none;
   width: 0;
   height: 0;
   margin: 0;

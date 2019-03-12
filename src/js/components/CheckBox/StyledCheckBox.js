@@ -47,6 +47,7 @@ Object.setPrototypeOf(StyledCheckBoxContainer.defaultProps, defaultProps);
 
 const StyledCheckBoxInput = styled.input`
   opacity: 0;
+  -moz-appearance: none;
   width: 0;
   height: 0;
   margin: 0;
