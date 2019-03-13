@@ -33,7 +33,7 @@ Object.setPrototypeOf(StyledRadioButtonContainer.defaultProps, _defaultProps.def
 var StyledRadioButtonInput = _styledComponents.default.input.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonInput",
   componentId: "g1f6ld-1"
-})(["position:absolute;opacity:0;top:0;left:0;width:100%;height:100%;margin:0;z-index:1;", ";"], function (props) {
+})(["opacity:0;-moz-appearance:none;width:0;height:0;margin:0;", ";"], function (props) {
   return !props.disabled && 'cursor: pointer;';
 });
 
@@ -44,7 +44,7 @@ Object.setPrototypeOf(StyledRadioButtonInput.defaultProps, _defaultProps.default
 var StyledRadioButtonIcon = _styledComponents.default.svg.withConfig({
   displayName: "StyledRadioButton__StyledRadioButtonIcon",
   componentId: "g1f6ld-2"
-})(["box-sizing:border-box;position:absolute;width:", ";height:", ";fill:", ";", ";"], function (props) {
+})(["box-sizing:border-box;width:", ";height:", ";fill:", ";", ";"], function (props) {
   return props.theme.radioButton.icon.size || props.theme.radioButton.size;
 }, function (props) {
   return props.theme.radioButton.icon.size || props.theme.radioButton.size;
@@ -74,7 +74,7 @@ Object.setPrototypeOf(StyledRadioButtonBox.defaultProps, _defaultProps.defaultPr
 var StyledRadioButton = _styledComponents.default.div.withConfig({
   displayName: "StyledRadioButton",
   componentId: "g1f6ld-4"
-})(["position:relative;", ";"], function (props) {
+})(["", ";"], function (props) {
   return props.theme.radioButton && props.theme.radioButton.extend;
 });
 

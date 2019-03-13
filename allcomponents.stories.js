@@ -90,7 +90,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "state", {
       baseSize: 24,
       checkBox: true,
-      radioButton: true,
+      radioButton: 'RadioButton 1',
       rangeSelector: [1, 2],
       themeName: 'grommet'
     });
@@ -158,13 +158,13 @@ function (_Component) {
           checkBox: event.target.checked
         });
       }
-    }), _react.default.createElement(_grommet.RadioButton, {
+    }), _react.default.createElement(_grommet.RadioButtonGroup, {
       name: "radio",
-      checked: radioButton,
-      label: "RadioButton",
+      options: ['RadioButton 1', 'RadioButton 2'],
+      value: radioButton,
       onChange: function onChange(event) {
         return _this2.setState({
-          radioButton: event.target.checked
+          radioButton: event.target.value
         });
       }
     }), _react.default.createElement(_grommet.TextInput, {

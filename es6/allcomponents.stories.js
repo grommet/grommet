@@ -10,7 +10,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Accordion, AccordionPanel, Anchor, Box, Button, Calendar, Chart, CheckBox, Clock, DataTable, Diagram, Distribution, FormField, Grid, Heading, Menu, Meter, Paragraph, RadioButton, RangeInput, RangeSelector, Select, Stack, Tab, Tabs, Text, TextArea, TextInput, Video } from 'grommet';
+import { Grommet, Accordion, AccordionPanel, Anchor, Box, Button, Calendar, Chart, CheckBox, Clock, DataTable, Diagram, Distribution, FormField, Grid, Heading, Menu, Meter, Paragraph, RadioButtonGroup, RangeInput, RangeSelector, Select, Stack, Tab, Tabs, Text, TextArea, TextInput, Video } from 'grommet';
 import { grommet, dark } from 'grommet/themes';
 import { generate } from 'grommet/themes/base';
 import { deepMerge } from 'grommet/utils';
@@ -76,7 +76,7 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "state", {
       baseSize: 24,
       checkBox: true,
-      radioButton: true,
+      radioButton: 'RadioButton 1',
       rangeSelector: [1, 2],
       themeName: 'grommet'
     });
@@ -144,13 +144,13 @@ function (_Component) {
           checkBox: event.target.checked
         });
       }
-    }), React.createElement(RadioButton, {
+    }), React.createElement(RadioButtonGroup, {
       name: "radio",
-      checked: radioButton,
-      label: "RadioButton",
+      options: ['RadioButton 1', 'RadioButton 2'],
+      value: radioButton,
       onChange: function onChange(event) {
         return _this2.setState({
-          radioButton: event.target.checked
+          radioButton: event.target.value
         });
       }
     }), React.createElement(TextInput, {
