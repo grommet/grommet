@@ -23,3 +23,35 @@ export var doc = function doc(Drop) {
   };
   return DocumentedDrop;
 };
+export var themeDoc = {
+  'drop.maxHeight': {
+    description: 'The max height of the Drop container',
+    type: 'string',
+    defaultValue: undefined
+  },
+  'global.drop.background': {
+    description: 'The background color of Drop',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: '#ffffff'
+  },
+  'global.drop.border.radius': {
+    description: 'The corner radius',
+    type: 'string',
+    defaultValue: '0px'
+  },
+  'global.drop.extend': {
+    description: 'Any additional style for Drop.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'global.drop.shadowSize': {
+    description: 'Elevated height of the Drop',
+    type: 'string',
+    defaultValue: 'small'
+  },
+  'global.drop.zIndex': {
+    description: 'The stack order of the Drop',
+    type: 'number',
+    defaultValue: 20
+  }
+};

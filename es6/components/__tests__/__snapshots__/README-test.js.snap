@@ -3769,7 +3769,69 @@ boolean
 
 \`\`\`
 div
-\`\`\`",
+\`\`\`
+## Theme
+  
+**drop.maxHeight**
+
+The max height of the Drop container Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.drop.background**
+
+The background color of Drop Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+#ffffff
+\`\`\`
+
+**global.drop.border.radius**
+
+The corner radius Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+0px
+\`\`\`
+
+**global.drop.extend**
+
+Any additional style for Drop. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**global.drop.shadowSize**
+
+Elevated height of the Drop Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+small
+\`\`\`
+
+**global.drop.zIndex**
+
+The stack order of the Drop Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+20
+\`\`\`
+",
   "DropButton": "## DropButton
 A Button that controls a Drop. When opened, the Drop will contain
       whatever is specified via \`dropContent\`. The Drop will control the focus

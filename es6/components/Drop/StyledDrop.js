@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
-import { baseStyle, backgroundStyle } from '../../utils';
+import { baseStyle } from '../../utils';
+import { backgroundStyle } from '../../utils/background';
 import { defaultProps } from '../../default-props';
 
 function getTransformOriginStyle(align) {

@@ -191,7 +191,6 @@ export var generate = function generate(baseSpacing, scale) {
       drop: {
         background: '#ffffff',
         border: {
-          width: '0px',
           radius: '0px'
         },
         shadowSize: 'small',
@@ -523,6 +522,7 @@ export var generate = function generate(baseSpacing, scale) {
       }
     },
     // drop: {
+    //   extend: undefined,
     //   maxHeight: undefined,
     // },
     formField: {
