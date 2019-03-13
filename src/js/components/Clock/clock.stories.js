@@ -11,7 +11,7 @@ const CustomThemeAnalogClock = {
         medium: '200px',
       },
       hour: {
-        width: '6px',
+        width: '8px',
         shape: 'square',
         color: 'accent-1',
         size: '30px',
@@ -24,6 +24,7 @@ const CustomThemeAnalogClock = {
       second: {
         width: '4px',
         color: 'brand',
+        size: '5px',
       },
     },
   },
