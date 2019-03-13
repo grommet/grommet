@@ -175,7 +175,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       drop: {
         background: '#ffffff',
         border: {
-          width: '0px',
           radius: '0px',
         },
         shadowSize: 'small',
@@ -476,6 +475,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     // drop: {
+    //   extend: undefined,
     //   maxHeight: undefined,
     // },
     formField: {
