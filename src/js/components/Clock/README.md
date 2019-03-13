@@ -239,7 +239,7 @@ Defaults to
 
 **clock.analog.minute.color**
 
-The border to use in the accordion. Expects `string | { dark: string, light: string }`.
+The color of the hour minute. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -249,7 +249,7 @@ Defaults to
 
 **clock.analog.minute.shape**
 
-The shape of the seconds hand. Expects `string`.
+The shape of the minute hand. Expects `string`.
 
 Defaults to
 
@@ -289,7 +289,7 @@ Defaults to
 
 **clock.analog.second.shape**
 
-The border to use in the accordion. Expects `string`.
+The shape of the seconds hand. Expects `string`.
 
 Defaults to
 

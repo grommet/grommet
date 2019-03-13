@@ -80,12 +80,12 @@ export const themeDoc = {
     defaultValue: '8px',
   },
   'clock.analog.minute.color': {
-    description: 'The border to use in the accordion.',
+    description: 'The color of the hour minute.',
     type: 'string | { dark: string, light: string }',
     defaultValue: '{ dark: light-4, light: dark-3 }',
   },
   'clock.analog.minute.shape': {
-    description: 'The shape of the seconds hand.',
+    description: 'The shape of the minute hand.',
     type: 'string',
     defaultValue: 'round',
   },
@@ -105,7 +105,7 @@ export const themeDoc = {
     defaultValue: '{ dark: accent-1, light: accent-1 }',
   },
   'clock.analog.second.shape': {
-    description: 'The border to use in the accordion.',
+    description: 'The shape of the seconds hand.',
     type: 'string',
     defaultValue: 'round',
   },
