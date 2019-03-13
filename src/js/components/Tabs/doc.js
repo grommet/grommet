@@ -57,7 +57,7 @@ export const themeDoc = {
     description: 'color of tabs border',
     type: 'string | { dark: string, light: string }',
     defaultValue:
-     '{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }'
+      '{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }',
   },
   'global.edgeSize.small': {
     description: 'the possible sizes for margin, pad and gap',
