@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import MobileDetect from 'mobile-detect';
 
 import { colorIsDark } from 'grommet-styles';
 
@@ -68,13 +67,21 @@ class GrommetImpl extends Component {
     const { userAgent } = this.props;
     const { theme } = this.state;
 
+    /*
+     * Regexes provided for mobile and tablet detection are meant to replace
+     * a full-featured specific library due to contributing a considerable size
+     * into the bundle.
+     *
+     * User agents found https://deviceatlas.com/blog/list-of-user-agent-strings
+     */
     if (userAgent) {
-      const md = new MobileDetect(userAgent);
-      if (md.phone()) {
-        return getDeviceBreakpoint('phone', theme);
-      }
-      if (md.tablet()) {
+      if (
+        /(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(userAgent)
+      ) {
         return getDeviceBreakpoint('tablet', theme);
+      }
+      if (/Mobile|iPhone|Android/.test(userAgent)) {
+        return getDeviceBreakpoint('phone', theme);
       }
       return getDeviceBreakpoint('computer', theme);
     }
