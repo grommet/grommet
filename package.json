@@ -52,7 +52,6 @@
     "grommet-styles": "^0.2.0",
     "hoist-non-react-statics": "^3.2.0",
     "markdown-to-jsx": "^6.9.1",
-    "mobile-detect": "^1.4.3",
     "polished": "^2.2.0",
     "prop-types": "^15.7.2",
     "react-desc": "^4.1.2",

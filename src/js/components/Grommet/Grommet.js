@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import MobileDetect from 'mobile-detect';
 
 import { colorIsDark } from 'grommet-styles';
 
@@ -69,11 +68,12 @@ class GrommetImpl extends Component {
     const { theme } = this.state;
 
     if (userAgent) {
-      const md = new MobileDetect(userAgent);
-      if (md.phone()) {
+      if (/Mobile|iPhone|Android|BlackBerry|IEMobile/.test(userAgent)) {
         return getDeviceBreakpoint('phone', theme);
       }
-      if (md.tablet()) {
+      if (
+        /(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.text(userAgent)
+      ) {
         return getDeviceBreakpoint('tablet', theme);
       }
       return getDeviceBreakpoint('computer', theme);
