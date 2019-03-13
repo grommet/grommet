@@ -103,7 +103,7 @@ undefined
 
 **text.medium**
 
-The size of the text for the maskedInput. Expects `string`.
+The size of the text for MaskedInput.. Expects `string`.
 
 Defaults to
 
