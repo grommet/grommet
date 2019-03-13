@@ -67,12 +67,19 @@ class GrommetImpl extends Component {
     const { userAgent } = this.props;
     const { theme } = this.state;
 
+    /*
+     * Regexes provided for mobile and tablet detection are meant to replace
+     * a full-featured specific library due to contributing a considerable size
+     * into the bundle.
+     *
+     * User agents found https://deviceatlas.com/blog/list-of-user-agent-strings
+     */
     if (userAgent) {
-      if (/Mobile|iPhone|Android|BlackBerry|IEMobile/.test(userAgent)) {
+      if (/Mobile|iPhone|Android/.test(userAgent)) {
         return getDeviceBreakpoint('phone', theme);
       }
       if (
-        /(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.text(userAgent)
+        /(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(userAgent)
       ) {
         return getDeviceBreakpoint('tablet', theme);
       }
