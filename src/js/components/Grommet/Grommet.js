@@ -75,13 +75,13 @@ class GrommetImpl extends Component {
      * User agents found https://deviceatlas.com/blog/list-of-user-agent-strings
      */
     if (userAgent) {
-      if (/Mobile|iPhone|Android/.test(userAgent)) {
-        return getDeviceBreakpoint('phone', theme);
-      }
       if (
         /(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(userAgent)
       ) {
         return getDeviceBreakpoint('tablet', theme);
+      }
+      if (/Mobile|iPhone|Android/.test(userAgent)) {
+        return getDeviceBreakpoint('phone', theme);
       }
       return getDeviceBreakpoint('computer', theme);
     }
