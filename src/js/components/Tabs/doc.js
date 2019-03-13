@@ -54,9 +54,10 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'global.colors.border': {
-    description: 'color of the border',
-    type: 'string',
-    defaultValue: undefined,
+    description: 'color of tabs border',
+    type: 'string | { dark: string, light: string }',
+    defaultValue:
+     '{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }'
   },
   'global.edgeSize.small': {
     description: 'the possible sizes for margin, pad and gap',

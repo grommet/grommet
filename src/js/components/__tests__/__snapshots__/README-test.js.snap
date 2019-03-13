@@ -8358,12 +8358,12 @@ undefined
 
 **global.colors.border**
 
-color of the border Expects \`string\`.
+color of tabs border Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
-undefined
+{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }
 \`\`\`
 
 **global.edgeSize.small**
