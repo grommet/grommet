@@ -21,7 +21,7 @@ import {
   Menu,
   Meter,
   Paragraph,
-  RadioButton,
+  RadioButtonGroup,
   RangeInput,
   RangeSelector,
   Select,
@@ -78,7 +78,7 @@ class Components extends Component {
   state = {
     baseSize: 24,
     checkBox: true,
-    radioButton: true,
+    radioButton: 'RadioButton 1',
     rangeSelector: [1, 2],
     themeName: 'grommet',
   };
@@ -126,13 +126,11 @@ class Components extends Component {
           label="CheckBox toggle"
           onChange={event => this.setState({ checkBox: event.target.checked })}
         />
-        <RadioButton
+        <RadioButtonGroup
           name="radio"
-          checked={radioButton}
-          label="RadioButton"
-          onChange={event =>
-            this.setState({ radioButton: event.target.checked })
-          }
+          options={['RadioButton 1', 'RadioButton 2']}
+          value={radioButton}
+          onChange={event => this.setState({ radioButton: event.target.value })}
         />
         <TextInput placeholder="TextInput" />
         <TextArea placeholder="TextArea" />
