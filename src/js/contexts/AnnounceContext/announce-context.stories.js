@@ -2,35 +2,32 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { grommet } from 'grommet/themes';
-import { Box, Grommet, Text, AnnounceContext } from 'grommet';
+import { AnnounceContext, Box, Grommet, Heading, Text } from 'grommet';
 
 class Announcer extends Component {
   static propTypes = {
     announce: PropTypes.func.isRequired,
+    message: PropTypes.string,
+    mode: PropTypes.string,
+    role: PropTypes.string,
   };
-
-  constructor(props) {
-    super(props);
-    const { message, role, politenessSetting } = this.props;
-    this.state = {
-      message:
-        message || 'Here is a simple announcement. This will soon disappear',
-      politenessSetting: politenessSetting || 'polite',
-      role: role || 'log',
-    };
+  
+  static defaultProps = {
+    message: 'Here is a simple announcement. This will soon disappear',
+      mode: 'polite',
+      role: 'log',
   }
 
   componentDidMount() {
-    const { announce } = this.props;
-    const { message, politenessSetting } = this.state;
+    const { announce, message, mode } = this.props;
     const timeout = 3000;
-    announce(message, politenessSetting, timeout);
+    announce(message, mode, timeout);
   }
 
   render() {
-    const { message, politenessSetting, role } = this.state;
+    const { message, mode, role } = this.props;
     return (
-      <Text align="center" role={role} aria-live={politenessSetting}>
+      <Text align="center" role={role} aria-live={mode}>
         {message}
       </Text>
     );
@@ -42,12 +39,10 @@ const AnnounceContextComponent = props => (
     <Box
       justify="center"
       align="center"
-      pad="xlarge"
-      background="linear-gradient(102.77deg, #865ED6 -9.18%, #18BAB9 209.09%)"
-      round="large"
+      background="brand"
       fill
     >
-      <Text color="white">Welcome to announcement section</Text>
+      <Heading>Welcome to announcement section</Heading>
       <AnnounceContext.Consumer>
         {announce => <Announcer announce={announce} {...props} />}
       </AnnounceContext.Consumer>
@@ -59,8 +54,8 @@ storiesOf('AnnounceContext', module)
   .add('Polite', () => <AnnounceContextComponent />)
   .add('Assertive', () => (
     <AnnounceContextComponent
-      politenessSetting="assertive"
-      role="alert"
       message="Turn on Accessibility feature to listen to this announcement. This will soon disappear"
+      mode="assertive"
+      role="alert"
     />
   ));
