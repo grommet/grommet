@@ -11,11 +11,11 @@ class Announcer extends Component {
     mode: PropTypes.string,
     role: PropTypes.string,
   };
-  
+
   static defaultProps = {
     message: 'Here is a simple announcement. This will soon disappear',
-      mode: 'polite',
-      role: 'log',
+    mode: 'polite',
+    role: 'log',
   }
 
   componentDidMount() {

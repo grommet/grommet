@@ -16,7 +16,8 @@ export const doc = AnnounceContext => {
       can be called when something should be announced. 
       'announce' function accepts 'message', 'mode' and 'timeout' as arguments
       and these arguments can be passed as 'props' to the return component.
-      Example:  {announce => <Announcer announce={announce} {...props} />}
+      possible values for 'mode' 
+      Example:  {announce => <Button onClick={() => announce("Button was clicked", "polite", 1000)}
       `,
     ),
   };
