@@ -35,6 +35,6 @@ const SkipLinkComponent = () => (
   </Grommet>
 );
 
-storiesOf('SkipLinks', module).add('Simple Skip Link', () => (
+storiesOf('SkipLink', module).add('Simple Skip Link', () => (
   <SkipLinkComponent />
 ));
