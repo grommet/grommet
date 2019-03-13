@@ -7,8 +7,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = require("styled-components");
 
-var _mobileDetect = _interopRequireDefault(require("mobile-detect"));
-
 var _grommetStyles = require("grommet-styles");
 
 var _contexts = require("../../contexts");
@@ -20,8 +18,6 @@ var _themes = require("../../themes");
 var _hocs = require("../hocs");
 
 var _StyledGrommet = require("./StyledGrommet");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -121,16 +117,21 @@ function (_Component) {
   _proto.deviceResponsive = function deviceResponsive() {
     var userAgent = this.props.userAgent;
     var theme = this.state.theme;
+    /*
+     * Regexes provided for mobile and tablet detection are meant to replace
+     * a full-featured specific library due to contributing a considerable size
+     * into the bundle.
+     *
+     * User agents found https://deviceatlas.com/blog/list-of-user-agent-strings
+     */
 
     if (userAgent) {
-      var md = new _mobileDetect.default(userAgent);
-
-      if (md.phone()) {
-        return (0, _utils.getDeviceBreakpoint)('phone', theme);
+      if (/(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(userAgent)) {
+        return (0, _utils.getDeviceBreakpoint)('tablet', theme);
       }
 
-      if (md.tablet()) {
-        return (0, _utils.getDeviceBreakpoint)('tablet', theme);
+      if (/Mobile|iPhone|Android/.test(userAgent)) {
+        return (0, _utils.getDeviceBreakpoint)('phone', theme);
       }
 
       return (0, _utils.getDeviceBreakpoint)('computer', theme);

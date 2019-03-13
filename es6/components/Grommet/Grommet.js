@@ -22,7 +22,6 @@ function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.s
 
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import MobileDetect from 'mobile-detect';
 import { colorIsDark } from 'grommet-styles';
 import { ResponsiveContext, ThemeContext } from '../../contexts';
 import { deepMerge, getBreakpoint, getDeviceBreakpoint } from '../../utils';
@@ -103,16 +102,21 @@ function (_Component) {
   _proto.deviceResponsive = function deviceResponsive() {
     var userAgent = this.props.userAgent;
     var theme = this.state.theme;
+    /*
+     * Regexes provided for mobile and tablet detection are meant to replace
+     * a full-featured specific library due to contributing a considerable size
+     * into the bundle.
+     *
+     * User agents found https://deviceatlas.com/blog/list-of-user-agent-strings
+     */
 
     if (userAgent) {
-      var md = new MobileDetect(userAgent);
-
-      if (md.phone()) {
-        return getDeviceBreakpoint('phone', theme);
+      if (/(tablet|ipad|playbook|silk)|(android(?!.*mobile))/i.test(userAgent)) {
+        return getDeviceBreakpoint('tablet', theme);
       }
 
-      if (md.tablet()) {
-        return getDeviceBreakpoint('tablet', theme);
+      if (/Mobile|iPhone|Android/.test(userAgent)) {
+        return getDeviceBreakpoint('phone', theme);
       }
 
       return getDeviceBreakpoint('computer', theme);
