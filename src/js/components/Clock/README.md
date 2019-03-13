@@ -185,3 +185,144 @@ digital
 ```
 div,svg
 ```
+## Theme
+  
+**clock.analog.extend**
+
+Any additional style for Clock. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**clock.analog.hour.color**
+
+The color of the hour hand. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: light-2, light: dark-3 }
+```
+
+**clock.analog.hour.shape**
+
+The shape of the hour hand Expects `string`.
+
+Defaults to
+
+```
+round
+```
+
+**clock.analog.hour.size**
+
+The length of the hour hand. Expects `string`.
+
+Defaults to
+
+```
+24px
+```
+
+**clock.analog.hour.width**
+
+The thickness of the hour hand Expects `string`.
+
+Defaults to
+
+```
+8px
+```
+
+**clock.analog.minute.color**
+
+The color of the hour minute. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: light-4, light: dark-3 }
+```
+
+**clock.analog.minute.shape**
+
+The shape of the minute hand. Expects `string`.
+
+Defaults to
+
+```
+round
+```
+
+**clock.analog.minute.size**
+
+The length of the minute hand. Expects `string`.
+
+Defaults to
+
+```
+12px
+```
+
+**clock.analog.minute.width**
+
+The thickness of the minute hand. Expects `string`.
+
+Defaults to
+
+```
+4px
+```
+
+**clock.analog.second.color**
+
+The color of the seconds hand Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: accent-1, light: accent-1 }
+```
+
+**clock.analog.second.shape**
+
+The shape of the seconds hand. Expects `string`.
+
+Defaults to
+
+```
+round
+```
+
+**clock.analog.second.size**
+
+The length of the seconds hand. Expects `string`.
+
+Defaults to
+
+```
+10px
+```
+
+**clock.analog.second.width**
+
+The thickness of the seconds hand. Expects `string`.
+
+Defaults to
+
+```
+3px
+```
+
+**clock.analog.size.medium**
+
+The whole size of the Analog clock Expects `string`.
+
+Defaults to
+
+```
+96px
+```
