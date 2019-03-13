@@ -414,6 +414,7 @@ export var generate = function generate(baseSpacing, scale) {
     },
     clock: {
       analog: {
+        // extend: undefined,
         hour: {
           color: {
             dark: 'light-2',

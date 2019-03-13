@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.doc = void 0;
+exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -24,3 +24,76 @@ var doc = function doc(Clock) {
 };
 
 exports.doc = doc;
+var themeDoc = {
+  'clock.analog.extend': {
+    description: 'Any additional style for Clock.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'clock.analog.hour.color': {
+    description: 'The color of the hour hand.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: '{ dark: light-2, light: dark-3 }'
+  },
+  'clock.analog.hour.shape': {
+    description: 'The shape of the hour hand',
+    type: 'string',
+    defaultValue: 'round'
+  },
+  'clock.analog.hour.size': {
+    description: 'The length of the hour hand.',
+    type: 'string',
+    defaultValue: '24px'
+  },
+  'clock.analog.hour.width': {
+    description: 'The thickness of the hour hand',
+    type: 'string',
+    defaultValue: '8px'
+  },
+  'clock.analog.minute.color': {
+    description: 'The color of the hour minute.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: '{ dark: light-4, light: dark-3 }'
+  },
+  'clock.analog.minute.shape': {
+    description: 'The shape of the minute hand.',
+    type: 'string',
+    defaultValue: 'round'
+  },
+  'clock.analog.minute.size': {
+    description: 'The length of the minute hand.',
+    type: 'string',
+    defaultValue: '12px'
+  },
+  'clock.analog.minute.width': {
+    description: 'The thickness of the minute hand.',
+    type: 'string',
+    defaultValue: '4px'
+  },
+  'clock.analog.second.color': {
+    description: 'The color of the seconds hand',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: '{ dark: accent-1, light: accent-1 }'
+  },
+  'clock.analog.second.shape': {
+    description: 'The shape of the seconds hand.',
+    type: 'string',
+    defaultValue: 'round'
+  },
+  'clock.analog.second.size': {
+    description: 'The length of the seconds hand.',
+    type: 'string',
+    defaultValue: '10px'
+  },
+  'clock.analog.second.width': {
+    description: 'The thickness of the seconds hand.',
+    type: 'string',
+    defaultValue: '3px'
+  },
+  'clock.analog.size.medium': {
+    description: 'The whole size of the Analog clock',
+    type: 'string',
+    defaultValue: '96px'
+  }
+};
+exports.themeDoc = themeDoc;
