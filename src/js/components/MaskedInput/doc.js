@@ -56,7 +56,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'text.medium': {
-    description: 'The size of the text for MaskedInput..',
+    description: 'The size of the text for MaskedInput.',
     type: 'string',
     defaultValue: '18px',
   },
