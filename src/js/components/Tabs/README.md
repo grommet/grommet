@@ -178,7 +178,7 @@ div
   
 **global.borderSize**
 
-The size of the border Expects `string`.
+The size of the border. Expects `string`.
 
 Defaults to
 
@@ -194,7 +194,7 @@ Defaults to
 
 **global.colors.border**
 
-color of tabs border Expects `string | { dark: string, light: string }`.
+The color of tabs border. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -204,7 +204,7 @@ Defaults to
 
 **global.edgeSize.small**
 
-the possible sizes for margin, pad and gap Expects `string`.
+The possible sizes for margin, pad and gap Expects `string`.
 
 Defaults to
 

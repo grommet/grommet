@@ -49,7 +49,7 @@ currently active tab changes.`,
 
 export const themeDoc = {
   'global.borderSize': {
-    description: 'The size of the border',
+    description: 'The size of the border.',
     type: 'string',
     defaultValue: `{
       xsmall: '1px',
@@ -60,13 +60,13 @@ export const themeDoc = {
     }`,
   },
   'global.colors.border': {
-    description: 'color of tabs border',
+    description: 'The color of tabs border.',
     type: 'string | { dark: string, light: string }',
     defaultValue:
       '{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }',
   },
   'global.edgeSize.small': {
-    description: 'the possible sizes for margin, pad and gap',
+    description: 'The possible sizes for margin, pad and gap',
     type: 'string',
     defaultValue: '6px',
   },
