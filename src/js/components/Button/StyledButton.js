@@ -125,7 +125,7 @@ const StyledButton = styled.button`
     line-height: 0;
   `}
 ${props =>
-  !props.plain &&
+  props.pad &&
   props.hasIcon &&
   !props.hasLabel &&
   `

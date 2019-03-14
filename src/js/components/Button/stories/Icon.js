@@ -8,7 +8,7 @@ import { grommet } from 'grommet/themes';
 const IconPlain = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <Text margin="small"> plain </Text>
+      <Text margin="small"> plain=true (no padding, no border) </Text>
       <Box direction="row">
         <Button plain icon={<Close />} onClick={() => {}} primary />
         <Button plain icon={<Send />} onClick={() => {}} />
@@ -16,7 +16,7 @@ const IconPlain = () => (
       </Box>
     </Box>
     <Box align="center" pad="large">
-      <Text margin="small"> plain=false </Text>
+      <Text margin="small"> plain=false (includes padding and border)</Text>
       <Box direction="row">
         <Button plain={false} icon={<Close />} onClick={() => {}} primary />
         <Button plain={false} icon={<Send />} onClick={() => {}} />
@@ -24,7 +24,7 @@ const IconPlain = () => (
       </Box>
     </Box>
     <Box align="center" pad="large">
-      <Text margin="small"> plain=undefined </Text>
+      <Text margin="small"> plain=undefined (with padding, no border) </Text>
       <Box direction="row">
         <Button icon={<Close />} onClick={() => {}} primary />
         <Button icon={<Send />} onClick={() => {}} />

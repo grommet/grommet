@@ -130,6 +130,7 @@ class Button extends Component {
         onClick={onClick}
         onMouseOver={this.onMouseOver}
         onMouseOut={this.onMouseOut}
+        pad={!plain}
         plain={
           typeof plain !== 'undefined'
             ? plain
