@@ -15,7 +15,7 @@ export var baseStyle = css(["font-family:", ";font-size:", ";line-height:", ";fo
 export var controlBorderStyle = css(["border:", " solid ", ";border-radius:", ";"], function (props) {
   return props.theme.global.control.border.width;
 }, function (props) {
-  return normalizeColor('border', props.theme);
+  return normalizeColor(props.theme.global.control.border.color || 'border', props.theme);
 }, function (props) {
   return props.theme.global.control.border.radius;
 });

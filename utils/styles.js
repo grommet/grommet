@@ -24,7 +24,7 @@ exports.baseStyle = baseStyle;
 var controlBorderStyle = (0, _styledComponents.css)(["border:", " solid ", ";border-radius:", ";"], function (props) {
   return props.theme.global.control.border.width;
 }, function (props) {
-  return (0, _colors.normalizeColor)('border', props.theme);
+  return (0, _colors.normalizeColor)(props.theme.global.control.border.color || 'border', props.theme);
 }, function (props) {
   return props.theme.global.control.border.radius;
 });
