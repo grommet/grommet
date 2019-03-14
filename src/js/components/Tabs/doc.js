@@ -66,7 +66,7 @@ export const themeDoc = {
       '{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }',
   },
   'global.edgeSize.small': {
-    description: 'The possible sizes for margin, pad and gap',
+    description: 'The possible sizes for margin, pad and gap.',
     type: 'string',
     defaultValue: '6px',
   },

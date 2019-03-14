@@ -204,7 +204,7 @@ Defaults to
 
 **global.edgeSize.small**
 
-The possible sizes for margin, pad and gap Expects `string`.
+The possible sizes for margin, pad and gap. Expects `string`.
 
 Defaults to
 
