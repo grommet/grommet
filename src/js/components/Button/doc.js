@@ -67,7 +67,7 @@ causes the Button to be disabled.`,
     ),
     plain: PropTypes.bool
       .description(
-        'Whether this is a plain button with no border or padding. Defaults to false unless the icon prop exists without a label, or the Button has children.',
+        'Whether this is a plain button with no border or pad. non plain button will show both padd and border. plain button has no border, and unless the icon prop exist it has no pad as well.',
       )
       .defaultValue(false),
     primary: PropTypes.bool
