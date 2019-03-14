@@ -72,16 +72,6 @@ export const doc = RangeSelector => {
 };
 
 export const themeDoc = {
-  'global.colors.focus': {
-    description: 'TThe color when there is a focus',
-    type: 'string',
-    defaultValue: 'accent-1',
-  },
-  'global.edgeSize.small': {
-    description: 'The possible sizes for the margin, padding and gap',
-    type: 'string',
-    defaultValue: '6px',
-  },
   'global.borderSize': {
     description: 'The size of the border',
     type: 'string',
@@ -95,7 +85,7 @@ export const themeDoc = {
   },
   'global.colors.border': {
     description: 'The color for the border',
-    type: 'string',
+    type: 'string | { dark: string, light: string }',
     defaultValue: {
       dark: 'rgba(255, 255, 255, 0.33)',
       light: 'rgba(0, 0, 0, 0.33)',
@@ -103,13 +93,18 @@ export const themeDoc = {
   },
   'global.colors.control': {
     description: 'The color for the edge controls',
-    type: 'string | { dark: undefined, light: undefined }',
+    type: 'string | { dark: string, light: string }',
     defaultValue: '{dark: accent-1, light: brand}',
   },
-  'global.spacing': {
-    description: 'The size of the edge controls thumb.',
+  'global.colors.focus': {
+    description: 'The color of the focus',
     type: 'string',
-    defaultValue: '24px',
+    defaultValue: 'accent-1',
+  },
+  'global.edgeSize.small': {
+    description: 'The possible sizes for the margin, padding and gap',
+    type: 'string',
+    defaultValue: '6px',
   },
   'rangeSelector.background.invert.color': {
     description: 'The background color on an invert display',
@@ -120,5 +115,10 @@ export const themeDoc = {
     description: 'The edge style type',
     type: 'string',
     defaultValue: undefined,
+  },
+  'global.spacing': {
+    description: 'The size of the edge controls thumb.',
+    type: 'string',
+    defaultValue: '24px',
   },
 };

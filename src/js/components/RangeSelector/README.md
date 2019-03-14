@@ -141,26 +141,6 @@ div
 ```
 ## Theme
   
-**global.colors.focus**
-
-TThe color when there is a focus Expects `string`.
-
-Defaults to
-
-```
-accent-1
-```
-
-**global.edgeSize.small**
-
-The possible sizes for the margin, padding and gap Expects `string`.
-
-Defaults to
-
-```
-6px
-```
-
 **global.borderSize**
 
 The size of the border Expects `string`.
@@ -179,7 +159,7 @@ Defaults to
 
 **global.colors.border**
 
-The color for the border Expects `string`.
+The color for the border Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -189,7 +169,7 @@ Defaults to
 
 **global.colors.control**
 
-The color for the edge controls Expects `string | { dark: undefined, light: undefined }`.
+The color for the edge controls Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -197,14 +177,24 @@ Defaults to
 {dark: accent-1, light: brand}
 ```
 
-**global.spacing**
+**global.colors.focus**
 
-The size of the edge controls thumb. Expects `string`.
+The color of the focus Expects `string`.
 
 Defaults to
 
 ```
-24px
+accent-1
+```
+
+**global.edgeSize.small**
+
+The possible sizes for the margin, padding and gap Expects `string`.
+
+Defaults to
+
+```
+6px
 ```
 
 **rangeSelector.background.invert.color**
@@ -225,4 +215,14 @@ Defaults to
 
 ```
 undefined
+```
+
+**global.spacing**
+
+The size of the edge controls thumb. Expects `string`.
+
+Defaults to
+
+```
+24px
 ```
