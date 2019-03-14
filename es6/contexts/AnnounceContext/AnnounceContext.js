@@ -10,9 +10,13 @@ var createAnnouncer = function createAnnouncer() {
   return announcer;
 };
 
-export var AnnounceContext = React.createContext(function (message, mode) {
+export var AnnounceContext = React.createContext(function (message, mode, timeout) {
   if (mode === void 0) {
     mode = 'polite';
+  }
+
+  if (timeout === void 0) {
+    timeout = 500;
   }
 
   // we only create a new container if we don't have one already
@@ -23,5 +27,5 @@ export var AnnounceContext = React.createContext(function (message, mode) {
   announcer.setAttribute('aria-live', mode);
   setTimeout(function () {
     announcer.innerHTML = '';
-  }, 500);
+  }, timeout);
 });
