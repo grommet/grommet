@@ -50,8 +50,14 @@ currently active tab changes.`,
 export const themeDoc = {
   'global.borderSize': {
     description: 'The size of the border',
-    type: 'object',
-    defaultValue: undefined,
+    type: 'string',
+    defaultValue: `{
+      xsmall: '1px',
+      small: '2px',
+      medium: '4px',
+      large: '12px',
+      xlarge: '24px,
+    }`,
   },
   'global.colors.border': {
     description: 'color of tabs border',

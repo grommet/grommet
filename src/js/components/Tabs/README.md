@@ -178,12 +178,18 @@ div
   
 **global.borderSize**
 
-The size of the border Expects `object`.
+The size of the border Expects `string`.
 
 Defaults to
 
 ```
-undefined
+{
+      xsmall: '1px',
+      small: '2px',
+      medium: '4px',
+      large: '12px',
+      xlarge: '24px,
+    }
 ```
 
 **global.colors.border**
