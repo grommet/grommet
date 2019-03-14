@@ -58,7 +58,7 @@ jobs:
           at: ~/grommet-ci
       - run:
           name: size
-          command: yarn bundlesize
+          command: yarn test-bundlesize
   release:
     <<: *defaults
     steps:
