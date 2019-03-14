@@ -289,9 +289,19 @@ Defaults to
 4px
 ```
 
+**global.control.border.color**
+
+The border color. Expects `string`.
+
+Defaults to
+
+```
+border
+```
+
 **global.colors.border**
 
-The color of the borders Expects `object`.
+The color of the border Expects `object`.
 
 Defaults to
 

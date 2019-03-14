@@ -59,13 +59,13 @@ export const themeDoc = {
     type: 'string',
     defaultValue: '4px',
   },
-  /*   'global.control.border.color': {
-    description: 'The border radius.',
+  'global.control.border.color': {
+    description: 'The border color.',
     type: 'string',
     defaultValue: 'border',
-  }, */
+  },
   'global.colors.border': {
-    description: 'The color of the borders',
+    description: 'The color of the border',
     type: 'object',
     defaultValue: {
       dark: 'rgba(255, 255, 255, 0.33)',
