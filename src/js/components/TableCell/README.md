@@ -69,7 +69,7 @@ td
   
 **table.body.align**
 
- Expects ``.
+How to align the body inside the Table. Expects `string`.
 
 Defaults to
 
@@ -79,7 +79,7 @@ start
 
 **table.body.border**
 
- Expects ``.
+The border side of the body. Expects `string`.
 
 Defaults to
 
@@ -89,7 +89,7 @@ undefined
 
 **table.body.extend**
 
- Expects ``.
+Any additional style for Table body. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -99,27 +99,27 @@ undefined
 
 **table.body.pad**
 
- Expects ``.
+The padding of the body. Expects `string | object`.
 
 Defaults to
 
 ```
-{ horizontal: small, vertical: xsmall }
+{ horizontal: 'small', vertical: 'xsmall' }
 ```
 
 **table.footer.align**
 
-start Expects ``.
+How to align the footer inside the Table. Expects `string`.
 
 Defaults to
 
 ```
-undefined
+start
 ```
 
 **table.footer.border**
 
- Expects ``.
+The border side of the footer. Expects `string`.
 
 Defaults to
 
@@ -129,7 +129,7 @@ top
 
 **table.footer.extend**
 
- Expects ``.
+Any additional style for Table footer. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -139,7 +139,7 @@ undefined
 
 **table.footer.fill**
 
- Expects ``.
+Whether the height should fill the footer. Expects `string`.
 
 Defaults to
 
@@ -149,17 +149,17 @@ vertical
 
 **table.footer.pad**
 
- Expects ``.
+The padding of the footer. Expects `string | object`.
 
 Defaults to
 
 ```
-{ horizontal: small, vertical: xsmall }
+{ horizontal: 'small', vertical: 'xsmall' }
 ```
 
 **table.footer.verticalAlign**
 
-How to align the contents vertically. Expects ``.
+How to align the content vertically. Expects `string`.
 
 Defaults to
 
@@ -169,7 +169,7 @@ top
 
 **table.header.align**
 
- Expects ``.
+How to align the header inside the Table. Expects `string`.
 
 Defaults to
 
@@ -179,7 +179,7 @@ start
 
 **table.header.background**
 
- Expects ``.
+The background color of the header. Expects `string | object`.
 
 Defaults to
 
@@ -189,7 +189,7 @@ undefined
 
 **table.header.border**
 
- Expects ``.
+The border side of the header. Expects `string`.
 
 Defaults to
 
@@ -199,7 +199,7 @@ bottom
 
 **table.header.fill**
 
- Expects ``.
+Whether the height should fill the header. Expects `string`.
 
 Defaults to
 
@@ -209,7 +209,7 @@ vertical
 
 **table.header.extend**
 
- Expects ``.
+Any additional style for Table header. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -219,17 +219,17 @@ undefined
 
 **table.header.pad**
 
- Expects ``.
+The padding of the header. Expects `string | object`.
 
 Defaults to
 
 ```
-{ horizontal: small, vertical: xsmall }
+{ horizontal: 'small', vertical: 'xsmall' }
 ```
 
 **table.header.verticalAlign**
 
- Expects ``.
+How to align the content vertically. Expects `string`.
 
 Defaults to
 

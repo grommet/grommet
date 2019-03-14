@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
 import { genericProps, getAvailableAtBadge } from '../../utils';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Table => {
   const DocumentedTable = describe(Table)
@@ -21,14 +22,11 @@ export const doc = Table => {
 };
 
 export const themeDoc = {
-  'table.extend': {
-    description: 'Any additional style for Table.',
-    type: 'string | (props) => {}',
-    defaultValue: undefined,
-  },
+  ...themeDocUtils.responsiveBreakpoint(
+    'The actual breakpoint to trigger changes in Table.',
+  ),
   'global.size': {
-    description:
-      'The size style that will impcat max-width and width of the table',
+    description: 'The size that impacts max-width and width.',
     defaultValue: `{
       xxsmall: '48px',
       xsmall: '96px',
@@ -39,5 +37,10 @@ export const themeDoc = {
       xxlarge: '1536px',
       full: '100%',
       }`,
+  },
+  'table.extend': {
+    description: 'Any additional style for Table.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
   },
 };

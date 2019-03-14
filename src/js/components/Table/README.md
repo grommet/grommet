@@ -122,19 +122,19 @@ table
 ```
 ## Theme
   
-**table.extend**
+**global.edgeSize.responsiveBreakpoint**
 
-Any additional style for Table. Expects `string | (props) => {}`.
+The actual breakpoint to trigger changes in Table. Expects `string`.
 
 Defaults to
 
 ```
-undefined
+small
 ```
 
 **global.size**
 
-The size style that will impcat max-width and width of the table Expects `undefined`.
+The size that impacts max-width and width. Expects `undefined`.
 
 Defaults to
 
@@ -149,4 +149,14 @@ Defaults to
       xxlarge: '1536px',
       full: '100%',
       }
+```
+
+**table.extend**
+
+Any additional style for Table. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
 ```

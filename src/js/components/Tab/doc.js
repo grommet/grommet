@@ -84,7 +84,7 @@ export const themeDoc = {
   },
   'tab.pad': {
     description: 'The pad of Tab.',
-    type: 'object',
+    type: 'string | object',
     defaultValue: "{ bottom: 'xsmall' }",
   },
 };

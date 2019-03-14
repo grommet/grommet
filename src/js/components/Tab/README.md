@@ -136,7 +136,7 @@ Defaults to
 
 **tab.pad**
 
-The pad of Tab. Expects `object`.
+The pad of Tab. Expects `string | object`.
 
 Defaults to
 
