@@ -31,6 +31,17 @@ var doc = function doc(MaskedInput) {
 
 exports.doc = doc;
 
-var themeDoc = _extends({}, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.placeholderStyle, _utils.themeDocUtils.inputStyle);
+var themeDoc = _extends({
+  'maskedInput.extend': {
+    description: 'Any additional style for MaskedInput.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'text.medium': {
+    description: 'The size of the text for MaskedInput.',
+    type: 'string',
+    defaultValue: '18px'
+  }
+}, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.placeholderStyle, _utils.themeDocUtils.inputStyle);
 
 exports.themeDoc = themeDoc;

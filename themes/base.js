@@ -678,6 +678,8 @@ var generate = function generate(baseSpacing, scale) {
       // when Layer takes over the full screen
       zIndex: '10'
     },
+    maskedInput: {// extend: undefined,
+    },
     menu: {
       // background: undefined,
       // extend: undefined,
