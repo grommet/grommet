@@ -26,6 +26,7 @@ const ContainerBox = styled(Box)`
 class Menu extends Component {
   static defaultProps = {
     dropAlign: { top: 'top', left: 'left' },
+    dropProps: {},
     items: [],
     messages: { openMenu: 'Open Menu', closeMenu: 'Close Menu' },
     justifyContent: 'start',
@@ -94,6 +95,7 @@ class Menu extends Component {
       disabled,
       dropAlign,
       dropBackground,
+      dropProps,
       dropTarget,
       forwardRef,
       justifyContent,
@@ -143,6 +145,8 @@ class Menu extends Component {
       </Box>
     );
 
+    const align = dropProps.align || dropAlign;
+
     return (
       <Keyboard
         onEnter={this.onSelectMenuItem}
@@ -158,7 +162,7 @@ class Menu extends Component {
           {...rest}
           a11yTitle={messages.openMenu || 'Open Menu'}
           disabled={disabled}
-          dropAlign={dropAlign}
+          dropAlign={align}
           dropTarget={dropTarget}
           plain={plain}
           open={open}
@@ -166,7 +170,7 @@ class Menu extends Component {
           onClose={() => this.setState({ open: false })}
           dropContent={
             <ContainerBox background={dropBackground || theme.menu.background}>
-              {dropAlign.top === 'top' ? controlMirror : undefined}
+              {align.top === 'top' ? controlMirror : undefined}
               <Box overflow="auto">
                 {items.map((item, index) => (
                   // eslint-disable-next-line react/no-array-index-key
@@ -194,7 +198,7 @@ class Menu extends Component {
                   </Box>
                 ))}
               </Box>
-              {dropAlign.bottom === 'bottom' ? controlMirror : undefined}
+              {align.bottom === 'bottom' ? controlMirror : undefined}
             </ContainerBox>
           }
         >

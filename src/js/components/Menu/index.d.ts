@@ -1,4 +1,5 @@
 import * as React from "react";
+import { DropProps } from "../Drop";
 
 export interface MenuProps {
   a11yTitle?: string;
@@ -9,6 +10,7 @@ export interface MenuProps {
   dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",left?: "right" | "left",right?: "right" | "left"};
   dropBackground?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean};
   dropTarget?: object;
+  dropProps: DropProps;
   justifyContent?: "start" | "center" | "end" | "between" | "around" | "stretch";
   icon?: boolean | React.ReactNode;
   items: object[];

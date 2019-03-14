@@ -65,6 +65,7 @@ class SimpleSelect extends Component {
             value={value}
             options={options}
             onChange={({ option }) => this.setState({ value: option })}
+            dropProps={{ align: { top: 'top', left: 'right' } }}
             {...rest}
           />
         </Box>

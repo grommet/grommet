@@ -1,6 +1,16 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { OVERFLOW_VALUES } from '../Box/doc';
 import { getAvailableAtBadge } from '../../utils';
+
+const dropOverflowPropTypes = PropTypes.oneOfType([
+  PropTypes.oneOf(OVERFLOW_VALUES),
+  PropTypes.shape({
+    horizontal: PropTypes.oneOf(OVERFLOW_VALUES),
+    vertical: PropTypes.oneOf(OVERFLOW_VALUES),
+  }),
+  PropTypes.string,
+]);
 
 export const doc = Drop => {
   const DocumentedDrop = describe(Drop)
@@ -33,6 +43,9 @@ export const doc = Drop => {
     onEsc: PropTypes.func.description(
       'Function that will be called when the user presses the escape key inside the drop.',
     ),
+    overflow: dropOverflowPropTypes
+      .description('How to control the overflow inside the drop.')
+      .defaultValue('auto'),
     responsive: PropTypes.bool
       .description('Whether to dynamically re-place when resized.')
       .defaultValue(true),

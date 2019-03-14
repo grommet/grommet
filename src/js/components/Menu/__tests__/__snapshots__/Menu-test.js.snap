@@ -334,6 +334,7 @@ exports[`Menu close by clicking outside 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -479,7 +480,6 @@ exports[`Menu close by clicking outside 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -739,7 +739,7 @@ exports[`Menu close by clicking outside 3`] = `
   }
 }
 
-.iVWgBr {
+.fvdSSs {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -754,17 +754,18 @@ exports[`Menu close by clicking outside 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .fvdSSs {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .fvdSSs {
     padding: 0px;
   }
 }
@@ -817,7 +818,7 @@ exports[`Menu close by clicking outside 3`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -829,7 +830,6 @@ exports[`Menu close by clicking outside 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -843,7 +843,7 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2386,6 +2386,7 @@ exports[`Menu open and close on click 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -2531,7 +2532,6 @@ exports[`Menu open and close on click 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2805,7 +2805,7 @@ exports[`Menu open and close on click 4`] = `
   }
 }
 
-.iVWgBr {
+.fvdSSs {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2820,17 +2820,18 @@ exports[`Menu open and close on click 4`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .fvdSSs {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .fvdSSs {
     padding: 0px;
   }
 }
@@ -2883,7 +2884,7 @@ exports[`Menu open and close on click 4`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2895,7 +2896,6 @@ exports[`Menu open and close on click 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2909,7 +2909,7 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3295,6 +3295,7 @@ exports[`Menu with dropAlign renders 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -3440,7 +3441,6 @@ exports[`Menu with dropAlign renders 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -3700,7 +3700,7 @@ exports[`Menu with dropAlign renders 3`] = `
   }
 }
 
-.iVWgBr {
+.fvdSSs {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3715,17 +3715,18 @@ exports[`Menu with dropAlign renders 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .fvdSSs {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .fvdSSs {
     padding: 0px;
   }
 }
@@ -3779,7 +3780,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -3791,7 +3792,7 @@ exports[`Menu with dropAlign renders 3`] = `
   }
 }
 
-.dFReaY {
+.hMjlCH {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3803,7 +3804,6 @@ exports[`Menu with dropAlign renders 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -3817,7 +3817,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .dFReaY {
+  .hMjlCH {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

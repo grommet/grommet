@@ -9,6 +9,7 @@ const SimpleMenu = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <Menu
+        dropProps={{ align: { top: 'bottom', left: 'left' } }}
         label="actions"
         items={[
           { label: 'Launch', onClick: () => {} },
