@@ -755,15 +755,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     table: {
-      header: {
-        align: 'start',
-        pad: { horizontal: 'small', vertical: 'xsmall' },
-        border: 'bottom',
-        verticalAlign: 'bottom',
-        fill: 'vertical',
-        // background: undefined,
-        // extend: undefined,
-      },
       body: {
         align: 'start',
         pad: { horizontal: 'small', vertical: 'xsmall' },
@@ -772,10 +763,19 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       footer: {
         align: 'start',
-        pad: { horizontal: 'small', vertical: 'xsmall' },
         border: 'top',
-        verticalAlign: 'top',
         fill: 'vertical',
+        pad: { horizontal: 'small', vertical: 'xsmall' },
+        verticalAlign: 'top',
+        // extend: undefined,
+      },
+      header: {
+        align: 'start',
+        border: 'bottom',
+        fill: 'vertical',
+        pad: { horizontal: 'small', vertical: 'xsmall' },
+        verticalAlign: 'bottom',
+        // background: undefined,
         // extend: undefined,
       },
     },

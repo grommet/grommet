@@ -120,3 +120,33 @@ string
 ```
 table
 ```
+## Theme
+  
+**table.extend**
+
+Any additional style for Table. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.size**
+
+The size style that will impcat max-width and width of the table Expects `undefined`.
+
+Defaults to
+
+```
+{
+      xxsmall: '48px',
+      xsmall: '96px',
+      small: '192px',
+      medium: '384px',
+      large: '768px',
+      xlarge: '1152px',
+      xxlarge: '1536px',
+      full: '100%',
+      }
+```

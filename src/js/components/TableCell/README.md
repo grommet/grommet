@@ -65,3 +65,174 @@ bottom
 ```
 td
 ```
+## Theme
+  
+**table.body.align**
+
+ Expects ``.
+
+Defaults to
+
+```
+start
+```
+
+**table.body.border**
+
+ Expects ``.
+
+Defaults to
+
+```
+undefined
+```
+
+**table.body.extend**
+
+ Expects ``.
+
+Defaults to
+
+```
+undefined
+```
+
+**table.body.pad**
+
+ Expects ``.
+
+Defaults to
+
+```
+{ horizontal: small, vertical: xsmall }
+```
+
+**table.footer.align**
+
+start Expects ``.
+
+Defaults to
+
+```
+undefined
+```
+
+**table.footer.border**
+
+ Expects ``.
+
+Defaults to
+
+```
+top
+```
+
+**table.footer.extend**
+
+ Expects ``.
+
+Defaults to
+
+```
+undefined
+```
+
+**table.footer.fill**
+
+ Expects ``.
+
+Defaults to
+
+```
+vertical
+```
+
+**table.footer.pad**
+
+ Expects ``.
+
+Defaults to
+
+```
+{ horizontal: small, vertical: xsmall }
+```
+
+**table.footer.verticalAlign**
+
+How to align the contents vertically. Expects ``.
+
+Defaults to
+
+```
+top
+```
+
+**table.header.align**
+
+ Expects ``.
+
+Defaults to
+
+```
+start
+```
+
+**table.header.background**
+
+ Expects ``.
+
+Defaults to
+
+```
+undefined
+```
+
+**table.header.border**
+
+ Expects ``.
+
+Defaults to
+
+```
+bottom
+```
+
+**table.header.fill**
+
+ Expects ``.
+
+Defaults to
+
+```
+vertical
+```
+
+**table.header.extend**
+
+ Expects ``.
+
+Defaults to
+
+```
+undefined
+```
+
+**table.header.pad**
+
+ Expects ``.
+
+Defaults to
+
+```
+{ horizontal: small, vertical: xsmall }
+```
+
+**table.header.verticalAlign**
+
+ Expects ``.
+
+Defaults to
+
+```
+bottom
+```

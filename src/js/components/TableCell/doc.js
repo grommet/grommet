@@ -42,3 +42,91 @@ export const doc = TableCell => {
 
   return DocumentedTableCell;
 };
+
+export const themeDoc = {
+  'table.body.align': {
+    description: '',
+    type: '',
+    defaultValue: 'start',
+  },
+  'table.body.border': {
+    description: '',
+    type: '',
+    defaultValue: undefined,
+  },
+  'table.body.extend': {
+    description: '',
+    type: '',
+    defaultValue: undefined,
+  },
+  'table.body.pad': {
+    description: '',
+    type: '',
+    defaultValue: '{ horizontal: small, vertical: xsmall }',
+  },
+  'table.footer.align': {
+    description: 'start',
+    type: '',
+    defaultValue: undefined,
+  },
+  'table.footer.border': {
+    description: '',
+    type: '',
+    defaultValue: 'top',
+  },
+  'table.footer.extend': {
+    description: '',
+    type: '',
+    defaultValue: undefined,
+  },
+  'table.footer.fill': {
+    description: '',
+    type: '',
+    defaultValue: 'vertical',
+  },
+  'table.footer.pad': {
+    description: '',
+    type: '',
+    defaultValue: '{ horizontal: small, vertical: xsmall }',
+  },
+  'table.footer.verticalAlign': {
+    description: 'How to align the contents vertically.',
+    type: '',
+    defaultValue: 'top',
+  },
+  'table.header.align': {
+    description: '',
+    type: '',
+    defaultValue: 'start',
+  },
+  'table.header.background': {
+    description: '',
+    type: '',
+    defaultValue: undefined,
+  },
+  'table.header.border': {
+    description: '',
+    type: '',
+    defaultValue: 'bottom',
+  },
+  'table.header.fill': {
+    description: '',
+    type: '',
+    defaultValue: 'vertical',
+  },
+  'table.header.extend': {
+    description: '',
+    type: '',
+    defaultValue: undefined,
+  },
+  'table.header.pad': {
+    description: '',
+    type: '',
+    defaultValue: '{ horizontal: small, vertical: xsmall }',
+  },
+  'table.header.verticalAlign': {
+    description: '',
+    type: '',
+    defaultValue: 'bottom',
+  },
+};

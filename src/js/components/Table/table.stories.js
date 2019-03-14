@@ -106,19 +106,34 @@ const DefaultTable = () => (
 );
 
 const customTheme = {
-  global: {},
-  table: {
-    header: {
-      background: {
-        color: 'accent-1',
-        opacity: true,
-      },
+  global: {
+    font: {
+      family: 'Helvetica',
     },
+  },
+  table: {
     body: {
+      align: 'center',
+      pad: { horizontal: 'large', vertical: 'xsmall' },
       border: 'bottom',
     },
+    extend: () => `font-family: Arial`,
     footer: {
+      align: 'start',
       border: undefined,
+      pad: { horizontal: 'large', vertical: 'small' },
+      verticalAlign: 'bottom',
+    },
+    header: {
+      align: 'start',
+      border: 'bottom',
+      fill: 'horizontal',
+      pad: { horizontal: 'large', vertical: 'xsmall' },
+      verticalAlign: 'bottom',
+      background: {
+        color: 'accent-1',
+        opacity: 'strong',
+      },
     },
   },
 };
@@ -126,6 +141,9 @@ const customTheme = {
 const CustomThemeTable = () => (
   <Grommet theme={customTheme}>
     <Box align="center" pad="large">
+      <Text margin={{ vertical: 'medium' }}>
+        this Table is using a Custom theme
+      </Text>
       <Table caption="Custom Theme Table">
         <TableHeader>
           <TableRow>

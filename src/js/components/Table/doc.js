@@ -19,3 +19,25 @@ export const doc = Table => {
 
   return DocumentedTable;
 };
+
+export const themeDoc = {
+  'table.extend': {
+    description: 'Any additional style for Table.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'global.size': {
+    description:
+      'The size style that will impcat max-width and width of the table',
+    defaultValue: `{
+      xxsmall: '48px',
+      xsmall: '96px',
+      small: '192px',
+      medium: '384px',
+      large: '768px',
+      xlarge: '1152px',
+      xxlarge: '1536px',
+      full: '100%',
+      }`,
+  },
+};
