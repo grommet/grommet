@@ -51,6 +51,14 @@ jobs:
           root: ~/grommet-ci
           paths:
             - ./
+  bundlesize:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: size
+          command: yarn bundlesize
   release:
     <<: *defaults
     steps:
@@ -94,6 +102,12 @@ workflows:
       - build:
           requires:
             - checkout
+          filters:
+            tags:
+              only: /.*/
+      - bundlesize:
+          requires:
+            - build
           filters:
             tags:
               only: /.*/
