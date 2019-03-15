@@ -2499,7 +2499,8 @@ medium
 large
 xlarge
 full
-string",
+string
+boolean",
         "name": "size",
       },
       Object {

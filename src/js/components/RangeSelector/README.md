@@ -117,6 +117,7 @@ large
 xlarge
 full
 string
+boolean
 ```
 
 **step**

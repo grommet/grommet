@@ -133,6 +133,7 @@ weak
 medium
 strong
 string
+boolean
 ```
   
 ## Intrinsic element
@@ -142,6 +143,16 @@ img
 ```
 ## Theme
   
+**global.opacity.medium**
+
+The value used when opacity is set to true. Expects `number`.
+
+Defaults to
+
+```
+0.4
+```
+
 **image.extend**
 
 Any additional style for the Image. Expects `string | (props) => {}`.

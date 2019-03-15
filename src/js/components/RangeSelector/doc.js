@@ -60,6 +60,7 @@ export const doc = RangeSelector => {
         'full',
       ]),
       PropTypes.string,
+      PropTypes.bool,
     ])
       .description('How thick to make the selection indicator.')
       .defaultValue('medium'),
