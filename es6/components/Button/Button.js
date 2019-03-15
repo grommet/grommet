@@ -139,6 +139,7 @@ function (_Component) {
       onClick: onClick,
       onMouseOver: this.onMouseOver,
       onMouseOut: this.onMouseOut,
+      pad: !plain,
       plain: typeof plain !== 'undefined' ? plain : Children.count(children) > 0 || icon && !label,
       primary: primary,
       type: !href ? type : undefined

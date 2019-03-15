@@ -41,7 +41,7 @@ var plainStyle = css(["color:inherit;border:none;padding:0;text-align:inherit;"]
 var StyledButton = styled.button.withConfig({
   displayName: "StyledButton",
   componentId: "sc-323bzc-0"
-})(["display:inline-block;box-sizing:border-box;cursor:pointer;outline:none;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
+})(["display:inline-block;box-sizing:border-box;cursor:pointer;outline:none;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return props.plain && plainStyle;
 }, function (props) {
   return !props.plain && basicStyle(props);
@@ -60,7 +60,9 @@ var StyledButton = styled.button.withConfig({
 }, function (props) {
   return props.fillContainer && fillStyle;
 }, function (props) {
-  return props.hasIcon && !props.hasLabel && "\n    line-height: 0;\n    padding: " + props.theme.global.edgeSize.small + ";\n  ";
+  return props.hasIcon && !props.hasLabel && "\n    line-height: 0;\n  ";
+}, function (props) {
+  return props.pad && props.hasIcon && !props.hasLabel && "\npadding: " + props.theme.global.edgeSize.small + ";\n";
 }, function (props) {
   return props.theme.button.extend;
 });

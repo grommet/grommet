@@ -17,7 +17,7 @@ export var doc = function doc(Button) {
     icon: PropTypes.element.description('Icon element to place in the button.'),
     label: PropTypes.node.description('Label text to place in the button.'),
     onClick: PropTypes.func.description("Click handler. Not setting this property and not specifying a href\ncauses the Button to be disabled."),
-    plain: PropTypes.bool.description('Whether this is a plain button with no border or padding.').defaultValue(false),
+    plain: PropTypes.bool.description("Whether this is a plain button with no border or pad. \nNon plain button will show both pad and border. \nThe plain button has no border and unless the icon prop exist it has no pad as well.").defaultValue(false),
     primary: PropTypes.bool.description('Whether this is a primary button. There should be at most one per page or screen.').defaultValue(false),
     reverse: PropTypes.bool.description("Whether an icon and label should be reversed so that the icon is at the\nend of the anchor.").defaultValue(false),
     type: PropTypes.oneOf(['button', 'reset', 'submit']).description('The type of button. Set the type to submit for the default button on forms.').defaultValue('button'),

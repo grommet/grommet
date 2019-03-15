@@ -153,6 +153,7 @@ function (_Component) {
       onClick: onClick,
       onMouseOver: this.onMouseOver,
       onMouseOut: this.onMouseOut,
+      pad: !plain,
       plain: typeof plain !== 'undefined' ? plain : _react.Children.count(children) > 0 || icon && !label,
       primary: primary,
       type: !href ? type : undefined
