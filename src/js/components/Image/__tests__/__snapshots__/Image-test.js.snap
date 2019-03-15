@@ -61,7 +61,6 @@ exports[`Image opacity renders 1`] = `
 >
   <img
     className="c1"
-    opacity="weak"
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -87,7 +86,6 @@ exports[`Image opacity renders 2`] = `
 >
   <img
     className="c1"
-    opacity="medium"
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -113,7 +111,6 @@ exports[`Image opacity renders 3`] = `
 >
   <img
     className="c1"
-    opacity="strong"
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -139,7 +136,6 @@ exports[`Image opacity renders 4`] = `
 >
   <img
     className="c1"
-    opacity={0.3}
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -165,7 +161,6 @@ exports[`Image opacity renders 5`] = `
 >
   <img
     className="c1"
-    opacity={true}
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -187,7 +182,6 @@ exports[`Image opacity renders 6`] = `
 >
   <img
     className=""
-    opacity={false}
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>

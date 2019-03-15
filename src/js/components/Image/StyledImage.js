@@ -14,19 +14,18 @@ const fitStyle = css`
   object-fit: ${props => FIT_MAP[props.fit]};
 `;
 
-const opacityStyle = css`
-  ${props => css`
-    opacity: ${props.opacity === true
-      ? props.theme.global.opacity.medium
-      : props.theme.global.opacity[props.opacity] || props.opacity};
-  `};
-`;
-
 const StyledImage = styled.img`
   ${genericStyles}
   ${props => props.fit && fitStyle}
   ${props => props.theme.image && props.theme.image.extend}
-  ${props => props.opacity && opacityStyle}
+  ${props =>
+    props.opacityProp &&
+    `opacity: ${
+      props.opacityProp === true
+        ? props.theme.global.opacity.medium
+        : props.theme.global.opacity[props.opacityProp] || props.opacityProp
+    };
+  `}
     `;
 
 StyledImage.defaultProps = {};

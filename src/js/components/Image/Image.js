@@ -16,7 +16,7 @@ const Image = ({ fallback, onError, opacity, src, ...rest }) => {
     <StyledImage
       {...rest}
       {...extraProps}
-      opacity={opacity}
+      opacityProp={opacity}
       src={!imageMissing ? src : fallback}
     />
   );
