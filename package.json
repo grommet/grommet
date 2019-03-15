@@ -36,6 +36,7 @@
     "test": "npm run generate-readme && jest --runInBand",
     "test-update": "npm run generate-readme && jest --updateSnapshot",
     "test-watch": "jest --watchAll",
+    "test-bundlesize": "bundlesize",
     "pack": "babel-node ./tools/pack",
     "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",
     "build-storybook": "build-storybook -c storybook -o storybook-static",
@@ -81,6 +82,7 @@
     "babel-loader": "^8.0.0-beta.6",
     "babel-plugin-styled-components": "^1.6.4",
     "babel-plugin-transform-imports": "^1.5.0",
+    "bundlesize": "^0.17.1",
     "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.5.3",
     "cross-env": "^5.1.6",
@@ -145,5 +147,11 @@
     "lint-fix",
     "prettier",
     "test"
+  ],
+  "bundlesize": [
+    {
+      "path": "./dist/grommet.min.js",
+      "maxSize": "110 kB"
+    }
   ]
 }
