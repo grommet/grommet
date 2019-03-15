@@ -131,7 +131,7 @@ exports[`Image opacity renders 4`] = `
 }
 
 .c1 {
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
 <div
@@ -139,7 +139,7 @@ exports[`Image opacity renders 4`] = `
 >
   <img
     className="c1"
-    opacity={true}
+    opacity={0.3}
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
@@ -157,7 +157,7 @@ exports[`Image opacity renders 5`] = `
 }
 
 .c1 {
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 <div
@@ -165,7 +165,7 @@ exports[`Image opacity renders 5`] = `
 >
   <img
     className="c1"
-    opacity="0.3"
+    opacity={true}
     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII="
   />
 </div>
