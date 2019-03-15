@@ -8779,14 +8779,14 @@ textarea
 \`\`\`
 ## Theme
   
-**textArea.extend**
+**global.colors.border**
 
-Any additional style for Text. Expects \`string | (props) => {}\`.
+The color of the border. Expects \`object\`.
 
 Defaults to
 
 \`\`\`
-undefined
+[object Object]
 \`\`\`
 
 **global.control.border.width**
@@ -8809,14 +8809,24 @@ Defaults to
 4px
 \`\`\`
 
-**global.colors.border**
+**global.control.border.color**
 
-The color of the borders Expects \`object\`.
+The border color. Expects \`string\`.
 
 Defaults to
 
 \`\`\`
-[object Object]
+border
+\`\`\`
+
+**textArea.extend**
+
+Any additional style for Text. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
 \`\`\`
 
 **global.focus.border.color**
@@ -9055,104 +9065,9 @@ input
 \`\`\`
 ## Theme
   
-**select.step**
-
-How many suggestions to render at a time. Expects \`number\`.
-
-Defaults to
-
-\`\`\`
-20
-\`\`\`
-
-**text**
-
-The possible sizes of the text in terms of its font-size and line-height. Expects \`object\`.
-
-Defaults to
-
-\`\`\`
-{
-      xsmall: {
-        size: '12px',
-        height: '18px',
-       },
-      small: {
-        size: '14px',
-        height: '20px',
-       },
-      medium: {
-        size: '18px',
-        height: '24px',
-      },
-      large: {
-        size: '22px',
-        height: '28px',
-      },
-      xlarge: {
-        size: '26px',
-        height: '32px',
-      },
-      xxlarge: {
-        size: '34px',
-        height: '40px',
-      },
-    }
-\`\`\`
-
-**textInput.extend**
-
-Any additional style for TextInput. Expects \`string | (props) => {}\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**textInput.placeholder.extend**
-
-Any additional style for non-string placeholder inside TextInput. Expects \`string | (props) => {}\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**textInput.suggestions.extend**
-
-Any additional style for TextInput suggestions. Expects \`string | (props) => {}\`.
-
-Defaults to
-
-\`\`\`
-undefined
-\`\`\`
-
-**global.control.border.width**
-
-The border width. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-1px
-\`\`\`
-
-**global.control.border.radius**
-
-The border radius. Expects \`string\`.
-
-Defaults to
-
-\`\`\`
-4px
-\`\`\`
-
 **global.colors.border**
 
-The color of the borders Expects \`object\`.
+The color of the border. Expects \`object\`.
 
 Defaults to
 

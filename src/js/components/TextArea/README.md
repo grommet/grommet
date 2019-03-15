@@ -93,14 +93,14 @@ textarea
 ```
 ## Theme
   
-**textArea.extend**
+**global.colors.border**
 
-Any additional style for Text. Expects `string | (props) => {}`.
+The color of the border. Expects `object`.
 
 Defaults to
 
 ```
-undefined
+[object Object]
 ```
 
 **global.control.border.width**
@@ -133,14 +133,14 @@ Defaults to
 border
 ```
 
-**global.colors.border**
+**textArea.extend**
 
-The color of the border Expects `object`.
+Any additional style for Text. Expects `string | (props) => {}`.
 
 Defaults to
 
 ```
-[object Object]
+undefined
 ```
 
 **global.focus.border.color**

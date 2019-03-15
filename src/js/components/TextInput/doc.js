@@ -104,15 +104,37 @@ suggestions and instead rely on the user to type more.`,
 };
 
 export const themeDoc = {
-  'select.step': {
-    description: 'How many suggestions to render at a time.',
-    type: 'number',
-    defaultValue: 20,
-  },
-  text: {
-    description: `The possible sizes of the text in terms of its font-size and line-height.`,
+  'global.colors.border': {
+    description: 'The color of the border.',
     type: 'object',
-    defaultValue: `{
+    defaultValue: {
+      dark: 'rgba(255, 255, 255, 0.33)',
+      light: 'rgba(0, 0, 0, 0.33)',
+    },
+    'global.control.border.color': {
+      description: 'The border color.',
+      type: 'string',
+      defaultValue: 'border',
+    },
+    'global.control.border.radius': {
+      description: 'The border radius.',
+      type: 'string',
+      defaultValue: '4px',
+    },
+    'global.control.border.width': {
+      description: 'The border width.',
+      type: 'string',
+      defaultValue: '1px',
+    },
+    'select.step': {
+      description: 'How many suggestions to render at a time.',
+      type: 'number',
+      defaultValue: 20,
+    },
+    text: {
+      description: `The possible sizes of the text in terms of its font-size and line-height.`,
+      type: 'object',
+      defaultValue: `{
       xsmall: {
         size: '12px',
         height: '18px',
@@ -138,44 +160,22 @@ export const themeDoc = {
         height: '40px',
       },
     }`,
-  },
-  'textInput.extend': {
-    description: 'Any additional style for TextInput.',
-    type: 'string | (props) => {}',
-    defaultValue: undefined,
-  },
-  'textInput.placeholder.extend': {
-    description:
-      'Any additional style for non-string placeholder inside TextInput.',
-    type: 'string | (props) => {}',
-    defaultValue: undefined,
-  },
-  'textInput.suggestions.extend': {
-    description: 'Any additional style for TextInput suggestions.',
-    type: 'string | (props) => {}',
-    defaultValue: undefined,
-  },
-  'global.control.border.width': {
-    description: 'The border width.',
-    type: 'string',
-    defaultValue: '1px',
-  },
-  'global.control.border.radius': {
-    description: 'The border radius.',
-    type: 'string',
-    defaultValue: '4px',
-  },
-  'global.control.border.color': {
-    description: 'The border color.',
-    type: 'string',
-    defaultValue: 'border',
-  },
-  'global.colors.border': {
-    description: 'The color of the border',
-    type: 'object',
-    defaultValue: {
-      dark: 'rgba(255, 255, 255, 0.33)',
-      light: 'rgba(0, 0, 0, 0.33)',
+    },
+    'textInput.extend': {
+      description: 'Any additional style for TextInput.',
+      type: 'string | (props) => {}',
+      defaultValue: undefined,
+    },
+    'textInput.placeholder.extend': {
+      description:
+        'Any additional style for non-string placeholder inside TextInput.',
+      type: 'string | (props) => {}',
+      defaultValue: undefined,
+    },
+    'textInput.suggestions.extend': {
+      description: 'Any additional style for TextInput suggestions.',
+      type: 'string | (props) => {}',
+      defaultValue: undefined,
     },
   },
   ...themeDocUtils.focusStyle,

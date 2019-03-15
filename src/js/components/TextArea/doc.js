@@ -44,10 +44,13 @@ Only use this when the containing context provides sufficient affordance.`,
 };
 
 export const themeDoc = {
-  'textArea.extend': {
-    description: 'Any additional style for Text.',
-    type: 'string | (props) => {}',
-    defaultValue: undefined,
+  'global.colors.border': {
+    description: 'The color of the border.',
+    type: 'object',
+    defaultValue: {
+      dark: 'rgba(255, 255, 255, 0.33)',
+      light: 'rgba(0, 0, 0, 0.33)',
+    },
   },
   'global.control.border.width': {
     description: 'The border width.',
@@ -64,13 +67,10 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'border',
   },
-  'global.colors.border': {
-    description: 'The color of the border',
-    type: 'object',
-    defaultValue: {
-      dark: 'rgba(255, 255, 255, 0.33)',
-      light: 'rgba(0, 0, 0, 0.33)',
-    },
+  'textArea.extend': {
+    description: 'Any additional style for Text.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
   },
   ...themeDocUtils.focusStyle,
   ...themeDocUtils.placeholderStyle,
