@@ -45,7 +45,7 @@ var themeDoc = {
   },
   'tabs.background': {
     description: 'background styling of Tabs.',
-    type: 'object',
+    type: 'string | object',
     defaultValue: undefined
   },
   'tabs.extend': {
@@ -60,7 +60,7 @@ var themeDoc = {
   },
   'tabs.header.background': {
     description: 'The background styles of Tabs header.',
-    type: '',
+    type: 'string | { dark: string, light: string }',
     defaultValue: undefined
   },
   'tabs.header.extend': {

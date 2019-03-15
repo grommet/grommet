@@ -30,7 +30,7 @@ export var themeDoc = {
   },
   'tab.hover.background': {
     description: 'background style of the Tab on hover.',
-    type: '',
+    type: 'string | object',
     defaultValue: undefined
   },
   'tab.hover.color': {
@@ -45,12 +45,12 @@ export var themeDoc = {
   },
   'tab.margin': {
     description: 'The margin of Tab.',
-    type: 'object',
+    type: 'string | object',
     defaultValue: "{ vertical: 'xxsmall', horizontal: 'small' }"
   },
   'tab.pad': {
     description: 'The pad of Tab.',
-    type: 'object',
+    type: 'string | object',
     defaultValue: "{ bottom: 'xsmall' }"
   }
 };
