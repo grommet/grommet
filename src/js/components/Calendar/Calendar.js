@@ -258,6 +258,7 @@ class Calendar extends Component {
   render() {
     const {
       bounds,
+      content,
       date: dateProp,
       dates: datesProp,
       disabled,
@@ -371,6 +372,7 @@ class Calendar extends Component {
                   nextInBound: betweenDates(nextMonth, bounds),
                 })
               : this.renderCalendarHeader(previousMonth, nextMonth)}
+            {content}
             <StyledWeeksContainer sizeProp={size}>
               <StyledWeeks slide={slide} sizeProp={size}>
                 {weeks}

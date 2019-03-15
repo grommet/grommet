@@ -22,6 +22,7 @@ class SimpleCalendar extends Component {
 
   render() {
     const { date } = this.state;
+    const days = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
     return (
       <Grommet theme={grommet}>
         <Box align="center" pad="large">
@@ -30,6 +31,23 @@ class SimpleCalendar extends Component {
             onSelect={this.onSelect}
             size="small"
             bounds={['2018-09-08', '2018-12-13']}
+          />
+        </Box>
+        <Box align="center" pad="large">
+          <Calendar
+            date={date}
+            onSelect={this.onSelect}
+            size="small"
+            bounds={['2018-09-08', '2018-12-13']}
+            content={
+              <Box gap="small" direction="row" pad="xsmall">
+                {days.map(day => (
+                  <Text color="dark-1" size="xsmall">
+                    {day}
+                  </Text>
+                ))}
+              </Box>
+            }
           />
         </Box>
       </Grommet>
@@ -170,6 +188,11 @@ class CustomHeaderCalendar extends Component {
             onSelect={this.onSelect}
             size="small"
             bounds={['2018-09-08', '2018-12-13']}
+            content={
+              <Box align="center" justify="center" pad="small">
+                busy month is coming
+              </Box>
+            }
             header={({
               date: currentDate,
               locale,

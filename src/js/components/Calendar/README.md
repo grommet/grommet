@@ -126,6 +126,15 @@ An array of two numbers indicating the limits on
 [string]
 ```
 
+**content**
+
+Additional content panel.
+
+```
+string
+node
+```
+
 **date**
 
 The selected date in ISO8601 format

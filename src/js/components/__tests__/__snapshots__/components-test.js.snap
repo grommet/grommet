@@ -1040,6 +1040,12 @@ string",
         "name": "bounds",
       },
       Object {
+        "description": "Additional content panel.",
+        "format": "string
+node",
+        "name": "content",
+      },
+      Object {
         "description": "The selected date in ISO8601 format",
         "format": "string",
         "name": "date",
