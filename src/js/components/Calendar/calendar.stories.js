@@ -42,7 +42,7 @@ class SimpleCalendar extends Component {
             content={
               <Box gap="small" direction="row" pad="xsmall">
                 {days.map(day => (
-                  <Text color="dark-1" size="xsmall">
+                  <Text key={day} color="dark-1" size="xsmall">
                     {day}
                   </Text>
                 ))}
