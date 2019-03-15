@@ -2472,10 +2472,11 @@ vertical",
       },
       Object {
         "defaultValue": "medium",
-        "description": "",
+        "description": "Transparency of the selection indicator.",
         "format": "weak
 medium
-strong",
+strong
+string",
         "name": "opacity",
       },
       Object {

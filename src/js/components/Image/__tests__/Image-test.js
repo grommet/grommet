@@ -28,3 +28,13 @@ test('Image fit renders', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('Image opacity renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Image opacity="weak" src={SRC} />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

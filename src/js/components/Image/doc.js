@@ -28,6 +28,10 @@ export const doc = Image => {
     fallback: PropTypes.string.description(
       'Specifies the URL of the fallback image used when src is failing to load',
     ),
+    opacity: PropTypes.oneOfType([
+      PropTypes.oneOf(['weak', 'medium', 'strong']),
+      PropTypes.string,
+    ]).description('Transparency of the image.'),
   };
 
   return DocumentedImage;

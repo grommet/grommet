@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyledImage } from './StyledImage';
 
-const Image = ({ src, fallback, onError, ...rest }) => {
+const Image = ({ fallback, onError, src, ...rest }) => {
   const [imageMissing, setImageMissing] = useState(false);
   const handleError = event => {
     if (onError) {

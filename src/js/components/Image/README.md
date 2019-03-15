@@ -123,6 +123,17 @@ Specifies the URL of the fallback image used when src is failing to load
 ```
 string
 ```
+
+**opacity**
+
+Transparency of the image.
+
+```
+weak
+medium
+strong
+string
+```
   
 ## Intrinsic element
 

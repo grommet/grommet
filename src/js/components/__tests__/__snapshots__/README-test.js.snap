@@ -5296,6 +5296,17 @@ Specifies the URL of the fallback image used when src is failing to load
 \`\`\`
 string
 \`\`\`
+
+**opacity**
+
+Transparency of the image.
+
+\`\`\`
+weak
+medium
+strong
+string
+\`\`\`
   
 ## Intrinsic element
 
@@ -7151,12 +7162,13 @@ function
 
 **opacity**
 
- Defaults to \`medium\`.
+Transparency of the selection indicator. Defaults to \`medium\`.
 
 \`\`\`
 weak
 medium
 strong
+string
 \`\`\`
 
 **round**

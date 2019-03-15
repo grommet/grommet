@@ -39,8 +39,11 @@ export const doc = RangeSelector => {
       values. It will be passed an array of two numbers indicating
       the new values selected.`,
     ),
-    opacity: PropTypes.oneOf(['weak', 'medium', 'strong'])
-      .description('')
+    opacity: PropTypes.oneOfType([
+      PropTypes.oneOf(['weak', 'medium', 'strong']),
+      PropTypes.string,
+    ])
+      .description('Transparency of the selection indicator.')
       .defaultValue('medium'),
     round: PropTypes.oneOfType([
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full']),

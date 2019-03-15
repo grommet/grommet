@@ -18,6 +18,10 @@ const StyledImage = styled.img`
   ${genericStyles}
   ${props => props.fit && fitStyle}
   ${props => props.theme.image && props.theme.image.extend}
+  opacity: ${props =>
+    props.opacity === true
+      ? props.theme.global.opacity.medium
+      : props.theme.global.opacity[props.opacity] || props.opacity}
 `;
 
 StyledImage.defaultProps = {};
