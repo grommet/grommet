@@ -42,6 +42,7 @@ export const doc = RangeSelector => {
     opacity: PropTypes.oneOfType([
       PropTypes.oneOf(['weak', 'medium', 'strong']),
       PropTypes.string,
+      PropTypes.bool,
     ])
       .description('Transparency of the selection indicator.')
       .defaultValue('medium'),
@@ -60,7 +61,6 @@ export const doc = RangeSelector => {
         'full',
       ]),
       PropTypes.string,
-      PropTypes.bool,
     ])
       .description('How thick to make the selection indicator.')
       .defaultValue('medium'),

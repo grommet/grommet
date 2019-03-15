@@ -89,6 +89,7 @@ weak
 medium
 strong
 string
+boolean
 ```
 
 **round**
@@ -117,7 +118,6 @@ large
 xlarge
 full
 string
-boolean
 ```
 
 **step**

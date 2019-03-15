@@ -2476,7 +2476,8 @@ vertical",
         "format": "weak
 medium
 strong
-string",
+string
+boolean",
         "name": "opacity",
       },
       Object {
@@ -2499,8 +2500,7 @@ medium
 large
 xlarge
 full
-string
-boolean",
+string",
         "name": "size",
       },
       Object {
