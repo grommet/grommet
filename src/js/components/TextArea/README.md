@@ -133,6 +133,16 @@ Defaults to
 border
 ```
 
+**textInput.disabled.opacity**
+
+The opacity when the textInput is disabled. Expects `number`.
+
+Defaults to
+
+```
+0.3
+```
+
 **textArea.extend**
 
 Any additional style for Text. Expects `string | (props) => {}`.

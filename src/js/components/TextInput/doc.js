@@ -135,31 +135,36 @@ export const themeDoc = {
       description: `The possible sizes of the text in terms of its font-size and line-height.`,
       type: 'object',
       defaultValue: `{
-      xsmall: {
-        size: '12px',
-        height: '18px',
-       },
-      small: {
-        size: '14px',
-        height: '20px',
-       },
-      medium: {
-        size: '18px',
-        height: '24px',
-      },
-      large: {
-        size: '22px',
-        height: '28px',
-      },
-      xlarge: {
-        size: '26px',
-        height: '32px',
-      },
-      xxlarge: {
-        size: '34px',
-        height: '40px',
-      },
-    }`,
+        xsmall: {
+          size: '12px',
+          height: '18px',
+        },
+        small: {
+          size: '14px',
+          height: '20px',
+        },
+        medium: {
+          size: '18px',
+          height: '24px',
+        },
+        large: {
+          size: '22px',
+          height: '28px',
+        },
+        xlarge: {
+          size: '26px',
+          height: '32px',
+        },
+        xxlarge: {
+          size: '34px',
+          height: '40px',
+        },
+      }`,
+    },
+    'textInput.disabled.opacity': {
+      description: 'The opacity when the textInput is disabled.',
+      type: 'number',
+      defaultValue: 0.3,
     },
     'textInput.extend': {
       description: 'Any additional style for TextInput.',

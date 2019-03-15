@@ -67,6 +67,11 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'border',
   },
+  'textInput.disabled.opacity': {
+    description: 'The opacity when the textInput is disabled.',
+    type: 'number',
+    defaultValue: 0.3,
+  },
   'textArea.extend': {
     description: 'Any additional style for Text.',
     type: 'string | (props) => {}',
