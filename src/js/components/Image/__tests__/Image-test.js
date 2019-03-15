@@ -38,3 +38,53 @@ test('Image opacity renders', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('Image opacity renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Image opacity="medium" src={SRC} />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Image opacity renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Image opacity="strong" src={SRC} />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Image opacity renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Image opacity src={SRC} />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Image opacity renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Image opacity="0.3" src={SRC} />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Image opacity renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Image opacity={false} src={SRC} />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
