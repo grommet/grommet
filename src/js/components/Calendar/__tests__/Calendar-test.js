@@ -66,6 +66,22 @@ describe('Calendar', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('content', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Calendar
+          content={
+            <Box align="center" justify="center" pad="small">
+              testing content prop
+            </Box>
+          }
+        />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('header', () => {
     const component = renderer.create(
       <Grommet>
