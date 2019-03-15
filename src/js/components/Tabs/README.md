@@ -214,7 +214,7 @@ Defaults to
 
 **tabs.background**
 
-background styling of Tabs. Expects `object`.
+background styling of Tabs. Expects `string | object`.
 
 Defaults to
 
@@ -244,7 +244,7 @@ undefined
 
 **tabs.header.background**
 
-The background styles of Tabs header. Expects ``.
+The background styles of Tabs header. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
