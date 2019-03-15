@@ -23,7 +23,6 @@ class SimpleCheckBox extends Component {
         <Box align="center" pad="large">
           <CheckBox
             {...this.props}
-            label="Choice"
             checked={checked}
             onChange={this.onChange}
           />
@@ -301,12 +300,13 @@ class IndeterminateCheckBox extends Component {
 }
 
 storiesOf('CheckBox', module)
-  .add('Simple', () => <SimpleCheckBox />)
-  .add('Toggle', () => <SimpleCheckBox toggle />)
-  .add('Disabled', () => <SimpleCheckBox checked disabled />)
-  .add('Reverse', () => <SimpleCheckBox reverse />)
+  .add('Simple', () => <SimpleCheckBox label="Choice" />)
+  .add('Toggle', () => <SimpleCheckBox label="Choice" toggle />)
+  .add('Disabled', () => <SimpleCheckBox label="Choice" checked disabled />)
+  .add('Reverse', () => <SimpleCheckBox label="Choice" reverse />)
   .add('Themed CheckBox', () => <ThemedCheckBox />)
   .add('Themed Toggle', () => <ThemedToggle />)
   .add('Inside a Button', () => <CheckBoxInsideButton />)
   .add('With Sticky Div', () => <CheckBoxWithStickyDiv />)
-  .add('Interminate CheckBox', () => <IndeterminateCheckBox />);
+  .add('Interminate CheckBox', () => <IndeterminateCheckBox />)
+  .add('No Label', () => <SimpleCheckBox />);
