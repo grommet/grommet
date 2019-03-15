@@ -112,7 +112,6 @@ class Button extends Component {
     } else {
       contents = first || second || children;
     }
-
     // the key events are covered by withFocus()
     /* eslint-disable jsx-a11y/mouse-events-have-key-events */
     return (
@@ -131,6 +130,7 @@ class Button extends Component {
         onClick={onClick}
         onMouseOver={this.onMouseOver}
         onMouseOut={this.onMouseOut}
+        pad={!plain}
         plain={
           typeof plain !== 'undefined'
             ? plain

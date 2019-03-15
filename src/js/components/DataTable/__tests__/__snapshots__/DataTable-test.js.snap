@@ -1509,7 +1509,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 kjdfHK"
+            class="StyledButton-sc-323bzc-0 kZFYMs"
             type="button"
           >
             <div
@@ -1571,7 +1571,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 kjdfHK"
+            class="StyledButton-sc-323bzc-0 kZFYMs"
             type="button"
           >
             <div
@@ -1622,7 +1622,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 kjdfHK"
+            class="StyledButton-sc-323bzc-0 kZFYMs"
             type="button"
           >
             <div
@@ -2651,7 +2651,7 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-fzr2yb-0 bVTNxY StyledButton-sc-323bzc-0 kjdfHK"
+            class="Sorter__SorterButton-fzr2yb-0 bVTNxY StyledButton-sc-323bzc-0 kZFYMs"
             type="button"
           >
             <div
@@ -2726,7 +2726,7 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-fzr2yb-0 bVTNxY StyledButton-sc-323bzc-0 kjdfHK"
+            class="Sorter__SorterButton-fzr2yb-0 bVTNxY StyledButton-sc-323bzc-0 kZFYMs"
             type="button"
           >
             <div

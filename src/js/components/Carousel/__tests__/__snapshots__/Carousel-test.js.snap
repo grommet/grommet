@@ -1219,7 +1219,7 @@ exports[`Carousel navigate 2`] = `
           class="StyledBox-sc-13pk1d4-0 dkhTXm"
         >
           <button
-            class="StyledButton-sc-323bzc-0 kjdfHK"
+            class="StyledButton-sc-323bzc-0 kZFYMs"
             type="button"
           >
             <div
@@ -1248,7 +1248,7 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-sc-13pk1d4-0 exddWn"
           >
             <button
-              class="StyledButton-sc-323bzc-0 lbUBVe"
+              class="StyledButton-sc-323bzc-0 lgwBfH"
               type="button"
             >
               <svg
@@ -1265,7 +1265,7 @@ exports[`Carousel navigate 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 lbUBVe"
+              class="StyledButton-sc-323bzc-0 lgwBfH"
               type="button"
             >
               <svg
@@ -1287,7 +1287,7 @@ exports[`Carousel navigate 2`] = `
           class="StyledBox-sc-13pk1d4-0 dkhTXm"
         >
           <button
-            class="StyledButton-sc-323bzc-0 fzQtuL"
+            class="StyledButton-sc-323bzc-0 kEACYB"
             disabled=""
             type="button"
           >
@@ -1366,7 +1366,7 @@ exports[`Carousel navigate 3`] = `
           class="StyledBox-sc-13pk1d4-0 dkhTXm"
         >
           <button
-            class="StyledButton-sc-323bzc-0 fzQtuL"
+            class="StyledButton-sc-323bzc-0 kEACYB"
             disabled=""
             type="button"
           >
@@ -1396,7 +1396,7 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-sc-13pk1d4-0 exddWn"
           >
             <button
-              class="StyledButton-sc-323bzc-0 lbUBVe"
+              class="StyledButton-sc-323bzc-0 lgwBfH"
               type="button"
             >
               <svg
@@ -1413,7 +1413,7 @@ exports[`Carousel navigate 3`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 lbUBVe"
+              class="StyledButton-sc-323bzc-0 lgwBfH"
               type="button"
             >
               <svg
@@ -1435,7 +1435,7 @@ exports[`Carousel navigate 3`] = `
           class="StyledBox-sc-13pk1d4-0 dkhTXm"
         >
           <button
-            class="StyledButton-sc-323bzc-0 kjdfHK"
+            class="StyledButton-sc-323bzc-0 kZFYMs"
             type="button"
           >
             <div
@@ -2084,7 +2084,7 @@ exports[`Carousel play 2`] = `
           class="StyledBox-sc-13pk1d4-0 dkhTXm"
         >
           <button
-            class="StyledButton-sc-323bzc-0 kjdfHK"
+            class="StyledButton-sc-323bzc-0 kZFYMs"
             type="button"
           >
             <div
@@ -2113,7 +2113,7 @@ exports[`Carousel play 2`] = `
             class="StyledBox-sc-13pk1d4-0 exddWn"
           >
             <button
-              class="StyledButton-sc-323bzc-0 lbUBVe"
+              class="StyledButton-sc-323bzc-0 lgwBfH"
               type="button"
             >
               <svg
@@ -2130,7 +2130,7 @@ exports[`Carousel play 2`] = `
               </svg>
             </button>
             <button
-              class="StyledButton-sc-323bzc-0 lbUBVe"
+              class="StyledButton-sc-323bzc-0 lgwBfH"
               type="button"
             >
               <svg
@@ -2152,7 +2152,7 @@ exports[`Carousel play 2`] = `
           class="StyledBox-sc-13pk1d4-0 dkhTXm"
         >
           <button
-            class="StyledButton-sc-323bzc-0 fzQtuL"
+            class="StyledButton-sc-323bzc-0 kEACYB"
             disabled=""
             type="button"
           >
