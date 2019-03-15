@@ -96,7 +96,7 @@ control
 
 **tab.hover.background**
 
-background style of the Tab on hover. Expects ``.
+background style of the Tab on hover. Expects `string | object`.
 
 Defaults to
 
@@ -126,7 +126,7 @@ undefined
 
 **tab.margin**
 
-The margin of Tab. Expects `object`.
+The margin of Tab. Expects `string | object`.
 
 Defaults to
 
@@ -136,7 +136,7 @@ Defaults to
 
 **tab.pad**
 
-The pad of Tab. Expects `object`.
+The pad of Tab. Expects `string | object`.
 
 Defaults to
 
