@@ -31,7 +31,7 @@ test('Image fit renders', () => {
 });
 
 opacityTypes.forEach(opacity => {
-  test('Image opacity renders', () => {
+  test(`Image opacity of ${opacity} renders`, () => {
     const component = renderer.create(
       <Grommet>
         <Image opacity={opacity} src={SRC} />
