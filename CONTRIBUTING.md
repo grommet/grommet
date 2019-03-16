@@ -171,6 +171,8 @@ to modify component to documentation then you only need to have a look at the
 These files are used to generate the documentation on the grommet website. That
 code lives at the [grommet-site](https://github.com/grommet/grommet-site) repository.
 
+Found an error in the documentation? [File an issue](https://github.com/grommet/grommet/issues).
+
 ## Need more help?
 
 Watch this [video](https://vimeo.com/129681048) to learn how to contribute to Grommet. The Github
@@ -185,5 +187,4 @@ This contribution guide was inspired by the contribution guides for
 [CloudSlang](http://www.cloudslang.io/#/docs#contributing-code), and
 [Docker Library](https://github.com/docker-library/docs/tree/master/node).
 
-Found an error in the documentation? [File an
-issue](https://github.com/grommet/grommet-docs/issues).
+
