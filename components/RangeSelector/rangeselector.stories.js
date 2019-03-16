@@ -97,9 +97,16 @@ _defineProperty(SimpleRangeSelector, "defaultProps", {
 
 var customThemeRangeSelector = (0, _utils.deepMerge)(_themes.grommet, {
   global: {
-    spacing: '14px',
+    borderSize: {
+      small: '6px'
+    },
+    edgeSize: {
+      small: '13px'
+    },
+    spacing: '10px',
     colors: {
-      control: 'accent-2'
+      control: 'accent-2',
+      border: 'brand'
     }
   },
   rangeSelector: {

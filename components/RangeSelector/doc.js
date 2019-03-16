@@ -31,25 +31,48 @@ var doc = function doc(RangeSelector) {
 
 exports.doc = doc;
 var themeDoc = {
-  'global.colors.controls': {
-    description: 'The color foe the edge controls',
-    type: 'string | { dark: undefined, light: undefined }',
+  'global.borderSize': {
+    description: 'The size of the border.',
+    type: 'string',
+    defaultValue: "{\n      xsmall: '1px',\n      small: '2px',\n      medium: '4px',\n      large: '12px',\n      xlarge: '24px,\n    }"
+  },
+  'global.colors.border': {
+    description: 'The color for the border.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: {
+      dark: 'rgba(255, 255, 255, 0.33)',
+      light: 'rgba(0, 0, 0, 0.33)'
+    }
+  },
+  'global.colors.control': {
+    description: 'The color for the edge controls.',
+    type: 'string | { dark: string, light: string }',
     defaultValue: '{dark: accent-1, light: brand}'
+  },
+  'global.colors.focus': {
+    description: 'The color of the focus.',
+    type: 'string',
+    defaultValue: 'accent-1'
+  },
+  'global.edgeSize.small': {
+    description: 'The possible sizes for the margin, padding and gap.',
+    type: 'string',
+    defaultValue: '6px'
+  },
+  'rangeSelector.background.invert.color': {
+    description: 'The background color on an invert display.',
+    type: 'string',
+    defaultValue: 'light-4'
+  },
+  'rangeSelector.edge.type': {
+    description: 'The edge style type.',
+    type: 'string',
+    defaultValue: undefined
   },
   'global.spacing': {
     description: 'The size of the edge controls thumb.',
     type: 'string',
     defaultValue: '24px'
-  },
-  'rangeSelector.background.invert.color': {
-    description: 'The background color on an invert display',
-    type: 'string',
-    defaultValue: 'light-4'
-  },
-  'rangeSelector.edge.type': {
-    description: 'The edge style type',
-    type: 'string',
-    defaultValue: undefined
   }
 };
 exports.themeDoc = themeDoc;
