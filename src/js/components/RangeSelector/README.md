@@ -82,12 +82,14 @@ function
 
 **opacity**
 
- Defaults to `medium`.
+Transparency of the selection indicator. Defaults to `medium`.
 
 ```
 weak
 medium
 strong
+string
+boolean
 ```
 
 **round**

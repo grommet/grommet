@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyledImage } from './StyledImage';
 
-const Image = ({ src, fallback, onError, ...rest }) => {
+const Image = ({ fallback, onError, opacity, src, ...rest }) => {
   const [imageMissing, setImageMissing] = useState(false);
   const handleError = event => {
     if (onError) {
@@ -16,6 +16,7 @@ const Image = ({ src, fallback, onError, ...rest }) => {
     <StyledImage
       {...rest}
       {...extraProps}
+      opacityProp={opacity}
       src={!imageMissing ? src : fallback}
     />
   );
