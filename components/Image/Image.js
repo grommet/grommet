@@ -14,10 +14,11 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var Image = function Image(_ref) {
-  var src = _ref.src,
-      fallback = _ref.fallback,
+  var fallback = _ref.fallback,
       onError = _ref.onError,
-      rest = _objectWithoutPropertiesLoose(_ref, ["src", "fallback", "onError"]);
+      opacity = _ref.opacity,
+      src = _ref.src,
+      rest = _objectWithoutPropertiesLoose(_ref, ["fallback", "onError", "opacity", "src"]);
 
   var _useState = (0, _react.useState)(false),
       imageMissing = _useState[0],
@@ -35,6 +36,7 @@ var Image = function Image(_ref) {
     onError: (onError || fallback) && handleError
   };
   return _react.default.createElement(_StyledImage.StyledImage, _extends({}, rest, extraProps, {
+    opacityProp: opacity,
     src: !imageMissing ? src : fallback
   }));
 };

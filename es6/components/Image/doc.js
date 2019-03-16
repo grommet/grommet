@@ -2,18 +2,24 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
+export var doc = function doc(Image) {
+  var DocumentedImage = describe(Image).availableAt(getAvailableAtBadge('Image')).description('An image.').usage("import { Image } from 'grommet';\n<Image/>").intrinsicElement('img');
+  DocumentedImage.propTypes = _extends({}, genericProps, {
+    fit: PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
+    fallback: PropTypes.string.description('Specifies the URL of the fallback image used when src is failing to load'),
+    opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.string, PropTypes.bool]).description('Transparency of the image.')
+  });
+  return DocumentedImage;
+};
 export var themeDoc = {
+  'global.opacity.medium': {
+    description: 'The value used when opacity is set to true.',
+    type: 'number',
+    defaultValue: '0.4'
+  },
   'image.extend': {
     description: 'Any additional style for the Image.',
     type: 'string | (props) => {}',
     defaultValue: undefined
   }
-};
-export var doc = function doc(Image) {
-  var DocumentedImage = describe(Image).availableAt(getAvailableAtBadge('Image')).description('An image.').usage("import { Image } from 'grommet';\n<Image/>").intrinsicElement('img');
-  DocumentedImage.propTypes = _extends({}, genericProps, {
-    fit: PropTypes.oneOf(['cover', 'contain']).description('How the image fills its container.'),
-    fallback: PropTypes.string.description('Specifies the URL of the fallback image used when src is failing to load')
-  });
-  return DocumentedImage;
 };

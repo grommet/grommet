@@ -13,7 +13,7 @@ export var doc = function doc(RangeSelector) {
     }).description('Custom messages. Used for accessibility by screen readers.'),
     min: PropTypes.number.description('The minimum value permitted.').defaultValue(0),
     onChange: PropTypes.func.description("Function that will be called when the user changes one of the\n      values. It will be passed an array of two numbers indicating\n      the new values selected."),
-    opacity: PropTypes.oneOf(['weak', 'medium', 'strong']).description('').defaultValue('medium'),
+    opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.string, PropTypes.bool]).description('Transparency of the selection indicator.').defaultValue('medium'),
     round: PropTypes.oneOfType([PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full']), PropTypes.string]).description('How much to round the corners.'),
     size: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), PropTypes.string]).description('How thick to make the selection indicator.').defaultValue('medium'),
     step: PropTypes.number.description('The step interval between values.').defaultValue(1),

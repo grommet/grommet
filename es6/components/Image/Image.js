@@ -6,10 +6,11 @@ import React, { useState } from 'react';
 import { StyledImage } from './StyledImage';
 
 var Image = function Image(_ref) {
-  var src = _ref.src,
-      fallback = _ref.fallback,
+  var fallback = _ref.fallback,
       onError = _ref.onError,
-      rest = _objectWithoutPropertiesLoose(_ref, ["src", "fallback", "onError"]);
+      opacity = _ref.opacity,
+      src = _ref.src,
+      rest = _objectWithoutPropertiesLoose(_ref, ["fallback", "onError", "opacity", "src"]);
 
   var _useState = useState(false),
       imageMissing = _useState[0],
@@ -27,6 +28,7 @@ var Image = function Image(_ref) {
     onError: (onError || fallback) && handleError
   };
   return React.createElement(StyledImage, _extends({}, rest, extraProps, {
+    opacityProp: opacity,
     src: !imageMissing ? src : fallback
   }));
 };

@@ -22,10 +22,12 @@ var fitStyle = (0, _styledComponents.css)(["flex:1 1;overflow:hidden;object-fit:
 var StyledImage = _styledComponents.default.img.withConfig({
   displayName: "StyledImage",
   componentId: "ey4zx9-0"
-})(["", " ", " ", ""], _utils.genericStyles, function (props) {
+})(["", " ", " ", " ", ""], _utils.genericStyles, function (props) {
   return props.fit && fitStyle;
 }, function (props) {
   return props.theme.image && props.theme.image.extend;
+}, function (props) {
+  return props.opacityProp && "opacity: " + (props.opacityProp === true ? props.theme.global.opacity.medium : props.theme.global.opacity[props.opacityProp] || props.opacityProp) + ";\n  ";
 });
 
 exports.StyledImage = StyledImage;

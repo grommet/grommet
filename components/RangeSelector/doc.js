@@ -20,7 +20,7 @@ var doc = function doc(RangeSelector) {
     }).description('Custom messages. Used for accessibility by screen readers.'),
     min: _reactDesc.PropTypes.number.description('The minimum value permitted.').defaultValue(0),
     onChange: _reactDesc.PropTypes.func.description("Function that will be called when the user changes one of the\n      values. It will be passed an array of two numbers indicating\n      the new values selected."),
-    opacity: _reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong']).description('').defaultValue('medium'),
+    opacity: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['weak', 'medium', 'strong']), _reactDesc.PropTypes.string, _reactDesc.PropTypes.bool]).description('Transparency of the selection indicator.').defaultValue('medium'),
     round: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full']), _reactDesc.PropTypes.string]).description('How much to round the corners.'),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']), _reactDesc.PropTypes.string]).description('How thick to make the selection indicator.').defaultValue('medium'),
     step: _reactDesc.PropTypes.number.description('The step interval between values.').defaultValue(1),

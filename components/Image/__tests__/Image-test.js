@@ -12,6 +12,7 @@ var _ = require("..");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var opacityTypes = ['weak', 'medium', 'strong', '0.3', true, false];
 var SRC = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAAA1JREFUCB1jYGBg+A8AAQQBAB5znEAAAAAASUVORK5CYII=';
 test('Image renders', function () {
   var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Image, {
@@ -32,4 +33,15 @@ test('Image fit renders', function () {
 
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+opacityTypes.forEach(function (opacity) {
+  test("Image opacity of " + opacity + " renders", function () {
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Image, {
+      opacity: opacity,
+      src: SRC
+    })));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

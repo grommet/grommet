@@ -50,10 +50,50 @@ var Fallback = function Fallback() {
   }));
 };
 
+var Opacity = function Opacity() {
+  return _react.default.createElement(_grommet.Grommet, {
+    theme: _themes.grommet
+  }, _react.default.createElement(_grommet.Box, {
+    gap: "small",
+    direction: "row"
+  }, _react.default.createElement(_grommet.Image, {
+    src: "//v2.grommet.io/assets/IMG_4245.jpg"
+  }), _react.default.createElement(_grommet.Image, {
+    opacity: "strong",
+    src: "//v2.grommet.io/assets/IMG_4245.jpg"
+  })), _react.default.createElement(_grommet.Box, {
+    gap: "small",
+    direction: "row"
+  }, _react.default.createElement(_grommet.Image, {
+    opacity: "medium",
+    src: "//v2.grommet.io/assets/IMG_4245.jpg"
+  }), _react.default.createElement(_grommet.Image, {
+    opacity: "weak",
+    src: "//v2.grommet.io/assets/IMG_4245.jpg"
+  })), _react.default.createElement(_grommet.Box, {
+    gap: "small",
+    direction: "row"
+  }, _react.default.createElement(_grommet.Image, {
+    opacity: false,
+    src: "//v2.grommet.io/assets/IMG_4245.jpg"
+  }), _react.default.createElement(_grommet.Image, {
+    opacity: true,
+    src: "//v2.grommet.io/assets/IMG_4245.jpg"
+  })), _react.default.createElement(_grommet.Box, {
+    gap: "small",
+    direction: "row"
+  }, _react.default.createElement(_grommet.Image, {
+    opacity: "0.6",
+    src: "//v2.grommet.io/assets/IMG_4245.jpg"
+  })));
+};
+
 (0, _react2.storiesOf)('Image', module).add('Simple', function () {
   return _react.default.createElement(Simple, null);
 }).add('Fit', function () {
   return _react.default.createElement(Fit, null);
 }).add('Fallback', function () {
   return _react.default.createElement(Fallback, null);
+}).add('Opacity', function () {
+  return _react.default.createElement(Opacity, null);
 });
