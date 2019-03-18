@@ -28,6 +28,29 @@ var doc = function doc(TextArea) {
 exports.doc = doc;
 
 var themeDoc = _extends({
+  'global.colors.border': {
+    description: 'The color of the border.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: {
+      dark: 'rgba(255, 255, 255, 0.33)',
+      light: 'rgba(0, 0, 0, 0.33)'
+    }
+  },
+  'global.control.border.color': {
+    description: 'The border color.',
+    type: 'string',
+    defaultValue: 'border'
+  },
+  'global.control.border.radius': {
+    description: 'The border radius.',
+    type: 'string',
+    defaultValue: '4px'
+  },
+  'global.control.border.width': {
+    description: 'The border width.',
+    type: 'string',
+    defaultValue: '1px'
+  },
   'textArea.extend': {
     description: 'Any additional style for Text.',
     type: 'string | (props) => {}',
@@ -37,23 +60,6 @@ var themeDoc = _extends({
     description: 'The opacity when the textArea is disabled.',
     type: 'number',
     defaultValue: 0.3
-  },
-  'global.control.border': {
-    description: 'The border of the textarea.',
-    type: 'object',
-    defaultValue: {
-      width: '1px',
-      radius: '4px',
-      color: 'border'
-    }
-  },
-  'global.colors.border': {
-    description: 'The color of the borders',
-    type: 'object',
-    defaultValue: {
-      dark: 'rgba(255, 255, 255, 0.33)',
-      light: 'rgba(0, 0, 0, 0.33)'
-    }
   }
 }, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.placeholderStyle, _utils.themeDocUtils.inputStyle, _utils.themeDocUtils.disabledStyle);
 

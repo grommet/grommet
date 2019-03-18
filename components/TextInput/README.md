@@ -194,6 +194,46 @@ input
 ```
 ## Theme
   
+**global.colors.border**
+
+The color of the border. Expects `object`.
+
+Defaults to
+
+```
+[object Object]
+```
+
+**global.control.border.color**
+
+The border color. Expects `string`.
+
+Defaults to
+
+```
+border
+```
+
+**global.control.border.radius**
+
+The border radius. Expects `string`.
+
+Defaults to
+
+```
+4px
+```
+
+**global.control.border.width**
+
+The border width. Expects `string`.
+
+Defaults to
+
+```
+1px
+```
+
 **select.step**
 
 How many suggestions to render at a time. Expects `number`.
@@ -277,26 +317,6 @@ Defaults to
 
 ```
 0.3
-```
-
-**global.control.border**
-
-The border of the input. Expects `object`.
-
-Defaults to
-
-```
-[object Object]
-```
-
-**global.colors.border**
-
-The color of the borders Expects `object`.
-
-Defaults to
-
-```
-[object Object]
 ```
 
 **global.focus.border.color**

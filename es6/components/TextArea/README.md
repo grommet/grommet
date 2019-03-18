@@ -93,6 +93,46 @@ textarea
 ```
 ## Theme
   
+**global.colors.border**
+
+The color of the border. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+[object Object]
+```
+
+**global.control.border.color**
+
+The border color. Expects `string`.
+
+Defaults to
+
+```
+border
+```
+
+**global.control.border.radius**
+
+The border radius. Expects `string`.
+
+Defaults to
+
+```
+4px
+```
+
+**global.control.border.width**
+
+The border width. Expects `string`.
+
+Defaults to
+
+```
+1px
+```
+
 **textArea.extend**
 
 Any additional style for Text. Expects `string | (props) => {}`.
@@ -111,26 +151,6 @@ Defaults to
 
 ```
 0.3
-```
-
-**global.control.border**
-
-The border of the textarea. Expects `object`.
-
-Defaults to
-
-```
-[object Object]
-```
-
-**global.colors.border**
-
-The color of the borders Expects `object`.
-
-Defaults to
-
-```
-[object Object]
 ```
 
 **global.focus.border.color**
