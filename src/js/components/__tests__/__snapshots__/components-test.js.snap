@@ -1065,7 +1065,7 @@ string",
         "name": "disabled",
       },
       Object {
-        "defaultValue": true,
+        "defaultValue": false,
         "description": "Whether to show the days of the week.",
         "format": "boolean",
         "name": "daysOfWeek",

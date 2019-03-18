@@ -160,7 +160,7 @@ Multiple dates in ISO8601 format that should not be
 
 **daysOfWeek**
 
-Whether to show the days of the week. Defaults to `true`.
+Whether to show the days of the week.
 
 ```
 boolean
