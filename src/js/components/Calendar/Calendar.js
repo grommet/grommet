@@ -255,12 +255,29 @@ class Calendar extends Component {
     );
   };
 
+  renderDaysOfWeek = (locale, size, start) => {
+    let day = new Date(start);
+    const days = [];
+    while (days.length < 7) {
+      days.push(
+        <StyledDayContainer key={days.length} sizeProp={size}>
+          <StyledDay otherMonth sizeProp={size}>
+            {day.toLocaleDateString(locale, { weekday: 'narrow' })}
+          </StyledDay>
+        </StyledDayContainer>,
+      );
+      day = addDays(day, 1);
+    }
+    return <StyledWeek>{days}</StyledWeek>;
+  };
+
   render() {
     const {
       bounds,
       date: dateProp,
       dates: datesProp,
       disabled,
+      daysOfWeek,
       firstDayOfWeek,
       header,
       locale,
@@ -371,6 +388,7 @@ class Calendar extends Component {
                   nextInBound: betweenDates(nextMonth, bounds),
                 })
               : this.renderCalendarHeader(previousMonth, nextMonth)}
+            {daysOfWeek && this.renderDaysOfWeek(locale, size, start)}
             <StyledWeeksContainer sizeProp={size}>
               <StyledWeeks slide={slide} sizeProp={size}>
                 {weeks}
