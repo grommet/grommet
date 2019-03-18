@@ -270,6 +270,26 @@ function (_Component) {
       })));
     });
 
+    _defineProperty(_assertThisInitialized(_this), "renderDaysOfWeek", function (locale, size, start) {
+      var day = new Date(start);
+      var days = [];
+
+      while (days.length < 7) {
+        days.push(_react.default.createElement(_StyledCalendar.StyledDayContainer, {
+          key: days.length,
+          sizeProp: size
+        }, _react.default.createElement(_StyledCalendar.StyledDay, {
+          otherMonth: true,
+          sizeProp: size
+        }, day.toLocaleDateString(locale, {
+          weekday: 'narrow'
+        }))));
+        day = (0, _utils.addDays)(day, 1);
+      }
+
+      return _react.default.createElement(_StyledCalendar.StyledWeek, null, days);
+    });
+
     return _this;
   }
 
@@ -321,6 +341,7 @@ function (_Component) {
         dateProp = _this$props4.date,
         datesProp = _this$props4.dates,
         disabled = _this$props4.disabled,
+        daysOfWeek = _this$props4.daysOfWeek,
         firstDayOfWeek = _this$props4.firstDayOfWeek,
         header = _this$props4.header,
         locale = _this$props4.locale,
@@ -330,7 +351,7 @@ function (_Component) {
         showAdjacentDays = _this$props4.showAdjacentDays,
         size = _this$props4.size,
         theme = _this$props4.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props4, ["bounds", "date", "dates", "disabled", "firstDayOfWeek", "header", "locale", "onReference", "onSelect", "range", "showAdjacentDays", "size", "theme"]);
+        rest = _objectWithoutPropertiesLoose(_this$props4, ["bounds", "date", "dates", "disabled", "daysOfWeek", "firstDayOfWeek", "header", "locale", "onReference", "onSelect", "range", "showAdjacentDays", "size", "theme"]);
 
     var _this$state2 = this.state,
         date = _this$state2.date,
@@ -444,7 +465,7 @@ function (_Component) {
       },
       previousInBound: (0, _utils.betweenDates)(previousMonth, bounds),
       nextInBound: (0, _utils.betweenDates)(nextMonth, bounds)
-    }) : this.renderCalendarHeader(previousMonth, nextMonth), _react.default.createElement(_StyledCalendar.StyledWeeksContainer, {
+    }) : this.renderCalendarHeader(previousMonth, nextMonth), daysOfWeek && this.renderDaysOfWeek(locale, size, start), _react.default.createElement(_StyledCalendar.StyledWeeksContainer, {
       sizeProp: size
     }, _react.default.createElement(_StyledCalendar.StyledWeeks, {
       slide: slide,

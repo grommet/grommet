@@ -9,6 +9,7 @@ export interface CalendarProps {
   bounds?: string[];
   date?: string;
   dates?: (string | string[])[];
+  daysOfWeek?: boolean;
   disabled?: (string | string[])[];
   firstDayOfWeek?: "0" | "1";
   header?: ((...args: any[]) => any);

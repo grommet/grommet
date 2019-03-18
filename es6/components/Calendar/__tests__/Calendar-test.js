@@ -22,6 +22,14 @@ describe('Calendar', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('daysOfWeek', function () {
+    var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
+      daysOfWeek: true,
+      dates: DATES
+    })));
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   test('size', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(Calendar, {
       size: "small",

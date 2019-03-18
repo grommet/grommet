@@ -59,6 +59,15 @@ function (_Component) {
       onSelect: this.onSelect,
       size: "small",
       bounds: ['2018-09-08', '2018-12-13']
+    })), _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, _react.default.createElement(_grommet.Calendar, {
+      date: date,
+      daysOfWeek: true,
+      onSelect: this.onSelect,
+      size: "small",
+      bounds: ['2018-09-08', '2018-12-13']
     })));
   };
 

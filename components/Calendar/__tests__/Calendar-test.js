@@ -32,6 +32,15 @@ describe('Calendar', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('daysOfWeek', function () {
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Calendar, {
+      daysOfWeek: true,
+      dates: DATES
+    })));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   test('size', function () {
     var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Calendar, {
       size: "small",

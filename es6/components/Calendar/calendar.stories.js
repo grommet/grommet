@@ -55,6 +55,15 @@ function (_Component) {
       onSelect: this.onSelect,
       size: "small",
       bounds: ['2018-09-08', '2018-12-13']
+    })), React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, React.createElement(Calendar, {
+      date: date,
+      daysOfWeek: true,
+      onSelect: this.onSelect,
+      size: "small",
+      bounds: ['2018-09-08', '2018-12-13']
     })));
   };
 
