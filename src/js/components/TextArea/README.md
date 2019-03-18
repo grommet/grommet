@@ -95,7 +95,7 @@ textarea
   
 **global.colors.border**
 
-The color of the border. Expects `object`.
+The color of the border. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 

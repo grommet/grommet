@@ -46,7 +46,7 @@ Only use this when the containing context provides sufficient affordance.`,
 export const themeDoc = {
   'global.colors.border': {
     description: 'The color of the border.',
-    type: 'object',
+    type: 'string | { dark: string, light: string }',
     defaultValue: {
       dark: 'rgba(255, 255, 255, 0.33)',
       light: 'rgba(0, 0, 0, 0.33)',
