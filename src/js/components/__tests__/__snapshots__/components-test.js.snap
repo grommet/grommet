@@ -1065,6 +1065,12 @@ string",
         "name": "disabled",
       },
       Object {
+        "defaultValue": true,
+        "description": "Whether to show the days of the week.",
+        "format": "boolean",
+        "name": "daysOfWeek",
+      },
+      Object {
         "defaultValue": 0,
         "description": "The first day of the week. 0 for Sunday. 1 for Monday.",
         "format": "0
