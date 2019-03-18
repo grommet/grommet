@@ -87,7 +87,7 @@ function (_React$Component) {
     })];
 
     if (topRow.length >= 2) {
-      connections.push(connection('4', '2', {
+      connections.push(connection('1', '2', {
         color: 'accent-1',
         anchor: 'horizontal'
       }));
