@@ -5,15 +5,6 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 import { withTheme } from 'styled-components';
 import { AnnounceContext } from '../contexts';
 
-let doc = () => x => x;
-
-// Do not use the documentation wrapper in production.
-if (process.env.NODE_ENV !== 'production') {
-  doc = component => require(`./${component}/doc`).doc; // eslint-disable-line
-}
-
-export const withDocs = doc;
-
 export const withFocus = ({ focusWithMouse } = {}) => WrappedComponent => {
   class FocusableComponent extends Component {
     static getDerivedStateFromProps(nextProps, prevState) {
