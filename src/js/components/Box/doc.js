@@ -24,6 +24,7 @@ const ANIMATION_SHAPE = PropTypes.shape({
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
 });
 
+// if you update values here, make sure to update in Drop/doc too.
 const overflowPropType = PropTypes.oneOfType([
   PropTypes.oneOf(OVERFLOW_VALUES),
   PropTypes.shape({
