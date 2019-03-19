@@ -1,19 +1,14 @@
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
 
-import { withForwardRef, withDocs } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
 import { ThemeContext } from '../../contexts';
 import { defaultProps } from '../../default-props';
 import { backgroundIsDark } from '../../utils';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
 
-const wrapWithHocs = compose(
-  withForwardRef,
-  withDocs('Box'),
-);
-
-class BoxImpl extends Component {
+class Box extends Component {
   static contextType = ThemeContext;
 
   static displayName = 'Box';
@@ -110,6 +105,15 @@ class BoxImpl extends Component {
   }
 }
 
-Object.setPrototypeOf(BoxImpl.defaultProps, defaultProps);
+Object.setPrototypeOf(Box.defaultProps, defaultProps);
 
-export const Box = wrapWithHocs(BoxImpl);
+let BoxDoc;
+if (process.env.NODE_ENV !== 'production') {
+  BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
+}
+const BoxWrapper = compose(
+  withTheme,
+  withForwardRef,
+)(BoxDoc || Box);
+
+export { BoxWrapper as Box };
