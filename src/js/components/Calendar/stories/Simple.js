@@ -21,7 +21,7 @@ class SimpleCalendar extends Component {
             date={date}
             onSelect={this.onSelect}
             size="small"
-            bounds={['2018-09-08', '2018-12-13']}
+            bounds={['2018-09-08', '2020-12-13']}
           />
         </Box>
         <Box align="center" pad="large">
@@ -30,7 +30,7 @@ class SimpleCalendar extends Component {
             daysOfWeek
             onSelect={this.onSelect}
             size="small"
-            bounds={['2018-09-08', '2018-12-13']}
+            bounds={['2018-09-08', '2020-12-13']}
           />
         </Box>
       </Grommet>
