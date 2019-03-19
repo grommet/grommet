@@ -215,7 +215,7 @@ boolean
 
 **icon**
 
-The icon to be used when rendering the select. You can use false to not render an icon at all.
+A custom icon to be used when rendering the select. You can use false to not render an icon at all.
 
 ```
 boolean
