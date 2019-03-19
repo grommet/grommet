@@ -143,9 +143,7 @@ class CheckBox extends Component {
         as={Box}
         align="center"
         justify="center"
-        margin={
-          label && label !== '' && { [side]: theme.checkBox.gap || 'small' }
-        }
+        margin={label && { [side]: theme.checkBox.gap || 'small' }}
         {...themeableProps}
       >
         <StyledCheckBoxInput
