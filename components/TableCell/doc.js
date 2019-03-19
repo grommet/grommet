@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.doc = void 0;
+exports.themeDoc = exports.doc = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -17,3 +17,91 @@ var doc = function doc(TableCell) {
 };
 
 exports.doc = doc;
+var themeDoc = {
+  'table.body.align': {
+    description: 'How to align the body inside the Table.',
+    type: 'string',
+    defaultValue: 'start'
+  },
+  'table.body.border': {
+    description: 'The border side of the body.',
+    type: 'string',
+    defaultValue: undefined
+  },
+  'table.body.extend': {
+    description: 'Any additional style for Table body.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'table.body.pad': {
+    description: 'The padding of the body.',
+    type: 'string | object',
+    defaultValue: "{ horizontal: 'small', vertical: 'xsmall' }"
+  },
+  'table.footer.align': {
+    description: 'How to align the footer inside the Table.',
+    type: 'string',
+    defaultValue: 'start'
+  },
+  'table.footer.border': {
+    description: 'The border side of the footer.',
+    type: 'string',
+    defaultValue: 'top'
+  },
+  'table.footer.extend': {
+    description: 'Any additional style for Table footer.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'table.footer.fill': {
+    description: 'Whether the height should fill the footer.',
+    type: 'string',
+    defaultValue: 'vertical'
+  },
+  'table.footer.pad': {
+    description: 'The padding of the footer.',
+    type: 'string | object',
+    defaultValue: "{ horizontal: 'small', vertical: 'xsmall' }"
+  },
+  'table.footer.verticalAlign': {
+    description: 'How to align the content vertically.',
+    type: 'string',
+    defaultValue: 'top'
+  },
+  'table.header.align': {
+    description: 'How to align the header inside the Table.',
+    type: 'string',
+    defaultValue: 'start'
+  },
+  'table.header.background': {
+    description: 'The background color of the header.',
+    type: 'string | object',
+    defaultValue: undefined
+  },
+  'table.header.border': {
+    description: 'The border side of the header.',
+    type: 'string',
+    defaultValue: 'bottom'
+  },
+  'table.header.fill': {
+    description: 'Whether the height should fill the header.',
+    type: 'string',
+    defaultValue: 'vertical'
+  },
+  'table.header.extend': {
+    description: 'Any additional style for Table header.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
+  'table.header.pad': {
+    description: 'The padding of the header.',
+    type: 'string | object',
+    defaultValue: "{ horizontal: 'small', vertical: 'xsmall' }"
+  },
+  'table.header.verticalAlign': {
+    description: 'How to align the content vertically.',
+    type: 'string',
+    defaultValue: 'bottom'
+  }
+};
+exports.themeDoc = themeDoc;

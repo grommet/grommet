@@ -2,6 +2,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 export var doc = function doc(Video) {
   var DocumentedVideo = describe(Video).availableAt(getAvailableAtBadge('Video')).description('A video player.').usage("import { Video } from 'grommet';\n<Video />").intrinsicElement('video');
   DocumentedVideo.propTypes = _extends({}, genericProps, {
@@ -13,12 +14,7 @@ export var doc = function doc(Video) {
   });
   return DocumentedVideo;
 };
-export var themeDoc = {
-  'global.edgeSize.responsiveBreakpoint': {
-    description: 'The actual breakpoint to trigger changes in the video component layout.',
-    type: 'string',
-    defaultValue: 'small'
-  },
+export var themeDoc = _extends({}, themeDocUtils.responsiveBreakpoint('The actual breakpoint to trigger changes in the video component layout.'), {
   'global.edgeSize.xsmall': {
     description: 'The width of the video scrubber.',
     type: 'object',
@@ -39,4 +35,4 @@ export var themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined
   }
-};
+});

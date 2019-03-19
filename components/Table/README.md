@@ -120,3 +120,43 @@ string
 ```
 table
 ```
+## Theme
+  
+**global.edgeSize.responsiveBreakpoint**
+
+The actual breakpoint to trigger changes in Table. Expects `string`.
+
+Defaults to
+
+```
+small
+```
+
+**global.size**
+
+The size that impacts max-width and width. Expects `undefined`.
+
+Defaults to
+
+```
+{
+      xxsmall: '48px',
+      xsmall: '96px',
+      small: '192px',
+      medium: '384px',
+      large: '768px',
+      xlarge: '1152px',
+      xxlarge: '1536px',
+      full: '100%',
+      }
+```
+
+**table.extend**
+
+Any additional style for Table. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
