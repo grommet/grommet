@@ -104,7 +104,7 @@ class Select extends Component {
 
     let SelectIcon;
     if (icon !== false) {
-      SelectIcon = icon || theme.select.icons.down;
+      SelectIcon = icon !== true ? icon : theme.select.icons.down;
     }
     let selectValue;
     let inputValue = '';

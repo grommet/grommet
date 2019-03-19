@@ -1,40 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select basic 1`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -79,27 +45,6 @@ exports[`Select basic 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding: 0px;
 }
 
@@ -193,19 +138,6 @@ exports[`Select basic 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
     padding: 0px;
   }
 }
@@ -246,66 +178,11 @@ exports[`Select basic 1`] = `
         />
       </div>
     </div>
-    <div
-      className="c7"
-      style={
-        Object {
-          "minWidth": "auto",
-        }
-      }
-    >
-      <svg
-        aria-label="FormDown"
-        className="c8"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          strokeWidth="2"
-        />
-      </svg>
-    </div>
   </div>
 </button>
 `;
 
 exports[`Select complex options and children 1`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -350,27 +227,6 @@ exports[`Select complex options and children 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding: 0px;
 }
 
@@ -468,19 +324,6 @@ exports[`Select complex options and children 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
 <button
   aria-label="Open Drop"
   class="c0 c1"
@@ -507,23 +350,6 @@ exports[`Select complex options and children 1`] = `
           value=""
         />
       </div>
-    </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
     </div>
   </div>
 </button>
@@ -556,23 +382,6 @@ exports[`Select complex options and children 2`] = `
           value=""
         />
       </div>
-    </div>
-    <div
-      class="StyledBox-sc-13pk1d4-0 eLQtUu"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dSllCE"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
     </div>
   </div>
 </button>
@@ -886,19 +695,6 @@ exports[`Select complex options and children 4`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .eLQtUu {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eLQtUu {
-    padding: 0px;
-  }
-}
-
 .iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1035,40 +831,6 @@ exports[`Select complex options and children 4`] = `
 `;
 
 exports[`Select deselect an option 1`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1113,27 +875,6 @@ exports[`Select deselect an option 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding: 0px;
 }
 
@@ -1231,19 +972,6 @@ exports[`Select deselect an option 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
 <button
   aria-label="Open Drop"
   class="c0 c1"
@@ -1272,62 +1000,11 @@ exports[`Select deselect an option 1`] = `
         />
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
   </div>
 </button>
 `;
 
 exports[`Select disabled 1`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1372,27 +1049,6 @@ exports[`Select disabled 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding: 0px;
 }
 
@@ -1492,19 +1148,6 @@ exports[`Select disabled 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
 <button
   aria-label="Open Drop"
   class="c0 c1"
@@ -1532,23 +1175,6 @@ exports[`Select disabled 1`] = `
           value=""
         />
       </div>
-    </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
     </div>
   </div>
 </button>
@@ -1582,23 +1208,6 @@ exports[`Select disabled 2`] = `
           value=""
         />
       </div>
-    </div>
-    <div
-      class="StyledBox-sc-13pk1d4-0 eLQtUu"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dSllCE"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
     </div>
   </div>
 </button>
@@ -2651,40 +2260,6 @@ exports[`Select medium drop container height 1`] = `
 `;
 
 exports[`Select multiple 1`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2729,27 +2304,6 @@ exports[`Select multiple 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding: 0px;
 }
 
@@ -2843,19 +2397,6 @@ exports[`Select multiple 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
     padding: 0px;
   }
 }
@@ -2898,66 +2439,11 @@ exports[`Select multiple 1`] = `
         />
       </div>
     </div>
-    <div
-      className="c7"
-      style={
-        Object {
-          "minWidth": "auto",
-        }
-      }
-    >
-      <svg
-        aria-label="FormDown"
-        className="c8"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          strokeWidth="2"
-        />
-      </svg>
-    </div>
   </div>
 </button>
 `;
 
 exports[`Select multiple values 1`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3002,27 +2488,6 @@ exports[`Select multiple values 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding: 0px;
 }
 
@@ -3120,19 +2585,6 @@ exports[`Select multiple values 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
 <button
   aria-label="Open Drop"
   class="c0 c1"
@@ -3160,23 +2612,6 @@ exports[`Select multiple values 1`] = `
           value="multiple"
         />
       </div>
-    </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
     </div>
   </div>
 </button>
@@ -3210,23 +2645,6 @@ exports[`Select multiple values 2`] = `
           value="multiple"
         />
       </div>
-    </div>
-    <div
-      class="StyledBox-sc-13pk1d4-0 eLQtUu"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dSllCE"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
     </div>
   </div>
 </button>
@@ -3601,19 +3019,6 @@ exports[`Select multiple values 4`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .eLQtUu {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eLQtUu {
-    padding: 0px;
-  }
-}
-
 .iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3762,40 +3167,6 @@ exports[`Select multiple values 4`] = `
 `;
 
 exports[`Select opens 1`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3840,27 +3211,6 @@ exports[`Select opens 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding: 0px;
 }
 
@@ -3958,19 +3308,6 @@ exports[`Select opens 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
 <button
   aria-label="Open Drop"
   class="c0 c1"
@@ -3997,23 +3334,6 @@ exports[`Select opens 1`] = `
           value=""
         />
       </div>
-    </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
     </div>
   </div>
 </button>
@@ -4046,23 +3366,6 @@ exports[`Select opens 2`] = `
           value=""
         />
       </div>
-    </div>
-    <div
-      class="StyledBox-sc-13pk1d4-0 eLQtUu"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="StyledIcon-ofa7kd-0 dSllCE"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
     </div>
   </div>
 </button>
@@ -4431,19 +3734,6 @@ exports[`Select opens 4`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .eLQtUu {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eLQtUu {
-    padding: 0px;
-  }
-}
-
 .iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4631,7 +3921,7 @@ exports[`Select opens 5`] = `
 </div>
 `;
 
-exports[`Select search 1`] = `
+exports[`Select renders custom icon 1`] = `
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -4843,6 +4133,662 @@ exports[`Select search 1`] = `
 
 <button
   aria-label="Open Drop"
+  className="c0 c1"
+  id="test-select"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  type="button"
+>
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <input
+          autoComplete="off"
+          className="c5 c6"
+          id="test-select__input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          readOnly={true}
+          tabIndex="-1"
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      className="c7"
+      style={
+        Object {
+          "minWidth": "auto",
+        }
+      }
+    >
+      <svg
+        aria-label="CaretDown"
+        className="c8"
+        viewBox="0 0 24 24"
+      >
+        <polygon
+          fill="none"
+          points="22 8 12 20 2 8"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select renders default icon 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  padding: 0px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c6 {
+  box-sizing: border-box;
+  font-size: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  border: none;
+}
+
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c6:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+.c5 {
+  cursor: pointer;
+}
+
+.c0 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding: 0px;
+  }
+}
+
+<button
+  aria-label="Open Drop"
+  className="c0 c1"
+  id="test-select"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  type="button"
+>
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <input
+          autoComplete="off"
+          className="c5 c6"
+          id="test-select__input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          readOnly={true}
+          tabIndex="-1"
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      className="c7"
+      style={
+        Object {
+          "minWidth": "auto",
+        }
+      }
+    >
+      <svg
+        aria-label="FormDown"
+        className="c8"
+        viewBox="0 0 24 24"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select renders without icon 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  padding: 0px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c6 {
+  box-sizing: border-box;
+  font-size: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  border: none;
+}
+
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c6:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+.c5 {
+  cursor: pointer;
+}
+
+.c0 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+<button
+  aria-label="Open Drop"
+  className="c0 c1"
+  id="test-select"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
+  type="button"
+>
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+    >
+      <div
+        className="c4"
+      >
+        <input
+          autoComplete="off"
+          className="c5 c6"
+          id="test-select__input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          readOnly={true}
+          tabIndex="-1"
+          type="text"
+        />
+      </div>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select search 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  padding: 0px;
+}
+
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c6 {
+  box-sizing: border-box;
+  font-size: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  border: none;
+}
+
+.c6::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c6::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c6:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c6::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c4 {
+  position: relative;
+  width: 100%;
+}
+
+.c5 {
+  cursor: pointer;
+}
+
+.c0 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+<button
+  aria-label="Open Drop"
   class="c0 c1"
   id="test-select"
   type="button"
@@ -4867,23 +4813,6 @@ exports[`Select search 1`] = `
           value=""
         />
       </div>
-    </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
     </div>
   </div>
 </button>
@@ -5342,19 +5271,6 @@ exports[`Select search 3`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .eLQtUu {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .eLQtUu {
-    padding: 0px;
-  }
-}
-
 .iVWgBr {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5503,40 +5419,6 @@ exports[`Select search 3`] = `
 `;
 
 exports[`Select select an option 1`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5581,27 +5463,6 @@ exports[`Select select an option 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding: 0px;
 }
 
@@ -5699,19 +5560,6 @@ exports[`Select select an option 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
 <button
   aria-label="Open Drop"
   class="c0 c1"
@@ -5739,62 +5587,11 @@ exports[`Select select an option 1`] = `
         />
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
   </div>
 </button>
 `;
 
 exports[`Select select an option with complex options 1`] = `
-.c4 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c4 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c4 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c4 *[stroke*="#"],
-.c4 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c4 *[fill-rule],
-.c4 *[FILL-RULE],
-.c4 *[fill*="#"],
-.c4 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5842,27 +5639,6 @@ exports[`Select select an option with complex options 1`] = `
   padding: 0px;
 }
 
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  padding: 0px;
-}
-
 .c0 {
   display: inline-block;
   box-sizing: border-box;
@@ -5901,19 +5677,6 @@ exports[`Select select an option with complex options 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c3 {
     padding: 0px;
   }
 }
@@ -5934,62 +5697,11 @@ exports[`Select select an option with complex options 1`] = `
         one
       </span>
     </div>
-    <div
-      class="c3"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c4"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
   </div>
 </button>
 `;
 
 exports[`Select select an option with enter 1`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6034,27 +5746,6 @@ exports[`Select select an option with enter 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding: 0px;
 }
 
@@ -6148,19 +5839,6 @@ exports[`Select select an option with enter 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
     padding: 0px;
   }
 }
@@ -6192,62 +5870,11 @@ exports[`Select select an option with enter 1`] = `
         />
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
   </div>
 </button>
 `;
 
 exports[`Select select another option 1`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6292,27 +5919,6 @@ exports[`Select select another option 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding: 0px;
 }
 
@@ -6406,19 +6012,6 @@ exports[`Select select another option 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    padding: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
     padding: 0px;
   }
 }
@@ -6451,62 +6044,11 @@ exports[`Select select another option 1`] = `
         />
       </div>
     </div>
-    <div
-      class="c7"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="c8"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
   </div>
 </button>
 `;
 
 exports[`Select size 1`] = `
-.c8 {
-  display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
-  fill: #7D4CDB;
-  stroke: #7D4CDB;
-}
-
-.c8 g {
-  fill: inherit;
-  stroke: inherit;
-}
-
-.c8 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c8 *[stroke*="#"],
-.c8 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c8 *[fill-rule],
-.c8 *[FILL-RULE],
-.c8 *[fill*="#"],
-.c8 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6551,27 +6093,6 @@ exports[`Select size 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  padding: 0px;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding: 0px;
 }
 
@@ -6671,19 +6192,6 @@ exports[`Select size 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c7 {
-    margin-left: 6px;
-    margin-right: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c7 {
-    padding: 0px;
-  }
-}
-
 <button
   aria-label="Open Drop"
   className="c0 c1"
@@ -6721,27 +6229,6 @@ exports[`Select size 1`] = `
           value=""
         />
       </div>
-    </div>
-    <div
-      className="c7"
-      style={
-        Object {
-          "minWidth": "auto",
-        }
-      }
-    >
-      <svg
-        aria-label="FormDown"
-        className="c8"
-        viewBox="0 0 24 24"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          strokeWidth="2"
-        />
-      </svg>
     </div>
   </div>
 </button>
