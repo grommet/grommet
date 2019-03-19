@@ -17,11 +17,53 @@ var DSTCalendar = function DSTCalendar() {
     theme: _themes.grommet
   }, _react.default.createElement(_grommet.Box, {
     align: "center",
+    pad: "large",
+    direction: "row",
+    justify: "center"
+  }, _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: "large",
+    border: "right"
+  }, _react.default.createElement(_grommet.Text, {
+    size: "xlarge"
+  }, "Daylight MST"), _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: {
+      vertical: 'medium'
+    }
+  }, _react.default.createElement(_grommet.Calendar, {
+    date: "2018-11-04T06:00:00.000Z",
+    bounds: ['2013-11-06', '2018-12-06']
+  })), _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: {
+      vertical: 'medium'
+    }
+  }, _react.default.createElement(_grommet.Calendar, {
+    date: "2019-03-11T05:00:01.409Z",
+    bounds: ['2019-03-01', '2019-03-31']
+  }))), _react.default.createElement(_grommet.Box, {
+    align: "center",
     pad: "large"
+  }, _react.default.createElement(_grommet.Text, {
+    size: "xlarge"
+  }, "Daylight PST"), _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: {
+      vertical: 'medium'
+    }
   }, _react.default.createElement(_grommet.Calendar, {
     date: "2018-11-04T07:00:00.000Z",
     bounds: ['2013-11-06', '2018-12-06']
-  })));
+  })), _react.default.createElement(_grommet.Box, {
+    align: "center",
+    pad: {
+      vertical: 'medium'
+    }
+  }, _react.default.createElement(_grommet.Calendar, {
+    date: "2019-03-15T06:00:01.409Z",
+    bounds: ['2019-03-01', '2019-03-31']
+  })))));
 };
 
 (0, _react2.storiesOf)('Calendar', module).add('Daylight Savings Time', function () {

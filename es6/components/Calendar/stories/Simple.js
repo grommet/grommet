@@ -49,7 +49,7 @@ function (_Component) {
       date: date,
       onSelect: this.onSelect,
       size: "small",
-      bounds: ['2018-09-08', '2018-12-13']
+      bounds: ['2018-09-08', '2020-12-13']
     })), React.createElement(Box, {
       align: "center",
       pad: "large"
@@ -58,7 +58,7 @@ function (_Component) {
       daysOfWeek: true,
       onSelect: this.onSelect,
       size: "small",
-      bounds: ['2018-09-08', '2018-12-13']
+      bounds: ['2018-09-08', '2020-12-13']
     })));
   };
 
