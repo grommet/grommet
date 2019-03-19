@@ -56,7 +56,6 @@ function (_Component) {
       align: "center",
       pad: "large"
     }, _react.default.createElement(_grommet.CheckBox, _extends({}, this.props, {
-      label: "Choice",
       checked: checked,
       onChange: this.onChange
     }))));
@@ -465,18 +464,23 @@ function (_Component6) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('CheckBox', module).add('Simple', function () {
-  return _react.default.createElement(SimpleCheckBox, null);
+  return _react.default.createElement(SimpleCheckBox, {
+    label: "Choice"
+  });
 }).add('Toggle', function () {
   return _react.default.createElement(SimpleCheckBox, {
+    label: "Choice",
     toggle: true
   });
 }).add('Disabled', function () {
   return _react.default.createElement(SimpleCheckBox, {
+    label: "Choice",
     checked: true,
     disabled: true
   });
 }).add('Reverse', function () {
   return _react.default.createElement(SimpleCheckBox, {
+    label: "Choice",
     reverse: true
   });
 }).add('Themed CheckBox', function () {
@@ -489,4 +493,6 @@ function (_Component6) {
   return _react.default.createElement(CheckBoxWithStickyDiv, null);
 }).add('Interminate CheckBox', function () {
   return _react.default.createElement(IndeterminateCheckBox, null);
+}).add('No Label', function () {
+  return _react.default.createElement(SimpleCheckBox, null);
 });

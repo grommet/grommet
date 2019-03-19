@@ -46,7 +46,6 @@ function (_Component) {
       align: "center",
       pad: "large"
     }, React.createElement(CheckBox, _extends({}, this.props, {
-      label: "Choice",
       checked: checked,
       onChange: this.onChange
     }))));
@@ -455,18 +454,23 @@ function (_Component6) {
 }(Component);
 
 storiesOf('CheckBox', module).add('Simple', function () {
-  return React.createElement(SimpleCheckBox, null);
+  return React.createElement(SimpleCheckBox, {
+    label: "Choice"
+  });
 }).add('Toggle', function () {
   return React.createElement(SimpleCheckBox, {
+    label: "Choice",
     toggle: true
   });
 }).add('Disabled', function () {
   return React.createElement(SimpleCheckBox, {
+    label: "Choice",
     checked: true,
     disabled: true
   });
 }).add('Reverse', function () {
   return React.createElement(SimpleCheckBox, {
+    label: "Choice",
     reverse: true
   });
 }).add('Themed CheckBox', function () {
@@ -479,4 +483,6 @@ storiesOf('CheckBox', module).add('Simple', function () {
   return React.createElement(CheckBoxWithStickyDiv, null);
 }).add('Interminate CheckBox', function () {
   return React.createElement(IndeterminateCheckBox, null);
+}).add('No Label', function () {
+  return React.createElement(SimpleCheckBox, null);
 });

@@ -130,7 +130,7 @@ function (_Component) {
       as: Box,
       align: "center",
       justify: "center",
-      margin: (_ref = {}, _ref[side] = theme.checkBox.gap || 'small', _ref)
+      margin: label && (_ref = {}, _ref[side] = theme.checkBox.gap || 'small', _ref)
     }, themeableProps), React.createElement(StyledCheckBoxInput, _extends({}, rest, {
       ref: forwardRef,
       type: "checkbox"
