@@ -1,6 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
 import { genericProps, getAvailableAtBadge } from '../../utils';
+import { themeDocUtils } from '../../utils/themeDocUtils';
 
 export const doc = Video => {
   const DocumentedVideo = describe(Video)
@@ -33,12 +34,9 @@ export const doc = Video => {
 };
 
 export const themeDoc = {
-  'global.edgeSize.responsiveBreakpoint': {
-    description:
-      'The actual breakpoint to trigger changes in the video component layout.',
-    type: 'string',
-    defaultValue: 'small',
-  },
+  ...themeDocUtils.responsiveBreakpoint(
+    'The actual breakpoint to trigger changes in the video component layout.',
+  ),
   'global.edgeSize.xsmall': {
     description: 'The width of the video scrubber.',
     type: 'object',
