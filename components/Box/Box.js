@@ -27,18 +27,16 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var wrapWithHocs = (0, _recompose.compose)(_hocs.withForwardRef, (0, _hocs.withDocs)('Box'));
-
-var BoxImpl =
+var Box =
 /*#__PURE__*/
 function (_Component) {
-  _inheritsLoose(BoxImpl, _Component);
+  _inheritsLoose(Box, _Component);
 
-  function BoxImpl() {
+  function Box() {
     return _Component.apply(this, arguments) || this;
   }
 
-  var _proto = BoxImpl.prototype;
+  var _proto = Box.prototype;
 
   _proto.render = function render() {
     var _this$props = this.props,
@@ -122,20 +120,26 @@ function (_Component) {
     return content;
   };
 
-  return BoxImpl;
+  return Box;
 }(_react.Component);
 
-_defineProperty(BoxImpl, "contextType", _contexts.ThemeContext);
+_defineProperty(Box, "contextType", _contexts.ThemeContext);
 
-_defineProperty(BoxImpl, "displayName", 'Box');
+_defineProperty(Box, "displayName", 'Box');
 
-_defineProperty(BoxImpl, "defaultProps", {
+_defineProperty(Box, "defaultProps", {
   direction: 'column',
   margin: 'none',
   pad: 'none',
   responsive: true
 });
 
-Object.setPrototypeOf(BoxImpl.defaultProps, _defaultProps.defaultProps);
-var Box = wrapWithHocs(BoxImpl);
-exports.Box = Box;
+Object.setPrototypeOf(Box.defaultProps, _defaultProps.defaultProps);
+var BoxDoc;
+
+if (process.env.NODE_ENV !== 'production') {
+  BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
+}
+
+var BoxWrapper = (0, _recompose.compose)(_hocs.withTheme, _hocs.withForwardRef)(BoxDoc || Box);
+exports.Box = BoxWrapper;

@@ -8,23 +8,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
-import { withForwardRef, withDocs } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
 import { ThemeContext } from '../../contexts';
 import { defaultProps } from '../../default-props';
 import { backgroundIsDark } from '../../utils';
 import { StyledBox, StyledBoxGap } from './StyledBox';
-var wrapWithHocs = compose(withForwardRef, withDocs('Box'));
 
-var BoxImpl =
+var Box =
 /*#__PURE__*/
 function (_Component) {
-  _inheritsLoose(BoxImpl, _Component);
+  _inheritsLoose(Box, _Component);
 
-  function BoxImpl() {
+  function Box() {
     return _Component.apply(this, arguments) || this;
   }
 
-  var _proto = BoxImpl.prototype;
+  var _proto = Box.prototype;
 
   _proto.render = function render() {
     var _this$props = this.props,
@@ -106,19 +105,26 @@ function (_Component) {
     return content;
   };
 
-  return BoxImpl;
+  return Box;
 }(Component);
 
-_defineProperty(BoxImpl, "contextType", ThemeContext);
+_defineProperty(Box, "contextType", ThemeContext);
 
-_defineProperty(BoxImpl, "displayName", 'Box');
+_defineProperty(Box, "displayName", 'Box');
 
-_defineProperty(BoxImpl, "defaultProps", {
+_defineProperty(Box, "defaultProps", {
   direction: 'column',
   margin: 'none',
   pad: 'none',
   responsive: true
 });
 
-Object.setPrototypeOf(BoxImpl.defaultProps, defaultProps);
-export var Box = wrapWithHocs(BoxImpl);
+Object.setPrototypeOf(Box.defaultProps, defaultProps);
+var BoxDoc;
+
+if (process.env.NODE_ENV !== 'production') {
+  BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
+}
+
+var BoxWrapper = compose(withTheme, withForwardRef)(BoxDoc || Box);
+export { BoxWrapper as Box };

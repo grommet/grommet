@@ -14,22 +14,6 @@ import getDisplayName from 'recompose/getDisplayName';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { withTheme } from 'styled-components';
 import { AnnounceContext } from '../contexts';
-
-var doc = function doc() {
-  return function (x) {
-    return x;
-  };
-}; // Do not use the documentation wrapper in production.
-
-
-if (process.env.NODE_ENV !== 'production') {
-  doc = function doc(component) {
-    return require("./" + component + "/doc").doc;
-  }; // eslint-disable-line
-
-}
-
-export var withDocs = doc;
 export var withFocus = function withFocus(_temp) {
   var _ref = _temp === void 0 ? {} : _temp,
       focusWithMouse = _ref.focusWithMouse;

@@ -15,8 +15,6 @@ var _utils = require("../../utils");
 
 var _themes = require("../../themes");
 
-var _hocs = require("../hocs");
-
 var _StyledGrommet = require("./StyledGrommet");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
@@ -43,15 +41,14 @@ function _templateObject() {
 
 function _taggedTemplateLiteralLoose(strings, raw) { if (!raw) { raw = strings.slice(0); } strings.raw = raw; return strings; }
 
-var wrapWithHocs = (0, _hocs.withDocs)('Grommet');
 var FullGlobalStyle = (0, _styledComponents.createGlobalStyle)(_templateObject());
 
-var GrommetImpl =
+var Grommet =
 /*#__PURE__*/
 function (_Component) {
-  _inheritsLoose(GrommetImpl, _Component);
+  _inheritsLoose(Grommet, _Component);
 
-  function GrommetImpl() {
+  function Grommet() {
     var _this;
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -78,7 +75,7 @@ function (_Component) {
     return _this;
   }
 
-  GrommetImpl.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
+  Grommet.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, prevState) {
     var _nextProps$theme = nextProps.theme,
         theme = _nextProps$theme === void 0 ? {} : _nextProps$theme;
     var stateTheme = prevState.theme,
@@ -103,7 +100,7 @@ function (_Component) {
     return null;
   };
 
-  var _proto = GrommetImpl.prototype;
+  var _proto = Grommet.prototype;
 
   _proto.componentDidMount = function componentDidMount() {
     window.addEventListener('resize', this.onResize);
@@ -162,10 +159,16 @@ function (_Component) {
     }, rest), children), full && _react.default.createElement(FullGlobalStyle, null)));
   };
 
-  return GrommetImpl;
+  return Grommet;
 }(_react.Component);
 
-_defineProperty(GrommetImpl, "displayName", 'Grommet');
+_defineProperty(Grommet, "displayName", 'Grommet');
 
-var Grommet = wrapWithHocs(GrommetImpl);
-exports.Grommet = Grommet;
+var GrommetDoc;
+
+if (process.env.NODE_ENV !== 'production') {
+  GrommetDoc = require('./doc').doc(Grommet); // eslint-disable-line global-require
+}
+
+var GrommetWrapper = GrommetDoc || Grommet;
+exports.Grommet = GrommetWrapper;
