@@ -1,4 +1,5 @@
 import * as React from "react";
+import { DropProps } from "../Drop";
 
 export interface SelectProps {
   a11yTitle?: string;
@@ -12,6 +13,7 @@ export interface SelectProps {
   dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",right?: "left" | "right",left?: "left" | "right"};
   dropHeight?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   dropTarget?: object;
+  dropProps: DropProps;
   focusIndicator?: boolean;
   id?: string;
   labelKey?: string | ((...args: any[]) => any);

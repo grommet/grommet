@@ -107,12 +107,13 @@ function (_Component) {
     var _this$props2 = this.props,
         disabled = _this$props2.disabled,
         dropAlign = _this$props2.dropAlign,
+        dropProps = _this$props2.dropProps,
         forwardRef = _this$props2.forwardRef,
         dropContent = _this$props2.dropContent,
         dropTarget = _this$props2.dropTarget,
         id = _this$props2.id,
         open = _this$props2.open,
-        rest = _objectWithoutPropertiesLoose(_this$props2, ["disabled", "dropAlign", "forwardRef", "dropContent", "dropTarget", "id", "open"]);
+        rest = _objectWithoutPropertiesLoose(_this$props2, ["disabled", "dropAlign", "dropProps", "forwardRef", "dropContent", "dropTarget", "id", "open"]);
 
     var show = this.state.show;
     delete rest.onClose;
@@ -120,14 +121,14 @@ function (_Component) {
     var drop;
 
     if (show && (forwardRef || this.buttonRef).current) {
-      drop = _react.default.createElement(_Drop.Drop, {
+      drop = _react.default.createElement(_Drop.Drop, _extends({
         id: id ? id + "__drop" : undefined,
         restrictFocus: true,
         align: dropAlign,
         target: dropTarget || (forwardRef || this.buttonRef).current,
         onClickOutside: this.onDropClose,
         onEsc: this.onDropClose
-      }, dropContent);
+      }, dropProps), dropContent);
     }
 
     return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_Button.Button, _extends({

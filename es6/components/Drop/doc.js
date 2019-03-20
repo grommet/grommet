@@ -1,5 +1,11 @@
 import { describe, PropTypes } from 'react-desc';
-import { getAvailableAtBadge } from '../../utils';
+import { OVERFLOW_VALUES } from '../Box/doc';
+import { getAvailableAtBadge } from '../../utils'; // if you update values here, make sure to update in Box/doc too.
+
+var dropOverflowPropTypes = PropTypes.oneOfType([PropTypes.oneOf(OVERFLOW_VALUES), PropTypes.shape({
+  horizontal: PropTypes.oneOf(OVERFLOW_VALUES),
+  vertical: PropTypes.oneOf(OVERFLOW_VALUES)
+}), PropTypes.string]);
 export var doc = function doc(Drop) {
   var DocumentedDrop = describe(Drop).availableAt(getAvailableAtBadge('Drop')).description('A container that is overlaid next to a target.').usage("import { Drop } from 'grommet';\n<Drop target={reference}>...</Drop>").intrinsicElement('div');
   DocumentedDrop.propTypes = {
@@ -14,6 +20,7 @@ export var doc = function doc(Drop) {
     }),
     onClickOutside: PropTypes.func.description('Function that will be invoked when the user clicks outside the drop.'),
     onEsc: PropTypes.func.description('Function that will be called when the user presses the escape key inside the drop.'),
+    overflow: dropOverflowPropTypes.description('How to control the overflow inside the drop.').defaultValue('auto'),
     responsive: PropTypes.bool.description('Whether to dynamically re-place when resized.').defaultValue(true),
     restrictFocus: PropTypes.bool.description('Whether the drop should control focus.').defaultValue(false),
     stretch: PropTypes.bool.description("Whether the drop element should be stretched to at least match the\n      width of the target element. The default is true because\n      that is what most uses of Drop want, like Select and Menu.").defaultValue(true),

@@ -142,6 +142,7 @@ function (_Component) {
         disabled = _this$props.disabled,
         dropAlign = _this$props.dropAlign,
         dropBackground = _this$props.dropBackground,
+        dropProps = _this$props.dropProps,
         dropTarget = _this$props.dropTarget,
         forwardRef = _this$props.forwardRef,
         justifyContent = _this$props.justifyContent,
@@ -153,7 +154,7 @@ function (_Component) {
         plain = _this$props.plain,
         size = _this$props.size,
         theme = _this$props.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "disabled", "dropAlign", "dropBackground", "dropTarget", "forwardRef", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "plain", "size", "theme"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["children", "disabled", "dropAlign", "dropBackground", "dropProps", "dropTarget", "forwardRef", "justifyContent", "icon", "items", "label", "messages", "onKeyDown", "plain", "size", "theme"]);
 
     var _this$state3 = this.state,
         activeItemIndex = _this$state3.activeItemIndex,
@@ -186,6 +187,7 @@ function (_Component) {
       }));
     } : content));
 
+    var align = dropProps.align || dropAlign;
     return _react.default.createElement(_Keyboard.Keyboard, {
       onEnter: this.onSelectMenuItem,
       onSpace: this.onSelectMenuItem,
@@ -199,7 +201,7 @@ function (_Component) {
     }, rest, {
       a11yTitle: messages.openMenu || 'Open Menu',
       disabled: disabled,
-      dropAlign: dropAlign,
+      dropAlign: align,
       dropTarget: dropTarget,
       plain: plain,
       open: open,
@@ -215,7 +217,7 @@ function (_Component) {
       },
       dropContent: _react.default.createElement(ContainerBox, {
         background: dropBackground || theme.menu.background
-      }, dropAlign.top === 'top' ? controlMirror : undefined, _react.default.createElement(_Box.Box, {
+      }, align.top === 'top' ? controlMirror : undefined, _react.default.createElement(_Box.Box, {
         overflow: "auto"
       }, items.map(function (item, index) {
         return (// eslint-disable-next-line react/no-array-index-key
@@ -243,7 +245,7 @@ function (_Component) {
             direction: "row"
           }, item.icon, item.label)))
         );
-      })), dropAlign.bottom === 'bottom' ? controlMirror : undefined)
+      })), align.bottom === 'bottom' ? controlMirror : undefined)
     }), content));
   };
 
@@ -255,6 +257,7 @@ _defineProperty(Menu, "defaultProps", {
     top: 'top',
     left: 'left'
   },
+  dropProps: {},
   items: [],
   messages: {
     openMenu: 'Open Menu',

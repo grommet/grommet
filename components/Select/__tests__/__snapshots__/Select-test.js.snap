@@ -594,6 +594,7 @@ exports[`Select complex options and children 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -706,7 +707,6 @@ exports[`Select complex options and children 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -899,7 +899,7 @@ exports[`Select complex options and children 4`] = `
   }
 }
 
-.iVWgBr {
+.fvdSSs {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -914,17 +914,18 @@ exports[`Select complex options and children 4`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .fvdSSs {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .fvdSSs {
     padding: 0px;
   }
 }
@@ -989,7 +990,7 @@ exports[`Select complex options and children 4`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1001,7 +1002,6 @@ exports[`Select complex options and children 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1015,7 +1015,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1620,6 +1620,7 @@ exports[`Select empty results search 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -1754,7 +1755,6 @@ exports[`Select empty results search 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1990,6 +1990,7 @@ exports[`Select large drop container height 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -2123,7 +2124,6 @@ exports[`Select large drop container height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2328,6 +2328,7 @@ exports[`Select medium drop container height 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -2461,7 +2462,6 @@ exports[`Select medium drop container height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -3248,6 +3248,7 @@ exports[`Select multiple values 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -3381,7 +3382,6 @@ exports[`Select multiple values 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -3614,7 +3614,7 @@ exports[`Select multiple values 4`] = `
   }
 }
 
-.iVWgBr {
+.fvdSSs {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3629,17 +3629,18 @@ exports[`Select multiple values 4`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .fvdSSs {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .fvdSSs {
     padding: 0px;
   }
 }
@@ -3716,7 +3717,7 @@ exports[`Select multiple values 4`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -3728,7 +3729,6 @@ exports[`Select multiple values 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -3742,7 +3742,7 @@ exports[`Select multiple values 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4084,6 +4084,7 @@ exports[`Select opens 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -4217,7 +4218,6 @@ exports[`Select opens 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -4444,7 +4444,7 @@ exports[`Select opens 4`] = `
   }
 }
 
-.iVWgBr {
+.fvdSSs {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4459,17 +4459,18 @@ exports[`Select opens 4`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .fvdSSs {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .fvdSSs {
     padding: 0px;
   }
 }
@@ -4534,7 +4535,7 @@ exports[`Select opens 4`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -4546,7 +4547,6 @@ exports[`Select opens 4`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -4560,7 +4560,7 @@ exports[`Select opens 4`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4905,6 +4905,7 @@ exports[`Select search 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -5058,7 +5059,6 @@ exports[`Select search 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -5355,7 +5355,7 @@ exports[`Select search 3`] = `
   }
 }
 
-.iVWgBr {
+.fvdSSs {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5370,17 +5370,18 @@ exports[`Select search 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .fvdSSs {
     margin: 0px;
   }
 }
 
 @media only screen and (max-width:768px) {
-  .iVWgBr {
+  .fvdSSs {
     padding: 0px;
   }
 }
@@ -5457,7 +5458,7 @@ exports[`Select search 3`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -5469,7 +5470,6 @@ exports[`Select search 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -5483,7 +5483,7 @@ exports[`Select search 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6763,6 +6763,7 @@ exports[`Select small drop container height 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -6896,7 +6897,6 @@ exports[`Select small drop container height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;

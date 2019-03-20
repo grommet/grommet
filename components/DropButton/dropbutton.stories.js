@@ -95,7 +95,12 @@ function (_Component) {
       },
       dropContent: _react.default.createElement(DropContent, {
         onClose: this.onClose
-      })
+      }),
+      dropProps: {
+        align: {
+          top: 'bottom'
+        }
+      }
     })));
   };
 
@@ -229,8 +234,10 @@ function (_Component3) {
         vertical: 'small'
       },
       dropContent: this.renderItems(),
-      dropAlign: {
-        bottom: 'top'
+      dropProps: {
+        align: {
+          bottom: 'top'
+        }
       }
     }, _react.default.createElement(_grommet.Box, {
       height: "36px",

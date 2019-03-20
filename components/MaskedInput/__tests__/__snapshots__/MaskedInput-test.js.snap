@@ -130,6 +130,7 @@ exports[`MaskedInput mask 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -220,7 +221,6 @@ exports[`MaskedInput mask 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -334,7 +334,7 @@ exports[`MaskedInput mask 2`] = `
 `;
 
 exports[`MaskedInput mask 3`] = `
-".izsmxM {
+".fMpdhH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -349,6 +349,7 @@ exports[`MaskedInput mask 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -396,7 +397,7 @@ exports[`MaskedInput mask 3`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -408,7 +409,6 @@ exports[`MaskedInput mask 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -422,7 +422,7 @@ exports[`MaskedInput mask 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -644,6 +644,7 @@ exports[`MaskedInput option via mouse 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -734,7 +735,6 @@ exports[`MaskedInput option via mouse 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -848,7 +848,7 @@ exports[`MaskedInput option via mouse 2`] = `
 `;
 
 exports[`MaskedInput option via mouse 3`] = `
-".izsmxM {
+".fMpdhH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -863,6 +863,7 @@ exports[`MaskedInput option via mouse 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -910,7 +911,7 @@ exports[`MaskedInput option via mouse 3`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -922,7 +923,6 @@ exports[`MaskedInput option via mouse 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -936,7 +936,7 @@ exports[`MaskedInput option via mouse 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

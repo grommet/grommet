@@ -385,6 +385,7 @@ function (_Component) {
         dropAlign = _this$props10.dropAlign,
         dropHeight = _this$props10.dropHeight,
         dropTarget = _this$props10.dropTarget,
+        dropProps = _this$props10.dropProps,
         forwardRef = _this$props10.forwardRef,
         id = _this$props10.id,
         placeholder = _this$props10.placeholder,
@@ -392,7 +393,7 @@ function (_Component) {
         theme = _this$props10.theme,
         value = _this$props10.value,
         onKeyDown = _this$props10.onKeyDown,
-        rest = _objectWithoutPropertiesLoose(_this$props10, ["defaultValue", "dropAlign", "dropHeight", "dropTarget", "forwardRef", "id", "placeholder", "plain", "theme", "value", "onKeyDown"]);
+        rest = _objectWithoutPropertiesLoose(_this$props10, ["defaultValue", "dropAlign", "dropHeight", "dropTarget", "dropProps", "forwardRef", "id", "placeholder", "plain", "theme", "value", "onKeyDown"]);
 
     delete rest.onChange; // se we can manage in this.onChange()
 
@@ -405,7 +406,7 @@ function (_Component) {
     var drop;
 
     if (showDrop) {
-      drop = _react.default.createElement(_Drop.Drop, {
+      drop = _react.default.createElement(_Drop.Drop, _extends({
         id: id ? "text-input-drop__" + id : undefined,
         align: dropAlign,
         responsive: false,
@@ -420,7 +421,7 @@ function (_Component) {
             showDrop: false
           });
         }
-      }, _react.default.createElement(ContainerBox, {
+      }, dropProps), _react.default.createElement(ContainerBox, {
         overflow: "auto",
         dropHeight: dropHeight
       }, this.renderSuggestions()));

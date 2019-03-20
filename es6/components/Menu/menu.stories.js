@@ -11,6 +11,12 @@ var SimpleMenu = function SimpleMenu() {
     align: "center",
     pad: "large"
   }, React.createElement(Menu, {
+    dropProps: {
+      align: {
+        top: 'bottom',
+        left: 'left'
+      }
+    },
     label: "actions",
     items: [{
       label: 'Launch',

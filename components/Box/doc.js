@@ -1,7 +1,7 @@
 "use strict";
 
 exports.__esModule = true;
-exports.themeDoc = exports.doc = void 0;
+exports.themeDoc = exports.doc = exports.OVERFLOW_VALUES = void 0;
 
 var _reactDesc = require("react-desc");
 
@@ -11,6 +11,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
 var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
+exports.OVERFLOW_VALUES = OVERFLOW_VALUES;
 
 var ANIMATION_TYPE = _reactDesc.PropTypes.oneOf(['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut']);
 
@@ -19,7 +20,13 @@ var ANIMATION_SHAPE = _reactDesc.PropTypes.shape({
   delay: _reactDesc.PropTypes.number,
   duration: _reactDesc.PropTypes.number,
   size: _reactDesc.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge'])
-});
+}); // if you update values here, make sure to update in Drop/doc too.
+
+
+var overflowPropType = _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(OVERFLOW_VALUES), _reactDesc.PropTypes.shape({
+  horizontal: _reactDesc.PropTypes.oneOf(OVERFLOW_VALUES),
+  vertical: _reactDesc.PropTypes.oneOf(OVERFLOW_VALUES)
+}), _reactDesc.PropTypes.string]);
 
 var doc = function doc(Box) {
   var DocumentedBox = (0, _reactDesc.describe)(Box).availableAt((0, _utils.getAvailableAtBadge)('Box')).description("A container that lays out its contents in one direction. Box\n      provides CSS flexbox capabilities for layout, as well as general\n      styling of things like background color, border, and animation.").usage("import { Box } from 'grommet';\n<Box />").intrinsicElement('div');
@@ -57,10 +64,7 @@ var doc = function doc(Box) {
     gap: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description("The amount of spacing between child elements. This\n        should not be used in conjunction with 'wrap' as the gap elements\n        will not wrap gracefully."),
     height: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]).description('A fixed height.'),
     justify: _reactDesc.PropTypes.oneOf(['around', 'between', 'center', 'end', 'evenly', 'start', 'stretch']).description('How to align the contents along the main axis.').defaultValue('stretch'),
-    overflow: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(OVERFLOW_VALUES), _reactDesc.PropTypes.shape({
-      horizontal: _reactDesc.PropTypes.oneOf(OVERFLOW_VALUES),
-      vertical: _reactDesc.PropTypes.oneOf(OVERFLOW_VALUES)
-    }), _reactDesc.PropTypes.string]).description('box overflow.'),
+    overflow: overflowPropType.description('box overflow.'),
     pad: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['none'].concat(PAD_SIZES)), _reactDesc.PropTypes.shape({
       bottom: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string]),
       horizontal: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(PAD_SIZES), _reactDesc.PropTypes.string]),

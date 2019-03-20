@@ -3,14 +3,19 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge, genericProps, themeDocUtils } from '../../utils';
 var PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
-var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
+export var OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
 var ANIMATION_TYPE = PropTypes.oneOf(['fadeIn', 'fadeOut', 'jiggle', 'pulse', 'slideUp', 'slideDown', 'slideLeft', 'slideRight', 'zoomIn', 'zoomOut']);
 var ANIMATION_SHAPE = PropTypes.shape({
   type: ANIMATION_TYPE,
   delay: PropTypes.number,
   duration: PropTypes.number,
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge'])
-});
+}); // if you update values here, make sure to update in Drop/doc too.
+
+var overflowPropType = PropTypes.oneOfType([PropTypes.oneOf(OVERFLOW_VALUES), PropTypes.shape({
+  horizontal: PropTypes.oneOf(OVERFLOW_VALUES),
+  vertical: PropTypes.oneOf(OVERFLOW_VALUES)
+}), PropTypes.string]);
 export var doc = function doc(Box) {
   var DocumentedBox = describe(Box).availableAt(getAvailableAtBadge('Box')).description("A container that lays out its contents in one direction. Box\n      provides CSS flexbox capabilities for layout, as well as general\n      styling of things like background color, border, and animation.").usage("import { Box } from 'grommet';\n<Box />").intrinsicElement('div');
   DocumentedBox.propTypes = _extends({}, genericProps, {
@@ -47,10 +52,7 @@ export var doc = function doc(Box) {
     gap: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("The amount of spacing between child elements. This\n        should not be used in conjunction with 'wrap' as the gap elements\n        will not wrap gracefully."),
     height: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), PropTypes.string]).description('A fixed height.'),
     justify: PropTypes.oneOf(['around', 'between', 'center', 'end', 'evenly', 'start', 'stretch']).description('How to align the contents along the main axis.').defaultValue('stretch'),
-    overflow: PropTypes.oneOfType([PropTypes.oneOf(OVERFLOW_VALUES), PropTypes.shape({
-      horizontal: PropTypes.oneOf(OVERFLOW_VALUES),
-      vertical: PropTypes.oneOf(OVERFLOW_VALUES)
-    }), PropTypes.string]).description('box overflow.'),
+    overflow: overflowPropType.description('box overflow.'),
     pad: PropTypes.oneOfType([PropTypes.oneOf(['none'].concat(PAD_SIZES)), PropTypes.shape({
       bottom: PropTypes.oneOfType([PropTypes.oneOf(PAD_SIZES), PropTypes.string]),
       horizontal: PropTypes.oneOfType([PropTypes.oneOf(PAD_SIZES), PropTypes.string]),

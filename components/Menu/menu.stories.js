@@ -19,6 +19,12 @@ var SimpleMenu = function SimpleMenu() {
     align: "center",
     pad: "large"
   }, _react.default.createElement(_grommet.Menu, {
+    dropProps: {
+      align: {
+        top: 'bottom',
+        left: 'left'
+      }
+    },
     label: "actions",
     items: [{
       label: 'Launch',

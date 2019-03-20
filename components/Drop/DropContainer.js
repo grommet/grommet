@@ -291,13 +291,13 @@ function (_Component) {
     var _this$props3 = this.props,
         alignProp = _this$props3.align,
         children = _this$props3.children,
+        elevation = _this$props3.elevation,
         onClickOutside = _this$props3.onClickOutside,
         onEsc = _this$props3.onEsc,
         onKeyDown = _this$props3.onKeyDown,
-        elevation = _this$props3.elevation,
         plain = _this$props3.plain,
         propsTheme = _this$props3.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props3, ["align", "children", "onClickOutside", "onEsc", "onKeyDown", "elevation", "plain", "theme"]);
+        rest = _objectWithoutPropertiesLoose(_this$props3, ["align", "children", "elevation", "onClickOutside", "onEsc", "onKeyDown", "plain", "theme"]);
 
     var theme = this.context || propsTheme;
 
@@ -344,6 +344,7 @@ _defineProperty(DropContainer, "defaultProps", {
     top: 'top',
     left: 'left'
   },
+  overflow: 'auto',
   stretch: 'width'
 });
 

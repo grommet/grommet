@@ -1,10 +1,12 @@
 import * as React from "react";
 import { Omit } from "../../utils";
+import { DropProps } from "../Drop";
 
 export interface TextInputProps {
   dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",right?: "left" | "right",left?: "left" | "right"};
   dropHeight?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   dropTarget?: object;
+  dropProps: DropProps;
   id?: string;
   focusIndicator?: boolean;
   messages?: {enterSelect?: string,suggestionsCount?: string,suggestionsExist?: string,suggestionIsOpen?: string};

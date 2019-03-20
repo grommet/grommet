@@ -161,6 +161,14 @@ Target where the drop will be aligned to. This should be
 object
 ```
 
+**dropProps**
+
+Any valid Drop prop.
+
+```
+object
+```
+
 **onClose**
 
 Callback for when the drop is closed

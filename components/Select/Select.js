@@ -106,6 +106,7 @@ function (_Component) {
         closeOnChange = _this$props.closeOnChange,
         disabled = _this$props.disabled,
         dropAlign = _this$props.dropAlign,
+        dropProps = _this$props.dropProps,
         dropTarget = _this$props.dropTarget,
         forwardRef = _this$props.forwardRef,
         gridArea = _this$props.gridArea,
@@ -123,7 +124,7 @@ function (_Component) {
         theme = _this$props.theme,
         value = _this$props.value,
         valueLabel = _this$props.valueLabel,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "dropAlign", "dropTarget", "forwardRef", "gridArea", "id", "labelKey", "margin", "messages", "onChange", "onClose", "options", "placeholder", "plain", "selected", "size", "theme", "value", "valueLabel"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "dropAlign", "dropProps", "dropTarget", "forwardRef", "gridArea", "id", "labelKey", "margin", "messages", "onChange", "onClose", "options", "placeholder", "plain", "selected", "size", "theme", "value", "valueLabel"]);
 
     var open = this.state.open;
     delete rest.onSearch;
@@ -214,7 +215,8 @@ function (_Component) {
       dropContent: _react.default.createElement(_SelectContainer.SelectContainer, _extends({}, this.props, {
         onChange: onSelectChange
       })),
-      plain: plain
+      plain: plain,
+      dropProps: _extends({}, dropProps)
     }, _react.default.createElement(_Box.Box, {
       align: "center",
       direction: "row",

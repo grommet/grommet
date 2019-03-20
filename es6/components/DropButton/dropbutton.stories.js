@@ -85,7 +85,12 @@ function (_Component) {
       },
       dropContent: React.createElement(DropContent, {
         onClose: this.onClose
-      })
+      }),
+      dropProps: {
+        align: {
+          top: 'bottom'
+        }
+      }
     })));
   };
 
@@ -219,8 +224,10 @@ function (_Component3) {
         vertical: 'small'
       },
       dropContent: this.renderItems(),
-      dropAlign: {
-        bottom: 'top'
+      dropProps: {
+        align: {
+          bottom: 'top'
+        }
       }
     }, React.createElement(Box, {
       height: "36px",
