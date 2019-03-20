@@ -12,6 +12,13 @@ var _ = require("../..");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var customTheme = {
+  accordion: {
+    heading: {
+      level: '3'
+    }
+  }
+};
 describe('Accordion', function () {
   afterEach(_reactTestingLibrary.cleanup);
   test('no AccordionPanel', function () {
@@ -130,6 +137,15 @@ describe('Accordion', function () {
 
     expect(onActive).toBeCalledWith([]);
     expect(container.firstChild).toMatchSnapshot();
+  });
+  test('custom accordion', function () {
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, {
+      theme: customTheme
+    }, _react.default.createElement(_.Accordion, null, _react.default.createElement(_.AccordionPanel, {
+      label: "Panel 1"
+    }, "Panel body 1"))));
+
+    expect(component.toJSON()).toMatchSnapshot();
   });
   test('change active index', function () {
     var onActive = jest.fn();

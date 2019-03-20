@@ -18,8 +18,6 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var richAccordionTheme = {
   accordion: {
     icons: {
@@ -27,81 +25,6 @@ var richAccordionTheme = {
       expand: _grommetIcons.FormAdd
     }
   }
-};
-var CustomAccordionTheme = {
-  accordion: {
-    icons: {
-      collapse: _grommetIcons.SubtractCircle,
-      expand: _grommetIcons.AddCircle,
-      color: 'hotpink'
-    },
-    border: undefined
-  }
-};
-
-var SimpleAccordion = function SimpleAccordion(props) {
-  var animate = props.animate,
-      multiple = props.multiple,
-      rest = _objectWithoutPropertiesLoose(props, ["animate", "multiple"]);
-
-  return _react.default.createElement(_grommet.Grommet, {
-    theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Box, rest, _react.default.createElement(_grommet.Accordion, {
-    animate: animate,
-    multiple: multiple
-  }, _react.default.createElement(_grommet.AccordionPanel, {
-    label: "Panel 1"
-  }, _react.default.createElement(_grommet.Box, {
-    background: "light-2",
-    overflow: "auto",
-    height: "medium"
-  }, _react.default.createElement(_grommet.Box, {
-    height: "large",
-    flex: false
-  }, "Panel 1 contents"))), _react.default.createElement(_grommet.AccordionPanel, {
-    label: "Panel 2"
-  }, _react.default.createElement(_grommet.Box, {
-    background: "light-2",
-    style: {
-      height: '50px'
-    }
-  }, "Panel 2 contents")), _react.default.createElement(_grommet.AccordionPanel, {
-    label: "Panel 3"
-  }, _react.default.createElement(_grommet.Box, {
-    background: "light-2",
-    style: {
-      height: '300px'
-    }
-  }, "Panel 3 contents")))));
-};
-
-var CustomAccordion = function CustomAccordion(_ref) {
-  var animate = _ref.animate,
-      multiple = _ref.multiple,
-      rest = _objectWithoutPropertiesLoose(_ref, ["animate", "multiple"]);
-
-  return _react.default.createElement(_grommet.Grommet, {
-    theme: CustomAccordionTheme
-  }, _react.default.createElement(_grommet.Box, rest, _react.default.createElement(_grommet.Accordion, {
-    animate: animate,
-    multiple: true
-  }, _react.default.createElement(_grommet.AccordionPanel, {
-    label: _react.default.createElement(_grommet.Text, {
-      size: "large"
-    }, "Panel 1")
-  }, _react.default.createElement(_grommet.Box, {
-    background: "light-2",
-    height: "small"
-  }, "Important Info")), _react.default.createElement(_grommet.AccordionPanel, {
-    label: _react.default.createElement(_grommet.Text, {
-      size: "medium"
-    }, "Panel 2")
-  }, _react.default.createElement(_grommet.Box, {
-    background: "light-2",
-    height: "xsmall"
-  }, _react.default.createElement(_grommet.Text, {
-    size: "small"
-  }, "Important Info"))))));
 };
 
 var RichPanel =
@@ -321,98 +244,6 @@ function (_Component2) {
   return RichAccordion;
 }(_react.Component);
 
-var renderPanelHeader = function renderPanelHeader(title, active) {
-  return _react.default.createElement(_grommet.Box, {
-    direction: "row",
-    align: "center",
-    pad: "medium",
-    gap: "small"
-  }, _react.default.createElement("strong", null, _react.default.createElement(_grommet.Text, null, title)), _react.default.createElement(_grommet.Text, {
-    color: "brand"
-  }, active ? '-' : '+'));
-};
-
-var CustomHeaderAccordion =
-/*#__PURE__*/
-function (_Component3) {
-  _inheritsLoose(CustomHeaderAccordion, _Component3);
-
-  function CustomHeaderAccordion() {
-    var _this5;
-
-    for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-      args[_key3] = arguments[_key3];
-    }
-
-    _this5 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this5), "state", {
-      activeIndex: [0]
-    });
-
-    return _this5;
-  }
-
-  var _proto3 = CustomHeaderAccordion.prototype;
-
-  _proto3.render = function render() {
-    var _this6 = this;
-
-    var activeIndex = this.state.activeIndex;
-    return _react.default.createElement(_grommet.Grommet, {
-      theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Accordion, {
-      activeIndex: activeIndex,
-      onActive: function onActive(newActiveIndex) {
-        return _this6.setState({
-          activeIndex: newActiveIndex
-        });
-      }
-    }, _react.default.createElement(_grommet.AccordionPanel, {
-      header: renderPanelHeader('Panel 1', activeIndex.includes(0))
-    }, _react.default.createElement(_grommet.Box, {
-      pad: "medium",
-      background: "light-2",
-      style: {
-        height: '800px'
-      }
-    }, _react.default.createElement(_grommet.Text, null, "Panel 1 contents"), _react.default.createElement(_grommet.TextInput, null))), _react.default.createElement(_grommet.AccordionPanel, {
-      header: renderPanelHeader('Panel 2', activeIndex.includes(1))
-    }, _react.default.createElement(_grommet.Box, {
-      pad: "medium",
-      background: "light-2",
-      style: {
-        height: '50px'
-      }
-    }, _react.default.createElement(_grommet.Text, null, "Panel 2 contents"))), _react.default.createElement(_grommet.AccordionPanel, {
-      header: renderPanelHeader('Panel 3', activeIndex.includes(2))
-    }, _react.default.createElement(_grommet.Box, {
-      pad: "medium",
-      background: "light-2",
-      style: {
-        height: '300px'
-      }
-    }, _react.default.createElement(_grommet.Text, null, "Panel 3 contents")))));
-  };
-
-  return CustomHeaderAccordion;
-}(_react.Component);
-
-(0, _react2.storiesOf)('Accordion', module).add('Simple', function () {
-  return _react.default.createElement(SimpleAccordion, null);
-}).add('Custom Theme', function () {
-  return _react.default.createElement(CustomAccordion, null);
-}).add('Dark no animation', function () {
-  return _react.default.createElement(SimpleAccordion, {
-    animate: false,
-    background: "dark-2"
-  });
-}).add('Multiple', function () {
-  return _react.default.createElement(SimpleAccordion, {
-    multiple: true
-  });
-}).add('Rich', function () {
+(0, _react2.storiesOf)('Accordion', module).add('Rich', function () {
   return _react.default.createElement(RichAccordion, null);
-}).add('Custom Header', function () {
-  return _react.default.createElement(CustomHeaderAccordion, null);
 });

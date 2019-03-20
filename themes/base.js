@@ -312,14 +312,18 @@ var generate = function generate(baseSpacing, scale) {
       }
     },
     accordion: {
+      border: {
+        side: 'bottom',
+        color: 'border'
+      },
+      heading: {
+        level: '4'
+      },
+      // level ranges from 1-6
       icons: {
         collapse: _FormUp.FormUp,
         expand: _FormDown.FormDown // color: { dark: undefined, light: undefined },
 
-      },
-      border: {
-        side: 'bottom',
-        color: 'border'
       }
     },
     anchor: {

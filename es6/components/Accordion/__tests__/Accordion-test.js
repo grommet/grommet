@@ -3,6 +3,13 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent } from 'react-testing-library';
 import { Accordion, AccordionPanel, Box, Grommet } from '../..';
+var customTheme = {
+  accordion: {
+    heading: {
+      level: '3'
+    }
+  }
+};
 describe('Accordion', function () {
   afterEach(cleanup);
   test('no AccordionPanel', function () {
@@ -105,6 +112,14 @@ describe('Accordion', function () {
     fireEvent.click(getByText('Panel 1'));
     expect(onActive).toBeCalledWith([]);
     expect(container.firstChild).toMatchSnapshot();
+  });
+  test('custom accordion', function () {
+    var component = renderer.create(React.createElement(Grommet, {
+      theme: customTheme
+    }, React.createElement(Accordion, null, React.createElement(AccordionPanel, {
+      label: "Panel 1"
+    }, "Panel body 1"))));
+    expect(component.toJSON()).toMatchSnapshot();
   });
   test('change active index', function () {
     var onActive = jest.fn();

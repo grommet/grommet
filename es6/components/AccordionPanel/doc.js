@@ -8,6 +8,11 @@ export function doc(Panel) {
   return DocumentedAccordionPanel;
 }
 export var themeDoc = {
+  'accordion.heading.level': {
+    description: 'The heading level used for the accordion.',
+    type: 'number',
+    defaultValue: '4'
+  },
   'accordion.icons.collapse': {
     description: 'The icon to use when the panel is expanded.',
     type: 'React.Element',

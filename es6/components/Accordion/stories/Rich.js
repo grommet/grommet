@@ -4,18 +4,14 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Bookmark } from "grommet-icons/es6/icons/Bookmark";
 import { CircleInformation } from "grommet-icons/es6/icons/CircleInformation";
 import { FormSubtract } from "grommet-icons/es6/icons/FormSubtract";
 import { FormAdd } from "grommet-icons/es6/icons/FormAdd";
-import { SubtractCircle } from "grommet-icons/es6/icons/SubtractCircle";
-import { AddCircle } from "grommet-icons/es6/icons/AddCircle";
 import { User } from "grommet-icons/es6/icons/User";
-import { Accordion, AccordionPanel, Box, Grommet, Heading, Text, TextInput, ThemeContext } from 'grommet';
+import { Accordion, AccordionPanel, Box, Grommet, Heading, Text, ThemeContext } from 'grommet';
 import { grommet } from 'grommet/themes';
 var richAccordionTheme = {
   accordion: {
@@ -24,81 +20,6 @@ var richAccordionTheme = {
       expand: FormAdd
     }
   }
-};
-var CustomAccordionTheme = {
-  accordion: {
-    icons: {
-      collapse: SubtractCircle,
-      expand: AddCircle,
-      color: 'hotpink'
-    },
-    border: undefined
-  }
-};
-
-var SimpleAccordion = function SimpleAccordion(props) {
-  var animate = props.animate,
-      multiple = props.multiple,
-      rest = _objectWithoutPropertiesLoose(props, ["animate", "multiple"]);
-
-  return React.createElement(Grommet, {
-    theme: grommet
-  }, React.createElement(Box, rest, React.createElement(Accordion, {
-    animate: animate,
-    multiple: multiple
-  }, React.createElement(AccordionPanel, {
-    label: "Panel 1"
-  }, React.createElement(Box, {
-    background: "light-2",
-    overflow: "auto",
-    height: "medium"
-  }, React.createElement(Box, {
-    height: "large",
-    flex: false
-  }, "Panel 1 contents"))), React.createElement(AccordionPanel, {
-    label: "Panel 2"
-  }, React.createElement(Box, {
-    background: "light-2",
-    style: {
-      height: '50px'
-    }
-  }, "Panel 2 contents")), React.createElement(AccordionPanel, {
-    label: "Panel 3"
-  }, React.createElement(Box, {
-    background: "light-2",
-    style: {
-      height: '300px'
-    }
-  }, "Panel 3 contents")))));
-};
-
-var CustomAccordion = function CustomAccordion(_ref) {
-  var animate = _ref.animate,
-      multiple = _ref.multiple,
-      rest = _objectWithoutPropertiesLoose(_ref, ["animate", "multiple"]);
-
-  return React.createElement(Grommet, {
-    theme: CustomAccordionTheme
-  }, React.createElement(Box, rest, React.createElement(Accordion, {
-    animate: animate,
-    multiple: true
-  }, React.createElement(AccordionPanel, {
-    label: React.createElement(Text, {
-      size: "large"
-    }, "Panel 1")
-  }, React.createElement(Box, {
-    background: "light-2",
-    height: "small"
-  }, "Important Info")), React.createElement(AccordionPanel, {
-    label: React.createElement(Text, {
-      size: "medium"
-    }, "Panel 2")
-  }, React.createElement(Box, {
-    background: "light-2",
-    height: "xsmall"
-  }, React.createElement(Text, {
-    size: "small"
-  }, "Important Info"))))));
 };
 
 var RichPanel =
@@ -317,98 +238,6 @@ function (_Component2) {
   return RichAccordion;
 }(Component);
 
-var renderPanelHeader = function renderPanelHeader(title, active) {
-  return React.createElement(Box, {
-    direction: "row",
-    align: "center",
-    pad: "medium",
-    gap: "small"
-  }, React.createElement("strong", null, React.createElement(Text, null, title)), React.createElement(Text, {
-    color: "brand"
-  }, active ? '-' : '+'));
-};
-
-var CustomHeaderAccordion =
-/*#__PURE__*/
-function (_Component3) {
-  _inheritsLoose(CustomHeaderAccordion, _Component3);
-
-  function CustomHeaderAccordion() {
-    var _this5;
-
-    for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-      args[_key3] = arguments[_key3];
-    }
-
-    _this5 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this5), "state", {
-      activeIndex: [0]
-    });
-
-    return _this5;
-  }
-
-  var _proto3 = CustomHeaderAccordion.prototype;
-
-  _proto3.render = function render() {
-    var _this6 = this;
-
-    var activeIndex = this.state.activeIndex;
-    return React.createElement(Grommet, {
-      theme: grommet
-    }, React.createElement(Accordion, {
-      activeIndex: activeIndex,
-      onActive: function onActive(newActiveIndex) {
-        return _this6.setState({
-          activeIndex: newActiveIndex
-        });
-      }
-    }, React.createElement(AccordionPanel, {
-      header: renderPanelHeader('Panel 1', activeIndex.includes(0))
-    }, React.createElement(Box, {
-      pad: "medium",
-      background: "light-2",
-      style: {
-        height: '800px'
-      }
-    }, React.createElement(Text, null, "Panel 1 contents"), React.createElement(TextInput, null))), React.createElement(AccordionPanel, {
-      header: renderPanelHeader('Panel 2', activeIndex.includes(1))
-    }, React.createElement(Box, {
-      pad: "medium",
-      background: "light-2",
-      style: {
-        height: '50px'
-      }
-    }, React.createElement(Text, null, "Panel 2 contents"))), React.createElement(AccordionPanel, {
-      header: renderPanelHeader('Panel 3', activeIndex.includes(2))
-    }, React.createElement(Box, {
-      pad: "medium",
-      background: "light-2",
-      style: {
-        height: '300px'
-      }
-    }, React.createElement(Text, null, "Panel 3 contents")))));
-  };
-
-  return CustomHeaderAccordion;
-}(Component);
-
-storiesOf('Accordion', module).add('Simple', function () {
-  return React.createElement(SimpleAccordion, null);
-}).add('Custom Theme', function () {
-  return React.createElement(CustomAccordion, null);
-}).add('Dark no animation', function () {
-  return React.createElement(SimpleAccordion, {
-    animate: false,
-    background: "dark-2"
-  });
-}).add('Multiple', function () {
-  return React.createElement(SimpleAccordion, {
-    multiple: true
-  });
-}).add('Rich', function () {
+storiesOf('Accordion', module).add('Rich', function () {
   return React.createElement(RichAccordion, null);
-}).add('Custom Header', function () {
-  return React.createElement(CustomHeaderAccordion, null);
 });

@@ -152,7 +152,7 @@ function (_Component) {
           horizontal: 'xsmall'
         }
       }, React.createElement(Heading, {
-        level: 4,
+        level: theme.accordion.heading && theme.accordion.heading.level || 4,
         color: hover
       }, label)) : label, AccordionIcon && React.createElement(Box, {
         pad: {
