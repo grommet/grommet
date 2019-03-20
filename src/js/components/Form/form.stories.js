@@ -9,28 +9,12 @@ import {
   Form,
   // FormContext,
   FormField,
-  RadioButton,
+  RadioButtonGroup,
   RangeInput,
   Select,
   TextArea,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-const RadioButtonGroup = ({ name, onChange, options, value }) => (
-  <Box gap="small">
-    {options.map(option => (
-      <Box key={option}>
-        <RadioButton
-          name={name}
-          value={option}
-          label={option}
-          checked={value === option}
-          onChange={() => onChange({ value: option })}
-        />
-      </Box>
-    ))}
-  </Box>
-);
 
 const Example = () => (
   <Grommet full theme={grommet}>
