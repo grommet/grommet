@@ -13,7 +13,7 @@ export interface SelectProps {
   dropHeight?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   dropTarget?: object;
   focusIndicator?: boolean;
-  icon?: boolean | React.ReactNode;
+  icon?: boolean | React.ReactNode | ((...args: any[]) => any);
   id?: string;
   labelKey?: string | ((...args: any[]) => any);
   messages?: {multiple?: string};

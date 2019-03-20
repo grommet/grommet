@@ -220,6 +220,7 @@ A custom icon to be used when rendering the select. You can use false to not ren
 ```
 boolean
 node
+function
 ```
 
 **labelKey**
