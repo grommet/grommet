@@ -77,11 +77,7 @@ export const doc = Select => {
     focusIndicator: PropTypes.bool.description(
       "Whether when 'plain' it should receive a focus outline.",
     ),
-    icon: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.node,
-      PropTypes.func,
-    ]).description(
+    icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]).description(
       'A custom icon to be used when rendering the select. You can use false to not render an icon at all.',
     ),
     labelKey: PropTypes.oneOfType([
