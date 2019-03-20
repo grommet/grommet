@@ -56,6 +56,7 @@ one of top or bottom should be specified.`,
       a React reference. Typically, this is not required as the drop will be
       aligned to the Menu itself by default.`,
     ),
+    dropProps: PropTypes.object.description('Any valid Drop prop.'),
     justifyContent: PropTypes.oneOf([
       'start',
       'center',

@@ -34,7 +34,6 @@ const StyledDrop = styled.div`
   position: fixed;
   z-index: ${props => props.theme.global.drop.zIndex};
   outline: none;
-  overflow: auto; //since we set max-height
 
   ${props =>
     !props.plain &&

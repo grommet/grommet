@@ -53,6 +53,30 @@ Function that will be called when the user presses the escape key inside the dro
 function
 ```
 
+**overflow**
+
+How to control the overflow inside the drop. Defaults to `auto`.
+
+```
+auto
+hidden
+scroll
+visible
+{
+  horizontal: 
+    auto
+    hidden
+    scroll
+    visible,
+  vertical: 
+    auto
+    hidden
+    scroll
+    visible
+}
+string
+```
+
 **responsive**
 
 Whether to dynamically re-place when resized. Defaults to `true`.

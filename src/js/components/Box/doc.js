@@ -3,7 +3,7 @@ import { describe, PropTypes } from 'react-desc';
 import { getAvailableAtBadge, genericProps, themeDocUtils } from '../../utils';
 
 const PAD_SIZES = ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge'];
-const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
+export const OVERFLOW_VALUES = ['auto', 'hidden', 'scroll', 'visible'];
 
 const ANIMATION_TYPE = PropTypes.oneOf([
   'fadeIn',
@@ -23,6 +23,16 @@ const ANIMATION_SHAPE = PropTypes.shape({
   duration: PropTypes.number,
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
 });
+
+// if you update values here, make sure to update in Drop/doc too.
+const overflowPropType = PropTypes.oneOfType([
+  PropTypes.oneOf(OVERFLOW_VALUES),
+  PropTypes.shape({
+    horizontal: PropTypes.oneOf(OVERFLOW_VALUES),
+    vertical: PropTypes.oneOf(OVERFLOW_VALUES),
+  }),
+  PropTypes.string,
+]);
 
 export const doc = Box => {
   const DocumentedBox = describe(Box)
@@ -222,14 +232,7 @@ export const doc = Box => {
     ])
       .description('How to align the contents along the main axis.')
       .defaultValue('stretch'),
-    overflow: PropTypes.oneOfType([
-      PropTypes.oneOf(OVERFLOW_VALUES),
-      PropTypes.shape({
-        horizontal: PropTypes.oneOf(OVERFLOW_VALUES),
-        vertical: PropTypes.oneOf(OVERFLOW_VALUES),
-      }),
-      PropTypes.string,
-    ]).description('box overflow.'),
+    overflow: overflowPropType.description('box overflow.'),
     pad: PropTypes.oneOfType([
       PropTypes.oneOf(['none', ...PAD_SIZES]),
       PropTypes.shape({

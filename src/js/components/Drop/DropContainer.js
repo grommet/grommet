@@ -32,6 +32,7 @@ class DropContainer extends Component {
       top: 'top',
       left: 'left',
     },
+    overflow: 'auto',
     stretch: 'width',
   };
 
@@ -257,10 +258,10 @@ class DropContainer extends Component {
     const {
       align: alignProp,
       children,
+      elevation,
       onClickOutside,
       onEsc,
       onKeyDown,
-      elevation,
       plain,
       theme: propsTheme,
       ...rest

@@ -205,6 +205,14 @@ Target where the options drop will be aligned to. This should be
 object
 ```
 
+**dropProps**
+
+Any valid Drop prop.
+
+```
+object
+```
+
 **focusIndicator**
 
 Whether when 'plain' it should receive a focus outline.

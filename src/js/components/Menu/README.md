@@ -175,6 +175,14 @@ Target where the drop will be aligned to. This should be
 object
 ```
 
+**dropProps**
+
+Any valid Drop prop. Defaults to `{}`.
+
+```
+object
+```
+
 **justifyContent**
 
 How to align the contents along the row axis. Defaults to `start`.

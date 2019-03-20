@@ -321,6 +321,7 @@ class TextInput extends Component {
       dropAlign,
       dropHeight,
       dropTarget,
+      dropProps,
       forwardRef,
       id,
       placeholder,
@@ -347,6 +348,7 @@ class TextInput extends Component {
           target={dropTarget || (forwardRef || this.inputRef).current}
           onClickOutside={() => this.setState({ showDrop: false })}
           onEsc={() => this.setState({ showDrop: false })}
+          {...dropProps}
         >
           <ContainerBox overflow="auto" dropHeight={dropHeight}>
             {this.renderSuggestions()}

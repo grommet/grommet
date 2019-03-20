@@ -58,6 +58,14 @@ Target where any suggestions drop will be aligned to. This should be
 object
 ```
 
+**dropProps**
+
+Any valid Drop prop.
+
+```
+object
+```
+
 **id**
 
 The id attribute of the input.

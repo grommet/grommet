@@ -67,6 +67,7 @@ class DropButton extends Component {
     const {
       disabled,
       dropAlign,
+      dropProps,
       forwardRef,
       dropContent,
       dropTarget,
@@ -89,6 +90,7 @@ class DropButton extends Component {
           target={dropTarget || (forwardRef || this.buttonRef).current}
           onClickOutside={this.onDropClose}
           onEsc={this.onDropClose}
+          {...dropProps}
         >
           {dropContent}
         </Drop>

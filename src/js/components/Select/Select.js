@@ -69,6 +69,7 @@ class Select extends Component {
       closeOnChange,
       disabled,
       dropAlign,
+      dropProps,
       dropTarget,
       forwardRef,
       gridArea,
@@ -174,6 +175,7 @@ class Select extends Component {
             <SelectContainer {...this.props} onChange={onSelectChange} />
           }
           plain={plain}
+          dropProps={{ ...dropProps }}
         >
           <Box
             align="center"

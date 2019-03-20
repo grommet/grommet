@@ -74,6 +74,7 @@ export const doc = Select => {
       a React reference. Typically, this is not required as the drop will be
       aligned to the Select itself by default.`,
     ),
+    dropProps: PropTypes.object.description('Any valid Drop prop.'),
     focusIndicator: PropTypes.bool.description(
       "Whether when 'plain' it should receive a focus outline.",
     ),
