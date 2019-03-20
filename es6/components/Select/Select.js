@@ -93,6 +93,7 @@ function (_Component) {
         forwardRef = _this$props.forwardRef,
         gridArea = _this$props.gridArea,
         id = _this$props.id,
+        icon = _this$props.icon,
         labelKey = _this$props.labelKey,
         margin = _this$props.margin,
         messages = _this$props.messages,
@@ -106,7 +107,7 @@ function (_Component) {
         theme = _this$props.theme,
         value = _this$props.value,
         valueLabel = _this$props.valueLabel,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "dropAlign", "dropProps", "dropTarget", "forwardRef", "gridArea", "id", "labelKey", "margin", "messages", "onChange", "onClose", "options", "placeholder", "plain", "selected", "size", "theme", "value", "valueLabel"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "alignSelf", "children", "closeOnChange", "disabled", "dropAlign", "dropProps", "dropTarget", "forwardRef", "gridArea", "id", "icon", "labelKey", "margin", "messages", "onChange", "onClose", "options", "placeholder", "plain", "selected", "size", "theme", "value", "valueLabel"]);
 
     var open = this.state.open;
     delete rest.onSearch;
@@ -127,7 +128,21 @@ function (_Component) {
       }
     };
 
-    var SelectIcon = theme.select.icons.down;
+    var SelectIcon;
+
+    switch (icon) {
+      case false:
+        break;
+
+      case true:
+      case undefined:
+        SelectIcon = theme.select.icons.down;
+        break;
+
+      default:
+        SelectIcon = icon;
+    }
+
     var selectValue;
     var inputValue = '';
 
@@ -221,7 +236,7 @@ function (_Component) {
       value: inputValue,
       size: size,
       onClick: disabled === true ? undefined : this.onOpen
-    }))), React.createElement(Box, {
+    }))), SelectIcon && React.createElement(Box, {
       margin: {
         horizontal: 'small'
       },

@@ -15,6 +15,7 @@ export interface SelectProps {
   dropTarget?: object;
   dropProps: DropProps;
   focusIndicator?: boolean;
+  icon?: boolean | ((...args: any[]) => any);
   id?: string;
   labelKey?: string | ((...args: any[]) => any);
   messages?: {multiple?: string};

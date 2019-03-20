@@ -897,6 +897,71 @@ function (_Component8) {
   return ManyOptions;
 }(_react.Component);
 
+var CustomSelectValue =
+/*#__PURE__*/
+function (_Component9) {
+  _inheritsLoose(CustomSelectValue, _Component9);
+
+  function CustomSelectValue() {
+    var _this17;
+
+    for (var _len9 = arguments.length, args = new Array(_len9), _key9 = 0; _key9 < _len9; _key9++) {
+      args[_key9] = arguments[_key9];
+    }
+
+    _this17 = _Component9.call.apply(_Component9, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_this17), "state", {
+      options: ['one', 'two'],
+      value: undefined
+    });
+
+    return _this17;
+  }
+
+  var _proto10 = CustomSelectValue.prototype;
+
+  _proto10.render = function render() {
+    var _this18 = this;
+
+    var _this$state8 = this.state,
+        options = _this$state8.options,
+        value = _this$state8.value;
+    return _react.default.createElement(_grommet.Grommet, {
+      full: true,
+      theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, _react.default.createElement(_grommet.Select, _extends({
+      id: "select",
+      name: "select",
+      placeholder: "Select",
+      value: value,
+      options: options,
+      onChange: function onChange(_ref13) {
+        var option = _ref13.option;
+        return _this18.setState({
+          value: option
+        });
+      },
+      plain: true,
+      valueLabel: _react.default.createElement(_grommet.Box, {
+        background: "brand",
+        width: "small",
+        round: "small",
+        overflow: "hidden",
+        align: "center"
+      }, value || 'Select...'),
+      icon: false
+    }, this.props))));
+  };
+
+  return CustomSelectValue;
+}(_react.Component);
+
 (0, _react2.storiesOf)('Select', module).add('Simple', function () {
   return _react.default.createElement(SimpleSelect, null);
 }).add('Search', function () {
@@ -932,4 +997,10 @@ function (_Component8) {
   });
 }).add('Lots of options', function () {
   return _react.default.createElement(ManyOptions, null);
+}).add('Custom Value', function () {
+  return _react.default.createElement(CustomSelectValue, null);
+}).add('Custom Icon', function () {
+  return _react.default.createElement(CustomSelectValue, {
+    icon: _grommetIcons.CaretDown
+  });
 });

@@ -31,6 +31,7 @@ var doc = function doc(Select) {
     dropTarget: _reactDesc.PropTypes.object.description("Target where the options drop will be aligned to. This should be\n      a React reference. Typically, this is not required as the drop will be\n      aligned to the Select itself by default."),
     dropProps: _reactDesc.PropTypes.object.description('Any valid Drop prop.'),
     focusIndicator: _reactDesc.PropTypes.bool.description("Whether when 'plain' it should receive a focus outline."),
+    icon: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.func]).description('A custom icon to be used when rendering the select. You can use false to not render an icon at all.'),
     labelKey: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func]).description("When the options array contains objects, this property indicates how\n      to determine the label of each option. If a string is\n      provided, it is used as the key to retrieve each option's label.\n      If a function is provided, it is called with the option and the\n      return value indicates the label."),
     messages: _reactDesc.PropTypes.shape({
       multiple: _reactDesc.PropTypes.string

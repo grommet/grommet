@@ -8,6 +8,8 @@ var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
 
 var _reactTestingLibrary = require("react-testing-library");
 
+var _grommetIcons = require("grommet-icons");
+
 var _portal = require("../../../utils/portal");
 
 var _ = require("..");
@@ -367,5 +369,32 @@ describe('Select', function () {
       options: ['one', 'two']
     }));
     expect(document.getElementById('test-select__drop')).not.toBeNull();
+  });
+  test('renders without icon', function () {
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Select, {
+      id: "test-select",
+      options: ['one', 'two'],
+      icon: false
+    }));
+
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  test('renders custom icon', function () {
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Select, {
+      id: "test-select",
+      options: ['one', 'two'],
+      icon: _grommetIcons.CaretDown
+    }));
+
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  test('renders default icon', function () {
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Select, {
+      id: "test-select",
+      options: ['one', 'two'],
+      icon: true
+    }));
+
+    expect(component.toJSON()).toMatchSnapshot();
   });
 });

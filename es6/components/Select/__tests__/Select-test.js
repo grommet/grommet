@@ -2,6 +2,7 @@ import React from 'react';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent } from 'react-testing-library';
+import { CaretDown } from "grommet-icons/es6/icons/CaretDown";
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Select } from '..';
 describe('Select', function () {
@@ -321,5 +322,29 @@ describe('Select', function () {
       options: ['one', 'two']
     }));
     expect(document.getElementById('test-select__drop')).not.toBeNull();
+  });
+  test('renders without icon', function () {
+    var component = renderer.create(React.createElement(Select, {
+      id: "test-select",
+      options: ['one', 'two'],
+      icon: false
+    }));
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  test('renders custom icon', function () {
+    var component = renderer.create(React.createElement(Select, {
+      id: "test-select",
+      options: ['one', 'two'],
+      icon: CaretDown
+    }));
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+  test('renders default icon', function () {
+    var component = renderer.create(React.createElement(Select, {
+      id: "test-select",
+      options: ['one', 'two'],
+      icon: true
+    }));
+    expect(component.toJSON()).toMatchSnapshot();
   });
 });
