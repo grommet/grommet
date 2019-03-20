@@ -1,14 +1,18 @@
-import React from 'react';
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { grommet, Box, Button, Grommet, Text } from 'grommet';
 
 var SidebarButton = function SidebarButton(_ref) {
   var label = _ref.label,
-      onClick = _ref.onClick;
-  return React.createElement(Button, {
-    plain: true,
-    onClick: onClick
-  }, function (_ref2) {
+      rest = _objectWithoutPropertiesLoose(_ref, ["label"]);
+
+  return React.createElement(Button, _extends({
+    plain: true
+  }, rest), function (_ref2) {
     var hover = _ref2.hover;
     return React.createElement(Box, {
       background: hover ? 'accent-1' : undefined,
@@ -23,6 +27,10 @@ var SidebarButton = function SidebarButton(_ref) {
 };
 
 var SidebarButtons = function SidebarButtons() {
+  var _useState = useState(),
+      active = _useState[0],
+      setActive = _useState[1];
+
   return React.createElement(Grommet, {
     full: true,
     theme: grommet
@@ -31,15 +39,15 @@ var SidebarButtons = function SidebarButtons() {
     direction: "row"
   }, React.createElement(Box, {
     background: "neutral-1"
-  }, React.createElement(SidebarButton, {
-    label: "Dashboard",
-    onClick: function onClick() {}
-  }), React.createElement(SidebarButton, {
-    label: "Devices",
-    onClick: function onClick() {}
-  }), React.createElement(SidebarButton, {
-    label: "Settings",
-    onClick: function onClick() {}
+  }, ['Dashboard', 'Devices', 'Settings'].map(function (label) {
+    return React.createElement(SidebarButton, {
+      key: label,
+      label: label,
+      active: label === active,
+      onClick: function onClick() {
+        return setActive(label);
+      }
+    });
   }))));
 };
 
