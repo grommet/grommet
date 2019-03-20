@@ -105,7 +105,14 @@ class AccordionPanel extends Component {
                   >
                     {typeof label === 'string' ? (
                       <Box pad={{ horizontal: 'xsmall' }}>
-                        <Heading level={4} color={hover}>
+                        <Heading
+                          level={
+                            (theme.accordion.heading &&
+                              theme.accordion.heading.level) ||
+                            4
+                          }
+                          color={hover}
+                        >
                           {label}
                         </Heading>
                       </Box>
