@@ -205,6 +205,16 @@ div
 \`\`\`
 ## Theme
   
+**accordion.heading.level**
+
+The heading level used for the accordion. Expects \`number\`.
+
+Defaults to
+
+\`\`\`
+4
+\`\`\`
+
 **accordion.icons.collapse**
 
 The icon to use when the panel is expanded. Expects \`React.Element\`.
