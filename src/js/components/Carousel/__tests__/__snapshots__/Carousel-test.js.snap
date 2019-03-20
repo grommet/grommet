@@ -309,8 +309,8 @@ exports[`Carousel basic 1`] = `
 }
 
 .c16:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
+  background-color: rgba(0,135,61,0.4);
+  color: #f8f8f8;
   color: #000000;
 }
 
@@ -904,8 +904,8 @@ exports[`Carousel navigate 1`] = `
 }
 
 .c16:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
+  background-color: rgba(0,135,61,0.4);
+  color: #f8f8f8;
   color: #000000;
 }
 
@@ -1219,7 +1219,7 @@ exports[`Carousel navigate 2`] = `
           class="StyledBox-sc-13pk1d4-0 dkhTXm"
         >
           <button
-            class="StyledButton-sc-323bzc-0 kZFYMs"
+            class="StyledButton-sc-323bzc-0 gdFziS"
             type="button"
           >
             <div
@@ -1435,7 +1435,7 @@ exports[`Carousel navigate 3`] = `
           class="StyledBox-sc-13pk1d4-0 dkhTXm"
         >
           <button
-            class="StyledButton-sc-323bzc-0 kZFYMs"
+            class="StyledButton-sc-323bzc-0 gdFziS"
             type="button"
           >
             <div
@@ -1771,8 +1771,8 @@ exports[`Carousel play 1`] = `
 }
 
 .c16:hover {
-  background-color: rgba(221,221,221,0.4);
-  color: #444444;
+  background-color: rgba(0,135,61,0.4);
+  color: #f8f8f8;
   color: #000000;
 }
 
@@ -2084,7 +2084,7 @@ exports[`Carousel play 2`] = `
           class="StyledBox-sc-13pk1d4-0 dkhTXm"
         >
           <button
-            class="StyledButton-sc-323bzc-0 kZFYMs"
+            class="StyledButton-sc-323bzc-0 gdFziS"
             type="button"
           >
             <div

@@ -61,7 +61,6 @@ exports[`Grommet cssVars 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  --active: rgba(221,221,221,0.5);
   --black: #000000;
   --brand: #7D4CDB;
   --focus: #6FFFB0;
