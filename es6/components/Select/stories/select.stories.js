@@ -116,13 +116,13 @@ _defineProperty(SimpleSelect, "defaultProps", {
 var defaultOptions = [];
 var objectOptions = [];
 
-for (var _i = 1; _i <= 200; _i += 1) {
-  defaultOptions.push("option " + _i);
+for (var i = 1; i <= 200; i += 1) {
+  defaultOptions.push("option " + i);
   objectOptions.push({
-    lab: "option " + _i,
-    val: _i,
-    dis: _i % 5 === 0,
-    sel: _i % 13 === 0
+    lab: "option " + i,
+    val: i,
+    dis: i % 5 === 0,
+    sel: i % 13 === 0
   });
 }
 
