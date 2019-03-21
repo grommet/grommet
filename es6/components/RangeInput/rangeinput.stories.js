@@ -115,7 +115,8 @@ function (_Component2) {
     }, React.createElement(Volume, {
       color: "neutral-2"
     }), React.createElement(Box, {
-      align: "center"
+      align: "center",
+      width: "small"
     }, React.createElement(RangeInput, {
       min: 0,
       max: 1,
@@ -128,8 +129,8 @@ function (_Component2) {
   return CustomRangeInput;
 }(Component);
 
-storiesOf('RangeInput', module).add('Simple RangeInput', function () {
+storiesOf('RangeInput', module).add('Simple', function () {
   return React.createElement(SimpleRangeInput, null);
-}).add('Custom RangeInput', function () {
+}).add('Custom', function () {
   return React.createElement(CustomRangeInput, null);
 });

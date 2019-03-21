@@ -124,7 +124,8 @@ function (_Component2) {
     }, _react.default.createElement(_grommetIcons.Volume, {
       color: "neutral-2"
     }), _react.default.createElement(_grommet.Box, {
-      align: "center"
+      align: "center",
+      width: "small"
     }, _react.default.createElement(_grommet.RangeInput, {
       min: 0,
       max: 1,
@@ -137,8 +138,8 @@ function (_Component2) {
   return CustomRangeInput;
 }(_react.Component);
 
-(0, _react2.storiesOf)('RangeInput', module).add('Simple RangeInput', function () {
+(0, _react2.storiesOf)('RangeInput', module).add('Simple', function () {
   return _react.default.createElement(SimpleRangeInput, null);
-}).add('Custom RangeInput', function () {
+}).add('Custom', function () {
   return _react.default.createElement(CustomRangeInput, null);
 });
