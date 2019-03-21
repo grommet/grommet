@@ -121,6 +121,7 @@ exports[`DataTable aggregate 1`] = `
 .c2 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c6 {
@@ -438,6 +439,7 @@ exports[`DataTable basic 1`] = `
 .c2 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c6 {
@@ -633,6 +635,7 @@ exports[`DataTable empty 1`] = `
 .c2 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c1 {
@@ -782,6 +785,7 @@ exports[`DataTable footer 1`] = `
 .c2 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c6 {
@@ -1189,6 +1193,7 @@ exports[`DataTable groupBy 1`] = `
 .c2 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c10 {
@@ -1488,10 +1493,10 @@ exports[`DataTable groupBy 1`] = `
 
 exports[`DataTable groupBy 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <table
-    class="StyledDataTable-xrlyjm-0 kTrXKK StyledTable-sc-1m3u5g-6 qwhVU"
+    class="StyledDataTable-xrlyjm-0 kTrXKK StyledTable-sc-1m3u5g-6 ksaVzW"
   >
     <thead
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 bAIczD StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
@@ -1504,7 +1509,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 kjdfHK"
+            class="StyledButton-sc-323bzc-0 kZFYMs"
             type="button"
           >
             <div
@@ -1566,7 +1571,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 kjdfHK"
+            class="StyledButton-sc-323bzc-0 kZFYMs"
             type="button"
           >
             <div
@@ -1617,7 +1622,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-sc-323bzc-0 kjdfHK"
+            class="StyledButton-sc-323bzc-0 kZFYMs"
             type="button"
           >
             <div
@@ -1751,6 +1756,7 @@ exports[`DataTable primaryKey 1`] = `
 .c2 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c6 {
@@ -2054,6 +2060,7 @@ exports[`DataTable resizeable 1`] = `
 .c2 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c7 {
@@ -2370,6 +2377,7 @@ exports[`DataTable sort 1`] = `
 .c2 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 .c8 {
@@ -2627,10 +2635,10 @@ exports[`DataTable sort 1`] = `
 
 exports[`DataTable sort 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <table
-    class="StyledDataTable-xrlyjm-0 kTrXKK StyledTable-sc-1m3u5g-6 qwhVU"
+    class="StyledDataTable-xrlyjm-0 kTrXKK StyledTable-sc-1m3u5g-6 ksaVzW"
   >
     <thead
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 bAIczD StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
@@ -2643,7 +2651,7 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-fzr2yb-0 bVTNxY StyledButton-sc-323bzc-0 kjdfHK"
+            class="Sorter__SorterButton-fzr2yb-0 bVTNxY StyledButton-sc-323bzc-0 kZFYMs"
             type="button"
           >
             <div
@@ -2718,7 +2726,7 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-fzr2yb-0 bVTNxY StyledButton-sc-323bzc-0 kjdfHK"
+            class="Sorter__SorterButton-fzr2yb-0 bVTNxY StyledButton-sc-323bzc-0 kZFYMs"
             type="button"
           >
             <div

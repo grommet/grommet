@@ -32,6 +32,7 @@ class DropContainer extends Component {
       top: 'top',
       left: 'left',
     },
+    overflow: 'auto',
     stretch: 'width',
   };
 
@@ -232,14 +233,35 @@ class DropContainer extends Component {
     }
   };
 
+  /**
+   * prevents mouse events from propagating upward to elements behind the drop.
+   * this prevents a nested drop from closing its parent when the user clicks
+   * inside it, since a 'nested' drop is technically an unrelated sibling in the
+   * DOM due to React portals.
+   */
+  preventClickBubbling = event => {
+    event.stopPropagation();
+    /**
+     * the React event system actually listens to all events at the top level
+     * and then handles its own bubbling / capturing virtually. This means that
+     * even if we call stopPropagation, it only affects the React synthetic
+     * event, and the native event still bubbles upward.
+     * Any code that uses native events (like the close listener in this class)
+     * will still get the bubbled event, unless we also call
+     * event.nativeEvent.stopImmediatePropagation, which bridges the gap from
+     * React synthetic event to native DOM event.
+     */
+    event.nativeEvent.stopImmediatePropagation();
+  };
+
   render() {
     const {
       align: alignProp,
       children,
+      elevation,
       onClickOutside,
       onEsc,
       onKeyDown,
-      elevation,
       plain,
       theme: propsTheme,
       ...rest
@@ -258,6 +280,7 @@ class DropContainer extends Component {
         tabIndex="-1"
         ref={this.dropRef}
         alignProp={alignProp}
+        onMouseDown={this.preventClickBubbling}
         {...rest}
       >
         {children}

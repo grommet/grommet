@@ -1,6 +1,17 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { OVERFLOW_VALUES } from '../Box/doc';
 import { getAvailableAtBadge } from '../../utils';
+
+// if you update values here, make sure to update in Box/doc too.
+const dropOverflowPropTypes = PropTypes.oneOfType([
+  PropTypes.oneOf(OVERFLOW_VALUES),
+  PropTypes.shape({
+    horizontal: PropTypes.oneOf(OVERFLOW_VALUES),
+    vertical: PropTypes.oneOf(OVERFLOW_VALUES),
+  }),
+  PropTypes.string,
+]);
 
 export const doc = Drop => {
   const DocumentedDrop = describe(Drop)
@@ -33,6 +44,9 @@ export const doc = Drop => {
     onEsc: PropTypes.func.description(
       'Function that will be called when the user presses the escape key inside the drop.',
     ),
+    overflow: dropOverflowPropTypes
+      .description('How to control the overflow inside the drop.')
+      .defaultValue('auto'),
     responsive: PropTypes.bool
       .description('Whether to dynamically re-place when resized.')
       .defaultValue(true),
@@ -63,4 +77,37 @@ export const doc = Drop => {
   };
 
   return DocumentedDrop;
+};
+
+export const themeDoc = {
+  'drop.maxHeight': {
+    description: 'The max height of the Drop container',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'global.drop.background': {
+    description: 'The background color of Drop',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: '#ffffff',
+  },
+  'global.drop.border.radius': {
+    description: 'The corner radius',
+    type: 'string',
+    defaultValue: '0px',
+  },
+  'global.drop.extend': {
+    description: 'Any additional style for Drop.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'global.drop.shadowSize': {
+    description: 'Elevated height of the Drop',
+    type: 'string',
+    defaultValue: 'small',
+  },
+  'global.drop.zIndex': {
+    description: 'The stack order of the Drop',
+    type: 'number',
+    defaultValue: 20,
+  },
 };

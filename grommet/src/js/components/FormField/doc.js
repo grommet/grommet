@@ -17,6 +17,9 @@ export const doc = FormField => {
     .intrinsicElement('div');
 
   DocumentedFormField.propTypes = {
+    component: PropTypes.func.description(
+      `The component to insert in the FormField. Grommet will add update the form values when this field changes`,
+    ),
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
       'Any error text describing issues with the field',
     ),

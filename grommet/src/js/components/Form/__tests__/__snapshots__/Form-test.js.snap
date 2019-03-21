@@ -15,9 +15,50 @@ exports[`Form empty 1`] = `
   className="c0"
 >
   <form
+    onReset={[Function]}
     onSubmit={[Function]}
   />
 </div>
+`;
+
+exports[`Form regexp validation 1`] = `
+.c0 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  color: #FF4040;
+}
+
+<span
+  class="c0"
+>
+  invalid
+</span>
+`;
+
+exports[`Form required validation 1`] = `
+.c0 {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  color: #FF4040;
+}
+
+<span
+  class="c0"
+>
+  required
+</span>
 `;
 
 exports[`Form update 1`] = `
@@ -343,6 +384,7 @@ exports[`Form with field 1`] = `
   className="c0"
 >
   <form
+    onReset={[Function]}
     onSubmit={[Function]}
   >
     <div

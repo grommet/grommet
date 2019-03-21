@@ -43,6 +43,7 @@ exports[`RangeInput renders 1`] = `
 }
 
 .c1::-webkit-slider-thumb {
+  margin-top: -10px;
   box-sizing: border-box;
   position: relative;
   border-radius: 24px;
@@ -52,7 +53,6 @@ exports[`RangeInput renders 1`] = `
   background: #7D4CDB;
   -webkit-appearance: none;
   cursor: pointer;
-  margin-top: -10.2px;
 }
 
 .c1::-webkit-slider-thumb:hover {

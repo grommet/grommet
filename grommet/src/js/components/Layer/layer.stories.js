@@ -251,30 +251,27 @@ class NotificationLayer extends Component {
         {open && (
           <Layer
             position="bottom"
-            full="horizontal"
             modal={false}
-            responsive={false}
+            margin={{ vertical: 'medium', horizontal: 'small' }}
             onEsc={this.onClose}
+            responsive={false}
+            plain
           >
             <Box
-              align="start"
-              pad={{ vertical: 'medium', horizontal: 'small' }}
+              align="center"
+              direction="row"
+              gap="small"
+              justify="between"
+              round="medium"
+              elevation="medium"
+              pad={{ vertical: 'xsmall', horizontal: 'small' }}
+              background="status-ok"
             >
-              <Box
-                align="center"
-                direction="row"
-                gap="small"
-                round="medium"
-                elevation="medium"
-                pad={{ vertical: 'xsmall', horizontal: 'small' }}
-                background="status-ok"
-              >
-                <Box align="center" direction="row" gap="xsmall">
-                  <StatusGood />
-                  <Text>A new virtual machine has been successfully added</Text>
-                </Box>
-                <Button icon={<FormClose />} onClick={this.onClose} plain />
+              <Box align="center" direction="row" gap="xsmall">
+                <StatusGood />
+                <Text>A new virtual machine has been successfully added</Text>
               </Box>
+              <Button icon={<FormClose />} onClick={this.onClose} plain />
             </Box>
           </Layer>
         )}

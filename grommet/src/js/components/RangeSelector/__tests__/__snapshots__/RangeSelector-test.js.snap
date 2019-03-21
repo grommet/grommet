@@ -76,7 +76,6 @@ exports[`RangeSelector basic 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  max-width: 100%;
   margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -87,6 +86,9 @@ exports[`RangeSelector basic 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -104,13 +106,17 @@ exports[`RangeSelector basic 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  height: 12px;
+  width: 12px;
+  background: #7D4CDB;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  border-radius: 12px;
+  border-radius: 100%;
 }
 
 .c7 {
@@ -202,12 +208,6 @@ exports[`RangeSelector basic 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
@@ -259,20 +259,7 @@ exports[`RangeSelector basic 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -310,20 +297,7 @@ exports[`RangeSelector basic 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -414,7 +388,6 @@ exports[`RangeSelector color 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  max-width: 100%;
   margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -425,6 +398,9 @@ exports[`RangeSelector color 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -442,13 +418,17 @@ exports[`RangeSelector color 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  height: 12px;
+  width: 12px;
+  background: #6FFFB0;
+  color: #444444;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  border-radius: 12px;
+  border-radius: 100%;
 }
 
 .c7 {
@@ -540,12 +520,6 @@ exports[`RangeSelector color 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
@@ -597,20 +571,7 @@ exports[`RangeSelector color 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#6FFFB0"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -648,20 +609,7 @@ exports[`RangeSelector color 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#6FFFB0"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -752,7 +700,6 @@ exports[`RangeSelector direction 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  max-width: 100%;
   margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -763,6 +710,9 @@ exports[`RangeSelector direction 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -780,13 +730,17 @@ exports[`RangeSelector direction 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  height: 12px;
+  width: 12px;
+  background: #7D4CDB;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  border-radius: 12px;
+  border-radius: 100%;
 }
 
 .c7 {
@@ -858,7 +812,6 @@ exports[`RangeSelector direction 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  max-width: 100%;
   margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -869,6 +822,9 @@ exports[`RangeSelector direction 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   width: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -878,24 +834,6 @@ exports[`RangeSelector direction 1`] = `
 }
 
 .c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  margin: 0px;
-  min-width: 0;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 0px;
-  border-radius: 12px;
-}
-
-.c12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -985,12 +923,6 @@ exports[`RangeSelector direction 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
@@ -1050,24 +982,6 @@ exports[`RangeSelector direction 1`] = `
   }
 }
 
-@media only screen and (max-width:768px) {
-  .c11 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    margin: 0px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c12 {
-    padding: 0px;
-  }
-}
-
 <div
   className="c0"
 >
@@ -1108,20 +1022,7 @@ exports[`RangeSelector direction 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -1159,20 +1060,7 @@ exports[`RangeSelector direction 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -1220,25 +1108,12 @@ exports[`RangeSelector direction 1`] = `
         tabIndex={0}
       >
         <div
-          className="c11"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+          className="c6"
+        />
       </div>
     </div>
     <div
-      className="c12"
+      className="c11"
       style={
         Object {
           "cursor": "ns-resize",
@@ -1271,21 +1146,8 @@ exports[`RangeSelector direction 1`] = `
         tabIndex={0}
       >
         <div
-          className="c11"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+          className="c6"
+        />
       </div>
     </div>
     <div
@@ -1376,7 +1238,6 @@ exports[`RangeSelector handle keyboard 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  max-width: 100%;
   margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1387,6 +1248,9 @@ exports[`RangeSelector handle keyboard 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -1404,13 +1268,17 @@ exports[`RangeSelector handle keyboard 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  height: 12px;
+  width: 12px;
+  background: #7D4CDB;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  border-radius: 12px;
+  border-radius: 100%;
 }
 
 .c7 {
@@ -1502,12 +1370,6 @@ exports[`RangeSelector handle keyboard 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
@@ -1539,20 +1401,7 @@ exports[`RangeSelector handle keyboard 1`] = `
       >
         <div
           class="c6"
-        >
-          <svg
-            height="12"
-            viewBox="0 0 12 12"
-            width="12"
-          >
-            <circle
-              cx="6"
-              cy="6"
-              fill="#7D4CDB"
-              r="6"
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -1570,20 +1419,7 @@ exports[`RangeSelector handle keyboard 1`] = `
       >
         <div
           class="c6"
-        >
-          <svg
-            height="12"
-            viewBox="0 0 12 12"
-            width="12"
-          >
-            <circle
-              cx="6"
-              cy="6"
-              fill="#7D4CDB"
-              r="6"
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -1669,7 +1505,6 @@ exports[`RangeSelector handle mouse 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  max-width: 100%;
   margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1680,6 +1515,9 @@ exports[`RangeSelector handle mouse 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -1697,13 +1535,17 @@ exports[`RangeSelector handle mouse 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  height: 12px;
+  width: 12px;
+  background: #7D4CDB;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  border-radius: 12px;
+  border-radius: 100%;
 }
 
 .c7 {
@@ -1795,12 +1637,6 @@ exports[`RangeSelector handle mouse 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
@@ -1832,20 +1668,7 @@ exports[`RangeSelector handle mouse 1`] = `
       >
         <div
           class="c6"
-        >
-          <svg
-            height="12"
-            viewBox="0 0 12 12"
-            width="12"
-          >
-            <circle
-              cx="6"
-              cy="6"
-              fill="#7D4CDB"
-              r="6"
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -1863,20 +1686,7 @@ exports[`RangeSelector handle mouse 1`] = `
       >
         <div
           class="c6"
-        >
-          <svg
-            height="12"
-            viewBox="0 0 12 12"
-            width="12"
-          >
-            <circle
-              cx="6"
-              cy="6"
-              fill="#7D4CDB"
-              r="6"
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -1962,7 +1772,6 @@ exports[`RangeSelector invert 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  max-width: 100%;
   margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1973,6 +1782,9 @@ exports[`RangeSelector invert 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -1990,13 +1802,17 @@ exports[`RangeSelector invert 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  height: 12px;
+  width: 12px;
+  background: #7D4CDB;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  border-radius: 12px;
+  border-radius: 100%;
 }
 
 .c8 {
@@ -2109,12 +1925,6 @@ exports[`RangeSelector invert 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c8 {
     margin: 0px;
   }
@@ -2178,20 +1988,7 @@ exports[`RangeSelector invert 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -2229,20 +2026,7 @@ exports[`RangeSelector invert 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -2291,20 +2075,7 @@ exports[`RangeSelector invert 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -2342,20 +2113,7 @@ exports[`RangeSelector invert 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -2446,7 +2204,6 @@ exports[`RangeSelector max 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  max-width: 100%;
   margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2457,6 +2214,9 @@ exports[`RangeSelector max 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -2474,13 +2234,17 @@ exports[`RangeSelector max 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  height: 12px;
+  width: 12px;
+  background: #7D4CDB;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  border-radius: 12px;
+  border-radius: 100%;
 }
 
 .c7 {
@@ -2572,12 +2336,6 @@ exports[`RangeSelector max 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
@@ -2629,20 +2387,7 @@ exports[`RangeSelector max 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -2680,20 +2425,7 @@ exports[`RangeSelector max 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -2784,7 +2516,6 @@ exports[`RangeSelector min 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  max-width: 100%;
   margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2795,6 +2526,9 @@ exports[`RangeSelector min 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -2812,13 +2546,17 @@ exports[`RangeSelector min 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  height: 12px;
+  width: 12px;
+  background: #7D4CDB;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  border-radius: 12px;
+  border-radius: 100%;
 }
 
 .c7 {
@@ -2910,12 +2648,6 @@ exports[`RangeSelector min 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
@@ -2967,20 +2699,7 @@ exports[`RangeSelector min 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -3018,20 +2737,7 @@ exports[`RangeSelector min 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -3122,7 +2828,6 @@ exports[`RangeSelector opacity 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  max-width: 100%;
   margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3133,6 +2838,9 @@ exports[`RangeSelector opacity 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -3150,13 +2858,17 @@ exports[`RangeSelector opacity 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  height: 12px;
+  width: 12px;
+  background: #7D4CDB;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  border-radius: 12px;
+  border-radius: 100%;
 }
 
 .c8 {
@@ -3289,12 +3001,6 @@ exports[`RangeSelector opacity 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c8 {
     margin: 0px;
   }
@@ -3370,20 +3076,7 @@ exports[`RangeSelector opacity 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -3421,20 +3114,7 @@ exports[`RangeSelector opacity 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -3483,20 +3163,7 @@ exports[`RangeSelector opacity 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -3534,20 +3201,7 @@ exports[`RangeSelector opacity 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -3596,20 +3250,7 @@ exports[`RangeSelector opacity 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -3647,20 +3288,7 @@ exports[`RangeSelector opacity 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -3733,7 +3361,6 @@ exports[`RangeSelector round 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  max-width: 100%;
   margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3744,6 +3371,9 @@ exports[`RangeSelector round 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -3761,13 +3391,17 @@ exports[`RangeSelector round 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  height: 12px;
+  width: 12px;
+  background: #7D4CDB;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  border-radius: 12px;
+  border-radius: 100%;
 }
 
 .c3 {
@@ -4031,12 +3665,6 @@ exports[`RangeSelector round 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c3 {
     margin: 0px;
   }
@@ -4244,20 +3872,7 @@ exports[`RangeSelector round 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -4295,20 +3910,7 @@ exports[`RangeSelector round 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -4357,20 +3959,7 @@ exports[`RangeSelector round 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -4408,20 +3997,7 @@ exports[`RangeSelector round 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -4470,20 +4046,7 @@ exports[`RangeSelector round 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -4521,20 +4084,7 @@ exports[`RangeSelector round 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -4583,20 +4133,7 @@ exports[`RangeSelector round 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -4634,20 +4171,7 @@ exports[`RangeSelector round 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -4696,20 +4220,7 @@ exports[`RangeSelector round 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -4747,20 +4258,7 @@ exports[`RangeSelector round 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -4851,7 +4349,6 @@ exports[`RangeSelector size 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  max-width: 100%;
   margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -4862,6 +4359,9 @@ exports[`RangeSelector size 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -4879,13 +4379,17 @@ exports[`RangeSelector size 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  height: 12px;
+  width: 12px;
+  background: #7D4CDB;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  border-radius: 12px;
+  border-radius: 100%;
 }
 
 .c7 {
@@ -4977,12 +4481,6 @@ exports[`RangeSelector size 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
@@ -5034,20 +4532,7 @@ exports[`RangeSelector size 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -5085,20 +4570,7 @@ exports[`RangeSelector size 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -5147,20 +4619,7 @@ exports[`RangeSelector size 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -5198,20 +4657,7 @@ exports[`RangeSelector size 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -5260,20 +4706,7 @@ exports[`RangeSelector size 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -5311,20 +4744,7 @@ exports[`RangeSelector size 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -5373,20 +4793,7 @@ exports[`RangeSelector size 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -5424,20 +4831,7 @@ exports[`RangeSelector size 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -5486,20 +4880,7 @@ exports[`RangeSelector size 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -5537,20 +4918,7 @@ exports[`RangeSelector size 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -5599,20 +4967,7 @@ exports[`RangeSelector size 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -5650,20 +5005,7 @@ exports[`RangeSelector size 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -5712,20 +5054,7 @@ exports[`RangeSelector size 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -5763,20 +5092,7 @@ exports[`RangeSelector size 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -5867,7 +5183,6 @@ exports[`RangeSelector step 1`] = `
   display: flex;
   box-sizing: border-box;
   outline: none;
-  max-width: 100%;
   margin: 6px;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -5878,6 +5193,9 @@ exports[`RangeSelector step 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
   height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -5895,13 +5213,17 @@ exports[`RangeSelector step 1`] = `
   outline: none;
   max-width: 100%;
   margin: 0px;
+  height: 12px;
+  width: 12px;
+  background: #7D4CDB;
+  color: #f8f8f8;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
-  border-radius: 12px;
+  border-radius: 100%;
 }
 
 .c7 {
@@ -5993,12 +5315,6 @@ exports[`RangeSelector step 1`] = `
 }
 
 @media only screen and (max-width:768px) {
-  .c6 {
-    border-radius: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .c7 {
     margin: 0px;
   }
@@ -6050,20 +5366,7 @@ exports[`RangeSelector step 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div
@@ -6101,20 +5404,7 @@ exports[`RangeSelector step 1`] = `
       >
         <div
           className="c6"
-        >
-          <svg
-            height={12}
-            viewBox="0 0 12 12"
-            width={12}
-          >
-            <circle
-              cx={6}
-              cy={6}
-              fill="#7D4CDB"
-              r={6}
-            />
-          </svg>
-        </div>
+        />
       </div>
     </div>
     <div

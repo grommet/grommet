@@ -35,9 +35,13 @@ class Select extends Component {
     messages: { multiple: 'multiple' },
   };
 
-  state = { open: false };
-
   inputRef = React.createRef();
+
+  constructor(props) {
+    super(props);
+
+    this.state = { open: props.open };
+  }
 
   onOpen = () => {
     const { onOpen } = this.props;
@@ -65,10 +69,12 @@ class Select extends Component {
       closeOnChange,
       disabled,
       dropAlign,
+      dropProps,
       dropTarget,
       forwardRef,
       gridArea,
       id,
+      icon,
       labelKey,
       margin,
       messages,
@@ -97,7 +103,17 @@ class Select extends Component {
       }
     };
 
-    const SelectIcon = theme.select.icons.down;
+    let SelectIcon;
+    switch (icon) {
+      case false:
+        break;
+      case true:
+      case undefined:
+        SelectIcon = theme.select.icons.down;
+        break;
+      default:
+        SelectIcon = icon;
+    }
     let selectValue;
     let inputValue = '';
     if (valueLabel) {
@@ -170,6 +186,7 @@ class Select extends Component {
             <SelectContainer {...this.props} onChange={onSelectChange} />
           }
           plain={plain}
+          dropProps={{ ...dropProps }}
         >
           <Box
             align="center"
@@ -200,13 +217,15 @@ class Select extends Component {
                 />
               )}
             </Box>
-            <Box
-              margin={{ horizontal: 'small' }}
-              flex={false}
-              style={{ minWidth: 'auto' }}
-            >
-              <SelectIcon color={iconColor} size={size} />
-            </Box>
+            {SelectIcon && (
+              <Box
+                margin={{ horizontal: 'small' }}
+                flex={false}
+                style={{ minWidth: 'auto' }}
+              >
+                <SelectIcon color={iconColor} size={size} />
+              </Box>
+            )}
           </Box>
         </StyledSelectDropButton>
       </Keyboard>

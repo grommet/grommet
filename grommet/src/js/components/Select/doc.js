@@ -74,8 +74,12 @@ export const doc = Select => {
       a React reference. Typically, this is not required as the drop will be
       aligned to the Select itself by default.`,
     ),
+    dropProps: PropTypes.object.description('Any valid Drop prop.'),
     focusIndicator: PropTypes.bool.description(
       "Whether when 'plain' it should receive a focus outline.",
+    ),
+    icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]).description(
+      'A custom icon to be used when rendering the select. You can use false to not render an icon at all.',
     ),
     labelKey: PropTypes.oneOfType([
       PropTypes.string,
@@ -116,6 +120,7 @@ export const doc = Select => {
       `Options can be either a string or an object. If an object is used, use
       children callback in order to render anything based on the current item.`,
     ).isRequired,
+    open: PropTypes.bool.description(`Initial state of the select component`),
     placeholder: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.node,
@@ -179,6 +184,17 @@ export const themeDoc = {
     type: 'string',
     defaultValue: undefined,
   },
+  'select.options.container': {
+    description: 'Any valid Box prop for the options container.',
+    type: 'object',
+    defaultValue: "{ align: 'start', pad: 'small' }",
+  },
+  'select.options.text': {
+    description:
+      'Any valid Text prop for text used inside the options container.',
+    type: 'object',
+    defaultValue: "{ margin: 'none }",
+  },
   'select.container.extend': {
     description:
       'Any additional style for the container of the Select component.',
@@ -198,12 +214,12 @@ export const themeDoc = {
   },
   'select.icons.down': {
     description: 'The down icon to use for opening the Select.',
-    type: 'React.element',
+    type: 'React.Element',
     defaultValue: '<FormDown />',
   },
   'select.searchInput': {
     description: `Component for the Select search input field.`,
-    type: 'React.component',
+    type: 'React.Component',
     defaultValue: undefined,
   },
   'select.step': {

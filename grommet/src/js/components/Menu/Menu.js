@@ -26,6 +26,7 @@ const ContainerBox = styled(Box)`
 class Menu extends Component {
   static defaultProps = {
     dropAlign: { top: 'top', left: 'left' },
+    dropProps: {},
     items: [],
     messages: { openMenu: 'Open Menu', closeMenu: 'Close Menu' },
     justifyContent: 'start',
@@ -94,6 +95,7 @@ class Menu extends Component {
       disabled,
       dropAlign,
       dropBackground,
+      dropProps,
       dropTarget,
       forwardRef,
       justifyContent,
@@ -102,6 +104,7 @@ class Menu extends Component {
       label,
       messages,
       onKeyDown,
+      plain,
       size,
       theme,
       ...rest
@@ -132,12 +135,17 @@ class Menu extends Component {
       <Box flex={false}>
         <Button
           a11yTitle={messages.closeMenu || 'Close Menu'}
+          plain={plain}
           onClick={this.onDropClose}
         >
-          {content}
+          {typeof content === 'function'
+            ? props => content({ ...props, drop: true })
+            : content}
         </Button>
       </Box>
     );
+
+    const align = dropProps.align || dropAlign;
 
     return (
       <Keyboard
@@ -154,14 +162,15 @@ class Menu extends Component {
           {...rest}
           a11yTitle={messages.openMenu || 'Open Menu'}
           disabled={disabled}
-          dropAlign={dropAlign}
+          dropAlign={align}
           dropTarget={dropTarget}
+          plain={plain}
           open={open}
           onOpen={() => this.setState({ open: true })}
           onClose={() => this.setState({ open: false })}
           dropContent={
             <ContainerBox background={dropBackground || theme.menu.background}>
-              {dropAlign.top === 'top' ? controlMirror : undefined}
+              {align.top === 'top' ? controlMirror : undefined}
               <Box overflow="auto">
                 {items.map((item, index) => (
                   // eslint-disable-next-line react/no-array-index-key
@@ -172,7 +181,7 @@ class Menu extends Component {
                       }}
                       active={activeItemIndex === index}
                       hoverIndicator="background"
-                      disabled={!item.onClick && !item.href}
+                      disabled={item.disabled}
                       onClick={(...args) => {
                         item.onClick(...args);
                         if (item.close !== false) {
@@ -189,7 +198,7 @@ class Menu extends Component {
                   </Box>
                 ))}
               </Box>
-              {dropAlign.bottom === 'bottom' ? controlMirror : undefined}
+              {align.bottom === 'bottom' ? controlMirror : undefined}
             </ContainerBox>
           }
         >

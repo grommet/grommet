@@ -205,12 +205,29 @@ Target where the options drop will be aligned to. This should be
 object
 ```
 
+**dropProps**
+
+Any valid Drop prop.
+
+```
+object
+```
+
 **focusIndicator**
 
 Whether when 'plain' it should receive a focus outline.
 
 ```
 boolean
+```
+
+**icon**
+
+A custom icon to be used when rendering the select. You can use false to not render an icon at all.
+
+```
+boolean
+function
 ```
 
 **labelKey**
@@ -290,6 +307,14 @@ Required. Options can be either a string or an object. If an object is used, use
   element
   object
 ]
+```
+
+**open**
+
+Initial state of the select component
+
+```
+boolean
 ```
 
 **placeholder**
@@ -399,6 +424,26 @@ Defaults to
 undefined
 ```
 
+**select.options.container**
+
+Any valid Box prop for the options container. Expects `object`.
+
+Defaults to
+
+```
+{ align: 'start', pad: 'small' }
+```
+
+**select.options.text**
+
+Any valid Text prop for text used inside the options container. Expects `object`.
+
+Defaults to
+
+```
+{ margin: 'none }
+```
+
 **select.container.extend**
 
 Any additional style for the container of the Select component. Expects `string | (props) => {}`.
@@ -431,7 +476,7 @@ undefined
 
 **select.icons.down**
 
-The down icon to use for opening the Select. Expects `React.element`.
+The down icon to use for opening the Select. Expects `React.Element`.
 
 Defaults to
 
@@ -441,7 +486,7 @@ Defaults to
 
 **select.searchInput**
 
-Component for the Select search input field. Expects `React.component`.
+Component for the Select search input field. Expects `React.Component`.
 
 Defaults to
 

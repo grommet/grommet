@@ -11,6 +11,6 @@ export interface StackProps {
   interactiveChild?: number | "first" | "last";
 }
 
-declare const Stack: React.ComponentType<StackProps & JSX.IntrinsicElements['div']>;
+declare const Stack: React.ComponentClass<StackProps & JSX.IntrinsicElements['div']>;
 
 export { Stack };

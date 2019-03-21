@@ -48,6 +48,7 @@ class SimpleDropButton extends Component {
             open={open}
             onClose={() => this.setState({ open: undefined })}
             dropContent={<DropContent onClose={this.onClose} />}
+            dropProps={{ align: { top: 'bottom' } }}
           />
         </Box>
       </Grommet>
@@ -114,7 +115,7 @@ class UserMenuDropButton extends Component {
               alignSelf="center"
               margin={{ vertical: 'small' }}
               dropContent={this.renderItems()}
-              dropAlign={{ bottom: 'top' }}
+              dropProps={{ align: { bottom: 'top' } }}
             >
               <Box
                 height="36px"

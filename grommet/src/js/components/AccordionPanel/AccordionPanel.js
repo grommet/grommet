@@ -105,7 +105,14 @@ class AccordionPanel extends Component {
                   >
                     {typeof label === 'string' ? (
                       <Box pad={{ horizontal: 'xsmall' }}>
-                        <Heading level={4} color={hover}>
+                        <Heading
+                          level={
+                            (theme.accordion.heading &&
+                              theme.accordion.heading.level) ||
+                            4
+                          }
+                          color={hover}
+                        >
                           {label}
                         </Heading>
                       </Box>
@@ -120,7 +127,7 @@ class AccordionPanel extends Component {
                   </Box>
                 )}
               </Button>
-              <Box border={{ side: 'bottom', color: 'border' }}>
+              <Box border={theme.accordion.border}>
                 {animate ? (
                   <Collapsible open={active}>{children}</Collapsible>
                 ) : (

@@ -12,6 +12,6 @@ export interface TextAreaProps {
   resize?: "vertical" | "horizontal" | boolean;
 }
 
-declare const TextArea: React.ComponentType<TextAreaProps & JSX.IntrinsicElements['textarea']>;
+declare const TextArea: React.ComponentClass<TextAreaProps & JSX.IntrinsicElements['textarea']>;
 
 export { TextArea };

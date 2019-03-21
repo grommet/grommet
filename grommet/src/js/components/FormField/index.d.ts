@@ -8,9 +8,10 @@ export interface FormFieldProps {
   name?: string;
   pad?: boolean;
   required?: boolean;
+  component?: React.ComponentType<any>;
   validate?: {regexp?: object,message?: string} | ((...args: any[]) => any);
 }
 
-declare const FormField: React.ComponentType<FormFieldProps & JSX.IntrinsicElements['div']>;
+declare const FormField: React.ComponentClass<FormFieldProps & JSX.IntrinsicElements['input']>;
 
 export { FormField };

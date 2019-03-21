@@ -167,12 +167,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           radius: '4px',
           color: 'border',
         },
+        disabled: {
+          opacity: 0.3,
+        },
       },
       debounceDelay: 300, // The time to wait after the user stopped typing, measured in ms.
       drop: {
         background: '#ffffff',
         border: {
-          width: '0px',
           radius: '0px',
         },
         shadowSize: 'small',
@@ -258,6 +260,11 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     accordion: {
+      border: {
+        side: 'bottom',
+        color: 'border',
+      },
+      heading: { level: '4' }, // level ranges from 1-6
       icons: {
         collapse: FormUp,
         expand: FormDown,
@@ -292,11 +299,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       primary: {
         // color: { dark: undefined, light: undefined }
       },
-      disabled: {
-        opacity: 0.3,
-      },
-      minWidth: `${baseSpacing * 4}px`,
-      maxWidth: `${baseSpacing * 16}px`,
+      // disabled: { opacity: undefined },
       padding: {
         vertical: `${baseSpacing / 4 - borderWidth}px`,
         horizontal: `${baseSpacing - borderWidth}px`,
@@ -389,6 +392,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
     clock: {
       analog: {
+        // extend: undefined,
         hour: {
           color: {
             dark: 'light-2',
@@ -473,6 +477,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
     },
     // drop: {
+    //   extend: undefined,
     //   maxHeight: undefined,
     // },
     formField: {
@@ -487,19 +492,33 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           },
         },
       },
+      content: {
+        pad: {
+          horizontal: 'small',
+          bottom: 'small',
+        },
+      },
       error: {
+        margin: { vertical: 'xsmall', horizontal: 'small' },
         color: {
           dark: 'status-critical',
           light: 'status-critical',
         },
       },
       help: {
+        margin: {
+          left: 'small',
+        },
         color: {
           dark: 'dark-3',
           light: 'dark-3',
         },
       },
-      label: {},
+      label: {
+        margin: { vertical: 'xsmall', horizontal: 'small' },
+      },
+      margin: { bottom: 'small' },
+      // extend: undefined,
     },
     grommet: {},
     heading: {
@@ -585,6 +604,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       responsiveBreakpoint: 'small', // when Layer takes over the full screen
       zIndex: '10',
     },
+    maskedInput: {
+      // extend: undefined,
+    },
     menu: {
       // background: undefined,
       // extend: undefined,
@@ -645,6 +667,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // color: { dark: undefined, light: undefined },
       },
     },
+    rangeSelector: {
+      background: {
+        invert: {
+          color: 'light-4',
+        },
+      },
+      // edge: {
+      //   type: undefined,
+      // },
+    },
     select: {
       // background: undefined,
       container: {
@@ -656,6 +688,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       icons: {
         // color: { dark: undefined, light: undefined },
         down: FormDown,
+      },
+      options: {
+        box: {
+          align: 'start',
+          pad: 'small',
+        },
+        text: {
+          margin: 'none',
+        },
       },
       // searchInput: undefined,
       step: 20,
@@ -684,6 +725,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
             dark: 'white',
             light: 'black',
           },
+          // extend: undefined,
         },
       },
       color: 'control',
@@ -707,6 +749,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     tabs: {
       // background: undefined,
       // extend: undefined,
+      // gap: undefined,
       header: {
         // background: undefined,
         // extend: undefined,
@@ -714,7 +757,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       panel: {
         // extend: undefined,
       },
-      // gap: undefined,
     },
     table: {
       header: {
@@ -749,9 +791,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       xlarge: { ...fontSizing(2) },
       xxlarge: { ...fontSizing(4) },
     },
-    // textInput: {
-    //   extend: undefined,
-    // },
+    textArea: {
+      // extend: undefined,
+      // disabled: { opacity: undefined },
+    },
+    textInput: {
+      // extend: undefined,
+      // disabled: { opacity: undefined },
+    },
     video: {
       captions: {
         background: 'rgba(0, 0, 0, 0.7)',

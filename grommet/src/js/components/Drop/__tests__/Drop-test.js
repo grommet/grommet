@@ -72,8 +72,8 @@ describe('Drop', () => {
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('align left random', () => {
-    render(<TestInput align={{ left: 'random', bottom: 'bottom' }} />);
+  test('align left left', () => {
+    render(<TestInput align={{ left: 'left', bottom: 'bottom' }} />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 
@@ -87,8 +87,8 @@ describe('Drop', () => {
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('align right random', () => {
-    render(<TestInput align={{ right: 'random' }} />);
+  test('align right right', () => {
+    render(<TestInput align={{ right: 'right' }} />);
     expectPortal('drop-node').toMatchSnapshot();
   });
 

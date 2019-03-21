@@ -174,3 +174,100 @@ function
 ```
 div
 ```
+## Theme
+  
+**global.borderSize**
+
+The size of the border. Expects `string`.
+
+Defaults to
+
+```
+{
+      xsmall: '1px',
+      small: '2px',
+      medium: '4px',
+      large: '12px',
+      xlarge: '24px,
+    }
+```
+
+**global.colors.border**
+
+The color of tabs border. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }
+```
+
+**global.edgeSize.small**
+
+The possible sizes for margin, pad and gap. Expects `string`.
+
+Defaults to
+
+```
+6px
+```
+
+**tabs.background**
+
+background styling of Tabs. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.extend**
+
+Any additional style for Tabs. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.gap**
+
+The gap size between the Tabs. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.header.background**
+
+The background styles of Tabs header. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.header.extend**
+
+Any additional style for Tabs header. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**tabs.panel.extend**
+
+Any additional style for Tabs panel. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```

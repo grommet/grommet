@@ -142,6 +142,7 @@ exports[`TextInput close suggestion drop 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -226,7 +227,6 @@ exports[`TextInput close suggestion drop 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -336,7 +336,7 @@ exports[`TextInput close suggestion drop 2`] = `
 `;
 
 exports[`TextInput close suggestion drop 3`] = `
-".izsmxM {
+".fMpdhH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -351,6 +351,7 @@ exports[`TextInput close suggestion drop 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -378,7 +379,7 @@ exports[`TextInput close suggestion drop 3`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -390,7 +391,6 @@ exports[`TextInput close suggestion drop 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -404,7 +404,7 @@ exports[`TextInput close suggestion drop 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -425,14 +425,14 @@ exports[`TextInput close suggestion drop 3`] = `
 
 exports[`TextInput close suggestion drop 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 iQGivQ"
+      class="StyledTextInput-sc-1x30a0s-0 bkKCTq"
       data-testid="test-input"
       id="item"
       name="item"
@@ -529,6 +529,7 @@ exports[`TextInput complex suggestions 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -592,7 +593,6 @@ exports[`TextInput complex suggestions 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -682,7 +682,7 @@ exports[`TextInput complex suggestions 2`] = `
 `;
 
 exports[`TextInput complex suggestions 3`] = `
-".izsmxM {
+".fMpdhH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -697,6 +697,7 @@ exports[`TextInput complex suggestions 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -724,7 +725,7 @@ exports[`TextInput complex suggestions 3`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -736,7 +737,6 @@ exports[`TextInput complex suggestions 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -750,7 +750,7 @@ exports[`TextInput complex suggestions 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -767,6 +767,64 @@ exports[`TextInput complex suggestions 3`] = `
     width: 100%;
   }
 }"
+`;
+
+exports[`TextInput disabled 1`] = `
+.c1 {
+  box-sizing: border-box;
+  font-size: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  opacity: 0.3;
+  cursor: default;
+}
+
+.c1::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c1:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c0 {
+  position: relative;
+  width: 100%;
+}
+
+<div
+  class="c0"
+>
+  <input
+    autocomplete="off"
+    class="c1"
+    disabled=""
+    name="item"
+    value=""
+  />
+</div>
 `;
 
 exports[`TextInput handles next and previous without suggestion 1`] = `
@@ -842,14 +900,14 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 exports[`TextInput handles next and previous without suggestion 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 iQGivQ"
+      class="StyledTextInput-sc-1x30a0s-0 bkKCTq"
       data-testid="test-input"
       id="item"
       name="item"
@@ -875,6 +933,7 @@ exports[`TextInput large drop height 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -959,7 +1018,6 @@ exports[`TextInput large drop height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1069,7 +1127,7 @@ exports[`TextInput large drop height 1`] = `
 `;
 
 exports[`TextInput large drop height 2`] = `
-".izsmxM {
+".fMpdhH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1084,6 +1142,7 @@ exports[`TextInput large drop height 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -1111,7 +1170,7 @@ exports[`TextInput large drop height 2`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1123,7 +1182,6 @@ exports[`TextInput large drop height 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1137,7 +1195,7 @@ exports[`TextInput large drop height 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1190,6 +1248,7 @@ exports[`TextInput medium drop height 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -1274,7 +1333,6 @@ exports[`TextInput medium drop height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1384,7 +1442,7 @@ exports[`TextInput medium drop height 1`] = `
 `;
 
 exports[`TextInput medium drop height 2`] = `
-".izsmxM {
+".fMpdhH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1399,6 +1457,7 @@ exports[`TextInput medium drop height 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -1426,7 +1485,7 @@ exports[`TextInput medium drop height 2`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1438,7 +1497,6 @@ exports[`TextInput medium drop height 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1452,7 +1510,7 @@ exports[`TextInput medium drop height 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1644,6 +1702,7 @@ exports[`TextInput select suggestion 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -1728,7 +1787,6 @@ exports[`TextInput select suggestion 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1838,7 +1896,7 @@ exports[`TextInput select suggestion 2`] = `
 `;
 
 exports[`TextInput select suggestion 3`] = `
-".izsmxM {
+".fMpdhH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1853,6 +1911,7 @@ exports[`TextInput select suggestion 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -1880,7 +1939,7 @@ exports[`TextInput select suggestion 3`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -1892,7 +1951,6 @@ exports[`TextInput select suggestion 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -1906,7 +1964,7 @@ exports[`TextInput select suggestion 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1927,14 +1985,14 @@ exports[`TextInput select suggestion 3`] = `
 
 exports[`TextInput select suggestion 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-sc-1x30a0s-1 yIdXy"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-sc-1x30a0s-0 krBnvJ"
+      class="StyledTextInput-sc-1x30a0s-0 eUDPhm"
       data-testid="test-input"
       id="item"
       name="item"
@@ -1960,6 +2018,7 @@ exports[`TextInput small drop height 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -2044,7 +2103,6 @@ exports[`TextInput small drop height 1`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2154,7 +2212,7 @@ exports[`TextInput small drop height 1`] = `
 `;
 
 exports[`TextInput small drop height 2`] = `
-".izsmxM {
+".fMpdhH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2169,6 +2227,7 @@ exports[`TextInput small drop height 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -2196,7 +2255,7 @@ exports[`TextInput small drop height 2`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2208,7 +2267,6 @@ exports[`TextInput small drop height 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2222,7 +2280,7 @@ exports[`TextInput small drop height 2`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2320,6 +2378,7 @@ exports[`TextInput suggestions 2`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -2404,7 +2463,6 @@ exports[`TextInput suggestions 2`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2514,7 +2572,7 @@ exports[`TextInput suggestions 2`] = `
 `;
 
 exports[`TextInput suggestions 3`] = `
-".izsmxM {
+".fMpdhH {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2529,6 +2587,7 @@ exports[`TextInput suggestions 3`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+  overflow: auto;
   box-shadow: 0px 2px 4px rgba(0,0,0,0.20);
 }
 
@@ -2556,7 +2615,7 @@ exports[`TextInput suggestions 3`] = `
   }
 }
 
-.tNmko {
+.hEnyXU {
   font-size: 18px;
   line-height: 24px;
   box-sizing: border-box;
@@ -2568,7 +2627,6 @@ exports[`TextInput suggestions 3`] = `
   position: fixed;
   z-index: 20;
   outline: none;
-  overflow: auto;
   background: #ffffff;
   color: #444444;
   opacity: 0;
@@ -2582,7 +2640,7 @@ exports[`TextInput suggestions 3`] = `
 }
 
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .tNmko {
+  .hEnyXU {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

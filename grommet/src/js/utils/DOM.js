@@ -40,6 +40,9 @@ export const findScrollParents = (element, horizontal) => {
     // if nothing else is scrollable in the page
     if (result.length === 0) {
       result.push(document);
+    } else if (result[0].tagName.toLowerCase() === 'body') {
+      result.length = 0;
+      result.push(document);
     }
   }
   return result;

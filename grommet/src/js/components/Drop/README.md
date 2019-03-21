@@ -53,6 +53,30 @@ Function that will be called when the user presses the escape key inside the dro
 function
 ```
 
+**overflow**
+
+How to control the overflow inside the drop. Defaults to `auto`.
+
+```
+auto
+hidden
+scroll
+visible
+{
+  horizontal: 
+    auto
+    hidden
+    scroll
+    visible,
+  vertical: 
+    auto
+    hidden
+    scroll
+    visible
+}
+string
+```
+
 **responsive**
 
 Whether to dynamically re-place when resized. Defaults to `true`.
@@ -113,4 +137,65 @@ boolean
 
 ```
 div
+```
+## Theme
+  
+**drop.maxHeight**
+
+The max height of the Drop container Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.drop.background**
+
+The background color of Drop Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+#ffffff
+```
+
+**global.drop.border.radius**
+
+The corner radius Expects `string`.
+
+Defaults to
+
+```
+0px
+```
+
+**global.drop.extend**
+
+Any additional style for Drop. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.drop.shadowSize**
+
+Elevated height of the Drop Expects `string`.
+
+Defaults to
+
+```
+small
+```
+
+**global.drop.zIndex**
+
+The stack order of the Drop Expects `number`.
+
+Defaults to
+
+```
+20
 ```

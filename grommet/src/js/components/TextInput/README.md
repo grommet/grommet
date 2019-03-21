@@ -58,6 +58,14 @@ Target where any suggestions drop will be aligned to. This should be
 object
 ```
 
+**dropProps**
+
+Any valid Drop prop.
+
+```
+object
+```
+
 **id**
 
 The id attribute of the input.
@@ -194,6 +202,46 @@ input
 ```
 ## Theme
   
+**global.colors.border**
+
+The color of the border. Expects `object`.
+
+Defaults to
+
+```
+[object Object]
+```
+
+**global.control.border.color**
+
+The border color. Expects `string`.
+
+Defaults to
+
+```
+border
+```
+
+**global.control.border.radius**
+
+The border radius. Expects `string`.
+
+Defaults to
+
+```
+4px
+```
+
+**global.control.border.width**
+
+The border width. Expects `string`.
+
+Defaults to
+
+```
+1px
+```
+
 **select.step**
 
 How many suggestions to render at a time. Expects `number`.
@@ -269,6 +317,16 @@ Defaults to
 undefined
 ```
 
+**textInput.disabled.opacity**
+
+The opacity when the textInput is disabled. Expects `number`.
+
+Defaults to
+
+```
+0.3
+```
+
 **global.focus.border.color**
 
 The color around the component when in focus. Expects `string | { dark: string, light: string }`.
@@ -287,6 +345,16 @@ Defaults to
 
 ```
 #AAAAAA
+```
+
+**global.control.disabled.opacity**
+
+The opacity when a component is disabled. Expects `number`.
+
+Defaults to
+
+```
+0.3
 ```
 
 **global.input.weight**

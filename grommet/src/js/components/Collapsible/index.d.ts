@@ -5,6 +5,6 @@ export interface CollapsibleProps {
   direction?: "horizontal" | "vertical";
 }
 
-declare const Collapsible: React.ComponentType<CollapsibleProps & JSX.IntrinsicElements['div']>;
+declare const Collapsible: React.ComponentClass<CollapsibleProps & JSX.IntrinsicElements['div']>;
 
 export { Collapsible };

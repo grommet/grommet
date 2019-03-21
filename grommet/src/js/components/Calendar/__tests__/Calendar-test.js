@@ -33,6 +33,16 @@ describe('Calendar', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('daysOfWeek', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Calendar daysOfWeek dates={DATES} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('size', () => {
     const component = renderer.create(
       <Grommet>

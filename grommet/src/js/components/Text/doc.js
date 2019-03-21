@@ -38,12 +38,12 @@ be adjusted via this size property. The tag should be set for semantic
 correctness and accessibility. This size property allows for stylistic
 adjustments.`,
     ),
-    tag: PropTypes.string.description(
+    tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).description(
       `The DOM tag to use for the element. NOTE: This is deprecated in favor
-of indicating the DOM tag via the 'as' property.`,
+         of indicating the DOM tag via the 'as' property.`,
     ),
-    as: PropTypes.string
-      .description(`The DOM tag to use for the element.`)
+    as: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+      .description(`The DOM tag or react component to use for the element.`)
       .defaultValue('span'),
     textAlign: PropTypes.oneOf(['start', 'center', 'end'])
       .description('How to align the text inside the component.')
@@ -64,9 +64,9 @@ is too long to all fit.`,
 };
 
 export const themeDoc = {
-  color: {
+  'global.colors.text': {
     description: 'The text color used for Text.',
-    type: 'string | { dark: string, light: string }',
+    type: 'object | { dark: string, light: string }',
     defaultValue: "{ dark: '#f8f8f8', light: '#444444' }",
   },
   text: {

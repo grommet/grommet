@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import {
   activeStyle,
   backgroundStyle,
+  disabledStyle,
   focusStyle,
   genericStyles,
   normalizeColor,
@@ -33,11 +34,6 @@ const primaryStyle = props => css`
     props.theme.button.color,
   )}
   border-radius: ${props.theme.button.border.radius};
-`;
-
-const disabledStyle = css`
-  opacity: ${props => props.theme.button.disabled.opacity};
-  cursor: default;
 `;
 
 function getHoverColor(props) {
@@ -89,6 +85,7 @@ const plainStyle = css`
   text-align: inherit;
 `;
 
+// Deprecate props.theme.button.disabled.opacity in V3
 const StyledButton = styled.button`
   display: inline-block;
   box-sizing: border-box;
@@ -109,7 +106,11 @@ const StyledButton = styled.button`
   ${props => !props.disabled && !props.focus && hoverStyle}
 
   ${props => !props.disabled && props.active && activeStyle}
-  ${props => props.disabled && disabledStyle}
+  ${props =>
+    props.disabled &&
+    disabledStyle(
+      props.theme.button.disabled && props.theme.button.disabled.opacity,
+    )}
   ${props =>
     props.focus && (!props.plain || props.focusIndicator) && focusStyle}
   ${props =>
@@ -122,8 +123,15 @@ const StyledButton = styled.button`
     props.hasIcon &&
     !props.hasLabel &&
     `
-    padding: ${props.theme.global.edgeSize.small};
+    line-height: 0;
   `}
+${props =>
+  props.pad &&
+  props.hasIcon &&
+  !props.hasLabel &&
+  `
+padding: ${props.theme.global.edgeSize.small};
+`}
   ${props => props.theme.button.extend}
 `;
 

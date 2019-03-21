@@ -23,7 +23,6 @@ class SimpleCheckBox extends Component {
         <Box align="center" pad="large">
           <CheckBox
             {...this.props}
-            label="Choice"
             checked={checked}
             onChange={this.onChange}
           />
@@ -194,6 +193,59 @@ class CheckBoxInsideButton extends Component {
   }
 }
 
+class CheckBoxWithStickyDiv extends Component {
+  state = {
+    checked: [],
+    checkboxes: Array(8)
+      .fill()
+      .map((_, i) => `item ${i + 1}`),
+  };
+
+  onCheck = (event, value) => {
+    const { checked } = this.state;
+    if (event.target.checked) {
+      checked.push(value);
+      this.setState({ checked });
+    } else {
+      this.setState({ checked: checked.filter(item => item !== value) });
+    }
+  };
+
+  render() {
+    const { checked, checkboxes } = this.state;
+    return (
+      <Grommet theme={grommet}>
+        <Box pad="large" align="center">
+          <Box
+            height="120px"
+            width="120px"
+            overflow="auto"
+            style={{
+              position: 'relative',
+              display: 'block',
+            }}
+          >
+            <Box
+              background={{ color: 'neutral-1' }}
+              style={{ position: 'sticky', top: 0 }}
+            >
+              Click &amp; Scroll
+            </Box>
+            {checkboxes.map(item => (
+              <CheckBox
+                key={item}
+                checked={checked.indexOf(item) !== -1}
+                label={item}
+                onChange={e => this.onCheck(e, item)}
+              />
+            ))}
+          </Box>
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 class IndeterminateCheckBox extends Component {
   state = {
     checked: [],
@@ -248,11 +300,13 @@ class IndeterminateCheckBox extends Component {
 }
 
 storiesOf('CheckBox', module)
-  .add('Simple', () => <SimpleCheckBox />)
-  .add('Toggle', () => <SimpleCheckBox toggle />)
-  .add('Disabled', () => <SimpleCheckBox checked disabled />)
-  .add('Reverse', () => <SimpleCheckBox reverse />)
+  .add('Simple', () => <SimpleCheckBox label="Choice" />)
+  .add('Toggle', () => <SimpleCheckBox label="Choice" toggle />)
+  .add('Disabled', () => <SimpleCheckBox label="Choice" checked disabled />)
+  .add('Reverse', () => <SimpleCheckBox label="Choice" reverse />)
   .add('Themed CheckBox', () => <ThemedCheckBox />)
   .add('Themed Toggle', () => <ThemedToggle />)
   .add('Inside a Button', () => <CheckBoxInsideButton />)
-  .add('Interminate CheckBox', () => <IndeterminateCheckBox />);
+  .add('With Sticky Div', () => <CheckBoxWithStickyDiv />)
+  .add('Interminate CheckBox', () => <IndeterminateCheckBox />)
+  .add('No Label', () => <SimpleCheckBox />);

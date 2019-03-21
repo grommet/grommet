@@ -172,6 +172,7 @@ exports[`Accordion AccordionPanel 1`] = `
 .c10 {
   max-height: 0;
   visibility: hidden;
+  overflow: hidden;
 }
 
 .c6 {
@@ -782,7 +783,7 @@ exports[`Accordion change active index 1`] = `
 
 exports[`Accordion change active index 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 IRSNj"
@@ -794,7 +795,7 @@ exports[`Accordion change active index 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -838,7 +839,7 @@ exports[`Accordion change active index 2`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -1055,6 +1056,7 @@ exports[`Accordion change to second Panel 1`] = `
 .c10 {
   max-height: 0;
   visibility: hidden;
+  overflow: hidden;
 }
 
 .c6 {
@@ -1277,7 +1279,7 @@ exports[`Accordion change to second Panel 1`] = `
 
 exports[`Accordion change to second Panel 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 IRSNj"
@@ -1289,7 +1291,7 @@ exports[`Accordion change to second Panel 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -1328,7 +1330,7 @@ exports[`Accordion change to second Panel 2`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 IRSNj"
         >
           Panel body 1
         </div>
@@ -1340,7 +1342,7 @@ exports[`Accordion change to second Panel 2`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -1800,7 +1802,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
 
 exports[`Accordion change to second Panel without onActive 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 IRSNj"
@@ -1812,7 +1814,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -1856,7 +1858,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -2293,6 +2295,7 @@ exports[`Accordion complex title 1`] = `
 .c9 {
   max-height: 0;
   visibility: hidden;
+  overflow: hidden;
 }
 
 .c0 {
@@ -2494,6 +2497,354 @@ exports[`Accordion complex title 1`] = `
           >
             Panel body 2
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion custom accordion 1`] = `
+.c8 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c8 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c8 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c8 *[stroke*="#"],
+.c8 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c8 *[fill-rule],
+.c8 *[FILL-RULE],
+.c8 *[fill*="#"],
+.c8 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c3 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c10 {
+  max-height: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.c6 {
+  font-size: 26px;
+  line-height: 32px;
+  max-width: 624px;
+  font-weight: 600;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c5 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c7 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c9 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c6 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    role="tablist"
+  >
+    <div
+      className="c2"
+    >
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="c3"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="c4"
+        >
+          <div
+            className="c5"
+          >
+            <h3
+              className="c6"
+            >
+              Panel 1
+            </h3>
+          </div>
+          <div
+            className="c7"
+          >
+            <svg
+              aria-label="FormDown"
+              className="c8"
+              viewBox="0 0 24 24"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        className="c9"
+      >
+        <div
+          aria-hidden={true}
+          className="c10 c1"
+          open={false}
+        >
+          Panel body 1
         </div>
       </div>
     </div>
@@ -2876,7 +3227,7 @@ exports[`Accordion multiple panels 1`] = `
 
 exports[`Accordion multiple panels 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 IRSNj"
@@ -2888,7 +3239,7 @@ exports[`Accordion multiple panels 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -2932,7 +3283,7 @@ exports[`Accordion multiple panels 2`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -3013,7 +3364,7 @@ exports[`Accordion multiple panels 2`] = `
 
 exports[`Accordion multiple panels 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 IRSNj"
@@ -3025,7 +3376,7 @@ exports[`Accordion multiple panels 3`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -3106,7 +3457,7 @@ exports[`Accordion multiple panels 3`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -3153,7 +3504,7 @@ exports[`Accordion multiple panels 3`] = `
 
 exports[`Accordion multiple panels 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 IRSNj"
@@ -3165,7 +3516,7 @@ exports[`Accordion multiple panels 4`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -3212,7 +3563,7 @@ exports[`Accordion multiple panels 4`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -3290,7 +3641,7 @@ exports[`Accordion multiple panels 4`] = `
 
 exports[`Accordion multiple panels 5`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 IRSNj"
@@ -3302,7 +3653,7 @@ exports[`Accordion multiple panels 5`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -3380,7 +3731,7 @@ exports[`Accordion multiple panels 5`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -3644,6 +3995,7 @@ exports[`Accordion set on hover 1`] = `
 .c10 {
   max-height: 0;
   visibility: hidden;
+  overflow: hidden;
 }
 
 .c6 {
@@ -3866,7 +4218,7 @@ exports[`Accordion set on hover 1`] = `
 
 exports[`Accordion set on hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 IRSNj"
@@ -3878,7 +4230,7 @@ exports[`Accordion set on hover 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -3917,7 +4269,7 @@ exports[`Accordion set on hover 2`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 IRSNj"
         >
           Panel body 1
         </div>
@@ -3929,7 +4281,7 @@ exports[`Accordion set on hover 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -3968,7 +4320,7 @@ exports[`Accordion set on hover 2`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 IRSNj"
         >
           Panel body 2
         </div>
@@ -3980,7 +4332,7 @@ exports[`Accordion set on hover 2`] = `
 
 exports[`Accordion set on hover 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 IRSNj"
@@ -3992,7 +4344,7 @@ exports[`Accordion set on hover 3`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -4031,7 +4383,7 @@ exports[`Accordion set on hover 3`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 IRSNj"
         >
           Panel body 1
         </div>
@@ -4043,7 +4395,7 @@ exports[`Accordion set on hover 3`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -4082,7 +4434,7 @@ exports[`Accordion set on hover 3`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 IRSNj"
         >
           Panel body 2
         </div>
@@ -4094,7 +4446,7 @@ exports[`Accordion set on hover 3`] = `
 
 exports[`Accordion set on hover 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 IRSNj"
@@ -4106,7 +4458,7 @@ exports[`Accordion set on hover 4`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -4145,7 +4497,7 @@ exports[`Accordion set on hover 4`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 IRSNj"
         >
           Panel body 1
         </div>
@@ -4157,7 +4509,7 @@ exports[`Accordion set on hover 4`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -4196,7 +4548,7 @@ exports[`Accordion set on hover 4`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 IRSNj"
         >
           Panel body 2
         </div>
@@ -4208,7 +4560,7 @@ exports[`Accordion set on hover 4`] = `
 
 exports[`Accordion set on hover 5`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledBox-sc-13pk1d4-0 IRSNj"
@@ -4220,7 +4572,7 @@ exports[`Accordion set on hover 5`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -4259,7 +4611,7 @@ exports[`Accordion set on hover 5`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 IRSNj"
         >
           Panel body 1
         </div>
@@ -4271,7 +4623,7 @@ exports[`Accordion set on hover 5`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -4310,7 +4662,7 @@ exports[`Accordion set on hover 5`] = `
       >
         <div
           aria-hidden="true"
-          class="Collapsible__AnimatedBox-sc-15kniua-0 cURqdn StyledBox-sc-13pk1d4-0 IRSNj"
+          class="Collapsible__AnimatedBox-sc-15kniua-0 cHrNEL StyledBox-sc-13pk1d4-0 IRSNj"
         >
           Panel body 2
         </div>

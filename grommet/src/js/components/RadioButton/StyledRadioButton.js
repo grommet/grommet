@@ -27,14 +27,11 @@ StyledRadioButtonContainer.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonContainer.defaultProps, defaultProps);
 
 const StyledRadioButtonInput = styled.input`
-  position: absolute;
   opacity: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
   margin: 0;
-  z-index: 1;
   ${props => !props.disabled && 'cursor: pointer;'};
 `;
 
@@ -43,7 +40,6 @@ Object.setPrototypeOf(StyledRadioButtonInput.defaultProps, defaultProps);
 
 const StyledRadioButtonIcon = styled.svg`
   box-sizing: border-box;
-  position: absolute;
   width: ${props =>
     props.theme.radioButton.icon.size || props.theme.radioButton.size};
   height: ${props =>
@@ -68,8 +64,6 @@ StyledRadioButtonBox.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonBox.defaultProps, defaultProps);
 
 const StyledRadioButton = styled.div`
-  position: relative;
-
   ${props => props.theme.radioButton && props.theme.radioButton.extend};
 `;
 

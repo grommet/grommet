@@ -560,7 +560,7 @@ exports[`Tabs change to second tab 1`] = `
 
 exports[`Tabs change to second tab 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
@@ -572,7 +572,7 @@ exports[`Tabs change to second tab 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -589,7 +589,7 @@ exports[`Tabs change to second tab 2`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -1354,7 +1354,7 @@ exports[`Tabs set on hover 1`] = `
 
 exports[`Tabs set on hover 2`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
@@ -1366,7 +1366,7 @@ exports[`Tabs set on hover 2`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -1383,7 +1383,7 @@ exports[`Tabs set on hover 2`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -1411,7 +1411,7 @@ exports[`Tabs set on hover 2`] = `
 
 exports[`Tabs set on hover 3`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
@@ -1423,7 +1423,7 @@ exports[`Tabs set on hover 3`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -1440,7 +1440,7 @@ exports[`Tabs set on hover 3`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -1468,7 +1468,7 @@ exports[`Tabs set on hover 3`] = `
 
 exports[`Tabs set on hover 4`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
@@ -1480,7 +1480,7 @@ exports[`Tabs set on hover 4`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -1497,7 +1497,7 @@ exports[`Tabs set on hover 4`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -1525,7 +1525,7 @@ exports[`Tabs set on hover 4`] = `
 
 exports[`Tabs set on hover 5`] = `
 <div
-  class="StyledGrommet-sc-19lkkz7-0 lkVXQD"
+  class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <div
     class="StyledTabs-a4fwxl-2 jBsJwq StyledBox-sc-13pk1d4-0 IRSNj"
@@ -1537,7 +1537,7 @@ exports[`Tabs set on hover 5`] = `
       <button
         aria-expanded="true"
         aria-selected="true"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >
@@ -1554,7 +1554,7 @@ exports[`Tabs set on hover 5`] = `
       <button
         aria-expanded="false"
         aria-selected="false"
-        class="StyledButton-sc-323bzc-0 fRAxrl"
+        class="StyledButton-sc-323bzc-0 jfbKsv"
         role="tab"
         type="button"
       >

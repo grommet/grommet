@@ -1,19 +1,14 @@
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
 
-import { withForwardRef, withDocs } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
 import { ThemeContext } from '../../contexts';
 import { defaultProps } from '../../default-props';
 import { backgroundIsDark } from '../../utils';
 
 import { StyledBox, StyledBoxGap } from './StyledBox';
 
-const wrapWithHocs = compose(
-  withForwardRef,
-  withDocs('Box'),
-);
-
-class BoxImpl extends Component {
+class Box extends Component {
   static contextType = ThemeContext;
 
   static displayName = 'Box';
@@ -90,11 +85,16 @@ class BoxImpl extends Component {
       </StyledBox>
     );
 
-    if (background) {
-      const dark = backgroundIsDark(background, theme);
-      if (dark !== theme.dark) {
+    // When a Box changes the darkness, it sets darkChanged so that StyledBox
+    // can know what the underlying darkness is when deciding which elevation
+    // to show.
+    if (background || theme.darkChanged) {
+      let dark = backgroundIsDark(background, theme);
+      const darkChanged = dark !== undefined && dark !== theme.dark;
+      if (darkChanged || theme.darkChanged) {
+        dark = dark === undefined ? theme.dark : dark;
         content = (
-          <ThemeContext.Provider value={{ ...theme, dark }}>
+          <ThemeContext.Provider value={{ ...theme, dark, darkChanged }}>
             {content}
           </ThemeContext.Provider>
         );
@@ -105,6 +105,15 @@ class BoxImpl extends Component {
   }
 }
 
-Object.setPrototypeOf(BoxImpl.defaultProps, defaultProps);
+Object.setPrototypeOf(Box.defaultProps, defaultProps);
 
-export const Box = wrapWithHocs(BoxImpl);
+let BoxDoc;
+if (process.env.NODE_ENV !== 'production') {
+  BoxDoc = require('./doc').doc(Box); // eslint-disable-line global-require
+}
+const BoxWrapper = compose(
+  withTheme,
+  withForwardRef,
+)(BoxDoc || Box);
+
+export { BoxWrapper as Box };

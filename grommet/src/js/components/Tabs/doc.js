@@ -46,3 +46,58 @@ currently active tab changes.`,
   };
   return DocumentedTabs;
 };
+
+export const themeDoc = {
+  'global.borderSize': {
+    description: 'The size of the border.',
+    type: 'string',
+    defaultValue: `{
+      xsmall: '1px',
+      small: '2px',
+      medium: '4px',
+      large: '12px',
+      xlarge: '24px,
+    }`,
+  },
+  'global.colors.border': {
+    description: 'The color of tabs border.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue:
+      '{ dark: rgba(255, 255, 255, 0.33), light: rgba(0, 0, 0, 0.33) }',
+  },
+  'global.edgeSize.small': {
+    description: 'The possible sizes for margin, pad and gap.',
+    type: 'string',
+    defaultValue: '6px',
+  },
+  'tabs.background': {
+    description: 'background styling of Tabs.',
+    type: 'string | object',
+    defaultValue: undefined,
+  },
+  'tabs.extend': {
+    description: 'Any additional style for Tabs.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'tabs.gap': {
+    description: 'The gap size between the Tabs.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'tabs.header.background': {
+    description: 'The background styles of Tabs header.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: undefined,
+  },
+  'tabs.header.extend': {
+    description: 'Any additional style for Tabs header.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'tabs.panel.extend': {
+    description: 'Any additional style for Tabs panel.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+};

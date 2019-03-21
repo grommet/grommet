@@ -41,6 +41,9 @@ export const doc = Calendar => {
       ]),
     ).description(`Multiple dates in ISO8601 format that should not be
         selectable. Items that are an array indicate a range of dates.`),
+    daysOfWeek: PropTypes.bool
+      .description(`Whether to show the days of the week.`)
+      .defaultValue(false),
     firstDayOfWeek: PropTypes.oneOf([0, 1])
       .description('The first day of the week. 0 for Sunday. 1 for Monday.')
       .defaultValue(0),

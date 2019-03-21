@@ -2,7 +2,7 @@ import React, { createRef, Component, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 
-import { FormClose } from 'grommet-icons';
+import { CaretDown, FormClose } from 'grommet-icons';
 
 import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -53,7 +53,7 @@ class SimpleSelect extends Component {
   };
 
   render() {
-    const { theme } = this.props;
+    const { theme, ...rest } = this.props;
     const { options, value } = this.state;
     return (
       <Grommet full theme={theme || grommet}>
@@ -65,6 +65,7 @@ class SimpleSelect extends Component {
             value={value}
             options={options}
             onChange={({ option }) => this.setState({ value: option })}
+            {...rest}
           />
         </Box>
       </Grommet>
@@ -583,6 +584,45 @@ class ManyOptions extends Component {
   }
 }
 
+class CustomSelectValue extends Component {
+  state = {
+    options: ['one', 'two'],
+    value: undefined,
+  };
+
+  render() {
+    const { options, value } = this.state;
+    return (
+      <Grommet full theme={grommet}>
+        <Box fill align="center" justify="start" pad="large">
+          <Select
+            id="select"
+            name="select"
+            placeholder="Select"
+            value={value}
+            options={options}
+            onChange={({ option }) => this.setState({ value: option })}
+            plain
+            valueLabel={
+              <Box
+                background="brand"
+                width="small"
+                round="small"
+                overflow="hidden"
+                align="center"
+              >
+                {value || 'Select...'}
+              </Box>
+            }
+            icon={false}
+            {...this.props}
+          />
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Select', module)
   .add('Simple', () => <SimpleSelect />)
   .add('Search', () => <SearchSelect />)
@@ -599,5 +639,7 @@ storiesOf('Select', module)
       }}
     />
   ))
-  .add('Custom Rounded', () => <SimpleSelect theme={customRoundedTheme} />)
-  .add('Lots of options', () => <ManyOptions />);
+  .add('Custom', () => <SimpleSelect open theme={customRoundedTheme} />)
+  .add('Lots of options', () => <ManyOptions />)
+  .add('Custom Value', () => <CustomSelectValue />)
+  .add('Custom Icon', () => <CustomSelectValue icon={CaretDown} />);

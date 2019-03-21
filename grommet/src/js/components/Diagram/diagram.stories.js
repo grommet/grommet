@@ -48,7 +48,7 @@ class SimpleDiagram extends React.Component {
     const connections = [connection('1', '5', { color: 'accent-2' })];
     if (topRow.length >= 2) {
       connections.push(
-        connection('4', '2', { color: 'accent-1', anchor: 'horizontal' }),
+        connection('1', '2', { color: 'accent-1', anchor: 'horizontal' }),
       );
     }
     if (topRow.length >= 3) {

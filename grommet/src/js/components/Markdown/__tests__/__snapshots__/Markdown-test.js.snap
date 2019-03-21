@@ -136,6 +136,7 @@ exports[`Markdown renders 1`] = `
 .c7 {
   border-spacing: 0;
   border-collapse: collapse;
+  width: inherit;
 }
 
 @media only screen and (max-width:768px) {

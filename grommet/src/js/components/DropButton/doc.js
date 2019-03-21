@@ -42,6 +42,7 @@ export const doc = DropButton => {
       a React reference. Typically, this is not required as the drop will be
       aligned to the DropButton itself by default.`,
     ),
+    dropProps: PropTypes.object.description('Any valid Drop prop.'),
     onClose: PropTypes.func.description('Callback for when the drop is closed'),
     onOpen: PropTypes.func.description('Callback for when the drop is opened'),
     open: PropTypes.bool

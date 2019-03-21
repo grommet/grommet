@@ -35,6 +35,7 @@ export const doc = TextInput => {
       a React reference. Typically, this is not required as the drop will be
       aligned to the TextInput itself by default.`,
     ),
+    dropProps: PropTypes.object.description('Any valid Drop prop.'),
     id: PropTypes.string.description('The id attribute of the input.'),
     focusIndicator: PropTypes.bool.description(
       'Whether the plain text input should receive a focus outline.',
@@ -104,6 +105,29 @@ suggestions and instead rely on the user to type more.`,
 };
 
 export const themeDoc = {
+  'global.colors.border': {
+    description: 'The color of the border.',
+    type: 'object',
+    defaultValue: {
+      dark: 'rgba(255, 255, 255, 0.33)',
+      light: 'rgba(0, 0, 0, 0.33)',
+    },
+  },
+  'global.control.border.color': {
+    description: 'The border color.',
+    type: 'string',
+    defaultValue: 'border',
+  },
+  'global.control.border.radius': {
+    description: 'The border radius.',
+    type: 'string',
+    defaultValue: '4px',
+  },
+  'global.control.border.width': {
+    description: 'The border width.',
+    type: 'string',
+    defaultValue: '1px',
+  },
   'select.step': {
     description: 'How many suggestions to render at a time.',
     type: 'number',
@@ -155,7 +179,13 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'textInput.disabled.opacity': {
+    description: 'The opacity when the textInput is disabled.',
+    type: 'number',
+    defaultValue: 0.3,
+  },
   ...themeDocUtils.focusStyle,
   ...themeDocUtils.placeholderStyle,
+  ...themeDocUtils.disabledStyle,
   ...themeDocUtils.inputStyle,
 };

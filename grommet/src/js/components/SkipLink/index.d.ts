@@ -5,6 +5,6 @@ export interface SkipLinkProps {
   label?: React.ReactNode;
 }
 
-declare const SkipLink: React.ComponentType<SkipLinkProps>;
+declare const SkipLink: React.FC<SkipLinkProps>;
 
 export { SkipLink };

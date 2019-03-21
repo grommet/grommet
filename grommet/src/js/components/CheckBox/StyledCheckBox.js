@@ -18,7 +18,6 @@ const hoverStyle = css`
 
 const StyledCheckBoxIcon = styled.svg`
   box-sizing: border-box;
-  position: absolute;
   stroke-width: ${props => props.theme.checkBox.check.thickness};
   stroke: ${props =>
     normalizeColor(props.theme.checkBox.color || 'control', props.theme)};
@@ -47,13 +46,12 @@ StyledCheckBoxContainer.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxContainer.defaultProps, defaultProps);
 
 const StyledCheckBoxInput = styled.input`
-  position: absolute;
   opacity: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
   margin: 0;
+
   ${props => !props.disabled && 'cursor: pointer;'} :checked + span > span {
     left: calc(
       ${props => props.theme.checkBox.toggle.size} -
@@ -77,7 +75,6 @@ Object.setPrototypeOf(StyledCheckBoxBox.defaultProps, defaultProps);
 
 const StyledCheckBoxToggle = styled.span`
   box-sizing: border-box;
-  position: relative;
   vertical-align: middle;
   display: inline-block;
   width: ${props => props.theme.checkBox.toggle.size};
@@ -100,7 +97,8 @@ Object.setPrototypeOf(StyledCheckBoxToggle.defaultProps, defaultProps);
 
 const StyledCheckBoxKnob = styled.span`
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
+  display: inherit;
   top: -${props => props.theme.checkBox.border.width};
   left: -${props => props.theme.checkBox.border.width};
   transition: all 0.3s;
@@ -119,7 +117,7 @@ StyledCheckBoxKnob.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, defaultProps);
 
 const StyledCheckBox = styled.div`
-  position: relative;
+  flex-shrink: 0;
 `;
 
 StyledCheckBox.defaultProps = {};

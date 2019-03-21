@@ -23,7 +23,11 @@ export const baseStyle = css`
 
 export const controlBorderStyle = css`
   border: ${props => props.theme.global.control.border.width} solid
-    ${props => normalizeColor('border', props.theme)};
+    ${props =>
+      normalizeColor(
+        props.theme.global.control.border.color || 'border',
+        props.theme,
+      )};
   border-radius: ${props => props.theme.global.control.border.radius};
 `;
 
@@ -251,4 +255,10 @@ export const genericStyles = css`
       props.theme.global.edgeSize.responsiveBreakpoint,
       props.theme,
     )}
+`;
+
+export const disabledStyle = componentStyle => css`
+  opacity: ${props =>
+    componentStyle || props.theme.global.control.disabled.opacity};
+  cursor: default;
 `;

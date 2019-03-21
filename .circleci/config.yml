@@ -1,0 +1,132 @@
+version: 2.1
+
+defaults: &defaults
+  working_directory: ~/grommet-ci
+  docker:
+    - image: circleci/node:10
+
+jobs:
+  checkout:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ checksum "yarn.lock" }}
+      - run: yarn --frozen-lockfile
+      - save_cache:
+          key: yarn-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache
+            - ./node_modules
+      - persist_to_workspace:
+          root: ~/grommet-ci
+          paths:
+            - ./
+  lint:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: Running linter
+          command: yarn lint
+  jest:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: Running jest
+          command: yarn test
+  build:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: Build
+          command: yarn build
+      - persist_to_workspace:
+          root: ~/grommet-ci
+          paths:
+            - ./
+  bundlesize:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: size
+          command: yarn test-bundlesize
+  release:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          command: |
+            git config --global user.name "Grommet Community Bot"
+            git config --global user.email "grommet@hpe.com"
+            yarn release-stable
+  publish:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/grommet-ci
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/grommet-ci/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish
+workflows:
+  build_test:
+    jobs:
+      - checkout:
+          filters:
+            tags:
+              only: /.*/
+      - lint:
+          requires:
+            - checkout
+          filters:
+            tags:
+              only: /.*/
+      - jest:
+          requires:
+            - checkout
+          filters:
+            tags:
+              only: /.*/
+      - build:
+          requires:
+            - checkout
+          filters:
+            tags:
+              only: /.*/
+      - bundlesize:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /.*/
+      - release:
+          requires:
+            - jest
+            - lint
+            - build
+          filters:
+            branches:
+              only:
+                - master
+      - publish:
+          requires:
+            - jest
+            - lint
+            - build
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/

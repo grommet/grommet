@@ -5,6 +5,12 @@ import { cleanup, render, fireEvent } from 'react-testing-library';
 
 import { Accordion, AccordionPanel, Box, Grommet } from '../..';
 
+const customTheme = {
+  accordion: {
+    heading: { level: '3' },
+  },
+};
+
 describe('Accordion', () => {
   afterEach(cleanup);
 
@@ -139,6 +145,17 @@ describe('Accordion', () => {
     expect(onActive).toBeCalledWith([]);
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('custom accordion', () => {
+    const component = renderer.create(
+      <Grommet theme={customTheme}>
+        <Accordion>
+          <AccordionPanel label="Panel 1">Panel body 1</AccordionPanel>
+        </Accordion>
+      </Grommet>,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('change active index', () => {

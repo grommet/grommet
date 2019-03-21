@@ -158,6 +158,14 @@ Multiple dates in ISO8601 format that should not be
 ]
 ```
 
+**daysOfWeek**
+
+Whether to show the days of the week.
+
+```
+boolean
+```
+
 **firstDayOfWeek**
 
 The first day of the week. 0 for Sunday. 1 for Monday.

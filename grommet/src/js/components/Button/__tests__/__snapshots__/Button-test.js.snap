@@ -1,6 +1,174 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button color renders 1`] = `
+exports[`Button as 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+>
+  <span
+    className="c1"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  />
+</div>
+`;
+
+exports[`Button basic 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+>
+  <button
+    className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    Test
+  </button>
+</div>
+`;
+
+exports[`Button children function 1`] = `
+.c1 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: 2px solid #7D4CDB;
+  border-radius: 18px;
+  color: #444444;
+  padding: 4px 22px;
+  font-size: 18px;
+  line-height: 24px;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #7D4CDB;
+}
+
+.c2 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+>
+  <button
+    className="c1"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    type="button"
+  >
+    <span
+      className="c2"
+    >
+      Test
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Button color 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -132,6 +300,8 @@ exports[`Button color renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     Test
@@ -141,6 +311,8 @@ exports[`Button color renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     Test
@@ -150,6 +322,8 @@ exports[`Button color renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     Test
@@ -159,6 +333,8 @@ exports[`Button color renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     Test
@@ -166,7 +342,7 @@ exports[`Button color renders 1`] = `
 </div>
 `;
 
-exports[`Button disabled renders 1`] = `
+exports[`Button disabled 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -209,12 +385,14 @@ exports[`Button disabled renders 1`] = `
     disabled={true}
     onBlur={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   />
 </div>
 `;
 
-exports[`Button focus renders 1`] = `
+exports[`Button focus 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -271,6 +449,8 @@ exports[`Button focus renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     Test
@@ -278,7 +458,7 @@ exports[`Button focus renders 1`] = `
 </div>
 `;
 
-exports[`Button hoverIndicator as object renders 1`] = `
+exports[`Button hoverIndicator as object 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -319,6 +499,8 @@ exports[`Button hoverIndicator as object renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     hoverIndicator
@@ -326,7 +508,7 @@ exports[`Button hoverIndicator as object renders 1`] = `
 </div>
 `;
 
-exports[`Button hoverIndicator as object with color renders 1`] = `
+exports[`Button hoverIndicator as object with color 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -367,6 +549,8 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     hoverIndicator
@@ -374,7 +558,7 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
 </div>
 `;
 
-exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
+exports[`Button hoverIndicator as object with colorIndex 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -415,6 +599,8 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     hoverIndicator
@@ -422,7 +608,7 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
 </div>
 `;
 
-exports[`Button hoverIndicator as object with invalid color renders 1`] = `
+exports[`Button hoverIndicator as object with invalid color 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -463,6 +649,8 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     hoverIndicator
@@ -470,7 +658,7 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
 </div>
 `;
 
-exports[`Button hoverIndicator as object with invalid color renders 2`] = `
+exports[`Button hoverIndicator as object with invalid color 2`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -511,6 +699,8 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     hoverIndicator
@@ -518,7 +708,7 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
 </div>
 `;
 
-exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
+exports[`Button hoverIndicator as object with invalid colorIndex 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -559,6 +749,8 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     hoverIndicator
@@ -566,7 +758,7 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
 </div>
 `;
 
-exports[`Button hoverIndicator background renders 1`] = `
+exports[`Button hoverIndicator background 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -609,6 +801,8 @@ exports[`Button hoverIndicator background renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     hoverIndicator
@@ -616,7 +810,7 @@ exports[`Button hoverIndicator background renders 1`] = `
 </div>
 `;
 
-exports[`Button hoverIndicator color renders 1`] = `
+exports[`Button hoverIndicator color 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -659,6 +853,8 @@ exports[`Button hoverIndicator color renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     hoverIndicator
@@ -666,7 +862,7 @@ exports[`Button hoverIndicator color renders 1`] = `
 </div>
 `;
 
-exports[`Button href renders 1`] = `
+exports[`Button href 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -711,11 +907,13 @@ exports[`Button href renders 1`] = `
     href="test"
     onBlur={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   />
 </div>
 `;
 
-exports[`Button icon label renders 1`] = `
+exports[`Button icon label 1`] = `
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -804,6 +1002,8 @@ exports[`Button icon label renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     <div
@@ -819,7 +1019,7 @@ exports[`Button icon label renders 1`] = `
 </div>
 `;
 
-exports[`Button primary renders 1`] = `
+exports[`Button primary 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -867,6 +1067,8 @@ exports[`Button primary renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     Test
@@ -874,59 +1076,7 @@ exports[`Button primary renders 1`] = `
 </div>
 `;
 
-exports[`Button renders 1`] = `
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-<div
-  className="c0"
->
-  <button
-    className="c1"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    type="button"
-  >
-    Test
-  </button>
-</div>
-`;
-
-exports[`Button reverse icon label renders 1`] = `
+exports[`Button reverse icon label 1`] = `
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1015,6 +1165,8 @@ exports[`Button reverse icon label renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     <div
@@ -1030,7 +1182,7 @@ exports[`Button reverse icon label renders 1`] = `
 </div>
 `;
 
-exports[`Button warns about invalid icon render 1`] = `
+exports[`Button warns about invalid icon 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1047,6 +1199,7 @@ exports[`Button warns about invalid icon render 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  line-height: 0;
   padding: 12px;
 }
 
@@ -1068,6 +1221,8 @@ exports[`Button warns about invalid icon render 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     <svg />
@@ -1075,7 +1230,7 @@ exports[`Button warns about invalid icon render 1`] = `
 </div>
 `;
 
-exports[`Button warns about invalid label render 1`] = `
+exports[`Button warns about invalid label 1`] = `
 .c1 {
   display: inline-block;
   box-sizing: border-box;
@@ -1112,58 +1267,11 @@ exports[`Button warns about invalid label render 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
     type="button"
   >
     Test
   </button>
-</div>
-`;
-
-exports[`renders tag 1`] = `
-.c1 {
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  margin: 0;
-  background: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #7D4CDB;
-  border-radius: 18px;
-  color: #444444;
-  padding: 4px 22px;
-  font-size: 18px;
-  line-height: 24px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #7D4CDB;
-}
-
-.c0 {
-  font-size: 18px;
-  line-height: 24px;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-<div
-  className="c0"
->
-  <span
-    className="c1"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    type="button"
-  />
 </div>
 `;

@@ -38,12 +38,16 @@ class EdgeControl extends Component {
     const { focused } = this.state;
     const { cursor, fill } = DIRECTION_PROPS[direction];
     const size = parseMetricToNum(theme.global.spacing) / 2;
-    const halfSize = size / 2;
     const keyboardProps =
       direction === 'vertical'
         ? { onUp: onDecrease, onDown: onIncrease }
         : { onLeft: onDecrease, onRight: onIncrease };
     const boxDirection = direction === 'vertical' ? 'row' : 'column';
+    const type =
+      (theme.rangeSelector &&
+        theme.rangeSelector.edge &&
+        theme.rangeSelector.edge.type) ||
+      'disc';
     return (
       <Keyboard {...keyboardProps}>
         <Box
@@ -55,10 +59,11 @@ class EdgeControl extends Component {
           <Box
             ref={forwardRef}
             direction={boxDirection}
-            justify="center"
+            justify={type === 'bar' ? 'stretch' : 'center'}
             align="center"
+            basis="full"
             fill={fill}
-            margin="xsmall"
+            margin={type === 'bar' ? undefined : 'xsmall'}
             style={{
               cursor,
               minWidth: size,
@@ -69,16 +74,30 @@ class EdgeControl extends Component {
             onBlur={() => this.setState({ focused: false })}
             {...rest}
           >
-            <Box direction={boxDirection} round="small" focus={focused}>
-              <svg viewBox={`0 0 ${size} ${size}`} width={size} height={size}>
-                <circle
-                  cx={halfSize}
-                  cy={halfSize}
-                  r={halfSize}
-                  fill={normalizeColor(color || 'control', theme)}
-                />
-              </svg>
-            </Box>
+            {type === 'bar' ? (
+              <Box
+                flex
+                width={`${size}px`}
+                background={normalizeColor(color || 'control', theme)}
+                border={
+                  focused
+                    ? { color: normalizeColor('focus', theme) }
+                    : undefined
+                }
+              />
+            ) : (
+              <Box
+                width={`${size + (focused ? 2 : 0)}px`}
+                height={`${size + (focused ? 2 : 0)}px`}
+                round="full"
+                background={normalizeColor(color || 'control', theme)}
+                border={
+                  focused
+                    ? { color: normalizeColor('focus', theme) }
+                    : undefined
+                }
+              />
+            )}
           </Box>
         </Box>
       </Keyboard>

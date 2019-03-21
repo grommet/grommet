@@ -82,12 +82,14 @@ function
 
 **opacity**
 
- Defaults to `medium`.
+Transparency of the selection indicator. Defaults to `medium`.
 
 ```
 weak
 medium
 strong
+string
+boolean
 ```
 
 **round**
@@ -138,4 +140,91 @@ Required. The current values. Defaults to `[]`.
 
 ```
 div
+```
+## Theme
+  
+**global.borderSize**
+
+The size of the border. Expects `string`.
+
+Defaults to
+
+```
+{
+      xsmall: '1px',
+      small: '2px',
+      medium: '4px',
+      large: '12px',
+      xlarge: '24px,
+    }
+```
+
+**global.colors.border**
+
+The color for the border. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+[object Object]
+```
+
+**global.colors.control**
+
+The color for the edge controls. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+{dark: accent-1, light: brand}
+```
+
+**global.colors.focus**
+
+The color of the focus. Expects `string`.
+
+Defaults to
+
+```
+accent-1
+```
+
+**global.edgeSize.small**
+
+The possible sizes for the margin, padding and gap. Expects `string`.
+
+Defaults to
+
+```
+6px
+```
+
+**rangeSelector.background.invert.color**
+
+The background color on an invert display. Expects `string`.
+
+Defaults to
+
+```
+light-4
+```
+
+**rangeSelector.edge.type**
+
+The edge style type. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**global.spacing**
+
+The size of the edge controls thumb. Expects `string`.
+
+Defaults to
+
+```
+24px
 ```

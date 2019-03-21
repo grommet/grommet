@@ -8,10 +8,13 @@ const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 export const doc = Menu => {
   const DocumentedMenu = describe(Menu)
     .availableAt(getAvailableAtBadge('Menu'))
-    .description(
-      `A control that opens a Drop containing plain Buttons. The labels
-      and behavior of the contained Buttons are described via the \`items\`
-      property.`,
+    .description(`A control that opens a Drop containing plain Buttons.`)
+    .details(
+      `The labels and behavior of the contained Buttons are described
+      via the \`items\` property.
+      You can provide a single function child that will be called with
+      'hover', 'focus', and 'drop' keys. This allows you to customize
+      the rendering of the Menu button in those cases.`,
     )
     .usage(
       `import { Menu } from 'grommet';
@@ -53,6 +56,7 @@ one of top or bottom should be specified.`,
       a React reference. Typically, this is not required as the drop will be
       aligned to the Menu itself by default.`,
     ),
+    dropProps: PropTypes.object.description('Any valid Drop prop.'),
     justifyContent: PropTypes.oneOf([
       'start',
       'center',
@@ -109,7 +113,7 @@ export const themeDoc = {
   },
   'menu.icons.down': {
     description: 'The icon to show to the right of the label.',
-    type: 'React.element',
+    type: 'React.Element',
     defaultValue: '<FormDown />',
   },
 };

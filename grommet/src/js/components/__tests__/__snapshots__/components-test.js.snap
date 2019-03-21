@@ -176,8 +176,9 @@ string",
         "name": "size",
       },
       Object {
-        "description": "The DOM tag to use for the element.",
-        "format": "string",
+        "description": "The DOM tag or react component to use for the element.",
+        "format": "string
+function",
         "name": "as",
       },
     ],
@@ -396,6 +397,14 @@ zoomOut
     medium
     strong
     boolean,
+  repeat: 
+    no-repeat
+    repeat
+    string,
+  size: 
+    cover
+    contain
+    string,
   light: string
 }",
         "name": "background",
@@ -408,6 +417,7 @@ small
 medium
 large
 xlarge
+xxlarge
 full
 1/2
 1/3
@@ -469,7 +479,9 @@ all
         "description": "The orientation to layout the child components in.",
         "format": "row
 column
-row-responsive",
+row-responsive
+row-reverse
+column-reverse",
         "name": "direction",
       },
       Object {
@@ -507,7 +519,8 @@ boolean",
         "description": "The amount of spacing between child elements. This
         should not be used in conjunction with 'wrap' as the gap elements
         will not wrap gracefully.",
-        "format": "xsmall
+        "format": "xxsmall
+xsmall
 small
 medium
 large
@@ -517,22 +530,26 @@ string",
       },
       Object {
         "description": "A fixed height.",
-        "format": "xsmall
+        "format": "xxsmall
+xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string",
         "name": "height",
       },
       Object {
+        "defaultValue": "stretch",
         "description": "How to align the contents along the main axis.",
-        "format": "start
-center
+        "format": "around
 between
-around
+center
+end
 evenly
-end",
+start
+stretch",
         "name": "justify",
       },
       Object {
@@ -662,22 +679,26 @@ string
       Object {
         "description": "The DOM tag to use for the element. NOTE: This is deprecated in favor
 of indicating the DOM tag via the 'as' property.",
-        "format": "string",
+        "format": "string
+function",
         "name": "tag",
       },
       Object {
         "defaultValue": "div",
-        "description": "The DOM tag to use for the element.",
-        "format": "string",
+        "description": "The DOM tag or react component to use for the element.",
+        "format": "string
+function",
         "name": "as",
       },
       Object {
         "description": "A fixed width.",
-        "format": "xsmall
+        "format": "xxsmall
+xsmall
 small
 medium
 large
 xlarge
+xxlarge
 string",
         "name": "width",
       },
@@ -706,6 +727,9 @@ string",
       },
     ],
     "description": "A button.",
+    "details": "You can provide a single function child that will be called with
+      'hover' and 'focus' keys. This allows you to customize the rendering
+      of the Button in those cases.",
     "intrinsicElement": "button",
     "name": "Button",
     "properties": Array [
@@ -865,7 +889,9 @@ causes the Button to be disabled.",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether this is a plain button with no border or padding.",
+        "description": "Whether this is a plain button with no border or pad. 
+Non plain button will show both pad and border. 
+The plain button has no border and unless the icon prop exist it has no pad as well.",
         "format": "boolean",
         "name": "plain",
       },
@@ -891,8 +917,9 @@ submit",
         "name": "type",
       },
       Object {
-        "description": "The DOM tag to use for the element.",
-        "format": "string",
+        "description": "The DOM tag or react component to use for the element.",
+        "format": "string
+function",
         "name": "as",
       },
     ],
@@ -1036,6 +1063,12 @@ string",
   [string]
 ]",
         "name": "disabled",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether to show the days of the week.",
+        "format": "boolean",
+        "name": "daysOfWeek",
       },
       Object {
         "defaultValue": 0,
@@ -1788,6 +1821,11 @@ string",
         "name": "dropTarget",
       },
       Object {
+        "description": "Any valid Drop prop.",
+        "format": "object",
+        "name": "dropProps",
+      },
+      Object {
         "description": "Callback for when the drop is closed",
         "format": "function",
         "name": "onClose",
@@ -1847,6 +1885,11 @@ string",
     "name": "FormField",
     "properties": Array [
       Object {
+        "description": "The component to insert in the FormField. Grommet will add update the form values when this field changes",
+        "format": "function",
+        "name": "component",
+      },
+      Object {
         "description": "Any error text describing issues with the field",
         "format": "string
 node",
@@ -1905,117 +1948,7 @@ function",
   "Grid": [Function],
   "Grommet": [Function],
   "Heading": [Function],
-  "Image": Object {
-    "availableAt": Array [
-      Object {
-        "badge": "https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png",
-        "label": "Storybook",
-        "url": "https://storybook.grommet.io/?selectedKind=Image&full=0&addons=0&stories=1&panelRight=0",
-      },
-      Object {
-        "badge": "https://codesandbox.io/static/img/play-codesandbox.svg",
-        "label": "CodeSandbox",
-        "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=image&module=%2Fsrc%2FImage.js",
-      },
-    ],
-    "description": "An image.",
-    "intrinsicElement": "img",
-    "name": "Image",
-    "properties": Array [
-      Object {
-        "description": "Custom title to be used by screen readers.",
-        "format": "string",
-        "name": "a11yTitle",
-      },
-      Object {
-        "description": "How to align along the cross axis when contained in
-      a Box or along the column axis when contained in a Grid.",
-        "format": "start
-center
-end
-stretch",
-        "name": "alignSelf",
-      },
-      Object {
-        "description": "The name of the area to place
-    this inside a parent Grid.",
-        "format": "string",
-        "name": "gridArea",
-      },
-      Object {
-        "description": "The amount of margin around the component. An object can
-      be specified to distinguish horizontal margin, vertical margin, and
-      margin on a particular side.",
-        "format": "none
-xxsmall
-xsmall
-small
-medium
-large
-xlarge
-{
-  bottom: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  horizontal: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  left: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  right: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  top: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string,
-  vertical: 
-    xxsmall
-    xsmall
-    small
-    medium
-    large
-    xlarge
-    string
-}
-string",
-        "name": "margin",
-      },
-      Object {
-        "description": "How the image fills its container.",
-        "format": "cover
-contain",
-        "name": "fit",
-      },
-    ],
-    "usage": "import { Image } from 'grommet';
-<Image/>",
-  },
+  "Image": [Function],
   "InfiniteScroll": [Function],
   "Keyboard": [Function],
   "Layer": [Function],
@@ -2107,9 +2040,12 @@ string",
         "url": "https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=menu&module=%2Fsrc%2FMenu.js",
       },
     ],
-    "description": "A control that opens a Drop containing plain Buttons. The labels
-      and behavior of the contained Buttons are described via the \`items\`
-      property.",
+    "description": "A control that opens a Drop containing plain Buttons.",
+    "details": "The labels and behavior of the contained Buttons are described
+      via the \`items\` property.
+      You can provide a single function child that will be called with
+      'hover', 'focus', and 'drop' keys. This allows you to customize
+      the rendering of the Menu button in those cases.",
     "intrinsicElement": "button",
     "name": "Menu",
     "properties": Array [
@@ -2248,6 +2184,12 @@ one of top or bottom should be specified.",
       aligned to the Menu itself by default.",
         "format": "object",
         "name": "dropTarget",
+      },
+      Object {
+        "defaultValue": Object {},
+        "description": "Any valid Drop prop.",
+        "format": "object",
+        "name": "dropProps",
       },
       Object {
         "defaultValue": "start",
@@ -2549,10 +2491,12 @@ vertical",
       },
       Object {
         "defaultValue": "medium",
-        "description": "",
+        "description": "Transparency of the selection indicator.",
         "format": "weak
 medium
-strong",
+strong
+string
+boolean",
         "name": "opacity",
       },
       Object {
@@ -2778,9 +2722,20 @@ string",
         "name": "dropTarget",
       },
       Object {
+        "description": "Any valid Drop prop.",
+        "format": "object",
+        "name": "dropProps",
+      },
+      Object {
         "description": "Whether when 'plain' it should receive a focus outline.",
         "format": "boolean",
         "name": "focusIndicator",
+      },
+      Object {
+        "description": "A custom icon to be used when rendering the select. You can use false to not render an icon at all.",
+        "format": "boolean
+function",
+        "name": "icon",
       },
       Object {
         "description": "When the options array contains objects, this property indicates how
@@ -2838,6 +2793,11 @@ function",
 ]",
         "name": "options",
         "required": true,
+      },
+      Object {
+        "description": "Initial state of the select component",
+        "format": "boolean",
+        "name": "open",
       },
       Object {
         "description": "Placeholder text to use when no value is provided.",
@@ -3269,6 +3229,11 @@ string",
       aligned to the TextInput itself by default.",
         "format": "object",
         "name": "dropTarget",
+      },
+      Object {
+        "description": "Any valid Drop prop.",
+        "format": "object",
+        "name": "dropProps",
       },
       Object {
         "description": "The id attribute of the input.",

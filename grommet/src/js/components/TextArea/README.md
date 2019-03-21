@@ -93,6 +93,46 @@ textarea
 ```
 ## Theme
   
+**global.colors.border**
+
+The color of the border. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+[object Object]
+```
+
+**global.control.border.color**
+
+The border color. Expects `string`.
+
+Defaults to
+
+```
+border
+```
+
+**global.control.border.radius**
+
+The border radius. Expects `string`.
+
+Defaults to
+
+```
+4px
+```
+
+**global.control.border.width**
+
+The border width. Expects `string`.
+
+Defaults to
+
+```
+1px
+```
+
 **textArea.extend**
 
 Any additional style for Text. Expects `string | (props) => {}`.
@@ -101,6 +141,16 @@ Defaults to
 
 ```
 undefined
+```
+
+**textArea.disabled.opacity**
+
+The opacity when the textArea is disabled. Expects `number`.
+
+Defaults to
+
+```
+0.3
 ```
 
 **global.focus.border.color**
@@ -141,4 +191,14 @@ Defaults to
 
 ```
 12px
+```
+
+**global.control.disabled.opacity**
+
+The opacity when a component is disabled. Expects `number`.
+
+Defaults to
+
+```
+0.3
 ```

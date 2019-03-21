@@ -1,4 +1,5 @@
 import * as React from "react";
+import { DropProps } from "../Drop";
 
 export interface SelectProps {
   a11yTitle?: string;
@@ -12,7 +13,9 @@ export interface SelectProps {
   dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",right?: "left" | "right",left?: "left" | "right"};
   dropHeight?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   dropTarget?: object;
+  dropProps: DropProps;
   focusIndicator?: boolean;
+  icon?: boolean | ((...args: any[]) => any);
   id?: string;
   labelKey?: string | ((...args: any[]) => any);
   messages?: {multiple?: string};
@@ -22,6 +25,7 @@ export interface SelectProps {
   onOpen?: ((...args: any[]) => any);
   onSearch?: ((...args: any[]) => any);
   options: (string | JSX.Element | object)[];
+  open?: boolean;
   placeholder?: string | React.ReactNode;
   plain?: boolean;
   searchPlaceholder?: string;
@@ -33,6 +37,6 @@ export interface SelectProps {
   emptySearchMessage?: string;
 }
 
-declare const Select: React.ComponentType<SelectProps>;
+declare const Select: React.ComponentClass<SelectProps>;
 
 export { Select };

@@ -4,8 +4,8 @@ import { storiesOf } from '@storybook/react';
 import { Grommet, Box, Chart, RangeSelector, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
-import { calcs } from './calcs';
-import { generateData } from './story-data';
+import { calcs } from '../calcs';
+import { generateData } from './data';
 
 // compress data for outer control chart
 const compressData = (data, max, count) => {

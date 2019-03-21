@@ -4,6 +4,6 @@ export interface MarkdownProps {
   components?: {};
 }
 
-declare const Markdown: React.ComponentType<MarkdownProps & JSX.IntrinsicElements['div']>;
+declare const Markdown: React.ComponentClass<MarkdownProps & JSX.IntrinsicElements['div']>;
 
 export { Markdown };

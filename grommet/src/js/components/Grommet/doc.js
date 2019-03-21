@@ -21,6 +21,9 @@ export const doc = Grommet => {
         'Whether or not Grommet should apply a global font-family, font-size, and line-height.',
       )
       .defaultValue(false),
+    cssVars: PropTypes.bool
+      .description('Whether to expose the css variables.')
+      .defaultValue(false),
     theme: PropTypes.object.description(
       'Custom styles for Grommet app component.',
     ),

@@ -16,7 +16,6 @@ import {
   Grommet,
   Heading,
   Text,
-  TextInput,
   ThemeContext,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
@@ -28,33 +27,6 @@ const richAccordionTheme = {
       expand: FormAdd,
     },
   },
-};
-
-const SimpleAccordion = props => {
-  const { animate, multiple, ...rest } = props;
-  return (
-    <Grommet theme={grommet}>
-      <Box {...rest}>
-        <Accordion animate={animate} multiple={multiple}>
-          <AccordionPanel label="Panel 1">
-            <Box background="light-2" style={{ height: '800px' }}>
-              Panel 1 contents
-            </Box>
-          </AccordionPanel>
-          <AccordionPanel label="Panel 2">
-            <Box background="light-2" style={{ height: '50px' }}>
-              Panel 2 contents
-            </Box>
-          </AccordionPanel>
-          <AccordionPanel label="Panel 3">
-            <Box background="light-2" style={{ height: '300px' }}>
-              Panel 3 contents
-            </Box>
-          </AccordionPanel>
-        </Accordion>
-      </Box>
-    </Grommet>
-  );
 };
 
 class RichPanel extends Component {
@@ -292,63 +264,4 @@ class RichAccordion extends Component {
   }
 }
 
-const renderPanelHeader = (title, active) => (
-  <Box direction="row" align="center" pad="medium" gap="small">
-    <strong>
-      <Text>{title}</Text>
-    </strong>
-    <Text color="brand">{active ? '-' : '+'}</Text>
-  </Box>
-);
-
-class CustomHeaderAccordion extends Component {
-  state = {
-    activeIndex: [0],
-  };
-
-  render() {
-    const { activeIndex } = this.state;
-    return (
-      <Grommet theme={grommet}>
-        <Accordion
-          activeIndex={activeIndex}
-          onActive={newActiveIndex =>
-            this.setState({ activeIndex: newActiveIndex })
-          }
-        >
-          <AccordionPanel
-            header={renderPanelHeader('Panel 1', activeIndex.includes(0))}
-          >
-            <Box pad="medium" background="light-2" style={{ height: '800px' }}>
-              <Text>Panel 1 contents</Text>
-              <TextInput />
-            </Box>
-          </AccordionPanel>
-          <AccordionPanel
-            header={renderPanelHeader('Panel 2', activeIndex.includes(1))}
-          >
-            <Box pad="medium" background="light-2" style={{ height: '50px' }}>
-              <Text>Panel 2 contents</Text>
-            </Box>
-          </AccordionPanel>
-          <AccordionPanel
-            header={renderPanelHeader('Panel 3', activeIndex.includes(2))}
-          >
-            <Box pad="medium" background="light-2" style={{ height: '300px' }}>
-              <Text>Panel 3 contents</Text>
-            </Box>
-          </AccordionPanel>
-        </Accordion>
-      </Grommet>
-    );
-  }
-}
-
-storiesOf('Accordion', module)
-  .add('Simple', () => <SimpleAccordion />)
-  .add('Dark no animation', () => (
-    <SimpleAccordion animate={false} background="dark-2" />
-  ))
-  .add('Multiple', () => <SimpleAccordion multiple />)
-  .add('Rich', () => <RichAccordion />)
-  .add('Custom Header', () => <CustomHeaderAccordion />);
+storiesOf('Accordion', module).add('Rich', () => <RichAccordion />);
