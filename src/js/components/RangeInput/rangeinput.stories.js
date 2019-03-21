@@ -67,5 +67,5 @@ class CustomRangeInput extends Component {
 }
 
 storiesOf('RangeInput', module)
-  .add('Simple RangeInput', () => <SimpleRangeInput />)
-  .add('Custom RangeInput', () => <CustomRangeInput />);
+  .add('Simple', () => <SimpleRangeInput />)
+  .add('Custom', () => <CustomRangeInput />);
