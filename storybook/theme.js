@@ -1,5 +1,4 @@
 import { create } from '@storybook/theming';
-import logo from './grommet-logo.svg';
 
 export default create({
   base: 'light',
@@ -19,5 +18,5 @@ export default create({
   inputTextColor: '#333333',
   inputBorderRadius: 4,
 
-  brandImage: logo,
+  brandImage: '/grommet-logo.svg',
 });
