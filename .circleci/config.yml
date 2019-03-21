@@ -46,7 +46,7 @@ jobs:
           at: ~/grommet-ci/grommet
       - run:
           name: Build
-          command: yarn build
+          command: cd grommet;yarn build
       - persist_to_workspace:
           root: ~/grommet-ci/grommet
           paths:
