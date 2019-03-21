@@ -38,8 +38,8 @@
     "test-watch": "jest --watchAll",
     "test-bundlesize": "bundlesize",
     "pack": "babel-node ./tools/pack",
-    "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",
-    "build-storybook": "build-storybook -c storybook -o storybook-static",
+    "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook -s ./storybook/public",
+    "build-storybook": "build-storybook -c storybook -o storybook-static -s ./storybook/public",
     "prettier": "pretty-quick --staged"
   },
   "peerDependencies": {
