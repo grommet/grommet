@@ -1,7 +1,7 @@
 {
   "name": "grommet",
   "version": "2.5.5",
-  "main": "index.js",
+  "main": "src/js/index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
   "sideEffects": [
