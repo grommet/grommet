@@ -12,10 +12,10 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - yarn-cache-{{ checksum "yarn.lock" }}
+            - yarn-cache-{{ checksum "grommet/yarn.lock" }}
       - run: yarn --frozen-lockfile
       - save_cache:
-          key: yarn-cache-{{ checksum "yarn.lock" }}
+          key: yarn-cache-{{ checksum "grommet/yarn.lock" }}
           paths:
             - ~/.cache
             - ./node_modules
@@ -27,7 +27,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/grommet-ci
+          at: ~/grommet-ci/grommet
       - run:
           name: Running linter
           command: yarn lint
@@ -35,7 +35,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/grommet-ci
+          at: ~/grommet-ci/grommet
       - run:
           name: Running jest
           command: yarn test
@@ -43,7 +43,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/grommet-ci
+          at: ~/grommet-ci/grommet
       - run:
           name: Build
           command: yarn build
@@ -55,7 +55,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/grommet-ci
+          at: ~/grommet-ci/grommet
       - run:
           name: size
           command: yarn test-bundlesize
@@ -63,7 +63,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/grommet-ci
+          at: ~/grommet-ci/grommet
       - run:
           command: |
             git config --global user.name "Grommet Community Bot"
@@ -73,10 +73,10 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/grommet-ci
+          at: ~/grommet-ci/grommet
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/grommet-ci/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/grommet-ci/grommet/.npmrc
       - run:
           name: Publish package
           command: npm publish
