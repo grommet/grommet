@@ -79,7 +79,7 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/grommet-ci/.npmrc
       - run:
           name: Publish package
-          command: npm publish
+          command: cd dist && npm publish
 workflows:
   build_test:
     jobs:
