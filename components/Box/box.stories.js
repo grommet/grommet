@@ -156,8 +156,8 @@ var BorderBox = function BorderBox() {
       key: type,
       pad: "small",
       border: {
-        type: type,
-        size: 'medium'
+        size: 'medium',
+        style: type
       }
     }, type);
   }))));
