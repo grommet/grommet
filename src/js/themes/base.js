@@ -50,10 +50,7 @@ const lightColors = [
 const focusColor = accentColors[0];
 
 const colors = {
-  active: {
-    dark: 'accent-1',
-    light: 'neutral-1',
-  },
+  active: rgba(221, 221, 221, 0.5),
   black: '#000000',
   border: {
     dark: rgba(255, 255, 255, 0.33),
