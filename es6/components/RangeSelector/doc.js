@@ -57,7 +57,7 @@ export var themeDoc = {
   },
   'rangeSelector.edge.type': {
     description: 'The edge style type.',
-    type: 'string',
+    type: "'bar' | 'disc'",
     defaultValue: undefined
   },
   'global.spacing': {
