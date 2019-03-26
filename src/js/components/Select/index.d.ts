@@ -13,8 +13,9 @@ export interface SelectProps {
   dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",right?: "left" | "right",left?: "left" | "right"};
   dropHeight?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   dropTarget?: object;
-  dropProps: DropProps;
+  dropProps?: DropProps;
   focusIndicator?: boolean;
+  icon?: boolean | ((...args: any[]) => any);
   id?: string;
   labelKey?: string | ((...args: any[]) => any);
   messages?: {multiple?: string};

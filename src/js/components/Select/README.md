@@ -221,6 +221,15 @@ Whether when 'plain' it should receive a focus outline.
 boolean
 ```
 
+**icon**
+
+A custom icon to be used when rendering the select. You can use false to not render an icon at all.
+
+```
+boolean
+function
+```
+
 **labelKey**
 
 When the options array contains objects, this property indicates how

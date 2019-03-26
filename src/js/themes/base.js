@@ -108,6 +108,22 @@ export const generate = (baseSpacing = 24, scale = 6) => {
 
   const result = deepMerge(iconBase, {
     global: {
+      active: {
+        background: {
+          dark: {
+            color: 'active',
+            opacity: 'medium',
+          },
+          light: {
+            color: 'active',
+            opacity: 'medium',
+          },
+        },
+        color: {
+          dark: 'white',
+          light: 'black',
+        },
+      },
       animation: {
         duration: '1s',
         jiggle: {

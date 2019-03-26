@@ -2732,6 +2732,12 @@ string",
         "name": "focusIndicator",
       },
       Object {
+        "description": "A custom icon to be used when rendering the select. You can use false to not render an icon at all.",
+        "format": "boolean
+function",
+        "name": "icon",
+      },
+      Object {
         "description": "When the options array contains objects, this property indicates how
       to determine the label of each option. If a string is
       provided, it is used as the key to retrieve each option's label.

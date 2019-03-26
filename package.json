@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.5.5",
+  "version": "2.6.5",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -38,8 +38,8 @@
     "test-watch": "jest --watchAll",
     "test-bundlesize": "bundlesize",
     "pack": "babel-node ./tools/pack",
-    "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook",
-    "build-storybook": "build-storybook -c storybook -o storybook-static",
+    "storybook": "cross-env NODE_ENV=development start-storybook -p 9001 -c storybook -s ./storybook/public",
+    "build-storybook": "build-storybook -c storybook -o storybook-static -s ./storybook/public",
     "prettier": "pretty-quick --staged"
   },
   "peerDependencies": {

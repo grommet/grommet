@@ -130,7 +130,7 @@ const BorderBox = () => (
           'inset',
           'outset',
         ].map(type => (
-          <Box key={type} pad="small" border={{ type, size: 'medium' }}>
+          <Box key={type} pad="small" border={{ size: 'medium', style: type }}>
             {type}
           </Box>
         ))}

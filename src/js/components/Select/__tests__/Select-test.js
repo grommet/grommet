@@ -3,6 +3,7 @@ import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent } from 'react-testing-library';
 
+import { CaretDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Select } from '..';
@@ -355,5 +356,26 @@ describe('Select', () => {
     );
 
     expect(document.getElementById('test-select__drop')).not.toBeNull();
+  });
+
+  test('renders without icon', () => {
+    const component = renderer.create(
+      <Select id="test-select" options={['one', 'two']} icon={false} />,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('renders custom icon', () => {
+    const component = renderer.create(
+      <Select id="test-select" options={['one', 'two']} icon={CaretDown} />,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('renders default icon', () => {
+    const component = renderer.create(
+      <Select id="test-select" options={['one', 'two']} icon />,
+    );
+    expect(component.toJSON()).toMatchSnapshot();
   });
 });
