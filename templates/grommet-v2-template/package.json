@@ -1,0 +1,24 @@
+{
+  "name": "grommet-v2-template",
+  "version": "1.0.0",
+  "description": "template for grommet v2. used as a validation test for circleci post publish",
+  "keywords": [],
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "grommet": "^2.6.5",
+    "grommet-icons": "^4.2.0",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "styled-components": "4.1.3"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
