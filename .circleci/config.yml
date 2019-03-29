@@ -83,6 +83,9 @@ jobs:
       - run:
           name: Publish package
           command: cd dist && npm publish
+      - run:
+          name: Validate publish
+          command: cd ~/grommet-ci/templates/grommet-v2-template && yarn install && yarn build
 workflows:
   build_test:
     jobs:
