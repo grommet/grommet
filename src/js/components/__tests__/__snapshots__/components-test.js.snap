@@ -2235,6 +2235,11 @@ node",
         "name": "messages",
       },
       Object {
+        "description": "Control the state of the component",
+        "format": "boolean",
+        "name": "open",
+      },
+      Object {
         "defaultValue": "medium",
         "description": "The size of the menu.",
         "format": "small
@@ -2795,7 +2800,7 @@ function",
         "required": true,
       },
       Object {
-        "description": "Initial state of the select component",
+        "description": "Control the state of the component.",
         "format": "boolean",
         "name": "open",
       },

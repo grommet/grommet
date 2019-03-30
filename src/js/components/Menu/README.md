@@ -237,6 +237,14 @@ Custom messages. Used for accessibility by screen readers. Defaults to `{
 }
 ```
 
+**open**
+
+Control the state of the component
+
+```
+boolean
+```
+
 **size**
 
 The size of the menu. Defaults to `medium`.

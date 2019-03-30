@@ -311,7 +311,7 @@ Required. Options can be either a string or an object. If an object is used, use
 
 **open**
 
-Initial state of the select component
+Control the state of the component.
 
 ```
 boolean

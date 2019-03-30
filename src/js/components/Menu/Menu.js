@@ -32,9 +32,13 @@ class Menu extends Component {
     justifyContent: 'start',
   };
 
-  state = { activeItemIndex: -1, open: false };
-
   buttonRefs = {};
+
+  constructor(props) {
+    super(props);
+
+    this.state = { activeItemIndex: -1, open: props.open || false };
+  }
 
   onDropClose = () => {
     this.setState({

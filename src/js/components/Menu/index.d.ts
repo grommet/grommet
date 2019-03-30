@@ -16,6 +16,7 @@ export interface MenuProps {
   items: object[];
   label?: string | React.ReactNode;
   messages?: {closeMenu?: string,openMenu?: string};
+  open?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
 }
 
