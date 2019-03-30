@@ -18,7 +18,7 @@ export const doc = FormField => {
 
   DocumentedFormField.propTypes = {
     component: PropTypes.func.description(
-      `The component to insert in the FormField. Grommet will add update the form values when this field changes`,
+      `The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component.`,
     ),
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
       'Any error text describing issues with the field',
