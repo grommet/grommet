@@ -56,6 +56,12 @@
       "rules": {
         "react/jsx-one-expression-per-line": 0
       }
+    },
+    {
+      "files": ["**/templates/**"],
+      "rules": {
+        "import/no-unresolved": 0
+      }
     }
   ]
 }
