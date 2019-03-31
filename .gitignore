@@ -1,6 +1,6 @@
 .idea/**
 node_modules/**
-dist/**
+**/dist/**
 storybook-static/**
 .eslintcache
 coverage
