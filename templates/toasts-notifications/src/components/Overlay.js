@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Layer, Box, Button, DropButton, TextInput, Heading } from 'grommet';
 import { MailOption } from 'grommet-icons';
 
-const DropContent = ({ onClose }) => (
+const DropContent = () => (
   <Box pad="small">
     <Box align="center">
       <Heading level={3} margin="small">
