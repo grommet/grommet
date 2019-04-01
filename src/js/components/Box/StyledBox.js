@@ -146,7 +146,9 @@ const justifyStyle = css`
   justify-content: ${props => JUSTIFY_MAP[props.justify]};
 `;
 
-const wrapStyle = 'flex-wrap: wrap;';
+const wrapStyle = css`
+  flex-wrap: ${props => (props.wrapProp === true ? 'wrap' : props.wrapProp)};
+`;
 
 const borderStyle = (data, responsive, theme) => {
   const styles = [];

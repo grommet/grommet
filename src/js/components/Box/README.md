@@ -576,8 +576,7 @@ string
 
 **wrap**
 
-Whether children can wrap if they
-      can't all fit.
+Controls the wrap property of the flexbox
 
 ```
 boolean

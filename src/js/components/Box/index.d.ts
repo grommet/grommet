@@ -27,7 +27,7 @@ export interface BoxProps {
   tag?: PolymorphicType;
   as?: PolymorphicType;
   width?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge" |string;
-  wrap?: boolean;
+  wrap?: boolean | "wrap" | "nowrap" | "wrap-reverse";
 }
 
 declare const Box: React.ComponentClass<BoxProps & JSX.IntrinsicElements['div']>;

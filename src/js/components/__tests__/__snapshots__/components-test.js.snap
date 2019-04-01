@@ -704,8 +704,7 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether children can wrap if they
-      can't all fit.",
+        "description": "Controls the wrap property of the flexbox",
         "format": "boolean",
         "name": "wrap",
       },

@@ -317,11 +317,11 @@ of indicating the DOM tag via the 'as' property.`,
       ]),
       PropTypes.string,
     ]).description('A fixed width.'),
-    wrap: PropTypes.bool
-      .description(
-        `Whether children can wrap if they
-      can't all fit.`,
-      )
+    wrap: PropTypes.oneOfType(
+      PropTypes.bool,
+      PropTypes.oneOf(['wrap', 'nowrap', 'wrap-reverse']),
+    )
+      .description(`Controls the wrap property of the flexbox`)
       .defaultValue(false),
   };
   return DocumentedBox;
