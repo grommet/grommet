@@ -16,7 +16,7 @@ class RoutedAnchor extends Component {
     const { path, method, ...rest } = this.props;
     if (process.env.NODE_ENV !== 'production') {
       console.warn(
-        `This component will be deprecated in the 3.0 release. Please refer to https://github.com/grommet/grommet/issues/2855 for more information.`,
+        `This component will be deprecated in the upcoming releases. Please refer to https://github.com/grommet/grommet/issues/2855 for more information.`,
       );
     }
     return (
