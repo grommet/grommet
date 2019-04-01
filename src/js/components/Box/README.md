@@ -580,6 +580,9 @@ Controls the wrap property of the flexbox
 
 ```
 boolean
+wrap
+nowrap
+wrap-reverse
 ```
   
 ## Intrinsic element

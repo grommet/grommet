@@ -705,7 +705,10 @@ string",
       Object {
         "defaultValue": false,
         "description": "Controls the wrap property of the flexbox",
-        "format": "boolean",
+        "format": "boolean
+wrap
+nowrap
+wrap-reverse",
         "name": "wrap",
       },
     ],

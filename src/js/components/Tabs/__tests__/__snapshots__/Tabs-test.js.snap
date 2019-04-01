@@ -567,7 +567,7 @@ exports[`Tabs change to second tab 2`] = `
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZEJFb"
     >
       <button
         aria-expanded="false"
@@ -1361,7 +1361,7 @@ exports[`Tabs set on hover 2`] = `
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZEJFb"
     >
       <button
         aria-expanded="true"
@@ -1418,7 +1418,7 @@ exports[`Tabs set on hover 3`] = `
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZEJFb"
     >
       <button
         aria-expanded="true"
@@ -1475,7 +1475,7 @@ exports[`Tabs set on hover 4`] = `
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZEJFb"
     >
       <button
         aria-expanded="true"
@@ -1532,7 +1532,7 @@ exports[`Tabs set on hover 5`] = `
     role="tablist"
   >
     <div
-      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 erckJo"
+      class="StyledTabs__StyledTabsHeader-a4fwxl-0 cjlqAH StyledBox-sc-13pk1d4-0 gZEJFb"
     >
       <button
         aria-expanded="true"
