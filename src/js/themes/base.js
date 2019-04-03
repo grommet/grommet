@@ -354,9 +354,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         width: '2px',
       },
       check: {
+        // extend: undefined,
         radius: '4px',
         thickness: '4px',
-        // extend: undefined,
+      },
+      // color: { dark: undefined, light: undefined },
+      // extend: undefined,
+      // gap: undefined
+      hover: {
+        border: {
+          color: {
+            dark: 'white',
+            light: 'black',
+          },
+        },
       },
       icon: {
         // size: undefined,
@@ -366,29 +377,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // checked: undefined,
         // indeterminate: undefined,
       },
-      hover: {
-        border: {
-          color: {
-            dark: 'white',
-            light: 'black',
-          },
-        },
-      },
       size: `${baseSpacing}px`,
-      // color: { dark: undefined, light: undefined },
       toggle: {
+        // background: undefined
         color: {
           dark: '#d9d9d9',
           light: '#d9d9d9',
         },
-        radius: `${baseSpacing}px`,
-        size: `${baseSpacing * 2}px`,
-        // extend: undefined,
         knob: {
           // extend: undefined,
         },
+        radius: `${baseSpacing}px`,
+        size: `${baseSpacing * 2}px`,
+        // extend: undefined,
       },
-      // extend: undefined,
     },
     clock: {
       analog: {
