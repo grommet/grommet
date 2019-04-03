@@ -68,6 +68,10 @@ function (_Component) {
         onClick = _this$props2.onClick,
         rest = _objectWithoutPropertiesLoose(_this$props2, ["href", "path", "method", "onClick"]);
 
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn("This component will be deprecated in the upcoming releases. Please refer to https://github.com/grommet/grommet/issues/2855 for more information.");
+    }
+
     return React.createElement(Button, _extends({}, rest, {
       href: path || href,
       disabled: !path && !onClick,

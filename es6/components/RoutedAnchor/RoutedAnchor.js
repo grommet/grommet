@@ -29,6 +29,10 @@ function (_Component) {
         method = _this$props.method,
         rest = _objectWithoutPropertiesLoose(_this$props, ["path", "method"]);
 
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn("This component will be deprecated in the upcoming releases. Please refer to https://github.com/grommet/grommet/issues/2855 for more information.");
+    }
+
     return React.createElement(Anchor, _extends({}, rest, {
       href: path,
       onClick: function onClick(event) {
