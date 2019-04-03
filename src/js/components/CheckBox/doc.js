@@ -52,3 +52,108 @@ NOTE: This can only be used with non-toggle components`,
 
   return DocumentedCheckBox;
 };
+
+export const themeDoc = {
+  'checkBox.border.color': {
+    description: 'The border color when unchecked.',
+    type: "string | { 'dark': string, 'light': string }",
+    defaultValue:
+      "{ dark: 'rgba(255, 255, 255, 0.5)', light: 'rgba(0, 0, 0, 0.15)' }",
+  },
+  'checkBox.border.width': {
+    description: 'The border width when unchecked.',
+    type: 'string',
+    defaultValue: '2px',
+  },
+  'checkBox.check.extend': {
+    description: 'Any additional style for checked CheckBox.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'checkBox.check.radius': {
+    description: 'The radius of the checked icon.',
+    type: 'string',
+    defaultValue: '4px',
+  },
+  'checkBox.check.thickness': {
+    description: 'The stroke width of the checked icon.',
+    type: 'string',
+    defaultValue: '4px',
+  },
+  'checkBox.color': {
+    description:
+      'The stroke color for the CheckBox icon, and the border when checked.',
+    type: "string | { 'dark': string, 'light': string }",
+    defaultValue: undefined,
+  },
+  'checkBox.extend': {
+    description: 'Any additional style for CheckBox.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'checkBox.gap': {
+    description: 'The right margin of the CheckBox to its label.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'checkBox.hover.border.color': {
+    description: 'The border color on hover.',
+    type: "string | { 'dark': string, 'light': string }",
+    defaultValue: "{ dark: 'white', light: 'black' }",
+  },
+  'checkBox.icon.size': {
+    description: 'The size of the checked icon.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'checkBox.icon.extend': {
+    description: 'Any additional style for CheckBox icon.',
+    type: 'string | (props)=>{}',
+    defaultValue: undefined,
+  },
+  'checkBox.icons.checked': {
+    description: 'The icon to use when checked.',
+    type: 'React.Element',
+    defaultValue: undefined,
+  },
+  'checkBox.icons.indeterminate': {
+    description: 'The icon to use when indeterminate.',
+    type: 'React.Element',
+    defaultValue: undefined,
+  },
+  'checkBox.size': {
+    description: 'The height and width used for the CheckBox icon.',
+    type: 'string',
+    defaultValue: '24px',
+  },
+  'checkBox.toggle.background': {
+    description: 'The background color of the toggle.',
+    type: "string | { 'dark': string, 'light': string }",
+    defaultValue: undefined,
+  },
+  'checkBox.toggle.color': {
+    description: 'The color of the toggle knob.',
+    type: "string | { 'dark': string, 'light': string }",
+    defaultValue: "{ dark: '#d9d9d9', light: '#d9d9d9' }",
+  },
+  'checkBox.toggle.extend': {
+    description: 'Any additional style for CheckBox toggle.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'checkBox.toggle.knob.extend': {
+    description: 'Any additional style for the CheckBox toggle knob.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'checkBox.toggle.radius': {
+    description: 'The border radius used for the toggle and the knob.',
+    type: 'string',
+    defaultValue: '24px',
+  },
+  'checkBox.toggle.size': {
+    description: 'The width size of the toggle.',
+    type: 'string',
+    defaultValue: '42px',
+  },
+};
