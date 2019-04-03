@@ -44,8 +44,8 @@ describe('Box', () => {
   test('wrap', () => {
     const component = renderer.create(
       <Grommet>
-        {[true, false, 'wrap', 'nowrap', 'wrap-reverse'].map(wrap => (
-          <Box wrap={wrap} />
+        {[true, false, 'reverse'].map(wrap => (
+          <Box key={`${wrap}`} wrap={wrap} />
         ))}
       </Grommet>,
     );

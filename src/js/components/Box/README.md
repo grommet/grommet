@@ -576,13 +576,11 @@ string
 
 **wrap**
 
-Controls the wrap property of the flexbox
+Whether children can wrap if they can't all fit.
 
 ```
 boolean
-wrap
-nowrap
-wrap-reverse
+reverse
 ```
   
 ## Intrinsic element

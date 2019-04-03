@@ -147,7 +147,7 @@ const justifyStyle = css`
 `;
 
 const wrapStyle = css`
-  flex-wrap: ${props => (props.wrapProp === true ? 'wrap' : props.wrapProp)};
+  flex-wrap: ${props => (props.wrapProp === true ? 'wrap' : 'wrap-reverse')};
 `;
 
 const borderStyle = (data, responsive, theme) => {
