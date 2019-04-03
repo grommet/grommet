@@ -408,16 +408,13 @@ var generate = function generate(baseSpacing, scale) {
         width: '2px'
       },
       check: {
-        radius: '4px',
-        thickness: '4px' // extend: undefined,
-
-      },
-      icon: {// size: undefined,
         // extend: undefined,
+        radius: '4px',
+        thickness: '4px'
       },
-      icons: {// checked: undefined,
-        // indeterminate: undefined,
-      },
+      // color: { dark: undefined, light: undefined },
+      // extend: undefined,
+      // gap: undefined
       hover: {
         border: {
           color: {
@@ -426,20 +423,25 @@ var generate = function generate(baseSpacing, scale) {
           }
         }
       },
+      icon: {// size: undefined,
+        // extend: undefined,
+      },
+      icons: {// checked: undefined,
+        // indeterminate: undefined,
+      },
       size: baseSpacing + "px",
-      // color: { dark: undefined, light: undefined },
       toggle: {
+        // background: undefined
         color: {
           dark: '#d9d9d9',
           light: '#d9d9d9'
         },
-        radius: baseSpacing + "px",
-        size: baseSpacing * 2 + "px",
-        // extend: undefined,
         knob: {// extend: undefined,
-        }
-      } // extend: undefined,
+        },
+        radius: baseSpacing + "px",
+        size: baseSpacing * 2 + "px" // extend: undefined,
 
+      }
     },
     clock: {
       analog: {

@@ -92,3 +92,204 @@ boolean
 ```
 input
 ```
+## Theme
+  
+**checkBox.border.color**
+
+The border color when unchecked. Expects `string | { 'dark': string, 'light': string }`.
+
+Defaults to
+
+```
+{ dark: 'rgba(255, 255, 255, 0.5)', light: 'rgba(0, 0, 0, 0.15)' }
+```
+
+**checkBox.border.width**
+
+The border width when unchecked. Expects `string`.
+
+Defaults to
+
+```
+2px
+```
+
+**checkBox.check.extend**
+
+Any additional style for checked CheckBox. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**checkBox.check.radius**
+
+The radius of the checked icon. Expects `string`.
+
+Defaults to
+
+```
+4px
+```
+
+**checkBox.check.thickness**
+
+The stroke width of the checked icon. Expects `string`.
+
+Defaults to
+
+```
+4px
+```
+
+**checkBox.color**
+
+The stroke color for the CheckBox icon, and the border when checked. Expects `string | { 'dark': string, 'light': string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**checkBox.extend**
+
+Any additional style for CheckBox. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**checkBox.gap**
+
+The right margin of the CheckBox to its label. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**checkBox.hover.border.color**
+
+The border color on hover. Expects `string | { 'dark': string, 'light': string }`.
+
+Defaults to
+
+```
+{ dark: 'white', light: 'black' }
+```
+
+**checkBox.icon.size**
+
+The size of the checked icon. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**checkBox.icon.extend**
+
+Any additional style for CheckBox icon. Expects `string | (props)=>{}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**checkBox.icons.checked**
+
+The icon to use when checked. Expects `React.Element`.
+
+Defaults to
+
+```
+undefined
+```
+
+**checkBox.icons.indeterminate**
+
+The icon to use when indeterminate. Expects `React.Element`.
+
+Defaults to
+
+```
+undefined
+```
+
+**checkBox.size**
+
+The height and width used for the CheckBox icon. Expects `string`.
+
+Defaults to
+
+```
+24px
+```
+
+**checkBox.toggle.background**
+
+The background color of the toggle. Expects `string | { 'dark': string, 'light': string }`.
+
+Defaults to
+
+```
+undefined
+```
+
+**checkBox.toggle.color**
+
+The color of the toggle knob. Expects `string | { 'dark': string, 'light': string }`.
+
+Defaults to
+
+```
+{ dark: '#d9d9d9', light: '#d9d9d9' }
+```
+
+**checkBox.toggle.extend**
+
+Any additional style for CheckBox toggle. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**checkBox.toggle.knob.extend**
+
+Any additional style for the CheckBox toggle knob. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**checkBox.toggle.radius**
+
+The border radius used for the toggle and the knob. Expects `string`.
+
+Defaults to
+
+```
+24px
+```
+
+**checkBox.toggle.size**
+
+The width size of the toggle. Expects `string`.
+
+Defaults to
+
+```
+42px
+```
