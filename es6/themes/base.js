@@ -533,14 +533,14 @@ export var generate = function generate(baseSpacing, scale) {
     formField: {
       border: {
         color: 'border',
-        position: 'inner',
-        side: 'bottom',
         error: {
           color: {
             dark: 'white',
             light: 'status-critical'
           }
-        }
+        },
+        position: 'inner',
+        side: 'bottom'
       },
       content: {
         pad: {
@@ -549,22 +549,23 @@ export var generate = function generate(baseSpacing, scale) {
         }
       },
       error: {
-        margin: {
-          vertical: 'xsmall',
-          horizontal: 'small'
-        },
         color: {
           dark: 'status-critical',
           light: 'status-critical'
+        },
+        margin: {
+          vertical: 'xsmall',
+          horizontal: 'small'
         }
       },
+      // extend: undefined,
       help: {
-        margin: {
-          left: 'small'
-        },
         color: {
           dark: 'dark-3',
           light: 'dark-3'
+        },
+        margin: {
+          left: 'small'
         }
       },
       label: {
@@ -575,8 +576,7 @@ export var generate = function generate(baseSpacing, scale) {
       },
       margin: {
         bottom: 'small'
-      } // extend: undefined,
-
+      }
     },
     grommet: {},
     heading: {
