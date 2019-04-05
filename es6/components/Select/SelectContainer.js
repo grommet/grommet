@@ -34,25 +34,16 @@ var SelectContainer =
 function (_Component) {
   _inheritsLoose(SelectContainer, _Component);
 
-  function SelectContainer() {
+  function SelectContainer(props) {
     var _this;
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+    _this = _Component.call(this, props) || this;
 
     _defineProperty(_assertThisInitialized(_this), "optionRefs", {});
 
     _defineProperty(_assertThisInitialized(_this), "searchRef", createRef());
 
     _defineProperty(_assertThisInitialized(_this), "optionsRef", createRef());
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      search: '',
-      activeIndex: -1
-    });
 
     _defineProperty(_assertThisInitialized(_this), "onSearchChange", function (event) {
       _this.setState({
@@ -70,48 +61,39 @@ function (_Component) {
       onSearch(search);
     }, debounceDelay(_this.props)));
 
-    _defineProperty(_assertThisInitialized(_this), "selectOption", function (option, index) {
+    _defineProperty(_assertThisInitialized(_this), "selectOption", function (option) {
       return function () {
         var _this$props = _this.props,
             multiple = _this$props.multiple,
             onChange = _this$props.onChange,
-            options = _this$props.options,
-            selected = _this$props.selected,
-            value = _this$props.value;
+            value = _this$props.value,
+            selected = _this$props.selected;
+        var initialOptions = _this.state.initialOptions;
 
         if (onChange) {
-          var nextValue = option;
-          var nextSelected = index;
+          var nextValue = Array.isArray(value) ? value.slice() : []; // preserve compatibility until selected is deprecated
 
-          if (multiple) {
-            nextValue = [];
-            nextSelected = [];
-            var removed = false;
-            var selectedIndexes = [];
-
-            if (Array.isArray(selected)) {
-              selectedIndexes = selected;
-            } else if (Array.isArray(value)) {
-              selectedIndexes = value.map(function (v) {
-                return options.indexOf(v);
-              });
-            }
-
-            selectedIndexes.forEach(function (selectedIndex) {
-              if (selectedIndex === index) {
-                removed = true;
-              } else {
-                nextValue.push(options[selectedIndex]);
-                nextSelected.push(selectedIndex);
-              }
+          if (selected) {
+            nextValue = selected.map(function (s) {
+              return initialOptions[s];
             });
-
-            if (!removed) {
-              nextValue.push(option);
-              nextSelected.push(index);
-            }
           }
 
+          if (multiple) {
+            if (nextValue.indexOf(option) !== -1) {
+              nextValue = nextValue.filter(function (v) {
+                return v !== option;
+              });
+            } else {
+              nextValue.push(option);
+            }
+          } else {
+            nextValue = option;
+          }
+
+          var nextSelected = Array.isArray(nextValue) ? nextValue.map(function (v) {
+            return initialOptions.indexOf(v);
+          }) : initialOptions.indexOf(nextValue);
           onChange({
             option: option,
             value: nextValue,
@@ -202,7 +184,7 @@ function (_Component) {
       if (activeIndex >= 0) {
         event.preventDefault(); // prevent submitting forms
 
-        _this.selectOption(options[activeIndex], activeIndex)();
+        _this.selectOption(options[activeIndex])();
       }
     });
 
@@ -308,6 +290,11 @@ function (_Component) {
       return result;
     });
 
+    _this.state = {
+      initialOptions: props.options,
+      search: '',
+      activeIndex: -1
+    };
     return _this;
   }
 
@@ -441,7 +428,7 @@ function (_Component) {
         selected: isSelected,
         option: option,
         onMouseOver: !isDisabled ? _this3.onActiveOption(index) : undefined,
-        onClick: !isDisabled ? _this3.selectOption(option, index) : undefined
+        onClick: !isDisabled ? _this3.selectOption(option) : undefined
       }, children ? children(option, index, options, {
         active: isActive,
         disabled: isDisabled,
