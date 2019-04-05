@@ -217,6 +217,12 @@ exports[`Markdown renders 1`] = `
   }
 }
 
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c7 {
+    table-layout: fixed;
+  }
+}
+
 <div
   className="c0"
 >
