@@ -27,4 +27,25 @@ describe('Menu', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('Generate the menu within the DOM of the parent div', () => {
+    let divRef;
+    const component = renderer.create(
+      <div ref={ref=> divRef = ref}>
+        <Menu dropContainer={divRef}>
+          <a href="#" className="active">
+            First
+          </a>
+          <a href="#">
+            Second
+          </a>
+          <a href="#">
+            Third
+          </a>
+        </Menu>
+      </div>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
 });
