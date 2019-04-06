@@ -107,14 +107,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     global: {
       active: {
         background: {
-          dark: {
-            color: 'active',
-            opacity: 'medium',
-          },
-          light: {
-            color: 'active',
-            opacity: 'medium',
-          },
+          color: 'active',
+          opacity: 'medium',
         },
         color: {
           dark: 'white',
@@ -236,14 +230,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       hover: {
         background: {
-          dark: {
-            color: 'active',
-            opacity: 'medium',
-          },
-          light: {
-            color: 'active',
-            opacity: 'medium',
-          },
+          color: 'active',
+          opacity: 'medium',
         },
         color: {
           dark: 'white',
