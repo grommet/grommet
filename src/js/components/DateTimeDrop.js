@@ -429,13 +429,13 @@ export default class DateTimeDrop extends Component {
         const unitMessage = Intl.getMessage(intl, unit);
         return (
           <Box key={index} align='center'>
-            <Button icon={<SubtractIcon />}
-              a11yTitle={`${subtractMessage} ${unitMessage}`}
-              onClick={this._onPrevious.bind(this, unit)} />
-            {value.format('M' === chunk ? 'MMM' : chunk)}
             <Button icon={<AddIcon />}
               a11yTitle={`${addMessage} ${unitMessage}`}
               onClick={this._onNext.bind(this, unit)} />
+            {value.format('M' === chunk ? 'MMM' : chunk)}
+            <Button icon={<SubtractIcon />}
+              a11yTitle={`${subtractMessage} ${unitMessage}`}
+              onClick={this._onPrevious.bind(this, unit)} />
           </Box>
         );
       } else {
