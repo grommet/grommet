@@ -354,20 +354,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         width: '2px',
       },
       check: {
-        // extend: undefined,
         radius: '4px',
         thickness: '4px',
-      },
-      // color: { dark: undefined, light: undefined },
-      // extend: undefined,
-      // gap: undefined
-      hover: {
-        border: {
-          color: {
-            dark: 'white',
-            light: 'black',
-          },
-        },
+        // extend: undefined,
       },
       icon: {
         // size: undefined,
@@ -377,20 +366,29 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // checked: undefined,
         // indeterminate: undefined,
       },
+      hover: {
+        border: {
+          color: {
+            dark: 'white',
+            light: 'black',
+          },
+        },
+      },
       size: `${baseSpacing}px`,
+      // color: { dark: undefined, light: undefined },
       toggle: {
-        // background: undefined
         color: {
           dark: '#d9d9d9',
           light: '#d9d9d9',
         },
-        knob: {
-          // extend: undefined,
-        },
         radius: `${baseSpacing}px`,
         size: `${baseSpacing * 2}px`,
         // extend: undefined,
+        knob: {
+          // extend: undefined,
+        },
       },
+      // extend: undefined,
     },
     clock: {
       analog: {
@@ -446,30 +444,30 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       baseline: 500,
     },
     dataTable: {
-      header: {},
       groupHeader: {
-        border: { side: 'bottom', size: 'xsmall' },
-        fill: 'vertical',
-        pad: { horizontal: 'small', vertical: 'xsmall' },
         background: {
           dark: 'dark-2',
           light: 'light-2',
         },
+        border: { side: 'bottom', size: 'xsmall' },
+        fill: 'vertical',
+        pad: { horizontal: 'small', vertical: 'xsmall' },
       },
+      header: {},
       icons: {
         ascending: FormDown,
         contract: FormUp,
         descending: FormUp,
         expand: FormDown,
       },
-      resize: {
-        border: {
-          side: 'right',
-          color: 'border',
-        },
-      },
       primary: {
         weight: 'bold',
+      },
+      resize: {
+        border: {
+          color: 'border',
+          side: 'right',
+        },
       },
     },
     diagram: {
