@@ -13,6 +13,14 @@ import { FormField } from 'grommet';
 
 ## Properties
 
+**component**
+
+The component to insert in the FormField. Grommet will add update the form values when this field changes
+
+```
+function
+```
+
 **error**
 
 Any error text describing issues with the field

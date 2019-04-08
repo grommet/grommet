@@ -343,4 +343,17 @@ describe('Select', () => {
 
     expect(document.activeElement).toMatchSnapshot();
   });
+
+  test('open default state', () => {
+    render(
+      <Select
+        open
+        id="test-select"
+        placeholder="test select"
+        options={['one', 'two']}
+      />,
+    );
+
+    expect(document.getElementById('test-select__drop')).not.toBeNull();
+  });
 });

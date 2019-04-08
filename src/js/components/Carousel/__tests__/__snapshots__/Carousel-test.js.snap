@@ -481,7 +481,6 @@ exports[`Carousel basic 1`] = `
         >
           <img
             className=""
-            onError={[Function]}
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
@@ -498,7 +497,6 @@ exports[`Carousel basic 1`] = `
         >
           <img
             className=""
-            onError={[Function]}
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>

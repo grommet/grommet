@@ -76,14 +76,14 @@ const CustomAccordion = ({ animate, multiple, ...rest }) => (
   <Grommet theme={CustomAccordionTheme}>
     <Box {...rest}>
       <Accordion animate={animate} multiple>
-        <AccordionPanel label="Panel 1">
+        <AccordionPanel label={<Text size="large">Panel 1</Text>}>
           <Box background="light-2" height="small">
             Important Info
           </Box>
         </AccordionPanel>
-        <AccordionPanel label="Panel 2">
+        <AccordionPanel label={<Text size="medium">Panel 2</Text>}>
           <Box background="light-2" height="xsmall">
-            Important Info
+            <Text size="small">Important Info</Text>
           </Box>
         </AccordionPanel>
       </Accordion>

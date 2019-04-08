@@ -1872,6 +1872,11 @@ string",
     "name": "FormField",
     "properties": Array [
       Object {
+        "description": "The component to insert in the FormField. Grommet will add update the form values when this field changes",
+        "format": "function",
+        "name": "component",
+      },
+      Object {
         "description": "Any error text describing issues with the field",
         "format": "string
 node",
@@ -2756,6 +2761,11 @@ function",
 ]",
         "name": "options",
         "required": true,
+      },
+      Object {
+        "description": "Initial state of the select component",
+        "format": "boolean",
+        "name": "open",
       },
       Object {
         "description": "Placeholder text to use when no value is provided.",
