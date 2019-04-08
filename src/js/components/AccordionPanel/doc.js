@@ -38,7 +38,7 @@ export const themeDoc = {
   },
   'accordion.border.side': {
     description: 'The border side to use in the accordion.',
-    type: 'React.Element',
+    type: 'string',
     defaultValue: 'bottom',
   },
 };
