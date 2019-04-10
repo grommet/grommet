@@ -102,9 +102,9 @@ export var backgroundStyle = function backgroundStyle(backgroundArg, theme, text
   return undefined;
 };
 export var activeStyle = css(["", " color:", ";"], function (props) {
-  return backgroundStyle(normalizeColor(props.theme.global.hover.background, props.theme), props.theme);
+  return backgroundStyle(normalizeColor(props.theme.global.active.background, props.theme), props.theme);
 }, function (props) {
-  return normalizeColor(props.theme.global.hover.color, props.theme);
+  return normalizeColor(props.theme.global.active.color, props.theme);
 });
 export var selectedStyle = css(["", " color:", ";"], function (props) {
   return backgroundStyle(normalizeColor(props.theme.global.selected.background, props.theme), props.theme);

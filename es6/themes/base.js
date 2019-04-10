@@ -99,6 +99,16 @@ export var generate = function generate(baseSpacing, scale) {
   var borderWidth = 2;
   var result = deepMerge(iconBase, {
     global: {
+      active: {
+        background: {
+          color: 'active',
+          opacity: 'medium'
+        },
+        color: {
+          dark: 'white',
+          light: 'black'
+        }
+      },
       animation: {
         duration: '1s',
         jiggle: {
@@ -240,14 +250,8 @@ export var generate = function generate(baseSpacing, scale) {
       font: _extends({}, fontSizing(0)),
       hover: {
         background: {
-          dark: {
-            color: 'active',
-            opacity: 'medium'
-          },
-          light: {
-            color: 'active',
-            opacity: 'medium'
-          }
+          color: 'active',
+          opacity: 'medium'
         },
         color: {
           dark: 'white',

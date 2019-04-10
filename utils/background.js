@@ -118,9 +118,9 @@ var backgroundStyle = function backgroundStyle(backgroundArg, theme, textColorAr
 
 exports.backgroundStyle = backgroundStyle;
 var activeStyle = (0, _styledComponents.css)(["", " color:", ";"], function (props) {
-  return backgroundStyle((0, _colors.normalizeColor)(props.theme.global.hover.background, props.theme), props.theme);
+  return backgroundStyle((0, _colors.normalizeColor)(props.theme.global.active.background, props.theme), props.theme);
 }, function (props) {
-  return (0, _colors.normalizeColor)(props.theme.global.hover.color, props.theme);
+  return (0, _colors.normalizeColor)(props.theme.global.active.color, props.theme);
 });
 exports.activeStyle = activeStyle;
 var selectedStyle = (0, _styledComponents.css)(["", " color:", ";"], function (props) {
