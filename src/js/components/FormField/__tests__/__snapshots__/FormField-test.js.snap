@@ -298,8 +298,6 @@ exports[`renders error 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 6px;
-  margin-bottom: 6px;
   color: #FF4040;
 }
 
@@ -401,7 +399,6 @@ exports[`renders help 1`] = `
   margin-left: 12px;
   font-size: 18px;
   line-height: 24px;
-  margin-left: 12px;
   color: #777777;
 }
 
@@ -595,8 +592,6 @@ exports[`renders label 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 6px;
-  margin-bottom: 6px;
 }
 
 @media only screen and (max-width:768px) {

@@ -68,40 +68,24 @@ exports[`renders margin 1`] = `
   margin: 12px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
 }
 
 .c2 {
   margin: 24px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 24px;
-  margin-bottom: 24px;
-  margin-left: 24px;
-  margin-right: 24px;
 }
 
 .c3 {
   margin: 48px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 48px;
-  margin-bottom: 48px;
-  margin-left: 48px;
-  margin-right: 48px;
 }
 
 .c4 {
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .c5 {
@@ -109,8 +93,6 @@ exports[`renders margin 1`] = `
   margin-bottom: 12px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 12px;
-  margin-bottom: 12px;
 }
 
 .c6 {
@@ -118,36 +100,30 @@ exports[`renders margin 1`] = `
   margin-right: 12px;
   font-size: 18px;
   line-height: 24px;
-  margin-left: 12px;
-  margin-right: 12px;
 }
 
 .c7 {
   margin-bottom: 12px;
   font-size: 18px;
   line-height: 24px;
-  margin-bottom: 12px;
 }
 
 .c8 {
   margin-top: 12px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 12px;
 }
 
 .c9 {
   margin-left: 12px;
   font-size: 18px;
   line-height: 24px;
-  margin-left: 12px;
 }
 
 .c10 {
   margin-right: 12px;
   font-size: 18px;
   line-height: 24px;
-  margin-right: 12px;
 }
 
 <div

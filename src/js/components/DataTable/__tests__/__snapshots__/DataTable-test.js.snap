@@ -1568,7 +1568,7 @@ exports[`DataTable groupBy 2`] = `
             class="StyledBox-sc-13pk1d4-0 folWQp"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="StyledText-sc-1sadyjn-0 fSnogx"
             >
               A
             </span>
@@ -1582,7 +1582,7 @@ exports[`DataTable groupBy 2`] = `
             class="StyledBox-sc-13pk1d4-0 folWQp"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="StyledText-sc-1sadyjn-0 fSnogx"
             >
               B
             </span>
@@ -1630,7 +1630,7 @@ exports[`DataTable groupBy 2`] = `
             class="StyledBox-sc-13pk1d4-0 eAAZJM"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="StyledText-sc-1sadyjn-0 fSnogx"
             >
               one
             </span>
@@ -1681,7 +1681,7 @@ exports[`DataTable groupBy 2`] = `
             class="StyledBox-sc-13pk1d4-0 eAAZJM"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="StyledText-sc-1sadyjn-0 fSnogx"
             >
               two
             </span>
@@ -2706,7 +2706,7 @@ exports[`DataTable sort 2`] = `
               class="StyledBox-sc-13pk1d4-0 fAhsMq"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 fWSbXS"
+                class="StyledText-sc-1sadyjn-0 fSnogx"
               >
                 A
               </span>
@@ -2781,7 +2781,7 @@ exports[`DataTable sort 2`] = `
               class="StyledBox-sc-13pk1d4-0 fAhsMq"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 fWSbXS"
+                class="StyledText-sc-1sadyjn-0 fSnogx"
               >
                 B
               </span>
@@ -2902,7 +2902,7 @@ exports[`DataTable sort 2`] = `
             class="StyledBox-sc-13pk1d4-0 eAAZJM"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 dndifk"
+              class="StyledText-sc-1sadyjn-0 evsoIF"
             >
               two
             </span>
@@ -2915,7 +2915,7 @@ exports[`DataTable sort 2`] = `
             class="StyledBox-sc-13pk1d4-0 eAAZJM"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="StyledText-sc-1sadyjn-0 fSnogx"
             >
               2
             </span>
