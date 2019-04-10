@@ -580,7 +580,7 @@ exports[`Tabs change to second tab 2`] = `
           class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gnzBzL"
+            class="StyledText-sc-1sadyjn-0 cGKySO"
           >
             Tab 1
           </span>
@@ -597,7 +597,7 @@ exports[`Tabs change to second tab 2`] = `
           class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 iEgnbY"
+            class="StyledText-sc-1sadyjn-0 jPfrqI"
           >
             Tab 2
           </span>
@@ -1374,7 +1374,7 @@ exports[`Tabs set on hover 2`] = `
           class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 iEgnbY"
+            class="StyledText-sc-1sadyjn-0 jPfrqI"
           >
             Tab 1
           </span>
@@ -1391,7 +1391,7 @@ exports[`Tabs set on hover 2`] = `
           class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gnzBzL"
+            class="StyledText-sc-1sadyjn-0 cGKySO"
           >
             Tab 2
           </span>
@@ -1431,7 +1431,7 @@ exports[`Tabs set on hover 3`] = `
           class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 iEgnbY"
+            class="StyledText-sc-1sadyjn-0 jPfrqI"
           >
             Tab 1
           </span>
@@ -1448,7 +1448,7 @@ exports[`Tabs set on hover 3`] = `
           class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gnzBzL"
+            class="StyledText-sc-1sadyjn-0 cGKySO"
           >
             Tab 2
           </span>
@@ -1488,7 +1488,7 @@ exports[`Tabs set on hover 4`] = `
           class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 iEgnbY"
+            class="StyledText-sc-1sadyjn-0 jPfrqI"
           >
             Tab 1
           </span>
@@ -1505,7 +1505,7 @@ exports[`Tabs set on hover 4`] = `
           class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gnzBzL"
+            class="StyledText-sc-1sadyjn-0 cGKySO"
           >
             Tab 2
           </span>
@@ -1545,7 +1545,7 @@ exports[`Tabs set on hover 5`] = `
           class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 kvUzDk"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 iEgnbY"
+            class="StyledText-sc-1sadyjn-0 jPfrqI"
           >
             Tab 1
           </span>
@@ -1562,7 +1562,7 @@ exports[`Tabs set on hover 5`] = `
           class="StyledTab-sc-1nnwnsb-0 dGMZCN StyledBox-sc-13pk1d4-0 ePEJdL"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 gnzBzL"
+            class="StyledText-sc-1sadyjn-0 cGKySO"
           >
             Tab 2
           </span>

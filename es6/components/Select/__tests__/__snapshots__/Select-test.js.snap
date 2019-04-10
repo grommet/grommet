@@ -2140,10 +2140,6 @@ exports[`Select large drop container height 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .c2 {
@@ -2478,10 +2474,6 @@ exports[`Select medium drop container height 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .c2 {
@@ -3398,10 +3390,6 @@ exports[`Select multiple values 3`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .c2 {
@@ -4234,10 +4222,6 @@ exports[`Select opens 3`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .c2 {
@@ -4598,7 +4582,7 @@ exports[`Select opens 5`] = `
         class="SelectContainer__OptionBox-sc-1wi0ul8-1 ixLLDr StyledBox-sc-13pk1d4-0 eEPVhE"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 fLjoaM"
+          class="StyledText-sc-1sadyjn-0 eFEfWf"
         >
           one
         </span>
@@ -4618,7 +4602,7 @@ exports[`Select opens 5`] = `
         class="SelectContainer__OptionBox-sc-1wi0ul8-1 ixLLDr StyledBox-sc-13pk1d4-0 eEPVhE"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 fLjoaM"
+          class="StyledText-sc-1sadyjn-0 eFEfWf"
         >
           two
         </span>
@@ -5843,10 +5827,6 @@ exports[`Select search 2`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .c2 {
@@ -7637,10 +7617,6 @@ exports[`Select small drop container height 1`] = `
   margin: 0px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .c2 {
