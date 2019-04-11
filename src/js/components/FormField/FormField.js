@@ -33,7 +33,7 @@ const FormFieldBox = styled(Box)`
 
 class FormField extends Component {
   renderChildren = (value, update) => {
-    const { name, component, required, ...rest } = this.props;
+    const { name, component, required, onChange, ...rest } = this.props;
     delete rest.className;
     const Input = component || TextInput;
     if (Input === CheckBox) {
@@ -41,7 +41,10 @@ class FormField extends Component {
         <Input
           name={name}
           checked={value[name] || false}
-          onChange={event => update(name, event.target.checked)}
+          onChange={event => {
+            update(name, event.target.checked);
+            if (onChange) onChange(event);
+          }}
           {...rest}
         />
       );
@@ -50,7 +53,10 @@ class FormField extends Component {
       <Input
         name={name}
         value={value[name] || ''}
-        onChange={event => update(name, event.value || event.target.value)}
+        onChange={event => {
+          update(name, event.value || event.target.value);
+          if (onChange) onChange(event);
+        }}
         plain
         focusIndicator={false}
         {...rest}

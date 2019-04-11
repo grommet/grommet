@@ -69,6 +69,7 @@ const Example = () => (
             label="Size"
             name="size"
             component={Select}
+            onChange={event => console.log(event)}
             options={['small', 'medium', 'large', 'xlarge']}
           />
           <FormField label="Comments" name="comments" component={TextArea} />
