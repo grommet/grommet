@@ -211,7 +211,7 @@ const DropContent = props => {
   const { date, onSelect, time, onClose, onChange } = props;
   return (
     <Box align="center">
-      <Calendar date={date} onSelect={onSelect} />
+      <Calendar date={date} onSelect={onSelect} showAdjacentDays={false} />
       <Box width="small" align="center" margin={{ bottom: 'small' }}>
         <MaskedInput
           mask={[
@@ -254,9 +254,7 @@ const DropContent = props => {
           onChange={onChange}
         />
       </Box>
-      <Box margin={{ bottom: 'small' }}>
-        <Button label="Close" onClick={onClose} />
-      </Box>
+      <Button margin="small" label="Close" onClick={onClose} />
     </Box>
   );
 };
