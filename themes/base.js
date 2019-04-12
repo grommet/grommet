@@ -519,8 +519,11 @@ var generate = function generate(baseSpacing, scale) {
       baseline: 500
     },
     dataTable: {
-      header: {},
       groupHeader: {
+        background: {
+          dark: 'dark-2',
+          light: 'light-2'
+        },
         border: {
           side: 'bottom',
           size: 'xsmall'
@@ -529,26 +532,23 @@ var generate = function generate(baseSpacing, scale) {
         pad: {
           horizontal: 'small',
           vertical: 'xsmall'
-        },
-        background: {
-          dark: 'dark-2',
-          light: 'light-2'
         }
       },
+      header: {},
       icons: {
         ascending: _FormDown.FormDown,
         contract: _FormUp.FormUp,
         descending: _FormUp.FormUp,
         expand: _FormDown.FormDown
       },
-      resize: {
-        border: {
-          side: 'right',
-          color: 'border'
-        }
-      },
       primary: {
         weight: 'bold'
+      },
+      resize: {
+        border: {
+          color: 'border',
+          side: 'right'
+        }
       }
     },
     diagram: {
