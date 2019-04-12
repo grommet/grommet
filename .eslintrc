@@ -48,8 +48,7 @@
         "import/no-unresolved": 0,
         "import/extensions": 0,
         "import/no-extraneous-dependencies": 0,
-        "react/no-multi-comp": 0,
-        "react/no-array-index-key": 0
+        "react/no-multi-comp": 0
       }
     },
     {

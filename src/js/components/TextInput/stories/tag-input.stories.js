@@ -5,7 +5,7 @@ import { Box, Button, Grommet, Keyboard, Text, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { FormClose } from 'grommet-icons';
 
-const aliasesSuggestions = ['sony', 'sonar', 'foo', 'bar'];
+const allSuggestions = ['sony', 'sonar', 'foo', 'bar'];
 
 const Tag = ({ children, onRemove, ...rest }) => {
   const tag = (
@@ -42,7 +42,13 @@ class TagInput extends Component {
     this.forceUpdate();
   }
 
-  updateCurrentTag = event => this.setState({ currentTag: event.target.value });
+  updateCurrentTag = event => {
+    const { onChange } = this.props;
+    this.setState({ currentTag: event.target.value });
+    if (onChange) {
+      onChange(event);
+    }
+  };
 
   onAddTag = tag => {
     const { onAdd } = this.props;
@@ -61,11 +67,13 @@ class TagInput extends Component {
 
   renderValue = () => {
     const { value, onRemove } = this.props;
+    /* eslint-disable react/no-array-index-key */
     return value.map((v, index) => (
       <Tag margin="xxsmall" key={`${v}${index}`} onRemove={() => onRemove(v)}>
         {v}
       </Tag>
     ));
+    /* eslint-enable react/no-array-index-key */
   };
 
   render() {
@@ -105,6 +113,7 @@ class TagInput extends Component {
 class TagTextInput extends Component {
   state = {
     selectedTags: ['foo', 'sony'],
+    suggestions: allSuggestions,
   };
 
   onRemoveTag = tag => {
@@ -128,17 +137,26 @@ class TagTextInput extends Component {
     });
   };
 
+  onFilterSuggestion = value =>
+    this.setState({
+      suggestions: allSuggestions.filter(
+        suggestion =>
+          suggestion.toLowerCase().indexOf(value.toLowerCase()) >= 0,
+      ),
+    });
+
   render() {
-    const { selectedTags } = this.state;
+    const { selectedTags, suggestions } = this.state;
     return (
       <Grommet full theme={grommet}>
         <Box pad="small">
           <TagInput
             placeholder="Search for aliases..."
-            suggestions={aliasesSuggestions}
+            suggestions={suggestions}
             value={selectedTags}
             onRemove={this.onRemoveTag}
             onAdd={this.onAddTag}
+            onChange={({ target: { value } }) => this.onFilterSuggestion(value)}
           />
         </Box>
       </Grommet>

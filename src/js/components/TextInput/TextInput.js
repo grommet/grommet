@@ -218,19 +218,20 @@ class TextInput extends Component {
   };
 
   onClickSuggestion = (suggestion, event) => {
-    const { onSelect } = this.props;
+    const { forwardRef, onSelect } = this.props;
     this.setState({ showDrop: false, activeSuggestionIndex: -1 });
     if (onSelect) {
       // TODO: needed for backwards compatibility sake
       /* eslint-disable no-param-reassign */
       event.suggestion = suggestion;
+      event.target = (forwardRef || this.inputRef).current;
       /* eslint-enable no-param-reassign */
       onSelect(event);
     }
   };
 
   onSuggestionSelect = event => {
-    const { onSelect, suggestions } = this.props;
+    const { forwardRef, onSelect, suggestions } = this.props;
     const { activeSuggestionIndex } = this.state;
     this.setState({ showDrop: false, activeSuggestionIndex: -1 });
     if (activeSuggestionIndex >= 0) {
@@ -238,6 +239,7 @@ class TextInput extends Component {
       // TODO: needed for backwards compatibility sake
       /* eslint-disable no-param-reassign */
       event.suggestion = suggestions[activeSuggestionIndex];
+      event.target = (forwardRef || this.inputRef).current;
       /* eslint-enable no-param-reassign */
       if (onSelect) {
         onSelect(event);
