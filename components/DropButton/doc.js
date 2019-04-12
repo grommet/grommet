@@ -10,7 +10,7 @@ var _utils = require("../../utils");
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var doc = function doc(DropButton) {
-  var DocumentedDropButton = (0, _reactDesc.describe)(DropButton).availableAt((0, _utils.getAvailableAtBadge)('DropButton')).description("A Button that controls a Drop. When opened, the Drop will contain\n      whatever is specified via `dropContent`. The Drop will control the focus\n      so that the contents behind it are not focusable. All properties of\n      Button can be passed through.\n      ").usage("import { DropButton } from 'grommet';\n<DropButton dropContent={...} />").intrinsicElement('button');
+  var DocumentedDropButton = (0, _reactDesc.describe)(DropButton).availableAt((0, _utils.getAvailableAtBadge)('DropButton')).description("A Button that controls a Drop. When opened, the Drop will contain\n      whatever is specified via `dropContent`. The Drop will control the focus\n      so that the contents behind it are not focusable. All properties and theme properties of\n      Button or Drop can be passed through.\n      ").usage("import { DropButton } from 'grommet';\n<DropButton dropContent={...} />").intrinsicElement('button');
   DocumentedDropButton.propTypes = _extends({}, _utils.genericProps, {
     disabled: _reactDesc.PropTypes.bool.description('Whether the button should be disabled.').defaultValue(false),
     dropAlign: _reactDesc.PropTypes.shape({

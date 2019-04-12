@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe, PropTypes } from 'react-desc';
 import { genericProps, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(DropButton) {
-  var DocumentedDropButton = describe(DropButton).availableAt(getAvailableAtBadge('DropButton')).description("A Button that controls a Drop. When opened, the Drop will contain\n      whatever is specified via `dropContent`. The Drop will control the focus\n      so that the contents behind it are not focusable. All properties of\n      Button can be passed through.\n      ").usage("import { DropButton } from 'grommet';\n<DropButton dropContent={...} />").intrinsicElement('button');
+  var DocumentedDropButton = describe(DropButton).availableAt(getAvailableAtBadge('DropButton')).description("A Button that controls a Drop. When opened, the Drop will contain\n      whatever is specified via `dropContent`. The Drop will control the focus\n      so that the contents behind it are not focusable. All properties and theme properties of\n      Button or Drop can be passed through.\n      ").usage("import { DropButton } from 'grommet';\n<DropButton dropContent={...} />").intrinsicElement('button');
   DocumentedDropButton.propTypes = _extends({}, genericProps, {
     disabled: PropTypes.bool.description('Whether the button should be disabled.').defaultValue(false),
     dropAlign: PropTypes.shape({
