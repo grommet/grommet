@@ -83,7 +83,8 @@ function (_Component) {
           name = _this$props.name,
           component = _this$props.component,
           required = _this$props.required,
-          rest = _objectWithoutPropertiesLoose(_this$props, ["name", "component", "required"]);
+          _onChange = _this$props.onChange,
+          rest = _objectWithoutPropertiesLoose(_this$props, ["name", "component", "required", "onChange"]);
 
       delete rest.className;
       var Input = component || _TextInput.TextInput;
@@ -93,7 +94,8 @@ function (_Component) {
           name: name,
           checked: value[name] || false,
           onChange: function onChange(event) {
-            return update(name, event.target.checked);
+            update(name, event.target.checked);
+            if (_onChange) _onChange(event);
           }
         }, rest));
       }
@@ -102,7 +104,8 @@ function (_Component) {
         name: name,
         value: value[name] || '',
         onChange: function onChange(event) {
-          return update(name, event.value || event.target.value);
+          update(name, event.value || event.target.value);
+          if (_onChange) _onChange(event);
         },
         plain: true,
         focusIndicator: false

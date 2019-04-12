@@ -86,6 +86,9 @@ var Example = function Example() {
     label: "Size",
     name: "size",
     component: _grommet.Select,
+    onChange: function onChange(event) {
+      return console.log(event);
+    },
     options: ['small', 'medium', 'large', 'xlarge']
   }), _react.default.createElement(_grommet.FormField, {
     label: "Comments",

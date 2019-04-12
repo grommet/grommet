@@ -80,6 +80,9 @@ var Example = function Example() {
     label: "Size",
     name: "size",
     component: Select,
+    onChange: function onChange(event) {
+      return console.log(event);
+    },
     options: ['small', 'medium', 'large', 'xlarge']
   }), React.createElement(FormField, {
     label: "Comments",
