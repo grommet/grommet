@@ -35,7 +35,7 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "onChange", function (event) {
-      var value = event.taget.value;
+      var value = event.target.value;
       var exp = new RegExp(value, 'i');
       var suggestions = allSuggestions.filter(function (s) {
         return exp.test(s);
