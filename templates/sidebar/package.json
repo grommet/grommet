@@ -25,7 +25,7 @@
     "webpack-dev-server": "^3.1.14"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot --port 3002",
+    "start": "webpack-dev-server --mode development --open --hot --port 3006",
     "build": "webpack --mode production"
   }
 }

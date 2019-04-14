@@ -4,7 +4,7 @@
   "description": "Boilerplate for grommet templates",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot --port 3001",
+    "start": "webpack-dev-server --mode development --open --hot --port 3007",
     "build": "webpack --mode production"
   },
   "author": "Shimrit Yacobi",
