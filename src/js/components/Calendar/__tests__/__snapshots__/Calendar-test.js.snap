@@ -139,7 +139,6 @@ exports[`Calendar date 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c13 {
@@ -1429,7 +1428,6 @@ exports[`Calendar dates 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c13 {
@@ -2719,7 +2717,6 @@ exports[`Calendar daysOfWeek 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c14 {
@@ -4076,7 +4073,6 @@ exports[`Calendar firstDayOfWeek 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c13 {
@@ -7549,7 +7545,6 @@ exports[`Calendar reference 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c13 {
@@ -8895,7 +8890,6 @@ exports[`Calendar size 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c13 {

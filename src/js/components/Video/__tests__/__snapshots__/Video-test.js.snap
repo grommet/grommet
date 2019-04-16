@@ -166,7 +166,6 @@ exports[`Video autoPlay renders 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c5:hover {
@@ -728,7 +727,6 @@ exports[`Video controls renders 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c5:hover {
@@ -772,7 +770,6 @@ exports[`Video controls renders 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c21:hover {
@@ -1429,7 +1426,6 @@ exports[`Video fit renders 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c5:hover {
@@ -2102,7 +2098,6 @@ exports[`Video loop renders 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c5:hover {
@@ -2605,7 +2600,6 @@ exports[`Video mute renders 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c5:hover {
@@ -3108,7 +3102,6 @@ exports[`Video renders 1`] = `
   padding: 0;
   text-align: inherit;
   line-height: 0;
-  padding: 12px;
 }
 
 .c5:hover {
