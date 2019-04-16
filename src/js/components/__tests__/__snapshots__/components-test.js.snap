@@ -393,11 +393,11 @@ zoomOut
   image: string,
   position: string,
   opacity: 
+    boolean
+    number
     weak
     medium
-    strong
-    boolean
-    number,
+    strong,
   repeat: 
     no-repeat
     repeat
@@ -2172,10 +2172,11 @@ one of top or bottom should be specified.",
 {
   color: string,
   opacity: 
+    boolean
+    number
     weak
     medium
     strong
-    boolean
 }",
         "name": "dropBackground",
       },

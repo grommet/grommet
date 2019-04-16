@@ -81,9 +81,9 @@ export const doc = Box => {
         image: PropTypes.string,
         position: PropTypes.string,
         opacity: PropTypes.oneOfType([
-          PropTypes.oneOf(['weak', 'medium', 'strong']),
           PropTypes.bool,
           PropTypes.number,
+          PropTypes.oneOf(['weak', 'medium', 'strong']),
         ]),
         repeat: PropTypes.oneOfType([
           PropTypes.oneOf(['no-repeat', 'repeat']),
