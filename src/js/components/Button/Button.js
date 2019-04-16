@@ -84,16 +84,29 @@ class Button extends Component {
     } = this.props;
     const { hover } = this.state;
 
-    let buttonIcon = icon;
     // only change color if user did not specify the color themselves...
-    if (icon && !icon.props.color) {
+    let buttonIcon = icon;
+    // nonprimary button icon styling with custom theme
+    if (!primary && icon && !icon.props.color) {
       buttonIcon = cloneElement(icon, {
-        color:
-          normalizeColor(theme.button.color || 'text', theme) ||
-          theme.global.colors.text[
-            isDarkBackground(this.props) ? 'dark' : 'light'
-          ],
+        color: normalizeColor(theme.button.color, theme),
       });
+    }
+    // primary button icon styling with custom theme
+    if (primary && icon && !icon.props.color) {
+      if (theme.button.color !== undefined) {
+        buttonIcon = cloneElement(icon, {
+          color: normalizeColor(theme.button.color, theme),
+        });
+      } else {
+        const { props } = this;
+        buttonIcon = cloneElement(icon, {
+          color:
+            theme.global.colors.text[
+              isDarkBackground(props) ? 'dark' : 'light'
+            ],
+        });
+      }
     }
 
     const domTag = !as && href ? 'a' : as;

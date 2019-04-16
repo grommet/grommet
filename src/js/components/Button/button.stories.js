@@ -1,10 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Add } from 'grommet-icons';
+import { Add, Home } from 'grommet-icons';
 
 import { Box, Button, Grommet, RoutedButton, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from '../../utils';
+
+const customIconLabel = {
+  button: {
+    color: 'pink',
+  },
+};
 
 const SimpleButton = props => (
   <Grommet theme={grommet}>
@@ -29,6 +35,15 @@ const IconLabelButton = () => (
     <Box align="center" pad="large" gap="small">
       <Button icon={<Add />} label="Add" onClick={() => {}} primary />
       <Button icon={<Add />} label="Add" onClick={() => {}} />
+    </Box>
+  </Grommet>
+);
+
+const CustomIconLabelButton = () => (
+  <Grommet theme={customIconLabel}>
+    <Box align="center" pad="large" gap="small">
+      <Button icon={<Home />} label="Home" onClick={() => {}} primary />
+      <Button icon={<Home />} label="Home" onClick={() => {}} />
     </Box>
   </Grommet>
 );
@@ -239,6 +254,7 @@ storiesOf('Button', module)
   .add('Primary', () => <SimpleButton primary />)
   .add('Icon', () => <IconButton />)
   .add('Icon Label', () => <IconLabelButton />)
+  .add('Custom Icon Label', () => <CustomIconLabelButton />)
   .add('Disabled', () => <SimpleButton disabled />)
   .add('Plain', () => <PlainButton />)
   .add('Anchor', () => <AnchorButton />)

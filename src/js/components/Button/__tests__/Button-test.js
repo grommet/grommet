@@ -273,3 +273,18 @@ test('Button icon color renders', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('Button icon color backround renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Button
+        background="grey"
+        icon={<svg />}
+        label="Test"
+        onClick={() => {}}
+      />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
