@@ -577,11 +577,11 @@ string
 
 **wrap**
 
-Whether children can wrap if they
-      can't all fit.
+Whether children can wrap if they can't all fit.
 
 ```
 boolean
+reverse
 ```
   
 ## Intrinsic element

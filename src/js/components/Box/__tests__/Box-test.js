@@ -44,8 +44,9 @@ describe('Box', () => {
   test('wrap', () => {
     const component = renderer.create(
       <Grommet>
-        <Box wrap />
-        <Box wrap={false} />
+        {[true, false, 'reverse'].map(wrap => (
+          <Box key={`${wrap}`} wrap={wrap} />
+        ))}
       </Grommet>,
     );
     const tree = component.toJSON();
