@@ -22,8 +22,9 @@ export const doc = Chart => {
       PropTypes.shape({
         color: PropTypes.string,
         opacity: PropTypes.oneOfType([
-          PropTypes.oneOf(['weak', 'medium', 'strong']),
           PropTypes.bool,
+          PropTypes.oneOf(['weak', 'medium', 'strong']),
+          PropTypes.string,
         ]),
       }),
     ])

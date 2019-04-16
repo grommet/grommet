@@ -792,10 +792,11 @@ string
   image: string,
   position: string,
   opacity: 
+    boolean
     weak
     medium
     strong
-    boolean,
+    string,
   repeat: 
     no-repeat
     repeat
@@ -2604,10 +2605,11 @@ string
 {
   color: string,
   opacity: 
+    boolean
     weak
     medium
     strong
-    boolean
+    string
 }
 \`\`\`
 
@@ -6556,10 +6558,11 @@ string
 {
   color: string,
   opacity: 
+    boolean
     weak
     medium
     strong
-    boolean
+    string
 }
 \`\`\`
 

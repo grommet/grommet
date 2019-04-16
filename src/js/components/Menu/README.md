@@ -158,10 +158,11 @@ string
 {
   color: string,
   opacity: 
+    boolean
     weak
     medium
     strong
-    boolean
+    string
 }
 ```
 
