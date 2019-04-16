@@ -705,9 +705,9 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether children can wrap if they
-      can't all fit.",
-        "format": "boolean",
+        "description": "Whether children can wrap if they can't all fit.",
+        "format": "boolean
+reverse",
         "name": "wrap",
       },
     ],

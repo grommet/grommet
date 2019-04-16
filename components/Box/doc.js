@@ -81,7 +81,7 @@ var doc = function doc(Box) {
     tag: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func]).description("The DOM tag to use for the element. NOTE: This is deprecated in favor\nof indicating the DOM tag via the 'as' property."),
     as: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.func]).description('The DOM tag or react component to use for the element.').defaultValue('div'),
     width: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']), _reactDesc.PropTypes.string]).description('A fixed width.'),
-    wrap: _reactDesc.PropTypes.bool.description("Whether children can wrap if they\n      can't all fit.").defaultValue(false)
+    wrap: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.oneOf(['reverse'])]).description("Whether children can wrap if they can't all fit.").defaultValue(false)
   });
   return DocumentedBox;
 };

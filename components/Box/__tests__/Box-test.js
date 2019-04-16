@@ -46,10 +46,11 @@ describe('Box', function () {
     expect(tree).toMatchSnapshot();
   });
   test('wrap', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Box, {
-      wrap: true
-    }), _react.default.createElement(_.Box, {
-      wrap: false
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, [true, false, 'reverse'].map(function (wrap) {
+      return _react.default.createElement(_.Box, {
+        key: "" + wrap,
+        wrap: wrap
+      });
     })));
 
     var tree = component.toJSON();

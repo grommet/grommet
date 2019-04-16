@@ -99,7 +99,13 @@ var JUSTIFY_MAP = {
 var justifyStyle = css(["justify-content:", ";"], function (props) {
   return JUSTIFY_MAP[props.justify];
 });
-var wrapStyle = 'flex-wrap: wrap;';
+var WRAP_MAP = {
+  true: 'wrap',
+  reverse: 'wrap-reverse'
+};
+var wrapStyle = css(["flex-wrap:", ";"], function (props) {
+  return WRAP_MAP[props.wrapProp];
+});
 
 var borderStyle = function borderStyle(data, responsive, theme) {
   var styles = [];
