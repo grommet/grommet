@@ -83,6 +83,7 @@ export const doc = Box => {
         opacity: PropTypes.oneOfType([
           PropTypes.oneOf(['weak', 'medium', 'strong']),
           PropTypes.bool,
+          PropTypes.number,
         ]),
         repeat: PropTypes.oneOfType([
           PropTypes.oneOf(['no-repeat', 'repeat']),

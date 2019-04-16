@@ -161,6 +161,13 @@ describe('Box', () => {
             repeat: 'repeat',
           }}
         />
+        <Box
+          background={{
+            image:
+              'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
+            opacity: 0.5,
+          }}
+        />
       </Grommet>,
     );
     const tree = component.toJSON();
