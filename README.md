@@ -1,56 +1,85 @@
 # Grommet: focus on the essential experience
 
-[![PRs Welcome](https://img.shields.io/badge/pr's-welcome-7d4cdb.svg)](https://github.com/grommet/grommet/blob/master/CONTRIBUTING.md)
-[![slack](https://img.shields.io/badge/join%20the%20community-slack-fd6fff.svg)](http://slackin.grommet.io)
-[![follow](https://img.shields.io/twitter/follow/grommet_io.svg?label=follow%20&style=social)](https://twitter.com/grommet_io)
-[![blogs](https://img.shields.io/badge/view%20blogs%20on-medium-000000.svg)](https://medium.com/grommet-io)
-[![npm package](https://img.shields.io/npm/v/grommet.svg?color=ffca58)](https://www.npmjs.com/package/grommet)
-[![npm downloads](https://img.shields.io/npm/dm/grommet.svg?color=3d138d)](https://www.npmjs.com/package/grommet)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![PRs Welcome](https://img.shields.io/badge/pr's-welcome-7d4cdb.svg)][contributing]
+[![slack](https://img.shields.io/badge/join%20the%20community-slack-fd6fff.svg)][slack]
+[![follow](https://img.shields.io/twitter/follow/grommet_io.svg?label=follow%20&style=social)][twitter]
+[![blogs](https://img.shields.io/badge/view%20blogs%20on-medium-000000.svg)][medium]
+[![npm package](https://img.shields.io/npm/v/grommet.svg?color=ffca58)][npm]
+[![npm downloads](https://img.shields.io/npm/dm/grommet.svg?color=3d138d)][npm]
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)][prettier]
 
 <img align="right" height="260" src="https://v2.grommet.io/img/stak-hurrah.svg">
 
-### Documentation
+## Documentation
 
-Visit the [Grommet v2](https://v2.grommet.io/) website for more information.
+Visit the [Grommet v2] website for more information.
 
-### Support / Contributing
+## Support / Contributing
 
-Before opening an issue or pull request, please read the [Contributing](https://github.com/grommet/grommet/blob/master/CONTRIBUTING.md) guide.
+Before opening an issue or pull request, please read the [Contributing] guide.
 
-### Install
+## Install
 
 You can install Grommet using either of the methods below.
 
-For NPM users:
+For npm users:
 
-```
+```shell
   $ npm install grommet styled-components --save
 ```
 
-Detailed instructions are on the [Get Started](https://v2.grommet.io/use) page.
+For Yarn users:
 
-### Explore
-
-1. [Storybook](https://storybook.grommet.io) examples per component, you can see them by running:
-```
-  $ npm run storybook
+```shell
+  $ yarn add grommet styled-components
 ```
 
-2. Basic [code-sandbox playgrounds](https://codesandbox.io/s/github/grommet/grommet-sandbox) for each component
+There are more detailed instructions in the [Grommet Starter] app tutorial for
+new apps. For incorporating Grommet into an existing app, see the [Existing App]
+version.
 
-3. [Templates, patterns and starters](https://codesandbox.io/u/grommetux/sandboxes) feel free to share with us more pattern ideas on [slack](http://slackin.grommet.io)
+## Explore
 
-4. End-2-End project examples from our community on [#i-made-this](http://slackin.grommet.io) channel
+1. [Storybook] examples per component, you can create them locally by running:
 
-5. Read more from the Grommet team on [Medium](https://medium.com/grommet-io)
+   ```shell
+     $ npm run storybook
+   ```
 
-### Release History
+   or
 
-See the [Change Log](https://github.com/grommet/grommet/wiki/Change-Log).
+   ```shell
+     $ yarn storybook
+   ```
 
-### Tools Behind Grommet
+1. Basic [code-sandbox playgrounds][playground] for each component.
+1. [Templates, patterns, and starters][sandboxes]: feel free to share with us
+   more pattern ideas on [Slack].
+1. End-to-end project examples from our community in the
+   [#i-made-this Slack channel][slack].
+1. Read more from the Grommet team on [Medium].
 
-Grommet is produced using this great tool
+## Release History
 
-- [Circle CI](https://circleci.com/gh/grommet/grommet/) for continuous integration
+See the [Change Log].
+
+## Tools Behind Grommet
+
+Grommet is produced using this great tool:
+
+- [Circle CI] for continuous integration.
+
+[change log]: https://github.com/grommet/grommet/wiki/Change-Log
+[circle ci]: https://circleci.com/gh/grommet/grommet/
+[contributing]: CONTRIBUTING.md
+[existing app]: https://github.com/grommet/grommet-starter-existing-app
+[grommet starter]: https://github.com/grommet/grommet-starter-new-app
+[grommet v2]: https://v2.grommet.io/
+[medium]: https://medium.com/grommet-io
+[npm]: https://www.npmjs.com/package/grommet
+[playground]: https://codesandbox.io/s/github/grommet/grommet-sandbox
+[prettier]: https://github.com/prettier/prettier
+[sandboxes]: https://codesandbox.io/u/grommetux/sandboxes
+[slack]: http://slackin.grommet.io
+[storybook]: https://storybook.grommet.io
+[twitter]: https://twitter.com/grommet_io
