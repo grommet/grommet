@@ -6,8 +6,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Grommet, MaskedInput } from 'grommet';
+import { Box, Button, Grommet, Text, Calendar, MaskedInput, DropButton } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { Schedule } from "grommet-icons/es6/icons/Schedule";
 
 var TimeMaskedInput =
 /*#__PURE__*/
@@ -289,6 +290,146 @@ function (_Component4) {
   return IPv4MaskedInput;
 }(Component);
 
+var DropContent = function DropContent(props) {
+  var date = props.date,
+      onSelect = props.onSelect,
+      time = props.time,
+      onClose = props.onClose,
+      onChange = props.onChange;
+  return React.createElement(Box, {
+    align: "center"
+  }, React.createElement(Calendar, {
+    date: date,
+    onSelect: onSelect,
+    showAdjacentDays: false
+  }), React.createElement(Box, {
+    width: "small",
+    align: "center",
+    margin: {
+      bottom: 'small'
+    }
+  }, React.createElement(MaskedInput, {
+    mask: [{
+      length: [1, 2],
+      options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+      regexp: /^1[1-2]$|^[0-9]$/,
+      placeholder: 'hh'
+    }, {
+      fixed: ':'
+    }, {
+      length: 2,
+      options: ['00', '15', '30', '45'],
+      regexp: /^[0-5][0-9]$|^[0-9]$/,
+      placeholder: 'mm'
+    }, {
+      fixed: ' '
+    }, {
+      length: 2,
+      options: ['am', 'pm'],
+      regexp: /^[ap]m$|^[AP]M$|^[aApP]$/,
+      placeholder: 'ap'
+    }],
+    value: time,
+    name: "maskedInput",
+    onChange: onChange
+  })), React.createElement(Button, {
+    margin: "small",
+    label: "Close",
+    onClick: onClose
+  }));
+};
+
+var TimeMaskedInputInDropButton =
+/*#__PURE__*/
+function (_Component5) {
+  _inheritsLoose(TimeMaskedInputInDropButton, _Component5);
+
+  function TimeMaskedInputInDropButton() {
+    var _this5;
+
+    for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+      args[_key5] = arguments[_key5];
+    }
+
+    _this5 = _Component5.call.apply(_Component5, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_this5), "state", {
+      date: undefined,
+      time: ''
+    });
+
+    _defineProperty(_assertThisInitialized(_this5), "onChange", function (event) {
+      _this5.setState({
+        time: event.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this5), "onClose", function () {
+      _this5.setState({
+        open: false
+      });
+
+      setTimeout(function () {
+        return _this5.setState({
+          open: undefined
+        });
+      }, 1);
+    });
+
+    _defineProperty(_assertThisInitialized(_this5), "onSelect", function (date) {
+      return _this5.setState({
+        date: date,
+        open: false
+      });
+    });
+
+    return _this5;
+  }
+
+  var _proto5 = TimeMaskedInputInDropButton.prototype;
+
+  _proto5.render = function render() {
+    var _this6 = this;
+
+    var _this$state = this.state,
+        date = _this$state.date,
+        open = _this$state.open,
+        time = _this$state.time;
+    return React.createElement(Grommet, {
+      theme: grommet
+    }, React.createElement(Box, {
+      align: "center",
+      pad: "large"
+    }, React.createElement(DropButton, {
+      open: open,
+      onClose: function onClose() {
+        return _this6.setState({
+          open: false
+        });
+      },
+      onOpen: function onOpen() {
+        return _this6.setState({
+          open: true
+        });
+      },
+      dropContent: React.createElement(DropContent, {
+        onSelect: this.onSelect,
+        date: date,
+        onChange: this.onChange,
+        time: time,
+        onClose: this.onClose
+      })
+    }, React.createElement(Box, {
+      direction: "row",
+      gap: "medium",
+      align: "center",
+      pad: "small"
+    }, React.createElement(Text, null, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), React.createElement(Schedule, null)))));
+  };
+
+  return TimeMaskedInputInDropButton;
+}(Component);
+
 storiesOf('MaskedInput', module).add('Time', function () {
   return React.createElement(TimeMaskedInput, null);
 }).add('Phone', function () {
@@ -297,4 +438,6 @@ storiesOf('MaskedInput', module).add('Time', function () {
   return React.createElement(EmailMaskedInput, null);
 }).add('IPv4 Address', function () {
   return React.createElement(IPv4MaskedInput, null);
+}).add('Inside Drop Button', function () {
+  return React.createElement(TimeMaskedInputInDropButton, null);
 });

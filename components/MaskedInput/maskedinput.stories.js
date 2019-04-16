@@ -8,6 +8,8 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
+var _grommetIcons = require("grommet-icons");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
@@ -296,6 +298,146 @@ function (_Component4) {
   return IPv4MaskedInput;
 }(_react.Component);
 
+var DropContent = function DropContent(props) {
+  var date = props.date,
+      onSelect = props.onSelect,
+      time = props.time,
+      onClose = props.onClose,
+      onChange = props.onChange;
+  return _react.default.createElement(_grommet.Box, {
+    align: "center"
+  }, _react.default.createElement(_grommet.Calendar, {
+    date: date,
+    onSelect: onSelect,
+    showAdjacentDays: false
+  }), _react.default.createElement(_grommet.Box, {
+    width: "small",
+    align: "center",
+    margin: {
+      bottom: 'small'
+    }
+  }, _react.default.createElement(_grommet.MaskedInput, {
+    mask: [{
+      length: [1, 2],
+      options: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+      regexp: /^1[1-2]$|^[0-9]$/,
+      placeholder: 'hh'
+    }, {
+      fixed: ':'
+    }, {
+      length: 2,
+      options: ['00', '15', '30', '45'],
+      regexp: /^[0-5][0-9]$|^[0-9]$/,
+      placeholder: 'mm'
+    }, {
+      fixed: ' '
+    }, {
+      length: 2,
+      options: ['am', 'pm'],
+      regexp: /^[ap]m$|^[AP]M$|^[aApP]$/,
+      placeholder: 'ap'
+    }],
+    value: time,
+    name: "maskedInput",
+    onChange: onChange
+  })), _react.default.createElement(_grommet.Button, {
+    margin: "small",
+    label: "Close",
+    onClick: onClose
+  }));
+};
+
+var TimeMaskedInputInDropButton =
+/*#__PURE__*/
+function (_Component5) {
+  _inheritsLoose(TimeMaskedInputInDropButton, _Component5);
+
+  function TimeMaskedInputInDropButton() {
+    var _this5;
+
+    for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {
+      args[_key5] = arguments[_key5];
+    }
+
+    _this5 = _Component5.call.apply(_Component5, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_this5), "state", {
+      date: undefined,
+      time: ''
+    });
+
+    _defineProperty(_assertThisInitialized(_this5), "onChange", function (event) {
+      _this5.setState({
+        time: event.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this5), "onClose", function () {
+      _this5.setState({
+        open: false
+      });
+
+      setTimeout(function () {
+        return _this5.setState({
+          open: undefined
+        });
+      }, 1);
+    });
+
+    _defineProperty(_assertThisInitialized(_this5), "onSelect", function (date) {
+      return _this5.setState({
+        date: date,
+        open: false
+      });
+    });
+
+    return _this5;
+  }
+
+  var _proto5 = TimeMaskedInputInDropButton.prototype;
+
+  _proto5.render = function render() {
+    var _this6 = this;
+
+    var _this$state = this.state,
+        date = _this$state.date,
+        open = _this$state.open,
+        time = _this$state.time;
+    return _react.default.createElement(_grommet.Grommet, {
+      theme: _themes.grommet
+    }, _react.default.createElement(_grommet.Box, {
+      align: "center",
+      pad: "large"
+    }, _react.default.createElement(_grommet.DropButton, {
+      open: open,
+      onClose: function onClose() {
+        return _this6.setState({
+          open: false
+        });
+      },
+      onOpen: function onOpen() {
+        return _this6.setState({
+          open: true
+        });
+      },
+      dropContent: _react.default.createElement(DropContent, {
+        onSelect: this.onSelect,
+        date: date,
+        onChange: this.onChange,
+        time: time,
+        onClose: this.onClose
+      })
+    }, _react.default.createElement(_grommet.Box, {
+      direction: "row",
+      gap: "medium",
+      align: "center",
+      pad: "small"
+    }, _react.default.createElement(_grommet.Text, null, date ? new Date(date).toLocaleDateString() + " " + time : 'Select date & time'), _react.default.createElement(_grommetIcons.Schedule, null)))));
+  };
+
+  return TimeMaskedInputInDropButton;
+}(_react.Component);
+
 (0, _react2.storiesOf)('MaskedInput', module).add('Time', function () {
   return _react.default.createElement(TimeMaskedInput, null);
 }).add('Phone', function () {
@@ -304,4 +446,6 @@ function (_Component4) {
   return _react.default.createElement(EmailMaskedInput, null);
 }).add('IPv4 Address', function () {
   return _react.default.createElement(IPv4MaskedInput, null);
+}).add('Inside Drop Button', function () {
+  return _react.default.createElement(TimeMaskedInputInDropButton, null);
 });
