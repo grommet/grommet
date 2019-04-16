@@ -227,7 +227,8 @@ string
     weak
     medium
     strong
-    boolean,
+    boolean
+    number,
   repeat: 
     no-repeat
     repeat

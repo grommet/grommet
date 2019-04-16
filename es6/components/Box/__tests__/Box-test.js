@@ -149,6 +149,11 @@ describe('Box', function () {
         image: 'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
         repeat: 'repeat'
       }
+    }), React.createElement(Box, {
+      background: {
+        image: 'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
+        opacity: 0.5
+      }
     })));
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
