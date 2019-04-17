@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.6.5",
+  "version": "2.6.6",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
