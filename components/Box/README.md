@@ -224,11 +224,11 @@ string
   image: string,
   position: string,
   opacity: 
+    boolean
+    number
     weak
     medium
-    strong
-    boolean
-    number,
+    strong,
   repeat: 
     no-repeat
     repeat

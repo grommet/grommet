@@ -45,7 +45,10 @@ var CustomMenu = function CustomMenu() {
   }, _react.default.createElement(_grommet.Box, {
     align: "center",
     pad: "large",
-    background: "dark-2"
+    background: {
+      color: 'dark-2',
+      opacity: 0.7
+    }
   }, _react.default.createElement(_grommet.Menu, {
     plain: true,
     items: [{

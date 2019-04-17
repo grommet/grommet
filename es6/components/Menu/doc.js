@@ -19,7 +19,7 @@ export var doc = function doc(Menu) {
     }),
     dropBackground: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({
       color: PropTypes.string,
-      opacity: PropTypes.oneOfType([PropTypes.oneOf(['weak', 'medium', 'strong']), PropTypes.bool])
+      opacity: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.oneOf(['weak', 'medium', 'strong'])])
     })]).description('Background color when drop is active'),
     dropTarget: PropTypes.object.description("Target where the drop will be aligned to. This should be\n      a React reference. Typically, this is not required as the drop will be\n      aligned to the Menu itself by default."),
     dropProps: PropTypes.object.description('Any valid Drop prop.'),

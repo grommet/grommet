@@ -37,7 +37,10 @@ var CustomMenu = function CustomMenu() {
   }, React.createElement(Box, {
     align: "center",
     pad: "large",
-    background: "dark-2"
+    background: {
+      color: 'dark-2',
+      opacity: 0.7
+    }
   }, React.createElement(Menu, {
     plain: true,
     items: [{
