@@ -1475,7 +1475,7 @@ boolean
 
 **color**
 
-Fill color for primary, border color otherwise.
+Fill color for primary, label color for plain, border color otherwise.
 
 \`\`\`
 string
