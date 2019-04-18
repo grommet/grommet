@@ -213,7 +213,7 @@ export const themeDoc = {
   },
   'select.icons.margin': {
     description: 'The margin used for Select icons.',
-    type: 'object',
+    type: 'string | object',
     defaultValue: undefined,
   },
   'select.icons.color': {

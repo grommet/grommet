@@ -467,7 +467,7 @@ undefined
 
 **select.icons.margin**
 
-The margin used for Select icons. Expects `object`.
+The margin used for Select icons. Expects `string | object`.
 
 Defaults to
 
