@@ -693,6 +693,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       icons: {
         // color: { dark: undefined, light: undefined },
+        margin: { horizontal: 'small' },
         down: FormDown,
       },
       options: {

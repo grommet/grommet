@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { isValidElement, Component } from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 
@@ -219,11 +219,15 @@ class Select extends Component {
             </Box>
             {SelectIcon && (
               <Box
-                margin={{ horizontal: 'small' }}
+                margin={theme.select.icons.margin}
                 flex={false}
                 style={{ minWidth: 'auto' }}
               >
-                <SelectIcon color={iconColor} size={size} />
+                {isValidElement(SelectIcon) ? (
+                  SelectIcon
+                ) : (
+                  <SelectIcon color={iconColor} size={size} />
+                )}
               </Box>
             )}
           </Box>
