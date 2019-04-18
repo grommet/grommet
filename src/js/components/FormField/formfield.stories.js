@@ -62,6 +62,14 @@ const FormFieldTextArea = props => (
   </Grommet>
 );
 
+const FormFieldTextAreaObject = props => (
+  <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <FormField label="Label" component={TextArea} {...props} />
+    </Box>
+  </Grommet>
+);
+
 const FormFieldCheckBox = props => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
@@ -168,6 +176,7 @@ const CustomFormField = () => (
 storiesOf('FormField', module)
   .add('TextInput', () => <FormFieldTextInput />)
   .add('TextArea', () => <FormFieldTextArea />)
+  .add('TextAreaObject', () => <FormFieldTextAreaObject />)
   .add('Select', () => <FormFieldSelect />)
   .add('CheckBox', () => <FormFieldCheckBox />)
   .add('Toggle', () => <FormFieldToggle />)
