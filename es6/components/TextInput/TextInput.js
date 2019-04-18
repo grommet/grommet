@@ -195,20 +195,25 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onClickSuggestion", function (suggestion) {
+    _defineProperty(_assertThisInitialized(_this), "onClickSuggestion", function (suggestion, event) {
       var _this$props5 = _this.props,
           forwardRef = _this$props5.forwardRef,
           onSelect = _this$props5.onSelect;
 
       _this.setState({
-        showDrop: false
+        showDrop: false,
+        activeSuggestionIndex: -1
       });
 
       if (onSelect) {
-        onSelect({
-          target: (forwardRef || _this.inputRef).current,
-          suggestion: suggestion
-        });
+        // TODO: needed for backwards compatibility sake
+
+        /* eslint-disable no-param-reassign */
+        event.suggestion = suggestion;
+        event.target = (forwardRef || _this.inputRef).current;
+        /* eslint-enable no-param-reassign */
+
+        onSelect(event);
       }
     });
 
@@ -220,19 +225,22 @@ function (_Component) {
       var activeSuggestionIndex = _this.state.activeSuggestionIndex;
 
       _this.setState({
-        showDrop: false
+        showDrop: false,
+        activeSuggestionIndex: -1
       });
 
       if (activeSuggestionIndex >= 0) {
         event.preventDefault(); // prevent submitting forms
+        // TODO: needed for backwards compatibility sake
 
-        var suggestion = suggestions[activeSuggestionIndex];
+        /* eslint-disable no-param-reassign */
+
+        event.suggestion = suggestions[activeSuggestionIndex];
+        event.target = (forwardRef || _this.inputRef).current;
+        /* eslint-enable no-param-reassign */
 
         if (onSelect) {
-          onSelect({
-            target: (forwardRef || _this.inputRef).current,
-            suggestion: suggestion
-          });
+          onSelect(event);
         }
       }
     });
@@ -307,8 +315,8 @@ function (_Component) {
           active: activeSuggestionIndex === index || selectedSuggestionIndex === index,
           fill: true,
           hoverIndicator: "background",
-          onClick: function onClick() {
-            return _this.onClickSuggestion(suggestion);
+          onClick: function onClick(event) {
+            _this.onClickSuggestion(suggestion, event);
           }
         }, plain ? renderLabel(suggestion) : React.createElement(Box, {
           align: "start",
