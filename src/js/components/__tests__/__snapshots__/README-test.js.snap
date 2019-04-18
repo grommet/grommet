@@ -8164,6 +8164,7 @@ A custom icon to be used when rendering the select. You can use false to not ren
 \`\`\`
 boolean
 function
+node
 \`\`\`
 
 **labelKey**
@@ -8393,6 +8394,16 @@ undefined
 **select.control.extend**
 
 Any additional style for the control of the Select component. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.icons.margin**
+
+The margin used for Select icons. Expects \`object\`.
 
 Defaults to
 
