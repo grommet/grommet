@@ -38,6 +38,19 @@ const Colored = props => (
         {...props}
       />
       <Button primary color="#777" label="#777" onClick={() => {}} {...props} />
+      <Button
+        plain
+        color="red"
+        label="plain red"
+        onClick={() => {}}
+        {...props}
+      />
+      <Button
+        plain
+        label="plain inherit"
+        onClick={() => {}}
+        {...props}
+      />
     </Box>
   </Grommet>
 );
