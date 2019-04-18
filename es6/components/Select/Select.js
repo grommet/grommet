@@ -8,7 +8,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-import React, { Component } from 'react';
+import React, { isValidElement, Component } from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 import { controlBorderStyle, normalizeColor } from '../../utils';
@@ -237,14 +237,12 @@ function (_Component) {
       size: size,
       onClick: disabled === true ? undefined : this.onOpen
     }))), SelectIcon && React.createElement(Box, {
-      margin: {
-        horizontal: 'small'
-      },
+      margin: theme.select.icons.margin,
       flex: false,
       style: {
         minWidth: 'auto'
       }
-    }, React.createElement(SelectIcon, {
+    }, isValidElement(SelectIcon) ? SelectIcon : React.createElement(SelectIcon, {
       color: iconColor,
       size: size
     })))));

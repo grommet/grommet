@@ -765,6 +765,9 @@ var generate = function generate(baseSpacing, scale) {
       },
       icons: {
         // color: { dark: undefined, light: undefined },
+        margin: {
+          horizontal: 'small'
+        },
         down: _FormDown.FormDown
       },
       options: {

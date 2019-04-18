@@ -987,6 +987,8 @@ storiesOf('Select', module).add('Simple', function () {
   return React.createElement(CustomSelectValue, null);
 }).add('Custom Icon', function () {
   return React.createElement(CustomSelectValue, {
-    icon: CaretDown
+    icon: React.createElement(Box, null, React.createElement(CaretDown, {
+      color: "black"
+    }))
   });
 });

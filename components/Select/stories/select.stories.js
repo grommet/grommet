@@ -1001,6 +1001,8 @@ function (_Component9) {
   return _react.default.createElement(CustomSelectValue, null);
 }).add('Custom Icon', function () {
   return _react.default.createElement(CustomSelectValue, {
-    icon: _grommetIcons.CaretDown
+    icon: _react.default.createElement(_grommet.Box, null, _react.default.createElement(_grommetIcons.CaretDown, {
+      color: "black"
+    }))
   });
 });

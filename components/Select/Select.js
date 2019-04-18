@@ -255,14 +255,12 @@ function (_Component) {
       size: size,
       onClick: disabled === true ? undefined : this.onOpen
     }))), SelectIcon && _react.default.createElement(_Box.Box, {
-      margin: {
-        horizontal: 'small'
-      },
+      margin: theme.select.icons.margin,
       flex: false,
       style: {
         minWidth: 'auto'
       }
-    }, _react.default.createElement(SelectIcon, {
+    }, (0, _react.isValidElement)(SelectIcon) ? SelectIcon : _react.default.createElement(SelectIcon, {
       color: iconColor,
       size: size
     })))));
