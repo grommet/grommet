@@ -18,7 +18,7 @@ export const doc = FormField => {
 
   DocumentedFormField.propTypes = {
     component: PropTypes.func.description(
-      `The component to insert in the FormField. Grommet will add update the form values when this field changes`,
+      `The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component.`,
     ),
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
       'Any error text describing issues with the field',
@@ -57,4 +57,78 @@ export const doc = FormField => {
   };
 
   return DocumentedFormField;
+};
+
+export const themeDoc = {
+  'formField.border.color': {
+    description: 'The border color.',
+    type: "string | { 'dark': string, 'light': string }",
+    defaultValue: 'border',
+  },
+  'formField.border.error.color': {
+    description: 'The border color of the error.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: "{ dark: 'white', light: 'status-critical' },",
+  },
+  'formField.border.position': {
+    description: 'The border position.',
+    type: 'string',
+    defaultValue: 'inner',
+  },
+  'formField.border.side': {
+    description: 'The border side of the FormField.',
+    type: 'string',
+    defaultValue: 'bottom',
+  },
+  'formField.content.pad': {
+    description: 'The pad of the FormField content.',
+    type: 'object',
+    defaultValue: "{ horizontal: 'small', bottom: 'small' }",
+  },
+  'formField.error.color': {
+    description: 'The color of the FormField error.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: "{ dark: 'status-critical', light: 'status-critical' }",
+  },
+  'formField.error.margin': {
+    description: 'The margin used for the FormField error.',
+    type: 'string | object',
+    defaultValue: "{ vertical: 'xsmall', horizontal: 'small' }",
+  },
+  'formField.extend': {
+    description: 'Any additional style for FormField.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'formField.help.color': {
+    description: 'The color of the FormField help.',
+    type: "string | {'dark': string, 'light': string}",
+    defaultValue: "{ dark: 'dark-3', light: 'dark-3' }",
+  },
+  'formField.help.margin': {
+    description: 'The margin for the FormField help.',
+    type: 'string | object',
+    defaultValue: "{ left: 'small' }",
+  },
+  'formField.label.margin': {
+    description: 'The margin for the FormField label.',
+    type: 'string | object',
+    defaultValue: "{ vertical: 'xsmall', horizontal: 'small' }",
+  },
+  'formField.margin': {
+    description: 'The margin of FormField.',
+    type: 'string | object',
+    defaultValue: "{ bottom: 'small' }",
+  },
+  'global.borderSize': {
+    description: 'The possible border sizes for FormField.',
+    type: 'object',
+    defaultValue: `{
+  xsmall: '1px',
+  small: '2px',
+  medium: '4px',
+  large: '12px',
+  xlarge: '24px,
+}`,
+  },
 };

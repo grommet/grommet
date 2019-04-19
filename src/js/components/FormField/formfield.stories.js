@@ -22,7 +22,7 @@ class FormFieldTextInput extends Component {
 
   onChange = event => {
     const {
-      taget: { value },
+      target: { value },
     } = event;
     const exp = new RegExp(value, 'i');
     const suggestions = allSuggestions.filter(s => exp.test(s));

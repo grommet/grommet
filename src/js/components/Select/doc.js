@@ -78,6 +78,13 @@ export const doc = Select => {
     focusIndicator: PropTypes.bool.description(
       "Whether when 'plain' it should receive a focus outline.",
     ),
+    icon: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.func,
+      PropTypes.node,
+    ]).description(
+      'A custom icon to be used when rendering the select. You can use false to not render an icon at all.',
+    ),
     labelKey: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.func,
@@ -202,6 +209,11 @@ export const themeDoc = {
     description:
       'Any additional style for the control of the Select component.',
     type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'select.icons.margin': {
+    description: 'The margin used for Select icons.',
+    type: 'string | object',
     defaultValue: undefined,
   },
   'select.icons.color': {

@@ -76,10 +76,16 @@ jobs:
           at: ~/grommet-ci
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/grommet-ci/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/grommet-ci/dist/.npmrc
+      - run:
+          name: Add npmignore
+          command: echo "**/__tests__/**" > ~/grommet-ci/dist/.npmignore
       - run:
           name: Publish package
-          command: npm publish
+          command: cd dist && npm publish
+      - run:
+          name: Validate publish
+          command: cd ~/grommet-ci/templates/grommet-v2-template && yarn install && yarn build
 workflows:
   build_test:
     jobs:

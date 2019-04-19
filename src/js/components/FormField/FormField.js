@@ -34,22 +34,37 @@ const FormFieldBox = styled(Box)`
 class FormFieldContent extends Component {
   componentDidMount() {
     const { checked, context, name, value } = this.props;
-    if (context && context.value[name] === undefined
-      && (value !== undefined || checked !== undefined)) {
+    if (
+      context &&
+      context.value[name] === undefined &&
+      (value !== undefined || checked !== undefined)
+    ) {
       context.update(name, value !== undefined ? value : checked);
     }
   }
 
   renderChildren = (value, update) => {
-    const { name, checked, component, required, value: valueProp, ...rest } = this.props;
+    const {
+      name,
+      checked,
+      component,
+      required,
+      value: valueProp,
+      onChange,
+      ...rest
+    } = this.props;
+
     delete rest.className;
     const Input = component || TextInput;
     if (Input === CheckBox) {
       return (
         <Input
           name={name}
-          checked={value[name] !== undefined ? value[name] : (checked || false)}
-          onChange={event => update(name, event.target.checked)}
+          checked={value[name] !== undefined ? value[name] : checked || false}
+          onChange={event => {
+            update(name, event.target.checked);
+            if (onChange) onChange(event);
+          }}
           {...rest}
         />
       );
@@ -57,8 +72,11 @@ class FormFieldContent extends Component {
     return (
       <Input
         name={name}
-        value={value[name] !== undefined ? value[name] : (valueProp || '')}
-        onChange={event => update(name, event.value || event.target.value || '')}
+        value={value[name] !== undefined ? value[name] : valueProp || ''}
+        onChange={event => {
+          update(name, event.value || event.target.value || '');
+          if (onChange) onChange(event);
+        }}
         plain
         focusIndicator={false}
         {...rest}
@@ -149,9 +167,7 @@ class FormFieldContent extends Component {
 
       abut =
         border.position === 'outer' &&
-        (border.side === 'all' ||
-          border.side === 'horizontal' ||
-          !border.side);
+        (border.side === 'all' || border.side === 'horizontal' || !border.side);
       if (abut) {
         // marginBottom is set to overlap adjacent fields
         let marginBottom = '-1px';
@@ -190,9 +206,7 @@ class FormFieldContent extends Component {
             {help && (
               <Text
                 {...formField.help}
-                color={
-                  formField.help.color[theme.dark ? 'dark' : 'light']
-                }
+                color={formField.help.color[theme.dark ? 'dark' : 'light']}
               >
                 {help}
               </Text>

@@ -213,6 +213,12 @@ exports[`DataTable aggregate 1`] = `
   }
 }
 
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c2 {
+    table-layout: fixed;
+  }
+}
+
 <div
   className="c0"
 >
@@ -505,6 +511,12 @@ exports[`DataTable basic 1`] = `
   }
 }
 
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c2 {
+    table-layout: fixed;
+  }
+}
+
 <div
   className="c0"
 >
@@ -642,6 +654,12 @@ exports[`DataTable empty 1`] = `
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c2 {
+    table-layout: fixed;
+  }
 }
 
 <div
@@ -874,6 +892,12 @@ exports[`DataTable footer 1`] = `
   .c11 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c2 {
+    table-layout: fixed;
   }
 }
 
@@ -1313,6 +1337,12 @@ exports[`DataTable groupBy 1`] = `
   }
 }
 
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c2 {
+    table-layout: fixed;
+  }
+}
+
 <div
   class="c0"
 >
@@ -1496,7 +1526,7 @@ exports[`DataTable groupBy 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <table
-    class="StyledDataTable-xrlyjm-0 kTrXKK StyledTable-sc-1m3u5g-6 ksaVzW"
+    class="StyledDataTable-xrlyjm-0 kTrXKK StyledTable-sc-1m3u5g-6 fGUmP"
   >
     <thead
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 bAIczD StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
@@ -1538,7 +1568,7 @@ exports[`DataTable groupBy 2`] = `
             class="StyledBox-sc-13pk1d4-0 folWQp"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="StyledText-sc-1sadyjn-0 fSnogx"
             >
               A
             </span>
@@ -1552,7 +1582,7 @@ exports[`DataTable groupBy 2`] = `
             class="StyledBox-sc-13pk1d4-0 folWQp"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="StyledText-sc-1sadyjn-0 fSnogx"
             >
               B
             </span>
@@ -1600,7 +1630,7 @@ exports[`DataTable groupBy 2`] = `
             class="StyledBox-sc-13pk1d4-0 eAAZJM"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="StyledText-sc-1sadyjn-0 fSnogx"
             >
               one
             </span>
@@ -1651,7 +1681,7 @@ exports[`DataTable groupBy 2`] = `
             class="StyledBox-sc-13pk1d4-0 eAAZJM"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="StyledText-sc-1sadyjn-0 fSnogx"
             >
               two
             </span>
@@ -1819,6 +1849,12 @@ exports[`DataTable primaryKey 1`] = `
   .c8 {
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+}
+
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c2 {
+    table-layout: fixed;
   }
 }
 
@@ -2160,6 +2196,12 @@ exports[`DataTable resizeable 1`] = `
   }
 }
 
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c2 {
+    table-layout: fixed;
+  }
+}
+
 <div
   className="c0"
 >
@@ -2480,6 +2522,12 @@ exports[`DataTable sort 1`] = `
   }
 }
 
+@media all and (min--moz-device-pixel-ratio:0) {
+  .c2 {
+    table-layout: fixed;
+  }
+}
+
 <div
   class="c0"
 >
@@ -2638,7 +2686,7 @@ exports[`DataTable sort 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <table
-    class="StyledDataTable-xrlyjm-0 kTrXKK StyledTable-sc-1m3u5g-6 ksaVzW"
+    class="StyledDataTable-xrlyjm-0 kTrXKK StyledTable-sc-1m3u5g-6 fGUmP"
   >
     <thead
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 bAIczD StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
@@ -2658,7 +2706,7 @@ exports[`DataTable sort 2`] = `
               class="StyledBox-sc-13pk1d4-0 fAhsMq"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 fWSbXS"
+                class="StyledText-sc-1sadyjn-0 fSnogx"
               >
                 A
               </span>
@@ -2733,7 +2781,7 @@ exports[`DataTable sort 2`] = `
               class="StyledBox-sc-13pk1d4-0 fAhsMq"
             >
               <span
-                class="StyledText-sc-1sadyjn-0 fWSbXS"
+                class="StyledText-sc-1sadyjn-0 fSnogx"
               >
                 B
               </span>
@@ -2854,7 +2902,7 @@ exports[`DataTable sort 2`] = `
             class="StyledBox-sc-13pk1d4-0 eAAZJM"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 dndifk"
+              class="StyledText-sc-1sadyjn-0 evsoIF"
             >
               two
             </span>
@@ -2867,7 +2915,7 @@ exports[`DataTable sort 2`] = `
             class="StyledBox-sc-13pk1d4-0 eAAZJM"
           >
             <span
-              class="StyledText-sc-1sadyjn-0 fWSbXS"
+              class="StyledText-sc-1sadyjn-0 fSnogx"
             >
               2
             </span>

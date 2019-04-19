@@ -224,10 +224,11 @@ string
   image: string,
   position: string,
   opacity: 
+    boolean
+    number
     weak
     medium
-    strong
-    boolean,
+    strong,
   repeat: 
     no-repeat
     repeat
@@ -576,11 +577,11 @@ string
 
 **wrap**
 
-Whether children can wrap if they
-      can't all fit.
+Whether children can wrap if they can't all fit.
 
 ```
 boolean
+reverse
 ```
   
 ## Intrinsic element

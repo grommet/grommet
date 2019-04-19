@@ -44,8 +44,9 @@ describe('Box', () => {
   test('wrap', () => {
     const component = renderer.create(
       <Grommet>
-        <Box wrap />
-        <Box wrap={false} />
+        {[true, false, 'reverse'].map(wrap => (
+          <Box key={`${wrap}`} wrap={wrap} />
+        ))}
       </Grommet>,
     );
     const tree = component.toJSON();
@@ -159,6 +160,13 @@ describe('Box', () => {
             image:
               'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
             repeat: 'repeat',
+          }}
+        />
+        <Box
+          background={{
+            image:
+              'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
+            opacity: 0.5,
           }}
         />
       </Grommet>,

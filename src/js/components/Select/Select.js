@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { isValidElement, Component } from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 
@@ -74,6 +74,7 @@ class Select extends Component {
       forwardRef,
       gridArea,
       id,
+      icon,
       labelKey,
       margin,
       messages,
@@ -102,7 +103,17 @@ class Select extends Component {
       }
     };
 
-    const SelectIcon = theme.select.icons.down;
+    let SelectIcon;
+    switch (icon) {
+      case false:
+        break;
+      case true:
+      case undefined:
+        SelectIcon = theme.select.icons.down;
+        break;
+      default:
+        SelectIcon = icon;
+    }
     let selectValue;
     let inputValue = '';
     if (valueLabel) {
@@ -206,13 +217,19 @@ class Select extends Component {
                 />
               )}
             </Box>
-            <Box
-              margin={{ horizontal: 'small' }}
-              flex={false}
-              style={{ minWidth: 'auto' }}
-            >
-              <SelectIcon color={iconColor} size={size} />
-            </Box>
+            {SelectIcon && (
+              <Box
+                margin={theme.select.icons.margin}
+                flex={false}
+                style={{ minWidth: 'auto' }}
+              >
+                {isValidElement(SelectIcon) ? (
+                  SelectIcon
+                ) : (
+                  <SelectIcon color={iconColor} size={size} />
+                )}
+              </Box>
+            )}
           </Box>
         </StyledSelectDropButton>
       </Keyboard>

@@ -393,10 +393,11 @@ zoomOut
   image: string,
   position: string,
   opacity: 
+    boolean
+    number
     weak
     medium
-    strong
-    boolean,
+    strong,
   repeat: 
     no-repeat
     repeat
@@ -704,9 +705,9 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether children can wrap if they
-      can't all fit.",
-        "format": "boolean",
+        "description": "Whether children can wrap if they can't all fit.",
+        "format": "boolean
+reverse",
         "name": "wrap",
       },
     ],
@@ -1688,8 +1689,8 @@ vertical",
     ],
     "description": "A Button that controls a Drop. When opened, the Drop will contain
       whatever is specified via \`dropContent\`. The Drop will control the focus
-      so that the contents behind it are not focusable. All properties of
-      Button can be passed through.
+      so that the contents behind it are not focusable. All properties and theme properties of
+      Button or Drop can be passed through.
       ",
     "intrinsicElement": "button",
     "name": "DropButton",
@@ -1885,7 +1886,7 @@ string",
     "name": "FormField",
     "properties": Array [
       Object {
-        "description": "The component to insert in the FormField. Grommet will add update the form values when this field changes",
+        "description": "The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component.",
         "format": "function",
         "name": "component",
       },
@@ -2172,10 +2173,11 @@ one of top or bottom should be specified.",
 {
   color: string,
   opacity: 
+    boolean
+    number
     weak
     medium
     strong
-    boolean
 }",
         "name": "dropBackground",
       },
@@ -2731,6 +2733,13 @@ string",
         "description": "Whether when 'plain' it should receive a focus outline.",
         "format": "boolean",
         "name": "focusIndicator",
+      },
+      Object {
+        "description": "A custom icon to be used when rendering the select. You can use false to not render an icon at all.",
+        "format": "boolean
+function
+node",
+        "name": "icon",
       },
       Object {
         "description": "When the options array contains objects, this property indicates how

@@ -105,6 +105,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
 
   const result = deepMerge(iconBase, {
     global: {
+      active: {
+        background: {
+          color: 'active',
+          opacity: 'medium',
+        },
+        color: {
+          dark: 'white',
+          light: 'black',
+        },
+      },
       animation: {
         duration: '1s',
         jiggle: {
@@ -220,14 +230,8 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       hover: {
         background: {
-          dark: {
-            color: 'active',
-            opacity: 'medium',
-          },
-          light: {
-            color: 'active',
-            opacity: 'medium',
-          },
+          color: 'active',
+          opacity: 'medium',
         },
         color: {
           dark: 'white',
@@ -354,9 +358,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         width: '2px',
       },
       check: {
+        // extend: undefined,
         radius: '4px',
         thickness: '4px',
-        // extend: undefined,
+      },
+      // color: { dark: undefined, light: undefined },
+      // extend: undefined,
+      // gap: undefined
+      hover: {
+        border: {
+          color: {
+            dark: 'white',
+            light: 'black',
+          },
+        },
       },
       icon: {
         // size: undefined,
@@ -366,29 +381,20 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         // checked: undefined,
         // indeterminate: undefined,
       },
-      hover: {
-        border: {
-          color: {
-            dark: 'white',
-            light: 'black',
-          },
-        },
-      },
       size: `${baseSpacing}px`,
-      // color: { dark: undefined, light: undefined },
       toggle: {
+        // background: undefined
         color: {
           dark: '#d9d9d9',
           light: '#d9d9d9',
         },
-        radius: `${baseSpacing}px`,
-        size: `${baseSpacing * 2}px`,
-        // extend: undefined,
         knob: {
           // extend: undefined,
         },
+        radius: `${baseSpacing}px`,
+        size: `${baseSpacing * 2}px`,
+        // extend: undefined,
       },
-      // extend: undefined,
     },
     clock: {
       analog: {
@@ -444,30 +450,30 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       baseline: 500,
     },
     dataTable: {
-      header: {},
       groupHeader: {
-        border: { side: 'bottom', size: 'xsmall' },
-        fill: 'vertical',
-        pad: { horizontal: 'small', vertical: 'xsmall' },
         background: {
           dark: 'dark-2',
           light: 'light-2',
         },
+        border: { side: 'bottom', size: 'xsmall' },
+        fill: 'vertical',
+        pad: { horizontal: 'small', vertical: 'xsmall' },
       },
+      header: {},
       icons: {
         ascending: FormDown,
         contract: FormUp,
         descending: FormUp,
         expand: FormDown,
       },
-      resize: {
-        border: {
-          side: 'right',
-          color: 'border',
-        },
-      },
       primary: {
         weight: 'bold',
+      },
+      resize: {
+        border: {
+          color: 'border',
+          side: 'right',
+        },
       },
     },
     diagram: {
@@ -483,14 +489,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     formField: {
       border: {
         color: 'border',
-        position: 'inner',
-        side: 'bottom',
         error: {
           color: {
             dark: 'white',
             light: 'status-critical',
           },
         },
+        position: 'inner',
+        side: 'bottom',
       },
       content: {
         pad: {
@@ -499,26 +505,26 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       error: {
-        margin: { vertical: 'xsmall', horizontal: 'small' },
         color: {
           dark: 'status-critical',
           light: 'status-critical',
         },
+        margin: { vertical: 'xsmall', horizontal: 'small' },
       },
+      // extend: undefined,
       help: {
-        margin: {
-          left: 'small',
-        },
         color: {
           dark: 'dark-3',
           light: 'dark-3',
+        },
+        margin: {
+          left: 'small',
         },
       },
       label: {
         margin: { vertical: 'xsmall', horizontal: 'small' },
       },
       margin: { bottom: 'small' },
-      // extend: undefined,
     },
     grommet: {},
     heading: {
@@ -687,6 +693,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       icons: {
         // color: { dark: undefined, light: undefined },
+        margin: { horizontal: 'small' },
         down: FormDown,
       },
       options: {

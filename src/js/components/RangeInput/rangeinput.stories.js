@@ -51,7 +51,7 @@ class CustomRangeInput extends Component {
       <Grommet theme={customThemeRangeInput}>
         <Box direction="row" align="center" pad="large" gap="small">
           <Volume color="neutral-2" />
-          <Box align="center">
+          <Box align="center" width="small">
             <RangeInput
               min={0}
               max={1}
@@ -67,5 +67,5 @@ class CustomRangeInput extends Component {
 }
 
 storiesOf('RangeInput', module)
-  .add('Simple RangeInput', () => <SimpleRangeInput />)
-  .add('Custom RangeInput', () => <CustomRangeInput />);
+  .add('Simple', () => <SimpleRangeInput />)
+  .add('Custom', () => <CustomRangeInput />);

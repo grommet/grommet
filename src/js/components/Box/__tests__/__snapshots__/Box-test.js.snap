@@ -1404,6 +1404,28 @@ exports[`Box background 1`] = `
   padding: 0px;
 }
 
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: inherit;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
 @media only screen and (max-width:768px) {
   .c1 {
     margin: 0px;
@@ -1556,6 +1578,18 @@ exports[`Box background 1`] = `
 
 @media only screen and (max-width:768px) {
   .c13 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c14 {
     padding: 0px;
   }
 }
@@ -1601,6 +1635,9 @@ exports[`Box background 1`] = `
   />
   <div
     className="c13"
+  />
+  <div
+    className="c14"
   />
 </div>
 `;
@@ -5896,6 +5933,26 @@ exports[`Box wrap 1`] = `
   flex-wrap: wrap;
 }
 
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+  -webkit-flex-wrap: wrap-reverse;
+  -ms-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
 @media only screen and (max-width:768px) {
   .c2 {
     margin: 0px;
@@ -5916,6 +5973,18 @@ exports[`Box wrap 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
     padding: 0px;
   }
 }
@@ -5928,6 +5997,9 @@ exports[`Box wrap 1`] = `
   />
   <div
     className="c2"
+  />
+  <div
+    className="c3"
   />
 </div>
 `;

@@ -217,23 +217,32 @@ class TextInput extends Component {
     }
   };
 
-  onClickSuggestion = suggestion => {
+  onClickSuggestion = (suggestion, event) => {
     const { forwardRef, onSelect } = this.props;
-    this.setState({ showDrop: false });
+    this.setState({ showDrop: false, activeSuggestionIndex: -1 });
     if (onSelect) {
-      onSelect({ target: (forwardRef || this.inputRef).current, suggestion });
+      // TODO: needed for backwards compatibility sake
+      /* eslint-disable no-param-reassign */
+      event.suggestion = suggestion;
+      event.target = (forwardRef || this.inputRef).current;
+      /* eslint-enable no-param-reassign */
+      onSelect(event);
     }
   };
 
   onSuggestionSelect = event => {
     const { forwardRef, onSelect, suggestions } = this.props;
     const { activeSuggestionIndex } = this.state;
-    this.setState({ showDrop: false });
+    this.setState({ showDrop: false, activeSuggestionIndex: -1 });
     if (activeSuggestionIndex >= 0) {
       event.preventDefault(); // prevent submitting forms
-      const suggestion = suggestions[activeSuggestionIndex];
+      // TODO: needed for backwards compatibility sake
+      /* eslint-disable no-param-reassign */
+      event.suggestion = suggestions[activeSuggestionIndex];
+      event.target = (forwardRef || this.inputRef).current;
+      /* eslint-enable no-param-reassign */
       if (onSelect) {
-        onSelect({ target: (forwardRef || this.inputRef).current, suggestion });
+        onSelect(event);
       }
     }
   };
@@ -297,7 +306,9 @@ class TextInput extends Component {
                   }
                   fill
                   hoverIndicator="background"
-                  onClick={() => this.onClickSuggestion(suggestion)}
+                  onClick={event => {
+                    this.onClickSuggestion(suggestion, event);
+                  }}
                 >
                   {plain ? (
                     renderLabel(suggestion)

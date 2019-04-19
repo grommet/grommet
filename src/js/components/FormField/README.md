@@ -15,7 +15,7 @@ import { FormField } from 'grommet';
 
 **component**
 
-The component to insert in the FormField. Grommet will add update the form values when this field changes
+The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component.
 
 ```
 function
@@ -102,4 +102,141 @@ function
 
 ```
 div
+```
+## Theme
+  
+**formField.border.color**
+
+The border color. Expects `string | { 'dark': string, 'light': string }`.
+
+Defaults to
+
+```
+border
+```
+
+**formField.border.error.color**
+
+The border color of the error. Expects `string | {'dark': string, 'light': string}`.
+
+Defaults to
+
+```
+{ dark: 'white', light: 'status-critical' },
+```
+
+**formField.border.position**
+
+The border position. Expects `string`.
+
+Defaults to
+
+```
+inner
+```
+
+**formField.border.side**
+
+The border side of the FormField. Expects `string`.
+
+Defaults to
+
+```
+bottom
+```
+
+**formField.content.pad**
+
+The pad of the FormField content. Expects `object`.
+
+Defaults to
+
+```
+{ horizontal: 'small', bottom: 'small' }
+```
+
+**formField.error.color**
+
+The color of the FormField error. Expects `string | {'dark': string, 'light': string}`.
+
+Defaults to
+
+```
+{ dark: 'status-critical', light: 'status-critical' }
+```
+
+**formField.error.margin**
+
+The margin used for the FormField error. Expects `string | object`.
+
+Defaults to
+
+```
+{ vertical: 'xsmall', horizontal: 'small' }
+```
+
+**formField.extend**
+
+Any additional style for FormField. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**formField.help.color**
+
+The color of the FormField help. Expects `string | {'dark': string, 'light': string}`.
+
+Defaults to
+
+```
+{ dark: 'dark-3', light: 'dark-3' }
+```
+
+**formField.help.margin**
+
+The margin for the FormField help. Expects `string | object`.
+
+Defaults to
+
+```
+{ left: 'small' }
+```
+
+**formField.label.margin**
+
+The margin for the FormField label. Expects `string | object`.
+
+Defaults to
+
+```
+{ vertical: 'xsmall', horizontal: 'small' }
+```
+
+**formField.margin**
+
+The margin of FormField. Expects `string | object`.
+
+Defaults to
+
+```
+{ bottom: 'small' }
+```
+
+**global.borderSize**
+
+The possible border sizes for FormField. Expects `object`.
+
+Defaults to
+
+```
+{
+  xsmall: '1px',
+  small: '2px',
+  medium: '4px',
+  large: '12px',
+  xlarge: '24px,
+}
 ```
