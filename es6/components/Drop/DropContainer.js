@@ -143,7 +143,25 @@ function (_Component) {
             top = targetRect.bottom;
           }
 
-          maxHeight = windowHeight - top;
+          if (windowHeight === top || windowHeight === targetRect.bottom) {
+            // We need more room than we have.
+            // We put it below, but there's more room above, put it above
+            top = '';
+
+            if (align.top === 'bottom') {
+              bottom = targetRect.top;
+            } else {
+              bottom = targetRect.bottom;
+            }
+
+            maxHeight = bottom;
+            container.style.maxHeight = maxHeight + "px";
+          } else if (top > 0) {
+            maxHeight = windowHeight - top;
+            container.style.maxHeight = maxHeight + "px";
+          } else {
+            maxHeight = windowHeight - top;
+          }
         } else if (align.bottom) {
           if (align.bottom === 'bottom') {
             bottom = targetRect.bottom;
@@ -152,6 +170,7 @@ function (_Component) {
           }
 
           maxHeight = bottom;
+          container.style.maxHeight = maxHeight + "px";
         } else {
           // center
           top = targetRect.top + targetRect.height / 2 - containerRect.height / 2;
