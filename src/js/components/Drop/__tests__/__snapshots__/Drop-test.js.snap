@@ -72,7 +72,7 @@ exports[`Drop align left left 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="left: 0px; width: 0.1px; bottom: 768px; max-height: 0px;"
+  style="max-height: 0px; left: 0px; width: 0.1px; bottom: 768px;"
   tabindex="-1"
 >
   this is a test
@@ -772,7 +772,7 @@ exports[`Drop align right right bottom top 1`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="left: 0px; width: 0.1px; bottom: 768px; max-height: 0px;"
+  style="max-height: 0px; left: 0px; width: 0.1px; bottom: 768px;"
   tabindex="-1"
 >
   this is a test
@@ -934,7 +934,7 @@ exports[`Drop align right right bottom top 3`] = `
 <div
   class="c0 c1"
   id="drop-node"
-  style="left: 0px; width: 0.1px; bottom: 768px; max-height: 0px;"
+  style="max-height: 0px; left: 0px; width: 0.1px; bottom: 768px;"
   tabindex="-1"
 >
   this is a test
