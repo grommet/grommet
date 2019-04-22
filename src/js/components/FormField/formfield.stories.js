@@ -55,9 +55,7 @@ class FormFieldTextInput extends Component {
 const FormFieldTextArea = props => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <FormField label="Label" htmlFor="text-area" {...props}>
-        <TextArea id="text-area" placeholder="placeholder" />
-      </FormField>
+      <FormField label="Label" component={TextArea} {...props} />
     </Box>
   </Grommet>
 );
