@@ -100,11 +100,8 @@ var FormFieldTextArea = function FormFieldTextArea(props) {
     pad: "large"
   }, _react.default.createElement(_grommet.FormField, _extends({
     label: "Label",
-    htmlFor: "text-area"
-  }, props), _react.default.createElement(_grommet.TextArea, {
-    id: "text-area",
-    placeholder: "placeholder"
-  }))));
+    component: _grommet.TextArea
+  }, props))));
 };
 
 var FormFieldCheckBox = function FormFieldCheckBox(props) {

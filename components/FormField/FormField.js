@@ -223,7 +223,7 @@ function (_Component) {
         htmlFor: htmlFor
       }, formField.label), label), help && _react.default.createElement(_Text.Text, _extends({}, formField.help, {
         color: formField.help.color[theme.dark ? 'dark' : 'light']
-      }), help)) : undefined, contents, normalizedError && _react.default.createElement(_Text.Text, _extends({}, formField.error, {
+      }), help)) : undefined, component ? _react.default.createElement(component) : contents, normalizedError && _react.default.createElement(_Text.Text, _extends({}, formField.error, {
         color: formField.error.color[theme.dark ? 'dark' : 'light']
       }), normalizedError));
     });
