@@ -22,11 +22,12 @@ const InfiniteScrollInTable = () => {
   );
   const load = () => {
     console.log(`InfiniteScroll fires onMore after loading ${step} items`);
-    results.push(
-      Array.from({ length: 50 }, () => Math.floor(Math.random() * 1000000)),
-    );
-    setResults(results);
+    setResults([
+      ...results,
+      ...Array.from({ length: 50 }, () => Math.floor(Math.random() * 1000000)),
+    ]);
   };
+
   return (
     <Grommet theme={grommet}>
       <Box pad="small" basis="small">
