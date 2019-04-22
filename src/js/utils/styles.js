@@ -171,6 +171,7 @@ export const focusStyle = css`
 export const inputStyle = css`
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: ${props =>
