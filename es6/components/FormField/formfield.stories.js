@@ -91,8 +91,11 @@ var FormFieldTextArea = function FormFieldTextArea(props) {
     pad: "large"
   }, React.createElement(FormField, _extends({
     label: "Label",
-    component: TextArea
-  }, props))));
+    htmlFor: "text-area"
+  }, props), React.createElement(TextArea, {
+    id: "text-area",
+    placeholder: "placeholder"
+  }))));
 };
 
 var FormFieldCheckBox = function FormFieldCheckBox(props) {

@@ -1887,8 +1887,7 @@ string",
     "properties": Array [
       Object {
         "description": "The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component.",
-        "format": "function
-object",
+        "format": "function",
         "name": "component",
       },
       Object {
