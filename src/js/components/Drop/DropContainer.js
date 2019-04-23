@@ -156,11 +156,11 @@ class DropContainer extends Component {
         }
 
         // Calculate visible area underneath the control w.r.t window height
-        const visibleAreaHeight =
+        const visibleAreaThreshold =
           100 - (targetRect.bottom / windowHeight) * 100;
 
-        // Check whether it is within 5% from bottom of the window to flip the control
-        if (windowHeight === top || visibleAreaHeight <= 5) {
+        // Check whether it is within 20% from bottom of the window or visible area to flip the control
+        if (windowHeight === top || visibleAreaThreshold <= 20) {
           // We need more room than we have.
           // We put it below, but there's more room above, put it above
           top = '';
