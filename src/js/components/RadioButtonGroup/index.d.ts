@@ -1,4 +1,5 @@
 import * as React from "react";
+import { BoxProps } from '../Box' 
 
 export interface RadioButtonGroupProps {
   name: string;
@@ -7,6 +8,6 @@ export interface RadioButtonGroupProps {
   value?: string;
 }
 
-declare const RadioButtonGroup: React.ComponentClass<RadioButtonGroupProps & JSX.IntrinsicElements['div']>;
+declare const RadioButtonGroup: React.ComponentClass<RadioButtonGroupProps & BoxProps>;
 
 export { RadioButtonGroup };

@@ -642,4 +642,12 @@ storiesOf('Select', module)
   .add('Custom', () => <SimpleSelect open theme={customRoundedTheme} />)
   .add('Lots of options', () => <ManyOptions />)
   .add('Custom Value', () => <CustomSelectValue />)
-  .add('Custom Icon', () => <CustomSelectValue icon={CaretDown} />);
+  .add('Custom Icon', () => (
+    <CustomSelectValue
+      icon={
+        <Box>
+          <CaretDown color="black" />
+        </Box>
+      }
+    />
+  ));

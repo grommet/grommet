@@ -802,11 +802,11 @@ string
   image: string,
   position: string,
   opacity: 
+    boolean
+    number
     weak
     medium
-    strong
-    boolean
-    number,
+    strong,
   repeat: 
     no-repeat
     repeat
@@ -4665,6 +4665,7 @@ The component to insert in the FormField. Grommet will add update the form value
 
 \`\`\`
 function
+object
 \`\`\`
 
 **error**
@@ -6699,10 +6700,11 @@ string
 {
   color: string,
   opacity: 
+    boolean
+    number
     weak
     medium
     strong
-    boolean
 }
 \`\`\`
 
@@ -8163,6 +8165,7 @@ A custom icon to be used when rendering the select. You can use false to not ren
 \`\`\`
 boolean
 function
+node
 \`\`\`
 
 **labelKey**
@@ -8392,6 +8395,16 @@ undefined
 **select.control.extend**
 
 Any additional style for the control of the Select component. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.icons.margin**
+
+The margin used for Select icons. Expects \`string | object\`.
 
 Defaults to
 
