@@ -201,7 +201,7 @@ class FormField extends Component {
               ) : (
                 undefined
               )}
-              {component ? React.createElement(component) : contents}
+              {contents}
               {normalizedError && (
                 <Text
                   {...formField.error}
