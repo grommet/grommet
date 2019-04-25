@@ -239,7 +239,7 @@ Custom messages. Used for accessibility by screen readers. Defaults to `{
 
 **open**
 
-Control the state of the component
+Whether the state of the component should be open
 
 ```
 boolean
