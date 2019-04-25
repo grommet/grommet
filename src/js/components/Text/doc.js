@@ -58,6 +58,19 @@ is too long to all fit.`,
       PropTypes.oneOf(['normal', 'bold']),
       PropTypes.number,
     ]).description('Font weight'),
+    wordBreak: PropTypes.oneOf([
+      'normal',
+      'break-all',
+      'keep-all',
+      'break-word',
+      'inherit',
+      'initial',
+      'unset',
+    ])
+      .description(
+        "Sets weather line breaks appear whenever text overflows it's content box",
+      )
+      .defaultValue('normal'),
   };
 
   return DocumentedText;

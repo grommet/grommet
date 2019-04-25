@@ -183,6 +183,20 @@ normal
 bold
 number
 ```
+
+**wordBreak**
+
+Sets weather line breaks appear whenever text overflows it's content box Defaults to `normal`.
+
+```
+normal
+break-all
+keep-all
+break-word
+inherit
+initial
+unset
+```
   
 ## Intrinsic element
 
