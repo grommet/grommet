@@ -9,6 +9,7 @@ import {
   Select,
   TextArea,
   TextInput,
+  Form,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -55,9 +56,14 @@ class FormFieldTextInput extends Component {
 const FormFieldTextArea = props => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <FormField label="Label" htmlFor="text-area" {...props}>
-        <TextArea id="text-area" placeholder="placeholder" />
-      </FormField>
+      <Form>
+        <FormField
+          label="Label"
+          htmlFor="text-area"
+          {...props}
+          component={TextArea}
+        />
+      </Form>
     </Box>
   </Grommet>
 );
