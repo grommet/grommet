@@ -60,6 +60,21 @@ with plain Buttons.`,
       'If specified, the button will behave like an anchor tag.',
     ),
     icon: PropTypes.element.description('Icon element to place in the button.'),
+    gap: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'xxsmall',
+        'xsmall',
+        'small',
+        'medium',
+        'large',
+        'xlarge',
+      ]),
+      PropTypes.string,
+    ])
+      .description(
+        `The amount of spacing between icon and label in the button.`,
+      )
+      .defaultValue('small'),
     label: PropTypes.node.description('Label text to place in the button.'),
     onClick: PropTypes.func.description(
       `Click handler. Not setting this property and not specifying a href
