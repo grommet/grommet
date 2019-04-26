@@ -141,35 +141,27 @@ class Carousel extends Component {
             direction="row"
             justify="between"
           >
-            <Box fill="vertical">
-              <Button
-                fill
-                disabled={activeIndex <= 0}
-                onClick={onLeft}
-                hoverIndicator
-              >
-                <Box justify="center">
-                  <PreviousIcon />
-                </Box>
-              </Button>
-            </Box>
+            <Button
+              fill="vertical"
+              icon={<PreviousIcon />}
+              plain
+              disabled={activeIndex <= 0}
+              onClick={onLeft}
+              hoverIndicator
+            />
             <Box justify="end">
               <Box direction="row" justify="center">
                 {selectors}
               </Box>
             </Box>
-            <Box fill="vertical">
-              <Button
-                fill
-                disabled={activeIndex >= lastIndex}
-                onClick={onRight}
-                hoverIndicator
-              >
-                <Box justify="center">
-                  <NextIcon />
-                </Box>
-              </Button>
-            </Box>
+            <Button
+              fill="vertical"
+              icon={<NextIcon />}
+              plain
+              disabled={activeIndex >= lastIndex}
+              onClick={onRight}
+              hoverIndicator
+            />
           </Box>
         </Stack>
       </Keyboard>
