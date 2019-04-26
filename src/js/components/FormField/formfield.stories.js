@@ -62,6 +62,7 @@ const FormFieldTextArea = props => (
           htmlFor="text-area"
           {...props}
           component={TextArea}
+          placeholder="placeholder"
         />
       </Form>
     </Box>
