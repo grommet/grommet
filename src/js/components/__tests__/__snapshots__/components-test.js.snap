@@ -841,8 +841,10 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether the button expands to fill all of the available width and height.",
-        "format": "boolean",
+        "description": "Whether the button expands to fill all of the available width and/or height.",
+        "format": "horizontal
+vertical
+boolean",
         "name": "fill",
       },
       Object {
