@@ -75,7 +75,7 @@ const DropContent = props => {
           />
         </Keyboard>
         <Box flex={false}>
-          <Button label="Close" onClick={close} />
+          <Button label="Done" onClick={close} />
         </Box>
       </Box>
     </Box>

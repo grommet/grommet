@@ -20,21 +20,8 @@ class TimeMaskedInput extends Component {
               mask={[
                 {
                   length: [1, 2],
-                  options: [
-                    '1',
-                    '2',
-                    '3',
-                    '4',
-                    '5',
-                    '6',
-                    '7',
-                    '8',
-                    '9',
-                    '10',
-                    '11',
-                    '12',
-                  ],
-                  regexp: /^1[1-2]$|^[0-9]$/,
+                  options: Array.from({ length: 12 }, (v, k) => k + 1),
+                  regexp: /^1[0,1-2]$|^0?[1-9]$|^0$/,
                   placeholder: 'hh',
                 },
                 { fixed: ':' },
