@@ -68,7 +68,7 @@ is too long to all fit.`,
       'unset',
     ])
       .description(
-        "Sets weather line breaks appear whenever text overflows it's content box",
+        'Sets whether line breaks appear whenever text overflows its content box',
       )
       .defaultValue('normal'),
   };

@@ -9758,7 +9758,7 @@ number
 
 **wordBreak**
 
-Sets weather line breaks appear whenever text overflows it's content box Defaults to \`normal\`.
+Sets whether line breaks appear whenever text overflows its content box Defaults to \`normal\`.
 
 \`\`\`
 normal
