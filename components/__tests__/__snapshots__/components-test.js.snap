@@ -878,6 +878,18 @@ background
         "name": "icon",
       },
       Object {
+        "defaultValue": "small",
+        "description": "The amount of spacing between icon and label in the button.",
+        "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gap",
+      },
+      Object {
         "description": "Label text to place in the button.",
         "format": "node",
         "name": "label",

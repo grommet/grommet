@@ -189,6 +189,20 @@ Icon element to place in the button.
 element
 ```
 
+**gap**
+
+The amount of spacing between icon and label in the button. Defaults to `small`.
+
+```
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
+```
+
 **label**
 
 Label text to place in the button.

@@ -31,6 +31,16 @@ var IconLabel = function IconLabel() {
     icon: React.createElement(Add, null),
     label: "Add",
     onClick: function onClick() {}
+  }), React.createElement(Button, {
+    icon: React.createElement(Add, null),
+    label: "Add",
+    gap: "xlarge",
+    onClick: function onClick() {}
+  }), React.createElement(Button, {
+    icon: React.createElement(Add, null),
+    label: "500px gap",
+    gap: "500px",
+    onClick: function onClick() {}
   }))));
 };
 

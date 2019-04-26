@@ -39,6 +39,16 @@ var IconLabel = function IconLabel() {
     icon: _react.default.createElement(_grommetIcons.Add, null),
     label: "Add",
     onClick: function onClick() {}
+  }), _react.default.createElement(_grommet.Button, {
+    icon: _react.default.createElement(_grommetIcons.Add, null),
+    label: "Add",
+    gap: "xlarge",
+    onClick: function onClick() {}
+  }), _react.default.createElement(_grommet.Button, {
+    icon: _react.default.createElement(_grommetIcons.Add, null),
+    label: "500px gap",
+    gap: "500px",
+    onClick: function onClick() {}
   }))));
 };
 

@@ -93,6 +93,7 @@ function (_Component) {
         children = _this$props.children,
         disabled = _this$props.disabled,
         icon = _this$props.icon,
+        gap = _this$props.gap,
         fill = _this$props.fill,
         focus = _this$props.focus,
         href = _this$props.href,
@@ -104,7 +105,7 @@ function (_Component) {
         theme = _this$props.theme,
         type = _this$props.type,
         as = _this$props.as,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "color", "forwardRef", "children", "disabled", "icon", "fill", "focus", "href", "label", "onClick", "plain", "primary", "reverse", "theme", "type", "as"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["a11yTitle", "color", "forwardRef", "children", "disabled", "icon", "gap", "fill", "focus", "href", "label", "onClick", "plain", "primary", "reverse", "theme", "type", "as"]);
 
     var hover = this.state.hover;
     var buttonIcon = icon; // only change color if user did not specify the color themselves...
@@ -125,7 +126,7 @@ function (_Component) {
         direction: "row",
         align: "center",
         justify: "center",
-        gap: "small"
+        gap: gap
       }, first, second);
     } else if (typeof children === 'function') {
       contents = children({
@@ -146,6 +147,7 @@ function (_Component) {
       colorValue: color,
       disabled: disabled,
       hasIcon: !!icon,
+      gap: gap,
       hasLabel: !!label,
       fillContainer: fill,
       focus: focus,
@@ -165,7 +167,8 @@ function (_Component) {
 
 _defineProperty(Button, "defaultProps", {
   type: 'button',
-  focusIndicator: true
+  focusIndicator: true,
+  gap: 'small'
 });
 
 Object.setPrototypeOf(Button.defaultProps, _defaultProps.defaultProps);
