@@ -8,7 +8,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Box, CheckBox, FormField, Select, TextArea, TextInput } from 'grommet';
+import { Grommet, Box, CheckBox, FormField, Select, TextArea, TextInput, Form } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
 var allSuggestions = Array(100).fill().map(function (_, i) {
@@ -89,13 +89,13 @@ var FormFieldTextArea = function FormFieldTextArea(props) {
   }, React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(FormField, _extends({
+  }, React.createElement(Form, null, React.createElement(FormField, _extends({
     label: "Label",
     htmlFor: "text-area"
-  }, props), React.createElement(TextArea, {
-    id: "text-area",
+  }, props, {
+    component: TextArea,
     placeholder: "placeholder"
-  }))));
+  })))));
 };
 
 var FormFieldCheckBox = function FormFieldCheckBox(props) {

@@ -19,6 +19,7 @@ The component to insert in the FormField. Grommet will add update the form value
 
 ```
 function
+object
 ```
 
 **error**
