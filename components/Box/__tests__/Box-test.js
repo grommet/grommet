@@ -136,6 +136,14 @@ describe('Box', function () {
     }), _react.default.createElement(_.Box, {
       background: "status-critical"
     }), _react.default.createElement(_.Box, {
+      background: "rgb(90, 80, 50)"
+    }), _react.default.createElement(_.Box, {
+      background: "rgba(200, 100, 150, 0.8)"
+    }), _react.default.createElement(_.Box, {
+      background: "hsl(10, 50%, 20%)"
+    }), _react.default.createElement(_.Box, {
+      background: "hsla(10, 50%, 70%, 0.7)"
+    }), _react.default.createElement(_.Box, {
       background: "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)"
     }), _react.default.createElement(_.Box, {
       background: {

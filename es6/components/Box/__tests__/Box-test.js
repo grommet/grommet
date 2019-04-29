@@ -119,6 +119,14 @@ describe('Box', function () {
     }), React.createElement(Box, {
       background: "status-critical"
     }), React.createElement(Box, {
+      background: "rgb(90, 80, 50)"
+    }), React.createElement(Box, {
+      background: "rgba(200, 100, 150, 0.8)"
+    }), React.createElement(Box, {
+      background: "hsl(10, 50%, 20%)"
+    }), React.createElement(Box, {
+      background: "hsla(10, 50%, 70%, 0.7)"
+    }), React.createElement(Box, {
       background: "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)"
     }), React.createElement(Box, {
       background: {
