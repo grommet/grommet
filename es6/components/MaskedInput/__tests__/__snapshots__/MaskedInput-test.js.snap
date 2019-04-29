@@ -4,6 +4,7 @@ exports[`MaskedInput basic 1`] = `
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -60,6 +61,7 @@ exports[`MaskedInput mask 1`] = `
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -439,6 +441,7 @@ exports[`MaskedInput next and previous without options 1`] = `
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -499,7 +502,7 @@ exports[`MaskedInput next and previous without options 2`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 kMJyex"
+    class="StyledMaskedInput-sc-99vkfa-0 dmrDMB"
     data-testid="test-input"
     id="item"
     name="item"
@@ -513,6 +516,7 @@ exports[`MaskedInput option via keyboard 1`] = `
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -571,6 +575,7 @@ exports[`MaskedInput option via mouse 1`] = `
 .c1 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -955,7 +960,7 @@ exports[`MaskedInput option via mouse 4`] = `
 >
   <input
     autocomplete="off"
-    class="StyledMaskedInput-sc-99vkfa-0 kWovZR"
+    class="StyledMaskedInput-sc-99vkfa-0 bwgQpE"
     data-testid="test-input"
     id="item"
     name="item"

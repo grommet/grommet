@@ -135,6 +135,7 @@ exports[`Form update 1`] = `
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -306,6 +307,7 @@ exports[`Form with field 1`] = `
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
