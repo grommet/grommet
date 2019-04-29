@@ -13,7 +13,7 @@ var doc = function doc(Button) {
   var DocumentedButton = (0, _reactDesc.describe)(Button).availableAt((0, _utils.getAvailableAtBadge)('Button')).description('A button.').details("You can provide a single function child that will be called with\n      'hover' and 'focus' keys. This allows you to customize the rendering\n      of the Button in those cases.").usage("import { Button } from 'grommet';\n<Button primary={true} label='Label' />").intrinsicElement('button');
   DocumentedButton.propTypes = _extends({}, _utils.genericProps, {
     active: _reactDesc.PropTypes.bool.description('Whether the button is active.').defaultValue(false),
-    color: _utils.colorPropType.description('Fill color for primary, border color otherwise.'),
+    color: _utils.colorPropType.description('Fill color for primary, label color for plain, border color otherwise.'),
     disabled: _reactDesc.PropTypes.bool.description('Whether the button is disabled.').defaultValue(false),
     fill: _reactDesc.PropTypes.bool.description('Whether the button expands to fill all of the available width and height.').defaultValue(false),
     focusIndicator: _reactDesc.PropTypes.bool.description("Whether when 'plain' it should receive a focus outline.").defaultValue(true),

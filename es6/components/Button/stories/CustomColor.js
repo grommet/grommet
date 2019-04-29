@@ -44,6 +44,15 @@ var Colored = function Colored(props) {
     color: "#777",
     label: "#777",
     onClick: function onClick() {}
+  }, props)), React.createElement(Button, _extends({
+    plain: true,
+    color: "red",
+    label: "plain red",
+    onClick: function onClick() {}
+  }, props)), React.createElement(Button, _extends({
+    plain: true,
+    label: "plain inherit",
+    onClick: function onClick() {}
   }, props))));
 };
 

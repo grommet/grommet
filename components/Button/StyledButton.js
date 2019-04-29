@@ -45,13 +45,17 @@ var hoverStyle = (0, _styledComponents.css)(["&:hover{", " ", ";}"], function (p
   return !props.plain && (0, _styledComponents.css)(["box-shadow:0px 0px 0px 2px ", ";"], getHoverColor(props));
 });
 var fillStyle = "\n  width: 100%;\n  height: 100%;\n  max-width: none;\n  flex: 1 0 auto;\n";
-var plainStyle = (0, _styledComponents.css)(["color:inherit;border:none;padding:0;text-align:inherit;"]); // Deprecate props.theme.button.disabled.opacity in V3
+
+var plainStyle = function plainStyle(props) {
+  return (0, _styledComponents.css)(["color:", ";border:none;padding:0;text-align:inherit;"], (0, _utils.normalizeColor)(props.colorValue || 'inherit', props.theme));
+}; // Deprecate props.theme.button.disabled.opacity in V3
+
 
 var StyledButton = _styledComponents.default.button.withConfig({
   displayName: "StyledButton",
   componentId: "sc-323bzc-0"
 })(["display:inline-block;box-sizing:border-box;cursor:pointer;outline:none;font:inherit;text-decoration:none;margin:0;background:transparent;overflow:visible;text-transform:none;", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], _utils.genericStyles, function (props) {
-  return props.plain && plainStyle;
+  return props.plain && plainStyle(props);
 }, function (props) {
   return !props.plain && basicStyle(props);
 }, function (props) {
