@@ -1526,7 +1526,7 @@ exports[`DataTable groupBy 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <table
-    class="StyledDataTable-xrlyjm-0 kTrXKK StyledTable-sc-1m3u5g-6 fGUmP"
+    class="StyledDataTable-xrlyjm-0 tpKnu StyledTable-sc-1m3u5g-6 fGUmP"
   >
     <thead
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 bAIczD StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
@@ -2686,7 +2686,7 @@ exports[`DataTable sort 2`] = `
   class="StyledGrommet-sc-19lkkz7-0 eUfLDp"
 >
   <table
-    class="StyledDataTable-xrlyjm-0 kTrXKK StyledTable-sc-1m3u5g-6 fGUmP"
+    class="StyledDataTable-xrlyjm-0 tpKnu StyledTable-sc-1m3u5g-6 fGUmP"
   >
     <thead
       class="StyledDataTable__StyledDataTableHeader-xrlyjm-3 bAIczD StyledTable__StyledTableHeader-sc-1m3u5g-4 dHaGyd"
