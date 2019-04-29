@@ -190,12 +190,9 @@ Sets whether line breaks appear whenever text overflows its content box Defaults
 
 ```
 normal
-break-all
-keep-all
-break-word
-inherit
-initial
-unset
+breakAll
+keepAll
+breakWord
 ```
   
 ## Intrinsic element

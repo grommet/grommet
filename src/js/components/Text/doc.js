@@ -58,15 +58,7 @@ is too long to all fit.`,
       PropTypes.oneOf(['normal', 'bold']),
       PropTypes.number,
     ]).description('Font weight'),
-    wordBreak: PropTypes.oneOf([
-      'normal',
-      'break-all',
-      'keep-all',
-      'break-word',
-      'inherit',
-      'initial',
-      'unset',
-    ])
+    wordBreak: PropTypes.oneOf(['normal', 'breakAll', 'keepAll', 'breakWord'])
       .description(
         'Sets whether line breaks appear whenever text overflows its content box',
       )
