@@ -22,79 +22,6 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var SimpleRangeSelector =
-/*#__PURE__*/
-function (_Component) {
-  _inheritsLoose(SimpleRangeSelector, _Component);
-
-  function SimpleRangeSelector() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      values: [12, 16]
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onChange", function (values) {
-      return _this.setState({
-        values: values
-      });
-    });
-
-    return _this;
-  }
-
-  var _proto = SimpleRangeSelector.prototype;
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        direction = _this$props.direction,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["direction"]);
-
-    var values = this.state.values;
-    return _react.default.createElement(_grommet.Grommet, {
-      theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
-      align: "center",
-      pad: "large"
-    }, _react.default.createElement(_grommet.Stack, null, _react.default.createElement(_grommet.Box, {
-      direction: direction === 'vertical' ? 'column' : 'row',
-      justify: "between"
-    }, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function (value) {
-      return _react.default.createElement(_grommet.Box, {
-        key: value,
-        width: "xxsmall",
-        height: "xxsmall",
-        align: "center",
-        pad: "small",
-        border: false
-      }, _react.default.createElement(_grommet.Text, {
-        style: {
-          fontFamily: 'monospace'
-        }
-      }, value));
-    })), _react.default.createElement(_grommet.RangeSelector, _extends({
-      direction: direction,
-      min: 10,
-      max: 20,
-      size: "full",
-      values: values,
-      onChange: this.onChange
-    }, rest)))));
-  };
-
-  return SimpleRangeSelector;
-}(_react.Component);
-
-_defineProperty(SimpleRangeSelector, "defaultProps", {
-  direction: 'horizontal'
-});
-
 var customThemeRangeSelector = (0, _utils.deepMerge)(_themes.grommet, {
   global: {
     borderSize: {
@@ -121,39 +48,39 @@ var customThemeRangeSelector = (0, _utils.deepMerge)(_themes.grommet, {
   }
 });
 
-var ThemedRangeSelector =
+var CustomRangeSelector =
 /*#__PURE__*/
-function (_Component2) {
-  _inheritsLoose(ThemedRangeSelector, _Component2);
+function (_Component) {
+  _inheritsLoose(CustomRangeSelector, _Component);
 
-  function ThemedRangeSelector() {
-    var _this2;
+  function CustomRangeSelector() {
+    var _this;
 
-    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
     }
 
-    _this2 = _Component2.call.apply(_Component2, [this].concat(args)) || this;
+    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_this2), "state", {
+    _defineProperty(_assertThisInitialized(_this), "state", {
       values: [12, 16]
     });
 
-    _defineProperty(_assertThisInitialized(_this2), "onChange", function (values) {
-      return _this2.setState({
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (values) {
+      return _this.setState({
         values: values
       });
     });
 
-    return _this2;
+    return _this;
   }
 
-  var _proto2 = ThemedRangeSelector.prototype;
+  var _proto = CustomRangeSelector.prototype;
 
-  _proto2.render = function render() {
-    var _this$props2 = this.props,
-        direction = _this$props2.direction,
-        rest = _objectWithoutPropertiesLoose(_this$props2, ["direction"]);
+  _proto.render = function render() {
+    var _this$props = this.props,
+        direction = _this$props.direction,
+        rest = _objectWithoutPropertiesLoose(_this$props, ["direction"]);
 
     var values = this.state.values;
     return _react.default.createElement(_grommet.Grommet, {
@@ -188,23 +115,13 @@ function (_Component2) {
     }, rest)))));
   };
 
-  return ThemedRangeSelector;
+  return CustomRangeSelector;
 }(_react.Component);
 
-_defineProperty(ThemedRangeSelector, "defaultProps", {
+_defineProperty(CustomRangeSelector, "defaultProps", {
   direction: 'horizontal'
 });
 
-(0, _react2.storiesOf)('RangeSelector', module).add('Simple', function () {
-  return _react.default.createElement(SimpleRangeSelector, null);
-}).add('Themed', function () {
-  return _react.default.createElement(ThemedRangeSelector, null);
-}).add('Step', function () {
-  return _react.default.createElement(SimpleRangeSelector, {
-    step: 2
-  });
-}).add('Vertical', function () {
-  return _react.default.createElement(SimpleRangeSelector, {
-    direction: "vertical"
-  });
+(0, _react2.storiesOf)('RangeSelector', module).add('Custom', function () {
+  return _react.default.createElement(CustomRangeSelector, null);
 });

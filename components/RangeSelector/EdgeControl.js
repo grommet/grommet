@@ -90,21 +90,47 @@ function (_Component) {
     };
     var boxDirection = direction === 'vertical' ? 'row' : 'column';
     var type = theme.rangeSelector && theme.rangeSelector.edge && theme.rangeSelector.edge.type || 'disc';
+    var node;
+
+    if (type === 'bar') {
+      node = _react.default.createElement(_Box.Box, {
+        flex: true,
+        justifySelf: "stretch",
+        width: size + "px",
+        background: (0, _utils.normalizeColor)(color || 'control', theme),
+        border: focused ? {
+          color: (0, _utils.normalizeColor)('focus', theme)
+        } : undefined
+      });
+    } else if (type === 'disc') {
+      node = _react.default.createElement(_Box.Box, {
+        width: size + (focused ? 2 : 0) + "px",
+        height: size + (focused ? 2 : 0) + "px",
+        round: "full",
+        background: (0, _utils.normalizeColor)(color || 'control', theme),
+        border: focused ? {
+          color: (0, _utils.normalizeColor)('focus', theme)
+        } : undefined
+      });
+    } else {
+      node = type;
+    }
+
     return _react.default.createElement(_Keyboard.Keyboard, keyboardProps, _react.default.createElement(_Box.Box, {
       direction: boxDirection,
       style: {
         flex: '0 0 1px'
       },
       overflow: "visible",
-      align: "center"
+      align: "center",
+      justify: "center"
     }, _react.default.createElement(_Box.Box, _extends({
       ref: forwardRef,
       direction: boxDirection,
-      justify: type === 'bar' ? 'stretch' : 'center',
+      justify: "center",
       align: "center",
       basis: "full",
       fill: fill,
-      margin: type === 'bar' ? undefined : 'xsmall',
       style: {
         cursor: cursor,
         minWidth: size,
@@ -121,22 +147,7 @@ function (_Component) {
           focused: false
         });
       }
-    }, rest), type === 'bar' ? _react.default.createElement(_Box.Box, {
-      flex: true,
-      width: size + "px",
-      background: (0, _utils.normalizeColor)(color || 'control', theme),
-      border: focused ? {
-        color: (0, _utils.normalizeColor)('focus', theme)
-      } : undefined
-    }) : _react.default.createElement(_Box.Box, {
-      width: size + (focused ? 2 : 0) + "px",
-      height: size + (focused ? 2 : 0) + "px",
-      round: "full",
-      background: (0, _utils.normalizeColor)(color || 'control', theme),
-      border: focused ? {
-        color: (0, _utils.normalizeColor)('focus', theme)
-      } : undefined
-    }))));
+    }, rest), node)));
   };
 
   return EdgeControl;

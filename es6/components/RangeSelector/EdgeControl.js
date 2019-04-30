@@ -75,21 +75,47 @@ function (_Component) {
     };
     var boxDirection = direction === 'vertical' ? 'row' : 'column';
     var type = theme.rangeSelector && theme.rangeSelector.edge && theme.rangeSelector.edge.type || 'disc';
+    var node;
+
+    if (type === 'bar') {
+      node = React.createElement(Box, {
+        flex: true,
+        justifySelf: "stretch",
+        width: size + "px",
+        background: normalizeColor(color || 'control', theme),
+        border: focused ? {
+          color: normalizeColor('focus', theme)
+        } : undefined
+      });
+    } else if (type === 'disc') {
+      node = React.createElement(Box, {
+        width: size + (focused ? 2 : 0) + "px",
+        height: size + (focused ? 2 : 0) + "px",
+        round: "full",
+        background: normalizeColor(color || 'control', theme),
+        border: focused ? {
+          color: normalizeColor('focus', theme)
+        } : undefined
+      });
+    } else {
+      node = type;
+    }
+
     return React.createElement(Keyboard, keyboardProps, React.createElement(Box, {
       direction: boxDirection,
       style: {
         flex: '0 0 1px'
       },
       overflow: "visible",
-      align: "center"
+      align: "center",
+      justify: "center"
     }, React.createElement(Box, _extends({
       ref: forwardRef,
       direction: boxDirection,
-      justify: type === 'bar' ? 'stretch' : 'center',
+      justify: "center",
       align: "center",
       basis: "full",
       fill: fill,
-      margin: type === 'bar' ? undefined : 'xsmall',
       style: {
         cursor: cursor,
         minWidth: size,
@@ -106,22 +132,7 @@ function (_Component) {
           focused: false
         });
       }
-    }, rest), type === 'bar' ? React.createElement(Box, {
-      flex: true,
-      width: size + "px",
-      background: normalizeColor(color || 'control', theme),
-      border: focused ? {
-        color: normalizeColor('focus', theme)
-      } : undefined
-    }) : React.createElement(Box, {
-      width: size + (focused ? 2 : 0) + "px",
-      height: size + (focused ? 2 : 0) + "px",
-      round: "full",
-      background: normalizeColor(color || 'control', theme),
-      border: focused ? {
-        color: normalizeColor('focus', theme)
-      } : undefined
-    }))));
+    }, rest), node)));
   };
 
   return EdgeControl;

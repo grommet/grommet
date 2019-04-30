@@ -65,8 +65,8 @@ var themeDoc = {
     defaultValue: 'light-4'
   },
   'rangeSelector.edge.type': {
-    description: 'The edge style type.',
-    type: "'bar' | 'disc'",
+    description: 'The edge control type.',
+    type: "'bar' | 'disc' | node",
     defaultValue: undefined
   },
   'global.spacing': {
