@@ -186,13 +186,13 @@ number
 
 **wordBreak**
 
-Sets whether line breaks appear whenever text overflows its content box Defaults to `normal`.
+Whether words should break when reaching the end of a line. Defaults to `normal`.
 
 ```
 normal
-breakAll
-keepAll
-breakWord
+break-all
+keep-all
+break-word
 ```
   
 ## Intrinsic element

@@ -14,7 +14,7 @@ const sizes = [
   '77px',
 ];
 
-const wordBreakValues = ['normal', 'breakAll', 'keepAll', 'breakWord'];
+const wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];
 
 const All = () => (
   <Grommet theme={grommet}>
