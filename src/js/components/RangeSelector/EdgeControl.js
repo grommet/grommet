@@ -71,7 +71,6 @@ class EdgeControl extends Component {
           border={
             focused ? { color: normalizeColor('focus', theme) } : undefined
           }
-          style={theme.edge && theme.edge.extend}
         />
       );
     } else {
