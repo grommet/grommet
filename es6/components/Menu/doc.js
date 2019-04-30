@@ -34,6 +34,7 @@ export var doc = function doc(Menu) {
       openMenu: 'Open Menu',
       closeMenu: 'Close Menu'
     }),
+    open: PropTypes.bool.description('Whether the state of the component should be open').defaultValue(false),
     size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The size of the menu.').defaultValue('medium')
   });
   return DocumentedMenu;

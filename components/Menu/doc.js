@@ -42,6 +42,7 @@ var doc = function doc(Menu) {
       openMenu: 'Open Menu',
       closeMenu: 'Close Menu'
     }),
+    open: _reactDesc.PropTypes.bool.description('Whether the state of the component should be open').defaultValue(false),
     size: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), _reactDesc.PropTypes.string]).description('The size of the menu.').defaultValue('medium')
   });
   return DocumentedMenu;

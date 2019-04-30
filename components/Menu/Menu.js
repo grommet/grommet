@@ -49,19 +49,10 @@ var Menu =
 function (_Component) {
   _inheritsLoose(Menu, _Component);
 
-  function Menu() {
+  function Menu(props) {
     var _this;
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      activeItemIndex: -1,
-      open: false
-    });
+    _this = _Component.call(this, props) || this;
 
     _defineProperty(_assertThisInitialized(_this), "buttonRefs", {});
 
@@ -129,6 +120,10 @@ function (_Component) {
       }
     });
 
+    _this.state = {
+      activeItemIndex: -1,
+      open: props.open || false
+    };
     return _this;
   }
 
