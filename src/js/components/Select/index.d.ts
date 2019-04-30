@@ -15,7 +15,7 @@ export interface SelectProps {
   dropTarget?: object;
   dropProps?: DropProps;
   focusIndicator?: boolean;
-  icon?: boolean | ((...args: any[]) => any);
+  icon?: boolean | ((...args: any[]) => any) | React.ReactNode;
   id?: string;
   labelKey?: string | ((...args: any[]) => any);
   messages?: {multiple?: string};

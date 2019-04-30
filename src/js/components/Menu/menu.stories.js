@@ -23,7 +23,11 @@ const SimpleMenu = () => (
 
 const CustomMenu = () => (
   <Grommet theme={grommet}>
-    <Box align="center" pad="large" background="dark-2">
+    <Box
+      align="center"
+      pad="large"
+      background={{ color: 'dark-2', opacity: 0.7 }}
+    >
       <Menu
         plain
         items={[

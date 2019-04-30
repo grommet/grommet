@@ -8,7 +8,7 @@ export interface DistributionProps {
   children?: ((...args: any[]) => any);
   fill?: boolean;
   gap?: "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
-  values: {value: number}[];
+  values: {value: number, color?: string | {dark?: string,light?: string}}[];
 }
 
 declare const Distribution: React.ComponentClass<DistributionProps & JSX.IntrinsicElements['div']>;

@@ -29,8 +29,6 @@ exports[`Form regexp validation 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 6px;
-  margin-bottom: 6px;
   color: #FF4040;
 }
 
@@ -49,8 +47,6 @@ exports[`Form required validation 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
-  margin-top: 6px;
-  margin-bottom: 6px;
   color: #FF4040;
 }
 
@@ -139,6 +135,7 @@ exports[`Form update 1`] = `
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -310,6 +307,7 @@ exports[`Form with field 1`] = `
 .c4 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;

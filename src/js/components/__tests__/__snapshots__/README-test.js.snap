@@ -235,14 +235,24 @@ Defaults to
 <FormDown />
 \`\`\`
 
-**accordion.border**
+**accordion.border.color**
 
-The border to use in the accordion. Expects \`React.Element\`.
+The border color to use in the accordion. Expects \`string | { dark: string, light: string }\`.
 
 Defaults to
 
 \`\`\`
-side: bottom, color: border
+border
+\`\`\`
+
+**accordion.border.side**
+
+The border side to use in the accordion. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+bottom
 \`\`\`
 ",
   "Anchor": "## Anchor
@@ -792,10 +802,11 @@ string
   image: string,
   position: string,
   opacity: 
+    boolean
+    number
     weak
     medium
-    strong
-    boolean,
+    strong,
   repeat: 
     no-repeat
     repeat
@@ -1144,11 +1155,11 @@ string
 
 **wrap**
 
-Whether children can wrap if they
-      can't all fit.
+Whether children can wrap if they can't all fit.
 
 \`\`\`
 boolean
+reverse
 \`\`\`
   
 ## Intrinsic element
@@ -1464,7 +1475,7 @@ boolean
 
 **color**
 
-Fill color for primary, border color otherwise.
+Fill color for primary, label color for plain, border color otherwise.
 
 \`\`\`
 string
@@ -1530,6 +1541,20 @@ Icon element to place in the button.
 
 \`\`\`
 element
+\`\`\`
+
+**gap**
+
+The amount of spacing between icon and label in the button. Defaults to \`small\`.
+
+\`\`\`
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
 \`\`\`
 
 **label**
@@ -2899,7 +2924,209 @@ boolean
 
 \`\`\`
 input
-\`\`\`",
+\`\`\`
+## Theme
+  
+**checkBox.border.color**
+
+The border color when unchecked. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'rgba(255, 255, 255, 0.5)', light: 'rgba(0, 0, 0, 0.15)' }
+\`\`\`
+
+**checkBox.border.width**
+
+The border width when unchecked. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+2px
+\`\`\`
+
+**checkBox.check.extend**
+
+Any additional style for checked CheckBox. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.check.radius**
+
+The radius of the checked icon. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+4px
+\`\`\`
+
+**checkBox.check.thickness**
+
+The stroke width of the checked icon. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+4px
+\`\`\`
+
+**checkBox.color**
+
+The stroke color for the CheckBox icon, and the border when checked. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.extend**
+
+Any additional style for CheckBox. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.gap**
+
+The right margin of the CheckBox to its label. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.hover.border.color**
+
+The border color on hover. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'white', light: 'black' }
+\`\`\`
+
+**checkBox.icon.size**
+
+The size of the checked icon. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.icon.extend**
+
+Any additional style for CheckBox icon. Expects \`string | (props)=>{}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.icons.checked**
+
+The icon to use when checked. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.icons.indeterminate**
+
+The icon to use when indeterminate. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.size**
+
+The height and width used for the CheckBox icon. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**checkBox.toggle.background**
+
+The background color of the toggle. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.toggle.color**
+
+The color of the toggle knob. Expects \`string | { 'dark': string, 'light': string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: '#d9d9d9', light: '#d9d9d9' }
+\`\`\`
+
+**checkBox.toggle.extend**
+
+Any additional style for CheckBox toggle. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.toggle.knob.extend**
+
+Any additional style for the CheckBox toggle knob. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**checkBox.toggle.radius**
+
+The border radius used for the toggle and the knob. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+24px
+\`\`\`
+
+**checkBox.toggle.size**
+
+The width size of the toggle. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+42px
+\`\`\`
+",
   "Clock": "## Clock
 A clock with timezone awareness.
 
@@ -3540,7 +3767,139 @@ boolean
 
 \`\`\`
 table
-\`\`\`",
+\`\`\`
+## Theme
+  
+**dataTable.groupHeader.background**
+
+The background color of the group header. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+{ dark: 'dark-2', light: 'light-2' }
+\`\`\`
+
+**dataTable.groupHeader.border.side**
+
+The border side rendered for the group header. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+bottom
+\`\`\`
+
+**dataTable.groupHeader.border.size**
+
+The border size of the group header border. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+xsmall
+\`\`\`
+
+**dataTable.groupHeader.fill**
+
+Whether the height should fill the group header. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+vertical
+\`\`\`
+
+**dataTable.groupHeader.pad**
+
+The pad used for the group header. Expects \`string | object\`.
+
+Defaults to
+
+\`\`\`
+{ horizontal: 'small', vertical: 'xsmall' }
+\`\`\`
+
+**dataTable.header**
+
+Styles for the header. Expects \`object\`.
+
+Defaults to
+
+\`\`\`
+{}
+\`\`\`
+
+**dataTable.icons.ascending**
+
+The ascending icon. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<FormDown />
+\`\`\`
+
+**dataTable.icons.contract**
+
+The contract icon. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<FormUp />
+\`\`\`
+
+**dataTable.icons.descending**
+
+The descending icon. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<FormUp />
+\`\`\`
+
+**dataTable.icons.expand**
+
+The expand icon. Expects \`React.Element\`.
+
+Defaults to
+
+\`\`\`
+<FormDown />
+\`\`\`
+
+**dataTable.primary.weight**
+
+The font weight for primary cells. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+bold
+\`\`\`
+
+**dataTable.resize.border.color**
+
+The border color for resize. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+border
+\`\`\`
+
+**dataTable.resize.border.side**
+
+The border side used for resize. Expects \`string\`.
+
+Defaults to
+
+\`\`\`
+right
+\`\`\`
+",
   "Diagram": "## Diagram
 Graphical connection lines. Diagram is meant to be used with Stack.
       Boxes can be used in the \`guidingChild\` layer of Stack and then
@@ -4021,8 +4380,8 @@ Defaults to
   "DropButton": "## DropButton
 A Button that controls a Drop. When opened, the Drop will contain
       whatever is specified via \`dropContent\`. The Drop will control the focus
-      so that the contents behind it are not focusable. All properties of
-      Button can be passed through.
+      so that the contents behind it are not focusable. All properties and theme properties of
+      Button or Drop can be passed through.
       
 
 [![](https://cdn-images-1.medium.com/fit/c/120/120/1*TD1P0HtIH9zF0UEH28zYtw.png)](https://storybook.grommet.io/?selectedKind=DropButton&full=0&addons=0&stories=1&panelRight=0) [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js)
@@ -4320,6 +4679,7 @@ The component to insert in the FormField. Grommet will add update the form value
 
 \`\`\`
 function
+object
 \`\`\`
 
 **error**
@@ -6354,10 +6714,11 @@ string
 {
   color: string,
   opacity: 
+    boolean
+    number
     weak
     medium
     strong
-    boolean
 }
 \`\`\`
 
@@ -7818,6 +8179,7 @@ A custom icon to be used when rendering the select. You can use false to not ren
 \`\`\`
 boolean
 function
+node
 \`\`\`
 
 **labelKey**
@@ -8047,6 +8409,16 @@ undefined
 **select.control.extend**
 
 Any additional style for the control of the Select component. Expects \`string | (props) => {}\`.
+
+Defaults to
+
+\`\`\`
+undefined
+\`\`\`
+
+**select.icons.margin**
+
+The margin used for Select icons. Expects \`string | object\`.
 
 Defaults to
 

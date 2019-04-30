@@ -11,6 +11,7 @@ export interface ButtonProps {
   disabled?: boolean;
   fill?: boolean;
   focusIndicator?: boolean;
+  gap?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   hoverIndicator?: boolean | string | "background" | {background?: boolean | string};
   href?: string;
   icon?: JSX.Element;

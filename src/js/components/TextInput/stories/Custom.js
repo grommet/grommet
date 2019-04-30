@@ -1,89 +1,10 @@
-import React, { createRef, Component, useState } from 'react';
+import React, { createRef, Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Search, FormLock, View } from 'grommet-icons';
 
-import { Box, Image, Grommet, Text, TextInput, Button } from 'grommet';
+import { Search } from 'grommet-icons';
+import { Box, Image, Grommet, Text, TextInput } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
-
-class SimpleTextInput extends Component {
-  state = { value: '' };
-
-  ref = React.createRef();
-
-  onChange = event => this.setState({ value: event.target.value });
-
-  render() {
-    const { value } = this.state;
-    return (
-      <Grommet full theme={grommet}>
-        <Box fill align="center" justify="start" pad="large">
-          <Box width="medium">
-            <TextInput ref={this.ref} value={value} onChange={this.onChange} />
-          </Box>
-        </Box>
-      </Grommet>
-    );
-  }
-}
-
-const PasswordInput = ({ value, ...rest }) => {
-  const [inputValue, setValue] = useState(value);
-  const [reveal, setReveal] = useState(false);
-  return (
-    <Box
-      width="medium"
-      direction="row"
-      margin="large"
-      align="center"
-      round="small"
-      border
-    >
-      <TextInput
-        plain
-        type={reveal ? 'text' : 'password'}
-        value={inputValue}
-        onChange={event => setValue(event.target.value)}
-        {...rest}
-      />
-      <Button
-        icon={reveal ? <FormLock size="medium" /> : <View size="medium" />}
-        onClick={() => setReveal(!reveal)}
-      />
-    </Box>
-  );
-};
-
-const suggestions = Array(100)
-  .fill()
-  .map((_, i) => `suggestion ${i + 1}`);
-
-class SuggestionsTextInput extends Component {
-  state = { value: '' };
-
-  onChange = event => this.setState({ value: event.target.value });
-
-  onSelect = event => this.setState({ value: event.suggestion });
-
-  render() {
-    const { value } = this.state;
-    return (
-      <Grommet full theme={grommet}>
-        <Box fill align="center" justify="start" pad="large">
-          <Box width="medium">
-            <TextInput
-              value={value}
-              dropProps={{ height: 'small' }}
-              onChange={this.onChange}
-              onSelect={this.onSelect}
-              suggestions={suggestions}
-            />
-          </Box>
-        </Box>
-      </Grommet>
-    );
-  }
-}
 
 const myCustomTheme = deepMerge(grommet, {
   global: {
@@ -91,11 +12,11 @@ const myCustomTheme = deepMerge(grommet, {
       background: '#444444',
       shadowSize: 'medium',
       extend: `
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px;
-
-        overflow: hidden;
-      `,
+          border-bottom-left-radius: 12px;
+          border-bottom-right-radius: 12px;
+  
+          overflow: hidden;
+        `,
     },
     elevation: {
       dark: {
@@ -110,6 +31,7 @@ const myCustomTheme = deepMerge(grommet, {
     },
     font: {
       size: '14px',
+      family: 'Arial',
     },
   },
 });
@@ -253,8 +175,6 @@ class CustomSuggestionsTextInput extends Component {
   }
 }
 
-storiesOf('TextInput', module)
-  .add('Simple TextInput', () => <SimpleTextInput />)
-  .add('Password input', () => <PasswordInput />)
-  .add('Suggestions TextInput', () => <SuggestionsTextInput />)
-  .add('Custom Suggestions', () => <CustomSuggestionsTextInput />);
+storiesOf('TextInput', module).add('Custom', () => (
+  <CustomSuggestionsTextInput />
+));

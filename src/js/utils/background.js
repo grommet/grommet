@@ -126,11 +126,11 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
 export const activeStyle = css`
   ${props =>
     backgroundStyle(
-      normalizeColor(props.theme.global.hover.background, props.theme),
+      normalizeColor(props.theme.global.active.background, props.theme),
       props.theme,
     )}
   color: ${props =>
-    normalizeColor(props.theme.global.hover.color, props.theme)};
+    normalizeColor(props.theme.global.active.color, props.theme)};
 `;
 
 export const selectedStyle = css`

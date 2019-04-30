@@ -53,6 +53,15 @@ class SelectContainer extends Component {
 
   optionsRef = createRef();
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      initialOptions: props.options,
+      search: '',
+      activeIndex: -1,
+    };
+  }
+
   static getDerivedStateFromProps(nextProps, prevState) {
     const { options, value, onSearch } = nextProps;
 
@@ -74,11 +83,6 @@ class SelectContainer extends Component {
     }
     return null;
   }
-
-  state = {
-    search: '',
-    activeIndex: -1,
-  };
 
   componentDidMount() {
     const { onSearch } = this.props;
@@ -131,38 +135,29 @@ class SelectContainer extends Component {
     onSearch(search);
   }, debounceDelay(this.props));
 
-  selectOption = (option, index) => () => {
-    const { multiple, onChange, options, selected, value } = this.props;
-
+  selectOption = option => () => {
+    const { multiple, onChange, value, selected } = this.props;
+    const { initialOptions } = this.state;
     if (onChange) {
-      let nextValue = option;
-      let nextSelected = index;
-      if (multiple) {
-        nextValue = [];
-        nextSelected = [];
-        let removed = false;
-        let selectedIndexes = [];
-
-        if (Array.isArray(selected)) {
-          selectedIndexes = selected;
-        } else if (Array.isArray(value)) {
-          selectedIndexes = value.map(v => options.indexOf(v));
-        }
-
-        selectedIndexes.forEach(selectedIndex => {
-          if (selectedIndex === index) {
-            removed = true;
-          } else {
-            nextValue.push(options[selectedIndex]);
-            nextSelected.push(selectedIndex);
-          }
-        });
-        if (!removed) {
-          nextValue.push(option);
-          nextSelected.push(index);
-        }
+      let nextValue = Array.isArray(value) ? value.slice() : [];
+      // preserve compatibility until selected is deprecated
+      if (selected) {
+        nextValue = selected.map(s => initialOptions[s]);
       }
 
+      if (multiple) {
+        if (nextValue.indexOf(option) !== -1) {
+          nextValue = nextValue.filter(v => v !== option);
+        } else {
+          nextValue.push(option);
+        }
+      } else {
+        nextValue = option;
+      }
+
+      const nextSelected = Array.isArray(nextValue)
+        ? nextValue.map(v => initialOptions.indexOf(v))
+        : initialOptions.indexOf(nextValue);
       onChange({
         option,
         value: nextValue,
@@ -255,7 +250,7 @@ class SelectContainer extends Component {
     const { activeIndex } = this.state;
     if (activeIndex >= 0) {
       event.preventDefault(); // prevent submitting forms
-      this.selectOption(options[activeIndex], activeIndex)();
+      this.selectOption(options[activeIndex])();
     }
   };
 
@@ -415,9 +410,7 @@ class SelectContainer extends Component {
                         !isDisabled ? this.onActiveOption(index) : undefined
                       }
                       onClick={
-                        !isDisabled
-                          ? this.selectOption(option, index)
-                          : undefined
+                        !isDisabled ? this.selectOption(option) : undefined
                       }
                     >
                       {children ? (

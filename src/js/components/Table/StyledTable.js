@@ -68,6 +68,9 @@ const StyledTable = styled.table`
   border-spacing: 0;
   border-collapse: collapse;
   width: inherit;
+  @media all and (min--moz-device-pixel-ratio: 0) {
+    table-layout: fixed;
+  }
   ${genericStyles} ${props => props.theme.table && props.theme.table.extend};
 `;
 

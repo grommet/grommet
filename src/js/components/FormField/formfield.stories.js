@@ -9,6 +9,7 @@ import {
   Select,
   TextArea,
   TextInput,
+  Form,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
 import { deepMerge } from 'grommet/utils';
@@ -22,7 +23,7 @@ class FormFieldTextInput extends Component {
 
   onChange = event => {
     const {
-      taget: { value },
+      target: { value },
     } = event;
     const exp = new RegExp(value, 'i');
     const suggestions = allSuggestions.filter(s => exp.test(s));
@@ -55,9 +56,15 @@ class FormFieldTextInput extends Component {
 const FormFieldTextArea = props => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <FormField label="Label" htmlFor="text-area" {...props}>
-        <TextArea id="text-area" placeholder="placeholder" />
-      </FormField>
+      <Form>
+        <FormField
+          label="Label"
+          htmlFor="text-area"
+          {...props}
+          component={TextArea}
+          placeholder="placeholder"
+        />
+      </Form>
     </Box>
   </Grommet>
 );
