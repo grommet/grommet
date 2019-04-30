@@ -28,7 +28,7 @@ export const doc = Button => {
       .description('Whether the button is active.')
       .defaultValue(false),
     color: colorPropType.description(
-      'Fill color for primary, border color otherwise.',
+      'Fill color for primary, label color for plain, border color otherwise.',
     ),
     disabled: PropTypes.bool
       .description('Whether the button is disabled.')

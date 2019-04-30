@@ -1899,7 +1899,8 @@ string",
     "properties": Array [
       Object {
         "description": "The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component.",
-        "format": "function",
+        "format": "function
+object",
         "name": "component",
       },
       Object {
@@ -2247,6 +2248,12 @@ node",
   openMenu: string
 }",
         "name": "messages",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether the state of the component should be open",
+        "format": "boolean",
+        "name": "open",
       },
       Object {
         "defaultValue": "medium",
@@ -2810,7 +2817,7 @@ function",
         "required": true,
       },
       Object {
-        "description": "Initial state of the select component",
+        "description": "Control the state of the component.",
         "format": "boolean",
         "name": "open",
       },

@@ -1475,7 +1475,7 @@ boolean
 
 **color**
 
-Fill color for primary, border color otherwise.
+Fill color for primary, label color for plain, border color otherwise.
 
 \`\`\`
 string
@@ -4679,6 +4679,7 @@ The component to insert in the FormField. Grommet will add update the form value
 
 \`\`\`
 function
+object
 \`\`\`
 
 **error**
@@ -6793,6 +6794,14 @@ Custom messages. Used for accessibility by screen readers. Defaults to \`{
 }
 \`\`\`
 
+**open**
+
+Whether the state of the component should be open
+
+\`\`\`
+boolean
+\`\`\`
+
 **size**
 
 The size of the menu. Defaults to \`medium\`.
@@ -8262,7 +8271,7 @@ Required. Options can be either a string or an object. If an object is used, use
 
 **open**
 
-Initial state of the select component
+Control the state of the component.
 
 \`\`\`
 boolean

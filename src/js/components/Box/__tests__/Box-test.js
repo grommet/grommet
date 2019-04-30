@@ -119,6 +119,10 @@ describe('Box', () => {
         <Box background="light-1" />
         <Box background="dark-1" />
         <Box background="status-critical" />
+        <Box background="rgb(90, 80, 50)" />
+        <Box background="rgba(200, 100, 150, 0.8)" />
+        <Box background="hsl(10, 50%, 20%)" />
+        <Box background="hsla(10, 50%, 70%, 0.7)" />
         <Box background="url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)" />
         <Box
           background={{

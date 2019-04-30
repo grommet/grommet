@@ -78,8 +78,8 @@ const fillStyle = `
   flex: 1 0 auto;
 `;
 
-const plainStyle = css`
-  color: inherit;
+const plainStyle = props => css`
+  color: ${normalizeColor(props.colorValue || 'inherit', props.theme)};
   border: none;
   padding: 0;
   text-align: inherit;
@@ -99,7 +99,7 @@ const StyledButton = styled.button`
   text-transform: none;
 
   ${genericStyles}
-  ${props => props.plain && plainStyle}
+  ${props => props.plain && plainStyle(props)}
   ${props => !props.plain && basicStyle(props)}
   ${props => props.primary && primaryStyle(props)}
 
