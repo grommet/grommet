@@ -10,6 +10,9 @@ const customButtonColor = deepMerge(grommet, {
       light: 'white',
       dark: 'white',
     },
+    // plain: {
+    //   color: 'neutral-1',
+    // },
   },
 });
 
@@ -40,17 +43,12 @@ const Colored = props => (
       <Button primary color="#777" label="#777" onClick={() => {}} {...props} />
       <Button
         plain
-        color="red"
-        label="plain red"
+        color="neutral-2"
+        label="neutral-2 on plain"
         onClick={() => {}}
         {...props}
       />
-      <Button
-        plain
-        label="plain inherit"
-        onClick={() => {}}
-        {...props}
-      />
+      <Button plain label="plain inherit" onClick={() => {}} {...props} />
     </Box>
   </Grommet>
 );

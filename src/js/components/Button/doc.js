@@ -165,6 +165,10 @@ export const themeDoc = {
     description: `The color of the text label.`,
     type: 'string | { dark: string, light: string }',
   },
+  'button.plain.color': {
+    description: `The color of the text label for plain buttons.`,
+    type: 'string | { dark: string, light: string }',
+  },
   'button.primary.color': {
     description: `The color of the background for primary buttons.`,
     type: 'string | { dark: string, light: string }',

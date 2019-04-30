@@ -79,7 +79,12 @@ const fillStyle = `
 `;
 
 const plainStyle = props => css`
-  color: ${normalizeColor(props.colorValue || 'inherit', props.theme)};
+  color: ${normalizeColor(
+    props.colorValue ||
+      (props.theme.button.plain && props.theme.button.plain.color) ||
+      'inherit',
+    props.theme,
+  )};
   border: none;
   padding: 0;
   text-align: inherit;

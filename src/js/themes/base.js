@@ -300,13 +300,16 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         radius: `${baseSpacing * 0.75}px`,
       },
       // color: { dark: undefined, light: undefined }
-      primary: {
-        // color: { dark: undefined, light: undefined }
-      },
       // disabled: { opacity: undefined },
       padding: {
         vertical: `${baseSpacing / 4 - borderWidth}px`,
         horizontal: `${baseSpacing - borderWidth}px`,
+      },
+      // plain: {
+      //  color: { dark: undefined, light: undefined },
+      // },
+      primary: {
+        // color: { dark: undefined, light: undefined }
       },
     },
     calendar: {

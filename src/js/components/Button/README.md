@@ -383,6 +383,16 @@ Defaults to
 undefined
 ```
 
+**button.plain.color**
+
+The color of the text label for plain buttons. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+undefined
+```
+
 **button.primary.color**
 
 The color of the background for primary buttons. Expects `string | { dark: string, light: string }`.
