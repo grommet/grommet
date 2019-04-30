@@ -35,7 +35,7 @@ const Color = () => (
 const WordBreak = () => (
   <Grommet theme={grommet}>
     {wordBreakValues.map(value => (
-      <Box key={value} margin="small">
+      <Box key={value} margin="small" width="medium">
         <Heading level={4}>{`word-break: ${value};`}</Heading>
         <Text wordBreak={value}>
           Honorificabilitudinitatibus califragilisticexpialidocious
