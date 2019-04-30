@@ -60,7 +60,7 @@ is too long to all fit.`,
     ]).description('Font weight'),
     wordBreak: PropTypes.oneOf(['normal', 'breakAll', 'keepAll', 'breakWord'])
       .description(
-        'Sets whether line breaks appear whenever text overflows its content box',
+        'Whether words should break when reaching the end of a line.',
       )
       .defaultValue('normal'),
   };
