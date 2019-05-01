@@ -33,11 +33,12 @@ export const doc = Button => {
     disabled: PropTypes.bool
       .description('Whether the button is disabled.')
       .defaultValue(false),
-    fill: PropTypes.bool
-      .description(
-        'Whether the button expands to fill all of the available width and height.',
-      )
-      .defaultValue(false),
+    fill: PropTypes.oneOfType([
+      PropTypes.oneOf(['horizontal', 'vertical']),
+      PropTypes.bool,
+    ]).description(
+      'Whether the button expands to fill all of the available width and/or height.',
+    ).defaultValue(false),
     focusIndicator: PropTypes.bool
       .description("Whether when 'plain' it should receive a focus outline.")
       .defaultValue(true),
