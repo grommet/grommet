@@ -475,6 +475,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
           side: 'right',
         },
       },
+      step: 50,
     },
     diagram: {
       // extend: undefined,

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { compose } from 'recompose';
+
+import { withTheme } from 'styled-components';
 
 import { Header } from './Header';
 import { Footer } from './Footer';
@@ -79,10 +82,11 @@ class DataTable extends Component {
       data: propsData,
       groupBy,
       onMore,
+      onSearch, // removing unknown DOM attributes
       resizeable,
       size,
       sortable,
-      onSearch, // removing unknown DOM attributes
+      theme,
       ...rest
     } = this.props;
     const {
@@ -103,7 +107,7 @@ class DataTable extends Component {
     }
 
     return (
-      <StyledDataTable {...rest}>
+      <StyledDataTable theme={theme} {...rest}>
         <Header
           columns={columns}
           filtering={filtering}
@@ -135,6 +139,7 @@ class DataTable extends Component {
             onMore={onMore}
             primaryProperty={primaryProperty}
             size={size}
+            theme={theme}
           />
         )}
         {showFooter && (
@@ -155,6 +160,6 @@ let DataTableDoc;
 if (process.env.NODE_ENV !== 'production') {
   DataTableDoc = require('./doc').doc(DataTable); // eslint-disable-line global-require
 }
-const DataTableWrapper = DataTableDoc || DataTable;
+const DataTableWrapper = compose(withTheme)(DataTableDoc || DataTable);
 
 export { DataTableWrapper as DataTable };

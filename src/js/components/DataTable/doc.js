@@ -164,4 +164,9 @@ export const themeDoc = {
     type: 'string',
     defaultValue: 'right',
   },
+  'dataTable.step': {
+    description: `How many items to render at a time.`,
+    type: 'number',
+    defaultValue: 50,
+  },
 };

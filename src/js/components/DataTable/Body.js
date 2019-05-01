@@ -21,6 +21,7 @@ export const Body = ({
       items={data}
       onMore={onMore}
       scrollableAncestor="window"
+      step={theme.dataTable.step}
       renderMarker={marker => (
         <TableRow>
           <TableCell>{marker}</TableCell>
