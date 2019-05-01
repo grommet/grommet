@@ -96,9 +96,7 @@ function (_PureComponent) {
         /* eslint-disable react/no-find-dom-node */
         var beginRect = findDOMNode(_this.firstPageItemRef.current).getBoundingClientRect();
         var endRect = findDOMNode(_this.lastPageItemRef.current).getBoundingClientRect();
-        /* eslint-enable react/no-find-dom-node */
-
-        var nextPageHeight = endRect.y + endRect.height - beginRect.y; // Check if the items are arranged in a single column or not.
+        var nextPageHeight = endRect.top + endRect.height - beginRect.top; // Check if the items are arranged in a single column or not.
 
         var multiColumn = nextPageHeight / step < endRect.height;
         var pageArea = endRect.height * endRect.width * step; // In case the pageHeight is smaller than the visible area,
