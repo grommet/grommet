@@ -28,10 +28,13 @@ var colorStyle = css(["color:", ";"], function (props) {
 var weightStyle = css(["font-weight:", ";"], function (props) {
   return props.weight;
 });
+var wordBreakStyle = css(["word-break:", ";"], function (props) {
+  return props.wordBreak;
+});
 var StyledText = styled.span.withConfig({
   displayName: "StyledText",
   componentId: "sc-1sadyjn-0"
-})(["", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
+})(["", " ", " ", " ", " ", " ", " ", " ", ""], genericStyles, function (props) {
   return sizeStyle(props);
 }, function (props) {
   return props.textAlign && textAlignStyle;
@@ -41,6 +44,8 @@ var StyledText = styled.span.withConfig({
   return props.colorProp && colorStyle;
 }, function (props) {
   return props.weight && weightStyle;
+}, function (props) {
+  return props.wordBreak && wordBreakStyle;
 }, function (props) {
   return props.theme.text && props.theme.text.extend;
 });

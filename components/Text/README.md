@@ -183,6 +183,17 @@ normal
 bold
 number
 ```
+
+**wordBreak**
+
+Whether words should break when reaching the end of a line. Defaults to `normal`.
+
+```
+normal
+break-all
+keep-all
+break-word
+```
   
 ## Intrinsic element
 
