@@ -53,7 +53,7 @@ class Box extends Component {
             contents.push(
               <StyledBoxGap
                 // eslint-disable-next-line react/no-array-index-key
-                key={index}
+                key={`styled-box-gap_${index}`}
                 gap={gap}
                 directionProp={direction}
                 responsive={responsive}
