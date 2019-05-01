@@ -204,30 +204,26 @@ function (_Component) {
       fill: true,
       direction: "row",
       justify: "between"
-    }, _react.default.createElement(_Box.Box, {
-      fill: "vertical"
     }, _react.default.createElement(_Button.Button, {
-      fill: true,
+      fill: "vertical",
+      icon: _react.default.createElement(PreviousIcon, null),
+      plain: true,
       disabled: activeIndex <= 0,
       onClick: onLeft,
       hoverIndicator: true
-    }, _react.default.createElement(_Box.Box, {
-      justify: "center"
-    }, _react.default.createElement(PreviousIcon, null)))), _react.default.createElement(_Box.Box, {
+    }), _react.default.createElement(_Box.Box, {
       justify: "end"
     }, _react.default.createElement(_Box.Box, {
       direction: "row",
       justify: "center"
-    }, selectors)), _react.default.createElement(_Box.Box, {
-      fill: "vertical"
-    }, _react.default.createElement(_Button.Button, {
-      fill: true,
+    }, selectors)), _react.default.createElement(_Button.Button, {
+      fill: "vertical",
+      icon: _react.default.createElement(NextIcon, null),
+      plain: true,
       disabled: activeIndex >= lastIndex,
       onClick: onRight,
       hoverIndicator: true
-    }, _react.default.createElement(_Box.Box, {
-      justify: "center"
-    }, _react.default.createElement(NextIcon, null)))))));
+    }))));
   };
 
   return Carousel;

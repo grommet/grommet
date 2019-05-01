@@ -44,7 +44,22 @@ var hoverStyle = (0, _styledComponents.css)(["&:hover{", " ", ";}"], function (p
 }, function (props) {
   return !props.plain && (0, _styledComponents.css)(["box-shadow:0px 0px 0px 2px ", ";"], getHoverColor(props));
 });
-var fillStyle = "\n  width: 100%;\n  height: 100%;\n  max-width: none;\n  flex: 1 0 auto;\n";
+
+var fillStyle = function fillStyle(fillContainer) {
+  if (fillContainer === 'horizontal') {
+    return 'width: 100%;';
+  }
+
+  if (fillContainer === 'vertical') {
+    return 'height: 100%;';
+  }
+
+  if (fillContainer) {
+    return "\n      width: 100%;\n      height: 100%;\n      max-width: none;\n      flex: 1 0 auto;\n    ";
+  }
+
+  return undefined;
+};
 
 var plainStyle = function plainStyle(props) {
   return (0, _styledComponents.css)(["color:", ";border:none;padding:0;text-align:inherit;"], (0, _utils.normalizeColor)(props.colorValue || 'inherit', props.theme));
@@ -71,7 +86,7 @@ var StyledButton = _styledComponents.default.button.withConfig({
 }, function (props) {
   return !props.plain && "\n    transition: 0.1s ease-in-out;\n  ";
 }, function (props) {
-  return props.fillContainer && fillStyle;
+  return props.fillContainer && fillStyle(props.fillContainer);
 }, function (props) {
   return props.hasIcon && !props.hasLabel && "\n    line-height: 0;\n  ";
 }, function (props) {

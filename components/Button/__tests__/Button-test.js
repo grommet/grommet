@@ -95,6 +95,20 @@ describe('Button', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('fill', function () {
+    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, null, _react.default.createElement(_.Button, {
+      fill: true
+    }), _react.default.createElement(_.Button, {
+      fill: false
+    }), _react.default.createElement(_.Button, {
+      fill: "horizontal"
+    }), _react.default.createElement(_.Button, {
+      fill: "vertical"
+    }))));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   test('focus', function () {
     var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
       focus: true,

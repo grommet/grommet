@@ -186,30 +186,26 @@ function (_Component) {
       fill: true,
       direction: "row",
       justify: "between"
-    }, React.createElement(Box, {
-      fill: "vertical"
     }, React.createElement(Button, {
-      fill: true,
+      fill: "vertical",
+      icon: React.createElement(PreviousIcon, null),
+      plain: true,
       disabled: activeIndex <= 0,
       onClick: onLeft,
       hoverIndicator: true
-    }, React.createElement(Box, {
-      justify: "center"
-    }, React.createElement(PreviousIcon, null)))), React.createElement(Box, {
+    }), React.createElement(Box, {
       justify: "end"
     }, React.createElement(Box, {
       direction: "row",
       justify: "center"
-    }, selectors)), React.createElement(Box, {
-      fill: "vertical"
-    }, React.createElement(Button, {
-      fill: true,
+    }, selectors)), React.createElement(Button, {
+      fill: "vertical",
+      icon: React.createElement(NextIcon, null),
+      plain: true,
       disabled: activeIndex >= lastIndex,
       onClick: onRight,
       hoverIndicator: true
-    }, React.createElement(Box, {
-      justify: "center"
-    }, React.createElement(NextIcon, null)))))));
+    }))));
   };
 
   return Carousel;

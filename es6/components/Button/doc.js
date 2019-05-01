@@ -8,7 +8,7 @@ export var doc = function doc(Button) {
     active: PropTypes.bool.description('Whether the button is active.').defaultValue(false),
     color: colorPropType.description('Fill color for primary, label color for plain, border color otherwise.'),
     disabled: PropTypes.bool.description('Whether the button is disabled.').defaultValue(false),
-    fill: PropTypes.bool.description('Whether the button expands to fill all of the available width and height.').defaultValue(false),
+    fill: PropTypes.oneOfType([PropTypes.oneOf(['horizontal', 'vertical']), PropTypes.bool]).description('Whether the button expands to fill all of the available width and/or height.').defaultValue(false),
     focusIndicator: PropTypes.bool.description("Whether when 'plain' it should receive a focus outline.").defaultValue(true),
     hoverIndicator: PropTypes.oneOfType([PropTypes.bool, PropTypes.string, PropTypes.oneOf(['background']), PropTypes.shape({
       background: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])

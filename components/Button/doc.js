@@ -15,7 +15,7 @@ var doc = function doc(Button) {
     active: _reactDesc.PropTypes.bool.description('Whether the button is active.').defaultValue(false),
     color: _utils.colorPropType.description('Fill color for primary, label color for plain, border color otherwise.'),
     disabled: _reactDesc.PropTypes.bool.description('Whether the button is disabled.').defaultValue(false),
-    fill: _reactDesc.PropTypes.bool.description('Whether the button expands to fill all of the available width and height.').defaultValue(false),
+    fill: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.oneOf(['horizontal', 'vertical']), _reactDesc.PropTypes.bool]).description('Whether the button expands to fill all of the available width and/or height.').defaultValue(false),
     focusIndicator: _reactDesc.PropTypes.bool.description("Whether when 'plain' it should receive a focus outline.").defaultValue(true),
     hoverIndicator: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.string, _reactDesc.PropTypes.oneOf(['background']), _reactDesc.PropTypes.shape({
       background: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.bool, _reactDesc.PropTypes.string])
