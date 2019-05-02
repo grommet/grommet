@@ -72,7 +72,7 @@ function (_Component) {
           } else {
             contents.push(_react.default.createElement(_StyledBox.StyledBoxGap // eslint-disable-next-line react/no-array-index-key
             , {
-              key: index,
+              key: "gap-" + index,
               gap: gap,
               directionProp: direction,
               responsive: responsive
