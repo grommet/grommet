@@ -168,14 +168,14 @@ function (_Component) {
         var fromRect = fromElement.getBoundingClientRect();
         var toRect = toElement.getBoundingClientRect(); // There is no x and y when unit testing.
 
-        var fromPoint = [fromRect.x - containerRect.x || 0, fromRect.y - containerRect.y || 0];
-        var toPoint = [toRect.x - containerRect.x || 0, toRect.y - containerRect.y || 0];
+        var fromPoint = [fromRect.left - containerRect.left || 0, fromRect.top - containerRect.top || 0];
+        var toPoint = [toRect.left - containerRect.left || 0, toRect.top - containerRect.top || 0];
 
         if (anchor === 'vertical') {
           fromPoint[0] += fromRect.width / 2;
           toPoint[0] += toRect.width / 2;
 
-          if (fromRect.y < toRect.y) {
+          if (fromRect.top < toRect.top) {
             fromPoint[1] += fromRect.height;
           } else {
             toPoint[1] += toRect.height;
@@ -184,7 +184,7 @@ function (_Component) {
           fromPoint[1] += fromRect.height / 2;
           toPoint[1] += toRect.height / 2;
 
-          if (fromRect.x < toRect.x) {
+          if (fromRect.left < toRect.left) {
             fromPoint[0] += fromRect.width;
           } else {
             toPoint[0] += toRect.width;
