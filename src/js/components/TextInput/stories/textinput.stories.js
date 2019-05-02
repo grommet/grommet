@@ -159,5 +159,5 @@ class ThemedTextInput extends Component {
 storiesOf('TextInput', module)
   .add('Simple TextInput', () => <SimpleTextInput />)
   .add('Password input', () => <PasswordInput />)
-  .add('Suggestions TextInput', () => <SuggestionsTextInput />)
+  .add('Suggestions', () => <SuggestionsTextInput />)
   .add('Themed TextInput', () => <ThemedTextInput />);
