@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBox, Grommet, Form, // FormContext,
-FormField, RadioButton, RangeInput, Select, TextArea } from 'grommet';
+import { Box, Button, CheckBox, Grommet, Form, FormField, RadioButton, RangeInput, Select, TextArea } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var RadioButtonGroup = function RadioButtonGroup(_ref) {
