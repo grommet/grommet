@@ -169,7 +169,7 @@ export const themeDoc = {
     defaultValue: undefined,
   },
   'textInput.container.extend': {
-    description: 'Any additional style for Input container.',
+    description: 'Any additional style for TextInput container.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
