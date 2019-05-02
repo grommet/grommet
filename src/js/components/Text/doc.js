@@ -58,6 +58,16 @@ is too long to all fit.`,
       PropTypes.oneOf(['normal', 'bold']),
       PropTypes.number,
     ]).description('Font weight'),
+    wordBreak: PropTypes.oneOf([
+      'normal',
+      'break-all',
+      'keep-all',
+      'break-word',
+    ])
+      .description(
+        'Whether words should break when reaching the end of a line.',
+      )
+      .defaultValue('normal'),
   };
 
   return DocumentedText;

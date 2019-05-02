@@ -4590,7 +4590,7 @@ exports[`Select opens 5`] = `
         class="SelectContainer__OptionBox-sc-1wi0ul8-1 ixLLDr StyledBox-sc-13pk1d4-0 eEPVhE"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 eFEfWf"
+          class="StyledText-sc-1sadyjn-0 cVkhuq"
         >
           one
         </span>
@@ -4610,7 +4610,7 @@ exports[`Select opens 5`] = `
         class="SelectContainer__OptionBox-sc-1wi0ul8-1 ixLLDr StyledBox-sc-13pk1d4-0 eEPVhE"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 eFEfWf"
+          class="StyledText-sc-1sadyjn-0 cVkhuq"
         >
           two
         </span>

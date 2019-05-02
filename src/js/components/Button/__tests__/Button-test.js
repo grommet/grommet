@@ -87,6 +87,21 @@ describe('Button', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('fill', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Button>
+          <Button fill />
+          <Button fill={false} />
+          <Button fill="horizontal" />
+          <Button fill="vertical" />
+        </Button>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('focus', () => {
     const component = renderer.create(
       <Grommet>
