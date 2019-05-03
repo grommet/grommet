@@ -255,11 +255,14 @@ class SelectContainer extends Component {
   };
 
   optionLabel = index => {
-    const { options, labelKey } = this.props;
+    const { options, labelKey, theme } = this.props;
     const option = options[index];
     let optionLabel;
+    let wrapInText = true;
     if (labelKey) {
       if (typeof labelKey === 'function') {
+        // we don't want to wrap in text if the caller is controlling the render
+        wrapInText = false;
         optionLabel = labelKey(option);
       } else {
         optionLabel = option[labelKey];
@@ -267,7 +270,11 @@ class SelectContainer extends Component {
     } else {
       optionLabel = option;
     }
-    return optionLabel;
+    return wrapInText ? (
+      <Text {...theme.select.options.text}>{optionLabel}</Text>
+    ) : (
+      optionLabel
+    );
   };
 
   optionValue = index => {
@@ -424,9 +431,7 @@ class SelectContainer extends Component {
                           {...theme.select.options.box}
                           selected={isSelected}
                         >
-                          <Text {...theme.select.options.text}>
-                            {this.optionLabel(index)}
-                          </Text>
+                          {this.optionLabel(index)}
                         </OptionBox>
                       )}
                     </SelectOption>
