@@ -393,11 +393,11 @@ zoomOut
   image: string,
   position: string,
   opacity: 
+    boolean
+    number
     weak
     medium
-    strong
-    boolean
-    number,
+    strong,
   repeat: 
     no-repeat
     repeat
@@ -1887,7 +1887,8 @@ string",
     "properties": Array [
       Object {
         "description": "The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component.",
-        "format": "function",
+        "format": "function
+object",
         "name": "component",
       },
       Object {
@@ -2172,10 +2173,11 @@ one of top or bottom should be specified.",
 {
   color: string,
   opacity: 
+    boolean
+    number
     weak
     medium
     strong
-    boolean
 }",
         "name": "dropBackground",
       },
@@ -2735,7 +2737,8 @@ string",
       Object {
         "description": "A custom icon to be used when rendering the select. You can use false to not render an icon at all.",
         "format": "boolean
-function",
+function
+node",
         "name": "icon",
       },
       Object {
