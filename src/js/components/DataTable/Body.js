@@ -13,6 +13,7 @@ export const Body = ({
   onMore,
   primaryProperty,
   size,
+  step,
   theme,
   ...rest
 }) => (
@@ -20,12 +21,13 @@ export const Body = ({
     <InfiniteScroll
       items={data}
       onMore={onMore}
-      scrollableAncestor="window"
       renderMarker={marker => (
         <TableRow>
           <TableCell>{marker}</TableCell>
         </TableRow>
       )}
+      scrollableAncestor="window"
+      step={step}
     >
       {datum => (
         <StyledDataTableRow key={datum[primaryProperty]} size={size}>
