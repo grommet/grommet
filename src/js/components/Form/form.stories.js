@@ -7,7 +7,6 @@ import {
   CheckBox,
   Grommet,
   Form,
-  // FormContext,
   FormField,
   RadioButtonGroup,
   RangeInput,
@@ -65,20 +64,6 @@ const Example = () => (
             min={15}
             max={75}
           />
-          {/* }
-          <FormField label="Comments" name="comments">
-            <FormContext.Consumer>
-              {({ value, update }) => (
-                <TextArea
-                  plain
-                  focusIndicator={false}
-                  value={value.comments}
-                  onChange={event => update('comments', event.target.value)}
-                />
-              )}
-            </FormContext.Consumer>
-          </FormField>
-          { */}
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
             <Button type="reset" label="Reset" />

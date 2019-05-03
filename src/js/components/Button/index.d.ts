@@ -9,8 +9,9 @@ export interface ButtonProps {
   active?: boolean;
   color?: string | {dark?: string,light?: string};
   disabled?: boolean;
-  fill?: boolean;
+  fill?: "horizontal" | "vertical" | boolean;
   focusIndicator?: boolean;
+  gap?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string;
   hoverIndicator?: boolean | string | "background" | {background?: boolean | string};
   href?: string;
   icon?: JSX.Element;

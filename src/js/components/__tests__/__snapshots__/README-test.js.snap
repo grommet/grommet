@@ -1475,7 +1475,7 @@ boolean
 
 **color**
 
-Fill color for primary, border color otherwise.
+Fill color for primary, label color for plain, border color otherwise.
 
 \`\`\`
 string
@@ -1495,9 +1495,11 @@ boolean
 
 **fill**
 
-Whether the button expands to fill all of the available width and height.
+Whether the button expands to fill all of the available width and/or height.
 
 \`\`\`
+horizontal
+vertical
 boolean
 \`\`\`
 
@@ -1541,6 +1543,20 @@ Icon element to place in the button.
 
 \`\`\`
 element
+\`\`\`
+
+**gap**
+
+The amount of spacing between icon and label in the button. Defaults to \`small\`.
+
+\`\`\`
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
 \`\`\`
 
 **label**
@@ -4661,10 +4677,11 @@ import { FormField } from 'grommet';
 
 **component**
 
-The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component.
+The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component. The component may be custom as long it supports the proporties of name, value, onChange (event => {}), while event has either event.value or event.target.value.  
 
 \`\`\`
 function
+object
 \`\`\`
 
 **error**
@@ -6780,6 +6797,14 @@ Custom messages. Used for accessibility by screen readers. Defaults to \`{
 }
 \`\`\`
 
+**open**
+
+Whether the state of the component should be open
+
+\`\`\`
+boolean
+\`\`\`
+
 **size**
 
 The size of the menu. Defaults to \`medium\`.
@@ -7847,7 +7872,7 @@ light-4
 
 **rangeSelector.edge.type**
 
-The edge style type. Expects \`'bar' | 'disc'\`.
+The edge control type. Expects \`'bar' | 'disc' | node\`.
 
 Defaults to
 
@@ -8249,7 +8274,7 @@ Required. Options can be either a string or an object. If an object is used, use
 
 **open**
 
-Initial state of the select component
+Control the state of the component.
 
 \`\`\`
 boolean
@@ -9741,6 +9766,17 @@ Font weight
 normal
 bold
 number
+\`\`\`
+
+**wordBreak**
+
+Whether words should break when reaching the end of a line. Defaults to \`normal\`.
+
+\`\`\`
+normal
+break-all
+keep-all
+break-word
 \`\`\`
   
 ## Intrinsic element

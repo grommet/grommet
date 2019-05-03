@@ -841,8 +841,10 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether the button expands to fill all of the available width and height.",
-        "format": "boolean",
+        "description": "Whether the button expands to fill all of the available width and/or height.",
+        "format": "horizontal
+vertical
+boolean",
         "name": "fill",
       },
       Object {
@@ -876,6 +878,18 @@ background
         "description": "Icon element to place in the button.",
         "format": "element",
         "name": "icon",
+      },
+      Object {
+        "defaultValue": "small",
+        "description": "The amount of spacing between icon and label in the button.",
+        "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gap",
       },
       Object {
         "description": "Label text to place in the button.",
@@ -1886,8 +1900,9 @@ string",
     "name": "FormField",
     "properties": Array [
       Object {
-        "description": "The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component.",
-        "format": "function",
+        "description": "The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component. The component may be custom as long it supports the proporties of name, value, onChange (event => {}), while event has either event.value or event.target.value.  ",
+        "format": "function
+object",
         "name": "component",
       },
       Object {
@@ -2236,6 +2251,12 @@ node",
   openMenu: string
 }",
         "name": "messages",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether the state of the component should be open",
+        "format": "boolean",
+        "name": "open",
       },
       Object {
         "defaultValue": "medium",
@@ -2799,7 +2820,7 @@ function",
         "required": true,
       },
       Object {
-        "description": "Initial state of the select component",
+        "description": "Control the state of the component.",
         "format": "boolean",
         "name": "open",
       },

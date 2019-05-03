@@ -121,7 +121,7 @@ boolean
 
 **color**
 
-Fill color for primary, border color otherwise.
+Fill color for primary, label color for plain, border color otherwise.
 
 ```
 string
@@ -141,9 +141,11 @@ boolean
 
 **fill**
 
-Whether the button expands to fill all of the available width and height.
+Whether the button expands to fill all of the available width and/or height.
 
 ```
+horizontal
+vertical
 boolean
 ```
 
@@ -187,6 +189,20 @@ Icon element to place in the button.
 
 ```
 element
+```
+
+**gap**
+
+The amount of spacing between icon and label in the button. Defaults to `small`.
+
+```
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
 ```
 
 **label**

@@ -124,6 +124,7 @@ exports[`Select basic 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -395,6 +396,7 @@ exports[`Select complex options and children 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -547,7 +549,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 bYBgFP"
+          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 duvNfq"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1158,6 +1160,7 @@ exports[`Select deselect an option 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -1419,6 +1422,7 @@ exports[`Select disabled 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -1573,7 +1577,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 bYBgFP"
+          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 duvNfq"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -1770,6 +1774,7 @@ exports[`Select empty results search 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -2766,6 +2771,7 @@ exports[`Select multiple 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -3039,6 +3045,7 @@ exports[`Select multiple values 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -3192,7 +3199,7 @@ exports[`Select multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 bYBgFP"
+          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 duvNfq"
           id="test-select__input"
           multiple=""
           placeholder="test select"
@@ -3873,6 +3880,7 @@ exports[`Select opens 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -4025,7 +4033,7 @@ exports[`Select opens 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 bYBgFP"
+          class="Select__SelectTextInput-sc-17idtfo-0 lmyIUy StyledTextInput-sc-1x30a0s-0 duvNfq"
           id="test-select__input"
           placeholder="test select"
           readonly=""
@@ -4582,7 +4590,7 @@ exports[`Select opens 5`] = `
         class="SelectContainer__OptionBox-sc-1wi0ul8-1 ixLLDr StyledBox-sc-13pk1d4-0 eEPVhE"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 eFEfWf"
+          class="StyledText-sc-1sadyjn-0 cVkhuq"
         >
           one
         </span>
@@ -4602,7 +4610,7 @@ exports[`Select opens 5`] = `
         class="SelectContainer__OptionBox-sc-1wi0ul8-1 ixLLDr StyledBox-sc-13pk1d4-0 eEPVhE"
       >
         <span
-          class="StyledText-sc-1sadyjn-0 eFEfWf"
+          class="StyledText-sc-1sadyjn-0 cVkhuq"
         >
           two
         </span>
@@ -4739,6 +4747,7 @@ exports[`Select renders custom icon 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -5010,6 +5019,7 @@ exports[`Select renders default icon 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -5226,6 +5236,7 @@ exports[`Select renders without icon 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -5463,6 +5474,7 @@ exports[`Select search 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -5782,6 +5794,7 @@ exports[`Select search 2`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -6330,6 +6343,7 @@ exports[`Select select an option 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -6783,6 +6797,7 @@ exports[`Select select an option with enter 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -7041,6 +7056,7 @@ exports[`Select select another option 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
@@ -7300,6 +7316,7 @@ exports[`Select size 1`] = `
 .c6 {
   box-sizing: border-box;
   font-size: inherit;
+  font-family: inherit;
   border: none;
   -webkit-appearance: none;
   padding: 11px;
