@@ -229,11 +229,18 @@ class FormFieldContent extends Component {
   }
 }
 
-const FormField = props => (
-  <FormContext.Consumer>
-    {context => <FormFieldContent context={context} {...props} />}
-  </FormContext.Consumer>
-);
+// Can't be a functional component because styled-components withTheme() needs
+// to attach a ref.
+/* eslint-disable-next-line react/no-multi-comp, react/prefer-stateless-function */
+class FormField extends Component {
+  render() {
+    return (
+      <FormContext.Consumer>
+        {context => <FormFieldContent context={context} {...this.props} />}
+      </FormContext.Consumer>
+    );
+  }
+}
 
 FormField.defaultProps = {};
 Object.setPrototypeOf(FormField.defaultProps, defaultProps);
