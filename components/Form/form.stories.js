@@ -10,30 +10,6 @@ var _themes = require("grommet/themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var RadioButtonGroup = function RadioButtonGroup(_ref) {
-  var name = _ref.name,
-      _onChange = _ref.onChange,
-      options = _ref.options,
-      value = _ref.value;
-  return _react.default.createElement(_grommet.Box, {
-    gap: "small"
-  }, options.map(function (option) {
-    return _react.default.createElement(_grommet.Box, {
-      key: option
-    }, _react.default.createElement(_grommet.RadioButton, {
-      name: name,
-      value: option,
-      label: option,
-      checked: value === option,
-      onChange: function onChange() {
-        return _onChange({
-          value: option
-        });
-      }
-    }));
-  }));
-};
-
 var Example = function Example() {
   return _react.default.createElement(_grommet.Grommet, {
     full: true,
@@ -48,8 +24,8 @@ var Example = function Example() {
     onReset: function onReset(event) {
       return console.log(event);
     },
-    onSubmit: function onSubmit(_ref2) {
-      var value = _ref2.value;
+    onSubmit: function onSubmit(_ref) {
+      var value = _ref.value;
       return console.log('Submit', value);
     }
   }, _react.default.createElement(_grommet.FormField, {
@@ -79,7 +55,7 @@ var Example = function Example() {
     label: "Subscribe?"
   }), _react.default.createElement(_grommet.FormField, {
     name: "ampm",
-    component: RadioButtonGroup,
+    component: _grommet.RadioButtonGroup,
     pad: true,
     options: ['morning', 'evening']
   }), _react.default.createElement(_grommet.FormField, {

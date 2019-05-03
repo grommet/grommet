@@ -64,12 +64,12 @@ var FormFieldBox = (0, _styledComponents.default)(_Box.Box).withConfig({
   return props.theme.formField.extend;
 });
 
-var FormField =
+var FormFieldContent =
 /*#__PURE__*/
 function (_Component) {
-  _inheritsLoose(FormField, _Component);
+  _inheritsLoose(FormFieldContent, _Component);
 
-  function FormField() {
+  function FormFieldContent() {
     var _this;
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -81,10 +81,12 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "renderChildren", function (value, update) {
       var _this$props = _this.props,
           name = _this$props.name,
+          checked = _this$props.checked,
           component = _this$props.component,
           required = _this$props.required,
+          valueProp = _this$props.value,
           _onChange = _this$props.onChange,
-          rest = _objectWithoutPropertiesLoose(_this$props, ["name", "component", "required", "onChange"]);
+          rest = _objectWithoutPropertiesLoose(_this$props, ["name", "checked", "component", "required", "value", "onChange"]);
 
       delete rest.className;
       var Input = component || _TextInput.TextInput;
@@ -92,7 +94,7 @@ function (_Component) {
       if (Input === _CheckBox.CheckBox) {
         return _react.default.createElement(Input, _extends({
           name: name,
-          checked: value[name] || false,
+          checked: value[name] !== undefined ? value[name] : checked || false,
           onChange: function onChange(event) {
             update(name, event.target.checked);
             if (_onChange) _onChange(event);
@@ -102,9 +104,9 @@ function (_Component) {
 
       return _react.default.createElement(Input, _extends({
         name: name,
-        value: value[name] || '',
+        value: value[name] !== undefined ? value[name] : valueProp || '',
         onChange: function onChange(event) {
-          update(name, event.value || event.target.value);
+          update(name, event.value || event.target.value || '');
           if (_onChange) _onChange(event);
         },
         plain: true,
@@ -115,117 +117,156 @@ function (_Component) {
     return _this;
   }
 
-  var _proto = FormField.prototype;
+  var _proto = FormFieldContent.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var _this$props2 = this.props,
+        checked = _this$props2.checked,
+        context = _this$props2.context,
+        name = _this$props2.name,
+        value = _this$props2.value;
+
+    if (context && context.value[name] === undefined && (value !== undefined || checked !== undefined)) {
+      context.update(name, value !== undefined ? value : checked);
+    }
+  };
 
   _proto.render = function render() {
     var _this2 = this;
 
-    var _this$props2 = this.props,
-        children = _this$props2.children,
-        className = _this$props2.className,
-        component = _this$props2.component,
-        error = _this$props2.error,
-        focus = _this$props2.focus,
-        help = _this$props2.help,
-        htmlFor = _this$props2.htmlFor,
-        label = _this$props2.label,
-        name = _this$props2.name,
-        pad = _this$props2.pad,
-        required = _this$props2.required,
-        style = _this$props2.style,
-        theme = _this$props2.theme,
-        validate = _this$props2.validate,
-        onBlur = _this$props2.onBlur,
-        onFocus = _this$props2.onFocus;
+    var _this$props3 = this.props,
+        children = _this$props3.children,
+        className = _this$props3.className,
+        component = _this$props3.component,
+        context = _this$props3.context,
+        error = _this$props3.error,
+        focus = _this$props3.focus,
+        help = _this$props3.help,
+        htmlFor = _this$props3.htmlFor,
+        label = _this$props3.label,
+        name = _this$props3.name,
+        pad = _this$props3.pad,
+        required = _this$props3.required,
+        style = _this$props3.style,
+        theme = _this$props3.theme,
+        validate = _this$props3.validate,
+        onBlur = _this$props3.onBlur,
+        onFocus = _this$props3.onFocus;
     var formField = theme.formField;
     var border = formField.border;
-    return _react.default.createElement(_FormContext.FormContext.Consumer, null, function (context) {
-      var normalizedError = error;
-      var contents = children;
+    var normalizedError = error;
+    var contents = children;
 
-      if (context) {
-        var addValidation = context.addValidation,
-            errors = context.errors,
-            value = context.value,
-            update = context.update,
-            messages = context.messages;
-        addValidation(name, validateField(required, validate, messages));
-        normalizedError = error || errors[name];
-        contents = children || _this2.renderChildren(value, update);
-      }
+    if (context) {
+      var addValidation = context.addValidation,
+          errors = context.errors,
+          value = context.value,
+          update = context.update,
+          messages = context.messages;
+      addValidation(name, validateField(required, validate, messages));
+      normalizedError = error || errors[name];
+      contents = children || this.renderChildren(value, update);
+    }
 
-      if (pad) {
-        contents = _react.default.createElement(_Box.Box, formField.content, contents);
-      }
+    if (pad) {
+      contents = _react.default.createElement(_Box.Box, formField.content, contents);
+    }
 
-      var borderColor;
+    var borderColor;
 
-      if (focus && !normalizedError) {
-        borderColor = 'focus';
-      } else if (normalizedError) {
-        borderColor = border && border.error.color || 'status-critical';
-      } else {
-        borderColor = border && border.color || 'border';
-      }
+    if (focus && !normalizedError) {
+      borderColor = 'focus';
+    } else if (normalizedError) {
+      borderColor = border && border.error.color || 'status-critical';
+    } else {
+      borderColor = border && border.color || 'border';
+    }
 
-      var abut;
-      var outerStyle = style;
+    var abut;
+    var outerStyle = style;
 
-      if (border) {
-        var normalizedChildren = children ? _react.Children.map(children, function (child) {
-          if (child) {
-            return (0, _react.cloneElement)(child, {
-              plain: true,
-              focusIndicator: false,
-              onBlur: onBlur,
-              onFocus: onFocus
-            });
-          }
-
-          return child;
-        }) : contents;
-        contents = _react.default.createElement(_Box.Box, {
-          ref: function ref(_ref) {
-            _this2.childContainerRef = _ref;
-          },
-          border: border.position === 'inner' ? _extends({}, border, {
-            side: border.side || 'bottom',
-            color: borderColor
-          }) : undefined
-        }, normalizedChildren);
-        abut = border.position === 'outer' && (border.side === 'all' || border.side === 'horizontal' || !border.side);
-
-        if (abut) {
-          // marginBottom is set to overlap adjacent fields
-          var marginBottom = '-1px';
-
-          if (border.size) {
-            marginBottom = "-" + (0, _utils.parseMetricToNum)(theme.global.borderSize[border.size]) + "px";
-          }
-
-          outerStyle = _extends({
-            position: focus ? 'relative' : undefined,
-            marginBottom: marginBottom,
-            zIndex: focus ? 10 : undefined
-          }, style);
+    if (border) {
+      var normalizedChildren = children ? _react.Children.map(children, function (child) {
+        if (child) {
+          return (0, _react.cloneElement)(child, {
+            plain: true,
+            focusIndicator: false,
+            onBlur: onBlur,
+            onFocus: onFocus
+          });
         }
-      }
 
-      return _react.default.createElement(FormFieldBox, {
-        className: className,
-        border: border && border.position === 'outer' ? _extends({}, border, {
+        return child;
+      }) : contents;
+      contents = _react.default.createElement(_Box.Box, {
+        ref: function ref(_ref) {
+          _this2.childContainerRef = _ref;
+        },
+        border: border.position === 'inner' ? _extends({}, border, {
+          side: border.side || 'bottom',
           color: borderColor
-        }) : undefined,
-        margin: abut ? undefined : _extends({}, formField.margin),
-        style: outerStyle
-      }, label && component !== _CheckBox.CheckBox || help ? _react.default.createElement(_react.default.Fragment, null, label && component !== _CheckBox.CheckBox && _react.default.createElement(_Text.Text, _extends({
-        as: "label",
-        htmlFor: htmlFor
-      }, formField.label), label), help && _react.default.createElement(_Text.Text, _extends({}, formField.help, {
-        color: formField.help.color[theme.dark ? 'dark' : 'light']
-      }), help)) : undefined, contents, normalizedError && _react.default.createElement(_Text.Text, _extends({}, formField.error, {
-        color: formField.error.color[theme.dark ? 'dark' : 'light']
-      }), normalizedError));
+        }) : undefined
+      }, normalizedChildren);
+      abut = border.position === 'outer' && (border.side === 'all' || border.side === 'horizontal' || !border.side);
+
+      if (abut) {
+        // marginBottom is set to overlap adjacent fields
+        var marginBottom = '-1px';
+
+        if (border.size) {
+          marginBottom = "-" + (0, _utils.parseMetricToNum)(theme.global.borderSize[border.size]) + "px";
+        }
+
+        outerStyle = _extends({
+          position: focus ? 'relative' : undefined,
+          marginBottom: marginBottom,
+          zIndex: focus ? 10 : undefined
+        }, style);
+      }
+    }
+
+    return _react.default.createElement(FormFieldBox, {
+      className: className,
+      border: border && border.position === 'outer' ? _extends({}, border, {
+        color: borderColor
+      }) : undefined,
+      margin: abut ? undefined : _extends({}, formField.margin),
+      style: outerStyle
+    }, label && component !== _CheckBox.CheckBox || help ? _react.default.createElement(_react.default.Fragment, null, label && component !== _CheckBox.CheckBox && _react.default.createElement(_Text.Text, _extends({
+      as: "label",
+      htmlFor: htmlFor
+    }, formField.label), label), help && _react.default.createElement(_Text.Text, _extends({}, formField.help, {
+      color: formField.help.color[theme.dark ? 'dark' : 'light']
+    }), help)) : undefined, contents, normalizedError && _react.default.createElement(_Text.Text, _extends({}, formField.error, {
+      color: formField.error.color[theme.dark ? 'dark' : 'light']
+    }), normalizedError));
+  };
+
+  return FormFieldContent;
+}(_react.Component); // Can't be a functional component because styled-components withTheme() needs
+// to attach a ref.
+
+/* eslint-disable-next-line react/no-multi-comp, react/prefer-stateless-function */
+
+
+var FormField =
+/*#__PURE__*/
+function (_Component2) {
+  _inheritsLoose(FormField, _Component2);
+
+  function FormField() {
+    return _Component2.apply(this, arguments) || this;
+  }
+
+  var _proto2 = FormField.prototype;
+
+  _proto2.render = function render() {
+    var _this3 = this;
+
+    return _react.default.createElement(_FormContext.FormContext.Consumer, null, function (context) {
+      return _react.default.createElement(FormFieldContent, _extends({
+        context: context
+      }, _this3.props));
     });
   };
 

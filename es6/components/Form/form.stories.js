@@ -1,31 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBox, Grommet, Form, FormField, RadioButton, RangeInput, Select, TextArea } from 'grommet';
+import { Box, Button, CheckBox, Grommet, Form, FormField, RadioButtonGroup, RangeInput, Select, TextArea } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-var RadioButtonGroup = function RadioButtonGroup(_ref) {
-  var name = _ref.name,
-      _onChange = _ref.onChange,
-      options = _ref.options,
-      value = _ref.value;
-  return React.createElement(Box, {
-    gap: "small"
-  }, options.map(function (option) {
-    return React.createElement(Box, {
-      key: option
-    }, React.createElement(RadioButton, {
-      name: name,
-      value: option,
-      label: option,
-      checked: value === option,
-      onChange: function onChange() {
-        return _onChange({
-          value: option
-        });
-      }
-    }));
-  }));
-};
 
 var Example = function Example() {
   return React.createElement(Grommet, {
@@ -41,8 +17,8 @@ var Example = function Example() {
     onReset: function onReset(event) {
       return console.log(event);
     },
-    onSubmit: function onSubmit(_ref2) {
-      var value = _ref2.value;
+    onSubmit: function onSubmit(_ref) {
+      var value = _ref.value;
       return console.log('Submit', value);
     }
   }, React.createElement(FormField, {
