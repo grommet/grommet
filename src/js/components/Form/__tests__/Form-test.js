@@ -139,4 +139,23 @@ describe('Form', () => {
     fireEvent.click(getByText('Reset'));
     expect(queryByText('Input has changed')).toBeNull();
   });
+
+  test('initial values', () => {
+    const onSubmit = jest.fn();
+    const { getByText, queryByText } = render(
+      <Grommet>
+        <Form onSubmit={onSubmit}>
+          <FormField
+            name="test"
+            required
+            placeholder="test input"
+            value="Initial value"
+          />
+          <Button type="submit" primary label="Submit" />
+        </Form>
+      </Grommet>,
+    );
+    fireEvent.click(getByText('Submit'));
+    expect(queryByText('required')).toBeNull();
+  });
 });
