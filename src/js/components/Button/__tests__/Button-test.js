@@ -256,4 +256,20 @@ describe('Button', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  const themetest = {
+    button: {
+      color: 'red',
+    },
+  };
+
+  test('Button icon color renders', () => {
+    const component = renderer.create(
+      <Grommet theme={themetest}>
+        <Button icon={<svg />} label="Test" onClick={() => {}} />
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
