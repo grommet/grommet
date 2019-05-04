@@ -160,4 +160,4 @@ storiesOf('TextInput', module)
   .add('Simple TextInput', () => <SimpleTextInput />)
   .add('Password input', () => <PasswordInput />)
   .add('Suggestions', () => <SuggestionsTextInput />)
-  .add('Themed TextInput', () => <ThemedTextInput />);
+  .add('Themed', () => <ThemedTextInput />);
