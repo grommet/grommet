@@ -130,7 +130,7 @@ const DATA = [
 const SimpleDataTable = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
-      <DataTable columns={columns} data={DATA} />
+      <DataTable columns={columns} data={DATA} step={10} />
     </Box>
   </Grommet>
 );
@@ -278,9 +278,9 @@ class ControlledDataTable extends Component {
 }
 
 storiesOf('DataTable', module)
-  .add('Simple DataTable', () => <SimpleDataTable />)
-  .add('Sized DataTable', () => <SizedDataTable />)
-  .add('Tunable DataTable', () => <TunableDataTable />)
-  .add('Grouped DataTable', () => <GroupedDataTable />)
-  .add('Served DataTable', () => <ServedDataTable />)
-  .add('Controlled DataTable', () => <ControlledDataTable />);
+  .add('Simple', () => <SimpleDataTable />)
+  .add('Sized', () => <SizedDataTable />)
+  .add('Tunable', () => <TunableDataTable />)
+  .add('Grouped', () => <GroupedDataTable />)
+  .add('Served', () => <ServedDataTable />)
+  .add('Controlled', () => <ControlledDataTable />);
