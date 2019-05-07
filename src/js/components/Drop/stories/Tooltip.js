@@ -19,8 +19,8 @@ class TooltipDrop extends Component {
             ref={this.ref}
             onMouseOver={() => this.setState({ over: true })}
             onMouseOut={() => this.setState({ over: false })}
-            onFocus={() => {}}
-            onBlur={() => {}}
+            onFocus={() => this.setState({ over: true })}
+            onBlur={() => this.setState({ over: false })}
           />
           {this.ref.current && over && (
             <Drop align={{ left: 'right' }} target={this.ref.current} plain>

@@ -965,7 +965,6 @@ exports[`MaskedInput option via mouse 4`] = `
     id="item"
     name="item"
     placeholder="!"
-    tabindex="-1"
     value=""
   />
 </div>

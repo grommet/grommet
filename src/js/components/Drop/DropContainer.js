@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { defaultProps } from '../../default-props';
 import { ThemeContext } from '../../contexts';
-import { FocusedContainer } from '../FocusedContainer';
+
 import {
   backgroundIsDark,
   findScrollParents,
@@ -255,6 +255,7 @@ class DropContainer extends Component {
     const { onEsc } = this.props;
     event.stopPropagation();
     if (onEsc) {
+      preventLayerClose(event);
       onEsc(event);
     }
   };
@@ -325,15 +326,13 @@ class DropContainer extends Component {
     }
 
     return (
-      <FocusedContainer onKeyDown={onEsc && preventLayerClose}>
-        <Keyboard
-          onEsc={onEsc && this.onEsc}
-          onKeyDown={onKeyDown}
-          target="document"
-        >
-          {content}
-        </Keyboard>
-      </FocusedContainer>
+      <Keyboard
+        onEsc={onEsc && this.onEsc}
+        onKeyDown={onKeyDown}
+        target="document"
+      >
+        {content}
+      </Keyboard>
     );
   }
 }
