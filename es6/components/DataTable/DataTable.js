@@ -136,8 +136,9 @@ function (_Component) {
         resizeable = _this$props.resizeable,
         size = _this$props.size,
         sortable = _this$props.sortable,
+        step = _this$props.step,
         onSearch = _this$props.onSearch,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["columns", "data", "groupBy", "onMore", "resizeable", "size", "sortable", "onSearch"]);
+        rest = _objectWithoutPropertiesLoose(_this$props, ["columns", "data", "groupBy", "onMore", "resizeable", "size", "sortable", "step", "onSearch"]);
 
     var _this$state = this.state,
         data = _this$state.data,
@@ -181,7 +182,8 @@ function (_Component) {
       data: data,
       onMore: onMore,
       primaryProperty: primaryProperty,
-      size: size
+      size: size,
+      step: step
     }), showFooter && React.createElement(Footer, {
       columns: columns,
       footerValues: footerValues,
@@ -196,7 +198,8 @@ function (_Component) {
 
 _defineProperty(DataTable, "defaultProps", {
   columns: [],
-  data: []
+  data: [],
+  step: 50
 });
 
 var DataTableDoc;

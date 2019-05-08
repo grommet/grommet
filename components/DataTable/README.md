@@ -238,6 +238,14 @@ Whether to allow the user to sort columns.
 ```
 boolean
 ```
+
+**step**
+
+How many items to render at a time. Defaults to `50`.
+
+```
+number
+```
   
 ## Intrinsic element
 

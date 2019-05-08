@@ -27,7 +27,8 @@ export var doc = function doc(DataTable) {
     primaryKey: PropTypes.string.description("When supplied, indicates the property for a data object to use to\n      get a unique identifier. See also the 'columns.primary' description.\n      Use this property when the columns approach will not work for your\n      data set."),
     resizeable: PropTypes.bool.description('Whether to allow the user to resize column widths.'),
     size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("The height of the table body. If set, the table body will have a fixed\n      height and the rows will be scrollable within it. In order to preserve\n      header and footer cell alignment, all cells will have the same\n      width. This cannot be used in combination with 'resizeable'."),
-    sortable: PropTypes.bool.description('Whether to allow the user to sort columns.')
+    sortable: PropTypes.bool.description('Whether to allow the user to sort columns.'),
+    step: PropTypes.number.description('How many items to render at a time.').defaultValue(50)
   });
   return DocumentedDataTable;
 };

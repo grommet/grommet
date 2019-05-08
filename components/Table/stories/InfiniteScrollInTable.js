@@ -66,6 +66,6 @@ var InfiniteScrollInTable = function InfiniteScrollInTable() {
   })))));
 };
 
-(0, _react2.storiesOf)('Table', module).add('InfiniteScrollInTable', function () {
+(0, _react2.storiesOf)('Table', module).add('InfiniteScroll', function () {
   return _react.default.createElement(InfiniteScrollInTable, null);
 });

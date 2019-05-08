@@ -27,18 +27,20 @@ var Body = function Body(_ref) {
       onMore = _ref.onMore,
       primaryProperty = _ref.primaryProperty,
       size = _ref.size,
+      step = _ref.step,
       theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["columns", "data", "onMore", "primaryProperty", "size", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["columns", "data", "onMore", "primaryProperty", "size", "step", "theme"]);
 
   return _react.default.createElement(_StyledDataTable.StyledDataTableBody, _extends({
     size: size
   }, rest), _react.default.createElement(_InfiniteScroll.InfiniteScroll, {
     items: data,
     onMore: onMore,
-    scrollableAncestor: "window",
     renderMarker: function renderMarker(marker) {
       return _react.default.createElement(_TableRow.TableRow, null, _react.default.createElement(_TableCell.TableCell, null, marker));
-    }
+    },
+    scrollableAncestor: "window",
+    step: step
   }, function (datum) {
     return _react.default.createElement(_StyledDataTable.StyledDataTableRow, {
       key: datum[primaryProperty],

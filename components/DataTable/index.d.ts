@@ -14,6 +14,7 @@ export interface DataTableProps {
   resizeable?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
   sortable?: boolean;
+  step?: number;
 }
 
 declare const DataTable: React.ComponentClass<DataTableProps & JSX.IntrinsicElements['table']>;

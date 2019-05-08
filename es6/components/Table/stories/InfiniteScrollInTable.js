@@ -60,6 +60,6 @@ var InfiniteScrollInTable = function InfiniteScrollInTable() {
   })))));
 };
 
-storiesOf('Table', module).add('InfiniteScrollInTable', function () {
+storiesOf('Table', module).add('InfiniteScroll', function () {
   return React.createElement(InfiniteScrollInTable, null);
 });

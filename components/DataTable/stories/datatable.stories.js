@@ -137,7 +137,8 @@ var SimpleDataTable = function SimpleDataTable() {
     pad: "large"
   }, _react.default.createElement(_grommet.DataTable, {
     columns: columns,
-    data: DATA
+    data: DATA,
+    step: 10
   })));
 };
 
@@ -354,16 +355,16 @@ function (_Component2) {
   return ControlledDataTable;
 }(_react.Component);
 
-(0, _react2.storiesOf)('DataTable', module).add('Simple DataTable', function () {
+(0, _react2.storiesOf)('DataTable', module).add('Simple', function () {
   return _react.default.createElement(SimpleDataTable, null);
-}).add('Sized DataTable', function () {
+}).add('Sized', function () {
   return _react.default.createElement(SizedDataTable, null);
-}).add('Tunable DataTable', function () {
+}).add('Tunable', function () {
   return _react.default.createElement(TunableDataTable, null);
-}).add('Grouped DataTable', function () {
+}).add('Grouped', function () {
   return _react.default.createElement(GroupedDataTable, null);
-}).add('Served DataTable', function () {
+}).add('Served', function () {
   return _react.default.createElement(ServedDataTable, null);
-}).add('Controlled DataTable', function () {
+}).add('Controlled', function () {
   return _react.default.createElement(ControlledDataTable, null);
 });

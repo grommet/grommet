@@ -129,7 +129,8 @@ var SimpleDataTable = function SimpleDataTable() {
     pad: "large"
   }, React.createElement(DataTable, {
     columns: columns,
-    data: DATA
+    data: DATA,
+    step: 10
   })));
 };
 
@@ -346,16 +347,16 @@ function (_Component2) {
   return ControlledDataTable;
 }(Component);
 
-storiesOf('DataTable', module).add('Simple DataTable', function () {
+storiesOf('DataTable', module).add('Simple', function () {
   return React.createElement(SimpleDataTable, null);
-}).add('Sized DataTable', function () {
+}).add('Sized', function () {
   return React.createElement(SizedDataTable, null);
-}).add('Tunable DataTable', function () {
+}).add('Tunable', function () {
   return React.createElement(TunableDataTable, null);
-}).add('Grouped DataTable', function () {
+}).add('Grouped', function () {
   return React.createElement(GroupedDataTable, null);
-}).add('Served DataTable', function () {
+}).add('Served', function () {
   return React.createElement(ServedDataTable, null);
-}).add('Controlled DataTable', function () {
+}).add('Controlled', function () {
   return React.createElement(ControlledDataTable, null);
 });
