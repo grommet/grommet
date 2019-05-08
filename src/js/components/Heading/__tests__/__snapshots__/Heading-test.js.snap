@@ -15,6 +15,7 @@ exports[`Heading color renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
   color: #7D4CDB;
 }
 
@@ -50,24 +51,28 @@ exports[`Heading level renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 .c2 {
   font-size: 34px;
   line-height: 40px;
   max-width: 816px;
+  font-weight: 600;
 }
 
 .c3 {
   font-size: 26px;
   line-height: 32px;
   max-width: 624px;
+  font-weight: 600;
 }
 
 .c4 {
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
+  font-weight: 600;
 }
 
 @media only screen and (max-width:768px) {
@@ -148,6 +153,7 @@ exports[`Heading margin renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 .c2 {
@@ -155,6 +161,7 @@ exports[`Heading margin renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 .c3 {
@@ -162,6 +169,7 @@ exports[`Heading margin renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 .c4 {
@@ -169,6 +177,7 @@ exports[`Heading margin renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 .c5 {
@@ -176,6 +185,7 @@ exports[`Heading margin renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 .c6 {
@@ -183,6 +193,7 @@ exports[`Heading margin renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 .c7 {
@@ -190,6 +201,7 @@ exports[`Heading margin renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 .c8 {
@@ -197,6 +209,7 @@ exports[`Heading margin renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 @media only screen and (max-width:768px) {
@@ -356,6 +369,7 @@ exports[`Heading renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 @media only screen and (max-width:768px) {
@@ -390,66 +404,77 @@ exports[`Heading size renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 .c1 {
   font-size: 34px;
   line-height: 40px;
   max-width: 816px;
+  font-weight: 600;
 }
 
 .c8 {
   font-size: 26px;
   line-height: 32px;
   max-width: 624px;
+  font-weight: 600;
 }
 
 .c11 {
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
+  font-weight: 600;
 }
 
 .c3 {
   font-size: 82px;
   line-height: 88px;
   max-width: 1968px;
+  font-weight: 600;
 }
 
 .c4 {
   font-size: 114px;
   line-height: 120px;
   max-width: 2736px;
+  font-weight: 600;
 }
 
 .c5 {
   font-size: 26px;
   line-height: 32px;
   max-width: 624px;
+  font-weight: 600;
 }
 
 .c6 {
   font-size: 66px;
   line-height: 72px;
   max-width: 1584px;
+  font-weight: 600;
 }
 
 .c7 {
   font-size: 22px;
   line-height: 28px;
   max-width: 528px;
+  font-weight: 600;
 }
 
 .c9 {
   font-size: 34px;
   line-height: 40px;
   max-width: 816px;
+  font-weight: 600;
 }
 
 .c10 {
   font-size: 42px;
   line-height: 48px;
   max-width: 1008px;
+  font-weight: 600;
 }
 
 .c12 {
@@ -635,6 +660,7 @@ exports[`Heading textAlign renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
   text-align: left;
 }
 
@@ -642,6 +668,7 @@ exports[`Heading textAlign renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -649,6 +676,7 @@ exports[`Heading textAlign renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
   text-align: right;
 }
 
@@ -706,12 +734,14 @@ exports[`Heading truncate renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 .c2 {
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -765,6 +795,7 @@ exports[`Theme based font family renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 .c2 {
@@ -772,6 +803,7 @@ exports[`Theme based font family renders 1`] = `
   font-size: 34px;
   line-height: 40px;
   max-width: 816px;
+  font-weight: 600;
 }
 
 .c3 {
@@ -779,6 +811,7 @@ exports[`Theme based font family renders 1`] = `
   font-size: 26px;
   line-height: 32px;
   max-width: 624px;
+  font-weight: 600;
 }
 
 .c4 {
@@ -786,6 +819,7 @@ exports[`Theme based font family renders 1`] = `
   font-size: 18px;
   line-height: 24px;
   max-width: 432px;
+  font-weight: 600;
 }
 
 @media only screen and (max-width:768px) {
@@ -849,28 +883,40 @@ exports[`Theme based font weight renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c4 {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 432px;
+  font-weight: 600;
+}
+
 .c1 {
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 700;
 }
 
 .c2 {
   font-size: 34px;
   line-height: 40px;
   max-width: 816px;
+  font-weight: 400;
 }
 
 .c3 {
   font-size: 26px;
   line-height: 32px;
   max-width: 624px;
+  font-weight: 200;
 }
 
-.c4 {
-  font-size: 18px;
-  line-height: 24px;
-  max-width: 432px;
+@media only screen and (max-width:768px) {
+  .c4 {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 432px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -891,14 +937,6 @@ exports[`Theme based font weight renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c3 {
-    font-size: 18px;
-    line-height: 24px;
-    max-width: 432px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c4 {
     font-size: 18px;
     line-height: 24px;
     max-width: 432px;
@@ -938,12 +976,14 @@ exports[`responsive renders 1`] = `
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 .c2 {
   font-size: 50px;
   line-height: 56px;
   max-width: 1200px;
+  font-weight: 600;
 }
 
 @media only screen and (max-width:768px) {
