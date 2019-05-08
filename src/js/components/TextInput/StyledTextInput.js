@@ -49,6 +49,11 @@ Object.setPrototypeOf(StyledTextInput.defaultProps, defaultProps);
 const StyledTextInputContainer = styled.div`
   position: relative;
   width: 100%;
+
+  ${props =>
+    props.theme.textInput &&
+    props.theme.textInput.container &&
+    props.theme.textInput.container.extend};
 `;
 
 StyledTextInputContainer.defaultProps = {};
