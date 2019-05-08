@@ -84,6 +84,6 @@ const InfiniteScrollInTable = () => {
   );
 };
 
-storiesOf('Table', module).add('InfiniteScrollInTable', () => (
+storiesOf('Table', module).add('InfiniteScroll', () => (
   <InfiniteScrollInTable />
 ));
