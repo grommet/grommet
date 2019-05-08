@@ -16,6 +16,7 @@ const sizeStyle = props => {
         font-size: ${data.size};
         line-height: ${data.height};
         max-width: ${data.maxWidth};
+        font-weight: ${levelStyle.font.weight || headingTheme.weight};
       ` :
       css`
         font-size: ${size};
