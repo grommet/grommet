@@ -124,7 +124,7 @@ string
 The font size and line height are primarily driven by the chosen tag. But, it can
 be adjusted via this size property. The tag should be set for semantic
 correctness and accessibility. This size property allows for stylistic
-adjustments.
+adjustments. Defaults to `medium`.
 
 ```
 xsmall
