@@ -297,6 +297,16 @@ Defaults to
 undefined
 ```
 
+**textInput.container.extend**
+
+Any additional style for TextInput container. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
 **textInput.placeholder.extend**
 
 Any additional style for non-string placeholder inside TextInput. Expects `string | (props) => {}`.

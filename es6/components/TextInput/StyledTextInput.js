@@ -27,7 +27,9 @@ Object.setPrototypeOf(StyledTextInput.defaultProps, defaultProps);
 var StyledTextInputContainer = styled.div.withConfig({
   displayName: "StyledTextInput__StyledTextInputContainer",
   componentId: "sc-1x30a0s-1"
-})(["position:relative;width:100%;"]);
+})(["position:relative;width:100%;", ";"], function (props) {
+  return props.theme.textInput && props.theme.textInput.container && props.theme.textInput.container.extend;
+});
 StyledTextInputContainer.defaultProps = {};
 Object.setPrototypeOf(StyledTextInputContainer.defaultProps, defaultProps);
 var StyledPlaceholder = styled.div.withConfig({

@@ -14,6 +14,7 @@ import { FormLock } from "grommet-icons/es6/icons/FormLock";
 import { View } from "grommet-icons/es6/icons/View";
 import { Box, Grommet, TextInput, Button } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { deepMerge } from 'grommet/utils';
 
 var SimpleTextInput =
 /*#__PURE__*/
@@ -171,10 +172,98 @@ function (_Component2) {
   return SuggestionsTextInput;
 }(Component);
 
+var customTheme = deepMerge(grommet, {
+  textInput: {
+    extend: function extend() {
+      return "\n      font-size: 20px;\n      background: #c9c19f;\n      width: 300px;\n      margin: 0 auto;\n      \n      &:focus {\n        box-shadow: none;\n        border-color: initial;\n      }\n    ";
+    },
+    container: {
+      extend: function extend() {
+        return "\n        background: #edf7d2;\n        height: 100px;\n        width: 400px;\n        display: flex;\n        flex-flow: column;\n        justify-content: center;\n        border-radius: 10px;\n      ";
+      }
+    },
+    placeholder: {
+      extend: function extend() {
+        return "\n        width: 100%;\n        color: #1e1a11;\n      ";
+      }
+    },
+    suggestions: {
+      extend: function extend() {
+        return "\n        background: #c9c19f;\n        color: #3d3522;\n        li {\n          border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n        }\n      ";
+      }
+    }
+  }
+});
+
+var ThemedTextInput =
+/*#__PURE__*/
+function (_Component3) {
+  _inheritsLoose(ThemedTextInput, _Component3);
+
+  function ThemedTextInput() {
+    var _this3;
+
+    for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+      args[_key3] = arguments[_key3];
+    }
+
+    _this3 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
+
+    _defineProperty(_assertThisInitialized(_this3), "state", {
+      value: ''
+    });
+
+    _defineProperty(_assertThisInitialized(_this3), "onChange", function (event) {
+      return _this3.setState({
+        value: event.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this3), "onSelect", function (event) {
+      return _this3.setState({
+        value: event.suggestion
+      });
+    });
+
+    return _this3;
+  }
+
+  var _proto3 = ThemedTextInput.prototype;
+
+  _proto3.render = function render() {
+    var value = this.state.value;
+    return React.createElement(Grommet, {
+      full: true,
+      theme: customTheme
+    }, React.createElement(Box, {
+      fill: true,
+      align: "center",
+      justify: "start",
+      pad: "large"
+    }, React.createElement(Box, {
+      width: "medium"
+    }, React.createElement(TextInput, {
+      type: "password",
+      value: value,
+      dropProps: {
+        height: 'small'
+      },
+      onChange: this.onChange,
+      onSelect: this.onSelect,
+      suggestions: suggestions,
+      placeholder: React.createElement("span", null, "Enter something...")
+    }))));
+  };
+
+  return ThemedTextInput;
+}(Component);
+
 storiesOf('TextInput', module).add('Simple TextInput', function () {
   return React.createElement(SimpleTextInput, null);
 }).add('Password input', function () {
   return React.createElement(PasswordInput, null);
-}).add('Suggestions TextInput', function () {
+}).add('Suggestions', function () {
   return React.createElement(SuggestionsTextInput, null);
+}).add('Themed', function () {
+  return React.createElement(ThemedTextInput, null);
 });

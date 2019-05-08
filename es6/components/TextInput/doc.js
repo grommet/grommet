@@ -85,6 +85,11 @@ export var themeDoc = _extends({
     type: 'string | (props) => {}',
     defaultValue: undefined
   },
+  'textInput.container.extend': {
+    description: 'Any additional style for TextInput container.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined
+  },
   'textInput.placeholder.extend': {
     description: 'Any additional style for non-string placeholder inside TextInput.',
     type: 'string | (props) => {}',
