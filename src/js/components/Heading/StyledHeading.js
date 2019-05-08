@@ -30,16 +30,18 @@ const sizeStyle = props => {
       if (breakpoint) {
         const responsiveData =
           headingTheme.level[Math.min(props.level + 1, 4)][size];
-        styles.push(
-          breakpointStyle(
-            breakpoint,
-            `
-          font-size: ${responsiveData.size};
-          line-height: ${responsiveData.height};
-          max-width: ${responsiveData.maxWidth};
-        `,
-          ),
-        );
+        if(responsiveData) {
+          styles.push(
+            breakpointStyle(
+              breakpoint,
+              `
+            font-size: ${responsiveData.size};
+            line-height: ${responsiveData.height};
+            max-width: ${responsiveData.maxWidth};
+          `,
+            ),
+          );
+        }
       }
     }
     return styles;
