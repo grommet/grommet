@@ -10,11 +10,17 @@ const sizeStyle = props => {
   const levelStyle = headingTheme.level[props.level];
   if (levelStyle) {
     const data = levelStyle[size];
-    const styles = [
-      css`
+    const styles =  
+    [
+      data ? css`
         font-size: ${data.size};
         line-height: ${data.height};
         max-width: ${data.maxWidth};
+      ` :
+      css`
+        font-size: ${size};
+        line-height: normal;
+        max-width: ${levelStyle.medium.maxWidth}
         font-weight: ${levelStyle.font.weight || headingTheme.weight};
       `,
     ];
