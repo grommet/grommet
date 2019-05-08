@@ -8,7 +8,7 @@ export interface FormFieldProps {
   name?: string;
   pad?: boolean;
   required?: boolean;
-  component?: React.ComponentType<any>;
+  component?: any;
   validate?: {regexp?: object,message?: string} | ((...args: any[]) => any);
 }
 
