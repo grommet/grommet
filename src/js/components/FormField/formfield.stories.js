@@ -172,6 +172,23 @@ const CustomFormField = () => (
   </Grommet>
 );
 
+const CustomFormFieldWithPlainProp = props => (
+  <Grommet theme={grommet}>
+    <Box align="center" pad="large">
+      <Form>
+        <FormField
+          label="Label"
+          htmlFor="text-area"
+          plain
+          component={TextArea}
+          placeholder="placeholder"
+          {...props}
+        />
+      </Form>
+    </Box>
+  </Grommet>
+);
+
 storiesOf('FormField', module)
   .add('TextInput', () => <FormFieldTextInput />)
   .add('TextArea', () => <FormFieldTextArea />)
@@ -179,4 +196,7 @@ storiesOf('FormField', module)
   .add('CheckBox', () => <FormFieldCheckBox />)
   .add('Toggle', () => <FormFieldToggle />)
   .add('Help and error', () => <FormFieldHelpError />)
-  .add('Custom Theme', () => <CustomFormField />);
+  .add('Custom Theme', () => <CustomFormField />)
+  .add('Custom Form Filed with Plain Prop', () => (
+    <CustomFormFieldWithPlainProp />
+  ));

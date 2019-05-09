@@ -103,6 +103,7 @@ class FormFieldContent extends Component {
       validate,
       onBlur,
       onFocus,
+      plain,
     } = this.props;
     const { formField } = theme;
     const { border } = formField;
@@ -126,7 +127,7 @@ class FormFieldContent extends Component {
       borderColor = 'focus';
     } else if (normalizedError) {
       borderColor = (border && border.error.color) || 'status-critical';
-    } else {
+    } else if (!plain) {
       borderColor = (border && border.color) || 'border';
     }
     let abut;
@@ -152,7 +153,7 @@ class FormFieldContent extends Component {
             this.childContainerRef = ref;
           }}
           border={
-            border.position === 'inner'
+            border.position === 'inner' && !plain
               ? {
                   ...border,
                   side: border.side || 'bottom',
