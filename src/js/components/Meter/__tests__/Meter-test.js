@@ -68,11 +68,13 @@ describe('Meter', () => {
         <Meter size="medium" values={VALUES} />
         <Meter size="large" values={VALUES} />
         <Meter size="xlarge" values={VALUES} />
+        <Meter size="24px" values={VALUES} />
         <Meter type="circle" size="xsmall" values={VALUES} />
         <Meter type="circle" size="small" values={VALUES} />
         <Meter type="circle" size="medium" values={VALUES} />
         <Meter type="circle" size="large" values={VALUES} />
         <Meter type="circle" size="xlarge" values={VALUES} />
+        <Meter type="circle" size="55px" values={VALUES} />
       </Grommet>,
     );
     const tree = component.toJSON();
