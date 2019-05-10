@@ -47,7 +47,7 @@ const PasswordInput = ({ value, ...rest }) => {
         {...rest}
       />
       <Button
-        icon={reveal ? <FormLock size="medium" /> : <View size="medium" />}
+        icon={reveal ? <View size="medium" /> : <FormLock size="medium" />}
         onClick={() => setReveal(!reveal)}
       />
     </Box>
