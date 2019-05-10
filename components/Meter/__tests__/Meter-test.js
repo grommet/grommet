@@ -85,6 +85,9 @@ describe('Meter', function () {
       size: "xlarge",
       values: VALUES
     }), _react.default.createElement(_.Meter, {
+      size: "24px",
+      values: VALUES
+    }), _react.default.createElement(_.Meter, {
       type: "circle",
       size: "xsmall",
       values: VALUES
@@ -103,6 +106,10 @@ describe('Meter', function () {
     }), _react.default.createElement(_.Meter, {
       type: "circle",
       size: "xlarge",
+      values: VALUES
+    }), _react.default.createElement(_.Meter, {
+      type: "circle",
+      size: "55px",
       values: VALUES
     })));
 

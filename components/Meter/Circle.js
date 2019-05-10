@@ -33,7 +33,7 @@ var Circle = function Circle(props) {
       values = props.values,
       rest = _objectWithoutPropertiesLoose(props, ["background", "max", "round", "size", "theme", "thickness", "values"]);
 
-  var width = size === 'full' ? 288 : (0, _utils.parseMetricToNum)(theme.global.size[size]);
+  var width = size === 'full' ? 288 : (0, _utils.parseMetricToNum)(theme.global.size[size] || size);
   var height = (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness] || thickness);
   var mid = width / 2;
   var radius = width / 2 - height / 2;

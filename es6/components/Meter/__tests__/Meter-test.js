@@ -72,6 +72,9 @@ describe('Meter', function () {
       size: "xlarge",
       values: VALUES
     }), React.createElement(Meter, {
+      size: "24px",
+      values: VALUES
+    }), React.createElement(Meter, {
       type: "circle",
       size: "xsmall",
       values: VALUES
@@ -90,6 +93,10 @@ describe('Meter', function () {
     }), React.createElement(Meter, {
       type: "circle",
       size: "xlarge",
+      values: VALUES
+    }), React.createElement(Meter, {
+      type: "circle",
+      size: "55px",
       values: VALUES
     })));
     var tree = component.toJSON();
