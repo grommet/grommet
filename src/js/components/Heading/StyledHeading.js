@@ -17,7 +17,7 @@ const sizeStyle = props => {
         line-height: ${data ? data.height : 'normal'};
         max-width: ${data ? data.maxWidth : levelStyle.medium.maxWidth};
         font-weight: ${levelStyle.font.weight || headingTheme.weight};
-      `
+      `,
     ];
     if (props.responsive && headingTheme.responsiveBreakpoint) {
       const breakpoint =
