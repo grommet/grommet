@@ -12,18 +12,12 @@ const sizeStyle = props => {
     const data = levelStyle[size];
     const styles =  
     [
-      data ? css`
-        font-size: ${data.size};
-        line-height: ${data.height};
-        max-width: ${data.maxWidth};
-        font-weight: ${levelStyle.font.weight || headingTheme.weight};
-      ` :
       css`
-        font-size: ${size};
-        line-height: normal;
-        max-width: ${levelStyle.medium.maxWidth}
+        font-size: ${data ? data.size : size};
+        line-height: ${data ? data.height : 'normal'};
+        max-width: ${data ? data.maxWidth : levelStyle.medium.maxWidth};
         font-weight: ${levelStyle.font.weight || headingTheme.weight};
-      `,
+      `
     ];
     if (props.responsive && headingTheme.responsiveBreakpoint) {
       const breakpoint =
