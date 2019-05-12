@@ -480,7 +480,8 @@ exports[`Heading size renders 1`] = `
 .c12 {
   font-size: 77px;
   line-height: normal;
-  max-width: 1200px font-weight:600;
+  max-width: 1200px;
+  font-weight: 600;
 }
 
 @media only screen and (max-width:768px) {
