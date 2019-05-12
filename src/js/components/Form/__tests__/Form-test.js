@@ -144,18 +144,25 @@ describe('Form', () => {
     const onSubmit = jest.fn();
     const { getByText, queryByText } = render(
       <Grommet>
-        <Form onSubmit={onSubmit}>
+        {/* this test continues running forever if the whole event passed to onSubmit */}
+        <Form onSubmit={({ value }) => onSubmit({ value })}>
           <FormField
             name="test"
             required
             placeholder="test input"
             value="Initial value"
           />
+          <FormField name="test2" value="Initial value2" />
           <Button type="submit" primary label="Submit" />
         </Form>
       </Grommet>,
     );
     fireEvent.click(getByText('Submit'));
     expect(queryByText('required')).toBeNull();
+    expect(onSubmit).toBeCalledWith(
+      expect.objectContaining({
+        value: { test: 'Initial value', test2: 'Initial value2' },
+      }),
+    );
   });
 });
