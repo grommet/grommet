@@ -96,9 +96,9 @@ var PasswordInput = function PasswordInput(_ref) {
       return setValue(event.target.value);
     }
   }, rest)), React.createElement(Button, {
-    icon: reveal ? React.createElement(FormLock, {
+    icon: reveal ? React.createElement(View, {
       size: "medium"
-    }) : React.createElement(View, {
+    }) : React.createElement(FormLock, {
       size: "medium"
     }),
     onClick: function onClick() {

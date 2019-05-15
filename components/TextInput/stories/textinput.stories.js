@@ -104,9 +104,9 @@ var PasswordInput = function PasswordInput(_ref) {
       return setValue(event.target.value);
     }
   }, rest)), _react.default.createElement(_grommet.Button, {
-    icon: reveal ? _react.default.createElement(_grommetIcons.FormLock, {
+    icon: reveal ? _react.default.createElement(_grommetIcons.View, {
       size: "medium"
-    }) : _react.default.createElement(_grommetIcons.View, {
+    }) : _react.default.createElement(_grommetIcons.FormLock, {
       size: "medium"
     }),
     onClick: function onClick() {
