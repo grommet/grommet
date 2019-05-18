@@ -180,7 +180,9 @@ class InfiniteScroll extends PureComponent {
         this.setState(
           { beginPage: nextBeginPage, endPage: nextEndPage },
           () => {
-            if (onMore && nextEndPage === lastPage) {
+            console.log(nextEndPage, endPage, lastPage);
+            // Trigger onMore function as nextEndPage value is incremented as user scrolls through
+            if (onMore && nextEndPage > endPage && endPage <= lastPage) {
               onMore();
             }
           },
