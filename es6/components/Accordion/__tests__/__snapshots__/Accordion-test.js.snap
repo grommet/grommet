@@ -806,7 +806,7 @@ exports[`Accordion change active index 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 1
             </h4>
@@ -850,7 +850,7 @@ exports[`Accordion change active index 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 2
             </h4>
@@ -1302,7 +1302,7 @@ exports[`Accordion change to second Panel 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 1
             </h4>
@@ -1353,7 +1353,7 @@ exports[`Accordion change to second Panel 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 2
             </h4>
@@ -1825,7 +1825,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 1
             </h4>
@@ -1869,7 +1869,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 2
             </h4>
@@ -3250,7 +3250,7 @@ exports[`Accordion multiple panels 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 1
             </h4>
@@ -3294,7 +3294,7 @@ exports[`Accordion multiple panels 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 2
             </h4>
@@ -3387,7 +3387,7 @@ exports[`Accordion multiple panels 3`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 1
             </h4>
@@ -3468,7 +3468,7 @@ exports[`Accordion multiple panels 3`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 2
             </h4>
@@ -3527,7 +3527,7 @@ exports[`Accordion multiple panels 4`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 1
             </h4>
@@ -3574,7 +3574,7 @@ exports[`Accordion multiple panels 4`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 2
             </h4>
@@ -3664,7 +3664,7 @@ exports[`Accordion multiple panels 5`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 1
             </h4>
@@ -3742,7 +3742,7 @@ exports[`Accordion multiple panels 5`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 2
             </h4>
@@ -4241,7 +4241,7 @@ exports[`Accordion set on hover 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 iOLzha"
+              class="StyledHeading-sc-1rdh4aw-0 StelQ"
             >
               Panel 1
             </h4>
@@ -4292,7 +4292,7 @@ exports[`Accordion set on hover 2`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 2
             </h4>
@@ -4355,7 +4355,7 @@ exports[`Accordion set on hover 3`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 iOLzha"
+              class="StyledHeading-sc-1rdh4aw-0 StelQ"
             >
               Panel 1
             </h4>
@@ -4406,7 +4406,7 @@ exports[`Accordion set on hover 3`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 iOLzha"
+              class="StyledHeading-sc-1rdh4aw-0 StelQ"
             >
               Panel 2
             </h4>
@@ -4469,7 +4469,7 @@ exports[`Accordion set on hover 4`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 1
             </h4>
@@ -4520,7 +4520,7 @@ exports[`Accordion set on hover 4`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 iOLzha"
+              class="StyledHeading-sc-1rdh4aw-0 StelQ"
             >
               Panel 2
             </h4>
@@ -4583,7 +4583,7 @@ exports[`Accordion set on hover 5`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 1
             </h4>
@@ -4634,7 +4634,7 @@ exports[`Accordion set on hover 5`] = `
             class="StyledBox-sc-13pk1d4-0 kFoGJP"
           >
             <h4
-              class="StyledHeading-sc-1rdh4aw-0 hlZfma"
+              class="StyledHeading-sc-1rdh4aw-0 dOVRRX"
             >
               Panel 2
             </h4>

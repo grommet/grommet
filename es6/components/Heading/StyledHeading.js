@@ -10,14 +10,17 @@ var sizeStyle = function sizeStyle(props) {
 
   if (levelStyle) {
     var data = levelStyle[size];
-    var styles = [css(["font-size:", ";line-height:", ";max-width:", ";font-weight:", ";"], data.size, data.height, data.maxWidth, levelStyle.font.weight || headingTheme.weight)];
+    var styles = [css(["font-size:", ";line-height:", ";max-width:", ";font-weight:", ";"], data ? data.size : size, data ? data.height : 'normal', data ? data.maxWidth : levelStyle.medium.maxWidth, levelStyle.font.weight || headingTheme.weight)];
 
     if (props.responsive && headingTheme.responsiveBreakpoint) {
       var breakpoint = props.theme.global.breakpoints[headingTheme.responsiveBreakpoint];
 
       if (breakpoint) {
         var responsiveData = headingTheme.level[Math.min(props.level + 1, 4)][size];
-        styles.push(breakpointStyle(breakpoint, "\n          font-size: " + responsiveData.size + ";\n          line-height: " + responsiveData.height + ";\n          max-width: " + responsiveData.maxWidth + ";\n        "));
+
+        if (responsiveData) {
+          styles.push(breakpointStyle(breakpoint, "\n            font-size: " + responsiveData.size + ";\n            line-height: " + responsiveData.height + ";\n            max-width: " + responsiveData.maxWidth + ";\n          "));
+        }
       }
     }
 

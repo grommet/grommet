@@ -89,6 +89,9 @@ test('Heading size renders', function () {
   }), _react.default.createElement(_.Heading, {
     level: 4,
     size: "xlarge"
+  }), _react.default.createElement(_.Heading, {
+    level: 1,
+    size: "77px"
   })));
 
   var tree = component.toJSON();

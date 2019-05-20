@@ -78,6 +78,9 @@ test('Heading size renders', function () {
   }), React.createElement(Heading, {
     level: 4,
     size: "xlarge"
+  }), React.createElement(Heading, {
+    level: 1,
+    size: "77px"
   })));
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();

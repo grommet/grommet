@@ -477,6 +477,13 @@ exports[`Heading size renders 1`] = `
   font-weight: 600;
 }
 
+.c12 {
+  font-size: 77px;
+  line-height: normal;
+  max-width: 1200px;
+  font-weight: 600;
+}
+
 @media only screen and (max-width:768px) {
   .c2 {
     font-size: 34px;
@@ -631,6 +638,10 @@ exports[`Heading size renders 1`] = `
   <h4
     className="c11"
     size="xlarge"
+  />
+  <h1
+    className="c12"
+    size="77px"
   />
 </div>
 `;
