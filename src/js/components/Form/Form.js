@@ -72,14 +72,23 @@ class Form extends Component {
   };
 
   onReset = event => {
-    const { onReset } = this.props;
-    if (onReset) {
-      onReset(event);
-    }
-    this.setState({ errors: {}, value: {}, touched: {} });
+    const { onChange, onReset } = this.props;
+    const value = {};
+    this.setState({ errors: {}, value, touched: {} }, () => {
+      if (onReset) {
+        event.persist(); // extract from React's synthetic event pool
+        const adjustedEvent = event;
+        adjustedEvent.value = value;
+        onReset(adjustedEvent);
+      }
+      if (onChange) {
+        onChange(value);
+      }
+    });
   };
 
   update = (name, data, error) => {
+    const { onChange } = this.props;
     const { errors, touched, value } = this.state;
     const nextValue = { ...value };
     nextValue[name] = data;
@@ -96,11 +105,18 @@ class Form extends Component {
         delete nextErrors[name];
       }
     }
-    this.setState({
-      value: nextValue,
-      errors: nextErrors,
-      touched: nextTouched,
-    });
+    this.setState(
+      {
+        value: nextValue,
+        errors: nextErrors,
+        touched: nextTouched,
+      },
+      () => {
+        if (onChange) {
+          onChange(nextValue);
+        }
+      },
+    );
   };
 
   addValidation = (name, validate) => {
