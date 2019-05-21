@@ -85,20 +85,32 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "onReset", function (event) {
-      var onReset = _this.props.onReset;
-
-      if (onReset) {
-        onReset(event);
-      }
+      var _this$props = _this.props,
+          onChange = _this$props.onChange,
+          onReset = _this$props.onReset;
+      var value = {};
 
       _this.setState({
         errors: {},
-        value: {},
+        value: value,
         touched: {}
+      }, function () {
+        if (onReset) {
+          event.persist(); // extract from React's synthetic event pool
+
+          var adjustedEvent = event;
+          adjustedEvent.value = value;
+          onReset(adjustedEvent);
+        }
+
+        if (onChange) {
+          onChange(value);
+        }
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "update", function (name, data, error) {
+      var onChange = _this.props.onChange;
       var _this$state2 = _this.state,
           errors = _this$state2.errors,
           touched = _this$state2.touched,
@@ -128,6 +140,10 @@ function (_Component) {
         value: nextValue,
         errors: nextErrors,
         touched: nextTouched
+      }, function () {
+        if (onChange) {
+          onChange(nextValue);
+        }
       });
     });
 
@@ -165,9 +181,9 @@ function (_Component) {
   var _proto = Form.prototype;
 
   _proto.render = function render() {
-    var _this$props = this.props,
-        children = _this$props.children,
-        rest = _objectWithoutPropertiesLoose(_this$props, ["children"]);
+    var _this$props2 = this.props,
+        children = _this$props2.children,
+        rest = _objectWithoutPropertiesLoose(_this$props2, ["children"]);
 
     delete rest.messages;
     delete rest.theme;
