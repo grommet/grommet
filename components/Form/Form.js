@@ -13,13 +13,47 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var updateReducer = function updateReducer(name, data, error, validations) {
+  return function (state) {
+    var errors = state.errors,
+        touched = state.touched,
+        value = state.value;
+
+    var nextValue = _extends({}, value);
+
+    nextValue[name] = data;
+
+    var nextTouched = _extends({}, touched);
+
+    nextTouched[name] = true;
+
+    var nextErrors = _extends({}, errors);
+
+    if (errors[name]) {
+      var nextError = error || validations[name] && validations[name](data, nextValue);
+
+      if (nextError) {
+        nextErrors[name] = nextError;
+      } else {
+        delete nextErrors[name];
+      }
+    }
+
+    return {
+      value: nextValue,
+      errors: nextErrors,
+      touched: nextTouched
+    };
+  };
+};
 
 var defaultMessages = {
   invalid: 'invalid',
@@ -110,39 +144,12 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "update", function (name, data, error) {
-      var onChange = _this.props.onChange;
-      var _this$state2 = _this.state,
-          errors = _this$state2.errors,
-          touched = _this$state2.touched,
-          value = _this$state2.value;
+      _this.setState(updateReducer(name, data, error, _this.validations), function () {
+        var onChange = _this.props.onChange;
+        var value = _this.state.value;
 
-      var nextValue = _extends({}, value);
-
-      nextValue[name] = data;
-
-      var nextTouched = _extends({}, touched);
-
-      nextTouched[name] = true;
-
-      var nextErrors = _extends({}, errors);
-
-      if (errors[name]) {
-        var nextError = error || _this.validations[name] && _this.validations[name](data, nextValue);
-
-        if (nextError) {
-          nextErrors[name] = nextError;
-        } else {
-          delete nextErrors[name];
-        }
-      }
-
-      _this.setState({
-        value: nextValue,
-        errors: nextErrors,
-        touched: nextTouched
-      }, function () {
         if (onChange) {
-          onChange(nextValue);
+          onChange(value);
         }
       });
     });
@@ -188,11 +195,11 @@ function (_Component) {
     delete rest.messages;
     delete rest.theme;
     delete rest.value;
-    var _this$state3 = this.state,
-        errors = _this$state3.errors,
-        touched = _this$state3.touched,
-        value = _this$state3.value,
-        messages = _this$state3.messages;
+    var _this$state2 = this.state,
+        errors = _this$state2.errors,
+        touched = _this$state2.touched,
+        value = _this$state2.value,
+        messages = _this$state2.messages;
     return _react.default.createElement("form", _extends({}, rest, {
       onReset: this.onReset,
       onSubmit: this.onSubmit

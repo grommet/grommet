@@ -165,15 +165,23 @@ describe('Form', function () {
     expect(queryByText('Input has changed')).toBeNull();
   });
   test('initial values', function () {
-    var onSubmit = jest.fn();
+    var _onSubmit = jest.fn();
 
     var _render5 = render(React.createElement(Grommet, null, React.createElement(Form, {
-      onSubmit: onSubmit
+      onSubmit: function onSubmit(_ref) {
+        var value = _ref.value;
+        return _onSubmit({
+          value: value
+        });
+      }
     }, React.createElement(FormField, {
       name: "test",
       required: true,
       placeholder: "test input",
       value: "Initial value"
+    }), React.createElement(FormField, {
+      name: "test2",
+      value: "Initial value2"
     }), React.createElement(Button, {
       type: "submit",
       primary: true,
@@ -184,5 +192,11 @@ describe('Form', function () {
 
     fireEvent.click(getByText('Submit'));
     expect(queryByText('required')).toBeNull();
+    expect(_onSubmit).toBeCalledWith(expect.objectContaining({
+      value: {
+        test: 'Initial value',
+        test2: 'Initial value2'
+      }
+    }));
   });
 });
