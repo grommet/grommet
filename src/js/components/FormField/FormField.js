@@ -171,14 +171,29 @@ class FormFieldContent extends Component {
       if (abut) {
         // marginBottom is set to overlap adjacent fields
         let marginBottom = '-1px';
+        let marginTop = '0px';
+        let marginRight = '0px';
+        let marginLeft = '0px';
         if (border.size) {
           marginBottom = `-${parseMetricToNum(
+            theme.global.borderSize[border.size],
+          )}px`;
+          marginTop = `-${parseMetricToNum(
+            theme.global.borderSize[border.size],
+          )}px`;
+          marginRight = `-${parseMetricToNum(
+            theme.global.borderSize[border.size],
+          )}px`;
+          marginLeft = `-${parseMetricToNum(
             theme.global.borderSize[border.size],
           )}px`;
         }
         outerStyle = {
           position: focus ? 'relative' : undefined,
           marginBottom,
+          marginTop,
+          marginLeft,
+          marginRight,
           zIndex: focus ? 10 : undefined,
           ...style,
         };
