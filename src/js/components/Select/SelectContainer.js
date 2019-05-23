@@ -393,9 +393,10 @@ class SelectContainer extends Component {
             {options.length > 0 ? (
               <InfiniteScroll
                 items={options}
-                step={theme.select.step} 
+                step={theme.select.step}
                 onMore={onMore}
-                replace>
+                replace
+              >
                 {(option, index) => {
                   const isDisabled = this.isDisabled(index);
                   const isSelected = this.isSelected(index);

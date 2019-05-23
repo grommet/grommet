@@ -9,7 +9,7 @@ const dummyOptions = Array(2000)
   .map((_, i) => `option ${i}`)
   .sort((a, b) =>
     a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }),
-);
+  );
 
 class Option extends PureComponent {
   render() {
@@ -23,22 +23,22 @@ class Option extends PureComponent {
   }
 }
 
-
 class LazyLoading extends Component {
   state = {
     selected: [],
-    options: dummyOptions.slice(0, 200)
+    options: dummyOptions.slice(0, 200),
   };
 
   onMore = () => {
     setTimeout(() => {
       const { options } = this.state;
-      console.log("onmore called")
+      console.log('onmore called');
       this.setState({ options: dummyOptions.slice(0, options.length + 200) });
     }, 1000);
   };
 
-  onClose = () =>
+  onClose = () => {
+    const { selected, options } = this.state;
     this.setState({
       options: options.sort((p1, p2) => {
         const p1Exists = selected.includes(p1);
@@ -55,11 +55,12 @@ class LazyLoading extends Component {
           sensitivity: 'base',
         });
       }),
-    })
+    });
+  };
 
-    onChange = ({ selected: nextSelected }) => {
-      this.setState({ selected: nextSelected });
-    }
+  onChange = ({ selected: nextSelected }) => {
+    this.setState({ selected: nextSelected });
+  };
 
   render() {
     const { selected, options } = this.state;
