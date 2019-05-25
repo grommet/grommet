@@ -1364,7 +1364,7 @@ You can provide a single function child that will be called with
 
 \`\`\`javascript
 import { Button } from 'grommet';
-<Button primary={true} label='Label' />
+<Button primary label='Label' />
 \`\`\`
 
 ## Properties
@@ -1578,8 +1578,8 @@ function
 
 **plain**
 
-Whether this is a plain button with no border or pad. 
-Non plain button will show both pad and border. 
+Whether this is a plain button with no border or pad.
+Non plain button will show both pad and border.
 The plain button has no border and unless the icon prop exist it has no pad as well.
 
 \`\`\`
@@ -3465,7 +3465,7 @@ Expand or collapse animation.
 
 \`\`\`javascript
 import { Collapsible } from 'grommet';
-<Collapsible open={true}>test</Collapsible>
+<Collapsible open>test</Collapsible>
 \`\`\`
 
 ## Properties
@@ -7906,7 +7906,7 @@ An Anchor with support for React Router.
 
 \`\`\`javascript
 import { RoutedAnchor } from 'grommet';
-<RoutedAnchor primary={true} path='/documentation' />
+<RoutedAnchor primary path='/documentation' />
 \`\`\`
 
 ## Properties
@@ -7941,7 +7941,7 @@ A button with support for React Router.
 
 \`\`\`javascript
 import { RoutedButton } from 'grommet';
-<RoutedButton primary={true} path='/documentation' />
+<RoutedButton primary path='/documentation' />
 \`\`\`
 
 ## Properties
