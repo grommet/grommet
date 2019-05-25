@@ -352,6 +352,7 @@ class SelectContainer extends Component {
       options,
       searchPlaceholder,
       theme,
+      replace,
     } = this.props;
     const { activeIndex, search } = this.state;
 
@@ -395,7 +396,7 @@ class SelectContainer extends Component {
                 items={options}
                 step={theme.select.step}
                 onMore={onMore}
-                replace
+                replace={replace}
               >
                 {(option, index) => {
                   const isDisabled = this.isDisabled(index);
