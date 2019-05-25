@@ -45,6 +45,7 @@ class SelectContainer extends Component {
     searchPlaceholder: undefined,
     selected: undefined,
     value: '',
+    replace: true,
   };
 
   optionRefs = {};
