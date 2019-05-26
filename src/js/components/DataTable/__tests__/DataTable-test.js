@@ -88,6 +88,23 @@ describe('DataTable', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  test('search', () => {
+    const { container, getByTestId } = render(
+      <Grommet>
+        <DataTable
+          columns={[{ property: 'a', header: 'A', search: true }]}
+          data={[{ a: 'Alpha' }, { a: 'beta' }, { a: '[]' }]}
+        />
+      </Grommet>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(getByTestId('searcher-on-filtering-a'), {});
+    fireEvent.change(getByTestId('searcher-input-a'), {
+      target: { value: '[' },
+    });
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
   test('resizeable', () => {
     const component = renderer.create(
       <Grommet>
