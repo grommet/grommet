@@ -39,8 +39,9 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onToggle", function () {
+    _defineProperty(_assertThisInitialized(_this), "onToggle", function (event) {
       var _this$props = _this.props,
+          onClick = _this$props.onClick,
           onClose = _this$props.onClose,
           onOpen = _this$props.onOpen;
       var show = _this.state.show;
@@ -50,6 +51,10 @@ function (_Component) {
       }, function () {
         return show ? onClose && onClose() : onOpen && onOpen();
       });
+
+      if (onClick) {
+        onClick(event);
+      }
     });
 
     _this.state = {
@@ -122,9 +127,10 @@ function (_Component) {
     return React.createElement(React.Fragment, null, React.createElement(Button, _extends({
       id: id,
       ref: forwardRef || this.buttonRef,
-      disabled: disabled,
+      disabled: disabled
+    }, rest, {
       onClick: this.onToggle
-    }, rest)), drop);
+    })), drop);
   };
 
   return DropButton;
