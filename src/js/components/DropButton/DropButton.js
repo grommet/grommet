@@ -55,12 +55,15 @@ class DropButton extends Component {
     });
   };
 
-  onToggle = () => {
-    const { onClose, onOpen } = this.props;
+  onToggle = event => {
+    const { onClick, onClose, onOpen } = this.props;
     const { show } = this.state;
     this.setState({ show: !show }, () =>
       show ? onClose && onClose() : onOpen && onOpen(),
     );
+    if (onClick) {
+      onClick(event);
+    }
   };
 
   render() {
@@ -103,8 +106,8 @@ class DropButton extends Component {
           id={id}
           ref={forwardRef || this.buttonRef}
           disabled={disabled}
-          onClick={this.onToggle}
           {...rest}
+          onClick={this.onToggle}
         />
         {drop}
       </React.Fragment>
