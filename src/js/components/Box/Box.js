@@ -55,6 +55,8 @@ class Box extends Component {
                 // eslint-disable-next-line react/no-array-index-key
                 key={`gap-${index}`}
                 gap={gap}
+                as={as}
+                tag={tag}
                 directionProp={direction}
                 responsive={responsive}
               />,
