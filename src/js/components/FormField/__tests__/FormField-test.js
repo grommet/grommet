@@ -64,6 +64,16 @@ test('renders htmlFor', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('renders margin', () => {
+  const component = renderer.create(
+    <Grommet>
+      <FormField margin="test-margin" />
+    </Grommet>,
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('renders custom formfield', () => {
   const component = renderer.create(
     <Grommet>

@@ -3,7 +3,6 @@ import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
-import { parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
 import { Text } from '../Text';
@@ -103,6 +102,7 @@ class FormFieldContent extends Component {
       validate,
       onBlur,
       onFocus,
+      margin,
     } = this.props;
     const { formField } = theme;
     const { border } = formField;
@@ -169,31 +169,8 @@ class FormFieldContent extends Component {
         border.position === 'outer' &&
         (border.side === 'all' || border.side === 'horizontal' || !border.side);
       if (abut) {
-        // marginBottom is set to overlap adjacent fields
-        let marginBottom = '-1px';
-        let marginTop = '0px';
-        let marginRight = '0px';
-        let marginLeft = '0px';
-        if (border.size) {
-          marginBottom = `-${parseMetricToNum(
-            theme.global.borderSize[border.size],
-          )}px`;
-          marginTop = `-${parseMetricToNum(
-            theme.global.borderSize[border.size],
-          )}px`;
-          marginRight = `-${parseMetricToNum(
-            theme.global.borderSize[border.size],
-          )}px`;
-          marginLeft = `-${parseMetricToNum(
-            theme.global.borderSize[border.size],
-          )}px`;
-        }
         outerStyle = {
           position: focus ? 'relative' : undefined,
-          marginBottom,
-          marginTop,
-          marginLeft,
-          marginRight,
           zIndex: focus ? 10 : undefined,
           ...style,
         };
@@ -208,7 +185,7 @@ class FormFieldContent extends Component {
             ? { ...border, color: borderColor }
             : undefined
         }
-        margin={abut ? undefined : { ...formField.margin }}
+        margin={abut ? undefined : { margin }}
         style={outerStyle}
       >
         {(label && component !== CheckBox) || help ? (
