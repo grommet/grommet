@@ -2477,3 +2477,5 @@ exports[`Layer position top 1`] = `
 `;
 
 exports[`Layer position top 2`] = `""`;
+
+exports[`Layer should be null prior to mounting, displayed after mount 1`] = `null`;

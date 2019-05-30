@@ -195,4 +195,21 @@ describe('Layer', () => {
     expect(bodyNode).toMatchSnapshot();
     expect(queryByTestId(document, 'test-layer-node')).toBeNull();
   });
+
+  test('should be null prior to mounting, displayed after mount', () => {
+    const ref = React.createRef();
+    render(
+      <Grommet>
+        <Layer data-testid="layer-container-test" ref={ref}>
+          My Test
+        </Layer>
+      </Grommet>,
+    );
+
+    ref.current.setState({ isLayerContainerAvailable: false });
+    expect(queryByTestId(document, 'my-test')).toBeNull();
+
+    ref.current.componentDidMount();
+    expect(queryByTestId(document, 'my-test')).toMatchSnapshot();
+  });
 });
