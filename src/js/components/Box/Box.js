@@ -56,7 +56,6 @@ class Box extends Component {
                 key={`gap-${index}`}
                 gap={gap}
                 as={as}
-                tag={tag}
                 directionProp={direction}
                 responsive={responsive}
               />,
