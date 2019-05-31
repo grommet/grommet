@@ -1,5 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Box Box tag to gap inheritance Box with Gaps containing other boxes 1`] = `
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0px;
+}
+
+.c2 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  height: 12px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    height: 6px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1"
+  >
+    LOL
+    <p
+      className="c2"
+    />
+    <div
+      className="c1"
+    >
+      Box1
+    </div>
+    <p
+      className="c2"
+    />
+    <div
+      className="c1"
+    >
+      Box2
+    </div>
+  </p>
+</div>
+`;
+
 exports[`Box align 1`] = `
 .c0 {
   font-size: 18px;

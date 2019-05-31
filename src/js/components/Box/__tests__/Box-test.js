@@ -459,4 +459,21 @@ describe('Box', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  describe('Box tag to gap inheritance', () => {
+    test('Box with Gaps containing other boxes', () => {
+      const component = renderer.create(
+        <Grommet>
+          <Box gap="small" as="p">
+            LOL
+            <Box>Box1</Box>
+            <Box>Box2</Box>
+          </Box>
+        </Grommet>,
+      );
+
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+  });
 });
