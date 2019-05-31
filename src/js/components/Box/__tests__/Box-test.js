@@ -475,5 +475,26 @@ describe('Box', () => {
       const tree = component.toJSON();
       expect(tree).toMatchSnapshot();
     });
+
+    test('Box with Gaps containing other boxes with gaps containing text!', () => {
+      const component = renderer.create(
+        <Grommet>
+          <Box gap="small" as="p">
+            LOL
+            <Box gap="medium" as="span">
+              <p>This is one sentence</p>
+              <p>This is another sentence</p>
+            </Box>
+            <Box>
+              <h2>Box without a gap</h2>
+              <p>And it might just work!</p>
+            </Box>
+          </Box>
+        </Grommet>,
+      );
+
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+    });
   });
 });
