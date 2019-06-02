@@ -76,6 +76,10 @@ exports[`Form update 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -181,6 +185,30 @@ exports[`Form update 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
     padding: 0px;
   }
 }
@@ -274,6 +302,10 @@ exports[`Form with field 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -342,6 +374,30 @@ exports[`Form with field 1`] = `
 .c3 {
   position: relative;
   width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-right: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {

@@ -19,6 +19,10 @@ exports[`renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -87,6 +91,30 @@ exports[`renders 1`] = `
 .c3 {
   position: relative;
   width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-right: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -165,6 +193,10 @@ exports[`renders custom formfield 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -193,6 +225,30 @@ exports[`renders custom formfield 1`] = `
 
 .c1 {
   font-size: 40px;
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c2 {
+    margin-right: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -251,6 +307,10 @@ exports[`renders error 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -285,6 +345,30 @@ exports[`renders error 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #FF4040;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-right: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -348,6 +432,10 @@ exports[`renders help 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -379,6 +467,30 @@ exports[`renders help 1`] = `
   font-size: 18px;
   line-height: 24px;
   color: #777777;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-right: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -442,6 +554,10 @@ exports[`renders htmlFor 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -466,6 +582,30 @@ exports[`renders htmlFor 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-right: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -524,6 +664,10 @@ exports[`renders label 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -557,6 +701,30 @@ exports[`renders label 1`] = `
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 24px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-right: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -620,6 +788,10 @@ exports[`renders margin 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -644,6 +816,30 @@ exports[`renders margin 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0px;
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-left: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c1 {
+    margin-right: 6px;
+  }
 }
 
 @media only screen and (max-width:768px) {
