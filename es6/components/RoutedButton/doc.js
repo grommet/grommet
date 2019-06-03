@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe } from 'react-desc';
 import { ROUTER_PROPS, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(RoutedButton) {
-  var DocumentedRoutedButton = describe(RoutedButton).availableAt(getAvailableAtBadge('RoutedButton')).description('A button with support for React Router.').usage("import { RoutedButton } from 'grommet';\n<RoutedButton primary={true} path='/documentation' />").intrinsicElement('button');
+  var DocumentedRoutedButton = describe(RoutedButton).availableAt(getAvailableAtBadge('RoutedButton')).description('A button with support for React Router.').usage("import { RoutedButton } from 'grommet';\n<RoutedButton primary path='/documentation' />").intrinsicElement('button');
   DocumentedRoutedButton.propTypes = _extends({}, ROUTER_PROPS);
   return DocumentedRoutedButton;
 };

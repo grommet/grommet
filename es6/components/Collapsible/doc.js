@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 export var doc = function doc(Collapsible) {
-  var DocumentedCollapsible = describe(Collapsible).description('Expand or collapse animation.').usage("import { Collapsible } from 'grommet';\n<Collapsible open={true}>test</Collapsible>").intrinsicElement('div');
+  var DocumentedCollapsible = describe(Collapsible).description('Expand or collapse animation.').usage("import { Collapsible } from 'grommet';\n<Collapsible open>test</Collapsible>").intrinsicElement('div');
   DocumentedCollapsible.propTypes = {
     open: PropTypes.bool.description('Whether or not the component should be open.'),
     direction: PropTypes.oneOf(['horizontal', 'vertical']).description('Direction to animate the collapsible content.').defaultValue('vertical')

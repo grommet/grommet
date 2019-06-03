@@ -3,7 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { describe } from 'react-desc';
 import { ROUTER_PROPS, getAvailableAtBadge } from '../../utils';
 export var doc = function doc(RoutedAnchor) {
-  var DocumentedRoutedAnchor = describe(RoutedAnchor).availableAt(getAvailableAtBadge('RoutedAnchor')).description('An Anchor with support for React Router.').usage("import { RoutedAnchor } from 'grommet';\n<RoutedAnchor primary={true} path='/documentation' />").intrinsicElement('a');
+  var DocumentedRoutedAnchor = describe(RoutedAnchor).availableAt(getAvailableAtBadge('RoutedAnchor')).description('An Anchor with support for React Router.').usage("import { RoutedAnchor } from 'grommet';\n<RoutedAnchor primary path='/documentation' />").intrinsicElement('a');
   DocumentedRoutedAnchor.propTypes = _extends({}, ROUTER_PROPS);
   return DocumentedRoutedAnchor;
 };
