@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -25,7 +25,7 @@ var amountFormatter = new Intl.NumberFormat('en-US', {
 });
 var columns = [{
   property: 'name',
-  header: _react.default.createElement(_grommet.Text, null, "Name with extra"),
+  header: _react["default"].createElement(_grommet.Text, null, "Name with extra"),
   primary: true,
   footer: 'Total'
 }, {
@@ -42,11 +42,11 @@ var columns = [{
   property: 'percent',
   header: 'Percent Complete',
   render: function render(datum) {
-    return _react.default.createElement(_grommet.Box, {
+    return _react["default"].createElement(_grommet.Box, {
       pad: {
         vertical: 'xsmall'
       }
-    }, _react.default.createElement(_grommet.Meter, {
+    }, _react["default"].createElement(_grommet.Meter, {
       values: [{
         value: datum.percent
       }],
@@ -130,12 +130,12 @@ var DATA = [{
 }];
 
 var SimpleDataTable = function SimpleDataTable() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react.default.createElement(_grommet.DataTable, {
+  }, _react["default"].createElement(_grommet.DataTable, {
     columns: columns,
     data: DATA,
     step: 10
@@ -143,12 +143,12 @@ var SimpleDataTable = function SimpleDataTable() {
 };
 
 var SizedDataTable = function SizedDataTable() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react.default.createElement(_grommet.DataTable, {
+  }, _react["default"].createElement(_grommet.DataTable, {
     columns: columns,
     data: data,
     size: "medium"
@@ -156,12 +156,12 @@ var SizedDataTable = function SizedDataTable() {
 };
 
 var TunableDataTable = function TunableDataTable() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react.default.createElement(_grommet.DataTable, {
+  }, _react["default"].createElement(_grommet.DataTable, {
     columns: columns.map(function (c) {
       return _extends({}, c, {
         search: c.property === 'name' || c.property === 'location'
@@ -181,9 +181,9 @@ groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 
 var GroupedDataTable = function GroupedDataTable() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react.default.createElement(_grommet.DataTable, {
+  }, _react["default"].createElement(_grommet.DataTable, {
     columns: groupColumns,
     data: DATA,
     groupBy: "location",
@@ -240,12 +240,12 @@ function (_Component) {
 
   _proto.render = function render() {
     var servedData = this.state.data;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       align: "center",
       pad: "large"
-    }, _react.default.createElement(_grommet.DataTable, {
+    }, _react["default"].createElement(_grommet.DataTable, {
       columns: columns.map(function (column) {
         return _extends({}, column, {
           search: column.property === 'name' || column.property === 'location'
@@ -320,16 +320,16 @@ function (_Component2) {
     var _this3 = this;
 
     var checked = this.state.checked;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       align: "center",
       pad: "medium"
-    }, _react.default.createElement(_grommet.DataTable, {
+    }, _react["default"].createElement(_grommet.DataTable, {
       columns: [{
         property: 'checkbox',
         render: function render(datum) {
-          return _react.default.createElement(_grommet.CheckBox, {
+          return _react["default"].createElement(_grommet.CheckBox, {
             key: datum.name,
             checked: checked.indexOf(datum.name) !== -1,
             onChange: function onChange(e) {
@@ -337,7 +337,7 @@ function (_Component2) {
             }
           });
         },
-        header: _react.default.createElement(_grommet.CheckBox, {
+        header: _react["default"].createElement(_grommet.CheckBox, {
           checked: checked.length === DATA.length,
           indeterminate: checked.length > 0 && checked.length < DATA.length,
           onChange: this.onCheckAll
@@ -356,15 +356,15 @@ function (_Component2) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('DataTable', module).add('Simple', function () {
-  return _react.default.createElement(SimpleDataTable, null);
+  return _react["default"].createElement(SimpleDataTable, null);
 }).add('Sized', function () {
-  return _react.default.createElement(SizedDataTable, null);
+  return _react["default"].createElement(SizedDataTable, null);
 }).add('Tunable', function () {
-  return _react.default.createElement(TunableDataTable, null);
+  return _react["default"].createElement(TunableDataTable, null);
 }).add('Grouped', function () {
-  return _react.default.createElement(GroupedDataTable, null);
+  return _react["default"].createElement(GroupedDataTable, null);
 }).add('Served', function () {
-  return _react.default.createElement(ServedDataTable, null);
+  return _react["default"].createElement(ServedDataTable, null);
 }).add('Controlled', function () {
-  return _react.default.createElement(ControlledDataTable, null);
+  return _react["default"].createElement(ControlledDataTable, null);
 });

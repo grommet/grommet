@@ -19,9 +19,9 @@ var _utils = require("../../utils");
 
 var _StyledLayer = require("./StyledLayer");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -33,7 +33,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var HiddenAnchor = _styledComponents.default.a.withConfig({
+var HiddenAnchor = _styledComponents["default"].a.withConfig({
   displayName: "LayerContainer__HiddenAnchor",
   componentId: "sc-1srj14c-0"
 })(["width:0;height:0;overflow:hidden;position:absolute;"]);
@@ -54,9 +54,9 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "anchorRef", (0, _react.createRef)());
 
-    _defineProperty(_assertThisInitialized(_this), "containerRef", _react.default.createRef());
+    _defineProperty(_assertThisInitialized(_this), "containerRef", _react["default"].createRef());
 
-    _defineProperty(_assertThisInitialized(_this), "layerRef", _react.default.createRef());
+    _defineProperty(_assertThisInitialized(_this), "layerRef", _react["default"].createRef());
 
     _defineProperty(_assertThisInitialized(_this), "makeLayerVisible", function () {
       var node = _this.layerRef.current || _this.containerRef.current;
@@ -107,28 +107,28 @@ function (_Component) {
 
     var theme = this.context || propsTheme;
 
-    var content = _react.default.createElement(_StyledLayer.StyledContainer, _extends({
+    var content = _react["default"].createElement(_StyledLayer.StyledContainer, _extends({
       id: id
     }, rest, {
       position: position,
       plain: plain,
       responsive: responsive,
       ref: this.containerRef
-    }), _react.default.createElement(HiddenAnchor, {
+    }), _react["default"].createElement(HiddenAnchor, {
       ref: this.anchorRef,
       tabIndex: "-1",
       "aria-hidden": "true"
     }), children);
 
     if (modal) {
-      content = _react.default.createElement(_StyledLayer.StyledLayer, {
+      content = _react["default"].createElement(_StyledLayer.StyledLayer, {
         id: id,
         plain: plain,
         position: position,
         responsive: responsive,
         tabIndex: "-1",
         ref: this.layerRef
-      }, _react.default.createElement(_StyledLayer.StyledOverlay, {
+      }, _react["default"].createElement(_StyledLayer.StyledOverlay, {
         plain: plain,
         onMouseDown: onClickOutside,
         responsive: responsive
@@ -137,7 +137,7 @@ function (_Component) {
     }
 
     if (onEsc) {
-      content = _react.default.createElement(_Keyboard.Keyboard, {
+      content = _react["default"].createElement(_Keyboard.Keyboard, {
         onEsc: onEsc
       }, content);
     }
@@ -146,7 +146,7 @@ function (_Component) {
       var dark = (0, _utils.backgroundIsDark)(theme.layer.background, theme);
 
       if (dark !== theme.dark) {
-        content = _react.default.createElement(_contexts.ThemeContext.Provider, {
+        content = _react["default"].createElement(_contexts.ThemeContext.Provider, {
           value: _extends({}, theme, {
             dark: dark
           })
@@ -155,7 +155,7 @@ function (_Component) {
     }
 
     if (modal) {
-      content = _react.default.createElement(_FocusedContainer.FocusedContainer, {
+      content = _react["default"].createElement(_FocusedContainer.FocusedContainer, {
         hidden: position === 'hidden',
         restrictScroll: true
       }, content);

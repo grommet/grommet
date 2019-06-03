@@ -10,7 +10,7 @@ var _themes = require("grommet/themes");
 
 var _utils = require("grommet/utils");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -71,15 +71,15 @@ function (_Component) {
     var _this$state = this.state,
         value = _this$state.value,
         suggestions = _this$state.suggestions;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       align: "center",
       pad: "large"
-    }, _react.default.createElement(_grommet.FormField, _extends({
+    }, _react["default"].createElement(_grommet.FormField, _extends({
       label: "Label",
       htmlFor: "text-input"
-    }, this.props), _react.default.createElement(_grommet.TextInput, {
+    }, this.props), _react["default"].createElement(_grommet.TextInput, {
       id: "text-input",
       placeholder: "placeholder",
       value: value,
@@ -93,12 +93,12 @@ function (_Component) {
 }(_react.Component);
 
 var FormFieldTextArea = function FormFieldTextArea(props) {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react.default.createElement(_grommet.Form, null, _react.default.createElement(_grommet.FormField, _extends({
+  }, _react["default"].createElement(_grommet.Form, null, _react["default"].createElement(_grommet.FormField, _extends({
     label: "Label",
     htmlFor: "text-area"
   }, props, {
@@ -108,40 +108,40 @@ var FormFieldTextArea = function FormFieldTextArea(props) {
 };
 
 var FormFieldCheckBox = function FormFieldCheckBox(props) {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react.default.createElement(_grommet.FormField, _extends({
+  }, _react["default"].createElement(_grommet.FormField, _extends({
     label: "Label",
     htmlFor: "check-box"
-  }, props), _react.default.createElement(_grommet.Box, {
+  }, props), _react["default"].createElement(_grommet.Box, {
     pad: {
       horizontal: 'small',
       vertical: 'xsmall'
     }
-  }, _react.default.createElement(_grommet.CheckBox, {
+  }, _react["default"].createElement(_grommet.CheckBox, {
     id: "check-box",
     label: "CheckBox"
   })))));
 };
 
 var FormFieldToggle = function FormFieldToggle(props) {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react.default.createElement(_grommet.FormField, _extends({
+  }, _react["default"].createElement(_grommet.FormField, _extends({
     label: "Label",
     htmlFor: "check-box"
-  }, props), _react.default.createElement(_grommet.Box, {
+  }, props), _react["default"].createElement(_grommet.Box, {
     pad: {
       horizontal: 'small',
       vertical: 'xsmall'
     }
-  }, _react.default.createElement(_grommet.CheckBox, {
+  }, _react["default"].createElement(_grommet.CheckBox, {
     id: "check-box",
     label: "CheckBox",
     toggle: true
@@ -182,15 +182,15 @@ function (_Component2) {
     var _this$state2 = this.state,
         value = _this$state2.value,
         options = _this$state2.options;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       align: "center",
       pad: "large"
-    }, _react.default.createElement(_grommet.FormField, _extends({
+    }, _react["default"].createElement(_grommet.FormField, _extends({
       label: "Label",
       htmlFor: "select"
-    }, this.props), _react.default.createElement(_grommet.Select, {
+    }, this.props), _react["default"].createElement(_grommet.Select, {
       id: "select",
       placeholder: "placeholder",
       options: options,
@@ -208,18 +208,18 @@ function (_Component2) {
 }(_react.Component);
 
 var FormFieldHelpError = function FormFieldHelpError(props) {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react.default.createElement(_grommet.FormField, _extends({
+  }, _react["default"].createElement(_grommet.FormField, _extends({
     label: "Label",
     htmlFor: "text-input"
   }, props, {
     help: "Text to help the user know what is possible",
     error: "Text to call attention to an issue with this field"
-  }), _react.default.createElement(_grommet.TextInput, {
+  }), _react["default"].createElement(_grommet.TextInput, {
     id: "text-input",
     placeholder: "placeholder",
     value: "Value",
@@ -253,32 +253,32 @@ var customFormFieldTheme = {
 };
 
 var CustomFormField = function CustomFormField() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: (0, _utils.deepMerge)(_themes.grommet, customFormFieldTheme)
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react.default.createElement(_grommet.FormField, {
+  }, _react["default"].createElement(_grommet.FormField, {
     label: "Label",
     htmlFor: "text-area"
-  }, _react.default.createElement(_grommet.TextArea, {
+  }, _react["default"].createElement(_grommet.TextArea, {
     id: "text-area",
     placeholder: "placeholder"
   }))));
 };
 
 (0, _react2.storiesOf)('FormField', module).add('TextInput', function () {
-  return _react.default.createElement(FormFieldTextInput, null);
+  return _react["default"].createElement(FormFieldTextInput, null);
 }).add('TextArea', function () {
-  return _react.default.createElement(FormFieldTextArea, null);
+  return _react["default"].createElement(FormFieldTextArea, null);
 }).add('Select', function () {
-  return _react.default.createElement(FormFieldSelect, null);
+  return _react["default"].createElement(FormFieldSelect, null);
 }).add('CheckBox', function () {
-  return _react.default.createElement(FormFieldCheckBox, null);
+  return _react["default"].createElement(FormFieldCheckBox, null);
 }).add('Toggle', function () {
-  return _react.default.createElement(FormFieldToggle, null);
+  return _react["default"].createElement(FormFieldToggle, null);
 }).add('Help and error', function () {
-  return _react.default.createElement(FormFieldHelpError, null);
+  return _react["default"].createElement(FormFieldHelpError, null);
 }).add('Custom Theme', function () {
-  return _react.default.createElement(CustomFormField, null);
+  return _react["default"].createElement(CustomFormField, null);
 });

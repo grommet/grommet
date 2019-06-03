@@ -9,13 +9,13 @@ var _utils = require("../../utils");
 
 var _defaultProps = require("../../default-props");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 var hiddenPositionStyle = (0, _styledComponents.css)(["left:-100%;right:100%;z-index:-1;position:fixed;"]);
 var desktopLayerStyle = "\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  width: 100vw;\n  height: 100vh;\n";
 var responsiveLayerStyle = "\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  min-height: 100vh;\n";
 
-var StyledLayer = _styledComponents.default.div.withConfig({
+var StyledLayer = _styledComponents["default"].div.withConfig({
   displayName: "StyledLayer",
   componentId: "rmtehz-0"
 })(["", " background:unset;position:relative;z-index:", ";pointer-events:none;outline:none;", " ", ";"], _utils.baseStyle, function (props) {
@@ -41,7 +41,7 @@ exports.StyledLayer = StyledLayer;
 StyledLayer.defaultProps = {};
 Object.setPrototypeOf(StyledLayer.defaultProps, _defaultProps.defaultProps);
 
-var StyledOverlay = _styledComponents.default.div.withConfig({
+var StyledOverlay = _styledComponents["default"].div.withConfig({
   displayName: "StyledLayer__StyledOverlay",
   componentId: "rmtehz-1"
 })(["position:absolute;", " top:0px;left:0px;right:0px;bottom:0px;", " pointer-events:all;"], function (props) {
@@ -90,32 +90,32 @@ var KEYFRAMES = {
   center: {
     vertical: (0, _styledComponents.keyframes)(["0%{transform:translateX(-50%) scale(0.8);}100%{transform:translateX(-50%) scale(1);}"]),
     horizontal: (0, _styledComponents.keyframes)(["0%{transform:translateY(-50%) scale(0.8);}100%{transform:translateY(-50) scale(1);}"]),
-    true: (0, _styledComponents.keyframes)(["0%{transform:scale(0.8);}100%{transform:scale(1);}"]),
-    false: (0, _styledComponents.keyframes)(["0%{transform:translate(-50%,-50%) scale(0.8);}100%{transform:translate(-50%,-50%) scale(1);}"])
+    "true": (0, _styledComponents.keyframes)(["0%{transform:scale(0.8);}100%{transform:scale(1);}"]),
+    "false": (0, _styledComponents.keyframes)(["0%{transform:translate(-50%,-50%) scale(0.8);}100%{transform:translate(-50%,-50%) scale(1);}"])
   },
   top: {
     vertical: (0, _styledComponents.keyframes)(["0%{transform:translate(-50%,-100%);}100%{transform:translate(-50%,0);}"]),
     horizontal: (0, _styledComponents.keyframes)(["0%{transform:translateY(-100%);}100%{transform:translateY(0);}"]),
-    true: (0, _styledComponents.keyframes)(["0%{transform:translateY(-100%);}100%{transform:translateY(0);}"]),
-    false: (0, _styledComponents.keyframes)(["0%{transform:translate(-50%,-100%);}100%{transform:translate(-50%,0);}"])
+    "true": (0, _styledComponents.keyframes)(["0%{transform:translateY(-100%);}100%{transform:translateY(0);}"]),
+    "false": (0, _styledComponents.keyframes)(["0%{transform:translate(-50%,-100%);}100%{transform:translate(-50%,0);}"])
   },
   bottom: {
     vertical: (0, _styledComponents.keyframes)(["0%{transform:translate(-50%,100%);}100%{transform:translate(-50%,0);}"]),
     horizontal: (0, _styledComponents.keyframes)(["0%{transform:translateY(100%);}100%{transform:translateY(0);}"]),
-    true: (0, _styledComponents.keyframes)(["0%{transform:translateY(100%);}100%{transform:translateY(0);}"]),
-    false: (0, _styledComponents.keyframes)(["0%{transform:translate(-50%,100%);}100%{transform:translate(-50%,0);}"])
+    "true": (0, _styledComponents.keyframes)(["0%{transform:translateY(100%);}100%{transform:translateY(0);}"]),
+    "false": (0, _styledComponents.keyframes)(["0%{transform:translate(-50%,100%);}100%{transform:translate(-50%,0);}"])
   },
   left: {
     vertical: (0, _styledComponents.keyframes)(["0%{transform:translateX(-100%);}100%{transform:translateX(0);}"]),
     horizontal: (0, _styledComponents.keyframes)(["0%{transform:translate(-100%,-50%);}100%{transform:translate(0,-50%);}"]),
-    true: (0, _styledComponents.keyframes)(["0%{transform:translateX(-100%);}100%{transform:translateX(0);}"]),
-    false: (0, _styledComponents.keyframes)(["0%{transform:translate(-100%,-50%);}100%{transform:translate(0,-50%);}"])
+    "true": (0, _styledComponents.keyframes)(["0%{transform:translateX(-100%);}100%{transform:translateX(0);}"]),
+    "false": (0, _styledComponents.keyframes)(["0%{transform:translate(-100%,-50%);}100%{transform:translate(0,-50%);}"])
   },
   right: {
     vertical: (0, _styledComponents.keyframes)(["0%{transform:translateX(100%);}100%{transform:translateX(0);}"]),
     horizontal: (0, _styledComponents.keyframes)(["0%{transform:translate(100%,-50%);}100%{transform:translate(0,-50%);}"]),
-    true: (0, _styledComponents.keyframes)(["0%{transform:translateX(100%);}100%{transform:translateX(0);}"]),
-    false: (0, _styledComponents.keyframes)(["0%{transform:translate(100%,-50%);}100%{transform:translate(0,-50%);}"])
+    "true": (0, _styledComponents.keyframes)(["0%{transform:translateX(100%);}100%{transform:translateX(0);}"]),
+    "false": (0, _styledComponents.keyframes)(["0%{transform:translate(100%,-50%);}100%{transform:translate(0,-50%);}"])
   }
 };
 
@@ -146,12 +146,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'center', 'horizontal');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'center', 'true');
       });
     },
-    false: function _false() {
+    "false": function _false() {
       return (0, _styledComponents.css)(["top:50%;left:50%;transform:translate(-50%,-50%);", ""], function (props) {
         return getAnimationStyle(props.animate, 'center', 'false');
       });
@@ -168,12 +168,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'top', 'horizontal');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'top', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return (0, _styledComponents.css)(["top:", ";left:50%;transform:translate(-50%,0);", ""], margin.top, function (props) {
         return getAnimationStyle(props.animate, 'top', 'false');
       });
@@ -190,12 +190,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'bottom', 'horizontal');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'bottom', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return (0, _styledComponents.css)(["bottom:", ";left:50%;transform:translate(-50%,0);", ""], margin.bottom, function (props) {
         return getAnimationStyle(props.animate, 'bottom', 'false');
       });
@@ -212,12 +212,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'left', 'horizontal');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'left', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return (0, _styledComponents.css)(["left:", ";top:50%;transform:translate(0,-50%);", ""], margin.left, function (props) {
         return getAnimationStyle(props.animate, 'left', 'false');
       });
@@ -234,12 +234,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'right', 'horizontal');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'right', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return (0, _styledComponents.css)(["right:", ";top:50%;transform:translate(0,-50%);", ""], margin.right, function (props) {
         return getAnimationStyle(props.animate, 'right', 'false');
       });
@@ -256,12 +256,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'top', 'true');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ";"], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'top', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return (0, _styledComponents.css)(["top:", ";right:", ";transform:translateY(0);", ";"], margin.top, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'top', 'true');
       });
@@ -278,12 +278,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'top', 'true');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'top', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return (0, _styledComponents.css)(["top:", ";left:", ";transform:translateY(0);", ""], margin.top, margin.left, function (props) {
         return getAnimationStyle(props.animate, 'top', 'true');
       });
@@ -300,12 +300,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'bottom', 'true');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'bottom', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return (0, _styledComponents.css)(["bottom:", ";right:", ";transform:translateY(0);", ""], margin.bottom, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'bottom', 'true');
       });
@@ -322,12 +322,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'bottom', 'true');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'bottom', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return (0, _styledComponents.css)(["bottom:", ";left:", ";transform:translateY(0);", ""], margin.bottom, margin.left, function (props) {
         return getAnimationStyle(props.animate, 'bottom', 'true');
       });
@@ -347,7 +347,7 @@ var desktopContainerStyle = (0, _styledComponents.css)(["position:", ";max-heigh
 });
 var responsiveContainerStyle = (0, _styledComponents.css)(["position:relative;max-height:none;max-width:none;border-radius:0;top:0;bottom:0;left:0;right:0;transform:none;animation:none;height:100vh;width:100vw;"]);
 
-var StyledContainer = _styledComponents.default.div.withConfig({
+var StyledContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledLayer__StyledContainer",
   componentId: "rmtehz-2"
 })(["", " display:flex;flex-direction:column;min-height:", ";", " outline:none;pointer-events:all;z-index:", ";", " ", ";"], function (props) {

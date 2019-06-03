@@ -23,7 +23,7 @@ var _Stack = require("../Stack");
 
 var _hocs = require("../hocs");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -155,10 +155,10 @@ function (_Component) {
     var selectors = [];
 
     var wrappedChildren = _react.Children.map(children, function (child, index) {
-      selectors.push(_react.default.createElement(_Button.Button // eslint-disable-next-line react/no-array-index-key
+      selectors.push(_react["default"].createElement(_Button.Button // eslint-disable-next-line react/no-array-index-key
       , {
         key: index,
-        icon: _react.default.createElement(CurrentIcon, {
+        icon: _react["default"].createElement(CurrentIcon, {
           color: activeIndex === index ? iconColor : undefined
         }),
         onClick: _this2.onSelect(index)
@@ -183,42 +183,42 @@ function (_Component) {
         };
       }
 
-      return _react.default.createElement(_Box.Box, {
+      return _react["default"].createElement(_Box.Box, {
         overflow: "hidden"
-      }, _react.default.createElement(_Box.Box, {
+      }, _react["default"].createElement(_Box.Box, {
         animation: animation
       }, child));
     });
 
     var NextIcon = theme.carousel.icons.next;
     var PreviousIcon = theme.carousel.icons.previous;
-    return _react.default.createElement(_Keyboard.Keyboard, {
+    return _react["default"].createElement(_Keyboard.Keyboard, {
       onLeft: onLeft,
       onRight: onRight
-    }, _react.default.createElement(_Stack.Stack, _extends({
+    }, _react["default"].createElement(_Stack.Stack, _extends({
       guidingChild: activeIndex,
       fill: fill
-    }, rest), wrappedChildren, _react.default.createElement(_Box.Box, {
+    }, rest), wrappedChildren, _react["default"].createElement(_Box.Box, {
       tabIndex: "0",
       focus: focus,
       fill: true,
       direction: "row",
       justify: "between"
-    }, _react.default.createElement(_Button.Button, {
+    }, _react["default"].createElement(_Button.Button, {
       fill: "vertical",
-      icon: _react.default.createElement(PreviousIcon, null),
+      icon: _react["default"].createElement(PreviousIcon, null),
       plain: true,
       disabled: activeIndex <= 0,
       onClick: onLeft,
       hoverIndicator: true
-    }), _react.default.createElement(_Box.Box, {
+    }), _react["default"].createElement(_Box.Box, {
       justify: "end"
-    }, _react.default.createElement(_Box.Box, {
+    }, _react["default"].createElement(_Box.Box, {
       direction: "row",
       justify: "center"
-    }, selectors)), _react.default.createElement(_Button.Button, {
+    }, selectors)), _react["default"].createElement(_Button.Button, {
       fill: "vertical",
-      icon: _react.default.createElement(NextIcon, null),
+      icon: _react["default"].createElement(NextIcon, null),
       plain: true,
       disabled: activeIndex >= lastIndex,
       onClick: onRight,

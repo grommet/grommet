@@ -7,10 +7,10 @@ var _react = _interopRequireDefault(require("react"));
 
 var _StyledTable = require("../Table/StyledTable");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var TableRow = function TableRow(props) {
-  return _react.default.createElement(_StyledTable.StyledTableRow, props);
+  return _react["default"].createElement(_StyledTable.StyledTableRow, props);
 };
 
 var TableRowDoc;

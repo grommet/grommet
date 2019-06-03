@@ -9,9 +9,9 @@ var _utils = require("../../utils");
 
 var _defaultProps = require("../../default-props");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
-var StyledHour = _styledComponents.default.line.withConfig({
+var StyledHour = _styledComponents["default"].line.withConfig({
   displayName: "StyledClock__StyledHour",
   componentId: "y4xw8s-0"
 })(["stroke-width:", ";stroke:", ";transition:stroke 1s ease-out;"], function (props) {
@@ -24,7 +24,7 @@ exports.StyledHour = StyledHour;
 StyledHour.defaultProps = {};
 Object.setPrototypeOf(StyledHour.defaultProps, _defaultProps.defaultProps);
 
-var StyledMinute = _styledComponents.default.line.withConfig({
+var StyledMinute = _styledComponents["default"].line.withConfig({
   displayName: "StyledClock__StyledMinute",
   componentId: "y4xw8s-1"
 })(["stroke-width:", ";stroke:", ";transition:stroke 1s ease-out;"], function (props) {
@@ -37,7 +37,7 @@ exports.StyledMinute = StyledMinute;
 StyledMinute.defaultProps = {};
 Object.setPrototypeOf(StyledMinute.defaultProps, _defaultProps.defaultProps);
 
-var StyledSecond = _styledComponents.default.line.withConfig({
+var StyledSecond = _styledComponents["default"].line.withConfig({
   displayName: "StyledClock__StyledSecond",
   componentId: "y4xw8s-2"
 })(["stroke-width:", ";stroke:", ";transition:stroke 1s ease-out;"], function (props) {
@@ -50,7 +50,7 @@ exports.StyledSecond = StyledSecond;
 StyledSecond.defaultProps = {};
 Object.setPrototypeOf(StyledSecond.defaultProps, _defaultProps.defaultProps);
 
-var StyledAnalog = _styledComponents.default.svg.withConfig({
+var StyledAnalog = _styledComponents["default"].svg.withConfig({
   displayName: "StyledClock__StyledAnalog",
   componentId: "y4xw8s-3"
 })(["width:", ";height:", ";", " ", ";"], function (props) {
@@ -72,7 +72,7 @@ var sizeStyle = function sizeStyle(props) {
   return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size, data.height);
 };
 
-var StyledDigitalDigit = _styledComponents.default.div.withConfig({
+var StyledDigitalDigit = _styledComponents["default"].div.withConfig({
   displayName: "StyledClock__StyledDigitalDigit",
   componentId: "y4xw8s-4"
 })(["position:relative;width:0.8em;text-align:center;overflow:hidden;", ";"], function (props) {
@@ -85,7 +85,7 @@ Object.setPrototypeOf(StyledDigitalDigit.defaultProps, _defaultProps.defaultProp
 var previousUp = (0, _styledComponents.keyframes)(["0%{transform:translateY(0);}100%{transform:translateY(-100%);}"]);
 var previousDown = (0, _styledComponents.keyframes)(["0%{transform:translateY(0);}100%{transform:translateY(100%);}"]);
 
-var StyledDigitalPrevious = _styledComponents.default.div.withConfig({
+var StyledDigitalPrevious = _styledComponents["default"].div.withConfig({
   displayName: "StyledClock__StyledDigitalPrevious",
   componentId: "y4xw8s-5"
 })(["position:absolute;top:0;left:0;width:0.8em;text-align:center;animation:", " 0.5s forwards;"], function (props) {
@@ -98,7 +98,7 @@ Object.setPrototypeOf(StyledDigitalPrevious.defaultProps, _defaultProps.defaultP
 var nextUp = (0, _styledComponents.keyframes)(["0%{transform:translateY(100%);}100%{transform:translateY(0);}"]);
 var nextDown = (0, _styledComponents.keyframes)(["0%{transform:translateY(-100%);}100%{transform:translateY(0);}"]);
 
-var StyledDigitalNext = _styledComponents.default.div.withConfig({
+var StyledDigitalNext = _styledComponents["default"].div.withConfig({
   displayName: "StyledClock__StyledDigitalNext",
   componentId: "y4xw8s-6"
 })(["position:absolute;top:0;left:0;width:0.8em;text-align:center;animation:", " 0.5s forwards;"], function (props) {

@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -51,17 +51,17 @@ function (_Component) {
 
   _proto.render = function render() {
     var value = this.state.value;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       full: true,
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       fill: true,
       align: "center",
       justify: "start",
       pad: "large"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       width: "medium"
-    }, _react.default.createElement(_grommet.MaskedInput, {
+    }, _react["default"].createElement(_grommet.MaskedInput, {
       mask: [{
         length: [1, 2],
         options: Array.from({
@@ -103,5 +103,5 @@ function (_Component) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('MaskedInput', module).add('Date', function () {
-  return _react.default.createElement(DateMaskedInput, null);
+  return _react["default"].createElement(DateMaskedInput, null);
 });

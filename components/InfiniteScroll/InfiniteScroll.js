@@ -11,7 +11,7 @@ var _utils = require("../../utils");
 
 var _Box = require("../Box");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -249,7 +249,7 @@ function (_PureComponent) {
     var result = [];
 
     if (replace && pageHeight && firstIndex) {
-      var marker = _react.default.createElement(_Box.Box, {
+      var marker = _react["default"].createElement(_Box.Box, {
         key: "above",
         flex: false,
         height: beginPage * pageHeight + "px"
@@ -257,7 +257,7 @@ function (_PureComponent) {
 
       if (renderMarker) {
         // need to give it a key
-        marker = _react.default.cloneElement(renderMarker(marker), {
+        marker = _react["default"].cloneElement(renderMarker(marker), {
           key: 'above'
         });
       }
@@ -270,19 +270,19 @@ function (_PureComponent) {
       var child = children(item, itemsIndex);
 
       if (!pageHeight && itemsIndex === 0) {
-        child = _react.default.createElement(Ref, {
+        child = _react["default"].createElement(Ref, {
           key: "first",
           ref: _this3.firstPageItemRef
         }, child);
       } else if (!pageHeight && itemsIndex === step - 1) {
-        child = _react.default.createElement(Ref, {
+        child = _react["default"].createElement(Ref, {
           key: "last",
           ref: _this3.lastPageItemRef
         }, child);
       }
 
       if (show && show === itemsIndex) {
-        child = _react.default.createElement(Ref, {
+        child = _react["default"].createElement(Ref, {
           key: "show",
           ref: _this3.showRef
         }, child);
@@ -292,7 +292,7 @@ function (_PureComponent) {
     });
 
     if (endPage < lastPage || replace || onMore) {
-      var _marker = _react.default.createElement(_Box.Box, {
+      var _marker = _react["default"].createElement(_Box.Box, {
         key: "below",
         ref: this.belowMarkerRef,
         flex: false,
@@ -301,7 +301,7 @@ function (_PureComponent) {
 
       if (renderMarker) {
         // need to give it a key
-        _marker = _react.default.cloneElement(renderMarker(_marker), {
+        _marker = _react["default"].cloneElement(renderMarker(_marker), {
           key: 'below'
         });
       }

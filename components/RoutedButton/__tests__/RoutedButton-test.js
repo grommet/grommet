@@ -12,9 +12,9 @@ var _utils = require("../../../utils");
 
 var _ = require("../..");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
@@ -47,30 +47,30 @@ function (_Component) {
 
   _proto.render = function render() {
     var children = this.props.children;
-    return _react.default.createElement("div", null, children);
+    return _react["default"].createElement("div", null, children);
   };
 
   return FakeRouter;
 }(_react.Component);
 
 _defineProperty(FakeRouter, "propTypes", {
-  children: _propTypes.default.node.isRequired,
-  push: _propTypes.default.func.isRequired,
-  replace: _propTypes.default.func.isRequired
+  children: _propTypes["default"].node.isRequired,
+  push: _propTypes["default"].func.isRequired,
+  replace: _propTypes["default"].func.isRequired
 });
 
 _defineProperty(FakeRouter, "childContextTypes", {
-  router: _propTypes.default.shape({})
+  router: _propTypes["default"].shape({})
 });
 
 describe('RoutedButton', function () {
   var push = jest.fn();
   var replace = jest.fn();
   test('renders', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, _react.default.createElement(_.RoutedButton, {
+    }, _react["default"].createElement(_.RoutedButton, {
       label: "Test",
       path: "/"
     }))));
@@ -82,10 +82,10 @@ describe('RoutedButton', function () {
     var preventDefault = jest.fn();
     var onClick = jest.fn();
 
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, _react.default.createElement(_.RoutedButton, {
+    }, _react["default"].createElement(_.RoutedButton, {
       label: "Test",
       onClick: onClick,
       path: "/"
@@ -103,10 +103,10 @@ describe('RoutedButton', function () {
   test('RoutedButton skips onClick if right clicked', function () {
     var onClick = jest.fn();
 
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, _react.default.createElement(_.RoutedButton, {
+    }, _react["default"].createElement(_.RoutedButton, {
       label: "Test",
       onClick: onClick,
       path: "/"
@@ -125,10 +125,10 @@ describe('RoutedButton', function () {
   test('RoutedButton calls router context push', function () {
     var preventDefault = jest.fn();
 
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, _react.default.createElement(_.RoutedButton, {
+    }, _react["default"].createElement(_.RoutedButton, {
       label: "Test",
       path: "/"
     }))));
@@ -144,10 +144,10 @@ describe('RoutedButton', function () {
   test('RoutedButton calls router context replace', function () {
     var preventDefault = jest.fn();
 
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(FakeRouter, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(FakeRouter, {
       replace: replace,
       push: push
-    }, _react.default.createElement(_.RoutedButton, {
+    }, _react["default"].createElement(_.RoutedButton, {
       label: "Test",
       path: "/",
       method: "replace"

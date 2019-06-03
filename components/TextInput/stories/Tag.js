@@ -10,7 +10,7 @@ var _themes = require("grommet/themes");
 
 var _grommetIcons = require("grommet-icons");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -29,7 +29,7 @@ var Tag = function Tag(_ref) {
       onRemove = _ref.onRemove,
       rest = _objectWithoutPropertiesLoose(_ref, ["children", "onRemove"]);
 
-  var tag = _react.default.createElement(_grommet.Box, _extends({
+  var tag = _react["default"].createElement(_grommet.Box, _extends({
     direction: "row",
     align: "center",
     background: "brand",
@@ -41,18 +41,18 @@ var Tag = function Tag(_ref) {
       vertical: 'xxsmall'
     },
     round: "medium"
-  }, rest), _react.default.createElement(_grommet.Text, {
+  }, rest), _react["default"].createElement(_grommet.Text, {
     size: "xsmall",
     margin: {
       right: 'xxsmall'
     }
-  }, children), onRemove && _react.default.createElement(_grommetIcons.FormClose, {
+  }, children), onRemove && _react["default"].createElement(_grommetIcons.FormClose, {
     size: "small",
     color: "white"
   }));
 
   if (onRemove) {
-    return _react.default.createElement(_grommet.Button, {
+    return _react["default"].createElement(_grommet.Button, {
       onClick: onRemove
     }, tag);
   }
@@ -119,7 +119,7 @@ function (_Component) {
       /* eslint-disable react/no-array-index-key */
 
       return value.map(function (v, index) {
-        return _react.default.createElement(Tag, {
+        return _react["default"].createElement(Tag, {
           margin: "xxsmall",
           key: "" + v + index,
           onRemove: function onRemove() {
@@ -151,9 +151,9 @@ function (_Component) {
         rest = _objectWithoutPropertiesLoose(_this$props2, ["value", "onAdd", "onRemove", "onChange"]);
 
     var currentTag = this.state.currentTag;
-    return _react.default.createElement(_grommet.Keyboard, {
+    return _react["default"].createElement(_grommet.Keyboard, {
       onEnter: this.onEnter
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       direction: "row",
       align: "center",
       pad: {
@@ -162,12 +162,12 @@ function (_Component) {
       border: "all",
       ref: this.boxRef,
       wrap: true
-    }, value.length > 0 && this.renderValue(), _react.default.createElement(_grommet.Box, {
+    }, value.length > 0 && this.renderValue(), _react["default"].createElement(_grommet.Box, {
       flex: true,
       style: {
         minWidth: '120px'
       }
-    }, _react.default.createElement(_grommet.TextInput, _extends({
+    }, _react["default"].createElement(_grommet.TextInput, _extends({
       type: "search",
       plain: true,
       dropTarget: this.boxRef.current
@@ -245,12 +245,12 @@ function (_Component2) {
     var _this$state = this.state,
         selectedTags = _this$state.selectedTags,
         suggestions = _this$state.suggestions;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       full: true,
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       pad: "small"
-    }, _react.default.createElement(TagInput, {
+    }, _react["default"].createElement(TagInput, {
       placeholder: "Search for aliases...",
       suggestions: suggestions,
       value: selectedTags,
@@ -267,5 +267,5 @@ function (_Component2) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('TextInput', module).add('Tag TextInput', function () {
-  return _react.default.createElement(TagTextInput, null);
+  return _react["default"].createElement(TagTextInput, null);
 });

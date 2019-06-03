@@ -17,7 +17,7 @@ var _utils = require("../../utils");
 
 var _StyledBox = require("./StyledBox");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -70,7 +70,7 @@ function (_Component) {
           if (firstIndex === undefined) {
             firstIndex = index;
           } else {
-            contents.push(_react.default.createElement(_StyledBox.StyledBoxGap // eslint-disable-next-line react/no-array-index-key
+            contents.push(_react["default"].createElement(_StyledBox.StyledBoxGap // eslint-disable-next-line react/no-array-index-key
             , {
               key: "gap-" + index,
               gap: gap,
@@ -84,7 +84,7 @@ function (_Component) {
       });
     }
 
-    var content = _react.default.createElement(_StyledBox.StyledBox, _extends({
+    var content = _react["default"].createElement(_StyledBox.StyledBox, _extends({
       as: !as && tag ? tag : as,
       "aria-label": a11yTitle,
       background: background,
@@ -108,7 +108,7 @@ function (_Component) {
 
       if (darkChanged || theme.darkChanged) {
         dark = dark === undefined ? theme.dark : dark;
-        content = _react.default.createElement(_contexts.ThemeContext.Provider, {
+        content = _react["default"].createElement(_contexts.ThemeContext.Provider, {
           value: _extends({}, theme, {
             dark: dark,
             darkChanged: darkChanged

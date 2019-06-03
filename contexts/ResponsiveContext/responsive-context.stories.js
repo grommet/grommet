@@ -10,7 +10,7 @@ var _themes = require("grommet/themes");
 
 var _grommet = require("grommet");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -38,18 +38,18 @@ var ResponsiveGrid = function ResponsiveGrid(_ref) {
       areas = _ref.areas,
       props = _objectWithoutPropertiesLoose(_ref, ["children", "areas"]);
 
-  return _react.default.createElement(_grommet.ResponsiveContext.Consumer, null, function (size) {
-    return _react.default.createElement(_grommet.Grid, _extends({
+  return _react["default"].createElement(_grommet.ResponsiveContext.Consumer, null, function (size) {
+    return _react["default"].createElement(_grommet.Grid, _extends({
       areas: areas[size]
     }, props), children);
   });
 };
 
 var ResponsiveGridExample = function ResponsiveGridExample() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: customBreakpoints,
     full: true
-  }, _react.default.createElement(ResponsiveGrid, {
+  }, _react["default"].createElement(ResponsiveGrid, {
     columns: ['25%', '25%', '25%', '25%'],
     rows: ['3em', '3em', '3em'],
     areas: {
@@ -122,31 +122,31 @@ var ResponsiveGridExample = function ResponsiveGridExample() {
         end: [3, 1]
       }]
     }
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     gridArea: "header",
     background: "brand"
-  }), _react.default.createElement(_grommet.Box, {
+  }), _react["default"].createElement(_grommet.Box, {
     gridArea: "one",
     background: "dark-1"
-  }), _react.default.createElement(_grommet.Box, {
+  }), _react["default"].createElement(_grommet.Box, {
     gridArea: "two",
     background: "dark-2"
-  }), _react.default.createElement(_grommet.Box, {
+  }), _react["default"].createElement(_grommet.Box, {
     gridArea: "three",
     background: "dark-3"
-  })), _react.default.createElement(_grommet.Paragraph, null, "Below a certain threshold, Columns 1 & 2 switch to 50% and Column 3 moves down to a new spot in the grid."));
+  })), _react["default"].createElement(_grommet.Paragraph, null, "Below a certain threshold, Columns 1 & 2 switch to 50% and Column 3 moves down to a new spot in the grid."));
 };
 
 (0, _react2.storiesOf)('ResponsiveContext', module).add('Custom Breakpoints', function () {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: customBreakpoints,
     full: true
-  }, _react.default.createElement(_grommet.ResponsiveContext.Consumer, null, function (size) {
-    return _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.ResponsiveContext.Consumer, null, function (size) {
+    return _react["default"].createElement(_grommet.Box, {
       fill: true,
       background: "brand"
-    }, _react.default.createElement(_grommet.Heading, null, "Hi, I'm " + size + ", resize me!"));
+    }, _react["default"].createElement(_grommet.Heading, null, "Hi, I'm " + size + ", resize me!"));
   }));
 }).add('Responsive Grid', function () {
-  return _react.default.createElement(ResponsiveGridExample, null);
+  return _react["default"].createElement(ResponsiveGridExample, null);
 });

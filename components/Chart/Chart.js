@@ -17,7 +17,7 @@ var _StyledChart = require("./StyledChart");
 
 var _utils2 = require("./utils");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -55,10 +55,10 @@ var renderBars = function renderBars(values, bounds, scale, height) {
         };
       }
 
-      return _react.default.createElement("g", {
+      return _react["default"].createElement("g", {
         key: key,
         fill: "none"
-      }, _react.default.createElement("title", null, label), _react.default.createElement("path", _extends({
+      }, _react["default"].createElement("title", null, label), _react["default"].createElement("path", _extends({
         d: d
       }, hoverProps, rest)));
     }
@@ -96,9 +96,9 @@ var renderLine = function renderLine(values, bounds, scale, height, _ref) {
     };
   }
 
-  return _react.default.createElement("g", {
+  return _react["default"].createElement("g", {
     fill: "none"
-  }, _react.default.createElement("path", _extends({
+  }, _react["default"].createElement("path", _extends({
     d: d
   }, hoverProps, clickProps)));
 };
@@ -145,9 +145,9 @@ var renderArea = function renderArea(values, bounds, scale, height, _ref3) {
     };
   }
 
-  return _react.default.createElement("g", {
+  return _react["default"].createElement("g", {
     fill: (0, _utils.normalizeColor)(color.color || color, theme)
-  }, _react.default.createElement("path", _extends({
+  }, _react["default"].createElement("path", _extends({
     d: d
   }, hoverProps, clickProps)));
 };
@@ -260,13 +260,13 @@ function (_Component) {
       contents = renderArea(values, bounds, scale, height, this.props);
     }
 
-    return _react.default.createElement(_StyledChart.StyledChart, _extends({
+    return _react["default"].createElement(_StyledChart.StyledChart, _extends({
       ref: this.containerRef,
       viewBox: viewBox,
       preserveAspectRatio: "none",
       width: size === 'full' ? '100%' : width,
       height: size === 'full' ? '100%' : height
-    }, rest), _react.default.createElement("g", {
+    }, rest), _react["default"].createElement("g", {
       stroke: (0, _utils.normalizeColor)(colorName, theme),
       strokeWidth: strokeWidth,
       strokeLinecap: round ? 'round' : 'butt',

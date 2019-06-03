@@ -17,9 +17,9 @@ var _hocs = require("../hocs");
 
 var _EdgeControl = require("./EdgeControl");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -31,7 +31,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var Container = (0, _styledComponents.default)(_Box.Box).withConfig({
+var Container = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "RangeSelector__Container",
   componentId: "siof5p-0"
 })(["user-select:none;"]);
@@ -52,7 +52,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "state", {});
 
-    _defineProperty(_assertThisInitialized(_this), "containerRef", _react.default.createRef());
+    _defineProperty(_assertThisInitialized(_this), "containerRef", _react["default"].createRef());
 
     _defineProperty(_assertThisInitialized(_this), "valueForMouseCoord", function (event) {
       var _this$props = _this.props,
@@ -227,13 +227,13 @@ function (_Component) {
     var upper = nextUpper !== undefined ? nextUpper : values[1]; // It needs to be true when vertical, due to how browsers manage height
 
     var fill = direction === 'vertical' ? true : 'vertical';
-    return _react.default.createElement(Container, _extends({
+    return _react["default"].createElement(Container, _extends({
       ref: this.containerRef,
       direction: direction === 'vertical' ? 'column' : 'row',
       fill: fill
     }, rest, {
       onClick: onChange ? this.onClick : undefined
-    }), _react.default.createElement(_Box.Box, {
+    }), _react["default"].createElement(_Box.Box, {
       style: {
         flex: lower - min + " 0 0"
       },
@@ -245,7 +245,7 @@ function (_Component) {
       } : undefined,
       fill: fill,
       round: round
-    }), _react.default.createElement(_EdgeControl.EdgeControl, {
+    }), _react["default"].createElement(_EdgeControl.EdgeControl, {
       a11yTitle: messages.lower,
       tabIndex: 0,
       ref: forwardRef,
@@ -259,7 +259,7 @@ function (_Component) {
       onIncrease: onChange && lower + step <= upper ? function () {
         return onChange([lower + step, upper]);
       } : undefined
-    }), _react.default.createElement(_Box.Box, {
+    }), _react["default"].createElement(_Box.Box, {
       style: {
         flex: upper - lower + 1 + " 0 0",
         cursor: direction === 'vertical' ? 'ns-resize' : 'ew-resize'
@@ -273,7 +273,7 @@ function (_Component) {
       fill: fill,
       round: round,
       onMouseDown: onChange ? this.selectionMouseDown : undefined
-    }), _react.default.createElement(_EdgeControl.EdgeControl, {
+    }), _react["default"].createElement(_EdgeControl.EdgeControl, {
       a11yTitle: messages.upper,
       tabIndex: 0,
       color: color,
@@ -286,7 +286,7 @@ function (_Component) {
       onIncrease: onChange && upper + step <= max ? function () {
         return onChange([lower, upper + step]);
       } : undefined
-    }), _react.default.createElement(_Box.Box, {
+    }), _react["default"].createElement(_Box.Box, {
       style: {
         flex: max - upper + " 0 0"
       },

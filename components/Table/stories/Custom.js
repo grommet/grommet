@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _data = require("./data");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var customTheme = {
   global: {
@@ -55,41 +55,41 @@ var customTheme = {
 };
 
 var CustomThemeTable = function CustomThemeTable() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react.default.createElement(_grommet.Text, {
+  }, _react["default"].createElement(_grommet.Text, {
     margin: {
       vertical: 'medium'
     }
-  }, "this Table is using a Custom theme"), _react.default.createElement(_grommet.Table, {
+  }, "this Table is using a Custom theme"), _react["default"].createElement(_grommet.Table, {
     caption: "Custom Theme Table"
-  }, _react.default.createElement(_grommet.TableHeader, null, _react.default.createElement(_grommet.TableRow, null, _data.columns.map(function (c) {
-    return _react.default.createElement(_grommet.TableCell, {
+  }, _react["default"].createElement(_grommet.TableHeader, null, _react["default"].createElement(_grommet.TableRow, null, _data.columns.map(function (c) {
+    return _react["default"].createElement(_grommet.TableCell, {
       key: c.property,
       scope: "col",
       align: c.align
-    }, _react.default.createElement(_grommet.Text, null, c.label));
-  }))), _react.default.createElement(_grommet.TableBody, null, _data.data.map(function (datum) {
-    return _react.default.createElement(_grommet.TableRow, {
+    }, _react["default"].createElement(_grommet.Text, null, c.label));
+  }))), _react["default"].createElement(_grommet.TableBody, null, _data.data.map(function (datum) {
+    return _react["default"].createElement(_grommet.TableRow, {
       key: datum.id
     }, _data.columns.map(function (c) {
-      return _react.default.createElement(_grommet.TableCell, {
+      return _react["default"].createElement(_grommet.TableCell, {
         key: c.property,
         scope: c.dataScope,
         align: c.align
-      }, _react.default.createElement(_grommet.Text, null, c.format ? c.format(datum) : datum[c.property]));
+      }, _react["default"].createElement(_grommet.Text, null, c.format ? c.format(datum) : datum[c.property]));
     }));
-  })), _react.default.createElement(_grommet.TableFooter, null, _react.default.createElement(_grommet.TableRow, null, _data.columns.map(function (c) {
-    return _react.default.createElement(_grommet.TableCell, {
+  })), _react["default"].createElement(_grommet.TableFooter, null, _react["default"].createElement(_grommet.TableRow, null, _data.columns.map(function (c) {
+    return _react["default"].createElement(_grommet.TableCell, {
       key: c.property,
       align: c.align
-    }, _react.default.createElement(_grommet.Text, null, c.footer));
+    }, _react["default"].createElement(_grommet.Text, null, c.footer));
   }))))));
 };
 
 (0, _react2.storiesOf)('Table', module).add('Custom', function () {
-  return _react.default.createElement(CustomThemeTable, null);
+  return _react["default"].createElement(CustomThemeTable, null);
 });

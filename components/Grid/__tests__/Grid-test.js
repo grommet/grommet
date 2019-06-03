@@ -10,18 +10,18 @@ var _Grommet = require("../../Grommet");
 
 var _ = require("..");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 test('Grid renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, null)));
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, null)));
 
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 test('Grid rows renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
     rows: ['small', 'large', 'medium']
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     rows: "small"
   })));
 
@@ -29,20 +29,20 @@ test('Grid rows renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Grid columns renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
     columns: ['1/2', '2/4']
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     columns: ['1/3', '2/3']
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     columns: ['1/4', '3/4']
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     columns: "small"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     columns: {
       count: 'fit',
       size: 'small'
     }
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     columns: {
       count: 'fill',
       size: ['small', 'medium']
@@ -53,7 +53,7 @@ test('Grid columns renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Grid areas renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
     rows: ['xxsmall', 'medium', 'xsmall'],
     columns: ['3/4', '1/4'],
     areas: [{
@@ -79,13 +79,13 @@ test('Grid areas renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Grid justify renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
     justify: "start"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     justify: "center"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     justify: "end"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     justify: "stretch"
   })));
 
@@ -93,13 +93,13 @@ test('Grid justify renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Grid align renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
     align: "start"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     align: "center"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     align: "end"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     align: "stretch"
   })));
 
@@ -107,17 +107,17 @@ test('Grid align renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Grid justifyContent renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
     justifyContent: "start"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     justifyContent: "center"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     justifyContent: "between"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     justifyContent: "around"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     justifyContent: "end"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     justifyContent: "stretch"
   })));
 
@@ -125,17 +125,17 @@ test('Grid justifyContent renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Grid alignContent renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
     alignContent: "start"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     alignContent: "center"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     alignContent: "between"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     alignContent: "around"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     alignContent: "end"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     alignContent: "stretch"
   })));
 
@@ -143,37 +143,37 @@ test('Grid alignContent renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Grid gap renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
     gap: "small"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     gap: "medium"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     gap: "large"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     gap: {
       row: 'small'
     }
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     gap: {
       row: 'medium'
     }
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     gap: {
       row: 'large'
     }
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     gap: {
       column: 'small'
     }
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     gap: {
       column: 'medium'
     }
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     gap: {
       column: 'large'
     }
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     gap: {
       row: 'small',
       column: 'medium'
@@ -184,13 +184,13 @@ test('Grid gap renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Grid fill renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
     fill: true
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     fill: false
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     fill: "horizontal"
-  }), _react.default.createElement(_.Grid, {
+  }), _react["default"].createElement(_.Grid, {
     fill: "vertical"
   })));
 
@@ -198,7 +198,7 @@ test('Grid fill renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Grid as renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
     as: "article"
   })));
 
@@ -206,11 +206,11 @@ test('Grid as renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Grid proxies tag', function () {
-  var tagComponent = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
+  var tagComponent = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
     tag: "article"
   })));
 
-  var asComponent = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Grid, {
+  var asComponent = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Grid, {
     as: "article"
   })));
 

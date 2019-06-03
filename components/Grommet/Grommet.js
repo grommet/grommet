@@ -17,7 +17,7 @@ var _themes = require("../../themes");
 
 var _StyledGrommet = require("./StyledGrommet");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -150,13 +150,13 @@ function (_Component) {
     // On first render we try to guess otherwise set the default as a tablet
 
     var responsive = stateResponsive || this.deviceResponsive() || theme.global.deviceBreakpoints.tablet;
-    return _react.default.createElement(_contexts.ThemeContext.Provider, {
+    return _react["default"].createElement(_contexts.ThemeContext.Provider, {
       value: theme
-    }, _react.default.createElement(_contexts.ResponsiveContext.Provider, {
+    }, _react["default"].createElement(_contexts.ResponsiveContext.Provider, {
       value: responsive
-    }, _react.default.createElement(_StyledGrommet.StyledGrommet, _extends({
+    }, _react["default"].createElement(_StyledGrommet.StyledGrommet, _extends({
       full: full
-    }, rest), children), full && _react.default.createElement(FullGlobalStyle, null)));
+    }, rest), children), full && _react["default"].createElement(FullGlobalStyle, null)));
   };
 
   return Grommet;

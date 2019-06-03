@@ -74,32 +74,32 @@ var KEYFRAMES = {
   center: {
     vertical: keyframes(["0%{transform:translateX(-50%) scale(0.8);}100%{transform:translateX(-50%) scale(1);}"]),
     horizontal: keyframes(["0%{transform:translateY(-50%) scale(0.8);}100%{transform:translateY(-50) scale(1);}"]),
-    true: keyframes(["0%{transform:scale(0.8);}100%{transform:scale(1);}"]),
-    false: keyframes(["0%{transform:translate(-50%,-50%) scale(0.8);}100%{transform:translate(-50%,-50%) scale(1);}"])
+    "true": keyframes(["0%{transform:scale(0.8);}100%{transform:scale(1);}"]),
+    "false": keyframes(["0%{transform:translate(-50%,-50%) scale(0.8);}100%{transform:translate(-50%,-50%) scale(1);}"])
   },
   top: {
     vertical: keyframes(["0%{transform:translate(-50%,-100%);}100%{transform:translate(-50%,0);}"]),
     horizontal: keyframes(["0%{transform:translateY(-100%);}100%{transform:translateY(0);}"]),
-    true: keyframes(["0%{transform:translateY(-100%);}100%{transform:translateY(0);}"]),
-    false: keyframes(["0%{transform:translate(-50%,-100%);}100%{transform:translate(-50%,0);}"])
+    "true": keyframes(["0%{transform:translateY(-100%);}100%{transform:translateY(0);}"]),
+    "false": keyframes(["0%{transform:translate(-50%,-100%);}100%{transform:translate(-50%,0);}"])
   },
   bottom: {
     vertical: keyframes(["0%{transform:translate(-50%,100%);}100%{transform:translate(-50%,0);}"]),
     horizontal: keyframes(["0%{transform:translateY(100%);}100%{transform:translateY(0);}"]),
-    true: keyframes(["0%{transform:translateY(100%);}100%{transform:translateY(0);}"]),
-    false: keyframes(["0%{transform:translate(-50%,100%);}100%{transform:translate(-50%,0);}"])
+    "true": keyframes(["0%{transform:translateY(100%);}100%{transform:translateY(0);}"]),
+    "false": keyframes(["0%{transform:translate(-50%,100%);}100%{transform:translate(-50%,0);}"])
   },
   left: {
     vertical: keyframes(["0%{transform:translateX(-100%);}100%{transform:translateX(0);}"]),
     horizontal: keyframes(["0%{transform:translate(-100%,-50%);}100%{transform:translate(0,-50%);}"]),
-    true: keyframes(["0%{transform:translateX(-100%);}100%{transform:translateX(0);}"]),
-    false: keyframes(["0%{transform:translate(-100%,-50%);}100%{transform:translate(0,-50%);}"])
+    "true": keyframes(["0%{transform:translateX(-100%);}100%{transform:translateX(0);}"]),
+    "false": keyframes(["0%{transform:translate(-100%,-50%);}100%{transform:translate(0,-50%);}"])
   },
   right: {
     vertical: keyframes(["0%{transform:translateX(100%);}100%{transform:translateX(0);}"]),
     horizontal: keyframes(["0%{transform:translate(100%,-50%);}100%{transform:translate(0,-50%);}"]),
-    true: keyframes(["0%{transform:translateX(100%);}100%{transform:translateX(0);}"]),
-    false: keyframes(["0%{transform:translate(100%,-50%);}100%{transform:translate(0,-50%);}"])
+    "true": keyframes(["0%{transform:translateX(100%);}100%{transform:translateX(0);}"]),
+    "false": keyframes(["0%{transform:translate(100%,-50%);}100%{transform:translate(0,-50%);}"])
   }
 };
 
@@ -130,12 +130,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'center', 'horizontal');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return css(["top:", ";bottom:", ";left:", ";right:", ";", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'center', 'true');
       });
     },
-    false: function _false() {
+    "false": function _false() {
       return css(["top:50%;left:50%;transform:translate(-50%,-50%);", ""], function (props) {
         return getAnimationStyle(props.animate, 'center', 'false');
       });
@@ -152,12 +152,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'top', 'horizontal');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'top', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return css(["top:", ";left:50%;transform:translate(-50%,0);", ""], margin.top, function (props) {
         return getAnimationStyle(props.animate, 'top', 'false');
       });
@@ -174,12 +174,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'bottom', 'horizontal');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'bottom', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return css(["bottom:", ";left:50%;transform:translate(-50%,0);", ""], margin.bottom, function (props) {
         return getAnimationStyle(props.animate, 'bottom', 'false');
       });
@@ -196,12 +196,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'left', 'horizontal');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'left', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return css(["left:", ";top:50%;transform:translate(0,-50%);", ""], margin.left, function (props) {
         return getAnimationStyle(props.animate, 'left', 'false');
       });
@@ -218,12 +218,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'right', 'horizontal');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'right', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return css(["right:", ";top:50%;transform:translate(0,-50%);", ""], margin.right, function (props) {
         return getAnimationStyle(props.animate, 'right', 'false');
       });
@@ -240,12 +240,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'top', 'true');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ";"], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'top', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return css(["top:", ";right:", ";transform:translateY(0);", ";"], margin.top, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'top', 'true');
       });
@@ -262,12 +262,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'top', 'true');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'top', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return css(["top:", ";left:", ";transform:translateY(0);", ""], margin.top, margin.left, function (props) {
         return getAnimationStyle(props.animate, 'top', 'true');
       });
@@ -284,12 +284,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'bottom', 'true');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'bottom', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return css(["bottom:", ";right:", ";transform:translateY(0);", ""], margin.bottom, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'bottom', 'true');
       });
@@ -306,12 +306,12 @@ var POSITIONS = {
         return getAnimationStyle(props.animate, 'bottom', 'true');
       });
     },
-    true: function _true(margin) {
+    "true": function _true(margin) {
       return css(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
         return getAnimationStyle(props.animate, 'bottom', 'true');
       });
     },
-    false: function _false(margin) {
+    "false": function _false(margin) {
       return css(["bottom:", ";left:", ";transform:translateY(0);", ""], margin.bottom, margin.left, function (props) {
         return getAnimationStyle(props.animate, 'bottom', 'true');
       });

@@ -10,7 +10,7 @@ var _utils = require("grommet/utils");
 
 var _grommet = require("grommet");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 (0, _grommet.extendDefaultTheme)((0, _utils.deepMerge)(_themes.base, {
   global: {
@@ -21,12 +21,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 }));
 
 var CustomDefaultProps = function CustomDefaultProps() {
-  return _react.default.createElement(_grommet.Box, {
+  return _react["default"].createElement(_grommet.Box, {
     background: "brand",
     pad: "small"
   }, "Hello");
 };
 
 (0, _react2.storiesOf)('Components', module).add('Default Theme', function () {
-  return _react.default.createElement(CustomDefaultProps, null);
+  return _react["default"].createElement(CustomDefaultProps, null);
 });

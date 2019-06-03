@@ -25,7 +25,7 @@ var _TextInput = require("../TextInput");
 
 var _utils = require("../../utils");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -47,7 +47,7 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_this), "inputRef", _react.default.createRef());
+    _defineProperty(_assertThisInitialized(_this), "inputRef", _react["default"].createRef());
 
     return _this;
   }
@@ -75,16 +75,16 @@ function (_Component) {
         theme = _this$props2.theme;
 
     if (filtering === property) {
-      return _react.default.createElement(_Keyboard.Keyboard, {
+      return _react["default"].createElement(_Keyboard.Keyboard, {
         onEsc: function onEsc() {
           return onFiltering(undefined);
         }
-      }, _react.default.createElement(_Box.Box, {
+      }, _react["default"].createElement(_Box.Box, {
         flex: true,
         pad: {
           horizontal: 'small'
         }
-      }, _react.default.createElement(_TextInput.TextInput, {
+      }, _react["default"].createElement(_TextInput.TextInput, {
         ref: this.inputRef,
         value: filters[property],
         onChange: function onChange(event) {
@@ -96,13 +96,13 @@ function (_Component) {
       })));
     }
 
-    return _react.default.createElement(_react.Fragment, null, filters[property] ? _react.default.createElement(_Box.Box, {
+    return _react["default"].createElement(_react.Fragment, null, filters[property] ? _react["default"].createElement(_Box.Box, {
       flex: false,
       pad: {
         horizontal: 'small'
       }
-    }, _react.default.createElement(_Text.Text, null, filters[property])) : null, _react.default.createElement(_Button.Button, {
-      icon: _react.default.createElement(_FormSearch.FormSearch, {
+    }, _react["default"].createElement(_Text.Text, null, filters[property])) : null, _react["default"].createElement(_Button.Button, {
+      icon: _react["default"].createElement(_FormSearch.FormSearch, {
         color: (0, _utils.normalizeColor)(filtering === property ? 'brand' : 'border', theme)
       }),
       hoverIndicator: true,

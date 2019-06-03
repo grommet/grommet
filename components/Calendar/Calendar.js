@@ -23,7 +23,7 @@ var _StyledCalendar = require("./StyledCalendar");
 
 var _utils = require("./utils");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
@@ -223,44 +223,44 @@ function (_Component) {
       var reference = _this.state.reference;
       var PreviousIcon = size === 'small' ? theme.calendar.icons.small.previous : theme.calendar.icons.previous;
       var NextIcon = size === 'small' ? theme.calendar.icons.small.next : theme.calendar.icons.next;
-      return _react.default.createElement(_Box.Box, {
+      return _react["default"].createElement(_Box.Box, {
         direction: "row",
         justify: "between",
         align: "center"
-      }, _react.default.createElement(_Box.Box, {
+      }, _react["default"].createElement(_Box.Box, {
         flex: true,
         pad: {
           horizontal: headingPadMap[size] || 'small'
         }
-      }, _react.default.createElement(_Heading.Heading, {
+      }, _react["default"].createElement(_Heading.Heading, {
         level: size === 'small' ? 4 : 3,
         size: size,
         margin: "none"
       }, reference.toLocaleDateString(locale, {
         month: 'long',
         year: 'numeric'
-      }))), _react.default.createElement(_Box.Box, {
+      }))), _react["default"].createElement(_Box.Box, {
         flex: false,
         direction: "row",
         align: "center"
-      }, _react.default.createElement(_Button.Button, {
+      }, _react["default"].createElement(_Button.Button, {
         a11yTitle: previousMonth.toLocaleDateString(locale, {
           month: 'long',
           year: 'numeric'
         }),
-        icon: _react.default.createElement(PreviousIcon, {
+        icon: _react["default"].createElement(PreviousIcon, {
           size: size !== 'small' ? size : undefined
         }),
         disabled: !(0, _utils.betweenDates)(previousMonth, bounds),
         onClick: function onClick() {
           return _this.setReference(previousMonth);
         }
-      }), _react.default.createElement(_Button.Button, {
+      }), _react["default"].createElement(_Button.Button, {
         a11yTitle: nextMonth.toLocaleDateString(locale, {
           month: 'long',
           year: 'numeric'
         }),
-        icon: _react.default.createElement(NextIcon, {
+        icon: _react["default"].createElement(NextIcon, {
           size: size !== 'small' ? size : undefined
         }),
         disabled: !(0, _utils.betweenDates)(nextMonth, bounds),
@@ -275,10 +275,10 @@ function (_Component) {
       var days = [];
 
       while (days.length < 7) {
-        days.push(_react.default.createElement(_StyledCalendar.StyledDayContainer, {
+        days.push(_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
           key: days.length,
           sizeProp: size
-        }, _react.default.createElement(_StyledCalendar.StyledDay, {
+        }, _react["default"].createElement(_StyledCalendar.StyledDay, {
           otherMonth: true,
           sizeProp: size
         }, day.toLocaleDateString(locale, {
@@ -287,7 +287,7 @@ function (_Component) {
         day = (0, _utils.addDays)(day, 1);
       }
 
-      return _react.default.createElement(_StyledCalendar.StyledWeek, null, days);
+      return _react["default"].createElement(_StyledCalendar.StyledWeek, null, days);
     });
 
     return _this;
@@ -374,7 +374,7 @@ function (_Component) {
     while (day.getTime() < end.getTime()) {
       if (day.getDay() === firstDayOfWeek) {
         if (days) {
-          weeks.push(_react.default.createElement(_StyledCalendar.StyledWeek, {
+          weeks.push(_react["default"].createElement(_StyledCalendar.StyledWeek, {
             key: day.getTime()
           }, days));
         }
@@ -385,15 +385,15 @@ function (_Component) {
       var otherMonth = day.getMonth() !== reference.getMonth();
 
       if (!showAdjacentDays && otherMonth) {
-        days.push(_react.default.createElement(_StyledCalendar.StyledDayContainer, {
+        days.push(_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
           key: day.getTime(),
           sizeProp: size
-        }, _react.default.createElement(_StyledCalendar.StyledDay, {
+        }, _react["default"].createElement(_StyledCalendar.StyledDay, {
           sizeProp: size
         })));
       } else {
         var dateString = day.toISOString();
-        this.dayRefs[dateString] = _react.default.createRef();
+        this.dayRefs[dateString] = _react["default"].createRef();
         var selected = false;
         var inRange = false;
         var selectedState = (0, _utils.withinDates)(day, date || dates);
@@ -405,10 +405,10 @@ function (_Component) {
         }
 
         var dayDisabled = (0, _utils.withinDates)(day, disabled) || bounds && !(0, _utils.betweenDates)(day, bounds);
-        days.push(_react.default.createElement(_StyledCalendar.StyledDayContainer, {
+        days.push(_react["default"].createElement(_StyledCalendar.StyledDayContainer, {
           key: day.getTime(),
           sizeProp: size
-        }, _react.default.createElement(_Button.Button, {
+        }, _react["default"].createElement(_Button.Button, {
           ref: this.dayRefs[dateString],
           a11yTitle: day.toDateString(),
           plain: true,
@@ -421,7 +421,7 @@ function (_Component) {
               focused: false
             });
           }
-        }, _react.default.createElement(_StyledCalendar.StyledDay, {
+        }, _react["default"].createElement(_StyledCalendar.StyledDay, {
           inRange: inRange,
           otherMonth: day.getMonth() !== reference.getMonth(),
           isSelected: selected,
@@ -432,12 +432,12 @@ function (_Component) {
       day = (0, _utils.addDays)(day, 1);
     }
 
-    weeks.push(_react.default.createElement(_StyledCalendar.StyledWeek, {
+    weeks.push(_react["default"].createElement(_StyledCalendar.StyledWeek, {
       key: day.getTime()
     }, days));
-    return _react.default.createElement(_StyledCalendar.StyledCalendar, _extends({
+    return _react["default"].createElement(_StyledCalendar.StyledCalendar, _extends({
       sizeProp: size
-    }, rest), _react.default.createElement(_Keyboard.Keyboard, {
+    }, rest), _react["default"].createElement(_Keyboard.Keyboard, {
       onUp: function onUp(event) {
         event.preventDefault();
 
@@ -454,7 +454,7 @@ function (_Component) {
       onRight: function onRight() {
         return focused && _this2.setFocus((0, _utils.addDays)(focused, 1));
       }
-    }, _react.default.createElement(_Box.Box, null, header ? header({
+    }, _react["default"].createElement(_Box.Box, null, header ? header({
       date: reference,
       locale: locale,
       onPreviousMonth: function onPreviousMonth() {
@@ -465,9 +465,9 @@ function (_Component) {
       },
       previousInBound: (0, _utils.betweenDates)(previousMonth, bounds),
       nextInBound: (0, _utils.betweenDates)(nextMonth, bounds)
-    }) : this.renderCalendarHeader(previousMonth, nextMonth), daysOfWeek && this.renderDaysOfWeek(locale, size, start), _react.default.createElement(_StyledCalendar.StyledWeeksContainer, {
+    }) : this.renderCalendarHeader(previousMonth, nextMonth), daysOfWeek && this.renderDaysOfWeek(locale, size, start), _react["default"].createElement(_StyledCalendar.StyledWeeksContainer, {
       sizeProp: size
-    }, _react.default.createElement(_StyledCalendar.StyledWeeks, {
+    }, _react["default"].createElement(_StyledCalendar.StyledWeeks, {
       slide: slide,
       sizeProp: size
     }, weeks)))));

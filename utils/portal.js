@@ -5,7 +5,7 @@ exports.expectPortal = exports.createPortal = void 0;
 
 var _css = _interopRequireDefault(require("css"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var createPortal = function createPortal() {
   // make sure to remove all body children
@@ -21,7 +21,7 @@ var expectPortal = function expectPortal(portalId) {
       var node = document.getElementById(portalId);
 
       if (node) {
-        var styles = _css.default.parse(document.getElementsByTagName('style')[0].innerHTML);
+        var styles = _css["default"].parse(document.getElementsByTagName('style')[0].innerHTML);
 
         styles.stylesheet.rules = styles.stylesheet.rules.filter(function (rule) {
           // skip everything that is not media or rule
@@ -39,7 +39,7 @@ var expectPortal = function expectPortal(portalId) {
           });
         });
         expect(document.getElementById(portalId)).toMatchSnapshot();
-        expect(_css.default.stringify(styles)).toMatchSnapshot();
+        expect(_css["default"].stringify(styles)).toMatchSnapshot();
       } else {
         fail(portalId + " portal does not exist");
       }

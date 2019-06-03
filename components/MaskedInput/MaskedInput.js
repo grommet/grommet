@@ -23,7 +23,7 @@ var _hocs = require("../hocs");
 
 var _StyledMaskedInput = require("./StyledMaskedInput");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
@@ -144,9 +144,9 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "state", {});
 
-    _defineProperty(_assertThisInitialized(_this), "inputRef", _react.default.createRef());
+    _defineProperty(_assertThisInitialized(_this), "inputRef", _react["default"].createRef());
 
-    _defineProperty(_assertThisInitialized(_this), "dropRef", _react.default.createRef());
+    _defineProperty(_assertThisInitialized(_this), "dropRef", _react["default"].createRef());
 
     _defineProperty(_assertThisInitialized(_this), "locateCaret", function () {
       // leave time for caret to be placed after receiving focus
@@ -398,9 +398,9 @@ function (_Component) {
     var _this$state6 = this.state,
         activeMaskIndex = _this$state6.activeMaskIndex,
         activeOptionIndex = _this$state6.activeOptionIndex;
-    return _react.default.createElement(_StyledMaskedInput.StyledMaskedInputContainer, {
+    return _react["default"].createElement(_StyledMaskedInput.StyledMaskedInputContainer, {
       plain: plain
-    }, _react.default.createElement(_Keyboard.Keyboard, {
+    }, _react["default"].createElement(_Keyboard.Keyboard, {
       onEsc: this.onEsc,
       onTab: this.onTab,
       onLeft: this.locateCaret,
@@ -409,7 +409,7 @@ function (_Component) {
       onDown: this.onNextOption,
       onEnter: this.onSelectOption,
       onKeyDown: onKeyDown
-    }, _react.default.createElement(_StyledMaskedInput.StyledMaskedInput, _extends({
+    }, _react["default"].createElement(_StyledMaskedInput.StyledMaskedInput, _extends({
       id: id,
       ref: function ref(node) {
         _this2.inputRef.current = node;
@@ -432,7 +432,7 @@ function (_Component) {
       onFocus: this.onFocus,
       onBlur: this.onBlur,
       onChange: this.onChange
-    }))), activeMaskIndex >= 0 && mask[activeMaskIndex].options && _react.default.createElement(_Drop.Drop, {
+    }))), activeMaskIndex >= 0 && mask[activeMaskIndex].options && _react["default"].createElement(_Drop.Drop, {
       id: id ? "masked-input-drop__" + id : undefined,
       align: {
         top: 'bottom',
@@ -440,13 +440,13 @@ function (_Component) {
       },
       responsive: false,
       target: this.inputRef.current
-    }, _react.default.createElement(_Box.Box, {
+    }, _react["default"].createElement(_Box.Box, {
       ref: this.dropRef
     }, mask[activeMaskIndex].options.map(function (option, index) {
-      return _react.default.createElement(_Box.Box, {
+      return _react["default"].createElement(_Box.Box, {
         key: option,
         flex: false
-      }, _react.default.createElement(_Button.Button, {
+      }, _react["default"].createElement(_Button.Button, {
         tabIndex: "-1",
         onClick: _this2.onOption(option),
         onMouseOver: function onMouseOver() {
@@ -455,7 +455,7 @@ function (_Component) {
           });
         },
         onFocus: function onFocus() {}
-      }, _react.default.createElement(_Box.Box, {
+      }, _react["default"].createElement(_Box.Box, {
         pad: {
           horizontal: 'small',
           vertical: 'xsmall'

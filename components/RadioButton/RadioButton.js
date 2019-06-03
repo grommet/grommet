@@ -19,7 +19,7 @@ var _hocs = require("../hocs");
 
 var _StyledRadioButton = require("./StyledRadioButton");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -51,7 +51,7 @@ function (_Component) {
         theme = _this$props.theme,
         rest = _objectWithoutPropertiesLoose(_this$props, ["checked", "disabled", "focus", "forwardRef", "id", "label", "name", "onChange", "theme"]);
 
-    var normalizedLabel = typeof label === 'string' ? _react.default.createElement("span", null, label) : label;
+    var normalizedLabel = typeof label === 'string' ? _react["default"].createElement("span", null, label) : label;
     var Icon = theme.radioButton.icons.circle;
     var borderColor = (0, _utils.normalizeColor)(theme.radioButton.border.color, theme);
 
@@ -59,9 +59,9 @@ function (_Component) {
       borderColor = (0, _utils.normalizeColor)(theme.radioButton.color || 'control', theme);
     }
 
-    return _react.default.createElement(_StyledRadioButton.StyledRadioButtonContainer, _extends({
+    return _react["default"].createElement(_StyledRadioButton.StyledRadioButtonContainer, _extends({
       as: function as(props) {
-        return _react.default.createElement(_Box.Box, _extends({
+        return _react["default"].createElement(_Box.Box, _extends({
           as: "label"
         }, props));
       },
@@ -78,12 +78,12 @@ function (_Component) {
           event.stopPropagation();
         }
       }
-    }), _react.default.createElement(_StyledRadioButton.StyledRadioButton, {
+    }), _react["default"].createElement(_StyledRadioButton.StyledRadioButton, {
       as: _Box.Box,
       margin: {
         right: theme.radioButton.gap || 'small'
       }
-    }, _react.default.createElement(_StyledRadioButton.StyledRadioButtonInput, _extends({}, rest, {
+    }, _react["default"].createElement(_StyledRadioButton.StyledRadioButtonInput, _extends({}, rest, {
       ref: forwardRef,
       type: "radio"
     }, (0, _utils.removeUndefined)({
@@ -92,7 +92,7 @@ function (_Component) {
       checked: checked,
       disabled: disabled,
       onChange: onChange
-    }))), _react.default.createElement(_StyledRadioButton.StyledRadioButtonBox, {
+    }))), _react["default"].createElement(_StyledRadioButton.StyledRadioButtonBox, {
       focus: focus,
       as: _Box.Box,
       align: "center",
@@ -104,12 +104,12 @@ function (_Component) {
         color: borderColor
       },
       round: theme.radioButton.check.radius
-    }, checked && (Icon ? _react.default.createElement(Icon, {
+    }, checked && (Icon ? _react["default"].createElement(Icon, {
       as: _StyledRadioButton.StyledRadioButtonIcon
-    }) : _react.default.createElement(_StyledRadioButton.StyledRadioButtonIcon, {
+    }) : _react["default"].createElement(_StyledRadioButton.StyledRadioButtonIcon, {
       viewBox: "0 0 24 24",
       preserveAspectRatio: "xMidYMid meet"
-    }, _react.default.createElement("circle", {
+    }, _react["default"].createElement("circle", {
       cx: 12,
       cy: 12,
       r: 6

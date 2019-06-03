@@ -100,7 +100,7 @@ var justifyStyle = css(["justify-content:", ";"], function (props) {
   return JUSTIFY_MAP[props.justify];
 });
 var WRAP_MAP = {
-  true: 'wrap',
+  "true": 'wrap',
   reverse: 'wrap-reverse'
 };
 var wrapStyle = css(["flex-wrap:", ";"], function (props) {

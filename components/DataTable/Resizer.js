@@ -13,7 +13,7 @@ var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -23,7 +23,7 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var ResizerBox = (0, _styledComponents.default)(_Box.Box).withConfig({
+var ResizerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "Resizer__ResizerBox",
   componentId: "sc-8l808w-0"
 })(["cursor:col-resize;"]);
@@ -44,7 +44,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "state", {});
 
-    _defineProperty(_assertThisInitialized(_this), "ref", _react.default.createRef());
+    _defineProperty(_assertThisInitialized(_this), "ref", _react["default"].createRef());
 
     _defineProperty(_assertThisInitialized(_this), "onMouseDown", function (event) {
       if (_this.ref.current) {
@@ -97,11 +97,11 @@ function (_Component) {
     var start = this.state.start;
 
     if (onResize) {
-      return _react.default.createElement(_Box.Box, {
+      return _react["default"].createElement(_Box.Box, {
         ref: this.ref,
         direction: "row",
         fill: true
-      }, children, _react.default.createElement(ResizerBox, _extends({
+      }, children, _react["default"].createElement(ResizerBox, _extends({
         flex: false
       }, theme.dataTable.resize, {
         onMouseDown: this.onMouseDown,

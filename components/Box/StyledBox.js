@@ -11,7 +11,7 @@ var _utils = require("../../utils");
 
 var _FLEX_MAP;
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 var ALIGN_MAP = {
   baseline: 'baseline',
@@ -110,7 +110,7 @@ var justifyStyle = (0, _styledComponents.css)(["justify-content:", ";"], functio
   return JUSTIFY_MAP[props.justify];
 });
 var WRAP_MAP = {
-  true: 'wrap',
+  "true": 'wrap',
   reverse: 'wrap-reverse'
 };
 var wrapStyle = (0, _styledComponents.css)(["flex-wrap:", ";"], function (props) {
@@ -397,7 +397,7 @@ var animationStyle = (0, _styledComponents.css)(["", ";"], function (props) {
   return (0, _styledComponents.css)(["", " animation:", ";"], animationInitialStyle(props.animation), animationItemStyle(props.animation, props.theme));
 }); // NOTE: basis must be after flex! Otherwise, flex overrides basis
 
-var StyledBox = _styledComponents.default.div.withConfig({
+var StyledBox = _styledComponents["default"].div.withConfig({
   displayName: "StyledBox",
   componentId: "sc-13pk1d4-0"
 })(["display:flex;box-sizing:border-box;outline:none;", ";", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", ""], function (props) {
@@ -467,7 +467,7 @@ var gapStyle = function gapStyle(directionProp, gap, responsive, theme) {
 StyledBox.defaultProps = {};
 Object.setPrototypeOf(StyledBox.defaultProps, _defaultProps.defaultProps);
 
-var StyledBoxGap = _styledComponents.default.div.withConfig({
+var StyledBoxGap = _styledComponents["default"].div.withConfig({
   displayName: "StyledBox__StyledBoxGap",
   componentId: "sc-13pk1d4-1"
 })(["flex:0 0 auto;", ";"], function (props) {

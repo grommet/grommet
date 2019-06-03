@@ -15,7 +15,7 @@ var _TableCell = require("../TableCell");
 
 var _Text = require("../Text");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -39,10 +39,10 @@ var Cell = function Cell(_ref) {
 
   if (typeof content === 'string' || typeof content === 'number') {
     var textProps = property === primaryProperty ? theme.dataTable.primary : {};
-    content = _react.default.createElement(_Text.Text, textProps, content);
+    content = _react["default"].createElement(_Text.Text, textProps, content);
   }
 
-  return _react.default.createElement(_TableCell.TableCell, _extends({
+  return _react["default"].createElement(_TableCell.TableCell, _extends({
     scope: scope
   }, theme.dataTable[context], {
     align: align

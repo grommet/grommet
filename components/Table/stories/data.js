@@ -7,7 +7,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _grommet = require("grommet");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // Always should store amount in cents to avoid precision errors
 var data = [{
@@ -46,7 +46,7 @@ var columns = [{
   label: 'Name',
   dataScope: 'row',
   format: function format(datum) {
-    return _react.default.createElement(_grommet.Text, {
+    return _react["default"].createElement(_grommet.Text, {
       weight: "bold"
     }, datum.name);
   }

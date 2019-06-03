@@ -17,7 +17,7 @@ var _StyledMeter = require("./StyledMeter");
 
 var _utils2 = require("./utils");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -82,7 +82,7 @@ var Circle = function Circle(props) {
 
     if (round) {
       var d1 = (0, _utils.arcCommands)(width / 2, width / 2, radius, startAngle, endAngle);
-      paths.unshift(_react.default.createElement("path", _extends({
+      paths.unshift(_react["default"].createElement("path", _extends({
         key: key,
         d: d1,
         fill: "none"
@@ -95,7 +95,7 @@ var Circle = function Circle(props) {
 
       var d2 = (0, _utils.arcCommands)(width / 2, width / 2, radius, endAngle - 0.5, endAngle);
 
-      var pathCap = _react.default.createElement("path", _extends({
+      var pathCap = _react["default"].createElement("path", _extends({
         key: key + "-",
         d: d2,
         fill: "none"
@@ -113,7 +113,7 @@ var Circle = function Circle(props) {
       pathCaps.unshift(pathCap);
     } else {
       var d = (0, _utils.arcCommands)(width / 2, width / 2, radius, startAngle, endAngle);
-      paths.push(_react.default.createElement("path", _extends({
+      paths.push(_react["default"].createElement("path", _extends({
         key: key,
         d: d,
         fill: "none"
@@ -126,11 +126,11 @@ var Circle = function Circle(props) {
     startValue += value;
     startAngle = endAngle;
   });
-  return _react.default.createElement(_StyledMeter.StyledMeter, _extends({
+  return _react["default"].createElement(_StyledMeter.StyledMeter, _extends({
     viewBox: "0 0 " + width + " " + width,
     width: size === 'full' ? '100%' : width,
     height: size === 'full' ? '100%' : width
-  }, rest), _react.default.createElement("circle", _extends({
+  }, rest), _react["default"].createElement("circle", _extends({
     cx: mid,
     cy: mid,
     r: radius

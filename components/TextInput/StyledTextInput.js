@@ -9,7 +9,7 @@ var _utils = require("../../utils");
 
 var _defaultProps = require("../../default-props");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 var sizeStyle = function sizeStyle(props) {
   var data = props.theme.text[props.size];
@@ -18,7 +18,7 @@ var sizeStyle = function sizeStyle(props) {
 
 var plainStyle = (0, _styledComponents.css)(["border:none;"]);
 
-var StyledTextInput = _styledComponents.default.input.withConfig({
+var StyledTextInput = _styledComponents["default"].input.withConfig({
   displayName: "StyledTextInput",
   componentId: "sc-1x30a0s-0"
 })(["", " width:100%;", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", " ", ";"], _utils.inputStyle, function (props) {
@@ -37,7 +37,7 @@ exports.StyledTextInput = StyledTextInput;
 StyledTextInput.defaultProps = {};
 Object.setPrototypeOf(StyledTextInput.defaultProps, _defaultProps.defaultProps);
 
-var StyledTextInputContainer = _styledComponents.default.div.withConfig({
+var StyledTextInputContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledTextInput__StyledTextInputContainer",
   componentId: "sc-1x30a0s-1"
 })(["position:relative;width:100%;", ";"], function (props) {
@@ -48,7 +48,7 @@ exports.StyledTextInputContainer = StyledTextInputContainer;
 StyledTextInputContainer.defaultProps = {};
 Object.setPrototypeOf(StyledTextInputContainer.defaultProps, _defaultProps.defaultProps);
 
-var StyledPlaceholder = _styledComponents.default.div.withConfig({
+var StyledPlaceholder = _styledComponents["default"].div.withConfig({
   displayName: "StyledTextInput__StyledPlaceholder",
   componentId: "sc-1x30a0s-2"
 })(["position:absolute;left:", "px;top:50%;transform:translateY(-50%);display:flex;justify-content:center;pointer-events:none;", ";"], function (props) {
@@ -61,7 +61,7 @@ exports.StyledPlaceholder = StyledPlaceholder;
 StyledPlaceholder.defaultProps = {};
 Object.setPrototypeOf(StyledPlaceholder.defaultProps, _defaultProps.defaultProps);
 
-var StyledSuggestions = _styledComponents.default.ol.withConfig({
+var StyledSuggestions = _styledComponents["default"].ol.withConfig({
   displayName: "StyledTextInput__StyledSuggestions",
   componentId: "sc-1x30a0s-3"
 })(["border-top-left-radius:0;border-top-right-radius:0;margin:0;padding:0;list-style-type:none;", ";"], function (props) {

@@ -6,7 +6,7 @@ var _react2 = require("@storybook/react");
 
 var _grommet = require("grommet");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var customTheme = {
   global: {
@@ -39,21 +39,21 @@ var customTheme = {
 };
 
 var CustomTheme = function CustomTheme() {
-  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react.default.createElement(_grommet.Button, {
+  }, _react["default"].createElement(_grommet.Button, {
     label: "custom theme",
     onClick: function onClick() {},
     primary: true
-  }))), _react.default.createElement(_grommet.Grommet, {
+  }))), _react["default"].createElement(_grommet.Grommet, {
     theme: _grommet.grommet
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react.default.createElement(_grommet.Button, {
+  }, _react["default"].createElement(_grommet.Button, {
     as: "span",
     label: "Custom as=span",
     path: "/"
@@ -61,5 +61,5 @@ var CustomTheme = function CustomTheme() {
 };
 
 (0, _react2.storiesOf)('Button', module).add('Custom', function () {
-  return _react.default.createElement(CustomTheme, null);
+  return _react["default"].createElement(CustomTheme, null);
 });

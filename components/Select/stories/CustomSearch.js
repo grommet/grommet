@@ -12,7 +12,7 @@ var _theme = require("./theme");
 
 var _SearchInputContext = require("./components/SearchInputContext");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -89,17 +89,17 @@ function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "renderOption", function (_ref) {
       var name = _ref.name;
       var selectedContentPartners = _this.state.selectedContentPartners;
-      return _react.default.createElement(_grommet.Box, {
+      return _react["default"].createElement(_grommet.Box, {
         direction: "row",
         align: "center",
         pad: "small",
         flex: false
-      }, _react.default.createElement(_grommet.CheckBox, {
+      }, _react["default"].createElement(_grommet.CheckBox, {
         tabIndex: "-1",
         checked: selectedContentPartners.some(function (partner) {
           return partner.name === name;
         }),
-        label: _react.default.createElement(_grommet.Text, {
+        label: _react["default"].createElement(_grommet.Text, {
           size: "small"
         }, name),
         onChange: function onChange() {}
@@ -108,7 +108,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "renderContentPartners", function () {
       var selectedContentPartners = _this.state.selectedContentPartners;
-      return _react.default.createElement(_grommet.Box, {
+      return _react["default"].createElement(_grommet.Box, {
         direction: "row",
         gap: "xsmall",
         pad: {
@@ -117,7 +117,7 @@ function (_Component) {
         },
         align: "center",
         flex: true
-      }, _react.default.createElement(_grommet.Box, {
+      }, _react["default"].createElement(_grommet.Box, {
         background: "brand",
         round: "medium",
         align: "center",
@@ -128,17 +128,17 @@ function (_Component) {
         style: {
           minWidth: '21px'
         }
-      }, _react.default.createElement(_grommet.Text, {
+      }, _react["default"].createElement(_grommet.Text, {
         size: "small"
-      }, selectedContentPartners.length)), _react.default.createElement(_grommet.Box, {
+      }, selectedContentPartners.length)), _react["default"].createElement(_grommet.Box, {
         flex: true
-      }, _react.default.createElement(_grommet.Text, {
+      }, _react["default"].createElement(_grommet.Text, {
         size: "small",
         truncate: true
       }, selectedContentPartners.map(function (_ref2) {
         var name = _ref2.name;
         return name;
-      }).join(', '))), _react.default.createElement(_grommet.Button, {
+      }).join(', '))), _react["default"].createElement(_grommet.Button, {
         href: "#",
         onFocus: function onFocus(event) {
           return event.stopPropagation();
@@ -151,10 +151,10 @@ function (_Component) {
 
           _this.selectRef.current.focus();
         }
-      }, _react.default.createElement(_grommet.Box, {
+      }, _react["default"].createElement(_grommet.Box, {
         background: "gray",
         round: "full"
-      }, _react.default.createElement(_grommetIcons.FormClose, {
+      }, _react["default"].createElement(_grommetIcons.FormClose, {
         style: {
           width: '12px',
           height: '12px'
@@ -174,19 +174,19 @@ function (_Component) {
         contentPartners = _this$state.contentPartners,
         searching = _this$state.searching,
         selectedContentPartners = _this$state.selectedContentPartners;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       full: true,
       theme: _theme.theme
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       fill: true,
       align: "center",
       justify: "center",
       width: "medium"
-    }, _react.default.createElement(_SearchInputContext.SearchInputContext.Provider, {
+    }, _react["default"].createElement(_SearchInputContext.SearchInputContext.Provider, {
       value: {
         searching: searching
       }
-    }, _react.default.createElement(_grommet.Select, {
+    }, _react["default"].createElement(_grommet.Select, {
       ref: this.selectRef,
       closeOnChange: false,
       placeholder: "Select Content Partners",
@@ -260,5 +260,5 @@ function (_Component) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('Select', module).add('Custom Search', function () {
-  return _react.default.createElement(CustomSearchSelect, null);
+  return _react["default"].createElement(CustomSearchSelect, null);
 });

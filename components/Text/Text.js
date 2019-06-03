@@ -7,7 +7,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _StyledText = require("./StyledText");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -19,7 +19,7 @@ var Text = function Text(_ref) {
       as = _ref.as,
       rest = _objectWithoutPropertiesLoose(_ref, ["color", "tag", "as"]);
 
-  return _react.default.createElement(_StyledText.StyledText, _extends({
+  return _react["default"].createElement(_StyledText.StyledText, _extends({
     as: !as && tag ? tag : as,
     colorProp: color
   }, rest));

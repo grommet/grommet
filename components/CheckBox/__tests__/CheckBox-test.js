@@ -10,10 +10,10 @@ var _Grommet = require("../../Grommet");
 
 var _ = require("..");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 test('CheckBox renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.CheckBox, null), _react.default.createElement(_.CheckBox, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.CheckBox, null), _react["default"].createElement(_.CheckBox, {
     id: "test id",
     name: "test name"
   })));
@@ -22,17 +22,17 @@ test('CheckBox renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('CheckBox label renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.CheckBox, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.CheckBox, {
     label: "test label"
-  }), _react.default.createElement(_.CheckBox, {
-    label: _react.default.createElement("div", null, "test label")
+  }), _react["default"].createElement(_.CheckBox, {
+    label: _react["default"].createElement("div", null, "test label")
   })));
 
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 test('CheckBox checked renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.CheckBox, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.CheckBox, {
     checked: true
   })));
 
@@ -40,9 +40,9 @@ test('CheckBox checked renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('CheckBox disabled renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.CheckBox, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.CheckBox, {
     disabled: true
-  }), _react.default.createElement(_.CheckBox, {
+  }), _react["default"].createElement(_.CheckBox, {
     disabled: true,
     checked: true
   })));
@@ -51,7 +51,7 @@ test('CheckBox disabled renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('CheckBox reverse renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.CheckBox, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.CheckBox, {
     reverse: true,
     label: "test label"
   })));
@@ -60,12 +60,12 @@ test('CheckBox reverse renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('CheckBox toggle renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.CheckBox, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.CheckBox, {
     toggle: true
-  }), _react.default.createElement(_.CheckBox, {
+  }), _react["default"].createElement(_.CheckBox, {
     toggle: true,
     checked: true
-  }), _react.default.createElement(_.CheckBox, {
+  }), _react["default"].createElement(_.CheckBox, {
     toggle: true,
     label: "test label"
   })));
@@ -74,9 +74,9 @@ test('CheckBox toggle renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('CheckBox indeterminate renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.CheckBox, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.CheckBox, {
     indeterminate: true
-  }), _react.default.createElement(_.CheckBox, {
+  }), _react["default"].createElement(_.CheckBox, {
     indeterminate: true,
     label: "test label"
   })));
@@ -87,7 +87,7 @@ test('CheckBox indeterminate renders', function () {
 test('CheckBox indeterminate checked warns', function () {
   var spy = jest.spyOn(global.console, 'warn');
 
-  _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.CheckBox, {
+  _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.CheckBox, {
     indeterminate: true,
     checked: true
   })));
@@ -97,7 +97,7 @@ test('CheckBox indeterminate checked warns', function () {
 test('CheckBox indeterminate toggle warns', function () {
   var spy = jest.spyOn(global.console, 'warn');
 
-  _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.CheckBox, {
+  _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.CheckBox, {
     indeterminate: true,
     toggle: true
   })));

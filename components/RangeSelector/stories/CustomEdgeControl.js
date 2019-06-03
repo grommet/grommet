@@ -12,7 +12,7 @@ var _themes = require("grommet/themes");
 
 var _utils = require("grommet/utils");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -27,7 +27,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var customEdge = (0, _utils.deepMerge)(_themes.grommet, {
   rangeSelector: {
     edge: {
-      type: _react.default.createElement(_grommetIcons.Gremlin, {
+      type: _react["default"].createElement(_grommetIcons.Gremlin, {
         size: "large",
         color: "neutral-2"
       }) // it is also possible to use an actual node
@@ -72,22 +72,22 @@ function (_Component) {
         rest = _objectWithoutPropertiesLoose(_this$props, ["direction"]);
 
     var values = this.state.values;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: customEdge
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       align: "center",
       pad: "xlarge",
       gap: "large"
-    }, _react.default.createElement(_grommet.Text, {
+    }, _react["default"].createElement(_grommet.Text, {
       style: {
         fontFamily: 'Comic Sans MS'
       },
       color: "brand"
-    }, "Feed the gremlins with grommets...", ' '), _react.default.createElement(_grommet.Stack, null, _react.default.createElement(_grommet.Box, {
+    }, "Feed the gremlins with grommets...", ' '), _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, {
       direction: "row",
       justify: "between"
     }, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (value) {
-      return _react.default.createElement(_grommet.Box, {
+      return _react["default"].createElement(_grommet.Box, {
         key: value,
         width: "xsmall",
         height: "xsmall",
@@ -95,11 +95,11 @@ function (_Component) {
         align: "center",
         pad: "small",
         border: false
-      }, _react.default.createElement(_grommetIcons.Grommet, {
+      }, _react["default"].createElement(_grommetIcons.Grommet, {
         color: "brand",
         size: "small"
       }));
-    })), _react.default.createElement(_grommet.RangeSelector, _extends({
+    })), _react["default"].createElement(_grommet.RangeSelector, _extends({
       direction: direction,
       min: 0,
       max: 9,
@@ -118,5 +118,5 @@ _defineProperty(CustomEdgeControl, "defaultProps", {
 });
 
 (0, _react2.storiesOf)('RangeSelector', module).add('Custom Edge Controls', function () {
-  return _react.default.createElement(CustomEdgeControl, null);
+  return _react["default"].createElement(CustomEdgeControl, null);
 });

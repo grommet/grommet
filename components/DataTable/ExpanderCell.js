@@ -19,7 +19,7 @@ var _TableCell = require("../TableCell");
 
 var _utils = require("../../utils");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -35,25 +35,25 @@ var ExpanderCell = function ExpanderCell(_ref) {
   var ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
 
   if (onToggle) {
-    return _react.default.createElement(_TableCell.TableCell, {
+    return _react["default"].createElement(_TableCell.TableCell, {
       size: "xxsmall",
       plain: true,
       verticalAlign: "top"
-    }, _react.default.createElement(_Button.Button, {
+    }, _react["default"].createElement(_Button.Button, {
       fill: true,
       a11yTitle: expanded ? 'collapse' : 'expand',
       hoverIndicator: true,
       disabled: !onToggle,
       onClick: onToggle
-    }, _react.default.createElement(_Box.Box, _extends({}, _extends({}, theme.table[context], theme.dataTable[context]), rest, {
+    }, _react["default"].createElement(_Box.Box, _extends({}, _extends({}, theme.table[context], theme.dataTable[context]), rest, {
       align: "center",
       pad: "xsmall"
-    }), _react.default.createElement(ExpandIcon, {
+    }), _react["default"].createElement(ExpandIcon, {
       color: (0, _utils.normalizeColor)('border', theme)
     }))));
   }
 
-  return _react.default.createElement(_TableCell.TableCell, {
+  return _react["default"].createElement(_TableCell.TableCell, {
     size: "xxsmall",
     verticalAlign: "top"
   });

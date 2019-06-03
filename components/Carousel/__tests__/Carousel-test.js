@@ -14,14 +14,14 @@ var _ = require("..");
 
 var _Image = require("../../Image");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('Carousel', function () {
   afterEach(_reactTestingLibrary.cleanup);
   test('basic', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Carousel, null, _react.default.createElement(_Image.Image, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Carousel, null, _react["default"].createElement(_Image.Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg"
-    }), _react.default.createElement(_Image.Image, {
+    }), _react["default"].createElement(_Image.Image, {
       src: "//v2.grommet.io/assets/IMG_4210.jpg"
     }))));
 
@@ -29,11 +29,11 @@ describe('Carousel', function () {
     expect(tree).toMatchSnapshot();
   });
   test('navigate', function () {
-    var _render = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Carousel, {
+    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Carousel, {
       "data-testid": "test-carousel"
-    }, _react.default.createElement(_Image.Image, {
+    }, _react["default"].createElement(_Image.Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg"
-    }), _react.default.createElement(_Image.Image, {
+    }), _react["default"].createElement(_Image.Image, {
       src: "//v2.grommet.io/assets/IMG_4210.jpg"
     })))),
         getByTestId = _render.getByTestId,
@@ -58,11 +58,11 @@ describe('Carousel', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('play', function (done) {
-    var _render2 = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Carousel, {
+    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Carousel, {
       play: 1000
-    }, _react.default.createElement(_Image.Image, {
+    }, _react["default"].createElement(_Image.Image, {
       src: "//v2.grommet.io/assets/IMG_4245.jpg"
-    }), _react.default.createElement(_Image.Image, {
+    }), _react["default"].createElement(_Image.Image, {
       src: "//v2.grommet.io/assets/IMG_4210.jpg"
     })))),
         container = _render2.container;

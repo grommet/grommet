@@ -10,28 +10,28 @@ var _reactTestingLibrary = require("react-testing-library");
 
 var _ = require("../..");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('Tabs', function () {
   test('no Tab', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Tabs, null, _react.default.createElement(_.Tab, null))));
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Tabs, null, _react["default"].createElement(_.Tab, null))));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('Tab', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Tabs, null, _react.default.createElement(_.Tab, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Tabs, null, _react["default"].createElement(_.Tab, {
       title: "Tab 1"
-    }, "Tab body 1"), undefined, _react.default.createElement(_.Tab, {
+    }, "Tab body 1"), undefined, _react["default"].createElement(_.Tab, {
       title: "Tab 2"
     }, "Tab body 2"))));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('complex title', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Tabs, null, _react.default.createElement(_.Tab, {
-      title: _react.default.createElement("div", null, "Tab 1")
-    }, "Tab body 1"), undefined, _react.default.createElement(_.Tab, {
-      title: _react.default.createElement("div", null, "Tab 2")
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Tabs, null, _react["default"].createElement(_.Tab, {
+      title: _react["default"].createElement("div", null, "Tab 1")
+    }, "Tab body 1"), undefined, _react["default"].createElement(_.Tab, {
+      title: _react["default"].createElement("div", null, "Tab 2")
     }, "Tab body 2"))));
 
     expect(component.toJSON()).toMatchSnapshot();
@@ -39,11 +39,11 @@ describe('Tabs', function () {
   test('change to second tab', function () {
     var onActive = jest.fn();
 
-    var _render = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Tabs, {
+    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Tabs, {
       onActive: onActive
-    }, _react.default.createElement(_.Tab, {
+    }, _react["default"].createElement(_.Tab, {
       title: "Tab 1"
-    }, "Tab body 1"), _react.default.createElement(_.Tab, {
+    }, "Tab body 1"), _react["default"].createElement(_.Tab, {
       title: "Tab 2"
     }, "Tab body 2")))),
         getByText = _render.getByText,
@@ -57,11 +57,11 @@ describe('Tabs', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('set on hover', function () {
-    var _render2 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Tabs, null, _react.default.createElement(_.Tab, {
+    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Tabs, null, _react["default"].createElement(_.Tab, {
       title: "Tab 1",
       onMouseOver: function onMouseOver() {},
       onMouseOut: function onMouseOut() {}
-    }, "Tab body 1"), _react.default.createElement(_.Tab, {
+    }, "Tab body 1"), _react["default"].createElement(_.Tab, {
       title: "Tab 2"
     }, "Tab body 2")))),
         getByText = _render2.getByText,

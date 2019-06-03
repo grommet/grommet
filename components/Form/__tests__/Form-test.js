@@ -16,18 +16,18 @@ var _FormField = require("../../FormField");
 
 var _Button = require("../../Button");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('Form', function () {
   afterEach(_reactTestingLibrary.cleanup);
   test('empty', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Form, null)));
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, null)));
 
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('with field', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Form, null, _react.default.createElement(_FormField.FormField, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, null, _react["default"].createElement(_FormField.FormField, {
       name: "test"
     }))));
 
@@ -38,17 +38,17 @@ describe('Form', function () {
     var validate = jest.fn().mockReturnValueOnce('too short').mockReturnValueOnce(undefined);
     var onSubmit = jest.fn();
 
-    var _render = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Form, {
+    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onSubmit: onSubmit
-    }, _react.default.createElement(_FormField.FormField, {
+    }, _react["default"].createElement(_FormField.FormField, {
       name: "test",
       required: true,
       validate: validate,
       placeholder: "test input"
-    }), _react.default.createElement(_FormField.FormField, {
+    }), _react["default"].createElement(_FormField.FormField, {
       name: "test2",
       placeholder: "test-2 input"
-    }), _react.default.createElement(_Button.Button, {
+    }), _react["default"].createElement(_Button.Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -99,16 +99,16 @@ describe('Form', function () {
   test('regexp validation', function () {
     var onSubmit = jest.fn();
 
-    var _render2 = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Form, {
+    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onSubmit: onSubmit
-    }, _react.default.createElement(_FormField.FormField, {
+    }, _react["default"].createElement(_FormField.FormField, {
       name: "test",
       required: true,
       validate: {
         regexp: /^[a-z]/i
       },
       placeholder: "test input"
-    }), _react.default.createElement(_Button.Button, {
+    }), _react["default"].createElement(_Button.Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -140,13 +140,13 @@ describe('Form', function () {
   test('required validation', function () {
     var onSubmit = jest.fn();
 
-    var _render3 = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Form, {
+    var _render3 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onSubmit: onSubmit
-    }, _react.default.createElement(_FormField.FormField, {
+    }, _react["default"].createElement(_FormField.FormField, {
       name: "test",
       required: true,
       placeholder: "test input"
-    }), _react.default.createElement(_Button.Button, {
+    }), _react["default"].createElement(_Button.Button, {
       type: "submit",
       primary: true,
       label: "Submit"
@@ -170,13 +170,13 @@ describe('Form', function () {
   test('reset clears form', function () {
     var onReset = jest.fn();
 
-    var _render4 = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Form, {
+    var _render4 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onReset: onReset
-    }, _react.default.createElement(_FormField.FormField, {
+    }, _react["default"].createElement(_FormField.FormField, {
       name: "test",
       required: true,
       placeholder: "test input"
-    }), _react.default.createElement(_Button.Button, {
+    }), _react["default"].createElement(_Button.Button, {
       type: "reset",
       primary: true,
       label: "Reset"
@@ -198,22 +198,22 @@ describe('Form', function () {
   test('initial values', function () {
     var _onSubmit = jest.fn();
 
-    var _render5 = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Form, {
+    var _render5 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Form, {
       onSubmit: function onSubmit(_ref) {
         var value = _ref.value;
         return _onSubmit({
           value: value
         });
       }
-    }, _react.default.createElement(_FormField.FormField, {
+    }, _react["default"].createElement(_FormField.FormField, {
       name: "test",
       required: true,
       placeholder: "test input",
       value: "Initial value"
-    }), _react.default.createElement(_FormField.FormField, {
+    }), _react["default"].createElement(_FormField.FormField, {
       name: "test2",
       value: "Initial value2"
-    }), _react.default.createElement(_Button.Button, {
+    }), _react["default"].createElement(_Button.Button, {
       type: "submit",
       primary: true,
       label: "Submit"

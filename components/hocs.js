@@ -15,9 +15,9 @@ exports.withTheme = _styledComponents.withTheme;
 
 var _contexts = require("../contexts");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -52,7 +52,7 @@ var withFocus = function withFocus(_temp) {
 
         _defineProperty(_assertThisInitialized(_this), "state", {
           focus: false,
-          wrappedRef: _react.default.createRef()
+          wrappedRef: _react["default"].createRef()
         });
 
         _defineProperty(_assertThisInitialized(_this), "componentDidMount", function () {
@@ -159,7 +159,7 @@ var withFocus = function withFocus(_temp) {
         var _this$state = this.state,
             focus = _this$state.focus,
             wrappedRef = _this$state.wrappedRef;
-        return _react.default.createElement(WrappedComponent, _extends({
+        return _react["default"].createElement(WrappedComponent, _extends({
           ref: wrappedRef,
           focus: focus
         }, rest, {
@@ -183,16 +183,16 @@ var withFocus = function withFocus(_temp) {
       return FocusableComponent;
     }(_react.Component);
 
-    var ForwardRef = _react.default.forwardRef(function (props, ref) {
-      return _react.default.createElement(FocusableComponent, _extends({}, props, {
+    var ForwardRef = _react["default"].forwardRef(function (props, ref) {
+      return _react["default"].createElement(FocusableComponent, _extends({}, props, {
         withFocusRef: ref
       }));
     });
 
-    ForwardRef.displayName = (0, _getDisplayName.default)(WrappedComponent);
+    ForwardRef.displayName = (0, _getDisplayName["default"])(WrappedComponent);
     ForwardRef.name = ForwardRef.displayName;
     ForwardRef.defaultProps = WrappedComponent.defaultProps;
-    (0, _hoistNonReactStatics.default)(ForwardRef, WrappedComponent);
+    (0, _hoistNonReactStatics["default"])(ForwardRef, WrappedComponent);
     return ForwardRef;
   };
 };
@@ -200,35 +200,35 @@ var withFocus = function withFocus(_temp) {
 exports.withFocus = withFocus;
 
 var withForwardRef = function withForwardRef(WrappedComponent) {
-  var ForwardRefComponent = _react.default.forwardRef(function (props, ref) {
-    return _react.default.createElement(WrappedComponent, _extends({
+  var ForwardRefComponent = _react["default"].forwardRef(function (props, ref) {
+    return _react["default"].createElement(WrappedComponent, _extends({
       forwardRef: ref
     }, props));
   });
 
-  ForwardRefComponent.displayName = (0, _getDisplayName.default)(WrappedComponent);
+  ForwardRefComponent.displayName = (0, _getDisplayName["default"])(WrappedComponent);
   ForwardRefComponent.name = ForwardRefComponent.displayName;
   ForwardRefComponent.defaultProps = WrappedComponent.defaultProps;
-  (0, _hoistNonReactStatics.default)(ForwardRefComponent, WrappedComponent);
+  (0, _hoistNonReactStatics["default"])(ForwardRefComponent, WrappedComponent);
   return ForwardRefComponent;
 };
 
 exports.withForwardRef = withForwardRef;
 
 var withAnnounce = function withAnnounce(WrappedComponent) {
-  var ForwardRef = _react.default.forwardRef(function (props, ref) {
-    return _react.default.createElement(_contexts.AnnounceContext.Consumer, null, function (announce) {
-      return _react.default.createElement(WrappedComponent, _extends({}, props, {
+  var ForwardRef = _react["default"].forwardRef(function (props, ref) {
+    return _react["default"].createElement(_contexts.AnnounceContext.Consumer, null, function (announce) {
+      return _react["default"].createElement(WrappedComponent, _extends({}, props, {
         announce: announce,
         ref: ref
       }));
     });
   });
 
-  ForwardRef.displayName = (0, _getDisplayName.default)(WrappedComponent);
+  ForwardRef.displayName = (0, _getDisplayName["default"])(WrappedComponent);
   ForwardRef.name = ForwardRef.displayName;
   ForwardRef.defaultProps = WrappedComponent.defaultProps;
-  (0, _hoistNonReactStatics.default)(ForwardRef, WrappedComponent);
+  (0, _hoistNonReactStatics["default"])(ForwardRef, WrappedComponent);
   return ForwardRef;
 };
 

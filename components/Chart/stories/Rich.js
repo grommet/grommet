@@ -10,7 +10,7 @@ var _themes = require("grommet/themes");
 
 var _calcs2 = require("../calcs");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -106,12 +106,12 @@ function (_Component) {
       values: values,
       overflow: true
     };
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       align: "center",
       pad: "large"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       direction: "row",
       justify: "between",
       width: "medium",
@@ -119,12 +119,12 @@ function (_Component) {
         vertical: 'small'
       }
     }, xAxis.map(function (x) {
-      return _react.default.createElement(_grommet.Text, {
+      return _react["default"].createElement(_grommet.Text, {
         key: x
       }, x);
-    })), _react.default.createElement(_grommet.Stack, {
+    })), _react["default"].createElement(_grommet.Stack, {
       guidingChild: "last"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       fill: true,
       justify: "between"
     }, yAxis.map(function (y, index) {
@@ -140,26 +140,26 @@ function (_Component) {
         align = 'center';
       }
 
-      return _react.default.createElement(_grommet.Box, {
+      return _react["default"].createElement(_grommet.Box, {
         key: y,
         direction: "row",
         align: align
-      }, _react.default.createElement(_grommet.Box, {
+      }, _react["default"].createElement(_grommet.Box, {
         pad: {
           horizontal: 'small'
         }
-      }, _react.default.createElement(_grommet.Text, null, y)), _react.default.createElement(_grommet.Box, {
+      }, _react["default"].createElement(_grommet.Text, null, y)), _react["default"].createElement(_grommet.Box, {
         border: "top",
         flex: true
       }));
-    })), _react.default.createElement(_grommet.Chart, _extends({}, chartProps, {
+    })), _react["default"].createElement(_grommet.Chart, _extends({}, chartProps, {
       type: "area",
       color: {
         color: 'accent-1',
         opacity: 'medium'
       },
       thickness: "hair"
-    })), _react.default.createElement(_grommet.Chart, _extends({}, chartProps, {
+    })), _react["default"].createElement(_grommet.Chart, _extends({}, chartProps, {
       type: "line",
       round: true,
       color: {
@@ -174,5 +174,5 @@ function (_Component) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('Chart', module).add('Rich', function () {
-  return _react.default.createElement(RichChart, null);
+  return _react["default"].createElement(RichChart, null);
 });

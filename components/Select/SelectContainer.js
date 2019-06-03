@@ -25,7 +25,7 @@ var _SelectOption = require("./SelectOption");
 
 var _StyledSelect = require("./StyledSelect");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -36,11 +36,11 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 // position relative is so scroll can be managed correctly
-var OptionsBox = (0, _styledComponents.default)(_Box.Box).withConfig({
+var OptionsBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "SelectContainer__OptionsBox",
   componentId: "sc-1wi0ul8-0"
 })(["position:relative;scroll-behavior:smooth;"]);
-var OptionBox = (0, _styledComponents.default)(_Box.Box).withConfig({
+var OptionBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "SelectContainer__OptionBox",
   componentId: "sc-1wi0ul8-1"
 })(["", ""], function (props) {
@@ -399,19 +399,19 @@ function (_Component) {
         search = _this$state.search;
     var customSearchInput = theme.select.searchInput;
     var SelectTextInput = customSearchInput || _TextInput.TextInput;
-    return _react.default.createElement(_Keyboard.Keyboard, {
+    return _react["default"].createElement(_Keyboard.Keyboard, {
       onEnter: this.onSelectOption,
       onUp: this.onPreviousOption,
       onDown: this.onNextOption,
       onKeyDown: onKeyDown
-    }, _react.default.createElement(_StyledSelect.StyledContainer, {
+    }, _react["default"].createElement(_StyledSelect.StyledContainer, {
       as: _Box.Box,
       id: id ? id + "__select-drop" : undefined,
       dropHeight: dropHeight
-    }, onSearch && _react.default.createElement(_Box.Box, {
+    }, onSearch && _react["default"].createElement(_Box.Box, {
       pad: !customSearchInput ? 'xsmall' : undefined,
       flex: false
-    }, _react.default.createElement(SelectTextInput, {
+    }, _react["default"].createElement(SelectTextInput, {
       focusIndicator: !customSearchInput,
       size: "small",
       ref: this.searchRef,
@@ -419,13 +419,13 @@ function (_Component) {
       value: search,
       placeholder: searchPlaceholder,
       onChange: this.onSearchChange
-    })), _react.default.createElement(OptionsBox, {
+    })), _react["default"].createElement(OptionsBox, {
       flex: "shrink",
       role: "menubar",
       tabIndex: "-1",
       ref: this.optionsRef,
       overflow: "auto"
-    }, options.length > 0 ? _react.default.createElement(_InfiniteScroll.InfiniteScroll, {
+    }, options.length > 0 ? _react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
       items: options,
       step: theme.select.step,
       replace: true
@@ -435,7 +435,7 @@ function (_Component) {
       var isSelected = _this3.isSelected(index);
 
       var isActive = activeIndex === index;
-      return _react.default.createElement(_SelectOption.SelectOption // eslint-disable-next-line react/no-array-index-key
+      return _react["default"].createElement(_SelectOption.SelectOption // eslint-disable-next-line react/no-array-index-key
       , {
         key: index,
         ref: function ref(_ref) {
@@ -451,14 +451,14 @@ function (_Component) {
         active: isActive,
         disabled: isDisabled,
         selected: isSelected
-      }) : _react.default.createElement(OptionBox, _extends({}, theme.select.options.box, {
+      }) : _react["default"].createElement(OptionBox, _extends({}, theme.select.options.box, {
         selected: isSelected
-      }), _react.default.createElement(_Text.Text, theme.select.options.text, _this3.optionLabel(index))));
-    }) : _react.default.createElement(_SelectOption.SelectOption, {
+      }), _react["default"].createElement(_Text.Text, theme.select.options.text, _this3.optionLabel(index))));
+    }) : _react["default"].createElement(_SelectOption.SelectOption, {
       key: "search_empty",
       disabled: true,
       option: emptySearchMessage
-    }, _react.default.createElement(OptionBox, theme.select.options.box, _react.default.createElement(_Text.Text, theme.select.container.text, emptySearchMessage))))));
+    }, _react["default"].createElement(OptionBox, theme.select.options.box, _react["default"].createElement(_Text.Text, theme.select.container.text, emptySearchMessage))))));
   };
 
   return SelectContainer;

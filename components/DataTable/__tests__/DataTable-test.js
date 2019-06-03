@@ -12,18 +12,18 @@ var _Grommet = require("../../Grommet");
 
 var _ = require("..");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('DataTable', function () {
   afterEach(_reactTestingLibrary.cleanup);
   test('empty', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.DataTable, null)));
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, null)));
 
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('basic', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.DataTable, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -44,7 +44,7 @@ describe('DataTable', function () {
     expect(tree).toMatchSnapshot();
   });
   test('primaryKey', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.DataTable, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -66,7 +66,7 @@ describe('DataTable', function () {
     expect(tree).toMatchSnapshot();
   });
   test('footer', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.DataTable, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A',
@@ -88,7 +88,7 @@ describe('DataTable', function () {
     expect(tree).toMatchSnapshot();
   });
   test('sort', function () {
-    var _render = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.DataTable, {
+    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -119,7 +119,7 @@ describe('DataTable', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('resizeable', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.DataTable, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -141,7 +141,7 @@ describe('DataTable', function () {
     expect(tree).toMatchSnapshot();
   });
   test('aggregate', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.DataTable, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -166,7 +166,7 @@ describe('DataTable', function () {
     expect(tree).toMatchSnapshot();
   });
   test('groupBy', function () {
-    var _render2 = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.DataTable, {
+    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'

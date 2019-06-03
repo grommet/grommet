@@ -17,7 +17,7 @@ var _buildState = require("./buildState");
 
 var _StyledDataTable = require("./StyledDataTable");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
@@ -169,7 +169,7 @@ function (_Component) {
       console.warn('DataTable cannot combine "size" and "resizeble".');
     }
 
-    return _react.default.createElement(_StyledDataTable.StyledDataTable, rest, _react.default.createElement(_Header.Header, {
+    return _react["default"].createElement(_StyledDataTable.StyledDataTable, rest, _react["default"].createElement(_Header.Header, {
       columns: columns,
       filtering: filtering,
       filters: filters,
@@ -183,21 +183,21 @@ function (_Component) {
       onResize: resizeable ? this.onResize : undefined,
       onSort: sortable ? this.onSort : undefined,
       onToggle: this.onToggleGroups
-    }), groups ? _react.default.createElement(_GroupedBody.GroupedBody, {
+    }), groups ? _react["default"].createElement(_GroupedBody.GroupedBody, {
       columns: columns,
       groupBy: groupBy,
       groups: groups,
       groupState: groupState,
       primaryProperty: primaryProperty,
       onToggle: this.onToggleGroup
-    }) : _react.default.createElement(_Body.Body, {
+    }) : _react["default"].createElement(_Body.Body, {
       columns: columns,
       data: data,
       onMore: onMore,
       primaryProperty: primaryProperty,
       size: size,
       step: step
-    }), showFooter && _react.default.createElement(_Footer.Footer, {
+    }), showFooter && _react["default"].createElement(_Footer.Footer, {
       columns: columns,
       footerValues: footerValues,
       groups: groups,

@@ -9,7 +9,7 @@ var _defaultProps = require("../../default-props");
 
 var _FormContext = require("./FormContext");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
@@ -200,10 +200,10 @@ function (_Component) {
         touched = _this$state2.touched,
         value = _this$state2.value,
         messages = _this$state2.messages;
-    return _react.default.createElement("form", _extends({}, rest, {
+    return _react["default"].createElement("form", _extends({}, rest, {
       onReset: this.onReset,
       onSubmit: this.onSubmit
-    }), _react.default.createElement(_FormContext.FormContext.Provider, {
+    }), _react["default"].createElement(_FormContext.FormContext.Provider, {
       value: {
         addValidation: this.addValidation,
         errors: errors,

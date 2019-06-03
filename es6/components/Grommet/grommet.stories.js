@@ -41,7 +41,7 @@ var GrommetVars = function GrommetVars() {
     background: "var(--accent-2)",
     gap: "medium"
   }, React.createElement(Box, null, "Checkout Grommet variables, you can find them in the StyledGrommet DOM."), React.createElement(Box, {
-    with: true
+    "with": true
   }, "For example, the background color in this Box is using var(--accent-2)")));
 };
 

@@ -14,7 +14,7 @@ var _calcs2 = require("../calcs");
 
 var _data = require("./data");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -125,45 +125,45 @@ function (_Component) {
         previousReference = _this$state.previousReference,
         thickness = _this$state.thickness,
         values = _this$state.values;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       pad: "large",
       direction: "row",
       gap: "medium"
-    }, _react.default.createElement(_grommet.Button, {
+    }, _react["default"].createElement(_grommet.Button, {
       hoverIndicator: true,
-      icon: _react.default.createElement(_grommetIcons.Previous, null),
+      icon: _react["default"].createElement(_grommetIcons.Previous, null),
       onClick: function onClick() {
         return _this2.setState({
           reference: previousReference
         });
       }
-    }), _react.default.createElement(_grommet.Box, {
+    }), _react["default"].createElement(_grommet.Box, {
       flex: true
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       direction: "row",
       justify: "end"
-    }, Object.keys(intervalDays).map(function (int) {
-      return _react.default.createElement(_grommet.Button, {
-        key: int,
+    }, Object.keys(intervalDays).map(function (_int) {
+      return _react["default"].createElement(_grommet.Button, {
+        key: _int,
         onClick: function onClick() {
           return _this2.setState({
-            interval: int
+            interval: _int
           });
         }
-      }, _react.default.createElement(_grommet.Box, {
+      }, _react["default"].createElement(_grommet.Box, {
         pad: "small"
-      }, _react.default.createElement(_grommet.Text, {
-        color: interval === int ? 'black' : 'brand'
-      }, int)));
-    })), _react.default.createElement(_grommet.Stack, {
+      }, _react["default"].createElement(_grommet.Text, {
+        color: interval === _int ? 'black' : 'brand'
+      }, _int)));
+    })), _react["default"].createElement(_grommet.Stack, {
       guidingChild: "first"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       pad: {
         horizontal: thickness
       }
-    }, _react.default.createElement(_grommet.Chart, {
+    }, _react["default"].createElement(_grommet.Chart, {
       type: "bar",
       overflow: true,
       bounds: bounds,
@@ -173,37 +173,37 @@ function (_Component) {
         width: 'full',
         height: 'small'
       }
-    })), _react.default.createElement(_grommet.Box, {
+    })), _react["default"].createElement(_grommet.Box, {
       fill: true,
       justify: "between"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       border: "top",
       align: "start"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       pad: "xsmall",
       background: {
         color: 'white',
         opacity: 'medium'
       }
-    }, _react.default.createElement(_grommet.Text, null, axis[1][0]))), _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Text, null, axis[1][0]))), _react["default"].createElement(_grommet.Box, {
       border: "bottom",
       align: "start"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       pad: "xsmall",
       background: {
         color: 'white',
         opacity: 'medium'
       }
-    }, _react.default.createElement(_grommet.Text, null, axis[1][1]))))), _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Text, null, axis[1][1]))))), _react["default"].createElement(_grommet.Box, {
       direction: "row",
       justify: "between"
     }, axis[0].map(function (t) {
-      return _react.default.createElement(_grommet.Text, {
+      return _react["default"].createElement(_grommet.Text, {
         key: t
       }, new Date(t).toLocaleDateString());
-    }))), _react.default.createElement(_grommet.Button, {
+    }))), _react["default"].createElement(_grommet.Button, {
       hoverIndicator: true,
-      icon: _react.default.createElement(_grommetIcons.Next, null),
+      icon: _react["default"].createElement(_grommetIcons.Next, null),
       onClick: function onClick() {
         return _this2.setState({
           reference: nextReference
@@ -216,7 +216,7 @@ function (_Component) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('Chart', module).add('Zoom', function () {
-  return _react.default.createElement(ZoomChart, {
+  return _react["default"].createElement(ZoomChart, {
     data: (0, _data.generateData)(1000, 100),
     max: 100
   });

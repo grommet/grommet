@@ -9,11 +9,11 @@ var _utils = require("../../utils");
 
 var _defaultProps = require("../../default-props");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var fillStyle = "\n  width: 100%;\n  height: 100%;\n  max-width: none;\n  flex-grow: 1;\n  display: flex;\n";
 
-var StyledStack = _styledComponents.default.div.withConfig({
+var StyledStack = _styledComponents["default"].div.withConfig({
   displayName: "StyledStack",
   componentId: "ajspsk-0"
 })(["position:relative;", " ", " ", ""], _utils.genericStyles, function (props) {
@@ -38,7 +38,7 @@ var styleMap = {
   'bottom-right': "\n    bottom: 0;\n    right: 0;\n  "
 };
 
-var StyledStackLayer = _styledComponents.default.div.withConfig({
+var StyledStackLayer = _styledComponents["default"].div.withConfig({
   displayName: "StyledStack__StyledStackLayer",
   componentId: "ajspsk-1"
 })(["position:", ";", " ", " ", " ", ""], function (props) {

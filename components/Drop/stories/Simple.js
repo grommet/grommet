@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -42,26 +42,26 @@ function (_Component) {
   };
 
   _proto.render = function render() {
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet,
       full: true
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       fill: true,
       align: "center",
       justify: "center"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       background: "dark-3",
       pad: "medium",
       align: "center",
       justify: "start",
       ref: this.targetRef
-    }, "Target"), this.targetRef.current && _react.default.createElement(_grommet.Drop, {
+    }, "Target"), this.targetRef.current && _react["default"].createElement(_grommet.Drop, {
       align: {
         top: 'bottom',
         left: 'left'
       },
       target: this.targetRef.current
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       pad: "large"
     }, "Drop Contents"))));
   };
@@ -70,5 +70,5 @@ function (_Component) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('Drop', module).add('Simple', function () {
-  return _react.default.createElement(SimpleDrop, null);
+  return _react["default"].createElement(SimpleDrop, null);
 });

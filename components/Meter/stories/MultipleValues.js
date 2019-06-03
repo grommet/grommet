@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -46,14 +46,14 @@ function (_Component) {
         active = _this$state.active,
         label = _this$state.label,
         total = _this$state.total;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       align: "center",
       pad: "large"
-    }, _react.default.createElement(_grommet.Stack, {
+    }, _react["default"].createElement(_grommet.Stack, {
       anchor: "center"
-    }, _react.default.createElement(_grommet.Meter, {
+    }, _react["default"].createElement(_grommet.Meter, {
       type: "circle",
       background: "light-2",
       values: [{
@@ -76,23 +76,23 @@ function (_Component) {
       max: 100,
       size: "small",
       thickness: "medium"
-    }), _react.default.createElement(_grommet.Box, {
+    }), _react["default"].createElement(_grommet.Box, {
       align: "center"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       direction: "row",
       align: "center",
       pad: {
         bottom: 'xsmall'
       }
-    }, _react.default.createElement(_grommet.Text, {
+    }, _react["default"].createElement(_grommet.Text, {
       size: "xxlarge",
       weight: "bold"
-    }, active || total), _react.default.createElement(_grommet.Text, null, "GB")), _react.default.createElement(_grommet.Text, null, label || 'total')))));
+    }, active || total), _react["default"].createElement(_grommet.Text, null, "GB")), _react["default"].createElement(_grommet.Text, null, label || 'total')))));
   };
 
   return MultipleValues;
 }(_react.Component);
 
 (0, _react2.storiesOf)('Meter', module).add('Multiple Values', function () {
-  return _react.default.createElement(MultipleValues, null);
+  return _react["default"].createElement(MultipleValues, null);
 });

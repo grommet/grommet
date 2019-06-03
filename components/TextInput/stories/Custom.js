@@ -12,7 +12,7 @@ var _themes = require("grommet/themes");
 
 var _utils = require("grommet/utils");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -127,19 +127,19 @@ function (_Component) {
         var name = _ref2.name,
             imageUrl = _ref2.imageUrl;
         return {
-          label: _react.default.createElement(_grommet.Box, {
+          label: _react["default"].createElement(_grommet.Box, {
             direction: "row",
             align: "center",
             gap: "small",
             border: index < list.length - 1 ? 'bottom' : undefined,
             pad: "small"
-          }, _react.default.createElement(_grommet.Image, {
+          }, _react["default"].createElement(_grommet.Image, {
             width: "48px",
             src: imageUrl,
             style: {
               borderRadius: '100%'
             }
-          }), _react.default.createElement(_grommet.Text, null, _react.default.createElement("strong", null, name))),
+          }), _react["default"].createElement(_grommet.Text, null, _react["default"].createElement("strong", null, name))),
           value: name
         };
       });
@@ -160,17 +160,17 @@ function (_Component) {
     var _this$state2 = this.state,
         suggestionOpen = _this$state2.suggestionOpen,
         value = _this$state2.value;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: myCustomTheme,
       full: true
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       background: "dark-1",
       fill: true,
       align: "center",
       pad: {
         top: 'large'
       }
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       ref: this.boxRef,
       width: "large",
       direction: "row",
@@ -189,9 +189,9 @@ function (_Component) {
         borderBottomLeftRadius: '0px',
         borderBottomRightRadius: '0px'
       } : undefined
-    }, _react.default.createElement(_grommetIcons.Search, {
+    }, _react["default"].createElement(_grommetIcons.Search, {
       color: "brand"
-    }), _react.default.createElement(_grommet.TextInput, {
+    }), _react["default"].createElement(_grommet.TextInput, {
       type: "search",
       dropTarget: this.boxRef.current,
       plain: true,
@@ -217,5 +217,5 @@ function (_Component) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('TextInput', module).add('Custom', function () {
-  return _react.default.createElement(CustomSuggestionsTextInput, null);
+  return _react["default"].createElement(CustomSuggestionsTextInput, null);
 });

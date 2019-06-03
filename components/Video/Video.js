@@ -29,7 +29,7 @@ var _utils = require("../../utils");
 
 var _StyledVideo = require("./StyledVideo");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
@@ -88,8 +88,8 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "state", {
       captions: [],
-      scrubberRef: _react.default.createRef(),
-      videoRef: _react.default.createRef()
+      scrubberRef: _react["default"].createRef(),
+      videoRef: _react["default"].createRef()
     });
 
     _defineProperty(_assertThisInitialized(_this), "hasPlayed", false);
@@ -417,7 +417,7 @@ function (_Component) {
     };
     var captionControls = captions.map(function (caption) {
       return {
-        icon: caption.label ? undefined : _react.default.createElement(Icons.ClosedCaption, {
+        icon: caption.label ? undefined : _react["default"].createElement(Icons.ClosedCaption, {
           color: iconColor
         }),
         label: caption.label,
@@ -427,29 +427,29 @@ function (_Component) {
         }
       };
     });
-    return _react.default.createElement(_StyledVideo.StyledVideoControls, {
+    return _react["default"].createElement(_StyledVideo.StyledVideoControls, {
       over: over,
       active: !this.hasPlayed || controls === 'below' || over && interacting
-    }, _react.default.createElement(_Box.Box, {
+    }, _react["default"].createElement(_Box.Box, {
       direction: "row",
       align: "center",
       justify: "between",
       background: background
-    }, _react.default.createElement(_Button.Button, {
-      icon: playing ? _react.default.createElement(Icons.Pause, {
+    }, _react["default"].createElement(_Button.Button, {
+      icon: playing ? _react["default"].createElement(Icons.Pause, {
         color: iconColor
-      }) : _react.default.createElement(Icons.Play, {
+      }) : _react["default"].createElement(Icons.Play, {
         color: iconColor
       }),
       hoverIndicator: "background",
       onClick: playing ? this.pause : this.play
-    }), _react.default.createElement(_Box.Box, {
+    }), _react["default"].createElement(_Box.Box, {
       direction: "row",
       align: "center",
       flex: true
-    }, _react.default.createElement(_Box.Box, {
+    }, _react["default"].createElement(_Box.Box, {
       flex: true
-    }, _react.default.createElement(_Stack.Stack, null, _react.default.createElement(_Meter.Meter, {
+    }, _react["default"].createElement(_Stack.Stack, null, _react["default"].createElement(_Meter.Meter, {
       "aria-label": "Video progress",
       background: over ? theme.video.scrubber && theme.video.scrubber.track && theme.video.scrubber.track.color || 'dark-3' : undefined,
       size: "full",
@@ -457,7 +457,7 @@ function (_Component) {
       values: [{
         value: percentagePlayed || 0
       }]
-    }), _react.default.createElement(_StyledVideo.StyledVideoScrubber, {
+    }), _react["default"].createElement(_StyledVideo.StyledVideoScrubber, {
       ref: scrubberRef,
       tabIndex: 0,
       role: "button",
@@ -469,14 +469,14 @@ function (_Component) {
         });
       },
       onClick: this.seek
-    }))), _react.default.createElement(_Box.Box, {
+    }))), _react["default"].createElement(_Box.Box, {
       pad: {
         horizontal: 'small'
       }
-    }, _react.default.createElement(_Text.Text, {
+    }, _react["default"].createElement(_Text.Text, {
       margin: "none"
-    }, formattedTime))), _react.default.createElement(_Menu.Menu, {
-      icon: _react.default.createElement(Icons.Configure, {
+    }, formattedTime))), _react["default"].createElement(_Menu.Menu, {
+      icon: _react["default"].createElement(Icons.Configure, {
         color: iconColor
       }),
       dropAlign: {
@@ -485,19 +485,19 @@ function (_Component) {
       },
       dropBackground: background,
       items: [{
-        icon: _react.default.createElement(Icons.Volume, {
+        icon: _react["default"].createElement(Icons.Volume, {
           color: iconColor
         }),
         onClick: volume <= 1 - VOLUME_STEP ? this.louder : undefined,
         close: false
       }, {
-        icon: _react.default.createElement(Icons.ReduceVolume, {
+        icon: _react["default"].createElement(Icons.ReduceVolume, {
           color: iconColor
         }),
         onClick: volume >= VOLUME_STEP ? this.quieter : undefined,
         close: false
       }].concat(captionControls, [{
-        icon: _react.default.createElement(Icons.FullScreen, {
+        icon: _react["default"].createElement(Icons.FullScreen, {
           color: iconColor
         }),
         onClick: this.fullscreen
@@ -547,12 +547,12 @@ function (_Component) {
       }
     }
 
-    return _react.default.createElement(_StyledVideo.StyledVideoContainer, _extends({}, mouseEventListeners, {
+    return _react["default"].createElement(_StyledVideo.StyledVideoContainer, _extends({}, mouseEventListeners, {
       alignSelf: alignSelf,
       gridArea: gridArea,
       margin: margin,
       style: style
-    }), _react.default.createElement(_StyledVideo.StyledVideo, _extends({}, rest, {
+    }), _react["default"].createElement(_StyledVideo.StyledVideo, _extends({}, rest, {
       ref: videoRef
     }, this.mediaEventProps, {
       autoPlay: autoPlay || false,

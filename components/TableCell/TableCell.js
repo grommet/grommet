@@ -17,7 +17,7 @@ var _TableContext = require("../Table/TableContext");
 
 var _StyledTable = require("../Table/StyledTable");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -33,7 +33,7 @@ var TableCell = function TableCell(_ref) {
       verticalAlign = _ref.verticalAlign,
       rest = _objectWithoutPropertiesLoose(_ref, ["children", "colSpan", "plain", "scope", "size", "theme", "verticalAlign"]);
 
-  return _react.default.createElement(_TableContext.TableContext.Consumer, null, function (tableContext) {
+  return _react["default"].createElement(_TableContext.TableContext.Consumer, null, function (tableContext) {
     var tableContextTheme;
 
     if (tableContext === 'header') {
@@ -51,7 +51,7 @@ var TableCell = function TableCell(_ref) {
         delete boxProps[key];
       }
     });
-    return _react.default.createElement(_StyledTable.StyledTableCell, _extends({
+    return _react["default"].createElement(_StyledTable.StyledTableCell, _extends({
       as: scope ? 'th' : undefined,
       scope: scope,
       size: size,
@@ -59,7 +59,7 @@ var TableCell = function TableCell(_ref) {
       tableContext: tableContext,
       tableContextTheme: tableContextTheme,
       verticalAlign: verticalAlign || (tableContextTheme ? tableContextTheme.verticalAlign : undefined)
-    }, plain ? rest : {}), plain ? children : _react.default.createElement(_Box.Box, _extends({}, tableContextTheme, boxProps), children));
+    }, plain ? rest : {}), plain ? children : _react["default"].createElement(_Box.Box, _extends({}, tableContextTheme, boxProps), children));
   });
 };
 

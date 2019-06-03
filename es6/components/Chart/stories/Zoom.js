@@ -134,19 +134,19 @@ function (_Component) {
     }, React.createElement(Box, {
       direction: "row",
       justify: "end"
-    }, Object.keys(intervalDays).map(function (int) {
+    }, Object.keys(intervalDays).map(function (_int) {
       return React.createElement(Button, {
-        key: int,
+        key: _int,
         onClick: function onClick() {
           return _this2.setState({
-            interval: int
+            interval: _int
           });
         }
       }, React.createElement(Box, {
         pad: "small"
       }, React.createElement(Text, {
-        color: interval === int ? 'black' : 'brand'
-      }, int)));
+        color: interval === _int ? 'black' : 'brand'
+      }, _int)));
     })), React.createElement(Stack, {
       guidingChild: "first"
     }, React.createElement(Box, {

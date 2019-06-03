@@ -16,9 +16,9 @@ var _themes = require("grommet/themes");
 
 var _utils = require("grommet/utils");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -28,42 +28,42 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var UncontrolledTabs = function UncontrolledTabs(_ref) {
   var plain = _ref.plain;
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     fill: true
-  }, _react.default.createElement(_grommet.Tabs, {
+  }, _react["default"].createElement(_grommet.Tabs, {
     flex: true
-  }, _react.default.createElement(_grommet.Tab, {
+  }, _react["default"].createElement(_grommet.Tab, {
     plain: plain,
     title: "Tab 1"
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     fill: true,
     pad: "large",
     align: "center",
     background: "accent-1"
-  }, _react.default.createElement(_grommetIcons.Attraction, {
+  }, _react["default"].createElement(_grommetIcons.Attraction, {
     size: "xlarge"
-  }))), _react.default.createElement(_grommet.Tab, {
+  }))), _react["default"].createElement(_grommet.Tab, {
     plain: plain,
     title: "Tab 2"
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     fill: true,
     pad: "large",
     align: "center",
     background: "accent-2"
-  }, _react.default.createElement(_grommetIcons.TreeOption, {
+  }, _react["default"].createElement(_grommetIcons.TreeOption, {
     size: "xlarge"
-  }))), _react.default.createElement(_grommet.Tab, {
+  }))), _react["default"].createElement(_grommet.Tab, {
     plain: plain,
     title: "Tab 3"
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     fill: true,
     pad: "large",
     align: "center",
     background: "accent-3"
-  }, _react.default.createElement(_grommetIcons.Car, {
+  }, _react["default"].createElement(_grommetIcons.Car, {
     size: "xlarge"
   }))))));
 };
@@ -72,7 +72,7 @@ UncontrolledTabs.defaultProps = {
   plain: false
 };
 UncontrolledTabs.propTypes = {
-  plain: _propTypes.default.bool
+  plain: _propTypes["default"].bool
 };
 
 var ControlledTabs =
@@ -104,37 +104,37 @@ function (_Component) {
 
   _proto.render = function render() {
     var index = this.state.index;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Tabs, {
+    }, _react["default"].createElement(_grommet.Tabs, {
       activeIndex: index,
       onActive: this.onActive
-    }, _react.default.createElement(_grommet.Tab, {
+    }, _react["default"].createElement(_grommet.Tab, {
       title: "Tab 1"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-1"
-    }, _react.default.createElement(_grommetIcons.Attraction, {
+    }, _react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 2"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-2"
-    }, _react.default.createElement(_grommetIcons.TreeOption, {
+    }, _react["default"].createElement(_grommetIcons.TreeOption, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 3"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-3"
-    }, _react.default.createElement(_grommetIcons.Car, {
+    }, _react["default"].createElement(_grommetIcons.Car, {
       size: "xlarge"
     })))));
   };
@@ -171,190 +171,190 @@ function (_Component2) {
 
   _proto2.render = function render() {
     var index = this.state.index;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Tabs, {
+    }, _react["default"].createElement(_grommet.Tabs, {
       activeIndex: index,
       onActive: this.onActive
-    }, _react.default.createElement(_grommet.Tab, {
+    }, _react["default"].createElement(_grommet.Tab, {
       title: "Tab 1"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-1"
-    }, _react.default.createElement(_grommetIcons.Attraction, {
+    }, _react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 2"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-2"
-    }, _react.default.createElement(_grommetIcons.TreeOption, {
+    }, _react["default"].createElement(_grommetIcons.TreeOption, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 3"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-3"
-    }, _react.default.createElement(_grommetIcons.Car, {
+    }, _react["default"].createElement(_grommetIcons.Car, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 4"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-1"
-    }, _react.default.createElement(_grommetIcons.Attraction, {
+    }, _react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 5"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-2"
-    }, _react.default.createElement(_grommetIcons.TreeOption, {
+    }, _react["default"].createElement(_grommetIcons.TreeOption, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 6"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-3"
-    }, _react.default.createElement(_grommetIcons.Car, {
+    }, _react["default"].createElement(_grommetIcons.Car, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 7"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-1"
-    }, _react.default.createElement(_grommetIcons.Attraction, {
+    }, _react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 8"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-2"
-    }, _react.default.createElement(_grommetIcons.TreeOption, {
+    }, _react["default"].createElement(_grommetIcons.TreeOption, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 9"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-3"
-    }, _react.default.createElement(_grommetIcons.Car, {
+    }, _react["default"].createElement(_grommetIcons.Car, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 10"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-1"
-    }, _react.default.createElement(_grommetIcons.Attraction, {
+    }, _react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 11"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-1"
-    }, _react.default.createElement(_grommetIcons.Attraction, {
+    }, _react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 12"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-2"
-    }, _react.default.createElement(_grommetIcons.TreeOption, {
+    }, _react["default"].createElement(_grommetIcons.TreeOption, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 13"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-3"
-    }, _react.default.createElement(_grommetIcons.Car, {
+    }, _react["default"].createElement(_grommetIcons.Car, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 14"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-1"
-    }, _react.default.createElement(_grommetIcons.Attraction, {
+    }, _react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 15"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-2"
-    }, _react.default.createElement(_grommetIcons.TreeOption, {
+    }, _react["default"].createElement(_grommetIcons.TreeOption, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 16"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-3"
-    }, _react.default.createElement(_grommetIcons.Car, {
+    }, _react["default"].createElement(_grommetIcons.Car, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 17"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-1"
-    }, _react.default.createElement(_grommetIcons.Attraction, {
+    }, _react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 18"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-2"
-    }, _react.default.createElement(_grommetIcons.TreeOption, {
+    }, _react["default"].createElement(_grommetIcons.TreeOption, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 19"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-3"
-    }, _react.default.createElement(_grommetIcons.Car, {
+    }, _react["default"].createElement(_grommetIcons.Car, {
       size: "xlarge"
-    }))), _react.default.createElement(_grommet.Tab, {
+    }))), _react["default"].createElement(_grommet.Tab, {
       title: "Tab 20"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       margin: "small",
       pad: "large",
       align: "center",
       background: "accent-1"
-    }, _react.default.createElement(_grommetIcons.Attraction, {
+    }, _react["default"].createElement(_grommetIcons.Attraction, {
       size: "xlarge"
     })))));
   };
@@ -365,45 +365,45 @@ function (_Component2) {
 var RichTabTitle = function RichTabTitle(_ref2) {
   var icon = _ref2.icon,
       label = _ref2.label;
-  return _react.default.createElement(_grommet.Box, {
+  return _react["default"].createElement(_grommet.Box, {
     direction: "row",
     align: "center",
     gap: "xsmall",
     margin: "xsmall"
-  }, icon, _react.default.createElement(_grommet.Text, {
+  }, icon, _react["default"].createElement(_grommet.Text, {
     size: "small"
-  }, _react.default.createElement("strong", null, label)));
+  }, _react["default"].createElement("strong", null, label)));
 };
 
 RichTabTitle.propTypes = {
-  icon: _propTypes.default.node.isRequired,
-  label: _propTypes.default.string.isRequired
+  icon: _propTypes["default"].node.isRequired,
+  label: _propTypes["default"].string.isRequired
 };
 
 var RichTabs = function RichTabs() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Tabs, null, _react.default.createElement(_grommet.Tab, {
-    title: _react.default.createElement(RichTabTitle, {
-      icon: _react.default.createElement(_grommetIcons.CircleInformation, {
+  }, _react["default"].createElement(_grommet.Tabs, null, _react["default"].createElement(_grommet.Tab, {
+    title: _react["default"].createElement(RichTabTitle, {
+      icon: _react["default"].createElement(_grommetIcons.CircleInformation, {
         color: "accent-2"
       }),
       label: "Personal Data"
     })
-  }, _react.default.createElement(_grommet.FormField, {
+  }, _react["default"].createElement(_grommet.FormField, {
     label: "Name"
-  }, _react.default.createElement(_grommet.TextInput, {
+  }, _react["default"].createElement(_grommet.TextInput, {
     placeholder: "Enter your name..."
-  }))), _react.default.createElement(_grommet.Tab, {
-    title: _react.default.createElement(RichTabTitle, {
-      icon: _react.default.createElement(_grommetIcons.Currency, {
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: _react["default"].createElement(RichTabTitle, {
+      icon: _react["default"].createElement(_grommetIcons.Currency, {
         color: "neutral-2"
       }),
       label: "Payment"
     })
-  }, _react.default.createElement(_grommet.FormField, {
+  }, _react["default"].createElement(_grommet.FormField, {
     label: "Card Number"
-  }, _react.default.createElement(_grommet.TextInput, {
+  }, _react["default"].createElement(_grommet.TextInput, {
     placeholder: "Enter your card number..."
   })))));
 };
@@ -461,77 +461,77 @@ var customTheme = (0, _utils.deepMerge)(_themes.grommet, {
 });
 
 var CustomTabs = function CustomTabs() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: customTheme
-  }, _react.default.createElement(_grommet.Tabs, null, _react.default.createElement(_grommet.Tab, {
-    title: _react.default.createElement(RichTabTitle, {
-      icon: _react.default.createElement(_grommetIcons.CircleInformation, {
+  }, _react["default"].createElement(_grommet.Tabs, null, _react["default"].createElement(_grommet.Tab, {
+    title: _react["default"].createElement(RichTabTitle, {
+      icon: _react["default"].createElement(_grommetIcons.CircleInformation, {
         color: "accent-1"
       }),
       label: "Personal Data"
     })
-  }, _react.default.createElement(_grommet.FormField, {
+  }, _react["default"].createElement(_grommet.FormField, {
     label: "Name"
-  }, _react.default.createElement(_grommet.TextInput, {
+  }, _react["default"].createElement(_grommet.TextInput, {
     placeholder: "Enter your name..."
-  }))), _react.default.createElement(_grommet.Tab, {
-    title: _react.default.createElement(RichTabTitle, {
-      icon: _react.default.createElement(_grommetIcons.Currency, {
+  }))), _react["default"].createElement(_grommet.Tab, {
+    title: _react["default"].createElement(RichTabTitle, {
+      icon: _react["default"].createElement(_grommetIcons.Currency, {
         color: "light-3"
       }),
       label: "Payment"
     })
-  }, _react.default.createElement(_grommet.FormField, {
+  }, _react["default"].createElement(_grommet.FormField, {
     label: "Card Number"
-  }, _react.default.createElement(_grommet.TextInput, {
+  }, _react["default"].createElement(_grommet.TextInput, {
     placeholder: "Enter your card number..."
-  }))), _react.default.createElement(_grommet.Tab, {
+  }))), _react["default"].createElement(_grommet.Tab, {
     title: "Simple Tab"
   }, "This Tab has a different styling than the RichTabTitle (e.g tab.active.color)")));
 };
 
 var ScrollableTabs = function ScrollableTabs() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     fill: true
-  }, _react.default.createElement(_grommet.Tabs, {
+  }, _react["default"].createElement(_grommet.Tabs, {
     flex: true
-  }, _react.default.createElement(_grommet.Tab, {
+  }, _react["default"].createElement(_grommet.Tab, {
     title: "Tab 1"
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     fill: true,
     overflow: "auto",
     pad: "xlarge",
     align: "center",
     background: "accent-1"
-  }, _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"), _react.default.createElement(_grommet.Heading, null, "hello!"))), _react.default.createElement(_grommet.Tab, {
+  }, _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"), _react["default"].createElement(_grommet.Heading, null, "hello!"))), _react["default"].createElement(_grommet.Tab, {
     title: "Tab 2"
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     margin: "small",
     pad: "large",
     align: "center",
     background: "accent-2"
-  }, _react.default.createElement(_grommetIcons.TreeOption, {
+  }, _react["default"].createElement(_grommetIcons.TreeOption, {
     size: "xlarge"
   }))))));
 };
 
 (0, _react2.storiesOf)('Tabs', module).add('Uncontrolled', function () {
-  return _react.default.createElement(UncontrolledTabs, null);
+  return _react["default"].createElement(UncontrolledTabs, null);
 }).add('Controlled', function () {
-  return _react.default.createElement(ControlledTabs, null);
+  return _react["default"].createElement(ControlledTabs, null);
 }).add('Responsive', function () {
-  return _react.default.createElement(ResponsiveTabs, null);
+  return _react["default"].createElement(ResponsiveTabs, null);
 }).add('Rich', function () {
-  return _react.default.createElement(RichTabs, null);
+  return _react["default"].createElement(RichTabs, null);
 }).add('Custom Theme', function () {
-  return _react.default.createElement(CustomTabs, null);
+  return _react["default"].createElement(CustomTabs, null);
 }).add('Scrollable', function () {
-  return _react.default.createElement(ScrollableTabs, null);
+  return _react["default"].createElement(ScrollableTabs, null);
 }).add('Plain', function () {
-  return _react.default.createElement(UncontrolledTabs, {
+  return _react["default"].createElement(UncontrolledTabs, {
     plain: true
   });
 });

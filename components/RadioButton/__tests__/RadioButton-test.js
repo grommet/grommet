@@ -10,12 +10,12 @@ var _Grommet = require("../../Grommet");
 
 var _ = require("..");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 test('RadioButton renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.RadioButton, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButton, {
     name: "test empty"
-  }), _react.default.createElement(_.RadioButton, {
+  }), _react["default"].createElement(_.RadioButton, {
     id: "test id",
     name: "test name"
   })));
@@ -24,11 +24,11 @@ test('RadioButton renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('RadioButton label renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.RadioButton, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButton, {
     label: "test label",
     name: "test label"
-  }), _react.default.createElement(_.RadioButton, {
-    label: _react.default.createElement("div", null, "test label"),
+  }), _react["default"].createElement(_.RadioButton, {
+    label: _react["default"].createElement("div", null, "test label"),
     name: "test div label"
   })));
 
@@ -36,7 +36,7 @@ test('RadioButton label renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('RadioButton checked renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.RadioButton, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButton, {
     checked: true,
     name: "test checked"
   })));
@@ -45,10 +45,10 @@ test('RadioButton checked renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('RadioButton disabled renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.RadioButton, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButton, {
     disabled: true,
     name: "test disabled"
-  }), _react.default.createElement(_.RadioButton, {
+  }), _react["default"].createElement(_.RadioButton, {
     disabled: true,
     checked: true,
     name: "test checked disabled"

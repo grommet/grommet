@@ -9,7 +9,7 @@ var _Box = require("../Box");
 
 var _AccordionContext = require("./AccordionContext");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -100,10 +100,10 @@ function (_Component) {
 
     var activeIndexes = this.state.activeIndexes;
     delete rest.onActive;
-    return _react.default.createElement(_Box.Box, _extends({
+    return _react["default"].createElement(_Box.Box, _extends({
       role: "tablist"
     }, rest), _react.Children.toArray(children).map(function (panel, index) {
-      return _react.default.createElement(_AccordionContext.AccordionContext.Provider, {
+      return _react["default"].createElement(_AccordionContext.AccordionContext.Provider, {
         key: "accordion-panel_" + (index + 0),
         value: {
           active: activeIndexes.indexOf(index) > -1,

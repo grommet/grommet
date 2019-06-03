@@ -12,13 +12,13 @@ var _portal = require("../../../utils/portal");
 
 var _ = require("..");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('MaskedInput', function () {
   beforeEach(_portal.createPortal);
   afterEach(_reactTestingLibrary.cleanup);
   test('basic', function () {
-    var _render = (0, _reactTestingLibrary.render)(_react.default.createElement(_.MaskedInput, {
+    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
       name: "item"
     })),
         container = _render.container;
@@ -29,7 +29,7 @@ describe('MaskedInput', function () {
     var onChange = jest.fn();
     var onFocus = jest.fn();
 
-    var _render2 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.MaskedInput, {
+    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -64,7 +64,7 @@ describe('MaskedInput', function () {
   test('option via mouse', function (done) {
     var onChange = jest.fn();
 
-    var _render3 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.MaskedInput, {
+    var _render3 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
       "data-testid": "test-input",
       plain: true,
       size: "large",
@@ -104,7 +104,7 @@ describe('MaskedInput', function () {
   test('option via keyboard', function (done) {
     var onChange = jest.fn();
 
-    var _render4 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.MaskedInput, {
+    var _render4 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -164,7 +164,7 @@ describe('MaskedInput', function () {
   test('next and previous without options', function (done) {
     var onChange = jest.fn();
 
-    var _render5 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.MaskedInput, {
+    var _render5 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",

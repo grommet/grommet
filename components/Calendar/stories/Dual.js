@@ -10,7 +10,7 @@ var _themes = require("grommet/themes");
 
 var _grommetIcons = require("grommet-icons");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -68,14 +68,14 @@ function (_Component) {
         dates = _this$state.dates,
         reference1 = _this$state.reference1,
         reference2 = _this$state.reference2;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       justify: "center",
       pad: "large",
       direction: "row",
       gap: "small"
-    }, _react.default.createElement(_grommet.Calendar, {
+    }, _react["default"].createElement(_grommet.Calendar, {
       animate: false,
       showAdjacentDays: false,
       range: true,
@@ -98,23 +98,23 @@ function (_Component) {
             locale = _ref.locale,
             onPreviousMonth = _ref.onPreviousMonth,
             previousInBound = _ref.previousInBound;
-        return _react.default.createElement(_grommet.Box, {
+        return _react["default"].createElement(_grommet.Box, {
           direction: "row",
           align: "center",
           justify: "between"
-        }, _react.default.createElement(_grommet.Button, {
+        }, _react["default"].createElement(_grommet.Button, {
           disabled: !previousInBound,
-          icon: _react.default.createElement(_grommetIcons.Previous, null),
+          icon: _react["default"].createElement(_grommetIcons.Previous, null),
           onClick: onPreviousMonth
-        }), _react.default.createElement(_grommet.Heading, {
+        }), _react["default"].createElement(_grommet.Heading, {
           level: 3,
           margin: "none"
         }, currentDate.toLocaleDateString(locale, {
           month: 'long',
           year: 'numeric'
-        })), _react.default.createElement(_grommetIcons.Blank, null));
+        })), _react["default"].createElement(_grommetIcons.Blank, null));
       }
-    }), _react.default.createElement(_grommet.Calendar, {
+    }), _react["default"].createElement(_grommet.Calendar, {
       animate: false,
       showAdjacentDays: false,
       date: date,
@@ -137,19 +137,19 @@ function (_Component) {
             locale = _ref2.locale,
             onNextMonth = _ref2.onNextMonth,
             nextInBound = _ref2.nextInBound;
-        return _react.default.createElement(_grommet.Box, {
+        return _react["default"].createElement(_grommet.Box, {
           direction: "row",
           align: "center",
           justify: "between"
-        }, _react.default.createElement(_grommetIcons.Blank, null), _react.default.createElement(_grommet.Heading, {
+        }, _react["default"].createElement(_grommetIcons.Blank, null), _react["default"].createElement(_grommet.Heading, {
           level: 3,
           margin: "none"
         }, currentDate.toLocaleDateString(locale, {
           month: 'long',
           year: 'numeric'
-        })), _react.default.createElement(_grommet.Button, {
+        })), _react["default"].createElement(_grommet.Button, {
           disabled: !nextInBound,
-          icon: _react.default.createElement(_grommetIcons.Next, null),
+          icon: _react["default"].createElement(_grommetIcons.Next, null),
           onClick: onNextMonth
         }));
       }
@@ -160,5 +160,5 @@ function (_Component) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('Calendar', module).add('Dual', function () {
-  return _react.default.createElement(DualCalendar, null);
+  return _react["default"].createElement(DualCalendar, null);
 });

@@ -14,13 +14,13 @@ var _portal = require("../../../utils/portal");
 
 var _ = require("..");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('Select', function () {
   beforeEach(_portal.createPortal);
   afterEach(_reactTestingLibrary.cleanup);
   test('basic', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Select, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Select, {
       id: "test-select",
       options: ['one', 'two']
     }));
@@ -30,7 +30,7 @@ describe('Select', function () {
   test('opens', function (done) {
     window.scrollTo = jest.fn();
 
-    var _render = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Select, {
       placeholder: "test select",
       id: "test-select",
       options: ['one', 'two']
@@ -51,7 +51,7 @@ describe('Select', function () {
     }, 100);
   });
   test('complex options and children', function () {
-    var _render2 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Select, {
       id: "test-select",
       placeholder: "test select",
       options: [{
@@ -60,7 +60,7 @@ describe('Select', function () {
         test: 'two'
       }]
     }, function (option) {
-      return _react.default.createElement("span", null, option.test);
+      return _react["default"].createElement("span", null, option.test);
     })),
         getByPlaceholderText = _render2.getByPlaceholderText,
         container = _render2.container;
@@ -77,7 +77,7 @@ describe('Select', function () {
     jest.useFakeTimers();
     var onSearch = jest.fn();
 
-    var _render3 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+    var _render3 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Select, {
       id: "test-select",
       placeholder: "test select",
       options: ['one', 'two'],
@@ -129,7 +129,7 @@ describe('Select', function () {
     window.scrollTo = jest.fn();
     var onChange = jest.fn();
 
-    var _render4 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+    var _render4 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Select, {
       id: "test-select",
       placeholder: "test select",
       options: ['one', 'two'],
@@ -152,10 +152,10 @@ describe('Select', function () {
     window.scrollTo = jest.fn();
     var onChange = jest.fn();
 
-    var _render5 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+    var _render5 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Select, {
       id: "test-select",
       plain: true,
-      value: _react.default.createElement("span", null, "one"),
+      value: _react["default"].createElement("span", null, "one"),
       options: [{
         test: 'one'
       }, {
@@ -163,7 +163,7 @@ describe('Select', function () {
       }],
       onChange: onChange
     }, function (option) {
-      return _react.default.createElement("span", null, option.test);
+      return _react["default"].createElement("span", null, option.test);
     })),
         getByText = _render5.getByText,
         container = _render5.container;
@@ -182,7 +182,7 @@ describe('Select', function () {
     window.scrollTo = jest.fn();
     var onChange = jest.fn();
 
-    var _render6 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+    var _render6 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Select, {
       id: "test-select",
       placeholder: "test select",
       options: ['one', 'two'],
@@ -219,7 +219,7 @@ describe('Select', function () {
     expect(window.scrollTo).toBeCalled();
   });
   test('size', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Select, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Select, {
       id: "test-select",
       size: "large",
       options: ['one', 'two'],
@@ -231,7 +231,7 @@ describe('Select', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('multiple', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Select, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Select, {
       id: "test-select",
       multiple: true,
       options: ['one', 'two'],
@@ -242,7 +242,7 @@ describe('Select', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('multiple values', function () {
-    var _render7 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+    var _render7 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Select, {
       id: "test-select",
       placeholder: "test select",
       multiple: true,
@@ -263,7 +263,7 @@ describe('Select', function () {
   test('select another option', function () {
     var onChange = jest.fn();
 
-    var _render8 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+    var _render8 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Select, {
       id: "test-select",
       placeholder: "test select",
       multiple: true,
@@ -286,7 +286,7 @@ describe('Select', function () {
   test('deselect an option', function () {
     var onChange = jest.fn();
 
-    var _render9 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+    var _render9 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Select, {
       id: "test-select",
       placeholder: "test select",
       multiple: true,
@@ -307,7 +307,7 @@ describe('Select', function () {
     expect(onChange).toBeCalled();
   });
   test('disabled', function () {
-    var _render10 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+    var _render10 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Select, {
       id: "test-select",
       placeholder: "test select",
       disabled: true,
@@ -326,7 +326,7 @@ describe('Select', function () {
   });
   ['small', 'medium', 'large'].forEach(function (dropHeight) {
     test(dropHeight + " drop container height", function () {
-      var _render11 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+      var _render11 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Select, {
         id: "test-select",
         size: "large",
         options: ['one', 'two'],
@@ -344,7 +344,7 @@ describe('Select', function () {
     });
   });
   test('empty results search', function () {
-    var _render12 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+    var _render12 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Select, {
       id: "test-select",
       placeholder: "test select",
       options: [],
@@ -362,7 +362,7 @@ describe('Select', function () {
     expect(document.activeElement).toMatchSnapshot();
   });
   test('open default state', function () {
-    (0, _reactTestingLibrary.render)(_react.default.createElement(_.Select, {
+    (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Select, {
       open: true,
       id: "test-select",
       placeholder: "test select",
@@ -371,7 +371,7 @@ describe('Select', function () {
     expect(document.getElementById('test-select__drop')).not.toBeNull();
   });
   test('renders without icon', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Select, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Select, {
       id: "test-select",
       options: ['one', 'two'],
       icon: false
@@ -380,7 +380,7 @@ describe('Select', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('renders custom icon', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Select, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Select, {
       id: "test-select",
       options: ['one', 'two'],
       icon: _grommetIcons.CaretDown
@@ -389,7 +389,7 @@ describe('Select', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('renders default icon', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Select, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Select, {
       id: "test-select",
       options: ['one', 'two'],
       icon: true

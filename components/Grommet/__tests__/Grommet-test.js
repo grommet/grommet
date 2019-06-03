@@ -18,7 +18,7 @@ var _Heading = require("../../Heading");
 
 var _contexts = require("../../../contexts");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -45,14 +45,14 @@ function (_Component) {
   };
 
   _proto.render = function render() {
-    return _react.default.createElement("div", null, "hi");
+    return _react["default"].createElement("div", null, "hi");
   };
 
   return TestAnnouncer;
 }(_react.Component);
 
 _defineProperty(TestAnnouncer, "propTypes", {
-  announce: _propTypes.default.func.isRequired
+  announce: _propTypes["default"].func.isRequired
 });
 
 var customBreakpointsTheme = {
@@ -101,14 +101,14 @@ function (_Component2) {
     var _this2 = this;
 
     var ua = this.props.ua;
-    return _react.default.createElement(_.Grommet, {
+    return _react["default"].createElement(_.Grommet, {
       theme: customBreakpointsTheme,
       userAgent: ua
-    }, _react.default.createElement(_contexts.ResponsiveContext.Consumer, null, function (size) {
+    }, _react["default"].createElement(_contexts.ResponsiveContext.Consumer, null, function (size) {
       _this2.sizes.push(size);
 
       return _this2.sizes.map(function (s) {
-        return _react.default.createElement(_Heading.Heading, {
+        return _react["default"].createElement(_Heading.Heading, {
           key: s
         }, "Received size " + s + " for " + ua);
       });
@@ -121,34 +121,34 @@ function (_Component2) {
 describe('Grommet', function () {
   afterEach(_reactTestingLibrary.cleanup);
   test('basic', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null));
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('hpe theme', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
       theme: _grommetThemeHpe.hpe
     }, "Grommet App"));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('cssVars', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
       cssVars: true
     }, "Grommet App"));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('full', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, {
       full: true
     }, "Grommet App"));
 
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('announce', function (done) {
-    var _render = (0, _reactTestingLibrary.render)(_react.default.createElement(_.Grommet, null, _react.default.createElement(_contexts.AnnounceContext.Consumer, null, function (announce) {
-      return _react.default.createElement(TestAnnouncer, {
+    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_contexts.AnnounceContext.Consumer, null, function (announce) {
+      return _react["default"].createElement(TestAnnouncer, {
         announce: announce
       });
     }))),
@@ -165,7 +165,7 @@ describe('Grommet', function () {
   });
   ['Mozilla/5.0 (iPhone; CPU iPhone OS 9_0_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13A452 Safari/601.1 PTST/396', 'Mozilla/5.0 (iPad; CPU OS 11_2_1 like Mac OS X) AppleWebKit/604.4.7 (KHTML, like Gecko) Mobile/15C153 [FBAN/FBIOS;FBAV/156.0.0.41.97;FBBV/89172188;FBDV/iPad5,3;FBMD/iPad;FBSN/iOS;FBSV/11.2.1;FBSS/2;FBCR/;FBID/tablet;FBLC/en_GB;FBOP/5;FBRV/0]', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36'].forEach(function (ua) {
     test("ssr rendering " + ua.substring(0, 25), function () {
-      var component = _reactTestRenderer.default.create(_react.default.createElement(SSRTester, {
+      var component = _reactTestRenderer["default"].create(_react["default"].createElement(SSRTester, {
         ua: ua
       }));
 

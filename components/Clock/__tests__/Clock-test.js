@@ -12,7 +12,7 @@ var _Grommet = require("../../Grommet");
 
 var _ = require("..");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var DURATION = 'PT18H23M34S';
 var TIME = 'T18:23:34';
@@ -21,19 +21,19 @@ var DATE = '2018-02-22T18:23:34-10:00';
 describe('Clock', function () {
   afterEach(_reactTestingLibrary.cleanup);
   test('time', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Clock, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Clock, {
       run: false,
       type: "digital",
       time: DURATION
-    }), _react.default.createElement(_.Clock, {
+    }), _react["default"].createElement(_.Clock, {
       run: false,
       type: "digital",
       time: TIME
-    }), _react.default.createElement(_.Clock, {
+    }), _react["default"].createElement(_.Clock, {
       run: false,
       type: "digital",
       time: TIME2
-    }), _react.default.createElement(_.Clock, {
+    }), _react["default"].createElement(_.Clock, {
       run: false,
       type: "digital",
       time: DATE
@@ -42,12 +42,12 @@ describe('Clock', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('hourLimit', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Clock, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Clock, {
       run: false,
       type: "digital",
       time: DURATION,
       hourLimit: 12
-    }), _react.default.createElement(_.Clock, {
+    }), _react["default"].createElement(_.Clock, {
       run: false,
       type: "digital",
       time: DURATION,
@@ -57,19 +57,19 @@ describe('Clock', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('run', function (done) {
-    var _render = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Clock, {
+    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Clock, {
       type: "analog",
       run: "forward",
       time: DURATION
-    }), _react.default.createElement(_.Clock, {
+    }), _react["default"].createElement(_.Clock, {
       type: "analog",
       run: "backward",
       time: DURATION
-    }), _react.default.createElement(_.Clock, {
+    }), _react["default"].createElement(_.Clock, {
       type: "digital",
       run: "forward",
       time: DURATION
-    }), _react.default.createElement(_.Clock, {
+    }), _react["default"].createElement(_.Clock, {
       type: "digital",
       run: "backward",
       time: DURATION
@@ -87,7 +87,7 @@ describe('Clock', function () {
     return ['hours', 'minutes', 'seconds'].forEach(function (precision) {
       return ['xsmall', 'small', 'medium', 'large', 'xlarge'].forEach(function (size) {
         return test("type " + type + " precision " + precision + " size " + size, function () {
-          var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Clock, {
+          var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Clock, {
             run: false,
             type: type,
             precision: precision,

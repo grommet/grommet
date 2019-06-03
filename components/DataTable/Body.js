@@ -15,7 +15,7 @@ var _Cell = require("./Cell");
 
 var _StyledDataTable = require("./StyledDataTable");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -31,22 +31,22 @@ var Body = function Body(_ref) {
       theme = _ref.theme,
       rest = _objectWithoutPropertiesLoose(_ref, ["columns", "data", "onMore", "primaryProperty", "size", "step", "theme"]);
 
-  return _react.default.createElement(_StyledDataTable.StyledDataTableBody, _extends({
+  return _react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
     size: size
-  }, rest), _react.default.createElement(_InfiniteScroll.InfiniteScroll, {
+  }, rest), _react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
     items: data,
     onMore: onMore,
     renderMarker: function renderMarker(marker) {
-      return _react.default.createElement(_TableRow.TableRow, null, _react.default.createElement(_TableCell.TableCell, null, marker));
+      return _react["default"].createElement(_TableRow.TableRow, null, _react["default"].createElement(_TableCell.TableCell, null, marker));
     },
     scrollableAncestor: "window",
     step: step
   }, function (datum) {
-    return _react.default.createElement(_StyledDataTable.StyledDataTableRow, {
+    return _react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
       key: datum[primaryProperty],
       size: size
     }, columns.map(function (column) {
-      return _react.default.createElement(_Cell.Cell, {
+      return _react["default"].createElement(_Cell.Cell, {
         key: column.property,
         context: "body",
         column: column,

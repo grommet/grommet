@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -31,12 +31,12 @@ function (_PureComponent) {
     var _this$props = this.props,
         value = _this$props.value,
         selected = _this$props.selected;
-    return _react.default.createElement(_grommet.Box, {
+    return _react["default"].createElement(_grommet.Box, {
       direction: "row",
       gap: "small",
       align: "center",
       pad: "xsmall"
-    }, _react.default.createElement(_grommet.CheckBox, {
+    }, _react["default"].createElement(_grommet.CheckBox, {
       tabIndex: "-1",
       checked: selected,
       onChange: function onChange() {}
@@ -85,15 +85,15 @@ function (_Component) {
     var _this$state = this.state,
         options = _this$state.options,
         selected = _this$state.selected;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       full: true,
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       fill: true,
       align: "center",
       justify: "start",
       pad: "large"
-    }, _react.default.createElement(_grommet.Select, {
+    }, _react["default"].createElement(_grommet.Select, {
       multiple: true,
       closeOnChange: false,
       placeholder: "select an option...",
@@ -129,7 +129,7 @@ function (_Component) {
         });
       }
     }, function (option, index) {
-      return _react.default.createElement(Option, {
+      return _react["default"].createElement(Option, {
         value: option,
         selected: selected.indexOf(index) !== -1
       });
@@ -140,5 +140,5 @@ function (_Component) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('Select', module).add('Lots of options', function () {
-  return _react.default.createElement(ManyOptions, null);
+  return _react["default"].createElement(ManyOptions, null);
 });

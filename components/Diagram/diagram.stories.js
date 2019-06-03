@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -24,7 +24,7 @@ var Node = function Node(_ref) {
   var id = _ref.id,
       rest = _objectWithoutPropertiesLoose(_ref, ["id"]);
 
-  return _react.default.createElement(_grommet.Box, _extends({
+  return _react["default"].createElement(_grommet.Box, _extends({
     id: id,
     basis: "xxsmall",
     margin: "small",
@@ -107,34 +107,34 @@ function (_React$Component) {
       }));
     }
 
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       align: "start",
       pad: "large"
-    }, _react.default.createElement(_grommet.Stack, null, _react.default.createElement(_grommet.Box, null, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.Box, {
       direction: "row"
     }, topRow.map(function (id) {
-      return _react.default.createElement(Node, {
+      return _react["default"].createElement(Node, {
         key: id,
         id: id
       });
-    })), _react.default.createElement(_grommet.Box, {
+    })), _react["default"].createElement(_grommet.Box, {
       direction: "row"
     }, [4, 5].map(function (id) {
-      return _react.default.createElement(Node, {
+      return _react["default"].createElement(Node, {
         key: id,
         id: id,
         background: "neutral-2"
       });
-    }))), _react.default.createElement(_grommet.Diagram, {
+    }))), _react["default"].createElement(_grommet.Diagram, {
       connections: connections
     }))));
   };
 
   return SimpleDiagram;
-}(_react.default.Component);
+}(_react["default"].Component);
 
 (0, _react2.storiesOf)('Diagram', module).add('Simple Diagram', function () {
-  return _react.default.createElement(SimpleDiagram, null);
+  return _react["default"].createElement(SimpleDiagram, null);
 });

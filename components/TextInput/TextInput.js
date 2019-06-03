@@ -27,7 +27,7 @@ var _hocs = require("../hocs");
 
 var _StyledTextInput = require("./StyledTextInput");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -59,7 +59,7 @@ function stringLabel(suggestion) {
   return suggestion;
 }
 
-var ContainerBox = (0, _styledComponents.default)(_Box.Box).withConfig({
+var ContainerBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "TextInput__ContainerBox",
   componentId: "sc-1ai0c08-0"
 })(["", ";@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}"], function (props) {
@@ -85,7 +85,7 @@ function (_Component) {
       showDrop: false
     });
 
-    _defineProperty(_assertThisInitialized(_this), "inputRef", _react.default.createRef());
+    _defineProperty(_assertThisInitialized(_this), "inputRef", _react["default"].createRef());
 
     _defineProperty(_assertThisInitialized(_this), "announce", function (message, mode) {
       var _this$props = _this.props,
@@ -322,21 +322,21 @@ function (_Component) {
       var _this$state3 = _this.state,
           activeSuggestionIndex = _this$state3.activeSuggestionIndex,
           selectedSuggestionIndex = _this$state3.selectedSuggestionIndex;
-      return _react.default.createElement(_StyledTextInput.StyledSuggestions, null, _react.default.createElement(_InfiniteScroll.InfiniteScroll, {
+      return _react["default"].createElement(_StyledTextInput.StyledSuggestions, null, _react["default"].createElement(_InfiniteScroll.InfiniteScroll, {
         items: suggestions,
         step: theme.select.step
       }, function (suggestion, index) {
         var plain = typeof suggestion === 'object' && typeof (0, _react.isValidElement)(suggestion.label);
-        return _react.default.createElement("li", {
+        return _react["default"].createElement("li", {
           key: stringLabel(suggestion) + "-" + index
-        }, _react.default.createElement(_Button.Button, {
+        }, _react["default"].createElement(_Button.Button, {
           active: activeSuggestionIndex === index || selectedSuggestionIndex === index,
           fill: true,
           hoverIndicator: "background",
           onClick: function onClick(event) {
             _this.onClickSuggestion(suggestion, event);
           }
-        }, plain ? renderLabel(suggestion) : _react.default.createElement(_Box.Box, {
+        }, plain ? renderLabel(suggestion) : _react["default"].createElement(_Box.Box, {
           align: "start",
           pad: "small"
         }, renderLabel(suggestion))));
@@ -414,7 +414,7 @@ function (_Component) {
     var drop;
 
     if (showDrop) {
-      drop = _react.default.createElement(_Drop.Drop, _extends({
+      drop = _react["default"].createElement(_Drop.Drop, _extends({
         id: id ? "text-input-drop__" + id : undefined,
         align: dropAlign,
         responsive: false,
@@ -429,22 +429,22 @@ function (_Component) {
             showDrop: false
           });
         }
-      }, dropProps), _react.default.createElement(ContainerBox, {
+      }, dropProps), _react["default"].createElement(ContainerBox, {
         overflow: "auto",
         dropHeight: dropHeight
       }, this.renderSuggestions()));
     }
 
-    return _react.default.createElement(_StyledTextInput.StyledTextInputContainer, {
+    return _react["default"].createElement(_StyledTextInput.StyledTextInputContainer, {
       plain: plain
-    }, placeholder && typeof placeholder !== 'string' && !value ? _react.default.createElement(_StyledTextInput.StyledPlaceholder, null, placeholder) : null, _react.default.createElement(_Keyboard.Keyboard, {
+    }, placeholder && typeof placeholder !== 'string' && !value ? _react["default"].createElement(_StyledTextInput.StyledPlaceholder, null, placeholder) : null, _react["default"].createElement(_Keyboard.Keyboard, {
       onEnter: this.onSuggestionSelect,
       onEsc: this.onEsc,
       onTab: this.onTab,
       onUp: this.onPreviousSuggestion,
       onDown: this.onNextSuggestion,
       onKeyDown: onKeyDown
-    }, _react.default.createElement(_StyledTextInput.StyledTextInput, _extends({
+    }, _react["default"].createElement(_StyledTextInput.StyledTextInput, _extends({
       id: id,
       ref: forwardRef || this.inputRef,
       autoComplete: "off",

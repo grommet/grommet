@@ -13,7 +13,7 @@ var _defaultProps = require("../../default-props");
 
 var _Box = require("../Box");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -25,7 +25,7 @@ var animatedBoxProperty = function animatedBoxProperty(direction) {
   return direction === 'horizontal' ? 'width' : 'height';
 };
 
-var AnimatedBox = (0, _styledComponents.default)(_Box.Box).withConfig({
+var AnimatedBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "Collapsible__AnimatedBox",
   componentId: "sc-15kniua-0"
 })(["", ";"], function (props) {
@@ -133,7 +133,7 @@ function (_Component) {
     var _this$state2 = this.state,
         animate = _this$state2.animate,
         open = _this$state2.open;
-    return _react.default.createElement(AnimatedBox, {
+    return _react["default"].createElement(AnimatedBox, {
       "aria-hidden": !open,
       ref: this.ref,
       open: open,

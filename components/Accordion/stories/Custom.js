@@ -8,7 +8,7 @@ var _grommetIcons = require("grommet-icons");
 
 var _grommet = require("grommet");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -33,42 +33,42 @@ var CustomAccordion = function CustomAccordion(_ref) {
       multiple = _ref.multiple,
       rest = _objectWithoutPropertiesLoose(_ref, ["animate", "multiple"]);
 
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: CustomAccordionTheme
-  }, _react.default.createElement(_grommet.Box, _extends({}, rest, {
+  }, _react["default"].createElement(_grommet.Box, _extends({}, rest, {
     pad: "large",
     align: "center",
     justify: "center"
-  }), _react.default.createElement(_grommet.Accordion, {
+  }), _react["default"].createElement(_grommet.Accordion, {
     animate: animate,
     multiple: true
-  }, _react.default.createElement(_grommet.AccordionPanel, {
-    label: _react.default.createElement(_grommet.Text, {
+  }, _react["default"].createElement(_grommet.AccordionPanel, {
+    label: _react["default"].createElement(_grommet.Text, {
       size: "large"
     }, "Panel 1 - uses large Text size")
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     background: "light-2",
     height: "small"
-  }, "Important Info")), _react.default.createElement(_grommet.AccordionPanel, {
-    label: _react.default.createElement(_grommet.Text, {
+  }, "Important Info")), _react["default"].createElement(_grommet.AccordionPanel, {
+    label: _react["default"].createElement(_grommet.Text, {
       size: "xlarge",
       margin: "vertical"
     }, "Panel 2 - uses xlarge Text size")
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     background: "light-2",
     height: "xsmall"
-  }, _react.default.createElement(_grommet.Text, {
+  }, _react["default"].createElement(_grommet.Text, {
     size: "small"
-  }, "Important Info"))), _react.default.createElement(_grommet.AccordionPanel, {
+  }, "Important Info"))), _react["default"].createElement(_grommet.AccordionPanel, {
     label: "Panel 3 - uses custom theme heading level for sizing"
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     background: "light-2",
     height: "xsmall"
-  }, _react.default.createElement(_grommet.Text, {
+  }, _react["default"].createElement(_grommet.Text, {
     size: "small"
   }, "Important Info"))))));
 };
 
 (0, _react2.storiesOf)('Accordion', module).add('Custom', function () {
-  return _react.default.createElement(CustomAccordion, null);
+  return _react["default"].createElement(CustomAccordion, null);
 });

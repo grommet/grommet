@@ -11,7 +11,7 @@ var _Heading = require("../Heading");
 
 var _Layer = require("../Layer");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -76,19 +76,19 @@ function (_Component) {
         id = _this$props.id,
         messages = _this$props.messages;
     var showLayer = this.state.showLayer;
-    return _react.default.createElement(_Layer.Layer, {
+    return _react["default"].createElement(_Layer.Layer, {
       id: id,
       position: showLayer ? 'top' : 'hidden',
       ref: this.layerRef,
       onFocus: this.onFocus,
       onBlur: this.onBlur
-    }, _react.default.createElement(_Box.Box, {
+    }, _react["default"].createElement(_Box.Box, {
       pad: {
         horizontal: 'medium'
       }
-    }, _react.default.createElement(_Heading.Heading, {
+    }, _react["default"].createElement(_Heading.Heading, {
       level: 2
-    }, messages.skipTo, ":"), _react.default.createElement(_Box.Box, {
+    }, messages.skipTo, ":"), _react["default"].createElement(_Box.Box, {
       direction: "row",
       align: "center",
       pad: {

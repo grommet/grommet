@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -47,20 +47,20 @@ function (_Component) {
 
   _proto.render = function render() {
     var date = this.state.date;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       align: "center",
       pad: "large"
-    }, _react.default.createElement(_grommet.Calendar, {
+    }, _react["default"].createElement(_grommet.Calendar, {
       date: date,
       onSelect: this.onSelect,
       size: "small",
       bounds: ['2018-09-08', '2020-12-13']
-    })), _react.default.createElement(_grommet.Box, {
+    })), _react["default"].createElement(_grommet.Box, {
       align: "center",
       pad: "large"
-    }, _react.default.createElement(_grommet.Calendar, {
+    }, _react["default"].createElement(_grommet.Calendar, {
       date: date,
       daysOfWeek: true,
       onSelect: this.onSelect,
@@ -73,5 +73,5 @@ function (_Component) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('Calendar', module).add('Simple', function () {
-  return _react.default.createElement(SimpleCalendar, null);
+  return _react["default"].createElement(SimpleCalendar, null);
 });

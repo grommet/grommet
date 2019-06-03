@@ -9,14 +9,14 @@ var _utils = require("../../utils");
 
 var _defaultProps = require("../../default-props");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 var sizeStyle = function sizeStyle(props) {
   var data = props.theme.calendar[props.sizeProp];
   return (0, _styledComponents.css)(["font-size:", ";line-height:", ";width:", ";"], data.fontSize, data.lineHeight, props.theme.global.size[props.sizeProp]);
 };
 
-var StyledCalendar = _styledComponents.default.div.withConfig({
+var StyledCalendar = _styledComponents["default"].div.withConfig({
   displayName: "StyledCalendar",
   componentId: "sc-1y4xhmp-0"
 })(["", " ", " ", ""], _utils.genericStyles, function (props) {
@@ -29,7 +29,7 @@ exports.StyledCalendar = StyledCalendar;
 StyledCalendar.defaultProps = {};
 Object.setPrototypeOf(StyledCalendar.defaultProps, _defaultProps.defaultProps);
 
-var StyledWeeksContainer = _styledComponents.default.div.withConfig({
+var StyledWeeksContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledCalendar__StyledWeeksContainer",
   componentId: "sc-1y4xhmp-1"
 })(["overflow:hidden;", ";"], function (props) {
@@ -56,7 +56,7 @@ var slideStyle = function slideStyle(props) {
   return (0, _styledComponents.css)(["animation:", " ", " forwards;"], (0, _styledComponents.keyframes)(["", ""], slideTransition), slideDuration);
 };
 
-var StyledWeeks = _styledComponents.default.div.withConfig({
+var StyledWeeks = _styledComponents["default"].div.withConfig({
   displayName: "StyledCalendar__StyledWeeks",
   componentId: "sc-1y4xhmp-2"
 })(["position:relative;", ";"], function (props) {
@@ -67,7 +67,7 @@ exports.StyledWeeks = StyledWeeks;
 StyledWeeks.defaultProps = {};
 Object.setPrototypeOf(StyledWeeks.defaultProps, _defaultProps.defaultProps);
 
-var StyledWeek = _styledComponents.default.div.withConfig({
+var StyledWeek = _styledComponents["default"].div.withConfig({
   displayName: "StyledCalendar__StyledWeek",
   componentId: "sc-1y4xhmp-3"
 })(["display:flex;flex-direction:row;flex-justify:between;"]);
@@ -76,7 +76,7 @@ exports.StyledWeek = StyledWeek;
 StyledWeek.defaultProps = {};
 Object.setPrototypeOf(StyledWeek.defaultProps, _defaultProps.defaultProps);
 
-var StyledDayContainer = _styledComponents.default.div.withConfig({
+var StyledDayContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledCalendar__StyledDayContainer",
   componentId: "sc-1y4xhmp-4"
 })(["flex:0 0 auto;"]);
@@ -90,7 +90,7 @@ var daySizeStyle = function daySizeStyle(props) {
   return (0, _styledComponents.css)(["width:", ";height:", ";"], data.daySize, data.daySize);
 };
 
-var StyledDay = _styledComponents.default.div.withConfig({
+var StyledDay = _styledComponents["default"].div.withConfig({
   displayName: "StyledCalendar__StyledDay",
   componentId: "sc-1y4xhmp-5"
 })(["display:flex;justify-content:center;align-items:center;", " ", " ", " ", " ", ""], function (props) {

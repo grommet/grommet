@@ -25,7 +25,7 @@ var _hocs = require("../hocs");
 
 var _FormContext = require("../Form/FormContext");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -57,7 +57,7 @@ var validateField = function validateField(required, validate, messages) {
   };
 };
 
-var FormFieldBox = (0, _styledComponents.default)(_Box.Box).withConfig({
+var FormFieldBox = (0, _styledComponents["default"])(_Box.Box).withConfig({
   displayName: "FormField__FormFieldBox",
   componentId: "m9hood-0"
 })(["", ""], function (props) {
@@ -92,7 +92,7 @@ function (_Component) {
       var Input = component || _TextInput.TextInput;
 
       if (Input === _CheckBox.CheckBox) {
-        return _react.default.createElement(Input, _extends({
+        return _react["default"].createElement(Input, _extends({
           name: name,
           checked: value[name] !== undefined ? value[name] : checked || false,
           onChange: function onChange(event) {
@@ -102,7 +102,7 @@ function (_Component) {
         }, rest));
       }
 
-      return _react.default.createElement(Input, _extends({
+      return _react["default"].createElement(Input, _extends({
         name: name,
         value: value[name] !== undefined ? value[name] : valueProp || '',
         onChange: function onChange(event) {
@@ -169,7 +169,7 @@ function (_Component) {
     }
 
     if (pad) {
-      contents = _react.default.createElement(_Box.Box, formField.content, contents);
+      contents = _react["default"].createElement(_Box.Box, formField.content, contents);
     }
 
     var borderColor;
@@ -198,7 +198,7 @@ function (_Component) {
 
         return child;
       }) : contents;
-      contents = _react.default.createElement(_Box.Box, {
+      contents = _react["default"].createElement(_Box.Box, {
         ref: function ref(_ref) {
           _this2.childContainerRef = _ref;
         },
@@ -225,19 +225,19 @@ function (_Component) {
       }
     }
 
-    return _react.default.createElement(FormFieldBox, {
+    return _react["default"].createElement(FormFieldBox, {
       className: className,
       border: border && border.position === 'outer' ? _extends({}, border, {
         color: borderColor
       }) : undefined,
       margin: abut ? undefined : _extends({}, formField.margin),
       style: outerStyle
-    }, label && component !== _CheckBox.CheckBox || help ? _react.default.createElement(_react.default.Fragment, null, label && component !== _CheckBox.CheckBox && _react.default.createElement(_Text.Text, _extends({
+    }, label && component !== _CheckBox.CheckBox || help ? _react["default"].createElement(_react["default"].Fragment, null, label && component !== _CheckBox.CheckBox && _react["default"].createElement(_Text.Text, _extends({
       as: "label",
       htmlFor: htmlFor
-    }, formField.label), label), help && _react.default.createElement(_Text.Text, _extends({}, formField.help, {
+    }, formField.label), label), help && _react["default"].createElement(_Text.Text, _extends({}, formField.help, {
       color: formField.help.color[theme.dark ? 'dark' : 'light']
-    }), help)) : undefined, contents, normalizedError && _react.default.createElement(_Text.Text, _extends({}, formField.error, {
+    }), help)) : undefined, contents, normalizedError && _react["default"].createElement(_Text.Text, _extends({}, formField.error, {
       color: formField.error.color[theme.dark ? 'dark' : 'light']
     }), normalizedError));
   };
@@ -263,8 +263,8 @@ function (_Component2) {
   _proto2.render = function render() {
     var _this3 = this;
 
-    return _react.default.createElement(_FormContext.FormContext.Consumer, null, function (context) {
-      return _react.default.createElement(FormFieldContent, _extends({
+    return _react["default"].createElement(_FormContext.FormContext.Consumer, null, function (context) {
+      return _react["default"].createElement(FormFieldContent, _extends({
         context: context
       }, _this3.props));
     });

@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -78,21 +78,21 @@ function (_Component) {
     var _this$state = this.state,
         checked = _this$state.checked,
         checkboxes = _this$state.checkboxes;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       align: "center",
       pad: "large"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       direction: "row",
       gap: "medium"
-    }, _react.default.createElement(_grommet.CheckBox, {
+    }, _react["default"].createElement(_grommet.CheckBox, {
       checked: checked.length === 3,
       indeterminate: checked.length > 0 && checked.length < 3,
       label: "All",
       onChange: this.onCheckAll
     }), checkboxes.map(function (item) {
-      return _react.default.createElement(_grommet.CheckBox, {
+      return _react["default"].createElement(_grommet.CheckBox, {
         key: item,
         checked: checked.indexOf(item) !== -1,
         label: item,
@@ -107,5 +107,5 @@ function (_Component) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('CheckBox', module).add('Interminate', function () {
-  return _react.default.createElement(IndeterminateCheckBox, null);
+  return _react["default"].createElement(IndeterminateCheckBox, null);
 });

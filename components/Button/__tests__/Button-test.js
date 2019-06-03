@@ -10,11 +10,11 @@ var _utils = require("../../../utils");
 
 var _ = require("../..");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('Button', function () {
   test('basic', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       label: "Test",
       onClick: function onClick() {}
     })));
@@ -23,10 +23,10 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('children function', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       onClick: function onClick() {}
     }, function () {
-      return _react.default.createElement(_.Text, null, "Test");
+      return _react["default"].createElement(_.Text, null, "Test");
     })));
 
     var tree = component.toJSON();
@@ -35,7 +35,7 @@ describe('Button', function () {
   test('warns about invalid label', function () {
     var warnSpy = jest.spyOn(console, 'warn');
 
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       label: "Test",
       onClick: function onClick() {}
     }, "invalid")));
@@ -49,8 +49,8 @@ describe('Button', function () {
   test('warns about invalid icon', function () {
     var warnSpy = jest.spyOn(console, 'warn');
 
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
-      icon: _react.default.createElement("svg", null),
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
+      icon: _react["default"].createElement("svg", null),
       onClick: function onClick() {}
     }, "invalid")));
 
@@ -61,7 +61,7 @@ describe('Button', function () {
     warnSpy.mockRestore();
   });
   test('primary', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       primary: true,
       label: "Test",
       onClick: function onClick() {}
@@ -71,21 +71,21 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('color', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       color: "accent-1",
       label: "Test",
       onClick: function onClick() {}
-    }), _react.default.createElement(_.Button, {
+    }), _react["default"].createElement(_.Button, {
       color: "accent-1",
       primary: true,
       label: "Test",
       onClick: function onClick() {}
-    }), _react.default.createElement(_.Button, {
+    }), _react["default"].createElement(_.Button, {
       color: "#111111",
       primary: true,
       label: "Test",
       onClick: function onClick() {}
-    }), _react.default.createElement(_.Button, {
+    }), _react["default"].createElement(_.Button, {
       color: "#123",
       primary: true,
       label: "Test",
@@ -96,13 +96,13 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('fill', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, null, _react["default"].createElement(_.Button, {
       fill: true
-    }), _react.default.createElement(_.Button, {
+    }), _react["default"].createElement(_.Button, {
       fill: false
-    }), _react.default.createElement(_.Button, {
+    }), _react["default"].createElement(_.Button, {
       fill: "horizontal"
-    }), _react.default.createElement(_.Button, {
+    }), _react["default"].createElement(_.Button, {
       fill: "vertical"
     }))));
 
@@ -110,7 +110,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('focus', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       focus: true,
       label: "Test",
       onClick: function onClick() {}
@@ -120,7 +120,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('disabled', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       disabled: true
     })));
 
@@ -128,8 +128,8 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('icon label', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
-      icon: _react.default.createElement("svg", null),
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
+      icon: _react["default"].createElement("svg", null),
       label: "Test",
       onClick: function onClick() {}
     })));
@@ -138,9 +138,9 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('reverse icon label', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       reverse: true,
-      icon: _react.default.createElement("svg", null),
+      icon: _react["default"].createElement("svg", null),
       label: "Test",
       onClick: function onClick() {}
     })));
@@ -149,7 +149,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('href', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       href: "test"
     })));
 
@@ -157,7 +157,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('hoverIndicator background', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       onClick: function onClick() {},
       hoverIndicator: "background"
     }, "hoverIndicator")));
@@ -166,7 +166,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('hoverIndicator as object', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       onClick: function onClick() {},
       hoverIndicator: {
         background: true
@@ -177,7 +177,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('hoverIndicator as object with color', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       onClick: function onClick() {},
       hoverIndicator: {
         background: 'brand'
@@ -188,7 +188,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('hoverIndicator as object with colorIndex', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       onClick: function onClick() {},
       hoverIndicator: {
         background: 'accent-1'
@@ -199,7 +199,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('hoverIndicator as object with invalid color', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       onClick: function onClick() {},
       hoverIndicator: {
         background: 'accent'
@@ -208,7 +208,7 @@ describe('Button', function () {
 
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-    component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       onClick: function onClick() {},
       hoverIndicator: {
         background: 'invalid'
@@ -218,7 +218,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('hoverIndicator as object with invalid colorIndex', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       onClick: function onClick() {},
       hoverIndicator: {
         background: 'accent-100'
@@ -229,7 +229,7 @@ describe('Button', function () {
     expect(tree).toMatchSnapshot();
   });
   test('hoverIndicator color', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       onClick: function onClick() {},
       hoverIndicator: "dark-3"
     }, "hoverIndicator")));
@@ -240,7 +240,7 @@ describe('Button', function () {
   test('onClick', function () {
     var onClick = jest.fn();
 
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       label: "Test",
       onClick: onClick
     })));
@@ -251,7 +251,7 @@ describe('Button', function () {
     expect(onClick).toBeCalled();
   });
   test('as', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.Grommet, null, _react.default.createElement(_.Button, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Button, {
       as: "span"
     })));
 

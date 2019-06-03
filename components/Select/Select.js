@@ -25,17 +25,17 @@ var _hocs = require("../hocs");
 
 var _SelectContainer = require("./SelectContainer");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var SelectTextInput = (0, _styledComponents.default)(_TextInput.TextInput).withConfig({
+var SelectTextInput = (0, _styledComponents["default"])(_TextInput.TextInput).withConfig({
   displayName: "Select__SelectTextInput",
   componentId: "sc-17idtfo-0"
 })(["cursor:pointer;"]);
-var StyledSelectDropButton = (0, _styledComponents.default)(_DropButton.DropButton).withConfig({
+var StyledSelectDropButton = (0, _styledComponents["default"])(_DropButton.DropButton).withConfig({
   displayName: "Select__StyledSelectDropButton",
   componentId: "sc-17idtfo-1"
 })(["", ";", ";"], function (props) {
@@ -140,13 +140,13 @@ var Select = function Select(props) {
     selectValue = valueLabel;
   } else if (Array.isArray(value)) {
     if (value.length > 1) {
-      if (_react.default.isValidElement(value[0])) {
+      if (_react["default"].isValidElement(value[0])) {
         selectValue = value;
       } else {
         inputValue = messages.multiple;
       }
     } else if (value.length === 1) {
-      if (_react.default.isValidElement(value[0])) {
+      if (_react["default"].isValidElement(value[0])) {
         selectValue = value[0];
       } else if (labelKey && typeof value[0] === 'object') {
         if (typeof labelKey === 'function') {
@@ -166,7 +166,7 @@ var Select = function Select(props) {
     } else {
       inputValue = value[labelKey];
     }
-  } else if (_react.default.isValidElement(value)) {
+  } else if (_react["default"].isValidElement(value)) {
     selectValue = value; // deprecated in favor of valueLabel
   } else if (selected !== undefined) {
     if (Array.isArray(selected)) {
@@ -185,10 +185,10 @@ var Select = function Select(props) {
 
   var iconColor = (0, _utils.normalizeColor)(theme.select.icons.color || 'control', theme);
   delete rest.onSearch;
-  return _react.default.createElement(_Keyboard.Keyboard, {
+  return _react["default"].createElement(_Keyboard.Keyboard, {
     onDown: onRequestOpen,
     onUp: onRequestOpen
-  }, _react.default.createElement(StyledSelectDropButton, {
+  }, _react["default"].createElement(StyledSelectDropButton, {
     ref: forwardRef,
     id: id,
     disabled: disabled === true || undefined,
@@ -200,21 +200,21 @@ var Select = function Select(props) {
     margin: margin,
     onOpen: onRequestOpen,
     onClose: onRequestClose,
-    dropContent: _react.default.createElement(_SelectContainer.SelectContainer, _extends({}, props, {
+    dropContent: _react["default"].createElement(_SelectContainer.SelectContainer, _extends({}, props, {
       onChange: onSelectChange
     })),
     plain: plain,
     dropProps: _extends({}, dropProps)
-  }, _react.default.createElement(_Box.Box, {
+  }, _react["default"].createElement(_Box.Box, {
     align: "center",
     direction: "row",
     justify: "between",
     background: theme.select.background
-  }, _react.default.createElement(_Box.Box, {
+  }, _react["default"].createElement(_Box.Box, {
     direction: "row",
     flex: true,
     basis: "auto"
-  }, selectValue || _react.default.createElement(SelectTextInput, _extends({
+  }, selectValue || _react["default"].createElement(SelectTextInput, _extends({
     a11yTitle: a11yTitle && "" + a11yTitle + (typeof value === 'string' ? ", " + value : ''),
     id: id ? id + "__input" : undefined,
     ref: inputRef
@@ -227,13 +227,13 @@ var Select = function Select(props) {
     value: inputValue,
     size: size,
     onClick: disabled === true ? undefined : onRequestOpen
-  }))), SelectIcon && _react.default.createElement(_Box.Box, {
+  }))), SelectIcon && _react["default"].createElement(_Box.Box, {
     margin: theme.select.icons.margin,
     flex: false,
     style: {
       minWidth: 'auto'
     }
-  }, (0, _react.isValidElement)(SelectIcon) ? SelectIcon : _react.default.createElement(SelectIcon, {
+  }, (0, _react.isValidElement)(SelectIcon) ? SelectIcon : _react["default"].createElement(SelectIcon, {
     color: iconColor,
     size: size
   })))));

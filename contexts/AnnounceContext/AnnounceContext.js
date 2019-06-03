@@ -5,7 +5,7 @@ exports.AnnounceContext = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var createAnnouncer = function createAnnouncer() {
   var announcer = document.createElement('div');
@@ -17,7 +17,7 @@ var createAnnouncer = function createAnnouncer() {
   return announcer;
 };
 
-var AnnounceContext = _react.default.createContext(function (message, mode, timeout) {
+var AnnounceContext = _react["default"].createContext(function (message, mode, timeout) {
   if (mode === void 0) {
     mode = 'polite';
   }

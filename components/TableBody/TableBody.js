@@ -9,12 +9,12 @@ var _TableContext = require("../Table/TableContext");
 
 var _StyledTable = require("../Table/StyledTable");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var TableBody = function TableBody(props) {
-  return _react.default.createElement(_TableContext.TableContext.Provider, {
+  return _react["default"].createElement(_TableContext.TableContext.Provider, {
     value: "body"
-  }, _react.default.createElement(_StyledTable.StyledTableBody, props));
+  }, _react["default"].createElement(_StyledTable.StyledTableBody, props));
 };
 
 var TableBodyDoc;

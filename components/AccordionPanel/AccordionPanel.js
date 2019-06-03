@@ -25,7 +25,7 @@ var _hocs = require("../hocs");
 
 var _AccordionContext = require("../Accordion/AccordionContext");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -144,14 +144,14 @@ function (_Component) {
 
     var hover = this.state.hover;
     var iconColor = (0, _utils.normalizeColor)(theme.accordion.icons.color || 'control', theme);
-    return _react.default.createElement(_AccordionContext.AccordionContext.Consumer, null, function (panelContext) {
+    return _react["default"].createElement(_AccordionContext.AccordionContext.Consumer, null, function (panelContext) {
       var active = panelContext.active,
           animate = panelContext.animate,
           onPanelChange = panelContext.onPanelChange;
       var AccordionIcon = active ? theme.accordion.icons.collapse : theme.accordion.icons.expand;
-      return _react.default.createElement(_Box.Box, {
+      return _react["default"].createElement(_Box.Box, {
         flex: false
-      }, _react.default.createElement(_Button.Button, {
+      }, _react["default"].createElement(_Button.Button, {
         role: "tab",
         "aria-selected": active,
         "aria-expanded": active,
@@ -160,26 +160,26 @@ function (_Component) {
         onMouseOut: _this2.onMouseOut,
         onFocus: _this2.onFocus,
         onBlur: _this2.onBlur
-      }, header || _react.default.createElement(_Box.Box, _extends({
+      }, header || _react["default"].createElement(_Box.Box, _extends({
         align: "center",
         direction: "row",
         justify: "between"
-      }, rest), typeof label === 'string' ? _react.default.createElement(_Box.Box, {
+      }, rest), typeof label === 'string' ? _react["default"].createElement(_Box.Box, {
         pad: {
           horizontal: 'xsmall'
         }
-      }, _react.default.createElement(_Heading.Heading, {
+      }, _react["default"].createElement(_Heading.Heading, {
         level: theme.accordion.heading && theme.accordion.heading.level || 4,
         color: hover
-      }, label)) : label, AccordionIcon && _react.default.createElement(_Box.Box, {
+      }, label)) : label, AccordionIcon && _react["default"].createElement(_Box.Box, {
         pad: {
           horizontal: 'small'
         }
-      }, _react.default.createElement(AccordionIcon, {
+      }, _react["default"].createElement(AccordionIcon, {
         color: iconColor
-      })))), _react.default.createElement(_Box.Box, {
+      })))), _react["default"].createElement(_Box.Box, {
         border: theme.accordion.border
-      }, animate ? _react.default.createElement(_Collapsible.Collapsible, {
+      }, animate ? _react["default"].createElement(_Collapsible.Collapsible, {
         open: active
       }, children) : active && children));
     });

@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -55,28 +55,28 @@ function (_Component) {
         rest = _objectWithoutPropertiesLoose(_this$props, ["direction"]);
 
     var values = this.state.values;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       align: "center",
       pad: "large"
-    }, _react.default.createElement(_grommet.Stack, null, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, {
       direction: direction === 'vertical' ? 'column' : 'row',
       justify: "between"
     }, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(function (value) {
-      return _react.default.createElement(_grommet.Box, {
+      return _react["default"].createElement(_grommet.Box, {
         key: value,
         width: "xxsmall",
         height: "xxsmall",
         align: "center",
         pad: "small",
         border: false
-      }, _react.default.createElement(_grommet.Text, {
+      }, _react["default"].createElement(_grommet.Text, {
         style: {
           fontFamily: 'monospace'
         }
       }, value));
-    })), _react.default.createElement(_grommet.RangeSelector, _extends({
+    })), _react["default"].createElement(_grommet.RangeSelector, _extends({
       direction: direction,
       min: 10,
       max: 20,
@@ -94,13 +94,13 @@ _defineProperty(SimpleRangeSelector, "defaultProps", {
 });
 
 (0, _react2.storiesOf)('RangeSelector', module).add('Simple', function () {
-  return _react.default.createElement(SimpleRangeSelector, null);
+  return _react["default"].createElement(SimpleRangeSelector, null);
 }).add('Step', function () {
-  return _react.default.createElement(SimpleRangeSelector, {
+  return _react["default"].createElement(SimpleRangeSelector, {
     step: 2
   });
 }).add('Vertical', function () {
-  return _react.default.createElement(SimpleRangeSelector, {
+  return _react["default"].createElement(SimpleRangeSelector, {
     direction: "vertical"
   });
 });

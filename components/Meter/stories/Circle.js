@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -57,12 +57,12 @@ function (_React$Component) {
 
   _proto.render = function render() {
     var value = this.state.value;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       align: "center",
       pad: "large"
-    }, _react.default.createElement(_grommet.Meter, {
+    }, _react["default"].createElement(_grommet.Meter, {
       type: "circle",
       background: "light-2",
       values: [{
@@ -73,8 +73,8 @@ function (_React$Component) {
   };
 
   return CircleMeter;
-}(_react.default.Component);
+}(_react["default"].Component);
 
 (0, _react2.storiesOf)('Meter', module).add('Circle', function () {
-  return _react.default.createElement(CircleMeter, null);
+  return _react["default"].createElement(CircleMeter, null);
 });

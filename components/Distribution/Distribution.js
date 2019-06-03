@@ -11,9 +11,9 @@ var _Box = require("../Box");
 
 var _Text = require("../Text");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -26,7 +26,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var Value = function Value(_ref) {
   var basis = _ref.basis,
       children = _ref.children;
-  return _react.default.createElement(_Box.Box, {
+  return _react["default"].createElement(_Box.Box, {
     basis: basis,
     flex: "shrink",
     overflow: "hidden"
@@ -34,8 +34,8 @@ var Value = function Value(_ref) {
 };
 
 Value.propTypes = {
-  basis: _propTypes.default.string.isRequired,
-  children: _propTypes.default.node.isRequired
+  basis: _propTypes["default"].string.isRequired,
+  children: _propTypes["default"].node.isRequired
 };
 
 var Distribution =
@@ -61,7 +61,7 @@ function (_Component) {
 
     if (values.length === 1) {
       var value = values[0];
-      return _react.default.createElement(Value, {
+      return _react["default"].createElement(Value, {
         value: value,
         basis: basis
       }, children(value));
@@ -89,7 +89,7 @@ function (_Component) {
 
       if (subIndex === values.length) {
         var _value = values[0];
-        return _react.default.createElement(Value, {
+        return _react["default"].createElement(Value, {
           value: _value,
           basis: basis
         }, children(_value));
@@ -105,19 +105,19 @@ function (_Component) {
         childBasis = ['1/2', '1/2'];
       }
 
-      return _react.default.createElement(_Box.Box, _extends({
+      return _react["default"].createElement(_Box.Box, _extends({
         direction: direction,
         basis: basis,
         flex: basis ? 'shrink' : true,
         overflow: "hidden",
         gap: gap,
         fill: fill
-      }, rest), _react.default.createElement(Distribution, {
+      }, rest), _react["default"].createElement(Distribution, {
         values: values.slice(0, subIndex),
         basis: childBasis[0],
         direction: direction === 'row' ? 'column' : 'row',
         gap: gap
-      }, children), _react.default.createElement(Distribution, {
+      }, children), _react["default"].createElement(Distribution, {
         values: values.slice(subIndex),
         basis: childBasis[1],
         direction: direction === 'row' ? 'column' : 'row',
@@ -134,10 +134,10 @@ function (_Component) {
 _defineProperty(Distribution, "defaultProps", {
   basis: undefined,
   children: function children(value) {
-    return _react.default.createElement(_Box.Box, {
+    return _react["default"].createElement(_Box.Box, {
       fill: true,
       border: true
-    }, _react.default.createElement(_Text.Text, null, value.value));
+    }, _react["default"].createElement(_Text.Text, null, value.value));
   },
   direction: 'row',
   gap: 'xsmall',

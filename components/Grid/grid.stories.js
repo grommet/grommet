@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -43,10 +43,10 @@ function (_Component) {
     var _this2 = this;
 
     var sidebar = this.state.sidebar;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       full: true,
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Grid, {
+    }, _react["default"].createElement(_grommet.Grid, {
       fill: true,
       rows: ['auto', 'flex'],
       columns: ['auto', 'flex'],
@@ -63,7 +63,7 @@ function (_Component) {
         start: [1, 1],
         end: [1, 1]
       }]
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       gridArea: "header",
       direction: "row",
       align: "center",
@@ -73,15 +73,15 @@ function (_Component) {
         vertical: 'small'
       },
       background: "dark-2"
-    }, _react.default.createElement(_grommet.Button, {
+    }, _react["default"].createElement(_grommet.Button, {
       onClick: function onClick() {
         return _this2.setState({
           sidebar: !sidebar
         });
       }
-    }, _react.default.createElement(_grommet.Text, {
+    }, _react["default"].createElement(_grommet.Text, {
       size: "large"
-    }, "Title")), _react.default.createElement(_grommet.Text, null, "my@email")), sidebar && _react.default.createElement(_grommet.Box, {
+    }, "Title")), _react["default"].createElement(_grommet.Text, null, "my@email")), sidebar && _react["default"].createElement(_grommet.Box, {
       gridArea: "sidebar",
       background: "dark-3",
       width: "small",
@@ -94,31 +94,31 @@ function (_Component) {
         duration: 150
       }]
     }, ['First', 'Second', 'Third'].map(function (name) {
-      return _react.default.createElement(_grommet.Button, {
+      return _react["default"].createElement(_grommet.Button, {
         key: name,
         href: "#",
         hoverIndicator: true
-      }, _react.default.createElement(_grommet.Box, {
+      }, _react["default"].createElement(_grommet.Box, {
         pad: {
           horizontal: 'medium',
           vertical: 'small'
         }
-      }, _react.default.createElement(_grommet.Text, null, name)));
-    })), _react.default.createElement(_grommet.Box, {
+      }, _react["default"].createElement(_grommet.Text, null, name)));
+    })), _react["default"].createElement(_grommet.Box, {
       gridArea: "main",
       justify: "center",
       align: "center"
-    }, _react.default.createElement(_grommet.Text, null, "main"))));
+    }, _react["default"].createElement(_grommet.Text, null, "main"))));
   };
 
   return AppGrid;
 }(_react.Component);
 
 var Percentages = function Percentages() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react.default.createElement(_grommet.Grid, {
+  }, _react["default"].createElement(_grommet.Grid, {
     fill: true,
     areas: [{
       name: 'nav',
@@ -132,44 +132,44 @@ var Percentages = function Percentages() {
     columns: ['small', 'flex'],
     rows: ['flex'],
     gap: "small"
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     gridArea: "nav",
     background: "brand"
-  }), _react.default.createElement(_grommet.Box, {
+  }), _react["default"].createElement(_grommet.Box, {
     gridArea: "main",
     background: "brand"
   })));
 };
 
 var NColumnGrid = function NColumnGrid() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet,
     full: true
-  }, _react.default.createElement(_grommet.Grid, {
+  }, _react["default"].createElement(_grommet.Grid, {
     columns: {
       count: 6,
       size: 'auto'
     },
     gap: "small"
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     background: "brand"
-  }, "Item 1"), _react.default.createElement(_grommet.Box, {
+  }, "Item 1"), _react["default"].createElement(_grommet.Box, {
     background: "brand"
-  }, "Item 2"), _react.default.createElement(_grommet.Box, {
+  }, "Item 2"), _react["default"].createElement(_grommet.Box, {
     background: "brand"
-  }, "Item 3"), _react.default.createElement(_grommet.Box, {
+  }, "Item 3"), _react["default"].createElement(_grommet.Box, {
     background: "brand"
-  }, "Item 4"), _react.default.createElement(_grommet.Box, {
+  }, "Item 4"), _react["default"].createElement(_grommet.Box, {
     background: "brand"
-  }, "Item 5"), _react.default.createElement(_grommet.Box, {
+  }, "Item 5"), _react["default"].createElement(_grommet.Box, {
     background: "brand"
   }, "Item 6")));
 };
 
 (0, _react2.storiesOf)('Grid', module).add('App', function () {
-  return _react.default.createElement(AppGrid, null);
+  return _react["default"].createElement(AppGrid, null);
 }).add('Percentages', function () {
-  return _react.default.createElement(Percentages, null);
+  return _react["default"].createElement(Percentages, null);
 }).add('N-column layout', function () {
-  return _react.default.createElement(NColumnGrid, null);
+  return _react["default"].createElement(NColumnGrid, null);
 });

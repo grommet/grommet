@@ -9,9 +9,9 @@ var _utils = require("../../utils");
 
 var _defaultProps = require("../../default-props");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var StyledChart = _styledComponents.default.svg.withConfig({
+var StyledChart = _styledComponents["default"].svg.withConfig({
   displayName: "StyledChart",
   componentId: "sc-1nae0gf-0"
 })(["display:block;max-width:100%;overflow:visible;", " ", ";"], _utils.genericStyles, function (props) {

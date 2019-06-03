@@ -19,7 +19,7 @@ var _hocs = require("../hocs");
 
 var _StyledButton = require("./StyledButton");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -122,7 +122,7 @@ function (_Component) {
     var contents;
 
     if (first && second) {
-      contents = _react.default.createElement(_Box.Box, {
+      contents = _react["default"].createElement(_Box.Box, {
         direction: "row",
         align: "center",
         justify: "center",
@@ -140,7 +140,7 @@ function (_Component) {
     /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 
 
-    return _react.default.createElement(_StyledButton.StyledButton, _extends({}, rest, {
+    return _react["default"].createElement(_StyledButton.StyledButton, _extends({}, rest, {
       as: domTag,
       ref: forwardRef,
       "aria-label": a11yTitle,

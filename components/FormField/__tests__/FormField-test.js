@@ -14,20 +14,20 @@ var _ = require("..");
 
 var _TextInput = require("../../TextInput");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var CustomFormField = (0, _styledComponents.default)(_.FormField).withConfig({
+var CustomFormField = (0, _styledComponents["default"])(_.FormField).withConfig({
   displayName: "FormField-test__CustomFormField",
   componentId: "sc-1ddfx0c-0"
 })(["font-size:40px;"]);
 test('renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.FormField, null), _react.default.createElement(_.FormField, null, _react.default.createElement(_TextInput.TextInput, null))));
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, null), _react["default"].createElement(_.FormField, null, _react["default"].createElement(_TextInput.TextInput, null))));
 
   var tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 test('renders label', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.FormField, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
     label: "test label"
   })));
 
@@ -35,7 +35,7 @@ test('renders label', function () {
   expect(tree).toMatchSnapshot();
 });
 test('renders help', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.FormField, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
     help: "test help"
   })));
 
@@ -43,7 +43,7 @@ test('renders help', function () {
   expect(tree).toMatchSnapshot();
 });
 test('renders error', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.FormField, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
     error: "test error"
   })));
 
@@ -51,7 +51,7 @@ test('renders error', function () {
   expect(tree).toMatchSnapshot();
 });
 test('renders htmlFor', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.FormField, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.FormField, {
     htmlFor: "test-id"
   })));
 
@@ -59,7 +59,7 @@ test('renders htmlFor', function () {
   expect(tree).toMatchSnapshot();
 });
 test('renders custom formfield', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(CustomFormField, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(CustomFormField, {
     htmlFor: "test-id"
   })));
 

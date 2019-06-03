@@ -12,15 +12,15 @@ var _portal = require("../../../utils/portal");
 
 var _ = require("..");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('DropButton', function () {
   beforeEach(_portal.createPortal);
   afterEach(_reactTestingLibrary.cleanup);
   test('closed', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.DropButton, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.DropButton, {
       label: "Dropper",
-      dropContent: _react.default.createElement("div", {
+      dropContent: _react["default"].createElement("div", {
         id: "drop-contents"
       }, "drop contents")
     }));
@@ -28,10 +28,10 @@ describe('DropButton', function () {
     expect(component.toJSON()).toMatchSnapshot();
   });
   test('opened', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_.DropButton, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_.DropButton, {
       label: "Dropper",
       open: true,
-      dropContent: _react.default.createElement("div", {
+      dropContent: _react["default"].createElement("div", {
         id: "drop-contents"
       }, "drop contents")
     }));
@@ -41,9 +41,9 @@ describe('DropButton', function () {
   test('open and close', function () {
     window.scrollTo = jest.fn();
 
-    var _render = (0, _reactTestingLibrary.render)(_react.default.createElement(_.DropButton, {
+    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.DropButton, {
       label: "Dropper",
-      dropContent: _react.default.createElement("div", {
+      dropContent: _react["default"].createElement("div", {
         id: "drop-contents"
       }, "Drop Contents")
     })),
@@ -63,9 +63,9 @@ describe('DropButton', function () {
     expect(window.scrollTo).toBeCalled();
   });
   test('close by clicking outside', function (done) {
-    var _render2 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.DropButton, {
+    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.DropButton, {
       label: "Dropper",
-      dropContent: _react.default.createElement("div", {
+      dropContent: _react["default"].createElement("div", {
         id: "drop-contents"
       }, "Drop Contents")
     })),
@@ -88,10 +88,10 @@ describe('DropButton', function () {
     }, 50);
   });
   test('disabled', function () {
-    var _render3 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.DropButton, {
+    var _render3 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.DropButton, {
       disabled: true,
       label: "Dropper",
-      dropContent: _react.default.createElement("div", {
+      dropContent: _react["default"].createElement("div", {
         id: "drop-contents"
       }, "Drop Contents")
     })),
@@ -106,13 +106,13 @@ describe('DropButton', function () {
     expect(document.getElementById('drop-contents')).toBeNull();
   });
   test('opened ref', function () {
-    var ref = _react.default.createRef();
+    var ref = _react["default"].createRef();
 
-    var _render4 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.DropButton, {
+    var _render4 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.DropButton, {
       ref: ref,
       open: true,
       label: "Dropper",
-      dropContent: _react.default.createElement("div", {
+      dropContent: _react["default"].createElement("div", {
         id: "drop-contents"
       }, "Drop Contents")
     })),

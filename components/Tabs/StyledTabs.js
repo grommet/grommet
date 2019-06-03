@@ -11,9 +11,9 @@ var _defaultProps = require("../../default-props");
 
 var _FLEX_MAP;
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
-var StyledTabsHeader = _styledComponents.default.div.withConfig({
+var StyledTabsHeader = _styledComponents["default"].div.withConfig({
   displayName: "StyledTabs__StyledTabsHeader",
   componentId: "a4fwxl-0"
 })(["", ";"], function (props) {
@@ -28,7 +28,7 @@ var flexStyle = (0, _styledComponents.css)(["flex:", ";"], function (props) {
   return "" + FLEX_MAP[props.flex] + (props.flex !== true ? ' auto' : '');
 });
 
-var StyledTabPanel = _styledComponents.default.div.withConfig({
+var StyledTabPanel = _styledComponents["default"].div.withConfig({
   displayName: "StyledTabs__StyledTabPanel",
   componentId: "a4fwxl-1"
 })(["min-height:0;", " ", ";"], function (props) {
@@ -41,7 +41,7 @@ exports.StyledTabPanel = StyledTabPanel;
 StyledTabPanel.defaultProps = {};
 Object.setPrototypeOf(StyledTabPanel.defaultProps, _defaultProps.defaultProps);
 
-var StyledTabs = _styledComponents.default.div.withConfig({
+var StyledTabs = _styledComponents["default"].div.withConfig({
   displayName: "StyledTabs",
   componentId: "a4fwxl-2"
 })(["", " ", ";"], _utils.genericStyles, function (props) {

@@ -12,7 +12,7 @@ var _calcs3 = require("../calcs");
 
 var _data = require("./data");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -154,25 +154,25 @@ function (_Component) {
         outerValues = _this$state.outerValues,
         range = _this$state.range,
         thickness = _this$state.thickness;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       pad: "large"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       direction: "row",
       justify: "between"
     }, innerAxis[0].reverse().map(function (t) {
-      return _react.default.createElement(_grommet.Text, {
+      return _react["default"].createElement(_grommet.Text, {
         key: t
       }, new Date(t).toLocaleDateString());
-    })), _react.default.createElement(_grommet.Stack, {
+    })), _react["default"].createElement(_grommet.Stack, {
       guidingChild: "first",
       interactiveChild: "first"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       pad: {
         horizontal: thickness
       }
-    }, _react.default.createElement(_grommet.Chart, {
+    }, _react["default"].createElement(_grommet.Chart, {
       type: "bar",
       color: "accent-2",
       overflow: true,
@@ -187,38 +187,38 @@ function (_Component) {
         width: 'full',
         height: 'small'
       }
-    })), _react.default.createElement(_grommet.Box, {
+    })), _react["default"].createElement(_grommet.Box, {
       fill: true,
       justify: "between"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       border: {
         side: 'top'
       },
       align: "start"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       pad: "xsmall",
       background: {
         color: 'white',
         opacity: 'medium'
       }
-    }, _react.default.createElement(_grommet.Text, null, innerAxis[1][0]))), _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Text, null, innerAxis[1][0]))), _react["default"].createElement(_grommet.Box, {
       border: {
         side: 'bottom',
         color: 'accent-2',
         size: 'medium'
       },
       align: "start"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       pad: "xsmall",
       background: {
         color: 'white',
         opacity: 'medium'
       }
-    }, _react.default.createElement(_grommet.Text, null, innerAxis[1][1])))), hover && _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Text, null, innerAxis[1][1])))), hover && _react["default"].createElement(_grommet.Box, {
       fill: true,
       align: "center",
       justify: "center"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       animation: {
         type: 'fadeIn',
         duration: 100
@@ -232,10 +232,10 @@ function (_Component) {
         color: 'accent-2'
       },
       round: true
-    }, _react.default.createElement(_grommet.Text, {
+    }, _react["default"].createElement(_grommet.Text, {
       size: "large",
       weight: "bold"
-    }, hover.value[1]), _react.default.createElement(_grommet.Text, null, new Date(hover.value[0]).toLocaleDateString())))), _react.default.createElement(_grommet.Stack, null, _react.default.createElement(_grommet.Chart, {
+    }, hover.value[1]), _react["default"].createElement(_grommet.Text, null, new Date(hover.value[0]).toLocaleDateString())))), _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Chart, {
       type: "line",
       bounds: outerBounds,
       values: outerValues,
@@ -244,7 +244,7 @@ function (_Component) {
         height: 'xxsmall'
       },
       thickness: "xxsmall"
-    }), _react.default.createElement(_grommet.RangeSelector, {
+    }), _react["default"].createElement(_grommet.RangeSelector, {
       min: 0,
       max: data.length,
       size: "full",
@@ -261,7 +261,7 @@ function (_Component) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('Chart', module).add('Window', function () {
-  return _react.default.createElement(WindowChart, {
+  return _react["default"].createElement(WindowChart, {
     data: (0, _data.generateData)(1000, 100),
     max: 100
   });

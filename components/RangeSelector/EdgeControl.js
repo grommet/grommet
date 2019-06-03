@@ -19,7 +19,7 @@ var _utils = require("../../utils");
 
 var _hocs = require("../hocs");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -93,7 +93,7 @@ function (_Component) {
     var node;
 
     if (type === 'bar') {
-      node = _react.default.createElement(_Box.Box, {
+      node = _react["default"].createElement(_Box.Box, {
         flex: true,
         justifySelf: "stretch",
         width: size + "px",
@@ -103,7 +103,7 @@ function (_Component) {
         } : undefined
       });
     } else if (type === 'disc') {
-      node = _react.default.createElement(_Box.Box, {
+      node = _react["default"].createElement(_Box.Box, {
         width: size + (focused ? 2 : 0) + "px",
         height: size + (focused ? 2 : 0) + "px",
         round: "full",
@@ -116,7 +116,7 @@ function (_Component) {
       node = type;
     }
 
-    return _react.default.createElement(_Keyboard.Keyboard, keyboardProps, _react.default.createElement(_Box.Box, {
+    return _react["default"].createElement(_Keyboard.Keyboard, keyboardProps, _react["default"].createElement(_Box.Box, {
       direction: boxDirection,
       style: {
         flex: '0 0 1px'
@@ -124,7 +124,7 @@ function (_Component) {
       overflow: "visible",
       align: "center",
       justify: "center"
-    }, _react.default.createElement(_Box.Box, _extends({
+    }, _react["default"].createElement(_Box.Box, _extends({
       ref: forwardRef,
       direction: boxDirection,
       justify: "center",

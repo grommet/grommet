@@ -14,13 +14,13 @@ var _Grommet = require("../../Grommet");
 
 var _ = require("..");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('TextInput', function () {
   beforeEach(_portal.createPortal);
   afterEach(_reactTestingLibrary.cleanup);
   test('basic', function () {
-    var _render = (0, _reactTestingLibrary.render)(_react.default.createElement(_.TextInput, {
+    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.TextInput, {
       name: "item"
     })),
         container = _render.container;
@@ -28,7 +28,7 @@ describe('TextInput', function () {
     expect(container.firstChild).toMatchSnapshot();
   });
   test('disabled', function () {
-    var _render2 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.TextInput, {
+    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.TextInput, {
       disabled: true,
       name: "item"
     })),
@@ -40,7 +40,7 @@ describe('TextInput', function () {
     var onChange = jest.fn();
     var onFocus = jest.fn();
 
-    var _render3 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.TextInput, {
+    var _render3 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -74,7 +74,7 @@ describe('TextInput', function () {
     }, 50);
   });
   test('complex suggestions', function (done) {
-    var _render4 = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.TextInput, {
+    var _render4 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -107,7 +107,7 @@ describe('TextInput', function () {
     }, 50);
   });
   test('close suggestion drop', function (done) {
-    var _render5 = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.TextInput, {
+    var _render5 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -143,7 +143,7 @@ describe('TextInput', function () {
   test('select suggestion', function (done) {
     var onSelect = jest.fn();
 
-    var _render6 = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.TextInput, {
+    var _render6 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextInput, {
       "data-testid": "test-input",
       plain: true,
       size: "large",
@@ -179,7 +179,7 @@ describe('TextInput', function () {
   test('select a suggestion', function () {
     var onSelect = jest.fn();
 
-    var _render7 = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.TextInput, {
+    var _render7 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -226,7 +226,7 @@ describe('TextInput', function () {
   test('handles next and previous without suggestion', function () {
     var onSelect = jest.fn();
 
-    var _render8 = (0, _reactTestingLibrary.render)(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.TextInput, {
+    var _render8 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -260,7 +260,7 @@ describe('TextInput', function () {
   });
   ['small', 'medium', 'large'].forEach(function (dropHeight) {
     test(dropHeight + " drop height", function (done) {
-      var _render9 = (0, _reactTestingLibrary.render)(_react.default.createElement(_.TextInput, {
+      var _render9 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.TextInput, {
         "data-testid": "test-input",
         id: "item",
         name: "item",

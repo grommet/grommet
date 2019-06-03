@@ -8,21 +8,21 @@ var _reactTestingLibrary = require("react-testing-library");
 
 var _FocusedContainer = require("../FocusedContainer");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('FocusedContainer', function () {
   afterEach(_reactTestingLibrary.cleanup);
   test('basic', function () {
     jest.useFakeTimers();
 
-    var _render = (0, _reactTestingLibrary.render)(_react.default.createElement("div", {
+    var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement("div", {
       id: "focus-trap-test"
-    }, _react.default.createElement("input", {
+    }, _react["default"].createElement("input", {
       id: "test"
     }))),
         trapped = _render.container;
 
-    var _render2 = (0, _reactTestingLibrary.render)(_react.default.createElement(_FocusedContainer.FocusedContainer, {
+    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_FocusedContainer.FocusedContainer, {
       id: "container"
     }, "test focused container")),
         focuser = _render2.container;
@@ -37,7 +37,7 @@ describe('FocusedContainer', function () {
   test('restrict scroll', function () {
     jest.useFakeTimers();
 
-    var _render3 = (0, _reactTestingLibrary.render)(_react.default.createElement(_FocusedContainer.FocusedContainer, {
+    var _render3 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_FocusedContainer.FocusedContainer, {
       id: "container",
       restrictScroll: true
     }, "test focused container")),
@@ -52,14 +52,14 @@ describe('FocusedContainer', function () {
   test('blurs', function () {
     jest.useFakeTimers();
 
-    var _render4 = (0, _reactTestingLibrary.render)(_react.default.createElement("div", {
+    var _render4 = (0, _reactTestingLibrary.render)(_react["default"].createElement("div", {
       id: "focus-trap-test"
-    }, _react.default.createElement("input", {
+    }, _react["default"].createElement("input", {
       id: "test"
     }))),
         trapped = _render4.container;
 
-    var _render5 = (0, _reactTestingLibrary.render)(_react.default.createElement(_FocusedContainer.FocusedContainer, {
+    var _render5 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_FocusedContainer.FocusedContainer, {
       id: "container"
     }, "test focused container")),
         focuser = _render5.container;

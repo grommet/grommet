@@ -10,7 +10,7 @@ var _Grommet = require("../../Grommet");
 
 var _ = require("..");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var VALUES = [{
   value: [1, 60],
@@ -20,7 +20,7 @@ var VALUES = [{
   label: 'zero'
 }];
 test('Chart renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Chart, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
     values: VALUES
   })));
 
@@ -28,13 +28,13 @@ test('Chart renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Chart type renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Chart, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
     type: "bar",
     values: VALUES
-  }), _react.default.createElement(_.Chart, {
+  }), _react["default"].createElement(_.Chart, {
     type: "line",
     values: VALUES
-  }), _react.default.createElement(_.Chart, {
+  }), _react["default"].createElement(_.Chart, {
     type: "area",
     values: VALUES
   })));
@@ -43,19 +43,19 @@ test('Chart type renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Chart size renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Chart, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
     size: "xsmall",
     values: VALUES
-  }), _react.default.createElement(_.Chart, {
+  }), _react["default"].createElement(_.Chart, {
     size: "small",
     values: VALUES
-  }), _react.default.createElement(_.Chart, {
+  }), _react["default"].createElement(_.Chart, {
     size: "medium",
     values: VALUES
-  }), _react.default.createElement(_.Chart, {
+  }), _react["default"].createElement(_.Chart, {
     size: "large",
     values: VALUES
-  }), _react.default.createElement(_.Chart, {
+  }), _react["default"].createElement(_.Chart, {
     size: "xlarge",
     values: VALUES
   })));
@@ -64,19 +64,19 @@ test('Chart size renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Chart thickness renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Chart, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
     thickness: "xsmall",
     values: VALUES
-  }), _react.default.createElement(_.Chart, {
+  }), _react["default"].createElement(_.Chart, {
     thickness: "small",
     values: VALUES
-  }), _react.default.createElement(_.Chart, {
+  }), _react["default"].createElement(_.Chart, {
     thickness: "medium",
     values: VALUES
-  }), _react.default.createElement(_.Chart, {
+  }), _react["default"].createElement(_.Chart, {
     thickness: "large",
     values: VALUES
-  }), _react.default.createElement(_.Chart, {
+  }), _react["default"].createElement(_.Chart, {
     thickness: "xlarge",
     values: VALUES
   })));
@@ -85,14 +85,14 @@ test('Chart thickness renders', function () {
   expect(tree).toMatchSnapshot();
 });
 test('Chart cap renders', function () {
-  var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.Chart, {
+  var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Chart, {
     round: true,
     values: VALUES
-  }), _react.default.createElement(_.Chart, {
+  }), _react["default"].createElement(_.Chart, {
     type: "line",
     round: true,
     values: VALUES
-  }), _react.default.createElement(_.Chart, {
+  }), _react["default"].createElement(_.Chart, {
     type: "area",
     round: true,
     values: VALUES

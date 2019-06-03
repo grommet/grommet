@@ -12,9 +12,9 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -24,23 +24,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var DropContent = function DropContent(_ref) {
   var onClose = _ref.onClose;
-  return _react.default.createElement(_grommet.Box, {
+  return _react["default"].createElement(_grommet.Box, {
     pad: "small"
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     direction: "row",
     justify: "between",
     align: "center"
-  }, _react.default.createElement(_grommet.Heading, {
+  }, _react["default"].createElement(_grommet.Heading, {
     level: 3,
     margin: "small"
-  }, "Heading"), _react.default.createElement(_grommet.Button, {
-    icon: _react.default.createElement(_grommetIcons.Close, null),
+  }, "Heading"), _react["default"].createElement(_grommet.Button, {
+    icon: _react["default"].createElement(_grommetIcons.Close, null),
     onClick: onClose
-  })), _react.default.createElement(_grommet.Text, null, "Content"));
+  })), _react["default"].createElement(_grommet.Text, null, "Content"));
 };
 
 DropContent.propTypes = {
-  onClose: _propTypes.default.func.isRequired
+  onClose: _propTypes["default"].func.isRequired
 };
 
 var SimpleDropButton =
@@ -80,12 +80,12 @@ function (_Component) {
     var _this2 = this;
 
     var open = this.state.open;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       align: "center",
       pad: "large"
-    }, _react.default.createElement(_grommet.DropButton, {
+    }, _react["default"].createElement(_grommet.DropButton, {
       label: "Open",
       open: open,
       onClose: function onClose() {
@@ -93,7 +93,7 @@ function (_Component) {
           open: undefined
         });
       },
-      dropContent: _react.default.createElement(DropContent, {
+      dropContent: _react["default"].createElement(DropContent, {
         onClose: this.onClose
       }),
       dropProps: {
@@ -155,12 +155,12 @@ function (_Component2) {
     var _this$state = this.state,
         date = _this$state.date,
         open = _this$state.open;
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       align: "center",
       pad: "large"
-    }, _react.default.createElement(_grommet.DropButton, {
+    }, _react["default"].createElement(_grommet.DropButton, {
       open: open,
       onClose: function onClose() {
         return _this4.setState({
@@ -172,16 +172,16 @@ function (_Component2) {
           open: true
         });
       },
-      dropContent: _react.default.createElement(_grommet.Calendar, {
+      dropContent: _react["default"].createElement(_grommet.Calendar, {
         date: date,
         onSelect: this.onSelect
       })
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       direction: "row",
       gap: "medium",
       align: "center",
       pad: "small"
-    }, _react.default.createElement(_grommet.Text, null, date ? new Date(date).toLocaleDateString() : 'Select date'), _react.default.createElement(_grommetIcons.FormDown, {
+    }, _react["default"].createElement(_grommet.Text, null, date ? new Date(date).toLocaleDateString() : 'Select date'), _react["default"].createElement(_grommetIcons.FormDown, {
       color: "brand"
     })))));
   };
@@ -204,7 +204,7 @@ function (_Component3) {
     _this5 = _Component3.call.apply(_Component3, [this].concat(args)) || this;
 
     _defineProperty(_assertThisInitialized(_this5), "renderItems", function () {
-      return _react.default.createElement(_grommet.Box, null, _react.default.createElement("span", null, "hi"), _react.default.createElement("span", null, "hi"), _react.default.createElement("span", null, "hi"), _react.default.createElement("span", null, "hi"), _react.default.createElement("span", null, "hi"));
+      return _react["default"].createElement(_grommet.Box, null, _react["default"].createElement("span", null, "hi"), _react["default"].createElement("span", null, "hi"), _react["default"].createElement("span", null, "hi"), _react["default"].createElement("span", null, "hi"), _react["default"].createElement("span", null, "hi"));
     });
 
     return _this5;
@@ -217,18 +217,18 @@ function (_Component3) {
   };
 
   _proto3.render = function render() {
-    return _react.default.createElement(_grommet.Grommet, {
+    return _react["default"].createElement(_grommet.Grommet, {
       theme: _themes.grommet,
       full: true
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       fill: true
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       fill: "vertical",
       width: "60px",
       background: "dark-2"
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       flex: true
-    }), _react.default.createElement(_grommet.DropButton, {
+    }), _react["default"].createElement(_grommet.DropButton, {
       alignSelf: "center",
       margin: {
         vertical: 'small'
@@ -239,7 +239,7 @@ function (_Component3) {
           bottom: 'top'
         }
       }
-    }, _react.default.createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Box, {
       height: "36px",
       width: "36px",
       round: "full",
@@ -251,9 +251,9 @@ function (_Component3) {
 }(_react.Component);
 
 (0, _react2.storiesOf)('DropButton', module).add('Simple', function () {
-  return _react.default.createElement(SimpleDropButton, null);
+  return _react["default"].createElement(SimpleDropButton, null);
 }).add('Calendar', function () {
-  return _react.default.createElement(CalendarDropButton, null);
+  return _react["default"].createElement(CalendarDropButton, null);
 }).add('UserMenu', function () {
-  return _react.default.createElement(UserMenuDropButton, null);
+  return _react["default"].createElement(UserMenuDropButton, null);
 });

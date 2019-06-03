@@ -15,7 +15,7 @@ var _utils = require("../../utils");
 
 var _StyledWorldMap = require("./StyledWorldMap");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -339,14 +339,14 @@ function (_Component) {
         }, active);
       }
 
-      return _react.default.createElement("g", _extends({
+      return _react["default"].createElement("g", _extends({
         key: name
-      }, interactiveProps), _react.default.createElement("path", {
+      }, interactiveProps), _react["default"].createElement("path", {
         stroke: "none",
         fill: "#fff",
         fillOpacity: "0.01",
         d: area
-      }), _react.default.createElement("path", {
+      }), _react["default"].createElement("path", {
         d: dots,
         strokeLinecap: "round",
         strokeWidth: (0, _utils.parseMetricToNum)(theme.worldMap.continent[active ? 'active' : 'base']),
@@ -374,7 +374,7 @@ function (_Component) {
         }, active);
       }
 
-      return _react.default.createElement("path", _extends({
+      return _react["default"].createElement("path", _extends({
         key: key,
         strokeLinecap: "round",
         strokeWidth: (0, _utils.parseMetricToNum)(theme.worldMap.place[active ? 'active' : 'base']),
@@ -398,14 +398,14 @@ function (_Component) {
 
     if (activeCoords) {
       var d = "M" + FACTOR * activeCoords[0] + ", " + FACTOR * activeCoords[1] + " h0";
-      active = _react.default.createElement("g", {
+      active = _react["default"].createElement("g", {
         stroke: "none",
         fill: "none",
         fillRule: "evenodd",
         onClick: function onClick() {
           return onSelectPlace(coordToLatLon(activeCoords, origin, extent));
         }
-      }, _react.default.createElement("path", {
+      }, _react["default"].createElement("path", {
         strokeLinecap: "round",
         strokeWidth: (0, _utils.parseMetricToNum)(theme.worldMap.place.active),
         stroke: (0, _utils.normalizeColor)(hoverColor || color || theme.worldMap.hover.color, theme),
@@ -413,12 +413,12 @@ function (_Component) {
       }));
     }
 
-    return _react.default.createElement(_StyledWorldMap.StyledWorldMap, _extends({
+    return _react["default"].createElement(_StyledWorldMap.StyledWorldMap, _extends({
       viewBox: x + " " + y + " " + width + " " + height,
       preserveAspectRatio: "xMinYMin meet",
       width: width,
       height: height
-    }, interactiveProps, rest), _react.default.createElement("g", {
+    }, interactiveProps, rest), _react["default"].createElement("g", {
       ref: function ref(_ref5) {
         _this2.containerRef = _ref5;
       },

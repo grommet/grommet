@@ -15,7 +15,7 @@ var _utils = require("../../utils");
 
 var _StyledDiagram = require("./StyledDiagram");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -90,7 +90,7 @@ function (_Component) {
       width: 0
     });
 
-    _defineProperty(_assertThisInitialized(_this), "svgRef", _react.default.createRef());
+    _defineProperty(_assertThisInitialized(_this), "svgRef", _react["default"].createRef());
 
     _defineProperty(_assertThisInitialized(_this), "onResize", function () {
       var _this$state = _this.state,
@@ -241,7 +241,7 @@ function (_Component) {
           var offsetWidth = offset ? (0, _utils.parseMetricToNum)(theme.global.edgeSize[offset]) : 0;
           var d = COMMANDS[type || 'curved'](points[0], points[1], offsetWidth, anchor);
           var strokeWidth = thickness ? (0, _utils.parseMetricToNum)(theme.global.edgeSize[thickness] || thickness) : 1;
-          path = _react.default.createElement("path", _extends({
+          path = _react["default"].createElement("path", _extends({
             // eslint-disable-next-line react/no-array-index-key
             key: index
           }, cleanedRest, {
@@ -258,11 +258,11 @@ function (_Component) {
       });
     }
 
-    return _react.default.createElement(_StyledDiagram.StyledDiagram, _extends({
+    return _react["default"].createElement(_StyledDiagram.StyledDiagram, _extends({
       ref: this.svgRef,
       viewBox: "0 0 " + width + " " + height,
       preserveAspectRatio: "xMinYMin meet"
-    }, rest), _react.default.createElement("g", null, paths));
+    }, rest), _react["default"].createElement("g", null, paths));
   };
 
   return Diagram;

@@ -27,7 +27,7 @@ var _ExpanderCell = require("./ExpanderCell");
 
 var _StyledDataTable = require("./StyledDataTable");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -67,7 +67,7 @@ var Header = function Header(_ref) {
       background = dataTableContextTheme.background,
       innerThemeProps = _objectWithoutPropertiesLoose(dataTableContextTheme, ["border", "background"]);
 
-  return _react.default.createElement(_StyledDataTable.StyledDataTableHeader, rest, _react.default.createElement(_StyledDataTable.StyledDataTableRow, null, groups && _react.default.createElement(_ExpanderCell.ExpanderCell, {
+  return _react["default"].createElement(_StyledDataTable.StyledDataTableHeader, rest, _react["default"].createElement(_StyledDataTable.StyledDataTableRow, null, groups && _react["default"].createElement(_ExpanderCell.ExpanderCell, {
     context: "header",
     expanded: Object.keys(groupState).filter(function (k) {
       return !groupState[k].expanded;
@@ -79,10 +79,10 @@ var Header = function Header(_ref) {
         align = _ref3.align,
         search = _ref3.search,
         sortable = _ref3.sortable;
-    var content = typeof header === 'string' ? _react.default.createElement(_Text.Text, null, header) : header;
+    var content = typeof header === 'string' ? _react["default"].createElement(_Text.Text, null, header) : header;
 
     if (onSort && sortable !== false) {
-      content = _react.default.createElement(_Sorter.Sorter, {
+      content = _react["default"].createElement(_Sorter.Sorter, {
         align: align,
         fill: !search,
         property: property,
@@ -94,18 +94,18 @@ var Header = function Header(_ref) {
 
     if (search && filters) {
       if (!onSort) {
-        content = _react.default.createElement(_Box.Box, _extends({
+        content = _react["default"].createElement(_Box.Box, _extends({
           justify: "center",
           align: align
         }, innerThemeProps), content);
       }
 
-      content = _react.default.createElement(_Box.Box, _extends({
+      content = _react["default"].createElement(_Box.Box, _extends({
         fill: true,
         direction: "row",
         justify: "between",
         align: "center"
-      }, outerThemeProps), content, _react.default.createElement(_Searcher.Searcher, {
+      }, outerThemeProps), content, _react["default"].createElement(_Searcher.Searcher, {
         filtering: filtering,
         filters: filters,
         property: property,
@@ -113,7 +113,7 @@ var Header = function Header(_ref) {
         onFiltering: onFiltering
       }));
     } else if (!onSort || sortable === false) {
-      content = _react.default.createElement(_Box.Box, _extends({}, dataTableContextTheme, {
+      content = _react["default"].createElement(_Box.Box, _extends({}, dataTableContextTheme, {
         fill: true,
         justify: "center",
         align: align
@@ -121,13 +121,13 @@ var Header = function Header(_ref) {
     }
 
     if (onResize) {
-      content = _react.default.createElement(_Resizer.Resizer, {
+      content = _react["default"].createElement(_Resizer.Resizer, {
         property: property,
         onResize: onResize
       }, content);
     }
 
-    return _react.default.createElement(_TableCell.TableCell, {
+    return _react["default"].createElement(_TableCell.TableCell, {
       key: property,
       scope: "col",
       plain: true,

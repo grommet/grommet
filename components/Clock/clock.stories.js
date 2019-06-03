@@ -8,7 +8,7 @@ var _grommet = require("grommet");
 
 var _themes = require("grommet/themes");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var CustomThemeAnalogClock = {
   clock: {
@@ -37,45 +37,45 @@ var CustomThemeAnalogClock = {
 };
 
 var DigitalClock = function DigitalClock() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react.default.createElement(_grommet.Clock, {
+  }, _react["default"].createElement(_grommet.Clock, {
     type: "digital"
   })));
 };
 
 var AnalogClock = function AnalogClock() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: _themes.grommet
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react.default.createElement(_grommet.Clock, {
+  }, _react["default"].createElement(_grommet.Clock, {
     type: "analog"
   })));
 };
 
 var CustomAnalogClock = function CustomAnalogClock() {
-  return _react.default.createElement(_grommet.Grommet, {
+  return _react["default"].createElement(_grommet.Grommet, {
     theme: CustomThemeAnalogClock
-  }, _react.default.createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Box, {
     align: "center",
     justify: "start",
     pad: "large"
-  }, _react.default.createElement(_grommet.Clock, {
+  }, _react["default"].createElement(_grommet.Clock, {
     type: "analog"
   })));
 };
 
 (0, _react2.storiesOf)('Clock', module).add('Digital', function () {
-  return _react.default.createElement(DigitalClock, null);
+  return _react["default"].createElement(DigitalClock, null);
 }).add('Analog', function () {
-  return _react.default.createElement(AnalogClock, null);
+  return _react["default"].createElement(AnalogClock, null);
 }).add('Custom Analog', function () {
-  return _react.default.createElement(CustomAnalogClock, null);
+  return _react["default"].createElement(CustomAnalogClock, null);
 });

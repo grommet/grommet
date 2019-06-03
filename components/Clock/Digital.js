@@ -9,7 +9,7 @@ var _Box = require("../Box");
 
 var _StyledClock = require("./StyledClock");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -85,16 +85,16 @@ function (_Component) {
 
     if (previous !== undefined) {
       var direction = run === 'backward' ? 'down' : 'up';
-      return _react.default.createElement(_StyledClock.StyledDigitalDigit, {
+      return _react["default"].createElement(_StyledClock.StyledDigitalDigit, {
         size: size
-      }, _react.default.createElement(_StyledClock.StyledDigitalPrevious, {
+      }, _react["default"].createElement(_StyledClock.StyledDigitalPrevious, {
         direction: direction
-      }, Math.floor(previous)), _react.default.createElement(_StyledClock.StyledDigitalNext, {
+      }, Math.floor(previous)), _react["default"].createElement(_StyledClock.StyledDigitalNext, {
         direction: direction
       }, Math.floor(number)));
     }
 
-    return _react.default.createElement(_StyledClock.StyledDigitalDigit, {
+    return _react["default"].createElement(_StyledClock.StyledDigitalDigit, {
       size: size
     }, Math.floor(number));
   };
@@ -109,12 +109,12 @@ var Element = function Element(_ref) {
       size = _ref.size;
   var tens = Math.floor(number / 10);
   var ones = number % 10;
-  var result = [_react.default.createElement(Digit, {
+  var result = [_react["default"].createElement(Digit, {
     key: "tens",
     run: run,
     size: size,
     number: tens
-  }), _react.default.createElement(Digit, {
+  }), _react["default"].createElement(Digit, {
     key: "ones",
     run: run,
     size: size,
@@ -122,7 +122,7 @@ var Element = function Element(_ref) {
   })];
 
   if (sep) {
-    result.unshift(_react.default.createElement(_StyledClock.StyledDigitalDigit, {
+    result.unshift(_react["default"].createElement(_StyledClock.StyledDigitalDigit, {
       key: "sep",
       size: size
     }, ":"));
@@ -141,7 +141,7 @@ var Digital = function Digital(props) {
   var seconds;
 
   if (precision === 'seconds') {
-    seconds = _react.default.createElement(Element, {
+    seconds = _react["default"].createElement(Element, {
       number: elements.seconds,
       run: run,
       size: size,
@@ -152,7 +152,7 @@ var Digital = function Digital(props) {
   var minutes;
 
   if (precision === 'minutes' || precision === 'seconds') {
-    minutes = _react.default.createElement(Element, {
+    minutes = _react["default"].createElement(Element, {
       number: elements.minutes,
       run: run,
       size: size,
@@ -160,9 +160,9 @@ var Digital = function Digital(props) {
     });
   }
 
-  return _react.default.createElement(_Box.Box, _extends({
+  return _react["default"].createElement(_Box.Box, _extends({
     direction: "row"
-  }, rest), _react.default.createElement(Element, {
+  }, rest), _react["default"].createElement(Element, {
     number: elements.hours12 || elements.hours,
     run: run,
     size: size

@@ -10,11 +10,11 @@ var _Grommet = require("../../Grommet");
 
 var _ = require("..");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('RadioButtonGroup', function () {
   test('default', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.RadioButtonGroup, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButtonGroup, {
       name: "test",
       options: []
     })));
@@ -23,7 +23,7 @@ describe('RadioButtonGroup', function () {
     expect(tree).toMatchSnapshot();
   });
   test('string options', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.RadioButtonGroup, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButtonGroup, {
       name: "test",
       options: ['one', 'two'],
       value: "one"
@@ -33,7 +33,7 @@ describe('RadioButtonGroup', function () {
     expect(tree).toMatchSnapshot();
   });
   test('object options just value', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.RadioButtonGroup, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButtonGroup, {
       name: "test",
       options: [{
         value: 'one'
@@ -47,7 +47,7 @@ describe('RadioButtonGroup', function () {
     expect(tree).toMatchSnapshot();
   });
   test('object options', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.RadioButtonGroup, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButtonGroup, {
       name: "test",
       options: [{
         id: 'onE',
@@ -64,7 +64,7 @@ describe('RadioButtonGroup', function () {
     expect(tree).toMatchSnapshot();
   });
   test('object options disabled', function () {
-    var component = _reactTestRenderer.default.create(_react.default.createElement(_Grommet.Grommet, null, _react.default.createElement(_.RadioButtonGroup, {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.RadioButtonGroup, {
       name: "test",
       options: [{
         value: 'one',

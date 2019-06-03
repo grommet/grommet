@@ -7,9 +7,9 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 
 var _grommetStyles = require("grommet-styles");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var StyledContainer = _styledComponents.default.div.withConfig({
+var StyledContainer = _styledComponents["default"].div.withConfig({
   displayName: "StyledSelect__StyledContainer",
   componentId: "znp66n-0"
 })(["@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){width:100%;}", ";", ";"], function (props) {
