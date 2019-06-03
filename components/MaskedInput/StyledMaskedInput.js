@@ -26,7 +26,7 @@ var StyledMaskedInput = _styledComponents["default"].input.withConfig({
 }, _utils.placeholderStyle, function (props) {
   return props.focus && !props.plain && _utils.focusStyle;
 }, function (props) {
-  return props.theme.MaskedInput && props.theme.MaskedInput.extend;
+  return props.theme.maskedInput && props.theme.maskedInput.extend;
 });
 
 exports.StyledMaskedInput = StyledMaskedInput;

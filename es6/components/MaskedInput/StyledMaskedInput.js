@@ -17,7 +17,7 @@ export var StyledMaskedInput = styled.input.withConfig({
 }, placeholderStyle, function (props) {
   return props.focus && !props.plain && focusStyle;
 }, function (props) {
-  return props.theme.MaskedInput && props.theme.MaskedInput.extend;
+  return props.theme.maskedInput && props.theme.maskedInput.extend;
 });
 export var StyledMaskedInputContainer = styled.div.withConfig({
   displayName: "StyledMaskedInput__StyledMaskedInputContainer",
