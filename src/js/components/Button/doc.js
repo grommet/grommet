@@ -18,7 +18,7 @@ export const doc = Button => {
     )
     .usage(
       `import { Button } from 'grommet';
-<Button primary={true} label='Label' />`,
+<Button primary label='Label' />`,
     )
     .intrinsicElement('button');
 
@@ -36,9 +36,11 @@ export const doc = Button => {
     fill: PropTypes.oneOfType([
       PropTypes.oneOf(['horizontal', 'vertical']),
       PropTypes.bool,
-    ]).description(
-      'Whether the button expands to fill all of the available width and/or height.',
-    ).defaultValue(false),
+    ])
+      .description(
+        'Whether the button expands to fill all of the available width and/or height.',
+      )
+      .defaultValue(false),
     focusIndicator: PropTypes.bool
       .description("Whether when 'plain' it should receive a focus outline.")
       .defaultValue(true),
@@ -83,8 +85,8 @@ causes the Button to be disabled.`,
     ),
     plain: PropTypes.bool
       .description(
-        `Whether this is a plain button with no border or pad. 
-Non plain button will show both pad and border. 
+        `Whether this is a plain button with no border or pad.
+Non plain button will show both pad and border.
 The plain button has no border and unless the icon prop exist it has no pad as well.`,
       )
       .defaultValue(false),
