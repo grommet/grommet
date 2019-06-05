@@ -13,7 +13,8 @@ export var doc = function doc(TextArea) {
     placeholder: PropTypes.string.description('Placeholder text to use when no value is provided.'),
     plain: PropTypes.bool.description("Whether this is a plain textarea with no border or padding.\nOnly use this when the containing context provides sufficient affordance."),
     value: PropTypes.string.description('What text to put in the textarea.'),
-    resize: PropTypes.oneOfType([PropTypes.oneOf(['vertical', 'horizontal']), PropTypes.bool]).description('Whether user is allowed to resize the textarea.').defaultValue(true)
+    resize: PropTypes.oneOfType([PropTypes.oneOf(['vertical', 'horizontal']), PropTypes.bool]).description('Whether user is allowed to resize the textarea.').defaultValue(true),
+    size: PropTypes.oneOfType([PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']), PropTypes.string]).description('The size of the TextArea.')
   };
   return DocumentedTextArea;
 };

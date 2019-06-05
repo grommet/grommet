@@ -10,6 +10,7 @@ export interface TextAreaProps {
   plain?: boolean;
   value?: string;
   resize?: "vertical" | "horizontal" | boolean;
+  size?: "small" | "medium" | "large" | "xlarge" | string;
 }
 
 declare const TextArea: React.ComponentClass<TextAreaProps & JSX.IntrinsicElements['textarea']>;

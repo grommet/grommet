@@ -3195,6 +3195,15 @@ horizontal
 boolean",
         "name": "resize",
       },
+      Object {
+        "description": "The size of the TextArea.",
+        "format": "small
+medium
+large
+xlarge
+string",
+        "name": "size",
+      },
     ],
     "usage": "import { TextArea } from 'grommet';
 <TextArea id='item' name='item' />",

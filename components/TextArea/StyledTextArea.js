@@ -13,6 +13,11 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var plainStyle = (0, _styledComponents.css)(["border:none;width:100%;-webkit-appearance:none;"]);
 
+var sizeStyle = function sizeStyle(props) {
+  var data = props.theme.text[props.size];
+  return (0, _styledComponents.css)(["font-size:", ";line-height:", ";"], data.size, data.height);
+};
+
 var resizeStyle = function resizeStyle(resize) {
   if (resize === 'horizontal') {
     return 'resize: horizontal;';
@@ -32,10 +37,12 @@ var resizeStyle = function resizeStyle(resize) {
 var StyledTextArea = _styledComponents["default"].textarea.withConfig({
   displayName: "StyledTextArea",
   componentId: "sc-17i3mwp-0"
-})(["", " width:100%;", " ", " ", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", ";"], _utils.inputStyle, function (props) {
+})(["", " width:100%;", " ", " ", " ", " ", " ", " &::-moz-focus-inner{border:none;outline:none;}", ";", ";"], _utils.inputStyle, function (props) {
   return props.resize !== undefined && resizeStyle(props.resize);
 }, function (props) {
   return props.fillArg && 'height: 100%;';
+}, function (props) {
+  return props.size && sizeStyle(props);
 }, function (props) {
   return props.plain && plainStyle;
 }, function (props) {
