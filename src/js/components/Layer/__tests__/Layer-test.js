@@ -200,16 +200,16 @@ describe('Layer', () => {
     const ref = React.createRef();
     render(
       <Grommet>
-        <Layer data-testid="layer-container-test" ref={ref}>
-          My Test
+        <Layer data-testid="test-layer-container" ref={ref}>
+          Layer container is available
         </Layer>
       </Grommet>,
     );
 
-    ref.current.setState({ isLayerContainerAvailable: false });
-    expect(queryByTestId(document, 'my-test')).toBeNull();
+    ref.current.setState({ islayerContainerAvailable: false });
+    expect(queryByTestId(document, 'test-layer-container')).toBeNull();
 
     ref.current.componentDidMount();
-    expect(queryByTestId(document, 'my-test')).toMatchSnapshot();
+    expect(queryByTestId(document, 'test-layer-container')).toMatchSnapshot();
   });
 });
