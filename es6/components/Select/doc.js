@@ -34,6 +34,8 @@ export var doc = function doc(Select) {
     onClose: PropTypes.func.description('Function that will be called when the Select drop closes.'),
     onOpen: PropTypes.func.description('Function that will be called when the Select drop opens.'),
     onSearch: PropTypes.func.description("Function that will be called when the user types in the search input.\n      If this property is not provided, no search field will be rendered."),
+    onMore: PropTypes.func.description("Use this to indicate that 'items' doesn't contain all that it could.\n      It will be called when the entire list of items has been rendered.\n      This might be used when the total number of items that could be retrieved\n      is more than you'd want to load into the browser. 'onMore' allows you\n      to lazily fetch more from the server only when needed."),
+    replace: PropTypes.bool.description("Whether to replace previously rendered items with a generic spacing\n      element when they have scrolled out of view. This is more performant but\n      means that in-page searching will not find elements that have been\n      replaced.").defaultValue(true),
     options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.object])).description("Options can be either a string or an object. If an object is used, use\n      children callback in order to render anything based on the current item.").isRequired,
     open: PropTypes.bool.description("Control the state of the component."),
     placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description('Placeholder text to use when no value is provided.'),

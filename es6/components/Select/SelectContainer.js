@@ -371,11 +371,13 @@ function (_Component) {
         dropHeight = _this$props6.dropHeight,
         emptySearchMessage = _this$props6.emptySearchMessage,
         id = _this$props6.id,
+        onMore = _this$props6.onMore,
         onKeyDown = _this$props6.onKeyDown,
         onSearch = _this$props6.onSearch,
         options = _this$props6.options,
         searchPlaceholder = _this$props6.searchPlaceholder,
-        theme = _this$props6.theme;
+        theme = _this$props6.theme,
+        replace = _this$props6.replace;
     var _this$state = this.state,
         activeIndex = _this$state.activeIndex,
         search = _this$state.search;
@@ -410,7 +412,8 @@ function (_Component) {
     }, options.length > 0 ? React.createElement(InfiniteScroll, {
       items: options,
       step: theme.select.step,
-      replace: true
+      onMore: onMore,
+      replace: replace
     }, function (option, index) {
       var isDisabled = _this3.isDisabled(index);
 
@@ -458,7 +461,8 @@ _defineProperty(SelectContainer, "defaultProps", {
   options: undefined,
   searchPlaceholder: undefined,
   selected: undefined,
-  value: ''
+  value: '',
+  replace: true
 });
 
 Object.setPrototypeOf(SelectContainer.defaultProps, defaultProps);
