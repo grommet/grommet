@@ -79,4 +79,16 @@ describe('TextArea', () => {
       expect(tree).toMatchSnapshot();
     });
   });
+
+  ['small', 'medium', 'large'].forEach(size => {
+    test(`size ${size}`, () => {
+      const component = renderer.create(
+        <Grommet>
+          <TextArea id="item" name="item" size={size} />
+        </Grommet>,
+      );
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+    });
+  });
 });

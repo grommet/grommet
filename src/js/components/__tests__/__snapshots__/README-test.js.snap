@@ -1364,7 +1364,7 @@ You can provide a single function child that will be called with
 
 \`\`\`javascript
 import { Button } from 'grommet';
-<Button primary={true} label='Label' />
+<Button primary label='Label' />
 \`\`\`
 
 ## Properties
@@ -1578,8 +1578,8 @@ function
 
 **plain**
 
-Whether this is a plain button with no border or pad. 
-Non plain button will show both pad and border. 
+Whether this is a plain button with no border or pad.
+Non plain button will show both pad and border.
 The plain button has no border and unless the icon prop exist it has no pad as well.
 
 \`\`\`
@@ -3465,7 +3465,7 @@ Expand or collapse animation.
 
 \`\`\`javascript
 import { Collapsible } from 'grommet';
-<Collapsible open={true}>test</Collapsible>
+<Collapsible open>test</Collapsible>
 \`\`\`
 
 ## Properties
@@ -4136,10 +4136,10 @@ string
 **children**
 
 Function that will be called when each value is rendered. Defaults to \`function children(value) {
-    return _react.default.createElement(_Box.Box, {
+    return _react[\\"default\\"].createElement(_Box.Box, {
       fill: true,
       border: true
-    }, _react.default.createElement(_Text.Text, null, value.value));
+    }, _react[\\"default\\"].createElement(_Text.Text, null, value.value));
   }\`.
 
 \`\`\`
@@ -7906,7 +7906,7 @@ An Anchor with support for React Router.
 
 \`\`\`javascript
 import { RoutedAnchor } from 'grommet';
-<RoutedAnchor primary={true} path='/documentation' />
+<RoutedAnchor primary path='/documentation' />
 \`\`\`
 
 ## Properties
@@ -7941,7 +7941,7 @@ A button with support for React Router.
 
 \`\`\`javascript
 import { RoutedButton } from 'grommet';
-<RoutedButton primary={true} path='/documentation' />
+<RoutedButton primary path='/documentation' />
 \`\`\`
 
 ## Properties
@@ -8265,6 +8265,29 @@ Function that will be called when the user types in the search input.
 
 \`\`\`
 function
+\`\`\`
+
+**onMore**
+
+Use this to indicate that 'items' doesn't contain all that it could.
+      It will be called when the entire list of items has been rendered.
+      This might be used when the total number of items that could be retrieved
+      is more than you'd want to load into the browser. 'onMore' allows you
+      to lazily fetch more from the server only when needed.
+
+\`\`\`
+function
+\`\`\`
+
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced. Defaults to \`true\`.
+
+\`\`\`
+boolean
 \`\`\`
 
 **options**
@@ -9957,6 +9980,18 @@ Whether user is allowed to resize the textarea. Defaults to \`true\`.
 vertical
 horizontal
 boolean
+\`\`\`
+
+**size**
+
+The size of the TextArea.
+
+\`\`\`
+small
+medium
+large
+xlarge
+string
 \`\`\`
   
 ## Intrinsic element

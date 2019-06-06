@@ -10,7 +10,7 @@ You can provide a single function child that will be called with
 
 ```javascript
 import { Button } from 'grommet';
-<Button primary={true} label='Label' />
+<Button primary label='Label' />
 ```
 
 ## Properties
@@ -224,8 +224,8 @@ function
 
 **plain**
 
-Whether this is a plain button with no border or pad. 
-Non plain button will show both pad and border. 
+Whether this is a plain button with no border or pad.
+Non plain button will show both pad and border.
 The plain button has no border and unless the icon prop exist it has no pad as well.
 
 ```

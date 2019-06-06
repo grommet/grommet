@@ -38,6 +38,10 @@ Only use this when the containing context provides sufficient affordance.`,
     ])
       .description('Whether user is allowed to resize the textarea.')
       .defaultValue(true),
+    size: PropTypes.oneOfType([
+      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+      PropTypes.string,
+    ]).description('The size of the TextArea.'),
   };
 
   return DocumentedTextArea;
