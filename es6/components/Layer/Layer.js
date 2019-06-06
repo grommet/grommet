@@ -23,14 +23,23 @@ function (_Component) {
 
     _this = _Component.call.apply(_Component, [this].concat(args)) || this;
 
-    _defineProperty(_assertThisInitialized(_this), "originalFocusedElement", document.activeElement);
-
-    _defineProperty(_assertThisInitialized(_this), "layerContainer", getNewContainer());
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      islayerContainerAvailable: false
+    });
 
     return _this;
   }
 
   var _proto = Layer.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    // ensure document is available
+    this.originalFocusedElement = document.activeElement;
+    this.layerContainer = getNewContainer();
+    this.setState({
+      islayerContainerAvailable: true
+    });
+  };
 
   _proto.componentWillUnmount = function componentWillUnmount() {
     var _this2 = this;
@@ -52,7 +61,8 @@ function (_Component) {
   };
 
   _proto.render = function render() {
-    return createPortal(React.createElement(LayerContainer, this.props), this.layerContainer);
+    var islayerContainerAvailable = this.state.islayerContainerAvailable;
+    return islayerContainerAvailable ? createPortal(React.createElement(LayerContainer, this.props), this.layerContainer) : null;
   };
 
   return Layer;

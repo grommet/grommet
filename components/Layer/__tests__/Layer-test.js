@@ -212,4 +212,18 @@ describe('Layer', function () {
     expect(bodyNode).toMatchSnapshot();
     expect((0, _domTestingLibrary.queryByTestId)(document, 'test-layer-node')).toBeNull();
   });
+  test('should be null prior to mounting, displayed after mount', function () {
+    var ref = _react["default"].createRef();
+
+    (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+      "data-testid": "test-layer-container",
+      ref: ref
+    }, "Layer container is available")));
+    ref.current.setState({
+      islayerContainerAvailable: false
+    });
+    expect((0, _domTestingLibrary.queryByTestId)(document, 'test-layer-container')).toBeNull();
+    ref.current.componentDidMount();
+    expect((0, _domTestingLibrary.queryByTestId)(document, 'test-layer-container')).toMatchSnapshot();
+  });
 });

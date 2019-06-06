@@ -195,4 +195,17 @@ describe('Layer', function () {
     expect(bodyNode).toMatchSnapshot();
     expect(queryByTestId(document, 'test-layer-node')).toBeNull();
   });
+  test('should be null prior to mounting, displayed after mount', function () {
+    var ref = React.createRef();
+    render(React.createElement(Grommet, null, React.createElement(Layer, {
+      "data-testid": "test-layer-container",
+      ref: ref
+    }, "Layer container is available")));
+    ref.current.setState({
+      islayerContainerAvailable: false
+    });
+    expect(queryByTestId(document, 'test-layer-container')).toBeNull();
+    ref.current.componentDidMount();
+    expect(queryByTestId(document, 'test-layer-container')).toMatchSnapshot();
+  });
 });
