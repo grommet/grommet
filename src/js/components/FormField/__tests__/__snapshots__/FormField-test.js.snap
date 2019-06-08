@@ -19,10 +19,7 @@ exports[`renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-top: 12px;
   margin-bottom: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -95,25 +92,7 @@ exports[`renders 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
     margin-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-left: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-right: 6px;
   }
 }
 
@@ -193,10 +172,7 @@ exports[`renders custom formfield 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-top: 12px;
   margin-bottom: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -229,25 +205,7 @@ exports[`renders custom formfield 1`] = `
 
 @media only screen and (max-width:768px) {
   .c2 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
     margin-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin-left: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c2 {
-    margin-right: 6px;
   }
 }
 
@@ -307,10 +265,7 @@ exports[`renders error 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-top: 12px;
   margin-bottom: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -349,25 +304,7 @@ exports[`renders error 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
     margin-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-left: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-right: 6px;
   }
 }
 
@@ -432,10 +369,7 @@ exports[`renders help 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-top: 12px;
   margin-bottom: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -471,25 +405,7 @@ exports[`renders help 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
     margin-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-left: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-right: 6px;
   }
 }
 
@@ -554,10 +470,7 @@ exports[`renders htmlFor 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-top: 12px;
   margin-bottom: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -586,25 +499,7 @@ exports[`renders htmlFor 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
     margin-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-left: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-right: 6px;
   }
 }
 
@@ -664,10 +559,7 @@ exports[`renders label 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-top: 12px;
   margin-bottom: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -705,25 +597,7 @@ exports[`renders label 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
     margin-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-left: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-right: 6px;
   }
 }
 
@@ -788,10 +662,7 @@ exports[`renders margin 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  margin-top: 12px;
   margin-bottom: 12px;
-  margin-left: 12px;
-  margin-right: 12px;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -820,25 +691,7 @@ exports[`renders margin 1`] = `
 
 @media only screen and (max-width:768px) {
   .c1 {
-    margin-top: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
     margin-bottom: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-left: 6px;
-  }
-}
-
-@media only screen and (max-width:768px) {
-  .c1 {
-    margin-right: 6px;
   }
 }
 

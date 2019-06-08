@@ -102,6 +102,7 @@ class FormFieldContent extends Component {
       validate,
       onBlur,
       onFocus,
+      margin,
     } = this.props;
     const { formField } = theme;
     const { border } = formField;
@@ -184,7 +185,7 @@ class FormFieldContent extends Component {
             ? { ...border, color: borderColor }
             : undefined
         }
-        margin={abut ? undefined : { ...formField.margin }}
+        margin={abut ? margin : { ...formField.margin }}
         style={outerStyle}
       >
         {(label && component !== CheckBox) || help ? (

@@ -536,12 +536,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       label: {
         margin: { vertical: 'xsmall', horizontal: 'small' },
       },
-      margin: {
-        top: 'small',
-        bottom: 'small',
-        left: 'small',
-        right: 'small',
-      },
+      margin: { bottom: 'small' },
     },
     grommet: {},
     heading: {
