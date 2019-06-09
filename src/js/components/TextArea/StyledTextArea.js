@@ -14,6 +14,14 @@ const plainStyle = css`
   -webkit-appearance: none;
 `;
 
+const sizeStyle = props => {
+  const data = props.theme.text[props.size];
+  return css`
+    font-size: ${data.size};
+    line-height: ${data.height};
+  `;
+};
+
 const resizeStyle = resize => {
   if (resize === 'horizontal') {
     return 'resize: horizontal;';
@@ -32,6 +40,7 @@ const StyledTextArea = styled.textarea`
   ${props => props.resize !== undefined && resizeStyle(props.resize)}
 
   ${props => props.fillArg && 'height: 100%;'}
+  ${props => props.size && sizeStyle(props)}
   ${props => props.plain && plainStyle}
   ${props =>
     props.disabled &&

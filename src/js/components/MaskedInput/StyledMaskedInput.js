@@ -28,7 +28,7 @@ export const StyledMaskedInput = styled.input`
   }
 
   ${props => props.focus && !props.plain && focusStyle};
-  ${props => props.theme.MaskedInput && props.theme.MaskedInput.extend};
+  ${props => props.theme.maskedInput && props.theme.maskedInput.extend};
 `;
 
 export const StyledMaskedInputContainer = styled.div`

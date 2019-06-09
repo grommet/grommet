@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Omit } from "../../utils";
 
 export interface VideoProps {
   a11yTitle?: string;
@@ -12,6 +13,6 @@ export interface VideoProps {
   mute?: boolean;
 }
 
-declare const Video: React.ComponentClass<VideoProps & JSX.IntrinsicElements['video']>;
+declare const Video: React.ComponentClass<VideoProps & JSX.IntrinsicElements['video'] & Omit<JSX.IntrinsicElements['video'], 'controls'>>;
 
 export { Video };

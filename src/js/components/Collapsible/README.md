@@ -5,7 +5,7 @@ Expand or collapse animation.
 
 ```javascript
 import { Collapsible } from 'grommet';
-<Collapsible open={true}>test</Collapsible>
+<Collapsible open>test</Collapsible>
 ```
 
 ## Properties
