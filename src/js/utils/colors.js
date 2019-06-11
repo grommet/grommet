@@ -18,7 +18,7 @@ export const normalizeColor = (color, theme, required) => {
 
 const parseHexToRGB = color =>
   color.length === 4
-    ? color.match(/[A-Za-z0-9]{1}/g).map(v => parseInt(v, 16))
+    ? color.match(/[A-Za-z0-9]{1}/g).map(v => parseInt(`${v}${v}`, 16))
     : // https://stackoverflow.com/a/42429333
       color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16));
 
@@ -58,24 +58,25 @@ const hslToRGB = (h, s, l) => {
   return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
 };
 
+const hexExp = /^#[A-Za-z0-9]{3}$|^#[A-Za-z0-9]{6}$/;
+const rgbExp = /rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?.*?\)/;
+// e.g. hsl(240, 60%, 50%)
+const hslExp = /hsla?\(\s?([0-9]*)\s?,\s?([0-9]*)%?\s?,\s?([0-9]*)%?\s?.*?\)/;
+
 const canExtractRGBArray = color =>
-  /^#/.test(color) || /^rgb/.test(color) || /^hsl/.test(color);
+  hexExp.test(color) || rgbExp.test(color) || hslExp.test(color);
 
 const getRGBArray = color => {
-  if (/^#/.test(color)) {
+  if (hexExp.test(color)) {
     return parseHexToRGB(color);
   }
-  if (/^rgb/.test(color)) {
-    return color
-      .match(/rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?.*?\)/)
-      .splice(1);
+  let match = color.match(rgbExp);
+  if (match) {
+    return match.splice(1);
   }
-  if (/^hsl/.test(color)) {
-    // e.g. hsl(240, 60%, 50%)
-    const [h, s, l] = color
-      .match(/hsla?\(\s?([0-9]*)\s?,\s?([0-9]*)%?\s?,\s?([0-9]*)%?\s?.*?\)/)
-      .splice(1)
-      .map(v => parseInt(v, 10));
+  match = color.match(hslExp);
+  if (match) {
+    const [h, s, l] = match.splice(1).map(v => parseInt(v, 10));
     return hslToRGB(h / 360.0, s / 100.0, l / 100.0);
   }
   return color;
