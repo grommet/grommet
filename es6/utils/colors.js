@@ -21,7 +21,7 @@ export var normalizeColor = function normalizeColor(color, theme, required) {
 
 var parseHexToRGB = function parseHexToRGB(color) {
   return color.length === 4 ? color.match(/[A-Za-z0-9]{1}/g).map(function (v) {
-    return parseInt(v, 16);
+    return parseInt("" + v + v, 16);
   }) : // https://stackoverflow.com/a/42429333
   color.match(/[A-Za-z0-9]{2}/g).map(function (v) {
     return parseInt(v, 16);
@@ -64,27 +64,35 @@ var hslToRGB = function hslToRGB(h, s, l) {
   return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
 };
 
+var hexExp = /^#[A-Za-z0-9]{3}$|^#[A-Za-z0-9]{6}$/;
+var rgbExp = /rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?.*?\)/; // e.g. hsl(240, 60%, 50%)
+
+var hslExp = /hsla?\(\s?([0-9]*)\s?,\s?([0-9]*)%?\s?,\s?([0-9]*)%?\s?.*?\)/;
+
 var canExtractRGBArray = function canExtractRGBArray(color) {
-  return /^#/.test(color) || /^rgb/.test(color) || /^hsl/.test(color);
+  return hexExp.test(color) || rgbExp.test(color) || hslExp.test(color);
 };
 
 var getRGBArray = function getRGBArray(color) {
-  if (/^#/.test(color)) {
+  if (hexExp.test(color)) {
     return parseHexToRGB(color);
   }
 
-  if (/^rgb/.test(color)) {
-    return color.match(/rgba?\(\s?([0-9]*)\s?,\s?([0-9]*)\s?,\s?([0-9]*)\s?.*?\)/).splice(1);
+  var match = color.match(rgbExp);
+
+  if (match) {
+    return match.splice(1);
   }
 
-  if (/^hsl/.test(color)) {
-    // e.g. hsl(240, 60%, 50%)
-    var _color$match$splice$m = color.match(/hsla?\(\s?([0-9]*)\s?,\s?([0-9]*)%?\s?,\s?([0-9]*)%?\s?.*?\)/).splice(1).map(function (v) {
+  match = color.match(hslExp);
+
+  if (match) {
+    var _match$splice$map = match.splice(1).map(function (v) {
       return parseInt(v, 10);
     }),
-        h = _color$match$splice$m[0],
-        s = _color$match$splice$m[1],
-        l = _color$match$splice$m[2];
+        h = _match$splice$map[0],
+        s = _match$splice$map[1],
+        l = _match$splice$map[2];
 
     return hslToRGB(h / 360.0, s / 100.0, l / 100.0);
   }

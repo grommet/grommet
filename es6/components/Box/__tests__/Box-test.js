@@ -119,6 +119,10 @@ describe('Box', function () {
     }), React.createElement(Box, {
       background: "status-critical"
     }), React.createElement(Box, {
+      background: "#aabbcc"
+    }), React.createElement(Box, {
+      background: "#def"
+    }), React.createElement(Box, {
       background: "rgb(90, 80, 50)"
     }), React.createElement(Box, {
       background: "rgba(200, 100, 150, 0.8)"

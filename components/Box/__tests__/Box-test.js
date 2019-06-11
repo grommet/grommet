@@ -136,6 +136,10 @@ describe('Box', function () {
     }), _react["default"].createElement(_.Box, {
       background: "status-critical"
     }), _react["default"].createElement(_.Box, {
+      background: "#aabbcc"
+    }), _react["default"].createElement(_.Box, {
+      background: "#def"
+    }), _react["default"].createElement(_.Box, {
       background: "rgb(90, 80, 50)"
     }), _react["default"].createElement(_.Box, {
       background: "rgba(200, 100, 150, 0.8)"
