@@ -122,7 +122,7 @@ class MaskedInput extends Component {
     return null;
   }
 
-  state = {};
+  state = { focused: false };
 
   inputRef = React.createRef();
 
@@ -290,7 +290,7 @@ class MaskedInput extends Component {
       ...rest
     } = this.props;
     const theme = this.context || propsTheme;
-    const { activeMaskIndex, activeOptionIndex } = this.state;
+    const { focused, activeMaskIndex, activeOptionIndex } = this.state;
 
     return (
       <StyledMaskedInputContainer plain={plain}>
@@ -328,7 +328,7 @@ class MaskedInput extends Component {
             onChange={this.onChange}
           />
         </Keyboard>
-        {activeMaskIndex >= 0 && mask[activeMaskIndex].options && (
+        {focused && activeMaskIndex >= 0 && mask[activeMaskIndex].options && (
           <Drop
             id={id ? `masked-input-drop__${id}` : undefined}
             align={{ top: 'bottom', left: 'left' }}
