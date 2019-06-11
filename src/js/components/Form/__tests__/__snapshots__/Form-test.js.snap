@@ -124,8 +124,12 @@ exports[`Form update 1`] = `
   background: #7D4CDB;
   color: #f8f8f8;
   border-radius: 18px;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color, background, background-color, border-color, box-shadow;
+  transition-property: color, background, background-color, border-color, box-shadow;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
 .c5:hover {
