@@ -1,6 +1,10 @@
 import { css } from 'styled-components';
 export var parseMetricToNum = function parseMetricToNum(fontAsString) {
-  return parseFloat(fontAsString.replace(/[^0-9/.]/g, ''), 10);
+  if (fontAsString.match(/\s/) && process.env.NODE_ENV !== 'production') {
+    console.warn("Invalid single measurement value: \"" + fontAsString + "\"");
+  }
+
+  return parseFloat(fontAsString.match(/\d+(\.\d+)?/), 10);
 };
 export var fontSize = function fontSize(size, lineHeight) {
   return css(["font-size:", ";line-height:", ";"], function (props) {

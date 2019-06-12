@@ -6,7 +6,11 @@ exports.getAvailableAtBadge = exports.findAllByType = exports.breakpointStyle = 
 var _styledComponents = require("styled-components");
 
 var parseMetricToNum = function parseMetricToNum(fontAsString) {
-  return parseFloat(fontAsString.replace(/[^0-9/.]/g, ''), 10);
+  if (fontAsString.match(/\s/) && process.env.NODE_ENV !== 'production') {
+    console.warn("Invalid single measurement value: \"" + fontAsString + "\"");
+  }
+
+  return parseFloat(fontAsString.match(/\d+(\.\d+)?/), 10);
 };
 
 exports.parseMetricToNum = parseMetricToNum;
