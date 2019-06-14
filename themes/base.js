@@ -534,6 +534,12 @@ var generate = function generate(baseSpacing, scale) {
           vertical: 'xsmall'
         }
       },
+      groupEnd: {
+        border: {
+          side: 'bottom',
+          size: 'xsmall'
+        }
+      },
       header: {},
       icons: {
         ascending: _FormDown.FormDown,

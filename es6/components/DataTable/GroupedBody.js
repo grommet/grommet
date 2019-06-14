@@ -3,7 +3,6 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 import React, { Fragment } from 'react';
-import { TableCell } from '../TableCell';
 import { Cell } from './Cell';
 import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
@@ -15,14 +14,14 @@ export var GroupedBody = function GroupedBody(_ref) {
       primaryProperty = _ref.primaryProperty,
       onToggle = _ref.onToggle,
       size = _ref.size,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["columns", "groupBy", "groups", "groupState", "primaryProperty", "onToggle", "size", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["columns", "groupBy", "groups", "groupState", "primaryProperty", "onToggle", "size"]);
 
   return React.createElement(StyledDataTableBody, _extends({
     size: size
   }, rest), groups.map(function (group) {
     var expanded = groupState[group.key].expanded;
-    var content = React.createElement(StyledDataTableRow, {
+    var memberCount = group.data.length;
+    var content = memberCount > 1 ? React.createElement(StyledDataTableRow, {
       key: group.key,
       size: size
     }, React.createElement(ExpanderCell, {
@@ -37,30 +36,28 @@ export var GroupedBody = function GroupedBody(_ref) {
         datum: group.datum,
         scope: column.property === groupBy ? 'row' : undefined
       });
-    }));
+    })) : null;
 
-    if (expanded) {
+    if (memberCount === 1 || expanded) {
       content = React.createElement(Fragment, {
         key: group.key
-      }, content, group.data.map(function (datum) {
+      }, content, group.data.map(function (datum, index) {
+        var context = memberCount > 1 && index === memberCount - 1 ? 'groupEnd' : 'body';
         return React.createElement(StyledDataTableRow, {
           key: datum[primaryProperty],
           size: size
-        }, React.createElement(TableCell, {
-          verticalAlign: "bottom"
-        }, groupState[group.key].expanded), columns.map(function (column) {
+        }, React.createElement(ExpanderCell, {
+          context: context
+        }), columns.map(function (column) {
           return React.createElement(Cell, {
             key: column.property,
-            context: "body",
+            context: context,
             column: column,
             datum: datum,
             scope: column.primary ? 'row' : undefined
           });
         }));
-      }), React.createElement(StyledDataTableRow, {
-        size: size,
-        "aria-hidden": true
-      }, React.createElement(TableCell, null)));
+      }));
     }
 
     return content;

@@ -5,8 +5,6 @@ exports.GroupedBody = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _TableCell = require("../TableCell");
-
 var _Cell = require("./Cell");
 
 var _ExpanderCell = require("./ExpanderCell");
@@ -27,15 +25,14 @@ var GroupedBody = function GroupedBody(_ref) {
       primaryProperty = _ref.primaryProperty,
       onToggle = _ref.onToggle,
       size = _ref.size,
-      theme = _ref.theme,
-      rest = _objectWithoutPropertiesLoose(_ref, ["columns", "groupBy", "groups", "groupState", "primaryProperty", "onToggle", "size", "theme"]);
+      rest = _objectWithoutPropertiesLoose(_ref, ["columns", "groupBy", "groups", "groupState", "primaryProperty", "onToggle", "size"]);
 
   return _react["default"].createElement(_StyledDataTable.StyledDataTableBody, _extends({
     size: size
   }, rest), groups.map(function (group) {
     var expanded = groupState[group.key].expanded;
-
-    var content = _react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
+    var memberCount = group.data.length;
+    var content = memberCount > 1 ? _react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
       key: group.key,
       size: size
     }, _react["default"].createElement(_ExpanderCell.ExpanderCell, {
@@ -50,30 +47,28 @@ var GroupedBody = function GroupedBody(_ref) {
         datum: group.datum,
         scope: column.property === groupBy ? 'row' : undefined
       });
-    }));
+    })) : null;
 
-    if (expanded) {
+    if (memberCount === 1 || expanded) {
       content = _react["default"].createElement(_react.Fragment, {
         key: group.key
-      }, content, group.data.map(function (datum) {
+      }, content, group.data.map(function (datum, index) {
+        var context = memberCount > 1 && index === memberCount - 1 ? 'groupEnd' : 'body';
         return _react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
           key: datum[primaryProperty],
           size: size
-        }, _react["default"].createElement(_TableCell.TableCell, {
-          verticalAlign: "bottom"
-        }, groupState[group.key].expanded), columns.map(function (column) {
+        }, _react["default"].createElement(_ExpanderCell.ExpanderCell, {
+          context: context
+        }), columns.map(function (column) {
           return _react["default"].createElement(_Cell.Cell, {
             key: column.property,
-            context: "body",
+            context: context,
             column: column,
             datum: datum,
             scope: column.primary ? 'row' : undefined
           });
         }));
-      }), _react["default"].createElement(_StyledDataTable.StyledDataTableRow, {
-        size: size,
-        "aria-hidden": true
-      }, _react["default"].createElement(_TableCell.TableCell, null)));
+      }));
     }
 
     return content;

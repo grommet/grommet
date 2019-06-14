@@ -32,31 +32,35 @@ var ExpanderCell = function ExpanderCell(_ref) {
       theme = _ref.theme,
       rest = _objectWithoutPropertiesLoose(_ref, ["context", "expanded", "onToggle", "theme"]);
 
-  var ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
+  var content;
 
   if (onToggle) {
-    return _react["default"].createElement(_TableCell.TableCell, {
-      size: "xxsmall",
-      plain: true,
-      verticalAlign: "top"
-    }, _react["default"].createElement(_Button.Button, {
+    var ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
+    content = _react["default"].createElement(ExpandIcon, {
+      color: (0, _utils.normalizeColor)('border', theme)
+    });
+  }
+
+  content = _react["default"].createElement(_Box.Box, _extends({}, _extends({}, theme.table[context], theme.dataTable[context]), rest, {
+    align: "center",
+    pad: "xsmall"
+  }), content);
+
+  if (onToggle) {
+    content = _react["default"].createElement(_Button.Button, {
       fill: true,
       a11yTitle: expanded ? 'collapse' : 'expand',
       hoverIndicator: true,
       disabled: !onToggle,
       onClick: onToggle
-    }, _react["default"].createElement(_Box.Box, _extends({}, _extends({}, theme.table[context], theme.dataTable[context]), rest, {
-      align: "center",
-      pad: "xsmall"
-    }), _react["default"].createElement(ExpandIcon, {
-      color: (0, _utils.normalizeColor)('border', theme)
-    }))));
+    }, content);
   }
 
   return _react["default"].createElement(_TableCell.TableCell, {
     size: "xxsmall",
-    verticalAlign: "top"
-  });
+    plain: true,
+    verticalAlign: context === 'groupEnd' ? 'bottom' : 'top'
+  }, content);
 };
 
 ExpanderCell.defaultProps = {};

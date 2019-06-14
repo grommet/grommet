@@ -18,31 +18,35 @@ var ExpanderCell = function ExpanderCell(_ref) {
       theme = _ref.theme,
       rest = _objectWithoutPropertiesLoose(_ref, ["context", "expanded", "onToggle", "theme"]);
 
-  var ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
+  var content;
 
   if (onToggle) {
-    return React.createElement(TableCell, {
-      size: "xxsmall",
-      plain: true,
-      verticalAlign: "top"
-    }, React.createElement(Button, {
+    var ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
+    content = React.createElement(ExpandIcon, {
+      color: normalizeColor('border', theme)
+    });
+  }
+
+  content = React.createElement(Box, _extends({}, _extends({}, theme.table[context], theme.dataTable[context]), rest, {
+    align: "center",
+    pad: "xsmall"
+  }), content);
+
+  if (onToggle) {
+    content = React.createElement(Button, {
       fill: true,
       a11yTitle: expanded ? 'collapse' : 'expand',
       hoverIndicator: true,
       disabled: !onToggle,
       onClick: onToggle
-    }, React.createElement(Box, _extends({}, _extends({}, theme.table[context], theme.dataTable[context]), rest, {
-      align: "center",
-      pad: "xsmall"
-    }), React.createElement(ExpandIcon, {
-      color: normalizeColor('border', theme)
-    }))));
+    }, content);
   }
 
   return React.createElement(TableCell, {
     size: "xxsmall",
-    verticalAlign: "top"
-  });
+    plain: true,
+    verticalAlign: context === 'groupEnd' ? 'bottom' : 'top'
+  }, content);
 };
 
 ExpanderCell.defaultProps = {};
