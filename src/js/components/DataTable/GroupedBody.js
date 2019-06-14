@@ -1,16 +1,10 @@
 import React, { Fragment } from 'react';
-import { compose } from 'recompose';
-import { withTheme } from 'styled-components';
-import { defaultProps } from '../../default-props';
-
-import { TableCell } from '../TableCell';
-import { Box } from '../Box';
 
 import { Cell } from './Cell';
 import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 
-const GroupedBody = ({
+export const GroupedBody = ({
   columns,
   groupBy,
   groups,
@@ -18,7 +12,6 @@ const GroupedBody = ({
   primaryProperty,
   onToggle,
   size,
-  theme,
   ...rest
 }) => (
   <StyledDataTableBody size={size} {...rest}>
@@ -57,14 +50,7 @@ const GroupedBody = ({
                   : 'body';
               return (
                 <StyledDataTableRow key={datum[primaryProperty]} size={size}>
-                  <TableCell size="xxsmall" plain verticalAlign="bottom">
-                    <Box
-                      {...theme.table[context]}
-                      {...theme.dataTable[context]}
-                    >
-                      {groupState[group.key].expanded}
-                    </Box>
-                  </TableCell>
+                  <ExpanderCell context={context} />
                   {columns.map(column => (
                     <Cell
                       key={column.property}
@@ -77,9 +63,6 @@ const GroupedBody = ({
                 </StyledDataTableRow>
               );
             })}
-            <StyledDataTableRow size={size} aria-hidden>
-              <TableCell />
-            </StyledDataTableRow>
           </Fragment>
         );
       }
@@ -88,10 +71,3 @@ const GroupedBody = ({
     })}
   </StyledDataTableBody>
 );
-
-GroupedBody.defaultProps = {};
-Object.setPrototypeOf(GroupedBody.defaultProps, defaultProps);
-
-const GroupedBodyWrapper = compose(withTheme)(GroupedBody);
-
-export { GroupedBodyWrapper as GroupedBody };
