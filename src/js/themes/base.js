@@ -459,6 +459,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         fill: 'vertical',
         pad: { horizontal: 'small', vertical: 'xsmall' },
       },
+      groupEnd: {
+        border: { side: 'bottom', size: 'xsmall' },
+      },
       header: {},
       icons: {
         ascending: FormDown,
