@@ -297,6 +297,29 @@ Function that will be called when the user types in the search input.
 function
 ```
 
+**onMore**
+
+Use this to indicate that 'items' doesn't contain all that it could.
+      It will be called when the entire list of items has been rendered.
+      This might be used when the total number of items that could be retrieved
+      is more than you'd want to load into the browser. 'onMore' allows you
+      to lazily fetch more from the server only when needed.
+
+```
+function
+```
+
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced. Defaults to `true`.
+
+```
+boolean
+```
+
 **options**
 
 Required. Options can be either a string or an object. If an object is used, use

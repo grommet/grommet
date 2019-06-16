@@ -904,8 +904,8 @@ causes the Button to be disabled.",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether this is a plain button with no border or pad. 
-Non plain button will show both pad and border. 
+        "description": "Whether this is a plain button with no border or pad.
+Non plain button will show both pad and border.
 The plain button has no border and unless the icon prop exist it has no pad as well.",
         "format": "boolean",
         "name": "plain",
@@ -939,7 +939,7 @@ function",
       },
     ],
     "usage": "import { Button } from 'grommet';
-<Button primary={true} label='Label' />",
+<Button primary label='Label' />",
   },
   "Calendar": Object {
     "availableAt": Array [
@@ -1613,7 +1613,7 @@ vertical",
       },
     ],
     "usage": "import { Collapsible } from 'grommet';
-<Collapsible open={true}>test</Collapsible>",
+<Collapsible open>test</Collapsible>",
   },
   "DataTable": [Function],
   "Diagram": Object {
@@ -2809,6 +2809,24 @@ function",
         "name": "onSearch",
       },
       Object {
+        "description": "Use this to indicate that 'items' doesn't contain all that it could.
+      It will be called when the entire list of items has been rendered.
+      This might be used when the total number of items that could be retrieved
+      is more than you'd want to load into the browser. 'onMore' allows you
+      to lazily fetch more from the server only when needed.",
+        "format": "function",
+        "name": "onMore",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.",
+        "format": "boolean",
+        "name": "replace",
+      },
+      Object {
         "description": "Options can be either a string or an object. If an object is used, use
       children callback in order to render anything based on the current item.",
         "format": "[
@@ -3194,6 +3212,15 @@ Only use this when the containing context provides sufficient affordance.",
 horizontal
 boolean",
         "name": "resize",
+      },
+      Object {
+        "description": "The size of the TextArea.",
+        "format": "small
+medium
+large
+xlarge
+string",
+        "name": "size",
       },
     ],
     "usage": "import { TextArea } from 'grommet';

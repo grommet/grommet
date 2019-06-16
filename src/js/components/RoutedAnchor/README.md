@@ -6,7 +6,7 @@ An Anchor with support for React Router.
 
 ```javascript
 import { RoutedAnchor } from 'grommet';
-<RoutedAnchor primary={true} path='/documentation' />
+<RoutedAnchor primary path='/documentation' />
 ```
 
 ## Properties

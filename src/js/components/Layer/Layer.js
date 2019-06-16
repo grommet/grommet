@@ -14,9 +14,16 @@ class Layer extends Component {
     responsive: true,
   };
 
-  originalFocusedElement = document.activeElement;
+  state = {
+    islayerContainerAvailable: false,
+  };
 
-  layerContainer = getNewContainer();
+  componentDidMount() {
+    // ensure document is available
+    this.originalFocusedElement = document.activeElement;
+    this.layerContainer = getNewContainer();
+    this.setState({ islayerContainerAvailable: true });
+  }
 
   componentWillUnmount() {
     if (this.originalFocusedElement) {
@@ -38,10 +45,11 @@ class Layer extends Component {
   }
 
   render() {
-    return createPortal(
-      <LayerContainer {...this.props} />,
-      this.layerContainer,
-    );
+    const { islayerContainerAvailable } = this.state;
+
+    return islayerContainerAvailable
+      ? createPortal(<LayerContainer {...this.props} />, this.layerContainer)
+      : null;
   }
 }
 
