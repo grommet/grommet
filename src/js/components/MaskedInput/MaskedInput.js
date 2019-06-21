@@ -200,7 +200,7 @@ class MaskedInput extends Component {
 
   // This could be due to a paste or as the user is typing.
   onChange = event => {
-    const { onChange, mask } = this.props;
+    const { onChange, mask, ...props } = this.props;
     const {
       target: { value },
     } = event;
@@ -208,12 +208,12 @@ class MaskedInput extends Component {
     const valueParts = parseValue(mask, value);
     const nextValue = valueParts.map(part => part.part).join('');
     if (onChange) {
-      onChange({ target: { ...event.target, value: nextValue } });
+      onChange({ target: { ...props, value: nextValue } });
     }
   };
 
   onOption = option => () => {
-    const { onChange, mask } = this.props;
+    const { onChange, mask, ...props } = this.props;
     const { activeMaskIndex, valueParts } = this.state;
     const nextValueParts = [...valueParts];
     nextValueParts[activeMaskIndex] = { part: option };
@@ -227,7 +227,8 @@ class MaskedInput extends Component {
     // restore focus to input
     this.inputRef.current.focus();
     if (onChange) {
-      onChange({ target: { value: nextValue } });
+      // onChange({ target: { value: nextValue } })
+      onChange({ target: { ...props, value: nextValue } });
     }
   };
 
