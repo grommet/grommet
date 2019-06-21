@@ -153,5 +153,33 @@
       "path": "./dist/grommet.min.js",
       "maxSize": "110 kB"
     }
+  ],
+  "keywords": [
+    "grommet",
+    "grommet.io",
+    "component",
+    "library",
+    "design system",
+    "framework",
+    "react",
+    "theming",
+    "templates",
+    "sticker sheets",
+    "design patterns",
+    "app templates",
+    "atomic design",
+    "accessibility",
+    "WCAG 2.1",
+    "keyboard navigation",
+    "screen reader tags",
+    "color",
+    "type",
+    "layout",
+    "typography",
+    "interaction",
+    "ui",
+    "user interface",
+    "gui",
+    "graphical user interface"
   ]
 }
