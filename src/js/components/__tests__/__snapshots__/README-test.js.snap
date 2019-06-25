@@ -2423,6 +2423,22 @@ If specified, the number of
 \`\`\`
 number
 \`\`\`
+
+**showSelectors**
+
+Whether to hide or show carousel bottom controls.
+
+\`\`\`
+boolean
+\`\`\`
+
+**showControls**
+
+Whether to hide or show carouse left and right controls
+
+\`\`\`
+boolean
+\`\`\`
   
 ## Intrinsic element
 

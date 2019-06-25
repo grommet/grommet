@@ -78,7 +78,15 @@ class Carousel extends Component {
   };
 
   render() {
-    const { children, fill, focus, theme, ...rest } = this.props;
+    const {
+      children,
+      fill,
+      focus,
+      theme,
+      showSelectors,
+      showControls,
+      ...rest
+    } = this.props;
     const { activeIndex, priorActiveIndex } = this.state;
 
     const lastIndex = Children.count(children) - 1;
@@ -141,27 +149,33 @@ class Carousel extends Component {
             direction="row"
             justify="between"
           >
-            <Button
-              fill="vertical"
-              icon={<PreviousIcon />}
-              plain
-              disabled={activeIndex <= 0}
-              onClick={onLeft}
-              hoverIndicator
-            />
-            <Box justify="end">
-              <Box direction="row" justify="center">
-                {selectors}
+            {showControls && (
+              <Button
+                fill="vertical"
+                icon={<PreviousIcon />}
+                plain
+                disabled={activeIndex <= 0}
+                onClick={onLeft}
+                hoverIndicator
+              />
+            )}
+            {showSelectors && (
+              <Box justify="end">
+                <Box direction="row" justify="center">
+                  {selectors}
+                </Box>
               </Box>
-            </Box>
-            <Button
-              fill="vertical"
-              icon={<NextIcon />}
-              plain
-              disabled={activeIndex >= lastIndex}
-              onClick={onRight}
-              hoverIndicator
-            />
+            )}
+            {showControls && (
+              <Button
+                fill="vertical"
+                icon={<NextIcon />}
+                plain
+                disabled={activeIndex >= lastIndex}
+                onClick={onRight}
+                hoverIndicator
+              />
+            )}
           </Box>
         </Stack>
       </Keyboard>
@@ -169,7 +183,10 @@ class Carousel extends Component {
   }
 }
 
-Carousel.defaultProps = {};
+Carousel.defaultProps = {
+  showControls: true,
+  showSelectors: true,
+};
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 
 let CarouselDoc;

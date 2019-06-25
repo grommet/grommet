@@ -1283,6 +1283,18 @@ string",
         "format": "number",
         "name": "play",
       },
+      Object {
+        "defaultValue": true,
+        "description": "Whether to hide or show carousel bottom controls.",
+        "format": "boolean",
+        "name": "showSelectors",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether to hide or show carouse left and right controls",
+        "format": "boolean",
+        "name": "showControls",
+      },
     ],
     "usage": "import { Carousel } from 'grommet';
 <Carousel />",

@@ -23,6 +23,12 @@ export const doc = Carousel => {
     play: PropTypes.number.description(`If specified, the number of
       milliseconds between automatically transitioning to the next child. It
       will loop through all children indefinitely.`),
+    showSelectors: PropTypes.bool.description(
+      `Whether to hide or show carousel bottom controls.`,
+    ),
+    showControls: PropTypes.bool.description(
+      `Whether to hide or show carouse left and right controls`,
+    ),
   };
 
   return DocumentedCarousel;
