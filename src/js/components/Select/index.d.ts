@@ -23,6 +23,10 @@ export interface SelectProps {
   onChange?: ((...args: any[]) => any);
   onClose?: ((...args: any[]) => any);
   onMore?: ((...args: any[]) => any);
+  onBlur?: ((...args: any[]) => any);
+  onFocus?: ((...args: any[]) => any);
+  onMouseOver?: ((...args: any[]) => any);
+  onMouseOut?: ((...args: any[]) => any);
   onOpen?: ((...args: any[]) => any);
   onSearch?: ((...args: any[]) => any);
   options: (string | JSX.Element | object)[];

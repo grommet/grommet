@@ -8279,6 +8279,38 @@ Use this to indicate that 'items' doesn't contain all that it could.
 function
 \`\`\`
 
+**onBlur**
+
+Function that will be called when the user leaves select button.
+
+\`\`\`
+function
+\`\`\`
+
+**onFocus**
+
+Function that will be called when user focuses select button.
+
+\`\`\`
+function
+\`\`\`
+
+**onMouseOver**
+
+Function that will be called when user hover over select button.
+
+\`\`\`
+function
+\`\`\`
+
+**onMouseOut**
+
+Function that will be called when user no longer hoovers select button.
+
+\`\`\`
+function
+\`\`\`
+
 **replace**
 
 Whether to replace previously rendered items with a generic spacing

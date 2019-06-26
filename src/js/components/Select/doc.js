@@ -121,6 +121,18 @@ export const doc = Select => {
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed.`,
     ),
+    onBlur: PropTypes.func.description(
+      'Function that will be called when the user leaves select button.',
+    ),
+    onFocus: PropTypes.func.description(
+      'Function that will be called when user focuses select button.',
+    ),
+    onMouseOver: PropTypes.func.description(
+      'Function that will be called when user hover over select button.',
+    ),
+    onMouseOut: PropTypes.func.description(
+      'Function that will be called when user no longer hoovers select button.',
+    ),
     replace: PropTypes.bool
       .description(
         `Whether to replace previously rendered items with a generic spacing

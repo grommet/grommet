@@ -2818,6 +2818,26 @@ function",
         "name": "onMore",
       },
       Object {
+        "description": "Function that will be called when the user leaves select button.",
+        "format": "function",
+        "name": "onBlur",
+      },
+      Object {
+        "description": "Function that will be called when user focuses select button.",
+        "format": "function",
+        "name": "onFocus",
+      },
+      Object {
+        "description": "Function that will be called when user hover over select button.",
+        "format": "function",
+        "name": "onMouseOver",
+      },
+      Object {
+        "description": "Function that will be called when user no longer hoovers select button.",
+        "format": "function",
+        "name": "onMouseOut",
+      },
+      Object {
         "defaultValue": true,
         "description": "Whether to replace previously rendered items with a generic spacing
       element when they have scrolled out of view. This is more performant but

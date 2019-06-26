@@ -45,9 +45,13 @@ const Select = props => {
     labelKey,
     margin,
     messages,
+    onBlur,
     onChange,
     onClose,
+    onFocus,
     onOpen,
+    onMouseOut,
+    onMouseOver,
     open: propOpen,
     options,
     placeholder,
@@ -169,6 +173,10 @@ const Select = props => {
         margin={margin}
         onOpen={onRequestOpen}
         onClose={onRequestClose}
+        onMouseOver={onMouseOver}
+        onMouseOut={onMouseOut}
+        onBlur={onBlur}
+        onFocus={onFocus}
         dropContent={<SelectContainer {...props} onChange={onSelectChange} />}
         plain={plain}
         dropProps={{ ...dropProps }}
