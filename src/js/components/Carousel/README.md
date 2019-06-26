@@ -145,6 +145,16 @@ Defaults to
 <Next />
 ```
 
+**carousel.animationDuration**
+
+The duration of the Carousel animation. Expects `number`.
+
+Defaults to
+
+```
+1000
+```
+
 **carousel.icons.previous**
 
 The icon to use for the previous image navigation control. Expects `element`.
@@ -168,6 +178,16 @@ Defaults to
 **carousel.icons.color**
 
 The color used for Carousel icons. Expects `string`.
+
+Defaults to
+
+```
+undefined
+```
+
+**carousel.icons.disabledColor**
+
+The color used for disabled Carousel icons. Expects `string`.
 
 Defaults to
 

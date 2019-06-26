@@ -112,10 +112,14 @@ class Carousel extends Component {
           animation = {
             type: priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
             size: 'xlarge',
+            duration: theme.carousel.animationDuration || 1000,
           };
         }
       } else if (index === priorActiveIndex) {
-        animation = { type: 'fadeOut' };
+        animation = {
+          type: 'fadeOut',
+          duration: theme.carousel.animationDuration || 1000,
+        };
       } else {
         animation = { type: 'fadeOut', duration: 0 };
       }
@@ -129,6 +133,8 @@ class Carousel extends Component {
 
     const NextIcon = theme.carousel.icons.next;
     const PreviousIcon = theme.carousel.icons.previous;
+    const NextIconDisabled = activeIndex >= lastIndex;
+    const PreviousIconDisabled = activeIndex <= 0;
 
     return (
       <Keyboard onLeft={onLeft} onRight={onRight}>
@@ -143,9 +149,13 @@ class Carousel extends Component {
           >
             <Button
               fill="vertical"
-              icon={<PreviousIcon />}
+              icon={
+                <PreviousIcon color={PreviousIconDisabled
+                  ? theme.carousel.icons.disabledColor
+                  : theme.carousel.icons.color}
+                />}
               plain
-              disabled={activeIndex <= 0}
+              disabled={PreviousIconDisabled}
               onClick={onLeft}
               hoverIndicator
             />
@@ -156,9 +166,13 @@ class Carousel extends Component {
             </Box>
             <Button
               fill="vertical"
-              icon={<NextIcon />}
+              icon={
+                <NextIcon color={NextIconDisabled
+                  ? theme.carousel.icons.disabledColor
+                  : theme.carousel.icons.color}
+                />}
               plain
-              disabled={activeIndex >= lastIndex}
+              disabled={NextIconDisabled}
               onClick={onRight}
               hoverIndicator
             />

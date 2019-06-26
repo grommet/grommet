@@ -34,6 +34,11 @@ export const themeDoc = {
     type: 'element',
     defaultValue: '<Next />',
   },
+  'carousel.animationDuration': {
+    description: 'The duration of the Carousel animation.',
+    type: 'number',
+    defaultValue: 1000,
+  },
   'carousel.icons.previous': {
     description: 'The icon to use for the previous image navigation control.',
     type: 'element',
@@ -47,6 +52,11 @@ export const themeDoc = {
   },
   'carousel.icons.color': {
     description: 'The color used for Carousel icons.',
+    type: 'string',
+    defaultValue: undefined,
+  },
+  'carousel.icons.disabledColor': {
+    description: 'The color used for disabled Carousel icons.',
     type: 'string',
     defaultValue: undefined,
   },
