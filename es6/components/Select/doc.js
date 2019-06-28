@@ -38,7 +38,7 @@ export var doc = function doc(Select) {
     replace: PropTypes.bool.description("Whether to replace previously rendered items with a generic spacing\n      element when they have scrolled out of view. This is more performant but\n      means that in-page searching will not find elements that have been\n      replaced.").defaultValue(true),
     options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.object])).description("Options can be either a string or an object. If an object is used, use\n      children callback in order to render anything based on the current item.").isRequired,
     open: PropTypes.bool.description("Control the state of the component."),
-    placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description('Placeholder text to use when no value is provided.'),
+    placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.element]).description('Placeholder text to use when no value is provided.'),
     plain: PropTypes.bool.description('Whether this is a plain Select input with no border or padding.'),
     searchPlaceholder: PropTypes.string.description('Placeholder text to use in the search box when the search input is empty.'),
     selected: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]).description("Index of the currently selected option. When multiple, the set of\n      options selected. NOTE: This is deprecated in favor of indicating\n      the selected values via the 'value' property."),
