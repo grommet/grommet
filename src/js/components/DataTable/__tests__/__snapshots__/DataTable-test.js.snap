@@ -2619,8 +2619,8 @@ exports[`DataTable search 1`] = `
               </span>
             </div>
             <button
+              aria-label="focus-search-a"
               class="c8"
-              data-testid="searcher-on-filtering-a"
               type="button"
             >
               <svg
@@ -2817,7 +2817,7 @@ exports[`DataTable search 2`] = `
                 <input
                   autocomplete="off"
                   class="c2"
-                  data-testid="searcher-input-a"
+                  name="search-a"
                   value="["
                 />
               </div>

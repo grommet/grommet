@@ -89,7 +89,7 @@ describe('DataTable', () => {
   });
 
   test('search', () => {
-    const { container, getByTestId } = render(
+    const { container } = render(
       <Grommet>
         <DataTable
           columns={[{ property: 'a', header: 'A', search: true }]}
@@ -98,8 +98,8 @@ describe('DataTable', () => {
       </Grommet>,
     );
     expect(container.firstChild).toMatchSnapshot();
-    fireEvent.click(getByTestId('searcher-on-filtering-a'), {});
-    fireEvent.change(getByTestId('searcher-input-a'), {
+    fireEvent.click(container.querySelector('[aria-label="focus-search-a"]'));
+    fireEvent.change(container.querySelector('[name="search-a"]'), {
       target: { value: '[' },
     });
     expect(container.firstChild).toMatchSnapshot();
