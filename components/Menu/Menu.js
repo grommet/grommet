@@ -219,22 +219,26 @@ function (_Component) {
           _react["default"].createElement(_Box.Box, {
             key: index,
             flex: false
-          }, _react["default"].createElement(_Button.Button, {
+          }, _react["default"].createElement(_Button.Button, _extends({
             ref: function ref(_ref) {
               _this2.buttonRefs[index] = _ref;
             },
             active: activeItemIndex === index,
-            hoverIndicator: "background",
-            disabled: item.disabled,
+            hoverIndicator: "background"
+          }, _extends({}, item, {
+            icon: undefined,
+            label: undefined
+          }), {
             onClick: function onClick() {
-              item.onClick.apply(item, arguments);
+              if (item.onClick) {
+                item.onClick.apply(item, arguments);
+              }
 
               if (item.close !== false) {
                 _this2.onDropClose();
               }
-            },
-            href: item.href
-          }, _react["default"].createElement(_Box.Box, {
+            }
+          }), _react["default"].createElement(_Box.Box, {
             align: "start",
             pad: "small",
             direction: "row"
