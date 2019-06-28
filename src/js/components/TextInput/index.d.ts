@@ -14,7 +14,7 @@ export interface TextInputProps {
   onSelect?: ((x: { target: React.RefObject<HTMLElement>['current'], suggestion: any }) => void);
   onSuggestionsOpen?: ((...args: any[]) => any);
   onSuggestionsClose?: ((...args: any[]) => any);
-  placeholder?: string | React.ReactNode;
+  placeholder?: string | React.ReactNode | JSX.Element;
   plain?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
   suggestions?: ({label?: React.ReactNode,value?: any} | string)[];
