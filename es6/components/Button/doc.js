@@ -14,6 +14,7 @@ export var doc = function doc(Button) {
       background: PropTypes.oneOfType([PropTypes.bool, PropTypes.string])
     })]).description("The hover indicator to apply when the user is mousing over the\nbutton. An object can be also be specified for color index support:\n{background: 'neutral-2'}. This prop is meant to be used only\nwith plain Buttons.").defaultValue(false),
     href: PropTypes.string.description('If specified, the button will behave like an anchor tag.'),
+    target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']).description("Specifies where to display the URL defined in the href property."),
     icon: PropTypes.element.description('Icon element to place in the button.'),
     gap: PropTypes.oneOfType([PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge']), PropTypes.string]).description("The amount of spacing between icon and label in the button.").defaultValue('small'),
     label: PropTypes.node.description('Label text to place in the button.'),
