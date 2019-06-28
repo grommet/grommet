@@ -183,6 +183,17 @@ If specified, the button will behave like an anchor tag.
 string
 ```
 
+**target**
+
+Specifies where to display the URL defined in the href property.
+
+```
+_self
+_blank
+_parent
+_top
+```
+
 **icon**
 
 Icon element to place in the button.
