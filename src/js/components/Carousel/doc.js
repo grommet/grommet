@@ -34,7 +34,7 @@ export const themeDoc = {
     type: 'element',
     defaultValue: '<Next />',
   },
-  'carousel.animationDuration': {
+  'carousel.animation.duration': {
     description: 'The duration of the Carousel animation.',
     type: 'number',
     defaultValue: 1000,
@@ -55,7 +55,7 @@ export const themeDoc = {
     type: 'string',
     defaultValue: undefined,
   },
-  'carousel.icons.disabledColor': {
+  'carousel.disabled.icons.color': {
     description: 'The color used for disabled Carousel icons.',
     type: 'string',
     defaultValue: undefined,

@@ -112,13 +112,13 @@ class Carousel extends Component {
           animation = {
             type: priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
             size: 'xlarge',
-            duration: theme.carousel.animationDuration || 1000,
+            duration: theme.carousel.animation.duration,
           };
         }
       } else if (index === priorActiveIndex) {
         animation = {
           type: 'fadeOut',
-          duration: theme.carousel.animationDuration || 1000,
+          duration: theme.carousel.animation.duration,
         };
       } else {
         animation = { type: 'fadeOut', duration: 0 };
@@ -133,8 +133,8 @@ class Carousel extends Component {
 
     const NextIcon = theme.carousel.icons.next;
     const PreviousIcon = theme.carousel.icons.previous;
-    const NextIconDisabled = activeIndex >= lastIndex;
-    const PreviousIconDisabled = activeIndex <= 0;
+    const nextIconDisabled = activeIndex >= lastIndex;
+    const previousIconDisabled = activeIndex <= 0;
 
     return (
       <Keyboard onLeft={onLeft} onRight={onRight}>
@@ -150,12 +150,12 @@ class Carousel extends Component {
             <Button
               fill="vertical"
               icon={
-                <PreviousIcon color={PreviousIconDisabled
-                  ? theme.carousel.icons.disabledColor
+                <PreviousIcon color={previousIconDisabled
+                  ? theme.carousel.disabled.icons.color
                   : theme.carousel.icons.color}
                 />}
               plain
-              disabled={PreviousIconDisabled}
+              disabled={previousIconDisabled}
               onClick={onLeft}
               hoverIndicator
             />
@@ -167,12 +167,12 @@ class Carousel extends Component {
             <Button
               fill="vertical"
               icon={
-                <NextIcon color={NextIconDisabled
-                  ? theme.carousel.icons.disabledColor
+                <NextIcon color={nextIconDisabled
+                  ? theme.carousel.disabled.icons.color
                   : theme.carousel.icons.color}
                 />}
               plain
-              disabled={NextIconDisabled}
+              disabled={nextIconDisabled}
               onClick={onRight}
               hoverIndicator
             />

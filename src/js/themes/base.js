@@ -345,6 +345,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         previous: Previous,
         // color: undefined,
       },
+      animation: {
+        duration: 1000,
+      },
+      disabled: {
+        icons: {
+          color: undefined,
+        },
+      },
     },
     chart: {
       // extend: undefined,
