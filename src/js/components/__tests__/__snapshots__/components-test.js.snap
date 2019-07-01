@@ -1285,15 +1285,12 @@ string",
       },
       Object {
         "defaultValue": true,
-        "description": "Whether to hide or show carousel bottom controls.",
-        "format": "boolean",
-        "name": "showSelectors",
-      },
-      Object {
-        "defaultValue": true,
-        "description": "Whether to hide or show carouse left and right controls",
-        "format": "boolean",
-        "name": "showControls",
+        "description": "Whether to show carousel controls, and where to place them",
+        "format": "false
+true
+arrows
+selectors",
+        "name": "selectors",
       },
     ],
     "usage": "import { Carousel } from 'grommet';

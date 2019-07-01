@@ -128,20 +128,15 @@ If specified, the number of
 number
 ```
 
-**showSelectors**
+**selectors**
 
-Whether to hide or show carousel bottom controls.
-
-```
-boolean
-```
-
-**showControls**
-
-Whether to hide or show carouse left and right controls
+Whether to show carousel controls, and where to place them Defaults to `true`.
 
 ```
-boolean
+false
+true
+arrows
+selectors
 ```
   
 ## Intrinsic element
