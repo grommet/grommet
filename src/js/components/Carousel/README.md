@@ -145,7 +145,7 @@ Defaults to
 <Next />
 ```
 
-**carousel.animationDuration**
+**carousel.animation.duration**
 
 The duration of the Carousel animation. Expects `number`.
 
@@ -185,7 +185,7 @@ Defaults to
 undefined
 ```
 
-**carousel.icons.disabledColor**
+**carousel.disabled.icons.color**
 
 The color used for disabled Carousel icons. Expects `string`.
 
