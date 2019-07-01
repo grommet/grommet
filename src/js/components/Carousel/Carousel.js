@@ -83,12 +83,13 @@ class Carousel extends Component {
       fill,
       focus,
       theme,
-      showSelectors,
-      showControls,
+      controls,
       ...rest
     } = this.props;
     const { activeIndex, priorActiveIndex } = this.state;
 
+    const showArrows = controls && controls !== 'selectors';
+    const showSelectors = controls && controls !== 'arrows';
     const lastIndex = Children.count(children) - 1;
     const onLeft = activeIndex > 0 ? this.onLeft : undefined;
     const onRight = activeIndex < lastIndex ? this.onRight : undefined;
@@ -149,7 +150,7 @@ class Carousel extends Component {
             direction="row"
             justify="between"
           >
-            {showControls && (
+            {showArrows && (
               <Button
                 fill="vertical"
                 icon={<PreviousIcon />}
@@ -160,13 +161,13 @@ class Carousel extends Component {
               />
             )}
             {showSelectors && (
-              <Box justify="end">
+              <Box justify="end" fill={!showArrows && 'horizontal'}>
                 <Box direction="row" justify="center">
                   {selectors}
                 </Box>
               </Box>
             )}
-            {showControls && (
+            {showArrows && (
               <Button
                 fill="vertical"
                 icon={<NextIcon />}
@@ -184,8 +185,7 @@ class Carousel extends Component {
 }
 
 Carousel.defaultProps = {
-  showControls: true,
-  showSelectors: true,
+  controls: true,
 };
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 
