@@ -102,6 +102,32 @@ describe('DataTable', function () {
     fireEvent.click(headerCell, {});
     expect(container.firstChild).toMatchSnapshot();
   });
+  test('search', function () {
+    var _render2 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+      columns: [{
+        property: 'a',
+        header: 'A',
+        search: true
+      }],
+      data: [{
+        a: 'Alpha'
+      }, {
+        a: 'beta'
+      }, {
+        a: '[]'
+      }]
+    }))),
+        container = _render2.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    fireEvent.click(container.querySelector('[aria-label="focus-search-a"]'));
+    fireEvent.change(container.querySelector('[name="search-a"]'), {
+      target: {
+        value: '['
+      }
+    });
+    expect(container.firstChild).toMatchSnapshot();
+  });
   test('resizeable', function () {
     var component = renderer.create(React.createElement(Grommet, null, React.createElement(DataTable, {
       columns: [{
@@ -148,7 +174,7 @@ describe('DataTable', function () {
     expect(tree).toMatchSnapshot();
   });
   test('groupBy', function () {
-    var _render2 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
+    var _render3 = render(React.createElement(Grommet, null, React.createElement(DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -171,8 +197,8 @@ describe('DataTable', function () {
       }],
       groupBy: "a"
     }))),
-        container = _render2.container,
-        getByText = _render2.getByText;
+        container = _render3.container,
+        getByText = _render3.getByText;
 
     expect(container.firstChild).toMatchSnapshot();
     var headerCell = getByText('A');

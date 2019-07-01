@@ -68,6 +68,7 @@ function (_Component) {
           horizontal: 'small'
         }
       }, React.createElement(TextInput, {
+        name: "search-" + property,
         ref: this.inputRef,
         value: filters[property],
         onChange: function onChange(event) {
@@ -85,6 +86,7 @@ function (_Component) {
         horizontal: 'small'
       }
     }, React.createElement(Text, null, filters[property])) : null, React.createElement(Button, {
+      a11yTitle: "focus-search-" + property,
       icon: React.createElement(FormSearch, {
         color: normalizeColor(filtering === property ? 'brand' : 'border', theme)
       }),

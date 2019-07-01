@@ -118,6 +118,35 @@ describe('DataTable', function () {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+  test('search', function () {
+    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+      columns: [{
+        property: 'a',
+        header: 'A',
+        search: true
+      }],
+      data: [{
+        a: 'Alpha'
+      }, {
+        a: 'beta'
+      }, {
+        a: '[]'
+      }]
+    }))),
+        container = _render2.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    _reactTestingLibrary.fireEvent.click(container.querySelector('[aria-label="focus-search-a"]'));
+
+    _reactTestingLibrary.fireEvent.change(container.querySelector('[name="search-a"]'), {
+      target: {
+        value: '['
+      }
+    });
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
   test('resizeable', function () {
     var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
@@ -166,7 +195,7 @@ describe('DataTable', function () {
     expect(tree).toMatchSnapshot();
   });
   test('groupBy', function () {
-    var _render2 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
+    var _render3 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.DataTable, {
       columns: [{
         property: 'a',
         header: 'A'
@@ -189,8 +218,8 @@ describe('DataTable', function () {
       }],
       groupBy: "a"
     }))),
-        container = _render2.container,
-        getByText = _render2.getByText;
+        container = _render3.container,
+        getByText = _render3.getByText;
 
     expect(container.firstChild).toMatchSnapshot();
     var headerCell = getByText('A');

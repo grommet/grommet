@@ -53,6 +53,11 @@ var findPrimary = function findPrimary(nextProps, prevState, nextState) {
   return _extends({}, nextState, {
     primaryProperty: primaryProperty
   });
+}; // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping
+
+
+var escapeRegExp = function escapeRegExp(input) {
+  return input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 };
 
 var filter = function filter(nextProps, prevState, nextState) {
@@ -72,7 +77,7 @@ var filter = function filter(nextProps, prevState, nextState) {
       nextFilters[column.property] = filters ? filters[column.property] || '' : ''; // don't do filtering if the caller has supplied onSearch
 
       if (nextFilters[column.property] && column.search && !onSearch) {
-        regexps[column.property] = new RegExp(nextFilters[column.property], 'i');
+        regexps[column.property] = new RegExp(escapeRegExp(nextFilters[column.property]), 'i');
       }
     }
   });
