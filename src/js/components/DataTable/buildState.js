@@ -40,6 +40,9 @@ const findPrimary = (nextProps, prevState, nextState) => {
   return { ...nextState, primaryProperty };
 };
 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping
+const escapeRegExp = input => input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
 const filter = (nextProps, prevState, nextState) => {
   const { columns, onSearch } = nextProps;
   const { data, filters } = nextState;
@@ -58,7 +61,7 @@ const filter = (nextProps, prevState, nextState) => {
       // don't do filtering if the caller has supplied onSearch
       if (nextFilters[column.property] && column.search && !onSearch) {
         regexps[column.property] = new RegExp(
-          nextFilters[column.property],
+          escapeRegExp(nextFilters[column.property]),
           'i',
         );
       }

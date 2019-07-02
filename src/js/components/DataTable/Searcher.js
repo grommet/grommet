@@ -41,6 +41,7 @@ class Searcher extends Component {
         <Keyboard onEsc={() => onFiltering(undefined)}>
           <Box flex pad={{ horizontal: 'small' }}>
             <TextInput
+              name={`search-${property}`}
               ref={this.inputRef}
               value={filters[property]}
               onChange={event => onFilter(property, event.target.value)}
@@ -59,6 +60,7 @@ class Searcher extends Component {
           </Box>
         ) : null}
         <Button
+          a11yTitle={`focus-search-${property}`}
           icon={
             <FormSearch
               color={normalizeColor(
