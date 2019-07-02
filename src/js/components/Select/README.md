@@ -479,6 +479,16 @@ Defaults to
 undefined
 ```
 
+**select.control.open**
+
+Any additional style for the control's open state of the Select component. Expects `string | object`.
+
+Defaults to
+
+```
+undefined
+```
+
 **select.control.extend**
 
 Any additional style for the control of the Select component. Expects `string | (props) => {}`.
