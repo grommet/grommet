@@ -198,22 +198,40 @@ class MaskedInput extends Component {
     }
   };
 
+  setValue = nextValue => {
+    // Calling set value function directly on input because React library overrides
+    // setter `event.target.value =` and loses original event target fidelity.
+    // https://stackoverflow.com/a/46012210 &&
+    // https://github.com/grommet/grommet/pull/3171#discussion_r296415239
+    const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+      window.HTMLInputElement.prototype,
+      'value',
+    ).set;
+    nativeInputValueSetter.call(this.inputRef.current, nextValue);
+    const event = new Event('input', { bubbles: true });
+    this.inputRef.current.dispatchEvent(event);
+  };
+
   // This could be due to a paste or as the user is typing.
   onChange = event => {
-    const { onChange, mask, ...props } = this.props;
+    const { onChange, mask } = this.props;
     const {
       target: { value },
     } = event;
     // Align with the mask.
     const valueParts = parseValue(mask, value);
     const nextValue = valueParts.map(part => part.part).join('');
-    if (onChange) {
-      onChange({ target: { ...props, value: nextValue } });
+    if (value === nextValue) {
+      if (onChange) {
+        onChange(event);
+      }
+    } else {
+      this.setValue(nextValue);
     }
   };
 
   onOption = option => () => {
-    const { onChange, mask, ...props } = this.props;
+    const { mask } = this.props;
     const { activeMaskIndex, valueParts } = this.state;
     const nextValueParts = [...valueParts];
     nextValueParts[activeMaskIndex] = { part: option };
@@ -226,10 +244,7 @@ class MaskedInput extends Component {
     const nextValue = nextValueParts.map(part => part.part).join('');
     // restore focus to input
     this.inputRef.current.focus();
-    if (onChange) {
-      // onChange({ target: { value: nextValue } })
-      onChange({ target: { ...props, value: nextValue } });
-    }
+    this.setValue(nextValue);
   };
 
   onNextOption = event => {

@@ -54,7 +54,7 @@ describe('MaskedInput', () => {
   });
 
   test('option via mouse', done => {
-    const onChange = jest.fn();
+    const onChange = jest.fn(event => event.target.value);
     const { getByTestId, container } = render(
       <MaskedInput
         data-testid="test-input"
@@ -75,7 +75,6 @@ describe('MaskedInput', () => {
       />,
     );
     expect(container.firstChild).toMatchSnapshot();
-
     fireEvent.focus(getByTestId('test-input'));
 
     setTimeout(() => {
@@ -83,17 +82,14 @@ describe('MaskedInput', () => {
 
       fireEvent.click(getByText(document, 'aa'));
       expect(container.firstChild).toMatchSnapshot();
-      expect(onChange).toBeCalledWith(
-        expect.objectContaining({
-          target: expect.objectContaining({ value: 'aa!' }),
-        }),
-      );
+      expect(onChange).toHaveBeenCalled();
+      expect(onChange).toHaveReturnedWith('aa!');
       done();
     }, 500);
   });
 
   test('option via keyboard', done => {
-    const onChange = jest.fn();
+    const onChange = jest.fn(event => event.target.value);
     const { getByTestId, container } = render(
       <MaskedInput
         data-testid="test-input"
@@ -123,11 +119,8 @@ describe('MaskedInput', () => {
       fireEvent.keyDown(input, { keyCode: 40 }); // down
       fireEvent.keyDown(input, { keyCode: 38 }); // up
       fireEvent.keyDown(input, { keyCode: 13 }); // enter
-      expect(onChange).toBeCalledWith(
-        expect.objectContaining({
-          target: expect.objectContaining({ value: 'aa!' }),
-        }),
-      );
+      expect(onChange).toHaveBeenCalled();
+      expect(onChange).toHaveReturnedWith('aa!');
       done();
     }, 300);
   });
@@ -167,7 +160,12 @@ describe('MaskedInput', () => {
   });
 
   test('event target props are available option via mouse', done => {
-    const onChange = jest.fn();
+    const onChangeMock = jest.fn(event => {
+      const {
+        target: { value, id, name },
+      } = event;
+      return { target: { id, value, name } };
+    });
     const { getByTestId, container } = render(
       <MaskedInput
         data-testid="test-event-target-select-by-mouse"
@@ -184,7 +182,7 @@ describe('MaskedInput', () => {
           { fixed: '!' },
         ]}
         value=""
-        onChange={onChange}
+        onChange={onChangeMock}
       />,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -196,15 +194,13 @@ describe('MaskedInput', () => {
 
       fireEvent.click(getByText(document, 'aa'));
       expect(container.firstChild).toMatchSnapshot();
-      expect(onChange).toBeCalledWith(
+      expect(onChangeMock).toHaveBeenCalled();
+      expect(onChangeMock).toHaveReturnedWith(
         expect.objectContaining({
           target: expect.objectContaining({
-            value: 'aa!',
             id: 'input-id',
             name: 'input-name',
-            size: 'large',
-            plain: true,
-            'data-testid': 'test-event-target-select-by-mouse',
+            value: 'aa!',
           }),
         }),
       );
@@ -213,7 +209,12 @@ describe('MaskedInput', () => {
   });
 
   test('event target props are available option via keyboard', done => {
-    const onChange = jest.fn();
+    const onChangeMock = jest.fn(event => {
+      const {
+        target: { value, id, name },
+      } = event;
+      return { target: { id, value, name } };
+    });
     const { getByTestId, container } = render(
       <MaskedInput
         data-testid="test-event-target-select-by-keyboard"
@@ -229,7 +230,7 @@ describe('MaskedInput', () => {
           { fixed: '!' },
         ]}
         value=""
-        onChange={onChange}
+        onChange={onChangeMock}
       />,
     );
     expect(container.firstChild).toMatchSnapshot();
@@ -240,20 +241,19 @@ describe('MaskedInput', () => {
     setTimeout(() => {
       // pressing enter here nothing will happen
       fireEvent.keyDown(input, { keyCode: 13 }); // enter
+      expect(onChangeMock).not.toBeCalled();
       fireEvent.keyDown(input, { keyCode: 40 }); // down
       fireEvent.keyDown(input, { keyCode: 40 }); // down
       fireEvent.keyDown(input, { keyCode: 38 }); // up
       fireEvent.keyDown(input, { keyCode: 13 }); // enter
-      expect(onChange).toBeCalled();
-      expect(onChange).toBeCalledTimes(1);
-      expect(onChange).toBeCalledWith(
+      expect(onChangeMock).toBeCalled();
+      expect(onChangeMock).toBeCalledTimes(1);
+      expect(onChangeMock).toHaveReturnedWith(
         expect.objectContaining({
           target: expect.objectContaining({
-            value: 'aa!',
             id: 'input-id',
             name: 'input-name',
-            size: 'medium',
-            'data-testid': 'test-event-target-select-by-keyboard',
+            value: 'aa!',
           }),
         }),
       );
