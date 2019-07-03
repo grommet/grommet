@@ -112,10 +112,14 @@ class Carousel extends Component {
           animation = {
             type: priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
             size: 'xlarge',
+            duration: theme.carousel.animation.duration,
           };
         }
       } else if (index === priorActiveIndex) {
-        animation = { type: 'fadeOut' };
+        animation = {
+          type: 'fadeOut',
+          duration: theme.carousel.animation.duration,
+        };
       } else {
         animation = { type: 'fadeOut', duration: 0 };
       }
@@ -129,6 +133,8 @@ class Carousel extends Component {
 
     const NextIcon = theme.carousel.icons.next;
     const PreviousIcon = theme.carousel.icons.previous;
+    const nextIconDisabled = activeIndex >= lastIndex;
+    const previousIconDisabled = activeIndex <= 0;
 
     return (
       <Keyboard onLeft={onLeft} onRight={onRight}>
@@ -143,9 +149,15 @@ class Carousel extends Component {
           >
             <Button
               fill="vertical"
-              icon={<PreviousIcon />}
+              icon={
+                <PreviousIcon color={
+                  normalizeColor(
+                    previousIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color,
+                    theme
+                  )}
+                />}
               plain
-              disabled={activeIndex <= 0}
+              disabled={previousIconDisabled}
               onClick={onLeft}
               hoverIndicator
             />
@@ -156,9 +168,15 @@ class Carousel extends Component {
             </Box>
             <Button
               fill="vertical"
-              icon={<NextIcon />}
+              icon={
+                <NextIcon color={
+                  normalizeColor(
+                    nextIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color,
+                    theme
+                  )}
+                />}
               plain
-              disabled={activeIndex >= lastIndex}
+              disabled={nextIconDisabled}
               onClick={onRight}
               hoverIndicator
             />
