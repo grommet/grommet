@@ -62,7 +62,9 @@ describe('MaskedInput', function () {
     }, 300);
   });
   test('option via mouse', function (done) {
-    var onChange = jest.fn();
+    var onChange = jest.fn(function (event) {
+      return event.target.value;
+    });
 
     var _render3 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
       "data-testid": "test-input",
@@ -93,16 +95,15 @@ describe('MaskedInput', function () {
       _reactTestingLibrary.fireEvent.click((0, _domTestingLibrary.getByText)(document, 'aa'));
 
       expect(container.firstChild).toMatchSnapshot();
-      expect(onChange).toBeCalledWith(expect.objectContaining({
-        target: {
-          value: 'aa!'
-        }
-      }));
+      expect(onChange).toHaveBeenCalled();
+      expect(onChange).toHaveReturnedWith('aa!');
       done();
     }, 500);
   });
   test('option via keyboard', function (done) {
-    var onChange = jest.fn();
+    var onChange = jest.fn(function (event) {
+      return event.target.value;
+    });
 
     var _render4 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
       "data-testid": "test-input",
@@ -153,11 +154,8 @@ describe('MaskedInput', function () {
       }); // enter
 
 
-      expect(onChange).toBeCalledWith(expect.objectContaining({
-        target: {
-          value: 'aa!'
-        }
-      }));
+      expect(onChange).toHaveBeenCalled();
+      expect(onChange).toHaveReturnedWith('aa!');
       done();
     }, 300);
   });
@@ -205,6 +203,140 @@ describe('MaskedInput', function () {
 
       expect(onChange).not.toBeCalled();
       expect(container.firstChild).toMatchSnapshot();
+      done();
+    }, 300);
+  });
+  test('event target props are available option via mouse', function (done) {
+    var onChangeMock = jest.fn(function (event) {
+      var _event$target = event.target,
+          value = _event$target.value,
+          id = _event$target.id,
+          name = _event$target.name;
+      return {
+        target: {
+          id: id,
+          value: value,
+          name: name
+        }
+      };
+    });
+
+    var _render6 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
+      "data-testid": "test-event-target-select-by-mouse",
+      plain: true,
+      size: "large",
+      id: "input-id",
+      name: "input-name",
+      mask: [{
+        length: [1, 2],
+        options: ['aa', 'bb'],
+        regexp: /^[ab][ab]$|^[ab]$/
+      }, {
+        fixed: '!'
+      }],
+      value: "",
+      onChange: onChangeMock
+    })),
+        getByTestId = _render6.getByTestId,
+        container = _render6.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    _reactTestingLibrary.fireEvent.focus(getByTestId('test-event-target-select-by-mouse'));
+
+    setTimeout(function () {
+      (0, _portal.expectPortal)('masked-input-drop__input-id').toMatchSnapshot();
+
+      _reactTestingLibrary.fireEvent.click((0, _domTestingLibrary.getByText)(document, 'aa'));
+
+      expect(container.firstChild).toMatchSnapshot();
+      expect(onChangeMock).toHaveBeenCalled();
+      expect(onChangeMock).toHaveReturnedWith(expect.objectContaining({
+        target: expect.objectContaining({
+          id: 'input-id',
+          name: 'input-name',
+          value: 'aa!'
+        })
+      }));
+      done();
+    }, 500);
+  });
+  test('event target props are available option via keyboard', function (done) {
+    var onChangeMock = jest.fn(function (event) {
+      var _event$target2 = event.target,
+          value = _event$target2.value,
+          id = _event$target2.id,
+          name = _event$target2.name;
+      return {
+        target: {
+          id: id,
+          value: value,
+          name: name
+        }
+      };
+    });
+
+    var _render7 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
+      "data-testid": "test-event-target-select-by-keyboard",
+      id: "input-id",
+      name: "input-name",
+      size: "medium",
+      mask: [{
+        length: [1, 2],
+        options: ['aa', 'bb'],
+        regexp: /^[ab][ab]$|^[ab]$/
+      }, {
+        fixed: '!'
+      }],
+      value: "",
+      onChange: onChangeMock
+    })),
+        getByTestId = _render7.getByTestId,
+        container = _render7.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    var input = getByTestId('test-event-target-select-by-keyboard');
+
+    _reactTestingLibrary.fireEvent.focus(input);
+
+    setTimeout(function () {
+      // pressing enter here nothing will happen
+      _reactTestingLibrary.fireEvent.keyDown(input, {
+        keyCode: 13
+      }); // enter
+
+
+      expect(onChangeMock).not.toBeCalled();
+
+      _reactTestingLibrary.fireEvent.keyDown(input, {
+        keyCode: 40
+      }); // down
+
+
+      _reactTestingLibrary.fireEvent.keyDown(input, {
+        keyCode: 40
+      }); // down
+
+
+      _reactTestingLibrary.fireEvent.keyDown(input, {
+        keyCode: 38
+      }); // up
+
+
+      _reactTestingLibrary.fireEvent.keyDown(input, {
+        keyCode: 13
+      }); // enter
+
+
+      expect(onChangeMock).toBeCalled();
+      expect(onChangeMock).toBeCalledTimes(1);
+      expect(onChangeMock).toHaveReturnedWith(expect.objectContaining({
+        target: expect.objectContaining({
+          id: 'input-id',
+          name: 'input-name',
+          value: 'aa!'
+        })
+      }));
       done();
     }, 300);
   });

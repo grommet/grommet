@@ -1,6 +1,6 @@
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -205,6 +205,20 @@ function (_Component) {
       }
     });
 
+    _defineProperty(_assertThisInitialized(_this), "setValue", function (nextValue) {
+      // Calling set value function directly on input because React library overrides
+      // setter `event.target.value =` and loses original event target fidelity.
+      // https://stackoverflow.com/a/46012210 &&
+      // https://github.com/grommet/grommet/pull/3171#discussion_r296415239
+      var nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+      nativeInputValueSetter.call(_this.inputRef.current, nextValue);
+      var event = new Event('input', {
+        bubbles: true
+      });
+
+      _this.inputRef.current.dispatchEvent(event);
+    });
+
     _defineProperty(_assertThisInitialized(_this), "onChange", function (event) {
       var _this$props = _this.props,
           onChange = _this$props.onChange,
@@ -216,20 +230,18 @@ function (_Component) {
         return part.part;
       }).join('');
 
-      if (onChange) {
-        onChange({
-          target: _extends({}, event.target, {
-            value: nextValue
-          })
-        });
+      if (value === nextValue) {
+        if (onChange) {
+          onChange(event);
+        }
+      } else {
+        _this.setValue(nextValue);
       }
     });
 
     _defineProperty(_assertThisInitialized(_this), "onOption", function (option) {
       return function () {
-        var _this$props2 = _this.props,
-            onChange = _this$props2.onChange,
-            mask = _this$props2.mask;
+        var mask = _this.props.mask;
         var _this$state2 = _this.state,
             activeMaskIndex = _this$state2.activeMaskIndex,
             valueParts = _this$state2.valueParts;
@@ -253,13 +265,7 @@ function (_Component) {
 
         _this.inputRef.current.focus();
 
-        if (onChange) {
-          onChange({
-            target: {
-              value: nextValue
-            }
-          });
-        }
+        _this.setValue(nextValue);
       };
     });
 
@@ -365,18 +371,18 @@ function (_Component) {
   _proto.render = function render() {
     var _this2 = this;
 
-    var _this$props3 = this.props,
-        defaultValue = _this$props3.defaultValue,
-        forwardRef = _this$props3.forwardRef,
-        id = _this$props3.id,
-        placeholder = _this$props3.placeholder,
-        plain = _this$props3.plain,
-        mask = _this$props3.mask,
-        value = _this$props3.value,
-        onChange = _this$props3.onChange,
-        onKeyDown = _this$props3.onKeyDown,
-        propsTheme = _this$props3.theme,
-        rest = _objectWithoutPropertiesLoose(_this$props3, ["defaultValue", "forwardRef", "id", "placeholder", "plain", "mask", "value", "onChange", "onKeyDown", "theme"]);
+    var _this$props2 = this.props,
+        defaultValue = _this$props2.defaultValue,
+        forwardRef = _this$props2.forwardRef,
+        id = _this$props2.id,
+        placeholder = _this$props2.placeholder,
+        plain = _this$props2.plain,
+        mask = _this$props2.mask,
+        value = _this$props2.value,
+        onChange = _this$props2.onChange,
+        onKeyDown = _this$props2.onKeyDown,
+        propsTheme = _this$props2.theme,
+        rest = _objectWithoutPropertiesLoose(_this$props2, ["defaultValue", "forwardRef", "id", "placeholder", "plain", "mask", "value", "onChange", "onKeyDown", "theme"]);
 
     var theme = this.context || propsTheme;
     var _this$state6 = this.state,
