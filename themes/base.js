@@ -397,8 +397,15 @@ var generate = function generate(baseSpacing, scale) {
       icons: {
         current: _Subtract.Subtract,
         next: _Next.Next,
-        previous: _Previous.Previous // color: undefined,
+        previous: _Previous.Previous // color: { dark: undefined, light: undefined },
 
+      },
+      animation: {
+        duration: 1000
+      },
+      disabled: {
+        icons: {// color: { dark: undefined, light: undefined },
+        }
       }
     },
     chart: {// extend: undefined,

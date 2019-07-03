@@ -152,12 +152,14 @@ function (_Component) {
         if (priorActiveIndex !== undefined) {
           animation = {
             type: priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
-            size: 'xlarge'
+            size: 'xlarge',
+            duration: theme.carousel.animation.duration
           };
         }
       } else if (index === priorActiveIndex) {
         animation = {
-          type: 'fadeOut'
+          type: 'fadeOut',
+          duration: theme.carousel.animation.duration
         };
       } else {
         animation = {
@@ -174,6 +176,8 @@ function (_Component) {
     });
     var NextIcon = theme.carousel.icons.next;
     var PreviousIcon = theme.carousel.icons.previous;
+    var nextIconDisabled = activeIndex >= lastIndex;
+    var previousIconDisabled = activeIndex <= 0;
     return React.createElement(Keyboard, {
       onLeft: onLeft,
       onRight: onRight
@@ -188,9 +192,11 @@ function (_Component) {
       justify: "between"
     }, React.createElement(Button, {
       fill: "vertical",
-      icon: React.createElement(PreviousIcon, null),
+      icon: React.createElement(PreviousIcon, {
+        color: normalizeColor(previousIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color, theme)
+      }),
       plain: true,
-      disabled: activeIndex <= 0,
+      disabled: previousIconDisabled,
       onClick: onLeft,
       hoverIndicator: true
     }), React.createElement(Box, {
@@ -200,9 +206,11 @@ function (_Component) {
       justify: "center"
     }, selectors)), React.createElement(Button, {
       fill: "vertical",
-      icon: React.createElement(NextIcon, null),
+      icon: React.createElement(NextIcon, {
+        color: normalizeColor(nextIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color, theme)
+      }),
       plain: true,
-      disabled: activeIndex >= lastIndex,
+      disabled: nextIconDisabled,
       onClick: onRight,
       hoverIndicator: true
     }))));

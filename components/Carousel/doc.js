@@ -26,6 +26,11 @@ var themeDoc = _extends({
     type: 'element',
     defaultValue: '<Next />'
   },
+  'carousel.animation.duration': {
+    description: 'The duration of the Carousel animation.',
+    type: 'number',
+    defaultValue: 1000
+  },
   'carousel.icons.previous': {
     description: 'The icon to use for the previous image navigation control.',
     type: 'element',
@@ -38,12 +43,17 @@ var themeDoc = _extends({
   },
   'carousel.icons.color': {
     description: 'The color used for Carousel icons.',
-    type: 'string',
+    type: "string | { 'dark': string, 'light': string }",
+    defaultValue: undefined
+  },
+  'carousel.disabled.icons.color': {
+    description: 'The color used for disabled Carousel icons.',
+    type: "string | { 'dark': string, 'light': string }",
     defaultValue: undefined
   },
   'global.colors.icon': {
     description: 'The color used for Carousel icons.',
-    type: 'object',
+    type: "string | { 'dark': string, 'light': string }",
     defaultValue: {
       dark: '#f8f8f8',
       light: '#666666'
