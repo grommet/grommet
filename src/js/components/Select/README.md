@@ -481,7 +481,7 @@ undefined
 
 **select.control.open**
 
-Any additional style for the control's open state of the Select component. Expects `object`.
+Any additional style for the control open state of the Select component. Expects `object`.
 
 Defaults to
 
