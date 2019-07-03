@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
 
-import { Grommet, Box, Carousel, ThemeContext } from 'grommet';
+import { Grommet, Box, Carousel } from 'grommet';
 
 const customTheme = {
   carousel: {
@@ -39,9 +39,8 @@ const SimpleCarousel = props => (
 );
 
 const CustomCarousel = () => (
-  <Grommet>
+  <Grommet theme={customTheme}>
     <Box align="center" pad="large">
-      <ThemeContext.Extend value={customTheme}>
         <Carousel controls='arrows'>
           <Box pad="xlarge" background="accent-1">
             <Attraction size="xlarge" />
@@ -53,7 +52,6 @@ const CustomCarousel = () => (
             <Car size="xlarge" />
           </Box>
         </Carousel>
-      </ThemeContext.Extend>
     </Box>
   </Grommet>
 );
