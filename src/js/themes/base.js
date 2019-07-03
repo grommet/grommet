@@ -343,14 +343,14 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         current: Subtract,
         next: Next,
         previous: Previous,
-        // color: undefined,
+        // color: { dark: undefined, light: undefined },
       },
       animation: {
         duration: 1000,
       },
       disabled: {
         icons: {
-          color: undefined,
+          // color: { dark: undefined, light: undefined },
         },
       },
     },

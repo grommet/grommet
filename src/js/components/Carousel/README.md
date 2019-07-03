@@ -177,7 +177,7 @@ Defaults to
 
 **carousel.icons.color**
 
-The color used for Carousel icons. Expects `string`.
+The color used for Carousel icons. Expects `string | { 'dark': string, 'light': string }`.
 
 Defaults to
 
@@ -187,7 +187,7 @@ undefined
 
 **carousel.disabled.icons.color**
 
-The color used for disabled Carousel icons. Expects `string`.
+The color used for disabled Carousel icons. Expects `string | { 'dark': string, 'light': string }`.
 
 Defaults to
 
@@ -197,7 +197,7 @@ undefined
 
 **global.colors.icon**
 
-The color used for Carousel icons. Expects `object`.
+The color used for Carousel icons. Expects `string | { 'dark': string, 'light': string }`.
 
 Defaults to
 

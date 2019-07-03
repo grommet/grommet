@@ -150,9 +150,11 @@ class Carousel extends Component {
             <Button
               fill="vertical"
               icon={
-                <PreviousIcon color={previousIconDisabled
-                  ? theme.carousel.disabled.icons.color
-                  : theme.carousel.icons.color}
+                <PreviousIcon color={
+                  normalizeColor(
+                    previousIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color,
+                    theme
+                  )}
                 />}
               plain
               disabled={previousIconDisabled}
@@ -167,9 +169,11 @@ class Carousel extends Component {
             <Button
               fill="vertical"
               icon={
-                <NextIcon color={nextIconDisabled
-                  ? theme.carousel.disabled.icons.color
-                  : theme.carousel.icons.color}
+                <NextIcon color={
+                  normalizeColor(
+                    nextIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color,
+                    theme
+                  )}
                 />}
               plain
               disabled={nextIconDisabled}
