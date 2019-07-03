@@ -23,9 +23,8 @@ export const doc = Carousel => {
     play: PropTypes.number.description(`If specified, the number of
       milliseconds between automatically transitioning to the next child. It
       will loop through all children indefinitely.`),
-    selectors: PropTypes.oneOf([false, true, 'arrows', 'selectors']).description(
-      `Whether to show carousel controls, and where to place them`,
-    )
+    selectors: PropTypes.oneOf([false, true, 'arrows', 'selectors'])
+      .description(`Whether to show carousel controls, and where to place them`)
       .defaultValue(true),
   };
 
@@ -37,6 +36,11 @@ export const themeDoc = {
     description: 'The icon to use for the next image navigation control.',
     type: 'element',
     defaultValue: '<Next />',
+  },
+  'carousel.animation.duration': {
+    description: 'The duration of the Carousel animation.',
+    type: 'number',
+    defaultValue: 1000,
   },
   'carousel.icons.previous': {
     description: 'The icon to use for the previous image navigation control.',
@@ -51,12 +55,17 @@ export const themeDoc = {
   },
   'carousel.icons.color': {
     description: 'The color used for Carousel icons.',
-    type: 'string',
+    type: "string | { 'dark': string, 'light': string }",
+    defaultValue: undefined,
+  },
+  'carousel.disabled.icons.color': {
+    description: 'The color used for disabled Carousel icons.',
+    type: "string | { 'dark': string, 'light': string }",
     defaultValue: undefined,
   },
   'global.colors.icon': {
     description: 'The color used for Carousel icons.',
-    type: 'object',
+    type: "string | { 'dark': string, 'light': string }",
     defaultValue: {
       dark: '#f8f8f8',
       light: '#666666',

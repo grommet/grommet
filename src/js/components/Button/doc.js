@@ -62,6 +62,9 @@ with plain Buttons.`,
     href: PropTypes.string.description(
       'If specified, the button will behave like an anchor tag.',
     ),
+    target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']).description(
+      `Specifies where to display the URL defined in the href property.`,
+    ),
     icon: PropTypes.element.description('Icon element to place in the button.'),
     gap: PropTypes.oneOfType([
       PropTypes.oneOf([
