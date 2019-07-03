@@ -93,6 +93,9 @@ export const doc = DataTable => {
     sortable: PropTypes.bool.description(
       'Whether to allow the user to sort columns.',
     ),
+    step: PropTypes.number
+      .description('How many items to render at a time.')
+      .defaultValue(50),
   };
 
   return DocumentedDataTable;

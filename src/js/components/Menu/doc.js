@@ -46,8 +46,9 @@ one of top or bottom should be specified.`,
       PropTypes.shape({
         color: PropTypes.string,
         opacity: PropTypes.oneOfType([
-          PropTypes.oneOf(['weak', 'medium', 'strong']),
           PropTypes.bool,
+          PropTypes.number,
+          PropTypes.oneOf(['weak', 'medium', 'strong']),
         ]),
       }),
     ]).description('Background color when drop is active'),
@@ -83,6 +84,9 @@ The object values can be any Button prop, for example: label and onClick.`,
     })
       .description('Custom messages. Used for accessibility by screen readers.')
       .defaultValue({ openMenu: 'Open Menu', closeMenu: 'Close Menu' }),
+    open: PropTypes.bool
+      .description('Whether the state of the component should be open')
+      .defaultValue(false),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,

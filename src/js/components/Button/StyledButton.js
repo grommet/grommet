@@ -71,15 +71,26 @@ const hoverStyle = css`
   }
 `;
 
-const fillStyle = `
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  flex: 1 0 auto;
-`;
+const fillStyle = fillContainer => {
+  if (fillContainer === 'horizontal') {
+    return 'width: 100%;';
+  }
+  if (fillContainer === 'vertical') {
+    return 'height: 100%;';
+  }
+  if (fillContainer) {
+    return `
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      flex: 1 0 auto;
+    `;
+  }
+  return undefined;
+};
 
-const plainStyle = css`
-  color: inherit;
+const plainStyle = props => css`
+  color: ${normalizeColor(props.colorValue || 'inherit', props.theme)};
   border: none;
   padding: 0;
   text-align: inherit;
@@ -99,7 +110,7 @@ const StyledButton = styled.button`
   text-transform: none;
 
   ${genericStyles}
-  ${props => props.plain && plainStyle}
+  ${props => props.plain && plainStyle(props)}
   ${props => !props.plain && basicStyle(props)}
   ${props => props.primary && primaryStyle(props)}
 
@@ -118,7 +129,7 @@ const StyledButton = styled.button`
     `
     transition: 0.1s ease-in-out;
   `}
-  ${props => props.fillContainer && fillStyle}
+  ${props => props.fillContainer && fillStyle(props.fillContainer)}
   ${props =>
     props.hasIcon &&
     !props.hasLabel &&

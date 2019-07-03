@@ -32,9 +32,13 @@ class Menu extends Component {
     justifyContent: 'start',
   };
 
-  state = { activeItemIndex: -1, open: false };
-
   buttonRefs = {};
+
+  constructor(props) {
+    super(props);
+
+    this.state = { activeItemIndex: -1, open: props.open || false };
+  }
 
   onDropClose = () => {
     this.setState({
@@ -181,14 +185,15 @@ class Menu extends Component {
                       }}
                       active={activeItemIndex === index}
                       hoverIndicator="background"
-                      disabled={item.disabled}
+                      {...{ ...item, icon: undefined, label: undefined }}
                       onClick={(...args) => {
-                        item.onClick(...args);
+                        if (item.onClick) {
+                          item.onClick(...args);
+                        }
                         if (item.close !== false) {
                           this.onDropClose();
                         }
                       }}
-                      href={item.href}
                     >
                       <Box align="start" pad="small" direction="row">
                         {item.icon}

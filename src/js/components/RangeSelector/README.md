@@ -211,7 +211,7 @@ light-4
 
 **rangeSelector.edge.type**
 
-The edge style type. Expects `'bar' | 'disc'`.
+The edge control type. Expects `'bar' | 'disc' | node`.
 
 Defaults to
 

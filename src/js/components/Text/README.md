@@ -124,7 +124,7 @@ string
 The font size and line height are primarily driven by the chosen tag. But, it can
 be adjusted via this size property. The tag should be set for semantic
 correctness and accessibility. This size property allows for stylistic
-adjustments.
+adjustments. Defaults to `medium`.
 
 ```
 xsmall
@@ -182,6 +182,17 @@ Font weight
 normal
 bold
 number
+```
+
+**wordBreak**
+
+Whether words should break when reaching the end of a line. Defaults to `normal`.
+
+```
+normal
+break-all
+keep-all
+break-word
 ```
   
 ## Intrinsic element

@@ -74,6 +74,7 @@ The suggestion contains the object chosen from the supplied suggestions.`,
     placeholder: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.node,
+      PropTypes.element,
     ]).description('Placeholder to use when no value is provided.'),
     plain: PropTypes.bool.description(
       `Whether this is a plain input with no border or padding.
@@ -165,6 +166,11 @@ export const themeDoc = {
   },
   'textInput.extend': {
     description: 'Any additional style for TextInput.',
+    type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'textInput.container.extend': {
+    description: 'Any additional style for TextInput container.',
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },

@@ -2,6 +2,29 @@ import React, { Component } from 'react';
 import { defaultProps } from '../../default-props';
 import { FormContext } from './FormContext';
 
+const updateReducer = (name, data, error, validations) => state => {
+  const { errors, touched, value } = state;
+  const nextValue = { ...value };
+  nextValue[name] = data;
+  const nextTouched = { ...touched };
+  nextTouched[name] = true;
+  const nextErrors = { ...errors };
+  if (errors[name]) {
+    const nextError =
+      error || (validations[name] && validations[name](data, nextValue));
+    if (nextError) {
+      nextErrors[name] = nextError;
+    } else {
+      delete nextErrors[name];
+    }
+  }
+  return {
+    value: nextValue,
+    errors: nextErrors,
+    touched: nextTouched,
+  };
+};
+
 const defaultMessages = {
   invalid: 'invalid',
   required: 'required',
@@ -72,34 +95,28 @@ class Form extends Component {
   };
 
   onReset = event => {
-    const { onReset } = this.props;
-    if (onReset) {
-      onReset(event);
-    }
-    this.setState({ errors: {}, value: {}, touched: {} });
+    const { onChange, onReset } = this.props;
+    const value = {};
+    this.setState({ errors: {}, value, touched: {} }, () => {
+      if (onReset) {
+        event.persist(); // extract from React's synthetic event pool
+        const adjustedEvent = event;
+        adjustedEvent.value = value;
+        onReset(adjustedEvent);
+      }
+      if (onChange) {
+        onChange(value);
+      }
+    });
   };
 
   update = (name, data, error) => {
-    const { errors, touched, value } = this.state;
-    const nextValue = { ...value };
-    nextValue[name] = data;
-    const nextTouched = { ...touched };
-    nextTouched[name] = true;
-    const nextErrors = { ...errors };
-    if (errors[name]) {
-      const nextError =
-        error ||
-        (this.validations[name] && this.validations[name](data, nextValue));
-      if (nextError) {
-        nextErrors[name] = nextError;
-      } else {
-        delete nextErrors[name];
+    this.setState(updateReducer(name, data, error, this.validations), () => {
+      const { onChange } = this.props;
+      const { value } = this.state;
+      if (onChange) {
+        onChange(value);
       }
-    }
-    this.setState({
-      value: nextValue,
-      errors: nextErrors,
-      touched: nextTouched,
     });
   };
 

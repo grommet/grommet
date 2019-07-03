@@ -11,6 +11,7 @@ class DataTable extends Component {
   static defaultProps = {
     columns: [],
     data: [],
+    step: 50,
   };
 
   state = {};
@@ -82,6 +83,7 @@ class DataTable extends Component {
       resizeable,
       size,
       sortable,
+      step,
       onSearch, // removing unknown DOM attributes
       ...rest
     } = this.props;
@@ -135,6 +137,7 @@ class DataTable extends Component {
             onMore={onMore}
             primaryProperty={primaryProperty}
             size={size}
+            step={step}
           />
         )}
         {showFooter && (

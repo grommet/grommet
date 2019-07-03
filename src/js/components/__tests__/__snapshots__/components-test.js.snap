@@ -393,11 +393,11 @@ zoomOut
   image: string,
   position: string,
   opacity: 
+    boolean
+    number
     weak
     medium
-    strong
-    boolean
-    number,
+    strong,
   repeat: 
     no-repeat
     repeat
@@ -705,9 +705,9 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether children can wrap if they
-      can't all fit.",
-        "format": "boolean",
+        "description": "Whether children can wrap if they can't all fit.",
+        "format": "boolean
+reverse",
         "name": "wrap",
       },
     ],
@@ -841,8 +841,10 @@ string",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether the button expands to fill all of the available width and height.",
-        "format": "boolean",
+        "description": "Whether the button expands to fill all of the available width and/or height.",
+        "format": "horizontal
+vertical
+boolean",
         "name": "fill",
       },
       Object {
@@ -873,9 +875,29 @@ background
         "name": "href",
       },
       Object {
+        "description": "Specifies where to display the URL defined in the href property.",
+        "format": "_self
+_blank
+_parent
+_top",
+        "name": "target",
+      },
+      Object {
         "description": "Icon element to place in the button.",
         "format": "element",
         "name": "icon",
+      },
+      Object {
+        "defaultValue": "small",
+        "description": "The amount of spacing between icon and label in the button.",
+        "format": "xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string",
+        "name": "gap",
       },
       Object {
         "description": "Label text to place in the button.",
@@ -890,8 +912,8 @@ causes the Button to be disabled.",
       },
       Object {
         "defaultValue": false,
-        "description": "Whether this is a plain button with no border or pad. 
-Non plain button will show both pad and border. 
+        "description": "Whether this is a plain button with no border or pad.
+Non plain button will show both pad and border.
 The plain button has no border and unless the icon prop exist it has no pad as well.",
         "format": "boolean",
         "name": "plain",
@@ -925,7 +947,7 @@ function",
       },
     ],
     "usage": "import { Button } from 'grommet';
-<Button primary={true} label='Label' />",
+<Button primary label='Label' />",
   },
   "Calendar": Object {
     "availableAt": Array [
@@ -1599,7 +1621,7 @@ vertical",
       },
     ],
     "usage": "import { Collapsible } from 'grommet';
-<Collapsible open={true}>test</Collapsible>",
+<Collapsible open>test</Collapsible>",
   },
   "DataTable": [Function],
   "Diagram": Object {
@@ -1886,8 +1908,9 @@ string",
     "name": "FormField",
     "properties": Array [
       Object {
-        "description": "The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component.",
-        "format": "function",
+        "description": "The component to insert in the FormField. Grommet will add update the form values when this field changes. Any additional properties (such as initial value) you pass to FormField will be forwarded to this component. The component may be custom as long it supports the proporties of name, value, onChange (event => {}), while event has either event.value or event.target.value.  ",
+        "format": "function
+object",
         "name": "component",
       },
       Object {
@@ -1930,7 +1953,8 @@ node",
         "name": "required",
       },
       Object {
-        "description": "Validation rule. Provide a regular expression or a function. If a
+        "description": "Validation rule when used within a grommet Form. Provide a regular
+      expression or a function. If a
       function is provided, it will be called with two arguments, the value
       for this field and the entire value object. This permits validation to
       encompass multiple fields. The function should return a string message
@@ -2172,10 +2196,11 @@ one of top or bottom should be specified.",
 {
   color: string,
   opacity: 
+    boolean
+    number
     weak
     medium
     strong
-    boolean
 }",
         "name": "dropBackground",
       },
@@ -2234,6 +2259,12 @@ node",
   openMenu: string
 }",
         "name": "messages",
+      },
+      Object {
+        "defaultValue": false,
+        "description": "Whether the state of the component should be open",
+        "format": "boolean",
+        "name": "open",
       },
       Object {
         "defaultValue": "medium",
@@ -2735,7 +2766,8 @@ string",
       Object {
         "description": "A custom icon to be used when rendering the select. You can use false to not render an icon at all.",
         "format": "boolean
-function",
+function
+node",
         "name": "icon",
       },
       Object {
@@ -2785,6 +2817,24 @@ function",
         "name": "onSearch",
       },
       Object {
+        "description": "Use this to indicate that 'items' doesn't contain all that it could.
+      It will be called when the entire list of items has been rendered.
+      This might be used when the total number of items that could be retrieved
+      is more than you'd want to load into the browser. 'onMore' allows you
+      to lazily fetch more from the server only when needed.",
+        "format": "function",
+        "name": "onMore",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.",
+        "format": "boolean",
+        "name": "replace",
+      },
+      Object {
         "description": "Options can be either a string or an object. If an object is used, use
       children callback in order to render anything based on the current item.",
         "format": "[
@@ -2796,14 +2846,15 @@ function",
         "required": true,
       },
       Object {
-        "description": "Initial state of the select component",
+        "description": "Control the state of the component.",
         "format": "boolean",
         "name": "open",
       },
       Object {
         "description": "Placeholder text to use when no value is provided.",
         "format": "string
-node",
+node
+element",
         "name": "placeholder",
       },
       Object {
@@ -3171,6 +3222,15 @@ horizontal
 boolean",
         "name": "resize",
       },
+      Object {
+        "description": "The size of the TextArea.",
+        "format": "small
+medium
+large
+xlarge
+string",
+        "name": "size",
+      },
     ],
     "usage": "import { TextArea } from 'grommet';
 <TextArea id='item' name='item' />",
@@ -3291,7 +3351,8 @@ The suggestion contains the object chosen from the supplied suggestions.",
       Object {
         "description": "Placeholder to use when no value is provided.",
         "format": "string
-node",
+node
+element",
         "name": "placeholder",
       },
       Object {

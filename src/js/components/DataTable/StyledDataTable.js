@@ -12,6 +12,11 @@ const StyledDataTable = styled(Table)`
   border-spacing: 0;
   border-collapse: collapse;
   height: 100%;
+
+  /* Firefox hack to get table contents to not overflow */
+  @-moz-document url-prefix() {
+    height: auto;
+  }
   ${genericStyles};
 `;
 

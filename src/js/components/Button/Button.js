@@ -30,6 +30,7 @@ class Button extends Component {
   static defaultProps = {
     type: 'button',
     focusIndicator: true,
+    gap: 'small',
   };
 
   constructor(props) {
@@ -69,6 +70,7 @@ class Button extends Component {
       children,
       disabled,
       icon,
+      gap,
       fill, // munged to avoid styled-components putting it in the DOM
       focus,
       href,
@@ -115,7 +117,7 @@ class Button extends Component {
     let contents;
     if (first && second) {
       contents = (
-        <Box direction="row" align="center" justify="center" gap="small">
+        <Box direction="row" align="center" justify="center" gap={gap}>
           {first}
           {second}
         </Box>
@@ -136,6 +138,7 @@ class Button extends Component {
         colorValue={color}
         disabled={disabled}
         hasIcon={!!icon}
+        gap={gap}
         hasLabel={!!label}
         fillContainer={fill}
         focus={focus}

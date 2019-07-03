@@ -10,7 +10,7 @@ You can provide a single function child that will be called with
 
 ```javascript
 import { Button } from 'grommet';
-<Button primary={true} label='Label' />
+<Button primary label='Label' />
 ```
 
 ## Properties
@@ -121,7 +121,7 @@ boolean
 
 **color**
 
-Fill color for primary, border color otherwise.
+Fill color for primary, label color for plain, border color otherwise.
 
 ```
 string
@@ -141,9 +141,11 @@ boolean
 
 **fill**
 
-Whether the button expands to fill all of the available width and height.
+Whether the button expands to fill all of the available width and/or height.
 
 ```
+horizontal
+vertical
 boolean
 ```
 
@@ -181,12 +183,37 @@ If specified, the button will behave like an anchor tag.
 string
 ```
 
+**target**
+
+Specifies where to display the URL defined in the href property.
+
+```
+_self
+_blank
+_parent
+_top
+```
+
 **icon**
 
 Icon element to place in the button.
 
 ```
 element
+```
+
+**gap**
+
+The amount of spacing between icon and label in the button. Defaults to `small`.
+
+```
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+string
 ```
 
 **label**
@@ -208,8 +235,8 @@ function
 
 **plain**
 
-Whether this is a plain button with no border or pad. 
-Non plain button will show both pad and border. 
+Whether this is a plain button with no border or pad.
+Non plain button will show both pad and border.
 The plain button has no border and unless the icon prop exist it has no pad as well.
 
 ```

@@ -7,30 +7,13 @@ import {
   CheckBox,
   Grommet,
   Form,
-  // FormContext,
   FormField,
-  RadioButton,
+  RadioButtonGroup,
   RangeInput,
   Select,
   TextArea,
 } from 'grommet';
 import { grommet } from 'grommet/themes';
-
-const RadioButtonGroup = ({ name, onChange, options, value }) => (
-  <Box gap="small">
-    {options.map(option => (
-      <Box key={option}>
-        <RadioButton
-          name={name}
-          value={option}
-          label={option}
-          checked={value === option}
-          onChange={() => onChange({ value: option })}
-        />
-      </Box>
-    ))}
-  </Box>
-);
 
 const Example = () => (
   <Grommet full theme={grommet}>
@@ -81,20 +64,6 @@ const Example = () => (
             min={15}
             max={75}
           />
-          {/* }
-          <FormField label="Comments" name="comments">
-            <FormContext.Consumer>
-              {({ value, update }) => (
-                <TextArea
-                  plain
-                  focusIndicator={false}
-                  value={value.comments}
-                  onChange={event => update('comments', event.target.value)}
-                />
-              )}
-            </FormContext.Consumer>
-          </FormField>
-          { */}
           <Box direction="row" justify="between" margin={{ top: 'medium' }}>
             <Button label="Cancel" />
             <Button type="reset" label="Reset" />

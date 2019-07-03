@@ -8,7 +8,7 @@ export const doc = RoutedButton => {
     .description('A button with support for React Router.')
     .usage(
       `import { RoutedButton } from 'grommet';
-<RoutedButton primary={true} path='/documentation' />`,
+<RoutedButton primary path='/documentation' />`,
     )
     .intrinsicElement('button');
   DocumentedRoutedButton.propTypes = { ...ROUTER_PROPS };

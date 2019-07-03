@@ -112,10 +112,14 @@ class Carousel extends Component {
           animation = {
             type: priorActiveIndex < activeIndex ? 'slideLeft' : 'slideRight',
             size: 'xlarge',
+            duration: theme.carousel.animation.duration,
           };
         }
       } else if (index === priorActiveIndex) {
-        animation = { type: 'fadeOut' };
+        animation = {
+          type: 'fadeOut',
+          duration: theme.carousel.animation.duration,
+        };
       } else {
         animation = { type: 'fadeOut', duration: 0 };
       }
@@ -129,6 +133,8 @@ class Carousel extends Component {
 
     const NextIcon = theme.carousel.icons.next;
     const PreviousIcon = theme.carousel.icons.previous;
+    const nextIconDisabled = activeIndex >= lastIndex;
+    const previousIconDisabled = activeIndex <= 0;
 
     return (
       <Keyboard onLeft={onLeft} onRight={onRight}>
@@ -141,35 +147,39 @@ class Carousel extends Component {
             direction="row"
             justify="between"
           >
-            <Box fill="vertical">
-              <Button
-                fill
-                disabled={activeIndex <= 0}
-                onClick={onLeft}
-                hoverIndicator
-              >
-                <Box justify="center">
-                  <PreviousIcon />
-                </Box>
-              </Button>
-            </Box>
+            <Button
+              fill="vertical"
+              icon={
+                <PreviousIcon color={
+                  normalizeColor(
+                    previousIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color,
+                    theme
+                  )}
+                />}
+              plain
+              disabled={previousIconDisabled}
+              onClick={onLeft}
+              hoverIndicator
+            />
             <Box justify="end">
               <Box direction="row" justify="center">
                 {selectors}
               </Box>
             </Box>
-            <Box fill="vertical">
-              <Button
-                fill
-                disabled={activeIndex >= lastIndex}
-                onClick={onRight}
-                hoverIndicator
-              >
-                <Box justify="center">
-                  <NextIcon />
-                </Box>
-              </Button>
-            </Box>
+            <Button
+              fill="vertical"
+              icon={
+                <NextIcon color={
+                  normalizeColor(
+                    nextIconDisabled ? theme.carousel.disabled.icons.color : theme.carousel.icons.color,
+                    theme
+                  )}
+                />}
+              plain
+              disabled={nextIconDisabled}
+              onClick={onRight}
+              hoverIndicator
+            />
           </Box>
         </Stack>
       </Keyboard>

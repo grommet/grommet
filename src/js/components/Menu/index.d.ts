@@ -8,7 +8,7 @@ export interface MenuProps {
   margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | "xlarge" | string} | string;
   disabled?: boolean;
   dropAlign?: {top?: "top" | "bottom",bottom?: "top" | "bottom",left?: "right" | "left",right?: "right" | "left"};
-  dropBackground?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean};
+  dropBackground?: string | {color?: string,opacity?: "weak" | "medium" | "strong" | boolean | number};
   dropTarget?: object;
   dropProps?: DropProps;
   justifyContent?: "start" | "center" | "end" | "between" | "around" | "stretch";
@@ -16,6 +16,7 @@ export interface MenuProps {
   items: object[];
   label?: string | React.ReactNode;
   messages?: {closeMenu?: string,openMenu?: string};
+  open?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
 }
 
