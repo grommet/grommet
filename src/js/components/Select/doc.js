@@ -224,7 +224,7 @@ export const themeDoc = {
   'select.control.open': {
     description:
       "Any additional style for the control's open state of the Select component.",
-    type: 'string | object',
+    type: 'object',
     defaultValue: undefined,
   },
   'select.control.extend': {

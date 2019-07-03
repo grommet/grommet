@@ -29,6 +29,10 @@ const customRoundedTheme = deepMerge(grommet, {
   select: {
     control: {
       extend: 'padding: 3px 6px;',
+      open: {
+        background: '#ece0fa',
+        border: '1px solid #7D4CDB',
+      },
     },
   },
 });
