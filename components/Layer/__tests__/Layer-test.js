@@ -226,4 +226,34 @@ describe('Layer', function () {
     ref.current.componentDidMount();
     expect((0, _domTestingLibrary.queryByTestId)(document, 'test-layer-container')).toMatchSnapshot();
   });
+  test('focus on layer', function () {
+    /* eslint-disable jsx-a11y/no-autofocus */
+    (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+      "data-testid": "focus-layer-test"
+    }, _react["default"].createElement("input", null)), _react["default"].createElement("input", {
+      autoFocus: true
+    })));
+    /* eslint-disable jsx-a11y/no-autofocus */
+
+    var layerNode = (0, _domTestingLibrary.getByTestId)(document, 'focus-layer-test');
+    expect(layerNode).toMatchSnapshot();
+    expect(document.activeElement.nodeName).toBe('A');
+  });
+  test('not steal focus from an autofocus focusable element', function () {
+    /* eslint-disable jsx-a11y/no-autofocus */
+    (0, _reactTestingLibrary.render)(_react["default"].createElement(_.Grommet, null, _react["default"].createElement(_.Layer, {
+      "data-testid": "focus-layer-input-test"
+    }, _react["default"].createElement("input", {
+      autoFocus: true,
+      "data-testid": "focus-input"
+    }), _react["default"].createElement("button", {
+      type: "button"
+    }, "Button"))));
+    /* eslint-disable jsx-a11y/no-autofocus */
+
+    var layerNode = (0, _domTestingLibrary.getByTestId)(document, 'focus-layer-input-test');
+    var inputNode = (0, _domTestingLibrary.getByTestId)(document, 'focus-input');
+    expect(layerNode).toMatchSnapshot();
+    expect(document.activeElement).toBe(inputNode);
+  });
 });

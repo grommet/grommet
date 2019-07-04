@@ -58,10 +58,23 @@ function (_Component) {
     var position = this.props.position;
 
     if (position !== 'hidden') {
-      this.makeLayerVisible(); // once layer is open we set the focus in the hidden
-      // anchor so that you can start tabbing inside the layer
+      this.makeLayerVisible(); // Once layer is open we make sure it has focus so that you
+      // can start tabbing inside the layer. If the caller put focus
+      // on an element already, we honor that. Otherwise, we put
+      // the focus in the hidden anchor.
 
-      if (this.anchorRef.current) {
+      var element = document.activeElement;
+
+      while (element) {
+        if (element === this.containerRef.current) {
+          // already have focus inside the container
+          break;
+        }
+
+        element = element.parentElement;
+      }
+
+      if (!element && this.anchorRef.current) {
         this.anchorRef.current.focus();
       }
     }

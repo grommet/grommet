@@ -208,4 +208,34 @@ describe('Layer', function () {
     ref.current.componentDidMount();
     expect(queryByTestId(document, 'test-layer-container')).toMatchSnapshot();
   });
+  test('focus on layer', function () {
+    /* eslint-disable jsx-a11y/no-autofocus */
+    render(React.createElement(Grommet, null, React.createElement(Layer, {
+      "data-testid": "focus-layer-test"
+    }, React.createElement("input", null)), React.createElement("input", {
+      autoFocus: true
+    })));
+    /* eslint-disable jsx-a11y/no-autofocus */
+
+    var layerNode = getByTestId(document, 'focus-layer-test');
+    expect(layerNode).toMatchSnapshot();
+    expect(document.activeElement.nodeName).toBe('A');
+  });
+  test('not steal focus from an autofocus focusable element', function () {
+    /* eslint-disable jsx-a11y/no-autofocus */
+    render(React.createElement(Grommet, null, React.createElement(Layer, {
+      "data-testid": "focus-layer-input-test"
+    }, React.createElement("input", {
+      autoFocus: true,
+      "data-testid": "focus-input"
+    }), React.createElement("button", {
+      type: "button"
+    }, "Button"))));
+    /* eslint-disable jsx-a11y/no-autofocus */
+
+    var layerNode = getByTestId(document, 'focus-layer-input-test');
+    var inputNode = getByTestId(document, 'focus-input');
+    expect(layerNode).toMatchSnapshot();
+    expect(document.activeElement).toBe(inputNode);
+  });
 });
