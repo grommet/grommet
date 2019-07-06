@@ -22,6 +22,14 @@ class RadioButtonGroup extends Component {
 
   optionRefs = [];
 
+  componentDidUpdate() {
+    const { focus, value } = this.state;
+    if (focus && value) {
+      const valueIndex = this.valueIndex();
+      this.optionRefs[valueIndex].focus();
+    }
+  }
+
   valueIndex = () => {
     const { options, value } = this.state;
     let result;
@@ -72,18 +80,22 @@ class RadioButtonGroup extends Component {
     // Chrome behaves differently in that focus is given to radio buttons
     // when the user selects one, unlike Safari and Firefox.
     setTimeout(() => {
-      const { focus } = this.state;
-      if (!focus) {
-        this.setState({ focus: true });
-      }
+      this.setState(state => {
+        if(!state.focus) {
+          return { focus: true };
+        }
+        return null;
+      });
     }, 1);
   };
 
   onBlur = () => {
-    const { focus } = this.state;
-    if (focus) {
-      this.setState({ focus: false });
-    }
+    this.setState(state => {
+      if(state.focus) {
+        return { focus: false };
+      }
+      return null;
+    });
   };
 
   render() {
