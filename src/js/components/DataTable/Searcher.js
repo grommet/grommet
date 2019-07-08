@@ -19,6 +19,14 @@ class Searcher extends Component {
   inputRef = React.createRef();
 
   componentDidMount() {
+    this.focusInputIfNeeded();
+  }
+
+  componentDidUpdate() {
+    this.focusInputIfNeeded();
+  }
+
+  focusInputIfNeeded() {
     /* eslint-disable-next-line react/prop-types */
     const { filtering, property } = this.props;
     if (this.inputRef.current && filtering === property) {
