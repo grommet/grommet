@@ -73,6 +73,6 @@ var themeDoc = _extends({
     type: 'string',
     defaultValue: '24px'
   }
-}, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
+}, _utils.themeDocUtils.focusStyle, {}, _utils.themeDocUtils.edgeStyle('The possible sizes for margin.'));
 
 exports.themeDoc = themeDoc;

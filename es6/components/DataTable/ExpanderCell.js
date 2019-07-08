@@ -27,7 +27,7 @@ var ExpanderCell = function ExpanderCell(_ref) {
     });
   }
 
-  content = React.createElement(Box, _extends({}, _extends({}, theme.table[context], theme.dataTable[context]), rest, {
+  content = React.createElement(Box, _extends({}, _extends({}, theme.table[context], {}, theme.dataTable[context]), rest, {
     align: "center",
     pad: "xsmall"
   }), content);

@@ -168,7 +168,7 @@ function (_Component) {
         priorValue: value,
         errors: (errors !== priorErrors ? errors : stateErrors) || {},
         priorErrors: errors,
-        messages: _extends({}, defaultMessages, messages),
+        messages: _extends({}, defaultMessages, {}, messages),
         priorMessages: messages
       };
     }

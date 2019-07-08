@@ -41,7 +41,7 @@ var ExpanderCell = function ExpanderCell(_ref) {
     });
   }
 
-  content = _react["default"].createElement(_Box.Box, _extends({}, _extends({}, theme.table[context], theme.dataTable[context]), rest, {
+  content = _react["default"].createElement(_Box.Box, _extends({}, _extends({}, theme.table[context], {}, theme.dataTable[context]), rest, {
     align: "center",
     pad: "xsmall"
   }), content);

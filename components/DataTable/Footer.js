@@ -39,7 +39,7 @@ var Footer = function Footer(_ref) {
     size: "xxsmall",
     plain: true,
     verticalAlign: "top"
-  }, _react["default"].createElement(_Box.Box, _extends({}, theme.table.footer, theme.dataTable.footer))), columns.map(function (column) {
+  }, _react["default"].createElement(_Box.Box, _extends({}, theme.table.footer, {}, theme.dataTable.footer))), columns.map(function (column) {
     return _react["default"].createElement(_Cell.Cell, {
       key: column.property,
       context: "footer",

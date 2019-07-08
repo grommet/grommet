@@ -52,4 +52,4 @@ export var themeDoc = _extends({
     type: 'number',
     defaultValue: 0.3
   }
-}, themeDocUtils.focusStyle, themeDocUtils.placeholderStyle, themeDocUtils.inputStyle, themeDocUtils.disabledStyle);
+}, themeDocUtils.focusStyle, {}, themeDocUtils.placeholderStyle, {}, themeDocUtils.inputStyle, {}, themeDocUtils.disabledStyle);

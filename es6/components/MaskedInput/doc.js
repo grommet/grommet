@@ -32,4 +32,4 @@ export var themeDoc = _extends({
     type: 'string',
     defaultValue: '18px'
   }
-}, themeDocUtils.focusStyle, themeDocUtils.placeholderStyle, themeDocUtils.inputStyle);
+}, themeDocUtils.focusStyle, {}, themeDocUtils.placeholderStyle, {}, themeDocUtils.inputStyle);

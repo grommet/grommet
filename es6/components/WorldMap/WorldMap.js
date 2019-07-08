@@ -163,7 +163,7 @@ var updateState = function updateState(state, _ref2) {
 
   if (continents) {
     continents.forEach(function (continent) {
-      nextState.continents[continent.name] = _extends({}, state.continents[continent.name], continent);
+      nextState.continents[continent.name] = _extends({}, state.continents[continent.name], {}, continent);
     });
   }
 

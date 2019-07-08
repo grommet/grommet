@@ -24,7 +24,7 @@ var Footer = function Footer(_ref) {
     size: "xxsmall",
     plain: true,
     verticalAlign: "top"
-  }, React.createElement(Box, _extends({}, theme.table.footer, theme.dataTable.footer))), columns.map(function (column) {
+  }, React.createElement(Box, _extends({}, theme.table.footer, {}, theme.dataTable.footer))), columns.map(function (column) {
     return React.createElement(Cell, {
       key: column.property,
       context: "footer",

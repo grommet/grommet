@@ -114,4 +114,4 @@ export var themeDoc = _extends({
     type: 'string',
     defaultValue: 'small'
   }
-}, themeDocUtils.edgeStyle('The possible sizes for any of gap, margin, and pad.'), themeDocUtils.breakpointStyle('The possible breakpoints that could affect border, direction, gap, margin, pad, and round.'));
+}, themeDocUtils.edgeStyle('The possible sizes for any of gap, margin, and pad.'), {}, themeDocUtils.breakpointStyle('The possible breakpoints that could affect border, direction, gap, margin, pad, and round.'));

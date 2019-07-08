@@ -14,7 +14,7 @@ export var doc = function doc(Heading) {
   });
   return DocumentedHeading;
 };
-export var themeDoc = _extends({}, themeDocUtils.breakpointStyle('The possible breakpoints that could affect font-size and max-width'), themeDocUtils.edgeStyle('The possible sizes for margin.'), {
+export var themeDoc = _extends({}, themeDocUtils.breakpointStyle('The possible breakpoints that could affect font-size and max-width'), {}, themeDocUtils.edgeStyle('The possible sizes for margin.'), {
   'heading.extend': {
     description: 'Any additional style for Heading.',
     type: 'string | (props) => {}',

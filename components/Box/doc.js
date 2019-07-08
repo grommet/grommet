@@ -129,6 +129,6 @@ var themeDoc = _extends({
     type: 'string',
     defaultValue: 'small'
   }
-}, _utils.themeDocUtils.edgeStyle('The possible sizes for any of gap, margin, and pad.'), _utils.themeDocUtils.breakpointStyle('The possible breakpoints that could affect border, direction, gap, margin, pad, and round.'));
+}, _utils.themeDocUtils.edgeStyle('The possible sizes for any of gap, margin, and pad.'), {}, _utils.themeDocUtils.breakpointStyle('The possible breakpoints that could affect border, direction, gap, margin, pad, and round.'));
 
 exports.themeDoc = themeDoc;

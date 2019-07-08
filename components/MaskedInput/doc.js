@@ -42,6 +42,6 @@ var themeDoc = _extends({
     type: 'string',
     defaultValue: '18px'
   }
-}, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.placeholderStyle, _utils.themeDocUtils.inputStyle);
+}, _utils.themeDocUtils.focusStyle, {}, _utils.themeDocUtils.placeholderStyle, {}, _utils.themeDocUtils.inputStyle);
 
 exports.themeDoc = themeDoc;

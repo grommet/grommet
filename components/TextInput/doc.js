@@ -115,6 +115,6 @@ var themeDoc = _extends({
     type: 'number',
     defaultValue: 0.3
   }
-}, _utils.themeDocUtils.focusStyle, _utils.themeDocUtils.placeholderStyle, _utils.themeDocUtils.disabledStyle, _utils.themeDocUtils.inputStyle);
+}, _utils.themeDocUtils.focusStyle, {}, _utils.themeDocUtils.placeholderStyle, {}, _utils.themeDocUtils.disabledStyle, {}, _utils.themeDocUtils.inputStyle);
 
 exports.themeDoc = themeDoc;

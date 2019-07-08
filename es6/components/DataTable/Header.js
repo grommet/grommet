@@ -31,7 +31,7 @@ var Header = function Header(_ref) {
       widths = _ref.widths,
       rest = _objectWithoutPropertiesLoose(_ref, ["columns", "filtering", "filters", "groups", "groupState", "onFilter", "onFiltering", "onResize", "onSort", "onToggle", "sort", "theme", "widths"]);
 
-  var dataTableContextTheme = _extends({}, theme.table.header, theme.dataTable.header); // The tricky part here is that we need to manage the theme styling
+  var dataTableContextTheme = _extends({}, theme.table.header, {}, theme.dataTable.header); // The tricky part here is that we need to manage the theme styling
   // to make sure that the background, border, and padding are applied
   // at the right places depending on the mix of controls in each header cell.
 

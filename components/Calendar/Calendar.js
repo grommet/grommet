@@ -306,7 +306,7 @@ function (_Component) {
       }
 
       if (!prevReference || reference) {
-        state = _extends({}, state, buildState(nextProps));
+        state = _extends({}, state, {}, buildState(nextProps));
       }
 
       return state;
