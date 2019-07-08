@@ -139,7 +139,10 @@ describe('DataTable', function () {
 
     _reactTestingLibrary.fireEvent.click(container.querySelector('[aria-label="focus-search-a"]'));
 
-    _reactTestingLibrary.fireEvent.change(container.querySelector('[name="search-a"]'), {
+    var searchInput = container.querySelector('[name="search-a"]');
+    expect(document.activeElement).toBe(searchInput);
+
+    _reactTestingLibrary.fireEvent.change(searchInput, {
       target: {
         value: '['
       }

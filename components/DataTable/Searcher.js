@@ -55,6 +55,14 @@ function (_Component) {
   var _proto = Searcher.prototype;
 
   _proto.componentDidMount = function componentDidMount() {
+    this.focusInputIfNeeded();
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate() {
+    this.focusInputIfNeeded();
+  };
+
+  _proto.focusInputIfNeeded = function focusInputIfNeeded() {
     /* eslint-disable-next-line react/prop-types */
     var _this$props = this.props,
         filtering = _this$props.filtering,
