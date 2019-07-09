@@ -1305,7 +1305,9 @@ exports[`Button icon label 1`] = `
     <div
       className="c2"
     >
-      <svg />
+      <svg
+        color="#444444"
+      />
       <div
         className="c3"
       />
@@ -1472,7 +1474,9 @@ exports[`Button reverse icon label 1`] = `
       <div
         className="c3"
       />
-      <svg />
+      <svg
+        color="#444444"
+      />
     </div>
   </button>
 </div>
@@ -1521,7 +1525,9 @@ exports[`Button warns about invalid icon 1`] = `
     onMouseOver={[Function]}
     type="button"
   >
-    <svg />
+    <svg
+      color="#444444"
+    />
   </button>
 </div>
 `;
