@@ -275,11 +275,14 @@ class TextInput extends Component {
   };
 
   onEsc = event => {
-    // we have to stop both synthetic events and native events
-    // drop and layer should not close by pressing esc on this input
-    event.stopPropagation();
-    event.nativeEvent.stopImmediatePropagation();
-    this.setState({ showDrop: false });
+    const { showDrop } = this.state;
+    if (showDrop) {
+      // we have to stop both synthetic events and native events
+      // drop and layer should not close by pressing esc on this input
+      event.stopPropagation();
+      event.nativeEvent.stopImmediatePropagation();
+      this.setState({ showDrop: false });
+    }
   };
 
   onTab = () => {
