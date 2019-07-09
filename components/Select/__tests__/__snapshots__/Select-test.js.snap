@@ -534,7 +534,7 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="Open Drop"
-  class="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 jfbKsv"
+  class="Select__StyledSelectDropButton-sc-17idtfo-1 fcNjcL StyledButton-sc-323bzc-0 jfbKsv"
   id="test-select"
   type="button"
 >
@@ -1026,12 +1026,6 @@ exports[`Select complex options and children 4`] = `
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hLCmqq {
-    width: 100%;
   }
 }"
 `;
@@ -1561,7 +1555,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="Open Drop"
-  class="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 chnll"
+  class="Select__StyledSelectDropButton-sc-17idtfo-1 fcNjcL StyledButton-sc-323bzc-0 chnll"
   disabled=""
   id="test-select"
   type="button"
@@ -1747,6 +1741,11 @@ exports[`Select empty results search 1`] = `
   cursor: default;
 }
 
+.c12 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -1814,11 +1813,6 @@ exports[`Select empty results search 1`] = `
 .c5 {
   position: relative;
   width: 100%;
-}
-
-.c12 {
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c2 {
@@ -2117,6 +2111,12 @@ exports[`Select large drop container height 1`] = `
   text-align: inherit;
 }
 
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2139,12 +2139,6 @@ exports[`Select large drop container height 1`] = `
   animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
-}
-
-.c9 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c2 {
@@ -2451,6 +2445,12 @@ exports[`Select medium drop container height 1`] = `
   text-align: inherit;
 }
 
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -2473,12 +2473,6 @@ exports[`Select medium drop container height 1`] = `
   animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
-}
-
-.c9 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c2 {
@@ -2644,6 +2638,281 @@ exports[`Select medium drop container height 1`] = `
       />
     </div>
   </div>
+</div>
+`;
+
+exports[`Select modifies select control style on open 1`] = `
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: #7D4CDB;
+  stroke: #7D4CDB;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin: 0px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  padding: 0px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  margin-left: 12px;
+  margin-right: 12px;
+  min-width: 0;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0px;
+}
+
+.c2 {
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c7 {
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  -webkit-appearance: none;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  width: 100%;
+  border: none;
+}
+
+.c7::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.c7::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c7::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c7:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c7::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c5 {
+  position: relative;
+  width: 100%;
+}
+
+.c0 {
+  font-size: 18px;
+  line-height: 24px;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c6 {
+  cursor: pointer;
+}
+
+.c1 {
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  background: purple;
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c3 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c4 {
+    padding: 0px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:768px) {
+  .c8 {
+    padding: 0px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <button
+    aria-label="Open Drop"
+    class="c1 c2"
+    id="test-open-id"
+    type="button"
+  >
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <input
+            autocomplete="off"
+            class="c6 c7"
+            data-testid="test-select-style-open"
+            id="test-open-id__input"
+            placeholder="Select..."
+            readonly=""
+            tabindex="-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="c8"
+        style="min-width: auto;"
+      >
+        <svg
+          aria-label="FormDown"
+          class="c9"
+          viewBox="0 0 24 24"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
 </div>
 `;
 
@@ -3184,7 +3453,7 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="Open Drop"
-  class="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 jfbKsv"
+  class="Select__StyledSelectDropButton-sc-17idtfo-1 fcNjcL StyledButton-sc-323bzc-0 jfbKsv"
   id="test-select"
   type="button"
 >
@@ -3369,6 +3638,12 @@ exports[`Select multiple values 3`] = `
   text-align: inherit;
 }
 
+.c10 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -3391,12 +3666,6 @@ exports[`Select multiple values 3`] = `
   animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
-}
-
-.c10 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c2 {
@@ -3747,12 +4016,6 @@ exports[`Select multiple values 4`] = `
     -ms-flex-align: stretch;
     align-items: stretch;
   }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hLCmqq {
-    width: 100%;
-  }
 }"
 `;
 
@@ -4018,7 +4281,7 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="Open Drop"
-  class="Select__StyledSelectDropButton-sc-17idtfo-1 dloaWS StyledButton-sc-323bzc-0 jfbKsv"
+  class="Select__StyledSelectDropButton-sc-17idtfo-1 fcNjcL StyledButton-sc-323bzc-0 jfbKsv"
   id="test-select"
   type="button"
 >
@@ -4202,6 +4465,12 @@ exports[`Select opens 3`] = `
   text-align: inherit;
 }
 
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -4224,12 +4493,6 @@ exports[`Select opens 3`] = `
   animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
-}
-
-.c9 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c2 {
@@ -4561,12 +4824,6 @@ exports[`Select opens 4`] = `
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hLCmqq {
-    width: 100%;
   }
 }"
 `;
@@ -5767,6 +6024,12 @@ exports[`Select search 2`] = `
   text-align: inherit;
 }
 
+.c12 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -5834,12 +6097,6 @@ exports[`Select search 2`] = `
 .c5 {
   position: relative;
   width: 100%;
-}
-
-.c12 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c2 {
@@ -6209,12 +6466,6 @@ exports[`Select search 3`] = `
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
-  }
-}
-
-@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
-  .hLCmqq {
-    width: 100%;
   }
 }"
 `;
@@ -7606,6 +7857,12 @@ exports[`Select small drop container height 1`] = `
   text-align: inherit;
 }
 
+.c9 {
+  margin: 0px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
 .c0 {
   font-size: 18px;
   line-height: 24px;
@@ -7628,12 +7885,6 @@ exports[`Select small drop container height 1`] = `
   animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
-}
-
-.c9 {
-  margin: 0px;
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .c2 {

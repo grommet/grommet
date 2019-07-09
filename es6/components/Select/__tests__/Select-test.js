@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import { cleanup, render, fireEvent } from 'react-testing-library';
 import { CaretDown } from "grommet-icons/es6/icons/CaretDown";
 import { createPortal, expectPortal } from '../../../utils/portal';
+import { Grommet } from '../..';
 import { Select } from '..';
 describe('Select', function () {
   beforeEach(createPortal);
@@ -346,5 +347,38 @@ describe('Select', function () {
       icon: true
     }));
     expect(component.toJSON()).toMatchSnapshot();
+  });
+  test('modifies select control style on open', function () {
+    var customTheme = {
+      select: {
+        control: {
+          extend: {
+            background: 'purple'
+          },
+          open: {
+            background: 'lightgrey'
+          }
+        },
+        container: {}
+      }
+    };
+
+    var _render13 = render(React.createElement(Grommet, {
+      theme: customTheme
+    }, React.createElement(Select, {
+      "data-testid": "test-select-style-open",
+      id: "test-open-id",
+      options: ['morning', 'afternoon', 'evening'],
+      placeholder: "Select..."
+    }))),
+        container = _render13.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    var selectButton = container.querySelector('Button');
+    expect(selectButton).toHaveStyleRule('background', 'purple');
+    fireEvent.click(selectButton);
+    expect(selectButton).toHaveStyleRule('background', 'lightgrey');
+    fireEvent.click(selectButton);
+    expect(selectButton).toHaveStyleRule('background', 'purple');
   });
 });

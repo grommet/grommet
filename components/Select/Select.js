@@ -38,10 +38,12 @@ var SelectTextInput = (0, _styledComponents["default"])(_TextInput.TextInput).wi
 var StyledSelectDropButton = (0, _styledComponents["default"])(_DropButton.DropButton).withConfig({
   displayName: "Select__StyledSelectDropButton",
   componentId: "sc-17idtfo-1"
-})(["", ";", ";"], function (props) {
+})(["", ";", ";", ";"], function (props) {
   return !props.plain && _utils.controlBorderStyle;
 }, function (props) {
   return props.theme.select && props.theme.select.control && props.theme.select.control.extend;
+}, function (props) {
+  return props.open && props.theme.select.control.open;
 });
 StyledSelectDropButton.defaultProps = {};
 Object.setPrototypeOf(StyledSelectDropButton.defaultProps, _defaultProps.defaultProps);

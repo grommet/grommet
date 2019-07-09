@@ -775,6 +775,7 @@ var generate = function generate(baseSpacing, scale) {
       container: {// extend: undefined,
       },
       control: {// extend: undefined,
+        // open: undefined,
       },
       icons: {
         // color: { dark: undefined, light: undefined },

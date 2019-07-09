@@ -48,7 +48,11 @@ var customRoundedTheme = (0, _utils.deepMerge)(_themes.grommet, {
   },
   select: {
     control: {
-      extend: 'padding: 3px 6px;'
+      extend: 'padding: 3px 6px;',
+      open: {
+        background: '#ece0fa',
+        border: '1px solid #7D4CDB'
+      }
     }
   }
 });
