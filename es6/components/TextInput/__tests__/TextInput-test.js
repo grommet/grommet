@@ -5,6 +5,7 @@ import { getByText } from 'dom-testing-library';
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { Grommet } from '../../Grommet';
 import { TextInput } from '..';
+import { Keyboard } from '../../Keyboard';
 describe('TextInput', function () {
   beforeEach(createPortal);
   afterEach(cleanup);
@@ -120,10 +121,37 @@ describe('TextInput', function () {
       }, 50);
     }, 50);
   });
+  test('let escape events propagage if there are no suggestions', function (done) {
+    var callback = jest.fn();
+
+    var _render6 = render(React.createElement(Grommet, null, React.createElement(Keyboard, {
+      onEsc: callback
+    }, React.createElement(TextInput, {
+      "data-testid": "test-input",
+      id: "item",
+      name: "item"
+    })))),
+        getByTestId = _render6.getByTestId;
+
+    fireEvent.change(getByTestId('test-input'), {
+      target: {
+        value: ' '
+      }
+    });
+    setTimeout(function () {
+      fireEvent.keyDown(getByTestId('test-input'), {
+        key: 'Esc',
+        keyCode: 27,
+        which: 27
+      });
+      expect(callback).toBeCalled();
+      done();
+    }, 50);
+  });
   test('select suggestion', function (done) {
     var onSelect = jest.fn();
 
-    var _render6 = render(React.createElement(Grommet, null, React.createElement(TextInput, {
+    var _render7 = render(React.createElement(Grommet, null, React.createElement(TextInput, {
       "data-testid": "test-input",
       plain: true,
       size: "large",
@@ -132,8 +160,8 @@ describe('TextInput', function () {
       suggestions: ['test', 'test1'],
       onSelect: onSelect
     }))),
-        getByTestId = _render6.getByTestId,
-        container = _render6.container;
+        getByTestId = _render7.getByTestId,
+        container = _render7.container;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.change(getByTestId('test-input'), {
@@ -155,7 +183,7 @@ describe('TextInput', function () {
   test('select a suggestion', function () {
     var onSelect = jest.fn();
 
-    var _render7 = render(React.createElement(Grommet, null, React.createElement(TextInput, {
+    var _render8 = render(React.createElement(Grommet, null, React.createElement(TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -164,8 +192,8 @@ describe('TextInput', function () {
       }],
       onSelect: onSelect
     }))),
-        getByTestId = _render7.getByTestId,
-        container = _render7.container;
+        getByTestId = _render8.getByTestId,
+        container = _render8.container;
 
     expect(container.firstChild).toMatchSnapshot();
     var input = getByTestId('test-input'); // pressing enter here nothing will happen
@@ -197,14 +225,14 @@ describe('TextInput', function () {
   test('handles next and previous without suggestion', function () {
     var onSelect = jest.fn();
 
-    var _render8 = render(React.createElement(Grommet, null, React.createElement(TextInput, {
+    var _render9 = render(React.createElement(Grommet, null, React.createElement(TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
       onSelect: onSelect
     }))),
-        getByTestId = _render8.getByTestId,
-        container = _render8.container;
+        getByTestId = _render9.getByTestId,
+        container = _render9.container;
 
     expect(container.firstChild).toMatchSnapshot();
     var input = getByTestId('test-input');
@@ -226,14 +254,14 @@ describe('TextInput', function () {
   });
   ['small', 'medium', 'large'].forEach(function (dropHeight) {
     test(dropHeight + " drop height", function (done) {
-      var _render9 = render(React.createElement(TextInput, {
+      var _render10 = render(React.createElement(TextInput, {
         "data-testid": "test-input",
         id: "item",
         name: "item",
         suggestions: ['test', 'test1'],
         dropHeight: dropHeight
       })),
-          getByTestId = _render9.getByTestId;
+          getByTestId = _render10.getByTestId;
 
       fireEvent.focus(getByTestId('test-input'));
       setTimeout(function () {

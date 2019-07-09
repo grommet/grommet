@@ -14,6 +14,8 @@ var _Grommet = require("../../Grommet");
 
 var _ = require("..");
 
+var _Keyboard = require("../../Keyboard");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 describe('TextInput', function () {
@@ -140,10 +142,39 @@ describe('TextInput', function () {
       }, 50);
     }, 50);
   });
+  test('let escape events propagage if there are no suggestions', function (done) {
+    var callback = jest.fn();
+
+    var _render6 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_Keyboard.Keyboard, {
+      onEsc: callback
+    }, _react["default"].createElement(_.TextInput, {
+      "data-testid": "test-input",
+      id: "item",
+      name: "item"
+    })))),
+        getByTestId = _render6.getByTestId;
+
+    _reactTestingLibrary.fireEvent.change(getByTestId('test-input'), {
+      target: {
+        value: ' '
+      }
+    });
+
+    setTimeout(function () {
+      _reactTestingLibrary.fireEvent.keyDown(getByTestId('test-input'), {
+        key: 'Esc',
+        keyCode: 27,
+        which: 27
+      });
+
+      expect(callback).toBeCalled();
+      done();
+    }, 50);
+  });
   test('select suggestion', function (done) {
     var onSelect = jest.fn();
 
-    var _render6 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextInput, {
+    var _render7 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextInput, {
       "data-testid": "test-input",
       plain: true,
       size: "large",
@@ -152,8 +183,8 @@ describe('TextInput', function () {
       suggestions: ['test', 'test1'],
       onSelect: onSelect
     }))),
-        getByTestId = _render6.getByTestId,
-        container = _render6.container;
+        getByTestId = _render7.getByTestId,
+        container = _render7.container;
 
     expect(container.firstChild).toMatchSnapshot();
 
@@ -179,7 +210,7 @@ describe('TextInput', function () {
   test('select a suggestion', function () {
     var onSelect = jest.fn();
 
-    var _render7 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextInput, {
+    var _render8 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -188,8 +219,8 @@ describe('TextInput', function () {
       }],
       onSelect: onSelect
     }))),
-        getByTestId = _render7.getByTestId,
-        container = _render7.container;
+        getByTestId = _render8.getByTestId,
+        container = _render8.container;
 
     expect(container.firstChild).toMatchSnapshot();
     var input = getByTestId('test-input'); // pressing enter here nothing will happen
@@ -226,14 +257,14 @@ describe('TextInput', function () {
   test('handles next and previous without suggestion', function () {
     var onSelect = jest.fn();
 
-    var _render8 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextInput, {
+    var _render9 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.TextInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
       onSelect: onSelect
     }))),
-        getByTestId = _render8.getByTestId,
-        container = _render8.container;
+        getByTestId = _render9.getByTestId,
+        container = _render9.container;
 
     expect(container.firstChild).toMatchSnapshot();
     var input = getByTestId('test-input');
@@ -260,14 +291,14 @@ describe('TextInput', function () {
   });
   ['small', 'medium', 'large'].forEach(function (dropHeight) {
     test(dropHeight + " drop height", function (done) {
-      var _render9 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.TextInput, {
+      var _render10 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.TextInput, {
         "data-testid": "test-input",
         id: "item",
         name: "item",
         suggestions: ['test', 'test1'],
         dropHeight: dropHeight
       })),
-          getByTestId = _render9.getByTestId;
+          getByTestId = _render10.getByTestId;
 
       _reactTestingLibrary.fireEvent.focus(getByTestId('test-input'));
 

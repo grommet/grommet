@@ -299,14 +299,18 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "onEsc", function (event) {
-      // we have to stop both synthetic events and native events
-      // drop and layer should not close by pressing esc on this input
-      event.stopPropagation();
-      event.nativeEvent.stopImmediatePropagation();
+      var showDrop = _this.state.showDrop;
 
-      _this.setState({
-        showDrop: false
-      });
+      if (showDrop) {
+        // we have to stop both synthetic events and native events
+        // drop and layer should not close by pressing esc on this input
+        event.stopPropagation();
+        event.nativeEvent.stopImmediatePropagation();
+
+        _this.setState({
+          showDrop: false
+        });
+      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "onTab", function () {
