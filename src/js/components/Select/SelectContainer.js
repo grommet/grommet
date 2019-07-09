@@ -28,7 +28,8 @@ const OptionsBox = styled(Box)`
 `;
 
 const OptionBox = styled(Box)`
-  ${props => props.selected && selectedStyle}
+  ${props => props.selected && selectedStyle};
+  ${props => props.active && props.theme.select.options.box.hover};
 `;
 
 class SelectContainer extends Component {
@@ -431,6 +432,7 @@ class SelectContainer extends Component {
                         <OptionBox
                           {...theme.select.options.box}
                           selected={isSelected}
+                          active={isActive}
                         >
                           <Text {...theme.select.options.text}>
                             {this.optionLabel(index)}

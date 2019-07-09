@@ -204,6 +204,11 @@ export const themeDoc = {
     type: 'string',
     defaultValue: undefined,
   },
+  'select.options.box.hover': {
+    description: 'The style applied to the hover state of an Select option.',
+    type: 'object',
+    defaultValue: undefined,
+  },
   'select.options.container': {
     description: 'Any valid Box prop for the options container.',
     type: 'object',

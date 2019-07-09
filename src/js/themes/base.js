@@ -711,6 +711,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       options: {
         box: {
           align: 'start',
+          hover: {
+            // background: undefined,
+          },
           pad: 'small',
         },
         text: {

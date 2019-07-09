@@ -416,4 +416,97 @@ describe('Select', () => {
     fireEvent.click(selectButton);
     expect(selectButton).toHaveStyleRule('background', 'purple');
   });
+
+  test('modifies select option box background on mouse hover', () => {
+    const customTheme = {
+      select: {
+        options: {
+          box: {
+            background: 'blue',
+            hover: {
+              background: '#ECE0FA',
+            },
+          },
+        },
+      },
+    };
+
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          data-testid="test-select-option-hover"
+          id="test-option-hover-id"
+          options={['small', 'medium', 'large', 'extra large']}
+          placeholder="Select..."
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const selectButton = getByPlaceholderText('Select...');
+    fireEvent.click(selectButton);
+
+    const optionButton = getByText('medium').closest('button');
+    expect(optionButton.firstChild).not.toHaveStyleRule(
+      'background',
+      '#ECE0FA',
+    );
+    expect(optionButton.firstChild).toHaveStyleRule('background', 'blue');
+    fireEvent.mouseOver(optionButton);
+    expect(optionButton.firstChild).toHaveStyleRule('background', '#ECE0FA');
+    fireEvent.mouseOver(getByText('large').closest('button'));
+    expect(optionButton.firstChild).not.toHaveStyleRule(
+      'background',
+      '#ECE0FA',
+    );
+    expect(optionButton.firstChild).toHaveStyleRule('background', 'blue');
+  });
+
+  test('modifies select option box background via keyboard', () => {
+    const customTheme = {
+      select: {
+        options: {
+          box: {
+            background: 'blue',
+            hover: {
+              background: '#ECE0FA',
+            },
+          },
+        },
+      },
+    };
+
+    const { getByTestId, getByText, container } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          data-testid="test-select-option-keyboard"
+          id="test-option-keyboard-id"
+          options={['small', 'medium', 'large', 'extra large']}
+          placeholder="Select..."
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const input = getByTestId('test-select-option-keyboard');
+    fireEvent.click(input);
+
+    const options = document.getElementById(
+      'test-option-keyboard-id__select-drop',
+    );
+    const optionSmall = getByText('small').closest('button');
+    const optionLarge = getByText('large').closest('button');
+
+    expect(optionSmall.firstChild).toHaveStyleRule('background', 'blue');
+    fireEvent.keyDown(options, { key: 'ArrowDown', keyCode: 40 });
+    expect(optionSmall.firstChild).toHaveStyleRule('background', '#ECE0FA');
+    fireEvent.keyDown(options, { key: 'ArrowDown', keyCode: 40 });
+    fireEvent.keyDown(options, { key: 'ArrowDown', keyCode: 40 });
+    fireEvent.keyDown(options, { key: 'ArrowDown', keyCode: 40 });
+    fireEvent.keyDown(options, { key: 'ArrowUp', keyCode: 38 });
+    expect(optionSmall.firstChild).toHaveStyleRule('background', 'blue');
+    expect(optionLarge.firstChild).toHaveStyleRule('background', '#ECE0FA');
+  });
 });
