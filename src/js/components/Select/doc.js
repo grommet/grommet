@@ -221,6 +221,12 @@ export const themeDoc = {
     type: 'string | (props) => {}',
     defaultValue: undefined,
   },
+  'select.control.open': {
+    description:
+      'Any additional style for the control open state of the Select component.',
+    type: 'object',
+    defaultValue: undefined,
+  },
   'select.control.extend': {
     description:
       'Any additional style for the control of the Select component.',

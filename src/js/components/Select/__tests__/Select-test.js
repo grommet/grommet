@@ -6,6 +6,7 @@ import { cleanup, render, fireEvent } from 'react-testing-library';
 import { CaretDown } from 'grommet-icons';
 import { createPortal, expectPortal } from '../../../utils/portal';
 
+import { Grommet } from '../..';
 import { Select } from '..';
 
 describe('Select', () => {
@@ -377,5 +378,42 @@ describe('Select', () => {
       <Select id="test-select" options={['one', 'two']} icon />,
     );
     expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('modifies select control style on open', () => {
+    const customTheme = {
+      select: {
+        control: {
+          extend: {
+            background: 'purple',
+          },
+          open: {
+            background: 'lightgrey',
+          },
+        },
+        container: {},
+      },
+    };
+    const { container } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          data-testid="test-select-style-open"
+          id="test-open-id"
+          options={['morning', 'afternoon', 'evening']}
+          placeholder="Select..."
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+    const selectButton = container.querySelector('Button');
+
+    expect(selectButton).toHaveStyleRule('background', 'purple');
+
+    fireEvent.click(selectButton);
+    expect(selectButton).toHaveStyleRule('background', 'lightgrey');
+
+    fireEvent.click(selectButton);
+    expect(selectButton).toHaveStyleRule('background', 'purple');
   });
 });
