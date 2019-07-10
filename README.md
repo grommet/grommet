@@ -59,6 +59,13 @@ version.
    [#i-made-this Slack channel][slack].
 1. Read more from the Grommet team on [Medium].
 
+## Browser Support
+IE 11 - The Grid, Clock, Video components aren't fully supported
+Edge >= 14
+Firefox >= 52
+Chrome >= 49
+Safari >= 10
+
 ## Release History
 
 See the [Change Log].
