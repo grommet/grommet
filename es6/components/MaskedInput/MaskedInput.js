@@ -162,11 +162,12 @@ function (_Component) {
             maskIndex -= 1; // fixed mask parts are never "active"
           }
 
-          if (activeMaskIndex !== maskIndex) {
+          if (maskIndex !== activeMaskIndex) {
             // eslint-disable-next-line react/no-did-update-set-state
             _this.setState({
               activeMaskIndex: maskIndex,
-              activeOptionIndex: -1
+              activeOptionIndex: -1,
+              showDrop: maskIndex >= 0 && mask[maskIndex].options && true
             });
           }
         }
@@ -177,10 +178,6 @@ function (_Component) {
       var onFocus = _this.props.onFocus;
 
       _this.locateCaret();
-
-      _this.setState({
-        focused: true
-      });
 
       if (onFocus) {
         onFocus(event);
@@ -195,7 +192,7 @@ function (_Component) {
         if (!_this.dropRef.current || !_this.dropRef.current.contains || !_this.dropRef.current.contains(document.activeElement)) {
           _this.setState({
             activeMaskIndex: undefined,
-            focused: false
+            showDrop: false
           });
         }
       }, 10); // 10ms empirically chosen
@@ -261,11 +258,12 @@ function (_Component) {
 
         var nextValue = nextValueParts.map(function (part) {
           return part.part;
-        }).join(''); // restore focus to input
+        }).join('');
+
+        _this.setValue(nextValue); // restore focus to input
+
 
         _this.inputRef.current.focus();
-
-        _this.setValue(nextValue);
       };
     });
 
@@ -317,12 +315,18 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "onEsc", function (event) {
-      // we have to stop both synthetic events and native events
-      // drop and layer should not close by pressing esc on this input
-      event.stopPropagation();
-      event.nativeEvent.stopImmediatePropagation();
+      var showDrop = _this.state.showDrop;
 
-      _this.inputRef.current.blur();
+      if (showDrop) {
+        // we have to stop both synthetic events and native events
+        // drop and layer should not close by pressing esc on this input
+        event.stopPropagation();
+        event.nativeEvent.stopImmediatePropagation();
+
+        _this.setState({
+          showDrop: false
+        });
+      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "renderPlaceholder", function () {
@@ -356,9 +360,9 @@ function (_Component) {
   var _proto = MaskedInput.prototype;
 
   _proto.componentDidUpdate = function componentDidUpdate() {
-    var focused = this.state.focused;
+    var focus = this.props.focus;
 
-    if (focused) {
+    if (focus) {
       this.locateCaret();
     }
   };
@@ -387,7 +391,8 @@ function (_Component) {
     var theme = this.context || propsTheme;
     var _this$state6 = this.state,
         activeMaskIndex = _this$state6.activeMaskIndex,
-        activeOptionIndex = _this$state6.activeOptionIndex;
+        activeOptionIndex = _this$state6.activeOptionIndex,
+        showDrop = _this$state6.showDrop;
     return React.createElement(StyledMaskedInputContainer, {
       plain: plain
     }, React.createElement(Keyboard, {
@@ -422,7 +427,7 @@ function (_Component) {
       onFocus: this.onFocus,
       onBlur: this.onBlur,
       onChange: this.onChange
-    }))), activeMaskIndex >= 0 && mask[activeMaskIndex].options && React.createElement(Drop, {
+    }))), showDrop && React.createElement(Drop, {
       id: id ? "masked-input-drop__" + id : undefined,
       align: {
         top: 'bottom',
