@@ -348,6 +348,7 @@ Placeholder text to use when no value is provided.
 ```
 string
 node
+element
 ```
 
 **plain**
@@ -471,6 +472,16 @@ Defaults to
 **select.container.extend**
 
 Any additional style for the container of the Select component. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**select.control.open**
+
+Any additional style for the control open state of the Select component. Expects `object`.
 
 Defaults to
 

@@ -26,6 +26,7 @@
     "fail": true,
     "afterEach": true,
     "beforeEach": true,
+    "afterAll": true,
     "MouseEvent": true,
     "requestAnimationFrame": true
   },

@@ -343,7 +343,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         current: Subtract,
         next: Next,
         previous: Previous,
-        // color: undefined,
+        // color: { dark: undefined, light: undefined },
+      },
+      animation: {
+        duration: 1000,
+      },
+      disabled: {
+        icons: {
+          // color: { dark: undefined, light: undefined },
+        },
       },
     },
     chart: {
@@ -458,6 +466,9 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         border: { side: 'bottom', size: 'xsmall' },
         fill: 'vertical',
         pad: { horizontal: 'small', vertical: 'xsmall' },
+      },
+      groupEnd: {
+        border: { side: 'bottom', size: 'xsmall' },
       },
       header: {},
       icons: {
@@ -690,6 +701,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       control: {
         // extend: undefined,
+        // open: undefined,
       },
       icons: {
         // color: { dark: undefined, light: undefined },

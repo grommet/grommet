@@ -143,6 +143,7 @@ export const doc = Select => {
     placeholder: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.node,
+      PropTypes.element,
     ]).description('Placeholder text to use when no value is provided.'),
     plain: PropTypes.bool.description(
       'Whether this is a plain Select input with no border or padding.',
@@ -218,6 +219,12 @@ export const themeDoc = {
     description:
       'Any additional style for the container of the Select component.',
     type: 'string | (props) => {}',
+    defaultValue: undefined,
+  },
+  'select.control.open': {
+    description:
+      'Any additional style for the control open state of the Select component.',
+    type: 'object',
     defaultValue: undefined,
   },
   'select.control.extend': {
