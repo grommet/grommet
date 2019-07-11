@@ -335,7 +335,7 @@ class FullLayer extends Component {
             onClick={() => this.setState({ showLayer: true })}
           />
           {showLayer && (
-            <Layer full>
+            <Layer full animation="fadeIn">
               <Box fill background="light-4" align="center" justify="center">
                 <Button
                   primary
