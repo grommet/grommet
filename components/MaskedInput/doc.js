@@ -19,7 +19,7 @@ var doc = function doc(MaskedInput) {
     mask: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.shape({
       length: _reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.number, _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.number)]),
       fixed: _reactDesc.PropTypes.string,
-      options: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.string),
+      options: _reactDesc.PropTypes.arrayOf(_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.string, _reactDesc.PropTypes.number])),
       regexp: _reactDesc.PropTypes.shape({}) // RegExp
 
     })).description("Describes the structure of the mask. If a regexp is provided, it should\n      allow both the final full string element as well as partial strings\n      as the user types characters one by one."),

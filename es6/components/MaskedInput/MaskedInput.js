@@ -189,7 +189,9 @@ function (_Component) {
       var onBlur = _this.props.onBlur;
       clearTimeout(_this.blurTimeout);
       _this.blurTimeout = setTimeout(function () {
-        if (!_this.dropRef.current || !_this.dropRef.current.contains || !_this.dropRef.current.contains(document.activeElement)) {
+        var showDrop = _this.state.showDrop;
+
+        if (showDrop && _this.dropRef.current && document.activeElement !== _this.inputRef.current && !_this.dropRef.current.parentNode.contains(document.activeElement)) {
           _this.setState({
             activeMaskIndex: undefined,
             showDrop: false

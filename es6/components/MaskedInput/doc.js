@@ -12,7 +12,7 @@ export var doc = function doc(MaskedInput) {
     mask: PropTypes.arrayOf(PropTypes.shape({
       length: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]),
       fixed: PropTypes.string,
-      options: PropTypes.arrayOf(PropTypes.string),
+      options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
       regexp: PropTypes.shape({}) // RegExp
 
     })).description("Describes the structure of the mask. If a regexp is provided, it should\n      allow both the final full string element as well as partial strings\n      as the user types characters one by one."),
