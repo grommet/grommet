@@ -188,10 +188,12 @@ class MaskedInput extends Component {
     const { onBlur } = this.props;
     clearTimeout(this.blurTimeout);
     this.blurTimeout = setTimeout(() => {
+      const { showDrop } = this.state;
       if (
-        !this.dropRef.current ||
-        !this.dropRef.current.contains ||
-        !this.dropRef.current.contains(document.activeElement)
+        showDrop &&
+        this.dropRef.current &&
+        document.activeElement !== this.inputRef.current &&
+        !this.dropRef.current.parentNode.contains(document.activeElement)
       ) {
         this.setState({ activeMaskIndex: undefined, showDrop: false });
       }
@@ -245,7 +247,6 @@ class MaskedInput extends Component {
       index += 1;
     }
     const nextValue = nextValueParts.map(part => part.part).join('');
-
     this.setValue(nextValue);
     // restore focus to input
     this.inputRef.current.focus();
