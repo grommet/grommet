@@ -155,6 +155,15 @@ describe('Layer', function () {
     }, "This is a non-modal layer"))));
     expectPortal('non-modal-test').toMatchSnapshot();
   });
+  ['slide', 'fadeIn', false, true].forEach(function (animation) {
+    return test("animation " + animation, function () {
+      render(React.createElement(Grommet, null, React.createElement(Layer, {
+        id: "animation-test",
+        animation: animation
+      }, "This is a layer")));
+      expectPortal('animation-test').toMatchSnapshot();
+    });
+  });
   test('invokes onEsc', function () {
     var onEsc = jest.fn();
     render(React.createElement(Grommet, null, React.createElement(LayerContainer, {

@@ -15,9 +15,22 @@ import { Layer } from 'grommet';
 
 **animate**
 
-Animation transition of the Layer content when it opens. Defaults to `true`.
+Whether to animate the Layer content when it opens. This
+        property is deprecated and will be removed in the next major version
+        of grommet. Instead, use 'animation'. Defaults to `true`.
 
 ```
+boolean
+```
+
+**animation**
+
+Animation transition of the Layer content when it opens. Defaults to `slide`.
+
+```
+slide
+fadeIn
+none
 boolean
 ```
 

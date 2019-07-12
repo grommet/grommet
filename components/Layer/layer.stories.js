@@ -508,7 +508,8 @@ function (_Component5) {
         });
       }
     }), showLayer && _react["default"].createElement(_grommet.Layer, {
-      full: true
+      full: true,
+      animation: "fadeIn"
     }, _react["default"].createElement(_grommet.Box, {
       fill: true,
       background: "light-4",

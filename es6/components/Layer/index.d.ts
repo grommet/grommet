@@ -2,6 +2,7 @@ import * as React from "react";
 
 export interface LayerProps {
   animate?: boolean;
+  animation?: "none" | "slide" | "fadeIn" | boolean;
   full?: boolean | "vertical" | "horizontal";
   margin?: "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | {bottom?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | string,horizontal?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | string,left?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | string,right?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | string,top?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | string,vertical?: "xxsmall" | "xsmall" | "small" | "medium" | "large" | string} | string;
   modal?: boolean;

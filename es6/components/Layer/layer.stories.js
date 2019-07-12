@@ -504,7 +504,8 @@ function (_Component5) {
         });
       }
     }), showLayer && React.createElement(Layer, {
-      full: true
+      full: true,
+      animation: "fadeIn"
     }, React.createElement(Box, {
       fill: true,
       background: "light-4",

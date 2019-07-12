@@ -119,13 +119,18 @@ var KEYFRAMES = {
   }
 };
 
-var getAnimationStyle = function getAnimationStyle(animate, position, full) {
-  if (animate === void 0) {
-    animate = true;
+var getAnimationStyle = function getAnimationStyle(props, position, full) {
+  var animation = props.animation !== undefined ? props.animation : props.animate;
+  if (animation === undefined) animation = 'slide';
+  var keys;
+
+  if (animation === 'slide' || animation === true) {
+    keys = KEYFRAMES[position][full];
+  } else if (animation === 'fadeIn') {
+    keys = (0, _styledComponents.keyframes)(["0%{opacity:0}100%{opacity:1}"]);
   }
 
-  var defaultAnimation = (0, _styledComponents.css)(["animation:", " 0.2s ease-in-out forwards"], KEYFRAMES[position][full]);
-  return animate ? defaultAnimation : '';
+  return keys ? (0, _styledComponents.css)(["animation:", " 0.2s ease-in-out forwards;"], keys) : '';
 }; // POSITIONS combines 'position', 'full', and 'margin' properties, since
 // they are all interdependent.
 // Basically, non-full axes combine 50% position with -50% translation.
@@ -138,198 +143,198 @@ var POSITIONS = {
   center: {
     vertical: function vertical(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:50%;transform:translateX(-50%);", ""], margin.top, margin.bottom, function (props) {
-        return getAnimationStyle(props.animate, 'center', 'vertical');
+        return getAnimationStyle(props, 'center', 'vertical');
       });
     },
     horizontal: function horizontal(margin) {
       return (0, _styledComponents.css)(["left:", ";right:", ";top:50%;transform:translateY(-50%);", ""], margin.left, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'center', 'horizontal');
+        return getAnimationStyle(props, 'center', 'horizontal');
       });
     },
     "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'center', 'true');
+        return getAnimationStyle(props, 'center', 'true');
       });
     },
     "false": function _false() {
       return (0, _styledComponents.css)(["top:50%;left:50%;transform:translate(-50%,-50%);", ""], function (props) {
-        return getAnimationStyle(props.animate, 'center', 'false');
+        return getAnimationStyle(props, 'center', 'false');
       });
     }
   },
   top: {
     vertical: function vertical(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:50%;transform:translate(-50%,0%);", ""], margin.top, margin.bottom, function (props) {
-        return getAnimationStyle(props.animate, 'top', 'vertical');
+        return getAnimationStyle(props, 'top', 'vertical');
       });
     },
     horizontal: function horizontal(margin) {
       return (0, _styledComponents.css)(["left:", ";right:", ";top:", ";transform:translateY(0);", ""], margin.left, margin.right, margin.top, function (props) {
-        return getAnimationStyle(props.animate, 'top', 'horizontal');
+        return getAnimationStyle(props, 'top', 'horizontal');
       });
     },
     "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'top', 'true');
+        return getAnimationStyle(props, 'top', 'true');
       });
     },
     "false": function _false(margin) {
       return (0, _styledComponents.css)(["top:", ";left:50%;transform:translate(-50%,0);", ""], margin.top, function (props) {
-        return getAnimationStyle(props.animate, 'top', 'false');
+        return getAnimationStyle(props, 'top', 'false');
       });
     }
   },
   bottom: {
     vertical: function vertical(margin) {
       return (0, _styledComponents.css)(["top:", " bottom:", ";left:50%;transform:translate(-50%,0);", ""], margin.top, margin.bottom, function (props) {
-        return getAnimationStyle(props.animate, 'bottom', 'vertical');
+        return getAnimationStyle(props, 'bottom', 'vertical');
       });
     },
     horizontal: function horizontal(margin) {
       return (0, _styledComponents.css)(["left:", ";right:", ";bottom:", ";transform:translateY(0);", ""], margin.left, margin.top, margin.bottom, function (props) {
-        return getAnimationStyle(props.animate, 'bottom', 'horizontal');
+        return getAnimationStyle(props, 'bottom', 'horizontal');
       });
     },
     "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateY(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'bottom', 'true');
+        return getAnimationStyle(props, 'bottom', 'true');
       });
     },
     "false": function _false(margin) {
       return (0, _styledComponents.css)(["bottom:", ";left:50%;transform:translate(-50%,0);", ""], margin.bottom, function (props) {
-        return getAnimationStyle(props.animate, 'bottom', 'false');
+        return getAnimationStyle(props, 'bottom', 'false');
       });
     }
   },
   left: {
     vertical: function vertical(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, function (props) {
-        return getAnimationStyle(props.animate, 'left', 'vertical');
+        return getAnimationStyle(props, 'left', 'vertical');
       });
     },
     horizontal: function horizontal(margin) {
       return (0, _styledComponents.css)(["left:", ";right:", ";top:50%;transform:translate(0,-50%);", ""], margin.left, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'left', 'horizontal');
+        return getAnimationStyle(props, 'left', 'horizontal');
       });
     },
     "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'left', 'true');
+        return getAnimationStyle(props, 'left', 'true');
       });
     },
     "false": function _false(margin) {
       return (0, _styledComponents.css)(["left:", ";top:50%;transform:translate(0,-50%);", ""], margin.left, function (props) {
-        return getAnimationStyle(props.animate, 'left', 'false');
+        return getAnimationStyle(props, 'left', 'false');
       });
     }
   },
   right: {
     vertical: function vertical(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'right', 'vertical');
+        return getAnimationStyle(props, 'right', 'vertical');
       });
     },
     horizontal: function horizontal(margin) {
       return (0, _styledComponents.css)(["left:", ";right:", ";top:50%;transform:translate(0,-50%);", ""], margin.left, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'right', 'horizontal');
+        return getAnimationStyle(props, 'right', 'horizontal');
       });
     },
     "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'right', 'true');
+        return getAnimationStyle(props, 'right', 'true');
       });
     },
     "false": function _false(margin) {
       return (0, _styledComponents.css)(["right:", ";top:50%;transform:translate(0,-50%);", ""], margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'right', 'false');
+        return getAnimationStyle(props, 'right', 'false');
       });
     }
   },
   'top-right': {
     vertical: function vertical(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";right:", ";transform:translateX(0);", ";"], margin.top, margin.bottom, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'top', 'true');
+        return getAnimationStyle(props, 'top', 'true');
       });
     },
     horizontal: function horizontal(margin) {
       return (0, _styledComponents.css)(["left:", ";right:", ";top:0;transform:translateX(0);", ";"], margin.left, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'top', 'true');
+        return getAnimationStyle(props, 'top', 'true');
       });
     },
     "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ";"], margin.top, margin.bottom, margin.left, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'top', 'true');
+        return getAnimationStyle(props, 'top', 'true');
       });
     },
     "false": function _false(margin) {
       return (0, _styledComponents.css)(["top:", ";right:", ";transform:translateY(0);", ";"], margin.top, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'top', 'true');
+        return getAnimationStyle(props, 'top', 'true');
       });
     }
   },
   'top-left': {
     vertical: function vertical(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, function (props) {
-        return getAnimationStyle(props.animate, 'top', 'true');
+        return getAnimationStyle(props, 'top', 'true');
       });
     },
     horizontal: function horizontal(margin) {
       return (0, _styledComponents.css)(["left:", ";right:", ";top:0;transform:translateX(0);", ""], margin.left, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'top', 'true');
+        return getAnimationStyle(props, 'top', 'true');
       });
     },
     "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'top', 'true');
+        return getAnimationStyle(props, 'top', 'true');
       });
     },
     "false": function _false(margin) {
       return (0, _styledComponents.css)(["top:", ";left:", ";transform:translateY(0);", ""], margin.top, margin.left, function (props) {
-        return getAnimationStyle(props.animate, 'top', 'true');
+        return getAnimationStyle(props, 'top', 'true');
       });
     }
   },
   'bottom-right': {
     vertical: function vertical(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'bottom', 'true');
+        return getAnimationStyle(props, 'bottom', 'true');
       });
     },
     horizontal: function horizontal(margin) {
       return (0, _styledComponents.css)(["left:", ";right:", ";bottom:", ";transform:translateY(0);", ""], margin.left, margin.right, margin.bottom, function (props) {
-        return getAnimationStyle(props.animate, 'bottom', 'true');
+        return getAnimationStyle(props, 'bottom', 'true');
       });
     },
     "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'bottom', 'true');
+        return getAnimationStyle(props, 'bottom', 'true');
       });
     },
     "false": function _false(margin) {
       return (0, _styledComponents.css)(["bottom:", ";right:", ";transform:translateY(0);", ""], margin.bottom, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'bottom', 'true');
+        return getAnimationStyle(props, 'bottom', 'true');
       });
     }
   },
   'bottom-left': {
     vertical: function vertical(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, function (props) {
-        return getAnimationStyle(props.animate, 'bottom', 'true');
+        return getAnimationStyle(props, 'bottom', 'true');
       });
     },
     horizontal: function horizontal(margin) {
       return (0, _styledComponents.css)(["left:", ";right:", ";bottom:", ";transform:translateY(0);", ""], margin.left, margin.right, margin.bottom, function (props) {
-        return getAnimationStyle(props.animate, 'bottom', 'true');
+        return getAnimationStyle(props, 'bottom', 'true');
       });
     },
     "true": function _true(margin) {
       return (0, _styledComponents.css)(["top:", ";bottom:", ";left:", ";right:", ";transform:translateX(0);", ""], margin.top, margin.bottom, margin.left, margin.right, function (props) {
-        return getAnimationStyle(props.animate, 'bottom', 'true');
+        return getAnimationStyle(props, 'bottom', 'true');
       });
     },
     "false": function _false(margin) {
       return (0, _styledComponents.css)(["bottom:", ";left:", ";transform:translateY(0);", ""], margin.bottom, margin.left, function (props) {
-        return getAnimationStyle(props.animate, 'bottom', 'true');
+        return getAnimationStyle(props, 'bottom', 'true');
       });
     }
   }
