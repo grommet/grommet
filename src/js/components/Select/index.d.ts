@@ -26,7 +26,7 @@ export interface SelectProps {
   onMore?: ((...args: any[]) => any);
   onOpen?: ((...args: any[]) => any);
   onSearch?: ((...args: any[]) => any);
-  options: (string | JSX.Element | object)[];
+  options: (string | boolean | number | JSX.Element | object)[];
   open?: boolean;
   placeholder?: string | React.ReactNode | JSX.Element;
   plain?: boolean;

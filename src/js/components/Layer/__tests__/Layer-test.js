@@ -155,6 +155,19 @@ describe('Layer', () => {
     expectPortal('non-modal-test').toMatchSnapshot();
   });
 
+  ['slide', 'fadeIn', false, true].forEach(animation =>
+    test(`animation ${animation}`, () => {
+      render(
+        <Grommet>
+          <Layer id="animation-test" animation={animation}>
+            This is a layer
+          </Layer>
+        </Grommet>,
+      );
+      expectPortal('animation-test').toMatchSnapshot();
+    }),
+  );
+
   test('invokes onEsc', () => {
     const onEsc = jest.fn();
     render(

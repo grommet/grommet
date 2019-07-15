@@ -6159,9 +6159,22 @@ import { Layer } from 'grommet';
 
 **animate**
 
-Animation transition of the Layer content when it opens. Defaults to \`true\`.
+Whether to animate the Layer content when it opens. This
+        property is deprecated and will be removed in the next major version
+        of grommet. Instead, use 'animation'. Defaults to \`true\`.
 
 \`\`\`
+boolean
+\`\`\`
+
+**animation**
+
+Animation transition of the Layer content when it opens. Defaults to \`slide\`.
+
+\`\`\`
+slide
+fadeIn
+none
 boolean
 \`\`\`
 
@@ -6500,7 +6513,10 @@ Describes the structure of the mask. If a regexp is provided, it should
     number
     [number],
   fixed: string,
-  options: [string],
+  options: [
+  string
+  number
+],
   regexp: 
     {
 
@@ -8310,17 +8326,6 @@ Use this to indicate that 'items' doesn't contain all that it could.
 function
 \`\`\`
 
-**replace**
-
-Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced. Defaults to \`true\`.
-
-\`\`\`
-boolean
-\`\`\`
-
 **options**
 
 Required. Options can be either a string or an object. If an object is used, use
@@ -8329,6 +8334,8 @@ Required. Options can be either a string or an object. If an object is used, use
 \`\`\`
 [
   string
+  number
+  boolean
   element
   object
 ]
@@ -8355,6 +8362,17 @@ element
 **plain**
 
 Whether this is a plain Select input with no border or padding.
+
+\`\`\`
+boolean
+\`\`\`
+
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced. Defaults to \`true\`.
 
 \`\`\`
 boolean
