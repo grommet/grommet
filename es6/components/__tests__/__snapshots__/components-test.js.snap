@@ -2829,19 +2829,12 @@ function",
         "name": "onMore",
       },
       Object {
-        "defaultValue": true,
-        "description": "Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced.",
-        "format": "boolean",
-        "name": "replace",
-      },
-      Object {
         "description": "Options can be either a string or an object. If an object is used, use
       children callback in order to render anything based on the current item.",
         "format": "[
   string
+  number
+  boolean
   element
   object
 ]",
@@ -2864,6 +2857,15 @@ element",
         "description": "Whether this is a plain Select input with no border or padding.",
         "format": "boolean",
         "name": "plain",
+      },
+      Object {
+        "defaultValue": true,
+        "description": "Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced.",
+        "format": "boolean",
+        "name": "replace",
       },
       Object {
         "description": "Placeholder text to use in the search box when the search input is empty.",
