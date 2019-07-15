@@ -28,8 +28,8 @@ const OptionsBox = styled(Box)`
 `;
 
 const OptionBox = styled(Box)`
-  ${props => props.selected && selectedStyle};
-  ${props => props.active && props.theme.select.options.box.hover};
+  ${props => props.selected && selectedStyle}
+  ${props => props.active && props.theme.select.option.hover}
 `;
 
 class SelectContainer extends Component {

@@ -5392,7 +5392,7 @@ exports[`Select opens 5`] = `
       type="button"
     >
       <div
-        class="SelectContainer__OptionBox-sc-1wi0ul8-1 jJlbct StyledBox-sc-13pk1d4-0 eEPVhE"
+        class="SelectContainer__OptionBox-sc-1wi0ul8-1 hVlIkP StyledBox-sc-13pk1d4-0 eEPVhE"
       >
         <span
           class="StyledText-sc-1sadyjn-0 cVkhuq"
@@ -5412,7 +5412,7 @@ exports[`Select opens 5`] = `
       type="button"
     >
       <div
-        class="SelectContainer__OptionBox-sc-1wi0ul8-1 jJlbct StyledBox-sc-13pk1d4-0 eEPVhE"
+        class="SelectContainer__OptionBox-sc-1wi0ul8-1 hVlIkP StyledBox-sc-13pk1d4-0 eEPVhE"
       >
         <span
           class="StyledText-sc-1sadyjn-0 cVkhuq"

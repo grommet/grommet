@@ -34,11 +34,9 @@ const customRoundedTheme = deepMerge(grommet, {
         border: '1px solid #7D4CDB',
       },
     },
-    options: {
-      box: {
-        hover: {
-          background: '#ECE0FA',
-        },
+    option: {
+      hover: {
+        background: '#ECE0FA',
       },
     },
   },

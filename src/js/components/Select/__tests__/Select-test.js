@@ -420,12 +420,14 @@ describe('Select', () => {
   test('modifies select option box background on mouse hover', () => {
     const customTheme = {
       select: {
+        option: {
+          hover: {
+            background: '#ECE0FA',
+          },
+        },
         options: {
           box: {
             background: 'blue',
-            hover: {
-              background: '#ECE0FA',
-            },
           },
         },
       },
@@ -466,12 +468,14 @@ describe('Select', () => {
   test('modifies select option box background via keyboard', () => {
     const customTheme = {
       select: {
+        option: {
+          hover: {
+            background: '#ECE0FA',
+          },
+        },
         options: {
           box: {
             background: 'blue',
-            hover: {
-              background: '#ECE0FA',
-            },
           },
         },
       },
