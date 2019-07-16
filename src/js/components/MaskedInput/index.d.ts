@@ -8,7 +8,7 @@ export interface MaskedInputProps {
   mask?: Array<{
     length?: number | number[];
     fixed?: string;
-    options?: string[];
+    options?: string[] | number[];
     regexp?: {};
     placeholder?: string;
   }>;

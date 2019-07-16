@@ -99,7 +99,9 @@ describe('DataTable', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.click(container.querySelector('[aria-label="focus-search-a"]'));
-    fireEvent.change(container.querySelector('[name="search-a"]'), {
+    const searchInput = container.querySelector('[name="search-a"]');
+    expect(document.activeElement).toBe(searchInput);
+    fireEvent.change(searchInput, {
       target: { value: '[' },
     });
     expect(container.firstChild).toMatchSnapshot();

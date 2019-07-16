@@ -155,6 +155,19 @@ describe('Layer', () => {
     expectPortal('non-modal-test').toMatchSnapshot();
   });
 
+  ['slide', 'fadeIn', false, true].forEach(animation =>
+    test(`animation ${animation}`, () => {
+      render(
+        <Grommet>
+          <Layer id="animation-test" animation={animation}>
+            This is a layer
+          </Layer>
+        </Grommet>,
+      );
+      expectPortal('animation-test').toMatchSnapshot();
+    }),
+  );
+
   test('invokes onEsc', () => {
     const onEsc = jest.fn();
     render(
@@ -211,5 +224,39 @@ describe('Layer', () => {
 
     ref.current.componentDidMount();
     expect(queryByTestId(document, 'test-layer-container')).toMatchSnapshot();
+  });
+
+  test('focus on layer', () => {
+    /* eslint-disable jsx-a11y/no-autofocus */
+    render(
+      <Grommet>
+        <Layer data-testid="focus-layer-test">
+          <input />
+        </Layer>
+        <input autoFocus />
+      </Grommet>,
+    );
+    /* eslint-disable jsx-a11y/no-autofocus */
+
+    const layerNode = getByTestId(document, 'focus-layer-test');
+    expect(layerNode).toMatchSnapshot();
+    expect(document.activeElement.nodeName).toBe('A');
+  });
+
+  test('not steal focus from an autofocus focusable element', () => {
+    /* eslint-disable jsx-a11y/no-autofocus */
+    render(
+      <Grommet>
+        <Layer data-testid="focus-layer-input-test">
+          <input autoFocus data-testid="focus-input" />
+          <button type="button">Button</button>
+        </Layer>
+      </Grommet>,
+    );
+    /* eslint-disable jsx-a11y/no-autofocus */
+    const layerNode = getByTestId(document, 'focus-layer-input-test');
+    const inputNode = getByTestId(document, 'focus-input');
+    expect(layerNode).toMatchSnapshot();
+    expect(document.activeElement).toBe(inputNode);
   });
 });

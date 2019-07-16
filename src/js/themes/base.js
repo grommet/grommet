@@ -701,6 +701,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       control: {
         // extend: undefined,
+        // open: undefined,
       },
       icons: {
         // color: { dark: undefined, light: undefined },

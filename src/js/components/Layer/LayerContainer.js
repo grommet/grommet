@@ -37,9 +37,19 @@ class LayerContainer extends Component {
     const { position } = this.props;
     if (position !== 'hidden') {
       this.makeLayerVisible();
-      // once layer is open we set the focus in the hidden
-      // anchor so that you can start tabbing inside the layer
-      if (this.anchorRef.current) {
+      // Once layer is open we make sure it has focus so that you
+      // can start tabbing inside the layer. If the caller put focus
+      // on an element already, we honor that. Otherwise, we put
+      // the focus in the hidden anchor.
+      let element = document.activeElement;
+      while (element) {
+        if (element === this.containerRef.current) {
+          // already have focus inside the container
+          break;
+        }
+        element = element.parentElement;
+      }
+      if (!element && this.anchorRef.current) {
         this.anchorRef.current.focus();
       }
     }

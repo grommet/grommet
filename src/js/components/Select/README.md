@@ -309,17 +309,6 @@ Use this to indicate that 'items' doesn't contain all that it could.
 function
 ```
 
-**replace**
-
-Whether to replace previously rendered items with a generic spacing
-      element when they have scrolled out of view. This is more performant but
-      means that in-page searching will not find elements that have been
-      replaced. Defaults to `true`.
-
-```
-boolean
-```
-
 **options**
 
 Required. Options can be either a string or an object. If an object is used, use
@@ -328,6 +317,8 @@ Required. Options can be either a string or an object. If an object is used, use
 ```
 [
   string
+  number
+  boolean
   element
   object
 ]
@@ -354,6 +345,17 @@ element
 **plain**
 
 Whether this is a plain Select input with no border or padding.
+
+```
+boolean
+```
+
+**replace**
+
+Whether to replace previously rendered items with a generic spacing
+      element when they have scrolled out of view. This is more performant but
+      means that in-page searching will not find elements that have been
+      replaced. Defaults to `true`.
 
 ```
 boolean
@@ -472,6 +474,16 @@ Defaults to
 **select.container.extend**
 
 Any additional style for the container of the Select component. Expects `string | (props) => {}`.
+
+Defaults to
+
+```
+undefined
+```
+
+**select.control.open**
+
+Any additional style for the control open state of the Select component. Expects `object`.
 
 Defaults to
 
