@@ -709,7 +709,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         down: FormDown,
       },
       options: {
-        box: {
+        container: {
           align: 'start',
           pad: 'small',
         },

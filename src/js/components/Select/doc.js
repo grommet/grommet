@@ -206,7 +206,7 @@ export const themeDoc = {
     type: 'string',
     defaultValue: undefined,
   },
-  'select.options.box': {
+  'select.options.container': {
     description: 'Any valid Box prop for the options container.',
     type: 'object',
     defaultValue: "{ align: 'start', pad: 'small' }",

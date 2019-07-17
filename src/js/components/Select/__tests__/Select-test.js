@@ -416,4 +416,112 @@ describe('Select', () => {
     fireEvent.click(selectButton);
     expect(selectButton).toHaveStyleRule('background', 'purple');
   });
+
+  test(`renders styled select options backwards compatible with legacy
+   documentation (select.options.box)`, () => {
+    const customTheme = {
+      select: {
+        options: {
+          box: {
+            background: 'lightblue',
+          },
+        },
+      },
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          data-testid="test-select-style-options-1"
+          id="test-options-style-id"
+          options={['morning', 'afternoon', 'evening']}
+          placeholder="Select..."
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const selectButton = getByPlaceholderText('Select...');
+    fireEvent.click(selectButton);
+
+    const optionButton = getByText('morning').closest('button');
+    expect(optionButton.firstChild).toHaveStyleRule('background', 'lightblue');
+  });
+
+  test('renders styled select options using select.options.container', () => {
+    const customTheme = {
+      select: {
+        options: {
+          container: {
+            background: 'lightgreen',
+          },
+        },
+      },
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          data-testid="test-select-style-options-2"
+          id="test-options-style-id"
+          options={['morning', 'afternoon', 'evening']}
+          placeholder="Select..."
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const selectButton = getByPlaceholderText('Select...');
+    fireEvent.click(selectButton);
+
+    const optionButton = getByText('morning').closest('button');
+    expect(optionButton.firstChild).toHaveStyleRule('background', 'lightgreen');
+  });
+
+  test(`renders styled select options combining select.options.box && 
+  select.options.container; select.options.container prioritized if conflict`, () => {
+    const customTheme = {
+      select: {
+        options: {
+          container: {
+            background: 'lightgreen',
+          },
+          box: {
+            background: 'lightblue',
+            border: {
+              side: 'bottom',
+              size: 'small',
+              color: 'blue',
+            },
+          },
+        },
+      },
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          data-testid="test-select-style-options-3"
+          id="test-options-style-id"
+          options={['morning', 'afternoon', 'evening']}
+          placeholder="Select..."
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const selectButton = getByPlaceholderText('Select...');
+    fireEvent.click(selectButton);
+
+    const optionButton = getByText('morning').closest('button');
+    expect(optionButton.firstChild).not.toHaveStyleRule(
+      'background',
+      'lightblue',
+    );
+    expect(optionButton.firstChild).toHaveStyleRule('background', 'lightgreen');
+    expect(optionButton.firstChild).toHaveStyleRule(
+      'border-bottom',
+      'solid 2px blue',
+    );
+  });
 });

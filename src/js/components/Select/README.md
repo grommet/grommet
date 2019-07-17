@@ -451,7 +451,7 @@ Defaults to
 undefined
 ```
 
-**select.options.box**
+**select.options.container**
 
 Any valid Box prop for the options container. Expects `object`.
 
