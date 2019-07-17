@@ -381,4 +381,101 @@ describe('Select', function () {
     fireEvent.click(selectButton);
     expect(selectButton).toHaveStyleRule('background', 'purple');
   });
+  test("renders styled select options backwards compatible with legacy\n   documentation (select.options.box)", function () {
+    var customTheme = {
+      select: {
+        options: {
+          box: {
+            background: 'lightblue'
+          }
+        }
+      }
+    };
+
+    var _render14 = render(React.createElement(Grommet, {
+      theme: customTheme
+    }, React.createElement(Select, {
+      "data-testid": "test-select-style-options-1",
+      id: "test-options-style-id",
+      options: ['morning', 'afternoon', 'evening'],
+      placeholder: "Select..."
+    }))),
+        getByPlaceholderText = _render14.getByPlaceholderText,
+        getByText = _render14.getByText,
+        container = _render14.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    var selectButton = getByPlaceholderText('Select...');
+    fireEvent.click(selectButton);
+    var optionButton = getByText('morning').closest('button');
+    expect(optionButton.firstChild).toHaveStyleRule('background', 'lightblue');
+  });
+  test('renders styled select options using select.options.container', function () {
+    var customTheme = {
+      select: {
+        options: {
+          container: {
+            background: 'lightgreen'
+          }
+        }
+      }
+    };
+
+    var _render15 = render(React.createElement(Grommet, {
+      theme: customTheme
+    }, React.createElement(Select, {
+      "data-testid": "test-select-style-options-2",
+      id: "test-options-style-id",
+      options: ['morning', 'afternoon', 'evening'],
+      placeholder: "Select..."
+    }))),
+        getByPlaceholderText = _render15.getByPlaceholderText,
+        getByText = _render15.getByText,
+        container = _render15.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    var selectButton = getByPlaceholderText('Select...');
+    fireEvent.click(selectButton);
+    var optionButton = getByText('morning').closest('button');
+    expect(optionButton.firstChild).toHaveStyleRule('background', 'lightgreen');
+  });
+  test("renders styled select options combining select.options.box && \n  select.options.container; select.options.container prioritized if conflict", function () {
+    var customTheme = {
+      select: {
+        options: {
+          container: {
+            background: 'lightgreen'
+          },
+          box: {
+            background: 'lightblue',
+            border: {
+              side: 'bottom',
+              size: 'small',
+              color: 'blue'
+            }
+          }
+        }
+      }
+    };
+
+    var _render16 = render(React.createElement(Grommet, {
+      theme: customTheme
+    }, React.createElement(Select, {
+      "data-testid": "test-select-style-options-3",
+      id: "test-options-style-id",
+      options: ['morning', 'afternoon', 'evening'],
+      placeholder: "Select..."
+    }))),
+        getByPlaceholderText = _render16.getByPlaceholderText,
+        getByText = _render16.getByText,
+        container = _render16.container;
+
+    expect(container.firstChild).toMatchSnapshot();
+    var selectButton = getByPlaceholderText('Select...');
+    fireEvent.click(selectButton);
+    var optionButton = getByText('morning').closest('button');
+    expect(optionButton.firstChild).not.toHaveStyleRule('background', 'lightblue');
+    expect(optionButton.firstChild).toHaveStyleRule('background', 'lightgreen');
+    expect(optionButton.firstChild).toHaveStyleRule('border-bottom', 'solid 2px blue');
+  });
 });

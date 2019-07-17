@@ -401,6 +401,9 @@ function (_Component) {
         search = _this$state.search;
     var customSearchInput = theme.select.searchInput;
     var SelectTextInput = customSearchInput || _TextInput.TextInput;
+
+    var selectOptionsStyle = _extends({}, theme.select.options.box, {}, theme.select.options.container);
+
     return _react["default"].createElement(_Keyboard.Keyboard, {
       onEnter: this.onSelectOption,
       onUp: this.onPreviousOption,
@@ -454,14 +457,14 @@ function (_Component) {
         active: isActive,
         disabled: isDisabled,
         selected: isSelected
-      }) : _react["default"].createElement(OptionBox, _extends({}, theme.select.options.box, {
+      }) : _react["default"].createElement(OptionBox, _extends({}, selectOptionsStyle, {
         selected: isSelected
       }), _react["default"].createElement(_Text.Text, theme.select.options.text, _this3.optionLabel(index))));
     }) : _react["default"].createElement(_SelectOption.SelectOption, {
       key: "search_empty",
       disabled: true,
       option: emptySearchMessage
-    }, _react["default"].createElement(OptionBox, theme.select.options.box, _react["default"].createElement(_Text.Text, theme.select.container.text, emptySearchMessage))))));
+    }, _react["default"].createElement(OptionBox, selectOptionsStyle, _react["default"].createElement(_Text.Text, theme.select.container.text, emptySearchMessage))))));
   };
 
   return SelectContainer;

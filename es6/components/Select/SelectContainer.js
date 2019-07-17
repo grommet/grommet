@@ -383,6 +383,9 @@ function (_Component) {
         search = _this$state.search;
     var customSearchInput = theme.select.searchInput;
     var SelectTextInput = customSearchInput || TextInput;
+
+    var selectOptionsStyle = _extends({}, theme.select.options.box, {}, theme.select.options.container);
+
     return React.createElement(Keyboard, {
       onEnter: this.onSelectOption,
       onUp: this.onPreviousOption,
@@ -436,14 +439,14 @@ function (_Component) {
         active: isActive,
         disabled: isDisabled,
         selected: isSelected
-      }) : React.createElement(OptionBox, _extends({}, theme.select.options.box, {
+      }) : React.createElement(OptionBox, _extends({}, selectOptionsStyle, {
         selected: isSelected
       }), React.createElement(Text, theme.select.options.text, _this3.optionLabel(index))));
     }) : React.createElement(SelectOption, {
       key: "search_empty",
       disabled: true,
       option: emptySearchMessage
-    }, React.createElement(OptionBox, theme.select.options.box, React.createElement(Text, theme.select.container.text, emptySearchMessage))))));
+    }, React.createElement(OptionBox, selectOptionsStyle, React.createElement(Text, theme.select.container.text, emptySearchMessage))))));
   };
 
   return SelectContainer;

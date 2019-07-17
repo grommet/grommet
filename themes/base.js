@@ -785,7 +785,7 @@ var generate = function generate(baseSpacing, scale) {
         down: _FormDown.FormDown
       },
       options: {
-        box: {
+        container: {
           align: 'start',
           pad: 'small'
         },

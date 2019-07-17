@@ -760,7 +760,7 @@ export var generate = function generate(baseSpacing, scale) {
         down: FormDown
       },
       options: {
-        box: {
+        container: {
           align: 'start',
           pad: 'small'
         },
