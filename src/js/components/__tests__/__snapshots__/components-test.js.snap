@@ -1291,6 +1291,12 @@ string",
         "format": "number",
         "name": "play",
       },
+      Object {
+        "description": "If specified, the index of
+      the first element to be shown.",
+        "format": "number",
+        "name": "initialActiveIndex",
+      },
     ],
     "usage": "import { Carousel } from 'grommet';
 <Carousel />",

@@ -127,6 +127,15 @@ If specified, the number of
 ```
 number
 ```
+
+**initialActiveIndex**
+
+If specified, the index of
+      the first element to be shown.
+
+```
+number
+```
   
 ## Intrinsic element
 
