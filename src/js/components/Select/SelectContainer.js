@@ -360,6 +360,10 @@ class SelectContainer extends Component {
 
     const customSearchInput = theme.select.searchInput;
     const SelectTextInput = customSearchInput || TextInput;
+    const selectOptionsStyle = {
+      ...theme.select.options.box,
+      ...theme.select.options.container,
+    };
 
     return (
       <Keyboard
@@ -430,7 +434,7 @@ class SelectContainer extends Component {
                         })
                       ) : (
                         <OptionBox
-                          {...theme.select.options.box}
+                          {...selectOptionsStyle}
                           selected={isSelected}
                           active={isActive}
                         >
@@ -449,7 +453,7 @@ class SelectContainer extends Component {
                 disabled
                 option={emptySearchMessage}
               >
-                <OptionBox {...theme.select.options.box}>
+                <OptionBox {...selectOptionsStyle}>
                   <Text {...theme.select.container.text}>
                     {emptySearchMessage}
                   </Text>

@@ -714,7 +714,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         },
       },
       options: {
-        box: {
+        container: {
           align: 'start',
           pad: 'small',
         },
