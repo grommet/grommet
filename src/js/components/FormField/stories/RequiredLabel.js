@@ -11,7 +11,7 @@ const FormFieldLabel = props => {
         required ? (
           <Box direction="row">
             <Text>{label}</Text>
-            <Text color="red">*</Text>
+            <Text color="status-critical">*</Text>
           </Box>
         ) : (
           label
@@ -31,8 +31,7 @@ const LabelFormField = () => (
         <FormFieldLabel name="LastName" label="LastName" required />
         <FormFieldLabel name="email" label="Email" />
         <Button type="submit" label="Submit" primary />
-        <Text margin={{ left: 'small' }} size="small" color="red">
-          {' '}
+        <Text margin={{ left: 'small' }} size="small" color="status-critical">
           * Required Field
         </Text>
       </Form>
