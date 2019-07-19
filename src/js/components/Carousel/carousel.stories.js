@@ -4,10 +4,10 @@ import { Attraction, Car, TreeOption } from 'grommet-icons';
 
 import { Grommet, Box, Carousel } from 'grommet';
 
-const SimpleCarousel = ({ initialActiveIndex }) => (
+const SimpleCarousel = ({ initialChild }) => (
   <Grommet>
     <Box align="center" pad="large">
-      <Carousel initialActiveIndex={initialActiveIndex}>
+      <Carousel initialChild={initialChild}>
         <Box pad="xlarge" background="accent-1">
           <Attraction size="xlarge" />
         </Box>
@@ -23,7 +23,6 @@ const SimpleCarousel = ({ initialActiveIndex }) => (
 );
 
 storiesOf('Carousel', module).add('Simple Carousel', () => <SimpleCarousel />);
-storiesOf('Carousel', module).add(
-  'Simple Carousel With `initialActiveIndex: 1`',
-  () => <SimpleCarousel initialActiveIndex={1} />,
-);
+storiesOf('Carousel', module).add('Carousel With `initialChild`', () => (
+  <SimpleCarousel initialChild={1} />
+));

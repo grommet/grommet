@@ -508,7 +508,7 @@ exports[`Carousel basic 1`] = `
 </div>
 `;
 
-exports[`Carousel basic with \`initialActiveIndex: 1\` 1`] = `
+exports[`Carousel basic with \`initialChild: 1\` 1`] = `
 .c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;

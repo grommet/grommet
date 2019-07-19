@@ -128,10 +128,10 @@ If specified, the number of
 number
 ```
 
-**initialActiveIndex**
+**initialChild**
 
 If specified, the index of
-      the first element to be shown.
+      the first element to be shown. Defaults to 0.
 
 ```
 number

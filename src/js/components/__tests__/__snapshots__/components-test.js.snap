@@ -1293,9 +1293,9 @@ string",
       },
       Object {
         "description": "If specified, the index of
-      the first element to be shown.",
+      the first element to be shown. Defaults to 0.",
         "format": "number",
-        "name": "initialActiveIndex",
+        "name": "initialChild",
       },
     ],
     "usage": "import { Carousel } from 'grommet';

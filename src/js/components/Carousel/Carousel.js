@@ -15,7 +15,7 @@ import { withFocus } from '../hocs';
 class Carousel extends Component {
   constructor(p) {
     super(p);
-    this.state = { activeIndex: p.initialActiveIndex };
+    this.state = { activeIndex: p.initialChild };
   }
 
   componentDidMount() {
@@ -197,7 +197,7 @@ class Carousel extends Component {
 }
 
 Carousel.defaultProps = {
-  initialActiveIndex: 0,
+  initialChild: 0,
 };
 Object.setPrototypeOf(Carousel.defaultProps, defaultProps);
 
