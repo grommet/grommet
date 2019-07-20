@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PolymorphicType } from "../../utils";
+import { Omit, PolymorphicType } from "../../utils";
 
 export interface TextProps {
   a11yTitle?: string;
@@ -16,6 +16,6 @@ export interface TextProps {
   wordBreak?: "normal" | "break-all" | "keep-all" | "break-word";
 }
 
-declare const Text: React.FC<TextProps & JSX.IntrinsicElements['span']>;
+declare const Text: React.FC<TextProps & Omit<JSX.IntrinsicElements['span'], 'color'>>;
 
 export { Text };

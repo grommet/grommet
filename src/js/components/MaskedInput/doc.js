@@ -28,7 +28,9 @@ export const doc = MaskedInput => {
           PropTypes.arrayOf(PropTypes.number),
         ]),
         fixed: PropTypes.string,
-        options: PropTypes.arrayOf(PropTypes.string),
+        options: PropTypes.arrayOf(
+          PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        ),
         regexp: PropTypes.shape({}), // RegExp
       }),
     ).description(

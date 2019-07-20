@@ -227,6 +227,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       font: {
         ...fontSizing(0),
         // face: undefined,
+        // family: undefined,
       },
       hover: {
         background: {
@@ -343,7 +344,15 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         current: Subtract,
         next: Next,
         previous: Previous,
-        // color: undefined,
+        // color: { dark: undefined, light: undefined },
+      },
+      animation: {
+        duration: 1000,
+      },
+      disabled: {
+        icons: {
+          // color: { dark: undefined, light: undefined },
+        },
       },
     },
     chart: {
@@ -693,6 +702,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       },
       control: {
         // extend: undefined,
+        // open: undefined,
       },
       icons: {
         // color: { dark: undefined, light: undefined },
@@ -700,7 +710,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         down: FormDown,
       },
       options: {
-        box: {
+        container: {
           align: 'start',
           pad: 'small',
         },
