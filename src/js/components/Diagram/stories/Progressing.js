@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Diagram, Stack } from 'grommet';
+import { Grommet, Box, Diagram, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 const Node = ({ id, ...rest }) => (
@@ -59,6 +59,7 @@ class SimpleDiagram extends React.Component {
     return (
       <Grommet theme={grommet}>
         <Box align="start" pad="large">
+          <Text> Adding and removing nodes</Text>
           <Stack>
             <Box>
               <Box direction="row">
@@ -80,4 +81,4 @@ class SimpleDiagram extends React.Component {
   }
 }
 
-storiesOf('Diagram', module).add('Simple Diagram', () => <SimpleDiagram />);
+storiesOf('Diagram', module).add('Progressing', () => <SimpleDiagram />);
