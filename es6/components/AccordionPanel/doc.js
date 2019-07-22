@@ -18,6 +18,11 @@ export var themeDoc = {
     type: 'React.Element',
     defaultValue: '<FormUp />'
   },
+  'accordion.icons.color': {
+    description: 'The icon color to use in the accordion.',
+    type: 'string | { dark: string, light: string }',
+    defaultValue: 'control'
+  },
   'accordion.icons.expand': {
     description: 'The icon to use when the panel is collapsed.',
     type: 'React.Element',
