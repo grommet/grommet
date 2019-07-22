@@ -48,6 +48,16 @@ Defaults to
 <FormUp />
 ```
 
+**accordion.icons.color**
+
+The icon color to use in the accordion. Expects `string | { dark: string, light: string }`.
+
+Defaults to
+
+```
+control
+```
+
 **accordion.icons.expand**
 
 The icon to use when the panel is collapsed. Expects `React.Element`.
