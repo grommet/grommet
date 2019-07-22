@@ -10,11 +10,14 @@ var _grommet = require("grommet");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var SimpleCarousel = function SimpleCarousel() {
+var SimpleCarousel = function SimpleCarousel(_ref) {
+  var initialChild = _ref.initialChild;
   return _react["default"].createElement(_grommet.Grommet, null, _react["default"].createElement(_grommet.Box, {
     align: "center",
     pad: "large"
-  }, _react["default"].createElement(_grommet.Carousel, null, _react["default"].createElement(_grommet.Box, {
+  }, _react["default"].createElement(_grommet.Carousel, {
+    initialChild: initialChild
+  }, _react["default"].createElement(_grommet.Box, {
     pad: "xlarge",
     background: "accent-1"
   }, _react["default"].createElement(_grommetIcons.Attraction, {
@@ -34,4 +37,9 @@ var SimpleCarousel = function SimpleCarousel() {
 
 (0, _react2.storiesOf)('Carousel', module).add('Simple Carousel', function () {
   return _react["default"].createElement(SimpleCarousel, null);
+});
+(0, _react2.storiesOf)('Carousel', module).add('Carousel With `initialChild`', function () {
+  return _react["default"].createElement(SimpleCarousel, {
+    initialChild: 1
+  });
 });

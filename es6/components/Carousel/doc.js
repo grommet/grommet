@@ -6,7 +6,8 @@ export var doc = function doc(Carousel) {
   var DocumentedCarousel = describe(Carousel).availableAt(getAvailableAtBadge('Carousel')).description("A carousel that cycles through children. Child components\n      would typically be Images. It is the caller's responsibility to ensure\n      that all children are the same size.").usage("import { Carousel } from 'grommet';\n<Carousel />").intrinsicElement('div');
   DocumentedCarousel.propTypes = _extends({}, genericProps, {
     fill: PropTypes.bool.description("Whether to expand to fill\n      all of the available width and height in the parent container."),
-    play: PropTypes.number.description("If specified, the number of\n      milliseconds between automatically transitioning to the next child. It\n      will loop through all children indefinitely.")
+    play: PropTypes.number.description("If specified, the number of\n      milliseconds between automatically transitioning to the next child. It\n      will loop through all children indefinitely."),
+    initialChild: PropTypes.number.description("If specified, the index of\n      the first element to be shown. Defaults to 0.")
   });
   return DocumentedCarousel;
 };

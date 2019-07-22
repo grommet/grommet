@@ -28,6 +28,18 @@ describe('Carousel', function () {
     var tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  test('basic with `initialChild: 1`', function () {
+    var component = _reactTestRenderer["default"].create(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Carousel, {
+      initialChild: 1
+    }, _react["default"].createElement(_Image.Image, {
+      src: "//v2.grommet.io/assets/IMG_4245.jpg"
+    }), _react["default"].createElement(_Image.Image, {
+      src: "//v2.grommet.io/assets/IMG_4210.jpg"
+    }))));
+
+    var tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   test('navigate', function () {
     var _render = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_.Carousel, {
       "data-testid": "test-carousel"

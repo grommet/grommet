@@ -13,7 +13,8 @@ var doc = function doc(Carousel) {
   var DocumentedCarousel = (0, _reactDesc.describe)(Carousel).availableAt((0, _utils.getAvailableAtBadge)('Carousel')).description("A carousel that cycles through children. Child components\n      would typically be Images. It is the caller's responsibility to ensure\n      that all children are the same size.").usage("import { Carousel } from 'grommet';\n<Carousel />").intrinsicElement('div');
   DocumentedCarousel.propTypes = _extends({}, _utils.genericProps, {
     fill: _reactDesc.PropTypes.bool.description("Whether to expand to fill\n      all of the available width and height in the parent container."),
-    play: _reactDesc.PropTypes.number.description("If specified, the number of\n      milliseconds between automatically transitioning to the next child. It\n      will loop through all children indefinitely.")
+    play: _reactDesc.PropTypes.number.description("If specified, the number of\n      milliseconds between automatically transitioning to the next child. It\n      will loop through all children indefinitely."),
+    initialChild: _reactDesc.PropTypes.number.description("If specified, the index of\n      the first element to be shown. Defaults to 0.")
   });
   return DocumentedCarousel;
 };

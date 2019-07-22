@@ -40,18 +40,10 @@ var Carousel =
 function (_Component) {
   _inheritsLoose(Carousel, _Component);
 
-  function Carousel() {
+  function Carousel(p) {
     var _this;
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      activeIndex: 0
-    });
+    _this = _Component.call(this, p) || this;
 
     _defineProperty(_assertThisInitialized(_this), "play", function () {
       var play = _this.props.play;
@@ -107,6 +99,9 @@ function (_Component) {
       };
     });
 
+    _this.state = {
+      activeIndex: p.initialChild
+    };
     return _this;
   }
 
@@ -237,7 +232,9 @@ function (_Component) {
   return Carousel;
 }(_react.Component);
 
-Carousel.defaultProps = {};
+Carousel.defaultProps = {
+  initialChild: 0
+};
 Object.setPrototypeOf(Carousel.defaultProps, _defaultProps.defaultProps);
 var CarouselDoc;
 

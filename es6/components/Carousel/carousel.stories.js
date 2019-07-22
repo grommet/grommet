@@ -5,11 +5,14 @@ import { Car } from "grommet-icons/es6/icons/Car";
 import { TreeOption } from "grommet-icons/es6/icons/TreeOption";
 import { Grommet, Box, Carousel } from 'grommet';
 
-var SimpleCarousel = function SimpleCarousel() {
+var SimpleCarousel = function SimpleCarousel(_ref) {
+  var initialChild = _ref.initialChild;
   return React.createElement(Grommet, null, React.createElement(Box, {
     align: "center",
     pad: "large"
-  }, React.createElement(Carousel, null, React.createElement(Box, {
+  }, React.createElement(Carousel, {
+    initialChild: initialChild
+  }, React.createElement(Box, {
     pad: "xlarge",
     background: "accent-1"
   }, React.createElement(Attraction, {
@@ -29,4 +32,9 @@ var SimpleCarousel = function SimpleCarousel() {
 
 storiesOf('Carousel', module).add('Simple Carousel', function () {
   return React.createElement(SimpleCarousel, null);
+});
+storiesOf('Carousel', module).add('Carousel With `initialChild`', function () {
+  return React.createElement(SimpleCarousel, {
+    initialChild: 1
+  });
 });
