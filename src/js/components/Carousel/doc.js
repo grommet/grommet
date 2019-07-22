@@ -23,6 +23,8 @@ export const doc = Carousel => {
     play: PropTypes.number.description(`If specified, the number of
       milliseconds between automatically transitioning to the next child. It
       will loop through all children indefinitely.`),
+    initialChild: PropTypes.number.description(`If specified, the index of
+      the first element to be shown. Defaults to 0.`),
   };
 
   return DocumentedCarousel;
