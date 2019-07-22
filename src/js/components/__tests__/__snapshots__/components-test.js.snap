@@ -2947,7 +2947,8 @@ function",
       Object {
         "description": "The title of the tab.",
         "format": "string
-node",
+node
+element",
         "name": "title",
       },
     ],
