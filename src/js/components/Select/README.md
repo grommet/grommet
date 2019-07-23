@@ -471,16 +471,6 @@ Defaults to
 undefined
 ```
 
-**select.option.hover**
-
-The style applied to the hover state of an Select option. Expects `object`.
-
-Defaults to
-
-```
-undefined
-```
-
 **select.options.container**
 
 Any valid Box prop for the options container. Expects `object`.

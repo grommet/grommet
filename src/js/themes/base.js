@@ -709,11 +709,6 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         margin: { horizontal: 'small' },
         down: FormDown,
       },
-      option: {
-        hover: {
-          // background: undefined.
-        },
-      },
       options: {
         container: {
           align: 'start',
