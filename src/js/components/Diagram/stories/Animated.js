@@ -30,7 +30,6 @@ const DiamondContainer = ({ carat, color, cut, align, id, name, textSize }) => (
     align={align || 'center'}
     gap="medium"
     direction="row"
-    key={name}
     alignSelf="center"
   >
     <Diamond id={id} size="xlarge" color="neutral-3" />
