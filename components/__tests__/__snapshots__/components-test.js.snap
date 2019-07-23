@@ -2054,7 +2054,8 @@ string",
       Object {
         "description": "What text to put in the input. The caller should ensure that it
       is initially valid with respect to the mask.",
-        "format": "string",
+        "format": "string
+number",
         "name": "value",
       },
     ],
