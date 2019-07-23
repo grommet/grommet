@@ -48,5 +48,5 @@ const ComponentOverrideMarkdown = () => (
 );
 
 storiesOf('Markdown', module)
-  .add('Simple Markdown', () => <SimpleMarkdown />)
+  .add('Simple', () => <SimpleMarkdown />)
   .add('Component Override Markdown', () => <ComponentOverrideMarkdown />);

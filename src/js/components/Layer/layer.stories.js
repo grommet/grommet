@@ -447,7 +447,7 @@ const ScrollBodyLayer = () => (
 
 storiesOf('Layer', module)
   .add('Center', () => <CenterLayer />)
-  .add('CornerLayer', () => <CornerLayer />)
+  .add('Corner', () => <CornerLayer />)
   .add('Form', () => <FormLayer />)
   .add('Notification', () => <NotificationLayer />)
   .add('Margin', () => <MarginLayer full />)
