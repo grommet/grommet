@@ -118,9 +118,14 @@ end of the anchor.`,
 };
 
 export const themeDoc = {
-  'global.hover.color': {
+  'global.hover.background': {
     description: 'The background color when hovering.',
-    type: 'string',
+    type: 'string | { color: string, opacity: string }',
+    defaultValue: "{ color: 'active', opacity: 'medium' }",
+  },
+  'global.hover.color': {
+    description: 'The text color when hovering.',
+    type: 'string | { dark: string, light: string }',
     defaultValue: "{ dark: 'white', light: 'black' }",
   },
   'global.edgeSize.small': {

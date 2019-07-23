@@ -524,4 +524,39 @@ describe('Select', () => {
       'solid 2px blue',
     );
   });
+
+  test('applies custom global.hover theme to options', () => {
+    const customTheme = {
+      global: {
+        hover: {
+          background: {
+            color: 'lightgreen',
+          },
+          color: {
+            dark: 'lightgrey',
+            light: 'brand',
+          },
+        },
+      },
+    };
+    const { getByPlaceholderText, getByText, container } = render(
+      <Grommet theme={customTheme}>
+        <Select
+          data-testid="applies-custom-hover-style"
+          id="applies-custom-hover-style-id"
+          options={['morning', 'afternoon', 'evening']}
+          placeholder="Select..."
+        />
+      </Grommet>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+
+    const selectButton = getByPlaceholderText('Select...');
+    fireEvent.click(selectButton);
+
+    const optionButton = getByText('afternoon').closest('button');
+    fireEvent.mouseOver(optionButton);
+    expect(optionButton).toMatchSnapshot();
+  });
 });

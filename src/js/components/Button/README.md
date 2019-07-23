@@ -286,9 +286,19 @@ button
 ```
 ## Theme
   
+**global.hover.background**
+
+The background color when hovering. Expects `string | { color: string, opacity: string }`.
+
+Defaults to
+
+```
+{ color: 'active', opacity: 'medium' }
+```
+
 **global.hover.color**
 
-The background color when hovering. Expects `string`.
+The text color when hovering. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
