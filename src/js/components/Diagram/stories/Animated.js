@@ -28,9 +28,10 @@ const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
 const DiamondContainer = ({ carat, color, cut, align, id, name, textSize }) => (
   <Box
     align={align || 'center'}
-    gap="medium"
-    direction="row"
     alignSelf="center"
+    direction="row"
+    gap="medium"
+    key={id}
   >
     <Diamond id={id} size="xlarge" color="neutral-3" />
     <Box align={align}>
@@ -44,7 +45,7 @@ const DiamondContainer = ({ carat, color, cut, align, id, name, textSize }) => (
   </Box>
 );
 
-const Container = (node, index) => (
+const Container = ({ node, index }) => (
   <DiamondContainer
     carat={node.carat}
     color={node.color}
@@ -87,7 +88,7 @@ class Animated extends React.Component {
             <Stack>
               <Box>
                 <Box alignSelf="center" margin={{ bottom: 'large' }}>
-                  {Container(data[0], '1')}
+                  <Container node={data[0]} index={1} />
                   <Box pad="small" />
                   <Box
                     id="4"
@@ -96,7 +97,9 @@ class Animated extends React.Component {
                   />
                 </Box>
                 <Box direction="row" gap="xlarge">
-                  {[2, 3].map(id => Container(data[id - 1], id))}
+                  {[2, 3].map(id => (
+                    <Container node={data[id - 1]} index={id} />
+                  ))}
                 </Box>
               </Box>
               <Diagram connections={connections} />
