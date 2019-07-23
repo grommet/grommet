@@ -16,6 +16,8 @@ export interface MaskedInputProps {
   value?: string | number;
 }
 
-declare const MaskedInput: React.ComponentClass<MaskedInputProps & JSX.IntrinsicElements['input']>;
+declare const MaskedInput: React.ComponentClass<
+    MaskedInputProps & Omit<JSX.IntrinsicElements['input'], 'size'>
+>;
 
 export { MaskedInput };
