@@ -85,6 +85,7 @@ What text to put in the input. The caller should ensure that it
 
 ```
 string
+number
 ```
   
 ## Intrinsic element

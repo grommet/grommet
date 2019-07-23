@@ -23,6 +23,19 @@ describe('Carousel', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  test('basic with `initialChild: 1`', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Carousel initialChild={1}>
+          <Image src="//v2.grommet.io/assets/IMG_4245.jpg" />
+          <Image src="//v2.grommet.io/assets/IMG_4210.jpg" />
+        </Carousel>
+      </Grommet>,
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   test('navigate', () => {
     const { getByTestId, container } = render(
       <Grommet>

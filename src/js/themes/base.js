@@ -227,6 +227,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
       font: {
         ...fontSizing(0),
         // face: undefined,
+        // family: undefined,
       },
       hover: {
         background: {

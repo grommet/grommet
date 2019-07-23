@@ -42,7 +42,10 @@ export const doc = MaskedInput => {
       PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
       PropTypes.string,
     ]).description('The size of the text.'),
-    value: PropTypes.string.description(
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]).description(
       `What text to put in the input. The caller should ensure that it
       is initially valid with respect to the mask.`,
     ),

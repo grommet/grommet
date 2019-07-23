@@ -225,6 +225,16 @@ Defaults to
 <FormUp />
 \`\`\`
 
+**accordion.icons.color**
+
+The icon color to use in the accordion. Expects \`string | { dark: string, light: string }\`.
+
+Defaults to
+
+\`\`\`
+control
+\`\`\`
+
 **accordion.icons.expand**
 
 The icon to use when the panel is collapsed. Expects \`React.Element\`.
@@ -2430,6 +2440,15 @@ boolean
 If specified, the number of
       milliseconds between automatically transitioning to the next child. It
       will loop through all children indefinitely.
+
+\`\`\`
+number
+\`\`\`
+
+**initialChild**
+
+If specified, the index of
+      the first element to be shown. Defaults to 0.
 
 \`\`\`
 number
@@ -6543,6 +6562,7 @@ What text to put in the input. The caller should ensure that it
 
 \`\`\`
 string
+number
 \`\`\`
   
 ## Intrinsic element
