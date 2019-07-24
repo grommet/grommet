@@ -10,7 +10,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Box, Diagram, Stack } from 'grommet';
+import { Grommet, Box, Diagram, Stack, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
 
 var Node = function Node(_ref) {
@@ -105,7 +105,7 @@ function (_React$Component) {
     }, React.createElement(Box, {
       align: "start",
       pad: "large"
-    }, React.createElement(Stack, null, React.createElement(Box, null, React.createElement(Box, {
+    }, React.createElement(Text, null, " Adding and removing nodes"), React.createElement(Stack, null, React.createElement(Box, null, React.createElement(Box, {
       direction: "row"
     }, topRow.map(function (id) {
       return React.createElement(Node, {
@@ -128,6 +128,6 @@ function (_React$Component) {
   return SimpleDiagram;
 }(React.Component);
 
-storiesOf('Diagram', module).add('Simple Diagram', function () {
+storiesOf('Diagram', module).add('Progressing', function () {
   return React.createElement(SimpleDiagram, null);
 });

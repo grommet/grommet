@@ -112,7 +112,7 @@ function (_React$Component) {
     }, _react["default"].createElement(_grommet.Box, {
       align: "start",
       pad: "large"
-    }, _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.Box, {
+    }, _react["default"].createElement(_grommet.Text, null, " Adding and removing nodes"), _react["default"].createElement(_grommet.Stack, null, _react["default"].createElement(_grommet.Box, null, _react["default"].createElement(_grommet.Box, {
       direction: "row"
     }, topRow.map(function (id) {
       return _react["default"].createElement(Node, {
@@ -135,6 +135,6 @@ function (_React$Component) {
   return SimpleDiagram;
 }(_react["default"].Component);
 
-(0, _react2.storiesOf)('Diagram', module).add('Simple Diagram', function () {
+(0, _react2.storiesOf)('Diagram', module).add('Progressing', function () {
   return _react["default"].createElement(SimpleDiagram, null);
 });
