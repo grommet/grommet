@@ -95,6 +95,6 @@ storiesOf('Heading', module).add('All', function () {
   return React.createElement(All, null);
 }).add('Color', function () {
   return React.createElement(Color, null);
-}).add('Custom Heading', function () {
+}).add('Custom', function () {
   return React.createElement(CustomHeading, null);
 });

@@ -35,10 +35,10 @@ var SimpleCarousel = function SimpleCarousel(_ref) {
   })))));
 };
 
-(0, _react2.storiesOf)('Carousel', module).add('Simple Carousel', function () {
+(0, _react2.storiesOf)('Carousel', module).add('Simple', function () {
   return _react["default"].createElement(SimpleCarousel, null);
 });
-(0, _react2.storiesOf)('Carousel', module).add('Carousel With `initialChild`', function () {
+(0, _react2.storiesOf)('Carousel', module).add('Initial child`', function () {
   return _react["default"].createElement(SimpleCarousel, {
     initialChild: 1
   });

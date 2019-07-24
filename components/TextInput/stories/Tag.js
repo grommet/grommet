@@ -266,6 +266,6 @@ function (_Component2) {
   return TagTextInput;
 }(_react.Component);
 
-(0, _react2.storiesOf)('TextInput', module).add('Tag TextInput', function () {
+(0, _react2.storiesOf)('TextInput', module).add('Tag', function () {
   return _react["default"].createElement(TagTextInput, null);
 });

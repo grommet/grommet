@@ -201,9 +201,9 @@ function (_Component3) {
   return CheckBoxInsideButton;
 }(_react.Component);
 
-(0, _react2.storiesOf)('RadioButton', module).add('Simple RadioButton', function () {
+(0, _react2.storiesOf)('RadioButton', module).add('Simple', function () {
   return _react["default"].createElement(SimpleRadioButton, null);
-}).add('Disabled RadioButton', function () {
+}).add('Disabled', function () {
   return _react["default"].createElement(SimpleRadioButton, {
     disabled: true,
     selected: "c2"

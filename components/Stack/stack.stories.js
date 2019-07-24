@@ -34,8 +34,8 @@ var FillStack = function FillStack() {
   }, "Test")));
 };
 
-(0, _react2.storiesOf)('Stack', module).add('Simple Stack', function () {
+(0, _react2.storiesOf)('Stack', module).add('Simple', function () {
   return _react["default"].createElement(SimpleStack, null);
-}).add('Fill Stack', function () {
+}).add('Fill', function () {
   return _react["default"].createElement(FillStack, null);
 });

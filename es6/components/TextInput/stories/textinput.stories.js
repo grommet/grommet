@@ -258,9 +258,9 @@ function (_Component3) {
   return ThemedTextInput;
 }(Component);
 
-storiesOf('TextInput', module).add('Simple TextInput', function () {
+storiesOf('TextInput', module).add('Simple', function () {
   return React.createElement(SimpleTextInput, null);
-}).add('Password input', function () {
+}).add('Password', function () {
   return React.createElement(PasswordInput, null);
 }).add('Suggestions', function () {
   return React.createElement(SuggestionsTextInput, null);

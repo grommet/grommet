@@ -104,6 +104,6 @@ var CustomHeading = function CustomHeading() {
   return _react["default"].createElement(All, null);
 }).add('Color', function () {
   return _react["default"].createElement(Color, null);
-}).add('Custom Heading', function () {
+}).add('Custom', function () {
   return _react["default"].createElement(CustomHeading, null);
 });

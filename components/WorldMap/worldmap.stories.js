@@ -62,6 +62,6 @@ function (_Component) {
   return SimpleWorldMap;
 }(_react.Component);
 
-(0, _react2.storiesOf)('WorldMap', module).add('Simple WorldMap', function () {
+(0, _react2.storiesOf)('WorldMap', module).add('Simple', function () {
   return _react["default"].createElement(SimpleWorldMap, null);
 });

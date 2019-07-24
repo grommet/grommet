@@ -41,7 +41,7 @@ var ComponentOverrideMarkdown = function ComponentOverrideMarkdown() {
   }, CONTENT)));
 };
 
-(0, _react2.storiesOf)('Markdown', module).add('Simple Markdown', function () {
+(0, _react2.storiesOf)('Markdown', module).add('Simple', function () {
   return _react["default"].createElement(SimpleMarkdown, null);
 }).add('Component Override Markdown', function () {
   return _react["default"].createElement(ComponentOverrideMarkdown, null);

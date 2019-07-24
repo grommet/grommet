@@ -32,7 +32,7 @@ var ComponentOverrideMarkdown = function ComponentOverrideMarkdown() {
   }, CONTENT)));
 };
 
-storiesOf('Markdown', module).add('Simple Markdown', function () {
+storiesOf('Markdown', module).add('Simple', function () {
   return React.createElement(SimpleMarkdown, null);
 }).add('Component Override Markdown', function () {
   return React.createElement(ComponentOverrideMarkdown, null);

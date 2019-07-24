@@ -55,6 +55,6 @@ function (_Component) {
   return SimpleWorldMap;
 }(Component);
 
-storiesOf('WorldMap', module).add('Simple WorldMap', function () {
+storiesOf('WorldMap', module).add('Simple', function () {
   return React.createElement(SimpleWorldMap, null);
 });

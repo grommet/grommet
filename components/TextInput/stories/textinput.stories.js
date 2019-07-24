@@ -266,9 +266,9 @@ function (_Component3) {
   return ThemedTextInput;
 }(_react.Component);
 
-(0, _react2.storiesOf)('TextInput', module).add('Simple TextInput', function () {
+(0, _react2.storiesOf)('TextInput', module).add('Simple', function () {
   return _react["default"].createElement(SimpleTextInput, null);
-}).add('Password input', function () {
+}).add('Password', function () {
   return _react["default"].createElement(PasswordInput, null);
 }).add('Suggestions', function () {
   return _react["default"].createElement(SuggestionsTextInput, null);

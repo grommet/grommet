@@ -573,7 +573,7 @@ var ScrollBodyLayer = function ScrollBodyLayer() {
 
 (0, _react2.storiesOf)('Layer', module).add('Center', function () {
   return _react["default"].createElement(CenterLayer, null);
-}).add('CornerLayer', function () {
+}).add('Corner', function () {
   return _react["default"].createElement(CornerLayer, null);
 }).add('Form', function () {
   return _react["default"].createElement(FormLayer, null);

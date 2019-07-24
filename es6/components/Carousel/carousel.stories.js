@@ -30,10 +30,10 @@ var SimpleCarousel = function SimpleCarousel(_ref) {
   })))));
 };
 
-storiesOf('Carousel', module).add('Simple Carousel', function () {
+storiesOf('Carousel', module).add('Simple', function () {
   return React.createElement(SimpleCarousel, null);
 });
-storiesOf('Carousel', module).add('Carousel With `initialChild`', function () {
+storiesOf('Carousel', module).add('Initial child`', function () {
   return React.createElement(SimpleCarousel, {
     initialChild: 1
   });
