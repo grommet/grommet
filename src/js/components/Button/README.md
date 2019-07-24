@@ -288,7 +288,7 @@ button
   
 **global.hover.background**
 
-The background color when hovering. Expects `string | { color: string, opacity: string }`.
+The background style when hovering. Expects `string | { color: string, opacity: string }`.
 
 Defaults to
 

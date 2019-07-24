@@ -202,7 +202,7 @@ export const doc = Select => {
 
 export const themeDoc = {
   'global.hover.background': {
-    description: 'The background color when hovering.',
+    description: 'The background style when hovering.',
     type: 'string | { color: string, opacity: string }',
     defaultValue: "{ color: 'active', opacity: 'medium' }",
   },
