@@ -12,6 +12,8 @@ export interface MaskedInputProps {
     regexp?: {};
     placeholder?: string;
   }>;
+  placeholder?: string | React.ReactNode | JSX.Element;
+  plain?: boolean;
   size?: "small" | "medium" | "large" | "xlarge" | string;
   value?: string | number;
 }
