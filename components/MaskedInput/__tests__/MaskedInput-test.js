@@ -8,6 +8,10 @@ var _reactTestingLibrary = require("react-testing-library");
 
 var _domTestingLibrary = require("dom-testing-library");
 
+var _Grommet = require("../../Grommet");
+
+var _Keyboard = require("../../Keyboard");
+
 var _portal = require("../../../utils/portal");
 
 var _ = require("..");
@@ -159,10 +163,39 @@ describe('MaskedInput', function () {
       done();
     }, 300);
   });
+  test('Escape events should propagage if there is no drop', function (done) {
+    var callback = jest.fn();
+
+    var _render5 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_Grommet.Grommet, null, _react["default"].createElement(_Keyboard.Keyboard, {
+      onEsc: callback
+    }, _react["default"].createElement(_.MaskedInput, {
+      "data-testid": "test-masked-input",
+      id: "item",
+      name: "item"
+    })))),
+        getByTestId = _render5.getByTestId;
+
+    _reactTestingLibrary.fireEvent.change(getByTestId('test-masked-input'), {
+      target: {
+        value: ' '
+      }
+    });
+
+    setTimeout(function () {
+      _reactTestingLibrary.fireEvent.keyDown(getByTestId('test-masked-input'), {
+        key: 'Esc',
+        keyCode: 27,
+        which: 27
+      });
+
+      expect(callback).toBeCalled();
+      done();
+    }, 50);
+  });
   test('next and previous without options', function (done) {
     var onChange = jest.fn();
 
-    var _render5 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
+    var _render6 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -175,8 +208,8 @@ describe('MaskedInput', function () {
       }],
       onChange: onChange
     })),
-        getByTestId = _render5.getByTestId,
-        container = _render5.container;
+        getByTestId = _render6.getByTestId,
+        container = _render6.container;
 
     expect(container.firstChild).toMatchSnapshot();
     var input = getByTestId('test-input');
@@ -221,7 +254,7 @@ describe('MaskedInput', function () {
       };
     });
 
-    var _render6 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
+    var _render7 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
       "data-testid": "test-event-target-select-by-mouse",
       plain: true,
       size: "large",
@@ -237,8 +270,8 @@ describe('MaskedInput', function () {
       value: "",
       onChange: onChangeMock
     })),
-        getByTestId = _render6.getByTestId,
-        container = _render6.container;
+        getByTestId = _render7.getByTestId,
+        container = _render7.container;
 
     expect(container.firstChild).toMatchSnapshot();
 
@@ -276,7 +309,7 @@ describe('MaskedInput', function () {
       };
     });
 
-    var _render7 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
+    var _render8 = (0, _reactTestingLibrary.render)(_react["default"].createElement(_.MaskedInput, {
       "data-testid": "test-event-target-select-by-keyboard",
       id: "input-id",
       name: "input-name",
@@ -291,8 +324,8 @@ describe('MaskedInput', function () {
       value: "",
       onChange: onChangeMock
     })),
-        getByTestId = _render7.getByTestId,
-        container = _render7.container;
+        getByTestId = _render8.getByTestId,
+        container = _render8.container;
 
     expect(container.firstChild).toMatchSnapshot();
     var input = getByTestId('test-event-target-select-by-keyboard');

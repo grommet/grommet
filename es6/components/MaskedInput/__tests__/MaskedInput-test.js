@@ -2,6 +2,8 @@ import React from 'react';
 import 'jest-styled-components';
 import { cleanup, fireEvent, render } from 'react-testing-library';
 import { getByText } from 'dom-testing-library';
+import { Grommet } from '../../Grommet';
+import { Keyboard } from '../../Keyboard';
 import { createPortal, expectPortal } from '../../../utils/portal';
 import { MaskedInput } from '..';
 describe('MaskedInput', function () {
@@ -136,10 +138,37 @@ describe('MaskedInput', function () {
       done();
     }, 300);
   });
+  test('Escape events should propagage if there is no drop', function (done) {
+    var callback = jest.fn();
+
+    var _render5 = render(React.createElement(Grommet, null, React.createElement(Keyboard, {
+      onEsc: callback
+    }, React.createElement(MaskedInput, {
+      "data-testid": "test-masked-input",
+      id: "item",
+      name: "item"
+    })))),
+        getByTestId = _render5.getByTestId;
+
+    fireEvent.change(getByTestId('test-masked-input'), {
+      target: {
+        value: ' '
+      }
+    });
+    setTimeout(function () {
+      fireEvent.keyDown(getByTestId('test-masked-input'), {
+        key: 'Esc',
+        keyCode: 27,
+        which: 27
+      });
+      expect(callback).toBeCalled();
+      done();
+    }, 50);
+  });
   test('next and previous without options', function (done) {
     var onChange = jest.fn();
 
-    var _render5 = render(React.createElement(MaskedInput, {
+    var _render6 = render(React.createElement(MaskedInput, {
       "data-testid": "test-input",
       id: "item",
       name: "item",
@@ -152,8 +181,8 @@ describe('MaskedInput', function () {
       }],
       onChange: onChange
     })),
-        getByTestId = _render5.getByTestId,
-        container = _render5.container;
+        getByTestId = _render6.getByTestId,
+        container = _render6.container;
 
     expect(container.firstChild).toMatchSnapshot();
     var input = getByTestId('test-input');
@@ -192,7 +221,7 @@ describe('MaskedInput', function () {
       };
     });
 
-    var _render6 = render(React.createElement(MaskedInput, {
+    var _render7 = render(React.createElement(MaskedInput, {
       "data-testid": "test-event-target-select-by-mouse",
       plain: true,
       size: "large",
@@ -208,8 +237,8 @@ describe('MaskedInput', function () {
       value: "",
       onChange: onChangeMock
     })),
-        getByTestId = _render6.getByTestId,
-        container = _render6.container;
+        getByTestId = _render7.getByTestId,
+        container = _render7.container;
 
     expect(container.firstChild).toMatchSnapshot();
     fireEvent.focus(getByTestId('test-event-target-select-by-mouse'));
@@ -243,7 +272,7 @@ describe('MaskedInput', function () {
       };
     });
 
-    var _render7 = render(React.createElement(MaskedInput, {
+    var _render8 = render(React.createElement(MaskedInput, {
       "data-testid": "test-event-target-select-by-keyboard",
       id: "input-id",
       name: "input-name",
@@ -258,8 +287,8 @@ describe('MaskedInput', function () {
       value: "",
       onChange: onChangeMock
     })),
-        getByTestId = _render7.getByTestId,
-        container = _render7.container;
+        getByTestId = _render8.getByTestId,
+        container = _render8.container;
 
     expect(container.firstChild).toMatchSnapshot();
     var input = getByTestId('test-event-target-select-by-keyboard');
