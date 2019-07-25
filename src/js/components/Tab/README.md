@@ -24,7 +24,6 @@ The title of the tab.
 
 ```
 string
-node
 ```
   
 ## Intrinsic element
