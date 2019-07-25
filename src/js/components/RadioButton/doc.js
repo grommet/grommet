@@ -79,6 +79,7 @@ export const themeDoc = {
   'radioButton.size': {
     description: 'The size of the Radio Buttons.',
     type: 'string',
+    defaultValue: '24px',
   },
   'radioButton.hover.border.color': {
     description: `The color of the Radio Button border when hovered over.`,

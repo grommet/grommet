@@ -74,7 +74,7 @@ input
   
 **radioButton.border.color**
 
-The color of the border of the Radio Button. Expects `string`.
+The color of the border of the Radio Button. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -94,7 +94,7 @@ Defaults to
 
 **radioButton.check.color**
 
-The color of the checked icon in the Radio Button. Expects `string`.
+The color of the checked icon in the Radio Button. Expects `string | { dark: string, light: string }`.
 
 Defaults to
 
@@ -124,7 +124,7 @@ Defaults to
 
 **radioButton.extend**
 
-ny additional style for the Radio Button. Expects `string | (props) => {}`.
+Any additional style for the RadioButton. Expects `string | (props) => {}`.
 
 Defaults to
 
@@ -134,7 +134,7 @@ undefined
 
 **radioButton.gap**
 
-The gap between the label and the Radio Button. Expects `string`.
+The gap between the label and the Radio Button itself. Expects `string`.
 
 Defaults to
 
@@ -149,7 +149,7 @@ The size of the Radio Buttons. Expects `string`.
 Defaults to
 
 ```
-undefined
+24px
 ```
 
 **radioButton.hover.border.color**
@@ -159,7 +159,7 @@ The color of the Radio Button border when hovered over. Expects `string | { dark
 Defaults to
 
 ```
-dark: white, light: black
+{dark: white, light: black}
 ```
 
 **radioButton.icon.extend**
