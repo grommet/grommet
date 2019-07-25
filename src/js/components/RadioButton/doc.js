@@ -44,7 +44,7 @@ with the same name so form submissions work.`,
 export const themeDoc = {
   'radioButton.border.color': {
     description: 'The color of the border of the Radio Button.',
-    type: 'string',
+    type: 'string | { dark: string, light: string }',
     defaultValue:
       "{dark: 'rgba(255, 255, 255, 0.5), light: 'rgba(0, 0, 0, 0.15)}",
   },
