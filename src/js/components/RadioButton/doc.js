@@ -72,7 +72,7 @@ export const themeDoc = {
     type: 'string | (props) => {}',
   },
   'radioButton.gap': {
-    description: 'The gap between the label and the Radio Button.',
+    description: 'The gap between the label and the Radio Button itself.',
     type: 'string',
     defaultValue: 'small',
   },
